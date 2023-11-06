@@ -24,7 +24,7 @@ import {
     DomainAddress,
     KeyTransparencyVerify,
 } from '@proton/shared/lib/interfaces';
-import { clearExternalFlags, getSignedKeyList } from '@proton/shared/lib/keys';
+import { clearExternalFlags, getSignedKeyListWithDeferredPublish } from '@proton/shared/lib/keys';
 import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -105,7 +105,7 @@ const convertToInternalAddress = async ({
         // Reset type to an internal address with a custom domain
         Type: ADDRESS_TYPE.TYPE_CUSTOM_DOMAIN,
     };
-    const signedKeyList = await getSignedKeyList(
+    const [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
         getNormalizedActiveKeys(internalAddress, activeKeys).map((key) => {
             return {
                 ...key,
@@ -121,6 +121,7 @@ const convertToInternalAddress = async ({
             SignedKeyList: signedKeyList,
         })
     );
+    await onSKLPublishSuccess();
 };
 
 const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {

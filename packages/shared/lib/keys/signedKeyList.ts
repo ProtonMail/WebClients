@@ -27,7 +27,7 @@ export const getSignedKeyListSignature = async (data: string, signingKey: Privat
     return signature;
 };
 
-type OnSKLPublishSuccess = () => Promise<void>;
+export type OnSKLPublishSuccess = () => Promise<void>;
 
 /**
  * Generate the signed key list data and verify it for later commit to Key Transparency.
@@ -109,8 +109,9 @@ export const createSignedKeyListForMigration = async (
     decryptedKeys: DecryptedKey[],
     keyTransparencyVerify: KeyTransparencyVerify,
     keyMigrationKTVerifier: KeyMigrationKTVerifier
-): Promise<SignedKeyList | undefined> => {
+): Promise<[SignedKeyList | undefined, OnSKLPublishSuccess | undefined]> => {
     let signedKeyList: SignedKeyList | undefined;
+    let onSKLPublishSuccess: OnSKLPublishSuccess | undefined;
     if (!address.SignedKeyList || address.SignedKeyList.ObsolescenceToken) {
         // Only create a new signed key list if the address does not have one already
         // or the signed key list is obsolete.
@@ -120,10 +121,14 @@ export const createSignedKeyListForMigration = async (
             await getActiveKeys(address, address.SignedKeyList, address.Keys, decryptedKeys)
         );
         if (activeKeys.length > 0) {
-            signedKeyList = await getSignedKeyList(activeKeys, address, keyTransparencyVerify);
+            [signedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+                activeKeys,
+                address,
+                keyTransparencyVerify
+            );
         }
     }
-    return signedKeyList;
+    return [signedKeyList, onSKLPublishSuccess];
 };
 
 const signedKeyListItemParser = ({ Primary, Flags, Fingerprint, SHA256Fingerprints }: any) =>

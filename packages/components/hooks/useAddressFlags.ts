@@ -17,7 +17,7 @@ import { ADDRESS_FLAGS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { Address } from '@proton/shared/lib/interfaces';
 import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
-import { getSignedKeyList } from '@proton/shared/lib/keys/signedKeyList';
+import { getSignedKeyListWithDeferredPublish } from '@proton/shared/lib/keys/signedKeyList';
 
 type UseAddressFlags = (address: Address) => {
     allowDisablingEncryption: boolean;
@@ -68,9 +68,13 @@ const useAddressFlags: UseAddressFlags = (address) => {
                 ),
             }))
         );
-        const newSignedKeyList = await getSignedKeyList(newActiveKeys, address, keyTransparencyVerify);
-
+        const [newSignedKeyList, onSKLPublishSuccess] = await getSignedKeyListWithDeferredPublish(
+            newActiveKeys,
+            address,
+            keyTransparencyVerify
+        );
         await api(updateAddressFlags(address.ID, !encryptionDisabled, !expectSignatureDisabled, newSignedKeyList));
+        await onSKLPublishSuccess();
         await call();
         createNotification({ text: c('Success notification').t`Preference updated` });
     };
