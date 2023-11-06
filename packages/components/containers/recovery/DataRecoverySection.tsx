@@ -45,8 +45,6 @@ const DataRecoverySection = () => {
     const [generateMnemonicModal, setGenerateMnemonicModalOpen, renderGenerateMnemonicModal] = useModalState();
     const [generateMnemonicModalButton, setGenerateMnemonicModalButtonOpen, renderGenerateMnemonicModalButton] =
         useModalState();
-    const [generateMnemonicModalToggle, setGenerateMnemonicModalToggleOpen, renderGenerateMnemonicModalToggle] =
-        useModalState();
     const [voidRecoveryFilesModal, setVoidRecoveryFilesModalOpen, renderVoidRecoveryFilesModal] = useModalState();
 
     const hasOutdatedRecoveryFile = useHasOutdatedRecoveryFile();
@@ -88,9 +86,6 @@ const DataRecoverySection = () => {
     return (
         <>
             {renderDisableMnemonicModal && <DisableMnemonicModal {...disableMnemonicModal} />}
-            {renderGenerateMnemonicModalToggle && (
-                <GenerateMnemonicModal confirmStep {...generateMnemonicModalToggle} />
-            )}
             {renderGenerateMnemonicModalButton && (
                 <GenerateMnemonicModal confirmStep {...generateMnemonicModalButton} />
             )}
@@ -142,12 +137,12 @@ const DataRecoverySection = () => {
                                         <div className="flex flex-align-items-center">
                                             <Toggle
                                                 className="mr-2"
-                                                loading={disableMnemonicModal.open || generateMnemonicModalToggle.open}
+                                                loading={disableMnemonicModal.open || generateMnemonicModal.open}
                                                 checked={user.MnemonicStatus === MNEMONIC_STATUS.SET}
                                                 id="mnemonicToggle"
                                                 onChange={({ target: { checked } }) => {
                                                     if (checked) {
-                                                        setGenerateMnemonicModalToggleOpen(true);
+                                                        setGenerateMnemonicModalOpen(true);
                                                     } else {
                                                         setDisableMnemonicModalOpen(true);
                                                     }
