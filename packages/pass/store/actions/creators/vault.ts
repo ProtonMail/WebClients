@@ -11,7 +11,13 @@ import type { VaultTransferOwnerIntent } from '@proton/pass/types/data/vault.dto
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
-import { vaultCreateRequest, vaultDeleteRequest, vaultEditRequest, vaultTransferOwnerRequest } from '../requests';
+import {
+    vaultCreateRequest,
+    vaultDeleteRequest,
+    vaultEditRequest,
+    vaultMoveAllItemsRequest,
+    vaultTransferOwnerRequest,
+} from '../requests';
 
 export const vaultCreationIntent = createAction(
     'vault::creation::intent',
@@ -122,6 +128,44 @@ export const vaultDeleteSuccess = createAction(
                 type: 'info',
                 text: c('Info').t`Vault "${payload.content.name}" successfully deleted`,
             })({ payload })
+    )
+);
+
+export const vaultMoveAllItemsIntent = createAction(
+    'vault::move::all::items::intent',
+    (payload: { shareId: string; vaultName: string; destinationShareId: string }) =>
+        pipe(
+            withRequest({ type: 'start', id: vaultMoveAllItemsRequest(payload.shareId) }),
+            withCacheBlock,
+            withNotification({
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Moving all items of "${payload.vaultName}"`,
+            })
+        )({ payload })
+);
+
+export const vaultMoveAllItemsSuccess = createAction(
+    'vault::move::all::items::success',
+    withRequestSuccess((payload: { shareId: string; vaultName: string; movedItems: ItemRevision[] }) =>
+        withNotification({
+            type: 'info',
+            text: c('Info').t`All items of "${payload.vaultName}" successfully moved`,
+        })({ payload })
+    )
+);
+
+export const vaultMoveAllItemsFailure = createAction(
+    'vault::move::all::items::failure',
+    withRequestFailure((payload: { shareId: string; vaultName: string }, error: unknown) =>
+        pipe(
+            withCacheBlock,
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Failed to move all items of "${payload.vaultName}"`,
+                error,
+            })
+        )({ payload, error })
     )
 );
 
