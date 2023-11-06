@@ -14,7 +14,7 @@ import {
     isVideo,
     isWordDocument,
 } from '@proton/shared/lib/helpers/mimetype';
-import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
+import { isPreviewAvailable, isPreviewTooLarge } from '@proton/shared/lib/helpers/preview';
 
 import { useFocusTrap, useModalState } from '../../components';
 import { useBeforeUnload, useHotkeys } from '../../hooks';
@@ -118,7 +118,7 @@ export const FilePreviewContent = ({
         ) {
             return (
                 <div className="file-preview-container">
-                    <UnsupportedPreview onDownload={onDownload} />
+                    <UnsupportedPreview onDownload={onDownload} tooLarge={isPreviewTooLarge(mimeType, fileSize)} />
                 </div>
             );
         }
