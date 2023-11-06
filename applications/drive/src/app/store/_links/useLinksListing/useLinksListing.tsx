@@ -11,6 +11,7 @@ import { linkMetaToEncryptedLink, useDebouncedRequest } from '../../_api';
 import { waitFor } from '../../_utils';
 import { DecryptedLink, EncryptedLink } from './../interface';
 import useLinksState from './../useLinksState';
+import { FetchLoadLinksMeta } from './interface';
 import {
     FetchMeta,
     FetchResponse,
@@ -172,10 +173,11 @@ export function useLinksListingProvider() {
     const fetchLinksMeta = async (
         abortSignal: AbortSignal,
         shareId: string,
-        linkIds: string[]
+        linkIds: string[],
+        loadThumbnails: boolean = false
     ): Promise<FetchResponse> => {
         const { Links, Parents } = await debouncedRequest<LinkMetaBatchPayload>(
-            queryLinkMetaBatch(shareId, linkIds),
+            queryLinkMetaBatch(shareId, linkIds, loadThumbnails),
             abortSignal
         );
 
@@ -185,16 +187,7 @@ export function useLinksListingProvider() {
         };
     };
 
-    const loadLinksMeta = async (
-        abortSignal: AbortSignal,
-        query: string,
-        shareId: string,
-        linkIds: string[],
-        cache: boolean = false
-    ): Promise<{
-        links: EncryptedLink[];
-        parents: EncryptedLink[];
-    }> => {
+    const loadLinksMeta: FetchLoadLinksMeta = async (abortSignal, query, shareId, linkIds, options = {}) => {
         const shareState = getShareFetchState(shareId);
         let fetchMeta = shareState.links[query];
         if (!fetchMeta) {
@@ -206,20 +199,30 @@ export function useLinksListingProvider() {
 
         const linksAcc: EncryptedLink[] = [];
         const parentsAcc: EncryptedLink[] = [];
+
         const load = async () => {
             const missingLinkIds = linkIds.filter((linkId) => !linksState.getLink(shareId, linkId));
             for (const pageLinkIds of chunk(missingLinkIds, BATCH_REQUEST_SIZE)) {
-                const { links, parents } = await fetchLinksMeta(abortSignal, shareId, pageLinkIds);
-                if (cache) {
+                const { links, parents } = await fetchLinksMeta(
+                    abortSignal,
+                    shareId,
+                    pageLinkIds,
+                    options.loadThumbnails
+                );
+
+                if (options.cache) {
                     await cacheLoadedLinks(abortSignal, shareId, links, parents);
                 }
+
                 linksAcc.push(...links);
                 parentsAcc.push(...parents);
+
                 if (abortSignal.aborted) {
                     break;
                 }
             }
         };
+
         await load().finally(() => {
             fetchMeta.isInProgress = false;
         });
