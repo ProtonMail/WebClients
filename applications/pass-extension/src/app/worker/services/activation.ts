@@ -3,7 +3,7 @@ import { type Runtime } from 'webextension-polyfill';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
-import { workerCanBoot } from '@proton/pass/lib/worker';
+import { workerCanBoot, workerStale } from '@proton/pass/lib/worker';
 import { bootIntent, wakeupIntent } from '@proton/pass/store/actions';
 import {
     selectFeatureFlags,
@@ -13,7 +13,7 @@ import {
     selectPopupPasswordOptions,
     selectPopupTabState,
 } from '@proton/pass/store/selectors';
-import type { MaybeNull, WorkerInitMessage, WorkerMessageWithSender, WorkerWakeUpMessage } from '@proton/pass/types';
+import type { MaybeNull, WorkerMessageWithSender, WorkerWakeUpMessage } from '@proton/pass/types';
 import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { logger } from '@proton/pass/utils/logger';
@@ -82,7 +82,7 @@ export const createActivationService = () => {
      * if not in production - use sync.html session to workaround the
      * the SSL handshake (net:ERR_SSL_CLIENT_AUTH_CERT_NEEDED) */
     const handleStartup = withContext(async (ctx) => {
-        const { loggedIn } = (await ctx.init({ force: true })).getState();
+        const loggedIn = await ctx.service.auth.init({ forceLock: true });
 
         if (ENV === 'development' && RESUME_FALLBACK) {
             if (!loggedIn && (await ctx.service.auth.getPersistedSession())) {
@@ -110,8 +110,7 @@ export const createActivationService = () => {
 
             if (BUILD_TARGET === 'chrome') void ctx.service.injection.updateInjections();
             ctx.service.onboarding.onUpdate();
-
-            return ctx.init({ force: true });
+            return ctx.service.auth.init();
         }
 
         if (details.reason === 'install') {
@@ -182,7 +181,9 @@ export const createActivationService = () => {
         async (ctx, message: WorkerMessageWithSender<WorkerWakeUpMessage>) => {
             const { sender: endpoint, payload } = message;
             const { tabId } = payload;
-            const { status } = await ctx.init({});
+            const { status } = ctx.getState();
+
+            if (workerStale(status)) void ctx.service.auth.init();
 
             /* dispatch a wakeup action for this specific receiver.
              * tracking the wakeup's request metadata can be consumed
@@ -209,8 +210,11 @@ export const createActivationService = () => {
         }
     );
 
-    const handleWorkerInit = withContext(async (ctx, message: WorkerMessageWithSender<WorkerInitMessage>) =>
-        (await ctx.init({ sync: message.payload.sync })).getState()
+    const handleWorkerInit = withContext<MessageHandlerCallback<WorkerMessageType.WORKER_INIT>>(
+        async (ctx, message) => {
+            await ctx.service.auth.init(message.payload);
+            return ctx.getState();
+        }
     );
 
     const handlePopupInit = withContext<MessageHandlerCallback<WorkerMessageType.POPUP_INIT>>(async (ctx, message) => {

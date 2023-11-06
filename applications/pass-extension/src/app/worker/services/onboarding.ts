@@ -95,7 +95,7 @@ const ONBOARDING_RULES: OnboardingRule[] = [
             const passPlan = selectPassPlan(store.getState());
             if (passPlan === UserPassPlan.PLUS) return false;
 
-            const now = api.getStatus().serverTime?.getTime() ?? Date.now();
+            const now = api.getState().serverTime?.getTime() ?? Date.now();
             return !previous && now > PASS_BF_2023_DATES[0] && now < PASS_BF_2023_DATES[1];
         },
     }),

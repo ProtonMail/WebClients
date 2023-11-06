@@ -31,7 +31,6 @@ const WorkerMessageBroker = createMessageBroker({
         WorkerMessageType.ONBOARDING_REQUEST,
         WorkerMessageType.OTP_CODE_GENERATE,
         WorkerMessageType.POPUP_INIT,
-        WorkerMessageType.SESSION_RESUMED,
         WorkerMessageType.UNLOCK_REQUEST,
     ],
     onDisconnect: withContext((ctx, portName) => {
