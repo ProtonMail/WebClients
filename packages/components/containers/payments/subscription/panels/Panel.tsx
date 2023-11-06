@@ -37,7 +37,7 @@ const Panel = ({
     return (
         <div
             className={clsx(
-                'relative border rounded px-6 py-5 flex-align-self-start on-tablet-order-1 on-mobile-order-1 panel',
+                'relative border rounded px-6 py-5 flex-align-self-start order-1 lg:order-0 panel',
                 className
             )}
             data-testid={dataTestId}

@@ -188,7 +188,7 @@ const AccountStepPayment = ({
 
     return (
         <div className="flex on-mobile-flex-column flex-align-items-start flex-justify-space-between gap-14">
-            <div className="flex-item-fluid on-mobile-order-1">
+            <div className="flex-item-fluid order-1 md:order-0">
                 <form
                     ref={formRef}
                     onFocus={(e) => {
