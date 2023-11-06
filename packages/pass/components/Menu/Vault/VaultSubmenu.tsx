@@ -36,6 +36,7 @@ type Props = {
     handleVaultInvite: (vault: VaultShareItem) => void;
     handleVaultLeave: (vault: VaultShareItem) => void;
     handleVaultManage: (vault: VaultShareItem) => void;
+    handleVaultMoveAllItems: (vault: VaultShareItem) => void;
     handleVaultSelect: (shareId: MaybeNull<string>) => void;
 };
 
@@ -50,6 +51,7 @@ export const VaultSubmenu: VFC<Props> = ({
     handleVaultInvite,
     handleVaultLeave,
     handleVaultManage,
+    handleVaultMoveAllItems,
     handleVaultSelect,
 }) => {
     const history = useHistory();
@@ -115,6 +117,7 @@ export const VaultSubmenu: VFC<Props> = ({
                             onEdit={canEdit ? () => handleVaultEdit(vault) : undefined}
                             onInvite={() => handleVaultInvite(vault)}
                             onManage={() => handleVaultManage(vault)}
+                            onMove={canEdit && vault.count > 0 ? () => handleVaultMoveAllItems(vault) : undefined}
                             onLeave={() => handleVaultLeave(vault)}
                         />
                     );

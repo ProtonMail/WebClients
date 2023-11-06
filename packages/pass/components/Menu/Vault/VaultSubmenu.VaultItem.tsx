@@ -28,6 +28,7 @@ type Props = {
     onInvite?: () => void;
     onLeave?: () => void;
     onManage?: () => void;
+    onMove?: () => void;
     onSelect: () => void;
 };
 
@@ -48,6 +49,7 @@ export const VaultItem: VFC<Props> = ({
     onInvite,
     onLeave,
     onManage,
+    onMove,
     onSelect,
 }) => {
     const withActions = onEdit || onDelete || onInvite || onManage || onLeave;
@@ -136,6 +138,15 @@ export const VaultItem: VFC<Props> = ({
                                 }
                             />
                         )}
+
+                        {
+                            <DropdownMenuButton
+                                disabled={!onMove}
+                                onClick={handleClickEvent(onMove)}
+                                label={c('Action').t`Move all items`}
+                                icon="folder-arrow-in"
+                            />
+                        }
 
                         {allowSharing && shared && !vault.owner ? (
                             <DropdownMenuButton
