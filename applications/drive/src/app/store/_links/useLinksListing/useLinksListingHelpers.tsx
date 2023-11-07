@@ -8,7 +8,7 @@ import { sendErrorReport } from '../../../utils/errorHandling';
 import { useErrorHandler, waitFor } from '../../_utils';
 import { DecryptedLink, EncryptedLink } from '../interface';
 import useLinks from '../useLinks';
-import useLinksState, { Link } from '../useLinksState';
+import useLinksState, { Link, isLinkDecrypted } from '../useLinksState';
 
 export type FetchMeta = {
     isEverythingFetched?: boolean;
@@ -64,7 +64,10 @@ export function useLinksListingHelpers() {
      */
     const decryptAndCacheLinks = async (abortSignal: AbortSignal, shareId: string, links: EncryptedLink[]) => {
         if (!links.length) {
-            return;
+            return {
+                links: [],
+                errors: [],
+            };
         }
 
         const result = await decryptLinks(abortSignal, shareId, links);
@@ -83,6 +86,8 @@ export function useLinksListingHelpers() {
                 );
             });
         }
+
+        return result;
     };
 
     /**
@@ -93,17 +98,32 @@ export function useLinksListingHelpers() {
         shareId: string,
         links: EncryptedLink[],
         parents: EncryptedLink[]
-    ): Promise<void> => {
-        // Set encrypted data right away because it is needed for decryption.
+    ) => {
+        // Set encrypted data right away because it is needed for decryption
         const allEncryptedLinks = [...parents, ...links].map((encrypted) => ({ encrypted }));
         linksState.setLinks(shareId, allEncryptedLinks);
 
-        // Decrypt only links which are not decrypted yet or need re-decryption.
-        const encryptedLinksOnly = links.filter(({ linkId }) => {
-            const cachedLink = linksState.getLink(shareId, linkId);
-            return !cachedLink?.decrypted || cachedLink.decrypted.isStale;
+        // Decrypt only links which are not decrypted yet or need re-decryption
+        const decryptedLinks: Required<Link>[] = [];
+        const encryptedLinks: EncryptedLink[] = [];
+
+        links.forEach((link) => {
+            const cachedLink = linksState.getLink(shareId, link.linkId);
+
+            if (isLinkDecrypted(cachedLink)) {
+                decryptedLinks.push(cachedLink);
+            } else {
+                encryptedLinks.push(link);
+            }
         });
-        await decryptAndCacheLinks(abortSignal, shareId, encryptedLinksOnly);
+
+        // Merge results to return all provided links
+        const result = await decryptAndCacheLinks(abortSignal, shareId, encryptedLinks);
+
+        return {
+            links: [...decryptedLinks, ...result.links],
+            errors: result.errors,
+        };
     };
 
     /**

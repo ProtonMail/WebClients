@@ -4,7 +4,6 @@ import { useLoading } from '@proton/hooks';
 
 import { sendErrorReport } from '../../utils/errorHandling';
 import { DecryptedLink, useLinksListing } from '../_links';
-import useLinksState from '../_links/useLinksState';
 
 /**
  * useLinksDetailsView loads links if not cached yet and provides some
@@ -12,7 +11,6 @@ import useLinksState from '../_links/useLinksState';
  */
 export default function useLinksDetailsView(selectedLinks: DecryptedLink[]) {
     const { loadLinksMeta } = useLinksListing();
-    const linksState = useLinksState();
 
     const [links, setLinks] = useState<DecryptedLink[]>([]);
     const [hasError, setHasError] = useState<any>();
@@ -37,20 +35,20 @@ export default function useLinksDetailsView(selectedLinks: DecryptedLink[]) {
 
                 for (const shareId of Object.keys(linksByShareId)) {
                     const linkIds = linksByShareId[shareId];
+                    const meta = await loadLinksMeta(ac.signal, 'details', shareId, linkIds);
 
-                    await loadLinksMeta(ac.signal, 'details', shareId, linkIds, { cache: true }).then(() => {
-                        for (const linkId of linkIds) {
-                            const link = linksState.getLink(shareId, linkId)?.decrypted;
+                    if (meta.errors.length > 0) {
+                        setHasError(true);
+                        console.error(new Error('Failed to load links meta in details modal'), {
+                            shareId,
+                            linkIds: linkIds.filter((id) => !meta.links.find((link) => link.linkId === id)),
+                            errors: meta.errors,
+                        });
 
-                            if (!link || link.corruptedLink) {
-                                throw new Error('Could not decrypt link in details modal', {
-                                    cause: { shareId, linkId },
-                                });
-                            }
+                        return;
+                    }
 
-                            loadedLinks.push(link);
-                        }
-                    });
+                    loadedLinks.push(...meta.links);
                 }
 
                 setLinks(loadedLinks);
