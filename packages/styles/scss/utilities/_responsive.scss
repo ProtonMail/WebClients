@@ -100,10 +100,6 @@
 				display: none;
 			}
 		}
-
-		&-list-1column {
-			column-count: 1;
-		}
 	}
 }
 
@@ -248,10 +244,6 @@
 			&-hide-td#{$i} td:nth-child(#{$i}) {
 				display: none;
 			}
-		}
-
-		&-list-1column {
-			column-count: 1;
 		}
 	}
 }
