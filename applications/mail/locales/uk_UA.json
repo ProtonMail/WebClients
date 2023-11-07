@@ -100,6 +100,12 @@
       "As Scheduled": [
         "Як заплановано"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "До групи можна додати не більше ${ maxContacts } контакту",
+        "До групи можна додати не більше ${ maxContacts } контактів",
+        "До групи можна додати не більше ${ maxContacts } контактів",
+        "До групи можна додати не більше ${ maxContacts } контактів"
+      ],
       "Attach screenshot(s)": [
         "Додати знімки екрана"
       ],
@@ -270,6 +276,18 @@
       ],
       "Delete": [
         "Видалити"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Видалити ${ selectedCount } контакт",
+        "Видалити ${ selectedCount } контакти",
+        "Видалити ${ selectedCount } контактів",
+        "Видалити ${ selectedCount } контактів"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Видалити ${ selectedCount } групу контактів",
+        "Видалити ${ selectedCount } групи контактів",
+        "Видалити ${ selectedCount } груп контактів",
+        "Видалити ${ selectedCount } груп контактів"
       ],
       "Delete all": [
         "Видалити все"
@@ -495,6 +513,12 @@
       ],
       "Insert": [
         "Вставити"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "Вставити ${ totalChecked } контакт",
+        "Вставити ${ totalChecked } контакти",
+        "Вставити ${ totalChecked } контактів",
+        "Вставити ${ totalChecked } контактів"
       ],
       "Insert contact": [
         "Вставити контакт"
@@ -1015,6 +1039,12 @@
       "Trust": [
         "Довіряти"
       ],
+      "Trust key": [
+        "Довіряти ключу",
+        "Довіряти ключам",
+        "Довіряти ключам",
+        "Довіряти ключам"
+      ],
       "Trust public key": [
         "Довіряти відкритому ключу"
       ],
@@ -1132,6 +1162,12 @@
       "Yes, I'll attend": [
         "Підтверджую присутність"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контакт",
+        "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контакти",
+        "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів",
+        "Ви можете надіслати файли vCard, які містять щонайбільше ${ maxAttachments } контактів"
+      ],
       "Zoom in": [
         "Збільшити"
       ],
@@ -1175,6 +1211,26 @@
     "Adding expiration to a message will create an expiring message": {
       "Expiring message": [
         "Самознищуване повідомлення"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } власний домен",
+        "${ domains } власні домени",
+        "${ domains } власних доменів",
+        "${ domains } власних доменів"
+      ],
+      "${ ips } server": [
+        "${ ips } сервер",
+        "${ ips } сервери",
+        "${ ips } серверів",
+        "${ ips } серверів"
+      ],
+      "${ users } user": [
+        "${ users } користувач",
+        "${ users } користувачі",
+        "${ users } користувачів",
+        "${ users } користувачів"
       ]
     },
     "Alert": {
@@ -1619,6 +1675,14 @@
       ],
       "Cancel expiration": [
         "Скасувати термін дії"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } користувач",
+        "${ users } користувачі",
+        "${ users } користувачів",
+        "${ users } користувача"
       ]
     },
     "Collapsible tooltip": {
@@ -2790,6 +2854,12 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } раз",
+        "${ count } рази",
+        "${ count } разів",
+        "${ count } разів"
+      ],
       "Daily": [
         "Щодня"
       ],
@@ -2798,6 +2868,24 @@
       ],
       "Daily, ${ untilString }": [
         "Щодня, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Щодня",
+        "Кожні ${ interval } дні",
+        "Кожні ${ interval } днів",
+        "Кожні ${ interval } днів"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Щодня, ${ timesString }",
+        "Кожні ${ interval } дні, ${ timesString }",
+        "Кожні ${ interval } днів, ${ timesString }",
+        "Кожні ${ interval } днів, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Щодня, ${ untilString }",
+        "Кожні ${ interval } дні, ${ untilString }",
+        "Кожні ${ interval } днів, ${ untilString }",
+        "Кожні ${ interval } днів, ${ untilString }"
       ],
       "until ${ dateString }": [
         "до ${ dateString }"
@@ -2860,6 +2948,12 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Об'єднання контактів... Це може тривати кілька хвилин. Коли процес завершиться, ви можете закрити це вікно."
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Нові листи від ${ senderEmailAddress } та ще від ${ otherSendersCount } іншого неможливо доставити, тому їх буде остаточно видалено.",
+        "Нові листи від ${ senderEmailAddress } та ще від ${ otherSendersCount } інших неможливо доставити, тому їх буде остаточно видалено.",
+        "Нові листи від ${ senderEmailAddress } та ще від ${ otherSendersCount } інших неможливо доставити, тому їх буде остаточно видалено.",
+        "Нові листи від ${ senderEmailAddress } та ще від ${ otherSendersCount } інших неможливо доставити, тому їх буде остаточно видалено."
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Нові листи від ${ senderEmailAddress } неможливо доставити, тому їх буде остаточно видалено."
@@ -2977,6 +3071,12 @@
       "Event starting now": [
         "Подія зараз починається"
       ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Подія починається через ${ minutesUntilEvent } хвилину",
+        "Подія починається через ${ minutesUntilEvent } хвилини",
+        "Подія починається через ${ minutesUntilEvent } хвилин",
+        "Подія починається через ${ minutesUntilEvent } хвилини"
+      ],
       "Event starts tomorrow": [
         "Подія починається завтра"
       ]
@@ -3069,6 +3169,18 @@
       "Choose a date in the future.": [
         "Виберіть дату в майбутньому."
       ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
+        "Виберіть дату в межах наступного ${ EXPIRATION_TIME_MAX_DAYS } дня.",
+        "Виберіть дату в межах наступних ${ EXPIRATION_TIME_MAX_DAYS } днів.",
+        "Виберіть дату в межах наступних ${ EXPIRATION_TIME_MAX_DAYS } днів.",
+        "Виберіть дату в межах наступних ${ EXPIRATION_TIME_MAX_DAYS } днів."
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+        "Виберіть дату в межах наступного ${ SCHEDULED_MAX_DATE_DAYS } дня.",
+        "Виберіть дату в межах наступних ${ SCHEDULED_MAX_DATE_DAYS } днів.",
+        "Виберіть дату в межах наступних ${ SCHEDULED_MAX_DATE_DAYS } днів.",
+        "Виберіть дату в межах наступних ${ SCHEDULED_MAX_DATE_DAYS } днів."
+      ],
       "Condition incomplete": [
         "Неповна умова"
       ],
@@ -3092,6 +3204,18 @@
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Помилка розшифрування: не вдалося розшифрувати вміст цього повідомлення."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календаря",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календаря або",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або",
+        "Скасуйте вибір принаймні ${ calendarsToFixCount } календарів або"
       ],
       "Domain not available, try again later": [
         "Домен недоступний, повторіть спробу пізніше"
@@ -3180,6 +3304,12 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Перевищено максимальну кількість (${ attachmentsCountLimit }) вкладень"
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Об'єднайте принаймні ${ calendarsToFixCount } календар з наявним календарем ${ BRAND_NAME }",
+        "Об'єднайте принаймні ${ calendarsToFixCount } календарі з наявними календарями ${ BRAND_NAME }",
+        "Об'єднайте принаймні ${ calendarsToFixCount } календарів з наявними календарями ${ BRAND_NAME }",
+        "Об'єднайте принаймні ${ calendarsToFixCount } календарів з наявними календарями ${ BRAND_NAME }"
+      ],
       "Message needs to be sent first": [
         "Спершу необхідно надіслати повідомлення"
       ],
@@ -3216,6 +3346,18 @@
       "Not a valid number": [
         "Номер недійсний"
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Один контакт не має адреси е-пошти: ${ noEmailsContactNamesList }",
+        "Деякі контакти не мають адреси е-пошти: ${ noEmailsContactNamesList }",
+        "Деякі контакти не мають адреси е-пошти: ${ noEmailsContactNamesList }",
+        "Деякі контакти не мають адреси е-пошти: ${ noEmailsContactNamesList }"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "В одній з груп немає контактів: ${ noContactGroupList }",
+        "В деяких групах немає контактів: ${ noContactGroupList }",
+        "В деяких групах немає контактів: ${ noContactGroupList }",
+        "В деяких групах немає контактів: ${ noContactGroupList }"
+      ],
       "Password is required": [
         "Пароль обов'язковий"
       ],
@@ -3224,6 +3366,12 @@
       ],
       "Please activate your search again": [
         "Повторно активуйте пошук"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Виправте вказану проблему, щоб продовжити.",
+        "Виправте вказані проблеми, щоб продовжити.",
+        "Виправте вказані проблеми, щоб продовжити.",
+        "Виправте вказані проблеми, щоб продовжити."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Введіть ім'я, прізвище або псевдонім"
@@ -3248,6 +3396,12 @@
       ],
       "re-activate the previous key": [
         "повторно активувати попередній ключ"
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Вилучено дублікат отримувача: ${ recipents }",
+        "Вилучено дублікати отримувачів: ${ recipents }",
+        "Вилучено дублікати отримувачів: ${ recipents }",
+        "Вилучено дублікати отримувачів: ${ recipents }"
       ],
       "Request timed out": [
         "Час очікування запиту завершився"
@@ -3296,6 +3450,12 @@
       ],
       "status page": [
         "сторінку стану"
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "Не вдалося розшифрувати вкладення.\nЯкщо у вас є відповідний приватний ключ, ви зможете розшифрувати\nфайл за допомогою програми, наприклад, GnuPG.",
+        "Не вдалося розшифрувати вкладення.\nЯкщо у вас є відповідний приватний ключ, ви зможете розшифрувати\nфайли за допомогою програми, наприклад, GnuPG.",
+        "Не вдалося розшифрувати вкладення.\nЯкщо у вас є відповідний приватний ключ, ви зможете розшифрувати\nфайли за допомогою програми, наприклад, GnuPG.",
+        "Не вдалося розшифрувати вкладення.\nЯкщо у вас є відповідний приватний ключ, ви зможете розшифрувати\nфайли за допомогою програми, наприклад, GnuPG."
       ],
       "The email addresses do not match": [
         "Електронні адреси відрізняються"
@@ -3375,6 +3535,18 @@
       "Wrong mailbox password": [
         "Неправильний пароль поштової скриньки"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачу",
+        "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачам",
+        "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачам",
+        "Ви можете надіслати лист щонайбільше ${ maxContacts } отримувачам"
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Не можна відкрити понад ${ maxActiveComposer } вікно редактора одночасно",
+        "Не можна відкрити понад ${ maxActiveComposer } вікна редактора одночасно",
+        "Не можна відкрити понад ${ maxActiveComposer } вікон редактора одночасно",
+        "Не можна відкрити понад ${ maxActiveComposer } вікон редактора одночасно"
+      ],
       "You did not provide a file.": [
         "Ви не надали файл."
       ],
@@ -3398,6 +3570,14 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "За вашим пошуковим запитом знайдено надто багато результатів. Обмежте пошуковий запит і спробуйте знову."
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "До запрошення можна додати не більше ${ maxAttendees } учасника",
+        "До запрошення можна додати не більше ${ maxAttendees } учасників",
+        "До запрошення можна додати не більше ${ maxAttendees } учасників",
+        "До запрошення можна додати не більше ${ maxAttendees } учасників"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3432,6 +3612,12 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Сталася неочікувана помилка. Потрібно перезапустити імпорт."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } подію.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } події.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } подій.",
+        "Ваш файл ${ formattedFilename } містить більше ніж ${ MAX_IMPORT_EVENTS_STRING } події."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } має недійсний метод і його неможливо імпортувати."
@@ -3813,6 +3999,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "байт",
+        "байти",
+        "байтів",
+        "байтів"
+      ],
       "GB": [
         "ГБ"
       ],
@@ -3821,6 +4013,32 @@
       ],
       "MB": [
         "МБ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Байт",
+        "Байти",
+        "Байтів",
+        "Байтів"
+      ],
+      "Gigabyte": [
+        "Гігабайт",
+        "Гігабайти",
+        "Гігабайтів",
+        "Гігабайтів"
+      ],
+      "Kilobyte": [
+        "Кілобайт",
+        "Кілобайти",
+        "Кілобайтів",
+        "Кілобайтів"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайти",
+        "Мегабайтів",
+        "Мегабайтів"
       ]
     },
     "Filter": {
@@ -4149,6 +4367,12 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Знайдено ${ items.length } пропозицію. Використовуйте клавіатуру для вибору.",
+        "Знайдено ${ items.length } пропозиції. Використовуйте клавіатуру для вибору.",
+        "Знайдено ${ items.length } пропозицій. Використовуйте клавіатуру для вибору.",
+        "Знайдено ${ items.length } пропозицій. Використовуйте клавіатуру для вибору."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Використовуйте клавіші Вгору і Вниз для доступу до пропозицій перегляду після введення. Натисніть Enter для підтвердження свого вибору, або Escape для закриття пропозицій."
       ]
@@ -4165,11 +4389,29 @@
       ]
     },
     "ICS widget label for event details": {
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } учасник",
+        "${ totalAttendees } учасники",
+        "${ totalAttendees } учасників",
+        "${ totalAttendees } учасника"
+      ],
       "Organizer:": [
         "Організатор:"
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } подію зашифровано та додано до вашого календаря",
+        "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря",
+        "${ totalImported }/${ totalToImport } подій зашифровано та додано до вашого календаря",
+        "${ totalImported }/${ totalToImport } події зашифровано та додано до вашого календаря"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "При шифруванні та додаванні вашої події сталася помилка. ${ totalImported } із ${ totalToImport } події успішно імпортовано.",
+        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
+        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано.",
+        "При шифруванні та додаванні ваших подій сталася помилка. ${ totalImported } із ${ totalToImport } подій успішно імпортовано."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Під час шифрування та додавання події сталася помилка. Неможливо імпортувати подію."
       ],
@@ -4204,11 +4446,29 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Імпортовані запрошення з'являються в ${ CALENDAR_APP_NAME } як прості події без подробиць про організаторів та учасників. Для отримання оновлень подій та перегляду учасників попросіть організаторів запросити вас за допомогою вашої адреси електронної пошти ${ BRAND_NAME }."
       ],
+      "This file contains an event invitation:": [
+        "Цей файл містить запрошення на подію:",
+        "Цей файл містить запрошення на події:",
+        "Цей файл містить запрошення на події:",
+        "Цей файл містить запрошення на події:"
+      ],
+      "This file contains an invitation response:": [
+        "Цей файл містить відповідь на запрошення:",
+        "Цей файл містить відповіді на запрошення:",
+        "Цей файл містить відповіді на запрошення:",
+        "Цей файл містить відповіді на запрошення:"
+      ],
       "This file contains some data that we cannot import:": [
         "Цей файл містить деякі дані, які ми не можемо імпортувати:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } контакт зашифровано та додано до вашого списку контактів",
+        "${ totalImported }/${ totalToImport } контакти зашифровано та додано до вашого списку контактів",
+        "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів",
+        "${ totalImported }/${ totalToImport } контактів зашифровано та додано до вашого списку контактів"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Сталася помилка під час шифрування й додавання контакту. Жоден контакт не може бути імпортовано."
       ],
@@ -4228,6 +4488,14 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Контакт ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } контакт",
+        "${ totalContacts } контакти",
+        "${ totalContacts } контактів",
+        "${ totalContacts } контактів"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4407,6 +4675,12 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } із ${ totalContacts } контактів не будуть імпортовані. Натисніть для подробиць"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } із ${ totalEvents } події не буде імпортовано. Розгорніть для подробиць.",
+        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць.",
+        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць.",
+        "${ totalEventsDiscarded } із ${ totalEvents } подій не буде імпортовано. Розгорніть для подробиць."
+      ],
       "No contact can be imported. Click for details": [
         "Неможливо імпортувати контакти. Натисніть для подробиць"
       ],
@@ -4418,14 +4692,80 @@
       ]
     },
     "Info": {
+      "${ addressCount } email address": [
+        "${ addressCount } адреса е-пошти",
+        "${ addressCount } адреси е-пошти",
+        "${ addressCount } адрес е-пошти",
+        "${ addressCount } адрес е-пошти"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } потребує вашого дозволу, щоб ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технологія шифрування ${ BRAND_NAME } гарантує неможливість доступу до вашого пароля, навіть для нас."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } новий календар",
+        "${ calendarsToBeCreatedCount } нові календарі",
+        "${ calendarsToBeCreatedCount } нових календарів",
+        "${ calendarsToBeCreatedCount } нових календарів"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } об'єднаний календар",
+        "${ calendarsToBeMergedCount } об'єднані календарі",
+        "${ calendarsToBeMergedCount } об'єднаних календарів",
+        "${ calendarsToBeMergedCount } об'єднаних календарів"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } контакт містить кілька адрес е-пошти.",
+        "${ contactCount } контакти містять кілька адрес е-пошти.",
+        "${ contactCount } контактів містять кілька адрес е-пошти.",
+        "${ contactCount } контактів містять кілька адрес е-пошти."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } учасник",
+        "${ contactEmailsLength } учасники",
+        "${ contactEmailsLength } учасників",
+        "${ contactEmailsLength } учасників"
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } учасник)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } учасники)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } учасників)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } учасників)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } містить кілька адрес е-пошти."
+      ],
+      "${ contactsCount } contact found": [
+        "Знайдено ${ contactsCount } контакт",
+        "Знайдено ${ contactsCount } контакти",
+        "Знайдено ${ contactsCount } контактів",
+        "Знайдено ${ contactsCount } контактів"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } контакт",
+        "${ contactsLength } контакти",
+        "${ contactsLength } контактів",
+        "${ contactsLength } контактів"
+      ],
+      "${ count } unread message": [
+        "${ count } непрочитане повідомлення",
+        "${ count } непрочитані повідомлення",
+        "${ count } непрочитаних повідомлень",
+        "${ count } непрочитаних повідомлень"
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }",
+        "${ currentProgress } з ${ totalProgress }"
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } вбудоване зображення",
+        "${ embeddedAttachmentsCount } вбудовані зображення",
+        "${ embeddedAttachmentsCount } вбудованих зображень",
+        "${ embeddedAttachmentsCount } вбудованих зображень"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: повнорозмірне зображення"
@@ -4433,11 +4773,167 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: попередній перегляд низької роздільності"
       ],
+      "${ groupCounts } group found": [
+        "Знайдено ${ groupCounts } групу",
+        "Знайдено ${ groupCounts } групи",
+        "Знайдено ${ groupCounts } груп",
+        "Знайдено ${ groupCounts } груп"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } також може захистити ваш бізнес."
       ],
+      "${ messagesNotAuthorizedToMove } message could not be moved.": [
+        "${ messagesNotAuthorizedToMove } повідомлення не вдалося перемістити.",
+        "${ messagesNotAuthorizedToMove } повідомлення не вдалося перемістити.",
+        "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити.",
+        "${ messagesNotAuthorizedToMove } повідомлень не вдалося перемістити."
+      ],
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "Заблоковано ${ numberOfImageTrackers } поштовий вистежувач",
+        "Заблоковано ${ numberOfImageTrackers } поштові вистежувачі",
+        "Заблоковано ${ numberOfImageTrackers } поштових вистежувачів",
+        "Заблоковано ${ numberOfImageTrackers } поштових вистежувачів"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "Заблоковано ${ numberOfImageTrackers } вистежувач",
+        "Заблоковано ${ numberOfImageTrackers } вистежувачі",
+        "Заблоковано ${ numberOfImageTrackers } вистежувачів",
+        "Заблоковано ${ numberOfImageTrackers } вистежувачів"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "Очищено ${ numberOfUTMTrackers } посилання",
+        "Очищено ${ numberOfUTMTrackers } посилання",
+        "Очищено ${ numberOfUTMTrackers } посилань",
+        "Очищено ${ numberOfUTMTrackers } посилань"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } повідомлення у розмові",
+        "${ NumMessages } повідомлення у розмові",
+        "${ NumMessages } повідомлень у розмові",
+        "${ NumMessages } повідомлення у розмові"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "Знайдено ${ numOccurrences } збіг",
+        "Знайдено ${ numOccurrences } збіги",
+        "Знайдено ${ numOccurrences } збігів",
+        "Знайдено ${ numOccurrences } збіги"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } збіг у вмісті пошти",
+        "${ numOccurrences } збіги у вмісті пошти",
+        "${ numOccurrences } збігів у вмісті пошти",
+        "${ numOccurrences } збіги у вмісті пошти"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "Знайдено ${ providerFoldersNumLocalized } теку",
+        "Знайдено ${ providerFoldersNumLocalized } теки",
+        "Знайдено ${ providerFoldersNumLocalized } тек",
+        "Знайдено ${ providerFoldersNumLocalized } тек"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } мітка знайдена в Gmail",
+        "${ providerFoldersNumLocalized } мітки знайдені в Gmail",
+        "${ providerFoldersNumLocalized } міток знайдено в Gmail",
+        "${ providerFoldersNumLocalized } міток знайдено в Gmail"
+      ],
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } вкладений файл",
+        "${ pureAttachmentsCount } вкладені файли",
+        "${ pureAttachmentsCount } вкладених файлів",
+        "${ pureAttachmentsCount } вкладених файлів"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календар",
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарів",
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календарі"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "Вибрано ${ selectedContactsLength } контакт із ${ contactsLength }",
+        "Вибрано ${ selectedContactsLength } контакти з ${ contactsLength }",
+        "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }",
+        "Вибрано ${ selectedContactsLength } контактів з ${ contactsLength }"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } вибрана тека",
+        "${ selectedFoldersCount } вибрані теки",
+        "${ selectedFoldersCount } вибраних тек",
+        "${ selectedFoldersCount } вибраних тек"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } вибрана мітка",
+        "${ selectedFoldersCount } вибрані мітки",
+        "${ selectedFoldersCount } вибраних міток",
+        "${ selectedFoldersCount } вибраних міток"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "Вибрано ${ selectedFoldersCountLocalized } теку",
+        "Вибрано ${ selectedFoldersCountLocalized } теки",
+        "Вибрано ${ selectedFoldersCountLocalized } тек",
+        "Вибрано ${ selectedFoldersCountLocalized } тек"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } вибрана мітка",
+        "${ selectedFoldersCountLocalized } вибрані мітки",
+        "${ selectedFoldersCountLocalized } вибраних міток",
+        "${ selectedFoldersCountLocalized } вибраних міток"
+      ],
       "${ storage } storage": [
         "${ storage } сховища"
+      ],
+      "${ total } conversation": [
+        "${ total } розмова",
+        "${ total } розмови",
+        "${ total } розмов",
+        "${ total } розмов"
+      ],
+      "${ total } message": [
+        "${ total } повідомлення",
+        "${ total } повідомлення",
+        "${ total } повідомлень",
+        "${ total } повідомлень"
+      ],
+      "${ unread } unread conversation": [
+        "${ unread } непрочитана розмова",
+        "${ unread } непрочитані розмови",
+        "${ unread } непрочитаних розмов",
+        "${ unread } непрочитаних розмов"
+      ],
+      "${ unread } unread message": [
+        "${ unread } непрочитане повідомлення",
+        "${ unread } непрочитані повідомлення",
+        "${ unread } непрочитаних повідомлень",
+        "${ unread } непрочитаних повідомлень"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } заплановане повідомлення",
+        "${ unreadCount } заплановані повідомлення",
+        "${ unreadCount } запланованих повідомлень",
+        "${ unreadCount } запланованих повідомлень"
+      ],
+      "${ unreadCount } unread conversation": [
+        "${ unreadCount } непрочитана розмова",
+        "${ unreadCount } непрочитані розмови",
+        "${ unreadCount } непрочитаних розмов",
+        "${ unreadCount } непрочитаних розмов"
+      ],
+      "${ unreadCount } unread message": [
+        "${ unreadCount } непрочитане повідомлення",
+        "${ unreadCount } непрочитані повідомлення",
+        "${ unreadCount } непрочитаних повідомлень",
+        "${ unreadCount } непрочитаних повідомлень"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } контакт успішно оновлений.",
+        "${ updated } контакти успішно оновлені.",
+        "${ updated } контактів успішно оновлено.",
+        "${ updated } контактів успішно оновлено."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } учасник)",
+        "(${ memberCount } учасники)",
+        "(${ memberCount } учасників)",
+        "(${ memberCount } учасників)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Фільтрувати, якщо виконуються ВСІ зазначені умови)"
@@ -4447,6 +4943,12 @@
       ],
       "(No Recipient)": [
         "(Немає отримувача)"
+      ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** результат знайдено в ${ labelName }",
+        "**${ elementsFoundCount }** результати знайдено в ${ labelName }",
+        "**${ elementsFoundCount }** результатів знайдено в ${ labelName }",
+        "**${ elementsFoundCount }** результатів знайдено в ${ labelName }"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Один номер телефону можна використати для підтвердження лише одного облікового запису ${ BRAND_NAME }"
@@ -4472,6 +4974,18 @@
       "Align right": [
         "Вирівняти праворуч"
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Усі (${ totalFoldersCount } тека)",
+        "Усі (${ totalFoldersCount } теки)",
+        "Усі (${ totalFoldersCount } тек)",
+        "Усі (${ totalFoldersCount } теки)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Усі (${ totalFoldersCount } мітка)",
+        "Усі (${ totalFoldersCount } мітки)",
+        "Усі (${ totalFoldersCount } міток)",
+        "Усі (${ totalFoldersCount } мітки)"
+      ],
       "All messages stored in this folder will be permanently deleted.": [
         "Усі повідомлення в цій теці будуть остаточно видалені."
       ],
@@ -4483,6 +4997,12 @@
       ],
       "All your changes will be lost.": [
         "Всі зміни будуть втрачені."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }.",
+        "Будуть імпортовані всі ваші контакти, але не більше ${ MAX_CONTACTS_PER_USER }."
       ],
       "An unknown public key has been detected for this recipient.": [
         "Для цього отримувача було виявлено невідомий відкритий ключ."
@@ -4513,6 +5033,24 @@
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Ви справді хочете перемістити всі повідомлення з цього розташування до смітника?"
+      ],
+      "Are you sure you want to permanently delete ${ count } conversation?": [
+        "Ви дійсно хочете остаточно видалити ${ count } розмову?",
+        "Ви дійсно хочете остаточно видалити ${ count } розмови?",
+        "Ви дійсно хочете остаточно видалити ${ count } розмов?",
+        "Ви дійсно хочете остаточно видалити ${ count } розмов?"
+      ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "Ви дійсно хочете остаточно видалити ${ count } чернетку?",
+        "Ви дійсно хочете остаточно видалити ${ count } чернетки?",
+        "Ви дійсно хочете остаточно видалити ${ count } чернеток?",
+        "Ви дійсно хочете остаточно видалити ${ count } чернеток?"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "Ви дійсно хочете остаточно видалити ${ count } повідомлення?",
+        "Ви дійсно хочете остаточно видалити ${ count } повідомлення?",
+        "Ви дійсно хочете остаточно видалити ${ count } повідомлень?",
+        "Ви дійсно хочете остаточно видалити ${ count } повідомлень?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "Ви дійсно бажаєте остаточно видалити цю розмову?"
@@ -4589,6 +5127,12 @@
       "Country code": [
         "Код країни"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Створити ${ calendarsToBeCreatedCount } новий календар",
+        "Створити ${ calendarsToBeCreatedCount } нові календарі",
+        "Створити ${ calendarsToBeCreatedCount } нових календарів",
+        "Створити ${ calendarsToBeCreatedCount } нових календарів"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Створіть мітки для імпортованих повідомлень, часовий проміжок для цього імпорту, а також теки, які ви бажаєте імпортувати."
       ],
@@ -4630,6 +5174,12 @@
       ],
       "Disable message content search": [
         "Вимкнути пошук вмісту повідомлення"
+      ],
+      "Do you want to download this attachment anyway?": [
+        "Все одно хочете завантажити це вкладення?",
+        "Все одно хочете завантажити ці вкладення?",
+        "Все одно хочете завантажити ці вкладення?",
+        "Все одно хочете завантажити ці вкладення?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
         "Ви хочете повторно підписати контактні дані та одночасно довіряти ключам з такими відбитками?"
@@ -4694,6 +5244,12 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Електронні листи, позначені цією міткою, не будуть видалені, і їх все ще можна знайти у відповідній теці."
       ],
+      "embedded image": [
+        "вбудоване зображення",
+        "вбудовані зображення",
+        "вбудованих зображень",
+        "вбудованих зображень"
+      ],
       "Encrypt message": [
         "Зашифрувати повідомлення"
       ],
@@ -4712,6 +5268,12 @@
       "Enter your own password (as organization admin).": [
         "Введіть власний пароль (як адміністратор організації)."
       ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Приблизний час до завершення: ${ estimatedMinutes } хвилина",
+        "Приблизний час до завершення: ${ estimatedMinutes } хвилини",
+        "Приблизний час до завершення: ${ estimatedMinutes } хвилин",
+        "Приблизний час до завершення: ${ estimatedMinutes } хвилин"
+      ],
       "Estimated time remaining: Less than a minute": [
         "Приблизний час до завершення: менше хвилини"
       ],
@@ -4723,6 +5285,24 @@
       ],
       "Expires in ${ formattedDate }": [
         "Термін дії завершується ${ formattedDate }"
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "Завершується через ${ minutesDiff } хвилину",
+        "Завершується через ${ minutesDiff } хвилини",
+        "Завершується через ${ minutesDiff } хвилин",
+        "Завершується через ${ minutesDiff } хвилини"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Завершується менш ніж за ${ hoursDiff } годину",
+        "Завершується менш ніж за ${ hoursDiff } години",
+        "Завершується менш ніж за ${ hoursDiff } годин",
+        "Завершується менш ніж за ${ hoursDiff } години"
+      ],
+      "file attached": [
+        "вкладений файл",
+        "вкладені файли",
+        "вкладених файлів",
+        "вкладених файлів"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Фільтри працюють для всіх листів, включаючи вхідні та надіслані. Кожен фільтр повинен містити принаймні назву, умову та дію."
@@ -4744,6 +5324,12 @@
       ],
       "From": [
         "Від"
+      ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Містить ${ numAttachments } вкладення (${ numAttachmentsSize })",
+        "Містить ${ numAttachments } вкладення (${ numAttachmentsSize })",
+        "Містить ${ numAttachments } вкладень (${ numAttachmentsSize })",
+        "Містить ${ numAttachments } вкладення (${ numAttachmentsSize })"
       ],
       "here": [
         "тут"
@@ -4777,6 +5363,12 @@
       ],
       "Images have been removed because they are not allowed in auto-reply": [
         "Зображення були вилучені, оскільки вони не дозволені в автовідповіді"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календаря",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів",
+        "Імпорт ${ calendarCount } з ${ totalCalendarsCount } календарів"
       ],
       "Import from": [
         "Імпортувати з"
@@ -5015,6 +5607,12 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Виберіть тип посилання, яке ви хочете вставити й заповніть усі поля."
       ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } групи.",
+        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } груп.",
+        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } груп.",
+        "Виберіть яку електронну адресу або адреси додати до ${ groupCount } груп."
+      ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Виберіть яку електронну адресу або адреси додати до ${ groupName }."
       ],
@@ -5204,6 +5802,12 @@
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "Не вдалося перевірити ${ contactName }: контакт має некоректний підпис.\nЦе може бути результатом скидання пароля.\nВи повинні повторно підписати контакт для можливості надсилання повідомлення до ${ contactAddress }, або редагувати контакт."
       ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "Не вдалося перевірити ${ contactNames }: контакт має некоректний підпис.\nЦе може бути результатом скидання пароля.\nВи повинні повторно підписати контакт для можливості надсилання повідомлення до ${ contactAddresses }, або редагувати контакт.",
+        "Не вдалося перевірити ${ contactNames }: контакти мають некоректний підпис.\nЦе може бути результатом скидання пароля.\nВи повинні повторно підписати контакти для можливості надсилання повідомлення до ${ contactAddresses }, або редагувати контакти.",
+        "Не вдалося перевірити ${ contactNames }: контакти мають некоректний підпис.\nЦе може бути результатом скидання пароля.\nВи повинні повторно підписати контакти для можливості надсилання повідомлення до ${ contactAddresses }, або редагувати контакти.",
+        "Не вдалося перевірити ${ contactNames }: контакти мають некоректний підпис.\nЦе може бути результатом скидання пароля.\nВи повинні повторно підписати контакти для можливості надсилання повідомлення до ${ contactAddresses }, або редагувати контакти."
+      ],
       "Themes can give your inbox a new look.": [
         "Теми можуть змінювати вигляд вашої поштової скриньки."
       ],
@@ -5233,6 +5837,12 @@
       ],
       "This conversation contains trashed messages.": [
         "Ця розмова містить видалені повідомлення."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Цю розмову буде позначено як спам. Бажаєте також відписатися від майбутніх листів?",
+        "Ці розмови будуть позначені як спам. Бажаєте також відписатися від майбутніх листів?",
+        "Ці розмови будуть позначені як спам. Бажаєте також відписатися від майбутніх листів?",
+        "Ці розмови будуть позначені як спам. Бажаєте також відписатися від майбутніх листів?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Цей лист не пройшов вимоги перевірки свого домену. Він міг бути підроблений або неправильно пересланий."
@@ -5269,6 +5879,12 @@
       ],
       "This message will be automatically deleted on ${ shortDateMessage }": [
         "Це повідомлення автоматично видалиться о ${ shortDateMessage }"
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Це повідомлення буде позначено як спам. Бажаєте також відписатися від майбутніх листів?",
+        "Ці повідомлення будуть позначені як спам. Бажаєте також відписатися від майбутніх листів?",
+        "Ці повідомлення будуть позначені як спам. Бажаєте також відписатися від майбутніх листів?",
+        "Ці повідомлення будуть позначені як спам. Бажаєте також відписатися від майбутніх листів?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Це повідомлення переміститься до чернеток, щоб ви змогли його редагувати. Після його надсилання вам необхідно повторно запланувати."
@@ -5522,6 +6138,30 @@
       "You have ${ unreadsLabel } in your inbox.": [
         "У вашій поштовій скриньці ${ unreadsLabel }."
       ],
+      "You have **${ count } conversation** stored in this folder": [
+        "У цій теці розміщена **${ count } розмова**",
+        "У цій теці розміщені **${ count } розмови**",
+        "У цій теці розміщено **${ count } розмов**",
+        "У цій теці розміщені **${ count } розмови**"
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "**${ count } розмова** позначена цією міткою",
+        "**${ count } розмови** позначені цією міткою",
+        "**${ count } розмов** позначені цією міткою",
+        "**${ count } розмов** позначені цією міткою"
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "У цій теці розміщено **${ count } повідомлення**",
+        "У цій теці розміщено **${ count } повідомлення**",
+        "У цій теці розміщено **${ count } повідомлень**",
+        "У цій теці розміщено **${ count } повідомлення**"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "**${ count } повідомлення** позначене цією міткою",
+        "**${ count } повідомлення** позначені цією міткою",
+        "**${ count } повідомлень** позначені цією міткою",
+        "**${ count } повідомлень** позначені цією міткою"
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Ви не вказали тему для свого листа. Хочете все одно надіслати лист без теми?"
       ],
@@ -5536,6 +6176,30 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Ви досягли 100% свого обсягу сховища. Ви не можете надсилати чи отримувати нові повідомлення. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You selected **${ count } conversation** from this folder": [
+        "Ви вибрали **${ count } розмову** з цієї теки",
+        "Ви вибрали **${ count } розмови** з цієї теки",
+        "Ви вибрали **${ count } розмов** з цієї теки",
+        "Ви вибрали **${ count } розмов** з цієї теки"
+      ],
+      "You selected **${ count } conversation** with this label": [
+        "Ви вибрали **${ count } розмову** з цією міткою",
+        "Ви вибрали **${ count } розмови** з цією міткою",
+        "Ви вибрали **${ count } розмов** з цією міткою",
+        "Ви вибрали **${ count } розмов** з цією міткою"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Ви вибрали **${ count } повідомлення** з цієї теки",
+        "Ви вибрали **${ count } повідомлення** з цієї теки",
+        "Ви вибрали **${ count } повідомлень** з цієї теки",
+        "Ви вибрали **${ count } повідомлень** з цієї теки"
+      ],
+      "You selected **${ count } message** with this label": [
+        "Ви вибрали **${ count } повідомлення** з цією міткою",
+        "Ви вибрали **${ count } повідомлення** з цією міткою",
+        "Ви вибрали **${ count } повідомлень** з цією міткою",
+        "Ви вибрали **${ count } повідомлень** з цією міткою"
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Ви вказали “${ attachmentsFoundKeyword }”, але вкладення не було додано. Ви все одно хочете надіслати повідомлення?"
@@ -5576,6 +6240,12 @@
       "Your login information will not be saved after the import is completed.": [
         "Ваша реєстраційна інформація не буде збережена після завершення імпорту."
       ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Термін дії повідомлення завершиться через ${ numberOfDays } день.",
+        "Термін дії повідомлення завершиться через ${ numberOfDays } дні.",
+        "Термін дії повідомлення завершиться через ${ numberOfDays } днів.",
+        "Термін дії повідомлення завершиться через ${ numberOfDays } дні."
+      ],
       "Your message will expire today.": [
         "Термін дії повідомлення завершиться сьогодні."
       ],
@@ -5587,6 +6257,12 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "Знайдено ${ filteredList.length } команду.",
+        "Знайдено ${ filteredList.length } команди.",
+        "Знайдено ${ filteredList.length } команд.",
+        "Знайдено ${ filteredList.length } команд."
+      ],
       "Optional": [
         "Необов'язково"
       ]
@@ -5622,6 +6298,18 @@
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "Якщо натиснути \"Довіряти ключу\", створиться новий контакт і цей відкритий ключ буде пов'язано з цим відправником. Листи з цієї адреси будуть автоматично криптографічно перевіреними."
+      ],
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Ви хочете довіряти основному відкритому ключу з таким цифровим відбитком?",
+        "Ви хочете довіряти основним відкритим ключам з такими цифровими відбитками?",
+        "Ви хочете довіряти основним відкритим ключам з такими цифровими відбитками?",
+        "Ви хочете довіряти основним відкритим ключам з такими цифровими відбитками?"
+      ],
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "Ви увімкнули перевірку адрес з довіреними ключами для цієї адреси,\nале немає жодного активного довіреного ключа шифрування.\nЩоб надіслати повідомлення на цю адресу, ви маєте довіряти ключу, дійсному для надсилання.",
+        "Ви увімкнули перевірку адрес з довіреними ключами для цієї адреси,\nале немає жодного активного довіреного ключа шифрування.\nЩоб надіслати повідомлення на цю адресу, ви маєте довіряти ключу, дійсному для надсилання.",
+        "Ви увімкнули перевірку адрес з довіреними ключами для цієї адреси,\nале немає жодного активного довіреного ключа шифрування.\nЩоб надіслати повідомлення на цю адресу, ви маєте довіряти ключу, дійсному для надсилання.",
+        "Ви увімкнули перевірку адрес з довіреними ключами для цієї адреси,\nале немає жодного активного довіреного ключа шифрування.\nЩоб надіслати повідомлення на цю адресу, ви маєте довіряти ключу, дійсному для надсилання."
       ]
     },
     "Key validation warning": {
@@ -6544,6 +7232,12 @@
       "Almost there": [
         "Майже готово"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Кількість створених календарів: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Підключення до вашого постачальника електронної пошти"
       ],
@@ -6558,6 +7252,32 @@
       ],
       "Your import is starting": [
         "Імпортування розпочинається"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } теки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } тек і позначити їх як"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } міткою та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як",
+        "Імпортувати всі повідомлення з ${ itemsToImportCount } мітками та позначити їх як"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } теки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } тек і позначити їх як"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } мітки та позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як",
+        "Імпортувати всі повідомлення з ${ selectedItemsToImportCount } з ${ itemsToImportCount } міток і позначити їх як"
       ]
     },
     "Mailbox": {
@@ -6653,6 +7373,24 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Щомісяця ${ onDayString }",
+        "Кожні ${ interval } місяці ${ onDayString }",
+        "Кожні ${ interval } місяців ${ onDayString }",
+        "Кожні ${ interval } місяців ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Щомісяця ${ onDayString }, ${ timesString }",
+        "Кожні ${ interval } місяці ${ onDayString }, ${ timesString }",
+        "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }",
+        "Кожні ${ interval } місяців ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Щомісяця ${ onDayString }, ${ untilString }",
+        "Кожні ${ interval } місяці ${ onDayString }, ${ untilString }",
+        "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }",
+        "Кожні ${ interval } місяців ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }": [
         "Щомісяця ${ onDayString }"
       ],
@@ -7110,6 +7848,24 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } з ${ countContacts } контакт успішно експортовано.",
+        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано.",
+        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано.",
+        "${ contactsExported.length } з ${ countContacts } контактів успішно експортовано."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } контакт з ${ totalBeDeleted } успішно видалено.",
+        "${ model.deleted.length } контакти з ${ totalBeDeleted } успішно видалено.",
+        "${ model.deleted.length } контактів з ${ totalBeDeleted } успішно видалено.",
+        "${ model.deleted.length } контактів з ${ totalBeDeleted } успішно видалено."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } контакт з ${ totalBeMerged } успішно об'єднано.",
+        "${ model.submitted.length } контакти з ${ totalBeMerged } успішно об'єднано.",
+        "${ model.submitted.length } контактів з ${ totalBeMerged } успішно об'єднано.",
+        "${ model.submitted.length } контактів з ${ totalBeMerged } успішно об'єднано."
+      ],
       "No contacts exported.": [
         "Контакти не експортовано."
       ],
@@ -7196,6 +7952,12 @@
       ]
     },
     "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } д",
+        "${ remainingDays } д",
+        "${ remainingDays } д",
+        "${ remainingDays } д"
+      ],
       "<1 d": [
         "<1 д"
       ]
@@ -7248,6 +8010,12 @@
       "Do you want to send the email anyway?": [
         "Все одно хочете надіслати лист?"
       ],
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "Ми виявили помилки. Ваш лист неможливо надіслати на введену адресу з такої причини:",
+        "Ми виявили помилки. Ваш лист неможливо надіслати на будь-яку з введених адрес з таких причин:",
+        "Ми виявили помилки. Ваш лист неможливо надіслати на будь-яку з введених адрес з таких причин:",
+        "Ми виявили помилки. Ваш лист неможливо надіслати на будь-яку з введених адрес з таких причин:"
+      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Ми виявили помилки. Ваш лист неможливо надіслати на одну чи декілька введених адрес з таких причин:"
       ]
@@ -7255,6 +8023,24 @@
     "Send email with warnings": {
       "Do you want to send the email anyway?": [
         "Все одно хочете надіслати лист?"
+      ],
+      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
+        "Якщо ви все одно вирішите надіслати повідомлення, вказаний адресат отримає його без терміну дії:",
+        "Якщо ви все одно вирішите надіслати повідомлення, вказані адресати отримають його без терміну дії:",
+        "Якщо ви все одно вирішите надіслати повідомлення, вказані адресати отримають його без терміну дії:",
+        "Якщо ви все одно вирішите надіслати повідомлення, вказані адресати отримають його без терміну дії:"
+      ],
+      "The following address is not valid: ${ invalidAddresses }": [
+        "Вказана адреса недійсна: ${ invalidAddresses }",
+        "Вказані адреси недійсні: ${ invalidAddresses }",
+        "Вказані адреси недійсні: ${ invalidAddresses }",
+        "Вказані адреси недійсні: ${ invalidAddresses }"
+      ],
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "Ми виявили застереження. Вказана електронна адреса може не отримувати листи:",
+        "Ми виявили застереження. Вказані електронні адреси можуть не отримувати листи:",
+        "Ми виявили застереження. Вказані електронні адреси можуть не отримувати листи:",
+        "Ми виявили застереження. Вказані електронні адреси можуть не отримувати листи:"
       ]
     },
     "Sender verification details": {
@@ -7293,8 +8079,20 @@
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Надіслано ${ MAIL_APP_NAME } з цілковитим шифруванням"
       ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Надіслано ${ MAIL_APP_NAME } з цілковитим шифруванням перевіреному отримувачу",
+        "Надіслано ${ MAIL_APP_NAME } з цілковитим шифруванням перевіреним отримувачам",
+        "Надіслано ${ MAIL_APP_NAME } з цілковитим шифруванням перевіреним отримувачам",
+        "Надіслано ${ MAIL_APP_NAME } з цілковитим шифруванням перевіреним отримувачам"
+      ],
       "Sent by you with end-to-end encryption": [
         "Надіслано вами з наскрізним шифруванням"
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "Надіслано вами з наскрізним шифруванням перевіреному отримувачу",
+        "Надіслано вами з наскрізним шифруванням перевіреним отримувачам",
+        "Надіслано вами з наскрізним шифруванням перевіреним отримувачам",
+        "Надіслано вами з наскрізним шифруванням перевіреним отримувачам"
       ],
       "Stored with zero-access encryption": [
         "Збережено з повним шифруванням"
@@ -7390,6 +8188,40 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Перейти на Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } день",
+        "${ days } дні",
+        "${ days } днів",
+        "${ days } днів"
+      ],
+      "${ hours } hour": [
+        "${ hours } година",
+        "${ hours } години",
+        "${ hours } годин",
+        "${ hours } годин"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвилина",
+        "${ minutes } хвилини",
+        "${ minutes } хвилин",
+        "${ minutes } хвилин"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунди",
+        "${ seconds } секунд",
+        "${ seconds } секунд"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } місяць БЕЗПЛАТНО",
+        "${ n } місяці БЕЗПЛАТНО",
+        "${ n } місяців БЕЗПЛАТНО",
+        "${ n } місяців БЕЗПЛАТНО"
       ]
     },
     "specialoffer: Deal details": {
@@ -7596,6 +8428,126 @@
       ]
     },
     "Success": {
+      "${ count } conversation deleted": [
+        "${ count } розмову видалено",
+        "${ count } розмови видалено",
+        "${ count } розмов видалено",
+        "${ count } розмов видалено"
+      ],
+      "${ count } draft deleted": [
+        "${ count } чернетку видалено",
+        "${ count } чернетки видалено",
+        "${ count } чернеток видалено",
+        "${ count } чернеток видалено"
+      ],
+      "${ count } message deleted": [
+        "${ count } повідомлення видалено",
+        "${ count } повідомлення видалено",
+        "${ count } повідомлень видалено",
+        "${ count } повідомлень видалено"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } контакти має ідентичний вигляд.",
+        "${ countMergeableContacts } контакти мають ідентичний вигляд.",
+        "${ countMergeableContacts } контактів мають ідентичний вигляд.",
+        "${ countMergeableContacts } контакти мають ідентичний вигляд."
+      ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount } розмову додано до ${ labelName }.",
+        "${ elementsCount } розмови додано до ${ labelName }.",
+        "${ elementsCount } розмов додано до ${ labelName }.",
+        "${ elementsCount } розмов додано до ${ labelName }."
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } розмову позначено прочитаною.",
+        "${ elementsCount } розмови позначено прочитаними.",
+        "${ elementsCount } розмов позначено прочитаними.",
+        "${ elementsCount } розмови позначено прочитаними."
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } розмову позначено зірочкою.",
+        "${ elementsCount } розмови позначено зірочкою.",
+        "${ elementsCount } розмов позначено зірочкою.",
+        "${ elementsCount } розмов позначено зірочкою."
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } розмову позначено непрочитаною.",
+        "${ elementsCount } розмови позначено непрочитаними.",
+        "${ elementsCount } розмов позначено непрочитаними.",
+        "${ elementsCount } розмови позначено непрочитаною."
+      ],
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } розмову переміщено до теки ${ folderName }, а відправника додано до списку не спаму.",
+        "${ elementsCount } розмови переміщено до теки ${ folderName }, а відправників додано до списку не спаму.",
+        "${ elementsCount } розмов переміщено до теки ${ folderName }, а відправників додано до списку не спаму.",
+        "${ elementsCount } розмов переміщено до теки ${ folderName }, а відправників додано до списку не спаму."
+      ],
+      "${ elementsCount } conversation moved to ${ folderName }.": [
+        "${ elementsCount } розмову переміщено до теки ${ folderName }.",
+        "${ elementsCount } розмови переміщено до теки ${ folderName }.",
+        "${ elementsCount } розмов переміщено до теки ${ folderName }.",
+        "${ elementsCount } розмов переміщено до теки ${ folderName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } розмову переміщено до спаму, а відправника додано до вашого списку спаму.",
+        "${ elementsCount } розмови переміщено до спаму, а відправників додано до вашого списку спаму.",
+        "${ elementsCount } розмов переміщено до спаму, а відправників додано вашого списку спаму.",
+        "${ elementsCount } розмов переміщено до спаму, а відправників додано вашого списку спаму."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ elementsCount } розмову вилучено з ${ labelName }.",
+        "${ elementsCount } розмови вилучено з ${ labelName }.",
+        "${ elementsCount } розмов вилучено з ${ labelName }.",
+        "${ elementsCount } розмов вилучено з ${ labelName }."
+      ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } повідомлення додано до ${ labelName }.",
+        "${ elementsCount } повідомлення додано до ${ labelName }.",
+        "${ elementsCount } повідомлень додано до ${ labelName }.",
+        "${ elementsCount } повідомлень додано до ${ labelName }."
+      ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } повідомлення позначено прочитаним.",
+        "${ elementsCount } повідомлення позначено прочитаними.",
+        "${ elementsCount } повідомлень позначено прочитаними.",
+        "${ elementsCount } повідомлень позначено прочитаними."
+      ],
+      "${ elementsCount } message marked as Starred.": [
+        "${ elementsCount } повідомлення позначено зірочкою.",
+        "${ elementsCount } повідомлення позначено зірочкою.",
+        "${ elementsCount } повідомлень позначено зірочкою.",
+        "${ elementsCount } повідомлень позначено зірочкою."
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } повідомлення позначено непрочитаним.",
+        "${ elementsCount } повідомлення позначено непрочитаними.",
+        "${ elementsCount } повідомлень позначено непрочитаними.",
+        "${ elementsCount } повідомлення позначено непрочитаними."
+      ],
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } повідомлення переміщено до теки ${ folderName }, а відправника додано до списку не спаму.",
+        "${ elementsCount } повідомлення переміщено до теки ${ folderName }, а відправників додано до списку не спаму.",
+        "${ elementsCount } повідомлень переміщено до теки ${ folderName }, а відправників додано до списку не спаму.",
+        "${ elementsCount } повідомлень переміщено до теки ${ folderName }, а відправників додано до списку не спаму."
+      ],
+      "${ elementsCount } message moved to ${ folderName }.": [
+        "${ elementsCount } повідомлення переміщено до теки ${ folderName }.",
+        "${ elementsCount } повідомлення переміщено до теки ${ folderName }.",
+        "${ elementsCount } повідомлень переміщено до теки ${ folderName }.",
+        "${ elementsCount } повідомлень переміщено до теки ${ folderName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } повідомлення переміщено до спаму, а відправника додано до вашого списку спаму.",
+        "${ elementsCount } повідомлення переміщено до спаму, а відправника додано до вашого списку спаму.",
+        "${ elementsCount } повідомлень додано до спаму, а відправників додано вашого списку спаму.",
+        "${ elementsCount } повідомлення переміщено до спаму, а відправника додано до вашого списку спаму."
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "${ elementsCount } повідомлення вилучено з ${ labelName }.",
+        "${ elementsCount } повідомлення вилучено з ${ labelName }.",
+        "${ elementsCount } повідомлень вилучено з ${ labelName }.",
+        "${ elementsCount } повідомлень вилучено з ${ labelName }."
+      ],
       "Address copied to clipboard": [
         "Адресу скопійовано до буфера обміну"
       ],
@@ -7610,6 +8562,18 @@
       ],
       "Code sent to ${ methodTo }": [
         "Код надісланий на ${ methodTo }"
+      ],
+      "Contact deleted": [
+        "Контакт видалено",
+        "Контакти видалено",
+        "Контакти видалено",
+        "Контакти видалено"
+      ],
+      "Contact group deleted": [
+        "Групу контактів видалено",
+        "Групи контактів видалено",
+        "Групи контактів видалено",
+        "Групи контактів видалено"
       ],
       "Contact saved": [
         "Контакт збережено"
@@ -7712,6 +8676,18 @@
       ],
       "Messages from ${ sendersList } will be moved to ${ folder }": [
         "Повідомлення від ${ sendersList } переміщено до теки ${ folder }"
+      ],
+      "Move ${ selectionCount } conversation": [
+        "Перемістити ${ selectionCount } розмову",
+        "Перемістити ${ selectionCount } розмови",
+        "Перемістити ${ selectionCount } розмов",
+        "Перемістити ${ selectionCount } розмов"
+      ],
+      "Move ${ selectionCount } message": [
+        "Перемістити ${ selectionCount } повідомлення",
+        "Перемістити ${ selectionCount } повідомлення",
+        "Перемістити ${ selectionCount } повідомлень",
+        "Перемістити ${ selectionCount } повідомлень"
       ],
       "Password copied to clipboard": [
         "Пароль скопійовано до буфера обміну"
@@ -7834,9 +8810,61 @@
         "Вчора"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год",
+        "${ hours } год"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год",
+        "${ hoursInt }.5 год"
+      ],
+      "${ minutes } min": [
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } година",
+        "${ hours } години",
+        "${ hours } годин",
+        "${ hours } години"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 години",
+        "${ hoursInt }.5 годин",
+        "${ hoursInt }.5 години"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвилина",
+        "${ minutes } хвилини",
+        "${ minutes } хвилин",
+        "${ minutes } хвилин"
+      ]
+    },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount } адреса е-пошти",
+        "${ emailsCount } адреси е-пошти",
+        "${ emailsCount } адрес е-пошти",
+        "${ emailsCount } адрес е-пошти"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "Комбінації клавіш ${ MAIL_APP_NAME }"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } непрочитане повідомлення",
+        "${ unreads } непрочитані повідомлення",
+        "${ unreads } непрочитаних повідомлень",
+        "${ unreads } непрочитані повідомлення"
       ],
       "(active)": [
         "(активно)"
@@ -7849,6 +8877,12 @@
       ],
       "Add filter": [
         "Додати фільтр"
+      ],
+      "Add to ${ groupCount } group": [
+        "Додати до ${ groupCount } групи",
+        "Додати до ${ groupCount } груп",
+        "Додати до ${ groupCount } груп",
+        "Додати до ${ groupCount } груп"
       ],
       "Add to ${ groupName }": [
         "Додати до ${ groupName }"
@@ -7958,6 +8992,36 @@
       "Decryption error": [
         "Помилка розшифрування"
       ],
+      "Delete ${ count } contact": [
+        "Видалити ${ count } контакт",
+        "Видалити ${ count } контакти",
+        "Видалити ${ count } контактів",
+        "Видалити ${ count } контактів"
+      ],
+      "Delete ${ count } contact group": [
+        "Видалити ${ count } групу контактів",
+        "Видалити ${ count } групи контактів",
+        "Видалити ${ count } груп контактів",
+        "Видалити ${ count } груп контактів"
+      ],
+      "Delete ${ count } conversation": [
+        "Видалити ${ count } розмову",
+        "Видалити ${ count } розмови",
+        "Видалити ${ count } розмов",
+        "Видалити ${ count } розмов"
+      ],
+      "Delete ${ count } draft": [
+        "Видалити ${ count } чернетку",
+        "Видалити ${ count } чернетки",
+        "Видалити ${ count } чернеток",
+        "Видалити ${ count } чернеток"
+      ],
+      "Delete ${ count } message": [
+        "Видалити ${ count } повідомлення",
+        "Видалити ${ count } повідомлення",
+        "Видалити ${ count } повідомлень",
+        "Видалити ${ count } повідомлень"
+      ],
       "Delete ${ label.Name } folder": [
         "Видалити теку ${ label.Name }"
       ],
@@ -8050,6 +9114,12 @@
       ],
       "Image": [
         "Зображення"
+      ],
+      "Import as simple event?": [
+        "Імпортувати як просту подію?",
+        "Імпортувати як прості події?",
+        "Імпортувати як прості події?",
+        "Імпортувати як прості події?"
       ],
       "Import contacts": [
         "Імпортувати контакти"
@@ -8309,6 +9379,12 @@
       "Trash": [
         "Смітник"
       ],
+      "Trust new key?": [
+        "Довіряти новому ключу?",
+        "Довіряти новим ключам?",
+        "Довіряти новим ключам?",
+        "Довіряти новим ключам?"
+      ],
       "Trust pinned keys?": [
         "Довіряти прикріпленим ключам?"
       ],
@@ -8332,6 +9408,12 @@
       ],
       "Warning: suspected fake website": [
         "Попередження: імовірно підроблений вебсайт"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Ми захистили вас від ${ trackersCount } вистежувача",
+        "Ми захистили вас від ${ trackersCount } вистежувачів",
+        "Ми захистили вас від ${ trackersCount } вистежувачів",
+        "Ми захистили вас від ${ trackersCount } вистежувачів"
       ],
       "Welcome": [
         "Вітаємо"
@@ -8450,6 +9532,20 @@
         "Ваш типовий шрифт виглядатиме так:"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль повинен містити принаймні ${ length } символ",
+        "Пароль повинен містити принаймні ${ length } символи",
+        "Пароль повинен містити принаймні ${ length } символів",
+        "Пароль повинен містити принаймні ${ length } символів"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Спробуйте коротше ім'я користувача (до ${ n } символу)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)",
+        "Спробуйте коротше ім'я користувача (до ${ n } символів)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Натисніть для повторного відтворення відео"
@@ -8464,6 +9560,12 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перенесе стільки даних, скільки можливо, починаючи з найновіших повідомлень."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Ви дійсно хочете остаточно видалити ${ count } контакт?",
+        "Ви дійсно хочете остаточно видалити ${ count } контакти?",
+        "Ви дійсно хочете остаточно видалити ${ count } контактів?",
+        "Ви дійсно хочете остаточно видалити ${ count } контактів?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Ви дійсно бажаєте остаточно видалити ці групи контактів?"
@@ -8488,6 +9590,12 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Деякі об'єднувані контакти мають помилки. Будь ласка, перегляньте їх окремо"
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Не вдалося перевірити підпис вкладення.\nВи все одно можете завантажити це вкладення, але воно може бути підробленим.",
+        "Не вдалося перевірити підписи вкладень.\nВи все одно можете завантажити ці вкладення, але вони можуть бути підробленими.",
+        "Не вдалося перевірити підписи вкладень.\nВи все одно можете завантажити ці вкладення, але вони можуть бути підробленими.",
+        "Не вдалося перевірити підписи вкладень.\nВи все одно можете завантажити ці вкладення, але вони можуть бути підробленими."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Дані контакту пошкоджені, тому їх неможливо показати."
@@ -8524,6 +9632,168 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Щотижня у ${ multipleDaysString }",
+        "Кожні ${ interval } тижні у ${ multipleDaysString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }",
+        "Кожні ${ interval } тижня ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Щотижня у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ timesString }",
+        "Кожні ${ interval } тижня у ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Щотижня у ${ multipleDaysString }, ${ untilString }",
+        "Кожні ${ interval } тижні у ${ multipleDaysString }, ${ untilString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }",
+        "Кожні ${ interval } тижнів у ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Щотижня в усі дні",
+        "Кожні ${ interval } тижні в усі дні",
+        "Кожні ${ interval } тижнів у всі дні",
+        "Кожні ${ interval } тижнів у всі дні"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Щотижня кожен день, ${ timesString }",
+        "Кожні ${ interval } тижні щодня, ${ timesString }",
+        "Кожні ${ interval } тижнів щодня, ${ timesString }",
+        "Кожні ${ interval } тижнів щодня, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Щотижня кожен день, ${ untilString }",
+        "Кожні ${ interval } тижні щодня, ${ untilString }",
+        "Кожні ${ interval } тижнів щодня, ${ untilString }",
+        "Кожні ${ interval } тижнів щодня, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Щотижня у п'ятницю",
+        "Кожні ${ interval } тижні у п'ятницю",
+        "Кожні ${ interval } тижнів у п'ятницю",
+        "Кожні ${ interval } тижнів у п'ятницю"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Щотижня у п'ятницю, ${ timesString }",
+        "Кожні ${ interval } тижні у п'ятницю, ${ timesString }",
+        "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }",
+        "Кожні ${ interval } тижнів у п'ятницю, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Щотижня у п'ятницю, ${ untilString }",
+        "Кожні ${ interval } тижні у п'ятницю, ${ untilString }",
+        "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }",
+        "Кожні ${ interval } тижнів у п'ятницю, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Щотижня в понеділок",
+        "Кожні ${ interval } тижні у понеділок",
+        "Кожні ${ interval } тижнів у понеділок",
+        "Кожні ${ interval } тижнів у понеділок"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Щотижня у понеділок, ${ timesString }",
+        "Кожні ${ interval } тижні у понеділок, ${ timesString }",
+        "Кожні ${ interval } тижнів у понеділок, ${ timesString }",
+        "Кожні ${ interval } тижнів у понеділок, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Щотижня у понеділок, ${ untilString }",
+        "Кожні ${ interval } тижні у понеділок, ${ untilString }",
+        "Кожні ${ interval } тижнів у понеділок, ${ untilString }",
+        "Кожні ${ interval } тижнів у понеділок, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Щотижня у суботу",
+        "Кожні ${ interval } тижні у суботу",
+        "Кожні ${ interval } тижнів у суботу",
+        "Кожні ${ interval } тижнів у суботу"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Щотижня у суботу, ${ timesString }",
+        "Кожні ${ interval } тижні у суботу, ${ timesString }",
+        "Кожні ${ interval } тижнів у суботу, ${ timesString }",
+        "Кожні ${ interval } тижнів у суботу, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Щотижня у суботу, ${ untilString }",
+        "Кожні ${ interval } тижні у суботу, ${ untilString }",
+        "Кожні ${ interval } тижнів у суботу, ${ untilString }",
+        "Кожні ${ interval } тижнів у суботу, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Щотижня в неділю",
+        "Кожні ${ interval } тижні у неділю",
+        "Кожні ${ interval } тижнів у неділю",
+        "Кожні ${ interval } тижнів у неділю"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Щотижня у неділю, ${ timesString }",
+        "Кожні ${ interval } тижні у неділю, ${ timesString }",
+        "Кожні ${ interval } тижнів у неділю, ${ timesString }",
+        "Кожні ${ interval } тижнів у неділю, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Щотижня у неділю, ${ untilString }",
+        "Кожні ${ interval } тижні у неділю, ${ untilString }",
+        "Кожні ${ interval } тижнів у неділю, ${ untilString }",
+        "Кожні ${ interval } тижнів у неділю, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Щотижня у четвер",
+        "Кожні ${ interval } тижні у четвер",
+        "Кожні ${ interval } тижнів у четвер",
+        "Кожні ${ interval } тижнів у четвер"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Щотижня у четвер, ${ timesString }",
+        "Кожні ${ interval } тижні у четвер, ${ timesString }",
+        "Кожні ${ interval } тижнів у четвер, ${ timesString }",
+        "Кожні ${ interval } тижнів у четвер, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Щотижня у четвер, ${ untilString }",
+        "Кожні ${ interval } тижні у четвер, ${ untilString }",
+        "Кожні ${ interval } тижнів у четвер, ${ untilString }",
+        "Кожні ${ interval } тижнів у четвер, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Щотижня у вівторок",
+        "Кожні ${ interval } тижні у вівторок",
+        "Кожні ${ interval } тижнів у вівторок",
+        "Кожні ${ interval } тижнів у вівторок"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Щотижня у вівторок, ${ timesString }",
+        "Кожні ${ interval } тижні у вівторок, ${ timesString }",
+        "Кожні ${ interval } тижнів у вівторок, ${ timesString }",
+        "Кожні ${ interval } тижнів у вівторок, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Щотижня у вівторок, ${ untilString }",
+        "Кожні ${ interval } тижні у вівторок, ${ untilString }",
+        "Кожні ${ interval } тижнів у вівторок, ${ untilString }",
+        "Кожні ${ interval } тижнів у вівторок, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Щотижня у середу",
+        "Кожні ${ interval } тижні у середу",
+        "Кожні ${ interval } тижнів у середу",
+        "Кожні ${ interval } тижнів у середу"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Щотижня у середу, ${ timesString }",
+        "Кожні ${ interval } тижні у середу, ${ timesString }",
+        "Кожні ${ interval } тижнів у середу, ${ timesString }",
+        "Кожні ${ interval } тижнів у середу, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Щотижня у середу, ${ untilString }",
+        "Кожні ${ interval } тижні у середу, ${ untilString }",
+        "Кожні ${ interval } тижнів у середу, ${ untilString }",
+        "Кожні ${ interval } тижнів у середу, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Щотижня ${ multipleDaysString }"
       ],
@@ -8630,6 +9900,24 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Щороку",
+        "Кожні ${ interval } роки",
+        "Кожні ${ interval } років",
+        "Кожні ${ interval } років"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Щороку, ${ timesString }",
+        "Кожні ${ interval } роки, ${ timesString }",
+        "Кожні ${ interval } років, ${ timesString }",
+        "Кожні ${ interval } років, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Кожен ${ interval } рік, ${ untilString }",
+        "Кожні ${ interval } роки, ${ untilString }",
+        "Кожні ${ interval } років, ${ untilString }",
+        "Кожні ${ interval } років, ${ untilString }"
+      ],
       "Yearly": [
         "Щороку"
       ],

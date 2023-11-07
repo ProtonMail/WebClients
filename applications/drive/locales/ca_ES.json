@@ -55,6 +55,10 @@
       "Apply": [
         "Aplica"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Es permet un màxim d'${ maxContacts } contacte per grup de contactes.",
+        "Es permet un màxim de ${ maxContacts } contactes per grup de contactes."
+      ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
       ],
@@ -111,6 +115,9 @@
       ],
       "Clear query": [
         "Netejar la consulta"
+      ],
+      "Clear selection": [
+        "Esborra la selecció"
       ],
       "Click here.": [
         "Feu clic aquí."
@@ -189,6 +196,14 @@
       ],
       "Delete": [
         "Elimina"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Eliminar ${ selectedCount } contacte",
+        "Eliminar ${ selectedCount } contactes"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Eliminar ${ selectedCount } grup de contactes",
+        "Eliminar ${ selectedCount } grups de contactes"
       ],
       "Delete contact": [
         "Elimina el contacte"
@@ -691,6 +706,9 @@
       "Upload folder": [
         "Puja una carpeta"
       ],
+      "Upload photos": [
+        "Carrega fotos"
+      ],
       "Upload picture": [
         "Carrega la imatge"
       ],
@@ -718,6 +736,10 @@
       "View invoice": [
         "Mostra la factura"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
+        "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes."
+      ],
       "Your 500 MB bonus": [
         "La vostra bonificació de 500 MB"
       ],
@@ -743,6 +765,20 @@
       ],
       "You don't have any groups.": [
         "No teniu cap grup."
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domini personalitzat",
+        "${ domains } dominis personalitzats"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidors"
+      ],
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
       ]
     },
     "Alert": {
@@ -776,6 +812,17 @@
       ],
       "Unsupported event": [
         "Esdeveniment no suportat"
+      ]
+    },
+    "bf2023: Deal details": {
+      "1 user": [
+        "1 usuari"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 usuaris"
       ]
     },
     "Bug category": {
@@ -855,6 +902,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
       ]
     },
     "Collapsible tooltip": {
@@ -1956,6 +2009,14 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "La cerca de continguts no es pot activar en aquest navegador. Tanqueu el mode de navegació privada o utilitzeu un altre navegador."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
+        "Desmarqueu almenys ${ calendarsToFixCount } calendaris."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Desmarqueu almenys ${ calendarsToFixCount } calendari o",
+        "Desmarqueu almenys ${ calendarsToFixCount } calendaris o"
+      ],
       "Device name does not match": [
         "El nom del dispositiu no coincideix"
       ],
@@ -2031,6 +2092,10 @@
       "Last name is too long": [
         "El cognom és massa llarg."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Combineu almenys ${ calendarsToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent.",
+        "Combineu almenys ${ calendarsToFixCount } calendaris amb calendaris de ${ BRAND_NAME } existents"
+      ],
       "Missing key packet": [
         "Falta el paquet de claus"
       ],
@@ -2052,6 +2117,14 @@
       "Not a valid number": [
         "Número no vàlid"
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Un dels contactes no té adreça de correu electrònic: ${ noEmailsContactNamesList }",
+        "Alguns contactes no tenen adreça de correu electrònic: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Un dels grups no té contactes: ${ noContactGroupList }",
+        "Alguns grups no tenen contactes: ${ noContactGroupList } "
+      ],
       "Password is required": [
         "La contrasenya és obligatòria"
       ],
@@ -2060,6 +2133,10 @@
       ],
       "Please activate your search again": [
         "Activeu de nou la vostra cerca."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Arregleu el conflicte ressaltat per continuar.",
+        "Arregleu els conflictes ressaltats per continuar."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Proporcioneu un nom , un cognom o un nom a mostrar."
@@ -2090,6 +2167,9 @@
       ],
       "Some contacts could not be deleted": [
         "Alguns contactes no poden ser esborrats"
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "S'han ignorat alguns fitxers perquè no s'admeten a Fotos."
       ],
       "Some groups could not be deleted": [
         "Alguns grups no poden ser esborrats"
@@ -2184,6 +2264,10 @@
       "Username must end with a letter or digit": [
         "El nom d'usuari ha d'acabar amb una lletra o un dígit."
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
+        "No podeu enviar un correu a més de ${ maxContacts } destinataris."
+      ],
       "You have reached the contacts limit for your account": [
         "Heu arribat al límit de contactes per al vostre compte."
       ],
@@ -2215,6 +2299,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "S'ha produït un error inesperat. S'ha de reiniciar la importació."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniment.",
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniments."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "El fitxer ${ formattedFilename } conté un mètode invàlid i no es pot importar."
@@ -2606,6 +2694,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -2617,6 +2709,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "gigabyte",
+        "gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "megabyte",
+        "megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Filter notification": {
@@ -2672,6 +2786,10 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "S'ha trobat ${ items.length } suggerència, utilitza el teclat per navegar.",
+        "S'han trobat ${ items.length } suggeriments, utilitzant el teclat per navegar."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilitzeu les tecles de fletxa amunt i fletxa avall per accedir i navegar pels suggeriments després de l'entrada. Premeu Retorn per confirmar la vostra elecció, o Esc per tancar el quadre de suggeriments."
       ]
@@ -2688,6 +2806,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } esdeveniment xifrat i afegit al teu calendari",
+        "${ totalImported }/${ totalToImport } esdeveniments xifrats i afegits al teu calendari"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniment importat amb èxit.",
+        "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniments importats amb èxit."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "S'ha produït un error en xifrar i afegir el vostre esdeveniment. No s'ha pogut importar cap esdeveniment."
       ],
@@ -2722,11 +2848,23 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Les invitacions importades apareixen en ${ CALENDAR_APP_NAME } com a esdeveniments simples sense detalls de l'organitzador ni dels participants. Per obtenir actualitzacions de l'esdeveniment i veure els participants, demaneu als organitzadors que us convidin utilitzant la vostra adreça de correu electrònic de ${ BRAND_NAME }."
       ],
+      "This file contains an event invitation:": [
+        "Aquest fitxer conté una invitació a un esdeveniment:",
+        "Aquest fitxer conté invitacions a un esdeveniment:"
+      ],
+      "This file contains an invitation response:": [
+        "Aquest fitxer conté una resposta a la invitació:",
+        "Aquest fitxer conté respostes a la invitació:"
+      ],
       "This file contains some data that we cannot import:": [
         "Aquest fitxer conté algunes dades que no podem importar:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } contacte xifrat i afegit a la vostra llista de contactes",
+        "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "S'ha produït un error en xifrar i afegir el vostre contacte. No s'ha pogut importar cap contacte."
       ],
@@ -2746,6 +2884,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Contacte ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } contacte",
+        "${ totalContacts } contactes"
       ]
     },
     "Import contact. Contact identifier": {
@@ -2917,6 +3061,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactes no es poden importar. Cliqueu per obtenir més informació"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } de ${ totalEvents } esdeveniment no es pot importar. Cliqueu per obtenir més informació.",
+        "${ totalEventsDiscarded } de ${ totalEvents } esdeveniments no es poden importar. Cliqueu per obtenir més informació."
+      ],
       "No contact can be imported. Click for details": [
         "No s'ha pogut importar cap contacte. Cliqueu per obtenir més informació"
       ],
@@ -2928,14 +3076,74 @@
       ]
     },
     "Info": {
+      "${ activeDownloadsCount } downloading": [
+        "S'està descarregant ${ activeDownloadsCount }",
+        "S'estan descarregant ${ activeDownloadsCount }"
+      ],
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "S'està descarregant ${ activeDownloadsCount } (${ downloadProgress }%)",
+        "S'estan descarregant ${ activeDownloadsCount } (${ downloadProgress }%)"
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "S'està carregant ${ activeUploadsCount } (${ uploadProgress }%)",
+        "S'estan carregant ${ activeUploadsCount } (${ uploadProgress }%)"
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } adreça de correu electrònic",
+        "${ addressCount } adreces de correu electrònic"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia d'encriptació de ${ BRAND_NAME } significa que ningú pot accedir a la vostra contrasenya, ni tan sols nosaltres."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } nou calendari",
+        "${ calendarsToBeCreatedCount } nous calendaris"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } calendari combinat",
+        "${ calendarsToBeMergedCount } calendaris combinats"
+      ],
+      "${ canceledCount } canceled": [
+        "${ canceledCount } cancel·lat",
+        "${ canceledCount } cancel·lats"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } contacte té múltiples adreces de correu.",
+        "${ contactCount } contactes tenen múltiples adreces de correu."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } Membre",
+        "${ contactEmailsLength } Membres"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } té múltiples adreces de correu."
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } contacte trobat",
+        "${ contactsCount } contactes trobats"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contacte",
+        "${ contactsLength } contactes"
+      ],
+      "${ doneCount } finished": [
+        "${ doneCount } finalitzat",
+        "${ doneCount } finalitzats"
+      ],
+      "${ doneDownloadsCount } downloaded": [
+        "${ doneDownloadsCount } baixat",
+        "${ doneDownloadsCount } baixats"
+      ],
+      "${ doneUploadsCount } uploaded": [
+        "${ doneUploadsCount } pujat",
+        "${ doneUploadsCount } pujats"
+      ],
+      "${ errorCount } failed": [
+        "${ errorCount } error",
+        "${ errorCount } errors"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: imatge a mida completa"
@@ -2943,14 +3151,66 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: vista prèvia de baixa resolució"
       ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } grup trobat",
+        "${ groupCounts } grups trobats"
+      ],
+      "${ pausedCount } paused": [
+        "${ pausedCount } en pausa",
+        "${ pausedCount } en pausa"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } carpeta trobada",
+        "${ providerFoldersNumLocalized } carpetes trobades"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } etiqueta trobada a Gmail",
+        "${ providerFoldersNumLocalized } etiquetes trobades a Gmail"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendaris"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength } contacte seleccionat de ${ contactsLength }",
+        "${ selectedContactsLength } contactes seleccionats de ${ contactsLength }"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } seleccionat",
+        "${ selectedCount } seleccionats"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } carpeta seleccionada",
+        "${ selectedFoldersCount } carpetes seleccionades"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etiqueta seleccionada",
+        "${ selectedFoldersCount } etiquetes seleccionades"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } carpeta seleccionada",
+        "${ selectedFoldersCountLocalized } carpetes seleccionades"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } etiqueta seleccionada",
+        "${ selectedFoldersCountLocalized } etiquetes seleccionades"
+      ],
       "${ speed }/s": [
         "${ speed }/s"
       ],
       "${ storage } storage": [
         "${ storage } d'emmagatzematge"
       ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } contacte actualitzat amb èxit.",
+        "${ updated } contactes actualitzats amb èxit."
+      ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } ja existeix en aquesta ubicació."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membre)",
+        "(${ memberCount } membres)"
       ],
       "A number will be added to the filename": [
         "S'afegirà un número al nom del fitxer"
@@ -2967,8 +3227,20 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificació d'adreça amb claus de confiança està habilitada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Tot (${ totalFoldersCount } carpeta)",
+        "Tot (${ totalFoldersCount } carpetes)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Tot (${ totalFoldersCount } etiqueta)",
+        "Tot (${ totalFoldersCount } etiquetes)"
+      ],
       "All your changes will be lost.": [
         "Tots els vostres canvis es perdran."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Tots els vostres contactes s'importaran, fins a un límit d'${ MAX_CONTACTS_PER_USER }",
+        "Tots els vostres contactes s'importaran, fins a un límit de ${ MAX_CONTACTS_PER_USER }"
       ],
       "Also try looking in Trash.": [
         "Proveu també de mirar a la Paperera."
@@ -3005,6 +3277,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Segur que voleu eliminar completament de la paperera els elements seleccionats?"
+      ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "Tan aviat com tingueu fotos o vídeos al dispositiu, apareixeran aquí."
       ],
       "Attention required": [
         "Es requereix la vostra atenció"
@@ -3075,6 +3350,10 @@
       "Country code": [
         "Codi de país"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Crea ${ calendarsToBeCreatedCount } calendari",
+        "Crea ${ calendarsToBeCreatedCount } calendaris"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les carpetes que vulgueu importar."
       ],
@@ -3110,6 +3389,10 @@
       ],
       "Decrypting files": [
         "S'estan desxifrant els fitxers"
+      ],
+      "Delete locked drive": [
+        "Elimina la unitat bloquejada",
+        "Elimina les unitats bloquejades"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "S'ha validat la signatura digital. El fitxer va ser carregat de manera segura per ${ emailAddress }."
@@ -3194,6 +3477,10 @@
       ],
       "Enter your own password (as organization admin).": [
         "Introduïu la vostra contrasenya (com a administrador d'organització)."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Temps restant estimat: ${ estimatedMinutes } minut",
+        "Temps restant estimat: ${ estimatedMinutes } minuts"
       ],
       "Estimated time remaining: Less than a minute": [
         "Temps restant estimat: Menys d'un minut"
@@ -3284,6 +3571,10 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Si teniu un d'aquests, aneu a la configuració del Compte ${ BRAND_NAME } per a iniciar el procés de desbloqueig."
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importa ${ calendarCount } calendari de ${ totalCalendarsCount }",
+        "Importa ${ calendarCount } calendaris de ${ totalCalendarsCount }"
       ],
       "Import from": [
         "Importar des de"
@@ -3420,6 +3711,9 @@
       "No group found": [
         "No s'ha trobat cap grup"
       ],
+      "No photos yet": [
+        "Encara no hi ha cap foto."
+      ],
       "No results found": [
         "No s'ha trobat cap resultat."
       ],
@@ -3449,6 +3743,10 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Una o més de les vostres claus de confiança han estat marcades com a \"compromeses\" pel seu propietari. Us recomanem que marqueu aquestes claus com a \"no confiables\"."
+      ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Només es permet ${ MAX_CUSTOM_PASSWORD_LENGTH } caràcter",
+        "Només es permeten ${ MAX_CUSTOM_PASSWORD_LENGTH } caràcters"
       ],
       "Only the people with the link and the password can access this file.": [
         "Només les persones amb l'enllaç i la contrasenya poden accedir a aquest fitxer."
@@ -3485,6 +3783,10 @@
       ],
       "Please select the folders you would like to import:": [
         "Seleccioneu les carpetes que voleu importar:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grup.",
+        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grups."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
@@ -3558,8 +3860,14 @@
       "Search Enabled": [
         "Cerca activa"
       ],
+      "Select all items for": [
+        "Selecciona tots els elements per"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Seleccioneu un fitxer o una carpeta carregats i creeu-hi un enllaç."
+      ],
+      "Select item": [
+        "Selecciona un element"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccioni el format de correu electronic que vols fer us per defecte quan enviis un correu electronic a aquesta direcció."
@@ -3678,6 +3986,13 @@
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Aquest enllaç es desactivarà permanentment. Ningú podrà accedir a la carpeta amb aquest enllaç. Per a tornar a compartir-la, necessitareu un enllaç nou."
       ],
+      "This month": [
+        "Aquest mes"
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "Això eliminarà l'enllaç i suprimirà l'accés al vostre fitxer o carpeta per a qualsevol persona que el tingui.",
+        "Això eliminarà els enllaços i suprimirà l'accés als vostres fitxers o carpetes per a qualsevol persona que els tingui."
+      ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
         "Això eliminarà el dispositiu sincronitzat ${ deviceName } de ${ DRIVE_APP_NAME } i deixarà de sincronitzar les carpetes que heu afegit a Ordinadors."
       ],
@@ -3794,6 +4109,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Molt bé, acabeu de doblar el vostre emmagatzematge gratuït!"
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "Estem experimentant problemes tècnics. La càrrega d'imatges noves no està disponible temporalment."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "No podem verificar que ${ emailAddress } va carregar ${ fileName }."
@@ -3986,6 +4304,14 @@
       "${ BRAND_NAME } username": [
         "Nom d'usuari de ${ BRAND_NAME }"
       ],
+      "${ nbDay } day": [
+        "${ nbDay } dia",
+        "${ nbDay } dies"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } any",
+        "${ nbYear } anys"
+      ],
       "(Expired)": [
         "(Caducat)"
       ],
@@ -4093,6 +4419,10 @@
       ],
       "Delete": [
         "Elimina"
+      ],
+      "Delete drive?": [
+        "Eliminar unitat?",
+        "Eliminar unitats?"
       ],
       "Delete recovery-related information.": [
         "Elimina la informació de recuperació."
@@ -4298,6 +4628,9 @@
       "Phone number": [
         "Número de telèfon"
       ],
+      "Photo": [
+        "Foto"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Proporcioneu tots els detalls per a ajudar-nos a actuar de manera apropiada"
       ],
@@ -4483,6 +4816,9 @@
       "Pay invoice": [
         "Paga la factura"
       ],
+      "Photos": [
+        "Fotos"
+      ],
       "Reactivate now": [
         "Reactiva ara"
       ],
@@ -4506,6 +4842,10 @@
       "Almost there": [
         "Ja gairebé està"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }",
+        "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Connectant al vostre prveïdor de correu electrònic"
       ],
@@ -4520,6 +4860,24 @@
       ],
       "Your import is starting": [
         "La importació s'està iniciant"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importa tots els missatges d'${ itemsToImportCount } carpeta i etiqueta'ls com a",
+        "Importa tots els missatges de ${ itemsToImportCount } carpetes i etiqueta'ls com a"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importa tots els missatges d'${ itemsToImportCount } etiqueta i etiqueta'ls com a",
+        "Importa tots els missatges de ${ itemsToImportCount } etiquetes i etiqueta'ls com a"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importa tots els missatges d'${ selectedItemsToImportCount } carpeta de ${ itemsToImportCount } i etiqueta'ls com a",
+        "Importa tots els missatges de ${ selectedItemsToImportCount } carpetes de ${ itemsToImportCount } i etiqueta'ls com a"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importa tots els missatges d'${ selectedItemsToImportCount } etiqueta de ${ itemsToImportCount } i etiqueta'ls com a",
+        "Importa tots els missatges de ${ selectedItemsToImportCount } etiquetes de ${ itemsToImportCount } i etiqueta'ls com a"
       ]
     },
     "Message": {
@@ -4669,6 +5027,50 @@
       "\"${ newName }\" renamed successfully": [
         "S'ha canviat el nom de \"${ newName }\""
       ],
+      "${ count } item failed to be decrypted": [
+        "No s'ha pogut desxifrar ${ count } element.",
+        "No s'han pogut desxifrar ${ count } elements."
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "S'ha eliminat ${ numberOfItems } element permanentment de la paperera",
+        "S'han eliminat ${ numberOfItems } elements permanentment de la paperera"
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "No s'ha pogut eliminar ${ numberOfItems } element permanentment de la paperera",
+        "No s'han pogut eliminar ${ numberOfItems } elements permanentment de la paperera"
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "No s'ha pogut moure ${ numberOfItems } element.",
+        "No s'han pogut moure ${ numberOfItems } elements."
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "No s'ha pogut moure ${ numberOfItems } element a la paperera.",
+        "No s'han pogut moure ${ numberOfItems } elements a la paperera."
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "No s'ha pogut restaurar ${ numberOfItems } element de la paperera",
+        "No s'han pogut restaurar ${ numberOfItems } elements de la paperera"
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "S'ha mogut ${ numberOfItems } element a la paperera",
+        "S'han mogut ${ numberOfItems } elements a la paperera"
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "S'ha restaurat ${ numberOfItems } element de la paperera",
+        "S'han restaurat ${ numberOfItems } elements de la paperera"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "S'ha mogut ${ numberOfItems } element",
+        "S'han mogut ${ numberOfItems } elements"
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "No s'ha pogut eliminar ${ numberOfItems } enllaç al vostre element",
+        "No s'han pogut eliminar ${ numberOfItems } enllaços al vostre element"
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "S'ha eliminat ${ numberOfItems } enllaç al vostre element",
+        "S'han eliminat ${ numberOfItems } enllaços al vostre element"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Aviat se suprimiran permanentment tots els elements de la paperera"
       ],
@@ -4708,6 +5110,10 @@
       "Failed to upload files: ${ err }": [
         "Error carregant fitxers: ${ err }"
       ],
+      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
+        "El fitxer o carpeta \"${ filename }\" i ${ count } altre ja s'estan carregant",
+        "El fitxer o carpeta \"${ filename }\" i ${ count } altres ja s'estan carregant"
+      ],
       "File or folder \"${ filename }\" is already uploading": [
         "El fitxer o carpeta \"${ filename }\" ja s'està carregant"
       ],
@@ -4716,6 +5122,30 @@
       ],
       "Link copied to clipboard": [
         "S'ha copiat l'enllaç al porta-retalls."
+      ],
+      "Move ${ itemsToMoveCount } file": [
+        "Mou ${ itemsToMoveCount } fitxer",
+        "Mou ${ itemsToMoveCount } fitxers"
+      ],
+      "Move ${ itemsToMoveCount } folder": [
+        "Mou ${ itemsToMoveCount } carpeta",
+        "Mou ${ itemsToMoveCount } carpetes"
+      ],
+      "Move ${ itemsToMoveCount } item": [
+        "Move ${ itemsToMoveCount } element",
+        "Move ${ itemsToMoveCount } elements"
+      ],
+      "Move ${ movingCount } file": [
+        "Mou ${ movingCount } fitxer",
+        "Mou ${ movingCount } fitxers"
+      ],
+      "Move ${ movingCount } folder": [
+        "Mou ${ movingCount } carpeta",
+        "Mou ${ movingCount } carpetes"
+      ],
+      "Move ${ movingCount } item": [
+        "Mou ${ movingCount } article",
+        "Mou ${ movingCount } articles"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "No hi ha prou espai per carregar ${ formattedTotal }"
@@ -4783,6 +5213,10 @@
       ],
       "Set a recovery method": [
         "Configura un mètode de recuperació"
+      ],
+      "Simply complete the following in the next ${ expiresInDays } day:": [
+        "Completeu els següents passos abans d'${ expiresInDays } dia:",
+        "Completeu els següents passos abans de ${ expiresInDays } dies:"
       ],
       "Upload a file": [
         "Puja un fitxer"
@@ -4940,6 +5374,18 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "S'ha exportat ${ contactsExported.length } contacte de ${ countContacts }.",
+        "S'han exportat ${ contactsExported.length } contactes de ${ countContacts }."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } de ${ totalBeDeleted } contacte eliminat satisfactòriament.",
+        "${ model.deleted.length } de ${ totalBeDeleted } contactes eliminats satisfactòriament."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } de ${ totalBeMerged } contacte combinat satisfactòriament.",
+        "${ model.submitted.length } de ${ totalBeMerged } contactes combinats satisfactòriament."
+      ],
       "No contacts exported.": [
         "No s'han exportat contactes."
       ],
@@ -5012,8 +5458,32 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dia",
+        "${ timeRemaining.inDays } dies"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } hores"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dia per a restablir la vostra contrasenya.",
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dies per a restablir la vostra contrasenya."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hora per a restablir la vostra contrasenya.",
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hores per a restablir la vostra contrasenya."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Aneu a l'aparell connectat (a la sessió on es va iniciar la sol·licitud) per canviar la vostra contrasenya."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Aquest permís caduca en ${ timeRemaining.inDays } dia.",
+        "Aquest permís caduca en ${ timeRemaining.inDays } dies."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Aquest permís caduca en ${ timeRemaining.inHours } hora.",
+        "Aquest permís caduca en ${ timeRemaining.inHours } hores."
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Ara podeu canviar la vostra contrasenya per al compte ${ boldEmail } lliurement durant ${ boldDaysRemaining }."
@@ -5076,8 +5546,16 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } hora més",
+        "${ gracePeriodHoursRemaining } hores més"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Si no heu demanat restablir la teva contrasenya, cancel·leu aquesta sol·licitud ara mateix."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hora.",
+        "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hores."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Per assegurar-nos que sou vosaltres qui intenteu restablir la vostra contrasenya, esperem 72 hores abans d'aprovar les sol·licituds. Podeu canviar la vostra contrasenya en ${ boldTimeLeft }. ${ viewRequest }."
@@ -5105,6 +5583,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } hores"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } ara està disponible."
       ],
@@ -5150,6 +5632,30 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Passeu-vos a Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dies"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segon",
+        "${ seconds } segons"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mes GRATIS",
+        "${ n } mesos GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -5210,6 +5716,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
       "/ month": [
         "/ mes"
       ],
@@ -5323,6 +5833,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Aconseguiu més emmagatzematge"
+      ],
       "Release notes": [
         "Notes de la versió"
       ],
@@ -5334,6 +5847,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contacte sembla idèntic.",
+        "${ countMergeableContacts } contactes semblen idèntics."
+      ],
       "Address copied to clipboard": [
         "Adreça copiada al porta-retalls"
       ],
@@ -5345,6 +5862,14 @@
       ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
+      ],
+      "Contact deleted": [
+        "Contacte esborrat",
+        "Contactes esborrats"
+      ],
+      "Contact group deleted": [
+        "S'ha eliminat el grup",
+        "S'han eliminat els grups"
       ],
       "Contact saved": [
         "Contacte desat"
@@ -5468,9 +5993,53 @@
         "Camp vCard"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 hores",
+        "${ hoursInt },5 hores"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ]
+    },
     "Title": {
       "# of downloads": [
         "Nombre de descàrregues"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } adreça de correu electrònic",
+        "${ emailsCount } adreces de correu electrònic"
+      ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } baixada fallida",
+        "${ numberOfFailedTransfer.total } baixades fallides"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } transferència fallida",
+        "${ numberOfFailedTransfer.total } transferències fallides"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } pujada fallida",
+        "${ numberOfFailedTransfer.total } pujades fallides"
       ],
       "Account suspended": [
         "Compte suspès"
@@ -5480,6 +6049,10 @@
       ],
       "Add contact group name": [
         "Afegeix el nom del grup de contactes"
+      ],
+      "Add to ${ groupCount } group": [
+        "Afegir a ${ groupCount } grup",
+        "Afegir a ${ groupCount } grups"
       ],
       "Add to ${ groupName }": [
         "Afegeix a ${ groupName }"
@@ -5565,6 +6138,14 @@
       "Day theme": [
         "Tema de dia"
       ],
+      "Delete ${ count } contact": [
+        "Suprimeix ${ count } contacte",
+        "Suprimeix ${ count } contactes"
+      ],
+      "Delete ${ count } contact group": [
+        "Eliminar ${ count } grup de contactes",
+        "Eliminar ${ count } grups de contactes"
+      ],
       "Delete ${ Name }": [
         "Esborrar ${ Name }"
       ],
@@ -5646,6 +6227,10 @@
       "Folders details": [
         "Característiques de les carpetes"
       ],
+      "Found ${ searchView.numberOfResults } result": [
+        "Trobat ${ searchView.numberOfResults } resultat",
+        "Trobats ${ searchView.numberOfResults } resultats"
+      ],
       "Groups": [
         "Grups"
       ],
@@ -5654,6 +6239,10 @@
       ],
       "Human verification": [
         "Verificació humana"
+      ],
+      "Import as simple event?": [
+        "Voleu importar com a esdeveniment sense detalls?",
+        "Voleu importar com a esdeveniments sense detalls?"
       ],
       "Import contacts": [
         "Importar contactes"
@@ -5738,6 +6327,9 @@
       ],
       "Phone numbers": [
         "Números de telèfon"
+      ],
+      "Photos": [
+        "Fotos"
       ],
       "Preview": [
         "Vista prèvia"
@@ -5990,12 +6582,26 @@
         "No teniu cap contacte per exportar"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "La contrasenya ha de tenir com a mínim ${ length } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
+        "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
+      ]
+    },
     "Validation Error": {
       "\"${ str }\" is not a valid name": [
         "«${ str }» no és un nom vàlid"
       ],
       "Name cannot include invisible characters, / or \\.": [
         "El nom no pot incloure caràcters invisibles, / o \\."
+      ],
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "El nom ha de tenir com a màxim ${ MAX_NAME_LENGTH } caràcter",
+        "El nom ha de tenir com a màxim ${ MAX_NAME_LENGTH } caràcters"
       ],
       "Name must not be empty": [
         "El nom no pot estar buit"
@@ -6021,6 +6627,10 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Estàs segur de que vols eliminar ${ count } contacte definitivament?",
+        "Estàs segur de que vols eliminar ${ count } contactes definitivament?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Esteu segur que voleu eliminar aquests grups de contacte permanentment?"

@@ -1108,6 +1108,20 @@
       "Sign in with 2FA": [
         "Prihlásiť sa cez 2FA"
       ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Heslo musí obsahovať aspoň ${ length } znak",
+        "Heslo musí obsahovať aspoň ${ length } znaky",
+        "Heslo musí obsahovať aspoň ${ length } znakov",
+        "Heslo musí obsahovať aspoň ${ length } znakov"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Skúste kratšie používateľské meno (max. ${ n } znak)",
+        "Skúste kratšie používateľské meno (max. ${ n } znaky)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)"
+      ]
     }
   }
 }

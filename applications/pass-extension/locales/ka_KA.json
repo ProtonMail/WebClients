@@ -457,6 +457,10 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "საცავის \"${ payload.content.name }\" წაშლის შეცდომა"
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "აღმოჩენილია ${ errors.length } დაზიანებული CSV მწკრივი",
+        "აღმოჩენილია ${ errors.length } დაზიანებული CSV მწკრივი"
+      ],
       "Editing item failed": [
         "ელემენტის ჩასწორების შეცდომა"
       ],
@@ -614,6 +618,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "ბაიტი",
+        "ბაიტი"
+      ],
       "GB": [
         "გბ"
       ],
@@ -627,6 +635,28 @@
         "ტბ"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "ბაიტი",
+        "ბაიტი"
+      ],
+      "Gigabyte": [
+        "გიგაბაიტი",
+        "გიგაბაიტი"
+      ],
+      "Kilobyte": [
+        "კილობაიტი",
+        "კილობაიტი"
+      ],
+      "Megabyte": [
+        "მეგაბაიტი",
+        "მეგაბაიტი"
+      ],
+      "Terabyte": [
+        "ტერაბაიტი",
+        "ტერაბაიტი"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " ერთზე მეტი საცავის შესაქმნელად ფასიან ტარიფზე უნდა გადახვიდეთ."
@@ -636,6 +666,18 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" განახლება წაიშალა"
+      ],
+      "${ count } item": [
+        "${ count } ელემენტი",
+        "${ count } ელემენტი"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } ელემენტი",
+        "${ itemCount } ელემენტი"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } წევრი",
+        "${ memberCount } წევრი"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
         "${ PASS_APP_NAME } ელემენტის favicon-ს ${ BRAND_NAME }-ს ანონიმიზებული გამოსახულებების პროქსით გაჩვენებთ."
@@ -651,6 +693,22 @@
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } რეგისტრაციის ფორმებბზე ძლიერ პაროლებს შემოგთავაზებთ."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber }-ჯერ",
+        "${ revisionNumber } ჯერ"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } ელემენტი",
+        "${ totalImportedItems } ელემენტი"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } ელემენტი",
+        "${ totalItems } ელემენტი"
+      ],
+      "${ trialDaysLeft } day left": [
+        "დარჩენილია ${ trialDaysLeft } დღე",
+        "დარჩენილია ${ trialDaysLeft } დღე"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 დღე ფასიანი ფუნქციების უფასოდ მისაღებად. მხოლოდ, ${ BRAND_NAME }-ის ანგარიშის მიღების პირველი კვირის განმავლობაში."
@@ -775,6 +833,10 @@
       "Import in progress:": [
         "მიმდინარეობს შემოტანა:"
       ],
+      "Imported ${ payload.total } item": [
+        "შემოტანილია ${ payload.total } ელემენტი",
+        "შემოტანილია ${ payload.total } ელემენტი"
+      ],
       "Imported on ${ date }": [
         "შემოტანის დრო ${ date }"
       ],
@@ -801,6 +863,10 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "როგორც ჩანს, ${ PASS_APP_NAME }-ში უკვე შესული ბრძანდებით. თუ ცდილობთ, სხვა მომხმარებლით შეხვიდეთ, ჯერ გამოდით."
+      ],
+      "item": [
+        "ელემენტი",
+        "ელემენტი"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "ელემენტი \"${ payload.item.data.metadata.name }\" შეიქმნა"
@@ -949,6 +1015,10 @@
       "The autofill dropdown will automatically open on field focus.": [
         "შესაბამის ველზე გადართვისას ავტომატური შევსების მენიუ ავტომატურად გაიხსნება."
       ],
+      "The following item could not be imported :": [
+        "ელემენტი, რომლის შემოტანაც ვერ მოხერხდა :",
+        "${ result.ignored.length } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "ტექსტი, რომლის ჩასმასაც ცდილობთ, დაშვებულ ${ maxLength } სიმბოლოზე გრძელია."
       ],
@@ -1021,6 +1091,10 @@
       "You cannot change the mailboxes for this alias.": [
         "ამ ფსევდონიმისთვის საფოსტო ყუთებს ვერ შეცვლით."
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "დაგრჩათ ${ daysRemaining } დღე, ეს და სხვა ფასიანი ფუნქციები სცადოთ.",
+        "დაგრჩათ ${ daysRemaining } დღე, ეს და სხვა ფასიანი ფუნქციები სცადოთ."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "თქვენ გადააცილეთ ტარიფისთვის დასაშვები საცავების რაოდენობას. ელემენტები, მხოლოდ, პირველ ორ საცავში შეგიძლიათ, გადაიტანოთ. საცავებს შორის ელემენტების გადასატანად ასწიეთ თქვენი სატარიფო გეგმა."
       ],
@@ -1053,6 +1127,14 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } სიმბოლო",
+        "${ passwordOptions.options.length } სიმბოლო"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } სიტყვა",
+        "${ passwordOptions.options.wordCount } სიტყვა"
+      ],
       "1 hour": [
         "1 სთ"
       ],
@@ -1565,6 +1647,12 @@
         "დაწერეთ თქვენი შენიშვნა"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "საცავი, არ შეიძლება, ${ vault.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს.",
+        "საცავი, არ შეიძლება, ${ vault.targetMaxMembers }-ზე მეტ მომხმარებელს შეიცავდეს."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-ის მორგება"
@@ -1740,6 +1828,10 @@
       ],
       "Invalid alias prefix": [
         "არასწორი ფსევდონიმის პრეფიქსი"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "მაქსიმალური სიგრძეა ${ maxLength } სიმბოლო",
+        "მაქსიმალური სიგრძეა ${ maxLength } სიმბოლო"
       ],
       "Missing alias prefix": [
         "აკლია ფსევდონიმის პრეფიქსი"

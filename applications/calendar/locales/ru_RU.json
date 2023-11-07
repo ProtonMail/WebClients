@@ -69,6 +69,12 @@
       "Apply": [
         "Применить"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "В группе может быть не больше ${ maxContacts } контакта",
+        "В группе может быть не больше ${ maxContacts } контактов",
+        "В группе может быть не больше ${ maxContacts } контактов",
+        "В группе может быть не больше ${ maxContacts } контактов"
+      ],
       "Attach screenshot(s)": [
         "Вложить снимок(ки) экрана"
       ],
@@ -185,6 +191,18 @@
       ],
       "Delete": [
         "Удалить"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Удалить ${ selectedCount } контакт",
+        "Удалить ${ selectedCount } контакта",
+        "Удалить ${ selectedCount } контактов",
+        "Удалить ${ selectedCount } контакта"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Удалить ${ selectedCount } группу контактов",
+        "Удалить ${ selectedCount } группы контактов",
+        "Удалить ${ selectedCount } групп контактов",
+        "Удалить ${ selectedCount } группы контактов"
       ],
       "Delete contact": [
         "Удалить контакт"
@@ -626,6 +644,12 @@
       ],
       "Yes, I'll attend": [
         "Да, я участвую"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контакта",
+        "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контактов",
+        "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контактов",
+        "Вы не можете отправлять файлы vCard, содержащие больше ${ maxAttachments } контактов"
       ]
     },
     "Action subline": {
@@ -659,6 +683,14 @@
       ],
       "You don't have any groups.": [
         "У вас нет групп."
+      ]
+    },
+    "Addon": {
+      "${ users } user": [
+        "${ users } пользователь",
+        "${ users } пользователя",
+        "${ users } пользователей",
+        "${ users } пользователей"
       ]
     },
     "Alarm notification": {
@@ -824,6 +856,12 @@
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Включает поддержку 1 пользовательского домена, 10 адресов электронной почты, 10 алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
+      ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Включает поддержку трех пользовательских доменов, ${ addresses } адрес электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества.",
+        "Включает поддержку трех пользовательских доменов, ${ addresses } адреса электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества.",
+        "Включает поддержку трех пользовательских доменов, ${ addresses } адресов электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества.",
+        "Включает поддержку трех пользовательских доменов, ${ addresses } адресов электронной почты, неограниченного числа алиасов hide-my-email, совместный доступ к календарю и другие преимущества."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Защитите свои материалы при помощи зашифрованного облачного хранилища. Вам будут доступны история версий, зашифрованный обмен файлами и многое другое."
@@ -994,6 +1032,18 @@
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
         "Невозможно поделиться этим календарем с другими пользователями ${ BRAND_NAME }"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "Вы достигли максимального количества из ${ MAX_CALENDAR_MEMBERS } участника для этого календаря.\nЧтобы поделиться этим календарем с большим количеством аккаунтов ${ BRAND_NAME }, удалите некоторых пользователей.",
+        "Вы достигли максимального количества из ${ MAX_CALENDAR_MEMBERS } участников для этого календаря.\nЧтобы поделиться этим календарем с большим количеством аккаунтов ${ BRAND_NAME }, удалите некоторых пользователей.",
+        "Вы достигли максимального количества из ${ MAX_CALENDAR_MEMBERS } участников для этого календаря.\nЧтобы поделиться этим календарем с большим количеством аккаунтов ${ BRAND_NAME }, удалите некоторых пользователей.",
+        "Вы достигли максимального количества из ${ MAX_CALENDAR_MEMBERS } участников для этого календаря.\nЧтобы поделиться этим календарем с большим количеством аккаунтов ${ BRAND_NAME }, удалите некоторых пользователей."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Вы достигли максимального количества из ${ MAX_LINKS_PER_CALENDAR } ссылки для этого календаря.\nЧтобы создать новую ссылку на этот календарь, удалите существующую.",
+        "Вы достигли максимального количества из ${ MAX_LINKS_PER_CALENDAR } ссылок для этого календаря.\nЧтобы создать новую ссылку на этот календарь, удалите существующую.",
+        "Вы достигли максимального количества из ${ MAX_LINKS_PER_CALENDAR } ссылок для этого календаря.\nЧтобы создать новую ссылку на этот календарь, удалите существующую.",
+        "Вы достигли максимального количества из ${ MAX_LINKS_PER_CALENDAR } ссылок для этого календаря.\nЧтобы создать новую ссылку на этот календарь, удалите существующую."
       ]
     },
     "Calendar sharing access option label": {
@@ -1085,6 +1135,22 @@
       ],
       "Change time range to": [
         "Изменить временной диапазон на"
+      ]
+    },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "Ещё ${ more }",
+        "Ещё ${ more }",
+        "Ещё ${ more }",
+        "Ещё ${ more }"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } пользователь",
+        "${ users } пользователя",
+        "${ users } пользователей",
+        "${ users } пользователей"
       ]
     },
     "Collapsible tooltip": {
@@ -2042,9 +2108,21 @@
       ],
       "On date…": [
         "По датам…"
+      ],
+      "time": [
+        "раз",
+        "раза",
+        "раз",
+        "раз"
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } раз",
+        "${ count } раза",
+        "${ count } раз",
+        "${ count } раз"
+      ],
       "Daily": [
         "Ежедневно"
       ],
@@ -2053,6 +2131,24 @@
       ],
       "Daily, ${ untilString }": [
         "Ежедневно, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Каждый ${ interval } день",
+        "Каждые ${ interval } дня",
+        "Каждые ${ interval } дней",
+        "Каждые ${ interval } дня"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Каждый ${ interval } день, ${ timesString }",
+        "Каждые ${ interval } дня, ${ timesString }",
+        "Каждые ${ interval } дней, ${ timesString }",
+        "Каждые ${ interval } дня, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Каждый ${ interval } день, ${ untilString }",
+        "Каждые ${ interval } дня, ${ untilString }",
+        "Каждые ${ interval } дней, ${ untilString }",
+        "Каждые ${ interval } дней, ${ untilString }"
       ],
       "until ${ dateString }": [
         "до ${ dateString }"
@@ -2265,6 +2361,30 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можете также проверить нашу ${ statusPageLink }"
       ],
+      "${ list } doesn't have a valid email address": [
+        "У ${ list } нет действительного адреса электронной почты",
+        "У ${ list } нет действительных адресов электронной почты",
+        "У ${ list } нет действительных адресов электронной почты",
+        "У ${ list } нет действительных адресов электронной почты"
+      ],
+      "${ list } doesn't have an email address": [
+        "${ list } не имеет адреса электронной почты",
+        "${ list } не имеют адресов электронной почты",
+        "${ list } не имеют адресов электронной почты",
+        "У некоторых контактов нет адресов электронной почты: ${ list }"
+      ],
+      "${ list } has invalid emails": [
+        "У ${ list } есть недопустимый email",
+        "У ${ list } есть недопустимые email",
+        "У ${ list } есть недопустимые email",
+        "У ${ list } есть недопустимые email"
+      ],
+      "${ list } has no contacts": [
+        "В ${ list } нет контактов",
+        "В ${ list } нет контактов",
+        "В ${ list } нет контактов",
+        "В некоторых группах нет контактов: ${ list }"
+      ],
       "A group with this name already exists": [
         "Группа с таким именем уже существует"
       ],
@@ -2315,6 +2435,18 @@
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Ошибка расшифровки: не удалось расшифровать содержимое этого события."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календаря",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей",
+        "Отмените выбор по крайней мере ${ calendarsToFixCount } календарей"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календаря или",
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или",
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или",
+        "Отмените выбор хотя бы ${ calendarsToFixCount } календарей или"
       ],
       "Domain not available, try again later": [
         "Домен недоступен, повторите попытку позже"
@@ -2403,6 +2535,12 @@
       "Last name is too long": [
         "Фамилия слишком длинная"
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Объедините по крайней мере ${ calendarsToFixCount } календарь с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarsToFixCount } календаря с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarsToFixCount } календарей с существующим календарем ${ BRAND_NAME }",
+        "Объедините по крайней мере ${ calendarsToFixCount } календарей с существующим календарем ${ BRAND_NAME }"
+      ],
       "Missing key packet": [
         "Отсутствует пакет ключей"
       ],
@@ -2436,6 +2574,18 @@
       "Number of occurrences cannot be empty": [
         "Количество повторов не может быть пустым"
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "У одного из контактов нет адреса электронной почты: ${ noEmailsContactNamesList }",
+        "У нескольких контактов нет адресов электронной почты: ${ noEmailsContactNamesList } ",
+        "У нескольких контактов нет адресов электронной почты: ${ noEmailsContactNamesList } ",
+        "У нескольких контактов нет адресов электронной почты: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "В ${ noContactGroupList } группе нет контактов",
+        "В ${ noContactGroupList } группах нет контактов ",
+        "В ${ noContactGroupList } группах нет контактов ",
+        "В ${ noContactGroupList } группы нет контактов "
+      ],
       "Password is required": [
         "Нужно ввести пароль"
       ],
@@ -2447,6 +2597,12 @@
       ],
       "Please create an address first.": [
         "Пожалуйста, сначала создайте адрес."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Пожалуйста, исправьте выделенный конфликт, чтобы продолжить.",
+        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
+        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
+        "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Пожалуйста, укажите имя, фамилию или отображаемое имя"
@@ -2465,6 +2621,12 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Основной ключ, полученный для пользователя ${ BRAND_NAME }, недействителен для отправки"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Удалено дубликатов получателя: ${ joinedRecipients }",
+        "Удалено дубликатов получателей: ${ joinedRecipients }",
+        "Удалено дубликатов получателей: ${ joinedRecipients }",
+        "Удалено дубликатов получателей: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Время запроса истекло"
@@ -2574,6 +2736,12 @@
       "You already added this holidays calendar": [
         "Вы уже добавили календарь этих праздников"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Нельзя отправить письмо более чем ${ maxContacts } получателю",
+        "Нельзя отправить письмо более чем ${ maxContacts } получателям",
+        "Нельзя отправить письмо более чем ${ maxContacts } получателям",
+        "Нельзя отправить письмо более чем ${ maxContacts } получателям"
+      ],
       "You have reached the contacts limit for your account": [
         "Вы достигли лимита контактов для вашего аккаунта."
       ],
@@ -2607,6 +2775,12 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Произошла непредвиденная ошибка. Необходимо начать импорт заново."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } события.",
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } событий.",
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } событий.",
+        "В файле ${ formattedFilename } более ${ MAX_IMPORT_EVENTS_STRING } событий."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } имеет недопустимый метод и не может быть импортирован."
@@ -2801,9 +2975,23 @@
         "отменено"
       ]
     },
+    "Event form": {
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } участник",
+        "${ numberOfAttendees } участника",
+        "${ numberOfAttendees } участников",
+        "${ numberOfAttendees } участников"
+      ]
+    },
     "Event info in search view; event duration": {
       "All day": [
         "Весь день"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Весь день, длится ${ plusDaysToEnd } день",
+        "Весь день, длится ${ plusDaysToEnd } дня",
+        "Весь день, длится ${ plusDaysToEnd } дней",
+        "Весь день, длится ${ plusDaysToEnd } дня"
       ]
     },
     "Event info. Organizer name": {
@@ -3019,6 +3207,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "байт",
+        "байта",
+        "байтов",
+        "байтов"
+      ],
       "GB": [
         "ГБ"
       ],
@@ -3027,6 +3221,32 @@
       ],
       "MB": [
         "МБ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Байт",
+        "Байта",
+        "Байтов",
+        "Байтов"
+      ],
+      "Gigabyte": [
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайтов"
+      ],
+      "Kilobyte": [
+        "Килобайт",
+        "Килобайта",
+        "Килобайтов",
+        "Килобайтов"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайтов",
+        "Мегабайтов",
+        "Мегабайтов"
       ]
     },
     "Filter notification": {
@@ -3088,6 +3308,12 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Найдено ${ items.length } предложение, используйте клавиатуру для навигации.",
+        "Найдено ${ items.length } предложения, используйте клавиатуру для навигации.",
+        "Найдено ${ items.length } предложений, используйте клавиатуру для навигации.",
+        "Найдено ${ items.length } предложений, используйте клавиатуру для навигации."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Используйте клавиши Вверх и Вниз, чтобы получить доступ и просмотреть предложения после ввода. Нажмите Enter для подтверждения выбора, или Escape для закрытия окна предложений."
       ]
@@ -3104,6 +3330,18 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } событие зашифровано и импортировано в ваш календарь",
+        "${ totalImported }/${ totalToImport } события зашифрованы и импортированы в ваш календарь",
+        "${ totalImported }/${ totalToImport } событий зашифровано и импортировано в ваш календарь",
+        "${ totalImported }/${ totalToImport } событий зашифрованы и импортированы в ваш календарь"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "При шифровании и добавлении события произошла ошибка. ${ totalImported } из ${ totalToImport } события было успешно импортировано.",
+        "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы.",
+        "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы.",
+        "При шифровании и добавлении событий произошла ошибка. ${ totalImported } из ${ totalToImport } событий были успешно импортированы."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Произошла ошибка при шифровании и добавлении вашего события. Событие не может быть импортировано."
       ],
@@ -3138,11 +3376,29 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Импортированные приглашения появляются в ${ CALENDAR_APP_NAME } как простые события без сведений об организаторах и участниках. Чтобы получать обновления событий и видеть участников, попросите организаторов пригласить вас, используя ваш адрес электронной почты ${ BRAND_NAME }."
       ],
+      "This file contains an event invitation:": [
+        "Этот файл содержит приглашение на событие:",
+        "Этот файл содержит приглашения на события:",
+        "Этот файл содержит приглашения на события:",
+        "Этот файл содержит приглашения на события:"
+      ],
+      "This file contains an invitation response:": [
+        "Этот файл содержит ответ на приглашение:",
+        "Этот файл содержит ответы на приглашение:",
+        "Этот файл содержит ответы на приглашение:",
+        "Этот файл содержит ответы на приглашение:"
+      ],
       "This file contains some data that we cannot import:": [
         "Этот файл содержит некоторые данные, которые мы не можем импортировать:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } контакт зашифрован и добавлен в ваш список контактов",
+        "${ totalImported }/${ totalToImport } контакта зашифрованы и добавлены в ваш список контактов",
+        "${ totalImported }/${ totalToImport } контактов зашифровано и добавлено в ваш список контактов",
+        "${ totalImported }/${ totalToImport } контактов зашифровано и добавлено в ваш список контактов"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Произошла ошибка при шифровании и добавлении вашего контакта. Его не удалось импортировать."
       ],
@@ -3162,6 +3418,14 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Контакт ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } контакт",
+        "${ totalContacts } контакта",
+        "${ totalContacts } контактов",
+        "${ totalContacts } контакта"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3333,6 +3597,12 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } из ${ totalContacts } контактов не будут импортированы. Нажмите, чтобы узнать подробности."
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } из ${ totalEvents } событие не будет импортировано. Разверните для получения подробной информации.",
+        "${ totalEventsDiscarded } из ${ totalEvents } событий не будет импортировано. Разверните для получения подробной информации.",
+        "${ totalEventsDiscarded } из ${ totalEvents } событий не будет импортировано. Разверните для получения подробной информации.",
+        "${ totalEventsDiscarded } из ${ totalEvents } событий не будет импортировано. Разверните для получения подробной информации."
+      ],
       "No contact can be imported. Click for details": [
         "Не можем импортировать контакты. Нажмите, чтобы узнать подробности."
       ],
@@ -3344,20 +3614,128 @@
       ]
     },
     "Info": {
+      "${ addressCount } email address": [
+        "${ addressCount } адрес электронной почты",
+        "${ addressCount } адреса электронной почты",
+        "${ addressCount } адресов электронной почты",
+        "${ addressCount } адреса электронной почты"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } нужно ваше разрешение, чтобы ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технология шифрования ${ BRAND_NAME } означает, что никто не сможет получить доступ к вашему паролю, даже мы."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } новый календарь",
+        "${ calendarsToBeCreatedCount } новых календаря",
+        "${ calendarsToBeCreatedCount } новых календарей",
+        "${ calendarsToBeCreatedCount } новых календарей"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } объединённый календарь",
+        "${ calendarsToBeMergedCount } объединённых календаря",
+        "${ calendarsToBeMergedCount } объединённых календарей",
+        "${ calendarsToBeMergedCount } объединённых календарей"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } контакт содержит несколько адресов электронной почты.",
+        "${ contactCount } контакта содержит несколько адресов электронной почты.",
+        "${ contactCount } контактов содержат несколько адресов электронной почты.",
+        "${ contactCount } контакт содержит несколько адресов электронной почты."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } адресат",
+        "${ contactEmailsLength } адресата",
+        "${ contactEmailsLength } адресатов",
+        "${ contactEmailsLength } адресатов"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "Контакт ${ contactName } содержит несколько email-адресов."
+      ],
+      "${ contactsCount } contact found": [
+        "Найден ${ contactsCount } контакт",
+        "Найдены ${ contactsCount } контакта",
+        "Найдено ${ contactsCount } контактов",
+        "Найдено ${ contactsCount } контактов"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } контакт",
+        "${ contactsLength } контакта",
+        "${ contactsLength } контактов",
+        "${ contactsLength } контакта"
       ],
       "${ firstItems } and ${ lastItem }": [
         "${ firstItems } и ${ lastItem }"
       ],
+      "${ groupCounts } group found": [
+        "Найдена ${ groupCounts } группа",
+        "Найдено ${ groupCounts } группы",
+        "Найдено ${ groupCounts } групп",
+        "Найдено ${ groupCounts } группы"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "Найдена ${ providerFoldersNumLocalized } папка",
+        "Найдены ${ providerFoldersNumLocalized } папки",
+        "Найдено ${ providerFoldersNumLocalized } папок",
+        "Найдено ${ providerFoldersNumLocalized } папок"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "В Gmail найден ${ providerFoldersNumLocalized } ярлык",
+        "В Gmail найдено ${ providerFoldersNumLocalized } ярлыка",
+        "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков",
+        "В Gmail найдено ${ providerFoldersNumLocalized } ярлыков"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календаря",
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей",
+        "${ selectedCalendarsTotal } из ${ providerCalendars.length } календарей"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }",
+        "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }",
+        "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }",
+        "Выбраны контакты: ${ selectedContactsLength } из ${ contactsLength }"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } папка выбрана",
+        "${ selectedFoldersCount } папки выбрано",
+        "${ selectedFoldersCount } папок выбрано",
+        "${ selectedFoldersCount } папок выбрано"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } ярлык выбран",
+        "${ selectedFoldersCount } ярлыка выбрано",
+        "${ selectedFoldersCount } ярлыков выбрано",
+        "${ selectedFoldersCount } ярлыков выбрано"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "Выбрана ${ selectedFoldersCountLocalized } папка",
+        "Выбрана ${ selectedFoldersCountLocalized } папки",
+        "Выбрано ${ selectedFoldersCountLocalized } папок",
+        "Выбрано ${ selectedFoldersCountLocalized } папок"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "Выбран ${ selectedFoldersCountLocalized } ярлык",
+        "Выбрано ${ selectedFoldersCountLocalized } ярлыка",
+        "Выбрано ${ selectedFoldersCountLocalized } ярлыков",
+        "Выбрано ${ selectedFoldersCountLocalized } ярлыков"
+      ],
       "${ storage } storage": [
         "${ storage } хранилища"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } контакт успешно обновлен.",
+        "${ updated } контакта успешно обновлено.",
+        "${ updated } контактов успешно обновлено.",
+        "${ updated } контактов успешно обновлено."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } участник)",
+        "(${ memberCount } участника)",
+        "(${ memberCount } участников)",
+        "(${ memberCount } участника)"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Сообщение об отмене будет отправлено удаленным участникам."
@@ -3382,6 +3760,24 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Проверка адреса доверяемыми ключами для этого адреса включена. Чтобы получить возможность отправки на этот адрес, сначала включите режим доверия публичным ключам, которые можно применять для отправки."
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "Всё (${ totalFoldersCount } папка)",
+        "Всё (${ totalFoldersCount } папки)",
+        "Всё (${ totalFoldersCount } папок)",
+        "Всё (${ totalFoldersCount } папок)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Всё (${ totalFoldersCount } ярлык)",
+        "Всё (${ totalFoldersCount } ярлыка)",
+        "Все (${ totalFoldersCount } ярлыков)",
+        "Всё (${ totalFoldersCount } ярлыков)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
+        "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
+        "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }",
+        "Все ваши контакты будут импортированы, до лимита ${ MAX_CONTACTS_PER_USER }"
       ],
       "An invitation will be sent to added participants.": [
         "Добавленным участникам будет отправлено приглашение."
@@ -3452,6 +3848,12 @@
       "Country code": [
         "Код страны"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Создать ${ calendarsToBeCreatedCount } новый календарь",
+        "Создать ${ calendarsToBeCreatedCount } новых календаря",
+        "Создать ${ calendarsToBeCreatedCount } новых календарей",
+        "Создать ${ calendarsToBeCreatedCount } новых календарей"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Создайте ярлык для импортированных сообщений, укажите диапазон времени для этого импорта и папки, которые вы хотите импортировать."
       ],
@@ -3521,6 +3923,12 @@
       "Enter your own password (as organization admin).": [
         "Введите собственный пароль (как администратор организации)."
       ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Оставшееся время: ${ estimatedMinutes } минута",
+        "Оставшееся время: ${ estimatedMinutes } минуты",
+        "Оставшееся время: ${ estimatedMinutes } минут",
+        "Оставшееся время: ${ estimatedMinutes } минут"
+      ],
       "Estimated time remaining: Less than a minute": [
         "Оставшееся время: меньше минуты"
       ],
@@ -3556,6 +3964,12 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Если сообщения нет в папке Входящие, проверьте, не попало ли оно в папку Спам."
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календаря",
+        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей",
+        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей",
+        "Импортировать ${ calendarCount } из ${ totalCalendarsCount } календарей"
       ],
       "Import from": [
         "Импортировать из"
@@ -3691,6 +4105,12 @@
       ],
       "Please select the folders you would like to import:": [
         "Выберите папки для импорта:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } группу.",
+        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } группы .",
+        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } групп .",
+        "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupCount } групп."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Пожалуйста, выберите, какой или какие адреса электронной почты нужно добавить в ${ groupName }."
@@ -4351,6 +4771,12 @@
       "Organizer": [
         "Организатор"
       ],
+      "participant": [
+        "участник",
+        "участники",
+        "участники",
+        "участники"
+      ],
       "Participants": [
         "Участники"
       ],
@@ -4542,6 +4968,12 @@
       "Almost there": [
         "Почти готово"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }",
+        "Количество созданных календарей: ${ createdCalendarCount } из ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Подключение к поставщику услуг электронной почты"
       ],
@@ -4556,6 +4988,32 @@
       ],
       "Your import is starting": [
         "Ваш импорт начался"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Импортировать все сообщения из ${ itemsToImportCount } папки и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } папок и пометить их ярлыком как"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Импортировать все сообщения из ${ itemsToImportCount } ярлыка и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как",
+        "Импортировать все сообщения из ${ itemsToImportCount } ярлыков и пометить их ярлыком как"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папки и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как",
+        "Импортировать все сообщения из ${ selectedItemsToImportCount } из ${ itemsToImportCount } папок и пометить их как"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыка, и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как",
+        "Импортировать все сообщения с ${ selectedItemsToImportCount } из ${ itemsToImportCount } ярлыков, и пометить их как"
       ]
     },
     "Message": {
@@ -4650,6 +5108,24 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Каждый ${ interval } месяц (${ onDayString })",
+        "Каждые ${ interval } месяца (${ onDayString })",
+        "Каждые ${ interval } месяцев (${ onDayString })",
+        "Каждые ${ interval } месяца (${ onDayString })"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Каждый ${ interval } месяц (${ onDayString }, ${ timesString })",
+        "Каждые ${ interval } месяца (${ onDayString }, ${ timesString })",
+        "Каждые ${ interval } месяцев (${ onDayString }, ${ timesString })",
+        "Каждые ${ interval } месяцев ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Каждый ${ interval } месяц (${ onDayString }, ${ untilString })",
+        "Каждые ${ interval } месяца (${ onDayString } ${ untilString })",
+        "Каждые ${ interval } месяцев (${ onDayString }, ${ untilString })",
+        "Каждые ${ interval } месяца (${ onDayString }, ${ untilString })"
+      ],
       "Monthly ${ onDayString }": [
         "Ежемесячно по ${ onDayString }"
       ],
@@ -4855,6 +5331,14 @@
         "Календарь обновлен"
       ]
     },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Участник добавлен",
+        "Участники добавлены",
+        "Участники добавлены",
+        "Участники добавлены"
+      ]
+    },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
         "Приглашение календаря отклонено"
@@ -4885,11 +5369,131 @@
       "at time of event": [
         "во время события"
       ],
+      "day before": [
+        "день до",
+        "дня до",
+        "дней до",
+        "дней до"
+      ],
+      "hour before": [
+        "час до",
+        "часа до",
+        "часов до",
+        "часов до"
+      ],
+      "minute before": [
+        "минуту до",
+        "минуты до",
+        "минут до",
+        "минут до"
+      ],
       "on the same day": [
         "тот же день"
+      ],
+      "week before": [
+        "неделю до",
+        "недели до",
+        "недель до",
+        "недель до"
       ]
     },
     "Notifications": {
+      "${ value } day after": [
+        "через ${ value } день после",
+        "через ${ value } дня после",
+        "через ${ value } дней после",
+        "через ${ value } дней после"
+      ],
+      "${ value } day after at ${ time }": [
+        "через ${ value } день после в ${ time }",
+        "через ${ value } дня после в ${ time }",
+        "через ${ value } дней после в ${ time }",
+        "через ${ value } дней после в ${ time }"
+      ],
+      "${ value } day before": [
+        "за ${ value } день до",
+        "за ${ value } дня до",
+        "за ${ value } дней до",
+        "за ${ value } дней до"
+      ],
+      "${ value } day before at ${ time }": [
+        "за ${ value } день до в ${ time }",
+        "за ${ value } дня до в ${ time }",
+        "за ${ value } дней до в ${ time }",
+        "за ${ value } дней до в ${ time }"
+      ],
+      "${ value } hour after": [
+        "через ${ value } час после",
+        "через ${ value } часа после",
+        "через ${ value } часов после",
+        "через ${ value } часов после"
+      ],
+      "${ value } hour after at ${ time }": [
+        "через ${ value } час после в ${ time }",
+        "через ${ value } часа после в ${ time }",
+        "через ${ value } часов после в ${ time }",
+        "через ${ value } часов после в ${ time }"
+      ],
+      "${ value } hour before": [
+        "за ${ value } час до",
+        "за ${ value } часа до",
+        "за ${ value } часов до",
+        "за ${ value } часов до"
+      ],
+      "${ value } hour before at ${ time }": [
+        "за ${ value } час до в ${ time }",
+        "за ${ value } часа до в ${ time }",
+        "за ${ value } часов до в ${ time }",
+        "за ${ value } часов до в ${ time }"
+      ],
+      "${ value } minute after": [
+        "через ${ value } минуту после",
+        "через ${ value } минуты после",
+        "через ${ value } минут после",
+        "через ${ value } минут после"
+      ],
+      "${ value } minute after at ${ time }": [
+        "через ${ value } минуту после в ${ time }",
+        "через ${ value } минуты после в ${ time }",
+        "через ${ value } минут после в ${ time }",
+        "через ${ value } минут после в ${ time }"
+      ],
+      "${ value } minute before": [
+        "за ${ value } минуту до",
+        "за ${ value } минуты до",
+        "за ${ value } минут до",
+        "за ${ value } минут до"
+      ],
+      "${ value } minute before at ${ time }": [
+        "за ${ value } минуту до в ${ time }",
+        "за ${ value } минуты до в ${ time }",
+        "за ${ value } минут до в ${ time }",
+        "за ${ value } минут до в ${ time }"
+      ],
+      "${ value } week after": [
+        "через ${ value } неделю после",
+        "через ${ value } недели после",
+        "через ${ value } недель после",
+        "через ${ value } недель после"
+      ],
+      "${ value } week after at ${ time }": [
+        "через ${ value } неделю после в ${ time }",
+        "через ${ value } недели после в ${ time }",
+        "через ${ value } недель после в ${ time }",
+        "через ${ value } недель после в ${ time }"
+      ],
+      "${ value } week before": [
+        "за ${ value } неделю до",
+        "за ${ value } недели до",
+        "за ${ value } недель до",
+        "за ${ value } недель до"
+      ],
+      "${ value } week before at ${ time }": [
+        "за ${ value } неделю до в ${ time }",
+        "за ${ value } недели до в ${ time }",
+        "за ${ value } недель до в ${ time }",
+        "за ${ value } недель до в ${ time }"
+      ],
       "At time of event": [
         "Во время события"
       ],
@@ -4970,6 +5574,12 @@
       "Custom": [
         "Пользовательский"
       ],
+      "Day": [
+        "День",
+        "Дня",
+        "Дней",
+        "Дней"
+      ],
       "Does not repeat": [
         "Не повторяется"
       ],
@@ -4988,6 +5598,12 @@
       "Ignore group": [
         "Игнорировать группу"
       ],
+      "Month": [
+        "Месяц",
+        "Месяца",
+        "Месяцев",
+        "Месяцев"
+      ],
       "No parent folder": [
         "Без родительской папки"
       ],
@@ -4996,6 +5612,18 @@
       ],
       "This event": [
         "Это событие"
+      ],
+      "Week": [
+        "Неделя",
+        "Недели",
+        "Недель",
+        "Недель"
+      ],
+      "Year": [
+        "Год",
+        "Года",
+        "Лет",
+        "Лет"
       ]
     },
     "Option group label": {
@@ -5127,6 +5755,24 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } из ${ countContacts } контакта успешно экспортированы.",
+        "${ contactsExported.length } из ${ countContacts } контактов успешно экспортированы.",
+        "${ contactsExported.length } из ${ countContacts } контактов успешно экспортированы.",
+        "${ contactsExported.length } из ${ countContacts } контактов успешно экспортированы."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } из ${ totalBeDeleted } контакта успешно удалён.",
+        "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены.",
+        "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены.",
+        "${ model.deleted.length } из ${ totalBeDeleted } контактов успешно удалены."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } из ${ totalBeMerged } контакта успешно объединены.",
+        "${ model.submitted.length } из ${ totalBeMerged } контактов успешно объединены.",
+        "${ model.submitted.length } из ${ totalBeMerged } контактов успешно объединены.",
+        "${ model.submitted.length } из ${ totalBeMerged } контактов успешно объединены."
+      ],
       "No contacts exported.": [
         "0 контактов было экспортировано."
       ],
@@ -5203,6 +5849,44 @@
         "Сбросить пароль"
       ]
     },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } день",
+        "${ timeRemaining.inDays } дня",
+        "${ timeRemaining.inDays } дней",
+        "${ timeRemaining.inDays } дня"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } час",
+        "${ timeRemaining.inHours } часа",
+        "${ timeRemaining.inHours } часов",
+        "${ timeRemaining.inHours } часа"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inDays } день, чтобы сбросить свой пароль.",
+        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль.",
+        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inDays } дней, чтобы сбросить свой пароль.",
+        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inDays } дня, чтобы сбросить свой пароль."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inHours } час, чтобы сбросить свой пароль.",
+        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль.",
+        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inHours } часов, чтобы сбросить свой пароль.",
+        "Запрос на сброс пароля одобрен (${ user.Email }). У вас есть ${ timeRemaining.inHours } часа, чтобы сбросить свой пароль."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Это разрешение истекает в течение ${ timeRemaining.inDays } дня",
+        "Это разрешение истекает в течение ${ timeRemaining.inDays } дней",
+        "Это разрешение истекает в течение ${ timeRemaining.inDays } дней",
+        "Это разрешение истекает в течение ${ timeRemaining.inDays } дней"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Это разрешение истекает в течение ${ timeRemaining.inHours } часа",
+        "Это разрешение истекает в течение ${ timeRemaining.inHours } часов",
+        "Это разрешение истекает в течение ${ timeRemaining.inHours } часов",
+        "Это разрешение истекает в течение ${ timeRemaining.inHours } часов"
+      ]
+    },
     "session_recovery:available:link": {
       "See how": [
         "Посмотреть, как"
@@ -5230,8 +5914,20 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "ещё ${ gracePeriodHoursRemaining } час",
+        "ещё ${ gracePeriodHoursRemaining } часа",
+        "ещё ${ gracePeriodHoursRemaining } часов",
+        "ещё ${ gracePeriodHoursRemaining } часа"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Если вы не просили сбросить пароль, отмените этот запрос сейчас."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Запрошен сброс пароля (${ user.Email }). Вы можете изменить свой пароль в течение ${ hoursRemaining } часа.",
+        "Запрошен сброс пароля (${ user.Email }). Вы можете изменить свой пароль в течение ${ hoursRemaining } часов.",
+        "Запрошен сброс пароля (${ user.Email }). Вы можете изменить свой пароль в течение ${ hoursRemaining } часов.",
+        "Запрошен сброс пароля (${ user.Email }). Вы можете изменить свой пароль в течение ${ hoursRemaining } часов."
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Мы получили запрос на сброс пароля для ${ boldEmail }."
@@ -5242,6 +5938,14 @@
         "Посмотреть запрос"
       ]
     },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } час",
+        "${ gracePeriodHoursRemaining } часа",
+        "${ gracePeriodHoursRemaining } часов",
+        "${ gracePeriodHoursRemaining } часа"
+      ]
+    },
     "Settings update growler warning": {
       "Failed to update settings": [
         "Не удалось обновить настройки"
@@ -5250,6 +5954,14 @@
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
         "Чтобы пригласить пользователей, не являющихся пользователями ${ BRAND_NAME }, поделитесь своим календарем при помощи ссылки."
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Вы превысили максимальное количество из ${ MAX_CALENDAR_MEMBERS } участника для одного календаря",
+        "Вы превысили максимальное количество из ${ MAX_CALENDAR_MEMBERS } участников для одного календаря",
+        "Вы превысили максимальное количество из ${ MAX_CALENDAR_MEMBERS } участников для одного календаря",
+        "Вы превысили максимальное количество из ${ MAX_CALENDAR_MEMBERS } участников для одного календаря"
       ]
     },
     "Share calendar modal description": {
@@ -5307,6 +6019,40 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Перейти на Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часа"
+      ],
+      "${ hours } hour": [
+        "${ days } день",
+        "${ days } дня",
+        "${ days } дней",
+        "${ days } дня"
+      ],
+      "${ minutes } minute": [
+        "${ n } месяц БЕСПЛАТНО",
+        "${ n } месяца БЕСПЛАТНО",
+        "${ n } месяцев БЕСПЛАТНО",
+        "${ n } месяца БЕСПЛАТНО"
+      ],
+      "${ seconds } second": [
+        "за ${ n } месяц ",
+        "за ${ n } месяца",
+        "за ${ n } месяцев",
+        "за ${ n } месяца"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
       ]
     },
     "specialoffer: Deal details": {
@@ -5492,6 +6238,12 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } контакт выглядит одинаково.",
+        "${ countMergeableContacts } контакта выглядят одинаково.",
+        "${ countMergeableContacts } контактов выглядят одинаково.",
+        "${ countMergeableContacts } контактов выглядят одинаково."
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Сообщение об отмене будет отправлено удаленным участникам всех событий этой серии."
       ],
@@ -5545,6 +6297,18 @@
       ],
       "Code sent to ${ methodTo }": [
         "Код отправлен на ${ methodTo }"
+      ],
+      "Contact deleted": [
+        "Контакт удален",
+        "Контакты удалены",
+        "Контакты удалены",
+        "Контакты удалены"
+      ],
+      "Contact group deleted": [
+        "Группа контактов удалена",
+        "Группы контактов удалены",
+        "Группы контактов удалены",
+        "Группы контактов удалены"
       ],
       "Contact saved": [
         "Контакт сохранён"
@@ -5702,12 +6466,58 @@
         "Поле vCard-файла"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } ч",
+        "${ hours } ч",
+        "${ hours } ч",
+        "${ hours } ч"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч",
+        "${ hoursInt }.5 ч"
+      ],
+      "${ minutes } min": [
+        "${ minutes } мин",
+        "${ minutes } мин",
+        "${ minutes } мин",
+        "${ minutes } мин"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } час",
+        "${ hours } часа",
+        "${ hours } часов",
+        "${ hours } часов"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 часа",
+        "${ hoursInt }.5 часа",
+        "${ hoursInt }.5 часов",
+        "${ hoursInt }.5 часов"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } минута",
+        "${ minutes } минуты",
+        "${ minutes } минут",
+        "${ minutes } минута"
+      ]
+    },
     "Timezone search placeholder": {
       "Search time zones": [
         "Найти часовой пояс"
       ]
     },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount } адрес электронной почты",
+        "${ emailsCount } адреса электронной почты",
+        "${ emailsCount } адресов электронной почты",
+        "${ emailsCount } адреса электронной почты"
+      ],
       "Account suspended": [
         "Аккаунт временно заблокирован"
       ],
@@ -5728,6 +6538,12 @@
       ],
       "Add participants": [
         "Добавить участников"
+      ],
+      "Add to ${ groupCount } group": [
+        "Добавление в ${ groupCount } группу",
+        "Добавление в ${ groupCount } группы",
+        "Добавление в ${ groupCount } групп",
+        "Добавление в ${ groupCount } группы"
       ],
       "Add to ${ groupName }": [
         "Добавить в ${ groupName }"
@@ -5801,6 +6617,18 @@
       "Day theme": [
         "Дневная тема"
       ],
+      "Delete ${ count } contact": [
+        "Удалить ${ count } контакт",
+        "Удалить ${ count } контакта",
+        "Удалить ${ count } контактов",
+        "Удалить ${ count } контактов"
+      ],
+      "Delete ${ count } contact group": [
+        "Удаление ${ count } группы контактов",
+        "Удаление ${ count } групп контактов",
+        "Удаление ${ count } групп контактов",
+        "Удаление ${ count } группы контактов"
+      ],
       "Delete ${ Name }": [
         "Удалить ${ Name }"
       ],
@@ -5863,6 +6691,12 @@
       ],
       "Human verification": [
         "Проверка \"Я не робот\""
+      ],
+      "Import as simple event?": [
+        "Импортировать как простое событие?",
+        "Импортировать как простые события?",
+        "Импортировать как простые события?",
+        "Импортировать как простые события?"
       ],
       "Import contacts": [
         "Импорт контактов"
@@ -6158,6 +6992,20 @@
         "Общий доступ со сквозным шифрованием с подтверждённым контактом"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль должен включать по меньшей мере ${ length } символ",
+        "Пароль должен включать по меньшей мере ${ length } символа",
+        "Пароль должен включать по меньшей мере ${ length } символов",
+        "Пароль должен включать по меньшей мере ${ length } символа"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знак)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знака)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)",
+        "Попробуйте более короткое имя пользователя (максимум ${ n } знаков)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Нажмите, чтобы воспроизвести видео"
@@ -6180,6 +7028,12 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } передаст как можно больше данных, начиная с ваших последних сообщений."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Вы уверены, что хотите навсегда удалить ${ count } контакт?",
+        "Вы уверены, что хотите навсегда удалить ${ count } контакта?",
+        "Вы уверены, что хотите навсегда удалить ${ count } контактов?",
+        "Вы уверены, что хотите навсегда удалить ${ count } контактов?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Вы уверены, что хотите безвозвратно удалить эти группы контактов?"
@@ -6248,6 +7102,168 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Каждую ${ interval } неделю в ${ multipleDaysString }",
+        "Каждые ${ interval } недели в ${ multipleDaysString }",
+        "Каждые ${ interval } недель в ${ multipleDaysString }",
+        "Каждые ${ interval } недель в ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Каждую ${ interval } неделю по ${ multipleDaysString }, ${ timesString }",
+        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ timesString }",
+        "Каждые ${ interval } недель по ${ multipleDaysString }, ${ timesString }",
+        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Каждую ${ interval } неделю по ${ multipleDaysString }, ${ untilString }",
+        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ untilString }",
+        "Каждые ${ interval } недель по ${ multipleDaysString }, ${ untilString }",
+        "Каждые ${ interval } недели по ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Каждую ${ interval } неделю во все дни",
+        "Каждые ${ interval } недели, каждый день",
+        "Каждые ${ interval } недель, каждый день",
+        "Каждые ${ interval } недель, каждый день"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Каждую ${ interval } неделю по всем дням, ${ timesString }",
+        "Каждые ${ interval } недели по всем дням, ${ timesString }",
+        "Каждые ${ interval } недель по всем дням, ${ timesString }",
+        "Каждые ${ interval } недель по всем дням, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Каждую ${ interval } неделю каждый день, ${ untilString }",
+        "Каждые ${ interval } недели каждый день, ${ untilString }",
+        "Каждые ${ interval } недель каждый день, ${ untilString }",
+        "Каждые ${ interval } недели каждый день, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Каждую ${ interval } неделю в пятницу",
+        "Каждые ${ interval } недели в пятницу",
+        "Каждые ${ interval } недель в пятницу",
+        "Каждые ${ interval } недель в пятницу"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Каждую ${ interval } неделю по пятницам, ${ timesString }",
+        "Каждые ${ interval } недели по пятницам, ${ timesString }",
+        "Каждые ${ interval } недель по пятницам, ${ timesString }",
+        "Каждые ${ interval } недели по пятницам, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Каждую ${ interval } неделю в пятницу, ${ untilString }",
+        "Каждые ${ interval } недели в пятницу, ${ untilString }",
+        "Каждые ${ interval } недель в пятницу, ${ untilString }",
+        "Каждые ${ interval } недели в пятницу, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Каждую ${ interval } неделю в понедельник",
+        "Каждые ${ interval } недели в понедельник",
+        "Каждые ${ interval } недель в понедельник",
+        "Каждые ${ interval } недель в понедельник"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Каждую ${ interval } неделю по понедельникам, ${ timesString }",
+        "Каждые ${ interval } недели по понедельникам, ${ timesString }",
+        "Каждые ${ interval } недель по понедельникам, ${ timesString }",
+        "Каждые ${ interval } недели по понедельникам, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Каждую ${ interval } неделю в понедельник, ${ untilString }",
+        "Каждые ${ interval } недели в понедельник, ${ untilString }",
+        "Каждые ${ interval } недель в понедельник, ${ untilString }",
+        "Каждые ${ interval } недели в понедельник, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Каждую ${ interval } неделю в субботу",
+        "Каждые ${ interval } недели в субботу",
+        "Каждые ${ interval } недель в субботу",
+        "Каждые ${ interval } недель в субботу"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Каждую ${ interval } неделю по субботам, ${ timesString }",
+        "Каждые ${ interval } недели по субботам, ${ timesString }",
+        "Каждые ${ interval } недель по субботам, ${ timesString }",
+        "Каждые ${ interval } недели по субботам, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Каждую ${ interval } неделю в субботу, ${ untilString }",
+        "Каждые ${ interval } недели в субботу, ${ untilString }",
+        "Каждые ${ interval } недель в субботу, ${ untilString }",
+        "Каждые ${ interval } недели в субботу, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Каждую ${ interval } неделю в воскресенье",
+        "Каждые ${ interval } недели в воскресенье",
+        "Каждые ${ interval } недель в воскресенье",
+        "Каждые ${ interval } недель в воскресенье"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Каждую ${ interval } неделю в воскресенье, ${ timesString }",
+        "Каждые ${ interval } недели в воскресенье, ${ timesString }",
+        "Каждые ${ interval } недель в воскресенье, ${ timesString }",
+        "Каждые ${ interval } недель в воскресенье, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Каждую ${ interval } неделю в воскресенье, ${ untilString }",
+        "Каждые ${ interval } недели в воскресенье, ${ untilString }",
+        "Каждые ${ interval } недель в воскресенье, ${ untilString }",
+        "Каждые ${ interval } недели в воскресенье, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Каждую ${ interval } неделю в четверг",
+        "Каждые ${ interval } недели в четверг",
+        "Каждые ${ interval } недель в четверг",
+        "Каждые ${ interval } недель в четверг"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Каждую ${ interval } неделю по четвергам, ${ timesString }",
+        "Каждые ${ interval } недели по четвергам, ${ timesString }",
+        "Каждые ${ interval } недель по четвергам, ${ timesString }",
+        "Каждые ${ interval } недели по четвергам, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Каждую ${ interval } неделю в четверг, ${ untilString }",
+        "Каждые ${ interval } недели в четверг, ${ untilString }",
+        "Каждые ${ interval } недель в четверг, ${ untilString }",
+        "Каждые ${ interval } недели в четверг, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Каждую ${ interval } неделю во вторник",
+        "Каждые ${ interval } недели во вторник",
+        "Каждые ${ interval } недель во вторник",
+        "Каждые ${ interval } недель во вторник"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Каждую ${ interval } неделю по вторникам, ${ timesString }",
+        "Каждые ${ interval } недели по вторникам, ${ timesString }",
+        "Каждые ${ interval } недель по вторникам, ${ timesString }",
+        "Каждые ${ interval } недели по вторникам, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Каждую ${ interval } неделю во вторник, ${ untilString }",
+        "Каждые ${ interval } недели во вторник, ${ untilString }",
+        "Каждые ${ interval } недель во вторник, ${ untilString }",
+        "Каждые ${ interval } недели во вторник, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Каждую ${ interval } неделю в среду",
+        "Каждые ${ interval } недели в среду",
+        "Каждые ${ interval } недель в среду",
+        "Каждые ${ interval } недель в среду"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Каждую ${ interval } неделю по средам, ${ timesString }",
+        "Каждые ${ interval } недели по средам, ${ timesString }",
+        "Каждые ${ interval } недель по средам, ${ timesString }",
+        "Каждые ${ interval } недели по средам, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Каждую ${ interval } неделю в среду, ${ untilString }",
+        "Каждые ${ interval } недели в среду, ${ untilString }",
+        "Каждые ${ interval } недель в среду, ${ untilString }",
+        "Каждые ${ interval } недели в среду, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Еженедельно по следующим дням: ${ multipleDaysString }"
       ],
@@ -6354,6 +7370,24 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Каждый ${ interval } год",
+        "Каждые ${ interval } года",
+        "Каждые ${ interval } лет",
+        "Каждые ${ interval } лет"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Каждый ${ interval } год, ${ timesString }",
+        "Каждые ${ interval } года, ${ timesString }",
+        "Каждые ${ interval } лет, ${ timesString }",
+        "Каждые ${ interval } лет, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Каждый ${ interval } год ${ untilString }",
+        "Каждые ${ interval } года ${ untilString }",
+        "Каждые ${ interval } лет ${ untilString }",
+        "Каждые ${ interval } лет ${ untilString }"
+      ],
       "Yearly": [
         "Ежегодно"
       ],
