@@ -113,7 +113,7 @@ printf "\t✅ %s\n" "OK"
 # Firefox development (Black) release
 echo "Building Firefox (Black)..."
 BUILD_TARGET=firefox yarn run build:dev > /dev/null
-mv "./dist" "$OUTDIR/black-$BUILD_ID-FF"
+cp -r "./dist" "$OUTDIR/black-$BUILD_ID-FF"
 printf "\t✅ %s\n" "$OUTDIR/black-$BUILD_ID-FF"
 
 

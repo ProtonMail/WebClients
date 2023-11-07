@@ -29,6 +29,11 @@ getDistDirectory() {
     return 0;
   fi
 
+  if [ -s "dist" ]; then
+    echo "extract from dist bundle local"
+    return 0
+  fi
+
   # Cache for the CI so we're faster
   if [ -s 'webapp-bundle.tar.gz' ]; then
     echo "we extract the bundle"
@@ -63,7 +68,11 @@ function main {
   for file in $(find ./dist/ -type f -name "*.js.map"); do
     echo "[Parsing] $file";
     if [[ "$OSTYPE" = "darwin"* ]]; then
-      /tmp/sourcemapper/bin/isourcemapper --input "$file" --output 'i18n-js' &
+      if [[ "$(uname -m)" == 'arm64'  ]]; then
+        /tmp/sourcemapper/bin/isourcemapper-arm --input "$file" --output 'i18n-js' &
+      else
+        /tmp/sourcemapper/bin/isourcemapper --input "$file" --output 'i18n-js' &
+      fi
     else
       /tmp/sourcemapper/bin/sourcemapper --input "$file" --output 'i18n-js' &
     fi
@@ -83,7 +92,11 @@ function main {
 
   # Remove useless path
   if [[ "$OSTYPE" = "darwin"* ]]; then
-    sed -i '' 's|webpack:/||g;s| /src/app/| src/app/|g' "$1";
+    if [[ "$(uname -m)" == 'arm64'  ]]; then
+      sed -i 's|webpack:/||g;s| /src/app/| src/app/|g' "$1";
+    else
+      sed -i '' 's|webpack:/||g;s| /src/app/| src/app/|g' "$1";
+    fi
   else
     sed -i 's|webpack:/||g;s| /src/app/| src/app/|g' "$1";
   fi
