@@ -55,6 +55,10 @@
       "Apply": [
         "Toepassen"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Ten hoogste ${ maxContacts } contact is toegelaten per contactgroep",
+        "Ten hoogste ${ maxContacts } contacten zijn toegelaten per contactgroep"
+      ],
       "Attach screenshot(s)": [
         "Schermafdruk(ken) toevoegen"
       ],
@@ -195,6 +199,14 @@
       ],
       "Delete": [
         "Verwijderen"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Verwijder ${ selectedCount } contact",
+        "Verwijder ${ selectedCount } contacten"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "${ selectedCount } contactgroep verwijderen",
+        "${ selectedCount } contactgroepen verwijderen"
       ],
       "Delete contact": [
         "Contactpersoon verwijderen"
@@ -733,6 +745,10 @@
       "View invoice": [
         "Factuur bekijken"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "U kunt geen vCard-bestanden met meer dan ${ maxAttachments } contact verzenden",
+        "U kunt geen vCard-bestand met meer dan ${ maxAttachments } contacten verzenden"
+      ],
       "Your 500 MB bonus": [
         "Uw 500 MB bonus"
       ],
@@ -758,6 +774,20 @@
       ],
       "You don't have any groups.": [
         "U heeft geen groepen."
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } eigen domein",
+        "${ domains } eigen domeinen"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servers"
+      ],
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
       ]
     },
     "Alert": {
@@ -866,6 +896,10 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
       ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, ${ addresses } e-mailadres, onbeperkt hide-my-email-aliassen, gedeelde agenda's en meer.",
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, ${ addresses } e-mailadressen, onbeperkt hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
       ],
@@ -962,6 +996,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Blijf ${ MAIL_APP_NAME } gebruiken."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
       ]
     },
     "Collapsible tooltip": {
@@ -2074,6 +2114,14 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Zoeken op inhoud kan niet worden ingeschakeld in deze browser. Gelieve de private browsing modus te verlaten of een andere browser te gebruiken."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda",
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda's"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda of",
+        "Deselecteer tenminste ${ calendarsToFixCount } agenda's of"
+      ],
       "Device name does not match": [
         "Apparaatnaam komt niet overeen"
       ],
@@ -2149,6 +2197,10 @@
       "Last name is too long": [
         "Achternaam is te lang"
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Minstens ${ calendarsToFixCount } agenda samenvoegen met een bestaande ${ BRAND_NAME }-agenda",
+        "Minstens ${ calendarsToFixCount } agenda's samenvoegen met bestaande ${ BRAND_NAME }-agenda's"
+      ],
       "Missing key packet": [
         "Ontbrekend sleutelpakket"
       ],
@@ -2170,6 +2222,14 @@
       "Not a valid number": [
         "Geen geldig getal"
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Een van de contacten heeft geen e-mailadres: ${ noEmailsContactNamesList }",
+        "Sommige contactpersonen hebben geen e-mailadres: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Eén van de groepen heeft geen contacten: ${ noContactGroupList }",
+        "Sommige groepen hebben geen contacten: ${ noContactGroupList } "
+      ],
       "Password is required": [
         "Wachtwoord is vereist"
       ],
@@ -2178,6 +2238,10 @@
       ],
       "Please activate your search again": [
         "Activeer het zoeken opnieuw"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Los het gemarkeerde conflict op om verder te gaan.",
+        "Los de gemarkeerde conflicten op om verder te gaan."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Bied ofwel een voornaam, een achternaam of een weergavenaam aan"
@@ -2305,6 +2369,10 @@
       "Username must end with a letter or digit": [
         "Gebruikersnaam moet met een letter of cijfer eindigen"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "U kunt geen e-mail verzenden naar meer dan${ maxContacts } ontvanger",
+        "U kunt geen e-mail verzenden naar meer dan ${ maxContacts } ontvangers"
+      ],
       "You have reached the contacts limit for your account": [
         "U heeft de limiet van contacten bereikt voor dit account"
       ],
@@ -2336,6 +2404,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Er is een onverwachte fout opgetreden. Importeren moet opnieuw gestart worden."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraak.",
+        "Uw bestand ${ formattedFilename } bevat meer dan ${ MAX_IMPORT_EVENTS_STRING } afspraken."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Uw bestand ${ formattedFilename } heeft een ongeldige methode en kan niet worden geïmporteerd."
@@ -2727,6 +2799,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -2738,6 +2814,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyt",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Filter notification": {
@@ -2793,6 +2891,10 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } suggestie gevonden, gebruik het toetsenbord om te navigeren.",
+        "${ items.length } suggesties gevonden, gebruik het toetsenbord om te navigeren."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Gebruik omhoog- en omlaagknoppen om suggesties te openen en te bladeren na invoer. Druk op Enter om uw keuze te bevestigen, of op Escape om het suggestievak te sluiten."
       ]
@@ -2809,6 +2911,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/ 1 afspraak versleuteld en toegevoegd aan uw agenda",
+        "${ totalImported }/${ totalToImport } afspraken versleuteld en toegevoegd aan uw agenda"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. ${ totalImported } van de ${ totalToImport } afspraak succesvol geïmporteerd.",
+        "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraken. ${ totalImported } van de ${ totalToImport } afspraken succesvol geïmporteerd."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw afspraak. Er kon geen enkele afspraak worden geïmporteerd."
       ],
@@ -2843,11 +2953,23 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Geïmporteerde uitnodigingen verschijnen in ${ CALENDAR_APP_NAME } als eenvoudige afspraken zonder details over de organisator en deelnemers. Om updates van afspraken te krijgen en deelnemers te zien, vraag je organisatoren om u uit te nodigen met uw ${ BRAND_NAME }-e-mailadres."
       ],
+      "This file contains an event invitation:": [
+        "Dit bestand bevat een uitnodiging voor een afspraak:",
+        "Dit bestand bevat uitnodigingen voor afspraken:"
+      ],
+      "This file contains an invitation response:": [
+        "Dit bestand bevat een antwoord op een uitnodiging:",
+        "Dit bestand bevat antwoorden op uitnodigingen:"
+      ],
       "This file contains some data that we cannot import:": [
         "Dit bestand bevat enkele gegevens die we niet kunnen importeren:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } contact versleuteld en toegevoegd aan uw contactenlijst",
+        "${ totalImported }/${ totalToImport } contacten versleuteld en toegevoegd aan uw contactenlijst"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Er is een fout opgetreden tijdens het versleutelen en toevoegen van uw contact. Er kon geen contact worden geïmporteerd."
       ],
@@ -2867,6 +2989,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Contact ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } contactpersoon",
+        "${ totalContacts } contactpersonen"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3038,6 +3166,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } van de ${ totalContacts } contacten worden niet geïmporteerd. Klik voor details"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } van de ${ totalEvents } afspraak wordt niet geïmporteerd. Uitvouwen voor details.",
+        "${ totalEventsDiscarded } van de ${ totalEvents } afspraken worden niet geïmporteerd. Uitvouwen voor details."
+      ],
       "No contact can be imported. Click for details": [
         "Er kan geen contact worden geïmporteerd. Klik voor meer informatie"
       ],
@@ -3049,14 +3181,74 @@
       ]
     },
     "Info": {
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } downloaden",
+        "${ activeDownloadsCount } downloaden"
+      ],
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "${ activeDownloadsCount } downloaden (${ downloadProgress }%)",
+        "${ activeDownloadsCount } downloaden (${ downloadProgress }%)"
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "${ activeUploadsCount } uploaden (${ uploadProgress }%)",
+        "${ activeUploadsCount } uploaden (${ uploadProgress }%)"
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } e-mailadres",
+        "${ addressCount } e-mailadressen"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s versleutelingstechnologie betekent dat niemand toegang heeft tot uw wachten - zelfs wij niet."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } nieuwe agenda",
+        "${ calendarsToBeCreatedCount } nieuwe agenda's"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } samengevoegde agenda",
+        "${ calendarsToBeMergedCount } samengevoegde agenda's"
+      ],
+      "${ canceledCount } canceled": [
+        "${ canceledCount } geannuleerd",
+        "${ canceledCount } geannuleerd"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } contact bevat meerdere e-mailadressen.",
+        "${ contactCount } contacten bevatten meerdere e-mailadressen."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } Lid",
+        "${ contactEmailsLength } Leden"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } bevat meerdere e-mailadressen."
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } contactpersoon gevonden",
+        "${ contactsCount } contactpersonen gevonden"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contact",
+        "${ contactsLength } contacten"
+      ],
+      "${ doneCount } finished": [
+        "${ doneCount } voltooid",
+        "${ doneCount } voltooid"
+      ],
+      "${ doneDownloadsCount } downloaded": [
+        "${ doneDownloadsCount } gedownload",
+        "${ doneDownloadsCount } gedownload"
+      ],
+      "${ doneUploadsCount } uploaded": [
+        "${ doneUploadsCount } geüpload",
+        "${ doneUploadsCount } geüpload"
+      ],
+      "${ errorCount } failed": [
+        "${ errorCount } mislukt",
+        "${ errorCount } mislukt"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: afbeelding op volledige grootte"
@@ -3064,14 +3256,66 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: voorbeeld in lage resolutie"
       ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } groep gevonden",
+        "${ groupCounts } groepen gevonden"
+      ],
+      "${ pausedCount } paused": [
+        "${ pausedCount } onderbroken",
+        "${ pausedCount } onderbroken"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } map gevonden",
+        "${ providerFoldersNumLocalized } mappen gevonden"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } label gevonden in Gmail",
+        "${ providerFoldersNumLocalized } labels gevonden in Gmail"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda",
+        "${ selectedCalendarsTotal } van ${ providerCalendars.length } agenda's"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contact geselecteerd",
+        "${ selectedContactsLength }/${ contactsLength } contacten geselecteerd"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } geselecteerd",
+        "${ selectedCount } geselecteerd"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } map geselecteerd",
+        "${ selectedFoldersCount } mappen geselecteerd"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } label geselecteerd",
+        "${ selectedFoldersCount } labels geselecteerd"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } map geselecteerd",
+        "${ selectedFoldersCountLocalized } mappen geselecteerd"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } label geselecteerd",
+        "${ selectedFoldersCountLocalized } labels geselecteerd"
+      ],
       "${ speed }/s": [
         "${ speed }/s"
       ],
       "${ storage } storage": [
         "${ storage } opslag"
       ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } contact bijgewerkt.",
+        "${ updated } contacten bijgewerkt."
+      ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } bestaat al op deze plaats."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } lid)",
+        "(${ memberCount } leden)"
       ],
       "A number will be added to the filename": [
         "Een nummer wordt toegevoegd aan de bestandsnaam"
@@ -3088,8 +3332,20 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adresverificatie met vertrouwde sleutels is voor dit adres ingeschakeld. Vertrouw eerst een aantal openbare sleutels sleutels om berichten te kunnen versturen naar deze ontvanger."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Alles (${ totalFoldersCount } map)",
+        "Alle (${ totalFoldersCount } mappen)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Alle (${ totalFoldersCount } label)",
+        "Alle (${ totalFoldersCount } labels)"
+      ],
       "All your changes will be lost.": [
         "Alle wijzigingen gaan verloren."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }",
+        "Al uw contacten worden geïmporteerd, met een limiet van ${ MAX_CONTACTS_PER_USER }"
       ],
       "Also try looking in Trash.": [
         "Probeer ook te zoeken in de Prullenbak."
@@ -3199,6 +3455,10 @@
       "Country code": [
         "Landcode"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda",
+        "Maak ${ calendarsToBeCreatedCount } nieuwe agenda's"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Maak een label voor de geïmporteerde berichten, een tijdbereik voor deze import, en de mappen die u wilt importeren."
       ],
@@ -3234,6 +3494,10 @@
       ],
       "Decrypting files": [
         "Bestanden ontsleutelen"
+      ],
+      "Delete locked drive": [
+        "Verwijder vergrendelde drive",
+        "Verwijder vergrendelde drives"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitale handtekening geverifieerd. Dit bestand werd veilig geüpload door ${ emailAddress }."
@@ -3318,6 +3582,10 @@
       ],
       "Enter your own password (as organization admin).": [
         "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Geschatte resterende tijd: ${ estimatedMinutes } minuut",
+        "Geschatte resterende tijd: ${ estimatedMinutes } minuten"
       ],
       "Estimated time remaining: Less than a minute": [
         "Geschatte resterende tijd: minder dan een minuut"
@@ -3408,6 +3676,10 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Als u een van deze heeft, ga dan verder naar ${ BRAND_NAME }-account instelling om het deblokkeer proces voort te zetten."
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
+        "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda's"
       ],
       "Import from": [
         "Importeren van"
@@ -3577,6 +3849,10 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Eén of meerdere van uw vertrouwde sleutels zijn gemarkeerd als \"gecompromitteerd\" door hun eigenaars. We adviseren u deze sleutel niet meer te vertrouwen."
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } teken toegelaten",
+        "Maximum ${ MAX_CUSTOM_PASSWORD_LENGTH } tekens toegelaten"
+      ],
       "Only the people with the link and the password can access this file.": [
         "Alleen de mensen met de link en het wachtwoord hebben toegang tot dit bestand."
       ],
@@ -3612,6 +3888,10 @@
       ],
       "Please select the folders you would like to import:": [
         "Selecteer de mappen die u wilt importeren:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Selecteer welk e-mailadres u wilt toevoegen aan ${ groupCount } groep.",
+        "Selecteer welke e-mailadressen u wilt toevoegen aan ${ groupCount } groepen."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupName }."
@@ -3813,6 +4093,10 @@
       ],
       "This month": [
         "Deze maand"
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "Dit zal de link verwijderen en de toegang tot uw bestand of map voor iedereen met de link verwijderen.",
+        "Dit zal de links verwijderen en de toegang tot uw bestanden en mappen voor iedereen met de links verwijderen."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
         "Hiermee wordt het gesynchroniseerde apparaat ${ deviceName } verwijderd van ${ DRIVE_APP_NAME } en worden de mappen die u aan Mijn computers hebt toegevoegd, niet meer gesynchroniseerd."
@@ -4125,6 +4409,14 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } gebruikersnaam"
       ],
+      "${ nbDay } day": [
+        "${ nbDay } dag",
+        "${ nbDay } dagen"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } jaar",
+        "${ nbYear } jaren"
+      ],
       "(Expired)": [
         "(Verlopen)"
       ],
@@ -4232,6 +4524,10 @@
       ],
       "Delete": [
         "Verwijderen"
+      ],
+      "Delete drive?": [
+        "Drive verwijderen?",
+        "Drives verwijderen?"
       ],
       "Delete recovery-related information.": [
         "Verwijder herstel-gerelateerde informatie."
@@ -4651,6 +4947,10 @@
       "Almost there": [
         "Bijna daar"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }",
+        "Aantal aangemaakte agenda's: ${ createdCalendarCount } van de ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Verbinding maken met uw e-mailprovider"
       ],
@@ -4665,6 +4965,24 @@
       ],
       "Your import is starting": [
         "Uw import begint"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Alle berichten uit ${ itemsToImportCount } map importeren en labelen als",
+        "Alle berichten uit ${ itemsToImportCount } mappen importeren en labelen als"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Alle berichten van ${ itemsToImportCount }-label importeren en labelen als",
+        "Alle berichten van ${ itemsToImportCount }-labels importeren en labelen als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als",
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } mappen importeren en labelen als"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als",
+        "Alle berichten van ${ selectedItemsToImportCount } van de ${ itemsToImportCount } labels importeren en labelen als"
       ]
     },
     "Message": {
@@ -4814,6 +5132,50 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" succesvol hernoemd"
       ],
+      "${ count } item failed to be decrypted": [
+        "${ count } item kon niet worden ontsleuteld",
+        "${ count } items konden niet worden ontsleuteld"
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "${ numberOfItems } item permanent verwijderd uit de prullenbak",
+        "${ numberOfItems } items permanent verwijderd uit de prullenbak"
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "${ numberOfItems }\" item kon niet permanent verwijderd worden uit prullenbak",
+        "${ numberOfItems }\" items konden niet permanent verwijderd worden uit prullenbak"
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "${ numberOfItems } item kon niet verplaatst worden",
+        "${ numberOfItems } items konden niet verplaatst worden"
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "${ numberOfItems } item kon niet verplaatst worden naar prullenbak",
+        "${ numberOfItems } items konden niet verplaatst worden naar prullenbak"
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "${ numberOfItems } item kon niet hersteld worden uit prullenbak",
+        "${ numberOfItems } items konden niet hersteld worden uit prullenbak"
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "${ numberOfItems } item verplaatst naar de prullenbak",
+        "${ numberOfItems } items verplaatst naar de prullenbak"
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "${ numberOfItems } item hersteld uit prullenbak",
+        "${ numberOfItems } items hersteld uit prullenbak"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "${ numberOfItems } item succesvol verplaatst",
+        "${ numberOfItems } items succesvol verplaatst"
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "${ numberOfItems } link naar uw item kon niet worden verwijderd",
+        "${ numberOfItems } links naar uw items konden niet worden verwijderd"
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "${ numberOfItems } link naar uw item werd verwijderd",
+        "${ numberOfItems } links naar uw items werden verwijderd"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Alle items zullen binnenkort permanent uit de prullenbak worden verwijderd"
       ],
@@ -4853,6 +5215,10 @@
       "Failed to upload files: ${ err }": [
         "Het uploaden van bestanden is mislukt: ${ err }"
       ],
+      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
+        "Bestand of map \"${ filename }\" en ${ count } andere zijn al aan het uploaden",
+        "Bestand of map \"${ filename }\" en ${ count } andere zijn al aan het uploaden"
+      ],
       "File or folder \"${ filename }\" is already uploading": [
         "Bestand of map \"${ filename }\" is al aan het uploaden"
       ],
@@ -4861,6 +5227,30 @@
       ],
       "Link copied to clipboard": [
         "Link gekopieerd naar klembord"
+      ],
+      "Move ${ itemsToMoveCount } file": [
+        "Verplaats ${ itemsToMoveCount } bestand",
+        "Verplaats ${ itemsToMoveCount } bestanden"
+      ],
+      "Move ${ itemsToMoveCount } folder": [
+        "Verplaats ${ itemsToMoveCount } map",
+        "Verplaats ${ itemsToMoveCount } mappen"
+      ],
+      "Move ${ itemsToMoveCount } item": [
+        "Verplaats ${ itemsToMoveCount } item",
+        "Verplaats ${ itemsToMoveCount } items"
+      ],
+      "Move ${ movingCount } file": [
+        "Verplaats ${ movingCount } bestand",
+        "Verplaats ${ movingCount } bestanden"
+      ],
+      "Move ${ movingCount } folder": [
+        "Verplaats ${ movingCount } map",
+        "Verplaats ${ movingCount } mappen"
+      ],
+      "Move ${ movingCount } item": [
+        "Verplaats ${ movingCount } item",
+        "Verplaats ${ movingCount } items"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Onvoldoende ruimte om ${ formattedTotal } te uploaden"
@@ -4928,6 +5318,10 @@
       ],
       "Set a recovery method": [
         "Stel een herstelmethode in"
+      ],
+      "Simply complete the following in the next ${ expiresInDays } day:": [
+        "Vul eenvoudigweg het volgende vandaag nog in:",
+        "Vul eenvoudigweg het volgende binnen de ${ expiresInDays } dagen in:"
       ],
       "Upload a file": [
         "Upload een bestand"
@@ -5085,6 +5479,18 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } van de ${ countContacts } contactpersonen geëxporteerd.",
+        "${ contactsExported.length } van de ${ countContacts } contactpersonen geëxporteerd."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } van de ${ totalBeDeleted } contact succesvol verwijderd.",
+        "${ model.deleted.length } van de ${ totalBeDeleted } contactpersonen zijn succesvol verwijderd."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } van de ${ totalBeMerged } contact succesvol samengevoegd.",
+        "${ model.submitted.length } van de ${ totalBeMerged } contacten zijn succesvol samengevoegd."
+      ],
       "No contacts exported.": [
         "Geen contactpersonen geëxporteerd."
       ],
@@ -5157,8 +5563,32 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dag",
+        "${ timeRemaining.inDays } dagen"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } uur",
+        "${ timeRemaining.inHours } uren"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inDays } dag om uw wachtwoord te resetten.",
+        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inDays } dagen om uw wachtwoord te resetten."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
+        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inHours } ure om uw wachtwoord te resetten."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "\"Ga naar het ingelogde apparaat (in de sessie waarin de aanvraag is gestart) om uw wachtwoord te wijzigen.\""
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Deze toestemming verloopt binnen ${ timeRemaining.inDays } dag",
+        "Deze toestemming verloopt binnen ${ timeRemaining.inDays } dagen"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uur",
+        "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uren"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "U kan uw wachtwoord vrijelijk wijzigen voor de account ${ boldEmail } gedurende ${ boldDaysRemaining }."
@@ -5221,8 +5651,16 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } uur",
+        "${ gracePeriodHoursRemaining } uren"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Indien u geen wachtwoord reset hebt aangevraagd, annuleer deze aanvraag dan nu."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Wachtwoord reset aangevraagd (${ user.Email }). Uw wachtwoord kan gewijzigd worden in ${ hoursRemaining } uur.",
+        "Wachtwoord reset aangevraagd (${ user.Email }). Uw wachtwoord kan gewijzigd worden in ${ hoursRemaining } uren."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Om er zeker van te zijn dat u het bent die probeert uw wachtwoord te resetten, wachten we 72 uur voordat we verzoeken goedkeuren. U kan uw wachtwoord wijzigen in ${ boldTimeLeft }. ${ viewRequest }"
@@ -5250,6 +5688,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } uur",
+        "${ gracePeriodHoursRemaining } uren"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } is nu beschikbaar"
       ],
@@ -5295,6 +5737,30 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Kies Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } seconden"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -5355,6 +5821,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
       "/ month": [
         "/ maand"
       ],
@@ -5482,6 +5952,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contact ziet er identiek uit.",
+        "${ countMergeableContacts } contacten zien er identiek uit."
+      ],
       "Address copied to clipboard": [
         "Adres gekopieerd naar het klembord"
       ],
@@ -5493,6 +5967,14 @@
       ],
       "Code sent to ${ methodTo }": [
         "Code verzonden naar ${ methodTo }"
+      ],
+      "Contact deleted": [
+        "Contactpersoon verwijderd",
+        "Contactpersonen verwijderd"
+      ],
+      "Contact group deleted": [
+        "Contactgroep verwijderd",
+        "Contactgroepen verwijderd"
       ],
       "Contact saved": [
         "Contactpersoon opgeslagen"
@@ -5616,9 +6098,53 @@
         "vCard-veld"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } u",
+        "${ hours } u"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 u",
+        "${ hoursInt },5 u"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 uur",
+        "${ hoursInt },5 uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
+      ]
+    },
     "Title": {
       "# of downloads": [
         "# downloads"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } e-mailadres",
+        "${ emailsCount } e-mailadressen"
+      ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } download mislukt",
+        "${ numberOfFailedTransfer.total } downloads mislukt"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } verplaasting mislukt",
+        "${ numberOfFailedTransfer.total } verplaastingen mislukt"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } upload mislukt",
+        "${ numberOfFailedTransfer.total } uploads mislukt"
       ],
       "Account suspended": [
         "Account opgeschort"
@@ -5628,6 +6154,10 @@
       ],
       "Add contact group name": [
         "Naam contactgroep toevoegen"
+      ],
+      "Add to ${ groupCount } group": [
+        "Toevoegen aan ${ groupCount } groep",
+        "Toevoegen aan ${ groupCount } groepen"
       ],
       "Add to ${ groupName }": [
         "Toevoegen aan ${ groupName }"
@@ -5713,6 +6243,14 @@
       "Day theme": [
         "Dag thema"
       ],
+      "Delete ${ count } contact": [
+        "Verwijder ${ count } contact",
+        "${ count } contacten verwijderen"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count } contactgroep verwijderen",
+        "${ count } contactgroepen verwijderen"
+      ],
       "Delete ${ Name }": [
         "Verwijder ${ Name }"
       ],
@@ -5794,6 +6332,10 @@
       "Folders details": [
         "Details mappen"
       ],
+      "Found ${ searchView.numberOfResults } result": [
+        "${ searchView.numberOfResults } zoekresultaat",
+        "${ searchView.numberOfResults } zoekresultaten"
+      ],
       "Groups": [
         "Groepen"
       ],
@@ -5802,6 +6344,10 @@
       ],
       "Human verification": [
         "Persoonsverificatie"
+      ],
+      "Import as simple event?": [
+        "Importeren als eenvoudige afspraak?",
+        "Importeren als eenvoudige afspraken?"
       ],
       "Import contacts": [
         "Contactpersonen importeren"
@@ -6141,12 +6687,26 @@
         "U heeft geen contactpersonen om te exporteren"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Wachtwoord moet ten minste ${ length } teken bevatten",
+        "Wachtwoord moet ten minste ${ length } tekens bevatten"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
+        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
+      ]
+    },
     "Validation Error": {
       "\"${ str }\" is not a valid name": [
         "\"${ str }\" is geen geldige naam"
       ],
       "Name cannot include invisible characters, / or \\.": [
         "Naam mag niet onzichtbare tekens bevatten, / of \\."
+      ],
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "Naam mag maximaal ${ MAX_NAME_LENGTH } teken lang zijn",
+        "Naam mag maximaal ${ MAX_NAME_LENGTH } tekens lang zijn"
       ],
       "Name must not be empty": [
         "Naam mag niet leeg zijn"
@@ -6172,6 +6732,10 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } zal zo veel mogelijk gegevens overdragen, te beginnen met uw meest recente berichten."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Weet u zeker dat u ${ count } contact permanent wilt verwijderen?",
+        "Weet u zeker dat u ${ count } contacten permanent wilt verwijderen?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Weet u zeker dat u deze contactgroepen permanent wilt verwijderen?"
