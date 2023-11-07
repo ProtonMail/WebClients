@@ -58,6 +58,7 @@
         "roosterjs": "8.47.0",
         "tabbable": "^6.2.0",
         "tinycolor2": "^1.6.0",
+        "ttag": "^1.7.27",
         "unleash-proxy-client": "^3.1.0"
     },
     "devDependencies": {
@@ -83,7 +84,6 @@
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
         "prettier": "^3.0.3",
-        "ttag": "^1.7.25",
         "typescript": "^5.2.2"
     },
     "peerDependencies": {
@@ -92,7 +92,6 @@
         "@proton/key-transparency": "*",
         "@proton/shared": "*",
         "@proton/srp": "*",
-        "date-fns": "^2.30.0",
-        "ttag": "^1.7.25"
+        "date-fns": "^2.30.0"
     }
 }
