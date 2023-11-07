@@ -113,9 +113,6 @@
       "Current plan": [
         "Pla actual"
       ],
-      "Customize": [
-        "Personalitza"
-      ],
       "Customize plan": [
         "Personalitza el pla"
       ],
@@ -163,6 +160,9 @@
       ],
       "Download all configurations": [
         "Baixa tota la configuració"
+      ],
+      "Download our CSV template": [
+        "Descarrega la nostra plantilla CSV"
       ],
       "Edit": [
         "Edita"
@@ -262,6 +262,9 @@
       ],
       "Invite user": [
         "Convida l'usuari"
+      ],
+      "Keep my Plus subscription": [
+        "Mantén la meva subscripció Plus"
       ],
       "Let's talk": [
         "Parlem-ne"
@@ -431,8 +434,14 @@
       "Sign in with password": [
         "Inicieu la sessió amb una contrasenya"
       ],
+      "Sign in with SSO": [
+        "Inicieu la sessió amb SSO"
+      ],
       "Sign out": [
         "Tanca la sessió"
+      ],
+      "sign up for free": [
+        "creeu un compte gratuïtament"
       ],
       "Signing in": [
         "Iniciant sessió"
@@ -537,6 +546,14 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domini personalitzat",
+        "${ domains } dominis personalitzats"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidors"
+      ],
       "${ price } per dedicated server": [
         "${ price } per servidor dedicat"
       ],
@@ -545,6 +562,10 @@
       ],
       "${ price } per user": [
         "${ price } per usuari"
+      ],
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
       ]
     },
     "Address action": {
@@ -616,6 +637,57 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Això desconnectarà tots els routers i clients que utilitzin aquest certificat."
+      ]
+    },
+    "bf2023: Action": {
+      "Add ${ PASS_APP_NAME }": [
+        "Afegeix ${ PASS_APP_NAME }"
+      ],
+      "Cancel": [
+        "Cancel·la"
+      ],
+      "Close": [
+        "Tanca"
+      ],
+      "Get the deal": [
+        "Obtingui l’oferta"
+      ],
+      "Remove": [
+        "Suprimeix"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "Suprimeix ${ PASS_APP_NAME }"
+      ]
+    },
+    "bf2023: Deal details": {
+      "1 user": [
+        "1 usuari"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 usuaris"
+      ]
+    },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } mes",
+        "els primers ${ n } mesos"
+      ],
+      "the first month": [
+        "el primer mes"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "L'oferta no està disponible."
+      ]
+    },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
       ]
     },
     "Billing cycle option": {
@@ -715,6 +787,16 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continua utilitzant ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
+      ],
+      "Total for ${ n } month": [
+        "Total per ${ n } mes",
+        "Total per ${ n } mesos"
       ]
     },
     "Checkout summary": {
@@ -2185,11 +2267,23 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } connexió VPN",
+        "${ MaxVPN } connexions VPN"
+      ],
       "Access to all countries": [
         "Accés a tots els països"
       ],
       "Add": [
         "Afegeix"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Afegeix (${ numberOfAddedServers })",
+        "Afegeix (${ numberOfAddedServers })"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Connexió per fins a ${ plusVpnConnections } dispositiu",
+        "Connexió per fins a ${ plusVpnConnections } dispositius"
       ],
       "Fastest VPN servers": [
         "Els servidors VPN més ràpids"
@@ -2293,6 +2387,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -2304,6 +2402,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "gigabyte",
+        "gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "megabyte",
+        "megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Font face option": {
@@ -2442,6 +2562,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adreça",
+        "${ amountOfAddresses } adreces"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
@@ -2463,8 +2587,24 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } també es pot usar amb una sola contrasenya que reemplaça tant la contrasenya d'inici de sessió com la de correu electrònic. Per a canviar al mode de contrasenya única, introduïu la contrasenya que voleu utilitzar i feu clic a Desa."
       ],
+      "${ number } city": [
+        "${ number } ciutat",
+        "${ number } ciutats"
+      ],
+      "${ number } server": [
+        "${ number } servidor",
+        "${ number } servidors"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } adreça més",
+        "${ remainingAddresses.length } adreces més"
+      ],
       "${ storage } storage": [
         "${ storage } d'emmagatzematge"
+      ],
+      "${ userFound } user found": [
+        "S'ha trobat ${ userFound } usuari",
+        "S'han trobat ${ userFound } usuaris"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Es requereix ${ vpnPlus } per a la conexió a nivell de país."
@@ -2480,6 +2620,10 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonificació d'emmagatzematge"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } connexió per a ${ VPN_APP_NAME } (permet connectar més dispositius a la VPN)",
+        "+${ organization.BonusVPN } connexions per a ${ VPN_APP_NAME } (permet connectar més dispositius a la VPN)"
       ],
       "30-day money-back guarantee": [
         "30 dies de garantia de reemborsament"
@@ -2585,6 +2729,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Abans que pugueu enviar i rebre missatges des de les noves direccions, necessiteu crear les seves claus de xifrat respectives."
+      ],
+      "Billed at ${ price }": [
+        "Facturat a ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Cicle de facturació: ${ text }"
@@ -2925,6 +3072,14 @@
       "Plan upgrade required": [
         "Es requereix una millora del pla"
       ],
+      "Please add a password for the user on row": [
+        "Afegiu una contrasenya per a l'usuari seleccionat",
+        "Afegiu contrasenyes per als usuaris seleccionats"
+      ],
+      "Please add an email address for the user on row": [
+        "Afegiu una adreça de correu electrònic per a l'usuari seleccionat",
+        "Afegiu adreces de correu electrònic per als usuaris seleccionats"
+      ],
       "Please authenticate your card in the verification tab.": [
         "Autentiqueu la vostra targeta a la pestanya de verificació."
       ],
@@ -3000,6 +3155,9 @@
       "Revoke certificate ${ name }": [
         "Revoca el certificat ${ name }"
       ],
+      "Save ${ percentage }": [
+        "Deseu ${ percentage }"
+      ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "Deseu les vostres contrasenyes en un lloc segur. Feu clic a la icona per confirmar que heu escrit la contrasenya correctament."
       ],
@@ -3042,6 +3200,10 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Com que sou un usuari fidel, el vostre compte té característiques addicionals activades."
       ],
+      "Step ${ step }": [
+        "Pas ${ step }",
+        "Passes ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Emmagatzematge assignat a altres usuaris d'aquesta organització"
       ],
@@ -3071,6 +3233,18 @@
       ],
       "Thank you": [
         "Gràcies"
+      ],
+      "The following address is invalid.": [
+        "La següent adreça no és vàlida.",
+        "Les següents adreces no són vàlides."
+      ],
+      "The following address is unavailable.": [
+        "La següent adreça no està disponible.",
+        "Les següents adreces no estan disponibles."
+      ],
+      "The following address was not created.": [
+        "La següent adreça no s'ha creat.",
+        "Les següents adreces no s'han creat."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "Els següents membres rebran un correu electrònic que els demanarà habilitar l'autenticació de dos factors tan aviat com sigui possible."
@@ -3321,8 +3495,21 @@
       "You are signed in to the account ${ memberAddress }.": [
         "Heu iniciat la sessió al compte ${ memberAddress }."
       ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "Podeu personalitzar i baixar les vostres factures a efectes de comptabilitat."
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Suprimiu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Suprimiu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Suprimiu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció.",
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Suprimiu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Suprimiu els enllaços de calendari compartits abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Suprimiu els enllaços de calendari compartits abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Suprimiu els enllaços de calendari compartits abans de cancel·lar la subscripció.",
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Suprimiu els enllaços de calendari compartits abans de cancel·lar la subscripció."
       ],
       "You can now access and manage the account as an administrator.": [
         "Ara podeu accedir i gestionar el compte com a administrador."
@@ -3425,11 +3612,6 @@
         "Podeu afegir un mètode de pagament per renovar automàticament la vostra subscripció. També hi ha disponibles altres mètodes de pagament."
       ]
     },
-    "Info message for custom invoice modal": {
-      "Add your name (or company name) and address to your invoices.": [
-        "Afegeixi el seu nom (o nom de la empresa) i adreça a les seves factures."
-      ]
-    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "Podeu evitar el venciment reactivant la subscripció"
@@ -3511,6 +3693,18 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "Adreça de ${ MAIL_APP_NAME }"
+      ],
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } dia",
+        "${ nbDay } dies"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } de ${ MaxAddresses } adreça de correu electrònic",
+        "${ UsedAddresses } de ${ MaxAddresses } adreces de correu electrònic"
       ],
       "Account storage": [
         "Emmagatzematge del compte"
@@ -3634,9 +3828,6 @@
       ],
       "Current email": [
         "Correu electrònic actual"
-      ],
-      "Customize invoices": [
-        "Personalitzar factures"
       ],
       "Default language": [
         "Idioma per defecte"
@@ -3914,8 +4105,14 @@
       "${ BRAND_NAME } product announcements": [
         "Anuncis de productes de ${ BRAND_NAME }"
       ],
+      "${ BRAND_NAME } user survey": [
+        "Enquesta als usuaris de ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } welcome emails": [
         "Missatges de benvinguda de ${ BRAND_NAME }"
+      ],
+      "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
+        "Noves característiques de ${ MAIL_APP_NAME } i de ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4034,6 +4231,12 @@
         "Milloreu el vostre pla per a desbloquejar el xat de suport i altres característiques prèmium, o utilitza el nostre formulari de suport gratuït per a reportar el teu problema."
       ]
     },
+    "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length } membre de ${ members.length } de la vostra organització usa l'autenticació de dos factors.",
+        "${ twoFAMembers.length } membres de ${ members.length } de la vostra organització usen l'autenticació de dos factors."
+      ]
+    },
     "Member action": {
       "Change password": [
         "Canvia la contrasenya"
@@ -4073,6 +4276,9 @@
       ],
       "Create a new ${ appName } account": [
         "Crear un compte de ${ appName }"
+      ],
+      "Find your ${ BRAND_NAME } Account username": [
+        "Troba el vostre nom d'usuari del compte ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Heu oblidat la vostra contrasenya del compte ${ BRAND_NAME }? Restabliu-la utilitzant un codi de recuperació, correu electrònic, o SMS i torneu a obtenir accés a ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, i més."
@@ -4159,6 +4365,66 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } calendari",
+        "${ n } calendaris"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendari per usuari",
+        "${ n } calendaris per usuari"
+      ],
+      "${ n } custom email domain": [
+        "${ n } domini de correu electrònic personalitzat",
+        "${ n } dominis de correu electrònic personalitzats"
+      ],
+      "${ n } email address": [
+        "${ n } adreça de correu electrònic",
+        "${ n } adreces de correu electrònic / àlies"
+      ],
+      "${ n } email address per user": [
+        "${ n } adreça de correu electrònic per usuari",
+        "${ n } adreces de correu electrònic per usuari"
+      ],
+      "${ n } filter": [
+        "${ n } filtre",
+        "${ n } filtres"
+      ],
+      "${ n } folder": [
+        "${ n } carpeta",
+        "${ n } carpetes"
+      ],
+      "${ n } folder and label": [
+        "${ n } carpeta i etiqueta",
+        "${ n } carpetes i etiquetes"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } àlies hide-my-email",
+        "${ n } àlies hide-my-email"
+      ],
+      "${ n } label": [
+        "${ n } etiqueta",
+        "${ n } etiquetes"
+      ],
+      "${ n } message per day": [
+        "${ n } missatge per dia",
+        "${ n } missatges per dia"
+      ],
+      "${ n } vault": [
+        "${ n } caixa forta",
+        "${ n } caixes fortes"
+      ],
+      "${ n } VPN connection": [
+        "${ n } connexió VPN",
+        "${ n } connexions VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } connexió VPN per usuari",
+        "${ n } connexions VPN per usuari"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email",
+        "${ PASS_APP_NAME } amb ${ n } àlies hide-my-email"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } amb àlies hide-my-email il·limitats"
       ],
@@ -4294,6 +4560,10 @@
       "High-speed Swiss VPN that protects your privacy": [
         "VPN suïssa d'alta velocitat que protegeix la vostra privacitat"
       ],
+      "High-speed VPN on ${ n } device": [
+        "VPN d'alta velocitat en ${ n } dispositiu",
+        "VPN d'alta velocitat en ${ n } dispositius"
+      ],
       "HTML signatures": [
         "Signatures HTML"
       ],
@@ -4330,6 +4600,10 @@
       "Priority support & live chat": [
         "Suport prioritari i xat en directe"
       ],
+      "Protect ${ n } device at a time": [
+        "Protegiu ${ n } dispositiu alhora",
+        "Protegiu ${ n } dispositius alhora"
+      ],
       "Router support": [
         "Suport per a router"
       ],
@@ -4344,6 +4618,10 @@
       ],
       "Send & receive invitations": [
         "Enviament i recepció d'invitacions"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Servidors en més d'${ vpnServersCountData.paid.countries } país",
+        "Servidors en més de ${ vpnServersCountData.paid.countries } països"
       ],
       "Share calendar via link": [
         "Compartició d'un calendari mitjançant un enllaç"
@@ -4526,6 +4804,12 @@
         "/mes"
       ]
     },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "Encara us queda ${ daysRemaining } dia al compte ${ currentPlanName }.",
+        "Encara us queden ${ daysRemaining } dies al compte ${ currentPlanName }."
+      ]
+    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Fent clic a \"Pagar\", accepteu els nostres ${ termsAndConditions }."
@@ -4580,6 +4864,10 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Creeu múltiples adreces de correu electrònic per a les vostres identitats en línia; p. ex., JoanCompres@${ domain } per a comptes de compres, JoanNoticies@${ domain } per a la subscripció a notícies."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Creeu fins a ${ n } calendari o afegiu calendaris d'amics, família, col·legues i organitzacions",
+        "Creeu fins a ${ n } calendaris o afegiu calendaris d'amics, família, col·legues i organitzacions"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creeu fins a ${ n } adreces de correu electrònic o àlies que podeu assignar als membres de la família. Utilitzeu-los per a les identitats en línia, p. ex., JoanCompres@${ domain } per als comptes de compres."
@@ -4765,6 +5053,10 @@
       "Cover more ground with support for 10 custom email domains": [
         "Obteniu més opcions amb suport per a 10 dominis de correu personalitzats"
       ],
+      "Create up to ${ n } calendar": [
+        "Crea fins a ${ n } calendari",
+        "Crea fins a ${ n } calendaris"
+      ],
       "Multi-platform support": [
         "Suport multiplataforma"
       ],
@@ -4857,6 +5149,18 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } el vostre pla per obtenir més emmagatzematge o suprimiu una part de l'emmagatzematge per alliberar espai."
       ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "El vostre pla inclou un màxim d'${ availableAddresses } adreça addicional.",
+        "El vostre pla inclou un màxim de ${ availableAddresses } adreces més."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "El vostre pla inclou un màxim d'${ availableNumberOfMembers } usuari addicional per a la vostra organització.",
+        "El vostre pla inclou un màxim de ${ availableNumberOfMembers } usuaris addicionals per a la vostra organització."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "El vostre pla inclou un màxim d'${ availableVPNAccess } compte VPN addicional.",
+        "El vostre pla inclou un màxim de ${ availableVPNAccess } comptes VPN addicionals."
+      ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "El vostre pla inclou un màxim de ${ humanReadableAvailableSpace } més d'espai d'emmagatzematge disponible."
       ]
@@ -4944,11 +5248,9 @@
       ],
       "Select a reason": [
         "Seleccioneu un motiu"
-      ]
-    },
-    "Placeholder for custom invoice text": {
-      "Add your name (or company name) and address to your invoices": [
-        "Afegeixi el seu nom (o nom de la empresa) i adreça a les seves factures"
+      ],
+      "Thomas Anderson": [
+        "Adrià Pujol"
       ]
     },
     "plan customizer, users": {
@@ -4957,6 +5259,10 @@
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "Seleccioneu el nombre d'usuaris per incloure en el vostre pla. Cada usuari addicional té un cost de ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Si necessiteu més d'${ maxUsers } compte d'usuari, ${ contact } amb el nostre equip de vendes.",
+        "Si necessiteu més de ${ maxUsers } comptes d'usuari, ${ contact } amb el nostre equip de vendes."
       ]
     },
     "Price": {
@@ -5107,8 +5413,35 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dia",
+        "${ timeRemaining.inDays } dies"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } hores"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Si no heu demanat restablir la teva contrasenya, cancel·leu la sol·licitud ara mateix."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dia per a restablir la vostra contrasenya.",
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dies per a restablir la vostra contrasenya."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hora per a restablir la vostra contrasenya.",
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hores per a restablir la vostra contrasenya."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Aneu a l'aparell connectat (a la sessió on es va iniciar la sol·licitud) per canviar la vostra contrasenya."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Aquest permís caduca en ${ timeRemaining.inDays } dia.",
+        "Aquest permís caduca en ${ timeRemaining.inDays } dies."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Aquest permís caduca en ${ timeRemaining.inHours } hora.",
+        "Aquest permís caduca en ${ timeRemaining.inHours } hores."
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Ara podeu canviar la vostra contrasenya per al compte ${ boldEmail } lliurement durant ${ boldDaysRemaining }."
@@ -5177,14 +5510,29 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } hora més",
+        "${ gracePeriodHoursRemaining } hores més"
+      ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Si no heu demanat restablir la teva contrasenya, cancel·leu la sol·licitud ara mateix."
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Si no heu demanat restablir la teva contrasenya, cancel·leu aquesta sol·licitud ara mateix."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hora.",
+        "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hores."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Per assegurar-nos que sou vosaltres qui intenteu restablir la vostra contrasenya, esperem 72 hores abans d'aprovar les sol·licituds. Podeu canviar la vostra contrasenya en ${ boldTimeLeft }. ${ viewRequest }."
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Hem rebut una sol·licitud de restabliment de contrasenya per a ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Podreu canviar la vostra contrasenya en ${ gracePeriodHoursRemaining } hora.",
+        "Podreu canviar la vostra contrasenya en ${ gracePeriodHoursRemaining } hores."
       ]
     },
     "session_recovery:in_progress:link": {
@@ -5216,6 +5564,10 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "Sol·licita el restabliment de contrasenya?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Podreu restablir la vostra contrasenya en ${ gracePeriodHoursRemaining } hora.",
+        "Podreu restablir la vostra contrasenya en ${ gracePeriodHoursRemaining } hores."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -5227,6 +5579,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } hores"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } ara està disponible."
       ],
@@ -5298,6 +5654,30 @@
         "Passeu-vos a Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dies"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segon",
+        "${ seconds } segons"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mes GRATIS",
+        "${ n } mesos GRATIS"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 usuari"
@@ -5361,6 +5741,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
       "/ month": [
         "/ mes"
       ],
@@ -5501,6 +5885,58 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } servidor dedicat",
+        "${ ipAddresses } servidors dedicats"
+      ],
+      "${ maxVpn } high-speed VPN connection": [
+        "${ maxVpn } connexió VPN d'alta velocitat",
+        "${ maxVpn } connexions VPN d'alta velocitat"
+      ],
+      "${ n } calendar": [
+        "${ n } calendari",
+        "${ n } calendaris"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendari per usuari",
+        "${ n } calendaris per usuari"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } connexió VPN d'alta velocitat",
+        "${ n } connexions VPN d'alta velocitat"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } connexió VPN d'alta velocitat per usuari",
+        "${ n } connexions VPN d'alta velocitat per usuari"
+      ],
+      "${ n } VPN connection": [
+        "${ n } connexió VPN",
+        "${ n } connexions VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } connexió VPN per usuari",
+        "${ n } connexions VPN per usuari"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } adreça",
+        "${ UsedAddresses } adreces"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } de ${ MaxAddresses } adreça de correu electrònic",
+        "${ UsedAddresses } de ${ MaxAddresses } adreces de correu electrònic"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } calendari",
+        "${ UsedCalendars } calendaris"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } domini personalitzat de ${ MaxDomains }",
+        "${ UsedDomains } dominis personalitzats de ${ MaxDomains }"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } usuari de ${ MaxMembers }",
+        "${ UsedMembers } usuaris de ${ MaxMembers }"
+      ],
       "1 email address": [
         "1 adreça de correu"
       ],
@@ -5512,6 +5948,10 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "Bloquejador d'anuncis integrat (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "VPN d'alta velocitat en ${ maxVpn } dispositiu",
+        "VPN d'alta velocitat en ${ maxVpn } dispositius"
       ]
     },
     "Subscription change warning": {
@@ -5851,9 +6291,6 @@
       "Add credits": [
         "Afegir crèdits"
       ],
-      "Add invoice details": [
-        "Afegir detalls de la factura"
-      ],
       "Add new user": [
         "Afegeix un nou usuari"
       ],
@@ -5937,6 +6374,10 @@
       ],
       "Couldn’t create accounts": [
         "No s'han pogut crear els comptes"
+      ],
+      "Create ${ selectedUserIds.length } user": [
+        "Crea ${ selectedUserIds.length } usuari",
+        "Crea ${ selectedUserIds.length } usuaris"
       ],
       "Create a new Gateway": [
         "Crea una nova passarel·la"
@@ -6036,6 +6477,10 @@
       ],
       "Error": [
         "Error"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "No s'ha pogut crear ${ failedUsers.length } compte d'usuari.",
+        "No s'han pogut crear ${ failedUsers.length } comptes d'usuari."
       ],
       "Find email or username": [
         "Cerca correu electrònic o nom d’usuari"
@@ -6202,6 +6647,9 @@
       "Sign in": [
         "Inicia la sessió"
       ],
+      "Sign in to your organization": [
+        "Inicieu la sessió a la vostra organització"
+      ],
       "Sign in with 2FA": [
         "Inicia la sessió amb autenticació de dos factors (A2F)"
       ],
@@ -6216,6 +6664,14 @@
       ],
       "Subscription": [
         "Subscripció"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "S'ha creat ${ localSuccessfullyCreatedUsers.length } compte d'usuari.",
+        "S'han creat ${ localSuccessfullyCreatedUsers.length } comptes d'usuari."
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "S'ha creat ${ successfullyCreatedUsers.length } compte d'usuari.",
+        "S'han creat ${ successfullyCreatedUsers.length } comptes d'usuari."
       ],
       "Summary": [
         "Resum"
@@ -6375,9 +6831,22 @@
         "Administrador principal"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "La contrasenya ha de tenir com a mínim ${ length } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
+        "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "He trobat un altre servei que m'agrada mes."
+      ],
+      "It’s missing a key feature": [
+        "Li falta una característica clau."
       ],
       "It’s too expensive": [
         "Es massa car."
@@ -6389,6 +6858,24 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now i més."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } servidor",
+        "${ n }+ servidors"
+      ],
+      "${ n } VPN connection": [
+        "${ n } connexió VPN",
+        "${ n } connexions VPN"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } en ${ numberOfCountries } país",
+        "${ numberOfServers } en més de ${ numberOfCountries } països"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } a ${ numberOfCountries } país",
+        "${ numberOfServers } a ${ numberOfCountries } països"
       ]
     },
     "vpn_2step: billing": {
@@ -6425,6 +6912,14 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
+      "${ n } year": [
+        "${ n } any",
+        "${ n } anys"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Proveu ${ upsellPlanName }, satisfet o reemborsat"
       ],

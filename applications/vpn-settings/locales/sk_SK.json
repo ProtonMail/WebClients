@@ -113,9 +113,6 @@
       "Current plan": [
         "Aktuálny plán"
       ],
-      "Customize": [
-        "Prispôsobiť"
-      ],
       "Customize plan": [
         "Prispôsobiť plán"
       ],
@@ -552,6 +549,18 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } vlastná doména",
+        "${ domains } vlastné domény",
+        "${ domains } vlastných domén",
+        "${ domains } vlastných domén"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servery",
+        "${ ips } serverov",
+        "${ ips } serverov"
+      ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
       ],
@@ -560,6 +569,12 @@
       ],
       "${ price } per user": [
         "${ price } za používateľa"
+      ],
+      "${ users } user": [
+        "${ users } používateľ",
+        "${ users } používatelia",
+        "${ users } používateľov",
+        "${ users } používateľov"
       ]
     },
     "Address action": {
@@ -748,6 +763,12 @@
       ]
     },
     "bf2023: renew": {
+      "${ n } month": [
+        "${ n } mesiac",
+        "prvé ${ n } mesiace",
+        "prvých ${ n } mesiacov",
+        "prvých ${ n } mesiacov"
+      ],
       "the first month": [
         "prvý mesiac"
       ],
@@ -776,6 +797,12 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zahŕňa podporu pre 1 vlastnú emailovú doménu, 10 emailových adries, 10 hide-my-email aliasov, zdieľanie kalendára a ďalšie."
       ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Súčasťou je podpora 3 vlastných emailových domén, ${ addresses } emailová adresa, neobmedzený počet ide-my-email aliasov, zdieľanie kalendára a ďalšie funkcie.",
+        "Súčasťou je podpora 3 vlastných emailových domén, ${ addresses } emailové adresy, neobmedzený počet ide-my-email aliasov, zdieľanie kalendára a ďalšie funkcie.",
+        "Súčasťou je podpora 3 vlastných emailových domén, ${ addresses } emailových adries, neobmedzený počet ide-my-email aliasov, zdieľanie kalendára a ďalšie funkcie.",
+        "Súčasťou je podpora 3 vlastných emailových domén, ${ addresses } emailových adries, neobmedzený počet ide-my-email aliasov, zdieľanie kalendára a ďalšie funkcie."
+      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ],
@@ -796,6 +823,12 @@
       ]
     },
     "Billing cycle": {
+      "${ n } month": [
+        "${ n } mesiac",
+        "${ n } mesiace",
+        "${ n } mesiacov",
+        "${ n } mesiacov"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
         "Bude automaticky obnovené za ${ renewPrice } na ${ renewalLength }"
       ]
@@ -897,6 +930,20 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } užívateľ",
+        "${ users } užívatelia",
+        "${ users } užívateľov",
+        "${ users } užívateľov"
+      ],
+      "Total for ${ n } month": [
+        "Celkom za ${ n } mesiac",
+        "Celkom za ${ n } mesiace",
+        "Celkom za ${ n } mesiacov",
+        "Celkom za ${ n } mesiacov"
       ]
     },
     "Checkout summary": {
@@ -2376,11 +2423,29 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN pripojenie",
+        "${ MaxVPN } VPN pripojenia",
+        "${ MaxVPN } VPN pripojení",
+        "${ MaxVPN } VPN pripojení"
+      ],
       "Access to all countries": [
         "Prístup ku všetkým krajinám"
       ],
       "Add": [
         "Pridať"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Pridať (${ numberOfAddedServers })",
+        "Pridať (${ numberOfAddedServers })",
+        "Pridať (${ numberOfAddedServers })",
+        "Pridať (${ numberOfAddedServers })"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Pripojenie pre ${ plusVpnConnections } zariadenie",
+        "Pripojenie až pre ${ plusVpnConnections } zariadenia",
+        "Pripojenie až pre ${ plusVpnConnections } zariadení",
+        "Pripojenie až pre ${ plusVpnConnections } zariadení"
       ],
       "Fastest VPN servers": [
         "Najrýchlejšie VPN servery"
@@ -2487,6 +2552,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtov",
+        "bajtov"
+      ],
       "GB": [
         "GB"
       ],
@@ -2498,6 +2569,38 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bajt",
+        "Bajty",
+        "Bajtov",
+        "Bajtov"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajty",
+        "Gigabajtov",
+        "Gigabajtov"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajty",
+        "Kilobajtov",
+        "Kilobajtov"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajty",
+        "Megabajtov",
+        "Megabajtov"
+      ],
+      "Terabyte": [
+        "terabajt",
+        "terabajty",
+        "terabajtov",
+        "terabajtov"
       ]
     },
     "Font face option": {
@@ -2636,6 +2739,12 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adresa",
+        "${ amountOfAddresses } adresy",
+        "${ amountOfAddresses } adries",
+        "${ amountOfAddresses } adries"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -2657,14 +2766,44 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } je možné používať aj s jedným heslom, ktoré nahrádza prihlasovacie heslo aj heslo k poštovej schránke. Na prepnutie do režimu jedného hesla prosím zadajte jedno spoločné heslo, ktoré chcete použiť, a kliknite Uložiť."
       ],
+      "${ number } city": [
+        "${ number } mesto",
+        "${ number } mestá",
+        "${ number } miest",
+        "${ number } miest"
+      ],
+      "${ number } server": [
+        "${ number } server",
+        "${ number } servery",
+        "${ number } serverov",
+        "${ number } serverov"
+      ],
       "${ plan } removed. Bundle deal not available on a 1-month plan.": [
         "${ plan } bol odstránený. Ponuka balíka nie je k dispozícii pri 1-mesačnom pláne."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje aspoň 1 dedikovaný server ${ serverPricePerMonth }"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } server sa stále nastavuje. Zvyčajne to trvá okolo ${ provisioningDuration }.",
+        "${ provisioningCounter } servery sa stále nastavujú. Zvyčajne to trvá okolo ${ provisioningDuration }.",
+        "${ provisioningCounter } serverov sa stále nastavuje. Zvyčajne to trvá okolo ${ provisioningDuration }.",
+        "${ provisioningCounter } serverov sa stále nastavuje. Zvyčajne to trvá okolo ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } ďalšia adresa",
+        "${ remainingAddresses.length } ďalšie adresy",
+        "${ remainingAddresses.length } ďalších adries",
+        "${ remainingAddresses.length } ďalších adries"
+      ],
       "${ storage } storage": [
         "${ storage } úložisko"
+      ],
+      "${ userFound } user found": [
+        "${ userFound } nájdený používateľ",
+        "${ userFound } nájdení používatelia",
+        "${ userFound } nájdených používateľov",
+        "${ userFound } nájdených používateľov"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Pre pripojenie na úrovni krajiny sa vyžaduje ${ vpnPlus }."
@@ -2680,6 +2819,12 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového miesta na disku"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } pripojenie pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)",
+        "+${ organization.BonusVPN } pripojenia pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)",
+        "+${ organization.BonusVPN } pripojení pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)",
+        "+${ organization.BonusVPN } pripojení pre ${ VPN_APP_NAME } (umožňuje pripojiť k VPN viac zariadení)"
       ],
       "30-day money-back guarantee": [
         "30-dňová záruka vrátenia peňazí"
@@ -2713,6 +2858,24 @@
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Pridajte do svojho účtu ďalšiu úroveň zabezpečenia. Pri každom prihlásení sa budete musieť overiť pomocou 2FA."
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "Pridať server (${ availableAddedCount } dostupný)",
+        "Pridať server (${ availableAddedCount } dostupné)",
+        "Pridať server (${ availableAddedCount } dostupných)",
+        "Pridať server (${ availableAddedCount } dostupných)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Pridávanie ${ addedServerCount } servera brány",
+        "Pridávanie ${ addedServerCount } serverov brány",
+        "Pridávanie ${ addedServerCount } serverov brány",
+        "Pridávanie ${ addedServerCount } serverov brány"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Pridávanie servera brány: ${ serverNumber } / ${ total }",
+        "Pridávanie serverov brány: ${ serverNumber } / ${ total }",
+        "Pridávanie serverov brány: ${ serverNumber } / ${ total }",
+        "Pridávanie serverov brány: ${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "Ďalšie možnosti"
@@ -2828,6 +2991,12 @@
       "Create your first Gateway": [
         "Vytvorte vašu prvá bránu"
       ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Vytváranie servera brány: ${ serverNumber } / ${ total }",
+        "Vytváranie serverov brány: ${ serverNumber } / ${ total }",
+        "Vytváranie serverov brány: ${ serverNumber } / ${ total }",
+        "Vytváranie serverov brány: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "Vytvárame váš účet"
       ],
@@ -2848,6 +3017,12 @@
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Dedikované servery s vyhradenými IP adresami môžu byť pridané k súkromným bránam, ktoré umožňujú podrobnejšie nastavenie prístupu."
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Odstraňovanie ${ deletedServerCount } servera brány",
+        "Odstraňovanie ${ deletedServerCount } serverov brány",
+        "Odstraňovanie ${ deletedServerCount } serverov brány",
+        "Odstraňovanie ${ deletedServerCount } serverov brány"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
@@ -3164,6 +3339,18 @@
       "Plan upgrade required": [
         "Je vyžadované predplatné"
       ],
+      "Please add a password for the user on row": [
+        "Pridajte heslo pre používateľa na riadku",
+        "Pridajte heslá pre používateľov na riadkoch",
+        "Pridajte heslá pre používateľov na riadkoch",
+        "Pridajte heslá pre používateľov na riadkoch"
+      ],
+      "Please add an email address for the user on row": [
+        "Pridajte e-mailovú adresu používateľa na riadku",
+        "Pridajte e-mailové adresy používateľov na riadkoch",
+        "Pridajte e-mailové adresy používateľov na riadkoch",
+        "Pridajte e-mailové adresy používateľov na riadkoch"
+      ],
       "Please authenticate your card in the verification tab.": [
         "Overte svoju kartu v okne overenia."
       ],
@@ -3299,6 +3486,12 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Niektoré z vašich dostupných serverov je možné používať len v určitých krajinách z dôvodu nedávneho odstránenia"
       ],
+      "Step ${ step }": [
+        "Krok ${ step }",
+        "Krok ${ step }",
+        "Krok ${ step }",
+        "Krok ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Úložisko pridelené iným používateľom v tejto organizácii"
       ],
@@ -3340,6 +3533,24 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Ďakujeme, že podporujete naše poslanie budovať lepší internet, v ktorom sú súkromie a sloboda na prvom mieste."
+      ],
+      "The following address is invalid.": [
+        "Nasledujúca adresa nie je platná.",
+        "Nasledujúce adresy nie sú platné.",
+        "Nasledujúce adresy nie sú platné.",
+        "Nasledujúce adresy nie sú platné."
+      ],
+      "The following address is unavailable.": [
+        "Nasledujúca adresa je neplatná.",
+        "Nasledujúce adresy sú neplatné.",
+        "Nasledujúce adresy sú neplatné.",
+        "Nasledujúce adresy sú neplatné."
+      ],
+      "The following address was not created.": [
+        "Nasledujúca adresa nebola vytvorená.",
+        "Nasledujúce adresy neboli vytvorené.",
+        "Nasledujúce adresy neboli vytvorené.",
+        "Nasledujúce adresy neboli vytvorené."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "Nasledujúci členovia dostanú email s výzvou, aby čo najrýchlejšie povolili dvojfázové overenie."
@@ -3617,17 +3828,50 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Momentálne ste prihlásený ako ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "V súčasnosti používate ${ ipCount } z vášho ${ ipAddresses } dostupného dedikovaného servera.",
+        "V súčasnosti používate ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverov.",
+        "V súčasnosti používate ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverov.",
+        "V súčasnosti používate ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverov."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Teraz využívate ${ organization.UsedMembers } z ${ organization.MaxMembers } dostupných používateľských licencií.",
+        "Teraz využívate ${ organization.UsedMembers } z ${ organization.MaxMembers } dostupných používateľských licencií.",
+        "Teraz využívate ${ organization.UsedMembers } z ${ organization.MaxMembers } dostupných používateľských licencií.",
+        "Teraz využívate ${ organization.UsedMembers } z ${ organization.MaxMembers } dostupných používateľských licencií."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Ste prihlásení do účtu ${ memberAddress }."
-      ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "Pre potreby účtovníctva si môžete svoje faktúry prispôsobiť a stiahnúť."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Pre zaistenie správnej emailovej adresy pre overenie môžete tento údaj jedenkrát upraviť."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Vyššie uvedené nastavenie môžete okamžite odblokovať pridaním ${ specificCountryCount } k počtu IP adries vo vašom pláne alebo nás oslovte pre riešenie na mieru."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy zdieľaného kalendára a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľané kalendáre a všetkých používateľov služby ${ BRAND_NAME }, s ktorými ste zdieľali svoje kalendáre."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy na zdieľaný kalendár.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy na zdieľaný kalendár.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy na zdieľaný kalendár.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu ${ MAIL_SHORT_APP_NAME } odstráňte odkazy na zdieľaný kalendár."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendár. Pred zrušením odberu odstráňte odkazy na zdieľaný kalendár.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendáre. Pred zrušením odberu odstráňte odkazy na zdieľaný kalendár.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľaný kalendár.",
+        "Môžete mať až ${ MAX_CALENDARS_FREE } kalendárov. Pred zrušením odberu odstráňte odkazy na zdieľaný kalendár."
       ],
       "You can now access and manage the account as an administrator.": [
         "Teraz môžete pristupovať k účtu a spravovať ho ako správca."
@@ -3637,6 +3881,12 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Na pripojenie k serveru ${ VPN_APP_NAME } pomocou aplikácie VPN s otvoreným zdrojovým kódom tretej strany, napríklad Tunnelblick pre macOS alebo OpenVPN pre GNU/Linux, môžete použiť nasledujúce prihlasovacie údaje."
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Máte dostupný ${ availableCount } dedikovaný server.",
+        "Máte dostupné ${ availableCount } dedikované servery.",
+        "Máte dostupných ${ availableCount } dedikovaných serverov.",
+        "Máte dostupných ${ availableCount } dedikovaných serverov."
       ],
       "You have no saved payment methods.": [
         "Nemáte uložené žiadne spôsoby platby."
@@ -3745,11 +3995,6 @@
         "Môžete pridať spôsob platby, aby sa vaše predplatné automaticky obnovovalo. K dispozícii sú aj iné spôsoby platby."
       ]
     },
-    "Info message for custom invoice modal": {
-      "Add your name (or company name) and address to your invoices.": [
-        "Pridajte meno (alebo názov spoločnosti) a adresu pre fakturáciu."
-      ]
-    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "Vypršaniu platnosti môžete zabrániť opätovnou aktiváciou predplatného"
@@ -3831,6 +4076,24 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } adresa"
+      ],
+      "${ n } month": [
+        "${ n } mesiac",
+        "${ n } mesiace",
+        "${ n } mesiacov",
+        "${ n } mesiacov"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } deň",
+        "${ nbDay } dni",
+        "${ nbDay } dní",
+        "${ nbDay } dní"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries"
       ],
       "Account storage": [
         "Úložisko účtu"
@@ -3954,9 +4217,6 @@
       ],
       "Current email": [
         "Súčasný email"
-      ],
-      "Customize invoices": [
-        "Prispôsobenie faktúr"
       ],
       "Default language": [
         "Predvolený jazyk"
@@ -4375,6 +4635,14 @@
         "Inovujte a odomknite chatovú podporu a ďalšie prémiové funkcie, alebo použite náš formulár podpory zdarma a nahláste váš problém."
       ]
     },
+    "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } členov vašej organizácie používa dvojstupňové overenie.",
+        "${ twoFAMembers.length }/${ members.length } členov vašej organizácie používa dvojstupňové overenie.",
+        "${ twoFAMembers.length }/${ members.length } členov vašej organizácie používa dvojstupňové overenie.",
+        "${ twoFAMembers.length }/${ members.length } členov vašej organizácie používa dvojstupňové overenie."
+      ]
+    },
     "Member action": {
       "Change password": [
         "Zmeniť heslo"
@@ -4503,6 +4771,96 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } kalendár",
+        "${ n } kalendáre",
+        "${ n } kalendárov",
+        "${ n } kalendárov"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendár na používateľa",
+        "${ n } kalendáre na používateľa",
+        "${ n } kalendárov na používateľa",
+        "${ n } kalendárov na používateľa"
+      ],
+      "${ n } custom email domain": [
+        "${ n } vlastná emailová doména",
+        "${ n } vlastné emailové domény",
+        "${ n } vlastných emailových domén",
+        "${ n } vlastných emailových domén"
+      ],
+      "${ n } email address": [
+        "${ n } emailová adresa",
+        "${ n } e-mailové adriesy/aliasy",
+        "${ n } e-mailových adries/aliasov",
+        "${ n } e-mailových adries/aliasov"
+      ],
+      "${ n } email address per user": [
+        "${ n } emailová adresa na používateľa",
+        "${ n } emailové adresy na používateľa",
+        "${ n } emailových adries na používateľa",
+        "${ n } emailových adries na používateľa"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filtre",
+        "${ n } filtrov",
+        "${ n } filtrov"
+      ],
+      "${ n } folder": [
+        "${ n } priečinok",
+        "${ n } priečinky",
+        "${ n } priečinkov",
+        "${ n } priečinkov"
+      ],
+      "${ n } folder and label": [
+        "${ n } priečinok a štítok",
+        "${ n } priečinky a štítky",
+        "${ n } priečinkov a štítkov",
+        "${ n } priečinkov a štítkov"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email alias",
+        "${ n } hide-my-email aliasy",
+        "${ n } hide-my-email aliasov",
+        "${ n } hide-my-email aliasov"
+      ],
+      "${ n } label": [
+        "${ n } štítok",
+        "${ n } štítky",
+        "${ n } štítkov",
+        "${ n } štítkov"
+      ],
+      "${ n } message per day": [
+        "${ n } správa za deň",
+        "${ n } správy za deň",
+        "${ n } správ za deň",
+        "${ n } správ za deň"
+      ],
+      "${ n } vault": [
+        "${ n } trezor",
+        "${ n } trezory",
+        "${ n } trezorov",
+        "${ n } trezorov"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN pripojenie",
+        "${ n } VPN pripojenia",
+        "${ n } VPN pripojení",
+        "${ n } VPN pripojení"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN pripojenie na používateľa",
+        "${ n } VPN pripojenia na používateľa",
+        "${ n } VPN pripojení na používateľa",
+        "${ n } VPN pripojení na používateľa"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } s ${ n } hide-my-email aliasom",
+        "${ PASS_APP_NAME } s ${ n } hide-my-email aliasmi",
+        "${ PASS_APP_NAME } s ${ n } hide-my-email aliasmi",
+        "${ PASS_APP_NAME } s ${ n } hide-my-email aliasmi"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } s neobmedzeným počtom hide-my-email aliasov"
       ],
@@ -4641,6 +4999,12 @@
       "High-speed Swiss VPN that protects your privacy": [
         "Vysokorýchlostná švajčiarska VPN, ktorá chráni vaše súkromie"
       ],
+      "High-speed VPN on ${ n } device": [
+        "Vysoko rýchlostná sieť VPN na ${ n } zariadení",
+        "Vysoko rýchlostná sieť VPN na ${ n } zariadeniach",
+        "Vysoko rýchlostná sieť VPN na ${ n } zariadeniach",
+        "Vysoko rýchlostná sieť VPN na ${ n } zariadeniach"
+      ],
       "HTML signatures": [
         "HTML podpisy"
       ],
@@ -4677,6 +5041,12 @@
       "Priority support & live chat": [
         "Prioritná podpora a živý chat"
       ],
+      "Protect ${ n } device at a time": [
+        "Chráňte súčasne ${ n } zariadenie",
+        "Chráňte súčasne ${ n } zariadenia",
+        "Chráňte súčasne ${ n } zariadení",
+        "Chráňte súčasne ${ n } zariadení"
+      ],
       "Router support": [
         "Podpora routeru"
       ],
@@ -4691,6 +5061,12 @@
       ],
       "Send & receive invitations": [
         "Odosielanie a prijímanie pozvánok"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Servery v ${ vpnServersCountData.paid.countries }+ krajine",
+        "Servery v ${ vpnServersCountData.paid.countries }+ krajinách",
+        "Servery v ${ vpnServersCountData.paid.countries }+ krajinách",
+        "Servery v ${ vpnServersCountData.paid.countries }+ krajinách"
       ],
       "Share calendar via link": [
         "Zdieľanie kalendára cez odkaz"
@@ -4775,6 +5151,12 @@
       ],
       "User session management": [
         "Správa relácií používateľov"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Zdieľanie trezora (s ${ n } osobou)",
+        "Zdieľanie trezora (s ${ n } osobami)",
+        "Zdieľanie trezora (až s ${ n } osobami)",
+        "Zdieľanie trezora (až s ${ n } osobami)"
       ]
     },
     "new_plans: feature info": {
@@ -4888,6 +5270,14 @@
         "/mesiac"
       ]
     },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "Na vašom účte ${ currentPlanName } vám stále zostáva ${ daysRemaining } deň.",
+        "Na vašom účte ${ currentPlanName } vám stále zostávajú ${ daysRemaining } dni.",
+        "Na vašom účte ${ currentPlanName } vám stále zostáva ${ daysRemaining } dní.",
+        "Na vašom účte ${ currentPlanName } vám stále zostáva ${ daysRemaining } dní."
+      ]
+    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Kliknutím na „Zaplatiť“ súhlasíte s našimi ${ termsAndConditions }."
@@ -4954,6 +5344,12 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Vytvorte si viacero emailových adries pre svoje online identity, napr. JanNakupy@${ domain } pre nákupné účty, JanSpravy@${ domain } pre odber noviniek"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Vytvorte si ${ n } kalendár alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendáre alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendárov alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií",
+        "Vytvorte si až ${ n } kalendárov alebo pridajte kalendáre od priateľov, rodiny, kolegov a organizácií"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvorte až ${ n } emailových adries/aliasov, ktoré môžete priradiť členom rodiny. Použite ich pre online identity, napr. JanNakupy@${ domain } pre nákupné účty."
@@ -5151,6 +5547,12 @@
       "Cover more ground with support for 10 custom email domains": [
         "Rozšírte pôsobnosť s podporou pre 10 vlastných emailových domén"
       ],
+      "Create up to ${ n } calendar": [
+        "Vytvorte až ${ n } kalendár",
+        "Vytvorte až ${ n } kalendáre",
+        "Vytvorte až ${ n } kalendárov",
+        "Vytvorte až ${ n } kalendárov"
+      ],
       "Dedicated Account manager": [
         "Dedikovaný správca účtov"
       ],
@@ -5258,6 +5660,24 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink }, aby ste získali viac úložiska, alebo odstráňte nejaké úložisko, aby ste uvoľnili miesto."
       ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Váš plán zahŕňa maximálne ${ availableAddresses } ďalšiu adresu.",
+        "Váš plán zahŕňa maximálne ${ availableAddresses } ďalšie adresy.",
+        "Váš plán zahŕňa maximálne ${ availableAddresses } ďalších adries.",
+        "Váš plán zahŕňa maximálne ${ availableAddresses } ďalších adries."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Váš plán zahŕňa maximálne ${ availableNumberOfMembers } ďalšieho používateľa organizácie.",
+        "Váš plán zahŕňa maximálne ${ availableNumberOfMembers } ďalších používateľov organizácie.",
+        "Váš plán zahŕňa maximálne ${ availableNumberOfMembers } ďalších používateľov organizácie.",
+        "Váš plán zahŕňa maximálne ${ availableNumberOfMembers } ďalších používateľov organizácie."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Váš plán zahŕňa maximálne ${ availableVPNAccess } ďalší VPN účet.",
+        "Váš plán zahŕňa maximálne ${ availableVPNAccess } ďalšie VPN účty.",
+        "Váš plán zahŕňa maximálne ${ availableVPNAccess } ďalších VPN účtov.",
+        "Váš plán zahŕňa maximálne ${ availableVPNAccess } ďalších VPN účtov."
+      ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Váš plán zahŕňa maximálne ${ humanReadableAvailableSpace } ďalšieho úložného priestoru."
       ]
@@ -5353,9 +5773,18 @@
         "Ján Kováč"
       ]
     },
-    "Placeholder for custom invoice text": {
-      "Add your name (or company name) and address to your invoices": [
-        "Pridajte meno (alebo názov spoločnosti) a adresy pre fakturáciu"
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "${ contactHref } náš Predajný tím, prosím."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Vyberte počet IP, ktoré chcete zahrnúť do svojho plánu. Každá ďalšia IP stojí ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Potrebujete viac ako ${ maxIPs } IP, ",
+        "Potrebujete viac ako ${ maxIPs } IP, ",
+        "Potrebujete viac ako ${ maxIPs } IP, ",
+        "Potrebujete viac ako ${ maxIPs } IP, "
       ]
     },
     "plan customizer, users": {
@@ -5364,6 +5793,12 @@
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "Vyberte počet používateľov, ktorých chcete zahrnúť do svojho plánu. Každý ďalší používateľ stojí ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Ak potrebujete viac ako ${ maxUsers } používateľský účet, ${ contact } prosím náš obchodný tím.",
+        "Ak potrebujete viac ako ${ maxUsers } používateľské účty, ${ contact } prosím náš obchodný tím.",
+        "Ak potrebujete viac ako ${ maxUsers } používateľských účtov, ${ contact } prosím náš obchodný tím.",
+        "Ak potrebujete viac ako ${ maxUsers } používateľských účtov, ${ contact } prosím náš obchodný tím."
       ]
     },
     "Price": {
@@ -5514,14 +5949,50 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } deň",
+        "${ timeRemaining.inDays } dni",
+        "${ timeRemaining.inDays } dní",
+        "${ timeRemaining.inDays } dní"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hodina",
+        "${ timeRemaining.inHours } hodiny",
+        "${ timeRemaining.inHours } hodín",
+        "${ timeRemaining.inHours } hodín"
+      ],
       "Didn’t make this request?": [
         "Nezadali ste túto požiadavku?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Ak ste nepožiadali o obnovenie hesla, zrušte túto žiadosť teraz."
       ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } deň.",
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dni.",
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dní.",
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dní."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodinu.",
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodiny.",
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodín.",
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodín."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Prejdite na prihlásené zariadenie (v relácii, kde bola žiadosť iniciovaná) a zmeňte heslo."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Toto povolenie vyprší za ${ timeRemaining.inDays } deň",
+        "Toto povolenie vyprší za ${ timeRemaining.inDays } dni",
+        "Toto povolenie vyprší za ${ timeRemaining.inDays } dní",
+        "Toto povolenie vyprší za ${ timeRemaining.inDays } dní"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Toto povolenie vyprší za ${ timeRemaining.inHours } hodinu",
+        "Toto povolenie vyprší za ${ timeRemaining.inHours } hodiny",
+        "Toto povolenie vyprší za ${ timeRemaining.inHours } hodín",
+        "Toto povolenie vyprší za ${ timeRemaining.inHours } hodín"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Heslo pre účet ${ boldEmail } si teraz môžete ľubovoľne zmeniť po dobu ${ boldDaysRemaining }."
@@ -5593,6 +6064,12 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "Zostáva ${ gracePeriodHoursRemaining } hodina",
+        "Zostávajú ${ gracePeriodHoursRemaining } hodiny",
+        "Zostáva ${ gracePeriodHoursRemaining } hodín",
+        "Zostáva ${ gracePeriodHoursRemaining } hodín"
+      ],
       "Didn’t make this request?": [
         "Nezadali ste túto požiadavku?"
       ],
@@ -5605,11 +6082,23 @@
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "Obnovenie hesla je k dispozícii od ${ boldDate }. To vám dáva čas na zrušenie akýchkoľvek podvodných žiadostí."
       ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Bolo vyžiadané obnovenie hesla (${ user.Email }). Heslo si môžete zmeniť za ${ hoursRemaining } hodinu.",
+        "Bolo vyžiadané obnovenie hesla (${ user.Email }). Heslo si môžete zmeniť za ${ hoursRemaining } hodiny.",
+        "Bolo vyžiadané obnovenie hesla (${ user.Email }). Heslo si môžete zmeniť za ${ hoursRemaining } hodín.",
+        "Bolo vyžiadané obnovenie hesla (${ user.Email }). Heslo si môžete zmeniť za ${ hoursRemaining } hodín."
+      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Aby sme sa uistili, že sa pokúšate obnoviť heslo naozaj vy, počkáme 72 hodín pred schválením žiadosti. Heslo si môžete zmeniť v ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Dostali sme žiadosť o obnovenie hesla pre ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Vaše heslo si môžete zmeniť o ${ gracePeriodHoursRemaining } hodinu",
+        "Vaše heslo si môžete zmeniť o ${ gracePeriodHoursRemaining } hodiny",
+        "Vaše heslo si môžete zmeniť o ${ gracePeriodHoursRemaining } hodín",
+        "Vaše heslo si môžete zmeniť o ${ gracePeriodHoursRemaining } hodín"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -5660,6 +6149,12 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "Požiadať o obnovenie hesla?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Vaše heslo si budete môcť zmeniť o ${ gracePeriodHoursRemaining } hodinu",
+        "Vaše heslo si budete môcť zmeniť o ${ gracePeriodHoursRemaining } hodiny",
+        "Vaše heslo si budete môcť zmeniť o ${ gracePeriodHoursRemaining } hodín",
+        "Vaše heslo si budete môcť zmeniť o ${ gracePeriodHoursRemaining } hodín"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -5671,6 +6166,12 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hodina",
+        "${ gracePeriodHoursRemaining } hodiny",
+        "${ gracePeriodHoursRemaining } hodín",
+        "${ gracePeriodHoursRemaining } hodín"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } je teraz k dispozícii."
       ],
@@ -5742,6 +6243,40 @@
         "Prejsť na Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } deň",
+        "${ days } dni",
+        "${ days } dní",
+        "${ days } dňa"
+      ],
+      "${ hours } hour": [
+        "${ hours } hodiny",
+        "${ hours } hodiny",
+        "${ hours } hodín",
+        "${ hours } hodín"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minúta",
+        "${ minutes } minúty",
+        "${ minutes } minút",
+        "${ minutes } minút"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekúnd",
+        "${ seconds } sekundy",
+        "${ seconds } sekúnd"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mesiacov ZDARMA",
+        "${ n } mesiac ZDARMA",
+        "${ n } mesiac ZDARMA",
+        "${ n } mesiac ZDARMA"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 používateľ"
@@ -5805,6 +6340,12 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mesiac",
+        "${ n } mesiace",
+        "${ n } mesiacov",
+        "${ n } mesiacov"
+      ],
       "/ month": [
         "/ mesiac"
       ],
@@ -5948,6 +6489,84 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } dedikovaný server",
+        "${ ipAddresses } dedikované servery",
+        "${ ipAddresses } dedikovaných serverov",
+        "${ ipAddresses } dedikovaných serverov"
+      ],
+      "${ maxVpn } high-speed VPN connection": [
+        "${ maxVpn } vysoko rýchlostné VPN pripojenie",
+        "${ maxVpn } vysoko rýchlostné VPN pripojenia",
+        "${ maxVpn } vysoko rýchlostných VPN pripojení",
+        "${ maxVpn } vysoko rýchlostných VPN pripojení"
+      ],
+      "${ n } calendar": [
+        "${ n } kalendár",
+        "${ n } kalendáre",
+        "${ n } kalendárov",
+        "${ n } kalendárov"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendár na používateľa",
+        "${ n } kalendáre na používateľa",
+        "${ n } kalendárov na používateľa",
+        "${ n } kalendárov na používateľa"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } vysoko rýchlostné VPN pripojenie",
+        "${ n } vysoko rýchlostné VPN pripojenia",
+        "${ n } vysoko rýchlostných VPN pripojení",
+        "${ n } vysoko rýchlostných VPN pripojení"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } vysoko rýchlostné VPN pripojenie na používateľa",
+        "${ n } vysoko rýchlostné VPN pripojenia na používateľa",
+        "${ n } vysoko rýchlostných VPN pripojení na používateľa",
+        "${ n } vysoko rýchlostných VPN pripojení na používateľa"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN pripojenie",
+        "${ n } VPN pripojenia",
+        "${ n } VPN pripojení",
+        "${ n } VPN pripojení"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN pripojenie na používateľa",
+        "${ n } VPN pripojenia na používateľa",
+        "${ n } VPN pripojení na používateľa",
+        "${ n } VPN pripojení na používateľa"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } adresa",
+        "${ UsedAddresses } adresy",
+        "${ UsedAddresses } adries",
+        "${ UsedAddresses } adries"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mail adries"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } kalendár",
+        "${ UsedCalendars } kalendáre",
+        "${ UsedCalendars } kalendárov",
+        "${ UsedCalendars } kalendárov"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } z ${ MaxDomains } vlastnej domény",
+        "${ UsedDomains } z ${ MaxDomains } vlastných domén",
+        "${ UsedDomains } z ${ MaxDomains } vlastných domén",
+        "${ UsedDomains } z ${ MaxDomains } vlastných domén"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } z ${ MaxMembers } užívateľa",
+        "${ UsedMembers } z ${ MaxMembers } užívateľov",
+        "${ UsedMembers } z ${ MaxMembers } užívateľov",
+        "${ UsedMembers } z ${ MaxMembers } užívateľov"
+      ],
       "1 email address": [
         "1 emailová adresa"
       ],
@@ -5959,6 +6578,12 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "Vstavaný blokovač reklám (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "Vysoko rýchlostná sieť VPN na ${ maxVpn } zariadení",
+        "Vysoko rýchlostná sieť VPN na ${ maxVpn } zariadeniach",
+        "Vysoko rýchlostná sieť VPN na ${ maxVpn } zariadeniach",
+        "Vysoko rýchlostná sieť VPN na ${ maxVpn } zariadeniach"
       ]
     },
     "Subscription change warning": {
@@ -6298,9 +6923,6 @@
       "Add credits": [
         "Pridať kredit"
       ],
-      "Add invoice details": [
-        "Pridanie fakturačných údajov"
-      ],
       "Add new user": [
         "Pridať nového používateľa"
       ],
@@ -6385,6 +7007,12 @@
       "Couldn’t create accounts": [
         "Nepodarilo sa vytvoriť účty"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "Vytvoriť ${ selectedUserIds.length } používateľa",
+        "Vytvoriť ${ selectedUserIds.length } používateľov",
+        "Vytvoriť ${ selectedUserIds.length } používateľov",
+        "Vytvoriť ${ selectedUserIds.length } používateľov"
+      ],
       "Create a new Gateway": [
         "Vytvoriť novú bránu"
       ],
@@ -6432,6 +7060,12 @@
       ],
       "Delete account": [
         "Zmazať účet"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Vymazať server (budete ho stále môcť obnoviť o ${ days } deň)",
+        "Vymazať server (budete ho stále môcť obnoviť o ${ days } dni)",
+        "Vymazať server (budete ho stále môcť obnoviť o ${ days } dní)",
+        "Vymazať server (budete ho stále môcť obnoviť o ${ days } dní)"
       ],
       "Delete user": [
         "Vymazať užívateľa"
@@ -6501,6 +7135,12 @@
       ],
       "Every member of the organization can access": [
         "Každý člen organizácie má prístup k"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Nepodarilo sa vytvoriť ${ failedUsers.length } užívateľský účet.",
+        "Nepodarilo sa vytvoriť ${ failedUsers.length } užívateľské účty.",
+        "Nepodarilo sa vytvoriť ${ failedUsers.length } užívateľských účtov.",
+        "Nepodarilo sa vytvoriť ${ failedUsers.length } užívateľských účtov."
       ],
       "Find email or username": [
         "Nájsť email alebo používateľské meno"
@@ -6691,6 +7331,18 @@
       "Subscription": [
         "Predplatné"
       ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "Bolo úspešne vytvorených ${ localSuccessfullyCreatedUsers.length } používateľských účtov",
+        "${ localSuccessfullyCreatedUsers.length } používateľské účty boli úspešne vytvorené",
+        "${ localSuccessfullyCreatedUsers.length } používateľských účtov bolo úspešne vytvorenéných",
+        "${ localSuccessfullyCreatedUsers.length } používateľských účtov bolo úspešne vytvorenéných"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Používateľský účet ${ successfullyCreatedUsers.length } bol úspešne vytvorený",
+        "Používateľské účty ${ successfullyCreatedUsers.length } boli úspešne vytvorené",
+        "Používateľské účty ${ successfullyCreatedUsers.length } boli úspešne vytvorené",
+        "Používateľské účty ${ successfullyCreatedUsers.length } boli úspešne vytvorené"
+      ],
       "Summary": [
         "Zhrnutie"
       ],
@@ -6871,6 +7523,20 @@
         "Hlavný Admin"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Heslo musí obsahovať aspoň ${ length } znak",
+        "Heslo musí obsahovať aspoň ${ length } znaky",
+        "Heslo musí obsahovať aspoň ${ length } znakov",
+        "Heslo musí obsahovať aspoň ${ length } znakov"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Skúste kratšie používateľské meno (max. ${ n } znak)",
+        "Skúste kratšie používateľské meno (max. ${ n } znaky)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "Našiel som inú službu, ktorá sa mi páči viac"
@@ -6888,6 +7554,32 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now a ďalšie."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } server",
+        "${ n } servery",
+        "${ n } serverov",
+        "${ n } serverov"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN pripojenie",
+        "${ n } VPN pripojenia",
+        "${ n } VPN pripojení",
+        "${ n } VPN pripojení"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } v ${ numberOfCountries } krajine",
+        "${ numberOfServers } v ${ numberOfCountries } krajinách",
+        "${ numberOfServers } v ${ numberOfCountries } krajinách",
+        "${ numberOfServers } v ${ numberOfCountries } krajinách"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } v ${ numberOfCountries } krajine",
+        "${ numberOfServers } v ${ numberOfCountries } krajinách",
+        "${ numberOfServers } v ${ numberOfCountries } krajinách",
+        "${ numberOfServers } v ${ numberOfCountries } krajinách"
       ]
     },
     "vpn_2step: billing": {
@@ -6924,6 +7616,18 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } mesiac",
+        "${ n } mesiace",
+        "${ n } mesiacov",
+        "${ n } mesiacov"
+      ],
+      "${ n } year": [
+        "${ n } rok",
+        "${ n } roky",
+        "${ n } rokov",
+        "${ n } rokov"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Vyskúšajte ${ upsellPlanName } bez rizika"
       ],

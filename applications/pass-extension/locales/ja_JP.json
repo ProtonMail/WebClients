@@ -442,6 +442,9 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "保管庫 “${ payload.content.name }” の削除に失敗しました"
       ],
+      "Detected ${ errors.length } corrupted csv rows": [
+        "このCSVは${ errors.length } 行の破損を検知しました"
+      ],
       "Editing item failed": [
         "アイテムの編集に失敗しました"
       ],
@@ -599,6 +602,9 @@
       ]
     },
     "file size format": {
+      "bytes": [
+        "バイト"
+      ],
       "GB": [
         "GB"
       ],
@@ -612,6 +618,23 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "バイト"
+      ],
+      "Gigabytes": [
+        "ギガバイト"
+      ],
+      "Kilobytes": [
+        "キロバイト"
+      ],
+      "Megabytes": [
+        "メガバイト"
+      ],
+      "Terabytes": [
+        "テラバイト"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " 複数のコンテナーを作成するには、有料プランにアップグレードします。"
@@ -621,6 +644,27 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "「${ payload.item.data.metadata.name }」更新が却下されました"
+      ],
+      "${ count } items": [
+        "${ count } 件のアイテム"
+      ],
+      "${ itemCount } items": [
+        "${ itemCount }個のアイテム"
+      ],
+      "${ memberCount } members": [
+        "${ memberCount }人のメンバー"
+      ],
+      "${ revisionNumber } times": [
+        "${ revisionNumber } 回"
+      ],
+      "${ totalImportedItems } items": [
+        "${ totalImportedItems } 件のアイテム"
+      ],
+      "${ totalItems } items": [
+        "${ totalItems } 件のアイテム"
+      ],
+      "${ trialDaysLeft } days left": [
+        "残り ${ trialDaysLeft } 日"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "${ PASS_APP_NAME } の新しいバージョンが利用可能です。 最新の機能やバグ修正をお楽しみいただくには、更新してください。"
@@ -718,6 +762,9 @@
       "Here you will find all the necessary information to get you started.": [
         "ここでは、必要なすべての情報をご覧いただけます。"
       ],
+      "Imported ${ payload.total } items": [
+        "${ payload.total } 件のアイテムをインポートしました"
+      ],
       "Imported on ${ date }": [
         "${ date } にインポートされました"
       ],
@@ -759,6 +806,9 @@
       ],
       "Item successfully moved": [
         "アイテムの移動に成功"
+      ],
+      "items": [
+        "アイテム"
       ],
       "Let's get you started by creating your first item": [
         "最初のアイテムを作るところから始めましょう。"
@@ -874,6 +924,9 @@
       "Thank you, the problem has been reported": [
         "ありがとう、問題は報告されました"
       ],
+      "The following ${ result.ignored.length } items could not be imported": [
+        "次の ${ result.ignored.length } つのアイテムをインポート出来ませんでした"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "貼り付けようとしているテキストは、許容される最大長の ${ maxLength } 文字を超えています。"
       ],
@@ -934,6 +987,9 @@
       "You cannot change the mailboxes for this alias.": [
         "このエイリアスのメールボックスを変更することはできません。"
       ],
+      "You have ${ daysRemaining } days left to try these and other premium features.": [
+        "これらおよびその他のプレミアム機能をお試しいただける期間は、残り ${ daysRemaining } 日間です。"
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "あなたのサブスクリプションに含まれるフォルダーの最大数を超えています。アイテムは最初の2つのフォルダーにのみ移動できます。すべてのフォルダー間でアイテムを移動するには、サブスクリプションをアップグレードしてください。"
       ],
@@ -966,6 +1022,12 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } characters": [
+        "${ passwordOptions.options.length } 文字"
+      ],
+      "${ passwordOptions.options.wordCount } words": [
+        "${ passwordOptions.options.wordCount } 単語"
+      ],
       "1 hour": [
         "1 時間"
       ],
@@ -1653,6 +1715,9 @@
       ],
       "Invalid alias prefix": [
         "無効なエイリアスプレフィックス"
+      ],
+      "Maximum length is ${ maxLength } characters": [
+        "最大長は ${ maxLength } 文字です"
       ],
       "Missing alias prefix": [
         "エイリアスのプレフィックスがありません"

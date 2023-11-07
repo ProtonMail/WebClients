@@ -397,6 +397,9 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "刪除保管庫${ payload.content.name }失敗"
       ],
+      "Detected ${ errors.length } corrupted csv rows": [
+        "刪除${ errors.length }錯誤的CSV項目"
+      ],
       "Editing item failed": [
         "修改項目失敗"
       ],
@@ -548,6 +551,9 @@
       ]
     },
     "file size format": {
+      "bytes": [
+        "位元組"
+      ],
       "GB": [
         "GB"
       ],
@@ -561,6 +567,23 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "位元組"
+      ],
+      "Gigabytes": [
+        "十億位元組"
+      ],
+      "Kilobytes": [
+        "千位元組"
+      ],
+      "Megabytes": [
+        "百萬位元組"
+      ],
+      "Terabytes": [
+        "TB"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " 升級付費方案以創建多重保管庫。"
@@ -570,6 +593,27 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "${ payload.item.data.metadata.name }已忽略更新"
+      ],
+      "${ count } items": [
+        "${ count } 個項目"
+      ],
+      "${ itemCount } items": [
+        "${ itemCount }項目"
+      ],
+      "${ memberCount } members": [
+        "${ memberCount } 位成員"
+      ],
+      "${ revisionNumber } times": [
+        "${ revisionNumber }次數"
+      ],
+      "${ totalImportedItems } items": [
+        "${ totalImportedItems } 個項目"
+      ],
+      "${ totalItems } items": [
+        "${ totalItems } 個項目"
+      ],
+      "${ trialDaysLeft } days left": [
+        "剩下${ trialDaysLeft }天"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "有${ PASS_APP_NAME }可用更新。更新可使用最新的功能及錯誤修復。"
@@ -658,6 +702,9 @@
       "Here you will find all the necessary information to get you started.": [
         "這裡是您需要的資訊"
       ],
+      "Imported ${ payload.total } items": [
+        "匯入${ payload.total }項目"
+      ],
       "Imported on ${ date }": [
         "匯入於${ date }"
       ],
@@ -699,6 +746,9 @@
       ],
       "Item successfully moved": [
         "項目成功移除"
+      ],
+      "items": [
+        "項目"
       ],
       "Let's get you started by creating your first item": [
         "創建您第一個項目"
@@ -805,6 +855,9 @@
       "Thank you, the problem has been reported": [
         "感謝您舉報問題"
       ],
+      "The following ${ result.ignored.length } items could not be imported": [
+        "以下${ result.ignored.length }項目無法匯入"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "您貼上的字已達${ maxLength }字元上限"
       ],
@@ -882,6 +935,12 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } characters": [
+        "${ passwordOptions.options.length }個字元"
+      ],
+      "${ passwordOptions.options.wordCount } words": [
+        "${ passwordOptions.options.wordCount }個字"
+      ],
       "1 hour": [
         "1 小時"
       ],
@@ -1377,6 +1436,11 @@
       ],
       "Write your note": [
         "新增備註"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } users.": [
+        "保管庫不能包含超過 ${ vault.targetMaxMembers } 位使用者。"
       ]
     },
     "Title": {
