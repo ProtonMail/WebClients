@@ -55,6 +55,10 @@
       "Apply": [
         "Εφαρμογή"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Το πολύ ${ maxContacts } επαφή επιτρέπεται ανά ομάδα επαφών",
+        "Το πολύ ${ maxContacts } επαφές επιτρέπονται ανά ομάδα επαφών"
+      ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
@@ -195,6 +199,14 @@
       ],
       "Delete": [
         "Διαγραφή"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Διαγραφή ${ selectedCount } επαφής",
+        "Διαγραφή ${ selectedCount } επαφών"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Διαγραφή ${ selectedCount } ομάδα επαφών",
+        "Διαγραφή ${ selectedCount } ομάδες επαφών"
       ],
       "Delete contact": [
         "Διαγραφή επαφής"
@@ -733,6 +745,10 @@
       "View invoice": [
         "Προβολή τιμολογίου"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερη από ${ maxAttachments } επαφή",
+        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
+      ],
       "Your 500 MB bonus": [
         "Το 500 MB μπόνους σας"
       ],
@@ -758,6 +774,20 @@
       ],
       "You don't have any groups.": [
         "Δεν έχετε καμία ομάδα."
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } προσαρμοσμένος τομέας",
+        "${ domains } προσαρμοσμένοι τομείς"
+      ],
+      "${ ips } server": [
+        "${ ips } διακομιστής",
+        "${ ips } διακομιστές"
+      ],
+      "${ users } user": [
+        "${ users } χρήστης",
+        "${ users } χρήστες"
       ]
     },
     "Alert": {
@@ -866,6 +896,10 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Περιλαμβάνει υποστήριξη για 1 προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου, 10 διευθύνσεις ηλεκτρονικού ταχυδρομείου, 10 hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
       ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Περιλαμβάνει υποστήριξη για 3 προσαρμοσμένους τομείς email, ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και άλλα.",
+        "Περιλαμβάνει υποστήριξη για 3 προσαρμοσμένους τομείς email, ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και άλλα."
+      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
       ],
@@ -962,6 +996,12 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Συνεχίστε να χρησιμοποιείτε ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } χρήστης",
+        "${ users } χρήστες"
       ]
     },
     "Collapsible tooltip": {
@@ -2074,6 +2114,14 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Η αναζήτηση περιεχομένου δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή. Παρακαλούμε τερματίστε τη λειτουργία ιδιωτικής περιήγησης ή χρησιμοποιήστε έναν άλλον περιηγητή."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο ή",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια ή"
+      ],
       "Device name does not match": [
         "Το όνομα της συσκευής δεν ταιριάζει"
       ],
@@ -2149,6 +2197,10 @@
       "Last name is too long": [
         "Το επώνυμο είναι πολύ μεγάλο"
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
+        "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
+      ],
       "Missing key packet": [
         "Λείπει πακέτο κλειδιού"
       ],
@@ -2170,6 +2222,14 @@
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Μία από τις επαφές δεν έχει διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ noEmailsContactNamesList }",
+        "Ορισμένες επαφές δεν έχουν διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ noEmailsContactNamesList }"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Μία από τις ομάδες δεν έχει επαφές: : ${ noContactGroupList }",
+        "Κάποιες ομάδες δεν έχουν επαφές: : ${ noContactGroupList } "
+      ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
       ],
@@ -2178,6 +2238,10 @@
       ],
       "Please activate your search again": [
         "Παρακαλούμε ενεργοποιήστε ξανά την αναζήτησή σας"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
+        "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Παρακαλούμε καταχωρίστε είτε όνομα, επώνυμο ή εμφανιζόμενο όνομα"
@@ -2305,6 +2369,10 @@
       "Username must end with a letter or digit": [
         "Το όνομα χρήστη πρέπει να τελειώνει με γράμμα ή ψηφίο"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτη",
+        "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτες"
+      ],
       "You have reached the contacts limit for your account": [
         "Έχετε συμπληρώσει το όριο επαφών για τον λογαριασμό σας"
       ],
@@ -2336,6 +2404,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερο από ${ MAX_IMPORT_EVENTS_STRING } γεγονός.",
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS_STRING } γεγονότα."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Το αρχείο σας ${ formattedFilename } έχει μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
@@ -2727,6 +2799,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -2738,6 +2814,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Filter notification": {
@@ -2793,6 +2891,10 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Βρέθηκαν ${ items.length } πρόταση, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
+        "Βρέθηκαν ${ items.length } προτάσεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Χρησιμοποιήστε τα πλήκτρα Up και Down για πρόσβαση και περιήγηση στις προτάσεις μετά την εισαγωγή. Πατήστε Enter για να επιβεβαιώσετε την επιλογή σας, ή διαφυγής για να κλείσετε το πλαίσιο προτάσεων."
       ]
@@ -2809,6 +2911,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } γεγονός κρυπτογραφήθηκε και προστέθηκε στο ημερολόγιό σας",
+        "${ totalImported }/${ totalToImport } γεγονότα κρυπτογραφήθηκαν και προστέθηκαν στο ημερολόγιό σας"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη του γεγονότος. ${ totalImported } από ${ totalToImport } γεγονός εισήχθηκε επιτυχώς.",
+        "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη των γεγονότων. ${ totalImported } από ${ totalToImport } γεγονότα εισήχθησαν επιτυχώς."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της εκδήλωσής σας. Καμιά εκδήλωση δεν μπόρεσε να εισαχθεί."
       ],
@@ -2843,11 +2953,23 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Οι εισαγόμενες προσκλήσεις εμφανίζονται στο ${ CALENDAR_APP_NAME } ως απλές εκδηλώσεις χωρίς στοιχεία διοργανωτή και συμμετέχοντα. Για να λαμβάνετε ενημερώσεις για τις εκδηλώσεις και για να δείτε τους συμμετέχοντες, ζητήστε από τους διοργανωτές να σας προσκαλέσουν χρησιμοποιώντας τη δική σας ${ BRAND_NAME } διεύθυνση ηλεκτρονικού ταχυδρομείου."
       ],
+      "This file contains an event invitation:": [
+        "Αυτό το αρχείο περιέχει μια πρόσκληση σε γεγονός:",
+        "Αυτό το αρχείο περιέχει προσκλήσεις σε γεγονότα:"
+      ],
+      "This file contains an invitation response:": [
+        "Αυτό το αρχείο περιέχει μια απάντηση πρόσκλησης:",
+        "Αυτό το αρχείο περιέχει απαντήσεις πρόσκλησης:"
+      ],
       "This file contains some data that we cannot import:": [
         "Το αρχείο περιέχει κάποια δεδομένα που δεν μπορούμε να εισάγουμε:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } επαφή κρυπτογραφήθηκε και προστέθηκε στη λίστα επαφών σας",
+        "${ totalImported }/${ totalToImport } επαφές κρυπτογραφήθηκαν και προστέθηκαν στη λίστα επαφών σας"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της επαφής σας. Δεν ήταν δυνατή η εισαγωγή επαφής."
       ],
@@ -2867,6 +2989,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Επαφή ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } επαφή",
+        "${ totalContacts } επαφές"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3038,6 +3166,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } από ${ totalEvents } γεγονός δεν θα εισαχθεί. Αναπτύξτε για λεπτομέρειες.",
+        "${ totalEventsDiscarded } από ${ totalEvents } γεγονότα δεν θα εισαχθούν. Αναπτύξτε για λεπτομέρειες."
+      ],
       "No contact can be imported. Click for details": [
         "Δεν είναι δυνατή η εισαγωγή καμίας επαφής. Κάντε κλικ για λεπτομέρειες"
       ],
@@ -3049,14 +3181,74 @@
       ]
     },
     "Info": {
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } κατεβαίνει",
+        "${ activeDownloadsCount } κατεβαίνουν"
+      ],
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "${ activeDownloadsCount } κατεβαίνει (${ downloadProgress }%)",
+        "${ activeDownloadsCount } κατεβαίνουν (${ downloadProgress }%)"
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "${ activeUploadsCount } ανεβαίνει (${ uploadProgress }%)",
+        "${ activeUploadsCount } ανεβαίνουν (${ uploadProgress }%)"
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } διεύθυνση ηλεκτρονικού ταχυδρομείου",
+        "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Η τεχνολογία κρυπτογράφησης του ${ BRAND_NAME } σημαίνει ότι κανείς δεν μπορεί να έχει πρόσβαση στον κωδικό πρόσβασής σας - ούτε καν εμείς."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } νέο ημερολόγιο",
+        "${ calendarsToBeCreatedCount } νέα ημερολόγια"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } συγχωνευμένο ημερολόγιο",
+        "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
+      ],
+      "${ canceledCount } canceled": [
+        "${ canceledCount } ακυρώθηκε",
+        "${ canceledCount } ακυρώθηκαν"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } επαφή περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου.",
+        "${ contactCount } επαφές περιέχουν πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } Μέλος",
+        "${ contactEmailsLength } Μέλη"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } περιέχει πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } επαφή βρέθηκε",
+        "${ contactsCount } επαφές βρέθηκαν"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } επαφή",
+        "${ contactsLength } επαφές"
+      ],
+      "${ doneCount } finished": [
+        "${ doneCount } τελείωσε",
+        "${ doneCount } τελείωσαν"
+      ],
+      "${ doneDownloadsCount } downloaded": [
+        "${ doneDownloadsCount } κατέβηκε",
+        "${ doneDownloadsCount } κατέβηκαν"
+      ],
+      "${ doneUploadsCount } uploaded": [
+        "${ doneUploadsCount } φορτώθηκε",
+        "${ doneUploadsCount } φορτώθηκαν"
+      ],
+      "${ errorCount } failed": [
+        "${ errorCount } απέτυχε",
+        "${ errorCount } απέτυχαν"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: εικόνα πλήρους μεγέθους"
@@ -3064,14 +3256,66 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: προεπισκόπηση χαμηλής ανάλυσης"
       ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } ομάδα βρέθηκε",
+        "${ groupCounts } ομάδες βρέθηκαν"
+      ],
+      "${ pausedCount } paused": [
+        "${ pausedCount } σε παύση",
+        "${ pausedCount } σε παύση"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } φάκελος βρέθηκε",
+        "${ providerFoldersNumLocalized } φάκελοι βρέθηκαν"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } ετικέτα βρέθηκε στο Gmail",
+        "${ providerFoldersNumLocalized } ετικέτες βρέθηκαν στο Gmail"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
+        "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγια"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } επιλεγμένη επαφή",
+        "${ selectedContactsLength }/${ contactsLength } επιλεγμένες επαφές"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } επιλεγμένο",
+        "${ selectedCount } επιλεγμένα"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } επιλεγμένος φάκελος",
+        "${ selectedFoldersCount } επιλεγμένοι φάκελοι"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } επιλεγμένη ετικέτα",
+        "${ selectedFoldersCount } επιλεγμένες ετικέτες"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } επιλεγμένος φάκελος",
+        "${ selectedFoldersCountLocalized } επιλεγμένοι φάκελοι"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } ετικέτα επιλέχθηκε",
+        "${ selectedFoldersCountLocalized } ετικέτες επιλέχθηκαν"
+      ],
       "${ speed }/s": [
         "${ speed }/δ"
       ],
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
       ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } επαφή ενημερώθηκε επιτυχώς.",
+        "${ updated } επαφές ενημερώθηκαν επιτυχώς."
+      ],
       "${ uploadName } already exists in this location.": [
         "Το όνομα ${ uploadName } υπάρχει ήδη σε αυτήν την τοποθεσία."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } μέλος)",
+        "(${ memberCount } μέλη)"
       ],
       "A number will be added to the filename": [
         "Το όνομα του αρχείου θα επεκταθεί με έναν αριθμό"
@@ -3088,8 +3332,20 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Η επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά είναι ενεργοποιημένη για αυτήν τη διεύθυνση. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, πρώτα \"εμπιστευθείτε\" τα δημόσια κλειδιά που μπορούν να χρησιμοποιηθούν για αποστολή."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Όλοι (${ totalFoldersCount } φάκελος)",
+        "Όλοι (${ totalFoldersCount } φάκελοι)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Όλες (${ totalFoldersCount } ετικέτα)",
+        "Όλες (${ totalFoldersCount } ετικέτες)"
+      ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ MAX_CONTACTS_PER_USER }",
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ MAX_CONTACTS_PER_USER }"
       ],
       "Also try looking in Trash.": [
         "Δοκιμάστε επίσης αναζήτηση στα Διαγραμμένα."
@@ -3199,6 +3455,10 @@
       "Country code": [
         "Κωδικός χώρας"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Δημιουργήστε ${ calendarsToBeCreatedCount } νέο ημερολόγιο",
+        "Δημιουργήστε ${ calendarsToBeCreatedCount } νέα ημερολόγια"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, μια χρονική έκταση για αυτήν την εισαγωγή, και τους φακέλους που θα θέλατε να εισάγετε."
       ],
@@ -3234,6 +3494,10 @@
       ],
       "Decrypting files": [
         "Αποκρυπτογράφηση αρχείων"
+      ],
+      "Delete locked drive": [
+        "Διαγραφή κλειδωμένης αρχειοθήκης",
+        "Διαγραφή κλειδωμένων αρχειοθηκών"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Η ψηφιακή υπογραφή επαληθεύτηκε. Το αρχείο ανέβηκε διασφαλισμένα από ${ emailAddress }."
@@ -3318,6 +3582,10 @@
       ],
       "Enter your own password (as organization admin).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτό",
+        "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτά"
       ],
       "Estimated time remaining: Less than a minute": [
         "Εκτιμώμενος απομένων χρόνος: Κάτω του λεπτού"
@@ -3408,6 +3676,10 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Εάν έχετε ένα από αυτά, συνεχίστε στη ρύθμιση λογαριασμού ${ BRAND_NAME }\nγια να αρχίσετε τη διαδικασία ξεμπλοκαρίσματος."
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγιο",
+        "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγια"
       ],
       "Import from": [
         "Εισαγωγή από"
@@ -3577,6 +3849,10 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ένα η περισσότερα από τα αξιόπιστα κλειδιά σας έχουν επισημανθεί ως \"παραβιασμένα\" από τον κάτοχό τους. Σας συνιστούμε να τα επισημάνετε ως \"μη αξιόπιστα\"."
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Επιτρέπεται μόνο ${ MAX_CUSTOM_PASSWORD_LENGTH } χαρακτήρας",
+        "Επιτρέπονται μόνο ${ MAX_CUSTOM_PASSWORD_LENGTH } χαρακτήρες"
+      ],
       "Only the people with the link and the password can access this file.": [
         "Μόνο τα άτομα που έχουν τον σύνδεσμο και τον κωδικό πρόσβασης μπορούν να προσπελάσουν αυτό το αρχείο."
       ],
@@ -3612,6 +3888,10 @@
       ],
       "Please select the folders you would like to import:": [
         "Παρακαλούμε επιλέξτε τους φακέλους που θα θέλετε να εισάγετε:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε σε ${ groupCount } ομάδα.",
+        "Επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε σε ${ groupCount } ομάδες."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Παρακαλούμε επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε στην ομάδα ${ groupName }."
@@ -3819,6 +4099,10 @@
       ],
       "This month": [
         "Αυτό το μήνα"
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "Αυτό θα διαγράψει τον σύνδεσμο και θα καταργήσει την πρόσβαση στο αρχείο ή φάκελο σας για οποιονδήποτε με τον σύνδεσμο.",
+        "Αυτό θα διαγράψει τους συνδέσμους και θα καταργήσει την πρόσβαση στα αρχεία ή φακέλους σας για οποιονδήποτε με τους συνδέσμους."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
         "Αυτό θα καταργήσει τη συγχρονισμένη συσκευή ${ deviceName } από το ${ DRIVE_APP_NAME } και θα σταματήσει το συγχρονισμό φακέλων που προσθέσατε στο Οι Υπολογιστές μου."
@@ -4131,6 +4415,14 @@
       "${ BRAND_NAME } username": [
         "όνομα χρήστη ${ BRAND_NAME }"
       ],
+      "${ nbDay } day": [
+        "${ nbDay } ημέρα",
+        "${ nbDay } ημέρες"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } έτος",
+        "${ nbYear } έτη"
+      ],
       "(Expired)": [
         "(Ληγμένο)"
       ],
@@ -4238,6 +4530,10 @@
       ],
       "Delete": [
         "Διαγραφή"
+      ],
+      "Delete drive?": [
+        "Διαγραφή αρχειοθήκης;",
+        "Διαγραφή αρχειοθηκών;"
       ],
       "Delete recovery-related information.": [
         "Διαγράψτε πληροφορίες που σχετίζονται με την ανάκτηση."
@@ -4657,6 +4953,10 @@
       "Almost there": [
         "Ακόμα λίγο"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }",
+        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Γίνεται σύνδεση με τον πάροχο ηλεκτρονικού ταχυδρομείου σας"
       ],
@@ -4671,6 +4971,24 @@
       ],
       "Your import is starting": [
         "Η εισαγωγή σας εκκινεί"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φάκελο και επισημάνετέ τα ως",
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φακέλους και επισημάνετέ τα ως"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } ετικέτα και επισημάνετέ τα ως",
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } ετικέτες και επισημάνετέ τα ως"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } φάκελο και επισημάνετε τα με ετικέτα",
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } φακέλους και επισημάνετε τα με ετικέτα"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτα και επισημάνετέ τα ως",
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτες και επισημάνετε τα ως"
       ]
     },
     "Message": {
@@ -4820,6 +5138,50 @@
       "\"${ newName }\" renamed successfully": [
         "Επιτυχής μετονομασία σε \"${ newName }\""
       ],
+      "${ count } item failed to be decrypted": [
+        "${ count } αντικείμενο απέτυχε να αποκρυπτογραφηθεί",
+        "${ count } αντικείμενα απέτυχαν να αποκρυπτογραφηθούν"
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "${ numberOfItems } στοιχείο εξαλείφθηκε οριστικά από τα Διαγραμμένα",
+        "${ numberOfItems } στοιχεία εξαλείφθηκαν οριστικά από τα Διαγραμμένα"
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "Αποτυχία οριστικής εξάλειψης \"${ numberOfItems }\" στοιχείου από τα Διαγραμμένα",
+        "Αποτυχία οριστικής εξάλειψης \"${ numberOfItems }\" στοιχείων από τα Διαγραμμένα"
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "Αποτυχία μετακίνησης ${ numberOfItems } στοιχείου",
+        "Αποτυχία μετακίνησης ${ numberOfItems } στοιχείων"
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "Αποτυχία μετακίνησης ${ numberOfItems } στοιχείου στα Διαγραμμένα",
+        "Αποτυχία μετακίνησης ${ numberOfItems } στοιχείων στα Διαγραμμένα"
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "Αποτυχία επαναφοράς ${ numberOfItems } στοιχείου από τα Διαγραμμένα",
+        "Αποτυχία επαναφοράς ${ numberOfItems } στοιχείων από τα Διαγραμμένα"
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "${ numberOfItems } στοιχείο μετακινήθηκε στα Διαγραμμένα",
+        "${ numberOfItems } στοιχεία μετακινήθηκαν στα Διαγραμμένα"
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "${ numberOfItems } στοιχείο επαναφέρθηκε από τα Διαγραμμένα",
+        "${ numberOfItems } στοιχεία επαναφέρθηκαν από τα Διαγραμμένα"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "${ numberOfItems } στοιχείο μετακινήθηκε επιτυχώς",
+        "${ numberOfItems } στοιχεία μετακινήθηκαν επιτυχώς"
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "${ numberOfItems } σύνδεσμος προς το στοιχείο σας απέτυχε να διαγραφεί",
+        "${ numberOfItems } σύνδεσμοι προς τα στοιχεία σας απέτυχαν να διαγραφούν"
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "διαγράφηκε ${ numberOfItems } σύνδεσμος προς το στοιχείο σας",
+        "διαγράφηκαν ${ numberOfItems } σύνδεσμοι προς τα στοιχεία σας"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Όλα τα διαγραμμένα στοιχεία σύντομα θα εξαλειφθούν οριστικά"
       ],
@@ -4859,6 +5221,10 @@
       "Failed to upload files: ${ err }": [
         "Αποτυχία ανεβάσματος αρχείων: ${ err }"
       ],
+      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
+        "Το αρχείο ή ο φάκελος \"${ filename }\" και ${ count } άλλο ήδη μεταφορτώνονται",
+        "Το αρχείο ή ο φάκελος \"${ filename }\" και ${ count } άλλα ήδη μεταφορτώνονται"
+      ],
       "File or folder \"${ filename }\" is already uploading": [
         "Το αρχείο ή ο φάκελος \"${ filename }\" ήδη μεταφορτώνονται"
       ],
@@ -4867,6 +5233,30 @@
       ],
       "Link copied to clipboard": [
         "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο"
+      ],
+      "Move ${ itemsToMoveCount } file": [
+        "Μετακίνηση ${ itemsToMoveCount } αρχείου",
+        "Μετακίνηση ${ itemsToMoveCount } αρχείων"
+      ],
+      "Move ${ itemsToMoveCount } folder": [
+        "Μετακίνηση ${ itemsToMoveCount } φακέλου",
+        "Μετακίνηση ${ itemsToMoveCount } φακέλων"
+      ],
+      "Move ${ itemsToMoveCount } item": [
+        "Μετακίνηση ${ itemsToMoveCount } στοιχείου",
+        "Μετακίνηση ${ itemsToMoveCount } στοιχείων"
+      ],
+      "Move ${ movingCount } file": [
+        "Μετακίνηση ${ movingCount } αρχείου",
+        "Μετακίνηση ${ movingCount } αρχείων"
+      ],
+      "Move ${ movingCount } folder": [
+        "Μετακίνηση ${ movingCount } φακέλου",
+        "Μετακίνηση ${ movingCount } φακέλων"
+      ],
+      "Move ${ movingCount } item": [
+        "Μετακίνηση ${ movingCount } στοιχείου",
+        "Μετακίνηση ${ movingCount } στοιχείων"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Δεν υπάρχει αρκετός χώρος για αποστολή ${ formattedTotal }"
@@ -4934,6 +5324,10 @@
       ],
       "Set a recovery method": [
         "Ορίστε μέθοδο ανάκτησης"
+      ],
+      "Simply complete the following in the next ${ expiresInDays } day:": [
+        "Απλά ολοκληρώστε τα ακόλουθα στην επόμενη ${ expiresInDays } ημέρα:",
+        "Απλά ολοκληρώστε τα ακόλουθα στις επόμενες ${ expiresInDays } ημέρες:"
       ],
       "Upload a file": [
         "Φόρτωση αρχείου"
@@ -5091,6 +5485,18 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } από τις ${ countContacts } επαφές έχουν εξαχθεί με επιτυχία.",
+        "${ contactsExported.length } από τις ${ countContacts } επαφές έχουν εξαχθεί με επιτυχία."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "Το ${ model.deleted.length } από την ${ totalBeDeleted } επαφή διαγράφηκε με επιτυχία.",
+        "Το ${ model.deleted.length } από τις ${ totalBeDeleted } επαφές διαγράφηκε με επιτυχία."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } από ${ totalBeMerged } επαφή συγχωνεύτηκε με επιτυχία.",
+        "${ model.submitted.length } από ${ totalBeMerged } επαφές συγχωνεύτηκαν με επιτυχία."
+      ],
       "No contacts exported.": [
         "Δεν εξήχθησαν επαφές."
       ],
@@ -5163,8 +5569,32 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } ημέρα",
+        "${ timeRemaining.inDays } ημέρες"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } ώρα",
+        "${ timeRemaining.inHours } ώρες"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inDays } ημέρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inDays } ημέρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inHours } ώρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Παρακαλούμε μεταβείτε στη συνδεδεμένη συσκευή (στη συνεδρία όπου ξεκίνησε το αίτημα) για να αλλάξετε τον κωδικό πρόσβασής σας."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inDays } ημέρα",
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inDays } ημέρες"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρα",
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρες"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Τώρα μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας για τον λογαριασμό ${ boldEmail } ελεύθερα για ${ boldDaysRemaining }."
@@ -5227,8 +5657,16 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } περισσότερη ώρα",
+        "${ gracePeriodHoursRemaining } περισσότερες ώρες"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Εάν δε ζητήσατε να επαναφέρετε τον κωδικό πρόσβασής σας, ακυρώστε αυτό το αίτημα τώρα."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Ζητήθηκε επαναφορά κωδικού πρόσβασης (${ user.Email }). Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ hoursRemaining } ώρα.",
+        "Ζητήθηκε επαναφορά κωδικού πρόσβασης (${ user.Email }). Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ hoursRemaining } ώρες."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Για να βεβαιωθούμε ότι προσπαθείτε πραγματικά να επαναφέρετε τον κωδικό πρόσβασής σας, περιμένουμε 72 ώρες πριν εγκρίνουμε τα αιτήματα. Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ boldTimeLeft }. ${ viewRequest }"
@@ -5256,6 +5694,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } ώρα",
+        "${ gracePeriodHoursRemaining } ώρες"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } είναι τώρα διαθέσιμο."
       ],
@@ -5301,6 +5743,30 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Αναβαθμίστε σε Απεριόριστο"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } ημέρα",
+        "${ days } ημέρες"
+      ],
+      "${ hours } hour": [
+        "${ hours } ώρα",
+        "${ hours } ώρες"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } λεπτό",
+        "${ minutes } λεπτά"
+      ],
+      "${ seconds } second": [
+        "${ seconds } δευτερόλεπτο",
+        "${ seconds } δευτερόλεπτα"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } μήνα ΔΩΡΕΑΝ",
+        "${ n } μήνες ΔΩΡΕΑΝ"
       ]
     },
     "specialoffer: Deal details": {
@@ -5361,6 +5827,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } μήνα",
+        "${ n } μήνες"
+      ],
       "/ month": [
         "/ μήνας"
       ],
@@ -5488,6 +5958,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } επαφή φαίνεται πανομοιότυπη.",
+        "${ countMergeableContacts } επαφές φαίνονται πανομοιότυπες."
+      ],
       "Address copied to clipboard": [
         "Η διεύθυνση αντιγράφηκε στο πρόχειρο"
       ],
@@ -5499,6 +5973,14 @@
       ],
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"
+      ],
+      "Contact deleted": [
+        "Η επαφή διαγράφηκε",
+        "Οι επαφές διαγράφηκαν"
+      ],
+      "Contact group deleted": [
+        "Η ομάδα επαφών διαγράφηκε",
+        "Η ομάδες επαφών διαγράφηκαν"
       ],
       "Contact saved": [
         "Η επαφή αποθηκεύτηκε"
@@ -5622,9 +6104,53 @@
         "πεδίο vCard"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } ώ",
+        "${ hours } ώ"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 ώ",
+        "${ hoursInt }.5 ώ"
+      ],
+      "${ minutes } min": [
+        "${ minutes } λ.",
+        "${ minutes } λ."
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } ώρα",
+        "${ hours } ώρες"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }μιση ώρα",
+        "${ hoursInt }μιση ώρες"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } λεπτό",
+        "${ minutes } λεπτά"
+      ]
+    },
     "Title": {
       "# of downloads": [
         "# λήψεων"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } διεύθυνση email",
+        "${ emailsCount } διευθύνσεις email"
+      ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "${ numberOfFailedTransfer.total } αποτυχημένη λήψη",
+        "${ numberOfFailedTransfer.total } αποτυχημένες λήψεις"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "${ numberOfFailedTransfer.total } αποτυχημένη μεταφορά",
+        "${ numberOfFailedTransfer.total } αποτυχημένες μεταφορές"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "${ numberOfFailedTransfer.total } αποτυχημένη μεταφόρτωση",
+        "${ numberOfFailedTransfer.total } αποτυχημένες μεταφορτώσεις"
       ],
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
@@ -5634,6 +6160,10 @@
       ],
       "Add contact group name": [
         "Προσθήκη ονόματος ομάδας επαφών"
+      ],
+      "Add to ${ groupCount } group": [
+        "Προσθέστε στη ${ groupCount } ομάδα επαφών",
+        "Προσθέστε στις ${ groupCount } ομάδες επαφών"
       ],
       "Add to ${ groupName }": [
         "Προσθέστε στο ${ groupName }"
@@ -5719,6 +6249,14 @@
       "Day theme": [
         "Ανοιχτό θέμα"
       ],
+      "Delete ${ count } contact": [
+        "Διαγραφή ${ count } επαφής",
+        "Διαγραφή ${ count } επαφών"
+      ],
+      "Delete ${ count } contact group": [
+        "Διαγραφή ${ count } ομάδα επαφών",
+        "Διαγραφή ${ count } ομάδες επαφών"
+      ],
       "Delete ${ Name }": [
         "Διαγραφή ${ Name }"
       ],
@@ -5800,6 +6338,10 @@
       "Folders details": [
         "Λεπτομέρειες φακέλου"
       ],
+      "Found ${ searchView.numberOfResults } result": [
+        "Βρέθηκε ${ searchView.numberOfResults } αποτέλεσμα",
+        "Βρέθηκαν ${ searchView.numberOfResults } αποτελέσματα"
+      ],
       "Groups": [
         "Ομάδες"
       ],
@@ -5808,6 +6350,10 @@
       ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
+      ],
+      "Import as simple event?": [
+        "Εισαγωγή ως απλή εκδήλωση;",
+        "Εισαγωγή ως απλές εκδηλώσεις;"
       ],
       "Import contacts": [
         "Εισαγωγή Επαφών"
@@ -6147,12 +6693,26 @@
         "Δεν έχετε επαφές προς εξαγωγή"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρα",
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρες"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
+      ]
+    },
     "Validation Error": {
       "\"${ str }\" is not a valid name": [
         "\"${ str }\" δεν είναι επιτρεπόμενο όνομα"
       ],
       "Name cannot include invisible characters, / or \\.": [
         "Το όνομα δεν μπορεί να περιλαμβάνει αόρατους χαρακτήρες, / ή \\."
+      ],
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "Το όνομα δεν πρέπει να υπερβαίνει τον ${ MAX_NAME_LENGTH } χαρακτήρα",
+        "Το όνομα δεν πρέπει να υπερβαίνει τους ${ MAX_NAME_LENGTH } χαρακτήρες"
       ],
       "Name must not be empty": [
         "Το όνομα δεν πρέπει να είναι άδειο"
@@ -6178,6 +6738,10 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } επαφές;"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτές τις ομάδες επαφών;"
