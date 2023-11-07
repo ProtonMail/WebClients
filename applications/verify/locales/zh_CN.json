@@ -1105,6 +1105,14 @@
       "Sign in with 2FA": [
         "通过双重验证登录"
       ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } characters": [
+        "密码必须至少包含 ${ length } 个字符"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "请缩短用户名（最长 ${ n } 个字符）"
+      ]
     }
   }
 }
