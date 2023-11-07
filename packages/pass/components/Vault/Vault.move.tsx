@@ -42,7 +42,7 @@ export const VaultMove: FC<Props> = ({ vault, onClose }) => {
                 shareId={vault.shareId}
                 optionsSelector={selectWritableVaultsWithItemsCount}
                 open={step.view === 'select'}
-                description={c('Info').t`Select where you want to move all items`}
+                title={c('Info').t`Select destination vault`}
                 onClose={onClose}
                 onSubmit={(destinationShareId) => {
                     setStep({ view: 'confirm', destinationShareId });

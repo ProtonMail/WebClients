@@ -27,8 +27,8 @@ export const shareDeleteSync = createAction('share::delete::sync', (share: Share
     withNotification({
         type: 'info',
         text: isVaultShare(share)
-            ? c('Info').t`Vault "${share.content.name}" was disabled`
-            : c('Info').t`An item previously shared with you was disabled`,
+            ? c('Info').t`Vault "${share.content.name}" was removed`
+            : c('Info').t`An item previously shared with you was removed`,
     })({ payload: { shareId: share.shareId } })
 );
 
