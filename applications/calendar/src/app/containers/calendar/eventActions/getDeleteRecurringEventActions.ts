@@ -101,13 +101,17 @@ export const getDeleteRecurringEventActions = async ({
 
         const singleDeleteOperation = isSingleEdit ? getDeleteSyncOperation(oldEvent) : undefined;
 
-        const originalExdateOperation = getUpdateSyncOperation({
-            veventComponent: withDtstamp(omit(updatedVeventComponent, ['dtstamp'])),
-            calendarEvent: originalEvent,
-            hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
-            isAttendee,
-            cancelledOccurrenceVevent,
-        });
+        const originalExdateOperation =
+            isAttendee && originalEvent.IsProtonProtonInvite
+                ? // attendees cannot add EXDATEs (the organizer added it already anyway)
+                  undefined
+                : getUpdateSyncOperation({
+                      veventComponent: withDtstamp(omit(updatedVeventComponent, ['dtstamp'])),
+                      calendarEvent: originalEvent,
+                      hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
+                      isAttendee,
+                      cancelledOccurrenceVevent,
+                  });
 
         return {
             multiSyncActions: [
