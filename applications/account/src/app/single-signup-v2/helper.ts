@@ -43,7 +43,7 @@ import noop from '@proton/utils/noop';
 import { getSubscriptionPrices } from '../signup/helper';
 import type { SessionData, SignupCacheResult, SubscriptionData } from '../signup/interfaces';
 import type { PlanCard } from './PlanCardSelector';
-import { Options, PlanParameters, Upsell, UpsellTypes } from './interface';
+import { Options, PlanParameters, SignupParameters2, Upsell, UpsellTypes } from './interface';
 
 export const getFreeTitle = (appName: string) => {
     return c('Title').t`${appName} Free`;
@@ -357,6 +357,7 @@ export const getUserInfo = async ({
     plansMap,
     plans,
     planParameters,
+    signupParameters,
     upsellPlanCard,
     toApp,
 }: {
@@ -367,6 +368,7 @@ export const getUserInfo = async ({
     plans: Plan[];
     upsellPlanCard?: PlanCard;
     planParameters: PlanParameters;
+    signupParameters: SignupParameters2;
     toApp: APP_NAMES;
 }): Promise<{
     paymentMethods: SavedPaymentMethod[];
@@ -438,7 +440,8 @@ export const getUserInfo = async ({
         const optionsWithSubscriptionDefaults = {
             ...options,
             cycle: subscription.Cycle || options.cycle,
-            currency: subscription.Currency || options.currency,
+            // TODO: make this more generic
+            currency: signupParameters.currency || subscription.Currency || options.currency,
             coupon: subscription.CouponCode || options.coupon,
         };
 
