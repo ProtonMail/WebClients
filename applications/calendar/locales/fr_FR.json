@@ -69,10 +69,6 @@
       "Apply": [
         "Appliquer"
       ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "${ maxContacts } contact est autorisé par groupe de contacts.",
-        "Un maximum de ${ maxContacts } contacts est autorisé par groupe de contacts."
-      ],
       "Attach screenshot(s)": [
         "Joindre une ou plusieurs captures d’écran"
       ],
@@ -192,14 +188,6 @@
       ],
       "Delete": [
         "Supprimer"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Supprimer ${ selectedCount } contact",
-        "Supprimer ${ selectedCount } contacts"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Supprimer ${ selectedCount } groupe de contacts",
-        "Supprimer ${ selectedCount } groupes de contacts"
       ],
       "Delete contact": [
         "Supprimer le contact"
@@ -647,10 +635,6 @@
       ],
       "Yes, I'll attend": [
         "Oui, je participerai"
-      ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contact.",
-        "Vous ne pouvez pas envoyer de fichiers vCard contenant plus de ${ maxAttachments } contacts."
       ]
     },
     "Action subline": {
@@ -684,20 +668,6 @@
       ],
       "You don't have any groups.": [
         "Vous n'avez aucun groupe."
-      ]
-    },
-    "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } domaine personnalisé",
-        "${ domains } domaines personnalisés"
-      ],
-      "${ ips } server": [
-        "${ ips } serveur",
-        "${ ips } serveurs"
-      ],
-      "${ users } user": [
-        "${ users } utilisateur",
-        "${ users } utilisateurs"
       ]
     },
     "Alarm notification": {
@@ -864,10 +834,6 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Comprend la prise en charge de 1 domaine de messagerie personnalisé, de 10 adresses e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
       ],
-      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Cela comprend la prise en charge de 3 domaines de messagerie personnalisés, de ${ addresses } adresse e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités.",
-        "Cela comprend la prise en charge de 3 domaines de messagerie personnalisés, de ${ addresses } adresses e-mail, d'un nombre illimité d'alias « hide-my-email », du partage de calendriers et bien d'autres fonctionnalités."
-      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Sécurisez vos connexions sur tous vos appareils. Comprend un nombre illimité d'alias, le partage, l'authentification à deux facteurs (A2F) intégrée et bien d'autres fonctionnalités."
       ],
@@ -887,17 +853,6 @@
         "Conservez jusqu'à 200 versions de chaque fichier pendant 10 ans."
       ]
     },
-    "Billing cycle option": {
-      "Annually": [
-        "Annuel"
-      ],
-      "Monthly": [
-        "Mensuel"
-      ],
-      "Two-year": [
-        "Tous les deux ans"
-      ]
-    },
     "Bug category": {
       "Application problem": [
         "Problème d'application"
@@ -906,19 +861,19 @@
         "Problème avec Bridge"
       ],
       "Calendar problem": [
-        "Problème avec Calendar"
+        "Problème avec Proton Calendar"
       ],
       "Connection problem": [
         "Problème de connexion"
       ],
       "Contacts problem": [
-        "Problème avec Contacts"
+        "Problème avec Proton Contacts"
       ],
       "Custom domain problem": [
         "Problème avec les domaines personnalisés"
       ],
       "Drive problem": [
-        "Problème avec Drive"
+        "Problème avec Proton Drive"
       ],
       "Feature request": [
         "Demande de fonctionnalité"
@@ -930,7 +885,7 @@
         "Problème d'installation"
       ],
       "Mail problem": [
-        "Problème avec Mail"
+        "Problème avec Proton Mail"
       ],
       "Manual setup problem": [
         "Problème avec la configuration manuelle"
@@ -966,7 +921,7 @@
         "Problème de mise à jour"
       ],
       "VPN problem": [
-        "Problème avec le VPN"
+        "Problème avec Proton VPN"
       ],
       "Website access problem": [
         "Problème d'accès au site web"
@@ -1048,14 +1003,6 @@
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
         "Il n'est pas possible de partager ce calendrier avec plus d'utilisateurs ${ BRAND_NAME }."
-      ],
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
-        "Vous avez atteint le maximum d'${ MAX_CALENDAR_MEMBERS } membre pour ce calendrier.\nPour partager ce calendrier avec plus de comptes ${ BRAND_NAME }, retirez un ou plusieurs membres actuels.",
-        "Vous avez atteint le maximum de ${ MAX_CALENDAR_MEMBERS } membres pour ce calendrier.\nPour partager ce calendrier avec plus de comptes ${ BRAND_NAME }, retirez un ou plusieurs membres actuels."
-      ],
-      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
-        "Vous avez atteint le maximum d'${ MAX_LINKS_PER_CALENDAR } lien pour ce calendrier.\nPour créer un nouveau lien vers ce calendrier, supprimez un lien existant.",
-        "Vous avez atteint le maximum de ${ MAX_LINKS_PER_CALENDAR } liens pour ce calendrier.\nPour créer un nouveau lien vers ce calendrier, supprimez un lien existant."
       ]
     },
     "Calendar sharing access option label": {
@@ -1147,18 +1094,6 @@
       ],
       "Change time range to": [
         "Changer la plage horaire pour"
-      ]
-    },
-    "Calendar view; more events collapsed": {
-      "${ more } more": [
-        "${ more } de plus",
-        "${ more } de plus"
-      ]
-    },
-    "Checkout row": {
-      "${ users } user": [
-        "${ users } utilisateur",
-        "${ users } utilisateurs"
       ]
     },
     "Collapsible tooltip": {
@@ -2116,17 +2051,9 @@
       ],
       "On date…": [
         "Le (date)"
-      ],
-      "time": [
-        "fois",
-        "fois"
       ]
     },
     "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } fois",
-        "${ count } fois"
-      ],
       "Daily": [
         "Chaque jour"
       ],
@@ -2135,18 +2062,6 @@
       ],
       "Daily, ${ untilString }": [
         "Chaque jour, ${ untilString }"
-      ],
-      "Every ${ interval } day": [
-        "Chaque ${ interval } jour",
-        "Tous les ${ interval } jours"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Chaque ${ interval } jour, à ${ timesString }",
-        "Tous les ${ interval } jours, à ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Chaque ${ interval } jour, ${ untilString }",
-        "Tous les ${ interval } jours, jusqu'au ${ untilString }"
       ],
       "until ${ dateString }": [
         "jusqu’au ${ dateString }"
@@ -2370,22 +2285,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
       ],
-      "${ list } doesn't have a valid email address": [
-        "${ list } n'a pas d’adresse e-mail valide.",
-        "Certains contacts n'ont pas d’adresse e-mail valide : ${ list }."
-      ],
-      "${ list } doesn't have an email address": [
-        "${ list } n'a pas d'adresse e-mail",
-        "Certains contacts n'ont pas d'adresse e-mail : ${ list }"
-      ],
-      "${ list } has invalid emails": [
-        "${ list } a des adresses e-mail qui ne sont pas valides.",
-        "Certains groupes ont des adresses e-mail qui ne sont pas valides : ${ list }."
-      ],
-      "${ list } has no contacts": [
-        "${ list } n'a aucun contact",
-        "Certains groupes n'ont aucun contact : ${ list }"
-      ],
       "A group with this name already exists": [
         "Un groupe avec ce nom existe déjà."
       ],
@@ -2436,14 +2335,6 @@
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Erreur de déchiffrement : le contenu de cet événement n'a pas pu être déchiffré."
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Désélectionnez au moins ${ calendarsToFixCount } calendrier.",
-        "Désélectionnez au moins ${ calendarsToFixCount } calendriers."
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Désélectionnez au moins ${ calendarsToFixCount } calendrier ou",
-        "Désélectionnez au moins ${ calendarsToFixCount } calendriers ou"
       ],
       "Domain not available, try again later": [
         "Le domaine n'est pas disponible, réessayez plus tard."
@@ -2538,10 +2429,6 @@
       "Last name is too long": [
         "Le nom de famille est trop long."
       ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Fusionnez au moins ${ calendarsToFixCount } calendrier avec un calendrier ${ BRAND_NAME } existant.",
-        "Fusionnez au moins ${ calendarsToFixCount } calendriers avec des calendriers ${ BRAND_NAME } existants."
-      ],
       "Missing key packet": [
         "Il manque le paquet de clés."
       ],
@@ -2575,14 +2462,6 @@
       "Number of occurrences cannot be empty": [
         "Le nombre d’occurrences ne peut pas être vide."
       ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "L'un des contacts n'a pas d'adresse e-mail : ${ noEmailsContactNamesList }",
-        "Certains contacts n'ont pas d'adresse e-mail : ${ noEmailsContactNamesList } "
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "L'un des groupes n'a aucun contact : ${ noContactGroupList }",
-        "Certains groupes n'ont aucun contact : ${ noContactGroupList } "
-      ],
       "Password is required": [
         "Le mot de passe est nécessaire."
       ],
@@ -2594,10 +2473,6 @@
       ],
       "Please create an address first.": [
         "Créez d'abord une adresse."
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Corrigez le conflit en surbrillance pour continuer.",
-        "Corrigez les conflits en surbrillance pour continuer."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Indiquez un prénom, un nom de famille ou un nom d'affichage."
@@ -2616,10 +2491,6 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "La clé principale récupérée pour l'utilisateur ${ BRAND_NAME } n'est pas valide pour l'envoi."
-      ],
-      "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Le destinataire dupliqué est supprimé : ${ joinedRecipients }",
-        "Les destinataires dupliqués sont supprimés : ${ joinedRecipients }"
       ],
       "Request timed out": [
         "La requête a expiré."
@@ -2729,10 +2600,6 @@
       "You already added this holidays calendar": [
         "Vous avez déjà ajouté ce calendrier de jours fériés."
       ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataire.",
-        "Vous ne pouvez pas envoyer un message à plus de ${ maxContacts } destinataires."
-      ],
       "You have reached the contacts limit for your account": [
         "Vous avez atteint la limite du nombre de contacts pour votre compte."
       ],
@@ -2766,10 +2633,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Une erreur inattendue s'est produite. L'importation doit être relancée."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événement.",
-        "Votre fichier ${ formattedFilename } contient plus de ${ MAX_IMPORT_EVENTS_STRING } événements."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Le format de votre fichier ${ formattedFilename } n'est pas valide, il ne peut pas être importé."
@@ -2967,19 +2830,9 @@
         "annulé"
       ]
     },
-    "Event form": {
-      "${ numberOfAttendees } participant": [
-        "${ numberOfAttendees } participant",
-        "${ numberOfAttendees } participants"
-      ]
-    },
     "Event info in search view; event duration": {
       "All day": [
         "Toute la journée"
-      ],
-      "All day, lasts ${ plusDaysToEnd } day": [
-        "Journée entière, pour une durée de ${ plusDaysToEnd } jour",
-        "Journée entière, pour une durée de ${ plusDaysToEnd } jours"
       ]
     },
     "Event info. Organizer name": {
@@ -3058,11 +2911,6 @@
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 To d'espace de stockage total"
-      ]
-    },
-    "familyOffer_2023: Get Proton Family": {
-      "Get ${ planName }": [
-        "Obtenir ${ planName }"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -3163,24 +3011,6 @@
         "Votre abonnement actuel ne peut pas être associé à un abonnement Visionary ou à un abonnement familial."
       ]
     },
-    "familyOffer_2023:Footer": {
-      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
-        "*Votre abonnement sera automatiquement renouvelé au même tarif à la fin de votre cycle de facturation."
-      ],
-      "Discounts are based on the standard monthly pricing.": [
-        "Les réductions sont calculées sur les prix mensuels habituels."
-      ]
-    },
-    "familyOffer_2023:Get Proton Family": {
-      "Get ${ planName }": [
-        "Obtenir ${ planName }"
-      ]
-    },
-    "familyOffer_2023:Info": {
-      "Online privacy, for your whole family": [
-        "Pour que toute la famille protège sa vie privée en ligne"
-      ]
-    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users ": [
         "Configurez votre compte familial et invitez des utilisateurs. "
@@ -3190,11 +3020,6 @@
       ],
       "Set up your family account": [
         "Créez votre compte familial"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Introducing ${ planName }": [
-        "Voici ${ planName }"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -3232,10 +3057,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "octet",
-        "octets"
-      ],
       "GB": [
         "Go"
       ],
@@ -3247,28 +3068,6 @@
       ],
       "TB": [
         "To"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Octet",
-        "Octets"
-      ],
-      "Gigabyte": [
-        "Gigaoctet",
-        "Gigaoctets"
-      ],
-      "Kilobyte": [
-        "Kilooctet",
-        "Kilooctets"
-      ],
-      "Megabyte": [
-        "Megaoctet",
-        "Megaoctets"
-      ],
-      "Terabyte": [
-        "Téraoctet",
-        "Téraoctets"
       ]
     },
     "Filter notification": {
@@ -3330,10 +3129,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "${ items.length } suggestion trouvée, utilisez le clavier pour naviguer.",
-        "${ items.length } suggestions trouvées, utilisez le clavier pour naviguer."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilisez les touches Haut et Bas pour afficher et parcourir les suggestions après la saisie. Appuyez sur Entrée pour confirmer votre choix ou sur Esc (ou Échap) pour fermer la boite de suggestions."
       ]
@@ -3350,14 +3145,6 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } événement a été chiffré et ajouté à votre calendrier.",
-        "${ totalImported }/${ totalToImport } événements ont été chiffrés et ajoutés à votre calendrier."
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Une erreur s'est produite pendant le chiffrement et l'ajout de votre événement. ${ totalImported } événement sur ${ totalToImport } a été importé.",
-        "Une erreur s'est produite pendant le chiffrement et l'ajout de vos événements. ${ totalImported } événements sur ${ totalToImport } ont été importés."
-      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Une erreur s'est produite lors du chiffrement et de l'ajout de votre événement. Aucun événement n'a pu être importé."
       ],
@@ -3392,23 +3179,11 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Les invitations importées apparaissent dans ${ CALENDAR_APP_NAME } sans les informations sur l'organisateur et les participants. Pour recevoir les mises à jour des événements et voir les participants, demandez aux organisateurs de vous inviter en utilisant votre adresse e-mail ${ BRAND_NAME }."
       ],
-      "This file contains an event invitation:": [
-        "Ce fichier contient une invitation à un événement :",
-        "Ce fichier contient des invitations à un événement :"
-      ],
-      "This file contains an invitation response:": [
-        "Ce fichier contient une réponse à une invitation :",
-        "Ce fichier contient des réponses à une invitation :"
-      ],
       "This file contains some data that we cannot import:": [
         "Ce fichier contient des données que nous ne pouvons pas importer :"
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } contact chiffré et ajouté à votre liste de contacts.",
-        "${ totalImported }/${ totalToImport } contacts chiffrés et ajoutés à votre liste de contacts."
-      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Une erreur s’est produite lors du chiffrement et de l’ajout de votre contact. Aucun contact n’a pu être importé."
       ],
@@ -3428,12 +3203,6 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Contact ${ contactId } : "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } contact",
-        "${ totalContacts } contacts"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3605,10 +3374,6 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } contacts sur ${ totalContacts } ne seront pas importés. Cliquez pour plus de détails."
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } des ${ totalEvents } événements ne sera pas importé. Cliquez pour voir les détails.",
-        "${ totalEventsDiscarded } des ${ totalEvents } événements ne seront pas importés. Cliquez pour voir les détails."
-      ],
       "No contact can be imported. Click for details": [
         "Aucun contact ne peut être importé. Cliquez pour plus de détails."
       ],
@@ -3620,92 +3385,20 @@
       ]
     },
     "Info": {
-      "${ addressCount } email address": [
-        "${ addressCount } adresse e-mail",
-        "${ addressCount } adresses e-mail"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Avec la technologie de chiffrement de ${ BRAND_NAME }, personne ne peut accéder à votre mot de passe, pas même nous."
       ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } nouveau calendrier",
-        "${ calendarsToBeCreatedCount } nouveaux calendriers"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } calendrier fusionné",
-        "${ calendarsToBeMergedCount } calendriers fusionnés"
-      ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } contact a plusieurs adresses e-mail.",
-        "${ contactCount } contacts ont plusieurs adresses e-mail."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } membre",
-        "${ contactEmailsLength } membres"
-      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } a plusieurs adresses e-mail."
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } contact trouvé",
-        "${ contactsCount } contacts trouvés"
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } contact",
-        "${ contactsLength } contacts"
       ],
       "${ firstItems } and ${ lastItem }": [
         "${ firstItems } et ${ lastItem }"
       ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } groupe trouvé",
-        "${ groupCounts } groupes trouvés"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } dossier trouvé",
-        "${ providerFoldersNumLocalized } dossiers trouvés"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } label trouvé dans Gmail",
-        "${ providerFoldersNumLocalized } labels trouvés dans Gmail"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } calendrier sur ${ providerCalendars.length }",
-        "${ selectedCalendarsTotal } calendriers sur ${ providerCalendars.length }"
-      ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "Nombre de contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }",
-        "Contacts sélectionnés : ${ selectedContactsLength } sur ${ contactsLength }"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } dossier sélectionné",
-        "${ selectedFoldersCount } dossiers sélectionnés"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } label sélectionné",
-        "${ selectedFoldersCount } labels sélectionnés"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } dossier sélectionné",
-        "${ selectedFoldersCountLocalized } dossiers sélectionnés"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } label sélectionné",
-        "${ selectedFoldersCountLocalized } labels sélectionnés"
-      ],
       "${ storage } storage": [
         "${ storage } d'espace de stockage"
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } contact a été mis à jour.",
-        "${ updated } contacts ont été mis à jour."
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } membre)",
-        "(${ memberCount } membres)"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Un message d’annulation sera envoyé aux participants supprimés."
@@ -3730,18 +3423,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La vérification d’adresse avec les clés approuvées est activée pour cette adresse. Pour être en mesure d’envoyer à cette adresse, commencez par approuver des clés publiques pouvant être utilisées pour l’envoi."
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "Tous (${ totalFoldersCount } dossier)",
-        "Tous (${ totalFoldersCount } dossiers)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Tous (${ totalFoldersCount } label)",
-        "Tous (${ totalFoldersCount } labels)"
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Tous vos contacts seront importés, dans la limite de ${ MAX_CONTACTS_PER_USER }.",
-        "Tous vos contacts seront importés, dans la limite de ${ MAX_CONTACTS_PER_USER }."
       ],
       "An invitation will be sent to added participants.": [
         "Une invitation sera envoyée aux participants ajoutés."
@@ -3769,9 +3450,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
-      ],
-      "Billing cycle: ${ text }": [
-        "Cycle de facturation : ${ text }"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "En partageant toutes les informations des événements de ce calendrier, vous acceptez d'accorder à ${ BRAND_NAME } l'accès aux informations chiffrées de ce calendrier."
@@ -3817,10 +3495,6 @@
       ],
       "Country code": [
         "Indicatif du pays"
-      ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Créer ${ calendarsToBeCreatedCount } nouveau calendrier",
-        "Créer ${ calendarsToBeCreatedCount } nouveaux calendriers"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Choisissez un label pour les messages importés, une plage de temps pour cette importation et les dossiers que vous voulez importer."
@@ -3891,10 +3565,6 @@
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
       ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Temps restant estimé : ${ estimatedMinutes } minute",
-        "Temps restant estimé : ${ estimatedMinutes } minutes"
-      ],
       "Estimated time remaining: Less than a minute": [
         "Temps restant estimé : moins d'une minute"
       ],
@@ -3930,10 +3600,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boite de réception, vérifiez votre dossier Indésirables/spam."
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Importer ${ calendarCount } calendrier sur ${ totalCalendarsCount }",
-        "Importer ${ calendarCount } calendriers sur ${ totalCalendarsCount }"
       ],
       "Import from": [
         "Importer depuis"
@@ -4072,10 +3738,6 @@
       ],
       "Please select the folders you would like to import:": [
         "Sélectionnez les dossiers que vous voulez importer :"
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Sélectionnez l'adresse ou les adresses e-mail à ajouter à ${ groupCount } groupe.",
-        "Sélectionnez l'adresse ou les adresses e-mail à ajouter à ${ groupCount } groupes."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Sélectionnez l'adresse ou les adresses e-mail à ajouter à ${ groupName }."
@@ -4441,10 +4103,6 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ maxAttendees } participant is allowed per invitation": [
-        "${ maxAttendees } participant est autorisé par invitation.",
-        "Un maximum de ${ maxAttendees } participants est autorisé par invitation."
-      ],
       "Creating invites in a shared calendar is not allowed": [
         "Il n'est pas permis de créer des invitations dans un calendrier partagé."
       ]
@@ -4740,10 +4398,6 @@
       "Organizer": [
         "Organisateur"
       ],
-      "participant": [
-        "participant",
-        "participants"
-      ],
       "Participants": [
         "Participants"
       ],
@@ -4935,10 +4589,6 @@
       "Almost there": [
         "Nous y sommes presque."
       ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Nombre de calendriers créés : ${ createdCalendarCount } sur ${ calendarsToBeCreated }.",
-        "Nombre de calendriers créés : ${ createdCalendarCount } sur ${ calendarsToBeCreated }."
-      ],
       "Connecting to your email provider": [
         "Connexion à votre fournisseur de messagerie"
       ],
@@ -4953,24 +4603,6 @@
       ],
       "Your import is starting": [
         "Votre importation commence."
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Importer tous les messages depuis ${ itemsToImportCount } dossier et leur appliquer le label",
-        "Importer tous les messages depuis ${ itemsToImportCount } dossiers et leur appliquer le label"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Importer tous les messages provenant d'${ itemsToImportCount } label et leur appliquer le label",
-        "Importer tous les messages provenant de ${ itemsToImportCount } labels et leur appliquer le label"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Importer tous les messages d'${ selectedItemsToImportCount } dossier sur ${ itemsToImportCount } et leur appliquer le label",
-        "Importer tous les messages de ${ selectedItemsToImportCount } dossiers sur ${ itemsToImportCount } et leur appliquer le label"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Importer tous les messages d'${ selectedItemsToImportCount } label sur ${ itemsToImportCount } et leur appliquer le label",
-        "Importer tous les messages de ${ selectedItemsToImportCount } labels sur ${ itemsToImportCount } et leur appliquer le label"
       ]
     },
     "Message": {
@@ -5065,18 +4697,6 @@
       ]
     },
     "Monthly recurring event, frequency": {
-      "Every ${ interval } month ${ onDayString }": [
-        "Chaque ${ interval } mois, ${ onDayString }",
-        "Tous les ${ interval } mois, le ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Chaque ${ interval } mois, ${ onDayString }, à ${ timesString }",
-        "Tous les ${ interval } mois, ${ onDayString }, à ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Chaque ${ interval } mois, ${ onDayString }, jusqu'au ${ untilString }",
-        "Tous les ${ interval } mois, ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Chaque mois, ${ onDayString }"
       ],
@@ -5285,12 +4905,6 @@
         "Le calendrier a été mis à jour."
       ]
     },
-    "Notification in share calendar modal": {
-      "Member added": [
-        "Membre ajouté",
-        "Membres ajoutés"
-      ]
-    },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
         "L'invitation au calendrier a été refusée."
@@ -5321,91 +4935,11 @@
       "at time of event": [
         "à l'heure de l'événement"
       ],
-      "day before": [
-        "jour avant",
-        "jours avant"
-      ],
-      "hour before": [
-        "heure avant",
-        "heures avant"
-      ],
-      "minute before": [
-        "minute avant",
-        "minutes avant"
-      ],
       "on the same day": [
         "le même jour"
-      ],
-      "week before": [
-        "semaine avant",
-        "semaines avant"
       ]
     },
     "Notifications": {
-      "${ value } day after": [
-        "${ value } jour après",
-        "${ value } jours après"
-      ],
-      "${ value } day after at ${ time }": [
-        "${ value } jour après ${ time }",
-        "${ value } jours après ${ time }"
-      ],
-      "${ value } day before": [
-        "${ value } jour avant",
-        "${ value } jours avant"
-      ],
-      "${ value } day before at ${ time }": [
-        "${ value } jour avant ${ time }",
-        "${ value } jours avant ${ time }"
-      ],
-      "${ value } hour after": [
-        "${ value } heure après",
-        "${ value } heures après"
-      ],
-      "${ value } hour after at ${ time }": [
-        "${ value } heure après ${ time }",
-        "${ value } heures après ${ time }"
-      ],
-      "${ value } hour before": [
-        "${ value } heure avant",
-        "${ value } heures avant"
-      ],
-      "${ value } hour before at ${ time }": [
-        "${ value } heure avant ${ time }",
-        "${ value } heures avant ${ time }"
-      ],
-      "${ value } minute after": [
-        "${ value } minute après",
-        "${ value } minutes après"
-      ],
-      "${ value } minute after at ${ time }": [
-        "${ value } minute après ${ time }",
-        "${ value } minutes après ${ time }"
-      ],
-      "${ value } minute before": [
-        "${ value } minute avant",
-        "${ value } minutes avant"
-      ],
-      "${ value } minute before at ${ time }": [
-        "${ value } minute avant ${ time }",
-        "${ value } minutes avant ${ time }"
-      ],
-      "${ value } week after": [
-        "${ value } semaine après",
-        "${ value } semaines après"
-      ],
-      "${ value } week after at ${ time }": [
-        "${ value } semaine après ${ time }",
-        "${ value } semaines après ${ time }"
-      ],
-      "${ value } week before": [
-        "${ value } semaine avant",
-        "${ value } semaines avant"
-      ],
-      "${ value } week before at ${ time }": [
-        "${ value } semaine avant ${ time }",
-        "${ value } semaines avant ${ time }"
-      ],
       "At time of event": [
         "Quand l'événement commence"
       ],
@@ -5486,10 +5020,6 @@
       "Custom": [
         "Personnaliser"
       ],
-      "Day": [
-        "Jour",
-        "Jours"
-      ],
       "Does not repeat": [
         "Ne pas répéter"
       ],
@@ -5508,10 +5038,6 @@
       "Ignore group": [
         "Ignorer le groupe"
       ],
-      "Month": [
-        "Mois",
-        "Mois"
-      ],
       "No parent folder": [
         "Aucun dossier parent"
       ],
@@ -5520,14 +5046,6 @@
       ],
       "This event": [
         "Cet événement"
-      ],
-      "Week": [
-        "Semaine",
-        "Semaines"
-      ],
-      "Year": [
-        "Année",
-        "Années"
       ]
     },
     "Option group label": {
@@ -5659,18 +5177,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } contact sur ${ countContacts } a été exporté.",
-        "${ contactsExported.length } contacts sur ${ countContacts } ont été exportés."
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } contact sur ${ totalBeDeleted } a été supprimé.",
-        "${ model.deleted.length } contacts sur ${ totalBeDeleted } ont été supprimés."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } contact sur ${ totalBeMerged } a été fusionné.",
-        "${ model.submitted.length } contacts sur ${ totalBeMerged } ont été fusionnés."
-      ],
       "No contacts exported.": [
         "Aucun contact exporté."
       ],
@@ -5756,32 +5262,8 @@
       ]
     },
     "session_recovery:available:info": {
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } jour",
-        "${ timeRemaining.inDays } jours"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } heure",
-        "${ timeRemaining.inHours } heures"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inDays } jour pour réinitialiser votre mot de passe.",
-        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inDays } jours pour réinitialiser votre mot de passe."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inHours } heure pour réinitialiser votre mot de passe.",
-        "La demande de réinitialisation du mot de passe a été validée (${ user.Email }). Vous disposez de ${ timeRemaining.inHours } heures pour réinitialiser votre mot de passe."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Rendez-vous sur l'appareil avec lequel vous vous êtes connecté (dans la session où la demande a été faite) pour changer votre mot de passe."
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "Cette autorisation expire dans ${ timeRemaining.inDays } jour.",
-        "Cette autorisation expire dans ${ timeRemaining.inDays } jours."
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Cette autorisation expire dans ${ timeRemaining.inHours } heure.",
-        "Cette autorisation expire dans ${ timeRemaining.inHours } heures."
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Vous disposez de ${ boldDaysRemaining } pour modifier librement votre mot de passe pour le compte ${ boldEmail }."
@@ -5844,16 +5326,8 @@
       ]
     },
     "session_recovery:in_progress:info": {
-      "${ gracePeriodHoursRemaining } more hour": [
-        "${ gracePeriodHoursRemaining } heure en plus",
-        "${ gracePeriodHoursRemaining } heures en plus"
-      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Si vous n'êtes pas à l'origine de la demande de réinitialisation de votre mot de passe, annulez cette demande maintenant."
-      ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "La réinitialisation du mot de passe a été demandée (${ user.Email }). Vous pourrez modifier votre mot de passe dans ${ hoursRemaining } heure.",
-        "La réinitialisation du mot de passe a été demandée (${ user.Email }). Vous pourrez modifier votre mot de passe dans ${ hoursRemaining } heures."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Pour nous assurer que vous êtes bien à l'origine de la réinitialisation de votre mot de passe, nous attendons 72 heures avant de valider les demandes. Vous pourrez modifier votre mot de passe dans ${ boldTimeLeft }. ${ viewRequest }"
@@ -5881,10 +5355,6 @@
       ]
     },
     "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } heure",
-        "${ gracePeriodHoursRemaining } heures"
-      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } est maintenant disponible."
       ],
@@ -5916,12 +5386,6 @@
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
         "Pour inviter une personne qui n'utilise pas ${ BRAND_NAME }, partagez votre calendrier avec un lien."
-      ]
-    },
-    "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
-        "Vous avez dépassé le maximum d'${ MAX_CALENDAR_MEMBERS } membre par calendrier.",
-        "Vous avez dépassé le maximum de ${ MAX_CALENDAR_MEMBERS } membres par calendrier."
       ]
     },
     "Share calendar modal description": {
@@ -5981,30 +5445,6 @@
         "Je passe à Unlimited"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } jour",
-        "${ days } jours"
-      ],
-      "${ hours } hour": [
-        "${ hours } heure",
-        "${ hours } heures"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minute",
-        "${ minutes } minutes"
-      ],
-      "${ seconds } second": [
-        "${ seconds } seconde",
-        "${ seconds } secondes"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } mois GRATUIT",
-        "${ n } mois GRATUITS"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 utilisateur"
@@ -6054,23 +5494,6 @@
         "Cet abonnement se renouvellera automatiquement tous les 2 ans au même prix jusqu'à ce qu'il soit annulé."
       ]
     },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Offre à vie"
-      ],
-      "Limited time only": [
-        "Offre à durée limitée"
-      ],
-      "Most popular": [
-        "Le plus populaire"
-      ],
-      "Offer ends soon": [
-        "L'offre se termine bientôt"
-      ],
-      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
-        "La réduction sera maintenue lors du renouvellement jusqu'à ce que l'abonnement soit annulé ou modifié."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Voir les abonnements"
@@ -6080,10 +5503,6 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } mois",
-        "${ n } mois"
-      ],
       "/ month": [
         "/mois"
       ],
@@ -6149,20 +5568,8 @@
       "Cyber Week Sale": [
         "Offre Cyber Week"
       ],
-      "End of year offer": [
-        "Offre de fin d'année"
-      ],
       "End of Year Sale": [
         "Offre de fin d'année"
-      ],
-      "Get our premium bundle and save more": [
-        "Profitez de notre offre groupée premium et économisez plus"
-      ],
-      "Our discontinued Visionary plan is back for a limited time only": [
-        "Notre abonnement Visionary est de retour, pour une durée limitée"
-      ],
-      "Save more with 2 years of ${ planName }": [
-        "Économisez plus avec 2 ans de ${ planName }"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Changez d'abonnement et économisez plus avec 2 ans de ${ planName }"
@@ -6239,10 +5646,6 @@
       ]
     },
     "Success": {
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } contact semble identique.",
-        "${ countMergeableContacts } contacts semblent identiques."
-      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Un message d'annulation sera envoyé aux participants supprimés pour tous les événements de cette série."
       ],
@@ -6296,14 +5699,6 @@
       ],
       "Code sent to ${ methodTo }": [
         "Le code a été envoyé à ${ methodTo }."
-      ],
-      "Contact deleted": [
-        "Contact supprimé",
-        "Contacts supprimés"
-      ],
-      "Contact group deleted": [
-        "Groupe de contacts supprimé",
-        "Groupes de contacts supprimés"
       ],
       "Contact saved": [
         "Le contact a été enregistré."
@@ -6389,14 +5784,6 @@
         "Votre commentaire a été envoyé."
       ]
     },
-    "summer2023: Billing cycle option": {
-      "1 year": [
-        "1 an"
-      ],
-      "2 years": [
-        "2 ans"
-      ]
-    },
     "summer2023: Deal details": {
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } version premium"
@@ -6417,27 +5804,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Sécurisez vos fichiers grâce au stockage cloud chiffré. Profitez de l'historique des versions, du partage chiffré des fichiers et de bien d'autres fonctionnalités."
-      ]
-    },
-    "summer2023:Footer": {
-      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
-        "*Votre abonnement sera automatiquement renouvelé au tarif réduit habituel à la fin de votre cycle de facturation."
-      ],
-      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
-        "Les réductions sont calculées sur les prix mensuels habituels. Cette offre est réservée aux nouveaux abonnés."
-      ]
-    },
-    "summer2023:Info": {
-      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
-        "Profitez du meilleur de ${ BRAND_NAME } à un prix exceptionnel (offre à durée limitée)."
-      ],
-      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
-        "Nous fêtons les neuf ans de notre financement participatif !"
-      ]
-    },
-    "summer2023:Offer title": {
-      "${ BRAND_NAME } Anniversary Sale": [
-        "Offre spéciale : anniversaire ${ BRAND_NAME }"
       ]
     },
     "Table header": {
@@ -6498,44 +5864,12 @@
         "Champ vCard"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } h",
-        "${ hours } h"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt },5 h",
-        "${ hoursInt },5 h"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } heure",
-        "${ hours } heures"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt },5 heure",
-        "${ hoursInt },5 heures"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minute",
-        "${ minutes } minutes"
-      ]
-    },
     "Timezone search placeholder": {
       "Search time zones": [
         "Rechercher des fuseaux horaires"
       ]
     },
     "Title": {
-      "${ emailsCount } email address": [
-        "${ emailsCount } adresse e-mail",
-        "${ emailsCount } adresses e-mail"
-      ],
       "Account suspended": [
         "Compte suspendu"
       ],
@@ -6557,10 +5891,6 @@
       "Add participants": [
         "Ajouter des participants"
       ],
-      "Add to ${ groupCount } group": [
-        "Ajouter à ${ groupCount } groupe",
-        "Ajouter à ${ groupCount } groupes"
-      ],
       "Add to ${ groupName }": [
         "Ajouter à ${ groupName }"
       ],
@@ -6569,9 +5899,6 @@
       ],
       "All settings": [
         "Tous les paramètres"
-      ],
-      "Billing cycle": [
-        "Cycle de facturation"
       ],
       "Birthday": [
         "Date de naissance"
@@ -6636,14 +5963,6 @@
       "Day theme": [
         "Thème jour"
       ],
-      "Delete ${ count } contact": [
-        "Supprimer ${ count } contact",
-        "Supprimer ${ count } contacts"
-      ],
-      "Delete ${ count } contact group": [
-        "Supprimer ${ count } groupe de contacts",
-        "Supprimer ${ count } groupes de contacts"
-      ],
       "Delete ${ Name }": [
         "Supprimer ${ Name }"
       ],
@@ -6706,10 +6025,6 @@
       ],
       "Human verification": [
         "Vérification que vous n'êtes pas un robot"
-      ],
-      "Import as simple event?": [
-        "Importer l'événement sans les détails ?",
-        "Importer les événements sans les détails ?"
       ],
       "Import contacts": [
         "Importer les contacts"
@@ -7005,16 +6320,6 @@
         "Partagé avec un chiffrement de bout en bout avec un contact vérifié"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Le mot de passe doit comporter au moins ${ length } caractère.",
-        "Le mot de passe doit comporter au moins ${ length } caractères."
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractère maximum).",
-        "Essayez d'utiliser un nom d'utilisateur plus court (${ n } caractères maximum)."
-      ]
-    },
     "Video control": {
       "Click to replay the video": [
         "Cliquez pour rejouer la vidéo."
@@ -7037,10 +6342,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transférera autant de données que possible, en commençant par vos messages les plus récents."
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Voulez-vous vraiment supprimer définitivement ${ count } contact ?",
-        "Voulez-vous vraiment supprimer définitivement ${ count } contacts ?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Voulez-vous vraiment supprimer définitivement ce groupe de contacts ?"
@@ -7109,114 +6410,6 @@
       ]
     },
     "Weekly recurring event, frequency": {
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Chaque ${ interval } semaine, les ${ multipleDaysString }",
-        "Toutes les ${ interval } semaines, les ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Chaque ${ interval } semaine le ${ multipleDaysString }, ${ timesString }",
-        "Toutes les ${ interval } semaines le ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Chaque ${ interval } semaine, les ${ multipleDaysString }, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, les ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days": [
-        "Chaque ${ interval } semaine, chaque jour",
-        "Toutes les ${ interval } semaines, chaque jour"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Chaque ${ interval } semaine, chaque jour, à ${ timesString }",
-        "Toutes les ${ interval } semaines, chaque jour, à ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Chaque ${ interval } semaine, chaque jour, ${ untilString }",
-        "Toutes les ${ interval } semaines, chaque jour, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Chaque ${ interval } semaine, le vendredi",
-        "Toutes les ${ interval } semaines, le vendredi"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Chaque ${ interval } semaine le vendredi, ${ timesString }",
-        "Toutes les ${ interval } semaines le vendredi, ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le vendredi, ${ untilString }",
-        "Toutes les ${ interval } semaines, le vendredi, jusqu’au ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Chaque ${ interval } semaine, le lundi",
-        "Toutes les ${ interval } semaines, le lundi"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Chaque ${ interval } semaine, le lundi, à ${ timesString }",
-        "Toutes les ${ interval } semaines, le lundi, à ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le lundi, ${ untilString }",
-        "Toutes les ${ interval } semaines, le lundi, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Chaque semaine, le samedi ${ interval }",
-        "Toutes les ${ interval } semaines, le samedi"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Chaque ${ interval } semaine le samedi, ${ timesString }",
-        "Toutes les ${ interval } semaines le samedi, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le samedi, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, le samedi, jusqu’au ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Chaque ${ interval } semaine, le dimanche",
-        "Toutes les ${ interval } semaines, le dimanche"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Chaque ${ interval } semaine, le dimanche, à ${ timesString }",
-        "Toutes les ${ interval } semaines, le dimanche, à ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le dimanche, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, le dimanche, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Chaque ${ interval } semaine, le jeudi",
-        "Toutes les ${ interval } semaines, le jeudi"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Chaque ${ interval } semaine le jeudi, ${ timesString }",
-        "Toutes les ${ interval } semaines le jeudi, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le jeudi, jusqu’au ${ untilString }",
-        "Toutes les ${ interval } semaines, le jeudi, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Chaque ${ interval } semaine, le mardi",
-        "Toutes les ${ interval } semaines, le mardi"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Chaque ${ interval } semaine le mardi, ${ timesString }",
-        "Toutes les ${ interval } semaines le mardi, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le mardi, ${ untilString }",
-        "Toutes les ${ interval } semaines, le mardi, jusqu’au ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Chaque ${ interval } semaine, le mercredi",
-        "Toutes les ${ interval } semaines, le mercredi"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Chaque ${ interval } semaine le mercredi, ${ timesString }",
-        "Toutes les ${ interval } semaines le mercredi, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Chaque ${ interval } semaine, le mercredi, ${ untilString }",
-        "Toutes les ${ interval } semaines, le mercredi, jusqu'au ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Chaque semaine, les ${ multipleDaysString }"
       ],
@@ -7323,18 +6516,6 @@
       ]
     },
     "Yearly recurring event, frequency": {
-      "Every ${ interval } year": [
-        "Chaque ${ interval } an",
-        "Tous les ${ interval } ans"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Chaque ${ interval } an, ${ timesString }",
-        "Tous les ${ interval } ans, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Chaque ${ interval } an, ${ untilString }",
-        "Tous les ${ interval } ans, ${ untilString }"
-      ],
       "Yearly": [
         "Chaque année"
       ],
