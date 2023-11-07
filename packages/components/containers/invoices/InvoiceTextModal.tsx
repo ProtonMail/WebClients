@@ -40,24 +40,24 @@ const InvoiceTextModal = (props: ModalProps) => {
 
     return (
         <ModalTwo as={Form} onSubmit={handleSubmit} {...props}>
-            <ModalTwoHeader title={c('Title').t`Add invoice details`} />
+            <ModalTwoHeader title={c('Title').t`Edit invoice details`} />
             <ModalTwoContent>
-                <div className="mb-4">{c('Info message for custom invoice modal')
-                    .t`Add your name (or company name) and address to your invoices.`}</div>
+                <div className="mb-4">
+                    {c('Info message for custom invoice modal')
+                        .t`Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.`}
+                </div>
                 <InputFieldTwo
                     as={TextAreaTwo}
                     rows={3}
                     autoFocus
                     value={invoiceText}
                     onValue={setInvoiceText}
-                    label={c('Label').t`Customize invoices`}
-                    placeholder={c('Placeholder for custom invoice text')
-                        .t`Add your name (or company name) and address to your invoices`}
+                    label={c('Label').t`Name and address`}
                 />
             </ModalTwoContent>
 
             <ModalTwoFooter>
-                <Button onClick={props.onClose}>{c('Action').t`Close`}</Button>
+                <Button onClick={props.onClose}>{c('Action').t`Cancel`}</Button>
                 <PrimaryButton onClick={handleSubmit} loading={loading}>{c('Action').t`Save`}</PrimaryButton>
             </ModalTwoFooter>
         </ModalTwo>
