@@ -898,6 +898,9 @@
       "Please refresh the page or try again later.": [
         "ページを再読み込みするか、後でもう一度お試しください。"
       ],
+      "Something went wrong": [
+        "不具合が発生しました"
+      ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "このページをロードできません。ページを再読み込みするかインターネットの接続状況を確認してください。"
       ]
@@ -1104,14 +1107,6 @@
       ],
       "Sign in with 2FA": [
         "2FA でサインイン"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } characters": [
-        "パスワードは ${ length } 文字以上必要です"
-      ],
-      "Try a shorter username (${ n } characters max)": [
-        "もっと短いユーザ名にしてください (${ n } 文字以内)"
       ]
     }
   }
