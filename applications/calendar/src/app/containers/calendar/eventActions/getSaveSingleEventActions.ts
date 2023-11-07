@@ -41,6 +41,7 @@ interface SaveEventHelperArguments {
     hasDefaultNotifications: boolean;
     selfAddress?: Address;
     canEditOnlyPersonalPart: boolean;
+    isOrganizer: boolean;
     isAttendee: boolean;
     inviteActions: InviteActions;
     onSaveConfirmation: OnSaveConfirmationCb;
@@ -213,6 +214,7 @@ const getSaveSingleEventActions = async ({
                 type: SAVE_CONFIRMATION_TYPES.SINGLE,
                 inviteActions,
                 isAttendee: false,
+                isOrganizer: true,
                 canEditOnlyPersonalPart: false,
             });
             const {
@@ -275,6 +277,7 @@ const getSaveSingleEventActions = async ({
             type: SAVE_CONFIRMATION_TYPES.SINGLE,
             inviteActions,
             isAttendee: false,
+            isOrganizer: true,
             canEditOnlyPersonalPart: false,
         });
         const { inviteActions: cleanInviteActions, vevent: cleanVevent } = await onSendPrefsErrors({

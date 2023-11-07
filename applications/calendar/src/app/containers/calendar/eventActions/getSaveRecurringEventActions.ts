@@ -55,6 +55,7 @@ interface SaveRecurringArguments {
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     hasDefaultNotifications: boolean;
     canEditOnlyPersonalPart: boolean;
+    isOrganizer: boolean;
     isAttendee: boolean;
     inviteActions: InviteActions;
     sendIcs: (data: SendIcsActionData) => Promise<{
