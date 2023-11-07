@@ -55,6 +55,9 @@
       "Apply": [
         "套用"
       ],
+      "At most ${ maxContacts } contacts are allowed per contact group": [
+        "每個聯絡人群組至多允許 ${ maxContacts } 個聯絡人"
+      ],
       "Attach screenshot(s)": [
         "貼附螢幕截圖"
       ],
@@ -192,6 +195,12 @@
       ],
       "Delete": [
         "刪除"
+      ],
+      "Delete ${ selectedCount } contact groups": [
+        "刪除 ${ selectedCount } 個聯絡人群組"
+      ],
+      "Delete ${ selectedCount } contacts": [
+        "刪除 ${ selectedCount } 個聯絡人"
       ],
       "Delete contact": [
         "刪除聯絡人"
@@ -727,6 +736,9 @@
       "View invoice": [
         "查看帳單"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "您不能傳送有超過 ${ maxAttachments } 個聯絡人的 vCard 檔案"
+      ],
       "Your 500 MB bonus": [
         "您的 500 MB 獎勵"
       ],
@@ -752,6 +764,17 @@
       ],
       "You don't have any groups.": [
         "您沒有任何群組。"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domains": [
+        "${ domains } 個自訂網域"
+      ],
+      "${ ips } servers": [
+        "${ ips } 台伺服器"
+      ],
+      "${ users } users": [
+        "${ users } 個使用者"
       ]
     },
     "Alert": {
@@ -896,6 +919,11 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "繼續使用 ${ MAIL_APP_NAME }。"
+      ]
+    },
+    "Checkout row": {
+      "${ users } users": [
+        "${ users } 個使用者"
       ]
     },
     "Collapsible tooltip": {
@@ -2000,6 +2028,12 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "內容搜尋無法在此瀏覽器中啟用。請離開無痕模式或使用其它瀏覽器。"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendars": [
+        "請取消選取至少 ${ calendarsToFixCount } 個行事曆"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars or": [
+        "請取消選取至少 ${ calendarsToFixCount } 個行事曆或"
+      ],
       "Device name does not match": [
         "裝置名稱不符合"
       ],
@@ -2075,6 +2109,9 @@
       "Last name is too long": [
         "姓氏太長"
       ],
+      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "請至少將 ${ calendarsToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
+      ],
       "Missing key packet": [
         "缺少金鑰封包"
       ],
@@ -2104,6 +2141,9 @@
       ],
       "Please activate your search again": [
         "請再次啟用搜尋"
+      ],
+      "Please fix the highlighted conflicts to proceed.": [
+        "請先修正已標示的衝突以便繼續。"
       ],
       "Please provide either a first name, a last name or a display name": [
         "請提供名字、姓氏或顯示名稱"
@@ -2135,8 +2175,14 @@
       "Some contacts could not be deleted": [
         "某些聯絡名片無法刪除"
       ],
+      "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
+        "部份聯絡人無電郵位址 : ${ noEmailsContactNamesList } "
+      ],
       "Some groups could not be deleted": [
         "部分聯絡人群組無法刪除"
+      ],
+      "Some groups have no contacts: ${ noContactGroupList } ": [
+        "部份群組無聯絡人：${ noContactGroupList }"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "其中一些資料夾名稱無法使用。請自訂匯入以編輯該等名稱。"
@@ -2228,6 +2274,9 @@
       "Username must end with a letter or digit": [
         "使用者名稱的結尾必須為字母或數字"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipients": [
+        "您無法將電子郵件傳送給超過 ${ maxContacts } 位收件人"
+      ],
       "You have reached the contacts limit for your account": [
         "您的帳號已達聯絡人數量限制"
       ],
@@ -2259,6 +2308,9 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "發生未知的錯誤。需重新開始匯入。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "您的檔案 ${ formattedFilename } 包含超過 ${ MAX_IMPORT_EVENTS_STRING } 則事件。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "您的檔案 ${ formattedFilename } 有一個無效的方法，因此無法匯入。"
@@ -2650,6 +2702,9 @@
       ]
     },
     "file size format": {
+      "bytes": [
+        "位元組"
+      ],
       "GB": [
         "GB"
       ],
@@ -2660,6 +2715,23 @@
         "MB"
       ],
       "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Bytes": [
+        "位元組"
+      ],
+      "Gigabytes": [
+        "十億位元組"
+      ],
+      "Kilobytes": [
+        "千位元組"
+      ],
+      "Megabytes": [
+        "百萬位元組"
+      ],
+      "Terabytes": [
         "TB"
       ]
     },
@@ -2716,6 +2788,9 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestions, use keyboard to navigate.": [
+        "找到 ${ items.length } 個建議，請使用鍵盤導覽。"
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "使用向上、向下方向鍵存取並瀏覽輸入建議。按一下 [Enter] 鍵確認選項，或 [Esc] 鍵關閉建議方塊。"
       ]
@@ -2732,8 +2807,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } 個事件已加密並加入到您的行事曆中"
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "加密及加入您的行程時發生錯誤。無法匯入任何行程。"
+      ],
+      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+        "加密及加入您的行程時發生錯誤。${ totalToImport } 個行程之中，有 ${ totalImported } 個已成功匯入。"
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "加密及加入您的行程時發生錯誤。無法匯入任何行程。"
@@ -2766,11 +2847,20 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "已匯入的邀請在 ${ CALENDAR_APP_NAME } 中顯示為簡單事件，沒有舉辦人與參與者的詳細資料。若要取得事件更新並顯示參與者，請要求舉辦人以您的 ${ BRAND_NAME } 電子郵件位址向您發出邀請。"
       ],
+      "This file contains event invitations:": [
+        "此檔案包含事件邀請："
+      ],
+      "This file contains invitation responses:": [
+        "此檔案包含邀請回覆："
+      ],
       "This file contains some data that we cannot import:": [
         "此檔案包含部分無法匯入的內容："
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } 個聯絡人已加密並加入至您的通訊錄"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "加密及加入聯絡人時發生錯誤。無法匯入任何聯絡人。"
       ],
@@ -2790,6 +2880,11 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "聯絡人 ${ contactId }： "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contacts": [
+        "${ totalContacts } 位聯絡人"
       ]
     },
     "Import contact. Contact identifier": {
@@ -2961,6 +3056,9 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 聯絡人將不會被匯入。點擊以查看詳細資料"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEvents } 個行程之中，有 ${ totalEventsDiscarded } 個將不會匯入。展開以取得詳細資料。"
+      ],
       "No contact can be imported. Click for details": [
         "無聯絡人可供匯入。點擊以查看詳細資料"
       ],
@@ -2972,14 +3070,59 @@
       ]
     },
     "Info": {
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } 個下載任務執行中"
+      ],
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "${ activeDownloadsCount } 個下載任務執行中(${ downloadProgress } ％)"
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "${ activeUploadsCount } 個任務上載中（${ uploadProgress } ％）"
+      ],
+      "${ addressCount } email addresses": [
+        "${ addressCount } 個電郵位址"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的加密技術代表無人可以存取您的密碼，包括我們。"
       ],
+      "${ calendarsToBeCreatedCount } new calendars": [
+        "${ calendarsToBeCreatedCount } 個新行事曆"
+      ],
+      "${ calendarsToBeMergedCount } merged calendars": [
+        "${ calendarsToBeMergedCount } 個合併行事曆"
+      ],
+      "${ canceledCount } canceled": [
+        "${ canceledCount } 個任務已取消"
+      ],
+      "${ contactCount } contacts contain multiple email addresses.": [
+        "${ contactCount } 個聯絡人包含多個電子郵件地址。"
+      ],
+      "${ contactEmailsLength } Members": [
+        "${ contactEmailsLength } 位成員"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } 聯絡名片包含多組電郵位址。"
+      ],
+      "${ contactsCount } contacts found": [
+        "找到 ${ contactsCount } 位聯絡人"
+      ],
+      "${ contactsLength } contacts": [
+        "${ contactsLength } 位聯絡人"
+      ],
+      "${ doneCount } finished": [
+        "${ doneCount } 項已完成"
+      ],
+      "${ doneDownloadsCount } downloaded": [
+        "已完成 ${ doneDownloadsCount } 個下載任務"
+      ],
+      "${ doneUploadsCount } uploaded": [
+        "已完成 ${ doneUploadsCount } 個上載任務"
+      ],
+      "${ errorCount } failed": [
+        "${ errorCount } 個任務失敗"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }：完整大小圖片"
@@ -2987,14 +3130,50 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }：低解析度預覽"
       ],
+      "${ groupCounts } groups found": [
+        "找到 ${ groupCounts } 個群組"
+      ],
+      "${ pausedCount } paused": [
+        "${ pausedCount } 個任務已暫停"
+      ],
+      "${ providerFoldersNumLocalized } folders found": [
+        "找到 ${ providerFoldersNumLocalized } 個資料夾"
+      ],
+      "${ providerFoldersNumLocalized } labels found in Gmail": [
+        "在 Gmail 中找到 ${ providerFoldersNumLocalized } 種標籤"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
+        "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+        "${ contactsLength }中的${ selectedContactsLength }項目已選取"
+      ],
+      "${ selectedFoldersCount } folders selected": [
+        "已選取 ${ selectedFoldersCount } 個資料夾"
+      ],
+      "${ selectedFoldersCount } labels selected": [
+        "已選取 ${ selectedFoldersCount } 個標籤"
+      ],
+      "${ selectedFoldersCountLocalized } folders selected": [
+        "已選取 ${ selectedFoldersCountLocalized } 個資料夾"
+      ],
+      "${ selectedFoldersCountLocalized } labels selected": [
+        "已選取 ${ selectedFoldersCountLocalized } 種標籤"
+      ],
       "${ speed }/s": [
         "${ speed }/秒"
       ],
       "${ storage } storage": [
         "${ storage } 儲存空間"
       ],
+      "${ updated } contacts updated successfully.": [
+        "已成功更新 ${ updated } 位聯絡人。"
+      ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } 已經存在此位置。"
+      ],
+      "(${ memberCount } members)": [
+        "(${ memberCount } 位成員)"
       ],
       "A number will be added to the filename": [
         "將在檔案名稱中加入數字"
@@ -3011,8 +3190,17 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "此電郵位址已啟用以受信任的金鑰驗證位址。若要傳送到此電郵位址，請首先信任可用於傳送的公開金鑰。"
       ],
+      "All (${ totalFoldersCount } folders)": [
+        "全部 (${ totalFoldersCount } 個資料夾)"
+      ],
+      "All (${ totalFoldersCount } labels)": [
+        "全部 (${ totalFoldersCount } 個標籤)"
+      ],
       "All your changes will be lost.": [
         "一切您所作的變更將會消失。"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "您所有的聯絡人都已匯入，已達 ${ MAX_CONTACTS_PER_USER } 的限制"
       ],
       "Also try looking in Trash.": [
         "也別忘記看看垃圾桶。"
@@ -3119,6 +3307,9 @@
       "Country code": [
         "國家代碼"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendars": [
+        "建立 ${ calendarsToBeCreatedCount } 個新行事曆"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "為匯入的郵件建立標籤、設定這次匯入的時間範圍以及要匯入的資料夾。"
       ],
@@ -3154,6 +3345,9 @@
       ],
       "Decrypting files": [
         "正在解密檔案"
+      ],
+      "Delete locked drives": [
+        "刪除鎖定的硬碟"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "數碼簽署已通過驗證。此檔案由 ${ emailAddress } 安全上載。"
@@ -3238,6 +3432,9 @@
       ],
       "Enter your own password (as organization admin).": [
         "輸入您的個人密碼 (組織機構管理員身份)。"
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minutes": [
+        "預計尚餘時間：${ estimatedMinutes } 分鐘"
       ],
       "Estimated time remaining: Less than a minute": [
         "預計尚餘時間：少於一分鐘"
@@ -3328,6 +3525,9 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "如下列方案中有一個可用，請前往 ${ BRAND_NAME } 帳號設定開始您的解鎖程序。"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+        "匯入 ${ calendarCount } 個，共 ${ totalCalendarsCount } 個行事曆"
       ],
       "Import from": [
         "匯入自"
@@ -3494,6 +3694,9 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "您允許的一或多組可信任金鑰，已被其所有人標記為損壞。我們建議您撤銷這些金鑰。"
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } characters are allowed": [
+        "僅允許 ${ MAX_CUSTOM_PASSWORD_LENGTH } 個字元"
+      ],
       "Only the people with the link and the password can access this file.": [
         "僅同時擁有連結與密碼的人才能存取此檔案。"
       ],
@@ -3529,6 +3732,9 @@
       ],
       "Please select the folders you would like to import:": [
         "請選擇您想匯入的資料夾："
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } groups.": [
+        "請選取一或多組電郵位址以加入至 ${ groupCount } 個群組。"
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "請選取一或多組電郵位址以加入至 ${ groupName }。"
@@ -3721,6 +3927,9 @@
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "此連結將會永久停用。無人將可憑此連結存取您的資料夾。若要重新分享此資料夾，您將需要一個新的連結。"
+      ],
+      "This will delete the links and remove access to your files or folders for anyone with the links.": [
+        "此操作將會刪除連結，並且阻止其他嘗試使用此連結存取檔案或資料夾的人。"
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
         "這將會從 ${ DRIVE_APP_NAME } 移除裝置 ${ deviceName }，並停止同步您新增到「我的電腦」的資料夾。"
@@ -4030,6 +4239,12 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } 使用者名稱"
       ],
+      "${ nbDay } days": [
+        "${ nbDay } 天"
+      ],
+      "${ nbYear } years": [
+        "${ nbYear } 年"
+      ],
       "(Expired)": [
         "(已失效)"
       ],
@@ -4137,6 +4352,9 @@
       ],
       "Delete": [
         "刪除"
+      ],
+      "Delete drives?": [
+        "刪除雲端硬碟?"
       ],
       "Delete recovery-related information.": [
         "刪除復原相關的資料。"
@@ -4556,6 +4774,9 @@
       "Almost there": [
         "快完成了"
       ],
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "已建立的行事曆數量：${ createdCalendarCount }/${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "連結到您的電郵提供者"
       ],
@@ -4570,6 +4791,20 @@
       ],
       "Your import is starting": [
         "您的匯入程序已開始"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+        "匯入來自 ${ itemsToImportCount } 個資料夾的所有訊息，並加上標籤："
+      ],
+      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+        "匯入帶有 ${ itemsToImportCount } 個標籤的全部訊息，並加上標籤："
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+        "從 ${ itemsToImportCount } 個資料夾中匯入來自 ${ selectedItemsToImportCount } 個的所有訊息，並加上標籤："
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+        "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤："
       ]
     },
     "Message": {
@@ -4719,6 +4954,39 @@
       "\"${ newName }\" renamed successfully": [
         "「${ newName }」已成功重新命名"
       ],
+      "${ count } items failed to be decrypted": [
+        "${ count } 個項目解密失敗"
+      ],
+      "${ numberOfItems } items deleted permanently from trash": [
+        "${ numberOfItems } 個項目已從垃圾桶被永久刪除"
+      ],
+      "${ numberOfItems } items failed to be deleted permanently from trash": [
+        "${ numberOfItems } 個項目未能從垃圾桶中被永久刪除"
+      ],
+      "${ numberOfItems } items failed to be moved": [
+        "${ numberOfItems } 個項目移動失敗"
+      ],
+      "${ numberOfItems } items failed to be moved to trash": [
+        "${ numberOfItems } 個項目無法移動到垃圾桶"
+      ],
+      "${ numberOfItems } items failed to be restored from trash": [
+        "${ numberOfItems } 個項目未能從垃圾中被復原"
+      ],
+      "${ numberOfItems } items moved to trash": [
+        "${ numberOfItems } 個項目已移動到垃圾桶"
+      ],
+      "${ numberOfItems } items restored from trash": [
+        "${ numberOfItems } 個項目已從垃圾桶中還原"
+      ],
+      "${ numberOfItems } items successfully moved": [
+        "${ numberOfItems } 個項目已成功移動"
+      ],
+      "${ numberOfItems } links to your items failed to be deleted": [
+        "指向您的項目的 ${ numberOfItems } 個連結無法刪除"
+      ],
+      "${ numberOfItems } links to your items were deleted": [
+        "${ numberOfItems } 個項目個連結已刪除"
+      ],
       "All items will soon be permanently deleted from trash": [
         "所有項目將從「垃圾桶」中永久刪除"
       ],
@@ -4758,6 +5026,9 @@
       "Failed to upload files: ${ err }": [
         "上載檔案失敗：${ err }"
       ],
+      "File or folder \"${ filename }\" and ${ count } others are already uploading": [
+        "檔案或資料夾「${ filename }」以及其它 ${ count } 正在上載中"
+      ],
       "File or folder \"${ filename }\" is already uploading": [
         "檔案或資料夾「${ filename }」正在上載中"
       ],
@@ -4766,6 +5037,24 @@
       ],
       "Link copied to clipboard": [
         "連結已複製到剪貼簿"
+      ],
+      "Move ${ itemsToMoveCount } files": [
+        "移動 ${ itemsToMoveCount } 個檔案"
+      ],
+      "Move ${ itemsToMoveCount } folders": [
+        "移動 ${ itemsToMoveCount } 個資料夾"
+      ],
+      "Move ${ itemsToMoveCount } items": [
+        "移動 ${ itemsToMoveCount } 個項目"
+      ],
+      "Move ${ movingCount } files": [
+        "移動 ${ movingCount } 個檔案"
+      ],
+      "Move ${ movingCount } folders": [
+        "移動 ${ movingCount } 個資料夾"
+      ],
+      "Move ${ movingCount } items": [
+        "移動 ${ movingCount } 個項目"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "空間不足，無法上載 ${ formattedTotal }"
@@ -4833,6 +5122,9 @@
       ],
       "Set a recovery method": [
         "設定備援方法"
+      ],
+      "Simply complete the following in the next ${ expiresInDays } days:": [
+        "只要在接下來的 ${ expiresInDays } 天完成以下任務："
       ],
       "Upload a file": [
         "上載檔案"
@@ -4990,6 +5282,15 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
+        "${ countContacts } 位聯絡人之中，有 ${ contactsExported.length } 位已成功匯出。"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contacts successfully deleted.": [
+        "${ model.deleted.length }/${ totalBeDeleted } 位聯絡人已成功刪除。"
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contacts successfully merged.": [
+        "${ model.submitted.length }/${ totalBeMerged } 位聯絡人已成功合併。"
+      ],
       "No contacts exported.": [
         "沒有匯出任何聯絡人。"
       ],
@@ -5062,8 +5363,26 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } days": [
+        "${ timeRemaining.inDays }天"
+      ],
+      "${ timeRemaining.inHours } hours": [
+        "${ timeRemaining.inHours }小時"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
+        "重設密碼請求已核准 (${ user.Email })。您可以在${ timeRemaining.inDays }天內重設您的密碼。"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
+        "重設密碼請求已核准 (${ user.Email })。您可以在${ timeRemaining.inHours }小時內重設您的密碼。"
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "請前往已登入的裝置（在發起請求的工作階段中）變更您的密碼。"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } days": [
+        "此權限將在${ timeRemaining.inDays }天後過期"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hours": [
+        "此權限將在${ timeRemaining.inHours }小時後過期"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "現在您可以在${ boldDaysRemaining }內免費變更帳號 ${ boldEmail } 的密碼。"
@@ -5126,8 +5445,14 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hours": [
+        "還剩下${ gracePeriodHoursRemaining }小時"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "若您沒有請求重設密碼，請立刻取消請求。"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
+        "已請求重設密碼 (${ user.Email })。您可以在${ hoursRemaining }小時後變更您的密碼。"
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "為了確保確實是您在嘗試重設密碼，我們會等待 72 小時才核准請求。您可以在 ${ boldTimeLeft } 後變更密碼。${ viewRequest }"
@@ -5155,6 +5480,9 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hours": [
+        "${ gracePeriodHoursRemaining }小時"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } 現在可用。"
       ],
@@ -5200,6 +5528,25 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "使用無限制"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } days": [
+        "${ days }天"
+      ],
+      "${ hours } hours": [
+        "${ hours }小時"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes }分鐘"
+      ],
+      "${ seconds } seconds": [
+        "${ seconds }秒"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } months FREE": [
+        "${ n }個月免費"
       ]
     },
     "specialoffer: Deal details": {
@@ -5260,6 +5607,9 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n }個月"
+      ],
       "/ month": [
         "/ 月"
       ],
@@ -5387,6 +5737,9 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contacts look identical.": [
+        "${ countMergeableContacts } 個聯絡人似乎相同。"
+      ],
       "Address copied to clipboard": [
         "位址已複製到剪貼簿"
       ],
@@ -5399,11 +5752,14 @@
       "Code sent to ${ methodTo }": [
         "驗證碼已發送至 ${ methodTo }"
       ],
+      "Contact groups deleted": [
+        "聯絡人群組已刪除"
+      ],
       "Contact saved": [
         "聯絡人已儲存"
       ],
       "Contacts deleted": [
-        "聯絡人已刪除"
+        "已刪除聯絡人"
       ],
       "Email address copied to clipboard": [
         "電郵位址已複製到剪貼簿"
@@ -5521,9 +5877,43 @@
         "vCard 欄位"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours }小時"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5小時"
+      ],
+      "${ minutes } min": [
+        "${ minutes }分鐘"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hours": [
+        "${ hours }小時"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5小時"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes }分鐘"
+      ]
+    },
     "Title": {
       "# of downloads": [
         "下載次數"
+      ],
+      "${ emailsCount } email addresses": [
+        "${ emailsCount }電子郵件位址"
+      ],
+      "${ numberOfFailedTransfer.total } failed downloads": [
+        "${ numberOfFailedTransfer.total } 個檔案下載失敗"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfers": [
+        "${ numberOfFailedTransfer.total } 個檔案傳輸失敗"
+      ],
+      "${ numberOfFailedTransfer.total } failed uploads": [
+        "${ numberOfFailedTransfer.total } 個檔案上載失敗"
       ],
       "Account suspended": [
         "帳號已被停用"
@@ -5533,6 +5923,9 @@
       ],
       "Add contact group name": [
         "加入聯絡人群組名稱"
+      ],
+      "Add to ${ groupCount } groups": [
+        "加入至 ${ groupCount } 個群組"
       ],
       "Add to ${ groupName }": [
         "加入至 ${ groupName }"
@@ -5618,6 +6011,12 @@
       "Day theme": [
         "白天佈景主題"
       ],
+      "Delete ${ count } contact groups": [
+        "刪除 ${ count } 個聯絡人群組"
+      ],
+      "Delete ${ count } contacts": [
+        "刪除 ${ count } 位聯絡人"
+      ],
       "Delete ${ Name }": [
         "刪除 ${ Name }"
       ],
@@ -5699,6 +6098,9 @@
       "Folders details": [
         "資料夾詳細資訊"
       ],
+      "Found ${ searchView.numberOfResults } results": [
+        "找到 ${ searchView.numberOfResults } 個結果"
+      ],
       "Groups": [
         "群組"
       ],
@@ -5707,6 +6109,9 @@
       ],
       "Human verification": [
         "真人身分驗證"
+      ],
+      "Import as simple events?": [
+        "要匯入為簡單事件嗎？"
       ],
       "Import contacts": [
         "匯入聯絡人"
@@ -6043,12 +6448,23 @@
         "您沒有任何可匯出的聯絡人"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } characters": [
+        "密碼至少必須包含 ${ length } 個字元"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "請輸入一個更短的使用者名稱 (${ n } characters max)"
+      ]
+    },
     "Validation Error": {
       "\"${ str }\" is not a valid name": [
         "\"${ str }\" 並非有效名稱"
       ],
       "Name cannot include invisible characters, / or \\.": [
         "名稱不能包含不可見的字元以及 / 或 \\。"
+      ],
+      "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
+        "名稱長度最多為 ${ MAX_NAME_LENGTH } 個字元"
       ],
       "Name must not be empty": [
         "名稱不得留空"
@@ -6074,6 +6490,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } 會從最近期的郵件開始，以最大量方式傳輸資料。"
+      ],
+      "Are you sure you want to permanently delete ${ count } contacts?": [
+        "您確定要永久刪除 ${ count } 位聯絡人嗎？"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "您確定要永久刪除這些連絡人群組嗎？"
