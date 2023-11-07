@@ -313,12 +313,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         }
 
         if (vaultDeleteSuccess.match(action)) {
-            const movedItems = action.payload.movedItems;
-            const nextState = objectDelete(state, action.payload.shareId);
-
-            return movedItems.length > 0
-                ? fullMerge(nextState, { [movedItems[0].shareId]: toMap(movedItems, 'itemId') })
-                : nextState;
+            return objectDelete(state, action.payload.shareId);
         }
 
         if (vaultMoveAllItemsSuccess.match(action)) {
