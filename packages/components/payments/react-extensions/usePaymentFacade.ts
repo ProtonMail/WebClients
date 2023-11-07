@@ -132,10 +132,13 @@ export const usePaymentFacade = (
         verifyPaymentPaypal: PaymentVerificator;
     }
 ) => {
-    const amountAndCurrency: AmountAndCurrency = {
-        Amount: amount,
-        Currency: currency,
-    };
+    const amountAndCurrency: AmountAndCurrency = useMemo(
+        () => ({
+            Amount: amount,
+            Currency: currency,
+        }),
+        [amount, currency]
+    );
 
     const paymentContext = usePaymentContext();
 
