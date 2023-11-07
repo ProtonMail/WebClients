@@ -1108,6 +1108,16 @@
       "Sign in with 2FA": [
         "Logga in med 2FA"
       ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Lösenordet måste innehålla minst ${ length } tecken",
+        "Lösenordet måste innehålla minst ${ length } tecken"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Prova ett kortare användarnamn (max ${ n } antal tecken)",
+        "Prova ett kortare användarnamn (max ${ n } antal tecken)"
+      ]
     }
   }
 }
