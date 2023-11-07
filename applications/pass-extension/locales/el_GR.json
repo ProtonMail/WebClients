@@ -457,6 +457,10 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Η διαγραφή της κρύπτης \"${ payload.content.name }\" απέτυχε"
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Εντοπίστηκε ${ errors.length } αλλοιωμένη γραμμή csv",
+        "Εντοπίστηκε ${ errors.length } αλλοιωμένες γραμμές csv"
+      ],
       "Editing item failed": [
         "Η επεξεργασία του στοιχείου απέτυχε"
       ],
@@ -614,6 +618,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -627,6 +635,28 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " Κάντε αναβάθμιση σε πλάνο επί πληρωμή για να δημιουργήσετε πολλαπλές κρύπτες."
@@ -636,6 +666,18 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Η ενημερωμένη έκδοση του \"${ payload.item.data.metadata.name }\" απορρίφθηκε"
+      ],
+      "${ count } item": [
+        "${ count } στοιχείο",
+        "${ count } στοιχεία"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } στοιχείο",
+        "${ itemCount } στοιχεία"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } μέλος",
+        "${ memberCount } μέλη"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
         "Το ${ PASS_APP_NAME } θα εμφανίσει το favicon του στοιχείου μέσω ανώνυμου διακομιστή μεσολάβησης εικόνας ${ BRAND_NAME }."
@@ -651,6 +693,22 @@
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "Το ${ PASS_APP_NAME } θα προτείνει τη δημιουργία ισχυρών κωδικών πρόσβασης σε φόρμες εγγραφής."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } φορά",
+        "${ revisionNumber } φορές"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } στοιχείο",
+        "${ totalImportedItems } στοιχεία"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } στοιχείο",
+        "${ totalItems } στοιχεία"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } ημέρα απομένει",
+        "${ trialDaysLeft } ημέρες απομένουν"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 ημέρες για να δοκιμάσετε δωρεάν premium χαρακτηριστικά. Μόνο κατά την πρώτη εβδομάδα χρησιμοποιώντας το ${ BRAND_NAME }."
@@ -775,6 +833,10 @@
       "Import in progress:": [
         "Εισαγωγή σε εξέλιξη:"
       ],
+      "Imported ${ payload.total } item": [
+        "Εισαγόμενο ${ payload.total } στοιχείο",
+        "Εισαγόμενα ${ payload.total } στοιχεία"
+      ],
       "Imported on ${ date }": [
         "Εισήχθη στις ${ date }"
       ],
@@ -801,6 +863,10 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Φαίνεται ότι είστε ήδη συνδεδεμένοι στο ${ PASS_APP_NAME }. Εάν προσπαθείτε να συνδεθείτε με διαφορετικό λογαριασμό, αποσυνδεθείτε πρώτα από την προέκταση."
+      ],
+      "item": [
+        "στοιχείο",
+        "στοιχεία"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Το στοιχείο \"${ payload.item.data.metadata.name }\" δημιουργήθηκε"
@@ -949,6 +1015,10 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Το αναπτυσσόμενο μενού αυτόματης συμπλήρωσης θα ανοίξει αυτόματα κατά την εστίαση πεδίου."
       ],
+      "The following item could not be imported :": [
+        "Δεν ήταν δυνατή η εισαγωγή του ακόλουθου στοιχείου:",
+        "Δεν ήταν δυνατή η εισαγωγή των ${ result.ignored.length } στοιχείων"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Το κείμενο που προσπαθείτε να επικολλήσετε είναι μεγαλύτερο από το μέγιστο επιτρεπόμενο μήκος των ${ maxLength } χαρακτήρων."
       ],
@@ -1021,6 +1091,10 @@
       "You cannot change the mailboxes for this alias.": [
         "Δεν μπορείτε να αλλάξετε τα γραμματοκιβώτια για αυτό το ψευδώνυμο."
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Σας απομένει ${ daysRemaining } ημέρα για να δοκιμάσετε αυτές και άλλες premium λειτουργίες.",
+        "Σας απομένουν ${ daysRemaining } ημέρες για να δοκιμάσετε αυτές και άλλες premium λειτουργίες."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Έχετε υπερβεί τον αριθμό των κρυπτών που περιλαμβάνονται στη συνδρομή σας. Τα στοιχεία μπορούν να μετακινηθούν μόνο στις πρώτες δύο κρύπτες σας. Για να μετακινήσετε στοιχεία μεταξύ όλων των κρυπτών, αναβαθμίστε τη συνδρομή σας."
       ],
@@ -1053,6 +1127,14 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } χαρακτήρας",
+        "${ passwordOptions.options.length } χαρακτήρες"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } λέξη",
+        "${ passwordOptions.options.wordCount } λέξεις"
+      ],
       "1 hour": [
         "1 ώρα"
       ],
@@ -1565,6 +1647,12 @@
         "Γράψτε τη σημείωσή σας"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ vault.targetMaxMembers } χρήστη.",
+        "Οι κρύπτες δεν μπορούν να περιέχουν παραπάνω από ${ vault.targetMaxMembers } χρήστες."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Ρυθμίσεις ${ PASS_APP_NAME }"
@@ -1740,6 +1828,10 @@
       ],
       "Invalid alias prefix": [
         "Μην έγκυρο πρόθεμα ψευδωνύμου"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Το μέγιστο μήκος είναι ${ maxLength } χαρακτήρας",
+        "Το μέγιστο μήκος είναι ${ maxLength } χαρακτήρες"
       ],
       "Missing alias prefix": [
         "Λείπει το πρόθεμα ψευδωνύμου"

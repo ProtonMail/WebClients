@@ -55,6 +55,12 @@
       "Apply": [
         "Ужыць"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакт",
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантакты",
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантактаў",
+        "На адну групу кантактаў дапускаецца не больш за ${ maxContacts } кантактаў"
+      ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
       ],
@@ -195,6 +201,18 @@
       ],
       "Delete": [
         "Выдаліць"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Выдаліць ${ selectedCount } кантакт",
+        "Выдаліць ${ selectedCount } кантакты",
+        "Выдаліць ${ selectedCount } кантактаў",
+        "Выдаліць ${ selectedCount } кантакты"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Выдаліць ${ selectedCount } групу кантактаў",
+        "Выдаліць ${ selectedCount } групы кантактаў",
+        "Выдаліць ${ selectedCount } груп кантактаў",
+        "Выдаліць ${ selectedCount } групы кантактаў"
       ],
       "Delete contact": [
         "Выдаліць кантакт"
@@ -733,6 +751,12 @@
       "View invoice": [
         "Паглядзець рахунак"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантакту",
+        "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
+        "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам",
+        "Вы не можаце адправіць файлы vCard больш чым ${ maxAttachments } кантактам"
+      ],
       "Your 500 MB bonus": [
         "Ваш бонус у 500 МБ"
       ],
@@ -758,6 +782,26 @@
       ],
       "You don't have any groups.": [
         "У вас няма груп."
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } карыстальніцкі дамен",
+        "${ domains } карыстальніцкія дамены",
+        "${ domains } карыстальніцкіх даменаў",
+        "${ domains } карыстальніцкіх даменаў"
+      ],
+      "${ ips } server": [
+        "${ ips } сервер",
+        "${ ips } серверы",
+        "${ ips } сервераў",
+        "${ ips } сервераў"
+      ],
+      "${ users } user": [
+        "${ users } карыстальнік",
+        "${ users } карыстальнікі",
+        "${ users } карыстальнікаў",
+        "${ users } карыстальнікаў"
       ]
     },
     "Alert": {
@@ -866,6 +910,12 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагуленне календара і іншыя функцыі."
       ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адраса электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі.",
+        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адрасоў электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі.",
+        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адрасоў электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі.",
+        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адрасоў электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі."
+      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ],
@@ -962,6 +1012,14 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Працягнуць выкарыстоўваць ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } карыстальнік",
+        "${ users } карыстальнікі",
+        "${ users } карыстальнікаў",
+        "${ users } карыстальнікі"
       ]
     },
     "Collapsible tooltip": {
@@ -2074,6 +2132,18 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Немагчыма ўключыць пошук змесціва ў гэтым браўзеры. Выйдзіце з рэжыму прыватнага прагляду або скарыстайцеся іншым браўзерам."
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара або",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або"
+      ],
       "Device name does not match": [
         "Назва прылады не супадае"
       ],
@@ -2149,6 +2219,12 @@
       "Last name is too long": [
         "Занадта доўгае прозвішча"
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } каляндар з існуючым календаром ${ BRAND_NAME }",
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } календары з існуючымі календарамі ${ BRAND_NAME }",
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }",
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }"
+      ],
       "Missing key packet": [
         "Адсутнічае пакет ключоў"
       ],
@@ -2170,6 +2246,18 @@
       "Not a valid number": [
         "Несапраўдны нумар"
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "У аднаго з кантактаў няма адраса электроннай пошты: ${ noEmailsContactNamesList }",
+        "У некаторых кантактаў няма адрасоў электроннай пошты: ${ noEmailsContactNamesList } ",
+        "У некаторых кантактаў няма адрасоў электроннай пошты: ${ noEmailsContactNamesList } ",
+        "У некаторых кантактаў няма адрасоў электроннай пошты: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "У адной з груп няма кантактаў: ${ noContactGroupList }",
+        "У некаторых групах няма кантактаў: ${ noContactGroupList } ",
+        "У некаторых групах няма кантактаў: ${ noContactGroupList } ",
+        "У некаторых групах няма кантактаў: ${ noContactGroupList } "
+      ],
       "Password is required": [
         "Патрабуецца ўвесці пароль"
       ],
@@ -2178,6 +2266,12 @@
       ],
       "Please activate your search again": [
         "Актывуйце пошук яшчэ раз"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Выпраўце вылучаны канфлікт, каб працягнуць.",
+        "Выпраўце вылучаныя канфлікты, каб працягнуць.",
+        "Выпраўце вылучаныя канфлікты, каб працягнуць.",
+        "Выпраўце вылучаныя канфлікты, каб працягнуць."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Увядзіце імя, прозвішча або бачнае імя"
@@ -2305,6 +2399,12 @@
       "Username must end with a letter or digit": [
         "Імя карыстальніка павінна заканчвацца літарай або лічбай"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальніку",
+        "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам",
+        "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам",
+        "Вы не можаце адправіць ліст больш чым ${ maxContacts } атрымальнікам"
+      ],
       "You have reached the contacts limit for your account": [
         "Вы дасягнулі абмежавання па колькасці кантактаў для вашага ўліковага запісу"
       ],
@@ -2336,6 +2436,12 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Адбылася нечаканая памылка. Неабходна перазапусціць імпартаванне."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS_STRING } падзею.",
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS_STRING } падзеі.",
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS_STRING } падзей.",
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS_STRING } падзеі."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } мае памылковы метад і яго немагчыма імпартаваць."
@@ -2727,6 +2833,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "байт",
+        "байты",
+        "байтаў",
+        "байты"
+      ],
       "GB": [
         "ГБ"
       ],
@@ -2738,6 +2850,38 @@
       ],
       "TB": [
         "ТБ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Байт",
+        "Байты",
+        "Байтаў",
+        "Байты"
+      ],
+      "Gigabyte": [
+        "Гігабайт",
+        "Гігабайты",
+        "Гігабайтаў",
+        "Гігабайты"
+      ],
+      "Kilobyte": [
+        "Кілабайт",
+        "Кілабайты",
+        "Кілабайтаў",
+        "Кілабайты"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайты",
+        "Мегабайтаў",
+        "Мегабайты"
+      ],
+      "Terabyte": [
+        "тэрабайт",
+        "тэрабайты",
+        "тэрабайтаў",
+        "тэрабайтаў"
       ]
     },
     "Filter notification": {
@@ -2793,6 +2937,12 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Знойдзена ${ items.length } прапанова, выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзены ${ items.length } прапановы, выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзены ${ items.length } прапаноў, выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзены ${ items.length } прапановы, выкарыстоўвайце клавіятуру для навігацыі."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Выкарыстоўвайце клавішы Уверх і Уніз, каб атрымаць доступ і прагледзець прапановы пасля ўводу. Націсніце Enter, каб пацвердзіць свой выбар або Escape, каб закрыць акно прапаноў."
       ]
@@ -2809,6 +2959,18 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } падзея зашыфравана і дададзена ў ваш каляндар",
+        "${ totalImported }/${ totalToImport } падзеі зашыфраваны і дадзены ў ваш каляндар",
+        "${ totalImported }/${ totalToImport } падзей зашыфраваны і дададзены ў ваш каляндар",
+        "${ totalImported }/${ totalToImport } падзеі зашыфраваны і дададзены ў ваш каляндар"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Падчас шыфравання і дадавання вашай падзеі адбылася памылка. Ніводны кантакт не быў імпартаваны."
       ],
@@ -2843,11 +3005,29 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Імпартаванае запрашэнне з'явіцца ў ${ CALENDAR_APP_NAME } як простыя падзеі без падрабязнасцяў аб арганізатарах і ўдзельніках. Для таго, каб атрымаць абнаўленні падзей і бачыць удзельнікаў, папрасіце арганізатараў запрасіць вас пры дапамозе вашай электроннай пошты ${ BRAND_NAME }."
       ],
+      "This file contains an event invitation:": [
+        "Гэты файл змяшчае запрашэнне на падзею:",
+        "Гэты файл змяшчае запрашэнні на падзею:",
+        "Гэты файл змяшчае запрашэнні на падзею:",
+        "Гэты файл змяшчае запрашэнні на падзею:"
+      ],
+      "This file contains an invitation response:": [
+        "Гэты файл змяшчае адказ на запрашэнне:",
+        "Гэты файл змяшчае адказы на запрашэнне:",
+        "Гэты файл змяшчае адказы на запрашэнне:",
+        "Гэты файл змяшчае адказы на запрашэнне:"
+      ],
       "This file contains some data that we cannot import:": [
         "Гэты файл змяшчае некаторыя даныя, якія мы не можам імпартаваць:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } кантакт зашыфраваны і дададзены ў ваш спіс кантактаў",
+        "${ totalImported }/${ totalToImport } кантакты зашыфраваны і дададзены ў ваш спіс кантактаў",
+        "${ totalImported }/${ totalToImport } кантактаў зашыфраваны і дадзены ў ваш спіс кантактаў",
+        "${ totalImported }/${ totalToImport } кантакты зашыфраваны і дададзены ў ваш спіс кантактаў"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Падчас шыфравання і дадавання вашага кантакту адбылася памылка. Ніводны кантакт не быў імпартаваны."
       ],
@@ -2867,6 +3047,14 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Кантакт ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } кантакт",
+        "${ totalContacts } кантакты",
+        "${ totalContacts } кантактаў",
+        "${ totalContacts } кантакты"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3038,6 +3226,12 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } кантакты(-аў) з ${ totalContacts } не будуць імпартаваны. Націсніце, каб даведацца больш"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } падзея з ${ totalEvents } не будзе імпартавана. Разгарніце, каб даведацца больш.",
+        "${ totalEventsDiscarded } падзеі з ${ totalEvents } не будуць імпартаваны. Разгарніце, каб даведацца больш.",
+        "${ totalEventsDiscarded } падзей з ${ totalEvents } не будуць імпартаваны. Разгарніце, каб даведацца больш.",
+        "${ totalEventsDiscarded } падзеі з ${ totalEvents } не будуць імпартаваны. Разгарніце, каб даведацца больш."
+      ],
       "No contact can be imported. Click for details": [
         "Немагчыма імпартаваць кантакты. Націсніце, каб даведацца больш"
       ],
@@ -3049,14 +3243,104 @@
       ]
     },
     "Info": {
+      "${ activeDownloadsCount } downloading": [
+        "${ activeDownloadsCount } спампоўваецца",
+        "${ activeDownloadsCount } спампоўваюцца",
+        "${ activeDownloadsCount } спампоўваюцца",
+        "${ activeDownloadsCount } спампоўваюцца"
+      ],
+      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
+        "${ activeDownloadsCount } спампоўваецца (${ downloadProgress }%)",
+        "${ activeDownloadsCount } спампоўваюцца (${ downloadProgress }%)",
+        "${ activeDownloadsCount } спампоўваюцца (${ downloadProgress }%)",
+        "${ activeDownloadsCount } спампоўваюцца (${ downloadProgress }%)"
+      ],
+      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
+        "${ activeUploadsCount } запампоўваецца (${ uploadProgress }%)",
+        "${ activeUploadsCount } запампоўваюцца (${ uploadProgress }%)",
+        "${ activeUploadsCount } запампоўваюцца (${ uploadProgress }%)",
+        "${ activeUploadsCount } запампоўваюцца (${ uploadProgress }%)"
+      ],
+      "${ addressCount } email address": [
+        "${ addressCount } адрас электроннай пошты",
+        "${ addressCount } адрасы электроннай пошты",
+        "${ addressCount } адрасоў электроннай пошты",
+        "${ addressCount } адрасы электроннай пошты"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Тэхналогія шыфравання ${ BRAND_NAME } азначае, што ніхто не зможа атрымаць доступ да вашага пароля - нават мы."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } новы каляндар",
+        "${ calendarsToBeCreatedCount } новыя календары",
+        "${ calendarsToBeCreatedCount } новых календароў",
+        "${ calendarsToBeCreatedCount } новыя календары"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } аб'яднаны каляндар",
+        "${ calendarsToBeMergedCount } аб'яднаныя календары",
+        "${ calendarsToBeMergedCount } аб'яднаных календароў",
+        "${ calendarsToBeMergedCount } аб'яднаныя календары"
+      ],
+      "${ canceledCount } canceled": [
+        "${ canceledCount } скасаваны",
+        "${ canceledCount } скасавана",
+        "${ canceledCount } скасавана",
+        "${ canceledCount } скасавана"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } кантакт змяшчае некалькі адрасоў электроннай пошты.",
+        "${ contactCount } кантакты змяшчаюць некалькі адрасоў электроннай пошты.",
+        "${ contactCount } кантактаў змяшчаюць некалькі адрасоў электроннай пошты.",
+        "${ contactCount } кантакты змяшчаюць некалькі адрасоў электроннай пошты."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } удзельнік",
+        "${ contactEmailsLength } удзельнікі",
+        "${ contactEmailsLength } удзельнікаў",
+        "${ contactEmailsLength } удзельнікі"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "Кантакт ${ contactName } змяшчае некалькі адрасоў электроннай пошты."
+      ],
+      "${ contactsCount } contact found": [
+        "Знойдзены ${ contactsCount } кантакт",
+        "Знойдзена ${ contactsCount } кантакты",
+        "Знойдзена ${ contactsCount } кантактаў",
+        "Знойдзена ${ contactsCount } кантакты"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } кантакт",
+        "${ contactsLength } кантакты",
+        "${ contactsLength } кантактаў",
+        "${ contactsLength } кантактаў"
+      ],
+      "${ doneCount } finished": [
+        "${ doneCount } завершаны",
+        "${ doneCount } завершана",
+        "${ doneCount } завершана",
+        "${ doneCount } завершана"
+      ],
+      "${ doneDownloadsCount } downloaded": [
+        "${ doneDownloadsCount } спампаваны",
+        "${ doneDownloadsCount } спампавана",
+        "${ doneDownloadsCount } спампавана",
+        "${ doneDownloadsCount } спампавана"
+      ],
+      "${ doneUploadsCount } uploaded": [
+        "${ doneUploadsCount } запампаваны",
+        "${ doneUploadsCount } запампавана",
+        "${ doneUploadsCount } запампавана",
+        "${ doneUploadsCount } запампавана"
+      ],
+      "${ errorCount } failed": [
+        "${ errorCount } са збоем",
+        "${ errorCount } са збоем",
+        "${ errorCount } са збоем",
+        "${ errorCount } са збоем"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: відарыс у поўным памеры"
@@ -3064,14 +3348,92 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: папярэдні прагляд у нізкай раздзяляльнасці"
       ],
+      "${ groupCounts } group found": [
+        "Знойдзена ${ groupCounts } група",
+        "Знойдзены ${ groupCounts } групы",
+        "Знойдзены ${ groupCounts } груп",
+        "Знойдзены ${ groupCounts } групы"
+      ],
+      "${ pausedCount } paused": [
+        "${ pausedCount } прыпынены",
+        "${ pausedCount } прыпынена",
+        "${ pausedCount } прыпынена",
+        "${ pausedCount } прыпынена"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "Знойдзена ${ providerFoldersNumLocalized } папка",
+        "Знойдзены ${ providerFoldersNumLocalized } папкі",
+        "Знойдзены ${ providerFoldersNumLocalized } папак",
+        "Знойдзены ${ providerFoldersNumLocalized } папкі"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "У Gmail знойдзена ${ providerFoldersNumLocalized } метка",
+        "У Gmail знойдзены ${ providerFoldersNumLocalized } меткі",
+        "У Gmail знойдзены ${ providerFoldersNumLocalized } метак",
+        "У Gmail знойдзены ${ providerFoldersNumLocalized } меткі"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календара",
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "Выбраны ${ selectedContactsLength } кантакт з ${ contactsLength }",
+        "Выбрана ${ selectedContactsLength } кантакты з ${ contactsLength }",
+        "Выбрана ${ selectedContactsLength } кантактаў з ${ contactsLength }",
+        "Выбрана ${ selectedContactsLength } кантактаў з ${ contactsLength }"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } выбраны",
+        "${ selectedCount } выбрана",
+        "${ selectedCount } выбрана",
+        "${ selectedCount } выбрана"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "Выбрана ${ selectedFoldersCount } папка",
+        "Выбраны ${ selectedFoldersCount } папкі",
+        "Выбраны ${ selectedFoldersCount } папак",
+        "Выбраны ${ selectedFoldersCount } папкі"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "Выбрана ${ selectedFoldersCount } метка",
+        "Выбраны ${ selectedFoldersCount } меткі",
+        "Выбраны ${ selectedFoldersCount } метак",
+        "Выбраны ${ selectedFoldersCount } меткі"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "Выбрана ${ selectedFoldersCountLocalized } папка",
+        "Выбраны ${ selectedFoldersCountLocalized } папкі",
+        "Выбраны ${ selectedFoldersCountLocalized } папак",
+        "Выбраны ${ selectedFoldersCountLocalized } папкі"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "Выбрана ${ selectedFoldersCountLocalized } метка",
+        "Выбраны ${ selectedFoldersCountLocalized } меткі",
+        "Выбраны ${ selectedFoldersCountLocalized } метак",
+        "Выбраны ${ selectedFoldersCountLocalized } меткі"
+      ],
       "${ speed }/s": [
         "${ speed }/с"
       ],
       "${ storage } storage": [
         "${ storage } сховішча"
       ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } кантакт паспяхова абноўлены.",
+        "${ updated } кантакты паспяхова абноўлены.",
+        "${ updated } кантактаў паспяхова абноўлены.",
+        "${ updated } кантакты паспяхова абноўлены."
+      ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } ужо існуе ў гэтым размяшчэнні."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } удзельнік)",
+        "(${ memberCount } удзельнікі)",
+        "(${ memberCount } удзельнікаў)",
+        "(${ memberCount } удзельнікі)"
       ],
       "A number will be added to the filename": [
         "Да назвы файла будзе дададзены нумар"
@@ -3088,8 +3450,26 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Для гэтага адраса ўключана праверка адраса даверанымі ключамі. Каб атрымаць магчымасць адпраўкі на гэты адрас, спачатку зрабіце даверанымі публічныя ключы, якія можна выкарыстоўваць для адпраўкі."
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Уся (${ totalFoldersCount } папка)",
+        "Усе (${ totalFoldersCount } папкі)",
+        "Усе (${ totalFoldersCount } папак)",
+        "Усе (${ totalFoldersCount } папкі)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Уся (${ totalFoldersCount } метка)",
+        "Усе (${ totalFoldersCount } меткі)",
+        "Усе (${ totalFoldersCount } метак)",
+        "Усе (${ totalFoldersCount } меткі)"
+      ],
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }"
       ],
       "Also try looking in Trash.": [
         "Таксама паспрабуйце пашукаць у Сметніцы."
@@ -3199,6 +3579,12 @@
       "Country code": [
         "Код краіны"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Стварыць ${ calendarsToBeCreatedCount } новы каляндар",
+        "Стварыць ${ calendarsToBeCreatedCount } новыя календары",
+        "Стварыць ${ calendarsToBeCreatedCount } новых календароў",
+        "Стварыць ${ calendarsToBeCreatedCount } новыя календары"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Стварыць метку для імпартаваных паведамленняў, прамежак часу для гэтага імпартавання і тыя папкі, якія вы хочаце імпартаваць."
       ],
@@ -3234,6 +3620,12 @@
       ],
       "Decrypting files": [
         "Расшыфроўка файлаў"
+      ],
+      "Delete locked drive": [
+        "Выдаліць заблакіраваны дыск",
+        "Выдаліць заблакіраваныя дыскі",
+        "Выдаліць заблакіраваныя дыскі",
+        "Выдаліць заблакіраваныя дыскі"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Лічбавы подпіс правераны. Гэты файл бяспечна запампаваны ${ emailAddress }."
@@ -3318,6 +3710,12 @@
       ],
       "Enter your own password (as organization admin).": [
         "Увядзіце свой пароль (адміністратара арганізацыі)."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Засталося часу: ${ estimatedMinutes } хвіліна",
+        "Засталося часу: ${ estimatedMinutes } хвіліны",
+        "Засталося часу: ${ estimatedMinutes } хвілін",
+        "Засталося часу: ${ estimatedMinutes } хвіліны"
       ],
       "Estimated time remaining: Less than a minute": [
         "Прыблізна засталося часу: менш за хвіліну"
@@ -3408,6 +3806,12 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Калі ў вас ёсць што-небудзь з гэтага, перайдзіце ў налады ўліковага запісу ${ BRAND_NAME }, каб працягнуць працэс разблакіроўкі."
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Імпартаванне ${ calendarCount } календара з ${ totalCalendarsCount }",
+        "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }",
+        "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }",
+        "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }"
       ],
       "Import from": [
         "Імпартаваць з"
@@ -3577,6 +3981,12 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Адзін або некалькі вашых давераных ключоў былі пазначаны іх уладальнікам як скампраметаваныя. Мы рэкамендуем вам не давяраць гэтым ключам."
       ],
+      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
+        "Дазволены толькі ${ MAX_CUSTOM_PASSWORD_LENGTH } сімвал",
+        "Дазволены толькі ${ MAX_CUSTOM_PASSWORD_LENGTH } сімвалы",
+        "Дазволены толькі ${ MAX_CUSTOM_PASSWORD_LENGTH } сімвалаў",
+        "Дазволены толькі ${ MAX_CUSTOM_PASSWORD_LENGTH } сімвалы"
+      ],
       "Only the people with the link and the password can access this file.": [
         "Толькі людзі ў якіх будзе спасылка і пароль змогуць атрымаць доступ да файла."
       ],
@@ -3612,6 +4022,12 @@
       ],
       "Please select the folders you would like to import:": [
         "Выберыце папкі для імпартавання:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Выберыце адрас або адрасы электроннай пошты, каб дадаць у ${ groupCount } групу.",
+        "Выберыце адрас або адрасы электроннай пошты, каб дадаць у ${ groupCount } групы.",
+        "Выберыце адрас або адрасы электроннай пошты, каб дадаць у ${ groupCount } груп.",
+        "Выберыце адрас або адрасы электроннай пошты, каб дадаць у ${ groupCount } групы."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Выберыце адрас або адрасы электроннай пошты, каб дадаць у ${ groupName }."
@@ -3819,6 +4235,12 @@
       ],
       "This month": [
         "У гэтым месяцы"
+      ],
+      "This will delete the link and remove access to your file or folder for anyone with the link.": [
+        "Гэта выдаліць спасылку і закрые доступ да вашага файла або папкі для ўсіх у каго яна ёсць.",
+        "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць.",
+        "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць.",
+        "Гэта выдаліць спасылкі і закрые доступ да вашых файлаў або папак для ўсіх у каго яны ёсць."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
         "Гэта прывядзе да выдаленне сінхранізаванай прылады ${ deviceName } з ${ DRIVE_APP_NAME } і спыніць сінхранізацыю папак, якія вы дадалі ў \"Мае камп'ютары\"."
@@ -4131,6 +4553,18 @@
       "${ BRAND_NAME } username": [
         "Імя карыстальніка ${ BRAND_NAME }"
       ],
+      "${ nbDay } day": [
+        "${ nbDay } дзень",
+        "${ nbDay } дні",
+        "${ nbDay } дзён",
+        "${ nbDay } дні"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } год",
+        "${ nbYear } гады",
+        "${ nbYear } гадоў",
+        "${ nbYear } гадоў"
+      ],
       "(Expired)": [
         "(Пратэрмінавана)"
       ],
@@ -4238,6 +4672,12 @@
       ],
       "Delete": [
         "Выдаліць"
+      ],
+      "Delete drive?": [
+        "Выдаліць дыск?",
+        "Выдаліць дыскі?",
+        "Выдаліць дыскі?",
+        "Выдаліць дыскі?"
       ],
       "Delete recovery-related information.": [
         "Выдаліць інфармацыю звязаную з аднаўленнем."
@@ -4657,6 +5097,12 @@
       "Almost there": [
         "Амаль гатова"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Падключэнне да вашага пастаўшчыка паслуг электроннай пошты"
       ],
@@ -4671,6 +5117,32 @@
       ],
       "Your import is starting": [
         "Пачалося імпартаванне"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } папкі і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } папак і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } папак і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } папак і пазначыць іх як"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткай і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткамі і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткамі і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткамі і пазначыць іх як"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } папкі з ${ itemsToImportCount } і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } папак з ${ itemsToImportCount } і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } папак з ${ itemsToImportCount } і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } папак з ${ itemsToImportCount } і пазначыць іх як"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } меткі з ${ itemsToImportCount } і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як"
       ]
     },
     "Message": {
@@ -4820,6 +5292,72 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" паспяхова перайменаваны"
       ],
+      "${ count } item failed to be decrypted": [
+        "Не ўдалося расшыфраваць ${ count } элемент",
+        "Не ўдалося расшыфраваць ${ count } элементы",
+        "Не ўдалося расшыфраваць ${ count } элементаў",
+        "Не ўдалося расшыфраваць ${ count } элементы"
+      ],
+      "${ numberOfItems } item deleted permanently from trash": [
+        "${ numberOfItems } элемент незваротна выдалены са сметніцы",
+        "${ numberOfItems } элементы незваротна выдалены са сметніцы",
+        "${ numberOfItems } элементаў незваротна выдалены са сметніцы",
+        "${ numberOfItems } элементы незваротна выдалены са сметніцы"
+      ],
+      "${ numberOfItems } item failed to be deleted permanently from trash": [
+        "Не ўдалося незваротна выдаліць са сметніцы ${ numberOfItems } элемент",
+        "Не ўдалося незваротна выдаліць са сметніцы ${ numberOfItems } элементы",
+        "Не ўдалося незваротна выдаліць са сметніцы ${ numberOfItems } элементаў",
+        "Не ўдалося незваротна выдаліць са сметніцы ${ numberOfItems } элементы"
+      ],
+      "${ numberOfItems } item failed to be moved": [
+        "Не ўдалося перамясціць ${ numberOfItems } элемент",
+        "Не ўдалося перамясціць ${ numberOfItems } элементы",
+        "Не ўдалося перамясціць ${ numberOfItems } элементаў",
+        "Не ўдалося перамясціць ${ numberOfItems } элементы"
+      ],
+      "${ numberOfItems } item failed to be moved to trash": [
+        "Не ўдалося перамясціць у сметніцу ${ numberOfItems } элемент",
+        "Не ўдалося перамясціць у сметніцу ${ numberOfItems } элементы",
+        "Не ўдалося перамясціць у сметніцу ${ numberOfItems } элементаў",
+        "Не ўдалося перамясціць у сметніцу ${ numberOfItems } элементы"
+      ],
+      "${ numberOfItems } item failed to be restored from trash": [
+        "Не ўдалося аднавіць са сметніцы ${ numberOfItems } элемент",
+        "Не ўдалося аднавіць са сметніцы ${ numberOfItems } элементы",
+        "Не ўдалося аднавіць са сметніцы ${ numberOfItems } элементаў",
+        "Не ўдалося аднавіць са сметніцы ${ numberOfItems } элементы"
+      ],
+      "${ numberOfItems } item moved to trash": [
+        "${ numberOfItems } элемент перамешчаны ў сметніцу",
+        "${ numberOfItems } элементы перамешчаны ў сметніцу",
+        "${ numberOfItems } элементаў перамешчаны ў сметніцу",
+        "${ numberOfItems } элементы перамешчаны ў сметніцу"
+      ],
+      "${ numberOfItems } item restored from trash": [
+        "${ numberOfItems } элемент адноўлены са сметніцы",
+        "${ numberOfItems } элементы адноўлены са сметніцы",
+        "${ numberOfItems } элементаў адноўлены са сметніцы",
+        "${ numberOfItems } элементы адноўлены са сметніцы"
+      ],
+      "${ numberOfItems } item successfully moved": [
+        "${ numberOfItems } элемент паспяхова перамешчаны",
+        "${ numberOfItems } элементы паспяхова перамешчаны",
+        "${ numberOfItems } элементаў паспяхова перамешчаны",
+        "${ numberOfItems } элементы паспяхова перамешчана"
+      ],
+      "${ numberOfItems } link to your item failed to be deleted": [
+        "Не ўдалося выдаліць ${ numberOfItems } спасылку на ваш элемент",
+        "Не ўдалося выдаліць ${ numberOfItems } спасылкі на вашы элементы",
+        "Не ўдалося выдаліць ${ numberOfItems } спасылак на вашы элементы",
+        "Не ўдалося выдаліць ${ numberOfItems } спасылкі на вашы элементы"
+      ],
+      "${ numberOfItems } link to your item was deleted": [
+        "${ numberOfItems } спасылка на ваш элемент была выдалена",
+        "${ numberOfItems } спасылкі на ваш элемент былі выдалены",
+        "${ numberOfItems } спасылак на ваш элемент былі выдалены",
+        "${ numberOfItems } спасылкі на ваш элемент былі выдалены"
+      ],
       "All items will soon be permanently deleted from trash": [
         "Усе элементы неўзабаве будуць незваротна выдалены са сметніцы"
       ],
@@ -4859,6 +5397,12 @@
       "Failed to upload files: ${ err }": [
         "Не ўдалося запампаваць файлы: ${ err }"
       ],
+      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
+        "Файл або папка \"${ filename }\" і ${ count } іншы ўжо запампаваны",
+        "Файл або папка \"${ filename }\" і ${ count } іншых ужо запампаваны",
+        "Файл або папка \"${ filename }\" і ${ count } іншых ужо запампаваны",
+        "Файл або папка \"${ filename }\" і ${ count } іншых ужо запампаваны"
+      ],
       "File or folder \"${ filename }\" is already uploading": [
         "Файл або папка \"${ filename }\" ужо запампаваны"
       ],
@@ -4867,6 +5411,42 @@
       ],
       "Link copied to clipboard": [
         "Спасылка скапіявана ў буфер абмену"
+      ],
+      "Move ${ itemsToMoveCount } file": [
+        "Перамясціць ${ itemsToMoveCount } файл",
+        "Перамясціць ${ itemsToMoveCount } файлы",
+        "Перамясціць ${ itemsToMoveCount } файлаў",
+        "Перамясціць ${ itemsToMoveCount } файлы"
+      ],
+      "Move ${ itemsToMoveCount } folder": [
+        "Перамясціць ${ itemsToMoveCount } папку",
+        "Перамясціць ${ itemsToMoveCount } папкі",
+        "Перамясціць ${ itemsToMoveCount } папак",
+        "Перамясціць ${ itemsToMoveCount } папкі"
+      ],
+      "Move ${ itemsToMoveCount } item": [
+        "Перамясціць ${ itemsToMoveCount } элемент",
+        "Перамясціць ${ itemsToMoveCount } элементы",
+        "Перамясціць ${ itemsToMoveCount } элементаў",
+        "Перамясціць ${ itemsToMoveCount } элементы"
+      ],
+      "Move ${ movingCount } file": [
+        "Перамясціць ${ movingCount } файл",
+        "Перамясціць ${ movingCount } файлы",
+        "Перамясціць ${ movingCount } файлаў",
+        "Перамясціць ${ movingCount } файлы"
+      ],
+      "Move ${ movingCount } folder": [
+        "Перамясціць ${ movingCount } папку",
+        "Перамясціць ${ movingCount } папкі",
+        "Перамясціць ${ movingCount } папак",
+        "Перамясціць ${ movingCount } папкі"
+      ],
+      "Move ${ movingCount } item": [
+        "Перамясціць ${ movingCount } элемент",
+        "Перамясціць ${ movingCount } элементы",
+        "Перамясціць ${ movingCount } элементаў",
+        "Перамясціць ${ movingCount } элементы"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Недастаткова месца для запампоўвання ${ formattedTotal }"
@@ -4934,6 +5514,12 @@
       ],
       "Set a recovery method": [
         "Задаць метад аднаўлення"
+      ],
+      "Simply complete the following in the next ${ expiresInDays } day:": [
+        "Проста завяршыце наступнае на працягу ${ expiresInDays } дня:",
+        "Проста завяршыце наступнае на працягу ${ expiresInDays } дзён:",
+        "Проста завяршыце наступнае на працягу ${ expiresInDays } дзён:",
+        "Проста завяршыце наступнае на працягу ${ expiresInDays } дзён:"
       ],
       "Upload a file": [
         "Запампаваць файл"
@@ -5091,6 +5677,24 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } з ${ countContacts } кантакту паспяхова экспартаваны.",
+        "${ contactsExported.length } з ${ countContacts } кантактаў паспяхова экспартаваны.",
+        "${ contactsExported.length } з ${ countContacts } кантактаў паспяхова экспартаваны.",
+        "${ contactsExported.length } з ${ countContacts } кантактаў паспяхова экспартаваны."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } кантакт з ${ totalBeDeleted } паспяхова выдалены.",
+        "${ model.deleted.length } кантакты з ${ totalBeDeleted } паспяхова выдалены.",
+        "${ model.deleted.length } кантактаў з ${ totalBeDeleted } паспяхова выдалены.",
+        "${ model.deleted.length } кантакты з ${ totalBeDeleted } паспяхова выдалены."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } кантакт з ${ totalBeMerged } паспяхова аб'яднаны.",
+        "${ model.submitted.length } кантакты з ${ totalBeMerged } паспяхова аб'яднаны.",
+        "${ model.submitted.length } кантактаў з ${ totalBeMerged } паспяхова аб'яднаны.",
+        "${ model.submitted.length } кантакты з ${ totalBeMerged } паспяхова аб'яднаны."
+      ],
       "No contacts exported.": [
         "Кантакты не экспартаваны."
       ],
@@ -5163,8 +5767,44 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } дзень",
+        "${ timeRemaining.inDays } дні",
+        "${ timeRemaining.inDays } дзён",
+        "${ timeRemaining.inDays } дзён"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } гадзіна",
+        "${ timeRemaining.inHours } гадзіны",
+        "${ timeRemaining.inHours } гадзін",
+        "${ timeRemaining.inHours } гадзін"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дзень, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дні, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дзён, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дзён, каб скінуць свой пароль."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзіна, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзіны, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Перайдзіце на прыладу, якая знаходзіцца ў сістэме (з якой быў ініцыяваны запыт), каб змяніць пароль."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дзень",
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дні",
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дзён",
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дзён"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзіну",
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзіны",
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзін",
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзін"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Цяпер вы можаце змяніць свой пароль для ўліковага запісу ${ boldEmail } у вас яшчэ ёсць на гэта ${ boldDaysRemaining }."
@@ -5227,8 +5867,20 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "яшчэ ${ gracePeriodHoursRemaining } гадзіна",
+        "яшчэ ${ gracePeriodHoursRemaining } гадзіны",
+        "яшчэ ${ gracePeriodHoursRemaining } гадзін",
+        "яшчэ ${ gracePeriodHoursRemaining } гадзін"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Скасуйце запыт, калі вы не запытвалі скіданне пароля."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзіны.",
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзін.",
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзін.",
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзін."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Каб пераканацца што менавіта вы спрабуеце скінуць свой пароль, мы пачакаем 72 гадзіны перад тым, як ухваліць запыт. Вы зможаце змяніць яго праз ${ boldTimeLeft }. ${ viewRequest }"
@@ -5256,6 +5908,12 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } гадзіна",
+        "${ gracePeriodHoursRemaining } гадзіны",
+        "${ gracePeriodHoursRemaining } гадзін",
+        "${ gracePeriodHoursRemaining } гадзін"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } цяпер даступна."
       ],
@@ -5301,6 +5959,40 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Перайсці на Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } дзень",
+        "${ days } дні",
+        "${ days } дзён",
+        "${ days } дня"
+      ],
+      "${ hours } hour": [
+        "${ hours } гадзіна",
+        "${ hours } гадзіны",
+        "${ hours } гадзін",
+        "${ hours } гадзіны"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвіліна",
+        "${ minutes } хвіліны",
+        "${ minutes } хвілін",
+        "${ minutes } хвіліны"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } месяц БЯСПЛАТНА",
+        "${ n } месяцы БЯСПЛАТНА",
+        "${ n } месяцаў БЯСПЛАТНА",
+        "${ n } месяца БЯСПЛАТНА"
       ]
     },
     "specialoffer: Deal details": {
@@ -5361,6 +6053,12 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцаў"
+      ],
       "/ month": [
         "/ месяц"
       ],
@@ -5488,6 +6186,12 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } кантакт выглядае ідэнтычна.",
+        "${ countMergeableContacts } кантакты выглядаюць ідэнтычна.",
+        "${ countMergeableContacts } кантактаў выглядаюць ідэнтычна.",
+        "${ countMergeableContacts } кантакты выглядаюць ідэнтычна."
+      ],
       "Address copied to clipboard": [
         "Адрас скапіяваны ў буфер абмену"
       ],
@@ -5499,6 +6203,18 @@
       ],
       "Code sent to ${ methodTo }": [
         "Код адпраўлены на ${ methodTo }"
+      ],
+      "Contact deleted": [
+        "Кантакт выдалены",
+        "Кантакты выдалены",
+        "Кантакты выдалены",
+        "Кантакты выдалены"
+      ],
+      "Contact group deleted": [
+        "Група кантактаў выдалена",
+        "Групы кантактаў выдалены",
+        "Групы кантактаў выдалены",
+        "Групы кантактаў выдалены"
       ],
       "Contact saved": [
         "Кантакт захаваны"
@@ -5622,9 +6338,73 @@
         "Поле vCard"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } гадз",
+        "${ hours } гадз",
+        "${ hours } гадз",
+        "${ hours } гадз"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 гадз",
+        "${ hoursInt },5 гадз",
+        "${ hoursInt },5 гадз",
+        "${ hoursInt },5 гадз"
+      ],
+      "${ minutes } min": [
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } гадзіна",
+        "${ hours } гадзіны",
+        "${ hours } гадзін",
+        "${ hours } гадзіны"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 гадзіны",
+        "${ hoursInt },5 гадзіны",
+        "${ hoursInt },5 гадзін",
+        "${ hoursInt },5 гадзіны"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвіліна",
+        "${ minutes } хвіліны",
+        "${ minutes } хвілін",
+        "${ minutes } хвіліны"
+      ]
+    },
     "Title": {
       "# of downloads": [
         "Колькасць спампоўванняў"
+      ],
+      "${ emailsCount } email address": [
+        "${ emailsCount } адрас электроннай пошты",
+        "${ emailsCount } адрасы электроннай пошты",
+        "${ emailsCount } адрасоў электроннай пошты",
+        "${ emailsCount } адрасоў электроннай пошты"
+      ],
+      "${ numberOfFailedTransfer.total } failed download": [
+        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } спампоўванне",
+        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } спампоўванні",
+        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } спампоўванняў",
+        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } спампоўванні"
+      ],
+      "${ numberOfFailedTransfer.total } failed transfer": [
+        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } перадачу",
+        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } перадачы",
+        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } перадач",
+        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } перадачы"
+      ],
+      "${ numberOfFailedTransfer.total } failed upload": [
+        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } запампоўванне",
+        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } запампоўванні",
+        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } запампоўванняў",
+        "Не ўдалося здзейсніць ${ numberOfFailedTransfer.total } запампоўванні"
       ],
       "Account suspended": [
         "Уліковы запіс прыпынены"
@@ -5634,6 +6414,12 @@
       ],
       "Add contact group name": [
         "Дадаць назву групы кантактаў"
+      ],
+      "Add to ${ groupCount } group": [
+        "Дадаць у ${ groupCount } групу",
+        "Дадаць у ${ groupCount } групы",
+        "Дадаць у ${ groupCount } груп",
+        "Дадаць у ${ groupCount } груп"
       ],
       "Add to ${ groupName }": [
         "Дадаць у ${ groupName }"
@@ -5719,6 +6505,18 @@
       "Day theme": [
         "Дзённая тэма"
       ],
+      "Delete ${ count } contact": [
+        "Выдаліць ${ count } кантакт",
+        "Выдаліць ${ count } кантакты",
+        "Выдаліць ${ count } кантактаў",
+        "Выдаліць ${ count } кантакты"
+      ],
+      "Delete ${ count } contact group": [
+        "Выдаліць ${ count } групу кантактаў",
+        "Выдаліць ${ count } групы кантактаў",
+        "Выдаліць ${ count } груп кантактаў",
+        "Выдаліць ${ count } групы кантактаў"
+      ],
       "Delete ${ Name }": [
         "Выдаліць ${ Name }"
       ],
@@ -5800,6 +6598,12 @@
       "Folders details": [
         "Падрабязнасці папак"
       ],
+      "Found ${ searchView.numberOfResults } result": [
+        "Знойдзены ${ searchView.numberOfResults } вынік",
+        "Знойдзены ${ searchView.numberOfResults } вынікі",
+        "Знойдзена ${ searchView.numberOfResults } вынікаў",
+        "Знойдзены ${ searchView.numberOfResults } вынікі"
+      ],
       "Groups": [
         "Групы"
       ],
@@ -5808,6 +6612,12 @@
       ],
       "Human verification": [
         "Антыспамавая праверка"
+      ],
+      "Import as simple event?": [
+        "Імпартаваць як простую падзею?",
+        "Імпартаваць як простыя падзеі?",
+        "Імпартаваць як простыя падзеі?",
+        "Імпартаваць як простыя падзеі?"
       ],
       "Import contacts": [
         "Імпартаваць кантакты"
@@ -6147,12 +6957,32 @@
         "У вас няма кантактаў для экспартавання"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль павінен змяшчаць прынамсі ${ length } сімвал",
+        "Пароль павінен змяшчаць прынамсі ${ length } сімвалы",
+        "Пароль павінен змяшчаць прынамсі ${ length } сімвалаў",
+        "Пароль павінен змяшчаць прынамсі ${ length } сімвалы"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвал)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)"
+      ]
+    },
     "Validation Error": {
       "\"${ str }\" is not a valid name": [
         "Назва \"${ str }\" з'яўляецца недапушчальнай"
       ],
       "Name cannot include invisible characters, / or \\.": [
         "Назва не можа змяшчаць нябачныя сімвалы, / або \\."
+      ],
+      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
+        "Назва павінна быць да ${ MAX_NAME_LENGTH } сімвала",
+        "Назва павінна быць да ${ MAX_NAME_LENGTH } сімвалаў",
+        "Назва павінна быць да ${ MAX_NAME_LENGTH } сімвалаў",
+        "Назва павінна быць да ${ MAX_NAME_LENGTH } сімвалаў"
       ],
       "Name must not be empty": [
         "Назва не можа быць пустой"
@@ -6178,6 +7008,12 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } перанясе столькі даных, колькі будзе магчыма, пачынаючы з самых новых паведамленняў."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакт?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } кантактаў?",
+        "Вы сапраўды хочаце незваротна выдаліць ${ count } кантакты?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Вы ўпэўнены, што хочаце незваротна выдаліць гэтыя групы кантактаў?"
