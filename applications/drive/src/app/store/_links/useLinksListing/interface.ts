@@ -1,11 +1,6 @@
-import { EncryptedLink } from '../interface';
+import { DecryptedLink } from '../interface';
 
 type LoadLinksMetaOptions = {
-    /**
-     * Whether or not to add items to the link cache
-     */
-    cache?: boolean;
-
     /**
      * Whether or not to request thumbnail tokens from the API
      */
@@ -17,8 +12,9 @@ export type FetchLoadLinksMeta = (
     query: string,
     shareId: string,
     linkIds: string[],
-    options: LoadLinksMetaOptions
+    options?: LoadLinksMetaOptions
 ) => Promise<{
-    links: EncryptedLink[];
-    parents: EncryptedLink[];
+    links: DecryptedLink[];
+    parents: DecryptedLink[];
+    errors: any[];
 }>;

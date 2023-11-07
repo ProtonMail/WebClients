@@ -68,7 +68,7 @@ export function useTrashedLinksListing() {
         loadLinksMeta: FetchLoadLinksMeta
     ) => {
         for (const shareId in transformedResponse) {
-            await loadLinksMeta(signal, 'trash', shareId, transformedResponse[shareId].linkIds, { cache: true });
+            await loadLinksMeta(signal, 'trash', shareId, transformedResponse[shareId].linkIds);
         }
     };
 
@@ -128,9 +128,9 @@ export function useTrashedLinksListing() {
                 );
             });
 
-            const links = result.reduce((acc, element) => {
+            const links = result.reduce<DecryptedLink[]>((acc, element) => {
                 return [...acc, ...element.links];
-            }, [] as DecryptedLink[]);
+            }, []);
 
             const isDecrypting = result.some((element) => {
                 return element.isDecrypting;
@@ -155,19 +155,16 @@ export function useTrashedLinksListing() {
  * and link IDs and parent IDs as values.
  */
 function transformTrashResponseToLinkMap(response: ListDriveVolumeTrashPayload) {
-    return response.Trash.reduce(
-        (acc, share) => {
-            acc[share.ShareID] = {
-                linkIds: share.LinkIDs,
-                parentIds: share.ParentIDs,
-            };
-            return acc;
-        },
-        {} as {
-            [shareId: string]: {
-                linkIds: string[];
-                parentIds: string[];
-            };
-        }
-    );
+    return response.Trash.reduce<{
+        [shareId: string]: {
+            linkIds: string[];
+            parentIds: string[];
+        };
+    }>((acc, share) => {
+        acc[share.ShareID] = {
+            linkIds: share.LinkIDs,
+            parentIds: share.ParentIDs,
+        };
+        return acc;
+    }, {});
 }
