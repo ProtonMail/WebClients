@@ -27,7 +27,8 @@ const ConfirmDeleteForwarding = ({ reActivateE2EE, onDelete, onClose, modalProps
             {...modalProps}
         >
             <p>
-                <span>{c('email_forwarding_2023: Prompt').t`Forwarding to the destination address will end.`}</span>
+                <span className="mr-1">{c('email_forwarding_2023: Prompt')
+                    .t`Forwarding to the destination address will end.`}</span>
                 {reActivateE2EE ? (
                     <span>{c('email_forwarding_2023: Prompt')
                         .t`End-to-end encryption will be re-enabled for the sender address.`}</span>
