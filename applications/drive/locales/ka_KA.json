@@ -55,10 +55,6 @@
       "Apply": [
         "გადატარება"
       ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "თითოეულ კონტაქტების ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
-        "თითოეულ კონტაქტების ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
-      ],
       "Attach screenshot(s)": [
         "ეკრანის ანაბეჭდ(ებ)-ის მიბმა"
       ],
@@ -199,14 +195,6 @@
       ],
       "Delete": [
         "წაშლა"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "${ selectedCount } კონტაქტის წაშლა",
-        "${ selectedCount } კონტაქტის წაშლა"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "${ selectedCount } კონტაქტების ჯგუფის წაშლა",
-        "${ selectedCount } კონტაქტების ჯგუფის წაშლა"
       ],
       "Delete contact": [
         "კონტაქტის წაშლა"
@@ -745,10 +733,6 @@
       "View invoice": [
         "ინვოისის ნახვა"
       ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია",
-        "${ maxAttachments }-ზე მეტი კონტაქტის vCard-ის გაგზავნა შეუძლებელია"
-      ],
       "Your 500 MB bonus": [
         "თქვენი 500 მბ ბონუსი"
       ],
@@ -774,20 +758,6 @@
       ],
       "You don't have any groups.": [
         "არ გაქვთ არცერთი ჯგუფი."
-      ]
-    },
-    "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } მომხმარებლის დომენი",
-        "${ domains } მომხმარებლის დომენი"
-      ],
-      "${ ips } server": [
-        "${ ips } სერვერი",
-        "${ ips } სერვერი"
-      ],
-      "${ users } user": [
-        "${ users } მომხმარებელი",
-        "${ users } მომხმარებელი"
       ]
     },
     "Alert": {
@@ -823,15 +793,90 @@
         "გაუთვალისწინებელი შემთხვევა"
       ]
     },
-    "Billing cycle option": {
-      "Annually": [
-        "წელიწადში ერთხელ"
+    "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus და ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Monthly": [
-        "თვეში ერთხელ"
+      "${ storageSize } storage": [
+        "${ storageSize } საცავი"
       ],
-      "Two-year": [
-        "ორი წლით"
+      "1 user": [
+        "1 მომხმარებელი"
+      ],
+      "3 TB": [
+        "3 ტბ"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "3,000+ სერვერი 65+ ქვეყანაში"
+      ],
+      "6 users": [
+        "6 მომხმარებელი"
+      ],
+      "Access content worldwide": [
+        "იქონიეთ წვდომა შემცველობასთან მთელი დედამიწიდან"
+      ],
+      "Ad-blocker and malware protection": [
+        "რეკლამების ბლოკირება და არასასურველი პროგრამებისგან დაცვა"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "ყველა ${ MAIL_SHORT_APP_NAME }-ის და ${ CALENDAR_APP_NAME }-ის ფასიანი ფუნქცია"
+      ],
+      "Extended version history": [
+        "გაფართოებული ვერსიის ისტორია"
+      ],
+      "High speed streaming": [
+        "ჩქაროსნული სტრიმინგი"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "პაროლების მმართველის ფასიანი ვერსია"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "ფასდაკლებები თვეში ერთხელ გადახდის ფასებს ეყრდნობა."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "თქვენი გამოწერა გადახდის ციკლის ბოლოს სტანდარტული ფასდაკლების ტარიფით და ხანგრძლივობით განახლდება."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 დღიანი გარანტირებული ფულის დაბრუნება"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+, Prime Video- და სხვ. ნებისმიერი ადგილიდან."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "აუარეთ გვერდი ლოკალური ინტერნეტის დაბლოკვებს და ცენზურას ჩვენი სერვერების გლობალური ქსელით."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "შეიცავს 1 თქვენი ელფოსტის დომენის, 10 ელფოსტის მისამართის, 10 Hide-my-email-ის მეტსახელს, კალენდრის გაზიარებას და სხვ."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს ვერსიების ისტორიას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield-ი იცავს თქვენს მოწყობილობებს და აჩქარებს ინტერნეტში მუშაობას რეკლამების, ტრეკერების და არასასურველი პროგრამების დაბლოკვით."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "საცავის სივრცე გაზიარებულია ყველა ${ BRAND_NAME }-ის აპს შორის."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "დაიმახსოვრეთ თითოეული ფაილის 200 ვერსიამდე, 10 წლამდე ვადით."
       ]
     },
     "Bug category": {
@@ -911,12 +956,6 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
-      ]
-    },
-    "Checkout row": {
-      "${ users } user": [
-        "${ users } მომხმარებელი",
-        "${ users } მომხმარებელი"
       ]
     },
     "Collapsible tooltip": {
@@ -1897,6 +1936,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "დაზოგეთ დრო მოსაწვევი ელფოსტების ბევრისთვის ერთდროულად დაგზავნით, ფასიანი თვისებით, ერთ-ერთით, მრავალთა შორის. ასწიეთ სატარიფო გეგმა დღესვე."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Google-დან ან Outlook-დან კონტაქტების შემოსატანად, ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "გადაათრიეთ და ისე დაალაგეთ პრიორიტეტები კონტაქტებს შორის. ნუ შემოიტანთ კონტაქტებს, რომლის შერწყმაც არ გსურთ."
       ],
@@ -2023,14 +2065,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "ამ ბრაუზერში შემცველობაში ძებნის ჩართვა შეუძლებელია. გამოდით პირადულობის დაცვის რეჟიმიდან ან გამოიყენეთ სხვა ბრაუზერი."
       ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "მოხსენით მონიშვნა, სულ ცოტა, ${ calendarsToFixCount } კალენდარზე",
-        "მოხსენით მონიშვნა, სულ ცოტა, ${ calendarsToFixCount } კალენდარზე"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "მოხსენით მონიშვნა სულ ცოტა ${ calendarsToFixCount } კალენდარზე, ან",
-        "მოხსენით მონიშვნა სულ ცოტა ${ calendarsToFixCount } კალენდარზე, ან"
-      ],
       "Device name does not match": [
         "მოწყობილობის სახელი არ ემთხვევა"
       ],
@@ -2106,10 +2140,6 @@
       "Last name is too long": [
         "გვარი ძალიან გრძელია."
       ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "${ calendarsToFixCount } კალენდართან შერწყმისთვის, სულ ცოტა, ${ BRAND_NAME }-ის კალენდარი უნდა გქონდეთ",
-        "${ calendarsToFixCount } კალენდართან შერწყმისთვის, სულ ცოტა, ${ BRAND_NAME }-ის კალენდარი უნდა გქონდეთ"
-      ],
       "Missing key packet": [
         "აკლია საკვანძო პაკეტი"
       ],
@@ -2131,14 +2161,6 @@
       "Not a valid number": [
         "არასწორი ნომერი"
       ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "კონტაქტებიდან ერთ-ერთს ელფოსტის მისამართი არ გააჩნია: ${ noEmailsContactNamesList }",
-        "რამდენიმე კონტაქტს ელფოსტის მისამართი არ გააჩნია: ${ noEmailsContactNamesList } "
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "ერთ-ერთ ჯგუფში კონტაქტები არაა: ${ noContactGroupList }",
-        "ზოგიერთ ჯგუფში კონტაქტები არაა: ${ noContactGroupList } "
-      ],
       "Password is required": [
         "პაროლი აუცილებელია"
       ],
@@ -2147,10 +2169,6 @@
       ],
       "Please activate your search again": [
         "თავიდან ჩართეთ შემცველობაში ძებნის ფუნქცია"
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტი.",
-        "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტები."
       ],
       "Please provide either a first name, a last name or a display name": [
         "შეიყვანეთ ან სახელი, ან გვარი, ან საჩვენებელი სახელი"
@@ -2181,6 +2199,9 @@
       ],
       "Some contacts could not be deleted": [
         "ზოგიერთი კონტაქტი ვერ წაიშალა"
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "ზოგიერთი ფაილი გამოტოვებულია, რადგან ისინი ფოტოებში მხარდაჭერილი არაა"
       ],
       "Some groups could not be deleted": [
         "ზოგიერთი ჯგუფი ვერ წაიშალა"
@@ -2275,10 +2296,6 @@
       "Username must end with a letter or digit": [
         "მომხმარებლის სახელი ასოთი ან ციფრით უნდა მთავრდებოდეს"
       ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით",
-        "თქვენ არ შეგიძლიათ გაგზავნოთ ელფოსტა ${ maxContacts }-ზე მეტი მიმღებით"
-      ],
       "You have reached the contacts limit for your account": [
         "თქვენ მიაღწიეთ კონტაქტების რაოდენობის ზღვარს თქვენი ანგარიშისთვის"
       ],
@@ -2310,10 +2327,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "მოულოდნელი შეცდომა. შემოტანა თავიდან უნდა დაიწყოთ."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "ფაილი ${ formattedFilename } ${ MAX_IMPORT_EVENTS_STRING }-ზე მეტ მოვლენას შეიცავს.",
-        "ფაილი ${ formattedFilename } ${ MAX_IMPORT_EVENTS_STRING }-ზე მეტ მოვლენას შეიცავს."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "თქვენს ფაილს ${ formattedFilename } არასწორი მეთოდი აქვს და მისი შემოტანა შეუძლებელია."
@@ -2561,11 +2574,6 @@
         "3 ტბ ჯამური საცავი"
       ]
     },
-    "familyOffer_2023: Get Proton Family": {
-      "Get ${ planName }": [
-        "${ planName }-ის მიღება"
-      ]
-    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "საცავის სივრცე გაზიარებულია ჯახის წევრებისთვის ${ MAIL_APP_NAME }-ის, ${ CALENDAR_APP_NAME }-ის და ${ DRIVE_APP_NAME }-სთვის."
@@ -2664,24 +2672,6 @@
         "თქვენი მიმდინარე ანგარიში Visionary ან საოჯახო გეგმას ვერ შეუერთდება."
       ]
     },
-    "familyOffer_2023:Footer": {
-      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
-        "*თქვენი გამოწერა თქვენი გადახდის ციკლის ბოლოს იგივე ტარიფით განახლდება."
-      ],
-      "Discounts are based on the standard monthly pricing.": [
-        "ფასდაკლებები თვეში ერთხელ გადახდის ფასებს ეყრდნობა."
-      ]
-    },
-    "familyOffer_2023:Get Proton Family": {
-      "Get ${ planName }": [
-        "${ planName }-ის მიღება"
-      ]
-    },
-    "familyOffer_2023:Info": {
-      "Online privacy, for your whole family": [
-        "ონლაინ კონფიდენციალობა მთელი თქვენი ოჯახისთვის"
-      ]
-    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users ": [
         "მოირგეთ თქვენი საოჯახო ანგარიში და მოიწვიეთ მომხმარებლები "
@@ -2691,11 +2681,6 @@
       ],
       "Set up your family account": [
         "მოირგეთ თქვენი საოჯახო ანგარიში"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Introducing ${ planName }": [
-        "წარმოგიდგენთ ${ planName }-ს"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -2733,10 +2718,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "ბაიტი",
-        "ბაიტი"
-      ],
       "GB": [
         "გბ"
       ],
@@ -2748,28 +2729,6 @@
       ],
       "TB": [
         "ტბ"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "ბაიტი",
-        "ბაიტი"
-      ],
-      "Gigabyte": [
-        "გიგაბაიტი",
-        "გიგაბაიტი"
-      ],
-      "Kilobyte": [
-        "კილობაიტი",
-        "კილობაიტი"
-      ],
-      "Megabyte": [
-        "მეგაბაიტი",
-        "მეგაბაიტი"
-      ],
-      "Terabyte": [
-        "ტერაბაიტი",
-        "ტერაბაიტი"
       ]
     },
     "Filter notification": {
@@ -2825,10 +2784,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "ნაპოვნია ${ items.length } მინიშნება. აირჩიეთ კლავიატურით.",
-        "ნაპოვნია ${ items.length } მინიშნება. აირჩიეთ კლავიატურით."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "გამოიყენეთ ზევით და ქვევით კლავიშები შემოთავაზებების შეყვანის შემდეგ წვდომისთვის და დასათვალიერებლად. დააჭირეთ Enter თქვენი არჩევანის დასადასტურებლად, ან Escape შემოთავაზებების ველის დასახურავად."
       ]
@@ -2845,14 +2800,6 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } მოვლენა დაიშიფრა და ჩაემატა თქვენს კალენდარში",
-        "${ totalImported }/${ totalToImport } მოვლენა დაიშიფრა და ჩაემატა თქვენს კალენდარში"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "შეცდომა დაშიფვრისა და მოვლენაში დამატებისას. წარმატებით შემოტანილია ${ totalImported } კონტაქტი ${ totalToImport }-დან.",
-        "შეცდომა დაშიფვრისა და მოვლენაში დამატებისას. წარმატებით შემოტანილია ${ totalImported } კონტაქტი ${ totalToImport }-დან."
-      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "თქვენი მოვლენის დაშიფვრისა და დამატებისას მოხდა შეცდომა. ვერცერთი მოვლენის იმპორტი ვერ მოხერხდა."
       ],
@@ -2887,23 +2834,11 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "შემოტანილი მოსაწვევები გამოჩნდება ${ CALENDAR_APP_NAME }-ში, როგორც მარტივი მოვლენა ორგანიზატორის და მონაწილეების დეტალების გარეშე. მოვლენის განახლებების მისაღებად და მონაწილეების სანახავად სთხოვეთ ორგანიზატორებს, ${ BRAND_NAME }-ის ელფოსტის მისამართის გამოყენებით მოგიწვიონ."
       ],
-      "This file contains an event invitation:": [
-        "ეს ფაილი შეიცავს მოსაწვევს:",
-        "ეს ფაილი შეიცავს მოსაწვევებს:"
-      ],
-      "This file contains an invitation response:": [
-        "ეს ფაილი მოსაწვევზე პასუხს შეიცავს:",
-        "ეს ფაილი მოსაწვევზე პასუხს შეიცავს:"
-      ],
       "This file contains some data that we cannot import:": [
         "ეს ფაილი შეიცავს მონაცემებს, რომელიც ვერ შემოგვაქვს:"
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } კონტაქტი დაშიფრული და დამატებულია თქვენი კონტაქტების სიაში",
-        "${ totalImported }/${ totalToImport } კონტაქტი დაშიფრული და დამატებულია თქვენი კონტაქტების სიაში"
-      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "შეცდომა თქვენი კონტაქტის დაშიფვრისა და დამატებისას. კონტაქტი არ შემოტანილა."
       ],
@@ -2923,12 +2858,6 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "კონტაქტი ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } კონტაქტი",
-        "${ totalContacts } კონტაქტი"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3100,10 +3029,6 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "შემოტანილი იქნება ${ totalContactsDiscarded } ${ totalContacts }-დან. დეტალებისთვის დააწკაპუნეთ"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEvents }-დან ${ totalEventsDiscarded } მოვლენა არ იქნება შემოტანილი. დეტალებისთვის ჩამოშალეთ.",
-        "${ totalEvents }-დან ${ totalEventsDiscarded } მოვლენა არ იქნება შემოტანილი. დეტალებისთვის ჩამოშალეთ."
-      ],
       "No contact can be imported. Click for details": [
         "კონტაქტების შემოტანა შეუძლებელია. წკაპი დეტალებისთვის"
       ],
@@ -3115,74 +3040,14 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "მიმდინარეობს ${ activeDownloadsCount } გადმოწერა",
-        "მიმდინარეობს ${ activeDownloadsCount } გადმოწერა"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "მიმდინარეობს გადმოწერა: ${ activeDownloadsCount } (${ downloadProgress }%)",
-        "მიმდინარეობს გადმოწერა: ${ activeDownloadsCount } (${ downloadProgress }%)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount }-ის ატვირთვა (${ uploadProgress }%)",
-        "${ activeUploadsCount }-ის ატვირთვა (${ uploadProgress }%)"
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } ელ-ფოსტის მისამართი",
-        "${ addressCount } ელ-ფოსტის მისამართი"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }-ის დაშიფვრის ტექნოლოგია ნიშნავს, რომ თქვენს პაროლთან წვდომა არავის აქვს, ჩვენც კი."
       ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } ახალი კალენდარი",
-        "${ calendarsToBeCreatedCount } ახალი კალენდარი"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } შერწყმული კალენდარი",
-        "${ calendarsToBeMergedCount } შერწყმული კალენდარი"
-      ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } გაუქმებულია",
-        "${ canceledCount } გაუქმებულია"
-      ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } კონტაქტი ელფოსტის მრავალ მისამართს შეიცავს.",
-        "${ contactCount } კონტაქტი ელფოსტის მრავალ მისამართს შეიცავს."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } წევრი",
-        "${ contactEmailsLength } წევრი"
-      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } ელფოსტის მრავალ მისამართს შეიცავს."
-      ],
-      "${ contactsCount } contact found": [
-        "ნაპოვნია ${ contactsCount } კონტაქტი",
-        "ნაპოვნია ${ contactsCount } კონტაქტი"
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } კონტაქტი",
-        "${ contactsLength } კონტაქტი"
-      ],
-      "${ doneCount } finished": [
-        "${ doneCount } დამთავრდა",
-        "${ doneCount } დამთავრდა"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } გადმოწერილია",
-        "${ doneDownloadsCount } გადმოწერილია"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "ატვირთულია ${ doneUploadsCount }",
-        "ატვირთულია ${ doneUploadsCount }"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } წარუმატებელია",
-        "${ errorCount } წარუმატებელია"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: სრული ზომის გამოსახულება"
@@ -3190,66 +3055,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: დაბალი გაფართოების მინიატურა"
       ],
-      "${ groupCounts } group found": [
-        "ნაპოვნია ${ groupCounts } ჯგუფი",
-        "ნაპოვნია ${ groupCounts } ჯგუფი"
-      ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } შეჩერებულია",
-        "${ pausedCount } შეჩერებულია"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "ნაპოვნია ${ providerFoldersNumLocalized } საქაღალდე",
-        "ნაპოვნია ${ providerFoldersNumLocalized } საქაღალდე"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "Gmail-ში ნაპოვნია ${ providerFoldersNumLocalized } ჭდე",
-        "Gmail-ში ნაპოვნია ${ providerFoldersNumLocalized } ჭდე"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან",
-        "კალენდარი ${ selectedCalendarsTotal } ${ providerCalendars.length }-დან"
-      ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "მონიშნულია ${ selectedContactsLength }/${ contactsLength } კონტაქტი",
-        "მონიშნულია ${ selectedContactsLength }/${ contactsLength } კონტაქტი"
-      ],
-      "${ selectedCount } selected": [
-        "მონიშნულია ${ selectedCount }",
-        "მონიშნულია ${ selectedCount }"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "მონიშნულია ${ selectedFoldersCount } საქაღალდე",
-        "მონიშნულია ${ selectedFoldersCount } საქაღალდე"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "მონიშნულია ${ selectedFoldersCount } ჭდე",
-        "მონიშნულია ${ selectedFoldersCount } ჭდე"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "მონიშნულია ${ selectedFoldersCountLocalized } საქაღალდე",
-        "მონიშნულია ${ selectedFoldersCountLocalized } საქაღალდე"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე",
-        "მონიშნულია ${ selectedFoldersCountLocalized } ჭდე"
-      ],
       "${ speed }/s": [
         "${ speed }/წმ"
       ],
       "${ storage } storage": [
         "${ storage } საცავი"
       ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } კონტაქტი წარმატებით განახლდა.",
-        "${ updated } კონტაქტი წარმატებით განახლდა."
-      ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } უკვე არსებობს."
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } წევრი)",
-        "(${ memberCount } წევრი)"
       ],
       "A number will be added to the filename": [
         "ფაილის სახელს რიცხვი მიემატება"
@@ -3266,20 +3079,8 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "ამ მისამართისთვის ჩართულია მისამართის დადასტურება სანდო გასაღებებით. იმისათვის, რომ შეძლოთ ამ მისამართზე გაგზავნა, ჯერ ენდეთ საჯარო გასაღებებს, რომლებიც შეიძლება, გამოყენებულ იქნას გაგზავნისთვის."
       ],
-      "All (${ totalFoldersCount } folder)": [
-        "ყველა (${ totalFoldersCount } საქაღალდე)",
-        "ყველა (${ totalFoldersCount } საქაღალდე)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "ყველა (${ totalFoldersCount } ჭდე)",
-        "ყველა (${ totalFoldersCount } ჭდე)"
-      ],
       "All your changes will be lost.": [
         "ყველა თქვენი ცვლილება დაიკარგება."
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }",
-        "შემოტანილი იქნება ყველა თქვენი კონტაქტი. ლიმიტია ${ MAX_CONTACTS_PER_USER }"
       ],
       "Also try looking in Trash.": [
         "სცადეთ, ნაგვის ყუთშიც ჩაიხედოთ."
@@ -3317,6 +3118,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, სამუდამოდ წაშალოთ ელემენტები სანაგვე ყუთიდან?"
       ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "როგორც კი თქვენს მოწყობილობაზე სურათები ან ვიდეოები გაგიჩნდებათ, ისინი აქაც გამოჩნდება."
+      ],
       "Attention required": [
         "საჭიროა ყურადღება"
       ],
@@ -3325,9 +3129,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "შემოწმების ახალი კოდის მოთხოვნამდე შეამოწმეთ თქვენი სპამის საქაღალდე და რომ ${ strong } სწორი მისამართია."
-      ],
-      "Billing cycle: ${ text }": [
-        "გადახდის ციკლი: ${ text }"
       ],
       "Calendar side panel": [
         "კალენდრის გვერდითი პანელი"
@@ -3389,10 +3190,6 @@
       "Country code": [
         "ქვეყნის კოდი"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "შექმენით ${ calendarsToBeCreatedCount } ახალი კალენდარი",
-        "შექმენით ${ calendarsToBeCreatedCount } ახალი კალენდარი"
-      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "შემოტანილი შეტყობინებების ჭდის შექმნა. შემოტანის დროის დიაპაზონი და საქაღალდეები, რომლის შემოტანაც გნებავთ."
       ],
@@ -3428,10 +3225,6 @@
       ],
       "Decrypting files": [
         "ფაილების დაშიფვრა"
-      ],
-      "Delete locked drive": [
-        "დაბლოკილი დისკის წაშლა",
-        "დაბლოკილი დისკების წაშლა"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "ციფრული ხელმოწერა შემოწმებულია. ეს ფაილი დაცულად ატვირთა ${ emailAddress }-მა."
@@ -3516,10 +3309,6 @@
       ],
       "Enter your own password (as organization admin).": [
         "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "მიახლოებითი დარჩენილი დრო: ${ estimatedMinutes } წთ",
-        "მიახლოებითი დარჩენილი დრო: ${ estimatedMinutes } წთ"
       ],
       "Estimated time remaining: Less than a minute": [
         "დარჩენილი დრო: წუთზე ნაკლები"
@@ -3610,10 +3399,6 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "თუ გაქვთ ამათგან ერთ-ერთი, განბლოკვის პროცესის დასაწყებად \nგააგრძელეთ ${ BRAND_NAME }-ის ანგარიშის დაყენება."
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "${ calendarCount }-დან ${ totalCalendarsCount } კალენდრის შემოტანა",
-        "${ calendarCount }-დან ${ totalCalendarsCount } კალენდრის შემოტანა"
       ],
       "Import from": [
         "შემოტანა"
@@ -3783,10 +3568,6 @@
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "ერთი ან მეტი თქვენს მიერ სანდოდ მიჩნეული გასაღები მონიშნულ იქნა, როგორც \"გატეხილი\", მათი მფლობელების მიერ. გირჩევთ, ეს გასაღებები \"არასანდოდ\" მონიშნოთ."
       ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "სიმბოლოების მაქსიმალური რაოდენობაა ${ MAX_CUSTOM_PASSWORD_LENGTH }",
-        "სიმბოლოების მაქსიმალური რაოდენობაა ${ MAX_CUSTOM_PASSWORD_LENGTH }"
-      ],
       "Only the people with the link and the password can access this file.": [
         "ამ ფაილთან წვდომა, მხოლოდ, მას აქვს, ვისაც ეს ბმული და მისი პაროლი გააჩნია."
       ],
@@ -3822,10 +3603,6 @@
       ],
       "Please select the folders you would like to import:": [
         "აირჩიეთ შემოსატანი საქაღალდეები:"
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "აირჩიეთ, ${ groupCount } ჯგუფში ელფოსტის რომელი მისამართ(ებ)-ის დამატება გსურთ.",
-        "აირჩიეთ, ${ groupCount } ჯგუფში ელფოსტის რომელი მისამართ(ებ)-ის დამატება გსურთ."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "აირჩიეთ, ${ groupName }-ში ელფოსტის რომელი მისამართის დამატება გნებავთ."
@@ -4028,10 +3805,6 @@
       "This month": [
         "ამ თვეში"
       ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "ეს წაშლის ამ ბმულს და აუკრძალავს წვდომას ყველას, ვისაც თქვენს ფაილთან ან საქაღალდესთან ამ ბმულით ჰქონდა წვდომა.",
-        "ეს წაშლის ამ ბმულს და აუკრძალავს წვდომას ყველას, ვისაც თქვენს ფაილებთან ან საქაღალდეებთან ამ ბმულით ჰქონდა წვდომა."
-      ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
         "ეს ${ DRIVE_APP_NAME }-დან სინქრონიზებად მოწყობილობას ${ deviceName } წაშლის და ჩემს კომპიუტერებში ჩამატებული საქაღალდეების სინქრონიზაციას შეწყვეტს."
       ],
@@ -4148,6 +3921,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "ეს გზა სწორია. თქვენ ახლახანს გაიორმაგეთ უფასო საცავი!"
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "განვიცდით ტექნიკურ სიძნელეებს. ახალი სურათების ატვირთვა დროებით გათიშულია."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "ჩვენ ვერ შევამოწმეთ, ატვირთა ${ fileName } ${ emailAddress }-მა, თუ არა."
@@ -4340,14 +4116,6 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-ის მომხმარებელი"
       ],
-      "${ nbDay } day": [
-        "${ nbDay } დღე",
-        "${ nbDay } დღე"
-      ],
-      "${ nbYear } year": [
-        "${ nbYear } წელი",
-        "${ nbYear } წელი"
-      ],
       "(Expired)": [
         "(ვადაგასულია)"
       ],
@@ -4455,10 +4223,6 @@
       ],
       "Delete": [
         "წაშლა"
-      ],
-      "Delete drive?": [
-        "წავშალო დისკი?",
-        "წავშალო დისკები?"
       ],
       "Delete recovery-related information.": [
         "აღდგენის ინფორმაციის წაშლა."
@@ -4878,10 +4642,6 @@
       "Almost there": [
         "თითქმის მივედით"
       ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "შექმნილი კალენდრების რაოდენობა: ${ createdCalendarCount } ${ calendarsToBeCreated }-დან",
-        "შექმნილი კალენდრების რაოდენობა: ${ createdCalendarCount } ${ calendarsToBeCreated }-დან"
-      ],
       "Connecting to your email provider": [
         "ვუკავშირდები თქვენი ელფოსტის სერვისის მომწოდებელს"
       ],
@@ -4896,24 +4656,6 @@
       ],
       "Your import is starting": [
         "შემოტანის დასაწყისი"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "შემოიტანეთ ყველა შეტყობინება ${ itemsToImportCount } საქაღალდეებიდან და მონიშნეთ ისინი როგორც",
-        "შემოიტანეთ ყველა შეტყობინება ${ itemsToImportCount } საქაღალდეებიდან და მონიშნეთ ისინი როგორც"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "${ itemsToImportCount } ჭდიდან ყველა შეტყობინების შემოტანა და მათი მონიშვნა, როგორც",
-        "${ itemsToImportCount } ჭდიდან ყველა შეტყობინების შემოტანა და მათი მონიშვნა, როგორც"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "ყველა შეტყობინების შემოტანა ${ selectedItemsToImportCount }/${ itemsToImportCount } საქაღალდიდან და მათი მონიშვნა, როგორც",
-        "ყველა შეტყობინების შემოტანა ${ selectedItemsToImportCount }/${ itemsToImportCount } საქაღალდიდან და მათი მონიშვნა, როგორც"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "ყველა შეტყობინების შემოტანა${ selectedItemsToImportCount }/${ itemsToImportCount } ჭდიდან და მათი მონიშვნა, როგორც",
-        "ყველა შეტყობინების შემოტანა${ selectedItemsToImportCount }/${ itemsToImportCount } ჭდიდან და მათი მონიშვნა, როგორც"
       ]
     },
     "Message": {
@@ -5063,50 +4805,6 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }-ს სახელი წარმატებით გადაერქვა"
       ],
-      "${ count } item failed to be decrypted": [
-        "${ count } ელემენტის გაშიფვრის შეცდომა",
-        "${ count } ელემენტის გაშიფვრის შეცდომა"
-      ],
-      "${ numberOfItems } item deleted permanently from trash": [
-        "${ numberOfItems } ელემენტი წარმატებულად წაიშალა ნაგვის ყუთიდან",
-        "${ numberOfItems } ელემენტი წარმატებულად წაიშალა ნაგვის ყუთიდან"
-      ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "ნაგვის ყუთიდან ${ numberOfItems } ელემენტის წაშლის შეცდომა",
-        "ნაგვის ყუთიდან ${ numberOfItems } ელემენტის წაშლის შეცდომა"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } ელემენტის გადატანის შეცდომა",
-        "${ numberOfItems } ელემენტის გადატანის შეცდომა"
-      ],
-      "${ numberOfItems } item failed to be moved to trash": [
-        "${ numberOfItems } ელემენტის ნაგვის ყუთშიგადატანის შეცდომა",
-        "${ numberOfItems } ელემენტის ნაგვის ყუთშიგადატანის შეცდომა"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } ელემენტის ნაგვიდან აღდგენის შეცდომა",
-        "${ numberOfItems } ელემენტის ნაგვიდან აღდგენის შეცდომა"
-      ],
-      "${ numberOfItems } item moved to trash": [
-        "${ numberOfItems } ფაილი ნაგავში ჩავარდა",
-        "${ numberOfItems } ფაილი ნაგავში ჩავარდა"
-      ],
-      "${ numberOfItems } item restored from trash": [
-        "${ numberOfItems } ელემენტი აღდგენილია ნაგვის ყუთიდან",
-        "${ numberOfItems } ელემენტი აღდგენილია ნაგვის ყუთიდან"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } ელემენტის გადატანა წარმატებულია",
-        "${ numberOfItems } ელემენტის გადატანა წარმატებულია"
-      ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე",
-        "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე",
-        "წაიშლება ${ numberOfItems } ბმული თქვენს ელემენტებამდე"
-      ],
       "All items will soon be permanently deleted from trash": [
         "ნაგვის ყუთიდან ფაილები მალე სამუდამოდ წაიშლება"
       ],
@@ -5146,10 +4844,6 @@
       "Failed to upload files: ${ err }": [
         "ფაილების ატვირთვის შეცდომა: ${ err }"
       ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "ფაილის ან საქაღალდის \"${ filename }\" და ${ count } სხვის ატვირთვა უკვე მიმდინარეობს",
-        "ფაილის ან საქაღალდის \"${ filename }\" და ${ count } სხვის ატვირთვა უკვე მიმდინარეობს"
-      ],
       "File or folder \"${ filename }\" is already uploading": [
         "ფაილის ან საქაღალდის \"${ filename }\" ატვირთვა უკვე მიმდინარეობს"
       ],
@@ -5158,30 +4852,6 @@
       ],
       "Link copied to clipboard": [
         "ბმული კოპირებულია ბუფერში"
-      ],
-      "Move ${ itemsToMoveCount } file": [
-        "${ itemsToMoveCount } ფაილის გადატანა",
-        "${ itemsToMoveCount } ფაილის გადატანა"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "${ itemsToMoveCount } საქაღალდის გადატანა",
-        "${ itemsToMoveCount } საქაღალდის გადატანა"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "${ itemsToMoveCount } ელემენტის გადატანა",
-        "${ itemsToMoveCount } ელემენტის გადატანა"
-      ],
-      "Move ${ movingCount } file": [
-        "${ movingCount } ფაილის გადატანა",
-        "${ movingCount } ფაილის გადატანა"
-      ],
-      "Move ${ movingCount } folder": [
-        "${ movingCount } საქაღალდის გადატანა",
-        "${ movingCount } საქაღალდის გადატანა"
-      ],
-      "Move ${ movingCount } item": [
-        "${ movingCount } ელემენტის გადატანა",
-        "${ movingCount } ელემენტის გადატანა"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "არასაკმარისი ადგილი ${ formattedTotal }-ის ასატვირთად"
@@ -5249,10 +4919,6 @@
       ],
       "Set a recovery method": [
         "აღდგენის მეთოდის დაყენება"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "უბრალოდ, შეავსეთ ის შემდეგ ${ expiresInDays } დღეში:",
-        "უბრალოდ, შეავსეთ ის შემდეგ ${ expiresInDays } დღეში:"
       ],
       "Upload a file": [
         "ფაილის ატვირთვა"
@@ -5410,18 +5076,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ countContacts }-დან ${ contactsExported.length } კონტაქტის გატანა წარმატებულია.",
-        "${ countContacts }-დან ${ contactsExported.length } კონტაქტის გატანა წარმატებულია."
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ totalBeDeleted }-დან ${ model.deleted.length } კონტაქტი წარმატებით წაიშალა.",
-        "${ totalBeDeleted }-დან ${ model.deleted.length } კონტაქტი წარმატებით წაიშალა."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ totalBeMerged }-დან ${ model.submitted.length } კონტაქტი წარმატებით იქნა შერწყმული.",
-        "${ totalBeMerged }-დან ${ model.submitted.length } კონტაქტი წარმატებით იქნა შერწყმული."
-      ],
       "No contacts exported.": [
         "კონტაქტები არ იქნა გატანილი."
       ],
@@ -5494,32 +5148,8 @@
       ]
     },
     "session_recovery:available:info": {
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } დღე",
-        "${ timeRemaining.inDays } დღე"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } საათი",
-        "${ timeRemaining.inHours } საათი"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inDays } დღე, პაროლი შეცვალოთ.",
-        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inDays } დღე, პაროლი შეცვალოთ."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inHours } საათი, პაროლი შეცვალოთ.",
-        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inHours } საათი, პაროლი შეცვალოთ."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "პაროლის შესაცვლელად გადადით მოწყობილობაზე (სესიაში, საიდანაც მოთხოვნა გამოიგაზვნა), რომელზეც შესული ბრძანდებით."
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "ამ წვდომის ვადა ${ timeRemaining.inDays } დღეში იწურება",
-        "ამ წვდომის ვადა ${ timeRemaining.inDays } დღეში იწურება"
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება",
-        "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "ახლა შეგიძლიათ შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }, თავისუფლად, შუალედში \"${ boldDaysRemaining }\"."
@@ -5582,16 +5212,8 @@
       ]
     },
     "session_recovery:in_progress:info": {
-      "${ gracePeriodHoursRemaining } more hour": [
-        "კიდევ ${ gracePeriodHoursRemaining } საათი",
-        "კიდევ ${ gracePeriodHoursRemaining } საათი"
-      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "თუ პაროლის შეცვლა თქვენ არ მოგითხოვიათ, გააუქმეთ ეს მოთხოვნა."
-      ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "პაროლის შეცვლა მოთხოვნილია (${ user.Email }) პაროლის შეცვლა ${ hoursRemaining } საათში შეგეძლებათ.",
-        "პაროლის შეცვლა მოთხოვნილია (${ user.Email }) პაროლის შეცვლა ${ hoursRemaining } საათში შეგეძლებათ."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "იმისათვის, რომ დავრწმუნდეთ, რომ ნამდვილად თქვენ ცდილობთ პაროლის შეცვლას, ჩვენ, მოთხოვნის შესრულებამდე 72 საათს მოვიცდით. პაროლს შეცვლა შეგიძლიათ შემდეგ დროში: ${ boldTimeLeft }. ${ viewRequest }"
@@ -5619,10 +5241,6 @@
       ]
     },
     "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } საათი",
-        "${ gracePeriodHoursRemaining } საათი"
-      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } ახლა ხელმისაწვდომია."
       ],
@@ -5668,30 +5286,6 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Unlimited-ზე გადასვლა"
-      ]
-    },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } დღე",
-        "${ days } დღე"
-      ],
-      "${ hours } hour": [
-        "${ hours } საათი",
-        "${ hours } საათი"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } წუთი",
-        "${ minutes } წუთი"
-      ],
-      "${ seconds } second": [
-        "${ seconds } წამი",
-        "${ seconds } წამი"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } თვე უფასოდ",
-        "${ n } თვე უფასოდ"
       ]
     },
     "specialoffer: Deal details": {
@@ -5743,23 +5337,6 @@
         "ეს გამოწერა მანამდე გაუქმდება ყოველ 2 წელიწადში ერთხელ იმავე სიხშირით, სანამ გააუქმებთ."
       ]
     },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "უვადო კონტრაქტი"
-      ],
-      "Limited time only": [
-        "მხოლოდ, შეზღუდული დროით"
-      ],
-      "Most popular": [
-        "ყველაზე პოპულარული"
-      ],
-      "Offer ends soon": [
-        "შემოთავაზება მალე დასრულდება"
-      ],
-      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
-        "ფასდაკლება მანამდე გექნებათ, სანამ გამოწერას გააუქმებთ ან შეცვლით"
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "ტარიფებზე გადასვლა"
@@ -5769,10 +5346,6 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } თვე",
-        "${ n } თვე"
-      ],
       "/ month": [
         "/ თვეში"
       ],
@@ -5838,20 +5411,8 @@
       "Cyber Week Sale": [
         "კიბერ-კვირის ფასდაკლება"
       ],
-      "End of year offer": [
-        "წლის ბოლოს ფასდაკლება"
-      ],
       "End of Year Sale": [
         "წლის ბოლოს ფასდაკლება"
-      ],
-      "Get our premium bundle and save more": [
-        "მიიღეთ ჩვენი პრემიუმ-ნაკრები და დაზოგეთ მეტი"
-      ],
-      "Our discontinued Visionary plan is back for a limited time only": [
-        "ჩვენი გაუქმებული გეგმა Visionary მცირე ხნით დაბრუნდა"
-      ],
-      "Save more with 2 years of ${ planName }": [
-        "დაზოგეთ მეტი 2 წლით ${ planName }"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "ასწიეთ სატარიფო გეგმა დაზოგეთ მეტი 2 წლით ${ planName }"
@@ -5912,10 +5473,6 @@
       ]
     },
     "Success": {
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } ერთნაირია.",
-        "${ countMergeableContacts } ერთნაირია."
-      ],
       "Address copied to clipboard": [
         "მისამართი დაკოპირდა გაცვლის ბაფერში"
       ],
@@ -5927,14 +5484,6 @@
       ],
       "Code sent to ${ methodTo }": [
         "კოდი გაგზავნილია ${ methodTo }-თან"
-      ],
-      "Contact deleted": [
-        "კონტაქტი წაიშალა",
-        "კონტაქტები წაიშალა"
-      ],
-      "Contact group deleted": [
-        "კონტაქტების ჯგუფი წაიშალა",
-        "კონტაქტების ჯგუფები წაიშალა"
       ],
       "Contact saved": [
         "კონტაქტი შენახულია"
@@ -5978,14 +5527,6 @@
         "უკუკავშირი გაგზავნილია"
       ]
     },
-    "summer2023: Billing cycle option": {
-      "1 year": [
-        "1 წელი"
-      ],
-      "2 years": [
-        "2 წელი"
-      ]
-    },
     "summer2023: Deal details": {
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
         "Premium ${ DRIVE_SHORT_APP_NAME }"
@@ -6006,27 +5547,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს ვერსიების ისტორიას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
-      ]
-    },
-    "summer2023:Footer": {
-      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
-        "*თქვენი გამოწერა გადახდის ციკლის ბოლოს სტანდარტული ფასდაკლების ტარიფით განახლდება."
-      ],
-      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
-        "ფასდაკლებები სტანდარტულ თვეში ერთხელ გადასახდელ თანხას ეყრდნობა. ეს შეთავაზება ხელმისაწვდომია, მხოლოდ, პირველადი გამომწერებისთვის."
-      ]
-    },
-    "summer2023:Info": {
-      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
-        "მხოლოდ შეზღუდული დროით, მიიღეთ ექსკლუზიური ფასდაკლებით საუკეთესო, რაც ${ BRAND_NAME }-ს შეუძლია, შემოგთავაზოთ."
-      ],
-      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
-        "ვზეიმობთ ჩვენი ქრაუდფანდინგის მეცხრე წელს!"
-      ]
-    },
-    "summer2023:Offer title": {
-      "${ BRAND_NAME } Anniversary Sale": [
-        "${ BRAND_NAME }-ის აღნიშვნის ფასდაკლება"
       ]
     },
     "Table header": {
@@ -6087,53 +5607,9 @@
         "vCard-ის ველი"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } საათი",
-        "${ hours } საათი"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 სთ",
-        "${ hoursInt }.5 სთ"
-      ],
-      "${ minutes } min": [
-        "${ minutes } წთ",
-        "${ minutes } წთ"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } საათი",
-        "${ hours } საათი"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 საათი",
-        "${ hoursInt }.5 საათი"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } წუთი",
-        "${ minutes } წუთი"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "გადმოწერების #"
-      ],
-      "${ emailsCount } email address": [
-        "${ emailsCount } ელფოსტის მისამართი",
-        "${ emailsCount } ელფოსტის მისამართი"
-      ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } გადმოწერის შეცდომა",
-        "${ numberOfFailedTransfer.total } გადმოწერის შეცდომა"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } გადაცემის შეცდომა",
-        "${ numberOfFailedTransfer.total } გადაცემის შეცდომა"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } ატვირთვის შეცდომა",
-        "${ numberOfFailedTransfer.total } ატვირთვის შეცდომა"
       ],
       "Account suspended": [
         "ანგარიში შეჩერებულია"
@@ -6143,10 +5619,6 @@
       ],
       "Add contact group name": [
         "დაამატეთ კონტაქტის ჯგუფის სახელი"
-      ],
-      "Add to ${ groupCount } group": [
-        "${ groupCount } ჯგუფში ჩამატება",
-        "${ groupCount } ჯგუფში ჩამატება"
       ],
       "Add to ${ groupName }": [
         "${ groupName }-ში ჩამატება"
@@ -6162,9 +5634,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, დახუროთ მინიატურა?"
-      ],
-      "Billing cycle": [
-        "გადახდის პერიოდი"
       ],
       "Birthday": [
         "დაბადების დღე"
@@ -6234,14 +5703,6 @@
       ],
       "Day theme": [
         "დღის თემა"
-      ],
-      "Delete ${ count } contact": [
-        "${ count } კონტაქტის წაშლა",
-        "${ count } კონტაქტის წაშლა"
-      ],
-      "Delete ${ count } contact group": [
-        "${ count } კონტაქტების ჯგუფის წაშლა",
-        "${ count } კონტაქტების ჯგუფის წაშლა"
       ],
       "Delete ${ Name }": [
         "${ Name }-ის წაშლა"
@@ -6324,10 +5785,6 @@
       "Folders details": [
         "საქაღალდეების დეტალები"
       ],
-      "Found ${ searchView.numberOfResults } result": [
-        "ნაპოვნია ${ searchView.numberOfResults } შედეგი",
-        "ნაპოვნია ${ searchView.numberOfResults } შედეგი"
-      ],
       "Groups": [
         "ჯგუფები"
       ],
@@ -6336,10 +5793,6 @@
       ],
       "Human verification": [
         "ადამიანის შემოწმება"
-      ],
-      "Import as simple event?": [
-        "შემოვიტანო მარტივი მოვლენის სახით?",
-        "შემოვიტანო მარტივი მოვლენების სახით?"
       ],
       "Import contacts": [
         "კონტაქტების შემოტანა"
@@ -6679,26 +6132,12 @@
         "თქვენ არ გაქვთ გატანადი კონტაქტები"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "პაროლი ${ length } სიმბოლოს მაინც უნდა შეიცავდეს",
-        "პაროლი ${ length } სიმბოლოს მაინც უნდა შეიცავდეს"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
-        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"
-      ]
-    },
     "Validation Error": {
       "\"${ str }\" is not a valid name": [
         "„${ str }“ არასწორი სახელია"
       ],
       "Name cannot include invisible characters, / or \\.": [
         "სახელი არ შეიძლება, შეიცავდეს უჩინარ სიმბოლოებს, / და \\-ს."
-      ],
-      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
-        "სახელში სიმბოლოების მაქსიმალური რაოდენობაა ${ MAX_NAME_LENGTH }",
-        "სახელში სიმბოლოების მაქსიმალური რაოდენობაა ${ MAX_NAME_LENGTH }"
       ],
       "Name must not be empty": [
         "სახელი არ შეიძლება, იყოს ცარიელი"
@@ -6724,10 +6163,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }-ი გადაიტანს იმდენ მონაცემს, უკანასკნელი შეტყობინებებით დაწყებული, რამდენიც ეს შესაძლებელი იქნება."
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "დარწმუნებული ბრძანდებთ, რომ გნებავთ, სამუდამოდ წაშალოთ ${ count } კონტაქტი?",
-        "დარწმუნებული ბრძანდებთ, რომ გნებავთ, სამუდამოდ წაშალოთ ${ count } კონტაქტი?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ. სამუდამოდ წაშალოთ ეს კონტაქტის ჯგუფები?"

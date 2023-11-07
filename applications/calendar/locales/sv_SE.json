@@ -69,10 +69,6 @@
       "Apply": [
         "Tillämpa"
       ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "Högst ${ maxContacts } kontakt tillåts per kontaktgrupp",
-        "Högst ${ maxContacts } kontakter är tillåtna per kontaktgrupp"
-      ],
       "Attach screenshot(s)": [
         "Bifoga skärmdump(ar)"
       ],
@@ -192,14 +188,6 @@
       ],
       "Delete": [
         "Ta bort"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Ta bort ${ selectedCount } kontakt",
-        "Ta bort ${ selectedCount } kontakter"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Ta bort ${ selectedCount } kontaktgrupp",
-        "Ta bort ${ selectedCount } kontaktgrupper"
       ],
       "Delete contact": [
         "Ta bort kontakt"
@@ -647,10 +635,6 @@
       ],
       "Yes, I'll attend": [
         "Ja, jag ska delta"
-      ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakt",
-        "Du kan inte skicka vCard-filer med fler än ${ maxAttachments } kontakter"
       ]
     },
     "Action subline": {
@@ -684,20 +668,6 @@
       ],
       "You don't have any groups.": [
         "Du har inga grupper."
-      ]
-    },
-    "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } anpassad domän",
-        "${ domains } anpassade domäner"
-      ],
-      "${ ips } server": [
-        "${ ips } server",
-        "${ ips } servrar"
-      ],
-      "${ users } user": [
-        "${ users } användare",
-        "${ users } användare"
       ]
     },
     "Alarm notification": {
@@ -791,15 +761,96 @@
         "Valfritt"
       ]
     },
-    "Billing cycle option": {
-      "Annually": [
-        "Årligen"
+    "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus och ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Monthly": [
-        "Månadsvis"
+      "${ storageSize } storage": [
+        "${ storageSize } lagringsutrymme"
       ],
-      "Two-year": [
-        "Tvåårig"
+      "1 user": [
+        "1 användare"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "3 000+ servrar i 65+ länder"
+      ],
+      "6 users": [
+        "6 användare"
+      ],
+      "Access content worldwide": [
+        "Åtkomst till innehåll över hela världen"
+      ],
+      "Ad-blocker and malware protection": [
+        "Annonsblockerare och skydd mot skadlig kod"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Alla betalda funktionerna för ${ MAIL_SHORT_APP_NAME } och ${ CALENDAR_APP_NAME }"
+      ],
+      "Extended version history": [
+        "Utökad versionshistorik"
+      ],
+      "High speed streaming": [
+        "Höghastighetsstreaming"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Premium lösenordshanterare"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Rabatterna är baserade på ordinarie månadspriser."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Din prenumeration kommer förnyas automatiskt till det rabatterade standardpriset i slutet av din faktureringsperiod."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 dagars pengarna-tillbaka-garanti"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Få åtkomst till blockerat innehåll och surfa privat. Inkluderar 3 000+ servrar i över 65 länder, högsta VPN-hastigheter, åtkomst till världsomspännande streamingtjänster, blockerare mot skadlig programvara och annonser, snabba BitTorrent-nedladdningar och mer."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Få åtkomst till innehåll på streamingtjänster inklusive Netflix, Disney+, Prime Video och mer var som helst."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Kringgå lokala internetblockeringar och censur med vårt globala nätverk av servrar."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderar stöd för 1 anpassad e-postdomän, 10 e-postadresser, 10 hide-my-email-alias, kalenderdelning och mer."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Säkra inloggningar på alla dina enheter. Inkluderar obegränsade alias, delning, integrerad 2FA och mer."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Säkra din e-post och kalender med end-to-end-kryptering. Inkluderar stöd för anpassade e-postdomäner, 15 e-postadresser, obegränsat antal hide-my-email-alias, kalenderdelning och mer."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Specialdesignade NetShield skyddar dina enheter och snabbar upp din surfning genom att blockera annonser, spårare och skadlig kod."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Lagringsutrymme delas mellan alla ${ BRAND_NAME }-appar."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Lagra upp till 200 versioner av varje fil i upp till 10 år."
       ]
     },
     "Bug category": {
@@ -952,14 +1003,6 @@
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
         "Kan inte dela denna kalender med fler ${ BRAND_NAME }-användare"
-      ],
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
-        "Du har nått det maximala antalet ${ MAX_CALENDAR_MEMBERS } medlemmar för denna kalender.\nTa bort några medlemmar för att dela denna kalender med fler ${ BRAND_NAME }-konton.",
-        "Du har nått det maximala antalet ${ MAX_CALENDAR_MEMBERS } medlemmar för denna kalender.\nTa bort några medlemmar för att dela denna kalender med fler ${ BRAND_NAME }-konton."
-      ],
-      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
-        "Du har nått maximalt antalet ${ MAX_LINKS_PER_CALENDAR } länk för denna kalender.\nFör att skapa en ny länk till denna kalender, ta bort en befintlig.",
-        "Du har nått maximalt antal ${ MAX_LINKS_PER_CALENDAR } länkar för denna kalender.\nFör att skapa en ny länk till denna kalender, ta bort en befintlig."
       ]
     },
     "Calendar sharing access option label": {
@@ -1051,18 +1094,6 @@
       ],
       "Change time range to": [
         "Ändra tidsintervall till"
-      ]
-    },
-    "Calendar view; more events collapsed": {
-      "${ more } more": [
-        "${ more } mer",
-        "${ more } mer"
-      ]
-    },
-    "Checkout row": {
-      "${ users } user": [
-        "${ users } användare",
-        "${ users } användare"
       ]
     },
     "Collapsible tooltip": {
@@ -2020,17 +2051,9 @@
       ],
       "On date…": [
         "På datum…"
-      ],
-      "time": [
-        "gång",
-        "gånger"
       ]
     },
     "Daily recurring event, frequency": {
-      "${ count } time": [
-        "${ count } gång",
-        "${ count } gånger"
-      ],
       "Daily": [
         "Dagligen"
       ],
@@ -2039,18 +2062,6 @@
       ],
       "Daily, ${ untilString }": [
         "Dagligen, ${ untilString }"
-      ],
-      "Every ${ interval } day": [
-        "Varje dag",
-        "Var ${ interval }:e dag"
-      ],
-      "Every ${ interval } day, ${ timesString }": [
-        "Varje dag, ${ timesString }",
-        "Var ${ interval }:e dag, ${ timesString }"
-      ],
-      "Every ${ interval } day, ${ untilString }": [
-        "Varje dag, ${ untilString }",
-        "Var ${ interval }:e dag, ${ untilString }"
       ],
       "until ${ dateString }": [
         "tills ${ dateString }"
@@ -2274,22 +2285,6 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
       ],
-      "${ list } doesn't have a valid email address": [
-        "${ list } har ingen giltig e-postadress",
-        "Vissa kontakter har ingen giltig e-postadress: ${ list }"
-      ],
-      "${ list } doesn't have an email address": [
-        "${ list } har ingen e-postadress",
-        "Några kontakter har inga e-postadresser: ${ list }"
-      ],
-      "${ list } has invalid emails": [
-        "${ list } har ogiltiga e-postadresser",
-        "Några grupper har ogiltiga e-postadresser: ${ list }"
-      ],
-      "${ list } has no contacts": [
-        "${ list } har inga kontakter",
-        "Några grupper har inga kontakter: ${ list }"
-      ],
       "A group with this name already exists": [
         "En grupp med detta namn finns redan"
       ],
@@ -2340,14 +2335,6 @@
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Dekrypteringsfel: Dekryptering av innehållet i den här händelsen misslyckades."
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Avmarkera minst ${ calendarsToFixCount } kalender",
-        "Avmarkera minst ${ calendarsToFixCount } kalendrar"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Avmarkera minst ${ calendarsToFixCount } kalender eller",
-        "Avmarkera minst ${ calendarsToFixCount } kalendrar eller"
       ],
       "Domain not available, try again later": [
         "Domän inte tillgänglig, försök igen senare"
@@ -2442,10 +2429,6 @@
       "Last name is too long": [
         "Efternamn är för långt"
       ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Slå samman minst ${ calendarsToFixCount } kalender med en befintlig ${ BRAND_NAME }-kalender",
-        "Slå samman minst ${ calendarsToFixCount } kalendrar med befintliga ${ BRAND_NAME }-kalendrar"
-      ],
       "Missing key packet": [
         "Saknar nyckelpaket"
       ],
@@ -2479,14 +2462,6 @@
       "Number of occurrences cannot be empty": [
         "Antalet förekomster kan inte vara tomt"
       ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "En av kontakterna har ingen e-postadress: ${ noEmailsContactNamesList }",
-        "Vissa kontakter har ingen e-postadress: ${ noEmailsContactNamesList } "
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "En av grupperna har inga kontakter: ${ noContactGroupList }",
-        "Vissa grupper har inga kontakter: ${ noContactGroupList } "
-      ],
       "Password is required": [
         "Lösenord är obligatoriskt"
       ],
@@ -2498,10 +2473,6 @@
       ],
       "Please create an address first.": [
         "Skapa en adress först."
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Åtgärda den markerade konflikten för att fortsätta.",
-        "Åtgärda de markerade konflikterna för att fortsätta."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Ange antingen ett förnamn, ett efternamn eller ett visningsnamn"
@@ -2520,10 +2491,6 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Den primära nyckeln för ${ BRAND_NAME } användare är inte giltig för att skicka"
-      ],
-      "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Tog bort duplicerad mottagare: ${ joinedRecipients }",
-        "Tog bort duplicerade mottagare: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Förfrågan gjorde timeout"
@@ -2633,10 +2600,6 @@
       "You already added this holidays calendar": [
         "Du har redan lagt till denna helgdagskalender"
       ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "Du kan inte skicka ett e-postmeddelande till mer än ${ maxContacts } mottagare",
-        "Du kan inte skicka ett e-postmeddelande till fler än ${ maxContacts } mottagare"
-      ],
       "You have reached the contacts limit for your account": [
         "Du har nått kontaktgränsen för ditt konto"
       ],
@@ -2670,10 +2633,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Ett oväntat fel uppstod. Importen måste startas om."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Din fil ${ formattedFilename } innehåller fler än ${ MAX_IMPORT_EVENTS_STRING } händelse.",
-        "Din fil ${ formattedFilename } innehåller fler än ${ MAX_IMPORT_EVENTS_STRING } händelser."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Din fil ${ formattedFilename } har en ogiltig metod och kan inte importeras."
@@ -2871,19 +2830,9 @@
         "avbruten"
       ]
     },
-    "Event form": {
-      "${ numberOfAttendees } participant": [
-        "${ numberOfAttendees } deltagare",
-        "${ numberOfAttendees } deltagare"
-      ]
-    },
     "Event info in search view; event duration": {
       "All day": [
         "Hela dagen"
-      ],
-      "All day, lasts ${ plusDaysToEnd } day": [
-        "Hela dagen, varar ${ plusDaysToEnd } dag",
-        "Hela dagen, varar ${ plusDaysToEnd } dagar"
       ]
     },
     "Event info. Organizer name": {
@@ -2962,11 +2911,6 @@
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB totalt lagringsutrymme"
-      ]
-    },
-    "familyOffer_2023: Get Proton Family": {
-      "Get ${ planName }": [
-        "Skaffa ${ planName }"
       ]
     },
     "familyOffer_2023: Tooltip": {
@@ -3067,24 +3011,6 @@
         "Ditt nuvarande paket kan inte gå med i ett Visionary eller familjepaket."
       ]
     },
-    "familyOffer_2023:Footer": {
-      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
-        "*Din prenumeration kommer förnyas automatiskt med samma pris i slutet av din faktureringsperiod."
-      ],
-      "Discounts are based on the standard monthly pricing.": [
-        "Rabatterna är baserade på ordinarie månadspriser."
-      ]
-    },
-    "familyOffer_2023:Get Proton Family": {
-      "Get ${ planName }": [
-        "Skaffa ${ planName }"
-      ]
-    },
-    "familyOffer_2023:Info": {
-      "Online privacy, for your whole family": [
-        "Integritet online, för hela din familj"
-      ]
-    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users ": [
         "Konfigurera ditt familjekonto och bjud in användare "
@@ -3094,11 +3020,6 @@
       ],
       "Set up your family account": [
         "Ställ in ditt familjekonto"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Introducing ${ planName }": [
-        "Introducerar ${ planName }"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -3136,10 +3057,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "byte",
-        "byte"
-      ],
       "GB": [
         "GB"
       ],
@@ -3151,28 +3068,6 @@
       ],
       "TB": [
         "TB"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Byte",
-        "Byte"
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabyte"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobyte"
-      ],
-      "Megabyte": [
-        "Kilobyte",
-        "Megabyte"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabyte"
       ]
     },
     "Filter notification": {
@@ -3234,10 +3129,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Hittade ${ items.length } förslag, använd tangentbordet för att navigera.",
-        "Hittade ${ items.length } förslag, använd tangentbordet för att navigera."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Använd upp och ner tangenterna för att komma åt och bläddra genom förslag efter inmatning. Tryck på Enter för att bekräfta ditt val, eller Esc för att stänga förslagsrutan."
       ]
@@ -3254,14 +3145,6 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } händelse krypterad och tillagd i din kalender",
-        "${ totalImported }/${ totalToImport } händelser krypterade och tillagda i din kalender"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Ett fel uppstod vid kryptering och skapande av din händelse. ${ totalImported } av ${ totalToImport } händelse lyckades importeras.",
-        "Ett fel uppstod vid kryptering och skapande av dina händelser. ${ totalImported } av ${ totalToImport } händelse lyckades importeras."
-      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Ett fel uppstod när din händelse krypterades och lades till. Ingen händelse kunde importeras."
       ],
@@ -3296,23 +3179,11 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Importerade händelser visas i ${ CALENDAR_APP_NAME } som enkla händelser utan arrangörs- och deltagarinformation. För att få händelseuppdateringar och se deltagare, be arrangörerna att bjuda in dig med din e-postadress för ${ BRAND_NAME }."
       ],
-      "This file contains an event invitation:": [
-        "Denna fil innehåller en händelseinbjudan:",
-        "Denna fil innhåller händelseinbjudningar:"
-      ],
-      "This file contains an invitation response:": [
-        "Denna fil innehåller ett inbjudningssvar:",
-        "Denna fil innehåller inbjudningssvar:"
-      ],
       "This file contains some data that we cannot import:": [
         "Denna fil innehåller vissa data som vi inte kan importera:"
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } kontakt krypterad och tillagd i din kontaktlista",
-        "${ totalImported }/${ totalToImport } kontakter krypterade och tillagda i din kontaktlista"
-      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Ett fel uppstod när din kontakt skulle krypteras och läggas till. Ingen kontakt kunde importeras."
       ],
@@ -3332,12 +3203,6 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Kontakt ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } kontakt",
-        "${ totalContacts } kontakter"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3509,10 +3374,6 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } av ${ totalContacts } kontakter kommer inte att importeras. Klicka för detaljer"
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded } av ${ totalEvents } händelse kommer inte att importeras. Expandera för detaljer.",
-        "${ totalEventsDiscarded } av ${ totalEvents } händelser kommer inte att importeras. Expandera för detaljer."
-      ],
       "No contact can be imported. Click for details": [
         "Ingen kontakt kan importeras. Klicka för detaljer"
       ],
@@ -3524,92 +3385,20 @@
       ]
     },
     "Info": {
-      "${ addressCount } email address": [
-        "${ addressCount } e-postadress",
-        "${ addressCount } e-postadresser"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse till ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi innebär att ingen kan få åtkomst till dina lösenord - inte ens vi."
       ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } ny kalender",
-        "${ calendarsToBeCreatedCount } nya kalendrar"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } sammanslagen kalender",
-        "${ calendarsToBeMergedCount } sammanslagna kalendrar"
-      ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } kontakt innehåller flera e-postadresser.",
-        "${ contactCount } kontakter innehåller flera e-postadresser."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } medlem",
-        "${ contactEmailsLength } medlemmar"
-      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } innehåller flera e-postadresser."
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } kontakt hittades",
-        "${ contactsCount } kontakter hittades"
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } kontakt",
-        "${ contactsLength } kontakter"
       ],
       "${ firstItems } and ${ lastItem }": [
         "${ firstItems } och ${ lastItem }"
       ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } grupp hittades",
-        "${ groupCounts } grupper hittades"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } mapp hittades",
-        "${ providerFoldersNumLocalized } mappar hittades"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "${ providerFoldersNumLocalized } etikett hittades i Gmail",
-        "${ providerFoldersNumLocalized } etiketter hittades i Gmail"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalender",
-        "${ selectedCalendarsTotal } av ${ providerCalendars.length } kalendrar"
-      ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength }/${ contactsLength } kontakt vald",
-        "${ selectedContactsLength }/${ contactsLength } kontakter valda"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } mapp vald",
-        "${ selectedFoldersCount } mappar valda"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } etikett vald",
-        "${ selectedFoldersCount } etiketter valda"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } mapp vald",
-        "${ selectedFoldersCountLocalized } mappar valda"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } etikett vald",
-        "${ selectedFoldersCountLocalized } etiketter valda"
-      ],
       "${ storage } storage": [
         "${ storage } lagringsutrymme"
-      ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } kontakt uppdaterades.",
-        "${ updated } kontakter uppdaterades."
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } medlem)",
-        "(${ memberCount } medlemmar)"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Ett avbokningsmeddelande kommer att skickas till borttagna deltagare."
@@ -3634,18 +3423,6 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Adressverifiering med betrodda nycklar är aktiverad för denna adress. För att kunna skicka till denna adress, lita först på offentliga nycklar som kan användas för att skicka."
-      ],
-      "All (${ totalFoldersCount } folder)": [
-        "Alla (${ totalFoldersCount } mapp)",
-        "Alla (${ totalFoldersCount } mappar)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Alla (${ totalFoldersCount } etikett)",
-        "Alla (${ totalFoldersCount } etiketter)"
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Alla dina kontakter kommer att importeras, upp till en gräns på ${ MAX_CONTACTS_PER_USER }",
-        "Alla dina kontakter kommer att importeras, upp till en gräns på ${ MAX_CONTACTS_PER_USER }"
       ],
       "An invitation will be sent to added participants.": [
         "En inbjudan kommer att skickas till tillagda deltagare."
@@ -3673,9 +3450,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Innan du begär en ny verifieringskod, kontrollera din skräppostmapp och kontrollera att ${ strong } är rätt adress."
-      ],
-      "Billing cycle: ${ text }": [
-        "Faktureringsperiod: ${ text }"
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Genom att dela all information om händelser i denna kalender, accepterar du att ge ${ BRAND_NAME } åtkomst till denna kalenders krypterade information."
@@ -3721,10 +3495,6 @@
       ],
       "Country code": [
         "Landskod"
-      ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Skapa ${ calendarsToBeCreatedCount } ny kalender",
-        "Skapa ${ calendarsToBeCreatedCount } nya kalendrar"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Skapa en etikett för de importerade meddelandena, ett tidsintervall för denna import och de mappar du vill importera."
@@ -3795,10 +3565,6 @@
       "Enter your own password (as organization admin).": [
         "Ange ditt eget lösenord (som organisationsadministratör)."
       ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Beräknad återstående tid: ${ estimatedMinutes } minut",
-        "Beräknad återstående tid: ${ estimatedMinutes } minuter"
-      ],
       "Estimated time remaining: Less than a minute": [
         "Beräknad återstående tid: Mindre än en minut"
       ],
@@ -3834,10 +3600,6 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Om du inte hittar e-postmeddelandet i din inkorg, kontrollera din skräppostmapp."
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Importera ${ calendarCount } av ${ totalCalendarsCount } kalender",
-        "Importera ${ calendarCount } av ${ totalCalendarsCount } kalendrar"
       ],
       "Import from": [
         "Importera från"
@@ -3976,10 +3738,6 @@
       ],
       "Please select the folders you would like to import:": [
         "Välj mapparna du vill importera:"
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Välj vilken e-postadress eller adresser som ska läggas till i ${ groupCount } grupp.",
-        "Välj vilken e-postadress eller adresser som ska läggas till i ${ groupCount } grupper."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Välj vilken e-postadress eller adresser som ska läggas till i ${ groupName }."
@@ -4345,10 +4103,6 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
-      "At most ${ maxAttendees } participant is allowed per invitation": [
-        "Högst ${ maxAttendees } deltagare tillåts per inbjudan",
-        "Högst ${ maxAttendees } deltagare tillåts per inbjudan"
-      ],
       "Creating invites in a shared calendar is not allowed": [
         "Det är inte tillåtet att skapa inbjudningar i en delad kalender"
       ]
@@ -4644,10 +4398,6 @@
       "Organizer": [
         "Organisatör"
       ],
-      "participant": [
-        "deltagare",
-        "deltagare"
-      ],
       "Participants": [
         "Deltagare"
       ],
@@ -4839,10 +4589,6 @@
       "Almost there": [
         "Nästan framme"
       ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Antal skapad kalender:  ${ createdCalendarCount } av ${ calendarsToBeCreated }",
-        "Antal skapade kalendrar: ${ createdCalendarCount } av ${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Ansluter till din e-postleverantör"
       ],
@@ -4857,24 +4603,6 @@
       ],
       "Your import is starting": [
         "Din import har startat"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Importera alla meddelanden från ${ itemsToImportCount } mapp och märk dem som",
-        "Importera alla meddelanden från ${ itemsToImportCount } mappar och märk dem som"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Importera alla meddelanden från ${ itemsToImportCount } etikett och märk dem som",
-        "Importera alla meddelanden från ${ itemsToImportCount } etiketter och märk dem som"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } mapp och märk dem som",
-        "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } mappar och märk dem som"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } etikett och märk dem som",
-        "Importera alla meddelanden från ${ selectedItemsToImportCount } av ${ itemsToImportCount } etiketter och märk dem som"
       ]
     },
     "Message": {
@@ -4969,18 +4697,6 @@
       ]
     },
     "Monthly recurring event, frequency": {
-      "Every ${ interval } month ${ onDayString }": [
-        "Varje månad ${ onDayString }",
-        "Var ${ interval }:e månad ${ onDayString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
-        "Varje månad ${ onDayString }, ${ timesString }",
-        "Var ${ interval }:e månad ${ onDayString }, ${ timesString }"
-      ],
-      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
-        "Varje månad ${ onDayString }, ${ untilString }",
-        "Var ${ interval }:e månad ${ onDayString }, ${ untilString }"
-      ],
       "Monthly ${ onDayString }": [
         "Månadsvis ${ onDayString }"
       ],
@@ -5189,12 +4905,6 @@
         "Kalender uppdaterad"
       ]
     },
-    "Notification in share calendar modal": {
-      "Member added": [
-        "Medlem tillagd",
-        "Medlemmar tillagda"
-      ]
-    },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
         "Kalenderinbjudan avvisades"
@@ -5225,91 +4935,11 @@
       "at time of event": [
         "vid tidpunkten för händelsen"
       ],
-      "day before": [
-        "dag innan",
-        "dagar innan"
-      ],
-      "hour before": [
-        "timme innan",
-        "timmar innan"
-      ],
-      "minute before": [
-        "minut innan",
-        "minuter innan"
-      ],
       "on the same day": [
         "på samma dag"
-      ],
-      "week before": [
-        "vecka innan",
-        "veckor innan"
       ]
     },
     "Notifications": {
-      "${ value } day after": [
-        "${ value } dag efter",
-        "${ value } dagar efter"
-      ],
-      "${ value } day after at ${ time }": [
-        "${ value } dag efter kl. ${ time }",
-        "${ value } dagar efter kl. ${ time }"
-      ],
-      "${ value } day before": [
-        "${ value } dag innan",
-        "${ value } dagar innan"
-      ],
-      "${ value } day before at ${ time }": [
-        "${ value } dag före kl. ${ time }",
-        "${ value } dagar före kl. ${ time }"
-      ],
-      "${ value } hour after": [
-        "${ value } timme efter",
-        "${ value } timmar efter"
-      ],
-      "${ value } hour after at ${ time }": [
-        "${ value } timme efter kl. ${ time }",
-        "${ value } timmar efter kl. ${ time }"
-      ],
-      "${ value } hour before": [
-        "${ value } timme innan",
-        "${ value } timmar innan"
-      ],
-      "${ value } hour before at ${ time }": [
-        "${ value } timme före kl. ${ time }",
-        "${ value } timmar före kl. ${ time }"
-      ],
-      "${ value } minute after": [
-        "${ value } minut efter",
-        "${ value } minuter efter"
-      ],
-      "${ value } minute after at ${ time }": [
-        "${ value } minut efter kl. ${ time }",
-        "${ value } minuter efter kl. ${ time }"
-      ],
-      "${ value } minute before": [
-        "${ value } minut innan",
-        "${ value } minuter innan"
-      ],
-      "${ value } minute before at ${ time }": [
-        "${ value } minut före kl. ${ time }",
-        "${ value } minuter före kl. ${ time }"
-      ],
-      "${ value } week after": [
-        "${ value } vecka efter",
-        "${ value } veckor efter"
-      ],
-      "${ value } week after at ${ time }": [
-        "${ value } vecka efter kl. ${ time }",
-        "${ value } veckor efter kl. ${ time }"
-      ],
-      "${ value } week before": [
-        "${ value } vecka innan",
-        "${ value } veckor innan"
-      ],
-      "${ value } week before at ${ time }": [
-        "${ value } vecka före kl. ${ time }",
-        "${ value } veckor före kl. ${ time }"
-      ],
       "At time of event": [
         "Vid tidpunkten för händelsen"
       ],
@@ -5390,10 +5020,6 @@
       "Custom": [
         "Anpassad"
       ],
-      "Day": [
-        "Dag",
-        "Dagar"
-      ],
       "Does not repeat": [
         "Upprepas inte"
       ],
@@ -5412,10 +5038,6 @@
       "Ignore group": [
         "Ignorera grupp"
       ],
-      "Month": [
-        "Månad",
-        "Månader"
-      ],
       "No parent folder": [
         "Ingen överordnad mapp"
       ],
@@ -5424,14 +5046,6 @@
       ],
       "This event": [
         "Denna händelse"
-      ],
-      "Week": [
-        "Vecka",
-        "Veckor"
-      ],
-      "Year": [
-        "År",
-        "År"
       ]
     },
     "Option group label": {
@@ -5563,18 +5177,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length } av ${ countContacts } kontakt har exporterats.",
-        "${ contactsExported.length } av ${ countContacts } kontakter har exporterats."
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length } av ${ totalBeDeleted } kontakt har raderats.",
-        "${ model.deleted.length } av ${ totalBeDeleted }kontakter har raderats."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length } av ${ totalBeMerged } kontakt har slagits samman.",
-        "${ model.submitted.length } av ${ totalBeMerged } kontakter har slagits samman."
-      ],
       "No contacts exported.": [
         "Inga kontakter exporterade."
       ],
@@ -5660,32 +5262,8 @@
       ]
     },
     "session_recovery:available:info": {
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } dag",
-        "${ timeRemaining.inDays } dagar"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } timme",
-        "${ timeRemaining.inHours } timmar"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Begäran om lösenordsåterställning godkänd (${ user.Email }). Du har ${ timeRemaining.inDays } dag för att återställa ditt lösenord.",
-        "Begäran om lösenordsåterställning godkänd (${ user.Email }). Du har ${ timeRemaining.inDays } dagar för att återställa ditt lösenord."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Begäran om lösenordsåterställning godkänd (${ user.Email }). Du har ${ timeRemaining.inHours } timme för att återställa ditt lösenord.",
-        "Begäran om lösenordsåterställning godkänd (${ user.Email }). Du har ${ timeRemaining.inHours } timmar för att återställa ditt lösenord."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Gå till den inloggade enheten (i den session där begäran initierades) för att ändra ditt lösenord."
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "Denna tillåtelse löper ut om ${ timeRemaining.inDays } dag",
-        "Denna tillåtelse löper ut om ${ timeRemaining.inDays } dagar"
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Denna tillåtelse löper ut om ${ timeRemaining.inHours } timme",
-        "Denna tillåtelse löper ut om ${ timeRemaining.inHours } timmar"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Du kan nu ändra ditt lösenord för kontot ${ boldEmail } fritt i ${ boldDaysRemaining }."
@@ -5748,16 +5326,8 @@
       ]
     },
     "session_recovery:in_progress:info": {
-      "${ gracePeriodHoursRemaining } more hour": [
-        "${ gracePeriodHoursRemaining } timme till",
-        "${ gracePeriodHoursRemaining } timmar till"
-      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Om du inte bett om att få återställa ditt lösenord, avbryt denna begäran nu."
-      ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "Lösenordsåterställning begärd (${ user.Email }). Du kan ändra ditt lösenord inom ${ hoursRemaining } timme.",
-        "Lösenordsåterställning begärd (${ user.Email }). Du kan ändra ditt lösenord inom ${ hoursRemaining } timmar."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "För att säkerställa att det verkligen är du som försöker återställa ditt lösenord väntar vi 72 timmar innan vi godkänner begäran. Du kan ändra ditt lösenord i ${ boldTimeLeft }. ${ viewRequest }"
@@ -5785,10 +5355,6 @@
       ]
     },
     "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } timme",
-        "${ gracePeriodHoursRemaining } timmar"
-      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } är nu tillgängligt."
       ],
@@ -5820,12 +5386,6 @@
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
         "För att bjuda in användare som inte använder ${ BRAND_NAME }, dela din kalender med en länk."
-      ]
-    },
-    "Share calendar max shares reached error": {
-      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
-        "Du har överskridit det maximala antalet av ${ MAX_CALENDAR_MEMBERS } medlem per kalender",
-        "Du har överskridit det maximala antalet ${ MAX_CALENDAR_MEMBERS } medlemmar per kalender"
       ]
     },
     "Share calendar modal description": {
@@ -5885,30 +5445,6 @@
         "Skaffa Unlimited"
       ]
     },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } dag",
-        "${ days } dagar"
-      ],
-      "${ hours } hour": [
-        "${ hours } timme",
-        "${ hours } timmar"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minuter"
-      ],
-      "${ seconds } second": [
-        "${ seconds } sekund",
-        "${ seconds } sekunder"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "En ${ n } månad GRATIS",
-        "${ n } månader GRATIS"
-      ]
-    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 användare"
@@ -5958,23 +5494,6 @@
         "Denna prenumeration kommer automatiskt att förnyas vartannat år med samma taxa tills den avbryts."
       ]
     },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Livstidserbjudande"
-      ],
-      "Limited time only": [
-        "Endast under begränsad tid"
-      ],
-      "Most popular": [
-        "Mest populär"
-      ],
-      "Offer ends soon": [
-        "Erbjudande upphör snart"
-      ],
-      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
-        "Rabatten fortsätter att gälla vid förnyelse tills prenumerationen avbryts eller ändras"
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Gå till prenumerationspaket"
@@ -5984,10 +5503,6 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } månad",
-        "${ n } månader"
-      ],
       "/ month": [
         "/månad"
       ],
@@ -6053,20 +5568,8 @@
       "Cyber Week Sale": [
         "Cyber Week-rea"
       ],
-      "End of year offer": [
-        "Nyårserbjudande"
-      ],
       "End of Year Sale": [
         "Nyårsrea"
-      ],
-      "Get our premium bundle and save more": [
-        "Skaffa vårt premiumpaket och spara mer"
-      ],
-      "Our discontinued Visionary plan is back for a limited time only": [
-        "Vårt avvecklade Visionary-paket är tillbaka endast under en begränsad tid"
-      ],
-      "Save more with 2 years of ${ planName }": [
-        "Spara mer med 2 år med ${ planName }"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Uppgradera och spara mer med 2 års ${ planName }"
@@ -6143,10 +5646,6 @@
       ]
     },
     "Success": {
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } kontakt ser identisk ut.",
-        "${ countMergeableContacts } kontakter ser identiska ut."
-      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Ett e-postmeddelande att händelse ställts in kommer att skickas till borttagna mottagare för alla händelser i denna serie."
       ],
@@ -6200,14 +5699,6 @@
       ],
       "Code sent to ${ methodTo }": [
         "Kod skickad till ${ methodTo }"
-      ],
-      "Contact deleted": [
-        "Kontakt borttagen",
-        "Kontakter borttagna"
-      ],
-      "Contact group deleted": [
-        "Kontaktgrupp borttagen",
-        "Kontaktgrupper borttagna"
       ],
       "Contact saved": [
         "Kontakt sparad"
@@ -6293,14 +5784,6 @@
         "Feedback skickad"
       ]
     },
-    "summer2023: Billing cycle option": {
-      "1 year": [
-        "1 år"
-      ],
-      "2 years": [
-        "2 år"
-      ]
-    },
     "summer2023: Deal details": {
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
         "Premium ${ DRIVE_SHORT_APP_NAME }"
@@ -6321,27 +5804,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Säkra dina filer med krypterad molnlagring. Inkluderar versionshistorik, krypterad fildelning och mer."
-      ]
-    },
-    "summer2023:Footer": {
-      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
-        "*Din prenumeration kommer förnyas automatiskt till det rabatterade standardpriset i slutet av din faktureringsperiod."
-      ],
-      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
-        "Rabatterna baseras på standardpriset per månad. Detta erbjudande är endast tillgängligt för förstagångsprenumeranter."
-      ]
-    },
-    "summer2023:Info": {
-      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
-        "Under en begränsad tid får du det bästa ${ BRAND_NAME } har att erbjuda till en exklusiv rabatt."
-      ],
-      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
-        "Vi firar nioårsjubileet av vår crowdfunding!"
-      ]
-    },
-    "summer2023:Offer title": {
-      "${ BRAND_NAME } Anniversary Sale": [
-        "${ BRAND_NAME } Jubileumsrea"
       ]
     },
     "Table header": {
@@ -6402,44 +5864,12 @@
         "vCard-fält"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } timme",
-        "${ hours } timmar"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 t",
-        "${ hoursInt }.5 t"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } timme",
-        "${ hours } timmar"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 timme",
-        "${ hoursInt }.5 timmar"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minut",
-        "${ minutes } minuter"
-      ]
-    },
     "Timezone search placeholder": {
       "Search time zones": [
         "Sök tidszoner"
       ]
     },
     "Title": {
-      "${ emailsCount } email address": [
-        "${ emailsCount } e-postadress",
-        "${ emailsCount } e-postadresser"
-      ],
       "Account suspended": [
         "Konto avstängt"
       ],
@@ -6461,10 +5891,6 @@
       "Add participants": [
         "Lägg till deltagare"
       ],
-      "Add to ${ groupCount } group": [
-        "Lägg till i ${ groupCount } grupp",
-        "Lägg till i ${ groupCount } grupper"
-      ],
       "Add to ${ groupName }": [
         "Lägg till i ${ groupName }"
       ],
@@ -6473,9 +5899,6 @@
       ],
       "All settings": [
         "Alla inställningar"
-      ],
-      "Billing cycle": [
-        "Faktureringscykel"
       ],
       "Birthday": [
         "Födelsedag"
@@ -6540,14 +5963,6 @@
       "Day theme": [
         "Dags-tema"
       ],
-      "Delete ${ count } contact": [
-        "Ta bort ${ count } kontakt",
-        "Ta bort ${ count } kontakter"
-      ],
-      "Delete ${ count } contact group": [
-        "Ta bort ${ count } kontaktgrupp",
-        "Ta bort ${ count } kontaktgrupper"
-      ],
       "Delete ${ Name }": [
         "Ta bort ${ Name }"
       ],
@@ -6610,10 +6025,6 @@
       ],
       "Human verification": [
         "Mänsklig verifiering"
-      ],
-      "Import as simple event?": [
-        "Importera som en enkel händelse?",
-        "Importera som enkla händelser?"
       ],
       "Import contacts": [
         "Importera kontakter"
@@ -6909,16 +6320,6 @@
         "Delad end-to-end-krypterad med verifierad kontakt"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Lösenordet måste innehålla minst ${ length } tecken",
-        "Lösenordet måste innehålla minst ${ length } tecken"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Prova ett kortare användarnamn (max ${ n } antal tecken)",
-        "Prova ett kortare användarnamn (max ${ n } antal tecken)"
-      ]
-    },
     "Video control": {
       "Click to replay the video": [
         "Klicka för att spela video igen"
@@ -6941,10 +6342,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } kommer att överföra så mycket data som möjligt och börjar med dina senaste meddelanden."
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Är du säker på att du vill ta bort ${ count } kontakt?",
-        "Är du säker på att du vill ta bort ${ count } kontakter?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Är du säker på att du vill ta bort dessa kontaktgrupper permanent?"
@@ -7013,114 +6410,6 @@
       ]
     },
     "Weekly recurring event, frequency": {
-      "Every ${ interval } week on ${ multipleDaysString }": [
-        "Varje vecka på ${ multipleDaysString }",
-        "Var ${ interval }:e vecka på ${ multipleDaysString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
-        "Varje vecka på ${ multipleDaysString }, ${ timesString }",
-        "Var ${ interval }:e vecka på ${ multipleDaysString }, ${ timesString }"
-      ],
-      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
-        "Varje vecka på ${ multipleDaysString }, ${ untilString }",
-        "Var ${ interval }:e vecka på ${ multipleDaysString }, ${ untilString }"
-      ],
-      "Every ${ interval } week on all days": [
-        "Varje vecka alla dagar",
-        "Var ${ interval }:e vecka alla dagar"
-      ],
-      "Every ${ interval } week on all days, ${ timesString }": [
-        "Varje vecka alla dagar, ${ timesString }",
-        "Var ${ interval }:e vecka alla dagar, ${ timesString }"
-      ],
-      "Every ${ interval } week on all days, ${ untilString }": [
-        "Varje vecka alla dagar, ${ untilString }",
-        "Var ${ interval }:e vecka alla dagar, ${ untilString }"
-      ],
-      "Every ${ interval } week on Friday": [
-        "Varje vecka på fredag",
-        "Var ${ interval }:e vecka på fredag"
-      ],
-      "Every ${ interval } week on Friday, ${ timesString }": [
-        "Varje vecka på fredag, ${ timesString }",
-        "Var ${ interval }:e vecka på fredag ${ timesString }"
-      ],
-      "Every ${ interval } week on Friday, ${ untilString }": [
-        "Varje vecka på fredag, ${ untilString }",
-        "Var ${ interval }:e vecka på fredag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Monday": [
-        "Varje vecka på måndag",
-        "Var ${ interval }:e vecka på måndag"
-      ],
-      "Every ${ interval } week on Monday, ${ timesString }": [
-        "Varje vecka på måndag, ${ timesString }",
-        "Var ${ interval }:e vecka på måndag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Monday, ${ untilString }": [
-        "Varje ${ interval } vecka på måndag, ${ untilString }",
-        "Var ${ interval }:e vecka på måndag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Saturday": [
-        "Varje vecka på lördag",
-        "Var ${ interval }:e vecka på lördag"
-      ],
-      "Every ${ interval } week on Saturday, ${ timesString }": [
-        "Varje vecka på lördag, ${ timesString }",
-        "Var ${ interval }:e vecka på lördag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Saturday, ${ untilString }": [
-        "Varje vecka på lördag, ${ untilString }",
-        "Var ${ interval }:e vecka på lördag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Sunday": [
-        "Varje vecka på söndag",
-        "Var ${ interval }:e vecka på söndag"
-      ],
-      "Every ${ interval } week on Sunday, ${ timesString }": [
-        "Varje vecka på söndag, ${ timesString }",
-        "Var ${ interval }:e vecka på söndag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Sunday, ${ untilString }": [
-        "Var ${ interval }:e vecka på söndag, ${ untilString }",
-        "Var ${ interval }:e vecka på söndag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Thursday": [
-        "Varje vecka på torsdag",
-        "Var ${ interval }:e vecka på torsdag"
-      ],
-      "Every ${ interval } week on Thursday, ${ timesString }": [
-        "Varje vecka på torsdag, ${ timesString }",
-        "Var ${ interval }:e vecka på torsdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Thursday, ${ untilString }": [
-        "Varje vecka på torsdag, ${ untilString }",
-        "Var ${ interval }:e vecka på torsdag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Tuesday": [
-        "Varje vecka på tisdag",
-        "Var ${ interval }:e vecka på tisdag"
-      ],
-      "Every ${ interval } week on Tuesday, ${ timesString }": [
-        "Varje vecka på tisdag, ${ timesString }",
-        "Var ${ interval }:e vecka på tisdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Tuesday, ${ untilString }": [
-        "Varje vecka på tisdag, ${ untilString }",
-        "Var ${ interval }:e vecka på tisdag, ${ untilString }"
-      ],
-      "Every ${ interval } week on Wednesday": [
-        "Varje vecka på onsdag",
-        "Var ${ interval }:e vecka på onsdag"
-      ],
-      "Every ${ interval } week on Wednesday, ${ timesString }": [
-        "Varje vecka på onsdag, ${ timesString }",
-        "Var ${ interval }:e vecka på onsdag, ${ timesString }"
-      ],
-      "Every ${ interval } week on Wednesday, ${ untilString }": [
-        "Varje vecka på onsdag, ${ untilString }",
-        "Var ${ interval }:e vecka på onsdag, ${ untilString }"
-      ],
       "Weekly on ${ multipleDaysString }": [
         "Varje vecka på ${ multipleDaysString }"
       ],
@@ -7227,18 +6516,6 @@
       ]
     },
     "Yearly recurring event, frequency": {
-      "Every ${ interval } year": [
-        "Varje år",
-        "Vart ${ interval }:e år"
-      ],
-      "Every ${ interval } year, ${ timesString }": [
-        "Varje år, ${ timesString }",
-        "Vart ${ interval }:e år, ${ timesString }"
-      ],
-      "Every ${ interval } year, ${ untilString }": [
-        "Varje år, ${ untilString }",
-        "Vart ${ interval }:e år, ${ untilString }"
-      ],
       "Yearly": [
         "Årligen"
       ],
