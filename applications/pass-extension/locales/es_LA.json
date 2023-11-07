@@ -8,6 +8,9 @@
       "Add": [
         "Añadir"
       ],
+      "Add current URL": [
+        "Añadir la URL actual"
+      ],
       "Add domain to pause list": [
         "Añadir dominio a la lista de pausa"
       ],
@@ -368,7 +371,7 @@
     },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "Ahorra con inteligencia. Contrata Pass Plus durante un año por solo ${ relativePrice } al mes."
+        "Ahorro inteligente. Obtenga Pass Plus durante un año por solo ${ relativePrice } al mes."
       ]
     },
     "bf2023: Label": {
@@ -454,10 +457,6 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Error al eliminar la bóveda \"${ payload.content.name }\""
       ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "Se detectó ${ errors.length } fila CSV dañada.",
-        "Se detectaron ${ errors.length } filas CSV dañadas."
-      ],
       "Editing item failed": [
         "Error al editar el elemento"
       ],
@@ -499,6 +498,9 @@
       ],
       "Invalid password manager": [
         "Contraseña del gestor inválida"
+      ],
+      "Invalid URL": [
+        "La URL no es válida."
       ],
       "Invitation could not be accepted": [
         "No se pudo aceptar la invitación"
@@ -557,6 +559,9 @@
       "The file you are trying to import is empty": [
         "El archivo que intenta importar está vacío"
       ],
+      "The URL is in the list": [
+        "La URL está en la lista."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Demasiados intentos erróneos. Inicie sesión de nuevo."
       ],
@@ -609,10 +614,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "byte",
-        "bytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -626,28 +627,6 @@
         "TB"
       ]
     },
-    "file size format, long": {
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
-      ],
-      "Megabyte": [
-        "Megabyte",
-        "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabytes"
-      ]
-    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         "Mejore a un plan de pago para crear varias bóvedas."
@@ -658,36 +637,20 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualización de \"${ payload.item.data.metadata.name }\" descartada"
       ],
-      "${ count } item": [
-        "${ count } elemento",
-        "${ count } elementos"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } elemento",
-        "${ itemCount } elementos"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } miembro",
-        "${ memberCount } miembros"
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
+        "${ PASS_APP_NAME } mostrará el favicono del elemento a través del proxy de imagen anónimo de ${ BRAND_NAME }."
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } solo importará inicios de sesión, notas y tarjetas de crédito."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } vez",
-        "${ revisionNumber } veces"
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME } le avisará de guardar o actualizar las credenciales."
       ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } elemento",
-        "${ totalImportedItems } elementos"
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME } sugerirá crear un alias de correo en formularios de registro."
       ],
-      "${ totalItems } item": [
-        "${ totalItems } elemento",
-        "${ totalItems } elementos"
-      ],
-      "${ trialDaysLeft } day left": [
-        "${ trialDaysLeft } día restante",
-        "${ trialDaysLeft } días restantes"
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } sugerirá crear contraseñas fuertes en formularios de registro."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Pruebe gratis las funciones premium durante 7 días, solo durante su primera semana en ${ BRAND_NAME }."
@@ -812,10 +775,6 @@
       "Import in progress:": [
         "Importación en progreso:"
       ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total } elemento importado",
-        "${ payload.total } elementos importados"
-      ],
       "Imported on ${ date }": [
         "Importado el ${ date }"
       ],
@@ -842,10 +801,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Parece que ya había iniciado sesión en ${ PASS_APP_NAME }. Si quiere iniciar sesión con una cuenta diferente, cierre previamente la sesión actual."
-      ],
-      "item": [
-        "elemento",
-        "elementos"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Elemento \"${ payload.item.data.metadata.name }\" creado"
@@ -991,9 +946,8 @@
       "Thank you, the problem has been reported": [
         "Gracias, el problema ha sido reportado"
       ],
-      "The following item could not be imported :": [
-        "El siguiente elemento no pudo importarse:",
-        "Los siguientes ${ result.ignored.length } elementos no pudieron importarse:"
+      "The autofill dropdown will automatically open on field focus.": [
+        "El menú desplegable de autocompletar se abrirá automáticamente en el campo enfocado."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "El texto que intenta pegar es más largo que el máximo permitido de ${ maxLength } caracteres."
@@ -1061,12 +1015,11 @@
       "You are about to create:": [
         "Está por crear:"
       ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Puede rellenar automáticamente sus credenciales al pulsar el icono de ${ PASS_APP_NAME }."
+      ],
       "You cannot change the mailboxes for this alias.": [
         "No puede cambiar los buzones para este alias."
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Tiene ${ daysRemaining } día restante para probar esta y otras funciones premium.",
-        "Tiene ${ daysRemaining } días restantes para probar esta y otras funciones premium."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Ha superado el número de bóvedas incluidas en su suscripción. Los elementos solo se pueden mover a sus primeras dos bóvedas. Para mover elementos entre todas las bóvedas, mejore su suscripción."
@@ -1100,14 +1053,6 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } caracter",
-        "${ passwordOptions.options.length } caracteres"
-      ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } palabra",
-        "${ passwordOptions.options.wordCount } palabras"
-      ],
       "1 hour": [
         "1 hora"
       ],
@@ -1620,12 +1565,6 @@
         "Escriba su nota"
       ]
     },
-    "Success": {
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Las bóvedas no pueden contener más de ${ vault.targetMaxMembers } usuario.",
-        "Las bóvedas no pueden contener más de ${ vault.targetMaxMembers } usuarios."
-      ]
-    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Ajustes de ${ PASS_APP_NAME }"
@@ -1749,6 +1688,9 @@
       ]
     },
     "Validation": {
+      "Duplicated URL": [
+        "La URL es duplicada."
+      ],
       "Field name is required": [
         "El nombre del campo es obligatorio."
       ],
@@ -1761,8 +1703,14 @@
       "Url already exists": [
         "La URL ya existe"
       ],
+      "URL cannot be empty": [
+        "La URL no puede estar vacía."
+      ],
       "Url is invalid": [
         "URL inválida"
+      ],
+      "URL is invalid": [
+        "La URL no es válida."
       ]
     },
     "Warning": {
@@ -1792,10 +1740,6 @@
       ],
       "Invalid alias prefix": [
         "Prefijo de alias inválido"
-      ],
-      "Maximum length is ${ maxLength } character": [
-        "El número máximo de caracteres es ${ maxLength }.",
-        "El número máximo de caracteres es ${ maxLength }."
       ],
       "Missing alias prefix": [
         "Falta el prefijo de alias"

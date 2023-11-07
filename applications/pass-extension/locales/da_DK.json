@@ -8,6 +8,9 @@
       "Add": [
         "Tilføj"
       ],
+      "Add current URL": [
+        "Tilføj nuværende URL"
+      ],
       "Add domain to pause list": [
         "Tilføj domæne til pauseliste"
       ],
@@ -160,6 +163,9 @@
       ],
       "Generate password": [
         "Generér adgangskode"
+      ],
+      "Generated passwords": [
+        "Genererede adgangskoder"
       ],
       "Get mobile apps": [
         "Hent mobilapps"
@@ -363,6 +369,21 @@
         "Er din adgangskodeadministrator her ikke? Anmod om den."
       ]
     },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Spar smart. Få et år med Pass Plus for kun ${ relativePrice } pr. måned."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Gør brug af tilbuddet"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Black Friday-tilbud"
+      ]
+    },
     "Button": {
       "More info": [
         "Yderligere info"
@@ -436,10 +457,6 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Sletning af boksen \"${ payload.content.name }\" mislykkedes"
       ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "Opdagede ${ errors.length } beskadiget CSV-række",
-        "Opdagede ${ errors.length } beskadigede CSV-rækker"
-      ],
       "Editing item failed": [
         "Redigering af element mislykkedes"
       ],
@@ -481,6 +498,9 @@
       ],
       "Invalid password manager": [
         "Ugyldig adgangskodeadministrator"
+      ],
+      "Invalid URL": [
+        "Ugyldig URL"
       ],
       "Invitation could not be accepted": [
         "Invitation kunne ikke accepteres"
@@ -539,6 +559,9 @@
       "The file you are trying to import is empty": [
         "Filen du prøver at importere er tom"
       ],
+      "The URL is in the list": [
+        "URL'en er i listen"
+      ],
       "Too many failed attempts. Please sign in again.": [
         "For mange mislykkede forsøg. Log venligst ind igen."
       ],
@@ -591,10 +614,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "byte",
-        "bytes"
-      ],
       "GB": [
         "GB"
       ],
@@ -608,28 +627,6 @@
         "TB"
       ]
     },
-    "file size format, long": {
-      "Byte": [
-        "Byte",
-        "Bytes"
-      ],
-      "Gigabyte": [
-        "Gigabyte",
-        "Gigabytes"
-      ],
-      "Kilobyte": [
-        "Kilobyte",
-        "Kilobytes"
-      ],
-      "Megabyte": [
-        "Megabyte",
-        "Megabytes"
-      ],
-      "Terabyte": [
-        "Terabyte",
-        "Terabyte"
-      ]
-    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         "Opgradér til et betalt abonnement for at oprette flere bokse."
@@ -640,33 +637,20 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" opdatering blev afvist"
       ],
-      "${ count } item": [
-        "${ count } element",
-        "${ count } elementer"
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
+        "${ PASS_APP_NAME } vil vise elementets favicon via ${ BRAND_NAME } anonymiseret billedproxy."
       ],
-      "${ itemCount } item": [
-        "${ itemCount } element",
-        "${ itemCount } elementer"
+      "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
+        "${ PASS_APP_NAME } vil kun importere logins, noter og betalingskort."
       ],
-      "${ memberCount } member": [
-        "${ memberCount } medlem",
-        "${ memberCount } medlemmer"
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME } vil bede dig om at gemme eller opdatere legitimationsoplysninger."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } gang",
-        "${ revisionNumber } gange"
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME } vil foreslå dig at oprette et e-mail-alias på tilmeldingsformularer."
       ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } element",
-        "${ totalImportedItems } elementer"
-      ],
-      "${ totalItems } item": [
-        "${ totalItems } element",
-        "${ totalItems } elementer"
-      ],
-      "${ trialDaysLeft } day left": [
-        "${ trialDaysLeft } dag tilbage",
-        "${ trialDaysLeft } dage tilbage"
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } vil foreslå dig at oprette stærke adgangskoder på tilmeldingsformularer."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dage til at prøve premium-funktioner gratis. Kun i din første uge med ${ BRAND_NAME }."
@@ -676,6 +660,9 @@
       ],
       "Access successfully confirmed": [
         "Adgang bekræftet"
+      ],
+      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
+        "Adgang til ${ PASS_APP_NAME } vil kræve en pinkode for at låse din session op."
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Tilgå dine adgangskoder på farten med vores mobil-apps."
@@ -734,6 +721,9 @@
       "Deleted items will be moved here first": [
         "Slettede elementer vil blive flytte hertil først"
       ],
+      "Deleting \"${ payload.content.name }\"": [
+        "Sletter \"${ payload.content.name }\""
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Opdag ${ PASS_APP_NAME } YouTube-video"
       ],
@@ -785,10 +775,6 @@
       "Import in progress:": [
         "Import i gang:"
       ],
-      "Imported ${ payload.total } item": [
-        "Importerede ${ payload.total } element",
-        "Importerede ${ payload.total } elementer"
-      ],
       "Imported on ${ date }": [
         "Importeret ${ date }"
       ],
@@ -815,10 +801,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Det ser ud til, at du allerede er logget ind på ${ PASS_APP_NAME }. Hvis du prøver at logge ind med en anden konto, bedes du logge ud af udvidelsen først."
-      ],
-      "item": [
-        "element",
-        "elementer"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Elementet \"${ payload.item.data.metadata.name }\" blev oprettet"
@@ -907,6 +889,9 @@
       "Please consider leaving a review.": [
         "Skriv gerne en anmeldelse."
       ],
+      "Please enter your current PIN code to continue": [
+        "Indtast din nuværende pinkode for at fortsætte"
+      ],
       "Press Enter to copy": [
         "Tryk Enter for at kopiere"
       ],
@@ -961,9 +946,8 @@
       "Thank you, the problem has been reported": [
         "Tak, problemet er blevet rapporteret"
       ],
-      "The following item could not be imported :": [
-        "Det følgende element kunne ikke importeres :",
-        "De følgende ${ result.ignored.length } elementer kunne ikke importeres"
+      "The autofill dropdown will automatically open on field focus.": [
+        "Autogem-dropdown vil automatisk åbne, når feltet er i fokus."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Teksten du forsøger at indsætte er længere end den maksimalt tilladte længde på ${ maxLength } tegn."
@@ -1031,12 +1015,11 @@
       "You are about to create:": [
         "Du er ved at oprette:"
       ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Du kan hurtigt autoudfylde dine legitimationsoplysninger ved at klikke på ikonet for ${ PASS_APP_NAME }."
+      ],
       "You cannot change the mailboxes for this alias.": [
         "Du kan ikke ændre postkasserne for dette alias"
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Du har ${ daysRemaining } dag tilbage til at prøve disse og andre premium-funktioner.",
-        "Du har ${ daysRemaining } dage tilbage til at prøve disse og andre premium-funktioner."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Du har overskredet antallet af bokse, der er inkluderet i dit abonnement. Elementer kan kun flyttes til dine to første bokse. For at flytte elementer mellem alle bokse, skal du opgradere dit abonnement."
@@ -1070,14 +1053,6 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } tegn",
-        "${ passwordOptions.options.length } tegn"
-      ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } ord",
-        "${ passwordOptions.options.wordCount } ord"
-      ],
       "1 hour": [
         "1 time"
       ],
@@ -1399,6 +1374,9 @@
       "Set PIN code": [
         "Angiv pinkode"
       ],
+      "Settings": [
+        "Indstillinger"
+      ],
       "Show website favicons": [
         "Vis websteders favicon"
       ],
@@ -1587,12 +1565,6 @@
         "Skriv din note"
       ]
     },
-    "Success": {
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Bokse kan ikke indeholde mere end ${ vault.targetMaxMembers } bruger.",
-        "Bokse kan ikke indeholde mere end ${ vault.targetMaxMembers } brugere."
-      ]
-    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-indstillinger"
@@ -1617,6 +1589,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Glad for ${ PASS_APP_NAME }?"
+      ],
+      "Enter your PIN": [
+        "Indtast din pinkode"
       ],
       "Fill & copy password": [
         "Udfyld og kopiér adgangskode"
@@ -1713,6 +1688,9 @@
       ]
     },
     "Validation": {
+      "Duplicated URL": [
+        "Duplikeret URL"
+      ],
       "Field name is required": [
         "Feltet navn er obligatorisk"
       ],
@@ -1725,7 +1703,13 @@
       "Url already exists": [
         "URL eksisterer allerede"
       ],
+      "URL cannot be empty": [
+        "URL må ikke være tom"
+      ],
       "Url is invalid": [
+        "URL er ugyldig"
+      ],
+      "URL is invalid": [
         "URL er ugyldig"
       ]
     },
