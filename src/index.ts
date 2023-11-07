@@ -43,7 +43,6 @@ app.whenReady().then(() => {
 });
 
 app.on("before-quit", () => {
-    console.log("before-quit"); // TODO Remove once we are sure this is called
     saveWindowsPosition(true);
 });
 
