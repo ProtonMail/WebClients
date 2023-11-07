@@ -1,6 +1,7 @@
 import { render, waitFor } from '@testing-library/react';
 
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
 
 import Payment from './Payment';
 import getDefault from './getDefaultCard';
@@ -17,6 +18,16 @@ jest.mock('../../hooks/useApi', () => {
         default: () => api,
     };
 });
+
+const cardFieldStatus: CardFieldStatus = {
+    fullname: false,
+    number: false,
+    month: false,
+    year: false,
+    cvc: false,
+    zip: false,
+    country: false,
+};
 
 describe('Payment', () => {
     beforeEach(() => {
@@ -38,6 +49,7 @@ describe('Payment', () => {
                 onCard={() => {}}
                 paypal={{}}
                 paypalCredit={{}}
+                cardFieldStatus={cardFieldStatus}
             />
         );
     });
@@ -57,6 +69,7 @@ describe('Payment', () => {
                 onCard={() => {}}
                 paypal={{}}
                 paypalCredit={{}}
+                cardFieldStatus={cardFieldStatus}
             />
         );
 
@@ -80,6 +93,7 @@ describe('Payment', () => {
                 onCard={() => {}}
                 paypal={{}}
                 paypalCredit={{}}
+                cardFieldStatus={cardFieldStatus}
             />
         );
 
@@ -116,6 +130,7 @@ describe('Payment', () => {
                 onCard={() => {}}
                 paypal={{}}
                 paypalCredit={{}}
+                cardFieldStatus={cardFieldStatus}
             />
         );
 
@@ -152,6 +167,7 @@ describe('Payment', () => {
                 onCard={() => {}}
                 paypal={{}}
                 paypalCredit={{}}
+                cardFieldStatus={cardFieldStatus}
             />
         );
 
