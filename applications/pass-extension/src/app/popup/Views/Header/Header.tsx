@@ -7,6 +7,7 @@ import { useSpotlightEffect } from 'proton-pass-extension/lib/hooks/useSpotlight
 import { Header as HeaderComponent } from '@proton/components';
 import { SpotlightContent } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { useSpotlightContext } from '@proton/pass/components/Spotlight/SpotlightContext';
+import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import clsx from '@proton/utils/clsx';
 
 import { MenuDropdown } from './MenuDropdown';
@@ -26,7 +27,9 @@ export const Header: VFC = () => {
         <>
             <HeaderComponent className="border-bottom h-auto p-2">
                 <div className="flex flex-align-items-center gap-x-2 w-full">
-                    <MenuDropdown />
+                    <VaultActionsProvider>
+                        <MenuDropdown />
+                    </VaultActionsProvider>
                     <Searchbar disabled={!ready} value={search} handleValue={setSearch} />
                     <QuickActionsDropdown parsedUrl={context?.url} />
 

@@ -20,19 +20,10 @@ import { Submenu, type SubmenuLinkItem } from '@proton/pass/components/Menu/Subm
 import { VaultSubmenu } from '@proton/pass/components/Menu/Vault/VaultSubmenu';
 import { usePasswordContext } from '@proton/pass/components/PasswordGenerator/PasswordContext';
 import { VaultModal, type Props as VaultModalProps } from '@proton/pass/components/Vault/Vault.modal';
-import { VaultDeleteModal } from '@proton/pass/components/Vault/VaultDeleteModal';
+import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
-import { VaultMoveAllItemsConfirmation } from '@proton/pass/components/Vault/VaultMoveAllItemsConfirmation';
-import { VaultSelectModal, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect.modal';
-import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
-import {
-    emptyTrashIntent,
-    restoreTrashIntent,
-    shareLeaveIntent,
-    vaultDeleteIntent,
-    vaultMoveAllItemsIntent,
-} from '@proton/pass/store/actions';
+import { emptyTrashIntent, restoreTrashIntent, shareLeaveIntent } from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
 import {
     selectHasRegisteredLock,
@@ -40,7 +31,6 @@ import {
     selectPlanDisplayName,
     selectShare,
     selectUser,
-    selectWritableVaultsWithItemsCount,
 } from '@proton/pass/store/selectors';
 import type { MaybeNull, ShareType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -59,9 +49,7 @@ export const MenuDropdown: VFC = () => {
     const { inTrash, unselectItem } = useNavigationContext();
     const { shareId, setSearch, setShareId, setShareBeingDeleted } = useItemsFilteringContext();
 
-    const [moveItemsFromVault, setMoveItemsFromVault] = useState<MaybeNull<VaultShareItem>>(null);
-    const [moveItemsToShareId, setMoveItemsToShareId] = useState<MaybeNull<string>>(null);
-    const [deleteVault, setDeleteVault] = useState<MaybeNull<VaultShareItem>>(null);
+    const vaultActions = useVaultActions();
     const [vaultModalProps, setVaultModalProps] = useState<MaybeNull<VaultModalProps>>(null);
 
     const vault = useSelector(selectShare<ShareType.Vault>(shareId));
@@ -73,14 +61,9 @@ export const MenuDropdown: VFC = () => {
     const openSettings = useOpenSettingsTab();
     const dispatch = useDispatch();
     const expandPopup = useExpandPopup();
-    const { closeVaultSelect, openVaultSelect, modalState } = useVaultSelectModalHandles();
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const withClose = <P extends any[], R extends any>(cb: (...args: P) => R) => pipe(cb, tap(close));
-
-    const moveAllItems = useActionRequest({
-        action: vaultMoveAllItemsIntent,
-    });
 
     const handleVaultSelect = withClose((vaultShareId: MaybeNull<string>) => {
         unselectItem();
@@ -88,9 +71,9 @@ export const MenuDropdown: VFC = () => {
         setSearch('');
     });
 
-    const handleVaultDelete = (vault: VaultShareItem, destinationShareId: MaybeNull<string>) => {
+    const handleVaultDelete = (vault: VaultShareItem) => {
         handleVaultDeletionEffects(vault.shareId, { shareId, setShareBeingDeleted, setShareId });
-        dispatch(vaultDeleteIntent({ shareId: vault.shareId, content: vault.content, destinationShareId }));
+        vaultActions.delete(vault);
     };
 
     const handleVaultCreate = withClose(() =>
@@ -103,32 +86,11 @@ export const MenuDropdown: VFC = () => {
     const handleVaultEdit = (vault: VaultShareItem) =>
         setVaultModalProps({ open: true, payload: { type: 'edit', vault } });
 
-    const handleVaultMoveAllItems = (vault: VaultShareItem) => {
-        openVaultSelect(vault.shareId, selectWritableVaultsWithItemsCount);
-        setMoveItemsFromVault(vault);
-    };
-
-    const handleSelectDestinationVault = (destinationShareId: string) => {
-        setMoveItemsToShareId(destinationShareId);
-        closeVaultSelect();
-    };
-
     const handleVaultInvite = (vault: VaultShareItem) => inviteContext.createInvite({ vault });
     const handleVaultManage = withClose(({ shareId }: VaultShareItem) => inviteContext.manageAccess(shareId));
     const handleVaultLeave = useConfirm(({ shareId }: VaultShareItem) => dispatch(shareLeaveIntent({ shareId })));
     const handleTrashEmpty = useConfirm(() => dispatch(emptyTrashIntent()));
     const handleTrashRestore = () => dispatch(restoreTrashIntent());
-
-    const handleVaultMoveAllItemsConfirm = () => {
-        if (!(moveItemsFromVault && moveItemsToShareId)) return;
-        moveAllItems.dispatch({
-            shareId: moveItemsFromVault.shareId,
-            vaultName: moveItemsFromVault.content.name,
-            destinationShareId: moveItemsToShareId,
-        });
-        setMoveItemsFromVault(null);
-        setMoveItemsToShareId(null);
-    };
 
     const feedbackLinks: SubmenuLinkItem[] = [
         {
@@ -242,8 +204,8 @@ export const MenuDropdown: VFC = () => {
                             handleVaultSelect={handleVaultSelect}
                             handleVaultCreate={handleVaultCreate}
                             handleVaultEdit={handleVaultEdit}
-                            handleVaultMoveAllItems={handleVaultMoveAllItems}
-                            handleVaultDelete={setDeleteVault}
+                            handleVaultMoveAllItems={vaultActions.moveAll}
+                            handleVaultDelete={handleVaultDelete}
                             handleVaultInvite={handleVaultInvite}
                             handleVaultManage={handleVaultManage}
                             handleVaultLeave={handleVaultLeave.prompt}
@@ -302,24 +264,6 @@ export const MenuDropdown: VFC = () => {
             </nav>
 
             {vaultModalProps !== null && <VaultModal {...vaultModalProps} onClose={() => setVaultModalProps(null)} />}
-
-            <VaultSelectModal
-                downgradeMessage={c('Info')
-                    .t`You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.`}
-                onSubmit={handleSelectDestinationVault}
-                onClose={closeVaultSelect}
-                description="Select where you want to move all items"
-                {...modalState}
-            />
-
-            <VaultMoveAllItemsConfirmation
-                destinationShareId={moveItemsToShareId}
-                onSubmit={handleVaultMoveAllItemsConfirm}
-                onClose={() => setMoveItemsToShareId(null)}
-                open={Boolean(moveItemsFromVault && moveItemsToShareId)}
-            />
-
-            <VaultDeleteModal vault={deleteVault} onClose={() => setDeleteVault(null)} onSubmit={handleVaultDelete} />
 
             <ConfirmationModal
                 title={c('Title').t`Permanently remove all items ?`}
