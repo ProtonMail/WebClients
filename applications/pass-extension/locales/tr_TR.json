@@ -8,6 +8,9 @@
       "Add": [
         "Ekle"
       ],
+      "Add current URL": [
+        "Geçerli adresi ekle"
+      ],
       "Add domain to pause list": [
         "Etki alanını duraklatma listesine ekle"
       ],
@@ -368,7 +371,7 @@
     },
     "bf2023: Info": {
       "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
-        "İndirimli al. Ayda tarifenize ek sadece ${ relativePrice } ile bir yıllık Pass Plus edinin."
+        "İndirimli alın. Ayda tarifenize yalnızca ${ relativePrice } ek ödeme ile bir yıllık Pass Plus edinin."
       ]
     },
     "bf2023: Label": {
@@ -454,10 +457,6 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" kasası silinemedi"
       ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "${ errors.length } bozuk CSV satırı bulundu",
-        "${ errors.length } bozuk CSV satırı bulundu"
-      ],
       "Editing item failed": [
         "Öge düzenlenemedi"
       ],
@@ -499,6 +498,9 @@
       ],
       "Invalid password manager": [
         "Parola yöneticisi geçersiz"
+      ],
+      "Invalid URL": [
+        "Adres geçersiz"
       ],
       "Invitation could not be accepted": [
         "Davet kabul edilemedi"
@@ -557,6 +559,9 @@
       "The file you are trying to import is empty": [
         "İçe aktarmak istediğiniz dosya boş"
       ],
+      "The URL is in the list": [
+        "Adres listede var"
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Çok fazla sayıda başarısız deneme yapıldı. Lütfen yeniden oturum açın."
       ],
@@ -609,10 +614,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "bayt",
-        "bayt"
-      ],
       "GB": [
         "GB"
       ],
@@ -626,28 +627,6 @@
         "TB"
       ]
     },
-    "file size format, long": {
-      "Byte": [
-        "Bayt",
-        "Bayt"
-      ],
-      "Gigabyte": [
-        "Gigabayt",
-        "Gigabayt"
-      ],
-      "Kilobyte": [
-        "Kilobayt",
-        "Kilobayt"
-      ],
-      "Megabyte": [
-        "Megabayt",
-        "Megabayt"
-      ],
-      "Terabyte": [
-        "Terabayt",
-        "Terabayt"
-      ]
-    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " Birden çok kasa oluşturmak için ücretli bir tarifeye yükseltin."
@@ -658,36 +637,20 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" güncellemesi yok sayıldı"
       ],
-      "${ count } item": [
-        "${ count } öge",
-        "${ count } öge"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } öge",
-        "${ itemCount } öge"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } üye",
-        "${ memberCount } üye"
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
+        "${ PASS_APP_NAME }, ${ BRAND_NAME } anonimleştirilmiş görsel vekil sunucusunu kullanarak ögenin İnternet simgesini görüntüleyecek."
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } yalnızca oturum açma, not ve kredi kartı kayıtlarını içe aktarır."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } kez",
-        "${ revisionNumber } kez"
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME } kimlik doğrulama bilgilerinizi kaydetmeyi ya da güncellemeyi soracak."
       ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } öge",
-        "${ totalImportedItems } öge"
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME } oturum açma formlarında bir e-posta takma adı oluşturmayı önerecek."
       ],
-      "${ totalItems } item": [
-        "${ totalItems } öge",
-        "${ totalItems } öge"
-      ],
-      "${ trialDaysLeft } day left": [
-        "${ trialDaysLeft } gün kaldı",
-        "${ trialDaysLeft } gün kaldı"
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } oturum açma formlarında güçlü parola oluşturmayı önerecek."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 gün boyunca ücretli özellikleri ücretsiz olarak deneyin. Yalnızca ${ BRAND_NAME } ile ilk haftanızda."
@@ -697,6 +660,9 @@
       ],
       "Access successfully confirmed": [
         "Erişim onaylandı"
+      ],
+      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
+        "${ PASS_APP_NAME } uygulamasına erişerek oturumunuzun kilidini açmak için PIN kodunuz istenecek"
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Mobil uygulamamız ile hareket halindeyken parolalarınıza erişin."
@@ -755,6 +721,9 @@
       "Deleted items will be moved here first": [
         "Silinen ögeler önce buraya taşınır"
       ],
+      "Deleting \"${ payload.content.name }\"": [
+        "\"${ payload.content.name }\" siliniyor"
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "${ PASS_APP_NAME } YouTube bölümüne bakın"
       ],
@@ -806,10 +775,6 @@
       "Import in progress:": [
         "İçe aktarılıyor:"
       ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total } öge içe aktarıldı",
-        "${ payload.total } öge içe aktarıldı"
-      ],
       "Imported on ${ date }": [
         "${ date } tarihinde içe aktarıldı"
       ],
@@ -836,10 +801,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Görünüşe göre ${ PASS_APP_NAME } uygulamasında zaten oturum açmışsınız. Farklı bir hesapla oturum açmaya çalışıyorsanız, lütfen önce eklentideki oturumunuzu kapatın."
-      ],
-      "item": [
-        "öge",
-        "öge"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "\"${ payload.item.data.metadata.name }\" ögesi oluşturuldu"
@@ -928,6 +889,9 @@
       "Please consider leaving a review.": [
         "Lütfen bir yorum yazmayı değerlendirin."
       ],
+      "Please enter your current PIN code to continue": [
+        "İlerlemek için lütfen geçerli PIN kodunuzu yazın"
+      ],
       "Press Enter to copy": [
         "Kopyalamak için Enter tuşuna basın"
       ],
@@ -982,9 +946,8 @@
       "Thank you, the problem has been reported": [
         "Teşekkürler. Sorununuz bildirildi"
       ],
-      "The following item could not be imported :": [
-        "Şu öge içe aktarılamadı:",
-        "Şu ${ result.ignored.length } öge içe aktarılamadı"
+      "The autofill dropdown will automatically open on field focus.": [
+        "Alana gelindiğinde otomatik doldurma kutusu kendiliğinden açılır."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Yapıştırmaya çalıştığınız metin izin verilen en fazla ${ maxLength } karakterden daha uzun."
@@ -1052,12 +1015,11 @@
       "You are about to create:": [
         "Şunu oluşturmak üzeresiniz:"
       ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "${ PASS_APP_NAME } simgesine tıklayarak kimlik doğrulama bilgilerinizi otomatik olarak doldurabilirsiniz."
+      ],
       "You cannot change the mailboxes for this alias.": [
         "Bu takma adın e-posta kutularını değiştiremezsiniz."
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı.",
-        "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Abonelik tarifenizin izin verdiği kasa sayısını aştınız. Yeni ögeler yalnızca ilk iki kasanıza taşınabilir. Ögeleri tüm kasalarınız arasında taşıyabilmek için abonelik tarifenizi yükseltin."
@@ -1091,14 +1053,6 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } karakter",
-        "${ passwordOptions.options.length } karakter"
-      ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } sözcük",
-        "${ passwordOptions.options.wordCount } sözcük"
-      ],
       "1 hour": [
         "1 saat"
       ],
@@ -1611,12 +1565,6 @@
         "Notunuzu yazın"
       ]
     },
-    "Success": {
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz.",
-        "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz."
-      ]
-    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } ayarları"
@@ -1641,6 +1589,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } hoşunuza gitti mi?"
+      ],
+      "Enter your PIN": [
+        "PIN kodunuzu yazın"
       ],
       "Fill & copy password": [
         "Doldur ve parolayı kopyala"
@@ -1737,6 +1688,9 @@
       ]
     },
     "Validation": {
+      "Duplicated URL": [
+        "Çift adres"
+      ],
       "Field name is required": [
         "Alan adının yazılması zorunludur"
       ],
@@ -1749,7 +1703,13 @@
       "Url already exists": [
         "Adres zaten var"
       ],
+      "URL cannot be empty": [
+        "Adres boş olamaz"
+      ],
       "Url is invalid": [
+        "Adres geçersiz"
+      ],
+      "URL is invalid": [
         "Adres geçersiz"
       ]
     },

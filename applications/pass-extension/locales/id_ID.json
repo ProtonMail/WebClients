@@ -8,6 +8,9 @@
       "Add": [
         "Tambah"
       ],
+      "Add current URL": [
+        "Tambahkan URL saat ini"
+      ],
       "Add domain to pause list": [
         "Tambah domain ke daftar jeda"
       ],
@@ -354,7 +357,7 @@
         "Tingkatkan sekarang"
       ],
       "Upgrade now to share with more people": [
-        "Tingkatkan sekarang untuk berbagi dengan lebih banyak orang."
+        "Tingkatkan sekarang untuk berbagi dengan lebih banyak pengguna"
       ],
       "Write us on Reddit": [
         "Tulis tentang kami di Reddit"
@@ -364,6 +367,21 @@
       ],
       "Your password manager not here? Request it.": [
         "Pengelola kata sandi Anda tidak terdaftar? Mintalah kepada kami."
+      ]
+    },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Hemat dengan bijak. Dapatkan Pass Plus selama setahun dengan harga ${ relativePrice } per bulan."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Dapatkan penawaran ini"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Penawaran Jumat Hitam"
       ]
     },
     "Button": {
@@ -439,9 +457,6 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Gagal menghapus brankas \"${ payload.content.name }\""
       ],
-      "Detected ${ errors.length } corrupted csv rows": [
-        "${ errors.length } baris CSV yang rusak terdeteksi"
-      ],
       "Editing item failed": [
         "Item gagal disunting"
       ],
@@ -483,6 +498,9 @@
       ],
       "Invalid password manager": [
         "Pengelola kata sandi tidak valid"
+      ],
+      "Invalid URL": [
+        "URL tidak valid"
       ],
       "Invitation could not be accepted": [
         "Undangan tidak dapat diterima"
@@ -541,6 +559,9 @@
       "The file you are trying to import is empty": [
         "Berkas yang ingin Anda impor kosong"
       ],
+      "The URL is in the list": [
+        "URL ada dalam daftar ini"
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Terlalu banyak percobaan gagal. Mohon masuk lagi."
       ],
@@ -593,9 +614,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "byte"
-      ],
       "GB": [
         "GB"
       ],
@@ -609,23 +627,6 @@
         "TB"
       ]
     },
-    "file size format, long": {
-      "Bytes": [
-        "Byte"
-      ],
-      "Gigabytes": [
-        "Gigabyte"
-      ],
-      "Kilobytes": [
-        "Kilobyte"
-      ],
-      "Megabytes": [
-        "Megabyte"
-      ],
-      "Terabytes": [
-        "Terabyte"
-      ]
-    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " Tingkatkan ke paket berbayar untuk membuat lebih dari satu brankas."
@@ -636,29 +637,20 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Pembaruan \"${ payload.item.data.metadata.name }\" telah diabaikan"
       ],
-      "${ count } items": [
-        "${ count } item"
-      ],
-      "${ itemCount } items": [
-        "${ itemCount } item"
-      ],
-      "${ memberCount } members": [
-        "${ memberCount } anggota"
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
+        "${ PASS_APP_NAME } akan menampilkan favicon item melalui proksi gambar ${ BRAND_NAME } yang dianonimkan."
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } hanya akan mengimpor rincian masuk, catatan, dan kartu kredit."
       ],
-      "${ revisionNumber } times": [
-        "${ revisionNumber } kali"
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME } akan meminta Anda untuk menyimpan atau memperbarui kredensial."
       ],
-      "${ totalImportedItems } items": [
-        "${ totalImportedItems } item"
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME } akan menyarankan membuat alias surel di formulir pendaftaran."
       ],
-      "${ totalItems } items": [
-        "${ totalItems } item"
-      ],
-      "${ trialDaysLeft } days left": [
-        "${ trialDaysLeft } hari tersisa"
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } akan menyarankan membuat kata sandi yang kuat di formulir pendaftaran."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 hari untuk mencoba fitur premium secara gratis. Hanya tersedia saat minggu pertama dengan ${ BRAND_NAME }."
@@ -668,6 +660,9 @@
       ],
       "Access successfully confirmed": [
         "Akses berhasil dikonfirmasi"
+      ],
+      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
+        "Akses ke ${ PASS_APP_NAME } akan memerlukan kode PIN untuk membuka sesi Anda"
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Akses kata sandi Anda di mana saja dengan aplikasi mobile kami."
@@ -726,6 +721,9 @@
       "Deleted items will be moved here first": [
         "Item yang dihapus akan terlebih dahulu dipindahkan ke sini"
       ],
+      "Deleting \"${ payload.content.name }\"": [
+        "Menghapus \"${ payload.content.name }\""
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Telusuri Video YouTube ${ PASS_APP_NAME }"
       ],
@@ -777,9 +775,6 @@
       "Import in progress:": [
         "Impor yang sedang berlangsung:"
       ],
-      "Imported ${ payload.total } items": [
-        "${ payload.total } item diimpor"
-      ],
       "Imported on ${ date }": [
         "Diimpor pada tanggal ${ date }"
       ],
@@ -824,9 +819,6 @@
       ],
       "Item successfully moved": [
         "Item berhasil dipindahkan"
-      ],
-      "items": [
-        "item"
       ],
       "Let's get you started by creating your first item": [
         "Mulailah dengan membuat item pertama Anda"
@@ -897,6 +889,9 @@
       "Please consider leaving a review.": [
         "Mohon pertimbangkan untuk memberikan ulasan."
       ],
+      "Please enter your current PIN code to continue": [
+        "Silakan masukkan kode PIN Anda saat ini untuk melanjutkan"
+      ],
       "Press Enter to copy": [
         "Tekan Enter untuk menyalin"
       ],
@@ -951,8 +946,8 @@
       "Thank you, the problem has been reported": [
         "Terima kasih, masalah ini telah dilaporkan"
       ],
-      "The following ${ result.ignored.length } items could not be imported": [
-        "${ result.ignored.length } item berikut tidak dapat diimpor"
+      "The autofill dropdown will automatically open on field focus.": [
+        "Tarik-turun pengisian otomatis akan dibuka dalam fokus kolom secara otomatis."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Panjang teks yang ingin Anda salin melebihi batas ${ maxLength } karakter yang diperkenankan."
@@ -1020,11 +1015,11 @@
       "You are about to create:": [
         "Anda akan membuat:"
       ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Anda dapat mengisi kredensial Anda secara otomatis dengan mengeklik pada ikon ${ PASS_APP_NAME }."
+      ],
       "You cannot change the mailboxes for this alias.": [
         "Anda tidak dapat mengubah kotak surat untuk alias ini."
-      ],
-      "You have ${ daysRemaining } days left to try these and other premium features.": [
-        "Anda memiliki ${ daysRemaining } hari tersisa untuk mencoba fitur ini dan berbagai fitur premium lainnya."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Anda telah melebihi jumlah brankas yang tercakup dalam paket langganan Anda. Item yang Anda miliki hanya akan dapat dipindahkan ke dalam dua brankas pertama Anda. Untuk memindahkan item antar seluruh brankas, tingkatkan paket langganan Anda."
@@ -1058,12 +1053,6 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } characters": [
-        "${ passwordOptions.options.length } karakter"
-      ],
-      "${ passwordOptions.options.wordCount } words": [
-        "${ passwordOptions.options.wordCount } kata"
-      ],
       "1 hour": [
         "1 jam"
       ],
@@ -1576,11 +1565,6 @@
         "Tulis catatan Anda"
       ]
     },
-    "Success": {
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } users.": [
-        "Brankas tidak dapat berisi lebih dari ${ vault.targetMaxMembers } pengguna."
-      ]
-    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Pengaturan ${ PASS_APP_NAME }"
@@ -1606,6 +1590,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Menikmati ${ PASS_APP_NAME }?"
       ],
+      "Enter your PIN": [
+        "Masukkan PIN Anda"
+      ],
       "Fill & copy password": [
         "Isi & salin kata sandi"
       ],
@@ -1628,7 +1615,7 @@
         "Tinggalkan brankas?"
       ],
       "Low disk space": [
-        "Penyimpanan diska rendah"
+        "Ruang penyimpanan rendah"
       ],
       "Member limit": [
         "Batas anggota"
@@ -1701,6 +1688,9 @@
       ]
     },
     "Validation": {
+      "Duplicated URL": [
+        "URL terduplikat"
+      ],
       "Field name is required": [
         "Nama kolom wajib diisi"
       ],
@@ -1713,7 +1703,13 @@
       "Url already exists": [
         "URL sudah ada"
       ],
+      "URL cannot be empty": [
+        "URL tidak bisa kosong"
+      ],
       "Url is invalid": [
+        "URL tidak valid"
+      ],
+      "URL is invalid": [
         "URL tidak valid"
       ]
     },

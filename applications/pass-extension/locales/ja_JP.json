@@ -8,6 +8,9 @@
       "Add": [
         "追加"
       ],
+      "Add current URL": [
+        "現在の URL を追加"
+      ],
       "Add domain to pause list": [
         "一時停止リストにドメインを追加"
       ],
@@ -53,6 +56,12 @@
       "Confirm": [
         "確認"
       ],
+      "Confirm access": [
+        "アクセスを確認する"
+      ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを接続してください"
+      ],
       "Continue": [
         "続行"
       ],
@@ -71,14 +80,23 @@
       "Create": [
         "作成"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを作成する"
+      ],
       "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME } アカウントを作成"
+      ],
+      "Create a new vault to share": [
+        "共有する新しい保管庫を作成する"
       ],
       "Create alias": [
         "エイリアスを作成"
       ],
       "Create an account": [
         "アカウントを作成"
+      ],
+      "Create card": [
+        "カードの作成"
       ],
       "Create login": [
         "ログインを作成"
@@ -146,6 +164,9 @@
       "Generate password": [
         "パスワードを生成"
       ],
+      "Generated passwords": [
+        "生成されたパスワード"
+      ],
       "Get mobile apps": [
         "モバイルアプリを入手する"
       ],
@@ -206,6 +227,9 @@
       "More options": [
         "詳細設定を表示"
       ],
+      "Move to a shared vault": [
+        "共有保管庫に移動する"
+      ],
       "Move to another vault": [
         "別の保管庫に移動"
       ],
@@ -238,6 +262,9 @@
       ],
       "Regenerate": [
         "再生成"
+      ],
+      "Reject": [
+        "拒否"
       ],
       "Reject invitation": [
         "招待を拒否する"
@@ -278,6 +305,9 @@
       "Share": [
         "共有"
       ],
+      "Share this vault": [
+        "この保管庫を共有する"
+      ],
       "Share vault": [
         "フォルダーの共有"
       ],
@@ -314,6 +344,9 @@
       "Update": [
         "更新"
       ],
+      "Update vault": [
+        "保管庫を 更新"
+      ],
       "Updating": [
         "更新中"
       ],
@@ -323,11 +356,17 @@
       "Upgrade now": [
         "今すぐアップグレード"
       ],
+      "Upgrade now to share with more people": [
+        "今すぐアップグレードしてより多くの人と共有しましょう"
+      ],
       "Write us on Reddit": [
         "Redditに書き込む"
       ],
       "Write us on Twitter": [
         "Twitterに書き込む"
+      ],
+      "Your password manager not here? Request it.": [
+        "パスワード マネージャーがここにいませんか? リクエストしてください。"
       ]
     },
     "Button": {
@@ -370,6 +409,9 @@
       "Cannot send invitation to this address at the moment": [
         "現在、このアドレスに招待を送信することができません。"
       ],
+      "Could not confirm this invite at the moment": [
+        "現時点ではこの招待を確認できませんでした"
+      ],
       "Could not leave vault.": [
         "フォルダーから退出できません"
       ],
@@ -399,9 +441,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "保管庫 “${ payload.content.name }” の削除に失敗しました"
-      ],
-      "Detected ${ errors.length } corrupted csv rows": [
-        "このCSVは${ errors.length } 行の破損を検知しました"
       ],
       "Editing item failed": [
         "アイテムの編集に失敗しました"
@@ -444,6 +483,9 @@
       ],
       "Invalid password manager": [
         "無効なパスワードマネージャー"
+      ],
+      "Invalid URL": [
+        "無効なURL"
       ],
       "Invitation could not be accepted": [
         "招待は承認できません"
@@ -502,6 +544,9 @@
       "The file you are trying to import is empty": [
         "インポートしようとしているファイルは空です。"
       ],
+      "The URL is in the list": [
+        "URLはリストにあります\n"
+      ],
       "Too many failed attempts. Please sign in again.": [
         "失敗が多すぎます。もう一度サインインしてください。"
       ],
@@ -548,12 +593,12 @@
     "Error message": {
       "Please refresh the page or try again later.": [
         "ページを再読み込みするか、後でもう一度お試しください。"
+      ],
+      "Something went wrong": [
+        "不具合が発生しました"
       ]
     },
     "file size format": {
-      "bytes": [
-        "バイト"
-      ],
       "GB": [
         "GB"
       ],
@@ -567,23 +612,6 @@
         "TB"
       ]
     },
-    "file size format, long": {
-      "Bytes": [
-        "バイト"
-      ],
-      "Gigabytes": [
-        "ギガバイト"
-      ],
-      "Kilobytes": [
-        "キロバイト"
-      ],
-      "Megabytes": [
-        "メガバイト"
-      ],
-      "Terabytes": [
-        "テラバイト"
-      ]
-    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " 複数のコンテナーを作成するには、有料プランにアップグレードします。"
@@ -593,27 +621,6 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "「${ payload.item.data.metadata.name }」更新が却下されました"
-      ],
-      "${ count } items": [
-        "${ count } 件のアイテム"
-      ],
-      "${ itemCount } items": [
-        "${ itemCount }個のアイテム"
-      ],
-      "${ memberCount } members": [
-        "${ memberCount }人のメンバー"
-      ],
-      "${ revisionNumber } times": [
-        "${ revisionNumber } 回"
-      ],
-      "${ totalImportedItems } items": [
-        "${ totalImportedItems } 件のアイテム"
-      ],
-      "${ totalItems } items": [
-        "${ totalItems } 件のアイテム"
-      ],
-      "${ trialDaysLeft } days left": [
-        "残り ${ trialDaysLeft } 日"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "${ PASS_APP_NAME } の新しいバージョンが利用可能です。 最新の機能やバグ修正をお楽しみいただくには、更新してください。"
@@ -654,11 +661,17 @@
       "Can view items in this vault.": [
         "このフォルダー内のアイテムを閲覧できます。"
       ],
+      "Congratulations, your access has been confirmed": [
+        "おめでとうございます。アクセスが確認されました"
+      ],
       "Copied to clipboard": [
         "クリップボードにコピーされました"
       ],
       "Creating alias...": [
         "エイリアスを作成中..."
+      ],
+      "Credit cards, Custom fields": [
+        "クレジットカード、カスタムフィールド"
       ],
       "Decrypting your data": [
         "データの暗号化解除"
@@ -693,6 +706,9 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "エクスポートはPGPを使用して暗号化され、強力なパスフレーズが必要です。"
       ],
+      "For security reasons, your access needs to be confirmed": [
+        "セキュリティ上の理由から、アクセスを確認する必要があります"
+      ],
       "Generated passwords will be stored for a period of one day.": [
         "生成されたパスワードは1日間保存されます。"
       ],
@@ -701,9 +717,6 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "ここでは、必要なすべての情報をご覧いただけます。"
-      ],
-      "Imported ${ payload.total } items": [
-        "${ payload.total } 件のアイテムをインポートしました"
       ],
       "Imported on ${ date }": [
         "${ date } にインポートされました"
@@ -746,9 +759,6 @@
       ],
       "Item successfully moved": [
         "アイテムの移動に成功"
-      ],
-      "items": [
-        "アイテム"
       ],
       "Let's get you started by creating your first item": [
         "最初のアイテムを作るところから始めましょう。"
@@ -813,6 +823,9 @@
       "Please consider leaving a review.": [
         "レビューを残すことを検討してください。"
       ],
+      "Please enter your current PIN code to continue": [
+        "続行するには、現在の PIN コードを入力してください"
+      ],
       "Press Enter to copy": [
         "Enterキーを押してコピーする"
       ],
@@ -833,6 +846,9 @@
       ],
       "Settings successfully updated": [
         "設定が正常に更新されました"
+      ],
+      "Share with 10 others": [
+        "他の 10 人と共有する"
       ],
       "Sign in or create an account to continue.": [
         "サインインするか、アカウントを作成してください。"
@@ -858,9 +874,6 @@
       "Thank you, the problem has been reported": [
         "ありがとう、問題は報告されました"
       ],
-      "The following ${ result.ignored.length } items could not be imported": [
-        "次の ${ result.ignored.length } つのアイテムをインポート出来ませんでした"
-      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "貼り付けようとしているテキストは、許容される最大長の ${ maxLength } 文字を超えています。"
       ],
@@ -875,6 +888,9 @@
       ],
       "Unable to copy to clipboard": [
         "クリップボードにコピーできない"
+      ],
+      "Unlimited Aliases": [
+        "無制限のエイリアス"
       ],
       "Unlock it with your PIN to access the settings": [
         "設定にアクセスするには、PINでロックを解除してください。"
@@ -950,12 +966,6 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } characters": [
-        "${ passwordOptions.options.length } 文字"
-      ],
-      "${ passwordOptions.options.wordCount } words": [
-        "${ passwordOptions.options.wordCount } 単語"
-      ],
       "1 hour": [
         "1 時間"
       ],
@@ -1037,6 +1047,9 @@
       "Capitalise": [
         "大文字にする"
       ],
+      "Card": [
+        "カード"
+      ],
       "Card number": [
         "カード番号"
       ],
@@ -1094,6 +1107,9 @@
       "Export": [
         "エクスポート"
       ],
+      "Field name": [
+        "フィールド名"
+      ],
       "Forwards to": [
         "転送先"
       ],
@@ -1127,6 +1143,9 @@
       "Include numbers (0-9)": [
         "数字を含める (0 〜 9)"
       ],
+      "Invitations": [
+        "招待"
+      ],
       "Language": [
         "言語"
       ],
@@ -1153,6 +1172,9 @@
       ],
       "Logins": [
         "ログイン"
+      ],
+      "Members": [
+        "メンバー"
       ],
       "Modified": [
         "更新日時"
@@ -1440,6 +1462,9 @@
       "Select a suffix": [
         "サフィックスを選択"
       ],
+      "Shared vault": [
+        "保管庫を共有"
+      ],
       "Unknown origin": [
         "不明な起源"
       ],
@@ -1463,6 +1488,9 @@
       "Confirm PIN code": [
         "PINコードの確認"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "${ BRAND_NAME } アカウントを接続してください"
+      ],
       "Create PIN code": [
         "PINコードの作成"
       ],
@@ -1474,6 +1502,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } をお楽しみですか?"
+      ],
+      "Enter your PIN": [
+        "PIN を入力してください"
       ],
       "Fill & copy password": [
         "パスワードを入力してコピー"
@@ -1498,6 +1529,15 @@
       ],
       "Low disk space": [
         "ディスクの空き容量が低下"
+      ],
+      "Member limit": [
+        "メンバー上限"
+      ],
+      "Our welcome gift to you": [
+        "あなたへのウェルカムギフト"
+      ],
+      "Pending access to the shared data": [
+        "共有データへのアクセスが保留中です"
       ],
       "Permanently remove all items ?": [
         "すべてのアイテムを永久に削除しますか？"
@@ -1550,6 +1590,9 @@
       "Welcome to ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } へようこそ"
       ],
+      "Welcome to your new password manager!": [
+        "新しいパスワード マネージャーへようこそ!"
+      ],
       "Why ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } を使用する理由"
       ],
@@ -1558,11 +1601,29 @@
       ]
     },
     "Validation": {
+      "Duplicated URL": [
+        "重複した URL"
+      ],
+      "Field name is required": [
+        "フィールド名は必須です"
+      ],
+      "OTP secret or URI is invalid": [
+        "OTP シークレットまたは URI が無効です"
+      ],
+      "OTP secret or URI required": [
+        "OTP シークレットまたは URI が必要です"
+      ],
       "Url already exists": [
         "Url は既に存在します"
       ],
+      "URL cannot be empty": [
+        "URL を空にすることはできません"
+      ],
       "Url is invalid": [
         "Url が無効です"
+      ],
+      "URL is invalid": [
+        "URLが無効です"
       ]
     },
     "Warning": {
@@ -1571,6 +1632,9 @@
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
         "エイリアス「${ name }」は現在、ログイン項目「${ relatedLoginName }」で使用されています。 また、「${ aliasEmail }」に送信されたメールの受信も停止されます。"
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "ゴミ箱に入れられたすべてのアイテムは完全に削除されます。 この操作を元に戻すことはできません。"
       ],
       "An error occured while exporting your data": [
         "データのエクスポート中にエラーが発生しました"
@@ -1653,6 +1717,9 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME } にサインインできません。 ${ additionalMessage }"
       ],
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "保管庫「${ vaultName }」とそのすべてのアイテムは完全に削除されます。 この操作を元に戻すことはできません。"
+      ],
       "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
         "保管庫「${ vaultName }」は完全に削除され、そのすべてのアイテムは「${ destinationVaultName }」に移動されます"
       ],
@@ -1661,6 +1728,18 @@
       ],
       "You cannot create more vaults than your subscription allows.": [
         "サブスクリプションで許可されている以上の保管庫を作成することはできません。"
+      ],
+      "You have reached the limit of members who can access this vault.": [
+        "この保管庫にアクセスできるメンバーの制限に達しました。"
+      ],
+      "You have reached the limit of users in this vault. ${ upgradeLink }": [
+        "この保管庫内のユーザーの制限に達しました。 ${ upgradeLink }"
+      ],
+      "You have reached the limit of vaults you can have in your plan.": [
+        "プラン内で使用できる保管庫の制限に達しました。"
+      ],
+      "You have unsaved changes.": [
+        "未保存の変更があります。"
       ],
       "You must select at least one mailbox": [
         "少なくとも1つのメールボックスを選択する必要があります。"
