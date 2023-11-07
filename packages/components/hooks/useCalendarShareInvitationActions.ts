@@ -10,6 +10,7 @@ import {
     useNotifications,
 } from '@proton/components/hooks';
 import useApi from '@proton/components/hooks/useApi';
+import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
     acceptCalendarShareInvitation,
     rejectCalendarShareInvitation,
@@ -64,7 +65,7 @@ const useCalendarShareInvitationActions = () => {
                     getAddressKeys,
                     getEncryptionPreferences,
                     skipSignatureVerification,
-                    api,
+                    api: getSilentApi(api),
                 });
                 createNotification({
                     type: 'success',
@@ -111,7 +112,11 @@ const useCalendarShareInvitationActions = () => {
                 throw new Error(text);
             }
             try {
-                await rejectCalendarShareInvitation({ addressID, calendarID, api });
+                await rejectCalendarShareInvitation({
+                    addressID,
+                    calendarID,
+                    api: getSilentApi(api),
+                });
                 createNotification({
                     type: 'success',
                     text: c('Notification in shared calendar modal').t`Calendar invitation declined`,
