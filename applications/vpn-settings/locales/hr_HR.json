@@ -83,9 +83,6 @@
       "Create": [
         "Stvori"
       ],
-      "Customize": [
-        "Prilagodi"
-      ],
       "Decrease": [
         "Smanji"
       ],
@@ -1223,6 +1220,11 @@
       "Access to all countries": [
         "Pristup svim državama"
       ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Veza za ${ plusVpnConnections } uređaj",
+        "Veza za do ${ plusVpnConnections } uređaja",
+        "Veza za do ${ plusVpnConnections } uređaja"
+      ],
       "Fastest VPN servers": [
         "Najbrži VPN poslužitelji"
       ],
@@ -1294,6 +1296,16 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } zahtjeva vaše dopuštenje da ${ enableDesktopNotifications }."
+      ],
+      "${ number } city": [
+        "${ number } grad",
+        "${ number } grada",
+        "${ number } gradova"
+      ],
+      "${ number } server": [
+        "${ number } poslužitelj",
+        "${ number } poslužitelja",
+        "${ number } poslužitelja"
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
@@ -1607,9 +1619,6 @@
       "You already have a free account": [
         "Već imate besplatan račun"
       ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "Račune možete prilagoditi i preuzeti za računovodstvene svrhe."
-      ],
       "You have no saved payment methods.": [
         "Nemate spremljenih načina plaćanja."
       ],
@@ -1664,11 +1673,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Možete dodati način plaćanja kako bi se pretplata automatski obnavljala. Dostupni su i drugi načini plaćanja."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Add your name (or company name) and address to your invoices.": [
-        "Dodajte svoje ime (ili naziv tvrtke) i adresu na svoje fakture."
       ]
     },
     "Info when deleting payment method": {
@@ -1791,9 +1795,6 @@
       ],
       "Credits used": [
         "Iskorišteni kredit"
-      ],
-      "Customize invoices": [
-        "Prilagodite fakture"
       ],
       "Default language": [
         "Zadani jezik"
@@ -2156,11 +2157,6 @@
         "Odaberi"
       ]
     },
-    "Placeholder for custom invoice text": {
-      "Add your name (or company name) and address to your invoices": [
-        "Dodajte svoje ime (ili naziv tvrtke) i adresu na svoje fakture"
-      ]
-    },
     "Price": {
       "Free": [
         "Besplatno"
@@ -2399,9 +2395,6 @@
       ],
       "Add credits": [
         "Dodaj kredit"
-      ],
-      "Add invoice details": [
-        "Dodajte detalje o fakturi"
       ],
       "Add PayPal payment method": [
         "Dodaj PayPal način plaćanja"
@@ -2680,6 +2673,13 @@
       ],
       "Primary admin": [
         "Glavni Admin"
+      ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Lozinka mora sadržavati najmanje ${ length } znak",
+        "Lozinka mora sadržavati najmanje ${ length } znaka",
+        "Lozinka mora sadržavati najmanje ${ length } znakova"
       ]
     },
     "VPN info": {
