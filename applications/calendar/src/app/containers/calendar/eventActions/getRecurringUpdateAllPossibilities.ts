@@ -4,8 +4,7 @@ import {
     getDtendProperty,
     propertyToUTCDate,
 } from '@proton/shared/lib/calendar/vcalConverter';
-
-import {getIsAllDay} from '@proton/shared/lib/calendar/veventHelper';
+import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { addDays, isSameDay } from '@proton/shared/lib/date-fns-utc';
 import { toUTCDate } from '@proton/shared/lib/date/timezone';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
@@ -13,17 +12,26 @@ import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/Vcal
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 
 export enum UpdateAllPossibilities {
-    KEEP_SINGLE_EDITS,
+    KEEP_SINGLE_MODIFICATIONS,
     KEEP_ORIGINAL_START_DATE_BUT_USE_TIME,
     USE_NEW_START_DATE,
 }
 
-const getRecurringUpdateAllPossibilities = (
-    originalVeventComponent: VcalVeventComponent,
-    oldVeventComponent: VcalVeventComponent,
-    newVeventComponent: VcalVeventComponent,
-    recurrence: CalendarEventRecurring
-) => {
+const getRecurringUpdateAllPossibilities = ({
+    originalVeventComponent,
+    oldVeventComponent,
+    newVeventComponent,
+    recurrence,
+    isOrganizer,
+    hasSingleEdits,
+}: {
+    originalVeventComponent: VcalVeventComponent;
+    oldVeventComponent: VcalVeventComponent;
+    newVeventComponent: VcalVeventComponent;
+    recurrence: CalendarEventRecurring;
+    isOrganizer: boolean;
+    hasSingleEdits: boolean;
+}) => {
     // If editing a single edit, we can use the dtstart as is...
     const oldStartProperty = oldVeventComponent['recurrence-id']
         ? oldVeventComponent.dtstart
@@ -37,6 +45,7 @@ const getRecurringUpdateAllPossibilities = (
     const hasModifiedDateTimes =
         +propertyToUTCDate(oldStartProperty) !== +propertyToUTCDate(newStartProperty) ||
         +propertyToUTCDate(oldEndProperty) !== +propertyToUTCDate(newEndProperty);
+    const isRruleEqual = getIsRruleEqual(originalVeventComponent.rrule, newVeventComponent.rrule, true);
     /*
     const oldIsAllDay = isIcalPropertyAllDay(oldStartProperty);
     const newIsAllDay = isIcalPropertyAllDay(newStartProperty);
@@ -52,6 +61,18 @@ const getRecurringUpdateAllPossibilities = (
         //return UpdateAllPossibilities.KEEP_SINGLE_EDITS;
     }
     */
+    /**
+     * For series with attendees and single modifications,
+     * when the change is not a breaking one we want to preserve the modifications
+     */
+    if (isOrganizer && !hasModifiedDateTimes && isRruleEqual && !hasSingleEdits) {
+        return {
+            updateAllPossibilities: UpdateAllPossibilities.KEEP_SINGLE_MODIFICATIONS,
+            hasModifiedDateTimes,
+            isRruleEqual,
+        };
+    }
+
     const oldLocalStartDate = toUTCDate(oldStartProperty.value);
     const newLocalStartDate = toUTCDate(newStartProperty.value);
 
@@ -59,20 +80,18 @@ const getRecurringUpdateAllPossibilities = (
     // If the day is the same, and the RRULE hasn't changed, then it's assumed that
     // the first occurrence should change. A better approach is probably to let the user
     // pick which event in the occurrence should be changed before we arrive here.
-    if (
-        isSameDay(oldLocalStartDate, newLocalStartDate) &&
-        originalVeventComponent.rrule &&
-        getIsRruleEqual(originalVeventComponent.rrule, newVeventComponent.rrule)
-    ) {
+    if (isSameDay(oldLocalStartDate, newLocalStartDate) && originalVeventComponent.rrule && isRruleEqual) {
         return {
             updateAllPossibilities: UpdateAllPossibilities.KEEP_ORIGINAL_START_DATE_BUT_USE_TIME,
             hasModifiedDateTimes,
+            isRruleEqual,
         };
     }
 
     return {
         updateAllPossibilities: UpdateAllPossibilities.USE_NEW_START_DATE,
         hasModifiedDateTimes,
+        isRruleEqual,
     };
 };
 
