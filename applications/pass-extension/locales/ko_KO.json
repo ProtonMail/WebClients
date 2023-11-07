@@ -8,6 +8,9 @@
       "Add": [
         "추가"
       ],
+      "Add current URL": [
+        "현재 URL 추가"
+      ],
       "Add domain to pause list": [
         "일시 정지 목록에 도메인을 추가하세요"
       ],
@@ -366,6 +369,21 @@
         "사용 중이신 비밀번호 관리자가 없으신가요? 알려주세요."
       ]
     },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "알뜰하게 할인 받으세요. 오직 ${ relativePrice } 당 개월만 추가하여 Pass Plus를 1년 동안 사용하세요."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "혜택 얻기"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "블랙 프라이데이 오퍼"
+      ]
+    },
     "Button": {
       "More info": [
         "상세 정보"
@@ -439,9 +457,6 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" 금고 삭제를 실패했습니다."
       ],
-      "Detected ${ errors.length } corrupted csv rows": [
-        "${ errors.length } 손상된 csv 행 감지됨"
-      ],
       "Editing item failed": [
         "항목 수정 실패"
       ],
@@ -483,6 +498,9 @@
       ],
       "Invalid password manager": [
         "유효하지 않은 비밀번호 관리자"
+      ],
+      "Invalid URL": [
+        "유효하지 않은 URL"
       ],
       "Invitation could not be accepted": [
         "초대를 수락할 수 없습니다"
@@ -541,6 +559,9 @@
       "The file you are trying to import is empty": [
         "불러오기를 시도 중인 파일이 비어 있습니다."
       ],
+      "The URL is in the list": [
+        "URL이 리스트에 있습니다."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "너무 많은 시도 실패. 다시 로그인 하세요."
       ],
@@ -593,9 +614,6 @@
       ]
     },
     "file size format": {
-      "bytes": [
-        "바이트"
-      ],
       "GB": [
         "GB"
       ],
@@ -609,23 +627,6 @@
         "TB"
       ]
     },
-    "file size format, long": {
-      "Bytes": [
-        "바이트"
-      ],
-      "Gigabytes": [
-        "기가바이트"
-      ],
-      "Kilobytes": [
-        "킬로바이트"
-      ],
-      "Megabytes": [
-        "메가바이트"
-      ],
-      "Terabytes": [
-        "테라바이트"
-      ]
-    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " 여러 개의 금고를 생성하기 위해 유료 요금제로 업그레이드 해보세요."
@@ -636,29 +637,20 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" 업데이트가 무시되었습니다."
       ],
-      "${ count } items": [
-        "${ count }개 항목"
-      ],
-      "${ itemCount } items": [
-        "${ itemCount }개 항목"
-      ],
-      "${ memberCount } members": [
-        "${ memberCount }명 회원"
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
+        "${ PASS_APP_NAME }가 항목 아이콘을 ${ BRAND_NAME } 비공개 이미지 프록시를 통해 표시합니다."
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME }가 로그인 정보, 노트 및 신용카드에 한해 불러옵니다."
       ],
-      "${ revisionNumber } times": [
-        "${ revisionNumber } 번"
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME }가 자격 증명 저장 및 업데이트를 표시합니다."
       ],
-      "${ totalImportedItems } items": [
-        "${ totalImportedItems }개 항목"
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME }가 로그인 양식에서 이메일 별명 생성을 제안합니다."
       ],
-      "${ totalItems } items": [
-        "${ totalItems }개 항목"
-      ],
-      "${ trialDaysLeft } days left": [
-        "${ trialDaysLeft }일 남음"
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME }가 로그인 양식에서 강력한 비밀번호 생성을 제안합니다."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7일 동안 프리미엄 기능을 무료로 사용하실 수 있습니다. ${ BRAND_NAME } 첫 주 사용에 한합니다."
@@ -668,6 +660,9 @@
       ],
       "Access successfully confirmed": [
         "접근을 성공적으로 수락했습니다."
+      ],
+      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
+        "${ PASS_APP_NAME }의 세션 잠금해제를 위해 PIN 코드가 필요하게 됩니다."
       ],
       "Access your passwords on the go with our mobile apps.": [
         "이동 중에 모바일 앱에서도 비밀번호에 쉽게 접근하세요."
@@ -726,6 +721,9 @@
       "Deleted items will be moved here first": [
         "삭제된 항목이 여기에 표시됩니다."
       ],
+      "Deleting \"${ payload.content.name }\"": [
+        "\"${ payload.content.name }\" 삭세 중"
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "${ PASS_APP_NAME } YouTube 비디오 살펴보기"
       ],
@@ -777,9 +775,6 @@
       "Import in progress:": [
         "처리가 진행 중입니다:"
       ],
-      "Imported ${ payload.total } items": [
-        "${ payload.total }개 항목을 불러왔습니다"
-      ],
       "Imported on ${ date }": [
         "${ date }에 들여옴"
       ],
@@ -824,9 +819,6 @@
       ],
       "Item successfully moved": [
         "항목을 성공적으로 이동했습니다."
-      ],
-      "items": [
-        "항목"
       ],
       "Let's get you started by creating your first item": [
         "첫 항목 생성을 시작해 보세요"
@@ -897,6 +889,9 @@
       "Please consider leaving a review.": [
         "리뷰 쓰는 것을 고려해 보세요."
       ],
+      "Please enter your current PIN code to continue": [
+        "계속하려면 현재 PIN을 입력하세요."
+      ],
       "Press Enter to copy": [
         "복사하기 위해 엔터 키를 누르세요"
       ],
@@ -951,8 +946,8 @@
       "Thank you, the problem has been reported": [
         "감사합니다, 문제가 보고되었습니다."
       ],
-      "The following ${ result.ignored.length } items could not be imported": [
-        "다음 ${ result.ignored.length }개 항목은 불러올 수 없습니다"
+      "The autofill dropdown will automatically open on field focus.": [
+        "필드에 있다면 자동 완성이 열립니다."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "붙여넣으려는 텍스트는 ${ maxLength } 문자의 최대 허용 길이보다 깁니다."
@@ -1020,11 +1015,11 @@
       "You are about to create:": [
         "생성하려고 하는 주소:"
       ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "${ PASS_APP_NAME } 아이콘을 클릭하여 빠르게 자격 증명을 자동 완성하실 수 있습니다."
+      ],
       "You cannot change the mailboxes for this alias.": [
         "이 별명의 메일함을 변경할 수 없습니다."
-      ],
-      "You have ${ daysRemaining } days left to try these and other premium features.": [
-        "이 기능과 다른 프리미엄 기능들을 체험할 시간이 ${ daysRemaining }일 남았습니다."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "구독에 포함된 최대 금고 수에 도달했습니다. 항목이 처음 두 금고로 이동됩니다. 모든 금고 간에 항목을 이동하려면 구독을 업그레이드하세요."
@@ -1058,12 +1053,6 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } characters": [
-        "${ passwordOptions.options.length }글자"
-      ],
-      "${ passwordOptions.options.wordCount } words": [
-        "${ passwordOptions.options.wordCount }단어"
-      ],
       "1 hour": [
         "1시간"
       ],
@@ -1576,11 +1565,6 @@
         "메모를 작성하세요"
       ]
     },
-    "Success": {
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } users.": [
-        "금고에 ${ vault.targetMaxMembers }명 이상의 사용자를 포함할 수 없습니다."
-      ]
-    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } 설정"
@@ -1605,6 +1589,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME }를 잘 사용하고 계신가요?"
+      ],
+      "Enter your PIN": [
+        "PIN을 입력해 주세요."
       ],
       "Fill & copy password": [
         "비밀번호 복사 및 채우기"
@@ -1701,6 +1688,9 @@
       ]
     },
     "Validation": {
+      "Duplicated URL": [
+        "URL 복사됨."
+      ],
       "Field name is required": [
         "필드의 이름이 필요합니다."
       ],
@@ -1713,8 +1703,14 @@
       "Url already exists": [
         "URL이 이미 존재합니다."
       ],
+      "URL cannot be empty": [
+        "URL은 필수 정보입니다."
+      ],
       "Url is invalid": [
         "URL이 잘못되었습니다."
+      ],
+      "URL is invalid": [
+        "URL이 올바르지 않습니다."
       ]
     },
     "Warning": {

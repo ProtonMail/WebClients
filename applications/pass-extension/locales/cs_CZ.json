@@ -8,6 +8,9 @@
       "Add": [
         "Přidat"
       ],
+      "Add current URL": [
+        "Přidat aktuální URL adresu"
+      ],
       "Add domain to pause list": [
         "Přidat doménu na seznam pozastavených"
       ],
@@ -180,7 +183,7 @@
         "Importovat"
       ],
       "Import your passwords": [
-        "Importovat vaše hesla"
+        "Importujte svá hesla"
       ],
       "Importing": [
         "Import"
@@ -366,6 +369,21 @@
         "Váš správce hesel zde není? Požádejte o něj."
       ]
     },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Šetřete chytře. Získejte roční předplatné Pass Plus za pouhých ${ relativePrice } měsíčně."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Využít nabídku"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Nabídka pro Black Friday"
+      ]
+    },
     "Button": {
       "More info": [
         "Další informace"
@@ -439,12 +457,6 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Smazání trezoru \"${ payload.content.name }\" selhalo"
       ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "Zjištěn ${ errors.length } poškozený řádek csv",
-        "Zjištěny ${ errors.length } poškozené řádky csv",
-        "Zjištěno ${ errors.length } poškozených řádků csv",
-        "Zjištěno ${ errors.length } poškozených řádků csv"
-      ],
       "Editing item failed": [
         "Úprava položky se nezdařila"
       ],
@@ -486,6 +498,9 @@
       ],
       "Invalid password manager": [
         "Neplatný správce hesel"
+      ],
+      "Invalid URL": [
+        "Neplatná adresa URL"
       ],
       "Invitation could not be accepted": [
         "Pozvánku nebylo možné přijmout"
@@ -544,6 +559,9 @@
       "The file you are trying to import is empty": [
         "Soubor, který se snažíte importovat, je prázdný"
       ],
+      "The URL is in the list": [
+        "URL adresa je na seznamu"
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Příliš mnoho neúspěšných pokusů. Přihlaste se znovu."
       ],
@@ -596,12 +614,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "bajt",
-        "bajty",
-        "bajtů",
-        "bajtů"
-      ],
       "GB": [
         "GB"
       ],
@@ -615,38 +627,6 @@
         "TB"
       ]
     },
-    "file size format, long": {
-      "Byte": [
-        "Bajt",
-        "Bajty",
-        "Bajtů",
-        "Bajtů"
-      ],
-      "Gigabyte": [
-        "Gigabajt",
-        "Gigabajty",
-        "Gigabajtů",
-        "Gigabajtů"
-      ],
-      "Kilobyte": [
-        "Kilobajt",
-        "Kilobajty",
-        "Kilobajtů",
-        "Kilobajtů"
-      ],
-      "Megabyte": [
-        "Megabajt",
-        "Megabajty",
-        "Megabajtů",
-        "Megabajtů"
-      ],
-      "Terabyte": [
-        "Terabajt",
-        "Terabajty",
-        "Terabajtů",
-        "Terabajtů"
-      ]
-    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " Chcete-li vytvořit více trezorů, přejděte na placený tarif."
@@ -657,50 +637,20 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizace \"${ payload.item.data.metadata.name }\" byla odmítnuta"
       ],
-      "${ count } item": [
-        "${ count } položka",
-        "${ count } položky",
-        "${ count } položek",
-        "${ count } položek"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } položka",
-        "${ itemCount } položky",
-        "${ itemCount } položek",
-        "${ itemCount } položek"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } člen",
-        "${ memberCount } členové",
-        "${ memberCount } členů",
-        "${ memberCount } členů"
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
+        "${ PASS_APP_NAME } zobrazí favicon položky prostřednictvím anonymizovaného obrázkového proxy serveru ${ BRAND_NAME }."
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } bude importovat pouze přihlašovací údaje, poznámky a platební karty."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } krát",
-        "${ revisionNumber } krát",
-        "${ revisionNumber } krát",
-        "${ revisionNumber } krát"
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME } vás vyzve k uložení nebo aktualizaci přihlašovacích údajů."
       ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } položka",
-        "${ totalImportedItems } položky",
-        "${ totalImportedItems } položek",
-        "${ totalImportedItems } položek"
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME } bude navrhovat vytváření e-mailových aliasů v registračních formulářích."
       ],
-      "${ totalItems } item": [
-        "${ totalItems } položka",
-        "${ totalItems } položky",
-        "${ totalItems } položek",
-        "${ totalItems } položek"
-      ],
-      "${ trialDaysLeft } day left": [
-        "Zbývá ${ trialDaysLeft } den",
-        "Zbývají ${ trialDaysLeft } dny",
-        "Zbývá ${ trialDaysLeft } dnů",
-        "Zbývá ${ trialDaysLeft } dnů"
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } bude navrhovat vytváření silných hesel v registračních formulářích."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dnů na vyzkoušení prémiových funkcí zdarma. Pouze během prvního týdne používání ${ BRAND_NAME }."
@@ -710,6 +660,9 @@
       ],
       "Access successfully confirmed": [
         "Přístup úspěšně potvrzen"
+      ],
+      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
+        "Přístup do ${ PASS_APP_NAME } bude vyžadovat PIN kód pro odemčení vaší relace."
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Pomocí našich mobilních aplikací přistupujte ke svým heslům i na cestách."
@@ -748,7 +701,7 @@
         "Může zobrazovat položky v tomto trezoru."
       ],
       "Click the icon to open it anytime.": [
-        "Kliknutím na ikonu ji můžete kdykoli otevřít."
+        "Otevřete kdykoli kliknutím na ikonu."
       ],
       "Congratulations, your access has been confirmed": [
         "Blahopřejeme, váš přístup byl potvrzen"
@@ -767,6 +720,9 @@
       ],
       "Deleted items will be moved here first": [
         "Smazané položky budou nejprve přesunuty sem"
+      ],
+      "Deleting \"${ payload.content.name }\"": [
+        "Mazání \"${ payload.content.name }\""
       ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Objevte ${ PASS_APP_NAME } Youtube video"
@@ -819,12 +775,6 @@
       "Import in progress:": [
         "Import probíhá:"
       ],
-      "Imported ${ payload.total } item": [
-        "Importována ${ payload.total } položka",
-        "Importovány ${ payload.total } položky",
-        "Importováno ${ payload.total } položek",
-        "Importováno ${ payload.total } položek"
-      ],
       "Imported on ${ date }": [
         "Importováno ${ date }"
       ],
@@ -851,12 +801,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Zdá se, že jste již přihlášeni do ${ PASS_APP_NAME }. Pokud se snažíte přihlásit pomocí jiného účtu, nejprve se z rozšíření odhlaste."
-      ],
-      "item": [
-        "položka",
-        "položky",
-        "položek",
-        "položek"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Položka \"${ payload.item.data.metadata.name }\" byla vytvořena"
@@ -945,6 +889,9 @@
       "Please consider leaving a review.": [
         "Zvažte prosím zanechání hodnocení."
       ],
+      "Please enter your current PIN code to continue": [
+        "Pro pokračování zadejte svůj aktuální PIN kód"
+      ],
       "Press Enter to copy": [
         "Pro kopírování stiskněte Enter"
       ],
@@ -991,7 +938,7 @@
         "Všechny trezory byly úspěšně synchronizovány"
       ],
       "Switch to another vault or create an item in this vault": [
-        "Přejděte do jiného trezoru nebo vytvořte položky v tomto trezoru"
+        "Přejděte do jiného trezoru nebo vytvořte položku v tomto trezoru"
       ],
       "Syncing your vaults…": [
         "Synchronizace trezorů…"
@@ -999,11 +946,8 @@
       "Thank you, the problem has been reported": [
         "Děkujeme, problém byl nahlášen"
       ],
-      "The following item could not be imported :": [
-        "Následující položka nemohla být importována:",
-        "Následující ${ result.ignored.length } položky nemohly být importovány",
-        "Následujících ${ result.ignored.length } položek nemohlo být importováno",
-        "Následujících ${ result.ignored.length } položek nemohlo být importováno"
+      "The autofill dropdown will automatically open on field focus.": [
+        "Rozbalovací nabídka automatického vyplňování se automaticky otevře při zaměření pole."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Text, který se snažíte vložit, je delší než maximální povolená délka ${ maxLength } znaků."
@@ -1071,14 +1015,11 @@
       "You are about to create:": [
         "Chystáte se vytvořit:"
       ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Můžete rychle automaticky vyplnit přihlašovací údaje kliknutím na ikonu ${ PASS_APP_NAME }."
+      ],
       "You cannot change the mailboxes for this alias.": [
         "Nemůžete měnit e-mailové schránky tohoto aliasu."
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývá ${ daysRemaining } den.",
-        "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývají ${ daysRemaining } dny.",
-        "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývá ${ daysRemaining } dnů.",
-        "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývá ${ daysRemaining } dnů."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Překročili jste počet trezorů zahrnutých do vašeho předplatného. Položky lze přesunout pouze do vašich prvních dvou trezorů. Chcete-li přesouvat položky mezi všemi trezory, navyšte své předplatné."
@@ -1112,18 +1053,6 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } znak",
-        "${ passwordOptions.options.length } znaky",
-        "${ passwordOptions.options.length } znaků",
-        "${ passwordOptions.options.length } znaků"
-      ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } slovo",
-        "${ passwordOptions.options.wordCount } slova",
-        "${ passwordOptions.options.wordCount } slov",
-        "${ passwordOptions.options.wordCount } slov"
-      ],
       "1 hour": [
         "1 hodina"
       ],
@@ -1636,14 +1565,6 @@
         "Napište svoji poznámku"
       ]
     },
-    "Success": {
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatele.",
-        "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatele.",
-        "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatelů.",
-        "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatelů."
-      ]
-    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Nastavení ${ PASS_APP_NAME }"
@@ -1668,6 +1589,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Užíváte si ${ PASS_APP_NAME }?"
+      ],
+      "Enter your PIN": [
+        "Zadejte svůj PIN"
       ],
       "Fill & copy password": [
         "Vyplnit a kopírovat heslo"
@@ -1764,6 +1688,9 @@
       ]
     },
     "Validation": {
+      "Duplicated URL": [
+        "Duplicitní URL adresa"
+      ],
       "Field name is required": [
         "Název pole je povinný"
       ],
@@ -1776,8 +1703,14 @@
       "Url already exists": [
         "URL již existuje"
       ],
+      "URL cannot be empty": [
+        "URL adresa nemůže být prázdná"
+      ],
       "Url is invalid": [
         "Adresa URL je neplatná"
+      ],
+      "URL is invalid": [
+        "URL adresa je neplatná"
       ]
     },
     "Warning": {
