@@ -1,5 +1,4 @@
 import { type VFC, useEffect } from 'react';
-import { useSelector } from 'react-redux';
 
 import type { FormikErrors } from 'formik';
 import { Field, Form, FormikProvider, useFormik } from 'formik';
@@ -9,25 +8,19 @@ import type { ConfirmationModalProps } from '@proton/pass/components/Confirmatio
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { VaultSelectField } from '@proton/pass/components/Form/Field/VaultSelectField';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
-import { selectShare } from '@proton/pass/store/selectors';
-import type { MaybeNull, ShareType } from '@proton/pass/types';
-import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
-import { truthy } from '@proton/pass/utils/fp/predicates';
-import clsx from '@proton/utils/clsx';
+import type { MaybeNull } from '@proton/pass/types';
 
-type ConfirmDeleteValues = { name: string; destination: string };
+type ConfirmDeleteValues = { name: string };
 type Props = {
     vault: MaybeNull<VaultShareItem>;
-    onSubmit: (vault: VaultShareItem, destinationShareId: MaybeNull<string>) => void;
-} & Pick<ConfirmationModalProps, 'onClose'>;
+    onSubmit: (vault: VaultShareItem) => void;
+} & Pick<ConfirmationModalProps, 'onClose' | 'open'>;
 
 const FORM_ID = 'vault-confirm-delete';
-const initialValues: ConfirmDeleteValues = { name: '', destination: 'delete' };
+const initialValues: ConfirmDeleteValues = { name: '' };
 
-export const VaultDeleteModal: VFC<Props> = ({ vault, onClose, onSubmit }) => {
-    const open = vault !== null;
+export const VaultDeleteModal: VFC<Props> = ({ open, vault, onClose, onSubmit }) => {
     const vaultName = vault?.content?.name ?? '';
 
     const validateVaultDelete = ({ name }: ConfirmDeleteValues) => {
@@ -42,9 +35,9 @@ export const VaultDeleteModal: VFC<Props> = ({ vault, onClose, onSubmit }) => {
         validateOnChange: true,
         validateOnMount: true,
         validate: validateVaultDelete,
-        onSubmit: ({ destination }) => {
+        onSubmit: () => {
             if (vault === null) return;
-            onSubmit(vault, destination === 'delete' ? null : destination);
+            onSubmit(vault);
             onClose?.();
         },
     });
@@ -52,9 +45,6 @@ export const VaultDeleteModal: VFC<Props> = ({ vault, onClose, onSubmit }) => {
     useEffect(() => {
         if (!open) form.resetForm({ values: initialValues, errors: validateVaultDelete(initialValues) });
     }, [open]);
-
-    const deleteItems = form.values.destination === 'delete';
-    const destinationVaultName = useSelector(selectShare<ShareType.Vault>(form.values.destination))?.content.name;
 
     return (
         <ConfirmationModal
@@ -78,30 +68,9 @@ export const VaultDeleteModal: VFC<Props> = ({ vault, onClose, onSubmit }) => {
                         />
                     </FieldsetCluster>
 
-                    <FieldsetCluster>
-                        <Field
-                            name="destination"
-                            label={c('Label').t`Move items to`}
-                            component={VaultSelectField}
-                            placeholder={c('Placeholder').t`Move items to another vault (optional)`}
-                            excludeOptions={[vault?.shareId].filter(truthy)}
-                            extraOptions={[
-                                {
-                                    value: 'delete',
-                                    icon: 'pass-trash',
-                                    color: VaultColor.COLOR7 /* danger color */,
-                                    title: c('Label').t`Permanently delete items`,
-                                },
-                            ]}
-                        />
-                    </FieldsetCluster>
-
-                    <span className={clsx(deleteItems ? 'color-danger' : 'color-weak', 'block mt-3 px-5')}>
-                        {deleteItems
-                            ? c('Warning')
-                                  .t`Vault "${vaultName}" and all its items will be permanently deleted. You cannot undo this action.`
-                            : c('Warning')
-                                  .t`Vault "${vaultName}" will be permanently deleted and all its items moved to "${destinationVaultName}"`}
+                    <span className="color-danger block mt-3 px-5">
+                        {c('Warning')
+                            .t`Vault "${vaultName}" and all its items will be permanently deleted. You cannot undo this action.`}
                     </span>
                 </Form>
             </FormikProvider>
