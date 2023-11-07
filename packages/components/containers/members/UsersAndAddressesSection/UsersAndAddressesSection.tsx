@@ -423,13 +423,25 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                                     data-testid="users-and-addresses-table:memberIsPrivate"
                                                     className="mr-1"
                                                 >
-                                                    <Badge type="origin" className="rounded-sm">{c('Private Member')
-                                                        .t`private`}</Badge>
+                                                    <Badge type="origin" className="rounded-sm">
+                                                        {c('Private Member').t`private`}
+                                                    </Badge>
                                                 </span>
                                             )}
                                             {member['2faStatus'] > 0 && (
-                                                <Badge type="origin" className="rounded-sm">{c('Enabled 2FA')
-                                                    .t`2FA`}</Badge>
+                                                <Badge type="origin" className="rounded-sm mr-1">
+                                                    {c('Enabled 2FA').t`2FA`}
+                                                </Badge>
+                                            )}
+                                            {member.SSO > 0 && (
+                                                <Badge
+                                                    type="success"
+                                                    className="rounded-sm"
+                                                    tooltip={c('Users table: single sign-on tooltip')
+                                                        .t`SSO user provided by your Identity Provider`}
+                                                >
+                                                    {c('Users table: single sign-on enabled').t`SSO`}
+                                                </Badge>
                                             )}
                                         </div>
                                     </div>
