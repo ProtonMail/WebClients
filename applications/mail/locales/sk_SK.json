@@ -100,6 +100,12 @@
       "As Scheduled": [
         "Podľa plánu"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Na jednu skupinu kontaktov je povolený najviac ${ maxContacts } kontakt",
+        "Na jednu skupinu kontaktov sú povolené najviac ${ maxContacts } kontakty",
+        "Na jednu skupinu kontaktov je povolených najviac ${ maxContacts } kontaktov",
+        "Na jednu skupinu kontaktov je povolených najviac ${ maxContacts } kontaktov"
+      ],
       "Attach screenshot(s)": [
         "Priložiť snímok(ky) obrazovky"
       ],
@@ -276,6 +282,18 @@
       ],
       "Delete": [
         "Odstrániť"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Zmazať ${ selectedCount } kontakty",
+        "Zmazať ${ selectedCount } kontakty",
+        "Zmazať ${ selectedCount } kontakty",
+        "Zmazať ${ selectedCount } kontakty"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Zmazať ${ selectedCount } skupinu kontaktov",
+        "Zmazať ${ selectedCount } skupinu kontaktov",
+        "Zmazať ${ selectedCount } skupinu kontaktov",
+        "Zmazať ${ selectedCount } skupinu kontaktov"
       ],
       "Delete all": [
         "Zmazať všetko"
@@ -513,6 +531,12 @@
       ],
       "Insert": [
         "Vložit"
+      ],
+      "Insert ${ totalChecked } contact": [
+        "Vložiť ${ totalChecked } kontakt",
+        "Vložiť ${ totalChecked } kontakt",
+        "Vložiť ${ totalChecked } kontakty",
+        "Vložiť ${ totalChecked } kontakt"
       ],
       "Insert contact": [
         "Vložiť kontakt"
@@ -1033,6 +1057,12 @@
       "Trust": [
         "Dôverovať"
       ],
+      "Trust key": [
+        "Dôveryhodný kľúč",
+        "Dôveryhodný kľúč",
+        "Dôverovať kľúčom",
+        "Dôverovať novým kľúčom"
+      ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
       ],
@@ -1150,6 +1180,12 @@
       "Yes, I'll attend": [
         "Áno, budem sa zúčastňovať"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktu",
+        "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
+        "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov",
+        "Nemôžete odoslať vCard súbory viac ako ${ maxAttachments } kontaktov"
+      ],
       "Zoom in": [
         "Priblížiť"
       ],
@@ -1193,6 +1229,26 @@
     "Adding expiration to a message will create an expiring message": {
       "Expiring message": [
         "Správa s vypršaním platnosti"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } vlastná doména",
+        "${ domains } vlastné domény",
+        "${ domains } vlastných domén",
+        "${ domains } vlastných domén"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servery",
+        "${ ips } serverov",
+        "${ ips } serverov"
+      ],
+      "${ users } user": [
+        "${ users } používateľ",
+        "${ users } používatelia",
+        "${ users } používateľov",
+        "${ users } používateľov"
       ]
     },
     "Alert": {
@@ -1364,6 +1420,12 @@
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Zahŕňa podporu pre 1 vlastnú emailovú doménu, 10 emailových adries, 10 hide-my-email aliasov, zdieľanie kalendára a ďalšie."
+      ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Súčasťou je podpora 3 vlastných emailových domén, ${ addresses } emailová adresa, neobmedzený počet ide-my-email aliasov, zdieľanie kalendára a ďalšie funkcie.",
+        "Súčasťou je podpora 3 vlastných emailových domén, ${ addresses } emailové adresy, neobmedzený počet ide-my-email aliasov, zdieľanie kalendára a ďalšie funkcie.",
+        "Súčasťou je podpora 3 vlastných emailových domén, ${ addresses } emailových adries, neobmedzený počet ide-my-email aliasov, zdieľanie kalendára a ďalšie funkcie.",
+        "Súčasťou je podpora 3 vlastných emailových domén, ${ addresses } emailových adries, neobmedzený počet ide-my-email aliasov, zdieľanie kalendára a ďalšie funkcie."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
@@ -1732,6 +1794,14 @@
       ],
       "Cancel expiration": [
         "Zrušiť platnosť"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } užívateľ",
+        "${ users } užívatelia",
+        "${ users } užívateľov",
+        "${ users } užívateľov"
       ]
     },
     "Collapsible tooltip": {
@@ -2903,6 +2973,12 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } krát",
+        "${ count } krát",
+        "${ count } krát",
+        "${ count } krát"
+      ],
       "Daily": [
         "Denne"
       ],
@@ -2911,6 +2987,24 @@
       ],
       "Daily, ${ untilString }": [
         "Denne, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Každý ${ interval } deň",
+        "Každé ${ interval } dni",
+        "Každých ${ interval } dní",
+        "Každých ${ interval } dní"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Každý ${ interval } deň, ${ timesString }",
+        "Každé ${ interval } dni, ${ timesString }",
+        "Každých ${ interval } dní, ${ timesString }",
+        "Každých ${ interval } dní, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Každý ${ interval } deň, ${ untilString }",
+        "Každé ${ interval } dni, ${ untilString }",
+        "Každých ${ interval } dní, ${ untilString }",
+        "Každých ${ interval } dní, ${ untilString }"
       ],
       "until ${ dateString }": [
         "do ${ dateString }"
@@ -2976,6 +3070,12 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Zlučovanie kontaktov... Tento proces môže trvať niekoľko minút. Po dokončení môžete okno zavrieť."
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } other won't be delivered and will be permanently deleted.": [
+        "Nové emaily od ${ senderEmailAddress } a ${ otherSendersCount } ďalších nebudú doručené a budú natrvalo odstránené.",
+        "Nové emaily od ${ senderEmailAddress } a ${ otherSendersCount } ďalších nebudú doručené a budú natrvalo odstránené.",
+        "Nové emaily od ${ senderEmailAddress } a ${ otherSendersCount } ďalších nebudú doručené a budú natrvalo odstránené.",
+        "Nové emaily od ${ senderEmailAddress } a ${ otherSendersCount } ďalších nebudú doručené a budú natrvalo odstránené."
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nové emaily od ${ senderEmailAddress } nebudú doručené a budú trvalo zmazané."
@@ -3101,6 +3201,12 @@
       "Event starting now": [
         "Udalosť práve začína"
       ],
+      "Event starts in ${ minutesUntilEvent } minute": [
+        "Udalosť začína o ${ minutesUntilEvent } minútu",
+        "Udalosť začína o ${ minutesUntilEvent } minúty",
+        "Udalosť začína o ${ minutesUntilEvent } minút",
+        "Udalosť začína o ${ minutesUntilEvent } minút"
+      ],
       "Event starts tomorrow": [
         "Udalosť začína zajtra"
       ]
@@ -3198,6 +3304,18 @@
       "Choose a date in the future.": [
         "Vyberte budúci dátum."
       ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } day.": [
+        "Vyberte dátum v rámci nasledujúceho ${ EXPIRATION_TIME_MAX_DAYS } dňa.",
+        "Vyberte dátum v rámci nasledujúcich ${ EXPIRATION_TIME_MAX_DAYS } dní.",
+        "Vyberte dátum v rámci nasledujúcich ${ EXPIRATION_TIME_MAX_DAYS } dňoch.",
+        "Vyberte dátum v rámci nasledujúcich ${ EXPIRATION_TIME_MAX_DAYS } dňoch."
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } day.": [
+        "Vyberte dátum v rámci nasledujúceho ${ SCHEDULED_MAX_DATE_DAYS } dňa.",
+        "Vyberte dátum v rámci nasledujúcich ${ SCHEDULED_MAX_DATE_DAYS } dní.",
+        "Vyberte dátum v rámci nasledujúcich ${ SCHEDULED_MAX_DATE_DAYS } dňoch.",
+        "Vyberte dátum v rámci nasledujúcich ${ SCHEDULED_MAX_DATE_DAYS } dňoch."
+      ],
       "Condition incomplete": [
         "Neúplná podmienka"
       ],
@@ -3221,6 +3339,18 @@
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "Chyba dešifrovania: Dešifrovanie obsahu tejto správy zlyhalo."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Zrušte výber aspoň ${ calendarsToFixCount } kalendára",
+        "Zrušte výber aspoň ${ calendarsToFixCount } kalendárov",
+        "Zrušte výber aspoň ${ calendarsToFixCount } kalendárov",
+        "Zrušte výber aspoň ${ calendarsToFixCount } kalendárov"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Zrušte výber aspoň ${ calendarsToFixCount } kalendára alebo",
+        "Zrušte výber aspoň ${ calendarsToFixCount } kalendárov alebo",
+        "Zrušte výber aspoň ${ calendarsToFixCount } kalendárov alebo",
+        "Zrušte výber aspoň ${ calendarsToFixCount } kalendárov alebo"
       ],
       "Domain not available, try again later": [
         "Doména nie je dostupná, skúste to znova neskôr"
@@ -3309,6 +3439,12 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "Prekročený maximálny počet príloh (${ attachmentsCountLimit })"
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Zlúčte aspoň ${ calendarsToFixCount } kalendár s existujúcim ${ BRAND_NAME } kalendárom",
+        "Zlúčte aspoň ${ calendarsToFixCount } kalendárov s existujúcimi ${ BRAND_NAME } kalendármi",
+        "Zlúčte aspoň ${ calendarsToFixCount } kalendárov s existujúcimi ${ BRAND_NAME } kalendármi",
+        "Zlúčte aspoň ${ calendarsToFixCount } kalendárov s existujúcimi ${ BRAND_NAME } kalendármi"
+      ],
       "Message needs to be sent first": [
         "Najskôr je potrebné zaslať správu"
       ],
@@ -3345,6 +3481,18 @@
       "Not a valid number": [
         "Neplatné číslo"
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Jeden z kontaktov nemá emailovú adresu: ${ noEmailsContactNamesList }",
+        "Niektoré kontakty nemajú emailové adresy: ${ noEmailsContactNamesList } ",
+        "Niektoré kontakty nemajú emailové adresy: ${ noEmailsContactNamesList } ",
+        "Niektoré kontakty nemajú emailové adresy: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Jedna zo skupín nemá žiadne kontakty: ${ noContactGroupList }",
+        "Niektoré skupny nemajú žiadne kontakty: ${ noContactGroupList } ",
+        "Niektoré skupny nemajú žiadne kontakty: ${ noContactGroupList } ",
+        "Niektoré skupny nemajú žiadne kontakty: ${ noContactGroupList } "
+      ],
       "Password is required": [
         "Heslo je požadované"
       ],
@@ -3353,6 +3501,12 @@
       ],
       "Please activate your search again": [
         "Aktivujte znovu vyhľadávanie"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Ak chcete pokračovať, opravte zvýraznený problém.",
+        "Ak chcete pokračovať, opravte zvýraznené problémy.",
+        "Ak chcete pokračovať, opravte zvýraznené problémy.",
+        "Ak chcete pokračovať, opravte zvýraznené problémy."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Zadajte meno, priezvisko alebo zobrazované meno, prosím"
@@ -3377,6 +3531,12 @@
       ],
       "re-activate the previous key": [
         "znovu aktivovať predchádzajúci kľúč"
+      ],
+      "Removed duplicate recipient: ${ recipents }": [
+        "Odstránený duplicitný príjemca: ${ recipents }",
+        "Odstránení duplicitní príjemcovia: ${ recipents }",
+        "Odstránení duplicitní príjemcovia: ${ recipents }",
+        "Odstránení duplicitní príjemcovia: ${ recipents }"
       ],
       "Request timed out": [
         "Požiadavka časovo omeškaná"
@@ -3425,6 +3585,12 @@
       ],
       "status page": [
         "stránka stavu"
+      ],
+      "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
+        "Prílohu sa nepodarilo dešifrovať.\nAk máte zodpovedajúci súkromný kľúč, stále budete môcť dešifrovať\nsúbor s použitím programu, ako je GnuPG.",
+        "Niektoré prílohy sa nepodarilo dešifrovať.\nAk máte zodpovedajúci súkromný kľúč, stále budete môcť dešifrovať\nsúbory s použitím programu, ako je GnuPG.",
+        "Niektoré prílohy sa nepodarilo dešifrovať.\nAk máte zodpovedajúci súkromný kľúč, stále budete môcť dešifrovať\nsúbory s použitím programu, ako je GnuPG.",
+        "Niektoré prílohy sa nepodarilo dešifrovať.\nAk máte zodpovedajúci súkromný kľúč, stále budete môcť dešifrovať\nsúbory s použitím programu, ako je GnuPG."
       ],
       "The email addresses do not match": [
         "Emailové adresy sa nezhodujú"
@@ -3504,6 +3670,18 @@
       "Wrong mailbox password": [
         "Nesprávne heslo k poštovej schránke"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Email nemôžete odoslať viac ako ${ maxContacts } príjemcovi",
+        "Email nemôžete odoslať viac ako ${ maxContacts } príjemcom",
+        "Email nemôžete odoslať viac ako ${ maxContacts } príjemcom",
+        "Email nemôžete odoslať viac ako ${ maxContacts } príjemcom"
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer window at a time": [
+        "Nie je možné otvoriť viac ako ${ maxActiveComposer } okno pre vytváranie naraz",
+        "Nie je možné otvoriť viac ako ${ maxActiveComposer } okná pre vytváranie naraz",
+        "Nie je možné otvoriť viac ako ${ maxActiveComposer } okien na vytváranie naraz",
+        "Nie je možné otvoriť viac ako ${ maxActiveComposer } okien na vytváranie naraz"
+      ],
       "You did not provide a file.": [
         "Neposkytli ste súbor."
       ],
@@ -3527,6 +3705,14 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhľadávanie našlo príliš veľa výsledkov. Upresnite hľadanie a skúste to prosím znova."
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Na jednu pozvánku je povolený najviac ${ maxAttendees } účastník",
+        "Na jednu pozvánku sú povolení najviac ${ maxAttendees } účastníci",
+        "Na jednu pozvánku je povolených najviac ${ maxAttendees } účastníkov",
+        "Na jednu pozvánku je povolených najviac ${ maxAttendees } účastníkov"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3561,6 +3747,12 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Vyskytla sa neočakávaná chyba. Import sa musí reštartovať."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ MAX_IMPORT_EVENTS_STRING } udalosť.",
+        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ MAX_IMPORT_EVENTS_STRING } udalosti.",
+        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ MAX_IMPORT_EVENTS_STRING } udalosti.",
+        "Váš súbor ${ formattedFilename } obsahuje viac ako ${ MAX_IMPORT_EVENTS_STRING } udalosti."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Váš súbor ${ formattedFilename } má neplatnú metódu a nemožno ho importovať."
@@ -3951,6 +4143,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtov",
+        "bajtov"
+      ],
       "GB": [
         "GB"
       ],
@@ -3962,6 +4160,38 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bajt",
+        "Bajty",
+        "Bajtov",
+        "Bajtov"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajty",
+        "Gigabajtov",
+        "Gigabajtov"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajty",
+        "Kilobajtov",
+        "Kilobajtov"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajty",
+        "Megabajtov",
+        "Megabajtov"
+      ],
+      "Terabyte": [
+        "terabajt",
+        "terabajty",
+        "terabajtov",
+        "terabajtov"
       ]
     },
     "Filter": {
@@ -4293,6 +4523,12 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Našiel sa ${ items.length } návrh, na navigáciu použite klávesnicu.",
+        "Našli sa ${ items.length } návrhy, na navigáciu použite klávesnicu.",
+        "Našlo sa ${ items.length } návrhov, na navigáciu použite klávesnicu.",
+        "Našlo sa ${ items.length } návrhov, na navigáciu použite klávesnicu."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Použite klávesy hore a dole pre prechádzanie návrhov po zadaní. Stlačte tlačidlo Enter pre potvrdenie vašej voľby, alebo tlačidlo Esc pre zatvorenie návrhov."
       ]
@@ -4309,11 +4545,29 @@
       ]
     },
     "ICS widget label for event details": {
+      "${ totalAttendees } participant": [
+        "${ totalAttendees } účastník",
+        "${ totalAttendees } účastníci",
+        "${ totalAttendees } účastníkov",
+        "${ totalAttendees } účastníkov"
+      ],
       "Organizer:": [
         "Organizátor:"
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } udalosti zašifrované a pridané do kalendára",
+        "${ totalImported }/${ totalToImport } udalostí zašifrované a pridané do kalendára",
+        "${ totalImported }/${ totalToImport } udalostí zašifrované a pridané do kalendára",
+        "${ totalImported }/${ totalToImport } udalostí zašifrované a pridané do kalendára"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Vyskytla sa chyba pri šifrovaní a pridávaní vašej udalosti. ${ totalImported } z ${ totalToImport } udalosti bola úspešne importovaná.",
+        "Vyskytla sa chyba pri šifrovaní a pridávaní vašej udalosti. ${ totalImported } z ${ totalToImport } udalostí boli úspešne importované.",
+        "Vyskytla sa chyba pri šifrovaní a pridávaní vašej udalosti. ${ totalImported } z ${ totalToImport } udalostí bolo úspešne importované.",
+        "Vyskytla sa chyba pri šifrovaní a pridávaní vašej udalosti. ${ totalImported } z ${ totalToImport } udalostí bolo úspešne importované."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Vyskytla sa chyba pri šifrovaní a pridávaní vašej udalosti. Udalosť nemohla byť importovaná."
       ],
@@ -4348,11 +4602,29 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Importované pozvánky nájdete v ${ CALENDAR_APP_NAME } ako jednoduché udalosti bez podrobností o organizátoroch a účastníkoch. Pre aktualizácie udalostí a zobrazenie účastníkov požiadajte organizátorov o pozvánku pomocou svojej ${ BRAND_NAME } emailovej adresy."
       ],
+      "This file contains an event invitation:": [
+        "Tento súbor obsahuje pozvánku na udalosť:",
+        "Tento súbor obsahuje pozvánky na udalosti:",
+        "Tento súbor obsahuje pozvánky na udalosti:",
+        "Tento súbor obsahuje pozvánky na udalosti:"
+      ],
+      "This file contains an invitation response:": [
+        "Tento súbor obsahuje odpoveď na pozvánku:",
+        "Tento súbor obsahuje odpovede na pozvánky:",
+        "Tento súbor obsahuje odpovede na pozvánky:",
+        "Tento súbor obsahuje odpovede na pozvánky:"
+      ],
       "This file contains some data that we cannot import:": [
         "Tento súbor obsahuje niektoré dáta, ktoré nemôžeme importovať:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } kontakt bol zašifrovaný a pridaný do vášho zoznamu kontaktov",
+        "${ totalImported }/${ totalToImport } kontakty boli zašifrované a pridané do vášho zoznamu kontaktov",
+        "${ totalImported }/${ totalToImport } kontaktov bolo zašifrovaných a pridaných do vášho zoznamu Kontaktov",
+        "${ totalImported }/${ totalToImport } kontaktov bolo zašifrovaných a pridaných do vášho zoznamu Kontaktov"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Vyskytla sa chyba pri šifrovaní a pridávaní kontaktu. Kontakt nemohol byť importovaný."
       ],
@@ -4372,6 +4644,14 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Kontakt ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } kontakt",
+        "${ totalContacts } kontakty",
+        "${ totalContacts } kontaktov",
+        "${ totalContacts } kontaktov"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4551,6 +4831,12 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontaktov nebude importované. Kliknite pre detaily"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } z ${ totalEvents } udalosti nebude importovaná. Kliknite pre detaily.",
+        "${ totalEventsDiscarded } zo ${ totalEvents } udalostí nebude importované. Kliknite pre detaily.",
+        "${ totalEventsDiscarded } z ${ totalEvents } udalostí nebude importované. Kliknite pre detaily.",
+        "${ totalEventsDiscarded } z ${ totalEvents } udalostí nebude importované. Kliknite pre detaily."
+      ],
       "No contact can be imported. Click for details": [
         "Žiadny kontakt nemôže byť importovaný. Kliknite pre viac informácií"
       ],
@@ -4562,14 +4848,80 @@
       ]
     },
     "Info": {
+      "${ addressCount } email address": [
+        "${ addressCount } emailová adresa",
+        "${ addressCount } emailové adresy",
+        "${ addressCount } emailových adries",
+        "${ addressCount } emailových adries"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Šifrovacia technológia ${ BRAND_NAME } znamená, že nikto nemá prístup k vášmu heslu – dokonca ani my."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } nový kalendár",
+        "${ calendarsToBeCreatedCount } nové kalendáre",
+        "${ calendarsToBeCreatedCount } nových kalendárov",
+        "${ calendarsToBeCreatedCount } nových kalendárov"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } zlúčený kalendár",
+        "${ calendarsToBeMergedCount } zlúčené kalendáre",
+        "${ calendarsToBeMergedCount } zlúčených kalendárov",
+        "${ calendarsToBeMergedCount } zlúčených kalendárov"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } kontakt obsahuje viacero emailových adries.",
+        "${ contactCount } kontakty obsahujú viacero emailových adries.",
+        "${ contactCount } kontaktov obsahuje viacero emailových adries.",
+        "${ contactCount } kontaktov obsahuje viacero emailových adries."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } člen",
+        "${ contactEmailsLength } Členovia",
+        "${ contactEmailsLength } Členov",
+        "${ contactEmailsLength } Členov"
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } member)": [
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } člen)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } členovia)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } členov)",
+        "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } členov)"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } obsahuje viacero emailových adries."
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } nájdený kontakt",
+        "${ contactsCount } nájdené kontakty",
+        "${ contactsCount } nájdených kontaktov",
+        "${ contactsCount } nájdených kontaktov"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } kontakt",
+        "${ contactsLength } kontakty",
+        "${ contactsLength } kontaktov",
+        "${ contactsLength } kontaktov"
+      ],
+      "${ count } unread message": [
+        "${ count } neprečítaná správa",
+        "${ count } neprečítané správy",
+        "${ count } neprečítaných správ",
+        "${ count } neprečítaných správ"
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ currentProgress } z ${ totalProgress }",
+        "${ currentProgress } z ${ totalProgress }",
+        "${ currentProgress } z ${ totalProgress }",
+        "${ currentProgress } z ${ totalProgress }"
+      ],
+      "${ embeddedAttachmentsCount } embedded image": [
+        "${ embeddedAttachmentsCount } vložený obrázok",
+        "${ embeddedAttachmentsCount } vložené obrázky",
+        "${ embeddedAttachmentsCount } vložených obrázkov",
+        "${ embeddedAttachmentsCount } vložených obrázkov"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: obrázok v plnej veľkosti"
@@ -4577,11 +4929,167 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: náhľad v nízkom rozlíšení"
       ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } nájdená skupina",
+        "${ groupCounts } nájdené skupiny",
+        "${ groupCounts } nájdených skupín",
+        "${ groupCounts } nájdených skupín"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } môže chrániť aj vašu spoločnosť."
       ],
+      "${ messagesNotAuthorizedToMove } message could not be moved.": [
+        "${ messagesNotAuthorizedToMove } správu nebolo možné presunúť.",
+        "${ messagesNotAuthorizedToMove } správy nebolo možné presunúť.",
+        "${ messagesNotAuthorizedToMove } správ nebolo možné presunúť.",
+        "${ messagesNotAuthorizedToMove } správ nebolo možné presunúť."
+      ],
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } tracker pošty zablokovaný",
+        "${ numberOfImageTrackers } trackery pošty zablokované",
+        "${ numberOfImageTrackers } trackerov pošty zablokovaných",
+        "${ numberOfImageTrackers } trackerov pošty zablokovaných"
+      ],
+      "${ numberOfImageTrackers } tracker blocked": [
+        "${ numberOfImageTrackers } sledovač zablokovaný",
+        "${ numberOfImageTrackers } sledovače zablokované",
+        "${ numberOfImageTrackers } sledovačov zablokovaných",
+        "${ numberOfImageTrackers } sledovačov zablokovaných"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } odkaz vyčistený ",
+        "${ numberOfUTMTrackers } odkazy vyčistené ",
+        "${ numberOfUTMTrackers } odkazov vyčistených",
+        "${ numberOfUTMTrackers } odkazov vyčistených"
+      ],
+      "${ NumMessages } message in conversation": [
+        "${ NumMessages } správa v konverzácii",
+        "${ NumMessages } správy v konverzácii",
+        "${ NumMessages } správ v konverzácii",
+        "${ NumMessages } správ v konverzácii"
+      ],
+      "${ numOccurrences } occurrence found": [
+        "Nájdený ${ numOccurrences } výskyt",
+        "Nájdené ${ numOccurrences } výskyty",
+        "Nájdených ${ numOccurrences } výskytov",
+        "Nájdených ${ numOccurrences } výskytov"
+      ],
+      "${ numOccurrences } occurrence found in the mail content": [
+        "${ numOccurrences } výskyt nájdený v obsahu pošty",
+        "${ numOccurrences } výskyty nájdené v obsahu pošty",
+        "${ numOccurrences } výskytov nájdených v obsahu správy",
+        "${ numOccurrences } výskytov nájdených v obsahu správy"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } nájdená zložka",
+        "${ providerFoldersNumLocalized } nájdené zložky",
+        "${ providerFoldersNumLocalized } nájdených zložiek",
+        "${ providerFoldersNumLocalized } nájdených zložiek"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } nájdený štítok v Gmaile",
+        "${ providerFoldersNumLocalized } nájdené štítky v G maile",
+        "${ providerFoldersNumLocalized } nájdených štítkov v G maile",
+        "${ providerFoldersNumLocalized } nájdených štítkov v G maile"
+      ],
+      "${ pureAttachmentsCount } file attached": [
+        "${ pureAttachmentsCount } pripojený súbor",
+        "${ pureAttachmentsCount } pripojené súbory",
+        "${ pureAttachmentsCount } pripojených súborov",
+        "${ pureAttachmentsCount } pripojených súborov"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendára",
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendárov",
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendárov",
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendárov"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } vybraný kontakt",
+        "${ selectedContactsLength }/${ contactsLength } vybrané kontakty",
+        "${ selectedContactsLength }/${ contactsLength } vybraných kontaktov",
+        "${ selectedContactsLength }/${ contactsLength } vybraných kontaktov"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } vybratá zložka",
+        "${ selectedFoldersCount } vybraté zložky",
+        "${ selectedFoldersCount } vybratých zložiek",
+        "${ selectedFoldersCount } vybratých zložiek"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } vybratý štítok",
+        "${ selectedFoldersCount } vybraté štítky",
+        "${ selectedFoldersCount } vybratých štítkov",
+        "${ selectedFoldersCount } vybratých štítkov"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } vybratá zložka",
+        "${ selectedFoldersCountLocalized } vybraté zložky",
+        "${ selectedFoldersCountLocalized } vybratých zložiek",
+        "${ selectedFoldersCountLocalized } vybratých zložiek"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } vybratý štítok",
+        "${ selectedFoldersCountLocalized } vybraté štítky",
+        "${ selectedFoldersCountLocalized } vybratých štítkov",
+        "${ selectedFoldersCountLocalized } vybratých štítkov"
+      ],
       "${ storage } storage": [
         "${ storage } úložisko"
+      ],
+      "${ total } conversation": [
+        "${ total } konverzácia",
+        "${ total } konverzácie",
+        "${ total } konverzácií",
+        "${ total } konverzácií"
+      ],
+      "${ total } message": [
+        "${ total } správa",
+        "${ total } správy",
+        "${ total } správ",
+        "${ total } správ"
+      ],
+      "${ unread } unread conversation": [
+        "${ unread } neprečítaná konverzácia",
+        "${ unread } neprečítané konverzácie",
+        "${ unread } neprečítaných konverzácií",
+        "${ unread } neprečítaných konverzácií"
+      ],
+      "${ unread } unread message": [
+        "${ unread } neprečítaná správa",
+        "${ unread } neprečítané správy",
+        "${ unread } neprečítaných správ",
+        "${ unread } neprečítaných správ"
+      ],
+      "${ unreadCount } scheduled message": [
+        "${ unreadCount } naplánovaná správa",
+        "${ unreadCount } naplánované správy",
+        "${ unreadCount } naplánovaných správ",
+        "${ unreadCount } naplánovaných správ"
+      ],
+      "${ unreadCount } unread conversation": [
+        "${ unreadCount } neprečítaná konverzácia",
+        "${ unreadCount } neprečítané konverzácie",
+        "${ unreadCount } neprečítaných konverzácií",
+        "${ unreadCount } neprečítaných konverzácií"
+      ],
+      "${ unreadCount } unread message": [
+        "${ unreadCount } neprečítaná správa",
+        "${ unreadCount } neprečítané správy",
+        "${ unreadCount } neprečítaných správ",
+        "${ unreadCount } neprečítaných správ"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } kontakt bol úspešne aktualizovaný.",
+        "${ updated } kontakty boli úspešne aktualizované.",
+        "${ updated } kontaktov bolo úspešne aktualizovaných.",
+        "${ updated } kontaktov bolo úspešne aktualizovaných."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } člen)",
+        "(${ memberCount } členovia)",
+        "(${ memberCount } členov)",
+        "(${ memberCount } členov)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrovanie, ak sú splnené VŠETKY nasledujúce podmienky)"
@@ -4591,6 +5099,12 @@
       ],
       "(No Recipient)": [
         "(žiaden príjemca)"
+      ],
+      "**${ elementsFoundCount }** result found in ${ labelName }": [
+        "**${ elementsFoundCount }** výsledok nájdený v ${ labelName }",
+        "**${ elementsFoundCount }** výsledky nájdené v ${ labelName }",
+        "**${ elementsFoundCount }** výsledkov nájdených v ${ labelName }",
+        "**${ elementsFoundCount }** výsledkov nájdených v ${ labelName }"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "Telefónne číslo možno použiť iba na overenie jedného účtu ${ BRAND_NAME }"
@@ -4616,6 +5130,18 @@
       "Align right": [
         "Zarovnať vpravo"
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Všetky (${ totalFoldersCount } zložka)",
+        "Všetky (${ totalFoldersCount } zložky)",
+        "Všetky (${ totalFoldersCount } zložiek)",
+        "Všetky (${ totalFoldersCount } zložiek)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Všetky (${ totalFoldersCount } štítok)",
+        "Všetky (${ totalFoldersCount } štítky)",
+        "Všetky (${ totalFoldersCount } štítkov)",
+        "Všetky (${ totalFoldersCount } štítkov)"
+      ],
       "All messages stored in this folder will be permanently deleted.": [
         "Všetky správy uložené v tomto priečinku budú natrvalo vymazané."
       ],
@@ -4627,6 +5153,12 @@
       ],
       "All your changes will be lost.": [
         "Všetky vaše zmeny budú stratené."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
+        "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
+        "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }",
+        "Všetky vaše kontakty budú importované až do limitu ${ MAX_CONTACTS_PER_USER }"
       ],
       "An unknown public key has been detected for this recipient.": [
         "Pre tohto príjemcu bol zistený neznámy verejný kľúč."
@@ -4657,6 +5189,24 @@
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "Naozaj chcete presunúť všetky správy z tohto umiestnenia do Koša?"
+      ],
+      "Are you sure you want to permanently delete ${ count } conversation?": [
+        "Naozaj chcete natrvalo vymazať ${ count } konverzáciu?",
+        "Naozaj chcete natrvalo vymazať ${ count } konverzácie?",
+        "Naozaj chcete natrvalo vymazať ${ count } konverzácií?",
+        "Naozaj chcete natrvalo vymazať ${ count } konverzácií?"
+      ],
+      "Are you sure you want to permanently delete ${ count } draft?": [
+        "Naozaj chcete natrvalo vymazať ${ count } koncept?",
+        "Naozaj chcete natrvalo vymazať ${ count } koncepty?",
+        "Naozaj chcete natrvalo vymazať ${ count } konceptov?",
+        "Naozaj chcete natrvalo vymazať ${ count } konceptov?"
+      ],
+      "Are you sure you want to permanently delete ${ count } message?": [
+        "Naozaj chcete natrvalo vymazať ${ count } správu?",
+        "Naozaj chcete natrvalo vymazať ${ count } správy?",
+        "Naozaj chcete natrvalo vymazať ${ count } správ?",
+        "Naozaj chcete natrvalo vymazať ${ count } správ?"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "Naozaj chcete natrvalo vymazať túto konverzáciu?"
@@ -4739,6 +5289,12 @@
       "Country code": [
         "Kód krajiny"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Vytvoriť ${ calendarsToBeCreatedCount } nový kalendár",
+        "Vytvoriť ${ calendarsToBeCreatedCount } nové kalendáre",
+        "Vytvoriť ${ calendarsToBeCreatedCount } nových kalendárov",
+        "Vytvoriť ${ calendarsToBeCreatedCount } nových kalendárov"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Vytvorte štítok pre importované správy, časový rozsah pre tento import a priečinky, ktoré chcete importovať."
       ],
@@ -4780,6 +5336,12 @@
       ],
       "Disable message content search": [
         "Zakázať vyhľadávanie v obsahu správy"
+      ],
+      "Do you want to download this attachment anyway?": [
+        "Chcete napriek tomu stiahnuť túto prílohu?",
+        "Chcete napriek tomu stiahnuť tieto prílohy?",
+        "Chcete napriek tomu stiahnuť tieto prílohy?",
+        "Chcete napriek tomu stiahnuť tieto prílohy?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
         "Chcete znovu podpísať kontaktné údaje a pritom dôverovať kľúčom s nasledujúcimi odtlačkami prstov?"
@@ -4844,6 +5406,12 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Emaily označené týmto štítkom nebudú vymazané a je možné ich stále nájsť v príslušnom priečinku."
       ],
+      "embedded image": [
+        "pripojený obrázok",
+        "pripojené obrázky",
+        "pripojených obrázkov",
+        "pripojených obrázkov"
+      ],
       "Encrypt message": [
         "Šifrovať správu"
       ],
@@ -4862,6 +5430,12 @@
       "Enter your own password (as organization admin).": [
         "Zadajte vlastné heslo (ako správca organizácie)."
       ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Odhadovaný čas do konca: ${ estimatedMinutes } minúta",
+        "Odhadovaný čas do konca: ${ estimatedMinutes } minúty",
+        "Odhadovaný čas do konca: ${ estimatedMinutes } minút",
+        "Odhadovaný čas do konca: ${ estimatedMinutes } minút"
+      ],
       "Estimated time remaining: Less than a minute": [
         "Odhadovaný čas do konca: menej ako minúta"
       ],
@@ -4873,6 +5447,24 @@
       ],
       "Expires in ${ formattedDate }": [
         "Vyprší za ${ formattedDate }"
+      ],
+      "Expires in ${ minutesDiff } minute": [
+        "Vyprší o ${ minutesDiff } minútu",
+        "Vyprší o ${ minutesDiff } minúty",
+        "Vyprší o ${ minutesDiff } minút",
+        "Vyprší o ${ minutesDiff } minút"
+      ],
+      "Expires in less than ${ hoursDiff } hour": [
+        "Vyprší o menej ako ${ hoursDiff } hodinu",
+        "Vyprší o menej ako ${ hoursDiff } hodiny",
+        "Vyprší o menej ako ${ hoursDiff } hodín",
+        "Vyprší o menej ako ${ hoursDiff } hodín"
+      ],
+      "file attached": [
+        "pripojený súbor",
+        "pripojené súbory",
+        "pripojených súborov",
+        "pripojených súborov"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "Filtre fungujú pre všetky emaily, vrátane prichádzajúcich aj odoslaných emailov. Každý filter musí obsahovať aspoň meno, podmienku a akciu."
@@ -4894,6 +5486,12 @@
       ],
       "From": [
         "Od"
+      ],
+      "Has ${ numAttachments } attachment (${ numAttachmentsSize })": [
+        "Obsahuje ${ numAttachments } prílohu (${ numAttachmentsSize })",
+        "Obsahuje ${ numAttachments } prílohy (${ numAttachmentsSize })",
+        "Obsahuje ${ numAttachments } príloh (${ numAttachmentsSize })",
+        "Obsahuje ${ numAttachments } prílohy (${ numAttachmentsSize })"
       ],
       "here": [
         "tu"
@@ -4927,6 +5525,12 @@
       ],
       "Images have been removed because they are not allowed in auto-reply": [
         "Obrázky boli odstránené, nakoľko nie sú v automatickej odpovedi povolené"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importovať ${ calendarCount } z ${ totalCalendarsCount } kalendára",
+        "Importovať ${ calendarCount } z ${ totalCalendarsCount } kalendárov",
+        "Import ${ calendarCount } z ${ totalCalendarsCount } kalendárov",
+        "Import ${ calendarCount } z ${ totalCalendarsCount } kalendárov"
       ],
       "Import from": [
         "Importovať z"
@@ -5165,6 +5769,12 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Vyberte typ odkazu, ktorý chcete vložiť a vyplňte všetky polia, prosím."
       ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Vyberte, ktorú emailovú adresu alebo adresy chcete pridať do ${ groupCount } skupiny.",
+        "Vyberte, ktorú emailovú adresu alebo adresy chcete pridať do ${ groupCount } skupín.",
+        "Vyberte, ktorú emailovú adresu alebo adresy chcete pridať do ${ groupCount } skupín.",
+        "Vyberte, ktorú emailovú adresu alebo adresy chcete pridať do ${ groupCount } skupín."
+      ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Vyberte adresu alebo adresy, ktoré chcete pridať do skupiny ${ groupName }."
       ],
@@ -5360,6 +5970,12 @@
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "Overenie ${ contactName } zlyhalo: kontakt nie je správne podpísaný.\nMôže to byť dôsledok obnovenia hesla.\nAk chcete odoslať správu na ${ contactAddress } alebo upraviť kontakt, musíte kontakt znova podpísať."
       ],
+      "The verification of ${ contactNames } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddresses } or edit the contact.": [
+        "Overenie ${ contactNames } zlyhalo: kontakt nie je správne podpísaný.\nMôže to byť dôsledok obnovenia hesla.\nAk chcete odoslať správu na ${ contactAddresses } alebo upraviť kontakt, musíte kontakt znova podpísať.",
+        "Overenie ${ contactNames } zlyhalo: kontakty nie sú správne podpísané.\nMôže to byť dôsledok obnovenia hesla.\nAk chcete odoslať správu na ${ contactAddresses } alebo upraviť kontakty, musíte kontakty znova podpísať.",
+        "Overenie ${ contactNames } zlyhalo: kontakty nie sú správne podpísané.\nMôže to byť dôsledok obnovenia hesla.\nAk chcete odoslať správu na ${ contactAddresses } alebo upraviť kontakty, musíte kontakty znova podpísať.",
+        "Overenie ${ contactNames } zlyhalo: kontakty nie sú správne podpísané.\nMôže to byť dôsledok obnovenia hesla.\nAk chcete odoslať správu na ${ contactAddresses } alebo upraviť kontakty, musíte kontakty znova podpísať."
+      ],
       "Themes can give your inbox a new look.": [
         "Motívy môžu dať vašej doručenej pošte nový vzhľad."
       ],
@@ -5389,6 +6005,12 @@
       ],
       "This conversation contains trashed messages.": [
         "Táto konverzácia obsahuje vymazané správy."
+      ],
+      "This conversation will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Táto konverzácia bude označená ako spam. Chceli by ste sa tiež odhlásiť z odberu budúcich emailov?",
+        "Tieto konverzácie budú označené ako spam. Chceli by ste sa tiež odhlásiť z odberu budúcich emailov?",
+        "Tieto konverzácie budú označené ako spam. Chceli by ste sa tiež odhlásiť z odberu budúcich emailov?",
+        "Tieto konverzácie budú označené ako spam. Chceli by ste sa tiež odhlásiť z odberu budúcich emailov?"
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Tento email nesplnil požiadavky na overenie svojej domény. Môže byť sfalšovaný alebo nesprávne preposlaný."
@@ -5425,6 +6047,12 @@
       ],
       "This message will be automatically deleted on ${ shortDateMessage }": [
         "Táto správa bude automaticky vymazaná ${ shortDateMessage }"
+      ],
+      "This message will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "Táto správa bude označená ako spam. Chceli by ste sa tiež odhlásiť z odberu budúcich emailov?",
+        "Tieto správy budú označené ako spam. Chceli by ste sa tiež odhlásiť z odberu budúcich emailov?",
+        "Tieto správy budú označené ako spam. Chceli by ste sa tiež odhlásiť z odberu budúcich emailov?",
+        "Tieto správy budú označené ako spam. Chceli by ste sa tiež odhlásiť z odberu budúcich emailov?"
       ],
       "This message will be moved to Drafts so you can edit it. You'll need to reschedule when it will be sent.": [
         "Táto správa bude presunutá do konceptov, takže ju budete môcť meniť. Až ju budete znova posielať, budete ju musieť znova naplánovať."
@@ -5678,6 +6306,30 @@
       "You have ${ unreadsLabel } in your inbox.": [
         "V doručenej pošte máte ${ unreadsLabel }."
       ],
+      "You have **${ count } conversation** stored in this folder": [
+        "V tomto priečinku máte uloženú **${ count } konverzáciu**",
+        "V tomto priečinku máte uložené **${ count } konverzácie**",
+        "V tomto priečinku máte uložených **${ count } konverzácií**",
+        "V tomto priečinku máte uložených **${ count } konverzácií**"
+      ],
+      "You have **${ count } conversation** tagged with this label": [
+        "Máte **${ count } konverzáciu** označenú týmto štítkom",
+        "Máte **${ count } konverzácie** označené týmto štítkom",
+        "Máte **${ count } konverzácií** označených týmto štítkom",
+        "Máte **${ count } konverzácií** označených týmto štítkom"
+      ],
+      "You have **${ count } message** stored in this folder": [
+        "V tomto priečinku máte uloženú **${ count } správu**",
+        "V tomto priečinku máte uložené **${ count } správy**",
+        "V tomto priečinku máte uložených **${ count } správ**",
+        "V tomto priečinku máte uložených **${ count } správ**"
+      ],
+      "You have **${ count } message** tagged with this label": [
+        "Máte **${ count } správu** označenú týmto štítkom",
+        "Máte **${ count } správy** označené týmto štítkom",
+        "Máte **${ count } správ** označených týmto štítkom",
+        "Máte **${ count } správ** označených týmto štítkom"
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "Nedali ste svojmu emailu žiadny predmet. Chcete správu napriek tomu odoslať?"
       ],
@@ -5692,6 +6344,30 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Dosiahli ste 100% kapacitu úložiska. Nemôžete odosielať ani prijímať nové emaily. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You selected **${ count } conversation** from this folder": [
+        "Z tohto priečinka ste vybrali **${ count } konverzáciu**",
+        "Z tohto priečinka ste vybrali **${ count } konverzácie**",
+        "Z tohto priečinka ste vybrali **${ count } konverzácií**",
+        "Z tohto priečinka ste vybrali **${ count } konverzácií**"
+      ],
+      "You selected **${ count } conversation** with this label": [
+        "Vybrali ste **${ count } konverzáciu** s týmto štítkom",
+        "Vybrali ste **${ count } konverzácie** s týmto štítkom",
+        "Vybrali ste **${ count } konverzácií** s týmto štítkom",
+        "Vybrali ste **${ count } konverzácií** s týmto štítkom"
+      ],
+      "You selected **${ count } message** from this folder": [
+        "Z tohto priečinka ste vybrali **${ count } správu**",
+        "Z tohto priečinka ste vybrali **${ count } správy**",
+        "Z tohto priečinka ste vybrali **${ count } správ**",
+        "Z tohto priečinka ste vybrali **${ count } správ**"
+      ],
+      "You selected **${ count } message** with this label": [
+        "Vybrali ste **${ count } správu** s týmto štítkom",
+        "Vybrali ste **${ count } správy** s týmto štítkom",
+        "Vybrali ste **${ count } správ** s týmto štítkom",
+        "Vybrali ste **${ count } správ** s týmto štítkom"
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "Napísali ste \"${ attachmentsFoundKeyword }\", ale príloha nebola pridaná. Chcete napriek tomu správu poslať?"
@@ -5732,6 +6408,12 @@
       "Your login information will not be saved after the import is completed.": [
         "Po dokončení importu nebudú vaše prihlasovacie údaje uložené."
       ],
+      "Your message will expire in ${ numberOfDays } day.": [
+        "Platnosť vašej správy vyprší o ${ numberOfDays } deň.",
+        "Platnosť vašej správy vyprší o ${ numberOfDays } dni.",
+        "Platnosť vašej správy vyprší o ${ numberOfDays } dní.",
+        "Platnosť vašej správy vyprší o ${ numberOfDays } dní."
+      ],
       "Your message will expire today.": [
         "Platnosť vašej správy vyprší dnes."
       ],
@@ -5743,6 +6425,12 @@
       ]
     },
     "info": {
+      "${ filteredList.length } command found.": [
+        "Nájdený príkaz ${ filteredList.length }.",
+        "Nájdené príkazy ${ filteredList.length }.",
+        "Nájdených príkazov ${ filteredList.length }.",
+        "Nájdených príkazov ${ filteredList.length }."
+      ],
       "Optional": [
         "Voliteľné"
       ]
@@ -5778,6 +6466,18 @@
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "Kliknutím na „Dôverovať kľúču“ vytvoríte nový kontakt a spojíte tento verejný kľúč s týmto odosielateľom. Emaily z tejto adresy budú automaticky kryptograficky overované."
+      ],
+      "Do you want to trust the primary public key with the following fingerprint?": [
+        "Chcete dôverovať primárnemu verejnému kľúču s nasledujúcim odtlačkom prsta?",
+        "Chcete dôverovať primárnym verejným kľúčom s nasledujúcimi odtlačkami prstov?",
+        "Chcete dôverovať primárnym verejným kľúčom s nasledujúcimi odtlačkami prstov?",
+        "Chcete dôverovať primárnym verejným kľúčom s nasledujúcimi odtlačkami prstov?"
+      ],
+      "You have enabled Address Verification with Trusted Keys for this email address,\nbut no active encryption key has been trusted.\nYou must trust a key valid for sending in order to send a message to this email address.": [
+        "Pre túto emailovú adresu ste povolili overenie adresy pomocou dôveryhodných kľúčov,\nale žiadny aktívny šifrovací kľúč nebol dôveryhodný.\nAk chcete odoslať správu na túto emailovú adresu, musíte dôverovať kľúču platnému na odoslanie.",
+        "Pre tieto emailové adresy ste povolili overenie adresy pomocou dôveryhodných kľúčov,\nale žiadne aktívne šifrovacie kľúče neboli dôveryhodné.\nAk chcete odoslať správu na tieto emailové adresy, musíte dôverovať kľúčom platným na odoslanie.",
+        "Pre tieto emailové adresy ste povolili overenie adresy pomocou dôveryhodných kľúčov,\nale žiadne aktívne šifrovacie kľúče neboli dôveryhodné.\nAk chcete odoslať správu na tieto emailové adresy, musíte dôverovať kľúčom platným na odoslanie.",
+        "Pre tieto emailové adresy ste povolili overenie adresy pomocou dôveryhodných kľúčov,\nale žiadne aktívne šifrovacie kľúče neboli dôveryhodné.\nAk chcete odoslať správu na tieto emailové adresy, musíte dôverovať kľúčom platným na odoslanie."
       ]
     },
     "Key validation warning": {
@@ -6703,6 +7403,12 @@
       "Almost there": [
         "Takmer hotovo"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Počet vytvorených kalendárov: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
+        "Počet vytvorených kalendárov: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
+        "Počet vytvorených kalendárov: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
+        "Počet vytvorených kalendárov: ${ createdCalendarCount } z ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Pripájanie k vášmu poskytovateľovi emailu"
       ],
@@ -6717,6 +7423,32 @@
       ],
       "Your import is starting": [
         "Váš import bol zahájený"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importovať všetky správy z ${ itemsToImportCount } priečinka a označiť ich štítkom",
+        "Importovať všetky správy z ${ itemsToImportCount } priečinkov a označiť ich štítkom",
+        "Importovať všetky správy z ${ itemsToImportCount } priečinkov a označiť ich štítkom",
+        "Importovať všetky správy z ${ itemsToImportCount } priečinkov a označiť ich štítkom"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importovať všetky správy so štítkom ${ itemsToImportCount } a označiť ich štítkom",
+        "Importovať všetky správy so štítkami ${ itemsToImportCount } a označiť ich štítkom",
+        "Importovať všetky správy so štítkami ${ itemsToImportCount } a označiť ich štítkom",
+        "Importovať všetky správy so štítkami ${ itemsToImportCount } a označiť ich štítkom"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importovať všetky správy z ${ selectedItemsToImportCount } z ${ itemsToImportCount } priečinka a označiť ich štítkom",
+        "Importovať všetky správy z ${ selectedItemsToImportCount } z ${ itemsToImportCount } priečinkov a označiť ich štítkom",
+        "Importovať všetky správy z ${ selectedItemsToImportCount } z ${ itemsToImportCount } priečinkov a označiť ich štítkom",
+        "Importovať všetky správy z ${ selectedItemsToImportCount } z ${ itemsToImportCount } priečinkov a označiť ich štítkom"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importovať všetky správy s ${ selectedItemsToImportCount } z ${ itemsToImportCount } štítku a označiť ich štítkom",
+        "Importovať všetky správy s ${ selectedItemsToImportCount } z ${ itemsToImportCount } štítkov a označiť ich štítkom",
+        "Importovať všetky správy s ${ selectedItemsToImportCount } z ${ itemsToImportCount } štítkov a označiť ich štítkom",
+        "Importovať všetky správy s ${ selectedItemsToImportCount } z ${ itemsToImportCount } štítkov a označiť ich štítkom"
       ]
     },
     "Mailbox": {
@@ -6812,6 +7544,24 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Každý ${ interval } mesiac ${ onDayString }",
+        "Každé ${ interval } mesiace ${ onDayString }",
+        "Každých ${ interval } mesiacov ${ onDayString }",
+        "Každých ${ interval } mesiacov ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Každý ${ interval } mesiac ${ onDayString }, ${ timesString }",
+        "Každé ${ interval } mesiace ${ onDayString }, ${ timesString }",
+        "Každých ${ interval } mesiacov ${ onDayString }, ${ timesString }",
+        "Každých ${ interval } mesiacov ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Každý ${ interval } mesiac ${ onDayString }, ${ untilString }",
+        "Každé ${ interval } mesiace ${ onDayString }, ${ untilString }",
+        "Každých ${ interval } mesiacov ${ onDayString }, ${ untilString }",
+        "Každých ${ interval } mesiacov ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }": [
         "Mesačne ${ onDayString }"
       ],
@@ -7272,6 +8022,24 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } z ${ countContacts } kontaktov bol úspešne exportovaný.",
+        "${ contactsExported.length } z ${ countContacts } kontaktov bolo úspešne exportovaných.",
+        "${ contactsExported.length } z ${ countContacts } kontaktov bolo úspešne exportovaných.",
+        "${ contactsExported.length } z ${ countContacts } kontaktov bolo úspešne exportovaných."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } z ${ totalBeDeleted } kontaktu úspešne odstránený.",
+        "${ model.deleted.length } z ${ totalBeDeleted } kontaktov úspešne odstránených.",
+        "${ model.deleted.length } z ${ totalBeDeleted } kontaktov úspešne odstránených.",
+        "${ model.deleted.length } z ${ totalBeDeleted } kontaktov úspešne odstránených."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } z ${ totalBeMerged } kontaktu bolo úspešne zlúčených.",
+        "${ model.submitted.length } z ${ totalBeMerged } kontaktov bolo úspešne zlúčených.",
+        "${ model.submitted.length } z ${ totalBeMerged } kontaktov bolo úspešne zlúčených.",
+        "${ model.submitted.length } z ${ totalBeMerged } kontaktov bolo úspešne zlúčených."
+      ],
       "No contacts exported.": [
         "Žiadne exportované kontakty."
       ],
@@ -7358,6 +8126,12 @@
       ]
     },
     "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } d",
+        "${ remainingDays } d",
+        "${ remainingDays } d",
+        "${ remainingDays } d"
+      ],
       "<1 d": [
         "<1 d"
       ]
@@ -7410,6 +8184,12 @@
       "Do you want to send the email anyway?": [
         "Chcete napriek tomu email odoslať?"
       ],
+      "We have detected errors. Your email cannot be sent to the email address entered due to the following reason:": [
+        "Zistili sme chyby. Váš email nemôže byť odoslaný na zadanú emailovú adresu z nasledujúceho dôvodu:",
+        "Zistili sme chyby. Váš email nemôže byť odoslaný na žiadnu zo zadaných emailových adries z nasledujúcich dôvodov:",
+        "Zistili sme chyby. Váš email nemôže byť odoslaný na žiadnu zo zadaných emailových adries z nasledujúcich dôvodov:",
+        "Zistili sme chyby. Váš email nemôže byť odoslaný na žiadnu zo zadaných emailových adries z nasledujúcich dôvodov:"
+      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "Zistili sme niekoľko chýb. Váš email nie je možné odoslať na jednu alebo viacero zadaných emailových adries z nasledujúcich dôvodov:"
       ]
@@ -7417,6 +8197,24 @@
     "Send email with warnings": {
       "Do you want to send the email anyway?": [
         "Chcete napriek tomu email odoslať?"
+      ],
+      "If you decide to send the message anyway, the following recipient will receive the email without expiration:": [
+        "Ak sa rozhodnete správu aj tak odoslať, nasledujúci príjemca dostane email bez vypršania platnosti:",
+        "Ak sa rozhodnete správu aj tak odoslať, nasledujúci príjemcovia dostanú email bez vypršania platnosti:",
+        "Ak sa rozhodnete správu aj tak odoslať, nasledujúci príjemcovia dostanú email bez vypršania platnosti:",
+        "Ak sa rozhodnete správu aj tak odoslať, nasledujúci príjemcovia dostanú email bez vypršania platnosti:"
+      ],
+      "The following address is not valid: ${ invalidAddresses }": [
+        "Nasledujúca adresa nie je platná: ${ invalidAddresses }",
+        "Nasledujúce adresy nie sú platné: ${ invalidAddresses }",
+        "Nasledujúce adresy nie sú platné: ${ invalidAddresses }",
+        "Nasledujúce adresy nie sú platné: ${ invalidAddresses }"
+      ],
+      "We have detected some warnings. The following email address may not receive emails:": [
+        "Zistili sme niekoľko varovaní. Nasledujúca emailová adresa nemusí prijímať emaily:",
+        "Zistili sme niekoľko varovaní. Nasledujúce emailové adresy nemusia prijímať emaily:",
+        "Zistili sme niekoľko varovaní. Nasledujúce emailové adresy nemusia prijímať emaily:",
+        "Zistili sme niekoľko varovaní. Nasledujúce emailové adresy nemusia prijímať emaily:"
       ]
     },
     "Sender verification details": {
@@ -7455,8 +8253,20 @@
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "Odoslané pomocou ${ MAIL_APP_NAME } so šifrovaním s nulovým prístupom"
       ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipient": [
+        "Odoslané prostredníctvom ${ MAIL_APP_NAME } overenému príjemcovi so šifrovaním s nulovým prístupom",
+        "Odoslané cez ${ MAIL_APP_NAME } overeným príjemcom so šifrovaním s nulovým prístupom",
+        "Odoslané cez ${ MAIL_APP_NAME } overeným príjemcom so šifrovaním s nulovým prístupom",
+        "Odoslané cez ${ MAIL_APP_NAME } overeným príjemcom so šifrovaním s nulovým prístupom"
+      ],
       "Sent by you with end-to-end encryption": [
         "Odoslané vami s end-to-end šifrovaním"
+      ],
+      "Sent by you with end-to-end encryption to verified recipient": [
+        "Odoslané vami so šifrovaním typu end-to-end overenému príjemcovi",
+        "Odoslané vami overeným príjemcom so šifrovaním typu end-to-end",
+        "Odoslané vami overeným príjemcom so šifrovaním typu end-to-end",
+        "Odoslané vami overeným príjemcom so šifrovaním typu end-to-end"
       ],
       "Stored with zero-access encryption": [
         "Uložené vrátane šifrovania s nulovým prístupom"
@@ -7479,8 +8289,44 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } deň",
+        "${ timeRemaining.inDays } dni",
+        "${ timeRemaining.inDays } dní",
+        "${ timeRemaining.inDays } dní"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hodina",
+        "${ timeRemaining.inHours } hodiny",
+        "${ timeRemaining.inHours } hodín",
+        "${ timeRemaining.inHours } hodín"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } deň.",
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dni.",
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dní.",
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inDays } dní."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodinu.",
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodiny.",
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodín.",
+        "Žiadosť o obnovenie hesla bola schválená (${ user.Email }). Na obnovenie hesla máte ${ timeRemaining.inHours } hodín."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Prejdite na prihlásené zariadenie (v relácii, kde bola žiadosť iniciovaná) a zmeňte heslo."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Toto povolenie vyprší za ${ timeRemaining.inDays } deň",
+        "Toto povolenie vyprší za ${ timeRemaining.inDays } dni",
+        "Toto povolenie vyprší za ${ timeRemaining.inDays } dní",
+        "Toto povolenie vyprší za ${ timeRemaining.inDays } dní"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Toto povolenie vyprší za ${ timeRemaining.inHours } hodinu",
+        "Toto povolenie vyprší za ${ timeRemaining.inHours } hodiny",
+        "Toto povolenie vyprší za ${ timeRemaining.inHours } hodín",
+        "Toto povolenie vyprší za ${ timeRemaining.inHours } hodín"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Heslo pre účet ${ boldEmail } si teraz môžete ľubovoľne zmeniť po dobu ${ boldDaysRemaining }."
@@ -7543,8 +8389,20 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "Zostáva ${ gracePeriodHoursRemaining } hodina",
+        "Zostávajú ${ gracePeriodHoursRemaining } hodiny",
+        "Zostáva ${ gracePeriodHoursRemaining } hodín",
+        "Zostáva ${ gracePeriodHoursRemaining } hodín"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Ak ste nepožiadali o obnovenie hesla, zrušte teraz túto žiadosť."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Bolo vyžiadané obnovenie hesla (${ user.Email }). Heslo si môžete zmeniť za ${ hoursRemaining } hodinu.",
+        "Bolo vyžiadané obnovenie hesla (${ user.Email }). Heslo si môžete zmeniť za ${ hoursRemaining } hodiny.",
+        "Bolo vyžiadané obnovenie hesla (${ user.Email }). Heslo si môžete zmeniť za ${ hoursRemaining } hodín.",
+        "Bolo vyžiadané obnovenie hesla (${ user.Email }). Heslo si môžete zmeniť za ${ hoursRemaining } hodín."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Aby sme sa uistili, že sa pokúšate obnoviť heslo naozaj vy, počkáme 72 hodín pred schválením žiadosti. Heslo si môžete zmeniť v ${ boldTimeLeft }. ${ viewRequest }"
@@ -7572,6 +8430,12 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hodina",
+        "${ gracePeriodHoursRemaining } hodiny",
+        "${ gracePeriodHoursRemaining } hodín",
+        "${ gracePeriodHoursRemaining } hodín"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } je teraz k dispozícii."
       ],
@@ -7653,6 +8517,40 @@
         "Prejsť na Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } deň",
+        "${ days } dni",
+        "${ days } dní",
+        "${ days } dňa"
+      ],
+      "${ hours } hour": [
+        "${ hours } hodiny",
+        "${ hours } hodiny",
+        "${ hours } hodín",
+        "${ hours } hodín"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minúta",
+        "${ minutes } minúty",
+        "${ minutes } minút",
+        "${ minutes } minút"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekúnd",
+        "${ seconds } sekundy",
+        "${ seconds } sekúnd"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mesiacov ZDARMA",
+        "${ n } mesiac ZDARMA",
+        "${ n } mesiac ZDARMA",
+        "${ n } mesiac ZDARMA"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 používateľ"
@@ -7711,6 +8609,12 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mesiac",
+        "${ n } mesiace",
+        "${ n } mesiacov",
+        "${ n } mesiacov"
+      ],
       "/ month": [
         "/ mesiac"
       ],
@@ -7878,6 +8782,126 @@
       ]
     },
     "Success": {
+      "${ count } conversation deleted": [
+        "${ count } konverzácia bola odstránená",
+        "${ count } konverzácie boli odstránené",
+        "${ count } konverzácii bolo odstránených",
+        "${ count } konverzácii bolo odstránených"
+      ],
+      "${ count } draft deleted": [
+        "${ count } koncept bol odstránený",
+        "${ count } koncepty boli odstránené",
+        "${ count } konceptov bolo odstránených",
+        "${ count } konceptov bolo odstránených"
+      ],
+      "${ count } message deleted": [
+        "${ count } správa bola odstránená",
+        "${ count } správy boli odstránené",
+        "${ count } správ bolo odstránených",
+        "${ count } správ bolo odstránených"
+      ],
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } kontakt vyzerá rovnako.",
+        "${ countMergeableContacts } kontakty vyzerá rovnako.",
+        "${ countMergeableContacts } kontaktov vyzerá rovnako.",
+        "${ countMergeableContacts } kontaktov vyzerá rovnako."
+      ],
+      "${ elementsCount } conversation added to ${ labelName }.": [
+        "${ elementsCount } konverzácia bola pridaná do ${ labelName }.",
+        "${ elementsCount } konverzácie boli pridané do ${ labelName }.",
+        "${ elementsCount } konverzácií bolo pridaných do ${ labelName }.",
+        "${ elementsCount } konverzácií bolo pridaných do ${ labelName }."
+      ],
+      "${ elementsCount } conversation marked as read.": [
+        "${ elementsCount } konverzácia označená ako prečítaná.",
+        "${ elementsCount } konverzácie označené ako prečítané.",
+        "${ elementsCount } konverzácii označených ako prečítané.",
+        "${ elementsCount } konverzácii označených ako prečítané."
+      ],
+      "${ elementsCount } conversation marked as Starred.": [
+        "${ elementsCount } konverzácia označená hviezdičkou.",
+        "${ elementsCount } konverzácie označené hviezdičkou.",
+        "${ elementsCount } konverzácií označených hviezdičkou.",
+        "${ elementsCount } konverzácií označených hviezdičkou."
+      ],
+      "${ elementsCount } conversation marked as unread.": [
+        "${ elementsCount } konverzácia označená ako neprečítaná.",
+        "${ elementsCount } konverzácie označené ako neprečítané.",
+        "${ elementsCount } konverzácii označených ako neprečítané.",
+        "${ elementsCount } konverzácii označených ako neprečítané."
+      ],
+      "${ elementsCount } conversation moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } konverzácia bola presunutá do ${ folderName } a odosielateľ bol pridaný do vášho zoznamu, ktorý nie je spam.",
+        "${ elementsCount } konverzácie boli presunuté do ${ folderName } a odosielatelia boli pridaní do vášho zoznamu, ktorý nie je spam.",
+        "${ elementsCount } konverzácií bolo presunutých do ${ folderName } a odosielatelia boli pridaní do vášho zoznamu, ktorý nie je spam.",
+        "${ elementsCount } konverzácií bolo presunutých do ${ folderName } a odosielatelia boli pridaní do vášho zoznamu, ktorý nie je spam."
+      ],
+      "${ elementsCount } conversation moved to ${ folderName }.": [
+        "${ elementsCount } konverzácia presunutá do ${ folderName }.",
+        "${ elementsCount } konverzácie presunuté do ${ folderName }.",
+        "${ elementsCount } konverzácii presunutých do ${ folderName }.",
+        "${ elementsCount } konverzácii presunutých do ${ folderName }."
+      ],
+      "${ elementsCount } conversation moved to spam and sender added to your spam list.": [
+        "${ elementsCount } konverzácia bola presunutá do spamu a odosielateľ bol pridaný do vášho zoznamu spamu.",
+        "${ elementsCount } konverzácie boli presunuté do spamu a odosielatelia boli pridaní do vášho zoznamu spamu.",
+        "${ elementsCount } konverzácií bolo presunutých do spamu a odosielatelia boli pridaní do vášho zoznamu spamu.",
+        "${ elementsCount } konverzácií bolo presunutých do spamu a odosielatelia boli pridaní do vášho zoznamu spamu."
+      ],
+      "${ elementsCount } conversation removed from ${ labelName }.": [
+        "${ elementsCount } konverzácia bola odstránená z ${ labelName }.",
+        "${ elementsCount } konverzácie boli odstránené z ${ labelName }.",
+        "${ elementsCount } konverzácií bolo odstránených z ${ labelName }.",
+        "${ elementsCount } konverzácií bolo odstránených z ${ labelName }."
+      ],
+      "${ elementsCount } message added to ${ labelName }.": [
+        "${ elementsCount } správa pridaná do ${ labelName }.",
+        "${ elementsCount } správy pridané do ${ labelName }.",
+        "${ elementsCount } správ pridaných do ${ labelName }.",
+        "${ elementsCount } správ pridaných do ${ labelName }."
+      ],
+      "${ elementsCount } message marked as read.": [
+        "${ elementsCount } správa označená ako prečítaná.",
+        "${ elementsCount } správy označené ako prečítané.",
+        "${ elementsCount } správ označených ako prečítané.",
+        "${ elementsCount } správ označených ako prečítané."
+      ],
+      "${ elementsCount } message marked as Starred.": [
+        "${ elementsCount } správa označená hviezdičkou.",
+        "${ elementsCount } správy označené hviezdičkou.",
+        "${ elementsCount } správ označených hviezdičkou.",
+        "${ elementsCount } správ označených hviezdičkou."
+      ],
+      "${ elementsCount } message marked as unread.": [
+        "${ elementsCount } správa označená ako neprečítaná.",
+        "${ elementsCount } správy označené ako neprečítané.",
+        "${ elementsCount } správ označených ako neprečítané.",
+        "${ elementsCount } správ označených ako neprečítané."
+      ],
+      "${ elementsCount } message moved to ${ folderName } and sender added to your not spam list.": [
+        "${ elementsCount } správa bola presunutá do ${ folderName } a odosielateľ bol pridaný do vášho zoznamu, ktorý nie je spam.",
+        "${ elementsCount } správy boli presunuté do ${ folderName } a odosielatelia boli pridaní do vášho zoznamu, ktorý nie je spam.",
+        "${ elementsCount } správ bolo presunutých do ${ folderName } a odosielatelia boli pridaní do vášho zoznamu, ktorý nie je spam.",
+        "${ elementsCount } správ bolo presunutých do ${ folderName } a odosielatelia boli pridaní do vášho zoznamu, ktorý nie je spam."
+      ],
+      "${ elementsCount } message moved to ${ folderName }.": [
+        "${ elementsCount } správa presunutá do ${ folderName }.",
+        "${ elementsCount } správy presunuté do ${ folderName }.",
+        "${ elementsCount } správ presunutých do ${ folderName }.",
+        "${ elementsCount } správ presunutých do ${ folderName }."
+      ],
+      "${ elementsCount } message moved to spam and sender added to your spam list.": [
+        "${ elementsCount } správa bola presunutá do spamu a odosielateľ bol pridaný do vášho zoznamu spamov.",
+        "${ elementsCount } správy boli presunuté do spamu a odosielatelia boli pridaní do vášho zoznamu spamu.",
+        "${ elementsCount } správ bolo presunutých do spamu a odosielatelia boli pridaní do vášho zoznamu spamu.",
+        "${ elementsCount } správ bolo presunutých do spamu a odosielatelia boli pridaní do vášho zoznamu spamu."
+      ],
+      "${ elementsCount } message removed from ${ labelName }.": [
+        "${ elementsCount } správa bola odstránená z ${ labelName }.",
+        "${ elementsCount } správy boli odstránené z ${ labelName }.",
+        "${ elementsCount } správ bolo odstránených z ${ labelName }.",
+        "${ elementsCount } správ bolo odstránených z ${ labelName }."
+      ],
       "Address copied to clipboard": [
         "Adresa bola skopírovaná do schránky"
       ],
@@ -7892,6 +8916,18 @@
       ],
       "Code sent to ${ methodTo }": [
         "Kód zaslaný na ${ methodTo }"
+      ],
+      "Contact deleted": [
+        "Kontakt bol odstránený",
+        "Kontakty boli odstránené",
+        "Kontakty boli odstránené",
+        "Kontakty boli odstránené"
+      ],
+      "Contact group deleted": [
+        "Skupina kontaktov bola odstránená",
+        "Skupiny kontaktov boli odstránené",
+        "Skupiny kontaktov boli odstránené",
+        "Skupiny kontaktov boli odstránené"
       ],
       "Contact saved": [
         "Kontakt bol uložený"
@@ -7994,6 +9030,18 @@
       ],
       "Messages from ${ sendersList } will be moved to ${ folder }": [
         "Správy od ${ sendersList } budú presunuté do priečinka ${ folder }"
+      ],
+      "Move ${ selectionCount } conversation": [
+        "Presunúť ${ selectionCount } konverzáciu",
+        "Presunúť ${ selectionCount } konverzácie",
+        "Presunúť ${ selectionCount } konverzácií",
+        "Presunúť ${ selectionCount } konverzácií"
+      ],
+      "Move ${ selectionCount } message": [
+        "Presunúť ${ selectionCount } správu",
+        "Presunúť ${ selectionCount } správy",
+        "Presunúť ${ selectionCount } správ",
+        "Presunúť ${ selectionCount } správ"
       ],
       "Password copied to clipboard": [
         "Heslo bolo skopírované do schránky"
@@ -8124,9 +9172,61 @@
         "Včera"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hodina",
+        "${ hours } hodiny",
+        "${ hours } hodín",
+        "${ hours } hodín"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodíny",
+        "${ hoursInt }.5 hodín",
+        "${ hoursInt }.5 hodín"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minúta",
+        "${ minutes } minúty",
+        "${ minutes } minút",
+        "${ minutes } minút"
+      ]
+    },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount } emailová adresa",
+        "${ emailsCount } emailové adresy",
+        "${ emailsCount } emailových adries",
+        "${ emailsCount } emailových adries"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } klávesové skratky"
+      ],
+      "${ unreads } unread message": [
+        "${ unreads } neprečítaná správa",
+        "${ unreads } neprečítané správy",
+        "${ unreads } neprečítaných správ",
+        "${ unreads } neprečítaných správ"
       ],
       "(active)": [
         "(aktívny)"
@@ -8139,6 +9239,12 @@
       ],
       "Add filter": [
         "Pridať filter"
+      ],
+      "Add to ${ groupCount } group": [
+        "Pridať do ${ groupCount } skupiny",
+        "Pridať do ${ groupCount } skupín",
+        "Pridať do ${ groupCount } skupín",
+        "Pridať do ${ groupCount } skupín"
       ],
       "Add to ${ groupName }": [
         "Pridať do ${ groupName }"
@@ -8248,6 +9354,36 @@
       "Decryption error": [
         "Chyba dešifrovania"
       ],
+      "Delete ${ count } contact": [
+        "Zmazať ${ count } kontakt",
+        "Zmazať ${ count } kontakty",
+        "Zmazať ${ count } kontaktov",
+        "Zmazať ${ count } kontaktov"
+      ],
+      "Delete ${ count } contact group": [
+        "Zmazať ${ count } skupinu kontaktov",
+        "Zmazať ${ count } skupiny kontaktov",
+        "Zmazať ${ count } skupín kontaktov",
+        "Zmazať ${ count } skupín kontaktov"
+      ],
+      "Delete ${ count } conversation": [
+        "Odstrániť ${ count } konverzáciu",
+        "Odstrániť ${ count } konverzácie",
+        "Odstrániť ${ count } konverzácií",
+        "Odstrániť ${ count } konverzácií"
+      ],
+      "Delete ${ count } draft": [
+        "Odstrániť ${ count } koncept",
+        "Odstrániť ${ count } koncepty",
+        "Odstrániť ${ count } konceptov",
+        "Odstrániť ${ count } konceptov"
+      ],
+      "Delete ${ count } message": [
+        "Odstrániť ${ count } správu",
+        "Odstrániť ${ count } správy",
+        "Odstrániť ${ count } správ",
+        "Odstrániť ${ count } správ"
+      ],
       "Delete ${ label.Name } folder": [
         "Odstrániť priečinok ${ label.Name }"
       ],
@@ -8340,6 +9476,12 @@
       ],
       "Image": [
         "Obrázok"
+      ],
+      "Import as simple event?": [
+        "Importovať ako jednoduchú udalosť?",
+        "Importovať ako jednoduché udalosti?",
+        "Importovať ako jednoduché udalosti?",
+        "Importovať ako jednoduché udalosti?"
       ],
       "Import contacts": [
         "Importovať kontakty"
@@ -8599,6 +9741,12 @@
       "Trash": [
         "Kôš"
       ],
+      "Trust new key?": [
+        "Dôverovať novému kľúču?",
+        "Dôverovať novým kľúčom?",
+        "Dôverovať novým kľúčom?",
+        "Dôverovať novým kľúčom?"
+      ],
       "Trust pinned keys?": [
         "Dôverovať pripnutým kľúčom?"
       ],
@@ -8622,6 +9770,12 @@
       ],
       "Warning: suspected fake website": [
         "Varovanie: podozrenie na falošnú webovú stránku"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "Ochránili sme vás pred ${ trackersCount } sledovačom",
+        "Ochránili sme vás od ${ trackersCount } trackerov",
+        "Ochránili sme vás pred ${ trackersCount } sledovačmi",
+        "Ochránili sme vás pred ${ trackersCount } sledovačmi"
       ],
       "Welcome": [
         "Vitajte"
@@ -8740,6 +9894,20 @@
         "Vaše predvolené písmo bude vyzerať nasledovne:"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Heslo musí obsahovať aspoň ${ length } znak",
+        "Heslo musí obsahovať aspoň ${ length } znaky",
+        "Heslo musí obsahovať aspoň ${ length } znakov",
+        "Heslo musí obsahovať aspoň ${ length } znakov"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Skúste kratšie používateľské meno (max. ${ n } znak)",
+        "Skúste kratšie používateľské meno (max. ${ n } znaky)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)",
+        "Skúste kratšie používateľské meno (max. ${ n } znakov)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Kliknutím prehrať video"
@@ -8754,6 +9922,12 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Tento import môže prekročiť kapacitu úložiska, ktorá je momentálne k dispozícii vo vašom ${ BRAND_NAME } účte. Zvážte prosím prispôsobenie importu."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Naozaj chcete natrvalo vymazať ${ count } kontakt?",
+        "Naozaj chcete natrvalo vymazať ${ count } kontakty?",
+        "Naozaj chcete natrvalo vymazať ${ count } kontaktov?",
+        "Naozaj chcete natrvalo vymazať ${ count } kontaktov?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Naozaj chcete natrvalo vymazať tieto skupiny kontaktov?"
@@ -8778,6 +9952,12 @@
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Niektoré kontakty vykazujú chybu pri spojení. Prosím, skontrolujte ich individuálne"
+      ],
+      "The attachment's signature failed verification.\nYou can still download this attachment but it might have been tampered with.": [
+        "Overenie podpisu prílohy zlyhalo.\nTúto prílohu si stále môžete stiahnuť, ale môže byť sfalšovaná.",
+        "Overenie niektorých podpisov príloh zlyhalo.\nTieto prílohy si stále môžete stiahnuť, ale môžu byť sfalšované.",
+        "Overenie niektorých podpisov príloh zlyhalo.\nTieto prílohy si stále môžete stiahnuť, ale môžu byť sfalšované.",
+        "Overenie niektorých podpisov príloh zlyhalo.\nTieto prílohy si stále môžete stiahnuť, ale môžu byť sfalšované."
       ],
       "The contact data is corrupted and cannot be displayed.": [
         "Kontaktné údaje sú poškodené a nie je možné ich zobraziť."
@@ -8814,6 +9994,168 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "${ interval } týždeň v ${ multipleDaysString }",
+        "Každé ${ interval } týždne v ${ multipleDaysString }",
+        "Každých ${ interval } týždňov v ${ multipleDaysString }",
+        "Každých ${ interval } týždňov v ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Každý ${ interval } týždeň v ${ multipleDaysString }, ${ timesString }",
+        "Každé ${ interval } týždne v ${ multipleDaysString }, ${ timesString }",
+        "Každých ${ interval } týždňov v ${ multipleDaysString }, ${ timesString }",
+        "Každých ${ interval } týždňov v ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Každý ${ interval } týždeň v ${ multipleDaysString }, ${ untilString }",
+        "Každé ${ interval } týždne v ${ multipleDaysString }, ${ untilString }",
+        "Každých ${ interval } týždňov v ${ multipleDaysString }, ${ untilString }",
+        "Každých ${ interval } týždňov v ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Každý ${ interval } týždeň vo všetky dni",
+        "Každé ${ interval } týždne vo všetky dni",
+        "Každých ${ interval } týždňov vo všetky dni",
+        "${ interval } týždňov vo všetky dni"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Každý ${ interval } týždeň vo všetky dni, ${ timesString }",
+        "Každé ${ interval } týždne vo všetky dni, ${ timesString }",
+        "Každých ${ interval } týždňov vo všetky dni, ${ timesString }",
+        "Každých ${ interval } týždňov vo všetky dni, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Každý ${ interval } týždeň vo všetky dni, ${ untilString }",
+        "Každé ${ interval } týždne vo všetky dni, ${ untilString }",
+        "Každých ${ interval } týždňov vo všetky dni, ${ untilString }",
+        "Každých ${ interval } týždňov vo všetky dni, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Každý ${ interval } týždeň v piatok",
+        "Každé ${ interval } týždne v piatok",
+        "Každých ${ interval } týždňov v piatok",
+        "Každých ${ interval } týždňov v piatok"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Každý ${ interval } týždeň v piatok, ${ timesString }",
+        "Každé ${ interval } týždne v piatok, ${ timesString }",
+        "Každých ${ interval } týždňov v piatok, ${ timesString }",
+        "Každých ${ interval } týždňov v piatok, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Každý ${ interval } týždeň v piatok, ${ untilString }",
+        "Každé ${ interval } týždne v piatok, ${ untilString }",
+        "Každých ${ interval } týždňov v piatok, ${ untilString }",
+        "Každých ${ interval } týždňov v piatok, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Každý ${ interval } týždeň v pondelok",
+        "Každé ${ interval } týždne v pondelok",
+        "Každých ${ interval } týždňov v pondelok",
+        "Každých ${ interval } týždňov v pondelok"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Každý ${ interval } týždeň v pondelok, ${ timesString }",
+        "Každé ${ interval } týždne v pondelok, ${ timesString }",
+        "Každých ${ interval } týždňov v pondelok, ${ timesString }",
+        "Každých ${ interval } týždňov v pondelok, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Každý ${ interval } týždeň v pondelok, ${ untilString }",
+        "Každé ${ interval } týždne v pondelok, ${ untilString }",
+        "Každých ${ interval } týždňov v pondelok, ${ untilString }",
+        "Každých ${ interval } týždňov v pondelok, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Každý ${ interval } týždeň v sobotu",
+        "Každé ${ interval } týždne v sobotu",
+        "Každých ${ interval } týždňov v sobotu",
+        "Každých ${ interval } týždňov v sobotu"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Každý ${ interval } týždeň v sobotu, ${ timesString }",
+        "Každé ${ interval } týždne v sobotu, ${ timesString }",
+        "Každých ${ interval } týždňov v sobotu, ${ timesString }",
+        "Každých ${ interval } týždňov v sobotu, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Každý ${ interval } týždeň v sobotu, ${ untilString }",
+        "Každé ${ interval } týždne v sobotu, ${ untilString }",
+        "Každých ${ interval } týždňov v sobotu, ${ untilString }",
+        "Každých ${ interval } týždňov v sobotu, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Každý ${ interval } týždeň v nedeľu",
+        "Každé ${ interval } týždne v nedeľu",
+        "Každých ${ interval } týždňov v nedeľu",
+        "Každých ${ interval } týždňov v nedeľu"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Každý ${ interval } týždeň v nedeľu, ${ timesString }",
+        "Každé ${ interval } týždne v nedeľu, ${ timesString }",
+        "Každých ${ interval } týždňov v nedeľu, ${ timesString }",
+        "Každých ${ interval } týždňov v nedeľu, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Každý ${ interval } týždeň v nedeľu, ${ untilString }",
+        "Každé ${ interval } týždne v nedeľu, ${ untilString }",
+        "Každých ${ interval } týždňov v nedeľu, ${ untilString }",
+        "Každých ${ interval } týždňov v nedeľu, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Každý ${ interval } týždeň vo štvrtok",
+        "Každé ${ interval } týždne vo štvrtok",
+        "Každých ${ interval } týždňov vo štvrtok",
+        "Každých ${ interval } týždňov vo štvrtok"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Každý ${ interval } týždeň vo štvrtok, ${ timesString }",
+        "Každé ${ interval } týždne vo štvrtok, ${ timesString }",
+        "Každých ${ interval } týždňov vo štvrtok, ${ timesString }",
+        "Každých ${ interval } týždňov vo štvrtok, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Každý ${ interval } týždeň vo štvrtok, ${ untilString }",
+        "Každé ${ interval } týždne vo štvrtok, ${ untilString }",
+        "Každých ${ interval } týždňov vo štvrtok, ${ untilString }",
+        "Každých ${ interval } týždňov vo štvrtok, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Každý ${ interval } týždeň v utorok",
+        "Každé ${ interval } týždne v utorok",
+        "Každých ${ interval } týždňov v utorok",
+        "Každých ${ interval } týždňov v utorok"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Každý ${ interval } týždeň v utorok, ${ timesString }",
+        "Každé ${ interval } týždne v utorok, ${ timesString }",
+        "Každých ${ interval } týždňov v utorok, ${ timesString }",
+        "Každých ${ interval } týždňov v utorok, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Každý ${ interval } týždeň v utorok, ${ untilString }",
+        "Každé ${ interval } týždne v utorok, ${ untilString }",
+        "Každých ${ interval } týždňov v utorok, ${ untilString }",
+        "Každých ${ interval } týždňov v utorok, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Každý ${ interval } týždeň v stredu",
+        "Každé ${ interval } týždne v stredu",
+        "Každých ${ interval } týždňov v stredu",
+        "Každých ${ interval } týždňov v stredu"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Každý ${ interval } týždeň v stredu, ${ timesString }",
+        "Každé ${ interval } týždne v stredu, ${ timesString }",
+        "Každých ${ interval } týždňov v stredu, ${ timesString }",
+        "Každých ${ interval } týždňov v stredu, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Každý ${ interval } týždeň v stredu, ${ untilString }",
+        "Každé ${ interval } týždne v stredu, ${ untilString }",
+        "Každých ${ interval } týždňov v stredu, ${ untilString }",
+        "Každých ${ interval } týždňov v stredu, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Týždenne v ${ multipleDaysString }"
       ],
@@ -8920,6 +10262,24 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Každých ${ interval } rokov",
+        "Každé ${ interval } roky",
+        "Každých ${ interval } rokov",
+        "Každých ${ interval } rokov"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Každý ${ interval } rok, ${ timesString }",
+        "Každé ${ interval } roky, ${ timesString }",
+        "Každých ${ interval } rokov, ${ timesString }",
+        "Každých ${ interval } rokov, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Každý ${ interval } rok, ${ untilString }",
+        "Každé ${ interval } roky, ${ untilString }",
+        "Každých ${ interval } rokov, ${ untilString }",
+        "Každých ${ interval } rokov, ${ untilString }"
+      ],
       "Yearly": [
         "Ročne"
       ],

@@ -100,6 +100,9 @@
       "As Scheduled": [
         "予定通り"
       ],
+      "At most ${ maxContacts } contacts are allowed per contact group": [
+        "1つの連絡グループごとに最大で${ maxContacts }件の連絡先が許可されています。"
+      ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
@@ -276,6 +279,12 @@
       ],
       "Delete": [
         "削除"
+      ],
+      "Delete ${ selectedCount } contact groups": [
+        "${ selectedCount } 件の連絡先グループを削除"
+      ],
+      "Delete ${ selectedCount } contacts": [
+        "${ selectedCount } 件の連絡先を削除"
       ],
       "Delete all": [
         "すべて削除"
@@ -513,6 +522,9 @@
       ],
       "Insert": [
         "挿入"
+      ],
+      "Insert ${ totalChecked } contacts": [
+        "${ totalChecked } 個の連絡先を挿入"
       ],
       "Insert contact": [
         "連絡先を挿入"
@@ -1033,6 +1045,9 @@
       "Trust": [
         "信頼する"
       ],
+      "Trust keys": [
+        "鍵を信頼する"
+      ],
       "Trust public key": [
         "公開鍵を信頼"
       ],
@@ -1150,6 +1165,9 @@
       "Yes, I'll attend": [
         "はい、参加します"
       ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "${ maxAttachments }件を超える連絡先のvCardファイルを送信できません。"
+      ],
       "Zoom in": [
         "拡大"
       ],
@@ -1193,6 +1211,17 @@
     "Adding expiration to a message will create an expiring message": {
       "Expiring message": [
         "有効期限付きメッセージ"
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domains": [
+        "${ domains } のカスタム ドメイン"
+      ],
+      "${ ips } servers": [
+        "${ ips } のサーバー"
+      ],
+      "${ users } users": [
+        "${ users } のユーザー"
       ]
     },
     "Alert": {
@@ -1640,6 +1669,11 @@
       ],
       "Cancel expiration": [
         "有効期限をキャンセル"
+      ]
+    },
+    "Checkout row": {
+      "${ users } users": [
+        "${ users } 人のユーザー"
       ]
     },
     "Collapsible tooltip": {
@@ -2811,6 +2845,9 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } times": [
+        "${ count } 回"
+      ],
       "Daily": [
         "毎日"
       ],
@@ -2819,6 +2856,15 @@
       ],
       "Daily, ${ untilString }": [
         "毎日、${ untilString }"
+      ],
+      "Every ${ interval } days": [
+        "${ interval } 日毎"
+      ],
+      "Every ${ interval } days, ${ timesString }": [
+        "${ interval } 日毎、${ timesString }"
+      ],
+      "Every ${ interval } days, ${ untilString }": [
+        "${ interval } 日毎、${ untilString }"
       ],
       "until ${ dateString }": [
         "${ dateString } まで"
@@ -2884,6 +2930,9 @@
       ],
       "Merging contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "連絡先の統合しています... これには数分かかる場合があります。処理が完了したらこのモーダルを閉じることができます。"
+      ],
+      "New emails from ${ senderEmailAddress } and ${ otherSendersCount } others won't be delivered and will be permanently deleted.": [
+        "${ senderEmailAddress }とその他${ otherSendersCount }件のアドレスからのメールは今後一切受信しません。"
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "${ senderEmailAddress }とからのメールは今後一切受信しません。"
@@ -3006,6 +3055,9 @@
       "Event starting now": [
         "予定は今から始まります"
       ],
+      "Event starts in ${ minutesUntilEvent } minutes": [
+        "予定は ${ minutesUntilEvent } 分後に始まります"
+      ],
       "Event starts tomorrow": [
         "予定は明日始まります"
       ]
@@ -3103,6 +3155,12 @@
       "Choose a date in the future.": [
         "未来の日付を入力してください。"
       ],
+      "Choose a date within the next ${ EXPIRATION_TIME_MAX_DAYS } days.": [
+        "次の ${ EXPIRATION_TIME_MAX_DAYS } 日間から日付を選択してください"
+      ],
+      "Choose a date within the next ${ SCHEDULED_MAX_DATE_DAYS } days.": [
+        "次の ${ SCHEDULED_MAX_DATE_DAYS } 日間から日付を選択してください"
+      ],
       "Condition incomplete": [
         "条件が不完全です"
       ],
@@ -3126,6 +3184,12 @@
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
         "復号エラー: 暗号化されたメッセージのコンテンツ復号に失敗しました。"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars": [
+        "${ calendarsToFixCount } 件のカレンダーの選択を解除"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars or": [
+        "${ calendarsToFixCount } 件のカレンダーの選択を解除するか"
       ],
       "Domain not available, try again later": [
         "ドメインが利用できません。再度お試しください。"
@@ -3214,6 +3278,9 @@
       "Maximum number of attachments (${ attachmentsCountLimit }) exceeded": [
         "添付ファイルの最大数 (${ attachmentsCountLimit }) を超えました。"
       ],
+      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "${ calendarsToFixCount } 件のカレンダーを既存の ${ BRAND_NAME } カレンダーに結合します"
+      ],
       "Message needs to be sent first": [
         "メッセージを最初に送信する必要があります"
       ],
@@ -3259,6 +3326,9 @@
       "Please activate your search again": [
         "検索を再度有効にしてください"
       ],
+      "Please fix the highlighted conflicts to proceed.": [
+        "続行するためにハイライトされた競合を修正してください。"
+      ],
       "Please provide either a first name, a last name or a display name": [
         "名前、姓、または表示名のいずれかを入力してください。"
       ],
@@ -3283,6 +3353,9 @@
       "re-activate the previous key": [
         "以前の鍵をもう一度有効化"
       ],
+      "Removed duplicate recipients: ${ recipents }": [
+        "競合した宛先を削除しました: ${ recipents }"
+      ],
       "Request timed out": [
         "リクエストがタイムアウトしました"
       ],
@@ -3304,8 +3377,17 @@
       "Some contacts could not be deleted": [
         "一部の連絡先を削除できませんでした"
       ],
+      "Some contacts have no email addresses: ${ noEmailsContactNamesList } ": [
+        "一部の連絡先にメールアドレスがありません: ${ noEmailsContactNamesList } "
+      ],
       "Some groups could not be deleted": [
         "一部のグループは削除できませんでした"
+      ],
+      "Some groups have no contacts: ${ noContactGroupList } ": [
+        "次のグループには連絡先が追加されていません: ${ noContactGroupList } "
+      ],
+      "Some of the attachments could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe files with a program such as GnuPG.": [
+        "いくつかの添付ファイルは復号できませんでした。\n関連する公開鍵を持っている場合は、GnuPG などのプログラムを使ってファイルを復号できます。"
       ],
       "Some of your folder names are unavailable. Please customize the import to edit these names.": [
         "フォルダー名の中に無効なものがあります。これらの名前を編集するためにインポートをカスタマイズしてください。"
@@ -3409,6 +3491,12 @@
       "Wrong mailbox password": [
         "メールボックスのパスワードが間違っています"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipients": [
+        "${ maxContacts }件以上の宛先へメールを送信することはできません"
+      ],
+      "You cannot open more than ${ maxActiveComposer } composer windows at a time": [
+        "同時に ${ maxActiveComposer } つ以上の作成画面を開くことはできません"
+      ],
       "You did not provide a file.": [
         "ファイルが選択されていません。"
       ],
@@ -3432,6 +3520,11 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
+      ]
+    },
+    "Error adding participants to a calendar event": {
+      "At most ${ maxAttendees } participants are allowed per invitation": [
+        "1つの招待ごとに最大で${ maxAttendees }人の参加者が許可されています。"
       ]
     },
     "Error display when performing invalid move on message": {
@@ -3466,6 +3559,9 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "予期しないエラーが発生しました。インポートを再起動する必要があります。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "ファイル ${ formattedFilename } には ${ MAX_IMPORT_EVENTS_STRING } 以上の予定が含まれています。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "ファイル　${ formattedFilename }はメソッドが正しくなく、インポートできません。"
@@ -3856,6 +3952,9 @@
       ]
     },
     "file size format": {
+      "bytes": [
+        "バイト"
+      ],
       "GB": [
         "GB"
       ],
@@ -3867,6 +3966,23 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Bytes": [
+        "バイト"
+      ],
+      "Gigabytes": [
+        "ギガバイト"
+      ],
+      "Kilobytes": [
+        "キロバイト"
+      ],
+      "Megabytes": [
+        "メガバイト"
+      ],
+      "Terabytes": [
+        "テラバイト"
       ]
     },
     "Filter": {
@@ -4198,6 +4314,9 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestions, use keyboard to navigate.": [
+        "${ items.length } つの提案が見つかりました。キーボードを使って操作します。"
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "矢印キーで提案を表示し、選択することができます。エンターキーで確定し、エスケープキーで提案を閉じることができます。"
       ]
@@ -4214,13 +4333,22 @@
       ]
     },
     "ICS widget label for event details": {
+      "${ totalAttendees } participants": [
+        "${ totalAttendees } 人の参加者"
+      ],
       "Organizer:": [
         "主催者:"
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } 予定が暗号化され、カレンダーに追加されました"
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "予定の暗号化と追加中にエラーが発生しました。予定をインポートできませんでした。"
+      ],
+      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+        "予定の暗号化と追加中にエラーが発生しました。${ totalToImport } のうち ${ totalImported } の予定のインポートに成功しました。"
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "予定の暗号化と追加中にエラーが発生しました。予定をインポートできませんでした。"
@@ -4253,11 +4381,20 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "インポートされた招待は、${ CALENDAR_APP_NAME }にシンプルなイベントとして主催者と参加者の詳細なしで表示されます。イベントの最新情報を入手して参加者を確認するには、${ BRAND_NAME }メールアドレスを使用して主催者に招待するよう依頼してください。"
       ],
+      "This file contains event invitations:": [
+        "このファイルには予定の招待が含まれています:"
+      ],
+      "This file contains invitation responses:": [
+        "以下のファイルには参加の是非の回答があります。"
+      ],
       "This file contains some data that we cannot import:": [
         "このファイルにはインポートできないデータが含まれています:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } 件の連絡先が暗号化され、連絡先リストに追加されました"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "連絡先の暗号化と追加中にエラーが発生しました。連絡先をインポートできませんでした。"
       ],
@@ -4277,6 +4414,11 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "${ contactId } へのお問い合わせ "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contacts": [
+        "${ totalContacts } 件の連絡先"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4456,6 +4598,9 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContacts } 件のうち ${ totalContactsDiscarded } 件の連絡先はインポートされません。クリックして詳細"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEvents } 件のうち ${ totalEventsDiscarded } 件の予定はインポートされません。クリックして詳細を展開します。"
+      ],
       "No contact can be imported. Click for details": [
         "連絡先をインポートすることはできません。詳細はクリックしてください"
       ],
@@ -4467,14 +4612,47 @@
       ]
     },
     "Info": {
+      "${ addressCount } email addresses": [
+        "${ addressCount } 件のメールアドレス"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } からの通知を受け取るには、${ enableDesktopNotifications }必要があります。"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
       ],
+      "${ calendarsToBeCreatedCount } new calendars": [
+        "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
+      ],
+      "${ calendarsToBeMergedCount } merged calendars": [
+        "${ calendarsToBeMergedCount } 個の結合されたカレンダー"
+      ],
+      "${ contactCount } contacts contain multiple email addresses.": [
+        "${ contactCount } 件の連絡先に複数のメールアドレスが含まれています。"
+      ],
+      "${ contactEmailsLength } Members": [
+        "${ contactEmailsLength } 人のメンバー"
+      ],
+      "${ contactGroupName } (${ numberOfSelectedContacts }/${ numberOfContactsInGroup } members)": [
+        "${ contactGroupName }（${ numberOfContactsInGroup }件中${ numberOfSelectedContacts }件）"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "連絡先 ${ contactName } に複数のメールアドレスが含まれています。"
+      ],
+      "${ contactsCount } contacts found": [
+        "${ contactsCount } の連絡先が見つかりました"
+      ],
+      "${ contactsLength } contacts": [
+        "${ contactsLength } 件の連絡先"
+      ],
+      "${ count } unread messages": [
+        "${ count } 件の未読メッセージ"
+      ],
+      "${ currentProgress } out of ${ totalProgress }": [
+        "${ totalProgress } のうち ${ currentProgress }"
+      ],
+      "${ embeddedAttachmentsCount } embedded images": [
+        "${ embeddedAttachmentsCount } 枚の埋め込み画像"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: 元サイズの画像"
@@ -4482,11 +4660,89 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: 低画質のプレビュー"
       ],
+      "${ groupCounts } groups found": [
+        "${ groupCounts } 件のグループが見つかりました"
+      ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } はあなたのビジネスも保護します。"
       ],
+      "${ messagesNotAuthorizedToMove } messages could not be moved.": [
+        "${ messagesNotAuthorizedToMove } 件のメッセージを移動できませんでした。"
+      ],
+      "${ numberOfImageTrackers } email trackers blocked": [
+        "${ numberOfImageTrackers } 個のメールトラッカーをブロックしました"
+      ],
+      "${ numberOfImageTrackers } trackers blocked": [
+        "${ numberOfImageTrackers }個のトラッカーをブロックしました"
+      ],
+      "${ numberOfUTMTrackers } links cleaned": [
+        "${ numberOfUTMTrackers } 件のリンクがクリアされました"
+      ],
+      "${ NumMessages } messages in conversation": [
+        "会話内に ${ NumMessages } 件のメッセージ"
+      ],
+      "${ numOccurrences } occurrences found": [
+        "${ numOccurrences } 件見つかりました"
+      ],
+      "${ numOccurrences } occurrences found in the mail content": [
+        "メールコンテンツ内に ${ numOccurrences } 件見つかりました"
+      ],
+      "${ providerFoldersNumLocalized } folders found": [
+        "${ providerFoldersNumLocalized } 件のフォルダーが存在"
+      ],
+      "${ providerFoldersNumLocalized } labels found in Gmail": [
+        "${ providerFoldersNumLocalized } ラベルが Gmail に見つかりました"
+      ],
+      "${ pureAttachmentsCount } files attached": [
+        "${ pureAttachmentsCount } 件の添付ファイル"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
+        "${ providerCalendars.length } のうち ${ selectedCalendarsTotal } のカレンダー"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contacts selected": [
+        "${ selectedContactsLength } / ${ contactsLength } 件の連絡先が選択されました"
+      ],
+      "${ selectedFoldersCount } folders selected": [
+        "${ selectedFoldersCount } 件のフォルダーを選択済み"
+      ],
+      "${ selectedFoldersCount } labels selected": [
+        "${ selectedFoldersCount } 件のラベルが選択済み"
+      ],
+      "${ selectedFoldersCountLocalized } folders selected": [
+        "${ selectedFoldersCountLocalized } 件のフォルダーを選択済み"
+      ],
+      "${ selectedFoldersCountLocalized } labels selected": [
+        "${ selectedFoldersCountLocalized } 件のラベルを選択"
+      ],
       "${ storage } storage": [
         "${ storage } ストレージ"
+      ],
+      "${ total } conversations": [
+        "${ total } 件の会話"
+      ],
+      "${ total } messages": [
+        "${ total } 件のメッセージ"
+      ],
+      "${ unread } unread conversations": [
+        "${ unread } 件の未読の会話"
+      ],
+      "${ unread } unread messages": [
+        "${ unread } 件の未読のメッセージ"
+      ],
+      "${ unreadCount } scheduled messages": [
+        "${ unreadCount } 件の送信予約メッセージ"
+      ],
+      "${ unreadCount } unread conversations": [
+        "${ unreadCount } 件の未読の会話"
+      ],
+      "${ unreadCount } unread messages": [
+        "${ unreadCount } 件の未読メッセージ"
+      ],
+      "${ updated } contacts updated successfully.": [
+        "${ updated } 連絡先が正常に更新されました。"
+      ],
+      "(${ memberCount } members)": [
+        "(${ memberCount } 人のメンバー)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(以下のすべての条件が満たされた場合に動作します)"
@@ -4496,6 +4752,9 @@
       ],
       "(No Recipient)": [
         "(宛先なし)"
+      ],
+      "**${ elementsFoundCount }** results found in ${ labelName }": [
+        "${ labelName } 内で **${ elementsFoundCount }** 件見つかりました"
       ],
       "A phone number can only be used to verify one ${ BRAND_NAME } account": [
         "電話番号は、1つの ${ BRAND_NAME } アカウントの認証にのみ使用できます。"
@@ -4521,6 +4780,12 @@
       "Align right": [
         "右揃え"
       ],
+      "All (${ totalFoldersCount } folders)": [
+        "すべて (${ totalFoldersCount } フォルダー)"
+      ],
+      "All (${ totalFoldersCount } labels)": [
+        "すべて (${ totalFoldersCount } 件のラベル)"
+      ],
       "All messages stored in this folder will be permanently deleted.": [
         "このフォルダーに保存されているすべてのメッセージが完全に削除されます。"
       ],
@@ -4532,6 +4797,9 @@
       ],
       "All your changes will be lost.": [
         "変更内容はすべて失われます。"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "${ MAX_CONTACTS_PER_USER } の制限まで、すべての連絡先がインポートされます"
       ],
       "An unknown public key has been detected for this recipient.": [
         "この受信者の不明な公開鍵が検出されました。"
@@ -4562,6 +4830,15 @@
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
         "この場所にあるすべてのメッセージを削除してよろしいですか?"
+      ],
+      "Are you sure you want to permanently delete ${ count } conversations?": [
+        "${ count } 件の会話を完全に削除してよろしいですか？"
+      ],
+      "Are you sure you want to permanently delete ${ count } drafts?": [
+        "${ count } 件の下書きを完全に削除してよろしいですか？"
+      ],
+      "Are you sure you want to permanently delete ${ count } messages?": [
+        "${ count } 件のメッセージを完全に削除してよろしいですか？"
       ],
       "Are you sure you want to permanently delete this conversation?": [
         "この会話を完全に削除してよろしいですか？"
@@ -4644,6 +4921,9 @@
       "Country code": [
         "国コード"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendars": [
+        "${ calendarsToBeCreatedCount } 件の新しいカレンダーを作成"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "インポートされたメッセージのラベル、インポートする期間、およびインポート先のフォルダーを設定します。"
       ],
@@ -4685,6 +4965,9 @@
       ],
       "Disable message content search": [
         "メッセージ内容の検索を無効化"
+      ],
+      "Do you want to download these attachments anyway?": [
+        "とにかく添付ファイルをダウンロードしますか?"
       ],
       "Do you want to re-sign the contact details and in the process trust the keys with the following fingerprints?": [
         "連絡先の詳細を再署名して、これらのフィンガープリントの鍵を信頼してよろしいですか？"
@@ -4749,6 +5032,9 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "このラベルが付いたメールは削除されず、各フォルダで見つけることができます。"
       ],
+      "embedded images": [
+        "個の埋め込み画像"
+      ],
       "Encrypt message": [
         "メッセージを暗号化"
       ],
@@ -4767,6 +5053,9 @@
       "Enter your own password (as organization admin).": [
         "パスワード（管理員のもの）を入力してください"
       ],
+      "Estimated time remaining: ${ estimatedMinutes } minutes": [
+        "推定残り時間: ${ estimatedMinutes } 分"
+      ],
       "Estimated time remaining: Less than a minute": [
         "推定残り時間: まもなく完了します"
       ],
@@ -4778,6 +5067,15 @@
       ],
       "Expires in ${ formattedDate }": [
         "${ formattedDate } に期限が切れます"
+      ],
+      "Expires in ${ minutesDiff } minutes": [
+        "有効期限は ${ minutesDiff } 分です。"
+      ],
+      "Expires in less than ${ hoursDiff } hours": [
+        "有効期限は ${ hoursDiff } 時間未満です。"
+      ],
+      "files attached": [
+        "個のファイル添付"
       ],
       "Filters work on all emails, including incoming as well as sent emails. Each filter must contain at least a name, a condition and an action.": [
         "フィルターは送信したメールと受信したメールを含むすべてのメールで動作します。各フィルターには少なくとも有効な名前、条件、動作が含まれている必要があります。"
@@ -4799,6 +5097,9 @@
       ],
       "From": [
         "差出人"
+      ],
+      "Has ${ numAttachments } attachments (${ numAttachmentsSize })": [
+        "${ numAttachments } 件の添付ファイル (${ numAttachmentsSize })"
       ],
       "here": [
         "こちら"
@@ -4832,6 +5133,9 @@
       ],
       "Images have been removed because they are not allowed in auto-reply": [
         "自動返信では許可されていないため画像は削除されました"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+        "${ totalCalendarsCount } 件中 ${ calendarCount } 件のカレンダーをインポート"
       ],
       "Import from": [
         "インポート元"
@@ -5070,6 +5374,9 @@
       "Please select the type of link you want to insert and fill in all the fields.": [
         "挿入するリンクの種類を選択し、すべての項目に入力してください。"
       ],
+      "Please select which email address or addresses to add to ${ groupCount } groups.": [
+        "${ groupCount } 件のグループに追加するメールアドレスを選択してください。"
+      ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "グループ ${ groupName } に追加するメールアドレスを選択してください。"
       ],
@@ -5259,11 +5566,20 @@
       "The verification of ${ contactName } has failed: the contact is not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contact in order to send a message to ${ contactAddress } or edit the contact.": [
         "${ contactName } の検証に失敗しました: 連絡先は正常に署名されていません。\nおそらくパスワードをリセットしたことが原因です。\n${ contactAddress } にメッセージを送信したり連絡先を編集するには、連絡先を再署名する必要があります。"
       ],
+      "The verification of ${ contactNames } has failed: the contacts are not signed correctly.\nThis may be the result of a password reset.\nYou must re-sign the contacts in order to send a message to ${ contactAddresses } or edit the contacts.": [
+        "${ contactNames } の検証に失敗しました: 連絡先は正常に署名されていません。\nおそらくパスワードをリセットしたことが原因です。\n${ contactAddresses } にメッセージを送信したり連絡先を編集するには、連絡先を再署名する必要があります。"
+      ],
       "Themes can give your inbox a new look.": [
         "テーマで受信トレイを新しい見た目に変更できます。"
       ],
       "There has been an error with the signature used to verify the contact details, which may be the result of a password reset.": [
         "連絡先の詳細の検証に使われる署名にエラーがあります。おそらくパスワードリセットによって引き起こされています。"
+      ],
+      "These conversations will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "このやりとりを迷惑メールに設定します。今後このアドレスからの受信を拒否しますか？"
+      ],
+      "These messages will be marked as spam. Would you also like to unsubscribe from future emails?": [
+        "このメッセージを迷惑メールとして扱います。将来のメールから購読を解除しますか?"
       ],
       "They can't spam you if they don't know your email address. Protect your inbox with hide-my-email aliases.": [
         "本来のメールアドレスを知られなければ、迷惑メールを送りつけられることもありません。Hide-my-email で受信トレイを守りましょう。"
@@ -5577,6 +5893,18 @@
       "You have ${ unreadsLabel } in your inbox.": [
         "受信箱に ${ unreadsLabel } があります。"
       ],
+      "You have **${ count } conversations** stored in this folder": [
+        "このフォルダー内に **${ count } 件の会話**があります"
+      ],
+      "You have **${ count } conversations** tagged with this label": [
+        "このラベルがついた **${ count } 件の会話**があります"
+      ],
+      "You have **${ count } messages** stored in this folder": [
+        "このフォルダー内に **${ count } 件のメッセージ**があります"
+      ],
+      "You have **${ count } messages** tagged with this label": [
+        "このラベルがついた **${ count } 件のメッセージ**があります"
+      ],
       "You have not given your email any subject. Do you want to send the message anyway?": [
         "この電子メールには件名がありません。このままメッセージを送信しますか？"
       ],
@@ -5591,6 +5919,18 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "ストレージ容量が100%に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You selected **${ count } conversations** from this folder": [
+        "このフォルダー内の **${ count } 件の会話**を選択中"
+      ],
+      "You selected **${ count } conversations** with this label": [
+        "このラベルがついた **${ count } 件の会話**を選択中"
+      ],
+      "You selected **${ count } messages** from this folder": [
+        "このフォルダー内の **${ count } 件のメッセージ**を選択中"
+      ],
+      "You selected **${ count } messages** with this label": [
+        "このラベルがついた **${ count } 件のメッセージ**を選択中"
       ],
       "You wrote “${ attachmentsFoundKeyword }”, but no attachment has been added. Do you want to send your message anyway?": [
         "“${ attachmentsFoundKeyword }” とありますが、添付ファイルは追加されていません。そのままメッセージを送信してもいいですか?"
@@ -5631,6 +5971,9 @@
       "Your login information will not be saved after the import is completed.": [
         "インポート完了後、ログイン情報は保存されません。"
       ],
+      "Your message will expire in ${ numberOfDays } days.": [
+        "メッセージの有効期限は残り ${ numberOfDays } 日です。"
+      ],
       "Your message will expire today.": [
         "メッセージの有効期限は今日までです。"
       ],
@@ -5642,6 +5985,9 @@
       ]
     },
     "info": {
+      "${ filteredList.length } commands found.": [
+        "${ filteredList.length }個のコマンドが見つかりました。"
+      ],
       "Optional": [
         "任意"
       ]
@@ -5677,6 +6023,12 @@
       ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "「Trust Key」をクリックすると、新しいコンタクトが作成され、この公開鍵がこの送信者に関連付けられます。このアドレスからのメールは自動的に暗号化検証されます。"
+      ],
+      "Do you want to trust the primary public keys with the following fingerprints?": [
+        "次のフィンガープリントのプライマリー鍵を信頼しますか？"
+      ],
+      "You have enabled Address Verification with Trusted Keys for these email addresses,\nbut no active encryption keys have been trusted.\nYou must trust keys valid for sending in order to send a message to these email addresses.": [
+        "信頼鍵でのアドレス認証が有効になっていますが、信頼済みの暗号鍵がありません。このアドレスにメールを送信するには、送信用の鍵を追加してください。"
       ]
     },
     "Key validation warning": {
@@ -6602,6 +6954,9 @@
       "Almost there": [
         "もう少しです"
       ],
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "カレンダーの作成数：${ createdCalendarCount } のうち、${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "メールプロバイダーに接続しています"
       ],
@@ -6616,6 +6971,20 @@
       ],
       "Your import is starting": [
         "インポートが開始しました"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+        "${ itemsToImportCount } フォルダーからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
+      ],
+      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+        "${ itemsToImportCount } ラベルからすべてのメッセージをインポートし、それらを次のようにラベル付けします"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+        "${ itemsToImportCount } フォルダから ${ selectedItemsToImportCount } の全メッセージをインポートし、ラベル付けします"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+        "${ selectedItemsToImportCount } からすべてのメッセージを${ itemsToImportCount } ラベルからインポートし、それらをラベル付けします"
       ]
     },
     "Mailbox": {
@@ -6711,6 +7080,15 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } months ${ onDayString }": [
+        "${ interval } か月毎の ${ onDayString }"
+      ],
+      "Every ${ interval } months ${ onDayString }, ${ timesString }": [
+        "${ interval } か月毎の ${ onDayString } 、${ timesString }"
+      ],
+      "Every ${ interval } months ${ onDayString }, ${ untilString }": [
+        "${ interval } か月毎の ${ onDayString } 、${ untilString }"
+      ],
       "Monthly ${ onDayString }": [
         "毎月 ${ onDayString }"
       ],
@@ -7171,6 +7549,15 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
+        "${ countContacts } 件のうち ${ contactsExported.length } 件の連絡先が正常にエクスポートされました。"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contacts successfully deleted.": [
+        "${ totalBeDeleted } 件のうち ${ model.deleted.length } 件の連絡先が正常に削除されました。"
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contacts successfully merged.": [
+        "${ totalBeMerged } 件のうち ${ model.submitted.length } 件の連絡先が正常に統合されました。"
+      ],
       "No contacts exported.": [
         "連絡先はエクスポートされていません。"
       ],
@@ -7257,6 +7644,9 @@
       ]
     },
     "Remaining days before the message expire": {
+      "${ remainingDays } d": [
+        "${ remainingDays } 日"
+      ],
       "<1 d": [
         "1日未満"
       ]
@@ -7309,6 +7699,9 @@
       "Do you want to send the email anyway?": [
         "とりあえずメールを送信しますか?"
       ],
+      "We have detected errors. Your email cannot be sent to any of the email addresses entered due to the following reasons:": [
+        "問題を検出しました。入力したメールアドレスにメールを送信することができません。原因:"
+      ],
       "We have detected some errors. Your email cannot be sent to one or more of the email addresses entered due to the following reasons:": [
         "いくつかの問題を検出しました。入力したメールアドレスにメールを送信することができません。原因:"
       ]
@@ -7316,6 +7709,15 @@
     "Send email with warnings": {
       "Do you want to send the email anyway?": [
         "とりあえずメールを送信しますか?"
+      ],
+      "If you decide to send the message anyway, the following recipients will receive the email without expiration:": [
+        "このままメッセージを送信すると、以下の連絡先は有効期限なしでメッセージを受け取ることになります:"
+      ],
+      "The following addresses are not valid: ${ invalidAddresses }": [
+        "次のアドレスは有効ではありません: ${ invalidAddresses }"
+      ],
+      "We have detected some warnings. The following email addresses may not receive emails:": [
+        "いくつかの警告を検出しました。次のアドレスはメールを受け取ることができません:"
       ]
     },
     "Sender verification details": {
@@ -7354,8 +7756,14 @@
       "Sent by ${ MAIL_APP_NAME } with zero-access encryption": [
         "${ MAIL_APP_NAME } によって送信された、ゼロアクセス暗号化されたメッセージ"
       ],
+      "Sent by ${ MAIL_APP_NAME } with zero-access encryption to verified recipients": [
+        "検証済みの宛先へ、${ MAIL_APP_NAME } によって送信された、ゼロアクセス暗号化されたメッセージ"
+      ],
       "Sent by you with end-to-end encryption": [
         "あなたによって送信された、エンドツーエンド暗号化されたメッセージ"
+      ],
+      "Sent by you with end-to-end encryption to verified recipients": [
+        "検証済みの宛先へ、あなたによって送信された、エンドツーエンド暗号化による送信"
       ],
       "Stored with zero-access encryption": [
         "暗号化されずに送受信されたメッセージ"
@@ -7378,8 +7786,26 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } days": [
+        "${ timeRemaining.inDays } 日"
+      ],
+      "${ timeRemaining.inHours } hours": [
+        "${ timeRemaining.inHours }時間"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
+        "パスワードリセットリクエストが承認されました(${ user.Email })。パスワードをリセットできるのはあと${ timeRemaining.inDays }日です。"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
+        "パスワードリセットのリクエストが承認されました(${ user.Email })。パスワードをリセットできる時間は残り${ timeRemaining.inHours }時間あります。"
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "サインインしているデバイス (パスワード変更の要求がされたデバイス)に移動して、パスワードを変更してください。"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } days": [
+        "この許可はあと${ timeRemaining.inDays }日で期限切れになります。"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hours": [
+        "この許可はあと${ timeRemaining.inHours }時間で期限切れになります。"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "アカウント ${ boldEmail } のパスワードを、あと ${ boldDaysRemaining } 日間は自由に変更可能です。"
@@ -7442,8 +7868,14 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hours": [
+        "あと${ gracePeriodHoursRemaining }時間"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "パスワードをリセットするように要求していない場合、このリクエストを今すぐキャンセルしてください。"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
+        "パスワードリセットがリクエストされました(${ user.Email })。パスワードを変更できるのはあと${ hoursRemaining }時間後です。"
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "パスワードをリセットしようとしているのが本当にあなたであることを確認するために、リクエストを承認する前に72時間待っています。パスワードを変更できるのはあと${ boldTimeLeft }です。${ viewRequest }"
@@ -7471,6 +7903,9 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hours": [
+        "${ gracePeriodHoursRemaining } 時間"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } が現在利用可能です。"
       ],
@@ -7552,6 +7987,25 @@
         "Unlimited にする"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } days": [
+        "${ days } 日"
+      ],
+      "${ hours } hours": [
+        "${ hours } 時間"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } 分"
+      ],
+      "${ seconds } seconds": [
+        "${ seconds } 秒"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } months FREE": [
+        "${ n } か月無料"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1ユーザー"
@@ -7610,6 +8064,9 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n } ヶ月"
+      ],
       "/ month": [
         "/ 月"
       ],
@@ -7777,6 +8234,66 @@
       ]
     },
     "Success": {
+      "${ count } conversations deleted": [
+        "${ count } 件の会話が削除されました"
+      ],
+      "${ count } drafts deleted": [
+        "${ count } 件の下書きが削除されました"
+      ],
+      "${ count } messages deleted": [
+        "${ count } 件のメッセージが削除されました"
+      ],
+      "${ countMergeableContacts } contacts look identical.": [
+        "${ countMergeableContacts } 連絡先は同じようです"
+      ],
+      "${ elementsCount } conversations added to ${ labelName }.": [
+        "${ elementsCount }件のやりとりに${ labelName }のラベルを付けました。"
+      ],
+      "${ elementsCount } conversations marked as read.": [
+        "${ elementsCount } 件の会話を既読にしました。"
+      ],
+      "${ elementsCount } conversations marked as Starred.": [
+        "${ elementsCount } 件の会話に星印をつけました。"
+      ],
+      "${ elementsCount } conversations marked as unread.": [
+        "${ elementsCount } 件の会話を未読にしました。"
+      ],
+      "${ elementsCount } conversations moved to ${ folderName } and senders added to your not spam list.": [
+        "${ elementsCount }件のやりとりを${ folderName }に移動し、差出人のアドレスは迷惑メールリストに登録されました。"
+      ],
+      "${ elementsCount } conversations moved to ${ folderName }.": [
+        "${ elementsCount } 件の会話を ${ folderName } に移動しました。"
+      ],
+      "${ elementsCount } conversations moved to spam and senders added to your spam list.": [
+        "${ elementsCount } 件のやりとりを迷惑メールに移動し、送信元のアドレスは迷惑メールリストに登録されました。"
+      ],
+      "${ elementsCount } conversations removed from ${ labelName }.": [
+        "${ elementsCount } 件の会話から ${ labelName } のラベルを外しました。"
+      ],
+      "${ elementsCount } messages added to ${ labelName }.": [
+        "${ elementsCount } 件のメッセージが ${ labelName } に追加されました。"
+      ],
+      "${ elementsCount } messages marked as read.": [
+        "${ elementsCount } 件のメッセージを既読にしました。"
+      ],
+      "${ elementsCount } messages marked as Starred.": [
+        "${ elementsCount } 件のメッセージに星印をつけました。"
+      ],
+      "${ elementsCount } messages marked as unread.": [
+        "${ elementsCount } 件のメッセージを未読にしました。"
+      ],
+      "${ elementsCount } messages moved to ${ folderName } and senders added to your not spam list.": [
+        "${ elementsCount }件のメールを${ folderName }に移動し、送信元のアドレスは迷惑メールから除外されました。"
+      ],
+      "${ elementsCount } messages moved to ${ folderName }.": [
+        "${ elementsCount } 件のメッセージが ${ folderName } に移動されました。"
+      ],
+      "${ elementsCount } messages moved to spam and senders added to your spam list.": [
+        "${ elementsCount }件のメールを迷惑メールに移動しました。送信元のアドレスは迷惑メールリストに登録済みです。"
+      ],
+      "${ elementsCount } messages removed from ${ labelName }.": [
+        "${ elementsCount } 件のメッセージが ${ labelName } から削除されました。"
+      ],
       "Address copied to clipboard": [
         "住所がクリップボードにコピーされました"
       ],
@@ -7791,6 +8308,9 @@
       ],
       "Code sent to ${ methodTo }": [
         "${ methodTo } にコードを送信しました"
+      ],
+      "Contact groups deleted": [
+        "連絡先グループが削除されました"
       ],
       "Contact saved": [
         "連絡先が保存されました"
@@ -7893,6 +8413,12 @@
       ],
       "Messages from ${ sendersList } will be moved to ${ folder }": [
         "${ sendersList } からのメッセージを ${ folder } に移動します"
+      ],
+      "Move ${ selectionCount } conversations": [
+        "${ selectionCount } 件の会話を移動"
+      ],
+      "Move ${ selectionCount } messages": [
+        "${ selectionCount } 件のメッセージを移動"
       ],
       "Password copied to clipboard": [
         "パスワードがクリップボードにコピーされました"
@@ -8023,9 +8549,37 @@
         "昨日"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } 時間"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 時間"
+      ],
+      "${ minutes } min": [
+        "${ minutes } 分"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hours": [
+        "${ hours } 時間"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5 時間"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes } 分"
+      ]
+    },
     "Title": {
+      "${ emailsCount } email addresses": [
+        "${ emailsCount } 件のメールアドレス"
+      ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } のキーボードショートカット"
+      ],
+      "${ unreads } unread messages": [
+        "${ unreads } 件の未読メッセージ"
       ],
       "(active)": [
         "(アクティブ)"
@@ -8038,6 +8592,9 @@
       ],
       "Add filter": [
         "フィルターを追加"
+      ],
+      "Add to ${ groupCount } groups": [
+        "${ groupCount } グループに追加"
       ],
       "Add to ${ groupName }": [
         "${ groupName } に追加"
@@ -8147,6 +8704,21 @@
       "Decryption error": [
         "復号エラー"
       ],
+      "Delete ${ count } contact groups": [
+        "${ count } 件の連絡先を削除"
+      ],
+      "Delete ${ count } contacts": [
+        "${ count } 件の連絡先を削除"
+      ],
+      "Delete ${ count } conversations": [
+        "${ count } 件の会話を削除"
+      ],
+      "Delete ${ count } drafts": [
+        "${ count } 件の下書きを削除"
+      ],
+      "Delete ${ count } messages": [
+        "${ count } 件のメッセージを削除"
+      ],
       "Delete ${ label.Name } folder": [
         "${ label.Name } フォルダーを削除"
       ],
@@ -8239,6 +8811,9 @@
       ],
       "Image": [
         "画像"
+      ],
+      "Import as simple events?": [
+        "シンプル 予定としてインポートしますか?"
       ],
       "Import contacts": [
         "連絡先をインポート"
@@ -8498,6 +9073,9 @@
       "Trash": [
         "ごみ箱"
       ],
+      "Trust new keys?": [
+        "新しい鍵を信頼しますか？"
+      ],
       "Trust pinned keys?": [
         "固定されたキーを信頼しますか?"
       ],
@@ -8521,6 +9099,9 @@
       ],
       "Warning: suspected fake website": [
         "警告: 偽のウェブサイトの疑いがあります"
+      ],
+      "We protected you from ${ trackersCount } trackers": [
+        "${ trackersCount } 件のトラッカーから保護しました"
       ],
       "Welcome": [
         "ようこそ"
@@ -8639,6 +9220,14 @@
         "既定のフォントはこのようになります:"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } characters": [
+        "パスワードは ${ length } 文字以上必要です"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "もっと短いユーザ名にしてください (${ n } 文字以内)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "クリックして動画を再生"
@@ -8653,6 +9242,9 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } は、最新のメッセージからできるだけ多くのデータを転送します。"
+      ],
+      "Are you sure you want to permanently delete ${ count } contacts?": [
+        "${ count } 件の連絡先を完全に削除してよろしいですか？"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "これらの連絡先グループを永久に削除してもよろしいですか？"
@@ -8674,6 +9266,9 @@
       ],
       "Skip verification?": [
         "検証をスキップしますか?"
+      ],
+      "Some of the attachments' signatures failed verification.\nYou can still download these attachments but they might have been tampered with.": [
+        "添付ファイルの署名の検証に失敗しました。\n添付ファイルはダウンロードできますが、改ざんされている可能性があります。"
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "統合時にエラーが発生した連絡先があります。エラー内容をご確認ください。"
@@ -8713,6 +9308,87 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } weeks on ${ multipleDaysString }": [
+        "${ interval } 週間毎の ${ multipleDaysString }"
+      ],
+      "Every ${ interval } weeks on ${ multipleDaysString }, ${ timesString }": [
+        "${ interval } 週間毎の ${ multipleDaysString } 、${ timesString }"
+      ],
+      "Every ${ interval } weeks on ${ multipleDaysString }, ${ untilString }": [
+        "${ interval } 週間毎の ${ multipleDaysString } 、${ untilString }"
+      ],
+      "Every ${ interval } weeks on all days": [
+        "${ interval } 週間毎の全曜日"
+      ],
+      "Every ${ interval } weeks on all days, ${ timesString }": [
+        "${ interval } 週間毎の全曜日、${ timesString }"
+      ],
+      "Every ${ interval } weeks on all days, ${ untilString }": [
+        "${ interval } 週間毎の全曜日、${ untilString }"
+      ],
+      "Every ${ interval } weeks on Friday": [
+        "${ interval } 週間毎の金曜日"
+      ],
+      "Every ${ interval } weeks on Friday, ${ timesString }": [
+        "${ interval } 週間毎の金曜日、${ timesString }"
+      ],
+      "Every ${ interval } weeks on Friday, ${ untilString }": [
+        "${ interval } 週間毎の金曜日、${ untilString }"
+      ],
+      "Every ${ interval } weeks on Monday": [
+        "${ interval } 週間毎の月曜日"
+      ],
+      "Every ${ interval } weeks on Monday, ${ timesString }": [
+        "${ interval } 週間毎の月曜日、${ timesString }"
+      ],
+      "Every ${ interval } weeks on Monday, ${ untilString }": [
+        "${ interval } 週間毎の月曜日、${ untilString }"
+      ],
+      "Every ${ interval } weeks on Saturday": [
+        "${ interval } 週間毎の土曜日"
+      ],
+      "Every ${ interval } weeks on Saturday, ${ timesString }": [
+        "${ interval } 週間毎の土曜日、${ timesString }"
+      ],
+      "Every ${ interval } weeks on Saturday, ${ untilString }": [
+        "${ interval } 週間毎の土曜日、${ untilString }"
+      ],
+      "Every ${ interval } weeks on Sunday": [
+        "${ interval } 週間毎の日曜日"
+      ],
+      "Every ${ interval } weeks on Sunday, ${ timesString }": [
+        "${ interval } 週間毎の日曜日、${ timesString }"
+      ],
+      "Every ${ interval } weeks on Sunday, ${ untilString }": [
+        "${ interval } 週間毎の日曜日、${ untilString }"
+      ],
+      "Every ${ interval } weeks on Thursday": [
+        "${ interval } 週間毎の木曜日"
+      ],
+      "Every ${ interval } weeks on Thursday, ${ timesString }": [
+        "${ interval } 週間毎の木曜日、${ timesString }"
+      ],
+      "Every ${ interval } weeks on Thursday, ${ untilString }": [
+        "${ interval } 週間毎の木曜日、${ untilString }"
+      ],
+      "Every ${ interval } weeks on Tuesday": [
+        "${ interval } 週間毎の火曜日"
+      ],
+      "Every ${ interval } weeks on Tuesday, ${ timesString }": [
+        "${ interval } 週間毎の火曜日、${ timesString }"
+      ],
+      "Every ${ interval } weeks on Tuesday, ${ untilString }": [
+        "${ interval } 週間毎の火曜日、${ untilString }"
+      ],
+      "Every ${ interval } weeks on Wednesday": [
+        "${ interval } 週間毎の水曜日"
+      ],
+      "Every ${ interval } weeks on Wednesday, ${ timesString }": [
+        "${ interval } 週間毎の水曜日、${ timesString }"
+      ],
+      "Every ${ interval } weeks on Wednesday, ${ untilString }": [
+        "${ interval } 週間毎の水曜日、${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "毎週 ${ multipleDaysString }"
       ],
@@ -8819,6 +9495,15 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "${ interval } 年毎"
+      ],
+      "Every ${ interval } years, ${ timesString }": [
+        "${ interval } 年毎、${ timesString }"
+      ],
+      "Every ${ interval } years, ${ untilString }": [
+        "${ interval } 年毎、${ untilString }"
+      ],
       "Yearly": [
         "年払い"
       ],
