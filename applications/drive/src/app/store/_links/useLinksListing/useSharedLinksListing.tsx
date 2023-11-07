@@ -71,9 +71,7 @@ export function useSharedLinksListing() {
         loadLinksMeta: FetchLoadLinksMeta
     ) => {
         for (const shareId in transformedResponse) {
-            await loadLinksMeta(signal, 'sharedByLink', shareId, transformedResponse[shareId], {
-                cache: true,
-            });
+            await loadLinksMeta(signal, 'sharedByLink', shareId, transformedResponse[shareId]);
         }
     };
 
@@ -133,9 +131,9 @@ export function useSharedLinksListing() {
                 );
             });
 
-            const links = result.reduce((acc, element) => {
+            const links = result.reduce<DecryptedLink[]>((acc, element) => {
                 return [...acc, ...element.links];
-            }, [] as DecryptedLink[]);
+            }, []);
 
             const isDecrypting = result.some((element) => {
                 return element.isDecrypting;
@@ -160,13 +158,10 @@ export function useSharedLinksListing() {
  * and link IDs and parent IDs as values.
  */
 function transformSharedLinksResponseToLinkMap(response: ListDriveVolumeSharedLinksPayload) {
-    return response.ShareURLContexts.reduce(
-        (acc, share) => {
-            acc[share.ContextShareID] = share.LinkIDs;
-            return acc;
-        },
-        {} as {
-            [shareId: string]: string[];
-        }
-    );
+    return response.ShareURLContexts.reduce<{
+        [shareId: string]: string[];
+    }>((acc, share) => {
+        acc[share.ContextShareID] = share.LinkIDs;
+        return acc;
+    }, {});
 }

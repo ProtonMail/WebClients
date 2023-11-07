@@ -9,8 +9,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { linkMetaToEncryptedLink, useDebouncedRequest } from '../../_api';
 import { waitFor } from '../../_utils';
-import { DecryptedLink, EncryptedLink } from './../interface';
-import useLinksState from './../useLinksState';
+import { DecryptedLink } from './../interface';
+import useLinksState, { isLinkDecrypted } from './../useLinksState';
 import { FetchLoadLinksMeta } from './interface';
 import {
     FetchMeta,
@@ -197,11 +197,24 @@ export function useLinksListingProvider() {
         await waitFor(() => !fetchMeta.isInProgress, { abortSignal });
         fetchMeta.isInProgress = true;
 
-        const linksAcc: EncryptedLink[] = [];
-        const parentsAcc: EncryptedLink[] = [];
+        const linksAcc: DecryptedLink[] = [];
+        const parentsAcc: DecryptedLink[] = [];
+        const errorsAcc: any[] = [];
 
         const load = async () => {
-            const missingLinkIds = linkIds.filter((linkId) => !linksState.getLink(shareId, linkId));
+            const missingLinkIds: string[] = [];
+
+            // Read cache to avoid unnescesary queries
+            linkIds.forEach((linkId) => {
+                const link = linksState.getLink(shareId, linkId);
+
+                if (isLinkDecrypted(link)) {
+                    linksAcc.push(link.decrypted);
+                } else {
+                    missingLinkIds.push(linkId);
+                }
+            });
+
             for (const pageLinkIds of chunk(missingLinkIds, BATCH_REQUEST_SIZE)) {
                 const { links, parents } = await fetchLinksMeta(
                     abortSignal,
@@ -210,15 +223,24 @@ export function useLinksListingProvider() {
                     options.loadThumbnails
                 );
 
-                if (options.cache) {
-                    await cacheLoadedLinks(abortSignal, shareId, links, parents);
+                const cached = await cacheLoadedLinks(abortSignal, shareId, links, parents);
+
+                if (cached.errors.length > 0) {
+                    errorsAcc.push(...cached.errors);
                 }
 
-                linksAcc.push(...links);
-                parentsAcc.push(...parents);
-
-                if (abortSignal.aborted) {
-                    break;
+                for (const { decrypted } of cached.links) {
+                    // Links should not include parents because parents need to be
+                    // processed first otherwise links would do fetch automatically
+                    // again before parents are properly handled. Normally loading
+                    // should focus on links only, but for example, not all endpoints
+                    // gives us clear separation (like listing per shared links where
+                    // we don't have info what link is parent and what is child).
+                    if (parents.find((link) => link.linkId === decrypted.linkId)) {
+                        parentsAcc.push(decrypted);
+                    } else {
+                        linksAcc.push(decrypted);
+                    }
                 }
             }
         };
@@ -228,14 +250,9 @@ export function useLinksListingProvider() {
         });
 
         return {
-            // Links should not include parents because parents need to be
-            // processed first otherwise links would do fetch automatically
-            // again before parents are properly handled. Normally loading
-            // should focus on links only, but for example, not all endpoints
-            // gives us clear separation (like listing per shared links where
-            // we don't have info what link is parent and what is child).
-            links: linksAcc.filter((link) => !parentsAcc.find((parent) => parent.linkId === link.linkId)),
+            links: linksAcc,
             parents: parentsAcc,
+            errors: errorsAcc,
         };
     };
 
