@@ -94,8 +94,7 @@ const InvoicesSection = () => {
     return (
         <>
             <SettingsSectionWide>
-                <SettingsParagraph>{c('Info')
-                    .t`You can customize and download your invoices for accounting purposes.`}</SettingsParagraph>
+                <SettingsParagraph>{c('Info').t`View, download, and manage your invoices.`}</SettingsParagraph>
                 {hasUnpaid ? (
                     <Alert className="mb-4" type="error" data-testid="overdue-alert">
                         {c('Error')
@@ -120,7 +119,8 @@ const InvoicesSection = () => {
                             </ButtonGroup>
                         ) : null}
                         {invoices.length > 0 && (
-                            <Button onClick={() => setInvoiceModalOpen(true)}>{c('Action').t`Customize`}</Button>
+                            <Button onClick={() => setInvoiceModalOpen(true)}>{c('Action')
+                                .t`Edit invoice details`}</Button>
                         )}
                     </div>
                     <Pagination
