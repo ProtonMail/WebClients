@@ -1,4 +1,5 @@
 import { BrowserWindow, Rectangle, Session, WebContents, app } from "electron";
+import contextMenu from "electron-context-menu";
 import { getConfig } from "./config";
 import { APP } from "./constants";
 import { isMac } from "./helpers";
@@ -14,6 +15,11 @@ interface WindowCreationProps {
 const config = getConfig(app.isPackaged);
 export const windowMap = new Map<APP, BrowserWindow>();
 
+contextMenu({
+    showInspectElement: config.devTools,
+    showSaveImage: true,
+});
+
 const createWindow = (session: Session, url: string, visible: boolean, windowConfig: Rectangle): BrowserWindow => {
     const window = new BrowserWindow({
         title: config.appTitle,
@@ -24,6 +30,7 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
         frame: !isMac,
         webPreferences: {
             devTools: config.devTools,
+            spellcheck: true,
             // Security additions
             session,
             nodeIntegration: false,
