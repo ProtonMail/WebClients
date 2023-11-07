@@ -69,6 +69,10 @@
       "Apply": [
         "Εφαρμογή"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Το πολύ ${ maxContacts } επαφή επιτρέπεται ανά ομάδα επαφών",
+        "Το πολύ ${ maxContacts } επαφές επιτρέπονται ανά ομάδα επαφών"
+      ],
       "Attach screenshot(s)": [
         "Επισύναψη στιγμιότυπου/ων οθόνης"
       ],
@@ -188,6 +192,14 @@
       ],
       "Delete": [
         "Διαγραφή"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Διαγραφή ${ selectedCount } επαφής",
+        "Διαγραφή ${ selectedCount } επαφών"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Διαγραφή ${ selectedCount } ομάδα επαφών",
+        "Διαγραφή ${ selectedCount } ομάδες επαφών"
       ],
       "Delete contact": [
         "Διαγραφή επαφής"
@@ -635,6 +647,10 @@
       ],
       "Yes, I'll attend": [
         "Ναι, θα παρευρεθώ"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερη από ${ maxAttachments } επαφή",
+        "Δεν μπορείτε να στείλετε αρχεία vCard για περισσότερες από ${ maxAttachments } επαφές"
       ]
     },
     "Action subline": {
@@ -668,6 +684,20 @@
       ],
       "You don't have any groups.": [
         "Δεν έχετε καμία ομάδα."
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } προσαρμοσμένος τομέας",
+        "${ domains } προσαρμοσμένοι τομείς"
+      ],
+      "${ ips } server": [
+        "${ ips } διακομιστής",
+        "${ ips } διακομιστές"
+      ],
+      "${ users } user": [
+        "${ users } χρήστης",
+        "${ users } χρήστες"
       ]
     },
     "Alarm notification": {
@@ -833,6 +863,10 @@
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Περιλαμβάνει υποστήριξη για 1 προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου, 10 διευθύνσεις ηλεκτρονικού ταχυδρομείου, 10 hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
+      ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Περιλαμβάνει υποστήριξη για 3 προσαρμοσμένους τομείς email, ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και άλλα.",
+        "Περιλαμβάνει υποστήριξη για 3 προσαρμοσμένους τομείς email, ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και άλλα."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
@@ -1003,6 +1037,14 @@
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
         "Δεν είναι δυνατή η κοινωποίηση αυτού του ημερολογίου με περισσότερους χρήστες ${ BRAND_NAME }"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "Έχετε φτάσει το όριο του ${ MAX_CALENDAR_MEMBERS } μέλους για το παρόν ημερολόγιο. Για να μοιράσετε αυτό το ημερολόγιο με άλλους ${ BRAND_NAME } λογαριασμούς, θα χρειαστεί να διαγράψετε κάποια μέλη.",
+        "Έχετε φτάσει το όριο των ${ MAX_CALENDAR_MEMBERS } μελών για το παρόν ημερολόγιο. Για να μοιράσετε αυτό το ημερολόγιο με άλλους ${ BRAND_NAME } λογαριασμούς, θα χρειαστεί να διαγράψετε κάποια μέλη."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Έχετε φτάσει το μέγιστο του συνδέσμου ${ MAX_LINKS_PER_CALENDAR } για αυτό το ημερολόγιο.\nΓια να δημιουργήσετε μια νέα σύνδεση σε αυτό το ημερολόγιο, διαγράψτε ένα υπάρχοντα.",
+        "Έχετε φτάσει το μέγιστο συνδέσμων ${ MAX_LINKS_PER_CALENDAR } για αυτό το ημερολόγιο.\nΓια να δημιουργήσετε μια νέα σύνδεση σε αυτό το ημερολόγιο, διαγράψτε ένα υπάρχοντα."
       ]
     },
     "Calendar sharing access option label": {
@@ -1094,6 +1136,18 @@
       ],
       "Change time range to": [
         "Αλλαγή χρονικής έκτασης σε"
+      ]
+    },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "${ more } επιπλέον",
+        "${ more } επιπλέον"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } χρήστης",
+        "${ users } χρήστες"
       ]
     },
     "Collapsible tooltip": {
@@ -2051,9 +2105,17 @@
       ],
       "On date…": [
         "Την ημερομηνία…"
+      ],
+      "time": [
+        "φορά",
+        "φορές"
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } φορά",
+        "${ count } φορές"
+      ],
       "Daily": [
         "Καθημερινά"
       ],
@@ -2062,6 +2124,18 @@
       ],
       "Daily, ${ untilString }": [
         "Καθημερινά, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Κάθε ${ interval } μέρα",
+        "Κάθε ${ interval } μέρες"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Κάθε ${ interval } μέρα, ${ timesString }",
+        "Κάθε ${ interval } μέρες, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Κάθε ${ interval } μέρα, ${ untilString }",
+        "Κάθε ${ interval } μέρες, ${ untilString }"
       ],
       "until ${ dateString }": [
         "μέχρι ${ dateString }"
@@ -2285,6 +2359,22 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Μπορείτε επίσης να ελέγξετε τη ${ statusPageLink }"
       ],
+      "${ list } doesn't have a valid email address": [
+        "${ list } δεν έχει έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου",
+        "Ορισμένες επαφές δεν έχουν έγκυρες διευθύνσεις ηλεκτρονικού ταχυδρομείου: ${ list }"
+      ],
+      "${ list } doesn't have an email address": [
+        "${ list } δεν έχει μια διεύθυνση ηλεκτρονικού ταχυδρομείου",
+        "Καποιες επαφές δεν έχουν διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ list }"
+      ],
+      "${ list } has invalid emails": [
+        "${ list } έχει μη έγκυρα μηνύματα ηλεκτρονικού ταχυδρομείου",
+        "Ορισμένες ομάδες έχουν μη έγκυρα μηνύματα ηλεκτρονικού ταχυδρομείου: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } δεν έχει επαφές",
+        "Κάποιες ομάδες δεν έχουν επαφές: : ${ list }"
+      ],
       "A group with this name already exists": [
         "Υπάρχει ήδη μια ομάδα με αυτό το όνομα"
       ],
@@ -2335,6 +2425,14 @@
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Σφάλμα αποκρυπτογράφησης: Αποτυχία αποκρυπτογράφησης του περιεχομένου εκδήλωσης."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο ή",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια ή"
       ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
@@ -2429,6 +2527,10 @@
       "Last name is too long": [
         "Το επώνυμο είναι πολύ μεγάλο"
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
+        "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
+      ],
       "Missing key packet": [
         "Λείπει πακέτο κλειδιού"
       ],
@@ -2462,6 +2564,14 @@
       "Number of occurrences cannot be empty": [
         "Ο αριθμός περιστατικών δεν μπορεί να είναι κενός"
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Μία από τις επαφές δεν έχει διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ noEmailsContactNamesList }",
+        "Ορισμένες επαφές δεν έχουν διεύθυνση ηλεκτρονικού ταχυδρομείου: ${ noEmailsContactNamesList }"
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Μία από τις ομάδες δεν έχει επαφές: : ${ noContactGroupList }",
+        "Κάποιες ομάδες δεν έχουν επαφές: : ${ noContactGroupList } "
+      ],
       "Password is required": [
         "Απαιτείται κωδικός πρόσβασης"
       ],
@@ -2473,6 +2583,10 @@
       ],
       "Please create an address first.": [
         "Παρακαλώ δημιουργήστε πρώτα μια διεύθυνση."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
+        "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Παρακαλούμε καταχωρίστε είτε όνομα, επώνυμο ή εμφανιζόμενο όνομα"
@@ -2491,6 +2605,10 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Το πρωτεύον κλειδί που ανακτήθηκε για τον ${ BRAND_NAME } χρήστη δεν είναι έγκυρο για αποστολή"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Αφαιρέθηκε διπλότυπος παραλήπτης: ${ joinedRecipients }",
+        "Διαγράφτηκαν οι εξής διπλότυποι παραλήπτες: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
@@ -2600,6 +2718,10 @@
       "You already added this holidays calendar": [
         "Έχετε ήδη προσθέσει αυτό το εορτολόγιο"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτη",
+        "Δεν μπορείτε να στείλετε μήνυμα σε περισσότερους από ${ maxContacts } παραλήπτες"
+      ],
       "You have reached the contacts limit for your account": [
         "Έχετε συμπληρώσει το όριο επαφών για τον λογαριασμό σας"
       ],
@@ -2633,6 +2755,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερο από ${ MAX_IMPORT_EVENTS_STRING } γεγονός.",
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS_STRING } γεγονότα."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Το αρχείο σας ${ formattedFilename } έχει μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
@@ -2830,9 +2956,19 @@
         "ακυρωμένες"
       ]
     },
+    "Event form": {
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } συμμετέχων",
+        "${ numberOfAttendees } συμμετέχοντες"
+      ]
+    },
     "Event info in search view; event duration": {
       "All day": [
         "Όλη την ημέρα"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Όλη την ημέρα, διαρκεί ${ plusDaysToEnd } ημέρα",
+        "Όλη την ημέρα, διαρκεί ${ plusDaysToEnd } ημέρες"
       ]
     },
     "Event info. Organizer name": {
@@ -3057,6 +3193,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -3068,6 +3208,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Filter notification": {
@@ -3129,6 +3291,10 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Βρέθηκαν ${ items.length } πρόταση, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
+        "Βρέθηκαν ${ items.length } προτάσεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Χρησιμοποιήστε τα πλήκτρα Up και Down για πρόσβαση και περιήγηση στις προτάσεις μετά την εισαγωγή. Πατήστε Enter για να επιβεβαιώσετε την επιλογή σας, ή διαφυγής για να κλείσετε το πλαίσιο προτάσεων."
       ]
@@ -3145,6 +3311,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } γεγονός κρυπτογραφήθηκε και προστέθηκε στο ημερολόγιό σας",
+        "${ totalImported }/${ totalToImport } γεγονότα κρυπτογραφήθηκαν και προστέθηκαν στο ημερολόγιό σας"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη του γεγονότος. ${ totalImported } από ${ totalToImport } γεγονός εισήχθηκε επιτυχώς.",
+        "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη των γεγονότων. ${ totalImported } από ${ totalToImport } γεγονότα εισήχθησαν επιτυχώς."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της εκδήλωσής σας. Καμιά εκδήλωση δεν μπόρεσε να εισαχθεί."
       ],
@@ -3179,11 +3353,23 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Οι εισαγόμενες προσκλήσεις εμφανίζονται στο ${ CALENDAR_APP_NAME } ως απλές εκδηλώσεις χωρίς στοιχεία διοργανωτή και συμμετέχοντα. Για να λαμβάνετε ενημερώσεις για τις εκδηλώσεις και για να δείτε τους συμμετέχοντες, ζητήστε από τους διοργανωτές να σας προσκαλέσουν χρησιμοποιώντας τη δική σας ${ BRAND_NAME } διεύθυνση ηλεκτρονικού ταχυδρομείου."
       ],
+      "This file contains an event invitation:": [
+        "Αυτό το αρχείο περιέχει μια πρόσκληση σε γεγονός:",
+        "Αυτό το αρχείο περιέχει προσκλήσεις σε γεγονότα:"
+      ],
+      "This file contains an invitation response:": [
+        "Αυτό το αρχείο περιέχει μια απάντηση πρόσκλησης:",
+        "Αυτό το αρχείο περιέχει απαντήσεις πρόσκλησης:"
+      ],
       "This file contains some data that we cannot import:": [
         "Το αρχείο περιέχει κάποια δεδομένα που δεν μπορούμε να εισάγουμε:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } επαφή κρυπτογραφήθηκε και προστέθηκε στη λίστα επαφών σας",
+        "${ totalImported }/${ totalToImport } επαφές κρυπτογραφήθηκαν και προστέθηκαν στη λίστα επαφών σας"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της επαφής σας. Δεν ήταν δυνατή η εισαγωγή επαφής."
       ],
@@ -3203,6 +3389,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Επαφή ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } επαφή",
+        "${ totalContacts } επαφές"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3374,6 +3566,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } από ${ totalEvents } γεγονός δεν θα εισαχθεί. Αναπτύξτε για λεπτομέρειες.",
+        "${ totalEventsDiscarded } από ${ totalEvents } γεγονότα δεν θα εισαχθούν. Αναπτύξτε για λεπτομέρειες."
+      ],
       "No contact can be imported. Click for details": [
         "Δεν είναι δυνατή η εισαγωγή καμίας επαφής. Κάντε κλικ για λεπτομέρειες"
       ],
@@ -3385,20 +3581,92 @@
       ]
     },
     "Info": {
+      "${ addressCount } email address": [
+        "${ addressCount } διεύθυνση ηλεκτρονικού ταχυδρομείου",
+        "${ addressCount } διευθύνσεις ηλεκτρονικού ταχυδρομείου"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Η τεχνολογία κρυπτογράφησης του ${ BRAND_NAME } σημαίνει ότι κανείς δεν μπορεί να έχει πρόσβαση στον κωδικό πρόσβασής σας - ούτε καν εμείς."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } νέο ημερολόγιο",
+        "${ calendarsToBeCreatedCount } νέα ημερολόγια"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } συγχωνευμένο ημερολόγιο",
+        "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } επαφή περιέχει πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου.",
+        "${ contactCount } επαφές περιέχουν πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } Μέλος",
+        "${ contactEmailsLength } Μέλη"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } περιέχει πολλές διευθύνσεις ηλεκτρονικού ταχυδρομείου."
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } επαφή βρέθηκε",
+        "${ contactsCount } επαφές βρέθηκαν"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } επαφή",
+        "${ contactsLength } επαφές"
       ],
       "${ firstItems } and ${ lastItem }": [
         "${ firstItems } και ${ lastItem }"
       ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } ομάδα βρέθηκε",
+        "${ groupCounts } ομάδες βρέθηκαν"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } φάκελος βρέθηκε",
+        "${ providerFoldersNumLocalized } φάκελοι βρέθηκαν"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } ετικέτα βρέθηκε στο Gmail",
+        "${ providerFoldersNumLocalized } ετικέτες βρέθηκαν στο Gmail"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
+        "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγια"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } επιλεγμένη επαφή",
+        "${ selectedContactsLength }/${ contactsLength } επιλεγμένες επαφές"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } επιλεγμένος φάκελος",
+        "${ selectedFoldersCount } επιλεγμένοι φάκελοι"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } επιλεγμένη ετικέτα",
+        "${ selectedFoldersCount } επιλεγμένες ετικέτες"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } επιλεγμένος φάκελος",
+        "${ selectedFoldersCountLocalized } επιλεγμένοι φάκελοι"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } ετικέτα επιλέχθηκε",
+        "${ selectedFoldersCountLocalized } ετικέτες επιλέχθηκαν"
+      ],
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } επαφή ενημερώθηκε επιτυχώς.",
+        "${ updated } επαφές ενημερώθηκαν επιτυχώς."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } μέλος)",
+        "(${ memberCount } μέλη)"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Ένα email ακύρωσης θα αποσταλεί σε αφαιρεμένους συμμετέχοντες."
@@ -3423,6 +3691,18 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Η επαλήθευση διεύθυνσης με αξιόπιστα κλειδιά είναι ενεργοποιημένη για αυτήν τη διεύθυνση. Για να είναι δυνατή η αποστολή σε αυτήν τη διεύθυνση, πρώτα \"εμπιστευθείτε\" τα δημόσια κλειδιά που μπορούν να χρησιμοποιηθούν για αποστολή."
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "Όλοι (${ totalFoldersCount } φάκελος)",
+        "Όλοι (${ totalFoldersCount } φάκελοι)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Όλες (${ totalFoldersCount } ετικέτα)",
+        "Όλες (${ totalFoldersCount } ετικέτες)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ MAX_CONTACTS_PER_USER }",
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ MAX_CONTACTS_PER_USER }"
       ],
       "An invitation will be sent to added participants.": [
         "Μια πρόσκληση θα σταλεί στους πρόσθετους συμμετέχοντες."
@@ -3496,6 +3776,10 @@
       "Country code": [
         "Κωδικός χώρας"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Δημιουργήστε ${ calendarsToBeCreatedCount } νέο ημερολόγιο",
+        "Δημιουργήστε ${ calendarsToBeCreatedCount } νέα ημερολόγια"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, μια χρονική έκταση για αυτήν την εισαγωγή, και τους φακέλους που θα θέλατε να εισάγετε."
       ],
@@ -3565,6 +3849,10 @@
       "Enter your own password (as organization admin).": [
         "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
       ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτό",
+        "Εκτιμώμενος απομένων χρόνος: ${ estimatedMinutes } λεπτά"
+      ],
       "Estimated time remaining: Less than a minute": [
         "Εκτιμώμενος απομένων χρόνος: Κάτω του λεπτού"
       ],
@@ -3600,6 +3888,10 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δε βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγιο",
+        "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγια"
       ],
       "Import from": [
         "Εισαγωγή από"
@@ -3738,6 +4030,10 @@
       ],
       "Please select the folders you would like to import:": [
         "Παρακαλούμε επιλέξτε τους φακέλους που θα θέλετε να εισάγετε:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε σε ${ groupCount } ομάδα.",
+        "Επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε σε ${ groupCount } ομάδες."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Παρακαλούμε επιλέξτε ποια διεύθυνση ή διευθύνσεις email θα προσθέσετε στην ομάδα ${ groupName }."
@@ -4103,6 +4399,10 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Το πολύ ${ maxAttendees } συμμετέχοντας επιτρέπεται ανά πρόσκληση",
+        "Το πολύ ${ maxAttendees } συμμετέχοντες επιτρέπονται ανά πρόσκληση"
+      ],
       "Creating invites in a shared calendar is not allowed": [
         "Δεν επιτρέπεται η δημιουργία προσκλήσεων σε κοινόχρηστο ημερολόγιο"
       ]
@@ -4398,6 +4698,10 @@
       "Organizer": [
         "Διοργανωτής"
       ],
+      "participant": [
+        "συμμετέχων",
+        "συμμετέχοντες"
+      ],
       "Participants": [
         "Συμμετέχοντες"
       ],
@@ -4589,6 +4893,10 @@
       "Almost there": [
         "Ακόμα λίγο"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }",
+        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Γίνεται σύνδεση με τον πάροχο ηλεκτρονικού ταχυδρομείου σας"
       ],
@@ -4603,6 +4911,24 @@
       ],
       "Your import is starting": [
         "Η εισαγωγή σας εκκινεί"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φάκελο και επισημάνετέ τα ως",
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φακέλους και επισημάνετέ τα ως"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } ετικέτα και επισημάνετέ τα ως",
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } ετικέτες και επισημάνετέ τα ως"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } φάκελο και επισημάνετε τα με ετικέτα",
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } φακέλους και επισημάνετε τα με ετικέτα"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτα και επισημάνετέ τα ως",
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτες και επισημάνετε τα ως"
       ]
     },
     "Message": {
@@ -4697,6 +5023,18 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Κάθε ${ interval } μήνας ${ onDayString }",
+        "Κάθε ${ interval } μήνες ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Κάθε ${ interval } μήνας ${ onDayString }, ${ timesString }",
+        "Κάθε ${ interval } μήνες ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Κάθε ${ interval } μήνας ${ onDayString }, ${ untilString }",
+        "Κάθε ${ interval } μήνες ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }": [
         "Μηνιαίως ${ onDayString }"
       ],
@@ -4905,6 +5243,12 @@
         "Το ημερολόγιο ενημερώθηκε"
       ]
     },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Το μέλος προστέθηκε",
+        "Τα μέλη προστέθηκαν"
+      ]
+    },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
         "Η πρόσκληση στο ημερολόγιο απορρίφθηκε"
@@ -4935,11 +5279,91 @@
       "at time of event": [
         "στιγμή της εκδήλωσης"
       ],
+      "day before": [
+        "ημέρα πριν",
+        "ημέρες πριν"
+      ],
+      "hour before": [
+        "ώρα πριν",
+        "ώρες πριν"
+      ],
+      "minute before": [
+        "λεπτό πριν",
+        "λεπτά πριν"
+      ],
       "on the same day": [
         "την ίδια μέρα"
+      ],
+      "week before": [
+        "εβδομάδα πριν",
+        "εβδομάδες πριν"
       ]
     },
     "Notifications": {
+      "${ value } day after": [
+        "${ value } μέρα μετά",
+        "${ value } ημέρες μετά"
+      ],
+      "${ value } day after at ${ time }": [
+        "${ value } μέρα μετά από ${ time }",
+        "${ value } ημέρες μετά από ${ time }"
+      ],
+      "${ value } day before": [
+        "${ value } ημέρα πριν",
+        "${ value } ημέρες πριν"
+      ],
+      "${ value } day before at ${ time }": [
+        "${ value } μέρα πριν στις ${ time }",
+        "${ value } ημέρες πριν στις ${ time }"
+      ],
+      "${ value } hour after": [
+        "${ value } ώρα μετά",
+        "${ value } ώρες μετά"
+      ],
+      "${ value } hour after at ${ time }": [
+        "${ value } ώρα μετά από ${ time }",
+        "${ value } ώρες μετά από ${ time }"
+      ],
+      "${ value } hour before": [
+        "${ value } ώρα πριν",
+        "${ value } ώρες πριν"
+      ],
+      "${ value } hour before at ${ time }": [
+        "${ value } ώρα πριν στις ${ time }",
+        "${ value } ώρες πριν στις ${ time }"
+      ],
+      "${ value } minute after": [
+        "${ value } λεπτό μετά",
+        "${ value } λεπτά μετά"
+      ],
+      "${ value } minute after at ${ time }": [
+        "${ value } λεπτό μετά από ${ time }",
+        "${ value } λεπτά μετά από ${ time }"
+      ],
+      "${ value } minute before": [
+        "${ value } λεπτό πριν",
+        "${ value } λεπτά πριν"
+      ],
+      "${ value } minute before at ${ time }": [
+        "${ value } λεπτό πριν στις ${ time }",
+        "${ value } λεπτά πριν στις ${ time }"
+      ],
+      "${ value } week after": [
+        "${ value } εβδομάδα μετά",
+        "${ value } εβδομάδες μετά"
+      ],
+      "${ value } week after at ${ time }": [
+        "${ value } εβδομάδα μετά από ${ time }",
+        "${ value } εβδομάδες μετά από ${ time }"
+      ],
+      "${ value } week before": [
+        "${ value } εβδομάδα πριν",
+        "${ value } εβδομάδες πριν"
+      ],
+      "${ value } week before at ${ time }": [
+        "${ value } εβδομάδα πριν στις ${ time }",
+        "${ value } εβδομάδες πριν από ${ time }"
+      ],
       "At time of event": [
         "Στιγμή της εκδήλωσης"
       ],
@@ -5020,6 +5444,10 @@
       "Custom": [
         "Προσαρμοσμένο"
       ],
+      "Day": [
+        "Ημέρα",
+        "Ημέρες"
+      ],
       "Does not repeat": [
         "Δεν επαναλαμβάνεται"
       ],
@@ -5038,6 +5466,10 @@
       "Ignore group": [
         "Παράβλεψη ομάδας"
       ],
+      "Month": [
+        "Μήνας",
+        "Μήνες"
+      ],
       "No parent folder": [
         "Δεν υπάρχει γονικός φάκελος"
       ],
@@ -5046,6 +5478,14 @@
       ],
       "This event": [
         "Αυτή η εκδήλωση"
+      ],
+      "Week": [
+        "Εβδομάδα",
+        "Εβδομάδες"
+      ],
+      "Year": [
+        "Έτος",
+        "Χρόνια"
       ]
     },
     "Option group label": {
@@ -5177,6 +5617,18 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } από τις ${ countContacts } επαφές έχουν εξαχθεί με επιτυχία.",
+        "${ contactsExported.length } από τις ${ countContacts } επαφές έχουν εξαχθεί με επιτυχία."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "Το ${ model.deleted.length } από την ${ totalBeDeleted } επαφή διαγράφηκε με επιτυχία.",
+        "Το ${ model.deleted.length } από τις ${ totalBeDeleted } επαφές διαγράφηκε με επιτυχία."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } από ${ totalBeMerged } επαφή συγχωνεύτηκε με επιτυχία.",
+        "${ model.submitted.length } από ${ totalBeMerged } επαφές συγχωνεύτηκαν με επιτυχία."
+      ],
       "No contacts exported.": [
         "Δεν εξήχθησαν επαφές."
       ],
@@ -5262,8 +5714,32 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } ημέρα",
+        "${ timeRemaining.inDays } ημέρες"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } ώρα",
+        "${ timeRemaining.inHours } ώρες"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inDays } ημέρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inDays } ημέρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inHours } ώρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Παρακαλούμε μεταβείτε στη συνδεδεμένη συσκευή (στη συνεδρία όπου ξεκίνησε το αίτημα) για να αλλάξετε τον κωδικό πρόσβασής σας."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inDays } ημέρα",
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inDays } ημέρες"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρα",
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρες"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Τώρα μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας για τον λογαριασμό ${ boldEmail } ελεύθερα για ${ boldDaysRemaining }."
@@ -5326,8 +5802,16 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } περισσότερη ώρα",
+        "${ gracePeriodHoursRemaining } περισσότερες ώρες"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Εάν δε ζητήσατε να επαναφέρετε τον κωδικό πρόσβασής σας, ακυρώστε αυτό το αίτημα τώρα."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Ζητήθηκε επαναφορά κωδικού πρόσβασης (${ user.Email }). Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ hoursRemaining } ώρα.",
+        "Ζητήθηκε επαναφορά κωδικού πρόσβασης (${ user.Email }). Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ hoursRemaining } ώρες."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Για να βεβαιωθούμε ότι προσπαθείτε πραγματικά να επαναφέρετε τον κωδικό πρόσβασής σας, περιμένουμε 72 ώρες πριν εγκρίνουμε τα αιτήματα. Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ boldTimeLeft }. ${ viewRequest }"
@@ -5355,6 +5839,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } ώρα",
+        "${ gracePeriodHoursRemaining } ώρες"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } είναι τώρα διαθέσιμο."
       ],
@@ -5386,6 +5874,12 @@
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
         "Για να προσκαλέσετε μη ${ BRAND_NAME } χρήστες, κοινοποιήστε το ημερολόγιό σας με έναν σύνδεσμο."
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Έχετε ξεπεράσει το όριο του ${ MAX_CALENDAR_MEMBERS } μέλους ανά ημερολόγιο",
+        "Έχετε ξεπεράσει το όριο των ${ MAX_CALENDAR_MEMBERS } μελών ανά ημερολόγιο"
       ]
     },
     "Share calendar modal description": {
@@ -5443,6 +5937,30 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Αναβαθμίστε σε Απεριόριστο"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } ημέρα",
+        "${ days } ημέρες"
+      ],
+      "${ hours } hour": [
+        "${ hours } ώρα",
+        "${ hours } ώρες"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } λεπτό",
+        "${ minutes } λεπτά"
+      ],
+      "${ seconds } second": [
+        "${ seconds } δευτερόλεπτο",
+        "${ seconds } δευτερόλεπτα"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } μήνα ΔΩΡΕΑΝ",
+        "${ n } μήνες ΔΩΡΕΑΝ"
       ]
     },
     "specialoffer: Deal details": {
@@ -5503,6 +6021,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } μήνα",
+        "${ n } μήνες"
+      ],
       "/ month": [
         "/ μήνας"
       ],
@@ -5646,6 +6168,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } επαφή φαίνεται πανομοιότυπη.",
+        "${ countMergeableContacts } επαφές φαίνονται πανομοιότυπες."
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Ένα email ακύρωσης θα αποσταλεί στους καταργημένους συμμετέχοντες για όλες τις εκδηλώσεις αυτής της σειράς."
       ],
@@ -5699,6 +6225,14 @@
       ],
       "Code sent to ${ methodTo }": [
         "Ο κωδικός στάλθηκε στο ${ methodTo }"
+      ],
+      "Contact deleted": [
+        "Η επαφή διαγράφηκε",
+        "Οι επαφές διαγράφηκαν"
+      ],
+      "Contact group deleted": [
+        "Η ομάδα επαφών διαγράφηκε",
+        "Η ομάδες επαφών διαγράφηκαν"
       ],
       "Contact saved": [
         "Η επαφή αποθηκεύτηκε"
@@ -5864,12 +6398,44 @@
         "πεδίο vCard"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } ώ",
+        "${ hours } ώ"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 ώ",
+        "${ hoursInt }.5 ώ"
+      ],
+      "${ minutes } min": [
+        "${ minutes } λ.",
+        "${ minutes } λ."
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } ώρα",
+        "${ hours } ώρες"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }μιση ώρα",
+        "${ hoursInt }μιση ώρες"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } λεπτό",
+        "${ minutes } λεπτά"
+      ]
+    },
     "Timezone search placeholder": {
       "Search time zones": [
         "Αναζήτηση ζώνης ώρας"
       ]
     },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount } διεύθυνση email",
+        "${ emailsCount } διευθύνσεις email"
+      ],
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
       ],
@@ -5890,6 +6456,10 @@
       ],
       "Add participants": [
         "Προσθήκη συμμετεχόντων"
+      ],
+      "Add to ${ groupCount } group": [
+        "Προσθέστε στη ${ groupCount } ομάδα επαφών",
+        "Προσθέστε στις ${ groupCount } ομάδες επαφών"
       ],
       "Add to ${ groupName }": [
         "Προσθέστε στο ${ groupName }"
@@ -5963,6 +6533,14 @@
       "Day theme": [
         "Ανοιχτό θέμα"
       ],
+      "Delete ${ count } contact": [
+        "Διαγραφή ${ count } επαφής",
+        "Διαγραφή ${ count } επαφών"
+      ],
+      "Delete ${ count } contact group": [
+        "Διαγραφή ${ count } ομάδα επαφών",
+        "Διαγραφή ${ count } ομάδες επαφών"
+      ],
       "Delete ${ Name }": [
         "Διαγραφή ${ Name }"
       ],
@@ -6025,6 +6603,10 @@
       ],
       "Human verification": [
         "Ανθρώπινη Επαλήθευση"
+      ],
+      "Import as simple event?": [
+        "Εισαγωγή ως απλή εκδήλωση;",
+        "Εισαγωγή ως απλές εκδηλώσεις;"
       ],
       "Import contacts": [
         "Εισαγωγή Επαφών"
@@ -6320,6 +6902,16 @@
         "Κοινοποιημένο, διατερματικά κρυπτογραφημένο, με επαληθευμένη επαφή"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρα",
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρες"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Κάντε κλικ για αναπαραγωγή του βίντεο ξανά"
@@ -6342,6 +6934,10 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "Η ${ BRAND_NAME } θα μεταφέρει όσο το δυνατόν περισσότερα δεδομένα, ξεκινώντας από τα πιο πρόσφατα μηνύματά σας."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά ${ count } επαφή;",
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά τις ${ count } επαφές;"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε οριστικά αυτές τις ομάδες επαφών;"
@@ -6410,6 +7006,114 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Κάθε ${ interval } εβδομάδα σε ${ multipleDaysString }",
+        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα στις ${ multipleDaysString }, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα σε ${ multipleDaysString }, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Κάθε ${ interval } εβδομάδα όλες τις ημέρες",
+        "Κάθε ${ interval } εβδομάδες, σε όλες τις μέρες"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα όλες τις μέρες, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες όλες τις ημέρες, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα όλες τις μέρες, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες σε όλες τις μέρες, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Κάθε ${ interval } εβδομάδα την Παρασκευή",
+        "Κάθε ${ interval } εβδομάδες την Παρασκευή"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Παρασκευή, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Παρασκευή, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Παρασκευή, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Παρασκευή, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Κάθε ${ interval } εβδομάδα τη Δευτέρα",
+        "Κάθε ${ interval } εβδομάδες την Δευτέρα"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Δευτέρα, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Δευτέρα, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα τη Δευτέρα, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Δευτέρα, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Κάθε ${ interval } εβδομάδα το Σάββατο",
+        "Κάθε ${ interval } εβδομάδες το Σάββατο"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα το Σάββατο, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες το Σάββατο, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα το Σάββατο, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες το Σάββατο, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Κάθε ${ interval } εβδομάδα την Κυριακή",
+        "Κάθε ${ interval } εβδομάδες την Κυριακή"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Κυριακή, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Κυριακή, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Κυριακή, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Κυριακή, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Κάθε ${ interval } εβδομάδα την Πέμπτη",
+        "Κάθε ${ interval } εβδομάδες την Πέμπτη"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Πέμπτη, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Πέμπτη, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Πέμπτη, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Πέμπτη, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Κάθε ${ interval } εβδομάδα την Τρίτη",
+        "Κάθε ${ interval } εβδομάδες την Τρίτη"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Τρίτη, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Τρίτη, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Τρίτη, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Τρίτη, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Κάθε ${ interval } εβδομάδα την Τετάρτη",
+        "Κάθε ${ interval } εβδομάδες την Τετάρτη"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Τετάρτη, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Τετάρτη, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Τετάρτη, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Τετάρτη, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Εβδομαδιαία στις ${ multipleDaysString }"
       ],
@@ -6516,6 +7220,18 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Κάθε ${ interval } χρόνο",
+        "Κάθε ${ interval } χρόνια"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Κάθε ${ interval } χρόνο, ${ timesString }",
+        "Κάθε ${ interval } χρόνια, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Κάθε ${ interval } χρόνο, ${ untilString }",
+        "Κάθε ${ interval } χρόνια, ${ untilString }"
+      ],
       "Yearly": [
         "Ετησίως"
       ],

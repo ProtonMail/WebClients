@@ -137,6 +137,16 @@
       "Delete": [
         "Izbriši"
       ],
+      "Delete ${ selectedCount } contact": [
+        "Izbriši ${ selectedCount } kontakt",
+        "Izbriši ${ selectedCount } kontakta",
+        "Izbriši ${ selectedCount } kontakata"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Izbriši ${ selectedCount } grupu kontakata",
+        "Izbriši ${ selectedCount } grupe kontakata",
+        "Izbriši ${ selectedCount } grupa kontakata"
+      ],
       "Delete contact": [
         "Izbriši kontakt"
       ],
@@ -1374,9 +1384,19 @@
       ],
       "On date…": [
         "Dana…"
+      ],
+      "time": [
+        "put",
+        "puta",
+        "puta"
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } put",
+        "${ count } puta",
+        "${ count } puta"
+      ],
       "Daily": [
         "Dnevno"
       ],
@@ -1385,6 +1405,21 @@
       ],
       "Daily, ${ untilString }": [
         "Dnevno, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Svaki ${ interval } dan",
+        "Svaka ${ interval } dana",
+        "Svakih ${ interval } dana"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Svaki ${ interval } dan, ${ timesString }",
+        "Svaka ${ interval } dana, ${ timesString }",
+        "Svakih ${ interval } dana, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Svaki ${ interval } dan, ${ untilString }",
+        "Svaka ${ interval } dana, ${ untilString }",
+        "Svakih ${ interval } dana, ${ untilString }"
       ],
       "until ${ dateString }": [
         "do ${ dateString }"
@@ -1539,6 +1574,16 @@
       ]
     },
     "Error": {
+      "${ list } doesn't have a valid email address": [
+        "${ list } nema važeću adresu e-pošte",
+        "Neki od kontakata nemaju važeću adresu e-pošte: ${ list }",
+        "Neki od kontakata nemaju važeću adresu e-pošte: ${ list }"
+      ],
+      "${ list } has invalid emails": [
+        "${ list } ima nevažeće adrese e-pošte",
+        "Neke od grupa imaju nevažeće adrese e-pošte: ${ list }",
+        "Neke od grupa imaju nevažeće adrese e-pošte: ${ list }"
+      ],
       "A group with this name already exists": [
         "Grupa s ovim nazivom već postoji"
       ],
@@ -1646,6 +1691,16 @@
       ],
       "Number of occurrences cannot be empty": [
         "Broj ponavljanja ne može biti prazan"
+      ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Jedan od kontakata nema adresu e-pošte: ${ noEmailsContactNamesList }",
+        "Nekoliko kontakata nema adresu e-pošte: ${ noEmailsContactNamesList } ",
+        "Nekoliko kontakata nema adresu e-pošte: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Jedna od grupa nema kontakata: ${ noContactGroupList }",
+        "Neke od grupa nemaju kontakata: ${ noContactGroupList } ",
+        "Neke od grupa nemaju kontakata: ${ noContactGroupList } "
       ],
       "Passwords do not match": [
         "Lozinke se ne poklapaju"
@@ -1935,6 +1990,11 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Pronađen je ${ items.length } prijedlog. Za navigaciju koristite tipkovnicu.",
+        "Pronađena su ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu.",
+        "Pronađeno je ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Upotrijebite tipke gore i dolje za pristup i pregledavanje prijedloga nakon unosa. Pritisnite Enter da biste potvrdili svoj izbor ili Escape da biste zatvorili okvir za prijedloge."
       ]
@@ -1965,6 +2025,11 @@
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } kontakt šifriran i dodan u vašu listu kontakata",
+        "${ totalImported }/${ totalToImport } kontakta šifrirano i dodano u vašu listu kontakata",
+        "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Došlo je do pogreške prilikom šifriranja i dodavanja vašeg kontakta. Nije moguće uvesti nijedan kontakt."
       ],
@@ -1984,6 +2049,13 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Kontakt ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } kontakt",
+        "${ totalContacts } kontakta",
+        "${ totalContacts } kontakata"
       ]
     },
     "Import contact. Contact identifier": {
@@ -2090,8 +2162,58 @@
       ]
     },
     "Info": {
+      "${ addressCount } email address": [
+        "${ addressCount } adresa e-pošte",
+        "${ addressCount } adrese e-pošte",
+        "${ addressCount } adresa e-pošte"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } zahtjeva vaše dopuštenje da ${ enableDesktopNotifications }."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } član",
+        "${ contactEmailsLength } člana",
+        "${ contactEmailsLength } članova"
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } kontakt pronađen",
+        "${ contactsCount } kontakta pronađena",
+        "${ contactsCount } kontakata pronađeno"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } grupa pronađena",
+        "${ groupCounts } grupe pronađene",
+        "${ groupCounts } grupa pronađeno"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } mapa pronađena",
+        "${ providerFoldersNumLocalized } mape pronađene",
+        "${ providerFoldersNumLocalized } mapa pronađeno"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } oznaka pronađena u Gmailu",
+        "${ providerFoldersNumLocalized } oznake pronađene u Gmailu",
+        "${ providerFoldersNumLocalized } oznaka pronađeno u Gmailu"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } mapa odabrana",
+        "${ selectedFoldersCountLocalized } mape odabrane",
+        "${ selectedFoldersCountLocalized } mapa odabrano"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } oznaka odabrana",
+        "${ selectedFoldersCountLocalized } oznake odabrane",
+        "${ selectedFoldersCountLocalized } oznaka odabrano"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } kontakt je uspješno ažuriran.",
+        "${ updated } kontakta su uspješno ažurirana.",
+        "${ updated } kontakata je uspješno ažurirano."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } član)",
+        "(${ memberCount } člana)",
+        "(${ memberCount } članova)"
       ],
       "A cancellation email will be sent to removed participants.": [
         "E-poruka o otkazivanju biti će poslana svim uklonjenim sudionicima."
@@ -2170,6 +2292,11 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Unesite potvrdni kôd koji je poslan na ${ destinationText }."
+      ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Procijenjeno preostalo vrijeme: ${ estimatedMinutes } minuta",
+        "Procijenjeno preostalo vrijeme: ${ estimatedMinutes } minute",
+        "Procijenjeno preostalo vrijeme: ${ estimatedMinutes } minuta"
       ],
       "Estimated time remaining: Less than a minute": [
         "Procijenjeno preostalo vrijeme: manje od minute"
@@ -2823,6 +2950,21 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Svaki ${ interval } mjesec ${ onDayString }",
+        "Svaka ${ interval } mjeseca ${ onDayString }",
+        "Svakih ${ interval } mjeseci ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Svaki ${ interval } mjesec ${ onDayString }, ${ timesString }",
+        "Svaka ${ interval } mjeseca ${ onDayString }, ${ timesString }",
+        "Svakih ${ interval } mjeseci ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Svaki ${ interval } mjesec ${ onDayString }, ${ untilString }",
+        "Svaka ${ interval } mjeseca ${ onDayString }, ${ untilString }",
+        "Svakih ${ interval } mjeseci ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }": [
         "Mjesečno ${ onDayString }"
       ],
@@ -2986,11 +3128,111 @@
       "at time of event": [
         "u vrijeme događaja"
       ],
+      "day before": [
+        "dan prije",
+        "dana prije",
+        "dana prije"
+      ],
+      "hour before": [
+        "sat prije",
+        "sata prije",
+        "sata prije"
+      ],
+      "minute before": [
+        "minuta prije",
+        "minute prije",
+        "minuta prije"
+      ],
       "on the same day": [
         "isti dan"
+      ],
+      "week before": [
+        "tjedan prije",
+        "tjedna prije",
+        "tjedana prije"
       ]
     },
     "Notifications": {
+      "${ value } day after": [
+        "${ value } dan nakon",
+        "${ value } dana nakon",
+        "${ value } dana nakon"
+      ],
+      "${ value } day after at ${ time }": [
+        "${ value } dan nakon u ${ time }",
+        "${ value } dana nakon u ${ time }",
+        "${ value } dana nakon u ${ time }"
+      ],
+      "${ value } day before": [
+        "${ value } dan prije",
+        "${ value } dana prije",
+        "${ value } dana prije"
+      ],
+      "${ value } day before at ${ time }": [
+        "${ value } dan prije u ${ time }",
+        "${ value } dana prije u ${ time }",
+        "${ value } dana prije u ${ time }"
+      ],
+      "${ value } hour after": [
+        "${ value } sat nakon",
+        "${ value } sata nakon",
+        "${ value } sati nakon"
+      ],
+      "${ value } hour after at ${ time }": [
+        "${ value } sat nakon u ${ time }",
+        "${ value } sata nakon u ${ time }",
+        "${ value } sati nakon u ${ time }"
+      ],
+      "${ value } hour before": [
+        "${ value } sat prije",
+        "${ value } sata prije",
+        "${ value } sati prije"
+      ],
+      "${ value } hour before at ${ time }": [
+        "${ value } sat prije u ${ time }",
+        "${ value } sata prije u ${ time }",
+        "${ value } sati prije u ${ time }"
+      ],
+      "${ value } minute after": [
+        "${ value } minuta nakon",
+        "${ value } minute nakon",
+        "${ value } minuta nakon"
+      ],
+      "${ value } minute after at ${ time }": [
+        "${ value } minutu nakon u ${ time }",
+        "${ value } minute nakon u ${ time }",
+        "${ value } minuta nakon u ${ time }"
+      ],
+      "${ value } minute before": [
+        "${ value } minuta prije",
+        "${ value } minute prije",
+        "${ value } minuta prije"
+      ],
+      "${ value } minute before at ${ time }": [
+        "${ value } minutu prije u ${ time }",
+        "${ value } minute prije u ${ time }",
+        "${ value } minuta prije u ${ time }"
+      ],
+      "${ value } week after": [
+        "${ value } tjedan nakon",
+        "${ value } tjedna nakon",
+        "${ value } tjedana nakon"
+      ],
+      "${ value } week after at ${ time }": [
+        "${ value } tjedan nakon u ${ time }",
+        "${ value } tjedna nakon u ${ time }",
+        "${ value } tjedana nakon u ${ time }"
+      ],
+      "${ value } week before": [
+        "${ value } tjedan prije",
+        "${ value } tjedna prije",
+        "${ value } tjedana prije"
+      ],
+      "${ value } week before at ${ time }": [
+        "${ value } tjedan prije u ${ time }",
+        "${ value } tjedna prije u ${ time }",
+        "${ value } tjedana prije u ${ time }"
+      ],
       "At time of event": [
         "U vrijeme događaja"
       ],
@@ -3041,6 +3283,11 @@
       "Custom": [
         "Prilagođeno"
       ],
+      "Day": [
+        "Dan",
+        "Dana",
+        "Dana"
+      ],
       "Does not repeat": [
         "Ne ponavlja se"
       ],
@@ -3059,6 +3306,11 @@
       "Ignore group": [
         "Ignoriraj grupu"
       ],
+      "Month": [
+        "Mjesec",
+        "Mjeseca",
+        "Mjeseci"
+      ],
       "No parent folder": [
         "Nema roditeljske mape"
       ],
@@ -3067,6 +3319,16 @@
       ],
       "This event": [
         "Ovaj događaj"
+      ],
+      "Week": [
+        "Tjedan",
+        "Tjedna",
+        "Tjedana"
+      ],
+      "Year": [
+        "Godina",
+        "Godine",
+        "Godina"
       ]
     },
     "Participant name": {
@@ -3154,6 +3416,11 @@
       ]
     },
     "Progress bar description": {
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } od ${ totalBeMerged } kontakata uspješno spojeno.",
+        "${ model.submitted.length } od ${ totalBeMerged } kontakata uspješno spojeno.",
+        "${ model.submitted.length } od ${ totalBeMerged } kontakata uspješno spojeno."
+      ],
       "No contacts exported.": [
         "Nema izvezenih kontakata."
       ],
@@ -3262,6 +3529,16 @@
       ],
       "Code sent to ${ methodTo }": [
         "Kôd je poslan na ${ methodTo }"
+      ],
+      "Contact deleted": [
+        "Kontakt je uklonjen",
+        "Kontakti su uklonjeni",
+        "Kontakti su uklonjeni"
+      ],
+      "Contact group deleted": [
+        "Kontaktna grupa je izbrisana",
+        "Kontaktne grupe su izbrisane",
+        "Kontaktne grupe su izbrisane"
       ],
       "Contact saved": [
         "Kontakt je dodan"
@@ -3418,6 +3695,11 @@
       "Add participants": [
         "Dodaj sudionike"
       ],
+      "Add to ${ groupCount } group": [
+        "Dodaj u ${ groupCount } grupu",
+        "Dodaj u ${ groupCount } grupe",
+        "Dodaj u ${ groupCount } grupa"
+      ],
       "Add to ${ groupName }": [
         "Dodaj u ${ groupName }"
       ],
@@ -3462,6 +3744,16 @@
       ],
       "Currency": [
         "Valuta"
+      ],
+      "Delete ${ count } contact": [
+        "Izbriši ${ count } kontakt",
+        "Izbriši ${ count } kontakta",
+        "Izbriši ${ count } kontakata"
+      ],
+      "Delete ${ count } contact group": [
+        "Izbriši ${ count } grupu kontakata",
+        "Izbriši ${ count } grupe kontakata",
+        "Izbriši ${ count } grupa kontakata"
       ],
       "Delete ${ Name }": [
         "Izbriši ${ Name }"
@@ -3716,12 +4008,24 @@
         "Nemate kontakata za izvoz"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Lozinka mora sadržavati najmanje ${ length } znak",
+        "Lozinka mora sadržavati najmanje ${ length } znaka",
+        "Lozinka mora sadržavati najmanje ${ length } znakova"
+      ]
+    },
     "Warning": {
       "${ BRAND_NAME } will merge all folders with the same name. To avoid this, change the names before import.": [
         "${ BRAND_NAME } će spojiti sve mape s istim imenom. Da biste to izbjegli, promijenite imena prije uvoza."
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } će prenijeti što više podataka, počevši od vaših najnovijih poruka."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Jeste li sigurni da želite trajno izbrisati ${ count } kontakt?",
+        "Jeste li sigurni da želite trajno izbrisati ${ count } kontakta?",
+        "Jeste li sigurni da želite trajno izbrisati ${ count } kontakata?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "Jeste li sigurni da želite trajno izbrisati ovu kontakt grupu?"
@@ -3761,6 +4065,141 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Svaki ${ interval } tjedan na ${ multipleDaysString }",
+        "Svaka ${ interval } tjedna na ${ multipleDaysString }",
+        "Svakih ${ interval } tjedana na ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Svaki ${ interval } tjedan na ${ multipleDaysString }, ${ timesString }",
+        "Svaka ${ interval } tjedna na ${ multipleDaysString }, ${ timesString }",
+        "Svakih ${ interval } tjedana na ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Svaki ${ interval } tjedan na ${ multipleDaysString }, ${ untilString }",
+        "Svaka ${ interval } tjedna na ${ multipleDaysString }, ${ untilString }",
+        "Svakih ${ interval } tjedana na ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Svaki ${ interval } tjedan, svim danima",
+        "Svaka ${ interval } tjedna, svim danima",
+        "Svakih ${ interval } tjedana, svim danima"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Svaki ${ interval } tjedan svakim danom, ${ timesString }",
+        "Svaka ${ interval } tjedna svakim danom, ${ timesString }",
+        "Svakih ${ interval } tjedana svakim danom, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Svaki ${ interval } tjedan svakim danom, ${ untilString }",
+        "Svaka ${ interval } tjedna svakim danom, ${ untilString }",
+        "Svakih ${ interval } tjedana svakim danom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Svaki ${ interval } tjedan petkom",
+        "Svaka ${ interval } tjedna petkom",
+        "Svakih ${ interval } tjedana petkom"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Svaki ${ interval } tjedan petkom, ${ timesString }",
+        "Svaka ${ interval } tjedna petkom, ${ timesString }",
+        "Svakih ${ interval } tjedana petkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Svaki ${ interval } tjedan petkom, ${ untilString }",
+        "Svaka ${ interval } tjedna petkom, ${ untilString }",
+        "Svakih ${ interval } tjedana petkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Svaki ${ interval } tjedan ponedjeljkom",
+        "Svaka ${ interval } tjedna ponedjeljkom",
+        "Svakih ${ interval } tjedana ponedjeljkom"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Svaki ${ interval } tjedan ponedjeljkom, ${ timesString }",
+        "Svaka ${ interval } tjedna ponedjeljkom, ${ timesString }",
+        "Svakih ${ interval } tjedana ponedjeljkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Svaki ${ interval } tjedan ponedjeljkom, ${ untilString }",
+        "Svaka ${ interval } tjedna ponedjeljkom, ${ untilString }",
+        "Svakih ${ interval } tjedana ponedjeljkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Svaki ${ interval } tjedan subotom",
+        "Svaka ${ interval } tjedna subotom",
+        "Svakih ${ interval } tjedana subotom"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Svaki ${ interval } tjedan subotom, ${ timesString }",
+        "Svaka ${ interval } tjedna subotom, ${ timesString }",
+        "Svakih ${ interval } tjedana subotom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Svaki ${ interval } tjedan subotom, ${ untilString }",
+        "Svaka ${ interval } tjedna subotom, ${ untilString }",
+        "Svakih ${ interval } tjedana subotom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Svaki ${ interval } tjedan nedjeljom",
+        "Svaka ${ interval } tjedna nedjeljom",
+        "Svakih ${ interval } tjedana nedjeljom"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Svaki ${ interval } tjedan nedjeljom, ${ timesString }",
+        "Svaka ${ interval } tjedna nedjeljom, ${ timesString }",
+        "Svakih ${ interval } tjedana nedjeljom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Svaki ${ interval } tjedan nedjeljom, ${ untilString }",
+        "Svaka ${ interval } tjedna nedjeljom, ${ untilString }",
+        "Svakih ${ interval } tjedana nedjeljom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Svaki ${ interval } tjedan četvrtkom",
+        "Svaka ${ interval } tjedna četvrtkom",
+        "Svakih ${ interval } tjedana četvrtkom"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Svaki ${ interval } tjedan četvrtkom, ${ timesString }",
+        "Svaka ${ interval } tjedna četvrtkom, ${ timesString }",
+        "Svakih ${ interval } tjedana četvrtkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Svaki ${ interval } tjedan četvrtkom, ${ untilString }",
+        "Svaka ${ interval } tjedna četvrtkom, ${ untilString }",
+        "Svakih ${ interval } tjedana četvrtkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Svaki ${ interval } tjedan utorkom",
+        "Svaka ${ interval } tjedna utorkom",
+        "Svakih ${ interval } tjedana utorkom"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Svaki ${ interval } tjedan utorkom, ${ timesString }",
+        "Svaka ${ interval } tjedna utorkom, ${ timesString }",
+        "Svakih ${ interval } tjedana utorkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Svaki ${ interval } tjedan utorkom, ${ untilString }",
+        "Svaka ${ interval } tjedna utorkom, ${ untilString }",
+        "Svakih ${ interval } tjedana utorkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Svaki ${ interval } tjedan srijedom",
+        "Svaka ${ interval } tjedna srijedom",
+        "Svakih ${ interval } tjedana srijedom"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Svaki ${ interval } tjedan srijedom, ${ timesString }",
+        "Svaka ${ interval } tjedna srijedom, ${ timesString }",
+        "Svakih ${ interval } tjedana srijedom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Svaki ${ interval } tjedan srijedom, ${ untilString }",
+        "Svaka ${ interval } tjedna srijedom, ${ untilString }",
+        "Svakih ${ interval } tjedana srijedom, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Tjedno na ${ multipleDaysString }"
       ],
@@ -3867,6 +4306,21 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Svaku ${ interval } godinu",
+        "Svake ${ interval } godine",
+        "Svakih ${ interval } godina"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Svaku ${ interval } godinu, ${ timesString }",
+        "Svake ${ interval } godine, ${ timesString }",
+        "Svakih ${ interval } godina, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Svaku ${ interval } godinu, ${ untilString }",
+        "Svake ${ interval } godine, ${ untilString }",
+        "Svakih ${ interval } godina, ${ untilString }"
+      ],
       "Yearly": [
         "Godišnje"
       ],

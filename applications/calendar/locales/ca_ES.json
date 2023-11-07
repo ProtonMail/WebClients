@@ -69,6 +69,10 @@
       "Apply": [
         "Aplica"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "Es permet un màxim d'${ maxContacts } contacte per grup de contactes.",
+        "Es permet un màxim de ${ maxContacts } contactes per grup de contactes."
+      ],
       "Attach screenshot(s)": [
         "Adjunta una o més captures de pantalla"
       ],
@@ -185,6 +189,14 @@
       ],
       "Delete": [
         "Elimina"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Eliminar ${ selectedCount } contacte",
+        "Eliminar ${ selectedCount } contactes"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Eliminar ${ selectedCount } grup de contactes",
+        "Eliminar ${ selectedCount } grups de contactes"
       ],
       "Delete contact": [
         "Elimina el contacte"
@@ -626,6 +638,10 @@
       ],
       "Yes, I'll attend": [
         "Sí, hi assistiré"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "No podeu enviar fitxers vCard de més d'${ maxAttachments } contacte.",
+        "No podeu enviar fitxers vCard de més de ${ maxAttachments } contactes."
       ]
     },
     "Action subline": {
@@ -659,6 +675,20 @@
       ],
       "You don't have any groups.": [
         "No teniu cap grup."
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domini personalitzat",
+        "${ domains } dominis personalitzats"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidors"
+      ],
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
       ]
     },
     "Alarm notification": {
@@ -750,6 +780,17 @@
     "Attendee role": {
       "Optional": [
         "Opcional"
+      ]
+    },
+    "bf2023: Deal details": {
+      "1 user": [
+        "1 usuari"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 usuaris"
       ]
     },
     "Bug category": {
@@ -902,6 +943,14 @@
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
         "No és possible compartir aquest calendari amb més usuaris de ${ BRAND_NAME }."
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "Heu assolit el màxim d'${ MAX_CALENDAR_MEMBERS } membre per a aquest calendari.\nPer a compartir aquest calendari amb més comptes de ${ BRAND_NAME }, esborreu-ne alguns membres.",
+        "Heu assolit el màxim de ${ MAX_CALENDAR_MEMBERS } membres per a aquest calendari.\nPer a compartir aquest calendari amb més comptes de ${ BRAND_NAME }, esborreu-ne alguns membres."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Heu assolit el màxim d'${ MAX_LINKS_PER_CALENDAR } enllaç per a aquest calendari.\nPer a crear un enllaç a aquest calendari, esborreu-ne un d'existent.",
+        "Heu assolit el màxim de ${ MAX_LINKS_PER_CALENDAR } enllaços per a aquest calendari.\nPer a crear un enllaç a aquest calendari, esborreu-ne un d'existent."
       ]
     },
     "Calendar sharing access option label": {
@@ -993,6 +1042,18 @@
       ],
       "Change time range to": [
         "Canvieu a la vista de"
+      ]
+    },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "${ more } més",
+        "${ more } més"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } usuari",
+        "${ users } usuaris"
       ]
     },
     "Collapsible tooltip": {
@@ -1950,9 +2011,17 @@
       ],
       "On date…": [
         "En data…"
+      ],
+      "time": [
+        "vegada",
+        "vegades"
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } vegada",
+        "${ count } vegades"
+      ],
       "Daily": [
         "Diàriament"
       ],
@@ -1961,6 +2030,18 @@
       ],
       "Daily, ${ untilString }": [
         "Diàriament, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Cada ${ interval } dia",
+        "Cada ${ interval } dies"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Cada ${ interval } dia, ${ timesString }",
+        "Cada ${ interval } dies, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Cada ${ interval } dia, ${ untilString }",
+        "Cada ${ interval } dies, ${ untilString }"
       ],
       "until ${ dateString }": [
         "fins el ${ dateString }"
@@ -2173,6 +2254,22 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. També podeu comprovar la nostra ${ statusPageLink }"
       ],
+      "${ list } doesn't have a valid email address": [
+        "${ list } no té una adreça de correu electrònic vàlida.",
+        "Alguns contactes no tenen una adreça de correu electrònic vàlida: ${ list }"
+      ],
+      "${ list } doesn't have an email address": [
+        "${ list } no té una adreça de correu electrònic.",
+        "Alguns contactes no tenen una adreça de correu electrònic: ${ list }."
+      ],
+      "${ list } has invalid emails": [
+        "${ list } té correus electrònics incorrectes.",
+        "Alguns grups tenen correus electrònics incorrectes: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } no té contactes",
+        "Alguns grups no tenen contactes: ${ list }"
+      ],
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
@@ -2223,6 +2320,14 @@
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "S'ha produït un error de desxifratge: no s'ha pogut desxifrar el contingut d'aquest esdeveniment."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Desmarqueu almenys ${ calendarsToFixCount } calendari.",
+        "Desmarqueu almenys ${ calendarsToFixCount } calendaris."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Desmarqueu almenys ${ calendarsToFixCount } calendari o",
+        "Desmarqueu almenys ${ calendarsToFixCount } calendaris o"
       ],
       "Domain not available, try again later": [
         "El domini no està disponible, torneu-ho a provar més tard"
@@ -2281,6 +2386,9 @@
       "Incorrect username": [
         "Nom d'usuari incorrecte"
       ],
+      "Intended recipient does not support calendar sharing": [
+        "El destinatari escollit no admet la compartició de calendari."
+      ],
       "Interval cannot be empty": [
         "L'interval no pot estar buit."
       ],
@@ -2313,6 +2421,10 @@
       ],
       "Last name is too long": [
         "El cognom és massa llarg."
+      ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Combineu almenys ${ calendarsToFixCount } calendari importat amb un calendari ${ BRAND_NAME } existent.",
+        "Combineu almenys ${ calendarsToFixCount } calendaris amb calendaris de ${ BRAND_NAME } existents"
       ],
       "Missing key packet": [
         "Falta el paquet de claus"
@@ -2347,6 +2459,14 @@
       "Number of occurrences cannot be empty": [
         "El nombre d’ocurrències no pot estar buit."
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Un dels contactes no té adreça de correu electrònic: ${ noEmailsContactNamesList }",
+        "Alguns contactes no tenen adreça de correu electrònic: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Un dels grups no té contactes: ${ noContactGroupList }",
+        "Alguns grups no tenen contactes: ${ noContactGroupList } "
+      ],
       "Password is required": [
         "La contrasenya és obligatòria"
       ],
@@ -2358,6 +2478,10 @@
       ],
       "Please create an address first.": [
         "Creeu una adreça primer."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Arregleu el conflicte ressaltat per continuar.",
+        "Arregleu els conflictes ressaltats per continuar."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Proporcioneu un nom , un cognom o un nom a mostrar."
@@ -2376,6 +2500,10 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "La clau principal obtinguda per a l'usuari de ${ BRAND_NAME } no és vàlida per a l'enviament"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Destinatari duplicat eliminat: ${ joinedRecipients }",
+        "Destinataris duplicats eliminats: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
@@ -2485,6 +2613,10 @@
       "You already added this holidays calendar": [
         "Ja heu afegit aquest calendari de festius"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "No podeu enviar un correu a més d'${ maxContacts } destinatari.",
+        "No podeu enviar un correu a més de ${ maxContacts } destinataris."
+      ],
       "You have reached the contacts limit for your account": [
         "Heu arribat al límit de contactes per al vostre compte."
       ],
@@ -2518,6 +2650,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "S'ha produït un error inesperat. S'ha de reiniciar la importació."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniment.",
+        "El vostre fitxer ${ formattedFilename } conté més de ${ MAX_IMPORT_EVENTS_STRING } esdeveniments."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "El fitxer ${ formattedFilename } conté un mètode invàlid i no es pot importar."
@@ -2715,9 +2851,19 @@
         "cancel·lat"
       ]
     },
+    "Event form": {
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } participant",
+        "${ numberOfAttendees } participants"
+      ]
+    },
     "Event info in search view; event duration": {
       "All day": [
         "Tot el dia"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "Tot el dia, el darrer ${ plusDaysToEnd } dia",
+        "Tot el dia, els darrers ${ plusDaysToEnd } dies"
       ]
     },
     "Event info. Organizer name": {
@@ -2942,6 +3088,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -2953,6 +3103,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "gigabyte",
+        "gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "megabyte",
+        "megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Filter notification": {
@@ -3014,6 +3186,10 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "S'ha trobat ${ items.length } suggerència, utilitza el teclat per navegar.",
+        "S'han trobat ${ items.length } suggeriments, utilitzant el teclat per navegar."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Utilitzeu les tecles de fletxa amunt i fletxa avall per accedir i navegar pels suggeriments després de l'entrada. Premeu Retorn per confirmar la vostra elecció, o Esc per tancar el quadre de suggeriments."
       ]
@@ -3030,6 +3206,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } esdeveniment xifrat i afegit al teu calendari",
+        "${ totalImported }/${ totalToImport } esdeveniments xifrats i afegits al teu calendari"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniment importat amb èxit.",
+        "S'ha produït un error xifrant i afegint els vostres esdeveniments. ${ totalImported } de ${ totalToImport } esdeveniments importats amb èxit."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "S'ha produït un error en xifrar i afegir el vostre esdeveniment. No s'ha pogut importar cap esdeveniment."
       ],
@@ -3064,11 +3248,23 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Les invitacions importades apareixen en ${ CALENDAR_APP_NAME } com a esdeveniments simples sense detalls de l'organitzador ni dels participants. Per obtenir actualitzacions de l'esdeveniment i veure els participants, demaneu als organitzadors que us convidin utilitzant la vostra adreça de correu electrònic de ${ BRAND_NAME }."
       ],
+      "This file contains an event invitation:": [
+        "Aquest fitxer conté una invitació a un esdeveniment:",
+        "Aquest fitxer conté invitacions a un esdeveniment:"
+      ],
+      "This file contains an invitation response:": [
+        "Aquest fitxer conté una resposta a la invitació:",
+        "Aquest fitxer conté respostes a la invitació:"
+      ],
       "This file contains some data that we cannot import:": [
         "Aquest fitxer conté algunes dades que no podem importar:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } contacte xifrat i afegit a la vostra llista de contactes",
+        "${ totalImported }/${ totalToImport } contactes xifrats i afegits a la vostra llista de contactes"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "S'ha produït un error en xifrar i afegir el vostre contacte. No s'ha pogut importar cap contacte."
       ],
@@ -3088,6 +3284,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Contacte ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } contacte",
+        "${ totalContacts } contactes"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3259,6 +3461,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contactes no es poden importar. Cliqueu per obtenir més informació"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } de ${ totalEvents } esdeveniment no es pot importar. Cliqueu per obtenir més informació.",
+        "${ totalEventsDiscarded } de ${ totalEvents } esdeveniments no es poden importar. Cliqueu per obtenir més informació."
+      ],
       "No contact can be imported. Click for details": [
         "No s'ha pogut importar cap contacte. Cliqueu per obtenir més informació"
       ],
@@ -3270,20 +3476,92 @@
       ]
     },
     "Info": {
+      "${ addressCount } email address": [
+        "${ addressCount } adreça de correu electrònic",
+        "${ addressCount } adreces de correu electrònic"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia d'encriptació de ${ BRAND_NAME } significa que ningú pot accedir a la vostra contrasenya, ni tan sols nosaltres."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } nou calendari",
+        "${ calendarsToBeCreatedCount } nous calendaris"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } calendari combinat",
+        "${ calendarsToBeMergedCount } calendaris combinats"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } contacte té múltiples adreces de correu.",
+        "${ contactCount } contactes tenen múltiples adreces de correu."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } Membre",
+        "${ contactEmailsLength } Membres"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } té múltiples adreces de correu."
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } contacte trobat",
+        "${ contactsCount } contactes trobats"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contacte",
+        "${ contactsLength } contactes"
       ],
       "${ firstItems } and ${ lastItem }": [
         "${ firstItems } i ${ lastItem }"
       ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } grup trobat",
+        "${ groupCounts } grups trobats"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } carpeta trobada",
+        "${ providerFoldersNumLocalized } carpetes trobades"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } etiqueta trobada a Gmail",
+        "${ providerFoldersNumLocalized } etiquetes trobades a Gmail"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendari",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendaris"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength } contacte seleccionat de ${ contactsLength }",
+        "${ selectedContactsLength } contactes seleccionats de ${ contactsLength }"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } carpeta seleccionada",
+        "${ selectedFoldersCount } carpetes seleccionades"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } etiqueta seleccionada",
+        "${ selectedFoldersCount } etiquetes seleccionades"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } carpeta seleccionada",
+        "${ selectedFoldersCountLocalized } carpetes seleccionades"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } etiqueta seleccionada",
+        "${ selectedFoldersCountLocalized } etiquetes seleccionades"
+      ],
       "${ storage } storage": [
         "${ storage } d'emmagatzematge"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } contacte actualitzat amb èxit.",
+        "${ updated } contactes actualitzats amb èxit."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membre)",
+        "(${ memberCount } membres)"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Tots els participants eliminats rebran un correu electrònic de cancel·lació."
@@ -3308,6 +3586,18 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificació d'adreça amb claus de confiança està habilitada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "Tot (${ totalFoldersCount } carpeta)",
+        "Tot (${ totalFoldersCount } carpetes)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Tot (${ totalFoldersCount } etiqueta)",
+        "Tot (${ totalFoldersCount } etiquetes)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Tots els vostres contactes s'importaran, fins a un límit d'${ MAX_CONTACTS_PER_USER }",
+        "Tots els vostres contactes s'importaran, fins a un límit de ${ MAX_CONTACTS_PER_USER }"
       ],
       "An invitation will be sent to added participants.": [
         "Tots els participants afegits rebran una invitació."
@@ -3381,6 +3671,10 @@
       "Country code": [
         "Codi de país"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Crea ${ calendarsToBeCreatedCount } calendari",
+        "Crea ${ calendarsToBeCreatedCount } calendaris"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les carpetes que vulgueu importar."
       ],
@@ -3450,6 +3744,10 @@
       "Enter your own password (as organization admin).": [
         "Introduïu la vostra contrasenya (com a administrador d'organització)."
       ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Temps restant estimat: ${ estimatedMinutes } minut",
+        "Temps restant estimat: ${ estimatedMinutes } minuts"
+      ],
       "Estimated time remaining: Less than a minute": [
         "Temps restant estimat: Menys d'un minut"
       ],
@@ -3485,6 +3783,10 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importa ${ calendarCount } calendari de ${ totalCalendarsCount }",
+        "Importa ${ calendarCount } calendaris de ${ totalCalendarsCount }"
       ],
       "Import from": [
         "Importar des de"
@@ -3623,6 +3925,10 @@
       ],
       "Please select the folders you would like to import:": [
         "Seleccioneu les carpetes que voleu importar:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grup.",
+        "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupCount } grups."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Seleccioneu quina adreça o adreces de correu electrònic cal afegir a ${ groupName }."
@@ -3988,6 +4294,10 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "Es permet un màxim d'${ maxAttendees } participant per invitació.",
+        "Es permet un màxim de ${ maxAttendees } participants per invitació."
+      ],
       "Creating invites in a shared calendar is not allowed": [
         "No es permet crear invitacions en un calendari compartit"
       ]
@@ -4283,6 +4593,10 @@
       "Organizer": [
         "Organitzador"
       ],
+      "participant": [
+        "participant",
+        "participants"
+      ],
       "Participants": [
         "Participants"
       ],
@@ -4474,6 +4788,10 @@
       "Almost there": [
         "Ja gairebé està"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }",
+        "Quantitat de calendaris creats: ${ createdCalendarCount } d'un total de ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Connectant al vostre prveïdor de correu electrònic"
       ],
@@ -4488,6 +4806,24 @@
       ],
       "Your import is starting": [
         "La importació s'està iniciant"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importa tots els missatges d'${ itemsToImportCount } carpeta i etiqueta'ls com a",
+        "Importa tots els missatges de ${ itemsToImportCount } carpetes i etiqueta'ls com a"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importa tots els missatges d'${ itemsToImportCount } etiqueta i etiqueta'ls com a",
+        "Importa tots els missatges de ${ itemsToImportCount } etiquetes i etiqueta'ls com a"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importa tots els missatges d'${ selectedItemsToImportCount } carpeta de ${ itemsToImportCount } i etiqueta'ls com a",
+        "Importa tots els missatges de ${ selectedItemsToImportCount } carpetes de ${ itemsToImportCount } i etiqueta'ls com a"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importa tots els missatges d'${ selectedItemsToImportCount } etiqueta de ${ itemsToImportCount } i etiqueta'ls com a",
+        "Importa tots els missatges de ${ selectedItemsToImportCount } etiquetes de ${ itemsToImportCount } i etiqueta'ls com a"
       ]
     },
     "Message": {
@@ -4582,6 +4918,18 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Cada ${ interval } mes ${ onDayString }",
+        "Cada ${ interval } messos ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Cada ${ interval } mes ${ onDayString }, ${ timesString }",
+        "Cada ${ interval } messos ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Cada ${ interval } mes ${ onDayString }, ${ untilString }",
+        "Cada ${ interval } mesos ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }": [
         "Mensual ${ onDayString }"
       ],
@@ -4790,6 +5138,12 @@
         "S'ha actualitzat el calendari."
       ]
     },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Membre afegit",
+        "Membres afegits"
+      ]
+    },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
         "S'ha rebutjat la invitació al calendari."
@@ -4820,11 +5174,91 @@
       "at time of event": [
         "al moment de l'esdeveniment"
       ],
+      "day before": [
+        "dia abans",
+        "dies abans"
+      ],
+      "hour before": [
+        "hora abans",
+        "hores abans"
+      ],
+      "minute before": [
+        "minut abans",
+        "minuts abans"
+      ],
       "on the same day": [
         "el mateix dia"
+      ],
+      "week before": [
+        "setmana abans",
+        "setmanes abans"
       ]
     },
     "Notifications": {
+      "${ value } day after": [
+        "${ value } dia després",
+        "${ value } dies després"
+      ],
+      "${ value } day after at ${ time }": [
+        "${ value } dia després a les ${ time }",
+        "${ value } dies després a les ${ time }"
+      ],
+      "${ value } day before": [
+        "${ value } dia abans",
+        "${ value } dies abans"
+      ],
+      "${ value } day before at ${ time }": [
+        "${ value } dia abans a les ${ time }",
+        "${ value } dies abans a les ${ time }"
+      ],
+      "${ value } hour after": [
+        "${ value } hora després",
+        "${ value } hores després"
+      ],
+      "${ value } hour after at ${ time }": [
+        "${ value } hora després a les ${ time }",
+        "${ value } hores després a les ${ time }"
+      ],
+      "${ value } hour before": [
+        "${ value } hora abans",
+        "${ value } hores abans"
+      ],
+      "${ value } hour before at ${ time }": [
+        "${ value } hora abans a les ${ time }",
+        "${ value } hores abans a les ${ time }"
+      ],
+      "${ value } minute after": [
+        "${ value } minut després",
+        "${ value } minuts després"
+      ],
+      "${ value } minute after at ${ time }": [
+        "${ value } minut després a les ${ time }",
+        "${ value } minuts després a les ${ time }"
+      ],
+      "${ value } minute before": [
+        "${ value } minut abans",
+        "${ value } minuts abans"
+      ],
+      "${ value } minute before at ${ time }": [
+        "${ value } minut abans a les ${ time }",
+        "${ value } minuts abans a les ${ time }"
+      ],
+      "${ value } week after": [
+        "${ value } setmana després",
+        "${ value } setmanes després"
+      ],
+      "${ value } week after at ${ time }": [
+        "${ value } setmana després a les ${ time }",
+        "${ value } setmanes després a les ${ time }"
+      ],
+      "${ value } week before": [
+        "${ value } setmana abans",
+        "${ value } setmanes abans"
+      ],
+      "${ value } week before at ${ time }": [
+        "${ value } setmana abans a les ${ time }",
+        "${ value } setmanes abans a les ${ time }"
+      ],
       "At time of event": [
         "Al moment de l'esdeveniment"
       ],
@@ -4905,6 +5339,10 @@
       "Custom": [
         "Personalitzat"
       ],
+      "Day": [
+        "Dia",
+        "Dies"
+      ],
       "Does not repeat": [
         "No es repeteix"
       ],
@@ -4923,6 +5361,10 @@
       "Ignore group": [
         "Ignorar grup"
       ],
+      "Month": [
+        "Mes",
+        "Mesos"
+      ],
       "No parent folder": [
         "No hi ha la carpeta pare"
       ],
@@ -4931,6 +5373,14 @@
       ],
       "This event": [
         "Aquest esdeveniment"
+      ],
+      "Week": [
+        "Setmana",
+        "Setmanes"
+      ],
+      "Year": [
+        "Any",
+        "Anys"
       ]
     },
     "Option group label": {
@@ -5062,6 +5512,18 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "S'ha exportat ${ contactsExported.length } contacte de ${ countContacts }.",
+        "S'han exportat ${ contactsExported.length } contactes de ${ countContacts }."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } de ${ totalBeDeleted } contacte eliminat satisfactòriament.",
+        "${ model.deleted.length } de ${ totalBeDeleted } contactes eliminats satisfactòriament."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } de ${ totalBeMerged } contacte combinat satisfactòriament.",
+        "${ model.submitted.length } de ${ totalBeMerged } contactes combinats satisfactòriament."
+      ],
       "No contacts exported.": [
         "No s'han exportat contactes."
       ],
@@ -5147,8 +5609,32 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dia",
+        "${ timeRemaining.inDays } dies"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } hores"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dia per a restablir la vostra contrasenya.",
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inDays } dies per a restablir la vostra contrasenya."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hora per a restablir la vostra contrasenya.",
+        "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hores per a restablir la vostra contrasenya."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Aneu a l'aparell connectat (a la sessió on es va iniciar la sol·licitud) per canviar la vostra contrasenya."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Aquest permís caduca en ${ timeRemaining.inDays } dia.",
+        "Aquest permís caduca en ${ timeRemaining.inDays } dies."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Aquest permís caduca en ${ timeRemaining.inHours } hora.",
+        "Aquest permís caduca en ${ timeRemaining.inHours } hores."
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Ara podeu canviar la vostra contrasenya per al compte ${ boldEmail } lliurement durant ${ boldDaysRemaining }."
@@ -5211,8 +5697,16 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } hora més",
+        "${ gracePeriodHoursRemaining } hores més"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Si no heu demanat restablir la teva contrasenya, cancel·leu aquesta sol·licitud ara mateix."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hora.",
+        "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hores."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Per assegurar-nos que sou vosaltres qui intenteu restablir la vostra contrasenya, esperem 72 hores abans d'aprovar les sol·licituds. Podeu canviar la vostra contrasenya en ${ boldTimeLeft }. ${ viewRequest }."
@@ -5240,6 +5734,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } hores"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } ara està disponible."
       ],
@@ -5271,6 +5769,12 @@
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
         "Per convidar usuaris fora de ${ BRAND_NAME }, compartiu el vostre calendari amb un enllaç."
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Heu sobrepassat el màxim d'${ MAX_CALENDAR_MEMBERS } membre per calendari",
+        "Heu sobrepassat el màxim de ${ MAX_CALENDAR_MEMBERS } membres per calendari"
       ]
     },
     "Share calendar modal description": {
@@ -5328,6 +5832,30 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Passeu-vos a Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dies"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segon",
+        "${ seconds } segons"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mes GRATIS",
+        "${ n } mesos GRATIS"
       ]
     },
     "specialoffer: Deal details": {
@@ -5388,6 +5916,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mes",
+        "${ n } mesos"
+      ],
       "/ month": [
         "/ mes"
       ],
@@ -5531,6 +6063,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contacte sembla idèntic.",
+        "${ countMergeableContacts } contactes semblen idèntics."
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Un correu de cancel·lació serà enviat als participants eliminats per a tots els esdeveniments d'aquesta sèrie."
       ],
@@ -5584,6 +6120,14 @@
       ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
+      ],
+      "Contact deleted": [
+        "Contacte esborrat",
+        "Contactes esborrats"
+      ],
+      "Contact group deleted": [
+        "S'ha eliminat el grup",
+        "S'han eliminat els grups"
       ],
       "Contact saved": [
         "Contacte desat"
@@ -5749,12 +6293,44 @@
         "Camp vCard"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 h",
+        "${ hoursInt },5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } hores"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 hores",
+        "${ hoursInt },5 hores"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minuts"
+      ]
+    },
     "Timezone search placeholder": {
       "Search time zones": [
         "Cerca fusos horaris"
       ]
     },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount } adreça de correu electrònic",
+        "${ emailsCount } adreces de correu electrònic"
+      ],
       "Account suspended": [
         "Compte suspès"
       ],
@@ -5775,6 +6351,10 @@
       ],
       "Add participants": [
         "Afegeix participants"
+      ],
+      "Add to ${ groupCount } group": [
+        "Afegir a ${ groupCount } grup",
+        "Afegir a ${ groupCount } grups"
       ],
       "Add to ${ groupName }": [
         "Afegeix a ${ groupName }"
@@ -5848,6 +6428,14 @@
       "Day theme": [
         "Tema de dia"
       ],
+      "Delete ${ count } contact": [
+        "Suprimeix ${ count } contacte",
+        "Suprimeix ${ count } contactes"
+      ],
+      "Delete ${ count } contact group": [
+        "Eliminar ${ count } grup de contactes",
+        "Eliminar ${ count } grups de contactes"
+      ],
       "Delete ${ Name }": [
         "Esborrar ${ Name }"
       ],
@@ -5910,6 +6498,10 @@
       ],
       "Human verification": [
         "Verificació humana"
+      ],
+      "Import as simple event?": [
+        "Voleu importar com a esdeveniment sense detalls?",
+        "Voleu importar com a esdeveniments sense detalls?"
       ],
       "Import contacts": [
         "Importar contactes"
@@ -6205,6 +6797,16 @@
         "Compartit amb xifratge d'extrem a extrem amb un contacte verificat"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "La contrasenya ha de tenir com a mínim ${ length } caràcter",
+        "La contrasenya ha de tenir com a mínim ${ length } caràcters"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Proveu amb un nom d'usuari més curt (${ n } caràcter màx.)",
+        "Proveu amb un nom d'usuari més curt (${ n } caràcters màx.)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Cliqueu per reproduir el vídeo"
@@ -6227,6 +6829,10 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } transferirà tantes dades com sigui possible, començant pels missatges més recents."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Estàs segur de que vols eliminar ${ count } contacte definitivament?",
+        "Estàs segur de que vols eliminar ${ count } contactes definitivament?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Esteu segur que voleu eliminar aquests grups de contacte permanentment?"
@@ -6295,6 +6901,114 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Cada ${ interval } setmana els ${ multipleDaysString }",
+        "Cada ${ interval } setmanes els ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Cada ${ interval } setmana els ${ multipleDaysString }, ${ timesString }",
+        "Cada ${ interval } setmanes els ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Cada ${ interval } setmana els ${ multipleDaysString }, ${ untilString }",
+        "Cada ${ interval } setmanes els ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Cada ${ interval } setmana tots els dies",
+        "Cada ${ interval } setmanes tots els dies"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Cada ${ interval } setmana tots els dies, ${ timesString }",
+        "Cada ${ interval } setmanes tots els dies, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Cada ${ interval } setmana tots els dies, ${ untilString }",
+        "Cada ${ interval } setmanes tots els dies, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Cada ${ interval } setmana els Divendres",
+        "Cada ${ interval } setmanes els Divendres"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Cada ${ interval } setmana tots els Divendres, ${ timesString }",
+        "Cada ${ interval } setmanes tots els Divendres, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Cada ${ interval } setmana el Divendres, ${ untilString }",
+        "Cada ${ interval } setmanes el Divendres, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Cada ${ interval } setmana els Dilluns",
+        "Cada ${ interval } setmanes els Dilluns"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Cada ${ interval } setmana tots els Dilluns, ${ timesString }",
+        "Cada ${ interval } setmanes tots els Dilluns, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Cada ${ interval } setmana tots els Dilluns, ${ untilString }",
+        "Cada ${ interval } setmanes tots els Dilluns, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Cada ${ interval } setmana els Dissabtes",
+        "Cada ${ interval } setmanes els Dissabtes"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Cada ${ interval } setmana tots els Dissaptes, ${ timesString }",
+        "Cada ${ interval } setmanes tots els Dissaptes, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Cada ${ interval } setmana el Dissapte, ${ untilString }",
+        "Cada ${ interval } setmanes el Dissapte, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Cada ${ interval } setmana els Diumenges",
+        "Cada ${ interval } setmanes els Diumenges"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Cada ${ interval } setmana tots els Diumenges, ${ timesString }",
+        "Cada ${ interval } setmanes tots els Diumenges, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Cada ${ interval } setmana tots els Diumenges, ${ untilString }",
+        "Cada ${ interval } setmanes tots els Diumenges, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Cada ${ interval } setmana els Dijous",
+        "Cada ${ interval } setmanes els Dijous"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Cada ${ interval } setmana els Dijous, ${ timesString }",
+        "Cada ${ interval } setmanes els Dijous, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Cada ${ interval } setmana el Dijous, ${ untilString }",
+        "Cada ${ interval } setmanes el Dijous, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Cada ${ interval } setmana els Dimarts",
+        "Cada ${ interval } setmanes els Dimarts"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Cada ${ interval } setmana els Dimarts, ${ timesString }",
+        "Cada ${ interval } setmanes els Dimarts, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Cada ${ interval } setmana el Dimarts, ${ untilString }",
+        "Cada ${ interval } setmanes el Dimarts, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Cada ${ interval } setmana els Dimecres",
+        "Cada ${ interval } setmanes els Dimecres"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Cada ${ interval } setmana els Dimecres, ${ timesString }",
+        "Cada ${ interval } setmanes els Dimecres, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Cada ${ interval } setmana el Dimecres, ${ untilString }",
+        "Cada ${ interval } setmanes el Dimecres, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Setmanalment els ${ multipleDaysString }"
       ],
@@ -6401,6 +7115,18 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Cada ${ interval } any",
+        "Cada ${ interval } anys"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Cada ${ interval } any, ${ timesString }",
+        "Cada ${ interval } anys, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Cada ${ interval } any, ${ untilString }",
+        "Cada ${ interval } anys, ${ untilString }"
+      ],
       "Yearly": [
         "Anual"
       ],
