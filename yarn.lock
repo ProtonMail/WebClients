@@ -5488,7 +5488,7 @@ __metadata:
     react: "npm:^17.0.2"
     react-dom: "npm:^17.0.2"
     react-redux: "npm:^8.1.3"
-    ttag: "npm:^1.7.25"
+    ttag: "npm:^1.7.27"
     typescript: "npm:^5.2.2"
     whatwg-fetch: "npm:^3.6.19"
   peerDependencies:
@@ -5505,6 +5505,7 @@ __metadata:
     "@babel/preset-react": "npm:^7.22.15"
     "@babel/preset-typescript": "npm:^7.23.2"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/i18n": "workspace:packages/i18n"
     "@proton/pack": "workspace:packages/pack"
     "@proton/shared": "workspace:packages/shared"
     "@proton/styles": "workspace:packages/styles"
@@ -5538,6 +5539,7 @@ __metadata:
     react-polymorphic-types: "npm:^2.0.0"
     ts-loader: "npm:^9.5.0"
     ts-node: "npm:^10.9.1"
+    ttag: "npm:^1.7.27"
     typescript: "npm:^5.2.2"
     webpack: "npm:^5.89.0"
   languageName: unknown
@@ -5635,7 +5637,7 @@ __metadata:
     roosterjs: "npm:8.47.0"
     tabbable: "npm:^6.2.0"
     tinycolor2: "npm:^1.6.0"
-    ttag: "npm:^1.7.25"
+    ttag: "npm:^1.7.27"
     typescript: "npm:^5.2.2"
     unleash-proxy-client: "npm:^3.1.0"
   peerDependencies:
@@ -5645,7 +5647,6 @@ __metadata:
     "@proton/shared": "*"
     "@proton/srp": "*"
     date-fns: ^2.30.0
-    ttag: ^1.7.25
   languageName: unknown
   linkType: soft
 
@@ -5703,6 +5704,7 @@ __metadata:
     "@proton/components": "workspace:packages/components"
     "@proton/crypto": "workspace:packages/crypto"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/i18n": "workspace:packages/i18n"
     "@proton/shared": "workspace:packages/shared"
     "@proton/utils": "workspace:packages/utils"
     "@types/jasmine": "npm:^5.1.1"
@@ -5718,6 +5720,7 @@ __metadata:
     playwright: "npm:^1.39.0"
     react: "npm:^17.0.2"
     ts-loader: "npm:^9.5.0"
+    ttag: "npm:^1.7.27"
     typescript: "npm:^5.2.2"
     webpack: "npm:^5.89.0"
   languageName: unknown
@@ -5877,7 +5880,7 @@ __metadata:
     sass: "npm:^1.69.4"
     sass-loader: "npm:^13.3.2"
     terser-webpack-plugin: "npm:^5.3.9"
-    ttag: "npm:^1.7.25"
+    ttag: "npm:^1.7.27"
     ttag-cli: "npm:^1.10.6"
     webpack: "npm:^5.89.0"
     webpack-cli: "npm:^5.1.4"
@@ -5965,6 +5968,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/i18n": "workspace:packages/i18n"
     "@proton/srp": "workspace:packages/srp"
+    "@proton/styles": "workspace:packages/styles"
     "@protontech/bip39": "npm:^1.0.2"
     "@protontech/mimemessage": "npm:~v1.1.4"
     "@protontech/mutex-browser": "npm:^1.0.5"
@@ -5998,14 +6002,11 @@ __metadata:
     prettier: "npm:^3.0.3"
     push.js: "npm:^1.0.12"
     ts-loader: "npm:^9.5.0"
-    ttag: "npm:^1.7.25"
+    ttag: "npm:^1.7.27"
     typescript: "npm:^5.2.2"
     ua-parser-js: "npm:^1.0.36"
     web-streams-polyfill: "npm:^3.2.1"
     webpack: "npm:^5.89.0"
-  peerDependencies:
-    "@proton/styles": "*"
-    ttag: ^1.7.25
   languageName: unknown
   linkType: soft
 
@@ -29694,7 +29695,7 @@ __metadata:
     react-dom: "npm:^17.0.2"
     react-router-dom: "npm:^5.3.4"
     ts-node: "npm:^10.9.1"
-    ttag: "npm:^1.7.25"
+    ttag: "npm:^1.7.27"
     typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
@@ -29732,7 +29733,7 @@ __metadata:
     react-hooks-testing-library: "npm:^0.6.0"
     react-json-view: "npm:^1.21.3"
     react-router-dom: "npm:^5.3.4"
-    ttag: "npm:^1.7.25"
+    ttag: "npm:^1.7.27"
     typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
@@ -29776,7 +29777,7 @@ __metadata:
     react-dom: "npm:^17.0.2"
     react-router-dom: "npm:^5.3.4"
     tinycolor2: "npm:^1.6.0"
-    ttag: "npm:^1.7.25"
+    ttag: "npm:^1.7.27"
     typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
@@ -29824,7 +29825,7 @@ __metadata:
     react-dom: "npm:^17.0.2"
     react-router-dom: "npm:^5.3.4"
     react-window: "npm:^1.8.9"
-    ttag: "npm:^1.7.25"
+    ttag: "npm:^1.7.27"
     typescript: "npm:^5.2.2"
     web-streams-polyfill: "npm:^3.2.1"
     webpack: "npm:^5.89.0"
@@ -29912,7 +29913,7 @@ __metadata:
     react-dom: "npm:^17.0.2"
     react-redux: "npm:^8.1.3"
     react-router-dom: "npm:^5.3.4"
-    ttag: "npm:^1.7.25"
+    ttag: "npm:^1.7.27"
     turndown: "npm:^7.1.2"
     typescript: "npm:^5.2.2"
     workbox-cacheable-response: "npm:^7.0.0"
@@ -29951,7 +29952,7 @@ __metadata:
     redux: "npm:^4.2.1"
     redux-saga: "npm:^1.2.3"
     tldts: "npm:^6.0.17"
-    ttag: "npm:^1.7.25"
+    ttag: "npm:^1.7.27"
     typescript: "npm:^5.2.2"
     webextension-polyfill: "npm:^0.10.0"
     webpack: "npm:^5.89.0"
@@ -30001,7 +30002,7 @@ __metadata:
     react-dom: "npm:^17.0.2"
     react-router-dom: "npm:^5.3.4"
     react-window: "npm:^1.8.9"
-    ttag: "npm:^1.7.25"
+    ttag: "npm:^1.7.27"
     typescript: "npm:^5.2.2"
     web-streams-polyfill: "npm:^3.2.1"
     webpack: "npm:^5.89.0"
@@ -30110,7 +30111,7 @@ __metadata:
     react: "npm:^17.0.2"
     react-dom: "npm:^17.0.2"
     react-router-dom: "npm:^5.3.4"
-    ttag: "npm:^1.7.25"
+    ttag: "npm:^1.7.27"
     typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
@@ -35258,13 +35259,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ttag@npm:^1.7.25":
-  version: 1.7.25
-  resolution: "ttag@npm:1.7.25"
+"ttag@npm:^1.7.27":
+  version: 1.7.27
+  resolution: "ttag@npm:1.7.27"
   dependencies:
     dedent: "npm:^0.7.0"
     plural-forms: "npm:^0.5.3"
-  checksum: 9ce3d4153545a8fb4c7eec9241f261c0fd7c2a487d3662382079e9f7a133f0ff25c821b373c71ccb9a7ef77065da41a68fecfeb01a4b560135a5ae88f42d52e2
+  checksum: 28ab248361754fa043598cf15e1748a900057b17847412704d88ba1614d93d1f128c556bf9a54f6fea33a271bd29525fc630ca5a26ec6c0271380189f124182c
   languageName: node
   linkType: hard
 

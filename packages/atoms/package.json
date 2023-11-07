@@ -7,6 +7,8 @@
     "scripts": {
         "check-types": "tsc",
         "create-atom": "ts-node -P create-atom/tsconfig.create-atom.json create-atom/index",
+        "i18n:validate": "proton-i18n validate lint-functions",
+        "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
         "lint": "eslint . --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write $(find . -path ./node_modules -prune -o -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "storybook": "start-storybook -p 6006 --docs --no-manager-cache",
@@ -15,13 +17,15 @@
         "test:dev": "jest --watch"
     },
     "dependencies": {
+        "@proton/i18n": "workspace:packages/i18n",
         "@proton/pack": "workspace:packages/pack",
         "@proton/shared": "workspace:packages/shared",
         "@proton/styles": "workspace:packages/styles",
         "@proton/testing": "workspace:packages/testing",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
-        "react-polymorphic-types": "^2.0.0"
+        "react-polymorphic-types": "^2.0.0",
+        "ttag": "^1.7.27"
     },
     "devDependencies": {
         "@babel/core": "^7.23.2",
