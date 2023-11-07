@@ -161,7 +161,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
 
                     <FormikProvider value={form}>
                         <Form id={FORM_ID}>
-                            <VaultInviteForm form={form} autoFocus={didEnter} key={`vault-invite-form-${didEnter}`} />
+                            <VaultInviteForm form={form} autoFocus={didEnter} />
                         </Form>
                     </FormikProvider>
                 </Panel>

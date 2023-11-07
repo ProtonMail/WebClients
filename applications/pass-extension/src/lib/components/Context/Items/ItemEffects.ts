@@ -30,7 +30,7 @@ import { invert } from '@proton/pass/utils/fp/predicates';
 
 import type { ItemsFilteringContextType } from './ItemsFilteringContext';
 
-export function handleVaultDeletionEffects(
+export function vaultDeletionEffect(
     shareBeingDeleted: string,
     itemsFilteringVaultUtilities: Pick<ItemsFilteringContextType, 'shareId' | 'setShareBeingDeleted' | 'setShareId'>
 ) {
@@ -41,9 +41,7 @@ export function handleVaultDeletionEffects(
 
     /* reset the share filter if it matches the
      * vault being deleted */
-    if (shareBeingDeleted === shareId) {
-        setShareId(null);
-    }
+    if (shareBeingDeleted === shareId) setShareId(null);
 }
 
 export const ItemEffects = () => {
@@ -75,7 +73,7 @@ export const ItemEffects = () => {
     useShareEventEffect({
         onShareDisabled: (shareId) => {
             inviteContext.onShareDisabled(shareId);
-            handleVaultDeletionEffects(shareId, { shareId, setShareBeingDeleted, setShareId });
+            vaultDeletionEffect(shareId, { shareId, setShareBeingDeleted, setShareId });
         },
         onItemsDeleted: (shareId, itemIds) => {
             if (shareId === selectedItem?.shareId && itemIds.includes(selectedItem?.itemId)) {
