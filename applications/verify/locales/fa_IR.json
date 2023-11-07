@@ -1035,6 +1035,16 @@
       "Request new code": [
         "درخواست کد جدید"
       ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "گذرواژه باید حداقل ${ length } نویسه داشته باشد",
+        "گذرواژه باید حداقل ${ length } نویسه داشته باشد"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)",
+        "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)"
+      ]
     }
   }
 }

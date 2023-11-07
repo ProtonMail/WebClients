@@ -1108,6 +1108,16 @@
       "Sign in with 2FA": [
         "2FA-ით შეცვლა"
       ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "პაროლი ${ length } სიმბოლოს მაინც უნდა შეიცავდეს",
+        "პაროლი ${ length } სიმბოლოს მაინც უნდა შეიცავდეს"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
+        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"
+      ]
     }
   }
 }
