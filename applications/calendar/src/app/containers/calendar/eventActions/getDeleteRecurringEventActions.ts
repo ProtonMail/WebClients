@@ -106,7 +106,7 @@ export const getDeleteRecurringEventActions = async ({
                 ? // attendees cannot add EXDATEs (the organizer added it already anyway)
                   undefined
                 : getUpdateSyncOperation({
-                      veventComponent: withDtstamp(omit(updatedVeventComponent, ['dtstamp'])),
+                      veventComponent: updatedVeventComponent,
                       calendarEvent: originalEvent,
                       hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
                       isAttendee,

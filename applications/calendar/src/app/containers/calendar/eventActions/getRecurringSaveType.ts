@@ -1,23 +1,25 @@
 import { RECURRING_TYPES, SAVE_CONFIRMATION_TYPES } from '@proton/shared/lib/calendar/constants';
 import { getMustResetPartstat } from '@proton/shared/lib/calendar/mailIntegration/invite';
-import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarEvent, VcalDateOrDateTimeProperty } from '@proton/shared/lib/interfaces/calendar';
 
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
 import { EventOldData } from '../../../interfaces/EventData';
 import { INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
 import { OnSaveConfirmationCb } from '../interface';
-import { getExdatesAfter, getHasFutureOption, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
+import { getExdatesAfter, getHasFutureOption, getRecurrenceEventsAfter } from './recurringHelper';
 
 interface Arguments {
     originalEditEventData: EventOldData;
-    oldEditEventData: EventOldData;
     canOnlySaveAll: boolean;
     canOnlySaveThis: boolean;
     onSaveConfirmation: OnSaveConfirmationCb;
     recurrence: CalendarEventRecurring;
-    recurrences: CalendarEvent[];
+    singleEdits: CalendarEvent[];
+    exdates: VcalDateOrDateTimeProperty[];
     hasModifiedRrule: boolean;
     hasModifiedCalendar: boolean;
+    isBreakingChange: boolean;
+    isOrganizer: boolean;
     isAttendee: boolean;
     canEditOnlyPersonalPart: boolean;
     inviteActions: InviteActions;
@@ -26,14 +28,16 @@ interface Arguments {
 
 const getRecurringSaveType = async ({
     originalEditEventData,
-    oldEditEventData,
     canOnlySaveAll,
     canOnlySaveThis,
     onSaveConfirmation,
-    recurrences,
     recurrence,
+    singleEdits,
+    exdates,
     hasModifiedRrule,
     hasModifiedCalendar,
+    isBreakingChange,
+    isOrganizer,
     isAttendee,
     canEditOnlyPersonalPart,
     inviteActions,
@@ -52,26 +56,15 @@ const getRecurringSaveType = async ({
         saveTypes = [RECURRING_TYPES.SINGLE, RECURRING_TYPES.ALL];
     }
 
-    const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEditEventData.eventData);
-    const singleEditRecurrencesWithoutSelf = singleEditRecurrences.filter((event) => {
-        return event.ID !== oldEditEventData.eventData.ID;
-    });
-    // Since this is inclusive, ignore this single edit instance event since that would always become the new start
-    const singleEditRecurrencesAfter = getRecurrenceEventsAfter(
-        singleEditRecurrencesWithoutSelf,
-        recurrence.localStart
-    );
-    const exdates = originalEditEventData.mainVeventComponent.exdate || [];
+    const singleEditsAfter = getRecurrenceEventsAfter(singleEdits, recurrence.localStart);
     const exdatesAfter = getExdatesAfter(exdates, recurrence.localStart);
 
-    const hasSingleModifications = singleEditRecurrencesWithoutSelf.length >= 1 || exdates.length >= 1;
-    const hasSingleModificationsAfter = singleEditRecurrencesAfter.length >= 1 || exdatesAfter.length >= 1;
+    const hasSingleEdits = singleEdits.length >= 1;
+    const hasSingleDeletes = exdates.length >= 1;
+    const hasSingleEditsAfter = singleEditsAfter.length >= 1;
+    const hasSingleDeletesAfter = exdatesAfter.length >= 1;
 
-    const mustResetPartstat = getMustResetPartstat(
-        singleEditRecurrencesWithoutSelf,
-        selfAttendeeToken,
-        inviteActions.partstat
-    );
+    const mustResetPartstat = getMustResetPartstat(singleEdits, selfAttendeeToken, inviteActions.partstat);
     const updatedInviteActions = {
         ...inviteActions,
         resetSingleEditsPartstat:
@@ -85,12 +78,16 @@ const getRecurringSaveType = async ({
         type: SAVE_CONFIRMATION_TYPES.RECURRING,
         data: {
             types: saveTypes,
-            hasSingleModifications,
-            hasSingleModificationsAfter,
+            hasSingleEdits,
+            hasSingleDeletes,
+            hasSingleEditsAfter,
+            hasSingleDeletesAfter,
             hasRruleModification: hasModifiedRrule,
             hasCalendarModification: hasModifiedCalendar,
+            isBreakingChange,
         },
         inviteActions: updatedInviteActions,
+        isOrganizer,
         isAttendee,
         canEditOnlyPersonalPart,
     });

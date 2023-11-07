@@ -200,12 +200,16 @@ type ModalsMap = {
     editRecurringConfirmModal: ModalWithProps<{
         data: {
             types: RECURRING_TYPES[];
-            hasSingleModifications: boolean;
-            hasSingleModificationsAfter: boolean;
+            hasSingleEdits: boolean;
+            hasSingleDeletes: boolean;
+            hasSingleEditsAfter: boolean;
+            hasSingleDeletesAfter: boolean;
             hasRruleModification: boolean;
             hasCalendarModification: boolean;
+            isBreakingChange: boolean;
         };
         inviteActions: InviteActions;
+        isOrganizer: boolean;
         isAttendee: boolean;
         canEditOnlyPersonalPart: boolean;
     }>;
@@ -971,6 +975,7 @@ const InteractiveCalendarView = ({
     const handleSaveConfirmation = ({
         type,
         data,
+        isOrganizer,
         isAttendee,
         canEditOnlyPersonalPart,
         inviteActions,
@@ -983,6 +988,7 @@ const InteractiveCalendarView = ({
                     props: {
                         data,
                         inviteActions,
+                        isOrganizer,
                         isAttendee,
                         canEditOnlyPersonalPart,
                     },
@@ -1623,6 +1629,7 @@ const InteractiveCalendarView = ({
                 <EditRecurringConfirmModal
                     isOpen={editRecurringConfirmModal.isOpen}
                     {...editRecurringConfirmModal.props.data}
+                    isOrganizer={editRecurringConfirmModal.props.isOrganizer}
                     isAttendee={editRecurringConfirmModal.props.isAttendee}
                     canEditOnlyPersonalPart={editRecurringConfirmModal.props.canEditOnlyPersonalPart}
                     inviteActions={editRecurringConfirmModal.props.inviteActions}
