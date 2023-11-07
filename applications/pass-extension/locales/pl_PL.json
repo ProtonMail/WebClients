@@ -457,6 +457,12 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Usuwanie sejfu \"${ payload.content.name }\" nie powiodło się"
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Wykryto ${ errors.length } uszkodzony wiersz pliku CSV",
+        "Wykryto ${ errors.length } uszkodzone wiersze pliku CSV",
+        "Wykryto ${ errors.length } uszkodzonych wierszy pliku CSV",
+        "Wykryto ${ errors.length } uszkodzonych wierszy pliku CSV"
+      ],
       "Editing item failed": [
         "Edytowanie elementu nie powiodło się"
       ],
@@ -614,6 +620,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtów",
+        "bajtów"
+      ],
       "GB": [
         "GB"
       ],
@@ -627,6 +639,38 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "bajt",
+        "bajty",
+        "bajtów",
+        "bajtów"
+      ],
+      "Gigabyte": [
+        "gigabajt",
+        "gigabajty",
+        "gigabajtów",
+        "gigabajtów"
+      ],
+      "Kilobyte": [
+        "kilobajt",
+        "kilobajty",
+        "kilobajtów",
+        "kilobajtów"
+      ],
+      "Megabyte": [
+        "megabajt",
+        "megabajty",
+        "megabajtów",
+        "megabajtów"
+      ],
+      "Terabyte": [
+        "terabajt",
+        "terabajty",
+        "terabajtów",
+        "terabajtów"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         "Ulepsz do płatnego planu, aby utworzyć wiele sejfów."
@@ -636,6 +680,24 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizacja \"${ payload.item.data.metadata.name }\" została odrzucona"
+      ],
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elementy",
+        "${ count } elementów",
+        "${ count } elementów"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } element",
+        "${ itemCount } elementy",
+        "${ itemCount } elementów",
+        "${ itemCount } elementów"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } użytkownik",
+        "${ memberCount } użytkowników",
+        "${ memberCount } użytkowników",
+        "${ memberCount } użytkowników"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
         "${ PASS_APP_NAME } będzie wyświetlał ikonę stron przez anonimową proxy ${ BRAND_NAME }."
@@ -651,6 +713,30 @@
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } będzie sugerował utworzenie silnych haseł w formularzach logowania."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } raz",
+        "${ revisionNumber } razy",
+        "${ revisionNumber } razy",
+        "${ revisionNumber } razy"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } element",
+        "${ totalImportedItems } elementy",
+        "${ totalImportedItems } elementów",
+        "${ totalImportedItems } elementów"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } element",
+        "${ totalItems } elementy",
+        "${ totalItems } elementów",
+        "${ totalItems } elementów"
+      ],
+      "${ trialDaysLeft } day left": [
+        "Pozostał ${ trialDaysLeft } dzień",
+        "Pozostały ${ trialDaysLeft } dni",
+        "Pozostało ${ trialDaysLeft } dni",
+        "Pozostało ${ trialDaysLeft } dnia"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Masz 7 dni na wypróbowanie funkcji premium za darmo. Tylko podczas pierwszego tygodnia z usługą ${ BRAND_NAME }."
@@ -775,6 +861,12 @@
       "Import in progress:": [
         "Importowanie jest w toku:"
       ],
+      "Imported ${ payload.total } item": [
+        "Zaimportowano ${ payload.total } element",
+        "Zaimportowano ${ payload.total } elementy",
+        "Zaimportowano ${ payload.total } elementów",
+        "Zaimportowano ${ payload.total } elementów"
+      ],
       "Imported on ${ date }": [
         "Zaimportowano: ${ date }"
       ],
@@ -801,6 +893,12 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Zalogowano już do ${ PASS_APP_NAME }. Jeśli próbujesz zalogować się do innego konta, najpierw wyloguj się z rozszerzenia."
+      ],
+      "item": [
+        "element",
+        "elementy",
+        "elementów",
+        "elementów"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Element \"${ payload.item.data.metadata.name }\" został utworzony"
@@ -949,6 +1047,12 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Menu autouzupełniania będzie otwierane w polach logowania."
       ],
+      "The following item could not be imported :": [
+        "Następujący element nie mógł zostać zaimportowany:",
+        "Następujące ${ result.ignored.length } elementy nie mogły zostać zaimportowane:",
+        "Następujące ${ result.ignored.length } elementów nie mogły zostać zaimportowane:",
+        "Następujące ${ result.ignored.length } elementów nie mogły zostać zaimportowane:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Tekst, który próbujesz wkleić, jest dłuższy niż maksymalna dozwolona liczba ${ maxLength } znaków."
       ],
@@ -1021,6 +1125,12 @@
       "You cannot change the mailboxes for this alias.": [
         "Nie możesz zmienić skrzynek pocztowych dla tego aliasu."
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Masz ${ daysRemaining } dzień, aby wypróbować funkcje premium.",
+        "Masz ${ daysRemaining } dni, aby wypróbować funkcje premium.",
+        "Masz ${ daysRemaining } dni, aby wypróbować funkcje premium.",
+        "Masz ${ daysRemaining } dnia, aby wypróbować funkcje premium."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Przekroczono maksymalną liczbę sejfów w obecnej subskrypcji. Elementy mogą być przenoszone tylko do 2 pierwszych sejfów. Ulepsz plan, aby przenosić elementy do innych sejfów."
       ],
@@ -1053,6 +1163,18 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } znak",
+        "${ passwordOptions.options.length } znaki",
+        "${ passwordOptions.options.length } znaków",
+        "${ passwordOptions.options.length } znaków"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } słowo",
+        "${ passwordOptions.options.wordCount } słowa",
+        "${ passwordOptions.options.wordCount } słów",
+        "${ passwordOptions.options.wordCount } słowa"
+      ],
       "1 hour": [
         "1 godzina"
       ],
@@ -1562,6 +1684,14 @@
         "Napisz notatkę"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkownika.",
+        "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników.",
+        "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników.",
+        "Sejfy nie mogą zawierać więcej niż ${ vault.targetMaxMembers } użytkowników."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Ustawienia ${ PASS_APP_NAME }"
@@ -1737,6 +1867,12 @@
       ],
       "Invalid alias prefix": [
         "Przedrostek aliasu jest nieprawidłowy"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Maksymalna długość to ${ maxLength } znak",
+        "Maksymalna długość to ${ maxLength } znaki",
+        "Maksymalna długość to ${ maxLength } znaków",
+        "Maksymalna długość to ${ maxLength } znaków"
       ],
       "Missing alias prefix": [
         "Brak przedrostka aliasu"

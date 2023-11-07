@@ -1108,6 +1108,14 @@
       "Sign in with 2FA": [
         "Masuk dengan 2FA"
       ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } characters": [
+        "Kata sandi harus mengandung minimal ${ length } karakter"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "Cobalah nama pengguna yang lebih pendek (maksimal ${ n } karakter)"
+      ]
     }
   }
 }

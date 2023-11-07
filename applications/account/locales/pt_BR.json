@@ -1117,6 +1117,14 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domínio personalizado",
+        "${ domains } domínios personalizados"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidores"
+      ],
       "${ price } per dedicated server": [
         "${ price } por servidor dedicado"
       ],
@@ -1125,6 +1133,10 @@
       ],
       "${ price } per user": [
         "${ price } por usuário"
+      ],
+      "${ users } user": [
+        "${ users } usuário",
+        "${ users } usuários"
       ]
     },
     "Address action": {
@@ -1437,6 +1449,10 @@
       ]
     },
     "bf2023: renew": {
+      "${ n } month": [
+        "${ n } mês",
+        "os primeiros ${ n } meses"
+      ],
       "the first month": [
         "o primeiro mês"
       ],
@@ -1465,6 +1481,10 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do hide-my-email, compartilhamento de calendário e muito mais."
       ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui suporte para 3 domínios de e-mail personalizados, ${ addresses } endereço de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais.",
+        "Inclui suporte para 3 domínios de e-mail personalizados, ${ addresses } endereços de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
+      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Logins seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
       ],
@@ -1485,6 +1505,10 @@
       ]
     },
     "Billing cycle": {
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
         "Renovação automática por ${ renewPrice }, para ${ renewalLength }"
       ]
@@ -1696,6 +1720,12 @@
         "Compartilhar com o qualquer pessoa"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Mostrar ${ remainingItems } mais",
+        "Mostrar ${ remainingItems } mais"
+      ]
+    },
     "Calendar share permission label": {
       "Edit event details": [
         "Editar detalhes do evento"
@@ -1793,6 +1823,16 @@
       ],
       "Week": [
         "Semana"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } usuário",
+        "${ users } usuários"
+      ],
+      "Total for ${ n } month": [
+        "Total por ${ n } mês",
+        "Total por ${ n } meses"
       ]
     },
     "Checkout summary": {
@@ -2945,6 +2985,10 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } vez",
+        "${ count } vezes"
+      ],
       "Daily": [
         "Diariamente"
       ],
@@ -2953,6 +2997,18 @@
       ],
       "Daily, ${ untilString }": [
         "Diariamente, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "A cada ${ interval } dia",
+        "A cada ${ interval } dias"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "A cada ${ interval } dia, ${ timesString }",
+        "A cada ${ interval } dias, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "A cada ${ interval } dia, ${ untilString }",
+        "A cada ${ interval } dias, ${ untilString }"
       ],
       "until ${ dateString }": [
         "até ${ dateString }"
@@ -3610,6 +3666,14 @@
       "Contact signature not verified": [
         "Assinatura do contato não foi verificada"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Desmarque pelo menos ${ calendarsToFixCount } calendário",
+        "Desmarque pelo menos ${ calendarsToFixCount } calendários"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Desmarque ao menos ${ calendarsToFixCount } calendário ou",
+        "Desmarque ao menos ${ calendarsToFixCount } calendários ou"
+      ],
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
       ],
@@ -3715,6 +3779,10 @@
       "Label name cannot be empty.": [
         "O nome do marcador não pode ser vazio."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Mescle pelo menos ${ calendarsToFixCount } calendário com um calendário existente da ${ BRAND_NAME }",
+        "Mescle pelo menos ${ calendarsToFixCount } calendários com calendários existente da ${ BRAND_NAME }"
+      ],
       "Missing key packet": [
         "Pacote de chave ausente"
       ],
@@ -3790,6 +3858,10 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Ative o suporte a múltiplos usuários antes de adicionar usuários à sua organização."
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Corrija o conflito em destaque para prosseguir.",
+        "Corrija os conflitos em destaque para prosseguir."
+      ],
       "Please generate keys before you try to change your password": [
         "Crie chaves antes de tentar alterar sua senha"
       ],
@@ -3825,6 +3897,10 @@
       ],
       "Process aborted": [
         "Processo abortado"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Destinatário duplicado removido: ${ joinedRecipients }",
+        "Destinatários duplicados removidos: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "A solicitação expirou"
@@ -4037,6 +4113,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Ocorreu um erro inesperado. A importação deve ser reiniciada."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } evento.",
+        "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } eventos."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Seu arquivo ${ formattedFilename } tem um método incorreto e não é possível importá-lo."
@@ -4330,6 +4410,10 @@
       ]
     },
     "Export calendar": {
+      "${ totalProcessed }/${ totalToProcess } event exported": [
+        "${ totalProcessed }/${ totalToProcess } evento exportado",
+        "${ totalProcessed }/${ totalToProcess } eventos exportados"
+      ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Calendário exportado. Você agora pode salvar o arquivo ICS."
       ],
@@ -4668,11 +4752,23 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } conexão VPN",
+        "${ MaxVPN } conexões VPN"
+      ],
       "Access to all countries": [
         "Acesso a todos os países"
       ],
       "Add": [
         "Adicionar"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Adicionar (${ numberOfAddedServers })",
+        "Adicionar (${ numberOfAddedServers })"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Conexão para até ${ plusVpnConnections } dispositivo",
+        "Conexão para até ${ plusVpnConnections } dispositivos"
       ],
       "Fastest VPN servers": [
         "Servidores de VPN mais rápidos"
@@ -4779,6 +4875,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -4790,6 +4890,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Filter Actions": {
@@ -5185,6 +5307,10 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Encontrada ${ items.length } sugestão, use o teclado para navegar.",
+        "Encontradas ${ items.length } sugestões, use o teclado para navegar."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Use as teclas Para cima e Para baixo para acessar e procurar sugestões após a entrada. Pressione Enter para confirmar sua escolha, ou Escape para fechar a caixa de sugestões."
       ]
@@ -5204,6 +5330,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } evento criptografado e adicionado ao seu calendário",
+        "${ totalImported }/${ totalToImport } eventos criptografados e adicionados ao seu calendário"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } evento importado.",
+        "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } eventos importados."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Ocorreu um erro ao criptografar e adicionar seu evento. Nenhum evento pôde ser importado."
       ],
@@ -5238,11 +5372,23 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Eventos importados aparecem no ${ CALENDAR_APP_NAME } como eventos simples, sem organizador nem detalhes de participantes. Para receber atualizações e ver participantes, peça aos organizadores que te convidem usando seu endereço de e-mail da ${ BRAND_NAME }."
       ],
+      "This file contains an event invitation:": [
+        "Este arquivo contém um convite para um evento:",
+        "Este arquivo contém convites eventos:"
+      ],
+      "This file contains an invitation response:": [
+        "Este arquivo contém uma resposta de convite:",
+        "Este arquivo contém respostas a convites:"
+      ],
       "This file contains some data that we cannot import:": [
         "Este arquivo contém alguns dados que não pudemos importar:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } contato criptografado e adicionado à sua lista de contatos",
+        "${ totalImported }/${ totalToImport } contatos criptografados e adicionados à sua lista de contatos"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Ocorreu um erro ao criptografar e adicionar seu contato. Nenhum contato pôde ser importado."
       ],
@@ -5262,6 +5408,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Contato ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } contato",
+        "${ totalContacts } contatos"
       ]
     },
     "Import contact. Contact identifier": {
@@ -5491,6 +5643,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contatos não serão importados. Clique para detalhes"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } de ${ totalEvents } evento não será importado. Expanda para mais detalhes.",
+        "${ totalEventsDiscarded } de ${ totalEvents } eventos não serão importados. Expanda para mais detalhes."
+      ],
       "No contact can be imported. Click for details": [
         "Nenhum contato pôde ser importado. Clique para mais detalhes"
       ],
@@ -5502,6 +5658,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } endereço",
+        "${ amountOfAddresses } endereços"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
@@ -5525,6 +5685,14 @@
       ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } será definido como calendário padrão."
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } novo calendário",
+        "${ calendarsToBeCreatedCount } novos calendários"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } calendário mesclado",
+        "${ calendarsToBeMergedCount } calendários mesclados"
       ],
       "${ current } of ${ total }": [
         "${ current } de ${ total }"
@@ -5556,8 +5724,24 @@
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
         "O ${ MAIL_APP_NAME } suporta assinatura DKIM para domínios personalizados. Para usar autenticação DKIM, adicione o seguinte registro CNAME nas suas configurações de DNS para este domínio. Isso geralmente pode ser feito no painel de controle de sua hospedagem ou registrador de nomes de domínio."
       ],
+      "${ n } address": [
+        "${ n } endereço",
+        "${ n } endereços"
+      ],
       "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
         "${ none } não tem efeito na entrega de e-mail, mas recomendamos ${ quarantine } para uma maior segurança."
+      ],
+      "${ number } city": [
+        "${ number } cidade",
+        "${ number } cidades"
+      ],
+      "${ number } server": [
+        "${ number } servidor",
+        "${ number } servidores"
+      ],
+      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+        "${ numberOfNonPrivateKeys } arquivo enviado não é uma chave privada válida. Verifique e tente novamente.",
+        "${ numberOfNonPrivateKeys } arquivos enviados não são chaves privadas válidas. Verifique e tente novamente."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado servidor${ serverPricePerMonth }"
@@ -5565,17 +5749,65 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } é um programa avançado de proteção de conta, alimentado por sofisticados sistemas de IA e especialistas, trabalhando ininterruptamente para proteger você de pessoas mal-intencionadas e ameaças à segurança."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } pasta encontrada",
+        "${ providerFoldersNumLocalized } pastas encontradas"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } marcador encontrado no Gmail",
+        "${ providerFoldersNumLocalized } marcadores encontrados no Gmail"
+      ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } servidor ainda está sendo configurado. Isso geralmente leva cerca de ${ provisioningDuration }.",
+        "${ provisioningCounter } servidores ainda estão sendo configurados. Isso geralmente leva cerca de ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } a mais",
+        "${ remainingAddresses.length } a mais"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } endereço adicional",
+        "${ remainingAddresses.length } endereços adicionais"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } pasta selecionada",
+        "${ selectedFoldersCount } pastas selecionadas"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } marcador selecionado",
+        "${ selectedFoldersCount } marcadores selecionados"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } pasta selecionada",
+        "${ selectedFoldersCountLocalized } pastas selecionadas"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } marcador selecionado",
+        "${ selectedFoldersCountLocalized } marcadores selecionados"
+      ],
       "${ storage } storage": [
         "${ storage } de armazenamento"
       ],
       "${ storageSize } storage": [
         "${ storageSize } de armazenamento"
       ],
+      "${ userFound } user found": [
+        "${ userFound } usuário encontrado",
+        "${ userFound } usuários encontrados"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } necessária para conexão em nível de país."
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "É necessário o plano ${ vpnPlus } para usar o recurso Secure Core."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membro)",
+        "(${ memberCount } membros)"
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /mês)"
@@ -5594,6 +5826,10 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } de armazenamento bônus"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } conexão para ${ VPN_APP_NAME } (permite que você conecte mais dispositivos na VPN)",
+        "+${ organization.BonusVPN } conexões para ${ VPN_APP_NAME } (permite que você conecte mais dispositivos na VPN)"
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Convide amigos para ${ BRAND_NAME }"
@@ -5676,6 +5912,18 @@
       "Add multiple users to your organization at once.": [
         "Adicione vários usuários na sua organização de uma só vez."
       ],
+      "Add server (${ availableAddedCount } available)": [
+        "Adicionar servidor (${ availableAddedCount } disponíveis)",
+        "Adicionar servidor (${ availableAddedCount } disponíveis)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Adicionando ${ addedServerCount } servidor gateway",
+        "Adicionando ${ addedServerCount } servidores gateway"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Adicionando servidor gateway: ${ serverNumber } / ${ total }",
+        "Adicionando servidores gateway: ${ serverNumber } / ${ total }"
+      ],
       "Additional options": [
         "Opções adicionais"
       ],
@@ -5688,11 +5936,23 @@
       "Align right": [
         "Alinhar à direita"
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Tudo (${ totalFoldersCount } pasta)",
+        "Todas (${ totalFoldersCount } pastas)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Tudo (${ totalFoldersCount } marcador)",
+        "Todos (${ totalFoldersCount } marcadores)"
+      ],
       "All keys successfully reactivated": [
         "Todas as chaves foram reativadas"
       ],
       "All your changes will be lost.": [
         "Todas as suas alterações serão perdidas."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }",
+        "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Alocado"
@@ -5892,6 +6152,10 @@
       "Country code": [
         "Código do país"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Criar ${ calendarsToBeCreatedCount } novo calendário",
+        "Criar ${ calendarsToBeCreatedCount } novos calendários"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Crie um marcador para as mensagens importadas, um intervalo de tempo para esta importação e as pastas que deseja de importar."
       ],
@@ -5912,6 +6176,10 @@
       ],
       "Create your first Gateway": [
         "Crie seu primeiro gateway"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Criando servidor gateway: ${ serverNumber } / ${ total }",
+        "Criando servidores gateway: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "Criando sua conta"
@@ -5964,6 +6232,10 @@
       "Delete link?": [
         "Excluir link?"
       ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Deletando ${ deletedServerCount } servidor gateway",
+        "Deletando ${ deletedServerCount } servidores gateway"
+      ],
       "Discover ProtectBuy logo": [
         "Logotipo do Discover ProtectBuy"
       ],
@@ -5975,6 +6247,10 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Você deseja revogar todas as outras sessões deixando apenas a atual?"
+      ],
+      "domain used": [
+        "domínio usado",
+        "domínios usados"
       ],
       "Done": [
         "Concluído"
@@ -6231,6 +6507,10 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "As imagens foram removidas porque não são permitidas na resposta automática"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
+      ],
       "Import from": [
         "Importar de"
       ],
@@ -6296,6 +6576,10 @@
       ],
       "Internet connection restored.": [
         "Conexão com a internet restaurada."
+      ],
+      "Invite successfully sent": [
+        "Convite enviado",
+        "Convites enviados"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Parece que alguns de seus dados estão criptografados e bloqueados."
@@ -6534,6 +6818,10 @@
       "P2P": [
         "P2P"
       ],
+      "Paid for a ${ rewardMonths } month plan": [
+        "Pago por um plano de ${ rewardMonths } mês",
+        "Pago por um plano de ${ rewardMonths } meses"
+      ],
       "Paid for a monthly plan": [
         "Pago para o plano mensal"
       ],
@@ -6560,6 +6848,14 @@
       ],
       "Plan upgrade required": [
         "Upgrade de plano necessário"
+      ],
+      "Please add a password for the user on row": [
+        "Adicione uma senha para esse usuário na linha",
+        "Adicione as senhas para esses usuários nas linhas"
+      ],
+      "Please add an email address for the user on row": [
+        "Adicione um endereço de e-mail para esse usuário na linha",
+        "Adicione os endereços de e-mail para esses usuários nas linhas"
       ],
       "Please authenticate your card in the verification tab.": [
         "Autentique seu cartão na guia de verificação."
@@ -6801,6 +7097,10 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "O SPF é usado para especificar quem tem permissão de enviar e-mails usando este domínio, por isso recomendamos que inclua o ${ MAIL_APP_NAME } em seu registro SPF. Adicione o seguinte registro TXT ao seu DNS. Isso geralmente pode ser feito no painel de controle de sua hospedagem ou registrador de nomes de domínio."
       ],
+      "Step ${ step }": [
+        "Etapa ${ step }",
+        "Etapas ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Armazenamento atribuído a outros usuários desta organização"
       ],
@@ -6875,6 +7175,18 @@
       ],
       "The following address is available:": [
         "O seguinte endereço está disponível:"
+      ],
+      "The following address is invalid.": [
+        "O seguinte endereço não é válido.",
+        "Os seguintes endereços não são válidos."
+      ],
+      "The following address is unavailable.": [
+        "O seguinte endereço está indisponível.",
+        "Os seguintes endereços estão indisponíveis."
+      ],
+      "The following address was not created.": [
+        "O seguinte endereço não foi criado.",
+        "Os seguintes endereços não foram criados."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "Os seguintes membros receberão um e-mail solicitando que eles ativem a autenticação de dois fatores o mais rápido possível."
@@ -7314,6 +7626,14 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Você está atualmente iniciado sessão como ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Você está atualmente usando ${ ipCount } dos seus ${ ipAddresses } servidores dedicados disponíveis.",
+        "Você está atualmente usando ${ ipCount } dos seus ${ ipAddresses } servidores dedicados disponíveis."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Você está usando atualmente ${ organization.UsedMembers } de sua ${ organization.MaxMembers } licença de usuário disponível.",
+        "Você está usando atualmente ${ organization.UsedMembers } de suas ${ organization.MaxMembers } licenças de usuário disponíveis."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Você iniciou sessão à conta ${ memberAddress }."
       ],
@@ -7322,9 +7642,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Você pode verificar o progresso ${ importProgressLink }."
-      ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "Você pode personalizar e baixar suas faturas para fins contábeis."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Você pode editar isso uma só vez para garantir o endereço de e-mail coreto para verificar."
@@ -7337,6 +7654,22 @@
       ],
       "You can import one data type at a time.": [
         "Você pode importar uma categoria de dado por vez."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova links de calendários compartilhados e qualquer usuário da ${ BRAND_NAME } com quem você compartilhou seus calendários antes de cancelar sua assinatura."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova os links do calendário compartilhado antes de cancelar sua assinatura do ${ MAIL_SHORT_APP_NAME }.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova os links do calendário compartilhado antes de cancelar sua assinatura do${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova os links do calendário compartilhado antes de cancelar sua assinatura.",
+        "Você pode manter até ${ MAX_CALENDARS_FREE } calendários. Remova os links do calendário compartilhado antes de cancelar sua assinatura."
       ],
       "You can now access and manage the account as an administrator.": [
         "Você agora pode acessar e gerenciar a conta como um administrador."
@@ -7353,6 +7686,10 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Você pode usar as seguintes credenciais para se conectar a um servidor do ${ VPN_APP_NAME } usando um aplicativo de VPN de código aberto de terceiros, como Tunnelblick para macOS ou OpenVPN para GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Você não pode enviar mais de ${ emailSendLimitNumber } convite por e-mail nas próximas 24 horas",
+        "Você não pode enviar mais de ${ emailSendLimitNumber } convites por e-mail nas próximas 24 horas"
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Você não pode indicar usuários do ${ MAIL_APP_NAME }."
       ],
@@ -7361,6 +7698,10 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Você não definiu um método de recuperação, então a recuperação de conta não será possível se você esquecer sua senha. Continuar sem definir o método de recuperação?"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Você tem ${ availableCount } servidor dedicado disponível.",
+        "Você tem ${ availableCount } servidores dedicados disponíveis."
       ],
       "You have no calendars to export.": [
         "Você não tem calendários para exportar."
@@ -7482,6 +7823,10 @@
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
       ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Sua importação de ${ accounts } está temporariamente atrasada.",
+        "Suas importações de ${ accounts } estão temporariamente atrasadas."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Suas informações estão seguras conosco. Só entraremos em contato quando for necessário para fornecer nossos serviços."
       ],
@@ -7548,11 +7893,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Você pode adicionar um método de pagamento para renovar sua assinatura automaticamente. Outros métodos de pagamento também estão disponíveis."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Add your name (or company name) and address to your invoices.": [
-        "Adicione seu nome (ou nome da empresa) e o endereço para suas faturas."
       ]
     },
     "Info on errors": {
@@ -7937,6 +8277,22 @@
       "${ MAIL_APP_NAME } footer": [
         "Rodapé do ${ MAIL_APP_NAME }"
       ],
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } dia",
+        "${ nbDay } dias"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } ano",
+        "${ nbYear } anos"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } de ${ MaxAddresses } endereço de e-mail",
+        "${ UsedAddresses } de ${ MaxAddresses } endereços de e-mail"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
       ],
@@ -8179,9 +8535,6 @@
       ],
       "Current email": [
         "E-mail atual"
-      ],
-      "Customize invoices": [
-        "Personalizar faturas"
       ],
       "Daily email notifications": [
         "Notificações diárias por e-mail"
@@ -9109,8 +9462,16 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } membro da sua organização usa a autenticação de dois fatores.",
+        "${ twoFAMembers.length }/${ members.length } membros da sua organização usam a autenticação de dois fatores."
+      ],
       "Almost there": [
         "Quase lá"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Quantidade de calendário criado: ${ createdCalendarCount } de ${ calendarsToBeCreated }",
+        "Quantidade de calendários criados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Conectando-se ao seu provedor de e-mail"
@@ -9139,6 +9500,24 @@
         "Ativar registros de autenticação"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importar todas as mensagens de ${ itemsToImportCount } pasta e marcá-las como",
+        "Importar todas as mensagens de ${ itemsToImportCount } pastas e marcá-las como"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importar todas as mensagens de ${ itemsToImportCount } marcador e marcá-las como",
+        "Importar todas as mensagens de ${ itemsToImportCount } marcadores e marcá-las como"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } pasta e marcá-las como",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } pastas e marcá-las como"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcador e marcá-las como",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcadores e marcá-las como"
+      ]
+    },
     "mail_signup_2023: Info": {
       "Secure email that protects your privacy": [
         "E-mail seguro que protege sua privacidade"
@@ -9150,6 +9529,18 @@
       ],
       "This feature is temporarily unavailable": [
         "Este recurso está temporariamente indisponível"
+      ]
+    },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Você pode criar até ${ MAX_LINKS_PER_CALENDAR } link por calendário. Para criar um novo link para este calendário, exclua um da lista abaixo.",
+        "Você pode criar até ${ MAX_LINKS_PER_CALENDAR } links por calendário. Para criar um novo link para este calendário, exclua um da lista abaixo."
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "Você atingiu o número máximo de ${ MAX_CALENDAR_MEMBERS } membro.",
+        "Você atingiu o número máximo de ${ MAX_CALENDAR_MEMBERS } membros."
       ]
     },
     "Member action": {
@@ -9278,6 +9669,18 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "A cada ${ interval } mês ${ onDayString }",
+        "A cada ${ interval } meses ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "A cada ${ interval } mês ${ onDayString }, ${ timesString }",
+        "A cada ${ interval } meses ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "A cada ${ interval } mês ${ onDayString }, ${ untilString }",
+        "A cada ${ interval } meses ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }": [
         "Mensal ${ onDayString }"
       ],
@@ -9514,6 +9917,62 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } calendário",
+        "${ n } calendários"
+      ],
+      "${ n } custom email domain": [
+        "${ n } domínio de e-mail personalizado",
+        "${ n } domínios de e-mail personalizados"
+      ],
+      "${ n } email address": [
+        "${ n } endereço de e-mail",
+        "${ n } endereços de e-mail/aliases"
+      ],
+      "${ n } email address per user": [
+        "${ n } endereço de e-mail por usuário",
+        "${ n } endereços de e-mail por usuário"
+      ],
+      "${ n } filter": [
+        "${ n } filtro",
+        "${ n } filtros"
+      ],
+      "${ n } folder": [
+        "${ n } pasta",
+        "${ n } pastas"
+      ],
+      "${ n } folder and label": [
+        "${ n } pasta e marcador",
+        "${ n } pastas e marcadores"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } alias do Hide-my-email",
+        "${ n } aliases do Hide-my-email"
+      ],
+      "${ n } label": [
+        "${ n } marcador",
+        "${ n } marcadores"
+      ],
+      "${ n } message per day": [
+        "${ n } mensagem por dia",
+        "${ n } mensagens por dia"
+      ],
+      "${ n } vault": [
+        "${ n } cofre",
+        "${ n } cofres"
+      ],
+      "${ n } VPN connection": [
+        "${ n } conexão VPN",
+        "${ n } conexões VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } conexão VPN por usuário",
+        "${ n } conexões VPN por usuário"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } com ${ n } alias de hide-my-email",
+        "${ PASS_APP_NAME } com ${ n } aliases de hide-my-email"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } com alias de hide-my-email ilimitados"
       ],
@@ -9652,6 +10111,10 @@
       "High-speed Swiss VPN that protects your privacy": [
         "VPN suíça de alta velocidade que protege a sua privacidade"
       ],
+      "High-speed VPN on ${ n } device": [
+        "VPN de alta velocidade em ${ n } dispositivo",
+        "VPN de alta velocidade em ${ n } dispositivos"
+      ],
       "HTML signatures": [
         "Assinaturas HTML"
       ],
@@ -9688,6 +10151,10 @@
       "Priority support & live chat": [
         "Suporte prioritário e chat ao-vivo"
       ],
+      "Protect ${ n } device at a time": [
+        "Proteja ${ n } dispositivo por vez",
+        "Proteja ${ n } dispositivos por vez"
+      ],
       "Router support": [
         "Suporte a roteador"
       ],
@@ -9702,6 +10169,10 @@
       ],
       "Send & receive invitations": [
         "Enviar e receber convites"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Servidores em ${ vpnServersCountData.paid.countries }+ país",
+        "Servidores em ${ vpnServersCountData.paid.countries }+ países"
       ],
       "Share calendar via link": [
         "Compartilhe o calendário por link"
@@ -9786,6 +10257,10 @@
       ],
       "User session management": [
         "Gerenciamento de sessões de usuário"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Compartilhar do cofre (até ${ n } pessoa)",
+        "Compartilhar cofre (até ${ n } pessoa)"
       ]
     },
     "new_plans: feature info": {
@@ -9920,6 +10395,12 @@
         "/mês"
       ]
     },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "Você ainda tem ${ daysRemaining } dia restante na sua conta ${ currentPlanName }.",
+        "Você ainda tem ${ daysRemaining } dias restantes na sua conta ${ currentPlanName }."
+      ]
+    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Clicando em \"Pagar\", você concorda com os nossos ${ termsAndConditions }"
@@ -10013,6 +10494,10 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Crie vários endereços de e-mail para suas identidades on-line (por exemplo JoaoLojas@${ domain } para contas de lojas e JoaoNoticias@${ domain } para assinaturas de notícias)"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Crie até ${ n } calendário ou adicione calendários de amigos, familiares, colegas e organizações",
+        "Crie até ${ n } calendários ou adicione calendários de amigos, familiares, colegas e organizações"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Crie até ${ n } endereços de e-mail ou aliases que você pode atribuir aos membros da sua família. Utilize-os como identidades digitais como, por exemplo, JoaoDasCompras@${ domain } para contas em e-commerce."
@@ -10216,6 +10701,10 @@
       "Cover more ground with support for 10 custom email domains": [
         "Tenha mais opções com o suporte para 10 domínios de e-mail personalizados"
       ],
+      "Create up to ${ n } calendar": [
+        "Crie até ${ n } calendário",
+        "Crie até ${ n } calendários"
+      ],
       "Dedicated Account manager": [
         "Gerente de contas dedicado"
       ],
@@ -10297,6 +10786,10 @@
       "Invitation revoked": [
         "Convite revogado"
       ],
+      "Member added": [
+        "Membro adicionado",
+        "Membros adicionados"
+      ],
       "Member deleted": [
         "Membro excluído"
       ]
@@ -10331,8 +10824,24 @@
       "at time of event": [
         "na hora do evento"
       ],
+      "day before": [
+        "dia antes",
+        "dias antes"
+      ],
+      "hour before": [
+        "hora antes",
+        "horas antes"
+      ],
+      "minute before": [
+        "minuto antes",
+        "minutos antes"
+      ],
       "on the same day": [
         "no mesmo dia"
+      ],
+      "week before": [
+        "semana antes",
+        "semanas antes"
       ]
     },
     "Oauth instructions": {
@@ -10608,6 +11117,18 @@
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } para obter mais armazenamento ou remova algo do armazenamento para liberar espaço."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Seu plano inclui no máximo ${ availableAddresses } endereço a mais.",
+        "Seu plano inclui no máximo ${ availableAddresses } endereços a mais."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Seu plano inclui um máximo de ${ availableNumberOfMembers } usuário para a organização.",
+        "Seu plano inclui um máximo de ${ availableNumberOfMembers } usuários para a organização."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Seu plano inclui no máximo ${ availableVPNAccess } conta VPN a mais.",
+        "Seu plano inclui no máximo ${ availableVPNAccess } contas VPN a mais."
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Seu plano inclui no máximo ${ humanReadableAvailableSpace } a mais de armazenamento."
@@ -11013,17 +11534,16 @@
         "seudominio.com"
       ]
     },
-    "Placeholder for custom invoice text": {
-      "Add your name (or company name) and address to your invoices": [
-        "Adicione seu nome (ou nome da empresa) e o endereço para suas faturas"
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contato"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "Selecione o número de usuários a serem incluídos em seu plano. Cada usuário adicional custa ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Se você precisar de mais de ${ maxUsers } conta de usuário, ${ contact } nossa equipe de vendas.",
+        "Se você precisar de mais de ${ maxUsers } contas de usuário, ${ contact } nossa equipe de vendas."
       ]
     },
     "Price": {
@@ -11275,14 +11795,38 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dia",
+        "${ timeRemaining.inDays } dias"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } horas"
+      ],
       "Didn’t make this request?": [
         "Não fez essa solicitação?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Se você não pediu para redefinir sua senha, cancele a solicitação agora."
       ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inDays } dia para alterar a senha.",
+        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inDays } dias para alterar a senha."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inHours } hora para alterar a senha.",
+        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inHours } horas para alterar a senha."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vá ao dispositivo onde a solicitação (na sessão iniciada) para mudar a sua senha."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Essa permissão expira em ${ timeRemaining.inDays } dia",
+        "Essa permissão expira em ${ timeRemaining.inDays } dias"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Essa permissão expira em ${ timeRemaining.inHours } hora",
+        "Essa permissão expira em ${ timeRemaining.inHours } horas"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Agora você pode alterar a senha da conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
@@ -11372,6 +11916,10 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } hora mais",
+        "${ gracePeriodHoursRemaining } horas mais"
+      ],
       "Didn’t make this request?": [
         "Não fez essa solicitação?"
       ],
@@ -11384,11 +11932,19 @@
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "A redefinição de senha estará disponível em ${ boldDate }. Isso te dará tempo para cancelar quaisquer solicitações fraudulentas."
       ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Solicitação de redefinição de senha (${ user.Email }). Você pode alterar sua senha em ${ hoursRemaining } horas.",
+        "Solicitação de redefinição de senha (${ user.Email }). Você pode alterar sua senha em ${ hoursRemaining } horas."
+      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Para ter certeza de que é realmente você quem está tentando redefinir sua senha, aguardamos 72 horas antes de aprovar as solicitações. Você poderá alterar a senha em ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Recebemos a solicitação de redefinição de senha para ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Pode alterar sua senha em ${ gracePeriodHoursRemaining } hora.",
+        "Pode alterar sua senha em ${ gracePeriodHoursRemaining } horas."
       ]
     },
     "session_recovery:in_progress:link": {
@@ -11439,6 +11995,10 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "Solicitar redefinição de senha?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Pode redefinir sua senha em ${ gracePeriodHoursRemaining } hora.",
+        "Pode redefinir sua senha em ${ gracePeriodHoursRemaining } horas."
       ]
     },
     "session_recovery:settings:action": {
@@ -11464,6 +12024,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } horas"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } está agora disponível"
       ],
@@ -11561,6 +12125,12 @@
         "Para convidar usuários fora da ${ BRAND_NAME }, compartilhe seu calendário com um link."
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Você excedeu o máximo de ${ MAX_CALENDAR_MEMBERS } membros por calendário",
+        "Você excedeu o máximo de ${ MAX_CALENDAR_MEMBERS } membros por calendário"
+      ]
+    },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
         "Adicione as contas da ${ BRAND_NAME } com as quais você deseja compartilhar ${ calendarName }. Vamos enviar um convite para eles."
@@ -11641,6 +12211,30 @@
         "Obtenha o plano Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dia",
+        "${ days } dias"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minutos",
+        "${ minutes } minutos"
+      ],
+      "${ seconds } second": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } mês GRÁTIS",
+        "${ n } meses GRÁTIS"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 usuário"
@@ -11704,6 +12298,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
       "/ month": [
         "/ mês"
       ],
@@ -11882,6 +12480,58 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } servidor dedicado",
+        "${ ipAddresses } servidores dedicados"
+      ],
+      "${ maxVpn } high-speed VPN connection": [
+        "${ maxVpn } conexão VPN de alta velocidade",
+        "${ maxVpn } conexões VPN de alta velocidade"
+      ],
+      "${ n } calendar": [
+        "${ n } calendário",
+        "${ n } calendarios"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendário por usuario",
+        "${ n } calendarios por usuario"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } conexão VPN de alta velocidade",
+        "${ n } conexões VPN de alta velocidade"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } conexão VPN de alta velocidade por usuário",
+        "${ n } conexões VPN de alta velocidade por usuário"
+      ],
+      "${ n } VPN connection": [
+        "${ n } conexão VPN",
+        "${ n } conexões VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } conexões VPN por usuário",
+        "${ n } conexões VPN por usuário"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } endereço",
+        "${ UsedAddresses } endereços"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } de ${ MaxAddresses } endereço de e-mail",
+        "${ UsedAddresses } de ${ MaxAddresses } endereços de e-mail"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } calendário",
+        "${ UsedCalendars } calendários"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } de ${ MaxDomains } domínio personalizado",
+        "${ UsedDomains } de ${ MaxDomains } domínios personalizados"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } de ${ MaxMembers } usuário",
+        "${ UsedMembers } de ${ MaxMembers } usuários"
+      ],
       "1 email address": [
         "1 endereço de e-mail"
       ],
@@ -11893,6 +12543,10 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "Bloqueador de anúncios integrado (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "VPN de alta velocidade em ${ maxVpn } dispositivo",
+        "VPN de alta velocidade em ${ maxVpn } dispositivos"
       ]
     },
     "Subscription change warning": {
@@ -12319,6 +12973,34 @@
         "Sem tokens de SMTP encontrados"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 hora",
+        "${ hoursInt }.5 horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ]
+    },
     "Timezone search placeholder": {
       "Search time zones": [
         "Pesquisar fusos horários"
@@ -12402,9 +13084,6 @@
       ],
       "Add filter": [
         "Adicionar filtro"
-      ],
-      "Add invoice details": [
-        "Adicionar detalhes na fatura"
       ],
       "Add new user": [
         "Adicionar novo usuário"
@@ -12559,6 +13238,10 @@
       "Couldn’t create accounts": [
         "Não foi possível criar contas."
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "Criar ${ selectedUserIds.length } usuário",
+        "Criar ${ selectedUserIds.length } usuários"
+      ],
       "Create a new Gateway": [
         "Criar um novo gateway"
       ],
@@ -12663,6 +13346,10 @@
       ],
       "Delete logs": [
         "Excluir registros"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Excluir o servidor (você ainda poderá recuperá-lo por ${ days } dia)",
+        "Excluir o servidor (você ainda poderá recuperá-lo por ${ days } dias)"
       ],
       "Delete user": [
         "Excluir usuário"
@@ -12775,6 +13462,10 @@
       "External PGP settings": [
         "Configurações externas do PGP"
       ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Erro ao criar ${ failedUsers.length } conta\nde usuário.",
+        "Erro ao criar ${ failedUsers.length } contas de usuário."
+      ],
       "Filters": [
         "Filtros"
       ],
@@ -12834,6 +13525,10 @@
       ],
       "Import and export": [
         "Importar e exportar"
+      ],
+      "Import as simple event?": [
+        "Importar com um evento simples?",
+        "Importar com eventos simples?"
       ],
       "Import contacts": [
         "Importar contatos"
@@ -13149,6 +13844,14 @@
       ],
       "Success": [
         "Sucesso"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "${ localSuccessfullyCreatedUsers.length } conta de usuário criada",
+        "${ localSuccessfullyCreatedUsers.length } contas de usuário criadas"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Conta de usuário ${ successfullyCreatedUsers.length } criada",
+        "Contas de usuário ${ successfullyCreatedUsers.length } criadas"
       ],
       "Summary": [
         "Resumo"
@@ -13590,6 +14293,10 @@
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
         "Faça upgrade para o plano ${ passPlusPlanName } e tenha acesso a aliases do Hide-my-email ilimitados."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
+        "Atualize para ${ planName } para conectar até ${ n } dispositivo à VPN de uma só vez",
+        "Atualize para ${ planName } para conectar até ${ n } dispositivos à VPN de uma só vez"
       ]
     },
     "Upgrade notice": {
@@ -13623,6 +14330,16 @@
         "Administrador principal"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "A senha deve conter ao menos ${ length } caractere",
+        "A senha deve conter ao menos ${ length } caracteres"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Tente um nome de usuário mais curto (máximo de ${ n } caractere)",
+        "Tente um nome de usuário mais curto (máximo de ${ n } caracteres)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Clique para reproduzir o vídeo"
@@ -13648,6 +14365,24 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now e muito mais."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } servidor",
+        "${ n }+ servidores"
+      ],
+      "${ n } VPN connection": [
+        "${ n } conexão VPN",
+        "${ n } conexões VPN"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } em ${ numberOfCountries } país",
+        "${ numberOfServers } em ${ numberOfCountries } países"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } em ${ numberOfCountries } país",
+        "${ numberOfServers } em ${ numberOfCountries } países"
       ]
     },
     "vpn_2step: billing": {
@@ -13684,6 +14419,14 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
+      "${ n } year": [
+        "${ n } ano",
+        "${ n } anos"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Experimente ${ upsellPlanName } sem riscos"
       ],
@@ -13801,6 +14544,114 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "A cada ${ interval } semana, na(o) ${ multipleDaysString }",
+        "A cada ${ interval } semanas, na(o) ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "A cada ${ interval } semana, na(o) ${ multipleDaysString }, ${ timesString }",
+        "A cada ${ interval } semanas, na(o) ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "A cada ${ interval } semana, na(o) ${ multipleDaysString }, ${ untilString }",
+        "A cada ${ interval } semanas, na(o) ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "A cada ${ interval } semana, todos os dias",
+        "A cada ${ interval } semanas, todos os dias"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "A cada ${ interval } semana, todos os dias, às ${ timesString }",
+        "A cada ${ interval } semanas, todos os dias, às ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "A cada ${ interval } semana, todos os dias, ${ untilString }",
+        "A cada ${ interval } semanas, todos os dias, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "A cada ${ interval } semana, na sexta-feira",
+        "A cada ${ interval } semanas, na sexta-feira"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "A cada ${ interval } semana, na sexta-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na sexta-feira, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "A cada ${ interval } semana, na sexta-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na sexta-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "A cada ${ interval } semana, na segunda-feira",
+        "A cada ${ interval } semanas, na segunda-feira"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "A cada ${ interval } semana, na segunda-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na segunda-feira, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "A cada ${ interval } semana, na segunda-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na segunda-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "A cada ${ interval } semana, no sábado",
+        "A cada ${ interval } semanas, no sábado"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "A cada ${ interval } semana, no sábado, às ${ timesString }",
+        "A cada ${ interval } semanas, no sábado, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "A cada ${ interval } semana, no sábado, ${ untilString }",
+        "A cada ${ interval } semanas, no sábado, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "A cada ${ interval } semana, no domingo",
+        "A cada ${ interval } semanas, no domingo"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "A cada ${ interval } semana, no domingo, às ${ timesString }",
+        "A cada ${ interval } semanas, no domingo, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "A cada ${ interval } semana, no domingo, ${ untilString }",
+        "A cada ${ interval } semanas, no domingo, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "A cada ${ interval } semana, na quinta-feira",
+        "A cada ${ interval } semanas, na quinta-feira"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "A cada ${ interval } semana, na quinta-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na quinta-feira, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "A cada ${ interval } semana, na quinta-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na quinta-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "A cada ${ interval } semana, na terça-feira",
+        "A cada ${ interval } semanas, na terça-feira"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "A cada ${ interval } semana, na terça-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na terça-feira, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "A cada ${ interval } semana, na terça-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na terça-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "A cada ${ interval } semana, na quarta-feira",
+        "A cada ${ interval } semanas, na quarta-feira"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "A cada ${ interval } semana, na quarta-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na quarta-feira, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "A cada ${ interval } semana, na quarta-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na quarta-feira, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Semanalmente em ${ multipleDaysString }"
       ],
@@ -13907,6 +14758,18 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "A cada ${ interval } ano",
+        "A cada ${ interval } anos"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "A cada ${ interval } ano, ${ timesString }",
+        "A cada ${ interval } anos, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "A cada ${ interval } ano, ${ untilString }",
+        "A cada ${ interval } anos, ${ untilString }"
+      ],
       "Yearly": [
         "Anualmemnte"
       ],

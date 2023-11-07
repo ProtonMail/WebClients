@@ -345,6 +345,11 @@
         "Escriu-nos a Twitter"
       ]
     },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Obtingui l’oferta"
+      ]
+    },
     "Button": {
       "More info": [
         "Més informació"
@@ -415,6 +420,10 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "No s'ha pogut eliminar la caixa forta \"${ payload.content.name }\""
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "S'ha detectat ${ errors.length } fila CSV corrupta",
+        "S'han detectat ${ errors.length } files CSV corruptes"
+      ],
       "Editing item failed": [
         "No s'ha pogut editar l'element"
       ],
@@ -456,6 +465,9 @@
       ],
       "Invalid password manager": [
         "Gestor de contrasenya invàlid"
+      ],
+      "Invalid URL": [
+        "L'URL no és vàlida."
       ],
       "Invitation could not be accepted": [
         "No es pot acceptar la invitació"
@@ -566,6 +578,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -579,6 +595,28 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "gigabyte",
+        "gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "megabyte",
+        "megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         "Millora a un pla de pagament per crear diverses caixes fortes."
@@ -588,6 +626,34 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "S'ha descartat l'actualització de \"${ payload.item.data.metadata.name }\""
+      ],
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elements"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } element",
+        "${ itemCount } elements"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } membre",
+        "${ memberCount } membres"
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } vegada",
+        "${ revisionNumber } vegades"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } element",
+        "${ totalImportedItems } elements"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } element",
+        "${ totalItems } elements"
+      ],
+      "${ trialDaysLeft } day left": [
+        "Queda ${ trialDaysLeft } dia",
+        "Queden ${ trialDaysLeft } dies"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hi ha disponible una nova versió de ${ PASS_APP_NAME }. Actualitzeu-lo per gaudir de les últimes característiques i correccions d'errors."
@@ -676,6 +742,10 @@
       "Here you will find all the necessary information to get you started.": [
         "Aquí trobareu tota la informació necessària per a començar."
       ],
+      "Imported ${ payload.total } item": [
+        "S'ha importat ${ payload.total } element",
+        "S'han importat ${ payload.total } elements"
+      ],
       "Imported on ${ date }": [
         "Importat ${ date }"
       ],
@@ -702,6 +772,10 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Sembla que ja heu iniciat sessió a ${ PASS_APP_NAME }. Si esteu intentant iniciar sessió amb un altre compte, tanqueu primer la sessió de l'extensió."
+      ],
+      "item": [
+        "element",
+        "elements"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "S'ha creat l'element \"${ payload.item.data.metadata.name }\""
@@ -832,6 +906,10 @@
       "Thank you, the problem has been reported": [
         "Gràcies, s'ha informat del problema"
       ],
+      "The following item could not be imported :": [
+        "No s'ha pogut importar l'element següent:",
+        "No s'han pogut importar els ${ result.ignored.length } elements següents:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "El text que esteu intentant enganxar és més llarg que la longitud màxima permesa de ${ maxLength } caràcters."
       ],
@@ -924,6 +1002,14 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length }/ caràcter",
+        "${ passwordOptions.options.length }/ caràcters"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } paraula",
+        "${ passwordOptions.options.wordCount } paraules"
+      ],
       "1 hour": [
         "1 hora"
       ],
@@ -1458,6 +1544,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gaudint ${ PASS_APP_NAME }?"
       ],
+      "Enter your PIN": [
+        "Introduïu el vostre codi PIN"
+      ],
       "Fill & copy password": [
         "Emplena i copia la contrasenya"
       ],
@@ -1549,6 +1638,9 @@
       ],
       "Url is invalid": [
         "Url no vàlida"
+      ],
+      "URL is invalid": [
+        "L'URL no és vàlida."
       ]
     },
     "Warning": {

@@ -1117,6 +1117,18 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } карыстальніцкі дамен",
+        "${ domains } карыстальніцкія дамены",
+        "${ domains } карыстальніцкіх даменаў",
+        "${ domains } карыстальніцкіх даменаў"
+      ],
+      "${ ips } server": [
+        "${ ips } сервер",
+        "${ ips } серверы",
+        "${ ips } сервераў",
+        "${ ips } сервераў"
+      ],
       "${ price } per dedicated server": [
         "${ price } за вылучаны сервер"
       ],
@@ -1125,6 +1137,12 @@
       ],
       "${ price } per user": [
         "${ price } за карыстальніка"
+      ],
+      "${ users } user": [
+        "${ users } карыстальнік",
+        "${ users } карыстальнікі",
+        "${ users } карыстальнікаў",
+        "${ users } карыстальнікаў"
       ]
     },
     "Address action": {
@@ -1437,6 +1455,12 @@
       ]
     },
     "bf2023: renew": {
+      "${ n } month": [
+        "${ n } месяц",
+        "першыя ${ n } месяцы",
+        "першыя ${ n } месяцаў",
+        "першыя ${ n } месяцаў"
+      ],
       "the first month": [
         "першы месяц"
       ],
@@ -1465,6 +1489,12 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Уключае падтрымку 1 карыстальніцкага дамена электроннай пошты, 10 адрасоў электроннай пошты, 10 псеўданімаў hide-my-email, абагуленне календара і іншыя функцыі."
       ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адраса электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі.",
+        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адрасоў электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі.",
+        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адрасоў электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі.",
+        "Уключае падтрымку для 3 карыстальніцкіх даменаў электроннай пошты, адрасоў электроннай пошты ${ addresses } , неабмежаваную колькасць псеўданімаў Hide-my-email, абагуленне календара і іншыя функцыі."
+      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Бяспечныя запісы ўваходу на ўсіх вашых прыладах. Уключае неабмежаваную колькасць псеўданімаў, абагульненне, інтэграцыю з 2ФА і іншыя функцыі."
       ],
@@ -1485,6 +1515,12 @@
       ]
     },
     "Billing cycle": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцаў"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
         "Аўтаматычнае абнаўленне па кошце ${ renewPrice } за перыяд часу ${ renewalLength }"
       ]
@@ -1696,6 +1732,14 @@
         "Абагуліць з усімі"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Паказаць яшчэ ${ remainingItems }",
+        "Паказаць яшчэ ${ remainingItems }",
+        "Паказаць яшчэ ${ remainingItems }",
+        "Паказаць яшчэ ${ remainingItems }"
+      ]
+    },
     "Calendar share permission label": {
       "Edit event details": [
         "Рэдагаваць падрабязнасці падзеі"
@@ -1793,6 +1837,20 @@
       ],
       "Week": [
         "Тыдзень"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } карыстальнік",
+        "${ users } карыстальнікі",
+        "${ users } карыстальнікаў",
+        "${ users } карыстальнікі"
+      ],
+      "Total for ${ n } month": [
+        "Усяго за ${ n } месяц",
+        "Усяго за ${ n } месяцы",
+        "Усяго за ${ n } месяцаў",
+        "Усяго за ${ n } месяцы"
       ]
     },
     "Checkout summary": {
@@ -2945,6 +3003,12 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } раз",
+        "${ count } разы",
+        "${ count } разоў",
+        "${ count } разы"
+      ],
       "Daily": [
         "Штодзень"
       ],
@@ -2953,6 +3017,24 @@
       ],
       "Daily, ${ untilString }": [
         "Штодзень, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Кожны ${ interval } дзень",
+        "Кожныя ${ interval } дні",
+        "Кожных ${ interval } дзён",
+        "Кожныя ${ interval } дні"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Кожны ${ interval } дзень а ${ timesString }",
+        "Кожныя ${ interval } дні а ${ timesString }",
+        "Кожных ${ interval } дзён а ${ timesString }",
+        "Кожныя ${ interval } дні а ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Кожны ${ interval } дзень, ${ untilString }",
+        "Кожныя ${ interval } дні, ${ untilString }",
+        "Кожных ${ interval } дзён, ${ untilString }",
+        "Кожныя ${ interval } дні, ${ untilString }"
       ],
       "until ${ dateString }": [
         "да ${ dateString }"
@@ -3655,6 +3737,18 @@
       "Contact signature not verified": [
         "Подпіс кантакту неправераны"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара або",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або",
+        "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў або"
+      ],
       "Domain not available, try again later": [
         "Дамен недаступны. Паспрабуйце яшчэ раз"
       ],
@@ -3763,6 +3857,12 @@
       "Label name cannot be empty.": [
         "Назва меткі не можа быць пустой."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } каляндар з існуючым календаром ${ BRAND_NAME }",
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } календары з існуючымі календарамі ${ BRAND_NAME }",
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }",
+        "Аб'яднайце прынамсі ${ calendarsToFixCount } календароў з існуючымі календарамі ${ BRAND_NAME }"
+      ],
       "Missing key packet": [
         "Адсутнічае пакет ключоў"
       ],
@@ -3838,6 +3938,12 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Уключыце падтрымку шматкарыстальніцкага рэжыму перад тым, як дадаць карыстальнікаў да вашай арганізацыі."
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Выпраўце вылучаны канфлікт, каб працягнуць.",
+        "Выпраўце вылучаныя канфлікты, каб працягнуць.",
+        "Выпраўце вылучаныя канфлікты, каб працягнуць.",
+        "Выпраўце вылучаныя канфлікты, каб працягнуць."
+      ],
       "Please generate keys before you try to change your password": [
         "Згенерыруйце ключы перад тым, як паспрабаваць змяніць пароль"
       ],
@@ -3873,6 +3979,12 @@
       ],
       "Process aborted": [
         "Працэс перарваны"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Выдалены дублікат атрымальніка: ${ joinedRecipients }",
+        "Выдалены дублікаты атрымальнікаў: ${ joinedRecipients }",
+        "Выдалены дублікаты атрымальнікаў: ${ joinedRecipients }",
+        "Выдалены дублікаты атрымальнікаў: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Перавышаны тэрмін чакання запыту"
@@ -4085,6 +4197,12 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Адбылася нечаканая памылка. Неабходна перазапусціць імпартаванне."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS_STRING } падзею.",
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS_STRING } падзеі.",
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS_STRING } падзей.",
+        "Ваш файл ${ formattedFilename } змяшчае больш за ${ MAX_IMPORT_EVENTS_STRING } падзеі."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Ваш файл ${ formattedFilename } мае памылковы метад і яго немагчыма імпартаваць."
@@ -4378,6 +4496,12 @@
       ]
     },
     "Export calendar": {
+      "${ totalProcessed }/${ totalToProcess } event exported": [
+        "${ totalProcessed }/${ totalToProcess } падзея экспартавана",
+        "${ totalProcessed }/${ totalToProcess } падзеі экспартаваны",
+        "${ totalProcessed }/${ totalToProcess } падзей экспартаваны",
+        "${ totalProcessed }/${ totalToProcess } падзеі экспартаваны"
+      ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Каляндар паспяхова экспартаваны. Цяпер вы можаце захаваць файл ICS."
       ],
@@ -4716,11 +4840,29 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } падключэнне па VPN",
+        "${ MaxVPN } падключэнні па VPN",
+        "${ MaxVPN } падключэнняў па VPN",
+        "${ MaxVPN } падключэнні па VPN"
+      ],
       "Access to all countries": [
         "Доступ да ўсіх краін"
       ],
       "Add": [
         "Дадаць"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Дадаць (${ numberOfAddedServers })",
+        "Дадаць (${ numberOfAddedServers })",
+        "Дадаць (${ numberOfAddedServers })",
+        "Дадаць (${ numberOfAddedServers })"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Падключайце да ${ plusVpnConnections } прылады",
+        "Падключайце да ${ plusVpnConnections } прылад",
+        "Падключайце да ${ plusVpnConnections } прылад",
+        "Падключайце да ${ plusVpnConnections } прылад"
       ],
       "Fastest VPN servers": [
         "Найхутчэйшыя серверы VPN"
@@ -4827,6 +4969,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "байт",
+        "байты",
+        "байтаў",
+        "байты"
+      ],
       "GB": [
         "ГБ"
       ],
@@ -4838,6 +4986,38 @@
       ],
       "TB": [
         "ТБ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Байт",
+        "Байты",
+        "Байтаў",
+        "Байты"
+      ],
+      "Gigabyte": [
+        "Гігабайт",
+        "Гігабайты",
+        "Гігабайтаў",
+        "Гігабайты"
+      ],
+      "Kilobyte": [
+        "Кілабайт",
+        "Кілабайты",
+        "Кілабайтаў",
+        "Кілабайты"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайты",
+        "Мегабайтаў",
+        "Мегабайты"
+      ],
+      "Terabyte": [
+        "тэрабайт",
+        "тэрабайты",
+        "тэрабайтаў",
+        "тэрабайтаў"
       ]
     },
     "Filter Actions": {
@@ -5233,6 +5413,12 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Знойдзена ${ items.length } прапанова, выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзены ${ items.length } прапановы, выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзены ${ items.length } прапаноў, выкарыстоўвайце клавіятуру для навігацыі.",
+        "Знойдзены ${ items.length } прапановы, выкарыстоўвайце клавіятуру для навігацыі."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Выкарыстоўвайце клавішы Уверх і Уніз, каб атрымаць доступ і прагледзець прапановы пасля ўводу. Націсніце Enter, каб пацвердзіць свой выбар або Escape, каб закрыць акно прапаноў."
       ]
@@ -5249,6 +5435,18 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } падзея зашыфравана і дададзена ў ваш каляндар",
+        "${ totalImported }/${ totalToImport } падзеі зашыфраваны і дадзены ў ваш каляндар",
+        "${ totalImported }/${ totalToImport } падзей зашыфраваны і дададзены ў ваш каляндар",
+        "${ totalImported }/${ totalToImport } падзеі зашыфраваны і дададзены ў ваш каляндар"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзея з ${ totalToImport } паспяхова імпартавана.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзей з ${ totalToImport } паспяхова імпартаваны.",
+        "Падчас шыфравання і дадавання падзеі адбылася памылка. ${ totalImported } падзеі з ${ totalToImport } паспяхова імпартаваны."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Падчас шыфравання і дадавання вашай падзеі адбылася памылка. Ніводны кантакт не быў імпартаваны."
       ],
@@ -5283,11 +5481,29 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Імпартаванае запрашэнне з'явіцца ў ${ CALENDAR_APP_NAME } як простыя падзеі без падрабязнасцяў аб арганізатарах і ўдзельніках. Для таго, каб атрымаць абнаўленні падзей і бачыць удзельнікаў, папрасіце арганізатараў запрасіць вас пры дапамозе вашай электроннай пошты ${ BRAND_NAME }."
       ],
+      "This file contains an event invitation:": [
+        "Гэты файл змяшчае запрашэнне на падзею:",
+        "Гэты файл змяшчае запрашэнні на падзею:",
+        "Гэты файл змяшчае запрашэнні на падзею:",
+        "Гэты файл змяшчае запрашэнні на падзею:"
+      ],
+      "This file contains an invitation response:": [
+        "Гэты файл змяшчае адказ на запрашэнне:",
+        "Гэты файл змяшчае адказы на запрашэнне:",
+        "Гэты файл змяшчае адказы на запрашэнне:",
+        "Гэты файл змяшчае адказы на запрашэнне:"
+      ],
       "This file contains some data that we cannot import:": [
         "Гэты файл змяшчае некаторыя даныя, якія мы не можам імпартаваць:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } кантакт зашыфраваны і дададзены ў ваш спіс кантактаў",
+        "${ totalImported }/${ totalToImport } кантакты зашыфраваны і дададзены ў ваш спіс кантактаў",
+        "${ totalImported }/${ totalToImport } кантактаў зашыфраваны і дадзены ў ваш спіс кантактаў",
+        "${ totalImported }/${ totalToImport } кантакты зашыфраваны і дададзены ў ваш спіс кантактаў"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Падчас шыфравання і дадавання вашага кантакту адбылася памылка. Ніводны кантакт не быў імпартаваны."
       ],
@@ -5307,6 +5523,14 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Кантакт ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } кантакт",
+        "${ totalContacts } кантакты",
+        "${ totalContacts } кантактаў",
+        "${ totalContacts } кантакты"
       ]
     },
     "Import contact. Contact identifier": {
@@ -5536,6 +5760,12 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } кантакты(-аў) з ${ totalContacts } не будуць імпартаваны. Націсніце, каб даведацца больш"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } падзея з ${ totalEvents } не будзе імпартавана. Разгарніце, каб даведацца больш.",
+        "${ totalEventsDiscarded } падзеі з ${ totalEvents } не будуць імпартаваны. Разгарніце, каб даведацца больш.",
+        "${ totalEventsDiscarded } падзей з ${ totalEvents } не будуць імпартаваны. Разгарніце, каб даведацца больш.",
+        "${ totalEventsDiscarded } падзеі з ${ totalEvents } не будуць імпартаваны. Разгарніце, каб даведацца больш."
+      ],
       "No contact can be imported. Click for details": [
         "Немагчыма імпартаваць кантакты. Націсніце, каб даведацца больш"
       ],
@@ -5547,6 +5777,12 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } адрас",
+        "${ amountOfAddresses } адрасы",
+        "${ amountOfAddresses } адрасоў",
+        "${ amountOfAddresses } адрасоў"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
@@ -5570,6 +5806,18 @@
       ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } будзе прадвызначаным календаром."
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } новы каляндар",
+        "${ calendarsToBeCreatedCount } новыя календары",
+        "${ calendarsToBeCreatedCount } новых календароў",
+        "${ calendarsToBeCreatedCount } новыя календары"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } аб'яднаны каляндар",
+        "${ calendarsToBeMergedCount } аб'яднаныя календары",
+        "${ calendarsToBeMergedCount } аб'яднаных календароў",
+        "${ calendarsToBeMergedCount } аб'яднаныя календары"
       ],
       "${ current } of ${ total }": [
         "${ current } з ${ total }"
@@ -5601,8 +5849,32 @@
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
         "${ MAIL_APP_NAME } падтрымлівае падпісанне DKIM для карыстальніцкіх даменаў. Для таго, каб скарыстацца аўтэнтыфікацыяй DKIM, дадайце наступны запіс CNAME у налады вашага DNS для гэтага дамена. Звычайна гэта можна зрабіць на кантрольнай панэлі вашага рэгістратара даменных імён."
       ],
+      "${ n } address": [
+        "${ n } адрас",
+        "${ n } адрасы",
+        "${ n } адрасоў",
+        "${ n } адрасы"
+      ],
       "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
         "${ none } не ўплывае на дастаўку электроннай пошты, але мы рэкамендуем ${ quarantine } для большай бяспекі."
+      ],
+      "${ number } city": [
+        "${ number } горад",
+        "${ number } гарады",
+        "${ number } гарадоў",
+        "${ number } гарадоў"
+      ],
+      "${ number } server": [
+        "${ number } сервер",
+        "${ number } серверы",
+        "${ number } сервераў",
+        "${ number } серверы"
+      ],
+      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+        "${ numberOfNonPrivateKeys } запампаваны файл з'яўляецца несапраўдным прыватным ключом. Праверце яго і паспрабуйце яшчэ раз.",
+        "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Праверце іх і паспрабуйце яшчэ раз.",
+        "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Праверце іх і паспрабуйце яшчэ раз.",
+        "${ numberOfNonPrivateKeys } запампаваныя файлы з'яўляюцца несапраўднымі прыватнымі ключамі. Праверце іх і паспрабуйце яшчэ раз."
       ],
       "${ plan } removed. Bundle deal not available on a 1-month plan.": [
         "Тарыфны план ${ plan } выдалены. Прапанова камплекту недаступна ў тарыфным плане на 1 месяц."
@@ -5613,17 +5885,89 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } з'яўляецца перадавой праграмай абароны ўліковых запісаў на базе выдасканаленай сістэмы штучнага інтэлекту і спецыялістаў, якія кругласутачна працуюць, каб абараніць вас ад зламыснікаў і пагроз бяспекі."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "Знойдзена ${ providerFoldersNumLocalized } папка",
+        "Знойдзены ${ providerFoldersNumLocalized } папкі",
+        "Знойдзены ${ providerFoldersNumLocalized } папак",
+        "Знойдзены ${ providerFoldersNumLocalized } папкі"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "У Gmail знойдзена ${ providerFoldersNumLocalized } метка",
+        "У Gmail знойдзены ${ providerFoldersNumLocalized } меткі",
+        "У Gmail знойдзены ${ providerFoldersNumLocalized } метак",
+        "У Gmail знойдзены ${ providerFoldersNumLocalized } меткі"
+      ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "Адбываецца наладжванне ${ provisioningCounter } сервера. Звычайна гэта займае каля ${ provisioningDuration }.",
+        "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }.",
+        "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }.",
+        "Адбываецца наладжванне ${ provisioningCounter } сервераў. Звычайна гэта займае каля ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "яшчэ ${ remainingAddresses.length }",
+        "яшчэ ${ remainingAddresses.length }",
+        "яшчэ ${ remainingAddresses.length }",
+        "яшчэ ${ remainingAddresses.length }"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "яшчэ ${ remainingAddresses.length } адрас",
+        "яшчэ ${ remainingAddresses.length } адрасы",
+        "яшчэ ${ remainingAddresses.length } адрасоў",
+        "яшчэ ${ remainingAddresses.length } адрасоў"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календара",
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў",
+        "${ selectedCalendarsTotal } з ${ providerCalendars.length } календароў"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "Выбрана ${ selectedFoldersCount } папка",
+        "Выбраны ${ selectedFoldersCount } папкі",
+        "Выбраны ${ selectedFoldersCount } папак",
+        "Выбраны ${ selectedFoldersCount } папкі"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "Выбрана ${ selectedFoldersCount } метка",
+        "Выбраны ${ selectedFoldersCount } меткі",
+        "Выбраны ${ selectedFoldersCount } метак",
+        "Выбраны ${ selectedFoldersCount } меткі"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "Выбрана ${ selectedFoldersCountLocalized } папка",
+        "Выбраны ${ selectedFoldersCountLocalized } папкі",
+        "Выбраны ${ selectedFoldersCountLocalized } папак",
+        "Выбраны ${ selectedFoldersCountLocalized } папкі"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "Выбрана ${ selectedFoldersCountLocalized } метка",
+        "Выбраны ${ selectedFoldersCountLocalized } меткі",
+        "Выбраны ${ selectedFoldersCountLocalized } метак",
+        "Выбраны ${ selectedFoldersCountLocalized } меткі"
+      ],
       "${ storage } storage": [
         "${ storage } сховішча"
       ],
       "${ storageSize } storage": [
         "${ storageSize } сховішча"
       ],
+      "${ userFound } user found": [
+        "Знойдзены ${ userFound } карыстальнік",
+        "Знойдзена ${ userFound } карыстальнікі",
+        "Знойдзена ${ userFound } карыстальнікаў",
+        "Знойдзена ${ userFound } карыстальнікі"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Для выбару падключэння на ўзроўні краіны патрабуецца тарыфны план ${ vpnPlus }."
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Для функцыі Secure Core патрабуецца тарыфны план ${ vpnPlus }."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } удзельнік)",
+        "(${ memberCount } удзельнікі)",
+        "(${ memberCount } удзельнікаў)",
+        "(${ memberCount } удзельнікі)"
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } штомесяц)"
@@ -5642,6 +5986,12 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } бонуснага сховішча"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } падключэнне па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
+        "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
+        "+${ organization.BonusVPN } падключэнняў па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)",
+        "+${ organization.BonusVPN } падключэнні па VPN для ${ VPN_APP_NAME } (дазваляе падключыць больш прылад па VPN)"
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Запрасіце сяброў у ${ BRAND_NAME }"
@@ -5724,6 +6074,24 @@
       "Add multiple users to your organization at once.": [
         "Дадаць некалькі карыстальнікаў у вашу арганізацыю за раз."
       ],
+      "Add server (${ availableAddedCount } available)": [
+        "Дадаць сервер (${ availableAddedCount } даступны)",
+        "Дадаць сервер (${ availableAddedCount } даступна)",
+        "Дадаць сервер (${ availableAddedCount } даступна)",
+        "Дадаць сервер (${ availableAddedCount } даступна)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Даданне ${ addedServerCount } сервера шлюза",
+        "Даданне ${ addedServerCount } сервераў шлюза",
+        "Даданне ${ addedServerCount } сервераў шлюза",
+        "Даданне ${ addedServerCount } сервераў шлюза"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Даданне сервера шлюза: ${ serverNumber } / ${ total }",
+        "Даданне сервераў шлюза: ${ serverNumber } / ${ total }",
+        "Даданне сервераў шлюза: ${ serverNumber } / ${ total }",
+        "Даданне сервераў шлюза: ${ serverNumber } / ${ total }"
+      ],
       "Additional options": [
         "Дадатковы параметры"
       ],
@@ -5736,11 +6104,29 @@
       "Align right": [
         "Выраўнаваць па правым краі"
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Уся (${ totalFoldersCount } папка)",
+        "Усе (${ totalFoldersCount } папкі)",
+        "Усе (${ totalFoldersCount } папак)",
+        "Усе (${ totalFoldersCount } папкі)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Уся (${ totalFoldersCount } метка)",
+        "Усе (${ totalFoldersCount } меткі)",
+        "Усе (${ totalFoldersCount } метак)",
+        "Усе (${ totalFoldersCount } меткі)"
+      ],
       "All keys successfully reactivated": [
         "Усе ключы паспяхова паўторна актываваны"
       ],
       "All your changes will be lost.": [
         "Усе вашы змены будуць страчаны."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }",
+        "Усе вашы кантакты будуць імпартаваны. Абмежаванне імпартавання складае ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Вылучана"
@@ -5943,6 +6329,12 @@
       "Country code": [
         "Код краіны"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Стварыць ${ calendarsToBeCreatedCount } новы каляндар",
+        "Стварыць ${ calendarsToBeCreatedCount } новыя календары",
+        "Стварыць ${ calendarsToBeCreatedCount } новых календароў",
+        "Стварыць ${ calendarsToBeCreatedCount } новыя календары"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Стварыць метку для імпартаваных паведамленняў, прамежак часу для гэтага імпартавання і тыя папкі, якія вы хочаце імпартаваць."
       ],
@@ -5963,6 +6355,12 @@
       ],
       "Create your first Gateway": [
         "Стварыце свой першы шлюз"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Стварэнне сервераў шлюза: ${ serverNumber } / ${ total }",
+        "Стварэнне сервераў шлюза: ${ serverNumber } / ${ total }",
+        "Стварэнне сервераў шлюза: ${ serverNumber } / ${ total }",
+        "Стварэнне сервераў шлюза: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "Стварэнне вашага ўліковага запісу"
@@ -6015,6 +6413,12 @@
       "Delete link?": [
         "Выдаліць спасылку?"
       ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Выдаленне ${ deletedServerCount } сервера шлюза",
+        "Выдаленне ${ deletedServerCount } сервераў шлюза",
+        "Выдаленне ${ deletedServerCount } сервераў шлюза",
+        "Выдаленне ${ deletedServerCount } сервераў шлюза"
+      ],
       "Discover ProtectBuy logo": [
         "Лагатып Discover ProtectBuy"
       ],
@@ -6026,6 +6430,12 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Вы сапраўды хочаце адклікаць усе іншыя сеансы, акрамя бягучага?"
+      ],
+      "domain used": [
+        "дамен выкарыстоўваецца",
+        "дамены выкарыстоўваюцца",
+        "даменаў выкарыстоўваецца",
+        "дамены выкарыстоўваюцца"
       ],
       "Done": [
         "Гатова"
@@ -6282,6 +6692,12 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Відарысы былі выдалены, бо іх нельга выкарыстоўваць у аўтаматычным адказе"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Імпартаванне ${ calendarCount } календара з ${ totalCalendarsCount }",
+        "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }",
+        "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }",
+        "Імпартаванне ${ calendarCount } календароў з ${ totalCalendarsCount }"
+      ],
       "Import from": [
         "Імпартаваць з"
       ],
@@ -6347,6 +6763,12 @@
       ],
       "Internet connection restored.": [
         "Падключэнне да інтэрнэту адноўлена."
+      ],
+      "Invite successfully sent": [
+        "Запрашэнне паспяхова адпраўлена",
+        "Запрашэнні паспяхова адпраўлены",
+        "Запрашэнні паспяхова адпраўлены",
+        "Запрашэнні паспяхова адпраўлены"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Верагодна, што некаторыя з вашых даных зашыфраваны і заблакіраваны."
@@ -6582,6 +7004,12 @@
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Больш за 100 мільёнаў людзей і кампаній зарэгістраваліся ў ${ BRAND_NAME }."
       ],
+      "Paid for a ${ rewardMonths } month plan": [
+        "Аплачаны тарыфны план за ${ rewardMonths } месяц",
+        "Аплачаны тарыфны план за ${ rewardMonths } месяцы",
+        "Аплачаны тарыфны план за ${ rewardMonths } месяцаў",
+        "Аплачаны тарыфны план за ${ rewardMonths } месяцы"
+      ],
       "Paid for a monthly plan": [
         "Памесячная аплата тарыфнага плана"
       ],
@@ -6608,6 +7036,18 @@
       ],
       "Plan upgrade required": [
         "Патрабуецца паляпшэнне тарыфнага плана"
+      ],
+      "Please add a password for the user on row": [
+        "Дадайце пароль для карыстальніка ў радок",
+        "Дадайце паролі для карыстальнікаў у радкі",
+        "Дадайце паролі для карыстальнікаў у радкі",
+        "Дадайце паролі для карыстальнікаў у радкі"
+      ],
+      "Please add an email address for the user on row": [
+        "Дадайце адрас электроннай пошты для карыстальніка ў радок",
+        "Дадайце адрасы электроннай пошты для карыстальнікаў у радкі",
+        "Дадайце адрасы электроннай пошты для карыстальнікаў у радкі",
+        "Дадайце адрасы электроннай пошты для карыстальнікаў у радкі"
       ],
       "Please authenticate your card in the verification tab.": [
         "Прайдзіце аўтэнтыфікацыю са сваёй карткай на ўкладцы праверкі."
@@ -6861,6 +7301,12 @@
       "Stay tuned for future promotions.": [
         "Будзьце ў курсе будучых рэкламных акцый."
       ],
+      "Step ${ step }": [
+        "Крок ${ step }",
+        "Крок ${ step }",
+        "Крок ${ step }",
+        "Крок ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Сховішча, вылучанае для іншых карыстальнікаў у гэтай арганізацыі"
       ],
@@ -6935,6 +7381,24 @@
       ],
       "The following address is available:": [
         "Даступны наступны адрас:"
+      ],
+      "The following address is invalid.": [
+        "Наступны адрас з'яўляецца памылковым.",
+        "Наступныя адрасы з'яўляюцца памылковымі.",
+        "Наступныя адрасы з'яўляюцца памылковымі.",
+        "Наступныя адрасы з'яўляюцца памылковымі."
+      ],
+      "The following address is unavailable.": [
+        "Наступны адрас з'яўляецца недаступным.",
+        "Наступныя адрасы з'яўляюцца недаступнымі.",
+        "Наступныя адрасы з'яўляюцца недаступнымі.",
+        "Наступныя адрасы з'яўляюцца недаступнымі."
+      ],
+      "The following address was not created.": [
+        "Наступны адрас не быў створаны.",
+        "Наступныя адрасы не былі створаны.",
+        "Наступныя адрасы не былі створаны.",
+        "Наступныя адрасы не былі створаны."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "Наступныя ўдзельнікі атрымаюць ліст з просьбай як мага хутчэй уключыць двухфактарную аўтэнтыфікацыю."
@@ -7374,6 +7838,18 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Вы ўжо ўвайшлі як ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступнага вам вылучанага сервера.",
+        "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступных вам вылучаных сервераў.",
+        "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступных вам вылучаных сервераў.",
+        "Цяпер вы выкарыстоўваеце ${ ipCount } з ${ ipAddresses } даступных вам вылучаных сервераў."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Цяпер вы выкарыстоўваеце ${ organization.UsedMembers } з ${ organization.MaxMembers } даступных вам карыстальніцкіх ліцэнзій.",
+        "Цяпер вы выкарыстоўваеце ${ organization.UsedMembers } з ${ organization.MaxMembers } даступных вам карыстальніцкіх ліцэнзій.",
+        "Цяпер вы выкарыстоўваеце ${ organization.UsedMembers } з ${ organization.MaxMembers } даступных вам карыстальніцкіх ліцэнзій.",
+        "Цяпер вы выкарыстоўваеце ${ organization.UsedMembers } з ${ organization.MaxMembers } даступных вам карыстальніцкіх ліцэнзій."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Вы ўвайшлі ва ўліковы запіс ${ memberAddress }."
       ],
@@ -7382,9 +7858,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Вы можаце праверыць ход выканання ${ importProgressLink }."
-      ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "Вы можаце наладжваць і спампоўваць свае рахункі, каб весці ўлік выдаткаў."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Вы можаце адрэдагаваць адрас адзін раз, каб пераканацца ў правільнасці адраса электроннай пошты для праверкі."
@@ -7397,6 +7870,30 @@
       ],
       "You can import one data type at a time.": [
         "Вы можаце імпартаваць адзін тып даных за раз."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар і ўсіх карыстальнікаў ${ BRAND_NAME } з якімі вы абагулілі календары перад тым, як скасаваць сваю падпіску."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календара. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску.",
+        "Вы можаце пакінуць да ${ MAX_CALENDARS_FREE } календароў. Выдаліце спасылкі на абагулены каляндар перад тым, як скасаваць сваю падпіску."
       ],
       "You can now access and manage the account as an administrator.": [
         "Цяпер вы можаце атрымаць доступ да ўліковага запісу ў якасці адміністратара."
@@ -7413,6 +7910,12 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Вы можаце выкарыстоўваць наступныя ўліковыя даныя для падключэння да сервера ${ VPN_APP_NAME } з дапамогай старонняга кліента VPN з адкрытым зыходным кодам. Напрыклад, Tunnelblick для macOS або OpenVPN для GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Вы не можаце адправіць больш чым ${ emailSendLimitNumber } запрашальны ліст на працягу наступных 24 гадзін",
+        "Вы не можаце адправіць больш чым ${ emailSendLimitNumber } запрашальныя лісты на працягу наступных 24 гадзін",
+        "Вы не можаце адправіць больш чым ${ emailSendLimitNumber } запрашальных лістоў на працягу наступных 24 гадзін",
+        "Вы не можаце адправіць больш чым ${ emailSendLimitNumber } запрашальныя лісты на працягу наступных 24 гадзін"
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Вы не можаце запрасіць карыстальніка ${ MAIL_APP_NAME }"
       ],
@@ -7421,6 +7924,12 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Вы не задалі метад для аднаўлення доступу. Таму, калі вы забудзеце свой пароль, то аднавіць уліковы запіс будзе немагчыма. Працягнуць без метаду аднаўлення?"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Вам даступны ${ availableCount } вылучаны сервер.",
+        "Вам даступна ${ availableCount } вылучаныя серверы.",
+        "Вам даступна ${ availableCount } вылучаных сервераў.",
+        "Вам даступна ${ availableCount } вылучаных сервераў."
       ],
       "You have no calendars to export.": [
         "У вас няма календароў для экспартавання."
@@ -7542,6 +8051,12 @@
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Ваша імпартаванне з ${ accounts } часова адкладзена.",
+        "Вашы імпартаванні з ${ accounts } часова адкладзены.",
+        "Вашы імпартаванні з ${ accounts } часова адкладзены.",
+        "Вашы імпартаванні з ${ accounts } часова адкладзены."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "З намі ваша інфармацыя ў бяспецы. Мы будзем звязвацца з вамі, толькі па меры неабходнасці, каб забяспечыць нашымі сэрвісамі."
       ],
@@ -7608,11 +8123,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Вы можаце дадаць спосаб аплаты, каб ваша падпіска падаўжалася аўтаматычна. Таксама даступны іншыя спосабы аплаты."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Add your name (or company name) and address to your invoices.": [
-        "Дадайце сваё імя (або назву кампаніі) і адрас у вашы рахункі."
       ]
     },
     "Info on errors": {
@@ -7997,6 +8507,30 @@
       "${ MAIL_APP_NAME } footer": [
         "Ніжні калонтытул ${ MAIL_APP_NAME }"
       ],
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцы"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } дзень",
+        "${ nbDay } дні",
+        "${ nbDay } дзён",
+        "${ nbDay } дні"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } год",
+        "${ nbYear } гады",
+        "${ nbYear } гадоў",
+        "${ nbYear } гадоў"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } з ${ MaxAddresses } адрасы электроннай пошты",
+        "${ UsedAddresses } з ${ MaxAddresses } адрасоў электроннай пошты",
+        "${ UsedAddresses } з ${ MaxAddresses } адрасоў электроннай пошты",
+        "${ UsedAddresses } з ${ MaxAddresses } адрасоў электроннай пошты"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Часова недаступны. Паўтарыце спробу пазней.)"
       ],
@@ -8239,9 +8773,6 @@
       ],
       "Current email": [
         "Бягучая электронная пошта"
-      ],
-      "Customize invoices": [
-        "Наладжванне рахункаў"
       ],
       "Daily email notifications": [
         "Штодзённыя апавяшчэнні па электроннай пошце"
@@ -9169,8 +9700,20 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } удзельніка вашай арганізацыі выкарыстоўвае двухфактарную аўтэнтыфікацыю.",
+        "${ twoFAMembers.length }/${ members.length } удзельнікаў вашай арганізацыі выкарыстоўваюць двухфактарную аўтэнтыфікацыю.",
+        "${ twoFAMembers.length }/${ members.length } удзельнікаў вашай арганізацыі выкарыстоўваюць двухфактарную аўтэнтыфікацыю.",
+        "${ twoFAMembers.length }/${ members.length } удзельнікаў вашай арганізацыі выкарыстоўваюць двухфактарную аўтэнтыфікацыю."
+      ],
       "Almost there": [
         "Амаль гатова"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }",
+        "Колькасць створаных календароў: ${ createdCalendarCount } з ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Падключэнне да вашага пастаўшчыка паслуг электроннай пошты"
@@ -9199,6 +9742,32 @@
         "Уключыць журнал аўтэнтыфікацыі"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } папкі і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } папак і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } папак і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } папак і пазначыць іх як"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткай і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткамі і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткамі і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ itemsToImportCount } меткамі і пазначыць іх як"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } папкі з ${ itemsToImportCount } і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } папак з ${ itemsToImportCount } і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } папак з ${ itemsToImportCount } і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } папак з ${ itemsToImportCount } і пазначыць іх як"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } меткі з ${ itemsToImportCount } і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як",
+        "Імпартаваць усе паведамленні з ${ selectedItemsToImportCount } метак з ${ itemsToImportCount } і пазначыць іх як"
+      ]
+    },
     "mail_signup_2023: Info": {
       "Secure email that protects your privacy": [
         "Бяспечная электронная пошта, якая абараняе вашу прыватнасць"
@@ -9210,6 +9779,22 @@
       ],
       "This feature is temporarily unavailable": [
         "Гэта функцыя часова недаступна"
+      ]
+    },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Вы можаце стварыць да ${ MAX_LINKS_PER_CALENDAR } спасылкі на адзін каляндар. Каб стварыць новую спасылку на гэты каляндар, выдаліце спасылку са спіса ніжэй.",
+        "Вы можаце стварыць да ${ MAX_LINKS_PER_CALENDAR } спасылак на адзін каляндар. Каб стварыць новую спасылку на гэты каляндар, выдаліце спасылку са спіса ніжэй.",
+        "Вы можаце стварыць да ${ MAX_LINKS_PER_CALENDAR } спасылак на адзін каляндар. Каб стварыць новую спасылку на гэты каляндар, выдаліце спасылку са спіса ніжэй.",
+        "Вы можаце стварыць да ${ MAX_LINKS_PER_CALENDAR } спасылак на адзін каляндар. Каб стварыць новую спасылку на гэты каляндар, выдаліце спасылку са спіса ніжэй."
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельніка.",
+        "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельнікаў.",
+        "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельнікаў.",
+        "Вы дасягнулі максімальнай колькасці з ${ MAX_CALENDAR_MEMBERS } удзельнікаў."
       ]
     },
     "Member action": {
@@ -9338,6 +9923,24 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Кожны ${ interval } месяц ${ onDayString }",
+        "Кожныя ${ interval } месяцы ${ onDayString }",
+        "Кожных ${ interval } месяцаў ${ onDayString }",
+        "Кожныя ${ interval } месяцы ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Кожны ${ interval } месяц ${ onDayString } а ${ timesString }",
+        "Кожныя ${ interval } месяцы ${ onDayString } а ${ timesString }",
+        "Кожных ${ interval } месяцаў ${ onDayString } а ${ timesString }",
+        "Кожныя ${ interval } месяцы ${ onDayString } а ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Кожны ${ interval } месяц ${ onDayString }, ${ untilString }",
+        "Кожныя ${ interval } месяцы ${ onDayString }, ${ untilString }",
+        "Кожных ${ interval } месяцаў ${ onDayString }, ${ untilString }",
+        "Кожныя ${ interval } месяцы ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }": [
         "Штомесяц ${ onDayString }"
       ],
@@ -9574,6 +10177,96 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } каляндар",
+        "${ n } календары",
+        "${ n } календароў",
+        "${ n } календары"
+      ],
+      "${ n } calendar per user": [
+        "${ n } каляндар на карыстальніка",
+        "${ n } календары на карыстальніка",
+        "${ n } календароў на карыстальніка",
+        "${ n } календароў на карыстальніка"
+      ],
+      "${ n } custom email domain": [
+        "${ n } карыстальніцкі дамен электроннай пошты",
+        "${ n } карыстальніцкія дамены электроннай пошты",
+        "${ n } карыстальніцкіх даменаў электроннай пошты",
+        "${ n } карыстальніцкія дамены электроннай пошты"
+      ],
+      "${ n } email address": [
+        "${ n } адрас электроннай пошты",
+        "${ n } адрасы электроннай пошты/псеўданімаў",
+        "${ n } адрасоў электроннай пошты/псеўданімаў",
+        "${ n } адрасы электроннай пошты/псеўданімаў"
+      ],
+      "${ n } email address per user": [
+        "${ n } адрас электроннай пошты на карыстальніка",
+        "${ n } адрасы электроннай пошты на карыстальніка",
+        "${ n } адрасоў электроннай пошты на карыстальніка",
+        "${ n } адрасы электроннай пошты на карыстальніка"
+      ],
+      "${ n } filter": [
+        "${ n } фільтр",
+        "${ n } фільтры",
+        "${ n } фільтраў",
+        "${ n } фільтры"
+      ],
+      "${ n } folder": [
+        "${ n } папка",
+        "${ n } папкі",
+        "${ n } папак",
+        "${ n } папкі"
+      ],
+      "${ n } folder and label": [
+        "${ n } папка і метка",
+        "${ n } папкі і меткі",
+        "${ n } папак і метак",
+        "${ n } папкі і меткі"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } псеўданім Hide-my-email",
+        "${ n } псеўданімы Hide-my-email",
+        "${ n } псеўданімаў Hide-my-email",
+        "${ n } псеўданімаў Hide-my-email"
+      ],
+      "${ n } label": [
+        "${ n } метка",
+        "${ n } меткі",
+        "${ n } метак",
+        "${ n } меткі"
+      ],
+      "${ n } message per day": [
+        "${ n } паведамленне ў дзень",
+        "${ n } паведамленні ў дзень",
+        "${ n } паведамленняў у дзень",
+        "${ n } паведамленні ў дзень"
+      ],
+      "${ n } vault": [
+        "${ n } сховішча",
+        "${ n } сховішчы",
+        "${ n } сховішчаў",
+        "${ n } сховішчы"
+      ],
+      "${ n } VPN connection": [
+        "${ n } падключэнне па VPN",
+        "${ n } падключэнні па VPN",
+        "${ n } падключэнняў па VPN",
+        "${ n } падключэнні па VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } падключэнне па VPN на карыстальніка",
+        "${ n } падключэнні па VPN на карыстальніка",
+        "${ n } падключэнняў па VPN на карыстальніка",
+        "${ n } падключэнні па VPN на карыстальніка"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімам",
+        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі",
+        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі",
+        "${ PASS_APP_NAME } з ${ n } hide-my-email псеўданімамі"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } з неабмежаванай колькасцю псеўданімаў hide-my-email"
       ],
@@ -9712,6 +10405,12 @@
       "High-speed Swiss VPN that protects your privacy": [
         "Высакахуткасны швейцарскі VPN, які абараняе вашу прыватнасць."
       ],
+      "High-speed VPN on ${ n } device": [
+        "Высакахуткасны VPN на ${ n } прыладзе",
+        "Высакахуткасны VPN на ${ n } прыладах",
+        "Высакахуткасны VPN на ${ n } прыладах",
+        "Высакахуткасны VPN на ${ n } прыладах"
+      ],
       "HTML signatures": [
         "Подпісы HTML"
       ],
@@ -9748,6 +10447,12 @@
       "Priority support & live chat": [
         "Прыярытэтная падтрымка і чат у рэальным часе"
       ],
+      "Protect ${ n } device at a time": [
+        "Абараніць ${ n } прыладу адначасова",
+        "Абараніць ${ n } прылады адначасова",
+        "Абараніць ${ n } прылад адначасова",
+        "Абараніць ${ n } прылады адначасова"
+      ],
       "Router support": [
         "Падтрымка маршрутызатараў"
       ],
@@ -9762,6 +10467,12 @@
       ],
       "Send & receive invitations": [
         "Адпраўка і атрыманне запрашэнняў"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краіне",
+        "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах",
+        "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах",
+        "Серверы ў больш, чым ${ vpnServersCountData.paid.countries } краінах"
       ],
       "Share calendar via link": [
         "Абагуліць каляндар праз спасылку"
@@ -9846,6 +10557,12 @@
       ],
       "User session management": [
         "Кіраванне сеансамі карыстальнікаў"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Абагуленне сховішча (да ${ n } асобы)",
+        "Абагуленне сховішча (да ${ n } асоб)",
+        "Абагуленне сховішча (да ${ n } асоб)",
+        "Абагуленне сховішча (да ${ n } асоб)"
       ]
     },
     "new_plans: feature info": {
@@ -9980,6 +10697,14 @@
         "/месяц"
       ]
     },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "У вас яшчэ застаўся ${ daysRemaining } дзень тарыфнага плана ${ currentPlanName } на вашым уліковым запісе.",
+        "У вас яшчэ засталося ${ daysRemaining } дні тарыфнага плана ${ currentPlanName } на вашым уліковым запісе.",
+        "У вас яшчэ засталося ${ daysRemaining } дзён тарыфнага плана ${ currentPlanName } на вашым уліковым запісе.",
+        "У вас яшчэ засталося ${ daysRemaining } дні тарыфнага плана ${ currentPlanName } на вашым уліковым запісе."
+      ]
+    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Націснуўшы на кнопку \"Заплаціць\", вы згаджаецеся з нашымі ${ termsAndConditions }."
@@ -10073,6 +10798,12 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Стварайце некалькі розных адрасоў электроннай пошты для сваіх пасведчанняў у інтэрнэце. Напрыклад, JankaPakupnik@${ domain } для куплі тавараў у інтэрнэце, а JankaNaviny@${ domain } для падпіскі на навіны"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Стварайце да ${ n } календара або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый",
+        "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Стварыце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтыфікацыі ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
@@ -10276,6 +11007,12 @@
       "Cover more ground with support for 10 custom email domains": [
         "Дасягніце большага з падтрымкай 10 карыстальніцкіх даменаў электроннай пошты"
       ],
+      "Create up to ${ n } calendar": [
+        "Стварыць да ${ n } календара",
+        "Стварыць да ${ n } календароў",
+        "Стварыць да ${ n } календароў",
+        "Стварыць да ${ n } календароў"
+      ],
       "Dedicated Account manager": [
         "Вылучаны менеджар уліковага запісу"
       ],
@@ -10357,6 +11094,12 @@
       "Invitation revoked": [
         "Запрашэнне адклікана"
       ],
+      "Member added": [
+        "Удзельнік дададзены",
+        "Удзельнікі дададзены",
+        "Удзельнікі дададзены",
+        "Удзельнікі дададзены"
+      ],
       "Member deleted": [
         "Удзельнік выдалены"
       ]
@@ -10391,8 +11134,32 @@
       "at time of event": [
         "падчас падзеі"
       ],
+      "day before": [
+        "днём раней",
+        "днямі раней",
+        "днямі раней",
+        "днямі раней"
+      ],
+      "hour before": [
+        "гадзінай раней",
+        "гадзінамі раней",
+        "гадзінамі раней",
+        "гадзінамі раней"
+      ],
+      "minute before": [
+        "хвілінай раней",
+        "хвілінамі раней",
+        "хвілінамі раней",
+        "хвілінамі раней"
+      ],
       "on the same day": [
         "у той жа дзень"
+      ],
+      "week before": [
+        "тыднем раней",
+        "тыднямі раней",
+        "тыднямі раней",
+        "тыднямі раней"
       ]
     },
     "Oauth instructions": {
@@ -10659,6 +11426,24 @@
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink }, каб атрымаць больш сховішча або выдаліце частку файлаў у сховішчы для вызвалення месца."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Ваш тарыфны план уключае максімум ${ availableAddresses } адрас.",
+        "Ваш тарыфны план уключае максімум ${ availableAddresses } адрасы.",
+        "Ваш тарыфны план уключае максімум ${ availableAddresses } адрасоў.",
+        "Ваш тарыфны план уключае максімум ${ availableAddresses } адрасы."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Ваш тарыфны план уключае максімум ${ availableNumberOfMembers } карыстальніка арганізацыі.",
+        "Ваш тарыфны план уключае максімум ${ availableNumberOfMembers } карыстальнікі арганізацыі.",
+        "Ваш тарыфны план уключае максімум ${ availableNumberOfMembers } карыстальнікаў арганізацыі.",
+        "Ваш тарыфны план уключае максімум ${ availableNumberOfMembers } карыстальнікі арганізацыі."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Ваш тарыфны план уключае максімум ${ availableVPNAccess } уліковы запіс з VPN.",
+        "Ваш тарыфны план уключае максімум ${ availableVPNAccess } уліковыя запісы з VPN.",
+        "Ваш тарыфны план уключае максімум ${ availableVPNAccess } уліковых запісаў з VPN.",
+        "Ваш тарыфны план уключае максімум ${ availableVPNAccess } уліковыя запісы з VPN."
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Ваш тарыфны план уключае максімум ${ humanReadableAvailableSpace } сховішча."
@@ -11073,17 +11858,18 @@
         "yourdomain.com"
       ]
     },
-    "Placeholder for custom invoice text": {
-      "Add your name (or company name) and address to your invoices": [
-        "Дадайце сваё імя (або назву кампаніі) і адрас у вашы рахункі"
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "кантакт"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "Выберыце колькасць карыстальнікаў для ўключэння ў ваш тарыфны план. Кожны дадатковы карыстальнік каштуе ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Калі вам патрабуецца больш за ${ maxUsers } уліковы запіс карыстальніка, звяжыцеся па пошце ${ contact } з нашай камандай па продажах.",
+        "Калі вам патрабуецца больш за ${ maxUsers } уліковыя запісы карыстальніка, звяжыцеся па пошце ${ contact } з нашай камандай па продажах.",
+        "Калі вам патрабуецца больш за ${ maxUsers } уліковых запісаў карыстальніка, звяжыцеся па пошце ${ contact } з нашай камандай па продажах.",
+        "Калі вам патрабуецца больш за ${ maxUsers } уліковыя запісы карыстальніка, звяжыцеся па пошце ${ contact } з нашай камандай па продажах."
       ]
     },
     "Price": {
@@ -11335,14 +12121,50 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } дзень",
+        "${ timeRemaining.inDays } дні",
+        "${ timeRemaining.inDays } дзён",
+        "${ timeRemaining.inDays } дзён"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } гадзіна",
+        "${ timeRemaining.inHours } гадзіны",
+        "${ timeRemaining.inHours } гадзін",
+        "${ timeRemaining.inHours } гадзін"
+      ],
       "Didn’t make this request?": [
         "Не рабілі гэты запыт?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Скасуйце запыт, калі вы не запытвалі скіданне пароля."
       ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дзень, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дні, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дзён, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inDays } дзён, каб скінуць свой пароль."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзіна, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзіны, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль.",
+        "Запыт на скіданне пароля ўхвалены (${ user.Email }). У вас ёсць ${ timeRemaining.inHours } гадзін, каб скінуць свой пароль."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Перайдзіце на прыладу, якая знаходзіцца ў сістэме (з якой быў ініцыяваны запыт), каб змяніць пароль."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дзень",
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дні",
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дзён",
+        "Гэты дазвол міне праз ${ timeRemaining.inDays } дзён"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзіну",
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзіны",
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзін",
+        "Гэты дазвол міне праз ${ timeRemaining.inHours } гадзін"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Цяпер вы можаце змяніць свой пароль для ўліковага запісу ${ boldEmail } у вас яшчэ ёсць на гэта ${ boldDaysRemaining }."
@@ -11432,6 +12254,12 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "яшчэ ${ gracePeriodHoursRemaining } гадзіна",
+        "яшчэ ${ gracePeriodHoursRemaining } гадзіны",
+        "яшчэ ${ gracePeriodHoursRemaining } гадзін",
+        "яшчэ ${ gracePeriodHoursRemaining } гадзін"
+      ],
       "Didn’t make this request?": [
         "Не рабілі гэты запыт?"
       ],
@@ -11444,11 +12272,23 @@
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "Скіданне пароля даступна з ${ boldDate }. Гэта дае вам час на скасаванне любых махлярскіх запытаў."
       ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзіны.",
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзін.",
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзін.",
+        "Запыт на скіданне пароля (${ user.Email }). Вы можаце змяніць свой пароль на працягу ${ hoursRemaining } гадзін."
+      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Каб пераканацца што менавіта вы спрабуеце скінуць свой пароль, мы пачакаем 72 гадзіны перад тым, як ухваліць запыт. Вы зможаце змяніць яго праз ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Мы атрымалі запыт на скіданне пароля для ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Вы можаце змяніць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзіны",
+        "Вы можаце змяніць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзін",
+        "Вы можаце змяніць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзін",
+        "Вы можаце змяніць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзін"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -11499,6 +12339,12 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "Запытаць скіданне пароля?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "У вас будзе магчымасць скінуць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзіны",
+        "У вас будзе магчымасць скінуць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзін",
+        "У вас будзе магчымасць скінуць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзін",
+        "У вас будзе магчымасць скінуць свой пароль на працягу ${ gracePeriodHoursRemaining } гадзін"
       ]
     },
     "session_recovery:settings:action": {
@@ -11524,6 +12370,12 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } гадзіна",
+        "${ gracePeriodHoursRemaining } гадзіны",
+        "${ gracePeriodHoursRemaining } гадзін",
+        "${ gracePeriodHoursRemaining } гадзін"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } цяпер даступна."
       ],
@@ -11621,6 +12473,14 @@
         "Абагуліце свой каляндар з дапамогай спасылкі для запрашэння карыстальнікаў, якія не карыстаюцца ${ BRAND_NAME }."
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Вы перавысілі максімальную колькасць з ${ MAX_CALENDAR_MEMBERS } удзельніка на каляндар",
+        "Вы перавысілі максімальную колькасць з ${ MAX_CALENDAR_MEMBERS } удзельнікаў на каляндар",
+        "Вы перавысілі максімальную колькасць з ${ MAX_CALENDAR_MEMBERS } удзельнікаў на каляндар",
+        "Вы перавысілі максімальную колькасць з ${ MAX_CALENDAR_MEMBERS } удзельнікаў на каляндар"
+      ]
+    },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
         "Дадаць уліковыя запісы ${ BRAND_NAME } для ўдзельнікаў, з якімі вы хочаце абагуліць ${ calendarName }. Мы адправім ім запрашэнне."
@@ -11701,6 +12561,40 @@
         "Перайсці на Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } дзень",
+        "${ days } дні",
+        "${ days } дзён",
+        "${ days } дня"
+      ],
+      "${ hours } hour": [
+        "${ hours } гадзіна",
+        "${ hours } гадзіны",
+        "${ hours } гадзін",
+        "${ hours } гадзіны"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвіліна",
+        "${ minutes } хвіліны",
+        "${ minutes } хвілін",
+        "${ minutes } хвіліны"
+      ],
+      "${ seconds } second": [
+        "${ seconds } секунда",
+        "${ seconds } секунды",
+        "${ seconds } секунд",
+        "${ seconds } секунды"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } месяц БЯСПЛАТНА",
+        "${ n } месяцы БЯСПЛАТНА",
+        "${ n } месяцаў БЯСПЛАТНА",
+        "${ n } месяца БЯСПЛАТНА"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 карыстальнік"
@@ -11764,6 +12658,12 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцаў"
+      ],
       "/ month": [
         "/ месяц"
       ],
@@ -11942,6 +12842,84 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } вылучаны сервер",
+        "${ ipAddresses } вылучаныя серверы",
+        "${ ipAddresses } вылучаных сервераў",
+        "${ ipAddresses } вылучаных сервераў"
+      ],
+      "${ maxVpn } high-speed VPN connection": [
+        "${ maxVpn } высакахуткаснае падключэнне па VPN",
+        "${ maxVpn } высакахуткасныя падключэнні па VPN",
+        "${ maxVpn } высакахуткасных падключэнняў па VPN",
+        "${ maxVpn } высакахуткасныя падключэнні па VPN"
+      ],
+      "${ n } calendar": [
+        "${ n } каляндар",
+        "${ n } календары",
+        "${ n } календароў",
+        "${ n } календары"
+      ],
+      "${ n } calendar per user": [
+        "${ n } каляндар на карыстальніка",
+        "${ n } календары на карыстальніка",
+        "${ n } календароў на карыстальніка",
+        "${ n } календары на карыстальніка"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } высакахуткаснае падключэнне па VPN",
+        "${ n } высакахуткасныя падключэнні па VPN",
+        "${ n } высакахуткасных падключэнняў па VPN",
+        "${ n } высакахуткасныя падключэнні па VPN"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } высакахуткаснае падключэнне па VPN на карыстальніка",
+        "${ n } высакахуткасныя падключэнні па VPN на карыстальніка",
+        "${ n } высакахуткасных падключэнняў па VPN на карыстальніка",
+        "${ n } высакахуткасныя падключэнні па VPN на карыстальніка"
+      ],
+      "${ n } VPN connection": [
+        "${ n } падключэнне па VPN",
+        "${ n } падключэнні па VPN",
+        "${ n } падключэнняў па VPN",
+        "${ n } падключэнні па VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } падключэнне па VPN на карыстальніка",
+        "${ n } падключэнні па VPN на карыстальніка",
+        "${ n } падключэнняў па VPN на карыстальніка",
+        "${ n } падключэнні па VPN на карыстальніка"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } адрас",
+        "${ UsedAddresses } адрасы",
+        "${ UsedAddresses } адрасоў",
+        "${ UsedAddresses } адрасы"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } з ${ MaxAddresses } адрасы электроннай пошты",
+        "${ UsedAddresses } з ${ MaxAddresses } адрасоў электроннай пошты",
+        "${ UsedAddresses } з ${ MaxAddresses } адрасоў электроннай пошты",
+        "${ UsedAddresses } з ${ MaxAddresses } адрасоў электроннай пошты"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } каляндар",
+        "${ UsedCalendars } календары",
+        "${ UsedCalendars } календароў",
+        "${ UsedCalendars } календары"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } з ${ MaxDomains } карыстальніцкага дамена",
+        "${ UsedDomains } з ${ MaxDomains } карыстальніцкіх даменаў",
+        "${ UsedDomains } з ${ MaxDomains } карыстальніцкіх даменаў",
+        "${ UsedDomains } з ${ MaxDomains } карыстальніцкіх даменаў"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } карыстальнік з ${ MaxMembers }",
+        "${ UsedMembers } карыстальнікі з ${ MaxMembers }",
+        "${ UsedMembers } карыстальнікаў з ${ MaxMembers }",
+        "${ UsedMembers } карыстальнікі з ${ MaxMembers }"
+      ],
       "1 email address": [
         "1 адрас электроннай пошты"
       ],
@@ -11953,6 +12931,12 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "Убудаваная блакіроўка рэкламы (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "Высакахуткасны VPN на ${ maxVpn } прыладзе",
+        "Высакахуткасны VPN на ${ maxVpn } прыладах",
+        "Высакахуткасны VPN на ${ maxVpn } прыладах",
+        "Высакахуткасны VPN на ${ maxVpn } прыладах"
       ]
     },
     "Subscription change warning": {
@@ -12379,6 +13363,46 @@
         "Токены SMTP не знойдзены"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } гадз",
+        "${ hours } гадз",
+        "${ hours } гадз",
+        "${ hours } гадз"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt },5 гадз",
+        "${ hoursInt },5 гадз",
+        "${ hoursInt },5 гадз",
+        "${ hoursInt },5 гадз"
+      ],
+      "${ minutes } min": [
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв",
+        "${ minutes } хв"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } гадзіна",
+        "${ hours } гадзіны",
+        "${ hours } гадзін",
+        "${ hours } гадзіны"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt },5 гадзіны",
+        "${ hoursInt },5 гадзіны",
+        "${ hoursInt },5 гадзін",
+        "${ hoursInt },5 гадзіны"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } хвіліна",
+        "${ minutes } хвіліны",
+        "${ minutes } хвілін",
+        "${ minutes } хвіліны"
+      ]
+    },
     "Timezone search placeholder": {
       "Search time zones": [
         "Пошук часавых паясоў"
@@ -12462,9 +13486,6 @@
       ],
       "Add filter": [
         "Дадаць фільтр"
-      ],
-      "Add invoice details": [
-        "Дадаць падрабязнасці рахунка"
       ],
       "Add new user": [
         "Дадаць новага карыстальніка"
@@ -12619,6 +13640,12 @@
       "Couldn’t create accounts": [
         "Немагчыма стварыць уліковыя запісы"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "Стварыць ${ selectedUserIds.length } карыстальніка",
+        "Стварыць ${ selectedUserIds.length } карыстальнікаў",
+        "Стварыць ${ selectedUserIds.length } карыстальнікаў",
+        "Стварыць ${ selectedUserIds.length } карыстальнікаў"
+      ],
       "Create a new Gateway": [
         "Стварыць новы шлюз"
       ],
@@ -12723,6 +13750,12 @@
       ],
       "Delete logs": [
         "Выдаліць журналы"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дня)",
+        "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дзён)",
+        "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дзён)",
+        "Выдаліць сервер (вы ўсё яшчэ можаце аднавіць яго на працягу ${ days } дзён)"
       ],
       "Delete user": [
         "Выдаліць карыстальніка"
@@ -12835,6 +13868,12 @@
       "External PGP settings": [
         "Налады знешняга PGP"
       ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Не ўдалося стварыць ${ failedUsers.length } карыстальніка.",
+        "Не ўдалося стварыць ${ failedUsers.length } карыстальнікі.",
+        "Не ўдалося стварыць ${ failedUsers.length } карыстальнікаў.",
+        "Не ўдалося стварыць ${ failedUsers.length } карыстальнікі."
+      ],
       "Filters": [
         "Фільтры"
       ],
@@ -12897,6 +13936,12 @@
       ],
       "Import and export": [
         "Імпартаванне і экспартаванне"
+      ],
+      "Import as simple event?": [
+        "Імпартаваць як простую падзею?",
+        "Імпартаваць як простыя падзеі?",
+        "Імпартаваць як простыя падзеі?",
+        "Імпартаваць як простыя падзеі?"
       ],
       "Import contacts": [
         "Імпартаваць кантакты"
@@ -13212,6 +14257,18 @@
       ],
       "Success": [
         "Паспяхова"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "Паспяхова створаны ${ localSuccessfullyCreatedUsers.length } уліковы запіс карыстальніка",
+        "Паспяхова створана ${ localSuccessfullyCreatedUsers.length } уліковыя запісы карыстальніка",
+        "Паспяхова створана ${ localSuccessfullyCreatedUsers.length } уліковых запісаў карыстальніка",
+        "Паспяхова створана ${ localSuccessfullyCreatedUsers.length } уліковыя запісы карыстальніка"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Паспяхова створаны ${ successfullyCreatedUsers.length } уліковы запіс карыстальніка",
+        "Паспяхова створана ${ successfullyCreatedUsers.length } уліковыя запісы карыстальніка",
+        "Паспяхова створана ${ successfullyCreatedUsers.length } уліковых запісаў карыстальніка",
+        "Паспяхова створана ${ successfullyCreatedUsers.length } уліковыя запісы карыстальніка"
       ],
       "Summary": [
         "Зводка"
@@ -13661,6 +14718,12 @@
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
         "Палепшыце да ${ passPlusPlanName }, каб мець неабмежаваную колькасць псеўданімаў Hide-my-email"
+      ],
+      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
+        "Палепшыце да ${ planName }, каб адначасова падключаць да ${ n } прылады да VPN",
+        "Палепшыце да ${ planName }, каб адначасова падключаць да ${ n } прылад да VPN",
+        "Палепшыце да ${ planName }, каб адначасова падключаць да ${ n } прылад да VPN",
+        "Палепшыце да ${ planName }, каб адначасова падключаць да ${ n } прылад да VPN"
       ]
     },
     "Upgrade notice": {
@@ -13694,6 +14757,20 @@
         "Асноўны адміністратар"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Пароль павінен змяшчаць прынамсі ${ length } сімвал",
+        "Пароль павінен змяшчаць прынамсі ${ length } сімвалы",
+        "Пароль павінен змяшчаць прынамсі ${ length } сімвалаў",
+        "Пароль павінен змяшчаць прынамсі ${ length } сімвалы"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвал)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалаў)",
+        "Паспрабуйце больш кароткае імя карыстальніка (максімум ${ n } сімвалы)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Націсніце, каб прайграць відэа яшчэ раз"
@@ -13719,6 +14796,32 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now і іншыя."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } сервер",
+        "${ n } серверы",
+        "${ n } сервераў",
+        "${ n } серверы"
+      ],
+      "${ n } VPN connection": [
+        "${ n } падключэнне па VPN",
+        "${ n } падключэнні па VPN",
+        "${ n } падключэнняў па VPN",
+        "${ n } падключэнні па VPN"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } у ${ numberOfCountries } краіне",
+        "${ numberOfServers } у больш чым ${ numberOfCountries } краінах",
+        "${ numberOfServers } у больш чым ${ numberOfCountries } краінах",
+        "${ numberOfServers } у больш чым ${ numberOfCountries } краінах"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } у ${ numberOfCountries } краіне",
+        "${ numberOfServers } у ${ numberOfCountries } краінах",
+        "${ numberOfServers } у ${ numberOfCountries } краінах",
+        "${ numberOfServers } у ${ numberOfCountries } краінах"
       ]
     },
     "vpn_2step: billing": {
@@ -13755,6 +14858,18 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } месяц",
+        "${ n } месяцы",
+        "${ n } месяцаў",
+        "${ n } месяцаў"
+      ],
+      "${ n } year": [
+        "${ n } год",
+        "${ n } гады",
+        "${ n } гадоў",
+        "${ n } гадоў"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Паспрабуйце ${ upsellPlanName } без рызыкі"
       ],
@@ -13867,6 +14982,168 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Кожны ${ interval } тыдзень у ${ multipleDaysString }",
+        "Кожныя ${ interval } тыдні ў ${ multipleDaysString }",
+        "Кожных ${ interval } тыдняў у ${ multipleDaysString }",
+        "Кожныя ${ interval } тыдні ў ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у ${ multipleDaysString } а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў ${ multipleDaysString } а ${ timesString }",
+        "Кожных ${ interval } тыдняў у ${ multipleDaysString } а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў ${ multipleDaysString } а ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у ${ multipleDaysString }, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў ${ multipleDaysString }, ${ untilString }",
+        "Кожных ${ interval } тыдняў у ${ multipleDaysString }, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Кожны ${ interval } тыдзень ва ўсе дні",
+        "Кожныя ${ interval } тыдні ва ўсе дні",
+        "Кожных ${ interval } тыдняў ва ўсе дні",
+        "Кожныя ${ interval } тыдні ва ўсе дні"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Кожны ${ interval } тыдзень ва ўсе дні а ${ timesString }",
+        "Кожныя ${ interval } тыдні ва ўсе дні а ${ timesString }",
+        "Кожных ${ interval } тыдняў ва ўсе дні а ${ timesString }",
+        "Кожныя ${ interval } тыдні ва ўсе дні а ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Кожны ${ interval } тыдзень ва ўсе дні, ${ untilString }",
+        "Кожныя ${ interval } тыдні ва ўсе дні, ${ untilString }",
+        "Кожных ${ interval } тыдняў ва ўсе дні, ${ untilString }",
+        "Кожныя ${ interval } тыдні ва ўсе дні, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Кожны ${ interval } тыдзень у пятніцу",
+        "Кожныя ${ interval } тыдні ў пятніцу",
+        "Кожных ${ interval } тыдняў у пятніцу",
+        "Кожныя ${ interval } тыдні ў пятніцу"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у пятніцу а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў пятніцу а ${ timesString }",
+        "Кожных ${ interval } тыдняў у пятніцу а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў пятніцу а ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у пятніцу, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў пятніцу, ${ untilString }",
+        "Кожных ${ interval } тыдняў у пятніцу, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў пятніцу, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Кожны ${ interval } тыдзень у панядзелак",
+        "Кожныя ${ interval } тыдні ў панядзелак",
+        "Кожных ${ interval } тыдняў у панядзелак",
+        "Кожныя ${ interval } тыдні ў панядзелак"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у панядзелак а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў панядзелак а ${ timesString }",
+        "Кожных ${ interval } тыдняў у панядзелак а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў панядзелак а ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у панядзелак, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў панядзелак, ${ untilString }",
+        "Кожных ${ interval } тыдняў у панядзелак, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў панядзелак, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Кожны ${ interval } тыдзень у суботу",
+        "Кожныя ${ interval } тыдні ў суботу",
+        "Кожных ${ interval } тыдняў у суботу",
+        "Кожныя ${ interval } тыдні ў суботу"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у суботу а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў суботу а ${ timesString }",
+        "Кожных ${ interval } тыдняў у суботу а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў суботу а ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у суботу, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў суботу, ${ untilString }",
+        "Кожных ${ interval } тыдняў у суботу, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў суботу, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Кожны ${ interval } тыдзень у нядзелю",
+        "Кожныя ${ interval } тыдні ў нядзелю",
+        "Кожных ${ interval } тыдняў у нядзелю",
+        "Кожныя ${ interval } тыдні ў нядзелю"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у нядзелю а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў нядзелю а ${ timesString }",
+        "Кожных ${ interval } тыдняў у нядзелю а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў нядзелю а ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у нядзелю, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў нядзелю, ${ untilString }",
+        "Кожных ${ interval } тыдняў у нядзелю, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў нядзелю, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Кожны ${ interval } тыдзень у чацвер",
+        "Кожныя ${ interval } тыдні ў чацвер",
+        "Кожных ${ interval } тыдняў у чацвер",
+        "Кожныя ${ interval } тыдні ў чацвер"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у чацвер а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў чацвер а ${ timesString }",
+        "Кожных ${ interval } тыдняў у чацвер а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў чацвер а ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у чацвер, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў чацвер, ${ untilString }",
+        "Кожных ${ interval } тыдняў у чацвер, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў чацвер, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Кожны ${ interval } тыдзень у аўторак",
+        "Кожныя ${ interval } тыдні ў аўторак",
+        "Кожных ${ interval } тыдняў у аўторак",
+        "Кожныя ${ interval } тыдні ў аўторак"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у аўторак а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак а ${ timesString }",
+        "Кожных ${ interval } тыдняў у аўторак а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў аўторак а ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у аўторак, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў аўторак, ${ untilString }",
+        "Кожных ${ interval } тыдняў у аўторак, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў аўторак, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Кожны ${ interval } тыдзень у сераду",
+        "Кожныя ${ interval } тыдні ў сераду",
+        "Кожных ${ interval } тыдняў у сераду",
+        "Кожныя ${ interval } тыдні ў сераду"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Кожны ${ interval } тыдзень у сераду а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў сераду а ${ timesString }",
+        "Кожных ${ interval } тыдняў у сераду а ${ timesString }",
+        "Кожныя ${ interval } тыдні ў сераду а ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Кожны ${ interval } тыдзень у сераду, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў сераду, ${ untilString }",
+        "Кожных ${ interval } тыдняў у сераду, ${ untilString }",
+        "Кожныя ${ interval } тыдні ў сераду, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Штотыдзень у ${ multipleDaysString }"
       ],
@@ -13973,6 +15250,24 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Кожны ${ interval } год",
+        "Кожныя ${ interval } гады",
+        "Кожных ${ interval } гадоў",
+        "Кожныя ${ interval } гады"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Кожны ${ interval } год а ${ timesString }",
+        "Кожныя ${ interval } гады а ${ timesString }",
+        "Кожных ${ interval } гадоў а ${ timesString }",
+        "Кожныя ${ interval } гады а ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Кожны ${ interval } год, ${ untilString }",
+        "Кожныя ${ interval } гады, ${ untilString }",
+        "Кожных ${ interval } гадоў, ${ untilString }",
+        "Кожныя ${ interval } гады, ${ untilString }"
+      ],
       "Yearly": [
         "Штогод"
       ],

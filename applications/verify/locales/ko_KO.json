@@ -1108,6 +1108,14 @@
       "Sign in with 2FA": [
         "2FA로 로그인"
       ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } characters": [
+        "비밀번호는 최소 ${ length } 자 이상이어야 합니다."
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "더 짧은 이름을 사용하세요 (최대 ${ n }글자)"
+      ]
     }
   }
 }

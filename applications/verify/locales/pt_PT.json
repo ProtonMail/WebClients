@@ -1111,6 +1111,16 @@
       "Sign in with 2FA": [
         "Autenticação com 2FA"
       ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "A palavra-passe deve conter pelo menos ${ length } caráter.",
+        "A palavra-passe deve conter pelo menos ${ length } carateres."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Tente um nome de utilizador mais pequeno (máximo de ${ n } caráter)",
+        "Tente um nome de utilizador mais pequeno (máximo de carateres ${ n })"
+      ]
     }
   }
 }

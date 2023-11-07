@@ -113,9 +113,6 @@
       "Current plan": [
         "Plan actual"
       ],
-      "Customize": [
-        "Personalizare"
-      ],
       "Customize plan": [
         "Personalizare plan"
       ],
@@ -552,6 +549,16 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domeniu personal",
+        "${ domains } domenii personale",
+        "${ domains } de domenii personale"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servere",
+        "${ ips } de servere"
+      ],
       "${ price } per dedicated server": [
         "${ price } per server dedicat"
       ],
@@ -560,6 +567,11 @@
       ],
       "${ price } per user": [
         "${ price } per utilizator"
+      ],
+      "${ users } user": [
+        "${ users } utilizator",
+        "${ users } utilizatori",
+        "${ users } de utilizatori"
       ]
     },
     "Address action": {
@@ -748,6 +760,11 @@
       ]
     },
     "bf2023: renew": {
+      "${ n } month": [
+        "${ n } lună",
+        "primele ${ n } luni",
+        "primele ${ n } de luni"
+      ],
       "the first month": [
         "prima lună"
       ],
@@ -776,6 +793,11 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Include suport pentru un domeniu de e-mail personal, 10 adrese de e-mail, 10 aliasuri hide-my-email, partajare calendar și altele."
       ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Include suport pentru 3 domenii de e-mail personale, ${ addresses } adresă de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele.",
+        "Include suport pentru 3 domenii de e-mail personale, ${ addresses } adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele.",
+        "Include suport pentru 3 domenii de e-mail personale, ${ addresses } de adrese de e-mail, aliasuri nelimitate hide-my-email, partajare calendar și altele."
+      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Conectări securizate pe toate dispozitivele deținute. Include aliasuri nelimitate, partajare, A2F integrată și multe altele."
       ],
@@ -796,6 +818,11 @@
       ]
     },
     "Billing cycle": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
         "Se reînnoiește automat cu ${ renewPrice }, pentru ${ renewalLength }."
       ]
@@ -897,6 +924,18 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuare utilizare ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "un utilizator",
+        "${ users } utilizatori",
+        "${ users } de utilizatori"
+      ],
+      "Total for ${ n } month": [
+        "Total pentru o lună",
+        "Total pentru ${ n } luni",
+        "Total pentru ${ n } de luni"
       ]
     },
     "Checkout summary": {
@@ -2376,11 +2415,26 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "O conexiune VPN",
+        "${ MaxVPN } conexiuni VPN",
+        "${ MaxVPN } de conexiuni VPN"
+      ],
       "Access to all countries": [
         "Acces la toate ţările"
       ],
       "Add": [
         "Adăugare"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Adăugare (${ numberOfAddedServers })",
+        "Adăugare (${ numberOfAddedServers })",
+        "Adăugare (${ numberOfAddedServers })"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Conectare cu un dispozitiv",
+        "Conectare cu maxim ${ plusVpnConnections } dispozitive",
+        "Conectare cu maxim ${ plusVpnConnections } de dispozitive"
       ],
       "Fastest VPN servers": [
         "Cele mai rapide servere VPN"
@@ -2487,6 +2541,11 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bait",
+        "baiți",
+        "de baiți"
+      ],
       "GB": [
         "GiB"
       ],
@@ -2498,6 +2557,33 @@
       ],
       "TB": [
         "TiB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bait",
+        "Baiți",
+        "Baiți"
+      ],
+      "Gigabyte": [
+        "Gigabait",
+        "Gigabaiți",
+        "Gigabaiți"
+      ],
+      "Kilobyte": [
+        "Kilobait",
+        "Kilobaiți",
+        "Kilobaiți"
+      ],
+      "Megabyte": [
+        "Megabait",
+        "Megabaiți",
+        "Megabaiți"
+      ],
+      "Terabyte": [
+        "Terabait",
+        "Terabaiți",
+        "Terabaiți"
       ]
     },
     "Font face option": {
@@ -2636,6 +2722,11 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adresă",
+        "${ amountOfAddresses } adrese",
+        "${ amountOfAddresses } de adrese"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesită permisiunea pentru ${ enableDesktopNotifications }."
       ],
@@ -2657,14 +2748,44 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola mesajelor. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
       ],
+      "${ number } city": [
+        "Un oraș",
+        "${ number } orașe",
+        "${ number } de orașe"
+      ],
+      "${ number } server": [
+        "Un server",
+        "${ number } servere",
+        "${ number } de servere"
+      ],
       "${ plan } removed. Bundle deal not available on a 1-month plan.": [
         "${ plan } a fost eliminat. Oferta pachetului nu este disponibilă pentru planul de o lună."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } necesită cel puțin 1 server dedicat ${ serverPricePerMonth }"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } server este încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }.",
+        "${ provisioningCounter } servere sunt încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }.",
+        "${ provisioningCounter } de servere sunt încă în curs de configurare. Aceasta durează de obicei aproximativ ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "încă ${ remainingAddresses.length }",
+        "încă ${ remainingAddresses.length }",
+        "încă ${ remainingAddresses.length }"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "încă ${ remainingAddresses.length } adresă",
+        "încă ${ remainingAddresses.length } adrese",
+        "încă ${ remainingAddresses.length } de adrese"
+      ],
       "${ storage } storage": [
         "Stocare ${ storage }"
+      ],
+      "${ userFound } user found": [
+        "S-a găsit ${ userFound } utilizator",
+        "S-au găsit ${ userFound } utilizatori",
+        "S-au găsit ${ userFound } de utilizatori"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "Trebuie ${ vpnPlus } pentru conexiunea la nivel de țară."
@@ -2680,6 +2801,11 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } spațiu bonus"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+o conexiune pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
+        "+${ organization.BonusVPN } conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)",
+        "+${ organization.BonusVPN } de conexiuni pentru ${ VPN_APP_NAME } (vă permite să conectați mai multe dispozitive la VPN)"
       ],
       "30-day money-back guarantee": [
         "Garanția returnării banilor în 30 de zile"
@@ -2713,6 +2839,21 @@
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Aceasta adaugă un nivel suplimentar de protecție a contului. Va trebui să folosiți autentificarea cu doi factori de fiecare dată când vă conectați."
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "Adăugare server (${ availableAddedCount } disponibil)",
+        "Adăugare server (${ availableAddedCount } disponibile)",
+        "Adăugare server (${ availableAddedCount } disponibile)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Se adaugă ${ addedServerCount } server poartă de acces",
+        "Se adaugă ${ addedServerCount } servere poartă de acces",
+        "Se adaugă ${ addedServerCount } de servere poartă de acces"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Se adaugă serverul poartă de acces: ${ serverNumber }/${ total }",
+        "Se adaugă serverele poartă de acces: ${ serverNumber }/${ total }",
+        "Se adaugă serverele poartă de acces: ${ serverNumber }/${ total }"
       ],
       "Additional options": [
         "Opțiuni adiționale"
@@ -2828,6 +2969,11 @@
       "Create your first Gateway": [
         "Creați prima poartă de acces"
       ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Creare server poartă de acces: ${ serverNumber }/${ total }",
+        "Creare server poartă de acces: ${ serverNumber }/${ total }",
+        "Creare server poartă de acces: ${ serverNumber }/${ total }"
+      ],
       "Creating your account": [
         "Creare cont"
       ],
@@ -2848,6 +2994,11 @@
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Serverele dedicate cu adrese IP dedicate pot fi adăugate la porțile de acces private pentru a permite controlul mai strict al accesului."
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Se șterge ${ deletedServerCount } server poartă de acces",
+        "Se șterg ${ deletedServerCount } servere poartă de acces",
+        "Se șterg ${ deletedServerCount } de servere poartă de acces"
       ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
@@ -3164,6 +3315,16 @@
       "Plan upgrade required": [
         "Trebuie trecut la alt plan"
       ],
+      "Please add a password for the user on row": [
+        "Adăugați o parolă pentru utilizator pe rândul",
+        "Adăugați o parolă pentru utilizatorii de pe rândurile",
+        "Adăugați o parolă pentru utilizatorii de pe rândurile"
+      ],
+      "Please add an email address for the user on row": [
+        "Adăugați o adresă de e-mail pentru utilizator pe rândul",
+        "Adăugați adrese de e-mail pentru utilizatorii de pe rândurile",
+        "Adăugați adrese de e-mail pentru utilizatorii de pe rândurile"
+      ],
       "Please authenticate your card in the verification tab.": [
         "Autentificați cardul în fila de verificare."
       ],
@@ -3293,6 +3454,11 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Unele dintre serverele dvs. disponibile pot fi utilizate numai în anumite țări din cauza eliminărilor recente."
       ],
+      "Step ${ step }": [
+        "Pasul ${ step }",
+        "Pasul ${ step }",
+        "Pasul ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Spațiu alocat altor utilizatori din această organizație"
       ],
@@ -3334,6 +3500,21 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Vă mulțumim că ne susțineți misiunea de a construi un internet mai bun unde confidențialitatea și libertatea primează."
+      ],
+      "The following address is invalid.": [
+        "Următoarea adresă nu este validă.",
+        "Următoarele adrese nu sunt valide.",
+        "Următoarele adrese nu sunt valide."
+      ],
+      "The following address is unavailable.": [
+        "Următoarea adresă nu este disponibilă.",
+        "Următoarele adrese nu sunt disponibile.",
+        "Următoarele adrese nu sunt disponibile."
+      ],
+      "The following address was not created.": [
+        "Următoarea adresă nu a fost creată.",
+        "Următoarele adrese nu au fost create.",
+        "Următoarele adrese nu au fost create."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "Următorii membri vor primi un mesaj pe e-mail solicitându-le să-și activeze autentificarea cu doi factori cât mai curând."
@@ -3611,17 +3792,44 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "V-ați conectat cu ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Momentan folosiți ${ ipCount } din ${ ipAddresses } servere dedicate disponibile.",
+        "Momentan folosiți ${ ipCount } din ${ ipAddresses } servere dedicate disponibile.",
+        "Momentan folosiți ${ ipCount } din ${ ipAddresses } de servere dedicate disponibile."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Acum folosiți ${ organization.UsedMembers } din ${ organization.MaxMembers } licențe de utilizatori disponibile.",
+        "Acum folosiți ${ organization.UsedMembers } din ${ organization.MaxMembers } licențe de utilizatori disponibile.",
+        "Acum folosiți ${ organization.UsedMembers } din ${ organization.MaxMembers } licențe de utilizatori disponibile."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Este conectat contul ${ memberAddress }."
-      ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "Vă puteți personaliza și descărca facturile pentru contabilitate."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Puteți edita aceasta o dată pentru a vă asigura că este adresa de e-mail corectă pentru verificare."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "Puteți debloca imediat configurația de mai sus adăugând ${ specificCountryCount } la numărul de adrese IP din planul actual sau ne puteți contacta pentru soluții personalizate."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea.",
+        "Puteți avea maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate și orice utilizator ${ BRAND_NAME } cu care ați partajat calendarele înainte de a anula abonarea."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarului partajate înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
+        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }.",
+        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarului partajate înainte de a vă anula abonarea la ${ MAIL_SHORT_APP_NAME }."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendar. Eliminați legăturile calendarului partajate înainte de a vă anula abonarea.",
+        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } calendare. Eliminați legăturile calendarelor partajate înainte de a vă anula abonarea.",
+        "Puteți păstra maxim ${ MAX_CALENDARS_FREE } de calendare. Eliminați legăturile calendarelor partajate înainte de a vă anula abonarea."
       ],
       "You can now access and manage the account as an administrator.": [
         "Acum puteți accesa și gestiona contul ca administrator."
@@ -3631,6 +3839,11 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Puteți utiliza următoarele date pentru a vă conecta la un server ${ VPN_APP_NAME } folosind o terță parte, aplicație VPN cu sursă publică, cum ar fi Tunnelblick pentru macOS sau OpenVPN pentru GNU/Linux."
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Aveți ${ availableCount } server dedicat disponibil.",
+        "Aveți ${ availableCount } servere dedicate disponibile.",
+        "Aveți ${ availableCount } de servere dedicate disponibile."
       ],
       "You have no saved payment methods.": [
         "Nu aveți metode de plată salvate."
@@ -3739,11 +3952,6 @@
         "Puteți adăuga o metodă de plată pentru a avea abonamentul reînnoit automat. Sunt disponibile și alte metode de plată."
       ]
     },
-    "Info message for custom invoice modal": {
-      "Add your name (or company name) and address to your invoices.": [
-        "Adăugare nume (sau nume companie) și adresă pe facturi."
-      ]
-    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "Puteți preîntâmpina expirarea prin reactivarea abonamentului."
@@ -3825,6 +4033,21 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "Adresa ${ MAIL_APP_NAME }"
+      ],
+      "${ n } month": [
+        "O lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } zi",
+        "${ nbDay } zile",
+        "${ nbDay } de zile"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } din ${ MaxAddresses } adresă de e-mail",
+        "${ UsedAddresses } din ${ MaxAddresses } adrese de e-mail",
+        "${ UsedAddresses } din ${ MaxAddresses } de e-mail adrese"
       ],
       "Account storage": [
         "Spațiu cont"
@@ -3948,9 +4171,6 @@
       ],
       "Current email": [
         "E-mail actual"
-      ],
-      "Customize invoices": [
-        "Personalizare facturi"
       ],
       "Default language": [
         "Limba implicită"
@@ -4369,6 +4589,13 @@
         "Modificați-vă planul pentru a debloca asistența live și alte funcții premium sau folosiți formularul de suport gratuit pentru a raporta o problemă."
       ]
     },
+    "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } membri ai organizației folosesc autentificarea cu doi factori.",
+        "${ twoFAMembers.length }/${ members.length } membri ai organizației folosesc autentificarea cu doi factori.",
+        "${ twoFAMembers.length }/${ members.length } membri ai organizației folosesc autentificarea cu doi factori."
+      ]
+    },
     "Member action": {
       "Change password": [
         "Schimbare parolă"
@@ -4497,6 +4724,81 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } calendar",
+        "${ n } calendare",
+        "${ n } de calendare"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendar per utilizator",
+        "${ n } calendare per utilizator",
+        "${ n } de calendare per utilizator"
+      ],
+      "${ n } custom email domain": [
+        "Un domeniu personal de e-mail",
+        "${ n } domenii personale de e-mail",
+        "${ n } de domenii personale de e-mail"
+      ],
+      "${ n } email address": [
+        "O adresă de e-mail",
+        "${ n } adrese de e-mail/aliasuri",
+        "${ n } de adrese de e-mail/aliasuri"
+      ],
+      "${ n } email address per user": [
+        "O adresă per utilizator",
+        "${ n } adrese de e-mail per utilizator",
+        "${ n } de adrese de e-mail per utilizator"
+      ],
+      "${ n } filter": [
+        "Un filtru",
+        "${ n } filtre",
+        "${ n } de filtre"
+      ],
+      "${ n } folder": [
+        "Un folder",
+        "${ n } foldere",
+        "${ n } de foldere"
+      ],
+      "${ n } folder and label": [
+        "Un folder și o etichetă",
+        "${ n } foldere și etichete",
+        "${ n } de foldere și etichete"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } alias „hide-my-email”",
+        "${ n } aliasuri „hide-my-email”",
+        "${ n } de aliasuri „hide-my-email”"
+      ],
+      "${ n } label": [
+        "O etichetă",
+        "${ n } etichete",
+        "${ n } de etichete"
+      ],
+      "${ n } message per day": [
+        "Un mesaj pe zi",
+        "${ n } mesaje pe zi",
+        "${ n } de mesaje pe zi"
+      ],
+      "${ n } vault": [
+        "${ n } seif",
+        "${ n } seifuri",
+        "${ n } de seifuri"
+      ],
+      "${ n } VPN connection": [
+        "O conexiune VPN",
+        "${ n } conexiuni VPN",
+        "${ n } de conexiuni VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "O conexiune VPN per utilizator",
+        "${ n } conexiuni VPN per utilizator",
+        "${ n } de conexiuni VPN per utilizator"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } cu ${ n } alias hide-my-email",
+        "${ PASS_APP_NAME } cu ${ n } aliasuri hide-my-email",
+        "${ PASS_APP_NAME } cu ${ n } de aliasuri hide-my-email"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } cu aliasuri hide-my-email nelimitate"
       ],
@@ -4635,6 +4937,11 @@
       "High-speed Swiss VPN that protects your privacy": [
         "VPN elvețian de mare viteză care vă protejează confidențialitatea"
       ],
+      "High-speed VPN on ${ n } device": [
+        "VPN de mare viteză pe un dispozitiv",
+        "VPN de mare viteză pe ${ n } dispozitive",
+        "VPN de mare viteză pe ${ n } de dispozitive"
+      ],
       "HTML signatures": [
         "Semnături HTML"
       ],
@@ -4671,6 +4978,11 @@
       "Priority support & live chat": [
         "Asistență prioritară și conversații live"
       ],
+      "Protect ${ n } device at a time": [
+        "Protejare ${ n } dispozitiv",
+        "Protejare ${ n } dispozitive simultan",
+        "Protejare ${ n } de dispozitive simultan"
+      ],
       "Router support": [
         "Suport ruter"
       ],
@@ -4685,6 +4997,11 @@
       ],
       "Send & receive invitations": [
         "Trimiteți și primiți invitații"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Servere în peste ${ vpnServersCountData.paid.countries } țară",
+        "Servere în peste ${ vpnServersCountData.paid.countries } țări",
+        "Servere în peste ${ vpnServersCountData.paid.countries } de țări"
       ],
       "Share calendar via link": [
         "Partajare calendar prin legături"
@@ -4769,6 +5086,11 @@
       ],
       "User session management": [
         "Gestionare sesiuni utilizator"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Partajare seif (maxim ${ n } persoană)",
+        "Partajare seif (maxim ${ n } persoane)",
+        "Partajare seif (maxim ${ n } de persoane)"
       ]
     },
     "new_plans: feature info": {
@@ -4882,6 +5204,13 @@
         "/lună"
       ]
     },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "Mai aveți încă o zi rămasă pentru contul cu planul ${ currentPlanName }.",
+        "Mai aveți încă ${ daysRemaining } zile rămase pentru contul cu planul ${ currentPlanName }.",
+        "Mai aveți încă ${ daysRemaining } de zile rămase pentru contul cu planul ${ currentPlanName }."
+      ]
+    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Făcând clic pe «Plătire», sunteți de acord cu ${ termsAndConditions }."
@@ -4948,6 +5277,11 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Creați adrese de e-mail multiple pentru identitățile personale online, de exemplu, ionvanzari@${ domain } pentru conturile de cumpărături, ionstiri@${ domain } pentru abonamentul la știri."
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Creați până la ${ n } calendar sau adăugați calendare de la prieteni, familie, colegi și organizații",
+        "Creați până la ${ n } calendare sau adăugați calendare de la prieteni, familie, colegi și organizații",
+        "Creați până la ${ n } de calendare sau adăugați calendare de la prieteni, familie, colegi și organizații"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Creați până la ${ n } adrese/aliasuri ce pot fi atribuite membrilor familiei. Folosiți-le pentru autentificările online, de exemplu ioncumparaturi@${ domain } pentru conturi de cumpărături."
@@ -5145,6 +5479,11 @@
       "Cover more ground with support for 10 custom email domains": [
         "Acoperiți mai mult teren cu suport pentru 10 domenii de e-mail personale"
       ],
+      "Create up to ${ n } calendar": [
+        "Creați maxim ${ n } calendar",
+        "Creați până la ${ n } calendare",
+        "Creați până la ${ n } de calendare"
+      ],
       "Dedicated Account manager": [
         "Manager dedicat al contului"
       ],
@@ -5252,6 +5591,21 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } pentru a obține mai mult spațiu sau eliminați din spațiul alocat pentru a elibera spațiu."
       ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Planul actual mai include maxim o adresă.",
+        "Planul actual mai include maxim ${ availableAddresses } adrese.",
+        "Planul actual mai include maxim ${ availableAddresses } de adrese."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Planul actual include maxim un utilizator în organizație.",
+        "Planul actual include maxim ${ availableNumberOfMembers } utilizatori în organizație.",
+        "Planul actual include maxim ${ availableNumberOfMembers } de utilizatori în organizație."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Planul actual mai include maxim un cont VPN.",
+        "Planul actual mai include maxim ${ availableVPNAccess } conturi VPN.",
+        "Planul actual mai include maxim ${ availableVPNAccess } de conturi VPN."
+      ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Planul actual mai include maxim ${ humanReadableAvailableSpace } de spațiu."
       ]
@@ -5347,17 +5701,17 @@
         "Tudor Andrei"
       ]
     },
-    "Placeholder for custom invoice text": {
-      "Add your name (or company name) and address to your invoices": [
-        "Adăugare nume (sau nume companie) și adresă pe facturi"
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "contactați"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "Selectați numărul de utilizatori de inclus în plan. Fiecare utilizator în plus costă ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Dacă aveți nevoie de mai mult de un utilizator în cont, ${ contact } echipa noastră de vânzări.",
+        "Dacă aveți nevoie de mai mult de ${ maxUsers } utilizatori în cont, ${ contact } echipa noastră de vânzări.",
+        "Dacă aveți nevoie de mai mult de ${ maxUsers } de utilizatori în cont, ${ contact } echipa noastră de vânzări."
       ]
     },
     "Price": {
@@ -5508,14 +5862,44 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } zi",
+        "${ timeRemaining.inDays } zile",
+        "${ timeRemaining.inDays } de zile"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } oră",
+        "${ timeRemaining.inHours } ore",
+        "${ timeRemaining.inHours } de ore"
+      ],
       "Didn’t make this request?": [
         "Nu ați făcut această solicitare?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Dacă nu ați solicitat resetarea parolei, anulați solicitarea acum."
       ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } zi pentru a reseta parola.",
+        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } zile pentru a reseta parola.",
+        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inDays } de zile pentru a reseta parola."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inHours } oră pentru a reseta parola.",
+        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inHours } ore pentru a reseta parola.",
+        "Solicitate de resetare parolă acceptată (${ user.Email }). Aveți la dispoziție ${ timeRemaining.inHours } de ore pentru a reseta parola."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Accesați dispozitivul conectat (în sesiunea de unde a fost inițiată solicitarea) pentru a vă schimba parola."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Această permisiune expiră peste ${ timeRemaining.inDays } zi.",
+        "Această permisiune expiră peste ${ timeRemaining.inDays } zile.",
+        "Această permisiune expiră peste ${ timeRemaining.inDays } de zile."
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Această permisiune expiră peste ${ timeRemaining.inHours } oră.",
+        "Această permisiune expiră peste ${ timeRemaining.inHours } ore.",
+        "Această permisiune expiră peste ${ timeRemaining.inHours } de ore."
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Acum vă puteți schimba parola pentru contul ${ boldEmail } timp de ${ boldDaysRemaining }."
@@ -5587,6 +5971,11 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "A mai rămas ${ gracePeriodHoursRemaining } oră.",
+        "Au mai rămas ${ gracePeriodHoursRemaining } ore.",
+        "Au mai rămas ${ gracePeriodHoursRemaining } de ore."
+      ],
       "Didn’t make this request?": [
         "Nu ați făcut această solicitare?"
       ],
@@ -5599,11 +5988,21 @@
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "Resetarea parolei este disponibilă din ${ boldDate }. Aceasta vă oferă timp să anulați orice solicitare frauduloasă."
       ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Solicitare de resetare parolă (${ user.Email }). Puteți să vă schimbați parola timp de ${ hoursRemaining } oră.",
+        "Solicitare de resetare parolă (${ user.Email }). Puteți să vă schimbați parola timp de ${ hoursRemaining } ore.",
+        "Solicitare de resetare parolă (${ user.Email }). Puteți să vă schimbați parola timp de ${ hoursRemaining } de ore."
+      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Pentru a ne asigura că însuși deținătorul contului încearcă să reseteze parola, așteptăm 72 de ore înainte de a aproba astfel de solicitări. Vă puteți schimba parola peste ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "S-a primit o solicitare de resetare a parolei pentru ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Vă puteți schimba parola peste ${ gracePeriodHoursRemaining } oră.",
+        "Vă puteți schimba parola peste ${ gracePeriodHoursRemaining } ore.",
+        "Vă puteți schimba parola peste ${ gracePeriodHoursRemaining } de ore."
       ]
     },
     "session_recovery:in_progress:link": {
@@ -5654,6 +6053,11 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "Solicitați resetarea parolei?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Vă puteți reseta parola peste ${ gracePeriodHoursRemaining } oră.",
+        "Vă puteți reseta parola peste ${ gracePeriodHoursRemaining } ore.",
+        "Vă puteți reseta parola peste ${ gracePeriodHoursRemaining } de ore."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -5665,6 +6069,11 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } oră",
+        "${ gracePeriodHoursRemaining } ore",
+        "${ gracePeriodHoursRemaining } de ore"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } este acum posibilă."
       ],
@@ -5736,6 +6145,35 @@
         "Alegeți nelimitat"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } zi",
+        "${ days } zile",
+        "${ days } de zile"
+      ],
+      "${ hours } hour": [
+        "${ hours } oră",
+        "${ hours } ore",
+        "${ hours } de ore"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minut",
+        "${ minutes } minute",
+        "${ minutes } de minute"
+      ],
+      "${ seconds } second": [
+        "${ seconds } secundă",
+        "${ seconds } secunde",
+        "${ seconds } de secunde"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } lună GRATUIT",
+        "${ n } luni GRATUITE",
+        "${ n } de luni GRATUITE"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "Un utilizator"
@@ -5799,6 +6237,11 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
       "/ month": [
         "/ lună"
       ],
@@ -5942,6 +6385,71 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } server dedicat",
+        "${ ipAddresses } servere dedicate",
+        "${ ipAddresses } de servere dedicate"
+      ],
+      "${ maxVpn } high-speed VPN connection": [
+        "o conexiune VPN de mare viteză",
+        "${ maxVpn } conexiuni VPN de mare viteză",
+        "${ maxVpn } de conexiuni VPN de mare viteză"
+      ],
+      "${ n } calendar": [
+        "Un calendar",
+        "${ n } calendare",
+        "${ n } de calendare"
+      ],
+      "${ n } calendar per user": [
+        "Un calendar per utilizator",
+        "${ n } calendare per utilizator",
+        "${ n } de calendare per utilizator"
+      ],
+      "${ n } high-speed VPN connection": [
+        "O conexiune VPN de mare viteză",
+        "${ n } conexiuni VPN de mare viteză",
+        "${ n } de conexiuni VPN de mare viteză"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "O conexiune VPN de mare viteză per utilizator",
+        "${ n } conexiuni VPN de mare viteză per utilizator",
+        "${ n } de onexiuni VPN de mare viteză per utilizator"
+      ],
+      "${ n } VPN connection": [
+        "O conexiune VPN",
+        "${ n } conexiuni VPN",
+        "${ n } de conexiuni VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "O conexiune VPN per utilizator",
+        "${ n } conexiuni VPN per utilizator",
+        "${ n } de conexiuni VPN per utilizator"
+      ],
+      "${ UsedAddresses } address": [
+        "o adresă",
+        "${ UsedAddresses } adrese",
+        "${ UsedAddresses } de adrese"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } din ${ MaxAddresses } adresă de e-mail",
+        "${ UsedAddresses } din ${ MaxAddresses } adrese de e-mail",
+        "${ UsedAddresses } din ${ MaxAddresses } de adrese de e-mail"
+      ],
+      "${ UsedCalendars } calendar": [
+        "Un calendar",
+        "${ UsedCalendars } calendare",
+        "${ UsedCalendars } de calendare"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } din ${ MaxDomains } domeniu personal",
+        "${ UsedDomains } din ${ MaxDomains } domenii personale",
+        "${ UsedDomains } din ${ MaxDomains } de domenii personale"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } din ${ MaxMembers } utilizator",
+        "${ UsedMembers } din ${ MaxMembers } utilizatori",
+        "${ UsedMembers } din ${ MaxMembers } de utilizatori"
+      ],
       "1 email address": [
         "O adresă de e-mail"
       ],
@@ -5953,6 +6461,11 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "Blocare reclame încorporată (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "VPN de mare viteză pe un dispozitiv",
+        "VPN de mare viteză pe ${ maxVpn } dispozitive",
+        "VPN de mare viteză pe ${ maxVpn } de dispozitive"
       ]
     },
     "Subscription change warning": {
@@ -6292,9 +6805,6 @@
       "Add credits": [
         "Adăugare credite"
       ],
-      "Add invoice details": [
-        "Adăugare detalii factură"
-      ],
       "Add new user": [
         "Adăugare utilizator"
       ],
@@ -6379,6 +6889,11 @@
       "Couldn’t create accounts": [
         "Nu s-au putut crea conturi"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "Creare un utilizator",
+        "Creare ${ selectedUserIds.length } utilizatori",
+        "Creare ${ selectedUserIds.length } de utilizatori"
+      ],
       "Create a new Gateway": [
         "Creare poartă de acces"
       ],
@@ -6426,6 +6941,11 @@
       ],
       "Delete account": [
         "Ștergere cont"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Ștergere server (veți putea să-l recuperați timp de ${ days } zi).",
+        "Ștergere server (veți putea să-l recuperați timp de ${ days } zile).",
+        "Ștergere server (veți putea să-l recuperați timp de ${ days } de zile)."
       ],
       "Delete user": [
         "Ștergere utilizator"
@@ -6495,6 +7015,11 @@
       ],
       "Every member of the organization can access": [
         "Orice membru din organizație are acces"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Nu s-a putut crea un cont de utilizator.",
+        "Nu s-au putut crea ${ failedUsers.length } conturi de utilizator.",
+        "Nu s-au putut crea ${ failedUsers.length } de conturi de utilizator."
       ],
       "Find email or username": [
         "Căutare e-mail sau utilizator"
@@ -6685,6 +7210,16 @@
       "Subscription": [
         "Abonament"
       ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "S-a reușit crearea unui cont de utilizator",
+        "S-a reușit crearea a ${ localSuccessfullyCreatedUsers.length } conturi de utilizator",
+        "S-a reușit crearea a ${ localSuccessfullyCreatedUsers.length } de conturi de utilizator"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "S-a reușit crearea unui cont",
+        "S-a reușit crearea a ${ successfullyCreatedUsers.length } conturi",
+        "S-a reușit crearea a ${ successfullyCreatedUsers.length } de conturi"
+      ],
       "Summary": [
         "Sumar"
       ],
@@ -6865,6 +7400,18 @@
         "Administrator principal"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Parola trebuie să conțină cel puțin un caracter",
+        "Parola trebuie să conțină cel puțin ${ length } caractere.",
+        "Parola trebuie să conțină cel puțin ${ length } de caractere."
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)",
+        "Încercați un nume de utilizator mai scurt (max ${ n } caractere)"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "Am găsit un alt serviciu care îmi place mai mult"
@@ -6882,6 +7429,28 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now şi multe altele."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "Un server",
+        "Peste ${ n } servere",
+        "Peste ${ n } de servere"
+      ],
+      "${ n } VPN connection": [
+        "O conexiune VPN",
+        "${ n } conexiuni VPN",
+        "${ n } de conexiuni VPN"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } în ${ numberOfCountries } țară",
+        "${ numberOfServers } în ${ numberOfCountries } țări",
+        "${ numberOfServers } în ${ numberOfCountries } de țări"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } într-o țară",
+        "${ numberOfServers } în ${ numberOfCountries } țări",
+        "${ numberOfServers } în ${ numberOfCountries } de țări"
       ]
     },
     "vpn_2step: billing": {
@@ -6918,6 +7487,16 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } lună",
+        "${ n } luni",
+        "${ n } de luni"
+      ],
+      "${ n } year": [
+        "${ n } an",
+        "${ n } ani",
+        "${ n } de ani"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Încercați fără riscuri ${ upsellPlanName }"
       ],
