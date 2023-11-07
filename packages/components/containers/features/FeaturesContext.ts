@@ -68,7 +68,6 @@ export enum FeatureCode {
     LegacyMessageMigrationEnabled = 'LegacyMessageMigrationEnabled',
     MailDisableE2EE = 'MailDisableE2EE',
     MailFeedbackEnabled = 'MailFeedbackEnabled',
-    MailForwarding = 'MailForwarding',
     MailServiceWorker = 'MailServiceWorker',
     NumAttachmentsWithoutEmbedded = 'NumAttachmentsWithoutEmbedded',
     NumberOfPreloadedConversations = 'NumberOfPreloadedConversations',

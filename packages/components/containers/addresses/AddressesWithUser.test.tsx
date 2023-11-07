@@ -7,7 +7,6 @@ import {
     useAddresses,
     useAddressesKeys,
     useApi,
-    useFeature,
     useFlag,
     useKTVerifier,
     useNotifications,
@@ -42,9 +41,6 @@ const mockedUseAddressesKeys = useAddressesKeys as jest.MockedFunction<typeof us
 
 jest.mock('@proton/components/containers/keyTransparency/useKTVerifier');
 const mockedUseKTVerifier = useKTVerifier as jest.MockedFunction<typeof useKTVerifier>;
-
-jest.mock('@proton/components/hooks/useFeature');
-const mockedUseFeature = useFeature as jest.MockedFunction<any>;
 
 jest.mock('@proton/components/containers/unleash/useFlag');
 const mockedUseFlag = useFlag as jest.MockedFunction<any>;
@@ -99,7 +95,6 @@ describe('addresses with user', () => {
     mockedUseUser.mockReturnValue([{}] as any);
     mockedUseAddressesKeys.mockReturnValue([{}] as any);
     mockedUseKTVerifier.mockReturnValue({} as any);
-    mockedUseFeature.mockReturnValue({ feature: { Value: { MailForwarding: true } }, loading: false });
     mockedUseFlag.mockReturnValue(true);
 
     const getFirstAddress = (container: HTMLElement) => {
