@@ -69,6 +69,10 @@
       "Apply": [
         "Aplicar"
       ],
+      "At most ${ maxContacts } contact is allowed per contact group": [
+        "São permitidos no máximo ${ maxContacts } contato por grupo de contatos.",
+        "São permitidos no máximo ${ maxContacts } contatos por grupo de contatos."
+      ],
       "Attach screenshot(s)": [
         "Anexar captura(s) de tela"
       ],
@@ -188,6 +192,14 @@
       ],
       "Delete": [
         "Excluir"
+      ],
+      "Delete ${ selectedCount } contact": [
+        "Excluir ${ selectedCount } contato",
+        "Excluir ${ selectedCount } contatos"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "Excluir ${ selectedCount } grupo de contatos",
+        "Excluir ${ selectedCount } grupos de contatos"
       ],
       "Delete contact": [
         "Excluir contato"
@@ -635,6 +647,10 @@
       ],
       "Yes, I'll attend": [
         "Sim, eu vou participar"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos",
+        "Você não pode enviar arquivos vCards de mais de ${ maxAttachments } contatos"
       ]
     },
     "Action subline": {
@@ -668,6 +684,20 @@
       ],
       "You don't have any groups.": [
         "Você não tem nenhum grupo."
+      ]
+    },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } domínio personalizado",
+        "${ domains } domínios personalizados"
+      ],
+      "${ ips } server": [
+        "${ ips } servidor",
+        "${ ips } servidores"
+      ],
+      "${ users } user": [
+        "${ users } usuário",
+        "${ users } usuários"
       ]
     },
     "Alarm notification": {
@@ -833,6 +863,10 @@
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclui suporte para 1 domínio de e-mail personalizado, 10 endereços de e-mail, 10 aliases do hide-my-email, compartilhamento de calendário e muito mais."
+      ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclui suporte para 3 domínios de e-mail personalizados, ${ addresses } endereço de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais.",
+        "Inclui suporte para 3 domínios de e-mail personalizados, ${ addresses } endereços de e-mail, aliases ilimitados do hide-my-email, compartilhamento de calendário e muito mais."
       ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Logins seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
@@ -1003,6 +1037,14 @@
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
         "Não é possível compartilhar esse calendário com mais usuários da ${ BRAND_NAME }"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "Você atingiu o máximo de ${ MAX_CALENDAR_MEMBERS } membro para este calendário.\nPara compartilhar este calendário com mais contas da ${ BRAND_NAME }, remova alguns membros.",
+        "Você atingiu o máximo de ${ MAX_CALENDAR_MEMBERS } membros para este calendário.\nPara compartilhar este calendário com mais contas da ${ BRAND_NAME }, remova alguns membros."
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "Você atingiu o máximo de ${ MAX_LINKS_PER_CALENDAR } link para este calendário.\nPara criar um novo link para este calendário, exclua um existente.",
+        "Você atingiu o máximo de ${ MAX_LINKS_PER_CALENDAR } links para este calendário.\nPara criar um novo link para este calendário, exclua um existente."
       ]
     },
     "Calendar sharing access option label": {
@@ -1094,6 +1136,18 @@
       ],
       "Change time range to": [
         "Alterar intervalo de tempo para"
+      ]
+    },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "${ more } a mais",
+        "${ more } a mais"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } usuário",
+        "${ users } usuários"
       ]
     },
     "Collapsible tooltip": {
@@ -2051,9 +2105,17 @@
       ],
       "On date…": [
         "Na data…"
+      ],
+      "time": [
+        "vez",
+        "vezes"
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } vez",
+        "${ count } vezes"
+      ],
       "Daily": [
         "Diariamente"
       ],
@@ -2062,6 +2124,18 @@
       ],
       "Daily, ${ untilString }": [
         "Diariamente, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "A cada ${ interval } dia",
+        "A cada ${ interval } dias"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "A cada ${ interval } dia, ${ timesString }",
+        "A cada ${ interval } dias, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "A cada ${ interval } dia, ${ untilString }",
+        "A cada ${ interval } dias, ${ untilString }"
       ],
       "until ${ dateString }": [
         "até ${ dateString }"
@@ -2282,6 +2356,22 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
       ],
+      "${ list } doesn't have a valid email address": [
+        "${ list } não tem um endereço de e-mail válido",
+        "Alguns contatos não têm endereço de e-mail: ${ list }"
+      ],
+      "${ list } doesn't have an email address": [
+        "${ list } não tem endereço de e-mail",
+        "Alguns contatos não têm endereço de e-mail: ${ list }"
+      ],
+      "${ list } has invalid emails": [
+        "${ list } tem e-mails incorretos.",
+        "Alguns grupos têm e-mails incorretos: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } não tem contatos",
+        "Alguns dos grupos não têm contatos: ${ list }"
+      ],
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
@@ -2332,6 +2422,14 @@
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "Erro ao descriptografar: Não foi possível descriptografar este evento."
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Desmarque pelo menos ${ calendarsToFixCount } calendário",
+        "Desmarque pelo menos ${ calendarsToFixCount } calendários"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Desmarque ao menos ${ calendarsToFixCount } calendário ou",
+        "Desmarque ao menos ${ calendarsToFixCount } calendários ou"
       ],
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
@@ -2423,6 +2521,10 @@
       "Last name is too long": [
         "Sobrenome é muito longo"
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Mescle pelo menos ${ calendarsToFixCount } calendário com um calendário existente da ${ BRAND_NAME }",
+        "Mescle pelo menos ${ calendarsToFixCount } calendários com calendários existente da ${ BRAND_NAME }"
+      ],
       "Missing key packet": [
         "Pacote de chave ausente"
       ],
@@ -2456,6 +2558,14 @@
       "Number of occurrences cannot be empty": [
         "O número de ocorrências não pode estar vazio"
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "Um dos contatos não tem endereço de e-mail: ${ noEmailsContactNamesList }",
+        "Alguns contatos não têm endereço de e-mail: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "Um dos grupos não tem contatos: ${ noContactGroupList }",
+        "Alguns dos grupos não tem contatos: ${ noContactGroupList } "
+      ],
       "Password is required": [
         "A senha é obrigatória"
       ],
@@ -2467,6 +2577,10 @@
       ],
       "Please create an address first.": [
         "Primeiro crie um endereço de e-mail."
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Corrija o conflito em destaque para prosseguir.",
+        "Corrija os conflitos em destaque para prosseguir."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Informe o primeiro nome, o sobrenome ou nome de exibição"
@@ -2485,6 +2599,10 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "A chave principal recuperada para o usuário da ${ BRAND_NAME } não é válida para o envio."
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Destinatário duplicado removido: ${ joinedRecipients }",
+        "Destinatários duplicados removidos: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "A solicitação expirou"
@@ -2594,6 +2712,10 @@
       "You already added this holidays calendar": [
         "Você já adicionou feriados"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "Você não pode enviar um e-mail para mais de ${ maxContacts } destinatário",
+        "Você não pode enviar um e-mail para mais de ${ maxContacts } destinatários"
+      ],
       "You have reached the contacts limit for your account": [
         "Você atingiu o limite de contatos da sua conta"
       ],
@@ -2627,6 +2749,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Ocorreu um erro inesperado. A importação deve ser reiniciada."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } evento.",
+        "O arquivo ${ formattedFilename } contém mais de ${ MAX_IMPORT_EVENTS_STRING } eventos."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Seu arquivo ${ formattedFilename } tem um método incorreto e não é possível importá-lo."
@@ -2824,9 +2950,19 @@
         "cancelado"
       ]
     },
+    "Event form": {
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } participante",
+        "${ numberOfAttendees } participantes"
+      ]
+    },
     "Event info in search view; event duration": {
       "All day": [
         "Todo o dia"
+      ],
+      "All day, lasts ${ plusDaysToEnd } day": [
+        "O dia todo, resta ${ plusDaysToEnd } dia",
+        "O dia todo, restam ${ plusDaysToEnd } dias"
       ]
     },
     "Event info. Organizer name": {
@@ -3051,6 +3187,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -3062,6 +3202,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Filter notification": {
@@ -3123,6 +3285,10 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Encontrada ${ items.length } sugestão, use o teclado para navegar.",
+        "Encontradas ${ items.length } sugestões, use o teclado para navegar."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Use as teclas Para cima e Para baixo para acessar e procurar sugestões após a entrada. Pressione Enter para confirmar sua escolha, ou Escape para fechar a caixa de sugestões."
       ]
@@ -3139,6 +3305,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } evento criptografado e adicionado ao seu calendário",
+        "${ totalImported }/${ totalToImport } eventos criptografados e adicionados ao seu calendário"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } evento importado.",
+        "Um erro ocorreu durante a encriptação e inclusão de seu evento. ${ totalImported } de ${ totalToImport } eventos importados."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Ocorreu um erro ao criptografar e adicionar seu evento. Nenhum evento pôde ser importado."
       ],
@@ -3173,11 +3347,23 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Eventos importados aparecem no ${ CALENDAR_APP_NAME } como eventos simples, sem organizador nem detalhes de participantes. Para receber atualizações e ver participantes, peça aos organizadores que te convidem usando seu endereço de e-mail da ${ BRAND_NAME }."
       ],
+      "This file contains an event invitation:": [
+        "Este arquivo contém um convite para um evento:",
+        "Este arquivo contém convites eventos:"
+      ],
+      "This file contains an invitation response:": [
+        "Este arquivo contém uma resposta de convite:",
+        "Este arquivo contém respostas a convites:"
+      ],
       "This file contains some data that we cannot import:": [
         "Este arquivo contém alguns dados que não pudemos importar:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } contato criptografado e adicionado à sua lista de contatos",
+        "${ totalImported }/${ totalToImport } contatos criptografados e adicionados à sua lista de contatos"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Ocorreu um erro ao criptografar e adicionar seu contato. Nenhum contato pôde ser importado."
       ],
@@ -3197,6 +3383,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Contato ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } contato",
+        "${ totalContacts } contatos"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3368,6 +3560,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } de ${ totalContacts } contatos não serão importados. Clique para detalhes"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } de ${ totalEvents } evento não será importado. Expanda para mais detalhes.",
+        "${ totalEventsDiscarded } de ${ totalEvents } eventos não serão importados. Expanda para mais detalhes."
+      ],
       "No contact can be imported. Click for details": [
         "Nenhum contato pôde ser importado. Clique para mais detalhes"
       ],
@@ -3379,20 +3575,92 @@
       ]
     },
     "Info": {
+      "${ addressCount } email address": [
+        "${ addressCount } endereço de e-mail",
+        "${ addressCount } endereços de e-mail"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "A tecnologia de criptografia da ${ BRAND_NAME } significa que ninguém pode acessar sua senha - nem mesmo nós."
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } novo calendário",
+        "${ calendarsToBeCreatedCount } novos calendários"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } calendário mesclado",
+        "${ calendarsToBeMergedCount } calendários mesclados"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } contém vários endereços de e-mail.",
+        "${ contactCount } contêm vários endereços de e-mail."
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } membro",
+        "${ contactEmailsLength } membros"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } contém vários endereços de e-mail."
+      ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } contato encontrado",
+        "${ contactsCount } contatos encontrados"
+      ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } contato",
+        "${ contactsLength } contatos"
       ],
       "${ firstItems } and ${ lastItem }": [
         "${ firstItems } e ${ lastItem }"
       ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } grupo(s) encontrado(s)",
+        "${ groupCounts } grupo(s) encontrado(s)"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } pasta encontrada",
+        "${ providerFoldersNumLocalized } pastas encontradas"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } marcador encontrado no Gmail",
+        "${ providerFoldersNumLocalized } marcadores encontrados no Gmail"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendário",
+        "${ selectedCalendarsTotal } de ${ providerCalendars.length } calendários"
+      ],
+      "${ selectedContactsLength }/${ contactsLength } contact selected": [
+        "${ selectedContactsLength }/${ contactsLength } contato selecionado",
+        "${ selectedContactsLength }/${ contactsLength } contatos selecionados"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } pasta selecionada",
+        "${ selectedFoldersCount } pastas selecionadas"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } marcador selecionado",
+        "${ selectedFoldersCount } marcadores selecionados"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } pasta selecionada",
+        "${ selectedFoldersCountLocalized } pastas selecionadas"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } marcador selecionado",
+        "${ selectedFoldersCountLocalized } marcadores selecionados"
+      ],
       "${ storage } storage": [
         "${ storage } de armazenamento"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } contato atualizado.",
+        "${ updated } contatos atualizados."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } membro)",
+        "(${ memberCount } membros)"
       ],
       "A cancellation email will be sent to removed participants.": [
         "Um e-mail de cancelamento será enviado aos participantes removidos."
@@ -3417,6 +3685,18 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "A verificação de endereço com chaves de confiança ​​está ativada para este endereço. Para poder enviar para este endereço, primeiro confie nas chaves públicas que podem ser usadas para envio."
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "Tudo (${ totalFoldersCount } pasta)",
+        "Todas (${ totalFoldersCount } pastas)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Tudo (${ totalFoldersCount } marcador)",
+        "Todos (${ totalFoldersCount } marcadores)"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }",
+        "Todos os seus contatos serão importados, até o limite de ${ MAX_CONTACTS_PER_USER }"
       ],
       "An invitation will be sent to added participants.": [
         "Um convite será enviado aos participantes adicionados."
@@ -3490,6 +3770,10 @@
       "Country code": [
         "Código do país"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Criar ${ calendarsToBeCreatedCount } novo calendário",
+        "Criar ${ calendarsToBeCreatedCount } novos calendários"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Crie um marcador para as mensagens importadas, um intervalo de tempo para esta importação e as pastas que deseja de importar."
       ],
@@ -3559,6 +3843,10 @@
       "Enter your own password (as organization admin).": [
         "Digite sua própria senha (como administrador da organização)."
       ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "Tempo restante estimado: ${ estimatedMinutes } minuto",
+        "Tempo restante estimado: ${ estimatedMinutes } minutos"
+      ],
       "Estimated time remaining: Less than a minute": [
         "Tempo restante estimado: menos de um minuto"
       ],
@@ -3594,6 +3882,10 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendário",
+        "Importar ${ calendarCount } de ${ totalCalendarsCount } calendários"
       ],
       "Import from": [
         "Importar de"
@@ -3732,6 +4024,10 @@
       ],
       "Please select the folders you would like to import:": [
         "Selecione as pastas que deseja importar:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "Selecione qual endereço de e-mail ou endereços adicionar ao grupo ${ groupCount }.",
+        "Selecione qual endereço de e-mail ou endereços adicionar aos grupos ${ groupCount }."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
@@ -4097,6 +4393,10 @@
       ]
     },
     "Information about why calendar event cannot be saved": {
+      "At most ${ maxAttendees } participant is allowed per invitation": [
+        "É permitido no máximo ${ maxAttendees } participante por convite",
+        "São permitidos no máximo ${ maxAttendees } participantes por convite"
+      ],
       "Creating invites in a shared calendar is not allowed": [
         "A criação de convites em um calendário compartilhado não é permitida"
       ]
@@ -4392,6 +4692,10 @@
       "Organizer": [
         "Organizador"
       ],
+      "participant": [
+        "participante",
+        "participantes"
+      ],
       "Participants": [
         "Participantes"
       ],
@@ -4583,6 +4887,10 @@
       "Almost there": [
         "Quase lá"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Quantidade de calendário criado: ${ createdCalendarCount } de ${ calendarsToBeCreated }",
+        "Quantidade de calendários criados: ${ createdCalendarCount } de ${ calendarsToBeCreated }"
+      ],
       "Connecting to your email provider": [
         "Conectando-se ao seu provedor de e-mail"
       ],
@@ -4597,6 +4905,24 @@
       ],
       "Your import is starting": [
         "Sua importação está começando"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importar todas as mensagens de ${ itemsToImportCount } pasta e marcá-las como",
+        "Importar todas as mensagens de ${ itemsToImportCount } pastas e marcá-las como"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importar todas as mensagens de ${ itemsToImportCount } marcador e marcá-las como",
+        "Importar todas as mensagens de ${ itemsToImportCount } marcadores e marcá-las como"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } pasta e marcá-las como",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } pastas e marcá-las como"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcador e marcá-las como",
+        "Importar todas as mensagens de ${ selectedItemsToImportCount } de ${ itemsToImportCount } marcadores e marcá-las como"
       ]
     },
     "Message": {
@@ -4691,6 +5017,18 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "A cada ${ interval } mês ${ onDayString }",
+        "A cada ${ interval } meses ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "A cada ${ interval } mês ${ onDayString }, ${ timesString }",
+        "A cada ${ interval } meses ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "A cada ${ interval } mês ${ onDayString }, ${ untilString }",
+        "A cada ${ interval } meses ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }": [
         "Mensal ${ onDayString }"
       ],
@@ -4899,6 +5237,12 @@
         "Calendário atualizado"
       ]
     },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "Membro adicionado",
+        "Membros adicionados"
+      ]
+    },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
         "Convite do calendário recusado"
@@ -4929,11 +5273,91 @@
       "at time of event": [
         "na hora do evento"
       ],
+      "day before": [
+        "dia antes",
+        "dias antes"
+      ],
+      "hour before": [
+        "hora antes",
+        "horas antes"
+      ],
+      "minute before": [
+        "minuto antes",
+        "minutos antes"
+      ],
       "on the same day": [
         "no mesmo dia"
+      ],
+      "week before": [
+        "semana antes",
+        "semanas antes"
       ]
     },
     "Notifications": {
+      "${ value } day after": [
+        "${ value } dia depois",
+        "${ value } dias depois"
+      ],
+      "${ value } day after at ${ time }": [
+        "${ value } dia depois de ${ time }",
+        "${ value } dias depois de ${ time }"
+      ],
+      "${ value } day before": [
+        "${ value } dia antes",
+        "${ value } dias antes"
+      ],
+      "${ value } day before at ${ time }": [
+        "${ value } dia antes de ${ time }",
+        "${ value } dias antes de ${ time }"
+      ],
+      "${ value } hour after": [
+        "${ value } hora depois",
+        "${ value } horas depois"
+      ],
+      "${ value } hour after at ${ time }": [
+        "${ value } hora depois de ${ time }",
+        "${ value } horas depois de ${ time }"
+      ],
+      "${ value } hour before": [
+        "${ value } hora antes",
+        "${ value } horas antes"
+      ],
+      "${ value } hour before at ${ time }": [
+        "${ value } hora antes de ${ time }",
+        "${ value } horas antes de ${ time }"
+      ],
+      "${ value } minute after": [
+        "${ value } minuto depois",
+        "${ value } minutos depois"
+      ],
+      "${ value } minute after at ${ time }": [
+        "${ value } minuto após ${ time }",
+        "${ value } minutos após de ${ time }"
+      ],
+      "${ value } minute before": [
+        "${ value } minuto antes",
+        "${ value } minutos antes"
+      ],
+      "${ value } minute before at ${ time }": [
+        "${ value } minuto antes de ${ time }",
+        "${ value } minutos antes de ${ time }"
+      ],
+      "${ value } week after": [
+        "${ value } semana depois",
+        "${ value } semanas depois"
+      ],
+      "${ value } week after at ${ time }": [
+        "${ value } semana depois de ${ time }",
+        "${ value } semanas depois de ${ time }"
+      ],
+      "${ value } week before": [
+        "${ value } semana antes",
+        "${ value } semanas antes"
+      ],
+      "${ value } week before at ${ time }": [
+        "${ value } semana antes de ${ time }",
+        "${ value } semanas antes de ${ time }"
+      ],
       "At time of event": [
         "Na hora do evento"
       ],
@@ -5014,6 +5438,10 @@
       "Custom": [
         "Personalizado"
       ],
+      "Day": [
+        "Dia",
+        "Dias"
+      ],
       "Does not repeat": [
         "Não repetir"
       ],
@@ -5032,6 +5460,10 @@
       "Ignore group": [
         "Ignorar grupo"
       ],
+      "Month": [
+        "Mês",
+        "Meses"
+      ],
       "No parent folder": [
         "Nenhuma pasta acima"
       ],
@@ -5040,6 +5472,14 @@
       ],
       "This event": [
         "Este evento"
+      ],
+      "Week": [
+        "Semana",
+        "Semanas"
+      ],
+      "Year": [
+        "Ano",
+        "Anos"
       ]
     },
     "Option group label": {
@@ -5171,6 +5611,18 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ contactsExported.length } de ${ countContacts } contato exportado.",
+        "${ contactsExported.length } de ${ countContacts } contatos exportados."
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } de ${ totalBeDeleted } contato excluídos.",
+        "${ model.deleted.length } de ${ totalBeDeleted } contatos excluídos."
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } de ${ totalBeMerged } contato mesclados.",
+        "${ model.submitted.length } de ${ totalBeMerged } contatos mesclados."
+      ],
       "No contacts exported.": [
         "Nenhum contato exportado."
       ],
@@ -5256,8 +5708,32 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dia",
+        "${ timeRemaining.inDays } dias"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hora",
+        "${ timeRemaining.inHours } horas"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inDays } dia para alterar a senha.",
+        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inDays } dias para alterar a senha."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inHours } hora para alterar a senha.",
+        "Solicitação de redefinição de senha aprovada (${ user.Email }). Você tem ${ timeRemaining.inHours } horas para alterar a senha."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Vá ao dispositivo onde a solicitação (na sessão iniciada) para mudar a sua senha."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Essa permissão expira em ${ timeRemaining.inDays } dia",
+        "Essa permissão expira em ${ timeRemaining.inDays } dias"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Essa permissão expira em ${ timeRemaining.inHours } hora",
+        "Essa permissão expira em ${ timeRemaining.inHours } horas"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Agora você pode alterar a senha da conta ${ boldEmail } gratuitamente por ${ boldDaysRemaining }."
@@ -5320,8 +5796,16 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } hora mais",
+        "${ gracePeriodHoursRemaining } horas mais"
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Se você não pediu para alterar sua senha, cancele esta solicitação agora."
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Solicitação de redefinição de senha (${ user.Email }). Você pode alterar sua senha em ${ hoursRemaining } horas.",
+        "Solicitação de redefinição de senha (${ user.Email }). Você pode alterar sua senha em ${ hoursRemaining } horas."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Para ter certeza de que é realmente você quem está tentando redefinir sua senha, aguardamos 72 horas antes de aprovar as solicitações. Você poderá alterar a senha em ${ boldTimeLeft }. ${ viewRequest }"
@@ -5349,6 +5833,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hora",
+        "${ gracePeriodHoursRemaining } horas"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } está agora disponível"
       ],
@@ -5380,6 +5868,12 @@
     "Share calendar assistive text": {
       "To invite non-${ BRAND_NAME } users, share your calendar with a link.": [
         "Para convidar usuários fora da ${ BRAND_NAME }, compartilhe seu calendário com um link."
+      ]
+    },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Você excedeu o máximo de ${ MAX_CALENDAR_MEMBERS } membros por calendário",
+        "Você excedeu o máximo de ${ MAX_CALENDAR_MEMBERS } membros por calendário"
       ]
     },
     "Share calendar modal description": {
@@ -5437,6 +5931,30 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Obtenha o plano Unlimited"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ],
+      "${ seconds } second": [
+        "por ${ n } mês",
+        "por ${ n } meses"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ seconds } segundo",
+        "${ seconds } segundos"
       ]
     },
     "specialoffer: Deal details": {
@@ -5497,6 +6015,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } mês",
+        "${ n } meses"
+      ],
       "/ month": [
         "/ mês"
       ],
@@ -5640,6 +6162,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } contato parece idêntico.",
+        "${ countMergeableContacts } contatos parecem idênticos."
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "Um e-mail de cancelamento será enviado aos participantes removidos para todos os eventos desta série."
       ],
@@ -5693,6 +6219,14 @@
       ],
       "Code sent to ${ methodTo }": [
         "Código enviado para ${ methodTo }"
+      ],
+      "Contact deleted": [
+        "Contato excluído",
+        "Contatos excluídos"
+      ],
+      "Contact group deleted": [
+        "Grupo de contatos excluído",
+        "Grupos de contatos excluídos"
       ],
       "Contact saved": [
         "Contato salvo"
@@ -5858,12 +6392,44 @@
         "Campo vCard"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hora",
+        "${ hours } horas"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 hora",
+        "${ hoursInt }.5 horas"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuto",
+        "${ minutes } minutos"
+      ]
+    },
     "Timezone search placeholder": {
       "Search time zones": [
         "Pesquisar fusos horários"
       ]
     },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount } endereço de e-mail",
+        "${ emailsCount } endereços de e-mail"
+      ],
       "Account suspended": [
         "Conta suspensa"
       ],
@@ -5884,6 +6450,10 @@
       ],
       "Add participants": [
         "Adicionar participantes"
+      ],
+      "Add to ${ groupCount } group": [
+        "Adicionar ao grupo ${ groupCount }",
+        "Adicionar aos grupos ${ groupCount }"
       ],
       "Add to ${ groupName }": [
         "Adicionar a ${ groupName }"
@@ -5957,6 +6527,14 @@
       "Day theme": [
         "Tema diurno"
       ],
+      "Delete ${ count } contact": [
+        "Excluir ${ count } contato",
+        "Excluir ${ count } contatos"
+      ],
+      "Delete ${ count } contact group": [
+        "Excluir ${ count } grupo de contatos",
+        "Excluir ${ count } grupos de contatos"
+      ],
       "Delete ${ Name }": [
         "Excluir ${ Name }"
       ],
@@ -6019,6 +6597,10 @@
       ],
       "Human verification": [
         "Verificação humana"
+      ],
+      "Import as simple event?": [
+        "Importar com um evento simples?",
+        "Importar com eventos simples?"
       ],
       "Import contacts": [
         "Importar contatos"
@@ -6314,6 +6896,16 @@
         "Compartilhado com criptografia ponta a ponta com contato verificado"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "A senha deve conter ao menos ${ length } caractere",
+        "A senha deve conter ao menos ${ length } caracteres"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Tente um nome de usuário mais curto (máximo de ${ n } caractere)",
+        "Tente um nome de usuário mais curto (máximo de ${ n } caracteres)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Clique para reproduzir o vídeo"
@@ -6336,6 +6928,10 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "A ${ BRAND_NAME } irá transferir o máximo de dados possível, começando com as mensagens mais recentes."
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "Você tem certeza de que deseja excluir permanentemente ${ count } contato?",
+        "Você tem certeza de que deseja excluir permanentemente ${ count } contatos?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Você tem certeza de que deseja excluir permanentemente estes grupos de contato?"
@@ -6404,6 +7000,114 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "A cada ${ interval } semana, na(o) ${ multipleDaysString }",
+        "A cada ${ interval } semanas, na(o) ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "A cada ${ interval } semana, na(o) ${ multipleDaysString }, ${ timesString }",
+        "A cada ${ interval } semanas, na(o) ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "A cada ${ interval } semana, na(o) ${ multipleDaysString }, ${ untilString }",
+        "A cada ${ interval } semanas, na(o) ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "A cada ${ interval } semana, todos os dias",
+        "A cada ${ interval } semanas, todos os dias"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "A cada ${ interval } semana, todos os dias, às ${ timesString }",
+        "A cada ${ interval } semanas, todos os dias, às ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "A cada ${ interval } semana, todos os dias, ${ untilString }",
+        "A cada ${ interval } semanas, todos os dias, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "A cada ${ interval } semana, na sexta-feira",
+        "A cada ${ interval } semanas, na sexta-feira"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "A cada ${ interval } semana, na sexta-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na sexta-feira, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "A cada ${ interval } semana, na sexta-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na sexta-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "A cada ${ interval } semana, na segunda-feira",
+        "A cada ${ interval } semanas, na segunda-feira"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "A cada ${ interval } semana, na segunda-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na segunda-feira, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "A cada ${ interval } semana, na segunda-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na segunda-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "A cada ${ interval } semana, no sábado",
+        "A cada ${ interval } semanas, no sábado"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "A cada ${ interval } semana, no sábado, às ${ timesString }",
+        "A cada ${ interval } semanas, no sábado, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "A cada ${ interval } semana, no sábado, ${ untilString }",
+        "A cada ${ interval } semanas, no sábado, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "A cada ${ interval } semana, no domingo",
+        "A cada ${ interval } semanas, no domingo"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "A cada ${ interval } semana, no domingo, às ${ timesString }",
+        "A cada ${ interval } semanas, no domingo, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "A cada ${ interval } semana, no domingo, ${ untilString }",
+        "A cada ${ interval } semanas, no domingo, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "A cada ${ interval } semana, na quinta-feira",
+        "A cada ${ interval } semanas, na quinta-feira"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "A cada ${ interval } semana, na quinta-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na quinta-feira, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "A cada ${ interval } semana, na quinta-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na quinta-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "A cada ${ interval } semana, na terça-feira",
+        "A cada ${ interval } semanas, na terça-feira"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "A cada ${ interval } semana, na terça-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na terça-feira, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "A cada ${ interval } semana, na terça-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na terça-feira, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "A cada ${ interval } semana, na quarta-feira",
+        "A cada ${ interval } semanas, na quarta-feira"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "A cada ${ interval } semana, na quarta-feira, às ${ timesString }",
+        "A cada ${ interval } semanas, na quarta-feira, às ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "A cada ${ interval } semana, na quarta-feira, ${ untilString }",
+        "A cada ${ interval } semanas, na quarta-feira, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Semanalmente em ${ multipleDaysString }"
       ],
@@ -6510,6 +7214,18 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "A cada ${ interval } ano",
+        "A cada ${ interval } anos"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "A cada ${ interval } ano, ${ timesString }",
+        "A cada ${ interval } anos, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "A cada ${ interval } ano, ${ untilString }",
+        "A cada ${ interval } anos, ${ untilString }"
+      ],
       "Yearly": [
         "Anualmemnte"
       ],
