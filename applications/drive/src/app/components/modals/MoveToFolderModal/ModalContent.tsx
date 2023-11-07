@@ -50,7 +50,7 @@ export const ModalContent = ({
         <>
             <ModalTwoHeader title={title} closeButtonProps={{ disabled: isLoading }} />
             <ModalTwoContent>
-                <Alert className="mb-4">{c('Info').t`Select an uploaded file or folder and create a link to it.`}</Alert>
+                <Alert className="mb-4">{c('Info').t`Select a folder to move to.`}</Alert>
                 <FolderTree
                     treeItems={rootItems}
                     isLoaded={true}
