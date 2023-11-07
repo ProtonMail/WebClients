@@ -87,7 +87,7 @@ export const CreditCardNew: VFC<ItemNewViewProps<'creditCard'>> = ({ shareId, on
             handleCancelClick={onCancel}
             discardable={!form.dirty}
         >
-            {({ didMount }) => (
+            {({ didEnter }) => (
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
                         <FieldsetCluster>
@@ -100,8 +100,8 @@ export const CreditCardNew: VFC<ItemNewViewProps<'creditCard'>> = ({ shareId, on
                                 label={c('Label').t`Title`}
                                 placeholder={c('Placeholder').t`Untitled`}
                                 component={TitleField}
-                                autoFocus={didMount}
-                                key={`creditCard-name-${didMount}`}
+                                autoFocus={didEnter}
+                                key={`creditCard-name-${didEnter}`}
                                 maxLength={MAX_ITEM_NAME_LENGTH}
                             />
                         </FieldsetCluster>
