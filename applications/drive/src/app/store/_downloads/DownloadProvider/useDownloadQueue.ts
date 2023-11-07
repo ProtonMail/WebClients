@@ -193,5 +193,5 @@ function generateDownloadMeta(links: LinkDownload[]): TransferMeta {
 function generateMyFilesName(): string {
     const date = new Date().toISOString().substring(0, 19);
     // translator: Name of the download archive when selected multiple files, example: My files 2021-10-11T12:13:14.zip.
-    return c('Title').t`My files ${date}.zip`;
+    return c('Title').t`Download ${date}.zip`;
 }
