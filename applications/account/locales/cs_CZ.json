@@ -1117,6 +1117,18 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } vlastní doména",
+        "${ domains } vlastní domény",
+        "${ domains } vlastních domén",
+        "${ domains } vlastních domén"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servery",
+        "${ ips } serverů",
+        "${ ips } serverů"
+      ],
       "${ price } per dedicated server": [
         "${ price } za dedikovaný server"
       ],
@@ -1125,6 +1137,12 @@
       ],
       "${ price } per user": [
         "${ price } za uživatele"
+      ],
+      "${ users } user": [
+        "${ users } uživatel",
+        "${ users } uživatelé",
+        "${ users } uživatelů",
+        "${ users } uživatelů"
       ]
     },
     "Address action": {
@@ -1437,6 +1455,12 @@
       ]
     },
     "bf2023: renew": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "první ${ n } měsíce",
+        "prvních ${ n } měsíců",
+        "prvních ${ n } měsíců"
+      ],
       "the first month": [
         "první měsíc"
       ],
@@ -1465,6 +1489,12 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů hide-my-email, sdílení kalendáře a další funkce."
       ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Zahrnuje podporu 3 vlastních e-mailových domén, ${ addresses } e-mailovou adresu, neomezený počet aliasů hide-my-email, sdílení kalendáře a další.",
+        "Zahrnuje podporu 3 vlastních e-mailových domén, ${ addresses } e-mailové adresy, neomezený počet aliasů hide-my-email, sdílení kalendáře a další.",
+        "Zahrnuje podporu 3 vlastních e-mailových domén, ${ addresses } e-mailových adres, neomezený počet aliasů hide-my-email, sdílení kalendáře a další.",
+        "Zahrnuje podporu 3 vlastních e-mailových domén, ${ addresses } e-mailových adres, neomezený počet aliasů hide-my-email, sdílení kalendáře a další."
+      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Bezpečené přihlašování na všech zařízeních. Zahrnuje neomezený počet aliasů, sdílení, integrované 2FA a další funkce."
       ],
@@ -1485,6 +1515,12 @@
       ]
     },
     "Billing cycle": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
         "Automatické obnovení za ${ renewPrice }, na ${ renewalLength }"
       ]
@@ -1696,6 +1732,14 @@
         "Sdílet s kýmkoli"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Zobrazit ${ remainingItems } další",
+        "Zobrazit ${ remainingItems } další",
+        "Zobrazit ${ remainingItems } dalších",
+        "Zobrazit ${ remainingItems } dalších"
+      ]
+    },
     "Calendar share permission label": {
       "Edit event details": [
         "Upravit detaily události"
@@ -1793,6 +1837,20 @@
       ],
       "Week": [
         "Týden"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } uživatel",
+        "${ users } uživatelé",
+        "${ users } uživatelů",
+        "${ users } uživatelů"
+      ],
+      "Total for ${ n } month": [
+        "Celkem za ${ n } měsíc",
+        "Celkem za ${ n } měsíce",
+        "Celkem za ${ n } měsíců",
+        "Celkem za ${ n } měsíců"
       ]
     },
     "Checkout summary": {
@@ -2945,6 +3003,12 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } krát",
+        "${ count } krát",
+        "${ count } krát",
+        "${ count } krát"
+      ],
       "Daily": [
         "Denně"
       ],
@@ -2953,6 +3017,24 @@
       ],
       "Daily, ${ untilString }": [
         "Denně, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Každý ${ interval } den",
+        "Každé ${ interval } dny",
+        "Každých ${ interval } dnů",
+        "Každých ${ interval } dnů"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Každý ${ interval } den, ${ timesString }",
+        "Každé ${ interval } dny, ${ timesString }",
+        "Každých ${ interval } dnů, ${ timesString }",
+        "Každých ${ interval } dnů, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Každý ${ interval } den, ${ untilString }",
+        "Každé ${ interval } dny, ${ untilString }",
+        "Každých ${ interval } dnů, ${ untilString }",
+        "Každých ${ interval } dnů, ${ untilString }"
       ],
       "until ${ dateString }": [
         "do ${ dateString }"
@@ -3655,6 +3737,18 @@
       "Contact signature not verified": [
         "Podpis kontaktu nebyl ověřen"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendáře nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo",
+        "Zrušte výběr nejméně ${ calendarsToFixCount } kalendářů nebo"
+      ],
       "Domain not available, try again later": [
         "Doména není dostupná, zkuste to znovu později"
       ],
@@ -3763,6 +3857,12 @@
       "Label name cannot be empty.": [
         "Název štítku nesmí být prázdný."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Sloučit alespoň ${ calendarsToFixCount } kalendář s ${ BRAND_NAME } existujícím kalendářem",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendáře se ${ BRAND_NAME } existujícími kalendáři",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři",
+        "Sloučit alespoň ${ calendarsToFixCount } kalendářů s ${ BRAND_NAME } existujícími kalendáři"
+      ],
       "Missing key packet": [
         "Chybějící balíček klíčů"
       ],
@@ -3838,6 +3938,12 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Zapněte prosím podporu pro více uživatelů před přidáváním uživatelů do vaší organizace."
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Chcete-li pokračovat, opravte zvýrazněný konflikt.",
+        "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
+        "Chcete-li pokračovat, opravte zvýrazněné konflikty.",
+        "Chcete-li pokračovat, opravte zvýrazněné konflikty."
+      ],
       "Please generate keys before you try to change your password": [
         "Než se pokusíte změnit heslo, vytvořte si prosím klíče"
       ],
@@ -3873,6 +3979,12 @@
       ],
       "Process aborted": [
         "Proces přerušen"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Odstraněn duplicitní příjemce: ${ joinedRecipients }",
+        "Odstraněni duplicitní příjemci: ${ joinedRecipients }",
+        "Odstraněni duplicitní příjemci: ${ joinedRecipients }",
+        "Odstraněni duplicitní příjemci: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Vypršel časový limit žádosti"
@@ -4085,6 +4197,12 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Došlo k neočekávané chybě. Import musí být restartován."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS_STRING } událost.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS_STRING } události.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS_STRING } událostí.",
+        "Váš soubor ${ formattedFilename } obsahuje více než ${ MAX_IMPORT_EVENTS_STRING } událostí."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Váš soubor ${ formattedFilename } má neplatnou metodu a nelze jej importovat."
@@ -4378,6 +4496,12 @@
       ]
     },
     "Export calendar": {
+      "${ totalProcessed }/${ totalToProcess } event exported": [
+        "${ totalProcessed }/${ totalToProcess } události exportována",
+        "${ totalProcessed }/${ totalToProcess } událostí exportováno",
+        "${ totalProcessed }/${ totalToProcess } událostí exportováno",
+        "${ totalProcessed }/${ totalToProcess } událostí exportováno"
+      ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Kalendář úspěšně exportován. Můžete uložit ICS soubor."
       ],
@@ -4716,11 +4840,29 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN připojení",
+        "${ MaxVPN } VPN připojení",
+        "${ MaxVPN } VPN připojení",
+        "${ MaxVPN } VPN připojení"
+      ],
       "Access to all countries": [
         "Přístup ke všem zemím"
       ],
       "Add": [
         "Přidat"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Přidat (${ numberOfAddedServers })",
+        "Přidat (${ numberOfAddedServers })",
+        "Přidat (${ numberOfAddedServers })",
+        "Přidat (${ numberOfAddedServers })"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Připojení až pro ${ plusVpnConnections } zařízení",
+        "Připojení až pro ${ plusVpnConnections } zařízení",
+        "Připojení až pro ${ plusVpnConnections } zařízení",
+        "Připojení až pro ${ plusVpnConnections } zařízení"
       ],
       "Fastest VPN servers": [
         "Nejrychlejší servery VPN"
@@ -4827,6 +4969,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtů",
+        "bajtů"
+      ],
       "GB": [
         "GB"
       ],
@@ -4838,6 +4986,38 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bajt",
+        "Bajty",
+        "Bajtů",
+        "Bajtů"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajty",
+        "Gigabajtů",
+        "Gigabajtů"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajty",
+        "Kilobajtů",
+        "Kilobajtů"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajty",
+        "Megabajtů",
+        "Megabajtů"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajty",
+        "Terabajtů",
+        "Terabajtů"
       ]
     },
     "Filter Actions": {
@@ -5233,6 +5413,12 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Nalezen ${ items.length } návrh, použijte klávesnice pro navigaci.",
+        "Nalezeny ${ items.length } návrhy, použijte klávesnice pro navigaci.",
+        "Nalezeno ${ items.length } návrhů, použijte klávesnice pro navigaci.",
+        "Nalezeno ${ items.length } návrhů, použijte klávesnice pro navigaci."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Použijte klávesy nahoru a dolů pro procházení návrhů po zadání. Stiskněte tlačítko Enter pro potvrzení vaší volby, nebo tlačítko Esc pro zavření návrhů."
       ]
@@ -5249,6 +5435,18 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } události zašifrována a přidána do kalendáře",
+        "${ totalImported }/${ totalToImport } událostí zašifrovány a přidány do kalendáře",
+        "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře",
+        "${ totalImported }/${ totalToImport } událostí zašifrováno a přidáno do kalendáře"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Při šifrování a přidávání události došlo k chybě. ${ totalImported } z ${ totalToImport } události byla úspěšně importována.",
+        "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } ze ${ totalToImport } událostí byly úspěšně importovány.",
+        "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno.",
+        "Při šifrování a přidávání událostí došlo k chybě. ${ totalImported } z ${ totalToImport } událostí bylo úspěšně importováno."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Nastala chyba při šifrování a přidávání vaší události. Událost nemůže být importována."
       ],
@@ -5283,11 +5481,29 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Importované pozvánky naleznete v ${ CALENDAR_APP_NAME } jako prosté události bez podrobností o organizátorech a účastnících. Pro aktualizace událostí a zobrazení účastníků požádejte organizátory o pozvánku pomocí své ${ BRAND_NAME } e-mailové adresy."
       ],
+      "This file contains an event invitation:": [
+        "Tento soubor obsahuje pozvánku na událost:",
+        "Tento soubor obsahuje pozvánky na události:",
+        "Tento soubor obsahuje pozvánky na události:",
+        "Tento soubor obsahuje pozvánky na události:"
+      ],
+      "This file contains an invitation response:": [
+        "Tento soubor obsahuje odpověď na pozvánku:",
+        "Tento soubor obsahuje odpovědi na pozvánky:",
+        "Tento soubor obsahuje odpovědi na pozvánky:",
+        "Tento soubor obsahuje odpovědi na pozvánky:"
+      ],
       "This file contains some data that we cannot import:": [
         "Tento soubor obsahuje některá data, která nemůžeme importovat:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } kontaktu šifrován a přidán do vašeho seznamu kontaktů",
+        "${ totalImported }/${ totalToImport } kontakty šifrovány a přidány do Vašeho listu kontaktů",
+        "${ totalImported }/${ totalToImport } kontaktů šifrováno a přidáno do vašeho seznamu kontaktů",
+        "${ totalImported }/${ totalToImport } kontaktů šifrováno a přidáno do vašeho seznamu kontaktů"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Nastala chyba při šifrování a přidávání kontaktu. Kontakt nebyl importován."
       ],
@@ -5307,6 +5523,14 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Kontakt ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } kontakt",
+        "${ totalContacts } kontakty",
+        "${ totalContacts } kontaktů",
+        "${ totalContacts } kontaktů"
       ]
     },
     "Import contact. Contact identifier": {
@@ -5536,6 +5760,12 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontaktů nebude importováno. Klikněte pro detaily"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } z ${ totalEvents } události nebude importována. Klikněte pro detaily.",
+        "${ totalEventsDiscarded } ze ${ totalEvents } událostí nebude importováno. Klikněte pro detaily.",
+        "${ totalEventsDiscarded } z ${ totalEvents } událostí nebude importováno. Klikněte pro detaily.",
+        "${ totalEventsDiscarded } z ${ totalEvents } událostí nebude importováno. Klikněte pro detaily."
+      ],
       "No contact can be imported. Click for details": [
         "Žádný kontakt nemůže být importován. Klikněte pro více informací"
       ],
@@ -5547,6 +5777,12 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adresa",
+        "${ amountOfAddresses } adresy",
+        "${ amountOfAddresses } adres",
+        "${ amountOfAddresses } adres"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikace ${ appName } potřebuje Váš souhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -5570,6 +5806,18 @@
       ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } bude nastaven jako výchozí kalendář."
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } nový kalendář",
+        "${ calendarsToBeCreatedCount } nové kalendáře",
+        "${ calendarsToBeCreatedCount } nových kalendářů",
+        "${ calendarsToBeCreatedCount } nových kalendářů"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } sloučený kalendář",
+        "${ calendarsToBeMergedCount } sloučené kalendáře",
+        "${ calendarsToBeMergedCount } sloučených kalendářů",
+        "${ calendarsToBeMergedCount } sloučených kalendářů"
       ],
       "${ current } of ${ total }": [
         "${ current } z ${ total }"
@@ -5601,8 +5849,32 @@
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
         "${ MAIL_APP_NAME } podporuje podepisování DKIM pro vlastní domény. Chcete-li použít ověřování DKIM, přidejte prosím následující CNAME záznam do nastavení DNS u této domény. Změnu lze obvykle provést v ovládacím panelu u Vašeho doménového registrátora."
       ],
+      "${ n } address": [
+        "${ n } adresa",
+        "${ n } adresy",
+        "${ n } adres",
+        "${ n } adres"
+      ],
       "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
         "${ none } nemá žádný vliv na doručení e-mailu, ale doporučujeme ${ quarantine } pro lepší bezpečnost."
+      ],
+      "${ number } city": [
+        "${ number } město",
+        "${ number } města",
+        "${ number } měst",
+        "${ number } měst"
+      ],
+      "${ number } server": [
+        "${ number } server",
+        "${ number } servery",
+        "${ number } serverů",
+        "${ number } serverů"
+      ],
+      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+        "${ numberOfNonPrivateKeys } nahraný soubor není platným soukromým klíčem. Prosím ověřte a zkuste to znovu.",
+        "${ numberOfNonPrivateKeys } nahrané soubory nejsou platné soukromé klíče. Prosím ověřte a zkuste to znovu.",
+        "${ numberOfNonPrivateKeys } nahraných souborů nejsou platné soukromé klíče. Prosím ověřte a zkuste to znovu.",
+        "${ numberOfNonPrivateKeys } nahraných souborů nejsou platné soukromé klíče. Prosím ověřte a zkuste to znovu."
       ],
       "${ plan } removed. Bundle deal not available on a 1-month plan.": [
         "${ plan } odebrán. Nabídka balíčků není k dispozici pro 1měsíční tarif."
@@ -5613,17 +5885,89 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } je pokročilý program na ochranu účtů založený na sofistikovaných systémech umělé inteligence a specialistech, kteří nepřetržitě pracují na vaší ochraně před útočníky a bezpečnostními hrozbami."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } složka nalezena",
+        "${ providerFoldersNumLocalized } složky nalezeny",
+        "${ providerFoldersNumLocalized } složek nalezeno",
+        "${ providerFoldersNumLocalized } složek nalezeno"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } štítek nalezen v Gmailu",
+        "${ providerFoldersNumLocalized } štítky nalezeny v Gmailu",
+        "${ providerFoldersNumLocalized } štítků nalezeno v Gmailu",
+        "${ providerFoldersNumLocalized } štítků nalezeno v Gmailu"
+      ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } server je stále nastavován. Toto obvykle trvá přibližně ${ provisioningDuration }.",
+        "${ provisioningCounter } servery jsou stále nastavovány. Toto obvykle trvá přibližně ${ provisioningDuration }.",
+        "${ provisioningCounter } serverů je stále nastavováno. Toto obvykle trvá přibližně ${ provisioningDuration }.",
+        "${ provisioningCounter } serverů je stále nastavováno. Toto obvykle trvá přibližně ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } další",
+        "${ remainingAddresses.length } další",
+        "${ remainingAddresses.length } dalších",
+        "${ remainingAddresses.length } dalších"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } další adresa",
+        "${ remainingAddresses.length } další adresy",
+        "${ remainingAddresses.length } dalších adres",
+        "${ remainingAddresses.length } dalších adres"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendáře",
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů",
+        "${ selectedCalendarsTotal } z ${ providerCalendars.length } kalendářů"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } vybraná složka",
+        "${ selectedFoldersCount } vybrané složky",
+        "${ selectedFoldersCount } vybraných složek",
+        "${ selectedFoldersCount } vybraných složek"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } vybraný štítek",
+        "${ selectedFoldersCount } vybrané štítky",
+        "${ selectedFoldersCount } vybraných štítků",
+        "${ selectedFoldersCount } vybraných štítků"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } složka vybrána",
+        "${ selectedFoldersCountLocalized } vybrané složky",
+        "${ selectedFoldersCountLocalized } složek vybráno",
+        "${ selectedFoldersCountLocalized } složek vybráno"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "vybrán ${ selectedFoldersCountLocalized } štítek",
+        "vybrány ${ selectedFoldersCountLocalized } štítky",
+        "vybráno ${ selectedFoldersCountLocalized } štítků",
+        "vybráno ${ selectedFoldersCountLocalized } štítků"
+      ],
       "${ storage } storage": [
         "${ storage } úložiště"
       ],
       "${ storageSize } storage": [
         "${ storageSize } úložiště"
       ],
+      "${ userFound } user found": [
+        "Nalezen ${ userFound } uživatel",
+        "Nalezeni ${ userFound } uživatelé",
+        "Nalezeno ${ userFound } uživatelů",
+        "Nalezeno ${ userFound } uživatelů"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "Země vyžaduje tarif ${ vpnPlus }."
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Funkce Secure Core vyžaduje ${ vpnPlus }."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } člen)",
+        "(${ memberCount } členové)",
+        "(${ memberCount } členů)",
+        "(${ memberCount } členů)"
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /měsíc)"
@@ -5642,6 +5986,12 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonusového místa na disku"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)",
+        "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)",
+        "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)",
+        "+${ organization.BonusVPN } připojení ${ VPN_APP_NAME } (umožňuje připojení dalších zařízení k síti VPN)"
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Pozvěte přátele do ${ BRAND_NAME }"
@@ -5724,6 +6074,24 @@
       "Add multiple users to your organization at once.": [
         "Přidejte do organizace více uživatelů najednou."
       ],
+      "Add server (${ availableAddedCount } available)": [
+        "Přidat server (${ availableAddedCount } k dispozici)",
+        "Přidat servery (${ availableAddedCount } k dispozici)",
+        "Přidat servery (${ availableAddedCount } k dispozici)",
+        "Přidat servery (${ availableAddedCount } k dispozici)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Přidávání ${ addedServerCount } serveru brány",
+        "Přidávání ${ addedServerCount } serverů brány",
+        "Přidávání ${ addedServerCount } serverů brány",
+        "Přidávání ${ addedServerCount } serverů brány"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Přidávání serveru brány: ${ serverNumber } / ${ total }",
+        "Přidávání serverů brány: ${ serverNumber } / ${ total }",
+        "Přidávání serverů brány: ${ serverNumber } / ${ total }",
+        "Přidávání serverů brány: ${ serverNumber } / ${ total }"
+      ],
       "Additional options": [
         "Další možnosti"
       ],
@@ -5736,11 +6104,29 @@
       "Align right": [
         "Zarovnat doprava"
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Všechna (${ totalFoldersCount } složka)",
+        "Všechny (${ totalFoldersCount } složky)",
+        "Všech (${ totalFoldersCount } složek)",
+        "Všech (${ totalFoldersCount } složek)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Všechen (${ totalFoldersCount } štítek)",
+        "Všechny (${ totalFoldersCount } štítky)",
+        "Všech (${ totalFoldersCount } štítků)",
+        "Všech (${ totalFoldersCount } štítků)"
+      ],
       "All keys successfully reactivated": [
         "Všechny klíče byly úspěšně znovu aktivovány"
       ],
       "All your changes will be lost.": [
         "Veškeré vaše změny budou ztraceny."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }",
+        "Budou importovány všechny vaše kontakty až do limitu ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Přiděleno"
@@ -5943,6 +6329,12 @@
       "Country code": [
         "Kód země"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Vytvořit ${ calendarsToBeCreatedCount } nový kalendář",
+        "Vytvořit ${ calendarsToBeCreatedCount } nové kalendáře",
+        "Vytvořit ${ calendarsToBeCreatedCount } nových kalendářů",
+        "Vytvořit ${ calendarsToBeCreatedCount } nových kalendářů"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Vytvořte štítek pro importované zprávy, časový rozsah pro tento import a složky, které chcete importovat."
       ],
@@ -5963,6 +6355,12 @@
       ],
       "Create your first Gateway": [
         "Vytvořte svou první bránu"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Vytváření serveru brány: ${ serverNumber } / ${ total }",
+        "Vytváření serverů brány: ${ serverNumber } / ${ total }",
+        "Vytváření serverů brány: ${ serverNumber } / ${ total }",
+        "Vytváření serverů brány: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "Vytváření vašeho účtu"
@@ -6015,6 +6413,12 @@
       "Delete link?": [
         "Odstranit odkaz?"
       ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Mazání ${ deletedServerCount } serveru brány",
+        "Mazání ${ deletedServerCount } serverů brány",
+        "Mazání ${ deletedServerCount } serverů brány",
+        "Mazání ${ deletedServerCount } serverů brány"
+      ],
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
@@ -6026,6 +6430,12 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Chcete zrušit všechny ostatní relace než tu stávající?"
+      ],
+      "domain used": [
+        "použitá doména",
+        "použité domény",
+        "použitých domén",
+        "použitých domén"
       ],
       "Done": [
         "Hotovo"
@@ -6282,6 +6692,12 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Obrázky byly odstraněny, protože nejsou povoleny v automatické odpovědi"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendáře",
+        "Importovat ${ calendarCount } ze ${ totalCalendarsCount } kalendářů",
+        "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendářů",
+        "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendářů"
+      ],
       "Import from": [
         "Importovat z"
       ],
@@ -6347,6 +6763,12 @@
       ],
       "Internet connection restored.": [
         "Připojení k internetu obnoveno."
+      ],
+      "Invite successfully sent": [
+        "Pozvánka byla úspěšně odeslána",
+        "Pozvánky byla úspěšně odeslány",
+        "Pozvánek bylo úspěšně odesláno",
+        "Pozvánek bylo úspěšně odesláno"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Zdá se, že některá z vašich dat jsou zašifrována a uzamčena."
@@ -6582,6 +7004,12 @@
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Do služby ${ BRAND_NAME } se zaregistrovalo více než 100 milionů lidí a firem."
       ],
+      "Paid for a ${ rewardMonths } month plan": [
+        "Zaplaceno za ${ rewardMonths } měsíční tarif",
+        "Zaplaceno za ${ rewardMonths } měsíční tarif",
+        "Zaplaceno za ${ rewardMonths } měsíční tarif",
+        "Zaplaceno za ${ rewardMonths } měsíční tarif"
+      ],
       "Paid for a monthly plan": [
         "Zaplaceno za měsíční tarif"
       ],
@@ -6608,6 +7036,18 @@
       ],
       "Plan upgrade required": [
         "Požadováno předplatné"
+      ],
+      "Please add a password for the user on row": [
+        "Přidejte prosím heslo uživatele na řádku",
+        "Přidejte prosím hesla uživatelů na řádcích",
+        "Přidejte prosím hesla uživatelů na řádcích",
+        "Přidejte prosím hesla uživatelů na řádcích"
+      ],
+      "Please add an email address for the user on row": [
+        "Přidejte prosím e-mailovou adresu uživatele na řádku",
+        "Přidejte prosím e-mailové adresy uživatelů na řádcích",
+        "Přidejte prosím e-mailové adresy uživatelů na řádcích",
+        "Přidejte prosím e-mailové adresy uživatelů na řádcích"
       ],
       "Please authenticate your card in the verification tab.": [
         "Na kartě ověření ověřte pravost své karty."
@@ -6861,6 +7301,12 @@
       "Stay tuned for future promotions.": [
         "Vyčkejte na budoucí propagační akce."
       ],
+      "Step ${ step }": [
+        "Krok ${ step }",
+        "Krok ${ step }",
+        "Krok ${ step }",
+        "Krok ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Úložný prostor přidělený ostatním uživatelům v této organizaci"
       ],
@@ -6935,6 +7381,24 @@
       ],
       "The following address is available:": [
         "Následující adresa je dostupná:"
+      ],
+      "The following address is invalid.": [
+        "Následující adresa je neplatná.",
+        "Následující adresy jsou neplatné.",
+        "Následující adresy jsou neplatné.",
+        "Následující adresy jsou neplatné."
+      ],
+      "The following address is unavailable.": [
+        "Následující adresa je nedostupná.",
+        "Následující adresy jsou nedostupné.",
+        "Následující adresy jsou nedostupné.",
+        "Následující adresy jsou nedostupné."
+      ],
+      "The following address was not created.": [
+        "Následující adresa nebyla vytvořena.",
+        "Následující adresy nebyly vytvořeny.",
+        "Následující adresy nebyly vytvořeny.",
+        "Následující adresy nebyly vytvořeny."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "Následující členové obdrží e-mail s výzvou, aby si co nejdříve povolili dvoufázové ověření."
@@ -7374,6 +7838,18 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Aktuálně jste přihlášeni jako ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "V současné době využíváte ${ ipCount } z vašeho ${ ipAddresses } dostupného dedikovaného serveru.",
+        "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů.",
+        "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů.",
+        "V současné době využíváte ${ ipCount } z vašich ${ ipAddresses } dostupných dedikovaných serverů."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "V současné době využíváte ${ organization.UsedMembers } ze své ${ organization.MaxMembers } dostupné uživatelské licence.",
+        "V současné době využíváte ${ organization.UsedMembers } ze svých ${ organization.MaxMembers } dostupných uživatelských licencí.",
+        "V současné době využíváte ${ organization.UsedMembers } ze svých ${ organization.MaxMembers } dostupných uživatelských licencí.",
+        "V současné době využíváte ${ organization.UsedMembers } ze svých ${ organization.MaxMembers } dostupných uživatelských licencí."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Jste přihlášen/a k účtu ${ memberAddress }."
       ],
@@ -7382,9 +7858,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Zde můžete zkontrolovat průběh ${ importProgressLink }."
-      ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "Pro účely účetnictví si můžete své faktury přizpůsobit a stáhnout."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "K zajištění správné e-mailové adresy pro ověření můžete tento údaj jednou upravit."
@@ -7397,6 +7870,30 @@
       ],
       "You can import one data type at a time.": [
         "Importovat můžete vždy jeden typ dat."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendář. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli.",
+        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendáře. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli.",
+        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendářů. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli.",
+        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendářů. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář a všechny uživatele ${ BRAND_NAME }, se kterými jste kalendáře sdíleli."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Můžete mít až ${ MAX_CALENDARS_FREE } kalendář. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na váš kalendář a každého ${ BRAND_NAME } uživatele, se kterým jste váš kalendář sdíleli.",
+        "Můžete mít až ${ MAX_CALENDARS_FREE } kalendáře. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na vaše kalendáře a každého ${ BRAND_NAME } uživatele, se kterým jste vaše kalendáře sdíleli.",
+        "Můžete mít až ${ MAX_CALENDARS_FREE } kalendářů. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na vaše kalendáře a každého ${ BRAND_NAME } uživatele, se kterým jste vaše kalendáře sdíleli.",
+        "Můžete mít až ${ MAX_CALENDARS_FREE } kalendářů. Předtím než zrušíte své předplatné, odstraňte prosím sdílené odkazy na vaše kalendáře a každého ${ BRAND_NAME } uživatele, se kterým jste vaše kalendáře sdíleli."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendář. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář.",
+        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendáře. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář.",
+        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendářů. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář.",
+        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendářů. Než zrušíte předplatné ${ MAIL_SHORT_APP_NAME }, odeberte prosím sdílené odkazy na kalendář."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendář. Než zrušíte předplatné, odeberte prosím sdílené odkazy na kalendář.",
+        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendáře. Než zrušíte předplatné, odeberte prosím sdílené odkazy na kalendář.",
+        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendářů. Než zrušíte předplatné, odeberte prosím sdílené odkazy na kalendář.",
+        "Můžete si ponechat až ${ MAX_CALENDARS_FREE } kalendářů. Než zrušíte předplatné, odeberte prosím sdílené odkazy na kalendář."
       ],
       "You can now access and manage the account as an administrator.": [
         "Nyní můžete k účtu přistupovat a spravovat jej jako správce."
@@ -7413,6 +7910,12 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Následující přihlašovací údaje můžete použít pro připojení k ${ VPN_APP_NAME } pomocí VPN aplikací třetích stran s otevřeným zdrojovým kódem, jako je Tunnelblick pro macOS nebo OpenVPN pro GNU/Linux."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Během následujících 24 hodin nemůžete odeslat více než ${ emailSendLimitNumber } e-mailovou pozvánku",
+        "Během následujících 24 hodin nemůžete odeslat více než ${ emailSendLimitNumber } e-mailové pozvánky",
+        "Během následujících 24 hodin nemůžete odeslat více než ${ emailSendLimitNumber } e-mailových pozvánek",
+        "Během následujících 24 hodin nemůžete odeslat více než ${ emailSendLimitNumber } e-mailových pozvánek"
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Nelze doporučovat uživatelům ${ MAIL_APP_NAME }"
       ],
@@ -7421,6 +7924,12 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nenastavili jste e-mail pro obnovení, takže v případě ztráty hesla nebude možné účet obnovit. Pokračovat bez sekundárního e-mailu?"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Máte k dispozici ${ availableCount } dedikovaný server.",
+        "Máte k dispozici ${ availableCount } dedikované servery.",
+        "Máte k dispozici ${ availableCount } dedikovaných serverů.",
+        "Máte k dispozici ${ availableCount } dedikovaných serverů."
       ],
       "You have no calendars to export.": [
         "Nemáte žádné kalendáře k exportu."
@@ -7542,6 +8051,12 @@
       "Your files will be encrypted and then saved": [
         "Vaše soubory budou zašifrovány a uloženy"
       ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Váš import z ${ accounts } je dočasně opožděn.",
+        "Vaše importy z ${ accounts } jsou dočasně opožděny.",
+        "Vaše importy z ${ accounts } jsou dočasně opožděny.",
+        "Vaše importy z ${ accounts } jsou dočasně opožděny."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Vaše informace jsou u nás v bezpečí. Budeme vás kontaktovat pouze v případě, že to bude nutné pro poskytování našich služeb."
       ],
@@ -7608,11 +8123,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Můžete přidat platební metodu, která umožní automatické obnovení předplatného. Další platební metody jsou také dostupné."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Add your name (or company name) and address to your invoices.": [
-        "Přidejte své jméno (nebo název společnosti) a adresu do faktur."
       ]
     },
     "Info on errors": {
@@ -7997,6 +8507,30 @@
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } zápatí"
       ],
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } den",
+        "${ nbDay } dny",
+        "${ nbDay } dnů",
+        "${ nbDay } dnů"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } rok",
+        "${ nbYear } roky",
+        "${ nbYear } let",
+        "${ nbYear } let"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } z ${ MaxAddresses } emailové adresy",
+        "${ UsedAddresses } z ${ MaxAddresses } emailových adres",
+        "${ UsedAddresses } z ${ MaxAddresses } emailových adres",
+        "${ UsedAddresses } z ${ MaxAddresses } emailových adres"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Dočasně nedostupné. Zkontrolujte to prosím později.)"
       ],
@@ -8239,9 +8773,6 @@
       ],
       "Current email": [
         "Stávající e-mail"
-      ],
-      "Customize invoices": [
-        "Přizpůsobení faktur"
       ],
       "Daily email notifications": [
         "Denní e-mailová upozornění"
@@ -9169,8 +9700,20 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } člena vaší organizace používá dvoufázové ověření.",
+        "${ twoFAMembers.length }/${ members.length } členů vaší organizace používají dvoufázové ověření.",
+        "${ twoFAMembers.length }/${ members.length } členů vaší organizace používá dvoufázové ověření.",
+        "${ twoFAMembers.length }/${ members.length } členů vaší organizace používá dvoufázové ověření."
+      ],
       "Almost there": [
         "Téměř hotovo"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } ze ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }",
+        "Počet vytvořených kalendářů: ${ createdCalendarCount } z ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Připojování k Vašemu poskytovateli e-mailu"
@@ -9199,6 +9742,32 @@
         "Povolit ověřovací protokoly"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Importovat všechny zprávy z ${ itemsToImportCount } složky a označit je štítkem",
+        "Importovat všechny zprávy ze ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všechny zprávy z ${ itemsToImportCount } složek a označit je štítkem"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Importovat všechny zprávy se štítkem ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem",
+        "Importovat všechny zprávy se štítky ${ itemsToImportCount } a označit je štítkem"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složky a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem",
+        "Importovat všech ${ selectedItemsToImportCount } zpráv z ${ itemsToImportCount } složek a označit je štítkem"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítku celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako",
+        "Importovat všechny zprávy s ${ selectedItemsToImportCount } štítky z ${ itemsToImportCount } štítků celkem a označit je jako"
+      ]
+    },
     "mail_signup_2023: Info": {
       "Secure email that protects your privacy": [
         "Zabezpečený e-mail, který chrání vaše soukromí"
@@ -9210,6 +9779,22 @@
       ],
       "This feature is temporarily unavailable": [
         "Tato funkce je dočasně nedostupná"
+      ]
+    },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Můžete vytvořit až ${ MAX_LINKS_PER_CALENDAR } odkaz na kalendář. Chcete-li vytvořit nový odkaz na tento kalendář, odstraňte jeden z níže uvedených odkazů.",
+        "Můžete vytvořit až ${ MAX_LINKS_PER_CALENDAR } odkazy na kalendář. Chcete-li vytvořit nový odkaz na tento kalendář, odstraňte jeden z níže uvedených odkazů.",
+        "Můžete vytvořit až ${ MAX_LINKS_PER_CALENDAR } odkazů na kalendář. Chcete-li vytvořit nový odkaz na tento kalendář, odstraňte jeden z níže uvedených odkazů.",
+        "Můžete vytvořit až ${ MAX_LINKS_PER_CALENDAR } odkazů na kalendář. Chcete-li vytvořit nový odkaz na tento kalendář, odstraňte jeden z níže uvedených odkazů."
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "Dosáhli jste maximálního počtu ${ MAX_CALENDAR_MEMBERS } člena.",
+        "Dosáhli jste maximálního počtu ${ MAX_CALENDAR_MEMBERS } členů.",
+        "Dosáhli jste maximálního počtu ${ MAX_CALENDAR_MEMBERS } členů.",
+        "Dosáhli jste maximálního počtu ${ MAX_CALENDAR_MEMBERS } členů."
       ]
     },
     "Member action": {
@@ -9338,6 +9923,24 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "${ interval } ${ onDayString }",
+        "Každé ${ interval } měsíce ${ onDayString }",
+        "Každých ${ interval } měsíců ${ onDayString }",
+        "Každých ${ interval } měsíců ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "${ interval } ${ onDayString }, ${ timesString }",
+        "Každé ${ interval } měsíce ${ onDayString }, ${ timesString }",
+        "Každých ${ interval } měsíců ${ onDayString }, ${ timesString }",
+        "Každých ${ interval } měsíců ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "${ interval } ${ onDayString }, ${ untilString }",
+        "Každé ${ interval } měsíce ${ onDayString }, ${ untilString }",
+        "Každých ${ interval } měsíců ${ onDayString }, ${ untilString }",
+        "Každých ${ interval } měsíců ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }": [
         "Měsíčně ${ onDayString }"
       ],
@@ -9574,6 +10177,96 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } kalendář",
+        "${ n } kalendáře",
+        "${ n } kalendářů",
+        "${ n } kalendářů"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendář na uživatele",
+        "${ n } kalendáře na uživatele",
+        "${ n } kalendářů na uživatele",
+        "${ n } kalendářů na uživatele"
+      ],
+      "${ n } custom email domain": [
+        "${ n } vlastní e-mailová doména",
+        "${ n } vlastní e-mailové domény",
+        "${ n } vlastních e-mailových domén",
+        "${ n } vlastních e-mailových domén"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailová adresa",
+        "${ n } e-mailové adresy",
+        "${ n } e-mailových adres",
+        "${ n } e-mailových adres"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-mailová adresa na uživatele",
+        "${ n } e-mailové adresy na uživatele",
+        "${ n } e-mailových adres na uživatele",
+        "${ n } e-mailových adres na uživatele"
+      ],
+      "${ n } filter": [
+        "${ n } filtr",
+        "${ n } filtry",
+        "${ n } filtrů",
+        "${ n } filtrů"
+      ],
+      "${ n } folder": [
+        "${ n } složka",
+        "${ n } složky",
+        "${ n } složek",
+        "${ n } složek"
+      ],
+      "${ n } folder and label": [
+        "${ n } složka a štítek",
+        "${ n } složky a štítky",
+        "${ n } složek a štítků",
+        "${ n } složek a štítků"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email alias",
+        "${ n } hide-my-email aliasy",
+        "${ n } hide-my-email aliasů",
+        "${ n } hide-my-email aliasů"
+      ],
+      "${ n } label": [
+        "${ n } štítek",
+        "${ n } štítky",
+        "${ n } štítků",
+        "${ n } štítků"
+      ],
+      "${ n } message per day": [
+        "${ n } zpráva denně",
+        "${ n } zprávy denně",
+        "${ n } zpráv denně",
+        "${ n } zpráv denně"
+      ],
+      "${ n } vault": [
+        "${ n } trezor",
+        "${ n } trezory",
+        "${ n } trezorů",
+        "${ n } trezorů"
+      ],
+      "${ n } VPN connection": [
+        "${ n } připojení VPN",
+        "${ n } připojení VPN",
+        "${ n } připojení VPN",
+        "${ n } připojení VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } připojení VPN na uživatele",
+        "${ n } připojení VPN na uživatele",
+        "${ n } připojení VPN na uživatele",
+        "${ n } připojení VPN na uživatele"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } s ${ n } aliasem hide-my-email",
+        "${ PASS_APP_NAME } se ${ n } aliasy hide-my-email",
+        "${ PASS_APP_NAME } s ${ n } aliasy hide-my-email",
+        "${ PASS_APP_NAME } s ${ n } aliasy hide-my-email"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } s neomezeným počtem aliasů hide-my-email"
       ],
@@ -9712,6 +10405,12 @@
       "High-speed Swiss VPN that protects your privacy": [
         "Vysokorychlostní švýcarská VPN, která chrání vaše soukromí"
       ],
+      "High-speed VPN on ${ n } device": [
+        "Vysokorychlostní VPN na ${ n } zařízení",
+        "Vysokorychlostní VPN na ${ n } zařízeních",
+        "Vysokorychlostní VPN na ${ n } zařízeních",
+        "Vysokorychlostní VPN na ${ n } zařízeních"
+      ],
       "HTML signatures": [
         "HTML podpisy"
       ],
@@ -9748,6 +10447,12 @@
       "Priority support & live chat": [
         "Přednostní podpora a živý chat"
       ],
+      "Protect ${ n } device at a time": [
+        "Chránit ${ n } zařízení zároveň",
+        "Chránit ${ n } zařízení zároveň",
+        "Chránit ${ n } zařízení zároveň",
+        "Chránit ${ n } zařízení zároveň"
+      ],
       "Router support": [
         "Podpora routeru"
       ],
@@ -9762,6 +10467,12 @@
       ],
       "Send & receive invitations": [
         "Odesílání a přijímání pozvánek"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Servery v ${ vpnServersCountData.paid.countries }+ zemi",
+        "Servery ve ${ vpnServersCountData.paid.countries }+ zemích",
+        "Servery v ${ vpnServersCountData.paid.countries }+ zemích",
+        "Servery v ${ vpnServersCountData.paid.countries }+ zemích"
       ],
       "Share calendar via link": [
         "Sdílení kalendáře pomocí odkazu"
@@ -9846,6 +10557,12 @@
       ],
       "User session management": [
         "Správa uživatelských relací"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Sdílení trezoru (až ${ n } osoba)",
+        "Sdílení trezoru (až ${ n } osoby)",
+        "Sdílení trezoru (až ${ n } osob)",
+        "Sdílení trezoru (až ${ n } osob)"
       ]
     },
     "new_plans: feature info": {
@@ -9980,6 +10697,14 @@
         "/měsíčně"
       ]
     },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "Pořád Vám zbývá ${ daysRemaining } den Vašeho ${ currentPlanName } účtu.",
+        "Pořád Vám zbývají ${ daysRemaining } dny Vašeho ${ currentPlanName } účtu.",
+        "Pořád Vám zbývá ${ daysRemaining } dnů Vašeho ${ currentPlanName } účtu.",
+        "Pořád Vám zbývá ${ daysRemaining } dnů Vašeho ${ currentPlanName } účtu."
+      ]
+    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Kliknutím na \"Zaplatit\" vyjadřujete souhlas s našimi ${ termsAndConditions }."
@@ -10073,6 +10798,12 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Vytvořte více e-mailových adres pro své online identity, např. HonzaNakupy@${ domain } pro nákupní účty a HonzaZpravy@${ domain } pro odběry zpráv"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Vytvořte až ${ n } kalendář nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
+        "Vytvořte až ${ n } kalendáře nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
+        "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře přátel, rodiny, kolegů a organizací",
+        "Vytvořte až ${ n } kalendářů nebo přidejte kalendáře přátel, rodiny, kolegů a organizací"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Vytvořte si až ${ n } e-mailových adres/aliasů, které můžete přiřadit členům rodiny. Používejte je pro online identity, např. HonzaNakupy@${ domain } při nakupování."
@@ -10276,6 +11007,12 @@
       "Cover more ground with support for 10 custom email domains": [
         "Rozšiřte působnost s podporou 10 vlastních e-mailových domén"
       ],
+      "Create up to ${ n } calendar": [
+        "Vytvořte až ${ n } kalendář",
+        "Vytvořte až ${ n } kalendáře",
+        "Vytvořte až ${ n } kalendářů",
+        "Vytvořte až ${ n } kalendářů"
+      ],
       "Dedicated Account manager": [
         "Dedikovaný správce účtu"
       ],
@@ -10357,6 +11094,12 @@
       "Invitation revoked": [
         "Pozvánka zrušena"
       ],
+      "Member added": [
+        "Člen přidán",
+        "Členové přidáni",
+        "Členové přidáni",
+        "Členové přidáni"
+      ],
       "Member deleted": [
         "Člen smazán"
       ]
@@ -10391,8 +11134,32 @@
       "at time of event": [
         "v době události"
       ],
+      "day before": [
+        "den před",
+        "dny předem",
+        "dnů před",
+        "dnů před"
+      ],
+      "hour before": [
+        "hodinu před",
+        "hodiny před",
+        "hodin před",
+        "hodin před"
+      ],
+      "minute before": [
+        "minutu před",
+        "minuty předem",
+        "minut před",
+        "minut před"
+      ],
       "on the same day": [
         "ve stejný den"
+      ],
+      "week before": [
+        "týden předem",
+        "týdny před",
+        "týdnů před",
+        "týdnů před"
       ]
     },
     "Oauth instructions": {
@@ -10659,6 +11426,24 @@
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } pro větší úložný prostor a nebo uvolněte místo na úložišti."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Váš tarif zahrnuje maximálně ${ availableAddresses } další adresu.",
+        "Váš tarif zahrnuje maximálně ${ availableAddresses } další adresy.",
+        "Váš tarif zahrnuje maximálně ${ availableAddresses } dalších adres.",
+        "Váš tarif zahrnuje maximálně ${ availableAddresses } dalších adres."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } dalšího organizačního uživatele.",
+        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } další organizační uživatele.",
+        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } dalších organizačních uživatelů.",
+        "Váš tarif zahrnuje maximálně ${ availableNumberOfMembers } dalších organizačních uživatelů."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } další účet VPN.",
+        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } další účty VPN.",
+        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } dalších účtů VPN.",
+        "Váš tarif zahrnuje maximálně ${ availableVPNAccess } dalších účtů VPN."
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Váš tarif zahrnuje maximálně ${ humanReadableAvailableSpace } dalšího úložného prostoru."
@@ -11073,17 +11858,18 @@
         "vasedomena.cz"
       ]
     },
-    "Placeholder for custom invoice text": {
-      "Add your name (or company name) and address to your invoices": [
-        "Přidejte své jméno (nebo název společnosti) a adresu do faktur"
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "kontaktujte"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "Vyberte počet uživatelů, kteří mají být do tarifu zahrnuti. Každý další uživatel stojí ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Pokud potřebujete více než ${ maxUsers } uživatelský účet, prosím ${ contact } náš obchodní tým.",
+        "Pokud potřebujete více než ${ maxUsers } uživatelské účty, prosím ${ contact } náš obchodní tým.",
+        "Pokud potřebujete více než ${ maxUsers } uživatelských účtů, prosím ${ contact } náš obchodní tým.",
+        "Pokud potřebujete více než ${ maxUsers } uživatelských účtů, prosím ${ contact } náš obchodní tým."
       ]
     },
     "Price": {
@@ -11335,14 +12121,50 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } den",
+        "${ timeRemaining.inDays } dny",
+        "${ timeRemaining.inDays } dní",
+        "${ timeRemaining.inDays } dní"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } hodina",
+        "${ timeRemaining.inHours } hodiny",
+        "${ timeRemaining.inHours } hodin",
+        "${ timeRemaining.inHours } hodin"
+      ],
       "Didn’t make this request?": [
         "Toto není vaše žádost?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Pokud jste o resetování hesla nepožádali, žádost nyní zrušte."
       ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } den.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dny.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dní.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inDays } dní."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodinu.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodiny.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodin.",
+        "Žádost o reset hesla schválena (${ user.Email }). Na resetování hesla máte ${ timeRemaining.inHours } hodin."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Přejděte do přihlášeného zařízení (v relaci, ve které byl požadavek iniciován) a změňte heslo."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Toto oprávnění vyprší za ${ timeRemaining.inDays } den",
+        "Toto oprávnění vyprší za ${ timeRemaining.inDays } dny",
+        "Toto oprávnění vyprší za ${ timeRemaining.inDays } dní",
+        "Toto oprávnění vyprší za ${ timeRemaining.inDays } dní"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodinu",
+        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodiny",
+        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodin",
+        "Toto oprávnění vyprší za ${ timeRemaining.inHours } hodin"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Nyní si můžete libovolně změnit heslo k účtu ${ boldEmail } po dobu ${ boldDaysRemaining }."
@@ -11432,6 +12254,12 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } další hodina",
+        "${ gracePeriodHoursRemaining } další hodiny",
+        "${ gracePeriodHoursRemaining } dalších hodin",
+        "${ gracePeriodHoursRemaining } dalších hodin"
+      ],
       "Didn’t make this request?": [
         "Toto není vaše žádost?"
       ],
@@ -11444,11 +12272,23 @@
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "Resetování hesla je k dispozici od ${ boldDate }. Díky tomu máte čas na zrušení případných podvodných žádostí."
       ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodinu.",
+        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodiny.",
+        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodin.",
+        "Požadavek na obnovení hesla (${ user.Email }). Heslo můžete změnit za ${ hoursRemaining } hodin."
+      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Abychom měli jistotu, že se o obnovení hesla pokoušíte skutečně vy, čekáme před schválením žádosti 72 hodin. Heslo si můžete změnit v ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Obdrželi jsme žádost o resetování hesla pro ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Heslo si můžete změnit za ${ gracePeriodHoursRemaining } hodinu",
+        "Heslo si můžete změnit za ${ gracePeriodHoursRemaining } hodiny",
+        "Heslo si můžete změnit za ${ gracePeriodHoursRemaining } hodin",
+        "Heslo si můžete změnit za ${ gracePeriodHoursRemaining } hodin"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -11499,6 +12339,12 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "Požádat o resetování hesla?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Heslo budete moci resetovat za ${ gracePeriodHoursRemaining } hodinu",
+        "Heslo budete moci resetovat za ${ gracePeriodHoursRemaining } hodiny",
+        "Heslo budete moci resetovat za ${ gracePeriodHoursRemaining } hodin",
+        "Heslo budete moci resetovat za ${ gracePeriodHoursRemaining } hodin"
       ]
     },
     "session_recovery:settings:action": {
@@ -11524,6 +12370,12 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } hodina",
+        "${ gracePeriodHoursRemaining } hodiny",
+        "${ gracePeriodHoursRemaining } hodin",
+        "${ gracePeriodHoursRemaining } hodin"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } je nyní k dispozici."
       ],
@@ -11621,6 +12473,14 @@
         "Chcete-li pozvat uživatele, kteří nemají účet ${ BRAND_NAME }, sdílejte svůj kalendář pomocí odkazu."
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Překročili jste maximální počet ${ MAX_CALENDAR_MEMBERS } člena na kalendář",
+        "Překročili jste maximální počet ${ MAX_CALENDAR_MEMBERS } členů na kalendář",
+        "Překročili jste maximální počet ${ MAX_CALENDAR_MEMBERS } členů na kalendář",
+        "Překročili jste maximální počet ${ MAX_CALENDAR_MEMBERS } členů na kalendář"
+      ]
+    },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
         "Přidejte účty ${ BRAND_NAME }, se kterými chcete sdílet ${ calendarName }. Pošleme jim pozvánku."
@@ -11701,6 +12561,40 @@
         "Přejít na Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } den",
+        "${ days } dny",
+        "${ days } dnů",
+        "${ days } dnů"
+      ],
+      "${ hours } hour": [
+        "${ hours } hodina",
+        "${ hours } hodiny",
+        "${ hours } hodin",
+        "${ hours } hodin"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minut"
+      ],
+      "${ seconds } second": [
+        "${ seconds } sekunda",
+        "${ seconds } sekundy",
+        "${ seconds } sekund",
+        "${ seconds } sekund"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } měsíc ZDARMA",
+        "${ n } měsíce ZDARMA",
+        "${ n } měsíců ZDARMA",
+        "${ n } měsíců ZDARMA"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 uživatel"
@@ -11764,6 +12658,12 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
       "/ month": [
         "/ měsíc"
       ],
@@ -11942,6 +12842,84 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } dedikovaný server",
+        "${ ipAddresses } dedikované servery",
+        "${ ipAddresses } dedikovaných serverů",
+        "${ ipAddresses } dedikovaných serverů"
+      ],
+      "${ maxVpn } high-speed VPN connection": [
+        "${ maxVpn } vysokorychlostní připojení VPN",
+        "${ maxVpn } vysokorychlostní připojení VPN",
+        "${ maxVpn } vysokorychlostních připojení VPN",
+        "${ maxVpn } vysokorychlostních připojení VPN"
+      ],
+      "${ n } calendar": [
+        "${ n } kalendář",
+        "${ n } kalendáře",
+        "${ n } kalendářů",
+        "${ n } kalendářů"
+      ],
+      "${ n } calendar per user": [
+        "${ n } kalendář na uživatele",
+        "${ n } kalendáře na uživatele",
+        "${ n } kalendářů na uživatele",
+        "${ n } kalendářů na uživatele"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } vysokorychlostní připojení VPN",
+        "${ n } vysokorychlostní připojení VPN",
+        "${ n } vysokorychlostních připojení VPN",
+        "${ n } vysokorychlostních připojení VPN"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } vysokorychlostní VPN připojení na uživatele",
+        "${ n } vysokorychlostní VPN připojení na uživatele",
+        "${ n } vysokorychlostních VPN připojení na uživatele",
+        "${ n } vysokorychlostních VPN připojení na uživatele"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN připojení",
+        "${ n } VPN připojení",
+        "${ n } VPN připojení",
+        "${ n } VPN připojení"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN připojení na uživatele",
+        "${ n } VPN připojení na uživatele",
+        "${ n } VPN připojení na uživatele",
+        "${ n } VPN připojení na uživatele"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } adresa",
+        "${ UsedAddresses } adresy",
+        "${ UsedAddresses } adres",
+        "${ UsedAddresses } adres"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } z ${ MaxAddresses } e-mailové adresy",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres",
+        "${ UsedAddresses } z ${ MaxAddresses } e-mailových adres"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } kalendář",
+        "${ UsedCalendars } kalendáře",
+        "${ UsedCalendars } kalendářů",
+        "${ UsedCalendars } kalendářů"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } z ${ MaxDomains } vlastní domény",
+        "${ UsedDomains } z ${ MaxDomains } vlastních domén",
+        "${ UsedDomains } z ${ MaxDomains } vlastních domén",
+        "${ UsedDomains } z ${ MaxDomains } vlastních domén"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } z ${ MaxMembers } uživatele",
+        "${ UsedMembers } z ${ MaxMembers } uživatelů",
+        "${ UsedMembers } z ${ MaxMembers } uživatelů",
+        "${ UsedMembers } z ${ MaxMembers } uživatelů"
+      ],
       "1 email address": [
         "1 e-mailová adresa"
       ],
@@ -11953,6 +12931,12 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "Vestavěné blokování reklam (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "Vysokorychlostní VPN na ${ maxVpn } zařízení",
+        "Vysokorychlostní VPN na ${ maxVpn } zařízení",
+        "Vysokorychlostní VPN na ${ maxVpn } zařízení",
+        "Vysokorychlostní VPN na ${ maxVpn } zařízení"
       ]
     },
     "Subscription change warning": {
@@ -12379,6 +13363,46 @@
         "Nebyl nalezen žádný SMTP token"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h",
+        "${ hours } h"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h",
+        "${ hoursInt }.5 h"
+      ],
+      "${ minutes } min": [
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min",
+        "${ minutes } min"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } hodina",
+        "${ hours } hodiny",
+        "${ hours } hodin",
+        "${ hours } hodin"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny",
+        "${ hoursInt }.5 hodiny"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuta",
+        "${ minutes } minuty",
+        "${ minutes } minut",
+        "${ minutes } minut"
+      ]
+    },
     "Timezone search placeholder": {
       "Search time zones": [
         "Hledat časová pásma"
@@ -12462,9 +13486,6 @@
       ],
       "Add filter": [
         "Přidat filtr"
-      ],
-      "Add invoice details": [
-        "Přidat fakturační údaje"
       ],
       "Add new user": [
         "Přidat nového uživatele"
@@ -12619,6 +13640,12 @@
       "Couldn’t create accounts": [
         "Nepodařilo se vytvořit účty"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "Vytvořit ${ selectedUserIds.length } uživatele",
+        "Vytvořit ${ selectedUserIds.length } uživatele",
+        "Vytvořit ${ selectedUserIds.length } uživatelů",
+        "Vytvořit ${ selectedUserIds.length } uživatelů"
+      ],
       "Create a new Gateway": [
         "Vytvořit novou bránu"
       ],
@@ -12723,6 +13750,12 @@
       ],
       "Delete logs": [
         "Odstranit záznamy"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Smazat server (budete ho moci zpět obnovit za ${ days } den)",
+        "Smazat server (budete ho moci zpět obnovit za ${ days } dny)",
+        "Smazat server (budete ho moci zpět obnovit za ${ days } dnů)",
+        "Smazat server (budete ho moci zpět obnovit za ${ days } dnů)"
       ],
       "Delete user": [
         "Smazat uživatele"
@@ -12835,6 +13868,12 @@
       "External PGP settings": [
         "Externí nastavení PGP"
       ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Nepodařilo se vytvořit ${ failedUsers.length } uživatelský účet.",
+        "Nepodařilo se vytvořit ${ failedUsers.length } uživatelské účty.",
+        "Nepodařilo se vytvořit ${ failedUsers.length } uživatelských účtů.",
+        "Nepodařilo se vytvořit ${ failedUsers.length } uživatelských účtů."
+      ],
       "Filters": [
         "Filtry"
       ],
@@ -12897,6 +13936,12 @@
       ],
       "Import and export": [
         "Import a export"
+      ],
+      "Import as simple event?": [
+        "Importovat jako jednoduchou událost?",
+        "Importovat jako jednoduché události?",
+        "Importovat jako jednoduché události?",
+        "Importovat jako jednoduché události?"
       ],
       "Import contacts": [
         "Importovat kontakty"
@@ -13212,6 +14257,18 @@
       ],
       "Success": [
         "Dokončeno"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "Úspěšně vytvořen ${ localSuccessfullyCreatedUsers.length } uživatelský účet",
+        "Úspěšně vytvořeny ${ localSuccessfullyCreatedUsers.length } uživatelské účty",
+        "Úspěšně vytvořeno ${ localSuccessfullyCreatedUsers.length } uživatelských účtů",
+        "Úspěšně vytvořeno ${ localSuccessfullyCreatedUsers.length } uživatelských účtů"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Úspěšně vytvořen ${ successfullyCreatedUsers.length } uživatelský účet",
+        "Úspěšně vytvořeny ${ successfullyCreatedUsers.length } uživatelské účty",
+        "Úspěšně vytvořeno ${ successfullyCreatedUsers.length } uživatelských účtů",
+        "Úspěšně vytvořeno ${ successfullyCreatedUsers.length } uživatelských účtů"
       ],
       "Summary": [
         "Shrnutí"
@@ -13661,6 +14718,12 @@
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
         "Navyšte tarif na ${ passPlusPlanName } a získejte neomezený počet aliasů Hide-my-email"
+      ],
+      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
+        "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou",
+        "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou",
+        "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou",
+        "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou"
       ]
     },
     "Upgrade notice": {
@@ -13694,6 +14757,20 @@
         "Hlavní Admin"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Heslo musí obsahovat alespoň ${ length } znak",
+        "Heslo musí obsahovat alespoň ${ length } znaky",
+        "Heslo musí obsahovat alespoň ${ length } znaků",
+        "Heslo musí obsahovat alespoň ${ length } znaků"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znak)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaky)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)",
+        "Vyzkoušejte kratší uživatelské jméno (maximálně ${ n } znaků)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Kliknutím přehrát video"
@@ -13719,6 +14796,32 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, a další."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } server",
+        "${ n }+ servery",
+        "${ n } serverů",
+        "${ n } serverů"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN připojení",
+        "${ n } VPN připojení",
+        "${ n } VPN připojení",
+        "${ n } VPN připojení"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } v ${ numberOfCountries } zemi",
+        "${ numberOfServers } ve ${ numberOfCountries } zemích",
+        "${ numberOfServers } v ${ numberOfCountries } zemích",
+        "${ numberOfServers } v ${ numberOfCountries } zemích"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } v ${ numberOfCountries } zemi",
+        "${ numberOfServers } v ${ numberOfCountries } zemích",
+        "${ numberOfServers } v ${ numberOfCountries } zemích",
+        "${ numberOfServers } v ${ numberOfCountries } zemích"
       ]
     },
     "vpn_2step: billing": {
@@ -13755,6 +14858,18 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } měsíc",
+        "${ n } měsíce",
+        "${ n } měsíců",
+        "${ n } měsíců"
+      ],
+      "${ n } year": [
+        "${ n } rok",
+        "${ n } roky",
+        "${ n } let",
+        "${ n } let"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Zkusit ${ upsellPlanName } bez rizika"
       ],
@@ -13867,6 +14982,168 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Každý ${ interval } týden v ${ multipleDaysString }",
+        "Každé ${ interval } týdny v ${ multipleDaysString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Každý ${ interval } týden v ${ multipleDaysString }, ${ timesString }",
+        "Každé ${ interval } týdny v ${ multipleDaysString }, ${ timesString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ timesString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "${ interval } v ${ multipleDaysString }, ${ untilString }",
+        "Každé ${ interval } týdny v ${ multipleDaysString }, ${ untilString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ untilString }",
+        "Každých ${ interval } týdnů v ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Každý ${ interval } týden a všechny dny",
+        "Každé ${ interval } týdny a všechny dny",
+        "Každých ${ interval } týdnů a všechny dny",
+        "Každých ${ interval } týdnů a všechny dny"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Každý ${ interval } týden všechny dny, ${ timesString }",
+        "Každé ${ interval } týdny a všechny dny, ${ timesString }",
+        "Každých ${ interval } týdnů a všechny dny, ${ timesString }",
+        "Každých ${ interval } týdnů a všechny dny, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "${ interval } po všechny dny v týdnu, ${ untilString }",
+        "Každé ${ interval } týdny a všechny dny, ${ untilString }",
+        "Každých ${ interval } týdnů všechny dny, ${ untilString }",
+        "Každých ${ interval } týdnů všechny dny, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Každý ${ interval } týden v pátek",
+        "Každé ${ interval } týdny v pátek",
+        "Každých ${ interval } týdnů v pátek",
+        "Každých ${ interval } týdnů v pátek"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Každý ${ interval } týden v pátek, ${ timesString }",
+        "Každé ${ interval } týdny v pátek, ${ timesString }",
+        "Každých ${ interval } týdnů v pátek, ${ timesString }",
+        "Každých ${ interval } týdnů v pátek, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "${ interval } v pátek, ${ untilString }",
+        "Každé ${ interval } týdny v pátek, ${ untilString }",
+        "Každých ${ interval } týdnů v pátek, ${ untilString }",
+        "Každých ${ interval } týdnů v pátek, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Každý ${ interval } týden v pondělí",
+        "Každé ${ interval } týdny v pondělí",
+        "Každých ${ interval } týdnů v pondělí",
+        "Každých ${ interval } týdnů v pondělí"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Každý ${ interval } týden v pondělí, ${ timesString }",
+        "Každé ${ interval } týdny v pondělí, ${ timesString }",
+        "Každých ${ interval } týdnů v pondělí, ${ timesString }",
+        "Každých ${ interval } týdnů v pondělí, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "${ interval } v pondělí, ${ untilString }",
+        "Každé ${ interval } týdny v pondělí, ${ untilString }",
+        "Každých ${ interval } týdnů v pondělí, ${ untilString }",
+        "Každých ${ interval } týdnů v pondělí, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Každý ${ interval } týden v sobotu",
+        "Každé ${ interval } týdny v sobotu",
+        "Každých ${ interval } týdnů v sobotu",
+        "Každých ${ interval } týdnů v sobotu"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Každý ${ interval } týden v sobotu, ${ timesString }",
+        "Každé ${ interval } týdny v sobotu, ${ timesString }",
+        "Každých ${ interval } týdnů v sobotu, ${ timesString }",
+        "Každých ${ interval } týdnů v sobotu, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "${ interval } v sobotu, ${ untilString }",
+        "Každé ${ interval } týdny v sobotu, ${ untilString }",
+        "Každých ${ interval } týdnů v sobotu, ${ untilString }",
+        "Každých ${ interval } týdnů v sobotu, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Každý ${ interval } týden v neděli",
+        "Každé ${ interval } týdny v neděli",
+        "Každých ${ interval } týdnů v neděli",
+        "Každých ${ interval } týdnů v neděli"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Každý ${ interval } týden v neděli, ${ timesString }",
+        "Každé ${ interval } týdny v neděli, ${ timesString }",
+        "Každých ${ interval } týdnů v neděli, ${ timesString }",
+        "Každých ${ interval } týdnů v neděli, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "${ interval } v neděli, ${ untilString }",
+        "Každé ${ interval } týdny v neděli, ${ untilString }",
+        "Každých ${ interval } týdnů v neděli, ${ untilString }",
+        "Každých ${ interval } týdnů v neděli, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Každý ${ interval } týden ve čtvrtek",
+        "Každé ${ interval } týdny ve čtvrtek",
+        "Každých ${ interval } týdnů ve čtvrtek",
+        "Každých ${ interval } týdnů ve čtvrtek"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Každý ${ interval } týden ve čvrtek, ${ timesString }",
+        "Každé ${ interval } týdny ve čtvrtek, ${ timesString }",
+        "Každých ${ interval } týdnů ve čtvrtek, ${ timesString }",
+        "Každých ${ interval } týdnů ve čtvrtek, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "${ interval } ve čtvrtek, ${ untilString }",
+        "Každé ${ interval } týdny ve čtvrtek, ${ untilString }",
+        "Každých ${ interval } týdnů ve čtvrtek, ${ untilString }",
+        "Každých ${ interval } týdnů ve čtvrtek, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Každý ${ interval } týden v úterý",
+        "Každé ${ interval } týdny v úterý",
+        "Každých ${ interval } týdnů v úterý",
+        "Každých ${ interval } týdnů v úterý"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Každý ${ interval } týden v úterý, ${ timesString }",
+        "Každé ${ interval } týdny v úterý, ${ timesString }",
+        "Každých ${ interval } týdnů v úterý, ${ timesString }",
+        "Každých ${ interval } týdnů v úterý, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "${ interval } v úterý, ${ untilString }",
+        "Každé ${ interval } týdny v úterý, ${ untilString }",
+        "Každých ${ interval } týdnů v úterý, ${ untilString }",
+        "Každých ${ interval } týdnů v úterý, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Každý ${ interval } týden ve středu",
+        "Každé ${ interval } týdny ve středu",
+        "Každých ${ interval } týdnů ve středu",
+        "Každých ${ interval } týdnů ve středu"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Každý ${ interval } týden ve středu, ${ timesString }",
+        "Každé ${ interval } týdny ve středu, ${ timesString }",
+        "Každých ${ interval } týdnů ve středu, ${ timesString }",
+        "Každých ${ interval } týdnů ve středu, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "${ interval } ve středu, ${ untilString }",
+        "Každé ${ interval } týdny ve středu, ${ untilString }",
+        "Každých ${ interval } týdnů ve středu, ${ untilString }",
+        "Každých ${ interval } týdnů ve středu, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Týdně v ${ multipleDaysString }"
       ],
@@ -13973,6 +15250,24 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "${ interval }",
+        "Každé ${ interval } roky",
+        "Každých ${ interval } roků",
+        "Každých ${ interval } roků"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "${ interval }, ${ timesString }",
+        "Každé ${ interval } roky, ${ timesString }",
+        "Každých ${ interval } roků, ${ timesString }",
+        "Každých ${ interval } roků, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "${ interval }, ${ untilString }",
+        "Každé ${ interval } roky, ${ untilString }",
+        "Každých ${ interval } roků, ${ untilString }",
+        "Každých ${ interval } roků, ${ untilString }"
+      ],
       "Yearly": [
         "Ročně"
       ],

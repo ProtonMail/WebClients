@@ -1111,6 +1111,12 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domains": [
+        "${ domains } 個自訂網域"
+      ],
+      "${ ips } servers": [
+        "${ ips } 台伺服器"
+      ],
       "${ price } per dedicated server": [
         "每專用伺服器${ price }"
       ],
@@ -1119,6 +1125,9 @@
       ],
       "${ price } per user": [
         "每使用者${ price }"
+      ],
+      "${ users } users": [
+        "${ users } 個使用者"
       ]
     },
     "Address action": {
@@ -1327,7 +1336,15 @@
         "進階版密碼管理器"
       ]
     },
+    "bf2023: renew": {
+      "the first ${ n } months": [
+        "${ n }月"
+      ]
+    },
     "Billing cycle": {
+      "${ n } months": [
+        "${ n }個月"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
         "自動以 ${ renewPrice } 續訂，繳費長度為 ${ renewalLength }"
       ]
@@ -1539,6 +1556,11 @@
         "與任何人分享"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "再顯示 ${ remainingItems } 個"
+      ]
+    },
     "Calendar share permission label": {
       "Edit event details": [
         "編輯事件詳細資訊"
@@ -1636,6 +1658,14 @@
       ],
       "Week": [
         "週"
+      ]
+    },
+    "Checkout row": {
+      "${ users } users": [
+        "${ users } 個使用者"
+      ],
+      "Total for ${ n } months": [
+        "總額可用 ${ n } 個月"
       ]
     },
     "Checkout summary": {
@@ -2788,6 +2818,9 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } times": [
+        "總共 ${ count } 次"
+      ],
       "Daily": [
         "每天"
       ],
@@ -2796,6 +2829,15 @@
       ],
       "Daily, ${ untilString }": [
         "每天，${ untilString }"
+      ],
+      "Every ${ interval } days": [
+        "每 ${ interval } 天"
+      ],
+      "Every ${ interval } days, ${ timesString }": [
+        "每 ${ interval } 天，${ timesString }"
+      ],
+      "Every ${ interval } days, ${ untilString }": [
+        "每 ${ interval } 天，${ untilString }"
       ],
       "until ${ dateString }": [
         "直到 ${ dateString } 為止"
@@ -3265,6 +3307,12 @@
       "Contact signature not verified": [
         "聯絡人簽章尚未驗證"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendars": [
+        "請取消選取至少 ${ calendarsToFixCount } 個行事曆"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendars or": [
+        "請取消選取至少 ${ calendarsToFixCount } 個行事曆或"
+      ],
       "Domain not available, try again later": [
         "網域無法使用，請稍後再試"
       ],
@@ -3370,6 +3418,9 @@
       "Label name cannot be empty.": [
         "標籤名稱不能留空。"
       ],
+      "Merge at least ${ calendarsToFixCount } calendars with existing ${ BRAND_NAME } calendars": [
+        "請至少將 ${ calendarsToFixCount } 個行事曆與現存的 ${ BRAND_NAME } calendar 合併"
+      ],
       "Missing key packet": [
         "缺少金鑰封包"
       ],
@@ -3445,6 +3496,9 @@
       "Please enable multi-user support before adding users to your organization.": [
         "請先啟用多使用者支援，然後才加入使用者到您的組織。"
       ],
+      "Please fix the highlighted conflicts to proceed.": [
+        "請先修正已標示的衝突以便繼續。"
+      ],
       "Please generate keys before you try to change your password": [
         "請在您試著改變您的密碼前生成金鑰"
       ],
@@ -3480,6 +3534,9 @@
       ],
       "Process aborted": [
         "處理已中止"
+      ],
+      "Removed duplicate recipients: ${ joinedRecipients }": [
+        "已移除重複的收件者：${ joinedRecipients }"
       ],
       "Request timed out": [
         "請求逾時"
@@ -3692,6 +3749,9 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "發生未知的錯誤。需重新開始匯入。"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } events.": [
+        "您的檔案 ${ formattedFilename } 包含超過 ${ MAX_IMPORT_EVENTS_STRING } 則事件。"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "您的檔案 ${ formattedFilename } 有一個無效的方法，因此無法匯入。"
@@ -3985,6 +4045,9 @@
       ]
     },
     "Export calendar": {
+      "${ totalProcessed }/${ totalToProcess } events exported": [
+        "${ totalProcessed }/${ totalToProcess } 個行程已匯出"
+      ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "行事曆已成功匯出。您現在可儲存 ICS 檔案。"
       ],
@@ -4323,11 +4386,20 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connections": [
+        "${ MaxVPN } 個 VPN 連線"
+      ],
       "Access to all countries": [
         "所有國家任選"
       ],
       "Add": [
         "新增"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "添加(${ numberOfAddedServers })"
+      ],
+      "Connection for up to ${ plusVpnConnections } devices": [
+        "多達 ${ plusVpnConnections } 台裝置的連線"
       ],
       "Fastest VPN servers": [
         "最快速的 VPN 伺服器"
@@ -4434,6 +4506,9 @@
       ]
     },
     "file size format": {
+      "bytes": [
+        "位元組"
+      ],
       "GB": [
         "GB"
       ],
@@ -4444,6 +4519,23 @@
         "MB"
       ],
       "TB": [
+        "TB"
+      ]
+    },
+    "file size format, long": {
+      "Bytes": [
+        "位元組"
+      ],
+      "Gigabytes": [
+        "十億位元組"
+      ],
+      "Kilobytes": [
+        "千位元組"
+      ],
+      "Megabytes": [
+        "百萬位元組"
+      ],
+      "Terabytes": [
         "TB"
       ]
     },
@@ -4840,6 +4932,9 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestions, use keyboard to navigate.": [
+        "找到 ${ items.length } 個建議，請使用鍵盤導覽。"
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "使用向上、向下方向鍵存取並瀏覽輸入建議。按一下 [Enter] 鍵確認選項，或 [Esc] 鍵關閉建議方塊。"
       ]
@@ -4856,8 +4951,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } events encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } 個事件已加密並加入到您的行事曆中"
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "加密及加入您的行程時發生錯誤。無法匯入任何行程。"
+      ],
+      "An error occurred while encrypting and adding your events. ${ totalImported } out of ${ totalToImport } events successfully imported.": [
+        "加密及加入您的行程時發生錯誤。${ totalToImport } 個行程之中，有 ${ totalImported } 個已成功匯入。"
       ],
       "An error occurred while encrypting and adding your events. No event could be imported.": [
         "加密及加入您的行程時發生錯誤。無法匯入任何行程。"
@@ -4890,11 +4991,20 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "已匯入的邀請在 ${ CALENDAR_APP_NAME } 中顯示為簡單事件，沒有舉辦人與參與者的詳細資料。若要取得事件更新並顯示參與者，請要求舉辦人以您的 ${ BRAND_NAME } 電子郵件位址向您發出邀請。"
       ],
+      "This file contains event invitations:": [
+        "此檔案包含事件邀請："
+      ],
+      "This file contains invitation responses:": [
+        "此檔案包含邀請回覆："
+      ],
       "This file contains some data that we cannot import:": [
         "此檔案包含部分無法匯入的內容："
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contacts encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } 個聯絡人已加密並加入至您的通訊錄"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "加密及加入聯絡人時發生錯誤。無法匯入任何聯絡人。"
       ],
@@ -4914,6 +5024,11 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "聯絡人 ${ contactId }： "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contacts": [
+        "${ totalContacts } 位聯絡人"
       ]
     },
     "Import contact. Contact identifier": {
@@ -5143,6 +5258,9 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } /${ totalContacts } 聯絡人將不會被匯入。點擊以查看詳細資料"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } events will not be imported. Expand for details.": [
+        "${ totalEvents } 個行程之中，有 ${ totalEventsDiscarded } 個將不會匯入。展開以取得詳細資料。"
+      ],
       "No contact can be imported. Click for details": [
         "無聯絡人可供匯入。點擊以查看詳細資料"
       ],
@@ -5154,6 +5272,9 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } addresses": [
+        "${ amountOfAddresses } 個電郵位址"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } 需要您的授權以${ enableDesktopNotifications }。"
       ],
@@ -5177,6 +5298,12 @@
       ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } 將會是預設的行事曆。"
+      ],
+      "${ calendarsToBeCreatedCount } new calendars": [
+        "${ calendarsToBeCreatedCount } 個新行事曆"
+      ],
+      "${ calendarsToBeMergedCount } merged calendars": [
+        "${ calendarsToBeMergedCount } 個合併行事曆"
       ],
       "${ current } of ${ total }": [
         "${ total } 中的 ${ current }"
@@ -5208,8 +5335,20 @@
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
         "${ MAIL_APP_NAME } 支援自訂網域的 DKIM 簽章。如要使用 DKIM 驗證，請在此網域的 DNS 設定中加入以下的 CNAME 記錄。這通常可以在您的網域名稱註冊商提供的控制面板上完成。"
       ],
+      "${ n } addresses": [
+        "${ n } 個電郵位址"
+      ],
       "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
         "${ none } 對電郵遞送沒有影響，但我們建議 ${ quarantine } 來提昇安全性。"
+      ],
+      "${ number } cities": [
+        "${ number } 座城市"
+      ],
+      "${ number } servers": [
+        "${ number } 個伺服器"
+      ],
+      "${ numberOfNonPrivateKeys } uploaded files are not valid private keys. Please verify and try again.": [
+        "${ numberOfNonPrivateKeys } 個上載的檔案不是有效的私鑰。請驗證並再試一次。"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }要求至少1個獨立伺服器${ serverPricePerMonth }"
@@ -5217,17 +5356,53 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } 是一種高級帳戶保護程序，由最新的 AI 系統和全天候工作的專家提供協助，以保護您免受不良行為者與安全威脅的侵害。"
       ],
+      "${ providerFoldersNumLocalized } folders found": [
+        "找到 ${ providerFoldersNumLocalized } 個資料夾"
+      ],
+      "${ providerFoldersNumLocalized } labels found in Gmail": [
+        "在 Gmail 中找到 ${ providerFoldersNumLocalized } 種標籤"
+      ],
+      "${ provisioningCounter } servers are still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter }伺服器正在設定。通常需要接近${ provisioningDuration }。"
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } 以上"
+      ],
+      "${ remainingAddresses.length } more addresses": [
+        "${ remainingAddresses.length }更多的電子郵件地址"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendars": [
+        "${ selectedCalendarsTotal } 個，共 ${ providerCalendars.length } 個行事曆"
+      ],
+      "${ selectedFoldersCount } folders selected": [
+        "已選取 ${ selectedFoldersCount } 個資料夾"
+      ],
+      "${ selectedFoldersCount } labels selected": [
+        "已選取 ${ selectedFoldersCount } 個標籤"
+      ],
+      "${ selectedFoldersCountLocalized } folders selected": [
+        "已選取 ${ selectedFoldersCountLocalized } 個資料夾"
+      ],
+      "${ selectedFoldersCountLocalized } labels selected": [
+        "已選取 ${ selectedFoldersCountLocalized } 種標籤"
+      ],
       "${ storage } storage": [
         "${ storage } 儲存空間"
       ],
       "${ storageSize } storage": [
         "${ storageSize } 儲存空間"
       ],
+      "${ userFound } users found": [
+        "找到 ${ userFound } 個使用者"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "國家等級的連線需要 ${ vpnPlus } 。"
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "使用安全核心功能需要 ${ vpnPlus } 。"
+      ],
+      "(${ memberCount } members)": [
+        "(${ memberCount } 位成員)"
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /月)"
@@ -5246,6 +5421,9 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } 附贈的儲存空間"
+      ],
+      "+${ organization.BonusVPN } connections for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } 紅利加碼連線數至 ${ VPN_APP_NAME } (您即可享受多設備同時連上 VPN)"
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. 邀請好友加入 ${ BRAND_NAME }"
@@ -5328,6 +5506,15 @@
       "Add multiple users to your organization at once.": [
         "一次新增多個使用者到您的組織中。"
       ],
+      "Add server (${ availableAddedCount } available)": [
+        "添加伺服器(${ availableAddedCount }可用)"
+      ],
+      "Adding ${ addedServerCount } gateway servers": [
+        "添加${ addedServerCount }閘道器伺服器"
+      ],
+      "Adding gateway servers: ${ serverNumber } / ${ total }": [
+        "添加閘道器伺服器:${ serverNumber } / ${ total }"
+      ],
       "Additional options": [
         "額外設定"
       ],
@@ -5340,11 +5527,20 @@
       "Align right": [
         "靠右對齊"
       ],
+      "All (${ totalFoldersCount } folders)": [
+        "全部 (${ totalFoldersCount } 個資料夾)"
+      ],
+      "All (${ totalFoldersCount } labels)": [
+        "全部 (${ totalFoldersCount } 個標籤)"
+      ],
       "All keys successfully reactivated": [
         "所有金鑰都已成功重新啟用"
       ],
       "All your changes will be lost.": [
         "一切您所作的變更將會消失。"
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "您所有的聯絡人都已匯入，已達 ${ MAX_CONTACTS_PER_USER } 的限制"
       ],
       "Allocated": [
         "已分配"
@@ -5544,6 +5740,9 @@
       "Country code": [
         "國家代碼"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendars": [
+        "建立 ${ calendarsToBeCreatedCount } 個新行事曆"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "為匯入的郵件建立標籤、設定這次匯入的時間範圍以及要匯入的資料夾。"
       ],
@@ -5564,6 +5763,9 @@
       ],
       "Create your first Gateway": [
         "創建您的第一個閘道器"
+      ],
+      "Creating gateway servers: ${ serverNumber } / ${ total }": [
+        "創建閘道器伺服器: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "建立您的帳號"
@@ -5616,6 +5818,9 @@
       "Delete link?": [
         "刪除連結？"
       ],
+      "Deleting ${ deletedServerCount } gateway servers": [
+        "刪除${ deletedServerCount }閘道器伺服器"
+      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 標誌"
       ],
@@ -5627,6 +5832,9 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "您要撤銷除目前之外所有其它工作階段嗎？"
+      ],
+      "domains used": [
+        "個網域已使用"
       ],
       "Done": [
         "已完成"
@@ -5877,6 +6085,9 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "圖像已被移除，因為自動回覆不支援"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendars": [
+        "匯入 ${ calendarCount } 個，共 ${ totalCalendarsCount } 個行事曆"
+      ],
       "Import from": [
         "匯入自"
       ],
@@ -5942,6 +6153,9 @@
       ],
       "Internet connection restored.": [
         "網際網路連線已恢復。"
+      ],
+      "Invites successfully sent": [
+        "邀請已成功傳送"
       ],
       "It appears some of your data is encrypted and locked.": [
         "您的某些資料似乎已被加密和鎖定。"
@@ -6177,6 +6391,9 @@
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "超過億人及企業註冊${ BRAND_NAME }"
       ],
+      "Paid for a ${ rewardMonths } months plan": [
+        "已付費 ${ rewardMonths } 個月方案"
+      ],
       "Paid for a monthly plan": [
         "以每月方案付費"
       ],
@@ -6203,6 +6420,12 @@
       ],
       "Plan upgrade required": [
         "需要升級方案"
+      ],
+      "Please add email addresses for the users on rows": [
+        "請在此行使用者處加入電郵位址"
+      ],
+      "Please add passwords for the users on rows": [
+        "請在此行使用者處加入密碼"
       ],
       "Please authenticate your card in the verification tab.": [
         "請在驗證索引標籤中認證您的信用卡。"
@@ -6438,6 +6661,9 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "SPF 是用來指定使用者，已獲授權足以網域身分進行傳送電子郵件。因此，我們強烈建議將 ${ MAIL_APP_NAME } 加入到您的 SPF 記錄。請在 DNS 加入以下 TXT 記錄。這步驟通常可以在網域名稱註冊商的控制台完成。"
       ],
+      "Step ${ step }": [
+        "步驟 ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "儲存空間已分配給這個組織中的其他使用者"
       ],
@@ -6509,6 +6735,15 @@
       ],
       "The following address is available:": [
         "以下的電子郵件位址可用："
+      ],
+      "The following addresses are invalid.": [
+        "下列電子郵件位址無效。"
+      ],
+      "The following addresses are unavailable.": [
+        "下列電子郵件位址不可用。"
+      ],
+      "The following addresses were not created.": [
+        "以下的電子郵件位址還未建立。"
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "以下成員將收到電子郵件提示盡速使用雙重身份驗證"
@@ -6942,6 +7177,12 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "您目前已登入為 ${ user.Name } (${ user.Email })。"
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated servers.": [
+        "您目前正在使用 ${ ipAddresses } 個可用伺服器中的 ${ ipCount } 個。"
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user licenses.": [
+        "您目前使用${ organization.MaxMembers }的可用序號${ organization.UsedMembers }。"
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "您已登入帳號 ${ memberAddress }。"
       ],
@@ -6950,9 +7191,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "您可以檢查進度 ${ importProgressLink }。"
-      ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "您可自訂並下載您的繳款單作記帳用途。"
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "您可以編輯這個一次以確保用於驗證的電子郵件位址正確。"
@@ -6965,6 +7203,18 @@
       ],
       "You can import one data type at a time.": [
         "您可以一次匯入一種資料類型。"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "您可保留最多 ${ MAX_CALENDARS_FREE } 個行事曆。請先移除已分享的行事曆連結以及任何與其分享行事曆的 ${ BRAND_NAME } 使用者，然後才取消您的 ${ MAIL_SHORT_APP_NAME } 訂閱。"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "您可保留最多 ${ MAX_CALENDARS_FREE } 個行事曆。請先移除已分享的行事曆連結以及任何與其分享行事曆的 ${ BRAND_NAME } 使用者，然後才取消您的訂閱。"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "您可保留最多 ${ MAX_CALENDARS_FREE } 個行事曆。請先移除已分享的行事曆連結，然後才取消您的 ${ MAIL_SHORT_APP_NAME } 訂閱。"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendars. Please remove shared calendar links before you cancel your subscription.": [
+        "您可保留最多 ${ MAX_CALENDARS_FREE } 個行事曆。請先移除已分享的行事曆連結，然後才取消您的訂閱。"
       ],
       "You can now access and manage the account as an administrator.": [
         "您現在可以管理員身份存取與管理帳號。"
@@ -6981,6 +7231,9 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "您可使用下列憑證，透過第三方或開放原始碼 VPN 程式（例如：macOS 版本適用的 Tunnelblick 或 GNU/Linux 適用的 OpenVPN），連線至 ${ VPN_APP_NAME } 伺服器。"
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invites for the next 24 hours": [
+        "在接下來的 24 小時內，您最多只能發送 ${ emailSendLimitNumber } 封電郵邀請"
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "您不能推薦 ${ MAIL_APP_NAME } 使用者"
       ],
@@ -6989,6 +7242,9 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您沒有設定復原方法，萬一忘記您的密碼，將無從恢復帳號。要在無復原電郵的情況下繼續嗎？"
+      ],
+      "You have ${ availableCount } dedicated servers available.": [
+        "您有${ availableCount }台可用的獨立伺服器。"
       ],
       "You have no calendars to export.": [
         "您未有行事曆可匯出。"
@@ -7101,6 +7357,9 @@
       "Your files will be encrypted and then saved": [
         "你的檔案將加密後再儲存"
       ],
+      "Your imports from ${ accounts } are temporarily delayed.": [
+        "您從匯入 ${ accounts } 的操作被暫時推遲。"
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "您的各項資訊在我們安全保護下安全無虞，僅有提供服務前的身分驗證需求時，我們才會使用該資訊與您進行聯繫。"
       ],
@@ -7167,11 +7426,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "您可以加入繳款方式以便為您的訂購授權自動續約。其它繳款方式也可適用。"
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Add your name (or company name) and address to your invoices.": [
-        "將您的姓名 (或公司名稱) 及位址加入到您的帳單。"
       ]
     },
     "Info on errors": {
@@ -7556,6 +7810,18 @@
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } 頁尾"
       ],
+      "${ n } months": [
+        "${ n } 月"
+      ],
+      "${ nbDay } days": [
+        "${ nbDay } 天"
+      ],
+      "${ nbYear } years": [
+        "${ nbYear } 年"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email addresses": [
+        "最多可有 ${ MaxAddresses } 個電郵位址，目前已有 ${ UsedAddresses } 個"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(暫時無法使用。請稍後再試。)"
       ],
@@ -7798,9 +8064,6 @@
       ],
       "Current email": [
         "目前的電子郵件"
-      ],
-      "Customize invoices": [
-        "自訂繳款單"
       ],
       "Daily email notifications": [
         "每日電郵通知"
@@ -8713,8 +8976,14 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization members use two-factor authentication.": [
+        "您組織的${ twoFAMembers.length }/${ members.length }成員使用了雙重身分驗證"
+      ],
       "Almost there": [
         "快完成了"
+      ],
+      "Amount of calendars created: ${ createdCalendarCount } out of ${ calendarsToBeCreated }": [
+        "已建立的行事曆數量：${ createdCalendarCount }/${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "連結到您的電郵提供者"
@@ -8743,6 +9012,20 @@
         "啟用認證記錄"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folders and label them as": [
+        "匯入來自 ${ itemsToImportCount } 個資料夾的所有訊息，並加上標籤："
+      ],
+      "Import all messages from ${ itemsToImportCount } labels and label them as": [
+        "匯入帶有 ${ itemsToImportCount } 個標籤的全部訊息，並加上標籤："
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folders and label them as": [
+        "從 ${ itemsToImportCount } 個資料夾中匯入來自 ${ selectedItemsToImportCount } 個的所有訊息，並加上標籤："
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } labels and label them as": [
+        "從 ${ itemsToImportCount } 標籤中匯入來自 ${ selectedItemsToImportCount } 的所有訊息，並加上標籤："
+      ]
+    },
     "mail_signup_2023: Info": {
       "Secure email that protects your privacy": [
         "安全防護的電子郵件保護隱私"
@@ -8754,6 +9037,16 @@
       ],
       "This feature is temporarily unavailable": [
         "此功能暫時不可用"
+      ]
+    },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "您可以為每個行事曆建立最多 ${ MAX_LINKS_PER_CALENDAR } 個連結。若要為此行事曆建立新連結，請先從下列清單中刪除一個。"
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } members.": [
+        "您已達到最高限數 ${ MAX_CALENDAR_MEMBERS } 位成員。"
       ]
     },
     "Member action": {
@@ -8882,6 +9175,15 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } months ${ onDayString }": [
+        "每 ${ interval } 個月的${ onDayString }"
+      ],
+      "Every ${ interval } months ${ onDayString }, ${ timesString }": [
+        "每 ${ interval } 個月的${ onDayString }，${ timesString }"
+      ],
+      "Every ${ interval } months ${ onDayString }, ${ untilString }": [
+        "每 ${ interval } 個月的${ onDayString }，${ untilString }"
+      ],
       "Monthly ${ onDayString }": [
         "每月的${ onDayString }"
       ],
@@ -9118,6 +9420,48 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendars": [
+        "${ n } 個行事曆"
+      ],
+      "${ n } custom email domains": [
+        "${ n } 個自訂電郵網域"
+      ],
+      "${ n } email addresses per user": [
+        "${ n } 組電郵位址/每位使用者"
+      ],
+      "${ n } email addresses/aliases": [
+        "${ n } 組電郵位址/別名"
+      ],
+      "${ n } filters": [
+        "${ n } 個篩選器"
+      ],
+      "${ n } folders": [
+        "${ n } 個資料夾"
+      ],
+      "${ n } folders and labels": [
+        "${ n } 個資料夾和標籤"
+      ],
+      "${ n } hide-my-email aliases": [
+        "${ n } hide-my-email 組別名"
+      ],
+      "${ n } labels": [
+        "${ n } 個標籤"
+      ],
+      "${ n } messages per day": [
+        "${ n } 封郵件 / 每天"
+      ],
+      "${ n } vaults": [
+        "${ n } 個保險櫃"
+      ],
+      "${ n } VPN connections": [
+        "${ n } 個 VPN 連線"
+      ],
+      "${ n } VPN connections per user": [
+        "每一位用戶${ n }個VPN連線"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email aliases": [
+        "包含${ n }個 hide-my-email 別名的 ${ PASS_APP_NAME }"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "包含無限數量 hide-my-email 別名的 ${ PASS_APP_NAME }"
       ],
@@ -9256,6 +9600,9 @@
       "High-speed Swiss VPN that protects your privacy": [
         "高速的瑞士 VPN 可保護您的隱私"
       ],
+      "High-speed VPN on ${ n } devices": [
+        "極速 VPN 裝載多達 ${ n } 臺裝置"
+      ],
       "HTML signatures": [
         "HTML簽名"
       ],
@@ -9292,6 +9639,9 @@
       "Priority support & live chat": [
         "優先支援與即時對話"
       ],
+      "Protect ${ n } devices at a time": [
+        "同時保護 ${ n } 台裝置"
+      ],
       "Router support": [
         "路由器支援"
       ],
@@ -9306,6 +9656,9 @@
       ],
       "Send & receive invitations": [
         "傳送並接收邀請"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ countries": [
+        "於${ vpnServersCountData.paid.countries }+國家的伺服器"
       ],
       "Share calendar via link": [
         "透過連結分享行事曆"
@@ -9390,6 +9743,9 @@
       ],
       "User session management": [
         "使用者作業階段管理"
+      ],
+      "Vault sharing (up to ${ n } people)": [
+        "保管共享(每人至多${ n })"
       ]
     },
     "new_plans: feature info": {
@@ -9524,6 +9880,11 @@
         "/月"
       ]
     },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } days left on your ${ currentPlanName } account.": [
+        "您的 ${ currentPlanName } 帳號尚餘 ${ daysRemaining } 天。"
+      ]
+    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "按下\"付款\"，代表您同意我們的${ termsAndConditions }."
@@ -9617,6 +9978,9 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "為您的線上身分建立多個電子郵件位址，例如 JohnShopper@${ domain } 作購物帳號、JohnNews@${ domain } 作新聞訂閱"
+      ],
+      "Create up to ${ n } calendars or add calendars from friends, family, colleagues, and organizations": [
+        "建立多達 ${ n } 個行事曆或新增好友、家人、同事和組織的行事曆"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "創建${ n }個電子郵件地址/別名分配至家庭成員。包含線上身分，如，JohnShopper@${ domain }給購物帳號。"
@@ -9820,6 +10184,9 @@
       "Cover more ground with support for 10 custom email domains": [
         "支援 10 個自訂電郵網域更全面性的服務"
       ],
+      "Create up to ${ n } calendars": [
+        "建立多達 ${ n } 個行事曆"
+      ],
       "Dedicated Account manager": [
         "專屬客戶經理"
       ],
@@ -9903,6 +10270,9 @@
       ],
       "Member deleted": [
         "成員已刪除"
+      ],
+      "Members added": [
+        "成員已新增"
       ]
     },
     "Notification in shared calendar modal": {
@@ -9935,8 +10305,20 @@
       "at time of event": [
         "屆時"
       ],
+      "days before": [
+        "天前"
+      ],
+      "hours before": [
+        "小時前"
+      ],
+      "minutes before": [
+        "分鐘前"
+      ],
       "on the same day": [
         "同日"
+      ],
+      "weeks before": [
+        "週前"
       ]
     },
     "Oauth instructions": {
@@ -10203,6 +10585,15 @@
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } 點擊取得更多儲存空間；或移除一些分配儲存以釋出可用空間。"
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more addresses.": [
+        "您的方案上限包含額外 ${ availableAddresses } 組電子郵件位址。"
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational users.": [
+        "您的方案上限包含額外 ${ availableNumberOfMembers } 位組織使用者。"
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN accounts.": [
+        "您的方案上限包含額外 ${ availableVPNAccess } 個 VPN 帳號。"
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "您的方案包含最高 ${ humanReadableAvailableSpace } 的儲存空間。"
@@ -10587,17 +10978,15 @@
         "yourdomain.com"
       ]
     },
-    "Placeholder for custom invoice text": {
-      "Add your name (or company name) and address to your invoices": [
-        "將您的姓名 (或公司名稱) 及郵寄地址加入到您的繳款單"
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "業務聯繫"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "選擇欲加入您授權方案的使用者人數。每一位加入使用者的費用為 ${ price }。"
+      ],
+      "Should you need more than ${ maxUsers } user accounts, please ${ contact } our Sales team.": [
+        "若您需求超過 ${ maxUsers } 位使用者帳號，請 ${ contact } 我們的客戶成功團隊。"
       ]
     },
     "Price": {
@@ -10849,14 +11238,32 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } days": [
+        "${ timeRemaining.inDays }天"
+      ],
+      "${ timeRemaining.inHours } hours": [
+        "${ timeRemaining.inHours }小時"
+      ],
       "Didn’t make this request?": [
         "沒有提出這個請求嗎？"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "若您沒有請求重設密碼，請立刻取消請求。"
       ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } days to reset your password.": [
+        "重設密碼請求已核准 (${ user.Email })。您可以在${ timeRemaining.inDays }天內重設您的密碼。"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hours to reset your password.": [
+        "重設密碼請求已核准 (${ user.Email })。您可以在${ timeRemaining.inHours }小時內重設您的密碼。"
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "請前往已登入的裝置（在發起請求的工作階段中）變更您的密碼。"
+      ],
+      "This permission expires in ${ timeRemaining.inDays } days": [
+        "此權限將在${ timeRemaining.inDays }天後過期"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hours": [
+        "此權限將在${ timeRemaining.inHours }小時後過期"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "現在您可以在${ boldDaysRemaining }內免費變更帳號 ${ boldEmail } 的密碼。"
@@ -10946,6 +11353,9 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hours": [
+        "還剩下${ gracePeriodHoursRemaining }小時"
+      ],
       "Didn’t make this request?": [
         "沒有提出這個請求嗎？"
       ],
@@ -10958,11 +11368,17 @@
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "密碼重設從 ${ boldDate } 開始可使用。這讓您有時間取消任何詐騙請求。"
       ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hours.": [
+        "已請求重設密碼 (${ user.Email })。您可以在${ hoursRemaining }小時後變更您的密碼。"
+      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "為了確保確實是您在嘗試重設密碼，我們會等待 72 小時才核准請求。您可以在 ${ boldTimeLeft } 後變更密碼。${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "我們收到了 ${ boldEmail } 的密碼重設請求。"
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hours": [
+        "您可以在${ gracePeriodHoursRemaining }小時內變更您的密碼"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -11013,6 +11429,9 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "請求密碼重設？"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hours": [
+        "您將可以在${ gracePeriodHoursRemaining }小時內重設您的密碼"
       ]
     },
     "session_recovery:settings:action": {
@@ -11038,6 +11457,9 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hours": [
+        "${ gracePeriodHoursRemaining }小時"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } 現在可用。"
       ],
@@ -11135,6 +11557,11 @@
         "要邀請非 ${ BRAND_NAME } 使用者，請透過連結分享您的行事曆."
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } members per calendar": [
+        "您已超出每個行事曆最多 ${ MAX_CALENDAR_MEMBERS } 個成員的限額"
+      ]
+    },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
         "新增您要與之分享 ${ calendarName } 的 ${ BRAND_NAME } 帳號。我們會向他們傳送邀請。"
@@ -11215,6 +11642,25 @@
         "使用無限制"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } days": [
+        "${ days }天"
+      ],
+      "${ hours } hours": [
+        "${ hours }小時"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes }分鐘"
+      ],
+      "${ seconds } seconds": [
+        "${ seconds }秒"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } months FREE": [
+        "${ n }個月免費"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 位使用者"
@@ -11278,6 +11724,9 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n }個月"
+      ],
       "/ month": [
         "/ 月"
       ],
@@ -11456,6 +11905,45 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated servers": [
+        "${ ipAddresses } 專用伺服器"
+      ],
+      "${ maxVpn } high-speed VPN connections": [
+        "${ maxVpn } 個極飆速 VPN 連線"
+      ],
+      "${ n } calendars": [
+        "${ n } 個行事曆"
+      ],
+      "${ n } calendars per user": [
+        "${ n } 個行事曆分配給每位使用者"
+      ],
+      "${ n } high-speed VPN connections": [
+        "${ n } 個極飆速 VPN 連線"
+      ],
+      "${ n } high-speed VPN connections per user": [
+        "${ n } 個極飆速 VPN 連線 / 每一位使用者"
+      ],
+      "${ n } VPN connections": [
+        "${ n } 個 VPN 連線"
+      ],
+      "${ n } VPN connections per user": [
+        "${ n } 個 VPN 連線 / 每一位使用者"
+      ],
+      "${ UsedAddresses } addresses": [
+        "${ UsedAddresses } 個電郵位址"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email addresses": [
+        "最多可有 ${ MaxAddresses } 個電郵位址，目前已有 ${ UsedAddresses } 個"
+      ],
+      "${ UsedCalendars } calendars": [
+        "${ UsedCalendars } 個行事曆"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domains": [
+        "${ MaxDomains } 個可用自訂網域，已用 ${ UsedDomains } 個"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } users": [
+        "${ MaxMembers } 位可用會員名額，已用 ${ UsedMembers } 位"
+      ],
       "1 email address": [
         "1 組電郵位址"
       ],
@@ -11467,6 +11955,9 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "內建廣告攔截程式 (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } devices": [
+        "極速 VPN 裝載多達 ${ maxVpn } 臺裝置"
       ]
     },
     "Subscription change warning": {
@@ -11893,6 +12384,28 @@
         "找不到 SMTP 權杖"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours }小時"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5小時"
+      ],
+      "${ minutes } min": [
+        "${ minutes }分鐘"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hours": [
+        "${ hours }小時"
+      ],
+      "${ hoursInt }.5 hours": [
+        "${ hoursInt }.5小時"
+      ],
+      "${ minutes } minutes": [
+        "${ minutes }分鐘"
+      ]
+    },
     "Timezone search placeholder": {
       "Search time zones": [
         "搜尋時區"
@@ -11976,9 +12489,6 @@
       ],
       "Add filter": [
         "加入篩選器"
-      ],
-      "Add invoice details": [
-        "加入繳款單詳細資料"
       ],
       "Add new user": [
         "新增使用者"
@@ -12133,6 +12643,9 @@
       "Couldn’t create accounts": [
         "無法建立帳號"
       ],
+      "Create ${ selectedUserIds.length } users": [
+        "建立 ${ selectedUserIds.length } 個使用者"
+      ],
       "Create a new Gateway": [
         "建立新閘道器"
       ],
@@ -12237,6 +12750,9 @@
       ],
       "Delete logs": [
         "刪除記錄檔"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } days)": [
+        "刪除伺服器（您仍可於 ${ days } 天內還原）"
       ],
       "Delete user": [
         "刪除使用者"
@@ -12349,6 +12865,9 @@
       "External PGP settings": [
         "外部 PGP 設定"
       ],
+      "Failed to create ${ failedUsers.length } user accounts.": [
+        "${ failedUsers.length } 個使用者帳號建立失敗。"
+      ],
       "Filters": [
         "篩選器"
       ],
@@ -12408,6 +12927,9 @@
       ],
       "Import and export": [
         "匯入與匯出"
+      ],
+      "Import as simple events?": [
+        "要匯入為簡單事件嗎？"
       ],
       "Import contacts": [
         "匯入聯絡人"
@@ -12723,6 +13245,12 @@
       ],
       "Success": [
         "成功"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
+        "已成功建立 ${ localSuccessfullyCreatedUsers.length } 個使用者帳號"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user accounts": [
+        "成功創建 ${ successfullyCreatedUsers.length } 使用者帳號"
       ],
       "Summary": [
         "總結"
@@ -13164,6 +13692,9 @@
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
         "升級至 ${ passPlusPlanName }，即可取得無上限的隱藏電子信箱別名"
+      ],
+      "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
+        "升級為 ${ planName } 方案，即可讓 ${ n } 台裝置同時連線 VPN"
       ]
     },
     "Upgrade notice": {
@@ -13197,6 +13728,14 @@
         "主要系統管理員"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } characters": [
+        "密碼至少必須包含 ${ length } 個字元"
+      ],
+      "Try a shorter username (${ n } characters max)": [
+        "請輸入一個更短的使用者名稱 (${ n } characters max)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "點擊以重播影片"
@@ -13222,6 +13761,20 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix、Amazon Prime Video、BBC iPlayer、ESPN+、Disney+、HBO Now，還有更多。"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } VPN connections": [
+        "${ n } 條VPN連線"
+      ],
+      "${ n }+ servers": [
+        "${ n } 台伺服器"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries }+ countries": [
+        "${ numberOfServers } 台，分布於 ${ numberOfCountries }+ 個國家"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } countries": [
+        "分布於 ${ numberOfCountries } 國家的 ${ numberOfServers } 台伺服器"
       ]
     },
     "vpn_2step: billing": {
@@ -13258,6 +13811,12 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } months": [
+        "${ n } 月"
+      ],
+      "${ n } years": [
+        "${ n } 年"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "嘗試無風險的 ${ upsellPlanName }"
       ],
@@ -13365,6 +13924,87 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } weeks on ${ multipleDaysString }": [
+        "每 ${ interval } 個星期的${ multipleDaysString }"
+      ],
+      "Every ${ interval } weeks on ${ multipleDaysString }, ${ timesString }": [
+        "每 ${ interval } 個星期的${ multipleDaysString }，${ timesString }"
+      ],
+      "Every ${ interval } weeks on ${ multipleDaysString }, ${ untilString }": [
+        "每 ${ interval } 個星期的${ multipleDaysString }，${ untilString }"
+      ],
+      "Every ${ interval } weeks on all days": [
+        "每${ interval }個星期，週中每一日"
+      ],
+      "Every ${ interval } weeks on all days, ${ timesString }": [
+        "每 ${ interval } 個星期，週中每一日，${ timesString }"
+      ],
+      "Every ${ interval } weeks on all days, ${ untilString }": [
+        "每 ${ interval } 個星期，週中每一日，${ untilString }"
+      ],
+      "Every ${ interval } weeks on Friday": [
+        "每 ${ interval } 個星期的週五"
+      ],
+      "Every ${ interval } weeks on Friday, ${ timesString }": [
+        "每 ${ interval } 個星期的週五，${ timesString }"
+      ],
+      "Every ${ interval } weeks on Friday, ${ untilString }": [
+        "每 ${ interval } 個星期的週五，${ untilString }"
+      ],
+      "Every ${ interval } weeks on Monday": [
+        "每${ interval }個星期的週一"
+      ],
+      "Every ${ interval } weeks on Monday, ${ timesString }": [
+        "每 ${ interval } 個星期的週一，${ timesString }"
+      ],
+      "Every ${ interval } weeks on Monday, ${ untilString }": [
+        "每 ${ interval } 個星期的週一，${ untilString }"
+      ],
+      "Every ${ interval } weeks on Saturday": [
+        "每 ${ interval } 個星期的週六"
+      ],
+      "Every ${ interval } weeks on Saturday, ${ timesString }": [
+        "每 ${ interval } 個星期的週六，${ timesString }"
+      ],
+      "Every ${ interval } weeks on Saturday, ${ untilString }": [
+        "每 ${ interval } 個星期的週六，${ untilString }"
+      ],
+      "Every ${ interval } weeks on Sunday": [
+        "每${ interval }個星期的週日"
+      ],
+      "Every ${ interval } weeks on Sunday, ${ timesString }": [
+        "每 ${ interval } 個星期的週日，${ timesString }"
+      ],
+      "Every ${ interval } weeks on Sunday, ${ untilString }": [
+        "每 ${ interval } 個星期的週日，${ untilString }"
+      ],
+      "Every ${ interval } weeks on Thursday": [
+        "每 ${ interval } 個星期的週四"
+      ],
+      "Every ${ interval } weeks on Thursday, ${ timesString }": [
+        "每 ${ interval } 個星期的週四，${ timesString }"
+      ],
+      "Every ${ interval } weeks on Thursday, ${ untilString }": [
+        "每 ${ interval } 個星期的週四，${ untilString }"
+      ],
+      "Every ${ interval } weeks on Tuesday": [
+        "每 ${ interval } 個星期的週二"
+      ],
+      "Every ${ interval } weeks on Tuesday, ${ timesString }": [
+        "每 ${ interval } 個星期的週二，${ timesString }"
+      ],
+      "Every ${ interval } weeks on Tuesday, ${ untilString }": [
+        "每 ${ interval } 個星期的週二，${ untilString }"
+      ],
+      "Every ${ interval } weeks on Wednesday": [
+        "每 ${ interval } 個星期的週三"
+      ],
+      "Every ${ interval } weeks on Wednesday, ${ timesString }": [
+        "每 ${ interval } 個星期的週三，${ timesString }"
+      ],
+      "Every ${ interval } weeks on Wednesday, ${ untilString }": [
+        "每 ${ interval } 個星期的週三，${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "每星期的${ multipleDaysString }"
       ],
@@ -13471,6 +14111,15 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } years": [
+        "每 ${ interval } 年"
+      ],
+      "Every ${ interval } years, ${ timesString }": [
+        "每${ interval }年，${ timesString }"
+      ],
+      "Every ${ interval } years, ${ untilString }": [
+        "每${ interval }年，${ untilString }"
+      ],
       "Yearly": [
         "每年"
       ],
