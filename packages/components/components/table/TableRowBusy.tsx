@@ -8,8 +8,10 @@ interface Props extends ComponentPropsWithoutRef<'tr'> {
 
 const TableRowBusy = ({ colSpan, ...rest }: Props) => (
     <tr aria-busy="true" {...rest}>
-        <td colSpan={colSpan} className="text-center">
-            <CircleLoader />
+        <td colSpan={colSpan}>
+            <div className="w-full text-center">
+                <CircleLoader />
+            </div>
         </td>
     </tr>
 );
