@@ -119,13 +119,11 @@ const Sidebar = ({
                 {...rest}
                 {...focusTrapProps}
             >
-                <div className="no-desktop no-tablet flex-item-noshrink absolute right mr-5 mt-2">
-                    <Hamburger
-                        expanded={expanded}
-                        onToggle={onToggleExpand}
-                        className="opacity-0 focus:opacity-100 bg-norm"
-                    />
-                </div>
+                <Hamburger
+                    expanded={expanded}
+                    onToggle={onToggleExpand}
+                    className="no-desktop no-tablet flex-item-noshrink absolute right mr-5 mt-2 opacity-0 focus:opacity-100 bg-norm"
+                />
 
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
                 <div className="logo-container flex flex-item-noshrink flex-justify-space-between flex-align-items-center flex-nowrap no-mobile">
