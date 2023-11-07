@@ -5,6 +5,8 @@
     "main": "index.ts",
     "scripts": {
         "check-types": "tsc",
+        "i18n:validate": "proton-i18n validate lint-functions",
+        "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
         "lint": "eslint . src --ext .js,.ts,.tsx --quiet --cache",
         "pretty": "prettier --write  $(find src/app -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')",
         "test": "jest --runInBand --ci --logHeapUsage",
