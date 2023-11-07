@@ -48,7 +48,6 @@ export const useLinksQueue = ({ loadThumbnails }: Props = {}) => {
 
                 try {
                     await loadLinksMeta(controller.current.signal, `links-${shareId}`, shareId, linkIds, {
-                        cache: true,
                         loadThumbnails,
                     });
                 } catch (e) {
