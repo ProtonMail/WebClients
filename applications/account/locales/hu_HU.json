@@ -1044,6 +1044,20 @@
         "Elutasítás"
       ]
     },
+    "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } saját domain név",
+        "${ domains } saját domain név"
+      ],
+      "${ ips } server": [
+        "${ ips } szerver",
+        "${ ips } szerver"
+      ],
+      "${ users } user": [
+        "${ users } felhasználó",
+        "${ users } felhasználó"
+      ]
+    },
     "Address action": {
       "Delete": [
         "Törlés"
@@ -1163,6 +1177,12 @@
     "Badge for user sessions table": {
       "Current session": [
         "Jelenlegi munkamenet"
+      ]
+    },
+    "Billing cycle": {
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
       ]
     },
     "Billing cycle option": {
@@ -1463,6 +1483,16 @@
       ],
       "Week": [
         "Hét"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } felhasználó",
+        "${ users } felhasználó"
+      ],
+      "Total for ${ n } month": [
+        "Összesen ${ n } hónapra",
+        "Összesen ${ n } hónapra"
       ]
     },
     "Collapsible tooltip": {
@@ -2599,6 +2629,10 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } alkalommal",
+        "${ count } alkalommal"
+      ],
       "Daily": [
         "Naponta"
       ],
@@ -2607,6 +2641,18 @@
       ],
       "Daily, ${ untilString }": [
         "Naponta, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Minden ${ interval }. napon",
+        "Minden ${ interval }. napon"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Minden ${ interval }. napon, ${ timesString }",
+        "Minden ${ interval }. napon, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Minden ${ interval }. napon, ${ untilString }",
+        "Minden ${ interval }. napon, ${ untilString }"
       ],
       "until ${ dateString }": [
         "eddig: ${ dateString }"
@@ -2960,6 +3006,14 @@
       "Contact signature not verified": [
         "Névjegy aláírása nincs ellenőrizve"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál",
+        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál vagy",
+        "Törölje a kiválasztást legalább ${ calendarsToFixCount } naptárnál vagy"
+      ],
       "Domain not available, try again later": [
         "A domain név nem érhető el, próbálja meg később"
       ],
@@ -3059,6 +3113,10 @@
       "Label name cannot be empty.": [
         "A címke neve nem lehet üres."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Fűzzön össze legalább ${ calendarsToFixCount } naptárat egy meglévő ${ BRAND_NAME } naptárral",
+        "Fűzzön össze legalább ${ calendarsToFixCount } naptárat egy meglévő ${ BRAND_NAME } naptárral"
+      ],
       "Missing key packet": [
         "Hiányzó kulcs csomag"
       ],
@@ -3134,6 +3192,10 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Engedélyezze a többfelhasználós módot, mielőtt felhasználókat venne fel a szervezethez."
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Javítsa ki a megjelölt hibát a folytatáshoz.",
+        "Javítsa ki a megjelölt hibákat a folytatáshoz."
+      ],
       "Please generate keys before you try to change your password": [
         "Hozza létre a titkosítási kulcsokat mielőtt megváltoztatná a jelszavát"
       ],
@@ -3169,6 +3231,10 @@
       ],
       "Process aborted": [
         "Folyamat megszakítva"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Kettőzött címzett eltávolítása: ${ joinedRecipients }",
+        "Kettőzött címzettek eltávolítása: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "A kérés túllépte az időkorlátot"
@@ -3381,6 +3447,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Váratlan hiba történt. Az importálást újra kell kezdeni."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "A fájl több mint ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmaz: ${ formattedFilename }.",
+        "A fájl több mint ${ MAX_IMPORT_EVENTS_STRING } eseményt tartalmaz: ${ formattedFilename }."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "A(z) ${ formattedFilename } fájl érvénytelen metódust tartalmaz és nem importálható."
@@ -3660,6 +3730,10 @@
       ]
     },
     "Export calendar": {
+      "${ totalProcessed }/${ totalToProcess } event exported": [
+        "${ totalProcessed }/${ totalToProcess } esemény exportálva",
+        "${ totalProcessed }/${ totalToProcess } esemény exportálva"
+      ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "A naptár sikeresen exportálva. Most letöltheti az ICS fájlt."
       ],
@@ -3818,8 +3892,16 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN kapcsolat",
+        "${ MaxVPN } VPN kapcsolat"
+      ],
       "Access to all countries": [
         "Hozzáférés az összes országhoz"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Kapcsolódás akár ${ plusVpnConnections } eszközzel",
+        "Kapcsolódás akár ${ plusVpnConnections } eszközzel"
       ],
       "Fastest VPN servers": [
         "A leggyorsabb VPN szerverek"
@@ -3920,6 +4002,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bájt",
+        "bájt"
+      ],
       "GB": [
         "GB"
       ],
@@ -3931,6 +4017,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Bájt",
+        "Bájt"
+      ],
+      "Gigabyte": [
+        "Gigabájt",
+        "Gigabájt"
+      ],
+      "Kilobyte": [
+        "Kilobájt",
+        "Kilobájt"
+      ],
+      "Megabyte": [
+        "Megabájt",
+        "Megabájt"
+      ],
+      "Terabyte": [
+        "Terabájt",
+        "Terabájt"
       ]
     },
     "Filter Actions": {
@@ -4226,6 +4334,10 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } javaslatot találtunk, használja a billentyűzetet a navigáláshoz.",
+        "${ items.length } javaslatot találtunk, használja a billentyűzetet a navigáláshoz."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Használja a Fel és Le billentyűket a javaslatok eléréséhez és böngészéséhez. Nyomja meg az Enter billentyűt a választásának megerősítéséhez, vagy az Escape billentyűt a javaslatok doboz bezárásához."
       ]
@@ -4242,6 +4354,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } esemény titkosítva és felvéve a naptárba",
+        "${ totalImported }/${ totalToImport } esemény titkosítva és felvéve a naptárba"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Hiba történt az esemény titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva.",
+        "Hiba történt az események titkosításakor és tárolásakor. ${ totalImported } a ${ totalToImport } eseményből sikeresen importálva."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Hiba történt az esemény titkosításakor és tárolásakor. Nem került importálásra esemény."
       ],
@@ -4276,11 +4396,23 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Az importált meghívók egyszerű eseményként jelennek meg a ${ CALENDAR_APP_NAME } eseményei közt, szervező és résztvevők nélkül. Hogy értesüljön az esemény változásairól és lássa a résztvevőket, kérje meg a szervezőket, hogy a ${ BRAND_NAME } e-mail címével hívják meg."
       ],
+      "This file contains an event invitation:": [
+        "Ez a fájl egy esemény meghívót tartalmaz:",
+        "Ez a fájl esemény meghívókat tartalmaz:"
+      ],
+      "This file contains an invitation response:": [
+        "Ez a fájl egy meghívó választ tartalmaz:",
+        "Ez a fájl meghívó válaszokat tartalmaz:"
+      ],
       "This file contains some data that we cannot import:": [
         "Ez a fájl olyan adatokat is tartalmaz, amit nem lehet importálni:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez",
+        "${ totalImported }/${ totalToImport } névjegy titkosítva és felvéve a névjegyekhez"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Hiba történt a névjegy titkosításakor és tárolásakor. A névjegy nem került importálásra."
       ],
@@ -4300,6 +4432,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Névjegy ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } névjegy",
+        "${ totalContacts } névjegy"
       ]
     },
     "Import contact. Contact identifier": {
@@ -4523,6 +4661,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } a ${ totalContacts } névjegyből nem kerül importálásra. Kattintson a részletekért"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } a ${ totalEvents } eseményből nem kerül importálásra. Nyissa meg a részletekért.",
+        "${ totalEventsDiscarded } a ${ totalEvents } eseményből nem kerül importálásra. Nyissa meg a részletekért."
+      ],
       "No contact can be imported. Click for details": [
         "Nem került importálásra névjegy. Kattintson a részletekért"
       ],
@@ -4534,6 +4676,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } cím",
+        "${ amountOfAddresses } cím"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "A ${ appName } alkalmazásnak szüksége van az engedélyére, hogy ${ enableDesktopNotifications }."
       ],
@@ -4557,6 +4703,14 @@
       ],
       "${ calendarName } will be set as default calendar.": [
         "${ calendarName } lesz az alapértelmezett naptár."
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } új naptár",
+        "${ calendarsToBeCreatedCount } új naptár"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } egyesített naptár",
+        "${ calendarsToBeMergedCount } egyesített naptár"
       ],
       "${ current } of ${ total }": [
         "${ current } / ${ total }"
@@ -4585,8 +4739,24 @@
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
         "A ${ MAIL_APP_NAME } támogatja a DKIM ellenőrzést saját domainekhez. A DKIM ellenőrzéshez, vegye fel a következő CNAME rekordot a DNS beállításaiban. Ezt általában a domain név regisztrátor adminisztrálási felületén állathatja be."
       ],
+      "${ n } address": [
+        "${ n } cím",
+        "${ n } cím"
+      ],
       "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
         "${ none } nincs hatással a levelek kézbesítésére, de a nagyobb biztonság érdekében a ${ quarantine } beállítást javasoljuk."
+      ],
+      "${ number } city": [
+        "${ number } város",
+        "${ number } városok"
+      ],
+      "${ number } server": [
+        "${ number } kiszolgáló",
+        "${ number } kiszolgálók"
+      ],
+      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+        "${ numberOfNonPrivateKeys } feltöltött fájl nem egy érvényes titkos kulcs. Ellenőrizze és próbálja újra.",
+        "${ numberOfNonPrivateKeys } feltöltött fájl nem egy érvényes titkos kulcs. Ellenőrizze és próbálja újra."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } legalább 1 dedikált szervert igényel ${ serverPricePerMonth } havonta."
@@ -4594,17 +4764,61 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "A ${ PROTON_SENTINEL_NAME } egy komplex MI rendszerekkel vezérelt, fejlett fiókvédelmi program, amely szakemberek folyamatos támogatásával védi a támadóktól és biztonsági fenyegetésekről."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } mappa található",
+        "${ providerFoldersNumLocalized } mappa található"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } címke található a Gmailben",
+        "${ providerFoldersNumLocalized } címke található a Gmailben"
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } további",
+        "${ remainingAddresses.length } további"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } további cím",
+        "${ remainingAddresses.length } több cím"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból",
+        "${ selectedCalendarsTotal } a(z) ${ providerCalendars.length } naptárból"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } mappa kiválasztva",
+        "${ selectedFoldersCount } mappa kiválasztva"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } címke kiválasztva",
+        "${ selectedFoldersCount } címke kiválasztva"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } mappa kiválasztva",
+        "${ selectedFoldersCountLocalized } mappa kiválasztva"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } címke kiválasztva",
+        "${ selectedFoldersCountLocalized } címke kiválasztva"
+      ],
       "${ storage } storage": [
         "${ storage } tárhely"
       ],
       "${ storageSize } storage": [
         "${ storageSize } tárhely"
       ],
+      "${ userFound } user found": [
+        "${ userFound } felhasználót találtam",
+        "${ userFound } felhasználót találtam"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } csomag szükséges az ország-szintű kapcsolódáshoz."
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } csomag szükséges a Secure Core szolgáltatáshoz."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } tag)",
+        "(${ memberCount } tagok)"
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /hónap)"
@@ -4620,6 +4834,10 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bónusz tárterület"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolat (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)",
+        "+${ organization.BonusVPN } ${ VPN_APP_NAME } kapcsolatok (lehetővé teszi több eszköz csatlakoztatását a VPN-hez)"
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Hívjon meg barátokat a ${ BRAND_NAME }ba"
@@ -4711,11 +4929,23 @@
       "Align right": [
         "Jobbra igazítás"
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Mind (${ totalFoldersCount } mappa)",
+        "Mind (${ totalFoldersCount } mappa)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Mind (${ totalFoldersCount } címke)",
+        "Mind (${ totalFoldersCount } címke)"
+      ],
       "All keys successfully reactivated": [
         "Minden kulcsot sikerült újraaktiválni"
       ],
       "All your changes will be lost.": [
         "A változtatások el fognak veszni."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Az összes névjegye importálásra kerül, maximum ${ MAX_CONTACTS_PER_USER } darabig",
+        "Az összes névjegye importálásra kerül, maximum ${ MAX_CONTACTS_PER_USER } darabig"
       ],
       "Allocated": [
         "Lefoglalva"
@@ -4897,6 +5127,10 @@
       "Country code": [
         "Országkód"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } új naptár létrehozása",
+        "${ calendarsToBeCreatedCount } új naptár létrehozása"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Hozzon létre egy címkét az importált levelekhez, válassza ki a kívánt idő intervallumot és adja meg az importálandó mappákat."
       ],
@@ -4971,6 +5205,10 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Biztos, hogy az aktuálisat leszámítva, minden munkafolyamatot visszavon?"
+      ],
+      "domain used": [
+        "domain név használatban",
+        "domain név használatban"
       ],
       "Done": [
         "Kész"
@@ -5206,6 +5444,10 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "A képek eltávolításra kerültek, mert automatikus válaszban nem engedélyezettek"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ calendarCount } naptár importálása a ${ totalCalendarsCount } naptárból",
+        "${ calendarCount } naptár importálása a ${ totalCalendarsCount } naptárból"
+      ],
       "Import from": [
         "Importálás innen"
       ],
@@ -5265,6 +5507,10 @@
       ],
       "Internet connection restored.": [
         "Internet kapcsolat helyreállt."
+      ],
+      "Invite successfully sent": [
+        "Meghívó sikeresen elküldve",
+        "Meghívók sikeresen elküldve"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Úgy tűnik az adatai egy része titkosítva és zárolva vannak."
@@ -5470,6 +5716,10 @@
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Több száz millió ember és vállalkozás regisztrált hozzánk: ${ BRAND_NAME }."
       ],
+      "Paid for a ${ rewardMonths } month plan": [
+        "${ rewardMonths } hónapos csomag fizetve",
+        "${ rewardMonths } hónapos csomag fizetve"
+      ],
       "Paid for a monthly plan": [
         "Előfizetett a havidíjas csomagra"
       ],
@@ -5493,6 +5743,14 @@
       ],
       "Plan upgrade required": [
         "Nagyobb csomag szükséges"
+      ],
+      "Please add a password for the user on row": [
+        "A felhasználó jelszava hiányzik a következő sorban:",
+        "A felhasználó e-mail címe hiányzik a következő sorokban:"
+      ],
+      "Please add an email address for the user on row": [
+        "A felhasználó e-mail címe hiányzik a következő sorban:",
+        "A felhasználó e-mail címe hiányzik a következő sorokban:"
       ],
       "Please check your file for errors, or contact customer support for more information.": [
         "Ellenőrizze a fájlban lévő hibákat, vagy lépjen kapcsolatba az ügyfélszolgálattal további információkért."
@@ -5707,6 +5965,10 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "Az SPF feladata, hogy meghatározza, kik küldhetnek levelet az adott domain névvel. Emiatt erősen javasolt a ${ MAIL_APP_NAME } felvétele az SPF rekordba. Kérjük vegye fel a következő TXT rekordot a DNS beállításaiban. Ezt általában a domain név regisztrátor adminisztrálási felületén állathatja be."
       ],
+      "Step ${ step }": [
+        "${ step }. lépés",
+        "${ step }. lépés"
+      ],
       "Storage allocated to other users in this organisation": [
         "A szervezet további felhasználói számára lefoglalt tárhely"
       ],
@@ -5763,6 +6025,18 @@
       ],
       "The following address is available:": [
         "A következő cím érhető el:"
+      ],
+      "The following address is invalid.": [
+        "A következő cím érvénytelen.",
+        "A következő címek érvénytelenek."
+      ],
+      "The following address is unavailable.": [
+        "A következő cím nem érhető el.",
+        "A következő címek nem érhetők el."
+      ],
+      "The following address was not created.": [
+        "A következő cím nem jött létre.",
+        "A következő címek nem jöttek létre."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "Az alábbi tagok fognak emailt kapni, amiben megkérik őket, hogy kapcsolják be a kétlépcsős hitelesítést amilyen hamar csak lehet."
@@ -6151,6 +6425,10 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Jelenleg ${ user.Name } (${ user.Email }) fiókkal van bejelentkezve."
       ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Jelenleg ${ organization.UsedMembers } felhasználói licencet használ, az elérhető ${ organization.MaxMembers } licencből.",
+        "Jelenleg ${ organization.UsedMembers } felhasználói licencet használ, az elérhető ${ organization.MaxMembers } licencből."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Jelenleg a következőként van belépve a fiókba: ${ memberAddress }."
       ],
@@ -6159,9 +6437,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Figyelemmel kísérheti a folyamatot: ${ importProgressLink }."
-      ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "Könyveléshez személyre szabhatja és letöltheti számláit."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Ezt egyszer szerkeszheti, hogy biztosítsa a helyes email címet hitelesítéshez."
@@ -6174,6 +6449,22 @@
       ],
       "You can import one data type at a time.": [
         "Egyszerre egyféle adat importálható."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait.",
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait.",
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat és a ${ BRAND_NAME } felhasználókat akivel megosztotta a naptárait."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat.",
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. A ${ MAIL_SHORT_APP_NAME } előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat.",
+        "Maximum ${ MAX_CALENDARS_FREE } tarthat meg. Az előfizetés lemondása előtt, törölje a megosztott naptár hivatkozásokat."
       ],
       "You can now access and manage the account as an administrator.": [
         "Most adminisztrátorként érheti el és kezelheti a fiókot."
@@ -6189,6 +6480,10 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Az alábbi bejelentkezéssel csatlakozhat a ${ VPN_APP_NAME } szerverekhez ha valamilyen külső VPN alkalmazást használ, mint például Tunnelblick macOS-en vagy OpenVPN GNU/Linux-on."
+      ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Nem küldhet több, mint ${ emailSendLimitNumber } e-mail meghívót a következő 24 órában",
+        "Nem küldhet több, mint ${ emailSendLimitNumber } e-mail meghívót a következő 24 órában"
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Nem ajánljhat ${ MAIL_APP_NAME } felhasználókat"
@@ -6304,6 +6599,10 @@
       "Your files will be encrypted and then saved": [
         "A fájlok titkosításra majd pedig mentésre kerülnek"
       ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Az importálás a ${ accounts } címről átmenetileg késik.",
+        "Az importálások a ${ accounts } címről átmenetileg késnek."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Adatai velünk biztonságban vannak. Csak akkor lépünk önnel kapcsolatba, ha szükséges szolgáltatást nyújtanunk."
       ],
@@ -6367,11 +6666,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Az előfizetés automatikus megújításához megadhat egy fizetési módot. Más fizetési módok is elérhetők."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Add your name (or company name) and address to your invoices.": [
-        "Adja hozzá a nevét (vagy cégnevét) és címét a számlákhoz."
       ]
     },
     "Info on errors": {
@@ -6745,6 +7039,22 @@
       "${ MAIL_APP_NAME } footer": [
         "${ MAIL_APP_NAME } lábléc"
       ],
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } nap",
+        "${ nbDay } nap"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } év",
+        "${ nbYear } év"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses }, a(z) ${ MaxAddresses } e-mail címből",
+        "${ UsedAddresses }, a(z) ${ MaxAddresses } e-mail címből"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Átmenetileg nem elérhető. Próbálja meg később.)"
       ],
@@ -6987,9 +7297,6 @@
       ],
       "Current email": [
         "Jelenlegi email"
-      ],
-      "Customize invoices": [
-        "Számlák személyre szabása"
       ],
       "Daily email notifications": [
         "Napi e-mail értesítések"
@@ -7876,8 +8183,16 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "A szervezet ${ members.length } tagja közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést.",
+        "A szervezet ${ members.length } tagja közül ${ twoFAMembers.length } használja a kétlépcsős hitelesítést."
+      ],
       "Almost there": [
         "Majdnem kész"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Létrehozott naptárak száma: ${ createdCalendarCount } / ${ calendarsToBeCreated }",
+        "Létrehozott naptárak száma: ${ createdCalendarCount } / ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Csatlakozás az e-mailszolgáltatójához"
@@ -7903,12 +8218,42 @@
         "Hitelesítési naplók engedélyezése"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Minden üzenet importálása ${ itemsToImportCount } mappából és megjelölés mint",
+        "Minden üzenet importálása ${ itemsToImportCount } mappából és megjelölés mint"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Minden üzenet importálása ${ itemsToImportCount } címkéből és megjelölés mint",
+        "Minden üzenet importálása ${ itemsToImportCount } címkéből és megjelölés mint"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összes: ${ itemsToImportCount }) és megjelölés mint",
+        "Minden üzenet importálása ${ selectedItemsToImportCount } mappából (összes: ${ itemsToImportCount }) és megjelölés mint"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összes: ${ itemsToImportCount }) és megjelölés mint",
+        "Minden üzenet importálása ${ selectedItemsToImportCount } címkéből (összes: ${ itemsToImportCount }) és megjelölés mint"
+      ]
+    },
     "Maintenance mode": {
       "Please check back in a few minutes.": [
         "Kérjük, jönnön vissza pár perc múlva."
       ],
       "This feature is temporarily unavailable": [
         "Ez a funkció átmenetileg nem elérhető."
+      ]
+    },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Egy naptárhoz maximum ${ MAX_LINKS_PER_CALENDAR } hivatkozást hozhat létre. Újabb hivatkozás létrehozásához, töröljön egyet az alábbi listáról.",
+        "Egy naptárhoz maximum ${ MAX_LINKS_PER_CALENDAR } hivatkozást hozhat létre. Újabb hivatkozás létrehozásához, töröljön egyet az alábbi listáról."
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "Elérte a maximálisan lehetséges ${ MAX_CALENDAR_MEMBERS } tagot.",
+        "Elérte a maximálisan lehetséges ${ MAX_CALENDAR_MEMBERS } tagot."
       ]
     },
     "Member action": {
@@ -7987,6 +8332,18 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Minden ${ interval }. hónapban, ${ onDayString }",
+        "Minden ${ interval }. hónapban, ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Minden ${ interval }. hónapban, ${ onDayString }, ${ timesString }",
+        "Minden ${ interval }. hónapban, ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Minden ${ interval }. hónapban, ${ onDayString }, ${ untilString }",
+        "Minden ${ interval }. hónapban, ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }": [
         "Havonta: ${ onDayString }"
       ],
@@ -8217,6 +8574,62 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } naptár",
+        "${ n } naptár"
+      ],
+      "${ n } custom email domain": [
+        "${ n } saját e-mail domain név",
+        "${ n } saját e-mail domain név"
+      ],
+      "${ n } email address": [
+        "${ n } e-mail cím",
+        "${ n } e-mail cím / alias"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-mail cím felhasználónként",
+        "${ n } e-mail cím felhasználónként"
+      ],
+      "${ n } filter": [
+        "${ n } szűrő",
+        "${ n } szűrő"
+      ],
+      "${ n } folder": [
+        "${ n } mappa",
+        "${ n } mappa"
+      ],
+      "${ n } folder and label": [
+        "${ n } mappa és címke",
+        "${ n } mappa és címke"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email e-mail álnév",
+        "${ n } hide-my-email e-mail álnév"
+      ],
+      "${ n } label": [
+        "${ n } címke",
+        "${ n } címke"
+      ],
+      "${ n } message per day": [
+        "${ n } üzenet naponta",
+        "${ n } üzenet naponta"
+      ],
+      "${ n } vault": [
+        "${ n } tároló",
+        "${ n } tároló"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN kapcsolat",
+        "${ n } VPN kapcsolat"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN kapcsolat felhasználónként",
+        "${ n } VPN kapcsolat felhasználónként"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel",
+        "${ PASS_APP_NAME } ${ n } hide-my-email e-mail álnévvel"
+      ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } program"
       ],
@@ -8301,6 +8714,10 @@
       "Hide-my-email aliases": [
         "Hide-my-email álnevek"
       ],
+      "High-speed VPN on ${ n } device": [
+        "Nagysebességű VPN ${ n } eszközön",
+        "Nagysebességű VPN ${ n } eszközön"
+      ],
       "HTML signatures": [
         "HTML aláírás"
       ],
@@ -8325,6 +8742,10 @@
       "Priority support": [
         "Elsőbbségi támogatás"
       ],
+      "Protect ${ n } device at a time": [
+        "${ n } eszköz védelme egyidőben",
+        "${ n } eszköz védelme egyidőben"
+      ],
       "Router support": [
         "Router támogatás"
       ],
@@ -8339,6 +8760,10 @@
       ],
       "Send & receive invitations": [
         "Meghívók küldése és fogadása"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Szerverek több mint ${ vpnServersCountData.paid.countries } országban",
+        "Szerverek több mint ${ vpnServersCountData.paid.countries } országban"
       ],
       "Share calendar via link": [
         "Naptár megosztása hivatkozással"
@@ -8405,6 +8830,10 @@
       ],
       "User session management": [
         "Felhasználói munkafolyamatok kezelése"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Archívum megosztás (${ n } személyig).",
+        "Archívum megosztás (${ n } személyig)."
       ]
     },
     "new_plans: feature info": {
@@ -8515,6 +8944,12 @@
         "/hó"
       ]
     },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "Még maradt ${ daysRemaining } nap a ${ currentPlanName } előfizetéséből.",
+        "Még maradt ${ daysRemaining } nap a ${ currentPlanName } előfizetéséből."
+      ]
+    },
     "new_plans: signup": {
       "By creating a ${ BRAND_NAME } account, you agree to our ${ terms }": [
         "Egy ${ BRAND_NAME } felhasználói fiók létrehozásával, elfogadja a ${ terms }-et"
@@ -8590,6 +9025,10 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Hozzon létre több email címet a különböző online személyiségei számára, mint például PistiVasarlas@${ domain } a vásárlási fiókjaihoz, vagy PistiHirek@${ domain } a hírleveleinek"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől",
+        "Hozzon létre akár ${ n } naptárat, vagy vegyen fel naptárakat a barátaitól, családtagoktól, kollégáktól és szervezetektől"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "A VPN elleni támadással szemben úgy véd, hogy több szerveren keresztül továbbítja az internetes forgalmat"
@@ -8717,6 +9156,10 @@
       ],
       "Cover more ground with support for 10 custom email domains": [
         "Fedjen le több területet 10 saját e-mail domain név támogatásával"
+      ],
+      "Create up to ${ n } calendar": [
+        "Akár ${ n } naptár létrehozása",
+        "Akár ${ n } naptár létrehozása"
       ]
     },
     "Notification": {
@@ -8778,6 +9221,10 @@
       "Invitation revoked": [
         "Meghívó visszavonva"
       ],
+      "Member added": [
+        "Tag hozzáadva",
+        "Tagok hozzáadva"
+      ],
       "Member deleted": [
         "Tag törölve"
       ]
@@ -8812,8 +9259,24 @@
       "at time of event": [
         "az esemény időpontjában"
       ],
+      "day before": [
+        "nappal előtte",
+        "nappal előtte"
+      ],
+      "hour before": [
+        "órával előtte",
+        "órával előtte"
+      ],
+      "minute before": [
+        "perccel előtte",
+        "perccel előtte"
+      ],
       "on the same day": [
         "ugyanazon a napon"
+      ],
+      "week before": [
+        "héttel előtte",
+        "héttel előtte"
       ]
     },
     "Oauth instructions": {
@@ -9069,6 +9532,18 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } további tárhely eléréshez, vagy szabadítson fel tárhelyet."
       ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "A csomag legfeljebb ${ availableAddresses } további címet tartalmaz.",
+        "A csomag legfeljebb ${ availableAddresses } további címet tartalmaz."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "A csomagja maximum ${ availableNumberOfMembers } további szervezeti felhasználót tesz lehetővé.",
+        "A csomagja maximum ${ availableNumberOfMembers } további szervezeti felhasználót tesz lehetővé."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "A csomag legfeljebb ${ availableVPNAccess } további VPN kapcsolatot tartalmaz.",
+        "A csomag legfeljebb ${ availableVPNAccess } további VPN kapcsolatot tartalmaz."
+      ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "A csomag legfeljebb ${ humanReadableAvailableSpace } további tárhelyet tartalmaz."
       ]
@@ -9196,17 +9671,16 @@
         "domainneve.com"
       ]
     },
-    "Placeholder for custom invoice text": {
-      "Add your name (or company name) and address to your invoices": [
-        "Adja hozzá a nevét (vagy cégnevét) és címét a számlákhoz"
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "lépjen kapcsolatba"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "Válassza ki, hány felhasználót szeretne a csomagjába. Minden további felhasználó ára: ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Ha több mint ${ maxUsers } felhasználói fiókra lenne szüksége, kérjük ${ contact } értékesítési csoportunkkal.",
+        "Ha több mint ${ maxUsers } felhasználói fiókra lenne szüksége, kérjük ${ contact } értékesítési csoportunkkal."
       ]
     },
     "Price": {
@@ -9421,8 +9895,32 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } nap",
+        "${ timeRemaining.inDays } nap"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } óra",
+        "${ timeRemaining.inHours } óra"
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Jelszó újrabeállítási igénylés elfogadva (${ user.Email }). ${ timeRemaining.inDays } órája maradt jelszava megváltoztatására.",
+        "Jelszó újrabeállítási igénylés elfogadva (${ user.Email }). ${ timeRemaining.inDays } órája maradt jelszava megváltoztatására."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Jelszó újrabeállítás igénylés elfogadva (${ user.Email }). ${ timeRemaining.inHours } órája maradt jelszava megváltoztatására.",
+        "Jelszó újrabeállítási igénylés elfogadva (${ user.Email }). ${ timeRemaining.inHours } órája maradt jelszava megváltoztatására."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Kérlek, menj a bejelentkezett eszközre (abban a munkamenetben, ahol a kérés indult), hogy megváltoztasd a jelszavadat."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Ez az engedély${ timeRemaining.inDays } órán belül lejár",
+        "Ez az engedély ${ timeRemaining.inDays } órán belül lejár"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Ez az engedély ${ timeRemaining.inHours } órán belül lejár",
+        "Ez az engedély${ timeRemaining.inHours } órán belül lejár"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Most szabadon megváltoztathatod a jelszavadat a(z) ${ boldEmail } fiókhoz ${ boldDaysRemaining }-ig."
@@ -9485,14 +9983,26 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } óra maradt.",
+        "${ gracePeriodHoursRemaining } óra maradt."
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Ha nem te kérted a jelszóvisszaállítást, akkor most mond le ezt a kérelmet"
+      ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Jelszó újrabeállítás igényelve (${ user.Email }). A jelszót ${ hoursRemaining } órán belül változtathatja meg.",
+        "Jelszó újrabeállítás igényelve (${ user.Email }). A jelszót ${ hoursRemaining } órán belül változtathatja meg."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Hogy biztosak lehessünk benne, hogy valóban te próbálod visszaállítani a jelszavad, 72 órát várunk a kérések jóváhagyásáig. A jelszavadat megváltoztathatod ${ boldTimeLeft } alatt. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Megkaptuk a jelszóvisszaállítási kérést a következő e-mail címre: ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } óra múlva tudja jelszavát megváltoztatni",
+        "${ gracePeriodHoursRemaining } óra múlva tudja jelszavát megváltoztatni"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -9505,6 +10015,12 @@
         "Jelszó visszaállítási kérelem történt"
       ]
     },
+    "session_recovery:initiation:title": {
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "A jelszavát ${ gracePeriodHoursRemaining } múlva tudja visszaállítani.",
+        "A jelszavát ${ gracePeriodHoursRemaining } múlva tudja visszaállítani."
+      ]
+    },
     "session_recovery:sign_out:action": {
       "Sign out": [
         "Kijelentkezés"
@@ -9514,6 +10030,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } óra",
+        "${ gracePeriodHoursRemaining } óra"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } már elérhető."
       ],
@@ -9587,6 +10107,12 @@
         "Nem ${ BRAND_NAME } felhasználók meghívásához, ossza meg a naptárat egy hivatkozáson keresztül."
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Túllépte a naptáranként maximálisan lehetséges ${ MAX_CALENDAR_MEMBERS } tagot",
+        "Túllépte a naptáranként maximálisan lehetséges ${ MAX_CALENDAR_MEMBERS } tagot"
+      ]
+    },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
         "Adja meg a ${ BRAND_NAME } fiókokat, amelyekkel meg szeretné osztani a naptárat: ${ calendarName }. Meghívót fognak kapni."
@@ -9658,6 +10184,30 @@
         "Unlimited beszerzése"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } nap",
+        "${ days } nap"
+      ],
+      "${ hours } hour": [
+        "${ hours } óra",
+        "${ hours } óra"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } perc",
+        "${ minutes } perc"
+      ],
+      "${ seconds } second": [
+        "${ seconds } másodperc",
+        "${ seconds } másodperc"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } hónap INGYEN",
+        "${ n } hónap INGYEN"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 felhasználó"
@@ -9721,6 +10271,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
+      ],
       "/ month": [
         "/ hó"
       ],
@@ -9876,6 +10430,58 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } dedikált szerver",
+        "${ ipAddresses } dedikált szerver"
+      ],
+      "${ maxVpn } high-speed VPN connection": [
+        "${ maxVpn } nagysebességű VPN kapcsolat",
+        "${ maxVpn } nagysebességű VPN kapcsolat"
+      ],
+      "${ n } calendar": [
+        "${ n } naptár",
+        "${ n } naptár"
+      ],
+      "${ n } calendar per user": [
+        "${ n } naptár felhasználónként",
+        "${ n } naptár felhasználónként"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } nagysebességű VPN kapcsolat",
+        "${ n } nagysebességű VPN kapcsolat"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } nagysebességű VPN kapcsolat felhasználónként",
+        "${ n } nagysebességű VPN kapcsolat felhasználónként"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN kapcsolat",
+        "${ n } VPN kapcsolat"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN kapcsolat felhasználónként",
+        "${ n } VPN kapcsolat felhasználónként"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } cím",
+        "${ UsedAddresses } cím"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses }, a(z) ${ MaxAddresses } e-mail címből",
+        "${ UsedAddresses }, a(z) ${ MaxAddresses } e-mail címből"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } naptár",
+        "${ UsedCalendars } naptár"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains }, a(z) ${ MaxDomains } saját domain névből",
+        "${ UsedDomains }, a(z) ${ MaxDomains } saját domain névből"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } az ${ MaxMembers } felhasználóból",
+        "${ UsedMembers } a ${ MaxMembers } felhasználóból"
+      ],
       "1 email address": [
         "1 email cím"
       ],
@@ -9887,6 +10493,10 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "Beépített reklámblokkoló (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "Nagysebességű VPN ${ maxVpn } eszközön",
+        "Nagysebességű VPN ${ maxVpn } eszközön"
       ]
     },
     "Subscription price": {
@@ -10223,6 +10833,34 @@
         "vCard mező"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } ó",
+        "${ hours } ó"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 ó",
+        "${ hoursInt }.5 ó"
+      ],
+      "${ minutes } min": [
+        "${ minutes } perc",
+        "${ minutes } perc"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } óra",
+        "${ hours } óra"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 óra",
+        "${ hoursInt }.5 óra"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } perc",
+        "${ minutes } perc"
+      ]
+    },
     "Timezone search placeholder": {
       "Search time zones": [
         "Időzónák keresése"
@@ -10303,9 +10941,6 @@
       ],
       "Add filter": [
         "Új szűrő"
-      ],
-      "Add invoice details": [
-        "Számlázási adatok megadása"
       ],
       "Add new user": [
         "Új felhasználó hozzáadása"
@@ -10454,6 +11089,10 @@
       "Couldn’t create accounts": [
         "Fiókok létrehozása nem sikerült"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "${ selectedUserIds.length } felhasználói fiók létrehozása",
+        "${ selectedUserIds.length } felhasználói fiók létrehozása"
+      ],
       "Create multiple user accounts": [
         "Több felhasználói fiók létrehozása"
       ],
@@ -10543,6 +11182,10 @@
       ],
       "Delete logs": [
         "Naplók törlése"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Szerver törlése (${ days } napig még lehetősége lesz a helyreállításra)",
+        "Szerver törlése (${ days } napig még lehetősége lesz a helyreállításra)"
       ],
       "Delete user": [
         "Felhasználó törlése"
@@ -10637,6 +11280,10 @@
       "External PGP settings": [
         "Külső PGP beállítások"
       ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "${ failedUsers.length } felhasználói fiók létrehozása sikertelen.",
+        "${ failedUsers.length } felhasználói fiók létrehozása sikertelen."
+      ],
       "Filters": [
         "Szűrők"
       ],
@@ -10693,6 +11340,10 @@
       ],
       "Import and export": [
         "Importálás és exportálás"
+      ],
+      "Import as simple event?": [
+        "Importálás egyszerű eseményként?",
+        "Importálás egyszerű eseményekként?"
       ],
       "Import contacts": [
         "Névjegyek importálása"
@@ -10999,6 +11650,14 @@
       ],
       "Success": [
         "Sikeres"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "${ localSuccessfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva",
+        "${ localSuccessfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "${ successfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva",
+        "${ successfullyCreatedUsers.length } felhasználói fiók sikeresen létrehozva"
       ],
       "Summary": [
         "Összegzés"
@@ -11368,6 +12027,12 @@
         "Így fog kinézni az alapértelmezett betűtípus:"
       ]
     },
+    "Upgrade": {
+      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
+        "Frissítsen ${ planName }-re, hogy egyszerre akár ${ n } eszközt csatlakoztasson a VPN-re",
+        "Frissítsen ${ planName }-re, hogy egyszerre akár ${ n } eszközt csatlakoztasson a VPN-re"
+      ]
+    },
     "User referee invited via email": {
       "Invited via email": [
         "Meghívva e-mail által"
@@ -11389,6 +12054,16 @@
         "Elsődleges adminisztrátor"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "A jelszónak legalább ${ length } karakterből kell állnia",
+        "A jelszónak legalább ${ length } karakterből kell állnia"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)",
+        "Próbáljon egy rövidebb felhasznlónevet használni (maximum ${ n } karakter)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Kattintson a videó újrajátszásához"
@@ -11400,6 +12075,34 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, és mások."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } kiszolgáló",
+        "${ n }+ kiszolgáló"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN kapcsolódás",
+        "${ n } VPN kapcsolódás"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers }, ${ numberOfCountries } országban",
+        "${ numberOfServers }, ${ numberOfCountries }+ országban"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } ${ numberOfCountries } országban",
+        "${ numberOfServers } ${ numberOfCountries } országban"
+      ]
+    },
+    "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } hónap",
+        "${ n } hónap"
+      ],
+      "${ n } year": [
+        "${ n } év",
+        "${ n } év"
       ]
     },
     "Warning": {
@@ -11490,6 +12193,114 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Minden ${ interval }. héten, ${ multipleDaysString }",
+        "Minden ${ interval }. héten, ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ timesString }",
+        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ untilString }",
+        "Minden ${ interval }. héten, ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Minden ${ interval } héten, minden nap",
+        "Minden ${ interval } héten, minden nap"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Minden ${ interval }. héten, minden nap, ${ timesString }",
+        "Minden ${ interval }. héten, minden nap, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Minden ${ interval }. héten, minden nap, ${ untilString }",
+        "Minden ${ interval }. héten, minden nap, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Minden ${ interval }. héten, pénteken",
+        "Minden ${ interval }. héten, pénteken"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Minden ${ interval }. héten, pénteken, ${ timesString }",
+        "Minden ${ interval }. héten, pénteken, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Minden ${ interval }. héten, pénteken, ${ untilString }",
+        "Minden ${ interval }. héten, pénteken, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Minden ${ interval } héten, hétfőn",
+        "Minden ${ interval } héten, hétfőn"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Minden ${ interval }. héten, hétfőn, ${ timesString }",
+        "Minden ${ interval }. héten, hétfőn, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Minden ${ interval }. héten, hétfőn, ${ untilString }",
+        "Minden ${ interval }. héten, hétfőn, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Minden ${ interval }. héten, szombaton",
+        "Minden ${ interval }. héten, szombaton"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Minden ${ interval }. héten, vasárnap, ${ timesString }",
+        "Minden ${ interval }. héten, vasárnap, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Minden ${ interval }. héten, szombaton, ${ untilString }",
+        "Minden ${ interval }. héten, szombaton, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Minden ${ interval }. héten, vasárnap",
+        "Minden ${ interval } héten, vasárnap"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Minden ${ interval }. héten, vasárnap, ${ timesString }",
+        "Minden ${ interval }. héten, vasárnap, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Minden ${ interval }. héten, vasárnap, ${ untilString }",
+        "Minden ${ interval }. héten, vasárnap, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Minden ${ interval }. héten, csütörtökön",
+        "Minden ${ interval }. héten, csütörtökön"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Minden ${ interval }. héten, csütörtökön, ${ timesString }",
+        "Minden ${ interval }. héten, csütörtökön, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Minden ${ interval }. héten, csütörtökön, ${ untilString }",
+        "Minden ${ interval }. héten, csütörtökön, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Minden ${ interval }. héten, kedden",
+        "Minden ${ interval }. héten, kedden"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Minden ${ interval }. héten, kedden, ${ timesString }",
+        "Minden ${ interval }. héten, kedden, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Minden ${ interval }. héten, kedden, ${ untilString }",
+        "Minden ${ interval }. héten, kedden, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Minden ${ interval }. héten, szerdán",
+        "Minden ${ interval }. héten, szerdán"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Minden ${ interval }. héten, szerdán, ${ timesString }",
+        "Minden ${ interval }. héten, szerdán, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Minden ${ interval }. héten, szerdán, ${ untilString }",
+        "Minden ${ interval }. héten, szerdán, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Hetente ${ multipleDaysString }"
       ],
@@ -11596,6 +12407,18 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Minden ${ interval }. évben",
+        "Minden ${ interval }. évben"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Minden ${ interval }. évben, ${ timesString }",
+        "Minden ${ interval }. évben, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Minden ${ interval }. évben, ${ untilString }",
+        "Minden ${ interval }. évben, ${ untilString }"
+      ],
       "Yearly": [
         "Évente"
       ],
