@@ -1,34 +1,37 @@
+interface URLConfig {
+    account: string;
+    mail: string;
+    calendar: string;
+}
+
 interface Config {
     appTitle: string;
     devTools: boolean;
-    url: {
-        account: string;
-        mail: string;
-        calendar: string;
-    };
+    url: URLConfig;
 }
+
+const urls = {
+    account: "https://account.quimby.proton.pink",
+    mail: "https://mail.quimby.proton.pink",
+    calendar: "https://calendar.quimby.proton.pink",
+};
+
+const localUrls = {
+    account: "https://account.proton.local",
+    mail: "https://mail.proton.local",
+    calendar: "https://calendar.proton.local",
+};
 
 const devConfig: Config = {
     appTitle: "DEV - Proton",
     devTools: true,
-    url: {
-        account: "https://account.proton.local",
-        mail: "https://mail.proton.local",
-        calendar: "https://calendar.proton.local",
-        // account: "https://account.wilkins.proton.black",
-        // mail: "https://mail.wilkins.proton.black",
-        // calendar: "https://calendar.wilkins.proton.black",
-    },
+    url: localUrls,
 };
 
 const prodConfig: Config = {
     appTitle: "Proton",
     devTools: false,
-    url: {
-        account: "https://account.proton.me",
-        mail: "https://mail.proton.me",
-        calendar: "https://calendar.proton.me",
-    },
+    url: urls,
 };
 
 export const getConfig = (isPackaged: boolean) => {
