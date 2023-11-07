@@ -1,0 +1,24 @@
+@import '~@proton/pass/styles/common';
+@import '~@proton/styles/scss/lib/config';
+@import '~@proton/styles/scss/specifics/placeholder-loading';
+@import '~@proton/colors/themes/dist/duotone.theme.css';
+
+body {
+	// Extensions seem to have injected style sheets
+	// by default which override the font-family to
+	// "system-ui" and "font-size: 75%"
+	font-family: var(--optional-font-family, 'Inter', #{$fallback-fonts});
+}
+
+a {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.app-root {
+	background-color: var(--background-invert);
+	color: var(--primary-contrast);
+}
