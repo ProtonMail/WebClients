@@ -1223,11 +1223,6 @@
       "Access to all countries": [
         "Pristup svim državama"
       ],
-      "Connection for up to ${ plusVpnConnections } device": [
-        "Veza za ${ plusVpnConnections } uređaj",
-        "Veza za do ${ plusVpnConnections } uređaja",
-        "Veza za do ${ plusVpnConnections } uređaja"
-      ],
       "Fastest VPN servers": [
         "Najbrži VPN poslužitelji"
       ],
@@ -1299,16 +1294,6 @@
     "Info": {
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } zahtjeva vaše dopuštenje da ${ enableDesktopNotifications }."
-      ],
-      "${ number } city": [
-        "${ number } grad",
-        "${ number } grada",
-        "${ number } gradova"
-      ],
-      "${ number } server": [
-        "${ number } poslužitelj",
-        "${ number } poslužitelja",
-        "${ number } poslužitelja"
       ],
       "+${ bonusSpace } bonus storage": [
         "+ ${ bonusSpace } dodatnog prostora za pohranu"
@@ -2695,13 +2680,6 @@
       ],
       "Primary admin": [
         "Glavni Admin"
-      ]
-    },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Lozinka mora sadržavati najmanje ${ length } znak",
-        "Lozinka mora sadržavati najmanje ${ length } znaka",
-        "Lozinka mora sadržavati najmanje ${ length } znakova"
       ]
     },
     "VPN info": {
