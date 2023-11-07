@@ -113,9 +113,6 @@
       "Current plan": [
         "მიმდინარე ტარიფი"
       ],
-      "Customize": [
-        "მორგება"
-      ],
       "Customize plan": [
         "გეგმის მორგება"
       ],
@@ -552,6 +549,14 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } მომხმარებლის დომენი",
+        "${ domains } მომხმარებლის დომენი"
+      ],
+      "${ ips } server": [
+        "${ ips } სერვერი",
+        "${ ips } სერვერი"
+      ],
       "${ price } per dedicated server": [
         "${ price } გამოყოფილი სერვერი"
       ],
@@ -560,6 +565,10 @@
       ],
       "${ price } per user": [
         "${ price }/მომხმარებელი"
+      ],
+      "${ users } user": [
+        "${ users } მომხმარებელი",
+        "${ users } მომხმარებელი"
       ]
     },
     "Address action": {
@@ -660,6 +669,9 @@
       ],
       "Remove ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის წაშლა"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "გამოიწერეთ 15 თვით და მიიღეთ ჩვენი **დაშიფრული პაროლების მმართველი**, მხოლოდ, ${ priceNoSuffix } დამატებით თვეში!"
       ]
     },
     "bf2023: Deal details": {
@@ -734,6 +746,9 @@
       ],
       "Sorry, this offer is not available with your current plan.": [
         "უკაცრავად, ეს შემოთავაზება ხელმიუწვდომელია თქვენი მიმდინარე სატარიფო გეგმით."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "უკაცრავად, ეს შეთავაზება თქვენს მიმდინარე სატარიფო გეგმასთან ხელმისაწვდომი არაა. მაგრამ შეგიძლიათ მიიღოთ **${ discountPercentage } ფასდაკლება ${ plan.Title }-დან**, თუ გამოწერა **${ months }** იქნება."
       ]
     },
     "bf2023: Offers": {
@@ -742,8 +757,18 @@
       ]
     },
     "bf2023: renew": {
+      "${ n } month": [
+        "${ n } თვე",
+        "პირველი ${ n } თვე"
+      ],
       "the first month": [
         "პირველი თვე"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ discountedPrice } ხელმისაწვდომია კიდევ ${ discountedMonths }. ამის შემდეგ ის ავტომატურად განახლდება დაკლებულ ფასზე ${ nextPrice } ${ nextMonths }-თვის. გაუქმება ყოველთვის შეგიძლიათ."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "საგანგებოდ დაკლებული ფასი ${ discountedPrice }-სთვის პირველ თვეშია ხელმისაწვდომი. ამის შემდეგ ის ავტომატურად განახლდება ${ nextPrice } ფასით ყოველთვე. გაუქმება ყოველთვის შეგიძლიათ."
       ]
     },
     "bf2023: Title": {
@@ -752,6 +777,9 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "წვდომა დაბლოკილ შემცველობასთან და ინტერნეტში ანონიმურად მუშაობა. შეიცავს 3,000 სერვერს 65+ ქვეყანაში, ჩქაროსნულ VPN-ს, სტრიმინგის სერვისებs, არასასურველი პროგრამების და რეკლამების დაბლოკვs, სწრაფ BitTorrent-ის გადმოწერებს და სხვ."
+      ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "იქონიეთ წვდომა სტრიმინგის სერვისებთან, Netflix, Display+, Prime Video- და სხვ. ნებისმიერი ადგილიდან."
       ],
@@ -761,8 +789,15 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "შეიცავს 1 თქვენი ელფოსტის დომენის, 10 ელფოსტის მისამართის, 10 Hide-my-email-ის მეტსახელს, კალენდრის გაზიარებას და სხვ."
       ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "შეიცავს 3 თქვენი ელფოსტის დომენის, ${ addresses } ელფოსტის მისამართს, შეუზღუდავ Hide-my-email-ის მეტსახელს, კალენდრის გაზიარებას და სხვ.",
+        "შეიცავს 3 თქვენი ელფოსტის დომენის, ${ addresses } ელფოსტის მისამართს, შეუზღუდავ Hide-my-email-ის მეტსახელს, კალენდრის გაზიარებას და სხვ."
+      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "უსაფრთხო შესვლა ყველა თქვენს მოწყობილობაზე. შეიცავს განუსაზღვრელ ფსევდონიმებს, გაზიარებას, ჩაშენებულ 2FA-ს და სხვ."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "დაიცავით თქვენი ელფოსტა და განრიგი გამჭოლი შიფრაციით. შეიცავს მომხმარებლის დომენების მხარდაჭერას, 15 ელფოსტის მისამართს, განუსაზღვრელ hide-my-email-ის ფსევდონიმს, კალენდრის გაზიარებას და სხვ."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "დაიცავით თქვენი ფაილები დაშიფრული ღრუბლოვანი საცავით. ეს შეიცავს ვერსიების ისტორიას, დაშიფრულ ფაილების გაზიარებას და ბევრ სხვას."
@@ -778,6 +813,10 @@
       ]
     },
     "Billing cycle": {
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
         "განახლდება ${ renewPrice }-ით, ${ renewalLength } განმავლობაში"
       ]
@@ -879,6 +918,16 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME }-ის მოხმარების გაგრძელება."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } მომხმარებელი",
+        "${ users } მომხმარებელი"
+      ],
+      "Total for ${ n } month": [
+        "ჯამში ${ n } თვის",
+        "ჯამში ${ n } თვის"
       ]
     },
     "Checkout summary": {
@@ -2358,11 +2407,23 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN კავშირი",
+        "${ MaxVPN } VPN კავშირი"
+      ],
       "Access to all countries": [
         "წვდომა ყველა ქვეყანასთან"
       ],
       "Add": [
         "დამატება"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "დამატება (${ numberOfAddedServers })",
+        "დამატება (${ numberOfAddedServers })"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "${ plusVpnConnections }-მდე მოწყობილობის შეერთება",
+        "${ plusVpnConnections }-მდე მოწყობილობის შეერთება"
       ],
       "Fastest VPN servers": [
         "ყველაზე სწრაფი VPN სერვერები"
@@ -2469,6 +2530,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "ბაიტი",
+        "ბაიტი"
+      ],
       "GB": [
         "გბ"
       ],
@@ -2480,6 +2545,28 @@
       ],
       "TB": [
         "ტბ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "ბაიტი",
+        "ბაიტი"
+      ],
+      "Gigabyte": [
+        "გიგაბაიტი",
+        "გიგაბაიტი"
+      ],
+      "Kilobyte": [
+        "კილობაიტი",
+        "კილობაიტი"
+      ],
+      "Megabyte": [
+        "მეგაბაიტი",
+        "მეგაბაიტი"
+      ],
+      "Terabyte": [
+        "ტერაბაიტი",
+        "ტერაბაიტი"
       ]
     },
     "Font face option": {
@@ -2618,6 +2705,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } მისამართი",
+        "${ amountOfAddresses } მისამართი"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }-ს ესაჭიროება თქვენი წვდომა ${ enableDesktopNotifications }-ზე."
       ],
@@ -2639,14 +2730,38 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } ერთი პაროლითაც შეგიძლიათ, გამოიყენოთ, რომელიც ორივე, შესვლის და საფოსტო ყუთის პაროლებს შეცვლის. ერთპაროლიან რეჟიმში გადასართავად შეიყვანეთ პაროლი და შენახვას დააჭირეთ."
       ],
+      "${ number } city": [
+        "${ number } ქალაქი",
+        "${ number } ქალაქი"
+      ],
+      "${ number } server": [
+        "${ number } სერვერი",
+        "${ number } სერვერი"
+      ],
       "${ plan } removed. Bundle deal not available on a 1-month plan.": [
         "${ plan } წაიშალა. კომპლექტის შესახებ სარეკლამო აქცია 1-თვიან სატარიფო გეგმაზე ხელმიუწვდომელია."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title }-ს სულ ცოტა 1 გამოყოფილი სერვერი ესაჭიროება ${ serverPricePerMonth }"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "ჯერ კიდევ მიმდინარეობს ${ provisioningCounter } სერვერს დაყენება. ამას, ჩვეულებრივ, ${ provisioningDuration } სჭირდება.",
+        "ჯერ კიდევ მიმდინარეობს ${ provisioningCounter } სერვერს დაყენება. ამას, ჩვეულებრივ, ${ provisioningDuration } სჭირდება."
+      ],
+      "${ remainingAddresses.length } more": [
+        "კიდევ ${ remainingAddresses.length }",
+        "კიდევ ${ remainingAddresses.length }"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "კიდევ ${ remainingAddresses.length } მისამართი",
+        "კიდევ ${ remainingAddresses.length } მისამართი"
+      ],
       "${ storage } storage": [
         "${ storage } საცავი"
+      ],
+      "${ userFound } user found": [
+        "აღმოჩენილია ${ userFound } მომხმარებელი",
+        "აღმოჩენილია ${ userFound } მომხმარებელი"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "ქვეყნის დონეზე დასაკავშირებლად საჭიროა ${ vpnPlus }."
@@ -2662,6 +2777,10 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } დამატებითი საცავი"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } შეერთება ${ VPN_APP_NAME }-სთვის (უფლებას გაძლევთ VPN-ს მეტი მოწყობილობით დაუკავშირდეთ )",
+        "+${ organization.BonusVPN } შეერთება ${ VPN_APP_NAME }-სთვის (უფლებას გაძლევთ VPN-ს მეტი მოწყობილობით დაუკავშირდეთ )"
       ],
       "30-day money-back guarantee": [
         "30 დღიანი გარანტირებული ფულის დაბრუნება"
@@ -2695,6 +2814,18 @@
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "დაამატეთ თქვენს ანგარიშს უსაფრთხოების კიდევ ერთი ფენა. დაგჭირდებათ გაიაროთ 2FA თითოეული შესვლისას."
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "სერვერის დამატება (ხელმისაწვდომია ${ availableAddedCount })",
+        "სერვერის დამატება (ხელმისაწვდომია ${ availableAddedCount })"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "${ addedServerCount } რაუტერი სერვერის დამატება",
+        "${ addedServerCount } რაუტერი სერვერის დამატება"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "რაუტერი სერვერის დამატება: ${ serverNumber } / ${ total }",
+        "რაუტერი სერვერის დამატება: ${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "დამატებითი პარამეტრები"
@@ -2810,6 +2941,10 @@
       "Create your first Gateway": [
         "შექმენით თქვენი პირველი რაუტერი"
       ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "რაუტერი სერვერის შექმნა: ${ serverNumber } / ${ total }",
+        "რაუტერი სერვერის შექმნა: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "თქვენი ანგარიშის შექმნა"
       ],
@@ -2830,6 +2965,10 @@
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "გამოყოფილი სერვერები გამოყოფილი IP მისამართ(ებ)-ით, რომლებიც შეგიძლიათ პირად რაუტერებში ჩაამატოთ, წვდომის უფრო ზუსტი მართვისთვის."
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "${ deletedServerCount } რაუტერი სერვერის წაშლა",
+        "${ deletedServerCount } რაუტერი სერვერის წაშლა"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy-ის ლოგო"
@@ -3146,6 +3285,14 @@
       "Plan upgrade required": [
         "აუცილებელია ტარიფის აწევა"
       ],
+      "Please add a password for the user on row": [
+        "მომხმარებლის მწკრივში საჭიროა პაროლის დამატება",
+        "მომხმარებლის მწკრივში საჭიროა პაროლის დამატება"
+      ],
+      "Please add an email address for the user on row": [
+        "დაამატეთ ელფოსტის მისამართი მომხმარებელს მწკრივზე",
+        "დაამატეთ ელფოსტის მისამართი მომხმარებელს მწკრივზე"
+      ],
       "Please authenticate your card in the verification tab.": [
         "გთხოვთ, დაადასტუროთ თქვენი ბარათი გადამოწმების ჩანართში."
       ],
@@ -3275,6 +3422,10 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "ზოგიერთი თქვენი გამოყოფილი სერვერი, შეიძლება, მხოლოდ, შესაბამის ქვეყნებში იყოს ხელმისაწვდომი უახლესი წაშლების გამო"
       ],
+      "Step ${ step }": [
+        "ნაბიჯი ${ step }",
+        "ნაბიჯი ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "ამ ორგანიზაციის სხვა მომხმარებლებისთვის გამოყოფილი საცავი"
       ],
@@ -3316,6 +3467,18 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "მადლობა, რომ მხარი დაგვიჭირეთ ჩვენს მისიაში, ავაგოთ უკეთესი ინტერნეტ, სადაც კონფიდენციალობა და თავისუფლება რიგში პირველია."
+      ],
+      "The following address is invalid.": [
+        "შემდეგი მისამართი არასწორია.",
+        "შემდეგი მისამართები არასწორია."
+      ],
+      "The following address is unavailable.": [
+        "შემდეგი მისამართი მიუწვდომელია.",
+        "შემდეგი მისამართები მიუწვდომელია."
+      ],
+      "The following address was not created.": [
+        "შემდეგი მისამართი არ შექმნილა.",
+        "შემდეგი მისამართები არ შექმნილა."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "შემდეგი წევრები მიიღებენ ელფოსტას, რომელიც მათ 2FA-ის რაც რაც შეიძლება სწრაფად ჩართვისკენ მოუწოდებს."
@@ -3593,17 +3756,38 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "შესული ხართ როგორც ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "${ ipAddresses } ხელმისაწვდომი გამოყოფილი სერვერიდან ამჟამად ${ ipCount }-ს იყენებთ.",
+        "${ ipAddresses } ხელმისაწვდომი გამოყოფილი სერვერიდან ამჟამად ${ ipCount }-ს იყენებთ."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "ამჟამად თქვენი ხელმისაწვდომი ${ organization.MaxMembers } ლიცენზიიდან ${ organization.UsedMembers }-ს იყენებთ.",
+        "ამჟამად თქვენი ხელმისაწვდომი ${ organization.MaxMembers } ლიცენზიიდან ${ organization.UsedMembers }-ს იყენებთ."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "შესული ბრძანდებით ანგარიშში ${ memberAddress }."
-      ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "ბუღალტერიისთვის ინვოისების მორგება და გადმოწერა."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "იმისათვის, რომ დარწმუნდეთ, რომ ეს გადასამოწმებლად სწორი ელფოსტის მისამართია, ის, შეგიძლიათ, ერთხელ ჩაასწოროთ."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "ზედა პარამეტრები შეგიძლიათ, თქვენს ტარიფში ${ specificCountryCount } IP მისამართის დამატებით განბლოკოთ, ან, მორგებული გადაწყვეტილებებისთვის, დაგვიკავშირდით"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "შეგიძლიათ გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ თქვენს ${ MAIL_SHORT_APP_NAME }-ის გამოწერას გააუქმებდით.",
+        "შეგიძლიათ გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ თქვენს ${ MAIL_SHORT_APP_NAME }-ის გამოწერას გააუქმებდით."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "შეგიძლიათ, გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ გამოწერას გააუქმებდით.",
+        "შეგიძლიათ, გქონდეთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. წაშალეთ გაზიარებული კალენდრის ბმულები და ყველა ${ BRAND_NAME }-ის მომხმარებელი, ვისაც კალენდარი გაუზიარეთ, სანამ გამოწერას გააუქმებდით."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "შეგიძლიათ, შეინახოთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. გთხოვთ, წაშალოთ გაზიარებული კალენდრის ბმულები, ${ MAIL_SHORT_APP_NAME }-ის თქვენს გამოწერას გააუქმებთ.",
+        "შეგიძლიათ, შეინახოთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. გთხოვთ, წაშალოთ გაზიარებული კალენდრის ბმულები, ${ MAIL_SHORT_APP_NAME }-ის თქვენს გამოწერას გააუქმებთ."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "შეგიძლიათ, შეინახოთ ${ MAX_CALENDARS_FREE }-მდე კალენდარი. გთხოვთ, წაშალოთ გაზიარებული კალენდრის ბმულები, სანამ გააუქმებთ გამოწერას.",
+        "შეგიძლიათ, შეინახოთ ${ MAX_CALENDARS_FREE }-მდე კალენდარები. გთხოვთ, წაშალოთ გაზიარებული კალენდრის ბმულები, სანამ გააუქმებთ გამოწერას."
       ],
       "You can now access and manage the account as an administrator.": [
         "ახლა შეგიძლიათ, შეხვიდეთ და მართოთ ანგარიში, როგორც ადმინისტრატორმა."
@@ -3613,6 +3797,10 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "${ VPN_APP_NAME }-ის სერვერთან მესამე პირების დაწერილი VPN აპებით, როგორიცაა Tunnelblick-ი macOS-სთვის ან OpenVPN-ი GNU/Linux-სთვის, გამოიყენეთ ეს მომხმარებელი და პაროლი."
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "გაქვთ ${ availableCount } გამოყოფილი ხელმისაწვდომი სერვერი.",
+        "გაქვთ ${ availableCount } გამოყოფილი ხელმისაწვდომი სერვერი."
       ],
       "You have no saved payment methods.": [
         "თქვენ არ გაქვთ გადახდის შენახული მეთოდები."
@@ -3721,11 +3909,6 @@
         "თქვენ შეგიძლიათ დაამატოთ გადახდის მეთოდი, რომ თქვენი გამოწერა ავტომატურად განახლდეს. ასევე ხელმისაწვდომია გადახდის სხვა მეთოდებიც."
       ]
     },
-    "Info message for custom invoice modal": {
-      "Add your name (or company name) and address to your invoices.": [
-        "თქვენი (ან კომპანიის) სახელისა და მისამართის ინვოისებზე დამატება."
-      ]
-    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "ვადის გასვლა გამოწერის თავიდან აქტივაციით შეგიძლიათ, აიცილოთ"
@@ -3807,6 +3990,18 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } მისამართი"
+      ],
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } დღე",
+        "${ nbDay } დღე"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses }/${ MaxAddresses } ელფოსტის მისამართი",
+        "${ UsedAddresses }/${ MaxAddresses } ელფოსტის მისამართი"
       ],
       "Account storage": [
         "ანგარიშის საცავი"
@@ -3930,9 +4125,6 @@
       ],
       "Current email": [
         "მიმდინარე ელფოსტა"
-      ],
-      "Customize invoices": [
-        "ინვოისების მორგება"
       ],
       "Default language": [
         "ნაგულისხმები ენა"
@@ -4351,6 +4543,12 @@
         "გადადით ფასიან ვერსიაზე ჩატისა და სხვა ფასიანი ფუნქციების მხარდაჭერისთვის, ან გამოიყენეთ ჩვენი უფასო მხარდაჭერის ფორმა, რათა თქვენი პრობლემის შესახებ შეგვატყობინოთ."
       ]
     },
+    "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } თქვენი ორგანიზაციის წევრი იყენებს 2FA-ს.",
+        "${ twoFAMembers.length }/${ members.length } თქვენი ორგანიზაციის წევრი იყენებს 2FA-ს."
+      ]
+    },
     "Member action": {
       "Change password": [
         "პაროლის შეცვლა"
@@ -4479,6 +4677,66 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } კალენდარი",
+        "${ n } კალენდარი"
+      ],
+      "${ n } calendar per user": [
+        "${ n } კალენდარი თითოეული მომხმარებლისათვის",
+        "${ n } კალენდარი თითოეული მომხმარებლისათვის"
+      ],
+      "${ n } custom email domain": [
+        "ელფოსტის ${ n } ხელით მითითებული დომენი",
+        "ელფოსტის ${ n } ხელით მითითებული დომენი"
+      ],
+      "${ n } email address": [
+        "ელფოსტის ${ n } მისამართი",
+        "ელფოსტის ${ n } მისამართი"
+      ],
+      "${ n } email address per user": [
+        "ელფოსტის ${ n } მისამართი თითოეული მომხმარებლისთვის",
+        "ელფოსტის ${ n } მისამართი თითოეული მომხმარებლისთვის"
+      ],
+      "${ n } filter": [
+        "${ n } ფილტრი",
+        "${ n } ფილტრი"
+      ],
+      "${ n } folder": [
+        "${ n } საქაღალდე",
+        "${ n } საქაღალდე"
+      ],
+      "${ n } folder and label": [
+        "${ n } საქაღალდე და ჭდე",
+        "${ n } საქაღალდე და ჭდე"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } მეტსახელი Hide-my-email-სთვის",
+        "${ n } მეტსახელი Hide-my-email-სთვის"
+      ],
+      "${ n } label": [
+        "${ n } ჭდე",
+        "${ n } ჭდე"
+      ],
+      "${ n } message per day": [
+        "${ n }-მდე შეტყობინება დღეში",
+        "${ n }-მდე შეტყობინება დღეში"
+      ],
+      "${ n } vault": [
+        "${ n } საცავი",
+        "${ n } საცავი"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN კავშირი",
+        "${ n } VPN კავშირი"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN კავშირი თითოეული მომხმარებლისთვის",
+        "${ n } VPN კავშირი თითოეული მომხმარებლისთვის"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } ${ n } hide-my-email-ის ფსევდონიმით",
+        "${ PASS_APP_NAME } ${ n } hide-my-email-ის ფსევდონიმით"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } ულიმიტო hide-my-email ფსევდონიმებით"
       ],
@@ -4617,6 +4875,10 @@
       "High-speed Swiss VPN that protects your privacy": [
         "ჩქაროსნული შვეიცარიული VPN, რომელიც თქვენს კონფიდენციალობას იცავს"
       ],
+      "High-speed VPN on ${ n } device": [
+        "ჩქაროსნული VPN ${ n } მოწყობილობაზე",
+        "ჩქაროსნული VPN ${ n } მოწყობილობაზე"
+      ],
       "HTML signatures": [
         "HTML ხელმოწერები"
       ],
@@ -4653,6 +4915,10 @@
       "Priority support & live chat": [
         "პრიორიტეტული დახმარება და ცოცხალი ჩატი"
       ],
+      "Protect ${ n } device at a time": [
+        "დაიცავით ${ n } მოწყობილობა ერთდროულად",
+        "დაიცავით ${ n } მოწყობილობა ერთდროულად"
+      ],
       "Router support": [
         "რაუტერის მხარდაჭერა"
       ],
@@ -4667,6 +4933,10 @@
       ],
       "Send & receive invitations": [
         "მოსაწვევების გაგზავნა და მიღება"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "სერვერები ${ vpnServersCountData.paid.countries }+ ქვეყანაში",
+        "სერვერები ${ vpnServersCountData.paid.countries }+ ქვეყანაში"
       ],
       "Share calendar via link": [
         "კალენდრის გაზიარება ბმულით"
@@ -4751,6 +5021,10 @@
       ],
       "User session management": [
         "მომხმარებლის სესიის მართვა"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)",
+        "საცავის გაზიარება (${ n }-მდე პიროვნებასთან)"
       ]
     },
     "new_plans: feature info": {
@@ -4864,6 +5138,12 @@
         "/თვე"
       ]
     },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "${ currentPlanName }-ის ანგარიშზე ${ daysRemaining } დღე დაგრჩათ.",
+        "${ currentPlanName }-ის ანგარიშზე ${ daysRemaining } დღე დაგრჩათ."
+      ]
+    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "\"გადახდაზე\" დაწკაპუნების შემთხვევაში თქვენ ეთანხმებით ჩვენს ${ termsAndConditions }."
@@ -4930,6 +5210,10 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "შექმენით მრავალი ელექტრონული ფოსტის მისამართი თქვენი ონლაინ ვინაობისთვის, მაგ., JohnShopper@p${ domain } სავაჭრო ანგარიშებისთვის, JohnNews@${ domain } ახალი ამბების გამოწერებისთვის"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "შექმენით ${ n }-მდე კალენდარი ან დაამატეთ მეგობრების, ოჯახის, კოლეგების და ორგანიზაციების კალენდრები",
+        "შექმენით ${ n }-მდე კალენდარი ან დაამატეთ მეგობრების, ოჯახის, კოლეგების და ორგანიზაციების კალენდრები"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "შექმენით ${ n }-მდე ელფოსტის მისამართი/ფსევდონიმი, რომლებიც შეგიძლიათ, ოჯახის წევრებს მიანიჭოთ. გამოიყენეთ ისინი, მაგალითად, შოინგისთვის. JemalShpper@${ domain }."
@@ -5127,6 +5411,10 @@
       "Cover more ground with support for 10 custom email domains": [
         "მოიცავით უფრო მეტი ხელით მითითებული 10 დამატებითი დომენით"
       ],
+      "Create up to ${ n } calendar": [
+        "შექმენით ${ n }-მდე კალენდარი",
+        "შექმენით ${ n }-მდე კალენდარი"
+      ],
       "Dedicated Account manager": [
         "გამოყოფილი ანგარიშის მმართველი"
       ],
@@ -5234,6 +5522,18 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } მეტი საცავის მისაღებად. ან წაშალეთ რამე, რომ ადგილი გაათავისუფლოთ."
       ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "თქვენი ტარიფი, მაქსიმუმ, კიდევ ${ availableAddresses } მისამართს შეიცავს.",
+        "თქვენი ტარიფი, მაქსიმუმ, კიდევ ${ availableAddresses } მისამართს შეიცავს."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "თქვენი ტარიფი კიდევ, მაქსიმუმ, ${ availableNumberOfMembers } ორგანიზაციის მომხმარებელს შეიცავს.",
+        "თქვენი ტარიფი კიდევ, მაქსიმუმ, ${ availableNumberOfMembers } ორგანიზაციის მომხმარებელს შეიცავს."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "თქვენი ტარიფი მაქსიმუმ კიდევ ${ availableVPNAccess } VPN-ის მომხმარებელს შეიცავს.",
+        "თქვენი ტარიფი მაქსიმუმ კიდევ ${ availableVPNAccess } VPN-ის მომხმარებელს შეიცავს."
+      ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "თქვენი ტარიფი კიდევ, მაქსიმუმ, ${ humanReadableAvailableSpace } საცავს შეიცავს."
       ]
@@ -5329,17 +5629,16 @@
         "ნაზიბროლა ღობეგლეჯიაშვილი"
       ]
     },
-    "Placeholder for custom invoice text": {
-      "Add your name (or company name) and address to your invoices": [
-        "თქვენი (ან კომპანიის) სახელისა და მისამართის ინვოისებზე დამატება"
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "კონტაქტი"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "თქვენს სატარიფო გეგმაში ჩასასმელი მომხმარებლების რაოდენობა. თითოეული დამატებითი მომხმარებლის ფასია ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "თუ დაგჭირდათ ${ maxUsers }-ზე მეტი მომხმარებელი, დაუკავშირდით ჩვენი გაყიდვების გუნდს ${ contact }.",
+        "თუ დაგჭირდათ ${ maxUsers }-ზე მეტი მომხმარებელი, დაუკავშირდით ჩვენი გაყიდვების გუნდს ${ contact }."
       ]
     },
     "Price": {
@@ -5490,14 +5789,38 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } დღე",
+        "${ timeRemaining.inDays } დღე"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } საათი",
+        "${ timeRemaining.inHours } საათი"
+      ],
       "Didn’t make this request?": [
         "არ გამოგიგზავნიათ ეს მოთხოვნა?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "თუ პაროლის შეცვლა თქვენ არ მოგითხოვიათ, გააუქმეთ მოთხოვნა."
       ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inDays } დღე, პაროლი შეცვალოთ.",
+        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inDays } დღე, პაროლი შეცვალოთ."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inHours } საათი, პაროლი შეცვალოთ.",
+        "პაროლის შეცვლის მოთხოვნა დაშვებულია (${ user.Email }). გაქვთ ${ timeRemaining.inHours } საათი, პაროლი შეცვალოთ."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "პაროლის შესაცვლელად გადადით მოწყობილობაზე (სესიაში, საიდანაც მოთხოვნა გამოიგაზვნა), რომელზეც შესული ბრძანდებით."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "ამ წვდომის ვადა ${ timeRemaining.inDays } დღეში იწურება",
+        "ამ წვდომის ვადა ${ timeRemaining.inDays } დღეში იწურება"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება",
+        "ამ წვდომის ვადა ${ timeRemaining.inHours } საათში იწურება"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "ახლა შეგიძლიათ შეცვალოთ პაროლი ანგარიშისთვის ${ boldEmail }, თავისუფლად, შუალედში \"${ boldDaysRemaining }\"."
@@ -5569,6 +5892,10 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "კიდევ ${ gracePeriodHoursRemaining } საათი",
+        "კიდევ ${ gracePeriodHoursRemaining } საათი"
+      ],
       "Didn’t make this request?": [
         "არ გამოგიგზავნიათ ეს მოთხოვნა?"
       ],
@@ -5581,11 +5908,19 @@
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "პაროლის შეცვლის შესაძლებლობა გექნებათ: ${ boldDate }. ეს გაძლევთ დროს, გააუქმოთ მავნე მოთხოვნები."
       ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "პაროლის შეცვლა მოთხოვნილია (${ user.Email }) პაროლის შეცვლა ${ hoursRemaining } საათში შეგეძლებათ.",
+        "პაროლის შეცვლა მოთხოვნილია (${ user.Email }) პაროლის შეცვლა ${ hoursRemaining } საათში შეგეძლებათ."
+      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "იმისათვის, რომ დავრწმუნდეთ, რომ ნამდვილად თქვენ ცდილობთ პაროლის შეცვლას, ჩვენ, მოთხოვნის შესრულებამდე 72 საათს მოვიცდით. პაროლს შეცვლა შეგიძლიათ შემდეგ დროში: ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "მივიღეთ პაროლის შეცვლს მოთხოვნა ${ boldEmail }-სთვის."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "პაროლი, შეგიძლიათ, ${ gracePeriodHoursRemaining } საათში შეცვალოთ",
+        "პაროლი, შეგიძლიათ, ${ gracePeriodHoursRemaining } საათში შეცვალოთ"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -5636,6 +5971,10 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "მოვითხოვო პაროლის შეცვლა?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "პაროლის შეცვლის დაწყება ${ gracePeriodHoursRemaining }-ში შეგეძლებათ.",
+        "პაროლის შეცვლის დაწყება ${ gracePeriodHoursRemaining }-ში შეგეძლებათ."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -5647,6 +5986,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } საათი",
+        "${ gracePeriodHoursRemaining } საათი"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } ახლა ხელმისაწვდომია."
       ],
@@ -5718,6 +6061,30 @@
         "Unlimited-ზე გადასვლა"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } დღე",
+        "${ days } დღე"
+      ],
+      "${ hours } hour": [
+        "${ hours } საათი",
+        "${ hours } საათი"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } წუთი",
+        "${ minutes } წუთი"
+      ],
+      "${ seconds } second": [
+        "${ seconds } წამი",
+        "${ seconds } წამი"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } თვე უფასოდ",
+        "${ n } თვე უფასოდ"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 მომხმარებელი"
@@ -5781,6 +6148,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
       "/ month": [
         "/ თვეში"
       ],
@@ -5924,6 +6295,58 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } გამოყოფილი სერვერი",
+        "${ ipAddresses } გამოყოფილი სერვერი"
+      ],
+      "${ maxVpn } high-speed VPN connection": [
+        "${ maxVpn } ჩქაროსნული VPN შეერთება",
+        "${ maxVpn } ჩქაროსნული VPN შეერთება"
+      ],
+      "${ n } calendar": [
+        "${ n } კალენდარი",
+        "${ n } კალენდარი"
+      ],
+      "${ n } calendar per user": [
+        "${ n } კალენდარი თითოეული მომხმარებლისათვის",
+        "${ n } კალენდარი თითოეული მომხმარებლისათვის"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } ჩქაროსნული VPN შეერთება",
+        "${ n } ჩქაროსნული VPN შეერთება"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } ჩქაროსნული VPN შეერთება თითოეული მომხმარებლისთვის",
+        "${ n } ჩქაროსნული VPN შეერთება თითოეული მომხმარებლისთვის"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN კავშირი",
+        "${ n } VPN კავშირი"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN კავშირი თითოეული მომხმარებლისთვის",
+        "${ n } VPN კავშირი თითოეული მომხმარებლისთვის"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } მისამართი",
+        "${ UsedAddresses } მისამართი"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses }/${ MaxAddresses } ელფოსტის მისამართი",
+        "${ UsedAddresses }/${ MaxAddresses } ელფოსტის მისამართი"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } კალენდარი",
+        "${ UsedCalendars } კალენდარი"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "გამოყენებულია ${ MaxDomains }-დან ${ UsedDomains } ხელით მითითებული დომენი",
+        "გამოყენებულია ${ MaxDomains }-დან ${ UsedDomains } ხელით მითითებული დომენი"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ MaxMembers }-დან ${ UsedMembers } მომხმარებელი",
+        "${ MaxMembers }-დან ${ UsedMembers } მომხმარებელი"
+      ],
       "1 email address": [
         "ელფოსტის 1 მისამართი"
       ],
@@ -5935,6 +6358,10 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "ჩაშენებული Adblocker (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "მაღალგამტარუნარიანი VPN ${ maxVpn } მოწყობილობაზე",
+        "მაღალგამტარუნარიანი VPN ${ maxVpn } მოწყობილობაზე"
       ]
     },
     "Subscription change warning": {
@@ -6274,9 +6701,6 @@
       "Add credits": [
         "ანგარიშის შევსება"
       ],
-      "Add invoice details": [
-        "ინვოისის დეტალების დამატება"
-      ],
       "Add new user": [
         "ახალი მომხმარებლის დამატება"
       ],
@@ -6361,6 +6785,10 @@
       "Couldn’t create accounts": [
         "ანგარიშების შექმნის შეცდომა"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "${ selectedUserIds.length } მომხმარებლის შექმნა",
+        "${ selectedUserIds.length } მომხმარებლების შექმნა"
+      ],
       "Create a new Gateway": [
         "ახალი რაუტერის შექმნა"
       ],
@@ -6408,6 +6836,10 @@
       ],
       "Delete account": [
         "ანგარიშის წაშლა"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "სერვერის წაშლა (მათი აღდგენა ${ days } დღის განმავლობაში შეგეძლებათ)",
+        "სერვერის წაშლა (მათი აღდგენა ${ days } დღის განმავლობაში შეგეძლებათ)"
       ],
       "Delete user": [
         "მომხმარებლის წაშლა"
@@ -6477,6 +6909,10 @@
       ],
       "Every member of the organization can access": [
         "წვდომა ორგანიზაციის ყველა წევრს აქვს"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "${ failedUsers.length } მომხმარებლის შექმნის შეცდომა",
+        "${ failedUsers.length } მომხმარებლის შექმნის შეცდომა"
       ],
       "Find email or username": [
         "ელფოსტის ან მომხმარებლის მოძებნა"
@@ -6667,6 +7103,14 @@
       "Subscription": [
         "გამოწერა"
       ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "${ localSuccessfullyCreatedUsers.length } მომხმარებლის ანგარიში წარმატებით შეიქმნა",
+        "${ localSuccessfullyCreatedUsers.length } მომხმარებლის ანგარიში წარმატებით შეიქმნა"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "${ successfullyCreatedUsers.length } მომხმარებლის ანგარიში წარმატებით შეიქმნა",
+        "${ successfullyCreatedUsers.length } მომხმარებლის ანგარიში წარმატებით შეიქმნა"
+      ],
       "Summary": [
         "შეჯამება"
       ],
@@ -6847,6 +7291,16 @@
         "ძირითადი ადმინისტრატორი"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "პაროლი ${ length } სიმბოლოს მაინც უნდა შეიცავდეს",
+        "პაროლი ${ length } სიმბოლოს მაინც უნდა შეიცავდეს"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)",
+        "სცადეთ უფრო მოკლე მომხმარებლის სახელი (მაქს ${ n } სიმბოლო)"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "სხვა სერვისი ვიპოვე, რომელიც უფრო მომწონს"
@@ -6864,6 +7318,24 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now და სხვ."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } სერვერი",
+        "${ n } სერვერი"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN კავშირი",
+        "${ n } VPN კავშირი"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } ${ numberOfCountries } ქვეყანაში",
+        "${ numberOfServers } ${ numberOfCountries } ქვეყანაში"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } სერვერი ${ numberOfCountries } ქვეყანაში",
+        "${ numberOfServers } სერვერი ${ numberOfCountries } ქვეყანაში"
       ]
     },
     "vpn_2step: billing": {
@@ -6900,6 +7372,14 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } თვე",
+        "${ n } თვე"
+      ],
+      "${ n } year": [
+        "${ n } წელი",
+        "${ n } წელი"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "სცადეთ ${ upsellPlanName } რისკის გარეშე"
       ],

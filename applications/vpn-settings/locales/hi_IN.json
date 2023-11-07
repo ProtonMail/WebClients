@@ -98,9 +98,6 @@
       "Current plan": [
         "वर्तमान योजना"
       ],
-      "Customize": [
-        "कस्टम"
-      ],
       "Customize plan": [
         "प्लान बदले"
       ],
@@ -586,6 +583,16 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "${ MAIL_APP_NAME } का उपयोग करते रहें।"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } यूज़र",
+        "${ users } यूज़र"
+      ],
+      "Total for ${ n } month": [
+        "${ n } महीने के लिए पूरा",
+        "${ n } महीने के लिए पूरा"
       ]
     },
     "Collapsible tooltip": {
@@ -1894,8 +1901,16 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN कनेक्शन",
+        "${ MaxVPN } VPN कनेक्शन"
+      ],
       "Access to all countries": [
         "सभी देशों तक पहुंच"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "${ plusVpnConnections } डिवाइस तक के लिए कनेक्शन",
+        "अधिकतम ${ plusVpnConnections } उपकरणों के लिए कनेक्शन"
       ],
       "Fastest VPN servers": [
         "सबसे तेज़ वीपीएन सर्वर"
@@ -1996,6 +2011,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "बाइट",
+        "बाइट"
+      ],
       "GB": [
         "जीबी"
       ],
@@ -2004,6 +2023,24 @@
       ],
       "MB": [
         "एमबी"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "बाइट",
+        "बाइट"
+      ],
+      "Gigabyte": [
+        "महार्बुदाष्टक",
+        "महार्बुदाष्टकों"
+      ],
+      "Kilobyte": [
+        "सहस्राष्टकों",
+        "सहस्राष्टकों"
+      ],
+      "Megabyte": [
+        "प्रयुताष्टक",
+        "प्रयुताष्टक"
       ]
     },
     "Font face option": {
@@ -2110,8 +2147,20 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } को सिर्फ एक पासवर्ड से भी इस्तेमाल कर सकते है जो आपके लॉग इन और मेलबॉक्स पासवर्ड की जगह ले लेगा। एक पासवर्ड मोड पे जाने के लिए, पासवर्ड डाले जो आप इस्तेमाल करना चाहते है और सेव दबाएं।"
       ],
+      "${ number } city": [
+        "${ number } शहर",
+        "${ number } शहर"
+      ],
+      "${ number } server": [
+        "${ number } सर्वर",
+        "${ number } सर्वर"
+      ],
       "${ storage } storage": [
         "${ storage } स्टोरेज"
+      ],
+      "${ userFound } user found": [
+        "${ userFound } यूज़र मिले",
+        "${ userFound } यूज़र मिले"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "देश स्तर के कनेक्शन के लिए ${ vpnPlus } चाहिए।"
@@ -2121,6 +2170,10 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } बोनस भंडारण"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } और कनेक्शन ${ VPN_APP_NAME } के लिए (आपको वीपीएन से और डिवाइस जोड़ने देता है)",
+        "+${ organization.BonusVPN } और कनेक्शन ${ VPN_APP_NAME } के लिए (आपको वीपीएन से और डिवाइस जोड़ने देता है)"
       ],
       "30-day money-back guarantee": [
         "30 दिन की पैसे-वापस गारंटी"
@@ -2491,6 +2544,14 @@
       "Plan upgrade required": [
         "योजना के उन्नयन की आवश्यकता"
       ],
+      "Please add a password for the user on row": [
+        "रो पे जो यूज़र है उसके लिए कृपया पासवर्ड जोड़ें",
+        "रो पे जो यूज़र है उनके लिए कृपया पासवर्ड जोड़ें"
+      ],
+      "Please add an email address for the user on row": [
+        "जो यूज़र रो पे है उनके लिए कृपया एक ईमेल पता जोड़ें",
+        "जो यूज़र रो पे है उनके लिए कृपया ईमेल पते जोड़ें"
+      ],
       "Please authenticate your card in the verification tab.": [
         "सत्यापन टैब में कृपया अपना कार्ड सत्यापित करें।"
       ],
@@ -2596,6 +2657,10 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "चूंकि आप एक वफादार उपयोगकर्ता हैं, इसलिए आपके खाते में अतिरिक्त सुविधाएं सक्षम हैं।"
       ],
+      "Step ${ step }": [
+        "कदम ${ step }",
+        "कदम ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "इस संगठन में अन्य उपयोगकर्ताओं को आवंटित संग्रहण"
       ],
@@ -2616,6 +2681,18 @@
       ],
       "Thank you": [
         "शुक्रिया"
+      ],
+      "The following address is invalid.": [
+        "ये पता अमान्य है।",
+        "ये पते अमान्य है।"
+      ],
+      "The following address is unavailable.": [
+        "ये पता उपलब्ध नहीं।",
+        "ये पतें उपलब्ध नहीं।"
+      ],
+      "The following address was not created.": [
+        "ये पता बनाया नहीं गया।",
+        "ये पते बनाए नहीं गए।"
       ],
       "The format of your CSV file is incorrect.": [
         "आपके CSV फाइल का फॉर्मेट गलत हैं।"
@@ -2815,8 +2892,21 @@
       "You are signed in to the account ${ memberAddress }.": [
         "${ memberAddress } खाते से साइनइन हो।"
       ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "आप लेखांकन उद्देश्यों के लिए अपने चालान को अनुकूलित और डाउनलोड कर सकते हैं।"
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किये है को हटाए।"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किये है को हटाए।"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक को हटाए।",
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक को हटाए।"
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक को हटाए।",
+        "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक को हटाए।"
       ],
       "You can now access and manage the account as an administrator.": [
         "आप अब खाते को एक एडमिन की तरह एक्सेस कर और संभाल सकते है।"
@@ -2910,11 +3000,6 @@
         "अपनी सदस्यता को स्वचालित रूप से नवीनीकृत करने के लिए आप एक भुगतान विधि जोड़ सकते हैं। अन्य भुगतान विधियां भी उपलब्ध हैं।"
       ]
     },
-    "Info message for custom invoice modal": {
-      "Add your name (or company name) and address to your invoices.": [
-        "अपने चालान में अपना नाम (या कंपनी का नाम) और पता जोड़ें।"
-      ]
-    },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
         "अवैतनिक चालान के कारण किसी भी सेवा रुकावट से बचने के लिए, कृपया सुनिश्चित करें कि आपके पास कम से कम 1 वैध भुगतान विधि है जो किसी भी समय किसी भी बिंदु पर सहेजी गई है।"
@@ -2991,6 +3076,18 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } पता"
+      ],
+      "${ n } month": [
+        "${ n } महीना",
+        "${ n } महीने"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } दिन",
+        "${ nbDay } दिन"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } का ${ MaxAddresses } ईमेल पता",
+        "${ UsedAddresses } का ${ MaxAddresses } ईमेल पता"
       ],
       "Account storage": [
         "खाता संग्रहण"
@@ -3096,9 +3193,6 @@
       ],
       "Current display name": [
         "अभी डिस्पले नाम"
-      ],
-      "Customize invoices": [
-        "चालान कस्टमाइज़ करें"
       ],
       "Default language": [
         "डिफ़ॉल्ट भाषा"
@@ -3538,6 +3632,54 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } कैलेंडर",
+        "${ n } कैलेंडर"
+      ],
+      "${ n } custom email domain": [
+        "${ n } कस्टम ईमेल डोमेन",
+        "${ n } कस्टम ईमेल डोमेन"
+      ],
+      "${ n } email address": [
+        "${ n } ईमेल पता",
+        "${ n } ईमेल पता/उपनाम"
+      ],
+      "${ n } email address per user": [
+        "${ n } ईमेल पता हर यूज़र पे",
+        "${ n } ईमेल पते हर यूज़र पे"
+      ],
+      "${ n } filter": [
+        "${ n } फिल्टर",
+        "${ n } फिल्टर"
+      ],
+      "${ n } folder": [
+        "${ n } फोल्डर",
+        "${ n } फोल्डर"
+      ],
+      "${ n } folder and label": [
+        "${ n } फोल्डर और लेबल",
+        "${ n } फोल्डर और लेबल"
+      ],
+      "${ n } label": [
+        "${ n } लेबल",
+        "${ n } लेबल"
+      ],
+      "${ n } message per day": [
+        "${ n } संदेश प्रति दिन",
+        "${ n } संदेश प्रति दिन"
+      ],
+      "${ n } vault": [
+        "${ n } तिजोरी",
+        "${ n } तिजोरी"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN कनेक्शन",
+        "${ n } VPN कनेक्शन"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN कनेक्शन प्रति यूज़र",
+        "${ n } VPN कनेक्शन प्रति यूज़र"
+      ],
       "${ size } attachment size": [
         "${ size } अटैचमेंट साइज़"
       ],
@@ -3640,6 +3782,10 @@
       "High-speed streaming": [
         "तेज़ स्ट्रीमिंग"
       ],
+      "High-speed VPN on ${ n } device": [
+        "तेज़ वीपीएन ${ n } डिवाइस पे",
+        "तेज़ वीपीएन ${ n } डिवाइस पे"
+      ],
       "HTML signatures": [
         "HTML हस्ताक्षर"
       ],
@@ -3672,6 +3818,10 @@
       ],
       "Priority support & live chat": [
         "प्राथमिक सहायता और लाइव बातचीत"
+      ],
+      "Protect ${ n } device at a time": [
+        "एक वक्त में ${ n } डिवाइस सुरक्षित करें",
+        "एक वक्त में ${ n } डिवाइस सुरक्षित करें"
       ],
       "Router support": [
         "राउटर सपोर्ट"
@@ -3839,6 +3989,12 @@
         "/महीने"
       ]
     },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "आपके ${ currentPlanName } खाते पे अभी भी ${ daysRemaining } दिन बचा हैं",
+        "आपके ${ currentPlanName } खाते पे अभी भी ${ daysRemaining } दिन बचे हैं"
+      ]
+    },
     "new_plans: signup": {
       "terms and conditions": [
         "नियम और शर्तें"
@@ -3887,6 +4043,10 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "अपने ऑनलाइन पहचानो के लिए कई ईमेल पते बनाए, उदाहरण, MahfuzKhariddari@${ domain } शॉपिंग खातों के लिए, MahfuzKhabar@${ domain } समाचार सदस्यता के लिए"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "${ n } कैलेंडर बनाएं या दोस्त, परिवार, सहकर्मी, और संगठन से कैलेंडर जोड़े।",
+        "${ n } कैलेंडर तक बनाएं या दोस्त, परिवार, सहकर्मी, और संगठन से कैलेंडर जोड़े।"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "कई सर्वरों से आपके इंटरनेट ट्रैफिक को गुज़ार के वीपीएन निजता के खतरों के खिलाफ आपकी रक्षा करता है।"
@@ -4078,6 +4238,18 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } करें और स्टोरेज लेने के लिए, या जगह खाली करने के लिए कुछ स्टोरेज हटाएं।"
       ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "आपके प्लान में ${ availableAddresses } और पता है।",
+        "आपके प्लान में ${ availableAddresses } और पते है।"
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "आपके प्लान में ${ availableNumberOfMembers } और संगठन यूज़र मौजूद है।",
+        "आपके प्लान में ${ availableNumberOfMembers } और संगठन यूज़र मौजूद है।"
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "आपके प्लान में ${ availableVPNAccess } और वीपीएन खाता है।",
+        "आपके प्लान में ${ availableVPNAccess } और वीपीएन खाते है।"
+      ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "आपके प्लान में ${ humanReadableAvailableSpace } और स्टोरेज जगह है।"
       ]
@@ -4143,17 +4315,16 @@
         "कोई कारण चुनें"
       ]
     },
-    "Placeholder for custom invoice text": {
-      "Add your name (or company name) and address to your invoices": [
-        "अपने चालान में अपना नाम (या कंपनी का नाम) और पता जोड़ें"
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "संपर्क करें"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "अपने प्लान में कितने यूज़र डालने है चुनें। हर यूज़र को जोड़ने का ${ price } लगेगा।"
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "अगर आपको ${ maxUsers } से ज़्यादा यूज़र खाता चाहिए, कृपया हमारी सेल्स टीम को ${ contact } करे।",
+        "अगर आपको ${ maxUsers } से ज़्यादा यूज़र खाते चाहिए, कृपया हमारी सेल्स टीम को ${ contact } करे।"
       ]
     },
     "Price": {
@@ -4281,6 +4452,30 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "असीम पे जाएं"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } दिन",
+        "${ days } दिन"
+      ],
+      "${ hours } hour": [
+        "${ hours } घंटा",
+        "${ hours } घंटे"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } मिनट",
+        "${ minutes } मिनट"
+      ],
+      "${ seconds } second": [
+        "${ seconds } सेकंड",
+        "${ seconds } सेकंड"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } महीना मुफ्त",
+        "${ n } महीने मुफ्त"
       ]
     },
     "specialoffer: Deal details": {
@@ -4411,6 +4606,54 @@
       ]
     },
     "Subscription attribute": {
+      "${ maxVpn } high-speed VPN connection": [
+        "${ maxVpn } तेज़ वीपीएन कनेक्शन",
+        "${ maxVpn } तेज़ वीपीएन कनेक्शन"
+      ],
+      "${ n } calendar": [
+        "${ n } कैलेंडर",
+        "${ n } कैलेंडर"
+      ],
+      "${ n } calendar per user": [
+        "${ n } कैलेंडर हर यूजर पे",
+        "${ n } कैलेंडर हर यूजर पे"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } तेज़ वीपीएन कनेक्शन",
+        "${ n } तेज़ वीपीएन कनेक्शन"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } तेज़ रफ्तार के वीपीएन कनेक्शन हर यूज़र पे",
+        "${ n } तेज़ रफ्तार के वीपीएन कनेक्शन हर यूज़र पे"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN कनेक्शन",
+        "${ n } VPN कनेक्शन"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } वीपीएन कनेक्शन हर यूज़र पे",
+        "${ n } वीपीएन कनेक्शन हर यूज़र पे"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } पता",
+        "${ UsedAddresses } पते"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } का ${ MaxAddresses } ईमेल पता",
+        "${ UsedAddresses } का ${ MaxAddresses } ईमेल पता"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } कैलेंडर",
+        "${ UsedCalendars } कैलेंडर"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ MaxDomains } का ${ UsedDomains } कस्टम डोमेन",
+        "${ MaxDomains } का ${ UsedDomains } कस्टम डोमेन"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ MaxMembers } में से ${ UsedMembers } यूज़र",
+        "${ MaxMembers } में से ${ UsedMembers } यूज़र"
+      ],
       "1 email address": [
         "1 ईमेल पता"
       ],
@@ -4422,6 +4665,10 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "पहले से डाला एड-ब्लॉकर (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "बढ़िया रफ्तार का वीपीएन ${ maxVpn } डिवाइस पे",
+        "बढ़िया रफ्तार का वीपीएन ${ maxVpn } डिवाइस पे"
       ]
     },
     "Subscription change warning": {
@@ -4715,9 +4962,6 @@
       "Add credits": [
         "क्रेडिट जोड़ें"
       ],
-      "Add invoice details": [
-        "चालान विवरण जोड़ें"
-      ],
       "Add PayPal payment method": [
         "पेपैल भुगतान विधि जोड़ें"
       ],
@@ -4777,6 +5021,10 @@
       ],
       "Couldn’t create accounts": [
         "खाते नहीं बना सके"
+      ],
+      "Create ${ selectedUserIds.length } user": [
+        "${ selectedUserIds.length } यूज़र खाता बनाए",
+        "${ selectedUserIds.length } यूज़र खाते बनाए"
       ],
       "Create multiple user accounts": [
         "कई यूज़र खाते बनाएं"
@@ -4849,6 +5097,10 @@
       ],
       "Error": [
         "गड़बड़"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "${ failedUsers.length } यूज़र खाता बनाने में असफल",
+        "${ failedUsers.length } यूज़र खाते बनाने में असफल"
       ],
       "Find email or username": [
         "ईमेल या उपयोगकर्ता नाम खोजें"
@@ -5012,6 +5264,14 @@
       "Status": [
         "स्थिति"
       ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "सफलतापूर्वक ${ localSuccessfullyCreatedUsers.length } यूज़र खाता बनाया गया",
+        "सफलतापूर्वक ${ localSuccessfullyCreatedUsers.length } यूज़र खाते बनाए गए"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "सफलतापूर्वक ${ successfullyCreatedUsers.length } यूज़र खाता बनाया गया",
+        "सफलतापूर्वक ${ successfullyCreatedUsers.length } यूज़र खाते बनाए गए"
+      ],
       "Switch to one-password mode": [
         "एक-पासवर्ड मोड में स्विच करें"
       ],
@@ -5121,9 +5381,33 @@
         "प्राथमिक व्यवस्थापक"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "पासवर्ड में कम से कम ${ length } वर्ण होना चाहिए",
+        "पासवर्ड में कम से कम ${ length } वर्ण होने चाहिए"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)",
+        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)"
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "नेटफ्लिक्स, अमेज़ॅन प्राइम वीडियो, बीबीसी आईप्लेयर, ईएसपीएन +, डिज़नी +, एचबीओ नाउ, और बहुत कुछ।"
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } सर्वर",
+        "${ n }+ सर्वर"
+      ],
+      "${ n } VPN connection": [
+        "${ n } वीपीएन कनेक्शन",
+        "${ n } वीपीएन कनेक्शन"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } ${ numberOfCountries } देश में",
+        "${ numberOfServers } ${ numberOfCountries } देशों में"
       ]
     },
     "Warning": {
