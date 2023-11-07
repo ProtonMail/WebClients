@@ -76,8 +76,8 @@ it('should render', () => {
 
 it('should display the credit card form by default', async () => {
     const { findByTestId } = render(<ContextCreditsModal open={true} />);
-    const ccname = await findByTestId('ccname');
-    expect(ccname).toBeTruthy();
+    const ccnumber = await findByTestId('ccnumber');
+    expect(ccnumber).toBeTruthy();
 });
 
 it('should display the payment method selector', async () => {
@@ -114,14 +114,14 @@ it('should select the payment method when user clicks it', async () => {
     expect(queryByTestId('payment-method-selector')).toHaveTextContent('PayPal');
 
     // check that the credit card form is not displayed
-    expect(queryByTestId('ccname')).toBeFalsy();
+    expect(queryByTestId('ccnumber')).toBeFalsy();
 
     expect(queryByTestId('paypal-view')).toBeTruthy();
     expect(queryByTestId('paypal-button')).toBeTruthy();
 
     // switching back to credit card
     selectMethod(container, 'New credit/debit card');
-    expect(queryByTestId('ccname')).toBeTruthy();
+    expect(queryByTestId('ccnumber')).toBeTruthy();
     expect(queryByTestId('paypal-button')).toBeFalsy();
     expect(queryByTestId('top-up-button')).toBeTruthy();
 });
@@ -129,7 +129,7 @@ it('should select the payment method when user clicks it', async () => {
 it('should display the credit card form initially', async () => {
     const { queryByTestId } = render(<ContextCreditsModal open={true} />);
     await waitFor(() => {
-        expect(queryByTestId('ccname')).toBeTruthy();
+        expect(queryByTestId('ccnumber')).toBeTruthy();
     });
 });
 
@@ -137,12 +137,10 @@ it('should remember credit card details when switching back and forth', async ()
     const { container, queryByTestId } = render(<ContextCreditsModal open={true} />);
     await waitFor(() => {});
 
-    const ccname = queryByTestId('ccname') as HTMLInputElement;
     const ccnumber = queryByTestId('ccnumber') as HTMLInputElement;
     const exp = queryByTestId('exp') as HTMLInputElement;
     const cvc = queryByTestId('cvc') as HTMLInputElement;
 
-    await userEvent.type(ccname, 'Arthur Morgan');
     await userEvent.type(ccnumber, '4242424242424242');
     await userEvent.type(exp, '1232');
     await userEvent.type(cvc, '123');
@@ -154,7 +152,6 @@ it('should remember credit card details when switching back and forth', async ()
     // switching back to credit card
     selectMethod(container, 'New credit/debit card');
 
-    expect((queryByTestId('ccname') as HTMLInputElement).value).toBe('Arthur Morgan');
     expect((queryByTestId('ccnumber') as HTMLInputElement).value).toBe('4242 4242 4242 4242');
     expect((queryByTestId('exp') as HTMLInputElement).value).toBe('12/32');
     expect((queryByTestId('cvc') as HTMLInputElement).value).toBe('123');
@@ -163,30 +160,47 @@ it('should remember credit card details when switching back and forth', async ()
 it('should display validation errors after user submits credit card', async () => {
     const { container, findByTestId, queryByTestId } = render(<ContextCreditsModal open={true} />);
     await waitFor(() => {});
-    const ccname = queryByTestId('ccname') as HTMLInputElement;
     const ccnumber = queryByTestId('ccnumber') as HTMLInputElement;
     const exp = queryByTestId('exp') as HTMLInputElement;
     const cvc = queryByTestId('cvc') as HTMLInputElement;
 
-    await userEvent.type(ccname, 'Arthur Morgan');
     await userEvent.type(ccnumber, '1234567812345678');
     await userEvent.type(exp, '1212');
     await userEvent.type(cvc, '123');
 
     const cardError = 'Invalid card number';
-    const expError = 'Invalid expiration date';
     const zipError = 'Invalid postal code';
 
     expect(container).not.toHaveTextContent(cardError);
-    expect(container).not.toHaveTextContent(expError);
     expect(container).not.toHaveTextContent(zipError);
 
     const topUpButton = await findByTestId('top-up-button');
     fireEvent.click(topUpButton);
 
     expect(container).toHaveTextContent(cardError);
-    expect(container).toHaveTextContent(expError);
     expect(container).toHaveTextContent(zipError);
+});
+
+it('should display invalid expiration date error', async () => {
+    const { container, findByTestId, queryByTestId } = render(<ContextCreditsModal open={true} />);
+    await waitFor(() => {});
+
+    const ccnumber = queryByTestId('ccnumber') as HTMLInputElement;
+    const exp = queryByTestId('exp') as HTMLInputElement;
+    const cvc = queryByTestId('cvc') as HTMLInputElement;
+
+    await userEvent.type(ccnumber, '4242424242424242');
+    await userEvent.type(exp, '1212');
+    await userEvent.type(cvc, '123');
+
+    const expError = 'Invalid expiration date';
+
+    expect(container).not.toHaveTextContent(expError);
+
+    const topUpButton = await findByTestId('top-up-button');
+    fireEvent.click(topUpButton);
+
+    expect(container).toHaveTextContent(expError);
 });
 
 it('should create payment token and then buy credits with it', async () => {
@@ -194,13 +208,11 @@ it('should create payment token and then buy credits with it', async () => {
     const { findByTestId, queryByTestId } = render(<ContextCreditsModal open={true} onClose={onClose} />);
     await waitFor(() => {});
 
-    const ccname = queryByTestId('ccname') as HTMLInputElement;
     const ccnumber = queryByTestId('ccnumber') as HTMLInputElement;
     const exp = queryByTestId('exp') as HTMLInputElement;
     const cvc = queryByTestId('cvc') as HTMLInputElement;
     const postalCode = queryByTestId('postalCode') as HTMLInputElement;
 
-    await userEvent.type(ccname, 'Arthur Morgan');
     await userEvent.type(ccnumber, '4242424242424242');
     await userEvent.type(exp, '1232');
     await userEvent.type(cvc, '123');
@@ -248,13 +260,11 @@ it('should create payment token and then buy credits with it - custom amount', a
     const otherAmountInput = queryByTestId('other-amount') as HTMLInputElement;
     await userEvent.type(otherAmountInput, '123');
 
-    const ccname = queryByTestId('ccname') as HTMLInputElement;
     const ccnumber = queryByTestId('ccnumber') as HTMLInputElement;
     const exp = queryByTestId('exp') as HTMLInputElement;
     const cvc = queryByTestId('cvc') as HTMLInputElement;
     const postalCode = queryByTestId('postalCode') as HTMLInputElement;
 
-    await userEvent.type(ccname, 'Arthur Morgan');
     await userEvent.type(ccnumber, '4242424242424242');
     await userEvent.type(exp, '1232');
     await userEvent.type(cvc, '123');

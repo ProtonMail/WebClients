@@ -1,7 +1,8 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { PAYMENT_TOKEN_STATUS } from '@proton/components/payments/core';
+import { PAYMENT_TOKEN_STATUS, PaymentMethodStatus } from '@proton/components/payments/core';
+import { queryPaymentMethodStatus } from '@proton/shared/lib/api/payments';
 import { CYCLE, PLANS, PLAN_TYPES } from '@proton/shared/lib/constants';
 import { addApiMock, applyHOCs, withApi, withAuthentication, withConfig, withDeprecatedModals } from '@proton/testing';
 import noop from '@proton/utils/noop';
@@ -30,6 +31,21 @@ jest.mock('@proton/components/containers/paymentMethods/useMethods', () => ({
         },
     })),
 }));
+
+let paymentMethodStatus: PaymentMethodStatus;
+beforeEach(() => {
+    jest.clearAllMocks();
+
+    paymentMethodStatus = {
+        Card: true,
+        Paypal: true,
+        Apple: true,
+        Cash: true,
+        Bitcoin: true,
+    };
+
+    addApiMock(queryPaymentMethodStatus().url, () => paymentMethodStatus);
+});
 
 const PaymentStepContext = applyHOCs(
     withApi(),
@@ -112,6 +128,8 @@ beforeEach(() => {
     };
 });
 
+jest.mock('@proton/components/hooks/useElementRect');
+
 it('should render', () => {
     const { container } = render(<PaymentStepContext {...props} />);
     expect(container).not.toBeEmptyDOMElement();
@@ -131,13 +149,11 @@ it('should call onPay with the new token', async () => {
     expect(payButton).toBeDefined();
     expect(payButton).toHaveTextContent('Pay');
 
-    const ccName = await findByTestId('ccname');
     const ccNumber = await findByTestId('ccnumber');
     const cvc = await findByTestId('cvc');
     const exp = await findByTestId('exp');
     const postalCode = await findByTestId('postalCode');
 
-    await userEvent.type(ccName, 'Arthur Morgan');
     await userEvent.type(ccNumber, '4242424242424242');
     await userEvent.type(cvc, '123');
     await userEvent.type(exp, '1230'); // stands for 12/30, i.e. December 2030
