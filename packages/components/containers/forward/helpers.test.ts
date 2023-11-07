@@ -30,7 +30,11 @@ describe('isLastOutgoingNonE2EEForwarding', () => {
                 ForwarderAddressID: 'ForwarderAddressID',
                 Type: ForwardingType.ExternalUnencrypted,
             } as OutgoingAddressForwarding;
-            const forwarding = [forward];
+            const internalForwarding = {
+                ForwarderAddressID: 'ForwarderAddressID',
+                Type: ForwardingType.ExternalEncrypted,
+            } as OutgoingAddressForwarding;
+            const forwarding = [forward, internalForwarding];
             const result = isLastOutgoingNonE2EEForwarding(forward, forwarding);
             expect(result).toBeTruthy();
         });
