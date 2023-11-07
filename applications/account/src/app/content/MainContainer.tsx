@@ -111,7 +111,6 @@ const MainContainer = () => {
     const { featuresFlags, getFeature } = useFeatures([
         FeatureCode.ReferralProgram,
         FeatureCode.SmtpToken,
-        FeatureCode.MailForwarding,
         FeatureCode.MailDisableE2EE,
         FeatureCode.CalendarSharingEnabled,
         FeatureCode.HolidaysCalendars,
