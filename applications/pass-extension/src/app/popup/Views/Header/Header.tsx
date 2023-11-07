@@ -1,5 +1,6 @@
 import { type VFC } from 'react';
 
+import { vaultDeletionEffect } from 'proton-pass-extension/lib/components/Context/Items/ItemEffects';
 import { useItemsFilteringContext } from 'proton-pass-extension/lib/hooks/useItemsFilteringContext';
 import { usePopupContext } from 'proton-pass-extension/lib/hooks/usePopupContext';
 import { useSpotlightEffect } from 'proton-pass-extension/lib/hooks/useSpotlightEffect';
@@ -16,21 +17,22 @@ import { Searchbar } from './Searchbar';
 
 export const Header: VFC = () => {
     const { ready, context } = usePopupContext();
-    const { search, setSearch } = useItemsFilteringContext();
+    const filtering = useItemsFilteringContext();
+
+    const onVaultDeleted = (shareId: string) => vaultDeletionEffect(shareId, filtering);
+    const onVaultCreated = filtering.setShareId;
+
     const spotlight = useSpotlightContext();
-
     const hideSpotlight = !spotlight.state.open || spotlight.state.pendingShareAccess || spotlight.state.upselling;
-
     useSpotlightEffect();
 
     return (
-        <>
+        <VaultActionsProvider onVaultCreated={onVaultCreated} onVaultDeleted={onVaultDeleted}>
             <HeaderComponent className="border-bottom h-auto p-2">
                 <div className="flex flex-align-items-center gap-x-2 w-full">
-                    <VaultActionsProvider>
-                        <MenuDropdown />
-                    </VaultActionsProvider>
-                    <Searchbar disabled={!ready} value={search} handleValue={setSearch} />
+                    <MenuDropdown />
+
+                    <Searchbar disabled={!ready} value={filtering.search} handleValue={filtering.setSearch} />
                     <QuickActionsDropdown parsedUrl={context?.url} />
 
                     <div className="flex-item-fluid-auto w-full">
@@ -40,6 +42,6 @@ export const Header: VFC = () => {
                     </div>
                 </div>
             </HeaderComponent>
-        </>
+        </VaultActionsProvider>
     );
 };

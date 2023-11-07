@@ -32,7 +32,7 @@ export type Props = Omit<ModalProps, 'onSubmit'> & {
 /* if the user has downgraded : only allow him to select
  * his writable vaults as target. This rule applies when moving
  * an item to a vault or when selecting an item's vault */
-export const VaultSelectModal: VFC<Props> = ({
+export const VaultSelect: VFC<Props> = ({
     downgradeMessage,
     description,
     shareId,
