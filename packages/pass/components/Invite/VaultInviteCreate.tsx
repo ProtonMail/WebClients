@@ -1,4 +1,4 @@
-import { type FC, useEffect, useRef, useState } from 'react';
+import { type FC } from 'react';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -35,8 +35,6 @@ export type VaultInviteCreateValues<T extends boolean = boolean> = Omit<
 
 export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
     const { close, manageAccess } = useInviteContext();
-    const [didMount, setDidMount] = useState(false);
-    const timer = useRef<NodeJS.Timeout>();
 
     const createInvite = useActionRequest({
         action: inviteCreationIntent,
@@ -78,11 +76,6 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
         },
     });
 
-    const onClose = () => {
-        setDidMount(false);
-        close();
-    };
-
     const submitText = (() => {
         switch (form.values.step) {
             case 'email':
@@ -96,15 +89,9 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
         }
     })();
 
-    useEffect(() => () => clearTimeout(timer.current), []);
-
     return (
-        <>
-            <SidebarModal
-                onClose={onClose}
-                open
-                onEnter={() => (timer.current = setTimeout(() => setDidMount(true), 125))}
-            >
+        <SidebarModal onClose={close} open>
+            {(didEnter) => (
                 <Panel
                     loading={createInvite.loading}
                     header={
@@ -174,11 +161,11 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
 
                     <FormikProvider value={form}>
                         <Form id={FORM_ID}>
-                            <VaultInviteForm form={form} autoFocus={didMount} />
+                            <VaultInviteForm form={form} autoFocus={didEnter} key={`vault-invite-form-${didEnter}`} />
                         </Form>
                     </FormikProvider>
                 </Panel>
-            </SidebarModal>
-        </>
+            )}
+        </SidebarModal>
     );
 };
