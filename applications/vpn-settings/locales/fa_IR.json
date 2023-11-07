@@ -89,9 +89,6 @@
       "Current plan": [
         "طرح فعلی"
       ],
-      "Customize": [
-        "شخصی‌سازی"
-      ],
       "Customize plan": [
         "طرح خود را شخصی سازی کنید"
       ],
@@ -538,6 +535,16 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "ادامه با استفاده از ${ MAIL_APP_NAME }."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } کاربر",
+        "${ users } کاربر"
+      ],
+      "Total for ${ n } month": [
+        "جمعا برای ${ n } ماه",
+        "جمعا برای ${ n } ماه"
       ]
     },
     "Collapsible tooltip": {
@@ -1644,8 +1651,16 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } اتصال VPN",
+        "${ MaxVPN } اتصال VPN"
+      ],
       "Access to all countries": [
         "دسترسی به همه کشورها"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "اتصال حداکثر تا ${ plusVpnConnections } دستگاه",
+        "اتصال حداکثر تا ${ plusVpnConnections } دستگاه"
       ],
       "Fastest VPN servers": [
         "سریع‌ترین سرورهای وی‌پی‌ان"
@@ -1684,6 +1699,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "بایت",
+        "بایت"
+      ],
       "GB": [
         "گیگابایت"
       ],
@@ -1691,6 +1710,24 @@
         "کیلوبایت"
       ],
       "MB": [
+        "مگابایت"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "بایت",
+        "بایت"
+      ],
+      "Gigabyte": [
+        "گیگابایت",
+        "گیگابایت"
+      ],
+      "Kilobyte": [
+        "کیلوبایت",
+        "کیلوبایت"
+      ],
+      "Megabyte": [
+        "مگابایت",
         "مگابایت"
       ]
     },
@@ -1770,8 +1807,20 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "همچنین میتوان از ${ MAIL_APP_NAME } با یک رمزعبور واحد که جایگزین رمزهای عبور حساب و صندوق نامه میشود استفاده کرد. برای تغییر به حالت رمزعبور واحد، رمزعبور واحدی که مایلید از آن استفاده کنید را وارد کرده و روی دکمه ذخیره کلیک کنید."
       ],
+      "${ number } city": [
+        "${ number } شهر",
+        "${ number } شهر"
+      ],
+      "${ number } server": [
+        "${ number } سرور",
+        "${ number } سرور"
+      ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } فضای ذخیره‌سازی هدیه"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد تا دستگاه‌های بیشتری را به VPN متصل کنید)",
+        "+${ organization.BonusVPN } اتصال برای ${ VPN_APP_NAME } (به شما اجازه می‌دهد دستگاه‌های بیشتری را به VPN متصل کنید)"
       ],
       "30-day money-back guarantee.": [
         "ضمانت ۳۰ روزهٔ بازگشت پول."
@@ -2151,6 +2200,14 @@
       "support team": [
         "تیم پشتیبانی"
       ],
+      "The following address is invalid.": [
+        "نشانی زیر نامعتبر است.",
+        "نشانی‌های زیر نامعتبر هستند."
+      ],
+      "The following address is unavailable.": [
+        "نشانی زیر در دسترس نیست.",
+        "نشانی‌های زیر در دسترس نیستند."
+      ],
       "The securest way to browse, stream, and be online.": [
         "امن ترین راه برای وبگردی، استریم و آنلاین بودن."
       ],
@@ -2307,9 +2364,6 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "شما در حال حاضر به عنوان ${ user.Name } (${ user.Email }) وارد شده‌اید."
       ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "شما می‌توانید صورت‌حساب‌های خود را برای اهداف حسابداری شخصی‌سازی و بارگیری کنید."
-      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "شما فقط میتوانید یک گفت و گو باز داشته باشید. لطفا قبل شروع گفت و گو جدید، قبلی را ببندید."
       ],
@@ -2373,11 +2427,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "شما می‌توانید یک روش پرداخت اضافه کنید تا اشتراک‌تان به طور خودکار تمدید شود. سایر روش‌های پرداخت نیز موجود است."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Add your name (or company name) and address to your invoices.": [
-        "نام (یا نام شرکت) و نشانی خود را به صورت‌حساب‌ها اضافه کنید."
       ]
     },
     "Info when deleting payment method": {
@@ -2448,6 +2497,14 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } آدرس"
+      ],
+      "${ n } month": [
+        "${ n } ماه",
+        "${ n } ماه"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } از ${ MaxAddresses } آدرس ایمیل",
+        "${ UsedAddresses } از ${ MaxAddresses } آدرس ایمیل"
       ],
       "Account storage": [
         "فضای ذخیره‌‌سازی حساب کاربری"
@@ -2553,9 +2610,6 @@
       ],
       "Current display name": [
         "نام نمایشی فعلی"
-      ],
-      "Customize invoices": [
-        "شخصی‌سازی صورتحساب‌ها"
       ],
       "Default language": [
         "زبان پیش‌فرض"
@@ -2963,6 +3017,46 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } custom email domain": [
+        "${ n } دامنه ایمیل سفارشی",
+        "${ n } دامنه ایمیل سفارشی"
+      ],
+      "${ n } email address": [
+        "${ n } آدرس ایمیل",
+        "${ n } آدرس ایمیل/نام مستعار"
+      ],
+      "${ n } email address per user": [
+        "${ n } آدرس ایمیل برای هر کاربر",
+        "${ n } آدرس ایمیل برای هر کاربر"
+      ],
+      "${ n } filter": [
+        "${ n } فیلتر",
+        "${ n } فیلتر"
+      ],
+      "${ n } folder": [
+        "${ n } پوشه",
+        "${ n } پوشه"
+      ],
+      "${ n } folder and label": [
+        "${ n } پوشه و برچسب",
+        "${ n } پوشه و برچسب"
+      ],
+      "${ n } label": [
+        "${ n } برچسب",
+        "${ n } برچسب"
+      ],
+      "${ n } message per day": [
+        "${ n } پیام در روز",
+        "${ n } پیام در روز"
+      ],
+      "${ n } VPN connection": [
+        "${ n } اتصال VPN",
+        "${ n } اتصال VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } اتصال VPN برای هر کاربر",
+        "${ n } اتصال VPN برای هر کاربر"
+      ],
       "${ size } attachment size": [
         "${ size } سایز پیوست"
       ],
@@ -3028,6 +3122,10 @@
       ],
       "GDPR data processing agreement": [
         "توافقنامه پردازش داده های GDPR"
+      ],
+      "High-speed VPN on ${ n } device": [
+        "VPN پرسرعت بر روی ${ n } دستگاه",
+        "VPN پرسرعت بر روی ${ n } دستگاه"
       ],
       "HTML signatures": [
         "امضاهای HTML"
@@ -3185,6 +3283,12 @@
     "new_plans: Plan frequency": {
       "/month": [
         "/ماهانه"
+      ]
+    },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "شما هنوز ${ daysRemaining } روز از حساب ${ currentPlanName } خود دارید.",
+        "شما هنوز ${ daysRemaining } روز از حساب ${ currentPlanName } خود دارید."
       ]
     },
     "new_plans: signup": {
@@ -3456,17 +3560,16 @@
         "دلیلی انتخاب کنید"
       ]
     },
-    "Placeholder for custom invoice text": {
-      "Add your name (or company name) and address to your invoices": [
-        "نام (یا نام شرکت) و نشانی خود را به صورت‌حساب‌ها اضافه کنید"
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "ﺗﻤﺎﺱ"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "تعدادکاربرانی که میخواهید در طرح خود مشمول کنید را انتخاب کنید. هزینه هر کابر اضافی ${ price } است."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "اگر به بیش از ${ maxUsers } حساب کاربری نیاز داشتید، با تیم فروش ما ${ contact } بگیرید.",
+        "اگر به بیش از ${ maxUsers } حساب کاربری نیاز داشتید، با تیم فروش ما ${ contact } بگیرید."
       ]
     },
     "Price": {
@@ -3583,6 +3686,50 @@
       ]
     },
     "Subscription attribute": {
+      "${ maxVpn } high-speed VPN connection": [
+        "${ maxVpn } اتصال VPN پرسرعت",
+        "${ maxVpn } اتصال VPN پرسرعت"
+      ],
+      "${ n } calendar": [
+        "${ n } تقویم",
+        "${ n } تقویم"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } اتصال VPN پرسرعت",
+        "${ n } اتصال VPN پرسرعت"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } اتصال VPN پرسرعت برای هر کاربر",
+        "${ n } اتصال VPN پرسرعت برای هر کاربر"
+      ],
+      "${ n } VPN connection": [
+        "${ n } اتصال VPN",
+        "${ n } اتصال VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } اتصال VPN برای هر کاربر",
+        "${ n } اتصال VPN برای هر کاربر"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } آدرس",
+        "${ UsedAddresses } آدرس"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } از ${ MaxAddresses } آدرس ایمیل",
+        "${ UsedAddresses } از ${ MaxAddresses } آدرس ایمیل"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } تقویم",
+        "${ UsedCalendars } تقویم"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } از ${ MaxDomains } دامنه سفارشی",
+        "${ UsedDomains } از ${ MaxDomains } دامنه سفارشی"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } از ${ MaxMembers } کاربر",
+        "${ UsedMembers } از ${ MaxMembers } کاربر"
+      ],
       "1 email address": [
         "۱ آدرس ایمیل"
       ],
@@ -3594,6 +3741,10 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "مسدودکنندهٔ آگهی تعبیه شده (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "VPN پرسرعت بر روی ${ maxVpn } دستگاه",
+        "VPN پرسرعت بر روی ${ maxVpn } دستگاه"
       ]
     },
     "Subscription price": {
@@ -3817,9 +3968,6 @@
       ],
       "Add credits": [
         "افزودن اعتبار"
-      ],
-      "Add invoice details": [
-        "افزودن جزئیات صورت‌حساب"
       ],
       "Add PayPal payment method": [
         "افزودن روش پرداخت با PayPal"
@@ -4088,6 +4236,14 @@
       "Status": [
         "وضعیت"
       ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "${ localSuccessfullyCreatedUsers.length } حساب کابری با موفقیت ایجاد شد",
+        "${ localSuccessfullyCreatedUsers.length } حساب کابری با موفقیت ایجاد شدند"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "با موفقیت ${ successfullyCreatedUsers.length } حساب کاربری ایجاد شد",
+        "با موفقیت ${ successfullyCreatedUsers.length } حساب کاربری ایجاد شد"
+      ],
       "Switch to one-password mode": [
         "گذر به حالت تک‌گذرواژه"
       ],
@@ -4176,9 +4332,33 @@
         "مدیر اصلی"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "گذرواژه باید حداقل ${ length } نویسه داشته باشد",
+        "گذرواژه باید حداقل ${ length } نویسه داشته باشد"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)",
+        "یک نام کاربری کوتاه تر انتخاب کنید (حداکثر ${ n } کارکتر)"
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "نت فلیکس، آمازون پرایم ویدئو، BBC iPlayer, ESPN+، Disney+، HBO Now و بیشتر."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } سرور",
+        "${ n }+ سرور"
+      ],
+      "${ n } VPN connection": [
+        "${ n } اتصال VPN",
+        "${ n } اتصال VPN"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } در ${ numberOfCountries } کشور",
+        "${ numberOfServers } در ${ numberOfCountries } کشور"
       ]
     },
     "Warning": {
