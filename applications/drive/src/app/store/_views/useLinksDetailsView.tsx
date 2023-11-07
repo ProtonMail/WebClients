@@ -15,7 +15,7 @@ export default function useLinksDetailsView(selectedLinks: DecryptedLink[]) {
     const linksState = useLinksState();
 
     const [links, setLinks] = useState<DecryptedLink[]>([]);
-    const [error, setError] = useState<any>();
+    const [hasError, setHasError] = useState<any>();
     const [isLoading, withLoading] = useLoading();
 
     useEffect(() => {
@@ -31,41 +31,43 @@ export default function useLinksDetailsView(selectedLinks: DecryptedLink[]) {
             linksByShareId[rootShareId].push(linkId);
         });
 
-        void withLoading(
-            Promise.all(
-                Object.keys(linksByShareId).map((shareId) => {
+        void withLoading(async () => {
+            try {
+                const loadedLinks: DecryptedLink[] = [];
+
+                for (const shareId of Object.keys(linksByShareId)) {
                     const linkIds = linksByShareId[shareId];
 
-                    return loadLinksMeta(ac.signal, 'details', shareId, linkIds, { cache: true }).then(async () => {
-                        const decrypted = linkIds
-                            .map((linkId) => linksState.getLink(shareId, linkId)?.decrypted)
-                            .filter((link): link is DecryptedLink => !!link && !link.corruptedLink);
+                    await loadLinksMeta(ac.signal, 'details', shareId, linkIds, { cache: true }).then(() => {
+                        for (const linkId of linkIds) {
+                            const link = linksState.getLink(shareId, linkId)?.decrypted;
 
-                        if (decrypted.length !== linkIds.length) {
-                            // This error is never shown in the UI, so no need to translate it
-                            throw new Error('Could not decrypt all links in details modal');
+                            if (!link || link.corruptedLink) {
+                                throw new Error('Could not decrypt link in details modal', {
+                                    cause: { shareId, linkId },
+                                });
+                            }
+
+                            loadedLinks.push(link);
                         }
-
-                        setLinks(decrypted);
                     });
-                })
-            ).catch((err) => {
-                setError(err);
-                sendErrorReport(err);
-            })
-        );
+                }
+
+                setLinks(loadedLinks);
+            } catch (e) {
+                setHasError(true);
+                sendErrorReport(e);
+            }
+        });
 
         return () => {
             ac.abort();
         };
     }, []);
 
-    const hasFile = links.some(({ isFile }) => isFile);
-
     return {
         isLoading,
-        error,
-        hasFile,
+        hasError,
         count: links.length,
         size: links.reduce((sum, current) => sum + current.size, 0),
     };
