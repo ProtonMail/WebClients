@@ -34,7 +34,6 @@
 -   added `tv`, `broken-link`, `keyboard`, `netshield`, `nologs`, `world`, `sort`, `parent-folder-filled`, `folder-filled`, `exclamation-circle-filled`, `stop` icons
 -   added `pm-field-icon-container-empty` class (to avoid layout shift for Drive)
 -   added `bg-global-muted-dm-on-hover` class
--   added `on-mobile-center` helper
 -   added `on-hover-opacity-100` and `opacity-65` helpers
 -   added negative margin helpers: `mt-0-5` and `mb-0-5`
 -   added `on-tinymobile-p(l/r/b/t)0`, `on-tinymobile-w100` `on-tinymobile-text-left` helpers
