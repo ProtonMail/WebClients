@@ -8,6 +8,9 @@
       "Add": [
         "Lisää"
       ],
+      "Add current URL": [
+        "Lisää nykyinen URL"
+      ],
       "Add domain to pause list": [
         "Lisää verkkotunnus keskeytyslistalle"
       ],
@@ -366,6 +369,21 @@
         "Eikö salasanahallintasi ole täällä? Pyydä sitä."
       ]
     },
+    "bf2023: Info": {
+      "Save Smart. Get a year of Pass Plus for only ${ relativePrice } per month.": [
+        "Säästä fiksusti. Saat vuoden Pass Plus -tilauksen vain ${ relativePrice } kuukausihintaan."
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "Hanki tarjous"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Black Friday -tarjous"
+      ]
+    },
     "Button": {
       "More info": [
         "Lisätietoja"
@@ -439,10 +457,6 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Holvin \"${ payload.content.name }\" poisto epäonnistui"
       ],
-      "Detected ${ errors.length } corrupted csv row": [
-        "Havaittiin ${ errors.length } virheellinen CSV-rivi",
-        "Havaittiin ${ errors.length } virheellinen CSV-rivi"
-      ],
       "Editing item failed": [
         "Kohteen muokkaus epäonnistui"
       ],
@@ -484,6 +498,9 @@
       ],
       "Invalid password manager": [
         "Virheellinen salasanahallinta"
+      ],
+      "Invalid URL": [
+        "Virheellinen URL"
       ],
       "Invitation could not be accepted": [
         "Kutsua ei voitu hyväksyä"
@@ -542,6 +559,9 @@
       "The file you are trying to import is empty": [
         "Tiedosto, jota yrität tuoda, on tyhjä"
       ],
+      "The URL is in the list": [
+        "URL on jo listalla"
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Liian monta epäonnistunutta yritystä. Kirjaudu sisään uudelleen."
       ],
@@ -594,10 +614,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "tavu",
-        "tavua"
-      ],
       "GB": [
         "Gt"
       ],
@@ -611,28 +627,6 @@
         "Tt"
       ]
     },
-    "file size format, long": {
-      "Byte": [
-        "Tavu",
-        "Tavua"
-      ],
-      "Gigabyte": [
-        "Gigatavu",
-        "Gigatavua"
-      ],
-      "Kilobyte": [
-        "Kilotavu",
-        "Kilotavua"
-      ],
-      "Megabyte": [
-        "Megatavu",
-        "Megatavua"
-      ],
-      "Terabyte": [
-        "Teratavu",
-        "Teratavua"
-      ]
-    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " Luo useita holveja päivittämällä maksulliseen tilaukseen."
@@ -643,42 +637,32 @@
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Kohteen \"${ payload.item.data.metadata.name }\" päivitys hylättiin"
       ],
-      "${ count } item": [
-        "${ count } kohde",
-        "${ count } kohdetta"
-      ],
-      "${ itemCount } item": [
-        "${ itemCount } kohde",
-        "${ itemCount } kohdetta"
-      ],
-      "${ memberCount } member": [
-        "${ memberCount } jäsen",
-        "${ memberCount } jäsentä"
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
+        "${ PASS_APP_NAME } näyttää kohteiden sivustokuvakkeet ${ BRAND_NAME }in anonymisoidun kuvavälityspalvelimen välityksellä."
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } tuo vain kirjautumistiedot, muistiinpanot ja luottokortit."
       ],
-      "${ revisionNumber } time": [
-        "${ revisionNumber } kerran",
-        "${ revisionNumber } kertaa"
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME } tarjoaa kirjautumistietojen tallennusta tai päivitystä."
       ],
-      "${ totalImportedItems } item": [
-        "${ totalImportedItems } kohde",
-        "${ totalImportedItems } kohdetta"
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME } tarjoaa sähköpostialiaksen luotia rekisteröitymislomakkeissa."
       ],
-      "${ totalItems } item": [
-        "${ totalItems } kohde",
-        "${ totalItems } kohdetta"
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } tarjoaa vahvan salasanan luontia rekisteröitymislomakkeissa."
       ],
-      "${ trialDaysLeft } day left": [
-        "${ trialDaysLeft } päivä jäljellä",
-        "${ trialDaysLeft } päivää jäljellä"
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 päivää aikaa kokeilla premium-ominaisuuksia ilmaiseksi. Voimassa vain ensimmäisen ${ BRAND_NAME } -viikkosi ajan."
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "${ PASS_APP_NAME } -sovelluksesta on saatavilla uusi versio. Nauti uusista ominaisuuksista ja vikakorjauksista päivittämällä se."
       ],
       "Access successfully confirmed": [
         "Pääsyn vahvistus onnistui"
+      ],
+      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
+        "${ PASS_APP_NAME }in lukituksen avaus vaatii PIN-koodin"
       ],
       "Access your passwords on the go with our mobile apps.": [
         "Mobiilisovelluksillamme tavoitat salasanasi myös liikkeellä ollessasi."
@@ -737,6 +721,9 @@
       "Deleted items will be moved here first": [
         "Poistetut kohteet siirretään ensin tänne"
       ],
+      "Deleting \"${ payload.content.name }\"": [
+        "Poistetaan \"${ payload.content.name }\""
+      ],
       "Discover ${ PASS_APP_NAME } Youtube Video": [
         "Katso ${ PASS_APP_NAME } -YouTube-video"
       ],
@@ -788,10 +775,6 @@
       "Import in progress:": [
         "Tuonti on käynnissä:"
       ],
-      "Imported ${ payload.total } item": [
-        "${ payload.total } kohde tuotiin",
-        "${ payload.total } kohdetta tuotiin"
-      ],
       "Imported on ${ date }": [
         "Tuotu ${ date }"
       ],
@@ -818,10 +801,6 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Näyttää siltä, että olet jo kirjautunut ${ PASS_APP_NAME }iin. Jos yrität kirjautua eri tilillä, kirjaa laajennus ensin ulos."
-      ],
-      "item": [
-        "kohde",
-        "kohdetta"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Kohde \"${ payload.item.data.metadata.name }\" luotiin"
@@ -910,6 +889,9 @@
       "Please consider leaving a review.": [
         "Harkitse arvostelun kirjoittamista."
       ],
+      "Please enter your current PIN code to continue": [
+        "Jatka syöttämällä nykyinen PIN-koodisi"
+      ],
       "Press Enter to copy": [
         "Kopioi painamalla Enter-näppäintä"
       ],
@@ -964,9 +946,8 @@
       "Thank you, the problem has been reported": [
         "Kiitos, ongelmasta on ilmoitettu"
       ],
-      "The following item could not be imported :": [
-        "Seuraavaa kohdetta ei voitu tuoda:",
-        "Seuraavia ${ result.ignored.length } kohdetta ei voitu tuoda"
+      "The autofill dropdown will automatically open on field focus.": [
+        "Määrittää avataanko automaattitäytön ponnahdus automaattisesti lomakekentän aktivoituessa."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Teksti, jota yrität liittää, ylittää ${ maxLength }-merkin enimmäispituuden."
@@ -1034,12 +1015,11 @@
       "You are about to create:": [
         "Luot aliasta:"
       ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Mahdollistaa kirjautumistietojen nopean automaattitäytön painamalla ${ PASS_APP_NAME }in kuvaketta."
+      ],
       "You cannot change the mailboxes for this alias.": [
         "Et voi muuttaa aliakseen liitettyjä postilaatikoita."
-      ],
-      "You have ${ daysRemaining } day left to try these and other premium features.": [
-        "Sinulla on ${ daysRemaining } päivä jäljellä kokeilla näitä ja muita premium-ominaisuuksia.",
-        "Sinulla on ${ daysRemaining } päivää jäljellä kokeilla näitä ja muita premium-ominaisuuksia."
       ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Olet ylittänyt tilaukseesi sisältyvän holvien enimmäismäärän. Kohteita voidaan siirtää vain kahteen ensimmäiseen holviisi. Jos haluat siirtää kohteita kaikkiin holveihisi, päivitä tilauksesi."
@@ -1073,14 +1053,6 @@
       ]
     },
     "Label": {
-      "${ passwordOptions.options.length } character": [
-        "${ passwordOptions.options.length } merkki",
-        "${ passwordOptions.options.length } merkkiä"
-      ],
-      "${ passwordOptions.options.wordCount } word": [
-        "${ passwordOptions.options.wordCount } sana",
-        "${ passwordOptions.options.wordCount } sanaa"
-      ],
       "1 hour": [
         "Tunnin kuluttua"
       ],
@@ -1593,12 +1565,6 @@
         "Kirjoita muistiinpanosi"
       ]
     },
-    "Success": {
-      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
-        "Holvi voi sisältää enintään ${ vault.targetMaxMembers } jäsenen.",
-        "Holvi voi sisältää enintään ${ vault.targetMaxMembers } jäsentä."
-      ]
-    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } -asetukset"
@@ -1623,6 +1589,9 @@
       ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Nautitko ${ PASS_APP_NAME }ista?"
+      ],
+      "Enter your PIN": [
+        "Syötä PIN-koodi"
       ],
       "Fill & copy password": [
         "Täytä ja kopioi salasana"
@@ -1719,6 +1688,9 @@
       ]
     },
     "Validation": {
+      "Duplicated URL": [
+        "Kahdennettu URL"
+      ],
       "Field name is required": [
         "Kentän nimi vaaditaan"
       ],
@@ -1731,8 +1703,14 @@
       "Url already exists": [
         "URL-osoite on jo olemassa"
       ],
+      "URL cannot be empty": [
+        "URL ei voi olla tyhjä"
+      ],
       "Url is invalid": [
         "URL-osoite on virheellinen"
+      ],
+      "URL is invalid": [
+        "URL on virheellinen."
       ]
     },
     "Warning": {
