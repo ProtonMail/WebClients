@@ -152,7 +152,7 @@ export const AliasNew: VFC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmi
             /* if user has reached his alias limit: disable submit and prompt for upgrade */
             renderSubmitButton={needsUpgrade ? <UpgradeButton key="upgrade-button" /> : undefined}
         >
-            {({ didMount }) => (
+            {({ didEnter }) => (
                 <>
                     {needsUpgrade && (
                         <ItemCard className="mb-2">
@@ -179,8 +179,8 @@ export const AliasNew: VFC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmi
                                     label={c('Label').t`Title`}
                                     placeholder={c('Label').t`Untitled`}
                                     component={TitleField}
-                                    autoFocus={!draft && didMount && !needsUpgrade}
-                                    key={`alias-name-${didMount}`}
+                                    autoFocus={!draft && didEnter && !needsUpgrade}
+                                    key={`alias-name-${didEnter}`}
                                     maxLength={MAX_ITEM_NAME_LENGTH}
                                     disabled={!userVerified}
                                 />
