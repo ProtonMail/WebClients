@@ -476,6 +476,7 @@ const SingleSignupContainerV2 = ({
                         plansMap,
                         upsellPlanCard,
                         planParameters,
+                        signupParameters,
                         options: {
                             planIDs: planParameters.planIDs,
                             currency,
@@ -618,6 +619,7 @@ const SingleSignupContainerV2 = ({
                     coupon: signupParameters.coupon,
                 },
                 planParameters: model.planParameters!,
+                signupParameters,
                 plans: model.plans,
                 plansMap: model.plansMap,
                 upsellPlanCard,
@@ -657,6 +659,7 @@ const SingleSignupContainerV2 = ({
             plansMap: model.plansMap,
             upsellPlanCard,
             planParameters: model.planParameters!,
+            signupParameters,
             options: {
                 cycle: model.subscriptionData.cycle,
                 currency: model.subscriptionData.currency,
