@@ -1,4 +1,5 @@
-import { type VFC, useEffect } from 'react';
+import { type VFC } from 'react';
+import { useDispatch } from 'react-redux';
 
 import type { FormikErrors } from 'formik';
 import { Field, Form, FormikProvider, useFormik } from 'formik';
@@ -8,19 +9,20 @@ import type { ConfirmationModalProps } from '@proton/pass/components/Confirmatio
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
+import { vaultDeleteIntent } from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';
-import type { MaybeNull } from '@proton/pass/types';
 
 type ConfirmDeleteValues = { name: string };
 type Props = {
-    vault: MaybeNull<VaultShareItem>;
-    onSubmit: (vault: VaultShareItem) => void;
-} & Pick<ConfirmationModalProps, 'onClose' | 'open'>;
+    vault: VaultShareItem;
+    onSubmit: (shareId: string) => void;
+} & Pick<ConfirmationModalProps, 'onClose'>;
 
 const FORM_ID = 'vault-confirm-delete';
 const initialValues: ConfirmDeleteValues = { name: '' };
 
-export const VaultDeleteModal: VFC<Props> = ({ open, vault, onClose, onSubmit }) => {
+export const VaultDelete: VFC<Props> = ({ vault, onClose, onSubmit }) => {
+    const dispatch = useDispatch();
     const vaultName = vault?.content?.name ?? '';
 
     const validateVaultDelete = ({ name }: ConfirmDeleteValues) => {
@@ -36,25 +38,23 @@ export const VaultDeleteModal: VFC<Props> = ({ open, vault, onClose, onSubmit })
         validateOnMount: true,
         validate: validateVaultDelete,
         onSubmit: () => {
-            if (vault === null) return;
-            onSubmit(vault);
-            onClose?.();
+            const { content, shareId } = vault;
+            dispatch(vaultDeleteIntent({ content, shareId }));
+            onSubmit(shareId);
         },
     });
 
-    useEffect(() => {
-        if (!open) form.resetForm({ values: initialValues, errors: validateVaultDelete(initialValues) });
-    }, [open]);
-
     return (
         <ConfirmationModal
-            open={open}
+            open
             size="medium"
             onClose={onClose}
             onSubmit={form.submitForm}
             title={c('Title').t`Delete vault "${vaultName}" ?`}
             disabled={!form.isValid}
             submitText={c('Action').t`Delete`}
+            alertText={c('Warning')
+                .t`Vault "${vaultName}" and all its items will be permanently deleted. You cannot undo this action.`}
         >
             <FormikProvider value={form}>
                 <Form id={FORM_ID}>
@@ -67,11 +67,6 @@ export const VaultDeleteModal: VFC<Props> = ({ open, vault, onClose, onSubmit })
                             autoFocus
                         />
                     </FieldsetCluster>
-
-                    <span className="color-danger block mt-3 px-5">
-                        {c('Warning')
-                            .t`Vault "${vaultName}" and all its items will be permanently deleted. You cannot undo this action.`}
-                    </span>
                 </Form>
             </FormikProvider>
         </ConfirmationModal>

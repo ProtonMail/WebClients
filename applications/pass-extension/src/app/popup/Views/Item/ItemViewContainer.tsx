@@ -13,7 +13,7 @@ import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCa
 import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
 import { NoteView } from '@proton/pass/components/Item/Note/Note.view';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { VaultSelectModal, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect.modal';
+import { VaultSelect, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
@@ -134,7 +134,7 @@ export const ItemViewContainer: VFC = () => {
                 trashed={trashed}
             />
 
-            <VaultSelectModal
+            <VaultSelect
                 downgradeMessage={c('Info')
                     .t`You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.`}
                 onSubmit={doMoveItem}
