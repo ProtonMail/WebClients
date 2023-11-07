@@ -401,7 +401,7 @@ const PlanSelection = ({
                     ]}
                 />
             </div>
-            <div className="flex on-mobile-center mt-4 md:mt-0">{currencyItem}</div>
+            <div className="flex mx-auto md:mx-0 mt-4 md:mt-0">{currencyItem}</div>
         </div>
     );
 
