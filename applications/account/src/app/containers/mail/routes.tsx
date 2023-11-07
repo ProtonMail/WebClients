@@ -149,7 +149,7 @@ export const getMailAppRoutes = ({
             keys: {
                 text: c('Title').t`Encryption and keys`,
                 to: '/encryption-keys',
-                icon: 'lock-filled',
+                icon: 'lock',
                 subsections: [
                     {
                         text: c('Title').t`Address and key verification`,
