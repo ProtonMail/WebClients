@@ -391,6 +391,12 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Не вдалося видалити сховище \"${ payload.content.name }\""
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Виявлено ${ errors.length } пошкоджений csv рядок",
+        "Виявлено ${ errors.length } пошкоджених csv рядки",
+        "Виявлено ${ errors.length } пошкоджених csv рядків",
+        "Виявлено ${ errors.length } пошкоджених csv рядків"
+      ],
       "Editing item failed": [
         "Помилка редагування елемента"
       ],
@@ -533,6 +539,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "байт",
+        "байти",
+        "байтів",
+        "байтів"
+      ],
       "GB": [
         "ГБ"
       ],
@@ -541,6 +553,32 @@
       ],
       "MB": [
         "МБ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Байт",
+        "Байти",
+        "Байтів",
+        "Байтів"
+      ],
+      "Gigabyte": [
+        "Гігабайт",
+        "Гігабайти",
+        "Гігабайтів",
+        "Гігабайтів"
+      ],
+      "Kilobyte": [
+        "Кілобайт",
+        "Кілобайти",
+        "Кілобайтів",
+        "Кілобайтів"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайти",
+        "Мегабайтів",
+        "Мегабайтів"
       ]
     },
     "Info": {
@@ -552,6 +590,48 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Оновлення \"${ payload.item.data.metadata.name }\" було відхилено"
+      ],
+      "${ count } item": [
+        "${ count } елемент",
+        "${ count } елементи",
+        "${ count } елементів",
+        "${ count } елементів"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } елемент",
+        "${ itemCount } елементи",
+        "${ itemCount } елементів",
+        "${ itemCount } елементів"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } учасник",
+        "${ memberCount } учасники",
+        "${ memberCount } учасників",
+        "${ memberCount } учасників"
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } раз",
+        "${ revisionNumber } рази",
+        "${ revisionNumber } разів",
+        "${ revisionNumber } разів"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } елемент",
+        "${ totalImportedItems } елементи",
+        "${ totalImportedItems } елементів",
+        "${ totalImportedItems } елементів"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } елемент",
+        "${ totalItems } елементи",
+        "${ totalItems } елементів",
+        "${ totalItems } елементів"
+      ],
+      "${ trialDaysLeft } day left": [
+        "Залишився ${ trialDaysLeft } день",
+        "Залишилось ${ trialDaysLeft } дні",
+        "Залишилось ${ trialDaysLeft } днів",
+        "Залишилось ${ trialDaysLeft } днів"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна нова версія ${ PASS_APP_NAME }. Оновіть його, щоб отримати найновіші функції та виправлення помилок."
@@ -640,6 +720,12 @@
       "Here you will find all the necessary information to get you started.": [
         "Тут ви знайдете всю необхідну інформацію для початку роботи."
       ],
+      "Imported ${ payload.total } item": [
+        "Імпортовано ${ payload.total } елемент",
+        "Імпортовано ${ payload.total } елементи",
+        "Імпортовано ${ payload.total } елементів",
+        "Імпортовано ${ payload.total } елементів"
+      ],
       "Imported on ${ date }": [
         "Імпортовано ${ date }"
       ],
@@ -663,6 +749,12 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Схоже, ви вже ввійшли в обліковий запис ${ PASS_APP_NAME }. Якщо ви намагаєтеся увійти за допомогою іншого облікового запису, спочатку вийдіть із розширення."
+      ],
+      "item": [
+        "елемент",
+        "елементи",
+        "елементів",
+        "елементів"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Створено елемент \"${ payload.item.data.metadata.name }\""
@@ -787,6 +879,12 @@
       "Thank you, the problem has been reported": [
         "Дякуємо вам, що повідомили про проблему"
       ],
+      "The following item could not be imported :": [
+        "Не вдалося імпортувати такий елемент:",
+        "Не вдалося імпортувати ці ${ result.ignored.length } елементи",
+        "Не вдалося імпортувати ці ${ result.ignored.length } елементів",
+        "Не вдалося імпортувати ці ${ result.ignored.length } елементів"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "У тексті, який ви намагаєтеся вставити перевищено максимально дозволену кількість ${ maxLength } символів."
       ],
@@ -858,6 +956,18 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } символ",
+        "${ passwordOptions.options.length } символи",
+        "${ passwordOptions.options.length } символів",
+        "${ passwordOptions.options.length } символів"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } слово",
+        "${ passwordOptions.options.wordCount } слова",
+        "${ passwordOptions.options.wordCount } слів",
+        "${ passwordOptions.options.wordCount } слів"
+      ],
       "1 hour": [
         "1 година"
       ],

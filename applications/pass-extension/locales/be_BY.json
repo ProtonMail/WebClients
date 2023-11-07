@@ -457,6 +457,12 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Збой выдалення сховішча \"${ payload.content.name }\""
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Выяўлены ${ errors.length } пашкоджаны радок CSV",
+        "Выяўлены ${ errors.length } пашкоджаныя радкі CSV",
+        "Выяўлены ${ errors.length } пашкоджаных радкоў CSV",
+        "Выяўлены ${ errors.length } пашкоджаных радкоў CSV"
+      ],
       "Editing item failed": [
         "Збой рэдагавання элемента"
       ],
@@ -614,6 +620,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "байт",
+        "байты",
+        "байтаў",
+        "байты"
+      ],
       "GB": [
         "ГБ"
       ],
@@ -627,6 +639,38 @@
         "ТБ"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Байт",
+        "Байты",
+        "Байтаў",
+        "Байты"
+      ],
+      "Gigabyte": [
+        "Гігабайт",
+        "Гігабайты",
+        "Гігабайтаў",
+        "Гігабайты"
+      ],
+      "Kilobyte": [
+        "Кілабайт",
+        "Кілабайты",
+        "Кілабайтаў",
+        "Кілабайты"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайты",
+        "Мегабайтаў",
+        "Мегабайты"
+      ],
+      "Terabyte": [
+        "тэрабайт",
+        "тэрабайты",
+        "тэрабайтаў",
+        "тэрабайтаў"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " Перайдзіце на платны тарыфны план, каб стварыць некалькі сховішчаў."
@@ -636,6 +680,24 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Абнаўленне \"${ payload.item.data.metadata.name }\" было адхілена"
+      ],
+      "${ count } item": [
+        "${ count } элемент",
+        "${ count } элементы",
+        "${ count } элементаў",
+        "${ count } элементаў"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } элемент",
+        "${ itemCount } элементы",
+        "${ itemCount } элементаў",
+        "${ itemCount } элементаў"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } удзельнік",
+        "${ memberCount } удзельнікі",
+        "${ memberCount } удзельнікаў",
+        "${ memberCount } удзельнікаў"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
         "${ PASS_APP_NAME } будзе адлюстроўваць элемент піктаграмы сайта праз проксі-сервер ананімнага відарыса ${ BRAND_NAME }."
@@ -651,6 +713,30 @@
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } не будзе прапаноўваць ствараць надзейныя паролі на формах рэгістрацыі."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } раз",
+        "${ revisionNumber } разы",
+        "${ revisionNumber } разоў",
+        "${ revisionNumber } разоў"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } элемент",
+        "${ totalImportedItems } элементы",
+        "${ totalImportedItems } элементаў",
+        "${ totalImportedItems } элементаў"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } элемент",
+        "${ totalItems } элементы",
+        "${ totalItems } элементаў",
+        "${ totalItems } элементаў"
+      ],
+      "${ trialDaysLeft } day left": [
+        "Застаўся ${ trialDaysLeft } дзень",
+        "Засталося ${ trialDaysLeft } дні",
+        "Засталося ${ trialDaysLeft } дзён",
+        "Засталося ${ trialDaysLeft } дзён"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Паспрабуйце прэміяльныя функцыі праграмы на працягу 7 дзён бясплатна. Толькі на працягу першага тыдня выкарыстання ${ BRAND_NAME }."
@@ -775,6 +861,12 @@
       "Import in progress:": [
         "Выконваецца імпартаванне:"
       ],
+      "Imported ${ payload.total } item": [
+        "Імпартаваны ${ payload.total } элемент",
+        "Імпартаваны ${ payload.total } элементы",
+        "Імпартаваны ${ payload.total } элементаў",
+        "Імпартаваны ${ payload.total } элементаў"
+      ],
       "Imported on ${ date }": [
         "Імпартавана ${ date }"
       ],
@@ -801,6 +893,12 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Здаецца, што вы ўжо ўвайшлі ў ${ PASS_APP_NAME }. Калі вы спрабуеце ўвайсці з іншым уліковым запісам, спачатку выйдзіце з уліковага запісу ў пашырэнні."
+      ],
+      "item": [
+        "элемент",
+        "элементы",
+        "элементаў",
+        "элементаў"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Створаны элемент \"${ payload.item.data.metadata.name }\""
@@ -949,6 +1047,12 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Выпадное меню аўтазапаўнення будзе аўтаматычна адкрывацца пры навядзенні на поле."
       ],
+      "The following item could not be imported :": [
+        "Не ўдалося імпартаваць наступны элемент:",
+        "Не ўдалося імпартаваць наступныя ${ result.ignored.length } элементы",
+        "Не ўдалося імпартаваць наступныя ${ result.ignored.length } элементаў",
+        "Не ўдалося імпартаваць наступныя ${ result.ignored.length } элементаў"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Тэкст, які вы спрабуеце ўставіць перавышае максімальную даўжыню. Дазволена сімвалаў: ${ maxLength }."
       ],
@@ -1021,6 +1125,12 @@
       "You cannot change the mailboxes for this alias.": [
         "У вас няма магчымасці змяніць паштовыя скрыні для гэтага псеўданіма."
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "У вас застаўся ${ daysRemaining } дзень паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
+        "У вас засталося ${ daysRemaining } дні паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
+        "У вас засталося ${ daysRemaining } дзён паспрабаваць гэтыя і іншыя прэміяльныя функцыі.",
+        "У вас засталося ${ daysRemaining } дзён паспрабаваць гэтыя і іншыя прэміяльныя функцыі."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Вы перавысілі колькасць сховішчаў, якія ўключаны ў вашу падпіску. Элементы можна перамяшчаць толькі ў першыя два вашы сховішчы. Неабходна палепшыць падпіску, каб перамяшчаць элементы паміж усімі вашымі сховішчамі."
       ],
@@ -1053,6 +1163,18 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } сімвал",
+        "${ passwordOptions.options.length } сімвалы",
+        "${ passwordOptions.options.length } сімвалаў",
+        "${ passwordOptions.options.length } сімвалаў"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } слова",
+        "${ passwordOptions.options.wordCount } словы",
+        "${ passwordOptions.options.wordCount } слоў",
+        "${ passwordOptions.options.wordCount } слоў"
+      ],
       "1 hour": [
         "1 гадзіна"
       ],
@@ -1565,6 +1687,14 @@
         "Напішыце сваю нататку"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальніка.",
+        "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальнікаў.",
+        "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальнікаў.",
+        "Сховішчы не могуць змяшчаць больш за ${ vault.targetMaxMembers } карыстальнікаў."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Налады ${ PASS_APP_NAME }"
@@ -1740,6 +1870,12 @@
       ],
       "Invalid alias prefix": [
         "Памылковы прэфікс псеўданіма"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Максімальная даўжыня ${ maxLength } сімвал",
+        "Максімальная даўжыня ${ maxLength } сімвалы",
+        "Максімальная даўжыня ${ maxLength } сімвалаў",
+        "Максімальная даўжыня ${ maxLength } сімвалаў"
       ],
       "Missing alias prefix": [
         "Прапушчаны прэфікс псеўданіма"

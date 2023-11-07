@@ -457,6 +457,9 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" 금고 삭제를 실패했습니다."
       ],
+      "Detected ${ errors.length } corrupted csv rows": [
+        "${ errors.length } 손상된 csv 행 감지됨"
+      ],
       "Editing item failed": [
         "항목 수정 실패"
       ],
@@ -614,6 +617,9 @@
       ]
     },
     "file size format": {
+      "bytes": [
+        "바이트"
+      ],
       "GB": [
         "GB"
       ],
@@ -627,6 +633,23 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "바이트"
+      ],
+      "Gigabytes": [
+        "기가바이트"
+      ],
+      "Kilobytes": [
+        "킬로바이트"
+      ],
+      "Megabytes": [
+        "메가바이트"
+      ],
+      "Terabytes": [
+        "테라바이트"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " 여러 개의 금고를 생성하기 위해 유료 요금제로 업그레이드 해보세요."
@@ -636,6 +659,15 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" 업데이트가 무시되었습니다."
+      ],
+      "${ count } items": [
+        "${ count }개 항목"
+      ],
+      "${ itemCount } items": [
+        "${ itemCount }개 항목"
+      ],
+      "${ memberCount } members": [
+        "${ memberCount }명 회원"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
         "${ PASS_APP_NAME }가 항목 아이콘을 ${ BRAND_NAME } 비공개 이미지 프록시를 통해 표시합니다."
@@ -651,6 +683,18 @@
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME }가 로그인 양식에서 강력한 비밀번호 생성을 제안합니다."
+      ],
+      "${ revisionNumber } times": [
+        "${ revisionNumber } 번"
+      ],
+      "${ totalImportedItems } items": [
+        "${ totalImportedItems }개 항목"
+      ],
+      "${ totalItems } items": [
+        "${ totalItems }개 항목"
+      ],
+      "${ trialDaysLeft } days left": [
+        "${ trialDaysLeft }일 남음"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7일 동안 프리미엄 기능을 무료로 사용하실 수 있습니다. ${ BRAND_NAME } 첫 주 사용에 한합니다."
@@ -775,6 +819,9 @@
       "Import in progress:": [
         "처리가 진행 중입니다:"
       ],
+      "Imported ${ payload.total } items": [
+        "${ payload.total }개 항목을 불러왔습니다"
+      ],
       "Imported on ${ date }": [
         "${ date }에 들여옴"
       ],
@@ -819,6 +866,9 @@
       ],
       "Item successfully moved": [
         "항목을 성공적으로 이동했습니다."
+      ],
+      "items": [
+        "항목"
       ],
       "Let's get you started by creating your first item": [
         "첫 항목 생성을 시작해 보세요"
@@ -949,6 +999,9 @@
       "The autofill dropdown will automatically open on field focus.": [
         "필드에 있다면 자동 완성이 열립니다."
       ],
+      "The following ${ result.ignored.length } items could not be imported": [
+        "다음 ${ result.ignored.length }개 항목은 불러올 수 없습니다"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "붙여넣으려는 텍스트는 ${ maxLength } 문자의 최대 허용 길이보다 깁니다."
       ],
@@ -1021,6 +1074,9 @@
       "You cannot change the mailboxes for this alias.": [
         "이 별명의 메일함을 변경할 수 없습니다."
       ],
+      "You have ${ daysRemaining } days left to try these and other premium features.": [
+        "이 기능과 다른 프리미엄 기능들을 체험할 시간이 ${ daysRemaining }일 남았습니다."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "구독에 포함된 최대 금고 수에 도달했습니다. 항목이 처음 두 금고로 이동됩니다. 모든 금고 간에 항목을 이동하려면 구독을 업그레이드하세요."
       ],
@@ -1053,6 +1109,12 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } characters": [
+        "${ passwordOptions.options.length }글자"
+      ],
+      "${ passwordOptions.options.wordCount } words": [
+        "${ passwordOptions.options.wordCount }단어"
+      ],
       "1 hour": [
         "1시간"
       ],
@@ -1565,6 +1627,11 @@
         "메모를 작성하세요"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } users.": [
+        "금고에 ${ vault.targetMaxMembers }명 이상의 사용자를 포함할 수 없습니다."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } 설정"
@@ -1740,6 +1807,9 @@
       ],
       "Invalid alias prefix": [
         "잘못된 별명 접두어 입니다."
+      ],
+      "Maximum length is ${ maxLength } characters": [
+        "최대 길이는 ${ maxLength }자 입니다."
       ],
       "Missing alias prefix": [
         "별명 접두사가 없습니다."

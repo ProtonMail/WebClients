@@ -457,6 +457,10 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Holvin \"${ payload.content.name }\" poisto epäonnistui"
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Havaittiin ${ errors.length } virheellinen CSV-rivi",
+        "Havaittiin ${ errors.length } virheellinen CSV-rivi"
+      ],
       "Editing item failed": [
         "Kohteen muokkaus epäonnistui"
       ],
@@ -614,6 +618,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "tavu",
+        "tavua"
+      ],
       "GB": [
         "Gt"
       ],
@@ -627,6 +635,28 @@
         "Tt"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Tavu",
+        "Tavua"
+      ],
+      "Gigabyte": [
+        "Gigatavu",
+        "Gigatavua"
+      ],
+      "Kilobyte": [
+        "Kilotavu",
+        "Kilotavua"
+      ],
+      "Megabyte": [
+        "Megatavu",
+        "Megatavua"
+      ],
+      "Terabyte": [
+        "Teratavu",
+        "Teratavua"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " Luo useita holveja päivittämällä maksulliseen tilaukseen."
@@ -636,6 +666,18 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Kohteen \"${ payload.item.data.metadata.name }\" päivitys hylättiin"
+      ],
+      "${ count } item": [
+        "${ count } kohde",
+        "${ count } kohdetta"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } kohde",
+        "${ itemCount } kohdetta"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } jäsen",
+        "${ memberCount } jäsentä"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
         "${ PASS_APP_NAME } näyttää kohteiden sivustokuvakkeet ${ BRAND_NAME }in anonymisoidun kuvavälityspalvelimen välityksellä."
@@ -651,6 +693,22 @@
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } tarjoaa vahvan salasanan luontia rekisteröitymislomakkeissa."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } kerran",
+        "${ revisionNumber } kertaa"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } kohde",
+        "${ totalImportedItems } kohdetta"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } kohde",
+        "${ totalItems } kohdetta"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } päivä jäljellä",
+        "${ trialDaysLeft } päivää jäljellä"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 päivää aikaa kokeilla premium-ominaisuuksia ilmaiseksi. Voimassa vain ensimmäisen ${ BRAND_NAME } -viikkosi ajan."
@@ -775,6 +833,10 @@
       "Import in progress:": [
         "Tuonti on käynnissä:"
       ],
+      "Imported ${ payload.total } item": [
+        "${ payload.total } kohde tuotiin",
+        "${ payload.total } kohdetta tuotiin"
+      ],
       "Imported on ${ date }": [
         "Tuotu ${ date }"
       ],
@@ -801,6 +863,10 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Näyttää siltä, että olet jo kirjautunut ${ PASS_APP_NAME }iin. Jos yrität kirjautua eri tilillä, kirjaa laajennus ensin ulos."
+      ],
+      "item": [
+        "kohde",
+        "kohdetta"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Kohde \"${ payload.item.data.metadata.name }\" luotiin"
@@ -949,6 +1015,10 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Määrittää avataanko automaattitäytön ponnahdus automaattisesti lomakekentän aktivoituessa."
       ],
+      "The following item could not be imported :": [
+        "Seuraavaa kohdetta ei voitu tuoda:",
+        "Seuraavia ${ result.ignored.length } kohdetta ei voitu tuoda"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Teksti, jota yrität liittää, ylittää ${ maxLength }-merkin enimmäispituuden."
       ],
@@ -1021,6 +1091,10 @@
       "You cannot change the mailboxes for this alias.": [
         "Et voi muuttaa aliakseen liitettyjä postilaatikoita."
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Sinulla on ${ daysRemaining } päivä jäljellä kokeilla näitä ja muita premium-ominaisuuksia.",
+        "Sinulla on ${ daysRemaining } päivää jäljellä kokeilla näitä ja muita premium-ominaisuuksia."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Olet ylittänyt tilaukseesi sisältyvän holvien enimmäismäärän. Kohteita voidaan siirtää vain kahteen ensimmäiseen holviisi. Jos haluat siirtää kohteita kaikkiin holveihisi, päivitä tilauksesi."
       ],
@@ -1053,6 +1127,14 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } merkki",
+        "${ passwordOptions.options.length } merkkiä"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } sana",
+        "${ passwordOptions.options.wordCount } sanaa"
+      ],
       "1 hour": [
         "Tunnin kuluttua"
       ],
@@ -1565,6 +1647,12 @@
         "Kirjoita muistiinpanosi"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Holvi voi sisältää enintään ${ vault.targetMaxMembers } jäsenen.",
+        "Holvi voi sisältää enintään ${ vault.targetMaxMembers } jäsentä."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } -asetukset"
@@ -1740,6 +1828,10 @@
       ],
       "Invalid alias prefix": [
         "Virheellinen aliaksen etuliite"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Enimmäispituus on ${ maxLength } merkki",
+        "Enimmäispituus on ${ maxLength } merkkiä"
       ],
       "Missing alias prefix": [
         "Aliaksen etuliite puuttuu"

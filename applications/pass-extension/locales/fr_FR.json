@@ -457,6 +457,10 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "La suppression du coffre-fort « ${ payload.content.name } » n'a pas abouti."
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "${ errors.length } ligne CSV corrompue a été détectée.",
+        "${ errors.length } lignes CSV corrompues ont été détectées."
+      ],
       "Editing item failed": [
         "La modification de l'élément n'a pas abouti."
       ],
@@ -614,6 +618,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "octet",
+        "octets"
+      ],
       "GB": [
         "Go"
       ],
@@ -627,6 +635,28 @@
         "To"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Octet",
+        "Octets"
+      ],
+      "Gigabyte": [
+        "Gigaoctet",
+        "Gigaoctets"
+      ],
+      "Kilobyte": [
+        "Kilooctet",
+        "Kilooctets"
+      ],
+      "Megabyte": [
+        "Megaoctet",
+        "Megaoctets"
+      ],
+      "Terabyte": [
+        "Téraoctet",
+        "Téraoctets"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         "Passez à un abonnement payant pour créer plusieurs coffres-forts."
@@ -636,6 +666,18 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "La mise à jour de « ${ payload.item.data.metadata.name } » a été rejetée."
+      ],
+      "${ count } item": [
+        "${ count } élément",
+        "${ count } éléments"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } élément",
+        "${ itemCount } éléments"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } membre",
+        "${ memberCount } membres"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
         "${ PASS_APP_NAME } affiche la vignette de l'élément via le proxy d'image anonyme ${ BRAND_NAME }."
@@ -651,6 +693,22 @@
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } propose de créer des mots de passe forts dans les formulaires d'inscription."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } fois",
+        "${ revisionNumber } fois"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } élément",
+        "${ totalImportedItems } éléments"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } élément",
+        "${ totalItems } éléments"
+      ],
+      "${ trialDaysLeft } day left": [
+        "Il reste ${ trialDaysLeft } jour.",
+        "Il reste ${ trialDaysLeft } jours."
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 jours pour essayer gratuitement les fonctionnalités premium, lors de votre première semaine d'utilisation de ${ BRAND_NAME }."
@@ -775,6 +833,10 @@
       "Import in progress:": [
         "L'importation est en cours :"
       ],
+      "Imported ${ payload.total } item": [
+        "${ payload.total } élément importé",
+        "${ payload.total } éléments importés"
+      ],
       "Imported on ${ date }": [
         "Importé le ${ date }"
       ],
@@ -801,6 +863,10 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Vous semblez déjà connecté à ${ PASS_APP_NAME }. Si vous essayez de vous connecter avec un autre compte, déconnectez-vous d'abord de l'extension."
+      ],
+      "item": [
+        "élément",
+        "éléments"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "L'élément « ${ payload.item.data.metadata.name } » a été créé."
@@ -949,6 +1015,10 @@
       "The autofill dropdown will automatically open on field focus.": [
         "La liste déroulante de remplissage automatique s'ouvre automatiquement dès que le champ est sélectionné."
       ],
+      "The following item could not be imported :": [
+        "L'élément suivant n'a pu être importé :",
+        "Les ${ result.ignored.length } éléments suivants n'ont pu être importés."
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Le texte que vous essayez de coller dépasse le nombre maximum de ${ maxLength } caractères."
       ],
@@ -1021,6 +1091,10 @@
       "You cannot change the mailboxes for this alias.": [
         "Vous ne pouvez pas modifier la véritable adresse e-mail associée à cet alias."
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Il vous reste ${ daysRemaining } jour pour essayer ces fonctionnalités et d'autres de la version premium.",
+        "Il vous reste ${ daysRemaining } jours pour essayer ces fonctionnalités et d'autres de la version premium."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Vous avez dépassé le nombre de coffres-forts prévus dans votre abonnement. Les éléments peuvent uniquement être déplacés dans vos deux premiers coffres-forts. Changez d'abonnement pour pouvoir déplacer les éléments entre tous les coffres-forts."
       ],
@@ -1053,6 +1127,14 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } caractère",
+        "${ passwordOptions.options.length } caractères"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } mot",
+        "${ passwordOptions.options.wordCount } mots"
+      ],
       "1 hour": [
         "1 heure"
       ],
@@ -1565,6 +1647,12 @@
         "Rédigez votre note"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Les coffres-forts ne peuvent pas compter plus de ${ vault.targetMaxMembers } utilisateur.",
+        "Les coffres-forts ne peuvent pas compter plus de ${ vault.targetMaxMembers } utilisateurs."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Paramètres de ${ PASS_APP_NAME }"
@@ -1740,6 +1828,10 @@
       ],
       "Invalid alias prefix": [
         "Le préfixe de l'alias n'est pas valide."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "${ maxLength } caractère maximum",
+        "${ maxLength } caractères maximum"
       ],
       "Missing alias prefix": [
         "Le préfixe de l'alias est manquant."

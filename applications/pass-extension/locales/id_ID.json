@@ -457,6 +457,9 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Gagal menghapus brankas \"${ payload.content.name }\""
       ],
+      "Detected ${ errors.length } corrupted csv rows": [
+        "${ errors.length } baris CSV yang rusak terdeteksi"
+      ],
       "Editing item failed": [
         "Item gagal disunting"
       ],
@@ -614,6 +617,9 @@
       ]
     },
     "file size format": {
+      "bytes": [
+        "byte"
+      ],
       "GB": [
         "GB"
       ],
@@ -627,6 +633,23 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Bytes": [
+        "Byte"
+      ],
+      "Gigabytes": [
+        "Gigabyte"
+      ],
+      "Kilobytes": [
+        "Kilobyte"
+      ],
+      "Megabytes": [
+        "Megabyte"
+      ],
+      "Terabytes": [
+        "Terabyte"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " Tingkatkan ke paket berbayar untuk membuat lebih dari satu brankas."
@@ -636,6 +659,15 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Pembaruan \"${ payload.item.data.metadata.name }\" telah diabaikan"
+      ],
+      "${ count } items": [
+        "${ count } item"
+      ],
+      "${ itemCount } items": [
+        "${ itemCount } item"
+      ],
+      "${ memberCount } members": [
+        "${ memberCount } anggota"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
         "${ PASS_APP_NAME } akan menampilkan favicon item melalui proksi gambar ${ BRAND_NAME } yang dianonimkan."
@@ -651,6 +683,18 @@
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } akan menyarankan membuat kata sandi yang kuat di formulir pendaftaran."
+      ],
+      "${ revisionNumber } times": [
+        "${ revisionNumber } kali"
+      ],
+      "${ totalImportedItems } items": [
+        "${ totalImportedItems } item"
+      ],
+      "${ totalItems } items": [
+        "${ totalItems } item"
+      ],
+      "${ trialDaysLeft } days left": [
+        "${ trialDaysLeft } hari tersisa"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 hari untuk mencoba fitur premium secara gratis. Hanya tersedia saat minggu pertama dengan ${ BRAND_NAME }."
@@ -775,6 +819,9 @@
       "Import in progress:": [
         "Impor yang sedang berlangsung:"
       ],
+      "Imported ${ payload.total } items": [
+        "${ payload.total } item diimpor"
+      ],
       "Imported on ${ date }": [
         "Diimpor pada tanggal ${ date }"
       ],
@@ -819,6 +866,9 @@
       ],
       "Item successfully moved": [
         "Item berhasil dipindahkan"
+      ],
+      "items": [
+        "item"
       ],
       "Let's get you started by creating your first item": [
         "Mulailah dengan membuat item pertama Anda"
@@ -949,6 +999,9 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Tarik-turun pengisian otomatis akan dibuka dalam fokus kolom secara otomatis."
       ],
+      "The following ${ result.ignored.length } items could not be imported": [
+        "${ result.ignored.length } item berikut tidak dapat diimpor"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Panjang teks yang ingin Anda salin melebihi batas ${ maxLength } karakter yang diperkenankan."
       ],
@@ -1021,6 +1074,9 @@
       "You cannot change the mailboxes for this alias.": [
         "Anda tidak dapat mengubah kotak surat untuk alias ini."
       ],
+      "You have ${ daysRemaining } days left to try these and other premium features.": [
+        "Anda memiliki ${ daysRemaining } hari tersisa untuk mencoba fitur ini dan berbagai fitur premium lainnya."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Anda telah melebihi jumlah brankas yang tercakup dalam paket langganan Anda. Item yang Anda miliki hanya akan dapat dipindahkan ke dalam dua brankas pertama Anda. Untuk memindahkan item antar seluruh brankas, tingkatkan paket langganan Anda."
       ],
@@ -1053,6 +1109,12 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } characters": [
+        "${ passwordOptions.options.length } karakter"
+      ],
+      "${ passwordOptions.options.wordCount } words": [
+        "${ passwordOptions.options.wordCount } kata"
+      ],
       "1 hour": [
         "1 jam"
       ],
@@ -1565,6 +1627,11 @@
         "Tulis catatan Anda"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } users.": [
+        "Brankas tidak dapat berisi lebih dari ${ vault.targetMaxMembers } pengguna."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Pengaturan ${ PASS_APP_NAME }"
@@ -1740,6 +1807,9 @@
       ],
       "Invalid alias prefix": [
         "Awalan alias tidak valid"
+      ],
+      "Maximum length is ${ maxLength } characters": [
+        "Panjang maksimum adalah ${ maxLength } karakter"
       ],
       "Missing alias prefix": [
         "Awalan alias hilang"

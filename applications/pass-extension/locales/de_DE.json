@@ -457,6 +457,10 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Löschen des Tresors \"${ payload.content.name }\" fehlgeschlagen."
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "${ errors.length } beschädigte CSV-Zeile gefunden",
+        "${ errors.length } beschädigte CSV-Zeilen gefunden"
+      ],
       "Editing item failed": [
         "Fehler beim Bearbeiten des Eintrags."
       ],
@@ -614,6 +618,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "Byte",
+        "Bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -627,6 +635,28 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         "Upgrade auf ein kostenpflichtiges Abonnement, um mehrere Tresore zu erstellen."
@@ -636,6 +666,18 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Die Aktualisierung von \"${ payload.item.data.metadata.name }\" wurde verworfen."
+      ],
+      "${ count } item": [
+        "${ count } Eintrag",
+        "${ count } Einträge"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } Eintrag",
+        "${ itemCount } Einträge"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } Mitglied",
+        "${ memberCount } Mitglieder"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
         "${ PASS_APP_NAME } zeigt das Website-Symbol des Eintrags über den anonymisierten Bild-Proxy von ${ BRAND_NAME } an."
@@ -651,6 +693,22 @@
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } wird dir vorschlagen, sichere Passwörter für Anmeldeformulare zu erstellen."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } Mal",
+        "${ revisionNumber } Mal"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } Eintrag",
+        "${ totalImportedItems } Einträge"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } Eintrag",
+        "${ totalItems } Einträge"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } verbleibender Tag",
+        "${ trialDaysLeft } verbleibende Tage"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 Tage, um Premium-Funktionen kostenlos zu testen. Nur während deiner ersten Woche bei ${ BRAND_NAME }."
@@ -775,6 +833,10 @@
       "Import in progress:": [
         "Import im Gange:"
       ],
+      "Imported ${ payload.total } item": [
+        "${ payload.total } Eintrag importiert",
+        "${ payload.total } Einträge importiert"
+      ],
       "Imported on ${ date }": [
         "Importiert am ${ date }"
       ],
@@ -801,6 +863,10 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Es scheint, dass du bereits bei ${ PASS_APP_NAME } angemeldet bist. Wenn du versuchst, dich mit einem anderen Konto anzumelden, melde dich bitte zuerst bei der Erweiterung ab."
+      ],
+      "item": [
+        "Eintrag",
+        "Einträge"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Eintrag \"${ payload.item.data.metadata.name }\" erstellt."
@@ -949,6 +1015,10 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Das Dropdown-Menü für das automatische Ausfüllen wird automatisch geöffnet, sobald das Feld im Fokus ist."
       ],
+      "The following item could not be imported :": [
+        "Der folgende Eintrag konnte nicht importiert werden:",
+        "Die folgenden ${ result.ignored.length } Einträge konnten nicht importiert werden:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Der Text, den du einzufügen versuchst, ist länger als die maximal zulässige Länge von ${ maxLength } Zeichen."
       ],
@@ -1021,6 +1091,10 @@
       "You cannot change the mailboxes for this alias.": [
         "Du kannst die Postfächer für diesen Alias nicht ändern."
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Du hast noch ${ daysRemaining } Tag, um diese und andere Premium-Funktionen auszuprobieren.",
+        "Du hast noch ${ daysRemaining } Tage, um diese und andere Premium-Funktionen auszuprobieren."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Du hast die Anzahl der in deinem Abonnement enthaltenen Tresore überschritten. Einträge können nur in deine ersten zwei Tresore verschoben werden. Um Einträge zwischen allen Tresoren zu verschieben, upgrade dein Abonnement."
       ],
@@ -1053,6 +1127,14 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } Zeichen",
+        "${ passwordOptions.options.length } Zeichen"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } Wort",
+        "${ passwordOptions.options.wordCount } Wörter"
+      ],
       "1 hour": [
         "1 Stunde"
       ],
@@ -1565,6 +1647,12 @@
         "Schreibe deine Notiz"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Tresore können nicht mehr als ${ vault.targetMaxMembers } Benutzer beinhalten.",
+        "Tresore können nicht mehr als ${ vault.targetMaxMembers } Benutzer beinhalten."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-Einstellungen"
@@ -1740,6 +1828,10 @@
       ],
       "Invalid alias prefix": [
         "Ungültiges Alias-Präfix"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Die maximale Länge beträgt ${ maxLength } Zeichen.",
+        "Die maximale Länge beträgt ${ maxLength } Zeichen."
       ],
       "Missing alias prefix": [
         "Fehlendes Alias-Präfix"

@@ -454,6 +454,10 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Misslyckades att ta bort valv ”${ payload.content.name }”"
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Upptäckte ${ errors.length } skadad CSV-rad",
+        "Upptäckte ${ errors.length } skadade CSV-rader"
+      ],
       "Editing item failed": [
         "Misslyckades att redigera objekt"
       ],
@@ -611,6 +615,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "byte"
+      ],
       "GB": [
         "GB"
       ],
@@ -624,6 +632,28 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Byte"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabyte"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Kilobyte",
+        "Megabyte"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " Uppgradera till ett betalt paket för att skapa flera valv."
@@ -633,6 +663,18 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Uppdatering ”${ payload.item.data.metadata.name }” avfärdades"
+      ],
+      "${ count } item": [
+        "${ count } objekt",
+        "${ count } objekt"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } objekt",
+        "${ itemCount } objekt"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } medlem",
+        "${ memberCount } medlemmar"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
         "${ PASS_APP_NAME } kommer visa objektets favicon via ${ BRAND_NAME } anonymiserad bildproxy."
@@ -648,6 +690,22 @@
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } kommer föreslå att skapa starka lösenord på registreringsformulär."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } gång",
+        "${ revisionNumber } gånger"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } objekt",
+        "${ totalImportedItems } objekt"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } objekt",
+        "${ totalItems } objekt"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } dag kvar",
+        "${ trialDaysLeft } dagar kvar"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dagar att prova premiumfunktioner gratis. Endast under din första vecka med ${ BRAND_NAME }."
@@ -772,6 +830,10 @@
       "Import in progress:": [
         "Import pågår:"
       ],
+      "Imported ${ payload.total } item": [
+        "Importerade ${ payload.total } objekt",
+        "Importerade ${ payload.total } objekt"
+      ],
       "Imported on ${ date }": [
         "Importerad den ${ date }"
       ],
@@ -798,6 +860,10 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Det verkar som att du redan är inloggad på ${ PASS_APP_NAME }. Om du försöker logga in med ett annat konto, logga ut från tillägget först."
+      ],
+      "item": [
+        "objekt",
+        "objekt"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Objekt ”${ payload.item.data.metadata.name }” skapat"
@@ -946,6 +1012,10 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Rullgardinsmenyn för autofyll öppnas automatiskt vid fältfokus."
       ],
+      "The following item could not be imported :": [
+        "Följande objekt kunde inte importeras:",
+        "Följande ${ result.ignored.length } objekt kunde inte importeras"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Texten du försöker klistra in är längre än den högsta tillåtna längden på ${ maxLength } tecken."
       ],
@@ -1018,6 +1088,10 @@
       "You cannot change the mailboxes for this alias.": [
         "Du kan inte ändra brevlådorna för detta alias."
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Du har ${ daysRemaining } dag kvar att prova dessa och andra premiumfunktioner.",
+        "Du har ${ daysRemaining } dagar kvar att prova dessa och andra premiumfunktioner."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Du har överskridit antalet valv inkluderat i din prenumeration. Objekt kan endast flyttas till dina två första valv. För att flytta objekt mellan alla valv, uppgradera din prenumeration."
       ],
@@ -1050,6 +1124,14 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } tecken",
+        "${ passwordOptions.options.length } tecken"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } ord",
+        "${ passwordOptions.options.wordCount } ord"
+      ],
       "1 hour": [
         "1 timme"
       ],
@@ -1562,6 +1644,12 @@
         "Skriv din anteckning"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Valv kan inte innehålla fler än ${ vault.targetMaxMembers } användare.",
+        "Valv kan inte innehålla fler än ${ vault.targetMaxMembers } användare."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Inställningar för ${ PASS_APP_NAME }"
@@ -1737,6 +1825,10 @@
       ],
       "Invalid alias prefix": [
         "Ogiltigt alias-prefix"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Maximal längd är ${ maxLength } tecken",
+        "Maximal längd är ${ maxLength } tecken"
       ],
       "Missing alias prefix": [
         "Alias-prefix saknas"
