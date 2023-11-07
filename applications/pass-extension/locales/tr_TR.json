@@ -457,6 +457,10 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" kasası silinemedi"
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "${ errors.length } bozuk CSV satırı bulundu",
+        "${ errors.length } bozuk CSV satırı bulundu"
+      ],
       "Editing item failed": [
         "Öge düzenlenemedi"
       ],
@@ -614,6 +618,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bayt",
+        "bayt"
+      ],
       "GB": [
         "GB"
       ],
@@ -627,6 +635,28 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Bayt",
+        "Bayt"
+      ],
+      "Gigabyte": [
+        "Gigabayt",
+        "Gigabayt"
+      ],
+      "Kilobyte": [
+        "Kilobayt",
+        "Kilobayt"
+      ],
+      "Megabyte": [
+        "Megabayt",
+        "Megabayt"
+      ],
+      "Terabyte": [
+        "Terabayt",
+        "Terabayt"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " Birden çok kasa oluşturmak için ücretli bir tarifeye yükseltin."
@@ -636,6 +666,18 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" güncellemesi yok sayıldı"
+      ],
+      "${ count } item": [
+        "${ count } öge",
+        "${ count } öge"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } öge",
+        "${ itemCount } öge"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } üye",
+        "${ memberCount } üye"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
         "${ PASS_APP_NAME }, ${ BRAND_NAME } anonimleştirilmiş görsel vekil sunucusunu kullanarak ögenin İnternet simgesini görüntüleyecek."
@@ -651,6 +693,22 @@
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } oturum açma formlarında güçlü parola oluşturmayı önerecek."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } kez",
+        "${ revisionNumber } kez"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } öge",
+        "${ totalImportedItems } öge"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } öge",
+        "${ totalItems } öge"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } gün kaldı",
+        "${ trialDaysLeft } gün kaldı"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 gün boyunca ücretli özellikleri ücretsiz olarak deneyin. Yalnızca ${ BRAND_NAME } ile ilk haftanızda."
@@ -775,6 +833,10 @@
       "Import in progress:": [
         "İçe aktarılıyor:"
       ],
+      "Imported ${ payload.total } item": [
+        "${ payload.total } öge içe aktarıldı",
+        "${ payload.total } öge içe aktarıldı"
+      ],
       "Imported on ${ date }": [
         "${ date } tarihinde içe aktarıldı"
       ],
@@ -801,6 +863,10 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Görünüşe göre ${ PASS_APP_NAME } uygulamasında zaten oturum açmışsınız. Farklı bir hesapla oturum açmaya çalışıyorsanız, lütfen önce eklentideki oturumunuzu kapatın."
+      ],
+      "item": [
+        "öge",
+        "öge"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "\"${ payload.item.data.metadata.name }\" ögesi oluşturuldu"
@@ -949,6 +1015,10 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Alana gelindiğinde otomatik doldurma kutusu kendiliğinden açılır."
       ],
+      "The following item could not be imported :": [
+        "Şu öge içe aktarılamadı:",
+        "Şu ${ result.ignored.length } öge içe aktarılamadı"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Yapıştırmaya çalıştığınız metin izin verilen en fazla ${ maxLength } karakterden daha uzun."
       ],
@@ -1021,6 +1091,10 @@
       "You cannot change the mailboxes for this alias.": [
         "Bu takma adın e-posta kutularını değiştiremezsiniz."
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı.",
+        "Bu ve diğer ücretli özellikleri denemek için ${ daysRemaining } gününüz kaldı."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Abonelik tarifenizin izin verdiği kasa sayısını aştınız. Yeni ögeler yalnızca ilk iki kasanıza taşınabilir. Ögeleri tüm kasalarınız arasında taşıyabilmek için abonelik tarifenizi yükseltin."
       ],
@@ -1053,6 +1127,14 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } karakter",
+        "${ passwordOptions.options.length } karakter"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } sözcük",
+        "${ passwordOptions.options.wordCount } sözcük"
+      ],
       "1 hour": [
         "1 saat"
       ],
@@ -1565,6 +1647,12 @@
         "Notunuzu yazın"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz.",
+        "Kasalarda ${ vault.targetMaxMembers } kullanıcıdan fazlası olamaz."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME } ayarları"
@@ -1740,6 +1828,10 @@
       ],
       "Invalid alias prefix": [
         "Takma ad ön eki geçersiz"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "En fazla uzunluk ${ maxLength } karakter",
+        "En fazla uzunluk ${ maxLength } karakter"
       ],
       "Missing alias prefix": [
         "Takma ad ön eki eksik"

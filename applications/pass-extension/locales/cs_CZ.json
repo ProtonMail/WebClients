@@ -457,6 +457,12 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Smazání trezoru \"${ payload.content.name }\" selhalo"
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Zjištěn ${ errors.length } poškozený řádek csv",
+        "Zjištěny ${ errors.length } poškozené řádky csv",
+        "Zjištěno ${ errors.length } poškozených řádků csv",
+        "Zjištěno ${ errors.length } poškozených řádků csv"
+      ],
       "Editing item failed": [
         "Úprava položky se nezdařila"
       ],
@@ -614,6 +620,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bajt",
+        "bajty",
+        "bajtů",
+        "bajtů"
+      ],
       "GB": [
         "GB"
       ],
@@ -627,6 +639,38 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Bajt",
+        "Bajty",
+        "Bajtů",
+        "Bajtů"
+      ],
+      "Gigabyte": [
+        "Gigabajt",
+        "Gigabajty",
+        "Gigabajtů",
+        "Gigabajtů"
+      ],
+      "Kilobyte": [
+        "Kilobajt",
+        "Kilobajty",
+        "Kilobajtů",
+        "Kilobajtů"
+      ],
+      "Megabyte": [
+        "Megabajt",
+        "Megabajty",
+        "Megabajtů",
+        "Megabajtů"
+      ],
+      "Terabyte": [
+        "Terabajt",
+        "Terabajty",
+        "Terabajtů",
+        "Terabajtů"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " Chcete-li vytvořit více trezorů, přejděte na placený tarif."
@@ -636,6 +680,24 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Aktualizace \"${ payload.item.data.metadata.name }\" byla odmítnuta"
+      ],
+      "${ count } item": [
+        "${ count } položka",
+        "${ count } položky",
+        "${ count } položek",
+        "${ count } položek"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } položka",
+        "${ itemCount } položky",
+        "${ itemCount } položek",
+        "${ itemCount } položek"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } člen",
+        "${ memberCount } členové",
+        "${ memberCount } členů",
+        "${ memberCount } členů"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
         "${ PASS_APP_NAME } zobrazí favicon položky prostřednictvím anonymizovaného obrázkového proxy serveru ${ BRAND_NAME }."
@@ -651,6 +713,30 @@
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } bude navrhovat vytváření silných hesel v registračních formulářích."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } krát",
+        "${ revisionNumber } krát",
+        "${ revisionNumber } krát",
+        "${ revisionNumber } krát"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } položka",
+        "${ totalImportedItems } položky",
+        "${ totalImportedItems } položek",
+        "${ totalImportedItems } položek"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } položka",
+        "${ totalItems } položky",
+        "${ totalItems } položek",
+        "${ totalItems } položek"
+      ],
+      "${ trialDaysLeft } day left": [
+        "Zbývá ${ trialDaysLeft } den",
+        "Zbývají ${ trialDaysLeft } dny",
+        "Zbývá ${ trialDaysLeft } dnů",
+        "Zbývá ${ trialDaysLeft } dnů"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dnů na vyzkoušení prémiových funkcí zdarma. Pouze během prvního týdne používání ${ BRAND_NAME }."
@@ -775,6 +861,12 @@
       "Import in progress:": [
         "Import probíhá:"
       ],
+      "Imported ${ payload.total } item": [
+        "Importována ${ payload.total } položka",
+        "Importovány ${ payload.total } položky",
+        "Importováno ${ payload.total } položek",
+        "Importováno ${ payload.total } položek"
+      ],
       "Imported on ${ date }": [
         "Importováno ${ date }"
       ],
@@ -801,6 +893,12 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Zdá se, že jste již přihlášeni do ${ PASS_APP_NAME }. Pokud se snažíte přihlásit pomocí jiného účtu, nejprve se z rozšíření odhlaste."
+      ],
+      "item": [
+        "položka",
+        "položky",
+        "položek",
+        "položek"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Položka \"${ payload.item.data.metadata.name }\" byla vytvořena"
@@ -949,6 +1047,12 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Rozbalovací nabídka automatického vyplňování se automaticky otevře při zaměření pole."
       ],
+      "The following item could not be imported :": [
+        "Následující položka nemohla být importována:",
+        "Následující ${ result.ignored.length } položky nemohly být importovány",
+        "Následujících ${ result.ignored.length } položek nemohlo být importováno",
+        "Následujících ${ result.ignored.length } položek nemohlo být importováno"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Text, který se snažíte vložit, je delší než maximální povolená délka ${ maxLength } znaků."
       ],
@@ -1021,6 +1125,12 @@
       "You cannot change the mailboxes for this alias.": [
         "Nemůžete měnit e-mailové schránky tohoto aliasu."
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývá ${ daysRemaining } den.",
+        "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývají ${ daysRemaining } dny.",
+        "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývá ${ daysRemaining } dnů.",
+        "Na vyzkoušení těchto a dalších prémiových funkcí vám zbývá ${ daysRemaining } dnů."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Překročili jste počet trezorů zahrnutých do vašeho předplatného. Položky lze přesunout pouze do vašich prvních dvou trezorů. Chcete-li přesouvat položky mezi všemi trezory, navyšte své předplatné."
       ],
@@ -1053,6 +1163,18 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } znak",
+        "${ passwordOptions.options.length } znaky",
+        "${ passwordOptions.options.length } znaků",
+        "${ passwordOptions.options.length } znaků"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } slovo",
+        "${ passwordOptions.options.wordCount } slova",
+        "${ passwordOptions.options.wordCount } slov",
+        "${ passwordOptions.options.wordCount } slov"
+      ],
       "1 hour": [
         "1 hodina"
       ],
@@ -1565,6 +1687,14 @@
         "Napište svoji poznámku"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatele.",
+        "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatele.",
+        "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatelů.",
+        "Trezory nemohou obsahovat více než ${ vault.targetMaxMembers } uživatelů."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Nastavení ${ PASS_APP_NAME }"
@@ -1740,6 +1870,12 @@
       ],
       "Invalid alias prefix": [
         "Nesprávná předpona aliasu"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Maximální délka je ${ maxLength } znak",
+        "Maximální délka jsou ${ maxLength } znaky",
+        "Maximální délka je ${ maxLength } znaků",
+        "Maximální délka je ${ maxLength } znaků"
       ],
       "Missing alias prefix": [
         "Chybějící předpona aliasu"
