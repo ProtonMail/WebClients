@@ -113,9 +113,6 @@
       "Current plan": [
         "Huidig abonnement"
       ],
-      "Customize": [
-        "Personaliseer"
-      ],
       "Customize plan": [
         "Abonnement aanpassen"
       ],
@@ -552,6 +549,14 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } eigen domein",
+        "${ domains } eigen domeinen"
+      ],
+      "${ ips } server": [
+        "${ ips } server",
+        "${ ips } servers"
+      ],
       "${ price } per dedicated server": [
         "${ price } per toegewijde server"
       ],
@@ -560,6 +565,10 @@
       ],
       "${ price } per user": [
         "${ price } per gebruiker"
+      ],
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
       ]
     },
     "Address action": {
@@ -748,6 +757,10 @@
       ]
     },
     "bf2023: renew": {
+      "${ n } month": [
+        "${ n } maand",
+        "de eerste ${ n } maanden"
+      ],
       "the first month": [
         "de eerste maand"
       ],
@@ -776,6 +789,10 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Ondersteuning voor 1 aangepast e-maildomein, 10 e-mailadressen, 10 hide-my-email-aliassen, gedeelde agenda's en meer."
       ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, ${ addresses } e-mailadres, onbeperkt hide-my-email-aliassen, gedeelde agenda's en meer.",
+        "Ondersteuning voor 3 aangepaste e-maildomeinen, ${ addresses } e-mailadressen, onbeperkt hide-my-email-aliassen, gedeelde agenda's en meer."
+      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Beveiligd inloggen op al uw apparaten. Inclusief ongelimiteerde aliassen, delen, geïntegreerde 2FA en meer."
       ],
@@ -796,6 +813,10 @@
       ]
     },
     "Billing cycle": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
         "Hernieuwd automatisch aan ${ renewPrice }, voor ${ renewalLength }"
       ]
@@ -897,6 +918,16 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Blijf ${ MAIL_APP_NAME } gebruiken."
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } gebruiker",
+        "${ users } gebruikers"
+      ],
+      "Total for ${ n } month": [
+        "Totaal voor ${ n } maand",
+        "Totaal voor ${ n } maanden"
       ]
     },
     "Checkout summary": {
@@ -2376,11 +2407,23 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } VPN-verbinding",
+        "${ MaxVPN } VPN-verbindingen"
+      ],
       "Access to all countries": [
         "Toegang tot alle landen"
       ],
       "Add": [
         "Toevoegen"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Toevoegen (${ numberOfAddedServers })",
+        "Toevoegen (${ numberOfAddedServers })"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Verbinding op ${ plusVpnConnections } apparaat",
+        "Verbinding op ${ plusVpnConnections } apparaten"
       ],
       "Fastest VPN servers": [
         "Snelste VPN-servers"
@@ -2487,6 +2530,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -2498,6 +2545,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyt",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Font face option": {
@@ -2636,6 +2705,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } adres",
+        "${ amountOfAddresses } adressen"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } heeft uw toestemming tot ${ enableDesktopNotifications } nodig."
       ],
@@ -2657,14 +2730,38 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan ook met een enkel wachtwoord gebruikt worden dat beide het inlog en mailbox wachtwoord vervangt. Om te schakelen naar een enkel wachtwoord, vul het enkele wachtwoord naar keuze in en klik op opslaan."
       ],
+      "${ number } city": [
+        "${ number } stad",
+        "${ number } steden"
+      ],
+      "${ number } server": [
+        "${ number } server",
+        "${ number } servers"
+      ],
       "${ plan } removed. Bundle deal not available on a 1-month plan.": [
         "${ plan } verwijderd. Bundelpromotie niet beschikbaar op een 1-maand-abonnement."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vereist minstens 1 toegewijde server ${ serverPricePerMonth }"
       ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter } server wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }.",
+        "${ provisioningCounter } servers wordt nog ingesteld. Dit duurt ongeveer ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } meer",
+        "${ remainingAddresses.length } meer"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } extra adres",
+        "${ remainingAddresses.length } extra adressen"
+      ],
       "${ storage } storage": [
         "${ storage } opslag"
+      ],
+      "${ userFound } user found": [
+        "${ userFound } gebruiker gevonden",
+        "${ userFound } gebruikers gevonden"
       ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } vereist voor verbindingen op landniveau."
@@ -2680,6 +2777,10 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus opslag"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } verbinding voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)",
+        "+${ organization.BonusVPN } verbindingen voor ${ VPN_APP_NAME } (stelt u in staat meer apparaten aan VPN te verbinden)"
       ],
       "30-day money-back guarantee": [
         "30 dagen geld-terug-garantie"
@@ -2713,6 +2814,18 @@
       ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Voeg extra beveiliging toe aan uw account. U moet uzelf verifiëren met 2FA elke keer dat u zich aanmeldt."
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "Server toevoegen (${ availableAddedCount } beschikbaar)",
+        "Server toevoegen (${ availableAddedCount } beschikbaar)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "${ addedServerCount } gatewayserver wordt toegevoegd",
+        "${ addedServerCount } gatewayservers worden toegevoegd"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Gatewayserver wordt toegevoegd: ${ serverNumber } / ${ total }",
+        "Gatewayservers worden toegevoegd: ${ serverNumber } / ${ total }"
       ],
       "Additional options": [
         "Aanvullende opties"
@@ -2828,6 +2941,10 @@
       "Create your first Gateway": [
         "Uw eerste gateway instellen"
       ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Gatewayserver wordt opgezet: ${ serverNumber } / ${ total }",
+        "Gatewayservers worden opgezet: ${ serverNumber } / ${ total }"
+      ],
       "Creating your account": [
         "Account aan het aanmaken"
       ],
@@ -2848,6 +2965,10 @@
       ],
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control.": [
         "Toegewijde servers met toegewijde IP-addres(sen) kunnen toegevoegd worden aan private gateways om nauwkeurige toegangscontrole mogelijk te maken."
+      ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "${ deletedServerCount } gatewayserver wordt verwijderd",
+        "${ deletedServerCount } gatewayservers worden verwijderd"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy logo"
@@ -3164,6 +3285,14 @@
       "Plan upgrade required": [
         "Upgrade van abonnement vereist"
       ],
+      "Please add a password for the user on row": [
+        "Voeg een wachtwoord toe voor de gebruiker op de rij",
+        "Voeg wachtwoorden toe voor de gebruikers op rijen"
+      ],
+      "Please add an email address for the user on row": [
+        "Voeg een e-mailadres toe voor de gebruiker op de rij",
+        "Voeg e-mailadressen toe voor de gebruikers op de rijen"
+      ],
       "Please authenticate your card in the verification tab.": [
         "Authenticeer uw kaart in het verificatietabblad."
       ],
@@ -3293,6 +3422,10 @@
       "Some of your available servers can only be used in specific countries due to recent removals": [
         "Sommige van uw beschikbare servers kunnen alleen worden gebruikt in specifieke landen door recente opheffingen"
       ],
+      "Step ${ step }": [
+        "Stap ${ step }",
+        "Stap ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Opslagruimte toegewezen aan andere gebruikers binnen deze organisatie"
       ],
@@ -3334,6 +3467,18 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Bedankt voor het ondersteunen van onze missie om een beter internet te bouwen waar privacy en vrijheid op de eerste plaats staan."
+      ],
+      "The following address is invalid.": [
+        "Het volgende adres is ongeldig.",
+        "De volgende adressen zijn ongeldig."
+      ],
+      "The following address is unavailable.": [
+        "Het volgende adres is niet beschikbaar.",
+        "De volgende adressen zijn niet beschikbaar."
+      ],
+      "The following address was not created.": [
+        "Het volgende adres werd niet aangemaakt.",
+        "De volgende adressen werden niet aangemaakt."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "De volgende leden zullen een e-mail ontvangen met een uitnodiging om zo snel mogelijk tweestapsverificatie in te schakelen."
@@ -3611,17 +3756,38 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "U bent momenteel aangemeld als ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "U gebruikt momenteel ${ ipCount } van uw ${ ipAddresses } beschikbare toegewijde server.",
+        "U gebruikt momenteel ${ ipCount } van uw ${ ipAddresses } beschikbare toegewijde servers."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "U gebruikt momenteel ${ organization.UsedMembers } van uw ${ organization.MaxMembers } beschikbare gebruikerslicentie",
+        "U gebruikt momenteel ${ organization.UsedMembers } van uw ${ organization.MaxMembers } beschikbare gebruikerslicenties"
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "U bent ingelogd op het account ${ memberAddress }."
-      ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "U kunt uw facturen aanpassen en downloaden voor boekhoudkundige doeleinden."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "U kunt dit eenmaal bewerken om ervoor te zorgen dat het juiste e-mailadres voor verificatie is ingevoerd."
       ],
       "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
         "U kunt meteen de installatie ontgrendelen door ${ specificCountryCount } toe te voegen aan de hoeveelheid IP-adressen in uw abonnement of neem contact op met ons voor oplossingen op maat."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert.",
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's en ${ BRAND_NAME }-gebruikers met wie u eerder agenda's heeft gedeeld voordat u uw abonnement annuleert."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert.",
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's voordat u uw ${ MAIL_SHORT_APP_NAME }-abonnement annuleert."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda behouden. Verwijder koppelingen naar gedeelde agenda's voordat u uw abonnement annuleert.",
+        "U kan tot ${ MAX_CALENDARS_FREE } agenda's behouden. Verwijder koppelingen naar gedeelde agenda's voordat u uw abonnement annuleert."
       ],
       "You can now access and manage the account as an administrator.": [
         "U heeft nu toegang tot het account als administrator en kan deze beheren."
@@ -3631,6 +3797,10 @@
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "U kunt de volgende inloggegevens gebruiken om met een ${ VPN_APP_NAME }-server te verbinden met een externe VPN-app, zoals Tunnelblick voor macOS of OpenVPN voor GNU/Linux."
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "U heeft ${ availableCount } toegewijde server beschikbaar.",
+        "U heeft ${ availableCount } toegewijde servers beschikbaar."
       ],
       "You have no saved payment methods.": [
         "U heeft geen opgeslagen betalingsmethoden."
@@ -3739,11 +3909,6 @@
         "U kunt een betalingsmethode toevoegen om uw abonnement automatisch te laten verlengen. Andere betaalmethoden zijn ook beschikbaar."
       ]
     },
-    "Info message for custom invoice modal": {
-      "Add your name (or company name) and address to your invoices.": [
-        "Voeg uw naam (of bedrijfsnaam) en adres toe aan uw facturen."
-      ]
-    },
     "Info subscription": {
       "You can prevent expiry by reactivating the subscription": [
         "U kunt het vervallen voorkomen door uw abonnement opnieuw te activeren"
@@ -3825,6 +3990,18 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME }-adres"
+      ],
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } dag",
+        "${ nbDay } dagen"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen",
+        "${ UsedAddresses } van de ${ MaxAddresses } e-mailadressen"
       ],
       "Account storage": [
         "Opslagruimte account"
@@ -3948,9 +4125,6 @@
       ],
       "Current email": [
         "Huidige e-mail"
-      ],
-      "Customize invoices": [
-        "Facturen aanpassen"
       ],
       "Default language": [
         "Standaardtaal"
@@ -4369,6 +4543,12 @@
         "Upgraden om chatondersteuning en andere premium functies te ontgrendelen, of gebruik ons gratis ondersteuningsformulier om uw probleem te melden."
       ]
     },
+    "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } organisatielid gebruikt tweestapsverificatie",
+        "${ twoFAMembers.length }/${ members.length } organisatieleden gebruiken tweestapsverificatie"
+      ]
+    },
     "Member action": {
       "Change password": [
         "Wachtwoord wijzigen"
@@ -4497,6 +4677,66 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } agenda",
+        "${ n } agenda's"
+      ],
+      "${ n } calendar per user": [
+        "${ n } agenda per gebruiker",
+        "${ n } agenda's per gebruiker"
+      ],
+      "${ n } custom email domain": [
+        "${ n } aangepast e-maildomein",
+        "${ n } aangepaste e-maildomeinen"
+      ],
+      "${ n } email address": [
+        "${ n } e-mailadres",
+        "${ n } e-mailadressen/aliassen"
+      ],
+      "${ n } email address per user": [
+        "${ n } e-mailadres per gebruiker",
+        "${ n } e-mailadressen per gebruiker"
+      ],
+      "${ n } filter": [
+        "${ n } filter",
+        "${ n } filters"
+      ],
+      "${ n } folder": [
+        "${ n } map",
+        "${ n } mappen"
+      ],
+      "${ n } folder and label": [
+        "${ n } map en label",
+        "${ n } mappen en labels"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email-alias",
+        "${ n } hide-my-email-aliassen"
+      ],
+      "${ n } label": [
+        "${ n } label",
+        "${ n } labels"
+      ],
+      "${ n } message per day": [
+        "${ n } bericht per dag",
+        "${ n } berichten per dag"
+      ],
+      "${ n } vault": [
+        "${ n } kluis",
+        "${ n } kluizen"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN-verbinding per gebruiker",
+        "${ n } VPN-verbindingen per gebruiker"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } met ${ n } hide-my-email-aliassen",
+        "${ PASS_APP_NAME } met ${ n } hide-my-email aliassen"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } met onbeperkte hide-my-email-aliassen"
       ],
@@ -4635,6 +4875,10 @@
       "High-speed Swiss VPN that protects your privacy": [
         "Supersnelle Zwitserse VPN die uw privacy beschermt"
       ],
+      "High-speed VPN on ${ n } device": [
+        "High-speed VPN op ${ n } apparaat",
+        "High-speed VPN op ${ n } apparaten"
+      ],
       "HTML signatures": [
         "HTML-handtekeningen"
       ],
@@ -4671,6 +4915,10 @@
       "Priority support & live chat": [
         "Prioritaire ondersteuning en live chat"
       ],
+      "Protect ${ n } device at a time": [
+        "Bescherm ${ n } apparaat tegelijkertijd",
+        "Bescherm ${ n } apparaten tegelijkertijd"
+      ],
       "Router support": [
         "Routerondersteuning"
       ],
@@ -4685,6 +4933,10 @@
       ],
       "Send & receive invitations": [
         "Uitnodigingen verzenden & ontvangen"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Servers in ${ vpnServersCountData.paid.countries }+ land",
+        "Servers in ${ vpnServersCountData.paid.countries }+ landen"
       ],
       "Share calendar via link": [
         "Agenda delen via koppeling"
@@ -4769,6 +5021,10 @@
       ],
       "User session management": [
         "Gebruikerssessiebeheer"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Kluis delen (tot ${ n } persoon)",
+        "Kluis delen (tot ${ n } personen)"
       ]
     },
     "new_plans: feature info": {
@@ -4882,6 +5138,12 @@
         "/maand"
       ]
     },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "U hebt nog ${ daysRemaining } dag over van uw ${ currentPlanName }-account.",
+        "U hebt nog ${ daysRemaining } dagen over van uw ${ currentPlanName }-account."
+      ]
+    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Door op \"Betaal\" te klikken, u akkoord met onze ${ termsAndConditions }."
@@ -4948,6 +5210,10 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Maak meerdere e-mailadressen aan voor uw online identiteiten, zoals JohnShopper@${ domain } voor shoppingaccounts, JohnNieuws@${ domain } voor nieuwsabonnementen"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Maak tot ${ n } agenda of voeg agenda's van vrienden, familie, collega's of andere organisaties toe",
+        "Maak tot ${ n } agenda's of voeg agenda's van vrienden, familie, collega's of andere organisaties toe"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Maak maximaal ${ n } e-mailadressen/aliassen aan die u aan gezinsleden kunt toewijzen. Gebruik ze voor online identiteiten, bijvoorbeeld JohnShopper@${ domain } voor shopping-accounts."
@@ -5145,6 +5411,10 @@
       "Cover more ground with support for 10 custom email domains": [
         "Doe meer met ondersteuning voor 10 aangepaste e-maildomeinen"
       ],
+      "Create up to ${ n } calendar": [
+        "Maak tot ${ n } agenda",
+        "Maak tot ${ n } agenda's"
+      ],
       "Dedicated Account manager": [
         "Toegewezen account manager"
       ],
@@ -5252,6 +5522,18 @@
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } om meer opslagruimte te krijgen, of verwijder wat opslagruimte om ruimte vrij te maken."
       ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Uw abonnement bevat een maximum van ${ availableAddresses } extra adres.",
+        "Uw abonnement bevat een maximum van ${ availableAddresses } extra adressen."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Uw abonnement bevat een maximum van ${ availableNumberOfMembers } extra organisatiegebruiker.",
+        "Uw abonnement bevat een maximum van ${ availableNumberOfMembers } extra organisatiegebruikers."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Uw abonnement bevat een maximum van ${ availableVPNAccess } extra VPN-account.",
+        "Uw abonnement bevat een maximum van ${ availableVPNAccess } extra VPN-accounts."
+      ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Uw abonnement bevat een maximum van ${ humanReadableAvailableSpace } extra opslag."
       ]
@@ -5347,17 +5629,16 @@
         "Thomas Anderson"
       ]
     },
-    "Placeholder for custom invoice text": {
-      "Add your name (or company name) and address to your invoices": [
-        "Voeg uw naam (of bedrijfsnaam) en adres toe aan uw facturen"
-      ]
-    },
     "plan customizer, users": {
       "contact": [
         "neem contact op"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "Selecteer het aantal gebruikers om op te nemen in uw abonnement. Elke extra gebruiker kost ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Heeft u meer dan ${ maxUsers } gebruiker nodig, ${ contact } met ons Sales team.",
+        "Heeft u meer dan ${ maxUsers } gebruikers nodig, ${ contact } met ons Sales team."
       ]
     },
     "Price": {
@@ -5508,14 +5789,38 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } dag",
+        "${ timeRemaining.inDays } dagen"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } uur",
+        "${ timeRemaining.inHours } uren"
+      ],
       "Didn’t make this request?": [
         "Heeft u deze aanvraag niet gemaakt?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Indien u geen wachtwoord reset hebt aangevraagd, annuleer de aanvraag dan nu."
       ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inDays } dag om uw wachtwoord te resetten.",
+        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inDays } dagen om uw wachtwoord te resetten."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inHours } uur om uw wachtwoord te resetten.",
+        "Wachtwoord reset aanvraag goedgekeurd (${ user.Email }). U heeft ${ timeRemaining.inHours } ure om uw wachtwoord te resetten."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "\"Ga naar het ingelogde apparaat (in de sessie waarin de aanvraag is gestart) om uw wachtwoord te wijzigen.\""
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Deze toestemming verloopt binnen ${ timeRemaining.inDays } dag",
+        "Deze toestemming verloopt binnen ${ timeRemaining.inDays } dagen"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uur",
+        "Deze toestemming verloopt binnen ${ timeRemaining.inHours } uren"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "U kan uw wachtwoord vrijelijk wijzigen voor de account ${ boldEmail } gedurende ${ boldDaysRemaining }."
@@ -5587,6 +5892,10 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } uur",
+        "${ gracePeriodHoursRemaining } uren"
+      ],
       "Didn’t make this request?": [
         "Heeft u deze aanvraag niet gemaakt?"
       ],
@@ -5599,11 +5908,19 @@
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "Wachtwoord reset beschikbaar vanaf ${ boldDate }. Dit geeft u de tijd om frauduleuze aanvragen te annuleren."
       ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Wachtwoord reset aangevraagd (${ user.Email }). Uw wachtwoord kan gewijzigd worden in ${ hoursRemaining } uur.",
+        "Wachtwoord reset aangevraagd (${ user.Email }). Uw wachtwoord kan gewijzigd worden in ${ hoursRemaining } uren."
+      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Om er zeker van te zijn dat u het bent die probeert uw wachtwoord te resetten, wachten we 72 uur voordat we verzoeken goedkeuren. U kan uw wachtwoord wijzigen in ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "We ontvingen een wachtwoord reset aanvraag voor ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "U kan uw wachtwoord wijzigen in ${ gracePeriodHoursRemaining } uur",
+        "U kan uw wachtwoord wijzigen in ${ gracePeriodHoursRemaining } uren"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -5654,6 +5971,10 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "Nieuw wachtwoord aanvragen?"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "U kan uw wachtwoord resetten in ${ gracePeriodHoursRemaining } uur",
+        "U kan uw wachtwoord resetten in ${ gracePeriodHoursRemaining } uren"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -5665,6 +5986,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } uur",
+        "${ gracePeriodHoursRemaining } uren"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } is nu beschikbaar"
       ],
@@ -5736,6 +6061,30 @@
         "Kies Unlimited"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } dag",
+        "${ days } dagen"
+      ],
+      "${ hours } hour": [
+        "${ hours } uur",
+        "${ hours } uren"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } minuut",
+        "${ minutes } minuten"
+      ],
+      "${ seconds } second": [
+        "${ seconds } seconde",
+        "${ seconds } seconden"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } maand GRATIS",
+        "${ n } maanden GRATIS"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 gebruiker"
@@ -5799,6 +6148,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
       "/ month": [
         "/ maand"
       ],
@@ -5942,6 +6295,58 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } toegewijde server",
+        "${ ipAddresses } toegewijde servers"
+      ],
+      "${ maxVpn } high-speed VPN connection": [
+        "${ maxVpn } supersnelle VPN-verbinding",
+        "${ maxVpn } supersnelle VPN-verbindingen"
+      ],
+      "${ n } calendar": [
+        "${ n } agenda",
+        "${ n } agenda's"
+      ],
+      "${ n } calendar per user": [
+        "${ n } agenda per gebruiker",
+        "${ n } agenda's per gebruiker"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } supersnelle VPN-verbinding",
+        "${ n } supersnelle VPN-verbindingen"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } supersnelle VPN-verbinding per gebruiker",
+        "${ n } supersnelle VPN-verbindingen per gebruiker"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } VPN-verbinding per gebruiker",
+        "${ n } VPN-verbindingen per gebruiker"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } adres",
+        "${ UsedAddresses } adressen"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } van ${ MaxAddresses } e-mailadres",
+        "${ UsedAddresses } van ${ MaxAddresses } e-mailadressen"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } agenda",
+        "${ UsedCalendars } agenda's"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } van de ${ MaxDomains } eigen domein",
+        "${ UsedDomains } van de ${ MaxDomains } eigen domeinen"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers }/${ MaxMembers } gebruiker",
+        "${ UsedMembers }/${ MaxMembers } gebruikers"
+      ],
       "1 email address": [
         "1 e-mailadres"
       ],
@@ -5953,6 +6358,10 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "Ingebouwde adblocker (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "Supersnelle VPN op ${ maxVpn } apparaat",
+        "Supersnelle VPN op ${ maxVpn } apparaten"
       ]
     },
     "Subscription change warning": {
@@ -6292,9 +6701,6 @@
       "Add credits": [
         "Tegoed toevoegen"
       ],
-      "Add invoice details": [
-        "Facturatiegegevens opgeven"
-      ],
       "Add new user": [
         "Voeg nieuwe gebruiker toe"
       ],
@@ -6379,6 +6785,10 @@
       "Couldn’t create accounts": [
         "Kon geen accounts aanmaken"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "Maak ${ selectedUserIds.length } gebruiker aan",
+        "Maak ${ selectedUserIds.length } gebruikers aan"
+      ],
       "Create a new Gateway": [
         "Een nieuwe gateway aanmaken"
       ],
@@ -6426,6 +6836,10 @@
       ],
       "Delete account": [
         "Account verwijderen"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dag)",
+        "Verwijder de server (u kan deze nog steeds herstellen na ${ days } dagen)"
       ],
       "Delete user": [
         "Gebruiker verwijderen"
@@ -6495,6 +6909,10 @@
       ],
       "Every member of the organization can access": [
         "Elke gebruiker binnen uw organisatie kan"
+      ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "${ failedUsers.length } gebruikersaccount aanmaken niet gelukt.",
+        "${ failedUsers.length } gebruikersaccounts aanmaken niet gelukt."
       ],
       "Find email or username": [
         "Vind e-mail of gebruikersnaam"
@@ -6685,6 +7103,14 @@
       "Subscription": [
         "Abonnement"
       ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "Met succes ${ localSuccessfullyCreatedUsers.length } gebruikersaccount aangemaakt",
+        "Met succes ${ localSuccessfullyCreatedUsers.length } gebruikersaccounts aangemaakt"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Met succes een gebruikersaccount aangemaakt",
+        "Met succes ${ successfullyCreatedUsers.length } gebruikersaccounts aangemaakt"
+      ],
       "Summary": [
         "Overzicht"
       ],
@@ -6865,6 +7291,16 @@
         "Primaire administrator"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Wachtwoord moet ten minste ${ length } teken bevatten",
+        "Wachtwoord moet ten minste ${ length } tekens bevatten"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Probeer een kortere gebruikersnaam (maximum ${ n } teken)",
+        "Probeer een kortere gebruikersnaam (maximum ${ n } tekens)"
+      ]
+    },
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "Ik heb een andere service gevonden die mijn voorkeur heeft"
@@ -6882,6 +7318,24 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now en meer."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } server",
+        "${ n }+ servers"
+      ],
+      "${ n } VPN connection": [
+        "${ n } VPN-verbinding",
+        "${ n } VPN-verbindingen"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } land",
+        "${ numberOfServers } in ${ numberOfCountries }+ landen"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } in ${ numberOfCountries } land",
+        "${ numberOfServers } in ${ numberOfCountries } landen"
       ]
     },
     "vpn_2step: billing": {
@@ -6918,6 +7372,14 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } maand",
+        "${ n } maanden"
+      ],
+      "${ n } year": [
+        "${ n } jaar",
+        "${ n } jaren"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Probeer risicoloos ${ upsellPlanName }"
       ],
