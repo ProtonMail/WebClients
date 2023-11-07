@@ -349,6 +349,10 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "A eliminação no cofre \"${ payload.content.name }\" falhou."
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "${ errors.length } linha corrompida detetada no ficheiro CSV.",
+        "${ errors.length } linhas corrompidas detetadas no ficheiro CSV."
+      ],
       "Editing item failed": [
         "A edição do item falhou"
       ],
@@ -479,6 +483,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -492,6 +500,24 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         " Atualize para um plano pago para criar vários cofres."
@@ -501,6 +527,30 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "A atualização do \"${ payload.item.data.metadata.name }\" foi descartada."
+      ],
+      "${ count } item": [
+        "${ count } item",
+        "${ count } itens"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } item",
+        "${ itemCount } itens"
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } vez.",
+        "${ revisionNumber } vezes."
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } item",
+        "${ totalImportedItems } itens"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } item",
+        "${ totalItems } itens"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } dia restante",
+        "${ trialDaysLeft } dias restantes"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Uma nova versão do ${ PASS_APP_NAME } está disponível. Actualize para desfrutar das funcionalidades e correções de erros mais recentes."
@@ -574,6 +624,10 @@
       "Here you will find all the necessary information to get you started.": [
         "Aqui encontrará todas as informações necessárias para começar."
       ],
+      "Imported ${ payload.total } item": [
+        "${ payload.total } item importado",
+        "${ payload.total } itens importados"
+      ],
       "Imported on ${ date }": [
         "Importado em ${ date }"
       ],
@@ -585,6 +639,10 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Parece que já iniciou sessão em ${ PASS_APP_NAME }. Se estiver a tentar iniciar sessão com uma conta diferente, termine primeiro a sessão na extensão."
+      ],
+      "item": [
+        "item",
+        "itens"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Item \"${ payload.item.data.metadata.name }\" criado"
@@ -700,6 +758,10 @@
       "Thank you, the problem has been reported": [
         "Obrigado, o problema foi comunicado"
       ],
+      "The following item could not be imported :": [
+        "O seguinte item não pôde ser importado:",
+        "Os seguintes ${ result.ignored.length } itens não puderam ser importados:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "O texto que está a tentar colar é maior do que o comprimento máximo permitido de ${ maxLength } caracteres."
       ],
@@ -765,6 +827,14 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } carácter",
+        "${ passwordOptions.options.length } caracteres"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } palavra",
+        "${ passwordOptions.options.wordCount } palavras"
+      ],
       "1 hour": [
         "1 hora"
       ],

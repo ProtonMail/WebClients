@@ -457,6 +457,10 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Sletning af boksen \"${ payload.content.name }\" mislykkedes"
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Opdagede ${ errors.length } beskadiget CSV-række",
+        "Opdagede ${ errors.length } beskadigede CSV-rækker"
+      ],
       "Editing item failed": [
         "Redigering af element mislykkedes"
       ],
@@ -614,6 +618,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -627,6 +635,28 @@
         "TB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobytes"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabyte"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         "Opgradér til et betalt abonnement for at oprette flere bokse."
@@ -636,6 +666,18 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "\"${ payload.item.data.metadata.name }\" opdatering blev afvist"
+      ],
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elementer"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } element",
+        "${ itemCount } elementer"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } medlem",
+        "${ memberCount } medlemmer"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
         "${ PASS_APP_NAME } vil vise elementets favicon via ${ BRAND_NAME } anonymiseret billedproxy."
@@ -651,6 +693,22 @@
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } vil foreslå dig at oprette stærke adgangskoder på tilmeldingsformularer."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } gang",
+        "${ revisionNumber } gange"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } element",
+        "${ totalImportedItems } elementer"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } element",
+        "${ totalItems } elementer"
+      ],
+      "${ trialDaysLeft } day left": [
+        "${ trialDaysLeft } dag tilbage",
+        "${ trialDaysLeft } dage tilbage"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "7 dage til at prøve premium-funktioner gratis. Kun i din første uge med ${ BRAND_NAME }."
@@ -775,6 +833,10 @@
       "Import in progress:": [
         "Import i gang:"
       ],
+      "Imported ${ payload.total } item": [
+        "Importerede ${ payload.total } element",
+        "Importerede ${ payload.total } elementer"
+      ],
       "Imported on ${ date }": [
         "Importeret ${ date }"
       ],
@@ -801,6 +863,10 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Det ser ud til, at du allerede er logget ind på ${ PASS_APP_NAME }. Hvis du prøver at logge ind med en anden konto, bedes du logge ud af udvidelsen først."
+      ],
+      "item": [
+        "element",
+        "elementer"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Elementet \"${ payload.item.data.metadata.name }\" blev oprettet"
@@ -949,6 +1015,10 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Autogem-dropdown vil automatisk åbne, når feltet er i fokus."
       ],
+      "The following item could not be imported :": [
+        "Det følgende element kunne ikke importeres :",
+        "De følgende ${ result.ignored.length } elementer kunne ikke importeres"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Teksten du forsøger at indsætte er længere end den maksimalt tilladte længde på ${ maxLength } tegn."
       ],
@@ -1021,6 +1091,10 @@
       "You cannot change the mailboxes for this alias.": [
         "Du kan ikke ændre postkasserne for dette alias"
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Du har ${ daysRemaining } dag tilbage til at prøve disse og andre premium-funktioner.",
+        "Du har ${ daysRemaining } dage tilbage til at prøve disse og andre premium-funktioner."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Du har overskredet antallet af bokse, der er inkluderet i dit abonnement. Elementer kan kun flyttes til dine to første bokse. For at flytte elementer mellem alle bokse, skal du opgradere dit abonnement."
       ],
@@ -1053,6 +1127,14 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } tegn",
+        "${ passwordOptions.options.length } tegn"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } ord",
+        "${ passwordOptions.options.wordCount } ord"
+      ],
       "1 hour": [
         "1 time"
       ],
@@ -1565,6 +1647,12 @@
         "Skriv din note"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Bokse kan ikke indeholde mere end ${ vault.targetMaxMembers } bruger.",
+        "Bokse kan ikke indeholde mere end ${ vault.targetMaxMembers } brugere."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "${ PASS_APP_NAME }-indstillinger"
@@ -1740,6 +1828,10 @@
       ],
       "Invalid alias prefix": [
         "Ugyldigt alias-præfiks"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Maksimal længde er ${ maxLength } tegn",
+        "Maksimal længde er ${ maxLength } tegn"
       ],
       "Missing alias prefix": [
         "Mangler alias-præfiks"
