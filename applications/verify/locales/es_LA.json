@@ -1108,6 +1108,16 @@
       "Sign in with 2FA": [
         "Iniciar sesión 2FA"
       ]
+    },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "La contraseña debe tener al menos ${ length } caracter",
+        "La contraseña debe tener al menos ${ length } caracteres"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Intente con un nombre de usuario corto (${ n } caracter máx.)",
+        "Intente con un nombre de usuario corto (${ n } caracteres máx.)"
+      ]
     }
   }
 }
