@@ -457,6 +457,11 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Ștergerea seifului „${ payload.content.name }” a eșuat."
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "S-a detectat ${ errors.length } rând cu erori în csv.",
+        "S-au detectat ${ errors.length } rânduri cu erori în csv.",
+        "S-au detectat ${ errors.length } de rânduri cu erori în csv."
+      ],
       "Editing item failed": [
         "Editarea articolelor a eșuat."
       ],
@@ -614,6 +619,11 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "bait",
+        "baiți",
+        "de baiți"
+      ],
       "GB": [
         "GiB"
       ],
@@ -627,6 +637,33 @@
         "TiB"
       ]
     },
+    "file size format, long": {
+      "Byte": [
+        "Bait",
+        "Baiți",
+        "Baiți"
+      ],
+      "Gigabyte": [
+        "Gigabait",
+        "Gigabaiți",
+        "Gigabaiți"
+      ],
+      "Kilobyte": [
+        "Kilobait",
+        "Kilobaiți",
+        "Kilobaiți"
+      ],
+      "Megabyte": [
+        "Megabait",
+        "Megabaiți",
+        "Megabaiți"
+      ],
+      "Terabyte": [
+        "Terabait",
+        "Terabaiți",
+        "Terabaiți"
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         "Treceți la un plan cu plată pentru a putea crea seifuri multiple."
@@ -636,6 +673,21 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Actualizarea pentru „${ payload.item.data.metadata.name }” a fost respinsă."
+      ],
+      "${ count } item": [
+        "${ count } element",
+        "${ count } elemente",
+        "${ count } de elemente"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } articol",
+        "${ itemCount } articole",
+        "${ itemCount } de articole"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } membru",
+        "${ memberCount } membri",
+        "${ memberCount } de membri"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
         "${ PASS_APP_NAME } va afișa fișierul favicon prin proxy-ul de imagine anonim ${ BRAND_NAME }."
@@ -651,6 +703,26 @@
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } va sugera crearea de parole puternice în formularele de înscriere."
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } dată",
+        "de ${ revisionNumber } ori",
+        "de ${ revisionNumber } de ori"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } element",
+        "${ totalImportedItems } elemente",
+        "${ totalImportedItems } de elemente"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } element",
+        "${ totalItems } elemente",
+        "${ totalItems } de elemente"
+      ],
+      "${ trialDaysLeft } day left": [
+        "A mai rămas ${ trialDaysLeft } zi",
+        "Au mai rămas ${ trialDaysLeft } zile",
+        "Au mai rămas ${ trialDaysLeft } de zile"
       ],
       "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
         "Aveți 7 zile de încercare gratuită a funcțiilor premium. Valabil doar pentru prima săptămână de utilizare a ${ BRAND_NAME }."
@@ -775,6 +847,11 @@
       "Import in progress:": [
         "Importare în derulare:"
       ],
+      "Imported ${ payload.total } item": [
+        "S-a importat ${ payload.total } element.",
+        "S-au importat ${ payload.total } elemente.",
+        "S-au importat ${ payload.total } de elemente."
+      ],
       "Imported on ${ date }": [
         "Importat la ${ date }"
       ],
@@ -801,6 +878,11 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Se pare că deja v-ați conectat la ${ PASS_APP_NAME }. Dacă încercați să vă autentificați cu un alt cont, deconectați-vă mai întâi de la extensie."
+      ],
+      "item": [
+        "element",
+        "elemente",
+        "de elemente"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Articolul „${ payload.item.data.metadata.name }” a fost creat."
@@ -949,6 +1031,11 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Lista de completare automată se va deschide la selectarea câmpului."
       ],
+      "The following item could not be imported :": [
+        "Următorul element nu a fost importat :",
+        "Următoarele ${ result.ignored.length } elemente nu au fost importate:",
+        "Următoarele ${ result.ignored.length } de elemente nu au fost importate:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Textul pe care încercați să îl lipiți este mai lung decât lungimea maximă permisă de ${ maxLength } de caractere."
       ],
@@ -1021,6 +1108,11 @@
       "You cannot change the mailboxes for this alias.": [
         "Nu se poate modifica adresa reală pentru acest alias."
       ],
+      "You have ${ daysRemaining } day left to try these and other premium features.": [
+        "Mai aveți ${ daysRemaining } zi rămasă pentru a încerca aceste funcții premium.",
+        "Mai aveți ${ daysRemaining } zile rămase pentru a încerca aceste funcții premium.",
+        "Mai aveți ${ daysRemaining } de zile rămase pentru a încerca aceste funcții premium."
+      ],
       "You have exceeded the number of vaults included in your subscription. Items can only be moved to your first two vaults. To move items between all vaults upgrade your subscription.": [
         "Ați depășit numărul de seifuri incluse în abonament. Articolele pot fi mutate doar în primele două seifuri. Pentru a muta articolele între toate seifurile, modificați-vă abonamentul."
       ],
@@ -1053,6 +1145,16 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } caracter",
+        "${ passwordOptions.options.length } caractere",
+        "${ passwordOptions.options.length } de caractere"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } cuvânt",
+        "${ passwordOptions.options.wordCount } cuvinte",
+        "${ passwordOptions.options.wordCount } de cuvinte"
+      ],
       "1 hour": [
         "o oră"
       ],
@@ -1565,6 +1667,13 @@
         "Scrieți-vă nota"
       ]
     },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } utilizator.",
+        "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } utilizatori.",
+        "Seifurile nu pot conține mai mult de ${ vault.targetMaxMembers } de utilizatori."
+      ]
+    },
     "Title": {
       "${ PASS_APP_NAME } Settings": [
         "Setări ${ PASS_APP_NAME }"
@@ -1740,6 +1849,11 @@
       ],
       "Invalid alias prefix": [
         "Prefix alias nevalid."
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "Lungimea maximă este de ${ maxLength } caracter.",
+        "Lungimea maximă este de ${ maxLength } caractere.",
+        "Lungimea maximă este de ${ maxLength } de caractere."
       ],
       "Missing alias prefix": [
         "Lipsește prefixul aliasului."
