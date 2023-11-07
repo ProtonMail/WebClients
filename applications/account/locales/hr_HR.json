@@ -1573,6 +1573,11 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } put",
+        "${ count } puta",
+        "${ count } puta"
+      ],
       "Daily": [
         "Dnevno"
       ],
@@ -1581,6 +1586,21 @@
       ],
       "Daily, ${ untilString }": [
         "Dnevno, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Svaki ${ interval } dan",
+        "Svaka ${ interval } dana",
+        "Svakih ${ interval } dana"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Svaki ${ interval } dan, ${ timesString }",
+        "Svaka ${ interval } dana, ${ timesString }",
+        "Svakih ${ interval } dana, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Svaki ${ interval } dan, ${ untilString }",
+        "Svaka ${ interval } dana, ${ untilString }",
+        "Svakih ${ interval } dana, ${ untilString }"
       ],
       "until ${ dateString }": [
         "do ${ dateString }"
@@ -2169,6 +2189,11 @@
       "Access to all countries": [
         "Pristup svim državama"
       ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Veza za ${ plusVpnConnections } uređaj",
+        "Veza za do ${ plusVpnConnections } uređaja",
+        "Veza za do ${ plusVpnConnections } uređaja"
+      ],
       "Fastest VPN servers": [
         "Najbrži VPN poslužitelji"
       ],
@@ -2342,6 +2367,11 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Pronađen je ${ items.length } prijedlog. Za navigaciju koristite tipkovnicu.",
+        "Pronađena su ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu.",
+        "Pronađeno je ${ items.length } prijedloga. Za navigaciju koristite tipkovnicu."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Upotrijebite tipke gore i dolje za pristup i pregledavanje prijedloga nakon unosa. Pritisnite Enter da biste potvrdili svoj izbor ili Escape da biste zatvorili okvir za prijedloge."
       ]
@@ -2372,6 +2402,11 @@
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } kontakt šifriran i dodan u vašu listu kontakata",
+        "${ totalImported }/${ totalToImport } kontakta šifrirano i dodano u vašu listu kontakata",
+        "${ totalImported }/${ totalToImport } kontakata šifrirano i dodano u vašu listu kontakata"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Došlo je do pogreške prilikom šifriranja i dodavanja vašeg kontakta. Nije moguće uvesti nijedan kontakt."
       ],
@@ -2391,6 +2426,13 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Kontakt ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } kontakt",
+        "${ totalContacts } kontakta",
+        "${ totalContacts } kontakata"
       ]
     },
     "Import contact. Contact identifier": {
@@ -2530,8 +2572,48 @@
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } zahtjeva vaše dopuštenje da ${ enableDesktopNotifications }."
       ],
+      "${ n } address": [
+        "${ n } adresa",
+        "${ n } adrese",
+        "${ n } adresa"
+      ],
       "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
         "${ none } nema utjecaja na slanje e-pošte, ali preporučujemo ${ quarantine } za veću sigurnost."
+      ],
+      "${ number } city": [
+        "${ number } grad",
+        "${ number } grada",
+        "${ number } gradova"
+      ],
+      "${ number } server": [
+        "${ number } poslužitelj",
+        "${ number } poslužitelja",
+        "${ number } poslužitelja"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } mapa pronađena",
+        "${ providerFoldersNumLocalized } mape pronađene",
+        "${ providerFoldersNumLocalized } mapa pronađeno"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } oznaka pronađena u Gmailu",
+        "${ providerFoldersNumLocalized } oznake pronađene u Gmailu",
+        "${ providerFoldersNumLocalized } oznaka pronađeno u Gmailu"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } mapa odabrana",
+        "${ selectedFoldersCountLocalized } mape odabrane",
+        "${ selectedFoldersCountLocalized } mapa odabrano"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } oznaka odabrana",
+        "${ selectedFoldersCountLocalized } oznake odabrane",
+        "${ selectedFoldersCountLocalized } oznaka odabrano"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } član)",
+        "(${ memberCount } člana)",
+        "(${ memberCount } članova)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtriraj ako su ispunjeni SVI sljedeći uvjeti)"
@@ -2667,6 +2749,11 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Želite li opozvati sve ostale sesije osim trenutne?"
+      ],
+      "domain used": [
+        "iskorištena domena",
+        "iskorištene domene",
+        "iskorištenih domena"
       ],
       "Done": [
         "Gotovo"
@@ -3112,9 +3199,6 @@
       "You are about to open another browser tab and visit:": [
         "Otvoriti će te još jednu karticu preglednika i posjetiti:"
       ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "Račune možete prilagoditi i preuzeti za računovodstvene svrhe."
-      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Možete uključiti obavijesti da biste dobili upozorenja kada u tu mapu stignu nove poruke e-pošte."
       ],
@@ -3203,11 +3287,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Možete dodati način plaćanja kako bi se pretplata automatski obnavljala. Dostupni su i drugi načini plaćanja."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Add your name (or company name) and address to your invoices.": [
-        "Dodajte svoje ime (ili naziv tvrtke) i adresu na svoje fakture."
       ]
     },
     "Info on errors": {
@@ -3655,9 +3734,6 @@
       ],
       "Credits used": [
         "Iskorišteni kredit"
-      ],
-      "Customize invoices": [
-        "Prilagodite fakture"
       ],
       "Daily email notifications": [
         "Dnevne obavijesti e-pošte"
@@ -4223,6 +4299,21 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Svaki ${ interval } mjesec ${ onDayString }",
+        "Svaka ${ interval } mjeseca ${ onDayString }",
+        "Svakih ${ interval } mjeseci ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Svaki ${ interval } mjesec ${ onDayString }, ${ timesString }",
+        "Svaka ${ interval } mjeseca ${ onDayString }, ${ timesString }",
+        "Svakih ${ interval } mjeseci ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Svaki ${ interval } mjesec ${ onDayString }, ${ untilString }",
+        "Svaka ${ interval } mjeseca ${ onDayString }, ${ untilString }",
+        "Svakih ${ interval } mjeseci ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }": [
         "Mjesečno ${ onDayString }"
       ],
@@ -4421,8 +4512,28 @@
       "at time of event": [
         "u vrijeme događaja"
       ],
+      "day before": [
+        "dan prije",
+        "dana prije",
+        "dana prije"
+      ],
+      "hour before": [
+        "sat prije",
+        "sata prije",
+        "sata prije"
+      ],
+      "minute before": [
+        "minuta prije",
+        "minute prije",
+        "minuta prije"
+      ],
       "on the same day": [
         "isti dan"
+      ],
+      "week before": [
+        "tjedan prije",
+        "tjedna prije",
+        "tjedana prije"
       ]
     },
     "Option": {
@@ -4724,11 +4835,6 @@
       ],
       "yourdomain.com": [
         "vasadomena.hr"
-      ]
-    },
-    "Placeholder for custom invoice text": {
-      "Add your name (or company name) and address to your invoices": [
-        "Dodajte svoje ime (ili naziv tvrtke) i adresu na svoje fakture"
       ]
     },
     "Price": {
@@ -5161,9 +5267,6 @@
       ],
       "Add filter": [
         "Dodaj filtar"
-      ],
-      "Add invoice details": [
-        "Dodajte detalje o fakturi"
       ],
       "Add PayPal payment method": [
         "Dodaj PayPal način plaćanja"
@@ -5734,6 +5837,13 @@
         "Glavni Admin"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Lozinka mora sadržavati najmanje ${ length } znak",
+        "Lozinka mora sadržavati najmanje ${ length } znaka",
+        "Lozinka mora sadržavati najmanje ${ length } znakova"
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now i drugi."
@@ -5792,6 +5902,141 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Svaki ${ interval } tjedan na ${ multipleDaysString }",
+        "Svaka ${ interval } tjedna na ${ multipleDaysString }",
+        "Svakih ${ interval } tjedana na ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Svaki ${ interval } tjedan na ${ multipleDaysString }, ${ timesString }",
+        "Svaka ${ interval } tjedna na ${ multipleDaysString }, ${ timesString }",
+        "Svakih ${ interval } tjedana na ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Svaki ${ interval } tjedan na ${ multipleDaysString }, ${ untilString }",
+        "Svaka ${ interval } tjedna na ${ multipleDaysString }, ${ untilString }",
+        "Svakih ${ interval } tjedana na ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Svaki ${ interval } tjedan, svim danima",
+        "Svaka ${ interval } tjedna, svim danima",
+        "Svakih ${ interval } tjedana, svim danima"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Svaki ${ interval } tjedan svakim danom, ${ timesString }",
+        "Svaka ${ interval } tjedna svakim danom, ${ timesString }",
+        "Svakih ${ interval } tjedana svakim danom, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Svaki ${ interval } tjedan svakim danom, ${ untilString }",
+        "Svaka ${ interval } tjedna svakim danom, ${ untilString }",
+        "Svakih ${ interval } tjedana svakim danom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Svaki ${ interval } tjedan petkom",
+        "Svaka ${ interval } tjedna petkom",
+        "Svakih ${ interval } tjedana petkom"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Svaki ${ interval } tjedan petkom, ${ timesString }",
+        "Svaka ${ interval } tjedna petkom, ${ timesString }",
+        "Svakih ${ interval } tjedana petkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Svaki ${ interval } tjedan petkom, ${ untilString }",
+        "Svaka ${ interval } tjedna petkom, ${ untilString }",
+        "Svakih ${ interval } tjedana petkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Svaki ${ interval } tjedan ponedjeljkom",
+        "Svaka ${ interval } tjedna ponedjeljkom",
+        "Svakih ${ interval } tjedana ponedjeljkom"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Svaki ${ interval } tjedan ponedjeljkom, ${ timesString }",
+        "Svaka ${ interval } tjedna ponedjeljkom, ${ timesString }",
+        "Svakih ${ interval } tjedana ponedjeljkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Svaki ${ interval } tjedan ponedjeljkom, ${ untilString }",
+        "Svaka ${ interval } tjedna ponedjeljkom, ${ untilString }",
+        "Svakih ${ interval } tjedana ponedjeljkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Svaki ${ interval } tjedan subotom",
+        "Svaka ${ interval } tjedna subotom",
+        "Svakih ${ interval } tjedana subotom"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Svaki ${ interval } tjedan subotom, ${ timesString }",
+        "Svaka ${ interval } tjedna subotom, ${ timesString }",
+        "Svakih ${ interval } tjedana subotom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Svaki ${ interval } tjedan subotom, ${ untilString }",
+        "Svaka ${ interval } tjedna subotom, ${ untilString }",
+        "Svakih ${ interval } tjedana subotom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Svaki ${ interval } tjedan nedjeljom",
+        "Svaka ${ interval } tjedna nedjeljom",
+        "Svakih ${ interval } tjedana nedjeljom"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Svaki ${ interval } tjedan nedjeljom, ${ timesString }",
+        "Svaka ${ interval } tjedna nedjeljom, ${ timesString }",
+        "Svakih ${ interval } tjedana nedjeljom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Svaki ${ interval } tjedan nedjeljom, ${ untilString }",
+        "Svaka ${ interval } tjedna nedjeljom, ${ untilString }",
+        "Svakih ${ interval } tjedana nedjeljom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Svaki ${ interval } tjedan četvrtkom",
+        "Svaka ${ interval } tjedna četvrtkom",
+        "Svakih ${ interval } tjedana četvrtkom"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Svaki ${ interval } tjedan četvrtkom, ${ timesString }",
+        "Svaka ${ interval } tjedna četvrtkom, ${ timesString }",
+        "Svakih ${ interval } tjedana četvrtkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Svaki ${ interval } tjedan četvrtkom, ${ untilString }",
+        "Svaka ${ interval } tjedna četvrtkom, ${ untilString }",
+        "Svakih ${ interval } tjedana četvrtkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Svaki ${ interval } tjedan utorkom",
+        "Svaka ${ interval } tjedna utorkom",
+        "Svakih ${ interval } tjedana utorkom"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Svaki ${ interval } tjedan utorkom, ${ timesString }",
+        "Svaka ${ interval } tjedna utorkom, ${ timesString }",
+        "Svakih ${ interval } tjedana utorkom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Svaki ${ interval } tjedan utorkom, ${ untilString }",
+        "Svaka ${ interval } tjedna utorkom, ${ untilString }",
+        "Svakih ${ interval } tjedana utorkom, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Svaki ${ interval } tjedan srijedom",
+        "Svaka ${ interval } tjedna srijedom",
+        "Svakih ${ interval } tjedana srijedom"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Svaki ${ interval } tjedan srijedom, ${ timesString }",
+        "Svaka ${ interval } tjedna srijedom, ${ timesString }",
+        "Svakih ${ interval } tjedana srijedom, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Svaki ${ interval } tjedan srijedom, ${ untilString }",
+        "Svaka ${ interval } tjedna srijedom, ${ untilString }",
+        "Svakih ${ interval } tjedana srijedom, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Tjedno na ${ multipleDaysString }"
       ],
@@ -5898,6 +6143,21 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Svaku ${ interval } godinu",
+        "Svake ${ interval } godine",
+        "Svakih ${ interval } godina"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Svaku ${ interval } godinu, ${ timesString }",
+        "Svake ${ interval } godine, ${ timesString }",
+        "Svakih ${ interval } godina, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Svaku ${ interval } godinu, ${ untilString }",
+        "Svake ${ interval } godine, ${ untilString }",
+        "Svakih ${ interval } godina, ${ untilString }"
+      ],
       "Yearly": [
         "Godišnje"
       ],
