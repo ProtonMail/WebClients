@@ -55,10 +55,6 @@
       "Apply": [
         "Toteuta"
       ],
-      "At most ${ maxContacts } contact is allowed per contact group": [
-        "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
-        "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystietoa"
-      ],
       "Attach screenshot(s)": [
         "Liitä kuvankaappauksia"
       ],
@@ -116,6 +112,9 @@
       "Clear query": [
         "Tyhjennä haku"
       ],
+      "Clear selection": [
+        "Tyhjennä valinta"
+      ],
       "Click here.": [
         "Paina tästä."
       ],
@@ -161,6 +160,9 @@
       "Continue with Google": [
         "Jatka Googlella"
       ],
+      "Continue with Outlook": [
+        "Jatka Outlookilla"
+      ],
       "Copy address": [
         "Kopioi osoite"
       ],
@@ -193,14 +195,6 @@
       ],
       "Delete": [
         "Poista"
-      ],
-      "Delete ${ selectedCount } contact": [
-        "Poista ${ selectedCount } yhteystieto",
-        "Poista ${ selectedCount } yhteystietoa"
-      ],
-      "Delete ${ selectedCount } contact group": [
-        "Poista ${ selectedCount } yhteystietoryhmä",
-        "Poista ${ selectedCount } yhteystietoryhmää"
       ],
       "Delete contact": [
         "Poista yhteystieto"
@@ -366,6 +360,12 @@
       ],
       "Import from .csv or vCard": [
         "Tuo .csv- tai vCard-tiedostosta"
+      ],
+      "Import from Google": [
+        "Tuo Googlesta"
+      ],
+      "Import from Outlook": [
+        "Tuo Outlookista"
       ],
       "Learn more": [
         "Lue lisää"
@@ -703,6 +703,9 @@
       "Upload folder": [
         "Tallenna kansio"
       ],
+      "Upload photos": [
+        "Tallenna kuva"
+      ],
       "Upload picture": [
         "Lataa kuva"
       ],
@@ -730,10 +733,6 @@
       "View invoice": [
         "Näytä lasku"
       ],
-      "You can't send vCard files of more than ${ maxAttachments } contacts": [
-        "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot",
-        "Voit lähettää kerrallaan enintään ${ maxAttachments } yhteystiedon vCard-tiedostot"
-      ],
       "Your 500 MB bonus": [
         "500 Mt bonuksesi"
       ],
@@ -759,20 +758,6 @@
       ],
       "You don't have any groups.": [
         "Sinulla ei ole ryhmiä."
-      ]
-    },
-    "Addon": {
-      "${ domains } custom domain": [
-        "${ domains } oma verkkotunnus",
-        "${ domains } omaa verkkotunnusta"
-      ],
-      "${ ips } server": [
-        "${ ips } palvelin",
-        "${ ips } palvelinta"
-      ],
-      "${ users } user": [
-        "${ users } käyttäjä",
-        "${ users } käyttäjää"
       ]
     },
     "Alert": {
@@ -808,15 +793,96 @@
         "Tapahtumaa ei tueta"
       ]
     },
-    "Billing cycle option": {
-      "Annually": [
-        "Vuotuinen"
+    "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus ja ${ CALENDAR_SHORT_APP_NAME }"
       ],
-      "Monthly": [
-        "Kuukausittainen"
+      "${ storageSize } storage": [
+        "${ storageSize } tallennustilaa"
       ],
-      "Two-year": [
-        "Kaksivuotinen"
+      "1 user": [
+        "1 käyttäjä"
+      ],
+      "3 TB": [
+        "3 Tt"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "3,000+ palvelinta 65+ maassa"
+      ],
+      "6 users": [
+        "6 käyttäjää"
+      ],
+      "Access content worldwide": [
+        "Pääsy sisältöön kaikkialla maailmassa"
+      ],
+      "Ad-blocker and malware protection": [
+        "Mainos- ja haittaohjelmaesto"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Kaikki maksulliset ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_APP_NAME } -ominaisuudet"
+      ],
+      "Extended version history": [
+        "Laajennettu versiohistoria"
+      ],
+      "High speed streaming": [
+        "Nopea suoratoisto"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Premium ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Premium ${ MAIL_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Premium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Premium salasanahallinta"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Alennukset perustuvat normaaliin kuukausihintaan."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Tilauksesi uusitaan automaattisesti samalla alennetulla hinnalla ja kestolla laskutuskautesi lopussa."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 päivän rahat takaisin -takuu"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Käytä estettyä sisältöä ja selaa yksityisesti. Sisältää 3000+ palvelinta 65+ maassa, suurimmat VPN-nopeudet, pääsyn maailmanlaajuisiin suoratoistopalveluihin, haittaohjelmien ja mainosten eston, nopeat BitTorrent-lataukset ja muuta."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Käytä mm. Netflixin, Disney+:n ja Prime Videon kaltaisten suoratoistopalveluiden sisältöä mistä tahansa."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Ohita paikalliset Internet-estot ja sensuuri maailmanlaajuisen palvelinverkostomme avulla."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Sisältää tuen yhdelle omalle sähköpostiverkkotunnukselle, 10 sähköpostiosoitetta, 10 hide-my-email-aliasta kalenterijaon ja paljon muuta."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Suojaa kirjautumistietosi kaikilla laitteillasi. Sisältää rajoittamattoman määrän aliaksia, jakamisen, integroidun 2FA:n ja paljon muuta."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Suojaa sähköpostisi ja aikataulusi päästä päähän -salauksella. Sisältää tuen omille sähköpostiverkkotunnuksille, 15 sähköpostiosoitetta, rajattomasti hide-my-email-aliaksia, kalenterijaon ja paljon muuta."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää versiohistorian, salatun tiedostojen jakamisen ja paljon muuta."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Erityisesti suunniteltu NetShield suojaa laitteitasi ja nopeuttaa selaamistasi estämällä mainoksia, seuraajia ja haittaohjelmia."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Tallennustila jaetaan kaikkien ${ BRAND_NAME } -sovellusten välillä."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Säilytä jopa 200 versiota kustakin tiedostosta jopa 10 vuoden ajan."
       ]
     },
     "Bug category": {
@@ -896,12 +962,6 @@
     "Button": {
       "Continue using ${ MAIL_APP_NAME }.": [
         "Jatka ${ MAIL_APP_NAME }in käyttämistä."
-      ]
-    },
-    "Checkout row": {
-      "${ users } user": [
-        "${ users } käyttäjä",
-        "${ users } käyttäjää"
       ]
     },
     "Collapsible tooltip": {
@@ -1870,6 +1930,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Yhteystietoja salataan ja tuodaan... Tämä voi kestää muutamia minuutteja ja käsittelyn valmistuttua voit sulkea tämän ruudun."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Tuodaksesi CSV- ja VCF-tiedostoista, varmista ettei tiedoston koko ylitä ${ MAX_IMPORT_FILE_SIZE_STRING } tai yhteystietojen määrä ${ MAX_IMPORT_CONTACTS_STRING } yhteystietoa. Jos tiedostosi on suurempi, jaa se pienempiin osiin. ${ learnMoreLink }"
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Yhteystiedot, joita olet tuomassa, näyttävät sisältävän ryhmiä. Määritä miten ryhmät tuodaan."
       ],
@@ -1882,6 +1945,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Säästä aikaa lähettämällä viestit tai kutsut saman tien koko porukalle. Yksi premium-ominaisuus monien muiden joukossa. Päivitä tilauksesi tänään."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Tuo yhteystietosi Googlesta tai Outlookista ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
       ],
@@ -1890,6 +1956,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Voit merkitä yhteystiedot, joita et haluat yhdistää tai säilyttää, poistettaviksi. Poisto suoritetaan vasta Yhdistä-painiketta painettaessa."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "Easy Switch -tuontiapurilla"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -2003,14 +2074,6 @@
       "Content search cannot be enabled in this browser. Please quit private browsing mode or use another browser.": [
         "Sisältöhakua ei voida käyttää tässä selaimessa. Poistu yksityisestä selaustilasta tai käytä eri selainta."
       ],
-      "Deselect at least ${ calendarsToFixCount } calendar": [
-        "Poista vähintään ${ calendarsToFixCount } kalenterin valinta",
-        "Poista vähintään ${ calendarsToFixCount } kalenterin valinnat"
-      ],
-      "Deselect at least ${ calendarsToFixCount } calendar or": [
-        "Poista ainakin ${ calendarsToFixCount } kalenterin valinta tai",
-        "Poista ainakin ${ calendarsToFixCount } kalenterin valinnat tai"
-      ],
       "Device name does not match": [
         "Laitteen nimi ei täsmää"
       ],
@@ -2086,10 +2149,6 @@
       "Last name is too long": [
         "Sukunimi on liian pitkä"
       ],
-      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
-        "Yhdistä ainakin ${ calendarsToFixCount } kalenteri olemassa olevaan ${ BRAND_NAME }-kalenteriin",
-        "Yhdistä ainakin ${ calendarsToFixCount } kalenteria olemassa oleviin ${ BRAND_NAME }-kalentereihin"
-      ],
       "Missing key packet": [
         "Avainpaketti puuttuu"
       ],
@@ -2111,14 +2170,6 @@
       "Not a valid number": [
         "Virheellinen puhelinnumero"
       ],
-      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
-        "Yhdellä yhteystiedolla ei ole sähköpostiosoitetta: ${ noEmailsContactNamesList }",
-        "Joillakin yhteystiedoilla ei ole sähköpostiosoitteita: ${ noEmailsContactNamesList }"
-      ],
-      "One of the groups has no contacts: ${ noContactGroupList }": [
-        "Yksi ryhmistä ei sisällä yhteystietoja: ${ noContactGroupList }",
-        "Osa ryhmistä ei sisällä yhteystietoja: ${ noContactGroupList }"
-      ],
       "Password is required": [
         "Salasana vaaditaan"
       ],
@@ -2127,10 +2178,6 @@
       ],
       "Please activate your search again": [
         "Aktivoi sisältöhakusi uudelleen"
-      ],
-      "Please fix the highlighted conflict to proceed.": [
-        "Jatka korjaamalla korostettu ristiriita.",
-        "Jatka korjaamalla korostetut ristiriidat."
       ],
       "Please provide either a first name, a last name or a display name": [
         "Syötä ainakin etunimi, sukunimi tai näyttönimi"
@@ -2161,6 +2208,9 @@
       ],
       "Some contacts could not be deleted": [
         "Joitakin yhteystietoja ei voitu poistaa"
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "Joitakin tiedostoja ei huomioitu, koska Proton ei tue niitä."
       ],
       "Some groups could not be deleted": [
         "Joitakin ryhmiä ei voitu poistaa"
@@ -2255,10 +2305,6 @@
       "Username must end with a letter or digit": [
         "Käyttäjätunnuksen on päätyttävä kirjaimella tai numerolla"
       ],
-      "You can't send a mail to more than ${ maxContacts } recipient": [
-        "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle",
-        "Voit lähettää viestin enintään ${ maxContacts } vastaanottajalle"
-      ],
       "You have reached the contacts limit for your account": [
         "Tilisi yhteystietojen enimmäismäärä on saavutettu"
       ],
@@ -2290,10 +2336,6 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Tapahtui odottamaton virhe. Tuonti on aloitettava uudelleen."
-      ],
-      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
-        "Tiedosto ${ formattedFilename } sisältää enemmän kuin ${ MAX_IMPORT_EVENTS_STRING } tapahtuman.",
-        "Tiedosto ${ formattedFilename } sisältää yli ${ MAX_IMPORT_EVENTS_STRING } tapahtumaa."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Tiedostossa ${ formattedFilename } on virheellinen method-tietue, eikä sitä voida tuoda."
@@ -2541,11 +2583,6 @@
         "3 Tt kokonaistallennustila"
       ]
     },
-    "familyOffer_2023: Get Proton Family": {
-      "Get ${ planName }": [
-        "Hanki ${ planName }"
-      ]
-    },
     "familyOffer_2023: Tooltip": {
       "Storage space is shared between family members across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Tallennustila jaetaan perheenjäsenille ja se kattaa ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n."
@@ -2644,24 +2681,6 @@
         "Nykyinen tilauksesi ei voi liittyä Visionary- tai perhetilaukseen."
       ]
     },
-    "familyOffer_2023:Footer": {
-      "*Your subscription will automatically renew at the same rate at the end of your billing cycle.": [
-        "*Tilaus uudistetaan automaattisesti samalla hinnalla laskutuskautesi lopussa."
-      ],
-      "Discounts are based on the standard monthly pricing.": [
-        "Alennukset perustuvat normaaliin kuukausihintaan."
-      ]
-    },
-    "familyOffer_2023:Get Proton Family": {
-      "Get ${ planName }": [
-        "Hanki ${ planName }"
-      ]
-    },
-    "familyOffer_2023:Info": {
-      "Online privacy, for your whole family": [
-        "Yksityisyyttä verkossa, koko perheellesi"
-      ]
-    },
     "familyOffer_2023:Onboarding Proton": {
       "Configure your family account and invite users ": [
         "Määritä perhetilisi ja kutsu käyttäjiä "
@@ -2671,11 +2690,6 @@
       ],
       "Set up your family account": [
         "Määritä perhetilisi"
-      ]
-    },
-    "familyOffer_2023:Title": {
-      "Introducing ${ planName }": [
-        "Esittelyssä ${ planName }"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -2713,10 +2727,6 @@
       ]
     },
     "file size format": {
-      "byte": [
-        "tavu",
-        "tavua"
-      ],
       "GB": [
         "Gt"
       ],
@@ -2728,28 +2738,6 @@
       ],
       "TB": [
         "Tt"
-      ]
-    },
-    "file size format, long": {
-      "Byte": [
-        "Tavu",
-        "Tavua"
-      ],
-      "Gigabyte": [
-        "Gigatavu",
-        "Gigatavua"
-      ],
-      "Kilobyte": [
-        "Kilotavu",
-        "Kilotavua"
-      ],
-      "Megabyte": [
-        "Megatavu",
-        "Megatavua"
-      ],
-      "Terabyte": [
-        "Teratavu",
-        "Teratavua"
       ]
     },
     "Filter notification": {
@@ -2805,10 +2793,6 @@
       ]
     },
     "Hint": {
-      "Found ${ items.length } suggestion, use keyboard to navigate.": [
-        "Löydettiin ${ items.length } ehdotus, käytä siirtymiseen näppäimistöä.",
-        "Löydettiin ${ items.length } ehdotusta, käytä siirtymiseen näppäimistöä."
-      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Selaa kirjoituksen jälkeen näytettäviä ehdotuksia Ylös-/Alas-näppäimillä ja vahvista valinta Enter-näppäimellä tai sulje ehdotukset Esc-näppäimellä."
       ]
@@ -2825,14 +2809,6 @@
       ]
     },
     "Import calendar": {
-      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
-        "${ totalImported }/${ totalToImport } tapahtuma salattiin ja lisättiin kalenteriisi",
-        "${ totalImported }/${ totalToImport } tapahtumaa salattiin ja lisättiin kalenteriisi"
-      ],
-      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
-        "Tapahtumaa lisättäessä ja salattaessa tapahtui virhe. ${ totalImported }/${ totalToImport } tapahtuma tuotiin.",
-        "Tapahtumaa lisättäessä ja salattaessa tapahtui virhe. ${ totalImported }/${ totalToImport } tapahtumaa tuotiin."
-      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Lisättäessä ja salattaessa tapahtumia tapahtui virhe. Tapahtumia ei tuotu."
       ],
@@ -2867,23 +2843,11 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Tuodut kutsut näkyvät ${ CALENDAR_APP_NAME }issa yksinkertaisina tapahtumina, ilman järjestäjä- ja osallistujatietoja. Vastaanottaaksesi tapahtumapäivityksiä ja nähdäksesi osallistujat, pyydä järjestäjiä kutsumaan sinut ${ BRAND_NAME }-sähköpostiosoitteellasi."
       ],
-      "This file contains an event invitation:": [
-        "Tiedosto sisältää tapahtumakutsun:",
-        "Tiedosto sisältää tapahtumakutsuja:"
-      ],
-      "This file contains an invitation response:": [
-        "Tiedosto sisältää vastauksen kutsuun:",
-        "Tiedosto sisältää vastauksia kutsuihin:"
-      ],
       "This file contains some data that we cannot import:": [
         "Tiedosto sisältää joitakin tietoja, joita ei voida tuoda:"
       ]
     },
     "Import contact": {
-      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
-        "${ totalImported }/${ totalToImport } yhteystieto salattiin ja lisättiin yhteystietoihisi",
-        "${ totalImported }/${ totalToImport } yhteystietoa salattiin ja lisättiin yhteystietoihisi"
-      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Virhe salattaessa ja lisättäessä yhteystietoa, jonka vuoksi yhteystietoa ei tuotu."
       ],
@@ -2903,12 +2867,6 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Yhteystieto ${ contactId }: "
-      ]
-    },
-    "Import contact groups info": {
-      "${ totalContacts } contact": [
-        "${ totalContacts } yhteystieto",
-        "${ totalContacts } yhteystietoa"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3080,10 +3038,6 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } yhteystietoa ei tuoda. Näytä tiedot painamalla tästä."
       ],
-      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
-        "${ totalEventsDiscarded }/${ totalEvents } tapahtumaa ei tuoda. Näytä tiedot laajentamalla.",
-        "${ totalEventsDiscarded }/${ totalEvents } tapahtumaa ei tuoda. Näytä tiedot laajentamalla."
-      ],
       "No contact can be imported. Click for details": [
         "Yhteystietoja ei voida tuoda. Painamalla tästä saat lisätietoja"
       ],
@@ -3095,74 +3049,14 @@
       ]
     },
     "Info": {
-      "${ activeDownloadsCount } downloading": [
-        "${ activeDownloadsCount } ladataan",
-        "${ activeDownloadsCount } ladataan"
-      ],
-      "${ activeDownloadsCount } downloading (${ downloadProgress }%)": [
-        "${ activeDownloadsCount } lataus (${ downloadProgress } %)",
-        "${ activeDownloadsCount } latausta (${ downloadProgress } %)"
-      ],
-      "${ activeUploadsCount } uploading (${ uploadProgress }%)": [
-        "${ activeUploadsCount } tallennus (${ uploadProgress } %)",
-        "${ activeUploadsCount } tallennusta (${ uploadProgress } %)"
-      ],
-      "${ addressCount } email address": [
-        "${ addressCount } sähköpostiosoite",
-        "${ addressCount } sähköpostiosoitetta"
-      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } tarvitsee käyttöoikeuden ${ enableDesktopNotifications }."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
       ],
-      "${ calendarsToBeCreatedCount } new calendar": [
-        "${ calendarsToBeCreatedCount } uusi kalenteri",
-        "${ calendarsToBeCreatedCount } uutta kalenteria"
-      ],
-      "${ calendarsToBeMergedCount } merged calendar": [
-        "${ calendarsToBeMergedCount } yhdistetty kalenteri",
-        "${ calendarsToBeMergedCount } yhdistettyä kalenteria"
-      ],
-      "${ canceledCount } canceled": [
-        "${ canceledCount } peruttu",
-        "${ canceledCount } peruttua"
-      ],
-      "${ contactCount } contact contains multiple email addresses.": [
-        "${ contactCount } yhteystieto sisältää useita sähköpostiosoitteita.",
-        "${ contactCount } yhteystietoa sisältää useita sähköpostiosoitteita."
-      ],
-      "${ contactEmailsLength } Member": [
-        "${ contactEmailsLength } jäsen",
-        "${ contactEmailsLength } jäsentä"
-      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } sisältää useita sähköpostiosoitteita."
-      ],
-      "${ contactsCount } contact found": [
-        "${ contactsCount } yhteystieto löytyi",
-        "${ contactsCount } yhteystietoa löytyi"
-      ],
-      "${ contactsLength } contact": [
-        "${ contactsLength } yhteystieto",
-        "${ contactsLength } yhteystietoa"
-      ],
-      "${ doneCount } finished": [
-        "${ doneCount } valmistunut",
-        "${ doneCount } valmistunut"
-      ],
-      "${ doneDownloadsCount } downloaded": [
-        "${ doneDownloadsCount } ladattu",
-        "${ doneDownloadsCount } ladattu"
-      ],
-      "${ doneUploadsCount } uploaded": [
-        "${ doneUploadsCount } tallennettiin",
-        "${ doneUploadsCount } tallennettiin"
-      ],
-      "${ errorCount } failed": [
-        "${ errorCount } epäonnistui",
-        "${ errorCount } epäonnistui"
       ],
       "${ fileName }: full-size image": [
         "${ fileName }: täysikokoinen kuva"
@@ -3170,62 +3064,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: matalatarkkuuksinen esikatselu"
       ],
-      "${ groupCounts } group found": [
-        "${ groupCounts } ryhmä löytyi",
-        "${ groupCounts } ryhmää löytyi"
-      ],
-      "${ pausedCount } paused": [
-        "${ pausedCount } keskeytetty",
-        "${ pausedCount } keskeytetty"
-      ],
-      "${ providerFoldersNumLocalized } folder found": [
-        "${ providerFoldersNumLocalized } kansio löytyi",
-        "${ providerFoldersNumLocalized } kansiota löytyi"
-      ],
-      "${ providerFoldersNumLocalized } label found in Gmail": [
-        "Gmailista löytyi ${ providerFoldersNumLocalized } tunniste",
-        "Gmailista löytyi ${ providerFoldersNumLocalized } tunnistetta"
-      ],
-      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
-        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteri",
-        "${ selectedCalendarsTotal }/${ providerCalendars.length } kalenteria"
-      ],
-      "${ selectedContactsLength }/${ contactsLength } contact selected": [
-        "${ selectedContactsLength }/${ contactsLength } yhteystieto valittu",
-        "${ selectedContactsLength }/${ contactsLength } yhteystietoa valittu"
-      ],
-      "${ selectedFoldersCount } folder selected": [
-        "${ selectedFoldersCount } kansio valittu",
-        "${ selectedFoldersCount } kansiota valittu"
-      ],
-      "${ selectedFoldersCount } label selected": [
-        "${ selectedFoldersCount } tunniste valittu",
-        "${ selectedFoldersCount } tunnistetta valittu"
-      ],
-      "${ selectedFoldersCountLocalized } folder selected": [
-        "${ selectedFoldersCountLocalized } kansio valittu",
-        "${ selectedFoldersCountLocalized } kansiota valittu"
-      ],
-      "${ selectedFoldersCountLocalized } label selected": [
-        "${ selectedFoldersCountLocalized } tunniste valittu",
-        "${ selectedFoldersCountLocalized } tunnistetta valittu"
-      ],
       "${ speed }/s": [
         "${ speed }/s"
       ],
       "${ storage } storage": [
         "${ storage } tallennustilaa"
       ],
-      "${ updated } contact updated successfully.": [
-        "${ updated } yhteystieto päivitettiin.",
-        "${ updated } yhteystietoa päivitettiin."
-      ],
       "${ uploadName } already exists in this location.": [
         "${ uploadName } löytyy jo tästä sijainnista."
-      ],
-      "(${ memberCount } member)": [
-        "(${ memberCount } jäsen)",
-        "(${ memberCount } jäsentä)"
       ],
       "A number will be added to the filename": [
         "Lisää tiedoston nimeen numeron"
@@ -3242,20 +3088,8 @@
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "Osoitteen varmennus luotetuilla avaimilla on käytössä tälle osoitteelle. Jotta voit lähettää tähän osoitteeseen, luota ensin lähetykseen käytettäviin julkisiin avaimiin."
       ],
-      "All (${ totalFoldersCount } folder)": [
-        "Kaikki (${ totalFoldersCount } kansio)",
-        "Kaikki (${ totalFoldersCount } kansiota)"
-      ],
-      "All (${ totalFoldersCount } label)": [
-        "Kaikki (${ totalFoldersCount } tunniste)",
-        "Kaikki (${ totalFoldersCount } tunnistetta)"
-      ],
       "All your changes will be lost.": [
         "Kaikki muutokset menetetään."
-      ],
-      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
-        "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka",
-        "Kaikki yhteystiedot tuodaan ${ MAX_CONTACTS_PER_USER } yhteystiedon rajoitukseen saakka"
       ],
       "Also try looking in Trash.": [
         "Etsi myös roskakorista."
@@ -3293,6 +3127,9 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Haluatko varmasti poistaa valitut kohteet roskakorista pysyvästi?"
       ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "Heti kun laitteellasi on kuvia tai videoita, ne näkyvät täällä."
+      ],
       "Attention required": [
         "Huomiota vaaditaan"
       ],
@@ -3301,9 +3138,6 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Ennen kuin pyydät uuden vahvistuskoodin, tarkista roskapostikansiosi ja varmista, että osoite ${ strong } on oikea."
-      ],
-      "Billing cycle: ${ text }": [
-        "Laskutusjakso: ${ text }"
       ],
       "Calendar side panel": [
         "Calendar-sivupaneeli"
@@ -3365,10 +3199,6 @@
       "Country code": [
         "Maakoodi"
       ],
-      "Create ${ calendarsToBeCreatedCount } new calendar": [
-        "Luo ${ calendarsToBeCreatedCount } uusi kalenteri",
-        "Luo ${ calendarsToBeCreatedCount } uutta kalenteria"
-      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Luo tuoduille viesteille tunniste, ajanjakso tälle tuonnille ja kansiot, jotka haluat tuoda."
       ],
@@ -3404,10 +3234,6 @@
       ],
       "Decrypting files": [
         "Puretaan tiedostojen salausta"
-      ],
-      "Delete locked drive": [
-        "Poista lukittu levy",
-        "Poista lukitut levyt"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Tiedoston sähköinen allekirjoitus vahvistettiin ja sen tallensi turvallisesti ${ emailAddress }."
@@ -3492,10 +3318,6 @@
       ],
       "Enter your own password (as organization admin).": [
         "Syötä oma salasanasi (organisaation ylläpitäjänä)."
-      ],
-      "Estimated time remaining: ${ estimatedMinutes } minute": [
-        "Aikaa jäljellä arviolta ${ estimatedMinutes } minuutti",
-        "Aikaa jäljellä arviolta ${ estimatedMinutes } minuuttia"
       ],
       "Estimated time remaining: Less than a minute": [
         "Aikaa jäljellä arviolta alle minuutti"
@@ -3586,10 +3408,6 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Jos sinulla on joku näistä, siirry ${ BRAND_NAME }-tilin asetuksiin aloittaaksesi eston poistoprosessin."
-      ],
-      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
-        "Tuo ${ calendarCount }/${ totalCalendarsCount } kalenteri",
-        "Tuo ${ calendarCount }/${ totalCalendarsCount } kalenteria"
       ],
       "Import from": [
         "Tuo lähteestä"
@@ -3726,6 +3544,9 @@
       "No group found": [
         "Ryhmää ei löytynyt"
       ],
+      "No photos yet": [
+        "Kuvia ei vielä ole"
+      ],
       "No results found": [
         "Tuloksia ei löytynyt"
       ],
@@ -3755,10 +3576,6 @@
       ],
       "One or more of your trusted keys were marked \"compromised\" by their owner. We recommend that you \"untrust\" these keys.": [
         "Ainakin yksi luotetuista avaimistasi on merkitty niiden omistajien toimesta \"vaarantuneeksi\". Suosittelemme että muutat avaimet \"epäluotettaviksi\"."
-      ],
-      "Only ${ MAX_CUSTOM_PASSWORD_LENGTH } character is allowed": [
-        "Vain ${ MAX_CUSTOM_PASSWORD_LENGTH } merkki sallitaan",
-        "Vain ${ MAX_CUSTOM_PASSWORD_LENGTH } merkkiä sallitaan"
       ],
       "Only the people with the link and the password can access this file.": [
         "Tiedostoa voivat käyttää vain ne, joilla on sen linkki ja salasana."
@@ -3795,10 +3612,6 @@
       ],
       "Please select the folders you would like to import:": [
         "Valitse tuotavat kansiot:"
-      ],
-      "Please select which email address or addresses to add to ${ groupCount } group.": [
-        "Valitse ${ groupCount } ryhmään lisättävä(t) sähköpostiosoite tai -osoitteet.",
-        "Valitse ${ groupCount } ryhmään lisättävä(t) sähköpostiosoite tai -osoitteet."
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Valitse ryhmään ${ groupName } lisättävä(t) sähköpostiosoite tai -osoitteet."
@@ -3872,8 +3685,14 @@
       "Search Enabled": [
         "Haku on käytössä"
       ],
+      "Select all items for": [
+        "Valitse kaikki kohteet ryhmästä"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Valitse tallennettu tiedosto tai kansio ja luo linkki siihen."
+      ],
+      "Select item": [
+        "Valitse kohde"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Valitse tähän osoitteeseen lähetettäville viesteille oletusarvoisesti käytettävä muoto."
@@ -3992,9 +3811,8 @@
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Linkki poistetaan käytöstä pysyvästi, jonka jälkeen kukaan ei voi enää käyttää kansiota sen kautta. Jakaaksesi kansion uudelleen tarvitset uuden linkin."
       ],
-      "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Tämä poistaa linkin ja tiedoston/kansion käyttöoikeuden kaikilta, joilla on tämä linkki.",
-        "Tämä poistaa linkin ja tiedoston/kansion käyttöoikeuden kaikilta, joilla on nämä linkit."
+      "This month": [
+        "Tässä kuussa"
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
         "Tämä poistaa synkronoidun laitteen ${ deviceName } ${ DRIVE_APP_NAME }sta ja pysäyttää Tietokoneisiin lisättyjen kansioiden synkronoinnin."
@@ -4112,6 +3930,9 @@
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Hienoa! Tuplasit juuri ilmaisen tallennustilasi!"
+      ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "Kuvien tallennus on tilapäisesti keskeytetty teknisten ongelmien vuoksi."
       ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Tiedoston ${ fileName } tallentajaksi ei voitu vahvistaa käyttäjää ${ emailAddress }."
@@ -4304,14 +4125,6 @@
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-käyttäjätunnus"
       ],
-      "${ nbDay } day": [
-        "${ nbDay } päivä",
-        "${ nbDay } päivää"
-      ],
-      "${ nbYear } year": [
-        "${ nbYear } vuosi",
-        "${ nbYear } vuotta"
-      ],
       "(Expired)": [
         "(erääntynyt)"
       ],
@@ -4419,10 +4232,6 @@
       ],
       "Delete": [
         "Poista"
-      ],
-      "Delete drive?": [
-        "Poistetaanko levy?",
-        "Poistetaanko levyt?"
       ],
       "Delete recovery-related information.": [
         "Poista palautukseen liittyvät tiedot."
@@ -4628,6 +4437,9 @@
       "Phone number": [
         "Puhelinnumero"
       ],
+      "Photo": [
+        "Kuva"
+      ],
       "Please provide full details to help us take appropriate action": [
         "Kerro yksityiskohtaiset tiedot, jotta voimme tehdä oikean ratkaisun"
       ],
@@ -4813,6 +4625,9 @@
       "Pay invoice": [
         "Maksa lasku"
       ],
+      "Photos": [
+        "Kuvat"
+      ],
       "Reactivate now": [
         "Uudelleenaktivoi nyt"
       ],
@@ -4836,10 +4651,6 @@
       "Almost there": [
         "Melkein valmis"
       ],
-      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
-        "Kelentereita luotu: ${ createdCalendarCount }/${ calendarsToBeCreated }",
-        "Kelentereita luotu: ${ createdCalendarCount }/${ calendarsToBeCreated }"
-      ],
       "Connecting to your email provider": [
         "Yhdistetään sähköpostipalveluusi"
       ],
@@ -4854,24 +4665,6 @@
       ],
       "Your import is starting": [
         "Tuontisi alkaa"
-      ]
-    },
-    "Mail import summary": {
-      "Import all messages from ${ itemsToImportCount } folder and label them as": [
-        "Tuo kaikki ${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella",
-        "Tuo kaikki ${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella"
-      ],
-      "Import all messages from ${ itemsToImportCount } label and label them as": [
-        "Tuo kaikki ${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella",
-        "Tuo kaikki ${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
-        "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella",
-        "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } kansion viestit ja merkitse ne tunnisteella"
-      ],
-      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
-        "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella",
-        "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella"
       ]
     },
     "Message": {
@@ -5021,50 +4814,6 @@
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" nimettiin uudelleen"
       ],
-      "${ count } item failed to be decrypted": [
-        "${ count } kohteen salauksen purku epäonnistui",
-        "${ count } kohteen salauksen purku epäonnistui"
-      ],
-      "${ numberOfItems } item deleted permanently from trash": [
-        "${ numberOfItems } kohde poistettiin roskakorista pysyvästi",
-        "${ numberOfItems } kohdetta poistettiin roskakorista pysyvästi"
-      ],
-      "${ numberOfItems } item failed to be deleted permanently from trash": [
-        "${ numberOfItems } kohteen pysyvä poisto roskakorista epäonnistui",
-        "${ numberOfItems } kohteen pysyvä poisto roskakorista epäonnistui"
-      ],
-      "${ numberOfItems } item failed to be moved": [
-        "${ numberOfItems } kohteen siirto epäonnistui",
-        "${ numberOfItems } kohteen siirto epäonnistui"
-      ],
-      "${ numberOfItems } item failed to be moved to trash": [
-        "${ numberOfItems } kohteen siirto roskakoriin epäonnistui",
-        "${ numberOfItems } kohteen siirto roskakoriin epäonnistui"
-      ],
-      "${ numberOfItems } item failed to be restored from trash": [
-        "${ numberOfItems } kohteen palautus roskakorista epäonnistui",
-        "${ numberOfItems } kohteen palautus roskakorista epäonnistui"
-      ],
-      "${ numberOfItems } item moved to trash": [
-        "${ numberOfItems } kohde siirrettiin roskakoriin",
-        "${ numberOfItems } kohdetta siirrettiin roskakoriin"
-      ],
-      "${ numberOfItems } item restored from trash": [
-        "${ numberOfItems } kohde palautettiin roskakorista",
-        "${ numberOfItems } kohdetta palautettiin roskakorista"
-      ],
-      "${ numberOfItems } item successfully moved": [
-        "${ numberOfItems } kohde siirrettiin",
-        "${ numberOfItems } kohdetta siirrettiin"
-      ],
-      "${ numberOfItems } link to your item failed to be deleted": [
-        "${ numberOfItems } kohteen linkin poisto epäonnistui",
-        "${ numberOfItems } kohteen linkkien poisto epäonnistui"
-      ],
-      "${ numberOfItems } link to your item was deleted": [
-        "${ numberOfItems } kohteen linkki poistettiin",
-        "${ numberOfItems } kohteen linkit poistettiin"
-      ],
       "All items will soon be permanently deleted from trash": [
         "Kaikki roskakorin kohteet poistetaan pian pysyvästi"
       ],
@@ -5104,10 +4853,6 @@
       "Failed to upload files: ${ err }": [
         "Tiedostojen tallennus epäonnistui: ${ err }"
       ],
-      "File or folder \"${ filename }\" and ${ count } other are already uploading": [
-        "Tiedostoa tai kansiota \"${ filename }\" ja ${ count } muuta tallennetaan jo",
-        "Tiedostoa tai kansiota \"${ filename }\" ja ${ count } muuta tallennetaan jo"
-      ],
       "File or folder \"${ filename }\" is already uploading": [
         "Tiedostoa tai kansiota \"${ filename }\" tallennetaan jo"
       ],
@@ -5116,30 +4861,6 @@
       ],
       "Link copied to clipboard": [
         "Linkki kopioitu leikepöydälle"
-      ],
-      "Move ${ itemsToMoveCount } file": [
-        "Siirrä ${ itemsToMoveCount } tiedosto",
-        "Siirrä ${ itemsToMoveCount } tiedostoa"
-      ],
-      "Move ${ itemsToMoveCount } folder": [
-        "Siirrä ${ itemsToMoveCount } kansio",
-        "Siirrä ${ itemsToMoveCount } kansiota"
-      ],
-      "Move ${ itemsToMoveCount } item": [
-        "Siirrä ${ itemsToMoveCount } kohde",
-        "Siirrä ${ itemsToMoveCount } kohdetta"
-      ],
-      "Move ${ movingCount } file": [
-        "Siirrä ${ movingCount } tiedosto",
-        "Siirrä ${ movingCount } tiedostoa"
-      ],
-      "Move ${ movingCount } folder": [
-        "Siirrä ${ movingCount } kansio",
-        "Siirrä ${ movingCount } kansiota"
-      ],
-      "Move ${ movingCount } item": [
-        "Siirrä ${ movingCount } kohde",
-        "Siirrä ${ movingCount } kohdetta"
       ],
       "Not enough space to upload ${ formattedTotal }": [
         "Tila ei riitä ${ formattedTotal } tiedoston tallennukseen"
@@ -5207,10 +4928,6 @@
       ],
       "Set a recovery method": [
         "Määritä palautustapa"
-      ],
-      "Simply complete the following in the next ${ expiresInDays } day:": [
-        "Tee vain nämä tehtävät seuraavan ${ expiresInDays } päivän aikana:",
-        "Tee vain nämä tehtävät seuraavien ${ expiresInDays } päivän aikana:"
       ],
       "Upload a file": [
         "Tallenna tiedosto"
@@ -5368,18 +5085,6 @@
       ]
     },
     "Progress bar description": {
-      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
-        "${ contactsExported.length }/${ countContacts } yhteystieto vietiin.",
-        "${ contactsExported.length }/${ countContacts } yhteystietoa vietiin."
-      ],
-      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
-        "${ model.deleted.length }/${ totalBeDeleted } yhteystieto poistettiin.",
-        "${ model.deleted.length }/${ totalBeDeleted } yhteystietoa poistettiin."
-      ],
-      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
-        "${ model.submitted.length }/${ totalBeMerged } yhteystieto yhdistettiin.",
-        "${ model.submitted.length }/${ totalBeMerged } yhteystietoa yhdistettiin."
-      ],
       "No contacts exported.": [
         "Yhteystietoja ei viety."
       ],
@@ -5452,32 +5157,8 @@
       ]
     },
     "session_recovery:available:info": {
-      "${ timeRemaining.inDays } day": [
-        "${ timeRemaining.inDays } päivä",
-        "${ timeRemaining.inDays } päivää"
-      ],
-      "${ timeRemaining.inHours } hour": [
-        "${ timeRemaining.inHours } tunti",
-        "${ timeRemaining.inHours } tuntia"
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
-        "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inDays } päivä aikaa nollata salasanasi.",
-        "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inDays } päivää aikaa nollata salasanasi."
-      ],
-      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
-        "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inHours } tunti aikaa nollata salasanasi.",
-        "Salasanan nollauspyyntö hyväksytty (${ user.Email }). Sinulla on ${ timeRemaining.inHours } tuntia aikaa nollata salasanasi."
-      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Käytä kirjautunutta laitetta (siinä istunnossa, jossa pyyntö käynnistettiin) salasanan vaihtamiseksi."
-      ],
-      "This permission expires in ${ timeRemaining.inDays } day": [
-        "Tämä käyttöoikeus päättyy ${ timeRemaining.inDays } päivän kuluttua.",
-        "Tämä käyttöoikeus päättyy ${ timeRemaining.inDays } päivän kuluttua."
-      ],
-      "This permission expires in ${ timeRemaining.inHours } hour": [
-        "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua.",
-        "Tämä käyttöoikeus päättyy ${ timeRemaining.inHours } tunnin kuluttua."
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Voit nyt vaihtaa salasanasi tilille ${ boldEmail } vapaasti ${ boldDaysRemaining } ajan."
@@ -5540,16 +5221,8 @@
       ]
     },
     "session_recovery:in_progress:info": {
-      "${ gracePeriodHoursRemaining } more hour": [
-        "${ gracePeriodHoursRemaining } tunti lisää",
-        "${ gracePeriodHoursRemaining } tuntia lisää"
-      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Jos et pyytänyt salasanasi nollausta, peruuta tämä pyyntö nyt."
-      ],
-      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
-        "Salasanan nollausta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua.",
-        "Salasanan nollausta pyydetty (${ user.Email }). Voit vaihtaa salasanasi ${ hoursRemaining } tunnin kuluttua."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Odotamme 72 tuntia ennen pyyntöjen hyväksymistä, jotta voimme varmistaa, että se olet todella sinä, joka yrittää palauttaa salasanasi. Aikaa jäljellä, kunnes voit vaihtaa salasanasi: ${ boldTimeLeft }. ${ viewRequest }"
@@ -5577,10 +5250,6 @@
       ]
     },
     "session_recovery:sign_out:info": {
-      "${ gracePeriodHoursRemaining } hour": [
-        "${ gracePeriodHoursRemaining } tunti",
-        "${ gracePeriodHoursRemaining } tuntia"
-      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } on nyt käytössä."
       ],
@@ -5626,30 +5295,6 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "Hanki Unlimited"
-      ]
-    },
-    "specialoffer: Countdown unit": {
-      "${ days } day": [
-        "${ days } päivä",
-        "${ days } päivä"
-      ],
-      "${ hours } hour": [
-        "${ hours } tunti",
-        "${ hours } tuntia"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuutti",
-        "${ minutes } minuuttia"
-      ],
-      "${ seconds } second": [
-        "${ seconds } sekunti",
-        "${ seconds } sekuntia"
-      ]
-    },
-    "specialoffer: Deal": {
-      "${ n } month FREE": [
-        "${ n } ILMAINEN kuukausi",
-        "${ n } ILMAISTA kuukautta"
       ]
     },
     "specialoffer: Deal details": {
@@ -5701,23 +5346,6 @@
         "Tilaus uudistuu automaattisesti kahden vuoden välein samalla hinnalla kunnes se perutaan."
       ]
     },
-    "specialoffer: Label": {
-      "Lifetime deal": [
-        "Elinikäinen tarjous"
-      ],
-      "Limited time only": [
-        "Vain rajoitetun ajan"
-      ],
-      "Most popular": [
-        "Suosituin"
-      ],
-      "Offer ends soon": [
-        "Tarjous päättyy pian"
-      ],
-      "The discount will continue to apply upon renewal until the subscription is canceled or modified": [
-        "Alennus pysyy voimassa tilauksen uudistuttua, kunnes tilaus perutaan tai sitä muutetaan."
-      ]
-    },
     "specialoffer: Link": {
       "Go to subscription plans": [
         "Siirry tilauksiin"
@@ -5727,10 +5355,6 @@
       ]
     },
     "specialoffer: Offers": {
-      "${ n } month": [
-        "${ n } kuukausi",
-        "${ n } kuukautta"
-      ],
       "/ month": [
         "kuukaudessa"
       ],
@@ -5796,20 +5420,8 @@
       "Cyber Week Sale": [
         "Cyber Week -ale"
       ],
-      "End of year offer": [
-        "Vuodenvaihteen tarjous"
-      ],
       "End of Year Sale": [
         "Vuodenvaihteen ale"
-      ],
-      "Get our premium bundle and save more": [
-        "Hanki premium-pakettimme ja säästä enemmän"
-      ],
-      "Our discontinued Visionary plan is back for a limited time only": [
-        "Poistettu Visionary-tilauksemme on palannut rajoitetuksi ajaksi"
-      ],
-      "Save more with 2 years of ${ planName }": [
-        "Säästä enemmän 2-vuotisella ${ planName }-tilauksella"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Päivitä tilauksesi ja säästä lisää kahden vuoden ${ planName } -tilauksella"
@@ -5870,10 +5482,6 @@
       ]
     },
     "Success": {
-      "${ countMergeableContacts } contact look identical.": [
-        "${ countMergeableContacts } yhteystieto näyttää identtiseltä.",
-        "${ countMergeableContacts } yhteystietoa näyttää identtiseltä."
-      ],
       "Address copied to clipboard": [
         "Osoite kopioitiin leikepöydälle"
       ],
@@ -5885,14 +5493,6 @@
       ],
       "Code sent to ${ methodTo }": [
         "Koodi lähetettiin kohteeseen ${ methodTo }"
-      ],
-      "Contact deleted": [
-        "Yhteystieto poistettiin",
-        "Yhteystiedot poistettiin"
-      ],
-      "Contact group deleted": [
-        "Yhteystietoryhmä poistettiin",
-        "Yhteystietoryhmät poistettiin"
       ],
       "Contact saved": [
         "Yhteystieto tallennettiin"
@@ -5936,14 +5536,6 @@
         "Palaute lähetettiin"
       ]
     },
-    "summer2023: Billing cycle option": {
-      "1 year": [
-        "1 vuosi"
-      ],
-      "2 years": [
-        "2 vuotta"
-      ]
-    },
     "summer2023: Deal details": {
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
         "Premium ${ DRIVE_SHORT_APP_NAME }"
@@ -5964,27 +5556,6 @@
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Suojaa tiedostosi salatulla pilvitallennustilalla. Sisältää mm. versiohistorian ja salatun tiedostojen jakamisen."
-      ]
-    },
-    "summer2023:Footer": {
-      "*Your subscription will automatically renew at the standard discounted rate at the end of your billing cycle.": [
-        "*Tilauksesi uudistetaan automaattisesti samalla alennetulla hinnalla laskutuskautesi lopussa."
-      ],
-      "Discounts are based on the standard monthly pricing. This offer is only available to first-time subscribers.": [
-        "Alennukset perustuvat tavalliseen kuukausihinnoitteluun. Tämä tarjous on saatavilla vain ensitilaajille."
-      ]
-    },
-    "summer2023:Info": {
-      "For a limited time, get the best ${ BRAND_NAME } has to offer at an exclusive discount.": [
-        "Vain rajoitetun ajan, hanki ${ BRAND_NAME }in paras tarjonta erinomaiseen hintaan."
-      ],
-      "We’re celebrating the nine-year anniversary of our crowdfunding!": [
-        "Juhlimme joukkorahoituksemme yhdeksänvuotisjuhlaa!"
-      ]
-    },
-    "summer2023:Offer title": {
-      "${ BRAND_NAME } Anniversary Sale": [
-        "${ BRAND_NAME } Vuosipäivän alennusmyynti"
       ]
     },
     "Table header": {
@@ -6045,53 +5616,9 @@
         "vCard-kenttä"
       ]
     },
-    "Time unit for duration; displayed in the time picker": {
-      "${ hours } h": [
-        "${ hours } t",
-        "${ hours } t"
-      ],
-      "${ hoursInt }.5 h": [
-        "${ hoursInt }.5 t",
-        "${ hoursInt }.5 t"
-      ],
-      "${ minutes } min": [
-        "${ minutes } min",
-        "${ minutes } min"
-      ]
-    },
-    "Time unit for duration; vocalized in the time picker": {
-      "${ hours } hour": [
-        "${ hours } tunti",
-        "${ hours } tuntia"
-      ],
-      "${ hoursInt }.5 hour": [
-        "${ hoursInt }.5 tuntia",
-        "${ hoursInt }.5 tuntia"
-      ],
-      "${ minutes } minute": [
-        "${ minutes } minuutti",
-        "${ minutes } minuuttia"
-      ]
-    },
     "Title": {
       "# of downloads": [
         "Latausmäärä"
-      ],
-      "${ emailsCount } email address": [
-        "${ emailsCount } sähköpostiosoite",
-        "${ emailsCount } sähköpostiosoitetta"
-      ],
-      "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } epäonnistunut lataus",
-        "${ numberOfFailedTransfer.total } epäonnistunutta latausta"
-      ],
-      "${ numberOfFailedTransfer.total } failed transfer": [
-        "${ numberOfFailedTransfer.total } epäonnistunut siirto",
-        "${ numberOfFailedTransfer.total } epäonnistunutta siirtoa"
-      ],
-      "${ numberOfFailedTransfer.total } failed upload": [
-        "${ numberOfFailedTransfer.total } tallennus epäonnistui",
-        "${ numberOfFailedTransfer.total } tallennusta epäonnistui"
       ],
       "Account suspended": [
         "Tili on jäädytetty"
@@ -6101,10 +5628,6 @@
       ],
       "Add contact group name": [
         "Lisää yhteystietoryhmän nimi"
-      ],
-      "Add to ${ groupCount } group": [
-        "Lisää ${ groupCount } ryhmään",
-        "Lisää ${ groupCount } ryhmään"
       ],
       "Add to ${ groupName }": [
         "Lisää ryhmään ${ groupName }"
@@ -6120,9 +5643,6 @@
       ],
       "Are you sure you want to close the preview?": [
         "Haluatko varmasti sulkea esikatselun?"
-      ],
-      "Billing cycle": [
-        "Laskutusjakso"
       ],
       "Birthday": [
         "Syntymäpäivä"
@@ -6192,14 +5712,6 @@
       ],
       "Day theme": [
         "Päiväteema"
-      ],
-      "Delete ${ count } contact": [
-        "Poista ${ count } yhteystieto",
-        "Poista ${ count } yhteystietoa"
-      ],
-      "Delete ${ count } contact group": [
-        "Poista ${ count } yhteystietoryhmä",
-        "Poista ${ count } yhteystietoryhmää"
       ],
       "Delete ${ Name }": [
         "Poista ${ Name }"
@@ -6282,10 +5794,6 @@
       "Folders details": [
         "Kansioiden tiedot"
       ],
-      "Found ${ searchView.numberOfResults } result": [
-        "Löytyi ${ searchView.numberOfResults } tulos",
-        "Löytyi ${ searchView.numberOfResults } tulosta"
-      ],
       "Groups": [
         "Ryhmät"
       ],
@@ -6294,10 +5802,6 @@
       ],
       "Human verification": [
         "Ihmisvahvistus"
-      ],
-      "Import as simple event?": [
-        "Tuodaanko yksinkertaisena tapahtumana?",
-        "Tuodaanko yksinkertaisina tapahtumina?"
       ],
       "Import contacts": [
         "Tuo yhteystietoja"
@@ -6382,6 +5886,9 @@
       ],
       "Phone numbers": [
         "Puhelinnumerot"
+      ],
+      "Photos": [
+        "Kuvat"
       ],
       "Preview": [
         "Esikatselu"
@@ -6634,26 +6141,12 @@
         "Sinulla ei ole vietäviä yhteystietoja"
       ]
     },
-    "Validation": {
-      "Password must contain at least ${ length } character": [
-        "Salasanan täytyy sisältää ainakin ${ length } merkki",
-        "Salasanan täytyy sisältää ainakin ${ length } merkkiä"
-      ],
-      "Try a shorter username (${ n } character max)": [
-        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkki)",
-        "Kokeile lyhyempää käyttäjätunnusta (enintään ${ n } merkkiä)"
-      ]
-    },
     "Validation Error": {
       "\"${ str }\" is not a valid name": [
         "\"${ str }\" ei ole kelvollinen nimi"
       ],
       "Name cannot include invisible characters, / or \\.": [
         "Nimi ei voi sisältää näkymättömiä, / tai \\ -merkkejä."
-      ],
-      "Name must be ${ MAX_NAME_LENGTH } character long at most": [
-        "Nimi voi sisältää enintään ${ MAX_NAME_LENGTH } merkkiä",
-        "Nimi voi sisältää enintään ${ MAX_NAME_LENGTH } merkkiä"
       ],
       "Name must not be empty": [
         "Nimi ei voi olla tyhjä"
@@ -6679,10 +6172,6 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME } siirtää mahdollisimman paljon tietoa, aloittaen viimeisimmistä viesteistäsi."
-      ],
-      "Are you sure you want to permanently delete ${ count } contact?": [
-        "Haluatko varmasti poistaa ${ count } yhteystiedon pysyvästi?",
-        "Haluatko varmasti poistaa ${ count } yhteystietoa pysyvästi?"
       ],
       "Are you sure you want to permanently delete these contact groups?": [
         "Haluatko varmasti poistaa nämä yhteystietoryhmät pysyvästi?"
