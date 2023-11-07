@@ -131,7 +131,7 @@ Examples:
 ## Width/max-width helpers
 
 <div>
-    <ul class="list-2columns on-mobile-list-1column">
+    <ul class="list-columns md:column-2">
         <li>
             <code>.on-mobile-w25</code> = <code>width: 25%;</code>
         </li>
@@ -178,8 +178,8 @@ These apply for mobile breakpoint and smaller.
 
 <div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
     <div class="w-1/2 flex-align-self-center">
-        Will use css multicolumn to display the list on 2 columns. On mobile, the list will be put on one column.
-        <ul class="list-2columns on-mobile-list-1column">
+        Will use css multicolumn to display the list on several columns.
+        <ul class="list-columns md:column-2">
             <li>Normal</li>
             <li>list</li>
             <li>list</li>
@@ -194,7 +194,7 @@ These apply for mobile breakpoint and smaller.
             light
             format
             code={`
-<ul className="list-2columns on-mobile-list-1column">
+<ul className="list-columns md:column-2">
 …
 </ul>
 `}

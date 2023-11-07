@@ -66,24 +66,6 @@
 	}
 }
 
-/* gut: "spacing" empty div */
-.gut {
-	block-size: 1px;
-}
-
-.list-2columns {
-	column-count: 2;
-	column-gap: 0;
-
-	& > *,
-	&-no-break {
-		-webkit-column-break-inside: avoid; // Chrome, Safari, Opera
-		page-break-inside: avoid; // Firefox
-		break-inside: avoid; // IE 10+
-		break-inside: avoid-column; // W3C
-	}
-}
-
 /*
  * ratio container (for responsive iframes/videos/etc.)
  */

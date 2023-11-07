@@ -40,7 +40,7 @@ const MailShortCutsModal = (props: ModalProps) => {
                     {c('Info')
                         .t`Basic navigation and actions remain available regardless of keyboard shortcuts being active or not in the settings.`}
                 </Alert>
-                <div className="list-2columns on-mobile-list-1column gap-8">
+                <div className="list-columns md:column-2 gap-8">
                     {alwaysOnSections.map((section) => {
                         return <ShortcutsSectionView key={section.name} {...section} />;
                     })}
@@ -53,7 +53,7 @@ const MailShortCutsModal = (props: ModalProps) => {
                         <ShortcutsToggle id="toggle-shortcuts" />
                     </Field>
                 </Row>
-                <div className={clsx('list-2columns on-mobile-list-1column gap-8', !Shortcuts && 'opacity-50')}>
+                <div className={clsx('list-columns md:column-2 gap-8', !Shortcuts && 'opacity-50')}>
                     {shortcutEnabledSections.map((section) => {
                         return <ShortcutsSectionView key={section.name} {...section} />;
                     })}
