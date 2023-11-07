@@ -61,7 +61,7 @@ export const NoteNew: VFC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCa
             discardable={!form.dirty}
             handleCancelClick={onCancel}
         >
-            {({ didMount }) => (
+            {({ didEnter }) => (
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
                         {vaultTotalCount > 1 && (
@@ -78,8 +78,8 @@ export const NoteNew: VFC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCa
                             label={c('Label').t`Name`}
                             labelContainerClassName="sr-only"
                             placeholder={c('Placeholder').t`Untitled`}
-                            autoFocus={!draft && didMount}
-                            key={`note-name-${didMount}`}
+                            autoFocus={!draft && didEnter}
+                            key={`note-name-${didEnter}`}
                             maxLength={MAX_ITEM_NAME_LENGTH}
                         />
                         <Field
