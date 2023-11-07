@@ -101,7 +101,16 @@ export const shareEditMemberAccessFailure = createAction(
 );
 
 export const shareLeaveIntent = createAction('share::leave::intent', (payload: { shareId: string }) =>
-    pipe(withRequest({ type: 'start', id: shareLeaveRequest(payload.shareId) }), withCacheBlock)({ payload })
+    pipe(
+        withRequest({ type: 'start', id: shareLeaveRequest(payload.shareId) }),
+        withNotification({
+            type: 'info',
+            expiration: -1,
+            loading: true,
+            text: c('Info').t`Leaving vault...`,
+        }),
+        withCacheBlock
+    )({ payload })
 );
 
 export const shareLeaveSuccess = createAction(
