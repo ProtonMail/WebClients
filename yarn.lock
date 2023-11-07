@@ -29959,6 +29959,55 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"proton-pass-web@workspace:applications/pass-web":
+  version: 0.0.0-use.local
+  resolution: "proton-pass-web@workspace:applications/pass-web"
+  dependencies:
+    "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
+    "@openpgp/web-stream-tools": "npm:^0.0.13"
+    "@proton/components": "workspace:packages/components"
+    "@proton/cross-storage": "workspace:packages/cross-storage"
+    "@proton/crypto": "workspace:packages/crypto"
+    "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
+    "@proton/i18n": "workspace:packages/i18n"
+    "@proton/pack": "workspace:packages/pack"
+    "@proton/polyfill": "workspace:packages/polyfill"
+    "@proton/shared": "workspace:packages/shared"
+    "@proton/styles": "workspace:packages/styles"
+    "@proton/testing": "workspace:packages/testing"
+    "@testing-library/jest-dom": "npm:^6.1.4"
+    "@testing-library/react": "npm:^12.1.5"
+    "@testing-library/react-hooks": "npm:^8.0.1"
+    "@types/mime-types": "npm:^2.1.3"
+    "@types/react": "npm:^17.0.69"
+    "@types/react-dom": "npm:^17.0.22"
+    "@types/react-router-dom": "npm:^5.3.3"
+    "@types/react-window": "npm:^1.8.7"
+    babel-plugin-transform-class-properties: "npm:^6.24.1"
+    babel-plugin-transform-require-context: "npm:^0.1.1"
+    client-zip: "npm:^2.4.4"
+    cross-env: "npm:^7.0.3"
+    cross-var: "npm:^1.1.0"
+    ejs-webpack-loader: "npm:^2.2.2"
+    eslint: "npm:^8.52.0"
+    jest: "npm:^29.7.0"
+    jest-environment-jsdom: "npm:^29.7.0"
+    jest-junit: "npm:^16.0.0"
+    mime-types: "npm:^2.1.35"
+    path-browserify: "npm:^1.0.1"
+    prettier: "npm:^3.0.3"
+    pretty-format: "npm:^29.7.0"
+    react: "npm:^17.0.2"
+    react-dom: "npm:^17.0.2"
+    react-router-dom: "npm:^5.3.4"
+    react-window: "npm:^1.8.9"
+    ttag: "npm:^1.7.25"
+    typescript: "npm:^5.2.2"
+    web-streams-polyfill: "npm:^3.2.1"
+    webpack: "npm:^5.89.0"
+  languageName: unknown
+  linkType: soft
+
 "proton-preview-sandbox@workspace:applications/preview-sandbox":
   version: 0.0.0-use.local
   resolution: "proton-preview-sandbox@workspace:applications/preview-sandbox"
