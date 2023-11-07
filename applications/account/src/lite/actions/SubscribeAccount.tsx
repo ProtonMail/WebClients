@@ -21,8 +21,8 @@ import {
 } from '@proton/components';
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
-import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { ProductParam } from '@proton/shared/lib/apps/product';
 import {
     APPS,
     BRAND_NAME,
@@ -38,7 +38,7 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import { getHasCoupon, getUpgradedPlan, getValidCycle } from '@proton/shared/lib/helpers/subscription';
+import { getPlan, getUpgradedPlan, getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency } from '@proton/shared/lib/interfaces';
 import { canPay } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
@@ -60,6 +60,7 @@ interface Props {
     searchParams: URLSearchParams;
     app: ProductParam;
 }
+const plusPlans = [PLANS.VPN, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS_PLUS, PLANS.VPN_PASS_BUNDLE];
 
 const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
     const onceCloseRef = useRef(false);
@@ -188,7 +189,28 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
         return <PromotionExpired />;
     }
 
-    if (getHasCoupon(subscription, COUPON_CODES.BLACK_FRIDAY_2023)) {
+    const activeSubscription = subscription?.UpcomingSubscription ?? subscription;
+    const activeSubscriptionPlan = getPlan(activeSubscription);
+    const activeSubscriptionSameCoupon = activeSubscription?.CouponCode === coupon;
+    const takingSameOffer =
+        activeSubscriptionPlan?.Name === plan &&
+        activeSubscription?.Cycle === parsedCycle &&
+        activeSubscriptionSameCoupon;
+
+    const isOfferPlusPlan = plusPlans.some((planName) => planName === plan);
+    const isOfferBundlePlan = plan === PLANS.BUNDLE;
+
+    const isBundleDowngrade =
+        activeSubscriptionPlan?.Name === PLANS.BUNDLE && isOfferPlusPlan && activeSubscriptionSameCoupon;
+
+    const isFamilyDowngrade =
+        activeSubscriptionPlan?.Name === PLANS.FAMILY &&
+        (isOfferPlusPlan || isOfferBundlePlan) &&
+        activeSubscriptionSameCoupon;
+
+    const isVisionaryDowngrade = activeSubscriptionPlan?.Name === PLANS.NEW_VISIONARY && plan !== PLANS.NEW_VISIONARY;
+
+    if (takingSameOffer || isBundleDowngrade || isFamilyDowngrade || isVisionaryDowngrade) {
         return <PromotionAlreadyApplied />;
     }
 
