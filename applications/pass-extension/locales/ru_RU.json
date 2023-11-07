@@ -362,6 +362,12 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Сбой при удалении хранилища \"${ payload.content.name }\""
       ],
+      "Detected ${ errors.length } corrupted csv row": [
+        "Обнаружена ${ errors.length } повреждённая строка в csv",
+        "Обнаружены ${ errors.length } повреждённые строки в csv",
+        "Обнаружено ${ errors.length } повреждённых строк в csv",
+        "Обнаружено ${ errors.length } повреждённых строк в csv"
+      ],
       "Editing item failed": [
         "Ошибка при редактировании элемента"
       ],
@@ -513,6 +519,12 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "байт",
+        "байта",
+        "байтов",
+        "байтов"
+      ],
       "GB": [
         "ГБ"
       ],
@@ -521,6 +533,32 @@
       ],
       "MB": [
         "МБ"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Байт",
+        "Байта",
+        "Байтов",
+        "Байтов"
+      ],
+      "Gigabyte": [
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайт",
+        "Гигабайтов"
+      ],
+      "Kilobyte": [
+        "Килобайт",
+        "Килобайта",
+        "Килобайтов",
+        "Килобайтов"
+      ],
+      "Megabyte": [
+        "Мегабайт",
+        "Мегабайтов",
+        "Мегабайтов",
+        "Мегабайтов"
       ]
     },
     "Info": {
@@ -532,6 +570,48 @@
       ],
       "\"${ payload.item.data.metadata.name }\" update was dismissed": [
         "Обновление \"${ payload.item.data.metadata.name }\" было отклонено"
+      ],
+      "${ count } item": [
+        "${ count } элемент",
+        "${ count } элемента",
+        "${ count } элементов",
+        "${ count } элементов"
+      ],
+      "${ itemCount } item": [
+        "${ itemCount } элемент",
+        "${ itemCount } элемента",
+        "${ itemCount } элементов",
+        "${ itemCount } элемента"
+      ],
+      "${ memberCount } member": [
+        "${ memberCount } член",
+        "${ memberCount } члена",
+        "${ memberCount } членов",
+        "${ memberCount } член"
+      ],
+      "${ revisionNumber } time": [
+        "${ revisionNumber } раз",
+        "${ revisionNumber } раза",
+        "${ revisionNumber } раз",
+        "${ revisionNumber } раза"
+      ],
+      "${ totalImportedItems } item": [
+        "${ totalImportedItems } элемент",
+        "${ totalImportedItems } элемента",
+        "${ totalImportedItems } элементов",
+        "${ totalImportedItems } элемента"
+      ],
+      "${ totalItems } item": [
+        "${ totalItems } элемент",
+        "${ totalItems } элемента",
+        "${ totalItems } элементов",
+        "${ totalItems } элементов"
+      ],
+      "${ trialDaysLeft } day left": [
+        "Остался ${ trialDaysLeft } день",
+        "Осталось ${ trialDaysLeft } дня",
+        "Осталось ${ trialDaysLeft } дней",
+        "Осталось ${ trialDaysLeft } дня"
       ],
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Доступна новая версия ${ PASS_APP_NAME }. Обновите ее, чтобы насладиться последними функциями и исправлениями ошибок."
@@ -611,6 +691,12 @@
       "Here you will find all the necessary information to get you started.": [
         "Здесь вы найдете всю необходимую информацию для начала работы."
       ],
+      "Imported ${ payload.total } item": [
+        "Импортирован ${ payload.total } элемент",
+        "Импортировано ${ payload.total } элемента",
+        "Импортировано ${ payload.total } элементов",
+        "Импортировано ${ payload.total } элемента"
+      ],
       "Imported on ${ date }": [
         "Импортировано ${ date }"
       ],
@@ -628,6 +714,12 @@
       ],
       "It seems you are already logged in to ${ PASS_APP_NAME }. If you're trying to login with a different account, please logout from the extension first.": [
         "Похоже, вы уже вошли в ${ PASS_APP_NAME }. Если ты пытаешься войти с другой учётной записью, пожалуйста, сначала выйдите из расширения."
+      ],
+      "item": [
+        "элемент",
+        "элемента",
+        "элементов",
+        "элементов"
       ],
       "Item \"${ payload.item.data.metadata.name }\" created": [
         "Элемент \"${ payload.item.data.metadata.name }\" создан"
@@ -755,6 +847,12 @@
       "Thank you, the problem has been reported": [
         "Спасибо, отчет о проблеме отправлен"
       ],
+      "The following item could not be imported :": [
+        "Следующий элемент не может быть импортирован:",
+        "Следующие ${ result.ignored.length } элемента не могут быть импортированы",
+        "Следующие ${ result.ignored.length } элементов не могут быть импортированы",
+        "Следующие ${ result.ignored.length } элемента не могут быть импортированы"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Текст, который вы пытаетесь вставить, длиннее разрешенного максимального количества символов ${ maxLength }."
       ],
@@ -829,6 +927,18 @@
       ]
     },
     "Label": {
+      "${ passwordOptions.options.length } character": [
+        "${ passwordOptions.options.length } символ",
+        "${ passwordOptions.options.length } символа",
+        "${ passwordOptions.options.length } символов",
+        "${ passwordOptions.options.length } символа"
+      ],
+      "${ passwordOptions.options.wordCount } word": [
+        "${ passwordOptions.options.wordCount } слово",
+        "${ passwordOptions.options.wordCount } слова",
+        "${ passwordOptions.options.wordCount } слов",
+        "${ passwordOptions.options.wordCount } слова"
+      ],
       "1 hour": [
         "1 час"
       ],
@@ -1312,6 +1422,14 @@
       ],
       "Write your note": [
         "Напишите свою заметку"
+      ]
+    },
+    "Success": {
+      "Vaults can’t contain more than ${ vault.targetMaxMembers } user.": [
+        "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователя.",
+        "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователей.",
+        "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователей.",
+        "В хранилище может быть не больше ${ vault.targetMaxMembers } пользователей."
       ]
     },
     "Title": {
