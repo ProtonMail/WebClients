@@ -12,7 +12,7 @@ import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision } from '@proton/pass/types';
 
 function* moveAllItemsWorker(
-    { payload: { shareId, vaultName, destinationShareId }, meta }: ReturnType<typeof vaultMoveAllItemsIntent>,
+    { payload: { shareId, content, destinationShareId }, meta }: ReturnType<typeof vaultMoveAllItemsIntent>,
     stateBeforeAction: State,
     { onItemsChange }: WorkerRootSagaOptions
 ): Generator {
@@ -21,10 +21,10 @@ function* moveAllItemsWorker(
 
         const movedItems = (yield moveItems(items, destinationShareId)) as ItemRevision[];
 
-        yield put(vaultMoveAllItemsSuccess(meta.request.id, { shareId, vaultName, movedItems }));
+        yield put(vaultMoveAllItemsSuccess(meta.request.id, { shareId, content, movedItems }));
         onItemsChange?.();
     } catch (e) {
-        yield put(vaultMoveAllItemsFailure(meta.request.id, { shareId, vaultName }, e));
+        yield put(vaultMoveAllItemsFailure(meta.request.id, { shareId, content }, e));
     }
 }
 
