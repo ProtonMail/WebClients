@@ -177,6 +177,14 @@
       "Delete": [
         "मिटाएं"
       ],
+      "Delete ${ selectedCount } contact": [
+        "${ selectedCount } संपर्क हटाएं",
+        "${ selectedCount } संपर्क हटाएं"
+      ],
+      "Delete ${ selectedCount } contact group": [
+        "${ selectedCount } संपर्क समूह हटाएं",
+        "${ selectedCount } संपर्क समूह हटाएं"
+      ],
       "Delete contact": [
         "संपर्क मिटाएं"
       ],
@@ -857,6 +865,14 @@
       ],
       "Unable to share this calendar with more ${ BRAND_NAME } users": [
         "इस कैलेंडर को और ${ BRAND_NAME } यूज़र के साथ शेयर करने में असफल"
+      ],
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
+        "आप इस कैलेंडर के ${ MAX_CALENDAR_MEMBERS } सदस्य की सीमा पे पहुंच गए है।\nइस कैलेंडर को और ${ BRAND_NAME } खातो के साथ शेयर करने के लिए, कुछ सदस्य हटाएं।",
+        "आप इस कैलेंडर के ${ MAX_CALENDAR_MEMBERS } सदस्य की सीमा पे पहुंच गए है।\nइस कैलेंडर को और ${ BRAND_NAME } खातो के साथ शेयर करने के लिए, कुछ सदस्य हटाएं।"
+      ],
+      "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
+        "आप इस कैलेंडर के लिए ${ MAX_LINKS_PER_CALENDAR } लिंक के लिमिट पे पहुंच चुके है।\nइस कैलेंडर के लिए नया लिंक बनाने के लिए, एक मौजूदा लिंक मिटाएं।",
+        "आप इस कैलेंडर के लिए ${ MAX_LINKS_PER_CALENDAR } लिंक के लिमिट पे पहुंच चुके है।\nइस कैलेंडर के लिए नया लिंक बनाने के लिए, एक मौजूदा लिंक मिटाएं।"
       ]
     },
     "Calendar sharing access option label": {
@@ -942,6 +958,18 @@
     "Calendar view selector": {
       "Change time range to": [
         "समय रेंज को इसमे बदलें"
+      ]
+    },
+    "Calendar view; more events collapsed": {
+      "${ more } more": [
+        "${ more } और",
+        "${ more } और"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } यूज़र",
+        "${ users } यूज़र"
       ]
     },
     "Collapsible tooltip": {
@@ -1887,9 +1915,17 @@
       ],
       "On date…": [
         "इस दिन पे..."
+      ],
+      "time": [
+        "बार",
+        "बार"
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } समय",
+        "${ count } बार"
+      ],
       "Daily": [
         "रोज़"
       ],
@@ -1898,6 +1934,18 @@
       ],
       "Daily, ${ untilString }": [
         "दैनिक, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "हर ${ interval } दिन",
+        "हर ${ interval } दिन"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "हर ${ interval } दिन, ${ timesString }",
+        "हर ${ interval } दिन, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "हर ${ interval } दिन, ${ untilString }",
+        "हर ${ interval } दिन, ${ untilString }"
       ],
       "until ${ dateString }": [
         "${ dateString } तक"
@@ -2101,6 +2149,22 @@
       ]
     },
     "Error": {
+      "${ list } doesn't have a valid email address": [
+        "${ list } के पास मान्य ईमेल पता नहीं है",
+        "कुछ संपर्क के पास मान्य ईमेल पते नहीं है: ${ list }"
+      ],
+      "${ list } doesn't have an email address": [
+        "${ list } के पास ईमेल पता नहीं है",
+        "कुछ संपर्क के पास ईमेल पते नहीं है: ${ list }"
+      ],
+      "${ list } has invalid emails": [
+        "${ list } में अमान्य ईमेल है",
+        "कुछ समुह में अमान्य ईमेल है: ${ list }"
+      ],
+      "${ list } has no contacts": [
+        "${ list } में कोई संपर्क नहीं",
+        "कुछ समूह में कोई संपर्क नहीं: ${ list }"
+      ],
       "A group with this name already exists": [
         "इस नाम का एक समूह पहले से मौजूद है"
       ],
@@ -2151,6 +2215,14 @@
       ],
       "Decryption error: Decryption of this event's content failed.": [
         "डिक्रिप्शन त्रुटि: इस घटना की सामग्री का डिक्रिप्शन विफल रहा।"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को चुनें में से बाहर निकाले",
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को चुनें में से बाहर निकाले"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को हटाएं या",
+        "कम-से-कम ${ calendarsToFixCount } कैलेंडर को हटाएं या"
       ],
       "Domain not available, try again later": [
         "डोमेन मौजूद नहीं, बाद में वापिस कोशिश करें"
@@ -2227,6 +2299,10 @@
       "Label name cannot be empty.": [
         "लेबल का नाम खाली नहीं हो सकता |"
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर जोड़ें",
+        "मौजूदा ${ BRAND_NAME } कैलेंडर के साथ कम-से-कम ${ calendarsToFixCount } कैलेंडर जोड़ें"
+      ],
       "Missing key packet": [
         "लुप्त कुञ्जी खण्ड"
       ],
@@ -2260,6 +2336,14 @@
       "Number of occurrences cannot be empty": [
         "घटनाओं की संख्या खाली नहीं हो सकती"
       ],
+      "One of the contacts has no email address: ${ noEmailsContactNamesList }": [
+        "किसी एक संपर्क का कोई ईमेल पता नहीं है: ${ noEmailsContactNamesList }",
+        "कुछ संपर्कों का कोई ईमेल पता नहीं है: ${ noEmailsContactNamesList } "
+      ],
+      "One of the groups has no contacts: ${ noContactGroupList }": [
+        "समूह में से एक का कोई संपर्क नहीं है: ${ noContactGroupList }",
+        "किसी एक समूह का कोई संपर्क नहीं है: ${ noContactGroupList } "
+      ],
       "Password is required": [
         "पासवर्ड चाहिए"
       ],
@@ -2271,6 +2355,10 @@
       ],
       "Please create an address first.": [
         "कृपया पहले एक पता बनाएं।"
+      ],
+      "Please fix the highlighted conflict to proceed.": [
+        "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोध को ठीक करें.",
+        "कृपया आगे बढ़ने के लिए हाइलाइट किए गए विरोधों को ठीक करें।"
       ],
       "Port is required": [
         "पोर्ट चाहिए"
@@ -2286,6 +2374,10 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "${ BRAND_NAME } यूज़र के लिए लाई प्राथमिक चाबी भेजने के लिए मान्य नहीं है"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "डुप्लिकेट प्राप्तकर्ताओं को निकाला गया: ${ joinedRecipients }",
+        "डुप्लिकेट प्राप्तकर्ताओं को निकाला गया: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "अनुरोध का समय समाप्त हुआ"
@@ -2422,6 +2514,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "एक अप्रत्याशित त्रुटि हुई। आयात फिर से शुरू होना चाहिए।"
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS_STRING } से ज़्यादा इवेंट हैं।",
+        "आपके फाइल ${ formattedFilename } में ${ MAX_IMPORT_EVENTS_STRING } से ज़्यादा इवेंट हैं।"
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "आपके फाइल ${ formattedFilename } में एक अमान्य तरीका है और आयात नहीं जा सकता"
@@ -2605,6 +2701,12 @@
         "रद्द"
       ]
     },
+    "Event form": {
+      "${ numberOfAttendees } participant": [
+        "${ numberOfAttendees } प्रतिभागी",
+        "${ numberOfAttendees } प्रतिभागी"
+      ]
+    },
     "Event info. Organizer name": {
       "You": [
         "आप"
@@ -2757,6 +2859,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "बाइट",
+        "बाइट"
+      ],
       "GB": [
         "जीबी"
       ],
@@ -2765,6 +2871,24 @@
       ],
       "MB": [
         "एमबी"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "बाइट",
+        "बाइट"
+      ],
+      "Gigabyte": [
+        "महार्बुदाष्टक",
+        "महार्बुदाष्टकों"
+      ],
+      "Kilobyte": [
+        "सहस्राष्टकों",
+        "सहस्राष्टकों"
+      ],
+      "Megabyte": [
+        "प्रयुताष्टक",
+        "प्रयुताष्टक"
       ]
     },
     "Filter notification": {
@@ -2806,6 +2930,10 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "${ items.length } सुझाव मिला, नेविगेट करने के लिए कीबोर्ड का उपयोग करें।",
+        "${ items.length } सुझाव मिले, नेविगेट करने के लिए कीबोर्ड का उपयोग करें।"
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "इनपुट के बाद सुझावों को एक्सेस और ब्राउज़ करने के लिए ऊपर और नीचे कुंजी का उपयोग करें। अपनी पसंद की पुष्टि करने के लिए Enter दबाएं, या सुझाव बॉक्स को बंद करने के लिए Escape दबाएं।"
       ]
@@ -2822,6 +2950,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } इवेंट एन्क्रिप्ट किए और आपके कैलेंडर में जोड़े गए",
+        "${ totalImported }/${ totalToImport } इवेंट एन्क्रिप्ट किए और आपके कैलेंडर में जोड़े गए"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। ${ totalToImport } में से ${ totalImported } इवेंट सफलतापूर्वक आयात किया गया।",
+        "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। ${ totalToImport } में से ${ totalImported } इवेंट सफलतापूर्वक आयात किए गए।"
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "आपके इवेंट को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। कोई इवेंट आयात नहीं किया जा सका।"
       ],
@@ -2856,11 +2992,23 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "आयात किए गए न्योते ${ CALENDAR_APP_NAME } में आयोजक और प्रतिभागी जानकारी के बिना सादे इवेंट के रूप में दिखाए जाते है। इवेंट अपडेट लेने और प्रतिभागी देखने के लिए, आयोजक को आपके ${ BRAND_NAME } ईमेल पते पे न्योता भेजने को बोले।"
       ],
+      "This file contains an event invitation:": [
+        "इस फाइल में इवेंट का एक न्योता है:",
+        "इस फाइल में इवेंट के न्योते है:"
+      ],
+      "This file contains an invitation response:": [
+        "इस फाइल में न्योते के जवाब है:",
+        "इस फाइल में न्योते के जवाब है:"
+      ],
       "This file contains some data that we cannot import:": [
         "इस फाइल में कुछ ऐसा डाटा है जिसे हम आयात नहीं कर सकते:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } संपर्क एन्क्रिप्ट किया गया और आपकी संपर्क सूची में जोड़ा गया",
+        "${ totalImported }/${ totalToImport } ईवेंट एन्क्रिप्ट किया गया और आपके कैलेंडर में जोड़ा गया"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "आपके संपर्क को एन्क्रिप्ट और जोड़ते समय एक गड़बड़ हुई। कोई संपर्क आयात नहीं किया जा सका।"
       ],
@@ -2880,6 +3028,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "संपर्क ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } संपर्क",
+        "${ totalContacts } संपर्क"
       ]
     },
     "Import contact. Contact identifier": {
@@ -3051,6 +3205,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } में से ${ totalContacts } संपर्क आयात नहीं किए जाएंगे। विवरण के लिए क्लिक करें"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEvents } में से ${ totalEventsDiscarded } इवेंट आयात नहीं किया जाएगा। जानकारी के लिए फैलाए।",
+        "${ totalEvents } में से ${ totalEventsDiscarded } इवेंट आयात नहीं किए जाएगे। जानकारी के लिए फैलाए।"
+      ],
       "No contact can be imported. Click for details": [
         "कोई संपर्क आयात नहीं किया जा सकता है। विवरण के लिए क्लिक करें"
       ],
@@ -3062,17 +3220,81 @@
       ]
     },
     "Info": {
+      "${ addressCount } email address": [
+        "${ addressCount } ईमेल पता",
+        "${ addressCount } ईमेल पते"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } के लिए आपकी अनुमति की आवश्यकता है ${ enableDesktopNotifications }"
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } की एन्क्रिप्शन टेकनोलॉजी का मतलब है की कोई भी आपका पासवर्ड एक्सेस नहीं कर सकता - यहां तक की हम भी नहीं।"
       ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } नया कैलेंडर",
+        "${ calendarsToBeCreatedCount } नए कैलेंडर"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } मर्ज किया गया कैलेंडर",
+        "${ calendarsToBeMergedCount } मर्ज किए गए कैलेंडर"
+      ],
+      "${ contactCount } contact contains multiple email addresses.": [
+        "${ contactCount } संपर्क के एक से अधिक ईपत्र पते हैं।",
+        "${ contactCount } संपर्क के एक से अधिक ईपत्र पते हैं।"
+      ],
+      "${ contactEmailsLength } Member": [
+        "${ contactEmailsLength } सदस्य",
+        "${ contactEmailsLength } सदस्य"
+      ],
       "${ contactName } contains multiple email addresses.": [
         "${ contactName } के एक से अधिक ईपत्र पते हैं।"
       ],
+      "${ contactsCount } contact found": [
+        "${ contactsCount } संपर्क मिला",
+        "${ contactsCount } संपर्क मिले"
+      ],
+      "${ groupCounts } group found": [
+        "${ groupCounts } समूह मिला",
+        "${ groupCounts } समूह मिले"
+      ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } फोल्डर मिला",
+        "${ providerFoldersNumLocalized } फोल्डर मिले"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } लेबल Gmail में मिला",
+        "${ providerFoldersNumLocalized } लेबल Gmail में मिले"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर",
+        "${ selectedCalendarsTotal } ${ providerCalendars.length } कैलेंडर"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } फ़ोल्डर चयनित",
+        "${ selectedFoldersCount } फ़ोल्डर्स का चयन किया"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } लेबल चयनित",
+        "${ selectedFoldersCount } लेबल चयनित"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } फ़ोल्डर चयनित",
+        "${ selectedFoldersCountLocalized } फ़ोल्डर्स का चयन किया"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } लेबल चयनित",
+        "${ selectedFoldersCountLocalized } लेबल चयनित"
+      ],
       "${ storage } storage": [
         "${ storage } स्टोरेज"
+      ],
+      "${ updated } contact updated successfully.": [
+        "${ updated } संपर्क सफलतापूर्वक अपडेट किया गया।",
+        "${ updated } संपर्क सफलतापूर्वक अपडेट किए गए।"
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } सदस्य)",
+        "(${ memberCount } सदस्य)"
       ],
       "A cancellation email will be sent to removed participants.": [
         "हटाए गए प्रतिभागियों को एक रद्दीकरण ईमेल भेजा जाएगा।"
@@ -3097,6 +3319,14 @@
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "इस पते के लिए विश्वसनीय कुंजी के साथ पता सत्यापन सक्षम है। इस पते पर भेजने में सक्षम होने के लिए, पहले सार्वजनिक कुंजियों पर भरोसा करें जिनका उपयोग भेजने के लिए किया जा सकता है।"
+      ],
+      "All (${ totalFoldersCount } folder)": [
+        "सभी (${ totalFoldersCount } फोल्डर)",
+        "सभी (${ totalFoldersCount } फोल्डर)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "सभी (${ totalFoldersCount } लेबल)",
+        "सभी (${ totalFoldersCount } लेबल)"
       ],
       "An invitation will be sent to added participants.": [
         "जोड़े गए प्रतिभागियों को आमंत्रण भेजा जाएगा।"
@@ -3148,6 +3378,10 @@
       ],
       "Country code": [
         "देश कोड"
+      ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } नया कैलेंडर बनाएं",
+        "${ calendarsToBeCreatedCount } नए कैलेंडर बनाएं"
       ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "आयातित संदेशों के लिए एक लेबल बनाएं, इस आयात के लिए एक समय सीमा और आपके द्वारा आयात किए जाने वाले फ़ोल्डर।"
@@ -3209,6 +3443,10 @@
       "Enter your own password (as organization admin).": [
         "अपना स्वयं का पासवर्ड दर्ज करें (संगठन व्यवस्थापक के रूप में)।"
       ],
+      "Estimated time remaining: ${ estimatedMinutes } minute": [
+        "अनुमानित समय शेष: ${ estimatedMinutes } मिनट",
+        "अनुमानित समय शेष: ${ estimatedMinutes } मिनट"
+      ],
       "Estimated time remaining: Less than a minute": [
         "अनुमानित समय शेष: एक मिनट से भी कम"
       ],
@@ -3244,6 +3482,10 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "यदि आप अपने इनबॉक्स में ईमेल नहीं पाते हैं, तो कृपया अपने स्पैम फ़ोल्डर की जाँच करें।"
+      ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें",
+        "${ totalCalendarsCount } में से ${ calendarCount } कैलेंडर आयात करें"
       ],
       "Import from": [
         "यहां से आयात करें"
@@ -3370,6 +3612,10 @@
       ],
       "Please select the folders you would like to import:": [
         "कृपया उन फ़ोल्डरों का चयन करें जिन्हें आप आयात करना चाहते हैं:"
+      ],
+      "Please select which email address or addresses to add to ${ groupCount } group.": [
+        "कृपया ${ groupCount } समूह में जोड़ने के लिए ईमेल पता या पते चुनें।",
+        "कृपया ${ groupCount } समूहों में जोड़ने के लिए ईमेल पता या पते चुनें।"
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "कृपया चुनें कि ${ groupName } में कौनसे ईपत्र पते डालने हैं।"
@@ -4005,6 +4251,10 @@
       "Organizer": [
         "व्यवस्था करनेवाला"
       ],
+      "participant": [
+        "प्रतिभागी",
+        "प्रतिभागी"
+      ],
       "Participants": [
         "प्रतिभागियों"
       ],
@@ -4178,6 +4428,10 @@
       "Almost there": [
         "वहाँ लगभग"
       ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }",
+        "कैलेंडर बनाएं गए: ${ calendarsToBeCreated } में से ${ createdCalendarCount }"
+      ],
       "Connecting to your email provider": [
         "अपने ईमेल प्रदाता से जुड़ना"
       ],
@@ -4192,6 +4446,24 @@
       ],
       "Your import is starting": [
         "आपका आयात शुरू हो रहा है"
+      ]
+    },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } फोल्डर से सारे संदेश आयात करें और उन्हे लेबल करें"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें",
+        "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
       ]
     },
     "Message": {
@@ -4280,6 +4552,18 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "प्रत्येक ${ interval } माह ${ onDayString }",
+        "प्रत्येक ${ interval } महीने ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "प्रत्येक ${ interval } महीना ${ onDayString }, ${ timesString } पर",
+        "प्रत्येक ${ interval } महीने ${ onDayString }, ${ timesString } पर"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "प्रत्येक ${ interval } महीना ${ onDayString }, ${ untilString } पर",
+        "प्रत्येक ${ interval } महीने ${ onDayString }, ${ untilString } पर"
+      ],
       "Monthly ${ onDayString }": [
         "मासिक ${ onDayString }"
       ],
@@ -4470,6 +4754,12 @@
         "कैलेंडर जोड़ा गया"
       ]
     },
+    "Notification in share calendar modal": {
+      "Member added": [
+        "मेंबर जोड़ा गया",
+        "मेंबर जोड़े गए"
+      ]
+    },
     "Notification in shared calendar modal": {
       "Calendar invitation declined": [
         "कैलेंडर न्योता नकारा गया"
@@ -4500,11 +4790,91 @@
       "at time of event": [
         "घटना के समय"
       ],
+      "day before": [
+        "एक दिन पहले",
+        "एक दिन पहले"
+      ],
+      "hour before": [
+        "घंटा पहले",
+        "घंटे पहले"
+      ],
+      "minute before": [
+        "मिनट पहले",
+        "मिनट पहले"
+      ],
       "on the same day": [
         "उसी दिन"
+      ],
+      "week before": [
+        "इतने सप्ताह पहले",
+        "सप्ताह पहले"
       ]
     },
     "Notifications": {
+      "${ value } day after": [
+        "${ value } दिन बाद",
+        "${ value } दिन बाद"
+      ],
+      "${ value } day after at ${ time }": [
+        "${ value } दिन बाद ${ time } पे",
+        "${ value } दिन बाद ${ time } पे"
+      ],
+      "${ value } day before": [
+        "${ value } दिन पहले",
+        "${ value } दिन पहले"
+      ],
+      "${ value } day before at ${ time }": [
+        "${ time } पे ${ value } दिन बाद",
+        "${ time } पे ${ value } दिन बाद"
+      ],
+      "${ value } hour after": [
+        "${ value } घंटे बाद",
+        "${ value } घंटे बाद"
+      ],
+      "${ value } hour after at ${ time }": [
+        "${ time } पे ${ value } घंटे बाद",
+        "${ time } पे ${ value } घंटे बाद"
+      ],
+      "${ value } hour before": [
+        "${ value } घंटा पहले",
+        "${ value } घंटे पहले"
+      ],
+      "${ value } hour before at ${ time }": [
+        "${ time } पे ${ value } घंटे पहले",
+        "${ time } पे ${ value } घंटे पहले"
+      ],
+      "${ value } minute after": [
+        "${ value } मिनट बाद",
+        "${ value } मिनट बाद"
+      ],
+      "${ value } minute after at ${ time }": [
+        "${ time } पे ${ value } मिनट बाद",
+        "${ time } पे ${ value } मिनट बाद"
+      ],
+      "${ value } minute before": [
+        "${ value } मिनट पहले",
+        "${ value } मिनट पहले"
+      ],
+      "${ value } minute before at ${ time }": [
+        "${ time } पे ${ value } मिनट पहले",
+        "${ time } पे ${ value } मिनट पहले"
+      ],
+      "${ value } week after": [
+        "${ value } हफ्ते बाद",
+        "${ value } हफ्ते बाद"
+      ],
+      "${ value } week after at ${ time }": [
+        "${ time } पे ${ value } हफ्ते बाद",
+        "${ time } प ${ value } हफ्ते बाद"
+      ],
+      "${ value } week before": [
+        "${ value } हफ्ते पहले",
+        "${ value } हफ्ते पहले"
+      ],
+      "${ value } week before at ${ time }": [
+        "${ time } पे ${ value } हफ्ते पहले",
+        "${ time } पे ${ value } हफ्ते पहले"
+      ],
       "At time of event": [
         "इवेंट के समय"
       ],
@@ -4579,6 +4949,10 @@
       "Custom": [
         "अनुकूल"
       ],
+      "Day": [
+        "दिन",
+        "दिन"
+      ],
       "Does not repeat": [
         "दोहराएं नहीं"
       ],
@@ -4597,6 +4971,10 @@
       "Ignore group": [
         "समूह पर ध्यान न दें"
       ],
+      "Month": [
+        "महीना",
+        "महीने"
+      ],
       "No parent folder": [
         "कोई मूल फ़ोल्डर नहीं"
       ],
@@ -4605,6 +4983,14 @@
       ],
       "This event": [
         "ये इवेंट"
+      ],
+      "Week": [
+        "हफ्ता",
+        "हफ्ते"
+      ],
+      "Year": [
+        "साल",
+        "साल"
       ]
     },
     "Option group label": {
@@ -4724,6 +5110,18 @@
       ]
     },
     "Progress bar description": {
+      "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
+        "${ countContacts } में से ${ contactsExported.length } संपर्क सफलतापूर्वक निर्यात किया",
+        "${ countContacts } में से ${ contactsExported.length } संपर्क सफलतापूर्वक निर्यात किए"
+      ],
+      "${ model.deleted.length } out of ${ totalBeDeleted } contact successfully deleted.": [
+        "${ model.deleted.length } में से ${ totalBeDeleted } संपर्क सफलतापूर्वक हटा दिया गया।",
+        "${ model.deleted.length } में से ${ totalBeDeleted } संपर्कों सफलतापूर्वक हटा दिया गया।"
+      ],
+      "${ model.submitted.length } out of ${ totalBeMerged } contact successfully merged.": [
+        "${ model.submitted.length } में से ${ totalBeMerged } संपर्क सफलतापूर्वक मर्ज हो गया।",
+        "${ model.submitted.length } में से ${ totalBeMerged } संपर्कों सफलतापूर्वक मर्ज हो गए।"
+      ],
       "No contacts exported.": [
         "कोई संपर्क निर्यात नहीं किया गया।"
       ],
@@ -4799,6 +5197,12 @@
         "गैर-${ BRAND_NAME } यूज़रों को न्योता देने को अपना कैलेंडर एक लिंक से शेयर करें।"
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "आपने हर कैलेंडर पे ${ MAX_CALENDAR_MEMBERS } सदस्य की सीमा पार कर ली हैं",
+        "आपने हर कैलेंडर पे ${ MAX_CALENDAR_MEMBERS } सदस्य की सीमा पार कर ली हैं"
+      ]
+    },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
         "आप जिनके साथ ${ calendarName } शेयर करना चाहते हैं उनका ${ BRAND_NAME } खाता जोड़े। हम उनको एक न्योता भेजेंगे।"
@@ -4849,6 +5253,30 @@
     "specialoffer: Action, Unlimited is a plan name": {
       "Go Unlimited": [
         "असीम पे जाएं"
+      ]
+    },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } दिन",
+        "${ days } दिन"
+      ],
+      "${ hours } hour": [
+        "${ hours } घंटा",
+        "${ hours } घंटे"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } मिनट",
+        "${ minutes } मिनट"
+      ],
+      "${ seconds } second": [
+        "${ seconds } सेकंड",
+        "${ seconds } सेकंड"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } महीना मुफ्त",
+        "${ n } महीने मुफ्त"
       ]
     },
     "specialoffer: Deal details": {
@@ -4982,6 +5410,10 @@
       ]
     },
     "Success": {
+      "${ countMergeableContacts } contact look identical.": [
+        "${ countMergeableContacts } संपर्क एक जैसा है।",
+        "${ countMergeableContacts } संपर्क एक जैसे है।"
+      ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
         "इस सीरीज़ के सारे इवेंट के लिए हटाए गए प्रतिभागीयों को एक रद्द होने का न्योता भेजा जाएगा।"
       ],
@@ -5035,6 +5467,14 @@
       ],
       "Code sent to ${ methodTo }": [
         "${ methodTo } को कोड भेजा गया"
+      ],
+      "Contact deleted": [
+        "संपर्क हटाया गया",
+        "संपर्क हटा दिए गए"
+      ],
+      "Contact group deleted": [
+        "संपर्क समूह हटाया गया",
+        "संपर्क समूह हटा दिए गए"
       ],
       "Contact saved": [
         "संपर्क सहेजा गया"
@@ -5172,12 +5612,44 @@
         "vCard फील्ड"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } घंटा",
+        "${ hours } घंटे"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 घंटा",
+        "${ hoursInt }.5 घंटे"
+      ],
+      "${ minutes } min": [
+        "${ minutes } मिनट",
+        "${ minutes } मिनट"
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } घंटा",
+        "${ hours } घंटे"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }.5 घंटा",
+        "${ hoursInt }.5 घंटे"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } मिनट",
+        "${ minutes } मिनट"
+      ]
+    },
     "Timezone search placeholder": {
       "Search time zones": [
         "समय क्षेत्र खोजें"
       ]
     },
     "Title": {
+      "${ emailsCount } email address": [
+        "${ emailsCount } ईमेल पता",
+        "${ emailsCount } ईमेल पते"
+      ],
       "Account suspended": [
         "खाता निलंबित"
       ],
@@ -5198,6 +5670,10 @@
       ],
       "Add participants": [
         "प्रतिभागियों को जोड़ें"
+      ],
+      "Add to ${ groupCount } group": [
+        "${ groupCount } समूह में जोड़ें",
+        "${ groupCount } समूह में जोड़ें"
       ],
       "Add to ${ groupName }": [
         "${ groupName } में जोड़ें"
@@ -5258,6 +5734,14 @@
       ],
       "Customize your mail import": [
         "अपना मेल आयात अनुकूलित करें"
+      ],
+      "Delete ${ count } contact": [
+        "${ count } संपर्क हटाएं",
+        "${ count } संपर्क हटाएं"
+      ],
+      "Delete ${ count } contact group": [
+        "${ count } संपर्क समूह हटाएं",
+        "${ count } संपर्क समूह हटाएं"
       ],
       "Delete ${ Name }": [
         "${ Name } हटाएं"
@@ -5321,6 +5805,10 @@
       ],
       "Human verification": [
         "मानव सत्यापन"
+      ],
+      "Import as simple event?": [
+        "साधारण ईवेंट के रूप में आयात करें?",
+        "साधारण ईवेंट के रूप में आयात करें?"
       ],
       "Import contacts": [
         "संपर्क आयात करें"
@@ -5589,6 +6077,16 @@
         "सत्यापित संपर्क के साथ शुरु-से-अंत तक एन्क्रिप्ट किये तरीके से शेयर किया"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "पासवर्ड में कम से कम ${ length } वर्ण होना चाहिए",
+        "पासवर्ड में कम से कम ${ length } वर्ण होने चाहिए"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)",
+        "ज़रा छोटा यूजरनाम आज़माएं (${ n } अक्षर ज़्यादा-से-ज़्यादा)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "वीडियो फिर से चलाने के लिए क्लिक करें"
@@ -5608,6 +6106,10 @@
       ],
       "${ BRAND_NAME } will transfer as much data as possible, starting with your most recent messages.": [
         "${ BRAND_NAME }, आपके सबसे हाल के संदेशों से शुरू करते हुए, जितना हो सके उतना डाटा ट्रांसफर करेगा।"
+      ],
+      "Are you sure you want to permanently delete ${ count } contact?": [
+        "क्या आप वाकई ${ count } संपर्क को स्थायी रूप से हटाना चाहते हैं?",
+        "क्या आप वाकई ${ count } संपर्कों को स्थायी रूप से हटाना चाहते हैं?"
       ],
       "Are you sure you want to permanently delete this contact group?": [
         "क्या आप वाकई इस संपर्क समूह को स्थायी रूप से हटाना चाहते हैं?"
@@ -5673,6 +6175,114 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "${ multipleDaysString } पर हर ${ interval } सप्ताह",
+        "${ multipleDaysString } पर हर ${ interval } सप्ताह"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ timesString } पर",
+        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ timesString } पर"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ untilString } पर",
+        "प्रत्येक ${ interval } सप्ताह ${ multipleDaysString }, ${ untilString } पर"
+      ],
+      "Every ${ interval } week on all days": [
+        "सभी दिनों पर हर ${ interval } सप्ताह",
+        "सभी दिनों पर हर ${ interval } सप्ताह"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "प्रतिसप्ताह, ${ timesString }",
+        "प्रति ${ interval } सप्ताह, प्रतिदिन, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }",
+        "सभी दिनों पर हर ${ interval } सप्ताह, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को",
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह शुक्रवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "सोमवार को प्रत्येक ${ interval } सप्ताह",
+        "सोमवार को हर ${ interval } सप्ताह"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह सोमवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "शनिवार को प्रत्येक ${ interval } सप्ताह",
+        "प्रति ${ interval } शनिवार को"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह शनिवार को, ${ timesString }",
+        "शनिवार को प्रत्येक ${ interval } सप्ताह, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "हर ${ interval } हफ्ते शनिवार को, ${ untilString }",
+        "शनिवार को प्रत्येक ${ interval } सप्ताह, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "प्रत्येक ${ interval } सप्ताह रविवार को",
+        "रविवार को हर ${ interval } सप्ताह"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह रविवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह गुरुवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "प्रत्येक ${ interval }} सप्ताह के मंगलवार को",
+        "प्रत्येक ${ interval }} सप्ताह के मंगलवार को"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ timesString }",
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }",
+        "प्रत्येक ${ interval } सप्ताह मंगलवार को, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "बुधवार को हर ${ interval } सप्ताह",
+        "प्रति ${ interval } बुधवार को"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "बुधवार को हर ${ interval } सप्ताह, ${ timesString }",
+        "बुधवार को हर ${ interval } सप्ताह, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }",
+        "बुधवार को हर ${ interval } सप्ताह, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "प्रतिसप्ताह ${ multipleDaysString } को"
       ],
@@ -5779,6 +6389,18 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "हर ${ interval } साल",
+        "हर ${ interval } साल"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "हर ${ interval } साल, ${ timesString }",
+        "हर ${ interval } वर्षों, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "हर ${ interval } साल, ${ untilString }",
+        "हर ${ interval } वर्षों, ${ untilString }"
+      ],
       "Yearly": [
         "सालाना"
       ],
