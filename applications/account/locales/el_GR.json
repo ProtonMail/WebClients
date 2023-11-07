@@ -1117,6 +1117,14 @@
       ]
     },
     "Addon": {
+      "${ domains } custom domain": [
+        "${ domains } προσαρμοσμένος τομέας",
+        "${ domains } προσαρμοσμένοι τομείς"
+      ],
+      "${ ips } server": [
+        "${ ips } διακομιστής",
+        "${ ips } διακομιστές"
+      ],
       "${ price } per dedicated server": [
         "${ price } ανά αποκλειστικό διακομιστή"
       ],
@@ -1125,6 +1133,10 @@
       ],
       "${ price } per user": [
         "${ price } ανά χρήστη"
+      ],
+      "${ users } user": [
+        "${ users } χρήστης",
+        "${ users } χρήστες"
       ]
     },
     "Address action": {
@@ -1437,6 +1449,9 @@
       ]
     },
     "bf2023: renew": {
+      "${ n } month": [
+        "${ n } μήνα"
+      ],
       "the first month": [
         "τον πρώτο μήνα"
       ],
@@ -1465,6 +1480,10 @@
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Περιλαμβάνει υποστήριξη για 1 προσαρμοσμένο τομέα ηλεκτρονικού ταχυδρομείου, 10 διευθύνσεις ηλεκτρονικού ταχυδρομείου, 10 hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και πολλά άλλα."
       ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Περιλαμβάνει υποστήριξη για 3 προσαρμοσμένους τομείς email, ${ addresses } διεύθυνση ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και άλλα.",
+        "Περιλαμβάνει υποστήριξη για 3 προσαρμοσμένους τομείς email, ${ addresses } διευθύνσεις ηλεκτρονικού ταχυδρομείου, απεριόριστα hide-my-email ψευδώνυμα, κοινή χρήση ημερολογίου και άλλα."
+      ],
       "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "Ασφαλείς συνδέσεις σε όλες τις συσκευές σας. Περιλαμβάνει απεριόριστα ψευδώνυμα, κοινή χρήση, ενσωματωμένο έλεγχο ταυτότητας δύο παραγόντων (2FA) και πολλά άλλα."
       ],
@@ -1485,6 +1504,10 @@
       ]
     },
     "Billing cycle": {
+      "${ n } month": [
+        "${ n } μήνα",
+        "${ n } μήνες"
+      ],
       "Renews automatically at ${ renewPrice }, for ${ renewalLength }": [
         "Ανανεώνεται αυτόματα για ${ renewPrice }, για ${ renewalLength }"
       ]
@@ -1696,6 +1719,12 @@
         "Κοινοποίηση με οποιονδήποτε"
       ]
     },
+    "Calendar settings sidebar": {
+      "Show ${ remainingItems } more": [
+        "Προβολή ${ remainingItems } παραπάνω",
+        "Προβολή ${ remainingItems } παραπάνω"
+      ]
+    },
     "Calendar share permission label": {
       "Edit event details": [
         "Επεξεργασία λεπτομερειών γεγονότος"
@@ -1793,6 +1822,16 @@
       ],
       "Week": [
         "Εβδομάδα"
+      ]
+    },
+    "Checkout row": {
+      "${ users } user": [
+        "${ users } χρήστης",
+        "${ users } χρήστες"
+      ],
+      "Total for ${ n } month": [
+        "Σύνολο για ${ n } μήνα",
+        "Σύνολο για ${ n } μήνες"
       ]
     },
     "Checkout summary": {
@@ -2945,6 +2984,10 @@
       ]
     },
     "Daily recurring event, frequency": {
+      "${ count } time": [
+        "${ count } φορά",
+        "${ count } φορές"
+      ],
       "Daily": [
         "Καθημερινά"
       ],
@@ -2953,6 +2996,18 @@
       ],
       "Daily, ${ untilString }": [
         "Καθημερινά, ${ untilString }"
+      ],
+      "Every ${ interval } day": [
+        "Κάθε ${ interval } μέρα",
+        "Κάθε ${ interval } μέρες"
+      ],
+      "Every ${ interval } day, ${ timesString }": [
+        "Κάθε ${ interval } μέρα, ${ timesString }",
+        "Κάθε ${ interval } μέρες, ${ timesString }"
+      ],
+      "Every ${ interval } day, ${ untilString }": [
+        "Κάθε ${ interval } μέρα, ${ untilString }",
+        "Κάθε ${ interval } μέρες, ${ untilString }"
       ],
       "until ${ dateString }": [
         "μέχρι ${ dateString }"
@@ -3655,6 +3710,14 @@
       "Contact signature not verified": [
         "Η υπογραφή επαφής δεν πιστοποιήθηκε"
       ],
+      "Deselect at least ${ calendarsToFixCount } calendar": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια"
+      ],
+      "Deselect at least ${ calendarsToFixCount } calendar or": [
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο ή",
+        "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια ή"
+      ],
       "Domain not available, try again later": [
         "Ο τομέας δεν είναι διαθέσιμος, δικομάστε ξανά αργότερα"
       ],
@@ -3763,6 +3826,10 @@
       "Label name cannot be empty.": [
         "Το όνομα ετικέτας δεν γίνεται να είναι κενό."
       ],
+      "Merge at least ${ calendarsToFixCount } calendar with an existing ${ BRAND_NAME } calendar": [
+        "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο με ένα υπάρχον ημερολόγιο του ${ BRAND_NAME }",
+        "Συγχωνεύστε τουλάχιστον ${ calendarsToFixCount } ημερολόγια με υπάρχοντα ημερολόγια του ${ BRAND_NAME }"
+      ],
       "Missing key packet": [
         "Λείπει πακέτο κλειδιού"
       ],
@@ -3838,6 +3905,10 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Παρακαλώ ενεργοποιήστε την υποστήριξη πολλαπλών-χρηστών πριν προσθέσετε χρήστες στον οργανισμό σας."
       ],
+      "Please fix the highlighted conflict to proceed.": [
+        "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
+        "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
+      ],
       "Please generate keys before you try to change your password": [
         "Πριν δοκιμάσετε την αλλαγή των κωδικών πρόσβασής σας, παρακαλούμε δημιουργήστε κλειδιά"
       ],
@@ -3873,6 +3944,10 @@
       ],
       "Process aborted": [
         "Η διαδικασία ματαιώθηκε"
+      ],
+      "Removed duplicate recipient: ${ joinedRecipients }": [
+        "Αφαιρέθηκε διπλότυπος παραλήπτης: ${ joinedRecipients }",
+        "Διαγράφτηκαν οι εξής διπλότυποι παραλήπτες: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "Λήξη χρονικού ορίου αιτήματος"
@@ -4085,6 +4160,10 @@
       ],
       "An unexpected error occurred. Import must be restarted.": [
         "Παρουσιάστηκε μη αναμενόμενο σφάλμα. Πρέπει να γίνει επανεκκίνηση της εισαγωγής."
+      ],
+      "Your file ${ formattedFilename } contains more than ${ MAX_IMPORT_EVENTS_STRING } event.": [
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερο από ${ MAX_IMPORT_EVENTS_STRING } γεγονός.",
+        "Το αρχείο ${ formattedFilename } περιέχει περισσότερα από ${ MAX_IMPORT_EVENTS_STRING } γεγονότα."
       ],
       "Your file ${ formattedFilename } has an invalid method and cannot be imported.": [
         "Το αρχείο σας ${ formattedFilename } έχει μη έγκυρη μέθοδο και δεν μπορεί να εισαχθεί."
@@ -4378,6 +4457,10 @@
       ]
     },
     "Export calendar": {
+      "${ totalProcessed }/${ totalToProcess } event exported": [
+        "${ totalProcessed }/${ totalToProcess } γεγονός εξάγεται",
+        "${ totalProcessed }/${ totalToProcess } γεγονότα εξάγονται"
+      ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Το ημερολόγιο εξήχθη με επιτυχία. Τώρα μπορείτε να αποθηκεύσετε το αρχείο ICS."
       ],
@@ -4716,11 +4799,23 @@
       ]
     },
     "Feature": {
+      "${ MaxVPN } VPN connection": [
+        "${ MaxVPN } σύνδεση VPN",
+        "${ MaxVPN } συνδέσεις VPN"
+      ],
       "Access to all countries": [
         "Πρόσβαση σε όλες τις χώρες"
       ],
       "Add": [
         "Προσθήκη"
+      ],
+      "Add (${ numberOfAddedServers })": [
+        "Προσθήκη (${ numberOfAddedServers })",
+        "Προσθήκη (${ numberOfAddedServers })"
+      ],
+      "Connection for up to ${ plusVpnConnections } device": [
+        "Σύνδεση για έως και ${ plusVpnConnections } συσκευή",
+        "Σύνδεση για έως και ${ plusVpnConnections } συσκευές"
       ],
       "Fastest VPN servers": [
         "Γρηγορότεροι διακομιστές VPN"
@@ -4827,6 +4922,10 @@
       ]
     },
     "file size format": {
+      "byte": [
+        "byte",
+        "bytes"
+      ],
       "GB": [
         "GB"
       ],
@@ -4838,6 +4937,28 @@
       ],
       "TB": [
         "TB"
+      ]
+    },
+    "file size format, long": {
+      "Byte": [
+        "Byte",
+        "Bytes"
+      ],
+      "Gigabyte": [
+        "Gigabyte",
+        "Gigabytes"
+      ],
+      "Kilobyte": [
+        "Kilobyte",
+        "Kilobyte"
+      ],
+      "Megabyte": [
+        "Megabyte",
+        "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Filter Actions": {
@@ -5233,6 +5354,10 @@
       ]
     },
     "Hint": {
+      "Found ${ items.length } suggestion, use keyboard to navigate.": [
+        "Βρέθηκαν ${ items.length } πρόταση, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση.",
+        "Βρέθηκαν ${ items.length } προτάσεις, χρησιμοποιήστε το πληκτρολόγιο για πλοήγηση."
+      ],
       "Use Up and Down keys to access and browse suggestions after input. Press Enter to confirm your choice, or Escape to close the suggestions box.": [
         "Χρησιμοποιήστε τα πλήκτρα Up και Down για πρόσβαση και περιήγηση στις προτάσεις μετά την εισαγωγή. Πατήστε Enter για να επιβεβαιώσετε την επιλογή σας, ή διαφυγής για να κλείσετε το πλαίσιο προτάσεων."
       ]
@@ -5249,6 +5374,14 @@
       ]
     },
     "Import calendar": {
+      "${ totalImported }/${ totalToImport } event encrypted and added to your calendar": [
+        "${ totalImported }/${ totalToImport } γεγονός κρυπτογραφήθηκε και προστέθηκε στο ημερολόγιό σας",
+        "${ totalImported }/${ totalToImport } γεγονότα κρυπτογραφήθηκαν και προστέθηκαν στο ημερολόγιό σας"
+      ],
+      "An error occurred while encrypting and adding your event. ${ totalImported } out of ${ totalToImport } event successfully imported.": [
+        "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη του γεγονότος. ${ totalImported } από ${ totalToImport } γεγονός εισήχθηκε επιτυχώς.",
+        "Ένα σφάλμα παρουσιάστηκε κατά την κρυπτογράφηση και την προσθήκη των γεγονότων. ${ totalImported } από ${ totalToImport } γεγονότα εισήχθησαν επιτυχώς."
+      ],
       "An error occurred while encrypting and adding your event. No event could be imported.": [
         "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της εκδήλωσής σας. Καμιά εκδήλωση δεν μπόρεσε να εισαχθεί."
       ],
@@ -5283,11 +5416,23 @@
       "Imported invitations appear in ${ CALENDAR_APP_NAME } as simple events without organizer and participant details. To get event updates and see participants, ask organizers to invite you using your ${ BRAND_NAME } email address.": [
         "Οι εισαγόμενες προσκλήσεις εμφανίζονται στο ${ CALENDAR_APP_NAME } ως απλές εκδηλώσεις χωρίς στοιχεία διοργανωτή και συμμετέχοντα. Για να λαμβάνετε ενημερώσεις για τις εκδηλώσεις και για να δείτε τους συμμετέχοντες, ζητήστε από τους διοργανωτές να σας προσκαλέσουν χρησιμοποιώντας τη δική σας ${ BRAND_NAME } διεύθυνση ηλεκτρονικού ταχυδρομείου."
       ],
+      "This file contains an event invitation:": [
+        "Αυτό το αρχείο περιέχει μια πρόσκληση σε γεγονός:",
+        "Αυτό το αρχείο περιέχει προσκλήσεις σε γεγονότα:"
+      ],
+      "This file contains an invitation response:": [
+        "Αυτό το αρχείο περιέχει μια απάντηση πρόσκλησης:",
+        "Αυτό το αρχείο περιέχει απαντήσεις πρόσκλησης:"
+      ],
       "This file contains some data that we cannot import:": [
         "Το αρχείο περιέχει κάποια δεδομένα που δεν μπορούμε να εισάγουμε:"
       ]
     },
     "Import contact": {
+      "${ totalImported }/${ totalToImport } contact encrypted and added to your contact list": [
+        "${ totalImported }/${ totalToImport } επαφή κρυπτογραφήθηκε και προστέθηκε στη λίστα επαφών σας",
+        "${ totalImported }/${ totalToImport } επαφές κρυπτογραφήθηκαν και προστέθηκαν στη λίστα επαφών σας"
+      ],
       "An error occurred while encrypting and adding your contact. No contact could be imported.": [
         "Παρουσιάστηκε σφάλμα κατά την κρυπτογράφηση και την προσθήκη της επαφής σας. Δεν ήταν δυνατή η εισαγωγή επαφής."
       ],
@@ -5307,6 +5452,12 @@
     "Import contact error": {
       "Contact ${ contactId }: ": [
         "Επαφή ${ contactId }: "
+      ]
+    },
+    "Import contact groups info": {
+      "${ totalContacts } contact": [
+        "${ totalContacts } επαφή",
+        "${ totalContacts } επαφές"
       ]
     },
     "Import contact. Contact identifier": {
@@ -5536,6 +5687,10 @@
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } από ${ totalContacts } επαφές δεν θα εισαχθούν. Κάντε κλικ για λεπτομέρειες"
       ],
+      "${ totalEventsDiscarded } out of ${ totalEvents } event will not be imported. Expand for details.": [
+        "${ totalEventsDiscarded } από ${ totalEvents } γεγονός δεν θα εισαχθεί. Αναπτύξτε για λεπτομέρειες.",
+        "${ totalEventsDiscarded } από ${ totalEvents } γεγονότα δεν θα εισαχθούν. Αναπτύξτε για λεπτομέρειες."
+      ],
       "No contact can be imported. Click for details": [
         "Δεν είναι δυνατή η εισαγωγή καμίας επαφής. Κάντε κλικ για λεπτομέρειες"
       ],
@@ -5547,6 +5702,10 @@
       ]
     },
     "Info": {
+      "${ amountOfAddresses } address": [
+        "${ amountOfAddresses } διεύθυνση",
+        "${ amountOfAddresses } διευθύνσεις"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για την ${ enableDesktopNotifications }."
       ],
@@ -5570,6 +5729,14 @@
       ],
       "${ calendarName } will be set as default calendar.": [
         "Το ${ calendarName } θα οριστεί ως προεπιλεγμένο ημερολόγιο."
+      ],
+      "${ calendarsToBeCreatedCount } new calendar": [
+        "${ calendarsToBeCreatedCount } νέο ημερολόγιο",
+        "${ calendarsToBeCreatedCount } νέα ημερολόγια"
+      ],
+      "${ calendarsToBeMergedCount } merged calendar": [
+        "${ calendarsToBeMergedCount } συγχωνευμένο ημερολόγιο",
+        "${ calendarsToBeMergedCount } συγχωνευμένα ημερολόγια"
       ],
       "${ current } of ${ total }": [
         "${ current } από ${ total }"
@@ -5601,8 +5768,24 @@
       "${ MAIL_APP_NAME } supports DKIM signing for custom domains. To use DKIM authentication, please add the following CNAME record into your DNS settings for this domain. This can typically be done in the control panel of your domain name registrar.": [
         "Το ${ MAIL_APP_NAME } υποστηρίζει υπογραφές DKIM για προσαρμοσμένους τομείς. Για χρήση ταυτοποίησης DKIM, παρακαλούμε προσθέστε την ακόλουθη εγγραφή CNAME στις ρυθμίσεις DNS για αυτόν τον τομέα, κατά κανόνα στον πίνακα ελέγχου του καταχωρητή σας ονομάτων τομέων."
       ],
+      "${ n } address": [
+        "${ n } διεύθυνση",
+        "${ n } διευθύνσεις"
+      ],
       "${ none } has no effect on email delivery, but we recommend ${ quarantine } for better security.": [
         "${ none } δεν έχει καμία επίδραση στην παράδοση ηλεκτρονικού ταχυδρομείου, αλλά προτείνουμε ${ quarantine } για καλύτερη ασφάλεια."
+      ],
+      "${ number } city": [
+        "${ number } πόλη",
+        "${ number } πόλεις"
+      ],
+      "${ number } server": [
+        "${ number } διακομιστής",
+        "${ number } διακομιστές"
+      ],
+      "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
+        "${ numberOfNonPrivateKeys } ανεβασμένο αρχείο δεν είναι έγκυρο ιδιωτικό κλειδί. Παρακαλούμε επαληθεύστε και δοκιμάστε ξανά.",
+        "${ numberOfNonPrivateKeys } ανεβασμένα αρχεία δεν είναι έγκυρα ιδιωτικά κλειδιά. Παρακαλούμε επαληθεύστε και δοκιμάστε ξανά."
       ],
       "${ plan } removed. Bundle deal not available on a 1-month plan.": [
         "${ plan } καταργήθηκε. Η προσφορά πακέτου δεν είναι διαθέσιμη σε πρόγραμμα 1 μηνός."
@@ -5613,17 +5796,65 @@
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } είναι ένα προηγμένο πρόγραμμα προστασίας λογαριασμού που λειτουργεί με προηγμένα συστήματα Τεχνητής Νοημοσύνης και οι ειδικοί εργάζονται συνεχώς για να σας προστατεύσουν από κακούς λειτουργούς και από απειλές ασφαλείας."
       ],
+      "${ providerFoldersNumLocalized } folder found": [
+        "${ providerFoldersNumLocalized } φάκελος βρέθηκε",
+        "${ providerFoldersNumLocalized } φάκελοι βρέθηκαν"
+      ],
+      "${ providerFoldersNumLocalized } label found in Gmail": [
+        "${ providerFoldersNumLocalized } ετικέτα βρέθηκε στο Gmail",
+        "${ providerFoldersNumLocalized } ετικέτες βρέθηκαν στο Gmail"
+      ],
+      "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
+        "Ο διακομιστής ${ provisioningCounter } εξακολουθεί να ρυθμίζεται. Αυτό συνήθως διαρκεί περίπου ${ provisioningDuration }.",
+        "Οι διακομιστές ${ provisioningCounter } εξακολουθούν να ρυθμίζονται. Αυτό συνήθως διαρκεί περίπου ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } επιπλέον",
+        "${ remainingAddresses.length } επιπλέον"
+      ],
+      "${ remainingAddresses.length } more address": [
+        "${ remainingAddresses.length } επιπλέον διεύθυνση",
+        "${ remainingAddresses.length } επιπλέον διευθύνσεις"
+      ],
+      "${ selectedCalendarsTotal } of ${ providerCalendars.length } calendar": [
+        "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγιο",
+        "${ selectedCalendarsTotal } από ${ providerCalendars.length } ημερολόγια"
+      ],
+      "${ selectedFoldersCount } folder selected": [
+        "${ selectedFoldersCount } επιλεγμένος φάκελος",
+        "${ selectedFoldersCount } επιλεγμένοι φάκελοι"
+      ],
+      "${ selectedFoldersCount } label selected": [
+        "${ selectedFoldersCount } επιλεγμένη ετικέτα",
+        "${ selectedFoldersCount } επιλεγμένες ετικέτες"
+      ],
+      "${ selectedFoldersCountLocalized } folder selected": [
+        "${ selectedFoldersCountLocalized } επιλεγμένος φάκελος",
+        "${ selectedFoldersCountLocalized } επιλεγμένοι φάκελοι"
+      ],
+      "${ selectedFoldersCountLocalized } label selected": [
+        "${ selectedFoldersCountLocalized } ετικέτα επιλέχθηκε",
+        "${ selectedFoldersCountLocalized } ετικέτες επιλέχθηκαν"
+      ],
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
       ],
       "${ storageSize } storage": [
         "${ storageSize } αποθηκευτικού χώρου"
       ],
+      "${ userFound } user found": [
+        "${ userFound } χρήστης βρέθηκε",
+        "${ userFound } χρήστες βρέθηκαν"
+      ],
       "${ vpnPlus } required for Country level connection.": [
         "${ vpnPlus } απαιτείται για σύνδεση επιπέδου Χώρας."
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "${ vpnPlus } απαιτείται για το χαρακτηριστικό Secure Core."
+      ],
+      "(${ memberCount } member)": [
+        "(${ memberCount } μέλος)",
+        "(${ memberCount } μέλη)"
       ],
       "(${ serverPrice } /month)": [
         "(${ serverPrice } /μήνα)"
@@ -5642,6 +5873,10 @@
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } bonus αποθήκευση"
+      ],
+      "+${ organization.BonusVPN } connection for ${ VPN_APP_NAME } (allows you to connect more devices to VPN)": [
+        "+${ organization.BonusVPN } σύνδεση για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)",
+        "+${ organization.BonusVPN } συνδέσεις για το ${ VPN_APP_NAME } (επιτρέπει τη σύνδεση περισσότερων συσκευών στο VPN)"
       ],
       "1. Invite friends to ${ BRAND_NAME }": [
         "1. Προσκαλέστε φίλους στο ${ BRAND_NAME }"
@@ -5724,6 +5959,18 @@
       "Add multiple users to your organization at once.": [
         "Προσθέστε πολλούς χρήστες στον οργανισμό σας ταυτόχρονα."
       ],
+      "Add server (${ availableAddedCount } available)": [
+        "Προσθήκη διακομιστή (${ availableAddedCount } διαθέσιμοι)",
+        "Προσθήκη διακομιστή (${ availableAddedCount } διαθέσιμοι)"
+      ],
+      "Adding ${ addedServerCount } gateway server": [
+        "Προσθήκη ${ addedServerCount } διακομιστή πύλης",
+        "Προσθήκη ${ addedServerCount } διακομιστών πύλης"
+      ],
+      "Adding gateway server: ${ serverNumber } / ${ total }": [
+        "Προσθήκη διακομιστή πύλης: ${ serverNumber } / ${ total }",
+        "Προσθήκη διακομιστών πύλης: ${ serverNumber } / ${ total }"
+      ],
       "Additional options": [
         "Πρόσθετες επιλογές"
       ],
@@ -5736,11 +5983,23 @@
       "Align right": [
         "Στοίχιση δεξιά"
       ],
+      "All (${ totalFoldersCount } folder)": [
+        "Όλοι (${ totalFoldersCount } φάκελος)",
+        "Όλοι (${ totalFoldersCount } φάκελοι)"
+      ],
+      "All (${ totalFoldersCount } label)": [
+        "Όλες (${ totalFoldersCount } ετικέτα)",
+        "Όλες (${ totalFoldersCount } ετικέτες)"
+      ],
       "All keys successfully reactivated": [
         "Όλα τα κλειδιά ενεργοποιήθηκαν εκ νέου επιτυχώς"
       ],
       "All your changes will be lost.": [
         "Όλες οι αλλαγές σας θα χαθούν."
+      ],
+      "All your contacts will be imported, up to a limit of ${ MAX_CONTACTS_PER_USER }": [
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ MAX_CONTACTS_PER_USER }",
+        "Όλες οι επαφές σας θα εισαχθούν, μέχρι το όριο των ${ MAX_CONTACTS_PER_USER }"
       ],
       "Allocated": [
         "Κατανεμημένος"
@@ -5943,6 +6202,10 @@
       "Country code": [
         "Κωδικός χώρας"
       ],
+      "Create ${ calendarsToBeCreatedCount } new calendar": [
+        "Δημιουργήστε ${ calendarsToBeCreatedCount } νέο ημερολόγιο",
+        "Δημιουργήστε ${ calendarsToBeCreatedCount } νέα ημερολόγια"
+      ],
       "Create a label for the imported messages, a time range for this import, and the folders you would like to import.": [
         "Δημιουργήστε μια ετικέτα για τα εισαγόμενα μηνύματα, μια χρονική έκταση για αυτήν την εισαγωγή, και τους φακέλους που θα θέλατε να εισάγετε."
       ],
@@ -5963,6 +6226,10 @@
       ],
       "Create your first Gateway": [
         "Δημιουργήστε την πρώτη Πύλη σας"
+      ],
+      "Creating gateway server: ${ serverNumber } / ${ total }": [
+        "Δημιουργία διακομιστή πύλης: ${ serverNumber } / ${ total }",
+        "Δημιουργία διακομιστών πύλης: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "Δημιουργία του λογαριασμού σας"
@@ -6015,6 +6282,10 @@
       "Delete link?": [
         "Διαγραφή συνδέσμου;"
       ],
+      "Deleting ${ deletedServerCount } gateway server": [
+        "Διαγραφή ${ deletedServerCount } διακομιστή πύλης",
+        "Διαγραφή ${ deletedServerCount } διακομιστών πύλης"
+      ],
       "Discover ProtectBuy logo": [
         "λογότυπο Discover ProtectBuy"
       ],
@@ -6026,6 +6297,10 @@
       ],
       "Do you want to revoke all other sessions than the current one?": [
         "Θέλετε να ανακαλέσετε όλες τις άλλες συνεδρίες εκτός από τις τρέχουσες;"
+      ],
+      "domain used": [
+        "το domain χρησιμοποιείται",
+        "τα domain χρησιμοποιούνται"
       ],
       "Done": [
         "Ολοκληρώθηκε"
@@ -6282,6 +6557,10 @@
       "Images have been removed because they are not allowed in auto-reply": [
         "Οι εικόνες αφαιρέθηκαν, επειδή δεν επιτρέπονται στις αυτόματες απαντήσεις"
       ],
+      "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
+        "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγιο",
+        "Εισαγωγή ${ calendarCount } από ${ totalCalendarsCount } ημερολόγια"
+      ],
       "Import from": [
         "Εισαγωγή από"
       ],
@@ -6347,6 +6626,10 @@
       ],
       "Internet connection restored.": [
         "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε."
+      ],
+      "Invite successfully sent": [
+        "Επιτυχής αποστολή πρόσκλησης",
+        "Επιτυχής αποστολή προσκλήσεων"
       ],
       "It appears some of your data is encrypted and locked.": [
         "Φαίνεται πως μερικά από τα δεδομένα σας είναι κρυπτογραφημένα και κλειδωμένα."
@@ -6582,6 +6865,10 @@
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Πάνω από 100 εκατομμύρια άνθρωποι και επιχειρήσεις έχουν εγγραφεί στο ${ BRAND_NAME }."
       ],
+      "Paid for a ${ rewardMonths } month plan": [
+        "Πλήρωσε για πρόγραμμα ${ rewardMonths } μήνα",
+        "Πλήρωσε για πρόγραμμα ${ rewardMonths } μηνών"
+      ],
       "Paid for a monthly plan": [
         "Πλήρωσε για μηνιαίο πρόγραμμα"
       ],
@@ -6608,6 +6895,14 @@
       ],
       "Plan upgrade required": [
         "Απαιτείται αναβάθμιση πακέτου"
+      ],
+      "Please add a password for the user on row": [
+        "Παρακαλούμε προσθέστε ένα κωδικό πρόσβασης για το χρήστη στη σειρά",
+        "Παρακαλούμε προσθέστε κωδικούς πρόσβασης για τους χρήστες στις σειρές"
+      ],
+      "Please add an email address for the user on row": [
+        "Παρακαλούμε προσθέστε μια διεύθυνση ηλεκτρονικού ταχυδρομείου για το χρήστη στη σειρά",
+        "Παρακαλούμε προσθέστε διευθύνσεις ηλεκτρονικού ταχυδρομείου για τους χρήστες στις σειρές"
       ],
       "Please authenticate your card in the verification tab.": [
         "Επαληθεύστε την ταυτότητά σας στην καρτέλα επαλήθευσης."
@@ -6861,6 +7156,10 @@
       "Stay tuned for future promotions.": [
         "Μείνετε συντονισμένοι για μελλοντικές προσφορές."
       ],
+      "Step ${ step }": [
+        "Βήμα ${ step }",
+        "Βήματα ${ step }"
+      ],
       "Storage allocated to other users in this organisation": [
         "Κατανεμημένος αποθηκευτικός χώρος σε άλλους χρήστες αυτού του οργανισμού"
       ],
@@ -6935,6 +7234,18 @@
       ],
       "The following address is available:": [
         "Η ακόλουθη διεύθυνση είναι διαθέσιμη:"
+      ],
+      "The following address is invalid.": [
+        "Η ακόλουθη διεύθυνση είναι μη έγκυρη.",
+        "Οι ακόλουθες διευθύνσεις είναι μη έγκυρες."
+      ],
+      "The following address is unavailable.": [
+        "Η ακόλουθη διεύθυνση είναι μη διαθέσιμη.",
+        "Οι ακόλουθες διευθύνσεις είναι μη διαθέσιμες."
+      ],
+      "The following address was not created.": [
+        "Η ακόλουθη διεύθυνση δεν δημιουργήθηκε.",
+        "Οι ακόλουθες διευθύνσεις δεν δημιουργήθηκαν."
       ],
       "The following members will receive an email prompting them to enable two-factor authentication as soon as possible.": [
         "Τα ακόλουθα μέλη θα λάβουν ένα μήνυμα ηλεκτρονικού ταχυδρομείου που θα τους ζητά να ενεργοποιήσουν τον έλεγχο ταυτότητας δύο παραγόντων το συντομότερο δυνατό."
@@ -7374,6 +7685,14 @@
       "You are currently signed in as ${ user.Name } (${ user.Email }).": [
         "Είστε συνδεδεμένος/η ως ${ user.Name } (${ user.Email })."
       ],
+      "You are currently using ${ ipCount } of your ${ ipAddresses } available dedicated server.": [
+        "Προς το παρόν χρησιμοποιείτε ${ ipCount } από ${ ipAddresses } διαθέσιμου αποκλειστικού διακομιστή.",
+        "Προς το παρόν χρησιμοποιείτε ${ ipCount } από ${ ipAddresses } διαθέσιμων αποκλειστικών διακομιστών."
+      ],
+      "You are currently using ${ organization.UsedMembers } of your ${ organization.MaxMembers } available user license.": [
+        "Προς το παρόν χρησιμοποιείτε ${ organization.UsedMembers } από τη ${ organization.MaxMembers } διαθέσιμη άδεια χρήσης χρήστη.",
+        "Προς το παρόν χρησιμοποιείτε ${ organization.UsedMembers } από τις ${ organization.MaxMembers } διαθέσιμες άδειες χρήσης χρηστών."
+      ],
       "You are signed in to the account ${ memberAddress }.": [
         "Είστε συνδεδεμένοι στον λογαριασμό ${ memberAddress }."
       ],
@@ -7382,9 +7701,6 @@
       ],
       "You can check the progress ${ importProgressLink }.": [
         "Μπορείτε να δείτε την πρόοδο ${ importProgressLink }."
-      ],
-      "You can customize and download your invoices for accounting purposes.": [
-        "Μπορείτε να προσαρμόσετε και να κατεβάσετε τα τιμολόγιά σας για λογιστικούς σκοπούς."
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Μπορείτε να το επεξεργαστείτε αυτό μία φορά για να διασφαλίσετε τη σωστή διεύθυνση ηλεκτρονικού ταχυδρομείου για επαλήθευση."
@@ -7397,6 +7713,22 @@
       ],
       "You can import one data type at a time.": [
         "Μπορεί να εισαχθεί ένας τύπος δεδομένων τη φορά."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας.",
+        "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγια. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε χρήστη ${ BRAND_NAME } με τον οποίο μοιραστήκατε τα ημερολόγιά σας προτού ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
+        "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε ${ BRAND_NAME } χρήστη με τον οποίο μοιραστήκατε τα ημερολόγιά σας πριν ακυρώσετε τη συνδρομή σας.",
+        "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγια. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου και οποιονδήποτε ${ BRAND_NAME } χρήστη με τον οποίο μοιραστήκατε τα ημερολόγιά σας πριν ακυρώσετε τη συνδρομή σας."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
+        "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου πριν ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας.",
+        "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγια. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου πριν ακυρώσετε τη ${ MAIL_SHORT_APP_NAME } συνδρομή σας."
+      ],
+      "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
+        "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγιο. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου πριν ακυρώσετε τη συνδρομή σας.",
+        "Μπορείτε να διατηρήσετε έως και ${ MAX_CALENDARS_FREE } ημερολόγια. Καταργήστε τους κοινόχρηστους συνδέσμους ημερολογίου πριν ακυρώσετε τη συνδρομή σας."
       ],
       "You can now access and manage the account as an administrator.": [
         "Τώρα μπορείτε να έχετε πρόσβαση και να διαχειριστείτε τον λογαριασμό ως διαχειριστής."
@@ -7413,6 +7745,10 @@
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "Για σύνδεση σε διακομιστή ${ VPN_APP_NAME } με χρήση εφαρμογής VPN ανοικτού κώδικα τρίτων, όπως το Tunnelblick για macOS ή το OpenVPN για GNU/Linux, μπορείτε να χρησιμοποιείτε τα ακόλουθα διαπιστευτήρια."
       ],
+      "You can't send more than ${ emailSendLimitNumber } email invite for the next 24 hours": [
+        "Δεν μπορείτε να αποστέλλετε περισσότερες από ${ emailSendLimitNumber } πρόσκληση email για τις επόμενες 24 ώρες",
+        "Δεν μπορείτε να αποστέλλετε περισσότερες από ${ emailSendLimitNumber } προσκλήσεις email για τις επόμενες 24 ώρες"
+      ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Δεν μπορείτε να προτείνετε χρήστες του ${ MAIL_APP_NAME }."
       ],
@@ -7421,6 +7757,10 @@
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Δεν έχετε ορίσει μία μέθοδο ανάκτησης, με αποτέλεσμα η ανάκτηση λογαριασμού να είναι αδύνατη αν ξεχάσετε τον κωδικό πρόσβασής σας. Θέλετε να συνεχίσετε χωρίς μέθοδο ανάκτησης;"
+      ],
+      "You have ${ availableCount } dedicated server available.": [
+        "Έχετε ${ availableCount } διαθέσιμο αποκλειστικό διακομιστή.",
+        "Έχετε ${ availableCount } διαθέσιμους αποκλειστικούς διακομιστές."
       ],
       "You have no calendars to export.": [
         "Δεν έχετε ημερολόγια για εξαγωγή."
@@ -7542,6 +7882,10 @@
       "Your files will be encrypted and then saved": [
         "Τα αρχεία σας θα κρυπτογραφηθούν και στη συνέχεια θα αποθηκευτούν"
       ],
+      "Your import from ${ accounts } is temporarily delayed.": [
+        "Η εισαγωγή σας από ${ accounts } καθυστερεί προσωρινά.",
+        "Οι εισαγωγές σας από ${ accounts } καθυστερούν προσωρινά."
+      ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "Οι πληροφορίες σας είναι ασφαλείς μαζί μας. Θα επικοινωνήσουμε μαζί σας μόνο όταν απαιτείται για την παροχή των υπηρεσιών μας."
       ],
@@ -7608,11 +7952,6 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Μπορείτε να προσθέσετε μια μέθοδο πληρωμής για να ανανεώνεται αυτόματα η συνδρομή σας. Διατίθενται επίσης και άλλες μέθοδοι πληρωμής."
-      ]
-    },
-    "Info message for custom invoice modal": {
-      "Add your name (or company name) and address to your invoices.": [
-        "Προσθέστε το όνομα (ή το όνομα της εταιρείας σας) και τη διεύθυνση στο λογαριασμό σας."
       ]
     },
     "Info on errors": {
@@ -7997,6 +8336,22 @@
       "${ MAIL_APP_NAME } footer": [
         "Υποσέλιδο ${ MAIL_APP_NAME }"
       ],
+      "${ n } month": [
+        "${ n } μήνας",
+        "${ n } μήνες"
+      ],
+      "${ nbDay } day": [
+        "${ nbDay } ημέρα",
+        "${ nbDay } ημέρες"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } έτος",
+        "${ nbYear } έτη"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } από ${ MaxAddresses } διεύθυνση email",
+        "${ UsedAddresses } από ${ MaxAddresses } διευθύνσεων email"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα.)"
       ],
@@ -8239,9 +8594,6 @@
       ],
       "Current email": [
         "Τρέχουσα διεύθυνση ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Customize invoices": [
-        "Προσαρμογή τιμολογίων"
       ],
       "Daily email notifications": [
         "Καθημερινές ειδοποιήσεις E-mail"
@@ -9169,8 +9521,16 @@
       ]
     },
     "Loading info": {
+      "${ twoFAMembers.length }/${ members.length } of your organization member use two-factor authentication.": [
+        "${ twoFAMembers.length }/${ members.length } του μέλους του οργανισμού σας χρησιμοποιεί έλεγχο ταυτότητας δύο παραγόντων.",
+        "${ twoFAMembers.length }/${ members.length } των μέλλων του οργανισμού σας χρησιμοποιούν έλεγχο ταυτότητας δύο παραγόντων."
+      ],
       "Almost there": [
         "Ακόμα λίγο"
+      ],
+      "Amount of calendar created:  ${ createdCalendarCount } of ${ calendarsToBeCreated }": [
+        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }",
+        "Πλήθος ημερολογίων που δημιουργήθηκαν: ${ createdCalendarCount } από ${ calendarsToBeCreated }"
       ],
       "Connecting to your email provider": [
         "Γίνεται σύνδεση με τον πάροχο ηλεκτρονικού ταχυδρομείου σας"
@@ -9199,6 +9559,24 @@
         "Ενεργοποίηση αρχείων καταγραφής ταυτοποίησης"
       ]
     },
+    "Mail import summary": {
+      "Import all messages from ${ itemsToImportCount } folder and label them as": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φάκελο και επισημάνετέ τα ως",
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } φακέλους και επισημάνετέ τα ως"
+      ],
+      "Import all messages from ${ itemsToImportCount } label and label them as": [
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } ετικέτα και επισημάνετέ τα ως",
+        "Εισαγάγετε όλα τα μηνύματα από ${ itemsToImportCount } ετικέτες και επισημάνετέ τα ως"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } folder and label them as": [
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } φάκελο και επισημάνετε τα με ετικέτα",
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } φακέλους και επισημάνετε τα με ετικέτα"
+      ],
+      "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτα και επισημάνετέ τα ως",
+        "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτες και επισημάνετε τα ως"
+      ]
+    },
     "mail_signup_2023: Info": {
       "Secure email that protects your privacy": [
         "Ασφαλές ηλεκτρονικό ταχυδρομείο που προστατεύει το απόρρητό σας"
@@ -9210,6 +9588,18 @@
       ],
       "This feature is temporarily unavailable": [
         "Αυτή η δυνατότητα είναι προσωρινά μη διαθέσιμη"
+      ]
+    },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "Μπορείτε να δημιουργήσετε μόνο ${ MAX_LINKS_PER_CALENDAR } σύνδεσμο ανά ημερολόγιο. Για τη δημιουργία νέου συνδέσμου σε αυτό το ημερολόγιο, διαγράψτε τον παρακάτω.",
+        "Μπορείτε να δημιουργήσετε έως ${ MAX_LINKS_PER_CALENDAR } συνδέσμους ανά ημερολόγιο. Για τη δημιουργία νέου συνδέσμου σε αυτό το ημερολόγιο, διαγράψτε έναν από την παρακάτω λίστα."
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "Έχετε φτάσει τον μέγιστο αριθμό του ${ MAX_CALENDAR_MEMBERS } μέλους.",
+        "Έχετε φτάσει τον μέγιστο αριθμό των ${ MAX_CALENDAR_MEMBERS } μελών."
       ]
     },
     "Member action": {
@@ -9338,6 +9728,18 @@
       ]
     },
     "Monthly recurring event, frequency": {
+      "Every ${ interval } month ${ onDayString }": [
+        "Κάθε ${ interval } μήνας ${ onDayString }",
+        "Κάθε ${ interval } μήνες ${ onDayString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ timesString }": [
+        "Κάθε ${ interval } μήνας ${ onDayString }, ${ timesString }",
+        "Κάθε ${ interval } μήνες ${ onDayString }, ${ timesString }"
+      ],
+      "Every ${ interval } month ${ onDayString }, ${ untilString }": [
+        "Κάθε ${ interval } μήνας ${ onDayString }, ${ untilString }",
+        "Κάθε ${ interval } μήνες ${ onDayString }, ${ untilString }"
+      ],
       "Monthly ${ onDayString }": [
         "Μηνιαίως ${ onDayString }"
       ],
@@ -9574,6 +9976,66 @@
       ]
     },
     "new_plans: feature": {
+      "${ n } calendar": [
+        "${ n } ημερολόγιο",
+        "${ n } ημερολόγια"
+      ],
+      "${ n } calendar per user": [
+        "${ n } ημερολόγιο ανά χρήστη",
+        "${ n } ημερολόγια ανά χρήστη"
+      ],
+      "${ n } custom email domain": [
+        "${ n } προσαρμοσμένος τομέας ηλεκτρονικού ταχυδρομείου",
+        "${ n } προσαρμοσμένοι τομείς ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ n } email address": [
+        "${ n } διεύθυνση email",
+        "${ n } διεύθυνσεις email/ψευδώνυμα"
+      ],
+      "${ n } email address per user": [
+        "${ n } διεύθυνση ηλεκτρονικού ταχυδρομείου ανά χρήστη",
+        "${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου ανά χρήστη"
+      ],
+      "${ n } filter": [
+        "${ n } φίλτρο",
+        "${ n } φίλτρα"
+      ],
+      "${ n } folder": [
+        "${ n } φάκελος",
+        "${ n } φάκελοι"
+      ],
+      "${ n } folder and label": [
+        "${ n } φάκελος και ετικέτα",
+        "${ n } φάκελοι και ετικέτες"
+      ],
+      "${ n } hide-my-email alias": [
+        "${ n } hide-my-email ψευδώνυμο",
+        "${ n } hide-my-email ψευδώνυμα"
+      ],
+      "${ n } label": [
+        "${ n } ετικέτα",
+        "${ n } ετικέτες"
+      ],
+      "${ n } message per day": [
+        "${ n } μήνυμα ανά ημέρα",
+        "${ n } μηνύματα ανά ημέρα"
+      ],
+      "${ n } vault": [
+        "${ n } κρύπτη",
+        "${ n } κρύπτες"
+      ],
+      "${ n } VPN connection": [
+        "${ n } σύνδεση VPN",
+        "${ n } συνδέσεις VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } σύνδεση VPN ανά χρήστη",
+        "${ n } συνδέσεις VPN ανά χρήστη"
+      ],
+      "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
+        "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμο",
+        "${ PASS_APP_NAME } με ${ n } hide-my-email ψευδώνυμα"
+      ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
         "${ PASS_APP_NAME } με απεριόριστα hide-my-email ψευδώνυμα"
       ],
@@ -9712,6 +10174,10 @@
       "High-speed Swiss VPN that protects your privacy": [
         "Ελβετικό VPN υψηλής ταχύτητας που προστατεύει την ιδιωτικότητα σας."
       ],
+      "High-speed VPN on ${ n } device": [
+        "VPN υψηλής ταχύτητας σε ${ n } συσκευή",
+        "VPN υψηλής ταχύτητας σε ${ n } συσκευές"
+      ],
       "HTML signatures": [
         "Υπογραφές HTML"
       ],
@@ -9748,6 +10214,10 @@
       "Priority support & live chat": [
         "Υποστήριξη προτεραιότητας & ζωντανή συνομιλία"
       ],
+      "Protect ${ n } device at a time": [
+        "Προστατέψτε ${ n } συσκευή ανά φορά",
+        "Προστατέψτε ${ n } συσκευές ανά φορά"
+      ],
       "Router support": [
         "Υποστήριξη δρομολογητή"
       ],
@@ -9762,6 +10232,10 @@
       ],
       "Send & receive invitations": [
         "Αποστολή & λήψη προσκλήσεων"
+      ],
+      "Servers in ${ vpnServersCountData.paid.countries }+ country": [
+        "Διακομιστές σε ${ vpnServersCountData.paid.countries }+ χώρα",
+        "Διακομιστές σε ${ vpnServersCountData.paid.countries }+ χώρες"
       ],
       "Share calendar via link": [
         "Κοινοποίηση ημερολογίου μέσω συνδέσμου"
@@ -9846,6 +10320,10 @@
       ],
       "User session management": [
         "Διαχείριση συνεδριών χρηστών"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Κοινή χρήση κρύπτης (έως ${ n } άτομο)",
+        "Κοινή χρήση κρύπτης (έως ${ n } άτομα)"
       ]
     },
     "new_plans: feature info": {
@@ -9980,6 +10458,12 @@
         "/μήνα"
       ]
     },
+    "new_plans: Plan time remaining": {
+      "You still have ${ daysRemaining } day left on your ${ currentPlanName } account.": [
+        "Σας απομένει ${ daysRemaining } ημέρα στον ${ currentPlanName } λογαριασμό σας.",
+        "Σας απομένουν ${ daysRemaining } ημέρες στον ${ currentPlanName } λογαριασμό σας."
+      ]
+    },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
         "Κάνοντας κλικ στο \"Πληρωμή\", συμφωνείτε με τους ${ termsAndConditions }."
@@ -10073,6 +10557,10 @@
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Δημιουργήστε πολλαπλές διευθύνσεις ηλεκτρονικού ταχυδρομείου για τις διαδικτυακές ταυτότητες σας, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών, JohnNews@${ domain } για συνδρομή ειδήσεων"
+      ],
+      "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
+        "Δημιουργήστε έως και ${ n } ημερολόγιο ή προσθέστε ημερολόγια από φίλους, συγγενείς, συναδέλφους και οργανισμούς",
+        "Δημιουργήστε έως και ${ n } ημερολόγια ή προσθέστε ημερολόγια από φίλους, συγγενείς, συναδέλφους και οργανισμούς"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
         "Δημιουργήστε έως και ${ n } διευθύνσεις ηλεκτρονικού ταχυδρομείου/ψευδώνυμα που μπορείτε να αντιστοιχίσετε σε μέλη της οικογένειας. Χρησιμοποιήστε τα για διαδικτυακές ταυτότητες, π.χ. JohnShopper@${ domain } για λογαριασμούς αγορών."
@@ -10276,6 +10764,10 @@
       "Cover more ground with support for 10 custom email domains": [
         "Καλύψτε περισσότερο έδαφος με υποστήριξη για 10 προσαρμοσμένους τομείς email"
       ],
+      "Create up to ${ n } calendar": [
+        "Δημιουργήστε μέχρι και ${ n } ημερολόγιο",
+        "Δημιουργήστε μέχρι και ${ n } ημερολόγια"
+      ],
       "Dedicated Account manager": [
         "Αποκλειστικός διαχειριστής Λογαριασμού"
       ],
@@ -10357,6 +10849,10 @@
       "Invitation revoked": [
         "Η πρόσκληση ανακλήθηκε"
       ],
+      "Member added": [
+        "Το μέλος προστέθηκε",
+        "Τα μέλη προστέθηκαν"
+      ],
       "Member deleted": [
         "Το μέλος διαγράφηκε"
       ]
@@ -10391,8 +10887,24 @@
       "at time of event": [
         "στιγμή της εκδήλωσης"
       ],
+      "day before": [
+        "ημέρα πριν",
+        "ημέρες πριν"
+      ],
+      "hour before": [
+        "ώρα πριν",
+        "ώρες πριν"
+      ],
+      "minute before": [
+        "λεπτό πριν",
+        "λεπτά πριν"
+      ],
       "on the same day": [
         "την ίδια μέρα"
+      ],
+      "week before": [
+        "εβδομάδα πριν",
+        "εβδομάδες πριν"
       ]
     },
     "Oauth instructions": {
@@ -10659,6 +11171,18 @@
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } για να αποκτήσετε περισσότερο χώρο αποθήκευσης ή να αφαιρέσετε κάποιο χώρο αποθήκευσης για να ελευθερώσετε χώρο."
+      ],
+      "Your plan includes a maximum of ${ availableAddresses } more address.": [
+        "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ availableAddresses } παραπανίσια διεύθυνση.",
+        "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ availableAddresses } παραπανίσιες διευθύνσεις."
+      ],
+      "Your plan includes a maximum of ${ availableNumberOfMembers } more organizational user.": [
+        "Το πρόγραμμά σας περιλαμβάνει το μέγιστο του ${ availableNumberOfMembers } επιπλέον χρήστη του οργανισμού.",
+        "Το πρόγραμμά σας περιλαμβάνει το μέγιστο των ${ availableNumberOfMembers } επιπλέον χρηστών του οργανισμού."
+      ],
+      "Your plan includes a maximum of ${ availableVPNAccess } more VPN account.": [
+        "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ availableVPNAccess } παραπανίσιο λογαριασμό VPN.",
+        "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ availableVPNAccess } παραπανίσιους λογαριασμούς VPN."
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "Το σχέδιό σας περιλαμβάνει το μέγιστο ${ humanReadableAvailableSpace } παραπανίσιο χώρο αποθήκευσης."
@@ -11073,17 +11597,16 @@
         "yourdomain.com"
       ]
     },
-    "Placeholder for custom invoice text": {
-      "Add your name (or company name) and address to your invoices": [
-        "Προσθέστε το όνομα (ή το όνομα της εταιρείας σας) και τη διεύθυνση στο λογαριασμό σας"
-      ]
-    },
     "plan customizer, ips": {
       "please ${ contactHref } our Sales team.": [
         "παρακαλούμε ${ contactHref } την ομάδα Πωλήσεών μας."
       ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "Επιλέξτε τον αριθμό διευθύνσεων IP που θα περιλαμβάνει το πρόγραμμά σας. Κάθε επιπλέον διεύθυνση IP κοστίζει ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Εάν χρειάζεστε περισσότερη από ${ maxIPs } διεύθυνση IP, ",
+        "Εάν χρειάζεστε περισσότερες από ${ maxIPs } διευθύνσεις IP, "
       ]
     },
     "plan customizer, users": {
@@ -11092,6 +11615,10 @@
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "Επιλέξτε τον αριθμό χρηστών που θα περιλαμβάνει το πρόγραμμά σας. Κάθε επιπλέον χρήστης κοστίζει ${ price }."
+      ],
+      "Should you need more than ${ maxUsers } user account, please ${ contact } our Sales team.": [
+        "Εάν χρειαστείτε περισσότερους από ${ maxUsers } λογαριασμό χρήστη, παρακαλούμε ${ contact } με την ομάδα μας Πωλήσεων.",
+        "Εάν χρειαστείτε περισσότερους από ${ maxUsers } λογαριασμούς χρηστών, παρακαλούμε ${ contact } με την ομάδα μας Πωλήσεων."
       ]
     },
     "Price": {
@@ -11343,14 +11870,38 @@
       ]
     },
     "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } ημέρα",
+        "${ timeRemaining.inDays } ημέρες"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } ώρα",
+        "${ timeRemaining.inHours } ώρες"
+      ],
       "Didn’t make this request?": [
         "Δεν υποβάλατε αυτό το αίτημα;"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Εάν δε ζητήσατε να επαναφέρετε τον κωδικό πρόσβασής σας, ακυρώστε το αίτημα τώρα."
       ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inDays } ημέρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inDays } ημέρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
+      "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inHours } ώρα για να επαναφέρετε τον κωδικό πρόσβασής σας.",
+        "Το αίτημα επαναφοράς κωδικού πρόσβασης εγκρίθηκε (${ user.Email }). Έχετε ${ timeRemaining.inHours } ώρες για να επαναφέρετε τον κωδικό πρόσβασής σας."
+      ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
         "Παρακαλούμε μεταβείτε στη συνδεδεμένη συσκευή (στη συνεδρία όπου ξεκίνησε το αίτημα) για να αλλάξετε τον κωδικό πρόσβασής σας."
+      ],
+      "This permission expires in ${ timeRemaining.inDays } day": [
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inDays } ημέρα",
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inDays } ημέρες"
+      ],
+      "This permission expires in ${ timeRemaining.inHours } hour": [
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρα",
+        "Αυτό το δικαίωμα λήγει σε ${ timeRemaining.inHours } ώρες"
       ],
       "You can now change your password for the account ${ boldEmail } freely for ${ boldDaysRemaining }.": [
         "Τώρα μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας για τον λογαριασμό ${ boldEmail } ελεύθερα για ${ boldDaysRemaining }."
@@ -11440,6 +11991,10 @@
       ]
     },
     "session_recovery:in_progress:info": {
+      "${ gracePeriodHoursRemaining } more hour": [
+        "${ gracePeriodHoursRemaining } περισσότερη ώρα",
+        "${ gracePeriodHoursRemaining } περισσότερες ώρες"
+      ],
       "Didn’t make this request?": [
         "Δεν υποβάλατε αυτό το αίτημα;"
       ],
@@ -11452,11 +12007,19 @@
       "Password reset available from ${ boldDate }. This gives you time to cancel any fraudulent requests.": [
         "Η επαναφορά κωδικού πρόσβασης είναι διαθέσιμη από ${ boldDate }. Αυτό σας δίνει χρόνο να ακυρώσετε τυχόν δόλια αιτήματα."
       ],
+      "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
+        "Ζητήθηκε επαναφορά κωδικού πρόσβασης (${ user.Email }). Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ hoursRemaining } ώρα.",
+        "Ζητήθηκε επαναφορά κωδικού πρόσβασης (${ user.Email }). Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ hoursRemaining } ώρες."
+      ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "Για να βεβαιωθούμε ότι προσπαθείτε πραγματικά να επαναφέρετε τον κωδικό πρόσβασής σας, περιμένουμε 72 ώρες πριν εγκρίνουμε τα αιτήματα. Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Λάβαμε ένα αίτημα επαναφοράς κωδικού πρόσβασης για το ${ boldEmail }."
+      ],
+      "You can change your password in ${ gracePeriodHoursRemaining } hour": [
+        "Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ gracePeriodHoursRemaining } ώρα",
+        "Μπορείτε να αλλάξετε τον κωδικό πρόσβασής σας σε ${ gracePeriodHoursRemaining } ώρες"
       ]
     },
     "session_recovery:in_progress:link": {
@@ -11507,6 +12070,10 @@
     "session_recovery:initiation:title": {
       "Request password reset?": [
         "Αίτηση επαναφοράς κωδικού πρόσβασης;"
+      ],
+      "You'll be able to reset your password in ${ gracePeriodHoursRemaining } hour": [
+        "Θα μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας σε ${ gracePeriodHoursRemaining } ώρα",
+        "Θα μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας σε ${ gracePeriodHoursRemaining } ώρες"
       ]
     },
     "session_recovery:settings:action": {
@@ -11532,6 +12099,10 @@
       ]
     },
     "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } ώρα",
+        "${ gracePeriodHoursRemaining } ώρες"
+      ],
       "${ passwordReset } is now available.": [
         "${ passwordReset } είναι τώρα διαθέσιμο."
       ],
@@ -11629,6 +12200,12 @@
         "Για να προσκαλέσετε μη ${ BRAND_NAME } χρήστες, κοινοποιήστε το ημερολόγιό σας με έναν σύνδεσμο."
       ]
     },
+    "Share calendar max shares reached error": {
+      "You have exceeded the maximum of ${ MAX_CALENDAR_MEMBERS } member per calendar": [
+        "Έχετε ξεπεράσει το όριο του ${ MAX_CALENDAR_MEMBERS } μέλους ανά ημερολόγιο",
+        "Έχετε ξεπεράσει το όριο των ${ MAX_CALENDAR_MEMBERS } μελών ανά ημερολόγιο"
+      ]
+    },
     "Share calendar modal description": {
       "Add the ${ BRAND_NAME } accounts with whom you want to share ${ calendarName }. We’ll send them an invite.": [
         "Προσθέστε τους ${ BRAND_NAME } λογαριασμούς με τους οποίους επιθυμείτε να μοιράσετε το ημερολόγιο ${ calendarName }. Θα σταλθεί αυτόματα πρόσκληση."
@@ -11709,6 +12286,30 @@
         "Αναβαθμίστε σε Απεριόριστο"
       ]
     },
+    "specialoffer: Countdown unit": {
+      "${ days } day": [
+        "${ days } ημέρα",
+        "${ days } ημέρες"
+      ],
+      "${ hours } hour": [
+        "${ hours } ώρα",
+        "${ hours } ώρες"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } λεπτό",
+        "${ minutes } λεπτά"
+      ],
+      "${ seconds } second": [
+        "${ seconds } δευτερόλεπτο",
+        "${ seconds } δευτερόλεπτα"
+      ]
+    },
+    "specialoffer: Deal": {
+      "${ n } month FREE": [
+        "${ n } μήνα ΔΩΡΕΑΝ",
+        "${ n } μήνες ΔΩΡΕΑΝ"
+      ]
+    },
     "specialoffer: Deal details": {
       "1 user": [
         "1 χρήστης"
@@ -11772,6 +12373,10 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } μήνα",
+        "${ n } μήνες"
+      ],
       "/ month": [
         "/ μήνας"
       ],
@@ -11950,6 +12555,58 @@
       ]
     },
     "Subscription attribute": {
+      "${ ipAddresses } dedicated server": [
+        "${ ipAddresses } αποκλειστικός διακομιστής",
+        "${ ipAddresses } αποκλειστικοί διακομιστές"
+      ],
+      "${ maxVpn } high-speed VPN connection": [
+        "${ maxVpn } σύνδεση VPN υψηλής ταχύτητας",
+        "${ maxVpn } συνδέσεις VPN υψηλής ταχύτητας"
+      ],
+      "${ n } calendar": [
+        "${ n } ημερολόγιο",
+        "${ n } ημερολόγια"
+      ],
+      "${ n } calendar per user": [
+        "${ n } ημερολόγιο ανά χρήστη",
+        "${ n } ημερολόγια ανά χρήστη"
+      ],
+      "${ n } high-speed VPN connection": [
+        "${ n } σύνδεση VPN υψηλής ταχύτητας",
+        "${ n } συνδέσεις VPN υψηλής ταχύτητας"
+      ],
+      "${ n } high-speed VPN connection per user": [
+        "${ n } σύνδεση VPN υψηλής ταχύτητας ανά χρήστη",
+        "${ n } συνδέσεις VPN υψηλής ταχύτητας ανά χρήστη"
+      ],
+      "${ n } VPN connection": [
+        "${ n } σύνδεση VPN",
+        "${ n } συνδέσεις VPN"
+      ],
+      "${ n } VPN connection per user": [
+        "${ n } σύνδεση VPN ανά χρήστη",
+        "${ n } συνδέσεις VPN ανά χρήστη"
+      ],
+      "${ UsedAddresses } address": [
+        "${ UsedAddresses } διεύθυνση",
+        "${ UsedAddresses } διευθύνσεις"
+      ],
+      "${ UsedAddresses } of ${ MaxAddresses } email address": [
+        "${ UsedAddresses } από ${ MaxAddresses } διεύθυνση email",
+        "${ UsedAddresses } από ${ MaxAddresses } διευθύνσεων email"
+      ],
+      "${ UsedCalendars } calendar": [
+        "${ UsedCalendars } ημερολόγιο",
+        "${ UsedCalendars } ημερολόγια"
+      ],
+      "${ UsedDomains } of ${ MaxDomains } custom domain": [
+        "${ UsedDomains } από ${ MaxDomains } προσαρμοσμένο τομέα",
+        "${ UsedDomains } από ${ MaxDomains } προσαρμοσμένους τομείς"
+      ],
+      "${ UsedMembers } of ${ MaxMembers } user": [
+        "${ UsedMembers } από ${ MaxMembers } χρήστη",
+        "${ UsedMembers } από ${ MaxMembers } χρήστες"
+      ],
       "1 email address": [
         "1 ηλ. διεύθυνση"
       ],
@@ -11961,6 +12618,10 @@
       ],
       "Built-in ad blocker (NetShield)": [
         "Ενσωματωμένη φραγή διαφημίσεων (NetShield)"
+      ],
+      "High-speed VPN on ${ maxVpn } device": [
+        "VPN υψηλής ταχύτητας σε ${ maxVpn } συσκευή",
+        "VPN υψηλής ταχύτητας σε ${ maxVpn } συσκευές"
       ]
     },
     "Subscription change warning": {
@@ -12387,6 +13048,34 @@
         "Δε βρέθηκαν διακριτικά SMTP"
       ]
     },
+    "Time unit for duration; displayed in the time picker": {
+      "${ hours } h": [
+        "${ hours } ώ",
+        "${ hours } ώ"
+      ],
+      "${ hoursInt }.5 h": [
+        "${ hoursInt }.5 ώ",
+        "${ hoursInt }.5 ώ"
+      ],
+      "${ minutes } min": [
+        "${ minutes } λ.",
+        "${ minutes } λ."
+      ]
+    },
+    "Time unit for duration; vocalized in the time picker": {
+      "${ hours } hour": [
+        "${ hours } ώρα",
+        "${ hours } ώρες"
+      ],
+      "${ hoursInt }.5 hour": [
+        "${ hoursInt }μιση ώρα",
+        "${ hoursInt }μιση ώρες"
+      ],
+      "${ minutes } minute": [
+        "${ minutes } λεπτό",
+        "${ minutes } λεπτά"
+      ]
+    },
     "Timezone search placeholder": {
       "Search time zones": [
         "Αναζήτηση ζώνης ώρας"
@@ -12467,9 +13156,6 @@
       ],
       "Add filter": [
         "Προσθήκη φίλτρου"
-      ],
-      "Add invoice details": [
-        "Προσθήκη στοιχείων τιμολογίου"
       ],
       "Add new user": [
         "Προσθήκη νέου χρήστη"
@@ -12624,6 +13310,10 @@
       "Couldn’t create accounts": [
         "Αποτυχία δημιουργίας λογαριασμών"
       ],
+      "Create ${ selectedUserIds.length } user": [
+        "Δημιουργία ${ selectedUserIds.length } χρήστη",
+        "Δημιουργία ${ selectedUserIds.length } χρηστών"
+      ],
       "Create a new Gateway": [
         "Δημιουργία νέας Πύλης"
       ],
@@ -12728,6 +13418,10 @@
       ],
       "Delete logs": [
         "Διαγραφή αρχείων καταγραφής"
+      ],
+      "Delete the server (you will still be able to recover it for ${ days } day)": [
+        "Διαγράψτε τον διακομιστή (θα εξακολουθείτε να μπορείτε να τον ανακτήσετε για ${ days } ημέρα)",
+        "Διαγράψτε τον διακομιστή (θα εξακολουθείτε να μπορείτε να τον ανακτήσετε για ${ days } ημέρες)"
       ],
       "Delete user": [
         "Διαγραφή χρήστη"
@@ -12840,6 +13534,10 @@
       "External PGP settings": [
         "Εξωτερικές ρυθμίσεις PGP"
       ],
+      "Failed to create ${ failedUsers.length } user\naccount.": [
+        "Αποτυχία δημιουργίας ${ failedUsers.length }\nλογαριασμού χρήστη.",
+        "Αποτυχία δημιουργίας ${ failedUsers.length } λογαριασμών χρηστών."
+      ],
       "Filters": [
         "Φίλτρα"
       ],
@@ -12902,6 +13600,10 @@
       ],
       "Import and export": [
         "Εισαγωγή και εξαγωγή"
+      ],
+      "Import as simple event?": [
+        "Εισαγωγή ως απλή εκδήλωση;",
+        "Εισαγωγή ως απλές εκδηλώσεις;"
       ],
       "Import contacts": [
         "Εισαγωγή Επαφών"
@@ -13217,6 +13919,14 @@
       ],
       "Success": [
         "Επιτυχία"
+      ],
+      "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
+        "Δημιουργήθηκε με επιτυχία ${ localSuccessfullyCreatedUsers.length } ο λογαριασμός χρήστη",
+        "Δημιουργήθηκαν με επιτυχία ${ localSuccessfullyCreatedUsers.length } οι λογαριασμοί χρηστων"
+      ],
+      "Successfully created ${ successfullyCreatedUsers.length } user account": [
+        "Επιτυχής δημιουργία ${ successfullyCreatedUsers.length } λογαριασμού χρήστη",
+        "Επιτυχής δημιουργία ${ successfullyCreatedUsers.length } λογαριασμών χρηστών"
       ],
       "Summary": [
         "Περίληψη"
@@ -13666,6 +14376,10 @@
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
         "Αναβαθμίστε σε ${ passPlusPlanName } για να λάβετε απεριόριστα hide-my-email ψευδώνυμα"
+      ],
+      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
+        "Αναβαθμίστε σε ${ planName } για να συνδέετε στο VPN έως και ${ n } συσκευή ταυτόχρονα",
+        "Αναβαθμίστε σε ${ planName } για να συνδέετε στο VPN έως και ${ n } συσκευές ταυτόχρονα"
       ]
     },
     "Upgrade notice": {
@@ -13699,6 +14413,16 @@
         "Κύριος διαχειριστής"
       ]
     },
+    "Validation": {
+      "Password must contain at least ${ length } character": [
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρα",
+        "Ο κωδικός πρόσβασης πρέπει να περιέχει τουλάχιστον ${ length } χαρακτήρες"
+      ],
+      "Try a shorter username (${ n } character max)": [
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρα)",
+        "Προσπαθήστε να εισάγετε ένα συντομότερο όνομα χρήστη (έως ${ n } χαρακτήρες)"
+      ]
+    },
     "Video control": {
       "Click to replay the video": [
         "Κάντε κλικ για αναπαραγωγή του βίντεο ξανά"
@@ -13724,6 +14448,24 @@
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, και άλλα."
+      ]
+    },
+    "VPN Plan Feature": {
+      "${ n } server": [
+        "${ n } διακομιστής",
+        "${ n }+ διακομιστές"
+      ],
+      "${ n } VPN connection": [
+        "${ n } σύνδεση VPN",
+        "${ n } συνδέσεις VPN"
+      ],
+      "${ numberOfServers } across ${ numberOfCountries } country": [
+        "${ numberOfServers } σε ${ numberOfCountries } χώρα",
+        "${ numberOfServers } σε ${ numberOfCountries }+ χώρες"
+      ],
+      "${ numberOfServers } in ${ numberOfCountries } country": [
+        "${ numberOfServers } σε ${ numberOfCountries } χώρα",
+        "${ numberOfServers } σε ${ numberOfCountries } χώρες"
       ]
     },
     "vpn_2step: billing": {
@@ -13760,6 +14502,14 @@
       ]
     },
     "vpn_2step: info": {
+      "${ n } month": [
+        "${ n } μήνας",
+        "${ n } μήνες"
+      ],
+      "${ n } year": [
+        "${ n } έτος",
+        "${ n } έτη"
+      ],
       "Try ${ upsellPlanName } risk-free": [
         "Δοκιμάστε το ${ upsellPlanName } χωρίς κίνδυνο"
       ],
@@ -13872,6 +14622,114 @@
       ]
     },
     "Weekly recurring event, frequency": {
+      "Every ${ interval } week on ${ multipleDaysString }": [
+        "Κάθε ${ interval } εβδομάδα σε ${ multipleDaysString }",
+        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα στις ${ multipleDaysString }, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }, ${ timesString }"
+      ],
+      "Every ${ interval } week on ${ multipleDaysString }, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα σε ${ multipleDaysString }, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες στις ${ multipleDaysString }, ${ untilString }"
+      ],
+      "Every ${ interval } week on all days": [
+        "Κάθε ${ interval } εβδομάδα όλες τις ημέρες",
+        "Κάθε ${ interval } εβδομάδες, σε όλες τις μέρες"
+      ],
+      "Every ${ interval } week on all days, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα όλες τις μέρες, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες όλες τις ημέρες, ${ timesString }"
+      ],
+      "Every ${ interval } week on all days, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα όλες τις μέρες, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες σε όλες τις μέρες, ${ untilString }"
+      ],
+      "Every ${ interval } week on Friday": [
+        "Κάθε ${ interval } εβδομάδα την Παρασκευή",
+        "Κάθε ${ interval } εβδομάδες την Παρασκευή"
+      ],
+      "Every ${ interval } week on Friday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Παρασκευή, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Παρασκευή, ${ timesString }"
+      ],
+      "Every ${ interval } week on Friday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Παρασκευή, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Παρασκευή, ${ untilString }"
+      ],
+      "Every ${ interval } week on Monday": [
+        "Κάθε ${ interval } εβδομάδα τη Δευτέρα",
+        "Κάθε ${ interval } εβδομάδες την Δευτέρα"
+      ],
+      "Every ${ interval } week on Monday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Δευτέρα, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Δευτέρα, ${ timesString }"
+      ],
+      "Every ${ interval } week on Monday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα τη Δευτέρα, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Δευτέρα, ${ untilString }"
+      ],
+      "Every ${ interval } week on Saturday": [
+        "Κάθε ${ interval } εβδομάδα το Σάββατο",
+        "Κάθε ${ interval } εβδομάδες το Σάββατο"
+      ],
+      "Every ${ interval } week on Saturday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα το Σάββατο, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες το Σάββατο, ${ timesString }"
+      ],
+      "Every ${ interval } week on Saturday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα το Σάββατο, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες το Σάββατο, ${ untilString }"
+      ],
+      "Every ${ interval } week on Sunday": [
+        "Κάθε ${ interval } εβδομάδα την Κυριακή",
+        "Κάθε ${ interval } εβδομάδες την Κυριακή"
+      ],
+      "Every ${ interval } week on Sunday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Κυριακή, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Κυριακή, ${ timesString }"
+      ],
+      "Every ${ interval } week on Sunday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Κυριακή, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Κυριακή, ${ untilString }"
+      ],
+      "Every ${ interval } week on Thursday": [
+        "Κάθε ${ interval } εβδομάδα την Πέμπτη",
+        "Κάθε ${ interval } εβδομάδες την Πέμπτη"
+      ],
+      "Every ${ interval } week on Thursday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Πέμπτη, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Πέμπτη, ${ timesString }"
+      ],
+      "Every ${ interval } week on Thursday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Πέμπτη, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Πέμπτη, ${ untilString }"
+      ],
+      "Every ${ interval } week on Tuesday": [
+        "Κάθε ${ interval } εβδομάδα την Τρίτη",
+        "Κάθε ${ interval } εβδομάδες την Τρίτη"
+      ],
+      "Every ${ interval } week on Tuesday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Τρίτη, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Τρίτη, ${ timesString }"
+      ],
+      "Every ${ interval } week on Tuesday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Τρίτη, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Τρίτη, ${ untilString }"
+      ],
+      "Every ${ interval } week on Wednesday": [
+        "Κάθε ${ interval } εβδομάδα την Τετάρτη",
+        "Κάθε ${ interval } εβδομάδες την Τετάρτη"
+      ],
+      "Every ${ interval } week on Wednesday, ${ timesString }": [
+        "Κάθε ${ interval } εβδομάδα την Τετάρτη, ${ timesString }",
+        "Κάθε ${ interval } εβδομάδες την Τετάρτη, ${ timesString }"
+      ],
+      "Every ${ interval } week on Wednesday, ${ untilString }": [
+        "Κάθε ${ interval } εβδομάδα την Τετάρτη, ${ untilString }",
+        "Κάθε ${ interval } εβδομάδες την Τετάρτη, ${ untilString }"
+      ],
       "Weekly on ${ multipleDaysString }": [
         "Εβδομαδιαία στις ${ multipleDaysString }"
       ],
@@ -13978,6 +14836,18 @@
       ]
     },
     "Yearly recurring event, frequency": {
+      "Every ${ interval } year": [
+        "Κάθε ${ interval } χρόνο",
+        "Κάθε ${ interval } χρόνια"
+      ],
+      "Every ${ interval } year, ${ timesString }": [
+        "Κάθε ${ interval } χρόνο, ${ timesString }",
+        "Κάθε ${ interval } χρόνια, ${ timesString }"
+      ],
+      "Every ${ interval } year, ${ untilString }": [
+        "Κάθε ${ interval } χρόνο, ${ untilString }",
+        "Κάθε ${ interval } χρόνια, ${ untilString }"
+      ],
       "Yearly": [
         "Ετησίως"
       ],
