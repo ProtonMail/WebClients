@@ -14,6 +14,12 @@ export const expectedAll = [
         icon: 'inbox',
     },
     {
+        icon: 'clock',
+        text: 'Snooze',
+        url: '/snoozed',
+        value: '16',
+    },
+    {
         value: '8',
         text: 'Drafts',
         url: '/drafts',
@@ -89,6 +95,12 @@ export const expectedGrouped: ItemsGroup = [
                 text: 'Inbox',
                 url: '/inbox',
                 icon: 'inbox',
+            },
+            {
+                icon: 'clock',
+                text: 'Snooze',
+                url: '/snoozed',
+                value: '16',
             },
             {
                 value: '8',
