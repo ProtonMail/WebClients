@@ -5,6 +5,7 @@ interface GetPublicKeysParams {
     Fingerprint?: string;
 }
 
+/** @deprecated in favor of `getAllPublicKeys` */
 export const getPublicKeys = (params: GetPublicKeysParams) => ({
     url: 'core/v4/keys',
     method: 'get',

@@ -35,7 +35,7 @@ const getPublicKeysEmailHelperWithKT = async ({
     email: string;
     internalKeysOnly: boolean;
     api: Api;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys | null;
     silence?: boolean;
     noCache?: boolean;
 }): Promise<ApiKeysConfig> => {
