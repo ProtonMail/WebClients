@@ -3,8 +3,6 @@ import { useActiveBreakpoint } from '@proton/components/hooks';
 import { DownloadButton, DownloadButtonProps } from './DownloadButton';
 import ReportAbuseButton from './ReportAbuseButton';
 
-import './SharedPageFooter.scss';
-
 interface Props extends DownloadButtonProps {}
 const SharedPageFooter = ({ rootItem, items }: Props) => {
     const { isNarrow } = useActiveBreakpoint();
@@ -16,7 +14,7 @@ const SharedPageFooter = ({ rootItem, items }: Props) => {
             </div>
         );
     }
-    return <ReportAbuseButton className="shared-page-footer-report fixed" linkInfo={rootItem} />;
+    return <ReportAbuseButton className="ml-1 mb-4 fixed left bottom" linkInfo={rootItem} />;
 };
 
 export default SharedPageFooter;
