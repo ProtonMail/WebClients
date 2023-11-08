@@ -15,7 +15,6 @@ import {
     useModalTwo,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 import noop from '@proton/utils/noop';
 
 import useActiveShare from '../../hooks/drive/useActiveShare';
@@ -76,7 +75,6 @@ const CreateFileModal = ({ onClose, folder, ...modalProps }: Props & ModalStateP
                 <InputFieldTwo
                     id="file-name"
                     autoFocus
-                    maxLength={MAX_NAME_LENGTH}
                     value={fileName}
                     label={c('Label').t`File name`}
                     placeholder={c('Placeholder').t`Enter a new file name`}
