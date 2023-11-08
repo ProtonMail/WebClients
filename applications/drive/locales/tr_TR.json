@@ -3896,6 +3896,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Lütfen ${ groupName } grubuna eklenecek e-posta adresini ya da adreslerini seçin."
       ],
+      "Please use another browser or download the file.": [
+        "Lütfen başka bir tarayıcı kullanın ya da dosyayı indirin."
+      ],
       "Please wait till your changes are synced with the server.": [
         "Lütfen değişiklikleriniz sunucu ile eşitlenene kadar bekleyin."
       ],
@@ -3913,6 +3916,9 @@
       ],
       "Preview failed to be loaded": [
         "Ön izleme yüklenemedi"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Bu tarayıcı şu anda bu dosya türünün ön izlenmesini desteklemiyor."
       ],
       "Preview for this file type is not supported": [
         "Bu dosya türünün ön izlemesi görüntülenemiyor"
@@ -3964,6 +3970,9 @@
       ],
       "Search Enabled": [
         "Arama özelliği açıldı"
+      ],
+      "Select a folder to move to.": [
+        "Taşınacak bir klasör seçin."
       ],
       "Select all items for": [
         "Şunun için tüm ögeleri seç"
@@ -6266,6 +6275,9 @@
       "Discard changes?": [
         "Değişiklikler silinsin mi?"
       ],
+      "Download ${ date }.zip": [
+        "${ date }.zip dosyasını indir"
+      ],
       "Download unverified file?": [
         "Doğrulanmamış dosya indirilsin mi?"
       ],
@@ -6390,9 +6402,6 @@
       ],
       "My files": [
         "Dosyalarım"
-      ],
-      "My files ${ date }.zip": [
-        "Dosyalarım ${ date }.zip"
       ],
       "Name": [
         "Ad"
