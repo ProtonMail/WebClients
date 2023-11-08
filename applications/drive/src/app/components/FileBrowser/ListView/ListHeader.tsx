@@ -83,7 +83,12 @@ const HeaderCell = <T,>({
     }
 
     if (item.type === HeaderCellsPresets.Placeholder) {
-        return <TableHeaderCell className={clsx(['file-browser-list--icon-column', item.props?.className])} />;
+        return (
+            <TableHeaderCell
+                className={clsx(['file-browser-list--icon-column', item.props?.className])}
+                style={item.props.style}
+            />
+        );
     }
 
     const getSortDirectionForKey = (key: T) => (sortParams?.sortField === key ? sortParams.sortOrder : undefined);
