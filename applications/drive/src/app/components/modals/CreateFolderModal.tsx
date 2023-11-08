@@ -15,7 +15,6 @@ import {
     useModalTwo,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 import noop from '@proton/utils/noop';
 
 import useActiveShare from '../../hooks/drive/useActiveShare';
@@ -81,7 +80,6 @@ const CreateFolderModal = ({ onClose, folder, onCreateDone, ...modalProps }: Pro
                 <InputFieldTwo
                     id="folder-name"
                     autoFocus
-                    maxLength={MAX_NAME_LENGTH}
                     value={folderName}
                     label={c('Label').t`Folder name`}
                     placeholder={c('Placeholder').t`Enter a new folder name`}
