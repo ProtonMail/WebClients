@@ -14,7 +14,6 @@
         "config": "yarn config:extension --api=https://pass-api.proton.me/api --sso=https://account.proton.me",
         "config:dev": "yarn config:extension --api=https://account.proton.black/api --sso=https://account.proton.black",
         "config:extension": "proton-pack config --no-api-proxy --version=\"$(cat ./manifest-chrome.json | jq -r .version)${BETA:+-beta}\"",
-        "generate:ff-release": "./tools/generate-ff-release.sh",
         "i18n:validate": "proton-i18n validate lint-functions",
         "i18n:validate:context": "proton-i18n extract && proton-i18n validate",
         "postinstall": "yarn run config",
