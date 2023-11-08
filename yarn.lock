@@ -5343,7 +5343,7 @@ __metadata:
     "@types/react-virtualized": "npm:^9.21.27"
     babel-jest: "npm:^29.7.0"
     babel-plugin-transform-require-context: "npm:^0.1.1"
-    card-validator: "npm:^8.1.1"
+    card-validator: "npm:^9.0.0"
     codemirror: "npm:^5.65.15"
     cross-fetch: "npm:^4.0.0"
     date-fns: "npm:^2.30.0"
@@ -13241,12 +13241,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"card-validator@npm:^8.1.1":
-  version: 8.1.1
-  resolution: "card-validator@npm:8.1.1"
+"card-validator@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "card-validator@npm:9.0.0"
   dependencies:
     credit-card-type: "npm:^9.1.0"
-  checksum: b16c5828968251a286a5b457528324afffbc759d37d26df67723032c0c819857d4e520c4e7cbc4bfa47b1cba487de529e89bc8bedc98e89a5350de1e7350a2b1
+  checksum: f0024a85752e8f6438e7ebf469e3584bbf95ad758a11a0981db5ee187dacba2c480d6cffe574cb2e7ebbd0f549797b526041c2b5025a21bae3114d9a70ad28ae
   languageName: node
   linkType: hard
 
