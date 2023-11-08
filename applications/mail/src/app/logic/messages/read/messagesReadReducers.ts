@@ -191,6 +191,7 @@ export const verificationComplete = (
             signingPublicKeyIsPinned,
             signingPublicKeyIsCompromised,
             apiKeysErrors: verificationPreferences?.apiKeysErrors,
+            verifyingKeys: verificationPreferences?.verifyingKeys,
         };
         messageState.errors = { ...messageState.errors, ...errors };
     }
