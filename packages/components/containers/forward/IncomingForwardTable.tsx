@@ -21,8 +21,12 @@ const IncomingForwardTable = ({ addresses, loading, forwardings, chainedEmails }
                 <TableRow>
                     <TableHeaderCell>{c('email_forwarding_2023: Header').t`From`}</TableHeaderCell>
                     <TableHeaderCell>{c('email_forwarding_2023: Header').t`To`}</TableHeaderCell>
-                    <TableHeaderCell className="w-custom" style={{'--w-custom': '6em'}}>{c('email_forwarding_2023: Header').t`Status`}</TableHeaderCell>
-                    <TableHeaderCell>{c('email_forwarding_2023: Header').t`Actions`}</TableHeaderCell>
+                    <TableHeaderCell className="w-custom" style={{ '--w-custom': '11em' }}>{c(
+                        'email_forwarding_2023: Header'
+                    ).t`Status`}</TableHeaderCell>
+                    <TableHeaderCell className="w-custom" style={{ '--w-custom': '9em' }}>{c(
+                        'email_forwarding_2023: Header'
+                    ).t`Actions`}</TableHeaderCell>
                 </TableRow>
             </TableHeader>
             <TableBody loading={loading} colSpan={4}>

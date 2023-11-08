@@ -87,7 +87,7 @@ const DropdownActions = ({
                 className={clsx(['flex-item-noshrink', className])}
                 title={c('Title').t`Open actions dropdown`}
                 data-testid="dropdownActions:dropdown"
-                content={<Icon name={iconName} />}
+                content={<Icon name={iconName} alt={c('Title').t`Open actions dropdown`} />}
                 hasCaret={false}
                 {...restButtonProps}
             >
