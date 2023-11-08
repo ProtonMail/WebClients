@@ -18,7 +18,7 @@ function* moveAllItemsWorker(
         const items: ItemRevision[] = yield select(selectItemsByShareId(shareId));
         const movedItems = (yield moveItems(items, destinationShareId)) as ItemRevision[];
 
-        yield put(vaultMoveAllItemsSuccess(meta.request.id, { shareId, content, movedItems }));
+        yield put(vaultMoveAllItemsSuccess(meta.request.id, { shareId, destinationShareId, content, movedItems }));
         onItemsChange?.();
     } catch (e) {
         yield put(vaultMoveAllItemsFailure(meta.request.id, { shareId, content }, e));
