@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react';
 import { nextMonday } from 'date-fns';
 
-import { useUser } from '@proton/components/hooks';
+import { useUser, useUserSettings } from '@proton/components/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import useSnooze from '../../../../hooks/actions/useSnooze';
@@ -10,11 +10,12 @@ import { Element } from '../../../../models/element';
 import SnoozeDropdown from './SnoozeDropdown';
 
 jest.mock('@proton/components/hooks/useUser');
+jest.mock('@proton/components/hooks/useUserSettings');
 jest.mock('@proton/components/components/link/useSettingsLink');
-jest.mock('../../../../logic/store', () => ({
+jest.mock('proton-mail/logic/store', () => ({
     useAppDispatch: jest.fn().mockReturnValue(jest.fn()),
 }));
-jest.mock('../../../../hooks/actions/useSnooze', () => ({
+jest.mock('proton-mail/hooks/actions/useSnooze', () => ({
     __esModule: true,
     default: jest.fn().mockReturnValue({
         canSnooze: true,
@@ -50,39 +51,42 @@ describe('Snooze dropdown', () => {
     const useUserMock = useUser as jest.Mock;
     const useSnoozeMock = useSnooze as jest.Mock;
     const useAppDispatchMock = useAppDispatch as jest.Mock;
+    const useUserSettingsMock = useUserSettings as jest.Mock;
 
     beforeAll(() => {
         useUserMock.mockImplementation(() => [{ hasPaidMail: false }, jest.fn]);
+        useUserSettingsMock.mockImplementation(() => [{ WeekStart: 1 }, jest.fn]);
     });
 
     afterAll(() => {
         useUserMock.mockClear();
         useSnoozeMock.mockClear();
         useAppDispatchMock.mockClear();
+        useUserSettingsMock.mockClear();
     });
 
-    it('should not return anything when flag is disabled', () => {
+    it('should not return anything when flag is disabled', async () => {
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps, isSnoozeEnabled: false });
 
         const { queryByTestId } = render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
         expect(queryByTestId('dropdown-button')).toBeNull();
     });
 
-    it('should not return anything when cannot snooze or unsnooze', () => {
+    it('should not return anything when cannot snooze or unsnooze', async () => {
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps, canSnooze: false, canUnsnooze: false });
 
         const { queryByTestId } = render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
         expect(queryByTestId('dropdown-button')).toBeNull();
     });
 
-    it('should not return anything when element is an empty array', () => {
+    it('should not return anything when element is an empty array', async () => {
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps });
 
         const { queryByTestId } = render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[]} />);
         expect(queryByTestId('dropdown-button')).toBeNull();
     });
 
-    it('should open dropdown with all Monday options', () => {
+    it('should open dropdown with all Monday options', async () => {
         jest.useFakeTimers({ now: nextMonday(new Date()).getTime() });
 
         const { getByTestId } = render(<SnoozeDropdown labelID={MAILBOX_LABEL_IDS.INBOX} elements={[element]} />);
@@ -96,7 +100,7 @@ describe('Snooze dropdown', () => {
         expect(getByTestId('snooze-duration-nextweek'));
     });
 
-    it('should open dropdown with all Monday options and unsnooze', () => {
+    it('should open dropdown with all Monday options and unsnooze', async () => {
         jest.useFakeTimers({ now: nextMonday(new Date()).getTime() });
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps, canUnsnooze: true });
 
@@ -112,7 +116,7 @@ describe('Snooze dropdown', () => {
         expect(getByTestId('snooze-duration-unsnooze'));
     });
 
-    it('should call snooze method when pressing any option', () => {
+    it('should call snooze method when pressing any option', async () => {
         const spySnooze = jest.fn();
         useUserMock.mockImplementation(() => [{ hasPaidMail: true }, jest.fn]);
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps, snooze: spySnooze });
@@ -126,7 +130,7 @@ describe('Snooze dropdown', () => {
         expect(spySnooze).toHaveBeenCalledWith({ elements: [element], duration: 'tomorrow', snoozeTime: undefined });
     });
 
-    it('should call unsnooze method when pressing the button', () => {
+    it('should call unsnooze method when pressing the button', async () => {
         const spySnooze = jest.fn();
         useUserMock.mockImplementation(() => [{ hasPaidMail: true }, jest.fn]);
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps, unsnooze: spySnooze, canUnsnooze: true });
@@ -140,7 +144,7 @@ describe('Snooze dropdown', () => {
         expect(spySnooze).toHaveBeenCalledWith([element]);
     });
 
-    it('should call custom click method when pressing button', () => {
+    it('should call custom click method when pressing button', async () => {
         const spyCustom = jest.fn();
         useUserMock.mockImplementation(() => [{ hasPaidMail: true }, jest.fn]);
         useSnoozeMock.mockReturnValue({ ...useSnoozeProps, handleCustomClick: spyCustom });
