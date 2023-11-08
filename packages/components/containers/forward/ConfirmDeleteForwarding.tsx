@@ -6,13 +6,15 @@ import { useLoading } from '@proton/hooks';
 import { ModalProps, Prompt } from '../../components';
 
 interface Props {
+    reActivateE2EE: boolean;
     modalProps: ModalProps;
     onDelete: () => Promise<void>;
     onClose: () => void;
 }
 
-const ConfirmDeleteForwarding = ({ onDelete, onClose, modalProps }: Props) => {
+const ConfirmDeleteForwarding = ({ reActivateE2EE, onDelete, onClose, modalProps }: Props) => {
     const [loading, withLoading] = useLoading();
+
     return (
         <Prompt
             title={c('email_forwarding_2023: Title').t`Delete forwarding?`}
@@ -24,7 +26,14 @@ const ConfirmDeleteForwarding = ({ onDelete, onClose, modalProps }: Props) => {
             ]}
             {...modalProps}
         >
-            <p>{c('email_forwarding_2023: Prompt').t`Forwarding to the destination address will end.`}</p>
+            <p>
+                <span className="mr-1">{c('email_forwarding_2023: Prompt')
+                    .t`Forwarding to the destination address will end.`}</span>
+                {reActivateE2EE ? (
+                    <span>{c('email_forwarding_2023: Prompt')
+                        .t`End-to-end encryption will be re-enabled for the sender address.`}</span>
+                ) : null}
+            </p>
         </Prompt>
     );
 };

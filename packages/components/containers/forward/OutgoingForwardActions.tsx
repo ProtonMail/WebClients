@@ -6,21 +6,36 @@ import {
     resendForwardingInvitation,
     resumeForwarding,
 } from '@proton/shared/lib/api/forwardings';
-import { ForwardingState, ForwardingType, OutgoingAddressForwarding, UserModel } from '@proton/shared/lib/interfaces';
+import {
+    Address,
+    ForwardingState,
+    ForwardingType,
+    OutgoingAddressForwarding,
+    UserModel,
+} from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, useModalState, useModalTwo } from '../../components';
-import { useApi, useEventManager, useGetAddressKeys, useGetPublicKeys, useNotifications } from '../../hooks';
+import {
+    useAddressFlags,
+    useApi,
+    useEventManager,
+    useGetAddressKeys,
+    useGetPublicKeys,
+    useNotifications,
+} from '../../hooks';
 import ConfirmDeleteForwarding from './ConfirmDeleteForwarding';
 import ForwardModal from './ForwardModal';
-import { enableForwarding } from './helpers';
+import { enableForwarding, isLastOutgoingNonE2EEForwarding } from './helpers';
 
 interface Props {
     forward: OutgoingAddressForwarding;
     user: UserModel;
+    forwardings: OutgoingAddressForwarding[];
+    addresses: Address[];
 }
 
-const OutgoingForwardActions = ({ user, forward }: Props) => {
+const OutgoingForwardActions = ({ user, forward, addresses, forwardings }: Props) => {
     const isPending = forward.State === ForwardingState.Pending;
     const isActive = forward.State === ForwardingState.Active;
     const isPaused = forward.State === ForwardingState.Paused;
@@ -29,8 +44,13 @@ const OutgoingForwardActions = ({ user, forward }: Props) => {
     const sentSuccessMessage = c('email_forwarding_2023: Success').t`Email sent to ${forward.ForwardeeEmail}`;
     const isInternal = forward.Type === ForwardingType.InternalEncrypted;
     const isExternal = forward.Type === ForwardingType.ExternalUnencrypted;
+    const address = addresses.find((address) => address.ID === forward.ForwarderAddressID) as Address;
+    const isLast = isLastOutgoingNonE2EEForwarding(forward, forwardings);
+    const pointToProton = address?.ProtonMX === true; // the domain's record point to Proton servers
+    const reActivateE2EE = pointToProton && isLast;
 
     const api = useApi();
+    const addressFlags = useAddressFlags(address);
     const getPublicKeys = useGetPublicKeys();
     const getAddressKeys = useGetAddressKeys();
     const { call } = useEventManager();
@@ -40,6 +60,12 @@ const OutgoingForwardActions = ({ user, forward }: Props) => {
 
     const handleDeleteForwarding = async () => {
         await api(deleteForwarding(forward.ID));
+
+        // Re-enable E2EE for this address if deleting last outgoing forwarding
+        if (reActivateE2EE && addressFlags && addressFlags.encryptionDisabled) {
+            await addressFlags.handleSetAddressFlags(false, addressFlags.expectSignatureDisabled);
+        }
+
         await call();
         setConfirmModalOpen(false);
         createNotification({ text: 'Forwarding deleted' });
@@ -128,6 +154,7 @@ const OutgoingForwardActions = ({ user, forward }: Props) => {
                     modalProps={confirmModalProps}
                     onDelete={handleDeleteForwarding}
                     onClose={() => setConfirmModalOpen(false)}
+                    reActivateE2EE={reActivateE2EE}
                 />
             ) : null}
         </>
