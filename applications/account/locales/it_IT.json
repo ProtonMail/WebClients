@@ -390,7 +390,7 @@
         "Modifica Gateway"
       ],
       "Edit invoice details": [
-        "Modifica i dettagli della fattura"
+        "Modifica i dettagli delle fatture"
       ],
       "Edit label": [
         "Modifica dell'etichetta"
@@ -7963,7 +7963,7 @@
     },
     "Info message for custom invoice modal": {
       "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
-        "Inserisci un nome e un indirizzo per te o per la tua organizzazione. Questi dati verranno aggiunti alle fatture personali e a quelle dell'organizzazione."
+        "Inserisci un nome e un indirizzo per te o per la tua organizzazione. Questi dati verranno aggiunti sia alle fatture personali sia a quelle dell'organizzazione."
       ]
     },
     "Info on errors": {
@@ -9929,26 +9929,6 @@
         "Media velocità della VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Esegui il downgrade a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Scopri tutti i piani ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Da ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Mantieni il mio account ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Effettua l'upgrade"
-      ],
-      "Upgrade now": [
-        "Effettua l'upgrade ora"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Continua per controllare"
@@ -9988,6 +9968,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Aggiorna a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Esegui il downgrade a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Scopri tutti i piani ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Da ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Mantieni il mio account ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Effettua l'upgrade"
+      ],
+      "Upgrade now": [
+        "Effettua l'upgrade ora"
       ]
     },
     "new_plans: feature": {
@@ -13493,7 +13493,7 @@
         "Modifica Gateway ${ currentName }"
       ],
       "Edit invoice details": [
-        "Modifica i dettagli della fattura"
+        "Modifica i dettagli delle fatture"
       ],
       "Edit servers": [
         "Modifica server"
