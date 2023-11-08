@@ -303,9 +303,9 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         }
 
         if (vaultMoveAllItemsSuccess.match(action)) {
-            const { shareId, movedItems } = action.payload;
+            const { shareId, movedItems, destinationShareId } = action.payload;
 
-            return fullMerge({ ...state, [shareId]: {} }, { [movedItems[0].shareId]: toMap(movedItems, 'itemId') });
+            return fullMerge({ ...state, [shareId]: {} }, { [destinationShareId]: toMap(movedItems, 'itemId') });
         }
 
         if (or(shareDeleteSync.match, shareLeaveSuccess.match)(action)) {
