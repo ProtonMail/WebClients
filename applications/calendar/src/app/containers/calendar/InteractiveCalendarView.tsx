@@ -617,7 +617,7 @@ const InteractiveCalendarView = ({
             const { event, type } = mouseDownAction.payload;
 
             // If already creating something in blocking mode and not touching on the temporary event.
-            if (temporaryEvent && event.id !== 'tmp' && isInTemporaryBlocking) {
+            if (temporaryEvent && event.uniqueId !== 'tmp' && isInTemporaryBlocking) {
                 return;
             }
 
@@ -641,8 +641,8 @@ const InteractiveCalendarView = ({
                 return;
             }
 
-            let newTemporaryModel = temporaryEvent && event.id === 'tmp' ? temporaryEvent.tmpData : undefined;
-            let newTemporaryEvent = temporaryEvent && event.id === 'tmp' ? temporaryEvent : undefined;
+            let newTemporaryModel = temporaryEvent && event.uniqueId === 'tmp' ? temporaryEvent.tmpData : undefined;
+            let newTemporaryEvent = temporaryEvent && event.uniqueId === 'tmp' ? temporaryEvent : undefined;
             let initialModel = newTemporaryModel;
 
             return (mouseUpAction: MouseUpAction) => {
@@ -650,8 +650,8 @@ const InteractiveCalendarView = ({
                     const { idx } = mouseUpAction.payload;
 
                     setInteractiveData({
-                        temporaryEvent: temporaryEvent && event.id === 'tmp' ? temporaryEvent : undefined,
-                        targetEventData: { id: event.id, idx, type },
+                        temporaryEvent: temporaryEvent && event.uniqueId === 'tmp' ? temporaryEvent : undefined,
+                        targetEventData: { uniqueId: event.uniqueId, idx, type },
                     });
                     return;
                 }
@@ -722,7 +722,7 @@ const InteractiveCalendarView = ({
 
                     setInteractiveData({
                         temporaryEvent: newTemporaryEvent,
-                        targetEventData: { id: 'tmp', idx, type },
+                        targetEventData: { uniqueId: 'tmp', idx, type },
                     });
                 }
             };
@@ -816,7 +816,7 @@ const InteractiveCalendarView = ({
                 if (action === ACTIONS.CREATE_UP || action === ACTIONS.CREATE_MOVE_UP) {
                     setInteractiveData({
                         temporaryEvent: newTemporaryEvent,
-                        targetEventData: { id: 'tmp', idx, type },
+                        targetEventData: { uniqueId: 'tmp', idx, type },
                     });
                 }
             };
@@ -841,10 +841,10 @@ const InteractiveCalendarView = ({
         }
     };
 
-    const handleClickEvent = ({ id, idx, type }: TargetEventData) => {
+    const handleClickEvent = ({ uniqueId, idx, type }: TargetEventData) => {
         setInteractiveData({
             ...interactiveData,
-            targetEventData: { id, idx, type },
+            targetEventData: { uniqueId, idx, type },
         });
     };
 
@@ -1416,7 +1416,7 @@ const InteractiveCalendarView = ({
         if (!targetEventData) {
             return;
         }
-        return sortedEventsWithTemporary.find(({ id }) => id === targetEventData.id);
+        return sortedEventsWithTemporary.find(({ uniqueId }) => uniqueId === targetEventData.uniqueId);
     }, [targetEventData, sortedEventsWithTemporary, searchData]);
 
     const autoCloseRef = useRef<({ ask }: { ask: boolean }) => void>();
@@ -1478,9 +1478,9 @@ const InteractiveCalendarView = ({
         }
         // Do this to respect the order in which they were inserted
         const latestEvents = events
-            .filter(({ id }) => eventsSet.has(id))
+            .filter(({ uniqueId }) => eventsSet.has(uniqueId))
             .reduce<{ [key: string]: CalendarViewEvent }>((acc, result) => {
-                acc[result.id] = result;
+                acc[result.uniqueId] = result;
                 return acc;
             }, {});
         return [...eventsSet.keys()].map((eventId) => latestEvents[eventId]).filter(isTruthy);
@@ -1699,7 +1699,7 @@ const InteractiveCalendarView = ({
                     if (!targetEvent || targetEventData?.preventPopover) {
                         return null;
                     }
-                    if (targetEvent.id === 'tmp' && tmpData) {
+                    if (targetEvent.uniqueId === 'tmp' && tmpData) {
                         return (
                             <CreateEventPopover
                                 isDraggingDisabled={isNarrow || isDrawerApp}

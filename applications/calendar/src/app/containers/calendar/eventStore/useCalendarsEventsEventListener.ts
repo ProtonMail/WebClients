@@ -60,7 +60,10 @@ export const useCalendarCacheEventListener = (
                         const calendarID = Object.keys(calendars).find((calendarID) => {
                             return calendars[calendarID]?.events.has(CalendarEventsChange.ID);
                         });
-                        const calendarsEventsCache = calendars[calendarID || 'undefined'];
+                        if (!calendarID) {
+                            return;
+                        }
+                        const calendarsEventsCache = calendars[calendarID];
                         if (!calendarsEventsCache) {
                             return;
                         }

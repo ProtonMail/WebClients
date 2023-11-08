@@ -65,8 +65,8 @@ const RowEvents = ({
 
         const event = getEvent(idx, eventsInRow, events);
 
-        const isTemporary = event.id === 'tmp';
-        const isSelected = targetEventData ? event.id === targetEventData.id : false;
+        const isTemporary = event.uniqueId === 'tmp';
+        const isSelected = targetEventData ? event.uniqueId === targetEventData.uniqueId : false;
         const isThisSelected =
             (isSelected && isTemporary) ||
             (isSelected && targetEventData && targetEventData.idx === row && targetEventData.type === TYPE.DAYGRID);
@@ -80,7 +80,7 @@ const RowEvents = ({
                 tzid={tzid}
                 event={event}
                 style={style}
-                key={event.id}
+                key={event.uniqueId}
                 eventRef={eventRef}
                 formatTime={formatTime}
                 isSelected={isSelected}
