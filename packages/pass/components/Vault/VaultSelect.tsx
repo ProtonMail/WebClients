@@ -36,16 +36,16 @@ export const VaultSelect: VFC<Props> = ({ downgradeMessage, onSubmit, optionsSel
     const vaults = useSelector(optionsSelector);
     const { didDowngrade } = useSelector(selectVaultLimits);
 
-    /* make the current vault appear first in the list */
-    vaults.sort((a, b) => {
-        if (a.shareId === shareId) {
-            return -1;
-        } else if (b.shareId === shareId) {
-            return 1;
-        } else {
-            return 0;
-        }
-    });
+    const sortedVaults = useMemo(
+        () =>
+            /* make the current vault appear first in the list */
+            vaults.slice().sort((a, b) => {
+                if (a.shareId === shareId) return -1;
+                else if (b.shareId === shareId) return 1;
+                else return 0;
+            }),
+        [vaults]
+    );
 
     return (
         <SidebarModal {...props}>
@@ -72,7 +72,7 @@ export const VaultSelect: VFC<Props> = ({ downgradeMessage, onSubmit, optionsSel
                 {didDowngrade && <ItemCard>{downgradeMessage}</ItemCard>}
 
                 <RadioButtonGroup name="vault-select" className="flex-columns" value={shareId} onChange={onSubmit}>
-                    {vaults.map((vault) => (
+                    {sortedVaults.map((vault) => (
                         <RadioLabelledButton
                             value={vault.shareId}
                             key={vault.shareId}
