@@ -12,6 +12,7 @@ import {
     Api,
     ApiKeysConfig,
     DecryptedKey,
+    ForwardingType,
     IncomingAddressForwarding,
     KeyTransparencyCommit,
     KeyTransparencyVerify,
@@ -373,4 +374,17 @@ export const getChainedForwardingEmails = (
 export const isChainedForwarding = (chainedEmails: string[], email: string) => {
     // chainedEmails is already canonicalized by getChainedForwardingEmails
     return chainedEmails.includes(canonicalizeEmailByGuess(email));
+};
+
+export const isLastOutgoingNonE2EEForwarding = (
+    forward: OutgoingAddressForwarding,
+    forwarding: OutgoingAddressForwarding[]
+): boolean => {
+    if (forward.Type !== ForwardingType.ExternalUnencrypted) {
+        return false;
+    }
+    const last = forwarding.filter(
+        (f) => f.Type === ForwardingType.ExternalUnencrypted && f.ForwarderAddressID === forward.ForwarderAddressID
+    );
+    return last.length <= 1;
 };
