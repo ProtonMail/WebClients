@@ -1,6 +1,6 @@
 import { MouseEvent } from 'react';
 
-import { addDays, differenceInDays, format, nextMonday, nextSaturday } from 'date-fns';
+import { addDays, differenceInDays, format, nextMonday, nextSaturday, set } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -9,6 +9,7 @@ import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg';
 import clsx from '@proton/utils/clsx';
 
+import { formatSimpleDate } from '../../../../helpers/date';
 import { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
 import SnoozeHeader from './SnoozeHeader';
 
@@ -57,31 +58,34 @@ const SnoozeDurationSelection = ({ canUnsnooze, handleUnsnoozeClick, handleSnooz
     const daysUntilNextSat = differenceInDays(nextSat, today);
     const formattedDayOfWeek = format(addDays(today, 2), 'EEE');
 
+    const time = set(today, { hours: 9, minutes: 0, seconds: 0, milliseconds: 0 });
+    const formatTime = formatSimpleDate(time);
+
     const dropdownOptions: { leftText: string; rightText: string; duration: SNOOZE_DURATION; visible: boolean }[] = [
         {
             leftText: c('Action').t`Tomorrow`,
-            rightText: c('Info').t`9:00`,
+            rightText: formatTime,
             duration: 'tomorrow',
             visible: true,
         },
         {
             leftText: c('Action').t`Later this week`,
-            // translator: Shows the day of week and the time, e.g. "Mon, 9:00", "Fri, 9:00"
-            rightText: c('Info').t`${formattedDayOfWeek}, 9:00`,
+            // translator: Shows the day of week and the time, e.g. "Mon, 9:00", "Fri, 9:00 AM" (if 12 hours is set)
+            rightText: c('Info').t`${formattedDayOfWeek}, ${formatTime}`,
             duration: 'later',
             visible: daysUntilNextMon > 2 && daysUntilNextSat !== 2,
         },
         {
             leftText: c('Action').t`This weekend`,
-            // translator: This will always be saturday at 9:00 AM.
-            rightText: c('Info').t`Sat, 9:00`,
+            // translator: This will always be saturday at 9:00, will display "Sat, 9:00 AM" (if 12 hours is set) or "Sat, 09:00" (if 24 hours is set)
+            rightText: c('Info').t`Sat, ${formatTime}`,
             duration: 'weekend',
             visible: daysUntilNextMon > 2 && daysUntilNextSat !== 1,
         },
         {
             leftText: c('Action').t`Next week`,
-            // translator: This will always be monday at 9:00 AM.
-            rightText: c('Info').t`Mon, 9:00`,
+            // translator: This will always be monday at 9:00 AM. Will display "Mon, 9:00 AM" (if 12 hours is set) or "Mon, 09:00" (if 24 hours is set)
+            rightText: c('Info').t`Mon, ${formatTime}`,
             duration: 'nextweek',
             visible: daysUntilNextMon > 1,
         },
