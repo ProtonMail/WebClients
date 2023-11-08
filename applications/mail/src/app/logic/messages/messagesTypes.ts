@@ -94,6 +94,11 @@ export interface MessageVerification {
      * Errors occuring while retrieving public keys
      */
     apiKeysErrors: string[] | undefined;
+
+    /**
+     * Verifying keys, if any
+     */
+    verifyingKeys: PublicKeyReference[] | undefined;
 }
 
 export interface AbstractMessageImage {

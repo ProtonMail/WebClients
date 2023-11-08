@@ -65,7 +65,7 @@ describe('formatDownload', () => {
 
         expect(result.data).toBeDefined();
         expect(result.attachment).toEqual(attachment1);
-        expect(result.verified).toEqual(VERIFICATION_STATUS.NOT_VERIFIED);
+        expect(result.verified).toEqual(VERIFICATION_STATUS.NOT_SIGNED);
     });
 
     it('should return an error while formatting download when attachment is broken', async () => {
@@ -171,7 +171,7 @@ describe('formatDownloadALl', () => {
 
         expect(result[0]?.data).toBeDefined();
         expect(result[0]?.attachment).toEqual(attachment1);
-        expect(result[0]?.verified).toEqual(VERIFICATION_STATUS.NOT_VERIFIED);
+        expect(result[0]?.verified).toEqual(VERIFICATION_STATUS.NOT_SIGNED);
     });
 });
 
