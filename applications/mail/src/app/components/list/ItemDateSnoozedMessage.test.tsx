@@ -90,7 +90,7 @@ describe('ItemDateSnoozedMessage', () => {
     });
 
     it('Should display reminded when message is a reminded conversation and user is in Inbox folder', () => {
-        const { getByText } = render(
+        const { getByTestId } = render(
             <ItemDateSnoozedMessage
                 snoozeTime={snoozedMessage.SnoozeTime}
                 element={remindedConversation}
@@ -98,11 +98,11 @@ describe('ItemDateSnoozedMessage', () => {
                 useTooltip={false}
             />
         );
-        expect(getByText('Reminded'));
+        expect(getByTestId('item-date-reminded'));
     });
 
     it('Should not display reminded when message is a not a reminded conversation and user is in Inbox folder', () => {
-        const { queryByText } = render(
+        const { queryByTestId } = render(
             <ItemDateSnoozedMessage
                 snoozeTime={snoozedMessage.SnoozeTime}
                 element={{ ...remindedConversation, DisplaySnoozedReminder: false }}
@@ -110,6 +110,6 @@ describe('ItemDateSnoozedMessage', () => {
                 useTooltip={false}
             />
         );
-        expect(queryByText('Reminded')).toBeNull();
+        expect(queryByTestId('item-date-reminded')).toBeNull();
     });
 });
