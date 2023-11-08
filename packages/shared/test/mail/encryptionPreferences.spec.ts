@@ -47,6 +47,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
         publicKeys: { apiKeys: [], pinnedKeys: [] },
         scheme: PGP_SCHEMES_MORE.GLOBAL_DEFAULT,
         mimeType: MIME_TYPES_MORE.AUTOMATIC,
+        isInternalWithDisabledE2EEForMail: false,
         trustedFingerprints: new Set([]),
         encryptionCapableFingerprints: new Set([]),
         obsoleteFingerprints: new Set([]),
@@ -87,6 +88,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             sign: true,
             mimeType: MIME_TYPES_MORE.AUTOMATIC,
             scheme: PGP_SCHEMES.PGP_MIME,
+            isInternalWithDisabledE2EEForMail: false,
             sendKey: fakeKey1,
             isSendKeyPinned: false,
             apiKeys,
@@ -121,6 +123,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             sign: true,
             mimeType: MIME_TYPES_MORE.AUTOMATIC,
             scheme: PGP_SCHEMES.PGP_MIME,
+            isInternalWithDisabledE2EEForMail: false,
             sendKey: fakeKey1,
             isSendKeyPinned: false,
             apiKeys,
@@ -156,6 +159,7 @@ describe('extractEncryptionPreferences for an internal user', () => {
             sign: true,
             mimeType: MIME_TYPES_MORE.AUTOMATIC,
             scheme: PGP_SCHEMES.PGP_MIME,
+            isInternalWithDisabledE2EEForMail: false,
             sendKey: pinnedFakeKey1,
             isSendKeyPinned: true,
             apiKeys,
@@ -326,6 +330,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
             publicKeys: { apiKeys: [], pinnedKeys: [], verifyingPinnedKeys: [] },
             scheme: PGP_SCHEMES.PGP_INLINE,
             mimeType: MIME_TYPES.PLAINTEXT as CONTACT_MIME_TYPES,
+            isInternalWithDisabledE2EEForMail: false,
             trustedFingerprints: new Set([]),
             encryptionCapableFingerprints: new Set([]),
             obsoleteFingerprints: new Set([]),
@@ -366,6 +371,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                 sign: encrypt,
                 mimeType: MIME_TYPES.PLAINTEXT,
                 scheme: PGP_SCHEMES.PGP_INLINE,
+                isInternalWithDisabledE2EEForMail: false,
                 sendKey: fakeKey1,
                 isSendKeyPinned: false,
                 apiKeys,
@@ -400,6 +406,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                 sign: encrypt,
                 mimeType: MIME_TYPES.PLAINTEXT,
                 scheme: PGP_SCHEMES.PGP_INLINE,
+                isInternalWithDisabledE2EEForMail: false,
                 sendKey: fakeKey1,
                 isSendKeyPinned: false,
                 apiKeys,
@@ -435,6 +442,7 @@ const testExtractEncryptionPreferencesWithWKD = (encrypt: boolean) =>
                 sign: encrypt,
                 mimeType: MIME_TYPES.PLAINTEXT,
                 scheme: PGP_SCHEMES.PGP_INLINE,
+                isInternalWithDisabledE2EEForMail: false,
                 sendKey: pinnedFakeKey1,
                 isSendKeyPinned: true,
                 apiKeys,
@@ -561,6 +569,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
         sign: false,
         scheme: PGP_SCHEMES_MORE.GLOBAL_DEFAULT,
         mimeType: MIME_TYPES_MORE.AUTOMATIC,
+        isInternalWithDisabledE2EEForMail: false,
         trustedFingerprints: new Set([]),
         encryptionCapableFingerprints: new Set([]),
         obsoleteFingerprints: new Set([]),
@@ -590,6 +599,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             sign: true,
             mimeType: MIME_TYPES_MORE.AUTOMATIC,
             scheme: PGP_SCHEMES.PGP_MIME,
+            isInternalWithDisabledE2EEForMail: false,
             apiKeys: [],
             pinnedKeys: [],
             verifyingPinnedKeys: [],
@@ -601,7 +611,6 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
             ktVerificationResult,
-            encryptionDisabled: false,
         });
     });
 
@@ -621,6 +630,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             sign: false,
             mimeType: MIME_TYPES_MORE.AUTOMATIC,
             scheme: PGP_SCHEMES.PGP_MIME,
+            isInternalWithDisabledE2EEForMail: false,
             apiKeys: [],
             pinnedKeys: [],
             verifyingPinnedKeys: [],
@@ -632,7 +642,6 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             contactSignatureTimestamp: undefined,
             emailAddressWarnings: undefined,
             ktVerificationResult,
-            encryptionDisabled: false,
         });
     });
 
@@ -644,6 +653,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             sign: false,
             mimeType: MIME_TYPES_MORE.AUTOMATIC,
             scheme: PGP_SCHEMES.PGP_MIME,
+            isInternalWithDisabledE2EEForMail: false,
             apiKeys: [],
             pinnedKeys: [],
             verifyingPinnedKeys: [],
@@ -655,7 +665,6 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
             ktVerificationResult,
-            encryptionDisabled: false,
         });
     });
 
@@ -678,6 +687,7 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             sign: true,
             mimeType: MIME_TYPES_MORE.AUTOMATIC,
             scheme: PGP_SCHEMES.PGP_MIME,
+            isInternalWithDisabledE2EEForMail: false,
             sendKey: pinnedFakeKey2,
             isSendKeyPinned: true,
             apiKeys,
@@ -692,7 +702,6 @@ describe('extractEncryptionPreferences for an external user without WKD keys', (
             contactSignatureTimestamp: new Date(0),
             emailAddressWarnings: undefined,
             ktVerificationResult,
-            encryptionDisabled: false,
         });
     });
 
@@ -754,6 +763,7 @@ describe('extractEncryptionPreferences for an own address', () => {
         publicKeys: { apiKeys, pinnedKeys, verifyingPinnedKeys },
         mimeType: MIME_TYPES_MORE.AUTOMATIC,
         scheme: PGP_SCHEMES_MORE.GLOBAL_DEFAULT,
+        isInternalWithDisabledE2EEForMail: false,
         trustedFingerprints: new Set([]),
         encryptionCapableFingerprints: new Set(['fakeKey1', 'fakeKey2']),
         obsoleteFingerprints: new Set([]),
@@ -789,6 +799,7 @@ describe('extractEncryptionPreferences for an own address', () => {
             sign: true,
             mimeType: MIME_TYPES_MORE.AUTOMATIC,
             scheme: PGP_SCHEMES.PGP_MIME,
+            isInternalWithDisabledE2EEForMail: false,
             sendKey: pinnedFakeKey1,
             isSendKeyPinned: false,
             apiKeys,

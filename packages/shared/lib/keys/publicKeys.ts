@@ -236,7 +236,7 @@ export const getContactPublicKeyModel = async ({
             pinnedKeys: orderedPinnedKeys,
             verifyingPinnedKeys: getVerifyingKeys(orderedPinnedKeys, compromisedFingerprints),
         },
-        hasDisabledE2EEForMail: !!apiKeysConfig.hasDisabledE2EEForMail, // when set, this will override the `encrypt` flag down the line
+        isInternalWithDisabledE2EEForMail: !!apiKeysConfig.isInternalWithDisabledE2EEForMail,
         trustedFingerprints,
         obsoleteFingerprints,
         compromisedFingerprints,
