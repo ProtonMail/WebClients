@@ -107,8 +107,8 @@ const DayEvents = ({
 
         const { style, height: eventHeight, size } = eventsLaidOut[i];
 
-        const isTemporary = event.id === 'tmp';
-        const isSelected = targetEventData ? event.id === targetEventData.id : false;
+        const isTemporary = event.uniqueId === 'tmp';
+        const isSelected = targetEventData ? event.uniqueId === targetEventData.uniqueId : false;
         const isThisSelected =
             (isSelected && isTemporary) || (isSelected && targetEventData && dayIndex === targetEventData.idx);
 
@@ -134,7 +134,7 @@ const DayEvents = ({
                     '--line-number': lineNumber || 1,
                     '--line-height': size && colHeight ? colHeight * eventHeight : undefined,
                 }}
-                key={event.id}
+                key={event.uniqueId}
                 formatTime={formatTime}
                 eventRef={eventRef}
                 isSelected={isSelected}

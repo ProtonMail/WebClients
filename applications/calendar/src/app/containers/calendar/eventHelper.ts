@@ -1,7 +1,7 @@
-import {getDtendProperty, propertyToUTCDate} from '@proton/shared/lib/calendar/vcalConverter';
-import {getIsAllDay} from '@proton/shared/lib/calendar/veventHelper';
 import { differenceInHours } from 'date-fns';
 
+import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
+import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { addDays, max } from '@proton/shared/lib/date-fns-utc';
 import {
     convertUTCDateTimeToZone,
@@ -10,7 +10,7 @@ import {
     fromUTCDateToLocalFakeUTCDate,
     toUTCDate,
 } from '@proton/shared/lib/date/timezone';
-import {EventModel, VcalVeventComponent, VisualCalendar} from '@proton/shared/lib/interfaces/calendar';
+import { EventModel, VcalVeventComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import getFrequencyModelChange from '../../components/eventModal/eventForm/getFrequencyModelChange';
 import { getDateTimeState, getTimeInUtc } from '../../components/eventModal/eventForm/time';
@@ -79,7 +79,7 @@ export const getCreateTemporaryEvent = (
     tzid: string
 ): CalendarViewEventTemporaryEvent => {
     return {
-        id: 'tmp',
+        uniqueId: 'tmp',
         data: {
             calendarData: Calendar,
         },
@@ -94,10 +94,10 @@ export const getEditTemporaryEvent = (
     model: EventModel,
     tzid: string
 ): CalendarViewEventTemporaryEvent => {
-    const { id, data } = targetEvent;
+    const { uniqueId, data } = targetEvent;
     return {
-        id: 'tmp',
-        targetId: (targetEvent as CalendarViewEventTemporaryEvent).targetId || id,
+        uniqueId: 'tmp',
+        targetUniqueId: (targetEvent as CalendarViewEventTemporaryEvent).targetUniqueId || uniqueId,
         data,
         ...getCalendarViewEventProperties(model, tzid),
         tmpData: model,

@@ -12,6 +12,7 @@ import { CalendarEventSharedData, VcalVeventComponent } from '@proton/shared/lib
 
 import { getViewEventDateProperties } from '../containers/calendar/eventHelper';
 import { EventTargetAction } from '../containers/calendar/interface';
+import { generateEventUniqueId } from '../helpers/event';
 
 interface Props {
     onChangeDate: (newDate: Date) => void;
@@ -37,7 +38,7 @@ export const useOpenCalendarEvents = ({ onChangeDate, tzid, setEventTargetAction
 
             navigateToEvent(utcStart, isAllDay);
             setEventTargetAction({
-                id: `${eventData.ID}`,
+                uniqueId: `${generateEventUniqueId(eventData.CalendarID, eventData.ID)}`,
                 isAllDay,
                 isAllPartDay,
                 startInTzid,
@@ -61,7 +62,7 @@ export const useOpenCalendarEvents = ({ onChangeDate, tzid, setEventTargetAction
 
             navigateToEvent(utcDate, isAllDay);
             setEventTargetAction({
-                id: `${eventData.ID}-${occurrence.occurrenceNumber}`,
+                uniqueId: `${generateEventUniqueId(eventData.CalendarID, eventData.ID)}-${occurrence.occurrenceNumber}`,
                 isAllDay,
                 isAllPartDay,
                 startInTzid,
