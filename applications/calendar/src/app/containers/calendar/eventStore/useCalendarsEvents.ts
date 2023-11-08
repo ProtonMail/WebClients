@@ -9,6 +9,7 @@ import { fromUTCDateToLocalFakeUTCDate } from '@proton/shared/lib/date/timezone'
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import isTruthy from '@proton/utils/isTruthy';
 
+import { generateEventUniqueId } from '../../../helpers/event';
 import { OpenedMailEvent } from '../../../hooks/useGetOpenedMailEvents';
 import { CalendarViewEvent, CalendarViewEventData } from '../interface';
 import { getExistingFetch } from './cache/fetchCalendarEvents';
@@ -99,7 +100,7 @@ const useCalendarsEvents = (
                         }
 
                         return {
-                            id,
+                            uniqueId: generateEventUniqueId(calendar.ID, id),
                             isAllDay,
                             isAllPartDay,
                             start: utcStart,
@@ -146,8 +147,10 @@ const useCalendarsEvents = (
                                     localEnd,
                                     isSingleOccurrence,
                                 };
+                                const eventUniqueId = generateEventUniqueId(calendar.ID, id);
+
                                 return {
-                                    id: `${id}-${occurrenceNumber}`,
+                                    uniqueId: `${eventUniqueId}-${occurrenceNumber}`,
                                     isAllDay,
                                     isAllPartDay,
                                     start: utcStart,
@@ -165,19 +168,28 @@ const useCalendarsEvents = (
 
                 return results
                     .concat(recurringResults)
-                    .map(({ start: utcStart, end: utcEnd, isAllDay, isAllPartDay, data, id }): CalendarViewEvent => {
-                        const start = fromUTCDateToLocalFakeUTCDate(utcStart, isAllDay, tzid);
-                        const end = fromUTCDateToLocalFakeUTCDate(utcEnd, isAllDay, tzid);
-
-                        return {
-                            id,
-                            isAllDay: isAllDay || isAllPartDay,
+                    .map(
+                        ({
+                            uniqueId,
+                            start: utcStart,
+                            end: utcEnd,
+                            isAllDay,
                             isAllPartDay,
-                            start,
-                            end,
                             data,
-                        };
-                    });
+                        }): CalendarViewEvent => {
+                            const start = fromUTCDateToLocalFakeUTCDate(utcStart, isAllDay, tzid);
+                            const end = fromUTCDateToLocalFakeUTCDate(utcEnd, isAllDay, tzid);
+
+                            return {
+                                uniqueId,
+                                isAllDay: isAllDay || isAllPartDay,
+                                isAllPartDay,
+                                start,
+                                end,
+                                data,
+                            };
+                        }
+                    );
             })
             .flat();
     }, [rerender, loading, tzid, requestedCalendars, utcDateRange]);
