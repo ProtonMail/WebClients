@@ -1,12 +1,13 @@
 import { render } from '@testing-library/react';
 import { nextFriday, nextMonday, nextSaturday, nextSunday, nextThursday, nextTuesday, nextWednesday } from 'date-fns';
 
-import { useUser } from '@proton/components/hooks';
+import { useUser, useUserSettings } from '@proton/components/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import SnoozeDurationSelection from './SnoozeDurationSelection';
 
 jest.mock('@proton/components/hooks/useUser');
+jest.mock('@proton/components/hooks/useUserSettings');
 
 const renderComponent = (canUnsnooze: boolean) => {
     return render(
@@ -21,11 +22,14 @@ const renderComponent = (canUnsnooze: boolean) => {
 
 describe('SnoozeDurationSelection', () => {
     const useUserMock = useUser as jest.Mock;
+    const useUserSettingsMock = useUserSettings as jest.Mock;
     beforeAll(() => {
         useUserMock.mockImplementation(() => [{ hasPaidMail: false }, jest.fn]);
+        useUserSettingsMock.mockImplementation(() => [{ WeekStart: 1 }]);
     });
     afterAll(() => {
         useUserMock.mockReset();
+        useUserSettingsMock.mockReset();
     });
 
     it('should render all Monday options', () => {
