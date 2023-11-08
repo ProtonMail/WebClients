@@ -660,6 +660,12 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus i ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } d'emmagatzematge"
+      ],
       "1 user": [
         "1 usuari"
       ],
@@ -668,6 +674,37 @@
       ],
       "6 users": [
         "6 usuaris"
+      ],
+      "Ad-blocker and malware protection": [
+        "Bloquejador d'anuncis i publicitat i protecció contra programari maliciós"
+      ],
+      "Extended version history": [
+        "Historial de versions esteso"
+      ],
+      "High speed streaming": [
+        "Streaming d'alta velocitat"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "${ DRIVE_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "${ VPN_SHORT_APP_NAME } prèmium"
+      ],
+      "Premium Password Manager": [
+        "Gestor de contrasenyes prèmium"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Els descomptes es basen en els preus mensuals estàndard."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "Garantia de reemborsament de 30 dies"
       ]
     },
     "bf2023: renew": {
@@ -682,6 +719,17 @@
     "bf2023: Title": {
       "Offer unavailable": [
         "L'oferta no està disponible."
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email, compartició de calendari i més."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "NetShield, dissenyat especialment, protegeix els vostres dispositius i accelera la navegació bloquejant anuncis, rastrejadors i programari maliciós."
       ]
     },
     "Billing cycle": {

@@ -6953,6 +6953,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Lütfen yeniden deneyin. Farklı bir ödeme yöntemi kullanın ya da yardım almak için PayPal ile görüşün."
       ],
+      "Please use another browser or download the file.": [
+        "Lütfen başka bir tarayıcı kullanın ya da dosyayı indirin."
+      ],
       "Please verify payment at the new tab which was opened.": [
         "Lütfen açılan yeni sekmede ödemeyi doğrulayın."
       ],
@@ -6964,6 +6967,9 @@
       ],
       "Preview failed to be loaded": [
         "Ön izleme yüklenemedi"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Bu tarayıcı şu anda bu dosya türünün ön izlenmesini desteklemiyor."
       ],
       "Preview for this file type is not supported": [
         "Bu dosya türünün ön izlemesi görüntülenemiyor"
@@ -9906,26 +9912,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "${ currentPlanName } hesabımı koru"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Gözden geçirmeyi sürdür"
@@ -9967,10 +9953,34 @@
         "${ upsellPlanHumanSize } tarifesine yükselt"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "${ currentPlanName } hesabımı koru"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ]
+    },
     "new_plans: feature": {
       "${ n } calendar": [
         "${ n } takvim",
         "${ n } takvim"
+      ],
+      "${ n } calendar per user": [
+        "Her kullanıcı için ${ n } takvim",
+        "Her kullanıcı için ${ n } takvim"
       ],
       "${ n } custom email domain": [
         "${ n } özel e-posta etki alanı",

@@ -1047,11 +1047,11 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Menu autouzupełniania będzie otwierane w polach logowania."
       ],
-      "The following item could not be imported :": [
-        "Następujący element nie mógł zostać zaimportowany:",
-        "Następujące ${ result.ignored.length } elementy nie mogły zostać zaimportowane:",
-        "Następujące ${ result.ignored.length } elementów nie mogły zostać zaimportowane:",
-        "Następujące ${ result.ignored.length } elementów nie mogły zostać zaimportowane:"
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Następujący ${ result.ignored.length } element nie może zostać zaimportowany:",
+        "Następujące ${ result.ignored.length } elementy nie mogą zostać zaimportowane:",
+        "Następujące ${ result.ignored.length } elementów nie mogą zostać zaimportowane:",
+        "Następujące ${ result.ignored.length } elementów nie mogą zostać zaimportowane:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Tekst, który próbujesz wkleić, jest dłuższy niż maksymalna dozwolona liczba ${ maxLength } znaków."

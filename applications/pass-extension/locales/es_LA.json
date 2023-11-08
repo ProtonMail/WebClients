@@ -1015,8 +1015,8 @@
       "The autofill dropdown will automatically open on field focus.": [
         "El menú desplegable de autocompletar se abrirá automáticamente en el campo enfocado."
       ],
-      "The following item could not be imported :": [
-        "El siguiente elemento no pudo importarse:",
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "${ result.ignored.length } elemento no pudo importarse:",
         "Los siguientes ${ result.ignored.length } elementos no pudieron importarse:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [

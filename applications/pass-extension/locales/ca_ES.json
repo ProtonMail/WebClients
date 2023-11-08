@@ -56,6 +56,9 @@
       "Confirm access": [
         "Confirma l'accés"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Connecteu el vostre compte de ${ BRAND_NAME }"
+      ],
       "Continue": [
         "Continua"
       ],
@@ -526,6 +529,9 @@
       "The file you are trying to import is empty": [
         "El fitxer que esteu intentant importar està buit"
       ],
+      "The URL is in the list": [
+        "L'URL és a la llista."
+      ],
       "Too many failed attempts. Please sign in again.": [
         "Massa intents erronis. Torneu a iniciar la sessió."
       ],
@@ -882,6 +888,9 @@
       "Settings successfully updated": [
         "S'han actualitzat les preferències"
       ],
+      "Share with 10 others": [
+        "Comparteix amb 10 altres"
+      ],
       "Sign in or create an account to continue.": [
         "Inicieu sessió o creeu un compte per continuar."
       ],
@@ -905,10 +914,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Gràcies, s'ha informat del problema"
-      ],
-      "The following item could not be imported :": [
-        "No s'ha pogut importar l'element següent:",
-        "No s'han pogut importar els ${ result.ignored.length } elements següents:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "El text que esteu intentant enganxar és més llarg que la longitud màxima permesa de ${ maxLength } caràcters."
@@ -1532,6 +1537,9 @@
       "Confirm PIN code": [
         "Confirmeu el codi PIN"
       ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "Connecteu el vostre compte de ${ BRAND_NAME }"
+      ],
       "Create PIN code": [
         "Creeu un codi PIN"
       ],
@@ -1633,6 +1641,9 @@
       ]
     },
     "Validation": {
+      "Field name is required": [
+        "Es requereix el nom del camp."
+      ],
       "Url already exists": [
         "Url ja existent"
       ],
