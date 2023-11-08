@@ -553,6 +553,9 @@
       ],
       "MB": [
         "МБ"
+      ],
+      "TB": [
+        "ТБ"
       ]
     },
     "file size format, long": {
@@ -878,12 +881,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Дякуємо вам, що повідомили про проблему"
-      ],
-      "The following item could not be imported :": [
-        "Не вдалося імпортувати такий елемент:",
-        "Не вдалося імпортувати ці ${ result.ignored.length } елементи",
-        "Не вдалося імпортувати ці ${ result.ignored.length } елементів",
-        "Не вдалося імпортувати ці ${ result.ignored.length } елементів"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "У тексті, який ви намагаєтеся вставити перевищено максимально дозволену кількість ${ maxLength } символів."
