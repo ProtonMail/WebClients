@@ -1,10 +1,11 @@
 import { useMemo } from 'react';
 
-import { isToday, isTomorrow } from 'date-fns';
+import { format, isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
 import { formatDateToHuman, formatFullDate, formatSimpleDate } from '../../helpers/date';
@@ -54,7 +55,7 @@ const RemindedConversation = ({ className, snoozeDate }: { className?: string; s
             return format(snoozeDate, 'p', { locale: dateLocale });
         }
 
-        return format(snoozeDate, 'MMM dd', { locale: dateLocale });
+        return format(snoozeDate, 'PP', { locale: dateLocale });
     }, [snoozeDate]);
 
     return (
