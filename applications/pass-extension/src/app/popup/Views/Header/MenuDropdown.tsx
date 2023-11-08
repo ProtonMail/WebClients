@@ -27,6 +27,7 @@ import {
 } from '@proton/pass/store/selectors';
 import type { MaybeNull, ShareType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import clsx from '@proton/utils/clsx';
 
@@ -132,8 +133,8 @@ export const MenuDropdown: VFC = () => {
                     <VaultIcon
                         className="flex-item-noshrink"
                         size={16}
-                        color={vault?.content.display.color}
-                        icon={vault?.content.display.icon}
+                        color={inTrash ? VaultColor.COLOR_UNSPECIFIED : vault?.content.display.color}
+                        icon={inTrash ? 'pass-trash' : vault?.content.display.icon}
                     />
                 </Button>
 

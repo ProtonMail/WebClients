@@ -8,7 +8,7 @@ const numericEntries = <T extends Record<number, any>>(
     Object.keys(obj).map((key) => [Number(key), obj[Number(key)]]);
 
 export const VAULT_COLOR_MAP: Record<number, ColorRGB> = {
-    [VaultColor.COLOR_UNSPECIFIED]: '167 121 255',
+    [VaultColor.COLOR_UNSPECIFIED]: '140 140 147',
     [VaultColor.COLOR_CUSTOM]: '167 121 255',
     [VaultColor.COLOR1]: '167 121 255',
     [VaultColor.COLOR2]: '242 146 146',
