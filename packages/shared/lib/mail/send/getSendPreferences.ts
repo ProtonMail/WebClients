@@ -22,14 +22,14 @@ const getSendPreferences = (
         warnings,
         error,
         ktVerificationResult,
-        encryptionDisabled,
+        hasDisabledE2EEForMail,
     } = encryptionPreferences;
     const isEncryptedToOutside = isEO(message);
     // override encrypt if necessary
-    const newEncrypt = encrypt || isEncryptedToOutside;
+    const newEncrypt = hasDisabledE2EEForMail ? false : encrypt || isEncryptedToOutside;
     // override sign if necessary
     // (i.e. when the contact sign preference is false and the user toggles "Sign" on the composer)
-    const newSign = isEncryptedToOutside ? false : sign || isSign(message);
+    const newSign = isEncryptedToOutside || hasDisabledE2EEForMail ? false : sign || isSign(message);
     // cast PGP scheme into what API expects. Override if necessary
     const { pgpScheme, mimeType } = getPGPSchemeAndMimeType({ ...encryptionPreferences, sign: newSign }, message);
 
@@ -45,7 +45,7 @@ const getSendPreferences = (
         warnings,
         error,
         ktVerificationResult,
-        encryptionDisabled,
+        encryptionDisabled: hasDisabledE2EEForMail,
     };
 };
 
