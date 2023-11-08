@@ -133,7 +133,7 @@ describe('AddressesEditor', () => {
     `(
         'should add correct addresses with the input "$input"',
         async ({ input, expectedArray }: { input: string; expectedArray: Recipient[] }) => {
-            addApiMock('core/v4/keys', () => ({}));
+            addApiMock('core/v4/keys/all', () => ({ Address: { Keys: [] } }));
             const composerID = await setupComposer();
 
             const { getAllByTestId, getByTestId } = await render(

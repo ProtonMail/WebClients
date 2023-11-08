@@ -57,7 +57,8 @@ export const getAndVerifyApiKeys = async ({
     api: Api;
     email: string;
     internalKeysOnly: boolean;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
+    /** KT verification function, or `null` for legacy use-case where KT is disabled */
+    verifyOutboundPublicKeys: VerifyOutboundPublicKeys | null;
     silence?: boolean;
     noCache?: boolean;
 }): Promise<ApiKeysWithKTStatus> => {
