@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
 import { ThemeColorUnion } from '@proton/colors';
 import {
@@ -113,7 +113,11 @@ function WelcomeActionsSpotlight({
             <div className="flex-item">
                 <h6 className="text-semibold">{c('Title').t`Your 500 MB bonus`}</h6>
                 {/* translator: You have X days left to claim your 500 MB welcome bonus and double your storage */}
-                {c('Info').t`You have ${expiresInDays} days left to claim your 500 MB welcome bonus and `}
+                {c('Info').ngettext(
+                    msgid`You have ${expiresInDays} day left to claim your 500 MB welcome bonus and `,
+                    `You have ${expiresInDays} days left to claim your 500 MB welcome bonus and `,
+                    expiresInDays
+                )}
                 <a href={getKnowledgeBaseUrl('/more-storage-proton-drive')} target="_blank">{c('Info')
                     .t`double your storage`}</a>
             </div>
