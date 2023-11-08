@@ -44,7 +44,7 @@ describe('ItemDateSnoozedMessage', () => {
                 useTooltip={false}
             />
         );
-        expect(getByText(`Snoozed until today, ${formattedDate}`));
+        expect(getByText(`${formattedDate}`));
     });
 
     it('Should display tomorrow when the snooze time is tomorrow', () => {
@@ -59,7 +59,7 @@ describe('ItemDateSnoozedMessage', () => {
                 useTooltip={false}
             />
         );
-        expect(getByText(`Snoozed until tomorrow, ${formattedDate}`));
+        expect(getByText(`Tomorrow, ${formattedDate}`));
     });
 
     it('Should display the full date when the snooze time is not today or tomorrow', () => {
