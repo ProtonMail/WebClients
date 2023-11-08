@@ -15,13 +15,12 @@ import ItemDateRender from './ItemDateRender';
 import './ItemDateSnoozedMessage.scss';
 
 interface Props {
-    snoozeTime: number;
+    snoozeDate: Date;
     className?: string;
     useTooltip?: boolean;
 }
 
-const SnoozedDate = ({ snoozeTime, className, useTooltip = false }: Props) => {
-    const snoozeDate = new Date(snoozeTime * 1000);
+const SnoozedDate = ({ snoozeDate, className, useTooltip = false }: Props) => {
     const snoozeShortDate = useMemo(() => {
         const { formattedTime } = formatDateToHuman(snoozeDate);
         const dateString = formatSimpleDate(snoozeDate);
@@ -49,11 +48,19 @@ const SnoozedDate = ({ snoozeTime, className, useTooltip = false }: Props) => {
     );
 };
 
-const RemindedConversation = ({ className }: { className?: string }) => {
+const RemindedConversation = ({ className, snoozeDate }: { className?: string; snoozeDate: Date }) => {
+    const snoozeTime = useMemo(() => {
+        if (isToday(snoozeDate)) {
+            return format(snoozeDate, 'p', { locale: dateLocale });
+        }
+
+        return format(snoozeDate, 'MMM dd', { locale: dateLocale });
+    }, [snoozeDate]);
+
     return (
         <span className={clsx(className, 'item-date-snoozed flex flex-align-items-center')}>
             <Icon name="bell" className="mr-1" />
-            <span className="">{c('Snooze').t`Reminded`}</span>
+            <span>{snoozeTime}</span>
         </span>
     );
 };
@@ -76,10 +83,15 @@ const ItemDateSnoozeMessage = ({
     }
 
     const isReminded = isElementReminded(element);
+    const snoozeDate = snoozeTime ? new Date(snoozeTime * 1000) : undefined;
+    if (!snoozeDate) {
+        return null;
+    }
+
     if (snoozeTime && labelID !== MAILBOX_LABEL_IDS.INBOX && !isReminded) {
-        return <SnoozedDate snoozeTime={snoozeTime} className={className} useTooltip={useTooltip} />;
+        return <SnoozedDate snoozeDate={snoozeDate} className={className} useTooltip={useTooltip} />;
     } else if (isReminded) {
-        return <RemindedConversation className={className} />;
+        return <RemindedConversation className={className} snoozeDate={snoozeDate} />;
     }
 
     return null;
