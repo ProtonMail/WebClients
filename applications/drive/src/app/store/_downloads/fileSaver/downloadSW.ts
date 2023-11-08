@@ -2,7 +2,6 @@
 
 interface DownloadConfig {
     stream: ReadableStream<Uint8Array>;
-    port: string;
     filename: string;
     mimeType: string;
     size?: number;
@@ -55,6 +54,8 @@ function createDownloadStream(port: MessagePort) {
 class DownloadServiceWorker {
     pendingDownloads = new Map<string, DownloadConfig>();
 
+    id = 1;
+
     constructor() {
         self.addEventListener('install', this.onInstall);
         self.addEventListener('activate', this.onActivate);
@@ -75,25 +76,42 @@ class DownloadServiceWorker {
      * and responds with a stream, that client itself controls.
      */
     onFetch = (event: any) => {
-        const { url } = event.request;
+        const url = new URL(event.request.url);
 
-        if (url.endsWith('/sw/ping')) {
+        // Ignore non SW urls
+        if (!url.pathname.startsWith('/sw')) {
+            return;
+        }
+
+        // Respond to pings
+        if (url.pathname.endsWith('/sw/ping')) {
             return event.respondWith(new Response('pong', { headers: new Headers(SECURITY_HEADERS) }));
         }
 
-        const pendingDownload = this.pendingDownloads.get(url);
+        const chunks = url.pathname.split('/').filter((item) => !!item);
+        const id = chunks[chunks.length - 1];
+
+        const pendingDownload = this.pendingDownloads.get(id);
+
         if (!pendingDownload) {
+            event.respondWith(
+                new Response(undefined, {
+                    status: 404,
+                    headers: new Headers(SECURITY_HEADERS),
+                })
+            );
+
             return;
         }
 
         const { stream, filename, size, mimeType } = pendingDownload;
 
-        this.pendingDownloads.delete(url);
+        this.pendingDownloads.delete(id);
 
         const headers = new Headers({
             ...(size ? { 'Content-Length': `${size}` } : {}),
             'Content-Type': mimeType,
-            'Content-Disposition': `attachment; filename="${encodeURI(filename)}"`,
+            'Content-Disposition': `attachment; filename="${encodeURIComponent(filename)}"`,
             ...SECURITY_HEADERS,
         });
 
@@ -109,20 +127,21 @@ class DownloadServiceWorker {
             return;
         }
 
+        const id = this.id++;
+
         const { filename, mimeType, size } = event.data.payload;
-        const downloadUrl = encodeURI(`${(self as any).registration.scope}sw/${Math.random()}/${filename}`);
+        const downloadUrl = new URL(`/sw/${id}`, (self as any).registration.scope);
 
         const port = event.ports[0];
 
-        this.pendingDownloads.set(downloadUrl, {
+        this.pendingDownloads.set(`${id}`, {
             stream: createDownloadStream(port),
             filename,
             mimeType,
             size,
-            port,
         });
 
-        port.postMessage({ action: 'download_started', payload: downloadUrl });
+        port.postMessage({ action: 'download_started', payload: downloadUrl.toString() });
     };
 }
 
