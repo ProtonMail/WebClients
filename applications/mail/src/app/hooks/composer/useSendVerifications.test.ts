@@ -36,6 +36,7 @@ const mockEncryptionPreferences: { [email: string]: EncryptionPreferences } = {
         hasApiKeys: true,
         hasPinnedKeys: true,
         isContact: true,
+        isInternalWithDisabledE2EEForMail: false,
     },
 
     'internal.deleted@test.email': {
@@ -54,6 +55,7 @@ const mockEncryptionPreferences: { [email: string]: EncryptionPreferences } = {
         hasApiKeys: true,
         hasPinnedKeys: false,
         isContact: true,
+        isInternalWithDisabledE2EEForMail: false,
     },
 
     'internal.unpinned@test.email': {
@@ -72,6 +74,26 @@ const mockEncryptionPreferences: { [email: string]: EncryptionPreferences } = {
         hasApiKeys: true,
         hasPinnedKeys: false,
         isContact: true,
+        isInternalWithDisabledE2EEForMail: false,
+    },
+
+    'internal.pinned.e2eedisabled@test.email': {
+        sign: true,
+        encrypt: true,
+        isSendKeyPinned: true,
+        isContactSignatureVerified: true,
+        contactSignatureTimestamp: new Date(),
+        // irrelevant fields
+        scheme: PGP_SCHEMES.PGP_MIME,
+        mimeType: MIME_TYPES_MORE.AUTOMATIC,
+        apiKeys: [],
+        pinnedKeys: [],
+        verifyingPinnedKeys: [],
+        isInternal: true,
+        hasApiKeys: true,
+        hasPinnedKeys: true,
+        isContact: true,
+        isInternalWithDisabledE2EEForMail: true,
     },
 
     'external.encryptsign@test.email': {
@@ -90,6 +112,7 @@ const mockEncryptionPreferences: { [email: string]: EncryptionPreferences } = {
         hasApiKeys: false,
         hasPinnedKeys: true,
         isContact: true,
+        isInternalWithDisabledE2EEForMail: false,
     },
 
     'external.deleted@test.email': {
@@ -108,6 +131,7 @@ const mockEncryptionPreferences: { [email: string]: EncryptionPreferences } = {
         hasApiKeys: false,
         hasPinnedKeys: false,
         isContact: true,
+        isInternalWithDisabledE2EEForMail: false,
     },
 
     'external.signonly@test.email': {
@@ -126,6 +150,7 @@ const mockEncryptionPreferences: { [email: string]: EncryptionPreferences } = {
         hasApiKeys: false,
         hasPinnedKeys: true,
         isContact: true,
+        isInternalWithDisabledE2EEForMail: false,
     },
 };
 
@@ -190,6 +215,7 @@ describe('useSendVerifications', () => {
                     hasPinnedKeys: true,
                     pgpScheme: PACKAGE_TYPE.SEND_PM,
                     mimeType: MIME_TYPES.DEFAULT,
+                    encryptionDisabled: false,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -222,6 +248,7 @@ describe('useSendVerifications', () => {
                     hasPinnedKeys: true,
                     pgpScheme: PACKAGE_TYPE.SEND_PM,
                     mimeType: MIME_TYPES.DEFAULT,
+                    encryptionDisabled: false,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -243,6 +270,39 @@ describe('useSendVerifications', () => {
             expect(mapSendPrefs[recipient].isPublicKeyPinned).toBe(false);
         });
 
+        it('should warn user on encryption disabled with contact with pinned keys (internal case only)', async () => {
+            const recipient = 'internal.pinned.e2eedisabled@test.email';
+            const lastMinutePreferences = mockEncryptionPreferences[recipient];
+            const cachedPreferences: SendInfo = {
+                sendPreferences: {
+                    encrypt: true,
+                    sign: true,
+                    isPublicKeyPinned: true,
+                    hasApiKeys: true,
+                    hasPinnedKeys: true,
+                    pgpScheme: PACKAGE_TYPE.SEND_PM,
+                    mimeType: MIME_TYPES.DEFAULT,
+                    encryptionDisabled: false,
+                },
+                contactSignatureInfo: {
+                    isVerified: true,
+                    creationTime: new Date(+lastMinutePreferences.contactSignatureTimestamp!),
+                },
+                loading: false,
+                emailValidation: true,
+            };
+            const extendedVerifications = await setup();
+            const message = createMessage(recipient);
+            const mapSendInfo = { [recipient]: cachedPreferences };
+            const { mapSendPrefs } = await extendedVerifications(message, mapSendInfo);
+
+            expect(mockCreateModalSpy).toHaveBeenCalled(); // user was warned
+            expect(mapSendPrefs[recipient]).toStrictEqual(getSendPreferences(lastMinutePreferences, message));
+            // sanity checks
+            expect(mapSendPrefs[recipient].encrypt).toBe(false);
+            expect(mapSendPrefs[recipient].isPublicKeyPinned).toBe(true);
+        });
+
         it('should silently send with last-minute prefs on contact deletion with encryption disabled (external)', async () => {
             const recipient = 'external.deleted@test.email';
             const cachedPreferences: SendInfo = {
@@ -254,6 +314,7 @@ describe('useSendVerifications', () => {
                     hasPinnedKeys: true,
                     pgpScheme: PACKAGE_TYPE.SEND_PGP_MIME,
                     mimeType: MIME_TYPES.MIME,
+                    encryptionDisabled: false,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -287,6 +348,7 @@ describe('useSendVerifications', () => {
                     hasPinnedKeys: true,
                     pgpScheme: PACKAGE_TYPE.SEND_PM,
                     mimeType: MIME_TYPES.DEFAULT,
+                    encryptionDisabled: false,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -319,6 +381,7 @@ describe('useSendVerifications', () => {
                     hasPinnedKeys: true,
                     pgpScheme: PACKAGE_TYPE.SEND_PGP_MIME,
                     mimeType: MIME_TYPES.MIME,
+                    encryptionDisabled: false,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -351,6 +414,7 @@ describe('useSendVerifications', () => {
                     hasPinnedKeys: true,
                     pgpScheme: PACKAGE_TYPE.SEND_PM,
                     mimeType: MIME_TYPES.DEFAULT,
+                    encryptionDisabled: false,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -383,6 +447,7 @@ describe('useSendVerifications', () => {
                     hasPinnedKeys: true,
                     pgpScheme: PACKAGE_TYPE.SEND_PGP_MIME,
                     mimeType: MIME_TYPES.DEFAULT,
+                    encryptionDisabled: false,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -415,6 +480,7 @@ describe('useSendVerifications', () => {
                     hasPinnedKeys: false,
                     pgpScheme: PACKAGE_TYPE.SEND_PM,
                     mimeType: MIME_TYPES.DEFAULT,
+                    encryptionDisabled: false,
                 },
                 contactSignatureInfo: {
                     isVerified: undefined,
@@ -447,6 +513,7 @@ describe('useSendVerifications', () => {
                     hasPinnedKeys: true,
                     pgpScheme: PACKAGE_TYPE.SEND_PGP_MIME,
                     mimeType: MIME_TYPES.MIME,
+                    encryptionDisabled: false,
                 },
                 contactSignatureInfo: {
                     isVerified: true,
@@ -479,6 +546,7 @@ describe('useSendVerifications', () => {
                     hasPinnedKeys: false,
                     pgpScheme: PACKAGE_TYPE.SEND_PGP_MIME,
                     mimeType: MIME_TYPES.MIME,
+                    encryptionDisabled: false,
                 },
                 contactSignatureInfo: {
                     isVerified: undefined,
@@ -511,6 +579,7 @@ describe('useSendVerifications', () => {
                     hasPinnedKeys: false,
                     pgpScheme: PACKAGE_TYPE.SEND_PGP_MIME,
                     mimeType: MIME_TYPES.MIME,
+                    encryptionDisabled: false,
                 },
                 contactSignatureInfo: {
                     isVerified: undefined,
