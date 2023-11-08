@@ -31,12 +31,10 @@ export const formatDownload = async (
     messageFlags?: number
 ): Promise<Download> => {
     try {
-        const reverify = !!(verification?.pinnedKeysVerified && verification.senderPinnedKeys?.length);
         const { data, verified } = await getAndVerify(
             attachment,
             verification,
             messageKeys,
-            reverify,
             api,
             getAttachment,
             onUpdateAttachment,
@@ -45,8 +43,7 @@ export const formatDownload = async (
         return {
             attachment,
             data: data as Uint8Array,
-            // Only care about signature verification for verified senders with pinned keys
-            verified: reverify ? verified : VERIFICATION_STATUS.NOT_VERIFIED,
+            verified,
         };
     } catch (error: any) {
         // If the decryption fails we download the encrypted version
