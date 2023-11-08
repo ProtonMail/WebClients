@@ -9,6 +9,8 @@ export const vaultEditRequest = (shareId: string) => `vault::edit::${shareId}`;
 export const vaultDeleteRequest = (shareId: string) => `vault::delete::${shareId}`;
 export const vaultMoveAllItemsRequest = (shareId: string) => `vault::move::all::items::${shareId}`;
 export const vaultTransferOwnerRequest = (userShareId: string) => `vault::transfer:owner::${userShareId}`;
+export const trashEmptyRequest = () => `trash::empty`;
+export const trashRestoreRequest = () => `trash::restore`;
 
 export const importItemsRequest = () => `import::items`;
 

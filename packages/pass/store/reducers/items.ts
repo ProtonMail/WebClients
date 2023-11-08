@@ -4,8 +4,6 @@ import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import {
     autofillIntent,
     bootSuccess,
-    emptyTrashFailure,
-    emptyTrashIntent,
     emptyTrashSuccess,
     importItemsBatchSuccess,
     inviteAcceptSuccess,
@@ -33,8 +31,6 @@ import {
     itemTrashFailure,
     itemTrashIntent,
     itemTrashSuccess,
-    restoreTrashFailure,
-    restoreTrashIntent,
     restoreTrashSuccess,
     shareDeleteSync,
     shareLeaveSuccess,
@@ -104,16 +100,6 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             initiate: itemDeleteIntent.optimisticMatch,
             commit: itemDeleteSuccess.optimisticMatch,
             revert: itemDeleteFailure.optimisticMatch,
-        },
-        {
-            initiate: restoreTrashIntent.match,
-            commit: restoreTrashSuccess.match,
-            revert: restoreTrashFailure.match,
-        },
-        {
-            initiate: emptyTrashIntent.match,
-            commit: emptyTrashSuccess.match,
-            revert: emptyTrashFailure.match,
         },
     ],
     (state = {}, action: AnyAction) => {
@@ -273,7 +259,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             );
         }
 
-        if (emptyTrashIntent.match(action)) {
+        if (emptyTrashSuccess.match(action)) {
             return Object.fromEntries(
                 Object.entries(state).map(([shareId, itemsById]) => [
                     shareId,
@@ -286,7 +272,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             );
         }
 
-        if (restoreTrashIntent.match(action)) {
+        if (restoreTrashSuccess.match(action)) {
             return Object.fromEntries(
                 Object.entries(state).map(([shareId, itemsById]) => [
                     shareId,
