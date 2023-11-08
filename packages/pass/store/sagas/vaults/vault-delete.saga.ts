@@ -1,15 +1,13 @@
-import { put } from 'redux-saga/effects';
+import { put, takeEvery } from 'redux-saga/effects';
 
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { deleteVault } from '@proton/pass/lib/vaults/vault.requests';
 import { vaultDeleteFailure, vaultDeleteIntent, vaultDeleteSuccess } from '@proton/pass/store/actions';
-import { takeEveryBefore } from '@proton/pass/store/sagas/utils/take.before';
-import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
 
 function* deleteVaultWorker(
-    { payload: { shareId, content }, meta }: ReturnType<typeof vaultDeleteIntent>,
-    stateBeforeAction: State,
-    { onItemsChange }: WorkerRootSagaOptions
+    { onItemsChange }: WorkerRootSagaOptions,
+    { payload: { shareId, content }, meta }: ReturnType<typeof vaultDeleteIntent>
 ): Generator {
     try {
         yield deleteVault(shareId);
@@ -23,5 +21,5 @@ function* deleteVaultWorker(
 }
 
 export default function* watcher(options: WorkerRootSagaOptions) {
-    yield takeEveryBefore(vaultDeleteIntent.match, deleteVaultWorker, options);
+    yield takeEvery(vaultDeleteIntent.match, deleteVaultWorker, options);
 }
