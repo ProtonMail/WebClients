@@ -1,33 +1,23 @@
-import { put } from 'redux-saga/effects';
+import { put, select, takeLeading } from 'redux-saga/effects';
 
 import { restoreItems } from '@proton/pass/lib/items/item.requests';
 import { restoreTrashFailure, restoreTrashIntent, restoreTrashSuccess } from '@proton/pass/store/actions';
-import { takeBefore } from '@proton/pass/store/sagas/utils/take.before';
 import { selectAllTrashedItems } from '@proton/pass/store/selectors';
-import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { ItemRevision } from '@proton/pass/types';
 
-function* restoreTrash(
-    { meta }: ReturnType<typeof restoreTrashIntent>,
-    stateBeforeAction: State,
-    { onItemsChange }: WorkerRootSagaOptions
-) {
-    const { callback: onRestoreTrashProcessed } = meta;
-
+function* restoreTrash({ onItemsChange }: WorkerRootSagaOptions, { meta }: ReturnType<typeof restoreTrashIntent>) {
     try {
-        yield restoreItems(selectAllTrashedItems(stateBeforeAction));
-        const restoreTrashSuccessAction = restoreTrashSuccess();
-        yield put(restoreTrashSuccessAction);
+        const trashedItems: ItemRevision[] = yield select(selectAllTrashedItems);
+        yield restoreItems(trashedItems);
+        yield put(restoreTrashSuccess(meta.request.id));
 
-        onRestoreTrashProcessed?.(restoreTrashSuccessAction);
         onItemsChange?.();
     } catch (e) {
-        const restoreTrashFailureAction = restoreTrashFailure(e);
-        yield put(restoreTrashFailureAction);
-
-        onRestoreTrashProcessed?.(restoreTrashFailureAction);
+        yield put(restoreTrashFailure(meta.request.id, e));
     }
 }
 
 export default function* watcher(options: WorkerRootSagaOptions) {
-    yield takeBefore(restoreTrashIntent.match, restoreTrash, options);
+    yield takeLeading(restoreTrashIntent.match, restoreTrash, options);
 }

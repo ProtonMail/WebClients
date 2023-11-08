@@ -23,17 +23,29 @@ type OptionsSelector = Selector<State, WithItemCount<VaultShareItem>[]>;
 
 export type Props = Omit<ModalProps, 'onSubmit'> & {
     downgradeMessage: string;
-    shareId: string;
     onSubmit: (shareId: string) => void;
     optionsSelector: OptionsSelector;
+    shareId: string;
+    title?: string;
 };
 
 /* if the user has downgraded : only allow him to select
  * his writable vaults as target. This rule applies when moving
  * an item to a vault or when selecting an item's vault */
-export const VaultSelectModal: VFC<Props> = ({ downgradeMessage, shareId, onSubmit, optionsSelector, ...props }) => {
+export const VaultSelect: VFC<Props> = ({ downgradeMessage, onSubmit, optionsSelector, shareId, title, ...props }) => {
     const vaults = useSelector(optionsSelector);
     const { didDowngrade } = useSelector(selectVaultLimits);
+
+    const sortedVaults = useMemo(
+        () =>
+            /* make the current vault appear first in the list */
+            vaults.slice().sort((a, b) => {
+                if (a.shareId === shareId) return -1;
+                else if (b.shareId === shareId) return 1;
+                else return 0;
+            }),
+        [vaults]
+    );
 
     return (
         <SidebarModal {...props}>
@@ -56,11 +68,16 @@ export const VaultSelectModal: VFC<Props> = ({ downgradeMessage, shareId, onSubm
                     />
                 }
             >
+                {title && <div className="mb-2 text-bold text-xl">{title}</div>}
                 {didDowngrade && <ItemCard>{downgradeMessage}</ItemCard>}
 
                 <RadioButtonGroup name="vault-select" className="flex-columns" value={shareId} onChange={onSubmit}>
-                    {vaults.map((vault) => (
-                        <RadioLabelledButton value={vault.shareId} key={vault.shareId}>
+                    {sortedVaults.map((vault) => (
+                        <RadioLabelledButton
+                            value={vault.shareId}
+                            key={vault.shareId}
+                            disabled={vault.shareId === shareId}
+                        >
                             <VaultIcon
                                 size={20}
                                 background
