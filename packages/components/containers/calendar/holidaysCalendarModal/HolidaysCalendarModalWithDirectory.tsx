@@ -224,6 +224,24 @@ const HolidaysCalendarModalWithDirectory = ({
         return getHolidaysCalendarsFromCountryCode(visibleDirectory, computedCalendar?.CountryCode || '');
     }, [computedCalendar, visibleDirectory]);
 
+    const preselectedOption = useMemo(() => {
+        return canPreselect
+            ? {
+                  countryName: suggestedCalendar.Country,
+                  countryCode: suggestedCalendar.CountryCode,
+              }
+            : undefined;
+    }, [canPreselect, suggestedCalendar]);
+
+    const value = useMemo(() => {
+        return selectedCalendar
+            ? {
+                  countryName: selectedCalendar.Country,
+                  countryCode: selectedCalendar.CountryCode,
+              }
+            : undefined;
+    }, [selectedCalendar]);
+
     const handleSubmit = async () => {
         try {
             if (!onFormSubmit() || hasAlreadyJoinedSelectedCalendar) {
@@ -376,22 +394,8 @@ const HolidaysCalendarModalWithDirectory = ({
                 {isComplete && (
                     <CountrySelect
                         options={countryOptions}
-                        preSelectedOption={
-                            canPreselect
-                                ? {
-                                      countryName: suggestedCalendar.Country,
-                                      countryCode: suggestedCalendar.CountryCode,
-                                  }
-                                : undefined
-                        }
-                        value={
-                            selectedCalendar
-                                ? {
-                                      countryName: selectedCalendar.Country,
-                                      countryCode: selectedCalendar.CountryCode,
-                                  }
-                                : undefined
-                        }
+                        preSelectedOption={preselectedOption}
+                        value={value}
                         preSelectedOptionDivider={hintText}
                         onSelectCountry={handleSelectCountry}
                         error={validator([getErrorText()])}
