@@ -77,7 +77,7 @@ import AccountPublicApp from './AccountPublicApp';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
 import { getPaths } from './helper';
 
-export const getSearchParams = (searchParams: URLSearchParams) => {
+export const getSearchParams = (location: H.Location, searchParams: URLSearchParams) => {
     const { product, productParam } = getProductParams(location.pathname, searchParams);
     return { product, productParam };
 };
@@ -154,7 +154,7 @@ const PublicApp = ({ onLogin, locales }: Props) => {
     const searchParams = new URLSearchParams(location.search);
 
     const { product: maybeQueryAppIntent, productParam } = useMemo(() => {
-        return getSearchParams(searchParams);
+        return getSearchParams(location, searchParams);
     }, []);
 
     const [maybeLocalRedirect] = useState(() => {
