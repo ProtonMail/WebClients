@@ -1288,6 +1288,17 @@
         "${ mailPlus }: den privatlivsfokuserede mail- og kalenderløsning til dine daglige kommunikationsbehov."
       ]
     },
+    "bf2023: Action": {
+      "Cancel": [
+        "Annuller"
+      ],
+      "Close": [
+        "Luk"
+      ],
+      "Remove": [
+        "Fjern"
+      ]
+    },
     "bf2023: Deal details": {
       "${ storageSize } storage": [
         "${ storageSize } lagerplads"
@@ -1315,6 +1326,11 @@
       ],
       "Premium Password Manager": [
         "Premium Adgangskodeadministrator"
+      ]
+    },
+    "bf2023: Info": {
+      "6 users": [
+        "6 brugere"
       ]
     },
     "bf2023: Tooltip": {
@@ -3161,11 +3177,17 @@
       "Pause": [
         "Sæt på pause"
       ],
+      "Remove “${ value }”": [
+        "Fjern “${ value }”"
+      ],
       "Resume": [
         "Genoptag"
       ],
       "Save": [
         "Gem"
+      ],
+      "Set up email forwarding": [
+        "Indstil videresendelse af e-mail"
       ]
     },
     "email_forwarding_2023: Header": {
@@ -3195,15 +3217,34 @@
         "Få mere at vide"
       ]
     },
+    "email_forwarding_2023: Placeholder": {
+      "Enter email address": [
+        "Indtast e-mailadresse"
+      ],
+      "Type text or keyword": [
+        "Indtast tekst eller nøgleord"
+      ]
+    },
     "email_forwarding_2023: Status": {
       "Active": [
         "Aktiv"
+      ],
+      "Declined": [
+        "Afvist"
       ],
       "Paused": [
         "Sat på pause"
       ],
       "Pending": [
         "Afventer"
+      ]
+    },
+    "email_forwarding_2023: Title": {
+      "Request confirmation": [
+        "Anmod om bekræftelse"
+      ],
+      "Set up forwarding": [
+        "Indstil videresendelse"
       ]
     },
     "email_forwarding_2023: Warning": {
@@ -9315,26 +9356,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behold min ${ currentPlanName }-konto"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Fortsæt for at gennemgå"
@@ -9374,6 +9395,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Behold min ${ currentPlanName }-konto"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
       ]
     },
     "new_plans: feature": {
@@ -11437,6 +11478,9 @@
       ]
     },
     "Signup label": {
+      "Confirm password": [
+        "Bekræft adgangskode"
+      ],
       "Display name": [
         "Vist navn"
       ],

@@ -9906,26 +9906,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Säilytä ${ currentPlanName }-tilini"
-      ],
-      "Upgrade": [
-        "Päivitä"
-      ],
-      "Upgrade now": [
-        "Päivitä nyt"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Jatka tarkistukseen"
@@ -9965,6 +9945,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Päivitä ${ upsellPlanHumanSize } -tilaukseen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Säilytä ${ currentPlanName }-tilini"
+      ],
+      "Upgrade": [
+        "Päivitä"
+      ],
+      "Upgrade now": [
+        "Päivitä nyt"
       ]
     },
     "new_plans: feature": {
