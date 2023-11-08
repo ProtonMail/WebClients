@@ -97,7 +97,7 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
 
     return (
         <>
-            {!hasApiKeys && (
+            {!hasApiKeys && !model.isInternalWithDisabledE2EEForMail && (
                 <Alert className="mb-4">
                     {c('Info')
                         .t`Setting up PGP allows you to send end-to-end encrypted emails with a non-${BRAND_NAME} user that uses a PGP compatible service.`}
@@ -118,6 +118,10 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                 <Alert className="mb-4" type="warning">{c('Info')
                     .t`This address is disabled. To be able to send to this address, the owner must first enable the address.`}</Alert>
             )}
+            {model.isInternalWithDisabledE2EEForMail && (
+                <Alert className="mb-4" type="warning">{c('Info')
+                    .t`The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.`}</Alert>
+            )}
             {hasApiKeys && !hasPinnedKeys && (
                 <Alert className="mb-4">
                     {c('Info')
@@ -136,7 +140,7 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                     </div>
                 </Alert>
             )}
-            {model.isPGPExternal && (
+            {model.isPGPExternal && !model.isInternalWithDisabledE2EEForMail && (
                 <>
                     <Row>
                         <Label htmlFor="encrypt-toggle">
@@ -203,20 +207,31 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                     </Row>
                 </>
             )}
-            <Row>
-                <Label>
-                    {c('Label').t`Public keys`}
-                    <Info
-                        className="ml-2"
-                        title={c('Tooltip')
-                            .t`Upload a public key to enable sending end-to-end encrypted emails to this email`}
-                    />
-                </Label>
-                <Field className="mt-2 md:mt-0">
-                    {model.isPGPExternalWithoutWKDKeys && <SelectKeyFiles onUpload={handleUploadKeys} multiple />}
-                </Field>
-            </Row>
-            {(hasApiKeys || hasPinnedKeys) && <ContactKeysTable model={model} setModel={setModel} />}
+            {model.isPGPExternalWithoutWKDKeys && !model.isInternalWithDisabledE2EEForMail && (
+                <Row>
+                    <Label>
+                        {c('Label').t`Public keys`}
+                        {
+                            <Info
+                                className="ml-2"
+                                title={c('Tooltip')
+                                    .t`Upload a public key to enable sending end-to-end encrypted emails to this email`}
+                            />
+                        }
+                    </Label>
+                    <Field className="mt-2 md:mt-0">
+                        <SelectKeyFiles onUpload={handleUploadKeys} multiple />
+                    </Field>
+                </Row>
+            )}
+            {(hasApiKeys || hasPinnedKeys) && (
+                <>
+                    <Row>
+                        <Label>{c('Label').t`Public keys`}</Label>
+                    </Row>
+                    <ContactKeysTable model={model} setModel={setModel} />
+                </>
+            )}
         </>
     );
 };
