@@ -389,6 +389,9 @@
       "Edit Gateway": [
         "Upraviť bránu"
       ],
+      "Edit invoice details": [
+        "Upraviť fakturačné údaje"
+      ],
       "Edit label": [
         "Upraviť štítok"
       ],
@@ -7700,6 +7703,9 @@
       "Version history": [
         "História verzií"
       ],
+      "View, download, and manage your invoices.": [
+        "Zobrazujte, sťahujte a spravujte svoje faktúry."
+      ],
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
@@ -8117,6 +8123,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Môžete pridať spôsob platby, aby sa vaše predplatné automaticky obnovovalo. K dispozícii sú aj iné spôsoby platby."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Zadajte vaše meno a adresu alebo adresu vašej organizácie. Tieto údaje sa pridajú do faktúr pre osoby aj organizácie."
       ]
     },
     "Info on errors": {
@@ -9037,6 +9048,9 @@
       ],
       "Name": [
         "Meno"
+      ],
+      "Name and address": [
+        "Meno a adresa"
       ],
       "Name on card": [
         "Meno na karte"
@@ -10109,26 +10123,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Ponechať si môj účet ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Pokračovať na rekapituláciu"
@@ -10168,6 +10162,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Prejsť na ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Ponechať si môj účet ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
       ]
     },
     "new_plans: feature": {
@@ -13812,6 +13826,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Upraviť bránu ${ currentName }"
+      ],
+      "Edit invoice details": [
+        "Upraviť fakturačné údaje"
       ],
       "Edit servers": [
         "Upraviť servery"

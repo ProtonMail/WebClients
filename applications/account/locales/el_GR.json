@@ -389,6 +389,9 @@
       "Edit Gateway": [
         "Επεξεργασία Πύλης"
       ],
+      "Edit invoice details": [
+        "Επεξεργασία στοιχείων τιμολογίου"
+      ],
       "Edit label": [
         "Επεξεργασία ετικέτας"
       ],
@@ -7553,6 +7556,9 @@
       "Version history": [
         "Ιστορικό εκδόσεων"
       ],
+      "View, download, and manage your invoices.": [
+        "Προβολή, λήψη και διαχείριση των τιμολογίων σας."
+      ],
       "Visa Secure logo": [
         "λογότυπο Visa Secure"
       ],
@@ -7952,6 +7958,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Μπορείτε να προσθέσετε μια μέθοδο πληρωμής για να ανανεώνεται αυτόματα η συνδρομή σας. Διατίθενται επίσης και άλλες μέθοδοι πληρωμής."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Εισαγάγετε ένα όνομα και μια διεύθυνση για εσάς ή τον οργανισμό σας. Αυτές οι λεπτομέρειες θα προστεθούν τόσο στα προσωπικά όσο και στα εταιρικά τιμολόγια."
       ]
     },
     "Info on errors": {
@@ -8864,6 +8875,9 @@
       ],
       "Name": [
         "Όνομα"
+      ],
+      "Name and address": [
+        "Όνομα και διεύθυνση"
       ],
       "Name on card": [
         "Όνομα πάνω στην κάρτα"
@@ -9914,26 +9928,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Διατήρηση του λογαριασμού μου ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Συνεχίστε την αξιολόγηση"
@@ -9973,6 +9967,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Διατήρηση του λογαριασμού μου ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
       ]
     },
     "new_plans: feature": {
@@ -13470,6 +13484,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Επεξεργασία Πύλης ${ currentName }"
+      ],
+      "Edit invoice details": [
+        "Επεξεργασία στοιχείων τιμολογίου"
       ],
       "Edit servers": [
         "Επεξεργασία διακομιστών"

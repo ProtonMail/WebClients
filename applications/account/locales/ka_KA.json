@@ -6953,6 +6953,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "ან თავიდან სცადეთ, ან გადახდის სხვა საშუალება გამოიყენეთ, ან დაუკავშირდით PayPal-ს."
       ],
+      "Please use another browser or download the file.": [
+        "სცადეთ სხვა ბრაუზერი ან ფაილი გადმოწერეთ."
+      ],
       "Please verify payment at the new tab which was opened.": [
         "შეამოწმეთ გადახდა ახალგახსნილ ჩანართში."
       ],
@@ -6964,6 +6967,9 @@
       ],
       "Preview failed to be loaded": [
         "მინიატურის ჩატვირთვის შეცდომა"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "ამ ფაილის მინიატურის შექმნა, ამჟამად, ამ ბრაუზერში, მხარდაჭერილი არაა."
       ],
       "Preview for this file type is not supported": [
         "ფაილის ამ ტიპისთვის მინიატურის შექმნა მხარდაჭერილი არაა"
@@ -9906,26 +9912,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "ჩემი მიმდინარე ${ currentPlanName } ანგარიშის დატოვება"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "გადახედვაზე გადასვლა"
@@ -9965,6 +9951,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "სატარიფო გეგმის განახლება: ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "ჩემი მიმდინარე ${ currentPlanName } ანგარიშის დატოვება"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
       ]
     },
     "new_plans: feature": {

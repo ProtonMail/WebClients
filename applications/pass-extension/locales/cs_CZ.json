@@ -1047,11 +1047,11 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Rozbalovací nabídka automatického vyplňování se automaticky otevře při zaměření pole."
       ],
-      "The following item could not be imported :": [
-        "Následující položka nemohla být importována:",
-        "Následující ${ result.ignored.length } položky nemohly být importovány",
-        "Následujících ${ result.ignored.length } položek nemohlo být importováno",
-        "Následujících ${ result.ignored.length } položek nemohlo být importováno"
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Následující ${ result.ignored.length } položku nelze importovat:",
+        "Následující ${ result.ignored.length } položky nelze importovat:",
+        "Následujících ${ result.ignored.length } položek nelze importovat:",
+        "Následujících ${ result.ignored.length } položek nelze importovat:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Text, který se snažíte vložit, je delší než maximální povolená délka ${ maxLength } znaků."

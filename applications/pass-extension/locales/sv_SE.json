@@ -439,6 +439,9 @@
       "Could not open updated vault": [
         "Kunde inte öppna uppdaterat valv"
       ],
+      "Could not resolve share members": [
+        "Kunde inte hämta användare av fildelningsyta."
+      ],
       "Could not resume your session : ${ description }": [
         "Kunde inte återuppta din session : ${ description }"
       ],
@@ -1012,9 +1015,9 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Rullgardinsmenyn för autofyll öppnas automatiskt vid fältfokus."
       ],
-      "The following item could not be imported :": [
-        "Följande objekt kunde inte importeras:",
-        "Följande ${ result.ignored.length } objekt kunde inte importeras"
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Följande ${ result.ignored.length } objekt kunde inte importeras:",
+        "Följande ${ result.ignored.length } objekt kunde inte importeras:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Texten du försöker klistra in är längre än den högsta tillåtna längden på ${ maxLength } tecken."

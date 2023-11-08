@@ -389,6 +389,9 @@
       "Edit Gateway": [
         "Editar gateway"
       ],
+      "Edit invoice details": [
+        "Editar de fatura de crédito"
+      ],
       "Edit label": [
         "Editar marcador"
       ],
@@ -3567,6 +3570,9 @@
       ],
       "Email sent to ${ forward.ForwardeeEmail }": [
         "E-mail enviado para ${ forward.ForwardeeEmail }"
+      ],
+      "Email sent to ${ model.forwardeeEmail }.": [
+        "E-mail enviado para ${ model.forwardeeEmail }."
       ],
       "Forwarding accepted": [
         "Encaminhamento aceitado"
@@ -8806,6 +8812,9 @@
       "Name": [
         "Nome"
       ],
+      "Name and address": [
+        "Nome e endereço"
+      ],
       "Name on card": [
         "Nome no cartão"
       ],
@@ -9855,26 +9864,6 @@
         "Velocidade média de VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Manter minha conta do ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Prosseguir para a revisão"
@@ -9916,10 +9905,34 @@
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Manter minha conta do ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ]
+    },
     "new_plans: feature": {
       "${ n } calendar": [
         "${ n } calendário",
         "${ n } calendários"
+      ],
+      "${ n } calendar per user": [
+        "${ n } calendário por usuário",
+        "${ n } calendários por usuário"
       ],
       "${ n } custom email domain": [
         "${ n } domínio de e-mail personalizado",
@@ -13399,6 +13412,9 @@
       "Edit Gateway ${ currentName }": [
         "Editar gateway ${ currentName }"
       ],
+      "Edit invoice details": [
+        "Editar de fatura de crédito"
+      ],
       "Edit servers": [
         "Editar servidores"
       ],
@@ -13477,6 +13493,9 @@
       ],
       "Folders and labels": [
         "Pastas e marcadores"
+      ],
+      "Forward and Auto-reply": [
+        "Encaminhamento e resposta automática"
       ],
       "Forward emails": [
         "Encaminhamento de e-mails"
