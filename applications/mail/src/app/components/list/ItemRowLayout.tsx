@@ -156,7 +156,7 @@ const ItemRowLayout = ({
 
                 <span
                     className="flex flex-nowrap w-custom ml-2 text-center flex-justify-end"
-                    style={{ '--w-custom': '5em' }}
+                    style={{ '--w-custom': '7em' }}
                 >
                     {hasExpiration && (
                         <ItemExpiration expirationTime={expirationTime} element={element} labelID={labelID} />
