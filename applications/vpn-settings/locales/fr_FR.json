@@ -179,6 +179,9 @@
       "Edit Gateway": [
         "Modifier la Passerelle"
       ],
+      "Edit invoice details": [
+        "Modifier les informations de la facture"
+      ],
       "Edit name": [
         "Modifier le nom"
       ],
@@ -3666,6 +3669,9 @@
       "Version ${ version }": [
         "Version ${ version }"
       ],
+      "View, download, and manage your invoices.": [
+        "Consultez, téléchargez et gérez vos factures."
+      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -3913,6 +3919,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Vous pouvez ajouter un moyen de paiement pour que votre abonnement soit renouvelé automatiquement. D'autres moyens de paiement sont disponibles."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Saisissez un nom et une adresse pour vous ou votre organisation. Ces informations seront ajoutées aux factures personnelles et à celles de l'organisation."
       ]
     },
     "Info subscription": {
@@ -4209,6 +4220,9 @@
       ],
       "Name": [
         "Nom"
+      ],
+      "Name and address": [
+        "Nom et adresse"
       ],
       "Name on card": [
         "Nom sur la carte"
@@ -6894,6 +6908,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Modifier la Passerelle ${ currentName }"
+      ],
+      "Edit invoice details": [
+        "Modifier les informations de la facture"
       ],
       "Edit servers": [
         "Modifier les serveurs"
