@@ -179,6 +179,9 @@
       "Edit Gateway": [
         "Editar o gateway"
       ],
+      "Edit invoice details": [
+        "Editar os detalhes da fatura"
+      ],
       "Edit name": [
         "Editar o nome"
       ],
@@ -628,6 +631,37 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "Isto desligará todos os routers e clientes que utilizam este certificado."
+      ]
+    },
+    "bf2023: Action": {
+      "Add ${ PASS_APP_NAME }": [
+        "Adicionar ${ PASS_APP_NAME }"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Close": [
+        "Fechar"
+      ],
+      "Remove": [
+        "Remover"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "Remover ${ PASS_APP_NAME }"
+      ]
+    },
+    "bf2023: Deal details": {
+      "1 user": [
+        "1 utilizador"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 utilizadores"
+      ],
+      "High speed streaming": [
+        "Streaming de alta velocidade"
       ]
     },
     "Billing cycle option": {
@@ -2366,6 +2400,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Font face option": {
@@ -3976,6 +4014,9 @@
       "New password": [
         "Nova palavra-passe"
       ],
+      "New plan": [
+        "Novo plano"
+      ],
       "No filter": [
         "Sem filtro"
       ],
@@ -4661,6 +4702,9 @@
       "Sign in as user": [
         "Iniciar sessão como utilizador"
       ],
+      "SMTP submission": [
+        "Envio SMTP"
+      ],
       "Split tunneling (Android and Windows)": [
         "Tunelamento dividido (Android e Windows)"
       ],
@@ -5319,6 +5363,9 @@
       ],
       "Select a reason": [
         "Selecione um motivo"
+      ],
+      "Thomas Anderson": [
+        "Andrea Silva"
       ]
     },
     "plan customizer, users": {
@@ -5648,6 +5695,9 @@
     "session_recovery:status:info": {
       "Available": [
         "Disponível"
+      ],
+      "Pending": [
+        "Pendente"
       ]
     },
     "Shared calendar; Info about calendar owner": {

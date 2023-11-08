@@ -3323,6 +3323,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Lütfen yeniden deneyin. Farklı bir ödeme yöntemi kullanın ya da yardım almak için PayPal ile görüşün."
       ],
+      "Please use another browser or download the file.": [
+        "Lütfen başka bir tarayıcı kullanın ya da dosyayı indirin."
+      ],
       "Please verify payment at the new tab which was opened.": [
         "Lütfen açılan yeni sekmede ödemeyi doğrulayın."
       ],
@@ -3334,6 +3337,9 @@
       ],
       "Preview failed to be loaded": [
         "Ön izleme yüklenemedi"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Bu tarayıcı şu anda bu dosya türünün ön izlenmesini desteklemiyor."
       ],
       "Preview for this file type is not supported": [
         "Bu dosya türünün ön izlemesi görüntülenemiyor"
@@ -4680,6 +4686,10 @@
       "${ n } calendar": [
         "${ n } takvim",
         "${ n } takvim"
+      ],
+      "${ n } calendar per user": [
+        "Her kullanıcı için ${ n } takvim",
+        "Her kullanıcı için ${ n } takvim"
       ],
       "${ n } custom email domain": [
         "${ n } özel e-posta etki alanı",
