@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import { defaultESContext } from '@proton/encrypted-search';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -61,23 +59,6 @@ export const HUMAN_TO_LABEL_IDS = Object.entries(LABEL_IDS_TO_HUMAN).reduce((acc
     acc[value] = key;
     return acc;
 }, Object.create(null));
-
-export const getLabelIDsToI18N = () => ({
-    [MAILBOX_LABEL_IDS.INBOX]: c('Link').t`Inbox`,
-    [MAILBOX_LABEL_IDS.ALL_DRAFTS]: c('Link').t`Drafts`,
-    [MAILBOX_LABEL_IDS.ALL_SENT]: c('Link').t`Sent`,
-    [MAILBOX_LABEL_IDS.TRASH]: c('Link').t`Trash`,
-    [MAILBOX_LABEL_IDS.SPAM]: c('Link').t`Spam`,
-    [MAILBOX_LABEL_IDS.ALL_MAIL]: c('Link').t`All mail`,
-    [MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL]: c('Link').t`All mail`,
-    [MAILBOX_LABEL_IDS.ARCHIVE]: c('Link').t`Archive`,
-    [MAILBOX_LABEL_IDS.SENT]: c('Link').t`Sent`,
-    [MAILBOX_LABEL_IDS.DRAFTS]: c('Link').t`Drafts`,
-    [MAILBOX_LABEL_IDS.STARRED]: c('Link').t`Starred`,
-    [MAILBOX_LABEL_IDS.OUTBOX]: c('Link').t`Outbox`,
-    [MAILBOX_LABEL_IDS.SCHEDULED]: c('Link').t`Scheduled`,
-    [MAILBOX_LABEL_IDS.SNOOZED]: c('Link').t`Snoozed`,
-});
 
 // List of location where messages are marked automatically as read after moving by the API
 export const LABELS_AUTO_READ = [MAILBOX_LABEL_IDS.TRASH];
