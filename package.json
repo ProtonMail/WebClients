@@ -20,13 +20,13 @@
         "@noble/ed25519@1.7.3": "patch:@noble/ed25519@npm%3A1.7.3#./.yarn/patches/@noble-ed25519-npm-1.7.3-033c70acb7.patch",
         "@pdf-lib/standard-fonts@^1.0.0": "patch:@pdf-lib/standard-fonts@npm%3A1.0.0#./.yarn/patches/@pdf-lib-standard-fonts-npm-1.0.0-963255903e.patch",
         "@storybook/react-docgen-typescript-plugin": "1.0.6--canary.9.f9c48c0.0",
-        "@types/jest": "^29.5.6",
+        "@types/jest": "^29.5.8",
         "@types/prettier": "^3.0.0",
-        "@types/react": "^17.0.69",
-        "@types/react-dom": "^17.0.22",
+        "@types/react": "^17.0.70",
+        "@types/react-dom": "^17.0.23",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
         "safe-buffer": "^5.2.1",
-        "terser": "^5.22.0"
+        "terser": "^5.24.0"
     },
     "dependencies": {
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
@@ -38,13 +38,13 @@
     },
     "devDependencies": {
         "@trivago/prettier-plugin-sort-imports": "^4.2.1",
-        "eslint-plugin-jsx-a11y": "^6.7.1",
+        "eslint-plugin-jsx-a11y": "^6.8.0",
         "husky": "^8.0.3",
         "lint-staged": "^15.0.2",
         "prettier": "^3.0.3",
         "sort-package-json": "^2.6.0"
     },
-    "packageManager": "yarn@4.0.0",
+    "packageManager": "yarn@4.0.1",
     "engines": {
         "node": ">= v20.9.0"
     }
