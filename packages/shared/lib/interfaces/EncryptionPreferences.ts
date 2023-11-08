@@ -36,7 +36,12 @@ export interface ApiKeysConfig {
     Code?: number;
     RecipientType?: RECIPIENT_TYPES;
     isCatchAll?: boolean;
-    hasDisabledE2EEForMail?: boolean;
+    /**
+     * Internal addresses with e2ee disabled are marked as having EXTERNAL recipient type.
+     * This flag allows distinguishing them from actual external users, for which E2EE should
+     * never be disabled, even for mail (since e.g. they might have WKD set up, or uploaded keys associated with them).
+     */
+    isInternalWithDisabledE2EEForMail?: boolean;
     MIMEType?: MIME_TYPES;
     Warnings?: string[];
     Errors?: string[];
@@ -74,7 +79,7 @@ export interface ContactPublicKeyModel {
     sign?: boolean;
     mimeType: CONTACT_MIME_TYPES;
     scheme: CONTACT_PGP_SCHEMES;
-    hasDisabledE2EEForMail: boolean; // Both `encrypt` and `hasDisabledE2EEForMail` might be true at this stage
+    isInternalWithDisabledE2EEForMail: boolean; // Both `encrypt` and `isInternalWithDisabledE2EEForMail` might be true at this stage
     trustedFingerprints: Set<string>;
     obsoleteFingerprints: Set<string>; // Keys that are not allowed to encrypt, because they are marked as obsolete.
     encryptionCapableFingerprints: Set<string>; // Keys that are capable of encryption (regardless of whether they are allowed to encrypt).
@@ -103,7 +108,7 @@ export interface PublicKeyModel {
     sign: boolean;
     mimeType: CONTACT_MIME_TYPES;
     scheme: PGP_SCHEMES;
-    hasDisabledE2EEForMail: boolean; // Both `encrypt` and `hasDisabledE2EEForMail` might be true at this stage
+    isInternalWithDisabledE2EEForMail: boolean; // Both `encrypt` and `isInternalWithDisabledE2EEForMail` might be true at this stage
     trustedFingerprints: Set<string>;
     obsoleteFingerprints: Set<string>;
     encryptionCapableFingerprints: Set<string>;
