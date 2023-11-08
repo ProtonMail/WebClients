@@ -383,6 +383,9 @@
       "Edit Gateway": [
         "Editar o gateway"
       ],
+      "Edit invoice details": [
+        "Editar os detalhes da fatura"
+      ],
       "Edit label": [
         "Editar etiqueta"
       ],
@@ -1279,6 +1282,42 @@
     "Baseline in trial plan": {
       "${ mailPlus }: the privacy-first Mail and Calendar solution for your everyday communications needs.": [
         "${ mailPlus }: a solução de e-mail e calendário com foco em privacidade para as suas necessidades diárias de comunicação."
+      ]
+    },
+    "bf2023: Action": {
+      "Add ${ PASS_APP_NAME }": [
+        "Adicionar ${ PASS_APP_NAME }"
+      ],
+      "Cancel": [
+        "Cancelar"
+      ],
+      "Close": [
+        "Fechar"
+      ],
+      "Remove": [
+        "Remover"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "Remover ${ PASS_APP_NAME }"
+      ]
+    },
+    "bf2023: Deal details": {
+      "1 user": [
+        "1 utilizador"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "6 users": [
+        "6 utilizadores"
+      ],
+      "High speed streaming": [
+        "Streaming de alta velocidade"
+      ]
+    },
+    "bf2023: Info": {
+      "6 users": [
+        "6 utilizadores"
       ]
     },
     "Billing cycle option": {
@@ -3127,11 +3166,17 @@
       "Accept": [
         "Aceitar"
       ],
+      "Add condition": [
+        "Adicionar uma condição"
+      ],
       "Back": [
         "Voltar"
       ],
       "Cancel": [
         "Cancelar"
+      ],
+      "Decline": [
+        "Recusar"
       ],
       "Delete": [
         "Eliminar"
@@ -3150,6 +3195,9 @@
       ]
     },
     "email_forwarding_2023: Header": {
+      "Actions": [
+        "Ações"
+      ],
       "From": [
         "De"
       ],
@@ -3196,8 +3244,24 @@
       "Active": [
         "Ativo"
       ],
+      "Declined": [
+        "Recusado"
+      ],
       "Paused": [
         "Em pausa"
+      ],
+      "Pending": [
+        "Pendente"
+      ]
+    },
+    "email_forwarding_2023: Title": {
+      "Set up forwarding": [
+        "Configurar o encaminhamento"
+      ]
+    },
+    "email_forwarding_2023: Warning": {
+      "Warning": [
+        "Aviso"
       ]
     },
     "Enabled 2FA": {
@@ -4496,6 +4560,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Filter Actions": {
@@ -7009,6 +7077,9 @@
       "Version ${ version }": [
         "Versão ${ version }"
       ],
+      "Version history": [
+        "Histórico das versões"
+      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -8321,6 +8392,9 @@
       "New password": [
         "Nova palavra-passe"
       ],
+      "New plan": [
+        "Novo plano"
+      ],
       "No filter": [
         "Sem filtro"
       ],
@@ -9317,26 +9391,6 @@
         "Velocidade VPN média"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Mudar para ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Descubra todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Manter a minha conta ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Alterar a subscrição"
-      ],
-      "Upgrade now": [
-        "Actualizar agora"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Prosseguir para a revisão"
@@ -9376,6 +9430,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Atualizar para ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Mudar para ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Descubra todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Manter a minha conta ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Alterar a subscrição"
+      ],
+      "Upgrade now": [
+        "Actualizar agora"
       ]
     },
     "new_plans: feature": {
@@ -9638,6 +9712,9 @@
       ],
       "Sign in as user": [
         "Iniciar sessão como utilizador"
+      ],
+      "SMTP submission": [
+        "Envio SMTP"
       ],
       "Split tunneling (Android and Windows)": [
         "Tunelamento dividido (Android e Windows)"
@@ -10922,6 +10999,9 @@
       "Text": [
         "Texto"
       ],
+      "Thomas Anderson": [
+        "Andrea Silva"
+      ],
       "Type text or keyword": [
         "Introduza o texto ou palavra-chave"
       ],
@@ -11370,6 +11450,9 @@
     "session_recovery:status:info": {
       "Available": [
         "Disponível"
+      ],
+      "Pending": [
+        "Pendente"
       ]
     },
     "Settings description": {
@@ -12936,6 +13019,9 @@
       ],
       "Password and keys": [
         "Palavra-passe e chaves"
+      ],
+      "Password reset": [
+        "Redefinir a palavra-passe"
       ],
       "Pay invoice": [
         "Pagar fatura"

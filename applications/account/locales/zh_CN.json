@@ -8614,23 +8614,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "继续使用 ${ currentPlanName } 账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "前去结算"
@@ -8667,6 +8650,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "继续使用 ${ currentPlanName } 账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
       ]
     },
     "new_plans: feature": {
