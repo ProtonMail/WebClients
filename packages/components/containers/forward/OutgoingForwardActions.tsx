@@ -17,6 +17,7 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, useModalState, useModalTwo } from '../../components';
 import {
+    useActiveBreakpoint,
     useAddressFlags,
     useApi,
     useEventManager,
@@ -145,9 +146,16 @@ const OutgoingForwardActions = ({ user, forward, addresses, forwardings }: Props
         },
     ].filter(isTruthy);
 
+    const { isDesktop } = useActiveBreakpoint();
+
     return (
         <>
-            <DropdownActions iconName="three-dots-vertical" list={list} size="small" shape="ghost" />
+            <DropdownActions
+                iconName={isDesktop ? 'three-dots-vertical' : undefined}
+                list={list}
+                size="small"
+                shape="ghost"
+            />
             {forwardModal}
             {renderConfirmModal ? (
                 <ConfirmDeleteForwarding
