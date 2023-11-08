@@ -131,7 +131,7 @@ export const vaultDeleteSuccess = createAction(
 );
 
 export const vaultMoveAllItemsIntent = createAction(
-    'vault::move::all::items::intent',
+    'vault::move::items::intent',
     (payload: { shareId: string; content: ShareContent<ShareType.Vault>; destinationShareId: string }) =>
         pipe(
             withRequest({ type: 'start', id: vaultMoveAllItemsRequest(payload.shareId) }),
@@ -146,9 +146,14 @@ export const vaultMoveAllItemsIntent = createAction(
 );
 
 export const vaultMoveAllItemsSuccess = createAction(
-    'vault::move::all::items::success',
+    'vault::move::items::success',
     withRequestSuccess(
-        (payload: { shareId: string; content: ShareContent<ShareType.Vault>; movedItems: ItemRevision[] }) =>
+        (payload: {
+            shareId: string;
+            destinationShareId: string;
+            content: ShareContent<ShareType.Vault>;
+            movedItems: ItemRevision[];
+        }) =>
             withNotification({
                 type: 'info',
                 text: c('Info').t`All items from "${payload.content.name}" successfully moved`,
@@ -157,7 +162,7 @@ export const vaultMoveAllItemsSuccess = createAction(
 );
 
 export const vaultMoveAllItemsFailure = createAction(
-    'vault::move::all::items::failure',
+    'vault::move::items::failure',
     withRequestFailure((payload: { shareId: string; content: ShareContent<ShareType.Vault> }, error: unknown) =>
         pipe(
             withCacheBlock,
