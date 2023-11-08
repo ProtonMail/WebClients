@@ -5,7 +5,7 @@ import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { MessageKeys, MessageVerification } from '../../../logic/messages/messagesTypes';
 import { addApiMock, api } from '../../test/api';
 import { GeneratedKey, generateKeys, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../test/crypto';
-import { get, getAndVerify, getDecryptedAttachment, getRequest, reverify } from '../attachmentLoader';
+import { get, getAndVerify, getDecryptedAttachment, getRequest } from '../attachmentLoader';
 
 const me = 'me@pm.me';
 const attachmentID = 'attachmentID';
@@ -131,7 +131,6 @@ describe('getAndVerify', () => {
             attachment1,
             {} as MessageVerification,
             messageKeys,
-            false,
             api,
             getAttachment,
             onUpdateAttachment
@@ -175,16 +174,7 @@ describe('get + reverify', () => {
             getAttachment,
             onUpdateAttachment
         );
-        const reverifyResult = await reverify(
-            attachment1,
-            {} as MessageVerification,
-            messageKeys,
-            getAttachment,
-            onUpdateAttachment,
-            api
-        );
 
         expect(getResult.filename).toEqual('preview');
-        expect(reverifyResult.filename).toEqual('preview');
     });
 });
