@@ -389,6 +389,9 @@
       "Edit Gateway": [
         "Upravit bránu"
       ],
+      "Edit invoice details": [
+        "Upravit fakturační údaje"
+      ],
       "Edit label": [
         "Upravit štítek"
       ],
@@ -1346,7 +1349,7 @@
         "Odebrat ${ PASS_APP_NAME }"
       ],
       "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
-        "Přihlaste se k odběru na 15 měsíců a získejte našeho **správce šifrovaných hesel** za pouhých ${ priceNoSuffix } měsíčně navíc!"
+        "Pořiďte si předplatné na 15 měsíců a za příplatek pouhých ${ priceNoSuffix } měsíčně získejte našeho **šifrovaného správce hesel**!"
       ]
     },
     "bf2023: Deal details": {
@@ -1406,7 +1409,7 @@
     },
     "bf2023: header": {
       "Save with Black Friday deals on a high-speed Swiss VPN": [
-        "Ušetřete s nabídkami na Black Friday na vysokorychlostní švýcarskou VPN"
+        "Ušetřete na vysokorychlostní švýcarské VPN s nabídkami Black Friday"
       ],
       "Select your Black Friday offer": [
         "Vyberte si nabídku Black Friday"
@@ -1423,7 +1426,7 @@
         "Je nám líto, ale tato nabídka není s vaším aktuálním tarifem k dispozici."
       ],
       "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám líto, ale tato nabídka není k dispozici s vaším aktuálním tarifem. Můžete však získat **${ discountPercentage } z ${ plan.Title }** když si předplatíte **${ months }**."
+        "Je nám líto, ale tato nabídka není k dispozici v rámci vašeho aktuálního tarifu. Můžete však získat slevu **${ discountPercentage } na tarif ${ plan.Title }** v případě předplacení na **${ months }**."
       ]
     },
     "bf2023: Info": {
@@ -7706,6 +7709,9 @@
       "Version history": [
         "Historie verzí"
       ],
+      "View, download, and manage your invoices.": [
+        "Prohlížení, stahování a správa faktur."
+      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -8123,6 +8129,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Můžete přidat platební metodu, která umožní automatické obnovení předplatného. Další platební metody jsou také dostupné."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Zadejte své jméno a adresu nebo vaši organizaci. Tyto údaje budou přidány do osobních faktur i faktur organizace."
       ]
     },
     "Info on errors": {
@@ -9043,6 +9054,9 @@
       ],
       "Name": [
         "Jméno"
+      ],
+      "Name and address": [
+        "Jméno a adresa"
       ],
       "Name on card": [
         "Jméno na kartě"
@@ -10115,26 +10129,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Ponechat můj ${ currentPlanName } účet"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Pokračovat na rekapitulaci"
@@ -10174,6 +10168,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Přejít na ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Ponechat můj ${ currentPlanName } účet"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
       ]
     },
     "new_plans: feature": {
@@ -11856,6 +11870,20 @@
       ],
       "yourdomain.com": [
         "vasedomena.cz"
+      ]
+    },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "${ contactHref } prosím náš obchodní tým."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Vyberte počet IP adres, které mají být do tarifu zahrnuty. Každá další IP adresa stojí ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Pokud potřebujete více než ${ maxIPs } IP, ",
+        "Pokud potřebujete více než ${ maxIPs } IP, ",
+        "Pokud potřebujete více než ${ maxIPs } IP, ",
+        "Pokud potřebujete více než ${ maxIPs } IP, "
       ]
     },
     "plan customizer, users": {
@@ -13805,6 +13833,9 @@
       "Edit Gateway ${ currentName }": [
         "Upravit bránu ${ currentName }"
       ],
+      "Edit invoice details": [
+        "Upravit fakturační údaje"
+      ],
       "Edit servers": [
         "Upravit servery"
       ],
@@ -14672,7 +14703,7 @@
     },
     "Tooltip for news": {
       "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
-        "Získejte nejnovější zprávy o ochraně soukromí ${ BRAND_NAME } a dění ve světě"
+        "Získejte nejnovější zprávy o ochraně soukromí a o dění v ekosystému ${ BRAND_NAME }"
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "Účastněte se průzkumů ke zlepšení služeb ${ BRAND_NAME }"
