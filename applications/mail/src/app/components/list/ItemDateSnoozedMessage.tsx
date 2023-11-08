@@ -1,14 +1,13 @@
 import { useMemo } from 'react';
 
-import { format, isToday, isTomorrow } from 'date-fns';
+import { isToday, isTomorrow } from 'date-fns';
 import { c } from 'ttag';
 
 import { Icon } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import { formatFullDate, formatScheduledTimeString } from '../../helpers/date';
+import { formatDateToHuman, formatFullDate, formatSimpleDate } from '../../helpers/date';
 import { isElementReminded } from '../../logic/snoozehelpers';
 import { Element } from '../../models/element';
 import ItemDateRender from './ItemDateRender';
@@ -24,18 +23,17 @@ interface Props {
 const SnoozedDate = ({ snoozeTime, className, useTooltip = false }: Props) => {
     const snoozeDate = new Date(snoozeTime * 1000);
     const snoozeShortDate = useMemo(() => {
-        const formattedDate = formatScheduledTimeString(snoozeDate);
+        const { formattedTime } = formatDateToHuman(snoozeDate);
+        const dateString = formatSimpleDate(snoozeDate);
+
         if (isToday(snoozeDate)) {
-            // translator: Indicates that the message will be unsnoozed today. Example: Snoozed until today, 12:00 PM
-            return c('Info').t`Snoozed until today, ${formattedDate}`;
+            return formattedTime;
         }
-
         if (isTomorrow(snoozeDate)) {
-            // translator: Indicates that the message will be unsnoozed tomorrow. Example: Snoozed until tomorrow, 12:00 PM
-            return c('Info').t`Snoozed until tomorrow, ${formattedDate}`;
+            return c('Info').t`Tomorrow, ${formattedTime}`;
         }
 
-        return format(snoozeDate, 'iii, MMM dd, p ', { locale: dateLocale });
+        return c('Info').t`${dateString}, ${formattedTime}`;
     }, [snoozeDate]);
 
     const fullDate = formatFullDate(snoozeDate);
