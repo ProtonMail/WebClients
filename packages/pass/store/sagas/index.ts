@@ -30,7 +30,7 @@ import shareLeave from './shares/share-leave.saga';
 import shareRemoveMember from './shares/share-remove-member.saga';
 import featureFlags from './user/feature-flags.saga';
 import userPlan from './user/user-access.saga';
-import trashDelete from './vaults/trash-delete.saga';
+import trashDelete from './vaults/trash-empty.saga';
 import trashRestore from './vaults/trash-restore.saga';
 import vaultCreation from './vaults/vault-creation.saga';
 import vaultDelete from './vaults/vault-delete.saga';
