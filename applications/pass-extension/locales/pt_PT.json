@@ -53,6 +53,9 @@
       "Confirm": [
         "Confirmar"
       ],
+      "Confirm access": [
+        "Confirmar o acesso"
+      ],
       "Continue": [
         "Continuar"
       ],
@@ -170,6 +173,9 @@
       "Importing": [
         "A importar"
       ],
+      "Invite others": [
+        "Convidar outros"
+      ],
       "Learn more": [
         "Saber mais"
       ],
@@ -178,6 +184,9 @@
       ],
       "Lock extension": [
         "Bloquear a extensão"
+      ],
+      "Manage access": [
+        "Gerir o acesso"
       ],
       "Manually sync your data": [
         "Sincronize os seus dados manualmente"
@@ -218,8 +227,14 @@
       "Regenerate": [
         "Gerar novamente"
       ],
+      "Reject": [
+        "Rejeitar"
+      ],
       "Reload extension": [
         "Recarregar a extensão"
+      ],
+      "Remove access": [
+        "Remover o acesso"
       ],
       "Request a feature": [
         "Pedir uma funcionalidade"
@@ -516,6 +531,10 @@
       "Megabyte": [
         "Megabyte",
         "Megabytes"
+      ],
+      "Terabyte": [
+        "Terabyte",
+        "Terabytes"
       ]
     },
     "Info": {
@@ -602,6 +621,9 @@
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
         "Importe facilmente as suas palavras-passe existentes para ${ PASS_APP_NAME }."
+      ],
+      "Editor": [
+        "Editor"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Ative ${ PASS_APP_NAME } ao ligar a sua conta ${ BRAND_NAME }."
@@ -757,10 +779,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Obrigado, o problema foi comunicado"
-      ],
-      "The following item could not be imported :": [
-        "O seguinte item não pôde ser importado:",
-        "Os seguintes ${ result.ignored.length } itens não puderam ser importados:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "O texto que está a tentar colar é maior do que o comprimento máximo permitido de ${ maxLength } caracteres."
@@ -1038,6 +1056,9 @@
       ],
       "Logins": [
         "Inícios de sessão"
+      ],
+      "Members": [
+        "Membros"
       ],
       "Modified": [
         "Modificado"
@@ -1354,6 +1375,9 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "Está a gostar do ${ PASS_APP_NAME }?"
       ],
+      "Enter your PIN": [
+        "Introduza o seu código PIN"
+      ],
       "Fill & copy password": [
         "Preencher & copiar a palavra-passe"
       ],
@@ -1371,6 +1395,9 @@
       ],
       "Import to vault(s)": [
         "Importar para o(s) cofre(s)"
+      ],
+      "Leave vault ?": [
+        "Deixar o cofre?"
       ],
       "Low disk space": [
         "Pouco espaço em disco"
@@ -1425,6 +1452,9 @@
       ]
     },
     "Validation": {
+      "Duplicated URL": [
+        "O URL é duplicado."
+      ],
       "Field name is required": [
         "O nome do campo é obrigatório."
       ],
@@ -1435,6 +1465,9 @@
         "O URL não pode estar vazio."
       ],
       "Url is invalid": [
+        "O URL é inválido."
+      ],
+      "URL is invalid": [
         "O URL é inválido."
       ]
     },
