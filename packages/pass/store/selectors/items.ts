@@ -44,11 +44,11 @@ export const selectByShareIdAsIfNotOptimistic = createSelector(selectByShareId, 
 export const selectItems = createSelector([selectByShareId], unwrapOptimisticState);
 export const selectAllItems = createSelector(selectItems, flattenItemsByShareId);
 export const selectAllTrashedItems = createSelector([selectAllItems], (items) => items.filter(isTrashed));
-export const selectItemsByShareId = createSelector(
-    [selectItems, (_: State, shareId?: string) => shareId],
-    (items, shareId) =>
+
+export const selectItemsByShareId = (shareId?: string) =>
+    createSelector([selectItems, () => shareId], (items, shareId): ItemRevision[] =>
         flattenItemsByShareId(shareId && items[shareId] ? { shareId: items[shareId] } : items).filter(invert(isTrashed))
-);
+    );
 
 export const selectItemIdByOptimisticId =
     (optimisticItemId?: string) =>
