@@ -27,8 +27,8 @@ export const shareDeleteSync = createAction('share::delete::sync', (share: Share
     withNotification({
         type: 'info',
         text: isVaultShare(share)
-            ? c('Info').t`Vault "${share.content.name}" was disabled`
-            : c('Info').t`An item previously shared with you was disabled`,
+            ? c('Info').t`Vault "${share.content.name}" was removed`
+            : c('Info').t`An item previously shared with you was removed`,
     })({ payload: { shareId: share.shareId } })
 );
 
@@ -101,7 +101,16 @@ export const shareEditMemberAccessFailure = createAction(
 );
 
 export const shareLeaveIntent = createAction('share::leave::intent', (payload: { shareId: string }) =>
-    pipe(withRequest({ type: 'start', id: shareLeaveRequest(payload.shareId) }), withCacheBlock)({ payload })
+    pipe(
+        withRequest({ type: 'start', id: shareLeaveRequest(payload.shareId) }),
+        withNotification({
+            type: 'info',
+            expiration: -1,
+            loading: true,
+            text: c('Info').t`Leaving vault...`,
+        }),
+        withCacheBlock
+    )({ payload })
 );
 
 export const shareLeaveSuccess = createAction(
