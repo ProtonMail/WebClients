@@ -170,16 +170,16 @@ export const MenuDropdown: VFC = () => {
                         <VaultSubmenu
                             inTrash={inTrash}
                             selectedShareId={shareId}
-                            handleVaultSelect={handleVaultSelect}
+                            handleVaultSelect={withClose(handleVaultSelect)}
                             handleVaultCreate={withClose(vaultActions.create)}
-                            handleVaultEdit={vaultActions.edit}
-                            handleVaultMoveAllItems={vaultActions.moveItems}
-                            handleVaultDelete={vaultActions.delete}
-                            handleVaultInvite={vaultActions.invite}
-                            handleVaultManage={vaultActions.manage}
-                            handleVaultLeave={vaultActions.leave}
-                            handleTrashEmpty={vaultActions.trashEmpty}
-                            handleTrashRestore={vaultActions.trashRestore}
+                            handleVaultEdit={withClose(vaultActions.edit)}
+                            handleVaultMoveAllItems={withClose(vaultActions.moveItems)}
+                            handleVaultDelete={withClose(vaultActions.delete)}
+                            handleVaultInvite={withClose(vaultActions.invite)}
+                            handleVaultManage={withClose(vaultActions.manage)}
+                            handleVaultLeave={withClose(vaultActions.leave)}
+                            handleTrashEmpty={withClose(vaultActions.trashEmpty)}
+                            handleTrashRestore={withClose(vaultActions.trashRestore)}
                         />
 
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
