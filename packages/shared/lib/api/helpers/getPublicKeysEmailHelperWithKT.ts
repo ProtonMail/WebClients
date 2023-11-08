@@ -40,7 +40,7 @@ const getPublicKeysEmailHelperWithKT = async ({
     noCache?: boolean;
 }): Promise<ApiKeysConfig> => {
     try {
-        const { addressKeys, catchAllKeys, unverifiedKeys, addressKTResult, catchAllKTResult, ...rest } =
+        const { addressKeys, catchAllKeys, unverifiedKeys, addressKTResult, catchAllKTResult, ProtonMX, ...rest } =
             await getAndVerifyApiKeys({
                 api,
                 email,
@@ -59,17 +59,21 @@ const getPublicKeysEmailHelperWithKT = async ({
                 ktVerificationResult: addressKTResult,
                 RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                 isCatchAll: false,
+                hasDisabledE2EEForMail: false,
                 ...rest,
             };
         }
 
-        const hasDisabledE2EE = addressKeys.some((key) => !supportsMail(key.flags));
+        // Check that we have at least one key with E2EE disabled.
+        // E2EE is disabled with external forwarding, as well as in some setups with custom addresses
+        const hasDisabledE2EEForMail = addressKeys.some((key) => !supportsMail(key.flags));
 
-        if (hasDisabledE2EE) {
+        if (hasDisabledE2EEForMail) {
             return {
                 publicKeys: [],
                 RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
                 isCatchAll: false,
+                hasDisabledE2EEForMail: ProtonMX, // 
                 ktVerificationResult: {
                     status: getFailedOrUnVerified(
                         addressKTResult?.status === KT_VERIFICATION_STATUS.VERIFICATION_FAILED
@@ -94,6 +98,7 @@ const getPublicKeysEmailHelperWithKT = async ({
                     ktVerificationResult: { status, keysChangedRecently },
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                     isCatchAll: false,
+                    hasDisabledE2EEForMail: false,
                     ...rest,
                 };
             }
@@ -112,6 +117,7 @@ const getPublicKeysEmailHelperWithKT = async ({
                     ktVerificationResult,
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                     isCatchAll: true,
+                    hasDisabledE2EEForMail: false,
                     ...rest,
                 };
             }
@@ -132,6 +138,7 @@ const getPublicKeysEmailHelperWithKT = async ({
                     ktVerificationResult,
                     RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
                     isCatchAll: false,
+                    hasDisabledE2EEForMail: false,
                     ...rest,
                 };
             }
@@ -141,6 +148,7 @@ const getPublicKeysEmailHelperWithKT = async ({
             RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
             ktVerificationResult,
             isCatchAll: false,
+            hasDisabledE2EEForMail: false,
             ...rest,
         };
     } catch (error: any) {
