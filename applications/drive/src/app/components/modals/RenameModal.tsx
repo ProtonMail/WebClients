@@ -16,7 +16,6 @@ import {
     useModalTwo,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 import noop from '@proton/utils/noop';
 
 import { DecryptedLink, formatLinkName, splitLinkName, useActions, validateLinkNameField } from '../../store';
@@ -87,7 +86,6 @@ const RenameModal = ({ item, onClose, ...modalProps }: Props & ModalStateProps) 
                             id="link-name"
                             value={name}
                             autoFocus
-                            maxLength={MAX_NAME_LENGTH}
                             placeholder={c('Placeholder').t`New name`}
                             onChange={handleChange}
                             onBlur={handleBlur}
