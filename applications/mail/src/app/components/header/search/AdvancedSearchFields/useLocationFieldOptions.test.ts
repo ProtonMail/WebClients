@@ -6,6 +6,20 @@ import { mockUseScheduleSendFeature } from 'proton-mail/helpers/test/mockUseSche
 import { useLocationFieldOptions } from './useLocationFieldOptions';
 import { expectedAll, expectedGrouped } from './useLocationFieldOptions.test.data';
 
+jest.mock('proton-mail/hooks/actions/useSnooze', () => ({
+    __esModule: true,
+    default: jest.fn().mockReturnValue({
+        canSnooze: true,
+        canUnsnooze: true,
+        isSnoozeEnabled: true,
+        snooze: jest.fn(),
+        unsnooze: jest.fn(),
+        handleClose: jest.fn(),
+        handleCustomClick: jest.fn(),
+        snoozeState: 'snooze-selection',
+    }),
+}));
+
 describe('useLocationFieldOptions', () => {
     beforeEach(() => {
         mockUseMailSettings();
