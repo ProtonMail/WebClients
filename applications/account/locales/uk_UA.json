@@ -629,6 +629,9 @@
       "Open navigation": [
         "Відкрити панель навігації"
       ],
+      "Or": [
+        "Або"
+      ],
       "Ordered list": [
         "Нумерований список"
       ],
@@ -1284,6 +1287,11 @@
         "${ mailPlus }: зосереджені на приватності пошта і календар для ваших повсякденних потреб спілкування."
       ]
     },
+    "bf2023: Deal details": {
+      "6 users": [
+        "6 користувачів"
+      ]
+    },
     "Billing cycle": {
       "${ n } month": [
         "${ n } місяць",
@@ -1836,6 +1844,11 @@
       ],
       "matches": [
         "збігається з"
+      ]
+    },
+    "Condition label": {
+      "If": [
+        "Якщо"
       ]
     },
     "Confirm modal title": {
@@ -3149,6 +3162,14 @@
         "Лист із підтвердженням надіслано на ${ address }"
       ]
     },
+    "email_forwarding_2023: Label": {
+      "or": [
+        "або"
+      ],
+      "Or": [
+        "Або"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "Двоетапна перевірка (2FA)"
@@ -4440,6 +4461,9 @@
       ],
       "MB": [
         "МБ"
+      ],
+      "TB": [
+        "ТБ"
       ]
     },
     "file size format, long": {
@@ -9397,26 +9421,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Переглянути всі тарифні плани ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Від ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Залишити мою передплату ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Переглядати далі"
@@ -9456,6 +9460,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Покращити до ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Переглянути всі тарифні плани ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Від ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Залишити мою передплату ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ]
     },
     "new_plans: feature": {
