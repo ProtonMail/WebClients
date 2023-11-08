@@ -179,6 +179,9 @@
       "Edit Gateway": [
         "Gateway bearbeiten"
       ],
+      "Edit invoice details": [
+        "Rechnungsdetails bearbeiten"
+      ],
       "Edit name": [
         "Name bearbeiten"
       ],
@@ -3666,6 +3669,9 @@
       "Version ${ version }": [
         "Version ${ version }"
       ],
+      "View, download, and manage your invoices.": [
+        "Rechnungen anzeigen, herunterladen und verwalten."
+      ],
       "Visa Secure logo": [
         "Visa Secure Logo"
       ],
@@ -3913,6 +3919,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Du kannst eine Zahlungsmethode hinzufügen, um dein Abonnement automatisch zu erneuern. Weitere Zahlungsarten sind ebenfalls verfügbar."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Gib einen Namen und eine Adresse für dich oder deine Organisation ein. Diese Angaben werden sowohl den persönlichen als auch den Organisationsrechnungen hinzugefügt."
       ]
     },
     "Info subscription": {
@@ -4209,6 +4220,9 @@
       ],
       "Name": [
         "Name"
+      ],
+      "Name and address": [
+        "Name und Adresse"
       ],
       "Name on card": [
         "Karteninhaber"
@@ -5640,7 +5654,7 @@
         "${ contactHref } bitte unser Verkaufsteam."
       ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
-        "Wähle die Anzahl der IP''s aus, die in deinem Abonnement enthalten sein sollen. Jede zusätzliche IP kostet ${ price }."
+        "Wähle die Anzahl der IP's aus, die in deinem Abonnement enthalten sein sollen. Jede zusätzliche IP kostet ${ price }."
       ],
       "Should you need more than ${ maxIPs } IP, ": [
         "Solltest du mehr als ${ maxIPs } IP benötigen, ",
@@ -6894,6 +6908,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Gateway ${ currentName } bearbeiten"
+      ],
+      "Edit invoice details": [
+        "Rechnungsdetails bearbeiten"
       ],
       "Edit servers": [
         "Server bearbeiten"
