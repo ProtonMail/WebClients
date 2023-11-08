@@ -17,6 +17,7 @@ export interface ApiKeysWithKTStatus {
     catchAllKeys?: ProcessedApiAddressKey[];
     catchAllKTResult?: KeyTransparencyVerificationResult;
     unverifiedKeys?: ProcessedApiAddressKey[];
+    hasValidProtonMX?: boolean;
     Code?: number;
     Warnings?: string[];
 }
@@ -64,7 +65,7 @@ export const getAndVerifyApiKeys = async ({
     if (noCache) {
         config.cache = 'no-cache';
     }
-    const { Address, CatchAll, Unverified, ...rest } = await api<{
+    const { Address, CatchAll, Unverified, ProtonMX, ...rest } = await api<{
         Address: {
             Keys: ApiAddressKey[];
             SignedKeyList: FetchedSignedKeyList | null;
@@ -78,6 +79,7 @@ export const getAndVerifyApiKeys = async ({
         Unverified: {
             Keys: ApiAddressKey[];
         };
+        ProtonMX: boolean;
         Warnings: string[];
     }>(config);
     const addressKeys = await importKeys(Address.Keys);
@@ -95,6 +97,7 @@ export const getAndVerifyApiKeys = async ({
         addressKeys,
         catchAllKeys,
         unverifiedKeys,
+        hasValidProtonMX: ProtonMX,
         ...rest,
         ...ktResult,
     };

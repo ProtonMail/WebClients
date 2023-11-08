@@ -39,7 +39,7 @@ export interface EncryptionPreferences {
     sign: boolean;
     scheme: PGP_SCHEMES;
     mimeType: CONTACT_MIME_TYPES;
-    hasDisabledE2EEForMail: boolean; // both `encrypt` and `hasDisabledE2EEForMail` might be true TOOOOODOOOOOOO check if this ok, or we need to do the same as SendInfo
+    isInternalWithDisabledE2EEForMail: boolean; // both `encrypt` and `isInternalWithDisabledE2EEForMail` might be true at this stage
     sendKey?: PublicKeyReference;
     isSendKeyPinned?: boolean;
     apiKeys: PublicKeyReference[];
@@ -66,7 +66,7 @@ const extractEncryptionPreferencesOwnAddress = (
         emailAddress,
         scheme,
         mimeType,
-        hasDisabledE2EEForMail,
+        isInternalWithDisabledE2EEForMail,
         isContact,
         isContactSignatureVerified,
         contactSignatureTimestamp,
@@ -88,7 +88,7 @@ const extractEncryptionPreferencesOwnAddress = (
         verifyingPinnedKeys: [],
         hasApiKeys,
         hasPinnedKeys: false,
-        hasDisabledE2EEForMail: hasDisabledE2EEForMail, // this may be true if own addresses are disabled
+        isInternalWithDisabledE2EEForMail: isInternalWithDisabledE2EEForMail, // this may be true if own addresses are disabled
         isContact,
         isContactSignatureVerified,
         contactSignatureTimestamp,
@@ -162,7 +162,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
         isInternal: true,
         hasApiKeys,
         hasPinnedKeys,
-        hasDisabledE2EEForMail: false,
+        isInternalWithDisabledE2EEForMail: false,
         isContact,
         isContactSignatureVerified,
         contactSignatureTimestamp,
@@ -260,7 +260,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         isInternal: false,
         hasApiKeys,
         hasPinnedKeys,
-        hasDisabledE2EEForMail: false,
+        isInternalWithDisabledE2EEForMail: false,
         isContact,
         isContactSignatureVerified,
         contactSignatureTimestamp,
@@ -328,7 +328,7 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         sign,
         scheme,
         mimeType,
-        hasDisabledE2EEForMail,
+        isInternalWithDisabledE2EEForMail,
         isContact,
         isContactSignatureVerified,
         contactSignatureTimestamp,
@@ -348,7 +348,7 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         isInternal: false,
         hasApiKeys: false,
         hasPinnedKeys,
-        hasDisabledE2EEForMail: hasDisabledE2EEForMail,
+        isInternalWithDisabledE2EEForMail: isInternalWithDisabledE2EEForMail,
         isContact,
         isContactSignatureVerified,
         contactSignatureTimestamp,
