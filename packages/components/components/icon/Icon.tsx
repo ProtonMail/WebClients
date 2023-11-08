@@ -175,6 +175,7 @@ export type IconName =
     | 'fingerprint'
     | 'fire'
     | 'fire-slash'
+    | 'flag-filled'
     | 'folder'
     | 'folder-arrow-in'
     | 'folder-arrow-in-filled'
