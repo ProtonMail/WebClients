@@ -533,6 +533,9 @@
       ],
       "MB": [
         "МБ"
+      ],
+      "TB": [
+        "ТБ"
       ]
     },
     "file size format, long": {
@@ -846,12 +849,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Спасибо, отчет о проблеме отправлен"
-      ],
-      "The following item could not be imported :": [
-        "Следующий элемент не может быть импортирован:",
-        "Следующие ${ result.ignored.length } элемента не могут быть импортированы",
-        "Следующие ${ result.ignored.length } элементов не могут быть импортированы",
-        "Следующие ${ result.ignored.length } элемента не могут быть импортированы"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Текст, который вы пытаетесь вставить, длиннее разрешенного максимального количества символов ${ maxLength }."
