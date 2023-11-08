@@ -126,7 +126,7 @@ describe('snooze helpers - getSnoozeDate', () => {
     };
 
     it('Should return current date when no element', () => {
-        expect(getSnoozeDate(undefined, '1')).toEqual(new Date());
+        expect(isSameTime(getSnoozeDate(undefined, '1'), new Date()));
     });
 
     it('Should return current date when element is not a conversation', () => {

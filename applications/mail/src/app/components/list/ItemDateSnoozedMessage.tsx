@@ -33,7 +33,7 @@ const SnoozedDate = ({ snoozeTime, className, useTooltip = false }: Props) => {
             return c('Info').t`Tomorrow, ${formattedTime}`;
         }
 
-        return c('Info').t`${dateString}, ${formattedTime}`;
+        return `${dateString}, ${formattedTime}`;
     }, [snoozeDate]);
 
     const fullDate = formatFullDate(snoozeDate);
