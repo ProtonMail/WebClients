@@ -9,7 +9,7 @@ import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
-import { LABELS_AUTO_READ, LABELS_UNMODIFIABLE_BY_USER, LABEL_IDS_TO_HUMAN, getLabelIDsToI18N } from '../constants';
+import { LABELS_AUTO_READ, LABELS_UNMODIFIABLE_BY_USER, LABEL_IDS_TO_HUMAN } from '../constants';
 import { MessageWithOptionalBody } from '../logic/messages/messagesTypes';
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
@@ -29,6 +29,7 @@ const {
     STARRED,
     ALL_MAIL,
     SNOOZED,
+    ALMOST_ALL_MAIL,
 } = MAILBOX_LABEL_IDS;
 const DEFAULT_FOLDERS = [INBOX, TRASH, SPAM, ARCHIVE, SENT, DRAFTS, SCHEDULED, OUTBOX];
 
@@ -50,27 +51,6 @@ const alwaysMessageLabels = [DRAFTS, ALL_DRAFTS, SENT, ALL_SENT];
 
 export const getHumanLabelID = (labelID: string) => LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] || labelID;
 
-export const getI18nLabelID = (labelID: string) =>
-    getLabelIDsToI18N()[labelID as MAILBOX_LABEL_IDS] || getHumanLabelID(labelID);
-
-export const getLabelName = (labelID: string, labels: Label[] = [], folders: Folder[] = []): string => {
-    if (labelID in LABEL_IDS_TO_HUMAN) {
-        return getI18nLabelID(labelID);
-    }
-
-    const labelsMap = toMap(labels, 'ID');
-    if (labelID in labelsMap) {
-        return labelsMap[labelID]?.Name || labelID;
-    }
-
-    const foldersMap = toMap(folders, 'ID');
-    if (labelID in foldersMap) {
-        return foldersMap[labelID]?.Name || labelID;
-    }
-
-    return labelID;
-};
-
 export const isCustomLabelOrFolder = (labelID: string) =>
     !Object.values(MAILBOX_LABEL_IDS).includes(labelID as MAILBOX_LABEL_IDS);
 
@@ -90,48 +70,68 @@ export const isCustomFolder = (labelID: string, folders: Folder[] = []) =>
 export const getStandardFolders = (): FolderMap => ({
     [INBOX]: {
         icon: 'inbox',
-        name: c('Mailbox').t`Inbox`,
+        name: c('Link').t`Inbox`,
         to: '/inbox',
     },
     [TRASH]: {
         icon: 'trash',
-        name: c('Mailbox').t`Trash`,
+        name: c('Link').t`Trash`,
         to: '/trash',
     },
     [SPAM]: {
         icon: 'fire',
-        name: c('Mailbox').t`Spam`,
+        name: c('Link').t`Spam`,
         to: '/spam',
     },
     [ARCHIVE]: {
         icon: 'archive-box',
-        name: c('Mailbox').t`Archive`,
+        name: c('Link').t`Archive`,
         to: '/archive',
     },
     [SENT]: {
         icon: 'paper-plane-horizontal',
-        name: c('Mailbox').t`Sent`,
+        name: c('Link').t`Sent`,
         to: `/${LABEL_IDS_TO_HUMAN[SENT]}`,
     },
     [ALL_SENT]: {
         icon: 'paper-plane-horizontal',
-        name: c('Mailbox').t`Sent`,
+        name: c('Link').t`Sent`,
         to: `/${LABEL_IDS_TO_HUMAN[ALL_SENT]}`,
     },
     [DRAFTS]: {
         icon: 'file-lines',
-        name: c('Mailbox').t`Drafts`,
+        name: c('Link').t`Drafts`,
         to: `/${LABEL_IDS_TO_HUMAN[DRAFTS]}`,
     },
     [ALL_DRAFTS]: {
         icon: 'file-lines',
-        name: c('Mailbox').t`Drafts`,
+        name: c('Link').t`Drafts`,
         to: `/${LABEL_IDS_TO_HUMAN[ALL_DRAFTS]}`,
     },
     [SCHEDULED]: {
         icon: 'paper-plane-horizontal-clock',
-        name: c('Mailbox').t`Scheduled`,
+        name: c('Link').t`Scheduled`,
         to: `/${LABEL_IDS_TO_HUMAN[SCHEDULED]}`,
+    },
+    [STARRED]: {
+        icon: 'star',
+        name: c('Link').t`Starred`,
+        to: `/${LABEL_IDS_TO_HUMAN[STARRED]}`,
+    },
+    [SNOOZED]: {
+        icon: 'clock',
+        name: c('Link').t`Snooze`,
+        to: `/${LABEL_IDS_TO_HUMAN[SNOOZED]}`,
+    },
+    [ALL_MAIL]: {
+        icon: 'envelopes',
+        name: c('Link').t`All mail`,
+        to: `/${LABEL_IDS_TO_HUMAN[ALL_MAIL]}`,
+    },
+    [ALMOST_ALL_MAIL]: {
+        icon: 'envelopes',
+        name: c('Link').t`All mail`,
+        to: `/${LABEL_IDS_TO_HUMAN[ALMOST_ALL_MAIL]}`,
     },
     // [OUTBOX]: {
     //     icon: 'inbox-out',
@@ -139,6 +139,28 @@ export const getStandardFolders = (): FolderMap => ({
     //     to: `/${LABEL_IDS_TO_HUMAN[OUTBOX]}`,
     // },
 });
+
+const STANDARD_FOLDERS = getStandardFolders();
+export const getI18nLabelID = (labelID: string) =>
+    STANDARD_FOLDERS[labelID as MAILBOX_LABEL_IDS]?.name || getHumanLabelID(labelID);
+
+export const getLabelName = (labelID: string, labels: Label[] = [], folders: Folder[] = []): string => {
+    if (labelID in LABEL_IDS_TO_HUMAN) {
+        return getI18nLabelID(labelID);
+    }
+
+    const labelsMap = toMap(labels, 'ID');
+    if (labelID in labelsMap) {
+        return labelsMap[labelID]?.Name || labelID;
+    }
+
+    const foldersMap = toMap(folders, 'ID');
+    if (labelID in foldersMap) {
+        return foldersMap[labelID]?.Name || labelID;
+    }
+
+    return labelID;
+};
 
 export const getCurrentFolders = (
     element: Element | undefined,

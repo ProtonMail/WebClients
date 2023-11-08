@@ -4,8 +4,7 @@ import clsx from '@proton/utils/clsx';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { getLabelIDsToI18N } from '../../constants';
-import { getCurrentFolders } from '../../helpers/labels';
+import { getCurrentFolders, getStandardFolders } from '../../helpers/labels';
 import { Element } from '../../models/element';
 import ItemIcon from './ItemIcon';
 
@@ -36,7 +35,8 @@ const ItemLocation = ({
     if (!ignoreIconFilter) {
         const labelsWithoutIcons: string[] = [ALL_SENT, ALL_DRAFTS];
         if (labelsWithoutIcons.includes(labelID)) {
-            const labelsWithoutIconsToI18N = [getLabelIDsToI18N()[ALL_SENT], getLabelIDsToI18N()[ALL_DRAFTS]];
+            const STANDARD_FOLDERS = getStandardFolders();
+            const labelsWithoutIconsToI18N = [STANDARD_FOLDERS[ALL_SENT].name, STANDARD_FOLDERS[ALL_DRAFTS].name];
             infos = infos.filter((info) => !labelsWithoutIconsToI18N.includes(info.name));
         }
     }
