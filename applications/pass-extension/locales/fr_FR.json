@@ -366,7 +366,7 @@
         "Écrivez-nous sur Twitter"
       ],
       "Your password manager not here? Request it.": [
-        "Vous ne trouvez pas votre gestionnaire de mots de passe ici ? Demandez-le."
+        "Vous ne trouvez pas votre gestionnaire de mots de passe ? Demandez-le."
       ]
     },
     "bf2023: Info": {
@@ -680,19 +680,19 @@
         "${ memberCount } membres"
       ],
       "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "${ PASS_APP_NAME } affiche la vignette de l'élément via le proxy d'image anonyme ${ BRAND_NAME }."
+        "${ PASS_APP_NAME } affichera la vignette de l'élément en utilisant le proxy d'image anonyme ${ BRAND_NAME }."
       ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importera uniquement les identifiants, notes et cartes de paiement."
       ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
-        "${ PASS_APP_NAME } vous invite à enregistrer ou à mettre à jour vos identifiants."
+        "${ PASS_APP_NAME } vous invitera à enregistrer ou à mettre à jour vos identifiants."
       ],
       "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
-        "${ PASS_APP_NAME } propose de créer un alias d'adresse e-mail dans les formulaires d'inscription."
+        "${ PASS_APP_NAME } proposera de créer un alias d'adresse e-mail dans les formulaires d'inscription."
       ],
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
-        "${ PASS_APP_NAME } propose de créer des mots de passe forts dans les formulaires d'inscription."
+        "${ PASS_APP_NAME } proposera de créer des mots de passe forts dans les formulaires d'inscription."
       ],
       "${ revisionNumber } time": [
         "${ revisionNumber } fois",
@@ -1015,9 +1015,9 @@
       "The autofill dropdown will automatically open on field focus.": [
         "La liste déroulante de remplissage automatique s'ouvre automatiquement dès que le champ est sélectionné."
       ],
-      "The following item could not be imported :": [
-        "L'élément suivant n'a pu être importé :",
-        "Les ${ result.ignored.length } éléments suivants n'ont pu être importés."
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "${ result.ignored.length } élément n'a pas pu être importé :",
+        "${ result.ignored.length } éléments n'ont pas pu être importés :"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Le texte que vous essayez de coller dépasse le nombre maximum de ${ maxLength } caractères."
@@ -1032,7 +1032,7 @@
         "Ce coffre-fort n'est partagé avec personne pour le moment. Pour le partager avec d'autres personnes, invitez-les."
       ],
       "To migrate data from another password manager, go to the password manager, export your data, then upload it to ${ PASS_APP_NAME }. Once your data has been imported, delete the exported file.": [
-        "Pour transférer des données depuis un autre gestionnaire de mots de passe, rendez-vous dans ce gestionnaire, exportez vos données, puis importez-les dans ${ PASS_APP_NAME }. Une fois vos données importées, supprimez le fichier qui a servi pour le transfert."
+        "Pour transférer des données depuis un autre gestionnaire de mots de passe, rendez-vous dans ce gestionnaire, exportez vos données, puis importez-les dans ${ PASS_APP_NAME }. Une fois vos données importées, supprimez le fichier qui a servi au transfert."
       ],
       "To review your imported data, click on the Pass icon in your browser toolbar.": [
         "Pour consulter les données importées, cliquez sur l'icône Proton Pass dans la barre d'outils de votre navigateur."

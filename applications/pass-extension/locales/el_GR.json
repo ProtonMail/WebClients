@@ -1015,9 +1015,9 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Το αναπτυσσόμενο μενού αυτόματης συμπλήρωσης θα ανοίξει αυτόματα κατά την εστίαση πεδίου."
       ],
-      "The following item could not be imported :": [
-        "Δεν ήταν δυνατή η εισαγωγή του ακόλουθου στοιχείου:",
-        "Δεν ήταν δυνατή η εισαγωγή των ${ result.ignored.length } στοιχείων"
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Δεν ήταν δυνατή η εισαγωγή του ${ result.ignored.length } στοιχείου:",
+        "Δεν ήταν δυνατή η εισαγωγή των ${ result.ignored.length } στοιχείων:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Το κείμενο που προσπαθείτε να επικολλήσετε είναι μεγαλύτερο από το μέγιστο επιτρεπόμενο μήκος των ${ maxLength } χαρακτήρων."
