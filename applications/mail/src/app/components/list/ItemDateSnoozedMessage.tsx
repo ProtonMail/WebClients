@@ -58,7 +58,10 @@ const RemindedConversation = ({ className, snoozeDate }: { className?: string; s
     }, [snoozeDate]);
 
     return (
-        <span className={clsx(className, 'item-date-snoozed flex flex-align-items-center')}>
+        <span
+            className={clsx(className, 'item-date-snoozed flex flex-align-items-center')}
+            data-testid="item-date-reminded"
+        >
             <Icon name="bell" className="mr-1" />
             <span>{snoozeTime}</span>
         </span>
