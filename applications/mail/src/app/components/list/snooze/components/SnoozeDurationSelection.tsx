@@ -30,14 +30,17 @@ interface ButtonProps {
 }
 
 const { SATURDAY, SUNDAY } = SETTINGS_WEEK_START;
-const getShortDayText = (day: SETTINGS_WEEK_START) => {
+const getShortDayText = (day: SETTINGS_WEEK_START, formatTime: string) => {
     switch (day) {
         case SATURDAY:
-            return 'Sat';
+            // translator: formatTime will always be at 9:00 AM. Will display "Sat, 9:00 AM" (if 12 hours is set) or "Sat, 09:00" (if 24 hours is set)
+            return c('WeekDay').t`Sat, ${formatTime}`;
         case SUNDAY:
-            return 'Sun';
+            // translator: formatTime will always be at 9:00 AM. Will display "Sun, 9:00 AM" (if 12 hours is set) or "Sun, 09:00" (if 24 hours is set)
+            return c('WeekDay').t`Sun, ${formatTime}`;
         default:
-            return 'Mon';
+            // translator: formatTime will always be at 9:00 AM. Will display "Mon, 9:00 AM" (if 12 hours is set) or "Mon, 09:00" (if 24 hours is set)
+            return c('WeekDay').t`Mon, ${formatTime}`;
     }
 };
 
@@ -75,7 +78,7 @@ const SnoozeDurationSelection = ({ canUnsnooze, handleUnsnoozeClick, handleSnooz
 
     const time = set(today, { hours: 9, minutes: 0, seconds: 0, milliseconds: 0 });
     const formatTime = formatSimpleDate(time);
-    const nextWeekShortDay = getShortDayText(WeekStart);
+    const nextWeekShortDay = getShortDayText(WeekStart, formatTime);
 
     const dropdownOptions: { leftText: string; rightText: string; duration: SNOOZE_DURATION; visible: boolean }[] = [
         {
@@ -87,7 +90,7 @@ const SnoozeDurationSelection = ({ canUnsnooze, handleUnsnoozeClick, handleSnooz
         {
             leftText: c('Action').t`Later this week`,
             // translator: Shows the day of week and the time, e.g. "Mon, 9:00", "Fri, 9:00 AM" (if 12 hours is set)
-            rightText: c('Info').t`${formattedDayOfWeek}, ${formatTime}`,
+            rightText: `${formattedDayOfWeek}, ${formatTime}`,
             duration: 'later',
             visible: daysUntilNextMon > 2 && daysUntilNextSat !== 2,
         },
@@ -100,8 +103,8 @@ const SnoozeDurationSelection = ({ canUnsnooze, handleUnsnoozeClick, handleSnooz
         },
         {
             leftText: c('Action').t`Next week`,
-            // translator: This will always be monday at 9:00 AM. Will display "Mon, 9:00 AM" (if 12 hours is set) or "Mon, 09:00" (if 24 hours is set)
-            rightText: c('Info').t`${nextWeekShortDay}, ${formatTime}`,
+            // translator: This will always be at 9:00 AM but can be monday, saturday or sunday depending on user settings. Will display "Mon, 9:00 AM" (if 12 hours is set) or "Mon, 09:00" (if 24 hours is set)
+            rightText: nextWeekShortDay,
             duration: 'nextweek',
             visible: daysUntilNextMon > 1,
         },
