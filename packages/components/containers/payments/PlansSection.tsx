@@ -31,7 +31,7 @@ import {
     useVPNServersCount,
 } from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
-import { FeatureCode } from '../index';
+import { FeatureCode, useFlag } from '../index';
 import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
@@ -63,6 +63,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
         return getDefaultSelectedProductPlans(app, getPlanIDs(subscription));
     });
     const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
+    const sentinelPassplusEnabled = !!useFlag('SentinelPassPlus');
     const [open] = useSubscriptionModal();
     const isLoading = Boolean(loadingPlans || loadingSubscription || loadingOrganization);
     const [selectedCurrency, setCurrency] = useState<Currency>();
@@ -153,6 +154,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                 onChangeSelectedProductPlans={setSelectedProductPlans}
                 organization={organization}
                 calendarSharingEnabled={calendarSharingEnabled}
+                sentinelPassplusEnabled={sentinelPassplusEnabled}
             />
             <Button
                 color="norm"
