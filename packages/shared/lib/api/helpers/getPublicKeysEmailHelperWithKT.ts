@@ -40,15 +40,22 @@ const getPublicKeysEmailHelperWithKT = async ({
     noCache?: boolean;
 }): Promise<ApiKeysConfig> => {
     try {
-        const { addressKeys, catchAllKeys, unverifiedKeys, addressKTResult, catchAllKTResult, ProtonMX, ...rest } =
-            await getAndVerifyApiKeys({
-                api,
-                email,
-                internalKeysOnly,
-                verifyOutboundPublicKeys,
-                silence,
-                noCache,
-            });
+        const {
+            addressKeys,
+            catchAllKeys,
+            unverifiedKeys,
+            addressKTResult,
+            catchAllKTResult,
+            hasValidProtonMX,
+            ...rest
+        } = await getAndVerifyApiKeys({
+            api,
+            email,
+            internalKeysOnly,
+            verifyOutboundPublicKeys,
+            silence,
+            noCache,
+        });
 
         // First we use verified internal address keys
         const mailCapableAddressKeys = addressKeys.filter((key) => supportsMail(key.flags));
@@ -59,7 +66,7 @@ const getPublicKeysEmailHelperWithKT = async ({
                 ktVerificationResult: addressKTResult,
                 RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                 isCatchAll: false,
-                hasDisabledE2EEForMail: false,
+                isInternalWithDisabledE2EEForMail: false,
                 ...rest,
             };
         }
@@ -73,7 +80,8 @@ const getPublicKeysEmailHelperWithKT = async ({
                 publicKeys: [],
                 RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
                 isCatchAll: false,
-                hasDisabledE2EEForMail: ProtonMX, // 
+                // users with internal custom domains but with bad UX setup will not be properly identifiable, but for the current uses of this flag, this is ok
+                isInternalWithDisabledE2EEForMail: hasValidProtonMX,
                 ktVerificationResult: {
                     status: getFailedOrUnVerified(
                         addressKTResult?.status === KT_VERIFICATION_STATUS.VERIFICATION_FAILED
@@ -98,7 +106,7 @@ const getPublicKeysEmailHelperWithKT = async ({
                     ktVerificationResult: { status, keysChangedRecently },
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                     isCatchAll: false,
-                    hasDisabledE2EEForMail: false,
+                    isInternalWithDisabledE2EEForMail: false,
                     ...rest,
                 };
             }
@@ -117,7 +125,7 @@ const getPublicKeysEmailHelperWithKT = async ({
                     ktVerificationResult,
                     RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
                     isCatchAll: true,
-                    hasDisabledE2EEForMail: false,
+                    isInternalWithDisabledE2EEForMail: false,
                     ...rest,
                 };
             }
@@ -138,7 +146,7 @@ const getPublicKeysEmailHelperWithKT = async ({
                     ktVerificationResult,
                     RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
                     isCatchAll: false,
-                    hasDisabledE2EEForMail: false,
+                    isInternalWithDisabledE2EEForMail: false,
                     ...rest,
                 };
             }
@@ -148,7 +156,7 @@ const getPublicKeysEmailHelperWithKT = async ({
             RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
             ktVerificationResult,
             isCatchAll: false,
-            hasDisabledE2EEForMail: false,
+            isInternalWithDisabledE2EEForMail: false,
             ...rest,
         };
     } catch (error: any) {
