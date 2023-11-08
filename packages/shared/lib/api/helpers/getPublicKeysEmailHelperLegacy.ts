@@ -53,6 +53,7 @@ const getPublicKeysEmailHelperLegacy = async (
             ...rest,
             publicKeys,
             isCatchAll: IgnoreKT === IGNORE_KT.CATCH_ALL,
+            hasDisabledE2EEForMail: IgnoreKT === IGNORE_KT.EXTERNAL_ADDRESS,
         };
     } catch (error: any) {
         const { data = {} } = error;
