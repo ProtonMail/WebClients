@@ -6,12 +6,18 @@ import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
-import type { ItemRevision, MaybeNull, Share, ShareContent, ShareType } from '@proton/pass/types';
+import type { ItemRevision, Share, ShareContent, ShareType } from '@proton/pass/types';
 import type { VaultTransferOwnerIntent } from '@proton/pass/types/data/vault.dto';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
-import { vaultCreateRequest, vaultDeleteRequest, vaultEditRequest, vaultTransferOwnerRequest } from '../requests';
+import {
+    vaultCreateRequest,
+    vaultDeleteRequest,
+    vaultEditRequest,
+    vaultMoveAllItemsRequest,
+    vaultTransferOwnerRequest,
+} from '../requests';
 
 export const vaultCreationIntent = createAction(
     'vault::creation::intent',
@@ -88,7 +94,7 @@ export const vaultEditSuccess = createAction(
 export const vaultDeleteIntent = createAction(
     'vault::delete::intent',
 
-    (payload: { shareId: string; content: ShareContent<ShareType.Vault>; destinationShareId: MaybeNull<string> }) =>
+    (payload: { shareId: string; content: ShareContent<ShareType.Vault> }) =>
         pipe(
             withRequest({ type: 'start', id: vaultDeleteRequest(payload.shareId) }),
             withCacheBlock,
@@ -116,12 +122,56 @@ export const vaultDeleteFailure = createAction(
 
 export const vaultDeleteSuccess = createAction(
     'vault::delete::success',
+    withRequestSuccess((payload: { shareId: string; content: ShareContent<ShareType.Vault> }) =>
+        withNotification({
+            type: 'info',
+            text: c('Info').t`Vault "${payload.content.name}" successfully deleted`,
+        })({ payload })
+    )
+);
+
+export const vaultMoveAllItemsIntent = createAction(
+    'vault::move::items::intent',
+    (payload: { shareId: string; content: ShareContent<ShareType.Vault>; destinationShareId: string }) =>
+        pipe(
+            withRequest({ type: 'start', id: vaultMoveAllItemsRequest(payload.shareId) }),
+            withCacheBlock,
+            withNotification({
+                expiration: -1,
+                type: 'info',
+                loading: true,
+                text: c('Info').t`Moving all items from "${payload.content.name}"`,
+            })
+        )({ payload })
+);
+
+export const vaultMoveAllItemsSuccess = createAction(
+    'vault::move::items::success',
     withRequestSuccess(
-        (payload: { shareId: string; content: ShareContent<ShareType.Vault>; movedItems: ItemRevision[] }) =>
+        (payload: {
+            shareId: string;
+            destinationShareId: string;
+            content: ShareContent<ShareType.Vault>;
+            movedItems: ItemRevision[];
+        }) =>
             withNotification({
                 type: 'info',
-                text: c('Info').t`Vault "${payload.content.name}" successfully deleted`,
+                text: c('Info').t`All items from "${payload.content.name}" successfully moved`,
             })({ payload })
+    )
+);
+
+export const vaultMoveAllItemsFailure = createAction(
+    'vault::move::items::failure',
+    withRequestFailure((payload: { shareId: string; content: ShareContent<ShareType.Vault> }, error: unknown) =>
+        pipe(
+            withCacheBlock,
+            withNotification({
+                type: 'error',
+                text: c('Error').t`Failed to move all items from "${payload.content.name}"`,
+                error,
+            })
+        )({ payload, error })
     )
 );
 

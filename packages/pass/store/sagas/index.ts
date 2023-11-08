@@ -30,11 +30,12 @@ import shareLeave from './shares/share-leave.saga';
 import shareRemoveMember from './shares/share-remove-member.saga';
 import featureFlags from './user/feature-flags.saga';
 import userPlan from './user/user-access.saga';
-import trashDelete from './vaults/trash-delete.saga';
+import trashDelete from './vaults/trash-empty.saga';
 import trashRestore from './vaults/trash-restore.saga';
 import vaultCreation from './vaults/vault-creation.saga';
 import vaultDelete from './vaults/vault-delete.saga';
 import vaultEdit from './vaults/vault-edit.saga';
+import vaultMoveAllItems from './vaults/vault-move-all-items.saga';
 import vaultTransferOwner from './vaults/vault-transfer-owner.saga';
 import boot from './workers/boot.saga';
 import cache from './workers/cache.saga';
@@ -89,6 +90,7 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             vaultCreation,
             vaultDelete,
             vaultEdit,
+            vaultMoveAllItems,
             vaultTransferOwner,
             wakeup,
         ].map((saga) => saga(options))

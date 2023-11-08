@@ -4,8 +4,6 @@ import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import {
     autofillIntent,
     bootSuccess,
-    emptyTrashFailure,
-    emptyTrashIntent,
     emptyTrashSuccess,
     importItemsBatchSuccess,
     inviteAcceptSuccess,
@@ -33,8 +31,6 @@ import {
     itemTrashFailure,
     itemTrashIntent,
     itemTrashSuccess,
-    restoreTrashFailure,
-    restoreTrashIntent,
     restoreTrashSuccess,
     shareDeleteSync,
     shareLeaveSuccess,
@@ -42,6 +38,7 @@ import {
     syncSuccess,
     vaultDeleteIntent,
     vaultDeleteSuccess,
+    vaultMoveAllItemsSuccess,
 } from '@proton/pass/store/actions';
 import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-callback';
 import type { WrappedOptimisticState } from '@proton/pass/store/optimistic/types';
@@ -103,16 +100,6 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             initiate: itemDeleteIntent.optimisticMatch,
             commit: itemDeleteSuccess.optimisticMatch,
             revert: itemDeleteFailure.optimisticMatch,
-        },
-        {
-            initiate: restoreTrashIntent.match,
-            commit: restoreTrashSuccess.match,
-            revert: restoreTrashFailure.match,
-        },
-        {
-            initiate: emptyTrashIntent.match,
-            commit: emptyTrashSuccess.match,
-            revert: emptyTrashFailure.match,
         },
     ],
     (state = {}, action: AnyAction) => {
@@ -272,7 +259,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             );
         }
 
-        if (emptyTrashIntent.match(action)) {
+        if (emptyTrashSuccess.match(action)) {
             return Object.fromEntries(
                 Object.entries(state).map(([shareId, itemsById]) => [
                     shareId,
@@ -285,7 +272,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             );
         }
 
-        if (restoreTrashIntent.match(action)) {
+        if (restoreTrashSuccess.match(action)) {
             return Object.fromEntries(
                 Object.entries(state).map(([shareId, itemsById]) => [
                     shareId,
@@ -312,12 +299,13 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         }
 
         if (vaultDeleteSuccess.match(action)) {
-            const movedItems = action.payload.movedItems;
-            const nextState = objectDelete(state, action.payload.shareId);
+            return objectDelete(state, action.payload.shareId);
+        }
 
-            return movedItems.length > 0
-                ? fullMerge(nextState, { [movedItems[0].shareId]: toMap(movedItems, 'itemId') })
-                : nextState;
+        if (vaultMoveAllItemsSuccess.match(action)) {
+            const { shareId, movedItems, destinationShareId } = action.payload;
+
+            return fullMerge({ ...state, [shareId]: {} }, { [destinationShareId]: toMap(movedItems, 'itemId') });
         }
 
         if (or(shareDeleteSync.match, shareLeaveSuccess.match)(action)) {
