@@ -9,7 +9,6 @@ import {
     KeyTransparencyActivation,
     VerifyOutboundPublicKeys,
 } from '../../interfaces';
-import getPublicKeysEmailHelperLegacy from './getPublicKeysEmailHelperLegacy';
 import getPublicKeysEmailHelperWithKT from './getPublicKeysEmailHelperWithKT';
 
 export const KEY_VERIFICATION_ERROR_MESSAGE = c('loc_nightly: Key verification error')
@@ -37,7 +36,16 @@ const getPublicKeysEmailHelper = async ({
     noCache?: boolean;
 }): Promise<ApiKeysConfig> => {
     if (ktActivation === KeyTransparencyActivation.DISABLED) {
-        return getPublicKeysEmailHelperLegacy(api, email, silence, noCache);
+        const { ktVerificationResult, ...resultWithoutKT } = await getPublicKeysEmailHelperWithKT({
+            email,
+            internalKeysOnly,
+            api,
+            verifyOutboundPublicKeys: null, // skip KT verification
+            silence,
+            noCache,
+        });
+
+        return resultWithoutKT;
     }
     const result = await getPublicKeysEmailHelperWithKT({
         email,

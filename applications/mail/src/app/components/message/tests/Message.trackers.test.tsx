@@ -47,7 +47,7 @@ describe('message trackers', () => {
         fromKeys = await generateKeys('someone', fromAddress);
         addKeysToAddressKeysCache(addressID, toKeys);
 
-        addApiMock('core/v4/keys', () => ({}));
+        addApiMock('core/v4/keys/all', () => ({ Address: { Keys: [] } }));
     });
 
     afterAll(async () => {

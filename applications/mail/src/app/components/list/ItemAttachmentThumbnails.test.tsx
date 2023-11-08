@@ -247,7 +247,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
         keys: GeneratedKey,
         decryptShouldFail = false
     ) => {
-        addApiMock('core/v4/keys', () => ({}));
+        addApiMock('core/v4/keys/all', () => ({ Address: { Keys: [] } }));
 
         return Promise.all(
             attachmentsMetadata.map(async (metadata) => {
