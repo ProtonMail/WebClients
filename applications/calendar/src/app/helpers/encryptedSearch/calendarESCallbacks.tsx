@@ -29,11 +29,11 @@ import {
     ESCalendarSearchParams,
     MetadataRecoveryPoint,
 } from '../../interfaces/encryptedSearch';
+import { generateEventUniqueId } from '../event';
 import { CALENDAR_CORE_LOOP, MAX_EVENT_BATCH, MIN_EVENT_BATCH } from './constants';
 import {
     extractAttendees,
     extractOrganizer,
-    generateID,
     getESEvent,
     getESEventsFromCalendarInBatch,
     parseSearchParams,
@@ -161,7 +161,7 @@ export const getESCallbacks = ({
     };
 
     const getItemInfo = (item: ESCalendarMetadata): ESItemInfo => ({
-        ID: generateID(item.CalendarID, item.ID),
+        ID: generateEventUniqueId(item.CalendarID, item.ID),
         timepoint: [item.CreateTime, item.Order],
     });
 

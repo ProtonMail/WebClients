@@ -46,7 +46,7 @@ const MorePopoverEvent = ({
     const dateString = formatUTC(date, 'cccc PPP', { locale: dateLocale });
 
     const eventsContent = events.map((event) => {
-        const isSelected = targetEventData?.id === event.id;
+        const isSelected = targetEventData?.uniqueId === event.uniqueId;
         const isThisSelected =
             targetEventData &&
             isSelected &&
@@ -59,14 +59,14 @@ const MorePopoverEvent = ({
             <FullDayEvent
                 formatTime={formatTime}
                 event={event}
-                key={event.id}
+                key={event.uniqueId}
                 className="calendar-dayeventcell w-full text-left h-custom"
                 isSelected={isSelected}
                 tzid={tzid}
                 isBeforeNow={isBeforeNow}
                 isOutsideStart={false}
                 isOutsideEnd={false}
-                onClick={() => onClickEvent({ id: event.id, idx: date.getUTCDate(), type: TYPE.MORE })}
+                onClick={() => onClickEvent({ uniqueId: event.uniqueId, idx: date.getUTCDate(), type: TYPE.MORE })}
                 style={{
                     '--h-custom': `${DAY_EVENT_HEIGHT}px`,
                 }}

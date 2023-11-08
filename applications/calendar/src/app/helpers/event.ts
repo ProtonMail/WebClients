@@ -5,6 +5,10 @@ import { EventModelReadView } from '@proton/shared/lib/interfaces/calendar';
 
 import { getParticipantsError } from '../components/eventModal/helpers';
 
+export const generateEventUniqueId = (calendarID: string, eventID: string) => `${calendarID}.${eventID}`;
+export const getCalendarIDFromUniqueId = (itemID: string) => itemID.split('.')[0];
+export const getEventIDFromUniqueId = (itemID: string) => itemID.split('.')[1];
+
 export const getEventStatusTraits = (model: EventModelReadView) => {
     const { status: eventStatus, selfAttendeeIndex } = model;
     if (model.isAttendee && eventStatus === ICAL_EVENT_STATUS.CONFIRMED) {

@@ -45,11 +45,8 @@ import {
     ESCalendarSearchParams,
     ESOrganizerModel,
 } from '../../interfaces/encryptedSearch';
+import { generateEventUniqueId, getCalendarIDFromUniqueId, getEventIDFromUniqueId } from '../event';
 import { CALENDAR_CORE_LOOP } from './constants';
-
-export const generateID = (calendarID: string, eventID: string) => `${calendarID}.${eventID}`;
-export const getCalendarIDFromItemID = (itemID: string) => itemID.split('.')[0];
-export const getEventIDFromItemID = (itemID: string) => itemID.split('.')[1];
 
 export const getEventKey = (calendarID: string, uid: string) => `${calendarID}-${uid}`;
 
@@ -192,7 +189,7 @@ export const getESEvent = async (
         Description: veventComponent.description?.value || '',
         Attendees: veventComponent.attendee ?? [],
         Organizer: veventComponent.organizer,
-        Order: await generateOrder(generateID(calendarID, eventID)),
+        Order: await generateOrder(generateEventUniqueId(calendarID, eventID)),
         ID: Event.ID,
         SharedEventID: Event.SharedEventID,
         CalendarID: Event.CalendarID,
@@ -274,7 +271,7 @@ const pushToRecurrenceIDsMap = (map: SimpleMap<number[]>, calendarID: string, UI
 };
 
 const getItemMetadataFromEventID = async (eventID: string, userID: string, itemIDs: string[], indexKey: CryptoKey) => {
-    const itemID = itemIDs.find((itemID) => getEventIDFromItemID(itemID) === eventID);
+    const itemID = itemIDs.find((itemID) => getEventIDFromUniqueId(itemID) === eventID);
     if (!itemID) {
         return;
     }
@@ -452,7 +449,7 @@ export const processCoreEvents = async ({
             const maybeEventsFromCalendar = (await getAllESEventsFromCalendar(ID, api, getCalendarEventRaw))
                 .filter((item): item is ESCalendarMetadata => !!item)
                 .map((item) => ({
-                    ID: generateID(item.CalendarID, item.ID),
+                    ID: generateEventUniqueId(item.CalendarID, item.ID),
                     Action: ES_SYNC_ACTIONS.CREATE,
                     ItemMetadata: item,
                 }));
@@ -464,7 +461,7 @@ export const processCoreEvents = async ({
             const itemIDs = (await readSortedIDs(userID, false)) || [];
             Items.push(
                 ...itemIDs
-                    .filter((itemID) => getCalendarIDFromItemID(itemID) === ID)
+                    .filter((itemID) => getCalendarIDFromUniqueId(itemID) === ID)
                     .map((itemID) => ({ ID: itemID, Action: ES_SYNC_ACTIONS.DELETE, ItemMetadata: undefined }))
             );
         }
@@ -514,9 +511,9 @@ export const processCalendarEvents = async (
         if (Action === EVENT_ACTIONS.DELETE) {
             // If it's a delete event, we should have the item already in IDB, therefore
             // we can deduce the calendar ID from it
-            const itemID = itemIDs.find((itemID) => getEventIDFromItemID(itemID) === ID);
+            const itemID = itemIDs.find((itemID) => getEventIDFromUniqueId(itemID) === ID);
             if (itemID) {
-                calendarID = getCalendarIDFromItemID(itemID);
+                calendarID = getCalendarIDFromUniqueId(itemID);
                 Items.push({ ID: itemID, Action: ES_SYNC_ACTIONS.DELETE, ItemMetadata: undefined });
             }
         } else {
@@ -526,7 +523,7 @@ export const processCalendarEvents = async (
             const esAction = EVENT_ACTIONS.UPDATE ? ES_SYNC_ACTIONS.UPDATE_METADATA : ES_SYNC_ACTIONS.CREATE;
             const esItem = await getESEvent(ID, CalendarID, api, getCalendarEventRaw);
             if (esItem) {
-                Items.push({ ID: generateID(CalendarID, ID), Action: esAction, ItemMetadata: esItem });
+                Items.push({ ID: generateEventUniqueId(CalendarID, ID), Action: esAction, ItemMetadata: esItem });
             }
         }
 

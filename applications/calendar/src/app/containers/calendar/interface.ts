@@ -32,7 +32,7 @@ export interface CalendarViewEventData {
 }
 
 export interface CalendarViewEvent {
-    id: string;
+    uniqueId: string;
     isAllDay: boolean;
     isAllPartDay: boolean;
     start: Date;
@@ -68,14 +68,14 @@ export interface InteractiveRef {
 }
 
 export interface CalendarViewEventTemporaryEvent extends CalendarViewEvent {
-    targetId?: string;
+    targetUniqueId?: string;
     tmpData: EventModel;
     tmpDataOriginal: EventModel;
     tmpOriginalTarget?: CalendarViewEvent | CalendarViewEventTemporaryEvent;
 }
 
 export interface TargetEventData {
-    id: string;
+    uniqueId: string;
     idx?: number;
     type: TYPE;
     /** We want to prevent popover opening when calendar app is opened in the drawer */
@@ -134,7 +134,7 @@ export type OnSaveConfirmationCb = (data: OnSaveConfirmationArgs) => Promise<Rec
 export type OnDeleteConfirmationCb = (data: OnDeleteConfirmationArgs) => Promise<RecurringActionData>;
 
 export interface EventTargetAction {
-    id: string;
+    uniqueId: string;
     isAllDay: boolean;
     isAllPartDay: boolean;
     startInTzid: Date;

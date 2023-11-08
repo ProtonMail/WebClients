@@ -24,9 +24,9 @@ export const sortEvents = (events: CalendarViewEvent[]) => {
     });
 };
 
-const removeById = (arr: Partial<{ id: string }>[], id: string) => {
+const removeById = (arr: Partial<{ uniqueId: string }>[], uniqueId: string) => {
     const targetIdx = arr.findIndex((a) => {
-        return a.id === id;
+        return a.uniqueId === uniqueId;
     });
     // Should never happen
     if (targetIdx !== -1) {
@@ -45,8 +45,8 @@ export const sortWithTemporaryEvent = (
     }
 
     // When dragging an event, remove the original event
-    if (temporaryEvent.targetId) {
-        removeById(eventsCopy, temporaryEvent.targetId);
+    if (temporaryEvent.targetUniqueId) {
+        removeById(eventsCopy, temporaryEvent.targetUniqueId);
     }
 
     if (!temporaryEvent.isAllDay) {
