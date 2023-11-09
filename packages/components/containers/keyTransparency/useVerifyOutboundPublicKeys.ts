@@ -21,7 +21,7 @@ const useVerifyOutboundPublicKeys = () => {
 
     const verifyOutboundPublicKeys: VerifyOutboundPublicKeys = async (
         email: string,
-        keysIntendendedForEmail: boolean,
+        skipVerificationOfExternalDomains: boolean,
         address: {
             keyList: ProcessedApiAddressKey[];
             signedKeyList: FetchedSignedKeyList | null;
@@ -42,7 +42,7 @@ const useVerifyOutboundPublicKeys = () => {
             saveSKLToLS,
             getLatestEpoch,
             email,
-            keysIntendendedForEmail,
+            skipVerificationOfExternalDomains,
             address,
             catchAll
         ).catch((error) => {

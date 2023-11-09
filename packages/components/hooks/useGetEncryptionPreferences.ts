@@ -28,7 +28,8 @@ const DEFAULT_LIFETIME = 5 * MINUTE;
 /**
  * Given an email address and the user mail settings, return the encryption preferences for sending to that email.
  * The logic for how those preferences are determined is laid out in the
- * Confluence document 'Encryption preferences for outgoing email'
+ * Confluence document 'Encryption preferences for outgoing email'.
+ * NB: the current logic does not handle internal address keys belonging to external accounts, since these keys are not used by Inbox.
  */
 const useGetEncryptionPreferences = () => {
     const api = useApi();
@@ -40,7 +41,7 @@ const useGetEncryptionPreferences = () => {
     const getMailSettings = useGetMailSettings();
 
     const getEncryptionPreferences = useCallback<GetEncryptionPreferences>(
-        async ({ email, lifetime, contactEmailsMap }) => {
+        async ({ email, lifetime, contactEmailsMap, intendedForEmail = true }) => {
             const [addresses, mailSettings] = await Promise.all([getAddresses(), getMailSettings()]);
             const canonicalEmail = canonicalizeInternalEmail(email);
             const selfAddress = getSelfSendAddresses(addresses).find(
@@ -70,6 +71,7 @@ const useGetEncryptionPreferences = () => {
                 const { publicKeys } = splitKeys(await getUserKeys());
                 apiKeysConfig = await getPublicKeys({
                     email,
+                    includeInternalKeysWithE2EEDisabledForMail: intendedForEmail === false,
                     lifetime,
                     noCache: !lifetime,
                 });
@@ -87,7 +89,7 @@ const useGetEncryptionPreferences = () => {
     );
 
     return useCallback<GetEncryptionPreferences>(
-        ({ email, lifetime = DEFAULT_LIFETIME, contactEmailsMap }) => {
+        ({ email, lifetime = DEFAULT_LIFETIME, contactEmailsMap, intendedForEmail }) => {
             if (!cache.has(CACHE_KEY)) {
                 cache.set(CACHE_KEY, new Map());
             }
@@ -99,6 +101,7 @@ const useGetEncryptionPreferences = () => {
             const miss = () =>
                 getEncryptionPreferences({
                     email: canonicalEmail,
+                    intendedForEmail,
                     lifetime,
                     contactEmailsMap,
                 });

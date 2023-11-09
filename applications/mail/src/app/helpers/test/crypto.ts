@@ -29,16 +29,17 @@ const addApiKeysMock = () => {
             const apiKey = apiKeys.get(email) as ApiKey;
             const publicKeysWithMetadata = apiKey.keys.map((key) => ({
                 Flags: KEY_FLAG.FLAG_NOT_OBSOLETE | KEY_FLAG.FLAG_NOT_COMPROMISED,
-                PublicKey: key.publicKeyArmored
+                PublicKey: key.publicKeyArmored,
             }));
             const internalKeys = apiKey.isInternal ? publicKeysWithMetadata : [];
             const externalKeys = apiKey.isInternal ? [] : publicKeysWithMetadata;
             return {
                 Address: {
                     Keys: internalKeys,
-                    SignedKeyList: null
+                    SignedKeyList: null,
                 },
-                Unverified: { Keys: externalKeys }
+                Unverified: { Keys: externalKeys },
+                ProtonMX: apiKey.isInternal,
             };
         }
         console.log('api keys', args, email);
