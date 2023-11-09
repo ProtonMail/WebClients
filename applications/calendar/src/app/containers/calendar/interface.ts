@@ -11,6 +11,7 @@ import {
     EventModel,
     VisualCalendar,
 } from '@proton/shared/lib/interfaces/calendar';
+import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 
 import { TYPE } from '../../components/calendar/interactions/constants';
 import { InviteActions, RecurringActionData } from '../../interfaces/Invite';
@@ -138,4 +139,8 @@ export interface EventTargetAction {
     isAllPartDay: boolean;
     startInTzid: Date;
     preventPopover?: boolean; // used when opening an event from PM inside the drawer
+}
+
+export interface AugmentedSendPreferences extends SendPreferences {
+    isInternal: boolean;
 }
