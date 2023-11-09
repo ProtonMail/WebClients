@@ -129,7 +129,17 @@ export const getNotificationTextUnauthorized = (folderID?: string, fromLabelID?:
     return notificationText;
 };
 
-const searchForAnyLabel = async (
+const searchForLabelInElement = (isMessage: boolean, elements: Element[], labelToSearch: MAILBOX_LABEL_IDS) => {
+    if (isMessage) {
+        return (elements as Message[]).filter((element) => element.LabelIDs.includes(labelToSearch));
+    } else {
+        return (elements as Conversation[]).filter(
+            (element) => element.Labels?.some((label) => label.ID === labelToSearch)
+        );
+    }
+};
+
+const searchForLabelsAndOpenModal = async (
     forbiddenLabels: string[],
     labelToSearch: MAILBOX_LABEL_IDS,
     folderID: string,
@@ -143,16 +153,7 @@ const searchForAnyLabel = async (
         return;
     }
 
-    let numberOfMessages;
-
-    if (isMessage) {
-        numberOfMessages = (elements as Message[]).filter((element) => element.LabelIDs.includes(labelToSearch)).length;
-    } else {
-        numberOfMessages = (elements as Conversation[]).filter(
-            (element) => element.Labels?.some((label) => label.ID === labelToSearch)
-        ).length;
-    }
-
+    const numberOfMessages = searchForLabelInElement(isMessage, elements, labelToSearch).length;
     const canUndo = !(numberOfMessages > 0 && numberOfMessages === elements.length);
     setCanUndo(canUndo);
 
@@ -175,7 +176,7 @@ export const searchForScheduled = async (
     handleShowModal: (ownProps: unknown) => Promise<unknown>,
     setContainFocus?: (contains: boolean) => void
 ) => {
-    await searchForAnyLabel(
+    await searchForLabelsAndOpenModal(
         [TRASH],
         SCHEDULED,
         folderID,
@@ -200,7 +201,7 @@ export const searchForSnoozed = async (
     setContainFocus?: (contains: boolean) => void,
     folders: Folder[] = []
 ) => {
-    await searchForAnyLabel(
+    await searchForLabelsAndOpenModal(
         [TRASH, ARCHIVE],
         SNOOZED,
         folderID,
@@ -211,7 +212,8 @@ export const searchForSnoozed = async (
         setContainFocus
     );
 
-    if (folders.map(({ ID }) => ID).includes(folderID)) {
+    const hasSnoozeLabel = searchForLabelInElement(isMessage, elements, SNOOZED).length;
+    if (hasSnoozeLabel && folders.map(({ ID }) => ID).includes(folderID)) {
         await handleShowModal({ isMessage, onCloseCustomAction: () => setContainFocus?.(true) });
     }
 };
