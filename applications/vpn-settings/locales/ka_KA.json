@@ -179,6 +179,9 @@
       "Edit Gateway": [
         "რაუტერის ჩასწორება"
       ],
+      "Edit invoice details": [
+        "ინვოისის დეტალების ჩასწორება"
+      ],
       "Edit name": [
         "სახელის ჩასწორება"
       ],
@@ -3666,6 +3669,9 @@
       "Version ${ version }": [
         "ვერსია ${ version }"
       ],
+      "View, download, and manage your invoices.": [
+        "ნახეთ, გადმოწერეთ და მართეთ თქვენი ინვოისები."
+      ],
       "Visa Secure logo": [
         "Visa-ის დაცულობის ლოგო"
       ],
@@ -4209,6 +4215,9 @@
       ],
       "Name": [
         "სახელი"
+      ],
+      "Name and address": [
+        "სახელი და მისამართი"
       ],
       "Name on card": [
         "სახელი ბარათზე"
@@ -5635,6 +5644,15 @@
         "ნაზიბროლა ღობეგლეჯიაშვილი"
       ]
     },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "${ contactHref } ჩვენს გაყიდვების გუნდს."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "თუ დაგჭირდათ ${ maxIPs }-ზე მეტი IP, ",
+        "თუ დაგჭირდათ ${ maxIPs }-ზე მეტი IP, "
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "კონტაქტი"
@@ -6882,6 +6900,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "${ currentName } რაუტერის ჩასწორება"
+      ],
+      "Edit invoice details": [
+        "ინვოისის დეტალების ჩასწორება"
       ],
       "Edit servers": [
         "სერვერების ჩასწორება"
