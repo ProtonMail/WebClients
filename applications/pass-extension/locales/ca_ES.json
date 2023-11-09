@@ -8,6 +8,9 @@
       "Add": [
         "Afegeix"
       ],
+      "Add current URL": [
+        "Afegeix l'URL actual"
+      ],
       "Add domain to pause list": [
         "Afegeix el domini a la llista de pausa"
       ],
@@ -76,6 +79,9 @@
       ],
       "Create": [
         "Crear"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Crea un compte de ${ BRAND_NAME }"
       ],
       "Create a ${ BRAND_NAME } account": [
         "Crear un compte de ${ BRAND_NAME }"
@@ -154,6 +160,9 @@
       ],
       "Generate password": [
         "Genera la contrasenya"
+      ],
+      "Generated passwords": [
+        "Contrasenyes generades"
       ],
       "Get mobile apps": [
         "Baixeu l'aplicació mòbil"
@@ -353,6 +362,11 @@
         "Obtingui l’oferta"
       ]
     },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "Oferta del Black Friday"
+      ]
+    },
     "Button": {
       "More info": [
         "Més informació"
@@ -470,7 +484,7 @@
         "Gestor de contrasenya invàlid"
       ],
       "Invalid URL": [
-        "L'URL no és vàlida."
+        "L'URL no és vàlid."
       ],
       "Invitation could not be accepted": [
         "No es pot acceptar la invitació"
@@ -645,6 +659,18 @@
         "${ memberCount } membre",
         "${ memberCount } membres"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
+        "${ PASS_APP_NAME } mostrarà la icona de web de l'element a través del proxy d'imatges anònim ${ BRAND_NAME }."
+      ],
+      "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
+        "${ PASS_APP_NAME } us demanarà que deseu o actualitzeu les credencials."
+      ],
+      "${ PASS_APP_NAME } will suggest creating an email alias on sign-up forms.": [
+        "${ PASS_APP_NAME } suggerirà la creació d'un àlies de correu electrònic en els formularis d'inscripció."
+      ],
+      "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
+        "${ PASS_APP_NAME } suggerirà la creació de contrasenyes fortes als formularis d'inscripció."
+      ],
       "${ revisionNumber } time": [
         "${ revisionNumber } vegada",
         "${ revisionNumber } vegades"
@@ -664,6 +690,9 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Hi ha disponible una nova versió de ${ PASS_APP_NAME }. Actualitzeu-lo per gaudir de les últimes característiques i correccions d'errors."
       ],
+      "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
+        "L'accés a ${ PASS_APP_NAME } requerirà un codi PIN per desbloquejar la sessió"
+      ],
       "Access your passwords on the go with our mobile apps.": [
         "Accediu a les vostres contrasenyes sobre la marxa amb les nostres aplicacions mòbils."
       ],
@@ -672,15 +701,6 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "S'ha mogut l'àlies \"${ item.aliasEmail }\" a la paperera - deixarà de reenviar correus electrònics a la vostra bústia"
-      ],
-      "All items permanently removed": [
-        "S'han suprimit tots els elements de manera permanent"
-      ],
-      "All items successfully restored": [
-        "S'han restaurat tots els elements"
-      ],
-      "An item previously shared with you was disabled": [
-        "S'ha desactivat un element compartit anteriorment amb vós"
       ],
       "Auto-lock successfully disabled": [
         "El bloqueig automàtic s'ha desactivat correctament"
@@ -747,6 +767,9 @@
       ],
       "Here you will find all the necessary information to get you started.": [
         "Aquí trobareu tota la informació necessària per a començar."
+      ],
+      "Import in progress:": [
+        "Importació en curs:"
       ],
       "Imported ${ payload.total } item": [
         "S'ha importat ${ payload.total } element",
@@ -867,6 +890,9 @@
       "Please consider leaving a review.": [
         "Considereu deixar una ressenya."
       ],
+      "Please enter your current PIN code to continue": [
+        "Introduïu el codi PIN actual per a continuar."
+      ],
       "Press Enter to copy": [
         "Premeu Retorn per a copiar"
       ],
@@ -915,6 +941,13 @@
       "Thank you, the problem has been reported": [
         "Gràcies, s'ha informat del problema"
       ],
+      "The autofill dropdown will automatically open on field focus.": [
+        "El menú desplegable d'emplenament automàtic s'obrirà automàticament en el camp enfocat."
+      ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "No s'ha pogut importar ${ result.ignored.length } element:",
+        "No s'han pogut importar els ${ result.ignored.length } elements següents:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "El text que esteu intentant enganxar és més llarg que la longitud màxima permesa de ${ maxLength } caràcters."
       ],
@@ -957,9 +990,6 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "S'ha actualitzat la caixa forta \"${ payload.share.content.name }\""
       ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "S'ha desactivat la caixa forta \"${ share.content.name }\""
-      ],
       "Verification code": [
         "Codi de verificació"
       ],
@@ -971,6 +1001,9 @@
       ],
       "You are about to create:": [
         "Esteu a punt de crear:"
+      ],
+      "You can quickly autofill your credentials by clicking on the ${ PASS_APP_NAME } icon.": [
+        "Podeu emplenar automàticament les vostres credencials fent clic a la icona de ${ PASS_APP_NAME }."
       ],
       "You cannot change the mailboxes for this alias.": [
         "No podeu canviar les bústies de correu per a aquest àlies."
@@ -1231,9 +1264,6 @@
       "Most recent": [
         "Més recent"
       ],
-      "Move items to": [
-        "Mou elements a"
-      ],
       "Name": [
         "Nom"
       ],
@@ -1284,9 +1314,6 @@
       ],
       "Pause list": [
         "Llista de pausa"
-      ],
-      "Permanently delete items": [
-        "Elimina els elements de manera permanent"
       ],
       "PIN": [
         "Codi PIN"
@@ -1478,9 +1505,6 @@
       "MM/YYYY": [
         "MM/AAAA"
       ],
-      "Move items to another vault (optional)": [
-        "Mou els elements a una altra caixa forta (opcional)"
-      ],
       "Other": [
         "Altres"
       ],
@@ -1641,17 +1665,29 @@
       ]
     },
     "Validation": {
+      "Duplicated URL": [
+        "L'URL està duplicat."
+      ],
       "Field name is required": [
         "Es requereix el nom del camp."
       ],
+      "OTP secret or URI is invalid": [
+        "La clau secreta OTP o l'URL no funciona."
+      ],
+      "OTP secret or URI required": [
+        "Heu d'introduir una clau secreta OTP o un URL."
+      ],
       "Url already exists": [
-        "Url ja existent"
+        "Ja existeix l'URL."
+      ],
+      "URL cannot be empty": [
+        "L'URL no pot ser buit."
       ],
       "Url is invalid": [
-        "Url no vàlida"
+        "L'URL no és vàlid."
       ],
       "URL is invalid": [
-        "L'URL no és vàlida."
+        "L'URL no és vàlid."
       ]
     },
     "Warning": {
@@ -1660,6 +1696,9 @@
       ],
       "Alias \"${ name }\" is currently used in login item \"${ relatedLoginName }\". You will also stop receiving emails sent to \"${ aliasEmail }\"": [
         "L'àlies \"${ name }\" s'utilitza actualment a l'element d'inici de sessió \"${ relatedLoginName }\". També deixareu de rebre correus electrònics enviats a \"${ aliasEmail }\""
+      ],
+      "All your trashed items will be permanently deleted. You cannot undo this action.": [
+        "Tots els elements de la paperera s'eliminaran permanentment. No podeu desfer aquesta acció."
       ],
       "An error occured while exporting your data": [
         "S'ha produït un error en exportar les dades"
@@ -1678,6 +1717,10 @@
       ],
       "Invalid alias prefix": [
         "El prefix de l'àlies no és vàlid"
+      ],
+      "Maximum length is ${ maxLength } character": [
+        "La longitud màxima és de ${ maxLength } caràcter.",
+        "La longitud màxima és de ${ maxLength } caràcters."
       ],
       "Missing alias prefix": [
         "Falta el prefix de l'àlies"
@@ -1742,8 +1785,8 @@
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "No s'ha pogut iniciar la sessió a ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "La caixa forta \"${ vaultName }\" s'eliminarà permanentment i tots els seus elements es mouran a \"${ destinationVaultName }\""
+      "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
+        "La caixa forta \"${ vaultName }\" i tots els seus elements s'eliminaran permanentment. No podeu desfer aquesta acció."
       ],
       "Vault name is required": [
         "Es requereix el nom de la caixa forta"

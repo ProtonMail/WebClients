@@ -745,15 +745,6 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Aliasul „${ item.aliasEmail }” a fost mutat în gunoi - nu va mai redirecționa mesajele către adresa principală de e-mail."
       ],
-      "All items permanently removed": [
-        "Toate articolele au fost șterse permanent."
-      ],
-      "All items successfully restored": [
-        "Toate articolele au fost restaurate."
-      ],
-      "An item previously shared with you was disabled": [
-        "Un articol care v-a fost partajat a fost dezactivat."
-      ],
       "Auto-lock successfully disabled": [
         "Blocare automată s-a dezactivat."
       ],
@@ -1031,6 +1022,11 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Lista de completare automată se va deschide la selectarea câmpului."
       ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Nu s-a putut importa ${ result.ignored.length } articol:",
+        "Nu s-au putut importa ${ result.ignored.length } articole:",
+        "Nu s-au putut importa ${ result.ignored.length } de articole:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Textul pe care încercați să îl lipiți este mai lung decât lungimea maximă permisă de ${ maxLength } de caractere."
       ],
@@ -1081,9 +1077,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Seiful „${ payload.share.content.name }” a fost actualizat."
-      ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "Seiful „${ share.content.name }” a fost dezactivat."
       ],
       "Verification code": [
         "Cod de verificare"
@@ -1366,9 +1359,6 @@
       "Most recent": [
         "Cele mai noi"
       ],
-      "Move items to": [
-        "Mutare articole în"
-      ],
       "Name": [
         "Nume"
       ],
@@ -1419,9 +1409,6 @@
       ],
       "Pause list": [
         "Listă suspendări"
-      ],
-      "Permanently delete items": [
-        "Ștergere permanentă articole"
       ],
       "PIN": [
         "PIN"
@@ -1612,9 +1599,6 @@
       ],
       "MM/YYYY": [
         "LL/AAAA"
-      ],
-      "Move items to another vault (optional)": [
-        "Mutare articole în alt seif (opțional)"
       ],
       "Other": [
         "Altele"
@@ -1915,9 +1899,6 @@
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "Seiful „${ vaultName }” și toate articolele sale vor fi șterse definitiv. Nu puteți anula această acțiune."
-      ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "Seiful „${ vaultName }” va fi șters definitiv și toate articolele sale vor fi mutate în „${ destinationVaultName }”."
       ],
       "Vault name is required": [
         "Numele seifului este obligatoriu."
