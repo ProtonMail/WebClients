@@ -131,7 +131,7 @@ const ItemHoverButtons = ({
                     </Button>
                 </Tooltip>
 
-                <SnoozeDropdown elements={[element]} size={size} />
+                <SnoozeDropdown elements={[element]} size={size} labelID={labelID} />
                 {hasStar && (
                     <Tooltip title={starAlt} tooltipClassName="no-pointer-events">
                         <Button
