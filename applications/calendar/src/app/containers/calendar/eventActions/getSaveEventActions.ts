@@ -15,7 +15,6 @@ import { CalendarBootstrap, SyncMultipleApiResponse } from '@proton/shared/lib/i
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { GetCanonicalEmailsMap } from '@proton/shared/lib/interfaces/hooks/GetCanonicalEmailsMap';
-import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import noop from '@proton/utils/noop';
 
 import { getRecurringEventUpdatedText, getSingleEventText } from '../../../components/eventModal/eventForm/i18n';
@@ -37,7 +36,7 @@ import { getIsCalendarEvent } from '../eventStore/cache/helper';
 import { GetDecryptedEventCb } from '../eventStore/interface';
 import getAllEventsByUID from '../getAllEventsByUID';
 import { SyncEventActionOperations } from '../getSyncMultipleEventsPayload';
-import { CalendarViewEventTemporaryEvent, OnSaveConfirmationCb } from '../interface';
+import { AugmentedSendPreferences, CalendarViewEventTemporaryEvent, OnSaveConfirmationCb } from '../interface';
 import getRecurringSaveType from './getRecurringSaveType';
 import getRecurringUpdateAllPossibilities from './getRecurringUpdateAllPossibilities';
 import getSaveRecurringEventActions from './getSaveRecurringEventActions';
@@ -73,7 +72,7 @@ const getSaveSingleEventActionsHelper = async ({
         veventComponent?: VcalVeventComponent;
         inviteActions: InviteActions;
         timestamp: number;
-        sendPreferencesMap: SimpleMap<SendPreferences>;
+        sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
     }>;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;
@@ -162,7 +161,7 @@ interface Arguments {
         veventComponent?: VcalVeventComponent;
         inviteActions: InviteActions;
         timestamp: number;
-        sendPreferencesMap: SimpleMap<SendPreferences>;
+        sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
     }>;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;

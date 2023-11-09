@@ -1,23 +1,14 @@
-import * as React from 'react';
-
-
-
 import { c } from 'ttag';
-
-
 
 import { Button } from '@proton/atoms';
 import { BasicModal } from '@proton/components';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
 
-
-
 import { CleanSendIcsActionData, INVITE_ACTION_TYPES, InviteActions } from '../../../interfaces/Invite';
-
+import { AugmentedSendPreferences } from '../interface';
 
 const { SEND_INVITATION, SEND_UPDATE, CHANGE_PARTSTAT, DECLINE_INVITATION, CANCEL_INVITATION, NONE } =
     INVITE_ACTION_TYPES;
@@ -29,7 +20,7 @@ const getCleanSendData = ({
     vevent,
     cancelVevent,
 }: {
-    sendPreferencesMap: SimpleMap<SendPreferences>;
+    sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
     inviteActions: InviteActions;
     vevent?: VcalVeventComponent;
     cancelVevent?: VcalVeventComponent;
@@ -204,7 +195,7 @@ const getModalContent = (
 };
 
 interface Props {
-    sendPreferencesMap: SimpleMap<SendPreferences>;
+    sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
     inviteActions: InviteActions;
     vevent?: VcalVeventComponent;
     cancelVevent?: VcalVeventComponent;
