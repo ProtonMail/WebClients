@@ -824,6 +824,9 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } lagerplads"
       ],
@@ -833,11 +836,26 @@
       "3 TB": [
         "3 TB"
       ],
+      "3,000+ servers across 65+ countries": [
+        "3.000+ servere fordelt på 65+ lande"
+      ],
       "6 users": [
         "6 brugere"
       ],
+      "Access content worldwide": [
+        "Tilgå indhold over hele verden"
+      ],
+      "Ad-blocker and malware protection": [
+        "Annonceblokering og beskyttelse mod malware"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Alle betalte ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_APP_NAME }-funktioner"
+      ],
       "Extended version history": [
         "Udvidet versionshistorik"
+      ],
+      "High speed streaming": [
+        "Streaming ved høj hastighed"
       ],
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
         "Premium ${ DRIVE_SHORT_APP_NAME }"
@@ -852,10 +870,53 @@
         "Premium Adgangskodeadministrator"
       ]
     },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Rabatter er baseret på månedlig standardpris."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Dit abonnement vil automatisk blive fornyet til den nedsatte standardpris og varighed ved slutningen af din faktureringscyklus."
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 dages tilbagebetalingsgaranti"
+      ]
+    },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Tilgå blokeret indhold og surf privat. Inkluderer 3.000+ servere fordelt op 65+ lande, højeste VPN hastigheder, adgang til verdensomspændende streamingtjenester, malware- og ad-blocker, hurtige BitTorrent-downloads, og meget mere."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+, Prime Video og mere, hvor som helst."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Omgå lokale internetblokeringer og censur med vores globale netværk af servere."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
+      ],
       "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer support til 3 bruger-e-maildomæner, ${ addresses } e-mailadresse, ubegrænsede Hide-my-email-aliasser, kalenderdeling med mere.",
         "Inkluderer support til 3 bruger-e-maildomæner, ${ addresses } e-mailadresser, ubegrænsede Hide-my-email-aliasser, kalenderdeling med mere."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Beskyt logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og mere."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Beskyt dine e-mails og tidsplan med end-to-end kryptering. Inkluderer understøttelse af bruger-e-mail-domæner, 15 e-mailadresser, ubegrænsede Hide-my-email-aliasser, kalenderdeling og mere."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Beskyt dine filer med krypteret lagring i skyen. Inkluderer versionshistorik, krypteret fildeling og meget mere."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Det specialdesignede NetShield beskytter dine enheder og sætter farten i vejret på din browsing ved at blokere annoncer, trackere og malware."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Lagerplads er delt mellem alle ${ BRAND_NAME }-apps."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Gem op til 200 versioner af hver fil i op til 10 år."
       ]
     },
     "Bug category": {
@@ -1909,6 +1970,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For at importere via en CSV- eller VCF-fil, skal du være sikker på at filen ikke overskriver ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, skal du dele den i mindre filer. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Det ser ud til at kontaktlisten du importerer indeholder nogle grupper. Gennemgå hvordan disse grupper skal importeres."
       ],
@@ -1921,6 +1985,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Spar tid ved at sende e-mail eller invitationer til alle på en gang, en premium-funktion blandt mange andre. Opgrader i dag."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
+      ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Benyt Træk og Slip for at rangordne fletningsprioritet mellem kontakter. Afmarkér de kontakter du ikke vil sammenflette."
       ],
@@ -1929,6 +1996,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kan markere de kontakter til sletning, som du hverken ønsker at flette eller beholde.\nSletning vil kun ske, når der er klikket på fletningsknappen"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "skal du bruge Easy Switch importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3205,6 +3277,10 @@
         "${ selectedContactsLength }/${ contactsLength } kontakt valgt",
         "${ selectedContactsLength }/${ contactsLength } kontakter valgt"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } valgt",
+        "${ selectedCount } valgte"
+      ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } mappe valgt",
         "${ selectedFoldersCount } mapper valgt"
@@ -3303,6 +3379,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Er du sikker på, at du ønsker at slette de valgte elementer permanent fra papirkurven?"
+      ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "Så snart du har fotos eller videoer på din enhed, vil de blive vist her."
       ],
       "Attention required": [
         "Opmærksomhed påkrævet"
@@ -3734,6 +3813,9 @@
       "No group found": [
         "Ingen gruppe fundet"
       ],
+      "No photos yet": [
+        "Ingen billeder endnu"
+      ],
       "No results found": [
         "Ingen resultater fundet"
       ],
@@ -3811,6 +3893,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Vælg hvilken eller hvilke e-mail-adresser der skal føjes til ${ groupName }."
       ],
+      "Please use another browser or download the file.": [
+        "Brug en anden browser eller download filen."
+      ],
       "Please wait till your changes are synced with the server.": [
         "Vent venligst, indtil dine ændringer er synkroniseret med serveren."
       ],
@@ -3828,6 +3913,9 @@
       ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Forhåndsvisning for denne filtype understøttes i øjeblikket ikke i denne browser."
       ],
       "Preview for this file type is not supported": [
         "Forhåndsvisning af denne filtype er ikke understøttet"
@@ -3880,8 +3968,17 @@
       "Search Enabled": [
         "Søgning aktiveret"
       ],
+      "Select a folder to move to.": [
+        "Vælg en mappe at flytte til."
+      ],
+      "Select all items for": [
+        "Vælg alle elementer for"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Vælg en uploadet fil eller mappe og opret et link til den."
+      ],
+      "Select item": [
+        "Vælg element"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vælg det e-mail-format, der som standard skal benyttes, når du sender en e-mail til denne e-mailadresse."
@@ -3999,6 +4096,9 @@
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "Dette link vil blive permanent deaktiveret. Ingen med dette link vil kunne tilgå din mappe. For at gendele mappen, skal du bruge et nyt link."
+      ],
+      "This month": [
+        "Denne måned"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
         "Dette vil slette linket og fjerne adgangen til din fil eller mappe for alle, der har linket.",
@@ -4189,9 +4289,6 @@
       ],
       "You cannot undo this action.": [
         "Du kan ikke fortryde denne handling."
-      ],
-      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
-        "Du har ${ expiresInDays } dage tilbage til at få din 500 MB velkomstbonus og "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Du har brugt ${ spaceDisplayed }% af din lagerkapacitet. ${ freeUpMessage } ${ upgradeLink }"
@@ -6171,6 +6268,9 @@
       ],
       "Discard changes?": [
         "Kassér ændringer?"
+      ],
+      "Download ${ date }.zip": [
+        "Download ${ date }.zip"
       ],
       "Download unverified file?": [
         "Hent ubekræftet fil?"
