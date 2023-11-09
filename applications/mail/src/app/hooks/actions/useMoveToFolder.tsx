@@ -10,12 +10,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
-import MoveSnoozedModal from 'proton-mail/components/list/snooze/components/MoveSnoozedModal';
-import { extractSearchParameters } from 'proton-mail/helpers/mailboxUrl';
-import { useDeepMemo } from 'proton-mail/hooks/useDeepMemo';
-import useMailModel from 'proton-mail/hooks/useMailModel';
-import { SearchParameters } from 'proton-mail/models/tools';
-
+import MoveSnoozedModal from '../../components/list/snooze/components/MoveSnoozedModal';
 import MoveScheduledModal from '../../components/message/modals/MoveScheduledModal';
 import MoveToSpamModal from '../../components/message/modals/MoveToSpamModal';
 import MoveAllNotificationButton from '../../components/notifications/MoveAllNotificationButton';
@@ -23,6 +18,7 @@ import UndoActionNotification from '../../components/notifications/UndoActionNot
 import { PAGE_SIZE, SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
 import { isMessage as testIsMessage, isSearch as testIsSearch } from '../../helpers/elements';
 import { isCustomLabel, isLabel } from '../../helpers/labels';
+import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 import {
     askToUnsubscribe,
@@ -31,9 +27,12 @@ import {
     searchForScheduled,
     searchForSnoozed,
 } from '../../helpers/moveToFolder';
+import { useDeepMemo } from '../../hooks/useDeepMemo';
+import useMailModel from '../../hooks/useMailModel';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
 import { useAppDispatch } from '../../logic/store';
 import { Element } from '../../models/element';
+import { SearchParameters } from '../../models/tools';
 import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
 import { useCreateFilters } from './useCreateFilters';
 import { useMoveAll } from './useMoveAll';
