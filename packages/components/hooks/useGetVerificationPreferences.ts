@@ -71,7 +71,12 @@ const useGetVerificationPreferences = () => {
                 publicKeys: apiKeys,
                 ktVerificationResult,
                 Errors,
-            }: ApiKeysConfig = await getPublicKeys({ email, lifetime });
+            }: ApiKeysConfig = await getPublicKeys({
+                email,
+                lifetime,
+                // messages from internal senders with e2ee disabled are still signed, thus we need to fetch the corresponding verification keys
+                includeInternalKeysWithE2EEDisabledForMail: true,
+            });
             const isInternal = RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
             const { publicKeys } = splitKeys(await getUserKeys());
             const { pinnedKeys, isContactSignatureVerified: pinnedKeysVerified } = await getPublicKeysVcardHelper(
