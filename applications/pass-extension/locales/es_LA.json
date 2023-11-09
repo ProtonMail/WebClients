@@ -731,15 +731,6 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" movido a la papelera. Dejará de reenviar correos a su buzón."
       ],
-      "All items permanently removed": [
-        "Todos los elementos eliminados permanentemente"
-      ],
-      "All items successfully restored": [
-        "Todos los elementos restaurados con éxito"
-      ],
-      "An item previously shared with you was disabled": [
-        "Se desactivó un elemento previamente compartido con usted"
-      ],
       "Auto-lock successfully disabled": [
         "Bloqueo automático desactivado con éxito"
       ],
@@ -1070,9 +1061,6 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Bóveda \"${ payload.share.content.name }\" actualizada con éxito"
       ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "La bóveda \"${ share.content.name }\" fue desactivada"
-      ],
       "Verification code": [
         "Código de verificación"
       ],
@@ -1351,9 +1339,6 @@
       "Most recent": [
         "Más reciente"
       ],
-      "Move items to": [
-        "Mover elementos a"
-      ],
       "Name": [
         "Nombre"
       ],
@@ -1404,9 +1389,6 @@
       ],
       "Pause list": [
         "Lista de pausa"
-      ],
-      "Permanently delete items": [
-        "Eliminar elementos permanentemente"
       ],
       "PIN": [
         "Código PIN"
@@ -1597,9 +1579,6 @@
       ],
       "MM/YYYY": [
         "MM/AAAA"
-      ],
-      "Move items to another vault (optional)": [
-        "Mover elementos a otra bóveda (opcional)"
       ],
       "Other": [
         "Otro"
@@ -1898,9 +1877,6 @@
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "La bóveda \"${ vaultName }\" y todos sus elementos serán eliminados permanentemente. No puede deshacer esta acción."
-      ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "La bóveda \"${ vaultName }\" será eliminada permanentemente y todos sus elementos se moverán a \"${ destinationVaultName }\""
       ],
       "Vault name is required": [
         "El nombre de la bóveda es requerido"

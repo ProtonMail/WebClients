@@ -731,15 +731,6 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" movido a la papelera. Dejará de reenviar correos a tu buzón."
       ],
-      "All items permanently removed": [
-        "Se han eliminado permanentemente todos los elementos"
-      ],
-      "All items successfully restored": [
-        "Se han restaurado todos los elementos"
-      ],
-      "An item previously shared with you was disabled": [
-        "Se ha desactivado un elemento previamente compartido contigo."
-      ],
       "Auto-lock successfully disabled": [
         "Se ha desactivado el bloqueo automático"
       ],
@@ -1070,9 +1061,6 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Se ha actualizado la caja fuerte \"${ payload.share.content.name }\"."
       ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "Se ha desbilitado la caja fuerte \"${ share.content.name }\"."
-      ],
       "Verification code": [
         "Código de verificación"
       ],
@@ -1351,9 +1339,6 @@
       "Most recent": [
         "Más reciente"
       ],
-      "Move items to": [
-        "Mover los elementos a"
-      ],
       "Name": [
         "Nombre"
       ],
@@ -1404,9 +1389,6 @@
       ],
       "Pause list": [
         "Lista de pausa"
-      ],
-      "Permanently delete items": [
-        "Eliminar los elementos permanentemente"
       ],
       "PIN": [
         "Código PIN"
@@ -1597,9 +1579,6 @@
       ],
       "MM/YYYY": [
         "MM/AAAA"
-      ],
-      "Move items to another vault (optional)": [
-        "Mover los elementos a otra caja fuerte (opcional)"
       ],
       "Other": [
         "Otro"
@@ -1898,9 +1877,6 @@
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "La caja fuerte \"${ vaultName }\" y todos tus elementos serán eliminados permanentemente. No puedes deshacer esta acción."
-      ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "La caja fuerte \"${ vaultName }\" será eliminada permanentemente y todos sus elementos se moverán a \"${ destinationVaultName }\"."
       ],
       "Vault name is required": [
         "El nombre de la caja fuerte es requerido."

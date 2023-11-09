@@ -381,7 +381,7 @@
     },
     "bf2023: Title": {
       "Black Friday offer": [
-        "Ponuka na Čierny piatok"
+        "Black Friday ponuka"
       ]
     },
     "Button": {
@@ -759,15 +759,6 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" presunutý do koša – prestanú sa preposielať emaily do vašej poštovej schránky"
       ],
-      "All items permanently removed": [
-        "Všetky položky boli natrvalo odstránené"
-      ],
-      "All items successfully restored": [
-        "Všetky položky boli úspešne obnovené"
-      ],
-      "An item previously shared with you was disabled": [
-        "Položka predtým zdieľaná s vami bola vypnutá"
-      ],
       "Auto-lock successfully disabled": [
         "Automatické uzamknutie bolo úspešne deaktivované"
       ],
@@ -1047,6 +1038,12 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Pri prechode na pole sa automaticky otvorí rozbaľovacie okno automatického vypĺňania."
       ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Nasledujúcu ${ result.ignored.length } položku nebolo možné importovať:",
+        "Nasledujúce ${ result.ignored.length } položky nebolo možné importovať:",
+        "Nasledujúcich ${ result.ignored.length } položiek nebolo možné importovať:",
+        "Nasledujúcich ${ result.ignored.length } položiek nebolo možné importovať:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Text, ktorý sa snažíte prilepiť, je dlhší ako maximálna povolená dĺžka ${ maxLength } znakov."
       ],
@@ -1097,9 +1094,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Trezor \"${ payload.share.content.name }\" bol úspešne aktualizovaný"
-      ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "Trezor \"${ share.content.name }\" bol deaktivovaný"
       ],
       "Verification code": [
         "Overovací kód"
@@ -1385,9 +1379,6 @@
       "Most recent": [
         "Najnovšie"
       ],
-      "Move items to": [
-        "Presunúť položky do"
-      ],
       "Name": [
         "Meno"
       ],
@@ -1438,9 +1429,6 @@
       ],
       "Pause list": [
         "Zoznam pozastavených"
-      ],
-      "Permanently delete items": [
-        "Navždy odstrániť položky"
       ],
       "PIN": [
         "PIN"
@@ -1631,9 +1619,6 @@
       ],
       "MM/YYYY": [
         "MM/RRRR"
-      ],
-      "Move items to another vault (optional)": [
-        "Presunúť položky do iného trezoru (nepovinné)"
       ],
       "Other": [
         "Iné"
@@ -1936,9 +1921,6 @@
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "Trezor „${ vaultName }“ a všetky jeho položky budú natrvalo odstránené. Túto akciu nie je možné vrátiť späť."
-      ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "Trezor \"${ vaultName }\" bude natrvalo odstránený a všetky jeho položky presunuté do \"${ destinationVaultName }\""
       ],
       "Vault name is required": [
         "Názov trezoru je povinný"

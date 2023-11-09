@@ -389,6 +389,9 @@
       "Edit Gateway": [
         "게이트웨이 편집"
       ],
+      "Edit invoice details": [
+        "신용 청구서 세부 정보 편집"
+      ],
       "Edit label": [
         "라벨 편집"
       ],
@@ -3563,6 +3566,9 @@
       ]
     },
     "email_forwarding_2023: Prompt": {
+      "End-to-end encryption will be re-enabled for the sender address.": [
+        "보낸 사람 주소에 대한 종단간 암호화가 재활성화 됩니다."
+      ],
       "Forwarding to the destination address will end.": [
         "해당 경로 주소의 포워딩이 중단됩니다."
       ]
@@ -6881,6 +6887,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "다시 시도하거나, 다른 결제 수단을 사용하거나 PayPal에 연락해 도움을 요청하세요."
       ],
+      "Please use another browser or download the file.": [
+        "파일을 다운로드 하거나 다른 브라우저를 사용하세요."
+      ],
       "Please verify payment at the new tab which was opened.": [
         "열린 새 탭에서 결제를 확인하세요."
       ],
@@ -6892,6 +6901,9 @@
       ],
       "Preview failed to be loaded": [
         "미리보기 불러오는 중 문제 발생"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "이 브라우저에서는 이 파일 유형을 열 수 없습니다."
       ],
       "Preview for this file type is not supported": [
         "이 파일 유형의 미리보기가 지원되지 않습니다"
@@ -7469,6 +7481,9 @@
       "Version history": [
         "버전 기록"
       ],
+      "View, download, and manage your invoices.": [
+        "청구서를 보고 다운로드 하고 관리하십시오."
+      ],
       "Visa Secure logo": [
         "Visa Secure 로고"
       ],
@@ -7859,6 +7874,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "구독을 자동으로 갱신하기 위해 결제 방법을 추가할 수 있습니다. 다른 지불 방법도 사용할 수 있습니다."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "내 자신 및 조직의 이름 및 주소를 입력하세요. 이 사항들은 개인 및 조직 청구서 양쪽에 추가됩니다."
       ]
     },
     "Info on errors": {
@@ -8767,6 +8787,9 @@
       ],
       "Name": [
         "이름"
+      ],
+      "Name and address": [
+        "이름 및 주소"
       ],
       "Name on card": [
         "카드 소유자 이름"
@@ -9806,6 +9829,26 @@
         "중간 VPN 속도"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "나의 ${ currentPlanName } 계정 유지"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "미리보려면 계속하기"
@@ -9845,26 +9888,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } 로 업그레이드"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "나의 ${ currentPlanName } 계정 유지"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -10221,6 +10244,17 @@
         "팀 관리"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "그렇지 않으면 귀하의 계정에 접근하는 것이 제한될 것이며, 귀하의 계정은 결국 비활성화됩니다."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } 의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 }(으)로 끝나는 ${ brand }"
@@ -10308,17 +10342,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "그렇지 않으면 귀하의 계정에 접근하는 것이 제한될 것이며, 귀하의 계정은 결국 비활성화됩니다."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } 의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
       ]
     },
     "new_plans: Label": {
@@ -11457,6 +11480,17 @@
       ],
       "yourdomain.com": [
         "yourdomain.com"
+      ]
+    },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "이러한 경우 지원 팀에 ${ contactHref }하십시오."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "플랜이 포함되는 IP 수를 선택하세요. 각 추가 IP 가격은 ${ price } 입니다."
+      ],
+      "Should you need more than ${ maxIPs } IPs, ": [
+        "${ maxIPs } IP 이상이여야 합니다, "
       ]
     },
     "plan customizer, users": {
@@ -13279,6 +13313,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "${ currentName } 게이트웨이 편집"
+      ],
+      "Edit invoice details": [
+        "신용 청구서 세부 정보 편집"
       ],
       "Edit servers": [
         "서버 편집"
