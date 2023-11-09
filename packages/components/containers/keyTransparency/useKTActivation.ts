@@ -8,15 +8,15 @@ import { useAuthentication, useConfig, useFeature, useGetMailSettings } from '..
 import { FeatureCode } from '../features';
 import { KT_FF, KtFeatureEnum, isKTActive } from './ktStatus';
 
-const getKTActivationPromise = async (
+const getKTActivation = (
     featureFlag: KT_FF,
     appName: APP_NAMES,
     mailSettings?: MailSettings
-): Promise<KeyTransparencyActivation> => {
+): KeyTransparencyActivation => {
     if (!featureFlag) {
         return KeyTransparencyActivation.DISABLED;
     }
-    if (!(await isKTActive(appName, featureFlag))) {
+    if (!isKTActive(featureFlag)) {
         return KeyTransparencyActivation.DISABLED;
     }
     if (featureFlag == KtFeatureEnum.ENABLE_CORE) {
@@ -61,7 +61,7 @@ const useKTActivation = (): KeyTransparencyActivation => {
     useEffect(() => {
         const run = async () => {
             const mailSettings = isAuthenticated ? await getMailSettings() : undefined;
-            const ktActivation = await getKTActivationPromise(featureFlag, appName, mailSettings);
+            const ktActivation = getKTActivation(featureFlag, appName, mailSettings);
             setKTActivation(ktActivation);
         };
         void run();
