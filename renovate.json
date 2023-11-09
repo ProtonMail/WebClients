@@ -14,6 +14,10 @@
         {
             "groupName": "Unleash",
             "matchPackageNames": ["@protontech/proxy-client-react", "unleash-proxy-client"]
+        },
+        {
+            "groupName": "pdfme",
+            "matchPackagePatterns": ["@pdfme/*"]
         }
     ]
 }
