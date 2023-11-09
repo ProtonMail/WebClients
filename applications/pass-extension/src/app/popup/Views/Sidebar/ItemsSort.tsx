@@ -15,17 +15,33 @@ interface ItemsSortProps {
 const getSortOptionDetails = (option: ItemSortFilter) => {
     const options: Record<string, { label: string; shortLabel: string; icon: IconName }> = {
         createTimeASC: {
+            // translator: this is sorting filter label from drop down menu
             label: c('Label').t`Oldest to newest`,
+            // translator: this is short filter label for "Oldest to newest" (when filter is selected)
             shortLabel: c('Label').t`Old-New`,
             icon: 'arrow-down-arrow-up',
         },
         createTimeDESC: {
+            // translator: this is sorting filter label from drop down menu
             label: c('Label').t`Newest to oldest`,
+            // translator: this is short filter label for "Newest to oldest" (when filter is selected)
             shortLabel: c('Label').t`New-Old`,
             icon: 'arrow-down-arrow-up',
         },
-        recent: { label: c('Label').t`Most recent`, shortLabel: c('Label').t`Recent`, icon: 'clock' },
-        titleASC: { label: c('Label').t`Alphabetical`, shortLabel: c('Label').t`A-Z`, icon: 'arrow-down-arrow-up' },
+        recent: {
+            // translator: this is sorting filter label from drop down menu (Recent means items that have been recently used or updated ordered by time (today, last week, last 2 weeks, last month...))
+            label: c('Label').t`Most recent`,
+            // translator: this is short filter label for "Most recent" (when filter is selected)
+            shortLabel: c('Label').t`Recent`,
+            icon: 'clock',
+        },
+        titleASC: {
+            // translator: this is sorting filter label from drop down menu
+            label: c('Label').t`Alphabetical`,
+            // translator: this is short filter label for "Alphabetical" (when filter is selected)
+            shortLabel: c('Label').t`A-Z`,
+            icon: 'arrow-down-arrow-up',
+        },
     };
 
     return options[option];
