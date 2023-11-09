@@ -51,6 +51,7 @@ export const getAndVerifyApiKeys = async ({
     email,
     internalKeysOnly,
     verifyOutboundPublicKeys,
+    skipVerificationOfExternalDomains = false,
     silence = false,
     noCache = false,
 }: {
@@ -59,6 +60,8 @@ export const getAndVerifyApiKeys = async ({
     internalKeysOnly: boolean;
     /** KT verification function, or `null` for legacy use-case where KT is disabled */
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys | null;
+    /** Optimisations _only_ for apps where users with external domains do not have valid keys (e.g. Mail) */
+    skipVerificationOfExternalDomains?: boolean;
     silence?: boolean;
     noCache?: boolean;
 }): Promise<ApiKeysWithKTStatus> => {
@@ -89,7 +92,7 @@ export const getAndVerifyApiKeys = async ({
     const ktResult = verifyOutboundPublicKeys
         ? await verifyOutboundPublicKeys(
               email,
-              internalKeysOnly,
+              skipVerificationOfExternalDomains,
               { keyList: addressKeys, signedKeyList: Address.SignedKeyList },
               CatchAll ? { keyList: catchAllKeys!, signedKeyList: CatchAll.SignedKeyList } : undefined
           )
