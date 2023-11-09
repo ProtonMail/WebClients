@@ -229,6 +229,7 @@ const useRunSelfAudit = () => {
                 error: { failedTrials: tooManyRetries ? 0 : failedTrials, tooManyRetries },
             };
             reportError(error, tooManyRetries);
+            await reportSelfAuditErrors(selfAuditResult);
             await storeAuditResult(userID, selfAuditResult, userPrimaryPublicKey, ktLSAPI);
             return { selfAuditResult, nextSelfAuditInterval };
         }
