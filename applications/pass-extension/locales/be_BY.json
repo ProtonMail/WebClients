@@ -759,15 +759,6 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Псеўданім \"${ item.aliasEmail }\" перамешчаны ў сметніцу. Ён перастане перасылаць лісты ў вашу паштовую скрыню"
       ],
-      "All items permanently removed": [
-        "Усе элементы незваротна выдалены"
-      ],
-      "All items successfully restored": [
-        "Усе элементы паспяхова адноўлены"
-      ],
-      "An item previously shared with you was disabled": [
-        "Адключана абагуленне элемента да якога ў вас раней быў доступ"
-      ],
       "Auto-lock successfully disabled": [
         "Аўтаблакіроўка паспяхова адключана"
       ],
@@ -1047,6 +1038,12 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Выпадное меню аўтазапаўнення будзе аўтаматычна адкрывацца пры навядзенні на поле."
       ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Наступны ${ result.ignored.length } элемент немагчыма імпартаваць:",
+        "Наступныя ${ result.ignored.length } элементы немагчыма імпартаваць:",
+        "Наступныя ${ result.ignored.length } элементаў немагчыма імпартаваць:",
+        "Наступныя ${ result.ignored.length } элементаў немагчыма імпартаваць:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Тэкст, які вы спрабуеце ўставіць перавышае максімальную даўжыню. Дазволена сімвалаў: ${ maxLength }."
       ],
@@ -1097,9 +1094,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Сховішча \"${ payload.share.content.name }\" паспяхова абноўлена"
-      ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "Сховішча \"${ share.content.name }\" адключана"
       ],
       "Verification code": [
         "Праверачны код"
@@ -1385,9 +1379,6 @@
       "Most recent": [
         "Самыя апошнія"
       ],
-      "Move items to": [
-        "Перамясціць элементы ў"
-      ],
       "Name": [
         "Назва"
       ],
@@ -1438,9 +1429,6 @@
       ],
       "Pause list": [
         "Спіс прыпыненых"
-      ],
-      "Permanently delete items": [
-        "Незваротна выдаліць элементы"
       ],
       "PIN": [
         "PIN"
@@ -1631,9 +1619,6 @@
       ],
       "MM/YYYY": [
         "ММ/ГГГГ"
-      ],
-      "Move items to another vault (optional)": [
-        "Перамясціць элементы ў іншае сховішча (неабавязкова)"
       ],
       "Other": [
         "Іншае"
@@ -1936,9 +1921,6 @@
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "Сховішча \"${ vaultName }\" і ўсе яго элементы будуць незваротна выдалены. Вы не зможаце адрабіць гэта дзеянне."
-      ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "Сховішча \"${ vaultName }\" будзе незваротна выдалена, а ўсе яго элементы перамешчаны ў \"${ destinationVaultName }\""
       ],
       "Vault name is required": [
         "Неабходна ўвесці назву сховішча"

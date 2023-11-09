@@ -227,6 +227,9 @@
       "More options": [
         "Więcej opcji"
       ],
+      "Move all items": [
+        "Przenieś wszystkie elementy"
+      ],
       "Move to a shared vault": [
         "Przenieś do udostępnionego sejfu"
       ],
@@ -487,6 +490,9 @@
       "Failed to edit user's access.": [
         "Nie udało się zmienić uprawień użytkownika."
       ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\" nie powiodło się"
+      ],
       "Failed to remove user's access.": [
         "Nie udało się usunąć uprawień użytkownika."
       ],
@@ -546,6 +552,9 @@
       ],
       "Restoring item failed": [
         "Przywracanie elementu nie powiodło się"
+      ],
+      "Restoring trashed items failed": [
+        "Przywracanie usuniętych wiadomości nie powiodło się"
       ],
       "Settings update failed": [
         "Aktualizacja ustawień nie powiodła się"
@@ -759,14 +768,20 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" został przeniesiony do Kosza. Spowoduje to zatrzymanie przekierowywania wiadomości"
       ],
-      "All items permanently removed": [
-        "Wszystkie elementy zostały trwale usunięte"
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Wszystkie elementy z sejfu \"${ payload.content.name }\" zostały przeniesione"
       ],
-      "All items successfully restored": [
-        "Wszystkie elementy zostały przywrócone"
+      "All trashed items permanently removed": [
+        "Wszystkie usunięte elementy zostały trwale usunięte"
       ],
-      "An item previously shared with you was disabled": [
-        "Poprzednio udostępniony element został wyłączony"
+      "All trashed items successfully restored": [
+        "Wszystkie usunięte elementy zostały przywrócone"
+      ],
+      "An item previously shared with you was removed": [
+        "Poprzednio udostępniony element został usunięty"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Czy chcesz przenieść wszystkie elementy z sejfu \"${ fromVaultName }\" do \"${ toVaultName }\"?"
       ],
       "Auto-lock successfully disabled": [
         "Automatyczna blokada została wyłączona"
@@ -824,6 +839,9 @@
       ],
       "Editor": [
         "Edycja"
+      ],
+      "Emptying trash...": [
+        "Opróżnianie Kosza..."
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Włącz ${ PASS_APP_NAME }, łącząc swoje konto ${ BRAND_NAME }"
@@ -918,6 +936,9 @@
       "Item successfully moved": [
         "Element został przeniesiony"
       ],
+      "Leaving vault...": [
+        "Opuszczanie sejfu..."
+      ],
       "Let's get you started by creating your first item": [
         "Rozpocznij od utworzenia pierwszego elementu"
       ],
@@ -935,6 +956,9 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "To więcej niż menedżer haseł. ${ PASS_APP_NAME } chroni Twoje hasło i osobisty adres e-mail za pomocą aliasów. Dzięki tej samej technologii, która stoi za pocztą ${ MAIL_APP_NAME }, Twoje dane są zaszyfrowane end-to-end i są dostępne tylko dla Ciebie."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Przenieś wszystkie elementy z sejfu \"${ payload.content.name }\""
       ],
       "Multiple vaults": [
         "Wiele sejfów"
@@ -996,8 +1020,14 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Prywatność jest dla nas bardzo ważna. Dowiedz się, dlaczego ${ PASS_APP_NAME } jest inny."
       ],
+      "Restoring trashed items...": [
+        "Przywracanie usuniętych wiadomości..."
+      ],
       "Save login": [
         "Zapisz dane logowania"
+      ],
+      "Select destination vault": [
+        "Wybierz docelowy sejf"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Wybierz, gdzie chcesz zapisać zaimportowane sejfy."
@@ -1104,8 +1134,8 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Sejf \"${ payload.share.content.name }\" został zaktualizowany"
       ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "Sejf \"${ share.content.name }\" został wyłączony"
+      "Vault \"${ share.content.name }\" was removed": [
+        "Sejf \"${ share.content.name }\" został usunięty"
       ],
       "Verification code": [
         "Kod weryfikacyjny"
@@ -1391,9 +1421,6 @@
       "Most recent": [
         "Ostatnie"
       ],
-      "Move items to": [
-        "Przenieś elementy do"
-      ],
       "Name": [
         "Nazwa"
       ],
@@ -1444,9 +1471,6 @@
       ],
       "Pause list": [
         "Lista wykluczonych"
-      ],
-      "Permanently delete items": [
-        "Usuń trwale elementy"
       ],
       "PIN": [
         "Kod PIN"
@@ -1635,9 +1659,6 @@
       "MM/YYYY": [
         "MM/RRRR"
       ],
-      "Move items to another vault (optional)": [
-        "Przenieś elementy do innego sejfu (opcjonalnie)"
-      ],
       "Other": [
         "Inna"
       ],
@@ -1746,6 +1767,9 @@
       ],
       "Member limit": [
         "Limit użytkowników"
+      ],
+      "Move all items ?": [
+        "Przenieść wszystkie elementy?"
       ],
       "Our welcome gift to you": [
         "Nasz prezent powitalny"
@@ -1939,9 +1963,6 @@
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "Sejf \"${ vaultName }\" i wszystkie jego elementy zostaną trwale usunięte. Tej akcji nie można cofnąć."
-      ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "Sejf \"${ vaultName }\" zostanie trwale usunięty, a wszystkie jego elementy zostaną przeniesione do sejfu \"${ destinationVaultName }\""
       ],
       "Vault name is required": [
         "Nazwa sejfu jest wymagana"
