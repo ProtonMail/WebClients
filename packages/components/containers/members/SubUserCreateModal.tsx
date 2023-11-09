@@ -54,6 +54,7 @@ import MemberStorageSelector, { getStorageRange, getTotalStorage } from './Membe
 import SubUserBulkCreateModal from './SubUserBulkCreateModal';
 import SubUserCreateHint from './SubUserCreateHint';
 import { UserManagementMode } from './types';
+import validateAddUser from './validateAddUser';
 
 enum Step {
     SINGLE,
@@ -166,12 +167,18 @@ const SubUserCreateModal = ({
     };
 
     const validate = () => {
-        if (!model.private && !organizationKey) {
-            return c('Error').t`The organization key must be activated first.`;
+        const error = validateAddUser({
+            privateUser: model.private,
+            organization,
+            organizationKey,
+            verifiedDomains,
+            mode,
+        });
+        if (error) {
+            return error;
         }
 
         const normalizedAddress = getNormalizedAddress();
-
         if (!validateEmailAddress(`${normalizedAddress.Local}@${normalizedAddress.Domain}`)) {
             return c('Error').t`Email address is invalid`;
         }
