@@ -4293,8 +4293,9 @@
       "You cannot undo this action.": [
         "No puede deshacer esta acción."
       ],
-      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
-        "Tiene ${ expiresInDays } días restantes para reclamar su bono de bienvenida de 500 MB y "
+      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
+        "Le queda ${ expiresInDays } día para reclamar sus 500 MB de bono de bienvenida y ",
+        "Le quedan ${ expiresInDays } días para reclamar sus 500 MB de bono de bienvenida y "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Alcanzó el ${ spaceDisplayed }% de su capacidad de almacenamiento. ${ freeUpMessage } ${ upgradeLink }"

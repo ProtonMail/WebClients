@@ -4431,8 +4431,11 @@
       "You cannot undo this action.": [
         "Tej akcji nie można cofnąć."
       ],
-      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
-        "Masz ${ expiresInDays }, aby odebrać bonus powitalny 500 MB i "
+      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
+        "Masz ${ expiresInDays } dzień, aby odebrać bonus powitalny 500 MB i ",
+        "Masz ${ expiresInDays } dni, aby odebrać bonus powitalny 500 MB i ",
+        "Masz ${ expiresInDays } dni, aby odebrać bonus powitalny 500 MB i ",
+        "Masz ${ expiresInDays } dnia, aby odebrać bonus powitalny 500 MB i "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Wykorzystano ${ spaceDisplayed }% dostępnej przestrzeni dyskowej. ${ freeUpMessage } ${ upgradeLink }"
