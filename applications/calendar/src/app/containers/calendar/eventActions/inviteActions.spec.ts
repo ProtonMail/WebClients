@@ -6,10 +6,10 @@ import { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/in
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { GetVTimezonesMap } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
 import { RelocalizeText } from '@proton/shared/lib/interfaces/hooks/RelocalizeText';
-import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { generateTestAddress } from '@proton/testing/lib/builders';
 
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
+import { AugmentedSendPreferences } from '../interface';
 import { getSendIcsAction } from './inviteActions';
 
 const generateContact = (mail: string) =>
@@ -20,7 +20,7 @@ const generateContact = (mail: string) =>
             value: `mailto:${mail}`,
             parameters: { cn: mail, role: 'REQ-PARTICIPANT', rsvp: 'TRUE', partstat: 'NEEDS-ACTION' },
         },
-    ] as unknown as [SimpleMap<SendPreferences>, SimpleMap<ContactEmail>, VcalAttendeeProperty];
+    ] as unknown as [SimpleMap<AugmentedSendPreferences>, SimpleMap<ContactEmail>, VcalAttendeeProperty];
 
 const contactA = generateContact('plus@proton.test');
 const contactB = generateContact('pmtest2@proton.test');
@@ -95,7 +95,7 @@ describe('getSendIcsAction', () => {
             contactEmailsMap: inputContactEmailsMap ?? { ...contactA[1], ...contactB[1], ...contactC[1] },
             ...basedInviteParams,
             ...rest,
-        } as any);
+        }) as any;
 
     beforeEach(() => {
         getVTimezonesMapSpy = jest.fn().mockImplementation((tzs: string[]) => {
@@ -544,7 +544,7 @@ describe('getSendIcsAction', () => {
                 hasPinnedKeys: false,
                 warnings: [],
             },
-        } as unknown as SimpleMap<SendPreferences>;
+        } as unknown as SimpleMap<AugmentedSendPreferences>;
 
         describe('when no vevent', () => {
             it('should call `onRequestError`', async () => {
