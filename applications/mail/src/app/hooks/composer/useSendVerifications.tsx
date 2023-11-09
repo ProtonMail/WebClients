@@ -15,7 +15,9 @@ import { getRecipients, getRecipientsAddresses, isPlainText } from '@proton/shar
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 import unique from '@proton/utils/unique';
 
-import SendWithChangedPreferencesModal from '../../components/composer/addresses/SendWithChangedPreferencesModal';
+import SendWithChangedPreferencesModal, {
+    PREFERENCE_CHANGE_TYPE,
+} from '../../components/composer/addresses/SendWithChangedPreferencesModal';
 import SendWithErrorsModal from '../../components/composer/addresses/SendWithErrorsModal';
 import SendWithExpirationModal from '../../components/composer/addresses/SendWithExpirationModal';
 import SendWithWarningsModal from '../../components/composer/addresses/SendWithWarningsModal';
@@ -141,6 +143,7 @@ export const useSendVerifications = (
             const mapSendPrefs: SimpleMap<SendPreferences> = {};
             const sendErrors: { [email: string]: EncryptionPreferencesError } = {};
             const emailsWithMissingPreferences: string[] = [];
+            const emailsWithE2EEDisabled: string[] = [];
             const expiresNotEncrypted: string[] = [];
 
             await Promise.all(
@@ -197,6 +200,14 @@ export const useSendVerifications = (
                             // even if the pinned keys are removed at the last minute, we can be positive that the user made those changes.
                             // Thus, we can now trust & use the last-minute preferences.
                             sendPreferences = getSendPreferences(lastMinuteEncryptionPrefs, message.data);
+                            // In the case of internal addresses with E2EE disabled for mail, pinned keys are automatically ignored.
+                            // So even if the last-minute contact signature is verified, we must warn the user if the recipient has just disabled E2EE on their address
+                            if (
+                                sendPreferences.encryptionDisabled &&
+                                !cachedSendInfo.sendPreferences?.encryptionDisabled
+                            ) {
+                                emailsWithE2EEDisabled.push(email);
+                            }
                         }
                     }
                     mapSendPrefs[email] = sendPreferences;
@@ -246,12 +257,27 @@ export const useSendVerifications = (
                 });
             }
 
+            // Addresses where E2EE was disabled at the last minute
+            if (emailsWithE2EEDisabled.length > 0) {
+                await new Promise((resolve, reject) => {
+                    createModal(
+                        <SendWithChangedPreferencesModal
+                            emails={emailsWithE2EEDisabled}
+                            changeType={PREFERENCE_CHANGE_TYPE.E2EE_DISABLED}
+                            onSubmit={() => resolve(undefined)}
+                            onClose={reject}
+                        />
+                    );
+                });
+            }
+
             // Addresses with missing preferences
             if (emailsWithMissingPreferences.length > 0) {
                 await new Promise((resolve, reject) => {
                     createModal(
                         <SendWithChangedPreferencesModal
                             emails={emailsWithMissingPreferences}
+                            changeType={PREFERENCE_CHANGE_TYPE.CONTACT_DELETED}
                             onSubmit={() => resolve(undefined)}
                             onClose={reject}
                         />

@@ -15,10 +15,10 @@ export interface SendPreferences {
     isPublicKeyPinned?: boolean;
     hasApiKeys: boolean;
     hasPinnedKeys: boolean;
+    encryptionDisabled: boolean; // if `encryptionDisabled` is true, `encrypt` will always be false
     warnings?: string[];
     error?: EncryptionPreferencesError;
     ktVerificationResult?: KeyTransparencyVerificationResult;
-    encryptionDisabled?: boolean;
 }
 
 export interface Packets {

@@ -40,6 +40,7 @@ describe('icon', () => {
                 hasApiKeys: true,
                 hasPinnedKeys: false,
                 isPublicKeyPinned: false,
+                encryptionDisabled: false,
             };
             expect(getSendStatusIcon(sendPreferences, ktActivation)).toMatchObject({
                 colorClassName: 'color-info',
@@ -58,6 +59,7 @@ describe('icon', () => {
                 hasApiKeys: true,
                 hasPinnedKeys: true,
                 isPublicKeyPinned: true,
+                encryptionDisabled: false,
             };
             expect(getSendStatusIcon(sendPreferences, ktActivation)).toMatchObject({
                 colorClassName: 'color-info',
@@ -76,6 +78,7 @@ describe('icon', () => {
                 hasApiKeys: true,
                 hasPinnedKeys: true,
                 isPublicKeyPinned: false,
+                encryptionDisabled: false,
                 error: new EncryptionPreferencesError(
                     ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_NOT_PINNED,
                     'test error'
@@ -98,6 +101,7 @@ describe('icon', () => {
                 hasApiKeys: true,
                 hasPinnedKeys: false,
                 isPublicKeyPinned: false,
+                encryptionDisabled: false,
             };
             expect(getSendStatusIcon(sendPreferences, ktActivation)).toMatchObject({
                 colorClassName: 'color-success',
@@ -116,6 +120,7 @@ describe('icon', () => {
                 hasApiKeys: true,
                 hasPinnedKeys: true,
                 isPublicKeyPinned: true,
+                encryptionDisabled: false,
             };
             expect(getSendStatusIcon(sendPreferences, ktActivation)).toMatchObject({
                 colorClassName: 'color-success',
@@ -134,6 +139,7 @@ describe('icon', () => {
                 hasApiKeys: true,
                 hasPinnedKeys: true,
                 isPublicKeyPinned: false,
+                encryptionDisabled: false,
                 error: new EncryptionPreferencesError(
                     ENCRYPTION_PREFERENCES_ERROR_TYPES.PRIMARY_NOT_PINNED,
                     'test error'
@@ -156,6 +162,7 @@ describe('icon', () => {
                 hasApiKeys: true,
                 hasPinnedKeys: false,
                 isPublicKeyPinned: false,
+                encryptionDisabled: false,
                 warnings: ['warning test 1', 'warning test 2'],
             };
             expect(getSendStatusIcon(sendPreferences, ktActivation)).toMatchObject({
@@ -175,6 +182,7 @@ describe('icon', () => {
                 hasApiKeys: true,
                 hasPinnedKeys: true,
                 isPublicKeyPinned: true,
+                encryptionDisabled: false,
                 warnings: ['warning test 1', 'warning test 2'],
             };
             expect(getSendStatusIcon(sendPreferences, ktActivation)).toMatchObject({
@@ -193,6 +201,7 @@ describe('icon', () => {
                 mimeType: MIME_TYPES.MIME,
                 hasApiKeys: false,
                 hasPinnedKeys: false,
+                encryptionDisabled: false,
             };
             expect(getSendStatusIcon(sendPreferences, ktActivation)).toMatchObject({
                 colorClassName: 'color-success',
@@ -211,6 +220,7 @@ describe('icon', () => {
                 hasApiKeys: false,
                 hasPinnedKeys: true,
                 isPublicKeyPinned: false,
+                encryptionDisabled: false,
             };
             expect(getSendStatusIcon(sendPreferences, ktActivation)).toMatchObject({
                 colorClassName: 'color-success',
@@ -229,6 +239,7 @@ describe('icon', () => {
                 hasApiKeys: false,
                 hasPinnedKeys: true,
                 isPublicKeyPinned: true,
+                encryptionDisabled: false,
             };
             expect(getSendStatusIcon(sendPreferences, ktActivation)).toMatchObject({
                 colorClassName: 'color-success',
@@ -247,6 +258,7 @@ describe('icon', () => {
                 hasApiKeys: false,
                 hasPinnedKeys: true,
                 isPublicKeyPinned: true,
+                encryptionDisabled: false,
                 warnings: ['warning test 1', 'warning test 2'],
             };
             expect(getSendStatusIcon(sendPreferences, ktActivation)).toMatchObject({
@@ -266,6 +278,7 @@ describe('icon', () => {
                 hasApiKeys: false,
                 hasPinnedKeys: false,
                 isPublicKeyPinned: false,
+                encryptionDisabled: false,
             };
             expect(getSendStatusIcon(sendPreferences, ktActivation)).toBeUndefined();
         });
