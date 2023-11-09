@@ -187,16 +187,18 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
     };
 
     const importUsers = async ({ skipCapacityValidation = false }: { skipCapacityValidation?: boolean } = {}) => {
-        const error = validateAddUser(organization, organizationKey, verifiedDomains, mode);
+        const selectedUsers = usersToImport.filter((user) => selectedUserIds.includes(user.id));
+
+        const error = validateAddUser({
+            privateUser: selectedUsers.length > 0 && selectedUsers.every((user) => user.privateSubUser),
+            organization,
+            organizationKey,
+            verifiedDomains,
+            mode,
+        });
         if (error) {
             return createNotification({ type: 'error', text: error });
         }
-
-        if (!organizationKey?.privateKey) {
-            return createNotification({ type: 'error', text: c('Error').t`Organization key is not decrypted` });
-        }
-
-        const selectedUsers = usersToImport.filter((user) => selectedUserIds.includes(user.id));
 
         if (!skipCapacityValidation) {
             try {
@@ -241,7 +243,7 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
                     user,
                     api: getSilentApiWithAbort(api, signal),
                     getAddresses,
-                    organizationKey: organizationKey.privateKey,
+                    organizationKey: organizationKey?.privateKey,
                     keyTransparencyVerify,
                     mode,
                 });
