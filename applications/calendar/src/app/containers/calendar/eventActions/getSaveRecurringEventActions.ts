@@ -12,7 +12,6 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
-import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import unary from '@proton/utils/unary';
 
 import { CalendarEventRecurring } from '../../../interfaces/CalendarEvents';
@@ -31,6 +30,7 @@ import {
     getDeleteSyncOperation,
     getUpdateSyncOperation,
 } from '../getSyncMultipleEventsPayload';
+import { AugmentedSendPreferences } from '../interface';
 import createFutureRecurrence from '../recurrence/createFutureRecurrence';
 import createSingleRecurrence from '../recurrence/createSingleRecurrence';
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
@@ -61,7 +61,7 @@ interface SaveRecurringArguments {
         veventComponent?: VcalVeventComponent;
         inviteActions: InviteActions;
         timestamp: number;
-        sendPreferencesMap: SimpleMap<SendPreferences>;
+        sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
     }>;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     selfAttendeeToken?: string;
