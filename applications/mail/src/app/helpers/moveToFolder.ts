@@ -153,7 +153,7 @@ const searchForAnyLabel = async (
         ).length;
     }
 
-    const canUndo = numberOfMessages > 0 && numberOfMessages === elements.length;
+    const canUndo = !(numberOfMessages > 0 && numberOfMessages === elements.length);
     setCanUndo(canUndo);
 
     if (!canUndo) {
