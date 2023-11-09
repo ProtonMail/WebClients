@@ -1300,6 +1300,9 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "${ MAIL_SHORT_APP_NAME } Plus og ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } lagerplads"
       ],
@@ -1309,11 +1312,26 @@
       "3 TB": [
         "3 TB"
       ],
+      "3,000+ servers across 65+ countries": [
+        "3.000+ servere fordelt på 65+ lande"
+      ],
       "6 users": [
         "6 brugere"
       ],
+      "Access content worldwide": [
+        "Tilgå indhold over hele verden"
+      ],
+      "Ad-blocker and malware protection": [
+        "Annonceblokering og beskyttelse mod malware"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Alle betalte ${ MAIL_SHORT_APP_NAME } og ${ CALENDAR_APP_NAME }-funktioner"
+      ],
       "Extended version history": [
         "Udvidet versionshistorik"
+      ],
+      "High speed streaming": [
+        "Streaming ved høj hastighed"
       ],
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
         "Premium ${ DRIVE_SHORT_APP_NAME }"
@@ -1328,15 +1346,58 @@
         "Premium Adgangskodeadministrator"
       ]
     },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "Rabatter er baseret på månedlig standardpris."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "Dit abonnement vil automatisk blive fornyet til den nedsatte standardpris og varighed ved slutningen af din faktureringscyklus."
+      ]
+    },
     "bf2023: Info": {
       "6 users": [
         "6 brugere"
       ]
     },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 dages tilbagebetalingsgaranti"
+      ]
+    },
     "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "Tilgå blokeret indhold og surf privat. Inkluderer 3.000+ servere fordelt op 65+ lande, højeste VPN hastigheder, adgang til verdensomspændende streamingtjenester, malware- og ad-blocker, hurtige BitTorrent-downloads, og meget mere."
+      ],
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Få adgang til indhold på streamingtjenester, herunder Netflix, Disney+, Prime Video og mere, hvor som helst."
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "Omgå lokale internetblokeringer og censur med vores globale netværk af servere."
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "Inkluderer support for 1 tilpasset e-maildomæne, 10 e-mailadresser, 10 Hide-my-email-aliasser, kalenderdeling med mere."
+      ],
       "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer support til 3 bruger-e-maildomæner, ${ addresses } e-mailadresse, ubegrænsede Hide-my-email-aliasser, kalenderdeling med mere.",
         "Inkluderer support til 3 bruger-e-maildomæner, ${ addresses } e-mailadresser, ubegrænsede Hide-my-email-aliasser, kalenderdeling med mere."
+      ],
+      "Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
+        "Beskyt logins på alle dine enheder. Inkluderer ubegrænsede aliasser, deling, integreret 2FA og mere."
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Beskyt dine e-mails og tidsplan med end-to-end kryptering. Inkluderer understøttelse af bruger-e-mail-domæner, 15 e-mailadresser, ubegrænsede Hide-my-email-aliasser, kalenderdeling og mere."
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "Beskyt dine filer med krypteret lagring i skyen. Inkluderer versionshistorik, krypteret fildeling og meget mere."
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "Det specialdesignede NetShield beskytter dine enheder og sætter farten i vejret på din browsing ved at blokere annoncer, trackere og malware."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "Lagerplads er delt mellem alle ${ BRAND_NAME }-apps."
+      ],
+      "Store up to 200 versions of each file for up to 10 years.": [
+        "Gem op til 200 versioner af hver fil i op til 10 år."
       ]
     },
     "Billing cycle": {
@@ -2902,6 +2963,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Krypterer og importerer kontakter... Dette kan tage et par minutter. Når processen er afsluttet, kan du lukke dette vindue."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "For at importere via en CSV- eller VCF-fil, skal du være sikker på at filen ikke overskriver ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ MAX_IMPORT_CONTACTS_STRING } kontakter. Hvis din fil er større, skal du dele den i mindre filer. ${ learnMoreLink }."
+      ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Få op til ${ credits } i kreditter ved at invitere venner til ${ BRAND_NAME }."
       ],
@@ -2913,6 +2977,9 @@
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Adskil forskellige aspekter af dit liv, med flere e-mailadresser, og lås op for flere premium-funktioner, når du opgraderer."
+      ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "For at importere dine kontakter fra Google eller Outlook, ${ easySwitchLink }."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
         "For at fjerne ${ MAIL_APP_NAME } sidefoden, opgrader og lås op for endnu flere premium-funktioner."
@@ -2937,6 +3004,11 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere begivenheder i iCal format (ICS-fil). Denne fil skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have op til ${ MAX_IMPORT_EVENTS_STRING } begivenheder. Hvis din fil er større, skal du opdele den i mindre filer."
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "skal du bruge Easy Switch importassistenten"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -3385,6 +3457,9 @@
       ],
       "Incorrect username": [
         "Forkert brugernavn"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "Den tiltænkte modtager understøtter ikke kalenderdeling"
       ],
       "Invalid ${ name } code": [
         "Ugyldig ${ name }-kode"
@@ -6453,6 +6528,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Forsøg venligst igen, benyt en anden betalingsmetode eller kontakt PayPal for hjælp."
       ],
+      "Please use another browser or download the file.": [
+        "Brug en anden browser eller download filen."
+      ],
       "Please verify payment at the new tab which was opened.": [
         "Bekræft betalingen i den nye fane, der blev åbnet."
       ],
@@ -6464,6 +6542,9 @@
       ],
       "Preview failed to be loaded": [
         "Forhåndsvisning kunne ikke indlæses"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Forhåndsvisning for denne filtype understøttes i øjeblikket ikke i denne browser."
       ],
       "Preview for this file type is not supported": [
         "Forhåndsvisning af denne filtype er ikke understøttet"
@@ -9356,6 +9437,26 @@
         "Mellem VPN-hastighed"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Behold min ${ currentPlanName }-konto"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Fortsæt for at gennemgå"
@@ -9395,26 +9496,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behold min ${ currentPlanName }-konto"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
       ]
     },
     "new_plans: feature": {
@@ -9780,6 +9861,17 @@
         "Brugeradministration"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutter med ${ last4 }"
@@ -9867,17 +9959,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du drager fordel af en kampagnepris for dit nuværende abonnement. Hvis du nedgraderer din konto, mister du din kampagnepris og den vil ikke være tilgængelig hvis du forsøger at abonnere igen."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ellers vil adgangen til din konto blive begrænset, og din konto vil i sidste ende blive deaktiveret."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Hvis du vil fortsætte med at bruge ${ MAIL_APP_NAME } med premium-funktioner, skal du vælge dit abonnement og dine betalingsmuligheder."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din prøveperiode slutter ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {

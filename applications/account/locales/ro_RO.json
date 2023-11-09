@@ -389,6 +389,9 @@
       "Edit Gateway": [
         "Editare poartă de acces"
       ],
+      "Edit invoice details": [
+        "Editare detalii factură"
+      ],
       "Edit label": [
         "Editare etichetă"
       ],
@@ -3589,6 +3592,9 @@
       ]
     },
     "email_forwarding_2023: Prompt": {
+      "End-to-end encryption will be re-enabled for the sender address.": [
+        "Activarea în ambele părți va fi reactivată pentru adresa de expediere."
+      ],
       "Forwarding to the destination address will end.": [
         "Redirecționarea către adresa de destinație se va încheia."
       ]
@@ -7025,6 +7031,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Mai încercați. Folosiți o metodă de plată diferită sau contactați PayPal pentru asistență."
       ],
+      "Please use another browser or download the file.": [
+        "Folosiți alt tip de navigator web sau descărcați fișierul."
+      ],
       "Please verify payment at the new tab which was opened.": [
         "Verificați efectuarea plății în noua filă deschisă."
       ],
@@ -7036,6 +7045,9 @@
       ],
       "Preview failed to be loaded": [
         "Examinarea nu a putut fi încărcată."
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Examinarea pentru acest tip de fișier nu este suportată de acest navigator web."
       ],
       "Preview for this file type is not supported": [
         "Examinarea acestui tip de fișier nu este suportată."
@@ -7621,6 +7633,9 @@
       "Version history": [
         "Istoric versiuni"
       ],
+      "View, download, and manage your invoices.": [
+        "Examinați, descărcați și gestionați facturile personale."
+      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -8029,6 +8044,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Puteți adăuga o metodă de plată pentru a avea abonamentul reînnoit automat. Sunt disponibile și alte metode de plată."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Introduceți un nume și o adresă pentru dvs. sau organizația proprie. Aceste detalii vor fi adăugate atât pe facturile personale, cât și pe cele ale organizației."
       ]
     },
     "Info on errors": {
@@ -8945,6 +8965,9 @@
       ],
       "Name": [
         "Nume"
+      ],
+      "Name and address": [
+        "Nume și adresă"
       ],
       "Name on card": [
         "Titular card"
@@ -10006,6 +10029,26 @@
         "Viteză VPN medie"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Păstrez contul ${ currentPlanName } $"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Continuare revizuire"
@@ -10045,26 +10088,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Păstrez contul ${ currentPlanName } $"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
       ]
     },
     "new_plans: feature": {
@@ -10459,6 +10482,17 @@
         "Gestionare echipă"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Perioada de probare se termină ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -10546,17 +10580,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Perioada de probare se termină ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11717,6 +11740,19 @@
       ],
       "yourdomain.com": [
         "domeniuldvs.com"
+      ]
+    },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "vă rugăm să ${ contactHref } echipa noastră de vânzări."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Selectați numărul de adrese IP de inclus în plan. Fiecare Adresă IP adițională costă ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Dacă aveți nevoie de mai mult de ${ maxIPs } adresă IP, ",
+        "Dacă aveți nevoie de mai mult de ${ maxIPs } adrese IP, ",
+        "Dacă aveți nevoie de mai mult de ${ maxIPs } de adrese IP, "
       ]
     },
     "plan customizer, users": {
@@ -13624,6 +13660,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Editare poartă de acces ${ currentName }"
+      ],
+      "Edit invoice details": [
+        "Editare detalii factură"
       ],
       "Edit servers": [
         "Editare servere"
