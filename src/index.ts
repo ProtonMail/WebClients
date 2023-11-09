@@ -1,6 +1,7 @@
 import { app, BrowserWindow, session, shell } from "electron";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
 import { isHostAllowed, isHostCalendar, isHostMail, isMac, saveWindowsPosition } from "./utils/helpers";
+import { saveHardcodedURLs } from "./utils/urlStore";
 import { handleCalendarWindow, handleMailWindow, initialWindowCreation } from "./utils/windowManagement";
 
 if (require("electron-squirrel-startup")) {
@@ -9,6 +10,8 @@ if (require("electron-squirrel-startup")) {
 
 // Security addition
 app.enableSandbox();
+
+saveHardcodedURLs();
 
 // Used to make the app run on Parallels Desktop
 // app.commandLine.appendSwitch("no-sandbox");

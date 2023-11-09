@@ -1,4 +1,6 @@
-interface URLConfig {
+import { getHardcodedURLs } from "./urlStore";
+
+export interface URLConfig {
     account: string;
     mail: string;
     calendar: string;
@@ -9,12 +11,6 @@ interface Config {
     devTools: boolean;
     url: URLConfig;
 }
-
-const urls = {
-    account: "https://account.quimby.proton.pink",
-    mail: "https://mail.quimby.proton.pink",
-    calendar: "https://calendar.quimby.proton.pink",
-};
 
 const localUrls = {
     account: "https://account.proton.local",
@@ -31,7 +27,7 @@ const devConfig: Config = {
 const prodConfig: Config = {
     appTitle: "Proton",
     devTools: false,
-    url: urls,
+    url: getHardcodedURLs(),
 };
 
 export const getConfig = (isPackaged: boolean) => {
