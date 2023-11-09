@@ -53,7 +53,7 @@ const MoveToSpamModal = ({ isMessage, elements, onResolve, onReject, ...rest }: 
         >
             <p className="mb-8">{text}</p>
             <Label htmlFor="remember-me" className="inline-flex w-auto">
-                <Checkbox id="remember-me" checked={remember} onChange={handleChange} />
+                <Checkbox id="remember-me" checked={remember} onChange={handleChange} className="mr-2" />
                 {c('Label').t`Remember my choice`}
             </Label>
         </Prompt>
