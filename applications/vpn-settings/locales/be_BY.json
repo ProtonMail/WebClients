@@ -179,6 +179,9 @@
       "Edit Gateway": [
         "Рэдагаваць шлюз"
       ],
+      "Edit invoice details": [
+        "Рэдагаваць падрабязнасці рахунка"
+      ],
       "Edit name": [
         "Рэдагаваць назву"
       ],
@@ -3738,6 +3741,9 @@
       "Version ${ version }": [
         "Версія ${ version }"
       ],
+      "View, download, and manage your invoices.": [
+        "Прагляд, спампоўванне і кіраванне вашымі рахункамі."
+      ],
       "Visa Secure logo": [
         "Лагатып Visa Secure"
       ],
@@ -3999,6 +4005,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Вы можаце дадаць спосаб аплаты, каб ваша падпіска падаўжалася аўтаматычна. Таксама даступны іншыя спосабы аплаты."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Увядзіце сваё імя і адрас або рэквізіты сваёй арганізацыі. Гэтыя падрабязнасці будуць дадзены да асабістых рахункаў, а таксама рахункаў арганізацыі."
       ]
     },
     "Info subscription": {
@@ -4301,6 +4312,9 @@
       ],
       "Name": [
         "Назва"
+      ],
+      "Name and address": [
+        "Імя і адрас"
       ],
       "Name on card": [
         "Імя на картцы"
@@ -5779,6 +5793,20 @@
         "Янка Купала"
       ]
     },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "звяжыцеся з нашай камандай па продажу ${ contactHref }."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Выберыце колькасць IP для ўключэння ў ваш тарыфны план. Кожны дадатковы IP каштуе ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Калі вам неабходна больш за ${ maxIPs } IP, ",
+        "Калі вам неабходна больш за ${ maxIPs } IP, ",
+        "Калі вам неабходна больш за ${ maxIPs } IP, ",
+        "Калі вам неабходна больш за ${ maxIPs } IP, "
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "кантакт"
@@ -7094,6 +7122,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Рэдагаваць шлюз з назвай ${ currentName }"
+      ],
+      "Edit invoice details": [
+        "Рэдагаваць падрабязнасці рахунка"
       ],
       "Edit servers": [
         "Рэдагаваць серверы"
