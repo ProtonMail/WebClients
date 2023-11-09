@@ -23,7 +23,7 @@ export const createUser = async ({
     user: UserTemplate;
     api: Api;
     getAddresses: GetAddresses;
-    organizationKey: PrivateKeyReference;
+    organizationKey: PrivateKeyReference | undefined;
     keyTransparencyVerify: KeyTransparencyVerify;
     mode: UserManagementMode;
 }) => {
@@ -133,6 +133,9 @@ export const createUser = async ({
     }
 
     if (!privateSubUser) {
+        if (!organizationKey) {
+            throw new Error('Organization key is not decrypted');
+        }
         const ownerAddresses = await getAddresses();
         await setupMemberKeys({
             api,
