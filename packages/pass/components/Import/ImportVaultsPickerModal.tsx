@@ -74,12 +74,20 @@ export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload,
 
     return (
         <ModalTwo open onClose={onClose} onReset={onReset} size={'medium'} className="mt-10">
-            <ModalTwoHeader title={c('Title').t`Import to vault(s)`} />
+            <ModalTwoHeader
+                title={
+                    // translator: this is generic title of the modal where user can select 1 or more vaults to do the import (the number is not determined and title is not changeable)
+                    c('Title').t`Import to vault(s)`
+                }
+            />
             <ModalTwoContent>
                 <FormikProvider value={form}>
                     <Form id={FORM_ID}>
                         <Card rounded className="mb-4 text-sm">
-                            {c('Info').t`Select where you want your imported vault(s) to be saved.`}
+                            {
+                                // translator: this is generic instruction message in import modal suggesting that user may select one or more vaults
+                                c('Info').t`Select where you want your imported vault(s) to be saved.`
+                            }
 
                             {vaultsRemaining <= 0 && (
                                 <>
