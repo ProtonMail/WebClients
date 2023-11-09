@@ -1,20 +1,10 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { UserManagementMode } from '@proton/components/containers/members/types';
 import { APP_NAMES, BRAND_NAME, PLAN_NAMES } from '@proton/shared/lib/constants';
 import { CachedOrganizationKey, Domain, Organization } from '@proton/shared/lib/interfaces';
 
-import {
-    ModalStateProps,
-    Prompt,
-    SubUserCreateModal,
-    Tooltip,
-    useDomains,
-    useModalState,
-    useNotifications,
-} from '../..';
-import validateAddUser from './validateAddUser';
+import { ModalStateProps, Prompt, SubUserCreateModal, Tooltip, useDomains, useModalState } from '../..';
 
 interface Props extends ModalStateProps {
     organization: Organization;
@@ -80,18 +70,9 @@ const InviteUserCreateSubUserModal = ({
     app,
     ...modalState
 }: Props) => {
-    const { createNotification } = useNotifications();
     const [subUserCreateModalProps, setSubUserCreateModalOpen, renderSubUserCreateModal] = useModalState();
 
     const handleAddUser = () => {
-        const error = validateAddUser(organization, organizationKey, verifiedDomains, UserManagementMode.DEFAULT);
-        if (error) {
-            return createNotification({ type: 'error', text: error });
-        }
-        if (!organizationKey?.privateKey) {
-            return createNotification({ type: 'error', text: c('Error').t`Organization key is not decrypted` });
-        }
-
         setSubUserCreateModalOpen(true);
     };
 
