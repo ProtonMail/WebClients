@@ -1,8 +1,9 @@
 import { ICAL_ATTENDEE_STATUS, RECURRING_TYPES } from '@proton/shared/lib/calendar/constants';
 import { Address } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
-import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import { SimpleMap } from '@proton/shared/lib/interfaces/utils';
+
+import { AugmentedSendPreferences } from '../containers/calendar/interface';
 
 export enum INVITE_ACTION_TYPES {
     NONE,
@@ -49,7 +50,7 @@ export interface ReencryptInviteActionData {
 }
 
 export interface CleanSendIcsActionData extends SendIcsActionData {
-    sendPreferencesMap: SimpleMap<SendPreferences>;
+    sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
 }
 
 export interface UpdatePartstatOperation {
