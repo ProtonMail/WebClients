@@ -4107,6 +4107,9 @@
       "Search Enabled": [
         "Vyhľadávanie povolené"
       ],
+      "Select a folder to move to.": [
+        "Vyberte priečinok na presun."
+      ],
       "Select all items for": [
         "Vybrať všetky položky za"
       ],
@@ -4427,9 +4430,6 @@
       ],
       "You cannot undo this action.": [
         "Túto akciu nie je možné vrátiť späť."
-      ],
-      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
-        "Na získanie uvítacieho bonusu 500 MB vám zostáva ${ expiresInDays } dní a "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Dosiahli ste ${ spaceDisplayed }% svojej kapacity úložiska. ${ freeUpMessage } ${ upgradeLink }"
@@ -6526,6 +6526,9 @@
       ],
       "Discard changes?": [
         "Zrušiť zmeny?"
+      ],
+      "Download ${ date }.zip": [
+        "Stiahnuť ${ date }.zip"
       ],
       "Download unverified file?": [
         "Stiahnuť neoverený súbor?"
