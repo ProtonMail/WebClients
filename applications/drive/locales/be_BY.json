@@ -4107,6 +4107,9 @@
       "Search Enabled": [
         "Пошук уключаны"
       ],
+      "Select a folder to move to.": [
+        "Выберыце папку для перамяшчэння."
+      ],
       "Select all items for": [
         "Выбраць усе элементы для"
       ],
@@ -4427,9 +4430,6 @@
       ],
       "You cannot undo this action.": [
         "Гэта дзеянне немагчыма адрабіць."
-      ],
-      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
-        "У вас яшчэ ёсць час (засталося дзён: ${ expiresInDays }), каб атрымаць прывітальны бонус у 500 МБ і "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы дасягнулі ${ spaceDisplayed }% ёмістасці сховішча. ${ freeUpMessage } ${ upgradeLink }"
@@ -6531,6 +6531,9 @@
       ],
       "Discard changes?": [
         "Адхіліць змены?"
+      ],
+      "Download ${ date }.zip": [
+        "Спампаваць ${ date }.zip"
       ],
       "Download unverified file?": [
         "Спампаваць неправераны файл?"

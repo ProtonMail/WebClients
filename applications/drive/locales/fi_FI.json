@@ -3896,6 +3896,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Valitse ryhmään ${ groupName } lisättävä(t) sähköpostiosoite tai -osoitteet."
       ],
+      "Please use another browser or download the file.": [
+        "Käytä toista selainta tai lataa tiedosto."
+      ],
       "Please wait till your changes are synced with the server.": [
         "Odota kun muutoksesi synkronoidaan palvelimen kanssa."
       ],
@@ -3913,6 +3916,9 @@
       ],
       "Preview failed to be loaded": [
         "Esikatselun lataus epäonnistui"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Tämän tiedostotyypin esikatselua ei tällä hetkellä tueta tässä selaimessa."
       ],
       "Preview for this file type is not supported": [
         "Tämän tiedoston esikatselua ei tueta"
@@ -4283,9 +4289,6 @@
       ],
       "You cannot undo this action.": [
         "Et voi kumota toimintoa."
-      ],
-      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
-        "Sinulla on ${ expiresInDays } päivää aikaa lunastaa 500 Mt tervetuliaisbonuksesi ja "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Olet käyttänyt ${ spaceDisplayed } % tallennuskapasiteetistasi. ${ freeUpMessage } ${ upgradeLink }"
@@ -6265,6 +6268,9 @@
       ],
       "Discard changes?": [
         "Hylätäänkö muutokset?"
+      ],
+      "Download ${ date }.zip": [
+        "Lataa ${ date }.zip"
       ],
       "Download unverified file?": [
         "Ladataanko vahvistamaton tiedosto?"

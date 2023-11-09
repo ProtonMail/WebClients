@@ -583,15 +583,6 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" movido para o lixo - deixará de reencaminhar e-mails para a sua caixa de correio"
       ],
-      "All items permanently removed": [
-        "Todos os itens removidos permanentemente"
-      ],
-      "All items successfully restored": [
-        "Todos os itens restaurados com sucesso"
-      ],
-      "An item previously shared with you was disabled": [
-        "Um item anteriormente partilhado com o utilizador foi desativado"
-      ],
       "Auto-lock successfully disabled": [
         "Desativação automática desativada com sucesso."
       ],
@@ -806,9 +797,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Cofre \"${ payload.share.content.name }\" actualizado com sucesso"
-      ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "O cofre \"${ share.content.name }\" foi desativado"
       ],
       "Verification code": [
         "Código de verificação"
@@ -1066,9 +1054,6 @@
       "Most recent": [
         "Mais recente"
       ],
-      "Move items to": [
-        "Mover itens para"
-      ],
       "Name": [
         "Nome"
       ],
@@ -1119,9 +1104,6 @@
       ],
       "Pause list": [
         "Lista de pausa"
-      ],
-      "Permanently delete items": [
-        "Eliminar permanentemente itens"
       ],
       "PIN": [
         "Código PIN"
@@ -1306,9 +1288,6 @@
       ],
       "MM/YYYY": [
         "MM/AAAA"
-      ],
-      "Move items to another vault (optional)": [
-        "Mover os itens para outro cofre (opcional)"
       ],
       "Other": [
         "Outro"
@@ -1546,9 +1525,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Não é possível iniciar sessão no ${ PASS_APP_NAME }. ${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "O cofre \"${ vaultName }\" será eliminado permanentemente, e todos os seus itens serão movidos para \"${ destinationVaultName }\"."
       ],
       "Vault name is required": [
         "O nome do cofre é obrigatório."

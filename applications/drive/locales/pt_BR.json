@@ -3962,6 +3962,9 @@
       "Search Enabled": [
         "Busca habilitada"
       ],
+      "Select a folder to move to.": [
+        "Selecione uma pasta para onde deseja mover."
+      ],
       "Select all items for": [
         "Select all items para"
       ],
@@ -4281,7 +4284,8 @@
       "You cannot undo this action.": [
         "Você não pode desfazer está ação."
       ],
-      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
+      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
+        "Você tem ${ expiresInDays } dia restantes para reivindicar seu bônus de boas-vindas de 500 MB e ",
         "Você tem ${ expiresInDays } dias restantes para reivindicar seu bônus de boas-vindas de 500 MB e "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
@@ -6262,6 +6266,9 @@
       ],
       "Discard changes?": [
         "Descartar alterações?"
+      ],
+      "Download ${ date }.zip": [
+        "Baixar ${ date }.zip"
       ],
       "Download unverified file?": [
         "Baixar arquivo não verificado?"

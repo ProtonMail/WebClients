@@ -4431,8 +4431,11 @@
       "You cannot undo this action.": [
         "Nemůžete vrátit zpět tuto akci."
       ],
-      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
-        "Zbývá vám ${ expiresInDays } dní na získání uvítacího bonusu 500 MB a "
+      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
+        "Zbývá vám ${ expiresInDays } den na získání uvítacího bonusu 500 MB a ",
+        "Zbývá vám ${ expiresInDays } dny na získání uvítacího bonusu 500 MB a ",
+        "Zbývá vám ${ expiresInDays } dnů na získání uvítacího bonusu 500 MB a ",
+        "Zbývá vám ${ expiresInDays } dnů na získání uvítacího bonusu 500 MB a "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Dosáhli jste ${ spaceDisplayed }% kapacity svého úložiště. ${ freeUpMessage } ${ upgradeLink }"
