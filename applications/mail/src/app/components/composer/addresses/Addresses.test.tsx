@@ -158,7 +158,7 @@ describe('Addresses', () => {
     it('should add a contact from insert contact modal', async () => {
         minimalCache();
         addToCache('ContactEmails', contactEmails);
-        addApiMock('core/v4/keys', () => ({}));
+        addApiMock('core/v4/keys/all', () => ({ Address: { Keys: [] } }));
 
         const { rerender, composerID } = await setup({ minimalCache: false });
 

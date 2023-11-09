@@ -69,7 +69,7 @@ describe('Extra ask resign banner', () => {
 
     it('should display the extra ask resign banner when sender is not verified and keys are pinned', async () => {
         const { senderKeys } = await setupContactsForPinKeys();
-        addApiMock('core/v4/keys', () => ({ Keys: [senderKeys] }));
+        addApiMock('core/v4/keys/all', () => ({ Address: { Keys: [{ PublicKey: senderKeys.publicKeyArmored }] } }));
 
         // Initialize contactsMap
         store.dispatch(refresh({ contacts: [...contactEmails], contactGroups: [] }));
