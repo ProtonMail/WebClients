@@ -389,6 +389,9 @@
       "Edit Gateway": [
         "რაუტერის ჩასწორება"
       ],
+      "Edit invoice details": [
+        "ინვოისის დეტალების ჩასწორება"
+      ],
       "Edit label": [
         "ჭდის ჩასწორება"
       ],
@@ -3576,6 +3579,9 @@
       ]
     },
     "email_forwarding_2023: Prompt": {
+      "End-to-end encryption will be re-enabled for the sender address.": [
+        "გამჭოლი დაშიფვრა გამგზავნის მისამართისთვის თავიდან ჩაირთვება."
+      ],
       "Forwarding to the destination address will end.": [
         "სამიზნე მისამართზე გადაგზავნა დასრულდება."
       ]
@@ -7551,6 +7557,9 @@
       "Version history": [
         "ვერსიის ისტორია"
       ],
+      "View, download, and manage your invoices.": [
+        "ნახეთ, გადმოწერეთ და მართეთ თქვენი ინვოისები."
+      ],
       "Visa Secure logo": [
         "Visa-ის დაცულობის ლოგო"
       ],
@@ -8863,6 +8872,9 @@
       "Name": [
         "სახელი"
       ],
+      "Name and address": [
+        "სახელი და მისამართი"
+      ],
       "Name on card": [
         "სახელი ბარათზე"
       ],
@@ -9912,6 +9924,26 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "ჩემი მიმდინარე ${ currentPlanName } ანგარიშის დატოვება"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "გადახედვაზე გადასვლა"
@@ -9951,26 +9983,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "სატარიფო გეგმის განახლება: ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "ჩემი მიმდინარე ${ currentPlanName } ანგარიშის დატოვება"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
       ]
     },
     "new_plans: feature": {
@@ -10346,6 +10358,17 @@
         "ჯგუფის მართვა"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "სხვაგვარად თქვენს ანგარიშთან წვდომა შეზღუდული გექნებათ და ცოტა ხანში საერთოდ გაგეთიშებათ."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME }-ის ფასიანი თვისებებით გამოყენების გასაგრძელებლად აირჩიეთ თქვენი გამოწერის ტარიფი და გადახდის ვარიანტი."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "სატესტო პერიოდის დასრულების თარიღია ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } დასრულდება ${ last4 }"
@@ -10433,17 +10456,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "თქვენს მიმდინარე გეგმაში სარეკლამო ფასით სარგებლობთ. ანგარიშის ტარიფის ჩამოწევის შემთხვევაში თქვენ დაკარგავთ სარეკლამო ფასს და თუ გამოწერას კვლავ შეეცდებით, ის ხელმისაწვდომი აღარ იქნება."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "სხვაგვარად თქვენს ანგარიშთან წვდომა შეზღუდული გექნებათ და ცოტა ხანში საერთოდ გაგეთიშებათ."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME }-ის ფასიანი თვისებებით გამოყენების გასაგრძელებლად აირჩიეთ თქვენი გამოწერის ტარიფი და გადახდის ვარიანტი."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "სატესტო პერიოდის დასრულების თარიღია ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11593,6 +11605,15 @@
       ],
       "yourdomain.com": [
         "yourdomain.com"
+      ]
+    },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "${ contactHref } ჩვენს გაყიდვების გუნდს."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "თუ დაგჭირდათ ${ maxIPs }-ზე მეტი IP, ",
+        "თუ დაგჭირდათ ${ maxIPs }-ზე მეტი IP, "
       ]
     },
     "plan customizer, users": {
@@ -13459,6 +13480,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "${ currentName } რაუტერის ჩასწორება"
+      ],
+      "Edit invoice details": [
+        "ინვოისის დეტალების ჩასწორება"
       ],
       "Edit servers": [
         "სერვერების ჩასწორება"

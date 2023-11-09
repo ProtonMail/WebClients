@@ -179,6 +179,9 @@
       "Edit Gateway": [
         "Muokkaa yhdyskäytävää"
       ],
+      "Edit invoice details": [
+        "Muokkaa laskun tietoja"
+      ],
       "Edit name": [
         "Muokkaa nimeä"
       ],
@@ -3323,6 +3326,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Yritä uudelleen, käytä eri maksutapaa tai ota yhteyttä PayPalin asiakaspalveluun."
       ],
+      "Please use another browser or download the file.": [
+        "Käytä toista selainta tai lataa tiedosto."
+      ],
       "Please verify payment at the new tab which was opened.": [
         "Vahvista maksu juuri avatussa, uudessa välilehdessä."
       ],
@@ -3334,6 +3340,9 @@
       ],
       "Preview failed to be loaded": [
         "Esikatselun lataus epäonnistui"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Tämän tiedostotyypin esikatselua ei tällä hetkellä tueta tässä selaimessa."
       ],
       "Preview for this file type is not supported": [
         "Tämän tiedoston esikatselua ei tueta"
@@ -3660,6 +3669,9 @@
       "Version ${ version }": [
         "Versio ${ version }"
       ],
+      "View, download, and manage your invoices.": [
+        "Tarkastele, lataa ja hallinnoi laskujasi."
+      ],
       "Visa Secure logo": [
         "Visa Secure -logo"
       ],
@@ -3907,6 +3919,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Voit lisätä maksutavan, jolla tilauksesi uudistetaan automaattisesti. Myös muut maksutavat ovat käytettävissä."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Anna itsesi tai organisaatiosi nimi ja osoite. Nämä tiedot lisätään sekä henkilökohtaisiin että organisaation laskuihin."
       ]
     },
     "Info subscription": {
@@ -4203,6 +4220,9 @@
       ],
       "Name": [
         "Nimi"
+      ],
+      "Name and address": [
+        "Nimi ja osoite"
       ],
       "Name on card": [
         "Kortissa oleva nimi"
@@ -5629,6 +5649,15 @@
         "Matti Meikäläinen"
       ]
     },
+    "plan customizer, ips": {
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Valitse tilauksesi sisältyvien IP-osoitteiden määrä. Jokainen lisäosoite maksaa ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Jos tarvitset enemmän kuin ${ maxIPs } IP-osoitteen, ",
+        "Jos tarvitset enemmän kuin ${ maxIPs } IP-osoitetta, "
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "ole yhteydessä"
@@ -6876,6 +6905,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Muokkaa yhdyskäytävää ${ currentName }"
+      ],
+      "Edit invoice details": [
+        "Muokkaa laskun tietoja"
       ],
       "Edit servers": [
         "Muokkaa palvelimia"

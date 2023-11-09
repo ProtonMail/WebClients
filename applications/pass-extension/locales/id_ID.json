@@ -717,15 +717,6 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" dipindahkan ke sampah - alamat ini tidak akan lagi meneruskan surel ke kotak surat Anda"
       ],
-      "All items permanently removed": [
-        "Seluruh item dihapus secara permanen"
-      ],
-      "All items successfully restored": [
-        "Seluruh item berhasil dipulihkan"
-      ],
-      "An item previously shared with you was disabled": [
-        "Item yang sebelumnya dibagikan dengan Anda telah dinonaktifkan"
-      ],
       "Auto-lock successfully disabled": [
         "Pengunci otomatis berhasil dinonaktifkan"
       ],
@@ -1053,9 +1044,6 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Brankas \"${ payload.share.content.name }\" berhasil diperbarui"
       ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "Berkas \"${ share.content.name }\" telah dinonaktifkan"
-      ],
       "Verification code": [
         "Kode verifikasi"
       ],
@@ -1331,9 +1319,6 @@
       "Most recent": [
         "Terkini"
       ],
-      "Move items to": [
-        "Pindahkan item ke"
-      ],
       "Name": [
         "Nama"
       ],
@@ -1384,9 +1369,6 @@
       ],
       "Pause list": [
         "Daftar jeda"
-      ],
-      "Permanently delete items": [
-        "Hapus item secara permanen"
       ],
       "PIN": [
         "PIN"
@@ -1577,9 +1559,6 @@
       ],
       "MM/YYYY": [
         "BB/TTTT"
-      ],
-      "Move items to another vault (optional)": [
-        "Pindahkan item ke brankas lain (opsional)"
       ],
       "Other": [
         "Lainnya"
@@ -1876,9 +1855,6 @@
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "Brankas \"${ vaultName }\" dan seluruh item di dalamnya akan dihapus secara permanen. Tindakan ini tidak dapat diurungkan."
-      ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "Brankas \"${ vaultName }\" akan dihapus secara permanen dan seluruh item di dalamnya akan dipindahkan ke \"${ destinationVaultName }\""
       ],
       "Vault name is required": [
         "Nama brankas dibutuhkan"

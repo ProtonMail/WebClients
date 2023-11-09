@@ -759,15 +759,6 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" přesunut do koše - přestane přeposílat e-maily do vaší schránky"
       ],
-      "All items permanently removed": [
-        "Všechny položky úspěšně odstraněny"
-      ],
-      "All items successfully restored": [
-        "Všechny položky úspěšně obnoveny"
-      ],
-      "An item previously shared with you was disabled": [
-        "Položka dříve sdílená s vámi byla deaktivována"
-      ],
       "Auto-lock successfully disabled": [
         "Automatické zamykání bylo úspěšně deaktivováno"
       ],
@@ -1104,9 +1095,6 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Trezor \"${ payload.share.content.name }\" úspěšně aktualizován"
       ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "Trezor \"${ share.content.name }\" byl deaktivován"
-      ],
       "Verification code": [
         "Ověřovací kód"
       ],
@@ -1391,9 +1379,6 @@
       "Most recent": [
         "Nejnovější"
       ],
-      "Move items to": [
-        "Přesunout položky do"
-      ],
       "Name": [
         "Jméno"
       ],
@@ -1444,9 +1429,6 @@
       ],
       "Pause list": [
         "Seznam pozastavených"
-      ],
-      "Permanently delete items": [
-        "Trvale smazat položky"
       ],
       "PIN": [
         "PIN"
@@ -1637,9 +1619,6 @@
       ],
       "MM/YYYY": [
         "MM / RRRR"
-      ],
-      "Move items to another vault (optional)": [
-        "Přesunout položky do jiného trezoru (volitelné)"
       ],
       "Other": [
         "Ostatní"
@@ -1942,9 +1921,6 @@
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "Trezor \"${ vaultName }\" a všechny jeho položky budou trvale smazány. Tuto akci nelze vrátit zpět."
-      ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "Trezor \"${ vaultName }\" bude trvale smazán a všechny jeho položky budou přesunuty do \"${ destinationVaultName }\""
       ],
       "Vault name is required": [
         "Název trezoru je povinný"
