@@ -45,7 +45,7 @@ const ContactFieldN = (
     const requiredError = !vCardContact.fn?.[0].value && isSubmitted && !givenName && !familyName;
 
     return (
-        <div className="flex flex-col on-mobile-flex-column gap-2">
+        <div className="flex on-mobile-flex-column gap-2">
             <div className="flex-item-fluid">
                 <ContactFieldString
                     ref={firstNameFieldRef}
