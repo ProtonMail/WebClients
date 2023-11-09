@@ -162,8 +162,13 @@ export const MenuDropdown: VFC = () => {
                                     </div>
                                 </span>
                             </span>
-                            {passPlan !== UserPassPlan.PLUS && <UpgradeButton />}
                         </div>
+
+                        {passPlan !== UserPassPlan.PLUS && (
+                            <div className="pb-2 px-4">
+                                <UpgradeButton className="w-full" />
+                            </div>
+                        )}
 
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
