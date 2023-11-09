@@ -11,7 +11,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
 
-const { SPAM, TRASH, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX, SCHEDULED } = MAILBOX_LABEL_IDS;
+const { SPAM, TRASH, SENT, ALL_SENT, DRAFTS, ALL_DRAFTS, INBOX, ARCHIVE, SCHEDULED, SNOOZED } = MAILBOX_LABEL_IDS;
 
 const joinSentences = (success: string, notAuthorized: string) => [success, notAuthorized].filter(isTruthy).join(' ');
 
@@ -128,6 +128,39 @@ export const getNotificationTextUnauthorized = (folderID?: string, fromLabelID?:
     return notificationText;
 };
 
+const searchForAnyLabel = async (
+    forbiddenLabels: string[],
+    labelToSearch: MAILBOX_LABEL_IDS,
+    folderID: string,
+    isMessage: boolean,
+    elements: Element[],
+    setCanUndo: (canUndo: boolean) => void,
+    handleShowModal: (ownProps: unknown) => Promise<unknown>,
+    setContainFocus?: (contains: boolean) => void
+) => {
+    if (!forbiddenLabels.includes(folderID)) {
+        return;
+    }
+
+    let numberOfMessages;
+
+    if (isMessage) {
+        numberOfMessages = (elements as Message[]).filter((element) => element.LabelIDs.includes(labelToSearch)).length;
+    } else {
+        numberOfMessages = (elements as Conversation[]).filter(
+            (element) => element.Labels?.some((label) => label.ID === labelToSearch)
+        ).length;
+    }
+
+    const canUndo = numberOfMessages > 0 && numberOfMessages === elements.length;
+    setCanUndo(canUndo);
+
+    if (!canUndo) {
+        setContainFocus?.(false);
+        await handleShowModal({ isMessage, onCloseCustomAction: () => setContainFocus?.(true) });
+    }
+};
+
 /*
  * Opens a modal when finding scheduled messages that are moved to trash.
  * If all selected are scheduled elements, we prevent doing a Undo because trashed scheduled becomes draft.
@@ -141,33 +174,39 @@ export const searchForScheduled = async (
     handleShowModal: (ownProps: unknown) => Promise<unknown>,
     setContainFocus?: (contains: boolean) => void
 ) => {
-    if (folderID === TRASH) {
-        let numberOfScheduledMessages;
-        let canUndo;
+    await searchForAnyLabel(
+        [TRASH],
+        SCHEDULED,
+        folderID,
+        isMessage,
+        elements,
+        setCanUndo,
+        handleShowModal,
+        setContainFocus
+    );
+};
 
-        if (isMessage) {
-            numberOfScheduledMessages = (elements as Message[]).filter((element) =>
-                element.LabelIDs.includes(SCHEDULED)
-            ).length;
-        } else {
-            numberOfScheduledMessages = (elements as Conversation[]).filter((element) =>
-                element.Labels?.some((label) => label.ID === SCHEDULED)
-            ).length;
-        }
-
-        if (numberOfScheduledMessages > 0 && numberOfScheduledMessages === elements.length) {
-            setCanUndo(false);
-            canUndo = false;
-        } else {
-            setCanUndo(true);
-            canUndo = true;
-        }
-
-        if (!canUndo) {
-            setContainFocus?.(false);
-            await handleShowModal({ isMessage, onCloseCustomAction: () => setContainFocus?.(true) });
-        }
-    }
+/*
+ * Opens a modal when finding snozed messages that are moved to trash or archive.
+ */
+export const searchForSnoozed = async (
+    folderID: string,
+    isMessage: boolean,
+    elements: Element[],
+    setCanUndo: (canUndo: boolean) => void,
+    handleShowModal: (ownProps: unknown) => Promise<unknown>,
+    setContainFocus?: (contains: boolean) => void
+) => {
+    await searchForAnyLabel(
+        [TRASH, ARCHIVE],
+        SNOOZED,
+        folderID,
+        isMessage,
+        elements,
+        setCanUndo,
+        handleShowModal,
+        setContainFocus
+    );
 };
 
 export const askToUnsubscribe = async (

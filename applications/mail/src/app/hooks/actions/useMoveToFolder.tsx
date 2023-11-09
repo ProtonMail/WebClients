@@ -10,6 +10,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 
+import MoveSnoozedModal from 'proton-mail/components/list/snooze/components/MoveSnoozedModal';
 import { extractSearchParameters } from 'proton-mail/helpers/mailboxUrl';
 import { useDeepMemo } from 'proton-mail/hooks/useDeepMemo';
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -28,6 +29,7 @@ import {
     getNotificationTextMoved,
     getNotificationTextUnauthorized,
     searchForScheduled,
+    searchForSnoozed,
 } from '../../helpers/moveToFolder';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
 import { useAppDispatch } from '../../logic/store';
@@ -57,7 +59,8 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
     const { moveAll, modal: moveAllModal } = useMoveAll();
 
-    const [moveScheduledModal, handleShowModal] = useModalTwo(MoveScheduledModal);
+    const [moveScheduledModal, handleShowScheduledModal] = useModalTwo(MoveScheduledModal);
+    const [moveSnoozedModal, handleMoveSnoozedModal] = useModalTwo(MoveSnoozedModal);
     const [moveToSpamModal, handleShowSpamModal] = useModalTwo<
         { isMessage: boolean; elements: Element[] },
         { unsubscribe: boolean; remember: boolean }
@@ -82,7 +85,17 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
             const destinationLabelID = isCustomLabel(fromLabelID, labels) ? MAILBOX_LABEL_IDS.INBOX : fromLabelID;
 
             // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
-            await searchForScheduled(folderID, isMessage, elements, setCanUndo, handleShowModal, setContainFocus);
+            await searchForScheduled(
+                folderID,
+                isMessage,
+                elements,
+                setCanUndo,
+                handleShowScheduledModal,
+                setContainFocus
+            );
+
+            // Open a modal when moving a snoozed message/conversation to trash or archive to inform the user that it will be cancelled
+            await searchForSnoozed(folderID, isMessage, elements, setCanUndo, handleMoveSnoozedModal, setContainFocus);
 
             let spamAction: SPAM_ACTION | undefined = undefined;
 
@@ -214,5 +227,5 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
         [labels]
     );
 
-    return { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal };
+    return { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal };
 };
