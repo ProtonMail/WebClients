@@ -9,7 +9,6 @@ import { omit } from '@proton/shared/lib/helpers/object';
 import { Address, SimpleMap } from '@proton/shared/lib/interfaces';
 import { SyncMultipleApiResponse, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
-import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import unary from '@proton/utils/unary';
 
 import { EventNewData, EventOldData } from '../../../interfaces/EventData';
@@ -28,7 +27,7 @@ import {
     getDeleteSyncOperation,
     getUpdateSyncOperation,
 } from '../getSyncMultipleEventsPayload';
-import { OnSaveConfirmationCb } from '../interface';
+import { AugmentedSendPreferences, OnSaveConfirmationCb } from '../interface';
 import { withUpdatedDtstamp } from './dtstamp';
 import getChangePartstatActions from './getChangePartstatActions';
 import { getUpdatePersonalPartActions } from './getUpdatePersonalPartActions';
@@ -53,7 +52,7 @@ interface SaveEventHelperArguments {
         veventComponent?: VcalVeventComponent;
         inviteActions: InviteActions;
         timestamp: number;
-        sendPreferencesMap: SimpleMap<SendPreferences>;
+        sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
     }>;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;
