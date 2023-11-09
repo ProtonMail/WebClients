@@ -1452,9 +1452,6 @@
       ]
     },
     "bf2023: renew": {
-      "${ n } month": [
-        "${ n } μήνα"
-      ],
       "the first month": [
         "τον πρώτο μήνα"
       ],
@@ -3578,6 +3575,9 @@
       ]
     },
     "email_forwarding_2023: Prompt": {
+      "End-to-end encryption will be re-enabled for the sender address.": [
+        "Η κρυπτογράφηση από άκρο σε άκρο θα ενεργοποιηθεί ξανά για τη διεύθυνση αποστολέα."
+      ],
       "Forwarding to the destination address will end.": [
         "Η προώθηση στη διεύθυνση προορισμού θα τερματιστεί."
       ]
@@ -7499,6 +7499,9 @@
       "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Αναβαθμίστε στο ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, ή ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } πλάνο για να αποκτήσετε πρόσβαση στο ${ PROTON_SENTINEL_NAME }."
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Αναβαθμίστε στο ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, ή ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } πλάνο για να αποκτήσετε πρόσβαση στο ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Κάντε αναβάθμιση για να προσθέσετε μια συντομότερη διεύθυνση @pm.me στον λογαριασμό σας, η οποία θα είναι πιο εύκολη στην κοινή χρήση. Σημαίνει \"${ MAIL_APP_NAME } me\" ή \"Private Message me\"."
       ],
@@ -9928,6 +9931,26 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Διατήρηση του λογαριασμού μου ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Συνεχίστε την αξιολόγηση"
@@ -9967,26 +9990,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Διατήρηση του λογαριασμού μου ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
       ]
     },
     "new_plans: feature": {
@@ -10362,6 +10365,17 @@
         "Διαχείριση ομάδας"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } που λήγει σε ${ last4 }"
@@ -10449,17 +10463,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
