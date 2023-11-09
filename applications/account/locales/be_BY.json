@@ -389,6 +389,9 @@
       "Edit Gateway": [
         "Рэдагаваць шлюз"
       ],
+      "Edit invoice details": [
+        "Рэдагаваць падрабязнасці рахунка"
+      ],
       "Edit label": [
         "Рэдагаваць метку"
       ],
@@ -3602,6 +3605,9 @@
       ]
     },
     "email_forwarding_2023: Prompt": {
+      "End-to-end encryption will be re-enabled for the sender address.": [
+        "Скразное шыфраванне будзе паўторна ўключана для адраса адпраўніка."
+      ],
       "Forwarding to the destination address will end.": [
         "Перасылка на адрас прызначэння будзе скасавана."
       ]
@@ -7706,6 +7712,9 @@
       "Version history": [
         "Гісторыя версій"
       ],
+      "View, download, and manage your invoices.": [
+        "Прагляд, спампоўванне і кіраванне вашымі рахункамі."
+      ],
       "Visa Secure logo": [
         "Лагатып Visa Secure"
       ],
@@ -8123,6 +8132,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Вы можаце дадаць спосаб аплаты, каб ваша падпіска падаўжалася аўтаматычна. Таксама даступны іншыя спосабы аплаты."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Увядзіце сваё імя і адрас або рэквізіты сваёй арганізацыі. Гэтыя падрабязнасці будуць дадзены да асабістых рахункаў, а таксама рахункаў арганізацыі."
       ]
     },
     "Info on errors": {
@@ -9043,6 +9057,9 @@
       ],
       "Name": [
         "Назва"
+      ],
+      "Name and address": [
+        "Імя і адрас"
       ],
       "Name on card": [
         "Імя на картцы"
@@ -10115,6 +10132,26 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Пакінуць мой уліковы запіс ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Працягнуць агляд"
@@ -10154,26 +10191,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Пакінуць мой уліковы запіс ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
       ]
     },
     "new_plans: feature": {
@@ -10587,6 +10604,17 @@
         "Кіраванне камандамі"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Ваш пробны перыяд завершыцца ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, якая заканчваецца на ${ last4 }"
@@ -10674,17 +10702,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Вы карыстаецеся бягучым тарыфным планам па акцыённым кошце. Калі вы панізіце свой уліковы запіс, то згубіце гэту перавагу і больш не зможаце скарыстацца ёй, калі вырашыце падпісацца яшчэ раз."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Калі гэта не зрабіць, доступ да вашага ўліковага запісу будзе абмежаваны, а потым цалкам адключаны."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Для працягу выкарыстання ${ MAIL_APP_NAME } з прэміяльнымі функцыямі, выберыце вашу падпіску і спосаб аплаты."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Ваш пробны перыяд завершыцца ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11856,6 +11873,20 @@
       ],
       "yourdomain.com": [
         "yourdomain.com"
+      ]
+    },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "звяжыцеся з нашай камандай па продажу ${ contactHref }."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Выберыце колькасць IP для ўключэння ў ваш тарыфны план. Кожны дадатковы IP каштуе ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Калі вам неабходна больш за ${ maxIPs } IP, ",
+        "Калі вам неабходна больш за ${ maxIPs } IP, ",
+        "Калі вам неабходна больш за ${ maxIPs } IP, ",
+        "Калі вам неабходна больш за ${ maxIPs } IP, "
       ]
     },
     "plan customizer, users": {
@@ -13804,6 +13835,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Рэдагаваць шлюз з назвай ${ currentName }"
+      ],
+      "Edit invoice details": [
+        "Рэдагаваць падрабязнасці рахунка"
       ],
       "Edit servers": [
         "Рэдагаваць серверы"

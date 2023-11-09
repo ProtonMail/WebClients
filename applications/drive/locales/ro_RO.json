@@ -3964,6 +3964,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selectați adresa sau adresele de e-mail de adăugat la ${ groupName }."
       ],
+      "Please use another browser or download the file.": [
+        "Folosiți alt tip de navigator web sau descărcați fișierul."
+      ],
       "Please wait till your changes are synced with the server.": [
         "Așteptați până când modificările se sincronizează cu serverul."
       ],
@@ -3981,6 +3984,9 @@
       ],
       "Preview failed to be loaded": [
         "Examinarea nu a putut fi încărcată."
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Examinarea pentru acest tip de fișier nu este suportată de acest navigator web."
       ],
       "Preview for this file type is not supported": [
         "Examinarea acestui tip de fișier nu este suportată."
@@ -4032,6 +4038,9 @@
       ],
       "Search Enabled": [
         "Căutare actvată."
+      ],
+      "Select a folder to move to.": [
+        "Selectați folderul sursă."
       ],
       "Select all items for": [
         "Selectare toate fotografiile din"
@@ -4352,9 +4361,6 @@
       ],
       "You cannot undo this action.": [
         "Nu puteți anula această acțiune."
-      ],
-      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
-        "Mai aveți ${ expiresInDays } zile rămase pentru a vă revendica bonusul de bun venit de 500 MiB și să vă "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "S-a atins ${ spaceDisplayed }% din capacitatea de stocare. ${ freeUpMessage } ${ upgradeLink }"
@@ -6395,6 +6401,9 @@
       ],
       "Discard changes?": [
         "Anulare modificări?"
+      ],
+      "Download ${ date }.zip": [
+        "Descărcare ${ date }.zip"
       ],
       "Download unverified file?": [
         "Descărcați un fișier neverificat?"

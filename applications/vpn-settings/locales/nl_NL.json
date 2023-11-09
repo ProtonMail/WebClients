@@ -179,6 +179,9 @@
       "Edit Gateway": [
         "Gateway bewerken"
       ],
+      "Edit invoice details": [
+        "Factuurgegevens wijzigen"
+      ],
       "Edit name": [
         "Naam bewerken"
       ],
@@ -3660,6 +3663,9 @@
       "Version ${ version }": [
         "Versie ${ version }"
       ],
+      "View, download, and manage your invoices.": [
+        "Bekijk, download, en beheer uw facturen."
+      ],
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
@@ -3907,6 +3913,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "U kunt een betalingsmethode toevoegen om uw abonnement automatisch te laten verlengen. Andere betaalmethoden zijn ook beschikbaar."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Voer een naam en adres in voor uzelf of uw organisatie. Deze gegevens worden toegevoegd aan zowel persoonlijke als zakelijke facturen."
       ]
     },
     "Info subscription": {
@@ -4203,6 +4214,9 @@
       ],
       "Name": [
         "Naam"
+      ],
+      "Name and address": [
+        "Naam en adres"
       ],
       "Name on card": [
         "Naam op de kaart"
@@ -6876,6 +6890,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Gateway ${ currentName } aanpassen"
+      ],
+      "Edit invoice details": [
+        "Factuurgegevens wijzigen"
       ],
       "Edit servers": [
         "Servers bewerken"

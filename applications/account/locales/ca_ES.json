@@ -1339,7 +1339,7 @@
         "Bloquejador d'anuncis i publicitat i protecció contra programari maliciós"
       ],
       "Extended version history": [
-        "Historial de versions esteso"
+        "Historial de versions ampliat"
       ],
       "High speed streaming": [
         "Streaming d'alta velocitat"
@@ -1986,7 +1986,7 @@
         "Aniversari"
       ],
       "Display name": [
-        "Nom a mostrar"
+        "Nom que es mostrarà"
       ],
       "Email": [
         "Correu electrònic"
@@ -4099,7 +4099,7 @@
         "Error: ${ errorMessage }"
       ],
       "Invalid URL": [
-        "URL no vàlida"
+        "L'URL no és vàlid."
       ],
       "Oops, something went wrong": [
         "Vaja, alguna cosa ha anat malament"
@@ -6491,7 +6491,7 @@
         "No s'ha trobat cap resultat."
       ],
       "Not a valid URL": [
-        "No és una URL vàlida"
+        "No és un URL vàlid."
       ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "No és el vostre dispositiu? Utilitzeu una finestra de navegació privada per iniciar la sessió i tanqueu-la en acabar. ${ learnMore }"
@@ -7146,7 +7146,7 @@
         "El fitxer carregat no és una clau privada vàlida. Verifiqueu-la i torneu-ho a provar."
       ],
       "URL link": [
-        "Enllaç URL"
+        "Enllaç de l'URL"
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilitzeu el millor servidor segons la càrrega i la ubicació actuals: ${ formattedBestServerName }"
@@ -8122,7 +8122,7 @@
         "Confirma el correu electrònic"
       ],
       "Confirm link URLs": [
-        "Confirma els enllaços URL"
+        "Confirma els enllaços de l'URL"
       ],
       "Confirm login password": [
         "Confirma la contrasenya d'inici de sessió"
@@ -9473,6 +9473,26 @@
         "Velocitat VPN mitjana"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Passar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explora tots els plans de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Des de ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Conserva el meu compte ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Millora"
+      ],
+      "Upgrade now": [
+        "Millora ara"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Continua revisant"
@@ -9512,26 +9532,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Millora a ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Passar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explora tots els plans de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Des de ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Conserva el meu compte ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Millora"
-      ],
-      "Upgrade now": [
-        "Millora ara"
       ]
     },
     "new_plans: feature": {
@@ -9894,6 +9894,17 @@
         "Gestió d'equips"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "El període de prova acaba el ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } acabant en ${ last4 }."
@@ -9969,17 +9980,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "El període de prova acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -11759,7 +11759,7 @@
         "Emmagatzematge al núvol segur"
       ],
       "Secure streaming": [
-        "Retransmissió segura"
+        "Streaming segur"
       ],
       "Support online privacy": [
         "Doneu suport a la privacitat en línia"

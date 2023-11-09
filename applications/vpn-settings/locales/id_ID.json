@@ -179,6 +179,9 @@
       "Edit Gateway": [
         "Sunting Gateway"
       ],
+      "Edit invoice details": [
+        "Sunting detail faktur"
+      ],
       "Edit name": [
         "Sunting nama"
       ],
@@ -3630,6 +3633,9 @@
       "Version ${ version }": [
         "Versi ${ version }"
       ],
+      "View, download, and manage your invoices.": [
+        "Tampilkan, unduh, dan kelola faktur Anda."
+      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -3870,6 +3876,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Anda dapat menambahkan metode pembayaran agar langganan Anda diperpanjang secara otomatis. Metode pembayaran lain juga tersedia."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Masukkan nama dan alamat untuk Anda sendiri atau organisasi Anda. Detail ini akan ditambahkan ke faktur personal dan organisasi."
       ]
     },
     "Info subscription": {
@@ -4163,6 +4174,9 @@
       ],
       "Name": [
         "Nama"
+      ],
+      "Name and address": [
+        "Nama dan alamat"
       ],
       "Name on card": [
         "Nama di kartu"
@@ -5563,6 +5577,17 @@
         "Andi Setiawan"
       ]
     },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "silakan ${ contactHref } tim Pemasaran kami."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Pilih jumlah IP untuk disertakan dalam paket Anda. Setiap IP tambahan seharga ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IPs, ": [
+        "Jika Anda perlu lebih dari ${ maxIPs } IP, "
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "hubungi"
@@ -6776,6 +6801,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Sunting Gateway ${ currentName }"
+      ],
+      "Edit invoice details": [
+        "Sunting detail faktur"
       ],
       "Edit servers": [
         "Sunting server"

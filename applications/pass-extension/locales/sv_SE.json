@@ -439,9 +439,6 @@
       "Could not open updated vault": [
         "Kunde inte öppna uppdaterat valv"
       ],
-      "Could not resolve share members": [
-        "Kunde inte hämta användare av fildelningsyta."
-      ],
       "Could not resume your session : ${ description }": [
         "Kunde inte återuppta din session : ${ description }"
       ],
@@ -730,15 +727,6 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias “${ item.aliasEmail }“ har flyttats till papperskorg – den kommer stoppa vidarebefordra e-post till din brevlåda"
-      ],
-      "All items permanently removed": [
-        "Alla objekt borttagna permanent"
-      ],
-      "All items successfully restored": [
-        "Alla objekt återställda"
-      ],
-      "An item previously shared with you was disabled": [
-        "Ett objekt som tidigare delats med dig har inaktiverats"
       ],
       "Auto-lock successfully disabled": [
         "Automatisk låsning inaktiverat"
@@ -1070,9 +1058,6 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Valv ”${ payload.share.content.name }” uppdaterades"
       ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "Valv “${ share.content.name }“ inaktiverades"
-      ],
       "Verification code": [
         "Verifieringskod"
       ],
@@ -1351,9 +1336,6 @@
       "Most recent": [
         "Senaste"
       ],
-      "Move items to": [
-        "Flytta objekt till"
-      ],
       "Name": [
         "Namn"
       ],
@@ -1404,9 +1386,6 @@
       ],
       "Pause list": [
         "Pauslista"
-      ],
-      "Permanently delete items": [
-        "Ta bort objekt permanent"
       ],
       "PIN": [
         "PIN"
@@ -1597,9 +1576,6 @@
       ],
       "MM/YYYY": [
         "MM/YYYY"
-      ],
-      "Move items to another vault (optional)": [
-        "Flytta objekt till annat valv (valfritt)"
       ],
       "Other": [
         "Annat"
@@ -1898,9 +1874,6 @@
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "Valv ”${ vaultName }” och alla dess objekt kommer att tas bort permanent. Du kan inte ångra denna åtgärd."
-      ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "Valv ”${ vaultName }” kommer att tas bort permanent och alla dess objekt flyttas till ”${ destinationVaultName }”"
       ],
       "Vault name is required": [
         "Valvnamn är obligatoriskt"

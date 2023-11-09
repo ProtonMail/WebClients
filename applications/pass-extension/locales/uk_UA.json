@@ -648,15 +648,6 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Псевдонім \"${ item.aliasEmail }\" переміщено у смітник - він перестане пересилати електронні листи на вашу поштову скриньку"
       ],
-      "All items permanently removed": [
-        "Усі елементи остаточно видалено"
-      ],
-      "All items successfully restored": [
-        "Усі елементи успішно відновлено"
-      ],
-      "An item previously shared with you was disabled": [
-        "Елемент, до якого раніше було надано доступ, було вимкнено"
-      ],
       "Auto-lock successfully disabled": [
         "Автоблокування успішно вимкнено"
       ],
@@ -912,9 +903,6 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Сховище \"${ payload.share.content.name }\" успішно оновлено"
       ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "Сховище \"${ share.content.name }\" вимкнено"
-      ],
       "Verification code": [
         "Код підтвердження"
       ],
@@ -1166,9 +1154,6 @@
       "Most recent": [
         "Останні"
       ],
-      "Move items to": [
-        "Перемістити елементи до"
-      ],
       "Name": [
         "Назва"
       ],
@@ -1219,9 +1204,6 @@
       ],
       "Pause list": [
         "Список винятків"
-      ],
-      "Permanently delete items": [
-        "Остаточно видалити елементи"
       ],
       "PIN": [
         "PIN-код"
@@ -1412,9 +1394,6 @@
       ],
       "MM/YYYY": [
         "ММ/РРРР"
-      ],
-      "Move items to another vault (optional)": [
-        "Перемістити елементи в інше сховище (необов'язково)"
       ],
       "Other": [
         "Інше"
@@ -1652,9 +1631,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Неможливо увійти в ${ PASS_APP_NAME }. ${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "Сховище \"${ vaultName }\" буде остаточно видалено, а всі його елементи переміщено до \"${ destinationVaultName }\""
       ],
       "Vault name is required": [
         "Потрібно вказати назву сховища"
