@@ -717,15 +717,6 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "별명 \"${ item.aliasEmail }\" 이(가) 휴지통으로 이동됨 - 사용자의 메일함에 대한 모든 포워딩이 중단됩니다."
       ],
-      "All items permanently removed": [
-        "모든 항목이 완전히 삭제되었습니다."
-      ],
-      "All items successfully restored": [
-        "모든 항목이 성공적으로 복구되었습니다."
-      ],
-      "An item previously shared with you was disabled": [
-        "사용자가 이전에 공유한 항목이 비활성화 되었습니다."
-      ],
       "Auto-lock successfully disabled": [
         "자동 잠금이 성공적으로 비활성화 되었습니다."
       ],
@@ -999,6 +990,9 @@
       "The autofill dropdown will automatically open on field focus.": [
         "필드에 있다면 자동 완성이 열립니다."
       ],
+      "The following ${ result.ignored.length } items could not be imported:": [
+        "다음 ${ result.ignored.length }개 항목은 불러올 수 없습니다:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "붙여넣으려는 텍스트는 ${ maxLength } 문자의 최대 허용 길이보다 깁니다."
       ],
@@ -1049,9 +1043,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "금고 \"${ payload.share.content.name }\" 이(가) 성공적으로 업데이트되었습니다."
-      ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "금고 \"${ share.content.name }\" 이(가) 비활성화 되었습니다."
       ],
       "Verification code": [
         "인증 코드"
@@ -1328,9 +1319,6 @@
       "Most recent": [
         "가장 최근순"
       ],
-      "Move items to": [
-        "항목을 다음으로 이동"
-      ],
       "Name": [
         "이름"
       ],
@@ -1381,9 +1369,6 @@
       ],
       "Pause list": [
         "항목 정지"
-      ],
-      "Permanently delete items": [
-        "영구적으로 항목 삭제"
       ],
       "PIN": [
         "PIN"
@@ -1574,9 +1559,6 @@
       ],
       "MM/YYYY": [
         "월/년"
-      ],
-      "Move items to another vault (optional)": [
-        "항목을 다른 금고로 이동(선택 사항)"
       ],
       "Other": [
         "기타"
@@ -1873,9 +1855,6 @@
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "금고 \"${ vaultName }\" 및 포함된 모든 항목이 완전히 삭제됩니다. 이 동작을 취소할 수 없습니다."
-      ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "금고 \"${ vaultName }\"이(가) 완전히 삭제되며 모든 항목이 \"${ destinationVaultName }\" 으로 이동됩니다."
       ],
       "Vault name is required": [
         "금고 이름이 필요합니다."

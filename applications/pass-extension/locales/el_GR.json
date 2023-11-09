@@ -227,6 +227,9 @@
       "More options": [
         "Περισσότερες επιλογές"
       ],
+      "Move all items": [
+        "Μετακίνηση όλων των στοιχείων"
+      ],
       "Move to a shared vault": [
         "Μετακίνηση σε κοινόχρηστη κρύπτη"
       ],
@@ -485,6 +488,9 @@
       "Failed to edit user's access.": [
         "Απέτυχε η επεξεργασία της πρόσβασης του χρήστη."
       ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Αποτυχία μετακίνησης όλων των στοιχείων από το \"${ payload.content.name }\""
+      ],
       "Failed to remove user's access.": [
         "Αποτυχία κατάργησης πρόσβασης χρήστη."
       ],
@@ -544,6 +550,9 @@
       ],
       "Restoring item failed": [
         "Η επαναφορά του στοιχείου απέτυχε"
+      ],
+      "Restoring trashed items failed": [
+        "Η επαναφορά των απορριφθέντων στοιχείων απέτυχε"
       ],
       "Settings update failed": [
         "Η ενημέρωση των ρυθμίσεων απέτυχε"
@@ -731,14 +740,20 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Το ψευδώνυμο \"${ item.aliasEmail }\" μετακινήθηκε στον κάδο απορριμμάτων - θα σταματήσει να προωθεί μηνύματα ηλεκτρονικού ταχυδρομείου στο γραμματοκιβώτιό σας"
       ],
-      "All items permanently removed": [
-        "Όλα τα στοιχεία καταργήθηκαν οριστικά"
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Όλα τα στοιχεία από το \"${ payload.content.name }\" μετακινήθηκαν με επιτυχία"
       ],
-      "All items successfully restored": [
-        "Όλα τα στοιχεία αποκαταστάθηκαν οριστικά"
+      "All trashed items permanently removed": [
+        "Όλα τα απορριφθέντα στοιχεία καταργήθηκαν οριστικά"
       ],
-      "An item previously shared with you was disabled": [
-        "Ένα στοιχείο που είχε μοιραστεί προηγουμένως μαζί σας απενεργοποιήθηκε"
+      "All trashed items successfully restored": [
+        "Όλα τα απορριφθέντα στοιχεία αποκαταστάθηκαν με επιτυχία"
+      ],
+      "An item previously shared with you was removed": [
+        "Ένα στοιχείο που είχε μοιραστεί προηγουμένως μαζί σας καταργήθηκε"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Είστε βέβαιοι ότι θέλετε να μετακινήσετε όλα τα στοιχεία από το \"${ fromVaultName }\" στο \"${ toVaultName }\";"
       ],
       "Auto-lock successfully disabled": [
         "Το αυτόματο κλείδωμα απενεργοποιήθηκε με επιτυχία"
@@ -796,6 +811,9 @@
       ],
       "Editor": [
         "Πρόγραμμα επεξεργασίας"
+      ],
+      "Emptying trash...": [
+        "Άδειασμα κάδου απορριμάτων..."
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Ενεργοποιήστε το ${ PASS_APP_NAME }, συνδέοντας τον λογαριασμό σας ${ BRAND_NAME }"
@@ -886,6 +904,9 @@
       "Item successfully moved": [
         "Στοιχείο μετακινήθηκε επιτυχώς"
       ],
+      "Leaving vault...": [
+        "Αποχώρηση από την κρύπτη..."
+      ],
       "Let's get you started by creating your first item": [
         "Ας ξεκινήσουμε δημιουργώντας το πρώτο σας στοιχείο"
       ],
@@ -903,6 +924,9 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Περισσότερο από έναν διαχειριστή κωδικών πρόσβασης, το ${ PASS_APP_NAME } προστατεύει τον κωδικό πρόσβασής σας και την προσωπική σας διεύθυνση email μέσω ψευδωνύμων email. Με την ίδια τεχνολογία πίσω από το ${ MAIL_APP_NAME }, τα δεδομένα σας είναι κρυπτογραφημένα από άκρο σε άκρο και είναι προσβάσιμα μόνο από εσάς."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Μετακίνηση όλων των στοιχείων από το \"${ payload.content.name }\""
       ],
       "Multiple vaults": [
         "Πολλαπλές κρύπτες"
@@ -964,8 +988,14 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Το απόρρητο είναι μια μεγάλη ανησυχία για εμάς. Μάθετε γιατί το ${ PASS_APP_NAME } είναι διαφορετικό."
       ],
+      "Restoring trashed items...": [
+        "Η επαναφορά των απορριφθέντων στοιχείων..."
+      ],
       "Save login": [
         "Αποθήκευση διαπιστευτηρίων"
+      ],
+      "Select destination vault": [
+        "Επιλογή κρύπτης προορισμού"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Επιλέξτε πού θέλετε να αποθηκεύονται η/οι κρύπτη(ες) που έχετε εισαγάγει."
@@ -1070,8 +1100,8 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Η κρύπτη \"${ payload.share.content.name }\" ενημερώθηκε με επιτυχία"
       ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "Η κρύπτη \"${ share.content.name }\" απενεργοποιήθηκε"
+      "Vault \"${ share.content.name }\" was removed": [
+        "Η κρύπτη \"${ share.content.name }\" καταργήθηκε"
       ],
       "Verification code": [
         "Κωδικός επαλήθευσης"
@@ -1351,9 +1381,6 @@
       "Most recent": [
         "Πιο πρόσφατα"
       ],
-      "Move items to": [
-        "Μετακίνηση στοιχείων σε"
-      ],
       "Name": [
         "Όνομα"
       ],
@@ -1404,9 +1431,6 @@
       ],
       "Pause list": [
         "Παύση λίστας"
-      ],
-      "Permanently delete items": [
-        "Οριστική διαγραφή στοιχείων"
       ],
       "PIN": [
         "PIN"
@@ -1598,9 +1622,6 @@
       "MM/YYYY": [
         "MM/ΕΕΕΕ"
       ],
-      "Move items to another vault (optional)": [
-        "Μετακίνηση στοιχείων σε άλλη θυρίδα αποθήκευσης (προαιρετικά)"
-      ],
       "Other": [
         "Άλλο"
       ],
@@ -1707,6 +1728,9 @@
       ],
       "Member limit": [
         "Όριο μελών"
+      ],
+      "Move all items ?": [
+        "Μετακίνηση όλων των στοιχείων ;"
       ],
       "Our welcome gift to you": [
         "Το δώρο καλωσορίσματος σας"
@@ -1898,9 +1922,6 @@
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "Η κρύπτη \"${ vaultName }\" και όλα τα στοιχεία της θα διαγραφούν οριστικά. Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
-      ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "Η κρύπτη \"${ vaultName }\" θα διαγραφεί οριστικά και όλα τα στοιχεία της θα μετακινηθούν στη \"${ destinationVaultName }\""
       ],
       "Vault name is required": [
         "Απαιτείται όνομα κρύπτης"
