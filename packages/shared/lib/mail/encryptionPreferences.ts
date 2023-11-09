@@ -39,6 +39,7 @@ export interface EncryptionPreferences {
     sign: boolean;
     scheme: PGP_SCHEMES;
     mimeType: CONTACT_MIME_TYPES;
+    isInternalWithDisabledE2EEForMail: boolean; // both `encrypt` and `isInternalWithDisabledE2EEForMail` might be true at this stage
     sendKey?: PublicKeyReference;
     isSendKeyPinned?: boolean;
     apiKeys: PublicKeyReference[];
@@ -54,7 +55,6 @@ export interface EncryptionPreferences {
     error?: EncryptionPreferencesError;
     emailAddressWarnings?: string[];
     ktVerificationResult?: KeyTransparencyVerificationResult;
-    encryptionDisabled?: boolean;
 }
 
 const extractEncryptionPreferencesOwnAddress = (
@@ -66,6 +66,7 @@ const extractEncryptionPreferencesOwnAddress = (
         emailAddress,
         scheme,
         mimeType,
+        isInternalWithDisabledE2EEForMail,
         isContact,
         isContactSignatureVerified,
         contactSignatureTimestamp,
@@ -87,6 +88,7 @@ const extractEncryptionPreferencesOwnAddress = (
         verifyingPinnedKeys: [],
         hasApiKeys,
         hasPinnedKeys: false,
+        isInternalWithDisabledE2EEForMail: isInternalWithDisabledE2EEForMail, // this may be true if own addresses are disabled
         isContact,
         isContactSignatureVerified,
         contactSignatureTimestamp,
@@ -160,6 +162,7 @@ const extractEncryptionPreferencesInternal = (publicKeyModel: PublicKeyModel): E
         isInternal: true,
         hasApiKeys,
         hasPinnedKeys,
+        isInternalWithDisabledE2EEForMail: false,
         isContact,
         isContactSignatureVerified,
         contactSignatureTimestamp,
@@ -257,6 +260,7 @@ const extractEncryptionPreferencesExternalWithWKDKeys = (publicKeyModel: PublicK
         isInternal: false,
         hasApiKeys,
         hasPinnedKeys,
+        isInternalWithDisabledE2EEForMail: false,
         isContact,
         isContactSignatureVerified,
         contactSignatureTimestamp,
@@ -324,18 +328,15 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         sign,
         scheme,
         mimeType,
+        isInternalWithDisabledE2EEForMail,
         isContact,
         isContactSignatureVerified,
         contactSignatureTimestamp,
         emailAddressWarnings,
         emailAddressErrors,
         ktVerificationResult,
-        disabledEncryptionFingerprints,
     } = publicKeyModel;
     const hasPinnedKeys = !!pinnedKeys.length;
-    const encryptionDisabled = apiKeys.length
-        ? apiKeys.every((key) => disabledEncryptionFingerprints.has(key.getFingerprint()))
-        : false;
     const result = {
         encrypt,
         sign,
@@ -347,12 +348,12 @@ const extractEncryptionPreferencesExternalWithoutWKDKeys = (publicKeyModel: Publ
         isInternal: false,
         hasApiKeys: false,
         hasPinnedKeys,
+        isInternalWithDisabledE2EEForMail: isInternalWithDisabledE2EEForMail,
         isContact,
         isContactSignatureVerified,
         contactSignatureTimestamp,
         emailAddressWarnings,
         ktVerificationResult,
-        encryptionDisabled,
     };
     if (emailAddressErrors?.length) {
         const errorString = emailAddressErrors[0];
