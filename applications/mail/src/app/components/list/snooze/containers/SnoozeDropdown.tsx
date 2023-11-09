@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Dropdown, DropdownButton, Icon, Tooltip, useModalState, usePopperAnchor } from '@proton/components/components';
 import { useUser } from '@proton/components/hooks';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import useSnooze, { SNOOZE_DURATION } from '../../../../hooks/actions/useSnooze';
 import { snoozeActions } from '../../../../logic/snooze/snoozeSlice';
@@ -15,10 +16,11 @@ import SnoozeUpsellModal from '../components/SnoozeUpsellModal';
 
 interface Props {
     elements: Element[];
+    labelID: string;
     size?: 'small' | 'medium';
 }
 
-const SnoozeDropdown = ({ elements, size }: Props) => {
+const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
     const dispatch = useAppDispatch();
     const [{ hasPaidMail }] = useUser();
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
@@ -75,9 +77,11 @@ const SnoozeDropdown = ({ elements, size }: Props) => {
         action();
     };
 
+    const labelText = labelID === MAILBOX_LABEL_IDS.SNOOZED ? c('Action').t`Manage Snooze` : c('Action').t`Snooze`;
+
     return (
         <>
-            <Tooltip title={c('Action').t`Snooze`} tooltipClassName="no-pointer-events">
+            <Tooltip title={labelText} tooltipClassName="no-pointer-events">
                 <DropdownButton
                     ref={anchorRef}
                     isOpen={isOpen}
@@ -87,7 +91,7 @@ const SnoozeDropdown = ({ elements, size }: Props) => {
                     size={size}
                     icon
                 >
-                    <Icon name="clock" alt={c('Action').t`Snooze`} />
+                    <Icon name="clock" alt={labelText} />
                 </DropdownButton>
             </Tooltip>
             <Dropdown isOpen={isOpen && snoozeState === 'snooze-selection'} anchorRef={anchorRef} onClose={onClose}>
