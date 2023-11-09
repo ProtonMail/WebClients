@@ -1,6 +1,6 @@
 import { MouseEvent } from 'react';
 
-import { addDays, differenceInDays, format, nextMonday, nextSaturday, set } from 'date-fns';
+import { addDays, differenceInDays, format, nextMonday, nextSaturday, nextSunday, set } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -18,7 +18,7 @@ interface Props {
     canUnsnooze: boolean;
     handleUnsnoozeClick: (event: MouseEvent) => void;
     handleCustomClick: (event: MouseEvent) => void;
-    handleSnooze: (event: MouseEvent, duration: SNOOZE_DURATION) => void;
+    handleSnooze: (event: MouseEvent, duration: SNOOZE_DURATION, snoozeDate?: Date) => void;
 }
 
 interface ButtonProps {
@@ -72,6 +72,7 @@ const SnoozeDurationSelection = ({ canUnsnooze, handleUnsnoozeClick, handleSnooz
 
     const nextMon = nextMonday(today);
     const nextSat = nextSaturday(today);
+    const nextSun = nextSunday(today);
     const daysUntilNextMon = differenceInDays(nextMon, today);
     const daysUntilNextSat = differenceInDays(nextSat, today);
     const formattedDayOfWeek = format(addDays(today, 2), 'EEE');
@@ -110,6 +111,20 @@ const SnoozeDurationSelection = ({ canUnsnooze, handleUnsnoozeClick, handleSnooz
         },
     ];
 
+    /**
+     * When the WeekStarts is set to Sat or Sun we need to send a custom snooze time to set it to the defined day at 09:00AM
+     * Otherwise we can send the predifined duration
+     */
+    const handleSnoozeDurationClick = (event: MouseEvent, duration: SNOOZE_DURATION) => {
+        if (weekStartInWeekend) {
+            const snoozeDate = WeekStart === SATURDAY ? nextSat : nextSun;
+            const snoozeTime = set(snoozeDate, { hours: 9, minutes: 0, seconds: 0, milliseconds: 0 });
+            handleSnooze(event, 'custom', snoozeTime);
+        } else {
+            handleSnooze(event, duration);
+        }
+    };
+
     return (
         <>
             <SnoozeHeader headerClasses="px-4 pt-2" />
@@ -125,7 +140,7 @@ const SnoozeDurationSelection = ({ canUnsnooze, handleUnsnoozeClick, handleSnooz
                             duration={duration}
                             onClick={(e, duration) => {
                                 if (e && duration) {
-                                    handleSnooze(e, duration);
+                                    handleSnoozeDurationClick(e, duration);
                                 }
                             }}
                         />
