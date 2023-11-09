@@ -155,18 +155,15 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     const changes = useMemo(() => {
         const elements = getElementsFromIDs(selectedIDs);
         const initialState = getInitialState(labels, elements);
-        return Object.keys(selectedLabelIDs).reduce(
-            (acc, LabelID) => {
-                if (selectedLabelIDs[LabelID] === LabelState.On && initialState[LabelID] !== LabelState.On) {
-                    acc[LabelID] = true;
-                }
-                if (selectedLabelIDs[LabelID] === LabelState.Off && initialState[LabelID] !== LabelState.Off) {
-                    acc[LabelID] = false;
-                }
-                return acc;
-            },
-            {} as { [labelID: string]: boolean }
-        );
+        return Object.keys(selectedLabelIDs).reduce((acc, LabelID) => {
+            if (selectedLabelIDs[LabelID] === LabelState.On && initialState[LabelID] !== LabelState.On) {
+                acc[LabelID] = true;
+            }
+            if (selectedLabelIDs[LabelID] === LabelState.Off && initialState[LabelID] !== LabelState.Off) {
+                acc[LabelID] = false;
+            }
+            return acc;
+        }, {} as { [labelID: string]: boolean });
     }, [selectedIDs, initialState, selectedLabelIDs]);
 
     // Always checkbox should be disabled when we don't find senders OR there are no labels checked (so no filter based on labels to create)
