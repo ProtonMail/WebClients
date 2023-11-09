@@ -1206,7 +1206,7 @@
         "Žiadna E2EE pošta"
       ],
       "Orphan": [
-        "Sirota"
+        "Osirelý"
       ]
     },
     "Admin": {
@@ -1426,7 +1426,7 @@
         "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná."
       ],
       "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
-        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Ale môžete získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
+        "Je nám ľúto, ale táto ponuka nie je s vaším aktuálnym plánom dostupná. Môžete však získať **${ discountPercentage } z ${ plan.Title }** pri predplatení na **${ months }**."
       ]
     },
     "bf2023: Info": {
@@ -1634,7 +1634,7 @@
     },
     "Button": {
       "Add link to your email footer": [
-        "Pridajte odkaz do päty emailu"
+        "Pridať odkaz do päty emailu"
       ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Pokračovať s ${ MAIL_APP_NAME }."
@@ -1669,7 +1669,7 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Môžete importovať ICS súbory z iného kalendára do ${ CALENDAR_APP_NAME }. To vám umožní rýchlo importovať jednu udalosť alebo celý váš program."
+        "Môžete importovať ICS súbory z iného kalendára do ${ CALENDAR_APP_NAME }. To vám umožní rýchlo importovať jednu udalosť, alebo celý váš program."
       ]
     },
     "Calendar invite status label": {
@@ -1713,7 +1713,7 @@
     },
     "Calendar settings link share description": {
       "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Vytvorte odkaz na svoj kalendár a zdieľajte ho s kýmkoľvek mimo ${ BRAND_NAME }. Udalosti môžete pridávať alebo odstraňovať iba vy."
+        "Vytvorte odkaz na svoj kalendár a zdieľajte ho s kýmkoľvek mimo ${ BRAND_NAME }. Udalosti môžete pridávať alebo odstraňovať len vy."
       ]
     },
     "Calendar settings private share description": {
@@ -3605,6 +3605,9 @@
       ]
     },
     "email_forwarding_2023: Prompt": {
+      "End-to-end encryption will be re-enabled for the sender address.": [
+        "Pre adresu odosielateľa bude znovu povolené end-to-end šifrovanie."
+      ],
       "Forwarding to the destination address will end.": [
         "Preposielanie na cieľovú adresu bude ukončené."
       ]
@@ -4386,7 +4389,7 @@
         "Niečo sa pokazilo"
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
-        "Príliš veľa malých relácií, prosím vymažte súbory cookie a znova sa späť prihláste."
+        "Príliš veľa detských relácií, vymažte prosím súbory cookie a prihláste sa znova."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Túto stránku sa nepodarilo načítať. Obnovte stránku, prosím, alebo skontrolujte svoje internetové pripojenie."
@@ -4430,7 +4433,7 @@
     },
     "Error notification": {
       "Certificate ${ name } not found or already revoked": [
-        "Certifikát ${ name } sa nenašiel alebo bol zrušený"
+        "Certifikát ${ name } sa nenašiel, alebo bol zrušený"
       ],
       "First name and last name cannot be unchecked at the same time": [
         "Je potrebné vybrať krstné meno alebo priezvisko"
@@ -4506,7 +4509,7 @@
         "${ totalProcessed }/${ totalToProcess } udalostí exportovaných"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
-        "Kalendár bol úspešne exportovaný. Teraz môžete uložiť súbor ICS."
+        "Kalendár bol úspešne exportovaný. Môžete uložiť ICS súbor."
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
         "Dešifrovanie udalostí z vášho kalendára: ${ totalProcessed }/${ totalToProcess }"
@@ -4700,7 +4703,7 @@
         "Dosiahli ste limit 10 prijatých pozvánok za 6 mesiacov."
       ],
       "You have reached the limit of 10 accepted invitations in 6 months. The button will become clickable when you can invite additional users.": [
-        "Dosiahli ste limit 10 prijatých pozvánok za 6 mesiacov. Na tlačítko budete môcť kliknúť, keď bude možné pozvať ďalších používateľov."
+        "Dosiahli ste limit 10 prijatých pozvánok za 6 mesiacov. Na tlačidlo budete môcť kliknúť, keď bude možné pozvať ďalších používateľov."
       ],
       "You have successfully joined the Family plan": [
         "Úspešne ste sa pripojili k rodinnému plánu."
@@ -5215,7 +5218,7 @@
         "funkcie ochrany súkromia"
       ],
       "Set up ${ strongText } from Gmail": [
-        "Nastavte si ${ strongText } zo služby Gmail"
+        "Nastaviť ${ strongText } zo služby Gmail"
       ],
       "This feature is currently unavailable": [
         "Táto funkcia je aktuálne nedostupná"
@@ -5345,7 +5348,7 @@
         "Čas"
       ],
       "User": [
-        "Užívateľ"
+        "Používateľ"
       ]
     },
     "Header for addresses table": {
@@ -5404,7 +5407,7 @@
         "Sviatky"
       ],
       "Other": [
-        "Ostatní"
+        "Iné"
       ],
       "Subscribed": [
         "Prihlásené k odberu"
@@ -7704,7 +7707,7 @@
         "História verzií"
       ],
       "View, download, and manage your invoices.": [
-        "Zobrazujte, sťahujte a spravujte svoje faktúry."
+        "Prehliadanie, sťahovanie a správa faktúr."
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
@@ -10123,6 +10126,26 @@
         "Stredná VPN rýchlosť"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Ponechať si môj účet ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Pokračovať na rekapituláciu"
@@ -10162,26 +10185,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Prejsť na ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Ponechať si môj účet ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
       ]
     },
     "new_plans: feature": {
@@ -10595,6 +10598,17 @@
         "Tímový manažment"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Ak chcete naďalej používať ${ MAIL_APP_NAME } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Skúšobná verzia končí ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } končiaca na ${ last4 }"
@@ -10684,17 +10698,6 @@
         "Využívate propagačnú cenu vášho aktuálneho plánu. Ak prejdete na nižšiu verziu účtu, prídete o propagačnú cenu a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "V opačnom prípade bude prístup k vášmu účtu obmedzený a váš účet bude nakoniec deaktivovaný."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Ak chcete naďalej používať ${ MAIL_APP_NAME } s prémiovými funkciami, vyberte si predplatné a možnosti platby."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Skúšobná verzia končí ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } z ${ humanMaxSpace }"
@@ -10762,7 +10765,7 @@
         "Zmeniť plán?"
       ],
       "Unlock premium features by upgrading": [
-        "Odomknite prémiové funkcie inováciou"
+        "Odomknite prémiové funkcie navýšením účtu"
       ]
     },
     "new_plans: Title": {
@@ -11757,7 +11760,7 @@
     },
     "Personal calendar section description": {
       "Create a calendar to stay on top of your schedule while keeping your data secure.": [
-        "Vytvorte si kalendár, aby ste mali prehľad o svojom pláne a zároveň mali svoje údaje v bezpečí."
+        "Vytvorte si kalendár, aby ste mali prehľad o vašich plánoch a zároveň mali svoje údaje v bezpečí."
       ]
     },
     "PGP key warning": {
@@ -11874,10 +11877,10 @@
         "Vyberte počet IP, ktoré chcete zahrnúť do svojho plánu. Každá ďalšia IP stojí ${ price }."
       ],
       "Should you need more than ${ maxIPs } IP, ": [
-        "Potrebujete viac ako ${ maxIPs } IP, ",
-        "Potrebujete viac ako ${ maxIPs } IP, ",
-        "Potrebujete viac ako ${ maxIPs } IP, ",
-        "Potrebujete viac ako ${ maxIPs } IP, "
+        "Ak potrebujete viac ako ${ maxIPs } IP, ",
+        "Ak potrebujete viac ako ${ maxIPs } IP, ",
+        "Ak potrebujete viac ako ${ maxIPs } IP, ",
+        "Ak potrebujete viac ako ${ maxIPs } IP, "
       ]
     },
     "plan customizer, users": {
@@ -11967,10 +11970,10 @@
         "Overiť"
       ],
       "Verify now this recovery email address: ${ email.Value }": [
-        "Overte emailovú adresu na obnovenie teraz: ${ email.Value }"
+        "Overiť túto emailovú adresu určenú pre obnovenie: ${ email.Value }"
       ],
       "Verify recovery email?": [
-        "Overiť email na obnovenie?"
+        "Overiť email pre obnovenie?"
       ],
       "Verify with email": [
         "Overiť emailom"
@@ -12013,7 +12016,7 @@
         "Overiť číslo na obnovenie?"
       ],
       "Verify this recovery phone number now: ${ phone.Value }": [
-        "Overte toto telefónne číslo na obnovenie teraz: ${ phone.Value }"
+        "Overiť toto telefónne číslo určené pre obnovenie: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Overenie vášho telefónneho čísla zvyšuje bezpečnosť vášho účtu a umožňuje ďalšie možnosti obnovenia."
@@ -12250,10 +12253,10 @@
     },
     "session_recovery:disable:info": {
       "Make sure you have access to a recovery method.": [
-        "Uistite sa, či máte prístup k metóde obnovy."
+        "Uistite sa, že máte prístup k spôsobu obnovy."
       ],
       "You will no longer be able to request a password reset from your account settings.": [
-        "V nastaveniach konta už nebudete môcť požiadať o obnovenie hesla."
+        "V nastaveniach účtu už nebudete môcť požiadať o obnovenie hesla."
       ]
     },
     "session_recovery:disable:title": {
@@ -12374,13 +12377,13 @@
         "Povoliť obnovenie hesla z nastavení"
       ],
       "Request a password reset from your Account settings. No recovery method needed.": [
-        "Vyžiadajte si obnovenie hesla v nastaveniach konta. Nie je potrebná žiadna metóda obnovy."
+        "Vyžiadajte si obnovenie hesla v nastaveniach účtu. Nie je potrebný žiadny spôsob obnovy."
       ],
       "Request password reset": [
         "Žiadosť o obnovenie hesla"
       ],
       "To disallow password reset, you must have a recovery method set up.": [
-        "Ak chcete zakázať obnovenie hesla, musíte mať nastavenú metódu obnovenia."
+        "Ak chcete zakázať obnovenie hesla, musíte mať nastavený spôsob obnovenia."
       ]
     },
     "session_recovery:sign_out:action": {
@@ -12840,10 +12843,10 @@
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Pridajte verejné, externé alebo zdieľané kalendáre pomocou URL adresy."
+        "Pridať verejné, externé alebo zdieľané kalendáre pomocou URL adresy."
       ],
       "Add public, external, or shared calendars.": [
-        "Pridajte verejné, externé alebo zdieľané kalendáre."
+        "Pridať verejné, externé alebo zdieľané kalendáre."
       ]
     },
     "Subscription": {
@@ -14753,7 +14756,7 @@
     },
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Upgradujte na platenú verziu ${ MAIL_SHORT_APP_NAME }, aby ste mohli zdieľať kalendár."
+        "Ak chcete zdieľať kalendár, prejdite na platený plán ${ MAIL_SHORT_APP_NAME }."
       ]
     },
     "upsell panel": {
@@ -14945,7 +14948,7 @@
         "Zadajte aspoň jedného príjemcu, prosím."
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
-        "Berte prosím na vedomie, že výberom tejto platobnej metódy nemôže byť váš účet navýšený na iné predplatné okamžite. Predplatné vašeho účtu aktualizujeme v momente, až bude proces platobnej transakcie ukončený."
+        "Upozorňujeme, že pri výbere tohto spôsobu platby nie je možné váš účet okamžite navýšiť. Váš účet aktualizujeme po zúčtovaní platby."
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Hlásenia nie sú zabezpečené end-to-end šifrovaním, neposielajte žiadne citlivé informácie, prosím."
@@ -14975,7 +14978,7 @@
         "Zistili sme problém s vašou konfiguráciou DNS. Uistite sa prosím, že sa vaše záznamy zhodujú s nižšie uvedenými inštrukciami. Ak problém pretrváva, budeme musieť DKIM vypnúť."
       ],
       "You must ${ activateLink } organization keys before adding an email address to a non-private member.": [
-        "Musíte ${ activateLink } kľúče organizácie predtým, ako pridáte e-mailovú adresu verejnému členovi."
+        "Musíte ${ activateLink } kľúče organizácie predtým, ako pridáte emailovú adresu verejnému členovi."
       ],
       "You will lose any customization you made so far.": [
         "Prídete o zmeny, ktoré ste doteraz vykonali."
@@ -14987,10 +14990,10 @@
         "Bezplatná skúšobná verzia končí ${ textDate }. ${ action }"
       ],
       "Your recovery file is outdated. It can't recover new data if you reset your account again.": [
-        "Váš súbor pre obnovenie je zastaraný. Ak znova resetujete svoj účet, nemôže obnoviť nové dáta."
+        "Váš súbor pre obnovenie je zastaraný. Ak znova obnovíte svoj účet, nebude možné obnoviť nové údaje."
       ],
       "Your recovery phrase is outdated. It can't recover new data if you reset your account again.": [
-        "Vaša obnovovacia fráza je zastaraná. Ak znova resetujete svoj účet, nemôže obnoviť nové dáta."
+        "Vaša obnovovacia fráza je zastaraná. Ak znova obnovíte svoj účet, nebude možné obnoviť nové údaje."
       ]
     },
     "Warning for domain modal": {

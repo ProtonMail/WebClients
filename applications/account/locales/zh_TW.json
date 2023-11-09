@@ -9358,6 +9358,26 @@
         "一般 VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "保留我的 ${ currentPlanName } $ 帳號"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "繼續確認方案"
@@ -9397,26 +9417,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "升級到 ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "保留我的 ${ currentPlanName } $ 帳號"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
       ]
     },
     "new_plans: feature": {
@@ -9770,6 +9770,17 @@
         "團隊管理"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "您的試用期結束於 ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 後四碼 ${ last4 }"
@@ -9857,17 +9868,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "您的試用期結束於 ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
