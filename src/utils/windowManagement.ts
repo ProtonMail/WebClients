@@ -1,4 +1,4 @@
-import { BrowserWindow, Rectangle, Session, WebContents, app } from "electron";
+import { BrowserWindow, Rectangle, Session, WebContents, app, screen } from "electron";
 import contextMenu from "electron-context-menu";
 import { getConfig } from "./config";
 import { APP } from "./constants";
@@ -15,6 +15,14 @@ interface WindowCreationProps {
 const config = getConfig(app.isPackaged);
 export const windowMap = new Map<APP, BrowserWindow>();
 
+const getMinimalWindowSize = () => {
+    const { height } = screen.getPrimaryDisplay().workArea;
+    return {
+        minWidth: 450,
+        minHeight: Math.round(height / 1.5),
+    };
+};
+
 contextMenu({
     showInspectElement: config.devTools,
     showSaveImage: true,
@@ -25,6 +33,7 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
         title: config.appTitle,
         icon: "../../assets/icons/icon.png",
         ...windowConfig, // handles windows size and position
+        ...getMinimalWindowSize(),
         // We only hide the frame and the title bar on macOS
         titleBarStyle: isMac ? "hidden" : "default",
         frame: !isMac,
