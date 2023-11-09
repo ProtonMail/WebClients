@@ -284,6 +284,7 @@ const MailboxContainer = ({
         labelDropdownToggleRef,
         moveDropdownToggleRef,
         moveScheduledModal,
+        moveSnoozedModal,
         moveAllModal,
         moveToSpamModal,
         permanentDeleteModal,
@@ -589,6 +590,7 @@ const MailboxContainer = ({
             {commanderRender ? <Commander list={commanderList} {...commanderModalProps} /> : null}
             {permanentDeleteModal}
             {moveScheduledModal}
+            {moveSnoozedModal}
             {moveAllModal}
             {moveToSpamModal}
             {deleteModal}

@@ -41,8 +41,8 @@ import { exportBlob } from '../../../helpers/message/messageExport';
 import { MARK_AS_STATUS, useMarkAs } from '../../../hooks/actions/useMarkAs';
 import { useMoveToFolder } from '../../../hooks/actions/useMoveToFolder';
 import { useStar } from '../../../hooks/actions/useStar';
-import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
+import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
 import { expireMessages } from '../../../logic/messages/expire/messagesExpireActions';
 import { MessageState, MessageStateWithData, MessageWithOptionalBody } from '../../../logic/messages/messagesTypes';
@@ -110,7 +110,7 @@ const HeaderMoreDropdown = ({
     const { feature } = useFeature(FeatureCode.SetExpiration);
     const { call } = useEventManager();
     const closeDropdown = useRef<() => void>();
-    const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder();
+    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal } = useMoveToFolder();
     const [folders = []] = useFolders();
     const markAs = useMarkAs();
     const getMessageKeys = useGetMessageKeys();
@@ -658,6 +658,7 @@ const HeaderMoreDropdown = ({
                 {...messagePermanentDeleteModalProps}
             />
             {moveScheduledModal}
+            {moveSnoozedModal}
             {moveAllModal}
             {moveToSpamModal}
             {renderCustomExpirationModal && (
