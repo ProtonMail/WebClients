@@ -396,7 +396,13 @@ const CreditCardNewDesign = ({
                     >
                         {countries.map(({ key, value, label, disabled }) => {
                             return (
-                                <Option key={key} value={value} title={label} disabled={disabled}>
+                                <Option
+                                    key={key}
+                                    value={value}
+                                    title={label}
+                                    disabled={disabled}
+                                    data-testid={`country-${value}`}
+                                >
                                     {value === DEFAULT_SEPARATOR.value ? <hr className="m-0" /> : label}
                                 </Option>
                             );
@@ -423,7 +429,7 @@ const CreditCardNewDesign = ({
                 {errors.zip && (
                     <>
                         <WarningIcon className="mr-1" />
-                        <span data-testid="error-ccnumber">{errors.zip}</span>
+                        <span data-testid="error-postalCode">{errors.zip}</span>
                     </>
                 )}
             </div>
