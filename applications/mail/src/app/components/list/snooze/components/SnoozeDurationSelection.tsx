@@ -1,12 +1,23 @@
 import { MouseEvent } from 'react';
 
-import { addDays, differenceInDays, format, nextMonday, nextSaturday, nextSunday, set } from 'date-fns';
+import {
+    addDays,
+    differenceInDays,
+    format,
+    isSaturday,
+    isSunday,
+    isWeekend,
+    nextMonday,
+    nextSaturday,
+    set,
+    startOfWeek,
+} from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { useUser, useUserSettings } from '@proton/components/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
+import { getWeekStartsOn } from '@proton/shared/lib/settings/helper';
 import plusLogo from '@proton/styles/assets/img/illustrations/mail-plus-logo.svg';
 import clsx from '@proton/utils/clsx';
 
@@ -29,19 +40,17 @@ interface ButtonProps {
     showUpsellButton?: boolean;
 }
 
-const { SATURDAY, SUNDAY } = SETTINGS_WEEK_START;
-const getShortDayText = (day: SETTINGS_WEEK_START, formatTime: string) => {
-    switch (day) {
-        case SATURDAY:
-            // translator: formatTime will always be at 9:00 AM. Will display "Sat, 9:00 AM" (if 12 hours is set) or "Sat, 09:00" (if 24 hours is set)
-            return c('WeekDay').t`Sat, ${formatTime}`;
-        case SUNDAY:
-            // translator: formatTime will always be at 9:00 AM. Will display "Sun, 9:00 AM" (if 12 hours is set) or "Sun, 09:00" (if 24 hours is set)
-            return c('WeekDay').t`Sun, ${formatTime}`;
-        default:
-            // translator: formatTime will always be at 9:00 AM. Will display "Mon, 9:00 AM" (if 12 hours is set) or "Mon, 09:00" (if 24 hours is set)
-            return c('WeekDay').t`Mon, ${formatTime}`;
+const getShortDayText = (day: Date, formatTime: string) => {
+    if (isSaturday(day)) {
+        // translator: formatTime will always be at 9:00 AM. Will display "Sat, 9:00 AM" (if 12 hours is set) or "Sat, 09:00" (if 24 hours is set)
+        return c('WeekDay').t`Sat, ${formatTime}`;
     }
+    if (isSunday(day)) {
+        // translator: formatTime will always be at 9:00 AM. Will display "Sun, 9:00 AM" (if 12 hours is set) or "Sun, 09:00" (if 24 hours is set)
+        return c('WeekDay').t`Sun, ${formatTime}`;
+    }
+    // translator: formatTime will always be at 9:00 AM. Will display "Mon, 9:00 AM" (if 12 hours is set) or "Mon, 09:00" (if 24 hours is set)
+    return c('WeekDay').t`Mon, ${formatTime}`;
 };
 
 const SnoozeButton = ({ onClick, duration, leftText, rightText, showUpsellButton }: ButtonProps) => (
@@ -65,21 +74,22 @@ const SnoozeButton = ({ onClick, duration, leftText, rightText, showUpsellButton
 
 const SnoozeDurationSelection = ({ canUnsnooze, handleUnsnoozeClick, handleSnooze, handleCustomClick }: Props) => {
     const [{ hasPaidMail }] = useUser();
-    const [{ WeekStart }] = useUserSettings();
-    const weekStartInWeekend = [SATURDAY, SUNDAY].includes(WeekStart);
+    const [userSettings] = useUserSettings();
 
     const today = new Date();
+    const weekStartsOn = getWeekStartsOn(userSettings);
+    const startOfNextWeek = startOfWeek(addDays(today, 7), { weekStartsOn: weekStartsOn }); // We add 7 days to get the start of the next week
+    const weekStartInWeekend = isWeekend(startOfNextWeek);
 
     const nextMon = nextMonday(today);
     const nextSat = nextSaturday(today);
-    const nextSun = nextSunday(today);
     const daysUntilNextMon = differenceInDays(nextMon, today);
     const daysUntilNextSat = differenceInDays(nextSat, today);
     const formattedDayOfWeek = format(addDays(today, 2), 'EEE');
 
     const time = set(today, { hours: 9, minutes: 0, seconds: 0, milliseconds: 0 });
     const formatTime = formatSimpleDate(time);
-    const nextWeekShortDay = getShortDayText(WeekStart, formatTime);
+    const nextWeekShortDay = getShortDayText(startOfNextWeek, formatTime);
 
     const dropdownOptions: { leftText: string; rightText: string; duration: SNOOZE_DURATION; visible: boolean }[] = [
         {
@@ -117,8 +127,7 @@ const SnoozeDurationSelection = ({ canUnsnooze, handleUnsnoozeClick, handleSnooz
      */
     const handleSnoozeDurationClick = (event: MouseEvent, duration: SNOOZE_DURATION) => {
         if (weekStartInWeekend) {
-            const snoozeDate = WeekStart === SATURDAY ? nextSat : nextSun;
-            const snoozeTime = set(snoozeDate, { hours: 9, minutes: 0, seconds: 0, milliseconds: 0 });
+            const snoozeTime = set(startOfNextWeek, { hours: 9, minutes: 0, seconds: 0, milliseconds: 0 });
             handleSnooze(event, 'custom', snoozeTime);
         } else {
             handleSnooze(event, duration);
