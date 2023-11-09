@@ -3828,6 +3828,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "${ groupName } 개 그룹에 추가 할 이메일 주소를 선택하세요."
       ],
+      "Please use another browser or download the file.": [
+        "파일을 다운로드 하거나 다른 브라우저를 사용하세요."
+      ],
       "Please wait till your changes are synced with the server.": [
         "사용자의 변경이 서버에 동기화 될 때 까지 기다려 주세요."
       ],
@@ -3845,6 +3848,9 @@
       ],
       "Preview failed to be loaded": [
         "미리보기 불러오는 중 문제 발생"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "이 브라우저에서는 이 파일 유형을 열 수 없습니다."
       ],
       "Preview for this file type is not supported": [
         "이 파일 유형의 미리보기가 지원되지 않습니다"
@@ -3896,6 +3902,9 @@
       ],
       "Search Enabled": [
         "검색 활성화됨"
+      ],
+      "Select a folder to move to.": [
+        "이동할 폴더 선택"
       ],
       "Select all items for": [
         "해당 달에 찍은 항목 선택:"
@@ -4214,9 +4223,6 @@
       ],
       "You cannot undo this action.": [
         "이 동작은 실행취소할 수 없습니다."
-      ],
-      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
-        "${ expiresInDays }일 내에 500 MB 환영 보너스 저장 공간을 받고 "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "저장 공간의 ${ spaceDisplayed }% (을) 를 사용했습니다. ${ freeUpMessage } ${ upgradeLink }"
@@ -6127,6 +6133,9 @@
       ],
       "Discard changes?": [
         "변경 사항을 취소할까요?"
+      ],
+      "Download ${ date }.zip": [
+        "${ date }.zip 다운로드"
       ],
       "Download unverified file?": [
         "인증되지 않은 파일을 다운로드할까요?"

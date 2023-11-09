@@ -3971,6 +3971,9 @@
       "Search Enabled": [
         "Recherche activée"
       ],
+      "Select a folder to move to.": [
+        "Sélectionnez un dossier de destination."
+      ],
       "Select all items for": [
         "Sélectionner tous les éléments pour"
       ],
@@ -4290,8 +4293,9 @@
       "You cannot undo this action.": [
         "Vous ne pouvez pas annuler cette action."
       ],
-      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
-        "Il vous reste ${ expiresInDays } jours pour concrétiser votre bonus de bienvenue de 500 Mo et "
+      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
+        "Il vous reste ${ expiresInDays } jour pour bénéficier de votre bonus de bienvenue de 500 Mo et ",
+        "Il vous reste ${ expiresInDays } jours pour bénéficier de votre bonus de bienvenue de 500 Mo et "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Vous avez atteint ${ spaceDisplayed } % de votre capacité de stockage. ${ freeUpMessage } ${ upgradeLink }"
@@ -6271,6 +6275,9 @@
       ],
       "Discard changes?": [
         "Abandonner les modifications ?"
+      ],
+      "Download ${ date }.zip": [
+        "Télécharger ${ date }.zip"
       ],
       "Download unverified file?": [
         "Télécharger le fichier non vérifié ?"

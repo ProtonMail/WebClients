@@ -627,15 +627,6 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "別名${ item.aliasEmail }移至垃圾桶 - 將會停止轉寄電子郵件到信箱"
       ],
-      "All items permanently removed": [
-        "項目已永久移除"
-      ],
-      "All items successfully restored": [
-        "全部項目已成功還原"
-      ],
-      "An item previously shared with you was disabled": [
-        "全部於共享的項目已被停用"
-      ],
       "Auto-lock successfully disabled": [
         "自動鎖定停用成功"
       ],
@@ -891,9 +882,6 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "保管庫${ payload.share.content.name }已成功更新"
       ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "保管庫${ share.content.name }已被停用"
-      ],
       "Verification code": [
         "驗證碼"
       ],
@@ -1142,9 +1130,6 @@
       "Most recent": [
         "最近"
       ],
-      "Move items to": [
-        "將項目移至"
-      ],
       "Name": [
         "名稱"
       ],
@@ -1195,9 +1180,6 @@
       ],
       "Pause list": [
         "暫停清單"
-      ],
-      "Permanently delete items": [
-        "永久刪除項目"
       ],
       "PIN": [
         "PIN碼"
@@ -1388,9 +1370,6 @@
       ],
       "MM/YYYY": [
         "月月/年年年年"
-      ],
-      "Move items to another vault (optional)": [
-        "將項目移至其它保管庫(可選擇)"
       ],
       "Other": [
         "其它"
@@ -1639,9 +1618,6 @@
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "無法登入至${ PASS_APP_NAME }。${ additionalMessage }"
-      ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "保管庫${ vaultName }將永久刪除，內容物將移至${ destinationVaultName }"
       ],
       "Vault name is required": [
         "保管庫需要名字"

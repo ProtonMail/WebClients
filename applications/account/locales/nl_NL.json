@@ -389,6 +389,9 @@
       "Edit Gateway": [
         "Gateway bewerken"
       ],
+      "Edit invoice details": [
+        "Factuurgegevens wijzigen"
+      ],
       "Edit label": [
         "Label bewerken"
       ],
@@ -3564,6 +3567,11 @@
       ],
       "Type text or keyword for this condition:": [
         "Tekst of trefwoord invoeren voor deze voorwaarde:"
+      ]
+    },
+    "email_forwarding_2023: Prompt": {
+      "End-to-end encryption will be re-enabled for the sender address.": [
+        "End-to-end versleuteling zal opnieuw worden ingeschakeld voor het adres van de afzender."
       ]
     },
     "email_forwarding_2023: Status": {
@@ -7531,6 +7539,9 @@
       "Version history": [
         "Versiegeschiedenis"
       ],
+      "View, download, and manage your invoices.": [
+        "Bekijk, download, en beheer uw facturen."
+      ],
       "Visa Secure logo": [
         "Visa Secure logo"
       ],
@@ -7930,6 +7941,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "U kunt een betalingsmethode toevoegen om uw abonnement automatisch te laten verlengen. Andere betaalmethoden zijn ook beschikbaar."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Voer een naam en adres in voor uzelf of uw organisatie. Deze gegevens worden toegevoegd aan zowel persoonlijke als zakelijke facturen."
       ]
     },
     "Info on errors": {
@@ -8842,6 +8858,9 @@
       ],
       "Name": [
         "Naam"
+      ],
+      "Name and address": [
+        "Naam en adres"
       ],
       "Name on card": [
         "Naam op de kaart"
@@ -9892,6 +9911,26 @@
         "Gemiddelde VPN-snelheid"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade naar ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Bekijk alle ${ BRAND_NAME }-abonnementen"
+      ],
+      "From ${ price }": [
+        "Vanaf ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Behoud mijn ${ currentPlanName }-account"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Upgrade nu"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Doorgaan naar controle"
@@ -9931,26 +9970,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Upgraden naar ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade naar ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Bekijk alle ${ BRAND_NAME }-abonnementen"
-      ],
-      "From ${ price }": [
-        "Vanaf ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behoud mijn ${ currentPlanName }-account"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Upgrade nu"
       ]
     },
     "new_plans: feature": {
@@ -10326,6 +10345,17 @@
         "Teambeheer"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -10413,17 +10443,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13439,6 +13458,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Gateway ${ currentName } aanpassen"
+      ],
+      "Edit invoice details": [
+        "Factuurgegevens wijzigen"
       ],
       "Edit servers": [
         "Servers bewerken"

@@ -8053,6 +8053,23 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "सारे ${ BRAND_NAME } प्लान देखे"
+      ],
+      "From ${ price }": [
+        "${ price } से"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "मेरा ${ currentPlanName } खाता रखें"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "देखना जारी रखें"
@@ -8092,23 +8109,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } पे अपग्रेड करें"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "सारे ${ BRAND_NAME } प्लान देखे"
-      ],
-      "From ${ price }": [
-        "${ price } से"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "मेरा ${ currentPlanName } खाता रखें"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
       ]
     },
     "new_plans: feature": {
@@ -8398,6 +8398,14 @@
         "टीम संभालना"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } खत्म होता है ${ last4 } से"
@@ -8467,14 +8475,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "आप अपने अभी चल रहे प्लान पे छूट पा रहे हैं। अगर डाउनग्रेड करते हैं, तो आप छूट खो देंगे और अगर वापिस सदस्यता लेने की कोशिश करते है तो वो मौजूद नहीं होगा।"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
       ]
     },
     "new_plans: Label": {
