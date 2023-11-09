@@ -16,17 +16,6 @@
 /**
  * medium/tablet breakpoint
  */
-@include media('>medium') {
-	.on-desktop {
-		&-h100 {
-			block-size: 100%;
-		}
-	}
-}
-
-/**
- * medium/tablet breakpoint
- */
 @include media('<=medium') {
 	// For global structure adaptation in JS (page / skip links / header / main content / footer)
 	@include body-before('tablet');
@@ -73,26 +62,6 @@
 
 		&-order-1 {
 			order: 1;
-		}
-
-		&-w25 {
-			inline-size: 25%;
-		}
-
-		&-w100 {
-			inline-size: 100%;
-		}
-
-		&-min-wauto {
-			min-inline-size: auto;
-		}
-
-		&-max-w100 {
-			max-inline-size: 100%;
-		}
-
-		&-wauto {
-			inline-size: auto;
 		}
 
 		@for $i from 2 through 3 {
@@ -196,42 +165,6 @@
 			order: 1;
 		}
 
-		&-max-w33 {
-			max-inline-size: 33%;
-		}
-
-		&-max-w100 {
-			max-inline-size: 100%;
-		}
-
-		&-min-w100 {
-			min-inline-size: 100%;
-		}
-
-		&-min-wauto {
-			min-inline-size: auto;
-		}
-
-		&-min-h0 {
-			min-block-size: 0;
-		}
-
-		&-wauto {
-			inline-size: auto;
-		}
-
-		&-w25 {
-			inline-size: 25%;
-		}
-
-		&-w33 {
-			inline-size: 33%;
-		}
-
-		&-w100 {
-			inline-size: 100%;
-		}
-
 		&-border-none {
 			border: 0;
 		}
@@ -263,26 +196,6 @@
 	}
 
 	.on-tiny-mobile {
-		&-wauto {
-			inline-size: auto;
-		}
-
-		&-w100 {
-			inline-size: 100%;
-		}
-
-		&-w25 {
-			inline-size: 25%;
-		}
-
-		&-max-w50 {
-			max-inline-size: 50%;
-		}
-
-		&-max-w50p {
-			max-inline-size: 50px;
-		}
-
 		&-flex-align-self-start {
 			align-self: flex-start;
 		}
