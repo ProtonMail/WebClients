@@ -10,6 +10,7 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
     onAwaitingBitcoinPayment?: PaymentProps['onAwaitingBitcoinPayment'];
     triggersDisabled?: boolean;
     hideFirstLabel?: boolean;
+    hideSavedMethodsDetails?: boolean;
 };
 
 const PaymentWrapper = ({
@@ -27,6 +28,7 @@ const PaymentWrapper = ({
     onAwaitingBitcoinPayment,
     triggersDisabled,
     hideFirstLabel,
+    hideSavedMethodsDetails,
 }: Props) => {
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID;
@@ -56,6 +58,7 @@ const PaymentWrapper = ({
             triggersDisabled={triggersDisabled}
             hideFirstLabel={hideFirstLabel}
             cardFieldStatus={card.fieldsStatus}
+            hideSavedMethodsDetails={hideSavedMethodsDetails}
         />
     );
 };
