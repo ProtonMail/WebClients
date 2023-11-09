@@ -731,15 +731,6 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "O alias \"${ item.aliasEmail }\" foi movido para a lixeira - ele deixará de encaminhar e-mails para a sua caixa de correio."
       ],
-      "All items permanently removed": [
-        "Todos os itens foram removidos permanentemente"
-      ],
-      "All items successfully restored": [
-        "Todos os itens foram restaurados"
-      ],
-      "An item previously shared with you was disabled": [
-        "Um item compartilhado anteriormente com você foi desativado"
-      ],
       "Auto-lock successfully disabled": [
         "Bloqueio automático desativado"
       ],
@@ -1066,9 +1057,6 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Cofre \"${ payload.share.content.name }\" atualizado"
       ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "O cofre \"${ share.content.name }\" foi desativado"
-      ],
       "Verification code": [
         "Código de verificação"
       ],
@@ -1347,9 +1335,6 @@
       "Most recent": [
         "Mais recente"
       ],
-      "Move items to": [
-        "Mover itens para"
-      ],
       "Name": [
         "Nome"
       ],
@@ -1400,9 +1385,6 @@
       ],
       "Pause list": [
         "Lista de pausa"
-      ],
-      "Permanently delete items": [
-        "Exclui os itens permanentemente"
       ],
       "PIN": [
         "Código PIN"
@@ -1593,9 +1575,6 @@
       ],
       "MM/YYYY": [
         "MM/AAAA"
-      ],
-      "Move items to another vault (optional)": [
-        "Mover itens para outro cofre (opcional)"
       ],
       "Other": [
         "Outro"
@@ -1894,9 +1873,6 @@
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "O cofre \"${ vaultName }\" e todos os seus itens serão excluídos permanentemente. Não é possível desfazer esta ação."
-      ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "O cofre \"${ vaultName }\" será excluído permanentemente, e todos os seus itens serão movidos para \"${ destinationVaultName }\""
       ],
       "Vault name is required": [
         "O nome do cofre é obrigatório"

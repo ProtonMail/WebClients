@@ -731,15 +731,6 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "L'alias « ${ item.aliasEmail } » a été déplacé dans la corbeille, il ne transfèrera plus de messages vers votre messagerie."
       ],
-      "All items permanently removed": [
-        "Tous les éléments ont été définitivement supprimés."
-      ],
-      "All items successfully restored": [
-        "Tous les éléments ont été restaurés."
-      ],
-      "An item previously shared with you was disabled": [
-        "Un élément qui avait été partagé avec vous a été désactivé."
-      ],
       "Auto-lock successfully disabled": [
         "Le verrouillage automatique a été désactivé."
       ],
@@ -1070,9 +1061,6 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Le coffre-fort « ${ payload.share.content.name } » a été mis à jour."
       ],
-      "Vault \"${ share.content.name }\" was disabled": [
-        "Le coffre-fort « ${ share.content.name } » a été désactivé."
-      ],
       "Verification code": [
         "Code de vérification"
       ],
@@ -1351,9 +1339,6 @@
       "Most recent": [
         "Le plus récent"
       ],
-      "Move items to": [
-        "Déplacer les éléments vers"
-      ],
       "Name": [
         "Nom"
       ],
@@ -1404,9 +1389,6 @@
       ],
       "Pause list": [
         "Fonctionnalités et domaines exclus"
-      ],
-      "Permanently delete items": [
-        "Supprimer définitivement les éléments"
       ],
       "PIN": [
         "Code PIN"
@@ -1597,9 +1579,6 @@
       ],
       "MM/YYYY": [
         "MM/AAAA"
-      ],
-      "Move items to another vault (optional)": [
-        "Déplacez les éléments vers un autre coffre-fort (facultatif)"
       ],
       "Other": [
         "Autre"
@@ -1898,9 +1877,6 @@
       ],
       "Vault \"${ vaultName }\" and all its items will be permanently deleted. You cannot undo this action.": [
         "Le coffre-fort « ${ vaultName } » et tous ses éléments seront définitivement supprimés. Vous ne pouvez pas annuler cette action."
-      ],
-      "Vault \"${ vaultName }\" will be permanently deleted and all its items moved to \"${ destinationVaultName }\"": [
-        "Le coffre-fort « ${ vaultName } » sera définitivement supprimé et tous ses éléments seront déplacés vers « ${ destinationVaultName } »."
       ],
       "Vault name is required": [
         "Le nom du coffre-fort est nécessaire."
