@@ -57,7 +57,7 @@ const ItemCell = <T extends FileBrowserBaseItem>({
     }, [onItemRender]);
 
     return (
-        <div className={clsx(['flex flex-col group-hover-opacity-container', className])} style={style}>
+        <div className={clsx(['flex group-hover-opacity-container', className])} style={style}>
             {draggable && (
                 <DragMoveContent dragging={dragging} data={dragMoveItems}>
                     <DragMoveContainer>{dragnDropControls.moveText}</DragMoveContainer>
