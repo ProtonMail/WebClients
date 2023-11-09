@@ -63,7 +63,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
     return (
         <div className="p-5" ref={eventDetailsRef}>
             {!!frequencyString && (
-                <IconRow title={c('Label').t`Frequency`} icon="arrows-rotate" labelClassName="inline-flex pt-1">
+                <IconRow title={c('Label').t`Frequency`} icon="arrows-rotate" labelClassName="inline-flex pt-0.5">
                     {frequencyString}
                 </IconRow>
             )}
@@ -71,18 +71,18 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
                 <IconRow
                     title={c('Label').t`Calendar`}
                     icon={<CalendarSelectIcon color={calendar.Color} />}
-                    labelClassName="inline-flex pt-1"
+                    labelClassName="inline-flex pt-0.5"
                 >
                     <span className="text-break">{calendar.Name}</span>
                 </IconRow>
             )}
             {!!trimmedLocation && (
-                <IconRow title={c('Label').t`Location`} icon="map-pin" labelClassName="inline-flex pt-1">
+                <IconRow title={c('Label').t`Location`} icon="map-pin" labelClassName="inline-flex pt-0.5">
                     <span dangerouslySetInnerHTML={{ __html: sanitizedAndUrlifiedLocation }} />
                 </IconRow>
             )}
             {!!participantsList.length && (
-                <IconRow title={c('Label').t`Participants`} icon="users" labelClassName="inline-flex pt-1">
+                <IconRow title={c('Label').t`Participants`} icon="users" labelClassName="inline-flex pt-0.5">
                     <ExtraEventParticipants list={participantsList} />
                 </IconRow>
             )}
