@@ -320,7 +320,7 @@
         "Ottieni il codice di verifica"
       ],
       "Go to Drive": [
-        "Vai al Drive"
+        "Vai su Drive"
       ],
       "Go to label": [
         "Vai all'etichetta"
@@ -3512,10 +3512,10 @@
         "Download annullato"
       ],
       "Download failed": [
-        "Download non riuscito"
+        "Scaricamento non riuscito"
       ],
       "Download failed due to ${ error }": [
-        "Download abortito a causa di ${ error }"
+        "Scaricamento non riuscito a causa di ${ error }"
       ],
       "Download finished": [
         "Download terminato"
@@ -3594,7 +3594,7 @@
         "Stimando il tempo rimanente..."
       ],
       "Failed": [
-        "Errore"
+        "Non riuscito"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Generazione di un link sicuro non riuscita. Il motivo è: ${ error }"
@@ -3718,7 +3718,7 @@
         "Connessione Internet ripristinata."
       ],
       "It looks like you recently tried to upload ${ uploadName }. If the upload failed, please ${ replaceFile }. If the upload is still in progress, replacing it will cancel the ongoing upload.": [
-        "Sembra che tu abbia provato a caricare ${ uploadName } di recente. Se il caricamento non è riuscito, ${ replaceFile }. Se il caricamento è ancora in corso, sostituirlo annullerà il caricamento in corso."
+        "Sembra che tu abbia recentemente provato a caricare ${ uploadName }. Se il caricamento non è riuscito, ${ replaceFile }. Se il caricamento è ancora in corso, sostituirlo annullerà il caricamento in corso."
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Gli elementi eliminati rimarranno nel cestino finché non li elimini definitivamente"
@@ -4020,10 +4020,10 @@
         "Problema di firma"
       ],
       "Some files failed to download. Try downloading the files again.": [
-        "Alcuni file non sono stati scaricati correttamente. Prova a scaricare nuovamente i file."
+        "Scaricamento di alcuni file non riuscito. Prova a scaricare nuovamente i file."
       ],
       "Some files failed to upload. Try uploading the files again.": [
-        "Qualche caricamento non è avvenuto correttamente. Prova a caricare nuovamente i file."
+        "Caricamento di alcuni file non riuscito. Prova a caricare nuovamente i file."
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Alcuni dei tuoi file non sono più accessibili. Ripristina l'accesso ai tuoi file. ${ StartRecoveryButton }"
@@ -4293,8 +4293,9 @@
       "You cannot undo this action.": [
         "Non puoi annullare questa azione."
       ],
-      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
-        "Ti mancano ${ expiresInDays } giorni per richiedere il tuo bonus di benvenuto di 500 MB e "
+      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
+        "Ti restano ${ expiresInDays } giorni per richiedere il tuo bonus di benvenuto di 500 MB e ",
+        "Ti restano ${ expiresInDays } giorni per richiedere il tuo bonus di benvenuto di 500 MB e "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Hai raggiunto ${ spaceDisplayed }% della tua capacità di archiviazione. ${ freeUpMessage } ${ upgradeLink }"
@@ -5109,7 +5110,7 @@
         "Creazione di \"${ name }\" non riuscita"
       ],
       "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" non è stato eliminato definitivamente dal cestino"
+        "Eliminazione definitiva di \"${ name }\" dal cestino non riuscita"
       ],
       "\"${ name }\" failed to be moved": [
         "Spostamento di \"${ name }\" non riuscito"
@@ -5136,14 +5137,14 @@
         "\"${ name }\" spostato correttamente"
       ],
       "\"${ newName }\" failed to be renamed": [
-        "Impossibile rinominare \"${ newName }\""
+        "Rinominazione di \"${ newName }\" non riuscita"
       ],
       "\"${ newName }\" renamed successfully": [
         "\"${ newName }\" è stato rinominato correttamente"
       ],
       "${ count } item failed to be decrypted": [
-        "Decriptazione di ${ count } elemento non riuscita",
-        "Decriptazione di ${ count } elementi non riuscita"
+        "Decrittografia di ${ count } elemento non riuscita",
+        "Decrittografia di ${ count } elementi non riuscita"
       ],
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } elemento eliminato definitivamente dal cestino",
@@ -5201,10 +5202,10 @@
         "Gruppo di contatti aggiornato"
       ],
       "Device failed to be removed": [
-        "Impossibile rimuovere il dispositivo"
+        "Rimozione del dispositivo non riuscita"
       ],
       "Device failed to be renamed": [
-        "Impossibile rinominare il dispositivo"
+        "Rinominazione del dispositivo non riuscita"
       ],
       "Device removed": [
         "Dispositivo rimosso"
@@ -5216,13 +5217,13 @@
         "Ricerca crittografata attivata"
       ],
       "Failed to download files: ${ err }": [
-        "Impossibile scaricare i file: ${ err }"
+        "Scaricamento dei file non riuscito: ${ err }"
       ],
       "Failed to move, please try again": [
-        "Impossibile rimuovere, riprova"
+        "Spostamento non riuscito. Per favore riprova"
       ],
       "Failed to upload files: ${ err }": [
-        "Impossibile caricare i file: ${ err }"
+        "Caricamento dei file non riuscito: ${ err }"
       ],
       "File or folder \"${ filename }\" and ${ count } other are already uploading": [
         "Il file o la cartella \"${ filename }\" e ${ count } altro sono già in caricamento",
@@ -5283,7 +5284,7 @@
         "Il link al tuo elemento è stato eliminato"
       ],
       "Trash failed to be emptied": [
-        "Il cestino non è stato svuotato"
+        "Svuotamento del cestino non riuscito"
       ],
       "Your old files will be deleted in 72 hours": [
         "I tuoi vecchi file verranno eliminati entro 72 ore"
@@ -6144,16 +6145,16 @@
         "${ emailsCount } indirizzi email"
       ],
       "${ numberOfFailedTransfer.total } failed download": [
-        "${ numberOfFailedTransfer.total } scaricamento fallito",
+        "${ numberOfFailedTransfer.total } scaricamento non riuscito",
         "${ numberOfFailedTransfer.total } scaricamenti non riusciti"
       ],
       "${ numberOfFailedTransfer.total } failed transfer": [
         "${ numberOfFailedTransfer.total } trasferimento non riuscito",
-        "${ numberOfFailedTransfer.total } trasferimenti falliti"
+        "${ numberOfFailedTransfer.total } trasferimenti non riusciti"
       ],
       "${ numberOfFailedTransfer.total } failed upload": [
         "${ numberOfFailedTransfer.total } caricamento non riuscito",
-        "${ numberOfFailedTransfer.total } caricamenti falliti"
+        "${ numberOfFailedTransfer.total } caricamenti non riusciti"
       ],
       "Account suspended": [
         "Account sospeso"
