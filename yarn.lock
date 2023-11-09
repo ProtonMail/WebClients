@@ -19544,13 +19544,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"googleapis@npm:^127.0.0":
-  version: 127.0.0
-  resolution: "googleapis@npm:127.0.0"
+"googleapis@npm:^128.0.0":
+  version: 128.0.0
+  resolution: "googleapis@npm:128.0.0"
   dependencies:
     google-auth-library: "npm:^9.0.0"
     googleapis-common: "npm:^7.0.0"
-  checksum: 27522132b39b260400b1f62b8339a35c48b27ed94cf903097ed1e28486457eaf21d3f33117e7bdab0fe1f88622d081bfaea16f46a974847416069adb59c4dfb0
+  checksum: 5c6826d25d9d6c3bdbe3923022353e4ba86a7eb3787c352cea61558cff0f00a2b18d1ff83548dc1f6b9e9fe4b4fbad66dd2cb0a8b180311e33e83dfab2427008
   languageName: node
   linkType: hard
 
@@ -28478,7 +28478,7 @@ __metadata:
     del: "npm:^7.1.0"
     eslint: "npm:^8.53.0"
     gmail-tester: "npm:^1.3.8"
-    googleapis: "npm:^127.0.0"
+    googleapis: "npm:^128.0.0"
     mailosaur: "npm:^8.6.1"
     moment: "npm:^2.29.4"
     node-fetch: "npm:^3.3.2"
