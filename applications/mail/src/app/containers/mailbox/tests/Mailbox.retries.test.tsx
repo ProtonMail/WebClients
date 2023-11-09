@@ -1,5 +1,4 @@
-import { fireEvent } from '@testing-library/react';
-import { act } from '@testing-library/react';
+import { act, fireEvent } from '@testing-library/react';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
