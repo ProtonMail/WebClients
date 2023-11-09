@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useCallback, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { useApi, useEventManager, useLabels, useNotifications } from '@proton/components';
+import { useApi, useEventManager, useFolders, useLabels, useNotifications } from '@proton/components';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { labelConversations } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
@@ -47,6 +47,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
     const { call, stop, start } = useEventManager();
     const { createNotification } = useNotifications();
     const [labels = []] = useLabels();
+    const [folders = []] = useFolders();
     const optimisticApplyLabels = useOptimisticApplyLabels();
     const mailSettings = useMailModel('MailSettings');
     const dispatch = useAppDispatch();
@@ -95,7 +96,15 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
             );
 
             // Open a modal when moving a snoozed message/conversation to trash or archive to inform the user that it will be cancelled
-            await searchForSnoozed(folderID, isMessage, elements, setCanUndo, handleMoveSnoozedModal, setContainFocus);
+            await searchForSnoozed(
+                folderID,
+                isMessage,
+                elements,
+                setCanUndo,
+                handleMoveSnoozedModal,
+                setContainFocus,
+                folders
+            );
 
             let spamAction: SPAM_ACTION | undefined = undefined;
 

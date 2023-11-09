@@ -3,6 +3,7 @@ import { c, msgid } from 'ttag';
 import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Api, MailSettings } from '@proton/shared/lib/interfaces';
+import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { isUnsubscribable } from '@proton/shared/lib/mail/messages';
@@ -188,6 +189,7 @@ export const searchForScheduled = async (
 
 /*
  * Opens a modal when finding snozed messages that are moved to trash or archive.
+ * Unlike scheduled messages, snoozed messages cannot be moved to custom folders.
  */
 export const searchForSnoozed = async (
     folderID: string,
@@ -195,7 +197,8 @@ export const searchForSnoozed = async (
     elements: Element[],
     setCanUndo: (canUndo: boolean) => void,
     handleShowModal: (ownProps: unknown) => Promise<unknown>,
-    setContainFocus?: (contains: boolean) => void
+    setContainFocus?: (contains: boolean) => void,
+    folders: Folder[] = []
 ) => {
     await searchForAnyLabel(
         [TRASH, ARCHIVE],
@@ -207,6 +210,10 @@ export const searchForSnoozed = async (
         handleShowModal,
         setContainFocus
     );
+
+    if (folders.map(({ ID }) => ID).includes(folderID)) {
+        await handleShowModal({ isMessage, onCloseCustomAction: () => setContainFocus?.(true) });
+    }
 };
 
 export const askToUnsubscribe = async (
