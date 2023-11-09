@@ -24,7 +24,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
 
     return (
         <>
-            <div className="mb-4">
+            <div className="mb-2">
                 <Input
                     id={`${uid}-street`}
                     value={address.streetAddress || ''}
@@ -34,7 +34,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                 />
             </div>
             {address.extendedAddress ? (
-                <div className="mb-4">
+                <div className="mb-2">
                     <Input
                         id={`${uid}-extended`}
                         value={address.extendedAddress || ''}
@@ -44,7 +44,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                     />
                 </div>
             ) : null}
-            <div className="mb-4 flex flex-col gap-3">
+            <div className="mb-2 flex gap-2">
                 <Input
                     id={`${uid}-postalCode`}
                     value={address.postalCode || ''}
@@ -62,7 +62,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                 />
             </div>
             {address.postOfficeBox ? (
-                <div className="mb-4">
+                <div className="mb-2">
                     <Input
                         id={`${uid}-postBox`}
                         value={address.postOfficeBox || ''}
@@ -72,7 +72,7 @@ const ContactFieldAdr = ({ vCardProperty, onChange }: Props) => {
                     />
                 </div>
             ) : null}
-            <div className="mb-4 flex flex-col gap-3">
+            <div className="mb-2 flex gap-2">
                 <Input
                     id={`${uid}-region`}
                     value={address.region || ''}
