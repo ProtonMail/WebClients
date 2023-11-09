@@ -40,7 +40,7 @@ const ItemHoverButtons = ({
     size = 'medium',
 }: Props) => {
     const markAs = useMarkAs();
-    const { moveToFolder, moveScheduledModal } = useMoveToFolder();
+    const { moveToFolder, moveScheduledModal, moveSnoozedModal } = useMoveToFolder();
     const star = useStar();
     const snoozedElement = useAppSelector(selectSnoozeElement);
     const snoozeDropdownState = useAppSelector(selectSnoozeDropdownState);
@@ -151,6 +151,7 @@ const ItemHoverButtons = ({
                 )}
             </div>
             {moveScheduledModal}
+            {moveSnoozedModal}
         </>
     );
 };
