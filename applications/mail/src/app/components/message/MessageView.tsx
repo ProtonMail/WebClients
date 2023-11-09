@@ -333,6 +333,7 @@ const MessageView = (
         moveDropdownToggleRef,
         filterDropdownToggleRef,
         moveScheduledModal,
+        moveSnoozedModal,
         moveAllModal,
         moveToSpamModal,
     } = useMessageHotkeys(
@@ -467,6 +468,7 @@ const MessageView = (
                 />
             )}
             {moveScheduledModal}
+            {moveSnoozedModal}
             {moveAllModal}
             {moveToSpamModal}
         </article>

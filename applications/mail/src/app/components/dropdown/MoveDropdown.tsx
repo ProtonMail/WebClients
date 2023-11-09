@@ -81,7 +81,8 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
     const [containFocus, setContainFocus] = useState(true);
     const normSearch = normalize(search, true);
     const getElementsFromIDs = useGetElementsFromIDs();
-    const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
+    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal } =
+        useMoveToFolder(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
 
     const [editLabelProps, setEditLabelModalOpen, renderLabelModal] = useModalState();
@@ -297,6 +298,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                 </PrimaryButton>
             </div>
             {moveScheduledModal}
+            {moveSnoozedModal}
             {moveAllModal}
             {moveToSpamModal}
             {renderLabelModal && (
