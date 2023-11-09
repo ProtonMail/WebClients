@@ -55,7 +55,9 @@ describe('useFutureTimeDate', () => {
     it('should return next available slot when changing date to today with time before now', () => {
         const today = new Date();
         const before = set(today, { hours: today.getHours() - 2 });
-        const { result } = renderHook(() => useFutureTimeDate({ defaultDate: new Date() }));
+        // Set the time to the start of the hour to avoid issue if we're more than 30 minutes into the hour
+        const defaultDate = set(today, { minutes: 0, seconds: 0, milliseconds: 0 });
+        const { result } = renderHook(() => useFutureTimeDate({ defaultDate }));
         act(() => {
             result.current.handleChangeDate(before);
         });
