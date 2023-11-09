@@ -179,6 +179,9 @@
       "Edit Gateway": [
         "Editare poartă de acces"
       ],
+      "Edit invoice details": [
+        "Editare detalii factură"
+      ],
       "Edit name": [
         "Editare nume"
       ],
@@ -3355,6 +3358,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Mai încercați. Folosiți o metodă de plată diferită sau contactați PayPal pentru asistență."
       ],
+      "Please use another browser or download the file.": [
+        "Folosiți alt tip de navigator web sau descărcați fișierul."
+      ],
       "Please verify payment at the new tab which was opened.": [
         "Verificați efectuarea plății în noua filă deschisă."
       ],
@@ -3366,6 +3372,9 @@
       ],
       "Preview failed to be loaded": [
         "Examinarea nu a putut fi încărcată."
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Examinarea pentru acest tip de fișier nu este suportată de acest navigator web."
       ],
       "Preview for this file type is not supported": [
         "Examinarea acestui tip de fișier nu este suportată."
@@ -3696,6 +3705,9 @@
       "Version ${ version }": [
         "Versiunea ${ version }"
       ],
+      "View, download, and manage your invoices.": [
+        "Examinați, descărcați și gestionați facturile personale."
+      ],
       "Visa Secure logo": [
         "Logo Visa Secure"
       ],
@@ -3950,6 +3962,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Puteți adăuga o metodă de plată pentru a avea abonamentul reînnoit automat. Sunt disponibile și alte metode de plată."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Introduceți un nume și o adresă pentru dvs. sau organizația proprie. Aceste detalii vor fi adăugate atât pe facturile personale, cât și pe cele ale organizației."
       ]
     },
     "Info subscription": {
@@ -4249,6 +4266,9 @@
       ],
       "Name": [
         "Nume"
+      ],
+      "Name and address": [
+        "Nume și adresă"
       ],
       "Name on card": [
         "Titular card"
@@ -5701,6 +5721,19 @@
         "Tudor Andrei"
       ]
     },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "vă rugăm să ${ contactHref } echipa noastră de vânzări."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Selectați numărul de adrese IP de inclus în plan. Fiecare Adresă IP adițională costă ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Dacă aveți nevoie de mai mult de ${ maxIPs } adresă IP, ",
+        "Dacă aveți nevoie de mai mult de ${ maxIPs } adrese IP, ",
+        "Dacă aveți nevoie de mai mult de ${ maxIPs } de adrese IP, "
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "contactați"
@@ -6982,6 +7015,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Editare poartă de acces ${ currentName }"
+      ],
+      "Edit invoice details": [
+        "Editare detalii factură"
       ],
       "Edit servers": [
         "Editare servere"
