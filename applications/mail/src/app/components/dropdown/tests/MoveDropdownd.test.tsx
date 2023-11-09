@@ -1,5 +1,4 @@
-import { fireEvent } from '@testing-library/react';
-import { act, getByTestId as getByTestIdDefault, screen } from '@testing-library/react';
+import { act, fireEvent, getByTestId as getByTestIdDefault, screen } from '@testing-library/react';
 
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
