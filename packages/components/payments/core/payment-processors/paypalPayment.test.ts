@@ -275,4 +275,16 @@ describe('PaypalPaymentProcessor', () => {
         const token = await paymentProcessor.fetchPaymentToken();
         expect(token).toBeDefined();
     });
+
+    it('should remove token and error on reset()', () => {
+        paymentProcessor.updateState({
+            fetchedPaymentToken: 'token' as any,
+            verificationError: new Error('error'),
+        });
+
+        paymentProcessor.reset();
+
+        expect(paymentProcessor.fetchedPaymentToken).toBeNull();
+        expect(paymentProcessor.verificationError).toBeNull();
+    });
 });
