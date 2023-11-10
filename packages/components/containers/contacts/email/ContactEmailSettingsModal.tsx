@@ -91,6 +91,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
     const prepare = async () => {
         const apiKeysConfig = await getPublicKeysEmailHelper({
             email: emailAddress,
+            includeInternalKeysWithE2EEDisabledForMail: true, // the keys are used in the context of calendar sharing, thus users may want to pin them
             api,
             ktActivation,
             verifyOutboundPublicKeys,
