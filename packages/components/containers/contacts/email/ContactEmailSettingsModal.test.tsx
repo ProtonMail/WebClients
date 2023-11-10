@@ -1,7 +1,7 @@
-import { fireEvent, getByTitle, waitFor } from '@testing-library/react';
+import { fireEvent, waitFor } from '@testing-library/react';
 
 import { CryptoProxy } from '@proton/crypto';
-import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
+import { API_CODES, CONTACT_CARD_TYPE, KEY_FLAG } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import { RequireSome } from '@proton/shared/lib/interfaces';
 import { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
@@ -51,7 +51,7 @@ END:VCARD`;
             }
         });
 
-        const { getByText } = render(
+        const { getByText, getByTitle } = render(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}
@@ -69,12 +69,12 @@ END:VCARD`;
 
         const signSelect = getByText("Use global default (Don't sign)", { exact: false });
         fireEvent.click(signSelect);
-        const signOption = getByTitle(document.body, 'Sign');
+        const signOption = getByTitle('Sign');
         fireEvent.click(signOption);
 
         const pgpSelect = getByText('Use global default (PGP/MIME)', { exact: false });
         fireEvent.click(pgpSelect);
-        const pgpInlineOption = getByTitle(document.body, 'PGP/Inline');
+        const pgpInlineOption = getByTitle('PGP/Inline');
         fireEvent.click(pgpInlineOption);
 
         const saveButton = getByText('Save');
@@ -131,7 +131,7 @@ END:VCARD`;
             }
         });
 
-        const { getByText } = render(
+        const { getByText, getByTitle } = render(
             <ContactEmailSettingsModal
                 open={true}
                 {...props}
@@ -146,7 +146,7 @@ END:VCARD`;
 
         const signSelect = getByText('Sign', { exact: true });
         fireEvent.click(signSelect);
-        const signOption = getByTitle(document.body, "Use global default (Don't sign)");
+        const signOption = getByTitle("Use global default (Don't sign)");
         fireEvent.click(signOption);
 
         const saveButton = getByText('Save');
@@ -470,5 +470,220 @@ END:VCARD`;
         ).Data;
 
         expect(signedCardContent.includes('ITEM1.X-PM-ENCRYPT-UNTRUSTED:false')).toBe(true);
+    });
+
+    it('should indicate that end-to-end encryption is disabled for internal addresses whose keys have e2ee-disabled flags', async () => {
+        CryptoProxy.setEndpoint({
+            ...mockedCryptoApi,
+            importPublicKey: jest.fn().mockImplementation(async () => ({
+                getFingerprint: () => `abcdef`,
+                getCreationTime: () => new Date(0),
+                getExpirationTime: () => new Date(0),
+                getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
+                subkeys: [],
+                getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+            })),
+            canKeyEncrypt: jest.fn().mockImplementation(() => true),
+            exportPublicKey: jest.fn().mockImplementation(() => new Uint8Array()),
+            isExpiredKey: jest.fn().mockImplementation(() => false),
+            isRevokedKey: jest.fn().mockImplementation(() => false),
+        });
+
+        const vcard = `BEGIN:VCARD
+VERSION:4.0
+FN;PREF=1:J. Doe
+UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
+ITEM1.EMAIL;PREF=1:jdoe@proton.me
+END:VCARD`;
+
+        const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
+
+        const saveRequestSpy = jest.fn();
+
+        api.mockImplementation(async (args: any): Promise<any> => {
+            if (args.url === 'core/v4/keys/all') {
+                return {
+                    Address: {
+                        Keys: [
+                            {
+                                PublicKey: 'mocked armored key',
+                                Flags: KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT | KEY_FLAG.FLAG_NOT_COMPROMISED,
+                            },
+                        ],
+                    },
+                    ProtonMX: true, // internal address
+                };
+            }
+            if (args.url === 'contacts/v4/contacts') {
+                saveRequestSpy(args.data);
+                return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
+            }
+            if (args.url === 'contacts/v4/contacts/ContactID') {
+                saveRequestSpy(args.data);
+                return { Code: API_CODES.SINGLE_SUCCESS };
+            }
+        });
+
+        const { getByText, getByTitle, queryByText } = render(
+            <ContactEmailSettingsModal
+                open={true}
+                {...props}
+                vCardContact={vCardContact}
+                emailProperty={vCardContact.email?.[0]}
+            />
+        );
+
+        const showMoreButton = getByText('Show advanced PGP settings');
+        await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+        fireEvent.click(showMoreButton);
+
+        await waitFor(() => {
+            const keyFingerprint = getByText('abcdef');
+            return expect(keyFingerprint).toBeVisible();
+        });
+
+        const infoEncryptionDisabled = getByText(/The owner of this address has disabled end-to-end encryption/);
+        expect(infoEncryptionDisabled).toBeVisible();
+
+        expect(queryByText('Encrypt emails')).toBeNull();
+        expect(queryByText('Sign emails')).toBeNull();
+        expect(queryByText('Upload keys')).toBeNull();
+
+        const dropdownButton = getByTitle('Open actions dropdown');
+        fireEvent.click(dropdownButton);
+        const trustKeyButton = getByText('Trust');
+        fireEvent.click(trustKeyButton);
+
+        const saveButton = getByText('Save');
+        fireEvent.click(saveButton);
+
+        await waitFor(() => expect(notificationManager.createNotification).toHaveBeenCalled());
+
+        const sentData = saveRequestSpy.mock.calls[0][0];
+        const cards = sentData.Cards;
+
+        const signedCardContent = cards.find(
+            ({ Type }: { Type: CONTACT_CARD_TYPE }) => Type === CONTACT_CARD_TYPE.SIGNED
+        ).Data;
+        expect(signedCardContent.includes('ITEM1.KEY;PREF=1:data:application/pgp-keys')).toBe(true);
+        expect(signedCardContent.includes('ITEM1.X-PM-ENCRYPT')).toBe(false);
+        expect(signedCardContent.includes('ITEM1.X-PM-SIGN')).toBe(false);
+    });
+
+    it('shoul display WKD keys but not internal address keys for external account with internal address keys', async () => {
+        CryptoProxy.setEndpoint({
+            ...mockedCryptoApi,
+            importPublicKey: jest.fn().mockImplementation(async ({ armoredKey }) => ({
+                getFingerprint: () => armoredKey,
+                getCreationTime: () => new Date(0),
+                getExpirationTime: () => new Date(0),
+                getAlgorithmInfo: () => ({ algorithm: 'eddsa', curve: 'curve25519' }),
+                subkeys: [],
+                getUserIDs: jest.fn().mockImplementation(() => ['<userid@userid.com>']),
+            })),
+            canKeyEncrypt: jest.fn().mockImplementation(() => true),
+            exportPublicKey: jest.fn().mockImplementation(() => new Uint8Array()),
+            isExpiredKey: jest.fn().mockImplementation(() => false),
+            isRevokedKey: jest.fn().mockImplementation(() => false),
+        });
+
+        const vcard = `BEGIN:VCARD
+VERSION:4.0
+FN;PREF=1:J. Doe
+UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
+ITEM1.EMAIL;PREF=1:jdoe@example.com
+END:VCARD`;
+
+        const vCardContact = parseToVCard(vcard) as RequireSome<VCardContact, 'email'>;
+
+        const saveRequestSpy = jest.fn();
+
+        api.mockImplementation(async (args: any): Promise<any> => {
+            if (args.url === 'core/v4/keys/all') {
+                return {
+                    Address: {
+                        Keys: [
+                            {
+                                PublicKey: 'internal mocked armored key',
+                                Flags: KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT | KEY_FLAG.FLAG_NOT_COMPROMISED,
+                            },
+                        ],
+                    },
+                    Unverified: {
+                        Keys: [{ PublicKey: 'wkd mocked armored key', Flags: KEY_FLAG.FLAG_NOT_COMPROMISED }],
+                    },
+                    ProtonMX: false, // external account
+                };
+            }
+            if (args.url === 'contacts/v4/contacts') {
+                saveRequestSpy(args.data);
+                return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
+            }
+            if (args.url === 'contacts/v4/contacts/ContactID') {
+                saveRequestSpy(args.data);
+                return { Code: API_CODES.SINGLE_SUCCESS };
+            }
+        });
+
+        const { getByText, getByTitle, queryByText } = render(
+            <ContactEmailSettingsModal
+                open={true}
+                {...props}
+                vCardContact={vCardContact}
+                emailProperty={vCardContact.email?.[0]}
+            />
+        );
+
+        const showMoreButton = getByText('Show advanced PGP settings');
+        await waitFor(() => expect(showMoreButton).not.toBeDisabled());
+        fireEvent.click(showMoreButton);
+
+        await waitFor(() => {
+            const internalAddressKeyFingerprint = queryByText('internal mocked armored key');
+            return expect(internalAddressKeyFingerprint).toBeNull();
+        });
+
+        await waitFor(() => {
+            const wkdKeyFingerprint = getByText('wkd mocked armored key');
+            return expect(wkdKeyFingerprint).toBeVisible();
+        });
+
+        const infoEncryptionDisabled = queryByText(/The owner of this address has disabled end-to-end encryption/);
+        expect(infoEncryptionDisabled).toBeNull(); // only shown to internal accounts
+
+        // Ensure the UI matches that of external recipients with WKD keys:
+        // - encryption should be enabled by default, and toggable
+        // - key uploads are not permitted
+        // - key pinning works stores the X-PM-ENCRYPT flag
+        const encryptToggle = document.getElementById('encrypt-toggle');
+        expect(encryptToggle).not.toBeDisabled();
+        expect(encryptToggle).toBeChecked();
+
+        const signSelectDropdown = document.getElementById('sign-select');
+        expect(signSelectDropdown).toBeDisabled();
+        signSelectDropdown?.innerHTML.includes('Sign');
+
+        expect(queryByText('Upload keys')).toBeNull();
+
+        const dropdownButton = getByTitle('Open actions dropdown');
+        fireEvent.click(dropdownButton);
+        const trustKeyButton = getByText('Trust');
+        fireEvent.click(trustKeyButton);
+
+        const saveButton = getByText('Save');
+        fireEvent.click(saveButton);
+
+        await waitFor(() => expect(notificationManager.createNotification).toHaveBeenCalled());
+
+        const sentData = saveRequestSpy.mock.calls[0][0];
+        const cards = sentData.Cards;
+
+        const signedCardContent = cards.find(
+            ({ Type }: { Type: CONTACT_CARD_TYPE }) => Type === CONTACT_CARD_TYPE.SIGNED
+        ).Data;
+
+        expect(signedCardContent.includes('ITEM1.KEY;PREF=1:data:application/pgp-keys')).toBe(true);
+        expect(signedCardContent.includes('ITEM1.X-PM-ENCRYPT:true')).toBe(true);
+        expect(signedCardContent.includes('ITEM1.X-PM-SIGN:true')).toBe(true);
     });
 });
