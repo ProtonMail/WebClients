@@ -3,7 +3,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
-import { Header, MainLogo, UnAuthenticated, useConfig } from '@proton/components';
+import { Header, MainLogo, UnAuthenticated, UnAuthenticatedAppsDropdown, useConfig } from '@proton/components';
 import Footer from '@proton/components/components/footer/Footer';
 import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUserCookie';
 import { getAppName } from '@proton/shared/lib/apps/helper';
@@ -38,6 +38,7 @@ export default function SharedPageLayout({ FooterComponent, children, className 
                     <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
                     <div className="logo-container flex flex-justify-space-between flex-align-items-center flex-nowrap">
                         <MainLogo to="/" />
+                        <UnAuthenticatedAppsDropdown />
                     </div>
 
                     <div className="flex flex-justify-end flex-item-fluid flex-item-centered-vert">
