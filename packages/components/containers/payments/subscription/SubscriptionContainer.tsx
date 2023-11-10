@@ -925,6 +925,7 @@ const SubscriptionContainer = ({
                                             });
                                         }}
                                         onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
+                                        hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
                                     />
                                 </div>
                                 <div className={amountDue || !checkResult ? 'hidden' : undefined}>
@@ -1068,6 +1069,7 @@ const SubscriptionContainer = ({
                                     }}
                                     onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
                                     hideFirstLabel={true}
+                                    hideSavedMethodsDetails={application === APPS.PROTONACCOUNTLITE}
                                 />
                             </div>
                             <div className={amountDue || !checkResult ? 'hidden' : undefined}>
