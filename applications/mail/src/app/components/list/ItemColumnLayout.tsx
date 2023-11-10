@@ -191,7 +191,7 @@ const ItemColumnLayout = ({
                                 </span>
                             </span>
                         </div>
-                        <div className="item-icons flex flex-row flex-item-noshrink flex-nowrap no-desktop no-tablet on-mobile-flex">
+                        <div className="item-icons flex flex-row flex-item-noshrink flex-nowrap md:hidden">
                             {hasExpiration && (
                                 <ItemExpiration
                                     element={element}

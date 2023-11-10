@@ -46,13 +46,13 @@ const CalendarToolbar = ({
                 <span className="md:ml-auto md:flex-item-fluid flex flex-nowrap flex-justify-end">
                     {searchButton && (
                         <>
-                            <Vr className="mx-1 no-tablet no-desktop" />
+                            <Vr className="mx-1 md:hidden" />
                             {searchButton}
-                            <Vr className="ml-1 no-mobile" />
+                            <Vr className="ml-1 hidden md:flex" />
                         </>
                     )}
                     {!hideTimeZoneSelector && responsiveTimeZoneSelector ? (
-                        <div className="flex flex-nowrap no-mobile no-tablet">
+                        <div className="hidden lg:flex flex-nowrap">
                             <TimeZoneSelector
                                 data-testid="calendar-view:time-zone-dropdown"
                                 className="w-auto toolbar-button"
@@ -66,7 +66,7 @@ const CalendarToolbar = ({
                         </div>
                     ) : undefined}
                 </span>
-                <span className="flex no-mobile flex-item-noshrink ml-auto lg:ml-1">{viewSelector}</span>
+                <span className="hidden md:flex flex-item-noshrink ml-auto lg:ml-1">{viewSelector}</span>
             </Toolbar>
         </div>
     );

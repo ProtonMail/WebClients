@@ -31,9 +31,7 @@ const LayoutHeader = ({
             )}
         >
             <div className="inline-flex flex-nowrap flex-item-noshrink">
-                <div className="no-desktop no-tablet flex-item-noshrink mr-2">
-                    {onBack && <BackButton onClick={onBack} />}
-                </div>
+                <div className="md:hidden flex-item-noshrink mr-2">{onBack && <BackButton onClick={onBack} />}</div>
                 <div className="flex-item-noshrink">{logo}</div>
             </div>
             {hasDecoration && languageSelect && (
