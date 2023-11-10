@@ -365,7 +365,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     const [startDate, endDate] = getEventLocalStartEndDates(calendarEvent, parseInt(occurrenceHeader, 10));
     const isOutdated = (sequence?.value || 0) > parseInt(`${sequenceHeader}`, 10);
 
-    const labelClassName = 'inline-flex pt-1';
+    const labelClassName = 'inline-flex pt-0.5';
 
     return (
         <div className="calendar-widget mb-3" ref={eventReminderRef}>
