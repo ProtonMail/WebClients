@@ -41,24 +41,3 @@ The current active breakpoint value is available in <code>body::before content</
 </div>
 
 They can be overidden depending of the needs of the project. Be careful while updating major breakpoints, good that Proton universe keeps some consistency.
-
-## Desktop helper
-
-### Hiding something between deskop and tablet
-
-<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
-    <div class="w-1/2 flex-align-self-center">
-        Applies <code>display: none</code> to the element for desktop breakpoint. <br />
-        On tablet breakpoint, will be “reseted” by <code>display: block</code>.
-    </div>
-    <div class="w-1/2">
-        <Source
-            language="html"
-            light
-            format
-            code={`
-<span className="no-desktop">…</span>
-`}
-        />
-    </div>
-</div>
