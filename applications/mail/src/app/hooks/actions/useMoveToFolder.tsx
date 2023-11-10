@@ -37,7 +37,7 @@ import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels
 import { useCreateFilters } from './useCreateFilters';
 import { useMoveAll } from './useMoveAll';
 
-const { TRASH, ARCHIVE } = MAILBOX_LABEL_IDS;
+const { TRASH, ARCHIVE, ALMOST_ALL_MAIL: ALMOST_ALL_MAIL_ID, SNOOZED, ALL_MAIL, INBOX } = MAILBOX_LABEL_IDS;
 const MOVE_ALL_FOLDERS = [TRASH, ARCHIVE];
 
 export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolean>>) => {
@@ -82,7 +82,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
 
             let undoing = false;
             const isMessage = testIsMessage(elements[0]);
-            const destinationLabelID = isCustomLabel(fromLabelID, labels) ? MAILBOX_LABEL_IDS.INBOX : fromLabelID;
+            const destinationLabelID = isCustomLabel(fromLabelID, labels) ? INBOX : fromLabelID;
 
             // Open a modal when moving a scheduled message/conversation to trash to inform the user that it will be cancelled
             await searchForScheduled(
@@ -95,15 +95,18 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
             );
 
             // Open a modal when moving a snoozed message/conversation to trash or archive to inform the user that it will be cancelled
-            await searchForSnoozed(
-                folderID,
-                isMessage,
-                elements,
-                setCanUndo,
-                handleMoveSnoozedModal,
-                setContainFocus,
-                folders
-            );
+            // We only check if we're in the ALMOST_ALL_MAIL, ALL_MAIL or SNOOZE folder since this is the only place where we have snoozed emails
+            if (fromLabelID === ALMOST_ALL_MAIL_ID || fromLabelID === ALL_MAIL || fromLabelID === SNOOZED) {
+                await searchForSnoozed(
+                    folderID,
+                    isMessage,
+                    elements,
+                    setCanUndo,
+                    handleMoveSnoozedModal,
+                    setContainFocus,
+                    folders
+                );
+            }
 
             let spamAction: SPAM_ACTION | undefined = undefined;
 
