@@ -26,13 +26,33 @@ export const interpolateRecentItems =
         return arrayInterpolate<T, DateCluster>(items, {
             clusters: shouldInterpolate
                 ? [
-                      { label: c('Label').t`Today`, boundary: now - UNIX_DAY },
-                      { label: c('Label').t`Last week`, boundary: now - UNIX_WEEK },
-                      { label: c('Label').t`Last 2 weeks`, boundary: now - UNIX_WEEK * 2 },
-                      { label: c('Label').t`Last month`, boundary: now - UNIX_MONTH },
+                      {
+                          // translator: label means items that have been added or edited in last 24 hours from the current moment
+                          label: c('Label').t`Today`,
+                          boundary: now - UNIX_DAY,
+                      },
+                      {
+                          // translator: label means items that have been added or edited in last 7 days from the current moment
+                          label: c('Label').t`Last week`,
+                          boundary: now - UNIX_WEEK,
+                      },
+                      {
+                          // translator: label means items that have been added or edited in last 14 days from the current moment
+                          label: c('Label').t`Last 2 weeks`,
+                          boundary: now - UNIX_WEEK * 2,
+                      },
+                      {
+                          // translator: label means items that have been added or edited in last 4 weeks from the current moment
+                          label: c('Label').t`Last month`,
+                          boundary: now - UNIX_MONTH,
+                      },
                   ]
                 : [],
-            fallbackCluster: { label: c('Label').t`Older than last month`, boundary: 0 },
+            fallbackCluster: {
+                // translator: label means items that have been added or edited more than a month ago (4 weeks) from the current moment
+                label: c('Label').t`More than a month`,
+                boundary: 0,
+            },
             shouldInterpolate: ({ lastUseTime, modifyTime }, { boundary }) =>
                 Math.max(lastUseTime ?? modifyTime, modifyTime) > boundary,
         });
