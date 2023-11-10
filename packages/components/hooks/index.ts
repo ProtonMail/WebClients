@@ -62,7 +62,7 @@ export {
 export { default as useGetEncryptionPreferences } from './useGetEncryptionPreferences';
 export { default as useGetVerificationPreferences } from './useGetVerificationPreferences';
 export { default as useGetOrganizationKeyRaw } from './useGetOrganizationKeyRaw';
-export { default as useGetPublicKeys } from './useGetPublicKeys';
+export { default as useGetPublicKeysForInbox } from './useGetPublicKeysForInbox';
 export { default as useHasOutdatedRecoveryFile } from './useHasOutdatedRecoveryFile';
 export { default as useHandler, useEventListener, useSubscribeEventManager, useInterval } from './useHandler';
 export { default as useHasSuspendedCounter } from './useHasSuspendedCounter';
