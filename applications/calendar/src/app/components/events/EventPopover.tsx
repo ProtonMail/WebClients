@@ -397,7 +397,7 @@ const EventPopover = ({
             </PopoverHeader>
             <div className="scroll-if-needed mb-4" ref={popoverEventContentRef}>
                 <PopoverEventContent
-                    key={targetEvent.id}
+                    key={targetEvent.uniqueId}
                     calendar={calendarData}
                     model={model}
                     isDrawerApp={isDrawerApp}
@@ -409,7 +409,7 @@ const EventPopover = ({
             {getCanReplyToEvent({ isOwnedCalendar, isCalendarWritable, isAttendee: model.isAttendee, isCancelled }) && (
                 <PopoverFooter
                     className="flex-item-noshrink flex-align-items-center flex-justify-space-between gap-4 on-mobile-flex-column"
-                    key={targetEvent.id}
+                    key={targetEvent.uniqueId}
                 >
                     <div>
                         <strong>{c('Calendar invite buttons label').t`Attending?`}</strong>
