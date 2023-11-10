@@ -15,7 +15,7 @@ const Hamburger = ({ sidebarId, expanded = true, onToggle, ...rest }: Props) => 
         <Button
             shape="ghost"
             color="weak"
-            className="hamburger no-desktop no-tablet no-print mr-2"
+            className="hamburger md:hidden no-print mr-2"
             aria-expanded={expanded === false ? false : undefined}
             aria-controls={sidebarId}
             onClick={onToggle}

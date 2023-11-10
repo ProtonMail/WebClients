@@ -73,10 +73,10 @@ const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, noSkip, ...rest }:
                     <h1 className="text-break text-4xl">
                         <strong>{c('Gmail forwarding').t`Automatically forward`}</strong>
                         &nbsp;
-                        <br className="no-desktop" />
+                        <br className="lg:hidden" />
                         {c('Gmail forwarding').t`Gmail messages to your inbox`}
                     </h1>
-                    <div className="no-desktop flex-item-grow-2">
+                    <div className="lg:hidden flex-item-grow-2">
                         <GmailSyncModalAnimation />
                     </div>
                     <div className="flex flex-column flex-align-items-center gap-4">

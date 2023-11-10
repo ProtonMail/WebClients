@@ -28,14 +28,11 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
 
     return (
         <>
-            <span
-                className="on-mobile no-tablet no-desktop current-range my-auto block text-bold text-ellipsis"
-                title={currentRange}
-            >
+            <span className="md:hidden current-range my-auto block text-bold text-ellipsis" title={currentRange}>
                 {currentRange}
             </span>
             <span className="flex flex-nowrap ml-auto md:ml-0">
-                <span className="no-tablet no-desktop flex-item-noshrink flex flex-nowrap">
+                <span className="md:hidden flex-item-noshrink flex flex-nowrap">
                     <ToolbarButton
                         data-testid="calendar-toolbar:today"
                         className="flex-item-noshrink flex-align-items-centers"
@@ -45,7 +42,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                         <Icon name="calendar-today" />
                     </ToolbarButton>
                 </span>
-                <Vr className="mx-1 no-tablet no-desktop" />
+                <Vr className="mx-1 md:hidden" />
                 <Button
                     shape="outline"
                     data-testid="calendar-toolbar:today"
