@@ -160,7 +160,7 @@ export const PhotosCard: FC<Props> = ({
                         <div className="w-full absolute bottom flex flex-justify-end flex-align-items-center px-2 py-2 photos-card-video-info">
                             {photo.duration && (
                                 <time
-                                    className="color-white text-semibold mr-1"
+                                    className="text-semibold mr-1"
                                     dateTime={formatDuration(
                                         { seconds: Math.floor(photo.duration) },
                                         {
