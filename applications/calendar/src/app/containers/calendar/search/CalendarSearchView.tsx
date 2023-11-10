@@ -246,7 +246,7 @@ const CalendarSearchView = ({
     const hasResults = Boolean(visualItems.length);
 
     return (
-        <div className="relative flex-no-min-children flex-column flex-nowrap flex-justify-start flex-align-items-start w-full h-full">
+        <div className="relative flex-no-min-children flex-column flex-nowrap flex-justify-start flex-align-items-start w-full h-full reset4print">
             <div className="toolbar toolbar--heavy flex flex-nowrap flex-item-noshrink flex-align-items-center gap-2 no-print flex-justify-space-between py-1 pr-2 pl-4 w-full">
                 <h2 className="h6 text-semibold">
                     {hasResults ? c('esCalendar').t`Results` : c('esCalendar').t`No result`}
@@ -278,7 +278,7 @@ const CalendarSearchView = ({
             </div>
 
             {hasResults ? (
-                <div className="w-full flex-item-fluid overflow-auto">
+                <div className="w-full flex-item-fluid overflow-auto reset4print">
                     {maybeWithEmptyToday.reduce((acc: React.JSX.Element[], dailyEvents, index) => {
                         const isEmptyDay = !dailyEvents.length;
                         const utcStartDate = isEmptyDay ? startOfDay(new Date()) : dailyEvents[0]?.fakeUTCStartDate;
