@@ -142,7 +142,7 @@ const CalendarMemberRow = ({
                         <Icon name="trash" alt={deleteLabel} />
                     </Button>
                 </Tooltip>
-                <div className="no-desktop">
+                <div className="lg:hidden">
                     <Button
                         shape="outline"
                         color="norm"
