@@ -9,7 +9,6 @@ enum MailFeatureFlag {
 }
 
 enum AccountFlag {
-    ExternalSSOWeb = 'ExternalSSOWeb',
     MaintenanceImporter = 'MaintenanceImporter',
     SignedInAccountRecovery = 'SignedInAccountRecovery',
     BF2023IsExpired = 'BF2023IsExpired',
