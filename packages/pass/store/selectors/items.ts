@@ -249,14 +249,20 @@ export const selectAutofillCandidates = (options: SelectAutofillCandidatesOption
 
 const autosaveCandidateSelector = createSelector(
     [
-        (state: State, { subdomain, domain }: SelectAutosaveCandidatesOptions) =>
-            selectItemsByDomain(subdomain ?? domain, {
+        (state: State, { subdomain }: SelectAutosaveCandidatesOptions) =>
+            selectItemsByDomain(subdomain, {
+                protocolFilter: [],
+                isPrivate: false,
+            })(state),
+        (state: State, { domain }: SelectAutosaveCandidatesOptions) =>
+            selectItemsByDomain(domain, {
                 protocolFilter: [],
                 isPrivate: false,
             })(state),
         (_: State, { username }: SelectAutosaveCandidatesOptions) => username,
     ],
-    (items, username) => items.filter(({ data }) => deobfuscate(data.content.username) === username)
+    (subdomainItems, domainItems, username) =>
+        [...subdomainItems, ...domainItems].filter(({ data }) => deobfuscate(data.content.username) === username)
 );
 
 export const selectAutosaveCandidate = (options: SelectAutosaveCandidatesOptions) => (state: State) =>
