@@ -51,6 +51,7 @@ const AppsDropdown = ({ onDropdownClick, app, ...rest }: AppsDropdownProps, ref:
                                     appToLinkTo={appToLinkTo}
                                     user={user}
                                     className="text-center text-no-decoration outline-none--at-all apps-dropdown-link"
+                                    current={current}
                                 >
                                     <div
                                         className="apps-dropdown-logo-wrapper flex flex-align-items-center flex-justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
