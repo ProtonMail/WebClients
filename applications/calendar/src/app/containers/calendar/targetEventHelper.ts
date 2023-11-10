@@ -13,13 +13,13 @@ export const getInitialTargetEventData = (
         return;
     }
 
-    const { id, isAllDay, isAllPartDay, startInTzid, preventPopover } = eventTargetAction;
+    const { uniqueId, isAllDay, isAllPartDay, startInTzid, preventPopover } = eventTargetAction;
     const [startDateRange, endDateRange] = dateRange;
 
     if (view === VIEWS.MONTH) {
         return {
             targetEventData: {
-                id,
+                uniqueId,
                 type: TYPE.DAYGRID,
                 idx: differenceInCalendarWeeks(startInTzid, startDateRange),
                 preventPopover,
@@ -38,7 +38,7 @@ export const getInitialTargetEventData = (
 
     return {
         targetEventData: {
-            id,
+            uniqueId,
             type: isDayGrid ? TYPE.DAYGRID : TYPE.TIMEGRID,
             // Assuming week view is always displayed, so not trying to calculate the idx
             idx: isDayGrid ? 0 : getTimeGridIdx(),
