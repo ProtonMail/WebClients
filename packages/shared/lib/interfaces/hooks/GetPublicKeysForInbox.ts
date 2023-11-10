@@ -1,6 +1,6 @@
 import { ApiKeysConfig } from '../EncryptionPreferences';
 
-export type GetPublicKeys = ({
+export type GetPublicKeysForInbox = ({
     email,
     lifetime,
     internalKeysOnly,
