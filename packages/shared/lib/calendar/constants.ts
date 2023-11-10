@@ -55,6 +55,11 @@ export enum CALENDAR_TYPE {
     HOLIDAYS = 2,
 }
 
+export enum CALENDAR_STATUS {
+    ACTIVE = 1,
+    DELETED = 2,
+}
+
 export enum CALENDAR_DISPLAY {
     HIDDEN = 0,
     VISIBLE = 1,
