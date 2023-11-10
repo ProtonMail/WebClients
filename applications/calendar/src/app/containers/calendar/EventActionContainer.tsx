@@ -1,4 +1,4 @@
-import {Dispatch, SetStateAction, useEffect} from 'react';
+import { Dispatch, SetStateAction, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
@@ -11,6 +11,7 @@ import { Address } from '@proton/shared/lib/interfaces';
 import { CalendarEvent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar/VcalModel';
 
+import { generateEventUniqueId } from '../../helpers/event';
 import { useOpenEvent } from '../../hooks/useOpenEvent';
 import { getCalendarEventStoreRecord } from './eventStore/cache/upsertCalendarEventStoreRecord';
 import { VIEW_URL_PARAMS_VIEWS_CONVERSION } from './getUrlHelper';
@@ -70,7 +71,9 @@ const EventActionContainer = ({ tzid, drawerView, addresses, calendars, setEvent
                     const utcDate = propertyToUTCDate(withOccurrenceDtstart);
                     const startInTzid = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcDate), tzid));
                     setEventTargetAction({
-                        id: `${eventData.ID}-${occurrence.occurrenceNumber}`,
+                        uniqueId: `${generateEventUniqueId(eventData.CalendarID, eventData.ID)}-${
+                            occurrence.occurrenceNumber
+                        }`,
                         isAllDay,
                         isAllPartDay,
                         startInTzid,
@@ -85,7 +88,7 @@ const EventActionContainer = ({ tzid, drawerView, addresses, calendars, setEvent
                     const utcDate = propertyToUTCDate(eventComponent.dtstart);
                     const startInTzid = toUTCDate(convertUTCDateTimeToZone(fromUTCDate(utcDate), tzid));
                     setEventTargetAction({
-                        id: eventData.ID,
+                        uniqueId: `${generateEventUniqueId(eventData.CalendarID, eventData.ID)}`,
                         isAllDay,
                         isAllPartDay,
                         startInTzid,
