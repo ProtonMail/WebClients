@@ -166,6 +166,8 @@ const CreateEventModal = ({
             }}
             // if the user can't edit shared event data, the modal will have a reduced form
             title={canEditSharedEventData ? undefined : getDisplayTitle(model.title)}
+            // breaking only for non-editable form
+            titleClassName={canEditSharedEventData ? undefined : 'text-break'}
             footer={
                 <>
                     <Button
