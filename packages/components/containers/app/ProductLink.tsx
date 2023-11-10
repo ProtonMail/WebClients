@@ -20,9 +20,9 @@ export const apps = () => {
 
 interface ProductLinkProps {
     ownerApp: APP_NAMES;
-    app: APP_NAMES;
+    app?: APP_NAMES;
     appToLinkTo: APP_NAMES;
-    user: UserModel;
+    user?: UserModel;
     current?: boolean;
     className?: string;
     children: ReactNode;
@@ -31,7 +31,7 @@ interface ProductLinkProps {
 const ProductLink = ({ ownerApp, app, appToLinkTo, user, current, className, children }: ProductLinkProps) => {
     const appToLinkToName = getAppName(appToLinkTo);
 
-    if (getRequiresAddressSetup(appToLinkTo, user)) {
+    if (user && app && getRequiresAddressSetup(appToLinkTo, user)) {
         const params = new URLSearchParams();
         params.set('to', appToLinkTo);
         params.set('from', app);
