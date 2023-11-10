@@ -29,6 +29,7 @@ export interface PayPalHook {
     onToken: () => Promise<Model>;
     onVerification: (model?: Model) => Promise<void>;
     clear: () => void;
+    tokenFetchError: Error | null;
 }
 
 type PAYPAL_PAYMENT_METHOD = PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT;
@@ -64,14 +65,16 @@ const usePayPal = ({
     onValidate,
     onError,
     onBeforeTokenFetch,
-}: Props) => {
+}: Props): PayPalHook => {
     const [model, setModel] = useState<Model>(DEFAULT_MODEL);
+    const [tokenFetchError, setTokenFetchError] = useState<Error | null>(null);
     const [loadingVerification, withLoadingVerification] = useLoading();
     const [loadingToken, withLoadingToken] = useLoading();
     const { createModal } = useModals();
     const clear = () => setModel(DEFAULT_MODEL);
 
     const onToken = async () => {
+        setTokenFetchError(null);
         try {
             const result = await api<{ Token: string; ApprovalURL: string; ReturnHost: string }>(
                 createToken({
@@ -83,6 +86,7 @@ const usePayPal = ({
             setModel(result);
             return result;
         } catch (error: any) {
+            setTokenFetchError(error);
             clear();
             throw error;
         }
@@ -144,6 +148,7 @@ const usePayPal = ({
             });
         },
         clear,
+        tokenFetchError,
     };
 };
 
