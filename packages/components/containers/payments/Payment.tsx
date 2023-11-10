@@ -59,6 +59,7 @@ export interface Props {
     isAuthenticated?: boolean;
     hideFirstLabel?: boolean;
     triggersDisabled?: boolean;
+    hideSavedMethodsDetails?: boolean;
 }
 
 export interface NoApiProps extends Props {
@@ -101,6 +102,7 @@ export const PaymentsNoApi = ({
     onAwaitingBitcoinPayment,
     hideFirstLabel,
     triggersDisabled,
+    hideSavedMethodsDetails,
 }: NoApiProps) => {
     const [handlingBitcoinPayment, withHandlingBitcoinPayment] = useLoading();
 
@@ -239,10 +241,12 @@ export const PaymentsNoApi = ({
                     {method === PAYMENT_METHOD_TYPES.PAYPAL && isSignupPass && <PayPalInfoMessage />}
                     {customPaymentMethod && (
                         <>
-                            <PaymentMethodDetails
-                                type={customPaymentMethod.Type}
-                                details={customPaymentMethod.Details}
-                            />
+                            {!hideSavedMethodsDetails && (
+                                <PaymentMethodDetails
+                                    type={customPaymentMethod.Type}
+                                    details={customPaymentMethod.Details}
+                                />
+                            )}
                             {customPaymentMethod.Type === PAYMENT_METHOD_TYPES.CARD && <Alert3DS />}
                         </>
                     )}
