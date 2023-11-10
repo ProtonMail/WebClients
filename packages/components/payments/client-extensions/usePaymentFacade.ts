@@ -77,12 +77,24 @@ export const usePaymentFacade = ({
      *     on the view and app-specific assumptions.
      */
     useEffect(() => {
-        if (hook.methods.isNewPaypal) {
-            hook.paypal
-                .fetchPaymentToken()
-                .then(() => hook.paypalCredit.fetchPaymentToken())
-                .catch(noop);
+        async function run() {
+            if (hook.methods.isNewPaypal) {
+                hook.paypal.reset();
+                hook.paypalCredit.reset();
+
+                try {
+                    await hook.paypal.fetchPaymentToken();
+                } catch {}
+
+                // even if token fetching fails (for example because of network or Human Verification),
+                // we still want to try to fetch the token for paypal-credit
+                try {
+                    await hook.paypalCredit.fetchPaymentToken();
+                } catch {}
+            }
         }
+
+        run().catch(noop);
     }, [hook.methods.isNewPaypal, amount, currency]);
 
     return {
