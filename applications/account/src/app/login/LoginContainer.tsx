@@ -11,7 +11,6 @@ import {
     useConfig,
     useErrorHandler,
     useFeature,
-    useFlag,
 } from '@proton/components';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
@@ -95,8 +94,6 @@ const LoginContainer = ({
     const { state } = useLocation<{ username?: string } | undefined>();
     const { APP_NAME } = useConfig();
     const [authType, setAuthType] = useState<'srp' | 'external-sso'>('srp');
-
-    const externalSSOFlag = useFlag('ExternalSSOWeb');
 
     useMetaTags(metaTags);
 
@@ -223,11 +220,7 @@ const LoginContainer = ({
                                 ) : null}
                                 <LoginForm
                                     modal={modal}
-                                    externalSSO={
-                                        APP_NAME === APPS.PROTONACCOUNT &&
-                                        externalSSOFlag &&
-                                        toApp === APPS.PROTONVPN_SETTINGS
-                                    }
+                                    externalSSO={APP_NAME === APPS.PROTONACCOUNT && toApp === APPS.PROTONVPN_SETTINGS}
                                     signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
                                     paths={paths}
                                     defaultUsername={previousUsernameRef.current}
