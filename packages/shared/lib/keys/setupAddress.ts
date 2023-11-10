@@ -300,7 +300,13 @@ export const getIsVPNOnlyAccount = (user: tsUser | undefined) => {
         return false;
     }
     // The vpn service product bit is used as a heuristic to determine if it's an account without addresses
-    return user.Type === UserType.PROTON && !user.Keys.length && user.Services === PRODUCT_BIT.VPN;
+    // NOTE: For vpn and pass bundle, Services gets incorrectly set to 12 = 4 + Pass
+    return (
+        user.Type === UserType.PROTON &&
+        !user.Keys.length &&
+        hasBit(user.Services, PRODUCT_BIT.VPN) &&
+        !hasBit(user.Services, PRODUCT_BIT.Mail)
+    );
 };
 
 export const getIsExternalAccount = (user: tsUser) => {
