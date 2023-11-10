@@ -345,7 +345,7 @@ const handleDayGridMouseDown = ({
     if (eventStyle.type === 'more') {
         const moreEvents = eventsInRowSummary[eventStyle.idx].events.reduce<Set<string>>((acc, i) => {
             const { idx: eventIdx } = eventsInRow[i];
-            acc.add(events[eventIdx].id);
+            acc.add(events[eventIdx].uniqueId);
             return acc;
         }, new Set());
         const callback = onMouseDown({
