@@ -8,6 +8,8 @@ import {
     ModalProps,
     OpenCallbackProps,
     Prompt,
+    useConfig,
+    useLastSubscriptionEnd,
     useLoad,
     useModalState,
     usePlans,
@@ -15,6 +17,46 @@ import {
     useSubscriptionModal,
     useUser,
 } from '@proton/components';
+import {
+    blackFriday2023DriveFreeConfig,
+    blackFriday2023DriveFreeEligibility,
+} from '@proton/components/containers/offers/operations/blackFridayDrive2023Free';
+import {
+    blackFriday2023DrivePlusConfig,
+    blackFriday2023DrivePlusEligibility,
+} from '@proton/components/containers/offers/operations/blackFridayDrive2023Plus';
+import {
+    blackFriday2023DriveUnlimitedConfig,
+    blackFriday2023DriveUnlimitedEligibility,
+} from '@proton/components/containers/offers/operations/blackFridayDrive2023Unlimited';
+import {
+    blackFriday2023InboxFreeConfig,
+    blackFriday2023InboxFreeEligibility,
+} from '@proton/components/containers/offers/operations/blackFridayInbox2023Free';
+import {
+    blackFriday2023InboxMailConfig,
+    blackFriday2023InboxMailEligibility,
+} from '@proton/components/containers/offers/operations/blackFridayInbox2023Plus';
+import {
+    blackFriday2023InboxUnlimitedConfig,
+    blackFriday2023InboxUnlimitedEligibility,
+} from '@proton/components/containers/offers/operations/blackFridayInbox2023Unlimited';
+import {
+    blackFriday2023VPNFreeConfig,
+    blackFriday2023VPNFreeEligibility,
+} from '@proton/components/containers/offers/operations/blackFridayVPN2023Free';
+import {
+    blackFriday2023VPNMonthlyConfig,
+    blackFriday2023VPNMonthlyEligibility,
+} from '@proton/components/containers/offers/operations/blackFridayVPN2023Monthly';
+import {
+    blackFriday2023VPNTwoYearsConfig,
+    blackFriday2023VPNTwoYearsEligibility,
+} from '@proton/components/containers/offers/operations/blackFridayVPN2023TwoYears';
+import {
+    blackFriday2023VPNYearlyConfig,
+    blackFriday2023VPNYearlyEligibility,
+} from '@proton/components/containers/offers/operations/blackFridayVPN2023Yearly';
 import { getMonths } from '@proton/components/containers/payments/SubscriptionsSection';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
@@ -22,8 +64,8 @@ import { CURRENCIES, DEFAULT_CYCLE, PLANS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { getValidCycle } from '@proton/shared/lib/helpers/subscription';
 import { Currency, Plan, PlansMap, Subscription, UserModel } from '@proton/shared/lib/interfaces';
+import isTruthy from '@proton/utils/isTruthy';
 
-import useOfferConfig from '../../offers/hooks/useOfferConfig';
 import { getCurrency } from './helpers';
 import { Eligibility, PlanCombinationWithDiscount, getEligibility } from './subscriptionEligbility';
 
@@ -137,12 +179,12 @@ const UpsellPrompt = ({ planCombination: { discount, plan, cycle }, onConfirm, .
 const AutomaticSubscriptionModal = () => {
     const history = useHistory();
     const location = useLocation();
-
-    const [offerConfig, loadingOffer] = useOfferConfig();
+    const protonConfig = useConfig();
 
     const [open, loadingModal] = useSubscriptionModal();
     const [plans, loadingPlans] = usePlans();
     const [subscription, loadingSubscription] = useSubscription();
+    const [lastSubscriptionEnd, loadingLastSubscriptionEnd] = useLastSubscriptionEnd();
     const [user] = useUser();
     const tmpProps = useRef<{ props: OpenCallbackProps; eligibility: Eligibility } | undefined>(undefined);
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
@@ -152,7 +194,14 @@ const AutomaticSubscriptionModal = () => {
     useLoad();
 
     useEffect(() => {
-        if (!plans || !subscription || loadingPlans || loadingSubscription || loadingModal || loadingOffer) {
+        if (
+            !plans ||
+            !subscription ||
+            loadingPlans ||
+            loadingSubscription ||
+            loadingModal ||
+            loadingLastSubscriptionEnd
+        ) {
             return;
         }
 
@@ -169,6 +218,25 @@ const AutomaticSubscriptionModal = () => {
             return;
         }
 
+        const options = {
+            subscription,
+            protonConfig,
+            user,
+            lastSubscriptionEnd,
+        };
+        const eligibleBlackFridayConfigs = [
+            blackFriday2023InboxFreeEligibility(options) && blackFriday2023InboxFreeConfig,
+            blackFriday2023InboxMailEligibility(options) && blackFriday2023InboxMailConfig,
+            blackFriday2023InboxUnlimitedEligibility(options) && blackFriday2023InboxUnlimitedConfig,
+            blackFriday2023VPNFreeEligibility(options) && blackFriday2023VPNFreeConfig,
+            blackFriday2023VPNMonthlyEligibility(options) && blackFriday2023VPNMonthlyConfig,
+            blackFriday2023VPNYearlyEligibility(options) && blackFriday2023VPNYearlyConfig,
+            blackFriday2023VPNTwoYearsEligibility(options) && blackFriday2023VPNTwoYearsConfig,
+            blackFriday2023DriveFreeEligibility(options) && blackFriday2023DriveFreeConfig,
+            blackFriday2023DrivePlusEligibility(options) && blackFriday2023DrivePlusConfig,
+            blackFriday2023DriveUnlimitedEligibility(options) && blackFriday2023DriveUnlimitedConfig,
+        ].filter(isTruthy);
+
         const eligibility = getEligibility({
             plansMap,
             offer: {
@@ -178,7 +246,7 @@ const AutomaticSubscriptionModal = () => {
             },
             subscription,
             user,
-            offerConfig,
+            eligibleBlackFridayConfigs,
         });
 
         history.replace({ search: undefined });
@@ -222,7 +290,7 @@ const AutomaticSubscriptionModal = () => {
         if (eligibility.type === 'pass-through') {
             open(openProps);
         }
-    }, [loadingPlans, loadingSubscription, loadingModal, loadingOffer, location.search]);
+    }, [loadingPlans, loadingSubscription, loadingModal, loadingLastSubscriptionEnd, location.search]);
 
     const tmp = tmpProps.current;
 
