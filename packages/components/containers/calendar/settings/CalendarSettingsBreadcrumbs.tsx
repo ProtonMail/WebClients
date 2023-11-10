@@ -22,7 +22,7 @@ const CalendarSettingsBreadcrumbs = ({ calendar, calendars }: Props) => {
     }
 
     return (
-        <div className="flex flex-nowrap flex-align-items-center no-desktop no-tablet on-mobile-flex">
+        <div className="flex flex-nowrap flex-align-items-center md:hidden">
             <CollapsingBreadcrumbs
                 breadcrumbs={[
                     {
