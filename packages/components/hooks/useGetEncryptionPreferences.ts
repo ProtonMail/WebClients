@@ -17,7 +17,7 @@ import useApi from './useApi';
 import useCache from './useCache';
 import { getPromiseValue } from './useCachedModelResult';
 import { useGetAddressKeys } from './useGetAddressKeys';
-import useGetPublicKeys from './useGetPublicKeys';
+import useGetPublicKeysForInbox from './useGetPublicKeysForInbox';
 import { useGetMailSettings } from './useMailSettings';
 import { useGetUserKeys } from './useUserKeys';
 
@@ -37,7 +37,7 @@ const useGetEncryptionPreferences = () => {
     const getAddresses = useGetAddresses();
     const getUserKeys = useGetUserKeys();
     const getAddressKeys = useGetAddressKeys();
-    const getPublicKeys = useGetPublicKeys();
+    const getPublicKeysForInbox = useGetPublicKeysForInbox();
     const getMailSettings = useGetMailSettings();
 
     const getEncryptionPreferences = useCallback<GetEncryptionPreferences>(
@@ -69,7 +69,7 @@ const useGetEncryptionPreferences = () => {
                 pinnedKeysConfig = { pinnedKeys: [], isContact: false };
             } else {
                 const { publicKeys } = splitKeys(await getUserKeys());
-                apiKeysConfig = await getPublicKeys({
+                apiKeysConfig = await getPublicKeysForInbox({
                     email,
                     includeInternalKeysWithE2EEDisabledForMail: intendedForEmail === false,
                     lifetime,
@@ -85,7 +85,7 @@ const useGetEncryptionPreferences = () => {
             });
             return extractEncryptionPreferences(publicKeyModel, mailSettings, selfSend);
         },
-        [api, getAddressKeys, getAddresses, getPublicKeys, getMailSettings]
+        [api, getAddressKeys, getAddresses, getPublicKeysForInbox, getMailSettings]
     );
 
     return useCallback<GetEncryptionPreferences>(
