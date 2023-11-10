@@ -1,6 +1,6 @@
 import { ADDON_NAMES, COUPON_CODES, CYCLE, PLANS, isFreeSubscription } from '@proton/shared/lib/constants';
 import { getPlan } from '@proton/shared/lib/helpers/subscription';
-import { Plan, PlansMap, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
+import type { Plan, PlansMap, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { OfferConfig } from '../../offers/interface';
 
@@ -120,13 +120,13 @@ export const getEligibility = ({
     offer,
     subscription,
     plansMap,
-    offerConfig,
+    eligibleBlackFridayConfigs,
 }: {
     user: UserModel;
     subscription: SubscriptionModel | null | undefined;
     offer: { plan: Plan; cycle: CYCLE; coupon?: string };
     plansMap: PlansMap;
-    offerConfig: OfferConfig | undefined;
+    eligibleBlackFridayConfigs: OfferConfig[];
 }): Eligibility => {
     if (!user.canPay) {
         return { type: 'sub-user' };
@@ -139,8 +139,10 @@ export const getEligibility = ({
 
     if (offer.coupon === COUPON_CODES.BLACK_FRIDAY_2023) {
         if (
-            offerConfig?.deals.some((dealWithPrices) => {
-                return dealWithPrices.cycle === offer.cycle && dealWithPrices.planIDs[offer.plan.Name];
+            eligibleBlackFridayConfigs.some((config) => {
+                return config.deals.some((deal) => {
+                    return deal.cycle === offer.cycle && deal.planIDs[offer.plan.Name];
+                });
             })
         ) {
             return okResult();
