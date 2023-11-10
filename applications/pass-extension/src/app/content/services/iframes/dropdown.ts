@@ -151,6 +151,7 @@ export const createDropdown = (): InjectedDropdown => {
 
             service.autofill.autofillGeneratedPassword(form, payload.password);
             fieldRef.current?.focus({ preventAction: true });
+            form.tracker?.submit();
         })
     );
 
@@ -161,6 +162,7 @@ export const createDropdown = (): InjectedDropdown => {
         iframe.close();
         fieldRef.current?.autofill(payload.email);
         fieldRef.current?.focus({ preventAction: true });
+        fieldRef.current?.getFormHandle()?.tracker?.submit();
     });
 
     const destroy = () => {
