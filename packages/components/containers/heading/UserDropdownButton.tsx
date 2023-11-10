@@ -31,7 +31,7 @@ const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref:
             className="max-w-full flex flex-align-items-center flex-nowrap gap-3 user-dropdown-button relative interactive-pseudo-protrude rounded interactive--no-background"
             title={`${nameToDisplay} <${Email}>`}
         >
-            <DropdownCaret className="no-tablet no-desktop ml-1 color-weak" isOpen={isOpen} />
+            <DropdownCaret className="md:hidden ml-1 color-weak" isOpen={isOpen} />
 
             {nameToDisplay ? (
                 <span className="flex-item-fluid lh130 user-dropdown-text">
