@@ -24,6 +24,7 @@ import groupWith from '@proton/utils/groupWith';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getEventKey } from '../../../helpers/encryptedSearch/esUtils';
+import { generateEventUniqueId } from '../../../helpers/event';
 import { ESCalendarContent, ESCalendarMetadata } from '../../../interfaces/encryptedSearch';
 import { getCurrentEvent } from '../eventActions/recurringHelper';
 import getComponentFromCalendarEventWithoutBlob from '../eventStore/cache/getComponentFromCalendarEventWithoutBlob';
@@ -209,6 +210,7 @@ export const groupItemsByDay = (items: VisualSearchItem[]) => {
 
 export const getCalendarViewEventWithMetadata = (item: VisualSearchItem): CalendarViewEvent => {
     const {
+        CalendarID,
         ID,
         visualCalendar,
         fakeUTCStartDate,
@@ -221,7 +223,7 @@ export const getCalendarViewEventWithMetadata = (item: VisualSearchItem): Calend
     } = item;
 
     const result: CalendarViewEvent = {
-        id: ID,
+        uniqueId: generateEventUniqueId(CalendarID, ID),
         start: fakeUTCStartDate,
         end: isAllDay ? addUTCDays(fakeUTCEndDate, -1) : fakeUTCEndDate,
         isAllDay,
