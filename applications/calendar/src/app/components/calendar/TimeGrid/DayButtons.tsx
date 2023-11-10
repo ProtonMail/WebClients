@@ -39,7 +39,7 @@ const DayButtons = ({
 
                     <span
                         className={clsx([
-                            'calendar-grid-heading-day-shortname no-desktop no-tablet',
+                            'calendar-grid-heading-day-shortname md:hidden',
                             hasSmallLabels && 'text-xs',
                             hasBoldLabels && 'text-strong',
                         ])}

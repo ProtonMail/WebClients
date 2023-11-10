@@ -122,7 +122,7 @@ const Sidebar = ({
                 <Hamburger
                     expanded={expanded}
                     onToggle={onToggleExpand}
-                    className="no-desktop no-tablet flex-item-noshrink absolute right mr-5 mt-2 opacity-0 focus:opacity-100 bg-norm"
+                    className="md:hidden flex-item-noshrink absolute right mr-5 mt-2 opacity-0 focus:opacity-100 bg-norm"
                 />
 
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
@@ -132,7 +132,7 @@ const Sidebar = ({
                 </div>
 
                 {isNarrow && (
-                    <div className="px-3 flex-item-noshrink no-desktop no-tablet">
+                    <div className="px-3 flex-item-noshrink md:hidden">
                         <UserDropdown app={APP_NAME} hasAppLinks={hasAppLinks} />
                     </div>
                 )}

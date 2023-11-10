@@ -106,8 +106,8 @@ const ComposerActions = ({
                                     className="composer-send-button"
                                     data-testid="composer:send-button"
                                 >
-                                    <Icon name="paper-plane" className="no-desktop no-tablet on-mobile-flex" />
-                                    <span className="px-4 no-mobile">{c('Action').t`Send`}</span>
+                                    <Icon name="paper-plane" className="md:hidden flex" />
+                                    <span className="px-4 hidden md:inline">{c('Action').t`Send`}</span>
                                 </Button>
                             </Tooltip>
                         }
