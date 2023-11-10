@@ -53,6 +53,7 @@ const ColorPicker = ({ color = '#5252CC', onChange, ...rest }: Props) => {
                 ref={anchorRef}
                 isOpen={isOpen}
                 onClick={toggle}
+                aria-label={colorName}
             >
                 <span className="flex-item-fluid text-left flex flex-nowrap flex-align-items-center gap-2">
                     <Icon className="flex-item-noshrink" name="circle-filled" size={28} color={iconColor} />
