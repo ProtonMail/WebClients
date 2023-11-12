@@ -3,6 +3,7 @@ export type Callback<T extends any[] = any[], R = any> = (...args: T) => R;
 export type Maybe<T> = T | undefined;
 export type MaybeNull<T> = T | null;
 export type MaybeArray<T> = T | T[];
+export type MaybePromise<T> = T | Promise<T>;
 export type Unpack<T> = T extends (infer U)[] ? U : never;
 
 export type RequiredNonNull<T> = Omit<T, keyof T> & { [P in keyof T]-?: NonNullable<T[P]> };

@@ -2,7 +2,6 @@
 import type { Api } from '@proton/pass/types';
 import { isObject } from '@proton/pass/utils/object/is-object';
 import { getLocalKey, setLocalKey } from '@proton/shared/lib/api/auth';
-import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/withApiHandlers';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getKey } from '@proton/shared/lib/authentication/cryptoHelper';
@@ -130,7 +129,7 @@ export const resumeSession = async ({
             sessionLockToken: ps.sessionLockToken,
         };
     } catch (error: any) {
-        if (getIs401Error(error) || error instanceof InvalidPersistentSessionError) onSessionInvalid?.();
+        if (error instanceof InvalidPersistentSessionError) onSessionInvalid?.();
         throw error;
     }
 };
