@@ -1,5 +1,5 @@
-import type { MaybeNull, WorkerStatus } from '@proton/pass/types';
-import { type WorkerState } from '@proton/pass/types';
+import type { AppStatus, MaybeNull } from '@proton/pass/types';
+import { type AppState } from '@proton/pass/types';
 
 import { type ActivationService } from '../services/activation';
 import { type AliasService } from '../services/alias';
@@ -25,7 +25,7 @@ export type WorkerInitOptions = {
 };
 
 export interface WorkerContextInterface {
-    status: WorkerStatus;
+    status: AppStatus;
     service: {
         auth: AuthService;
         activation: ActivationService;
@@ -46,9 +46,9 @@ export interface WorkerContextInterface {
         telemetry: MaybeNull<TelemetryService>;
     };
     /* status update : side-effects will be triggered */
-    setStatus: (status: WorkerStatus) => void;
+    setStatus: (status: AppStatus) => void;
     /* returns the current worker state */
-    getState: () => WorkerState;
+    getState: () => AppState;
     /* Returned promise will resolve when worker "ready" */
     ensureReady: () => Promise<WorkerContextInterface>;
 }

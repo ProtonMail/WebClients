@@ -14,11 +14,11 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { NotificationsContext } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { useActionRequestEffect } from '@proton/pass/hooks/useActionRequestEffect';
+import { clientReady } from '@proton/pass/lib/client';
 import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
-import { workerReady } from '@proton/pass/lib/worker';
 import { syncRequest } from '@proton/pass/store/actions/requests';
-import type { MaybeNull, PopupInitialState, WorkerState } from '@proton/pass/types';
-import { WorkerMessageType, type WorkerMessageWithSender, WorkerStatus } from '@proton/pass/types';
+import type { AppState, MaybeNull, PopupInitialState } from '@proton/pass/types';
+import { AppStatus, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
@@ -27,7 +27,7 @@ export interface PopupContextValue extends ExtensionConnectContextValue {
     initialized: boolean /* retrieved popup initial state */;
     expanded: boolean /* is popup expanded into a separate window */;
     ready: boolean /* enable UI user actions */;
-    state: WorkerState & { initial: PopupInitialState };
+    state: AppState & { initial: PopupInitialState };
     url: ParsedUrl /* current tab parsed URL */;
     sync: () => void;
 }
@@ -80,10 +80,10 @@ const PopupContextContainer: FC = ({ children }) => {
             }),
     });
 
-    const syncing = sync.loading || extensionContext.state.status === WorkerStatus.BOOTING;
+    const syncing = sync.loading || extensionContext.state.status === AppStatus.BOOTING;
 
     useEffect(() => {
-        if (workerReady(status)) {
+        if (clientReady(status)) {
             void sendMessage.onSuccess(
                 popupMessage({ type: WorkerMessageType.POPUP_INIT, payload: { tabId } }),
                 setInitial

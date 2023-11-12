@@ -1,9 +1,9 @@
 import { type Runtime } from 'webextension-polyfill';
 
+import { clientCanBoot, clientStale } from '@proton/pass/lib/client';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
-import { workerCanBoot, workerStale } from '@proton/pass/lib/worker';
 import { bootIntent, wakeupIntent } from '@proton/pass/store/actions';
 import {
     selectFeatureFlags,
@@ -14,7 +14,7 @@ import {
     selectPopupTabState,
 } from '@proton/pass/store/selectors';
 import type { MaybeNull, WorkerMessageWithSender, WorkerWakeUpMessage } from '@proton/pass/types';
-import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
+import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { logger } from '@proton/pass/utils/logger';
 import { UNIX_HOUR } from '@proton/pass/utils/time/constants';
@@ -41,8 +41,8 @@ export const createActivationService = () => {
     /* Safety-net around worker boot-sequence :
      * Ensures no on-going booting sequence */
     const handleBoot = withContext((ctx) => {
-        if (workerCanBoot(ctx.status)) {
-            ctx.setStatus(WorkerStatus.BOOTING);
+        if (clientCanBoot(ctx.status)) {
+            ctx.setStatus(AppStatus.BOOTING);
 
             store.dispatch(bootIntent({}));
         }
@@ -183,7 +183,7 @@ export const createActivationService = () => {
             const { tabId } = payload;
             const { status } = ctx.getState();
 
-            if (workerStale(status)) void ctx.service.auth.init();
+            if (clientStale(status)) void ctx.service.auth.init();
 
             /* dispatch a wakeup action for this specific receiver.
              * tracking the wakeup's request metadata can be consumed
