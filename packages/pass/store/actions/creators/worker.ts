@@ -8,8 +8,8 @@ import type { EndpointOptions } from '@proton/pass/store/actions/with-receiver';
 import { withReceiver } from '@proton/pass/store/actions/with-receiver';
 import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { SafeUserState } from '@proton/pass/store/reducers';
-import type { SynchronizationResult } from '@proton/pass/store/sagas/workers/sync';
-import type { Maybe, WorkerStatus } from '@proton/pass/types';
+import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
+import type { AppStatus, Maybe } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import identity from '@proton/utils/identity';
 
@@ -31,7 +31,7 @@ export const stateDestroy = createAction('state::destroy', () => withCacheBlock(
 
 export const wakeupIntent = createAction(
     'wakeup::intent',
-    (payload: { status: WorkerStatus }, receiver: EndpointOptions) =>
+    (payload: { status: AppStatus }, receiver: EndpointOptions) =>
         pipe(
             withCacheBlock,
             withReceiver(receiver),

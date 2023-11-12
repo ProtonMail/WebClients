@@ -13,11 +13,11 @@ import reducer from '@proton/pass/store/reducers';
 import { workerRootSaga } from '@proton/pass/store/sagas';
 import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
 import {
+    AppStatus,
     type RequiredNonNull,
     SessionLockStatus,
     ShareEventType,
     WorkerMessageType,
-    WorkerStatus,
 } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -70,11 +70,11 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
     onBoot: withContext(async (ctx, result) => {
         if (result.ok) {
             void ctx.service.telemetry?.start();
-            ctx.setStatus(WorkerStatus.READY);
+            ctx.setStatus(AppStatus.READY);
             WorkerMessageBroker.buffer.flush();
         } else {
             ctx.service.telemetry?.stop();
-            ctx.setStatus(WorkerStatus.ERROR);
+            ctx.setStatus(AppStatus.ERROR);
             if (result.clearCache) await ctx.service.storage.local.unset(['salt', 'state', 'snapshot']);
         }
     }),

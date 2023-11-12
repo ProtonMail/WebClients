@@ -9,9 +9,9 @@ import { useAccountFork } from 'proton-pass-extension/lib/hooks/useNavigateToLog
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { workerBusy } from '@proton/pass/lib/worker';
+import { clientBusy } from '@proton/pass/lib/client';
 import type { MaybeNull } from '@proton/pass/types';
-import { WorkerStatus } from '@proton/pass/types';
+import { AppStatus } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
@@ -23,7 +23,7 @@ import { DropdownPinUnlock } from './DropdownPinUnlock';
 
 type Props = {
     state: MaybeNull<DropdownActions>;
-    status: WorkerStatus;
+    status: AppStatus;
     loggedIn: boolean;
     visible?: boolean;
     onClose?: (options?: IFrameCloseOptions) => void;
@@ -45,11 +45,11 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
             style={{ '--min-h-custom': `${DROPDOWN_ITEM_HEIGHT}rem` }}
         >
             {(() => {
-                if (state === null || workerBusy(status)) {
+                if (state === null || clientBusy(status)) {
                     return <CircleLoader className="absolute-center m-auto" />;
                 }
 
-                if (status === WorkerStatus.LOCKED) {
+                if (status === AppStatus.LOCKED) {
                     return <DropdownPinUnlock onUnlock={() => onClose?.({ refocus: true })} visible={visible} />;
                 }
 
