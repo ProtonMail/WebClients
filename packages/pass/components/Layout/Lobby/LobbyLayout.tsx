@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 
+import protonPassIcon from '@proton/pass/assets/protonpass-icon.svg';
 import { FadeIn } from '@proton/pass/components/Layout/Animation/FadeIn';
 import clsx from '@proton/utils/clsx';
 
@@ -15,7 +16,7 @@ export const LobbyLayout: FC<{ overlay: boolean }> = ({ overlay, children }) => 
                 duration={550}
             >
                 <img
-                    src="/assets/protonpass-icon.svg"
+                    src={protonPassIcon}
                     className={clsx('pass-lobby--logo w-custom max-w-custom', !overlay && 'pass-lobby--logo-hidden')}
                     style={{ '--w-custom': '18.25rem' }}
                     alt=""
