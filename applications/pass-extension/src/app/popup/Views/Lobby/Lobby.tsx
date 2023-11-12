@@ -10,9 +10,9 @@ import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
 import { FadeIn } from '@proton/pass/components/Layout/Animation/FadeIn';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import { Unlock } from '@proton/pass/components/Lock/Unlock';
+import { clientBusy, clientErrored, clientStale } from '@proton/pass/lib/client';
 import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
-import { workerBusy, workerErrored, workerStale } from '@proton/pass/lib/worker';
-import { type Maybe, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
+import { AppStatus, type Maybe, WorkerMessageType } from '@proton/pass/types';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -21,16 +21,16 @@ const PROMPT_FOR_RELOAD_TIMEOUT = 10000;
 const LobbyContent: VFC = () => {
     const { state, logout } = usePopupContext();
     const [promptForReload, setPromptForReload] = useState(false);
-    const stale = workerStale(state.status);
-    const busy = workerBusy(state.status);
-    const locked = state.status === WorkerStatus.LOCKED;
-    const canSignOut = workerErrored(state.status) || locked;
+    const stale = clientStale(state.status);
+    const busy = clientBusy(state.status);
+    const locked = state.status === AppStatus.LOCKED;
+    const canSignOut = clientErrored(state.status) || locked;
 
     const login = useNavigateToLogin({ autoClose: true });
 
     const handleSignInClick = useCallback(
         async () =>
-            workerErrored(state.status) ? sendMessage(popupMessage({ type: WorkerMessageType.WORKER_INIT })) : login(),
+            clientErrored(state.status) ? sendMessage(popupMessage({ type: WorkerMessageType.WORKER_INIT })) : login(),
         [state.status]
     );
 
@@ -66,12 +66,12 @@ const LobbyContent: VFC = () => {
                     <span className="block text-sm text-weak">
                         {(() => {
                             switch (state.status) {
-                                case WorkerStatus.AUTHORIZED:
-                                case WorkerStatus.AUTHORIZING:
-                                case WorkerStatus.RESUMING:
+                                case AppStatus.AUTHORIZED:
+                                case AppStatus.AUTHORIZING:
+                                case AppStatus.RESUMING:
                                     // translator: status message displayed when loading
                                     return c('Info').t`Signing you in`;
-                                case WorkerStatus.BOOTING:
+                                case AppStatus.BOOTING:
                                     return c('Info').t`Decrypting your data`;
                                 default:
                                     return c('Info').t`Loading extension`;
@@ -97,7 +97,7 @@ const LobbyContent: VFC = () => {
             <div className="flex-item-fluid mt-8 flex flex-column gap-2">
                 {!locked && (
                     <Button pill shape="solid" color="norm" className="w-full" onClick={handleSignInClick}>
-                        {workerErrored(state.status)
+                        {clientErrored(state.status)
                             ? c('Action').t`Sign back in`
                             : c('Action').t`Sign in with ${BRAND_NAME}`}
                     </Button>

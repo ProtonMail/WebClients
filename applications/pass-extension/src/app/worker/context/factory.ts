@@ -31,7 +31,7 @@ import {
     workerStale,
     workerStatusResolved,
 } from '@proton/pass/lib/worker';
-import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
+import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
@@ -43,7 +43,7 @@ import { WorkerContext } from './context';
 
 export const createWorkerContext = (config: ProtonConfig) => {
     const context = WorkerContext.set({
-        status: WorkerStatus.IDLE,
+        status: AppStatus.IDLE,
         service: {
             auth: createAuthService({
                 onAuthorized: () => {
@@ -95,7 +95,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             UID: context.service.auth.store.getUID(),
         }),
 
-        setStatus(status: WorkerStatus) {
+        setStatus(status: AppStatus) {
             logger.info(`[Worker::Context] Status update : ${context.status} -> ${status}`);
             context.status = status;
 
