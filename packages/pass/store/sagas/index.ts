@@ -8,6 +8,14 @@ import sessionLockEnable from './auth/session-lock-enable.saga';
 import sessionLockImmediate from './auth/session-lock-immediate.saga';
 import sessionUnlock from './auth/session-unlock.saga';
 import signout from './auth/signout.saga';
+import boot from './client/boot.saga';
+import cache from './client/cache.saga';
+import notification from './client/notification.saga';
+import reportProblem from './client/report-problem.saga';
+import request from './client/request-saga';
+import settings from './client/settings.saga';
+import sync from './client/sync.saga';
+import wakeup from './client/wakeup.saga';
 import events from './events/events.saga';
 import itemsImport from './import/import.saga';
 import inviteAccept from './invites/invite-accept.saga';
@@ -37,14 +45,6 @@ import vaultDelete from './vaults/vault-delete.saga';
 import vaultEdit from './vaults/vault-edit.saga';
 import vaultMoveAllItems from './vaults/vault-move-all-items.saga';
 import vaultTransferOwner from './vaults/vault-transfer-owner.saga';
-import boot from './workers/boot.saga';
-import cache from './workers/cache.saga';
-import notification from './workers/notification.saga';
-import reportProblem from './workers/report-problem.saga';
-import request from './workers/request-saga';
-import settings from './workers/settings.saga';
-import sync from './workers/sync.saga';
-import wakeup from './workers/wakeup.saga';
 
 export function* workerRootSaga(options: WorkerRootSagaOptions) {
     yield all(

@@ -2,7 +2,7 @@ import type { ReactNode, VFC } from 'react';
 
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/hooks/usePasswordGenerator';
 import type { SafeLoginItem } from '@proton/pass/types';
-import { WorkerStatus } from '@proton/pass/types';
+import { AppStatus } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 import { DROPDOWN_WIDTH } from '../../../../app/content/constants.static';
@@ -47,13 +47,13 @@ export const DropdownDebug: VFC = () => {
         <SettingsPanel title="Dropdown">
             <div className="gap-4" style={{ columnCount: 2 }}>
                 <MockIFrameContainer>
-                    <DropdownSwitch loggedIn={false} status={WorkerStatus.IDLE} state={null} />
+                    <DropdownSwitch loggedIn={false} status={AppStatus.IDLE} state={null} />
                 </MockIFrameContainer>
 
                 <MockIFrameContainer>
                     <DropdownSwitch
                         loggedIn={false}
-                        status={WorkerStatus.READY}
+                        status={AppStatus.READY}
                         state={{
                             action: DropdownAction.AUTOFILL,
                             needsUpgrade: false,
@@ -65,7 +65,7 @@ export const DropdownDebug: VFC = () => {
                 <MockIFrameContainer>
                     <DropdownSwitch
                         loggedIn={false}
-                        status={WorkerStatus.LOCKED}
+                        status={AppStatus.LOCKED}
                         state={{
                             action: DropdownAction.AUTOFILL,
                             needsUpgrade: false,
@@ -77,7 +77,7 @@ export const DropdownDebug: VFC = () => {
                 <MockIFrameContainer>
                     <DropdownSwitch
                         loggedIn
-                        status={WorkerStatus.READY}
+                        status={AppStatus.READY}
                         state={{
                             action: DropdownAction.AUTOFILL,
                             needsUpgrade: false,
@@ -89,7 +89,7 @@ export const DropdownDebug: VFC = () => {
                 <MockIFrameContainer>
                     <DropdownSwitch
                         loggedIn
-                        status={WorkerStatus.READY}
+                        status={AppStatus.READY}
                         state={{
                             action: DropdownAction.AUTOFILL,
                             needsUpgrade: true,
@@ -101,7 +101,7 @@ export const DropdownDebug: VFC = () => {
                 <MockIFrameContainer>
                     <DropdownSwitch
                         loggedIn
-                        status={WorkerStatus.READY}
+                        status={AppStatus.READY}
                         state={{
                             action: DropdownAction.AUTOFILL,
                             needsUpgrade: false,
@@ -113,7 +113,7 @@ export const DropdownDebug: VFC = () => {
                 <MockIFrameContainer>
                     <DropdownSwitch
                         loggedIn
-                        status={WorkerStatus.READY}
+                        status={AppStatus.READY}
                         state={{ action: DropdownAction.AUTOSUGGEST_PASSWORD, options: DEFAULT_RANDOM_PW_OPTIONS }}
                     />
                 </MockIFrameContainer>
@@ -121,7 +121,7 @@ export const DropdownDebug: VFC = () => {
                 <MockIFrameContainer>
                     <DropdownSwitch
                         loggedIn
-                        status={WorkerStatus.READY}
+                        status={AppStatus.READY}
                         state={{ action: DropdownAction.AUTOSUGGEST_ALIAS, domain: 'proton.me', prefix: 'secret' }}
                     />
                 </MockIFrameContainer>

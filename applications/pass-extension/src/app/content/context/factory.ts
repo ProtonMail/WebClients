@@ -8,7 +8,7 @@ import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-co
 import { hasCriteria } from '@proton/pass/lib/settings/criteria';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { INITIAL_SETTINGS, type ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { WorkerStatus } from '@proton/pass/types';
+import { AppStatus } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 
 import { CSContext } from './context';
@@ -19,7 +19,7 @@ export const createContentScriptContext = (options: {
     mainFrame: boolean;
     destroy: (options: { reason: string }) => void;
 }): ContentScriptContext => {
-    const state: CSContextState = { active: true, loggedIn: false, status: WorkerStatus.IDLE, UID: undefined };
+    const state: CSContextState = { active: true, loggedIn: false, status: AppStatus.IDLE, UID: undefined };
     const settings: ProxiedSettings = INITIAL_SETTINGS;
     const featureFlags: FeatureFlagState = {};
 
