@@ -5,7 +5,7 @@ import { ItemsList } from 'proton-pass-extension/app/content/injections/apps/dro
 import { PasswordAutoSuggest } from 'proton-pass-extension/app/content/injections/apps/dropdown/views/PasswordAutoSuggest';
 import type { DropdownActions, IFrameCloseOptions, IFrameMessage } from 'proton-pass-extension/app/content/types';
 import { DropdownAction } from 'proton-pass-extension/app/content/types';
-import { useAccountFork } from 'proton-pass-extension/lib/hooks/useNavigateToLogin';
+import { useRequestFork } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
@@ -35,7 +35,7 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
     { state, loggedIn, status, visible, onClose, onReset = noop, onMessage = noop },
     ref
 ) => {
-    const accountFork = useAccountFork();
+    const accountFork = useRequestFork();
     const onMessageWithReset = pipe(onMessage, tap(onReset));
 
     return (
