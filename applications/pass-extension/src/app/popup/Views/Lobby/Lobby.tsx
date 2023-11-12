@@ -1,8 +1,8 @@
 import { type VFC, useCallback, useEffect, useState } from 'react';
 
 import { PromptForReload } from 'proton-pass-extension/lib/components/Extension/ExtensionError';
-import { useNavigateToLogin } from 'proton-pass-extension/lib/hooks/useNavigateToLogin';
 import { usePopupContext } from 'proton-pass-extension/lib/hooks/usePopupContext';
+import { useRequestForkWithPermissions } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
@@ -26,7 +26,7 @@ const LobbyContent: VFC = () => {
     const locked = state.status === AppStatus.LOCKED;
     const canSignOut = clientErrored(state.status) || locked;
 
-    const login = useNavigateToLogin({ autoClose: true });
+    const login = useRequestForkWithPermissions({ autoClose: true });
 
     const handleSignInClick = useCallback(
         async () =>

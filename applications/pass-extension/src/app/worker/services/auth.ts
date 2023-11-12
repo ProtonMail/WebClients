@@ -2,10 +2,8 @@
 import { c } from 'ttag';
 
 import { api } from '@proton/pass/lib/api/api';
-import type { AuthStore } from '@proton/pass/lib/auth/authentication';
-import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/authentication';
 import { AccountForkResponse, consumeFork, getAccountForkResponsePayload } from '@proton/pass/lib/auth/fork';
-import type { AuthSession, ExtensionPersistedSession } from '@proton/pass/lib/auth/session';
+import type { AuthSession, PersistedAuthSession } from '@proton/pass/lib/auth/session';
 import {
     SESSION_KEYS,
     encryptPersistedSession,
@@ -15,6 +13,8 @@ import {
 } from '@proton/pass/lib/auth/session';
 import type { SessionLockCheckResult } from '@proton/pass/lib/auth/session-lock';
 import { checkSessionLock } from '@proton/pass/lib/auth/session-lock';
+import type { AuthStore } from '@proton/pass/lib/auth/store';
+import { createAuthStore, exposeAuthStore } from '@proton/pass/lib/auth/store';
 import type { MessageHandlerCallback } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import { workerLocked, workerLoggedIn, workerLoggedOut, workerReady } from '@proton/pass/lib/worker';
@@ -54,7 +54,7 @@ export interface AuthService {
     resumeSession: (options?: AuthInitOptions) => Promise<boolean>;
     consumeSession: (data: ForkPayload) => Promise<WorkerMessageResponse<WorkerMessageType.ACCOUNT_FORK>>;
     persistSession: () => Promise<void>;
-    getPersistedSession: () => Promise<Maybe<ExtensionPersistedSession>>;
+    getPersistedSession: () => Promise<Maybe<PersistedAuthSession>>;
     lock: () => void;
     unlock: (sessionLockToken: string) => Promise<void>;
     syncLock: () => Promise<SessionLockCheckResult>;
@@ -204,8 +204,8 @@ export const createAuthService = ({
                     const session = await resumeSession({
                         api,
                         authStore,
-                        session: persistedSession,
-                        onInvalidSession: async () => {
+                        persistedSession,
+                        onSessionInvalid: async () => {
                             authStore.clear();
                             await ctx.service.storage.local.unset(['ps']);
                             await ctx.service.storage.session.clear();
@@ -251,9 +251,11 @@ export const createAuthService = ({
             if (ctx.getState().loggedIn) throw getAccountForkResponsePayload(AccountForkResponse.CONFLICT);
 
             try {
-                ctx.setStatus(WorkerStatus.AUTHORIZING);
+                ctx.setStatus(AppStatus.AUTHORIZING);
 
-                const session = await consumeFork({ api, apiUrl: `${SSO_URL}/api`, ...data });
+                const payload = { mode: 'secure', ...data } as const;
+                const session = await consumeFork({ api, apiUrl: `${SSO_URL}/api`, payload });
+
                 const loggedIn = await authService.login(session);
 
                 if (loggedIn) void authService.persistSession();
@@ -275,7 +277,7 @@ export const createAuthService = ({
             }
         }),
 
-        getPersistedSession: withContext<() => Promise<Maybe<ExtensionPersistedSession>>>(async (ctx) => {
+        getPersistedSession: withContext<() => Promise<Maybe<PersistedAuthSession>>>(async (ctx) => {
             try {
                 const { ps } = await ctx.service.storage.local.get(['ps']);
 
