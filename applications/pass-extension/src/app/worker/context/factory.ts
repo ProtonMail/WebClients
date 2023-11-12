@@ -133,6 +133,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             /* Check if the worker is ready before persisting the session
              * This prevents unnecessary persistence when the refresh was
              * triggered by a session unlock request*/
+            /* TODO: no need to persist here -> only write to storage */
             if (workerReady(context.status)) void context.service.auth.persistSession();
         },
     });
