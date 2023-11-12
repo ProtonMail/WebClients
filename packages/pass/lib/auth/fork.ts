@@ -17,8 +17,8 @@ import type { User } from '@proton/shared/lib/interfaces';
 
 import type { AuthSession } from './session';
 
-type RequestForkOptions = { host: string; app: APP_NAMES; type?: FORK_TYPE };
-type RequestForkResult = { url: string; state: string };
+export type RequestForkOptions = { host: string; app: APP_NAMES; type?: FORK_TYPE };
+export type RequestForkResult = { url: string; state: string };
 
 export const requestFork = ({ host, type, app }: RequestForkOptions): RequestForkResult => {
     const state = encodeBase64URL(uint8ArrayToString(crypto.getRandomValues(new Uint8Array(32))));
