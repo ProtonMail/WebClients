@@ -2,7 +2,7 @@ import type { VFC } from 'react';
 import { useEffect, useState } from 'react';
 
 import { ExtensionHead } from 'proton-pass-extension/lib/components/Extension/ExtensionHead';
-import { useNavigateToLogin } from 'proton-pass-extension/lib/hooks/useNavigateToLogin';
+import { useRequestForkWithPermissions } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
@@ -39,7 +39,7 @@ const brandNameJSX = (
 );
 
 export const InstallationSuccess: VFC = () => {
-    const login = useNavigateToLogin({ replace: true });
+    const login = useRequestForkWithPermissions({ replace: true });
     const [isPinned, setIsPinned] = useState<MaybeNull<boolean>>(null);
 
     const { createNotification } = useNotifications();
