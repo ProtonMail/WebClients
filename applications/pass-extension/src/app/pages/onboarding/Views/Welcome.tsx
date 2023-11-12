@@ -13,8 +13,8 @@ import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import '@proton/pass/components/Spotlight/Spotlight.scss';
 import { SpotlightContent } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { ONBOARDING_LINK } from '@proton/pass/constants';
+import { clientReady } from '@proton/pass/lib/client';
 import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message';
-import { workerReady } from '@proton/pass/lib/worker';
 import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
@@ -36,7 +36,7 @@ export const Welcome: VFC = () => {
         tabId,
         messageFactory: pageMessage,
         onWorkerStateChange: ({ status }) => {
-            if (workerReady(status)) {
+            if (clientReady(status)) {
                 void sendMessage.onSuccess(
                     pageMessage({ type: WorkerMessageType.ONBOARDING_REQUEST }),
                     async ({ message }) => setPendingAccess(message === OnboardingMessage.PENDING_SHARE_ACCESS)

@@ -5,21 +5,21 @@ import type { ItemDraft } from '@proton/pass/store/reducers';
 import type { ItemFilters, SelectedItem } from '../data';
 import type { Maybe, MaybeNull } from '../utils';
 
-export enum WorkerStatus {
-    IDLE = 'IDLE' /* initial worker state - pending initalization */,
-    AUTHORIZING = 'AUTHORIZING' /* worker is forking a session to login */,
-    UNAUTHORIZED = 'UNAUTHORIZED' /* worker is pending login */,
+export enum AppStatus {
+    IDLE = 'IDLE' /* initial app state - pending initalization */,
+    AUTHORIZING = 'AUTHORIZING' /* app is forking a session to login */,
+    UNAUTHORIZED = 'UNAUTHORIZED' /* app is pending login */,
     AUTHORIZED = 'AUTHORIZED' /* user is logged in */,
-    LOCKED = 'LOCKED' /* worker is locked (session may not) */,
-    RESUMING = 'RESUMING' /* worker is trying to resume session */,
+    LOCKED = 'LOCKED' /* app is locked (session may not) */,
+    RESUMING = 'RESUMING' /* app is trying to resume session */,
     RESUMING_FAILED = 'RESUMING_FAILED' /* session resuming failed */,
-    BOOTING = 'BOOTING' /* worker is currently in the boot sequence */,
-    READY = 'READY' /* worker is authorized and has booted */,
-    ERROR = 'ERROR' /* worker is in an error state */,
+    BOOTING = 'BOOTING' /* app is currently in the boot sequence */,
+    READY = 'READY' /* app is authorized and has booted */,
+    ERROR = 'ERROR' /* app is in an error state */,
 }
 
-export type WorkerState = {
-    status: WorkerStatus;
+export type AppState = {
+    status: AppStatus;
     loggedIn: boolean;
     UID: Maybe<string>;
 };

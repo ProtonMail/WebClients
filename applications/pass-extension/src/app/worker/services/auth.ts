@@ -29,7 +29,7 @@ import {
 } from '@proton/pass/store/actions';
 import { selectUser } from '@proton/pass/store/selectors';
 import type { Maybe, WorkerMessageResponse } from '@proton/pass/types';
-import { SessionLockStatus, WorkerMessageType, WorkerStatus } from '@proton/pass/types';
+import { AppStatus, SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
 import type { ForkPayload } from '@proton/pass/types/api/fork';
 import { withPayload } from '@proton/pass/utils/fp/lens';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
@@ -152,7 +152,7 @@ export const createAuthService = ({
             });
 
             logger.info(`[Worker::Auth] User is authorized`);
-            ctx.setStatus(WorkerStatus.AUTHORIZED);
+            ctx.setStatus(AppStatus.AUTHORIZED);
             onAuthorized?.();
 
             return true;
@@ -163,7 +163,7 @@ export const createAuthService = ({
             /* important to call setStatus before dispatching the
              * the `stateDestroy` action : we might have active
              * clients currently consuming the store data */
-            ctx.setStatus(WorkerStatus.UNAUTHORIZED);
+            ctx.setStatus(AppStatus.UNAUTHORIZED);
             store.dispatch(stateDestroy());
 
             void ctx.service.storage.session.clear();
@@ -192,7 +192,7 @@ export const createAuthService = ({
 
             if (persistedSession) {
                 logger.info(`[Worker::Auth] Resuming from local storage`);
-                ctx.setStatus(WorkerStatus.RESUMING);
+                ctx.setStatus(AppStatus.RESUMING);
 
                 try {
                     authStore.setUserID(persistedSession.UserID);
@@ -225,7 +225,7 @@ export const createAuthService = ({
                         return await authService.login(session);
                     }
                 } catch (e) {
-                    ctx.setStatus(WorkerStatus.RESUMING_FAILED);
+                    ctx.setStatus(AppStatus.RESUMING_FAILED);
                     const description = e instanceof Error ? getApiErrorMessage(e) ?? e?.message : '';
 
                     store.dispatch(
@@ -239,7 +239,7 @@ export const createAuthService = ({
                 }
             }
 
-            ctx.setStatus(WorkerStatus.UNAUTHORIZED);
+            ctx.setStatus(AppStatus.UNAUTHORIZED);
             return false;
         }),
 
@@ -318,7 +318,7 @@ export const createAuthService = ({
             authStore.setLockLastExtendTime(undefined);
 
             api.unsubscribe();
-            ctx.setStatus(WorkerStatus.LOCKED);
+            ctx.setStatus(AppStatus.LOCKED);
 
             if (shouldLockState) {
                 logger.info(`[Worker::Auth] Locking state`);
@@ -333,7 +333,7 @@ export const createAuthService = ({
         unlock: withContext(async (ctx, sessionLockToken) => {
             logger.info(`[Worker::Auth] Unlocking context`);
 
-            ctx.setStatus(WorkerStatus.RESUMING);
+            ctx.setStatus(AppStatus.RESUMING);
             void api.reset(); /* clear api::state::sessionLocked */
 
             authStore.setLockToken(sessionLockToken);

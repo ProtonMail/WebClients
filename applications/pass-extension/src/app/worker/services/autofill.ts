@@ -5,9 +5,9 @@ import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup-icon';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
 
 import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/hooks/usePasswordGenerator';
+import { clientReady } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
 import type { SelectAutofillCandidatesOptions } from '@proton/pass/lib/search/types';
-import { workerReady } from '@proton/pass/lib/worker';
 import { autofillIntent, itemUsed } from '@proton/pass/store/actions';
 import {
     selectAutofillCandidates,
@@ -53,7 +53,7 @@ export const createAutoFillService = () => {
     };
 
     const updateTabsBadgeCount = withContext(({ status }) => {
-        if (!workerReady(status)) return;
+        if (!clientReady(status)) return;
 
         browser.tabs
             .query({ active: true })

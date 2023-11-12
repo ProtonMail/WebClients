@@ -23,7 +23,7 @@ import {
     selectTrialDaysRemaining,
     selectUser,
 } from '@proton/pass/store/selectors';
-import { type Unpack, WorkerMessageType, type WorkerMessageWithSender, WorkerStatus } from '@proton/pass/types';
+import { AppStatus, type Unpack, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -156,7 +156,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     return (
         <div className="flex flex-column flex-align-items-center flex-justify-center my-auto">
             <Icon name="lock-filled" size={42} className="mb-4" />
-            {context.state.status === WorkerStatus.LOCKED && (
+            {context.state.status === AppStatus.LOCKED && (
                 <>
                     <span className="block color-norm">{c('Info').t`Your ${PASS_APP_NAME} session is locked`}</span>
                     <span className="block text-sm color-weak">{c('Info')

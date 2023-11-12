@@ -1,5 +1,5 @@
-import type { AuthStore } from '@proton/pass/lib/auth/authentication';
-import type { MaybeNull, WorkerState } from '@proton/pass/types';
+import type { AuthStore } from '@proton/pass/lib/auth/store';
+import type { AppState, MaybeNull } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import type { EncryptedExtensionCache } from '@proton/pass/types/worker/cache';
 
@@ -18,7 +18,7 @@ export interface WorkerRootSagaOptions {
     getEventInterval: () => number;
     getLocalSettings: () => Promise<ProxiedSettings>;
     getTelemetry: () => MaybeNull<Telemetry>;
-    getWorkerState: () => WorkerState;
+    getWorkerState: () => AppState;
     onBoot?: (result: { ok: true } | { ok: false; clearCache: boolean }) => void;
     onFeatureFlagsUpdate?: (features: FeatureFlagState) => void;
     onItemsChange?: () => void;

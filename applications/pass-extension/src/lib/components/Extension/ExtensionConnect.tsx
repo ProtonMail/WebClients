@@ -4,27 +4,27 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useWorkerStateEvents } from 'proton-pass-extension/lib/hooks/useWorkerStateEvents';
 
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
+import { clientReady } from '@proton/pass/lib/client';
 import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message';
-import { workerReady } from '@proton/pass/lib/worker';
 import { sessionLockIntent, signoutIntent, syncIntent } from '@proton/pass/store/actions';
 import { wakeupRequest } from '@proton/pass/store/actions/requests';
 import { selectRequestInFlight } from '@proton/pass/store/selectors';
-import type { ExtensionEndpoint, MaybeNull, WorkerMessageWithSender, WorkerState } from '@proton/pass/types';
-import { WorkerStatus } from '@proton/pass/types';
+import type { AppState, ExtensionEndpoint, MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
+import { AppStatus } from '@proton/pass/types';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
 
 import { ExtensionContext, type ExtensionContextType } from '../../context/extension-context';
 
-export const INITIAL_WORKER_STATE: WorkerState = {
+export const INITIAL_WORKER_STATE: AppState = {
     loggedIn: false,
-    status: WorkerStatus.IDLE,
+    status: AppStatus.IDLE,
     UID: undefined,
 };
 
 export interface ExtensionConnectContextValue {
     context: MaybeNull<ExtensionContextType>;
-    state: WorkerState;
+    state: AppState;
     ready: boolean;
     logout: (options: { soft: boolean }) => void;
     lock: () => void;
@@ -57,9 +57,9 @@ export const ExtensionConnect = <T extends ExtensionEndpoint>({
     const { tabId } = ExtensionContext.get();
     const activityProbe = useActivityProbe(messageFactory);
 
-    const [state, setState] = useState<WorkerState>(INITIAL_WORKER_STATE);
+    const [state, setState] = useState<AppState>(INITIAL_WORKER_STATE);
     const wakeupLoading = useSelector(selectRequestInFlight(wakeupRequest({ endpoint, tabId })));
-    const ready = !wakeupLoading && workerReady(state.status);
+    const ready = !wakeupLoading && clientReady(state.status);
 
     const logout = useCallback(({ soft }: { soft: boolean }) => {
         setState(INITIAL_WORKER_STATE);
@@ -67,7 +67,7 @@ export const ExtensionConnect = <T extends ExtensionEndpoint>({
     }, []);
 
     const lock = useCallback(() => {
-        setState({ ...INITIAL_WORKER_STATE, status: WorkerStatus.LOCKED });
+        setState({ ...INITIAL_WORKER_STATE, status: AppStatus.LOCKED });
         dispatch(sessionLockIntent());
     }, []);
 
