@@ -113,14 +113,6 @@
 			}
 		}
 
-		&-flex-column-no-stretch {
-			flex-direction: column;
-
-			& > * {
-				align-self: center;
-			}
-		}
-
 		&-flex-item-fluid {
 			flex: 1 1 0px;
 		}
@@ -206,14 +198,6 @@
 			& > * {
 				inline-size: 100%;
 				flex-basis: auto;
-			}
-		}
-
-		&-flex-column-no-stretch {
-			flex-direction: column;
-
-			& > * {
-				align-self: center;
 			}
 		}
 
