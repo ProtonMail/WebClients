@@ -110,21 +110,23 @@ const AccountSettingsRouter = ({
                     </PrivateMainSettingsArea>
                 </Route>
             )}
-            <Route path={getSectionPath(path, password)}>
-                <PrivateMainSettingsArea config={password}>
-                    <>
-                        <UsernameSection app={app} />
-                        <PasswordsSection />
-                    </>
-                    <TwoFactorSection />
-                    <FamilyPlanSection />
-                    {/* Those 3 sections are here for members of family plan that don't have access to the dashboard any more */}
-                    <PaymentMethodsSection />
-                    <CreditsSection />
-                    <InvoicesSection />
-                    <DeleteSection />
-                </PrivateMainSettingsArea>
-            </Route>
+            {getIsSectionAvailable(password) && (
+                <Route path={getSectionPath(path, password)}>
+                    <PrivateMainSettingsArea config={password}>
+                        <>
+                            <UsernameSection app={app} />
+                            <PasswordsSection />
+                        </>
+                        <TwoFactorSection />
+                        <FamilyPlanSection />
+                        {/* Those 3 sections are here for members of family plan that don't have access to the dashboard any more */}
+                        <PaymentMethodsSection />
+                        <CreditsSection />
+                        <InvoicesSection />
+                        <DeleteSection />
+                    </PrivateMainSettingsArea>
+                </Route>
+            )}
             <Route path={getSectionPath(path, language)}>
                 <PrivateMainSettingsArea config={language}>
                     <LanguageAndTimeSection />
@@ -154,11 +156,13 @@ const AccountSettingsRouter = ({
                     </ReferralInvitesContextProvider>
                 </Route>
             )}
-            <Route path={getSectionPath(path, easySwitch)}>
-                <SettingsMaintenanceLayoutWrapper config={easySwitch} maintenanceFlag="MaintenanceImporter">
-                    <EasySwitchSettingsArea config={easySwitch} />
-                </SettingsMaintenanceLayoutWrapper>
-            </Route>
+            {getIsSectionAvailable(easySwitch) && (
+                <Route path={getSectionPath(path, easySwitch)}>
+                    <SettingsMaintenanceLayoutWrapper config={easySwitch} maintenanceFlag="MaintenanceImporter">
+                        <EasySwitchSettingsArea config={easySwitch} />
+                    </SettingsMaintenanceLayoutWrapper>
+                </Route>
+            )}
             {redirect}
         </Switch>
     );
