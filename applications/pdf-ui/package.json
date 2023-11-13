@@ -10,8 +10,9 @@
         "start": "vite"
     },
     "dependencies": {
-        "@pdfme/common": "^2.2.1",
-        "@pdfme/ui": "^2.2.1",
+        "@pdfme/common": "^3.0.1",
+        "@pdfme/schemas": "^3.0.1",
+        "@pdfme/ui": "^3.0.1",
         "eslint": "^8.53.0",
         "toastify-js": "^1.12.0"
     },
