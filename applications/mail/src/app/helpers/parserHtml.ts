@@ -8,7 +8,7 @@ const EMPTY_LINE_KEEPER = '%%%PROTON-EMPTY-LINE%%%';
  * Transform HTML to text
  * Append lines before the content if it starts with a Signature
  */
-export const toText = (html: string, convertImages = false) => {
+export const toText = (html: string) => {
     const turndownService = new TurndownService({
         bulletListMarker: '-',
         strongDelimiter: '' as any,
@@ -32,16 +32,9 @@ export const toText = (html: string, convertImages = false) => {
 
     const replaceImg = {
         filter: 'img',
-        replacement(content: string, element: HTMLElement) {
-            if (!convertImages) {
-                return '';
-            }
-
-            const image = element as HTMLImageElement;
-
-            // needed for the automatic conversion done by pgp/inline, otherwise the conversion happens and people forget that they have selected this for some contacts
-            const attribute = image.alt || image.src;
-            return attribute ? `[${attribute}]` : '';
+        replacement() {
+            // Remove all images from the text
+            return '';
         },
     } as TurndownService.Rule;
 
