@@ -19,17 +19,7 @@ function getSubscritionManagerName(externalCode: External.Android | External.iOS
     return '';
 }
 
-const InAppPurchaseModal = ({ subscription, ...rest }: Props) => {
-    if (subscription.External !== External.iOS && subscription.External !== External.Android) {
-        rest.onClose();
-        return null;
-    }
-
-    const subscriptionManager = getSubscritionManagerName(subscription.External);
-
-    // translator: subscriptionManager currently can be "Google Play" or "Apple App Store"
-    const title = c('Subscription change warning').t`Manage your subscription on ${subscriptionManager}`;
-
+export const InAppText = ({ subscription }: { subscription: Subscription }) => {
     const subscriptions = <span className="text-bold">{c('Subscription change warning').t`Subscriptions`}</span>;
 
     let firstLine: string;
@@ -48,11 +38,29 @@ const InAppPurchaseModal = ({ subscription, ...rest }: Props) => {
     }
 
     return (
+        <>
+            <p data-testid="InAppPurchaseModal/text">{firstLine}</p>
+            <p className="mt-4">{secondLine}</p>
+        </>
+    );
+};
+
+const InAppPurchaseModal = ({ subscription, ...rest }: Props) => {
+    if (subscription.External !== External.iOS && subscription.External !== External.Android) {
+        rest.onClose();
+        return null;
+    }
+
+    const subscriptionManager = getSubscritionManagerName(subscription.External);
+
+    // translator: subscriptionManager currently can be "Google Play" or "Apple App Store"
+    const title = c('Subscription change warning').t`Manage your subscription on ${subscriptionManager}`;
+
+    return (
         <ModalTwo size="large" {...rest}>
             <ModalTwoHeader title={title}></ModalTwoHeader>
             <ModalTwoContent>
-                <p data-testid="InAppPurchaseModal/text">{firstLine}</p>
-                <p className="mt-4">{secondLine}</p>
+                <InAppText subscription={subscription} />
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button
