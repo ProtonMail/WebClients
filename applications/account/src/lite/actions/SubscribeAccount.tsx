@@ -19,6 +19,7 @@ import {
     useSubscription,
     useUser,
 } from '@proton/components';
+import { InAppText } from '@proton/components/containers/payments/subscription/InAppPurchaseModal';
 import SubscriptionContainer from '@proton/components/containers/payments/subscription/SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -38,7 +39,7 @@ import {
     VPN_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
-import { getPlan, getUpgradedPlan, getValidCycle } from '@proton/shared/lib/helpers/subscription';
+import { getPlan, getUpgradedPlan, getValidCycle, isManagedExternally } from '@proton/shared/lib/helpers/subscription';
 import { Currency } from '@proton/shared/lib/interfaces';
 import { canPay } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
@@ -60,6 +61,7 @@ interface Props {
     searchParams: URLSearchParams;
     app: ProductParam;
 }
+
 const plusPlans = [PLANS.VPN, PLANS.MAIL, PLANS.DRIVE, PLANS.PASS_PLUS, PLANS.VPN_PASS_BUNDLE];
 
 const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
@@ -212,6 +214,16 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
 
     if (takingSameOffer || isBundleDowngrade || isFamilyDowngrade || isVisionaryDowngrade) {
         return <PromotionAlreadyApplied />;
+    }
+
+    if (isManagedExternally(subscription)) {
+        return (
+            <div className="h-full flex flex-column flex-justify-center flex-align-items-center bg-norm text-center">
+                <div className="max-w-custom p-11" style={{ '--max-w-custom': '33.3rem' }}>
+                    <InAppText subscription={subscription} />
+                </div>
+            </div>
+        );
     }
 
     if (error.title && error.message) {
