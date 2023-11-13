@@ -19,7 +19,7 @@ import { Address } from '@proton/shared/lib/interfaces';
 import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { getSignedKeyListWithDeferredPublish } from '@proton/shared/lib/keys/signedKeyList';
 
-type UseAddressFlags = (address: Address) => {
+type UseAddressFlags = (address?: Address) => {
     allowDisablingEncryption: boolean;
     encryptionDisabled: boolean;
     expectSignatureDisabled: boolean;
@@ -36,7 +36,7 @@ const useAddressFlags: UseAddressFlags = (address) => {
     const mailDisableE2EEFeature = useFeature<boolean>(FeatureCode.MailDisableE2EE);
     const isDisableEncryptionEnabled = mailDisableE2EEFeature.feature?.Value === true;
 
-    if (address.Flags === undefined) {
+    if (!address || address.Flags === undefined) {
         return null;
     }
 
