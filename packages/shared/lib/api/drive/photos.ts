@@ -15,3 +15,7 @@ export const queryPhotos = (
         ...params,
     },
 });
+export const queryDeletePhotosShare = (volumeId: string, shareId: string) => ({
+    method: 'delete',
+    url: `drive/volumes/${volumeId}/photos/share/${shareId}`,
+});

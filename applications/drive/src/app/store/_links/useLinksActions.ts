@@ -79,7 +79,20 @@ export function useLinksActions({
         }
     };
 
-    const moveLink = async (abortSignal: AbortSignal, shareId: string, newParentLinkId: string, linkId: string) => {
+    const moveLink = async (
+        abortSignal: AbortSignal,
+        {
+            shareId,
+            newParentLinkId,
+            linkId,
+            newShareId = shareId,
+        }: {
+            shareId: string;
+            newParentLinkId: string;
+            linkId: string;
+            newShareId?: string;
+        }
+    ) => {
         const [
             link,
             { passphrase, passphraseSessionKey },
@@ -89,42 +102,59 @@ export function useLinksActions({
         ] = await Promise.all([
             getLink(abortSignal, shareId, linkId),
             getLinkPassphraseAndSessionKey(abortSignal, shareId, linkId),
-            getLinkPrivateKey(abortSignal, shareId, newParentLinkId),
-            getLinkHashKey(abortSignal, shareId, newParentLinkId),
-            getShareCreatorKeys(abortSignal, shareId),
+            getLinkPrivateKey(abortSignal, newShareId, newParentLinkId),
+            getLinkHashKey(abortSignal, newShareId, newParentLinkId),
+            getShareCreatorKeys(abortSignal, newShareId),
         ]);
 
         if (link.corruptedLink) {
             throw new Error('Cannot move corrupted file');
         }
 
-        const [currentParentPrivateKey, Hash, { NodePassphrase, NodePassphraseSignature }] = await Promise.all([
-            getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
-            generateLookupHash(link.name, newParentHashKey).catch((e) =>
-                Promise.reject(
-                    new Error('Failed to generate lookup hash during move', {
-                        cause: {
-                            e,
-                            shareId,
-                            newParentLinkId,
-                            linkId,
-                        },
-                    })
-                )
-            ),
-            encryptPassphrase(newParentPrivateKey, addressKey, passphrase, passphraseSessionKey).catch((e) =>
-                Promise.reject(
-                    new Error('Failed to encrypt link passphrase during move', {
-                        cause: {
-                            e,
-                            shareId,
-                            newParentLinkId,
-                            linkId,
-                        },
-                    })
-                )
-            ),
-        ]);
+        const [currentParentPrivateKey, Hash, ContentHash, { NodePassphrase, NodePassphraseSignature }] =
+            await Promise.all([
+                getLinkPrivateKey(abortSignal, shareId, link.parentLinkId),
+                generateLookupHash(link.name, newParentHashKey).catch((e) =>
+                    Promise.reject(
+                        new Error('Failed to generate lookup hash during move', {
+                            cause: {
+                                e,
+                                shareId,
+                                newParentLinkId,
+                                newShareId: newShareId === shareId ? undefined : newShareId,
+                                linkId,
+                            },
+                        })
+                    )
+                ),
+                link.digests?.sha1 &&
+                    generateLookupHash(link.digests.sha1, newParentHashKey).catch((e) =>
+                        Promise.reject(
+                            new Error('Failed to generate content hash during move', {
+                                cause: {
+                                    e,
+                                    shareId,
+                                    newParentLinkId,
+                                    newShareId: newShareId === shareId ? undefined : newShareId,
+                                    linkId,
+                                },
+                            })
+                        )
+                    ),
+                encryptPassphrase(newParentPrivateKey, addressKey, passphrase, passphraseSessionKey).catch((e) =>
+                    Promise.reject(
+                        new Error('Failed to encrypt link passphrase during move', {
+                            cause: {
+                                e,
+                                shareId,
+                                newParentLinkId,
+                                newShareId: newShareId === shareId ? undefined : newShareId,
+                                linkId,
+                            },
+                        })
+                    )
+                ),
+            ]);
 
         const sessionKeyName = await getDecryptedSessionKey({
             data: link.encryptedName,
@@ -136,6 +166,7 @@ export function useLinksActions({
                         e,
                         shareId,
                         newParentLinkId,
+                        newShareId: newShareId === shareId ? undefined : newShareId,
                         linkId,
                     },
                 })
@@ -155,6 +186,7 @@ export function useLinksActions({
                         e,
                         shareId,
                         newParentLinkId,
+                        newShareId: newShareId === shareId ? undefined : newShareId,
                         linkId,
                     },
                 })
@@ -169,6 +201,8 @@ export function useLinksActions({
                 NodePassphrase,
                 NodePassphraseSignature,
                 SignatureAddress: address.Email,
+                NewShareID: newShareId === shareId ? undefined : newShareId,
+                ContentHash,
             })
         ).catch((err) => {
             if (INVALID_REQUEST_ERROR_CODES.includes(err?.data?.Code)) {
@@ -181,20 +215,39 @@ export function useLinksActions({
         return originalParentId;
     };
 
-    const moveLinks = async (abortSignal: AbortSignal, shareId: string, linkIds: string[], newParentLinkId: string) => {
+    const moveLinks = async (
+        abortSignal: AbortSignal,
+        {
+            shareId,
+            linkIds,
+            newParentLinkId,
+            newShareId,
+            onMoved,
+            onError,
+        }: {
+            shareId: string;
+            linkIds: string[];
+            newParentLinkId: string;
+            newShareId?: string;
+            onMoved?: (linkId: string) => void;
+            onError?: (linkId: string) => void;
+        }
+    ) => {
         return withLinkLock(shareId, linkIds, async () => {
             const originalParentIds: { [linkId: string]: string } = {};
             const successes: string[] = [];
             const failures: { [linkId: string]: any } = {};
 
             const moveQueue = linkIds.map((linkId) => async () => {
-                return moveLink(abortSignal, shareId, newParentLinkId, linkId)
+                return moveLink(abortSignal, { shareId, newParentLinkId, linkId, newShareId })
                     .then((originalParentId) => {
                         successes.push(linkId);
                         originalParentIds[linkId] = originalParentId;
+                        onMoved?.(linkId);
                     })
                     .catch((error) => {
                         failures[linkId] = error;
+                        onError?.(linkId);
                     });
             });
 
