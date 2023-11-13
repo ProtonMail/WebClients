@@ -134,5 +134,6 @@ export default function useShare() {
         getSharePrivateKey,
         getShareSessionKey,
         getShareCreatorKeys,
+        removeShares: sharesState.removeShares,
     };
 }
