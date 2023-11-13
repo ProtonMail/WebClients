@@ -57,7 +57,7 @@ const SharedLinksToolbar = ({ shareId, items }: Props) => {
         <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container">
             <div className="gap-2 flex flex-nowrap flex-item-noshrink">{renderSelectionActions()}</div>
             <span className="ml-auto flex flex-nowrap flex-item-noshrink">
-                <Vr className="no-mobile no-tablet mx-2" />
+                <Vr className="hidden lg:flex mx-2" />
                 <LayoutButton />
             </span>
         </Toolbar>
