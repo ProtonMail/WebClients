@@ -126,9 +126,9 @@ const Sidebar = ({
                 />
 
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
-                <div className="logo-container flex flex-item-noshrink flex-justify-space-between flex-align-items-center flex-nowrap no-mobile">
+                <div className="logo-container hidden md:flex flex-item-noshrink flex-justify-space-between flex-align-items-center flex-nowrap">
                     {logo}
-                    <div className="no-mobile">{appsDropdown}</div>
+                    <div className="hidden md:block">{appsDropdown}</div>
                 </div>
 
                 {isNarrow && (
@@ -137,7 +137,7 @@ const Sidebar = ({
                     </div>
                 )}
 
-                {primary ? <div className="px-3 pb-2 flex-item-noshrink no-mobile">{primary}</div> : null}
+                {primary ? <div className="px-3 pb-2 flex-item-noshrink hidden md:block">{primary}</div> : null}
                 <div className="mt-1 md:mt-0" aria-hidden="true" />
                 <div
                     className={clsx(
