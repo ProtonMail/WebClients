@@ -9,7 +9,7 @@ interface Props {
 }
 const LegacyInputField = ({ label, input, className }: Props) => {
     return (
-        <div className={clsx(['flex on-mobile-flex-column signup-label-field-container mb-4', className])}>
+        <div className={clsx(['flex flex-column md:flex-row signup-label-field-container mb-4', className])}>
             {label}
             <div className="flex-item-fluid">{input}</div>
         </div>

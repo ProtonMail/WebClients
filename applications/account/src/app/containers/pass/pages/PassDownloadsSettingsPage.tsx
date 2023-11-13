@@ -45,7 +45,7 @@ const PassDownloadsSettingsPage = () => {
                 {c('Info')
                     .t`Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${PASS_APP_NAME} apps and extensions.`}
             </SettingsParagraph>
-            <div className="flex gap-4 on-mobile-flex-column">
+            <div className="flex gap-4 flex-column md:flex-row">
                 {Object.values(clients).map((client) => {
                     return (
                         <DownloadClientCard

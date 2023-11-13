@@ -108,7 +108,7 @@ const InviteSendEmail = () => {
     return (
         <div>
             <h2 className="h3 text-bold" id="id_desc_invite_email">{c('Label').t`Invite via email`}</h2>
-            <div className="flex gap-2 flex-nowrap flex-align-items-end on-mobile-flex-column rounded">
+            <div className="flex gap-2 flex-nowrap flex-align-items-end flex-column md:flex-row rounded">
                 <div className="flex-item-fluid-auto">
                     <div
                         className="addresses-wrapper field h-auto flex gap-2 px-2"

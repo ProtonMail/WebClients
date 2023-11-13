@@ -58,7 +58,7 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
         <div className="flex-item-fluid">
             <label htmlFor="event-ends-radio">{c('Label').t`Ends`}</label>
 
-            <div className="flex flex-nowrap flex-item-fluid on-tiny-mobile-flex-column">
+            <div className="flex flex-nowrap flex-item-fluid flex-column sm:flex-row">
                 <div className="flex-item-fluid mt-2">
                     <SelectTwo
                         value={frequencyModel.ends.type}

@@ -258,7 +258,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
         .jt`Protect your email from being leaked to mailing lists or spammers with ${maskMyEmailButton}.`;
 
     return (
-        <div className="bg-norm rounded border pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap on-mobile-flex-column">
+        <div className="bg-norm rounded border pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap flex-column md:flex-row">
             <div className="flex-item-fluid flex flex-nowrap mb-2 md:mb-0">
                 <Icon
                     name="envelope"

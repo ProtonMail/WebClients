@@ -21,7 +21,7 @@ const EmptyTrashNotification = ({ disabled, className }: Props) => {
             <div
                 className={clsx(
                     className,
-                    'empty-trash-notification section--header flex flex-align-items-center flex-item-noshrink on-mobile-flex-column px-4 py-2'
+                    'empty-trash-notification section--header flex flex-align-items-center flex-item-noshrink flex-column md:flex-row px-4 py-2'
                 )}
             >
                 <p className="m-0 flex-item-fluid text-sm py-2">

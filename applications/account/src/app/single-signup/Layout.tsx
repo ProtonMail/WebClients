@@ -116,8 +116,8 @@ const Layout = ({
                             >
                                 <div className="mb-6"></div>
                                 {footer}
-                                <div className="w-full flex flex-justify-space-between on-mobile-flex-column">
-                                    <div className="flex gap-1 flex-column on-mobile-flex-column">
+                                <div className="w-full flex flex-justify-space-between flex-column md:flex-row">
+                                    <div className="flex gap-1 flex-column flex-column md:flex-row">
                                         <LayoutLogosV2 size={20} className="on-mobile-flex-justify-center" />
                                         <span
                                             className={clsx(

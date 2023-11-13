@@ -53,7 +53,7 @@ const ThemesSection = () => {
             </SettingsLayout>
 
             {settings.Mode === ThemeModeSetting.Auto ? (
-                <SettingsSectionWide className="flex mt-6 flex-nowrap gap-4 on-mobile-flex-column">
+                <SettingsSectionWide className="flex mt-6 flex-nowrap gap-4 flex-column md:flex-row">
                     <ThemeSyncModeCard
                         mode="light"
                         list={themes}

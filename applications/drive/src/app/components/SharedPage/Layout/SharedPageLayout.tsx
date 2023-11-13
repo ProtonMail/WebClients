@@ -55,7 +55,7 @@ export default function SharedPageLayout({ FooterComponent, children, className 
                 </Header>
                 <main
                     className={clsx([
-                        'shared-page-layout-container flex flex-no-min-children flex-nowrap on-mobile-flex-column',
+                        'shared-page-layout-container flex flex-no-min-children flex-nowrap flex-column md:flex-row',
                         'flex-item-fluid',
                     ])}
                 >
