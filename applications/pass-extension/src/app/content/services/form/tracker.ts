@@ -67,6 +67,14 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     };
 
     const onSubmitHandler = withContext(async ({ service: { iframe } }) => {
+        /* Exit early when there is nothing to stage (eg. MFA and NOOP forms).
+         * This check is done here instead of not binding the listener in the
+         * first place because the `formType` can change for a particular form
+         * (eg. rerendering in SPAs). */
+        if ([FormType.MFA, FormType.NOOP].includes(form.formType)) {
+            return;
+        }
+
         iframe.dropdown?.close();
 
         const { username, password } = getFormData();
@@ -166,7 +174,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
         form.getFields().forEach((field) => field.detach());
     };
 
-    if (form.formType !== FormType.NOOP) listeners.addListener(form.element, 'submit', onSubmitHandler);
+    listeners.addListener(form.element, 'submit', onSubmitHandler);
 
     return { detach, reconciliate };
 };
