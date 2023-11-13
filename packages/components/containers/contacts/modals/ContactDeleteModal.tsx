@@ -52,7 +52,7 @@ const ContactDeleteModal = ({ contactIDs = [], deleteAll, onDelete, ...rest }: P
 
     const count = contactIDs.length;
     const contact = contacts.find((contact: Contact) => contact.ID === contactIDs[0]);
-    const Name = contact?.Name || contact?.ContactEmails[0]?.Email || '';
+    const Name = contact?.Name || contact?.ContactEmails?.[0]?.Email || '';
     const title =
         count === 1
             ? c('Title').t`Delete ${Name}`
