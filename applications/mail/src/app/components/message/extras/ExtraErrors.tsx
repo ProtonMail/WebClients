@@ -59,7 +59,7 @@ const ExtraErrors = ({ message }: Props) => {
                 return (
                     <div
                         key={errorType}
-                        className="bg-norm border rounded pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap on-mobile-flex-column"
+                        className="bg-norm border rounded pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap flex-column md:flex-row"
                         data-testid="errors-banner"
                     >
                         <div className="flex-item-fluid flex flex-nowrap mb-2 md:mb-0">

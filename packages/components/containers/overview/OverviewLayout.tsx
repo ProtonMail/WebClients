@@ -39,7 +39,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
             <div ref={mainAreaRef} className="relative flex-nowrap flex-item-fluid bg-weak lg:h-full scroll-if-needed">
                 <SettingsPageTitle>{title}</SettingsPageTitle>
                 <div className="container-section-sticky pt-0">
-                    <div className="flex on-mobile-flex-column pb-8">
+                    <div className="flex flex-column md:flex-row pb-8">
                         <div className="flex-item-fluid">
                             {children ? (
                                 <section className="overview-grid-item overview-grid-item--full border bg-norm shadow-norm p-8 mb-6">

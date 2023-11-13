@@ -19,7 +19,7 @@ const RewardsProgress = ({ rewards, rewardsLimit }: Props) => {
     const total = humanPriceWithCurrency(rewardsLimit * price, user.Currency);
 
     return (
-        <div className="flex flex-justify-space-between flex-align-items-center gap-4 on-tablet-flex-column">
+        <div className="flex flex-justify-space-between flex-align-items-center gap-4 flex-column lg:flex-row">
             <div className="flex-item-fluid">
                 <b>{c('Info').t`Credits earned`}</b>
             </div>

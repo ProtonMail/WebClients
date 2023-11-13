@@ -35,15 +35,6 @@
 	}
 
 	.on-tablet {
-		&-flex-column {
-			flex-direction: column;
-
-			& > * {
-				inline-size: 100%;
-				flex-basis: auto;
-			}
-		}
-
 		&-flex-shrink {
 			flex-shrink: 1;
 		}
@@ -104,15 +95,6 @@
 			display: inline-flex;
 		}
 
-		&-flex-column {
-			flex-direction: column;
-
-			& > * {
-				inline-size: 100%;
-				flex-basis: auto;
-			}
-		}
-
 		&-flex-item-fluid {
 			flex: 1 1 0px;
 		}
@@ -153,10 +135,6 @@
 			flex-wrap: wrap;
 		}
 
-		&-order-1 {
-			order: 1;
-		}
-
 		&-border-none {
 			border: 0;
 		}
@@ -190,15 +168,6 @@
 	.on-tiny-mobile {
 		&-flex-align-self-start {
 			align-self: flex-start;
-		}
-
-		&-flex-column {
-			flex-direction: column;
-
-			& > * {
-				inline-size: 100%;
-				flex-basis: auto;
-			}
 		}
 
 		&-flex-item-grow-1-5 {
