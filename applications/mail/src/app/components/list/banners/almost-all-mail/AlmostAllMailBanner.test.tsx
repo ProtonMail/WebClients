@@ -35,7 +35,7 @@ describe('AlmostAllMailBanner', () => {
 
             expect(screen.getByText("Can't find what you're looking for?")).toBeInTheDocument();
 
-            const button = screen.getByRole('button', { name: /Include Spam\/Trash in your search results/ });
+            const button = screen.getByRole('button', { name: /Include Spam\/Trash/ });
             expect(button).toBeInTheDocument();
         });
 
@@ -43,7 +43,7 @@ describe('AlmostAllMailBanner', () => {
             it('should push new route to history', async () => {
                 render(<AlmostAllMailBanner />);
 
-                const button = screen.getByRole('button', { name: /Include Spam\/Trash in your search results/ });
+                const button = screen.getByRole('button', { name: /Include Spam\/Trash/ });
                 expect(button).toBeInTheDocument();
 
                 await userEvent.click(button);

@@ -42,7 +42,7 @@ const ListBanners = ({
     labelID,
     columnLayout,
     userSettings,
-    esState: { isESLoading, isSearch, showESSlowToolbar: canDisplayESSlowToolbar },
+    esState: { isESLoading, showESSlowToolbar: canDisplayESSlowToolbar },
 }: Props) => {
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
@@ -78,7 +78,7 @@ const ListBanners = ({
                     className={clsx([columnLayout ? 'mt-2' : 'my-3', isCompactView && 'mb-2'])}
                 />
             ),
-            condition: () => !isESLoading && isSearch && labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+            condition: () => !isESLoading && labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
         },
         {
             id: 'mail-upsell',
