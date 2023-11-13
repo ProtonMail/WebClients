@@ -17,7 +17,7 @@ const Header = ({ center, className, right, title, subTitle, onBack, headingLeve
     return (
         <div className={clsx('sign-layout-header mb-6', center && 'text-center', className)} {...rest}>
             {onBack ? (
-                <span className="absolute sign-layout-backbutton no-mobile">
+                <span className="absolute sign-layout-backbutton hidden md:flex">
                     <BackButton onClick={onBack} />
                 </span>
             ) : null}

@@ -120,7 +120,7 @@ const PlanCardView = ({
                 highlightPrice && 'pricing-box-content-cycle--highlighted',
                 hasMaxWidth && 'max-w-custom'
             )}
-            style={ hasMaxWidth ? { '--max-w-custom': '24em' } : undefined }
+            style={hasMaxWidth ? { '--max-w-custom': '24em' } : undefined}
         >
             {above}
             <button
@@ -424,7 +424,7 @@ export const UpsellCardSelector = ({
                     return (
                         <div>
                             <div
-                                className="mx-6 mt-14 no-tablet no-mobile flex flex-column gap-4 w-custom"
+                                className="mx-6 mt-14 hidden lg:flex flex-column gap-4 w-custom"
                                 style={{ '--w-custom': '5rem' }}
                             >
                                 <ArrowImage />
