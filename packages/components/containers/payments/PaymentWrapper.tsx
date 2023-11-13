@@ -11,6 +11,7 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
     triggersDisabled?: boolean;
     hideFirstLabel?: boolean;
     hideSavedMethodsDetails?: boolean;
+    disabled?: boolean;
 };
 
 const PaymentWrapper = ({
@@ -29,6 +30,7 @@ const PaymentWrapper = ({
     triggersDisabled,
     hideFirstLabel,
     hideSavedMethodsDetails,
+    disabled,
 }: Props) => {
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID;
@@ -59,6 +61,7 @@ const PaymentWrapper = ({
             hideFirstLabel={hideFirstLabel}
             cardFieldStatus={card.fieldsStatus}
             hideSavedMethodsDetails={hideSavedMethodsDetails}
+            disabled={disabled}
         />
     );
 };

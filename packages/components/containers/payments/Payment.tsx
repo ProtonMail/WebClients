@@ -166,7 +166,9 @@ export const PaymentsNoApi = ({
     }
 
     const isSignupPass = type === 'signup-pass';
-    const isSignup = type === 'signup' || type === 'signup-pass';
+    const isSignupVpn = type === 'signup-vpn';
+    const isSingleSignup = isSignupPass || isSignupVpn;
+    const isSignup = type === 'signup' || isSignupPass || isSignupVpn;
 
     return (
         <>
@@ -175,7 +177,7 @@ export const PaymentsNoApi = ({
                 style={noMaxWidth === false ? { '--md-max-w-custom': '37em' } : undefined}
             >
                 <div>
-                    {!isSignupPass && !hideFirstLabel && (
+                    {!isSingleSignup && !hideFirstLabel && (
                         <h2 className="text-rg text-bold mb-1" data-testid="payment-label">
                             {c('Label').t`Payment method`}
                         </h2>
@@ -185,8 +187,8 @@ export const PaymentsNoApi = ({
                         method={method}
                         onChange={(value) => onMethod(value)}
                         lastUsedMethod={lastUsedMethod}
-                        forceDropdown={isSignupPass}
-                        narrow={isSignupPass}
+                        forceDropdown={isSingleSignup}
+                        narrow={isSingleSignup}
                     />
                 </div>
                 <div className="mt-4">
@@ -219,7 +221,7 @@ export const PaymentsNoApi = ({
                             )}
                         </>
                     )}
-                    {method === PAYMENT_METHOD_TYPES.PAYPAL && !isSignupPass && (
+                    {method === PAYMENT_METHOD_TYPES.PAYPAL && !isSingleSignup && (
                         <PayPalView
                             paypal={paypal}
                             paypalCredit={paypalCredit}
@@ -232,7 +234,7 @@ export const PaymentsNoApi = ({
                             triggersDisabled={triggersDisabled}
                         />
                     )}
-                    {method === PAYMENT_METHOD_TYPES.PAYPAL && isSignupPass && <PayPalInfoMessage />}
+                    {method === PAYMENT_METHOD_TYPES.PAYPAL && isSingleSignup && <PayPalInfoMessage />}
                     {customPaymentMethod && (
                         <>
                             {!hideSavedMethodsDetails && (
