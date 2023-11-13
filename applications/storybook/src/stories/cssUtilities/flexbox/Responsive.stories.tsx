@@ -14,7 +14,7 @@ export default {
 
 export const ColumnMobile = () => {
     return (
-        <div className="flex gap-2 flex-justify-space-between on-mobile-flex-column on-mobile-flex-column-no-stretch rounded overflow-hidden border">
+        <div className="flex gap-2 flex-justify-space-between on-mobile-flex-column rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
             <span className="bg-primary p-4">span</span>
             <em className="bg-primary p-4">em</em>
