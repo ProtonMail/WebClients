@@ -37,7 +37,7 @@ const DrawerVisibilityButton = ({ spotlightSeenRef }: Props) => {
         <Tooltip title={tooltipText} originalPlacement="left">
             <span
                 className={clsx(
-                    'drawer-visibility-control no-mobile md:flex',
+                    'drawer-visibility-control hidden md:flex',
                     showDrawerSidebar
                         ? 'drawer-visibility-control--hide'
                         : 'drawer-visibility-control--show ui-standard'

@@ -59,7 +59,7 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
                     )}
                 </div>
                 <div>
-                    <div className="no-mobile">{stepper}</div>
+                    <div className="hidden md:block">{stepper}</div>
                 </div>
                 <div>
                     {hasDecoration && (
