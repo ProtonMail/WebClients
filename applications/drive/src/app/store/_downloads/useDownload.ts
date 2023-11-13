@@ -13,6 +13,7 @@ import { useDebouncedRequest } from '../_api';
 import { useDriveCrypto } from '../_crypto';
 import { DecryptedLink, SignatureIssues, useLink, useLinksListing } from '../_links';
 import { ThumbnailType } from '../_uploads/media';
+import { waitFor } from '../_utils';
 import initDownloadPure, { initDownloadStream } from './download/download';
 import initDownloadLinkFile from './download/downloadLinkFile';
 import downloadThumbnailPure from './download/downloadThumbnail';
@@ -39,6 +40,8 @@ export default function useDownload() {
 
     const getChildren = async (abortSignal: AbortSignal, shareId: string, linkId: string): Promise<DecryptedLink[]> => {
         await loadChildren(abortSignal, shareId, linkId, false, false);
+        // Wait for all links to be loaded before getting them from cache
+        await waitFor(() => !getCachedChildren(abortSignal, shareId, linkId).isDecrypting);
         const { links } = getCachedChildren(abortSignal, shareId, linkId);
         return links;
     };
