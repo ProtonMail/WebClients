@@ -1,3 +1,5 @@
+import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
+
 import { SimpleMap } from '../interfaces';
 import { Message } from '../interfaces/mail/Message';
 import { PackageDirect } from '../interfaces/mail/crypto';
@@ -225,10 +227,18 @@ export const undeleteMessages = (IDs: string[]) => ({
     data: { IDs },
 });
 
-export const labelMessages = ({ LabelID, IDs }: { LabelID: string; IDs: string[] }) => ({
+export const labelMessages = ({
+    LabelID,
+    IDs,
+    SpamAction,
+}: {
+    LabelID: string;
+    IDs: string[];
+    SpamAction?: SPAM_ACTION;
+}) => ({
     method: 'put',
     url: 'mail/v4/messages/label',
-    data: { LabelID, IDs },
+    data: { LabelID, IDs, SpamAction },
 });
 
 export const unlabelMessages = ({ LabelID, IDs }: { LabelID: string; IDs: string[] }) => ({
