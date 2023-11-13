@@ -66,7 +66,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
             {!isUploadingFolder && (
                 <div className="transfers-manager-list-item-size text-right text-ellipsis" title={`${percentageDone}%`}>
                     {(isProgress || isPaused) && progress > 0 && (
-                        <span className="no-tablet no-mobile">{shortHumanSize(progress)} / </span>
+                        <span className="hidden lg:inline">{shortHumanSize(progress)} / </span>
                     )}
                     {fileSize !== undefined
                         ? shortHumanSize(fileSize)
