@@ -27,11 +27,11 @@ const usePreLoadElements = ({ elements, labelID, loading }: Props) => {
     const numberOfPreloadedConversations = feature?.Value || 0;
     const firstElements = elements.slice(0, numberOfPreloadedConversations);
     const conversations = useSelector(allConversations);
-    const conversationsIDs = conversations.map((item) => item?.Conversation.ID);
 
     const isAllConversation = elements.every((element) => isConversation(element));
 
     useEffect(() => {
+        const conversationsIDs = conversations.map((item) => item?.Conversation.ID);
         const preload = async () => {
             try {
                 await Promise.all(
