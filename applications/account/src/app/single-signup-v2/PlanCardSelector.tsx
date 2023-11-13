@@ -253,7 +253,7 @@ export const PlanCardSelector = ({
     onSelectedClick?: () => void;
 }) => {
     return (
-        <div className="flex flex-justify-space-between gap-4 on-tablet-flex-column">
+        <div className="flex flex-justify-space-between gap-4 flex-column lg:flex-row">
             {planCards.map((planCard) => {
                 const isFreePlan = planCard.plan === PLANS.FREE;
                 const planIDs = isFreePlan ? {} : { [planCard.plan]: 1 };
@@ -376,7 +376,7 @@ export const UpsellCardSelector = ({
                         }
                     })()}
             </div>
-            <div className="flex flex-justify-space-between gap-4 on-tablet-flex-column">
+            <div className="flex flex-justify-space-between gap-4 flex-column lg:flex-row">
                 {(() => {
                     if (!hasCurrentPlan) {
                         return null;

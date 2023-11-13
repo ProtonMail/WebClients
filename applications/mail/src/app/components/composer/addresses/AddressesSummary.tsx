@@ -39,7 +39,7 @@ const AddressesSummary = ({
     const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(recipients)).join(', ');
 
     return (
-        <div className="flex flex-row flex-nowrap on-mobile-flex-column flex-align-items-center relative my-0">
+        <div className="flex flex-row flex-nowrap flex-column md:flex-row flex-align-items-center relative my-0">
             <Label
                 className={clsx([
                     'composer-meta-label composer-meta-label-to pr-2 text-semibold',

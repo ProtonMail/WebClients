@@ -76,9 +76,9 @@ const NotificationInput = ({
     return (
         <div
             className={clsx(
-                'flex flex-nowrap flex-item-fluid',
+                'flex flex-column flex-nowrap flex-item-fluid',
                 className,
-                fullWidth ? 'on-mobile-flex-column' : 'on-tablet-flex-column'
+                fullWidth ? 'md:flex-row' : 'lg:flex-row'
             )}
         >
             {hasType && (
@@ -161,7 +161,7 @@ const NotificationInput = ({
                 </SelectTwo>
             </span>
             {isAllDay && at && (
-                <span className="flex on-tiny-mobile-flex-column flex-nowrap">
+                <span className="flex flex-column sm:flex-row flex-nowrap">
                     {isAllDay && at && (
                         <span
                             className={clsx(

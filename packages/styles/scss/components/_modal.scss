@@ -261,7 +261,7 @@ $label-shorter-width: 10em !default;
 }
 
 @include media('<=small') {
-	.modal--shorter-labels .on-mobile-flex-column .label {
+	.modal--shorter-labels .flex-column .label {
 		inline-size: 100%;
 	}
 }

@@ -55,7 +55,7 @@ export const PointerEventsNone = () => (
 {
     /*
 
-<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
+<div class="flex flex-justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 flex-align-self-center">
         Applies <code>pointer-events: none</code> to element.
         <br />

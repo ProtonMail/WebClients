@@ -242,7 +242,7 @@ const AdvancedSearch = ({
                                 {c('Action').t`Fewer search options`}
                             </Button>
                         </div>
-                        <div className="mb-2 flex flex-justify-space-between on-mobile-flex-column">
+                        <div className="mb-2 flex flex-justify-space-between flex-column md:flex-row">
                             <div className={clsx(['flex-item-fluid', isNarrow ? 'pr-0' : 'pr-4'])}>
                                 <Label className="advanced-search-label text-semibold" htmlFor="begin-date">{c('Label')
                                     .t`From`}</Label>

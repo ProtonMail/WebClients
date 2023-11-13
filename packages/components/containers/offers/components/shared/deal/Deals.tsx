@@ -28,7 +28,7 @@ const Deals = (props: OfferProps) => {
     }, [isNarrow, isMediumDesktop]);
 
     return (
-        <div className="offer-wrapper gap-4 flex flex-nowrap flex-justify-center on-mobile-flex-column mt-11">
+        <div className="offer-wrapper gap-4 flex flex-nowrap flex-justify-center flex-column md:flex-row mt-11">
             {deals.map((deal) => (
                 <Deal key={deal.ref} {...props} deal={deal}>
                     <DealMostPopular />

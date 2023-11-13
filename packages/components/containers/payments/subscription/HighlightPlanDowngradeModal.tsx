@@ -57,7 +57,7 @@ const HighlightPlanDowngradeModal = ({ onConfirm, onClose, shortPlan, periodEnd,
                             .t`By downgrading you will lose the following benefits. Are you sure you want to proceed?`}
                     </Alert>
                 )}
-                <div className="flex flex-row flex-nowrap on-mobile-flex-column">
+                <div className="flex flex-row flex-nowrap flex-column md:flex-row">
                     <SubscriptionCancelPlan
                         name={downgradedPlanName}
                         info={downgradedShortPlan?.description || ''}

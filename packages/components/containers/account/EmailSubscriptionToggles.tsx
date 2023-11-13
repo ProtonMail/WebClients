@@ -47,7 +47,7 @@ const EmailSubscriptionToggles = ({
                             disabled={disabled}
                             onChange={handleChange(flag)}
                         />
-                        <label htmlFor={id} className="flex on-mobile-flex-column">
+                        <label htmlFor={id} className="flex flex-column md:flex-row">
                             <span className="mr-1">{title}</span>
                             {frequency && <span className="mr-1">{frequency}</span>}
                             {tooltip && <Info title={tooltip} />}

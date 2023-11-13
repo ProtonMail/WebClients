@@ -35,7 +35,7 @@ const ThemesModal = (props: ModalProps) => {
                     />
                 </div>
                 {settings.Mode === ThemeModeSetting.Auto ? (
-                    <div className="flex flex-nowrap gap-4 on-mobile-flex-column">
+                    <div className="flex flex-nowrap gap-4 flex-column md:flex-row">
                         <ThemeSyncModeCard
                             mode="light"
                             size="small"
