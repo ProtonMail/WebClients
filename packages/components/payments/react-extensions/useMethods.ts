@@ -14,11 +14,14 @@ import {
     isExistingPaymentMethod,
 } from '../core';
 
+export type OnMethodChangedHandler = (method: AvailablePaymentMethod) => void;
+
 export interface Props {
     amount: number;
     coupon?: string | null;
     flow: PaymentMethodFlows;
     paymentMethodStatus?: PaymentMethodStatus;
+    onMethodChanged?: OnMethodChangedHandler;
 }
 
 interface Dependencies {
@@ -43,7 +46,7 @@ export type MethodsHook = {
 };
 
 export const useMethods = (
-    { paymentMethodStatus, amount, coupon, flow }: Props,
+    { paymentMethodStatus, amount, coupon, flow, onMethodChanged }: Props,
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
     const paymentMethodsRef = useRef<PaymentMethods>();
@@ -146,6 +149,9 @@ export const useMethods = (
 
         const method = allMethods.find((method) => method.value === id);
         if (method) {
+            if (selectedMethod?.value !== method.value) {
+                onMethodChanged?.(method);
+            }
             setSelectedMethod(method);
             return method;
         }
