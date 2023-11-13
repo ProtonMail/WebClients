@@ -9,7 +9,12 @@ import noop from '@proton/utils/noop';
 
 import { useApi, useAuthentication, useModals } from '../../hooks';
 import { ChargeablePaymentParameters, PAYMENT_METHOD_TYPES, PaymentMethodFlows, PaymentMethodType } from '../core';
-import { Operations, OperationsData, usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
+import {
+    OnMethodChangedHandler,
+    Operations,
+    OperationsData,
+    usePaymentFacade as useInnerPaymentFacade,
+} from '../react-extensions';
 import { wrapMethods } from './useMethods';
 
 type PaymentFacadeProps = {
@@ -23,11 +28,19 @@ type PaymentFacadeProps = {
             context: OperationsData;
         }
     ) => Promise<unknown>;
+    onMethodChanged?: OnMethodChangedHandler;
     coupon?: string;
     flow: PaymentMethodFlows;
 };
 
-export const usePaymentFacade = ({ amount, currency, onChargeable, coupon, flow }: PaymentFacadeProps) => {
+export const usePaymentFacade = ({
+    amount,
+    currency,
+    onChargeable,
+    coupon,
+    flow,
+    onMethodChanged,
+}: PaymentFacadeProps) => {
     const api = useApi();
     const { createModal } = useModals();
     const { UID } = useAuthentication();
@@ -40,6 +53,7 @@ export const usePaymentFacade = ({ amount, currency, onChargeable, coupon, flow 
             onChargeable,
             coupon,
             flow,
+            onMethodChanged,
         },
         {
             api,

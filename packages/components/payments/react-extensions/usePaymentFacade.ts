@@ -14,7 +14,7 @@ import {
     isExistingPaymentMethod,
 } from '../core';
 import { useCard } from './useCard';
-import { useMethods } from './useMethods';
+import { OnMethodChangedHandler, useMethods } from './useMethods';
 import { usePaypal } from './usePaypal';
 import { useSavedMethod } from './useSavedMethod';
 
@@ -106,6 +106,7 @@ export const usePaymentFacade = (
         onChargeable,
         coupon,
         flow,
+        onMethodChanged,
     }: {
         amount: number;
         currency: Currency;
@@ -119,6 +120,7 @@ export const usePaymentFacade = (
         ) => Promise<unknown>;
         coupon?: string;
         flow: PaymentMethodFlows;
+        onMethodChanged?: OnMethodChangedHandler;
     },
     {
         api,
@@ -147,6 +149,7 @@ export const usePaymentFacade = (
             amount,
             coupon: coupon ?? '',
             flow,
+            onMethodChanged,
         },
         {
             api,
