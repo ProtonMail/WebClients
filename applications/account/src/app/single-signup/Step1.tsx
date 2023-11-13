@@ -342,7 +342,7 @@ const getPlanTitle = (selected: string) => {
 };
 const FeatureItem = ({ left, text }: { left: ReactNode; text: string }) => {
     return (
-        <div className="flex flex-align-items-center text-center on-mobile-flex-column flex-justify-center">
+        <div className="flex flex-align-items-center text-center flex-column md:flex-row flex-justify-center">
             <div className="md:mr-4 text-center">{left}</div>
             <div>{text}</div>
         </div>
@@ -352,7 +352,7 @@ const FeatureItem = ({ left, text }: { left: ReactNode; text: string }) => {
 const BoxHeader = ({ step, title, right }: { step?: number; title: string; right?: ReactNode }) => {
     return (
         <div className="flex flex-align-items-center flex-justify-space-between flex-nowrap">
-            <div className="flex flex-align-items-center on-mobile-flex-column md:gap-4 gap-2">
+            <div className="flex flex-align-items-center flex-column md:flex-row md:gap-4 gap-2">
                 {step !== undefined && (
                     <div className="flex-item-noshrink">
                         <StepLabel step={step} />
@@ -1238,7 +1238,7 @@ const Step1 = ({
                                       );
                                   })()
                                 : checkoutMappingPlanIDs && (
-                                      <div className="flex flex-justify-space-between gap-4 on-tablet-flex-column">
+                                      <div className="flex flex-justify-space-between gap-4 flex-column lg:flex-row">
                                           <CycleSelector
                                               onGetTheDeal={(cycle) => {
                                                   handleUpdate('plan');
@@ -1290,7 +1290,7 @@ const Step1 = ({
                     </Box>
                 )}
                 <Box className="mt-8 w-full">
-                    <div className="flex flex-justify-space-between on-tablet-flex-column ">
+                    <div className="flex flex-justify-space-between flex-column lg:flex-row ">
                         <div className={`flex-item-fluid ${padding}`}>
                             <BoxHeader
                                 step={showStepLabel ? step++ : undefined}
@@ -1451,7 +1451,7 @@ const Step1 = ({
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader step={showStepLabel ? step++ : undefined} title={c('Header').t`Checkout`} />
                         <BoxContent>
-                            <div className="flex flex-justify-space-between md:gap-14 gap-6 on-tablet-flex-column">
+                            <div className="flex flex-justify-space-between md:gap-14 gap-6 flex-column lg:flex-row">
                                 <div className="flex-item-fluid md:pr-1 order-1 lg:order-0">
                                     <form
                                         onFocus={(e) => {

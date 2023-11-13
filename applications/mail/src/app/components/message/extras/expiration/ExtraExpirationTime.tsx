@@ -49,7 +49,7 @@ const ExtraExpirationTime = ({ message }: Props) => {
     return (
         <div
             className={clsx(
-                'bg-norm rounded border pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap on-mobile-flex-column',
+                'bg-norm rounded border pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap flex-column md:flex-row',
                 expiresInLessThan24Hours && 'color-danger border-danger'
             )}
         >

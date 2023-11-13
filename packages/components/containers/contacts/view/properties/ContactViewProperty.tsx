@@ -16,7 +16,9 @@ const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Pro
     return (
         <div className="contact-view-row flex flex-nowrap flex-align-items-start mb-4">
             <div
-                className={clsx(['contact-view-row-left flex flex-nowrap flex-item-fluid on-mobile-flex-column w-full'])}
+                className={clsx([
+                    'contact-view-row-left flex flex-nowrap flex-item-fluid flex-column md:flex-row w-full',
+                ])}
             >
                 <div
                     className={clsx([

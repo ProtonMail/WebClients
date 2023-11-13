@@ -53,7 +53,7 @@ const AddressesEditor = ({
 
     return (
         <div className="flex flex-column flex-nowrap flex-align-items-start mt-0">
-            <div className="flex flex-row w-full relative on-mobile-flex-column" data-testid="composer:to-field">
+            <div className="flex flex-row w-full relative flex-column md:flex-row" data-testid="composer:to-field">
                 <Label htmlFor={`to-${uid}`} className="composer-meta-label text-semibold">
                     {c('Title').t`To`}
                 </Label>
@@ -114,7 +114,7 @@ const AddressesEditor = ({
                 <>
                     {ccExpanded && (
                         <div
-                            className="flex flex-row on-mobile-flex-column w-full mb-0"
+                            className="flex flex-row flex-column md:flex-row w-full mb-0"
                             ref={ccListAnchorRef}
                             data-testid="composer:cc-field"
                         >
@@ -143,7 +143,7 @@ const AddressesEditor = ({
                     )}
                     {bccExpanded && (
                         <div
-                            className="flex flex-row on-mobile-flex-column w-full"
+                            className="flex flex-row flex-column md:flex-row w-full"
                             ref={bccListAnchorRef}
                             data-testid="composer:bcc-field"
                         >

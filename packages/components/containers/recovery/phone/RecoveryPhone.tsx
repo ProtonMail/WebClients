@@ -55,7 +55,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
             )}
             {renderVerifyRecoveryPhoneModal && <VerifyRecoveryPhoneModal phone={phone} {...verifyRecoveryPhoneModal} />}
             <form
-                className={clsx(['flex flex-wrap on-mobile-flex-column', className])}
+                className={clsx(['flex flex-wrap flex-column md:flex-row', className])}
                 onSubmit={(e) => {
                     e.preventDefault();
                     if (!onFormSubmit()) {
