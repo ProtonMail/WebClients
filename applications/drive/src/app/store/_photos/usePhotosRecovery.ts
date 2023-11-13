@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
+import { sendErrorReport } from '../../utils/errorHandling';
 import { DecryptedLink, useLinksActions, useLinksListing } from '../_links';
 import { Share, ShareWithKey } from '../_shares';
 import { waitFor } from '../_utils';
@@ -36,9 +37,10 @@ export const usePhotosRecovery = () => {
         setNeedsRecovery(!!restoredShares?.length);
     }, [restoredShares?.length]);
 
-    const handleFailed = () => {
+    const handleFailed = (e: Error) => {
         setState('FAILED');
         setItem(RECOVERY_STATE_CACHE_KEY, 'failed');
+        sendErrorReport(e);
     };
 
     const handleDecryptLinks = useCallback(
@@ -162,13 +164,12 @@ export const usePhotosRecovery = () => {
                 setState('MOVED');
             })
             .catch(handleFailed);
-        return () => {
-            abortController.abort();
-        };
-    }, [handleMoveLinks, linkId, restoredData, state]);
+
+        // Moved is done in the background, so we don't abort it on rerender
+    }, [countOfUnrecoveredLinksLeft, handleMoveLinks, linkId, restoredData, state]);
 
     useEffect(() => {
-        if (state !== 'MOVED' || !restoredShares) {
+        if (state !== 'MOVED' || !restoredShares || countOfUnrecoveredLinksLeft !== 0) {
             return;
         }
         const abortController = new AbortController();
@@ -178,7 +179,7 @@ export const usePhotosRecovery = () => {
                 // We still want to remove empty shares if possible,
                 // but we should say to the user that it failed since not every file were recovered
                 if (countOfFailedLinks) {
-                    return Promise.reject();
+                    return Promise.reject(new Error('Failed to move recovered photos'));
                 }
                 removeItem(RECOVERY_STATE_CACHE_KEY);
                 setState('SUCCEED');
@@ -188,7 +189,7 @@ export const usePhotosRecovery = () => {
         return () => {
             abortController.abort();
         };
-    }, [countOfFailedLinks, restoredShares, safelyDeleteShares, state]);
+    }, [countOfFailedLinks, countOfUnrecoveredLinksLeft, restoredShares, safelyDeleteShares, state]);
 
     const start = useCallback(() => {
         setItem(RECOVERY_STATE_CACHE_KEY, 'progress');
