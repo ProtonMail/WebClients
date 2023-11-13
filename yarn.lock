@@ -5086,6 +5086,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@pdfme/schemas@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "@pdfme/schemas@npm:3.0.1"
+  dependencies:
+    "@pdfme/pdf-lib": "npm:^1.17.3"
+    bwip-js: "npm:^4.1.1"
+    fontkit: "npm:^2.0.2"
+  peerDependencies:
+    "@pdfme/common": "*"
+  checksum: 0f437ea7631528581c26d666811172f4ff48761d48b12279488b28dc101f939477e05534bb7e474024ba83d3e2995450108e0f1e6123b9ee16f8d258bf4ad44e
+  languageName: node
+  linkType: hard
+
 "@pdfme/ui@npm:^3.0.1":
   version: 3.0.1
   resolution: "@pdfme/ui@npm:3.0.1"
@@ -13206,6 +13219,15 @@ __metadata:
   dependencies:
     semver: "npm:^7.0.0"
   checksum: 9390a51a9abbc0233dac79c66715f927508b9d0c62cb7a42448fe8c52def60c707e6e9eb2cc4c9b7aba11601899935bca4e4064ae5e19c04c7e1bb9309e69134
+  languageName: node
+  linkType: hard
+
+"bwip-js@npm:^4.1.1":
+  version: 4.1.2
+  resolution: "bwip-js@npm:4.1.2"
+  bin:
+    bwip-js: bin/bwip-js.js
+  checksum: 51a73a566cd0298ffc0aa9cc0eebdeb60ed04d74fe6c517a4f4a26a266131705c4bc2f0967b59560d722203e0ef5e5166ee678093665192ef4c03db32053213e
   languageName: node
   linkType: hard
 
@@ -27539,6 +27561,7 @@ __metadata:
   resolution: "pdf-ui@workspace:applications/pdf-ui"
   dependencies:
     "@pdfme/common": "npm:^3.0.1"
+    "@pdfme/schemas": "npm:^3.0.1"
     "@pdfme/ui": "npm:^3.0.1"
     "@types/toastify-js": "npm:^1.12.3"
     eslint: "npm:^8.53.0"
