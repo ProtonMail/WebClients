@@ -17,7 +17,7 @@ const config: ForgeConfig = {
             config: {
                 iconUrl: __dirname + "/assets/icons/icon.ico",
                 setupIcon: __dirname + "/assets/icons/icon.ico",
-                loadingGif: __dirname + ".assets/windows/installSpinner.gif",
+                loadingGif: __dirname + "/assets/icons/windows/installSpinner.gif",
             },
         },
         {
