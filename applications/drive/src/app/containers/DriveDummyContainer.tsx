@@ -45,7 +45,7 @@ const DriveDummyContainer = () => {
 
     const logo = <MainLogo to="/" />;
     const dummyUploadButton = (
-        <SidebarPrimaryButton className="no-mobile">{c('Action').t`New upload`}</SidebarPrimaryButton>
+        <SidebarPrimaryButton className="hidden md:flex">{c('Action').t`New upload`}</SidebarPrimaryButton>
     );
     const dummyFolderTitle = c('Title').t`My files`;
 
