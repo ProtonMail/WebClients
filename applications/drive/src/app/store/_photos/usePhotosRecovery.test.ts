@@ -51,6 +51,9 @@ jest.mock('@proton/shared/lib/helpers/storage', () => ({
     removeItem: jest.fn(),
     setItem: jest.fn(),
 }));
+
+jest.mock('../../utils/errorHandling');
+
 const mockedRemoveItem = jest.mocked(removeItem);
 const mockedGetItem = jest.mocked(getItem);
 const mockedSetItem = jest.mocked(setItem);
@@ -111,6 +114,8 @@ describe('usePhotosRecovery', () => {
         moveLinks: mockedMoveLinks,
     });
 
+    beforeAll(() => {});
+
     beforeEach(() => {
         jest.clearAllMocks();
         mockedDeletePhotosShare.mockResolvedValue(undefined);
@@ -118,7 +123,8 @@ describe('usePhotosRecovery', () => {
 
         mockedMoveLinks.mockImplementation(
             async (abortSignal: AbortSignal, { linkIds, onMoved }: { linkIds: string[]; onMoved?: () => void }) => {
-                linkIds.forEach(() => onMoved?.());
+                // Reproduce the async behavior of moveLinks
+                linkIds.forEach(() => setTimeout(() => onMoved?.(), 10));
             }
         );
     });
@@ -132,7 +138,7 @@ describe('usePhotosRecovery', () => {
             result.current.start();
         });
         await waitFor(() => expect(result.current.countOfUnrecoveredLinksLeft).toEqual(2));
-
+        await waitFor(() => expect(result.current.countOfUnrecoveredLinksLeft).toEqual(0));
         expect(result.current.state).toEqual('SUCCEED');
         expect(mockedGetCachedChildren).toHaveBeenCalledTimes(3);
         expect(mockedMoveLinks).toHaveBeenCalledTimes(1);
@@ -150,6 +156,8 @@ describe('usePhotosRecovery', () => {
             'PREPARING', // 3 times Preparing because of React states changes
             'PREPARED',
             'MOVING',
+            'MOVED',
+            'MOVED',
             'MOVED',
             'CLEANING',
             'SUCCEED',
@@ -234,6 +242,8 @@ describe('usePhotosRecovery', () => {
             'PREPARED',
             'MOVING',
             'MOVED',
+            'MOVED',
+            'MOVED',
             'CLEANING',
             'FAILED',
         ]);
@@ -315,6 +325,8 @@ describe('usePhotosRecovery', () => {
             'PREPARING',
             'PREPARED',
             'MOVING',
+            'MOVED',
+            'MOVED',
             'MOVED',
             'CLEANING',
             'SUCCEED',
