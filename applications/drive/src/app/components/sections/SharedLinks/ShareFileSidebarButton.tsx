@@ -28,7 +28,7 @@ const ShareFileSidebarButton = ({ mobileVersion }: Props) => {
                     <Icon size={24} name="link" className="m-auto" />
                 </FloatingButton>
             ) : (
-                <SidebarPrimaryButton className="no-mobile" disabled={!activeShareId} onClick={onShareFile}>
+                <SidebarPrimaryButton className="hidden md:flex" disabled={!activeShareId} onClick={onShareFile}>
                     {c('Action').t`Share item`}
                 </SidebarPrimaryButton>
             )}

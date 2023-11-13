@@ -106,7 +106,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
             )}
 
             {/* Desktop text */}
-            <span className="no-mobile text-ellipsis" data-testid="transfer-item-status">
+            <span className="hidden md:inline text-ellipsis" data-testid="transfer-item-status">
                 {errorText && (
                     <Tooltip title={errorText} originalPlacement="top">
                         <span className="mr-2">
