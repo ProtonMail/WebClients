@@ -26,7 +26,7 @@ const devConfig: Config = {
 
 const prodConfig: Config = {
     appTitle: "Proton",
-    devTools: false,
+    devTools: true, // TODO set to false for the beta
     url: getHardcodedURLs(),
 };
 

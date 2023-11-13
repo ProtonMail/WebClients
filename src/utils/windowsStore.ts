@@ -1,45 +1,69 @@
 import { Rectangle, screen } from "electron";
 import Store from "electron-store";
-import { APP, DEFAULT_WINDOW_HEIGHT, DEFAULT_WINDOW_WIDTH, STORE_WINDOW_KEY } from "./constants";
+import { APP, STORE_WINDOW_KEY, WINDOW_SIZES } from "./constants";
 
 const store = new Store();
 
 const storeKey = (app: APP) => `${STORE_WINDOW_KEY}-${app}`;
 
+const { DEFAULT_HEIGHT, DEFAULT_WIDTH, NEW_WINDOW_SHIFT } = WINDOW_SIZES;
+
 const getWindowSize = () => {
-    const { width, height } = screen.getPrimaryDisplay().workAreaSize;
-    const windowWidth = Math.round(width * 0.95);
-    const windowHeight = Math.round(height * 0.9);
+    const { width: screenWidth, height: screenHeight } = screen.getPrimaryDisplay().workAreaSize;
+    const reducedWidth = Math.round(screenWidth * 0.9);
+    const reducedHeight = Math.round(screenHeight * 0.9);
 
     return {
-        height: DEFAULT_WINDOW_HEIGHT > height ? windowHeight : DEFAULT_WINDOW_HEIGHT,
-        width: DEFAULT_WINDOW_WIDTH > width ? windowWidth : DEFAULT_WINDOW_WIDTH,
+        height: screenWidth > DEFAULT_HEIGHT ? DEFAULT_HEIGHT : reducedHeight,
+        width: screenHeight > DEFAULT_WIDTH ? DEFAULT_WIDTH : reducedWidth,
     };
 };
 
 const getWindowsPosition = () => {
-    const { width, height, x, y } = screen.getPrimaryDisplay().workArea;
-    // Centers the windows with a bit of a random offset to avoid overlapping windows
+    const { width: screenWidth, height: screenHeight, x, y } = screen.getPrimaryDisplay().workArea;
     return {
-        x: Math.round((width - DEFAULT_WINDOW_WIDTH) / 2 + x + x * Math.random() + 10),
-        y: Math.round((height - DEFAULT_WINDOW_HEIGHT) / 2 + y + y * Math.random() + 10),
+        x: Math.round((screenWidth - DEFAULT_WIDTH) / 2 + x + NEW_WINDOW_SHIFT),
+        y: Math.round((screenHeight - DEFAULT_HEIGHT) / 2 + y + NEW_WINDOW_SHIFT),
     };
+};
+
+const windowWithinBounds = (state: Rectangle, bounds: Rectangle) => {
+    return (
+        state.x >= bounds.x &&
+        state.y >= bounds.y &&
+        state.x + state.width <= bounds.x + bounds.width &&
+        state.y + state.height <= bounds.y + bounds.height
+    );
+};
+
+const ensureWindowIsVisible = (state: Rectangle) => {
+    return screen.getAllDisplays().some((display) => {
+        return windowWithinBounds(state, display.bounds);
+    });
 };
 
 export const getWindowState = (app: APP): Rectangle => {
     const storedData = store.get(storeKey(app));
-    if (storedData) {
-        return storedData as Rectangle;
-    }
 
     const { width, height } = getWindowSize();
     const { x, y } = getWindowsPosition();
-    return {
+    const defaultPosition = {
         x,
         y,
         width,
         height,
     };
+
+    if (storedData) {
+        const state = storedData as Rectangle;
+        if (!ensureWindowIsVisible(state)) {
+            return defaultPosition;
+        }
+
+        return state;
+    }
+
+    return defaultPosition;
 };
 
 export const setWindowState = (state: Rectangle, app: APP): void => {
