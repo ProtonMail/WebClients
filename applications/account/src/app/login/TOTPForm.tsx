@@ -57,7 +57,7 @@ const TOTPForm = ({ onSubmit }: Props) => {
                 bigger={true}
             />
             <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
-                {c('Action').t`Authenticate`}
+                {loading ? c('Action').t`Authenticating` : c('Action').t`Authenticate`}
             </Button>
             <Button
                 size="large"
