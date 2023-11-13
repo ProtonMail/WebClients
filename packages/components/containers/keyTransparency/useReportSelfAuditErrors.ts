@@ -1,7 +1,7 @@
 import { AddressAuditStatus, SelfAuditResult, ktSentryReport } from '@proton/key-transparency/lib';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import {
-    TelemetryKeyTransparencySelfAuditErrorEvents,
+    TelemetryKeyTransparencyErrorEvents,
     TelemetryMeasurementGroups,
     TelemetryReport,
 } from '@proton/shared/lib/api/telemetry';
@@ -54,7 +54,7 @@ const useReportSelfAuditErrors = () => {
 
             const group = {
                 measurementGroup: TelemetryMeasurementGroups.keyTransparency,
-                event: TelemetryKeyTransparencySelfAuditErrorEvents.self_audit_error,
+                event: TelemetryKeyTransparencyErrorEvents.self_audit_error,
             };
 
             if (tooManyRetries) {
