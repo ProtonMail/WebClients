@@ -57,7 +57,9 @@ export default function useDriveDragMove(shareId: string, contents: DragAndDropI
             rootShareId: shareId,
         }));
 
-        await withGlobalLoader(moveLinks(new AbortController().signal, shareId, toMoveInfo, newParentLinkId));
+        await withGlobalLoader(
+            moveLinks(new AbortController().signal, { shareId, linksToMove: toMoveInfo, newParentLinkId })
+        );
     };
 
     const getDragMoveControls = (item: DragAndDropItem): DragMoveControls => {
