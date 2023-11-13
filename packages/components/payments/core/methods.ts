@@ -123,14 +123,14 @@ export class PaymentMethods {
     }
 
     private isCashAvailable() {
-        const isSignup = this.flow === 'signup' || this.flow === 'signup-pass';
+        const isSignup = this.flow === 'signup' || this.flow === 'signup-pass' || this.flow === 'signup-vpn';
         const isHumanVerification = this.flow === 'human-verification';
 
         return !isSignup && !isHumanVerification && this.coupon !== BLACK_FRIDAY.COUPON_CODE;
     }
 
     private isBitcoinAvailable() {
-        const isSignup = this.flow === 'signup';
+        const isSignup = this.flow === 'signup' || this.flow === 'signup-vpn'; // for signup-pass, bitcoin IS available
         const isHumanVerification = this.flow === 'human-verification';
         const isInvoice = this.flow === 'invoice';
 
