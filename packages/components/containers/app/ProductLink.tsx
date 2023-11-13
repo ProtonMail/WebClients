@@ -12,7 +12,10 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { AppLink, SettingsLink } from '../../components';
 
-export const apps = () => {
+export const apps = (user?: UserModel) => {
+    if (user && user.Flags.sso && !user.Keys.length) {
+        return [APPS.PROTONVPN_SETTINGS];
+    }
     if (isElectronApp()) {
         return [APPS.PROTONMAIL, APPS.PROTONCALENDAR];
     }
