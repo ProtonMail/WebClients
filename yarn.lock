@@ -5463,7 +5463,7 @@ __metadata:
     "@types/codemirror": "npm:5.60.13"
     "@types/credit-card-type": "npm:^7.0.0"
     "@types/jest": "npm:^29.5.8"
-    "@types/markdown-it": "npm:^12.2.3"
+    "@types/markdown-it": "npm:^13.0.6"
     "@types/qrcode.react": "npm:^1.0.5"
     "@types/react": "npm:^17.0.70"
     "@types/react-dom": "npm:^17.0.23"
@@ -8929,13 +8929,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/markdown-it@npm:^12.2.3":
-  version: 12.2.3
-  resolution: "@types/markdown-it@npm:12.2.3"
+"@types/markdown-it@npm:^13.0.6":
+  version: 13.0.6
+  resolution: "@types/markdown-it@npm:13.0.6"
   dependencies:
     "@types/linkify-it": "npm:*"
     "@types/mdurl": "npm:*"
-  checksum: f72e08f69d76be2e30cd367fd6e5302c6878aa44e5b1a952fe7e41280044502bcb9bac8459ad94f6bb5e4f9c4cb52803950609ad66786f0fddc3a8bd533f777d
+  checksum: bd936a1c2774b1021a17b70fa7b2f4cfad69b941baa176548716b778c010465c5c5ddcea431349787b64773d6330f6b846f688c203a3d7ebae4fe73fc2f6acce
   languageName: node
   linkType: hard
 
