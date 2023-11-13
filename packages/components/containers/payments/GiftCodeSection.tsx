@@ -45,7 +45,7 @@ const GiftCodeSection = () => {
             </label>
 
             <form
-                className="gift-code_container flex flex-nowrap flex-align-items-start on-mobile-flex-column-no-stretch"
+                className="gift-code_container flex flex-nowrap flex-column md:flex-row gap-2 md:gap-4"
                 onSubmit={(e) => {
                     e.preventDefault();
                     if (onFormSubmit()) {
@@ -55,21 +55,16 @@ const GiftCodeSection = () => {
             >
                 <InputFieldTwo
                     id="gift-code-input"
-                    rootClassName="mr-0 mb-2 md:mr-4 md:mb-0"
                     value={value}
                     error={validator([requiredValidator(value)])}
                     placeholder={c('Placeholder').t`Add gift code`}
                     onChange={handleChange}
                 />
-                <Button
-                    className="on-mobile-flex-align-self-start flex-item-noshrink"
-                    color="norm"
-                    type="submit"
-                    data-testid="submitCodeBtn"
-                    loading={loading}
-                >
-                    {c('Action').t`Submit`}
-                </Button>
+                <div className="flex-item-noshrink">
+                    <Button color="norm" type="submit" data-testid="submitCodeBtn" loading={loading}>
+                        {c('Action').t`Submit`}
+                    </Button>
+                </div>
             </form>
         </SettingsSection>
     );
