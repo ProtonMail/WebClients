@@ -32,7 +32,11 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...modalProps }: P
     const [createFolderModal, showCreateFolderModal] = useModalTwo(CreateFolderModal);
 
     const moveLinksToFolder = async (parentFolderId: string) => {
-        await moveLinks(new AbortController().signal, shareId, selectedItems, parentFolderId);
+        await moveLinks(new AbortController().signal, {
+            shareId,
+            linksToMove: selectedItems,
+            newParentLinkId: parentFolderId,
+        });
     };
 
     const onSelect = (link: DecryptedLink) => {
