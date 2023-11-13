@@ -26,7 +26,7 @@ export interface GetProofParams {
 }
 
 export const getProofRoute = ({ EpochID, Identifier, Revision }: GetProofParams) => ({
-    url: `kt/v1/epochs/${EpochID}/proof/${encodeURIComponent(Identifier)}/${Revision}`,
+    url: `kt/v1/epochs/${EpochID}/proof?Identifier=${encodeURIComponent(Identifier)}&Revision=${Revision}`,
     method: 'get',
 });
 
