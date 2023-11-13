@@ -3,6 +3,8 @@ import { getUnixTime } from 'date-fns';
 
 import { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { arrayToHexString } from '@proton/crypto/lib/utils';
+
+import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import {
     generateContentKeys,
     generateLookupHash,
@@ -122,6 +124,15 @@ async function start(
     const finish = async () => {
         const fileHash = buffer.hash;
         const sha1Digest = hashInstance.finish().result;
+
+        // It seems very unlikely but we had one case when we requested block
+        // upload, provided correct original size, but no block was uploaded
+        // and no hash was present (at least if it was present, backend would
+        // fail the manifest validation).
+        const expectedBlockCount = Math.ceil(file.size / FILE_CHUNK_SIZE) + (thumbnails ? thumbnails?.length : 0);
+        if (buffer.uploadedBlockCount !== expectedBlockCount) {
+            throw new Error('Some file parts failed to upload');
+        }
 
         const [signature, exifInfo] = await Promise.all([
             signMessage(fileHash, [addressPrivateKey]),
