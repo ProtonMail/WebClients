@@ -121,7 +121,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
     const inputsDisabled = model.loading || isEditing;
     const forwarderAddress = addresses.find(({ ID }) => ID === model.addressID);
     const forwarderEmail = forwarderAddress?.Email || '';
-    const addressFlags = useAddressFlags(forwarderAddress as Address);
+    const addressFlags = useAddressFlags(forwarderAddress);
     const boldForwardeeEmail = <strong key="forwardee-email">{model.forwardeeEmail}</strong>;
     const boldForwarderEmail = <strong key="forwarder-email">{forwarderEmail}</strong>;
     const learnMoreLink = (
