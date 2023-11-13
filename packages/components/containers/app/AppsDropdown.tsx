@@ -6,8 +6,8 @@ import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
 import { useConfig, useUser } from '@proton/components/hooks';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
-import { UserModel } from '@proton/shared/lib/interfaces';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import { UserModel } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Icon, Logo, SimpleDropdown } from '../../components';
@@ -22,7 +22,7 @@ interface AppsDropdownProps {
 const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
     ({ onDropdownClick, app, user, ...rest }: AppsDropdownProps, ref: ForwardedRef<HTMLButtonElement>) => {
         const { APP_NAME } = useConfig();
-    const isElectron = isElectronApp();
+        const isElectron = isElectronApp();
 
         return (
             <SimpleDropdown
@@ -46,7 +46,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                 as="button"
             >
                 <ul className="unstyled my-0 p-4" style={{ '--apps-dropdown-repeat': isElectron ? '2' : '3' }}>
-                    {apps().map((appToLinkTo) => {
+                    {apps(user).map((appToLinkTo) => {
                         const appToLinkToName = getAppShortName(appToLinkTo);
                         const current = app && appToLinkTo === app;
 
@@ -59,7 +59,8 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                                         user={user}
                                         appToLinkTo={appToLinkTo}
                                         className="text-center text-no-decoration outline-none--at-all apps-dropdown-link"
-                                    current={current}>
+                                        current={current}
+                                    >
                                         <div
                                             className="apps-dropdown-logo-wrapper flex flex-align-items-center flex-justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
                                             style={{ '--w-custom': '3.25rem', '--h-custom': '3.25rem' }}
