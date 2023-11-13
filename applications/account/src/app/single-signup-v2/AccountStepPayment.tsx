@@ -233,7 +233,7 @@ const AccountStepPayment = ({
     };
 
     return (
-        <div className="flex on-mobile-flex-column flex-align-items-start flex-justify-space-between gap-14">
+        <div className="flex flex-column md:flex-row flex-align-items-start flex-justify-space-between gap-14">
             <div className="flex-item-fluid order-1 md:order-0">
                 <form
                     ref={formRef}

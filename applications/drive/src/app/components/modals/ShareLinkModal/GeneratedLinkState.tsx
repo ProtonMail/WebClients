@@ -192,7 +192,7 @@ function GeneratedLinkState({
                             </Alert>
                         ) : (
                             <>
-                                <div className="flex-no-min-children flex-nowrap mb-4 on-mobile-flex-column mb-2 md:mb-0">
+                                <div className="flex-no-min-children flex-nowrap mb-4 flex-column md:flex-row mb-2 md:mb-0">
                                     <Label htmlFor="passwordModeToggle">
                                         <span className="mr-2">{c('Label').t`Protect with password`}</span>
                                     </Label>
@@ -239,7 +239,7 @@ function GeneratedLinkState({
                                         )}
                                     </div>
                                 </div>
-                                <div className="flex-no-min-children flex-nowrap on-mobile-flex-column mb-2 md:mb-4">
+                                <div className="flex-no-min-children flex-nowrap flex-column md:flex-row mb-2 md:mb-4">
                                     <Label htmlFor="expirationTimeModeToggle">
                                         <span className="mr-2">{c('Label').t`Set expiration date`}</span>
                                     </Label>

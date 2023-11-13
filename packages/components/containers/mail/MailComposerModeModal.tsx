@@ -33,7 +33,7 @@ const MailComposerModeModal = (props: ModalProps) => {
         <ModalTwo {...props}>
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
-                <div className="flex flex-nowrap mb-4 on-mobile-flex-column flex-column">
+                <div className="flex flex-nowrap mb-4 flex-column md:flex-row flex-column">
                     <span className="mb-4" id="composerMode_desc">
                         {c('Label').t`Select how your composer opens by default.`}
                     </span>

@@ -9,13 +9,13 @@ import { getTitle } from '../../../helpers/title';
 <br />
 
 <strong>Flexbox version:</strong> resize the window, by default, elements take all the width on tablet thanks to <code>
-    on-tablet-flex-column
+    flex-column lg:flex-row
 </code>
 .
 
-<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
+<div class="flex flex-justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 flex-align-self-center">
-        <div class="flex flex-justify-space-between on-tablet-flex-column border color-global-light">
+        <div class="flex flex-justify-space-between flex-column lg:flex-row border color-global-light">
             <div class="bg-primary p-4 w-1/3">.w-1/3</div>
             <span class="bg-primary p-4 w-1/3">.w-1/3</span>
             <em class="bg-primary p-4 w-1/3">.w-1/3</em>
@@ -27,7 +27,7 @@ import { getTitle } from '../../../helpers/title';
             light
             format
             code={`
-<div className="flex flex-justify-space-between on-tablet-flex-column">
+<div className="flex flex-justify-space-between flex-column lg:flex-row">
   <div className="w-1/3">div</div>
   <span className="w-1/3">span</span>
   <em className="w-1/3">em</em>
@@ -48,7 +48,7 @@ Please check before how <a href="?path=/docs/front-end-helpers-margin-padding--p
 
 Examples:
 
-<div class="flex flex-justify-space-between mb-4 on-mobile-flex-column">
+<div class="flex flex-justify-space-between mb-4 flex-column md:flex-row">
     <div class="w-1/2 mb-4 md:mb-0 border">
         <div class="on-tablet-pt2 bg-primary ">
             <code>.on-tablet-pt2</code> = <code>padding-top: 2em</code>{' '}
@@ -62,7 +62,7 @@ Examples:
         </div>
     </div>
 </div>
-<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
+<div class="flex flex-justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 mb-4 md:mb-0 border">
         <div class="on-tablet-p1 bg-primary">
             <code>.on-tablet-p1</code> = <code>padding: 1em</code>{' '}
@@ -101,7 +101,7 @@ These apply for tablet breakpoint and smaller.
 
 ## Table helpers
 
-<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
+<div class="flex flex-justify-space-between mb-8 flex-column md:flex-row">
   <div class="w-1/2 flex-align-self-center">
 	Hides the second and third column of a table for tablet breakpoint and smaller.
   </div>
@@ -120,7 +120,7 @@ These apply for tablet breakpoint and smaller.
 
 ## List helper
 
-<div class="flex flex-justify-space-between mb-8 on-mobile-flex-column">
+<div class="flex flex-justify-space-between mb-8 flex-column md:flex-row">
     <div class="w-1/2 flex-align-self-center">
         Will use css multicolumn to display the list on several columns.
         <ul class="list-columns lg:column-2">

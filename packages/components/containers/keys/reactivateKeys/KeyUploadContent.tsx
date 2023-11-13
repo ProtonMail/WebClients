@@ -189,7 +189,7 @@ const KeyUploadContent = ({
     }
 
     return (
-        <div className="flex flex-wrap on-mobile-flex-column flex-align-items-center">
+        <div className="flex flex-wrap flex-column md:flex-row flex-align-items-center">
             <div className="mr-0 md:mr-4 flex-item-fluid min-w-custom" style={{ '--min-w-custom': '14em' }}>
                 <InputFieldTwo
                     id={id}

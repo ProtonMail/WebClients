@@ -87,7 +87,7 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
             <ModalTwoHeader title={c('Info').t`Insert image`} onSubmit={handleSubmit} />
             <ModalTwoContent>
                 <div className="mb-4">
-                    <div className="flex flex-nowrap on-mobile-flex-column">
+                    <div className="flex flex-nowrap flex-column md:flex-row">
                         <Label htmlFor={`editor-image-address-${uid}`}>{c('Info').t`Add image URL`}</Label>
                         <div className="flex-item-fluid">
                             <Input
@@ -103,7 +103,7 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-nowrap mb-4 on-mobile-flex-column">
+                <div className="flex flex-nowrap mb-4 flex-column md:flex-row">
                     <Label htmlFor={`editor-image-upload-${uid}`}>{c('Info').t`Upload picture`}</Label>
                     <div className="flex-item-fluid" data-testid="insert-image:upload">
                         <FileButton
