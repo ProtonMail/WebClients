@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { ktSentryReport } from '@proton/key-transparency/lib';
+import { ktKeyVerificationFailureTelemetry, ktSentryReport } from '@proton/key-transparency/lib';
 
 import {
     Api,
@@ -65,6 +65,7 @@ const getPublicKeysEmailHelper = async ({
     });
     if (result.ktVerificationResult?.status === KT_VERIFICATION_STATUS.VERIFICATION_FAILED) {
         ktSentryReport('Key verification error', { email });
+        await ktKeyVerificationFailureTelemetry(api);
         if (ktActivation === KeyTransparencyActivation.SHOW_UI) {
             return {
                 publicKeys: [],
