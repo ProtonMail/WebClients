@@ -40,7 +40,7 @@ export const emptyTrashSuccess = createAction(
     withRequestSuccess(() =>
         withNotification({
             type: 'success',
-            text: c('Info').t`All trashed items permanently removed`,
+            text: c('Info').t`All trashed items permanently deleted`,
         })({ payload: {} })
     )
 );
