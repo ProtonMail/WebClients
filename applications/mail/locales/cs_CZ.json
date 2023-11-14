@@ -1371,7 +1371,7 @@
         "Přístup k obsahu z celého světa"
       ],
       "Ad-blocker and malware protection": [
-        "Blokování reklam a ochrana před malwarem"
+        "Blokování reklam a ochrana před malware"
       ],
       "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Všechny placené funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
@@ -1410,7 +1410,7 @@
     },
     "bf2023: Tooltip": {
       "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Přístup k blokovanému obsahu a soukromé prohlížení. Zahrnuje více než 3 000 serverů ve více než 65 zemích, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malwaru a reklam, rychlé stahování BitTorrentu a další funkce."
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Zahrnuje více než 3 000 serverů ve více než 65 zemích, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malware a reklam, rychlé stahování BitTorrentu a další funkce."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+, Prime Video a dalších, odkudkoli."
@@ -4110,7 +4110,7 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Zahrnuje 2700 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokovač malwaru a reklam a více."
+        "Zahrnuje 2700 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokování malware a reklam a další."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Zahrnuje podporu 3 vlastních e-mailových domén, 90 e-mailových adres, neomezený počet aliasů Hide-my-email, sdílení kalendáře a další."
@@ -5963,6 +5963,9 @@
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Původní odesílatel této zprávy již není platný. Vaše zpráva bude odeslána z Vaší výchozí adresy ${ defaultEmail }."
+      ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Vlastník této adresy deaktivoval koncové šifrování. Aby bylo možné na tuto adresu odesílat šifrované e-maily, musí vlastník znovu povolit koncové šifrování."
       ],
       "The sender has requested a read receipt.": [
         "Odesílatel požádal o potvrzení o přečtení."
@@ -8180,6 +8183,11 @@
         "Kontakty pro následující adresy byly smazány, odpovídající volby šifrování byly tedy aktualizovány:"
       ]
     },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "Kontakty pro následující adresy mají ve svém účtu deaktivované koncové šifrování, takže příslušné předvolby šifrování byly odpovídajícím způsobem aktualizovány:"
+      ]
+    },
     "Send email with errors": {
       "Do you want to send the email anyway?": [
         "Chcete přesto e-mail odeslat?"
@@ -8689,10 +8697,10 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN na uživatele, celosvětové streamovací služby, blokování malwaru a reklamy a další."
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN na uživatele, celosvětové streamovací služby, blokování malware a reklamy a další."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN, celosvětové streamovací služby, blokátor malwaru a reklamy a další."
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN, celosvětové streamovací služby, blokování malware a reklamy a další."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+ a Prime Video, odkudkoli."
@@ -9100,7 +9108,7 @@
         "Vytvoření zabezpečených přihlašovacích údajů na všech zařízeních. Obsahuje neomezený počet aliasů, 20 trezorů, integrovanou funkci 2FA, automatické vyplňování kreditních karet a další funkce."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Zahrnuje 2950 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokovač malwaru a reklam a více."
+        "Zahrnuje 2950 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokování malware a reklam a další."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů pro hide-my-email, sdílení kalendáře a další funkce."
@@ -9683,6 +9691,9 @@
       ],
       "Send with changed preferences?": [
         "Poslat se změněným nastavením?"
+      ],
+      "Send with encryption disabled?": [
+        "Odeslat s deaktivovaným šifrováním?"
       ],
       "Send without expiration?": [
         "Odeslat zprávu bez data vypršení platnosti?"

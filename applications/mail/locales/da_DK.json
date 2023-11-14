@@ -5011,7 +5011,7 @@
         "Er du sikker på, at du vil flytte alle beskeder på denne placering til papirkurven?"
       ],
       "Are you sure you want to move all messages in this location to Trash?": [
-        "Er du sikker på, at du vil flytte alle beskeder på denne placeirng til papirkurven?"
+        "Er du sikker på, at du vil flytte alle beskeder på denne placering til papirkurven?"
       ],
       "Are you sure you want to permanently delete ${ count } conversation?": [
         "Er du sikker på, at du vil slette ${ count } samtale permanent?",
@@ -5760,6 +5760,9 @@
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Den originale afsender af denne besked er ikke længere gyldig. Din besked vil blive sendt fra din standardadresse ${ defaultEmail }."
+      ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Ejeren af denne adresse har deaktiveret end-to-end-kryptering. For at kunne sende krypterede e-mails til denne adresse, skal ejeren genaktivere end-to-end-kryptering."
       ],
       "The sender has requested a read receipt.": [
         "Afsenderen har anmodet om en læsekvittering."
@@ -9306,6 +9309,9 @@
       ],
       "Send with changed preferences?": [
         "Send med ændrede præferencer?"
+      ],
+      "Send with encryption disabled?": [
+        "Send med kryptering deaktiveret?"
       ],
       "Send without expiration?": [
         "Send uden udløb?"
