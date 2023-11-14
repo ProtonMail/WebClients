@@ -85,7 +85,7 @@ export const createActivationService = () => {
         const loggedIn = await ctx.service.auth.init({ forceLock: true });
 
         if (ENV === 'development' && RESUME_FALLBACK) {
-            if (!loggedIn && (await ctx.service.auth.getPersistedSession())) {
+            if (!loggedIn) {
                 const url = browser.runtime.getURL('/onboarding.html#/resume');
                 return browser.windows.create({ url, type: 'popup', height: 600, width: 540 });
             }

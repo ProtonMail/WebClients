@@ -201,9 +201,7 @@ export const createOnboardingService = () => {
      * sequence finished) */
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.ACCOUNT_EXTENSION,
-        withContext((ctx, _, { tab }) =>
-            ctx.service.auth.store.hasSession() && tab?.id ? navigateToOnboarding(tab.id) : false
-        )
+        withContext((ctx, _, { tab }) => (ctx.authStore.hasSession() && tab?.id ? navigateToOnboarding(tab.id) : false))
     );
 
     /* used by account to redirect to the onboarding welcome page
