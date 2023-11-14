@@ -1,20 +1,48 @@
+import { FC } from 'react';
+
 import { c } from 'ttag';
 
-import { EmptyViewContainer, PrimaryButton } from '@proton/components';
+import { PrimaryButton } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import noResultSearchSvg from '@proton/styles/assets/img/illustrations/empty-search.svg';
 
 import { useSearchControl } from '../../../store';
+import { DriveEmptyView } from '../../layout/DriveEmptyView';
 
-export const NoSearchResultsView = () => {
+const getTitle = (isReady: boolean) => {
+    if (isReady) {
+        // translator: Shown when searching and no results are found
+        return c('Title').t`No results found`;
+    }
+
+    // translator: Shown when searching and search is not enabled yet
+    return c('Title').t`Enable drive search`;
+};
+
+const getSubtitles = (isReady: boolean) => {
+    if (isReady) {
+        return [
+            // translator: Shown when searching and no results are found
+            c('Info').t`Try searching by file name, date, or type.`,
+            // translator: Shown when searching and no results are found
+            c('Info').t`Also try looking in Trash.`,
+        ];
+    }
+
+    // translator: Shown when searching and search is not enabled yet
+    return c('Info').t`To enable truly private search ${DRIVE_APP_NAME} needs to index your files locally.`;
+};
+
+type Props = {};
+
+export const NoSearchResultsView: FC<Props> = () => {
     const { prepareSearchData, hasData, isEnablingEncryptedSearch } = useSearchControl();
 
-    if (!hasData || isEnablingEncryptedSearch) {
-        return (
-            <EmptyViewContainer imageProps={{ src: noResultSearchSvg, alt: c('Info').t`Enable drive search` }}>
-                <h3 className="text-bold">{c('Title').t`Enable drive search`}</h3>
-                <p>{c('Info')
-                    .t`To enable truly private search ${DRIVE_APP_NAME} needs to index your files locally.`}</p>
+    const isReady = hasData && !isEnablingEncryptedSearch;
+
+    return (
+        <DriveEmptyView image={noResultSearchSvg} title={getTitle(isReady)} subtitle={getSubtitles(isReady)}>
+            {!isReady && (
                 <div className="flex flex-justify-center">
                     <PrimaryButton
                         size="large"
@@ -26,15 +54,7 @@ export const NoSearchResultsView = () => {
                         {c('Action').t`Enable drive search`}
                     </PrimaryButton>
                 </div>
-            </EmptyViewContainer>
-        );
-    }
-
-    return (
-        <EmptyViewContainer imageProps={{ src: noResultSearchSvg, alt: c('Info').t`No results found` }}>
-            <h3 className="text-bold">{c('Title').t`No results found`}</h3>
-            <p className="color-weak mb-2">{c('Info').t`Try searching by file name, date, or type.`}</p>
-            <p className="color-weak mt-0">{c('Info').t`Also try looking in Trash.`}</p>
-        </EmptyViewContainer>
+            )}
+        </DriveEmptyView>
     );
 };
