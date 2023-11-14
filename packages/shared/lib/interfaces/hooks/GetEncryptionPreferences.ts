@@ -3,6 +3,7 @@ import { ContactEmail } from '../contacts';
 
 export type GetEncryptionPreferences = ({
     email,
+    intendedForEmail,
     lifetime,
     contactEmailsMap,
 }: {
