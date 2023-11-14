@@ -1,5 +1,6 @@
 import { app, BrowserWindow, session, shell } from "electron";
 import log from "electron-log/main";
+import { manageSessionIDStore } from "./utils/authStore";
 import { ALLOWED_PERMISSIONS, PARTITION } from "./utils/constants";
 import { isHostAllowed, isHostCalendar, isHostMail, isMac, saveWindowsPosition } from "./utils/helpers";
 import { saveHardcodedURLs } from "./utils/urlStore";
@@ -61,6 +62,13 @@ app.on("window-all-closed", () => {
 
 // Security addition
 app.on("web-contents-created", (_ev, contents) => {
+    contents.on("did-navigate-in-page", (ev, url) => {
+        if (!isHostAllowed(url, app.isPackaged)) {
+            ev.preventDefault();
+        }
+        manageSessionIDStore(url);
+    });
+
     const preventDefault = (ev: Electron.Event) => {
         ev.preventDefault();
     };
