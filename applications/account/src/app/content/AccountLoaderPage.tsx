@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { TextLoader } from '@proton/components';
+import ElectronDraggeableHeaderWrapper from '@proton/components/components/electron/ElectronDraggeableHeaderWrapper';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import protonSpinner from '@proton/styles/assets/img/loading-spinners/proton-spinner.svg';
@@ -17,6 +18,7 @@ const AccountLoaderPage = ({ text, loaderClassName = '' }: Props) => {
 
     return (
         <div className="h-full">
+            <ElectronDraggeableHeaderWrapper />
             <div className={clsx(['absolute-center text-center'])}>
                 <div>
                     <img

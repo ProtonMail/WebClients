@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { ping } from '@proton/shared/lib/api/tests';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
+import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
 import { useDebounceInput } from '../../components';
@@ -20,6 +22,8 @@ const OnlineTopBanner = () => {
     const safeOnlineStatusValue = onlineStatus && !offline;
     const safeOnlineStatus = useDebounceInput(safeOnlineStatusValue, safeOnlineStatusValue ? 0 : OFFLINE_TIMEOUT);
     const api = useApi();
+
+    const isElectron = isElectronApp();
 
     const oldRef = useRef(safeOnlineStatus);
     const [backOnline, setBackOnline] = useState(false);
@@ -67,7 +71,7 @@ const OnlineTopBanner = () => {
 
     // If the device is known to be offline, the API unreachable is not displayed.
     return (
-        <TopBanner className="bg-danger">{c('Info')
+        <TopBanner className={clsx(isElectron ? 'bg-info' : 'bg-danger')}>{c('Info')
             .t`Internet connection lost. Please check your device's connectivity.`}</TopBanner>
     );
 };

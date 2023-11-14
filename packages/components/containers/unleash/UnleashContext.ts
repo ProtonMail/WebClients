@@ -7,6 +7,9 @@ enum MailFeatureFlag {
     WebMailPageSizeSetting = 'WebMailPageSizeSetting',
     EmailForwarding = 'EmailForwarding',
 }
+enum CommonFeatureFlag {
+    DisableElectronMail = 'DisableElectronMail',
+}
 
 enum AccountFlag {
     MaintenanceImporter = 'MaintenanceImporter',
@@ -20,4 +23,5 @@ enum DriveFeatureFlag {
     DrivePhotos = 'DrivePhotos',
     DrivePhotosUploadDisabled = 'DrivePhotosUploadDisabled',
 }
-export type FeatureFlag = `${MailFeatureFlag}` | `${AccountFlag}` | `${DriveFeatureFlag}`;
+
+export type FeatureFlag = `${MailFeatureFlag}` | `${AccountFlag}` | `${DriveFeatureFlag}` | `${CommonFeatureFlag}`;
