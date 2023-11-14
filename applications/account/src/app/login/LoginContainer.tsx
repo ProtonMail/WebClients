@@ -27,6 +27,7 @@ import {
 } from '@proton/components/containers/login/loginActions';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APPS, APP_NAMES, BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
@@ -227,7 +228,7 @@ const LoginContainer = ({
                                 ) : null}
                                 <LoginForm
                                     modal={modal}
-                                    externalSSO={APP_NAME === APPS.PROTONACCOUNT && toApp === APPS.PROTONVPN_SETTINGS}
+                                    externalSSO={APP_NAME === APPS.PROTONACCOUNT && getIsVPNApp(toApp)}
                                     signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
                                     paths={paths}
                                     defaultUsername={previousUsernameRef.current}
