@@ -389,6 +389,9 @@
       "Edit Gateway": [
         "Ağ geçidini düzenle"
       ],
+      "Edit invoice details": [
+        "Fatura ayrıntılarını düzenle"
+      ],
       "Edit label": [
         "Etiketi düzenle"
       ],
@@ -1711,7 +1714,7 @@
         "Takvimi paylaş"
       ],
       "Share outside ${ BRAND_NAME }": [
-        "${ BRAND_NAME } dışıyla paylaş"
+        "${ BRAND_NAME } dışındakilerle paylaş"
       ],
       "Share with ${ BRAND_NAME } users": [
         "${ BRAND_NAME } kullanıcıları ile paylaş"
@@ -1754,7 +1757,7 @@
     },
     "Calendar status": {
       "Active": [
-        "Etkin"
+        "Kullanımda"
       ],
       "Default": [
         "Varsayılan"
@@ -3576,6 +3579,9 @@
       ]
     },
     "email_forwarding_2023: Prompt": {
+      "End-to-end encryption will be re-enabled for the sender address.": [
+        "Gönderici adresi için uçtan uca şifreleme yeniden açılacak."
+      ],
       "Forwarding to the destination address will end.": [
         "Hedef adrese iletme sona erecek."
       ]
@@ -4121,8 +4127,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Tarifenizin kullanıcı sayısı sınırına ulaştınız. Yeni bir kullanıcı eklemek için lütfen tarifenizi yükseltin."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Kuruluş anahtarlarınızı kullanıma almalısınız. Kullanıma alma işlemini yapmadan yeni kullanıcılar ekleyemez, var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Kuruluş anahtarlarınızı kullanıma almalısınız. Bunları kullanıma almadan korunan kullanıcılar ekleyemez veya bu kullanıcılara erişemezsiniz."
       ],
       "You must privatize all users before generating new organization keys": [
         "Yeni kuruluş anahtarları oluşturmadan önce tüm kullanıcıları kişiselleştirmelisiniz"
@@ -7422,6 +7428,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Hesabınıza yeni bir tarifeye abone olmak ya da geçerli tarifenizi yenilemek için kullanabileceğiniz bir miktar kredi ekleyin. Bir kredi için ${ i18nCurrency } ödersiniz."
       ],
+      "Tor": [
+        "Tor"
+      ],
       "Total email addresses": [
         "Toplam e-posta adresi"
       ],
@@ -7494,6 +7503,9 @@
       "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "${ PROTON_SENTINEL_NAME } erişimi elde etmek için ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ya da ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } tarifesine yükseltin."
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "${ PROTON_SENTINEL_NAME } erişimi elde etmek için ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ya da ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } tarifesine yükseltin."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Hesabınızı paylaşması daha kolay ve daha kısa @pm.me adresi ile kullanmak için tarifenizi yükseltin. İngilizce olarak \"${ MAIL_APP_NAME } ben\" ya da \"Bana özel ileti\" anlamına gelir."
       ],
@@ -7550,6 +7562,9 @@
       ],
       "Version history": [
         "Sürüm geçmişi"
+      ],
+      "View, download, and manage your invoices.": [
+        "Faturalarınızı görüntüleyin, indirin ve yönetin."
       ],
       "Visa Secure logo": [
         "Visa Secure logosu"
@@ -7950,6 +7965,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Aboneliğinizin otomatik olarak yenilenmesi için bir ödeme yöntemi ekleyebilirsiniz. Başka ödeme yöntemleri de kullanılabilir."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Kendiniz veya kuruluşunuz için bir ad ve adres yazın. Bu bilgiler hem kişisel hem de kurumsal faturalara eklenecek."
       ]
     },
     "Info on errors": {
@@ -8862,6 +8882,9 @@
       ],
       "Name": [
         "Ad"
+      ],
+      "Name and address": [
+        "Ad ve adres"
       ],
       "Name on card": [
         "Kart üzerindeki isim"
@@ -9912,26 +9935,6 @@
         "Orta VPN hızı"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "${ currentPlanName } hesabımı koru"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Gözden geçirmeyi sürdür"
@@ -9971,6 +9974,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "${ currentPlanName } hesabımı koru"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
       ]
     },
     "new_plans: feature": {
@@ -11595,6 +11618,18 @@
         "etkialaniniz.com"
       ]
     },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "lütfen ${ contactHref } satış ekibimizle görüşün."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Tarifenizde bulunacak IP adresi sayısını seçin. Her ek IP adresinin maliyeti ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, ",
+        "${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, "
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "görüşün"
@@ -11777,14 +11812,11 @@
       "Changing organization password": [
         "Kuruluş parolasını değiştirme"
       ],
-      "Creating new users": [
-        "Yeni kullanıcılar oluşturma"
+      "Creating or accessing non-private users": [
+        "Korunmayan kullanıcıları ekleme veya erişme"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Parola değişikliği nedeniyle kuruluş yöneticinizin yetkileri kısıtlandı. Artık aşağıdaki işlemlere izin verilmiyor:"
-      ],
-      "Reading emails of non-private users": [
-        "Korunmayan kullanıcıların e-postalarını okuma"
       ]
     },
     "Role": {
@@ -12709,7 +12741,7 @@
         "Takvim bilgileri güncellendi"
       ],
       "Calendar removed": [
-        "Takvim kaldırıldı"
+        "Takvim silindi"
       ],
       "Calendar updated": [
         "Takvim güncellendi"
@@ -13459,6 +13491,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "${ currentName } ağ geçidini düzenle"
+      ],
+      "Edit invoice details": [
+        "Fatura ayrıntılarını düzenle"
       ],
       "Edit servers": [
         "Sunucuları düzenle"

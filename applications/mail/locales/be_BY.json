@@ -5964,6 +5964,9 @@
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Пачатковы адпраўнік гэтага паведамлення больш не з'яўляецца сапраўдным. Ваша паведамленне будзе адпраўлена з прадвызначанага адраса ${ defaultEmail }."
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Уладальнік гэтага адраса адключыў скразное шыфраванне. Яму неабходна паўторна ўключыць скразное шыфраванне, каб мець магчымасць адпраўляць зашыфраваныя лісты на гэты адрас."
+      ],
       "The sender has requested a read receipt.": [
         "Адпраўнік запытаў апавяшчэнне пра прачытанне."
       ],
@@ -8180,6 +8183,11 @@
         "Кантакты для наступных адрасоў былі выдалены, таму адпаведныя параметры шыфравання былі абноўлены наступным чынам:"
       ]
     },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "Кантакты для наступных адрасоў адключылі скразное шыфраванне на сваіх уліковых запісах, таму адпаведныя параметры шыфравання былі абноўлены наступным чынам:"
+      ]
+    },
     "Send email with errors": {
       "Do you want to send the email anyway?": [
         "Вы ўсё роўна хочаце адправіць ліст?"
@@ -9683,6 +9691,9 @@
       ],
       "Send with changed preferences?": [
         "Адправіць са змененымі параметрамі?"
+      ],
+      "Send with encryption disabled?": [
+        "Адправіць без шыфравання?"
       ],
       "Send without expiration?": [
         "Адправіць без тэрміну дзеяння?"

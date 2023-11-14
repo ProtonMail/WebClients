@@ -3996,6 +3996,9 @@
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon hanya buka berkas/folder apabila Anda mempercayai sumbernya."
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Pemilik alamat ini telah menonaktifkan enkripsi ujung ke ujung. Untuk dapat mengirim surel terenkripsi kealamat ini, pemiliknya harus mengaktifkan ulang enkripsi ujung ke ujung."
+      ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Terdapat berkas yang masih perlu untuk ditransfer. Dengan menutup jendela transfer, seluruh proses yang sedang berlangsung akan dibatalkan."
       ],
@@ -4223,6 +4226,9 @@
       ],
       "You cannot undo this action.": [
         "Anda tidak dapat mengurungkan tindakan ini."
+      ],
+      "You have ${ expiresInDays } days left to claim your 500 MB welcome bonus and ": [
+        "Anda memiliki ${ expiresInDays } hari tersisa untuk mengklaim bonus selamat datang 500 MB Anda dan "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Kapasitas penyimpanan Anda telah mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"

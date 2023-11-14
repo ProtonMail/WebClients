@@ -11,13 +11,13 @@
     },
     "Access level": {
       "Full view": [
-        "Voller Lesezugriff"
+        "Vollansicht"
       ],
       "Full view (see all event details)": [
         "Voller Lesezugriff (alle Termindetails anzeigen)"
       ],
       "Limited view": [
-        "Eingeschränkter Lesezugriff"
+        "Eingeschränkte Einsicht"
       ],
       "Limited view (see only free/busy)": [
         "Eingeschränkter Lesezugriff (nur Verfügbar/Beschäftigt anzeigen)"
@@ -1711,7 +1711,7 @@
     },
     "Calendar settings section title": {
       "Share calendar": [
-        "Kalender freigeben"
+        "Kalender teilen"
       ],
       "Share outside ${ BRAND_NAME }": [
         "Außerhalb von ${ BRAND_NAME } teilen"
@@ -1720,7 +1720,7 @@
         "Mit ${ BRAND_NAME }-Benutzern teilen"
       ],
       "Share with anyone": [
-        "Für andere freigeben"
+        "Mit anderen teilen"
       ]
     },
     "Calendar settings sidebar": {
@@ -3700,7 +3700,7 @@
         "Automatische Antworten sind eine kostenpflichtige Funktion. Bitte führe ein Umstieg auf ein kostenpflichtiges Konto durch, um diese Funktion nutzen zu können."
       ],
       "Calendar cannot be found": [
-        "Kalender konnte nicht gefunden werden"
+        "Kalender kann nicht gefunden werden"
       ],
       "Calendar limit reached": [
         "Max. Anzahl von Kalendern erreicht"
@@ -4127,9 +4127,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte upgrade dein Abonnement, um weitere Benutzer hinzuzufügen."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Du musst deine Organisationsschlüssel aktivieren. Ohne deren Aktivierung ist es nicht möglich, neue Benutzer anzulegen, Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
-      ],
       "You must privatize all users before generating new organization keys": [
         "Du musst zunächst alle Benutzer privatisieren, bevor du neue Organisationsschlüssel erzeugst."
       ],
@@ -4508,7 +4505,7 @@
         "Der Exportvorgang ist fehlgeschlagen, da die Internetverbindung unterbrochen wurde. Bitte versuche es erneut."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
-        "Nachdem die Termine erfolgreich exportiert wurden, kann eine ICS-Datei gespeichert werden."
+        "Du kannst eine ICS-Datei der von dir erfolgreich exportierten Termine speichern."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -5349,7 +5346,7 @@
         "Feiertage"
       ],
       "Other": [
-        "Weitere"
+        "Andere"
       ],
       "Subscribed": [
         "Abonniert"
@@ -5752,7 +5749,7 @@
         "Dauerhaft ${ discountPercentage }"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } wird frühere Versionen deiner Dateien nicht mehr speichern."
+        "${ DRIVE_APP_NAME } wird frühere Versionen deiner Dateien nicht mehr behalten."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } ist ungültig"
@@ -6051,7 +6048,7 @@
         "Jeder mit diesem Link kann in deinem Kalender sehen, ob du „Verfügbar“ oder „Beschäftigt“ bist. Es können jedoch keine Details zum Termin wie z. B. Titel, Ort oder Teilnehmer eingesehen werden."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Jeder, der über diesen Link verfügt, kann deinen Kalender nicht mehr synchronisieren und erhält keine zukünftigen Aktualisierungen mehr. Wenn du ihnen erneut Zugriff gewähren möchtest, musst du einen neuen Link erstellen."
+        "Alle, die über diesen Link verfügen, können deinen Kalender weder synchronisieren noch erhalten sie zukünftige Aktualisierungen. Wenn du ihnen erneut Zugriff gewähren möchtest, musst du einen neuen Link erstellen."
       ],
       "Are you sure you want to delete this address?": [
         "Möchtest du diese Adresse wirklich löschen?"
@@ -6060,7 +6057,7 @@
         "Bist du dir sicher, dass du diesen Kalender löschen möchtest?"
       ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "Bist du dir sicher, dass du diesen Kalender löschen möchtest? Alle Adressen, für die du diesen Kalender freigegeben hast, verlieren den Zugriff auf ihn."
+        "Bist du dir sicher, dass du diesen Kalender löschen möchtest? Alle Adressen, für die du diesen Kalender freigegeben hast, verlieren den Zugriff darauf."
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
         "Bist du sicher, dass du diesen Kalender löschen möchtest? Alle darin enthaltenen Termine werden ebenfalls gelöscht."
@@ -6370,7 +6367,7 @@
         "E-Mails, die mit dieser Kategorie gekennzeichnet sind, werden nicht gelöscht und sind weiterhin im entsprechenden Ordner zu finden."
       ],
       "Enable this address to join this calendar": [
-        "Diese Adresse aktivieren, um diesem Kalender beizutreten"
+        "Aktiviere diese Adresse, um diesem Kalender beizutreten."
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Aktiviere TLS oder SSL für den externen Dienst, falls dies unterstützt wird."
@@ -6427,7 +6424,7 @@
         "Gib deine Wiederherstellungs-Telefonnummer ein und es wird dir dein Benutzername oder deine E-Mail-Adresse zugesendet."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
-        "Termin-Einladungen und Antwortschreiben werden in dieser Sprache versendet."
+        "Termin-Einladungen und Antworten darauf werden in dieser Sprache versendet."
       ],
       "Expired": [
         "Abgelaufen"
@@ -7047,7 +7044,7 @@
         "Denke daran, dem Benutzer seine Anmeldedaten mitzuteilen."
       ],
       "Remove one of your calendars to join this one": [
-        "Entferne einen deiner Kalender, um diesem beizutreten"
+        "Entferne einen deiner Kalender, um diesem beizutreten."
       ],
       "Report link expired": [
         "Meldelink abgelaufen"
@@ -7431,6 +7428,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Lade dein Konto mit Guthaben auf, mit dem du ein anderes Abonnement abschließen oder dein aktuelles Abonnement verlängern kannst. Du erhältst ein Guthaben für jeden ${ i18nCurrency }, der ausgegeben wird."
       ],
+      "Tor": [
+        "Tor"
+      ],
       "Total email addresses": [
         "Anzahl E-Mail-Adressen"
       ],
@@ -7502,6 +7502,9 @@
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Upgrade auf ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, oder das ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } Abonnement, um Zugriff zu ${ PROTON_SENTINEL_NAME } zu erhalten."
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Führe eine Abonnementaufwertung auf ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, oder ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } durch um Zugang zu ${ PROTON_SENTINEL_NAME } zu erhalten."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Führe ein Upgrade durch, um deinem Konto kürzere @pm.me-Adressen hinzuzufügen, die einfacher zu teilen sind. Das steht für \"${ MAIL_APP_NAME } me\" oder \"Private Message me\"."
@@ -7809,7 +7812,7 @@
         "Du solltest eine Sicherungskopie dieses Schlüssels exportieren, falls du die damit verschlüsselten Daten wiederherstellen musst."
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        "Du musst dennoch auf Einladungen antworten, damit der Gastgeber deine Antwort sehen kann."
+        "Du musst weiterhin auf Einladungen antworten, damit der Gastgeber deine Antwort sehen kann."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Nach der Anmeldung wirst du zu ${ destination } weitergeleitet."
@@ -9265,7 +9268,7 @@
     },
     "Label for default event notifications": {
       "All-day event notifications": [
-        "Benachrichtigungen zu ganztägigem Termin"
+        "Benachrichtigungen zu Ganztagsterminen"
       ],
       "Notifications": [
         "Benachrichtigungen"
@@ -9610,8 +9613,8 @@
     },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Du kannst bis zu ${ MAX_LINKS_PER_CALENDAR } Link pro Kalender erstellen. Um einen neuen Link zu erstellen, musst du einen Link aus der folgenden Liste löschen.",
-        "Du kannst bis zu ${ MAX_LINKS_PER_CALENDAR } Links pro Kalender erstellen. Um einen neuen Link zu erstellen, musst du einen Link aus der folgenden Liste löschen."
+        "Du kannst bis zu ${ MAX_LINKS_PER_CALENDAR } Link pro Kalender erstellen. Um einen neuen Link für diesen Kalender zu erstellen, musst du einen Link aus der untenstehenden Liste löschen.",
+        "Du kannst bis zu ${ MAX_LINKS_PER_CALENDAR } Links pro Kalender erstellen. Um einen neuen Link für diesen Kalender zu erstellen, musst du einen Link aus der untenstehenden Liste löschen."
       ]
     },
     "Maximum shared calendar members reached alert": {
@@ -9932,26 +9935,6 @@
         "Mittlere VPN-Geschwindigkeit"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Downgrade auf ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Alle ${ BRAND_NAME }-Abonnements entdecken"
-      ],
-      "From ${ price }": [
-        "Ab ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Mein ${ currentPlanName }-Konto behalten"
-      ],
-      "Upgrade": [
-        "Upgraden"
-      ],
-      "Upgrade now": [
-        "Jetzt upgraden"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Weiter zur Prüfung"
@@ -9991,6 +9974,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Umsteigen auf ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Downgrade auf ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Alle ${ BRAND_NAME }-Abonnements entdecken"
+      ],
+      "From ${ price }": [
+        "Ab ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Mein ${ currentPlanName }-Konto behalten"
+      ],
+      "Upgrade": [
+        "Upgraden"
+      ],
+      "Upgrade now": [
+        "Jetzt upgraden"
       ]
     },
     "new_plans: feature": {
@@ -11809,14 +11812,8 @@
       "Changing organization password": [
         "Passwort der Organisation ändern"
       ],
-      "Creating new users": [
-        "Neue Benutzer anlegen"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Aufgrund einer Passwortänderung wurden deine Organisations-Administrationsprivilegien eingeschränkt. Die folgenden Aktionen sind nicht länger erlaubt:"
-      ],
-      "Reading emails of non-private users": [
-        "E-Mails von nicht-privaten Nutzern lesen"
       ]
     },
     "Role": {
@@ -12241,7 +12238,7 @@
     },
     "Shared calendar label input placeholder": {
       "Add label": [
-        "Kategorie hinzuf."
+        "Kategorie hinzufügen"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -12549,7 +12546,7 @@
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Füge öffentliche, externe oder gemeinsame Kalender über eine URL hinzu."
+        "Füge öffentliche, externe oder geteilte Kalender über eine URL hinzu."
       ],
       "Add public, external, or shared calendars.": [
         "Füge öffentliche, externe oder geteilte Kalender hinzu."

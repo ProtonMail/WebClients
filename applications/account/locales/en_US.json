@@ -4,6 +4,11 @@
     "language": "en_US"
   },
   "contexts": {
+    "Calendar sharing access option label": {
+      "Edit (view, create and edit event details)": [
+        "Edit (view, create or edit event details)"
+      ]
+    },
     "Description": {
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "Automatically clear out messages that have been in Trash or Spam for over 30 days. Enjoy this and other benefits when you upgrade."
@@ -18,6 +23,12 @@
       ],
       "Require at least one condition": [
         "Add at least one condition"
+      ],
+      "You have reached the contacts limit for your account": [
+        "You have reached the number of contacts limit for your account"
+      ],
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "You must activate your organization keys. Without activation, you will not be able to create or access non-private users."
       ]
     },
     "familyOffer_2023:Action": {
@@ -56,8 +67,14 @@
       "Lean more about gateways": [
         "Learn more about Gateways"
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains."
+      ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "You can enable authentication sign in to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts.": [
         "You can enable authentication logs to see when your account is accessed, and from which IP. We will record the IP address that accesses the account and the time, as well as failed attempts."
@@ -130,6 +147,11 @@
     "Tor out of date": {
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "This version of TOR Browser is not supported. Please update to the latest ${ stableRelease }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more."
       ]
     },
     "Warning": {

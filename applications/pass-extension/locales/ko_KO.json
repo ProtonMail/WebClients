@@ -65,12 +65,6 @@
       "Continue": [
         "계속"
       ],
-      "Continue without pinning": [
-        "고정 없이 계속"
-      ],
-      "Copy & fill in": [
-        "복사 및 붙여놓기"
-      ],
       "Copy and close": [
         "복사 및 닫기"
       ],
@@ -182,9 +176,6 @@
       "Import": [
         "불러오기"
       ],
-      "Import your passwords": [
-        "비밀번호 불러오기"
-      ],
       "Importing": [
         "가져오는 중"
       ],
@@ -227,6 +218,9 @@
       "More options": [
         "더 많은 옵션"
       ],
+      "Move all items": [
+        "모든 항목 이동"
+      ],
       "Move to a shared vault": [
         "공유된 금고로 이동"
       ],
@@ -238,9 +232,6 @@
       ],
       "Move to trash": [
         "휴지통으로 이동"
-      ],
-      "Not now": [
-        "다음에"
       ],
       "OK": [
         "확인"
@@ -347,9 +338,6 @@
       "Update vault": [
         "금고 업데이트"
       ],
-      "Updating": [
-        "업데이트 중"
-      ],
       "Upgrade": [
         "업그레이드"
       ],
@@ -418,9 +406,6 @@
       "Auto-lock could not be disabled": [
         "자동 잠금을 비활성화 할 수 없습니다."
       ],
-      "Cannot create alias (${ error }).": [
-        "별명을 생성할 수 없습니다 (${ error })."
-      ],
       "Cannot send invitation to this address at the moment": [
         "현재 이 주소로 초대 전송을 할 수 없습니다."
       ],
@@ -484,6 +469,9 @@
       "Failed to edit user's access.": [
         "사용자 접근 수정 실패."
       ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "\"${ payload.content.name }\"에서 모든 항목을 이동하는데 실패했습니다."
+      ],
       "Failed to remove user's access.": [
         "사용자 접근 삭제 실패."
       ],
@@ -532,9 +520,6 @@
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
         "계속 하기 위해 ${ PASS_APP_NAME }에 필요한 확장 권한을 허용해 주세요."
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "확장자를 고정하거나 \"고정하지 않고 계속\"을 선택하세요."
-      ],
       "Request timed out": [
         "요청 시간이 초과되었습니다."
       ],
@@ -543,6 +528,9 @@
       ],
       "Restoring item failed": [
         "항목 복구 실패"
+      ],
+      "Restoring trashed items failed": [
+        "휴지통 내 항목 복구 실패"
       ],
       "Settings update failed": [
         "설정 업데이트 실패"
@@ -708,20 +696,29 @@
       "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
         "${ PASS_APP_NAME }의 세션 잠금해제를 위해 PIN 코드가 필요하게 됩니다."
       ],
-      "Access your passwords on the go with our mobile apps.": [
-        "이동 중에 모바일 앱에서도 비밀번호에 쉽게 접근하세요."
-      ],
       "Admin": [
         "관리자"
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "별명 \"${ item.aliasEmail }\" 이(가) 휴지통으로 이동됨 - 사용자의 메일함에 대한 모든 포워딩이 중단됩니다."
       ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "\"${ payload.content.name }\" 내의 모든 항목을 성공적으로 이동했습니다."
+      ],
+      "All trashed items permanently removed": [
+        "모든 항목을 성공적으로 삭제했습니다."
+      ],
+      "All trashed items successfully restored": [
+        "모든 휴지통 내의 항목이 성공적으로 복구되었습니다."
+      ],
+      "An item previously shared with you was removed": [
+        "사용자가 이전에 공유한 항목이 삭제되었습니다."
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "\"${ fromVaultName }\" 에서 \"${ toVaultName }\"(으)로 모든 항목을 이동하시겠습니까?"
+      ],
       "Auto-lock successfully disabled": [
         "자동 잠금이 성공적으로 비활성화 되었습니다."
-      ],
-      "Autosaved on ${ submissionURL }": [
-        "${ submissionURL }에 저장됨"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "이 금고에서 항목을 생성, 편집, 삭제 및 불러올 수 있습니다."
@@ -744,9 +741,6 @@
       "Copied to clipboard": [
         "클립보드에 복사됨"
       ],
-      "Creating alias...": [
-        "별명 생성 중..."
-      ],
       "Credit cards, Custom fields": [
         "신용 카드, 사용자 지정 필드"
       ],
@@ -759,23 +753,17 @@
       "Deleting \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" 삭세 중"
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "${ PASS_APP_NAME } YouTube 비디오 살펴보기"
-      ],
       "Drop file here to upload": [
         "업로드할 파일을 여기에 놓습니다"
       ],
       "Drop to import": [
         "드래그해서 불러오기"
       ],
-      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
-        "기존 비밀번호를 ${ PASS_APP_NAME }로 쉽게 가져오세요."
-      ],
       "Editor": [
         "편집자"
       ],
-      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } 계정에 연결해 ${ PASS_APP_NAME }를 활성화 하세요."
+      "Emptying trash...": [
+        "휴지통 비우는 중..."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "인증 코드를 입력하세요. ${ digit } 자리."
@@ -798,14 +786,8 @@
       "Generated passwords will be stored for a period of one day.": [
         "생성된 비밀번호가 하루 동안 저장됩니다."
       ],
-      "Generating alias...": [
-        "별명 생성 중..."
-      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Pass Plus를 구독하여 무제한 별명을 사용하고, 독점 기능과 Proton 지원을 사용해 보세요."
-      ],
-      "Here you will find all the necessary information to get you started.": [
-        "여기서 시작하는 데 필요한 모든 정보를 찾을 수 있습니다."
       ],
       "Import in progress:": [
         "처리가 진행 중입니다:"
@@ -861,6 +843,9 @@
       "items": [
         "항목"
       ],
+      "Leaving vault...": [
+        "금고 나가는 중..."
+      ],
       "Let's get you started by creating your first item": [
         "첫 항목 생성을 시작해 보세요"
       ],
@@ -879,14 +864,14 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "비밀번호 그 이상을 보호하다, ${ PASS_APP_NAME }는 이메일 별명을 통해 비밀번호와 개인 이메일 주소를 보호합니다. ${ MAIL_APP_NAME }의 같은 기술로, 데이터가 종단간 암호화되며 오직 당신만 접근 가능합니다."
       ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
+      ],
       "Multiple vaults": [
         "다중 금고"
       ],
       "N/A": [
         "사용 불가"
-      ],
-      "No login found": [
-        "발견된 로그인 없음"
       ],
       "None": [
         "없음"
@@ -903,17 +888,11 @@
       "Pass Plus trial": [
         "Pass Plus 체험"
       ],
-      "Password copied": [
-        "비밀번호 복사됨"
-      ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "하루 이상된 비밀번호는 기록에서 자동적으로 삭제됩니다."
       ],
       "Pending access to the shared data": [
         "공유 데이터에 대한 접근 대기 중"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "${ PASS_APP_NAME }를 툴바에 고정하세요."
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN 코드가 성공적으로 추가되었습니다. ${ PASS_APP_NAME }를 잠금해제 할 때 사용하세요."
@@ -939,8 +918,11 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "프라이버시는 우리에게 큰 관심사입니다. 왜 ${ PASS_APP_NAME }가 다른지 알아보세요."
       ],
-      "Save login": [
-        "로그인 저장"
+      "Restoring trashed items...": [
+        "휴지통 내 항목 복구 중..."
+      ],
+      "Select destination vault": [
+        "대상 금고 선택"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "불러온 금고가 저장될 위치를 선택하세요."
@@ -959,9 +941,6 @@
       ],
       "Share with 10 others": [
         "최대 10명과 공유"
-      ],
-      "Sign in or create an account to continue.": [
-        "계속하기 위해 로그인 하거나 계정을 생성하십시오."
       ],
       "Sign in to your account": [
         "계정에 로그인하세요"
@@ -1020,12 +999,6 @@
       "Unlock it with your PIN to access the settings": [
         "설정에 접근하기 위해 PIN으로 잠금 해제 하세요."
       ],
-      "Update login": [
-        "로그인 업데이트"
-      ],
-      "Upgrade ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } 업그레이드"
-      ],
       "Use vaults to share this item with others.": [
         "다른 사람과 이 항목을 공유하려면 금고를 사용하세요."
       ],
@@ -1044,8 +1017,8 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "금고 \"${ payload.share.content.name }\" 이(가) 성공적으로 업데이트되었습니다."
       ],
-      "Verification code": [
-        "인증 코드"
+      "Vault \"${ share.content.name }\" was removed": [
+        "금고 \"${ share.content.name }\" 이(가) 삭제 되었습니다."
       ],
       "Viewer": [
         "보기"
@@ -1082,9 +1055,6 @@
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "비활성 기간 후 자동으로 잠기면 PIN을 ${ PASS_APP_NAME }를 잠금해제 하는데 사용할 수 있습니다."
-      ],
-      "You're about to create": [
-        "생성하려고 하는 주소:"
       ],
       "You're invited to a vault.": [
         "금고에 초대되었습니다"
@@ -1348,9 +1318,6 @@
       ],
       "Old-New": [
         "오래됨 순"
-      ],
-      "Older than last month": [
-        "지난 달 이상"
       ],
       "Oldest to newest": [
         "오래된 항목 순"
@@ -1639,17 +1606,8 @@
       "Enter your PIN": [
         "PIN을 입력해 주세요."
       ],
-      "Fill & copy password": [
-        "비밀번호 복사 및 채우기"
-      ],
-      "Get the mobile apps": [
-        "모바일 앱을 다운로드 하세요."
-      ],
       "Grant permissions": [
         "권한 부여"
-      ],
-      "Hide my email": [
-        "Hide My Email"
       ],
       "Import - ${ date }": [
         "불러오기 - ${ date }"
@@ -1666,6 +1624,9 @@
       "Member limit": [
         "구성원 제한"
       ],
+      "Move all items ?": [
+        "모든 항목을 이동하시겠어요?"
+      ],
       "Our welcome gift to you": [
         "당신께 드리는 웰컴 기프트"
       ],
@@ -1674,9 +1635,6 @@
       ],
       "Permanently remove all items ?": [
         "모든 항목을 완전히 삭제합니까?"
-      ],
-      "Pin the extension": [
-        "확장 프로그램 고정"
       ],
       "Secure your data": [
         "데이터를 보호하세요"
@@ -1687,15 +1645,6 @@
       "Share with": [
         "공유 대상:"
       ],
-      "Switching to ${ PASS_APP_NAME }?": [
-        "${ PASS_APP_NAME }으로 전환하나요?"
-      ],
-      "Thank you for installing ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME }를 설치해 주셔서 감사합니다."
-      ],
-      "The extension is now ready to use.": [
-        "확장 프로그램을 사용할 준비가 되었어요."
-      ],
       "Transfer ownership": [
         "소유권 이전"
       ],
@@ -1705,14 +1654,8 @@
       "Unlock ${ brandNameJSX }": [
         "${ brandNameJSX } 잠금 해제"
       ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } 잠금 해제"
-      ],
       "Update available": [
         "사용 가능한 업데이트가 있습니다"
-      ],
-      "Use my email": [
-        "나의 이메일 사용"
       ],
       "Vault shared with you": [
         "나와 공유된 금고"
@@ -1847,9 +1790,6 @@
       "Trash alias ?": [
         "별명 삭제 ?"
       ],
-      "Unable to save": [
-        "저장할 수 없음"
-      ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME }에 로그인할 수 없습니다. ${ additionalMessage }"
       ],
@@ -1879,12 +1819,6 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "이 금고에 대한 접근 권한이 더 이상 없습니다. 다시 확인하려면, 새 초대가 필요합니다."
-      ],
-      "Your plan does not allow you to create more aliases": [
-        "사용자의 플랜에서 생성할 수 있는 별명보다 더 많이 생성할 수 없습니다."
-      ],
-      "Your plan only allows you to autofill from your first two vaults": [
-        "사용자의 플랜에서 처음 두개 금고에서만 자동 완성을 지원합니다."
       ],
       "Your session was locked due to inactivity": [
         "세션이 비활성화로 인해 잠겼습니다."

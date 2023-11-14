@@ -1907,8 +1907,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "現在のプランでのユーザー数の上限に達しました。新規ユーザーを追加するにはアップグレードしてください。"
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "組織用の鍵を有効にする必要があります。 有効にしない限り、新規ユーザーの作成、既存ユーザーへのアドレスの追加並びに、ユーザーアカウントへのアクセスはできません。"
+      "You must privatize all users before generating new organization keys": [
+        "新しい組織キーを生成する前に、すべてのユーザーをプライベート化する必要があります"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "あなたのアカウントあるいは組織には未払いの請求があります。すべての未払いの請求をお支払いください。"
@@ -5377,14 +5377,8 @@
       "Changing organization password": [
         "組織のパスワードを変更しています"
       ],
-      "Creating new users": [
-        "新しいユーザーを作成しています"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "パスワードの変更のために、組織の管理権限が制限されています。次の操作は許可されなくなりました。"
-      ],
-      "Reading emails of non-private users": [
-        "非公開ユーザーの電子メールの閲覧"
       ]
     },
     "Role": {

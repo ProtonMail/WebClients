@@ -17,7 +17,7 @@
         "Täysi tarkastelu (näytä kaikki tapahtumatiedot)"
       ],
       "Limited view": [
-        "Rajoitettu tarkastelu"
+        "Rajoitettu näkymä"
       ],
       "Limited view (see only free/busy)": [
         "Rajoitettu tarkastelu (näytä vain vapaa/varattu)"
@@ -1650,19 +1650,9 @@
         "Muokkaa kalenteria"
       ]
     },
-    "Calendar export section description": {
-      "Download an ICS file with all the events from the selected calendar.": [
-        "Lataa kaikki valitun kalenterin tapahtumat sisältävä ICS-tiedosto."
-      ]
-    },
-    "Calendar import section description": {
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Voit tuoda ICS-tiedostoja toisesta kalenterista ${ CALENDAR_APP_NAME } -palveluun. Tämä mahdollistaa yksittäisen tapahtuman tai koko agendan tuonnin."
-      ]
-    },
     "Calendar invite status label": {
       "Declined": [
-        "Kieltäydytty"
+        "Hylätty"
       ],
       "Invite sent": [
         "Kutsu lähetetty"
@@ -1699,25 +1689,9 @@
         "Sinulla on jo tämän kalenterin käyttöoikeus"
       ]
     },
-    "Calendar settings link share description": {
-      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Luo linkki kalenteriisi ja jaa se ${ BRAND_NAME }in ulkopuolelle. Vain sinä voit lisätä ja poistaa tapahtumia."
-      ]
-    },
-    "Calendar settings private share description": {
-      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Jaa kalenterisi muille ${ BRAND_NAME }-käyttäjille. Aloita yhteistyö myöntämällä heille oikeus lisätä kalenteriisi tapahtumia ja muokata niitä. Voit muokata käyttäjien oikeuksia koska tahansa."
-      ]
-    },
     "Calendar settings section title": {
       "Share calendar": [
         "Jaa kalenteri"
-      ],
-      "Share outside ${ BRAND_NAME }": [
-        "Jaa ${ BRAND_NAME }nin ulkopuolelle"
-      ],
-      "Share with ${ BRAND_NAME } users": [
-        "Jaa ${ BRAND_NAME }-käyttäjille"
       ],
       "Share with anyone": [
         "Jaa kenelle tahansa"
@@ -1750,20 +1724,15 @@
         "Yhteystiedon ${ address } tietojen nouto epäonnistui"
       ]
     },
-    "Calendar sharing permission change notification": {
-      "Permissions changed for ${ email }": [
-        "Tunnuksen ${ email } käyttöoikeuksia muutettiin"
-      ]
-    },
     "Calendar status": {
       "Active": [
-        "Käytössä"
+        "Aktiiviset"
       ],
       "Default": [
         "Oletus"
       ],
       "Disabled": [
-        "Ei käytössä"
+        "Pois käytöstä"
       ],
       "Not synced": [
         "Synkronoimaton"
@@ -3050,14 +3019,6 @@
         "Tuntematon"
       ]
     },
-    "Delete calendar section description": {
-      "All events in this calendar will be deleted.": [
-        "Kaikki kalenterin tapahtumat poistetaan."
-      ],
-      "You will no longer have access to this calendar.": [
-        "Sinulla ei ole enää tämän kalenterin käyttöoikeutta."
-      ]
-    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Erääntynyt lasku"
@@ -4127,9 +4088,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Olet kuluttanut tilaukseesi sisältyvän käyttäkiintiön. Lisää uusia käyttäjiä päivittämällä tilauksesi."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Sinun on aktivoitava organisaatioavaimesi. Ilman aktivointia et voi luoda uusia käyttäjiä, lisätä osoitteita nykyisille käyttäjille tai käyttää muita kuin yksityisiä käyttäjätilejä."
-      ],
       "You must privatize all users before generating new organization keys": [
         "Sinun on yksityistettävä kaikki käyttäjät ennen uusien organisaation avaimien luontia"
       ],
@@ -4406,14 +4364,6 @@
         "Kuvaa ei valittu"
       ]
     },
-    "Error when exporting event from calendar": {
-      "Event @ ${ timeString }": [
-        "Tapahtuma @ ${ timeString }"
-      ],
-      "Event from ${ timeString }, ${ rruleString }": [
-        "Tapahtuma ajalta ${ timeString }, ${ rruleString }"
-      ]
-    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Liitetyn ICS-tiedoston salausta ei voitu purkaa"
@@ -4464,51 +4414,11 @@
       ]
     },
     "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } tapahtuma vietiin",
-        "${ totalProcessed }/${ totalToProcess } tapahtumaa vietiin"
-      ],
-      "Calendar successfully exported. You can now save the ICS file.": [
-        "Kalenteri vietiin. Voit nyt tallentaa ICS-tiedoston."
-      ],
-      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Puretaan kalenterisi tapahtumien salausta: ${ totalProcessed }/${ totalToProcess }"
-      ],
-      "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Salasanan nollauksen vuoksi tapahtumiesi salausta ei voitu purkaa, eikä tapahtumia viedä."
-      ],
-      "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "Salasanan nollauksen vuoksi joidenkin tapahtumiesi salausta ei voitu purkaa, eikä tapahtumia viedä."
-      ],
       "Error decrypting event": [
-        "Virhe purettaessa tapahtuman salausta"
-      ],
-      "Learn how to restore encrypted events with old password": [
-        "Lue miten voit palauttaa salatut tapahtumat vanhalla salasanalla"
+        "Virhe tapahtuiman salauksen purussa"
       ],
       "Loading events": [
         "Ladataan tapahtumia"
-      ],
-      "None of the events could be exported.": [
-        "Yhtään tapahtumaa ei voitu viedä."
-      ],
-      "Password reset - event cannot be decrypted": [
-        "Salasanan nollaus - tapahtuman salausta ei voida purkaa"
-      ],
-      "Password reset - multiple events cannot be decrypted": [
-        "Salasanan nollaus - useiden tapahtumien salausta ei voida purkaa"
-      ],
-      "Please don't close the tab before the exporting process is finished.": [
-        "Älä sulje välilehteä ennen tuonnin valmistumista."
-      ],
-      "Some of your events could not be exported.": [
-        "Joitakin tapahtumia ei voitu viedä."
-      ],
-      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Internet-yhteys katkesi ja tämän vuoksi vienti epäonnistui. Yritä uudelleen."
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        "Voit tallentaa viedyt tapahtumat sisältävän ICS-tiedoston."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -5209,7 +5119,7 @@
     },
     "Header": {
       "Access": [
-        "Käyttöoikeus"
+        "Pääsy"
       ],
       "Action": [
         "Toiminto"
@@ -5346,10 +5256,10 @@
     },
     "Header; Table with list of calendars arranged by type": {
       "Holidays": [
-        "Vapaapäivät"
+        "Juhlapäivät"
       ],
       "Other": [
-        "Muu"
+        "Muut"
       ],
       "Subscribed": [
         "Tilatut"
@@ -5734,9 +5644,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
       ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } asetetaan oletuskalenteriksi."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } uusi kalenteri",
         "${ calendarsToBeCreatedCount } uutta kalenteria"
@@ -5751,9 +5658,6 @@
       "${ discountPercentage } forever": [
         "${ discountPercentage } ikuisesti"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } ei enää säilytä tiedostojesi aiempia versioita."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } on virheellinen"
       ],
@@ -5762,9 +5666,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: matalatarkkuuksinen esikatselu"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } asetetaan oletuskalenteriksi."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } haluaa jakaa dataa kanssasi sovelluksessa ${ PASS_APP_NAME }"
@@ -5918,9 +5819,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Käyttäjä tarkoittaa tiliä, joka on liitetty yksittäiseen käyttäjätunnukseen, postilaatikkoon ja henkilöön."
       ],
-      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Käytä salasanojasi ja suojaa verkkohenkilöllisyytesi saumattomasti kaikilla laitteillasi. Lataa ja asenna tarvitsemasi ${ PASS_APP_NAME } -sovellukset ja laajennukset."
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Tiliä on rajoitettu maksamattomien laskujen vuoksi. Ota yhteyttä ylläpitoosi."
       ],
@@ -6050,23 +5948,11 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Linkin välityksellä kuka tahansa voi nähdä oletko kalenterissasi vapaana vai varattuna. He eivät näe tapahtumien nimien, sijaintien ja osallistujien kaltaisia tietoja."
       ],
-      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Kukaan ei voi enää synkronoida tai nähdä tämän kalenterin uusia päivityksiä tämän linkin välityksellä. Jos haluat myöntää heille käyttöoikeuden uudestaan, sinun on luotava uusi linkki."
-      ],
       "Are you sure you want to delete this address?": [
         "Haluatko varmasti poistaa osoitteen?"
       ],
       "Are you sure you want to delete this calendar?": [
-        "Haluatko varmasti poistaa kalenterin?"
-      ],
-      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "Haluatko varmasti poistaa kalenterin? Myös kaikki osoitteet, joille olet jakanut kalenterin menettävät pääsyn siihen."
-      ],
-      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "Haluatko varmasti poistaa kalenterin? Myös kaikki sen tapahtumat poistetaan."
-      ],
-      "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Haluatko varmasti poistaa kalenterin? Voit lisätä yleiset vapaapäivät myöhemmin uudelleen."
+        "Haluatko varmasti poistaa tämän kalenterin?"
       ],
       "Are you sure you want to delete this domain?": [
         "Haluatko varmasti poistaa verkkotunnuksen?"
@@ -6287,7 +6173,7 @@
         "Poista kaikki muut MX-tietueet tai varmista, että ${ MAIL_APP_NAME }in painotus on pienin numero."
       ],
       "Delete link?": [
-        "Poistetaanko linkki?"
+        "Poista linkki?"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta",
@@ -6369,9 +6255,6 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Tällä tunnisteella merkittyjä viestejä ei poisteta ja ne löytyvät edelleen omista kansioistaan."
       ],
-      "Enable this address to join this calendar": [
-        "Liity kalenteriin ottamalla tämä osoite käyttöön"
-      ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Ota TLS tai SSL käyttöön ulkoisessa palvelussa, jos sitä tuetaan."
       ],
@@ -6425,9 +6308,6 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Syötä palautuspuhelimesi numero niin käyttäjätunnuksesi tai sähköpostiosoitteesi lähetetään sinulle."
-      ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        "Tapahtumakutsut ja osanottovahvistukset lähetetään tällä kielellä."
       ],
       "Expired": [
         "Voimassaolo päättynyt"
@@ -6494,9 +6374,6 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Jos se ei sovi sinulle, hyvitämme sen."
-      ],
-      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Jos järjestelmän aikavyöhyke ei vastaa nykyistä aikavyöhykeasetustasi, sinua pyydetään päivittämään se (enintään kerran päivässä)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Jos tätä verkkotunnusta käytetään tällä hetkellä viestien vastaanottoon, valitse ${ boldAddresses }-välilehti ja varmista sulava siirtymä lisäämällä sinne kaikki aktiiviset sähköpostiosoitteet ennen MX-tietueiden vaihtoa."
@@ -7046,9 +6923,6 @@
       "Remember to share the user's sign in details with them.": [
         "Muista jakaa käyttäjälle hänen kirjautumistietonsa."
       ],
-      "Remove one of your calendars to join this one": [
-        "Poista jokin kalentereistasi liittyäksesi tähän kalenteriin"
-      ],
       "Report link expired": [
         "Ilmoituslinkki on vanhentunut"
       ],
@@ -7125,7 +6999,7 @@
         "Määritetään organisaatiotasi"
       ],
       "Settings update failed": [
-        "Asetusten päivittäminen epäonnistui"
+        "Asetusten päivitys epäonnistui"
       ],
       "Settings updated": [
         "Asetukset päivitetty"
@@ -7229,9 +7103,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked } viestiä ei enää näytetä, mutta voit silti poistaa lukituksen tiedoista kohdassa ${ encryptionAndKeysLink }."
-      ],
-      "The calendar will be removed from your account.": [
-        "Kalenteri poistetaan tililtäsi."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Sähköpostiosoitteen vahvistuslinkki on vanhentunut. Kirjaudu sisään ja lähetä uusi linkki."
@@ -7338,12 +7209,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Tämä lopettaa nykyisen tilauksen ja menetät kaikki kertyneet uskollisuusedut. Jäljellä oleva tilausaika palautetaan tilillesi krediitteinä."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Tämä poistaa kaikki aiemmat versiot tiedostoistasi, jotka ovat vanhempia kuin ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Tämä poistaa tiedostojesi kaikki aiemmat versiot."
-      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Tämä poistaa nykyisen salauslausekkeesi käytöstä, etkä voi enää käyttää sitä holvisi avaukseen tai tietojesi salauksen purkuun."
       ],
@@ -7427,6 +7292,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Lisää tilillesi krediittejä, joilla voit maksaa tilauspäivityksen tai nykyisen tilauksen uudistuksen. Saat yhden krediitin jokaista kuluttamaasi ${ i18nCurrency } kohden."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Sähköpostiosoitteita yhteensä"
@@ -7793,9 +7661,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal-tililläsi on oltava maksukortti tai pankkitili. Jos PayPal-tililläsi ei näitä ole, paina alla olevaa painiketta."
       ],
-      "You need to have an active personal calendar to import your events from ICS.": [
-        "Sinulla on oltava aktiivinen henkilökohtainen kalenteri, jotta voit tuoda tapahtumat ICS-tiedostosta."
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Olet käyttänyt ${ spaceDisplayed } % tallennuskapasiteetistasi. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -7804,9 +7669,6 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Sinun pitäisi viedä varmuuskopio avaimesta siltä varalta, että joudut palauttamaan sillä salattua tietoa."
-      ],
-      "You still need to reply to invitations for the host to see your response.": [
-        "Sinun on silti vastattava kutsuihin, jotta järjestäjä näkee vastauksesi."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Sinut ohjataan sisäänkirjautumisen jälkeen kohteeseen ${ destination }."
@@ -8622,9 +8484,6 @@
       "Default language": [
         "Oletuskieli"
       ],
-      "Default language (${ defaultLanguage })": [
-        "Oletuskieli (${ defaultLanguage })"
-      ],
       "Default PGP scheme": [
         "Oletus PGP-järjestelmä"
       ],
@@ -9062,9 +8921,6 @@
       ],
       "Send crash reports": [
         "Lähetä virheraportteja"
-      ],
-      "Send in": [
-        "Lähetetään"
       ],
       "Show secondary time zone": [
         "Näytä toissijainen aikavyöhyke"
@@ -9605,18 +9461,6 @@
         "Tämä toiminto on tilapäisesti poissa käytöstä"
       ]
     },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Voit luoda enintään ${ MAX_LINKS_PER_CALENDAR } linkin kalenteria kohden. Luodaksesi uuden linkin tähän kalenteriin, poista yksi alla olevalta listalta.",
-        "Voit luoda enintään ${ MAX_LINKS_PER_CALENDAR } linkkiä kalenteria kohden. Luodaksesi uuden linkin tähän kalenteriin, poista yksi alla olevalta listalta."
-      ]
-    },
-    "Maximum shared calendar members reached alert": {
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "Olet saavuttanut ${ MAX_CALENDAR_MEMBERS } jäsenen enimmäismäärän.",
-        "Olet saavuttanut ${ MAX_CALENDAR_MEMBERS } jäsenen enimmäismäärän."
-      ]
-    },
     "Member action": {
       "Change password": [
         "Vaihda salasana"
@@ -9929,26 +9773,6 @@
         "Keskitasoinen VPN-nopeus"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Alenna tilaukseen ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
-      ],
-      "From ${ price }": [
-        "Alkaen ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Säilytä ${ currentPlanName }-tilini"
-      ],
-      "Upgrade": [
-        "Päivitä"
-      ],
-      "Upgrade now": [
-        "Päivitä nyt"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Jatka tarkistukseen"
@@ -9988,6 +9812,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Päivitä ${ upsellPlanHumanSize } -tilaukseen"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Alenna tilaukseen ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tutustu kaikkiin ${ BRAND_NAME }-tilauksiin"
+      ],
+      "From ${ price }": [
+        "Alkaen ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Säilytä ${ currentPlanName }-tilini"
+      ],
+      "Upgrade": [
+        "Päivitä"
+      ],
+      "Upgrade now": [
+        "Päivitä nyt"
       ]
     },
     "new_plans: feature": {
@@ -11501,11 +11345,6 @@
         "Uusi maksukortti"
       ]
     },
-    "Personal calendar section description": {
-      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
-        "Luo kalenteri pysyäksesi aikataulussa suojaten samalla tietojasi."
-      ]
-    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Sähköpostiosoitetta ei löytynyt lähetysavaimessa määriteltyjen käyttäjätunnusten joukosta (${ keyUserIds })"
@@ -11766,34 +11605,18 @@
         "Uusinta tekniikkaa"
       ]
     },
-    "Remove calendar section description": {
-      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "Peruessasi tilauksen, menetät kalenterin käyttöoikeuden ja tililtäsi poistetaan kaikki sen tapahtumat. Tapahtumat kuitenkin säilyvät alkuperäisessä julkisessa linkissä."
-      ],
-      "You will no longer have access to this calendar.": [
-        "Sinulla ei ole enää tämän kalenterin käyttöoikeutta."
-      ]
-    },
-    "Remove calendar section text": {
-      "If you leave this calendar, you'll have to ask the owner to join again.": [
-        "Jos poistut kalenterista, sinun on pyydettävä uudelleenlittymistä sen omistajalta."
-      ],
-      "This calendar will be removed from your account.": [
-        "Kalenteri poistetaan tililtäsi."
-      ]
-    },
     "Remove calendar section title": {
       "Delete calendar?": [
-        "Poistetaanko kalenteri?"
+        "Poista kalenteri?"
       ],
       "Leave calendar?": [
-        "Poistutaanko kalenterista?"
+        "Poistu kalenterista?"
       ],
       "Remove calendar": [
         "Poista kalenteri"
       ],
       "Unsubscribe?": [
-        "Perutaanko tilaus?"
+        "Peru tilaus?"
       ]
     },
     "Restore administrator panel": {
@@ -11803,14 +11626,8 @@
       "Changing organization password": [
         "Organisaation salasanan vaihtaminen"
       ],
-      "Creating new users": [
-        "Luodaan uusia käyttäjiä"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Ylläpito-oikeuksiasi organisaatiossa on rajoitettu salasanan vaihdon seurauksena. Seuraavia toimintoja ei enää sallita:"
-      ],
-      "Reading emails of non-private users": [
-        "Ei-yksityisten käyttäjien sähköpostien luku"
       ]
     },
     "Role": {
@@ -12752,9 +12569,6 @@
       "Credits added": [
         "Krediitit lisättiin"
       ],
-      "Default calendar updated": [
-        "Oletuskalenteri vaihdettiin"
-      ],
       "Display name updated": [
         "Näyttönimi vaihdettiin"
       ],
@@ -12945,11 +12759,6 @@
         "kuukaudessa"
       ]
     },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        "Tietoja tapahtumista, joita ei voitu viedä"
-      ]
-    },
     "summer2023: Deal details": {
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
         "Premium ${ DRIVE_SHORT_APP_NAME }"
@@ -12990,7 +12799,7 @@
     },
     "Table header; invitations to share calendar": {
       "Shared with me": [
-        "Jaettu kanssani"
+        "Jaettu minulle"
       ]
     },
     "TableHeader": {
@@ -13445,7 +13254,7 @@
         "Poistetaanko käyttäjä?"
       ],
       "Delete version history?": [
-        "Poistetaanko versiohistoria?"
+        "Poista versiohistoria?"
       ],
       "Disable ${ email }": [
         "Poista ${ email } käytöstä"
@@ -14389,20 +14198,6 @@
       ],
       "Your default font will look like following:": [
         "Tekstisi näyttää oletusarvoisesti tältä:"
-      ]
-    },
-    "Upgrade": {
-      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Päivitä ${ passPlusPlanName } -tilaukseen saadaksesi rajattomasti Hide-my-email-aliaksia"
-      ],
-      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Päivitä ${ planName } -tilaukseen yhdistääksesi VPN:ään samanaikaisesti ${ n } laitteen",
-        "Päivitä ${ planName } -tilaukseen yhdistääksesi VPN:ään samanaikaisesti ${ n } laitetta"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Jaa kalenterisi päivittämällä maksulliseen ${ MAIL_SHORT_APP_NAME } -tilaukseen."
       ]
     },
     "upsell panel": {
