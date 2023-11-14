@@ -1,7 +1,5 @@
 @import '~@proton/pass/styles/common';
 @import '~@proton/styles/scss/lib/config';
-@import '~@proton/styles/scss/specifics/placeholder-loading';
-@import '~@proton/colors/themes/dist/duotone.theme.css';
 
 body {
 	// Extensions seem to have injected style sheets
@@ -19,6 +17,5 @@ a {
 }
 
 .app-root {
-	background-color: var(--background-invert);
-	color: var(--primary-contrast);
+	background-color: var(--background-norm);
 }
