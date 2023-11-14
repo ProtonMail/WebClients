@@ -95,27 +95,27 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                 </div>
             </div>
             <footer className="flex-item-noshrink text-center p-4">
-                <div className="auto-mobile">
+                <div>
                     {
                         // translator: full sentence 'Proton. Privacy by default.'
                         c('Footer').t`${BRAND_NAME}. Privacy by default.`
                     }
                 </div>
                 <div className="text-center text-sm m-0 pt-4 pb-2 flex-item-noshrink">
-                    <span className="auto-mobile">{termsLink}</span>
-                    <span className="color-weak px-3 no-mobile" aria-hidden="true">
+                    <span className="block md:inline">{termsLink}</span>
+                    <span className="color-weak px-3 hidden md:inline" aria-hidden="true">
                         |
                     </span>
-                    <span className="auto-mobile">{privacyLink}</span>
-                    <span className="color-weak px-3 no-mobile" aria-hidden="true">
+                    <span className="block md:inline">{privacyLink}</span>
+                    <span className="color-weak px-3 hidden md:inline" aria-hidden="true">
                         |
                     </span>
-                    <span className="auto-mobile">{c('Info').jt`Version ${appVersion}`}</span>
-                    <span className="color-weak px-3 no-mobile" aria-hidden="true">
+                    <span className="block md:inline">{c('Info').jt`Version ${appVersion}`}</span>
+                    <span className="color-weak px-3 hidden md:inline" aria-hidden="true">
                         |
                     </span>
                     {hasLanguageSelect && (
-                        <span className="auto-mobile inline-flex">
+                        <span className="block md:inline-flex">
                             <LanguageSelect className="align-baseline color-primary mx-auto" locales={locales} />
                         </span>
                     )}
