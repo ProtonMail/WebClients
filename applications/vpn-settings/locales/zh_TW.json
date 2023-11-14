@@ -299,6 +299,9 @@
       "Open navigation": [
         "開啟導覽"
       ],
+      "Or": [
+        "或"
+      ],
       "Organization": [
         "組織"
       ],
@@ -436,6 +439,9 @@
       ],
       "Sign out": [
         "登出"
+      ],
+      "sign up for free": [
+        "免費註冊"
       ],
       "Signing in": [
         "登入"
@@ -636,9 +642,21 @@
     "bf2023: Action": {
       "Cancel": [
         "取消"
+      ],
+      "Close": [
+        "關閉"
+      ],
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "移除 ${ PASS_APP_NAME }"
       ]
     },
     "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "進階版 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } 儲存空間"
       ],
@@ -648,8 +666,20 @@
       "3 TB": [
         "3 TB"
       ],
+      "3,000+ servers across 65+ countries": [
+        "超過 3500 臺伺服器，遍布於 65 以上個國家"
+      ],
       "6 users": [
         "6 個使用者"
+      ],
+      "Access content worldwide": [
+        "存取跨國內容"
+      ],
+      "Ad-blocker and malware protection": [
+        "廣告攔截與惡意程式保護"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "全部${ MAIL_SHORT_APP_NAME }付費及${ CALENDAR_APP_NAME }功能"
       ],
       "Extended version history": [
         "展開版本紀錄"
@@ -673,6 +703,11 @@
     "bf2023: renew": {
       "the first ${ n } months": [
         "${ n }月"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 3 custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 3 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
       ]
     },
     "Billing cycle": {
@@ -1961,8 +1996,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "您必須啟用您的組織金鑰，否則您將無法建立新使用者、為現有使用者加入電郵位址，又或存取非私有使用者的帳號。"
+      "You must privatize all users before generating new organization keys": [
+        "在產生新的組織金鑰前，必須將所有使用者私有化"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "您的帳號或組織有待繳清的繳款單。請儘速繳納所有未付繳款單。"
@@ -2739,6 +2774,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "您的新電郵位址還需建立加密金鑰，才可用來傳送和接收電郵。"
       ],
+      "Billed at ${ price }": [
+        "以 ${ price } 計費"
+      ],
       "Billing cycle: ${ text }": [
         "繳款單週期：${ text }"
       ],
@@ -3150,6 +3188,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "諘再試一次，您也可換另一個付款方法，或聯絡 PayPal 尋求協助。"
       ],
+      "Please use another browser or download the file.": [
+        "請使用其他瀏覽器或下載檔案。"
+      ],
       "Please verify payment at the new tab which was opened.": [
         "請在剛開啟的新索引標籤中驗證付款。"
       ],
@@ -3197,6 +3238,9 @@
       ],
       "Revoke certificate ${ name }": [
         "撤銷憑證 ${ name }"
+      ],
+      "Save ${ percentage }": [
+        "省下 ${ percentage }"
       ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "請將密碼妥善保存到合適的地方。點擊圖示以確認密碼輸入正確。"
@@ -3392,6 +3436,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "為您的帳號儲值，以便訂閱新方案或為您目前的方案續期。每儲值一${ i18nCurrency }，帳號餘額將會增加一單位（這些貨幣對餘額來說是一樣的）。"
+      ],
+      "Tor": [
+        "洋蔥路由器"
       ],
       "Total email addresses": [
         "可使用的電郵位址總數"
@@ -3999,6 +4046,9 @@
       "Name": [
         "名稱"
       ],
+      "Name and address": [
+        "名稱及地址"
+      ],
       "Name on card": [
         "持卡人姓名"
       ],
@@ -4458,6 +4508,9 @@
     "new_plans: feature": {
       "${ n } calendars": [
         "${ n } 個行事曆"
+      ],
+      "${ n } calendars per user": [
+        "${ n } 個行事曆分配給每位使用者"
       ],
       "${ n } custom email domains": [
         "${ n } 個自訂電郵網域"
@@ -5476,14 +5529,8 @@
       "Changing organization password": [
         "更改組織密碼"
       ],
-      "Creating new users": [
-        "建立新使用者"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "由於密碼變更，您的組織系統管理員權限受到限制。下列動作已不再允許："
-      ],
-      "Reading emails of non-private users": [
-        "讀取非私密使用者的電郵"
       ]
     },
     "Role": {

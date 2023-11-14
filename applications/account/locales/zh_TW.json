@@ -17,7 +17,7 @@
         "完整檢視（檢視所有事件的詳細資訊）"
       ],
       "Limited view": [
-        "有限檢視"
+        "限制檢視"
       ],
       "Limited view (see only free/busy)": [
         "有限制的檢視（僅檢視有空／忙碌）"
@@ -644,6 +644,9 @@
       "Open navigation": [
         "開啟導覽"
       ],
+      "Or": [
+        "或"
+      ],
       "Ordered list": [
         "有序列表"
       ],
@@ -907,6 +910,9 @@
       ],
       "Sign out of all accounts": [
         "登出所有帳號"
+      ],
+      "sign up for free": [
+        "免費註冊"
       ],
       "Signing in": [
         "登入"
@@ -1302,9 +1308,21 @@
     "bf2023: Action": {
       "Cancel": [
         "取消"
+      ],
+      "Close": [
+        "關閉"
+      ],
+      "Get the deal": [
+        "取得優惠"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "移除 ${ PASS_APP_NAME }"
       ]
     },
     "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "進階版 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } 儲存空間"
       ],
@@ -1314,8 +1332,20 @@
       "3 TB": [
         "3 TB"
       ],
+      "3,000+ servers across 65+ countries": [
+        "超過 3500 臺伺服器，遍布於 65 以上個國家"
+      ],
       "6 users": [
         "6 個使用者"
+      ],
+      "Access content worldwide": [
+        "存取跨國內容"
+      ],
+      "Ad-blocker and malware protection": [
+        "廣告攔截與惡意程式保護"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "全部${ MAIL_SHORT_APP_NAME }付費及${ CALENDAR_APP_NAME }功能"
       ],
       "Extended version history": [
         "展開版本紀錄"
@@ -1336,9 +1366,19 @@
         "進階版密碼管理器"
       ]
     },
+    "bf2023: Info": {
+      "6 users": [
+        "6 位使用者"
+      ]
+    },
     "bf2023: renew": {
       "the first ${ n } months": [
         "${ n }月"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 3 custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 3 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
       ]
     },
     "Billing cycle": {
@@ -1494,9 +1534,6 @@
       ]
     },
     "Calendar invite status label": {
-      "Declined": [
-        "已拒絕"
-      ],
       "Invite sent": [
         "邀請傳送"
       ]
@@ -1532,11 +1569,6 @@
         "您已可存取此行事曆"
       ]
     },
-    "Calendar settings link share description": {
-      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "創建一組導向您行事曆的連結，${ BRAND_NAME } 外部的人即可存取共享資源。唯獨您有權限可加入或移除行程。"
-      ]
-    },
     "Calendar settings private share description": {
       "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
         "分享您的行事曆給其他 ${ BRAND_NAME } 使用者。啟用協作來允許他們在您的行事曆中新增及編輯行程。您能夠隨時修改使用者的權限。"
@@ -1550,7 +1582,7 @@
         "分享外部 ${ BRAND_NAME }"
       ],
       "Share with ${ BRAND_NAME } users": [
-        "與 ${ BRAND_NAME } 使用者共享"
+        "與 ${ BRAND_NAME } 使用者分享"
       ],
       "Share with anyone": [
         "與任何人分享"
@@ -1563,7 +1595,7 @@
     },
     "Calendar share permission label": {
       "Edit event details": [
-        "編輯事件詳細資訊"
+        "編輯行程詳細資訊"
       ],
       "See all event details": [
         "查看所有行程詳情"
@@ -1584,18 +1616,18 @@
     },
     "Calendar sharing permission change notification": {
       "Permissions changed for ${ email }": [
-        "權限已變更到 ${ email }"
+        "${ email }的權限已變更"
       ]
     },
     "Calendar status": {
       "Active": [
-        "使用中"
+        "啟用"
       ],
       "Default": [
         "預設"
       ],
       "Disabled": [
-        "已停用"
+        "停用"
       ],
       "Not synced": [
         "未同步"
@@ -3242,9 +3274,97 @@
         "設置電子郵件轉發"
       ]
     },
+    "email_forwarding_2023: Header": {
+      "Actions": [
+        "動作"
+      ],
+      "From": [
+        "寄件者"
+      ],
+      "Status": [
+        "狀態"
+      ],
+      "To": [
+        "收件者"
+      ]
+    },
+    "email_forwarding_2023: Incoming forwarding tab name": {
+      "From me": [
+        "來自我"
+      ]
+    },
+    "email_forwarding_2023: Info": {
+      "A confirmation email will be sent to ${ boldForwardeeEmail }": [
+        "確認電子郵件將寄至${ boldForwardeeEmail }"
+      ],
+      "Forwarding is active": [
+        "轉寄已啟用"
+      ],
+      "Please update your forwarding keys": [
+        "請更新您的轉寄金鑰"
+      ]
+    },
+    "email_forwarding_2023: Outgoing forwarding tab name": {
+      "To me": [
+        "寄給我的"
+      ]
+    },
     "email_forwarding_2023: Placeholder": {
       "Enter email address": [
         "輸入電子郵件地址"
+      ]
+    },
+    "email_forwarding_2023: Prompt": {
+      "End-to-end encryption will be re-enabled for the sender address.": [
+        "為寄件者地址的端對端加密將重新啟用。"
+      ]
+    },
+    "email_forwarding_2023: Status": {
+      "Active": [
+        "啟用"
+      ],
+      "Declined": [
+        "已拒絕"
+      ],
+      "Outdated": [
+        "已過時"
+      ],
+      "Paused": [
+        "已暫停"
+      ],
+      "Pending": [
+        "擱置中"
+      ]
+    },
+    "email_forwarding_2023: Success": {
+      "Changes saved": [
+        "更改已保存"
+      ],
+      "Email sent to ${ forward.ForwardeeEmail }": [
+        "電子郵件寄件至 ${ forward.ForwardeeEmail }"
+      ],
+      "Email sent to ${ model.forwardeeEmail }.": [
+        "電子郵件寄件至 ${ model.forwardeeEmail }。"
+      ],
+      "Forwarding accepted": [
+        "轉寄已接受"
+      ],
+      "Forwarding declined": [
+        "轉寄已拒絕"
+      ],
+      "Forwarding deleted": [
+        "轉寄已刪除"
+      ],
+      "Forwarding paused": [
+        "轉寄已暫停"
+      ],
+      "Forwarding resumed": [
+        "轉寄已接續"
+      ]
+    },
+    "email_forwarding_2023: Warning": {
+      "Warning": [
+        "警告"
       ]
     },
     "Enabled 2FA": {
@@ -3288,9 +3408,6 @@
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "自動回覆是一項付費功能。請升級至付款帳號以便使用。"
-      ],
-      "Calendar cannot be found": [
-        "找不到行事曆"
       ],
       "Calendar limit reached": [
         "行事曆數量已達上限"
@@ -3709,9 +3826,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "您已使用您的方案中所有使用者。請升級您的方案以加入使用者。"
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "您必須啟用您的組織金鑰，否則您將無法建立新使用者、為現有使用者加入電郵位址，又或存取非私有使用者的帳號。"
-      ],
       "You must privatize all users before generating new organization keys": [
         "在產生新的組織金鑰前，必須將所有使用者私有化"
       ],
@@ -4045,9 +4159,6 @@
       ]
     },
     "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } events exported": [
-        "${ totalProcessed }/${ totalToProcess } 個行程已匯出"
-      ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "行事曆已成功匯出。您現在可儲存 ICS 檔案。"
       ],
@@ -4061,7 +4172,7 @@
         "由於密碼重設，您的部份行程無法解密和匯出。"
       ],
       "Error decrypting event": [
-        "解密行程時發生錯誤"
+        "解密時發生錯誤"
       ],
       "Learn how to restore encrypted events with old password": [
         "瞭解如何以舊密碼還原加密過的事件"
@@ -4079,10 +4190,10 @@
         "密碼重設 - 無法解密多個事件"
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        "在匯出過程完成之前，請勿關閉此索引標籤。"
+        "在匯出過程完成之前，請勿關閉此分頁。"
       ],
       "Some of your events could not be exported.": [
-        "您的部份事件無法匯出。"
+        "您部份的事件無法匯出。"
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
         "網際網路連線中斷，因此匯出過程失敗。請再試一次。"
@@ -5296,9 +5407,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的加密技術代表無人可以存取您的密碼，包括我們。"
       ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } 將會是預設的行事曆。"
-      ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個新行事曆"
       ],
@@ -5310,9 +5418,6 @@
       ],
       "${ discountPercentage } forever": [
         "${ discountPercentage } 永久折扣"
-      ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } 將不再為您的檔案保留先前的版本。"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 無效"
@@ -5458,9 +5563,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "一位使用者意味著一個帳號與單一使用者名稱、信箱及個人對應"
       ],
-      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "跨裝置無縫存取您的密碼並保護您的線上身份。下載並安裝相關的 ${ PASS_APP_NAME } 應用程式與擴充套件。"
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "由於有帳單仍未繳付，因此帳號存取已受限制。請聯絡您的系統管理員。"
       ],
@@ -5590,18 +5692,6 @@
       "Are you sure you want to delete this address?": [
         "您確定要刪除此電郵位址嗎？"
       ],
-      "Are you sure you want to delete this calendar?": [
-        "您確定要刪除此行事曆嗎？"
-      ],
-      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "您確定刪除此行事曆嗎？ 所有已授權的郵件位址將無法繼續存取此行事曆。"
-      ],
-      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "您確認刪除此行事曆嗎？所有相關行程將會被刪除。"
-      ],
-      "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "您確定要刪除此行事曆嗎？您之後可再次新增假期行事曆。"
-      ],
       "Are you sure you want to delete this domain?": [
         "您確定要刪除此網域嗎？"
       ],
@@ -5688,6 +5778,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "您的新電郵位址還需建立加密金鑰，才可用來傳送和接收電郵。"
+      ],
+      "Billed at ${ price }": [
+        "以 ${ price } 計費"
       ],
       "Billing cycle: ${ text }": [
         "繳款單週期：${ text }"
@@ -5896,9 +5989,6 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "帶有此標籤的電郵不會被刪除，仍可在對應的資料夾中找到。"
       ],
-      "Enable this address to join this calendar": [
-        "啟用此地址來加入這個行事曆"
-      ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "若外部服務支援，啟用TLS或SSL。"
       ],
@@ -5952,9 +6042,6 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "請輸入您的復原手機號碼，我們將向您發送您的使用者名稱或電郵位址。"
-      ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        "行程邀請與回函將會以此語言傳送。"
       ],
       "Expired": [
         "已過期"
@@ -6475,6 +6562,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "諘再試一次，您也可換另一個付款方法，或聯絡 PayPal 尋求協助。"
       ],
+      "Please use another browser or download the file.": [
+        "請使用其他瀏覽器或下載檔案。"
+      ],
       "Please verify payment at the new tab which was opened.": [
         "請在剛開啟的新索引標籤中驗證付款。"
       ],
@@ -6495,6 +6585,9 @@
       ],
       "Priority support": [
         "優先支援"
+      ],
+      "Promotion expired": [
+        "促銷已過期"
       ],
       "Protected by Swiss privacy laws": [
         "受瑞士隱私法律保障"
@@ -6553,9 +6646,6 @@
       "Remember to share the user's sign in details with them.": [
         "請記得與使用者分享其登入詳細資料。"
       ],
-      "Remove one of your calendars to join this one": [
-        "移除其中一個行事曆以加入目前這個"
-      ],
       "Report link expired": [
         "回報逾期連結"
       ],
@@ -6570,6 +6660,9 @@
       ],
       "Right to Left": [
         "由右至左"
+      ],
+      "Save ${ percentage }": [
+        "省下 ${ percentage }"
       ],
       "Save your password somewhere safe.": [
         "將您的密碼儲存在其它安全之處。"
@@ -6727,9 +6820,6 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked }這一訊息將不再顯示，然而您仍可在${ encryptionAndKeysLink }中解除鎖定您的資料。"
       ],
-      "The calendar will be removed from your account.": [
-        "該行事曆將會從您的帳號中移除。"
-      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "電郵驗證連結已過期。請登入以重新傳送驗證連結。"
       ],
@@ -6826,12 +6916,6 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "這將會取消您目前已付費的訂閱，您也會一併失去您累積的任何答謝長期支援的惠益。您的訂閱餘數將會以帳號餘額退還。"
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "這將會為您的檔案刪除${ rententionLabel }之前所有先前的版本。"
-      ],
-      "This will delete all previous versions of your files.": [
-        "這將會為您的檔案刪除所有先前的版本。"
-      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "這將讓你目前的復原短語被提用。你無法再使用它來存取你的帳號或是解密你的資料。"
       ],
@@ -6915,6 +6999,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "為您的帳號儲值，以便訂閱新方案或為您目前的方案續期。每儲值一${ i18nCurrency }，帳號餘額將會增加一單位（這些貨幣對餘額來說是一樣的）。"
+      ],
+      "Tor": [
+        "洋蔥路由器"
       ],
       "Total email addresses": [
         "可使用的電郵位址總數"
@@ -7270,9 +7357,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "您的 PayPal 帳號須先連結信用卡或銀行賬戶。如果您的 PayPal 帳號沒有，請按一下以下按鈕。"
       ],
-      "You need to have an active personal calendar to import your events from ICS.": [
-        "您需要有使用中的個人行事曆才可以從 ICS 匯入您的行程。"
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "您已使用 ${ spaceDisplayed }% 儲存空間。${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -7281,9 +7365,6 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "您最好匯出一份此金鑰的備份，以備用於還原加密的資料。"
-      ],
-      "You still need to reply to invitations for the host to see your response.": [
-        "您仍需回覆邀請以便主辦者了解您的回覆。"
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "登入後，您將會被重新導向至 ${ destination }。"
@@ -7788,7 +7869,7 @@
         "就是這樣"
       ],
       "Learn more": [
-        "瞭解詳情"
+        "了解更多"
       ]
     },
     "Label": {
@@ -8129,7 +8210,7 @@
         "不要再次詢問"
       ],
       "Don't keep versions": [
-        "不要保留版本紀錄"
+        "不要保留版本"
       ],
       "Duration": [
         "期間"
@@ -8334,6 +8415,9 @@
       ],
       "Name": [
         "名稱"
+      ],
+      "Name and address": [
+        "名稱及地址"
       ],
       "Name on card": [
         "持卡人姓名"
@@ -8716,16 +8800,13 @@
       ]
     },
     "Label for default event notifications": {
-      "All-day event notifications": [
-        "全日行程通知"
-      ],
       "Notifications": [
         "通知"
       ]
     },
     "Label for default event settings": {
       "Duration": [
-        "期間"
+        "為期"
       ]
     },
     "Label for domain modal": {
@@ -9039,16 +9120,6 @@
         "此功能暫時不可用"
       ]
     },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "您可以為每個行事曆建立最多 ${ MAX_LINKS_PER_CALENDAR } 個連結。若要為此行事曆建立新連結，請先從下列清單中刪除一個。"
-      ]
-    },
-    "Maximum shared calendar members reached alert": {
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } members.": [
-        "您已達到最高限數 ${ MAX_CALENDAR_MEMBERS } 位成員。"
-      ]
-    },
     "Member action": {
       "Change password": [
         "變更密碼"
@@ -9358,26 +9429,6 @@
         "一般 VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降級後的方案為 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "探索其他 ${ BRAND_NAME } 方案"
-      ],
-      "From ${ price }": [
-        "${ price }起"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "保留我的 ${ currentPlanName } $ 帳號"
-      ],
-      "Upgrade": [
-        "升級"
-      ],
-      "Upgrade now": [
-        "立即升級"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "繼續確認方案"
@@ -9419,9 +9470,32 @@
         "升級到 ${ upsellPlanHumanSize }"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降級後的方案為 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "探索其他 ${ BRAND_NAME } 方案"
+      ],
+      "From ${ price }": [
+        "${ price }起"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "保留我的 ${ currentPlanName } $ 帳號"
+      ],
+      "Upgrade": [
+        "升級"
+      ],
+      "Upgrade now": [
+        "立即升級"
+      ]
+    },
     "new_plans: feature": {
       "${ n } calendars": [
         "${ n } 個行事曆"
+      ],
+      "${ n } calendars per user": [
+        "${ n } 個行事曆分配給每位使用者"
       ],
       "${ n } custom email domains": [
         "${ n } 個自訂電郵網域"
@@ -10643,6 +10717,9 @@
       "Download to continue ${ size }": [
         "下載已繼續${ size }"
       ],
+      "Keep this plan": [
+        "保持此方案"
+      ],
       "Or ${ createANewAccount }": [
         "或${ createANewAccount }"
       ],
@@ -10651,6 +10728,9 @@
       ],
       "Start using ${ appName } now": [
         "現在開始使用 ${ appName }"
+      ],
+      "Upgrade": [
+        "升級"
       ],
       "Upgrade my plan": [
         "升級我的方案"
@@ -10868,11 +10948,6 @@
       ],
       "New credit/debit card": [
         "加入信用卡/扣帳卡"
-      ]
-    },
-    "Personal calendar section description": {
-      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
-        "創建行事曆以隨時掌握您的日程安排，同時確保您的資料安全無虞。"
       ]
     },
     "PGP key warning": {
@@ -11132,7 +11207,7 @@
     },
     "Remove calendar section text": {
       "If you leave this calendar, you'll have to ask the owner to join again.": [
-        "如果您離開此行事曆，您必須詢問擁有者才能再次加入。"
+        "如果您退出此行事曆，爾後需再請擁有者協助才能加入。"
       ],
       "This calendar will be removed from your account.": [
         "此行事曆將會從您的帳號中移除。"
@@ -11159,14 +11234,8 @@
       "Changing organization password": [
         "更改組織密碼"
       ],
-      "Creating new users": [
-        "建立新使用者"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "由於密碼變更，您的組織系統管理員權限受到限制。下列動作已不再允許："
-      ],
-      "Reading emails of non-private users": [
-        "讀取非私密使用者的電郵"
       ]
     },
     "Role": {
@@ -11579,7 +11648,7 @@
     },
     "Shared calendar label input placeholder": {
       "Add label": [
-        "加入標籤"
+        "新增標籤"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -12059,7 +12128,7 @@
         "行事曆資訊已更新"
       ],
       "Calendar removed": [
-        "行事曆已移除"
+        "已移除行事曆"
       ],
       "Calendar updated": [
         "行事曆已更新"
@@ -12075,9 +12144,6 @@
       ],
       "Credits added": [
         "餘額已增加"
-      ],
-      "Default calendar updated": [
-        "預設行事曆已更新"
       ],
       "Display name updated": [
         "已更新顯示名稱"
@@ -12269,11 +12335,6 @@
         "每月"
       ]
     },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        "無法匯出行程的詳細資訊"
-      ]
-    },
     "summer2023: Deal details": {
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
         "進階 ${ DRIVE_SHORT_APP_NAME }"
@@ -12314,7 +12375,7 @@
     },
     "Table header; invitations to share calendar": {
       "Shared with me": [
-        "與我分享"
+        "與我共用"
       ]
     },
     "TableHeader": {
@@ -12879,6 +12940,9 @@
       ],
       "Folders and labels": [
         "資料夾和標籤"
+      ],
+      "Forward and Auto-reply": [
+        "轉寄及自動回覆"
       ],
       "Forward emails": [
         "轉寄電子郵件"
@@ -13687,14 +13751,6 @@
       ],
       "Your default font will look like following:": [
         "您的預設字體看起來是："
-      ]
-    },
-    "Upgrade": {
-      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "升級至 ${ passPlusPlanName }，即可取得無上限的隱藏電子信箱別名"
-      ],
-      "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
-        "升級為 ${ planName } 方案，即可讓 ${ n } 台裝置同時連線 VPN"
       ]
     },
     "Upgrade notice": {

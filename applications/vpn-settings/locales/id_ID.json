@@ -2096,8 +2096,11 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Anda telah menggunakan semua pengguna dalam paket Anda. Harap tingkatkan paket untuk menambah pengguna baru."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Anda harus mengaktifkan kunci organisasi Anda. Tanpa aktivasi Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Anda harus mengaktifkan kunci organisasi Anda. Tanpa aktivasi, Anda tidak dapat membuat atau mengakses pengguna non-privat."
+      ],
+      "You must privatize all users before generating new organization keys": [
+        "Anda harus membuat status semua pengguna menjadi privat sebelum Anda dapat membuat kunci organisasi baru"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Anda memiliki tagihan yang telah jatuh tempo pada akun atau organisasi Anda. Mohon lunasi seluruh tagihan yang belum dibayar."
@@ -2415,7 +2418,7 @@
         "Tambah (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } devices": [
-        "Koneksi hingga ${ plusVpnConnections } perangkat"
+        "Koneksi untuk hingga ${ plusVpnConnections } perangkat"
       ],
       "Fastest VPN servers": [
         "Server VPN tercepat"
@@ -3475,7 +3478,7 @@
         "Konfigurasi berikut dapat digunakan dengan router WireGuard dan klien resmi."
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
-        "Kredensiala tidak dapat digunakan untuk masuk ke aplikasi ${ VPN_APP_NAME } resmi kami. ${ learnMore }"
+        "Kredensial berikut tidak dapat digunakan untuk masuk ke aplikasi ${ VPN_APP_NAME } resmi kami. ${ learnMore }"
       ],
       "They will be removed from your organization": [
         "Nama-nama ini akan dikeluarkan dari organisasi Anda"
@@ -3551,6 +3554,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Isikan akun Anda dengan kredit yang dapat Anda pakai untuk berlangganan paket baru atau memperbarui paket. Anda mendapatkan satu kredit untuk setiap ${ i18nCurrency } yang dihabiskan."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Total alamat surel"
@@ -5687,14 +5693,11 @@
       "Changing organization password": [
         "Mengubah kata sandi organisasi"
       ],
-      "Creating new users": [
-        "Membuat pengguna baru"
+      "Creating or accessing non-private users": [
+        "Membuat atau mengakses pengguna non-privat"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Karena adanya perubahan kata sandi, hak istimewa administrator organisasi Anda telah dibatasi. Tindakan berikut tidak lagi diizinkan:"
-      ],
-      "Reading emails of non-private users": [
-        "Membaca surel pengguna non-privat"
       ]
     },
     "Role": {

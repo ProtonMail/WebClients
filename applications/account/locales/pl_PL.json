@@ -3081,7 +3081,7 @@
         "Wszystkie wydarzenia w tym kalendarzu zostaną usunięte."
       ],
       "You will no longer have access to this calendar.": [
-        "Nie posiadasz już dostępu do tego kalendarza."
+        "Nie będziesz posiadać dostępu do tego kalendarza."
       ]
     },
     "Delinquent modal title": {
@@ -4163,8 +4163,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Wykorzystano limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Musisz aktywować klucze organizacji. Bez aktywacji nie będziesz w stanie tworzyć nowych użytkowników, dodawać adresów do istniejących użytkowników ani uzyskać dostępu do służbowych kont użytkowników."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Musisz aktywować klucze organizacji. Nie możesz utworzyć lub uzyskać dostępu do służbowych użytkowników bez aktywacji kluczy."
       ],
       "You must privatize all users before generating new organization keys": [
         "Wszyscy użytkownicy muszą posiadać konta prywatne, zanim będziesz mógł wygenerować nowe klucze organizacji"
@@ -4446,7 +4446,7 @@
     },
     "Error when exporting event from calendar": {
       "Event @ ${ timeString }": [
-        "Wydarzenie @ ${ timeString }"
+        "Wydarzenie o godzinie ${ timeString }"
       ],
       "Event from ${ timeString }, ${ rruleString }": [
         "Wydarzenie od ${ timeString }, ${ rruleString }"
@@ -6033,7 +6033,7 @@
         "Użytkownikiem jest konto skojarzone z nazwą użytkownika, skrzynką pocztową lub osobą"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Uzyskaj dostęp do swoich haseł i chroń swoje tożsamości internetowe na wszystkich urządzeniach. Pobierz i zainstaluj odpowiednie aplikacje i rozszerzenia ${ PASS_APP_NAME }."
+        "Uzyskaj dostęp do swoich haseł i chroń swoje tożsamości internetowe na wszystkich urządzeniach. Pobierz i zainstaluj odpowiednie aplikacje oraz rozszerzenia ${ PASS_APP_NAME }."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Dostęp do konta został ograniczony z powodu niezapłaconych faktur. Skontaktuj się ze swoim administratorem."
@@ -7582,6 +7582,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Doładuj swoje konto środkami, których możesz użyć do wykupienia nowego planu lub odnowienia obecnego. 1 ${ i18nCurrency } to jeden kredyt."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Adresy e-mail"
@@ -10135,26 +10138,6 @@
         "Umiarkowana prędkość VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Zachowaj moje konto ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Przejdź do przeglądu"
@@ -10194,6 +10177,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Zachowaj moje konto ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
       ]
     },
     "new_plans: feature": {
@@ -11616,7 +11619,7 @@
         "Poznaj ${ PASS_APP_NAME },${ br }czyli nasz nowy szyfrowany menedżer haseł"
       ],
       "Download and install the relevant apps and extensions to start using ${ PASS_APP_NAME }": [
-        "Aby korzystać z ${ PASS_APP_NAME }, pobierz i zainstaluj odpowiednie aplikacje i rozszerzenia"
+        "Aby korzystać z ${ PASS_APP_NAME }, pobierz i zainstaluj odpowiednie aplikacje oraz rozszerzenia"
       ],
       "Download the ${ PASS_APP_NAME } app from Google Play and install it to start using ${ PASS_APP_NAME2 } on your phone.": [
         "Pobierz aplikację ${ PASS_APP_NAME } ze sklepu Google Play i zainstaluj ją, aby korzystać z ${ PASS_APP_NAME2 } na telefonie."
@@ -12044,7 +12047,7 @@
         "Anulując subskrypcję, stracisz dostęp do tego kalendarza. Wszystkie wydarzenia z tego kalendarza zostaną usunięte z konta Proton, ale pozostaną dostępne za pomocą publicznego linku."
       ],
       "You will no longer have access to this calendar.": [
-        "Nie posiadasz już dostępu do tego kalendarza."
+        "Nie będziesz posiadać dostępu do tego kalendarza."
       ]
     },
     "Remove calendar section text": {
@@ -12076,14 +12079,11 @@
       "Changing organization password": [
         "Zmiana hasła organizacji"
       ],
-      "Creating new users": [
-        "Tworzenie nowych użytkowników"
+      "Creating or accessing non-private users": [
+        "Tworzenie lub uzyskiwanie dostępu do służbowych użytkowników"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Ze względu na zmianę hasła, Twoje uprawnienia administratora organizacji zostały ograniczone. Następujące działania nie są dozwolone:"
-      ],
-      "Reading emails of non-private users": [
-        "Czytanie wiadomości służbowych użytkowników"
       ]
     },
     "Role": {

@@ -3218,6 +3218,11 @@
         "Update voor een afspraak die begint op ${ formattedStart }"
       ]
     },
+    "email_forwarding_2023: Composer email icon": {
+      "Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.": [
+        "Zero-access versleuteld. De ontvanger heeft de end-to-end versleuteling op hun account uitgeschakeld."
+      ]
+    },
     "empty messages: success": {
       "Folder cleared": [
         "Map geleegd"
@@ -5573,6 +5578,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupName }."
       ],
+      "Please use another browser or download the file.": [
+        "Gebruik een andere browser of download het bestand."
+      ],
       "Please wait till your changes are synced with the server.": [
         "Wacht tot uw wijzigingen gesynchroniseerd zijn met de server."
       ],
@@ -5584,6 +5592,9 @@
       ],
       "Preview failed to be loaded": [
         "Voorvertoning kon niet worden geladen"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Voorvertoning voor dit bestandstype wordt momenteel niet ondersteund in deze browser."
       ],
       "Preview for this file type is not supported": [
         "Voorbeeld wordt niet ondersteund voor dit bestandstype"
@@ -8125,7 +8136,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "Wachtwoord reset aangevraagd"
+        "Wachtwoordherstel aangevraagd"
       ]
     },
     "session_recovery:sign_out:action": {
@@ -8433,6 +8444,9 @@
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "We laden afbeelding nu standaard en blokkeren trackers van afzenders. Dit kan gewijzigd worden via de ${ settingsLink }."
+      ],
+      "You can now automatically forward your emails to anyone!": [
+        "U kunt nu uw e-mails automatisch doorsturen naar wie dan ook!"
       ],
       "You can now schedule your messages to be sent later": [
         "U kunt nu uw berichten plannen om ze later te versturen"

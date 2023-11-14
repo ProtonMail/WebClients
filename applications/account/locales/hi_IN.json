@@ -4,20 +4,9 @@
     "language": "hi_IN"
   },
   "contexts": {
-    "A label for unlabeled shared calendar links": {
-      "Unlabeled": [
-        "लेबल नहीं"
-      ]
-    },
     "Access level": {
-      "Full view": [
-        "पूरा व्यू"
-      ],
       "Full view (see all event details)": [
         "पूरा देखें (सारा इवेंट जानकारी देखें)"
-      ],
-      "Limited view": [
-        "सीमित व्यू"
       ],
       "Limited view (see only free/busy)": [
         "सीमित व्यू (सिर्फ खाली/व्यस्त देखें)"
@@ -67,9 +56,6 @@
       ],
       "Add address": [
         "पता जोड़ें"
-      ],
-      "Add calendar from URL": [
-        "यूआरएल से कैलेंडर जोड़ें"
       ],
       "Add condition": [
         "शर्त जोड़ें"
@@ -269,9 +255,6 @@
       "Delete": [
         "मिटाएं"
       ],
-      "Delete link": [
-        "लिंक मिटाएं"
-      ],
       "Delete permanently": [
         "स्थायी रूप से डिलीट करें"
       ],
@@ -322,9 +305,6 @@
       ],
       "Download CSV sample": [
         "CSV नमूना डाउनलोड करें"
-      ],
-      "Download ICS": [
-        "ICS डाउनलोड करें"
       ],
       "Download recovery file": [
         "पुनर्प्राप्ति फ़ाइल डाउनलोड करें"
@@ -463,9 +443,6 @@
       ],
       "Import emails": [
         "ईमेल आयात करें"
-      ],
-      "Import from ICS": [
-        "ICS से आयात करें"
       ],
       "Import key": [
         "आयात कुंजी"
@@ -614,17 +591,11 @@
       "Remove bonuses": [
         "बोनस निकालें"
       ],
-      "Remove calendar": [
-        "कैलेंडर हटाएं"
-      ],
       "Remove gift code": [
         "उपहार कोड निकालें"
       ],
       "Remove this label": [
         "ये लेबल हटाएं"
-      ],
-      "Remove this member": [
-        "ये सदस्य हटाएं"
       ],
       "Remove this notification": [
         "इस अधिसूचना को हटा दें"
@@ -692,17 +663,11 @@
       "Revoke all other sessions": [
         "अन्य सभी सत्रों को निरस्त करें"
       ],
-      "Revoke this invitation": [
-        "इस न्योते को वापिस लें"
-      ],
       "Save": [
         "सेव करें"
       ],
       "Save address": [
         "पता सहेजें"
-      ],
-      "Save ICS file": [
-        "आईसीएस फ़ाइल सहेजें"
       ],
       "Save selected": [
         "चयनित सहेजें"
@@ -727,9 +692,6 @@
       ],
       "Select files": [
         "फ़ाइल का चयन करें"
-      ],
-      "Select language for invitation emails": [
-        "न्योते वाले ईमेल के लिए भाषा चुनें"
       ],
       "Select time zone": [
         "समय क्षेत्र चुनें"
@@ -966,16 +928,6 @@
         "30 दिन के लिए मुफ्त में आज़माएं"
       ]
     },
-    "Action; accept invitation to share calendar": {
-      "Accept": [
-        "स्वीकार करें"
-      ]
-    },
-    "Action; decline invitation to share calendar": {
-      "Decline": [
-        "मना करें"
-      ]
-    },
     "Address action": {
       "Delete": [
         "मिटाए"
@@ -1074,11 +1026,6 @@
         "असमर्थित घटना"
       ]
     },
-    "Auto import invitations setting": {
-      "Add to calendar and mark as pending": [
-        "कैलेंडर में जोड़ें और लंबित मार्क करें"
-      ]
-    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "मैं अपने ईमेल तक सीमित पहुंच के साथ कार्यालय से बाहर हूं।"
@@ -1123,11 +1070,6 @@
       ],
       "Two-year": [
         "दो वर्ष"
-      ]
-    },
-    "breadcrumb": {
-      "Calendars": [
-        "कैलेंडर"
       ]
     },
     "Bridge version load failed": {
@@ -1234,40 +1176,6 @@
         "लोग या समूह जोड़े"
       ]
     },
-    "Calendar edit button tooltip": {
-      "Edit calendar": [
-        "कैलेंडर बदले"
-      ]
-    },
-    "Calendar export section description": {
-      "Download an ICS file with all the events from the selected calendar.": [
-        "चुने गए कैलेंडर के सारे इवेंट के साथ वाला एक ICS फाइल डाउनलोड करें।"
-      ]
-    },
-    "Calendar import section description": {
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "आप किसी दूसरे कैलेंडर से ${ CALENDAR_APP_NAME } में ICS फाइलें आयात कर सकते हैं। इससे आप एक इवेंट या अपना पूरा एजेंडा तुरंत आयात कर सकते हैं।"
-      ]
-    },
-    "Calendar invite status label": {
-      "Declined": [
-        "मना किए गए"
-      ],
-      "Invite sent": [
-        "न्योता भेजा गया"
-      ]
-    },
-    "Calendar link purpose update success message": {
-      "Label added": [
-        "लेबल जोड़ा गया"
-      ],
-      "Label deleted": [
-        "लेबल मिटाया"
-      ],
-      "Label edited": [
-        "लेबल बदला गया"
-      ]
-    },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
         "सिर्फ आप लेबल देख सकते हैं"
@@ -1288,38 +1196,6 @@
         "आपके पास पहले से इस कैलेंडर का एक्सेस हैं"
       ]
     },
-    "Calendar settings link share description": {
-      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "अपने कैलेंडर के लिए एक लिंक बनाएं और इसे ${ BRAND_NAME } के बाहर के किसी व्यक्ति के साथ शेयर करें। केवल आप इवेंट जोड़ या हटा सकते हैं।"
-      ]
-    },
-    "Calendar settings private share description": {
-      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "अपना कैलेंडर दूसरे ${ BRAND_NAME } यूज़र के साथ शेयर करें। उनको अपने कैलेंडर में इवेंट जोड़ने और बदलने की अनुमति देकर साथ में काम करें। आप कभी भी यूज़र अनुमति बदल सकते है।"
-      ]
-    },
-    "Calendar settings section title": {
-      "Share calendar": [
-        "कैलेंडर शेयर करें"
-      ],
-      "Share outside ${ BRAND_NAME }": [
-        "${ BRAND_NAME } से बाहर शेयर करें"
-      ],
-      "Share with ${ BRAND_NAME } users": [
-        "${ BRAND_NAME } यूज़र के साथ शेयर करें"
-      ],
-      "Share with anyone": [
-        "किसी से भी शेयर करें"
-      ]
-    },
-    "Calendar share permission label": {
-      "Edit event details": [
-        "इवेंट जानकारी बदले"
-      ],
-      "See all event details": [
-        "सारे इवेंट का जानकारी देखें"
-      ]
-    },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "बदले (इवेंट जानकारी देखे, बनाएं और बदले)"
@@ -1333,21 +1209,7 @@
         "${ address } का संपर्क जानकारी लाने में असफल"
       ]
     },
-    "Calendar sharing permission change notification": {
-      "Permissions changed for ${ email }": [
-        "${ email } के लिए अनुमति बदली"
-      ]
-    },
     "Calendar status": {
-      "Active": [
-        "सक्रिय"
-      ],
-      "Default": [
-        "डिफॉल्ट"
-      ],
-      "Disabled": [
-        "अक्षम"
-      ],
       "Not synced": [
         "सिंक किया नहीं"
       ],
@@ -1393,11 +1255,6 @@
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "अपडेट किए हुए 12 घंटो से ज़्यादा हो गया है — ${ CALENDAR_APP_NAME } कुछ घंटो में कैलेंडर अपडेट करने की कोशिश करेगा।"
-      ]
-    },
-    "Calendar table settings button tooltip": {
-      "Open settings": [
-        "सेटिंग खोलें"
       ]
     },
     "Calendar view": {
@@ -2595,19 +2452,9 @@
         "बुधवार"
       ]
     },
-    "Default calendar event settings section title": {
-      "Default event settings": [
-        "डिफॉल्ट इवेंट सेटिंग"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "अनजान"
-      ]
-    },
-    "Delete calendar section description": {
-      "All events in this calendar will be deleted.": [
-        "इस कैलेंडर से सारे इवेंट मिटाएं जाएंगे।"
       ]
     },
     "Delinquent modal title": {
@@ -2856,9 +2703,6 @@
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "स्वचालित उत्तर एक सशुल्क सुविधा है। कृपया इस सुविधा का उपयोग करने के लिए सशुल्क खाते में अपग्रेड करें।"
-      ],
-      "Calendar cannot be found": [
-        "कैलेंडर नहीं मिला"
       ],
       "Calendar limit reached": [
         "कैलेंडर की सीमा पूरी हो गई"
@@ -3258,9 +3102,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "आपने अपनी योजना में सभी उपयोगकर्ताओं का उपयोग किया है। कृपया एक नया उपयोगकर्ता जोड़ने के लिए अपनी योजना को अपग्रेड करें।"
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "आपको अपनी संगठन कुंजियों को सक्रिय करना होगा। सक्रियण के बिना आप नए उपयोगकर्ता नहीं बना पाएंगे, मौजूदा उपयोगकर्ताओं के पते जोड़ सकते हैं या गैर-निजी उपयोगकर्ता खातों का उपयोग कर सकते हैं।"
-      ],
       "You must privatize all users before generating new organization keys": [
         "नई संगठन कुंजी बनाने से पहले आपको सभी उपयोगकर्ताओं का निजीकरण करना होगा"
       ],
@@ -3523,14 +3364,6 @@
         "कोई छवि चयनित नहीं है."
       ]
     },
-    "Error when exporting event from calendar": {
-      "Event @ ${ timeString }": [
-        "इवेंट @ ${ timeString }"
-      ],
-      "Event from ${ timeString }, ${ rruleString }": [
-        "${ timeString } से इवेंट, ${ rruleString }"
-      ]
-    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "संलग्न आईसीएस फ़ाइल को डिक्रिप्ट नहीं किया जा सका"
@@ -3578,54 +3411,6 @@
     "Event title": {
       "(no title)": [
         "(कोई शीर्षक नहीं)"
-      ]
-    },
-    "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } इवेंट निर्यात हुए",
-        "${ totalProcessed }/${ totalToProcess } इवेंट निर्यात हुए"
-      ],
-      "Calendar successfully exported. You can now save the ICS file.": [
-        "कैलेंडर सफलतापूर्वक निर्यात किया गया। आप अब ICS फाइल सेव कर सकते हैं।"
-      ],
-      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "आपके कैलेंडर से इवेंट डिक्रिप्ट कर रहे: ${ totalProcessed }/${ totalToProcess }"
-      ],
-      "Due to a password reset, none of your events could be decrypted and exported.": [
-        "एक पासवर्ड रीसेट के वजह से आपका कोई भी इवेंट डिक्रिप्ट और निर्यात नहीं किया जा सकाता।"
-      ],
-      "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "एक पासवर्ड रीसेट के वजह से आपके कुछ इवेंट डिक्रिप्ट और निर्यात नहीं किया जा सकते।"
-      ],
-      "Error decrypting event": [
-        "इवेंट डिक्रिप्ट करने में गड़बड़"
-      ],
-      "Learn how to restore encrypted events with old password": [
-        "पुराने पासवर्ड से एन्क्रिप्ट किए इवेंट रिस्टोर करना सीखें"
-      ],
-      "Loading events": [
-        "इवेंट लोड हो रहा है"
-      ],
-      "None of the events could be exported.": [
-        "कोई भी इवेंट निर्यात नहीं किया जा सका।"
-      ],
-      "Password reset - event cannot be decrypted": [
-        "पासवर्ड वापिस सेट हुआ - इवेंट डिक्रिप्ट नहीं हो सकते"
-      ],
-      "Password reset - multiple events cannot be decrypted": [
-        "पासवर्ड वापस सेट - कई इवेंट डिक्रिप्ट नहीं हो सके"
-      ],
-      "Please don't close the tab before the exporting process is finished.": [
-        "निर्यात खत्म होने से पहले टैब बंद ना करें।"
-      ],
-      "Some of your events could not be exported.": [
-        "आपके कुछ इवेंट निर्यात नही हो सके।"
-      ],
-      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "इंटरनेट कनेक्शन में रोकटोक हुई, जिससे निर्यात असफल हो गया। वापस कोशिश करें।"
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        "आप सफलतापूर्वक निर्यात किए गए सारे इवेंट की ICS फाइल सेव कर सकते हैं।"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4068,12 +3853,6 @@
       ]
     },
     "Header": {
-      "Access": [
-        "एक्सेस करें"
-      ],
-      "Action": [
-        "कार्य"
-      ],
       "Actions": [
         "एक्शन"
       ],
@@ -4092,9 +3871,6 @@
       "Key type": [
         "कुंजी प्रकार"
       ],
-      "Label": [
-        "लेबल"
-      ],
       "Name": [
         "नाम"
       ],
@@ -4104,9 +3880,6 @@
       "Organization key fingerprint": [
         "संगठन कुंजी फिंगरप्रिंट"
       ],
-      "Permissions": [
-        "अनुमतियां"
-      ],
       "Select your pricing plan": [
         "अपना दाम संभालने वाला प्लान चुनें"
       ],
@@ -4115,9 +3888,6 @@
       ],
       "Time": [
         "समय"
-      ],
-      "User": [
-        "यूज़र"
       ]
     },
     "Header for addresses table": {
@@ -4543,9 +4313,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } की एन्क्रिप्शन टेकनोलॉजी का मतलब है की कोई भी आपका पासवर्ड एक्सेस नहीं कर सकता - यहां तक की हम भी नहीं।"
       ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } डिफॉल्ट कैलेंडर सेट होगा।"
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } नया कैलेंडर",
         "${ calendarsToBeCreatedCount } नए कैलेंडर"
@@ -4565,9 +4332,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: कम-क्वालिटी का प्रिव्यू"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } डिफॉल्ट कैलेंडर सेट होगा।"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } को सिर्फ एक पासवर्ड से भी इस्तेमाल कर सकते है जो आपके लॉग इन और मेलबॉक्स पासवर्ड की जगह ले लेगा। एक पासवर्ड मोड पे जाने के लिए, पासवर्ड डाले जो आप इस्तेमाल करना चाहते है और सेव दबाएं।"
@@ -4691,9 +4455,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "सिर्फ एक यूज़रनेम, मेलबॉक्स, और इंसान से जुड़े खाते को यूज़र कहते है।"
       ],
-      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "आसानी से अलग-अलग डिवाइसो पे अपने पासवर्ड एक्सेस करें और अपने ऑनलाइन पहचान की रक्षा करें। ज़रूरी ${ PASS_APP_NAME } ऐप और एक्सटेंशन डाउनलोड और इंस्टॉल करें।"
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "अवैतनिक चालान के कारण खाता पहुंच प्रतिबंधित है। कृपया अपने व्यवस्थापक से संपर्क करें।"
       ],
@@ -4729,9 +4490,6 @@
       ],
       "Add image URL": [
         "छवि URL जोड़ें"
-      ],
-      "Add label": [
-        "लेबल जोड़ें"
       ],
       "Add multiple users to your organization at once.": [
         "एक समय में अपने संगठन में कई यूज़र एक साथ जोड़े"
@@ -4795,20 +4553,8 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "इस लिंक के साथ कोई भी इंसान देख सकता है कि आप खाली है या अपने कैलेंडर में व्यस्त है। वो शीर्षक, स्थान या प्रतिभागियों जैसे इवेंट जानकारी नहीं देख सकते है।"
       ],
-      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "इस लिंक के साथ कोई भी व्यक्ति आपके कैलेंडर के लिए सिंक या भविष्य के अपडेट लेने में सक्षम नहीं होगा। अगर आप उन्हें फिर से एक्सेस देना चाहते हैं, तो आपको एक नया लिंक बनाना होगा।"
-      ],
       "Are you sure you want to delete this address?": [
         "क्या आप वाकई इस पते को हटाना चाहते हैं?"
-      ],
-      "Are you sure you want to delete this calendar?": [
-        "क्या आप वाकई इस कैलेंडर को मिटाना चाहते हैं?"
-      ],
-      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "आप पक्का इस कैलेंडर को मिटाना चाहते हैं? आपने जिन-जिन पतो को ये कैलेंडर शेयर किया है वो इसका एक्सेस खो देंगे।"
-      ],
-      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "क्या आप पक्का इस कैलेंडर को मिटाना चाहते हैं? उसके सभी इवेंट भी मिटा दिए जाएंगे।"
       ],
       "Are you sure you want to delete this domain?": [
         "क्या आप वाकई इस डोमेन को हटाना चाहते हैं?"
@@ -4985,9 +4731,6 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "कोई भी अन्य MX रिकॉर्ड को हटा दें या सुनिश्चित करें कि ${ MAIL_APP_NAME } की प्राथमिकता सबसे कम नंबर पे है।"
       ],
-      "Delete link?": [
-        "लिंक मिटाएं?"
-      ],
       "Discover ProtectBuy logo": [
         "ProtectBuy लोगो देखें"
       ],
@@ -5031,9 +4774,6 @@
       "Each code can only be used once": [
         "हर कूटक का उपयोग केवल एक बार हो सकता है"
       ],
-      "Edit label": [
-        "लेबल संपादित करें"
-      ],
       "Edit link": [
         "कड़ी संपादन"
       ],
@@ -5054,9 +4794,6 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "इस लेबल के साथ टैग किए गए ईमेल हटाए नहीं जाएंगे और अभी भी संबंधित फ़ोल्डर में पाए जा सकते हैं।"
-      ],
-      "Enable this address to join this calendar": [
-        "इस कैलेंडर से जुड़ने के लिए ये पता सक्षम करें"
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "अगर बाहरी डिवाइस पे TSL या SSL सपोर्ट किया जाता है तो उसे सक्षम करें"
@@ -5108,9 +4845,6 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "अपना पुनर्प्राप्ति ईमेल पता या पुनर्प्राप्ति फ़ोन नंबर दर्ज करें और हम आपको अपना उपयोगकर्ता नाम या ईमेल पता भेजेंगे।"
-      ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        "इवेंट का न्योता और आरएसवीपी (मन करें तो जवाब दें) इस भाषा में भेजे जाएंगे।"
       ],
       "Expired": [
         "समय सीमा समाप्त"
@@ -5165,9 +4899,6 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "अगर ये आपके लिए सही नहीं, तो हम आपको पूरे पैसे वापस कर देंगे।"
-      ],
-      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "अगर आपका सिस्टम समय क्षेत्र आपके मनपसंद समय क्षेत्र से मेल नहीं खाता, तो आपको वो अपडेट करने के लिए बोला जाएगा (ज़्यादा-से-ज़्यादा दिन में एक बार)।"
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "यदि यह डोमेन वर्तमान में ईमेल प्राप्त कर रहा है, तो ${ boldAddresses } टैब चुनें और एक चिकनी संक्रमण सुनिश्चित करने के लिए MX रिकॉर्ड बदलने से पहले सभी सक्रिय ईमेल पते जोड़ें।"
@@ -5345,9 +5076,6 @@
       "Link created": [
         "लिंक बनाया गया"
       ],
-      "Link deleted": [
-        "लिंक हटाया गया"
-      ],
       "Link type": [
         "लिंक प्रकार"
       ],
@@ -5455,9 +5183,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "इन सेटिंग्स को केवल तभी बदलें जब आप गैर-${ BRAND_NAME } प्राप्तकर्ताओं के साथ PGP का उपयोग कर रहे हों।"
-      ],
-      "Only you can see the labels.": [
-        "सिर्फ आप लेबल देख सकते हैं।"
       ],
       "Or select a particular server:": [
         "या किसी विशेष सर्वर का चयन करें:"
@@ -5627,9 +5352,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "पृष्ठ को ताज़ा करने या ${ link } स्वचालित रूप से अधिकांश मुद्दों को हल करेगा।"
       ],
-      "Remove one of your calendars to join this one": [
-        "इस कैलेंडर से जुड़ने के लिए अपना एक मौजूदा कैलेंडर हटाएं"
-      ],
       "Restore": [
         "पहले जैसा करें"
       ],
@@ -5750,9 +5472,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked } संदेश अब नहीं दिखाया जाएगा, लेकिन आप अभी भी ${ encryptionAndKeysLink } के अंतर्गत अपना डेटा अनलॉक कर सकते हैं।"
-      ],
-      "The calendar will be removed from your account.": [
-        "कैलेंडर आपके खाते से हटा दिया जाएगा।"
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "ईमेल सत्यापन लिंक खत्म हो गया। सत्यापन लिंक वापस भेजने के लिए साइनइन करें।"
@@ -6155,9 +5874,6 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "आपने पुनर्प्राप्ति विधि सेट नहीं की है, इसलिए यदि आप अपना पासवर्ड भूल जाते हैं तो खाता पुनर्प्राप्ति असंभव है। पुनर्प्राप्ति विधि के बिना आगे बढ़ें?"
       ],
-      "You have no calendars to export.": [
-        "आपके पास निर्यात करने को कैलेंडर नहीं।"
-      ],
       "You have no saved payment methods.": [
         "आपके पास कोई भुगतान विधि नहीं है।"
       ],
@@ -6179,9 +5895,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "आपके पास एक क्रेडिट कार्ड या बैंक खाता होना चाहिए जो आपके PayPal खाते से जुड़ा हो। यदि आपके पेपैल खाते में यह नहीं है, तो कृपया नीचे दिए गए बटन पर क्लिक करें।"
       ],
-      "You need to have an active personal calendar to import your events from ICS.": [
-        "ICS से अपने इवेंट आयात करने के लिए आपके पास एक सक्रिय कैलेंडर होना चाहिए।"
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "आप अपनी संग्रहण क्षमता का ${ spaceDisplayed }% तक पहुँच गए। ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -6190,9 +5903,6 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "यदि आपको इसे एन्क्रिप्ट किए गए डेटा को पुनर्स्थापित करने की आवश्यकता है तो आपको इस कुंजी का बैकअप निर्यात करना चाहिए।"
-      ],
-      "You still need to reply to invitations for the host to see your response.": [
-        "आपको अपना जवाब देखने को होस्ट के न्योतो का जवाब देना होगा।"
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "आपको एक ${ BRAND_NAME } पते कि जरूरत होगी ${ MAIL_APP_NAME } और ${ CALENDAR_APP_NAME } का इस्तेमाल करने के लिए।"
@@ -6658,9 +6368,6 @@
     "Knowledge base link label": {
       "Here's how": [
         "ऐसे"
-      ],
-      "Learn more": [
-        "अधिक जानें"
       ]
     },
     "Label": {
@@ -6781,9 +6488,6 @@
       ],
       "Auto-delete unwanted messages": [
         "अनचाहे संदेश अपनेआप मिटाएं"
-      ],
-      "Auto-detect primary time zone": [
-        "पहला समय क्षेत्र अपनेआप डिटेक्ट करें"
       ],
       "Auto-reply": [
         "ऑटो-रिप्लाई"
@@ -6931,9 +6635,6 @@
       ],
       "Default language": [
         "डिफ़ॉल्ट भाषा"
-      ],
-      "Default language (${ defaultLanguage })": [
-        "डिफॉल्ट भाषा (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "डिफ़ॉल्ट पीजीपी योजना"
@@ -7127,9 +6828,6 @@
       "Level for NetShield blocker filtering": [
         "NetShield ब्लॉकर फिल्टर की ताकत"
       ],
-      "Link label": [
-        "लेबल लिंक"
-      ],
       "Mail Server (IMAP)": [
         "मेल सर्वर (IMAP)"
       ],
@@ -7322,12 +7020,6 @@
       "Send crash reports": [
         "क्रेश रिपोर्ट भेजे"
       ],
-      "Send in": [
-        "इसमें भेजे"
-      ],
-      "Show secondary time zone": [
-        "दूसरा समय क्षेत्र दिखाएं"
-      ],
       "Show sender images": [
         "भेजनेवालो की तस्वीर दिखाएं"
       ],
@@ -7505,19 +7197,6 @@
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "आपके पास अपने ${ MAIL_APP_NAME } खाते से खरीदा जो डोमेन है वो जोड़ें।"
-      ]
-    },
-    "Label for default event notifications": {
-      "All-day event notifications": [
-        "पूरे दिन इवेंट सूचनाएं"
-      ],
-      "Notifications": [
-        "सूचनाएँ"
-      ]
-    },
-    "Label for default event settings": {
-      "Duration": [
-        "अवधि"
       ]
     },
     "Label for domain modal": {
@@ -7785,18 +7464,6 @@
         "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
       ]
     },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "आप हर कैलेंडर पे ज़्यादा से ज़्यादा ${ MAX_LINKS_PER_CALENDAR } लिंक बना सकते है। इस कैलेंडर के लिए नया लिंक बनाने के लिए, एक लिंक मिटाए नीचे दिए गए सूची से।",
-        "आप हर कैलेंडर पे ज़्यादा से ज़्यादा ${ MAX_LINKS_PER_CALENDAR } लिंक बना सकते है। इस कैलेंडर के लिए नया लिंक बनाने के लिए, एक लिंक मिटाए नीचे दिए गए सूची से।"
-      ]
-    },
-    "Maximum shared calendar members reached alert": {
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "आप ${ MAX_CALENDAR_MEMBERS } सदस्य के सीमा पे पहुंच चुके हैं।",
-        "आप ${ MAX_CALENDAR_MEMBERS } सदस्य के सीमा पे पहुंच चुके हैं।"
-      ]
-    },
     "Member action": {
       "Delete": [
         "मिटाए"
@@ -8053,23 +7720,6 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "सारे ${ BRAND_NAME } प्लान देखे"
-      ],
-      "From ${ price }": [
-        "${ price } से"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "मेरा ${ currentPlanName } खाता रखें"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "देखना जारी रखें"
@@ -8109,6 +7759,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } पे अपग्रेड करें"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "सारे ${ BRAND_NAME } प्लान देखे"
+      ],
+      "From ${ price }": [
+        "${ price } से"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "मेरा ${ currentPlanName } खाता रखें"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
       ]
     },
     "new_plans: feature": {
@@ -8730,18 +8397,9 @@
       ]
     },
     "Notification in share calendar modal": {
-      "Invitation deleted": [
-        "न्योता मिटाया गया"
-      ],
-      "Invitation revoked": [
-        "न्योता वापस लिया गया"
-      ],
       "Member added": [
         "मेंबर जोड़ा गया",
         "मेंबर जोड़े गए"
-      ],
-      "Member deleted": [
-        "मेंबर हटाया"
       ]
     },
     "Notification in shared calendar modal": {
@@ -8750,11 +8408,6 @@
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "${ calendarName } से जुड़ गए (${ senderEmail })"
-      ]
-    },
-    "Notification success": {
-      "Event defaults updated": [
-        "इवेंट का डिफॉल्ट अपडेट हुआ"
       ]
     },
     "Notification time input": {
@@ -9090,11 +8743,6 @@
         "नया क्रेडिट/डेबिट कार्ड"
       ]
     },
-    "Personal calendar section description": {
-      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
-        "अपने डाटा को सुरक्षित रखते हुए अपने शेड्यूल पे रहने के लिए एक कैलेंडर बनाएं।"
-      ]
-    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "ईमेल पता कुंजी भेजने में परिभाषित उपयोगकर्ता आईडी के बीच नहीं मिला (${ keyUserIds })"
@@ -9210,14 +8858,6 @@
     "Price": {
       "Free": [
         "मुफ्त"
-      ]
-    },
-    "Primary timezone": {
-      "Primary time zone": [
-        "पहला समय क्षेत्र"
-      ],
-      "Secondary time zone": [
-        "दूसरा समय क्षेत्र"
       ]
     },
     "Private Member": {
@@ -9337,36 +8977,6 @@
         "अत्याधुनिक"
       ]
     },
-    "Remove calendar section description": {
-      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "सदस्यता छोड़ कर आप इस कैलेंडर को आगे एक्सेस नहीं कर पाएंगे। आपके खाते से इस कैलेंडर के सारे इवेंट मिटा दिए जाएगे, लेकिन वो असली सार्वजनिक लिंक में बने रहेंगे।"
-      ],
-      "You will no longer have access to this calendar.": [
-        "आप इस कैलेंडर को आगे एक्सेस नहीं कर पाएगे।"
-      ]
-    },
-    "Remove calendar section text": {
-      "If you leave this calendar, you'll have to ask the owner to join again.": [
-        "अगर आप इस कैलेंडर को छोड़ते हैं, तो आपको वापिस जुड़ने के लिए मालिक से पूछना होगा।"
-      ],
-      "This calendar will be removed from your account.": [
-        "ये कैलेंडर आपके खाते से हटा दिया जाएगा।"
-      ]
-    },
-    "Remove calendar section title": {
-      "Delete calendar?": [
-        "कैलेंडर मिटाएं?"
-      ],
-      "Leave calendar?": [
-        "कैलेंडर छोड़े?"
-      ],
-      "Remove calendar": [
-        "कैलेंडर हटाएं"
-      ],
-      "Unsubscribe?": [
-        "सदस्यता छोड़ दे?"
-      ]
-    },
     "Restore administrator panel": {
       "Changing organization keys": [
         "संगठन की चाबियाँ बदलना"
@@ -9374,14 +8984,8 @@
       "Changing organization password": [
         "संगठन का पासवर्ड बदलना"
       ],
-      "Creating new users": [
-        "नए उपयोगकर्ता बन रहे है"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "पासवर्ड परिवर्तन के कारण, आपके संगठन व्यवस्थापक विशेषाधिकार प्रतिबंधित कर दिए गए हैं। निम्नलिखित क्रियाओं की अब अनुमति नहीं है:"
-      ],
-      "Reading emails of non-private users": [
-        "गैर-निजी उपयोगकर्ताओं के ईमेल पढ़ना"
       ]
     },
     "Select file": {
@@ -9482,11 +9086,6 @@
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "${ BRAND_NAME } यूज़र के साथ शेयर करें"
-      ]
-    },
-    "Shared calendar label input placeholder": {
-      "Add label": [
-        "लेबल जोड़ें"
       ]
     },
     "Signature verification error when joining calendar": {
@@ -9713,14 +9312,6 @@
         "जानिए की कैसे एक निजी कैलेंडर लिंक लेते है।"
       ]
     },
-    "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "यूआरएल इस्तेमाल करके सार्वजनिक, बाहरी, या शेयर किया कैलेंडर जोड़ें।"
-      ],
-      "Add public, external, or shared calendars.": [
-        "सार्वजनिक, बाहरी, या शेयर किए कैलेंडर जोड़े।"
-      ]
-    },
     "Subscription attribute": {
       "${ maxVpn } high-speed VPN connection": [
         "${ maxVpn } तेज़ वीपीएन कनेक्शन",
@@ -9882,9 +9473,6 @@
       "Calendar information updated": [
         "कैलेंडर जानकारी अपडेट किया गया"
       ],
-      "Calendar removed": [
-        "कैलेंडर हटा दिया गया"
-      ],
       "Calendar updated": [
         "कैलेंडर अपडेट किया गया"
       ],
@@ -9899,9 +9487,6 @@
       ],
       "Credits added": [
         "क्रेडिट जोड़े गए"
-      ],
-      "Default calendar updated": [
-        "डिफॉल्ट कैलेंडर अपडेट किया गया"
       ],
       "Display name updated": [
         "डिस्पले नाम अपडेट किया"
@@ -10087,11 +9672,6 @@
         "हर महीने"
       ]
     },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        "इवेंट के बारे में जानकारी जो निर्यात नहीं हो सकी"
-      ]
-    },
     "Tab in domain modal": {
       "Addresses": [
         "पतों"
@@ -10106,11 +9686,6 @@
       ],
       "For individuals": [
         "अकेले लोगों के लिए"
-      ]
-    },
-    "Table header; invitations to share calendar": {
-      "Shared with me": [
-        "मेरे साथ शेयर करे"
       ]
     },
     "TableHeader": {
@@ -10467,9 +10042,6 @@
       "Delete account": [
         "खाता हटा दो"
       ],
-      "Delete calendar": [
-        "कैलेंडर हटाएं"
-      ],
       "Delete key permanently?": [
         "चाबी हमेशा के लिए मिटाएं?"
       ],
@@ -10544,9 +10116,6 @@
       ],
       "Export": [
         "निर्यात"
-      ],
-      "Export calendar": [
-        "कैलेंडर निर्यात करें"
       ],
       "Export private key": [
         "निजी कुंजी निर्यात करें"
@@ -10771,9 +10340,6 @@
       ],
       "Refer a friend": [
         "एक मित्र को सूचित करें"
-      ],
-      "Remove calendar": [
-        "कैलेंडर हटाएं"
       ],
       "Remove user?": [
         "यूज़र हटाएं?"
@@ -11248,17 +10814,6 @@
       ],
       "Your default font will look like following:": [
         "आपका डिफ़ॉल्ट फ़ॉन्ट निम्न जैसा दिखेगा:"
-      ]
-    },
-    "Upgrade": {
-      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "${ n } डिवाइस तक को एक समय में वीपीएन से कनेक्ट करने के लिए ${ planName } पे अपग्रेड करे।",
-        "${ n } डिवाइस तक को एक समय में वीपीएन से कनेक्ट करने के लिए ${ planName } पे अपग्रेड करे।"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "${ MAIL_SHORT_APP_NAME } के खरीदने वाले प्लान पे अपग्रेड करें अपना कैलेंडर शेयर करने के लिए।"
       ]
     },
     "User referee invited via email": {

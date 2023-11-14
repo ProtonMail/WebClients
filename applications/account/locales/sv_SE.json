@@ -143,6 +143,9 @@
       "Authenticate": [
         "Autentisera"
       ],
+      "Authenticating": [
+        "Autentisering"
+      ],
       "Back": [
         "Tillbaka"
       ],
@@ -4127,8 +4130,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har använt alla användare i ditt paket. Uppgradera ditt paket för att lägga till en ny användare."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Du måste aktivera dina organisationsnycklar. Utan aktivering kommer du inte att kunna skapa nya användare, lägga till adresser till befintliga användare eller komma åt icke-privata användarkonton."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Du måste aktivera dina organisationsnycklar. Utan aktivering kommer du inte att kunna skapa eller komma åt icke-privata användare."
       ],
       "You must privatize all users before generating new organization keys": [
         "Du måste privatisera alla användare innan du genererar nya organisationsnycklar"
@@ -4487,7 +4490,7 @@
         "Lär dig hur du återställer krypterade händelser med gammalt lösenord"
       ],
       "Loading events": [
-        "Laddar händelser"
+        "Laddar in händelser"
       ],
       "None of the events could be exported.": [
         "Ingen av händelserna kunde exporteras."
@@ -4496,7 +4499,7 @@
         "Lösenordsåterställning - händelse kan inte dekrypteras"
       ],
       "Password reset - multiple events cannot be decrypted": [
-        "Lösenordsåterställning – flera händelser kan inte dekrypteras"
+        "Lösenordsåterställning - flera händelser kan inte dekrypteras"
       ],
       "Please don't close the tab before the exporting process is finished.": [
         "Stäng inte fliken innan exportprocessen är klar."
@@ -6872,6 +6875,9 @@
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Över 100 miljoner människor och företag har registrerat sig för ${ BRAND_NAME }."
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Betalat för ett ${ rewardMonths }-månadspaket",
         "Betalat för ett ${ rewardMonths }-månadspaket"
@@ -7430,6 +7436,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Fyll på ditt konto med krediter som du kan använda för att prenumerera på en ny plan eller förnya din nuvarande plan. Du får en kredit för varje ${ i18nCurrency } som spenderas."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Totalt antal e-postadresser"
@@ -9204,6 +9213,9 @@
       "Verify keys with Key Transparency": [
         "Verifiera nycklar med Key Transparency"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Tråkigt att du lämnar oss. Vill du vara snäll och berätta varför du lämnar oss för att hjälpa oss bli bättre."
       ],
@@ -9619,7 +9631,7 @@
     },
     "Maximum shared calendar members reached alert": {
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "Du har nått det maximala antalet för ${ MAX_CALENDAR_MEMBERS } medlem.",
+        "Du har nått det maximala antalet av ${ MAX_CALENDAR_MEMBERS } medlem.",
         "Du har nått det maximala antalet av ${ MAX_CALENDAR_MEMBERS } medlemmar."
       ]
     },
@@ -9935,26 +9947,6 @@
         "Medelhög VPN-hastighet"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgradera till ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Utforska alla ${ BRAND_NAME }-paket"
-      ],
-      "From ${ price }": [
-        "Från ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behåll mitt ${ currentPlanName }-konto"
-      ],
-      "Upgrade": [
-        "Uppgradera"
-      ],
-      "Upgrade now": [
-        "Uppgradera nu"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Fortsätt att utvärdera"
@@ -9994,6 +9986,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Uppgradera till ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgradera till ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Utforska alla ${ BRAND_NAME }-paket"
+      ],
+      "From ${ price }": [
+        "Från ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Behåll mitt ${ currentPlanName }-konto"
+      ],
+      "Upgrade": [
+        "Uppgradera"
+      ],
+      "Upgrade now": [
+        "Uppgradera nu"
       ]
     },
     "new_plans: feature": {
@@ -11048,6 +11060,9 @@
       "Add to existing group": [
         "Lägg till i befintlig grupp"
       ],
+      "Android": [
+        "Android"
+      ],
       "Ask each time": [
         "Fråga varje gång"
       ],
@@ -11072,6 +11087,9 @@
       "Free server configs": [
         "Konfiguration för gratisserver"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
         "Jag hittade en annan tjänst som jag gillar bättre"
       ],
@@ -11081,6 +11099,9 @@
       "Ignore group": [
         "Ignorera grupp"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "Det saknas en nyckelfunktion som jag behöver"
       ],
@@ -11089,6 +11110,9 @@
       ],
       "Left to Right": [
         "Vänster till höger"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "Min anledning är inte listad"
@@ -11135,8 +11159,17 @@
       "Standard server configs": [
         "Konfiguration för standardserver "
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Hela organisationen"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -11812,14 +11845,11 @@
       "Changing organization password": [
         "Ändrar organisationens lösenord"
       ],
-      "Creating new users": [
-        "Skapar nya användare"
+      "Creating or accessing non-private users": [
+        "Skapar eller åtkomst till icke-privata användare"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "På grund av en lösenordsändring, har dina administratörsrättigheter för organisationen begränsats. Följande åtgärder är inte längre tillåtna:"
-      ],
-      "Reading emails of non-private users": [
-        "Läsa e-post för icke-privata underanvändare"
       ]
     },
     "Role": {
@@ -14547,6 +14577,29 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Åtkomst till Secure Core-servrar, snabba P2P/BitTorrent-nedladdningar, Tor över VPN och mer."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Warning": {

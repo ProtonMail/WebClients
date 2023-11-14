@@ -44,6 +44,9 @@
       "Authenticate": [
         "Autentica"
       ],
+      "Authenticating": [
+        "Autenticació"
+      ],
       "Back": [
         "Torna"
       ],
@@ -178,6 +181,9 @@
       ],
       "Edit Gateway": [
         "Edita la passarel·la"
+      ],
+      "Edit invoice details": [
+        "Edita les dades de la factura"
       ],
       "Edit name": [
         "Edita el nom"
@@ -672,11 +678,17 @@
       "3 TB": [
         "3 TB"
       ],
+      "3,000+ servers across 65+ countries": [
+        "Més de 3 000 servidors en més de 65 països"
+      ],
       "6 users": [
         "6 usuaris"
       ],
       "Ad-blocker and malware protection": [
         "Bloquejador d'anuncis i publicitat i protecció contra programari maliciós"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Totes les funcions de pagament de ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Historial de versions ampliat"
@@ -700,6 +712,19 @@
     "bf2023: Footer": {
       "Discounts are based on standard monthly pricing.": [
         "Els descomptes es basen en els preus mensuals estàndard."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "La vostra subscripció es renovarà automàticament a la tarifa estàndard amb descompte i durada al final del cicle de facturació."
+      ]
+    },
+    "bf2023: header": {
+      "Select your Black Friday offer": [
+        "Seleccioneu la vostra oferta de Black Friday"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Tots els serveis prèmium de ${ BRAND_NAME }. Una subscripció senzilla."
       ]
     },
     "bf2023: Offers": {
@@ -722,14 +747,24 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Accediu al contingut dels serveis de streaming com ara Netflix, Disney+ i Prime Video i més des de qualsevol lloc."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email, compartició de calendari i més."
+      ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclou suport per a 3 dominis de correu electrònic personalitzats, ${ addresses } adreça de correu electrònic, àlies il·limitats de hide-my-email, compartició de calendari i més.",
+        "Inclou suport per a 3 dominis de correu electrònic personalitzats, ${ addresses } adreces de correu electrònic, àlies il·limitats de hide-my-email, compartició de calendari i més."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield, dissenyat especialment, protegeix els vostres dispositius i accelera la navegació bloquejant anuncis, rastrejadors i programari maliciós."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "L'espai d'emmagatzematge està compartit entre totes les aplicacions de ${ BRAND_NAME }."
       ]
     },
     "Billing cycle": {
@@ -2009,8 +2044,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Heu utilitzat tots els usuaris del vostre pla. Milloreu-lo per a afegir un nou usuari."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Ha activar les claus de la seva organització. Sense l'activació, no podrà crear nous usuaris, afegir adreces a usuaris existents o accedir a comptes d'usuaris no privats."
+      "You must privatize all users before generating new organization keys": [
+        "Heu de privatitzar tots els usuaris abans de generar claus d'organització noves"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "El vostre compte o organització té una factura vençuda. Pagueu totes les factures pendents."
@@ -2643,6 +2678,10 @@
         "${ number } servidor",
         "${ number } servidors"
       ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } més",
+        "${ remainingAddresses.length } més"
+      ],
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length } adreça més",
         "${ remainingAddresses.length } adreces més"
@@ -2957,6 +2996,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si creieu que es tracta d'un error, poseu-vos en contacte amb nosaltres ${ contactLink }."
+      ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Si ho cancel·leu, la subscripció ${ planTitle } no es renovarà en caducar el ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
@@ -3384,6 +3426,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarregeu el vostre compte amb crèdits que podeu utilitzar per subscriure-us a un nou pla o per renovar el pla actual. Obteniu un crèdit per cada ${ i18nCurrency } gastat."
       ],
+      "Tor": [
+        "Tor"
+      ],
       "Total email addresses": [
         "Adreces de correu totals"
       ],
@@ -3519,6 +3564,9 @@
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quan la vostra subscripció es renovi, utilitzarem els crèdits disponibles abans de fer un càrrec al mètode de pagament anterior."
       ],
+      "Whole organization": [
+        "Tota l'organització"
+      ],
       "Why?": [
         "Per què?"
       ],
@@ -3591,6 +3639,12 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "Heu assolit el 100% de la vostra capacitat d’emmagatzematge. No podeu enviar ni rebre correus electrònics nous. ${ freeUpMessage } ${ upgradeLink }"
+      ],
+      "You will lose access to Plus features on this date.": [
+        "Perdreu accés a les funcions Plus en aquesta data."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "Perdreu accés a servidors i funcions Plus aquesta data."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necessitareu una adreça de ${ BRAND_NAME } per a utilitzar ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
@@ -3955,6 +4009,9 @@
       "Name": [
         "Nom"
       ],
+      "Name and address": [
+        "Nom i adreça"
+      ],
       "Name on card": [
         "Nom de la targeta"
       ],
@@ -4111,6 +4168,9 @@
       "What is the main reason you are deleting your account?": [
         "Quin és el motiu principal per suprimir el teu compte?"
       ],
+      "Why would you like to cancel?": [
+        "Per què voleu cancel·lar el vostre pla?"
+      ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, vull suprimir definitivament aquest compte i totes les seves dades."
       ],
@@ -4159,8 +4219,17 @@
       "${ BRAND_NAME } welcome emails": [
         "Missatges de benvinguda de ${ BRAND_NAME }"
       ],
+      "${ DRIVE_APP_NAME } product updates": [
+        "Actualitzacions del producte ${ DRIVE_APP_NAME }"
+      ],
       "${ MAIL_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME } new features": [
         "Noves característiques de ${ MAIL_APP_NAME } i de ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ PASS_APP_NAME } product updates": [
+        "Actualitzacions del producte ${ PASS_APP_NAME }"
+      ],
+      "${ VPN_APP_NAME } product updates": [
+        "Actualitzacions del producte ${ VPN_APP_NAME }"
       ]
     },
     "Label on payment method": {
@@ -4892,6 +4961,9 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Accediu al contingut dels serveis de transmissió, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
       ],
@@ -5105,6 +5177,9 @@
         "Crea fins a ${ n } calendari",
         "Crea fins a ${ n } calendaris"
       ],
+      "Dedicated Account manager": [
+        "Gestor de comptes dedicat"
+      ],
       "Multi-platform support": [
         "Suport multiplataforma"
       ],
@@ -5182,6 +5257,9 @@
       ],
       "Standard server configs": [
         "Configuracions estàndard de servidor"
+      ],
+      "The whole organization": [
+        "Tota l'organització"
       ]
     },
     "Organization capacity error": {
@@ -5281,6 +5359,9 @@
       ],
       "Please describe the problem and include any error messages": [
         "Descriviu el problema i incloeu qualsevol missatge d'error"
+      ],
+      "Please select the main reason": [
+        "Seleccioneu el motiu principal."
       ],
       "Search": [
         "Cerca"
@@ -5401,14 +5482,8 @@
       "Changing organization password": [
         "Canviant la contrasenya de l'organització"
       ],
-      "Creating new users": [
-        "Creant usuaris nous"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "A causa d'un canvi de contrasenya, els privilegis d'administrador de la seva organització han estat restringits. Les següents accions ja no estan permeses:"
-      ],
-      "Reading emails of non-private users": [
-        "Llegint els correus electrònics d'usuaris no privats"
       ]
     },
     "Role": {
@@ -5468,6 +5543,9 @@
       "${ timeRemaining.inHours } hour": [
         "${ timeRemaining.inHours } hora",
         "${ timeRemaining.inHours } hores"
+      ],
+      "Didn’t make this request?": [
+        "No heu fet aquesta petició?"
       ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Si no heu demanat restablir la teva contrasenya, cancel·leu la sol·licitud ara mateix."
@@ -5562,6 +5640,9 @@
         "${ gracePeriodHoursRemaining } hora més",
         "${ gracePeriodHoursRemaining } hores més"
       ],
+      "Didn’t make this request?": [
+        "No heu fet aquesta petició?"
+      ],
       "If you didn’t ask to reset your password, cancel the request now.": [
         "Si no heu demanat restablir la teva contrasenya, cancel·leu la sol·licitud ara mateix."
       ],
@@ -5602,6 +5683,11 @@
       ],
       "Use recovery method": [
         "Utilitza un mètode de recuperació"
+      ]
+    },
+    "session_recovery:initiation:link": {
+      "account and password section": [
+        "secció de compte i contrasenya"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -6505,6 +6591,9 @@
       "Edit Gateway ${ currentName }": [
         "Edita la passarel·la ${ currentName }"
       ],
+      "Edit invoice details": [
+        "Edita les dades de la factura"
+      ],
       "Edit servers": [
         "Edita els servidors"
       ],
@@ -6973,6 +7062,11 @@
       ],
       "Your ${ selected } plan": [
         "El vostre pla ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Accés a servidors Secure Core, descàrregues ràpides P2P/BitTorrent, Tor sobre VPN i moltes més funcions."
       ]
     },
     "Warning": {

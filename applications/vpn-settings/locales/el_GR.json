@@ -44,6 +44,9 @@
       "Authenticate": [
         "Ταυτοποίηση"
       ],
+      "Authenticating": [
+        "Έλεγχος ταυτότητας"
+      ],
       "Back": [
         "Πίσω"
       ],
@@ -760,6 +763,10 @@
       ]
     },
     "bf2023: renew": {
+      "${ n } month": [
+        "${ n } μήνα",
+        "τους πρώτους ${ n } μήνες"
+      ],
       "the first month": [
         "τον πρώτο μήνα"
       ],
@@ -2100,8 +2107,11 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Έχετε χρησιμοποιήσει όλους τους χρήστες στο πρόγραμμά σας. Για προσθήκη νέου χρήστη, παρακαλούμε αναβαθμίστε το πρόγραμμά σας."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Πρέπει να ενεργοποιήσετε τα κλειδιά της επιχείρησής σας. Χωρίς ενεργοποίηση, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Πρέπει να ενεργοποιήσετε τα κλειδιά του οργανισμού σας. Χωρίς ενεργοποίηση δε θα μπορείτε να δημιουργήσετε ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς χρήστες."
+      ],
+      "You must privatize all users before generating new organization keys": [
+        "Πρέπει να ιδιωτικοποιήσετε όλους τους λογαριασμούς χρηστών πριν δημιουργήσετε νέα κλειδιά οργανισμού"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ο λογαριασμός ή ο οργανισμός σας έχει μια εκπρόθεσμη οικονομική εκκρεμότητα. Παρακαλούμε πληρώστε όλες τις εκκρεμότητες."
@@ -3583,6 +3593,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Προσθέστε στο λογαριασμό πιστωτικές μονάδες, τις οποίες μπορείτε να χρησιμοποιήσετε για να έχετε μια νέα συνδρομή πακέτου/πλάνου ή να ανανεώσετε το τρέχον πακέτο σας. Λαμβάνετε μία πιστωτική μονάδα για κάθε ${ i18nCurrency } που ξοδεύτηκε."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Σύνολο διευθύνσεων ηλεκτρονικού ταχυδρομείου"
@@ -5757,14 +5770,11 @@
       "Changing organization password": [
         "Γίνεται αλλαγή κωδικού πρόσβασης οργανισμού"
       ],
-      "Creating new users": [
-        "Γίνεται δημιουργία νέων χρηστών"
+      "Creating or accessing non-private users": [
+        "Δημιουργία ή πρόσβαση σε μη ιδιωτικούς χρήστες"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Λόγω αλλαγής κωδικού πρόσβασης, τα προνόμια του διαχειριστή του οργανισμού σας έχουν περιοριστεί. Οι ακόλουθες ενέργειες δεν επιτρέπονται πλέον:"
-      ],
-      "Reading emails of non-private users": [
-        "Γίνεται ανάγνωση μηνυμάτων μη ιδιωτικών χρηστών"
       ]
     },
     "Role": {

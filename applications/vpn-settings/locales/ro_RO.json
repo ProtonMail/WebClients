@@ -2112,8 +2112,11 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ați folosit toate numele de utilizator din plan. Treceți la un plan cu plată superior pentru a adăuga un utilizator nou."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Trebuie să activați cheile organizației. Fără activare nu veți mai putea crea utilizatori noi, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Trebuie să activați cheile de organizare. Fără activare, nu veți putea crea sau accesa utilizatori non-privați."
+      ],
+      "You must privatize all users before generating new organization keys": [
+        "Trebuie să faceți privați toți utilizatorii înainte de a genera noi chei pentru organizație."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Contul sau organizația are o factură restantă. Vă rugăm să plătiți toate facturile neplătite."
@@ -3300,6 +3303,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Mai există și alți administratori în cadrul organizației și va trebui să le comunicați noua parolă."
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Password copied to clipboard": [
         "Parola a fost copiată în memorie."
       ],
@@ -3623,6 +3629,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Alimentați-vă contul cu credite pe care le puteți folosi pentru a vă cumpăra un plan nou sau pentru a-l reînnoi pe cel existent. Veți obține câte un credit pentru fiecare ${ i18nCurrency } cheltuit."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Total adrese de e-mail"
@@ -4416,6 +4425,9 @@
       ],
       "Verification code": [
         "Cod de verificare"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Ne pare rău că ne părăsiți. Vă rugăm să ne explicaţi de ce plecaţi pentru a ne ajuta să îmbunătăţim serviciul."
@@ -5561,11 +5573,17 @@
       ]
     },
     "Option": {
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "Configurări țară"
       ],
       "Free server configs": [
         "Configurări servere gratuite"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "Am găsit un alt serviciu care îmi place mai mult"
@@ -5573,11 +5591,17 @@
       "I use a different ${ BRAND_NAME } account": [
         "Folosesc un cont ${ BRAND_NAME } diferit"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "Nu are o caracteristică esențială de care am nevoie"
       ],
       "It's too expensive": [
         "Este prea scump"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "Motivul meu nu este afișat"
@@ -5594,8 +5618,17 @@
       "Standard server configs": [
         "Configurări standard de server"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Întreaga organizație"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Organization capacity error": {
@@ -5835,14 +5868,11 @@
       "Changing organization password": [
         "Schimbarea parolei organizației"
       ],
-      "Creating new users": [
-        "Crearea utilizatorilor"
+      "Creating or accessing non-private users": [
+        "Creare sau accesare utilizatori non-privați"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Datorită modificării parolei, drepturile de administrare a organizației v-au fost restricționate. Următoarele acțiuni nu mai sunt permise:"
-      ],
-      "Reading emails of non-private users": [
-        "Citirea mesajelor utilizatorilor non-privați"
       ]
     },
     "Role": {
@@ -7543,6 +7573,29 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acces la servere Secure Core, descărcări rapide P2P/BitTorrent, Tor prin VPN și altele."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Warning": {

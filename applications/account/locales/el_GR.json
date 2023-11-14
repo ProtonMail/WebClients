@@ -143,6 +143,9 @@
       "Authenticate": [
         "Ταυτοποίηση"
       ],
+      "Authenticating": [
+        "Έλεγχος ταυτότητας"
+      ],
       "Back": [
         "Πίσω"
       ],
@@ -1452,6 +1455,10 @@
       ]
     },
     "bf2023: renew": {
+      "${ n } month": [
+        "${ n } μήνα",
+        "τους πρώτους ${ n } μήνες"
+      ],
       "the first month": [
         "τον πρώτο μήνα"
       ],
@@ -1534,7 +1541,7 @@
     },
     "breadcrumb": {
       "Calendars": [
-        "Ημερολόγια"
+        "Ημερολόγιο"
       ]
     },
     "Bridge version load failed": {
@@ -1753,10 +1760,10 @@
     },
     "Calendar status": {
       "Active": [
-        "Ενεργά"
+        "Ενεργό"
       ],
       "Default": [
-        "Προεπιλεγμένο"
+        "Προεπιλογή"
       ],
       "Disabled": [
         "Απενεργοποιημένο"
@@ -4123,8 +4130,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Έχετε χρησιμοποιήσει όλους τους χρήστες στο πρόγραμμά σας. Για προσθήκη νέου χρήστη, παρακαλούμε αναβαθμίστε το πρόγραμμά σας."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Πρέπει να ενεργοποιήσετε τα κλειδιά της επιχείρησής σας. Χωρίς ενεργοποίηση, δεν θα μπορείτε να δημιουργήσετε νέους χρήστες, να προσθέσετε διευθύνσεις σε υπάρχοντες χρήστες ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς λογαριασμούς χρηστών."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Πρέπει να ενεργοποιήσετε τα κλειδιά του οργανισμού σας. Χωρίς ενεργοποίηση δε θα μπορείτε να δημιουργήσετε ή να αποκτήσετε πρόσβαση σε μη ιδιωτικούς χρήστες."
       ],
       "You must privatize all users before generating new organization keys": [
         "Πρέπει να ιδιωτικοποιήσετε όλους τους λογαριασμούς χρηστών πριν δημιουργήσετε νέα κλειδιά οργανισμού"
@@ -5262,7 +5269,7 @@
         "Αποτύπωμα κλειδιού οργανισμού"
       ],
       "Permissions": [
-        "Δικαιώματα"
+        "Άδειες"
       ],
       "Protection": [
         "Προστασία"
@@ -6053,7 +6060,7 @@
         "Θέλετε σίγουρα να διαγράψετε αυτήν τη διεύθυνση;"
       ],
       "Are you sure you want to delete this calendar?": [
-        "Θέλετε σίγουρα να διαγράψετε αυτό το ημερολόγιο;"
+        "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το ημερολόγιο;"
       ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
         "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτό το ημερολόγιο; Όλες οι διευθύνσεις με τις οποίες μοιραστήκατε αυτό το ημερολόγιο θα χάσουν την πρόσβαση σε αυτό."
@@ -7427,6 +7434,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Προσθέστε στο λογαριασμό πιστωτικές μονάδες, τις οποίες μπορείτε να χρησιμοποιήσετε για να έχετε μια νέα συνδρομή πακέτου/πλάνου ή να ανανεώσετε το τρέχον πακέτο σας. Λαμβάνετε μία πιστωτική μονάδα για κάθε ${ i18nCurrency } που ξοδεύτηκε."
       ],
+      "Tor": [
+        "Tor"
+      ],
       "Total email addresses": [
         "Σύνολο διευθύνσεων ηλεκτρονικού ταχυδρομείου"
       ],
@@ -8328,7 +8338,7 @@
         "Δείτε πώς"
       ],
       "Learn more": [
-        "Μάθετε περισσότερα"
+        "Περισσότερες πληροφορίες"
       ]
     },
     "Label": {
@@ -9931,26 +9941,6 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Διατήρηση του λογαριασμού μου ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Συνεχίστε την αξιολόγηση"
@@ -9990,6 +9980,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Διατήρηση του λογαριασμού μου ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
       ]
     },
     "new_plans: feature": {
@@ -11808,14 +11818,11 @@
       "Changing organization password": [
         "Γίνεται αλλαγή κωδικού πρόσβασης οργανισμού"
       ],
-      "Creating new users": [
-        "Γίνεται δημιουργία νέων χρηστών"
+      "Creating or accessing non-private users": [
+        "Δημιουργία ή πρόσβαση σε μη ιδιωτικούς χρήστες"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Λόγω αλλαγής κωδικού πρόσβασης, τα προνόμια του διαχειριστή του οργανισμού σας έχουν περιοριστεί. Οι ακόλουθες ενέργειες δεν επιτρέπονται πλέον:"
-      ],
-      "Reading emails of non-private users": [
-        "Γίνεται ανάγνωση μηνυμάτων μη ιδιωτικών χρηστών"
       ]
     },
     "Role": {
