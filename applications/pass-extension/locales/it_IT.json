@@ -66,7 +66,7 @@
         "Continua"
       ],
       "Continue without pinning": [
-        "Continua senza bloccare"
+        "Continua senza fissare"
       ],
       "Copy & fill in": [
         "Copia e compila"
@@ -87,7 +87,7 @@
         "Crea un account ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
-        "Crea una nuova cassaforte per condividere"
+        "Crea una nuova cassaforte da condividere"
       ],
       "Create alias": [
         "Crea alias"
@@ -227,6 +227,9 @@
       "More options": [
         "Più opzioni"
       ],
+      "Move all items": [
+        "Sposta tutti gli elementi"
+      ],
       "Move to a shared vault": [
         "Sposta in una cassaforte condivisa"
       ],
@@ -348,7 +351,7 @@
         "Aggiorna la cassaforte"
       ],
       "Updating": [
-        "Aggiornamento"
+        "Aggiornamento in corso"
       ],
       "Upgrade": [
         "Effettua l'upgrade"
@@ -419,7 +422,7 @@
         "Il blocco automatico non può essere disattivato"
       ],
       "Cannot create alias (${ error }).": [
-        "Impossibile creare alias (${ error })."
+        "Impossibile creare l'alias (${ error })."
       ],
       "Cannot send invitation to this address at the moment": [
         "Al momento non è possibile inviare un invito a questo indirizzo"
@@ -485,6 +488,9 @@
       "Failed to edit user's access.": [
         "Modifica dell'accesso dell'utente non riuscita."
       ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Spostamento di tutti gli elementi da \"${ payload.content.name }\" non riuscito"
+      ],
       "Failed to remove user's access.": [
         "Rimozione dell'accesso dell'utente non riuscita."
       ],
@@ -534,7 +540,7 @@
         "Concedi a ${ PASS_APP_NAME } le autorizzazioni necessarie per continuare"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
-        "Blocca l'estensione o seleziona \"Continua senza bloccare\"."
+        "Fissa l'estensione o seleziona \"Continua senza fissare\"."
       ],
       "Request timed out": [
         "Timeout della richiesta"
@@ -544,6 +550,9 @@
       ],
       "Restoring item failed": [
         "Ripristino dell'elemento non riuscito"
+      ],
+      "Restoring trashed items failed": [
+        "Ripristino degli elementi nel cestino non riuscito"
       ],
       "Settings update failed": [
         "Aggiornamento impostazioni non riuscito"
@@ -723,7 +732,7 @@
         "L'accesso a ${ PASS_APP_NAME } richiederà un codice PIN per sbloccare la tua sessione"
       ],
       "Access your passwords on the go with our mobile apps.": [
-        "Accedi alle tue password in mobilità grazie alle nostre applicazioni."
+        "Accedi alle tue password in movimento grazie alle nostre applicazioni mobili."
       ],
       "Admin": [
         "Amministratore"
@@ -731,11 +740,26 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "L'alias \"${ item.aliasEmail }\" è stato spostato nel cestino - non inoltrerà più alla tua casella di posta"
       ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Tutti gli elementi di \"${ payload.content.name }\" spostati con successo"
+      ],
+      "All trashed items permanently removed": [
+        "Tutti gli elementi nel cestino sono stati rimossi definitivamente"
+      ],
+      "All trashed items successfully restored": [
+        "Tutti gli elementi nel cestino sono stati ripristinati correttamente"
+      ],
+      "An item previously shared with you was removed": [
+        "Un elemento precedentemente condiviso con te è stato rimosso"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Sei sicuro di voler spostare tutti gli elementi di \"${ fromVaultName }\" a \"${ toVaultName }\"?"
+      ],
       "Auto-lock successfully disabled": [
         "Blocco automatico disabilitato con successo"
       ],
       "Autosaved on ${ submissionURL }": [
-        "Salvataggio automatico per ${ submissionURL }"
+        "Salvato automaticamente su ${ submissionURL }"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Può creare, modificare, eliminare ed esportare gli elementi in questa cassaforte."
@@ -753,13 +777,13 @@
         "Clicca sull'icona per aprirlo in qualsiasi momento."
       ],
       "Congratulations, your access has been confirmed": [
-        "Congratulazioni, il tuo accesso è stato confermato"
+        "Il tuo accesso è stato confermato"
       ],
       "Copied to clipboard": [
         "Copiato negli appunti"
       ],
       "Creating alias...": [
-        "Creazione alias..."
+        "Creazione dell'alias in corso"
       ],
       "Credit cards, Custom fields": [
         "Carte di credito, Campi personalizzati"
@@ -788,8 +812,11 @@
       "Editor": [
         "Editor"
       ],
+      "Emptying trash...": [
+        "Svuotamento del cestino in corso"
+      ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Abilita ${ PASS_APP_NAME } collegando il tuo account ${ BRAND_NAME }"
+        "Abilita ${ PASS_APP_NAME } connettendo il tuo account ${ BRAND_NAME }"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Inserisci il codice di verifica. Digita ${ digit }."
@@ -813,7 +840,7 @@
         "Le password generate saranno conservate per un periodo di un giorno."
       ],
       "Generating alias...": [
-        "Generazione alias..."
+        "Generazione dell'alias in corso"
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Ottieni alias illimitati, goditi funzionalità esclusive e supportaci abbonandoti a Pass Plus."
@@ -877,6 +904,9 @@
       "Item successfully moved": [
         "Elemento spostato con successo"
       ],
+      "Leaving vault...": [
+        "Abbandono della cassaforte in corso"
+      ],
       "Let's get you started by creating your first item": [
         "Cominciamo creando il tuo primo elemento"
       ],
@@ -890,10 +920,13 @@
         "Caricamento in corso..."
       ],
       "me": [
-        "io"
+        "me"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Molto più che un gestore di password, ${ PASS_APP_NAME } protegge le tue password e i tuoi indirizzi email tramite gli alias. Grazie alla tecnologia che sta alla base di ${ MAIL_APP_NAME }, i tuoi dati sono crittografati end-to-end e rimangono accessibili solo a te."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Spostamento di tutti gli elementi da \"${ payload.content.name }\" in corso"
       ],
       "Multiple vaults": [
         "Molteplici casseforti"
@@ -926,7 +959,7 @@
         "Le password più vecchie di 1 giorno vengono eliminate automaticamente dalla cronologia."
       ],
       "Pending access to the shared data": [
-        "Accesso ai dati condivisi in attesa"
+        "In attesa dell'accesso ai dati condivisi"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Fissa ${ PASS_APP_NAME } sulla barra degli strumenti"
@@ -955,8 +988,14 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "La privacy è una delle nostre preoccupazioni principali. Scopri perché ${ PASS_APP_NAME } è diverso."
       ],
+      "Restoring trashed items...": [
+        "Ripristino degli elementi nel cestino in corso"
+      ],
       "Save login": [
         "Salva il login"
+      ],
+      "Select destination vault": [
+        "Seleziona la cassaforte di destinazione"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Seleziona dove vuoi che le tue casseforti importate siano salvate."
@@ -1041,7 +1080,7 @@
         "Aggiorna il login"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
-        "Effettua l'upgrade a ${ PASS_APP_NAME }"
+        "Effettua l'upgrade di ${ PASS_APP_NAME }"
       ],
       "Use vaults to share this item with others.": [
         "Usa le casseforti per poter condividere questo elemento con altri."
@@ -1060,6 +1099,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "La cassaforte \"${ payload.share.content.name }\" è stata aggiornata con successo"
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "La cassaforte \"${ share.content.name }\" è stata rimossa"
       ],
       "Verification code": [
         "Codice di verifica"
@@ -1247,7 +1289,7 @@
         "Domini"
       ],
       "Download logs": [
-        "Scarica log"
+        "Scarica i log"
       ],
       "Email aliases": [
         "Alias email"
@@ -1336,6 +1378,9 @@
       "Modified": [
         "Modificato"
       ],
+      "More than a month": [
+        "Più di 1 mese"
+      ],
       "Most recent": [
         "Più recenti"
       ],
@@ -1368,9 +1413,6 @@
       ],
       "Old-New": [
         "Dal più vecchio al più recente"
-      ],
-      "Older than last month": [
-        "Più vecchio del mese scorso"
       ],
       "Oldest to newest": [
         "Dal meno recente al più recente"
@@ -1687,6 +1729,9 @@
       "Member limit": [
         "Limite di membri"
       ],
+      "Move all items ?": [
+        "Spostare tutti gli elementi?"
+      ],
       "Our welcome gift to you": [
         "Il nostro regalo di benvenuto per te"
       ],
@@ -1697,7 +1742,7 @@
         "Rimuovere definitivamente tutti gli elementi?"
       ],
       "Pin the extension": [
-        "Blocca l'estensione"
+        "Fissa l'estensione"
       ],
       "Secure your data": [
         "Proteggi i tuoi dati"
@@ -1715,7 +1760,7 @@
         "Grazie per aver installato ${ PASS_APP_NAME }"
       ],
       "The extension is now ready to use.": [
-        "L'estensione è ora pronta per l'uso."
+        "L'estensione è ora pronta all'uso."
       ],
       "Transfer ownership": [
         "Trasferisci proprietà"
@@ -1906,7 +1951,7 @@
         "Il tuo piano non ti consente di creare altri alias"
       ],
       "Your plan only allows you to autofill from your first two vaults": [
-        "Il tuo piano ti consente la compilazione automatica solamente dalle prime due casseforti."
+        "Il tuo piano ti consente la compilazione automatica solamente dalle prime due casseforti"
       ],
       "Your session was locked due to inactivity": [
         "La tua sessione è stata bloccata per inattività"
