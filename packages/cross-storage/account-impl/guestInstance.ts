@@ -66,5 +66,6 @@ export const setupGuestCrossStorage = () => {
     if (appMode !== 'sso') {
         return;
     }
+
     instance = createHandlers(createProtonInstance(getAppHref('/storage.html', APPS.PROTONACCOUNT)));
 };

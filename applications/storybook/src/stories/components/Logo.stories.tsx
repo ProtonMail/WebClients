@@ -40,6 +40,7 @@ const appNames: Required<LogoProps>['appName'][] = [
     APPS.PROTONVPN_SETTINGS,
     APPS.PROTONPASS,
     APPS.PROTONDOCS,
+    APPS.PROTONWALLET,
 ];
 
 const variants: Required<LogoProps>['variant'][] = ['with-wordmark', 'glyph-only', 'wordmark-only'];

@@ -53,6 +53,8 @@ export const DOCS_APP_NAME = `${BRAND_NAME} ${DOCS_SHORT_APP_NAME}`;
 export const DOCS_EDITOR_SHORT_APP_NAME = 'Docs Editor';
 export const DOCS_EDITOR_APP_NAME = `${BRAND_NAME} ${DOCS_EDITOR_SHORT_APP_NAME}`;
 export const VERIFY_APP_NAME = 'Proton Verify';
+export const WALLET_SHORT_APP_NAME = 'Wallet';
+export const WALLET_APP_NAME = `${BRAND_NAME} ${WALLET_SHORT_APP_NAME}`;
 export const REFERRER_CODE_MAIL_TRIAL = 'MAILPLUSTRIAL';
 export const PROTON_SENTINEL_NAME = 'Proton Sentinel';
 export const DARK_WEB_MONITORING_NAME = 'Dark Web Monitoring';
@@ -70,6 +72,7 @@ export const APPS = {
     PROTONADMIN: 'proton-admin',
     PROTONVERIFICATION: 'proton-verify',
     PROTONEXTENSION: 'proton-extension',
+    PROTONWALLET: 'proton-wallet',
     PROTONPASSBROWSEREXTENSION: 'proton-pass-extension',
     PROTONDOCS: 'proton-docs',
     PROTONDOCSEDITOR: 'proton-docs-editor',
@@ -218,6 +221,15 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
         icon: 'brand-proton',
         settingsSlug: '',
     },
+    [APPS.PROTONWALLET]: {
+        publicPath: '',
+        subdomain: 'wallet',
+        name: WALLET_APP_NAME,
+        bareName: 'Wallet',
+        clientID: 'web-wallet',
+        icon: 'brand-proton',
+        settingsSlug: '',
+    },
     [APPS.PROTONDOCS]: {
         publicPath: '',
         subdomain: 'docs',
@@ -243,6 +255,7 @@ export enum PRODUCT_BIT {
     DRIVE = 2,
     VPN = 4,
     PASS = 8,
+    WALLET = 16,
     DOCS = 32,
 }
 
@@ -286,6 +299,8 @@ export const SSO_PATHS = {
     PASS_SIGN_IN: '/pass',
     DOCS_SIGNUP: '/docs/signup',
     DOCS_SIGN_IN: '/docs',
+    WALLET_SIGNUP: '/wallet/signup',
+    WALLET_SIGN_IN: '/wallet',
     SIGNUP: '/signup',
     INVITE: '/pre-invite',
     REFER: '/refer-a-friend',
@@ -564,6 +579,7 @@ export enum APP_UPSELL_REF_PATH {
     INBOX_DESKTOP_REF_PATH = 'upsell_inbox_desktop-',
     DOCS_UPSELL_REF_PATH = 'upsell_docs-',
     ACCOUNT_UPSELL_REF_PATH = 'upsell_account-',
+    WALLET_UPSELL_REF_PATH = 'upsell_wallet-',
 }
 
 export enum UPSELL_COMPONENT {
@@ -639,6 +655,7 @@ export enum DASHBOARD_UPSELL_PATHS {
     PASS = 'pass-dashboard',
     VPN = 'vpn-dashboard',
     DOCS = 'docs-dashboard',
+    WALLET = 'wallet-dashboard',
     FAMILY = 'family-dashboard',
     BUSINESS = 'business-dashboard',
 }
