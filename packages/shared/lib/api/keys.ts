@@ -1,12 +1,12 @@
 import { AddressKeyPayload, AddressKeyPayloadV2, SignedKeyList } from '../interfaces';
 
-interface GetPublicKeysParams {
+interface GetPublicKeysForInboxParams {
     Email: string;
     Fingerprint?: string;
 }
 
 /** @deprecated in favor of `getAllPublicKeys` */
-export const getPublicKeys = (params: GetPublicKeysParams) => ({
+export const getPublicKeys = (params: GetPublicKeysForInboxParams) => ({
     url: 'core/v4/keys',
     method: 'get',
     params,
