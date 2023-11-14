@@ -58,7 +58,7 @@ import {
 } from '../veventHelper';
 
 export const getParticipantHasAddressID = (
-    participant: Participant,
+    participant: Participant
 ): participant is RequireSome<Participant, 'addressID'> => {
     return !!participant.addressID;
 };
@@ -137,13 +137,15 @@ export const buildPartyCrasherParticipantData = (
     originalTo: string,
     ownAddresses: Address[],
     contactEmails: ContactEmail[],
-    attendees: VcalAttendeeProperty[],
+    attendees: VcalAttendeeProperty[]
 ): { participant?: Participant; selfAttendee: VcalAttendeeProperty; selfAddress: Address } | undefined => {
     let isCatchAllPartyCrasher = false;
     const selfInternalAddresses = ownAddresses.filter((address) => !getIsAddressExternal(address));
 
     const canonicalizedOriginalTo = canonicalizeInternalEmail(originalTo);
-    let selfAddress = selfInternalAddresses.find(({ Email }) => canonicalizeEmail(Email) === canonicalizedOriginalTo);
+    let selfAddress = selfInternalAddresses.find(
+        ({ Email }) => canonicalizeInternalEmail(Email) === canonicalizedOriginalTo
+    );
 
     if (!selfAddress) {
         const catchAllAddress = selfInternalAddresses.find(({ CatchAll }) => CatchAll);
@@ -228,7 +230,7 @@ export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }:
                 ...pick(vevent, propertiesToKeep),
                 component: 'vevent',
                 attendee,
-            }),
+            })
         );
 
         return method === ICAL_METHOD.REPLY
@@ -293,7 +295,7 @@ export const findAttendee = (email: string, attendees: VcalAttendeeProperty[] = 
     // but it's better to have some false positives rather than many false negatives
     const canonicalEmail = canonicalizeInternalEmail(email);
     const index = attendees.findIndex(
-        (attendee) => canonicalizeInternalEmail(getAttendeeEmail(attendee)) === canonicalEmail,
+        (attendee) => canonicalizeInternalEmail(getAttendeeEmail(attendee)) === canonicalEmail
     );
     const attendee = index !== -1 ? attendees[index] : undefined;
     return { index, attendee };
@@ -386,7 +388,7 @@ export const getSelfAttendeeToken = (vevent?: VcalVeventComponent, addresses: Ad
 
 export const generateVtimezonesComponents = async (
     { dtstart, dtend, 'recurrence-id': recurrenceId, exdate = [] }: VcalVeventComponent,
-    getVTimezones: GetVTimezonesMap,
+    getVTimezones: GetVTimezonesMap
 ): Promise<VcalVtimezoneComponent[]> => {
     const timezones = [dtstart, dtend, recurrenceId, ...exdate]
         .filter(isTruthy)
@@ -576,7 +578,7 @@ export const getHasUpdatedInviteData = ({
     const hasUpdatedTitleDescriptionOrLocation = keys.some(
         (key) =>
             getSupportedStringValue(newVevent[key] as VcalStringProperty) !==
-            getSupportedStringValue(oldVevent[key] as VcalStringProperty),
+            getSupportedStringValue(oldVevent[key] as VcalStringProperty)
     );
     const hasUpdatedRrule = !getIsRruleEqual(newVevent.rrule, oldVevent.rrule);
     return hasUpdatedDateTimes || hasUpdatedTitleDescriptionOrLocation || hasUpdatedRrule;
@@ -585,7 +587,7 @@ export const getHasUpdatedInviteData = ({
 export const getUpdatedInviteVevent = (
     newVevent: VcalVeventComponent,
     oldVevent: VcalVeventComponent,
-    method?: ICAL_METHOD,
+    method?: ICAL_METHOD
 ) => {
     if (method === ICAL_METHOD.REQUEST && getSequence(newVevent) > getSequence(oldVevent)) {
         if (!newVevent.attendee?.length) {
@@ -606,7 +608,7 @@ export const getUpdatedInviteVevent = (
 export const getResetPartstatActions = (
     singleEdits: CalendarEvent[],
     token: string,
-    partstat: ICAL_ATTENDEE_STATUS,
+    partstat: ICAL_ATTENDEE_STATUS
 ) => {
     const updateTime = getCurrentUnixTimestamp();
     const updatePartstatActions = singleEdits
