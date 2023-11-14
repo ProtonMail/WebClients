@@ -59,12 +59,6 @@
       "Continue": [
         "Continuar"
       ],
-      "Continue without pinning": [
-        "Continuar sem fixar"
-      ],
-      "Copy & fill in": [
-        "Copiar e preencher"
-      ],
       "Copy and close": [
         "Copiar e fechar"
       ],
@@ -167,9 +161,6 @@
       "Import": [
         "Importar"
       ],
-      "Import your passwords": [
-        "Importe as suas palavras-passe"
-      ],
       "Importing": [
         "A importar"
       ],
@@ -205,9 +196,6 @@
       ],
       "Move to trash": [
         "Mover para o lixo"
-      ],
-      "Not now": [
-        "Agora não"
       ],
       "OK": [
         "Aceitar"
@@ -290,9 +278,6 @@
       "Update": [
         "Actualizar"
       ],
-      "Updating": [
-        "A actualizar"
-      ],
       "Upgrade": [
         "Actualizar"
       ],
@@ -339,9 +324,6 @@
       ],
       "Auto-lock could not be disabled": [
         "O bloqueio automático não pôde ser desativado"
-      ],
-      "Cannot create alias (${ error }).": [
-        "Não é possível criar o alias (${ error })."
       ],
       "Could not open created vault": [
         "Não foi possível abrir o cofre criado"
@@ -418,9 +400,6 @@
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
         "Conceda a ${ PASS_APP_NAME } as permissões de extensão necessárias para continuar"
-      ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Fixe a extensão ou selecione \"Continuar sem fixar\"."
       ],
       "Request timed out": [
         "O pedido expirou"
@@ -574,9 +553,6 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "Uma nova versão do ${ PASS_APP_NAME } está disponível. Actualize para desfrutar das funcionalidades e correções de erros mais recentes."
       ],
-      "Access your passwords on the go with our mobile apps.": [
-        "Aceda às suas palavras-passe em qualquer lugar com as nossas aplicações móveis."
-      ],
       "Admin": [
         "Administrador"
       ],
@@ -586,14 +562,8 @@
       "Auto-lock successfully disabled": [
         "Desativação automática desativada com sucesso."
       ],
-      "Autosaved on ${ submissionURL }": [
-        "Guardado automaticamente em ${ submissionURL }"
-      ],
       "Copied to clipboard": [
         "Copiado para a área de transferência"
-      ],
-      "Creating alias...": [
-        "A criar o alias..."
       ],
       "Decrypting your data": [
         "A desencriptar os seus dados"
@@ -601,23 +571,14 @@
       "Deleted items will be moved here first": [
         "Os itens eliminados serão movidos primeiro para aqui"
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Descubra o vídeo do ${ PASS_APP_NAME } no YouTube"
-      ],
       "Drop file here to upload": [
         "Solte os ficheiros aqui para os carregar"
       ],
       "Drop to import": [
         "Solte para importar"
       ],
-      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
-        "Importe facilmente as suas palavras-passe existentes para ${ PASS_APP_NAME }."
-      ],
       "Editor": [
         "Editor"
-      ],
-      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Ative ${ PASS_APP_NAME } ao ligar a sua conta ${ BRAND_NAME }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduzir o código de verificação. Digite ${ digit }."
@@ -630,12 +591,6 @@
       ],
       "Generated passwords will be stored for a period of one day.": [
         "As palavras-passe geradas são armazenadas por um dia."
-      ],
-      "Generating alias...": [
-        "A gerar alias..."
-      ],
-      "Here you will find all the necessary information to get you started.": [
-        "Aqui encontrará todas as informações necessárias para começar."
       ],
       "Imported ${ payload.total } item": [
         "${ payload.total } item importado",
@@ -696,23 +651,14 @@
       "N/A": [
         "N/D"
       ],
-      "No login found": [
-        "Nenhum início de sessão encontrado"
-      ],
       "None": [
         "Nenhum"
       ],
       "Open the Extensions menu": [
         "Abrir o menu Extensões"
       ],
-      "Password copied": [
-        "Palavra-passe copiada"
-      ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "As palavras-passe geradas com mais de 1 dia serão automaticamente eliminadas do histórico."
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Fixe ${ PASS_APP_NAME } na sua barra de ferramentas"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Código PIN registado com sucesso. Utilize-o para desbloquear ${ PASS_APP_NAME }"
@@ -735,9 +681,6 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "A privacidade é uma grande preocupação para nós. Descubra por que ${ PASS_APP_NAME } é diferente."
       ],
-      "Save login": [
-        "Guardar login"
-      ],
       "Servers are unreachable. Please try again in a few minutes": [
         "Os servidores estão inacessíveis.Tente novamente dentro de alguns minutos."
       ],
@@ -749,9 +692,6 @@
       ],
       "Settings successfully updated": [
         "Definições actualizadas com sucesso"
-      ],
-      "Sign in or create an account to continue.": [
-        "Inicie sessão ou crie uma conta para continuar."
       ],
       "Sign in to your account": [
         "Iniciar sessão na sua conta"
@@ -783,12 +723,6 @@
       "Unlock it with your PIN to access the settings": [
         "Desbloqueie-o com o seu PIN para aceder às definições"
       ],
-      "Update login": [
-        "Actualizar login"
-      ],
-      "Upgrade ${ PASS_APP_NAME }": [
-        "Actualizar o ${ PASS_APP_NAME }"
-      ],
       "Vault \"${ payload.content.name }\" successfully deleted": [
         "Cofre \"${ payload.content.name }\" eliminado com sucesso"
       ],
@@ -797,9 +731,6 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Cofre \"${ payload.share.content.name }\" actualizado com sucesso"
-      ],
-      "Verification code": [
-        "Código de verificação"
       ],
       "Viewer": [
         "Visualizador"
@@ -821,9 +752,6 @@
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Utilizará este PIN para desbloquear o ${ PASS_APP_NAME } quando este se bloquear automaticamente após um período de inatividade."
-      ],
-      "You're about to create": [
-        "Está prestes a criar"
       ],
       "Your ${ PASS_APP_NAME } session is locked": [
         "A sua sessão ${ PASS_APP_NAME } está bloqueada"
@@ -1083,9 +1011,6 @@
       ],
       "Old-New": [
         "Do mais antigo ao mais recente"
-      ],
-      "Older than last month": [
-        "Mais de um mês"
       ],
       "Oldest to newest": [
         "Do mais antigo ao mais recente"
@@ -1357,17 +1282,8 @@
       "Enter your PIN": [
         "Introduza o seu código PIN"
       ],
-      "Fill & copy password": [
-        "Preencher & copiar a palavra-passe"
-      ],
-      "Get the mobile apps": [
-        "Obtenha as aplicações móveis"
-      ],
       "Grant permissions": [
         "Conceda as permissões"
-      ],
-      "Hide my email": [
-        "Hide-my-email"
       ],
       "Import - ${ date }": [
         "Importar - ${ date }"
@@ -1384,23 +1300,11 @@
       "Permanently remove all items ?": [
         "Remover permanentemente todos os itens?"
       ],
-      "Pin the extension": [
-        "Fixe a extensão"
-      ],
       "Secure your data": [
         "Proteja os seus dados"
       ],
       "Share with": [
         "Partilhar com"
-      ],
-      "Switching to ${ PASS_APP_NAME }?": [
-        "Passar para o ${ PASS_APP_NAME }?"
-      ],
-      "Thank you for installing ${ PASS_APP_NAME }": [
-        "Agradecemos-lhe por instalar o ${ PASS_APP_NAME }"
-      ],
-      "The extension is now ready to use.": [
-        "A extensão está pronta a ser utilizada."
       ],
       "Trash empty": [
         "O lixo está vazio."
@@ -1408,14 +1312,8 @@
       "Unlock ${ brandNameJSX }": [
         "Desbloquear ${ brandNameJSX }"
       ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Desbloquear ${ PASS_APP_NAME }"
-      ],
       "Update available": [
         "Actualização disponível"
-      ],
-      "Use my email": [
-        "Utilizar o meu e-mail"
       ],
       "Welcome to ${ brandNameJSX }": [
         "Boas-vindas ao ${ brandNameJSX }"
@@ -1520,9 +1418,6 @@
       "Trash alias ?": [
         "Descartar o alias ?"
       ],
-      "Unable to save": [
-        "Não é possível guardar."
-      ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Não é possível iniciar sessão no ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
@@ -1534,9 +1429,6 @@
       ],
       "You must select at least one mailbox": [
         "É necessário selecionar pelo menos uma caixa de correio"
-      ],
-      "Your plan does not allow you to create more aliases": [
-        "O seu plano não lhe permite criar mais aliases"
       ],
       "Your session was locked due to inactivity": [
         "A sua sessão foi bloqueada devido à inatividade."

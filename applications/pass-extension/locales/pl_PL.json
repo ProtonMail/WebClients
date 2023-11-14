@@ -958,7 +958,7 @@
         "To więcej niż menedżer haseł. ${ PASS_APP_NAME } chroni Twoje hasło i osobisty adres e-mail za pomocą aliasów. Dzięki tej samej technologii, która stoi za pocztą ${ MAIL_APP_NAME }, Twoje dane są zaszyfrowane end-to-end i są dostępne tylko dla Ciebie."
       ],
       "Moving all items from \"${ payload.content.name }\"": [
-        "Przenieś wszystkie elementy z sejfu \"${ payload.content.name }\""
+        "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Multiple vaults": [
         "Wiele sejfów"
@@ -994,7 +994,7 @@
         "Oczekujący dostęp do udostępnionych danych"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Przypomnij ${ PASS_APP_NAME } do paska narzędzi"
+        "Przypnij ${ PASS_APP_NAME } do paska narzędzi"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Kod PIN został zapisany. Użyj go, aby odblokować ${ PASS_APP_NAME }"
@@ -1021,7 +1021,7 @@
         "Prywatność jest dla nas bardzo ważna. Dowiedz się, dlaczego ${ PASS_APP_NAME } jest inny."
       ],
       "Restoring trashed items...": [
-        "Przywracanie usuniętych wiadomości..."
+        "Przywracanie usuniętych elementów..."
       ],
       "Save login": [
         "Zapisz dane logowania"
@@ -1418,6 +1418,9 @@
       "Modified": [
         "Zmodyfikowano"
       ],
+      "More than a month": [
+        "Ponad miesiąc"
+      ],
       "Most recent": [
         "Ostatnie"
       ],
@@ -1450,9 +1453,6 @@
       ],
       "Old-New": [
         "Od najstarszych"
-      ],
-      "Older than last month": [
-        "Starsze niż miesiąc"
       ],
       "Oldest to newest": [
         "Od najstarszych"

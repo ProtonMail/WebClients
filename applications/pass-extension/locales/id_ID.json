@@ -65,12 +65,6 @@
       "Continue": [
         "Lanjutkan"
       ],
-      "Continue without pinning": [
-        "Lanjutkan tanpa pin"
-      ],
-      "Copy & fill in": [
-        "Salin & isi"
-      ],
       "Copy and close": [
         "Salin dan tutup"
       ],
@@ -182,9 +176,6 @@
       "Import": [
         "Impor"
       ],
-      "Import your passwords": [
-        "Impor kata sandi Anda"
-      ],
       "Importing": [
         "Mengimpor"
       ],
@@ -227,6 +218,9 @@
       "More options": [
         "Opsi lainnya"
       ],
+      "Move all items": [
+        "Pindahkan semua item"
+      ],
       "Move to a shared vault": [
         "Pindahkan ke brankas bersama"
       ],
@@ -238,9 +232,6 @@
       ],
       "Move to trash": [
         "Pindahkan ke sampah"
-      ],
-      "Not now": [
-        "Tidak sekarang"
       ],
       "OK": [
         "OK"
@@ -347,9 +338,6 @@
       "Update vault": [
         "Perbarui brankas"
       ],
-      "Updating": [
-        "Memperbarui"
-      ],
       "Upgrade": [
         "Tingkatkan"
       ],
@@ -418,9 +406,6 @@
       "Auto-lock could not be disabled": [
         "Pengunci otomatis tidak dapat dinonaktifkan"
       ],
-      "Cannot create alias (${ error }).": [
-        "Alias tidak dapat dibuat (${ error })."
-      ],
       "Cannot send invitation to this address at the moment": [
         "Tidak dapat mengirimkan undangan dan alamat untuk saat ini"
       ],
@@ -484,6 +469,9 @@
       "Failed to edit user's access.": [
         "Akses pengguna gagal disunting."
       ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Gagal memindahkan semua item dari \"${ payload.content.name }\""
+      ],
       "Failed to remove user's access.": [
         "Akses pengguna gagal dihapus."
       ],
@@ -532,9 +520,6 @@
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
         "Mohon berikan ${ PASS_APP_NAME } izin ekstensi yang dibutuhkan untuk melanjutkan"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Silakan sematkan ekstensi atau pilih \"Lanjutkan tanpa menyemat\"."
-      ],
       "Request timed out": [
         "Waktu permintaan habis"
       ],
@@ -543,6 +528,9 @@
       ],
       "Restoring item failed": [
         "Item gagal dipulihkan"
+      ],
+      "Restoring trashed items failed": [
+        "Gagal memulihkan item yang dibuang"
       ],
       "Settings update failed": [
         "Pengaturan gagal diperbarui"
@@ -708,20 +696,29 @@
       "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
         "Akses ke ${ PASS_APP_NAME } akan memerlukan kode PIN untuk membuka sesi Anda"
       ],
-      "Access your passwords on the go with our mobile apps.": [
-        "Akses kata sandi Anda di mana saja dengan aplikasi mobile kami."
-      ],
       "Admin": [
         "Admin"
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" dipindahkan ke sampah - alamat ini tidak akan lagi meneruskan surel ke kotak surat Anda"
       ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Semua item dari \"${ payload.content.name }\" berhasil dipindahkan"
+      ],
+      "All trashed items permanently removed": [
+        "Semua item yang dibuang telah dihapus secara permanen"
+      ],
+      "All trashed items successfully restored": [
+        "Semua item yang dibuang berhasil dipulihkan"
+      ],
+      "An item previously shared with you was removed": [
+        "Item yang sebelumnya dibagikan dengan Anda telah dihapus"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Apakah Anda yakin ingin memindahkan semua item dari \"${ fromVaultName }\" ke \"${ toVaultName }\"?"
+      ],
       "Auto-lock successfully disabled": [
         "Pengunci otomatis berhasil dinonaktifkan"
-      ],
-      "Autosaved on ${ submissionURL }": [
-        "Tersimpan secara otomatis pada ${ submissionURL }"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Dapat membuat, menyunting, menghapus, dan mengekspor item dalam brankas ini."
@@ -736,16 +733,13 @@
         "Dapat melihat item yang terkandung dalam brankas ini."
       ],
       "Click the icon to open it anytime.": [
-        "Klik ikon untuk membuka ekstensi kapan pun."
+        "Klik pada ikon untuk membukanya kapan pun."
       ],
       "Congratulations, your access has been confirmed": [
         "Selamat, akses Anda telah dikonfirmasi"
       ],
       "Copied to clipboard": [
         "Disalin ke papan klip"
-      ],
-      "Creating alias...": [
-        "Membuat alias..."
       ],
       "Credit cards, Custom fields": [
         "Kartu kredit, Kolom khusus"
@@ -759,23 +753,17 @@
       "Deleting \"${ payload.content.name }\"": [
         "Menghapus \"${ payload.content.name }\""
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Telusuri Video YouTube ${ PASS_APP_NAME }"
-      ],
       "Drop file here to upload": [
         "Lepaskan berkas di sini untuk mengunggah"
       ],
       "Drop to import": [
         "Lepaskan untuk mengimpor"
       ],
-      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
-        "Impor kata sandi Anda secara mudah ke ${ PASS_APP_NAME }."
-      ],
       "Editor": [
         "Penyunting"
       ],
-      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Aktifkan ${ PASS_APP_NAME } dengan menghubungkan akun ${ BRAND_NAME } Anda"
+      "Emptying trash...": [
+        "Mengosongkan sampah..."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Masukkan kode verifikasi. Digit ${ digit }."
@@ -790,7 +778,7 @@
         "Untuk akses mudah ke kata sandi Anda dan lainnya."
       ],
       "For security reason, your access needs to be confirmed": [
-        "Demi alasan keamanan, akses Anda perlu untuk dikonfirmasi"
+        "Demi alasan keamanan, akses Anda harus dikonfirmasi"
       ],
       "For security reasons, your access needs to be confirmed": [
         "Demi alasan keamanan, akses Anda perlu untuk dikonfirmasi"
@@ -798,14 +786,8 @@
       "Generated passwords will be stored for a period of one day.": [
         "Kata sandi yang dihasilkan akan disimpan dalam kurun waktu satu hari."
       ],
-      "Generating alias...": [
-        "Menghasilkan alias..."
-      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Dapatkan alias tak terbatas, nikmati fitur eksklusif, dan dukung kami dengan berlangganan Pass Plus."
-      ],
-      "Here you will find all the necessary information to get you started.": [
-        "Di sini Anda akan menemukan semua informasi yang diperlukan untuk memulai."
       ],
       "Import in progress:": [
         "Impor yang sedang berlangsung:"
@@ -861,6 +843,9 @@
       "items": [
         "item"
       ],
+      "Leaving vault...": [
+        "Mengeluarkan dari brankas..."
+      ],
       "Let's get you started by creating your first item": [
         "Mulailah dengan membuat item pertama Anda"
       ],
@@ -879,14 +864,14 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Lebih dari sekadar pengelola kata sandi, ${ PASS_APP_NAME } melindungi kata sandi dan alamat surel pribadi Anda melalui alamat surel samaran. Dengan didukung oleh teknologi yang serupa dengan ${ MAIL_APP_NAME }, data Anda akan terenkripsi secara end-to-end dan hanya akan dapat diakses oleh Anda."
       ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Memindahkan semua item dari \"${ payload.content.name }\""
+      ],
       "Multiple vaults": [
         "Dukungan lebih dari satu brankas"
       ],
       "N/A": [
         "N/A"
-      ],
-      "No login found": [
-        "Tidak ada login yang ditemukan"
       ],
       "None": [
         "Tidak ada"
@@ -903,17 +888,11 @@
       "Pass Plus trial": [
         "Uji coba Pass Plus"
       ],
-      "Password copied": [
-        "Kata sandi disalin"
-      ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Kata sandi yang berumur lebih dari 1 hari akan dihapus dari riwayat secara otomatis."
       ],
       "Pending access to the shared data": [
-        "Menunggu akses ke data yang dibagikan"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Sematkan ${ PASS_APP_NAME } pada toolbar Anda"
+        "Akses ditunda ke data terbagi"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "Kode PIN berhasil didaftarkan. Gunakan kode PIN Anda untuk membuka kunci ${ PASS_APP_NAME }"
@@ -939,8 +918,11 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Privasi merupakan hal yang sangat penting bagi kami. Pelajari mengapa ${ PASS_APP_NAME } berbeda."
       ],
-      "Save login": [
-        "Simpan login"
+      "Restoring trashed items...": [
+        "Memulihkan semua item yang dibuang..."
+      ],
+      "Select destination vault": [
+        "Pilih brankas tujuan"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Tentukan di mana brankas yang Anda impor akan tersimpan."
@@ -959,9 +941,6 @@
       ],
       "Share with 10 others": [
         "Bagikan dengan 10 orang lainnya"
-      ],
-      "Sign in or create an account to continue.": [
-        "Silakan masuk atau buat akun untuk melanjutkan."
       ],
       "Sign in to your account": [
         "Masuk ke akun Anda"
@@ -1020,12 +999,6 @@
       "Unlock it with your PIN to access the settings": [
         "Buka kunci ini dengan PIN Anda untuk mengakses pengaturan"
       ],
-      "Update login": [
-        "Perbarui login"
-      ],
-      "Upgrade ${ PASS_APP_NAME }": [
-        "Tingkatkan ${ PASS_APP_NAME }"
-      ],
       "Use vaults to share this item with others.": [
         "Gunakan brankas untuk membagikan item ini dengan yang lainnya."
       ],
@@ -1044,8 +1017,8 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Brankas \"${ payload.share.content.name }\" berhasil diperbarui"
       ],
-      "Verification code": [
-        "Kode verifikasi"
+      "Vault \"${ share.content.name }\" was removed": [
+        "Brankas \"${ share.content.name }\" telah dihapus"
       ],
       "Viewer": [
         "Pengamat"
@@ -1082,9 +1055,6 @@
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Anda akan menggunakan PIN ini untuk membuka ${ PASS_APP_NAME } setelah itu terkunci secara otomatis karena tidak digunakan untuk jangka waktu tertentu."
-      ],
-      "You're about to create": [
-        "Anda akan membuat"
       ],
       "You're invited to a vault.": [
         "Anda telah diundang ke brankas."
@@ -1348,9 +1318,6 @@
       ],
       "Old-New": [
         "Lama–Baru"
-      ],
-      "Older than last month": [
-        "Lebih dari sebulan yang lalu"
       ],
       "Oldest to newest": [
         "Terlama ke terbaru"
@@ -1639,17 +1606,8 @@
       "Enter your PIN": [
         "Masukkan PIN Anda"
       ],
-      "Fill & copy password": [
-        "Isi & salin kata sandi"
-      ],
-      "Get the mobile apps": [
-        "Dapatkan aplikasi ponsel"
-      ],
       "Grant permissions": [
         "Berikan izin"
-      ],
-      "Hide my email": [
-        "Hide my email"
       ],
       "Import - ${ date }": [
         "Impor - ${ date }"
@@ -1666,6 +1624,9 @@
       "Member limit": [
         "Batas anggota"
       ],
+      "Move all items ?": [
+        "Pindahkan semua item?"
+      ],
       "Our welcome gift to you": [
         "Hadiah selamat datang kami kepada Anda"
       ],
@@ -1674,9 +1635,6 @@
       ],
       "Permanently remove all items ?": [
         "Hapus seluruh item secara permanen ?"
-      ],
-      "Pin the extension": [
-        "Sematkan ekstensi"
       ],
       "Secure your data": [
         "Amankan data Anda"
@@ -1687,15 +1645,6 @@
       "Share with": [
         "Bagikan dengan"
       ],
-      "Switching to ${ PASS_APP_NAME }?": [
-        "Beralih ke ${ PASS_APP_NAME }?"
-      ],
-      "Thank you for installing ${ PASS_APP_NAME }": [
-        "Terima kasih telah menginstal ${ PASS_APP_NAME }"
-      ],
-      "The extension is now ready to use.": [
-        "Ekstensi telah siap untuk digunakan."
-      ],
       "Transfer ownership": [
         "Transfer kepemilikan"
       ],
@@ -1705,14 +1654,8 @@
       "Unlock ${ brandNameJSX }": [
         "Buka kunci ${ brandNameJSX }"
       ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Buka kunci ${ PASS_APP_NAME }"
-      ],
       "Update available": [
         "Pembaruan tersedia"
-      ],
-      "Use my email": [
-        "Gunakan surel saya"
       ],
       "Vault shared with you": [
         "Brankas yang dibagikan dengan Anda"
@@ -1724,7 +1667,7 @@
         "Selamat datang di ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
-        "Selamat datang di pengelola kata sandi baru Anda!"
+        "Selamat datang di pengelola kata sandi Anda yang baru!"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Mengapa ${ PASS_APP_NAME }?"
@@ -1847,9 +1790,6 @@
       "Trash alias ?": [
         "Buang alias?"
       ],
-      "Unable to save": [
-        "Tidak dapat menyimpan"
-      ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "Tidak dapat masuk ke ${ PASS_APP_NAME }. ${ additionalMessage }."
       ],
@@ -1879,12 +1819,6 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Anda tidak akan lagi memiliki akses ke brankas ini. Untuk dapat kembali bergabung dengan brankas ini, Anda akan memerlukan undangan baru."
-      ],
-      "Your plan does not allow you to create more aliases": [
-        "Paket Anda tidak mengizinkan Anda untuk membuat lebih banyak alias"
-      ],
-      "Your plan only allows you to autofill from your first two vaults": [
-        "Paket Anda hanya mengizinkan pengisian otomatis dari dua brankas pertama Anda"
       ],
       "Your session was locked due to inactivity": [
         "Sesi Anda dikunci karena tidak adanya aktivitas"
