@@ -179,6 +179,9 @@
       "Edit Gateway": [
         "Redigér gateway"
       ],
+      "Edit invoice details": [
+        "Rediger fakturadetaljer"
+      ],
       "Edit name": [
         "Rediger navn"
       ],
@@ -431,8 +434,14 @@
       "Sign in with password": [
         "Log ind med en adgangskode"
       ],
+      "Sign in with SSO": [
+        "Log ind med SSO"
+      ],
       "Sign out": [
         "Log ud"
+      ],
+      "sign up for free": [
+        "tilmeld dig gratis"
       ],
       "Signing in": [
         "Logger ind"
@@ -702,6 +711,12 @@
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 dages tilbagebetalingsgaranti"
+      ]
+    },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } måned",
+        "de første ${ n } måneder"
       ]
     },
     "bf2023: Tooltip": {
@@ -2023,8 +2038,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har brugt alle brugere i dit abonnement. Opgradér abonnementet for at tilføje en ny bruger."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Du skal aktivere dine organisationsnøgler. Uden aktivering kan du ikke oprette nye brugere, tilføje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
+      "You must privatize all users before generating new organization keys": [
+        "Før generering af nye organisationsnøgler, skal alle brugere gøres private"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Din konto eller organisation har en forfalden faktura. Betal venligst alle udestående fakturaer."
@@ -4050,6 +4065,9 @@
       "Name": [
         "Navn"
       ],
+      "Name and address": [
+        "Navn og adresse"
+      ],
       "Name on card": [
         "Navn på kort"
       ],
@@ -5329,6 +5347,9 @@
       ],
       "Select a reason": [
         "Vælg en årsag"
+      ],
+      "Thomas Anderson": [
+        "Thomas Andersen"
       ]
     },
     "plan customizer, users": {
@@ -5428,14 +5449,8 @@
       "Changing organization password": [
         "Opretning af organisationsadgangskode"
       ],
-      "Creating new users": [
-        "Opretter nye brugere"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Grundet en adgangskodeændring er dine organisations administratorprivilegier blevet begrænset. De følgende handlinger er ikke længere tilladt:"
-      ],
-      "Reading emails of non-private users": [
-        "Læse e-mails af ikke-private brugere"
       ]
     },
     "Role": {
@@ -6531,6 +6546,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Redigér gateway ${ currentName }"
+      ],
+      "Edit invoice details": [
+        "Rediger fakturadetaljer"
       ],
       "Edit servers": [
         "Redigér servere"

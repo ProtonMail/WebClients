@@ -179,6 +179,9 @@
       "Edit Gateway": [
         "Ağ geçidini düzenle"
       ],
+      "Edit invoice details": [
+        "Fatura ayrıntılarını düzenle"
+      ],
       "Edit name": [
         "Adı düzenle"
       ],
@@ -2101,8 +2104,11 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Tarifenizin kullanıcı sayısı sınırına ulaştınız. Yeni bir kullanıcı eklemek için lütfen tarifenizi yükseltin."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Kuruluş anahtarlarınızı kullanıma almalısınız. Kullanıma alma işlemini yapmadan yeni kullanıcılar ekleyemez, var olan kullanıcılara adres ekleyemez veya korunmayan kullanıcı hesaplarına erişemezsiniz."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Kuruluş anahtarlarınızı kullanıma almalısınız. Bunları kullanıma almadan korunan kullanıcılar ekleyemez veya bu kullanıcılara erişemezsiniz."
+      ],
+      "You must privatize all users before generating new organization keys": [
+        "Yeni kuruluş anahtarları oluşturmadan önce tüm kullanıcıları kişiselleştirmelisiniz"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Hesabınızın ya da kuruluşunuzun ödenmemiş bir faturası var. Lütfen süresi geçmiş tüm faturaları ödeyin."
@@ -3585,6 +3591,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Hesabınıza yeni bir tarifeye abone olmak ya da geçerli tarifenizi yenilemek için kullanabileceğiniz bir miktar kredi ekleyin. Bir kredi için ${ i18nCurrency } ödersiniz."
       ],
+      "Tor": [
+        "Tor"
+      ],
       "Total email addresses": [
         "Toplam e-posta adresi"
       ],
@@ -3665,6 +3674,9 @@
       ],
       "Version ${ version }": [
         "Sürüm ${ version }"
+      ],
+      "View, download, and manage your invoices.": [
+        "Faturalarınızı görüntüleyin, indirin ve yönetin."
       ],
       "Visa Secure logo": [
         "Visa Secure logosu"
@@ -3913,6 +3925,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Aboneliğinizin otomatik olarak yenilenmesi için bir ödeme yöntemi ekleyebilirsiniz. Başka ödeme yöntemleri de kullanılabilir."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Kendiniz veya kuruluşunuz için bir ad ve adres yazın. Bu bilgiler hem kişisel hem de kurumsal faturalara eklenecek."
       ]
     },
     "Info subscription": {
@@ -4209,6 +4226,9 @@
       ],
       "Name": [
         "Ad"
+      ],
+      "Name and address": [
+        "Ad ve adres"
       ],
       "Name on card": [
         "Kart üzerindeki isim"
@@ -5635,6 +5655,18 @@
         "Thomas Anderson"
       ]
     },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "lütfen ${ contactHref } satış ekibimizle görüşün."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Tarifenizde bulunacak IP adresi sayısını seçin. Her ek IP adresinin maliyeti ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, ",
+        "${ maxIPs } IP adresinden fazlasına gerek duyuyorsanız, "
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "görüşün"
@@ -5735,14 +5767,11 @@
       "Changing organization password": [
         "Kuruluş parolasını değiştirme"
       ],
-      "Creating new users": [
-        "Yeni kullanıcılar oluşturma"
+      "Creating or accessing non-private users": [
+        "Korunmayan kullanıcıları ekleme veya erişme"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Parola değişikliği nedeniyle kuruluş yöneticinizin yetkileri kısıtlandı. Artık aşağıdaki işlemlere izin verilmiyor:"
-      ],
-      "Reading emails of non-private users": [
-        "Korunmayan kullanıcıların e-postalarını okuma"
       ]
     },
     "Role": {
@@ -6882,6 +6911,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "${ currentName } ağ geçidini düzenle"
+      ],
+      "Edit invoice details": [
+        "Fatura ayrıntılarını düzenle"
       ],
       "Edit servers": [
         "Sunucuları düzenle"
