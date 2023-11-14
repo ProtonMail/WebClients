@@ -16,7 +16,7 @@ import useApi from './useApi';
 import useCache from './useCache';
 import { getPromiseValue } from './useCachedModelResult';
 import { useGetAddressKeys } from './useGetAddressKeys';
-import useGetPublicKeys from './useGetPublicKeys';
+import useGetPublicKeysForInbox from './useGetPublicKeysForInbox';
 import { useGetMailSettings } from './useMailSettings';
 import { useGetUserKeys } from './useUserKeys';
 
@@ -34,7 +34,7 @@ const useGetVerificationPreferences = () => {
     const getAddresses = useGetAddresses();
     const getUserKeys = useGetUserKeys();
     const getAddressKeys = useGetAddressKeys();
-    const getPublicKeys = useGetPublicKeys();
+    const getPublicKeysForInbox = useGetPublicKeysForInbox();
     const getMailSettings = useGetMailSettings();
 
     const getVerificationPreferences = useCallback<GetVerificationPreferences>(
@@ -71,7 +71,12 @@ const useGetVerificationPreferences = () => {
                 publicKeys: apiKeys,
                 ktVerificationResult,
                 Errors,
-            }: ApiKeysConfig = await getPublicKeys({ email, lifetime });
+            }: ApiKeysConfig = await getPublicKeysForInbox({
+                email,
+                lifetime,
+                // messages from internal senders with e2ee disabled are still signed, thus we need to fetch the corresponding verification keys
+                includeInternalKeysWithE2EEDisabledForMail: true,
+            });
             const isInternal = RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
             const { publicKeys } = splitKeys(await getUserKeys());
             const { pinnedKeys, isContactSignatureVerified: pinnedKeysVerified } = await getPublicKeysVcardHelper(
@@ -106,7 +111,7 @@ const useGetVerificationPreferences = () => {
                 apiKeysErrors: Errors,
             };
         },
-        [api, getAddressKeys, getAddresses, getPublicKeys, getMailSettings]
+        [api, getAddressKeys, getAddresses, getPublicKeysForInbox, getMailSettings]
     );
 
     return useCallback<GetVerificationPreferences>(
