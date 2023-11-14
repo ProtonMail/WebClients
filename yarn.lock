@@ -29062,9 +29062,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"proton-pass-web@workspace:applications/pass-web":
+"proton-pass@workspace:applications/pass":
   version: 0.0.0-use.local
-  resolution: "proton-pass-web@workspace:applications/pass-web"
+  resolution: "proton-pass@workspace:applications/pass"
   dependencies:
     "@mattiasbuelens/web-streams-adapter": "npm:0.1.0"
     "@openpgp/web-stream-tools": "npm:^0.0.13"
