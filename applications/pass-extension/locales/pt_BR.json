@@ -81,7 +81,7 @@
         "Criar"
       ],
       "Create a ${ BRAND_NAME } Account": [
-        "Criar uma conta no ${ BRAND_NAME }"
+        "Criar uma conta na ${ BRAND_NAME }"
       ],
       "Create a ${ BRAND_NAME } account": [
         "Criar uma conta no ${ BRAND_NAME }"
@@ -226,6 +226,9 @@
       ],
       "More options": [
         "Mais opções"
+      ],
+      "Move all items": [
+        "Mover todos os itens"
       ],
       "Move to a shared vault": [
         "Mover para cofre compartilhado"
@@ -788,8 +791,11 @@
       "Editor": [
         "Editor"
       ],
+      "Emptying trash...": [
+        "Esvaziando lixeira..."
+      ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Ative ${ PASS_APP_NAME } ao conectar a sua conta da ${ BRAND_NAME }"
+        "Ative ${ PASS_APP_NAME } ao conectar a sua conta da ${ BRAND_NAME }."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Digite o código de verificação. Insira ${ digit }."
@@ -902,7 +908,7 @@
         "N/D"
       ],
       "No login found": [
-        "Nenhum login foi encontrado"
+        "Nenhum início de sessão foi encontrado"
       ],
       "None": [
         "Nenhum"
@@ -1006,6 +1012,10 @@
       "The autofill dropdown will automatically open on field focus.": [
         "O menu suspenso do preenchimento automático abrirá automaticamente quando um campo for selecionado."
       ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Não foi possível importar o seguinte ${ result.ignored.length } item.",
+        "Não foi possível importar os seguintes ${ result.ignored.length } itens."
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "O texto que você está tentando colar é maior que o comprimento máximo permitido de ${ maxLength } caracteres."
       ],
@@ -1056,6 +1066,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Cofre \"${ payload.share.content.name }\" atualizado"
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "O cofre \"${ share.content.name }\" foi removido"
       ],
       "Verification code": [
         "Código de verificação"
@@ -1332,6 +1345,9 @@
       "Modified": [
         "Modificado"
       ],
+      "More than a month": [
+        "Mais de 1 mês"
+      ],
       "Most recent": [
         "Mais recente"
       ],
@@ -1364,9 +1380,6 @@
       ],
       "Old-New": [
         "Do mais antigo para o mais recente"
-      ],
-      "Older than last month": [
-        "Mais de um mês"
       ],
       "Oldest to newest": [
         "Do mais antigo ao mais recente"
@@ -1682,6 +1695,9 @@
       ],
       "Member limit": [
         "Limite de membros"
+      ],
+      "Move all items ?": [
+        "Mover todos os itens?"
       ],
       "Our welcome gift to you": [
         "Nosso presente de boas-vindas para você"

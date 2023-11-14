@@ -165,7 +165,7 @@
         "Générer un mot de passe"
       ],
       "Generated passwords": [
-        "Générer des mots de passe"
+        "Mots de passe générés"
       ],
       "Get mobile apps": [
         "Télécharger les applications mobiles"
@@ -226,6 +226,9 @@
       ],
       "More options": [
         "Plus d'options"
+      ],
+      "Move all items": [
+        "Déplacer tous les éléments"
       ],
       "Move to a shared vault": [
         "Déplacer vers un coffre-fort partagé"
@@ -348,7 +351,7 @@
         "Mettre à jour le coffre-fort"
       ],
       "Updating": [
-        "Mettre à jour"
+        "Mise à jour"
       ],
       "Upgrade": [
         "Changer d'abonnement"
@@ -485,6 +488,9 @@
       "Failed to edit user's access.": [
         "L'accès de l'utilisateur n'a pas pu être modifié."
       ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Le déplacement de tous les éléments depuis « ${ payload.content.name } » n'a pas abouti."
+      ],
       "Failed to remove user's access.": [
         "L'accès de l'utilisateur n'a pas pu être supprimé."
       ],
@@ -544,6 +550,9 @@
       ],
       "Restoring item failed": [
         "La restauration de l'élément n'a pas abouti."
+      ],
+      "Restoring trashed items failed": [
+        "La restauration des éléments mis à la corbeille n'a pas abouti."
       ],
       "Settings update failed": [
         "La mise à jour des paramètres n'a pas abouti."
@@ -731,6 +740,21 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "L'alias « ${ item.aliasEmail } » a été déplacé dans la corbeille, il ne transfèrera plus de messages vers votre messagerie."
       ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Tous les éléments ont été déplacés depuis « ${ payload.content.name } »."
+      ],
+      "All trashed items permanently removed": [
+        "Tous les éléments mis à la corbeille ont été définitivement supprimés."
+      ],
+      "All trashed items successfully restored": [
+        "Tous les éléments mis à la corbeille ont été restaurés."
+      ],
+      "An item previously shared with you was removed": [
+        "Un élément partagé avec vous a été supprimé."
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Voulez-vous vraiment déplacer tous les éléments depuis « ${ fromVaultName } » vers « ${ toVaultName } » ?"
+      ],
       "Auto-lock successfully disabled": [
         "Le verrouillage automatique a été désactivé."
       ],
@@ -783,10 +807,13 @@
         "Déposez ici pour importer"
       ],
       "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
-        "Importez facilement vos mots de passe actuels dans ${ PASS_APP_NAME }."
+        "Importez facilement vos mots de passe dans ${ PASS_APP_NAME }."
       ],
       "Editor": [
         "Éditeur"
+      ],
+      "Emptying trash...": [
+        "Suppression des éléments de la corbeille en cours"
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Activez ${ PASS_APP_NAME } en vous connectant à votre compte ${ BRAND_NAME }."
@@ -877,6 +904,9 @@
       "Item successfully moved": [
         "L'élément a été déplacé."
       ],
+      "Leaving vault...": [
+        "Vous quittez le coffre-fort…"
+      ],
       "Let's get you started by creating your first item": [
         "Démarrons par la création de votre premier élément."
       ],
@@ -890,10 +920,13 @@
         "Chargement en cours"
       ],
       "me": [
-        "Moi"
+        "moi"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } est plus qu'un gestionnaire de mots de passe : il protège vos mots de passe ainsi que votre adresse e-mail personnelle grâce à des alias d'adresses e-mail. Bénéficiant de la même technologie que ${ MAIL_APP_NAME }, vos données sont chiffrées de bout en bout et personne d'autre que vous ne peut y accéder."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Multiple vaults": [
         "Plusieurs coffres-forts"
@@ -955,8 +988,14 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "La protection de la vie privée est notre priorité. Découvrez ce qui différencie ${ PASS_APP_NAME } des autres."
       ],
+      "Restoring trashed items...": [
+        "Restauration des éléments mis à la corbeille en cours"
+      ],
       "Save login": [
-        "Sauvegarder l'identifiant"
+        "Enregistrer l'identifiant"
+      ],
+      "Select destination vault": [
+        "Sélectionner le coffre-fort de destination"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Sélectionnez l'endroit où vous voulez que vos coffres-forts importés soient enregistrés."
@@ -1060,6 +1099,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Le coffre-fort « ${ payload.share.content.name } » a été mis à jour."
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "Le coffre-fort « ${ share.content.name } » a été supprimé."
       ],
       "Verification code": [
         "Code de vérification"
@@ -1336,6 +1378,9 @@
       "Modified": [
         "Modifié"
       ],
+      "More than a month": [
+        "Plus d'un mois"
+      ],
       "Most recent": [
         "Le plus récent"
       ],
@@ -1368,9 +1413,6 @@
       ],
       "Old-New": [
         "Du plus ancien au plus récent"
-      ],
-      "Older than last month": [
-        "Il y a plus d'un mois"
       ],
       "Oldest to newest": [
         "Du plus ancien au plus récent"
@@ -1661,7 +1703,7 @@
         "Saisissez votre code PIN"
       ],
       "Fill & copy password": [
-        "Entrer et copier le mot de passe"
+        "Remplir et copier le mot de passe"
       ],
       "Get the mobile apps": [
         "Téléchargez les applications mobiles"
@@ -1670,7 +1712,7 @@
         "Accordez les autorisations"
       ],
       "Hide my email": [
-        "Hide my email"
+        "Hide-my-email"
       ],
       "Import - ${ date }": [
         "Importation - ${ date }"
@@ -1686,6 +1728,9 @@
       ],
       "Member limit": [
         "Limite du nombre de membres"
+      ],
+      "Move all items ?": [
+        "Déplacer tous les éléments ?"
       ],
       "Our welcome gift to you": [
         "Notre cadeau de bienvenue"
