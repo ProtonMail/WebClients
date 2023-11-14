@@ -12,13 +12,7 @@ import { requestMiddleware } from '@proton/pass/store/middlewares/request-middle
 import reducer from '@proton/pass/store/reducers';
 import { workerRootSaga } from '@proton/pass/store/sagas';
 import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
-import {
-    AppStatus,
-    type RequiredNonNull,
-    SessionLockStatus,
-    ShareEventType,
-    WorkerMessageType,
-} from '@proton/pass/types';
+import { AppStatus, ShareEventType, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
 import { workerMiddleware } from './worker.middleware';
@@ -40,8 +34,9 @@ const store = configureStore({
             : [],
 });
 
-const options: RequiredNonNull<WorkerRootSagaOptions> = {
-    getAuth: withContext((ctx) => ctx.service.auth.store),
+const options: WorkerRootSagaOptions = {
+    getAuthStore: withContext((ctx) => ctx.authStore),
+    getAuthService: withContext((ctx) => ctx.service.auth),
     getCache: withContext(async (ctx) => {
         /* cache is considered valid if versions match */
         const cache = await ctx.service.storage.local.get(['state', 'snapshot', 'salt', 'version']);
@@ -62,7 +57,7 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
 
     getLocalSettings: withContext((ctx) => ctx.service.settings.resolve()),
     getTelemetry: withContext((ctx) => ctx.service.telemetry),
-    getWorkerState: withContext((ctx) => ctx.getState()),
+    getAppState: withContext((ctx) => ctx.getState()),
 
     /* Sets the worker status according to the
      * boot sequence's result. On boot failure,
@@ -111,17 +106,6 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
             : WorkerMessageBroker.buffer.push(message);
     },
 
-    onSessionLockChange: withContext(async ({ service: { auth } }, sessionLockToken, sessionLockTTL) => {
-        auth.store.setLockToken(sessionLockToken);
-        auth.store.setLockTTL(sessionLockTTL);
-        auth.store.setLockStatus(sessionLockToken ? SessionLockStatus.REGISTERED : SessionLockStatus.NONE);
-        await auth.persistSession();
-    }),
-
-    onSessionLocked: withContext(async (ctx) => ctx.service.auth.lock()),
-
-    onSessionUnlocked: withContext(async ({ service: { auth } }, sessionLockToken) => auth.unlock(sessionLockToken)),
-
     onSettingUpdate: withContext((ctx, update) => ctx.service.settings.sync(update)),
 
     onShareEventDisabled: (shareId) => {
@@ -150,8 +134,6 @@ const options: RequiredNonNull<WorkerRootSagaOptions> = {
             isPopupPort()
         );
     },
-
-    onSignout: withContext(({ service: { auth } }) => auth.logout()),
 };
 
 sagaMiddleware.run(workerRootSaga.bind(null, options));
