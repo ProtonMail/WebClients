@@ -44,6 +44,9 @@
       "Authenticate": [
         "Аўтэнтыфікацыя"
       ],
+      "Authenticating": [
+        "Аўтэнтыфікацыя"
+      ],
       "Back": [
         "Назад"
       ],
@@ -2120,8 +2123,11 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Вы дасягнулі максімальнай колькасці карыстальнікаў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новага карыстальніка."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Вы павінны актываваць ключы арганізацыі. Без актывацыі вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы да існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Вы павінны актываваць ключы вашай арганізацыі. Без іх актывацыі ў вас не будзе магчымасці ствараць або атрымліваць доступ да непрыватных карыстальнікаў."
+      ],
+      "You must privatize all users before generating new organization keys": [
+        "Вы павінны прыватызаваць усіх карыстальнікаў перад генерацыяй новых ключоў арганізацыі"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ваш уліковы запіс або арганізацыя мае пратэрмінаваны рахунак. Аплаціце ўсе неаплачаныя рахункі."
@@ -3659,6 +3665,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Папаўняйце свой уліковы запіс крэдытамі, якія вы можаце выкарыстоўваць для падпіскі на новы тарыфны план або падаўжэння свайго бягучага тарыфнага плана. Вы атрымліваеце адзін крэдыт за кожны выдаткаваны ${ i18nCurrency }."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Колькасць адрасоў электроннай пошты"
@@ -5795,7 +5804,7 @@
     },
     "plan customizer, ips": {
       "please ${ contactHref } our Sales team.": [
-        "звяжыцеся з нашай камандай па продажу ${ contactHref }."
+        "${ contactHref } з нашай камандай па продажам."
       ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "Выберыце колькасць IP для ўключэння ў ваш тарыфны план. Кожны дадатковы IP каштуе ${ price }."
@@ -5809,7 +5818,7 @@
     },
     "plan customizer, users": {
       "contact": [
-        "кантакт"
+        "звяжыцеся"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "Выберыце колькасць карыстальнікаў для ўключэння ў ваш тарыфны план. Кожны дадатковы карыстальнік каштуе ${ price }."
@@ -5909,14 +5918,11 @@
       "Changing organization password": [
         "Змена пароля арганізацыі"
       ],
-      "Creating new users": [
-        "Стварэнне новых карыстальнікаў"
+      "Creating or accessing non-private users": [
+        "Стварэнне або доступ да непрыватных карыстальнікаў"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Па прычыне змены пароля вашы правы адміністратара арганізацыі былі абмежаваны. Цяпер вам забаронены наступныя дзеянні:"
-      ],
-      "Reading emails of non-private users": [
-        "Чытанне лістоў непрыватных карыстальнікаў"
       ]
     },
     "Role": {

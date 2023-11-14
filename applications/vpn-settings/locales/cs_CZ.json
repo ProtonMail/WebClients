@@ -27,7 +27,7 @@
         "Přidat doménu"
       ],
       "Add multiple users": [
-        "Přidejte více uživatelů"
+        "Přidat více uživatelů"
       ],
       "Add PayPal": [
         "Přidat PayPal"
@@ -43,6 +43,9 @@
       ],
       "Authenticate": [
         "Ověřit"
+      ],
+      "Authenticating": [
+        "Ověřování"
       ],
       "Back": [
         "Zpět"
@@ -706,7 +709,7 @@
         "Přístup k obsahu z celého světa"
       ],
       "Ad-blocker and malware protection": [
-        "Blokování reklam a ochrana před malwarem"
+        "Blokování reklam a ochrana před malware"
       ],
       "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Všechny placené funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
@@ -789,7 +792,7 @@
     },
     "bf2023: Tooltip": {
       "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Přístup k blokovanému obsahu a soukromé prohlížení. Zahrnuje více než 3 000 serverů ve více než 65 zemích, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malwaru a reklam, rychlé stahování BitTorrentu a další funkce."
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Zahrnuje více než 3 000 serverů ve více než 65 zemích, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malware a reklam, rychlé stahování BitTorrentu a další funkce."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+, Prime Video a dalších, odkudkoli."
@@ -2120,8 +2123,11 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Musíte aktivovat klíče organizace. Bez aktivace nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Musíte aktivovat klíče organizace. Bez aktivace nebudete moci vytvářet nesoukromé uživatele ani k nim přistupovat."
+      ],
+      "You must privatize all users before generating new organization keys": [
+        "Než vytvoříte nové klíče pro organizaci, musíte privatizovat všechny uživatele"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "U Vašeho účtu nebo organizace jsou vedeny faktury po splatnosti. Zaplaťte prosím všechny neuhrazené faktury."
@@ -2416,7 +2422,7 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Zahrnuje 2700 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokovač malwaru a reklam a více."
+        "Zahrnuje 2700 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokování malware a reklam a další."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Zahrnuje podporu 3 vlastních e-mailových domén, 90 e-mailových adres, neomezený počet aliasů Hide-my-email, sdílení kalendáře a další."
@@ -3330,6 +3336,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Ve vaší organizaci existují ostatní správci, vaší povinností je sdělit jim nové heslo."
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Password copied to clipboard": [
         "Heslo bylo zkopírováno do schránky"
       ],
@@ -3659,6 +3668,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Dobijte na svůj účet kredity, za které si můžete předplatit nový tarif nebo prodloužit předplatné vašeho současného tarifu. Získáte jeden kredit za každý/každou/každé ${ i18nCurrency }."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Celkem e-mailových adres"
@@ -4149,7 +4161,7 @@
         "Blokovat pouze malware"
       ],
       "Block malware, ads and trackers": [
-        "Blokovat malware, reklamy a sledovače"
+        "Blokovat malware, reklamy a sledovací prvky"
       ],
       "Browser": [
         "Prohlížeč"
@@ -4462,6 +4474,9 @@
       ],
       "Verification code": [
         "Ověřovací kód"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Je nám líto, že odcházíte. Sdělte nám svůj důvod, abychom pomohli zlepšit naše služby."
@@ -4909,7 +4924,7 @@
         "99.95% SLA Dostupnost"
       ],
       "Ad-blocker and malware protection": [
-        "Blokování reklam a ochrana před malwarem"
+        "Blokování reklam a ochrana před malware"
       ],
       "Admin console": [
         "Konzole správce"
@@ -5342,7 +5357,7 @@
         "${ MAIL_APP_NAME }: Zabezpečte své e-maily pomocí koncového šifrování. Obsahuje podporu vlastních e-mailových domén, 15 e-mailových adres, neomezený počet hide-my-email aliasů pro skrytí e-mailu a další."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "${ VPN_APP_NAME }: Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje ${ serversAndCountries }, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malwaru a reklam, rychlé stahování BitTorrentu a další funkce."
+        "${ VPN_APP_NAME }: Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje ${ serversAndCountries }, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malware a reklam, rychlé stahování BitTorrentu a další funkce."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Získejte přístup k obsahu na streamovacích službách, včetně Netflix, Disney+, Prime Video, odkudkoliv"
@@ -5489,7 +5504,7 @@
         "SMTP umožňuje službám nebo zařízením třetích stran odesílat e-maily prostřednictvím ${ MAIL_APP_NAME }."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        "NetShield chrání Vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovače a malware"
+        "NetShield chrání vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovací prvky a malware"
       ],
       "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Začněte s ${ freeStorageSize } a odemkněte dodatečný prostor jakmile to bude potřeba. Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
@@ -5630,11 +5645,17 @@
       ]
     },
     "Option": {
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "Konfigurace země"
       ],
       "Free server configs": [
         "Konfigurace bezplatného serveru"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "Našel jsem jinou službu, která se mi líbí více"
@@ -5642,11 +5663,17 @@
       "I use a different ${ BRAND_NAME } account": [
         "Používám jiný účet ${ BRAND_NAME }"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "Chybí klíčová funkce, kterou potřebuji"
       ],
       "It's too expensive": [
         "Cena je příliš vysoká"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "Můj důvod není na seznamu"
@@ -5663,8 +5690,17 @@
       "Standard server configs": [
         "Konfigurace standardního serveru"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Celá organizace"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Organization capacity error": {
@@ -5909,14 +5945,11 @@
       "Changing organization password": [
         "Změna hesla organizace"
       ],
-      "Creating new users": [
-        "Vytváření nových uživatelů"
+      "Creating or accessing non-private users": [
+        "Vytváření nebo přístup k nesoukromých uživatelům"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Z důvodu změny hesla byla omezena vaše oprávnění správce organizace. Následující akce již nejsou povoleny:"
-      ],
-      "Reading emails of non-private users": [
-        "Čtení e-mailových zpráv nesoukromých uživatelů"
       ]
     },
     "Role": {
@@ -6440,10 +6473,10 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN na uživatele, celosvětové streamovací služby, blokování malwaru a reklamy a další."
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN na uživatele, celosvětové streamovací služby, blokování malware a reklamy a další."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN, celosvětové streamovací služby, blokátor malwaru a reklamy a další."
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN, celosvětové streamovací služby, blokování malware a reklamy a další."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+ a Prime Video, odkudkoli."
@@ -6825,7 +6858,7 @@
         "Vytvoření zabezpečených přihlašovacích údajů na všech zařízeních. Obsahuje neomezený počet aliasů, 20 trezorů, integrovanou funkci 2FA, automatické vyplňování kreditních karet a další funkce."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Zahrnuje 2950 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokovač malwaru a reklam a více."
+        "Zahrnuje 2950 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokování malware a reklam a další."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů pro hide-my-email, sdílení kalendáře a další funkce."
@@ -7661,6 +7694,29 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Přístup k serverům Secure Core, rychlé stahování P2P/BitTorrent, Tor skrze VPN a další."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Warning": {

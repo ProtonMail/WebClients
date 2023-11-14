@@ -86,6 +86,9 @@
       "Back": [
         "Natrag"
       ],
+      "Blind Carbon Copy": [
+        "Slijepa indigo kopija"
+      ],
       "Bold": [
         "Podebljano"
       ],
@@ -285,6 +288,9 @@
       "Email settings": [
         "Postavke e-pošte"
       ],
+      "Emoji": [
+        "Emotikoni"
+      ],
       "Enable": [
         "Omogući"
       ],
@@ -324,8 +330,14 @@
       "Get verification code": [
         "Nabavi kôd za provjeru"
       ],
+      "Go to first page": [
+        "Idi na prvu stranicu"
+      ],
       "Go to label": [
         "Idi na oznaku"
+      ],
+      "Go to last page": [
+        "Idi na posljednju stranicu"
       ],
       "Go to next page": [
         "Idi na sljedeću stranicu"
@@ -341,6 +353,9 @@
       ],
       "Got it": [
         "Shvaćam"
+      ],
+      "Help": [
+        "Pomoć"
       ],
       "Hide": [
         "Sakrij"
@@ -536,6 +551,9 @@
       "Not saved": [
         "Nije spremljeno"
       ],
+      "Ok": [
+        "U redu"
+      ],
       "OK": [
         "U redu"
       ],
@@ -701,6 +719,9 @@
       "Set recovery phrase": [
         "Postavite frazu za oporavak"
       ],
+      "Settings": [
+        "Postavke"
+      ],
       "Share via link": [
         "Podijeli putem poveznice"
       ],
@@ -772,6 +793,9 @@
       ],
       "This message contains remote content.": [
         "Ova poruka sadrži udaljeni sadržaj."
+      ],
+      "Tomorrow": [
+        "Sutra"
       ],
       "Trust": [
         "Vjeruj"
@@ -950,6 +974,11 @@
         "Dobrodošli"
       ]
     },
+    "Animation": {
+      "New email": [
+        "Nova e-pošta"
+      ]
+    },
     "Attached ics file error": {
       "Invalid event": [
         "Nevažeći događaj"
@@ -970,6 +999,14 @@
       ],
       "Sender verification passed": [
         "Uspješna potvrda pošiljatelja"
+      ]
+    },
+    "bf2023: Deal details": {
+      "1 user": [
+        "1 korisnik"
+      ],
+      "3 TB": [
+        "3 TB"
       ]
     },
     "Bug category": {
@@ -1173,6 +1210,11 @@
         "Ovaj je odgovor zastario. Nemate kalendara."
       ]
     },
+    "Cancel expiration of the message": {
+      "Cancel": [
+        "Poništi"
+      ]
+    },
     "Collapsible tooltip": {
       "Expand": [
         "Proširi"
@@ -1193,6 +1235,35 @@
       ],
       "white": [
         "bijela"
+      ]
+    },
+    "Commander action": {
+      "Go to Archive": [
+        "Idi u Arhivu"
+      ],
+      "Go to Drafts": [
+        "Idi u Skice"
+      ],
+      "Go to Inbox": [
+        "Idi u Pristiglu poštu"
+      ],
+      "Go to Sent": [
+        "Idi u Poslano"
+      ],
+      "Go to Spam": [
+        "Idi u Neželjenu poštu"
+      ],
+      "Go to Starred": [
+        "Idi u Sa zvjezdicom"
+      ],
+      "Go to Trash": [
+        "Idi u Otpad"
+      ],
+      "New message": [
+        "Nova poruka"
+      ],
+      "Search": [
+        "Pretraga"
       ]
     },
     "Composer email icon": {
@@ -1285,6 +1356,9 @@
       "Birthday": [
         "Rođendan"
       ],
+      "Display name": [
+        "Zaslonski naziv"
+      ],
       "Email": [
         "E-pošta"
       ],
@@ -1296,6 +1370,9 @@
       ],
       "Language": [
         "Jezik"
+      ],
+      "Last name": [
+        "Prezime"
       ],
       "Logo": [
         "Logo"
@@ -1320,6 +1397,9 @@
       ],
       "Role": [
         "Uloga"
+      ],
+      "Time zone": [
+        "Vremenska zona"
       ],
       "Title": [
         "Naslov"
@@ -2144,6 +2224,11 @@
         "Ažuriranje događaja s početkom ${ formattedStart }"
       ]
     },
+    "empty messages: success": {
+      "Folder cleared": [
+        "Mapa je očišćena"
+      ]
+    },
     "Encrypted Headers": {
       "Encrypted Headers filename": [
         "Šifrirano ime zaglavlja"
@@ -2430,6 +2515,9 @@
       ]
     },
     "Error importing event": {
+      "Calendar": [
+        "Kalendar"
+      ],
       "Component with wrong format": [
         "Komponenta s pogrešnim formatom"
       ],
@@ -2489,6 +2577,9 @@
       ],
       "Start time out of bounds": [
         "Početno vrijeme je van granica"
+      ],
+      "Time zone": [
+        "Vremenska zona"
       ],
       "To-do entry": [
         "Stavka liste zadataka"
@@ -2567,6 +2658,25 @@
     "Event title": {
       "(no title)": [
         "(bez naslova)"
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Got it": [
+        "Shvaćam"
+      ]
+    },
+    "file size format": {
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "Filter": {
@@ -2671,6 +2781,14 @@
         "Zadano"
       ]
     },
+    "Font size option": {
+      "Large": [
+        "Veliko"
+      ],
+      "Small": [
+        "Malo"
+      ]
+    },
     "forwardmessage": {
       "From: ${ senderString }": [
         "Od: ${ senderString }"
@@ -2683,8 +2801,14 @@
       ]
     },
     "Get started checklist instructions": {
+      "Close": [
+        "Zatvori"
+      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Nabavite ${ MAIL_APP_NAME } mobilnu aplikaciju"
+      ],
+      "Maybe later": [
+        "Možda kasnije"
       ]
     },
     "Group": {
@@ -3354,6 +3478,9 @@
       "No results found": [
         "Nema rezultata"
       ],
+      "Normal": [
+        "Normalno"
+      ],
       "Not a valid URL": [
         "Nije valjani URL"
       ],
@@ -3557,6 +3684,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Da biste koristili Potvrdu adresa, morate se pouzdati u jedan ili više dostupnih javnih ključeva, uključujući ključ koji koristite za slanje. Time se sprječava lažiranje ključeva za šifriranje."
       ],
+      "Unsaved changes": [
+        "Nespremljene promjene"
+      ],
       "Unsupported file": [
         "Nepodržana datoteka"
       ],
@@ -3653,8 +3783,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Ugroženo"
+      ],
       "Expired": [
         "Isteklo"
+      ],
+      "Obsolete": [
+        "Zastarjelo"
       ],
       "Primary": [
         "Glavno"
@@ -3910,6 +4046,9 @@
       "Automatically save contacts": [
         "Automatsko spremanje kontakata"
       ],
+      "Beta Access": [
+        "Beta pristup"
+      ],
       "Blind Carbon Copy": [
         "Slijepa indigo kopija"
       ],
@@ -3964,6 +4103,9 @@
       "Density": [
         "Gustoća"
       ],
+      "Don't ask again": [
+        "Ne pitaj ponovno"
+      ],
       "Don't show this again": [
         "Ne prikazuj ponovno"
       ],
@@ -4005,6 +4147,9 @@
       ],
       "From:": [
         "Od:"
+      ],
+      "From: ${ from }": [
+        "Od: ${ from }"
       ],
       "Hide password": [
         "Sakrij lozinku"
@@ -4050,6 +4195,9 @@
       ],
       "Last month only": [
         "Samo posljednji mjesec"
+      ],
+      "Layout": [
+        "Izgled"
       ],
       "Location": [
         "Lokacija"
@@ -4180,6 +4328,9 @@
       "the email was sent ${ label }": [
         "e-pošta je poslana ${ label }"
       ],
+      "Theme": [
+        "Tema"
+      ],
       "Then": [
         "Zatim"
       ],
@@ -4191,6 +4342,12 @@
       ],
       "To:": [
         "Za:"
+      ],
+      "To: ${ to }": [
+        "Za: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Za: ${ toEmail }"
       ],
       "Toolbar": [
         "Alatna traka"
@@ -4724,6 +4881,9 @@
       "Image URL": [
         "URL slike"
       ],
+      "Last name": [
+        "Prezime"
+      ],
       "Link": [
         "Poveznica"
       ],
@@ -4966,6 +5126,32 @@
         "Spremljeno s šifriranjem nultog pristupa"
       ]
     },
+    "session_recovery:available:action": {
+      "Reset password": [
+        "Ponovno postavljanje lozinke"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Poništi zahtjev"
+      ],
+      "Got it": [
+        "Shvaćam"
+      ],
+      "Learn more": [
+        "Više informacija"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Odjavite se"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Poništavanje lozinke"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "PGP šifrirana poruka. Provjera pošiljatelja nije uspjela: ${ verificationErrorsMessage }"
@@ -4998,6 +5184,22 @@
       ],
       "Smallest first": [
         "Prvo najmanje"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Zatvori"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "1 user": [
+        "1 korisnik"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "Secure streaming": [
+        "Siguran streaming"
       ]
     },
     "Spotlight": {
@@ -5266,6 +5468,9 @@
       "Import": [
         "Uvoz"
       ],
+      "Last name": [
+        "Prezime"
+      ],
       "Values": [
         "Vrijednosti"
       ],
@@ -5281,6 +5486,9 @@
     "Title": {
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } tipkovni prečaci"
+      ],
+      "(active)": [
+        "(aktivno)"
       ],
       "Account suspended": [
         "Račun je suspendiran"
@@ -5310,6 +5518,9 @@
       ],
       "Attachments": [
         "Privitci"
+      ],
+      "Birthday": [
+        "Rođendan"
       ],
       "Blind Carbon Copy": [
         "Slijepa indigo kopija"
@@ -5522,6 +5733,9 @@
       "No attachment found": [
         "Nije pronađen nijedan privitak"
       ],
+      "Notes": [
+        "Bilješke"
+      ],
       "Open actions dropdown": [
         "Otvorite padajući izbornik radnji"
       ],
@@ -5605,6 +5819,9 @@
       ],
       "Settings": [
         "Postavke"
+      ],
+      "Sign in with 2FA": [
+        "Prijavite se sa 2FA"
       ],
       "Sign out": [
         "Odjava"

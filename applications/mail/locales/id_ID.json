@@ -5664,6 +5664,9 @@
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Alamat pengirim pesan sudah tidak lagi valid. Pesan ini akan dikirim melalui ${ defaultEmail } yang merupakan alamat default Anda."
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Pemilik alamat ini telah menonaktifkan enkripsi ujung ke ujung. Untuk dapat mengirim surel terenkripsi kealamat ini, pemiliknya harus mengaktifkan ulang enkripsi ujung ke ujung."
+      ],
       "The sender has requested a read receipt.": [
         "Pengirim pesan meminta bukti yang membenarkan bahwa Anda telah membaca pesan ini."
       ],
@@ -7799,6 +7802,11 @@
         "Kontak untuk alamat berikut telah dihapus, jadi preferensi enkripsi yang terkait dengannya telah diperbaharui secara sesuai:"
       ]
     },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "Kontak untuk alamat berikut tidak memiliki enkripsi ujung ke ujung di akunnya, jadi preferensi enkripsi berikut telah diperbarui:"
+      ]
+    },
     "Send email with errors": {
       "Do you want to send the email anyway?": [
         "Apakah Anda tetap ingin mengirim surel ini?"
@@ -9119,6 +9127,9 @@
       ],
       "Send with changed preferences?": [
         "Kirim dengan preferensi yang telah diubah?"
+      ],
+      "Send with encryption disabled?": [
+        "Kirim dengan enkripsi nonaktif?"
       ],
       "Send without expiration?": [
         "Kirim tanpa waktu kedaluwarsa?"

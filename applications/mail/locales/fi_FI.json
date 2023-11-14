@@ -1258,7 +1258,7 @@
         "Merkitse viesti tähdellä"
       ],
       "Unread email": [
-        "Lukematon sähköposti"
+        "Lukematon viesti"
       ],
       "Unstar conversation": [
         "Poista keskustelun tähtimerkintä"
@@ -5764,6 +5764,9 @@
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Viestin alkuperäinen lähettäjä ei enää kelpaa. Viesti lähetetään oletusosoitteesta ${ defaultEmail }."
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Tämän osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Salattujen sähköpostien lähettäminen tähän osoitteeseen edellyttää, että omistaja ottaa päästä päähän -salauksen uudelleen käyttöön."
+      ],
       "The sender has requested a read receipt.": [
         "Lähettäjä on pyytänyt lukukuittausta."
       ],
@@ -9309,6 +9312,9 @@
       ],
       "Send with changed preferences?": [
         "Lähetetäänkö muuttuneilla asetuksilla?"
+      ],
+      "Send with encryption disabled?": [
+        "Lähetä ilman salausta?"
       ],
       "Send without expiration?": [
         "Lähetetäänkö ilman tuhoutumista?"

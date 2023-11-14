@@ -4,20 +4,9 @@
     "language": "zh_CN"
   },
   "contexts": {
-    "A label for unlabeled shared calendar links": {
-      "Unlabeled": [
-        "未标记的"
-      ]
-    },
     "Access level": {
-      "Full view": [
-        "完整视图"
-      ],
       "Full view (see all event details)": [
         "允许查看所有日程详情"
-      ],
-      "Limited view": [
-        "简视图"
       ],
       "Limited view (see only free/busy)": [
         "只允许查看是否空闲"
@@ -61,9 +50,6 @@
       ],
       "Add address or domain": [
         "添加邮箱地址或域名"
-      ],
-      "Add calendar from URL": [
-        "通过链接添加日历"
       ],
       "Add condition": [
         "添加条件"
@@ -278,12 +264,6 @@
       "Delete": [
         "删除"
       ],
-      "Delete and confirm": [
-        "删除并确认"
-      ],
-      "Delete link": [
-        "删除链接"
-      ],
       "Delete permanently": [
         "永久删除"
       ],
@@ -340,9 +320,6 @@
       ],
       "Download CSV sample": [
         "下载 csv 样例"
-      ],
-      "Download ICS": [
-        "下载ICS"
       ],
       "Download our CSV template": [
         "下载我们的 CSV 模板"
@@ -500,9 +477,6 @@
       "Import emails": [
         "导入电子邮件"
       ],
-      "Import from ICS": [
-        "从ICS导入"
-      ],
       "Import key": [
         "导入密钥"
       ],
@@ -659,17 +633,11 @@
       "Remove bonuses": [
         "放弃特权"
       ],
-      "Remove calendar": [
-        "移除日历"
-      ],
       "Remove gift code": [
         "移除礼品码"
       ],
       "Remove this label": [
         "移除此标签"
-      ],
-      "Remove this member": [
-        "移除此成员"
       ],
       "Remove this notification": [
         "移除这个通知？"
@@ -737,20 +705,11 @@
       "Revoke all other sessions": [
         "其余设备全部下线"
       ],
-      "Revoke this invitation": [
-        "撤销此邀请"
-      ],
       "Save": [
         "保存"
       ],
       "Save address": [
         "保存地址"
-      ],
-      "Save changes": [
-        "保存更改"
-      ],
-      "Save ICS file": [
-        "保存 ICS 文件"
       ],
       "Save selected": [
         "保存选定项"
@@ -778,9 +737,6 @@
       ],
       "Select files": [
         "选择文件"
-      ],
-      "Select language for invitation emails": [
-        "选择邀请邮件的使用语言"
       ],
       "Select time zone": [
         "选择时区"
@@ -1025,16 +981,6 @@
         "下线"
       ]
     },
-    "Action; accept invitation to share calendar": {
-      "Accept": [
-        "接受"
-      ]
-    },
-    "Action; decline invitation to share calendar": {
-      "Decline": [
-        "拒绝"
-      ]
-    },
     "Addon": {
       "${ domains } custom domains": [
         "${ domains } 个自定义域"
@@ -1170,11 +1116,6 @@
         "不支持的日程"
       ]
     },
-    "Auto import invitations setting": {
-      "Add to calendar and mark as pending": [
-        "将日历添加到日历中并标记为待定"
-      ]
-    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "您好，我现在有事不在，暂时无法处理邮件。"
@@ -1258,11 +1199,6 @@
       ],
       "Two-year": [
         "两年付费"
-      ]
-    },
-    "breadcrumb": {
-      "Calendars": [
-        "日历"
       ]
     },
     "Bridge version load failed": {
@@ -1369,40 +1305,6 @@
         "添加用户或群组"
       ]
     },
-    "Calendar edit button tooltip": {
-      "Edit calendar": [
-        "编辑日历"
-      ]
-    },
-    "Calendar export section description": {
-      "Download an ICS file with all the events from the selected calendar.": [
-        "从所选日历中下载包含所有事件的ICS文件。"
-      ]
-    },
-    "Calendar import section description": {
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "您可以将其他日历的 ICS 文件导入到 ${ CALENDAR_APP_NAME }，方便您快速导入一个日程或整个议程。"
-      ]
-    },
-    "Calendar invite status label": {
-      "Declined": [
-        "已拒绝"
-      ],
-      "Invite sent": [
-        "邀请已发送"
-      ]
-    },
-    "Calendar link purpose update success message": {
-      "Label added": [
-        "标签已添加"
-      ],
-      "Label deleted": [
-        "标签已删除"
-      ],
-      "Label edited": [
-        "标签已编辑"
-      ]
-    },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
         "标签只对您可见"
@@ -1423,38 +1325,6 @@
         "您已拥有查看此日历的权限"
       ]
     },
-    "Calendar settings link share description": {
-      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "创建日历链接与非 ${ BRAND_NAME } 用户分享。只有您可以添加或删除日程。"
-      ]
-    },
-    "Calendar settings private share description": {
-      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "与其他 ${ BRAND_NAME } 用户分享您的日历，还可以允许协作添加或更改日程，每位用户的权限都能随时调整。"
-      ]
-    },
-    "Calendar settings section title": {
-      "Share calendar": [
-        "共享日历"
-      ],
-      "Share outside ${ BRAND_NAME }": [
-        "与非 ${ BRAND_NAME } 用户共享"
-      ],
-      "Share with ${ BRAND_NAME } users": [
-        "与 ${ BRAND_NAME } 用户分享"
-      ],
-      "Share with anyone": [
-        "分享至他人"
-      ]
-    },
-    "Calendar share permission label": {
-      "Edit event details": [
-        "编辑事件详情"
-      ],
-      "See all event details": [
-        "查看所有事件详情"
-      ]
-    },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "允许查看、创建及修改日程"
@@ -1468,21 +1338,7 @@
         "未能检索 ${ address } 的联系信息"
       ]
     },
-    "Calendar sharing permission change notification": {
-      "Permissions changed for ${ email }": [
-        "${ email } 的权限已更改"
-      ]
-    },
     "Calendar status": {
-      "Active": [
-        "进行中"
-      ],
-      "Default": [
-        "默认"
-      ],
-      "Disabled": [
-        "已停用"
-      ],
       "Not synced": [
         "未同步"
       ],
@@ -1528,11 +1384,6 @@
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "距上次更新已超过 12 小时，${ CALENDAR_APP_NAME } 将在数小时内尝试更新日历。"
-      ]
-    },
-    "Calendar table settings button tooltip": {
-      "Open settings": [
-        "打开设置"
       ]
     },
     "Calendar view": {
@@ -2736,22 +2587,9 @@
         "星期三"
       ]
     },
-    "Default calendar event settings section title": {
-      "Default event settings": [
-        "默认事件设置"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "未知"
-      ]
-    },
-    "Delete calendar section description": {
-      "All events in this calendar will be deleted.": [
-        "此日历中的所有事件都将被删除。"
-      ],
-      "You will no longer have access to this calendar.": [
-        "您将无法再访问此日历。"
       ]
     },
     "Delinquent modal title": {
@@ -3046,9 +2884,6 @@
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "自动回复为付费功能，请升级到付费账户以使用此功能。"
-      ],
-      "Calendar cannot be found": [
-        "找不到日历"
       ],
       "Calendar limit reached": [
         "日历数量达到上限"
@@ -3458,9 +3293,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "您的用户数已达上限，升级账户后方可继续添加用户。"
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "您需要激活机构密钥，否则无法添加用户、地址或登录非私密的成员账户。"
-      ],
       "You must privatize all users before generating new organization keys": [
         "生成组织密钥前须将所有用户设为私密"
       ],
@@ -3722,14 +3554,6 @@
         "没有选择图像"
       ]
     },
-    "Error when exporting event from calendar": {
-      "Event @ ${ timeString }": [
-        "事件 @ ${ timeString }"
-      ],
-      "Event from ${ timeString }, ${ rruleString }": [
-        "来自 ${ timeString }, ${ rruleString } 的事件"
-      ]
-    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "无法解密附加的 ICS 文件"
@@ -3777,53 +3601,6 @@
     "Event title": {
       "(no title)": [
         "(无标题)"
-      ]
-    },
-    "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } events exported": [
-        "${ totalProcessed }/${ totalToProcess } 事件已导出"
-      ],
-      "Calendar successfully exported. You can now save the ICS file.": [
-        "成功导出日历，您现在可以保存 ICS 文件。"
-      ],
-      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "正在解密您日历中的事件: ${ totalProcessed }/${ totalToProcess }"
-      ],
-      "Due to a password reset, none of your events could be decrypted and exported.": [
-        "由于密码重置，您的任何事件都无法解密和导出。"
-      ],
-      "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "由于密码重置，您的某些事件无法解密和导出。"
-      ],
-      "Error decrypting event": [
-        "解密事件时出错"
-      ],
-      "Learn how to restore encrypted events with old password": [
-        "了解如何使用旧密码来恢复加密事件"
-      ],
-      "Loading events": [
-        "日程加载中"
-      ],
-      "None of the events could be exported.": [
-        "没有任何日程可以导出。"
-      ],
-      "Password reset - event cannot be decrypted": [
-        "密码重置——事件无法解密"
-      ],
-      "Password reset - multiple events cannot be decrypted": [
-        "密码重置——多个事件无法解密"
-      ],
-      "Please don't close the tab before the exporting process is finished.": [
-        "导出结束前请勿关闭此分页。"
-      ],
-      "Some of your events could not be exported.": [
-        "无法导出某些事件。"
-      ],
-      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "导出过程由于网络中断无法导出，请重试。"
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        "您可以保存成功导出事件的 ICS 文件。"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4274,12 +4051,6 @@
       ]
     },
     "Header": {
-      "Access": [
-        "权限"
-      ],
-      "Action": [
-        "操作"
-      ],
       "Actions": [
         "操作"
       ],
@@ -4304,9 +4075,6 @@
       "Key type": [
         "密钥类型"
       ],
-      "Label": [
-        "标签"
-      ],
       "Location": [
         "地理位置"
       ],
@@ -4319,9 +4087,6 @@
       "Organization key fingerprint": [
         "机构密钥指纹"
       ],
-      "Permissions": [
-        "权限"
-      ],
       "Protection": [
         "防护措施"
       ],
@@ -4333,9 +4098,6 @@
       ],
       "Time": [
         "时间"
-      ],
-      "User": [
-        "用户"
       ]
     },
     "Header for addresses table": {
@@ -4387,17 +4149,6 @@
       ],
       "Token name": [
         "专用密码名称"
-      ]
-    },
-    "Header; Table with list of calendars arranged by type": {
-      "Holidays": [
-        "节假日"
-      ],
-      "Other": [
-        "其它"
-      ],
-      "Subscribed": [
-        "已订阅"
       ]
     },
     "Hint": {
@@ -4759,9 +4510,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的前沿加密技术意味着没有人能够窃取您的密码，包括我们自己。"
       ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } 将设置为默认日历。"
-      ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 个新日历"
       ],
@@ -4774,9 +4522,6 @@
       "${ discountPercentage } forever": [
         "终身享受 ${ discountPercentage } 折扣"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } 将不再保留文件的旧版本。"
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 无效"
       ],
@@ -4785,9 +4530,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }：小图预览"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } 将设置为默认日历。"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 也允许只用一个密码代替登录和邮箱密码。输入您要使用的密码并点击保存即可转为单密码模式。"
@@ -4909,9 +4651,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "\"一个用户\"指联系着一个用户名、邮箱和个体的账号。"
       ],
-      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "跨设备无缝访问您的密码并保护您的在线身份。下载并安装相关的 ${ PASS_APP_NAME } 应用程序和扩展程序。"
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "账户因欠费已被限制使用，请联系机构管理员。"
       ],
@@ -4947,9 +4686,6 @@
       ],
       "Add image URL": [
         "添加图片地址"
-      ],
-      "Add label": [
-        "添加标签"
       ],
       "Add multiple users to your organization at once.": [
         "一次性为您的组添加多个用户。"
@@ -5020,23 +4756,8 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "任何有此链接的人都可以在日历上看到您的状态 (空闲/忙碌)。他们无法查看事件详细信息，例如标题、地点或参与者。"
       ],
-      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "任何有此链接的人都无法同步或获取您日历内容更新。如果您想再次授予他们访问权限，则必须创建一个新链接。"
-      ],
       "Are you sure you want to delete this address?": [
         "确定要删除此地址吗？"
-      ],
-      "Are you sure you want to delete this calendar?": [
-        "确定要删除此日历吗？"
-      ],
-      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "您确定要删除此日历吗？所有您分享的与此日历相关的地址将会失效。"
-      ],
-      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "您确定要删除此日历吗？其中所有的事件也将被删除。"
-      ],
-      "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "您确定要删除此日历吗？您可以稍后添加假期日历。"
       ],
       "Are you sure you want to delete this domain?": [
         "确定要删除此域名吗？"
@@ -5233,9 +4954,6 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "删除其他 MX 记录，或者确保 ${ MAIL_APP_NAME } 的优先级数字最小。"
       ],
-      "Delete link?": [
-        "删除链接？"
-      ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 图标"
       ],
@@ -5287,9 +5005,6 @@
       "Edit email address": [
         "编辑邮箱地址"
       ],
-      "Edit label": [
-        "更改标签"
-      ],
       "Edit link": [
         "修改链接"
       ],
@@ -5310,9 +5025,6 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "带有此标签的邮件不会被删除，且仍可在相应文件夹中找到。"
-      ],
-      "Enable this address to join this calendar": [
-        "启用此地址以加入日历"
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "请尽可能在使用专用密码的服务中开启 TLS 或 SSL 功能。"
@@ -5364,9 +5076,6 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "请输入您的密保手机号，我们将把您的用户名或邮箱地址发送至该号码。"
-      ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        "事件邀请与回应都将采用这一语言发送。"
       ],
       "Expired": [
         "已过期"
@@ -5427,9 +5136,6 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "若不满意可要求退款。"
-      ],
-      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "若系统时区与当前配置时区不一致，则询问是否更改（每天最多一次）。"
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "若此域名正接收邮件，请在更改 MX 记录前点选 ${ boldAddresses } 选项卡并添加所有活跃中的邮件地址以确保平稳转移服务。"
@@ -5614,9 +5320,6 @@
       "Link created": [
         "链接已创建"
       ],
-      "Link deleted": [
-        "链接已删除"
-      ],
       "Link expired": [
         "链接已过期"
       ],
@@ -5733,9 +5436,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "只有在与非 ${ BRAND_NAME } 用户使用 PGP 通讯时才应更改下列选项。"
-      ],
-      "Only you can see the labels.": [
-        "标签只对您可见。"
       ],
       "Open source": [
         "开放源代码"
@@ -5932,9 +5632,6 @@
       "Remember to share the user's sign in details with them.": [
         "请记住与他们分享用户的登录详细信息。"
       ],
-      "Remove one of your calendars to join this one": [
-        "在加入此日历之前请先移除一个已有日历"
-      ],
       "Report link expired": [
         "报告链接已过期"
       ],
@@ -6006,12 +5703,6 @@
       ],
       "Setting up your organization": [
         "设置您的组织"
-      ],
-      "Settings update failed": [
-        "设置更新失败"
-      ],
-      "Settings updated": [
-        "设置已更新"
       ],
       "Show original message": [
         "显示原始邮件"
@@ -6102,9 +5793,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked }的提示将不会再出现，但您仍然可以在${ encryptionAndKeysLink }设置中解密数据。"
-      ],
-      "The calendar will be removed from your account.": [
-        "日历将会从您的账号中移除。"
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "电子邮件验证链接已过期。请登录以重新发送验证链接。"
@@ -6201,12 +5889,6 @@
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "此操作将退订现有的付费服务，您将失去当前已累积的所有特权，付费账户的剩余时长将折算为余额返还。"
-      ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "这将删除所有早于 ${ rententionLabel } 的旧版本文件。"
-      ],
-      "This will delete all previous versions of your files.": [
-        "这将删除文件的所有旧版本。"
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "这将禁用您当前的恢复密语，您将无法使用它来访问账户或解密数据。"
@@ -6367,9 +6049,6 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "升级账户即可增设一个简短的 @pm.me 邮箱地址，这个域名可以代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
       ],
-      "Upgrade to unlock": [
-        "升级以解锁"
-      ],
       "Upload picture": [
         "上传图片"
       ],
@@ -6417,9 +6096,6 @@
       ],
       "Version ${ version }": [
         "版本 ${ version }"
-      ],
-      "Version history": [
-        "版本历史"
       ],
       "Visa Secure logo": [
         "Visa Secure 图标"
@@ -6604,9 +6280,6 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您没有设置任何找回账户的方式，一旦忘记密码，账户将无法找回。是否继续？"
       ],
-      "You have no calendars to export.": [
-        "您没有要导出的日历。"
-      ],
       "You have no saved payment methods.": [
         "您尚未添加支付方式。"
       ],
@@ -6628,9 +6301,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "您需要在 PayPal 账户中绑定信用卡或银行账户，如果您没有绑定，请点击下方按钮。"
       ],
-      "You need to have an active personal calendar to import your events from ICS.": [
-        "从ICS导入日程之前需要有一个在用的个人日历。"
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "您已经使用了 ${ spaceDisplayed }% 的存储空间。${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -6639,9 +6309,6 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "您需要导出此密钥的备份，以供恢复其加密的数据。"
-      ],
-      "You still need to reply to invitations for the host to see your response.": [
-        "您仍然需要回复活动举办方的邀请，让他们看到您的回应。"
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "登录后您将被重定向到 ${ destination } 。"
@@ -7133,9 +6800,6 @@
     "Knowledge base link label": {
       "Here's how": [
         "了解如何操作"
-      ],
-      "Learn more": [
-        "了解详情"
       ]
     },
     "Label": {
@@ -7255,9 +6919,6 @@
       ],
       "Auto-delete unwanted messages": [
         "自动删除无用邮件"
-      ],
-      "Auto-detect primary time zone": [
-        "自动检测主要时区"
       ],
       "Auto-reply": [
         "自动回复"
@@ -7427,9 +7088,6 @@
       "Default language": [
         "默认语言"
       ],
-      "Default language (${ defaultLanguage })": [
-        "默认语言 (${ defaultLanguage })"
-      ],
       "Default PGP scheme": [
         "默认 PGP 格式"
       ],
@@ -7474,9 +7132,6 @@
       ],
       "Don't ask again": [
         "不再询问"
-      ],
-      "Don't keep versions": [
-        "不要保留版本"
       ],
       "Duration": [
         "时间"
@@ -7642,9 +7297,6 @@
       ],
       "Level for NetShield blocker filtering": [
         "NetShield 过滤级别"
-      ],
-      "Link label": [
-        "链接标签"
       ],
       "Mail Server (IMAP)": [
         "邮件服务器 (IMAP)"
@@ -7862,12 +7514,6 @@
       "Send crash reports": [
         "发送崩溃报告"
       ],
-      "Send in": [
-        "信函语种"
-      ],
-      "Show secondary time zone": [
-        "显示次要时区"
-      ],
       "Show sender images": [
         "显示发件人头像"
       ],
@@ -8057,19 +7703,6 @@
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "向 ${ MAIL_APP_NAME } 账户中添加您自己的域名。"
-      ]
-    },
-    "Label for default event notifications": {
-      "All-day event notifications": [
-        "全天事件通知"
-      ],
-      "Notifications": [
-        "通知"
-      ]
-    },
-    "Label for default event settings": {
-      "Duration": [
-        "时间"
       ]
     },
     "Label for domain modal": {
@@ -8345,16 +7978,6 @@
         "导入带有 ${ selectedItemsToImportCount }/${ itemsToImportCount } 类标签的邮件并加标签"
       ]
     },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "每个日历最多可以创建 ${ MAX_LINKS_PER_CALENDAR } 个链接。要对该日历新建链接，请先从下方列表中删除一个。"
-      ]
-    },
-    "Maximum shared calendar members reached alert": {
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } members.": [
-        "成员数量不能超过 ${ MAX_CALENDAR_MEMBERS } 人。"
-      ]
-    },
     "Member action": {
       "Delete": [
         "删除"
@@ -8614,23 +8237,6 @@
         "VPN 速度一般"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "降级至 ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "浏览所有 ${ BRAND_NAME } 账户等级"
-      ],
-      "From ${ price }": [
-        "低至 ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "继续使用 ${ currentPlanName } 账户"
-      ],
-      "Upgrade now": [
-        "立即升级账户"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "前去结算"
@@ -8667,6 +8273,23 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "开通 ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "降级至 ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "浏览所有 ${ BRAND_NAME } 账户等级"
+      ],
+      "From ${ price }": [
+        "低至 ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "继续使用 ${ currentPlanName } 账户"
+      ],
+      "Upgrade now": [
+        "立即升级账户"
       ]
     },
     "new_plans: feature": {
@@ -9302,15 +8925,6 @@
       ]
     },
     "Notification in share calendar modal": {
-      "Invitation deleted": [
-        "邀请已删除"
-      ],
-      "Invitation revoked": [
-        "邀请已撤销"
-      ],
-      "Member deleted": [
-        "成员已删除"
-      ],
       "Members added": [
         "成员已添加"
       ]
@@ -9321,11 +8935,6 @@
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "已加入 ${ calendarName } (${ senderEmail })"
-      ]
-    },
-    "Notification success": {
-      "Event defaults updated": [
-        "事件默认值已更新"
       ]
     },
     "Notification time input": {
@@ -9719,11 +9328,6 @@
         "添加信用卡/借记卡"
       ]
     },
-    "Personal calendar section description": {
-      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
-        "创建日历以保持日程安排，同时确保数据安全。"
-      ]
-    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "在邮件发送密钥的用户 ID（${ keyUserIds }）中找不到本邮箱地址"
@@ -9843,14 +9447,6 @@
         "免费版"
       ]
     },
-    "Primary timezone": {
-      "Primary time zone": [
-        "主要时区"
-      ],
-      "Secondary time zone": [
-        "次要时区"
-      ]
-    },
     "Private Member": {
       "private": [
         "私有"
@@ -9965,36 +9561,6 @@
         "安全性较强"
       ]
     },
-    "Remove calendar section description": {
-      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "取消订阅后，您将无法再访问此日历。此日历中的所有事件都将从账户中删除，但它们仍将保留在原始的公开链接中。"
-      ],
-      "You will no longer have access to this calendar.": [
-        "您将无法再访问此日历。"
-      ]
-    },
-    "Remove calendar section text": {
-      "If you leave this calendar, you'll have to ask the owner to join again.": [
-        "移除日历后，您需要向其所有者申请才能重新加入。"
-      ],
-      "This calendar will be removed from your account.": [
-        "此日历将会从您的账号中移除。"
-      ]
-    },
-    "Remove calendar section title": {
-      "Delete calendar?": [
-        "删除日历?"
-      ],
-      "Leave calendar?": [
-        "移除日历？"
-      ],
-      "Remove calendar": [
-        "移除日历"
-      ],
-      "Unsubscribe?": [
-        "取消订阅?"
-      ]
-    },
     "Restore administrator panel": {
       "Changing organization keys": [
         "更改机构密钥"
@@ -10002,14 +9568,8 @@
       "Changing organization password": [
         "更改机构密码"
       ],
-      "Creating new users": [
-        "创建用户"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "由于密码更改，您的组织管理员权限已被限制。下列操作暂不可用："
-      ],
-      "Reading emails of non-private users": [
-        "读取非私密用户的邮件"
       ]
     },
     "Select file": {
@@ -10325,11 +9885,6 @@
         "与 ${ BRAND_NAME } 用户分享"
       ]
     },
-    "Shared calendar label input placeholder": {
-      "Add label": [
-        "添加标签"
-      ]
-    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "由 ${ ownerName } 共享"
@@ -10606,14 +10161,6 @@
         "了解如何获取私人日历链接。"
       ]
     },
-    "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "新增使用 URL公开、外部或共享的日历。"
-      ],
-      "Add public, external, or shared calendars.": [
-        "添加公共、外部或共享日历。"
-      ]
-    },
     "Subscription attribute": {
       "${ ipAddresses } dedicated servers": [
         "${ ipAddresses } 个专用服务器"
@@ -10716,9 +10263,6 @@
       "Calendar information updated": [
         "日历信息已更新"
       ],
-      "Calendar removed": [
-        "日历已移除"
-      ],
       "Calendar updated": [
         "日历已更新"
       ],
@@ -10733,9 +10277,6 @@
       ],
       "Credits added": [
         "信用已添加"
-      ],
-      "Default calendar updated": [
-        "默认日历已更新"
       ],
       "Display name updated": [
         "称呼已更改"
@@ -10924,11 +10465,6 @@
         "每月"
       ]
     },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        "事件无法导出的详细信息"
-      ]
-    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "在您的所有设备上创建安全的登录详细信息。包括无限别名、20 个保管库、集成 2FA、信用卡自动填充等。"
@@ -10957,11 +10493,6 @@
       ],
       "For individuals": [
         "面向个人"
-      ]
-    },
-    "Table header; invitations to share calendar": {
-      "Shared with me": [
-        "与我共享"
       ]
     },
     "TableHeader": {
@@ -11353,9 +10884,6 @@
       "Delete account": [
         "删除账户"
       ],
-      "Delete calendar": [
-        "删除日历"
-      ],
       "Delete key permanently?": [
         "永久删除密钥？"
       ],
@@ -11370,9 +10898,6 @@
       ],
       "Delete user?": [
         "删除用户?"
-      ],
-      "Delete version history?": [
-        "删除版本历史记录？"
       ],
       "Disable ${ email }": [
         "停用 ${ email }"
@@ -11445,9 +10970,6 @@
       ],
       "Export": [
         "导出"
-      ],
-      "Export calendar": [
-        "导出日历"
       ],
       "Export private key": [
         "导出私钥"
@@ -11688,9 +11210,6 @@
       ],
       "Refer a friend": [
         "邀请好友"
-      ],
-      "Remove calendar": [
-        "移除日历"
       ],
       "Remove user?": [
         "是否移除用户？"
@@ -12223,16 +11742,6 @@
       ],
       "Your default font will look like following:": [
         "您的默认字体将如下所示："
-      ]
-    },
-    "Upgrade": {
-      "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
-        "升级到 ${ planName } ，即可立即将最多 ${ n } 台设备连接到VPN"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "升级到 ${ MAIL_SHORT_APP_NAME } 付费计划以共享您的日历。"
       ]
     },
     "upsell panel": {

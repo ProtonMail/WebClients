@@ -2104,8 +2104,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte upgrade dein Abonnement, um weitere Benutzer hinzuzufügen."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Du musst deine Organisationsschlüssel aktivieren. Ohne deren Aktivierung ist es nicht möglich, neue Benutzer anzulegen, Adressen zu bestehenden Benutzern hinzuzufügen oder auf nicht-private Benutzerkonten zuzugreifen."
+      "You must privatize all users before generating new organization keys": [
+        "Du musst zunächst alle Benutzer privatisieren, bevor du neue Organisationsschlüssel erzeugst."
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Dein Konto oder deine Organisation enthält derzeit eine überfällige Rechnung. Bitte begleiche alle unbezahlten Rechnungen."
@@ -3587,6 +3587,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Lade dein Konto mit Guthaben auf, mit dem du ein anderes Abonnement abschließen oder dein aktuelles Abonnement verlängern kannst. Du erhältst ein Guthaben für jeden ${ i18nCurrency }, der ausgegeben wird."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Anzahl E-Mail-Adressen"
@@ -5761,14 +5764,8 @@
       "Changing organization password": [
         "Passwort der Organisation ändern"
       ],
-      "Creating new users": [
-        "Neue Benutzer anlegen"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Aufgrund einer Passwortänderung wurden deine Organisations-Administrationsprivilegien eingeschränkt. Die folgenden Aktionen sind nicht länger erlaubt:"
-      ],
-      "Reading emails of non-private users": [
-        "E-Mails von nicht-privaten Nutzern lesen"
       ]
     },
     "Role": {
