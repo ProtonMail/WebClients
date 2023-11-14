@@ -1,0 +1,11 @@
+.electron-draggeable-header {
+	-webkit-app-region: drag;
+	user-select: none;
+	z-index: 200;
+
+	--h-custom: 1.75rem;
+}
+
+.header button {
+	-webkit-app-region: no-drag;
+}

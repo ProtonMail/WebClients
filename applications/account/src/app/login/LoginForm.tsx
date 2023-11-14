@@ -21,6 +21,7 @@ import {
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
@@ -42,7 +43,10 @@ interface Props {
     externalSSO?: boolean;
     defaultUsername?: string;
     hasRemember?: boolean;
-    trustedDeviceRecoveryFeature?: { loading?: boolean; feature: { Value: boolean } | undefined };
+    trustedDeviceRecoveryFeature?: {
+        loading?: boolean;
+        feature: { Value: boolean } | undefined;
+    };
     paths: Paths;
     authType: 'srp' | 'external-sso';
     onChangeAuthType: (authType: 'srp' | 'external-sso') => void;
@@ -63,6 +67,7 @@ const LoginForm = ({
     const [submitting, withSubmitting] = useLoading();
     const [username, setUsername] = useState(defaultUsername);
     const [password, setPassword] = useState('');
+    const isElectron = isElectronApp();
     const [persistent, setPersistent] = useLocalState(false, defaultPersistentKey);
 
     const usernameRef = useRef<HTMLInputElement>(null);
@@ -117,7 +122,9 @@ const LoginForm = ({
         }
         const run = async () => {
             const payload = await challengeRefLogin.current?.getChallenge().catch(noop);
-            return onSubmit({ username, password, persistent, payload });
+
+            // We always persist session when using Electron
+            return onSubmit({ username, password, persistent: isElectron || persistent, payload });
         };
         withSubmitting(run()).catch(noop);
     };
@@ -179,7 +186,7 @@ const LoginForm = ({
                     />
                 )}
 
-                {hasRemember && authType !== 'external-sso' && (
+                {hasRemember && authType !== 'external-sso' && !isElectron && (
                     <div className="flex flex-row flex-align-items-start">
                         <Checkbox
                             id="staySignedIn"

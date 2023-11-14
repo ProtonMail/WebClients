@@ -1,5 +1,6 @@
 import { ReactNode, Ref } from 'react';
 
+import ElectronDraggeableHeaderWrapper from '@proton/components/components/electron/ElectronDraggeableHeaderWrapper';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -16,6 +17,7 @@ interface Props {
 const PrivateAppContainer = ({ header, sidebar, children, top, bottom, containerRef, drawerApp }: Props) => {
     return (
         <div className="flex flex-row flex-nowrap h-full">
+            <ElectronDraggeableHeaderWrapper />
             <div
                 className="content-container flex flex-column flex-nowrap no-scroll flex-item-fluid relative"
                 ref={containerRef}
