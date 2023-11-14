@@ -242,6 +242,7 @@ export const LoginNew: VFC<ItemNewViewProps<'login'>> = ({ shareId, url, onCance
                                                     className="pass-item-icon"
                                                     title={c('Action').t`Generate alias`}
                                                     key="generate-alias"
+                                                    tabIndex={-1}
                                                     onClick={() =>
                                                         form
                                                             .setValues((values) =>
