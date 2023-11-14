@@ -1,8 +1,7 @@
-/* eslint-disable no-restricted-globals */
+declare const self: ServiceWorkerGlobalScope;
 
 interface DownloadConfig {
     stream: ReadableStream<Uint8Array>;
-    port: string;
     filename: string;
     mimeType: string;
     size?: number;
@@ -55,6 +54,11 @@ function createDownloadStream(port: MessagePort) {
 class DownloadServiceWorker {
     pendingDownloads = new Map<string, DownloadConfig>();
 
+    /**
+     * A counter used to generate IDs for `pendingDownloads`
+     */
+    downloadId = 1;
+
     constructor() {
         self.addEventListener('install', this.onInstall);
         self.addEventListener('activate', this.onActivate);
@@ -62,38 +66,66 @@ class DownloadServiceWorker {
         self.addEventListener('fetch', this.onFetch);
     }
 
-    onInstall = () => {
-        (self as any).skipWaiting();
+    private generateUID = () => {
+        if (this.downloadId > 9000) {
+            this.downloadId = 0;
+        }
+
+        return this.downloadId++;
     };
 
-    onActivate = (event: any) => {
-        event.waitUntil((self as any).clients.claim());
+    onInstall = () => {
+        void self.skipWaiting();
+    };
+
+    onActivate = (event: ExtendableEvent) => {
+        event.waitUntil(self.clients.claim());
     };
 
     /**
      * Intercepts requests on the generated download url
      * and responds with a stream, that client itself controls.
      */
-    onFetch = (event: any) => {
-        const { url } = event.request;
+    onFetch = (event: FetchEvent) => {
+        const url = new URL(event.request.url);
 
-        if (url.endsWith('/sw/ping')) {
+        // Our service worker is registered on the global scope
+        // We currently only care about the /sw/* scope
+        if (!url.pathname.startsWith('/sw')) {
+            return;
+        }
+
+        // The main thread periodically wakes up the service worker with a ping
+        if (url.pathname.endsWith('/sw/ping')) {
             return event.respondWith(new Response('pong', { headers: new Headers(SECURITY_HEADERS) }));
         }
 
-        const pendingDownload = this.pendingDownloads.get(url);
+        // URL format: /sw/ID
+        const chunks = url.pathname.split('/').filter((item) => !!item);
+        const id = chunks[chunks.length - 1];
+
+        const pendingDownload = this.pendingDownloads.get(id);
+
+        // Return a 404 if we can't find the download.
+        // In some cases, the download ID is not added to the map on time.
+        // If we were to simply return, this query would get sent to the real network.
         if (!pendingDownload) {
-            return;
+            return event.respondWith(
+                new Response(undefined, {
+                    status: 404,
+                    headers: new Headers(SECURITY_HEADERS),
+                })
+            );
         }
 
         const { stream, filename, size, mimeType } = pendingDownload;
 
-        this.pendingDownloads.delete(url);
+        this.pendingDownloads.delete(id);
 
         const headers = new Headers({
             ...(size ? { 'Content-Length': `${size}` } : {}),
             'Content-Type': mimeType,
-            'Content-Disposition': `attachment; filename="${encodeURI(filename)}"`,
+            'Content-Disposition': `attachment; filename="${encodeURIComponent(filename)}"`,
             ...SECURITY_HEADERS,
         });
 
@@ -104,25 +136,26 @@ class DownloadServiceWorker {
      * Called once before each download, opens a stream for file data
      * and generates a unique download link for the app to call to download file.
      */
-    onMessage = (event: any) => {
+    onMessage = (event: ExtendableMessageEvent) => {
         if (event.data?.action !== 'start_download') {
             return;
         }
 
+        const id = this.generateUID();
+
         const { filename, mimeType, size } = event.data.payload;
-        const downloadUrl = encodeURI(`${(self as any).registration.scope}sw/${Math.random()}/${filename}`);
+        const downloadUrl = new URL(`/sw/${id}`, self.registration.scope);
 
         const port = event.ports[0];
 
-        this.pendingDownloads.set(downloadUrl, {
+        this.pendingDownloads.set(`${id}`, {
             stream: createDownloadStream(port),
             filename,
             mimeType,
             size,
-            port,
         });
 
-        port.postMessage({ action: 'download_started', payload: downloadUrl });
+        port.postMessage({ action: 'download_started', payload: downloadUrl.toString() });
     };
 }
 
