@@ -1,25 +1,20 @@
 import { put, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
-import { unlockSession } from '@proton/pass/lib/auth/session-lock';
 import { sessionUnlockFailure, sessionUnlockIntent, sessionUnlockSuccess } from '@proton/pass/store/actions';
 import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
 
 function* unlockSessionWorker(
-    { onSessionUnlocked, onSignout }: WorkerRootSagaOptions,
+    { getAuthService }: WorkerRootSagaOptions,
     { payload, meta: { callback: onUnlockResult, request } }: ReturnType<typeof sessionUnlockIntent>
 ) {
     try {
-        const sessionLockToken: string = yield unlockSession(payload.pin);
+        const sessionLockToken: string = yield getAuthService().unlock(payload.pin);
         const successMessage = sessionUnlockSuccess(request.id, { sessionLockToken });
-
         yield put(successMessage);
-        yield onSessionUnlocked?.(sessionLockToken);
-
         onUnlockResult?.(successMessage);
     } catch (err: any) {
         const inactiveSession = err.name === 'InactiveSession';
-        if (inactiveSession) onSignout?.();
 
         const failureMessage = sessionUnlockFailure(request.id, err, {
             canRetry: !inactiveSession,
