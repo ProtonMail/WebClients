@@ -129,6 +129,12 @@ const getPublicKeysForCalendarSharing = async ({
         intendedForEmail: false,
     });
 
+    if (error) {
+        return {
+            error,
+        };
+    }
+
     if (!isInternal) {
         return {
             error: new ShareCalendarValdidationError(NOT_PROTON_ACCOUNT),
@@ -148,7 +154,6 @@ const getPublicKeysForCalendarSharing = async ({
     return {
         publicKey: sendKey,
         isKeyPinned: isSendKeyPinned,
-        error,
     };
 };
 
