@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
@@ -9,6 +10,9 @@ import isTruthy from '@proton/utils/isTruthy';
 import { AppLink, SettingsLink } from '../../components';
 
 export const apps = () => {
+    if (isElectronApp()) {
+        return [APPS.PROTONMAIL, APPS.PROTONCALENDAR];
+    }
     return [APPS.PROTONMAIL, APPS.PROTONCALENDAR, APPS.PROTONDRIVE, APPS.PROTONVPN_SETTINGS, APPS.PROTONPASS].filter(
         isTruthy
     );
