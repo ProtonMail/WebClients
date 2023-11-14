@@ -80,16 +80,16 @@
         "Allineamento"
       ],
       "All Read": [
-        "Tutto Letto"
+        "Tutta la posta letta"
       ],
       "All Starred": [
-        "Tutta preferita"
+        "Tutta la posta importante"
       ],
       "All Unread": [
-        "Tutti non letti"
+        "Tutti la posta non letta"
       ],
       "All Unstarred": [
-        "Tutta non preferita"
+        "Tutta la posta non importante"
       ],
       "Apply": [
         "Applica"
@@ -579,10 +579,10 @@
         "Gestisci etichette"
       ],
       "Mark as read": [
-        "Segna come letto"
+        "Segna come letta"
       ],
       "Mark as unread": [
-        "Segna come non letto"
+        "Segna come non letta"
       ],
       "mark emails as": [
         "segna le email come"
@@ -891,7 +891,7 @@
         "Seleziona tutti"
       ],
       "Select All": [
-        "Seleziona Tutto"
+        "Seleziona tutto"
       ],
       "Select all messages": [
         "Seleziona tutti i messaggi"
@@ -1005,7 +1005,7 @@
         "Impossibile caricare alcune immagini con la protezione dai tracker attiva."
       ],
       "Star": [
-        "Aggiungi alla posta preferita"
+        "Segna come importante"
       ],
       "Start import": [
         "Avvia importazione"
@@ -1084,7 +1084,7 @@
         "Lista non ordinata"
       ],
       "Unstar": [
-        "Rimuovi dalla posta preferita"
+        "Segna come non importante"
       ],
       "Unsubscribe": [
         "Disiscriviti"
@@ -1252,19 +1252,19 @@
         "Ha risposto a tutti"
       ],
       "Star conversation": [
-        "Aggiungi conversazione alla posta preferita"
+        "Segna conversazione come importante"
       ],
       "Star message": [
-        "Aggiungi messaggio alla posta preferita"
+        "Segna messaggio come importante"
       ],
       "Unread email": [
         "Email non lette"
       ],
       "Unstar conversation": [
-        "Rimuovi conversazione dalla posta preferita"
+        "Segna conversazione come non importante"
       ],
       "Unstar message": [
-        "Rimuovi messaggio dalla posta preferita"
+        "Segna messaggio come non importante"
       ]
     },
     "Alternative text for conversation image": {
@@ -1980,7 +1980,7 @@
         "Vai a spam"
       ],
       "Go to Starred": [
-        "Vai alla posta preferita"
+        "Vai alla posta importante"
       ],
       "Go to Trash": [
         "Vai al cestino"
@@ -4195,13 +4195,13 @@
     },
     "Filter option": {
       "All": [
-        "Tutti"
+        "Tutto"
       ],
       "Hide moved message": [
         "Nascondi messaggio spostato"
       ],
       "Read": [
-        "Letto"
+        "Letta"
       ],
       "Show moved message": [
         "Mostra messaggio spostato"
@@ -4212,7 +4212,7 @@
     },
     "Filter option to only show message with attachments": {
       "Has file": [
-        "Contiene file"
+        "Ha allegati"
       ]
     },
     "Filter preview": {
@@ -4220,7 +4220,7 @@
         "leggi"
       ],
       "starred": [
-        "preferita"
+        "importante"
       ]
     },
     "Font Face Default": {
@@ -4385,7 +4385,7 @@
         "Accedi all'app mobile per completare questo passaggio"
       ],
       "Storage unlocked": [
-        "Archiviazione sbloccata"
+        "Spazio sbloccato"
       ],
       "This feature is currently unavailable": [
         "Questa funzionalità non è attualmente disponibile"
@@ -5764,6 +5764,9 @@
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Il mittente originale di questo messaggio non è più valido. Il tuo messaggio verrà inviato dal tuo indirizzo predefinito ${ defaultEmail }."
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Il proprietario di questo indirizzo ha disabilitato la crittografia end-to-end. Per poter inviare email crittografate a questo indirizzo, il proprietario deve abilitare nuovamente la crittografia end-to-end."
+      ],
       "The sender has requested a read receipt.": [
         "Il mittente ha richiesto una conferma di lettura."
       ],
@@ -6305,7 +6308,7 @@
         "Vai a spam"
       ],
       "Go to Starred": [
-        "Vai alla posta preferita"
+        "Vai alla posta importante"
       ],
       "Go to Trash": [
         "Vai al cestino"
@@ -6329,10 +6332,10 @@
         "Carica i contenuti remoti"
       ],
       "Mark as read": [
-        "Segna come letto"
+        "Segna come letta"
       ],
       "Mark as unread": [
-        "Segna come non letto"
+        "Segna come non letta"
       ],
       "Minimize / maximize composer": [
         "Minimizza / massimizza il compositore"
@@ -6410,7 +6413,7 @@
         "Mostra email non lette"
       ],
       "Star": [
-        "Preferita"
+        "Importante"
       ]
     },
     "Keyboard shortcut section name": {
@@ -6471,7 +6474,7 @@
         "Tutti i contatti"
       ],
       "Also archive": [
-        "Archivia anche"
+        "Sposta in archivio"
       ],
       "Always label sender's emails": [
         "Etichetta sempre le email del mittente"
@@ -6810,7 +6813,7 @@
         "Chiavi pubbliche"
       ],
       "Read": [
-        "Letto"
+        "Letta"
       ],
       "Recipient": [
         "Destinatario"
@@ -6840,7 +6843,7 @@
         "Dimensione:"
       ],
       "Starred": [
-        "Preferita"
+        "Importante"
       ],
       "Statement": [
         "Istruzione"
@@ -7117,7 +7120,7 @@
         "Spam"
       ],
       "Starred": [
-        "Preferita"
+        "Importante"
       ],
       "Terms": [
         "Termini"
@@ -7926,6 +7929,11 @@
         "I contatti per i seguenti indirizzi sono stati eliminati, quindi le preferenze di crittografia corrispondenti sono state aggiornate di conseguenza:"
       ]
     },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "I contatti per i seguenti indirizzi hanno disabilitato la crittografia end-to-end sul proprio account, quindi le preferenze di crittografia corrispondenti sono state aggiornate di conseguenza:"
+      ]
+    },
     "Send email with errors": {
       "Do you want to send the email anyway?": [
         "Inviarlo tramite email in ogni caso?"
@@ -8205,16 +8213,16 @@
     },
     "Sort option": {
       "Largest first": [
-        "Più grandi prima"
+        "Più grande prima"
       ],
       "Newest first": [
-        "Prima i più recenti"
+        "Più recente prima"
       ],
       "Oldest first": [
-        "Prima i più vecchi"
+        "Meno recente prima"
       ],
       "Smallest first": [
-        "Più piccoli prima"
+        "Meno grande prima"
       ]
     },
     "specialoffer: Action": {
@@ -8668,7 +8676,7 @@
         "Messaggio segnato come letto."
       ],
       "Message marked as Starred.": [
-        "Messaggio segnato come preferito."
+        "Messaggio segnato come importante."
       ],
       "Message marked as unread.": [
         "Messaggio segnato come non letto."
@@ -9143,10 +9151,10 @@
         "Carica i contenuti remoti"
       ],
       "Mark as read": [
-        "Segna come letto"
+        "Segna come letta"
       ],
       "Mark as unread": [
-        "Segna come non letto"
+        "Segna come non letta"
       ],
       "Mark email as legitimate": [
         "Segna email come legittima"
@@ -9309,6 +9317,9 @@
       ],
       "Send with changed preferences?": [
         "Inviare con preferenze modificate?"
+      ],
+      "Send with encryption disabled?": [
+        "Inviare con la crittografia disabilitata?"
       ],
       "Send without expiration?": [
         "Inviare senza scadenza?"

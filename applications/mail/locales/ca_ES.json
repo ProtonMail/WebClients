@@ -197,6 +197,9 @@
       "Close navigation": [
         "Tanca la navegació"
       ],
+      "Close the checklist": [
+        "Tanca la llista de verificació"
+      ],
       "Close this banner": [
         "Tanca aquest bàner"
       ],
@@ -1340,11 +1343,17 @@
       "3 TB": [
         "3 TB"
       ],
+      "3,000+ servers across 65+ countries": [
+        "Més de 3 000 servidors en més de 65 països"
+      ],
       "6 users": [
         "6 usuaris"
       ],
       "Ad-blocker and malware protection": [
         "Bloquejador d'anuncis i publicitat i protecció contra programari maliciós"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "Totes les funcions de pagament de ${ MAIL_SHORT_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
       "Extended version history": [
         "Historial de versions ampliat"
@@ -1368,6 +1377,9 @@
     "bf2023: Footer": {
       "Discounts are based on standard monthly pricing.": [
         "Els descomptes es basen en els preus mensuals estàndard."
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "La vostra subscripció es renovarà automàticament a la tarifa estàndard amb descompte i durada al final del cicle de facturació."
       ]
     },
     "bf2023: Offers": {
@@ -1376,14 +1388,24 @@
       ]
     },
     "bf2023: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "Accediu al contingut dels serveis de streaming com ara Netflix, Disney+ i Prime Video i més des de qualsevol lloc."
+      ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email, compartició de calendari i més."
+      ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "Inclou suport per a 3 dominis de correu electrònic personalitzats, ${ addresses } adreça de correu electrònic, àlies il·limitats de hide-my-email, compartició de calendari i més.",
+        "Inclou suport per a 3 dominis de correu electrònic personalitzats, ${ addresses } adreces de correu electrònic, àlies il·limitats de hide-my-email, compartició de calendari i més."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
         "NetShield, dissenyat especialment, protegeix els vostres dispositius i accelera la navegació bloquejant anuncis, rastrejadors i programari maliciós."
+      ],
+      "Storage space is shared across all ${ BRAND_NAME } apps.": [
+        "L'espai d'emmagatzematge està compartit entre totes les aplicacions de ${ BRAND_NAME }."
       ]
     },
     "Bug category": {
@@ -3017,6 +3039,9 @@
       "Save time by sending emails or invitations to everyone at once, a premium feature amongst many others. Upgrade today.": [
         "Estalvieu temps enviant correus electrònics o invitacions a tothom alhora (una característica prèmium entre moltes altres). Milloreu avui."
       ],
+      "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
+        "Per Importar els vostres contactes de Google o Outlook, ${ easySwitchLink }"
+      ],
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Activeu la protecció del rastrejador de correu electrònic per evitar que els anunciants i altres persones facin un seguiment de la vostra ubicació i activitat en línia."
       ],
@@ -3043,6 +3068,11 @@
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Podeu marcar per suprimir els contactes que no voleu ni fusionar ni conservar.\nLa supressió només es farà un cop es faci clic al botó de combinació"
+      ]
+    },
+    "description": {
+      "use the Easy Switch import assistant": [
+        "utilitzeu l'assistent d'importació Easy Switch"
       ]
     },
     "Description of the purpose of the import CSV modal": {
@@ -7861,6 +7891,11 @@
         "Els contactes de les següents adreces s'han eliminat i les preferències de xifratge corresponents s'han actualitzat:"
       ]
     },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "Els contactes de les següents adreces han desactivat el xifratge d’extrem a extrem pel seu compte i les preferències de xifratge corresponents s'han actualitzat:"
+      ]
+    },
     "Send email with errors": {
       "Do you want to send the email anyway?": [
         "Vol enviar el missatge igualment?"
@@ -9241,6 +9276,9 @@
       ],
       "Send with changed preferences?": [
         "Enviar amb preferències canviades?"
+      ],
+      "Send with encryption disabled?": [
+        "Voleu enviar amb el xifratge desactivat?"
       ],
       "Send without expiration?": [
         "Enviar sense expiració?"
