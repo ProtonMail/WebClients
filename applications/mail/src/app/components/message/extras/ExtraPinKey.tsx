@@ -200,7 +200,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
             <div className="flex flex-nowrap pr-4 mb-2 md:mb-0">
                 <Icon name="exclamation-circle-filled" className="mt-1 mr-2 ml-0.5 flex-item-noshrink color-danger" />
                 <div>
-                    <span className="pr-2 flex flex-item-fluid mt-1">
+                    <span className="pr-2 flex mt-1">
                         <span className="mr-1" data-testid="extra-pin-key:content">
                             {getBannerMessage(promptKeyPinningType)}
                         </span>

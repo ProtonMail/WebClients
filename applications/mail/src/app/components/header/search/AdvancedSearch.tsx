@@ -242,8 +242,13 @@ const AdvancedSearch = ({
                                 {c('Action').t`Fewer search options`}
                             </Button>
                         </div>
-                        <div className="mb-2 flex flex-justify-space-between flex-column md:flex-row">
-                            <div className={clsx(['flex-item-fluid', isNarrow ? 'pr-0' : 'pr-4'])}>
+                        <div
+                            className={clsx(
+                                'mb-2 flex flex-justify-space-between flex-column md:flex-row',
+                                isNarrow ? 'gap-2' : 'gap-4'
+                            )}
+                        >
+                            <div className="md:flex-item-fluid">
                                 <Label className="advanced-search-label text-semibold" htmlFor="begin-date">{c('Label')
                                     .t`From`}</Label>
                                 <DateInput
@@ -254,7 +259,7 @@ const AdvancedSearch = ({
                                     onChange={handleStartDateChange}
                                 />
                             </div>
-                            <div className="flex-item-fluid">
+                            <div className="md:flex-item-fluid">
                                 <Label className="advanced-search-label text-semibold" htmlFor="end-date">{c('Label')
                                     .t`To`}</Label>
                                 <DateInput
@@ -279,6 +284,7 @@ const AdvancedSearch = ({
                                 onChange={(from) => updateModel({ ...model, from })}
                                 placeholder={c('Placeholder').t`Name or email address`}
                                 anchorRef={senderListAnchorRef}
+                                classname="flex-item-fluid"
                             />
                         </div>
                         <div className="mb-2" ref={toListAnchorRef}>
@@ -294,6 +300,7 @@ const AdvancedSearch = ({
                                 onChange={(to) => updateModel({ ...model, to })}
                                 placeholder={c('Placeholder').t`Name or email address`}
                                 anchorRef={toListAnchorRef}
+                                classname="flex-item-fluid"
                             />
                         </div>
                         <div className="mb-2">

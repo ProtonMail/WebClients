@@ -95,8 +95,8 @@ const ItemRowLayout = ({
     );
 
     return (
-        <div className="flex-nowrap flex-column w-full">
-            <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row item-titlesender">
+        <div className="w-full">
+            <div className="flex flex-align-items-center flex-nowrap flex-row item-titlesender">
                 <div className="my-auto flex w-custom" style={{ '--w-custom': '2em' }} data-testid={unread}>
                     <ItemStar element={element} />
                 </div>
@@ -202,18 +202,17 @@ const ItemRowLayout = ({
                     </span>
                 </span>
             </div>
-            <div className="flex-item-fluid flex flex-align-items-center flex-nowrap flex-row">
-                <div className="my-auto flex w-custom" style={{ '--w-custom': '2em' }}></div>
-                <div className={clsx(['item-senders flex pr-4'])}></div>
-
-                {showThumbnails && (
+            {showThumbnails && (
+                <div className="flex flex-align-items-center flex-nowrap flex-row">
+                    <div className="my-auto flex w-custom" style={{ '--w-custom': '2em' }}></div>
+                    <div className={clsx(['item-senders flex pr-4'])}></div>
                     <ItemAttachmentThumbnails
                         attachmentsMetadata={attachmentsMetadata}
                         maxAttachment={MAX_ROW_ATTACHMENT_THUMBNAILS}
                         className="flex-item-fluid attachment-thumbnail-row"
                     />
-                )}
-            </div>
+                </div>
+            )}
         </div>
     );
 };

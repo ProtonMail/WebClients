@@ -7,7 +7,6 @@ export { default as FileInput } from './FileInput';
 export { default as Input } from './Input';
 export { default as InputButton } from './InputButton';
 export * from './InputButton';
-export { default as LegacyInputField } from './LegacyInputField';
 export { default as IntegerInput } from './IntegerInput';
 export { default as PasswordInput } from './PasswordInput';
 export { default as Radio } from './Radio';

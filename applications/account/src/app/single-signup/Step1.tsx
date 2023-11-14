@@ -352,13 +352,13 @@ const FeatureItem = ({ left, text }: { left: ReactNode; text: string }) => {
 const BoxHeader = ({ step, title, right }: { step?: number; title: string; right?: ReactNode }) => {
     return (
         <div className="flex flex-align-items-center flex-justify-space-between flex-nowrap">
-            <div className="flex flex-align-items-center flex-column md:flex-row md:gap-4 gap-2">
+            <div className="flex md:flex-align-items-center flex-column md:flex-row md:gap-4 gap-2">
                 {step !== undefined && (
                     <div className="flex-item-noshrink">
                         <StepLabel step={step} />
                     </div>
                 )}
-                <h2 className="text-bold text-4xl flex-item-fluid">{title}</h2>
+                <h2 className="text-bold text-4xl md:flex-item-fluid">{title}</h2>
             </div>
             {right && <div className="flex-item-noshrink">{right}</div>}
         </div>
@@ -1291,7 +1291,7 @@ const Step1 = ({
                 )}
                 <Box className="mt-8 w-full">
                     <div className="flex flex-justify-space-between flex-column lg:flex-row ">
-                        <div className={`flex-item-fluid ${padding}`}>
+                        <div className={`lg:flex-item-fluid ${padding}`}>
                             <BoxHeader
                                 step={showStepLabel ? step++ : undefined}
                                 title={c('Header').t`Create your account`}
@@ -1452,7 +1452,7 @@ const Step1 = ({
                         <BoxHeader step={showStepLabel ? step++ : undefined} title={c('Header').t`Checkout`} />
                         <BoxContent>
                             <div className="flex flex-justify-space-between md:gap-14 gap-6 flex-column lg:flex-row">
-                                <div className="flex-item-fluid md:pr-1 order-1 lg:order-0">
+                                <div className="lg:flex-item-fluid md:pr-1 order-1 lg:order-0">
                                     <form
                                         onFocus={(e) => {
                                             const autocomplete = e.target.getAttribute('autocomplete');

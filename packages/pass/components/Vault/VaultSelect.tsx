@@ -71,7 +71,7 @@ export const VaultSelect: VFC<Props> = ({ downgradeMessage, onSubmit, optionsSel
                 {title && <div className="mb-2 text-bold text-xl">{title}</div>}
                 {didDowngrade && <Card>{downgradeMessage}</Card>}
 
-                <RadioButtonGroup name="vault-select" className="flex-columns" value={shareId} onChange={onSubmit}>
+                <RadioButtonGroup name="vault-select" className="flex-column" value={shareId} onChange={onSubmit}>
                     {sortedVaults.map((vault) => (
                         <RadioLabelledButton
                             value={vault.shareId}
