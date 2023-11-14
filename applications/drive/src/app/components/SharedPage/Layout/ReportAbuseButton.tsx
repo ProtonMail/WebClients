@@ -3,8 +3,7 @@ import React from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { Icon, useModalTwo } from '@proton/components';
-import clsx from '@proton/utils/clsx';
+import { Icon, Tooltip, useModalTwo } from '@proton/components';
 
 import { usePublicShare } from '../../../store';
 import ReportAbuseModal from '../../modals/ReportAbuseModal/ReportAbuseModal';
@@ -21,19 +20,19 @@ export default function ReportAbuseButton({ linkInfo, className }: Props) {
 
     return (
         <>
-            <Button
-                shape="ghost"
-                size="small"
-                color="weak"
-                data-testid="report-abuse-button"
-                className={clsx('flex flex-align-items-center', className)}
-                onClick={() => showReportAbuseModal({ linkInfo, onSubmit: submitAbuseReport })}
-            >
-                <span className="color-weak">
-                    <Icon size={16} name="exclamation-circle-filled" className="mr-2" />
-                    <span>{c('Label').t`Report`}</span>
-                </span>
-            </Button>
+            <Tooltip title={c('Action').t`Report an issue`}>
+                <Button
+                    shape="solid"
+                    size="medium"
+                    color="weak"
+                    data-testid="report-abuse-button"
+                    className={className}
+                    icon
+                    onClick={() => showReportAbuseModal({ linkInfo, onSubmit: submitAbuseReport })}
+                >
+                    <Icon className="color-weak" name="flag-filled" alt={c('Action').t`Report an issue`} />
+                </Button>
+            </Tooltip>
             {reportAbuseModal}
         </>
     );

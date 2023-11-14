@@ -7,11 +7,10 @@
 
 	&-container {
 		inline-size: 95vw;
-		max-inline-size: rem(1024);
 		margin-inline: auto;
 		border-radius: var(--border-radius-lg);
 		min-block-size: rem(315); // To fit exactly 4 items on different screens before its expanded.
-		padding-block: 2em;
+		padding-block-end: 2em;
 
 		@include media('>small') {
 			padding-block-end: 3em;
