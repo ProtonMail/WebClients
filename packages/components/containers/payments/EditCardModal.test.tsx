@@ -1,6 +1,6 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 
-import { Autopay } from '@proton/components/payments/core';
+import { Autopay, CardModel } from '@proton/components/payments/core';
 import { updatePaymentMethod } from '@proton/shared/lib/api/payments';
 import {
     apiMock,
@@ -13,10 +13,19 @@ import {
 } from '@proton/testing';
 
 import EditCardModal from './EditCardModal';
-import getDefault from './getDefaultCard';
 
 jest.mock('@proton/components/components/portal/Portal');
 jest.mock('@proton/components/components/toggle/Toggle');
+
+const defaultCard: CardModel = {
+    fullname: '',
+    number: '',
+    month: '',
+    year: '',
+    cvc: '',
+    zip: '',
+    country: 'US',
+};
 
 beforeEach(() => {
     jest.clearAllMocks();
@@ -39,10 +48,9 @@ it('should render', () => {
 it('should update Autopay and close modal if user edits the existing payment method', async () => {
     const paymentMethodId = 'paymentMethodId123';
     const onClose = jest.fn();
-    const cardModel = getDefault();
     const { getByTestId } = render(
         <ContextEditCardModal
-            card={cardModel}
+            card={defaultCard}
             renewState={Autopay.DISABLE}
             paymentMethodId={paymentMethodId}
             open={true}
@@ -63,10 +71,9 @@ it('should update Autopay and close modal if user edits the existing payment met
 it('should update Autopay and close modal if user edits the existing payment method (toggle off)', async () => {
     const paymentMethodId = 'paymentMethodId123';
     const onClose = jest.fn();
-    const cardModel = getDefault();
     const { getByTestId } = render(
         <ContextEditCardModal
-            card={cardModel}
+            card={defaultCard}
             renewState={Autopay.ENABLE}
             paymentMethodId={paymentMethodId}
             open={true}
@@ -103,10 +110,9 @@ it('should toggle back if API returned error', async () => {
 
     const paymentMethodId = 'paymentMethodId123';
     const onClose = jest.fn();
-    const cardModel = getDefault();
     const { getByTestId } = render(
         <ContextEditCardModal
-            card={cardModel}
+            card={defaultCard}
             renewState={Autopay.DISABLE}
             paymentMethodId={paymentMethodId}
             open={true}
@@ -134,10 +140,9 @@ it('should disable Save button while updating the toggle status', async () => {
 
     const paymentMethodId = 'paymentMethodId123';
     const onClose = jest.fn();
-    const cardModel = getDefault();
     const { getByTestId } = render(
         <ContextEditCardModal
-            card={cardModel}
+            card={defaultCard}
             renewState={Autopay.DISABLE}
             paymentMethodId={paymentMethodId}
             open={true}

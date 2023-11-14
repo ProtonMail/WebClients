@@ -32,10 +32,6 @@ export type PaypalProcessorHook = PaymentProcessorHook & {
     };
 };
 
-export function isPaypalProcessorHook(hook: any): hook is PaypalProcessorHook {
-    return hook && hook.meta && (hook.meta.type === 'paypal' || hook.meta.type === 'paypal-credit');
-}
-
 export const usePaypal = (
     { amountAndCurrency, isCredit, onChargeable, ignoreAmountCheck }: Props,
     { api, verifyPayment }: Dependencies

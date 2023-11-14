@@ -30,7 +30,6 @@ import SubscriptionContainer, { SubscriptionContainerProps } from './Subscriptio
 import { SUBSCRIPTION_STEPS } from './constants';
 
 jest.mock('@proton/components/components/portal/Portal');
-jest.mock('../../paymentMethods/useMethods');
 
 const ContextSubscriptionContainer = applyHOCs(
     withConfig(),
