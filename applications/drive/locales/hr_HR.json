@@ -246,6 +246,9 @@
       "Got it": [
         "Shvaćam"
       ],
+      "Help": [
+        "Pomoć"
+      ],
       "Hide advanced PGP settings": [
         "Sakrij napredne PGP postavke"
       ],
@@ -317,6 +320,9 @@
       ],
       "Next month": [
         "Sljedeći mjesec"
+      ],
+      "Ok": [
+        "U redu"
       ],
       "Open navigation": [
         "Otvori navigaciju"
@@ -419,6 +425,9 @@
       ],
       "Set recovery phrase": [
         "Postavite frazu za oporavak"
+      ],
+      "Settings": [
+        "Postavke"
       ],
       "Share file": [
         "Dijeli datoteku"
@@ -580,6 +589,14 @@
         "Događaj nije podržan"
       ]
     },
+    "bf2023: Deal details": {
+      "1 user": [
+        "1 korisnik"
+      ],
+      "3 TB": [
+        "3 TB"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "Problem s aplikacijom"
@@ -674,6 +691,9 @@
       "Birthday": [
         "Rođendan"
       ],
+      "Display name": [
+        "Zaslonski naziv"
+      ],
       "Email": [
         "E-pošta"
       ],
@@ -685,6 +705,9 @@
       ],
       "Language": [
         "Jezik"
+      ],
+      "Last name": [
+        "Prezime"
       ],
       "Logo": [
         "Logo"
@@ -709,6 +732,9 @@
       ],
       "Role": [
         "Uloga"
+      ],
+      "Time zone": [
+        "Vremenska zona"
       ],
       "Title": [
         "Naslov"
@@ -1608,6 +1634,9 @@
       ]
     },
     "Error importing event": {
+      "Calendar": [
+        "Kalendar"
+      ],
       "Component with wrong format": [
         "Komponenta s pogrešnim formatom"
       ],
@@ -1667,6 +1696,9 @@
       ],
       "Start time out of bounds": [
         "Početno vrijeme je van granica"
+      ],
+      "Time zone": [
+        "Vremenska zona"
       ],
       "To-do entry": [
         "Stavka liste zadataka"
@@ -1753,9 +1785,36 @@
         "(bez naslova)"
       ]
     },
+    "familyOffer_2023:Action": {
+      "Got it": [
+        "Shvaćam"
+      ]
+    },
+    "file size format": {
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
     "Filter notification": {
       "${ Label.Name } updated": [
         "${ Label.Name } ažurirano"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Veliko"
+      ],
+      "Small": [
+        "Malo"
       ]
     },
     "Group": {
@@ -2293,6 +2352,9 @@
       "Trash": [
         "Otpad"
       ],
+      "Unsaved changes": [
+        "Nespremljene promjene"
+      ],
       "Unsupported file": [
         "Nepodržana datoteka"
       ],
@@ -2360,8 +2422,14 @@
       ]
     },
     "Key badge": {
+      "Compromised": [
+        "Ugroženo"
+      ],
       "Expired": [
         "Isteklo"
+      ],
+      "Obsolete": [
+        "Zastarjelo"
       ],
       "Primary": [
         "Glavno"
@@ -2403,6 +2471,9 @@
       ],
       "Automatically save contacts": [
         "Automatsko spremanje kontakata"
+      ],
+      "Beta Access": [
+        "Beta pristup"
       ],
       "Browser": [
         "Preglednik"
@@ -2448,6 +2519,9 @@
       ],
       "Device": [
         "Uređaj"
+      ],
+      "Don't ask again": [
+        "Ne pitaj ponovno"
       ],
       "Download anyway": [
         "Preuzmi svejedno"
@@ -2496,6 +2570,9 @@
       ],
       "Folder name": [
         "Naziv mape"
+      ],
+      "From: ${ from }": [
+        "Od: ${ from }"
       ],
       "Hide password": [
         "Sakrij lozinku"
@@ -2628,6 +2705,15 @@
       ],
       "Text": [
         "Tekst"
+      ],
+      "Theme": [
+        "Tema"
+      ],
+      "To: ${ to }": [
+        "Za: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Za: ${ toEmail }"
       ],
       "Toolbar": [
         "Alatna traka"
@@ -2878,6 +2964,9 @@
       "Image URL": [
         "URL slike"
       ],
+      "Last name": [
+        "Prezime"
+      ],
       "Name": [
         "Naziv"
       ],
@@ -2962,6 +3051,48 @@
     "Select files": {
       "Upload": [
         "Učitaj"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Reset password": [
+        "Ponovno postavljanje lozinke"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Poništi zahtjev"
+      ],
+      "Got it": [
+        "Shvaćam"
+      ],
+      "Learn more": [
+        "Više informacija"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Odjavite se"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Poništavanje lozinke"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Zatvori"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "1 user": [
+        "1 korisnik"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "Secure streaming": [
+        "Siguran streaming"
       ]
     },
     "Storage": {
@@ -3079,6 +3210,9 @@
       "Import": [
         "Uvoz"
       ],
+      "Last name": [
+        "Prezime"
+      ],
       "Values": [
         "Vrijednosti"
       ],
@@ -3109,6 +3243,9 @@
       ],
       "All": [
         "Sve"
+      ],
+      "Birthday": [
+        "Rođendan"
       ],
       "Change layout": [
         "Promijeni izgled"
@@ -3255,6 +3392,9 @@
       "Name": [
         "Naziv"
       ],
+      "Notes": [
+        "Bilješke"
+      ],
       "Number of files": [
         "Broj datoteka"
       ],
@@ -3329,6 +3469,9 @@
       ],
       "Show actions": [
         "Prikaži radnje"
+      ],
+      "Sign in with 2FA": [
+        "Prijavite se sa 2FA"
       ],
       "Sign out": [
         "Odjava"

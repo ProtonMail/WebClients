@@ -115,6 +115,9 @@
       "Clear query": [
         "清除查詢"
       ],
+      "Clear selection": [
+        "清除選擇"
+      ],
       "Click here.": [
         "點擊此處。"
       ],
@@ -709,6 +712,9 @@
       "Upload folder": [
         "上載資料夾"
       ],
+      "Upload photos": [
+        "上傳照片"
+      ],
       "Upload picture": [
         "上載圖像"
       ],
@@ -811,6 +817,9 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "進階版 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } 儲存空間"
       ],
@@ -820,8 +829,20 @@
       "3 TB": [
         "3 TB"
       ],
+      "3,000+ servers across 65+ countries": [
+        "超過 3500 臺伺服器，遍布於 65 以上個國家"
+      ],
       "6 users": [
         "6 個使用者"
+      ],
+      "Access content worldwide": [
+        "存取跨國內容"
+      ],
+      "Ad-blocker and malware protection": [
+        "廣告攔截與惡意程式保護"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "全部${ MAIL_SHORT_APP_NAME }付費及${ CALENDAR_APP_NAME }功能"
       ],
       "Extended version history": [
         "展開版本紀錄"
@@ -840,6 +861,11 @@
       ],
       "Premium Password Manager": [
         "進階版密碼管理器"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 3 custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 3 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
       ]
     },
     "Bug category": {
@@ -3148,6 +3174,9 @@
       "${ selectedContactsLength }/${ contactsLength } contacts selected": [
         "${ contactsLength }中的${ selectedContactsLength }項目已選取"
       ],
+      "${ selectedCount } selected": [
+        "${ selectedCount }已選取"
+      ],
       "${ selectedFoldersCount } folders selected": [
         "已選取 ${ selectedFoldersCount } 個資料夾"
       ],
@@ -3237,6 +3266,9 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "您確定要從垃圾桶中永久刪除已所選取的項目嗎？"
+      ],
+      "As soon as you have photos or videos on your device, they will appear here.": [
+        "一旦您的裝置上有照片或影片，它們就會在此處出現。"
       ],
       "Attention required": [
         "需要您的處理"
@@ -3664,6 +3696,9 @@
       "No group found": [
         "未找到群組"
       ],
+      "No photos yet": [
+        "尚無照片"
+      ],
       "No results found": [
         "找不到相符的結果"
       ],
@@ -3739,6 +3774,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "請選取一或多組電郵位址以加入至 ${ groupName }。"
       ],
+      "Please use another browser or download the file.": [
+        "請使用其他瀏覽器或下載檔案。"
+      ],
       "Please wait till your changes are synced with the server.": [
         "請等待您的變更與伺服器同步。"
       ],
@@ -3808,8 +3846,14 @@
       "Search Enabled": [
         "搜尋已啟用"
       ],
+      "Select all items for": [
+        "選取全部項目"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "選取已上載的檔案或資料夾並為其建立連結。"
+      ],
+      "Select item": [
+        "選擇項目"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "請選擇用於傳送至該電郵位址時使用的預設電郵格式。"
@@ -3927,6 +3971,9 @@
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
         "此連結將會永久停用。無人將可憑此連結存取您的資料夾。若要重新分享此資料夾，您將需要一個新的連結。"
+      ],
+      "This month": [
+        "本月"
       ],
       "This will delete the links and remove access to your files or folders for anyone with the links.": [
         "此操作將會刪除連結，並且阻止其他嘗試使用此連結存取檔案或資料夾的人。"
@@ -6190,6 +6237,9 @@
       ],
       "Phone numbers": [
         "手機號碼"
+      ],
+      "Photos": [
+        "相片"
       ],
       "Preview": [
         "預覽"
