@@ -71,6 +71,7 @@ const useGetEncryptionPreferences = () => {
                 const { publicKeys } = splitKeys(await getUserKeys());
                 apiKeysConfig = await getPublicKeysForInbox({
                     email,
+                    internalKeysOnly: intendedForEmail === false,
                     includeInternalKeysWithE2EEDisabledForMail: intendedForEmail === false,
                     lifetime,
                     noCache: !lifetime,
