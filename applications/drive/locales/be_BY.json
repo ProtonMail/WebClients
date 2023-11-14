@@ -4200,6 +4200,9 @@
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Магчыма, што гэтыя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Уладальнік гэтага адраса адключыў скразное шыфраванне. Яму неабходна паўторна ўключыць скразное шыфраванне, каб мець магчымасць адпраўляць зашыфраваныя лісты на гэты адрас."
+      ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Яшчэ ёсць файлы, якія неабходна перадаць. Закрыццё менеджара перадачы завершыць усе аперацыі."
       ],
@@ -4430,6 +4433,12 @@
       ],
       "You cannot undo this action.": [
         "Гэта дзеянне немагчыма адрабіць."
+      ],
+      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
+        "У вас яшчэ ёсць яшчэ ${ expiresInDays } дзень, каб атрымаць прывітальны бонус у 500 МБ і ",
+        "У вас яшчэ ёсць яшчэ ${ expiresInDays } дні, каб атрымаць прывітальны бонус у 500 МБ і ",
+        "У вас яшчэ ёсць яшчэ ${ expiresInDays } дзён, каб атрымаць прывітальны бонус у 500 МБ і ",
+        "У вас яшчэ ёсць яшчэ ${ expiresInDays } дзён, каб атрымаць прывітальны бонус у 500 МБ і "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы дасягнулі ${ spaceDisplayed }% ёмістасці сховішча. ${ freeUpMessage } ${ upgradeLink }"

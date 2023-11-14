@@ -363,7 +363,7 @@
         "CSV მაგალითის გადმოწერა"
       ],
       "Download ICS": [
-        "ყველას გადმოწერა"
+        "ICS-ის გადმოწერა"
       ],
       "Download our CSV template": [
         "გადმოწერეთ ჩვენი CSV ნიმუში"
@@ -903,7 +903,7 @@
         "პაროლით შესვლა"
       ],
       "Sign in with SSO": [
-        "SSO-ით შესვლა"
+        "Sign in with SSO"
       ],
       "Sign out": [
         "გასვლა"
@@ -1437,7 +1437,7 @@
         "ექსკლუზიური თვისებები და ადრეული წვდომა"
       ],
       "Help us fight for online privacy": [
-        "დაგვეხმარეთ, ვებრძოლოთ ონლაინ-ცენზურას"
+        "დაგვეხმარეთ, ვებრძოლოთ ონლაინცენზურას"
       ],
       "Premium versions of all ${ BRAND_NAME } services": [
         "ყველა ${ BRAND_NAME }-ის სერვისის ფასიანი ვერსია"
@@ -4127,8 +4127,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "იყენებთ თქვენს სატარიფო გეგმაში შემავალ ყველა მომხმარებელს. ახალი მომხმარებლის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "საჭიროა ორგანიზაციის თქვენი გასაღებების აქტივაცია. აქტივაციის გარეშე ვერ შეძლებთ, ახალი მომხმარებლების შექმნას, არსებულ მომხმარებლებზე მისამართების დამატებას და არ გექნებათ არა-პირადი მომხმარებლების ანგარიშებთან წვდომა."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "თქვენი ორგანიზაციის გასაღებების გააქტიურება აუცილებელია. მათი გააქტიურების გარეშე არაკონფიდენციალური მომხმარებლების შექმნა ან მათზე წვდომა შეუძლებელი იქნება."
       ],
       "You must privatize all users before generating new organization keys": [
         "ორგანიზაციის ახალი გასაღებების გენერაციამდე საჭიროა ყველა მომხმარებლის პრივატიაზაცია"
@@ -6834,7 +6834,7 @@
         "პარამეტრებები, მხოლოდ, მაშინ შეცვალეთ, თუ თქვენ იყენებთ PGP-ს არა${ BRAND_NAME }-ის მიმღებებით."
       ],
       "Only you can see the labels.": [
-        "ჭდეების დანახვა მხოლოდ თქვენ შეგიძლიათ."
+        "ჭდეების დანახვა, მხოლოდ, თქვენ შეგიძლიათ."
       ],
       "Open source": [
         "ღია კოდი"
@@ -7428,6 +7428,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "შეავსეთ თქვენი ანგარიში კრედიტებით, რომლებიც ახალი ტარიფის გამოსაწერად შეგიძლიათ, გამოიყენოთ. ყოველ დახარჯულ ${ i18nCurrency }-ზე 1 კრედიტს მიიღებთ."
       ],
+      "Tor": [
+        "Tor"
+      ],
       "Total email addresses": [
         "ელფოსტები სულ"
       ],
@@ -7499,6 +7502,9 @@
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "ასწიეთ ტარიფი ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ან ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } გეგმამდე, რათა ${ PROTON_SENTINEL_NAME }-სთან წვდომა მიიღოთ."
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "ასწიეთ ტარიფი ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ან ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } გეგმამდე, რათა ${ PROTON_SENTINEL_NAME }-სთან წვდომა მიიღოთ."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "აწიეთ ტარიფი, რათა უფრო მოკლე, @pm.me მისამართები გქონდეთ, რომლებიც გასაზიარებლად უფრო ადვილია. ის ნიშნავს \"${ MAIL_APP_NAME } მე\", ანუ \"პირადად მომწერე\"."
@@ -7582,7 +7588,7 @@
         "თქვენთვის ძლიერი პაროლი შევქმენით"
       ],
       "We just sent you a new link.": [
-        "ახლახანს ახალი ბმული გამოგიგზავნეთ."
+        "ახლახან ახალი ბმული გამოგიგზავნეთ."
       ],
       "We need to authenticate your payment method with your bank.": [
         "ჩვენ თქვენი გადახდის მეთოდის ავთენტიკაცია გვჭირდება თქვენს ბანკში."
@@ -7961,6 +7967,11 @@
         "თქვენ შეგიძლიათ დაამატოთ გადახდის მეთოდი, რომ თქვენი გამოწერა ავტომატურად განახლდეს. ასევე ხელმისაწვდომია გადახდის სხვა მეთოდებიც."
       ]
     },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "შეიყვანეთ თქვენი ან თქვენი ორგანიზაციის სახელი და მისამართი. ეს დეტალები, ორივე, პირად და ორგანიზაციის ინვოისებში ჩაემატება."
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "დეტალებისთვის დააწკაპუნეთ აქ"
@@ -8321,7 +8332,7 @@
         "აი, ასე"
       ],
       "Learn more": [
-        "მეტის ნახვა"
+        "გაიგეთ მეტი"
       ]
     },
     "Label": {
@@ -9062,7 +9073,7 @@
         "გაგზავნა"
       ],
       "Show secondary time zone": [
-        "დროის მეორადი სარტყლის ჩვენება"
+        "დამხმარე დროის სარტყლის ჩვენება"
       ],
       "Show sender images": [
         "გამომგზავნის გამოსახულებების ჩვენება"
@@ -9260,7 +9271,7 @@
         "მთელი დღის მოვლენის შეტყობინებები"
       ],
       "Notifications": [
-        "შეტყობინებები"
+        "გაფრთხილებები"
       ]
     },
     "Label for default event settings": {
@@ -9924,26 +9935,6 @@
         "VPN-ის საშუალო სიჩქარე"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
-      ],
-      "From ${ price }": [
-        "${ price }-დან"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "ჩემი მიმდინარე ${ currentPlanName } ანგარიშის დატოვება"
-      ],
-      "Upgrade": [
-        "ტარიფის აწევა"
-      ],
-      "Upgrade now": [
-        "ახლა გაუმჯობესება"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "გადახედვაზე გადასვლა"
@@ -9983,6 +9974,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "სატარიფო გეგმის განახლება: ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "ვერსიის ${ downgradedPlanName }-ზე ჩამოწევა"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME }-ის ყველა ტარიფის გადახედვა"
+      ],
+      "From ${ price }": [
+        "${ price }-დან"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "ჩემი მიმდინარე ${ currentPlanName } ანგარიშის დატოვება"
+      ],
+      "Upgrade": [
+        "ტარიფის აწევა"
+      ],
+      "Upgrade now": [
+        "ახლა გაუმჯობესება"
       ]
     },
     "new_plans: feature": {
@@ -11225,7 +11236,7 @@
         "გაგრძელება"
       ],
       "Continue to ${ appName } without upgrading": [
-        "${ appName }-ზე გაგრძლებეა სატარიფო გეგმის აწევის გარეშე"
+        "${ appName }-ზე გაგრძლება სატარიფო გეგმის აწევის გარეშე"
       ],
       "Continue to ${ free }": [
         "${ free }-ზე გაგრძელება"
@@ -11611,6 +11622,9 @@
       "please ${ contactHref } our Sales team.": [
         "${ contactHref } ჩვენს გაყიდვების გუნდს."
       ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "თქვენს სატარიფო გეგმაში ჩასასმელი IP-ების რაოდენობა. თითოეული დამატებითი IP-ის ფასია ${ price }."
+      ],
       "Should you need more than ${ maxIPs } IP, ": [
         "თუ დაგჭირდათ ${ maxIPs }-ზე მეტი IP, ",
         "თუ დაგჭირდათ ${ maxIPs }-ზე მეტი IP, "
@@ -11635,10 +11649,10 @@
     },
     "Primary timezone": {
       "Primary time zone": [
-        "დროის ძირითადი სარტყელი"
+        "ძირითადი დროის სარტყელი"
       ],
       "Secondary time zone": [
-        "დროის მეორადი სარტყელი"
+        "მეორადი დროის სარტყელი"
       ]
     },
     "Private Member": {
@@ -11798,14 +11812,11 @@
       "Changing organization password": [
         "ორგანიზაციის პაროლის შეცვლა"
       ],
-      "Creating new users": [
-        "ახალი მომხმარებლების შექმნა"
+      "Creating or accessing non-private users": [
+        "არაკონფიდენციალური მომხმარებლების შექმნა ან მათთან წვდომა"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "პაროლის შეცვლის გამო თქვენი ორგანიზაციის ადმინისტრირების პრივილეგიები შეზღუდულია. აიკრძალა შემდეგი ქმედებები:"
-      ],
-      "Reading emails of non-private users": [
-        "არაკონფიდენციალური მომხმარებლების ელფოსტის კითხვა"
       ]
     },
     "Role": {
@@ -14388,7 +14399,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "განახლდით ${ passPlusPlanName }-ზე Hide My Email-ის მეტსახელების ულიმიტო რაოდენობის მისაღებად"
+        "განახლდით ${ passPlusPlanName }-ზე Hide-my-email-ის მეტსახელების ულიმიტო რაოდენობის მისაღებად"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "${ n } მოწყობილობის VPN-ზე მისაერთებლად თქვენი სატარიფო გეგმა ${ planName }-მდე გააუმჯობესეთ",

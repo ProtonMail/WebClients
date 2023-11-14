@@ -2104,8 +2104,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Olet kuluttanut tilaukseesi sisältyvän käyttäkiintiön. Lisää uusia käyttäjiä päivittämällä tilauksesi."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Sinun on aktivoitava organisaatioavaimesi. Ilman aktivointia et voi luoda uusia käyttäjiä, lisätä osoitteita nykyisille käyttäjille tai käyttää muita kuin yksityisiä käyttäjätilejä."
+      "You must privatize all users before generating new organization keys": [
+        "Sinun on yksityistettävä kaikki käyttäjät ennen uusien organisaation avaimien luontia"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Tililläsi tai organisaatiollasi on erääntynyt lasku. Maksa kaikki maksamattomat laskut."
@@ -3587,6 +3587,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Lisää tilillesi krediittejä, joilla voit maksaa tilauspäivityksen tai nykyisen tilauksen uudistuksen. Saat yhden krediitin jokaista kuluttamaasi ${ i18nCurrency } kohden."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Sähköpostiosoitteita yhteensä"
@@ -5758,14 +5761,8 @@
       "Changing organization password": [
         "Organisaation salasanan vaihtaminen"
       ],
-      "Creating new users": [
-        "Luodaan uusia käyttäjiä"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Ylläpito-oikeuksiasi organisaatiossa on rajoitettu salasanan vaihdon seurauksena. Seuraavia toimintoja ei enää sallita:"
-      ],
-      "Reading emails of non-private users": [
-        "Ei-yksityisten käyttäjien sähköpostien luku"
       ]
     },
     "Role": {

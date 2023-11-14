@@ -66,7 +66,7 @@
         "Fortsätt"
       ],
       "Continue without pinning": [
-        "Fortsätt utan att nåla fast"
+        "Fortsätt utan att fästa"
       ],
       "Copy & fill in": [
         "Kopiera och fyll i"
@@ -226,6 +226,9 @@
       ],
       "More options": [
         "Fler alternativ"
+      ],
+      "Move all items": [
+        "Flytta alla objekt"
       ],
       "Move to a shared vault": [
         "Flytta till ett delat valv"
@@ -482,6 +485,9 @@
       "Failed to edit user's access.": [
         "Misslyckades att redigera användaråtkomst."
       ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Misslyckades att flytta alla objekt från “${ payload.content.name }“"
+      ],
       "Failed to remove user's access.": [
         "Misslyckades att ta bort användaråtkomst."
       ],
@@ -531,7 +537,7 @@
         "Bevilja ${ PASS_APP_NAME } de nödvändiga tilläggsbehörigheterna för att fortsätta"
       ],
       "Please pin the extension or select \"Continue without pinning\".": [
-        "Nåla fast tillägget eller välj “Fortsätt utan att nåla fast“."
+        "Fäst tillägget eller välj “Fortsätt utan att fästa“."
       ],
       "Request timed out": [
         "Förfrågan gjorde timeout"
@@ -541,6 +547,9 @@
       ],
       "Restoring item failed": [
         "Misslyckades att återställa objekt"
+      ],
+      "Restoring trashed items failed": [
+        "Misslyckades återställa kastade objekt"
       ],
       "Settings update failed": [
         "Misslyckades att uppdatera inställningar"
@@ -728,6 +737,21 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias “${ item.aliasEmail }“ har flyttats till papperskorg – den kommer stoppa vidarebefordra e-post till din brevlåda"
       ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Alla objekt från “${ payload.content.name }“ flyttades"
+      ],
+      "All trashed items permanently removed": [
+        "Alla kastade objekt borttagna permanent"
+      ],
+      "All trashed items successfully restored": [
+        "Alla kastade objekt återställda"
+      ],
+      "An item previously shared with you was removed": [
+        "Ett objekt som tidigare delats med dig togs bort"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Är du säker på att du vill flytta alla objekten från “${ fromVaultName }“ till “${ toVaultName }“?"
+      ],
       "Auto-lock successfully disabled": [
         "Automatisk låsning inaktiverat"
       ],
@@ -784,6 +808,9 @@
       ],
       "Editor": [
         "Redaktör"
+      ],
+      "Emptying trash...": [
+        "Tömmer papperskorg..."
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Aktivera ${ PASS_APP_NAME } genom att ansluta ditt ${ BRAND_NAME }-konto"
@@ -874,6 +901,9 @@
       "Item successfully moved": [
         "Objekt flyttades"
       ],
+      "Leaving vault...": [
+        "Lämnar valv..."
+      ],
       "Let's get you started by creating your first item": [
         "Kom igång genom att skapa ditt första objekt"
       ],
@@ -891,6 +921,9 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mer än en lösenordshanterare. ${ PASS_APP_NAME } skyddar ditt lösenord och din personliga e-postadress via e-postalias. Drivs av samma teknologi bakom ${ MAIL_APP_NAME }, din data är krypterad från början och är endast åtkomlig för dig."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Flyttar alla objekt från “${ payload.content.name }“"
       ],
       "Multiple vaults": [
         "Flera valv"
@@ -926,7 +959,7 @@
         "Väntar på åtkomst till delade data"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Nåla fast ${ PASS_APP_NAME } till ditt verktygsfält"
+        "Fäst ${ PASS_APP_NAME } till ditt verktygsfält"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-kod registrerad. Använd den för att låsa upp ${ PASS_APP_NAME }"
@@ -952,8 +985,14 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Integritet är en stor angelägenhet för oss. Lär dig varför ${ PASS_APP_NAME } är annorlunda."
       ],
+      "Restoring trashed items...": [
+        "Återställer kastade objekt..."
+      ],
       "Save login": [
         "Spara inloggning"
+      ],
+      "Select destination vault": [
+        "Välj målvalv"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Välj var du vill att dina importerade valv ska sparas."
@@ -1057,6 +1096,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Valv ”${ payload.share.content.name }” uppdaterades"
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "Valv “${ share.content.name }“ togs bort"
       ],
       "Verification code": [
         "Verifieringskod"
@@ -1289,7 +1331,7 @@
         "Importerad från: "
       ],
       "Imported on : ": [
-        "Importerades : "
+        "Importerad den : "
       ],
       "Include numbers": [
         "Inkludera nummer"
@@ -1333,6 +1375,9 @@
       "Modified": [
         "Ändrad"
       ],
+      "More than a month": [
+        "Mer än en månad"
+      ],
       "Most recent": [
         "Senaste"
       ],
@@ -1365,9 +1410,6 @@
       ],
       "Old-New": [
         "Gammalt-nytt"
-      ],
-      "Older than last month": [
-        "Äldre än förra månaden"
       ],
       "Oldest to newest": [
         "Äldsta till nyaste"
@@ -1667,7 +1709,7 @@
         "Bevilja behörigheter"
       ],
       "Hide my email": [
-        "Hide My Email"
+        "Hide-my-email"
       ],
       "Import - ${ date }": [
         "Importera – ${ date }"
@@ -1683,6 +1725,9 @@
       ],
       "Member limit": [
         "Medlemsgräns"
+      ],
+      "Move all items ?": [
+        "Flytta alla objekt?"
       ],
       "Our welcome gift to you": [
         "Vår välkomstgåva till dig"

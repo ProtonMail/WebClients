@@ -4,20 +4,9 @@
     "language": "uk_UA"
   },
   "contexts": {
-    "A label for unlabeled shared calendar links": {
-      "Unlabeled": [
-        "Без мітки"
-      ]
-    },
     "Access level": {
-      "Full view": [
-        "Повний перегляд"
-      ],
       "Full view (see all event details)": [
         "Повний перегляд (усі подробиці події)"
-      ],
-      "Limited view": [
-        "Обмежений перегляд"
       ],
       "Limited view (see only free/busy)": [
         "Обмежений перегляд (лише доступність)"
@@ -73,9 +62,6 @@
       ],
       "Add address or domain": [
         "Додати адресу або домен"
-      ],
-      "Add calendar from URL": [
-        "Додати календар з URL-адреси"
       ],
       "Add condition": [
         "Додати умову"
@@ -296,9 +282,6 @@
       "Delete Gateway": [
         "Видалити мережевий шлюз"
       ],
-      "Delete link": [
-        "Видалити посилання"
-      ],
       "Delete permanently": [
         "Видалити остаточно"
       ],
@@ -355,9 +338,6 @@
       ],
       "Download CSV sample": [
         "Завантажити зразок CSV"
-      ],
-      "Download ICS": [
-        "Завантажити ICS"
       ],
       "Download our CSV template": [
         "Завантажте наш CSV-шаблон"
@@ -530,9 +510,6 @@
       "Import emails": [
         "Імпортувати електронну пошту"
       ],
-      "Import from ICS": [
-        "Імпорт з ICS"
-      ],
       "Import key": [
         "Імпортувати ключ"
       ],
@@ -692,17 +669,11 @@
       "Remove bonuses": [
         "Вилучити бонуси"
       ],
-      "Remove calendar": [
-        "Вилучити календар"
-      ],
       "Remove gift code": [
         "Вилучити подарунковий код"
       ],
       "Remove this label": [
         "Вилучити цю мітку"
-      ],
-      "Remove this member": [
-        "Вилучити цього учасника"
       ],
       "Remove this notification": [
         "Вилучити це сповіщення"
@@ -770,17 +741,11 @@
       "Revoke all other sessions": [
         "Відкликати всі інші сеанси"
       ],
-      "Revoke this invitation": [
-        "Відкликати це запрошення"
-      ],
       "Save": [
         "Зберегти"
       ],
       "Save address": [
         "Зберегти адресу"
-      ],
-      "Save ICS file": [
-        "Зберегти ICS файл"
       ],
       "Save selected": [
         "Зберегти вибране"
@@ -808,9 +773,6 @@
       ],
       "Select files": [
         "Вибрати файли"
-      ],
-      "Select language for invitation emails": [
-        "Виберіть мову для листів із запрошеннями"
       ],
       "Select time zone": [
         "Вибрати часовий пояс"
@@ -1079,16 +1041,6 @@
         "Повторна активація"
       ]
     },
-    "Action; accept invitation to share calendar": {
-      "Accept": [
-        "Схвалити"
-      ]
-    },
-    "Action; decline invitation to share calendar": {
-      "Decline": [
-        "Відхилити"
-      ]
-    },
     "Addon": {
       "${ domains } custom domain": [
         "${ domains } власний домен",
@@ -1256,11 +1208,6 @@
         "Непідтримувана подія"
       ]
     },
-    "Auto import invitations setting": {
-      "Add to calendar and mark as pending": [
-        "Додати до календаря та в чергу"
-      ]
-    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Я не на робочому місці з обмеженим доступом до електронної пошти."
@@ -1318,11 +1265,6 @@
       ],
       "Two-year": [
         "Два роки"
-      ]
-    },
-    "breadcrumb": {
-      "Calendars": [
-        "Календарі"
       ]
     },
     "Bridge version load failed": {
@@ -1429,40 +1371,6 @@
         "Додати людей чи групи"
       ]
     },
-    "Calendar edit button tooltip": {
-      "Edit calendar": [
-        "Редагувати календар"
-      ]
-    },
-    "Calendar export section description": {
-      "Download an ICS file with all the events from the selected calendar.": [
-        "Завантажити файл ICS з усіма подіями з вибраного календаря."
-      ]
-    },
-    "Calendar import section description": {
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Ви можете імпортувати ICS файли з іншого календаря до ${ CALENDAR_APP_NAME }. Це дасть змогу швидко імпортувати одну подію або весь ваш порядок денний."
-      ]
-    },
-    "Calendar invite status label": {
-      "Declined": [
-        "Відхилено"
-      ],
-      "Invite sent": [
-        "Запрошення надіслано"
-      ]
-    },
-    "Calendar link purpose update success message": {
-      "Label added": [
-        "Мітку додано"
-      ],
-      "Label deleted": [
-        "Мітку видалено"
-      ],
-      "Label edited": [
-        "Мітку змінено"
-      ]
-    },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
         "Лише ви можете бачити мітку"
@@ -1483,44 +1391,12 @@
         "Ви вже маєте доступ до цього календаря"
       ]
     },
-    "Calendar settings link share description": {
-      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Створіть посилання на ваш календар і поділіться ним з будь-ким за межами ${ BRAND_NAME }. Лише ви можете додавати та вилучати події."
-      ]
-    },
-    "Calendar settings private share description": {
-      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Діліться своїм календарем з іншими користувачами ${ BRAND_NAME }. Увімкніть спільну роботу, дозволивши їм додавати та змінювати події у вашому календарі. Ви можете будь-коли змінити дозволи користувача."
-      ]
-    },
-    "Calendar settings section title": {
-      "Share calendar": [
-        "Поширити календар"
-      ],
-      "Share outside ${ BRAND_NAME }": [
-        "Поділитися за межами ${ BRAND_NAME }"
-      ],
-      "Share with ${ BRAND_NAME } users": [
-        "Поділитися з користувачами ${ BRAND_NAME }"
-      ],
-      "Share with anyone": [
-        "Поділіться з будь-ким"
-      ]
-    },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "Показати ще ${ remainingItems }",
         "Показати ще ${ remainingItems }",
         "Показати ще ${ remainingItems }",
         "Показати ще ${ remainingItems }"
-      ]
-    },
-    "Calendar share permission label": {
-      "Edit event details": [
-        "Редагувати подію"
-      ],
-      "See all event details": [
-        "Переглянути всі подробиці події"
       ]
     },
     "Calendar sharing access option label": {
@@ -1536,21 +1412,7 @@
         "Не вдалося отримати інформацію про контакт для ${ address }"
       ]
     },
-    "Calendar sharing permission change notification": {
-      "Permissions changed for ${ email }": [
-        "Змінено дозволи для ${ email }"
-      ]
-    },
     "Calendar status": {
-      "Active": [
-        "Активний"
-      ],
-      "Default": [
-        "Типово"
-      ],
-      "Disabled": [
-        "Вимкнений"
-      ],
       "Not synced": [
         "Не синхронізовано"
       ],
@@ -1596,11 +1458,6 @@
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Від часу останнього оновлення минуло понад 12 годин — ${ CALENDAR_APP_NAME } спробує оновити календар за кілька годин."
-      ]
-    },
-    "Calendar table settings button tooltip": {
-      "Open settings": [
-        "Відкрити налаштування"
       ]
     },
     "Calendar view": {
@@ -2838,22 +2695,9 @@
         "Середа"
       ]
     },
-    "Default calendar event settings section title": {
-      "Default event settings": [
-        "Типові налаштування події"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Невідомо"
-      ]
-    },
-    "Delete calendar section description": {
-      "All events in this calendar will be deleted.": [
-        "Усі події в цьому календарі будуть видалені."
-      ],
-      "You will no longer have access to this calendar.": [
-        "Ви більше не матимете доступу до цього календаря."
       ]
     },
     "Delinquent modal title": {
@@ -3211,9 +3055,6 @@
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Автоматична відповідь є платною функцією. Будь ласка, передплатіть тарифний план для її використання."
-      ],
-      "Calendar cannot be found": [
-        "Не вдалося знайти календар"
       ],
       "Calendar limit reached": [
         "Досягнуто ліміту календарів"
@@ -3650,9 +3491,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ви вже використали усіх користувачів у своєму тарифному плані. Щоб додати нового користувача, необхідно покращити тарифний план."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Вам необхідно активувати ваші ключі організації. Без активації ви не можете створювати нові облікові записи, додаткові адреси для наявних користувачів, або отримати доступ до не приватних облікових записів користувачів."
-      ],
       "You must privatize all users before generating new organization keys": [
         "Ви повинні зробити приватними всіх користувачів перед генеруванням нових ключів організації"
       ],
@@ -3931,14 +3769,6 @@
         "Жодного зображення не вибрано"
       ]
     },
-    "Error when exporting event from calendar": {
-      "Event @ ${ timeString }": [
-        "Подія @ ${ timeString }"
-      ],
-      "Event from ${ timeString }, ${ rruleString }": [
-        "Подія від ${ timeString }, ${ rruleString }"
-      ]
-    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Не вдається розшифрувати вкладений ICS-файл"
@@ -3986,56 +3816,6 @@
     "Event title": {
       "(no title)": [
         "(без назви)"
-      ]
-    },
-    "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } подію експортовано",
-        "${ totalProcessed }/${ totalToProcess } події експортовано",
-        "${ totalProcessed }/${ totalToProcess } подій експортовано",
-        "${ totalProcessed }/${ totalToProcess } подій експортовано"
-      ],
-      "Calendar successfully exported. You can now save the ICS file.": [
-        "Календар успішно експортовано. Тепер ви можете зберегти ICS файл."
-      ],
-      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Розшифрування подій з вашого календаря: ${ totalProcessed }/${ totalToProcess }"
-      ],
-      "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Через скидання пароля жодна з ваших подій не може бути розшифрована та експортована."
-      ],
-      "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "Через скидання пароля деякі ваші події не можуть бути розшифровані та експортовані."
-      ],
-      "Error decrypting event": [
-        "Помилка розшифрування події"
-      ],
-      "Learn how to restore encrypted events with old password": [
-        "Дізнайтеся, як відновити зашифровані події зі старим паролем"
-      ],
-      "Loading events": [
-        "Завантаження подій"
-      ],
-      "None of the events could be exported.": [
-        "Жодну з ваших подій не вдалося експортувати."
-      ],
-      "Password reset - event cannot be decrypted": [
-        "Скидання пароля — неможливо розшифрувати подію"
-      ],
-      "Password reset - multiple events cannot be decrypted": [
-        "Скидання пароля — неможливо розшифрувати кілька подій"
-      ],
-      "Please don't close the tab before the exporting process is finished.": [
-        "Не закривайте цю вкладку доки не завершиться процес експортування."
-      ],
-      "Some of your events could not be exported.": [
-        "Деякі з ваших подій не вдалося експортувати."
-      ],
-      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Інтернет-з'єднання було перервано, внаслідок чого процес експорту зазнав невдачі. Повторіть спробу."
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        "Ви можете зберегти ICS файл подій, які були успішно експортовані."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4735,12 +4515,6 @@
       ]
     },
     "Header": {
-      "Access": [
-        "Доступ"
-      ],
-      "Action": [
-        "Дія"
-      ],
       "Actions": [
         "Дії"
       ],
@@ -4774,9 +4548,6 @@
       "Key type": [
         "Тип ключа"
       ],
-      "Label": [
-        "Мітка"
-      ],
       "Location": [
         "Розташування"
       ],
@@ -4791,9 +4562,6 @@
       ],
       "Organization key fingerprint": [
         "Відбиток ключа організації"
-      ],
-      "Permissions": [
-        "Дозволи"
       ],
       "Protection": [
         "Захист"
@@ -4815,9 +4583,6 @@
       ],
       "Time": [
         "Час"
-      ],
-      "User": [
-        "Користувач"
       ]
     },
     "Header for addresses table": {
@@ -4869,17 +4634,6 @@
       ],
       "Token name": [
         "Назва токена"
-      ]
-    },
-    "Header; Table with list of calendars arranged by type": {
-      "Holidays": [
-        "Свята"
-      ],
-      "Other": [
-        "Інші"
-      ],
-      "Subscribed": [
-        "Підписні"
       ]
     },
     "Heading in trial plan": {
@@ -5273,9 +5027,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технологія шифрування ${ BRAND_NAME } гарантує неможливість доступу до вашого пароля, навіть для нас."
       ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } буде встановлено типовим календарем."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новий календар",
         "${ calendarsToBeCreatedCount } нові календарі",
@@ -5302,9 +5053,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: попередній перегляд низької роздільності"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } буде встановлено типовим календарем."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } також можна використовувати з єдиним паролем, який замінює пароль входу та пароль поштової скриньки. Щоб перемкнутись на однопарольний режим, введіть єдиний пароль, який ви бажаєте використовувати, а потім натисніть кнопку Зберегти."
@@ -5474,9 +5222,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Користувач — це обліковий запис, пов'язаний з певним іменем користувача, поштовою скринькою та людиною"
       ],
-      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Отримайте доступ до своїх паролів і захистіть свої облікові дані в інтернеті на всіх пристроях. Завантажте та встановіть відповідні програми та розширення ${ PASS_APP_NAME }."
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ до облікового запису обмежений через несплачені рахунки. Будь ласка, зверніться до свого адміністратора."
       ],
@@ -5515,9 +5260,6 @@
       ],
       "Add image URL": [
         "Додати URL-адресу зображення"
-      ],
-      "Add label": [
-        "Додати мітку"
       ],
       "Add multiple users to your organization at once.": [
         "Додавайте багатьох користувачів до своєї організації за один раз."
@@ -5618,23 +5360,8 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Будь-хто з цим посиланням може бачити вашу доступність чи зайнятість в календарі. Вони не можуть бачити подробиці подій, наприклад, назву, розташування та учасників."
       ],
-      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Ніхто з цим посиланням не зможе синхронізувати чи отримувати майбутні оновлення для вашого календаря. Якщо ви хочете надати їм доступ знову, вам необхідно створити нове посилання."
-      ],
       "Are you sure you want to delete this address?": [
         "Ви дійсно хочете видалити цю адресу?"
-      ],
-      "Are you sure you want to delete this calendar?": [
-        "Ви дійсно хочете видалити цей календар?"
-      ],
-      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "Ви впевнені, що хочете видалити цей календар? Усі адреси, з якими ви поділилися цим календарем, втратять доступ до нього."
-      ],
-      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "Ви впевнені, що хочете видалити цей календар? З нього будуть видалені всі події."
-      ],
-      "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Ви впевнені, що хочете видалити цей календар? Ви можете додати календар свят пізніше."
       ],
       "Are you sure you want to delete this domain?": [
         "Ви впевнені, що хочете видалити цей домен?"
@@ -5849,9 +5576,6 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Видаліть будь-які інші MX-записи або впевніться, що встановлено найнижче число пріоритету ${ MAIL_APP_NAME }."
       ],
-      "Delete link?": [
-        "Видалити посилання?"
-      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Видалення ${ deletedServerCount } шлюзового сервера",
         "Видалення ${ deletedServerCount } шлюзових серверів",
@@ -5912,9 +5636,6 @@
       "Edit email address": [
         "Змінити адресу електронної пошти"
       ],
-      "Edit label": [
-        "Редагувати мітку"
-      ],
       "Edit link": [
         "Редагувати посилання"
       ],
@@ -5935,9 +5656,6 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Електронні листи, позначені цією міткою, не будуть видалені, і їх все ще можна знайти у відповідній теці."
-      ],
-      "Enable this address to join this calendar": [
-        "Дозвольте цій адресі приєднатися до цього календаря"
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Увімкнути TLS або SSL на зовнішньому сервісі, якщо підтримується."
@@ -5992,9 +5710,6 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Введіть свій резервний номер телефону і ми надішлемо вам ваше ім'я користувача або адресу електронної пошти."
-      ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        "Запрошення на події та RSVPs надсилатимуться цією мовою."
       ],
       "Expired": [
         "Протерміновано"
@@ -6058,9 +5773,6 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Якщо вам не сподобається, ми повернемо гроші."
-      ],
-      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Якщо часовий пояс системи не збігається з налаштуваннями поточного часового поясу, вам буде запропоновано його оновити (не частіше ніж один раз на день)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Якщо цей домен зараз отримує електронну пошту, виберіть вкладку ${ boldAddresses } і додайте всі активні електронні адреси перед зміною MX запису для безперебійного переходу."
@@ -6257,9 +5969,6 @@
       "Link created": [
         "Посилання створено"
       ],
-      "Link deleted": [
-        "Посилання видалено"
-      ],
       "Link type": [
         "Тип посилання"
       ],
@@ -6394,9 +6103,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Змінюйте ці налаштування лише якщо ви використовуєте PGP з отримувачами поза ${ BRAND_NAME }."
-      ],
-      "Only you can see the labels.": [
-        "Лише ви можете бачити мітки."
       ],
       "Open source": [
         "Відкритий програмний код"
@@ -6605,9 +6311,6 @@
       "Remember to share the user's sign in details with them.": [
         "Повідомте користувачам їхні дані для входу."
       ],
-      "Remove one of your calendars to join this one": [
-        "Вилучіть один з ваших календарів, щоб приєднатися до цього"
-      ],
       "Report link expired": [
         "Термін дії посилання на звіт закінчився"
       ],
@@ -6767,9 +6470,6 @@
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Повідомлення ${ boldDataLocked } більше не буде показано, але ви все ще можете розблокувати свої дані в ${ encryptionAndKeysLink }."
       ],
-      "The calendar will be removed from your account.": [
-        "Календар буде вилучено з вашого облікового запису."
-      ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Термін дії посилання для підтвердження електронною поштою завершився. Увійдіть, щоб повторно надіслати посилання."
       ],
@@ -6820,6 +6520,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Ці конфігурації передбачені для роботи з маршрутизаторами WireGuard і офіційними клієнтами."
+      ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Ці облікові дані не можуть бути використані для входу у наші офіційні програми ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "They'll receive a free month of ${ planName }.": [
         "Вони отримають безплатно один місяць ${ planName }."
@@ -6955,6 +6658,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Поповніть свій рахунок кредитом, який ви зможете використати для передплати нового тарифного плану чи поновлення поточного плану. Ви отримаєте один кредит за кожен витрачений ${ i18nCurrency }."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Усього адрес електронної пошти"
@@ -7295,9 +7001,6 @@
         "Вам доступно ${ availableCount } виділених серверів.",
         "Вам доступно ${ availableCount } виділених серверів."
       ],
-      "You have no calendars to export.": [
-        "У вас немає календарів для експорту."
-      ],
       "You have no saved payment methods.": [
         "У вас немає збережених способів оплати."
       ],
@@ -7319,9 +7022,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Ваш обліковий запис PayPal повинен мати пов'язану кредитну картку чи банківський рахунок. Якщо у вас цього немає, будь ласка, натисніть кнопку внизу."
       ],
-      "You need to have an active personal calendar to import your events from ICS.": [
-        "Вам необхідно мати активний особистий календар для імпорту ваших подій з ICS."
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Ви досягли ${ spaceDisplayed }% свого обсягу сховища. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -7330,9 +7030,6 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Ви повинні експортувати резервну копію цього ключа, якщо вам потрібно відновити дані, які ним зашифровані."
-      ],
-      "You still need to reply to invitations for the host to see your response.": [
-        "Вам усе одно необхідно відповісти на запрошення, щоб організатор побачив вашу відповідь."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Після входу ви будете перенаправлені на ${ destination }."
@@ -7829,9 +7526,6 @@
     "Knowledge base link label": {
       "Here's how": [
         "Ось, як це зробити"
-      ],
-      "Learn more": [
-        "Докладніше"
       ]
     },
     "Label": {
@@ -7963,9 +7657,6 @@
       ],
       "Auto-delete unwanted messages": [
         "Автовидалення непотрібних повідомлень"
-      ],
-      "Auto-detect primary time zone": [
-        "Автовизначення основного часового поясу"
       ],
       "Auto-reply": [
         "Автоматична відповідь"
@@ -8134,9 +7825,6 @@
       ],
       "Default language": [
         "Мова"
-      ],
-      "Default language (${ defaultLanguage })": [
-        "Мова (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "Типова схема PGP"
@@ -8351,9 +8039,6 @@
       "Level for NetShield blocker filtering": [
         "Рівень фільтрації блокувальника NetShield"
       ],
-      "Link label": [
-        "Мітка посилання"
-      ],
       "Mail Server (IMAP)": [
         "Поштовий сервер (IMAP)"
       ],
@@ -8567,12 +8252,6 @@
       "Send crash reports": [
         "Надсилати звіти про збої"
       ],
-      "Send in": [
-        "Надіслати у"
-      ],
-      "Show secondary time zone": [
-        "Показати додатковий часовий пояс"
-      ],
       "Show sender images": [
         "Показувати зображення відправників"
       ],
@@ -8759,19 +8438,6 @@
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Додати домен, яким ви володієте, до облікового запису ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Label for default event notifications": {
-      "All-day event notifications": [
-        "Сповіщення події на цілий день"
-      ],
-      "Notifications": [
-        "Сповіщення"
-      ]
-    },
-    "Label for default event settings": {
-      "Duration": [
-        "Тривалість"
       ]
     },
     "Label for domain modal": {
@@ -9093,22 +8759,6 @@
         "Ця функція тимчасово недоступна"
       ]
     },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Ви можете створити до ${ MAX_LINKS_PER_CALENDAR } посилання на один календар. Щоб створити нове посилання на цей календар, видаліть якесь зі списку внизу.",
-        "Ви можете створити до ${ MAX_LINKS_PER_CALENDAR } посилань на один календар. Щоб створити нове посилання на цей календар, видаліть якесь зі списку внизу.",
-        "Ви можете створити до ${ MAX_LINKS_PER_CALENDAR } посилань на один календар. Щоб створити нове посилання на цей календар, видаліть якесь зі списку внизу.",
-        "Ви можете створити до ${ MAX_LINKS_PER_CALENDAR } посилань на один календар. Щоб створити нове посилання на цей календар, видаліть якесь зі списку внизу."
-      ]
-    },
-    "Maximum shared calendar members reached alert": {
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "Ви досягли максимальної кількості з ${ MAX_CALENDAR_MEMBERS } учасника.",
-        "Ви досягли максимальної кількості з ${ MAX_CALENDAR_MEMBERS } учасників.",
-        "Ви досягли максимальної кількості з ${ MAX_CALENDAR_MEMBERS } учасників.",
-        "Ви досягли максимальної кількості з ${ MAX_CALENDAR_MEMBERS } учасників."
-      ]
-    },
     "Member action": {
       "Change password": [
         "Змінити пароль"
@@ -9424,26 +9074,6 @@
         "Середня швидкість VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Понизити до ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Переглянути всі тарифні плани ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Від ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Залишити мою передплату ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Покращити"
-      ],
-      "Upgrade now": [
-        "Покращити"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Переглядати далі"
@@ -9483,6 +9113,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Покращити до ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Понизити до ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Переглянути всі тарифні плани ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Від ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Залишити мою передплату ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Покращити"
+      ],
+      "Upgrade now": [
+        "Покращити"
       ]
     },
     "new_plans: feature": {
@@ -10349,20 +9999,11 @@
       ]
     },
     "Notification in share calendar modal": {
-      "Invitation deleted": [
-        "Запрошення видалено"
-      ],
-      "Invitation revoked": [
-        "Запрошення відкликано"
-      ],
       "Member added": [
         "Учасника додано",
         "Учасників додано",
         "Учасників додано",
         "Учасників додано"
-      ],
-      "Member deleted": [
-        "Учасника видалено"
       ]
     },
     "Notification in shared calendar modal": {
@@ -10371,11 +10012,6 @@
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "Приєднується до ${ calendarName } (${ senderEmail })"
-      ]
-    },
-    "Notification success": {
-      "Event defaults updated": [
-        "Типові параметри події оновлено"
       ]
     },
     "Notification time input": {
@@ -10969,11 +10605,6 @@
         "Нова кредитна/платіжна картка"
       ]
     },
-    "Personal calendar section description": {
-      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
-        "Створіть календар, щоб контролювати свій розклад, зберігаючи при цьому свої дані в безпеці."
-      ]
-    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Адресу е-пошти не знайдено серед ідентифікаторів користувачів, визначених у ключі надсилання (${ keyUserIds })"
@@ -11096,14 +10727,6 @@
         "Безплатно"
       ]
     },
-    "Primary timezone": {
-      "Primary time zone": [
-        "Основний часовий пояс"
-      ],
-      "Secondary time zone": [
-        "Додатковий часовий пояс"
-      ]
-    },
     "Private Member": {
       "private": [
         "приватний"
@@ -11224,36 +10847,6 @@
         "Витвір мистецтва"
       ]
     },
-    "Remove calendar section description": {
-      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "Скасувавши підписку, ви більше не матимете доступу до цього календаря. Усі події в цьому календарі будуть видалені з вашого облікового запису, але вони залишаться в початковому загальнодоступному посиланні."
-      ],
-      "You will no longer have access to this calendar.": [
-        "Ви більше не матимете доступу до цього календаря."
-      ]
-    },
-    "Remove calendar section text": {
-      "If you leave this calendar, you'll have to ask the owner to join again.": [
-        "Якщо ви покинете цей календар, вам доведеться просити власника про повторне приєднання."
-      ],
-      "This calendar will be removed from your account.": [
-        "Цей календар буде вилучено з вашого облікового запису."
-      ]
-    },
-    "Remove calendar section title": {
-      "Delete calendar?": [
-        "Видалити календар?"
-      ],
-      "Leave calendar?": [
-        "Покинути календар?"
-      ],
-      "Remove calendar": [
-        "Вилучити календар"
-      ],
-      "Unsubscribe?": [
-        "Відписатися?"
-      ]
-    },
     "Restore administrator panel": {
       "Changing organization keys": [
         "Зміна ключів організації"
@@ -11261,14 +10854,8 @@
       "Changing organization password": [
         "Зміна пароля організації"
       ],
-      "Creating new users": [
-        "Створення нових користувачів"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Внаслідок зміни пароля ваші повноваження адміністратора організації були обмежені. Зазначені дії більше не дозволені:"
-      ],
-      "Reading emails of non-private users": [
-        "Читання листів від не приватних користувачів"
       ]
     },
     "Role": {
@@ -11436,11 +11023,6 @@
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "Поділитися з користувачами ${ BRAND_NAME }"
-      ]
-    },
-    "Shared calendar label input placeholder": {
-      "Add label": [
-        "Додати мітку"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -11734,14 +11316,6 @@
         "Дізнайтеся, як отримати приватне посилання для календаря."
       ]
     },
-    "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "Додайте загальнодоступні, зовнішні чи спільні календарі за URL-адресою."
-      ],
-      "Add public, external, or shared calendars.": [
-        "Додайте загальнодоступні, зовнішні чи спільні календарі."
-      ]
-    },
     "Subscription": {
       "Billed every 2 years": [
         "Сплачується кожні 2 роки"
@@ -11949,9 +11523,6 @@
       "Calendar information updated": [
         "Інформація календаря оновлена"
       ],
-      "Calendar removed": [
-        "Календар вилучено"
-      ],
       "Calendar updated": [
         "Календар оновлено"
       ],
@@ -11966,9 +11537,6 @@
       ],
       "Credits added": [
         "Кошти зараховано"
-      ],
-      "Default calendar updated": [
-        "Типовий календар оновлено"
       ],
       "Display name updated": [
         "Ім'я оновлено"
@@ -12160,11 +11728,6 @@
         "на місяць"
       ]
     },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        "Подробиці про події, які не вдалося експортувати"
-      ]
-    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Створюйте надійні дані для входу на всіх своїх пристроях з необмеженою кількістю псевдонімів, 20 сховищами, інтегрованою 2FA, автозаповненням кредитних карток та іншими можливостями."
@@ -12193,11 +11756,6 @@
       ],
       "For individuals": [
         "Особистий"
-      ]
-    },
-    "Table header; invitations to share calendar": {
-      "Shared with me": [
-        "Отриманий мною доступ"
       ]
     },
     "TableHeader": {
@@ -12643,9 +12201,6 @@
       "Delete account": [
         "Видалити обліковий запис"
       ],
-      "Delete calendar": [
-        "Видалити календар"
-      ],
       "Delete key permanently?": [
         "Видалити ключ остаточно?"
       ],
@@ -12753,9 +12308,6 @@
       ],
       "Export": [
         "Експорт"
-      ],
-      "Export calendar": [
-        "Експортувати календар"
       ],
       "Export private key": [
         "Експортувати приватний ключ"
@@ -12999,9 +12551,6 @@
       ],
       "Refer a friend": [
         "Запросити друга"
-      ],
-      "Remove calendar": [
-        "Вилучити календар"
       ],
       "Remove user?": [
         "Вилучити користувача?"
@@ -13580,22 +13129,6 @@
       ],
       "Your default font will look like following:": [
         "Ваш типовий шрифт виглядатиме так:"
-      ]
-    },
-    "Upgrade": {
-      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Передплатіть ${ passPlusPlanName }, щоб отримати необмежену кількість псевдонімів Hide-my-email"
-      ],
-      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Передплатіть ${ planName }, щоб під'єднати ${ n } пристрій до VPN за раз",
-        "Передплатіть ${ planName }, щоб під'єднати ${ n } пристрої до VPN за раз",
-        "Передплатіть ${ planName }, щоб під'єднати ${ n } пристроїв до VPN за раз",
-        "Передплатіть ${ planName }, щоб під'єднати ${ n } пристрої до VPN за раз"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Щоб поділитися своїм календарем, передплатіть тарифний план ${ MAIL_SHORT_APP_NAME }."
       ]
     },
     "upsell panel": {

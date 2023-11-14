@@ -1819,7 +1819,7 @@
         "Sembra che al tuo file manchi l'intestazione '${ options.fieldName }'."
       ],
       "We detected errors in multiple rows during import, please review your CSV file.": [
-        "Durante l'importazione abbiamo rilevato righe multiple, per favore verifica il tuo file CSV."
+        "Abbiamo rilevato errori in più righe. Controlla il tuo file CSV."
       ]
     },
     "Cycle": {
@@ -2104,8 +2104,11 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Hai utilizzato tutti gli utenti del tuo piano. Per favore effettua l'upgrade del tuo piano per aggiungere un nuovo utente."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "È necessario attivare le chiavi dell'organizzazione. Senza attivazione non sarà possibile creare nuovi utenti, aggiungere indirizzi agli utenti esistenti o accedere ad account utente non privati."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Devi attivare le chiavi della tua organizzazione. Senza l'attivazione non potrai creare o accedere agli utenti non privati."
+      ],
+      "You must privatize all users before generating new organization keys": [
+        "Si devono privatizzare tutti gli account prima di generare nuove chiavi dell'organizzazione"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Il tuo account o la tua organizzazione ha una fattura scaduta. Paga tutte le fatture non pagate."
@@ -3270,6 +3273,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "Esistono altri amministratori nella tua organizzazione, sei responsabile di comunicare loro la nuova password."
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Password copied to clipboard": [
         "Password copiata negli appunti"
       ],
@@ -3587,6 +3593,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Ricarica il tuo account con crediti che puoi utilizzare per sottoscrivere un nuovo piano o rinnovare il piano attuale. Si ottiene un credito per ogni ${ i18nCurrency } speso."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Totale indirizzi email"
@@ -4370,6 +4379,9 @@
       ],
       "Verification code": [
         "Codice di verifica"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Siamo spiacenti di vederti andare via. Spiegaci perché ci stai lasciando per aiutarci a migliorare."
@@ -5495,11 +5507,17 @@
       ]
     },
     "Option": {
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "Configurazioni dei paesi"
       ],
       "Free server configs": [
         "Configurazioni dei server gratuiti"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "Ho trovato un altro servizio che mi piace di più"
@@ -5507,11 +5525,17 @@
       "I use a different ${ BRAND_NAME } account": [
         "Utilizzo un account ${ BRAND_NAME } differente"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "Manca una caratteristica chiave di cui ho bisogno"
       ],
       "It's too expensive": [
         "È troppo costoso"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "Il motivo non è elencato"
@@ -5528,8 +5552,17 @@
       "Standard server configs": [
         "Configurazioni dei server standard"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Tutta l'organizzazione"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Organization capacity error": {
@@ -5759,19 +5792,16 @@
     },
     "Restore administrator panel": {
       "Changing organization keys": [
-        "Cambiando le chiavi dell'organizzazione"
+        "Cambiamento delle chiavi dell'organizzazione in corso"
       ],
       "Changing organization password": [
-        "Cambiando la password dell'organizzazione"
+        "Cambiamento della password dell'organizzazione in corso"
       ],
-      "Creating new users": [
-        "Creazione nuovi utenti"
+      "Creating or accessing non-private users": [
+        "Creazione o accesso a utenti non privati in corso"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "A causa di un cambiamento di password, i privilegi da amministratore della tua organizzazione sono stati limitati. Non saranno più permesse le seguenti azioni:"
-      ],
-      "Reading emails of non-private users": [
-        "Leggendo le email degli utenti non privati"
       ]
     },
     "Role": {
@@ -7428,6 +7458,14 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Accesso a server Secure Core, download P2P/BitTorrent veloci, Tor su VPN e molto altro."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "iOS": [
+        "iOS"
       ]
     },
     "Warning": {

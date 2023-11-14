@@ -227,6 +227,9 @@
       "More options": [
         "Más opciones"
       ],
+      "Move all items": [
+        "Mover todos los elementos"
+      ],
       "Move to a shared vault": [
         "Mover a una bóveda compartida"
       ],
@@ -485,6 +488,9 @@
       "Failed to edit user's access.": [
         "Error al editar el acceso del usuario."
       ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Error al mover todos los elementos desde \"${ payload.content.name }\""
+      ],
       "Failed to remove user's access.": [
         "Error al eliminar el acceso del usuario."
       ],
@@ -544,6 +550,9 @@
       ],
       "Restoring item failed": [
         "Error al restaurar el elemento"
+      ],
+      "Restoring trashed items failed": [
+        "Error al restaurar los elementos de la papelera"
       ],
       "Settings update failed": [
         "Error al actualizar los ajustes"
@@ -731,6 +740,21 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" movido a la papelera. Dejará de reenviar correos a su buzón."
       ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Todos los elementos de \"${ payload.content.name }\" fueron movidos."
+      ],
+      "All trashed items permanently removed": [
+        "Todos los elementos de la papelera fueron eliminados permanentemente"
+      ],
+      "All trashed items successfully restored": [
+        "Todos los elementos de la papelera fueron restaurados."
+      ],
+      "An item previously shared with you was removed": [
+        "Se eliminó un elemento previamente compartido con usted"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "¿En verdad desea mover todos los elementos de \"${ fromVaultName }\" a \"${ toVaultName }\"?"
+      ],
       "Auto-lock successfully disabled": [
         "Bloqueo automático desactivado con éxito"
       ],
@@ -787,6 +811,9 @@
       ],
       "Editor": [
         "Editor"
+      ],
+      "Emptying trash...": [
+        "Vaciando la papelera..."
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Active ${ PASS_APP_NAME } al conectar su cuenta de ${ BRAND_NAME }"
@@ -877,6 +904,9 @@
       "Item successfully moved": [
         "Elemento movido con éxito"
       ],
+      "Leaving vault...": [
+        "Dejando la bóveda..."
+      ],
       "Let's get you started by creating your first item": [
         "Comencemos creando su primer elemento"
       ],
@@ -895,6 +925,9 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege su contraseña y su dirección de correo personal a través de alias de correo electrónico. Desarrollado por la misma tecnología detrás de ${ MAIL_APP_NAME }, sus datos están cifrados de extremo a extremo y solo usted puede acceder a ellos."
       ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Moviendo todos los elementos desde \"${ payload.content.name }\""
+      ],
       "Multiple vaults": [
         "Bóvedas múltiples"
       ],
@@ -902,7 +935,7 @@
         "N/D"
       ],
       "No login found": [
-        "Ningún inicio de sesión encontrado"
+        "Ningún inicio de sesión fue encontrado."
       ],
       "None": [
         "Ninguno"
@@ -920,7 +953,7 @@
         "Prueba de Proton Pass Plus"
       ],
       "Password copied": [
-        "Contraseña copiada"
+        "La contraseña fue copiada."
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Las contraseñas generadas hace más de 1 día se borrarán del historial."
@@ -955,8 +988,14 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "La privacidad es una gran preocupación para nosotros. Descubra por qué ${ PASS_APP_NAME } es diferente."
       ],
+      "Restoring trashed items...": [
+        "Restaurando elementos de la papelera..."
+      ],
       "Save login": [
-        "Guardar inicio de sesión"
+        "Guardar el inicio de sesión"
+      ],
+      "Select destination vault": [
+        "Seleccione la bóveda de destino"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Seleccione dónde quiere guardar sus bóvedas importadas."
@@ -1038,7 +1077,7 @@
         "Desbloquéela con su PIN para acceder a los ajustes"
       ],
       "Update login": [
-        "Actualizar inicio de sesión"
+        "Actualizar el inicio de sesión"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Actualizar ${ PASS_APP_NAME }"
@@ -1060,6 +1099,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Bóveda \"${ payload.share.content.name }\" actualizada con éxito"
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "La bóveda \"${ share.content.name }\" fue eliminada"
       ],
       "Verification code": [
         "Código de verificación"
@@ -1336,6 +1378,9 @@
       "Modified": [
         "Modificado"
       ],
+      "More than a month": [
+        "Más de un mes"
+      ],
       "Most recent": [
         "Más reciente"
       ],
@@ -1368,9 +1413,6 @@
       ],
       "Old-New": [
         "Del más antiguo al más reciente"
-      ],
-      "Older than last month": [
-        "Anteriores al último mes"
       ],
       "Oldest to newest": [
         "De más antiguo a más reciente"
@@ -1661,7 +1703,7 @@
         "Ingrese su código PIN"
       ],
       "Fill & copy password": [
-        "Completar y copiar contraseña"
+        "Completar y copiar la contraseña"
       ],
       "Get the mobile apps": [
         "Obtenga las apps móviles"
@@ -1670,7 +1712,7 @@
         "Conceder permisos"
       ],
       "Hide my email": [
-        "Hide My Email"
+        "Hide-my-email"
       ],
       "Import - ${ date }": [
         "Importación - ${ date }"
@@ -1686,6 +1728,9 @@
       ],
       "Member limit": [
         "Límite de miembros"
+      ],
+      "Move all items ?": [
+        "¿Mover todos los elementos?"
       ],
       "Our welcome gift to you": [
         "Nuestro regalo de bienvenida para usted"
@@ -1709,7 +1754,7 @@
         "Compartir con"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
-        "¿Cambiando a ${ PASS_APP_NAME }?"
+        "¿Cambiar a ${ PASS_APP_NAME }?"
       ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Gracias por instalar ${ PASS_APP_NAME }"
@@ -1870,7 +1915,7 @@
         "¿Eliminar alias?"
       ],
       "Unable to save": [
-        "No se puede guardar"
+        "No se puede guardar."
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "No se puede iniciar sesión en ${ PASS_APP_NAME }. ${ additionalMessage }"

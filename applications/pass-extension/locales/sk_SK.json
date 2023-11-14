@@ -227,6 +227,9 @@
       "More options": [
         "Ďalšie možnosti"
       ],
+      "Move all items": [
+        "Presunúť všetky položky"
+      ],
       "Move to a shared vault": [
         "Presunúť do zdieľaného trezora"
       ],
@@ -487,6 +490,9 @@
       "Failed to edit user's access.": [
         "Úprava prístupových práv používateľa zlyhala."
       ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Presun všetkých položiek z \"${ payload.content.name }\" zlyhal"
+      ],
       "Failed to remove user's access.": [
         "Odstránenie prístupu používateľa zlyhalo."
       ],
@@ -546,6 +552,9 @@
       ],
       "Restoring item failed": [
         "Obnovenie položky zlyhalo"
+      ],
+      "Restoring trashed items failed": [
+        "Obnovovanie položiek z koša zlyhalo"
       ],
       "Settings update failed": [
         "Aktualizácia nastavení zlyhala"
@@ -759,11 +768,26 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" presunutý do koša – prestanú sa preposielať emaily do vašej poštovej schránky"
       ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Všetky položky z \"${ payload.content.name }\" boli úspešne presunuté"
+      ],
+      "All trashed items permanently removed": [
+        "Všetky položky v koši boli natrvalo odstránené"
+      ],
+      "All trashed items successfully restored": [
+        "Všetky položky z koša boli úspešne obnovené"
+      ],
+      "An item previously shared with you was removed": [
+        "Položka predtým zdieľaná s vami bola odstránená"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Skutočne chcete presunúť všetky položky z \"${ fromVaultName }\" do \"${ toVaultName }\" ?"
+      ],
       "Auto-lock successfully disabled": [
         "Automatické uzamknutie bolo úspešne deaktivované"
       ],
       "Autosaved on ${ submissionURL }": [
-        "Automaticky uložené ${ submissionURL }"
+        "Automaticky uložené z ${ submissionURL }"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Môžete vytvárať, upravovať, mazať a exportovať položky v tomto trezore."
@@ -778,7 +802,7 @@
         "Môže zobraziť položky v tomto trezore"
       ],
       "Click the icon to open it anytime.": [
-        "Kliknutím na ikonu ju môžete kedykoľvek otvoriť."
+        "Kliknutím na ikonu ju kedykoľvek otvoríte."
       ],
       "Congratulations, your access has been confirmed": [
         "Blahoželáme, váš prístup bol potvrdený"
@@ -816,6 +840,9 @@
       "Editor": [
         "Editor"
       ],
+      "Emptying trash...": [
+        "Vyprázdňovanie koša..."
+      ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Povoľte ${ PASS_APP_NAME } pripojením svojho účtu ${ BRAND_NAME }"
       ],
@@ -829,7 +856,7 @@
         "Export je šifrovaný pomocou PGP a vyžaduje silnú prístupovú frázu."
       ],
       "For easy access to your passwords and more.": [
-        "Pre jednoduchý prístup k vašim heslám a ďalšie."
+        "Pre jednoduchý prístup k heslám a k ďalším."
       ],
       "For security reason, your access needs to be confirmed": [
         "Z bezpečnostných dôvodov musí byť váš prístup potvrdený"
@@ -909,6 +936,9 @@
       "Item successfully moved": [
         "Položka bola úspešne presunutá"
       ],
+      "Leaving vault...": [
+        "Opustenie trezoru..."
+      ],
       "Let's get you started by creating your first item": [
         "Začnite vytvorením prvej položky"
       ],
@@ -926,6 +956,9 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } je viac ako správca hesiel, chráni vaše heslo a váš osobný email prostredníctvom emailových aliasov. Vďaka rovnakej technológii, akú používa ${ MAIL_APP_NAME }, sú vaše údaje šifrované počas celého spojenia a prístup k nim máte len vy."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
       "Multiple vaults": [
         "Viacero trezorov"
@@ -987,8 +1020,14 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Súkromie berieme veľmi vážne. Prečítajte si, prečo je ${ PASS_APP_NAME } iný."
       ],
+      "Restoring trashed items...": [
+        "Obnovovanie položiek z koša..."
+      ],
       "Save login": [
         "Uložiť prihlásenie"
+      ],
+      "Select destination vault": [
+        "Vyberte cieľový trezor"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Vyberte si, kde chcete uložiť vaše importované trezory."
@@ -1075,7 +1114,7 @@
         "Aktualizovať prihlásenie"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
-        "Navýšiť ${ PASS_APP_NAME }"
+        "Upgradovať ${ PASS_APP_NAME }"
       ],
       "Use vaults to share this item with others.": [
         "Pomocou trezorov môžete túto položku zdieľať s ostatnými."
@@ -1094,6 +1133,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Trezor \"${ payload.share.content.name }\" bol úspešne aktualizovaný"
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "Trezor \"${ share.content.name }\" bol odstránený"
       ],
       "Verification code": [
         "Overovací kód"
@@ -1376,6 +1418,9 @@
       "Modified": [
         "Upravené"
       ],
+      "More than a month": [
+        "Viac než mesiac"
+      ],
       "Most recent": [
         "Najnovšie"
       ],
@@ -1408,9 +1453,6 @@
       ],
       "Old-New": [
         "Staré-Nové"
-      ],
-      "Older than last month": [
-        "Staršie než posledný mesiac"
       ],
       "Oldest to newest": [
         "Od najstaršieho po najnovšie"
@@ -1729,6 +1771,9 @@
       "Member limit": [
         "Limit počtu členov"
       ],
+      "Move all items ?": [
+        "Presunúť všetky položky ?"
+      ],
       "Our welcome gift to you": [
         "Náš uvítací darček pre vás"
       ],
@@ -1787,7 +1832,7 @@
         "Víta vás ${ PASS_APP_NAME }"
       ],
       "Welcome to your new password manager!": [
-        "Vitajte vo vašom novom správcovi hesiel!"
+        "Vitajte vo svojom novom správcovi hesiel!"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Prečo ${ PASS_APP_NAME }?"

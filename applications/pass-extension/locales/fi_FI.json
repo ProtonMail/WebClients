@@ -65,12 +65,6 @@
       "Continue": [
         "Jatka"
       ],
-      "Continue without pinning": [
-        "Jatka kiinnittämättä"
-      ],
-      "Copy & fill in": [
-        "Kopioi ja täytä"
-      ],
       "Copy and close": [
         "Kopioi ja sulje"
       ],
@@ -182,9 +176,6 @@
       "Import": [
         "Tuo"
       ],
-      "Import your passwords": [
-        "Tuo salasanasi"
-      ],
       "Importing": [
         "Tuodaan"
       ],
@@ -227,6 +218,9 @@
       "More options": [
         "Lisää asetuksia"
       ],
+      "Move all items": [
+        "Siirrä kaikki kohteet"
+      ],
       "Move to a shared vault": [
         "Siirrä jaettuun holviin"
       ],
@@ -238,9 +232,6 @@
       ],
       "Move to trash": [
         "Siirrä roskakoriin"
-      ],
-      "Not now": [
-        "Ei nyt"
       ],
       "OK": [
         "OK"
@@ -347,9 +338,6 @@
       "Update vault": [
         "Päivitä holvi"
       ],
-      "Updating": [
-        "Päivitetään"
-      ],
       "Upgrade": [
         "Päivitä"
       ],
@@ -417,9 +405,6 @@
       ],
       "Auto-lock could not be disabled": [
         "Automaattilukitusta ei voitu poistaa käytöstä"
-      ],
-      "Cannot create alias (${ error }).": [
-        "Aliasta ei voida luoda (${ error })."
       ],
       "Cannot send invitation to this address at the moment": [
         "Kutsua ei tällä hetkellä ole mahdollista lähettää tähän osoitteeseen"
@@ -533,9 +518,6 @@
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
         "Jatka myöntämällä ${ PASS_APP_NAME }ille tarvittavat laajennusoikeudet."
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Kiinnitä laajennus tai valitse \"Jatka kiinnittämättä\"."
-      ],
       "Request timed out": [
         "Pyyntö aikakatkaistiin"
       ],
@@ -544,6 +526,9 @@
       ],
       "Restoring item failed": [
         "Kohteen palautus epäonnistui"
+      ],
+      "Restoring trashed items failed": [
+        "Roskakorin kohteiden palautus epäonnistui"
       ],
       "Settings update failed": [
         "Asetusten tallennus epäonnistui"
@@ -722,20 +707,26 @@
       "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
         "${ PASS_APP_NAME }in lukituksen avaus vaatii PIN-koodin"
       ],
-      "Access your passwords on the go with our mobile apps.": [
-        "Mobiilisovelluksillamme tavoitat salasanasi myös liikkeellä ollessasi."
-      ],
       "Admin": [
         "Ylläpito"
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" siirrettiin roskakoriin, eikä se enää ohjaa viestejä postilaatikkoosi."
       ],
+      "All trashed items permanently removed": [
+        "Kaikki roskakorin kohteet poistettiin pysyvästi"
+      ],
+      "All trashed items successfully restored": [
+        "Kaikki roskakorin kohteet palautettiin"
+      ],
+      "An item previously shared with you was removed": [
+        "Sinulle aiemmin jaettu kohde on poistettu"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Haluatko varmasti siirtää kaikki holvin \"${ fromVaultName }\" kohteen holviin \"${ toVaultName }\"?"
+      ],
       "Auto-lock successfully disabled": [
         "Automaattilukitus poistettiin käytöstä"
-      ],
-      "Autosaved on ${ submissionURL }": [
-        "Automaattitallennettiin osoitteesta ${ submissionURL }"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Voi luoda, muokata, poistaa ja viedä holvin kohteita."
@@ -749,17 +740,11 @@
       "Can view items in this vault.": [
         "Voi tarkastella holvin kohteita."
       ],
-      "Click the icon to open it anytime.": [
-        "Voit avata sen milloin tahansa klikkaamalla kuvaketta."
-      ],
       "Congratulations, your access has been confirmed": [
         "Onnittelut, pääsysi on vahvistettu"
       ],
       "Copied to clipboard": [
         "Kopioitiin leikepöydälle"
-      ],
-      "Creating alias...": [
-        "Luodaan aliasta.."
       ],
       "Credit cards, Custom fields": [
         "Maksukortit, omat kentät"
@@ -773,23 +758,17 @@
       "Deleting \"${ payload.content.name }\"": [
         "Poistetaan \"${ payload.content.name }\""
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Katso ${ PASS_APP_NAME } -YouTube-video"
-      ],
       "Drop file here to upload": [
         "Pudota ladattava tiedosto tähän"
       ],
       "Drop to import": [
         "Tuo pudottamalla"
       ],
-      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
-        "Tuo olemassa olevat salasanasi ${ PASS_APP_NAME }iin helposti."
-      ],
       "Editor": [
         "Muokkaus"
       ],
-      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Ota ${ PASS_APP_NAME } käyttöön yhdistämällä ${ BRAND_NAME }-tilisi"
+      "Emptying trash...": [
+        "Tyhjennetään roskakoria..."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Syötä vahvistuskoodi. Numero ${ digit }."
@@ -800,26 +779,14 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Tuonti salataan PGP:llä ja se vaatii vahvan tunnuslausekkeen."
       ],
-      "For easy access to your passwords and more.": [
-        "Helppo pääsy salasanoihisi ja muuhun."
-      ],
-      "For security reason, your access needs to be confirmed": [
-        "Turvallisuussyistä pääsysi on vahvistettava"
-      ],
       "For security reasons, your access needs to be confirmed": [
         "Turvallisuussyistä pääsysi on vahvistettava"
       ],
       "Generated passwords will be stored for a period of one day.": [
         "Luotuja salasanoja säilytetään yhden päivän ajan."
       ],
-      "Generating alias...": [
-        "Luodaan aliasta.."
-      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Tilaa Pass Plus ja saat rajattomasti aliaksia, nautit ainutlaatuisista ominaisuuksista ja tuet meitä."
-      ],
-      "Here you will find all the necessary information to get you started.": [
-        "Tästä saat kaikki tarvittavat tiedot, jotta pääset alkuun."
       ],
       "Import in progress:": [
         "Tuonti on käynnissä:"
@@ -877,6 +844,9 @@
       "Item successfully moved": [
         "Kohde siirrettiin"
       ],
+      "Leaving vault...": [
+        "Poistutaan holvista..."
+      ],
       "Let's get you started by creating your first item": [
         "Aloita luomalla ensimmäinen kohteesi"
       ],
@@ -901,9 +871,6 @@
       "N/A": [
         "Ei käytettävissä"
       ],
-      "No login found": [
-        "Kirjautumistietoa ei löytynyt"
-      ],
       "None": [
         "Ei mitään"
       ],
@@ -919,17 +886,8 @@
       "Pass Plus trial": [
         "Pass Plus -kokeilu"
       ],
-      "Password copied": [
-        "Salasana kopioitiin"
-      ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Päivää vanhemmat salasanat poistetaan historiasta automaattisesti."
-      ],
-      "Pending access to the shared data": [
-        "Odotetaan pääsyä jaettuihin tietoihin"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Kiinnitä ${ PASS_APP_NAME } työkalupalkkiisi"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-koodi on rekisteröity ja voit nyt avata ${ PASS_APP_NAME }in sillä."
@@ -955,8 +913,11 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Yksityisyys on meille suuri huolenaihe. Katso, mikä tekee ${ PASS_APP_NAME }ista erilaisen."
       ],
-      "Save login": [
-        "Tallenna kirjautumistieto"
+      "Restoring trashed items...": [
+        "Palautetaan roskakorin kohteita..."
+      ],
+      "Select destination vault": [
+        "Valitse kohdeholvi"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Valitse, mihin haluat, että tuodut holvit tallennetaan."
@@ -975,9 +936,6 @@
       ],
       "Share with 10 others": [
         "Jaa 10 muun kanssa"
-      ],
-      "Sign in or create an account to continue.": [
-        "Jatka kirjautumalla tai luomalla tili."
       ],
       "Sign in to your account": [
         "Kirjaudu tilillesi"
@@ -1033,12 +991,6 @@
       "Unlock it with your PIN to access the settings": [
         "Avaa lukitus PIN-koodillasi päästäksesi asetuksiin."
       ],
-      "Update login": [
-        "Päivitä kirjautumistieto"
-      ],
-      "Upgrade ${ PASS_APP_NAME }": [
-        "Päivitä ${ PASS_APP_NAME }"
-      ],
       "Use vaults to share this item with others.": [
         "Jaa tämä kohde muiden kanssa holvien avulla."
       ],
@@ -1057,8 +1009,8 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Holvi \"${ payload.share.content.name }\" päivitettiin"
       ],
-      "Verification code": [
-        "Vahvistuskoodi"
+      "Vault \"${ share.content.name }\" was removed": [
+        "Holvi \"${ share.content.name }\" poistettiin"
       ],
       "Viewer": [
         "Tarkastelu"
@@ -1096,9 +1048,6 @@
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Tällä PIN-koodilla voit avata ${ PASS_APP_NAME }in sen lukkiuduttua toimettomuuden seuraksena automaattisesti."
-      ],
-      "You're about to create": [
-        "Luot aliasta"
       ],
       "You're invited to a vault.": [
         "Sinut on kutsuttu holviin."
@@ -1303,16 +1252,16 @@
         "Kieli"
       ],
       "Last 2 weeks": [
-        "Viimeisen 14 päivän sisällä"
+        "Kahden viikon aikana"
       ],
       "Last autofill": [
-        "Automaattitäytetty"
+        "Täytetty"
       ],
       "Last month": [
-        "Viimeisen 30 päivän sisällä"
+        "Neljän viikon aikana"
       ],
       "Last week": [
-        "Viimeisen 7 päivän sisällä"
+        "Viikon aikana"
       ],
       "Latest import": [
         "Edellinen tuonti"
@@ -1364,9 +1313,6 @@
       ],
       "Old-New": [
         "Vanhimmasta uusimpaan"
-      ],
-      "Older than last month": [
-        "Yli 30 päivää sitten"
       ],
       "Oldest to newest": [
         "Vanhimmasta uusimpaan"
@@ -1656,17 +1602,8 @@
       "Enter your PIN": [
         "Syötä PIN-koodi"
       ],
-      "Fill & copy password": [
-        "Täytä ja kopioi salasana"
-      ],
-      "Get the mobile apps": [
-        "Hanki mobiilisovellukset"
-      ],
       "Grant permissions": [
         "Myönnä käyttöoikeudet"
-      ],
-      "Hide my email": [
-        "Hide-my-email"
       ],
       "Import - ${ date }": [
         "Tuontipäivä - ${ date }"
@@ -1675,7 +1612,7 @@
         "Tuo holviin/holveihin"
       ],
       "Leave vault ?": [
-        "Poistu holvista ?"
+        "Poistutaanko holvista?"
       ],
       "Low disk space": [
         "Tallennustila on vähissä"
@@ -1683,17 +1620,17 @@
       "Member limit": [
         "Jäsenraja"
       ],
+      "Move all items ?": [
+        "Siirretäänkö kaikki kohteet?"
+      ],
       "Our welcome gift to you": [
-        "Tervetulolahjamme sinulle"
+        "Tervetuliaislahjamme sinulle"
       ],
       "Pending access to the shared data": [
         "Odotetaan pääsyä jaettuihin tietoihin"
       ],
       "Permanently remove all items ?": [
         "Poistetaanko kaikki kohteet pysyvästi?"
-      ],
-      "Pin the extension": [
-        "Kiinnitä laajennus"
       ],
       "Secure your data": [
         "Suojaa tietosi"
@@ -1704,15 +1641,6 @@
       "Share with": [
         "Jaa käyttäjille"
       ],
-      "Switching to ${ PASS_APP_NAME }?": [
-        "Oletko vaihtamassa ${ PASS_APP_NAME }iin?"
-      ],
-      "Thank you for installing ${ PASS_APP_NAME }": [
-        "Kiitos ${ PASS_APP_NAME }in asennuksesta"
-      ],
-      "The extension is now ready to use.": [
-        "Laajennus on nyt käyttövalmis."
-      ],
       "Transfer ownership": [
         "Siirrä omistajuus"
       ],
@@ -1722,14 +1650,8 @@
       "Unlock ${ brandNameJSX }": [
         "Avaa ${ brandNameJSX }"
       ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Avaa ${ PASS_APP_NAME }"
-      ],
       "Update available": [
         "Päivitys saatavilla"
-      ],
-      "Use my email": [
-        "Käytä sähköpostiosoitettani"
       ],
       "Vault shared with you": [
         "Sinulle on jaettu holvi"
@@ -1865,9 +1787,6 @@
       "Trash alias ?": [
         "Siirretäänkö alias roskakoriin?"
       ],
-      "Unable to save": [
-        "Tallennus ei onnistu"
-      ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME }iin kirjautuminen ei onnistu. ${ additionalMessage }"
       ],
@@ -1897,12 +1816,6 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Sinulla ei ole enää pääsyä tähän holviin. Jos haluat liittyä siihen uudelleen, tarvitset uuden kutsun."
-      ],
-      "Your plan does not allow you to create more aliases": [
-        "Tilauksesi ei salli sinun luoda enempää aliaksia"
-      ],
-      "Your plan only allows you to autofill from your first two vaults": [
-        "Tilauksesi sallii automaattitäytön vain kahdesta ensimmäisestä holvistasi"
       ],
       "Your session was locked due to inactivity": [
         "Istuntosi lukittiin toimettomuuden seuraksena"

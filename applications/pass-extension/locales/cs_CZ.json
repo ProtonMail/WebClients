@@ -69,7 +69,7 @@
         "Pokračovat bez připnutí"
       ],
       "Copy & fill in": [
-        "Zkopírovat & vyplnit"
+        "Zkopírovat a vyplnit"
       ],
       "Copy and close": [
         "Kopírovat a zavřít"
@@ -81,7 +81,7 @@
         "Vytvořit"
       ],
       "Create a ${ BRAND_NAME } Account": [
-        "Vytvořit účet ${ BRAND_NAME }"
+        "Vytvořte účet ${ BRAND_NAME }"
       ],
       "Create a ${ BRAND_NAME } account": [
         "Vytvořit účet ${ BRAND_NAME }"
@@ -186,7 +186,7 @@
         "Importujte svá hesla"
       ],
       "Importing": [
-        "Import"
+        "Importuji"
       ],
       "Invite others": [
         "Pozvat ostatní"
@@ -226,6 +226,9 @@
       ],
       "More options": [
         "Více možností"
+      ],
+      "Move all items": [
+        "Přesunout všechny položky"
       ],
       "Move to a shared vault": [
         "Přesunout do sdíleného trezoru"
@@ -348,7 +351,7 @@
         "Aktualizovat trezor"
       ],
       "Updating": [
-        "Aktualizace"
+        "Aktualizuji"
       ],
       "Upgrade": [
         "Přejít na placený tarif"
@@ -487,6 +490,9 @@
       "Failed to edit user's access.": [
         "Úprava uživatelského přístupu selhala."
       ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Přesunutí všech položek z \"${ payload.content.name }\" selhalo"
+      ],
       "Failed to remove user's access.": [
         "Odstranění uživatelského přístupu selhalo."
       ],
@@ -546,6 +552,9 @@
       ],
       "Restoring item failed": [
         "Obnovení položky se nezdařilo"
+      ],
+      "Restoring trashed items failed": [
+        "Obnovení položek z koše selhalo"
       ],
       "Settings update failed": [
         "Aktualizace nastavení se nezdařila"
@@ -759,6 +768,21 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" přesunut do koše - přestane přeposílat e-maily do vaší schránky"
       ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Všechny položky z \"${ payload.content.name }\" úspěšně přesunuty"
+      ],
+      "All trashed items permanently removed": [
+        "Všechny položky z koše úspěšně smazány"
+      ],
+      "All trashed items successfully restored": [
+        "Všechny položky z koše úspěšně obnoveny"
+      ],
+      "An item previously shared with you was removed": [
+        "Položka dříve sdílená s vámi byla odebrána"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Jste si jisti, že chcete přesunout všechny položky z \"${ fromVaultName }\" do \"${ toVaultName }\" ?"
+      ],
       "Auto-lock successfully disabled": [
         "Automatické zamykání bylo úspěšně deaktivováno"
       ],
@@ -816,6 +840,9 @@
       "Editor": [
         "Editor"
       ],
+      "Emptying trash...": [
+        "Vysypávání koše..."
+      ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Povolte ${ PASS_APP_NAME } připojením svého ${ BRAND_NAME } účtu"
       ],
@@ -829,7 +856,7 @@
         "Export je šifrován pomocí PGP a vyžaduje silné heslo."
       ],
       "For easy access to your passwords and more.": [
-        "Snadný přístup k heslům a dalším údajům."
+        "Pro snadný přístup k heslům a dalším údajům."
       ],
       "For security reason, your access needs to be confirmed": [
         "Z bezpečnostních důvodů musí být váš přístup potvrzen"
@@ -909,6 +936,9 @@
       "Item successfully moved": [
         "Položka úspěšně přesunuta"
       ],
+      "Leaving vault...": [
+        "Opouštění trezoru..."
+      ],
       "Let's get you started by creating your first item": [
         "Začněte tím, že vytvoříte první položku"
       ],
@@ -926,6 +956,9 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } není obyčejný správce hesel. Chrání vaše heslo a osobní e-mailovou adresu pomocí e-mailových aliasů. Funguje na stejné technologii jako ${ MAIL_APP_NAME }, vaše data jsou koncově šifrována a dostupná jen vám."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Multiple vaults": [
         "Několik trezorů"
@@ -987,8 +1020,14 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Velmi nám záleží na ochraně soukromí. Přečtěte si, v čem se ${ PASS_APP_NAME } liší."
       ],
+      "Restoring trashed items...": [
+        "Obnovování položek z koše..."
+      ],
       "Save login": [
         "Uložit přihlášení"
+      ],
+      "Select destination vault": [
+        "Vyberte cílový trezor"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Vyberte, kam chcete importované trezory uložit."
@@ -1094,6 +1133,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Trezor \"${ payload.share.content.name }\" úspěšně aktualizován"
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "Trezor \"${ share.content.name }\" byl odebrán"
       ],
       "Verification code": [
         "Ověřovací kód"
@@ -1376,6 +1418,9 @@
       "Modified": [
         "Upraveno"
       ],
+      "More than a month": [
+        "Více než měsíc"
+      ],
       "Most recent": [
         "Nejnovější"
       ],
@@ -1408,9 +1453,6 @@
       ],
       "Old-New": [
         "Staré-Nové"
-      ],
-      "Older than last month": [
-        "Starší než poslední měsíc"
       ],
       "Oldest to newest": [
         "Od nejstarších k nejnovějším"
@@ -1706,13 +1748,13 @@
         "Vyplnit a kopírovat heslo"
       ],
       "Get the mobile apps": [
-        "Získat mobilní aplikace"
+        "Získejte mobilní aplikace"
       ],
       "Grant permissions": [
         "Udělit oprávnění"
       ],
       "Hide my email": [
-        "Hide my email"
+        "Hide-my-email"
       ],
       "Import - ${ date }": [
         "Importováno - ${ date }"
@@ -1728,6 +1770,9 @@
       ],
       "Member limit": [
         "Limit počtu členů"
+      ],
+      "Move all items ?": [
+        "Přesunout všechny položky?"
       ],
       "Our welcome gift to you": [
         "Náš dárek na přivítanou pro vás"

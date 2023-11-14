@@ -4,6 +4,16 @@
     "language": "en_US"
   },
   "contexts": {
+    "Action": {
+      "Your password manager not here? Request it.": [
+        "Your password manager is not here? Request it."
+      ]
+    },
+    "Error": {
+      "Cannot create alias (${ error }).": [
+        "Cannot create alias: (${ error })."
+      ]
+    },
     "Info": {
       " Upgrade to a paid plan to create multiple vaults.": [
         "Upgrade to a paid plan to create multiple vaults."
@@ -11,11 +21,26 @@
       "${ PASS_APP_NAME } will suggest creating strong passwords on sign-up forms.": [
         "${ PASS_APP_NAME } will suggest creating a strong password on sign up forms."
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Discover ${ PASS_APP_NAME } YouTube Video"
+      "7 days to try premium features for free. Only during your first week of ${ BRAND_NAME }.": [
+        "7 days to try premium features for free. Only during your first week with ${ BRAND_NAME }."
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\"?"
+      ],
+      "For security reason, your access needs to be confirmed": [
+        "For security reasons, your access needs to be confirmed"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end-to-end encrypted and is only accessible by you."
+      ],
+      "Select where you want your imported vault(s) to be saved.": [
+        "Select where you want your imported vaults to be saved."
+      ],
+      "To review your imported data, click on the Pass icon in your browser toolbar.": [
+        "To review your imported data, click on the Proton Pass icon in your browser toolbar."
+      ],
+      "User's access sucessfuly updated": [
+        "User's access successfully updated"
       ]
     },
     "Label": {
@@ -33,11 +58,11 @@
       "Delete vault \"${ vaultName }\" ?": [
         "Delete vault \"${ vaultName }\"?"
       ],
-      "Hide my email": [
-        "Hide-my-email"
-      ],
       "Leave vault ?": [
         "Leave vault?"
+      ],
+      "Move all items ?": [
+        "Move all items?"
       ],
       "Permanently remove all items ?": [
         "Permanently remove all items?"
