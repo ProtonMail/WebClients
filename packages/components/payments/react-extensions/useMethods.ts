@@ -45,16 +45,18 @@ export type MethodsHook = {
     isNewPaypal: boolean;
 };
 
+type UsedAndNewMethods = {
+    usedMethods: AvailablePaymentMethod[];
+    newMethods: AvailablePaymentMethod[];
+};
+
 export const useMethods = (
     { paymentMethodStatus, amount, coupon, flow, onMethodChanged }: Props,
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
     const paymentMethodsRef = useRef<PaymentMethods>();
     const [loading, setLoading] = useState(true);
-    const [availableMethods, setAvailableMethods] = useState<{
-        usedMethods: AvailablePaymentMethod[];
-        newMethods: AvailablePaymentMethod[];
-    }>({
+    const [availableMethods, setAvailableMethods] = useState<UsedAndNewMethods>({
         usedMethods: [],
         newMethods: [],
     });
@@ -63,10 +65,7 @@ export const useMethods = (
     const [status, setStatus] = useState<PaymentMethodStatus | undefined>();
     const [savedMethods, setSavedMethods] = useState<SavedPaymentMethod[] | undefined>();
 
-    const getComputedMethods = (availableMethodsParam?: {
-        usedMethods: AvailablePaymentMethod[];
-        newMethods: AvailablePaymentMethod[];
-    }) => {
+    const getComputedMethods = (availableMethodsParam?: UsedAndNewMethods) => {
         const { usedMethods, newMethods } = availableMethodsParam ?? availableMethods;
         const allMethods = [...usedMethods, ...newMethods];
         const lastUsedMethod = usedMethods[usedMethods.length - 1];
@@ -109,10 +108,9 @@ export const useMethods = (
             setSavedMethods(paymentMethodsRef.current.paymentMethods);
 
             const methods = updateMethods();
-
             const { allMethods } = getComputedMethods(methods);
-            setSelectedMethod(allMethods[0]);
 
+            setSelectedMethod(allMethods[0]);
             setLoading(false);
         }
 
