@@ -11,6 +11,9 @@ import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 
+import { selectComposersCount } from 'proton-mail/logic/composers/composerSelectors';
+import { useAppSelector } from 'proton-mail/logic/store';
+
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { hasLabel } from '../../helpers/elements';
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
@@ -85,6 +88,7 @@ const ConversationView = ({
         onBack,
     });
     const messageViewsRefs = useRef({} as { [messageID: string]: MessageViewRef | undefined });
+    const composersCount = useAppSelector(selectComposersCount);
 
     const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -120,7 +124,9 @@ const ConversationView = ({
         messageViewsRefs.current[messageID || '']?.expand();
         const index = messagesToShow.findIndex((message) => message.ID === messageID);
         // isEditing is used to prevent the focus to be set on the message when the user is editing, otherwise it triggers shortcuts
-        if (index !== undefined && !isEditing()) {
+        // Also, when a composer is opened, we don't want to focus the message when we expand it (e.g. message is being sent),
+        // so that the user is able to continue editing
+        if (index !== undefined && !isEditing() && composersCount === 0) {
             handleFocus(index, { scrollTo });
         }
     };
