@@ -80,8 +80,8 @@ const Layout = ({
                 background === 'dark'
                     ? 'signup-v1-bg--dark'
                     : background === 'bf2023'
-                    ? 'signup-v1-bg--bf2023'
-                    : 'signup-v1-bg',
+                        ? 'signup-v1-bg--bf2023'
+                        : 'signup-v1-bg',
                 className
             )}
         >

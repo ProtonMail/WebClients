@@ -75,23 +75,29 @@ $dummy-map: ();
 	);
 }
 
+// Add `align-items` utilities to the map
+@each $align in (start, center, end, baseline, stretch, inherit) {
+	// Remove prefix when 'start' and 'end' will be recognized by browsers
+	$prefix: if($align == start or $align == end, 'flex', '');
+	$dummy-map: map.merge(
+		$dummy-map,
+		(
+			flex-align-items-#{$align}:
+				(
+					align-items: #{dash-join($prefix, $align)},
+				),
+			flex-align-self-#{$align}:
+				(
+					align-self: #{dash-join($prefix, $align)},
+				)
+		)
+	);
+}
+
 // Serialize the responsive utilities creation with the map to avoid any cascade ordering issues
 @include responsive-classes($dummy-map);
 
 // ----------------------------------------------------------------------------
-
-@each $align in (start, center, end, baseline, stretch, inherit) {
-	// Remove prefix when 'start' and 'end' will be recognized by browsers
-	$prefix: if($align == start or $align == end, 'flex', '');
-
-	.flex-align-items-#{$align} {
-		align-items: #{dash-join($prefix, $align)};
-	}
-
-	.flex-align-self-#{$align} {
-		align-self: #{dash-join($prefix, $align)};
-	}
-}
 
 .flex-flex-align-items-center > * {
 	align-items: center;
@@ -131,6 +137,10 @@ $dummy-map: ();
 
 		flex-initial: (
 			flex: 0 1 auto,
+		),
+
+		flex-none: (
+			flex: none,
 		)
 	)
 );

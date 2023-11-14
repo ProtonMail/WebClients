@@ -68,7 +68,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                     }
                 }}
             >
-                <div className="mr-0 mb-4 md:mr-4 flex-item-fluid min-w-custom" style={{ '--min-w-custom': '14em' }}>
+                <div className="mr-0 mb-4 md:mr-4 md:flex-item-fluid min-w-custom" style={{ '--min-w-custom': '14em' }}>
                     <InputFieldTwo
                         as={PhoneInput}
                         id="phoneInput"
