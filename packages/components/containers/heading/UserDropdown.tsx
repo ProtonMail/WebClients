@@ -49,6 +49,7 @@ import {
     isSSOMode,
 } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
+import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getIsEventModified } from '@proton/shared/lib/helpers/dom';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import {
@@ -116,6 +117,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
         sessionRecoveryState === SessionRecoveryState.INSECURE;
 
     const { feature: referralProgramFeature } = useFeature(FeatureCode.ReferralProgram);
+    const isElectron = isElectronApp();
 
     const subscriptionStartedThirtyDaysAgo =
         !!subscription?.PeriodStart && new Date() > addDays(fromUnixTime(subscription.PeriodStart), 30);
@@ -329,7 +331,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                         </div>
                     )}
 
-                    {isSSOMode ? (
+                    {isSSOMode && !isElectron ? (
                         <div className="px-4 pb-2">
                             <ButtonLike
                                 as="a"
