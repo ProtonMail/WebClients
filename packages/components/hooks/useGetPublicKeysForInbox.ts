@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
 import { MINUTE } from '@proton/shared/lib/constants';
-import { GetPublicKeys } from '@proton/shared/lib/interfaces/hooks/GetPublicKeys';
+import { GetPublicKeysForInbox } from '@proton/shared/lib/interfaces/hooks/GetPublicKeysForInbox';
 
 import { useKeyTransparencyContext } from '../containers/keyTransparency';
 import useApi from './useApi';
@@ -13,12 +13,22 @@ export const CACHE_KEY = 'PUBLIC_KEYS';
 
 const DEFAULT_LIFETIME = 30 * MINUTE;
 
-export const useGetPublicKeys = () => {
+/**
+ * Get public keys valid in the context of Inbox apps.
+ * In particular, internal address keys from external accounts are not returned.
+ */
+export const useGetPublicKeysForInbox = () => {
     const cache = useCache();
     const api = useApi();
     const { verifyOutboundPublicKeys, ktActivation } = useKeyTransparencyContext();
-    return useCallback<GetPublicKeys>(
-        ({ email, lifetime = DEFAULT_LIFETIME, noCache = false, internalKeysOnly }) => {
+    return useCallback<GetPublicKeysForInbox>(
+        ({
+            email,
+            lifetime = DEFAULT_LIFETIME,
+            noCache = false,
+            internalKeysOnly,
+            includeInternalKeysWithE2EEDisabledForMail,
+        }) => {
             if (!cache.has(CACHE_KEY)) {
                 cache.set(CACHE_KEY, new Map());
             }
@@ -27,6 +37,7 @@ export const useGetPublicKeys = () => {
                 getPublicKeysEmailHelper({
                     email,
                     internalKeysOnly,
+                    includeInternalKeysWithE2EEDisabledForMail,
                     api,
                     ktActivation,
                     verifyOutboundPublicKeys,
@@ -39,4 +50,4 @@ export const useGetPublicKeys = () => {
     );
 };
 
-export default useGetPublicKeys;
+export default useGetPublicKeysForInbox;

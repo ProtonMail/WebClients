@@ -73,7 +73,10 @@ export interface ProcessedApiAddressKey {
 
 export type VerifyOutboundPublicKeys = (
     email: string,
-    keysIntendedForEmail: boolean,
+    /**
+     * Optimisations for apps where users with external domains do not have valid keys (e.g. Mail)
+     */
+    skipVerificationOfExternalDomains: boolean,
     address: {
         keyList: ProcessedApiAddressKey[];
         signedKeyList: FetchedSignedKeyList | null;

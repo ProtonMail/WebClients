@@ -17,7 +17,7 @@ import useApi from './useApi';
 import useCache from './useCache';
 import { getPromiseValue } from './useCachedModelResult';
 import { useGetAddressKeys } from './useGetAddressKeys';
-import useGetPublicKeys from './useGetPublicKeys';
+import useGetPublicKeysForInbox from './useGetPublicKeysForInbox';
 import { useGetMailSettings } from './useMailSettings';
 import { useGetUserKeys } from './useUserKeys';
 
@@ -28,7 +28,8 @@ const DEFAULT_LIFETIME = 5 * MINUTE;
 /**
  * Given an email address and the user mail settings, return the encryption preferences for sending to that email.
  * The logic for how those preferences are determined is laid out in the
- * Confluence document 'Encryption preferences for outgoing email'
+ * Confluence document 'Encryption preferences for outgoing email'.
+ * NB: the current logic does not handle internal address keys belonging to external accounts, since these keys are not used by Inbox.
  */
 const useGetEncryptionPreferences = () => {
     const api = useApi();
@@ -36,11 +37,11 @@ const useGetEncryptionPreferences = () => {
     const getAddresses = useGetAddresses();
     const getUserKeys = useGetUserKeys();
     const getAddressKeys = useGetAddressKeys();
-    const getPublicKeys = useGetPublicKeys();
+    const getPublicKeysForInbox = useGetPublicKeysForInbox();
     const getMailSettings = useGetMailSettings();
 
     const getEncryptionPreferences = useCallback<GetEncryptionPreferences>(
-        async ({ email, lifetime, contactEmailsMap }) => {
+        async ({ email, lifetime, contactEmailsMap, intendedForEmail = true }) => {
             const [addresses, mailSettings] = await Promise.all([getAddresses(), getMailSettings()]);
             const canonicalEmail = canonicalizeInternalEmail(email);
             const selfAddress = getSelfSendAddresses(addresses).find(
@@ -68,8 +69,9 @@ const useGetEncryptionPreferences = () => {
                 pinnedKeysConfig = { pinnedKeys: [], isContact: false };
             } else {
                 const { publicKeys } = splitKeys(await getUserKeys());
-                apiKeysConfig = await getPublicKeys({
+                apiKeysConfig = await getPublicKeysForInbox({
                     email,
+                    includeInternalKeysWithE2EEDisabledForMail: intendedForEmail === false,
                     lifetime,
                     noCache: !lifetime,
                 });
@@ -83,11 +85,11 @@ const useGetEncryptionPreferences = () => {
             });
             return extractEncryptionPreferences(publicKeyModel, mailSettings, selfSend);
         },
-        [api, getAddressKeys, getAddresses, getPublicKeys, getMailSettings]
+        [api, getAddressKeys, getAddresses, getPublicKeysForInbox, getMailSettings]
     );
 
     return useCallback<GetEncryptionPreferences>(
-        ({ email, lifetime = DEFAULT_LIFETIME, contactEmailsMap }) => {
+        ({ email, lifetime = DEFAULT_LIFETIME, contactEmailsMap, intendedForEmail }) => {
             if (!cache.has(CACHE_KEY)) {
                 cache.set(CACHE_KEY, new Map());
             }
@@ -99,6 +101,7 @@ const useGetEncryptionPreferences = () => {
             const miss = () =>
                 getEncryptionPreferences({
                     email: canonicalEmail,
+                    intendedForEmail,
                     lifetime,
                     contactEmailsMap,
                 });
