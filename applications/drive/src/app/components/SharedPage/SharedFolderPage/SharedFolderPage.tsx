@@ -12,7 +12,8 @@ import { isTransferActive } from '../../../utils/transfer';
 import { FileBrowserStateProvider } from '../../FileBrowser';
 import { useUpsellFloatingModal } from '../../modals/UpsellFloatingModal';
 import Breadcrumbs from '../Layout/Breadcrumbs';
-import { HeaderSubtitle } from '../Layout/HeaderSubtitle';
+import HeaderSecureLabel from '../Layout/HeaderSecureLabel';
+import HeaderSize from '../Layout/HeaderSize';
 import SharedPageFooter from '../Layout/SharedPageFooter';
 import SharedPageHeader from '../Layout/SharedPageHeader';
 import SharedPageLayout from '../Layout/SharedPageLayout';
@@ -195,16 +196,19 @@ export default function SharedFolder({ token, rootLink }: Props) {
     return (
         <FileBrowserStateProvider itemIds={fileBrowserItems.map(({ linkId }) => linkId)}>
             <SharedPageLayout FooterComponent={<SharedPageFooter rootItem={rootLink} items={fileBrowserItems} />}>
-                <SharedPageHeader rootItem={rootLink} items={fileBrowserItems}>
-                    <div className="max-w-full">
+                <SharedPageHeader rootItem={rootLink} items={fileBrowserItems} className="mt-7 mb-8">
+                    <div className="max-w-full flex flex-align-items-center">
                         <Breadcrumbs
                             token={token}
                             name={folderView.folderName}
                             linkId={linkId}
                             onNavigate={setLinkId}
-                            className="shared-folder-header-breadcrumbs pb-1"
+                            className="w-full shared-folder-header-breadcrumbs pb-1"
                         />
-                        <HeaderSubtitle size={totalSize} />
+                        <div className="flex flex-align-items-center">
+                            <HeaderSecureLabel />
+                            {totalSize ? <HeaderSize size={totalSize} /> : null}
+                        </div>
                     </div>
                 </SharedPageHeader>
                 {shouldRenderPreviewContainer && (
