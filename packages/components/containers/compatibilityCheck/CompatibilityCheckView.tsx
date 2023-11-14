@@ -23,7 +23,7 @@ const CompatibilityCheckView = ({ appName = APPS.PROTONMAIL, incompatibilities }
     const app = getAppName(appName);
 
     return (
-        <div className="w-1/2 p-7 mt-8 mx-auto text-lg auto-mobile">
+        <div className="w-full md:w-1/2 p-7 mt-8 mx-auto text-lg">
             <div className="text-center">
                 <h1>Compatibility check</h1>
                 <p>
