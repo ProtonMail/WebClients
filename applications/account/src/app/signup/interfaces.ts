@@ -46,6 +46,7 @@ export const SERVICES: { [key: string]: APP_NAMES } = {
     vpn: APPS.PROTONVPN_SETTINGS,
     pass: APPS.PROTONPASS,
     docs: APPS.PROTONDOCS,
+    wallet: APPS.PROTONWALLET,
 };
 
 export interface PlanIDs {
