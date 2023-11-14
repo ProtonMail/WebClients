@@ -126,7 +126,7 @@ const SnoozeDurationSelection = ({ canUnsnooze, handleUnsnoozeClick, handleSnooz
      * Otherwise we can send the predifined duration
      */
     const handleSnoozeDurationClick = (event: MouseEvent, duration: SNOOZE_DURATION) => {
-        if (weekStartInWeekend) {
+        if (weekStartInWeekend && duration === 'nextweek') {
             const snoozeTime = set(startOfNextWeek, { hours: 9, minutes: 0, seconds: 0, milliseconds: 0 });
             handleSnooze(event, 'custom', snoozeTime);
         } else {
