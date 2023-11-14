@@ -7,15 +7,16 @@ import {
 } from 'proton-pass-extension/lib/components/Extension/ExtensionConnect';
 import { useExpanded } from 'proton-pass-extension/lib/hooks/useExpanded';
 import { useExtensionConnectContext } from 'proton-pass-extension/lib/hooks/useExtensionConnectContext';
-import { enhanceNotification } from 'proton-pass-extension/lib/utils/enhance-notification';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { NotificationsContext } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { useActionRequestEffect } from '@proton/pass/hooks/useActionRequestEffect';
+import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { clientReady } from '@proton/pass/lib/client';
 import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
+import browser from '@proton/pass/lib/globals/browser';
 import { syncRequest } from '@proton/pass/store/actions/requests';
 import type { AppState, MaybeNull, PopupInitialState } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
@@ -109,10 +110,11 @@ const PopupContextContainer: FC = ({ children }) => {
 
 export const PopupContextProvider: FC = ({ children }) => {
     const { createNotification } = useNotifications();
+    const notificationEnhancer = useNotificationEnhancer({ onLink: (url) => browser.tabs.create({ url }) });
 
     const onWorkerMessage = (message: WorkerMessageWithSender) => {
         if (message.type === WorkerMessageType.NOTIFICATION) {
-            createNotification(enhanceNotification(message.payload.notification));
+            createNotification(notificationEnhancer(message.payload.notification));
         }
     };
 
