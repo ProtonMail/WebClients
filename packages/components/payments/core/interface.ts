@@ -50,10 +50,6 @@ export interface ExistingPayment {
     PaymentMethodID: string;
 }
 
-export function isExistingPayment(data: any): data is ExistingPayment {
-    return !!data && typeof data.PaymentMethodID === 'string';
-}
-
 export interface WrappedCardPayment {
     Payment: CardPayment;
 }

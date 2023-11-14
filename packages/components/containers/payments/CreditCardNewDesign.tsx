@@ -1,5 +1,6 @@
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react';
 
+import valid from 'card-validator';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms';
@@ -14,10 +15,10 @@ import clsx from '@proton/utils/clsx';
 import { Icon, Label, Option, SelectTwo } from '../../components';
 import { DEFAULT_SEPARATOR, getFullList } from '../../helpers/countries';
 import { CardModel } from '../../payments/core';
-import { isPotentiallyCVV } from './cardValidator';
 
 import './CreditCardNewDesign.scss';
 
+const isPotentiallyCVV = (value: string, maxLength: number) => valid.cvv(value, maxLength).isPotentiallyValid;
 const isValidMonth = (m: string) => !m || (isNumber(m) && m.length <= 2);
 const isValidYear = (y: string) => !y || (isNumber(y) && y.length <= 4);
 
