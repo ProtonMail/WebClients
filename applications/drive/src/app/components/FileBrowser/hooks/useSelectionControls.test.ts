@@ -8,18 +8,38 @@ describe('useSelection', () => {
     let hook: {
         current: ReturnType<typeof useSelectionControls>;
     };
+    let rerenderHook: (props?: unknown) => void;
+    let itemIds = ALL_IDS;
 
     beforeEach(() => {
-        const { result } = renderHook(() => useSelectionControls({ itemIds: ALL_IDS }));
+        const { result, rerender } = renderHook(() => useSelectionControls({ itemIds }));
         hook = result;
+        rerenderHook = rerender;
     });
 
     it('toggleSelectItem', () => {
         const itemIdToToggle = '1';
+        const secondItemIdToToggle = '2';
         act(() => {
             hook.current.toggleSelectItem(itemIdToToggle);
         });
         expect(hook.current.selectedItemIds).toMatchObject([itemIdToToggle]);
+
+        // Select new item
+        rerenderHook();
+        act(() => {
+            hook.current.toggleSelectItem(secondItemIdToToggle);
+        });
+        expect(hook.current.selectedItemIds).toMatchObject([itemIdToToggle, secondItemIdToToggle]);
+
+        // Unselect items one by one
+        rerenderHook();
+        act(() => {
+            hook.current.toggleSelectItem(itemIdToToggle);
+            hook.current.toggleSelectItem(secondItemIdToToggle);
+        });
+        rerenderHook();
+        expect(hook.current.selectedItemIds).toMatchObject([]);
     });
 
     it('toggleAllSelected', () => {
@@ -37,6 +57,13 @@ describe('useSelection', () => {
             hook.current.toggleRange('5');
         });
         expect(hook.current.selectedItemIds).toMatchObject(['3', '4', '5']);
+    });
+
+    it('toggleRange with no selectItem before', () => {
+        act(() => {
+            hook.current.toggleRange('5');
+        });
+        expect(hook.current.selectedItemIds).toMatchObject(['5']);
     });
 
     it('selectItem', () => {
@@ -85,5 +112,17 @@ describe('useSelection', () => {
             hook.current.toggleAllSelected();
         });
         expect(hook.current.selectionState).toBe(SelectionState.NONE);
+    });
+
+    it('should reset multiSelectedStartId on itemIds changes', () => {
+        act(() => {
+            hook.current.selectItem('3');
+        });
+        itemIds = ['10', '11', '12'];
+        rerenderHook();
+        act(() => {
+            hook.current.toggleRange('10');
+        });
+        expect(hook.current.selectedItemIds).toMatchObject(['10']);
     });
 });
