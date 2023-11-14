@@ -23,7 +23,7 @@ const AlmostAllMailBanner = ({ className }: Props) => {
             onClick={() => {
                 push(changeSearchParams(`/${getHumanLabelID(MAILBOX_LABEL_IDS.ALL_MAIL)}`, location.hash));
             }}
-        >{c('Info').t`Include Spam/Trash in your search results.`}</InlineLinkButton>
+        >{c('Info').t`Include Spam/Trash.`}</InlineLinkButton>
     );
 
     return (
@@ -33,7 +33,7 @@ const AlmostAllMailBanner = ({ className }: Props) => {
             </div>
             <div className="flex-item-fluid pl-1">
                 {
-                    // translator: sentence appear when a user has AlmostAllMail setting on, excluding spam/trash for the search results. Complete sentence example: "Can't find what you're looking for? <Include Spam/Trash in your search results.>"
+                    // translator: sentence appear when a user has AlmostAllMail setting on, excluding spam/trash. Complete sentence example: "Can't find what you're looking for? <Include Spam/Trash.>"
                     c('Info').jt`Can't find what you're looking for? ${displayAllMailButton}`
                 }
             </div>
