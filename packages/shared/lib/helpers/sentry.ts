@@ -13,6 +13,7 @@ import { VPN_HOSTNAME } from '../constants';
 import { ApiError } from '../fetch/ApiError';
 import { getUIDHeaders } from '../fetch/headers';
 import { ProtonConfig } from '../interfaces';
+import { isElectronApp } from './desktop';
 
 type SentryContext = {
     authHeaders: { [key: string]: string };
@@ -175,19 +176,21 @@ function main({
     denyUrls = getDefaultDenyUrls(),
     ignoreErrors = getDefaultIgnoreErrors(),
 }: SentryOptions) {
-    const { SENTRY_DSN, APP_VERSION } = config;
+    const { SENTRY_DSN, SENTRY_DESKTOP_DSN, APP_VERSION } = config;
+    const isElectron = isElectronApp();
+    const sentryDSN = isElectron ? SENTRY_DESKTOP_DSN || SENTRY_DSN : SENTRY_DSN;
     const { host, release, environment } = sentryConfig;
 
     // No need to configure it if we don't load the DSN
-    if (!SENTRY_DSN || ignore(sentryConfig)) {
+    if (!sentryDSN || ignore(sentryConfig)) {
         return;
     }
 
     setUID(uid);
 
-    // Assumes SENTRY_DSN is: https://111b3eeaaec34cae8e812df705690a36@sentry/11
+    // Assumes sentryDSN is: https://111b3eeaaec34cae8e812df705690a36@sentry/11
     // To get https://111b3eeaaec34cae8e812df705690a36@protonmail.com/api/core/v4/reports/sentry/11
-    const dsn = SENTRY_DSN.replace('sentry', `${host}/api/core/v4/reports/sentry`);
+    const dsn = sentryDSN.replace('sentry', `${host}/api/core/v4/reports/sentry`);
 
     init({
         dsn,

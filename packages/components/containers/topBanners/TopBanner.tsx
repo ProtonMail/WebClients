@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
 import Icon from '../../components/icon/Icon';
@@ -15,10 +16,15 @@ interface Props {
 }
 
 const TopBanner = ({ children, className, onClose, ...rest }: Props) => {
+    const isElectronOnMacComputers = isElectronOnMac();
     return (
         <div
             role="alert"
-            className={clsx(['flex flex-item-noshrink flex-nowrap text-center relative text-bold no-print', className])}
+            className={clsx([
+                'flex flex-item-noshrink flex-nowrap text-center relative text-bold no-print',
+                className,
+                isElectronOnMacComputers && 'pt-4',
+            ])}
             {...rest}
         >
             <div className="flex-item-fluid p-2">{children}</div>

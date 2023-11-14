@@ -25,6 +25,7 @@ const usePreLoadElements = ({ elements, labelID, loading }: Props) => {
     const dispatch = useAppDispatch();
     const { feature } = useFeature(FeatureCode.NumberOfPreloadedConversations);
     const numberOfPreloadedConversations = feature?.Value || 0;
+
     const firstElements = elements.slice(0, numberOfPreloadedConversations);
     const conversations = useSelector(allConversations);
 
