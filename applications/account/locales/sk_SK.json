@@ -11,7 +11,7 @@
     },
     "Access level": {
       "Full view": [
-        "Plné zobrazenie"
+        "Úplné zobrazenie"
       ],
       "Full view (see all event details)": [
         "Plné zobrazenie (zobraziť všetky podrobnosti o udalosti)"
@@ -297,13 +297,13 @@
         "Odstrániť"
       ],
       "Delete and confirm": [
-        "Zmazať a potvrdiť"
+        "Vymazať a potvrdiť"
       ],
       "Delete Gateway": [
         "Odstrániť bránu"
       ],
       "Delete link": [
-        "Vymazať odkaz"
+        "Odstrániť odkaz"
       ],
       "Delete permanently": [
         "Navždy vymazať"
@@ -1288,12 +1288,12 @@
     },
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
-        "Pridať do kalendára a označiť ako čakajúce na odpoveď"
+        "Pridať do kalendára a označiť ako čakajúce"
       ]
     },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
-        "Som mimo kanceláriu s obmedzeným prístupom k svojmu e-mailu."
+        "Som mimo kanceláriu s obmedzeným prístupom k emailu."
       ]
     },
     "Badge for domain": {
@@ -1375,7 +1375,7 @@
         "Prístup k obsahu z celého sveta"
       ],
       "Ad-blocker and malware protection": [
-        "Ad-blocker a ochrana pred škodlivým softvérom"
+        "Ad-blocker a ochrana pred malvérom"
       ],
       "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Všetky funkcie plateného ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
@@ -1404,7 +1404,7 @@
         "Zľavy sú tvorené na základe štandardných mesačných cien."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Vaše predplatné sa automaticky obnoví za štandardnú zľavnenú sadzbu a trvanie na konci vášho fakturačného cyklu."
+        "Vaše predplatné sa automaticky obnoví so štandardnou zľavnenou sadzbou a trvaním na konci vášho fakturačného cyklu."
       ]
     },
     "bf2023: header": {
@@ -1468,7 +1468,7 @@
         "prvý mesiac"
       ],
       "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ discountedPrice } platí počas ${ discountedMonths }. Potom sa automaticky obnoví za zvýhodnenú cenu ${ nextPrice } na ${ nextMonths }. Službu môžete kedykoľvek zrušiť."
+        "Špeciálne zľavnená cena ${ discountedPrice } platí na ${ discountedMonths }. Potom sa automaticky obnoví za zvýhodnenú cenu ${ nextPrice } na ${ nextMonths }. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ discountedPrice } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ nextPrice }. Službu môžete kedykoľvek zrušiť."
@@ -1481,10 +1481,10 @@
     },
     "bf2023: Tooltip": {
       "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Získajte prístup k blokovanému obsahu a surfujte v súkromí. Obsahuje 3000+ serverov v 65+ krajinách, najvyššie rýchlosti VPN, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám, rýchle sťahovanie cez BitTorrent a ďalšie."
+        "Získajte prístup k blokovanému obsahu a vyhľadávajte v súkromí. Obsahuje 3000+ serverov v 65+ krajinách, najvyššie rýchlosti VPN, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám, rýchle sťahovanie cez BitTorrent a ďalšie."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Získajte prístup k obsahu na streamovacích službách vrátane Netflix, Disney+ a Prime Video odkiaľkoľvek."
+        "Získajte prístup k obsahu na streamovacích službách vrátane Netflix, Disney+, Prime Video a ďalších odkiaľkoľvek."
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Obíďte obmedzenia a cenzúru miestneho internetu pomocou našej globálnej siete serverov."
@@ -1502,7 +1502,7 @@
         "Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Zabezpečte svoje emaily pomocou end-to-end šifrovania. Súčasťou je podpora vlastných emailových domén, 15 emailových adries, neobmedzený počet ide-my-email aliasov a ďalšie."
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je podpora vlastných emailových domén, 15 emailových adries, neobmedzený počet hide-my-email aliasov, zdieľanie kalendára a ďalšie."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa históriu verzií, zdieľanie šifrovaných súborov a ďalšie."
@@ -1669,7 +1669,7 @@
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Môžete importovať ICS súbory z iného kalendára do ${ CALENDAR_APP_NAME }. To vám umožní rýchlo importovať jednu udalosť, alebo celý váš program."
+        "Môžete importovať ICS súbory z iného kalendára do ${ CALENDAR_APP_NAME }. To vám umožní rýchlo importovať jednu udalosť, alebo celú agendu."
       ]
     },
     "Calendar invite status label": {
@@ -1685,7 +1685,7 @@
         "Štítok pridaný"
       ],
       "Label deleted": [
-        "Štítok vymazaný"
+        "Štítok odstránený"
       ],
       "Label edited": [
         "Štítok upravený"
@@ -1713,7 +1713,7 @@
     },
     "Calendar settings link share description": {
       "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Vytvorte odkaz na svoj kalendár a zdieľajte ho s kýmkoľvek mimo ${ BRAND_NAME }. Udalosti môžete pridávať alebo odstraňovať len vy."
+        "Vytvorte odkaz na svoj kalendár a zdieľajte ho s kýmkoľvek mimo ${ BRAND_NAME }. Udalosti môžete pridávať alebo odstraňovať iba vy."
       ]
     },
     "Calendar settings private share description": {
@@ -1774,10 +1774,10 @@
         "Aktívny"
       ],
       "Default": [
-        "Predvolené"
+        "Predvolený"
       ],
       "Disabled": [
-        "Vypnuté"
+        "Vypnutý"
       ],
       "Not synced": [
         "Nesynchronizované"
@@ -3078,10 +3078,10 @@
     },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
-        "Všetky udalosti v tomto kalendári budú vymazané."
+        "Všetky udalosti v tomto kalendári budú odstránené."
       ],
       "You will no longer have access to this calendar.": [
-        "K tomuto kalendáru nebudete mať viac prístup."
+        "K tomuto kalendáru už nebudete mať prístup."
       ]
     },
     "Delinquent modal title": {
@@ -3252,12 +3252,12 @@
         "Prechádzam na inú službu"
       ],
       "Temporary need, may come back in the future": [
-        "Dočasná potreba, môže sa vrátiť v budúcnosti"
+        "Dočasná potreba, môže sa v budúcnosti vrátiť"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        "Pomôžte nám sa zlepšiť!"
+        "Pomôžte nám zlepšiť sa!"
       ]
     },
     "drive_signup_2023: Info": {
@@ -3491,7 +3491,7 @@
     },
     "email_forwarding_2023: Forwarding tooltip": {
       "Emails forwarded to you are excluded and will not be forwarded.": [
-        "E-maily, ktoré vám boli preposlané, sú vylúčené a nebudú preposlané."
+        "Emaily, ktoré vám boli preposlané, sú vylúčené a nebudú preposlané."
       ]
     },
     "email_forwarding_2023: Header": {
@@ -3515,25 +3515,25 @@
     },
     "email_forwarding_2023: Info": {
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
-        "Potvrdzujúci email bol odoslaný na adresu ${ boldForwardeeEmail }"
+        "Potvrdzujúci email bude odoslaný na adresu ${ boldForwardeeEmail }"
       ],
       "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Pre ${ boldForwarderEmail } bol vygenerovaný nový šifrovací kľúč."
+        "Pre ${ boldForwarderEmail } bude vygenerovaný nový šifrovací kľúč."
       ],
       "Automatically forward emails to another email address.": [
         "Automaticky preposiela emaily na iné emailové adresy."
       ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
-        "Príjemca preposielania bol pozvaný a teraz musí prijať/odmietnuť pozvánku alebo aktualizovať"
+        "Príjemca preposielania bol pozvaný a musí prijať/odmietnuť pozvanie alebo aktualizovať"
       ],
       "Forwarding is active": [
         "Preposielanie je aktivované"
       ],
       "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
-        "Preposielanie na adresu bez koncového šifrovania vypne koncové šifrovanie pre vašu adresu ${ boldForwarderEmail }, ale šifrovanie s nulovým prístupom zostane zapnuté. ${ learnMoreLink }"
+        "Preposielanie na adresu bez end-to-end šifrovania vypne end-to-end šifrovanie pre vašu adresu ${ boldForwarderEmail }, ale šifrovanie s nulovým prístupom zostane zapnuté. ${ learnMoreLink }"
       ],
       "Forwarding to this address will become active once the recipient accepts the forwarding.": [
-        "Preposielanie na túto adresu bude aktívne, keď príjemca preposielanie akceptuje."
+        "Preposielanie na túto adresu bude aktívne, keď príjemca akceptuje preposielanie."
       ],
       "No incoming forwarding rules": [
         "Žiadne pravidlá prichádzajúceho presmerovania"
@@ -3554,7 +3554,7 @@
         "Túto kartu môžete bezpečne zavrieť."
       ],
       "You won't receive emails forwarded automatically from ${ boldForwarderEmail }.": [
-        "E-maily automaticky preposielané z adresy ${ boldForwarderEmail } nebudete dostávať."
+        "Nebudete dostávať emaily automaticky preposielané z adresy ${ boldForwarderEmail }."
       ]
     },
     "email_forwarding_2023: Label": {
@@ -3587,7 +3587,7 @@
     },
     "email_forwarding_2023: Outgoing forwarding tab name": {
       "To me": [
-        "Ku mne"
+        "Mne"
       ]
     },
     "email_forwarding_2023: Placeholder": {
@@ -3595,7 +3595,7 @@
         "Podmienka:"
       ],
       "Enter email address": [
-        "Zadajte e-mailovú adresu"
+        "Zadajte emailovú adresu"
       ],
       "Type text or keyword": [
         "Zadajte text alebo kľúčové slovo"
@@ -3660,7 +3660,7 @@
     },
     "email_forwarding_2023: Title": {
       "Automatically forward emails to other accounts": [
-        "Automaticky preposiela e-maily na iné kontá"
+        "Automaticky preposielať emaily na iné kontá"
       ],
       "Delete forwarding?": [
         "Vymazať preposielanie?"
@@ -4163,8 +4163,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Limit počtu používateľov vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať ďalšieho používateľa."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Musíte aktivovať kľúče organizácie. Bez aktivácie nebudete môcť vytvárať nových používateľov, pridávať adresy existujúcim používateľom ani pristupovať k nesúkromným používateľským účtom."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Musíte aktivovať kľúče organizácie. Bez aktivácie nebudete môcť vytvárať alebo pristupovať k nesúkromným používateľom."
       ],
       "You must privatize all users before generating new organization keys": [
         "Skôr než vytvoríte nové kľúče pre organizáciu, musíte privatizovať všetkých užívateľov"
@@ -4504,18 +4504,18 @@
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
         "${ totalProcessed }/${ totalToProcess } udalosť exportovaná",
-        "${ totalProcessed }/${ totalToProcess } udalostí exportovaných",
+        "${ totalProcessed }/${ totalToProcess } udalosti exportované",
         "${ totalProcessed }/${ totalToProcess } udalostí exportovaných",
         "${ totalProcessed }/${ totalToProcess } udalostí exportovaných"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
-        "Kalendár bol úspešne exportovaný. Môžete uložiť ICS súbor."
+        "Kalendár úspešne exportovaný. Teraz môžete uložiť ICS súbor."
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
         "Dešifrovanie udalostí z vášho kalendára: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Kvôli resetu hesla žiadne vaše udalosti nemohli byť dešifrované a exportované."
+        "Kvôli obnoveniu hesla nebolo možné žiadnu z vašich udalostí dešifrovať a exportovať."
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
         "Kvôli resetu hesla niektoré vaše udalosti nemohli byť dešifrované a exportované."
@@ -4527,7 +4527,7 @@
         "Zistite, ako obnoviť zašifrované udalosti pomocou starého hesla"
       ],
       "Loading events": [
-        "Nahrávam udalosti"
+        "Načítanie udalostí"
       ],
       "None of the events could be exported.": [
         "Žiadne udalosti nemohli byť exportované."
@@ -4539,13 +4539,13 @@
         "Obnovenie hesla – viaceré udalosti nemožno dešifrovať"
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        "Prosíme nezatvárajte kartu pred dokončením exportu."
+        "Nezatvárajte kartu pred dokončením procesu exportu."
       ],
       "Some of your events could not be exported.": [
         "Niektoré vaše udalosti nemohli byť exportované."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Pripojenie k internetu bolo prerušené a export kvôli tomu zlyhal. Prosím, skúste to znovu."
+        "Pripojenie k internetu bolo prerušené a export kvôli tomu zlyhal. Skúste to znovu, prosím."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
         "Môžete si uložiť ICS súbor udalostí, ktoré boli úspešne exportované."
@@ -4780,10 +4780,10 @@
     },
     "familyOffer_2023:Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Tým sa natrvalo odstránia všetci čiastkoví užívatelia, účty a dáta spojené s Vašou organizáciou."
+        "Týmto natrvalo odstránite všetkých podriadených používateľov, účty a údaje spojené s vašou organizáciou."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Týmto odstránite všetky prémiové funkcie ${ BRAND_NAME } pre každého člena rodiny."
+        "Týmto odstránite pre každého člena rodiny všetky prémiové funkcie ${ BRAND_NAME }."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -5191,7 +5191,7 @@
         "${ MAIL_APP_NAME } aplikácia"
       ],
       "account logins": [
-        "prihlásenie k účtom"
+        "prihlásenia k účtom"
       ],
       "Auto-forward Gmail": [
         "Automaticky preposielať Gmail"
@@ -5909,6 +5909,12 @@
         "${ provisioningCounter } serverov sa stále nastavuje. Zvyčajne to trvá okolo ${ provisioningDuration }.",
         "${ provisioningCounter } serverov sa stále nastavuje. Zvyčajne to trvá okolo ${ provisioningDuration }."
       ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } ďalšia",
+        "${ remainingAddresses.length } ďalšie",
+        "${ remainingAddresses.length } ďalších",
+        "${ remainingAddresses.length } ďalších"
+      ],
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length } ďalšia adresa",
         "${ remainingAddresses.length } ďalšie adresy",
@@ -6027,7 +6033,7 @@
         "Používateľ je účet spojený s jedným používateľským menom, poštovou schránkou a osobou"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Pristupujte k svojim heslám a chráňte svoje online identity bez problémov na všetkých svojich zariadeniach. Stiahnite si a nainštalujte príslušné aplikácie a rozšírenia ${ PASS_APP_NAME }."
+        "Pristupujte k svojim heslám a chráňte svoje online identity bez problémov vo všetkých svojich zariadeniach. Stiahnite si a nainštalujte príslušnú ${ PASS_APP_NAME } aplikáciu a rozšírenia."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Z dôvodu nezaplatených faktúr bol prístup k účtu obmedzený. Kontaktujte správcu Vášho účtu."
@@ -6171,7 +6177,7 @@
         "Ktokoľvek s týmto odkazom uvidí, či ste vo vašom kalendári voľný alebo zaneprázdnený. Neuvidia podrobnosti o udalostiach, ako je názov, umiestnenie alebo účastníkov."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Ktokoľvek s týmto odkazom nebude môcť synchronizovať ani získať budúce aktualizácie vášho kalendára. Ak im chcete znova poskytnúť prístup, budete musieť vytvoriť nový odkaz."
+        "Ktokoľvek s týmto odkazom nebude môcť synchronizovať ani získať ďalšie aktualizácie vášho kalendára. Ak im chcete znova poskytnúť prístup, budete musieť vytvoriť nový odkaz."
       ],
       "Are you sure you want to delete this address?": [
         "Naozaj chcete vymazať túto adresu?"
@@ -6180,13 +6186,13 @@
         "Naozaj chcete vymazať tento kalendár?"
       ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "Naozaj chcete vymazať tento kalendár? Všetky adresy, ktoré ste prepojili, stratia k nemu prístup."
+        "Naozaj chcete odstrániť tento kalendár? Všetky adresy, s ktorými zdieľate tento kalendár, k nemu stratia prístup."
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "Naozaj chcete vymazať tento kalendár? Všetky udalosti v ňom budú vymazané."
+        "Naozaj chcete odstrániť tento kalendár? Všetky udalosti v ňom budú odstránené."
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Naozaj chcete vymazať tento kalendár? Prázdninový kalendár môžete pridať späť neskôr."
+        "Naozaj chcete odstrániť tento kalendár? Kalendár sviatkov môžete pridať späť neskôr."
       ],
       "Are you sure you want to delete this domain?": [
         "Naozaj chcete vymazať túto doménu?"
@@ -6624,7 +6630,7 @@
         "Pokiaľ vám to nebude vyhovovať, vrátime vám peniaze."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Ak sa časové pásmo systému nezhoduje so súčasným preferovaným časovým pásmom, budete požiadaný o aktualizáciu (najviac raz denne)."
+        "Ak sa časové pásmo systému nezhoduje s aktuálnym nastavením časového pásma, budete požiadaný o jeho aktualizáciu (najviac raz denne)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Pokiaľ táto doména aktuálne prijíma emaily, vyberte záložku ${ boldAddresses } a pridajte všetky aktívne emailové adresy pred tým, ako zmeníte MX záznam, aby bol zaistený hladký prechod."
@@ -7098,7 +7104,7 @@
         "Skúste to znova, použite iný spôsob platby, alebo požiadajte o pomoc PayPal."
       ],
       "Please use another browser or download the file.": [
-        "Použite iný prehliadač alebo si súbor stiahnite."
+        "Použite iný prehliadač alebo si súbor stiahnite, prosím."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Skontrolujte prosím platbu na novej karte, ktorá sa otvorila."
@@ -7185,7 +7191,7 @@
         "Nezabudnite s nimi zdieľať prihlasovacie údaje používateľa."
       ],
       "Remove one of your calendars to join this one": [
-        "Odstráňte jeden zo svojich kalendárov pre pripojenie sa k tomuto"
+        "Ak sa chcete pripojiť k tomuto kalendáru, odstráňte jeden zo svojich kalendárov"
       ],
       "Report link expired": [
         "Platnosť hlásenia vypršala"
@@ -7266,7 +7272,7 @@
         "Aktualizácia nastavení zlyhala"
       ],
       "Settings updated": [
-        "Nastavenia boli aktualizované"
+        "Nastavenia aktualizované"
       ],
       "Show original message": [
         "Zobraziť pôvodnú správu"
@@ -7577,6 +7583,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Doplňte si svoj účet kreditmi, ktoré môžete použiť k predplateniu nového plánu alebo obnovenie aktuálneho plánu. Za každých minutých ${ i18nCurrency } získate jeden kredit."
       ],
+      "Tor": [
+        "Tor"
+      ],
       "Total email addresses": [
         "Všetky e-mailové adresy"
       ],
@@ -7649,11 +7658,14 @@
       "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Upgradujte na ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, alebo ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } a získajte prístup do ${ PROTON_SENTINEL_NAME }."
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Upgradujte na ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] },${ PLAN_NAMES[PLANS.FAMILY] } alebo ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } pre získanie prístupu k ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Upgradujte, ak chcete pridať kratšiu @pm.me adresu k vášmu účtu, ktorá sa jednoduchšie zdieľa. To znamená „${ MAIL_APP_NAME } me“ alebo „Private message me“."
       ],
       "Upgrade to unlock": [
-        "Pre odomknutie inovujte"
+        "Pre odomknutie upgradujte"
       ],
       "Upload picture": [
         "Nahrať obrázok"
@@ -7971,7 +7983,7 @@
         "Mali by ste exportovať zálohu tohto kľúča v prípade, že potrebujete obnoviť údaje, ktoré sú zašifrované."
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        "Na pozvánky musíte stále odpovedať, aby videl hostiteľ vašu odpoveď."
+        "Na pozvánky musíte stále odpovedať, aby hostiteľ videl vašu odpoveď."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Po prihlásení dôjde k presmerovaniu na ${ destination }."
@@ -8220,7 +8232,7 @@
         "Kľúč s rovnakým šifrovacím algoritmom už existuje. Generovanie ďalšieho kľúča spôsobí pomalšie načítanie účtu. Naozaj chcete pokračovať?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "Kľúč s rovnakým šifrovacím algoritmom je už pre túto adresu aktívny. Vygenerovanie ďalšieho kľúča spomalí načítanie účtu, a následné zmazanie tohto kľúča môže spôsobiť problémy. Ak generujete nový kľúč, pretože starý už nie je bezpečný, označte tento kľúč ako ohrozený/nebezpečný. Naozaj chcete pokračovať?"
+        "Kľúč s rovnakým šifrovacím algoritmom je už pre túto adresu aktívny. Vygenerovanie ďalšieho kľúča spomalí načítanie účtu a následné zmazanie tohto kľúča môže spôsobiť problémy. Ak generujete nový kľúč, pretože starý už nie je bezpečný, označte tento kľúč ako skompromitovaný. Naozaj chcete pokračovať?"
       ],
       "Generate key": [
         "Vygenerovať kľúč"
@@ -8232,7 +8244,7 @@
         "Šifrovacie kľúče sú generované. Môže to trvať niekoľko minút a váš prehliadač môže dočasne zamrznúť."
       ],
       "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Šifrovacie kľúče pre vašu adresu sú generované. Môže to trvať niekoľko minút a váš prehliadač môže dočasne zamrznúť."
+        "Šifrovacie kľúče pre vašu adresu sa generujú. Môže to trvať niekoľko minút a váš prehliadač môže dočasne zamrznúť."
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
         "Môžete si vytvoriť nový šifrovací kľúč, ak si myslíte, že Váš súčasný bol prelomený."
@@ -8252,7 +8264,7 @@
         "Preposielanie"
       ],
       "Inactive": [
-        "Neaktívni"
+        "Neaktívny"
       ],
       "Obsolete": [
         "Zastarané"
@@ -8493,7 +8505,7 @@
         "Ako na to"
       ],
       "Learn more": [
-        "Dozvedieť sa viac"
+        "Zistiť viac"
       ]
     },
     "Label": {
@@ -9017,7 +9029,7 @@
         "Úroveň pre filtrovanie blokovania NetShield"
       ],
       "Link label": [
-        "Označenie odkazu"
+        "Štítok odkazu"
       ],
       "Mail Server (IMAP)": [
         "Emailový server (IMAP)"
@@ -9445,7 +9457,7 @@
     },
     "Label for default event settings": {
       "Duration": [
-        "Doba trvania"
+        "Trvanie"
       ]
     },
     "Label for domain modal": {
@@ -10126,26 +10138,6 @@
         "Stredná VPN rýchlosť"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Prejsť na nižší plán ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Preskúmajte všetky plány ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Ponechať si môj účet ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Upgradovať"
-      ],
-      "Upgrade now": [
-        "Aktualizovať teraz"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Pokračovať na rekapituláciu"
@@ -10185,6 +10177,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Prejsť na ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Prejsť na nižší plán ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Preskúmajte všetky plány ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Ponechať si môj účet ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Upgradovať"
+      ],
+      "Upgrade now": [
+        "Aktualizovať teraz"
       ]
     },
     "new_plans: feature": {
@@ -10650,7 +10662,7 @@
         "Ak prejdete na nižšiu verziu svojho účtu, stratíte všetky výhody plánu ${ visionary } a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Ak prejdete na iný plán, stratíte všetky výhody plánu ${ visionary } a nebudete sa môcť vrátiť späť na ${ visionary }."
+        "Ak prejdete na iný plán, stratíte všetky výhody plánu ${ visionary } a na ${ visionary } sa už nebudete môcť vrátiť späť."
       ],
       "Most popular": [
         "Najpopulárnejšie"
@@ -10680,7 +10692,7 @@
         "Bezpečný email s pokročilými funkciami pre vašu každodennú komunikáciu."
       ],
       "Set automatic replies to inform senders you are out of the office or unable to respond.": [
-        "Nastavte automatické odpovede na informovanie odosielateľov, že ste mimo kancelárie alebo nemôžete odpovedať."
+        "Nastavte automatické odpovede na informovanie odosielateľov, že ste mimo kancelárie, alebo že nemôžete odpovedať."
       ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "Riešenia na mieru pre väčšie organizácie so špecifickými bezpečnostnými potrebami"
@@ -10784,7 +10796,7 @@
         "${ DRIVE_APP_NAME }: Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Súčasťou je história verzií, šifrované zdieľanie súborov a ďalšie funkcie."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
-        "${ MAIL_APP_NAME }: Zabezpečte svoje emaily pomocou end-to-end šifrovania. Súčasťou je podpora vlastných emailových domén, 15 emailových adries, neobmedzený počet ide-my-email aliasov a ďalšie."
+        "${ MAIL_APP_NAME }: Zabezpečte svoje emaily pomocou end-to-end šifrovania. Zahŕňa podporu vlastných emailových domén, 15 emailových adries, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Získajte prístup k blokovanému obsahu a surfujte v súkromí. Obsahuje ${ serversAndCountries }, najvyššie rýchlosti VPN, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám, rýchle sťahovanie cez BitTorrent a ďalšie."
@@ -10802,7 +10814,7 @@
         "Umožňuje vám nastaviť pre vaše prichádzajúce správy automatické odpovedanie (automatická odpoveď)"
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Hromadné propagačné alebo programové odosielanie e-mailov momentálne nie je podporované. Pre tento prípad použitia odporúčame použiť špecializovaného poskytovateľa emailových služieb."
+        "Hromadné propagačné alebo programové odosielanie emailov momentálne nie je podporované. Pre tento prípad použitia odporúčame použiť špecializovaného poskytovateľa emailových služieb."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Ovládajte prístup k svojim zdieľaným súborom pridaním ochrany heslom a dátumov vypršania platnosti odkazu"
@@ -10832,28 +10844,28 @@
         "Svoje kalendáre zdieľajte jednoducho so svojimi kolegami, rodinou a priateľmi prostredníctvom odkazu"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Ľahko zdieľajte svoje kalendáre s rodinou, priateľmi alebo kolegami"
+        "Svoje kalendáre zdieľajte jednoducho s rodinou, priateľmi alebo kolegami"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
-        "Zabezpečuje, aby ste dostávali všetky emaily odoslané na vašu doménu, aj keď e-mailová adresa neexistuje, už viac neexistuje alebo má preklep"
+        "Zabezpečuje, aby ste dostávali všetky emaily odoslané na vašu doménu, aj keď emailová adresa neexistuje, už viac neexistuje alebo má preklep"
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        "Vynútiť odhlásenie z relácií používateľa, keď sa domnievame, že poverenia používateľa boli napadnuté"
+        "Vynútenie odhlásenia relácií používateľa, ak sa predpokladá, že poverovacie údaje používateľa sú ohrozené."
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Podpora IMAP je obmedzená na používanie aplikácií pre počítače (napr. Outlook, Apple Mail, Thunderbird) cez ${ MAIL_APP_NAME } Bridge. Cloudové integrácie IMAP momentálne nie sú podporované."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "Udržujte svoje plány súkromné pre vás a vašu rodinu pomocou šifrovaného kalendára"
+        "Udržujte svoje plány v súkromí pre seba a svoju rodinu pomocou šifrovaného kalendára"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Chráni vás blokovaním všetkých sieťových pripojení, keď ste neočakávane odpojení od nášho servera VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
-        "Štítky sú jednoduché značky, ktoré môžete pridať do správ, aby ste ich ľahšie našli alebo na ktoré použijete filtre"
+        "Štítky sú jednoduché značky, ktoré môžete pridať do správ, aby ste ich ľahšie našli alebo na ne použili filtre"
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Podobne ako priečinok, aj trezor predstavuje pohodlný spôsob usporiadania položiek. Pracuje sa na zdieľaní trezorov s priateľmi a rodinou."
+        "Podobne ako priečinok, aj trezor predstavuje pohodlný spôsob usporiadania položiek. Pripravuje sa zdieľanie trezorov s priateľmi a rodinou."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Uzamknite svoje firemné zdroje z verejného internetu a sprístupnite ich len cez vaše súkromné brány"
@@ -10862,13 +10874,13 @@
         "Spravujte svoje predplatné vrátane prispôsobenia vášho plánu. Akceptované spôsoby platby sú platobná karta, PayPal, kryptomena a bankový prevod."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
-        "Počas pracovných dní získajte podporu od tímu zákazníckej podpory ${ BRAND_NAME } do 24 hodín od vyžiadania"
+        "Počas pracovných dní získate podporu od tímu zákazníckej podpory ${ BRAND_NAME } do 24 hodín od vyžiadania"
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
         "Jedno pripojenie VPN umožňuje jednému zariadeniu pripojiť sa k ${ BRAND_NAME } VPN kedykoľvek. Napríklad na súčasné pripojenie telefónu a notebooku k ${ BRAND_NAME_TWO } VPN potrebujete dve pripojenia VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
-        "Možnosť prezerania súkromných priečinkov doručenej pošty používateľov tak, ako by ich zobrazoval používateľ, vrátane celej správy a kontaktných údajov"
+        "Možnosť zobraziť nesúkromné schránky používateľov tak, ako by to urobil používateľ, vrátane celých správ a kontaktných údajov"
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
         "Nástroj na správu organizácie, ktorý umožňuje správcom pridávať a odstraňovať používateľov, prideľovať úložisko, konfigurovať domény a vykonávať ďalšie úlohy"
@@ -10901,7 +10913,7 @@
         "Poskytuje najvyššiu úroveň zabezpečenia účtu a odbornú podporu"
       ],
       "Quickly set up out-of-office messages": [
-        "Rýchle nastavenie správ mimo pracoviska (out-of-office)"
+        "Rýchle nastavenie správ mimo kancelárie (out-of-office)"
       ],
       "Quickly transfer your emails, calendars or contacts from any provider": [
         "Rýchlo preneste svoje emaily, kalendáre alebo kontakty od akéhokoľvek poskytovateľa"
@@ -10910,7 +10922,7 @@
         "Na prihlásenie sa vyžaduje odoslanie kódu na mobilný telefón. To zaisťuje, že aj v prípade prelomenia hesla zostane účet bezpečný."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Obnovte heslá používateľov a resetujte dvojstupňové overenie používateľov"
+        "Obnoviť heslá a dvojstupňové overenie používateľov"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Smerujte vašu internetovú prevádzku cez sieť Tor jediným kliknutím"
@@ -10925,7 +10937,7 @@
         "Posielajte emaily veľkým skupinám rýchlo a jednoducho vytvorením toľkých skupín kontaktov, koľko potrebujete (až 100 kontaktov na skupinu)"
       ],
       "Set up filters to automatically reply to, sort, and/or label your emails": [
-        "Nastavte filtre pre automatickú odpoveď, triedenie a/alebo označenie emailov."
+        "Nastavte filtre pre automatickú odpoveď, triedenie a/alebo označenie emailov"
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Zdieľajte svoje súbory alebo priečinky s kýmkoľvek pomocou bezpečných a zdieľateľných odkazov"
@@ -10940,13 +10952,13 @@
         "Začnite s ${ freeStorageSize } a odomknite si ďalší úložný priestor. Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
+        "Úložný priestor je zdieľaný cez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Úložný priestor je zdieľaný cez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }. Administrátori môžu používateľom vo svojej organizácii prideliť rôznu veľkosť úložného priestoru"
       ],
       "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Úložný priestor je zdieľaný používateľmi cez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
+        "Úložný priestor je zdieľaný medzi používateľmi cez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Podpora protokolov na zdieľanie súborov, ako je BitTorrent"
@@ -10961,7 +10973,7 @@
         "Neuchovávame žiadne záznamy používania relácie o tom, čo robíte online, a nezaznamenávame metadáta, ktoré by mohli ohroziť vaše súkromie"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        "Zaviazali sme sa pomáhať zákazníkom, ktorí podliehajú predpisom HIPAA/HITECH, zabezpečiť chránené zdravotné informácie (PHI). Podpísané zmluvy BAA sú dostupné pre všetkých zákazníkov ${ BRAND_NAME } pre firmy."
+        "Zaviazali sme sa pomáhať zákazníkom, na ktorých sa vzťahujú predpisy HIPAA/HITECH, zabezpečiť chránené zdravotné informácie (PHI). Podpísané zmluvy BAA sú k dispozícii pre všetkých firemných zákazníkov ${ BRAND_NAME }."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Keď sa pripojíte k našej VPN sieti, vaše DNS dopyty prostredníctvom nášho šifrovaného tunela VPN zvyšujú vaše online súkromie a bezpečnosť"
@@ -10975,13 +10987,13 @@
     },
     "new_plans: upgrade": {
       "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
-        "Funkcia je dostupná v pláne ${ BRAND_NAME } for Business, ${ familyPlanName } a ${ mailProPlanName }."
+        "Funkcia je dostupná v pláne ${ BRAND_NAME } pre firmy, ${ familyPlanName } a ${ mailProPlanName }."
       ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Vrátane ${ plus }, ${ bundle } a ${ BRAND_NAME } pre firmy."
       ],
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
-        "Zahrnuté s viacerými používateľmi ${ BRAND_NAME } pre obchodné plány."
+        "Zahrnuté s viacerými používateľmi ${ BRAND_NAME } pre firemné plány."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -11025,13 +11037,13 @@
         "Vytvorte až ${ n } kalendárov"
       ],
       "Dedicated Account manager": [
-        "Dedikovaný správca účtov"
+        "Špecializovaný správca účtov"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
-        "Umiestnenie dedikovaných serverov v ${ numberOfCountries }+ krajinách"
+        "Umiestnenie špecializovaných serverov v ${ numberOfCountries }+ krajinách"
       ],
       "Dedicated server locations in North America and Europe": [
-        "Umiestnenie dedikovaných serverov v Severnej Amerike a Európe"
+        "Umiestnenie špecializovaných serverov v Severnej Amerike a Európe"
       ],
       "Multi-platform support": [
         "Podpora viacerých platforiem"
@@ -11100,7 +11112,7 @@
     },
     "Notification in share calendar modal": {
       "Invitation deleted": [
-        "Pozvánka vymazaná"
+        "Pozvánka odstránená"
       ],
       "Invitation revoked": [
         "Pozvánka zrušená"
@@ -11112,7 +11124,7 @@
         "Členov pridaních"
       ],
       "Member deleted": [
-        "Člen vymazaný"
+        "Člen odstránený"
       ]
     },
     "Notification in shared calendar modal": {
@@ -11760,12 +11772,12 @@
     },
     "Personal calendar section description": {
       "Create a calendar to stay on top of your schedule while keeping your data secure.": [
-        "Vytvorte si kalendár, aby ste mali prehľad o vašich plánoch a zároveň mali svoje údaje v bezpečí."
+        "Vytvorte si kalendár, aby ste mali prehľad o svojom rozvrhu a zároveň zabezpečili svoje údaje."
       ]
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Emailová adresa sa nenašla medzi identifikátormi používateľov definovanými v kľúči na odosielanie (${ keyUserIds })"
+        "Emailová adresa sa nenašla medzi ID definovanými v kľúči na odosielanie (${ keyUserIds })"
       ]
     },
     "Placeholder": {
@@ -12035,7 +12047,7 @@
         "Po zrušení odberu už nebudete mať prístup k tomuto kalendáru. Všetky udalosti v tomto kalendári budú odstránené z vášho účtu, ale zostanú v pôvodnom verejnom odkaze."
       ],
       "You will no longer have access to this calendar.": [
-        "K tomuto kalendáru nebudete mať viac prístup."
+        "K tomuto kalendáru už nebudete mať prístup."
       ]
     },
     "Remove calendar section text": {
@@ -12043,7 +12055,7 @@
         "Ak opustíte tento kalendár, budete musieť vlastníka požiadať o opätovný prístup."
       ],
       "This calendar will be removed from your account.": [
-        "Tento kalendár bude odstránený z vášho účtu."
+        "Tento kalendár bude z vášho účtu odstránený."
       ]
     },
     "Remove calendar section title": {
@@ -12067,14 +12079,11 @@
       "Changing organization password": [
         "Zmena hesla organizácie"
       ],
-      "Creating new users": [
-        "Vytváranie nových užívateľov"
+      "Creating or accessing non-private users": [
+        "Vytváranie alebo prístup k nesúkromným používateľom"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Z dôvodu zmeny hesla boli obmedzené vaše oprávnenia správcu organizácie. Nasledujúce akcie už nie sú povolené:"
-      ],
-      "Reading emails of non-private users": [
-        "Čítanie emailových správ nesúkromných používateľov"
       ]
     },
     "Role": {
@@ -12800,7 +12809,7 @@
         "Rušenie vášho predplatného, počkajte prosím"
       ],
       "Downgrading your account, please wait": [
-        "Prebieha prechod na nižší plán predplatného, počkajte prosím"
+        "Prebieha prechod na nižší plán, prosím čakajte"
       ]
     },
     "Step in filter modal": {
@@ -13265,7 +13274,7 @@
         "/mesiac"
       ],
       "/user per month": [
-        "/užívateľ mesačne"
+        "/používateľ mesačne"
       ]
     },
     "Suffix for price": {
@@ -14695,7 +14704,7 @@
     },
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
-        "Vyberte predvolené nastavenia PGP používané na podpisovanie alebo šifrovanie správ s používateľmi PGP, ktorí nepoužívajú aplikáciu ${ BRAND_NAME }. Všimnite si, že Inline PGP si vynúti jednoduché textové správy."
+        "Vyberte predvolené nastavenia PGP používané na podpisovanie alebo šifrovanie správ s používateľmi PGP, ktorí nepoužívajú ${ BRAND_NAME }. Všimnite si, že Inline PGP si vynúti jednoduché textové správy."
       ]
     },
     "Tooltip for news": {
@@ -14748,15 +14757,15 @@
         "Upgradujte na ${ passPlusPlanName } a získajte neobmedzený počet hide-my-email aliasov"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Inovujte na ${ planName } a pripojte ${ n } zariadenie k VPN",
-        "Inovujte na ${ planName } a pripojte naraz až ${ n } zariadenia k VPN",
-        "Inovujte na ${ planName } a pripojte naraz až ${ n } zariadení k VPN",
-        "Inovujte na ${ planName } a pripojte naraz až ${ n } zariadení k VPN"
+        "Upgradujte na ${ planName } a pripojte k VPN ${ n } zariadenie",
+        "Upgradujte na ${ planName } a pripojte k VPN ${ n } zariadenia",
+        "Upgradujte na ${ planName } a pripojte k VPN ${ n } zariadení",
+        "Upgradujte na ${ planName } a pripojte k VPN ${ n } zariadení"
       ]
     },
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Ak chcete zdieľať kalendár, prejdite na platený plán ${ MAIL_SHORT_APP_NAME }."
+        "Pre zdieľanie kalendára, upgradujte na platený plán ${ MAIL_SHORT_APP_NAME }."
       ]
     },
     "upsell panel": {

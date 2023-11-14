@@ -303,7 +303,7 @@
         "Eliminar la puerta de enlace"
       ],
       "Delete link": [
-        "Eliminar enlace"
+        "Eliminar el enlace"
       ],
       "Delete permanently": [
         "Eliminar permanentemente"
@@ -711,7 +711,7 @@
         "Eliminar beneficios"
       ],
       "Remove calendar": [
-        "Eliminar calendario"
+        "Eliminar el calendario"
       ],
       "Remove gift code": [
         "Eliminar código de regalo"
@@ -789,7 +789,7 @@
         "Revocar todas las demás sesiones"
       ],
       "Revoke this invitation": [
-        "Revocar esta invitación"
+        "Cancelar esta invitación"
       ],
       "Save": [
         "Guardar"
@@ -801,7 +801,7 @@
         "Guardar los cambios"
       ],
       "Save ICS file": [
-        "Guardar archivo ICS"
+        "Guardar el archivo ICS"
       ],
       "Save selected": [
         "Guardar seleccionado"
@@ -831,7 +831,7 @@
         "Seleccionar archivos"
       ],
       "Select language for invitation emails": [
-        "Seleccionar idioma para los correos de invitación"
+        "Seleccionar el idioma para los correos de invitación"
       ],
       "Select time zone": [
         "Seleccionar la zona horaria"
@@ -1647,7 +1647,7 @@
     },
     "Calendar edit button tooltip": {
       "Edit calendar": [
-        "Editar calendario"
+        "Editar el calendario"
       ]
     },
     "Calendar export section description": {
@@ -1662,21 +1662,21 @@
     },
     "Calendar invite status label": {
       "Declined": [
-        "Rechazada"
+        "Rechazado"
       ],
       "Invite sent": [
-        "Invitación enviada"
+        "La invitación ha sido enviada."
       ]
     },
     "Calendar link purpose update success message": {
       "Label added": [
-        "Etiqueta añadida"
+        "La etiqueta ha sido añadida."
       ],
       "Label deleted": [
-        "Etiqueta eliminada"
+        "La etiqueta ha sido eliminada."
       ],
       "Label edited": [
-        "Etiqueta editada"
+        "La etiqueta ha sido editada."
       ]
     },
     "Calendar link sharing label input assistive text": {
@@ -1711,7 +1711,7 @@
     },
     "Calendar settings section title": {
       "Share calendar": [
-        "Compartir calendario"
+        "Compartir el calendario"
       ],
       "Share outside ${ BRAND_NAME }": [
         "Compartir fuera de ${ BRAND_NAME }"
@@ -1752,7 +1752,7 @@
     },
     "Calendar sharing permission change notification": {
       "Permissions changed for ${ email }": [
-        "Permisos cambiados para ${ email }"
+        "Los permisos han sido cambiados para ${ email }."
       ]
     },
     "Calendar status": {
@@ -1814,7 +1814,7 @@
     },
     "Calendar table settings button tooltip": {
       "Open settings": [
-        "Abrir ajustes"
+        "Abrir los ajustes"
       ]
     },
     "Calendar view": {
@@ -3042,7 +3042,7 @@
     },
     "Default calendar event settings section title": {
       "Default event settings": [
-        "Configuración por defecto de eventos"
+        "Ajustes por defecto de eventos"
       ]
     },
     "Default display name vcard": {
@@ -4127,8 +4127,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Has utilizado todos los usuarios de tu plan. Mejora tu plan para añadir un nuevo usuario."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Debes activar las claves de tu organización. Sin la activación no serás capaz de crear nuevos usuarios, agregar direcciones a los usuarios o acceder a cuentas de usuario no privadas."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Debes activar las claves de tu organización. Sin la activación no podrás crear o acceder a usuarios no privados."
       ],
       "You must privatize all users before generating new organization keys": [
         "Debes privatizar a todos los usuarios antes de generar nuevas claves de organización"
@@ -4407,9 +4407,6 @@
       ]
     },
     "Error when exporting event from calendar": {
-      "Event @ ${ timeString }": [
-        "Evento @ ${ timeString }"
-      ],
       "Event from ${ timeString }, ${ rruleString }": [
         "Evento de ${ timeString }, ${ rruleString }"
       ]
@@ -4469,7 +4466,7 @@
         "${ totalProcessed }/${ totalToProcess } eventos exportados"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
-        "Calendario exportado. Ahora puedes guardar el archivo ICS."
+        "El calendario ha sido exportado. Ahora puedes guardar el archivo ICS."
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
         "Descifrando eventos de tu calendario: ${ totalProcessed }/${ totalToProcess }"
@@ -4493,16 +4490,16 @@
         "No se ha podido exportar ninguno de los eventos."
       ],
       "Password reset - event cannot be decrypted": [
-        "Restablecimiento de contraseña - no se puede descifrar el evento."
+        "La contraseña ha sido restablecida. No se puede descifrar el evento."
       ],
       "Password reset - multiple events cannot be decrypted": [
-        "Restablecimiento de contraseña - no se pueden descifrar eventos múltiples"
+        "La contraseña ha sido restablecida. No se pueden descifrar varios eventos."
       ],
       "Please don't close the tab before the exporting process is finished.": [
         "No cierres la pestaña hasta que la exportación haya terminado."
       ],
       "Some of your events could not be exported.": [
-        "No se ha podido exportar algunos de tus eventos."
+        "No se han podido exportar algunos de tus eventos."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
         "La conexión a internet fue interrumpida causando un error con el proceso de exportación. Inténtalo de nuevo."
@@ -5961,7 +5958,7 @@
         "Añadir URL de la imagen"
       ],
       "Add label": [
-        "Añadir etiqueta"
+        "Añadir una etiqueta"
       ],
       "Add multiple users to your organization at once.": [
         "Añade múltiples usuarios a tu organización de una vez."
@@ -6287,7 +6284,7 @@
         "Elimina cualquier otro registro MX o asegúrate de que la prioridad de ${ MAIL_APP_NAME } es el número más bajo."
       ],
       "Delete link?": [
-        "¿Eliminar enlace?"
+        "¿Eliminar el enlace?"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Eliminando ${ deletedServerCount } servidor de puerta de enlace",
@@ -6346,7 +6343,7 @@
         "Editar dirección de correo electrónico"
       ],
       "Edit label": [
-        "Editar etiqueta"
+        "Editar la etiqueta"
       ],
       "Edit link": [
         "Editar enlace"
@@ -6693,7 +6690,7 @@
         "Enlace creado"
       ],
       "Link deleted": [
-        "Enlace eliminado"
+        "El enlace ha sido eliminado."
       ],
       "Link expired": [
         "Enlace caducado"
@@ -7430,6 +7427,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarga tu cuenta con créditos que puedes utilizar para suscribirte a un plan nuevo o renovar el actual. Obtienes un crédito por cada ${ i18nCurrency } gastado."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Direcciones de correo electrónico totales"
@@ -9070,10 +9070,10 @@
         "Enviar informes de error"
       ],
       "Send in": [
-        "Enviar"
+        "Enviar en"
       ],
       "Show secondary time zone": [
-        "Mostrar zona horaria secundaria"
+        "Mostrar la zona horaria secundaria"
       ],
       "Show sender images": [
         "Mostrar imágenes del remitente"
@@ -9268,7 +9268,7 @@
     },
     "Label for default event notifications": {
       "All-day event notifications": [
-        "Notificaciones de eventos que ocupan todo el día"
+        "Notificaciones de eventos diarios"
       ],
       "Notifications": [
         "Notificaciones"
@@ -9935,26 +9935,6 @@
         "Velocidad VPN media"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Pasar a ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ver todos los planes de ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Desde ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Continuar con mi cuenta ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Mejorar"
-      ],
-      "Upgrade now": [
-        "Mejorar ahora"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Pasar a la revisión"
@@ -9994,6 +9974,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Cambiar a ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Pasar a ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ver todos los planes de ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Desde ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Continuar con mi cuenta ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Mejorar"
+      ],
+      "Upgrade now": [
+        "Mejorar ahora"
       ]
     },
     "new_plans: feature": {
@@ -10865,17 +10865,17 @@
     },
     "Notification in share calendar modal": {
       "Invitation deleted": [
-        "Invitación eliminada"
+        "La invitación ha sido eliminada."
       ],
       "Invitation revoked": [
-        "Invitación revocada"
+        "La invitación ha sido cancelada."
       ],
       "Member added": [
         "Miembro añadido",
         "Miembros añadidos"
       ],
       "Member deleted": [
-        "Miembro eliminado"
+        "El miembro ha sido eliminado."
       ]
     },
     "Notification in shared calendar modal": {
@@ -10888,7 +10888,7 @@
     },
     "Notification success": {
       "Event defaults updated": [
-        "Configuración por defecto de eventos actualizada"
+        "La configuración por defecto de eventos ha sido actualizada."
       ]
     },
     "Notification time input": {
@@ -11793,16 +11793,16 @@
     },
     "Remove calendar section title": {
       "Delete calendar?": [
-        "¿Eliminar calendario?"
+        "Eliminar el calendario?"
       ],
       "Leave calendar?": [
         "¿Abandonar el calendario?"
       ],
       "Remove calendar": [
-        "Eliminar calendario"
+        "Eliminar el calendario"
       ],
       "Unsubscribe?": [
-        "¿Cancelar suscripción?"
+        "¿Cancelar la suscripción?"
       ]
     },
     "Restore administrator panel": {
@@ -11812,14 +11812,11 @@
       "Changing organization password": [
         "Cambiar la contraseña de la organización"
       ],
-      "Creating new users": [
-        "Creando usuarios nuevos"
+      "Creating or accessing non-private users": [
+        "Creando o accediendo a usuarios no privados"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Debido a un cambio de contraseña, tus privilegios de administrador en la organización se han limitado. Ya no se permiten las siguientes acciones:"
-      ],
-      "Reading emails of non-private users": [
-        "Leer correos de usuarios no privados"
       ]
     },
     "Role": {
@@ -12244,7 +12241,7 @@
     },
     "Shared calendar label input placeholder": {
       "Add label": [
-        "Añadir etiqueta"
+        "Añadir una etiqueta"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -12744,7 +12741,7 @@
         "Información del calendario actualizada"
       ],
       "Calendar removed": [
-        "Calendario eliminado"
+        "El calendario ha sido eliminado."
       ],
       "Calendar updated": [
         "Calendario actualizado"
@@ -12762,7 +12759,7 @@
         "Créditos añadidos"
       ],
       "Default calendar updated": [
-        "Calendario por defecto actualizado"
+        "El calendario por defecto ha sido actualizado."
       ],
       "Display name updated": [
         "Nombre para mostrar actualizado"
@@ -12956,7 +12953,7 @@
     },
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
-        "Detalles de los eventos que no se han podido exportar"
+        "Datos de los eventos que no se han podido exportar"
       ]
     },
     "summer2023: Deal details": {
@@ -13435,7 +13432,7 @@
         "Eliminar cuenta"
       ],
       "Delete calendar": [
-        "Eliminar calendario"
+        "Eliminar el calendario"
       ],
       "Delete key permanently?": [
         "¿Eliminar clave permanentemente?"
@@ -13550,7 +13547,7 @@
         "Exportar"
       ],
       "Export calendar": [
-        "Exportar calendario"
+        "Exportar el calendario"
       ],
       "Export private key": [
         "Exportar clave privada"
@@ -13801,7 +13798,7 @@
         "Recomendar a un amigo"
       ],
       "Remove calendar": [
-        "Eliminar calendario"
+        "Eliminar el calendario"
       ],
       "Remove user?": [
         "¿Eliminar usuario?"
@@ -14402,7 +14399,7 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Actualiza a ${ passPlusPlanName } para obtener alias ilimitados de Hide-my-email."
+        "Mejora a ${ passPlusPlanName } para obtener alias ilimitados de Hide-my-email."
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
         "Mejora a ${ planName } para conectar hasta ${ n } dispositivo a la VPN a la vez.",
