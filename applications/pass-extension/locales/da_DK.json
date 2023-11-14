@@ -182,9 +182,6 @@
       "Import": [
         "Importér"
       ],
-      "Import your passwords": [
-        "Importér dine adgangskoder"
-      ],
       "Importing": [
         "Importerer"
       ],
@@ -226,6 +223,9 @@
       ],
       "More options": [
         "Flere muligheder"
+      ],
+      "Move all items": [
+        "Flyt alle elementer"
       ],
       "Move to a shared vault": [
         "Flyt til en delt boks"
@@ -485,6 +485,9 @@
       "Failed to edit user's access.": [
         "Kunne ikke redigere brugerens adgang."
       ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Kunne ikke flytte alle elementer fra \"${ payload.content.name }\""
+      ],
       "Failed to remove user's access.": [
         "Kunne ikke fjerne brugerens adgang."
       ],
@@ -544,6 +547,9 @@
       ],
       "Restoring item failed": [
         "Genoprettelse af element mislykkedes"
+      ],
+      "Restoring trashed items failed": [
+        "Genoprettelse af elementer i papirkurven mislykkedes"
       ],
       "Settings update failed": [
         "Ændring af indstillinger mislykkedes"
@@ -722,14 +728,26 @@
       "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
         "Adgang til ${ PASS_APP_NAME } vil kræve en pinkode for at låse din session op."
       ],
-      "Access your passwords on the go with our mobile apps.": [
-        "Tilgå dine adgangskoder på farten med vores mobil-apps."
-      ],
       "Admin": [
         "Admin"
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Aliasset \"${ item.aliasEmail }\" blev flyttet til papirkurven - det vil stoppe med at videresende e-mails til din indbakke"
+      ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Alle elementer fra \"${ payload.content.name }\" blev flyttet"
+      ],
+      "All trashed items permanently removed": [
+        "Alle elementer i papirkurven blev fjernet permanent"
+      ],
+      "All trashed items successfully restored": [
+        "Alle elementer i papirkurven blev genoprettet"
+      ],
+      "An item previously shared with you was removed": [
+        "Et element der tidligere var delt med dig er blevet fjernet"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Er du sikker på at du vil flytte alle elementer fra \"${ fromVaultName }\" til \"${ toVaultName }\" ?"
       ],
       "Auto-lock successfully disabled": [
         "Autolås deaktiveret"
@@ -773,23 +791,20 @@
       "Deleting \"${ payload.content.name }\"": [
         "Sletter \"${ payload.content.name }\""
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Opdag ${ PASS_APP_NAME } YouTube-video"
-      ],
       "Drop file here to upload": [
         "Træk fil hertil for at uploade"
       ],
       "Drop to import": [
         "Slip for at importere"
       ],
-      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
-        "Importer nemt dine eksisterende adgangskoder til ${ PASS_APP_NAME }."
-      ],
       "Editor": [
         "Redaktør"
       ],
+      "Emptying trash...": [
+        "Tømmer papirkurven..."
+      ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Aktiver ${ PASS_APP_NAME } ved at forbinde din ${ BRAND_NAME }-konto"
+        "Aktivér ${ PASS_APP_NAME } ved at forbinde din ${ BRAND_NAME }-konto"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Indtast verifikationskode. Ciffer ${ digit }."
@@ -804,7 +819,7 @@
         "For nem adgang til dine adgangskoder og mere."
       ],
       "For security reason, your access needs to be confirmed": [
-        "Af en sikkerhedsmæssig årsag skal din adgang bekræftes."
+        "Af en sikkerhedsmæssig årsag skal din adgang bekræftes"
       ],
       "For security reasons, your access needs to be confirmed": [
         "Af sikkerhedsmæssige årsager skal din adgang bekræftes."
@@ -819,7 +834,7 @@
         "Få ubegrænsede aliasser, eksklusive funktioner, og støt os ved at abonnere på Pass Plus."
       ],
       "Here you will find all the necessary information to get you started.": [
-        "Her finder du alle de nødvendige oplysninger, for at du kan komme i gang."
+        "Her finder du alle de nødvendige oplysninger, der skal til, for at du kan komme i gang."
       ],
       "Import in progress:": [
         "Import i gang:"
@@ -877,6 +892,9 @@
       "Item successfully moved": [
         "Element flyttet"
       ],
+      "Leaving vault...": [
+        "Forlader boks..."
+      ],
       "Let's get you started by creating your first item": [
         "Lad os få dig i gang ved at oprette dit første element"
       ],
@@ -894,6 +912,9 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mere end en adgangskodeadministrator, ${ PASS_APP_NAME } beskytter dine adgangskoder og din personlige e-mailadresse via e-mail-aliasser. Med den samme teknologi, som ligger bag ${ MAIL_APP_NAME }, er dine data end-to-end krypteret og kun tilgængelige for dig."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Multiple vaults": [
         "Flere bokse"
@@ -955,8 +976,14 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Vi bekymrer os om dit privatliv. Få mere at vide om, hvorfor ${ PASS_APP_NAME } er anderledes."
       ],
+      "Restoring trashed items...": [
+        "Genopretter elementer i papirkurven..."
+      ],
       "Save login": [
         "Gem login"
+      ],
+      "Select destination vault": [
+        "Vælg destinationsboks"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Vælg, hvor du vil gemme din(e) importerede boks(e)."
@@ -1041,7 +1068,7 @@
         "Opdatér login"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
-        "Opgrader ${ PASS_APP_NAME }"
+        "Opgradér ${ PASS_APP_NAME }"
       ],
       "Use vaults to share this item with others.": [
         "Brug bokse til at dele dette element med andre."
@@ -1060,6 +1087,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Boksen \"${ payload.share.content.name }\" blev opdateret"
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "Boksen \"${ share.content.name }\" blev fjernet"
       ],
       "Verification code": [
         "Bekræftelseskode"
@@ -1336,6 +1366,9 @@
       "Modified": [
         "Ændret"
       ],
+      "More than a month": [
+        "Mere end en måned"
+      ],
       "Most recent": [
         "Seneste"
       ],
@@ -1368,9 +1401,6 @@
       ],
       "Old-New": [
         "Gammelt-Nyt"
-      ],
-      "Older than last month": [
-        "Ældre end seneste måned"
       ],
       "Oldest to newest": [
         "Ældste til nyeste"
@@ -1663,14 +1693,8 @@
       "Fill & copy password": [
         "Udfyld og kopiér adgangskode"
       ],
-      "Get the mobile apps": [
-        "Hent mobil-appsene"
-      ],
       "Grant permissions": [
         "Giv tilladelser"
-      ],
-      "Hide my email": [
-        "Hide my email"
       ],
       "Import - ${ date }": [
         "Import - ${ date }"
@@ -1686,6 +1710,9 @@
       ],
       "Member limit": [
         "Medlemsgrænse"
+      ],
+      "Move all items ?": [
+        "Flyt alle elementer ?"
       ],
       "Our welcome gift to you": [
         "Vores velkomstgave til dig"
@@ -1715,7 +1742,7 @@
         "Tak fordi du installerede ${ PASS_APP_NAME }"
       ],
       "The extension is now ready to use.": [
-        "Udvidelsen er nu klar til at blive brugt."
+        "Udvidelsen er nu klar til brug."
       ],
       "Transfer ownership": [
         "Overfør ejerskab"
@@ -1725,9 +1752,6 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "Lås op for ${ brandNameJSX }"
-      ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "Lås op for ${ PASS_APP_NAME }"
       ],
       "Update available": [
         "Opdatering tilgængelig"
@@ -1901,12 +1925,6 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du vil ikke længere have adgang til denne boks. Hvis du vil være med igen, skal du have en ny invitation."
-      ],
-      "Your plan does not allow you to create more aliases": [
-        "Dit abonnement giver dig ikke mulighed for at oprette flere aliasser"
-      ],
-      "Your plan only allows you to autofill from your first two vaults": [
-        "Dit abonnement tillader kun autofyld fra dine to første bokse."
       ],
       "Your session was locked due to inactivity": [
         "Din session blev låst grundet inaktivitet"

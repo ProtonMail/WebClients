@@ -68,9 +68,6 @@
       "Continue without pinning": [
         "Continua sense fixar"
       ],
-      "Copy & fill in": [
-        "Copia i ompliu"
-      ],
       "Copy and close": [
         "Copiar i tancar"
       ],
@@ -79,9 +76,6 @@
       ],
       "Create": [
         "Crear"
-      ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Crea un compte de ${ BRAND_NAME }"
       ],
       "Create a ${ BRAND_NAME } account": [
         "Crear un compte de ${ BRAND_NAME }"
@@ -341,9 +335,6 @@
       "Update vault": [
         "Actualitza la caixa forta"
       ],
-      "Updating": [
-        "S'està actualitzant"
-      ],
       "Upgrade": [
         "Millora"
       ],
@@ -400,9 +391,6 @@
       ],
       "Auto-lock could not be disabled": [
         "No s'ha pogut desactivar el bloqueig automàtic"
-      ],
-      "Cannot create alias (${ error }).": [
-        "No es pot crear l'àlies (${ error })."
       ],
       "Cannot send invitation to this address at the moment": [
         "No es pot enviar la invitació a aquesta adreça en aquest moment."
@@ -512,9 +500,6 @@
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
         "Concediu a ${ PASS_APP_NAME } els permisos d'extensió necessaris per a continuar"
-      ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Fixeu l'extensió o seleccioneu Continuar sense fixar."
       ],
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
@@ -693,20 +678,17 @@
       "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
         "L'accés a ${ PASS_APP_NAME } requerirà un codi PIN per desbloquejar la sessió"
       ],
-      "Access your passwords on the go with our mobile apps.": [
-        "Accediu a les vostres contrasenyes sobre la marxa amb les nostres aplicacions mòbils."
-      ],
       "Admin": [
         "Administardor"
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "S'ha mogut l'àlies \"${ item.aliasEmail }\" a la paperera - deixarà de reenviar correus electrònics a la vostra bústia"
       ],
+      "All trashed items permanently removed": [
+        "S'han suprimit tots els elements a la paperera de manera permanent."
+      ],
       "Auto-lock successfully disabled": [
         "El bloqueig automàtic s'ha desactivat correctament"
-      ],
-      "Autosaved on ${ submissionURL }": [
-        "S'ha desat automàticament en ${ submissionURL }"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Permet crear, editar, suprimir i exportar elements en aquesta caixa forta."
@@ -723,17 +705,11 @@
       "Copied to clipboard": [
         "Copiat al porta-retalls"
       ],
-      "Creating alias...": [
-        "S'està creant un àlies..."
-      ],
       "Decrypting your data": [
         "S'estan desxifrant les dades"
       ],
       "Deleted items will be moved here first": [
         "Els elements eliminats es mouran aquí primer"
-      ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "Descobriu el vídeo de Youtube de ${ PASS_APP_NAME }"
       ],
       "Drop file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo."
@@ -741,14 +717,8 @@
       "Drop to import": [
         "Arrossegueu aquí per a importar"
       ],
-      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
-        "Importeu fàcilment les vostres contrasenyes existents a ${ PASS_APP_NAME }."
-      ],
       "Editor": [
         "Editor"
-      ],
-      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Activeu ${ PASS_APP_NAME } connectant el vostre compte de ${ BRAND_NAME }"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Introduïu el codi de verificació. Dígit ${ digit }."
@@ -764,9 +734,6 @@
       ],
       "Generating alias...": [
         "S'està generant un àlies..."
-      ],
-      "Here you will find all the necessary information to get you started.": [
-        "Aquí trobareu tota la informació necessària per a començar."
       ],
       "Import in progress:": [
         "Importació en curs:"
@@ -848,9 +815,6 @@
       "N/A": [
         "No disponible"
       ],
-      "No login found": [
-        "No s'ha trobat cap inici de sessió"
-      ],
       "None": [
         "Cap"
       ],
@@ -866,14 +830,8 @@
       "Pass Plus trial": [
         "Prova Pass Plus"
       ],
-      "Password copied": [
-        "S'ha copiat la contrasenya."
-      ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Les contrasenyes generades fa més d'un dia s'esborraran de l'historial."
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Fixa ${ PASS_APP_NAME } a la barra d'eines"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "El codi PIN s'ha registrat correctament. Utilitzeu-lo per desbloquejar ${ PASS_APP_NAME }"
@@ -916,9 +874,6 @@
       ],
       "Share with 10 others": [
         "Comparteix amb 10 altres"
-      ],
-      "Sign in or create an account to continue.": [
-        "Inicieu sessió o creeu un compte per continuar."
       ],
       "Sign in to your account": [
         "Inicieu sessió al vostre compte"
@@ -968,9 +923,6 @@
       ],
       "Unlock it with your PIN to access the settings": [
         "Desbloqueja-ho amb el PIN per accedir a les preferències"
-      ],
-      "Update login": [
-        "Actualitza l'inici de sessió"
       ],
       "Upgrade ${ PASS_APP_NAME }": [
         "Millora ${ PASS_APP_NAME }"
@@ -1261,6 +1213,9 @@
       "Modified": [
         "Modificació"
       ],
+      "More than a month": [
+        "Més de un mes"
+      ],
       "Most recent": [
         "Més recent"
       ],
@@ -1293,9 +1248,6 @@
       ],
       "Old-New": [
         "Del més antic al més nou"
-      ],
-      "Older than last month": [
-        "Fa més d'un mes"
       ],
       "Oldest to newest": [
         "De més antic a més recent"
@@ -1588,9 +1540,6 @@
       "Grant permissions": [
         "Concediu permisos"
       ],
-      "Hide my email": [
-        "Hide my email"
-      ],
       "Import - ${ date }": [
         "Importació - ${ date }"
       ],
@@ -1621,15 +1570,6 @@
       "Share with": [
         "Comparteix amb"
       ],
-      "Switching to ${ PASS_APP_NAME }?": [
-        "Voleu canviar a ${ PASS_APP_NAME }?"
-      ],
-      "Thank you for installing ${ PASS_APP_NAME }": [
-        "Gràcies per instal·lar ${ PASS_APP_NAME }"
-      ],
-      "The extension is now ready to use.": [
-        "L'extensió ja està llesta per utilitzar-se."
-      ],
       "Transfer ownership": [
         "Transfereix la propietat"
       ],
@@ -1645,9 +1585,6 @@
       "Update available": [
         "Hi ha una actualització disponible"
       ],
-      "Use my email": [
-        "Utilitza el meu correu electrònic"
-      ],
       "Vault shared with you": [
         "Caixa forta compartida amb vosaltres"
       ],
@@ -1656,6 +1593,9 @@
       ],
       "Welcome to ${ PASS_APP_NAME }": [
         "Us donem la benvinguda a ${ PASS_APP_NAME }"
+      ],
+      "Welcome to your new password manager!": [
+        "Us donem la benvinguda al vostre nou gestor de contrasenyes!"
       ],
       "Why ${ PASS_APP_NAME }?": [
         "Per què ${ PASS_APP_NAME }?"
@@ -1779,9 +1719,6 @@
       "Trash alias ?": [
         "Voleu moure l'àlies a la paperera?"
       ],
-      "Unable to save": [
-        "No s'ha pogut desar"
-      ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "No s'ha pogut iniciar la sessió a ${ PASS_APP_NAME }. ${ additionalMessage }"
       ],
@@ -1799,12 +1736,6 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Ja no tindreu accés a aquesta caixa forta. Per tornar-hi a entrar, necessitareu una nova invitació."
-      ],
-      "Your plan does not allow you to create more aliases": [
-        "El vostre pla no us permet crear més àlies"
-      ],
-      "Your plan only allows you to autofill from your first two vaults": [
-        "El vostre pla només us permet emplenar automàticament des de les vostres dues primeres caixes fortes."
       ],
       "Your session was locked due to inactivity": [
         "S'ha bloquejat la vostra sessió per inactivitat"

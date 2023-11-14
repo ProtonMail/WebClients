@@ -6,7 +6,7 @@
   "contexts": {
     "A label for unlabeled shared calendar links": {
       "Unlabeled": [
-        "Bez označení"
+        "Bez štítku"
       ]
     },
     "Access level": {
@@ -99,7 +99,7 @@
         "Přidat štítek"
       ],
       "Add multiple users": [
-        "Přidejte více uživatelů"
+        "Přidat více uživatelů"
       ],
       "Add notification": [
         "Přidat upozornění"
@@ -142,6 +142,9 @@
       ],
       "Authenticate": [
         "Ověřit"
+      ],
+      "Authenticating": [
+        "Ověřování"
       ],
       "Back": [
         "Zpět"
@@ -303,7 +306,7 @@
         "Smazat bránu"
       ],
       "Delete link": [
-        "Odstranit odkaz"
+        "Smazat odkaz"
       ],
       "Delete permanently": [
         "Trvale smazat"
@@ -711,7 +714,7 @@
         "Odebrat bonusy"
       ],
       "Remove calendar": [
-        "Odstranit kalendář"
+        "Odebrat kalendář"
       ],
       "Remove gift code": [
         "Odstranit dárkový kód"
@@ -789,7 +792,7 @@
         "Odhlásit ze všech ostatních relací"
       ],
       "Revoke this invitation": [
-        "Odvolat tuto pozvánku"
+        "Zrušit tuto pozvánku"
       ],
       "Save": [
         "Uložit"
@@ -1375,7 +1378,7 @@
         "Přístup k obsahu z celého světa"
       ],
       "Ad-blocker and malware protection": [
-        "Blokování reklam a ochrana před malwarem"
+        "Blokování reklam a ochrana před malware"
       ],
       "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Všechny placené funkce ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
@@ -1481,7 +1484,7 @@
     },
     "bf2023: Tooltip": {
       "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Přístup k blokovanému obsahu a soukromé prohlížení. Zahrnuje více než 3 000 serverů ve více než 65 zemích, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malwaru a reklam, rychlé stahování BitTorrentu a další funkce."
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Zahrnuje více než 3 000 serverů ve více než 65 zemích, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malware a reklam, rychlé stahování BitTorrentu a další funkce."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
         "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+, Prime Video a dalších, odkudkoli."
@@ -1664,12 +1667,12 @@
     },
     "Calendar export section description": {
       "Download an ICS file with all the events from the selected calendar.": [
-        "Stažení souboru ICS se všemi událostmi z vybraného kalendáře."
+        "Stáhněte si soubor ICS obsahující všechny události z vybraného kalendáře."
       ]
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Soubory ICS můžete importovat z jiného kalendáře do ${ CALENDAR_APP_NAME }. To vám umožní rychle importovat jednu událost nebo celý váš program."
+        "Soubory ICS můžete importovat z jiného kalendáře do ${ CALENDAR_APP_NAME }. Budete moci rychle importovat jednu událost nebo celou vaši agendu."
       ]
     },
     "Calendar invite status label": {
@@ -1777,7 +1780,7 @@
         "Výchozí"
       ],
       "Disabled": [
-        "Deaktivován"
+        "Neaktivní"
       ],
       "Not synced": [
         "Nesynchronizováno"
@@ -4163,8 +4166,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Limit počtu uživatelů ve vašem tarifu byl vyčerpán. Přejděte na vyšší tarif, abyste mohli přidat dalšího uživatele."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Musíte aktivovat klíče organizace. Bez aktivace nebudete moci vytvářet nové uživatele, přidávat adresy stávajícím uživatelům, nebo přistupovat k veřejným uživatelským účtům."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Musíte aktivovat klíče organizace. Bez aktivace nebudete moci vytvářet nesoukromé uživatele ani k nim přistupovat."
       ],
       "You must privatize all users before generating new organization keys": [
         "Než vytvoříte nové klíče pro organizaci, musíte privatizovat všechny uživatele"
@@ -4504,7 +4507,7 @@
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
         "${ totalProcessed }/${ totalToProcess } události exportována",
-        "${ totalProcessed }/${ totalToProcess } událostí exportováno",
+        "${ totalProcessed }/${ totalToProcess } událostí exportovány",
         "${ totalProcessed }/${ totalToProcess } událostí exportováno",
         "${ totalProcessed }/${ totalToProcess } událostí exportováno"
       ],
@@ -4524,7 +4527,7 @@
         "Chyba při dešifrování události"
       ],
       "Learn how to restore encrypted events with old password": [
-        "Zjistěte jak obnovit události zašifrované starým heslem"
+        "Zjistěte, jak obnovit události zašifrované starým heslem"
       ],
       "Loading events": [
         "Načítání událostí"
@@ -4836,7 +4839,7 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Zahrnuje 2700 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokovač malwaru a reklam a více."
+        "Zahrnuje 2700 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokování malware a reklam a další."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Zahrnuje podporu 3 vlastních e-mailových domén, 90 e-mailových adres, neomezený počet aliasů Hide-my-email, sdílení kalendáře a další."
@@ -6177,22 +6180,22 @@
         "Kdokoli s tímto odkazem uvidí, zda jste volní nebo zaneprázdněni ve Vašem kalendáři. Nemohou vidět podrobnosti o události, jako je název, umístění nebo účastníci."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Kdokoli s tímto odkazem nebude schopen synchronizovat nebo získat budoucí aktualizace vašeho kalendáře. Pokud jim chcete umožnit přístup, budete muset vytvořit nový odkaz."
+        "Kdokoli s tímto odkazem nebude schopen synchronizovat nebo získat budoucí aktualizace vašeho kalendáře. Pokud k němu chcete umožnit přístup, budete muset vytvořit nový odkaz."
       ],
       "Are you sure you want to delete this address?": [
         "Opravdu chcete smazat tuto adresu?"
       ],
       "Are you sure you want to delete this calendar?": [
-        "Opravdu chcete odstranit tento kalendář?"
+        "Jste si jisti, že chcete tento kalendář smazat?"
       ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "Opravdu chcete tento kalendář odstranit? Všechny adresy, se kterými jste tento kalendář sdíleli, k němu ztratí přístup."
+        "Jste si jisti, že chcete tento kalendář smazat? Všechny adresy, se kterými jste tento kalendář sdíleli, k němu ztratí přístup."
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "Opravdu chcete smazat tento kalendář? Všechny události v něm budou odstraněny."
+        "Jste si jisti, že chcete tento kalendář smazat? Všechny události v něm budou smazány."
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Opravdu chcete tento kalendář smazat? Kalendář svátků můžete přidat později."
+        "Jste si jisti, že chcete tento kalendář smazat? Kalendář svátků můžete přidat později."
       ],
       "Are you sure you want to delete this domain?": [
         "Opravdu chcete smazat tuto doménu?"
@@ -6417,7 +6420,7 @@
         "Odstraňte všechny ostatní MX záznamy, nebo se ujistěte, že ${ MAIL_APP_NAME } záznam má nejnižší prioritu."
       ],
       "Delete link?": [
-        "Odstranit odkaz?"
+        "Smazat odkaz?"
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Mazání ${ deletedServerCount } serveru brány",
@@ -6831,7 +6834,7 @@
         "Odkaz vytvořen"
       ],
       "Link deleted": [
-        "Odkaz odstraněn"
+        "Odkaz smazán"
       ],
       "Link expired": [
         "Odkaz vypršel"
@@ -7009,6 +7012,9 @@
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Do služby ${ BRAND_NAME } se zaregistrovalo více než 100 milionů lidí a firem."
+      ],
+      "P2P": [
+        "P2P"
       ],
       "Paid for a ${ rewardMonths } month plan": [
         "Zaplaceno za ${ rewardMonths } měsíční tarif",
@@ -7191,7 +7197,7 @@
         "Nezapomeňte s nimi sdílet přihlašovací údaje uživatele."
       ],
       "Remove one of your calendars to join this one": [
-        "Odstraňte jeden ze svých kalendářů a připojte se k tomuto"
+        "Odeberte jeden ze svých kalendářů pro připojení k tomuto"
       ],
       "Report link expired": [
         "Odkaz na hlášení vypršel"
@@ -7380,7 +7386,7 @@
         "Zpráva ${ boldDataLocked } se již nebude zobrazovat, ale stále můžete svá data odemknout pomocí ${ encryptionAndKeysLink }."
       ],
       "The calendar will be removed from your account.": [
-        "Kalendář bude odstraněn z vašeho účtu."
+        "Kalendář bude odebrán z vašeho účtu."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Ověřovací odkaz e-mailu vypršel. Prosím přihlaste se znovu pro odeslání ověřovacího odkazu."
@@ -7582,6 +7588,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Dobijte na svůj účet kredity, za které si můžete předplatit nový tarif nebo prodloužit předplatné vašeho současného tarifu. Získáte jeden kredit za každý/každou/každé ${ i18nCurrency }."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Celkem e-mailových adres"
@@ -7968,7 +7977,7 @@
         "Váš PayPal účet musíte mít propojený s platební kartou nebo bankovním účtem. Pokud nemáte, klikněte na tlačítko níže."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
-        "Před importováním Vašich událostí z ICS musíte mít aktivní osobní kalendář."
+        "Před importováním vašich událostí z ICS musíte mít aktivní osobní kalendář."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Dosáhli jste ${ spaceDisplayed }% kapacity svého úložiště. ${ freeUpMessage } ${ upgradeLink }"
@@ -8663,7 +8672,7 @@
         "Blokovat pouze malware"
       ],
       "Block malware, ads and trackers": [
-        "Blokovat malware, reklamy a sledovače"
+        "Blokovat malware, reklamy a sledovací prvky"
       ],
       "Browser": [
         "Prohlížeč"
@@ -9026,7 +9035,7 @@
         "Úroveň filtrování NetShield"
       ],
       "Link label": [
-        "Označení odkazu"
+        "Štítek odkazu"
       ],
       "Mail Server (IMAP)": [
         "E-mailový server (IMAP)"
@@ -9248,7 +9257,7 @@
         "Odesílat hlášení pádů"
       ],
       "Send in": [
-        "Odeslat v"
+        "Odeslat v jazyce"
       ],
       "Show secondary time zone": [
         "Zobrazit sekundární časové pásmo"
@@ -9382,6 +9391,9 @@
       "Verify keys with Key Transparency": [
         "Ověření klíčů pomocí Key Transparency"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Je nám líto, že odcházíte. Sdělte nám svůj důvod, abychom pomohli zlepšit naše služby."
       ],
@@ -9446,10 +9458,10 @@
     },
     "Label for default event notifications": {
       "All-day event notifications": [
-        "Upozornění na celodenní události"
+        "Upozornění celodenních událostí"
       ],
       "Notifications": [
-        "Oznámení"
+        "Upozornění"
       ]
     },
     "Label for default event settings": {
@@ -10135,26 +10147,6 @@
         "Střední rychlost VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Snížit na ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Objevte všechny ${ BRAND_NAME } tarify"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Ponechat můj ${ currentPlanName } účet"
-      ],
-      "Upgrade": [
-        "Navýšit"
-      ],
-      "Upgrade now": [
-        "Navýšit nyní"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Pokračovat na rekapitulaci"
@@ -10194,6 +10186,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Přejít na ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Snížit na ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Objevte všechny ${ BRAND_NAME } tarify"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Ponechat můj ${ currentPlanName } účet"
+      ],
+      "Upgrade": [
+        "Navýšit"
+      ],
+      "Upgrade now": [
+        "Navýšit nyní"
       ]
     },
     "new_plans: feature": {
@@ -10315,7 +10327,7 @@
         "99.95% SLA Dostupnost"
       ],
       "Ad-blocker and malware protection": [
-        "Blokování reklam a ochrana před malwarem"
+        "Blokování reklam a ochrana před malware"
       ],
       "Admin console": [
         "Konzole správce"
@@ -10796,7 +10808,7 @@
         "${ MAIL_APP_NAME }: Zabezpečte své e-maily pomocí koncového šifrování. Obsahuje podporu vlastních e-mailových domén, 15 e-mailových adres, neomezený počet hide-my-email aliasů pro skrytí e-mailu a další."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "${ VPN_APP_NAME }: Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje ${ serversAndCountries }, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malwaru a reklam, rychlé stahování BitTorrentu a další funkce."
+        "${ VPN_APP_NAME }: Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje ${ serversAndCountries }, nejvyšší rychlosti VPN, přístup k celosvětovým streamovacím službám, blokování malware a reklam, rychlé stahování BitTorrentu a další funkce."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Získejte přístup k obsahu na streamovacích službách, včetně Netflix, Disney+, Prime Video, odkudkoliv"
@@ -10943,7 +10955,7 @@
         "SMTP umožňuje službám nebo zařízením třetích stran odesílat e-maily prostřednictvím ${ MAIL_APP_NAME }."
       ],
       "Specially designed NetShield protects your device and speeds up your browsing by blocking ads, trackers, and malware": [
-        "NetShield chrání Vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovače a malware"
+        "NetShield chrání vaše zařízení a zrychluje prohlížení tím, že blokuje reklamy, sledovací prvky a malware"
       ],
       "Start with ${ freeStorageSize } and unlock more storage along the way. Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }.": [
         "Začněte s ${ freeStorageSize } a odemkněte dodatečný prostor jakmile to bude potřeba. Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, a ${ DRIVE_APP_NAME }."
@@ -11302,6 +11314,9 @@
       "Add to existing group": [
         "Přidat do existující skupiny"
       ],
+      "Android": [
+        "Android"
+      ],
       "Ask each time": [
         "Vždy se ptát"
       ],
@@ -11326,6 +11341,9 @@
       "Free server configs": [
         "Konfigurace bezplatného serveru"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
         "Našel jsem jinou službu, která se mi líbí více"
       ],
@@ -11335,6 +11353,9 @@
       "Ignore group": [
         "Ignorovat skupinu"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "Chybí klíčová funkce, kterou potřebuji"
       ],
@@ -11343,6 +11364,9 @@
       ],
       "Left to Right": [
         "Zleva doprava"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "Můj důvod není na seznamu"
@@ -11389,8 +11413,17 @@
       "Standard server configs": [
         "Konfigurace standardního serveru"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Celá organizace"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -12041,7 +12074,7 @@
     },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "Odhlášením odběru již nebudete mít přístup k tomuto kalendáři. Všechny události tohoto kalendáře budou z vašeho účtu odstraněny, ale i nadále budou k dispozici pod originálním veřejným odkazem."
+        "Odhlášením odběru již nebudete mít přístup k tomuto kalendáři. Všechny události tohoto kalendáře budou z vašeho účtu smazány, ale i nadále budou k dispozici pod původním veřejným odkazem."
       ],
       "You will no longer have access to this calendar.": [
         "K tomuto kalendáři již nebudete mít přístup."
@@ -12052,7 +12085,7 @@
         "Pokud opustíte tento kalendář, budete muset znovu požádat vlastníka pro opětovné připojení."
       ],
       "This calendar will be removed from your account.": [
-        "Tento kalendář bude odstraněn z vašeho účtu."
+        "Tento kalendář bude odebrán z vašeho účtu."
       ]
     },
     "Remove calendar section title": {
@@ -12063,10 +12096,10 @@
         "Opustit kalendář?"
       ],
       "Remove calendar": [
-        "Odstranit kalendář"
+        "Odebrat kalendář"
       ],
       "Unsubscribe?": [
-        "Odhlásit odběr?"
+        "Odhlásit?"
       ]
     },
     "Restore administrator panel": {
@@ -12076,14 +12109,11 @@
       "Changing organization password": [
         "Změna hesla organizace"
       ],
-      "Creating new users": [
-        "Vytváření nových uživatelů"
+      "Creating or accessing non-private users": [
+        "Vytváření nebo přístup k nesoukromých uživatelům"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Z důvodu změny hesla byla omezena vaše oprávnění správce organizace. Následující akce již nejsou povoleny:"
-      ],
-      "Reading emails of non-private users": [
-        "Čtení e-mailových zpráv nesoukromých uživatelů"
       ]
     },
     "Role": {
@@ -12383,7 +12413,7 @@
     },
     "session_recovery:settings:action": {
       "Allow password reset from settings": [
-        "Povolit resetování hesla z Nastavení"
+        "Povolit resetování hesla z nastavení"
       ],
       "Request a password reset from your Account settings. No recovery method needed.": [
         "O resetování hesla můžete požádat v nastavení účtu. Není potřeba žádná metoda obnovení."
@@ -12772,10 +12802,10 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN na uživatele, celosvětové streamovací služby, blokování malwaru a reklamy a další."
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN na uživatele, celosvětové streamovací služby, blokování malware a reklamy a další."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN, celosvětové streamovací služby, blokátor malwaru a reklamy a další."
+        "Přístup k blokovanému obsahu a soukromé prohlížení. Obsahuje 1700 serverů ve více než 60 zemích, nejvyšší rychlost VPN, 10 připojení VPN, celosvětové streamovací služby, blokování malware a reklamy a další."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Přístup k obsahu streamovacích služeb, včetně Netflix, Disney+ a Prime Video, odkudkoli."
@@ -12852,10 +12882,10 @@
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Přidání veřejných, externích nebo sdílených kalendářů pomocí URL adresy."
+        "Přidejte veřejné, externí nebo sdílené kalendáře pomocí URL adresy."
       ],
       "Add public, external, or shared calendars.": [
-        "Přidání veřejných, externích nebo sdílených kalendářů."
+        "Přidejte veřejné, externí nebo sdílené kalendáře."
       ]
     },
     "Subscription": {
@@ -13072,7 +13102,7 @@
         "Informace kalendáře aktualizovány"
       ],
       "Calendar removed": [
-        "Kalendář byl odstraněn"
+        "Kalendář byl odebrán"
       ],
       "Calendar updated": [
         "Kalendář aktualizován"
@@ -13284,7 +13314,7 @@
     },
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
-        "Záznam o událostech, které nemohly být exportovány"
+        "Detaily událostí, které nemohly být exportovány"
       ]
     },
     "summer2023: Deal details": {
@@ -13300,7 +13330,7 @@
         "Vytvoření zabezpečených přihlašovacích údajů na všech zařízeních. Obsahuje neomezený počet aliasů, 20 trezorů, integrovanou funkci 2FA, automatické vyplňování kreditních karet a další funkce."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Zahrnuje 2950 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokovač malwaru a reklam a více."
+        "Zahrnuje 2950 serverů v 65+ zemích, přípojení až 10 zařízení, přístup ke světovým streamovacím službám, blokování malware a reklam a další."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Obsahuje podporu 1 vlastní e-mailové domény, 10 e-mailových adres, 10 aliasů pro hide-my-email, sdílení kalendáře a další funkce."
@@ -14149,7 +14179,7 @@
         "Doporučte přítele"
       ],
       "Remove calendar": [
-        "Odstranit kalendář"
+        "Odebrat kalendář"
       ],
       "Remove user?": [
         "Odebrat uživatele?"
@@ -14754,18 +14784,18 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Navyšte tarif na ${ passPlusPlanName } a získejte neomezený počet aliasů Hide-my-email"
+        "Navyšte tarif na ${ passPlusPlanName } a získejte neomezený počet aliasů hide-my-email"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou",
-        "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou",
-        "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou",
-        "Upgrade na ${ planName } pro připojení až ${ n } zařízení k VPN najednou"
+        "Navyšte tarif na ${ planName } pro připojení až ${ n } zařízení k VPN najednou",
+        "Navyšte tarif na ${ planName } pro připojení až ${ n } zařízení k VPN najednou",
+        "Navyšte tarif na ${ planName } pro připojení až ${ n } zařízení k VPN najednou",
+        "Navyšte tarif na ${ planName } pro připojení až ${ n } zařízení k VPN najednou"
       ]
     },
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Pro sdílení vašeho kalendáře si pořiďte ${ MAIL_SHORT_APP_NAME } předplatné."
+        "Pro sdílení vašeho kalendáře přejděte na placený tarif ${ MAIL_SHORT_APP_NAME }."
       ]
     },
     "upsell panel": {
@@ -14917,6 +14947,29 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Přístup k serverům Secure Core, rychlé stahování P2P/BitTorrent, Tor skrze VPN a další."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Warning": {

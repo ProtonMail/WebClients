@@ -65,12 +65,6 @@
       "Continue": [
         "İlerle"
       ],
-      "Continue without pinning": [
-        "Sabitlemeden ilerle"
-      ],
-      "Copy & fill in": [
-        "Kopyala ve doldur"
-      ],
       "Copy and close": [
         "Kopyala ve kapat"
       ],
@@ -182,9 +176,6 @@
       "Import": [
         "İçe aktar"
       ],
-      "Import your passwords": [
-        "Parolalarınızı içe aktarın"
-      ],
       "Importing": [
         "İçe aktarılıyor"
       ],
@@ -227,6 +218,9 @@
       "More options": [
         "Diğer seçenekler"
       ],
+      "Move all items": [
+        "Tüm ögeleri taşı"
+      ],
       "Move to a shared vault": [
         "Paylaşılan bir kasaya taşı"
       ],
@@ -238,9 +232,6 @@
       ],
       "Move to trash": [
         "Çöpe at"
-      ],
-      "Not now": [
-        "Şimdi değil"
       ],
       "OK": [
         "Tamam"
@@ -347,9 +338,6 @@
       "Update vault": [
         "Kasayı güncelle"
       ],
-      "Updating": [
-        "Güncelleniyor"
-      ],
       "Upgrade": [
         "Yükselt"
       ],
@@ -418,9 +406,6 @@
       "Auto-lock could not be disabled": [
         "Otomatik kilitleme kapatılamadı"
       ],
-      "Cannot create alias (${ error }).": [
-        "Takma ad oluşturulamadı (${ error })."
-      ],
       "Cannot send invitation to this address at the moment": [
         "Şu anda bu adrese davetiye gönderilemiyor"
       ],
@@ -485,6 +470,9 @@
       "Failed to edit user's access.": [
         "Kullanıcının erişimi düzenlenemedi."
       ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "\"${ payload.content.name }\" içindeki tüm ögeler taşınamadı"
+      ],
       "Failed to remove user's access.": [
         "Kullanıcının erişimi kaldırılamadı."
       ],
@@ -533,9 +521,6 @@
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
         "İlerlemek için lütfen ${ PASS_APP_NAME } için gerekli eklenti izinlerini verin"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "Lütfen eklentiyi sabitleyin ya da \"Sabitlemeden ilerle\" olarak seçin."
-      ],
       "Request timed out": [
         "İstek zaman aşımına uğradı"
       ],
@@ -544,6 +529,9 @@
       ],
       "Restoring item failed": [
         "Öge geri yüklenemedi"
+      ],
+      "Restoring trashed items failed": [
+        "Çöpe atılmış ögeler geri yüklenemedi"
       ],
       "Settings update failed": [
         "Ayarlar güncellenemedi"
@@ -722,20 +710,29 @@
       "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
         "${ PASS_APP_NAME } uygulamasına erişerek oturumunuzun kilidini açmak için PIN kodunuz istenecek"
       ],
-      "Access your passwords on the go with our mobile apps.": [
-        "Mobil uygulamamız ile hareket halindeyken parolalarınıza erişin."
-      ],
       "Admin": [
         "Yönetici"
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "\"${ item.aliasEmail }\" takma adı çöpe atıldı. Artık e-postaları gelen kutunuza iletmeyecek"
       ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "\"${ payload.content.name }\" içindeki tüm ögeler taşındı"
+      ],
+      "All trashed items permanently removed": [
+        "Çöpe atılmış tüm ögeler kalıcı olarak silindi"
+      ],
+      "All trashed items successfully restored": [
+        "Çöpe atılmış tüm ögeler geri yüklendi"
+      ],
+      "An item previously shared with you was removed": [
+        "Daha önce sizinle paylaşılan bir öge kullanımdan kaldırıldı"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "\"${ fromVaultName }\" içindeki tüm ögeleri \"${ toVaultName }\" içine taşımak istediğinize emin misiniz?"
+      ],
       "Auto-lock successfully disabled": [
         "Otomatik kilitleme kapatıldı"
-      ],
-      "Autosaved on ${ submissionURL }": [
-        "${ submissionURL } üzerinden otomatik olarak kaydedildi"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Bu kasadaki ögeleri oluşturabilir, düzenleyebilir, silebilir ve dışa aktarabilir."
@@ -758,9 +755,6 @@
       "Copied to clipboard": [
         "Panoya kopyalandı"
       ],
-      "Creating alias...": [
-        "Takma ad oluşturuluyor..."
-      ],
       "Credit cards, Custom fields": [
         "Kredi kartları, özel alanlar"
       ],
@@ -773,23 +767,17 @@
       "Deleting \"${ payload.content.name }\"": [
         "\"${ payload.content.name }\" siliniyor"
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "${ PASS_APP_NAME } YouTube bölümüne bakın"
-      ],
       "Drop file here to upload": [
         "Yüklemek için dosyayı buraya bırakın"
       ],
       "Drop to import": [
         "İçe aktarmak için bırakın"
       ],
-      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
-        "Var olan parolalarınızı kolayca ${ PASS_APP_NAME } içine aktarın."
-      ],
       "Editor": [
         "Düzenleyici"
       ],
-      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "${ BRAND_NAME } hesabınızı bağlayarak ${ PASS_APP_NAME } uygulamasını kullanıma alın"
+      "Emptying trash...": [
+        "Çöp kutusu boşaltılıyor..."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Doğrulama kodunu yazın. Rakam ${ digit }."
@@ -812,14 +800,8 @@
       "Generated passwords will be stored for a period of one day.": [
         "Üretilen parolalar bir gün süre ile saklanır."
       ],
-      "Generating alias...": [
-        "Takma ad üretiliyor..."
-      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Sınırsız sayıda takma ad edinin, ücretli özelliklerin keyfini sürün ve Pass Plus tarifesine abone olarak bizi destekleyin."
-      ],
-      "Here you will find all the necessary information to get you started.": [
-        "Başlamak için gereken tüm bilgileri burada bulabilirsiniz."
       ],
       "Import in progress:": [
         "İçe aktarılıyor:"
@@ -877,6 +859,9 @@
       "Item successfully moved": [
         "Öge taşındı"
       ],
+      "Leaving vault...": [
+        "Kasa bırakılıyor..."
+      ],
       "Let's get you started by creating your first item": [
         "İlk ögenizi ekleyerek başlayalım"
       ],
@@ -895,14 +880,14 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Bir parola yöneticisinden daha fazlası. ${ PASS_APP_NAME } parolalarınızı ve takma e-posta adresleri ile e-posta adresinizi korur. ${ MAIL_APP_NAME } ile aynı teknolojiyi kullandığından, verileriniz uçtan uca şifreleme ile korunur ve yalnızca sizin tarafınızdan erişilebilir."
       ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
+      ],
       "Multiple vaults": [
         "Birden çok kasa"
       ],
       "N/A": [
         "Kullanılamaz"
-      ],
-      "No login found": [
-        "Herhangi bir oturum açma kaydı bulunamadı"
       ],
       "None": [
         "Yok"
@@ -919,17 +904,11 @@
       "Pass Plus trial": [
         "Proton Pass Plus denemesi"
       ],
-      "Password copied": [
-        "Parola kopyalandı"
-      ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "1 günden eski parolalar geçmişten otomatik olarak silinir."
       ],
       "Pending access to the shared data": [
         "Paylaşılmış verilere erişilmesi bekleniyor"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "${ PASS_APP_NAME } uygulamasını araç çubuğuna sabitleyin"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN kodu kaydedildi. ${ PASS_APP_NAME } kilidini açmak için kullanabilirsiniz"
@@ -955,8 +934,11 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Gizliliğe çok önem veriyoruz. ${ PASS_APP_NAME } neden farklı öğrenin."
       ],
-      "Save login": [
-        "Oturum açmayı kaydet"
+      "Restoring trashed items...": [
+        "Çöpe atılmış ögeler geri yükleniyor..."
+      ],
+      "Select destination vault": [
+        "Hedef kasayı seçin"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "İçe aktarılan kasaların kaydedileceği yeri seçin."
@@ -975,9 +957,6 @@
       ],
       "Share with 10 others": [
         "10 kişiyle paylaşın"
-      ],
-      "Sign in or create an account to continue.": [
-        "İlerlemek için oturum ya da hesap açın."
       ],
       "Sign in to your account": [
         "Hesabınızda oturum açın"
@@ -1006,6 +985,10 @@
       "The autofill dropdown will automatically open on field focus.": [
         "Alana gelindiğinde otomatik doldurma kutusu kendiliğinden açılır."
       ],
+      "The following ${ result.ignored.length } item could not be imported:": [
+        "Şu ${ result.ignored.length } öge içe aktarılamadı:",
+        "Şu ${ result.ignored.length } öge içe aktarılamadı:"
+      ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Yapıştırmaya çalıştığınız metin izin verilen en fazla ${ maxLength } karakterden daha uzun."
       ],
@@ -1033,12 +1016,6 @@
       "Unlock it with your PIN to access the settings": [
         "Bu ayarlara erişebilmek için PIN kodunuz ile kilidi açın"
       ],
-      "Update login": [
-        "Oturum açma kaydını güncelle"
-      ],
-      "Upgrade ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } uygulamasını yükselt"
-      ],
       "Use vaults to share this item with others.": [
         "Bu ögeyi başkaları ile paylaşmak için kasaları kullanın."
       ],
@@ -1057,8 +1034,8 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "\"${ payload.share.content.name }\" kasası güncellendi"
       ],
-      "Verification code": [
-        "Doğrulama kodu"
+      "Vault \"${ share.content.name }\" was removed": [
+        "\"${ share.content.name }\" kasası kaldırıldı"
       ],
       "Viewer": [
         "Görüntüleyici"
@@ -1096,9 +1073,6 @@
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Belirli bir süre kullanılmayan ${ PASS_APP_NAME } otomatik olarak kilitlendiğinde, kilidi bu PIN kodu ile açabileceksiniz."
-      ],
-      "You're about to create": [
-        "Şunu oluşturmak üzeresiniz"
       ],
       "You're invited to a vault.": [
         "Bir kasaya davet edildiniz."
@@ -1364,9 +1338,6 @@
       ],
       "Old-New": [
         "Eskiden yeniye"
-      ],
-      "Older than last month": [
-        "Bir aydan eski"
       ],
       "Oldest to newest": [
         "Eskiden yeniye"
@@ -1656,17 +1627,8 @@
       "Enter your PIN": [
         "PIN kodunuzu yazın"
       ],
-      "Fill & copy password": [
-        "Doldur ve parolayı kopyala"
-      ],
-      "Get the mobile apps": [
-        "Mobil uygulamaları edinin"
-      ],
       "Grant permissions": [
         "İzinleri ver"
-      ],
-      "Hide my email": [
-        "Hide My Email"
       ],
       "Import - ${ date }": [
         "İçe aktarma - ${ date }"
@@ -1683,6 +1645,9 @@
       "Member limit": [
         "Üye sayısı sınırı"
       ],
+      "Move all items ?": [
+        "Tüm ögeler taşınsın mı?"
+      ],
       "Our welcome gift to you": [
         "Karşılama hediyemiz"
       ],
@@ -1691,9 +1656,6 @@
       ],
       "Permanently remove all items ?": [
         "Tüm ögeler kalıcı olarak silinsin mi?"
-      ],
-      "Pin the extension": [
-        "Eklentiyi sabitle"
       ],
       "Secure your data": [
         "Verilerinizi koruyun"
@@ -1704,15 +1666,6 @@
       "Share with": [
         "Şununla paylaş"
       ],
-      "Switching to ${ PASS_APP_NAME }?": [
-        "${ PASS_APP_NAME } uygulamasına geçilsin mi?"
-      ],
-      "Thank you for installing ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } uygulamasını kurduğunuz için teşekkürler"
-      ],
-      "The extension is now ready to use.": [
-        "Eklenti kullanılmaya hazır."
-      ],
       "Transfer ownership": [
         "Sahipliği aktar"
       ],
@@ -1722,14 +1675,8 @@
       "Unlock ${ brandNameJSX }": [
         "${ brandNameJSX } kilidini aç"
       ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "${ PASS_APP_NAME } kilidini aç"
-      ],
       "Update available": [
         "Güncelleme yayınlanmış"
-      ],
-      "Use my email": [
-        "E-postamı kullan"
       ],
       "Vault shared with you": [
         "Sizinle bir kasa paylaşıldı"
@@ -1865,9 +1812,6 @@
       "Trash alias ?": [
         "Takma ad çöpe atılsın mı?"
       ],
-      "Unable to save": [
-        "Kaydedilemedi"
-      ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME } oturumu açılamadı. ${ additionalMessage }"
       ],
@@ -1897,12 +1841,6 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Bu kasaya artık erişemeyeceksiniz. Yeniden katılabilmek için yeni bir davet almanız gerekecek."
-      ],
-      "Your plan does not allow you to create more aliases": [
-        "Tarifenizin sınırları daha fazla takma ad oluşturmanıza izin vermiyor"
-      ],
-      "Your plan only allows you to autofill from your first two vaults": [
-        "Tarifeniz yalnızca ilk iki kasanızdan otomatik doldurmaya izin veriyor"
       ],
       "Your session was locked due to inactivity": [
         "Bir süredir işlem yapmadığınızdan oturumunuz kilitlendi"

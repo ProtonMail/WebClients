@@ -227,6 +227,9 @@
       "More options": [
         "Más opciones"
       ],
+      "Move all items": [
+        "Mover todos los elementos"
+      ],
       "Move to a shared vault": [
         "Mover a una caja fuerte compartida"
       ],
@@ -485,6 +488,9 @@
       "Failed to edit user's access.": [
         "Error al editar el acceso del usuario."
       ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Error al mover todos los elementos desde \"${ payload.content.name }\""
+      ],
       "Failed to remove user's access.": [
         "Error al eliminar el acceso del usuario."
       ],
@@ -544,6 +550,9 @@
       ],
       "Restoring item failed": [
         "Error al restaurar el elemento"
+      ],
+      "Restoring trashed items failed": [
+        "Error al restaurar los elementos de la papelera"
       ],
       "Settings update failed": [
         "Error al actualizar los ajustes"
@@ -731,6 +740,21 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" movido a la papelera. Dejará de reenviar correos a tu buzón."
       ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Todos los elementos de \"${ payload.content.name }\" han sido movidos."
+      ],
+      "All trashed items permanently removed": [
+        "Todos los elementos de la papelera han sido eliminados permanentemente."
+      ],
+      "All trashed items successfully restored": [
+        "Todos los elementos de la papelera han sido restaurados."
+      ],
+      "An item previously shared with you was removed": [
+        "Se ha eliminado un elemento previamente compartido contigo."
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "¿Estás seguro de que quieres mover todos los elementos de \"${ fromVaultName }\" a \"${ toVaultName }\"?"
+      ],
       "Auto-lock successfully disabled": [
         "Se ha desactivado el bloqueo automático"
       ],
@@ -787,6 +811,9 @@
       ],
       "Editor": [
         "Editor"
+      ],
+      "Emptying trash...": [
+        "Vaciando la papelera..."
       ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
         "Activa ${ PASS_APP_NAME } al conectar tu cuenta de ${ BRAND_NAME }"
@@ -877,6 +904,9 @@
       "Item successfully moved": [
         "Se ha movido el elemento"
       ],
+      "Leaving vault...": [
+        "Dejando la caja fuerte..."
+      ],
       "Let's get you started by creating your first item": [
         "Comencemos creando tu primer elemento"
       ],
@@ -895,6 +925,9 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege tu contraseña y tu dirección de correo personal a través de alias de correo electrónico. Se ha desarrollado con la misma tecnología detrás de ${ MAIL_APP_NAME }, tus datos están cifrados de extremo a extremo y sólo son accesibles por ti."
       ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Moviendo todos los elementos desde \"${ payload.content.name }\""
+      ],
       "Multiple vaults": [
         "Múltiples cajas fuertes"
       ],
@@ -902,7 +935,7 @@
         "N/D"
       ],
       "No login found": [
-        "Ningún inicio de sesión encontrado"
+        "Ningún inicio de sesión ha sido encontrado"
       ],
       "None": [
         "Ninguno"
@@ -955,8 +988,14 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "La privacidad es una gran preocupación para nosotros. Descubre por qué ${ PASS_APP_NAME } es diferente."
       ],
+      "Restoring trashed items...": [
+        "Restaurando elementos de la papelera..."
+      ],
       "Save login": [
         "Guardar el inicio de sesión"
+      ],
+      "Select destination vault": [
+        "Selecciona la caja fuerte de destino"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Selecciona dónde quieres guardar tus cajas fuertes importadas."
@@ -1060,6 +1099,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Se ha actualizado la caja fuerte \"${ payload.share.content.name }\"."
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "La caja fuerte \"${ share.content.name }\" ha sido eliminada."
       ],
       "Verification code": [
         "Código de verificación"
@@ -1336,6 +1378,9 @@
       "Modified": [
         "Modificado"
       ],
+      "More than a month": [
+        "Más de un mes"
+      ],
       "Most recent": [
         "Más reciente"
       ],
@@ -1368,9 +1413,6 @@
       ],
       "Old-New": [
         "Antiguo-Reciente"
-      ],
-      "Older than last month": [
-        "Anteriores al último mes"
       ],
       "Oldest to newest": [
         "De más antiguos a más recientes"
@@ -1661,7 +1703,7 @@
         "Introduce tu código PIN"
       ],
       "Fill & copy password": [
-        "Rellenar y copiar contraseña"
+        "Rellenar y copiar la contraseña"
       ],
       "Get the mobile apps": [
         "Obtén las aplicaciones móviles"
@@ -1687,6 +1729,9 @@
       "Member limit": [
         "Límite de miembros"
       ],
+      "Move all items ?": [
+        "¿Mover todos los elementos?"
+      ],
       "Our welcome gift to you": [
         "Nuestro regalo de bienvenida para ti"
       ],
@@ -1709,7 +1754,7 @@
         "Compartir con"
       ],
       "Switching to ${ PASS_APP_NAME }?": [
-        "¿Cambiar a ${ PASS_APP_NAME }?"
+        "¿Quieries cambiar a ${ PASS_APP_NAME }?"
       ],
       "Thank you for installing ${ PASS_APP_NAME }": [
         "Gracias por instalar ${ PASS_APP_NAME }"
