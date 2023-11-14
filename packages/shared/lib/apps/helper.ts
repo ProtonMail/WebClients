@@ -3,6 +3,8 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { getLocalIDPath, stripLocalBasenameFromPathname } from '../authentication/pathnameHelper';
 import { APPS, APPS_CONFIGURATION, APP_NAMES, EXTENSIONS, VPN_HOSTNAME } from '../constants';
+import { isMac, isWindows } from '../helpers/browser';
+import { isElectronApp } from '../helpers/desktop';
 import { stripLeadingAndTrailingSlash } from '../helpers/string';
 
 interface TargetLocation {
@@ -60,7 +62,19 @@ export const getAppHrefBundle = (to: string, toApp: APP_NAMES) => {
 export const getAccountSettingsApp = () => APPS.PROTONACCOUNT;
 
 export const getClientID = (appName: APP_NAMES) => {
-    return APPS_CONFIGURATION[appName].clientID;
+    const config = APPS_CONFIGURATION[appName];
+    const isElectron = isElectronApp();
+
+    let apiClientID = config.webClientID ?? config.clientID ?? '';
+    if (isElectron) {
+        if (isWindows()) {
+            apiClientID = config.windowsClientID ?? apiClientID;
+        } else if (isMac()) {
+            apiClientID = config.macosClientID ?? apiClientID;
+        }
+    }
+
+    return apiClientID;
 };
 
 export const getExtension = (appName: APP_NAMES) => {

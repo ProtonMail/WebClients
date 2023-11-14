@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
+import { isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import { hasMailProfessional, hasNewVisionary, hasVisionary } from '@proton/shared/lib/helpers/subscription';
 import { addUpsellPath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
@@ -74,6 +75,7 @@ const Sidebar = ({
     const { UsedSpace, MaxSpace, isMember, isSubUser } = user;
     const spacePercentage = percentage(MaxSpace, UsedSpace);
     const { isNarrow } = useActiveBreakpoint();
+    const isElectron = isElectronOnMac();
 
     const upsellRef = getUpsellRefFromApp({
         app: APP_NAME,
@@ -114,7 +116,7 @@ const Sidebar = ({
         <>
             <div
                 ref={rootRef}
-                className="sidebar flex flex-nowrap flex-column no-print outline-none"
+                className={clsx('sidebar flex flex-nowrap flex-column no-print outline-none', isElectron && 'mt-3')}
                 data-expanded={expanded}
                 {...rest}
                 {...focusTrapProps}

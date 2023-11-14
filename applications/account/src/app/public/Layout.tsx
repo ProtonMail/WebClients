@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
 import { ProtonLogo, PublicTopBanners, getAppVersion, useConfig } from '@proton/components';
+import ElectronDraggeableHeaderWrapper from '@proton/components/components/electron/ElectronDraggeableHeaderWrapper';
 import { APPS } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import { locales } from '@proton/shared/lib/i18n/locales';
@@ -31,12 +32,12 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
     const { APP_VERSION, APP_NAME } = useConfig();
     const appVersion = getAppVersion(APP_VERSION);
     const version = appVersion; // only to avoid duplicate strings for L10N
-
     const protonLogoBrand = <ProtonLogo variant="full" className={clsx(onBack && 'ml-4 md:ml-0')} />; // for the future: color="invert" will change color to white
 
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h-full scroll-if-needed relative sign-layout-bg">
             <PublicTopBanners />
+            <ElectronDraggeableHeaderWrapper />
             <header
                 className={clsx(
                     headerClassName,
