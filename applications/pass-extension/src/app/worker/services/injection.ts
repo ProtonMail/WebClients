@@ -52,13 +52,15 @@ export const createInjectionService = () => {
     const updateInjections = async () => {
         const tabs = await browser.tabs.query({ url: ['https://*/*', 'http://*/*'] }).catch(() => []);
         await Promise.all(
-            tabs.map((tab) => {
-                logger.info(`[InjectionService::update] Re-injecting script on tab ${tab.id}`);
-                if (tab.id !== undefined) {
-                    /* FIXME: re-inject in all frames when supporting iframes */
-                    inject({ tabId: tab.id, allFrames: false, js: ['orchestrator.js'] }).catch(noop);
-                }
-            })
+            tabs
+                .filter((tab) => !tab.url?.includes('pass.proton.'))
+                .map((tab) => {
+                    logger.info(`[InjectionService::update] Re-injecting script on tab ${tab.id}`);
+                    if (tab.id !== undefined) {
+                        /* FIXME: re-inject in all frames when supporting iframes */
+                        inject({ tabId: tab.id, allFrames: false, js: ['orchestrator.js'] }).catch(noop);
+                    }
+                })
         );
     };
 
