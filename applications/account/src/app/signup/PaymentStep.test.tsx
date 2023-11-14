@@ -9,29 +9,6 @@ import noop from '@proton/utils/noop';
 
 import PaymentStep, { Props } from './PaymentStep';
 
-jest.mock('@proton/components/containers/paymentMethods/useMethods', () => ({
-    __esModule: true,
-    default: jest.fn(() => ({
-        paymentMethods: [],
-        loading: false,
-        options: {
-            usedMethods: [],
-            methods: [
-                {
-                    icon: 'credit-card',
-                    value: 'card',
-                    text: 'Credit/debit card',
-                },
-                {
-                    icon: 'brand-paypal',
-                    text: 'PayPal',
-                    value: 'paypal',
-                },
-            ],
-        },
-    })),
-}));
-
 let paymentMethodStatus: PaymentMethodStatus;
 beforeEach(() => {
     jest.clearAllMocks();

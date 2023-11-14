@@ -11,14 +11,12 @@ import {
 } from '@proton/components/payments/core';
 import { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
 import { useLoading } from '@proton/hooks';
-import { DEFAULT_CURRENCY, MIN_CREDIT_AMOUNT, MIN_DONATION_AMOUNT } from '@proton/shared/lib/constants';
+import { MIN_CREDIT_AMOUNT, MIN_DONATION_AMOUNT } from '@proton/shared/lib/constants';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Alert, Loader, Price } from '../../components';
-import { useAuthentication } from '../../hooks';
 import { CardModel } from '../../payments/core';
-import { useMethods } from '../paymentMethods';
 import PaymentMethodDetails from '../paymentMethods/PaymentMethodDetails';
 import PaymentMethodSelector from '../paymentMethods/PaymentMethodSelector';
 import { PaymentMethodData, PaymentMethodFlows } from '../paymentMethods/interface';
@@ -261,39 +259,3 @@ export const PaymentsNoApi = ({
         </>
     );
 };
-
-const Payment = (props: Props) => {
-    const { UID } = useAuthentication();
-    const isAuthenticated = !!UID || !!props.isAuthenticated;
-
-    const { paymentMethods, options, loading } = useMethods({
-        api: props.api,
-        amount: props.amount ?? 0,
-        paymentMethodStatus: props.paymentMethodStatus,
-        paymentMethods: props.paymentMethods,
-        coupon: props.coupon ?? '',
-        flow: props.type,
-        isAuthenticated,
-    });
-    const lastUsedMethod = options.usedMethods[options.usedMethods.length - 1];
-
-    const allMethods = [...options.usedMethods, ...options.methods];
-
-    const customPaymentMethod = paymentMethods.find(({ ID }) => props.method === ID);
-
-    return (
-        <PaymentsNoApi
-            {...props}
-            paymentMethods={paymentMethods}
-            lastUsedMethod={lastUsedMethod}
-            allMethods={allMethods}
-            loading={loading}
-            isAuthenticated={isAuthenticated}
-            currency={props.currency ?? DEFAULT_CURRENCY}
-            amount={props.amount ?? 0}
-            customPaymentMethod={customPaymentMethod}
-        />
-    );
-};
-
-export default Payment;

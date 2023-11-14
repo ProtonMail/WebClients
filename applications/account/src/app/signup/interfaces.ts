@@ -2,7 +2,6 @@ import { ChallengeResult } from '@proton/components';
 import { VerificationModel } from '@proton/components/containers/api/humanVerification/interface';
 import { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
-import { PayPalHook } from '@proton/components/containers/payments/usePayPal';
 import { PAYMENT_METHOD_TYPES, PaymentMethodStatus, SavedPaymentMethod } from '@proton/components/payments/core';
 import { CardPayment, PaypalPayment, TokenPayment } from '@proton/components/payments/core/interface';
 import { ProductParam } from '@proton/shared/lib/apps/product';
@@ -102,8 +101,6 @@ export interface SignupModel {
     humanVerificationToken: string;
     selectedProductPlans: SelectedProductPlans;
 }
-
-export type SignupPayPal = PayPalHook;
 
 export class HumanVerificationError extends Error {
     methods: HumanVerificationMethodType[];
