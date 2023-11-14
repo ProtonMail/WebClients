@@ -11,5 +11,6 @@ export interface ProtonConfig {
     COMMIT: string;
     BRANCH: string;
     SENTRY_DSN: string;
+    SENTRY_DESKTOP_DSN?: string;
     VERSION_PATH: string;
 }

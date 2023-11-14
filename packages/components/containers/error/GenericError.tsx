@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import ElectronDraggeableHeader from '@proton/components/components/electron/ElectronDraggeableHeader';
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
 import networkErrorImg from '@proton/styles/assets/img/errors/error-network.svg';
 import clsx from '@proton/utils/clsx';
@@ -30,6 +31,7 @@ const GenericError = ({ children, className, big, isNetworkError }: Props) => {
 
     return (
         <div className={clsx('m-auto', big ? 'p-1' : 'p-2', className)}>
+            {big && <ElectronDraggeableHeader />}
             <IllustrationPlaceholder
                 title={title}
                 titleSize={big ? 'big' : 'regular'}
