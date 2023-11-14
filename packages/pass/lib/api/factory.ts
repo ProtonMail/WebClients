@@ -28,16 +28,15 @@ import { localeCode } from '@proton/shared/lib/i18n';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import { withApiHandlers } from './handlers';
-import { type OnRefreshCallback, createRefreshHandler } from './refresh';
+import { createRefreshHandler } from './refresh';
 import { getSilenced } from './utils';
 
 export type ApiFactoryOptions = {
     config: ProtonConfig;
     getAuth: () => Maybe<ApiAuth>;
-    onRefresh: OnRefreshCallback;
 };
 
-export const createApi = ({ config, getAuth, onRefresh }: ApiFactoryOptions): Api => {
+export const createApi = ({ config, getAuth }: ApiFactoryOptions): Api => {
     const pubsub = createPubSub<ApiSubscribtionEvent>();
     const clientID = getClientID(config.APP_NAME);
 
@@ -52,7 +51,12 @@ export const createApi = ({ config, getAuth, onRefresh }: ApiFactoryOptions): Ap
     };
 
     const call = configureApi({ ...config, clientID, xhr } as any) as ApiCallFn;
-    const refreshHandler = createRefreshHandler({ call, getAuth, onRefresh });
+
+    const refreshHandler = createRefreshHandler({
+        call,
+        getAuth,
+        onRefresh: (data) => pubsub.publish({ type: 'refresh', data }),
+    });
     const apiCall = withApiHandlers({ call, getAuth, refreshHandler, state });
 
     const api = async ({ output = 'json', ...rest }: ApiOptions): Promise<ApiResult> => {

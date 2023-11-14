@@ -73,9 +73,9 @@ export const withApiHandlers = ({ call, getAuth, refreshHandler, state }: ApiHan
                     try {
                         await refreshHandler(getDateHeader(response?.headers));
                         return next(attempts + 1, RETRY_ATTEMPTS_MAX);
-                    } catch (e: any) {
-                        if (e.status >= 400 && e.status <= 499) throw InactiveSessionError();
-                        throw e;
+                    } catch (err: any) {
+                        if (err.status >= 400 && err.status <= 499) throw InactiveSessionError();
+                        throw err;
                     }
                 }
 

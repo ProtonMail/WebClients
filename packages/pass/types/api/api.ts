@@ -1,4 +1,5 @@
 import type { Subscriber } from '@proton/pass/utils/pubsub/factory';
+import type { RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 
 import type { Maybe } from '../utils';
 import type { ApiResponse } from './pass';
@@ -60,4 +61,5 @@ export type ApiResponseMapper<T extends any = void, U extends string = string, M
 
 export type ApiSubscribtionEvent =
     | { type: 'session'; status: 'inactive' | 'locked' }
+    | { type: 'refresh'; data: RefreshSessionResponse & { RefreshTime: number } }
     | { type: 'error'; error: string };
