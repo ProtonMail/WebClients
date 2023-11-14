@@ -14,26 +14,16 @@ import {
 import { PublicKeyReference } from '@proton/crypto';
 import { useLoading } from '@proton/hooks';
 import { addMember } from '@proton/shared/lib/api/calendars';
-import { ApiKeysWithKTStatus, getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { reformatApiErrorMessage } from '@proton/shared/lib/calendar/api';
 import { MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { encryptPassphraseSessionKey } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { getSelfSendAddresses } from '@proton/shared/lib/helpers/address';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import {
-    Address,
-    Api,
-    KeyTransparencyActivation,
-    Recipient,
-    RequireSome,
-    SimpleMap,
-    VerifyOutboundPublicKeys,
-} from '@proton/shared/lib/interfaces';
+import { Address, KeyTransparencyActivation, Recipient, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarMember, CalendarMemberInvitation, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';
@@ -116,48 +106,14 @@ const getRecipientHasError = (recipient: ExtendedRecipient): recipient is Requir
     return !!recipient.error;
 };
 
-const getAndVerifyInternalKeys = async ({
-    api,
-    email,
-    verifyOutboundPublicKeys,
-}: {
-    api: Api;
-    email: string;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
-}): Promise<ApiKeysWithKTStatus> => {
-    try {
-        return await getAndVerifyApiKeys({
-            api,
-            email,
-            internalKeysOnly: true, // exclude WKD keys
-            verifyOutboundPublicKeys,
-            skipVerificationOfExternalDomains: true, // since sharing to external addresses is not supported
-            silence: true,
-        });
-    } catch (error: any) {
-        const { data = {} } = error;
-        if (data.Code === API_CUSTOM_ERROR_CODES.KEY_GET_ADDRESS_MISSING) {
-            // The API errors out when asking for internal keys for an external address
-            return {
-                addressKeys: [],
-            };
-        }
-        throw error;
-    }
-};
-
 const getPublicKeysForCalendarSharing = async ({
     email,
     getEncryptionPreferences,
     contactEmailsMap,
-    api,
     ktActivation,
-    verifyOutboundPublicKeys,
 }: {
     email: string;
-    api: Api;
     ktActivation: KeyTransparencyActivation;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     getEncryptionPreferences: GetEncryptionPreferences;
     contactEmailsMap: SimpleMap<ContactEmail>;
 }): Promise<{
@@ -170,52 +126,35 @@ const getPublicKeysForCalendarSharing = async ({
         email,
         lifetime: 0,
         contactEmailsMap,
+        intendedForEmail: false,
     });
 
-    if (ktActivation === KeyTransparencyActivation.DISABLED) {
-        return isInternal
-            ? { publicKey: sendKey, isKeyPinned: isSendKeyPinned, error }
-            : { error: new ShareCalendarValdidationError(NOT_PROTON_ACCOUNT) };
-    } else {
-        const { addressKeys, catchAllKeys, unverifiedKeys } = await getAndVerifyInternalKeys({
-            api,
-            email,
-            verifyOutboundPublicKeys,
-        });
-
-        if (!addressKeys.length) {
-            if (catchAllKeys?.length || unverifiedKeys?.length) {
-                return {
-                    error: new ShareCalendarValdidationError(SHARING_UNSUPPORTED),
-                };
-            }
-            return {
-                error: new ShareCalendarValdidationError(NOT_PROTON_ACCOUNT),
-            };
-        }
-
-        if (ktActivation === KeyTransparencyActivation.SHOW_UI) {
-            // TODO: Decide what we want to do when there are KT errors
-        }
-
-        let isKeyPinned = false;
-        const { publicKeyRef } =
-            addressKeys.find(({ publicKeyRef }) => {
-                if (!sendKey || !isSendKeyPinned) {
-                    return false;
-                }
-                if (publicKeyRef.equals(sendKey, true)) {
-                    isKeyPinned = true;
-                    return true;
-                }
-                return false;
-            }) || addressKeys[0];
-
+    if (error) {
         return {
-            publicKey: publicKeyRef,
-            isKeyPinned,
+            error,
         };
     }
+
+    if (!isInternal) {
+        return {
+            error: new ShareCalendarValdidationError(NOT_PROTON_ACCOUNT),
+        };
+    }
+
+    if (!sendKey) {
+        return {
+            error: new ShareCalendarValdidationError(SHARING_UNSUPPORTED),
+        };
+    }
+
+    if (ktActivation === KeyTransparencyActivation.SHOW_UI) {
+        // TODO: Decide what we want to do when there are KT errors
+    }
+
+    return {
+        publicKey: sendKey,
+        isKeyPinned: isSendKeyPinned,
+    };
 };
 
 const loadRecipient = async ({
@@ -223,18 +162,14 @@ const loadRecipient = async ({
     setRecipientsMap,
     getEncryptionPreferences,
     contactEmailsMap,
-    api,
     ktActivation,
-    verifyOutboundPublicKeys,
     onError,
 }: {
     recipient: RecipientWithAddedTime;
     setRecipientsMap: Dispatch<SetStateAction<SimpleMap<ExtendedRecipient>>>;
     getEncryptionPreferences: GetEncryptionPreferences;
     contactEmailsMap: SimpleMap<ContactEmail>;
-    api: Api;
     ktActivation: KeyTransparencyActivation;
-    verifyOutboundPublicKeys: VerifyOutboundPublicKeys;
     onError: (error: any) => void;
 }) => {
     const { Address: email } = recipient;
@@ -249,11 +184,9 @@ const loadRecipient = async ({
     try {
         const { publicKey, isKeyPinned, error } = await getPublicKeysForCalendarSharing({
             email,
-            api,
             getEncryptionPreferences,
             contactEmailsMap,
             ktActivation,
-            verifyOutboundPublicKeys,
         });
 
         if (error) {
@@ -337,7 +270,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
     const getEncryptionPreferences = useGetEncryptionPreferences();
     const getAddressKeys = useGetAddressKeys();
     const getDecryptedPassphraseAndCalendarKeys = useGetDecryptedPassphraseAndCalendarKeys();
-    const { verifyOutboundPublicKeys, ktActivation } = useKeyTransparencyContext();
+    const { ktActivation } = useKeyTransparencyContext();
     const addressesAutocompleteRef = useRef<HTMLInputElement>(null);
 
     const [permissions, setPermissions] = useState<number>(MEMBER_PERMISSIONS.FULL_VIEW);
@@ -442,9 +375,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                         recipient: recipientWithAddedTime,
                         setRecipientsMap,
                         getEncryptionPreferences,
-                        api,
                         ktActivation,
-                        verifyOutboundPublicKeys,
                         contactEmailsMap,
                         onError,
                     });
