@@ -1,5 +1,5 @@
 import { app, Menu, type MenuItemConstructorOptions } from "electron";
-import { clearStorage, isMac } from "./helpers";
+import { clearStorage, isMac, openLogFolder } from "./helpers";
 
 interface MenuInsertProps {
     menu: MenuItemConstructorOptions[];
@@ -32,6 +32,11 @@ export const setApplicationMenu = (isPackaged: boolean) => {
                     label: "Clear application data",
                     type: "normal",
                     click: () => clearStorage(true),
+                },
+                {
+                    label: "Show logs",
+                    type: "normal",
+                    click: () => openLogFolder(),
                 },
                 {
                     role: "quit",

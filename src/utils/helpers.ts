@@ -1,4 +1,5 @@
-import { BrowserWindow, app } from "electron";
+import { BrowserWindow, app, shell } from "electron";
+import log from "electron-log/main";
 import { join } from "path";
 import { getConfig } from "./config";
 import { setWindowState } from "./windowsStore";
@@ -24,6 +25,7 @@ export const isHostCalendar = (host: string) => {
 
         return urls.calendar === hostURl.origin;
     } catch (error) {
+        log.error(error);
         return false;
     }
 };
@@ -35,6 +37,7 @@ export const isHostMail = (host: string) => {
 
         return urls.mail === hostURl.origin;
     } catch (error) {
+        log.error(error);
         return false;
     }
 };
@@ -42,7 +45,12 @@ export const isHostMail = (host: string) => {
 export const isHostAllowed = (host: string, isPackaged: boolean) => {
     try {
         const urls = getConfig(isPackaged).url;
-        const hostURl = new URL(host);
+        let finalURL = host;
+        if (!finalURL.startsWith("https://")) {
+            finalURL = "https://" + finalURL;
+        }
+
+        const hostURl = new URL(finalURL);
 
         return Object.values(urls)
             .map((item) => new URL(item))
@@ -50,6 +58,7 @@ export const isHostAllowed = (host: string, isPackaged: boolean) => {
                 return url.host === hostURl.host;
             });
     } catch (error) {
+        log.error(error);
         return false;
     }
 };
@@ -74,6 +83,19 @@ export const clearStorage = (restart: boolean, timeout?: number) => {
 
     if (restart) {
         restartApp(timeout);
+    }
+};
+
+export const openLogFolder = () => {
+    try {
+        const home = app.getPath("home");
+        if (isMac) {
+            shell.openPath(join(home, "/Library/Logs/Proton Mail"));
+        } else {
+            shell.openPath(join(home, "/AppData/Roaming/Proton Mail/logs"));
+        }
+    } catch (error) {
+        log.error(error);
     }
 };
 

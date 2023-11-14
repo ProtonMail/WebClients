@@ -34,6 +34,7 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
         minWidth: WINDOW_SIZES.MIN_WIDTH,
         // We only hide the frame and the title bar on macOS
         titleBarStyle: isMac ? "hidden" : "default",
+        trafficLightPosition: { x: 12, y: 8 },
         vibrancy: "under-window",
         transparent: isMac,
         frame: !isMac,
