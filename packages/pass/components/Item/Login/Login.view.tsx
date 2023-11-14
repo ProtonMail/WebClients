@@ -94,7 +94,8 @@ export const LoginView: VFC<ItemViewProps<'login'>> = ({ vault, revision, ...ite
                 info={[
                     {
                         label: c('Label').t`Last autofill`,
-                        values: [lastUseTime ? getFormattedDateFromTimestamp(lastUseTime) : c('Info').t`N/A`],
+                        // translator: when this login was last used
+                        values: [lastUseTime ? getFormattedDateFromTimestamp(lastUseTime) : c('Info').t`Never`],
                     },
                     {
                         label: c('Label').t`Modified`,
