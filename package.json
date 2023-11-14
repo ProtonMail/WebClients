@@ -1,7 +1,7 @@
 {
     "name": "proton-mail",
     "productName": "Proton Mail",
-    "version": "1.0.0",
+    "version": "0.6.0",
     "description": "Proton official desktop application for Proton Mail and Proton Calendar",
     "main": ".webpack/main",
     "scripts": {
@@ -23,28 +23,33 @@
     "devDependencies": {
         "@doyensec/electronegativity": "^1.10.3",
         "@electron-forge/cli": "^6.4.2",
+        "@electron-forge/maker-deb": "^6.4.2",
         "@electron-forge/maker-dmg": "^6.4.2",
         "@electron-forge/maker-flatpak": "^6.4.2",
+        "@electron-forge/maker-rpm": "^6.4.2",
         "@electron-forge/maker-squirrel": "^6.4.2",
         "@electron-forge/maker-zip": "^6.4.2",
         "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
         "@electron-forge/plugin-webpack": "^6.4.2",
-        "@typescript-eslint/eslint-plugin": "^6.8.0",
-        "@typescript-eslint/parser": "^6.8.0",
+        "@electron-forge/publisher-github": "^6.4.2",
+        "@typescript-eslint/eslint-plugin": "^6.10.0",
+        "@typescript-eslint/parser": "^6.10.0",
         "@vercel/webpack-asset-relocator-loader": "1.7.3",
         "css-loader": "^6.0.0",
-        "electron": "27.0.1",
-        "eslint": "^8.51.0",
+        "electron": "27.0.4",
+        "eslint": "^8.53.0",
         "eslint-plugin-import": "^2.25.0",
         "fork-ts-checker-webpack-plugin": "^9.0.0",
         "node-loader": "^2.0.0",
-        "prettier": "3.0.3",
+        "prettier": "3.1.0",
         "style-loader": "^3.0.0",
         "ts-loader": "^9.5.0",
         "ts-node": "^10.0.0",
         "typescript": "~5.2.2"
     },
     "dependencies": {
+        "electron-context-menu": "^3.6.1",
+        "electron-log": "^5.0.0",
         "electron-squirrel-startup": "^1.0.0",
         "electron-store": "^8.1.0"
     }

@@ -1,6 +1,8 @@
 import { BrowserWindow, Rectangle, Session, WebContents, app } from "electron";
+import contextMenu from "electron-context-menu";
+import log from "electron-log/main";
 import { getConfig } from "./config";
-import { APP } from "./constants";
+import { APP, WINDOW_SIZES } from "./constants";
 import { isMac } from "./helpers";
 import { setApplicationMenu } from "./menu";
 import { getWindowState, setWindowState } from "./windowsStore";
@@ -14,16 +16,32 @@ interface WindowCreationProps {
 const config = getConfig(app.isPackaged);
 export const windowMap = new Map<APP, BrowserWindow>();
 
+contextMenu({
+    showInspectElement: config.devTools,
+    showSaveImage: true,
+});
+
 const createWindow = (session: Session, url: string, visible: boolean, windowConfig: Rectangle): BrowserWindow => {
+    const { x, y, width, height } = windowConfig;
+
     const window = new BrowserWindow({
         title: config.appTitle,
         icon: "../../assets/icons/icon.png",
-        ...windowConfig, // handles windows size and position
+        x,
+        y,
+        width,
+        height,
+        minHeight: WINDOW_SIZES.MIN_HEIGHT,
+        minWidth: WINDOW_SIZES.MIN_WIDTH,
         // We only hide the frame and the title bar on macOS
         titleBarStyle: isMac ? "hidden" : "default",
+        trafficLightPosition: { x: 12, y: 8 },
+        vibrancy: "under-window",
+        transparent: isMac,
         frame: !isMac,
         webPreferences: {
             devTools: config.devTools,
+            spellcheck: true,
             // Security additions
             session,
             nodeIntegration: false,
@@ -51,6 +69,16 @@ const createGenericWindow = (session: Session, url: string, mapKey: APP, visible
     return window;
 };
 
+const addTagCookie = (session: Session) => {
+    try {
+        session.cookies.set({ url: config.url.account, name: "Tag", value: "alpha" });
+        session.cookies.set({ url: config.url.mail, name: "Tag", value: "alpha" });
+        session.cookies.set({ url: config.url.calendar, name: "Tag", value: "alpha" });
+    } catch (error) {
+        log.error(error);
+    }
+};
+
 export const createMailWindow = (session: Session, visible = true) => {
     const state = getWindowState("MAIL");
     const window = createGenericWindow(session, config.url.mail, "MAIL", visible, state);
@@ -70,6 +98,7 @@ export const createCalendarWindow = (session: Session, visible = true) => {
 };
 
 export const initialWindowCreation = ({ session, mailVisible, calendarVisible }: WindowCreationProps) => {
+    addTagCookie(session);
     const mailWindow = createMailWindow(session, mailVisible);
     mailWindow.webContents.on("did-finish-load", () => {
         const calendarWindow = createCalendarWindow(session, calendarVisible);

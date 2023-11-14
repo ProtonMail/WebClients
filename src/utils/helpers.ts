@@ -1,4 +1,5 @@
-import { BrowserWindow, app } from "electron";
+import { BrowserWindow, app, shell } from "electron";
+import log from "electron-log/main";
 import { join } from "path";
 import { getConfig } from "./config";
 import { setWindowState } from "./windowsStore";
@@ -18,28 +19,48 @@ export const getBasePath = (): string => {
 };
 
 export const isHostCalendar = (host: string) => {
-    const urls = getConfig(app.isPackaged).url;
-    const hostURl = new URL(host);
+    try {
+        const urls = getConfig(app.isPackaged).url;
+        const hostURl = new URL(host);
 
-    return urls.calendar === hostURl.origin;
+        return urls.calendar === hostURl.origin;
+    } catch (error) {
+        log.error(error);
+        return false;
+    }
 };
 
 export const isHostMail = (host: string) => {
-    const urls = getConfig(app.isPackaged).url;
-    const hostURl = new URL(host);
+    try {
+        const urls = getConfig(app.isPackaged).url;
+        const hostURl = new URL(host);
 
-    return urls.mail === hostURl.origin;
+        return urls.mail === hostURl.origin;
+    } catch (error) {
+        log.error(error);
+        return false;
+    }
 };
 
 export const isHostAllowed = (host: string, isPackaged: boolean) => {
-    const urls = getConfig(isPackaged).url;
-    const hostURl = new URL(host);
+    try {
+        const urls = getConfig(isPackaged).url;
+        let finalURL = host;
+        if (!finalURL.startsWith("https://")) {
+            finalURL = "https://" + finalURL;
+        }
 
-    return Object.values(urls)
-        .map((item) => new URL(item))
-        .some((url) => {
-            return url.host === hostURl.host;
-        });
+        const hostURl = new URL(finalURL);
+
+        return Object.values(urls)
+            .map((item) => new URL(item))
+            .some((url) => {
+                return url.host === hostURl.host;
+            });
+    } catch (error) {
+        log.error(error);
+        return false;
+    }
 };
 
 export const getWindow = () => {
@@ -65,9 +86,21 @@ export const clearStorage = (restart: boolean, timeout?: number) => {
     }
 };
 
-export const quitApplication = () => {
+export const openLogFolder = () => {
+    try {
+        const home = app.getPath("home");
+        if (isMac) {
+            shell.openPath(join(home, "/Library/Logs/Proton Mail"));
+        } else {
+            shell.openPath(join(home, "/AppData/Roaming/Proton Mail/logs"));
+        }
+    } catch (error) {
+        log.error(error);
+    }
+};
+
+export const saveWindowsPosition = (shouldDestroy: boolean) => {
     BrowserWindow.getAllWindows().forEach((window) => {
-        // Save window size when closing the application
         if (window.isVisible()) {
             const url = window.webContents.getURL();
             if (isHostCalendar(url)) {
@@ -77,8 +110,12 @@ export const quitApplication = () => {
             }
         }
 
-        window.destroy();
+        if (shouldDestroy) {
+            window.destroy();
+        }
     });
-
+};
+export const quitApplication = () => {
+    saveWindowsPosition(true);
     app.quit();
 };

@@ -1,31 +1,33 @@
+import { getHardcodedURLs } from "./urlStore";
+
+export interface URLConfig {
+    account: string;
+    mail: string;
+    calendar: string;
+}
+
 interface Config {
     appTitle: string;
     devTools: boolean;
-    url: {
-        account: string;
-        mail: string;
-        calendar: string;
-    };
+    url: URLConfig;
 }
+
+const localUrls = {
+    account: "https://account.proton.me",
+    mail: "https://mail.proton.me",
+    calendar: "https://calendar.proton.me",
+};
 
 const devConfig: Config = {
     appTitle: "DEV - Proton",
     devTools: true,
-    url: {
-        account: "https://account.proton.local",
-        mail: "https://mail.proton.local",
-        calendar: "https://calendar.proton.local",
-    },
+    url: localUrls,
 };
 
 const prodConfig: Config = {
     appTitle: "Proton",
-    devTools: false,
-    url: {
-        account: "https://account.proton.me",
-        mail: "https://mail.proton.me",
-        calendar: "https://calendar.proton.me",
-    },
+    devTools: true, // TODO set to false for the beta
+    url: getHardcodedURLs(),
 };
 
 export const getConfig = (isPackaged: boolean) => {
