@@ -1,4 +1,5 @@
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 
 import { useAuthentication } from '../..';
 import { Props as PaymentProps, PaymentsNoApi } from './Payment';
@@ -12,6 +13,8 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
     hideFirstLabel?: boolean;
     hideSavedMethodsDetails?: boolean;
     disabled?: boolean;
+    isAuthenticated?: boolean;
+    defaultMethod?: PAYMENT_METHOD_TYPES;
 };
 
 const PaymentWrapper = ({
@@ -31,9 +34,11 @@ const PaymentWrapper = ({
     hideFirstLabel,
     hideSavedMethodsDetails,
     disabled,
+    isAuthenticated: isAuthenticatedProp,
+    defaultMethod,
 }: Props) => {
     const { UID } = useAuthentication();
-    const isAuthenticated = !!UID;
+    const isAuthenticated = !!UID || !!isAuthenticatedProp;
 
     return (
         <PaymentsNoApi
@@ -62,6 +67,7 @@ const PaymentWrapper = ({
             cardFieldStatus={card.fieldsStatus}
             hideSavedMethodsDetails={hideSavedMethodsDetails}
             disabled={disabled}
+            defaultMethod={defaultMethod}
         />
     );
 };

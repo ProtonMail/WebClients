@@ -695,7 +695,6 @@ const Step1 = ({
                         <BoxHeader step={step++} title={c('pass_signup_2023: Header').t`Checkout`} />
                         <BoxContent>
                             <AccountStepPayment
-                                takeNullCreditCard={false}
                                 measure={measure}
                                 cta={cta}
                                 key={model.session?.UID || 'free'}
