@@ -18,10 +18,10 @@ import { objectFilter } from '@proton/pass/utils/object/filter';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-function* cacheWorker(action: AnyAction, { getClientState, getAuthStore, setCache }: WorkerRootSagaOptions) {
+function* cacheWorker(action: AnyAction, { getAppState, getAuthStore, setCache }: WorkerRootSagaOptions) {
     yield wait(2_000);
 
-    if (getAuthStore().hasSession() && clientReady(getClientState().status)) {
+    if (getAuthStore().hasSession() && clientReady(getAppState().status)) {
         try {
             const sessionLockToken = getAuthStore().getLockToken();
             const cacheSalt = crypto.getRandomValues(new Uint8Array(CACHE_SALT_LENGTH));
