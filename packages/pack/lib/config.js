@@ -106,6 +106,7 @@ const getConfigData = ({ api, sso, apiProxy, publicPath, version }) => {
         sso,
         apiProxy,
         sentryDsn: isProduction ? ENV_CONFIG.app.sentry || '' : '',
+        sentryDesktopDsn: isProduction ? ENV_CONFIG.app.sentryDesktop || '' : '',
         publicPath,
     };
 
@@ -136,6 +137,7 @@ const getConfigFile = ({ buildData, appData }) => {
     export const LOCALES = ${JSON.stringify(LOCALES)};
     export const VERSION_PATH = '${appData.publicPath}assets/version.json';
     export const SENTRY_DSN = '${appData.sentryDsn}';
+    export const SENTRY_DESKTOP_DSN = '${appData?.sentryDesktopDsn ?? ''}';
     `;
 };
 
