@@ -91,8 +91,8 @@ const usePayment = ({
         return null;
     }, [method, card]);
 
-    const handleCardSubmit = (takeNullCreditCard?: boolean) => {
-        if (!amount && !takeNullCreditCard) {
+    const handleCardSubmit = () => {
+        if (!amount) {
             return true;
         }
         if (method === CARD) {
