@@ -2096,8 +2096,11 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "현재 요금제에서 사용 가능한 모든 사용자를 사용했습니다. 새 사용자를 추가하려면 요금제를 업그레이드해 주세요."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "조작 키를 활성해야 합니다. 활성화하지 않으면 새 사용자를 만들거나 기존 사용자에게 주소를 추가하거나 개인이 아닌 사용자 계정에 액세스할 수 없습니다."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "조직 키를 활성화 해야만 합니다. 활성화 없이는 비공개가 아닌 사용자를 만들거나 접근할 수 없습니다."
+      ],
+      "You must privatize all users before generating new organization keys": [
+        "새 조직 키를 생성하기 전에 모든 계정을 민영화해야합니다"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "사용자의 계정 및 조직에 연체된 요금이 존재합니다. 연체된 요금을 지불해 주세요."
@@ -3240,6 +3243,9 @@
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "조직에 다른 관리자가 있으니 당신은 새 비밀번호를 그들에게 전달해야 합니다."
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Password copied to clipboard": [
         "비밀번호 복사됨"
       ],
@@ -3325,7 +3331,7 @@
         "대기열에 추가됨"
       ],
       "read our two-factor authentication guide first": [
-        "먼저 2단계 인증 가이드를 읽어보세요"
+        "이중 인증에 대한 가이드를 먼저 읽은 뒤에"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "신뢰하는 기기에서 권장됩니다. ${ keepMeSignedInLearnMoreLink }"
@@ -3552,6 +3558,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "새 요금제에 가입하거나 현재 요금제를 갱신하는 데 사용할 수 있는 크레딧으로 계정을 충전하세요. 사용한 ${ i18nCurrency } 당 한개의 크레딧을 받습니다."
       ],
+      "Tor": [
+        "Tor"
+      ],
       "Total email addresses": [
         "총 이메일 주소"
       ],
@@ -3691,7 +3700,7 @@
         "환영합니다"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        "계정 복구를 제공하기 위해 이메일 주소로 재설정 코드를 보내드렸습니다."
+        "계정 복구를 위해 제공하신 이메일 주소로 재설정 코드를 보내드립니다."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "계정 복구를 위해 제공하신 휴대폰 번호로 재설정 코드를 보내드립니다."
@@ -4324,6 +4333,9 @@
       ],
       "Verification code": [
         "인증 코드"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "가시는 모습을 본다니 슬프네요. 저희가 한층 더 발전할 수 있도록 어떤 이유로 떠나는지 알려주세요."
@@ -5423,11 +5435,17 @@
       ]
     },
     "Option": {
+      "Android": [
+        "Android"
+      ],
       "Country configs": [
         "지역 설정"
       ],
       "Free server configs": [
         "무료 서버 구성"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
       ],
       "I found another service that I like better": [
         "더 낫다고 생각되는 서비스를 찾았습니다"
@@ -5435,11 +5453,17 @@
       "I use a different ${ BRAND_NAME } account": [
         "다른 ${ BRAND_NAME } 계정을 사용합니다"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "필요한 핵심 기능이 빠져 있습니다"
       ],
       "It's too expensive": [
         "너무 비쌉니다"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "기타 사유"
@@ -5456,8 +5480,17 @@
       "Standard server configs": [
         "기본 서버 구성"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "전체 조직"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Organization capacity error": {
@@ -5687,14 +5720,11 @@
       "Changing organization password": [
         "조직 비밀번호 변경중"
       ],
-      "Creating new users": [
-        "새로운 사용자 생성 중"
+      "Creating or accessing non-private users": [
+        "비공개가 아닌 사용자 생성 및 접근"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "비밀번호 변경으로 인해 조직 관리자 권한이 제한되었습니다. 다음 조치는 더 이상 허용되지 않습니다:"
-      ],
-      "Reading emails of non-private users": [
-        "비공개 사용자의 이메일 읽기"
       ]
     },
     "Role": {
@@ -6411,7 +6441,7 @@
         "키 업데이트됨"
       ],
       "Locale updated": [
-        "로컬 업데이트됨"
+        "언어를 변경했습니다."
       ],
       "Organization activated": [
         "조직 활성화됨"
@@ -7304,6 +7334,29 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Secure core 서버, 빠른 P2P/BitTorrent 다운로드, VPN을 통한 Tor 등에 접근하세요."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Warning": {

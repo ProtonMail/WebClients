@@ -438,7 +438,7 @@
         "პაროლით შესვლა"
       ],
       "Sign in with SSO": [
-        "SSO-ით შესვლა"
+        "Sign in with SSO"
       ],
       "Sign out": [
         "გასვლა"
@@ -2104,8 +2104,11 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "იყენებთ თქვენს სატარიფო გეგმაში შემავალ ყველა მომხმარებელს. ახალი მომხმარებლის დასამატებლად სატარიფო გეგმის განახლებაა საჭირო."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "საჭიროა ორგანიზაციის თქვენი გასაღებების აქტივაცია. აქტივაციის გარეშე ვერ შეძლებთ, ახალი მომხმარებლების შექმნას, არსებულ მომხმარებლებზე მისამართების დამატებას და არ გექნებათ არა-პირადი მომხმარებლების ანგარიშებთან წვდომა."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "თქვენი ორგანიზაციის გასაღებების გააქტიურება აუცილებელია. მათი გააქტიურების გარეშე არაკონფიდენციალური მომხმარებლების შექმნა ან მათზე წვდომა შეუძლებელი იქნება."
+      ],
+      "You must privatize all users before generating new organization keys": [
+        "ორგანიზაციის ახალი გასაღებების გენერაციამდე საჭიროა ყველა მომხმარებლის პრივატიაზაცია"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "ანგარიშს ან ორგანიზაციას გადაცილებული ინვოისი აქვს. საჭიროა ყველა ინვოისის გადახდა."
@@ -3588,6 +3591,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "შეავსეთ თქვენი ანგარიში კრედიტებით, რომლებიც ახალი ტარიფის გამოსაწერად შეგიძლიათ, გამოიყენოთ. ყოველ დახარჯულ ${ i18nCurrency }-ზე 1 კრედიტს მიიღებთ."
       ],
+      "Tor": [
+        "Tor"
+      ],
       "Total email addresses": [
         "ელფოსტები სულ"
       ],
@@ -3919,6 +3925,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "თქვენ შეგიძლიათ დაამატოთ გადახდის მეთოდი, რომ თქვენი გამოწერა ავტომატურად განახლდეს. ასევე ხელმისაწვდომია გადახდის სხვა მეთოდებიც."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "შეიყვანეთ თქვენი ან თქვენი ორგანიზაციის სახელი და მისამართი. ეს დეტალები, ორივე, პირად და ორგანიზაციის ინვოისებში ჩაემატება."
       ]
     },
     "Info subscription": {
@@ -5648,6 +5659,9 @@
       "please ${ contactHref } our Sales team.": [
         "${ contactHref } ჩვენს გაყიდვების გუნდს."
       ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "თქვენს სატარიფო გეგმაში ჩასასმელი IP-ების რაოდენობა. თითოეული დამატებითი IP-ის ფასია ${ price }."
+      ],
       "Should you need more than ${ maxIPs } IP, ": [
         "თუ დაგჭირდათ ${ maxIPs }-ზე მეტი IP, ",
         "თუ დაგჭირდათ ${ maxIPs }-ზე მეტი IP, "
@@ -5753,14 +5767,11 @@
       "Changing organization password": [
         "ორგანიზაციის პაროლის შეცვლა"
       ],
-      "Creating new users": [
-        "ახალი მომხმარებლების შექმნა"
+      "Creating or accessing non-private users": [
+        "არაკონფიდენციალური მომხმარებლების შექმნა ან მათთან წვდომა"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "პაროლის შეცვლის გამო თქვენი ორგანიზაციის ადმინისტრირების პრივილეგიები შეზღუდულია. აიკრძალა შემდეგი ქმედებები:"
-      ],
-      "Reading emails of non-private users": [
-        "არაკონფიდენციალური მომხმარებლების ელფოსტის კითხვა"
       ]
     },
     "Role": {
