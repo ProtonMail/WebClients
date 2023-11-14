@@ -129,8 +129,9 @@ const getAndVerifyInternalKeys = async ({
         return await getAndVerifyApiKeys({
             api,
             email,
-            internalKeysOnly: true,
+            internalKeysOnly: true, // exclude WKD keys
             verifyOutboundPublicKeys,
+            skipVerificationOfExternalDomains: true, // since sharing to external addresses is not supported
             silence: true,
         });
     } catch (error: any) {
@@ -167,7 +168,6 @@ const getPublicKeysForCalendarSharing = async ({
     // potential errors thrown in the code below are handled in a custom way by loadRecipient
     const { sendKey, isSendKeyPinned, error, isInternal } = await getEncryptionPreferences({
         email,
-        intendedForEmail: false,
         lifetime: 0,
         contactEmailsMap,
     });

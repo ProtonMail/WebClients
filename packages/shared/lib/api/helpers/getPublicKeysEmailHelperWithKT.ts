@@ -24,9 +24,15 @@ export const castKeys = (keys: ProcessedApiAddressKey[]): ProcessedApiKey[] => {
 const getFailedOrUnVerified = (failed: boolean) =>
     failed ? KT_VERIFICATION_STATUS.VERIFICATION_FAILED : KT_VERIFICATION_STATUS.UNVERIFIED_KEYS;
 
+/**
+ * This is an Inbox-specific helper, as it discards address keys from external addresses, which are not used by Inbox at the moment.
+ * If support for returning such keys is added, it's important to provide a way to distinguish them from Unverified keys (e.g. from WKD)
+ * which can also be present for external accounts.
+ */
 const getPublicKeysEmailHelperWithKT = async ({
     email,
     internalKeysOnly,
+    includeInternalKeysWithE2EEDisabledForMail,
     api,
     verifyOutboundPublicKeys,
     silence,
@@ -34,6 +40,7 @@ const getPublicKeysEmailHelperWithKT = async ({
 }: {
     email: string;
     internalKeysOnly: boolean;
+    includeInternalKeysWithE2EEDisabledForMail: boolean;
     api: Api;
     verifyOutboundPublicKeys: VerifyOutboundPublicKeys | null;
     silence?: boolean;
@@ -53,35 +60,48 @@ const getPublicKeysEmailHelperWithKT = async ({
             email,
             internalKeysOnly,
             verifyOutboundPublicKeys,
+            skipVerificationOfExternalDomains: !includeInternalKeysWithE2EEDisabledForMail, // as we know we are in a Mail context
             silence,
             noCache,
         });
 
-        // First we use verified internal address keys
-        const mailCapableAddressKeys = addressKeys.filter((key) => supportsMail(key.flags));
+        // First we use verified internal address keys from non-external accounts.
+        // Users with internal custom domains but with bad UX setup will not be properly identifiable, but for the current uses of this helper, this was deemed ok.
+        if (addressKeys.length > 0 && hasValidProtonMX) {
+            const addressKeysForMailEncryption = addressKeys.filter((key) => supportsMail(key.flags));
+            // E2EE is disabled with external forwarding, as well as in some setups with custom addresses
+            const hasDisabledE2EEForMail = addressKeysForMailEncryption.length === 0;
 
-        if (mailCapableAddressKeys.length != 0) {
-            return {
-                publicKeys: castKeys(mailCapableAddressKeys),
-                ktVerificationResult: addressKTResult,
-                RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
-                isCatchAll: false,
-                isInternalWithDisabledE2EEForMail: false,
-                ...rest,
-            };
-        }
+            if (includeInternalKeysWithE2EEDisabledForMail) {
+                return {
+                    publicKeys: castKeys(addressKeys),
+                    ktVerificationResult: addressKTResult,
+                    RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL, // as e2ee-disabled flags are ignored, then from the perspective of the caller, this is an internal recipient
+                    isCatchAll: false,
+                    isInternalWithDisabledE2EEForMail: hasDisabledE2EEForMail,
+                    ...rest,
+                };
+            }
 
-        // Check that we have at least one key with E2EE disabled.
-        // E2EE is disabled with external forwarding, as well as in some setups with custom addresses
-        const hasDisabledE2EEForMail = addressKeys.some((key) => !supportsMail(key.flags));
+            // Filter out keys not valid for mail encryption
+            // unclear when/if it can happen that some keys have e2ee-disabled and some are not, but for now we cover the case.
+            if (addressKeysForMailEncryption.length > 0) {
+                return {
+                    publicKeys: castKeys(addressKeysForMailEncryption),
+                    ktVerificationResult: addressKTResult,
+                    RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL,
+                    isCatchAll: false,
+                    isInternalWithDisabledE2EEForMail: false,
+                    ...rest,
+                };
+            }
 
-        if (hasDisabledE2EEForMail) {
+            // All keys are disabled for E2EE in mail
             return {
                 publicKeys: [],
                 RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
                 isCatchAll: false,
-                // users with internal custom domains but with bad UX setup will not be properly identifiable, but for the current uses of this flag, this is ok
-                isInternalWithDisabledE2EEForMail: hasValidProtonMX,
+                isInternalWithDisabledE2EEForMail: true,
                 ktVerificationResult: {
                     status: getFailedOrUnVerified(
                         addressKTResult?.status === KT_VERIFICATION_STATUS.VERIFICATION_FAILED
