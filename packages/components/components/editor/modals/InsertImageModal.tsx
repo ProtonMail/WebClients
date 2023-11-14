@@ -89,7 +89,7 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
                 <div className="mb-4">
                     <div className="flex flex-nowrap flex-column md:flex-row">
                         <Label htmlFor={`editor-image-address-${uid}`}>{c('Info').t`Add image URL`}</Label>
-                        <div className="flex-item-fluid">
+                        <div className="md:flex-item-fluid">
                             <Input
                                 id={`editor-image-address-${uid}`}
                                 type="text"
@@ -105,7 +105,7 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
                 </div>
                 <div className="flex flex-nowrap mb-4 flex-column md:flex-row">
                     <Label htmlFor={`editor-image-upload-${uid}`}>{c('Info').t`Upload picture`}</Label>
-                    <div className="flex-item-fluid" data-testid="insert-image:upload">
+                    <div className="md:flex-item-fluid" data-testid="insert-image:upload">
                         <FileButton
                             id={`editor-image-upload-${uid}`}
                             className="inline-flex relative flex-align-items-center"

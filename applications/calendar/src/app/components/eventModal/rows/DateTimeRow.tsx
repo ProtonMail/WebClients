@@ -72,7 +72,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
         <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Date and time`}>
             <div className={clsx([isAllDay && 'w-full md:w-1/2'])}>
                 <div className="flex flex-nowrap flex-column md:flex-row mb-2">
-                    <div className="flex flex-nowrap flex-item-fluid flex-item-grow">
+                    <div className="flex flex-nowrap md:flex-item-fluid flex-item-grow">
                         <div
                             className="flex-no-min-children flex-item-fluid flex-item-grow-custom"
                             style={{ '--grow-custom': '1.25' }}
@@ -105,7 +105,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
 
                     {!isAllDay && showTzSelector && (
                         <TimeZoneSelector
-                            className="field ml-0 md:ml-2 mt-2 md:mt-0 mb-2 md:mb-2 flex-item-fluid"
+                            className="field ml-0 md:ml-2 mt-2 md:mt-0 mb-2 md:mb-2 md:flex-item-fluid"
                             id="event-start-timezone-select"
                             data-testid="create-event-modal/start:time-zone-dropdown"
                             timezone={start.tzid}
@@ -118,7 +118,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                 </div>
 
                 <div className="flex flex-nowrap flex-column md:flex-row mb-2">
-                    <div className="flex flex-nowrap flex-item-fluid flex-item-grow">
+                    <div className="flex flex-nowrap md:flex-item-fluid flex-item-grow">
                         <div
                             className="flex-no-min-children flex-item-fluid flex-item-grow-custom"
                             style={{ '--grow-custom': '1.25' }}
@@ -155,7 +155,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
 
                     {!isAllDay && showTzSelector && (
                         <TimeZoneSelector
-                            className="field ml-0 md:ml-2 mt-2 md:mt-0 mb-2 md:mb-2 flex-item-fluid"
+                            className="field ml-0 md:ml-2 mt-2 md:mt-0 mb-2 md:mb-2 md:flex-item-fluid"
                             id="event-end-timezone-select"
                             data-testid="create-event-modal/end:time-zone-dropdown"
                             timezone={end.tzid}

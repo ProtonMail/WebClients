@@ -19,12 +19,14 @@ const RewardsProgress = ({ rewards, rewardsLimit }: Props) => {
     const total = humanPriceWithCurrency(rewardsLimit * price, user.Currency);
 
     return (
-        <div className="flex flex-justify-space-between flex-align-items-center gap-4 flex-column lg:flex-row">
-            <div className="flex-item-fluid">
+        <div className="flex flex-justify-space-between flex-align-items-stretch lg:flex-align-items-center gap-4 flex-column lg:flex-row">
+            <div className="lg:flex-item-fluid">
                 <b>{c('Info').t`Credits earned`}</b>
             </div>
-            <div className="flex-item-fluid">{rewards > 0 && <Meter value={rewards} max={rewardsLimit} />}</div>
-            <div className="flex-item-fluid text-right">{
+            <div className="lg:flex-item-fluid">
+                <Meter value={5} max={rewardsLimit} />
+            </div>
+            <div className="lg:flex-item-fluid text-right">{
                 // translator: Full sentence can be something like this : "$30 of $90"
                 c('Info').t`${current} of ${total}`
             }</div>
