@@ -2,10 +2,11 @@ import { ForwardedRef, Fragment, forwardRef } from 'react';
 
 import { c } from 'ttag';
 
+import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
 import { useConfig, useUser } from '@proton/components/hooks';
 import { getAvailableApps } from '@proton/shared/lib/apps/apps';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
-import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { isElectronMail, isElectronOnInboxApps, isElectronOnMac } from '@proton/shared/lib/helpers/desktop';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -81,6 +82,10 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                                         >
                                             {appToLinkToName}
                                         </span>
+
+                                        {appToLinkTo === APPS.PROTONWALLET && (
+                                            <ProtonBadge text={c('Info').t`New`} tooltipText="" selected={false} />
+                                        )}
                                     </ProductLink>
                                 </li>
                             </Fragment>
