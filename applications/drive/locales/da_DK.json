@@ -2273,6 +2273,9 @@
       "Some contacts could not be deleted": [
         "Nogle kontakter kunne ikke slettes"
       ],
+      "Some files were ignored because they are not supported in Photos": [
+        "Nogle filer blev ignoreret, fordi de ikke understøttes i Fotos."
+      ],
       "Some groups could not be deleted": [
         "Nogle grupper kunne ikke slettes"
       ],
@@ -3375,7 +3378,7 @@
         "Er du sikker på at du permanent vil slette"
       ],
       "Are you sure you want to permanently delete \"${ itemName }\" from trash?": [
-        "Er du sikker på, at du vil slette \"${ itemName }\" permanent fra papirkurv?"
+        "Er du sikker på, at du vil slette \"${ itemName }\" permanent fra papirkurven?"
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Er du sikker på, at du ønsker at slette de valgte elementer permanent fra papirkurven?"
@@ -4061,6 +4064,9 @@
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Der kan være blevet manipuleret med følgende: ${ items }. Åbn kun, hvis du har tillid til den."
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Ejeren af denne adresse har deaktiveret end-to-end-kryptering. For at kunne sende krypterede e-mails til denne adresse, skal ejeren genaktivere end-to-end-kryptering."
+      ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Der er stadig filer, der skal overføres. Ved at lukke overførselsadministratoren afsluttes alle operationer."
       ],
@@ -4289,6 +4295,10 @@
       ],
       "You cannot undo this action.": [
         "Du kan ikke fortryde denne handling."
+      ],
+      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
+        "Du har ${ expiresInDays } dag tilbage til at få din 500 MB velkomstbonus og ",
+        "Du har ${ expiresInDays } dage tilbage til at få din 500 MB velkomstbonus og "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Du har brugt ${ spaceDisplayed }% af din lagerkapacitet. ${ freeUpMessage } ${ upgradeLink }"

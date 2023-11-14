@@ -860,7 +860,7 @@
         "Prístup k obsahu z celého sveta"
       ],
       "Ad-blocker and malware protection": [
-        "Ad-blocker a ochrana pred škodlivým softvérom"
+        "Ad-blocker a ochrana pred malvérom"
       ],
       "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Všetky funkcie plateného ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
@@ -889,7 +889,7 @@
         "Zľavy sú tvorené na základe štandardných mesačných cien."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Vaše predplatné sa automaticky obnoví za štandardnú zľavnenú sadzbu a trvanie na konci vášho fakturačného cyklu."
+        "Vaše predplatné sa automaticky obnoví so štandardnou zľavnenou sadzbou a trvaním na konci vášho fakturačného cyklu."
       ]
     },
     "bf2023: Offers": {
@@ -899,10 +899,10 @@
     },
     "bf2023: Tooltip": {
       "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Získajte prístup k blokovanému obsahu a surfujte v súkromí. Obsahuje 3000+ serverov v 65+ krajinách, najvyššie rýchlosti VPN, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám, rýchle sťahovanie cez BitTorrent a ďalšie."
+        "Získajte prístup k blokovanému obsahu a vyhľadávajte v súkromí. Obsahuje 3000+ serverov v 65+ krajinách, najvyššie rýchlosti VPN, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám, rýchle sťahovanie cez BitTorrent a ďalšie."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Získajte prístup k obsahu na streamovacích službách vrátane Netflix, Disney+ a Prime Video odkiaľkoľvek."
+        "Získajte prístup k obsahu na streamovacích službách vrátane Netflix, Disney+, Prime Video a ďalších odkiaľkoľvek."
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Obíďte obmedzenia a cenzúru miestneho internetu pomocou našej globálnej siete serverov."
@@ -920,7 +920,7 @@
         "Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Zabezpečte svoje emaily pomocou end-to-end šifrovania. Súčasťou je podpora vlastných emailových domén, 15 emailových adries, neobmedzený počet ide-my-email aliasov a ďalšie."
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je podpora vlastných emailových domén, 15 emailových adries, neobmedzený počet hide-my-email aliasov, zdieľanie kalendára a ďalšie."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa históriu verzií, zdieľanie šifrovaných súborov a ďalšie."
@@ -4033,7 +4033,7 @@
         "Vyberte adresu alebo adresy, ktoré chcete pridať do skupiny ${ groupName }."
       ],
       "Please use another browser or download the file.": [
-        "Použite iný prehliadač alebo si súbor stiahnite."
+        "Použite iný prehliadač alebo si súbor stiahnite, prosím."
       ],
       "Please wait till your changes are synced with the server.": [
         "Počkajte prosím, kým sa vaše zmeny nesynchronizujú so serverom."
@@ -4199,6 +4199,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "S nasledujúcimi údajmi sa mohlo manipulovať: ${ items }. Otvorte ich, len ak im dôverujete."
+      ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Vlastník tejto adresy vypol end-to-end šifrovanie. Ak chcete na túto adresu odosielať šifrované emaily, vlastník musí opäť povoliť end-to-end šifrovanie."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Niektoré súbory ešte potrebujú byť presunuté. Zatvorením správcu prenosu sa ukončia všetky operácie."
@@ -4430,6 +4433,12 @@
       ],
       "You cannot undo this action.": [
         "Túto akciu nie je možné vrátiť späť."
+      ],
+      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
+        "Na získanie uvítacieho bonusu 500 MB vám zostáva ${ expiresInDays } deň a ",
+        "Na získanie uvítacieho bonusu 500 MB vám zostávajú ${ expiresInDays } dni a ",
+        "Na získanie uvítacieho bonusu 500 MB vám zostáva ${ expiresInDays } dní a ",
+        "Na získanie uvítacieho bonusu 500 MB vám zostáva ${ expiresInDays } dní a "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Dosiahli ste ${ spaceDisplayed }% svojej kapacity úložiska. ${ freeUpMessage } ${ upgradeLink }"
@@ -5601,7 +5610,7 @@
     },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
-        "Emailová adresa sa nenašla medzi identifikátormi používateľov definovanými v kľúči na odosielanie (${ keyUserIds })"
+        "Emailová adresa sa nenašla medzi ID definovanými v kľúči na odosielanie (${ keyUserIds })"
       ]
     },
     "Placeholder": {
