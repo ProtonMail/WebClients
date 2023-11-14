@@ -32,7 +32,6 @@ import PayPalView from './PayPalView';
 import useBitcoin, { OnBitcoinTokenValidated } from './useBitcoin';
 
 export interface Props {
-    takeNullCreditCard?: boolean;
     api: Api;
     children?: ReactNode;
     type: PaymentMethodFlows;
@@ -59,6 +58,7 @@ export interface Props {
     hideFirstLabel?: boolean;
     triggersDisabled?: boolean;
     hideSavedMethodsDetails?: boolean;
+    defaultMethod?: PAYMENT_METHOD_TYPES;
 }
 
 export interface NoApiProps extends Props {
@@ -73,7 +73,6 @@ export interface NoApiProps extends Props {
 }
 
 export const PaymentsNoApi = ({
-    takeNullCreditCard,
     children,
     type,
     amount,
@@ -102,6 +101,7 @@ export const PaymentsNoApi = ({
     hideFirstLabel,
     triggersDisabled,
     hideSavedMethodsDetails,
+    defaultMethod,
 }: NoApiProps) => {
     const [handlingBitcoinPayment, withHandlingBitcoinPayment] = useLoading();
 
@@ -120,6 +120,11 @@ export const PaymentsNoApi = ({
         if (loading) {
             return onMethod(undefined);
         }
+        if (defaultMethod) {
+            onMethod(defaultMethod);
+            return;
+        }
+
         const selectedMethod = allMethods.find((otherMethod) => otherMethod.value === method);
         const result = allMethods.find(({ disabled }) => !disabled);
         if ((!selectedMethod || selectedMethod.disabled) && result) {
@@ -152,7 +157,7 @@ export const PaymentsNoApi = ({
         );
     }
 
-    if (amount <= 0 && !takeNullCreditCard) {
+    if (amount <= 0) {
         const price = (
             <Price key="price" currency={currency}>
                 {0}

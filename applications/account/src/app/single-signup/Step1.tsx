@@ -57,13 +57,7 @@ import { getTotalBillingText } from '@proton/components/containers/payments/help
 import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
 import { useActiveBreakpoint, useApi, useElementRect, useNotifications } from '@proton/components/hooks';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
-import {
-    CardPayment,
-    PAYMENT_METHOD_TYPES,
-    PaymentMethodType,
-    PaypalPayment,
-    TokenPayment,
-} from '@proton/components/payments/core';
+import { CardPayment, PAYMENT_METHOD_TYPES, PaypalPayment, TokenPayment } from '@proton/components/payments/core';
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
@@ -670,24 +664,6 @@ const Step1 = ({
         return true;
     };
 
-    const getTelemetryType = (amount: number, paymentMethodType: PaymentMethodType | undefined) => {
-        const isFreeSignup = amount <= 0;
-
-        if (isFreeSignup) {
-            return 'free';
-        }
-
-        if (paymentMethodType === PAYMENT_METHOD_TYPES.PAYPAL) {
-            return 'pay_pp';
-        }
-
-        if (paymentMethodType === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
-            return 'pay_pp_no_cc';
-        }
-
-        return 'pay_cc';
-    };
-
     const paymentFacade = usePaymentFacade({
         amount: options.checkResult.AmountDue,
         currency: options.currency,
@@ -985,7 +961,23 @@ const Step1 = ({
             return;
         }
 
-        const telemetryType = getTelemetryType(paymentFacade.amount, paymentFacade.selectedMethodValue);
+        const telemetryType = (() => {
+            const isFreeSignup = paymentFacade.amount <= 0;
+
+            if (isFreeSignup) {
+                return 'free';
+            }
+
+            if (processor?.meta.type === 'paypal') {
+                return 'pay_pp';
+            }
+
+            if (processor?.meta.type === 'paypal-credit') {
+                return 'pay_pp_no_cc';
+            }
+
+            return 'pay_cc';
+        })();
         measurePaySubmit(telemetryType);
 
         async function run() {
