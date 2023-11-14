@@ -3971,6 +3971,9 @@
       "Search Enabled": [
         "Haku on käytössä"
       ],
+      "Select a folder to move to.": [
+        "Valitse kohdekansio."
+      ],
       "Select all items for": [
         "Valitse kaikki kohteet ryhmästä"
       ],
@@ -4060,6 +4063,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Seuraavia on saatettu muuttaa tietämättäsi: ${ items }. Avaa vain, jos luotat siihen."
+      ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Tämän osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Salattujen sähköpostien lähettäminen tähän osoitteeseen edellyttää, että omistaja ottaa päästä päähän -salauksen uudelleen käyttöön."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Siirrettäviä tiedostoja on vielä jäljellä. Siirtojen hallinnan sulkeminen peruu kaikki siirrot."
@@ -4289,6 +4295,10 @@
       ],
       "You cannot undo this action.": [
         "Et voi kumota toimintoa."
+      ],
+      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
+        "Sinulla on ${ expiresInDays } päivä aikaa lunastaa 500 Mt tervetuliaisbonuksesi ja ",
+        "Sinulla on ${ expiresInDays } päivää aikaa lunastaa 500 Mt tervetuliaisbonuksesi ja "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Olet käyttänyt ${ spaceDisplayed } % tallennuskapasiteetistasi. ${ freeUpMessage } ${ upgradeLink }"

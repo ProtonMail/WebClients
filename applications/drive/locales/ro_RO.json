@@ -4362,6 +4362,11 @@
       "You cannot undo this action.": [
         "Nu puteți anula această acțiune."
       ],
+      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
+        "Mai aveți ${ expiresInDays } zi rămasă pentru a vă revendica bonusul de bun venit de 500 MiB și să vă ",
+        "Mai aveți ${ expiresInDays } zile rămase pentru a vă revendica bonusul de bun venit de 500 MiB și să vă ",
+        "Mai aveți ${ expiresInDays } de zile rămase pentru a vă revendica bonusul de bun venit de 500 MiB și să vă "
+      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "S-a atins ${ spaceDisplayed }% din capacitatea de stocare. ${ freeUpMessage } ${ upgradeLink }"
       ],

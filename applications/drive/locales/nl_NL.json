@@ -2274,7 +2274,7 @@
         "Enkele contacten konden niet verwijderd worden"
       ],
       "Some files were ignored because they are not supported in Photos": [
-        "Sommige bestanden werden genegeerd omdat ze niet ondersteund worden in Foto's"
+        "Sommige bestanden werden genegeerd omdat ze niet ondersteund worden in Photos"
       ],
       "Some groups could not be deleted": [
         "Sommige groepen konden niet worden verwijderd"
@@ -3896,6 +3896,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecteer welk(e) e-mailadres(sen) u wilt toevoegen aan ${ groupName }."
       ],
+      "Please use another browser or download the file.": [
+        "Gebruik een andere browser of download het bestand."
+      ],
       "Please wait till your changes are synced with the server.": [
         "Wacht tot uw wijzigingen gesynchroniseerd zijn met de server."
       ],
@@ -3913,6 +3916,9 @@
       ],
       "Preview failed to be loaded": [
         "Voorvertoning kon niet worden geladen"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Voorvertoning voor dit bestandstype wordt momenteel niet ondersteund in deze browser."
       ],
       "Preview for this file type is not supported": [
         "Voorbeeld wordt niet ondersteund voor dit bestandstype"
@@ -4286,6 +4292,10 @@
       ],
       "You cannot undo this action.": [
         "U kunt deze actie niet ongedaan maken."
+      ],
+      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
+        "U heeft nog ${ expiresInDays } dag om uw 500 MB welkomstbonus te claimen en ",
+        "U heeft nog ${ expiresInDays } dagen om uw 500 MB welkomstbonus te claimen en "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "U heeft ${ spaceDisplayed }% van uw opslagcapaciteit bereikt. ${ freeUpMessage } ${ upgradeLink }"
@@ -5676,7 +5686,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "Wachtwoord reset aangevraagd"
+        "Wachtwoordherstel aangevraagd"
       ]
     },
     "session_recovery:sign_out:action": {
