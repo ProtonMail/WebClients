@@ -631,6 +631,9 @@
       "Skip verification": [
         "Omitir verificación"
       ],
+      "Start": [
+        "Iniciar"
+      ],
       "Start import": [
         "Iniciar importación"
       ],
@@ -2650,6 +2653,12 @@
         "(sin título)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } fallido",
+        "${ countOfFailedLinks } fallidos"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB de almacenamiento total"
@@ -3353,6 +3362,9 @@
       "An active recovery file": [
         "Un archivo de recuperación activo"
       ],
+      "An issue occurred during the restore process.": [
+        "Ocurrió un problema durante el proceso de restauración."
+      ],
       "and": [
         "y"
       ],
@@ -3871,6 +3883,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME automáticamente envía el mensaje usando el modo de compositor actual."
       ],
+      "Photos have been successfully recovered.": [
+        "Se han recuperado las imágenes con éxito."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Ingrese la contraseña para descifrar y visualizar el contenido."
       ],
@@ -3962,8 +3977,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "Restauración en proceso. Esto puede tardar algunos segundos."
       ],
+      "Restore Photos": [
+        "Restaurar imágenes"
+      ],
       "Restored files ${ formattedDate }": [
         "Archivos restaurados ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Restaurando imágenes... mantenga la pestaña abierta"
       ],
       "Search cannot be enabled in this browser": [
         "No se puede activar la búsqueda en este navegador"
@@ -4063,6 +4084,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Es posible que se haya manipulado lo siguiente: ${ items }. Ábralo solo si confía en él."
+      ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario debe volver a activar el cifrado de extremo a extremo."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Hay archivos que aún deben ser transferidos. Al cerrar el gestor de transferencias se terminarán todas las operaciones."
@@ -5965,6 +5989,10 @@
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contacto parece idéntico.",
         "${ countMergeableContacts } contactos parecen idénticos."
+      ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } disponible",
+        "${ countOfUnrecoveredLinksLeft } disponibles"
       ],
       "Address copied to clipboard": [
         "Dirección copiada al portapapeles"
