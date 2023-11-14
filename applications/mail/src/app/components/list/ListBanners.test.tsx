@@ -90,14 +90,14 @@ describe('ListBanners', () => {
                     labelID={MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL}
                     esState={{
                         isESLoading: false,
-                        isSearch: true,
+                        isSearch: false,
                         showESSlowToolbar: false,
                     }}
                 />
             );
 
             expect(screen.getByText(/Can't find what you're looking for\?/i)).toBeInTheDocument();
-            const includeButton = screen.getByRole('button', { name: /Include Spam\/Trash in your search results./i });
+            const includeButton = screen.getByRole('button', { name: /Include Spam\/Trash/i });
             await userEvent.click(includeButton);
             await waitFor(() => {
                 expect(mockedPush).toHaveBeenCalledTimes(1);
