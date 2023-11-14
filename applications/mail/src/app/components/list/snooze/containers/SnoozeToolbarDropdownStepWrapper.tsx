@@ -25,7 +25,7 @@ const SnoozeToolbarDropdownStepWrapper = ({ onClose, onLock, selectedIDs, displa
 
     const handleSnooze = (event: MouseEvent, duration: SNOOZE_DURATION, snoozeTime?: Date) => {
         event.stopPropagation();
-        snooze({ elements: elements, duration, snoozeTime: snoozeTime });
+        snooze({ elements, duration, snoozeTime });
         onClose();
     };
 
