@@ -5764,6 +5764,9 @@
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Den ursprungliga avsändaren av detta meddelande är inte längre giltig. Ditt meddelande kommer att skickas från din standardadress ${ defaultEmail }."
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Ägaren till denna adress har inaktiverat end-to-end-kryptering. För att kunna skicka krypterad e-post till denna adress måste ägaren återaktivera end-to-end-kryptering."
+      ],
       "The sender has requested a read receipt.": [
         "Avsändaren har begärt ett läskvitto."
       ],
@@ -7926,6 +7929,11 @@
         "Kontakterna för följande adresser har tagits bort, så motsvarande krypteringsinställningar har uppdaterats i enlighet med detta:"
       ]
     },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "Kontakterna för följande adresser har inaktiverat end-to-end-kryptering på sitt konto. Så motsvarande krypteringsinställningar har uppdaterats i enlighet med detta:"
+      ]
+    },
     "Send email with errors": {
       "Do you want to send the email anyway?": [
         "Vill du skicka e-posten ändå?"
@@ -9309,6 +9317,9 @@
       ],
       "Send with changed preferences?": [
         "Skicka med ändrade preferenser?"
+      ],
+      "Send with encryption disabled?": [
+        "Skicka med kryptering inaktiverad?"
       ],
       "Send without expiration?": [
         "Skicka utan utgångsdatum?"

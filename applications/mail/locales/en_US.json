@@ -7,6 +7,10 @@
     "Action": {
       "Toggle Contact app": [
         "Toggle Contacts app"
+      ],
+      "You can't send vCard files of more than ${ maxAttachments } contacts": [
+        "You can't send vCard files of more than ${ maxAttachments } contact",
+        "You can't send vCard files of more than ${ maxAttachments } contacts"
       ]
     },
     "Description": {
@@ -23,6 +27,9 @@
       ],
       "Require at least one condition": [
         "Add at least one condition"
+      ],
+      "You have reached the contacts limit for your account": [
+        "You have reached the number of contacts limit for your account"
       ]
     },
     "familyOffer_2023:Family plan": {
