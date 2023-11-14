@@ -1933,8 +1933,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ви вже використали усіх користувачів у своєму тарифному плані. Щоб додати нового користувача, необхідно покращити тарифний план."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Вам необхідно активувати ваші ключі організації. Без активації ви не можете створювати нові облікові записи, додаткові адреси для наявних користувачів, або отримати доступ до не приватних облікових записів користувачів."
+      "You must privatize all users before generating new organization keys": [
+        "Ви повинні зробити приватними всіх користувачів перед генеруванням нових ключів організації"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "У вашому обліковому записі чи вашій організації є прострочений рахунок. Будь ласка, сплатіть усі рахунки."
@@ -3329,6 +3329,9 @@
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Ці конфігурації передбачені для роботи з маршрутизаторами WireGuard і офіційними клієнтами."
       ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "Ці облікові дані не можуть бути використані для входу у наші офіційні програми ${ VPN_APP_NAME }. ${ learnMore }"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Цей обліковий запис було призупинено через потенційне порушення правил."
       ],
@@ -3400,6 +3403,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Поповніть свій рахунок кредитом, який ви зможете використати для передплати нового тарифного плану чи поновлення поточного плану. Ви отримаєте один кредит за кожен витрачений ${ i18nCurrency }."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Усього адрес електронної пошти"
@@ -5541,14 +5547,8 @@
       "Changing organization password": [
         "Зміна пароля організації"
       ],
-      "Creating new users": [
-        "Створення нових користувачів"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Внаслідок зміни пароля ваші повноваження адміністратора організації були обмежені. Зазначені дії більше не дозволені:"
-      ],
-      "Reading emails of non-private users": [
-        "Читання листів від не приватних користувачів"
       ]
     },
     "Role": {

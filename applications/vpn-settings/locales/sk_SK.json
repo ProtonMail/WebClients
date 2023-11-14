@@ -706,7 +706,7 @@
         "Prístup k obsahu z celého sveta"
       ],
       "Ad-blocker and malware protection": [
-        "Ad-blocker a ochrana pred škodlivým softvérom"
+        "Ad-blocker a ochrana pred malvérom"
       ],
       "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
         "Všetky funkcie plateného ${ MAIL_SHORT_APP_NAME } a ${ CALENDAR_APP_NAME }"
@@ -735,7 +735,7 @@
         "Zľavy sú tvorené na základe štandardných mesačných cien."
       ],
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
-        "Vaše predplatné sa automaticky obnoví za štandardnú zľavnenú sadzbu a trvanie na konci vášho fakturačného cyklu."
+        "Vaše predplatné sa automaticky obnoví so štandardnou zľavnenou sadzbou a trvaním na konci vášho fakturačného cyklu."
       ]
     },
     "bf2023: header": {
@@ -776,7 +776,7 @@
         "prvý mesiac"
       ],
       "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
-        "Špeciálne zľavnená cena ${ discountedPrice } platí počas ${ discountedMonths }. Potom sa automaticky obnoví za zvýhodnenú cenu ${ nextPrice } na ${ nextMonths }. Službu môžete kedykoľvek zrušiť."
+        "Špeciálne zľavnená cena ${ discountedPrice } platí na ${ discountedMonths }. Potom sa automaticky obnoví za zvýhodnenú cenu ${ nextPrice } na ${ nextMonths }. Službu môžete kedykoľvek zrušiť."
       ],
       "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
         "Špeciálne zľavnená cena ${ discountedPrice } platí prvý mesiac. Potom sa každý mesiac automaticky obnoví za ${ nextPrice }. Službu môžete kedykoľvek zrušiť."
@@ -789,10 +789,10 @@
     },
     "bf2023: Tooltip": {
       "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
-        "Získajte prístup k blokovanému obsahu a surfujte v súkromí. Obsahuje 3000+ serverov v 65+ krajinách, najvyššie rýchlosti VPN, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám, rýchle sťahovanie cez BitTorrent a ďalšie."
+        "Získajte prístup k blokovanému obsahu a vyhľadávajte v súkromí. Obsahuje 3000+ serverov v 65+ krajinách, najvyššie rýchlosti VPN, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám, rýchle sťahovanie cez BitTorrent a ďalšie."
       ],
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Získajte prístup k obsahu na streamovacích službách vrátane Netflix, Disney+ a Prime Video odkiaľkoľvek."
+        "Získajte prístup k obsahu na streamovacích službách vrátane Netflix, Disney+, Prime Video a ďalších odkiaľkoľvek."
       ],
       "Bypass local internet blocks and censorship with our global network of servers.": [
         "Obíďte obmedzenia a cenzúru miestneho internetu pomocou našej globálnej siete serverov."
@@ -810,7 +810,7 @@
         "Bezpečné prihlásenie na všetkých zariadeniach. Zahŕňa neobmedzený počet aliasov, zdieľanie, integrované 2FA a ďalšie funkcie."
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
-        "Zabezpečte svoje emaily pomocou end-to-end šifrovania. Súčasťou je podpora vlastných emailových domén, 15 emailových adries, neobmedzený počet ide-my-email aliasov a ďalšie."
+        "Zabezpečte svoje emaily a harmonogram pomocou end-to-end šifrovania. Súčasťou je podpora vlastných emailových domén, 15 emailových adries, neobmedzený počet hide-my-email aliasov, zdieľanie kalendára a ďalšie."
       ],
       "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
         "Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Zahŕňa históriu verzií, zdieľanie šifrovaných súborov a ďalšie."
@@ -1882,12 +1882,12 @@
         "Prechádzam na inú službu"
       ],
       "Temporary need, may come back in the future": [
-        "Dočasná potreba, môže sa vrátiť v budúcnosti"
+        "Dočasná potreba, môže sa v budúcnosti vrátiť"
       ]
     },
     "Downgrade modal exit survey title": {
       "Help us improve!": [
-        "Pomôžte nám sa zlepšiť!"
+        "Pomôžte nám zlepšiť sa!"
       ]
     },
     "Email verification": {
@@ -2120,8 +2120,11 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Limit počtu používateľov vo vašom pláne bol vyčerpaný. Prejdite na vyšší plán, ak chcete pridať ďalšieho používateľa."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Musíte aktivovať kľúče organizácie. Bez aktivácie nebudete môcť vytvárať nových používateľov, pridávať adresy existujúcim používateľom ani pristupovať k nesúkromným používateľským účtom."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Musíte aktivovať kľúče organizácie. Bez aktivácie nebudete môcť vytvárať alebo pristupovať k nesúkromným používateľom."
+      ],
+      "You must privatize all users before generating new organization keys": [
+        "Skôr než vytvoríte nové kľúče pre organizáciu, musíte privatizovať všetkých užívateľov"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Vo vašom účte alebo organizácii sú vedené faktúry po splatnosti. Zaplaťte prosím všetky neuhradené faktúry."
@@ -2371,10 +2374,10 @@
     },
     "familyOffer_2023:Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
-        "Tým sa natrvalo odstránia všetci čiastkoví užívatelia, účty a dáta spojené s Vašou organizáciou."
+        "Týmto natrvalo odstránite všetkých podriadených používateľov, účty a údaje spojené s vašou organizáciou."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Týmto odstránite všetky prémiové funkcie ${ BRAND_NAME } pre každého člena rodiny."
+        "Týmto odstránite pre každého člena rodiny všetky prémiové funkcie ${ BRAND_NAME }."
       ]
     },
     "familyOffer_2023:Success": {
@@ -2792,6 +2795,12 @@
         "${ provisioningCounter } servery sa stále nastavujú. Zvyčajne to trvá okolo ${ provisioningDuration }.",
         "${ provisioningCounter } serverov sa stále nastavuje. Zvyčajne to trvá okolo ${ provisioningDuration }.",
         "${ provisioningCounter } serverov sa stále nastavuje. Zvyčajne to trvá okolo ${ provisioningDuration }."
+      ],
+      "${ remainingAddresses.length } more": [
+        "${ remainingAddresses.length } ďalšia",
+        "${ remainingAddresses.length } ďalšie",
+        "${ remainingAddresses.length } ďalších",
+        "${ remainingAddresses.length } ďalších"
       ],
       "${ remainingAddresses.length } more address": [
         "${ remainingAddresses.length } ďalšia adresa",
@@ -3385,7 +3394,7 @@
         "Skúste to znova, použite iný spôsob platby, alebo požiadajte o pomoc PayPal."
       ],
       "Please use another browser or download the file.": [
-        "Použite iný prehliadač alebo si súbor stiahnite."
+        "Použite iný prehliadač alebo si súbor stiahnite, prosím."
       ],
       "Please verify payment at the new tab which was opened.": [
         "Skontrolujte prosím platbu na novej karte, ktorá sa otvorila."
@@ -3653,6 +3662,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Doplňte si svoj účet kreditmi, ktoré môžete použiť k predplateniu nového plánu alebo obnovenie aktuálneho plánu. Za každých minutých ${ i18nCurrency } získate jeden kredit."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Všetky e-mailové adresy"
@@ -5221,7 +5233,7 @@
         "Ak prejdete na nižšiu verziu svojho účtu, stratíte všetky výhody plánu ${ visionary } a ak sa znova pokúsite o predplatné, nebude už k dispozícii."
       ],
       "If you switch to a different plan, you lose all ${ visionary } plan benefits and won’t be able to switch back to ${ visionary }.": [
-        "Ak prejdete na iný plán, stratíte všetky výhody plánu ${ visionary } a nebudete sa môcť vrátiť späť na ${ visionary }."
+        "Ak prejdete na iný plán, stratíte všetky výhody plánu ${ visionary } a na ${ visionary } sa už nebudete môcť vrátiť späť."
       ],
       "Our ${ visionary } plan is no longer available to new subscribers as it is a special plan for original ${ BRAND_NAME } users with special features and benefits.": [
         "Náš ${ visionary } plán už nie je k dispozícii pre nových predplatiteľov, pretože ide o špeciálny plán pre pôvodných používateľov ${ BRAND_NAME } so špeciálnymi funkciami a výhodami."
@@ -5333,7 +5345,7 @@
         "${ DRIVE_APP_NAME }: Zabezpečte svoje súbory pomocou šifrovaného cloudového úložiska. Súčasťou je história verzií, šifrované zdieľanie súborov a ďalšie funkcie."
       ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
-        "${ MAIL_APP_NAME }: Zabezpečte svoje emaily pomocou end-to-end šifrovania. Súčasťou je podpora vlastných emailových domén, 15 emailových adries, neobmedzený počet ide-my-email aliasov a ďalšie."
+        "${ MAIL_APP_NAME }: Zabezpečte svoje emaily pomocou end-to-end šifrovania. Zahŕňa podporu vlastných emailových domén, 15 emailových adries, neobmedzený počet hide-my-email aliasov a ďalšie."
       ],
       "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "${ VPN_APP_NAME }: Získajte prístup k blokovanému obsahu a surfujte v súkromí. Obsahuje ${ serversAndCountries }, najvyššie rýchlosti VPN, prístup k celosvetovým streamovacím službám, blokovanie malvéru a reklám, rýchle sťahovanie cez BitTorrent a ďalšie."
@@ -5351,7 +5363,7 @@
         "Umožňuje vám nastaviť pre vaše prichádzajúce správy automatické odpovedanie (automatická odpoveď)"
       ],
       "Bulk promotional or programmatic email sending is currently not supported. We recommend using a dedicated email service provider for this use case.": [
-        "Hromadné propagačné alebo programové odosielanie e-mailov momentálne nie je podporované. Pre tento prípad použitia odporúčame použiť špecializovaného poskytovateľa emailových služieb."
+        "Hromadné propagačné alebo programové odosielanie emailov momentálne nie je podporované. Pre tento prípad použitia odporúčame použiť špecializovaného poskytovateľa emailových služieb."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
         "Ovládajte prístup k svojim zdieľaným súborom pridaním ochrany heslom a dátumov vypršania platnosti odkazu"
@@ -5381,28 +5393,28 @@
         "Svoje kalendáre zdieľajte jednoducho so svojimi kolegami, rodinou a priateľmi prostredníctvom odkazu"
       ],
       "Easily share your calendars with your family, friends, or colleagues": [
-        "Ľahko zdieľajte svoje kalendáre s rodinou, priateľmi alebo kolegami"
+        "Svoje kalendáre zdieľajte jednoducho s rodinou, priateľmi alebo kolegami"
       ],
       "Ensures you receive all emails sent to your domain, even if the email address doesn't exist, no longer exists, or has a typo": [
-        "Zabezpečuje, aby ste dostávali všetky emaily odoslané na vašu doménu, aj keď e-mailová adresa neexistuje, už viac neexistuje alebo má preklep"
+        "Zabezpečuje, aby ste dostávali všetky emaily odoslané na vašu doménu, aj keď emailová adresa neexistuje, už viac neexistuje alebo má preklep"
       ],
       "Force sign-out of user sessions when user credentials are believed to be compromised": [
-        "Vynútiť odhlásenie z relácií používateľa, keď sa domnievame, že poverenia používateľa boli napadnuté"
+        "Vynútenie odhlásenia relácií používateľa, ak sa predpokladá, že poverovacie údaje používateľa sú ohrozené."
       ],
       "IMAP support is limited to the use of desktop apps (e.g., Outlook, Apple Mail, Thunderbird) via ${ MAIL_APP_NAME } Bridge. Cloud-based IMAP integrations are currently not supported.": [
         "Podpora IMAP je obmedzená na používanie aplikácií pre počítače (napr. Outlook, Apple Mail, Thunderbird) cez ${ MAIL_APP_NAME } Bridge. Cloudové integrácie IMAP momentálne nie sú podporované."
       ],
       "Keep your plans private to you and your family with an encrypted calendar": [
-        "Udržujte svoje plány súkromné pre vás a vašu rodinu pomocou šifrovaného kalendára"
+        "Udržujte svoje plány v súkromí pre seba a svoju rodinu pomocou šifrovaného kalendára"
       ],
       "Keeps you protected by blocking all network connections when you are unexpectedly disconnected from our VPN server.": [
         "Chráni vás blokovaním všetkých sieťových pripojení, keď ste neočakávane odpojení od nášho servera VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
-        "Štítky sú jednoduché značky, ktoré môžete pridať do správ, aby ste ich ľahšie našli alebo na ktoré použijete filtre"
+        "Štítky sú jednoduché značky, ktoré môžete pridať do správ, aby ste ich ľahšie našli alebo na ne použili filtre"
       ],
       "Like a folder, a vault is a convenient way to organize your items. Sharing vaults with friends and family is in the works.": [
-        "Podobne ako priečinok, aj trezor predstavuje pohodlný spôsob usporiadania položiek. Pracuje sa na zdieľaní trezorov s priateľmi a rodinou."
+        "Podobne ako priečinok, aj trezor predstavuje pohodlný spôsob usporiadania položiek. Pripravuje sa zdieľanie trezorov s priateľmi a rodinou."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
         "Uzamknite svoje firemné zdroje z verejného internetu a sprístupnite ich len cez vaše súkromné brány"
@@ -5411,13 +5423,13 @@
         "Spravujte svoje predplatné vrátane prispôsobenia vášho plánu. Akceptované spôsoby platby sú platobná karta, PayPal, kryptomena a bankový prevod."
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
-        "Počas pracovných dní získajte podporu od tímu zákazníckej podpory ${ BRAND_NAME } do 24 hodín od vyžiadania"
+        "Počas pracovných dní získate podporu od tímu zákazníckej podpory ${ BRAND_NAME } do 24 hodín od vyžiadania"
       ],
       "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
         "Jedno pripojenie VPN umožňuje jednému zariadeniu pripojiť sa k ${ BRAND_NAME } VPN kedykoľvek. Napríklad na súčasné pripojenie telefónu a notebooku k ${ BRAND_NAME_TWO } VPN potrebujete dve pripojenia VPN."
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
-        "Možnosť prezerania súkromných priečinkov doručenej pošty používateľov tak, ako by ich zobrazoval používateľ, vrátane celej správy a kontaktných údajov"
+        "Možnosť zobraziť nesúkromné schránky používateľov tak, ako by to urobil používateľ, vrátane celých správ a kontaktných údajov"
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
         "Nástroj na správu organizácie, ktorý umožňuje správcom pridávať a odstraňovať používateľov, prideľovať úložisko, konfigurovať domény a vykonávať ďalšie úlohy"
@@ -5450,7 +5462,7 @@
         "Poskytuje najvyššiu úroveň zabezpečenia účtu a odbornú podporu"
       ],
       "Quickly set up out-of-office messages": [
-        "Rýchle nastavenie správ mimo pracoviska (out-of-office)"
+        "Rýchle nastavenie správ mimo kancelárie (out-of-office)"
       ],
       "Quickly transfer your emails, calendars or contacts from any provider": [
         "Rýchlo preneste svoje emaily, kalendáre alebo kontakty od akéhokoľvek poskytovateľa"
@@ -5459,7 +5471,7 @@
         "Na prihlásenie sa vyžaduje odoslanie kódu na mobilný telefón. To zaisťuje, že aj v prípade prelomenia hesla zostane účet bezpečný."
       ],
       "Reset user passwords and reset two-factor authentication on users": [
-        "Obnovte heslá používateľov a resetujte dvojstupňové overenie používateľov"
+        "Obnoviť heslá a dvojstupňové overenie používateľov"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Smerujte vašu internetovú prevádzku cez sieť Tor jediným kliknutím"
@@ -5474,7 +5486,7 @@
         "Posielajte emaily veľkým skupinám rýchlo a jednoducho vytvorením toľkých skupín kontaktov, koľko potrebujete (až 100 kontaktov na skupinu)"
       ],
       "Set up filters to automatically reply to, sort, and/or label your emails": [
-        "Nastavte filtre pre automatickú odpoveď, triedenie a/alebo označenie emailov."
+        "Nastavte filtre pre automatickú odpoveď, triedenie a/alebo označenie emailov"
       ],
       "Share your files or folders with anyone by using secure, shareable links": [
         "Zdieľajte svoje súbory alebo priečinky s kýmkoľvek pomocou bezpečných a zdieľateľných odkazov"
@@ -5489,13 +5501,13 @@
         "Začnite s ${ freeStorageSize } a odomknite si ďalší úložný priestor. Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
+        "Úložný priestor je zdieľaný cez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Úložný priestor je zdieľaný cez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }. Administrátori môžu používateľom vo svojej organizácii prideliť rôznu veľkosť úložného priestoru"
       ],
       "Storage space is shared between users across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Úložný priestor je zdieľaný používateľmi cez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
+        "Úložný priestor je zdieľaný medzi používateľmi cez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
       ],
       "Support for file-sharing protocols like BitTorrent": [
         "Podpora protokolov na zdieľanie súborov, ako je BitTorrent"
@@ -5510,7 +5522,7 @@
         "Neuchovávame žiadne záznamy používania relácie o tom, čo robíte online, a nezaznamenávame metadáta, ktoré by mohli ohroziť vaše súkromie"
       ],
       "We’re committed to helping customers subject to HIPAA/HITECH regulations safeguard protected health information (PHI). Signed BAAs are available for all ${ BRAND_NAME } for Business customers.": [
-        "Zaviazali sme sa pomáhať zákazníkom, ktorí podliehajú predpisom HIPAA/HITECH, zabezpečiť chránené zdravotné informácie (PHI). Podpísané zmluvy BAA sú dostupné pre všetkých zákazníkov ${ BRAND_NAME } pre firmy."
+        "Zaviazali sme sa pomáhať zákazníkom, na ktorých sa vzťahujú predpisy HIPAA/HITECH, zabezpečiť chránené zdravotné informácie (PHI). Podpísané zmluvy BAA sú k dispozícii pre všetkých firemných zákazníkov ${ BRAND_NAME }."
       ],
       "When connected to our VPN, your DNS queries through our encrypted VPN tunnel, adding to your online privacy and security": [
         "Keď sa pripojíte k našej VPN sieti, vaše DNS dopyty prostredníctvom nášho šifrovaného tunela VPN zvyšujú vaše online súkromie a bezpečnosť"
@@ -5524,7 +5536,7 @@
     },
     "new_plans: upgrade": {
       "Included with multiple users ${ BRAND_NAME } for Business plans.": [
-        "Zahrnuté s viacerými používateľmi ${ BRAND_NAME } pre obchodné plány."
+        "Zahrnuté s viacerými používateľmi ${ BRAND_NAME } pre firemné plány."
       ]
     },
     "new_plans: Upsell attribute": {
@@ -5568,13 +5580,13 @@
         "Vytvorte až ${ n } kalendárov"
       ],
       "Dedicated Account manager": [
-        "Dedikovaný správca účtov"
+        "Špecializovaný správca účtov"
       ],
       "Dedicated server locations in ${ numberOfCountries }+ countries": [
-        "Umiestnenie dedikovaných serverov v ${ numberOfCountries }+ krajinách"
+        "Umiestnenie špecializovaných serverov v ${ numberOfCountries }+ krajinách"
       ],
       "Dedicated server locations in North America and Europe": [
-        "Umiestnenie dedikovaných serverov v Severnej Amerike a Európe"
+        "Umiestnenie špecializovaných serverov v Severnej Amerike a Európe"
       ],
       "Multi-platform support": [
         "Podpora viacerých platforiem"
@@ -5903,14 +5915,11 @@
       "Changing organization password": [
         "Zmena hesla organizácie"
       ],
-      "Creating new users": [
-        "Vytváranie nových užívateľov"
+      "Creating or accessing non-private users": [
+        "Vytváranie alebo prístup k nesúkromným používateľom"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Z dôvodu zmeny hesla boli obmedzené vaše oprávnenia správcu organizácie. Nasledujúce akcie už nie sú povolené:"
-      ],
-      "Reading emails of non-private users": [
-        "Čítanie emailových správ nesúkromných používateľov"
       ]
     },
     "Role": {
@@ -6471,7 +6480,7 @@
         "Rušenie vášho predplatného, počkajte prosím"
       ],
       "Downgrading your account, please wait": [
-        "Prebieha prechod na nižší plán predplatného, počkajte prosím"
+        "Prebieha prechod na nižší plán, prosím čakajte"
       ]
     },
     "Storage": {
@@ -6798,7 +6807,7 @@
         "/mesiac"
       ],
       "/user per month": [
-        "/užívateľ mesačne"
+        "/používateľ mesačne"
       ]
     },
     "Suffix for price": {

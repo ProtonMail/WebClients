@@ -2120,8 +2120,11 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Wykorzystano limit liczby użytkowników w obecnym planie. Ulepsz plan, aby dodać nowego użytkownika."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Musisz aktywować klucze organizacji. Bez aktywacji nie będziesz w stanie tworzyć nowych użytkowników, dodawać adresów do istniejących użytkowników ani uzyskać dostępu do służbowych kont użytkowników."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Musisz aktywować klucze organizacji. Nie możesz utworzyć lub uzyskać dostępu do służbowych użytkowników bez aktywacji kluczy."
+      ],
+      "You must privatize all users before generating new organization keys": [
+        "Wszyscy użytkownicy muszą posiadać konta prywatne, zanim będziesz mógł wygenerować nowe klucze organizacji"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Twoje konto lub organizacja posiada obecnie zaległe faktury. Ureguluj wszystkie zobowiązania."
@@ -3659,6 +3662,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Doładuj swoje konto środkami, których możesz użyć do wykupienia nowego planu lub odnowienia obecnego. 1 ${ i18nCurrency } to jeden kredyt."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Adresy e-mail"
@@ -5909,14 +5915,11 @@
       "Changing organization password": [
         "Zmiana hasła organizacji"
       ],
-      "Creating new users": [
-        "Tworzenie nowych użytkowników"
+      "Creating or accessing non-private users": [
+        "Tworzenie lub uzyskiwanie dostępu do służbowych użytkowników"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Ze względu na zmianę hasła, Twoje uprawnienia administratora organizacji zostały ograniczone. Następujące działania nie są dozwolone:"
-      ],
-      "Reading emails of non-private users": [
-        "Czytanie wiadomości służbowych użytkowników"
       ]
     },
     "Role": {

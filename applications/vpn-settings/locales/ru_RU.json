@@ -1999,8 +1999,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Вы достигли максимального числа пользователей, предусмотренного вашим тарифом. Пожалуйста, улучшите ваш тариф прежде, чем добавлять нового пользователя."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Вы должны активировать ключи организации. Без активации вы не сможете добавлять новых пользователей, адреса для уже существующих пользователей или получать доступ к неконфиденциальным пользовательским учётным записям."
+      "You must privatize all users before generating new organization keys": [
+        "Вы должны приватизировать всех пользователей перед генерированием новых ключей организации"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Ваш аккаунт или организация имеет просроченный счет. Пожалуйста, оплатите все неоплаченные счета."
@@ -5278,14 +5278,8 @@
       "Changing organization password": [
         "Изменение пароля организации"
       ],
-      "Creating new users": [
-        "Создание новых пользователей"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "По причине смены пароля ваши полномочия администратора организации были ограничены. Указанные действия более не разрешены:"
-      ],
-      "Reading emails of non-private users": [
-        "Чтение писем неконфиденциальных пользователей"
       ]
     },
     "Select file": {

@@ -2104,8 +2104,11 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "U heeft het maximale aantal gebruikers bereikt dat uw huidige abonnement toestaat. Upgrade uw abonnement om een nieuwe gebruiker toe te voegen."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "U moet uw organisatiesleutels activeren. Zonder activatie kan u geen nieuwe gebruikers creëren, nieuwe adressen aan bestaande gebruikers toewijzen, of toegang krijgen tot niet-private gebruikeraccounts."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "U moet uw organisatiesleutels activeren. Zonder activatie kunt u geen niet-privégebruikers maken of benaderen."
+      ],
+      "You must privatize all users before generating new organization keys": [
+        "U moet alle gebruikers loskoppelen voordat u nieuwe organisatiesleutels genereert"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Uw account of organisatie heeft een openstaande factuur. Betaal alle openstaande facturen."
@@ -3136,7 +3139,7 @@
         "inactief"
       ],
       "Increase your account security by verifying your email address.": [
-        "Verhoog de beveiliging van uw account door uw e-mail adres te verifiëren."
+        "Verhoog de beveiliging van uw account door uw e-mailadres te verifiëren."
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installeer een Land configuratiebestand om te verbinden met een willekeurige server in het land van uw keuze."
@@ -3326,6 +3329,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Probeer het opnieuw, gebruik een andere betaalmethode, of neem contact op met PayPal voor hulp."
       ],
+      "Please use another browser or download the file.": [
+        "Gebruik een andere browser of download het bestand."
+      ],
       "Please verify payment at the new tab which was opened.": [
         "Controleer de betaling op het nieuwe tabblad dat is geopend."
       ],
@@ -3337,6 +3343,9 @@
       ],
       "Preview failed to be loaded": [
         "Voorvertoning kon niet worden geladen"
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "Voorvertoning voor dit bestandstype wordt momenteel niet ondersteund in deze browser."
       ],
       "Preview for this file type is not supported": [
         "Voorbeeld wordt niet ondersteund voor dit bestandstype"
@@ -3582,6 +3591,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Vul uw account op met credits die u kunt gebruiken om zich aan te melden bij een nieuw plan of uw huidige abonnement te vernieuwen. U krijgt één krediet voor elke ${ i18nCurrency } die u gebruikt."
       ],
+      "Tor": [
+        "Tor"
+      ],
       "Total email addresses": [
         "Totaal e-mailadressen"
       ],
@@ -3619,7 +3631,7 @@
         "Niet-ondersteund bestand"
       ],
       "Unverified": [
-        "Niet geverifieerde"
+        "Niet geverifieerd"
       ],
       "Unverified email address.": [
         "Niet-geverifieerd e-mail adres."
@@ -5643,6 +5655,18 @@
         "Thomas Anderson"
       ]
     },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "${ contactHref } met ons Verkoopteam."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Selecteer het aantal IP-adressen om op te nemen in uw abonnement. Elk extra IP-adres kost ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Indien u meer dan ${ maxIPs } IP-adres nodig hebt, ",
+        "Indien u meer dan ${ maxIPs } IP-adressen nodig hebt, "
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "neem contact op"
@@ -5743,14 +5767,11 @@
       "Changing organization password": [
         "Organisatiewachtwoord wijzigen"
       ],
-      "Creating new users": [
-        "Aanmaken van nieuwe gebruikers"
+      "Creating or accessing non-private users": [
+        "Creëren van of toegang tot niet-privé gebruikers."
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Als gevolg van het wijzigen van een wachtwoord zijn uw beheerdersbevoegdheden beperkt. De volgende acties zijn niet langer toegestaan:"
-      ],
-      "Reading emails of non-private users": [
-        "Lezen van e-mails van niet-particuliere gebruikers"
       ]
     },
     "Role": {
@@ -5944,7 +5965,7 @@
     },
     "session_recovery:in_progress:title": {
       "Password reset requested": [
-        "Wachtwoord reset aangevraagd"
+        "Wachtwoordherstel aangevraagd"
       ]
     },
     "session_recovery:initiation:action": {
