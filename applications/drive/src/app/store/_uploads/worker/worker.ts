@@ -29,8 +29,9 @@ import { Pauser } from './pauser';
 import startUploadJobs from './upload';
 import { createVerifier } from './verifier';
 
-// eslint-disable-next-line no-restricted-globals
-const uploadWorker = new UploadWorker(self as any, { generateKeys, start, createdBlocks, pause, resume });
+declare const self: Worker;
+
+const uploadWorker = new UploadWorker(self, { generateKeys, start, createdBlocks, pause, resume });
 
 const pauser = new Pauser();
 const buffer = new UploadWorkerBuffer();
