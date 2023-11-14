@@ -8,7 +8,8 @@ import { usePublicFileView } from '../../store/_views/useFileView';
 import { FileBrowserStateProvider } from '../FileBrowser';
 import { useUpsellFloatingModal } from '../modals/UpsellFloatingModal';
 import Breadcrumbs from './Layout/Breadcrumbs';
-import { HeaderSubtitle } from './Layout/HeaderSubtitle';
+import HeaderSecureLabel from './Layout/HeaderSecureLabel';
+import HeaderSize from './Layout/HeaderSize';
 import SharedPageFooter from './Layout/SharedPageFooter';
 import SharedPageHeader from './Layout/SharedPageHeader';
 import SharedPageLayout from './Layout/SharedPageLayout';
@@ -28,15 +29,18 @@ export default function SharedFilePage({ token, link }: Props) {
             <SharedPageLayout
                 FooterComponent={<SharedPageFooter rootItem={link} items={[{ id: link.linkId, ...link }]} />}
             >
-                <SharedPageHeader rootItem={link} items={[{ id: link.linkId, ...link }]}>
-                    <div className="max-w-full">
+                <SharedPageHeader rootItem={link} items={[{ id: link.linkId, ...link }]} className="mt-3 mb-4">
+                    <div className="w-full flex flex-align-items-center">
                         <Breadcrumbs
                             token={token}
                             name={link.name}
                             linkId={link.linkId}
-                            className="shared-folder-header-breadcrumbs pb-1"
+                            className="w-full lg:w-auto shared-folder-header-breadcrumbs pb-1"
                         />
-                        <HeaderSubtitle size={link.size} />
+                        <div className="flex flex-item-fluid-auto lg:flex-row-reverse lg:flex-item-fluid">
+                            <HeaderSecureLabel className="lg:ml-auto" />
+                            {link.size ? <HeaderSize size={link.size} /> : null}
+                        </div>
                     </div>
                 </SharedPageHeader>
                 <FilePreviewContent
@@ -49,7 +53,6 @@ export default function SharedFilePage({ token, link }: Props) {
                     mimeType={link?.mimeType}
                     fileSize={link?.size}
                     imgThumbnailUrl={link?.cachedThumbnailUrl}
-                    previewParams={{ img: { zoomControls: false } }}
                 />
             </SharedPageLayout>
             {renderUpsellFloatingModal}
