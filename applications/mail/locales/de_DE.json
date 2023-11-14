@@ -5764,6 +5764,9 @@
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Der ursprüngliche Absender dieser Nachricht ist nicht mehr gültig. Deine Nachricht wird von deiner Standardadresse ${ defaultEmail } gesendet."
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Der Inhaber dieser E-Mail-Adresse hat die Ende-zu-Ende-Verschlüsselung deaktiviert. Um verschlüsselte E-Mails an diese Adresse senden zu können, muss der Besitzer die Ende-zu-Ende-Verschlüsselung wieder aktivieren."
+      ],
       "The sender has requested a read receipt.": [
         "Der Absender hat eine Lesebestätigung angefordert."
       ],
@@ -7926,6 +7929,11 @@
         "Die Kontakte für die folgenden E-Mail-Adressen wurden gelöscht. Daher wurden die dazugehörigen Verschlüsselungseinstellungen entsprechend aktualisiert:"
       ]
     },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "Die Kontakte der folgenden Adressen haben die Ende-zu-Ende-Verschlüsselung deaktiviert. Dementsprechend wurden die zugehörigen Verschlüsselungseinstellungen aktualisiert."
+      ]
+    },
     "Send email with errors": {
       "Do you want to send the email anyway?": [
         "Möchtest du die E-Mail trotzdem versenden?"
@@ -9309,6 +9317,9 @@
       ],
       "Send with changed preferences?": [
         "Mit geänderten Einstellungen senden?"
+      ],
+      "Send with encryption disabled?": [
+        "Mit deaktivierter Verschlüsselung senden?"
       ],
       "Send without expiration?": [
         "Ohne Ablaufdatum versenden?"
