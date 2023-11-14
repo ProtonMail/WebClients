@@ -128,3 +128,4 @@ export * from './drawer';
 export { default as useDynamicFavicon } from './useDynamicFavicon';
 export * from './useDriveWindowsGASpotlight';
 export { useDragToScroll } from './useDragToScroll';
+export { default as useIsInboxElectronApp } from './useIsInboxElectronApp';
