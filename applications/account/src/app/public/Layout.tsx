@@ -45,9 +45,7 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
                 )}
             >
                 <div className="inline-flex flex-nowrap flex-item-noshrink">
-                    <div className="no-desktop no-tablet flex-item-noshrink">
-                        {onBack && <BackButton onClick={onBack} />}
-                    </div>
+                    <div className="md:hidden flex-item-noshrink">{onBack && <BackButton onClick={onBack} />}</div>
                     {hasDecoration ? (
                         <Href
                             className="flex-item-noshrink relative interactive-pseudo-protrude rounded interactive--no-background"

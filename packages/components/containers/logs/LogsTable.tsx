@@ -148,7 +148,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                                 },
                                 {
                                     label: 'IP',
-                                    className: isAuthLogAdvanced ? '' : 'bg-weak no-mobile no-tablet text-center',
+                                    className: isAuthLogAdvanced ? '' : 'bg-weak hidden lg:table-cell text-center',
                                     colSpan: (() => {
                                         if (!isAuthLogAdvanced) {
                                             if (isProtonSentinelEnabled) {
