@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import type { Api, MaybeNull } from '@proton/pass/types';
 import { pullForkSession, setRefreshCookies as refreshTokens } from '@proton/shared/lib/api/auth';
 import { getUser } from '@proton/shared/lib/api/user';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
 import { getKey } from '@proton/shared/lib/authentication/cryptoHelper';
 import { InvalidForkConsumeError } from '@proton/shared/lib/authentication/error';
@@ -10,17 +11,21 @@ import type { PullForkResponse, RefreshSessionResponse } from '@proton/shared/li
 import { getForkDecryptedBlob } from '@proton/shared/lib/authentication/sessionForkBlob';
 import { type getConsumeForkParameters } from '@proton/shared/lib/authentication/sessionForking';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { MAIL_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
+import { APPS, MAIL_APP_NAME, PASS_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { encodeBase64URL, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import type { User } from '@proton/shared/lib/interfaces';
 
 import type { AuthSession } from './session';
 
-export type RequestForkOptions = { host: string; app: APP_NAMES; type?: FORK_TYPE };
+export type RequestForkOptions = { host?: string; app: APP_NAMES; type?: FORK_TYPE };
 export type RequestForkResult = { url: string; state: string };
 
-export const requestFork = ({ host, type, app }: RequestForkOptions): RequestForkResult => {
+export const requestFork = ({
+    host = getAppHref('/', APPS.PROTONACCOUNT),
+    type,
+    app,
+}: RequestForkOptions): RequestForkResult => {
     const state = encodeBase64URL(uint8ArrayToString(crypto.getRandomValues(new Uint8Array(32))));
 
     const searchParams = new URLSearchParams();
