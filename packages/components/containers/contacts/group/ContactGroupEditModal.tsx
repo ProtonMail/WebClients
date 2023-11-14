@@ -169,7 +169,7 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
             <ModalTwoContent>
                 <Row>
                     <Label htmlFor="contactGroupName">{c('Label for contact group name').t`Name`}</Label>
-                    <Field className="flex-item-fluid">
+                    <Field className="md:flex-item-fluid">
                         <Input
                             id="contactGroupName"
                             placeholder={c('Placeholder for contact group name').t`Name`}
@@ -189,7 +189,7 @@ const ContactGroupEditModal = ({ contactGroupID, selectedContactEmails = [], onD
                         <Label htmlFor="contactGroupEmail">{c('Label').t`Add email address`}</Label>
                         <div>
                             <div className="flex flex-column md:flex-row">
-                                <Field className="flex-item-fluid">
+                                <Field className="md:flex-item-fluid">
                                     <Autocomplete
                                         id="contactGroupEmail"
                                         options={contactsAutocompleteItems}

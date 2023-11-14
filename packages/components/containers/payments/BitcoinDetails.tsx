@@ -32,7 +32,7 @@ const BitcoinDetailsLine = ({
                     className
                 )}
             >
-                <span {...rest}>{value}</span>
+                <span className='text-break' {...rest}>{value}</span>
                 <Copy
                     value={`${value}`}
                     shape="ghost"

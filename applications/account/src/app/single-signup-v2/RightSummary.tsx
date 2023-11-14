@@ -10,9 +10,13 @@ interface Props extends ComponentPropsWithoutRef<'div'> {
     gradient?: boolean;
 }
 
-const RightSummary = ({ children, className, gradient = false, ...rest }: Props) => {
+const RightSummary = ({ children, className, gradient = false, style, ...rest }: Props) => {
     return (
-        <div className={clsx(className, 'right-summary', gradient && 'right-summary--gradient')} {...rest}>
+        <div
+            className={clsx('right-summary w-full md:max-w-custom', className, gradient && 'right-summary--gradient')}
+            style={{ '--md-max-w-custom': '20rem', ...style }}
+            {...rest}
+        >
             {children}
         </div>
     );
