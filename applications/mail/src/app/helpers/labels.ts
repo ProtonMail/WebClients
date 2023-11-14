@@ -181,6 +181,10 @@ export const getCurrentFolders = (
             if ([DRAFTS, ALL_DRAFTS].includes(labelID as MAILBOX_LABEL_IDS)) {
                 return (hasBit(ShowMoved, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS) === labelID;
             }
+            // We don't want to show the All mail folder in the details
+            if ([ALL_MAIL, ALMOST_ALL_MAIL].includes(labelID as MAILBOX_LABEL_IDS)) {
+                return false;
+            }
             return true;
         })
         .filter((labelID) => standardFolders[labelID] || customFolders[labelID])
