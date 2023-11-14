@@ -35,7 +35,7 @@ const OverviewLayout = ({ title, pages, children, limit }: Props) => {
     }, []);
 
     return (
-        <div className="flex flex-item-fluid lg:h-full auto-tablet flex-nowrap">
+        <div className="lg:flex flex-item-fluid lg:h-full flex-nowrap">
             <div ref={mainAreaRef} className="relative flex-nowrap flex-item-fluid bg-weak lg:h-full scroll-if-needed">
                 <SettingsPageTitle>{title}</SettingsPageTitle>
                 <div className="container-section-sticky pt-0">

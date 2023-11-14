@@ -89,7 +89,7 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
                     </div>
                     <p
                         data-testid="layout-footer:version-text"
-                        className="hidden auto-tiny-mobile text-center text-sm m-2 mb-4"
+                        className="block sm:hidden text-center text-sm m-2 mb-4"
                     >{c('Info').jt`Version ${version}`}</p>
                 </>
             ) : (

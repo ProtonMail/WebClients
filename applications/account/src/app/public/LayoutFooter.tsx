@@ -15,29 +15,29 @@ interface FooterProps {
 const LayoutFooter = ({ className, app, version }: FooterProps) => {
     return (
         <footer className={className}>
-            <div className="auto-mobile">
+            <div>
                 {
                     // translator: full sentence 'Proton. Privacy by default.'
                     c('Footer').t`${BRAND_NAME}. Privacy by default.`
                 }
             </div>
             <div className="text-center m-0 pt-4 pb-0 sm:pb-4 flex-item-noshrink">
-                <span className="auto-tiny-mobile">
+                <span className="block sm:inline">
                     <Href key="terms" className="signup-link link-focus" href={getLocaleTermsURL()}>{c('Link')
                         .t`Terms`}</Href>
                 </span>
-                <span className="color-border px-2 no-tiny-mobile" aria-hidden="true">
+                <span className="color-border px-2 hidden sm:inline" aria-hidden="true">
                     |
                 </span>
-                <span className="auto-tiny-mobile">
+                <span className="block sm:inline">
                     <Href key="privacy" className="signup-link link-focus old-link" href={getPrivacyPolicyURL(app)}>{c(
                         'Link'
                     ).t`Privacy policy`}</Href>
                 </span>
-                <span className="color-border px-2 no-tiny-mobile" aria-hidden="true">
+                <span className="color-border px-2 hidden sm:inline" aria-hidden="true">
                     |
                 </span>
-                <span className="no-tiny-mobile">{c('Info').jt`Version ${version}`}</span>
+                <span className="hidden sm:inline">{c('Info').jt`Version ${version}`}</span>
             </div>
         </footer>
     );
