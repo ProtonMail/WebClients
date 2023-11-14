@@ -30,6 +30,7 @@ import {
     useApi,
     useCache,
     useConfig,
+    useIsInboxElectronApp,
     useLoadFeature,
 } from '../../hooks';
 import SessionRecoveryLocalStorageManager from '../account/sessionRecovery/SessionRecoveryLocalStorageManager';
@@ -46,6 +47,7 @@ import { ModalsChildren } from '../modals';
 import ThemeInjector from '../themes/ThemeInjector';
 import { UnleashFlagProvider, useFlagsReady } from '../unleash';
 import DelinquentContainer from './DelinquentContainer';
+import ElectronBlockedContainer from './ElectronBlockedContainer';
 import KeyBackgroundManager from './KeyBackgroundManager';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
 import StorageListener from './StorageListener';
@@ -97,6 +99,7 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
     const appLink = useAppLink();
     const getFeature = useLoadFeature();
     const flagsReadyPromise = useFlagsReady();
+    const { isElectronDisabled } = useIsInboxElectronApp();
 
     useEffect(() => {
         const eventManagerPromise = loadEventID(silentApi, cache).then((eventID) => {
@@ -223,6 +226,10 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
 
     if (hasDelinquentBlockRef.current) {
         return <DelinquentContainer />;
+    }
+
+    if (isElectronDisabled) {
+        return <ElectronBlockedContainer />;
     }
 
     return (
