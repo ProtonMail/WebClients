@@ -1706,7 +1706,7 @@
     },
     "Calendar settings private share description": {
       "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Compartilhe seu calendário com outros usuários do ${ BRAND_NAME }. Ative a colaboração, permitindo que eles adicionem e editem eventos em seu calendário. Você pode modificar as permissões dos usuários a qualquer momento."
+        "Compartilhe seu calendário com outros usuários da ${ BRAND_NAME }. Ative a colaboração, permitindo que eles adicionem e editem eventos em seu calendário. Você pode modificar as permissões dos usuários a qualquer momento."
       ]
     },
     "Calendar settings section title": {
@@ -1714,10 +1714,10 @@
         "Compartilhar calendário"
       ],
       "Share outside ${ BRAND_NAME }": [
-        "Compartilhe fora de ${ BRAND_NAME }"
+        "Compartilhe fora da ${ BRAND_NAME }"
       ],
       "Share with ${ BRAND_NAME } users": [
-        "Compartilhar com usuários do ${ BRAND_NAME }"
+        "Compartilhar com usuários da ${ BRAND_NAME }"
       ],
       "Share with anyone": [
         "Compartilhar com o qualquer pessoa"
@@ -4079,9 +4079,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Você usou todos os usuários do seu plano. Faça o upgrade do seu plano para adicionar um novo usuário."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Você deve ativar as chaves da sua organização. Sem a ativação, você não poderá criar novos usuários, adicionar endereços a usuários existentes ou acessar contas de usuários que não são privadas."
-      ],
       "You must privatize all users before generating new organization keys": [
         "Você deve tornar privados todos os usuários antes de gerar novas chaves de organização"
       ],
@@ -6376,7 +6373,7 @@
         "Digite o seu número de telefone de recuperação e nós enviaremos o seu nome de usuário ou endereço de e-mail."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
-        "Os convites para eventos e as confirmações de presença serão enviados nesta língua."
+        "Os convites para eventos e as confirmações de presença serão enviados nesse idioma."
       ],
       "Expired": [
         "Expirado"
@@ -9864,26 +9861,6 @@
         "Velocidade média de VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Manter minha conta do ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Prosseguir para a revisão"
@@ -9923,6 +9900,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Manter minha conta do ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
       ]
     },
     "new_plans: feature": {
@@ -11729,14 +11726,8 @@
       "Changing organization password": [
         "Alterando a senha da organização"
       ],
-      "Creating new users": [
-        "Criando usuários"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Devido a uma alteração de senha, seus privilégios de administrador da organização foram restritos. As seguintes ações já não são permitidas:"
-      ],
-      "Reading emails of non-private users": [
-        "Ler e-mails de usuários não privados"
       ]
     },
     "Role": {
@@ -12869,11 +12860,6 @@
     "Suffix for price": {
       "per month": [
         "por mês"
-      ]
-    },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        "Detalhes sobre os eventos que não puderam ser exportados"
       ]
     },
     "summer2023: Deal details": {

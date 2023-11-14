@@ -1668,7 +1668,7 @@
     },
     "Calendar invite status label": {
       "Declined": [
-        "Refuzat"
+        "Refuzată"
       ],
       "Invite sent": [
         "Invitație trimisă"
@@ -1767,10 +1767,10 @@
         "Activ"
       ],
       "Default": [
-        "Implicită"
+        "Implicit"
       ],
       "Disabled": [
-        "Dezactivată"
+        "Dezactivat"
       ],
       "Not synced": [
         "Nesincronizat"
@@ -4145,8 +4145,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Ați folosit toate numele de utilizator din plan. Treceți la un plan cu plată superior pentru a adăuga un utilizator nou."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Trebuie să activați cheile organizației. Fără activare nu veți mai putea crea utilizatori noi, adăuga adrese la utilizatorii existenți sau accesa conturile utilizatorilor non-privați."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Trebuie să activați cheile de organizare. Fără activare, nu veți putea crea sau accesa utilizatori non-privați."
       ],
       "You must privatize all users before generating new organization keys": [
         "Trebuie să faceți privați toți utilizatorii înainte de a genera noi chei pentru organizație."
@@ -4427,7 +4427,7 @@
     },
     "Error when exporting event from calendar": {
       "Event @ ${ timeString }": [
-        "Evenimentul din ${ timeString }"
+        "Eveniment @ ${ timeString }"
       ],
       "Event from ${ timeString }, ${ rruleString }": [
         "Evenimentul din ${ timeString }, ${ rruleString }"
@@ -4484,7 +4484,7 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "S-a exportat un eveniment.",
+        "S-a exportat ${ totalProcessed }/${ totalToProcess } eveniment.",
         "S-au exportat ${ totalProcessed }/${ totalToProcess } evenimente.",
         "S-au exportat ${ totalProcessed }/${ totalToProcess } de evenimente."
       ],
@@ -4519,7 +4519,7 @@
         "Resetare parolă - mai multe evenimente nu pot fi decriptate."
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        "Nu închideţi fila înainte de terminarea procesului de exportare."
+        "Nu închideți fila înainte de terminarea procesului de exportare."
       ],
       "Some of your events could not be exported.": [
         "Unele evenimente nu au putut fi exportate."
@@ -5378,7 +5378,7 @@
         "Sărbători"
       ],
       "Other": [
-        "Alta"
+        "Altul"
       ],
       "Subscribed": [
         "Abonat"
@@ -6941,6 +6941,9 @@
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Peste 100 de milioane de oameni și întreprinderi s-au înscris în ${ BRAND_NAME }."
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Paid for a ${ rewardMonths } month plan": [
         "Plătit pentru un plan de o lună.",
         "Plătit pentru un plan de ${ rewardMonths } luni.",
@@ -7504,6 +7507,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Alimentați-vă contul cu credite pe care le puteți folosi pentru a vă cumpăra un plan nou sau pentru a-l reînnoi pe cel existent. Veți obține câte un credit pentru fiecare ${ i18nCurrency } cheltuit."
       ],
+      "Tor": [
+        "Tor"
+      ],
       "Total email addresses": [
         "Total adrese de e-mail"
       ],
@@ -7576,11 +7582,14 @@
       "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Treceți la planul ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } sau ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } pentru a avea acces la ${ PROTON_SENTINEL_NAME }."
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Treceți la ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } sau ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } pentru a obține acces la ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Modernizați contul pentru a adăuga o adresă @pm.me mai scurtă în cont, care este mai ușor de partajat. Înseamnă „${ MAIL_APP_NAME } al meu” sau „Mesaj privat mie”."
       ],
       "Upgrade to unlock": [
-        "Modernizați contul pentru deblocare."
+        "Treceți la alt tip de cont pentru deblocare."
       ],
       "Upload picture": [
         "Încărcare imagine"
@@ -8931,7 +8940,7 @@
         "Nivelul pentru filtrarea blocatorului NetShield"
       ],
       "Link label": [
-        "Etichetă legătură"
+        "Etichetă legătură web"
       ],
       "Mail Server (IMAP)": [
         "Server e-mail (IMAP)"
@@ -9287,6 +9296,9 @@
       "Verify keys with Key Transparency": [
         "Verificare chei cu Key Transparency"
       ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
+      ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Ne pare rău că ne părăsiți. Vă rugăm să ne explicaţi de ce plecaţi pentru a ne ajuta să îmbunătăţim serviciul."
       ],
@@ -9351,7 +9363,7 @@
     },
     "Label for default event notifications": {
       "All-day event notifications": [
-        "Notificări evenimente toată ziua"
+        "Notificări eveniment toată ziua"
       ],
       "Notifications": [
         "Notificări"
@@ -9702,14 +9714,14 @@
     },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Puteți crea până la o legătură per calendar. Pentru a crea o legătură nouă către acest calendar, ștergeți una din lista de mai jos.",
+        "Puteți crea până la ${ MAX_LINKS_PER_CALENDAR } legătură per calendar. Pentru a crea o legătură nouă către acest calendar, ștergeți una din lista de mai jos.",
         "Puteți crea până la ${ MAX_LINKS_PER_CALENDAR } legături per calendar. Pentru a crea o legătură nouă către acest calendar, ștergeți una din lista de mai jos.",
         "Puteți crea până la ${ MAX_LINKS_PER_CALENDAR } de legături per calendar. Pentru a crea o legătură nouă către acest calendar, ștergeți una din lista de mai jos."
       ]
     },
     "Maximum shared calendar members reached alert": {
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "Ați atins numărul maxim de un membru.",
+        "Ați atins numărul maxim de ${ MAX_CALENDAR_MEMBERS } membru.",
         "Ați atins numărul maxim de ${ MAX_CALENDAR_MEMBERS } membri.",
         "Ați atins numărul maxim de ${ MAX_CALENDAR_MEMBERS } de membri."
       ]
@@ -10029,26 +10041,6 @@
         "Viteză VPN medie"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Retrogradare la ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorați toate planurile ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "De la ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Păstrez contul ${ currentPlanName } $"
-      ],
-      "Upgrade": [
-        "Modificare"
-      ],
-      "Upgrade now": [
-        "Modificare"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Continuare revizuire"
@@ -10088,6 +10080,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Trecere la ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Retrogradare la ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorați toate planurile ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "De la ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Păstrez contul ${ currentPlanName } $"
+      ],
+      "Upgrade": [
+        "Modificare"
+      ],
+      "Upgrade now": [
+        "Modificare"
       ]
     },
     "new_plans: feature": {
@@ -11169,6 +11181,9 @@
       "Add to existing group": [
         "Adăugare la grup existent"
       ],
+      "Android": [
+        "Android"
+      ],
       "Ask each time": [
         "Întrebare de fiecare dată"
       ],
@@ -11193,6 +11208,9 @@
       "Free server configs": [
         "Configurări servere gratuite"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
         "Am găsit un alt serviciu care îmi place mai mult"
       ],
@@ -11202,6 +11220,9 @@
       "Ignore group": [
         "Ignorare grup"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "Nu are o caracteristică esențială de care am nevoie"
       ],
@@ -11210,6 +11231,9 @@
       ],
       "Left to Right": [
         "De la stânga la dreapta"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "Motivul meu nu este afișat"
@@ -11256,8 +11280,17 @@
       "Standard server configs": [
         "Configurări standard de server"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "Întreaga organizație"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -11938,14 +11971,11 @@
       "Changing organization password": [
         "Schimbarea parolei organizației"
       ],
-      "Creating new users": [
-        "Crearea utilizatorilor"
+      "Creating or accessing non-private users": [
+        "Creare sau accesare utilizatori non-privați"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Datorită modificării parolei, drepturile de administrare a organizației v-au fost restricționate. Următoarele acțiuni nu mai sunt permise:"
-      ],
-      "Reading emails of non-private users": [
-        "Citirea mesajelor utilizatorilor non-privați"
       ]
     },
     "Role": {
@@ -12902,7 +12932,7 @@
         "Informațiile calendarului s-au actualizat."
       ],
       "Calendar removed": [
-        "Calendar a fost eliminat."
+        "Calendarul a fost eliminat."
       ],
       "Calendar updated": [
         "Calendar actualizat"
@@ -13114,7 +13144,7 @@
     },
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
-        "Detalii despre evenimentele care nu au putut fi exportate"
+        "Detalii despre evenimentele care nu au putut fi exportate."
       ]
     },
     "summer2023: Deal details": {
@@ -13157,7 +13187,7 @@
     },
     "Table header; invitations to share calendar": {
       "Shared with me": [
-        "Partajat cu mine"
+        "Partajate cu mine"
       ]
     },
     "TableHeader": {
@@ -14572,10 +14602,10 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Treceți la ${ passPlusPlanName } pentru a obține aliasuri nelimitate „Hide-my-email”"
+        "Treceți la ${ passPlusPlanName } pentru a obține aliasuri nelimitate „hide-my-email”"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Treceți la ${ planName } pentru a conecta un dispozitiv la VPN.",
+        "Treceți la ${ planName } pentru a conecta ${ n } dispozitiv la VPN.",
         "Treceți la ${ planName } pentru a conecta simultan până la ${ n } dispozitive la VPN.",
         "Treceți la ${ planName } pentru a conecta simultan până la ${ n } de dispozitive la VPN."
       ]
@@ -14726,6 +14756,29 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Acces la servere Secure Core, descărcări rapide P2P/BitTorrent, Tor prin VPN și altele."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Warning": {

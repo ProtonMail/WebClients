@@ -4,20 +4,9 @@
     "language": "da_DK"
   },
   "contexts": {
-    "A label for unlabeled shared calendar links": {
-      "Unlabeled": [
-        "Uden etiket"
-      ]
-    },
     "Access level": {
-      "Full view": [
-        "Fuld visning"
-      ],
       "Full view (see all event details)": [
         "Fuld visning (se alle detaljer om begivenheden)"
-      ],
-      "Limited view": [
-        "Begrænset visning"
       ],
       "Limited view (see only free/busy)": [
         "Begrænset visning (se kun fri/optaget)"
@@ -67,9 +56,6 @@
       ],
       "Add address or domain": [
         "Tilføj adresse eller domæne"
-      ],
-      "Add calendar from URL": [
-        "Tilføj kalender fra URL"
       ],
       "Add condition": [
         "Tilføj betingelse"
@@ -290,14 +276,8 @@
       "Delete": [
         "Slet"
       ],
-      "Delete and confirm": [
-        "Slet og bekræft"
-      ],
       "Delete Gateway": [
         "Slet gateway"
-      ],
-      "Delete link": [
-        "Slet link"
       ],
       "Delete permanently": [
         "Slet permanent"
@@ -356,9 +336,6 @@
       "Download CSV sample": [
         "Hent CSV-eksempel"
       ],
-      "Download ICS": [
-        "Download ICS"
-      ],
       "Download our CSV template": [
         "Download vores CSV-skabelon"
       ],
@@ -382,6 +359,9 @@
       ],
       "Edit Gateway": [
         "Redigér gateway"
+      ],
+      "Edit invoice details": [
+        "Rediger fakturadetaljer"
       ],
       "Edit label": [
         "Redigér etikette"
@@ -532,9 +512,6 @@
       ],
       "Import from Google": [
         "Importér fra Google"
-      ],
-      "Import from ICS": [
-        "Importér fra ICS"
       ],
       "Import from Outlook": [
         "Importér fra Outlook"
@@ -698,17 +675,11 @@
       "Remove bonuses": [
         "Fjern bonusser"
       ],
-      "Remove calendar": [
-        "Fjern kalender"
-      ],
       "Remove gift code": [
         "Fjern gavekode"
       ],
       "Remove this label": [
         "Fjern denne etiket"
-      ],
-      "Remove this member": [
-        "Fjern dette medlem"
       ],
       "Remove this notification": [
         "Fjern denne notifikation"
@@ -776,20 +747,11 @@
       "Revoke all other sessions": [
         "Tilbagekald alle andre sessioner"
       ],
-      "Revoke this invitation": [
-        "Fjern denne invitation"
-      ],
       "Save": [
         "Gem"
       ],
       "Save address": [
         "Gem adresse"
-      ],
-      "Save changes": [
-        "Gem ændringer"
-      ],
-      "Save ICS file": [
-        "Gem ICS-fil"
       ],
       "Save selected": [
         "Gem valgte"
@@ -817,9 +779,6 @@
       ],
       "Select files": [
         "Vælg filer"
-      ],
-      "Select language for invitation emails": [
-        "Vælg sprog for invitationsmails"
       ],
       "Select time zone": [
         "Vælg tidszone"
@@ -890,6 +849,9 @@
       "Sign in with password": [
         "Log ind med en adgangskode"
       ],
+      "Sign in with SSO": [
+        "Log ind med SSO"
+      ],
       "Sign out": [
         "Log ud"
       ],
@@ -898,6 +860,9 @@
       ],
       "Sign out of all accounts": [
         "Log ud alle konti"
+      ],
+      "sign up for free": [
+        "tilmeld dig gratis"
       ],
       "Signing in": [
         "Logger ind"
@@ -1086,16 +1051,6 @@
         "Genaktiver"
       ]
     },
-    "Action; accept invitation to share calendar": {
-      "Accept": [
-        "Acceptér"
-      ]
-    },
-    "Action; decline invitation to share calendar": {
-      "Decline": [
-        "Afslå"
-      ]
-    },
     "Addon": {
       "${ domains } custom domain": [
         "${ domains } brugerdomæne",
@@ -1257,11 +1212,6 @@
         "Ikke-understøttet begivenhed"
       ]
     },
-    "Auto import invitations setting": {
-      "Add to calendar and mark as pending": [
-        "Føj til kalender og markér som afventende"
-      ]
-    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "Jeg har kun begrænset adgang til mine e-mails i øjeblikket."
@@ -1364,6 +1314,12 @@
         "30 dages tilbagebetalingsgaranti"
       ]
     },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } måned",
+        "de første ${ n } måneder"
+      ]
+    },
     "bf2023: Tooltip": {
       "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "Tilgå blokeret indhold og surf privat. Inkluderer 3.000+ servere fordelt op 65+ lande, højeste VPN hastigheder, adgang til verdensomspændende streamingtjenester, malware- og ad-blocker, hurtige BitTorrent-downloads, og meget mere."
@@ -1424,11 +1380,6 @@
       ],
       "Two-year": [
         "To-År"
-      ]
-    },
-    "breadcrumb": {
-      "Calendars": [
-        "Kalendere"
       ]
     },
     "Bridge version load failed": {
@@ -1535,40 +1486,6 @@
         "Tilføj personer eller grupper"
       ]
     },
-    "Calendar edit button tooltip": {
-      "Edit calendar": [
-        "Rediger kalender"
-      ]
-    },
-    "Calendar export section description": {
-      "Download an ICS file with all the events from the selected calendar.": [
-        "Download en ICS-fil med alle begivenhederne fra den valgte kalender."
-      ]
-    },
-    "Calendar import section description": {
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Du kan importere ICS-filer fra en anden kalender til ${ CALENDAR_APP_NAME }. Dette lader dig hurtigt importere en begivenhed eller hele din dagsorden."
-      ]
-    },
-    "Calendar invite status label": {
-      "Declined": [
-        "Afvist"
-      ],
-      "Invite sent": [
-        "Invitation sendt"
-      ]
-    },
-    "Calendar link purpose update success message": {
-      "Label added": [
-        "Etiket tilføjet"
-      ],
-      "Label deleted": [
-        "Etiket slettet"
-      ],
-      "Label edited": [
-        "Etiket rettet"
-      ]
-    },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
         "Kun du kan se etiketten"
@@ -1589,38 +1506,6 @@
         "Du har allerede adgang til denne kalender"
       ]
     },
-    "Calendar settings link share description": {
-      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Opret et link til din kalender og del det med enhver uden for ${ BRAND_NAME }. Kun du kan tilføje eller fjerne begivenheder."
-      ]
-    },
-    "Calendar settings private share description": {
-      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Del din kalender med andre brugere af ${ BRAND_NAME }. Gør det muligt at samarbejde ved at give dem mulighed for at tilføje og redigere begivenheder i din kalender. Du kan ændre brugertilladelserne når som helst."
-      ]
-    },
-    "Calendar settings section title": {
-      "Share calendar": [
-        "Del kalender"
-      ],
-      "Share outside ${ BRAND_NAME }": [
-        "Del uden for ${ BRAND_NAME }"
-      ],
-      "Share with ${ BRAND_NAME } users": [
-        "Del med ${ BRAND_NAME }-brugere"
-      ],
-      "Share with anyone": [
-        "Del med enhver"
-      ]
-    },
-    "Calendar share permission label": {
-      "Edit event details": [
-        "Rediger begivenhedsdetaljer"
-      ],
-      "See all event details": [
-        "Se alle detaljer om begivenheden"
-      ]
-    },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Rediger (visning, oprettelse og redigering af begivenhedsoplysninger)"
@@ -1634,21 +1519,7 @@
         "Kunne ikke hente kalenderinformation for ${ address }"
       ]
     },
-    "Calendar sharing permission change notification": {
-      "Permissions changed for ${ email }": [
-        "Tilladelser ændret for ${ email }"
-      ]
-    },
     "Calendar status": {
-      "Active": [
-        "Aktiv"
-      ],
-      "Default": [
-        "Standard"
-      ],
-      "Disabled": [
-        "Deaktiveret"
-      ],
       "Not synced": [
         "Ikke synkroniseret"
       ],
@@ -1694,11 +1565,6 @@
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "Der er gået mere end 12 timer siden sidste opdatering - ${ CALENDAR_APP_NAME } vil forsøge at opdatere kalenderen om et par timer."
-      ]
-    },
-    "Calendar table settings button tooltip": {
-      "Open settings": [
-        "Åbn Indstillinger"
       ]
     },
     "Calendar view": {
@@ -2921,22 +2787,9 @@
         "Onsdag"
       ]
     },
-    "Default calendar event settings section title": {
-      "Default event settings": [
-        "Standardindstillinger for begivenheder"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Ukendt"
-      ]
-    },
-    "Delete calendar section description": {
-      "All events in this calendar will be deleted.": [
-        "Alle begivenheder i denne kalender vil blive slettet."
-      ],
-      "You will no longer have access to this calendar.": [
-        "Du vil ikke længere have adgang til denne kalender."
       ]
     },
     "Delinquent modal title": {
@@ -3366,9 +3219,6 @@
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Automatiske svar er en betalingsfunktion. Opgradér venligst til en betalt konto for at bruge denne funktion."
       ],
-      "Calendar cannot be found": [
-        "Kalender kunne ikke findes"
-      ],
       "Calendar limit reached": [
         "Kalendergrænse nået"
       ],
@@ -3794,9 +3644,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du har brugt alle brugere i dit abonnement. Opgradér abonnementet for at tilføje en ny bruger."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Du skal aktivere dine organisationsnøgler. Uden aktivering kan du ikke oprette nye brugere, tilføje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
-      ],
       "You must privatize all users before generating new organization keys": [
         "Før generering af nye organisationsnøgler, skal alle brugere gøres private"
       ],
@@ -4062,14 +3909,6 @@
         "Intet billede valgt"
       ]
     },
-    "Error when exporting event from calendar": {
-      "Event @ ${ timeString }": [
-        "Begivenhed @ ${ timeString }"
-      ],
-      "Event from ${ timeString }, ${ rruleString }": [
-        "Begivenhed fra ${ timeString }, ${ rruleString }"
-      ]
-    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Vedhæftet ICS-fil kunne ikke dekrypteres"
@@ -4117,54 +3956,6 @@
     "Event title": {
       "(no title)": [
         "(ingen titel)"
-      ]
-    },
-    "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } begivenhed eksporteret",
-        "${ totalProcessed }/${ totalToProcess } begivenheder eksporteret"
-      ],
-      "Calendar successfully exported. You can now save the ICS file.": [
-        "Kalender eksporteret. Du kan nu gemme ICS-filen."
-      ],
-      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Dekrypterer begivenheder fra din kalender: ${ totalProcessed }/${ totalToProcess }"
-      ],
-      "Due to a password reset, none of your events could be decrypted and exported.": [
-        "På grund af en nulstilling af adgangskoden, kunne nogle af dine begivenheder ikke dekrypteres og eksporteres."
-      ],
-      "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "På grund af en nulstilling af adgangskoden, kunne nogle af dine begivenheder ikke dekrypteres og eksporteres."
-      ],
-      "Error decrypting event": [
-        "Fejl under dekryptering af begivenhed"
-      ],
-      "Learn how to restore encrypted events with old password": [
-        "Lær at gendanne krypterede begivenheder med gammel adgangskode"
-      ],
-      "Loading events": [
-        "Indlæser begivenheder"
-      ],
-      "None of the events could be exported.": [
-        "Ingen af begivenhederne kunne eksporteres."
-      ],
-      "Password reset - event cannot be decrypted": [
-        "Nulstilling af adgangskode - begivenhed kan ikke dekrypteres"
-      ],
-      "Password reset - multiple events cannot be decrypted": [
-        "Nulstilling af adgangskode - flere begivenheder kan ikke dekrypteres"
-      ],
-      "Please don't close the tab before the exporting process is finished.": [
-        "Luk ikke fanen før eksportprocessen er afsluttet."
-      ],
-      "Some of your events could not be exported.": [
-        "Nogle af dine begivenheder kunne ikke eksporteres."
-      ],
-      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Internetforbindelsen blev afbrudt, hvilket fik eksportprocessen til at mislykkes. Prøv venligst igen."
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        "Du kan gemme en ICS-fil med de begivenheder, der blev eksporteret."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4784,12 +4575,6 @@
       ]
     },
     "Header": {
-      "Access": [
-        "Adgang"
-      ],
-      "Action": [
-        "Handling"
-      ],
       "Actions": [
         "Handlinger"
       ],
@@ -4823,9 +4608,6 @@
       "Key type": [
         "Nøgletype"
       ],
-      "Label": [
-        "Etiket"
-      ],
       "Location": [
         "Placering"
       ],
@@ -4840,9 +4622,6 @@
       ],
       "Organization key fingerprint": [
         "Organisationsnøgle-fingeraftryk"
-      ],
-      "Permissions": [
-        "Tilladelser"
       ],
       "Protection": [
         "Beskyttelse"
@@ -4864,9 +4643,6 @@
       ],
       "Time": [
         "Tid"
-      ],
-      "User": [
-        "Bruger"
       ]
     },
     "Header for addresses table": {
@@ -4918,17 +4694,6 @@
       ],
       "Token name": [
         "Tokennavn"
-      ]
-    },
-    "Header; Table with list of calendars arranged by type": {
-      "Holidays": [
-        "Helligdage"
-      ],
-      "Other": [
-        "Andre"
-      ],
-      "Subscribed": [
-        "Abonnerer"
       ]
     },
     "Heading in trial plan": {
@@ -5310,9 +5075,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
       ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } vil blive sat som standardkalender."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } ny kalender",
         "${ calendarsToBeCreatedCount } nye kalendere"
@@ -5327,9 +5089,6 @@
       "${ discountPercentage } forever": [
         "${ discountPercentage } for evigt"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } vil ikke længere gemme tidligere versioner af dine filer."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } er ugyldig"
       ],
@@ -5338,9 +5097,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: forhåndsvisning i lav opløsning"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } vil blive sat som standardkalender."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } ønsker at dele data med dig i ${ PASS_APP_NAME }"
@@ -5487,9 +5243,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruger er en konto, der er knyttet til et enkelt brugernavn, en enkelt postkasse og en enkelt person"
       ],
-      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Få adgang til dine adgangskoder og beskyt dine online-identiteter problemfrit på tværs af dine enheder. Download og installer de relevante ${ PASS_APP_NAME } apps og udvidelser."
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontoadgang begrænset grundet manglende betaling. Kontakt din administrator."
       ],
@@ -5528,9 +5281,6 @@
       ],
       "Add image URL": [
         "Tilføj billed-URL"
-      ],
-      "Add label": [
-        "Tilføj etiket"
       ],
       "Add multiple users to your organization at once.": [
         "Tilføj flere brugere til din organisation på én gang."
@@ -5619,23 +5369,8 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Alle med dette link kan se, om du er fri eller optaget på din kalender. De kan ikke se begivenhedsdetaljer, såsom titel, placering eller deltagere."
       ],
-      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Folk med dette link vil ikke kunne synkronisere eller få fremtidige opdateringer til din kalender. Hvis du vil give dem adgang igen, bliver du nødt til at oprette et nyt link."
-      ],
       "Are you sure you want to delete this address?": [
         "Er du sikker på, at du vil slette denne adresse?"
-      ],
-      "Are you sure you want to delete this calendar?": [
-        "Er du sikker på, at du vil slette denne kalender?"
-      ],
-      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "Er du sikker på, at du vil slette denne kalender? Alle de adresser, du har delt denne kalender med, mister adgang til den."
-      ],
-      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "Er du sikker på, at du vil slette denne kalender? Alle begivenheder i den slettes også."
-      ],
-      "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Er du sikker på at du vil slette denne kalender? Du kan tilføje helligdagskalenderen igen senere."
       ],
       "Are you sure you want to delete this domain?": [
         "Er du sikker på, at du vil slette dette domæne?"
@@ -5855,9 +5590,6 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slet eventuelle andre MX-poster eller sørg for, at ${ MAIL_APP_NAME }'s prioritet har det laveste tal."
       ],
-      "Delete link?": [
-        "Slet link?"
-      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Sletter ${ deletedServerCount } gateway-server",
         "Sletter ${ deletedServerCount } gateway-servere"
@@ -5914,9 +5646,6 @@
       "Edit email address": [
         "Rediger e-mailadresse"
       ],
-      "Edit label": [
-        "Redigér etiket"
-      ],
       "Edit link": [
         "Redigér link"
       ],
@@ -5937,9 +5666,6 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "E-mails med denne etikette vil ikke blive slettet og kan stadig findes i den respektive mappe."
-      ],
-      "Enable this address to join this calendar": [
-        "Aktiver denne adresse for at deltage i denne kalender"
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Aktiver TLS eller SSL på den eksterne service, hvis det er understøttet."
@@ -5994,9 +5720,6 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Indtast dit telefonnummer til gendannelse, og vi vil så sende dig dit brugernavn eller din e-mailadresse."
-      ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        "Invitationer til begivenheder og anmodninger om svar vil blive sendt på dette sprog."
       ],
       "Expired": [
         "Udløbet"
@@ -6063,9 +5786,6 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Hvis det ikke er det rigtige for dig, refunderer vi beløbet."
-      ],
-      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Matcher computerens tidszone ikke den aktuelle tidszonepræference, bliver du bedt om at opdatere den (højst én gang dagligt)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Hvis dette domæne i øjeblikket modtager e-mails, vælg fanen ${ boldAddresses } og tilføj alle aktive e-mailadresser, før du ændrer MX-posten for at sikre en jævn overgang."
@@ -6261,9 +5981,6 @@
       "Link created": [
         "Link oprettet"
       ],
-      "Link deleted": [
-        "Linket slettet"
-      ],
       "Link expired": [
         "Link udløbet"
       ],
@@ -6401,9 +6118,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Ændr kun disse indstillinger, hvis du benytter PGP ifm. ikke-${ BRAND_NAME }-modtagere."
-      ],
-      "Only you can see the labels.": [
-        "Kun du kan se etiketterne."
       ],
       "Open source": [
         "Open source"
@@ -6615,9 +6329,6 @@
       "Remember to share the user's sign in details with them.": [
         "Husk at dele brugerens login-oplysninger med vedkommende."
       ],
-      "Remove one of your calendars to join this one": [
-        "Fjern en af dine kalendere for at deltage i denne"
-      ],
       "Report link expired": [
         "Rapportér link udløbet"
       ],
@@ -6692,12 +6403,6 @@
       ],
       "Setting up your organization": [
         "Konfigurerer din organisation"
-      ],
-      "Settings update failed": [
-        "Opdatering af indstillinger mislykkedes"
-      ],
-      "Settings updated": [
-        "Indstillinger opdateret"
       ],
       "Show original message": [
         "Vis oprindelig besked"
@@ -6795,9 +6500,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Den ${ boldDataLocked } besked vil ikke længere blive vist, men du kan stadig låse dine data op under ${ encryptionAndKeysLink }."
-      ],
-      "The calendar will be removed from your account.": [
-        "Kalenderen vil blive fjernet fra din konto."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "E-mailbekræftelseslinket er udløbet. Log ind for at sende et nyt bekræftelseslink."
@@ -6900,12 +6602,6 @@
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "Dette vil annullere dit nuværende betalte abonnement, og du vil miste alle loyalitetsfordele, du har akkumuleret. Den resterende saldo for dit abonnement vil blive returneret som kontokreditter."
-      ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Dette vil slette alle tidligere versioner af dine filer, som er ældre end ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Dette vil slette alle tidligere versioner af dine filer."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Dette deaktiverer din nuværende gendannelsessætning. Du vil ikke kunne bruge den til at få adgang til din konto eller dekryptere dine data."
@@ -7066,9 +6762,6 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Opgradér for at tilføje en kortere @pm.me-adresse til din konto, som er nemmere at dele. Det står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me\"."
       ],
-      "Upgrade to unlock": [
-        "Opgrader for at låse op"
-      ],
       "Upload picture": [
         "Upload billede"
       ],
@@ -7116,9 +6809,6 @@
       ],
       "Version ${ version }": [
         "Version ${ version }"
-      ],
-      "Version history": [
-        "Versionshistorik"
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
@@ -7329,9 +7019,6 @@
         "Du har ${ availableCount } dedikeret server tilgængelig.",
         "Du har ${ availableCount } dedikerede servere tilgængelig."
       ],
-      "You have no calendars to export.": [
-        "Du har ingen kalendere at eksportere."
-      ],
       "You have no saved payment methods.": [
         "Du har ingen gemte betalingsmetoder."
       ],
@@ -7353,9 +7040,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Du skal have et betalingskort eller en bankkonto tilknyttet din PayPal-konto. Har din PayPal-konto ikke det, så klik på knappen nedenfor."
       ],
-      "You need to have an active personal calendar to import your events from ICS.": [
-        "Du skal have en aktiv personlig kalender for at importere dine begivenheder fra ICS."
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Du har brugt ${ spaceDisplayed }% af din lagerkapacitet. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -7364,9 +7048,6 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Du bør eksportere en sikkerhedskopi af denne nøgle, hvis du har brug for at gendanne data, som den krypterede nøgle har krypteret."
-      ],
-      "You still need to reply to invitations for the host to see your response.": [
-        "Du skal stadig svare på invitationer for at værten kan se dit svar."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Du vil blive omdirigeret til ${ destination } efter login."
@@ -7873,9 +7554,6 @@
     "Knowledge base link label": {
       "Here's how": [
         "Sådan gør du"
-      ],
-      "Learn more": [
-        "Få mere at vide"
       ]
     },
     "Label": {
@@ -7999,9 +7677,6 @@
       ],
       "Auto-delete unwanted messages": [
         "Slet uønskede beskeder automatisk"
-      ],
-      "Auto-detect primary time zone": [
-        "Registrer automatisk primær tidszone"
       ],
       "Auto-reply": [
         "Autosvar"
@@ -8171,9 +7846,6 @@
       "Default language": [
         "Standardsporg"
       ],
-      "Default language (${ defaultLanguage })": [
-        "Standardsprog (${ defaultLanguage })"
-      ],
       "Default PGP scheme": [
         "Standard PGP-metode"
       ],
@@ -8218,9 +7890,6 @@
       ],
       "Don't ask again": [
         "Spørg ikke igen"
-      ],
-      "Don't keep versions": [
-        "Behold ikke versioner"
       ],
       "Duration": [
         "Varighed"
@@ -8390,9 +8059,6 @@
       "Level for NetShield blocker filtering": [
         "Niveau for NetShield-blokkerfiltrering"
       ],
-      "Link label": [
-        "Link etiket"
-      ],
       "Mail Server (IMAP)": [
         "Mailserver (IMAP)"
       ],
@@ -8425,6 +8091,9 @@
       ],
       "Name": [
         "Navn"
+      ],
+      "Name and address": [
+        "Navn og adresse"
       ],
       "Name on card": [
         "Navn på kort"
@@ -8608,12 +8277,6 @@
       ],
       "Send crash reports": [
         "Send rapporter om nedbrud"
-      ],
-      "Send in": [
-        "Send på"
-      ],
-      "Show secondary time zone": [
-        "Vis sekundær tidszone"
       ],
       "Show sender images": [
         "Vis afsenderbilleder"
@@ -8804,19 +8467,6 @@
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Tilføj et domæne du ejer til din ${ MAIL_APP_NAME }-konto."
-      ]
-    },
-    "Label for default event notifications": {
-      "All-day event notifications": [
-        "Notifikationer for heldagsbegivenheder"
-      ],
-      "Notifications": [
-        "Notifikationer"
-      ]
-    },
-    "Label for default event settings": {
-      "Duration": [
-        "Varighed"
       ]
     },
     "Label for domain modal": {
@@ -9128,18 +8778,6 @@
         "Denne funktion er midlertidigt utilgængelig"
       ]
     },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Du kan oprette op til ${ MAX_LINKS_PER_CALENDAR } link pr. kalender. For at oprette et nyt link til denne kalender, skal du slette et fra listen nedenfor.",
-        "Du kan oprette op til ${ MAX_LINKS_PER_CALENDAR } links pr. kalender. For at oprette et nyt link til denne kalender, skal du slette et fra listen nedenfor."
-      ]
-    },
-    "Maximum shared calendar members reached alert": {
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "Du har nået det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlem.",
-        "Du har nået det maksimale antal på ${ MAX_CALENDAR_MEMBERS } medlemmer."
-      ]
-    },
     "Member action": {
       "Change password": [
         "Skift adgangskode"
@@ -9437,26 +9075,6 @@
         "Mellem VPN-hastighed"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Nedgrader til ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Udforsk alle ${ BRAND_NAME }-abonnementer"
-      ],
-      "From ${ price }": [
-        "Fra ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Behold min ${ currentPlanName }-konto"
-      ],
-      "Upgrade": [
-        "Opgradér"
-      ],
-      "Upgrade now": [
-        "Opgradér nu"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Fortsæt for at gennemgå"
@@ -9496,6 +9114,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Opgrader til ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Nedgrader til ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Udforsk alle ${ BRAND_NAME }-abonnementer"
+      ],
+      "From ${ price }": [
+        "Fra ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Behold min ${ currentPlanName }-konto"
+      ],
+      "Upgrade": [
+        "Opgradér"
+      ],
+      "Upgrade now": [
+        "Opgradér nu"
       ]
     },
     "new_plans: feature": {
@@ -10248,18 +9886,9 @@
       ]
     },
     "Notification in share calendar modal": {
-      "Invitation deleted": [
-        "Invitation slettet"
-      ],
-      "Invitation revoked": [
-        "Invitation tilbagekaldt"
-      ],
       "Member added": [
         "Medlem tilføjet",
         "Medlemmer tilføjet"
-      ],
-      "Member deleted": [
-        "Medlem slettet"
       ]
     },
     "Notification in shared calendar modal": {
@@ -10268,11 +9897,6 @@
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "Tilmeldt ${ calendarName } (${ senderEmail })"
-      ]
-    },
-    "Notification success": {
-      "Event defaults updated": [
-        "Standardindstillinger for begivenheder opdateret"
       ]
     },
     "Notification time input": {
@@ -10861,11 +10485,6 @@
         "Nyt kredit/debetkort"
       ]
     },
-    "Personal calendar section description": {
-      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
-        "Opret en kalender, så du kan holde styr på din tidsplan, samtidig med at dine data er sikre."
-      ]
-    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "E-mailadresse ikke fundet blandt bruger-id'er defineret i afsendelsesnøgle (${ keyUserIds })"
@@ -10962,6 +10581,9 @@
       "Text": [
         "Tekst"
       ],
+      "Thomas Anderson": [
+        "Thomas Andersen"
+      ],
       "Type text or keyword": [
         "Indtast tekst eller nøgleord"
       ],
@@ -10981,14 +10603,6 @@
     "Price": {
       "Free": [
         "Gratis"
-      ]
-    },
-    "Primary timezone": {
-      "Primary time zone": [
-        "Primær tidszone"
-      ],
-      "Secondary time zone": [
-        "Sekundær tidszone"
       ]
     },
     "Private Member": {
@@ -11111,36 +10725,6 @@
         "Den nyeste teknik"
       ]
     },
-    "Remove calendar section description": {
-      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "Hvis du afmelder dig, vil du ikke længere have adgang til denne kalender. Alle begivenheder i denne kalender vil blive slettet fra din konto, men de vil forblive i det oprindelige offentlige link."
-      ],
-      "You will no longer have access to this calendar.": [
-        "Du vil ikke længere have adgang til denne kalender."
-      ]
-    },
-    "Remove calendar section text": {
-      "If you leave this calendar, you'll have to ask the owner to join again.": [
-        "Hvis du forlader denne kalender, skal du bede ejeren om at blive medlem igen."
-      ],
-      "This calendar will be removed from your account.": [
-        "Kalenderen vil blive fjernet fra din konto."
-      ]
-    },
-    "Remove calendar section title": {
-      "Delete calendar?": [
-        "Slet kalender?"
-      ],
-      "Leave calendar?": [
-        "Forlad kalender?"
-      ],
-      "Remove calendar": [
-        "Fjern kalender"
-      ],
-      "Unsubscribe?": [
-        "Afmeld?"
-      ]
-    },
     "Restore administrator panel": {
       "Changing organization keys": [
         "Skift af organisationsnøgler"
@@ -11148,14 +10732,8 @@
       "Changing organization password": [
         "Opretning af organisationsadgangskode"
       ],
-      "Creating new users": [
-        "Opretter nye brugere"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Grundet en adgangskodeændring er dine organisations administratorprivilegier blevet begrænset. De følgende handlinger er ikke længere tilladt:"
-      ],
-      "Reading emails of non-private users": [
-        "Læse e-mails af ikke-private brugere"
       ]
     },
     "Role": {
@@ -11540,11 +11118,6 @@
         "Del med ${ BRAND_NAME }-brugere"
       ]
     },
-    "Shared calendar label input placeholder": {
-      "Add label": [
-        "Tilføj etiket"
-      ]
-    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "Delt af ${ ownerName }"
@@ -11848,14 +11421,6 @@
         "Få mere at vide om, hvordan du får et privat kalenderlink."
       ]
     },
-    "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "Tilføj offentlige, eksterne eller delte kalendere ved hjælp af en URL."
-      ],
-      "Add public, external, or shared calendars.": [
-        "Tilføj offentlige, eksterne eller delte kalendere."
-      ]
-    },
     "Subscription": {
       "Billed every 2 years": [
         "Faktureres hvert 2. år"
@@ -12032,9 +11597,6 @@
       "Calendar information updated": [
         "Kalenderoplysninger opdateret"
       ],
-      "Calendar removed": [
-        "Kalender fjernet"
-      ],
       "Calendar updated": [
         "Kalender opdateret"
       ],
@@ -12049,9 +11611,6 @@
       ],
       "Credits added": [
         "Kreditter tilføjet"
-      ],
-      "Default calendar updated": [
-        "Standardkalender opdateret"
       ],
       "Display name updated": [
         "Visningsnavnet opdateret"
@@ -12243,11 +11802,6 @@
         "pr. måned"
       ]
     },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        "Detaljer om begivenheder, der ikke kunne eksporteres"
-      ]
-    },
     "summer2023: Deal details": {
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
         "Premium ${ DRIVE_SHORT_APP_NAME }"
@@ -12284,11 +11838,6 @@
       ],
       "For individuals": [
         "Til enkeltpersoner"
-      ]
-    },
-    "Table header; invitations to share calendar": {
-      "Shared with me": [
-        "Delt med mig"
       ]
     },
     "TableHeader": {
@@ -12723,9 +12272,6 @@
       "Delete account": [
         "Slet konto"
       ],
-      "Delete calendar": [
-        "Slet kalender"
-      ],
       "Delete key permanently?": [
         "Slet nøgle permanent?"
       ],
@@ -12741,9 +12287,6 @@
       ],
       "Delete user?": [
         "Slet bruger?"
-      ],
-      "Delete version history?": [
-        "Slet versionshistorik?"
       ],
       "Disable ${ email }": [
         "Deaktiver ${ email }"
@@ -12783,6 +12326,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Redigér gateway ${ currentName }"
+      ],
+      "Edit invoice details": [
+        "Rediger fakturadetaljer"
       ],
       "Edit servers": [
         "Redigér servere"
@@ -12834,9 +12380,6 @@
       ],
       "Export": [
         "Exportér"
-      ],
-      "Export calendar": [
-        "Eksportér kalender"
       ],
       "Export private key": [
         "Importér privat nøgle"
@@ -13082,9 +12625,6 @@
       ],
       "Refer a friend": [
         "Henvis en ven"
-      ],
-      "Remove calendar": [
-        "Fjern kalender"
       ],
       "Remove user?": [
         "Fjern bruger?"
@@ -13668,20 +13208,6 @@
       ],
       "Your default font will look like following:": [
         "Din standardskrifttype vil se ud som følger:"
-      ]
-    },
-    "Upgrade": {
-      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Opgradér til ${ passPlusPlanName } for at få ubegrænsede hide-my-email-aliasser"
-      ],
-      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Opgradér til ${ planName } for at forbinde op til ${ n } enhed til VPN'en samtidig",
-        "Opgradér til ${ planName } for at forbinde op til ${ n } enheder til VPN'en samtidig"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Opgrader til et betalt abonnement på ${ MAIL_SHORT_APP_NAME } for at dele din kalender."
       ]
     },
     "upsell panel": {
