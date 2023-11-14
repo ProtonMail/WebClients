@@ -1,16 +1,19 @@
+import { FC } from 'react';
+
 import { c } from 'ttag';
 
-import { EmptyViewContainer, PrimaryButton } from '@proton/components';
+import { PrimaryButton } from '@proton/components';
 import noLinksSvg from '@proton/styles/assets/img/illustrations/file-share.svg';
 
+import { DriveEmptyView } from '../../layout/DriveEmptyView';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
 import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 
 type Props = {
-    shareId: string;
+    shareId?: string;
 };
 
-const EmptyShared = ({ shareId }: Props) => {
+const EmptyShared: FC<Props> = ({ shareId }) => {
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
 
@@ -21,27 +24,31 @@ const EmptyShared = ({ shareId }: Props) => {
     };
 
     return (
-        <div role="presentation" className="flex w-full flex flex-item-fluid overflow-auto">
-            <EmptyViewContainer
-                imageProps={{ src: noLinksSvg, title: c('Info').t`Share files with links` }}
-                data-testid="shared-links-empty-placeholder"
-            >
-                <h3 className="text-bold">{c('Info').t`Share files with links`}</h3>
-                <p>{c('Info').t`Create links and share your files with others.`}</p>
-                <div className="flex flex-justify-center">
-                    <PrimaryButton
-                        size="large"
-                        className="text-bold w-custom"
-                        style={{ '--w-custom': '13em' }}
-                        onClick={onShareFile}
-                    >
-                        {c('Action').t`Share file`}
-                    </PrimaryButton>
-                </div>
-            </EmptyViewContainer>
+        <DriveEmptyView
+            image={noLinksSvg}
+            title={
+                // translator: Shown on empty Shared page
+                c('Info').t`Share files with links`
+            }
+            subtitle={
+                // translator: Shown on empty Shared page
+                c('Info').t`Create links and share your files with others.`
+            }
+            dataTestId="shared-links-empty-placeholder"
+        >
+            <div className="flex flex-justify-center">
+                <PrimaryButton
+                    size="large"
+                    className="text-bold w-custom"
+                    style={{ '--w-custom': '13em' }}
+                    onClick={onShareFile}
+                >
+                    {c('Action').t`Share file`}
+                </PrimaryButton>
+            </div>
             {fileSharingModal}
             {linkSharingModal}
-        </div>
+        </DriveEmptyView>
     );
 };
 
