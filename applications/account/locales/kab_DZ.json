@@ -4,20 +4,9 @@
     "language": "kab_DZ"
   },
   "contexts": {
-    "A label for unlabeled shared calendar links": {
-      "Unlabeled": [
-        "War tabzimt"
-      ]
-    },
     "Access level": {
-      "Full view": [
-        "Timeẓri yemmden"
-      ],
       "Full view (see all event details)": [
         "Taskant taččurant (wali meṛṛa talqayt n tedyant)"
-      ],
-      "Limited view": [
-        "Timeẓri s talast"
       ]
     },
     "account": {
@@ -67,9 +56,6 @@
       ],
       "Add address or domain": [
         "Rnu tansa neɣ taɣult"
-      ],
-      "Add calendar from URL": [
-        "Rnu awitay seg URL"
       ],
       "Add condition": [
         "Rnu tawtilt"
@@ -287,9 +273,6 @@
       "Delete Gateway": [
         "Kkes tanezgert"
       ],
-      "Delete link": [
-        "Kkes aseɣwen"
-      ],
       "Delete permanently": [
         "Kkes i lebda"
       ],
@@ -343,9 +326,6 @@
       ],
       "Download CSV sample": [
         "Sader amedya CSV"
-      ],
-      "Download ICS": [
-        "Sader ICS"
       ],
       "Download our CSV template": [
         "Sader taneɣruft-nneɣ CSV"
@@ -515,9 +495,6 @@
       "Import emails": [
         "Kter imaylen"
       ],
-      "Import from ICS": [
-        "Kter seg ICS"
-      ],
       "Import key": [
         "Kter tasarut"
       ],
@@ -671,17 +648,11 @@
       "Remove bonuses": [
         "Kkes ibunusen"
       ],
-      "Remove calendar": [
-        "Kkes awitay"
-      ],
       "Remove gift code": [
         "Kkes tangalt n usefk"
       ],
       "Remove this label": [
         "Kkes tabzimt-a"
-      ],
-      "Remove this member": [
-        "Kkes aɛeggal-a"
       ],
       "Remove this notification": [
         "Kkes talɣut-a"
@@ -749,17 +720,11 @@
       "Revoke all other sessions": [
         "Ḥwi akk tiɣimiyin-nniḍen"
       ],
-      "Revoke this invitation": [
-        "Ḥwi tinnubga-a"
-      ],
       "Save": [
         "Sekles"
       ],
       "Save address": [
         "Sekles tansa"
-      ],
-      "Save ICS file": [
-        "Sekles ifuyla ICS"
       ],
       "Save selected": [
         "Sekles tafrant"
@@ -784,9 +749,6 @@
       ],
       "Select files": [
         "Fren ifuyla"
-      ],
-      "Select language for invitation emails": [
-        "Fren tutlayt i yimaylen n tinnubga"
       ],
       "Select time zone": [
         "Fren izḍi usrid"
@@ -1049,16 +1011,6 @@
         "Rmed tikelt niḍen"
       ]
     },
-    "Action; accept invitation to share calendar": {
-      "Accept": [
-        "Qbel"
-      ]
-    },
-    "Action; decline invitation to share calendar": {
-      "Decline": [
-        "Agi"
-      ]
-    },
     "Addon": {
       "${ domains } custom domain": [
         "${ domains } taɣult tudmawant",
@@ -1244,11 +1196,6 @@
         "Snat n tikkal i useggas"
       ]
     },
-    "breadcrumb": {
-      "Calendars": [
-        "Iwitayen"
-      ]
-    },
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Tifin n lqem aneggaru ur yeddi ara"
@@ -1350,35 +1297,6 @@
         "Rnu imdanen neɣ igrawen"
       ]
     },
-    "Calendar edit button tooltip": {
-      "Edit calendar": [
-        "Ẓreg awitay"
-      ]
-    },
-    "Calendar import section description": {
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Tzemreḍ ad d-tketreḍ ifuyla ICS seg uwitay-nniḍen ɣer ${ CALENDAR_APP_NAME }. Aya ad ak·akem-yeǧǧ ad d-tketreḍ s tɣawla yiwe n uneḍru neɣ akk awitay-inek·inem."
-      ]
-    },
-    "Calendar invite status label": {
-      "Declined": [
-        "Yettwagi"
-      ],
-      "Invite sent": [
-        "Tinubga tettwazen akken iwata"
-      ]
-    },
-    "Calendar link purpose update success message": {
-      "Label added": [
-        "Tettwarna tebzimt"
-      ],
-      "Label deleted": [
-        "Tabzimt tettwakkes"
-      ],
-      "Label edited": [
-        "Tettwaẓreg tebzimt"
-      ]
-    },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
         "Ala kečč·kemm i izemren ad iwali tabzimt"
@@ -1387,33 +1305,6 @@
     "Calendar permissions label": {
       "Permissions": [
         "Tisirag"
-      ]
-    },
-    "Calendar settings link share description": {
-      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Rnu aseɣwen ɣer uwitay-inek·inem syen bḍu-t akked yal win yella beṛṛa n ${ BRAND_NAME }. Ala kečč·kemm i izemren neɣ ad yekkes tidyanin."
-      ]
-    },
-    "Calendar settings section title": {
-      "Share calendar": [
-        "Bḍu awitay"
-      ],
-      "Share outside ${ BRAND_NAME }": [
-        "Bḍu d wid ur nesseqdac ara ${ BRAND_NAME }"
-      ],
-      "Share with ${ BRAND_NAME } users": [
-        "Bḍu akked yiseqdacen n ${ BRAND_NAME }"
-      ],
-      "Share with anyone": [
-        "Bḍu d walbaɛḍ"
-      ]
-    },
-    "Calendar share permission label": {
-      "Edit event details": [
-        "Ẓreg ttfaṣil n tedyant"
-      ],
-      "See all event details": [
-        "Wali meṛṛa talqayt n tedyant"
       ]
     },
     "Calendar sharing access option label": {
@@ -1425,15 +1316,6 @@
       ]
     },
     "Calendar status": {
-      "Active": [
-        "Urmid"
-      ],
-      "Default": [
-        "Amezwar"
-      ],
-      "Disabled": [
-        "Yensa"
-      ],
       "Not synced": [
         "Ur yemtawi ara"
       ],
@@ -1465,11 +1347,6 @@
       ],
       "Unsupported calendar format": [
         "Amasal n uwitay ur nettusefrak ara"
-      ]
-    },
-    "Calendar table settings button tooltip": {
-      "Open settings": [
-        "Ldi iɣewwaren"
       ]
     },
     "Calendar view": {
@@ -2877,9 +2754,6 @@
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Tiririyin tiwurmanin d tamahilt s lexlaṣ. Ttxil-k·m leqqem ɣer umiḍan s lexlaṣ i useqdec n tmahilt-a."
       ],
-      "Calendar cannot be found": [
-        "Awitay ur yezmir ara ad yettwaf"
-      ],
       "Calendar limit reached": [
         "Talast n uwitay tewweḍ"
       ],
@@ -3244,9 +3118,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Tesqedceḍ meṛṛa iseqdsacen yellan di tikci-ik. Beddel tikci akken ad ternuḍ aseqdac amaynut."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Yessefk ad tremdeḍ tisura n tuddsa-ik. S war armad, ur tettizmireḍ ara ad tenruḍ iseqdacen imaynuten, ad ternuḍ tansiwin i yiseqdacen yellan, neɣ ad tkecmeḍ ar umiḍan n iseqdacen ur yellin ara d usligen."
-      ],
       "You must privatize all users before generating new organization keys": [
         "Yessefk ad terreḍ akk iseqdacen d usligen send asirew n tsura timaynutin i tuddsa"
       ],
@@ -3505,14 +3376,6 @@
         "Ulac tugna yettwafernen"
       ]
     },
-    "Error when exporting event from calendar": {
-      "Event @ ${ timeString }": [
-        "Aneḍru @ ${ timeString }"
-      ],
-      "Event from ${ timeString }, ${ rruleString }": [
-        "Aneḍru si ${ timeString }, ${ rruleString }"
-      ]
-    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Afaylu ICS yeddan ulamek ad yettwawgelhen"
@@ -3554,54 +3417,6 @@
     "Event title": {
       "(no title)": [
         "(ulac azwel)"
-      ]
-    },
-    "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } n tedyant yettwasifḍen",
-        "${ totalProcessed }/${ totalToProcess } n tedyanin yettwasifḍen"
-      ],
-      "Calendar successfully exported. You can now save the ICS file.": [
-        "Awitay yettusifeḍ akken iwata. Tzemreḍ tura ad teskelseḍ afaylu ICS."
-      ],
-      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Awgelhen n tedyanin seg uwitay-ik·im: ${ totalProcessed }/${ totalToProcess }"
-      ],
-      "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Imi awal uffir yules awennez, ulac yineḍruyen ara yettuwglehnen neɣ ara i ttusifḍen."
-      ],
-      "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "Imi awal uffir yules awennez, kra n yineḍruyen ahat ulamek ara ttwawglehnen neɣ ara ttusifḍen."
-      ],
-      "Error decrypting event": [
-        "Tuccḍa deg uzmak n tedyant"
-      ],
-      "Learn how to restore encrypted events with old password": [
-        "Issin amek ara d-terreḍ ineḍruyen iwgelhanen s wawal uffir aqbur"
-      ],
-      "Loading events": [
-        "Asali n tedyanin"
-      ],
-      "None of the events could be exported.": [
-        "Ulac yiwet n tedyant ur tezmir ad d-tettwasifeḍ."
-      ],
-      "Password reset - event cannot be decrypted": [
-        "Awal uffir yules awennez - aneḍru ulamek ara ittuwgelhen"
-      ],
-      "Password reset - multiple events cannot be decrypted": [
-        "Awal uffir yules awennez - aṭas n yineḍruyen ulamek ara ttuwglehnen"
-      ],
-      "Please don't close the tab before the exporting process is finished.": [
-        "Ttxil-k·m ur ttamdal ara iccer seld ad yekfu ukala n usifeḍ."
-      ],
-      "Some of your events could not be exported.": [
-        "Kra n tedyanin-ik·im ur zmirent ara ad ttwasifḍent."
-      ],
-      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Tuqqna n internet tegzem, tegla-d s truẓi n ukala n uisfeḍTtxil-k·m εreḍ tikkelt-nniḍen."
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        "Tzemreḍ ad teskelseḍ afaylu ICS n tedyanin i d-yettwasifḍen akken iwata."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4032,12 +3847,6 @@
       ]
     },
     "Header": {
-      "Access": [
-        "Anekcum"
-      ],
-      "Action": [
-        "Tigawt"
-      ],
       "Actions": [
         "Tigawin"
       ],
@@ -4068,9 +3877,6 @@
       "Key type": [
         "Anaw n tsarutt"
       ],
-      "Label": [
-        "Tabzimt"
-      ],
       "Location": [
         "Amḍiq"
       ],
@@ -4085,9 +3891,6 @@
       ],
       "Organization key fingerprint": [
         "Adsil umdin n tsarutt n tuddsa"
-      ],
-      "Permissions": [
-        "Tisirag"
       ],
       "Protection": [
         "Ammesten"
@@ -4109,9 +3912,6 @@
       ],
       "Time": [
         "Akud"
-      ],
-      "User": [
-        "Aseqdac"
       ]
     },
     "Header for addresses table": {
@@ -4163,17 +3963,6 @@
       ],
       "Token name": [
         "Isem n ujuṭu"
-      ]
-    },
-    "Header; Table with list of calendars arranged by type": {
-      "Holidays": [
-        "Imuras"
-      ],
-      "Other": [
-        "Wayeḍ"
-      ],
-      "Subscribed": [
-        "Imulteɣ"
       ]
     },
     "Hint": {
@@ -4488,9 +4277,6 @@
       "${ BRAND_NAME } will try to resume the import as soon as your email provider resets your account’s ${ bandwidthLimitLink }. You don’t need to do anything. If you cancel your import, you won't be able to resume it and you will need to start over.": [
         "${ BRAND_NAME } ad yeεreḍ ad ikemmel aktar akken kan ara iwennez usaǧǧaw n yimayl-ik·im ${ bandwidthLimitLink } amiḍan-ik·im. Ur teḥwaǧeḍ ad tgeḍ kra. Ma yella tesfesxeḍ aktar-inek·inem, ur tezmireḍ ara ad t-tkemmleḍ, ilaq ad as-d-tεawdeḍ seg tazwara."
       ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } ad yettusbadu d awitay amezwer."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } n uwitay amaynut",
         "${ calendarsToBeCreatedCount } n yiwitayen imaynuten"
@@ -4513,9 +4299,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: taskant s ucegger adday"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } ad yettusbadu d awitay amezwer."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } yezmer daɣen ad yettwaseqdec s yiwen kan n wawal uffir ara yemselsin win n tuqqna d win n tnaka urmas. Akken ad tuɣaleḍ ar uskar n yiwen n wawal uffir, sekcem awal uffir i tebɣid ad tesqedceḍ sakin sit ɣef Sekles."
@@ -4657,9 +4440,6 @@
       "Add image URL": [
         "Rnu URL n tugna"
       ],
-      "Add label": [
-        "Rnu tabzimt"
-      ],
       "Additional options": [
         "Tixtiṛiyin-nniḍen"
       ],
@@ -4723,14 +4503,8 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Yal yiwen yesεan aseɣwen-a yezmer ad iwali ma yella d ilelli i telliḍ neɣ tceɣleḍ ɣef uwitay-ik·im. Ur zmiren ad walin talqayt n tedyanin am uzwel, adig neɣ imttekkiyen."
       ],
-      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Yal win yesεan aseɣwen-a ur yettizmir ara ad yemtawi neɣ ad yawi ileqman i d-iteddun n uwitay-inek·inem. Ma yella tebɣiḍ ad asen-tmuddeḍ anekcum i tikkelt-nniḍen, ilaq ad ternuḍ aseɣwen amaynut-nniḍen."
-      ],
       "Are you sure you want to delete this address?": [
         "Tebɣiḍ ad tekkseḍ tansa-agi?"
-      ],
-      "Are you sure you want to delete this calendar?": [
-        "D tidet tebɣiḍ ad tekkseḍ awitay-a?"
       ],
       "Are you sure you want to delete this domain?": [
         "Triḍ ad tekseḍ taɣult-a?"
@@ -4889,9 +4663,6 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Kkes ikalasen nniḍen MX neq ḍmen d akken amḍan n tezwart n ${ MAIL_APP_NAME } d tameẓyant."
       ],
-      "Delete link?": [
-        "Kkes aseɣwen?"
-      ],
       "Discover ProtectBuy logo": [
         "Alugu n Discover ProtectBuy"
       ],
@@ -4934,9 +4705,6 @@
       ],
       "Edit email address": [
         "Ẓreg tansa n yimayl"
-      ],
-      "Edit label": [
-        "Ẓreg tabzimt"
       ],
       "Edit link": [
         "Ẓreg aseɣwen"
@@ -5039,9 +4807,6 @@
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Ma yella ibeddel unedbal-nniḍen awal-agi uffir, ilaq-ak ad as-tessutreḍ awal uffir amaynut n tuddsa."
-      ],
-      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Ma yella izḍi usrid n unagraw ur yemṣada ara d usmenyif n yizḍi usrid amiran, ad d-yettusuter deg-s ad t-tleqqmeḍ (ma aṭas yiwet n tikkelt i wass)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Ma yella taɣult-agi tettaṭtaf-d akka tura imaylen, fren iccer ${ boldAddresses } sakin rnu akk tansiwin imayl iremden uqbel ad tbeddeleḍ akalas MX akken ad yili uɛeddi s telweɣ."
@@ -5195,9 +4960,6 @@
       "Link created": [
         "Yettwarna useɣwen"
       ],
-      "Link deleted": [
-        "Aseɣwen yettwakkes"
-      ],
       "Link type": [
         "Anaw n useɣwen"
       ],
@@ -5302,9 +5064,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Beddel iɣewwaren-agi ma yella tesseqdaceḍ PGP akked iɣerwaḍen ur isseqdac ara ${ BRAND_NAME }."
-      ],
-      "Only you can see the labels.": [
-        "Ala kečč·kemm i izemren ad iwali tibzimin."
       ],
       "Open source": [
         "Aɣbalu yeldin"
@@ -5540,9 +5299,6 @@
       ],
       "Thank you": [
         "Tanemmirt-ik!"
-      ],
-      "The calendar will be removed from your account.": [
-        "Awitay ad yettwakkes seg umiḍan-ik·im."
       ],
       "The following address is available:": [
         "Tansa-a tella:"
@@ -5819,9 +5575,6 @@
         "Yella ${ availableCount } uqeddac yettwamudden.",
         "Llan ${ availableCount } yiqeddacen yettwamudden."
       ],
-      "You have no calendars to export.": [
-        "Ur tesɛiḍ ara ula d yiwen uwitay ara tdifḍeḍ."
-      ],
       "You have no saved payment methods.": [
         "Ur tesεiḍ ara tarrayin n uxelleṣ yettwaskelsen."
       ],
@@ -5836,9 +5589,6 @@
       ],
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Yessfk ad tesεuḍ takarḍa n usmad neɣ amiḍan n tbanka i icudden ɣer umiḍan-ik·im PayPal. Ma amiḍan-ik·im PayPal ur yesεi ara aya, ttxil-k·m sit ɣef tqeffalt ddaw."
-      ],
-      "You need to have an active personal calendar to import your events from ICS.": [
-        "Tesriḍ ad tesɛuḍ awitay urmid udmawen i uktar n yineḍruyen-ik·im seg ICS."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Tewwḍeḍ ɣer ${ spaceDisplayed }% n tallunt-inek .m n weḥraz. ${ freeUpMessage } ${ upgradeLink }"
@@ -6283,11 +6033,6 @@
         "Creḍ-it d aqbur"
       ]
     },
-    "Knowledge base link label": {
-      "Learn more": [
-        "Issin ugar"
-      ]
-    },
     "Label": {
       " and ": [
         " akked "
@@ -6400,9 +6145,6 @@
       ],
       "Auto show remote images": [
         "Sken-d tugna s wudem awurman"
-      ],
-      "Auto-detect primary time zone": [
-        "Suter aleqqem n yiẓdi usrid agejdan"
       ],
       "Auto-reply": [
         "Tiririt tawurmant"
@@ -6764,9 +6506,6 @@
       "Last month only": [
         "Ayyure-nni kan ineggura"
       ],
-      "Link label": [
-        "Tabzimt n useɣwen"
-      ],
       "Mail Server (IMAP)": [
         "Ameẓlu n yimayl (IMAP)"
       ],
@@ -6965,12 +6704,6 @@
       "Send crash reports": [
         "Azen ineqqisen yerrẓen"
       ],
-      "Send in": [
-        "Yettwazen deg"
-      ],
-      "Show secondary time zone": [
-        "Sken izḍi usrid wis sin"
-      ],
       "Show sender images": [
         "Sken tugniwin n umazan"
       ],
@@ -7151,19 +6884,6 @@
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Rnu taɣult i tesɛiḍ ar umiḍan-ik ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Label for default event notifications": {
-      "All-day event notifications": [
-        "Ilɣa n tedyanin ɣef teɣzi n wass"
-      ],
-      "Notifications": [
-        "Ilɣa"
-      ]
-    },
-    "Label for default event settings": {
-      "Duration": [
-        "Tiɣzi"
       ]
     },
     "Label for domain modal": {
@@ -7438,18 +7158,6 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } tebzimt ɣef ${ itemsToImportCount }, syen snes tabzimt",
         "Kter meṛṛa iznan seg ${ selectedItemsToImportCount } tebzimin ɣef ${ itemsToImportCount }, syen snes tabzimt"
-      ]
-    },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Tzemreḍ ad ternuḍ arma d ${ MAX_LINKS_PER_CALENDAR } n useɣwen i yiwen n uwitay. Akken ad ternuḍ aseɣwen amaynut i uwitay-a, kkes yiwen seg tebdert ddaw-a.",
-        "Tzemreḍ ad ternuḍ arma d ${ MAX_LINKS_PER_CALENDAR } n yiseɣwan i yiwen n uwitay. Akken ad ternuḍ aseɣwen amaynut i uwitay-a, kkes yiwen seg tebdert ddaw-a."
-      ]
-    },
-    "Maximum shared calendar members reached alert": {
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "Tessawḍeḍ talasat n ${ MAX_CALENDAR_MEMBERS } uɛeggal.",
-        "Tessawḍeḍ talast n ${ MAX_CALENDAR_MEMBERS } yiɛeggalen."
       ]
     },
     "Member action": {
@@ -7732,26 +7440,6 @@
         "Arured alemmas VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Sader aswir ɣer ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Smiren akk iɣawasen ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Seg ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Eǧǧ amiḍan-iw ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Leqqem"
-      ],
-      "Upgrade now": [
-        "Sali aswir tura"
-      ]
-    },
     "new_plans: action": {
       "Continue with Free": [
         "Kemmel s uɣawas n baṭel"
@@ -7785,6 +7473,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Leqqem ɣer ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Sader aswir ɣer ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Smiren akk iɣawasen ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Seg ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Eǧǧ amiḍan-iw ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Leqqem"
+      ],
+      "Upgrade now": [
+        "Sali aswir tura"
       ]
     },
     "new_plans: feature": {
@@ -8203,23 +7911,9 @@
       ]
     },
     "Notification in share calendar modal": {
-      "Invitation deleted": [
-        "Tinubga yettwakkes"
-      ],
-      "Invitation revoked": [
-        "Tinubga yettwaḥwi"
-      ],
       "Member added": [
         "Aɛeggal yettwarna",
         "Iɛeggalen ttwarnan"
-      ],
-      "Member deleted": [
-        "Aɛeggal yettwakkes"
-      ]
-    },
-    "Notification success": {
-      "Event defaults updated": [
-        "Iɣewwaren imezwer n tedyant ttwaleqqmen"
       ]
     },
     "Notification time input": {
@@ -8779,14 +8473,6 @@
         "Baṭel"
       ]
     },
-    "Primary timezone": {
-      "Primary time zone": [
-        "Izḍi usrig agejdan"
-      ],
-      "Secondary time zone": [
-        "Izḍi usrid wis sin"
-      ]
-    },
     "Private Member": {
       "private": [
         "uslig"
@@ -8886,25 +8572,6 @@
         "Addad n tẓuri"
       ]
     },
-    "Remove calendar section text": {
-      "This calendar will be removed from your account.": [
-        "Awitay-a ad yettwakkes seg umiḍan-ik·im."
-      ]
-    },
-    "Remove calendar section title": {
-      "Delete calendar?": [
-        "Kkes awitay?"
-      ],
-      "Leave calendar?": [
-        "Eǧǧ awitay?"
-      ],
-      "Remove calendar": [
-        "Kkes awitay"
-      ],
-      "Unsubscribe?": [
-        "Ffeɣ seg ujerred?"
-      ]
-    },
     "Restore administrator panel": {
       "Changing organization keys": [
         "Abeddel n tsura n tuddsa"
@@ -8912,14 +8579,8 @@
       "Changing organization password": [
         "Abeddel n wawal uffir n tuddsa"
       ],
-      "Creating new users": [
-        "Timerna n yiseqdacen imaynuten"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Ɣef sebba n ubeddel n wawal uffir, tisirag n unedbal n tuddsa-ik neɣsent. Tigawin-agi ur ttwasirgent ara:"
-      ],
-      "Reading emails of non-private users": [
-        "Taɣuri n yimaylen n yiseqdacen ur nelli ara d usligen"
       ]
     },
     "Role": {
@@ -9027,11 +8688,6 @@
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "Bḍu akked yiseqdacen n ${ BRAND_NAME }"
-      ]
-    },
-    "Shared calendar label input placeholder": {
-      "Add label": [
-        "Rnu tabzimt"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -9383,9 +9039,6 @@
       "Calendar information updated": [
         "Talɣut n uwitay tettwaleqqem"
       ],
-      "Calendar removed": [
-        "Awitay yettwakkes"
-      ],
       "Calendar updated": [
         "Awitay yettwasnifel"
       ],
@@ -9400,9 +9053,6 @@
       ],
       "Credits added": [
         "Ismaden ttwarnan"
-      ],
-      "Default calendar updated": [
-        "Awitay amezwer yettwalqem"
       ],
       "Display name updated": [
         "Isem n uskan yettwalqem"
@@ -9576,11 +9226,6 @@
         "i waggur"
       ]
     },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        "Talqayt ɣef yineḍruyen ur nezmir ara ad ttusifḍen"
-      ]
-    },
     "Tab in domain modal": {
       "Addresses": [
         "Tansiwin"
@@ -9589,11 +9234,6 @@
     "Tab subscription modal": {
       "For businesses": [
         "I umahil"
-      ]
-    },
-    "Table header; invitations to share calendar": {
-      "Shared with me": [
-        "Yebḍa yid-i"
       ]
     },
     "TableHeader": {
@@ -10005,9 +9645,6 @@
       "Delete account": [
         "Kkes amiḍan"
       ],
-      "Delete calendar": [
-        "Kkes awitay"
-      ],
       "Delete key permanently?": [
         "Kkes tasarut i lebda?"
       ],
@@ -10106,9 +9743,6 @@
       ],
       "Export": [
         "Sifeḍ"
-      ],
-      "Export calendar": [
-        "Sifeḍ awitay"
       ],
       "Export private key": [
         "Sifeḍ tasarut tusligt"
@@ -10342,9 +9976,6 @@
       ],
       "Refer a friend": [
         "Snubget-d ameddakkel"
-      ],
-      "Remove calendar": [
-        "Kkes awitay"
       ],
       "Remove user?": [
         "Kkes aseqdac?"

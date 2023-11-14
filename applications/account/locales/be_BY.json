@@ -143,6 +143,9 @@
       "Authenticate": [
         "Аўтэнтыфікацыя"
       ],
+      "Authenticating": [
+        "Аўтэнтыфікацыя"
+      ],
       "Back": [
         "Назад"
       ],
@@ -1718,7 +1721,7 @@
     },
     "Calendar settings private share description": {
       "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Абагуліць ваш каляндар з іншымі карыстальнікамі ${ BRAND_NAME }. Арганізуйце сумесную працу, дазволіўшы ім дадаваць і рэдагаваць падзеі ў сваім календары. Вы можаце змяніць дазволы карыстальніка ў любы момант."
+        "Абагуліце ваш каляндар з іншымі карыстальнікамі ${ BRAND_NAME }. Арганізуйце сумесную працу, дазволіўшы ім дадаваць і рэдагаваць падзеі ў сваім календары. Вы можаце змяніць дазволы карыстальніка ў любы момант."
       ]
     },
     "Calendar settings section title": {
@@ -1774,7 +1777,7 @@
         "Актыўны"
       ],
       "Default": [
-        "Прадвызначана"
+        "Прадвызначаны"
       ],
       "Disabled": [
         "Адключаны"
@@ -4163,8 +4166,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Вы дасягнулі максімальнай колькасці карыстальнікаў на вашым тарыфным плане. Палепшыце свой тарыфны план, каб дадаць новага карыстальніка."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Вы павінны актываваць ключы арганізацыі. Без актывацыі вы не зможаце ствараць новых карыстальнікаў, дадаваць адрасы да існуючых карыстальнікаў або атрымаць доступ да непрыватных уліковых запісаў."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Вы павінны актываваць ключы вашай арганізацыі. Без іх актывацыі ў вас не будзе магчымасці ствараць або атрымліваць доступ да непрыватных карыстальнікаў."
       ],
       "You must privatize all users before generating new organization keys": [
         "Вы павінны прыватызаваць усіх карыстальнікаў перад генерацыяй новых ключоў арганізацыі"
@@ -4506,7 +4509,7 @@
         "${ totalProcessed }/${ totalToProcess } падзея экспартавана",
         "${ totalProcessed }/${ totalToProcess } падзеі экспартаваны",
         "${ totalProcessed }/${ totalToProcess } падзей экспартаваны",
-        "${ totalProcessed }/${ totalToProcess } падзеі экспартаваны"
+        "${ totalProcessed }/${ totalToProcess } падзей экспартаваны"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Каляндар паспяхова экспартаваны. Цяпер вы можаце захаваць файл ICS."
@@ -4539,7 +4542,7 @@
         "Скіданне пароля — некалькі падзей немагчыма расшыфраваць"
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        "Не закрывайце старонку да завяршэння экспартавання."
+        "Не закрывайце ўкладку да завяршэння працэсу экспартавання."
       ],
       "Some of your events could not be exported.": [
         "Некаторыя з вашых падзей немагчыма экспартаваць."
@@ -5811,7 +5814,7 @@
         "Тэхналогія шыфравання ${ BRAND_NAME } азначае, што ніхто не зможа атрымаць доступ да вашага пароля - нават мы."
       ],
       "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } будзе прадвызначаным календаром."
+        "${ calendarName } будзе зададзены ў якасці прадвызначанага календара."
       ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новы каляндар",
@@ -5844,7 +5847,7 @@
         "${ fileName }: папярэдні прагляд у нізкай раздзяляльнасці"
       ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } будзе прызначаны прадвызначаным календаром."
+        "${ firstRemainingCalendarName } будзе зададзены ў якасці прадвызначанага календара."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } хоча абагуліць даныя з вамі ў ${ PASS_APP_NAME }"
@@ -6177,7 +6180,7 @@
         "Любы чалавек з гэтай спасылкай зможа ўбачыць у вашым календары, ці маеце вы вольны час або заняты ўвесь дзень. Аднак, ён не зможа ўбачыць падрабязнасці падзеі, напрыклад, загаловак, размяшчэнне або ўдзельнікаў."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Любы чалавек з гэтай спасылкай не зможа сінхранізаваць або атрымліваць будучыя абнаўленні для вашага календара. Калі вы зноў захочаце даць ім доступ, вам неабходна будзе стварыць новую спасылку."
+        "Любы карыстальнік з гэтай спасылкай не зможа сінхранізаваць або атрымліваць будучыя абнаўленні для вашага календара. Калі вы зноў захочаце даць ім доступ, вам неабходна будзе стварыць новую спасылку."
       ],
       "Are you sure you want to delete this address?": [
         "Вы сапраўды хочаце выдаліць гэты адрас?"
@@ -6480,7 +6483,7 @@
         "Рэдагаваць адрас электроннай пошты"
       ],
       "Edit label": [
-        "Рэдагаванне меткі"
+        "Рэдагаваць метку"
       ],
       "Edit link": [
         "Рэдагаваць спасылку"
@@ -6972,7 +6975,7 @@
         "Змяняйце гэтыя налады толькі ў тым выпадку, калі ўжываеце PGP для перапіскі з атрымальнікамі, якія не карыстаюцца ${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
-        "Толькі вы будзеце бачыць гэтыя меткі."
+        "Толькі вы будзеце бачыць меткі."
       ],
       "Open source": [
         "Адкрыты зыходны код"
@@ -7583,6 +7586,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Папаўняйце свой уліковы запіс крэдытамі, якія вы можаце выкарыстоўваць для падпіскі на новы тарыфны план або падаўжэння свайго бягучага тарыфнага плана. Вы атрымліваеце адзін крэдыт за кожны выдаткаваны ${ i18nCurrency }."
       ],
+      "Tor": [
+        "Tor"
+      ],
       "Total email addresses": [
         "Колькасць адрасоў электроннай пошты"
       ],
@@ -7654,6 +7660,9 @@
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Палепшыце да тарыфных планаў ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } або ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }, каб атрымаць доступ да ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Палепшыце да тарыфнага плана ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } або ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }, каб атрымаць доступ да ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Палепшыце свой тарыфны план, каб дадаць кароткі адрас @pm да свайго ўліковага запісу, якім лёгка дзяліцца з астатнімі. Ён абазначае “${ MAIL_APP_NAME } me” або “Private Message me”."
@@ -10132,26 +10141,6 @@
         "Сярэдняя хуткасць VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Панізіць да ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Ад ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Пакінуць мой уліковы запіс ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Палепшыць"
-      ],
-      "Upgrade now": [
-        "Палепшыць зараз"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Працягнуць агляд"
@@ -10191,6 +10180,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Палепшыць да ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Панізіць да ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Азнаёмцеся з усімі тарыфнымі планамі ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Ад ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Пакінуць мой уліковы запіс ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Палепшыць"
+      ],
+      "Upgrade now": [
+        "Палепшыць зараз"
       ]
     },
     "new_plans: feature": {
@@ -11877,7 +11886,7 @@
     },
     "plan customizer, ips": {
       "please ${ contactHref } our Sales team.": [
-        "звяжыцеся з нашай камандай па продажу ${ contactHref }."
+        "${ contactHref } з нашай камандай па продажам."
       ],
       "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
         "Выберыце колькасць IP для ўключэння ў ваш тарыфны план. Кожны дадатковы IP каштуе ${ price }."
@@ -11891,7 +11900,7 @@
     },
     "plan customizer, users": {
       "contact": [
-        "кантакт"
+        "звяжыцеся"
       ],
       "Select the number of users to include in your plan. Each additional user costs ${ price }.": [
         "Выберыце колькасць карыстальнікаў для ўключэння ў ваш тарыфны план. Кожны дадатковы карыстальнік каштуе ${ price }."
@@ -12073,14 +12082,11 @@
       "Changing organization password": [
         "Змена пароля арганізацыі"
       ],
-      "Creating new users": [
-        "Стварэнне новых карыстальнікаў"
+      "Creating or accessing non-private users": [
+        "Стварэнне або доступ да непрыватных карыстальнікаў"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Па прычыне змены пароля вашы правы адміністратара арганізацыі былі абмежаваны. Цяпер вам забаронены наступныя дзеянні:"
-      ],
-      "Reading emails of non-private users": [
-        "Чытанне лістоў непрыватных карыстальнікаў"
       ]
     },
     "Role": {

@@ -4,20 +4,9 @@
     "language": "ja_JP"
   },
   "contexts": {
-    "A label for unlabeled shared calendar links": {
-      "Unlabeled": [
-        "ラベルなし"
-      ]
-    },
     "Access level": {
-      "Full view": [
-        "フルビュー"
-      ],
       "Full view (see all event details)": [
         "すべて表示 (すべてのイベント詳細)"
-      ],
-      "Limited view": [
-        "限定ビュー"
       ],
       "Limited view (see only free/busy)": [
         "一部だけ表示 (空きまたは忙しい)"
@@ -73,9 +62,6 @@
       ],
       "Add address or domain": [
         "メールアドレスかドメインを追加"
-      ],
-      "Add calendar from URL": [
-        "URL からカレンダーを追加"
       ],
       "Add condition": [
         "条件を追加"
@@ -296,14 +282,8 @@
       "Delete": [
         "削除"
       ],
-      "Delete and confirm": [
-        "削除と確認"
-      ],
       "Delete Gateway": [
         "ゲートウェイ削除"
-      ],
-      "Delete link": [
-        "リンクを削除"
       ],
       "Delete permanently": [
         "完全に削除"
@@ -361,9 +341,6 @@
       ],
       "Download CSV sample": [
         "CSV サンプルをダウンロード"
-      ],
-      "Download ICS": [
-        "ICS をダウンロード"
       ],
       "Download our CSV template": [
         "CSVテンプレートのダウンロード"
@@ -539,9 +516,6 @@
       "Import from Google": [
         "Googleからインポート"
       ],
-      "Import from ICS": [
-        "ICS からインポート"
-      ],
       "Import from Outlook": [
         "Outlook からインポート"
       ],
@@ -701,17 +675,11 @@
       "Remove bonuses": [
         "ボーナスを削除"
       ],
-      "Remove calendar": [
-        "カレンダーを削除"
-      ],
       "Remove gift code": [
         "ギフトコードを削除"
       ],
       "Remove this label": [
         "このラベルを削除"
-      ],
-      "Remove this member": [
-        "メンバーを削除"
       ],
       "Remove this notification": [
         "この通知を削除"
@@ -779,20 +747,11 @@
       "Revoke all other sessions": [
         "ほかのすべてのセッションを取り消す"
       ],
-      "Revoke this invitation": [
-        "招待を取り消し"
-      ],
       "Save": [
         "保存"
       ],
       "Save address": [
         "メールアドレスを保存"
-      ],
-      "Save changes": [
-        "変更を保存"
-      ],
-      "Save ICS file": [
-        "ICS ファイルを保存"
       ],
       "Save selected": [
         "選択済みを保存"
@@ -820,9 +779,6 @@
       ],
       "Select files": [
         "ファイルを選択"
-      ],
-      "Select language for invitation emails": [
-        "招待メールの言語を選択"
       ],
       "Select time zone": [
         "タイムゾーンを選択"
@@ -1091,16 +1047,6 @@
         "再アクティブ化"
       ]
     },
-    "Action; accept invitation to share calendar": {
-      "Accept": [
-        "承認"
-      ]
-    },
-    "Action; decline invitation to share calendar": {
-      "Decline": [
-        "拒否"
-      ]
-    },
     "Addon": {
       "${ domains } custom domains": [
         "${ domains } のカスタム ドメイン"
@@ -1259,11 +1205,6 @@
         "サポートされていない予定です"
       ]
     },
-    "Auto import invitations setting": {
-      "Add to calendar and mark as pending": [
-        "保留中としてカレンダーに追加"
-      ]
-    },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
         "こちらは自動返信メッセージです。現在休暇中のため、大変申し訳ありませんが、お送りいただいたメールをすぐには確認できない可能性があることをご了承ください。"
@@ -1313,11 +1254,6 @@
       ],
       "Two-year": [
         "2年払い"
-      ]
-    },
-    "breadcrumb": {
-      "Calendars": [
-        "カレンダー"
       ]
     },
     "Bridge version load failed": {
@@ -1424,40 +1360,6 @@
         "人またはグループを追加"
       ]
     },
-    "Calendar edit button tooltip": {
-      "Edit calendar": [
-        "カレンダーを編集"
-      ]
-    },
-    "Calendar export section description": {
-      "Download an ICS file with all the events from the selected calendar.": [
-        "選択したカレンダーの全予定を含む ICS ファイルをダウンロードします。"
-      ]
-    },
-    "Calendar import section description": {
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "ICS ファイルを他のカレンダーから ${ CALENDAR_APP_NAME } にインポートすることができます。これにより、予定やエントリー全体を簡単にインポートできます。"
-      ]
-    },
-    "Calendar invite status label": {
-      "Declined": [
-        "拒否済み"
-      ],
-      "Invite sent": [
-        "招待状を送信しました"
-      ]
-    },
-    "Calendar link purpose update success message": {
-      "Label added": [
-        "ラベルが追加されました"
-      ],
-      "Label deleted": [
-        "ラベルが削除されました"
-      ],
-      "Label edited": [
-        "ラベルが編集されました"
-      ]
-    },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
         "ラベルが見えるのはあなただけです。"
@@ -1478,41 +1380,9 @@
         "すでにこのカレンダーにアクセスできます"
       ]
     },
-    "Calendar settings link share description": {
-      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "カレンダーへのリンクを作成し、非 ${ BRAND_NAME } ユーザーに共有します。予定の追加・削除が行えるのはあなただけです。"
-      ]
-    },
-    "Calendar settings private share description": {
-      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "他の ${ BRAND_NAME } ユーザーとカレンダーを共有します。カレンダー内でイベントを追加・編集できるようにして、コラボレーションを有効にしましょう。ユーザーの権限はいつでも変更できます。"
-      ]
-    },
-    "Calendar settings section title": {
-      "Share calendar": [
-        "カレンダーを共有"
-      ],
-      "Share outside ${ BRAND_NAME }": [
-        "${ BRAND_NAME } 外に共有"
-      ],
-      "Share with ${ BRAND_NAME } users": [
-        "${ BRAND_NAME } ユーザーに共有"
-      ],
-      "Share with anyone": [
-        "ほかの人に共有"
-      ]
-    },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "さらに${ remainingItems }を表示"
-      ]
-    },
-    "Calendar share permission label": {
-      "Edit event details": [
-        "予定の詳細を編集"
-      ],
-      "See all event details": [
-        "すべての予定の詳細を表示"
       ]
     },
     "Calendar sharing access option label": {
@@ -1528,21 +1398,7 @@
         "${ address } の連絡先情報の取得に失敗しました"
       ]
     },
-    "Calendar sharing permission change notification": {
-      "Permissions changed for ${ email }": [
-        "${ email } の権限を変更しました"
-      ]
-    },
     "Calendar status": {
-      "Active": [
-        "有効"
-      ],
-      "Default": [
-        "既定"
-      ],
-      "Disabled": [
-        "無効"
-      ],
       "Not synced": [
         "未同期"
       ],
@@ -1588,11 +1444,6 @@
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "前回の更新から12時間以上経過 — ${ CALENDAR_APP_NAME } は数時間後にカレンダーの更新を試行します。"
-      ]
-    },
-    "Calendar table settings button tooltip": {
-      "Open settings": [
-        "設定を開く"
       ]
     },
     "Calendar view": {
@@ -2812,22 +2663,9 @@
         "水曜日"
       ]
     },
-    "Default calendar event settings section title": {
-      "Default event settings": [
-        "デフォルトの予定設定"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "不明"
-      ]
-    },
-    "Delete calendar section description": {
-      "All events in this calendar will be deleted.": [
-        "このカレンダーの全予定が削除されます。"
-      ],
-      "You will no longer have access to this calendar.": [
-        "このカレンダーにはアクセスできなくなります。"
       ]
     },
     "Delinquent modal title": {
@@ -3445,9 +3283,6 @@
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "自動返信は有料機能です。この機能を使用するには有料アカウントにアップグレードしてください。"
       ],
-      "Calendar cannot be found": [
-        "カレンダーが見つかりませんでした"
-      ],
       "Calendar limit reached": [
         "カレンダーの制限に達しました"
       ],
@@ -3868,9 +3703,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "現在のプランでのユーザー数の上限に達しました。新規ユーザーを追加するにはアップグレードしてください。"
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "組織用の鍵を有効にする必要があります。 有効にしない限り、新規ユーザーの作成、既存ユーザーへのアドレスの追加並びに、ユーザーアカウントへのアクセスはできません。"
-      ],
       "You must privatize all users before generating new organization keys": [
         "新しい組織キーを生成する前に、すべてのユーザーをプライベート化する必要があります"
       ],
@@ -4146,14 +3978,6 @@
         "画像が選択されていません"
       ]
     },
-    "Error when exporting event from calendar": {
-      "Event @ ${ timeString }": [
-        "予定 @ ${ timeString }"
-      ],
-      "Event from ${ timeString }, ${ rruleString }": [
-        "${ timeString }, ${ rruleString } からの予定"
-      ]
-    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "添付された ICS ファイルを復号できません"
@@ -4201,53 +4025,6 @@
     "Event title": {
       "(no title)": [
         "(タイトルなし)"
-      ]
-    },
-    "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } events exported": [
-        "${ totalProcessed }/${ totalToProcess } 件の予定がエクスポートされました"
-      ],
-      "Calendar successfully exported. You can now save the ICS file.": [
-        "カレンダーは正常にエクスポートされました。ICS ファイルを保存することができます。"
-      ],
-      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "カレンダーから予定を復号中: ${ totalProcessed }/${ totalToProcess }"
-      ],
-      "Due to a password reset, none of your events could be decrypted and exported.": [
-        "パスワードをリセットしたため、どのイベントも復号およびエクスポートができませんでした。"
-      ],
-      "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "パスワードをリセットしたため、いくつかの予定は復号およびエクスポートができませんでした。"
-      ],
-      "Error decrypting event": [
-        "予定の復号時にエラーが発生しました"
-      ],
-      "Learn how to restore encrypted events with old password": [
-        "古いパスワードで暗号化された予定の復元方法についての詳細"
-      ],
-      "Loading events": [
-        "予定を読み込み中"
-      ],
-      "None of the events could be exported.": [
-        "どのイベントもエクスポートできませんでした。"
-      ],
-      "Password reset - event cannot be decrypted": [
-        "パスワードリセット - 予定を復号できません"
-      ],
-      "Password reset - multiple events cannot be decrypted": [
-        "パスワードリセット - 複数の予定は復号化できません"
-      ],
-      "Please don't close the tab before the exporting process is finished.": [
-        "出力が完了するまでタブを閉じないでください。"
-      ],
-      "Some of your events could not be exported.": [
-        "いつくかの予定はエクスポートされませんでした。"
-      ],
-      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "インターネット接続が切断されたため、エクスポートに失敗しました。再度お試しください。"
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        "正常にエクスポートされた予定の ICS ファイルを保存することができます。"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4938,12 +4715,6 @@
       ]
     },
     "Header": {
-      "Access": [
-        "アドレス"
-      ],
-      "Action": [
-        "アクション"
-      ],
       "Actions": [
         "操作"
       ],
@@ -4977,9 +4748,6 @@
       "Key type": [
         "鍵の種類"
       ],
-      "Label": [
-        "ラベル"
-      ],
       "Location": [
         "場所"
       ],
@@ -4994,9 +4762,6 @@
       ],
       "Organization key fingerprint": [
         "組織用の鍵のフィンガープリント"
-      ],
-      "Permissions": [
-        "権限"
       ],
       "Protection": [
         "保護"
@@ -5018,9 +4783,6 @@
       ],
       "Time": [
         "日時"
-      ],
-      "User": [
-        "ユーザー"
       ]
     },
     "Header for addresses table": {
@@ -5072,17 +4834,6 @@
       ],
       "Token name": [
         "トークン名"
-      ]
-    },
-    "Header; Table with list of calendars arranged by type": {
-      "Holidays": [
-        "休日"
-      ],
-      "Other": [
-        "その他"
-      ],
-      "Subscribed": [
-        "購読"
       ]
     },
     "Heading in trial plan": {
@@ -5452,9 +5203,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } の暗号化技術は私たちでさえもパスワードにアクセスできないことを意味しています。"
       ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } は既定のカレンダーとして設定されます。"
-      ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } 個の新しいカレンダー"
       ],
@@ -5467,9 +5215,6 @@
       "${ discountPercentage } forever": [
         "永久に ${ discountPercentage } 割引"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME }は以前のファイルバージョンを保存しなくなります。"
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } は無効です"
       ],
@@ -5478,9 +5223,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: 低画質のプレビュー"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } は既定のカレンダーとして設定されます。"
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } はログイン用とメールボックス用のパスワードを 1 つに統一できます。1 つのパスワードにするには、パスワードを入力してから保存をクリックしてください。"
@@ -5605,9 +5347,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "ユーザーとは、1つのユーザー名、メールボックス、人物に関連するアカウントのことです"
       ],
-      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "デバイス間でシームレスにパスワードにアクセスし、オンラインでのあなたを守ります。適切な ${ PASS_APP_NAME } アプリと拡張機能をダウンロードしてインストールします。"
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "未払いの請求があるためアクセスが制限されています。管理者に問い合わせてください。"
       ],
@@ -5646,9 +5385,6 @@
       ],
       "Add image URL": [
         "追加する画像のURL"
-      ],
-      "Add label": [
-        "ラベルを追加"
       ],
       "Add multiple users to your organization at once.": [
         "複数のユーザーを一度に組織に追加します。"
@@ -5731,23 +5467,8 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "このリンクを持っている人は誰でもカレンダー上であなたの予定の有無を確認できます。タイトル、場所、参加者などの予定詳細は表示されません。"
       ],
-      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "今後、このリンクはあなたのカレンダーとの同期や更新の取得に使用できなくなります。再度アクセスを許可したい場合は、新しいリンクを作成する必要があります。"
-      ],
       "Are you sure you want to delete this address?": [
         "本当にこのアドレスを削除してよいですか。"
-      ],
-      "Are you sure you want to delete this calendar?": [
-        "このカレンダーを削除してよろしいですか?"
-      ],
-      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "このカレンダーを削除してもよろしいですか? このカレンダーを共有していたすべてのアドレスは、アクセスできなくなります。"
-      ],
-      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "このカレンダーを削除してよろしいですか? カレンダーにあるすべての予定も削除されます。"
-      ],
-      "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "本当にこのカレンダーを削除してよろしいでしょうか？後からでも祝日カレンダーを元に戻すことができます。"
       ],
       "Are you sure you want to delete this domain?": [
         "このドメインを削除しますか?"
@@ -5959,9 +5680,6 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "他の MX レコードを削除するか、他と比較して ${ MAIL_APP_NAME } の優先度が最も小さい値であることをご確認ください。"
       ],
-      "Delete link?": [
-        "リンクを削除しますか?"
-      ],
       "Deleting ${ deletedServerCount } gateway servers": [
         "${ deletedServerCount } ゲートウェイ サーバーを削除しています"
       ],
@@ -6016,9 +5734,6 @@
       "Edit email address": [
         "メールアドレスを編集"
       ],
-      "Edit label": [
-        "ラベルを編集"
-      ],
       "Edit link": [
         "リンクを編集"
       ],
@@ -6039,9 +5754,6 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "このラベルが付いたメールは削除されず、各フォルダで見つけることができます。"
-      ],
-      "Enable this address to join this calendar": [
-        "このアドレスがこのカレンダーに参加できるようにする"
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "外部サービスが TLS または SSL に対応している場合は有効にします。"
@@ -6096,9 +5808,6 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "回復用電話番号を入力してください。ユーザー名またはメールアドレスを送信します。"
-      ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        "予定の招待と RSVP (お返事お願いします) をこの言語で送信します。"
       ],
       "Expired": [
         "有効期限切れ"
@@ -6162,9 +5871,6 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "もしあなたに合わなければ、返金いたします。"
-      ],
-      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "システムのタイムゾーンが現在のタイムゾーンの設定と一致しない場合、更新するよう求められます (最大1日1回)。"
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "このドメインで現在メールを受信している場合は、MX レコード変更前に${ boldAddresses }タブで使用しているすべてのメールアドレスを追加しておくと、スムーズに移行できます。"
@@ -6355,9 +6061,6 @@
       "Link created": [
         "リンクが作成されました"
       ],
-      "Link deleted": [
-        "リンクが削除されました"
-      ],
       "Link expired": [
         "リンクの期限が切れました"
       ],
@@ -6495,9 +6198,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
-      ],
-      "Only you can see the labels.": [
-        "ラベルが見えるのはあなただけです。"
       ],
       "Open source": [
         "オープンソース"
@@ -6697,9 +6397,6 @@
       "Remember to share the user's sign in details with them.": [
         "ユーザーのサインイン情報を共有することを忘れないでください。"
       ],
-      "Remove one of your calendars to join this one": [
-        "このカレンダーに参加するには、いずれかのカレンダーを削除してください"
-      ],
       "Report link expired": [
         "リンク切れを報告する"
       ],
@@ -6771,12 +6468,6 @@
       ],
       "Setting up your organization": [
         "組織の設定"
-      ],
-      "Settings update failed": [
-        "設定の更新が失敗しました"
-      ],
-      "Settings updated": [
-        "設定が更新されました"
       ],
       "Show original message": [
         "元のメッセージを表示"
@@ -6861,9 +6552,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked }メッセージは表示されませんが、${ encryptionAndKeysLink }を利用してロックを解除できます。"
-      ],
-      "The calendar will be removed from your account.": [
-        "このカレンダーはアカウントから削除されます。"
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "電子メール検証リンクの有効期限が切れています。 サインインして確認リンクを再送信してください。"
@@ -6957,12 +6645,6 @@
       ],
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "この操作により、現在の有料サブスクリプションがキャンセルされ、これまでに蓄積されたロイヤルティ特典が失われます。ご利用料金の残高分はアカウントクレジットとして返金されます。"
-      ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "これにより、${ rententionLabel }より古い以前のファイルバージョンがすべて削除されます。"
-      ],
-      "This will delete all previous versions of your files.": [
-        "ファイルの以前のバージョンは全て削除されます。"
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "現在の回復用フレーズは無効になります。この回復用フレーズでアカウントにアクセスしたりデータを復元することはできなくなります。"
@@ -7123,9 +6805,6 @@
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "アップグレードして、アカウントにより短く共有しやすい @pm.me アドレスを追加します。これは \"私に ${ MAIL_APP_NAME } で\" と \"プライベートメッセージを私に\" という意味です。"
       ],
-      "Upgrade to unlock": [
-        "アップグレードしてロックを解除"
-      ],
       "Upload picture": [
         "写真をアップロード"
       ],
@@ -7173,9 +6852,6 @@
       ],
       "Version ${ version }": [
         "バージョン ${ version }"
-      ],
-      "Version history": [
-        "バージョン履歴"
       ],
       "Visa Secure logo": [
         "Visa Secure ロゴ"
@@ -7375,9 +7051,6 @@
       "You have ${ availableCount } dedicated servers available.": [
         "${ availableCount } 個の専用サーバーが利用可能です。"
       ],
-      "You have no calendars to export.": [
-        "エクスポートするカレンダーがありません。"
-      ],
       "You have no saved payment methods.": [
         "支払い方法が登録されていません。"
       ],
@@ -7399,9 +7072,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "PayPal アカウントにクレジットカードまたは銀行口座を登録しておく必要があります。PayPal アカウントをお持ちでない場合はこちらのボタンをクリックしてください。"
       ],
-      "You need to have an active personal calendar to import your events from ICS.": [
-        "予定を ICS からインポートするには、アクティブなパーソナルカレンダーが必要です。"
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "ストレージ容量の ${ spaceDisplayed }% に達しました。${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -7410,9 +7080,6 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "暗号化されたデータを復元する必要が生じたときのために、この鍵のバックアップをエクスポートしておくことを推奨します。"
-      ],
-      "You still need to reply to invitations for the host to see your response.": [
-        "主催者に招待への応答を返信する必要があります。"
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "サインイン後、${ destination } にリダイレクトされます。"
@@ -7909,9 +7576,6 @@
     "Knowledge base link label": {
       "Here's how": [
         "詳細"
-      ],
-      "Learn more": [
-        "詳細"
       ]
     },
     "Label": {
@@ -8031,9 +7695,6 @@
       ],
       "Auto-delete unwanted messages": [
         "不要なメッセージを自動削除"
-      ],
-      "Auto-detect primary time zone": [
-        "2 つ目のタイムゾーンを自動検出"
       ],
       "Auto-reply": [
         "自動返信"
@@ -8203,9 +7864,6 @@
       "Default language": [
         "デフォルトの言語"
       ],
-      "Default language (${ defaultLanguage })": [
-        "既定の言語 (${ defaultLanguage })"
-      ],
       "Default PGP scheme": [
         "標準 PGP 方式"
       ],
@@ -8250,9 +7908,6 @@
       ],
       "Don't ask again": [
         "今後表示しない"
-      ],
-      "Don't keep versions": [
-        "バージョンを保持しない"
       ],
       "Duration": [
         "期間"
@@ -8421,9 +8076,6 @@
       ],
       "Level for NetShield blocker filtering": [
         "NetShield ブロッカーのフィルタリング強度"
-      ],
-      "Link label": [
-        "表示するテキスト"
       ],
       "Mail Server (IMAP)": [
         "メールサーバー (IMAP)"
@@ -8641,12 +8293,6 @@
       "Send crash reports": [
         "クラッシュレポートを送信"
       ],
-      "Send in": [
-        "送信言語"
-      ],
-      "Show secondary time zone": [
-        "2 つ目のタイムゾーンを表示"
-      ],
       "Show sender images": [
         "差出人画像を表示"
       ],
@@ -8836,19 +8482,6 @@
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "あなたが所有しているドメインを ${ MAIL_APP_NAME } アカウントに追加します。"
-      ]
-    },
-    "Label for default event notifications": {
-      "All-day event notifications": [
-        "終日の予定の通知"
-      ],
-      "Notifications": [
-        "通知"
-      ]
-    },
-    "Label for default event settings": {
-      "Duration": [
-        "期間"
       ]
     },
     "Label for domain modal": {
@@ -9157,16 +8790,6 @@
         "この機能は一時的に利用できません。"
       ]
     },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "共有リンクは一つのカレンダーごとに${ MAX_LINKS_PER_CALENDAR }個まで作成できます。新しいリンクを作成するには、以下の中から一つ削除してください。"
-      ]
-    },
-    "Maximum shared calendar members reached alert": {
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } members.": [
-        "カレンダーの最大人数（${ MAX_CALENDAR_MEMBERS }人）に達しました。"
-      ]
-    },
     "Member action": {
       "Change password": [
         "パスワードを変更する"
@@ -9473,26 +9096,6 @@
         "中程度の VPN 速度"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "${ currentPlanName } アカウントを継続"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "見直しを行う"
@@ -9532,6 +9135,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } へアップグレード"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "${ currentPlanName } アカウントを継続"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -10362,15 +9985,6 @@
       ]
     },
     "Notification in share calendar modal": {
-      "Invitation deleted": [
-        "招待が削除されました"
-      ],
-      "Invitation revoked": [
-        "招待が取り消されました"
-      ],
-      "Member deleted": [
-        "メンバーが削除されました"
-      ],
       "Members added": [
         "メンバーを追加しました"
       ]
@@ -10381,11 +9995,6 @@
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "${ calendarName }に参加しました(${ senderEmail })"
-      ]
-    },
-    "Notification success": {
-      "Event defaults updated": [
-        "予定のデフォルトが更新されました"
       ]
     },
     "Notification time input": {
@@ -10961,11 +10570,6 @@
         "新しいクレジットカード/デビットカード"
       ]
     },
-    "Personal calendar section description": {
-      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
-        "カレンダーを作成し、データの安全性を確保しつつ、スケジュールを管理できます。"
-      ]
-    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "送信鍵（${ keyUserIds }）に定義されているユーザーIDの中にメールアドレスは見つかりませんでした。"
@@ -11083,14 +10687,6 @@
     "Price": {
       "Free": [
         "無料"
-      ]
-    },
-    "Primary timezone": {
-      "Primary time zone": [
-        "基本のタイムゾーン"
-      ],
-      "Secondary time zone": [
-        "2 つ目のタイムゾーン"
       ]
     },
     "Private Member": {
@@ -11213,36 +10809,6 @@
         "最新の暗号形式"
       ]
     },
-    "Remove calendar section description": {
-      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "登録解除を行うと、このカレンダーにアクセスできなくなります。このカレンダーのすべての予定はアカウントから削除されますが、元の公開リンクはそのまま残ります。"
-      ],
-      "You will no longer have access to this calendar.": [
-        "このカレンダーにはアクセスできなくなります。"
-      ]
-    },
-    "Remove calendar section text": {
-      "If you leave this calendar, you'll have to ask the owner to join again.": [
-        "このカレンダーを退出する場合は、オーナーに再度参加を依頼する必要があります。"
-      ],
-      "This calendar will be removed from your account.": [
-        "このカレンダーはアカウントから削除されます。"
-      ]
-    },
-    "Remove calendar section title": {
-      "Delete calendar?": [
-        "カレンダーを削除しますか?"
-      ],
-      "Leave calendar?": [
-        "カレンダーから退出しますか？"
-      ],
-      "Remove calendar": [
-        "カレンダーを削除"
-      ],
-      "Unsubscribe?": [
-        "登録解除しますか?"
-      ]
-    },
     "Restore administrator panel": {
       "Changing organization keys": [
         "組織の鍵を変更しています"
@@ -11250,14 +10816,8 @@
       "Changing organization password": [
         "組織のパスワードを変更しています"
       ],
-      "Creating new users": [
-        "新しいユーザーを作成しています"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "パスワードの変更のために、組織の管理権限が制限されています。次の操作は許可されなくなりました。"
-      ],
-      "Reading emails of non-private users": [
-        "非公開ユーザーの電子メールの閲覧"
       ]
     },
     "Role": {
@@ -11668,11 +11228,6 @@
         "${ BRAND_NAME } ユーザーに共有"
       ]
     },
-    "Shared calendar label input placeholder": {
-      "Add label": [
-        "ラベルを追加"
-      ]
-    },
     "Shared calendar; Info about calendar owner": {
       "Shared by ${ ownerName }": [
         "${ ownerName } による共有"
@@ -11970,14 +11525,6 @@
         "プライベートなカレンダーリンクの取得方法の詳細"
       ]
     },
-    "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "URL を使用して公開、外部、共有カレンダーを追加できます。"
-      ],
-      "Add public, external, or shared calendars.": [
-        "公開、外部、共有カレンダーを追加できます。"
-      ]
-    },
     "Subscription": {
       "Billed every 2 years": [
         "2年ごとに請求"
@@ -12143,9 +11690,6 @@
       "Calendar information updated": [
         "カレンダーの情報が更新されました"
       ],
-      "Calendar removed": [
-        "カレンダーが削除されました"
-      ],
       "Calendar updated": [
         "カレンダーが更新されました。"
       ],
@@ -12160,9 +11704,6 @@
       ],
       "Credits added": [
         "クレジットが追加されました"
-      ],
-      "Default calendar updated": [
-        "既定のカレンダーが更新されました"
       ],
       "Display name updated": [
         "表示名が更新されました"
@@ -12354,11 +11895,6 @@
         "毎月"
       ]
     },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        "エクスポートできなかったイベントについての詳細"
-      ]
-    },
     "summer2023: Deal details": {
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } プレミアム"
@@ -12395,11 +11931,6 @@
       ],
       "For individuals": [
         "個人向け"
-      ]
-    },
-    "Table header; invitations to share calendar": {
-      "Shared with me": [
-        "私と共有"
       ]
     },
     "TableHeader": {
@@ -12827,9 +12358,6 @@
       "Delete account": [
         "アカウントの削除"
       ],
-      "Delete calendar": [
-        "カレンダーの削除"
-      ],
       "Delete key permanently?": [
         "鍵を完全に削除しますか？"
       ],
@@ -12844,9 +12372,6 @@
       ],
       "Delete user?": [
         "ユーザーを削除しますか？"
-      ],
-      "Delete version history?": [
-        "バージョン履歴を削除しますか？"
       ],
       "Disable ${ email }": [
         "${ email } を無効化"
@@ -12937,9 +12462,6 @@
       ],
       "Export": [
         "エクスポート"
-      ],
-      "Export calendar": [
-        "カレンダーをエクスポート"
       ],
       "Export private key": [
         "秘密鍵のエクスポート"
@@ -13183,9 +12705,6 @@
       ],
       "Refer a friend": [
         "友達を招待"
-      ],
-      "Remove calendar": [
-        "カレンダーを削除"
       ],
       "Remove user?": [
         "ユーザーを削除しますか？"
@@ -13764,19 +13283,6 @@
       ],
       "Your default font will look like following:": [
         "既定のフォントはこのようになります:"
-      ]
-    },
-    "Upgrade": {
-      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "${ passPlusPlanName } にアップグレードすると、無制限の Hide-my-email エイリアスを取得できます"
-      ],
-      "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
-        "${ planName } にアップグレードして同時に ${ n } のデバイスを VPN に接続します"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "カレンダーを共有するには、${ MAIL_SHORT_APP_NAME } 有料プランにアップグレードしてください。"
       ]
     },
     "upsell panel": {

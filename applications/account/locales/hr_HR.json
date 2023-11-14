@@ -230,6 +230,9 @@
       "Edit sign-in details": [
         "Uredite detalje za prijavu"
       ],
+      "Emoji": [
+        "Emotikoni"
+      ],
       "enable desktop notifications": [
         "omogući obavijesti radne površine"
       ],
@@ -253,6 +256,9 @@
       ],
       "Got it": [
         "Shvaćam"
+      ],
+      "Help": [
+        "Pomoć"
       ],
       "Hide": [
         "Sakrij"
@@ -327,6 +333,9 @@
         "Ne"
       ],
       "OK": [
+        "U redu"
+      ],
+      "Ok": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -475,6 +484,9 @@
       ],
       "Set recovery phrase": [
         "Postavite frazu za oporavak"
+      ],
+      "Settings": [
+        "Postavke"
       ],
       "Share": [
         "Podijeli"
@@ -665,6 +677,11 @@
         "Ako sada napustite, neki se kontakti možda neće uvesti"
       ]
     },
+    "Animation": {
+      "New email": [
+        "Nova e-pošta"
+      ]
+    },
     "Attached ics file error": {
       "Invalid event": [
         "Nevažeći događaj"
@@ -698,6 +715,14 @@
     "Badge for user sessions table": {
       "Current session": [
         "Trenutna sesija"
+      ]
+    },
+    "bf2023: Deal details": {
+      "1 user": [
+        "1 korisnik"
+      ],
+      "3 TB": [
+        "3 TB"
       ]
     },
     "Billing cycle option": {
@@ -796,9 +821,6 @@
       ]
     },
     "Calendar status": {
-      "Default": [
-        "Zadano"
-      ],
       "Not synced": [
         "Nije sinkronizirano"
       ],
@@ -905,6 +927,9 @@
       "Birthday": [
         "Rođendan"
       ],
+      "Display name": [
+        "Zaslonski naziv"
+      ],
       "Email": [
         "E-pošta"
       ],
@@ -916,6 +941,9 @@
       ],
       "Language": [
         "Jezik"
+      ],
+      "Last name": [
+        "Prezime"
       ],
       "Logo": [
         "Logo"
@@ -940,6 +968,9 @@
       ],
       "Role": [
         "Uloga"
+      ],
+      "Time zone": [
+        "Vremenska zona"
       ],
       "Title": [
         "Naslov"
@@ -1997,9 +2028,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Iskoristili ste sve slobodne korisnike u Vašem planu. Molimo Vas da nadogradite Vaš plan da biste dodali novog korisnika."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Morate aktivirati ključeve vaše organizacije. Bez aktivacije nećete moći stvarati nove korisnike, dodavati adrese postojećim korisnicima niti pristupati neprivatnim korisničkim računima."
-      ],
       "You must set a name": [
         "Morate postaviti naziv"
       ],
@@ -2047,6 +2075,9 @@
       ]
     },
     "Error importing event": {
+      "Calendar": [
+        "Kalendar"
+      ],
       "Component with wrong format": [
         "Komponenta s pogrešnim formatom"
       ],
@@ -2106,6 +2137,9 @@
       ],
       "Start time out of bounds": [
         "Početno vrijeme je van granica"
+      ],
+      "Time zone": [
+        "Vremenska zona"
       ],
       "To-do entry": [
         "Stavka liste zadataka"
@@ -2180,9 +2214,9 @@
         "(bez naslova)"
       ]
     },
-    "Export calendar": {
-      "Loading events": [
-        "Učitavanje događaja"
+    "familyOffer_2023:Action": {
+      "Got it": [
+        "Shvaćam"
       ]
     },
     "Feature": {
@@ -2205,6 +2239,20 @@
       ],
       "Torrenting support (P2P)": [
         "Torrent podrška (P2P)"
+      ]
+    },
+    "file size format": {
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
       ]
     },
     "Filter Actions": {
@@ -2275,6 +2323,14 @@
         "Zadano"
       ]
     },
+    "Font size option": {
+      "Large": [
+        "Veliko"
+      ],
+      "Small": [
+        "Malo"
+      ]
+    },
     "Frequency of news": {
       "(1 email per month)": [
         "(1 e-poruka mjesečno)"
@@ -2304,9 +2360,6 @@
       ]
     },
     "Header": {
-      "Action": [
-        "Radnja"
-      ],
       "Actions": [
         "Radnje"
       ],
@@ -2330,9 +2383,6 @@
       ],
       "Time": [
         "Vrijeme"
-      ],
-      "User": [
-        "Korisnik"
       ]
     },
     "Header for addresses table": {
@@ -2636,9 +2686,6 @@
       "Add image URL": [
         "Dodajte URL slike"
       ],
-      "Add label": [
-        "Dodaj oznaku"
-      ],
       "Align left": [
         "Poravnaj lijevo"
       ],
@@ -2766,9 +2813,6 @@
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
         "Preuzmite vaše PGP ključeve za upotrebu s drugim PGP kompatibilnim uslugama."
-      ],
-      "Edit label": [
-        "Uredi oznaku"
       ],
       "Edit link": [
         "Uredi poveznicu"
@@ -3144,6 +3188,9 @@
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
         "Osim ako se ne odjavite s vašeg računa ili promijenite lozinku, vaše sesije ostaju aktivne. Sesije ističu nakon 60 dana neaktivnosti."
+      ],
+      "Unsaved changes": [
+        "Nespremljene promjene"
       ],
       "Unsupported file": [
         "Nepodržana datoteka"
@@ -3603,11 +3650,6 @@
         "Označi kao zastarjelo"
       ]
     },
-    "Knowledge base link label": {
-      "Learn more": [
-        "Saznajte više"
-      ]
-    },
     "Label": {
       " and ": [
         " i "
@@ -3771,6 +3813,9 @@
       "Domain name": [
         "Naziv domene"
       ],
+      "Don't ask again": [
+        "Ne pitaj ponovno"
+      ],
       "Duration": [
         "Trajanje"
       ],
@@ -3815,6 +3860,9 @@
       ],
       "Folder location": [
         "Lokacija mape"
+      ],
+      "From: ${ from }": [
+        "Od: ${ from }"
       ],
       "Gift code": [
         "Darovni kôd"
@@ -4053,6 +4101,12 @@
       "Time format": [
         "Format vremena"
       ],
+      "To: ${ to }": [
+        "Za: ${ to }"
+      ],
+      "To: ${ toEmail }": [
+        "Za: ${ toEmail }"
+      ],
       "Two-password mode": [
         "Način rada s dvije lozinke"
       ],
@@ -4106,16 +4160,6 @@
       ],
       "Your password (admin)": [
         "Vaša lozinka (administrator)"
-      ]
-    },
-    "Label for default event notifications": {
-      "Notifications": [
-        "Obavijesti"
-      ]
-    },
-    "Label for default event settings": {
-      "Duration": [
-        "Trajanje"
       ]
     },
     "Label for domain modal": {
@@ -4456,17 +4500,17 @@
         "Naziv oznake"
       ]
     },
-    "new_plans: Action": {
-      "Upgrade now": [
-        "Nadogradi sada"
-      ]
-    },
     "new_plans: action": {
       "Delete account": [
         "Ukloni račun"
       ],
       "Got it": [
         "Shvaćam"
+      ]
+    },
+    "new_plans: Action": {
+      "Upgrade now": [
+        "Nadogradi sada"
       ]
     },
     "new_plans: feature": {
@@ -4912,14 +4956,8 @@
       "Changing organization password": [
         "Mijenanje organizacijske lozinke"
       ],
-      "Creating new users": [
-        "Stvaranje novog korisnika"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Zbog promjene lozinke, ograničene su ovlasti administratora vaše organizacije. Sljedeće radnje više nisu dopuštene:"
-      ],
-      "Reading emails of non-private users": [
-        "Čitanje e-pošte od korisnika koji nisu privatni"
       ]
     },
     "Select files": {
@@ -4933,6 +4971,32 @@
     "Select search results": {
       "No results found": [
         "Nema rezultata"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Reset password": [
+        "Ponovno postavljanje lozinke"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Poništi zahtjev"
+      ],
+      "Got it": [
+        "Shvaćam"
+      ],
+      "Learn more": [
+        "Više informacija"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Odjavite se"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Poništavanje lozinke"
       ]
     },
     "Settings section title": {
@@ -4972,11 +5036,6 @@
         "Oznake"
       ]
     },
-    "Shared calendar label input placeholder": {
-      "Add label": [
-        "Dodaj oznaku"
-      ]
-    },
     "Signup label": {
       "Display name": [
         "Zaslonski naziv"
@@ -4986,6 +5045,22 @@
       ],
       "Username": [
         "Korisničko ime"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Zatvori"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "1 user": [
+        "1 korisnik"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "Secure streaming": [
+        "Siguran streaming"
       ]
     },
     "State": {
@@ -5228,6 +5303,9 @@
     "Title": {
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
         "${ MAIL_APP_NAME } tipkovni prečaci"
+      ],
+      "(active)": [
+        "(aktivno)"
       ],
       "1. Select platform": [
         "1. Odaberite platformu"
@@ -5612,6 +5690,9 @@
       ],
       "Sign in": [
         "Prijavite se"
+      ],
+      "Sign in with 2FA": [
+        "Prijavite se sa 2FA"
       ],
       "Sign out": [
         "Odjava"
