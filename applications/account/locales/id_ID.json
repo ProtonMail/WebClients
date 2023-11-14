@@ -6,12 +6,12 @@
   "contexts": {
     "A label for unlabeled shared calendar links": {
       "Unlabeled": [
-        "Tanpa label"
+        "Tidak dilabel"
       ]
     },
     "Access level": {
       "Full view": [
-        "Tampilan penuh"
+        "Tampilan lengkap"
       ],
       "Full view (see all event details)": [
         "Tampilan penuh (lihat seluruh rincian acara)"
@@ -75,7 +75,7 @@
         "Tambah alamat atau domain"
       ],
       "Add calendar from URL": [
-        "Tambahkan kalender dari URL"
+        "Tambah kalender dari URL"
       ],
       "Add condition": [
         "Tambahkan syarat"
@@ -720,7 +720,7 @@
         "Hapus label ini"
       ],
       "Remove this member": [
-        "Hapus pengguna ini"
+        "Hapus anggota ini"
       ],
       "Remove this notification": [
         "Hapus notifikasi ini"
@@ -789,7 +789,7 @@
         "Cabut seluruh sesi lainnya"
       ],
       "Revoke this invitation": [
-        "Anulir undangan ini"
+        "Batalkan undangan ini"
       ],
       "Save": [
         "Simpan"
@@ -831,7 +831,7 @@
         "Pilih berkas"
       ],
       "Select language for invitation emails": [
-        "Tentukan bahasa surel undangan"
+        "Tentukan bahasa email undangan"
       ],
       "Select time zone": [
         "Pilih zona waktu"
@@ -1279,7 +1279,7 @@
     },
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
-        "Tambahkan ke kalender dan tandai sebagai menunggu balasan"
+        "Tambahkan ke kalender dan tandai sebagai ditunda"
       ]
     },
     "Autoresponse": {
@@ -1646,12 +1646,12 @@
     },
     "Calendar export section description": {
       "Download an ICS file with all the events from the selected calendar.": [
-        "Unduh berkas ICS dengan seluruh acara yang terdapat pada kalender yang dipilih."
+        "Unduh berkas ICS dengan semua acara dari kalender yang dipilih."
       ]
     },
     "Calendar import section description": {
       "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Anda dapat mengimpor berkas ICS dari kalender lain ke dalam ${ CALENDAR_APP_NAME }. Hal ini memungkinkan Anda untuk dapat mengimpor acara tertentu atau seluruh agenda Anda secara cepat."
+        "Anda dapat mengimpor file ICS dari kalender lain ke ${ CALENDAR_APP_NAME }. Hal ini memungkinkan Anda mengimpor satu acara atau seluruh agenda dengan cepat."
       ]
     },
     "Calendar invite status label": {
@@ -1695,12 +1695,12 @@
     },
     "Calendar settings link share description": {
       "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Buat tautan yang tertuju pada kalender Anda dan bagikan dengan mereka yang berada di luar ${ BRAND_NAME }. Hanya Anda yang dapat menambah atau menghapus acara."
+        "Buat tautan ke kalender Anda dan bagikan dengan siapa pun di luar ${ BRAND_NAME }. Hanya Anda yang dapat menambahkan atau menghapus acara."
       ]
     },
     "Calendar settings private share description": {
       "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Bagikan kalender Anda dengan pengguna ${ BRAND_NAME } lainnya. Aktifkan fitur kolaborasi dengan mengizinkan mereka untuk menambahkan dan menyunting acara pada kalender Anda. Anda dapat mengubah izin pengguna kapan saja."
+        "Bagikan kalender Anda dengan pengguna ${ BRAND_NAME } lainnya. Aktifkan kolaborasi dengan memungkinkan mereka untuk menambahkan atau menyunting acara di kalender. Anda dapat mengubah perizinan pengguna kapan pun."
       ]
     },
     "Calendar settings section title": {
@@ -1708,13 +1708,13 @@
         "Bagikan kalender"
       ],
       "Share outside ${ BRAND_NAME }": [
-        "Bagikan ke luar ${ BRAND_NAME }"
+        "Bagikan di luar ${ BRAND_NAME }"
       ],
       "Share with ${ BRAND_NAME } users": [
         "Bagikan dengan pengguna ${ BRAND_NAME }"
       ],
       "Share with anyone": [
-        "Bagikan kepada siapa saja"
+        "Bagikan dengan siapa pun"
       ]
     },
     "Calendar settings sidebar": {
@@ -1724,10 +1724,10 @@
     },
     "Calendar share permission label": {
       "Edit event details": [
-        "Sunting rincian acara"
+        "Sunting detail acara"
       ],
       "See all event details": [
-        "Lihat seluruh rincian acara"
+        "Lihat semua detail acara"
       ]
     },
     "Calendar sharing access option label": {
@@ -1745,7 +1745,7 @@
     },
     "Calendar sharing permission change notification": {
       "Permissions changed for ${ email }": [
-        "Izin diubah untuk ${ email }"
+        "Perizinan berubah untuk ${ email }"
       ]
     },
     "Calendar status": {
@@ -3029,7 +3029,7 @@
     },
     "Default calendar event settings section title": {
       "Default event settings": [
-        "Pengaturan acara default"
+        "Pengaturan acara bawaan"
       ]
     },
     "Default display name vcard": {
@@ -3039,10 +3039,10 @@
     },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
-        "Seluruh acara yang terdapat pada kalender ini akan dihapus."
+        "Semua acara di kalender ini akan dihapus."
       ],
       "You will no longer have access to this calendar.": [
-        "Anda tidak akan lagi memiliki akses ke kalender ini."
+        "Anda tidak akan memiliki akses ke kalender ini lagi."
       ]
     },
     "Delinquent modal title": {
@@ -4109,8 +4109,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Anda telah menggunakan semua pengguna dalam paket Anda. Harap tingkatkan paket untuk menambah pengguna baru."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Anda harus mengaktifkan kunci organisasi Anda. Tanpa aktivasi Anda tidak dapat membuat pengguna baru, menambahkan alamat ke pengguna yang ada, atau mengakses akun pengguna non-pribadi."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Anda harus mengaktifkan kunci organisasi Anda. Tanpa aktivasi, Anda tidak dapat membuat atau mengakses pengguna non-privat."
       ],
       "You must privatize all users before generating new organization keys": [
         "Anda harus membuat status semua pengguna menjadi privat sebelum Anda dapat membuat kunci organisasi baru"
@@ -4446,25 +4446,25 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } events exported": [
-        "${ totalProcessed }/${ totalToProcess } acara diekspor"
+        "${ totalProcessed }/${ totalToProcess } jadwal diekspor"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
-        "Kalender berhasil diekspor. Anda kini dapat menyimpan berkas ICS yang bersangkutan."
+        "Kalender berhasil diekspor. Anda dapat menyimpan berkas ICS-nya."
       ],
       "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
         "Mendekripsi acara dari kalender Anda: ${ totalProcessed }/${ totalToProcess }"
       ],
       "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Akibat pengaturan ulang kata sandi, seluruh acara Anda tidak dapat didekripsi dan diekspor."
+        "Karena pengaturan ulang kata sandi, tidak ada acara Anda yang dapat didekripsi dan diekspor."
       ],
       "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "Akibat pengaturan ulang kata sandi, beberapa acara Anda tidak dapat didekripsi dan diekspor."
+        "Karena pengaturan ulang kata sandi, beberapa acara Anda tidak dapat didekripsi dan diekspor."
       ],
       "Error decrypting event": [
-        "Kesalahan dalam mendekripsi acara"
+        "Terjadi kesalahan mendekripsi acara"
       ],
       "Learn how to restore encrypted events with old password": [
-        "Pelajari cara untuk memulihkan acara yang terenkripsi dengan menggunakan kata sandi lama Anda"
+        "Pelajari bagaimana cara memulihkan acara terenkripsi dengan kata sandi lama"
       ],
       "Loading events": [
         "Memuat acara"
@@ -4473,22 +4473,22 @@
         "Tidak ada acara yang dapat diekspor."
       ],
       "Password reset - event cannot be decrypted": [
-        "Kata sandi telah diatur ulang - acara tidak dapat didekripsi"
+        "Pengaturan ulang kata sandi - acara tidak dapat didekripsi"
       ],
       "Password reset - multiple events cannot be decrypted": [
-        "Kata sandi telah diatur ulang - beberapa acara tidak dapat didekripsi"
+        "Pengaturan ulang kata sandi - beberapa acara tidak dapat didekripsikan"
       ],
       "Please don't close the tab before the exporting process is finished.": [
-        "Mohon untuk tidak menutup tab ini sebelum proses ekspor selesai."
+        "Mohon jangan tutup tab sebelum proses pengeksporan selesai."
       ],
       "Some of your events could not be exported.": [
-        "Beberapa acara milik Anda tidak dapat diekspor."
+        "Beberapa acara Anda tidak dapat diekspor."
       ],
       "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Koneksi internet Anda terputus, yang menyebabkan proses ekspor gagal. Silakan coba lagi."
+        "Koneksi internet terganggu, proses pengeksporan gagal. Silakan mencoba lagi."
       ],
       "You can save an ICS file of the events that were successfully exported.": [
-        "Anda dapat menyimpan berkas ICS milik acara yang telah berhasil diekspor."
+        "Anda dapat menyimpan berkas ICS berisi acara yang berhasil diekspor."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4799,7 +4799,7 @@
         "Tambah (${ numberOfAddedServers })"
       ],
       "Connection for up to ${ plusVpnConnections } devices": [
-        "Koneksi hingga ${ plusVpnConnections } perangkat"
+        "Koneksi untuk hingga ${ plusVpnConnections } perangkat"
       ],
       "Fastest VPN servers": [
         "Server VPN tercepat"
@@ -5237,7 +5237,7 @@
         "Sidik jari kunci organisasi"
       ],
       "Permissions": [
-        "Izin"
+        "Perizinan"
       ],
       "Protection": [
         "Perlindungan"
@@ -5317,13 +5317,13 @@
     },
     "Header; Table with list of calendars arranged by type": {
       "Holidays": [
-        "Hari libur"
+        "Liburan"
       ],
       "Other": [
         "Lainnya"
       ],
       "Subscribed": [
-        "Dilanggan"
+        "Berlangganan"
       ]
     },
     "Heading in trial plan": {
@@ -5697,7 +5697,7 @@
         "Teknologi enkripsi ${ BRAND_NAME } memastikan bahwa tidak ada siapa pun yang dapat mengakses kata sandi Anda — termasuk kami sendiri."
       ],
       "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } akan diatur sebagai kalendar default."
+        "${ calendarName } akan ditetapkan sebagai kalender bawaan."
       ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount } kalender baru"
@@ -5712,7 +5712,7 @@
         "${ discountPercentage } selamanya"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } tidak akan lagi menyimpan versi berkas sebelumnya."
+        "${ DRIVE_APP_NAME } tidak lagi menyimpan versi lawas berkas Anda."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } tidak valid"
@@ -5724,7 +5724,7 @@
         "${ fileName }: pratinjau resolusi rendah"
       ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } akan diatur sebagai kalendar default."
+        "${ firstRemainingCalendarName } akan diatur sebagai kalender bawaan."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX } ingin berbagi data dengan Anda pada ${ PASS_APP_NAME }"
@@ -5862,7 +5862,7 @@
         "Pengguna di sini didefinisikan sebagai akun yang terhubung dengan nama pengguna, kotak surat, dan individu tunggal"
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Akses kata sandi Anda dan lindungi identitas online Anda pada seluruh perangkat Anda secara terpadu. Unduh dan pasang aplikasi dan ekstensi ${ PASS_APP_NAME } yang sesuai dengan kebutuhan Anda."
+        "Akses kata sandi dan lindungi identitas daring Anda di seluruh perangkat Anda. Unduh dan pasang aplikasi dan ekstensi ${ PASS_APP_NAME }."
       ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Akses akun dibatasi karena tagihan yang tertunggak. Silakan hubungi administrator Anda."
@@ -5988,22 +5988,22 @@
         "Semua orang yang memiliki tautan ini akan dapat melihat apakah Anda sedang sibuk atau tidak pada kalender Anda. Meskipun demikian, mereka tidak akan dapat melihat berbagai rincian yang ada seperti judul acara, lokasi acara, atau daftar peserta."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Semua orang yang memiliki tautan ini tidak akan lagi dapat menyinkronkan atau mendapatkan pembaruan seputar kalender Anda ke depannya. Apabila Anda ingin kembali memberikan akses kepada mereka, Anda harus membuat tautan baru."
+        "Siapa pun dengan tautan ini tidak akan dapat menyinkronkan atau mendapatkan pembaruan kalender Anda di masa mendatang. Jika Anda ingin memberikan mereka akses, Anda harus membuat tautan yang baru."
       ],
       "Are you sure you want to delete this address?": [
         "Apakah Anda yakin untuk menghapus alamat ini?"
       ],
       "Are you sure you want to delete this calendar?": [
-        "Apakah Anda yakin untuk menghapus kalender ini?"
+        "Apakah Anda yakin ingin menghapus kalender ini?"
       ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "Apakah Anda yakin untuk menghapus kalender ini? Seluruh alamat yang telah diundang untuk dapat mengakses kalender ini tidak akan lagi dapat mengakses kalender ini ke depannya."
+        "Yakin hapus kalender ini? Semua alamat yang Anda bagikan bersama kalender ini akan kehilangan akses."
       ],
       "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "Apakah Anda yakin untuk menghapus kalender ini? Seluruh acara yang terkandung di dalamnya juga akan ikut terhapus."
+        "Yakin hapus kalender ini? Semua jadwal di dalamnya akan dihapus."
       ],
       "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Apakah Anda ingin menghapus kalender ini? Anda dapat menambahkan ulang kalender liburan di lain waktu."
+        "Yakin hapus kalender ini? Anda dapat menambahkan kalender libur kemudian."
       ],
       "Are you sure you want to delete this domain?": [
         "Apakah Anda yakin untuk menghapus domain ini?"
@@ -6303,7 +6303,7 @@
         "Surel berlabel ini tidak akan dihapus dan masih bisa dibuka di folder asalnya."
       ],
       "Enable this address to join this calendar": [
-        "Izinkan alamat ini bergabung ke kalender"
+        "Aktifkan alamat ini untuk bergabung ke kalender ini"
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Aktifkan TLS atau SSL pada layanan eksternal apabila didukung."
@@ -6360,7 +6360,7 @@
         "Masukkan nomor telepon pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat surel Anda."
       ],
       "Event invitations and RSVPs will be sent in this language.": [
-        "Undangan dan permintaan konfirmasi kehadiran acara (RSVP) akan dikirim dalam bahasa ini."
+        "Undangan acara dan reservasi akan dikirim dalam bahasa ini."
       ],
       "Expired": [
         "Kedaluwarsa"
@@ -6429,7 +6429,7 @@
         "Jika tidak pas untuk Anda, kami akan mengembalikan uang Anda."
       ],
       "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Apabila zona waktu sistem tidak cocok dengan preferensi zona waktu saat ini, Anda akan diminta untuk memperbaruinya (paling banyak sekali per hari)."
+        "Jika zona waktu sistem tidak sesuai dengan pengaturan zona waktu saat ini, Anda akan diminta untuk memperbaruinya (biasanya sekali sehari)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Jika domain ini saat ini menerima surel, pilih tab ${ boldAddresses } dan tambahkan semua alamat surel aktif sebelum mengubah data MX untuk memastikan kelancaran transisi."
@@ -6765,7 +6765,7 @@
         "Kami menyarankan Anda untuk mengubah pengaturan ini hanya apabila Anda menggunakan PGP untuk saling bertukar pesan dengan pengguna non-${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
-        "Label ini hanya akan dapat dilihat oleh Anda."
+        "Label yang ada hanya akan dapat dilihat oleh Anda."
       ],
       "Open source": [
         "Open source"
@@ -6975,7 +6975,7 @@
         "Jangan lupa untuk membagikan rincian masuk ini kepada masing-masing pengguna."
       ],
       "Remove one of your calendars to join this one": [
-        "Hapus salah satu kalender Anda untuk dapat bergabung ke kalender ini"
+        "Hapus salah satu kalender Anda untuk bergabung yang ini"
       ],
       "Report link expired": [
         "Tautan laporan kedaluwarsa"
@@ -7053,7 +7053,7 @@
         "Menyiapkan organisasi Anda"
       ],
       "Settings update failed": [
-        "Pengaturan gagal diperbarui"
+        "Pembaruan pengaturan gagal"
       ],
       "Settings updated": [
         "Pengaturan diperbarui"
@@ -7161,7 +7161,7 @@
         "Pesan ${ boldDataLocked } tidak akan lagi muncul, namun Anda akan tetap dapat membuka kunci data Anda melalui ${ encryptionAndKeysLink }."
       ],
       "The calendar will be removed from your account.": [
-        "Kalender ini akan dihapus dari akun Anda."
+        "Kalender akan dihapus dari akun"
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Tautan verifikasi ini telah kedaluwarsa. Silakan masuk untuk mengirimkan ulang kode verifikasi."
@@ -7206,7 +7206,7 @@
         "Konfigurasi berikut dapat digunakan dengan router WireGuard dan klien resmi."
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
-        "Kredensiala tidak dapat digunakan untuk masuk ke aplikasi ${ VPN_APP_NAME } resmi kami. ${ learnMore }"
+        "Kredensial berikut tidak dapat digunakan untuk masuk ke aplikasi ${ VPN_APP_NAME } resmi kami. ${ learnMore }"
       ],
       "They will be removed from your organization": [
         "Nama-nama ini akan dikeluarkan dari organisasi Anda"
@@ -7266,10 +7266,10 @@
         "Tindakan ini akan membatalkan langganan berbayar yang Anda miliki saat ini beserta seluruh keuntungan loyalitas yang telah Anda kumpulkan. Saldo yang tersisa dari langganan Anda akan dikembalikan dalam bentuk kredit akun."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Ini akan menghapus semua versi berkas sebelumnya yang lebih lama dari ${ rententionLabel }."
+        "Ini akan menghapus semua versi lawas berkas Anda lebih dari ${ rententionLabel }."
       ],
       "This will delete all previous versions of your files.": [
-        "Tindakan ini akan menghapus seluruh versi berkas terdahulu."
+        "Ini akan menghapus semua versi lawas berkas Anda."
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "Tindakan ini akan menonaktifkan frasa pemulihan Anda saat ini. Anda tidak akan lagi dapat menggunakan frasa pemulihan tersebut untuk mengakses akun Anda atau mendekripsi data-data Anda."
@@ -7355,6 +7355,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Isikan akun Anda dengan kredit yang dapat Anda pakai untuk berlangganan paket baru atau memperbarui paket. Anda mendapatkan satu kredit untuk setiap ${ i18nCurrency } yang dihabiskan."
       ],
+      "Tor": [
+        "Tor"
+      ],
       "Total email addresses": [
         "Total alamat surel"
       ],
@@ -7426,6 +7429,9 @@
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Tingkatkan ke paket ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, atau ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } untuk memperoleh akses ke ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Tingkatkan ke ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, atau ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } untuk memperoleh akses ke ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Tingkatkan akun Anda untuk menggunakan alamat @pm.me yang lebih pendek dan lebih mudah untuk dibagikan. Alamat ini merupakan kependekan dari “${ MAIL_APP_NAME } me” atau \"Private Message me\"."
@@ -7689,7 +7695,7 @@
         "Anda memiliki ${ availableCount } server khusus yang tersedia."
       ],
       "You have no calendars to export.": [
-        "Anda tidak memiliki kalender untuk diekspor."
+        "Tidak ada kalender untuk diekspor."
       ],
       "You have no saved payment methods.": [
         "Anda tidak memiliki metode pembayaran yang tersimpan."
@@ -7713,7 +7719,7 @@
         "Anda harus memiliki kartu kredit atau akun bank yang terhubung dengan akun Paypal Anda. Jika akun Paypal Anda tidak memiliki kartu yang terhubung, silakan klik tombol di bawah ini."
       ],
       "You need to have an active personal calendar to import your events from ICS.": [
-        "Anda harus memiliki kalender personal yang aktif untuk dapat mengimpor acara dari berkas ICS."
+        "Anda harus punya kalender pribadi aktif untuk mengimpor jadwal dari ICS."
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Kapasitas penyimpanan Anda telah mencapai ${ spaceDisplayed }%. ${ freeUpMessage } ${ upgradeLink }"
@@ -7725,7 +7731,7 @@
         "Anda disarankan untuk mengekspor cadangan dari kunci ini untuk berjaga-jaga apabila di kemudian waktu Anda perlu untuk memulihkan data yang terenkripsi oleh kunci ini."
       ],
       "You still need to reply to invitations for the host to see your response.": [
-        "Anda tetap harus membalas undangan ini agar penyelenggara acara dapat melihat respon Anda."
+        "Anda masih perlu membalas ke undangan supaya penyelenggara dapat melihat respons Anda."
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Anda akan dialihkan ke ${ destination } setelah masuk."
@@ -8537,7 +8543,7 @@
         "Bahasa bawaan"
       ],
       "Default language (${ defaultLanguage })": [
-        "Bahasa default (${ defaultLanguage })"
+        "Bahasa bawaan (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "Skema PGP default"
@@ -9176,7 +9182,7 @@
     },
     "Label for default event notifications": {
       "All-day event notifications": [
-        "Notifikasi acara sepanjang hari"
+        "Notifikasi acara seharian"
       ],
       "Notifications": [
         "Notifikasi"
@@ -9515,12 +9521,12 @@
     },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Anda dapat membuat hingga ${ MAX_LINKS_PER_CALENDAR } tautan per kalender. Untuk dapat membuat tautan baru bagi kalender ini, hapus salah satu tautan di bawah ini."
+        "Anda dapat membuat sampai dengan ${ MAX_LINKS_PER_CALENDAR } tautan per kalender. Untuk membuat tautan di kalender ini, hapus salah satu dari daftar di bawah ini."
       ]
     },
     "Maximum shared calendar members reached alert": {
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } members.": [
-        "Anda telah mencapai batas maksimum ${ MAX_CALENDAR_MEMBERS } pengguna."
+        "Anda telah mencapai batas maksimum ${ MAX_CALENDAR_MEMBERS } anggota."
       ]
     },
     "Member action": {
@@ -9832,26 +9838,6 @@
         "Kecepatan VPN sedang"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Telusuri seluruh paket ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Dari ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Pertahankan akun ${ currentPlanName } yang saya miliki saat ini"
-      ],
-      "Upgrade": [
-        "Tingkatkan"
-      ],
-      "Upgrade now": [
-        "Tingkatkan sekarang"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Lanjut ke proses peninjauan"
@@ -9891,6 +9877,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Tingkatkan ke ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Turunkan jenis akun saya ke ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Telusuri seluruh paket ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Dari ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Pertahankan akun ${ currentPlanName } yang saya miliki saat ini"
+      ],
+      "Upgrade": [
+        "Tingkatkan"
+      ],
+      "Upgrade now": [
+        "Tingkatkan sekarang"
       ]
     },
     "new_plans: feature": {
@@ -10743,10 +10749,10 @@
         "Undangan dihapus"
       ],
       "Invitation revoked": [
-        "Undangan dianulir"
+        "Undangan dibatalkan"
       ],
       "Member deleted": [
-        "Pengguna dihapus"
+        "Anggota dihapus"
       ],
       "Members added": [
         "Anggota ditambahkan"
@@ -10762,7 +10768,7 @@
     },
     "Notification success": {
       "Event defaults updated": [
-        "Pengaturan acara default diperbarui"
+        "Bawaan acara diperbarui"
       ]
     },
     "Notification time input": {
@@ -11376,7 +11382,7 @@
     },
     "Personal calendar section description": {
       "Create a calendar to stay on top of your schedule while keeping your data secure.": [
-        "Buat kalender untuk menjaga rutinitas dan mengamankan data Anda."
+        "Buat kalender untuk tetap mengetahui jadwal Anda sekaligus menjaga keamanan data Anda."
       ]
     },
     "PGP key warning": {
@@ -11642,18 +11648,18 @@
     },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "Dengan berhenti berlangganan, Anda tidak akan lagi dapat mengakses kalender ini. Seluruh acara yang terdapat pada kalender ini akan dihapus dari akun Anda, namun akan tetap ada pada tautan publik aslinya."
+        "Dengan berhenti berlangganan, Anda tidak akan memiliki akses ke kalender ini lagi. Semua acara di kalender ini akan dihapus dari akun Anda, tetapi masih tersedia dalam tautan publik yang asli."
       ],
       "You will no longer have access to this calendar.": [
-        "Anda tidak akan lagi dapat mengakses kalender ini."
+        "Anda tidak akan memiliki akses ke kalender ini lagi."
       ]
     },
     "Remove calendar section text": {
       "If you leave this calendar, you'll have to ask the owner to join again.": [
-        "Apabila Anda keluar dari kalender ini, Anda akan perlu untuk meminta kepada pemilik kalender untuk dapat bergabung kembali ke depannya."
+        "Jika Anda keluar dari kalender ini, Anda harus menanyakan pemilik untuk bergabung lagi."
       ],
       "This calendar will be removed from your account.": [
-        "Kalender ini akan dihapus dari akun Anda."
+        "Kalender ini akan dihapus dari akun"
       ]
     },
     "Remove calendar section title": {
@@ -11661,7 +11667,7 @@
         "Hapus kalender?"
       ],
       "Leave calendar?": [
-        "Hapus kalender?"
+        "Tinggalkan kalender?"
       ],
       "Remove calendar": [
         "Hapus kalender"
@@ -11677,14 +11683,11 @@
       "Changing organization password": [
         "Mengubah kata sandi organisasi"
       ],
-      "Creating new users": [
-        "Membuat pengguna baru"
+      "Creating or accessing non-private users": [
+        "Membuat atau mengakses pengguna non-privat"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Karena adanya perubahan kata sandi, hak istimewa administrator organisasi Anda telah dibatasi. Tindakan berikut tidak lagi diizinkan:"
-      ],
-      "Reading emails of non-private users": [
-        "Membaca surel pengguna non-privat"
       ]
     },
     "Role": {
@@ -12097,7 +12100,7 @@
     },
     "Shared calendar label input placeholder": {
       "Add label": [
-        "Tambah label"
+        "Tambahkan label"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -12399,10 +12402,10 @@
     },
     "Subscribed calendar section description": {
       "Add public, external, or shared calendars using a URL.": [
-        "Tambahkan kalender publik, eksternal, atau bersama melalui URL."
+        "Tambahkan kalender publik, eksternal, atau terbagi menggunakan URL."
       ],
       "Add public, external, or shared calendars.": [
-        "Tambahkan kalender publik, eksternal, atau bersama."
+        "Tambahkan kalender publik, eksternal, atau terbagi."
       ]
     },
     "Subscription": {
@@ -12595,7 +12598,7 @@
         "Saldo ditambahkan"
       ],
       "Default calendar updated": [
-        "Kalendar default diperbarui"
+        "Kalender bawaan diperbarui"
       ],
       "Display name updated": [
         "Nama tampilan diperbarui"
@@ -12789,7 +12792,7 @@
     },
     "Summary of errors during export calendar": {
       "Details about events that couldn't be exported": [
-        "Rincian mengenai acara yang tidak dapat diekspor"
+        "Detail tentang acara yang tidak dapat diekspor"
       ]
     },
     "summer2023: Deal details": {
@@ -14223,15 +14226,15 @@
     },
     "Upgrade": {
       "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Tingkatkan ke ${ passPlusPlanName } untuk memperoleh alias Hide-my-email tanpa batasan jumlah"
+        "Tingkatkan ke ${ passPlusPlanName } untuk mendapatkan alias hide-my-email tak terbatas"
       ],
       "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
-        "Tingkatkan akun Anda ke ${ planName } untuk dapat menghubungkan ${ n } perangkat ke jaringan VPN secara bersamaan"
+        "Tingkatkan ke ${ planName } untuk menghubungkan ${ n } perangkat ke VPN sekaligus."
       ]
     },
     "Upgrade notice": {
       "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Tingkatkan akun Anda ke paket ${ MAIL_SHORT_APP_NAME } berbayar untuk membagikan kalender Anda."
+        "Tingkatkan ke paket ${ MAIL_SHORT_APP_NAME } berbayar untuk membagikan kalender Anda."
       ]
     },
     "upsell panel": {
