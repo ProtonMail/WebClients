@@ -8,6 +8,9 @@
       "Add": [
         "加入"
       ],
+      "Add current URL": [
+        "添加目前的網址"
+      ],
       "Add domain to pause list": [
         "新增網域至暫停清單"
       ],
@@ -53,14 +56,14 @@
       "Confirm": [
         "確認"
       ],
+      "Confirm access": [
+        "確認存取"
+      ],
+      "Connect your ${ BRAND_NAME } Account": [
+        "連接您的${ BRAND_NAME }帳號"
+      ],
       "Continue": [
         "繼續"
-      ],
-      "Continue without pinning": [
-        "不釘選繼續"
-      ],
-      "Copy & fill in": [
-        "複製及填入"
       ],
       "Copy and close": [
         "複製並關閉"
@@ -71,14 +74,23 @@
       "Create": [
         "建立"
       ],
+      "Create a ${ BRAND_NAME } Account": [
+        "建立一個${ BRAND_NAME } 帳號"
+      ],
       "Create a ${ BRAND_NAME } account": [
         "建立一個${ BRAND_NAME } 帳號"
+      ],
+      "Create a new vault to share": [
+        "新增一個共享保管庫"
       ],
       "Create alias": [
         "創建別名"
       ],
       "Create an account": [
         "創建新帳號"
+      ],
+      "Create card": [
+        "創建一個卡片"
       ],
       "Create login": [
         "創建登入"
@@ -146,6 +158,9 @@
       "Generate password": [
         "生成密碼"
       ],
+      "Generated passwords": [
+        "已生成的密碼"
+      ],
       "Get mobile apps": [
         "取得手機應用程式"
       ],
@@ -160,9 +175,6 @@
       ],
       "Import": [
         "匯入"
-      ],
-      "Import your passwords": [
-        "匯入密碼"
       ],
       "Importing": [
         "正在匯入"
@@ -206,6 +218,12 @@
       "More options": [
         "更多選項"
       ],
+      "Move all items": [
+        "移動所有物品"
+      ],
+      "Move to a shared vault": [
+        "移至共享保管庫"
+      ],
       "Move to another vault": [
         "移動到另一個保管庫"
       ],
@@ -214,9 +232,6 @@
       ],
       "Move to trash": [
         "移至垃圾桶"
-      ],
-      "Not now": [
-        "稍後再說"
       ],
       "OK": [
         "好"
@@ -238,6 +253,9 @@
       ],
       "Regenerate": [
         "重新生成"
+      ],
+      "Reject": [
+        "拒絕"
       ],
       "Reject invitation": [
         "拒絕邀請"
@@ -278,6 +296,9 @@
       "Share": [
         "分享"
       ],
+      "Share this vault": [
+        "共享此保管庫"
+      ],
       "Share vault": [
         "分享保險庫"
       ],
@@ -314,8 +335,8 @@
       "Update": [
         "更新"
       ],
-      "Updating": [
-        "正在更新…"
+      "Update vault": [
+        "更新保管庫"
       ],
       "Upgrade": [
         "升級"
@@ -328,6 +349,16 @@
       ],
       "Write us on Twitter": [
         "在 Twitter 上寫上我們"
+      ]
+    },
+    "bf2023: Label": {
+      "Get the deal": [
+        "取得優惠"
+      ]
+    },
+    "bf2023: Title": {
+      "Black Friday offer": [
+        "黑色星期五優惠"
       ]
     },
     "Button": {
@@ -363,9 +394,6 @@
       ],
       "Auto-lock could not be disabled": [
         "無法停用自動鎖定"
-      ],
-      "Cannot create alias (${ error }).": [
-        "無法創建別名 (${ error })。"
       ],
       "Cannot send invitation to this address at the moment": [
         "目前無法將邀請發送至此地址"
@@ -469,9 +497,6 @@
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
         "請賦予${ PASS_APP_NAME }擴的全限以繼續使用以繼續使用"
       ],
-      "Please pin the extension or select \"Continue without pinning\".": [
-        "請釘至擴充或選取「繼續不釘至」。"
-      ],
       "Request timed out": [
         "請求逾時"
       ],
@@ -498,6 +523,9 @@
       ],
       "The file you are trying to import is empty": [
         "您匯入的檔案為空白的"
+      ],
+      "The URL is in the list": [
+        "此網址於清單中"
       ],
       "Too many failed attempts. Please sign in again.": [
         "失敗次數過多。請重新再登入。"
@@ -618,20 +646,17 @@
       "A new version of ${ PASS_APP_NAME } is available. Update it to enjoy the latest features and bug fixes.": [
         "有${ PASS_APP_NAME }可用更新。更新可使用最新的功能及錯誤修復。"
       ],
-      "Access your passwords on the go with our mobile apps.": [
-        "於移動裝置的應用程式存取密碼"
-      ],
       "Admin": [
         "管理員"
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "別名${ item.aliasEmail }移至垃圾桶 - 將會停止轉寄電子郵件到信箱"
       ],
+      "All trashed items successfully restored": [
+        "全部垃圾項目已成功還原"
+      ],
       "Auto-lock successfully disabled": [
         "自動鎖定停用成功"
-      ],
-      "Autosaved on ${ submissionURL }": [
-        "於${ submissionURL }自動存取"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "可於此保管庫新增、編輯、刪除與匯出項目。"
@@ -648,8 +673,8 @@
       "Copied to clipboard": [
         "已複製到剪貼簿"
       ],
-      "Creating alias...": [
-        "生成別名..."
+      "Credit cards, Custom fields": [
+        "信用卡及自訂欄位"
       ],
       "Decrypting your data": [
         "解密您的檔案"
@@ -657,8 +682,8 @@
       "Deleted items will be moved here first": [
         "刪除項目將優先移至這裡"
       ],
-      "Discover ${ PASS_APP_NAME } Youtube Video": [
-        "於YouTube觀看${ PASS_APP_NAME }的影片"
+      "Deleting \"${ payload.content.name }\"": [
+        "刪除${ payload.content.name }"
       ],
       "Drop file here to upload": [
         "拖曳檔案到此處來上傳"
@@ -666,14 +691,11 @@
       "Drop to import": [
         "拖放以匯入"
       ],
-      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
-        "容易地將密碼匯入${ PASS_APP_NAME }"
-      ],
       "Editor": [
         "編輯器"
       ],
-      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "透過連接${ BRAND_NAME }您的帳號啟用${ PASS_APP_NAME }"
+      "Emptying trash...": [
+        "清空垃圾桶..."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "輸入驗證代碼。正在按下 ${ digit } 。"
@@ -687,11 +709,8 @@
       "Generated passwords will be stored for a period of one day.": [
         "生成密將處存一天的時間。"
       ],
-      "Generating alias...": [
-        "生成別名..."
-      ],
-      "Here you will find all the necessary information to get you started.": [
-        "這裡是您需要的資訊"
+      "Import in progress:": [
+        "匯入進行中:"
       ],
       "Imported ${ payload.total } items": [
         "匯入${ payload.total }項目"
@@ -741,6 +760,9 @@
       "items": [
         "項目"
       ],
+      "Leaving vault...": [
+        "離開保管庫..."
+      ],
       "Let's get you started by creating your first item": [
         "創建您第一個項目"
       ],
@@ -765,9 +787,6 @@
       "N/A": [
         "不適用"
       ],
-      "No login found": [
-        "找不到登入"
-      ],
       "None": [
         "無"
       ],
@@ -777,14 +796,11 @@
       "Owner": [
         "擁有者"
       ],
-      "Password copied": [
-        "已複製密碼"
+      "Pass Plus trial": [
+        "Pass Plus 試用期"
       ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "超過1天的密碼會自動從歷史紀錄中刪除。"
-      ],
-      "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "固定${ PASS_APP_NAME }到工具列"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "個人識別數字代碼已成功登記。使用它解鎖${ PASS_APP_NAME }。"
@@ -801,14 +817,20 @@
       "Please consider leaving a review.": [
         "請考慮留下評論。"
       ],
+      "Please enter your current PIN code to continue": [
+        "輸入 PIN 碼以繼續"
+      ],
       "Press Enter to copy": [
         "按 Enter 以複製"
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "隱私是我們最大的擔心。了解與${ PASS_APP_NAME }的不同。"
       ],
-      "Save login": [
-        "儲存登入資料"
+      "Restoring trashed items...": [
+        "還原刪除項目..."
+      ],
+      "Select destination vault": [
+        "選取目標保管庫"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "無法連線至伺服器。請過幾分鐘後再試"
@@ -822,8 +844,8 @@
       "Settings successfully updated": [
         "設定已成功更新"
       ],
-      "Sign in or create an account to continue.": [
-        "請登入或註冊一個帳號以繼續。"
+      "Share with 10 others": [
+        "和 10人 分享"
       ],
       "Sign in to your account": [
         "登入您的帳戶"
@@ -858,14 +880,11 @@
       "Unable to copy to clipboard": [
         "無法複製到剪貼簿"
       ],
+      "Unlimited Aliases": [
+        "無限別名"
+      ],
       "Unlock it with your PIN to access the settings": [
         "已個人識別號碼解鎖設定"
-      ],
-      "Update login": [
-        "更新登入資料"
-      ],
-      "Upgrade ${ PASS_APP_NAME }": [
-        "升級 ${ PASS_APP_NAME }"
       ],
       "User's access removed": [
         "使用者存取權已撤銷"
@@ -882,8 +901,8 @@
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "保管庫${ payload.share.content.name }已成功更新"
       ],
-      "Verification code": [
-        "驗證碼"
+      "Vault \"${ share.content.name }\" was removed": [
+        "保管庫 ${ share.content.name } 已移除"
       ],
       "Viewer": [
         "檢視者"
@@ -905,9 +924,6 @@
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "您需要個人識別號碼解鎖${ PASS_APP_NAME }因閒置一段時間後的自動鎖定"
-      ],
-      "You're about to create": [
-        "您將要創建"
       ],
       "You're invited to a vault.": [
         "您已被邀請至保管庫。"
@@ -1007,6 +1023,9 @@
       "Capitalise": [
         "大寫"
       ],
+      "Card": [
+        "卡片"
+      ],
       "Card number": [
         "卡號"
       ],
@@ -1064,6 +1083,9 @@
       "Export": [
         "匯出"
       ],
+      "Field name": [
+        "欄位名稱"
+      ],
       "Forwards to": [
         "轉寄至"
       ],
@@ -1097,6 +1119,9 @@
       "Include numbers (0-9)": [
         "包含數字(0~9)"
       ],
+      "Invitations": [
+        "邀請"
+      ],
       "Language": [
         "語言"
       ],
@@ -1123,6 +1148,9 @@
       ],
       "Logins": [
         "登入"
+      ],
+      "Members": [
+        "成員"
       ],
       "Modified": [
         "已修改"
@@ -1159,9 +1187,6 @@
       ],
       "Old-New": [
         "舊至新"
-      ],
-      "Older than last month": [
-        "舊於上個月"
       ],
       "Oldest to newest": [
         "從最舊到最新"
@@ -1401,6 +1426,9 @@
       "Select a suffix": [
         "選取後綴"
       ],
+      "Shared vault": [
+        "分享保險庫"
+      ],
       "Unknown origin": [
         "來源不明"
       ],
@@ -1441,17 +1469,8 @@
       "Enjoying ${ PASS_APP_NAME }?": [
         "享受 ${ PASS_APP_NAME }?"
       ],
-      "Fill & copy password": [
-        "填寫並複製密碼"
-      ],
-      "Get the mobile apps": [
-        "取得手機應用程式"
-      ],
       "Grant permissions": [
         "取得權限"
-      ],
-      "Hide my email": [
-        "隱藏自己的電子郵件"
       ],
       "Import - ${ date }": [
         "匯入 - ${ date }"
@@ -1465,11 +1484,14 @@
       "Low disk space": [
         "磁碟空間過低"
       ],
+      "Member limit": [
+        "成員限制"
+      ],
+      "Move all items ?": [
+        "移動所有項目?"
+      ],
       "Permanently remove all items ?": [
         "永久刪除所有項目嗎?"
-      ],
-      "Pin the extension": [
-        "定置擴充功能"
       ],
       "Secure your data": [
         "安全您的資料"
@@ -1480,15 +1502,6 @@
       "Share with": [
         "與分享"
       ],
-      "Switching to ${ PASS_APP_NAME }?": [
-        "切換至 ${ PASS_APP_NAME }?"
-      ],
-      "Thank you for installing ${ PASS_APP_NAME }": [
-        "感謝下載${ PASS_APP_NAME }"
-      ],
-      "The extension is now ready to use.": [
-        "擴充功能已可使用"
-      ],
       "Transfer ownership": [
         "轉移所有權"
       ],
@@ -1498,14 +1511,8 @@
       "Unlock ${ brandNameJSX }": [
         "解鎖${ brandNameJSX }"
       ],
-      "Unlock ${ PASS_APP_NAME }": [
-        "解鎖 ${ PASS_APP_NAME }"
-      ],
       "Update available": [
         "有可用更新"
-      ],
-      "Use my email": [
-        "使用我的電子郵件"
       ],
       "Vault shared with you": [
         "與您分享的保管庫"
@@ -1524,11 +1531,20 @@
       ]
     },
     "Validation": {
+      "Duplicated URL": [
+        "複製網址"
+      ],
       "Url already exists": [
         "網址已存在"
       ],
+      "URL cannot be empty": [
+        "網址不能為空"
+      ],
       "Url is invalid": [
         "網址錯誤"
+      ],
+      "URL is invalid": [
+        "URL無效"
       ]
     },
     "Warning": {
@@ -1613,9 +1629,6 @@
       "Trash alias ?": [
         "刪除別名?"
       ],
-      "Unable to save": [
-        "無法儲存"
-      ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "無法登入至${ PASS_APP_NAME }。${ additionalMessage }"
       ],
@@ -1636,12 +1649,6 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "您不再擁有保管庫的存取權。若要重新加入，您需要新的邀請。"
-      ],
-      "Your plan does not allow you to create more aliases": [
-        "您的訂閱無法創建更多的別名"
-      ],
-      "Your plan only allows you to autofill from your first two vaults": [
-        "您的方案只允許從主要和次要保自動填入"
       ],
       "Your session was locked due to inactivity": [
         "您的作業階段因為使用而鎖定"

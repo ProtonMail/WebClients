@@ -227,6 +227,9 @@
       "More options": [
         "Дадатковыя параметры"
       ],
+      "Move all items": [
+        "Перамяшчэнне ўсіх элементаў"
+      ],
       "Move to a shared vault": [
         "Перамясціць абагуленае сховішча"
       ],
@@ -419,7 +422,7 @@
         "Не атрымалася адключыць аўтаблакіроўку"
       ],
       "Cannot create alias (${ error }).": [
-        "Немагчыма стварыць псеўданімы (${ error })."
+        "Немагчыма стварыць псеўданім (${ error })."
       ],
       "Cannot send invitation to this address at the moment": [
         "У дадзены момант немагчыма адправіць запрашэнне на гэты адрас"
@@ -487,6 +490,9 @@
       "Failed to edit user's access.": [
         "Збой рэдагавання доступу карыстальніка."
       ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Не ўдалося выдаліць усе элементы з \"${ payload.content.name }\""
+      ],
       "Failed to remove user's access.": [
         "Збой выдалення доступу карыстальніка."
       ],
@@ -546,6 +552,9 @@
       ],
       "Restoring item failed": [
         "Збой аднаўлення элемента"
+      ],
+      "Restoring trashed items failed": [
+        "Не ўдалося аднавіць выдаленыя элементы"
       ],
       "Settings update failed": [
         "Збой абнаўлення налад"
@@ -759,6 +768,21 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Псеўданім \"${ item.aliasEmail }\" перамешчаны ў сметніцу. Ён перастане перасылаць лісты ў вашу паштовую скрыню"
       ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Усе элементы з \"${ payload.content.name }\" паспяхова перамешчаны"
+      ],
+      "All trashed items permanently removed": [
+        "Усе элементы ў Сметніцы незваротна выдалены"
+      ],
+      "All trashed items successfully restored": [
+        "Усе выдаленыя элементы паспяхова адноўлены"
+      ],
+      "An item previously shared with you was removed": [
+        "Раней абагулены з вамі элемент быў выдалены"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Вы сапраўды хочаце перамясціць усе элементы з \"${ fromVaultName }\" у \"${ toVaultName }\"?"
+      ],
       "Auto-lock successfully disabled": [
         "Аўтаблакіроўка паспяхова адключана"
       ],
@@ -816,8 +840,11 @@
       "Editor": [
         "Рэдактар​​"
       ],
+      "Emptying trash...": [
+        "Ачышчэнне сметніцы..."
+      ],
       "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Уключыць ${ PASS_APP_NAME } падключыўшы свой уліковы запіс ${ BRAND_NAME }"
+        "Уключыць ${ PASS_APP_NAME }, падключыўшы свой уліковы запіс ${ BRAND_NAME }"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Увядзіце праверачны код. Лічба ${ digit }."
@@ -909,6 +936,9 @@
       "Item successfully moved": [
         "Элемент паспяхова перамешчаны"
       ],
+      "Leaving vault...": [
+        "Выхад са сховішча..."
+      ],
       "Let's get you started by creating your first item": [
         "Давайце пачнём ствараць ваш першы элемент"
       ],
@@ -926,6 +956,9 @@
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Больш, чым менеджар пароляў. ${ PASS_APP_NAME } абараняе ваш пароль і ваш асабісты адрас электроннай пошты з дапамогай псеўданімаў электроннай пошты. Распрацаваны па той самай тэхналогіі, якая ляжыць у аснове ${ MAIL_APP_NAME }. Вашы даныя зашыфраваны скразным метадам і даступны толькі вам."
+      ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
       ],
       "Multiple vaults": [
         "Некалькі сховішчаў"
@@ -987,8 +1020,14 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Прыватнасць для нас выклікае вялікую заклапочанасць. Даведайцеся чым ${ PASS_APP_NAME } адрозніваецца ад іншых праграм такога тыпу."
       ],
+      "Restoring trashed items...": [
+        "Аднаўленне выдаленых элементаў..."
+      ],
       "Save login": [
         "Захаваць запіс уваходу"
+      ],
+      "Select destination vault": [
+        "Выберыце мэтавае сховішча"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Выберыце куды вы хочаце, каб было захавана ваша імпартаванае сховішча(-ы)."
@@ -1094,6 +1133,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Сховішча \"${ payload.share.content.name }\" паспяхова абноўлена"
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "Сховішча \"${ share.content.name }\" было выдалена"
       ],
       "Verification code": [
         "Праверачны код"
@@ -1376,6 +1418,9 @@
       "Modified": [
         "Зменена"
       ],
+      "More than a month": [
+        "Больш за месяц"
+      ],
       "Most recent": [
         "Самыя апошнія"
       ],
@@ -1408,9 +1453,6 @@
       ],
       "Old-New": [
         "Ад самых старых"
-      ],
-      "Older than last month": [
-        "Старэйшыя за апошні месяц"
       ],
       "Oldest to newest": [
         "Ад самых старых да самых новых"
@@ -1728,6 +1770,9 @@
       ],
       "Member limit": [
         "Абмежаванне ўдзельніка"
+      ],
+      "Move all items ?": [
+        "Перамясціць усе элементы?"
       ],
       "Our welcome gift to you": [
         "Наш прывітальны падарунак для вас"

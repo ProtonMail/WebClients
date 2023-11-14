@@ -227,6 +227,9 @@
       "More options": [
         "Weitere Optionen"
       ],
+      "Move all items": [
+        "Alle Einträge verschieben"
+      ],
       "Move to a shared vault": [
         "In einen geteilten Tresor verschieben"
       ],
@@ -731,6 +734,12 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" wurde in den Papierkorb verschoben - er wird keine E-Mails mehr an dein Postfach weiterleiten."
       ],
+      "All trashed items permanently removed": [
+        "Alle Einträge im Papierkorb werden dauerhaft gelöscht."
+      ],
+      "An item previously shared with you was removed": [
+        "Ein zuvor mit dir geteilter Eintrag wurde entfernt."
+      ],
       "Auto-lock successfully disabled": [
         "Automatisches Sperren erfolgreich deaktiviert."
       ],
@@ -788,8 +797,8 @@
       "Editor": [
         "Bearbeiter"
       ],
-      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
-        "Aktiviere ${ PASS_APP_NAME }, indem du dein ${ BRAND_NAME }-Konto verbindest."
+      "Emptying trash...": [
+        "Papierkorb wird geleert..."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Bestätigungscode eingeben. Ziffer ${ digit }."
@@ -877,6 +886,9 @@
       "Item successfully moved": [
         "Eintrag erfolgreich verschoben."
       ],
+      "Leaving vault...": [
+        "Tresor wird verlassen..."
+      ],
       "Let's get you started by creating your first item": [
         "Beginne mit dem Erstellen deines ersten Eintrags"
       ],
@@ -926,7 +938,7 @@
         "Passwörter, die älter als 1 Tag sind, werden automatisch aus dem Verlauf gelöscht."
       ],
       "Pending access to the shared data": [
-        "Zugriff auf die geteilten Daten ist ausstehend"
+        "Ausstehender Zugriff auf die geteilten Daten"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
         "Hefte ${ PASS_APP_NAME } an deine Symbolleiste an"
@@ -957,6 +969,9 @@
       ],
       "Save login": [
         "Anmeldedaten speichern"
+      ],
+      "Select destination vault": [
+        "Zieltresor auswählen:"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Wähle aus, wo die importierten Tresore gespeichert werden sollen."
@@ -1060,6 +1075,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "Tresor \"${ payload.share.content.name }\" erfolgreich aktualisiert."
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "Tresor \"${ share.content.name }\" wurde entfernt."
       ],
       "Verification code": [
         "Verifizierungscode"
@@ -1336,6 +1354,9 @@
       "Modified": [
         "Geändert"
       ],
+      "More than a month": [
+        "Mehr als ein Monat"
+      ],
       "Most recent": [
         "Neuste"
       ],
@@ -1368,9 +1389,6 @@
       ],
       "Old-New": [
         "Alt-Neu"
-      ],
-      "Older than last month": [
-        "Älter als letzten Monat"
       ],
       "Oldest to newest": [
         "Älteste nach neueste"
@@ -1686,6 +1704,9 @@
       ],
       "Member limit": [
         "Mitgliederlimit"
+      ],
+      "Move all items ?": [
+        "Alle Einträge verschieben?"
       ],
       "Our welcome gift to you": [
         "Unser Willkommensgeschenk an dich"
