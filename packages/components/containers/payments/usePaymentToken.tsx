@@ -1,10 +1,8 @@
 import { ensureTokenChargeable } from '@proton/components/payments/client-extensions';
-import { PAYMENT_METHOD_TYPES, PaymentVerificator, getCreatePaymentToken } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES, PaymentVerificator } from '@proton/components/payments/core';
 import { Api } from '@proton/shared/lib/interfaces';
 
 import { PaymentVerificationModal } from '..';
-import useApi from '../../hooks/useApi';
-import useModals from '../../hooks/useModals';
 import { TokenPaymentMethod } from '../../payments/core/interface';
 
 export const getDefaultVerifyPayment = (createModal: (modal: JSX.Element) => void, api: Api): PaymentVerificator =>
@@ -72,12 +70,3 @@ export const getDefaultVerifyPaypal = (createModal: (modal: JSX.Element) => void
         return tokenPaymentMethod;
     };
 };
-
-const usePaymentToken = () => {
-    const api = useApi();
-    const { createModal } = useModals();
-
-    return getCreatePaymentToken(getDefaultVerifyPayment(createModal, api), api);
-};
-
-export default usePaymentToken;

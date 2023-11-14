@@ -40,10 +40,6 @@ export const isAndroid = () => {
     return name.toLowerCase().includes('android');
 };
 
-/**
- * Currently it's relevant for Android DuckDuckGo browser
- */
-export const isDuckDuckGo = () => navigator.userAgent.includes('DuckDuckGo');
 export const isSafari = () => ua.browser.name === 'Safari' || ua.browser.name === 'Mobile Safari';
 export const isSafari11 = () => isSafari() && ua.browser.major === '11';
 export const isMinimumSafariVersion = (version: number) => isSafari() && Number(ua.browser.version) >= version;
@@ -84,13 +80,6 @@ export const getIsIframe = () => window.self !== window.top;
 export const metaKey = isMac() ? '⌘' : 'Ctrl';
 export const altKey = isMac() ? 'Option' : 'Alt';
 export const shiftKey = 'Shift';
-
-/**
- * Do not support window.open event after user interaction
- */
-export const doNotWindowOpen = () => {
-    return isDuckDuckGo();
-};
 
 export const getActiveXObject = (name: string) => {
     try {

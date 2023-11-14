@@ -4,5 +4,3 @@ export { default as PaymentMethodDetails } from './PaymentMethodDetails';
 export { default as PaymentMethodsTable } from './PaymentMethodsTable';
 export { default as PaymentMethodsSection } from './PaymentMethodsSection';
 export { default as PaymentMethodSelector } from './PaymentMethodSelector';
-export { default as useMethods } from './useMethods';
-export { default as PaymentMethodsSelect } from './PaymentMethodsSelect';
