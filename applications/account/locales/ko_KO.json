@@ -720,7 +720,7 @@
         "라벨 삭제"
       ],
       "Remove this member": [
-        "이 일원을 제거"
+        "이 회원 제거"
       ],
       "Remove this notification": [
         "이 알림 삭제"
@@ -1714,7 +1714,7 @@
         "${ BRAND_NAME } 사용자와 공유"
       ],
       "Share with anyone": [
-        "아무나 공유"
+        "모두와 공유"
       ]
     },
     "Calendar settings sidebar": {
@@ -1750,7 +1750,7 @@
     },
     "Calendar status": {
       "Active": [
-        "활성화"
+        "활성"
       ],
       "Default": [
         "기본"
@@ -4109,8 +4109,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "현재 요금제에서 사용 가능한 모든 사용자를 사용했습니다. 새 사용자를 추가하려면 요금제를 업그레이드해 주세요."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "조작 키를 활성해야 합니다. 활성화하지 않으면 새 사용자를 만들거나 기존 사용자에게 주소를 추가하거나 개인이 아닌 사용자 계정에 액세스할 수 없습니다."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "조직 키를 활성화 해야만 합니다. 활성화 없이는 비공개가 아닌 사용자를 만들거나 접근할 수 없습니다."
       ],
       "You must privatize all users before generating new organization keys": [
         "새 조직 키를 생성하기 전에 모든 계정을 민영화해야합니다"
@@ -4389,10 +4389,10 @@
     },
     "Error when exporting event from calendar": {
       "Event @ ${ timeString }": [
-        "이벤트 @ ${ timeString }"
+        "@ ${ timeString } 이벤트"
       ],
       "Event from ${ timeString }, ${ rruleString }": [
-        "${ timeString }, ${ rruleString } 의 이벤트"
+        "${ timeString }, ${ rruleString }의 이벤트"
       ]
     },
     "Event invitation error": {
@@ -5180,7 +5180,7 @@
     },
     "Header": {
       "Access": [
-        "접속"
+        "접근"
       ],
       "Action": [
         "동작"
@@ -5697,7 +5697,7 @@
         "${ BRAND_NAME }의 암호화 기술은 그 누구도 당신의 비밀번호에 접근할 수 없음을 뜻합니다 - 심지어 우리도요."
       ],
       "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } 이(가) 기본 일정으로 설정됩니다."
+        "${ calendarName }이(가) 기본 일정으로 설정됩니다."
       ],
       "${ calendarsToBeCreatedCount } new calendars": [
         "${ calendarsToBeCreatedCount }개 새 달력"
@@ -5724,7 +5724,7 @@
         "${ fileName }: 저화질 미리보기"
       ],
       "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } 이(가) 기본 일정으로 설정됩니다."
+        "${ firstRemainingCalendarName }이(가) 기본 일정으로 설정됩니다."
       ],
       "${ inviterEmailJSX } wants to share data with you in ${ PASS_APP_NAME }": [
         "${ inviterEmailJSX }이(가) ${ PASS_APP_NAME }에서 사용자와 데이터 공유를 요청했습니다."
@@ -6803,6 +6803,9 @@
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "1억 명이 넘는 사용자와 비즈니스가 ${ BRAND_NAME }에 가입했습니다."
       ],
+      "P2P": [
+        "P2P"
+      ],
       "Paid for a ${ rewardMonths } months plan": [
         "${ rewardMonths } 개월 플랜 결제"
       ],
@@ -6933,13 +6936,13 @@
         "대기열에 추가됨"
       ],
       "read our two-factor authentication guide first": [
-        "먼저 2단계 인증 가이드를 읽어보세요"
+        "이중 인증에 대한 가이드를 먼저 읽은 뒤에"
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "신뢰하는 기기에서 권장됩니다. ${ keepMeSignedInLearnMoreLink }"
       ],
       "Recovery file downloaded": [
-        "다운로드된 파일 복구"
+        "복구 파일 다운로드됨."
       ],
       "Recovery files have been voided": [
         "복구 파일이 버려졌습니다"
@@ -7069,6 +7072,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "로얄 사용자시기에, 계정에 추가적인 기능이 활성화 되었습니다."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP 권한을 허용하면 서드파티 서비스 및 디바이스에서 지정 도메인 주소를 사용하여 ${ MAIL_APP_NAME }을 통해 이메일 전송을 할 수 있습니다. 이 기능은 지정 도메인이 있는 ${ BRAND_NAME } for business 사용자만 사용할 수 있습니다."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP 권한을 통해 타사 서비스 또는 장치가 지정 도메인 주소에 대해 ${ MAIL_APP_NAME }을(를) 통해 이메일을 보낼 수 있습니다. 접근을 요청하려면, 사용 사례, 사용 사례, 사용하려는 사용자 지정 도메인, 예상 시간별 및 일일 이메일 볼륨을 설명하는 ${ createTicket }을(를) 작성하십시오."
@@ -7233,7 +7239,7 @@
         "잠정적으로 저장한 암호화 키일 수 있습니다."
       ],
       "This is the password you used before the password reset.": [
-        "비밀번호를 재설정하기 전에 사용한 비밀번호에요."
+        "비밀번호를 재설정하기 전에 사용한 비밀번호 입니다."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "이 링크는 암호 및 신용 카드 등 세부 정보와 같은 정보를 도용하려는 웹사이트로 연결되요."
@@ -7352,6 +7358,9 @@
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "새 요금제에 가입하거나 현재 요금제를 갱신하는 데 사용할 수 있는 크레딧으로 계정을 충전하세요. 사용한 ${ i18nCurrency } 당 한개의 크레딧을 받습니다."
       ],
+      "Tor": [
+        "Tor"
+      ],
       "Total email addresses": [
         "총 이메일 주소"
       ],
@@ -7423,6 +7432,9 @@
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "${ PROTON_SENTINEL_NAME } 기능을 사용하려면 ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, 또는 ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } 플랜으로 업그레이드하세요."
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "${ PROTON_SENTINEL_NAME } 기능을 사용하려면 ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } 및 ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } 플랜으로 업그레이드 하세요."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "공유하기 쉽도록 계정에 @pm.me 짧은 주소로 업그레이드 하세요. \"${ MAIL_APP_NAME }\" 또는 \"비공개 메시지 me\"를 의미합니다."
@@ -7557,7 +7569,7 @@
         "환영합니다"
       ],
       "We’ll send a reset code to the email address you provided for account recovery.": [
-        "계정 복구를 제공하기 위해 이메일 주소로 재설정 코드를 보내드렸습니다."
+        "계정 복구를 위해 제공하신 이메일 주소로 재설정 코드를 보내드립니다."
       ],
       "We’ll send a reset code to the phone number you provided for account recovery.": [
         "계정 복구를 위해 제공하신 휴대폰 번호로 재설정 코드를 보내드립니다."
@@ -9107,7 +9119,10 @@
         "인증 코드"
       ],
       "Verify keys with Key Transparency": [
-        "Key Transparency로 키를 인증하세요"
+        "Key Transparency로 키 인증하기"
+      ],
+      "VPN Accelerator": [
+        "VPN Accelerator"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "가시는 모습을 본다니 슬프네요. 저희가 한층 더 발전할 수 있도록 어떤 이유로 떠나는지 알려주세요."
@@ -9829,26 +9844,6 @@
         "중간 VPN 속도"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName }(으)로 다운그래이드"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
-      ],
-      "From ${ price }": [
-        "시작 가격: ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "나의 ${ currentPlanName } 계정 유지"
-      ],
-      "Upgrade": [
-        "업그레이드"
-      ],
-      "Upgrade now": [
-        "지금 업그레이드"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "미리보려면 계속하기"
@@ -9888,6 +9883,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } 로 업그레이드"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName }(으)로 다운그래이드"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "${ BRAND_NAME } 의 모든 플랜 살펴보기"
+      ],
+      "From ${ price }": [
+        "시작 가격: ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "나의 ${ currentPlanName } 계정 유지"
+      ],
+      "Upgrade": [
+        "업그레이드"
+      ],
+      "Upgrade now": [
+        "지금 업그레이드"
       ]
     },
     "new_plans: feature": {
@@ -10915,6 +10930,9 @@
       "Add to existing group": [
         "병합할 그룹 추가"
       ],
+      "Android": [
+        "Android"
+      ],
       "Ask each time": [
         "항상 묻기"
       ],
@@ -10939,6 +10957,9 @@
       "Free server configs": [
         "무료 서버 구성"
       ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
       "I found another service that I like better": [
         "더 낫다고 생각되는 서비스를 찾았습니다"
       ],
@@ -10948,6 +10969,9 @@
       "Ignore group": [
         "그룹 무시"
       ],
+      "iOS": [
+        "iOS"
+      ],
       "It's missing a key feature that I need": [
         "필요한 핵심 기능이 빠져 있습니다"
       ],
@@ -10956,6 +10980,9 @@
       ],
       "Left to Right": [
         "왼쪽에서 오른쪽으로"
+      ],
+      "macOS": [
+        "macOS"
       ],
       "My reason isn't listed": [
         "기타 사유"
@@ -11002,8 +11029,17 @@
       "Standard server configs": [
         "기본 서버 구성"
       ],
+      "TCP": [
+        "TCP"
+      ],
       "The whole organization": [
         "전체 조직"
+      ],
+      "UDP": [
+        "UDP"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Option delay send seconds": {
@@ -11514,7 +11550,7 @@
         "기본 시간 지역"
       ],
       "Secondary time zone": [
-        "보조 시간 지역"
+        "보조 시간대"
       ]
     },
     "Private Member": {
@@ -11674,14 +11710,11 @@
       "Changing organization password": [
         "조직 비밀번호 변경중"
       ],
-      "Creating new users": [
-        "새로운 사용자 생성 중"
+      "Creating or accessing non-private users": [
+        "비공개가 아닌 사용자 생성 및 접근"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "비밀번호 변경으로 인해 조직 관리자 권한이 제한되었습니다. 다음 조치는 더 이상 허용되지 않습니다:"
-      ],
-      "Reading emails of non-private users": [
-        "비공개 사용자의 이메일 읽기"
       ]
     },
     "Role": {
@@ -12574,7 +12607,7 @@
         "캘린더 정보 업데이트됨"
       ],
       "Calendar removed": [
-        "캘린더 삭제됨"
+        "달력이 제거되었습니다."
       ],
       "Calendar updated": [
         "캘린더 업데이트됨"
@@ -12640,7 +12673,7 @@
         "키 업데이트됨"
       ],
       "Locale updated": [
-        "로컬 업데이트됨"
+        "언어를 변경했습니다."
       ],
       "Organization activated": [
         "조직 활성화됨"
@@ -14353,6 +14386,29 @@
     "vpn_2step: tooltip": {
       "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
         "Secure core 서버, 빠른 P2P/BitTorrent 다운로드, VPN을 통한 Tor 등에 접근하세요."
+      ]
+    },
+    "VPNClient": {
+      "Android": [
+        "Android"
+      ],
+      "Android TV": [
+        "Android TV"
+      ],
+      "Chromebook": [
+        "Chromebook"
+      ],
+      "GNU/Linux": [
+        "GNU/Linux"
+      ],
+      "iOS": [
+        "iOS"
+      ],
+      "macOS": [
+        "macOS"
+      ],
+      "Windows": [
+        "Windows"
       ]
     },
     "Warning": {

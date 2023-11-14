@@ -4,20 +4,9 @@
     "language": "ru_RU"
   },
   "contexts": {
-    "A label for unlabeled shared calendar links": {
-      "Unlabeled": [
-        "Неотмеченные"
-      ]
-    },
     "Access level": {
-      "Full view": [
-        "Полный вид"
-      ],
       "Full view (see all event details)": [
         "Полный просмотр (см. всю информацию мероприятия)"
-      ],
-      "Limited view": [
-        "Ограниченный вид"
       ],
       "Limited view (see only free/busy)": [
         "Ограниченный просмотр (смотрите только свободные/занятые)"
@@ -73,9 +62,6 @@
       ],
       "Add address or domain": [
         "Добавить адреса или домен"
-      ],
-      "Add calendar from URL": [
-        "Добавить календарь по URL"
       ],
       "Add condition": [
         "Добавить условие"
@@ -284,9 +270,6 @@
       "Delete": [
         "Удалить"
       ],
-      "Delete link": [
-        "Удалить ссылку"
-      ],
       "Delete permanently": [
         "Удалить безвозвратно"
       ],
@@ -340,9 +323,6 @@
       ],
       "Download CSV sample": [
         "Скачать образец файла CSV"
-      ],
-      "Download ICS": [
-        "Скачать ICS"
       ],
       "Download recovery file": [
         "Скачать файл восстановления"
@@ -487,9 +467,6 @@
       ],
       "Import emails": [
         "Импортировать электронную почту"
-      ],
-      "Import from ICS": [
-        "Импорт из ICS"
       ],
       "Import key": [
         "Импортировать ключ"
@@ -647,17 +624,11 @@
       "Remove bonuses": [
         "Удалить бонусы"
       ],
-      "Remove calendar": [
-        "Удалить календарь"
-      ],
       "Remove gift code": [
         "Удалить подарочный код"
       ],
       "Remove this label": [
         "Удалить этот ярлык"
-      ],
-      "Remove this member": [
-        "Удалить этого участника"
       ],
       "Remove this notification": [
         "Удалить это уведомление"
@@ -725,17 +696,11 @@
       "Revoke all other sessions": [
         "Прервать все другие сессии"
       ],
-      "Revoke this invitation": [
-        "Отозвать это приглашение"
-      ],
       "Save": [
         "Сохранить"
       ],
       "Save address": [
         "Сохранить адрес"
-      ],
-      "Save ICS file": [
-        "Сохранить файл ICS"
       ],
       "Save selected": [
         "Сохранить выбранное"
@@ -763,9 +728,6 @@
       ],
       "Select files": [
         "Выбрать файлы"
-      ],
-      "Select language for invitation emails": [
-        "Выберите язык для писем с приглашениями"
       ],
       "Select time zone": [
         "Выберите часовой пояс"
@@ -1025,16 +987,6 @@
         "Возобновить"
       ]
     },
-    "Action; accept invitation to share calendar": {
-      "Accept": [
-        "Принять"
-      ]
-    },
-    "Action; decline invitation to share calendar": {
-      "Decline": [
-        "Отклонить"
-      ]
-    },
     "Addon": {
       "${ price } per dedicated server": [
         "${ price } за выделенный сервер"
@@ -1162,11 +1114,6 @@
       ],
       "Unsupported event": [
         "Событие не поддерживается"
-      ]
-    },
-    "Auto import invitations setting": {
-      "Add to calendar and mark as pending": [
-        "Добавить в календарь и отметить как ожидающее рассмотрения"
       ]
     },
     "Autoresponse": {
@@ -1415,11 +1362,6 @@
         "Каждые 2 года"
       ]
     },
-    "breadcrumb": {
-      "Calendars": [
-        "Календари"
-      ]
-    },
     "Bridge version load failed": {
       "Failed to find latest version": [
         "Не удалось найти последнюю версию"
@@ -1524,40 +1466,6 @@
         "Добавить людей или группы"
       ]
     },
-    "Calendar edit button tooltip": {
-      "Edit calendar": [
-        "Редактировать календарь"
-      ]
-    },
-    "Calendar export section description": {
-      "Download an ICS file with all the events from the selected calendar.": [
-        "Скачать файл ICS со всеми событиями из выбранного календаря."
-      ]
-    },
-    "Calendar import section description": {
-      "You can import ICS files from another calendar to ${ CALENDAR_APP_NAME }. This lets you quickly import one event or your entire agenda.": [
-        "Вы можете импортировать файлы ICS из другого календаря в ${ CALENDAR_APP_NAME }. Это позволяет быстро импортировать одно событие или всю повестку дня."
-      ]
-    },
-    "Calendar invite status label": {
-      "Declined": [
-        "Отклонено"
-      ],
-      "Invite sent": [
-        "Приглашение отправлено"
-      ]
-    },
-    "Calendar link purpose update success message": {
-      "Label added": [
-        "Ярлык добавлен"
-      ],
-      "Label deleted": [
-        "Ярлык удален"
-      ],
-      "Label edited": [
-        "Ярлык изменен"
-      ]
-    },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
         "Только вы можете видеть ярлык"
@@ -1578,44 +1486,12 @@
         "У вас уже есть доступ к этому календарю"
       ]
     },
-    "Calendar settings link share description": {
-      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Создайте ссылку на свой календарь и поделитесь ею с любым человеком за пределами ${ BRAND_NAME }. Только вы можете добавлять или удалять события."
-      ]
-    },
-    "Calendar settings private share description": {
-      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
-        "Поделитесь своим календарем с другими пользователями ${ BRAND_NAME }. Обеспечьте совместную работу, разрешив им добавлять и изменять события в вашем календаре. Вы можете изменить права доступа пользователей в любое время."
-      ]
-    },
-    "Calendar settings section title": {
-      "Share calendar": [
-        "Поделиться календарем"
-      ],
-      "Share outside ${ BRAND_NAME }": [
-        "Поделиться вне ${ BRAND_NAME }"
-      ],
-      "Share with ${ BRAND_NAME } users": [
-        "Поделиться с пользователями ${ BRAND_NAME }"
-      ],
-      "Share with anyone": [
-        "Делитесь с кем угодно"
-      ]
-    },
     "Calendar settings sidebar": {
       "Show ${ remainingItems } more": [
         "Показать ещё ${ remainingItems }",
         "Показать ещё ${ remainingItems }",
         "Показать ещё ${ remainingItems }",
         "Показать ещё ${ remainingItems }"
-      ]
-    },
-    "Calendar share permission label": {
-      "Edit event details": [
-        "Изменить информацию о событии"
-      ],
-      "See all event details": [
-        "Посмотреть всю информацию о событии"
       ]
     },
     "Calendar sharing access option label": {
@@ -1631,21 +1507,7 @@
         "Не удалось получить контактную информацию для ${ address }"
       ]
     },
-    "Calendar sharing permission change notification": {
-      "Permissions changed for ${ email }": [
-        "Разрешения изменены для ${ email }"
-      ]
-    },
     "Calendar status": {
-      "Active": [
-        "Активный"
-      ],
-      "Default": [
-        "По умолчанию"
-      ],
-      "Disabled": [
-        "Отключен"
-      ],
       "Not synced": [
         "Не синхронизировано"
       ],
@@ -1691,11 +1553,6 @@
       ],
       "More than 12 hours passed since last update — ${ CALENDAR_APP_NAME } will try to update the calendar in a few hours.": [
         "С момента последнего обновления прошло более 12 часов - ${ CALENDAR_APP_NAME } попытается обновить календарь через несколько часов."
-      ]
-    },
-    "Calendar table settings button tooltip": {
-      "Open settings": [
-        "Открыть настройки"
       ]
     },
     "Calendar view": {
@@ -2917,22 +2774,9 @@
         "Среда"
       ]
     },
-    "Default calendar event settings section title": {
-      "Default event settings": [
-        "Настройки события по умолчанию"
-      ]
-    },
     "Default display name vcard": {
       "Unknown": [
         "Неизвестный"
-      ]
-    },
-    "Delete calendar section description": {
-      "All events in this calendar will be deleted.": [
-        "Все события в этом календаре будут удалены."
-      ],
-      "You will no longer have access to this calendar.": [
-        "Вы больше не будете иметь доступ к этому календарю."
       ]
     },
     "Delinquent modal title": {
@@ -3226,9 +3070,6 @@
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
         "Автоматические ответы — это платная функция. Улучшите до платного аккаунта, чтобы использовать эту функцию."
-      ],
-      "Calendar cannot be found": [
-        "Невозможно найти календарь"
       ],
       "Calendar limit reached": [
         "Достигнут лимит календаря"
@@ -3653,9 +3494,6 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Вы достигли максимального числа пользователей, предусмотренного вашим тарифом. Пожалуйста, улучшите ваш тариф прежде, чем добавлять нового пользователя."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Вы должны активировать ключи организации. Без активации вы не сможете добавлять новых пользователей, адреса для уже существующих пользователей или получать доступ к неконфиденциальным пользовательским учётным записям."
-      ],
       "You must privatize all users before generating new organization keys": [
         "Вы должны приватизировать всех пользователей перед генерированием новых ключей организации"
       ],
@@ -3926,14 +3764,6 @@
         "Изображение не выбрано"
       ]
     },
-    "Error when exporting event from calendar": {
-      "Event @ ${ timeString }": [
-        "Событие @ ${ timeString }"
-      ],
-      "Event from ${ timeString }, ${ rruleString }": [
-        "Событие с ${ timeString }, ${ rruleString }"
-      ]
-    },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
         "Невозможно расшифровать вложенный файл ICS"
@@ -3981,56 +3811,6 @@
     "Event title": {
       "(no title)": [
         "(без названия)"
-      ]
-    },
-    "Export calendar": {
-      "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } событие экспортировано",
-        "${ totalProcessed }/${ totalToProcess } события экспортированы",
-        "${ totalProcessed }/${ totalToProcess } событий экспортировано",
-        "${ totalProcessed }/${ totalToProcess } событий экспортировано"
-      ],
-      "Calendar successfully exported. You can now save the ICS file.": [
-        "Календарь успешно экспортирован. Теперь вы можете сохранить файл ICS."
-      ],
-      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
-        "Расшифровка событий из календаря: ${ totalProcessed }/${ totalToProcess }"
-      ],
-      "Due to a password reset, none of your events could be decrypted and exported.": [
-        "Из-за сброса пароля ни одно из ваших событий не удалось расшифровать и экспортировать."
-      ],
-      "Due to a password reset, some of your events could not be decrypted and exported.": [
-        "Из-за сброса пароля некоторые из ваших событий не удалось расшифровать и экспортировать."
-      ],
-      "Error decrypting event": [
-        "Ошибка расшифровки события"
-      ],
-      "Learn how to restore encrypted events with old password": [
-        "Узнайте, как восстановить зашифрованные события со старым паролем"
-      ],
-      "Loading events": [
-        "Скачивание событий"
-      ],
-      "None of the events could be exported.": [
-        "Ни одно из событий не может быть экспортировано."
-      ],
-      "Password reset - event cannot be decrypted": [
-        "Сброс пароля - событие не может быть расшифровано"
-      ],
-      "Password reset - multiple events cannot be decrypted": [
-        "Сброс пароля - несколько событий не могут быть расшифрованы"
-      ],
-      "Please don't close the tab before the exporting process is finished.": [
-        "Пожалуйста, не закрывайте вкладку до завершения процесса экспорта."
-      ],
-      "Some of your events could not be exported.": [
-        "Не удалось экспортировать некоторые события."
-      ],
-      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
-        "Подключение к Интернету было прервано, что привело к сбою процесса экспорта. Пожалуйста, попробуйте еще раз."
-      ],
-      "You can save an ICS file of the events that were successfully exported.": [
-        "Вы можете сохранить ICS-файл событий, которые были успешно экспортированы."
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4700,12 +4480,6 @@
       ]
     },
     "Header": {
-      "Access": [
-        "Доступ"
-      ],
-      "Action": [
-        "Действие"
-      ],
       "Actions": [
         "Действия"
       ],
@@ -4733,9 +4507,6 @@
       "Key type": [
         "Тип ключа"
       ],
-      "Label": [
-        "Ярлык"
-      ],
       "Location": [
         "Расположение"
       ],
@@ -4748,9 +4519,6 @@
       "Organization key fingerprint": [
         "Отпечаток ключа организации"
       ],
-      "Permissions": [
-        "Разрешения"
-      ],
       "Protection": [
         "Защита"
       ],
@@ -4762,9 +4530,6 @@
       ],
       "Time": [
         "Время"
-      ],
-      "User": [
-        "Пользователь"
       ]
     },
     "Header for addresses table": {
@@ -4816,17 +4581,6 @@
       ],
       "Token name": [
         "Имя токена"
-      ]
-    },
-    "Header; Table with list of calendars arranged by type": {
-      "Holidays": [
-        "Праздники"
-      ],
-      "Other": [
-        "Другой"
-      ],
-      "Subscribed": [
-        "Подписаны"
       ]
     },
     "Heading in trial plan": {
@@ -5217,9 +4971,6 @@
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Технология шифрования ${ BRAND_NAME } означает, что никто не сможет получить доступ к вашему паролю, даже мы."
       ],
-      "${ calendarName } will be set as default calendar.": [
-        "${ calendarName } будет установлен в качестве календаря по умолчанию."
-      ],
       "${ calendarsToBeCreatedCount } new calendar": [
         "${ calendarsToBeCreatedCount } новый календарь",
         "${ calendarsToBeCreatedCount } новых календаря",
@@ -5246,9 +4997,6 @@
       ],
       "${ fileName }: low-resolution preview": [
         "${ fileName }: предпросмотр в низком разрешении"
-      ],
-      "${ firstRemainingCalendarName } will be set as default calendar.": [
-        "${ firstRemainingCalendarName } будет установлен в как календарь по умолчанию."
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } можно также использовать с одним паролем, который заменяет и логин, и пароль почтового ящика. Чтобы перейти в режим единого пароля, введите единый пароль, который вы хотите использовать, и нажмите кнопку Сохранить."
@@ -5409,9 +5157,6 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "Пользователь – это учетная запись, связанная с одним именем пользователя, почтовым ящиком и лицом"
       ],
-      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
-        "Получите доступ к своим паролям и защищайте свои личные данные беспрепятственно на всех устройствах. Скачайте и установите подходящие приложения и расширения ${ PASS_APP_NAME }."
-      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Доступ к учётной записи ограничен из-за неоплаченных счетов. Пожалуйста, обратитесь к вашему администратору."
       ],
@@ -5447,9 +5192,6 @@
       ],
       "Add image URL": [
         "Добавить ссылку на изображение"
-      ],
-      "Add label": [
-        "Добавить ярлык"
       ],
       "Add multiple users to your organization at once.": [
         "Добавить в вашу организацию нескольких пользователей разом."
@@ -5532,23 +5274,8 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Каждый, кто имеет эту ссылку, может увидеть все подробности события из этого календаря, такие как название, местоположение или участников."
       ],
-      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Каждый, кто имеет эту ссылку, не сможет синхронизировать или получать будущие обновления для вашего календаря. Если вы захотите снова предоставить им доступ, вам придется создать новую ссылку."
-      ],
       "Are you sure you want to delete this address?": [
         "Вы уверены, что хотите удалить этот адрес?"
-      ],
-      "Are you sure you want to delete this calendar?": [
-        "Вы уверены, что хотите удалить этот календарь?"
-      ],
-      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
-        "Вы уверены, что хотите удалить этот календарь? Все адреса, с которыми вы поделились этим календарем, потеряют к нему доступ."
-      ],
-      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
-        "Вы уверены, что хотите удалить этот календарь? Все события в нем будут удалены."
-      ],
-      "Are you sure you want to delete this calendar? You can add the holidays calendar back later.": [
-        "Вы уверены, что хотите удалить этот календарь? Вы сможете добавить календарь праздников позднее."
       ],
       "Are you sure you want to delete this domain?": [
         "Вы уверены, что хотите удалить этот домен?"
@@ -5748,9 +5475,6 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Удалите все остальные записи MX или убедитесь, что приоритет ${ MAIL_APP_NAME } имеет наименьшее число."
       ],
-      "Delete link?": [
-        "Удалить ссылку?"
-      ],
       "Discover ProtectBuy logo": [
         "Логотип Discover ProtectBuy"
       ],
@@ -5805,9 +5529,6 @@
       "Edit email address": [
         "Изменить адрес эл. почты"
       ],
-      "Edit label": [
-        "Изменить ярлык"
-      ],
       "Edit link": [
         "Изменить ссылку"
       ],
@@ -5828,9 +5549,6 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "Письма, помеченные этим ярлыком, не будут удалены и по-прежнему могут быть найдены в соответствующей папке."
-      ],
-      "Enable this address to join this calendar": [
-        "Включите этот адрес, чтобы присоединиться к этому календарю"
       ],
       "Enable TLS or SSL on the external service if it is supported.": [
         "Включите TLS или SSL внешней почтовой службы, если она поддерживает данные протоколы."
@@ -5882,9 +5600,6 @@
       ],
       "Enter your recovery phone number and we will send you your username or email address.": [
         "Введите свой резервный номер телефона, и мы отправим вам ваше имя пользователя или адрес электронной почты."
-      ],
-      "Event invitations and RSVPs will be sent in this language.": [
-        "Приглашения на событие и RSVP будут отправлены на этом языке."
       ],
       "Expired": [
         "Истёкший"
@@ -5945,9 +5660,6 @@
       ],
       "If it’s not right for you, we’ll refund you.": [
         "Если он вам не подойдет, мы вернём деньги."
-      ],
-      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
-        "Если системный часовой пояс не соответствует текущему предпочтению часового пояса, вам будет предложено обновить его (не чаще одного раза в день)."
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Если этот домен в настоящее время получает письма, выберите вкладку ${ boldAddresses } и добавьте все активные адреса электронной почты перед изменением записи MX для обеспечения плавного перехода."
@@ -6135,9 +5847,6 @@
       "Link created": [
         "Ссылка создана"
       ],
-      "Link deleted": [
-        "Ссылка удалена"
-      ],
       "Link type": [
         "Тип ссылки"
       ],
@@ -6251,9 +5960,6 @@
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
         "Изменяйте эти настройки только в том случае, если используете PGP для переписки с получателями вне ${ BRAND_NAME }."
-      ],
-      "Only you can see the labels.": [
-        "Только вы можете видеть ярлыки."
       ],
       "Open source": [
         "Открытый исходный код"
@@ -6453,9 +6159,6 @@
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "Обновление страницы или ${ link } автоматически решит большую часть проблем."
       ],
-      "Remove one of your calendars to join this one": [
-        "Удалите один из своих календарей, чтобы присоединиться к этому"
-      ],
       "Report link expired": [
         "Ссылка на отчет устарела"
       ],
@@ -6602,9 +6305,6 @@
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Сообщение ${ boldDataLocked } больше не будет отображаться, но вы по-прежнему можете разблокировать свои данные по ссылке: ${ encryptionAndKeysLink }."
-      ],
-      "The calendar will be removed from your account.": [
-        "Календарь будет удален из вашей учетной записи."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Истёк срок действия ссылки для подтверждения почты. Пожалуйста, войдите ещё раз, чтобы отправить её заново."
@@ -7080,9 +6780,6 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Вы не задали способ восстановления доступа, поэтому, если вы забудете пароль, восстановление аккаунта будет невозможно. Продолжить без метода восстановления?"
       ],
-      "You have no calendars to export.": [
-        "У вас нет календарей для экспорта."
-      ],
       "You have no saved payment methods.": [
         "У вас нет сохраненных способов оплаты."
       ],
@@ -7104,9 +6801,6 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "Вам необходимо связать кредитную карту или банковский счет с вашим счетом PayPal. Если ваш счет PayPal не имеет такой привязки, пожалуйста, нажмите на кнопку ниже."
       ],
-      "You need to have an active personal calendar to import your events from ICS.": [
-        "Для импорта событий из ICS необходимо иметь активный личный календарь."
-      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Вы достигли ${ spaceDisplayed }% емкости Вашего хранилища. ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -7115,9 +6809,6 @@
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
         "Вам следует экспортировать резервную копию этого ключа на случай, если вам понадобится восстановить зашифрованные им данные."
-      ],
-      "You still need to reply to invitations for the host to see your response.": [
-        "Вам все еще нужно ответить на приглашения, чтобы приглашающая сторона увидела ваш ответ."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам понадобится адрес ${ BRAND_NAME } для использования ${ MAIL_APP_NAME } и ${ CALENDAR_APP_NAME }"
@@ -7611,9 +7302,6 @@
     "Knowledge base link label": {
       "Here's how": [
         "Вот как"
-      ],
-      "Learn more": [
-        "Подробнее"
       ]
     },
     "Label": {
@@ -7745,9 +7433,6 @@
       ],
       "Auto-delete unwanted messages": [
         "Автоматическое удаление нежелательных сообщений"
-      ],
-      "Auto-detect primary time zone": [
-        "Автоопределение основного часового пояса"
       ],
       "Auto-reply": [
         "Автоответчик"
@@ -7910,9 +7595,6 @@
       ],
       "Default language": [
         "Язык по умолчанию"
-      ],
-      "Default language (${ defaultLanguage })": [
-        "Язык по умолчанию: (${ defaultLanguage })"
       ],
       "Default PGP scheme": [
         "Схема PGP по умолчанию"
@@ -8121,9 +7803,6 @@
       "Level for NetShield blocker filtering": [
         "Уровень для фильтрации блокировщика NetShield"
       ],
-      "Link label": [
-        "Ярлык ссылки"
-      ],
       "Mail Server (IMAP)": [
         "Почтовый сервер (IMAP)"
       ],
@@ -8325,12 +8004,6 @@
       "Send crash reports": [
         "Отправлять отчеты об ошибках"
       ],
-      "Send in": [
-        "Отправить в"
-      ],
-      "Show secondary time zone": [
-        "Отображать дополнительный часовой пояс"
-      ],
       "Show sender images": [
         "Показать изображения отправителей"
       ],
@@ -8514,19 +8187,6 @@
     "Label for adding a new custom domain": {
       "Add a domain that you own to your ${ MAIL_APP_NAME } account.": [
         "Добавьте принадлежащий вам домен к вашему аккаунту ${ MAIL_APP_NAME }."
-      ]
-    },
-    "Label for default event notifications": {
-      "All-day event notifications": [
-        "Уведомления о событии в течение всего дня"
-      ],
-      "Notifications": [
-        "Уведомления"
-      ]
-    },
-    "Label for default event settings": {
-      "Duration": [
-        "Длительность"
       ]
     },
     "Label for domain modal": {
@@ -8836,22 +8496,6 @@
         "Эта функция временно недоступна"
       ]
     },
-    "Maximum calendar links reached warning": {
-      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Вы можете создать до ${ MAX_LINKS_PER_CALENDAR } ссылки на один календарь. Чтобы создать новую ссылку на этот календарь, удалите одну из ссылок из списка ниже.",
-        "Вы можете создать до ${ MAX_LINKS_PER_CALENDAR } ссылок на один календарь. Чтобы создать новую ссылку на этот календарь, удалите одну из списка ниже.",
-        "Вы можете создать до ${ MAX_LINKS_PER_CALENDAR } ссылок на один календарь. Чтобы создать новую ссылку на этот календарь, удалите одну из списка ниже.",
-        "Вы можете создать до ${ MAX_LINKS_PER_CALENDAR } ссылок на один календарь. Чтобы создать новую ссылку на этот календарь, удалите одну из списка ниже."
-      ]
-    },
-    "Maximum shared calendar members reached alert": {
-      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "Вы достигли максимального количества из ${ MAX_CALENDAR_MEMBERS } участника.",
-        "Вы достигли максимального количества из ${ MAX_CALENDAR_MEMBERS } участников.",
-        "Вы достигли максимального количества из ${ MAX_CALENDAR_MEMBERS } участников.",
-        "Вы достигли максимального количества из ${ MAX_CALENDAR_MEMBERS } участников."
-      ]
-    },
     "Member action": {
       "Delete": [
         "Удалить"
@@ -9149,26 +8793,6 @@
         "Средняя скорость VPN"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Перейти на более дешевую версию ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "От: ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Сохранить мой аккаунт ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Улучшить"
-      ],
-      "Upgrade now": [
-        "Улучшить сейчас"
-      ]
-    },
     "new_plans: action": {
       "Continue to review": [
         "Перейти к обзору"
@@ -9208,6 +8832,26 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Улучшить до ${ upsellPlanHumanSize }"
+      ]
+    },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Перейти на более дешевую версию ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Ознакомиться со всеми тарифами ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "От: ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Сохранить мой аккаунт ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Улучшить"
+      ],
+      "Upgrade now": [
+        "Улучшить сейчас"
       ]
     },
     "new_plans: feature": {
@@ -9975,20 +9619,11 @@
       ]
     },
     "Notification in share calendar modal": {
-      "Invitation deleted": [
-        "Приглашение удалено"
-      ],
-      "Invitation revoked": [
-        "Приглашение отозвано"
-      ],
       "Member added": [
         "Участник добавлен",
         "Участники добавлены",
         "Участники добавлены",
         "Участники добавлены"
-      ],
-      "Member deleted": [
-        "Участник удален"
       ]
     },
     "Notification in shared calendar modal": {
@@ -9997,11 +9632,6 @@
       ],
       "Joined ${ calendarName } (${ senderEmail })": [
         "Присоединились к ${ calendarName } (${ senderEmail })"
-      ]
-    },
-    "Notification success": {
-      "Event defaults updated": [
-        "Обновлены параметры события по умолчанию"
       ]
     },
     "Notification time input": {
@@ -10586,11 +10216,6 @@
         "Новая кредитная/дебетовая карта"
       ]
     },
-    "Personal calendar section description": {
-      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
-        "Создайте календарь, чтобы не отставать от графика и при этом обеспечивать защищенность своих данных."
-      ]
-    },
     "PGP key warning": {
       "Email address not found among user ids defined in sending key (${ keyUserIds })": [
         "Адрес электронной почты не найден среди идентификаторов пользователя, определенных в ключе отправки (${ keyUserIds })"
@@ -10708,14 +10333,6 @@
     "Price": {
       "Free": [
         "Бесплатно"
-      ]
-    },
-    "Primary timezone": {
-      "Primary time zone": [
-        "Основной часовой пояс"
-      ],
-      "Secondary time zone": [
-        "Дополнительный часовой пояс"
       ]
     },
     "Private Member": {
@@ -10838,36 +10455,6 @@
         "Передовой"
       ]
     },
-    "Remove calendar section description": {
-      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "Отменив подписку, вы больше не будете иметь доступа к этому календарю. Все события в этом календаре будут удалены из вашего аккаунта, но они останутся в исходной общедоступной ссылке."
-      ],
-      "You will no longer have access to this calendar.": [
-        "Вы больше не будете иметь доступа к этому календарю."
-      ]
-    },
-    "Remove calendar section text": {
-      "If you leave this calendar, you'll have to ask the owner to join again.": [
-        "Если вы покинете этот календарь, вам придется просить владельца присоединиться к нему снова."
-      ],
-      "This calendar will be removed from your account.": [
-        "Календарь будет удален из вашего аккаунта."
-      ]
-    },
-    "Remove calendar section title": {
-      "Delete calendar?": [
-        "Удалить календарь?"
-      ],
-      "Leave calendar?": [
-        "Покинуть календарь?"
-      ],
-      "Remove calendar": [
-        "Удалить календарь"
-      ],
-      "Unsubscribe?": [
-        "Отписаться?"
-      ]
-    },
     "Restore administrator panel": {
       "Changing organization keys": [
         "Изменение ключей организации"
@@ -10875,14 +10462,8 @@
       "Changing organization password": [
         "Изменение пароля организации"
       ],
-      "Creating new users": [
-        "Создание новых пользователей"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "По причине смены пароля ваши полномочия администратора организации были ограничены. Указанные действия более не разрешены:"
-      ],
-      "Reading emails of non-private users": [
-        "Чтение писем неконфиденциальных пользователей"
       ]
     },
     "Select file": {
@@ -11120,11 +10701,6 @@
     "Share calendar modal title": {
       "Share with ${ BRAND_NAME } users": [
         "Поделиться с пользователями ${ BRAND_NAME }"
-      ]
-    },
-    "Shared calendar label input placeholder": {
-      "Add label": [
-        "Добавить ярлык"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -11421,14 +10997,6 @@
         "Узнайте как создать приватную ссылку на календарь."
       ]
     },
-    "Subscribed calendar section description": {
-      "Add public, external, or shared calendars using a URL.": [
-        "Добавляйте публичные, внешние или общие календари, используя URL."
-      ],
-      "Add public, external, or shared calendars.": [
-        "Добавьте публичные, внешние или общие календари."
-      ]
-    },
     "Subscription": {
       "Billed every 2 years": [
         "Оплата каждые 2 года"
@@ -11630,9 +11198,6 @@
       "Calendar information updated": [
         "Сведения о календаре обновлены"
       ],
-      "Calendar removed": [
-        "Календарь удален"
-      ],
       "Calendar updated": [
         "Календарь обновлен"
       ],
@@ -11647,9 +11212,6 @@
       ],
       "Credits added": [
         "Кредиты добавлены"
-      ],
-      "Default calendar updated": [
-        "Календарь по умолчанию обновлен"
       ],
       "Display name updated": [
         "Отображаемое имя обновлено"
@@ -11838,11 +11400,6 @@
         "в месяц"
       ]
     },
-    "Summary of errors during export calendar": {
-      "Details about events that couldn't be exported": [
-        "Подробности о событиях, которые не удалось экспортировать"
-      ]
-    },
     "summer2023: Tooltip": {
       "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
         "Создавайте надежные данные для входа на всех устройствах. Вам будут доступны неограниченное количество псевдонимов, 20 хранилищ, встроенная двухфакторная аутентификация, автозаполнение данных кредитной карты и многое другое."
@@ -11871,11 +11428,6 @@
       ],
       "For individuals": [
         "Для частных лиц"
-      ]
-    },
-    "Table header; invitations to share calendar": {
-      "Shared with me": [
-        "Поделились со мной"
       ]
     },
     "TableHeader": {
@@ -12282,9 +11834,6 @@
       "Delete account": [
         "Удалить аккаунт"
       ],
-      "Delete calendar": [
-        "Удалить календарь"
-      ],
       "Delete key permanently?": [
         "Удалить ключ навсегда?"
       ],
@@ -12368,9 +11917,6 @@
       ],
       "Export": [
         "Экспорт"
-      ],
-      "Export calendar": [
-        "Экспортировать календарь"
       ],
       "Export private key": [
         "Экспорт закрытого ключа"
@@ -12611,9 +12157,6 @@
       ],
       "Refer a friend": [
         "Порекомендуйте другу"
-      ],
-      "Remove calendar": [
-        "Удалить календарь"
       ],
       "Remove user?": [
         "Удалить пользователя?"
@@ -13157,22 +12700,6 @@
       ],
       "Your default font will look like following:": [
         "Ваш шрифт по умолчанию будет выглядеть следующим образом:"
-      ]
-    },
-    "Upgrade": {
-      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
-        "Улучшите до ${ passPlusPlanName } для получения неограниченного количества псевдонимов для скрытия своей электронной почты"
-      ],
-      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Улучшите до ${ planName } для одновременного подключения к VPN до ${ n } устройства",
-        "Улучшите до ${ planName } для одновременного подключения к VPN до ${ n } устройств",
-        "Улучшите до ${ planName } для одновременного подключения к VPN до ${ n } устройств",
-        "Улучшите до ${ planName } для одновременного подключения к VPN до ${ n } устройств"
-      ]
-    },
-    "Upgrade notice": {
-      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
-        "Улучшите тариф ${ MAIL_SHORT_APP_NAME } до платного, чтобы поделиться вашим календарем."
       ]
     },
     "upsell panel": {
