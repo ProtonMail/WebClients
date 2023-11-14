@@ -183,6 +183,7 @@ const List = (
                         !columnLayout && 'items-column-list-inner--border-none',
                         'flex flex-nowrap flex-column relative items-column-list-inner--mail overflow-hidden h-full'
                     )}
+                    data-testid={`message-list-${displayPlaceholders ? 'loading' : 'loaded'}`}
                 >
                     <div className="flex-item-noshrink">{toolbar}</div>
                     <div className="h-full scroll-if-needed flex flex-column flex-nowrap w-full">
