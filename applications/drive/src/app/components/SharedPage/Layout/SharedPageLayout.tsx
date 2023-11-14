@@ -53,12 +53,7 @@ export default function SharedPageLayout({ FooterComponent, children, className 
                         )}
                     </div>
                 </Header>
-                <main
-                    className={clsx([
-                        'shared-page-layout-container flex flex-no-min-children flex-nowrap flex-column md:flex-row',
-                        'flex-item-fluid',
-                    ])}
-                >
+                <main className="shared-page-layout-container flex flex-no-min-children flex-nowrap flex-column md:flex-row flex-item-fluid">
                     <div className="flex-item-fluid mb-4 md:mb-0 flex flex-column flex-nowrap">{children}</div>
                 </main>
                 <Footer className="flex-justify-space-between flex-align-items-center p-0 mt-6 md:mt-0">

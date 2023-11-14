@@ -126,7 +126,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                     </span>
                                     <span
                                         className={clsx(
-                                            'text-ellipsis flex-item-fluid pl-2 lg:pl-0 search-event-summary text-bold'
+                                            'text-ellipsis lg:flex-item-fluid pl-2 lg:pl-0 search-event-summary text-bold'
                                         )}
                                     >
                                         {getDisplayTitle(Summary)}

@@ -55,6 +55,7 @@ const ThemesSection = () => {
             {settings.Mode === ThemeModeSetting.Auto ? (
                 <SettingsSectionWide className="flex mt-6 flex-nowrap gap-4 flex-column md:flex-row">
                     <ThemeSyncModeCard
+                        className="md:flex-item-fluid"
                         mode="light"
                         list={themes}
                         themeIdentifier={settings.LightTheme}
@@ -65,6 +66,7 @@ const ThemesSection = () => {
                         active={information.colorScheme === ColorScheme.Light}
                     />
                     <ThemeSyncModeCard
+                        className="md:flex-item-fluid"
                         mode="dark"
                         list={themes}
                         themeIdentifier={settings.DarkTheme}
