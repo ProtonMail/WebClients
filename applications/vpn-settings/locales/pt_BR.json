@@ -2104,8 +2104,8 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Você usou todos os usuários do seu plano. Faça o upgrade do seu plano para adicionar um novo usuário."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Você deve ativar as chaves da sua organização. Sem a ativação, você não poderá criar novos usuários, adicionar endereços a usuários existentes ou acessar contas de usuários que não são privadas."
+      "You must privatize all users before generating new organization keys": [
+        "Você deve tornar privados todos os usuários antes de gerar novas chaves de organização"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Sua conta ou organização tem uma fatura vencida. Pague todas as faturas pendentes."
@@ -5741,14 +5741,8 @@
       "Changing organization password": [
         "Alterando a senha da organização"
       ],
-      "Creating new users": [
-        "Criando usuários"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Devido a uma alteração de senha, seus privilégios de administrador da organização foram restritos. As seguintes ações já não são permitidas:"
-      ],
-      "Reading emails of non-private users": [
-        "Ler e-mails de usuários não privados"
       ]
     },
     "Role": {

@@ -140,6 +140,9 @@
       "Got it": [
         "Shvaćam"
       ],
+      "Help": [
+        "Pomoć"
+      ],
       "Hide": [
         "Sakrij"
       ],
@@ -165,6 +168,9 @@
         "Sljedeće"
       ],
       "OK": [
+        "U redu"
+      ],
+      "Ok": [
         "U redu"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
@@ -244,6 +250,9 @@
       ],
       "Send my username": [
         "Pošalji moje korisničko ime"
+      ],
+      "Settings": [
+        "Postavke"
       ],
       "Share via link": [
         "Podijeli putem poveznice"
@@ -359,6 +368,14 @@
       ],
       "Orphan": [
         "Siroče"
+      ]
+    },
+    "bf2023: Deal details": {
+      "1 user": [
+        "1 korisnik"
+      ],
+      "3 TB": [
+        "3 TB"
       ]
     },
     "Billing cycle option": {
@@ -1193,9 +1210,6 @@
       ],
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Iskoristili ste sve slobodne korisnike u Vašem planu. Molimo Vas da nadogradite Vaš plan da biste dodali novog korisnika."
-      ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Morate aktivirati ključeve vaše organizacije. Bez aktivacije nećete moći stvarati nove korisnike, dodavati adrese postojećim korisnicima niti pristupati neprivatnim korisničkim računima."
       ]
     },
     "Error importing users": {
@@ -1214,6 +1228,11 @@
     "Error notification in the bug report modal when the user upload file": {
       "No image selected": [
         "Nije odabrana nijedna slika"
+      ]
+    },
+    "familyOffer_2023:Action": {
+      "Got it": [
+        "Shvaćam"
       ]
     },
     "Feature": {
@@ -1236,6 +1255,28 @@
       ],
       "Torrenting support (P2P)": [
         "Torrent podrška (P2P)"
+      ]
+    },
+    "file size format": {
+      "GB": [
+        "GB"
+      ],
+      "KB": [
+        "KB"
+      ],
+      "MB": [
+        "MB"
+      ],
+      "TB": [
+        "TB"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "Veliko"
+      ],
+      "Small": [
+        "Malo"
       ]
     },
     "Frequency of news": {
@@ -1591,6 +1632,9 @@
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Nažalost, za ovaj račun nije postavljen način oporavka."
+      ],
+      "Unsaved changes": [
+        "Nespremljene promjene"
       ],
       "Unsupported file": [
         "Nepodržana datoteka"
@@ -2200,19 +2244,55 @@
       "Changing organization password": [
         "Mijenanje organizacijske lozinke"
       ],
-      "Creating new users": [
-        "Stvaranje novog korisnika"
-      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Zbog promjene lozinke, ograničene su ovlasti administratora vaše organizacije. Sljedeće radnje više nisu dopuštene:"
+      ]
+    },
+    "session_recovery:available:action": {
+      "Reset password": [
+        "Ponovno postavljanje lozinke"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Cancel request": [
+        "Poništi zahtjev"
       ],
-      "Reading emails of non-private users": [
-        "Čitanje e-pošte od korisnika koji nisu privatni"
+      "Got it": [
+        "Shvaćam"
+      ],
+      "Learn more": [
+        "Više informacija"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "Odjavite se"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "Poništavanje lozinke"
       ]
     },
     "Signup label": {
       "Username": [
         "Korisničko ime"
+      ]
+    },
+    "specialoffer: Action": {
+      "Close": [
+        "Zatvori"
+      ]
+    },
+    "specialoffer: Deal details": {
+      "1 user": [
+        "1 korisnik"
+      ],
+      "3 TB": [
+        "3 TB"
+      ],
+      "Secure streaming": [
+        "Siguran streaming"
       ]
     },
     "State": {
@@ -2366,6 +2446,9 @@
       ]
     },
     "Title": {
+      "(active)": [
+        "(aktivno)"
+      ],
       "1. Select platform": [
         "1. Odaberite platformu"
       ],
@@ -2608,6 +2691,9 @@
       ],
       "Sign in": [
         "Prijavite se"
+      ],
+      "Sign in with 2FA": [
+        "Prijavite se sa 2FA"
       ],
       "Sign out": [
         "Odjava"

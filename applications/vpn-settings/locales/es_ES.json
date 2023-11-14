@@ -2104,8 +2104,11 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Has utilizado todos los usuarios de tu plan. Mejora tu plan para añadir un nuevo usuario."
       ],
-      "You must activate your organization keys. Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
-        "Debes activar las claves de tu organización. Sin la activación no serás capaz de crear nuevos usuarios, agregar direcciones a los usuarios o acceder a cuentas de usuario no privadas."
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Debes activar las claves de tu organización. Sin la activación no podrás crear o acceder a usuarios no privados."
+      ],
+      "You must privatize all users before generating new organization keys": [
+        "Debes privatizar a todos los usuarios antes de generar nuevas claves de organización"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "Tu cuenta u organización tiene una factura vencida. Tienes que pagar todas las facturas impagadas."
@@ -3587,6 +3590,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Recarga tu cuenta con créditos que puedes utilizar para suscribirte a un plan nuevo o renovar el actual. Obtienes un crédito por cada ${ i18nCurrency } gastado."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Direcciones de correo electrónico totales"
@@ -5761,14 +5767,11 @@
       "Changing organization password": [
         "Cambiar la contraseña de la organización"
       ],
-      "Creating new users": [
-        "Creando usuarios nuevos"
+      "Creating or accessing non-private users": [
+        "Creando o accediendo a usuarios no privados"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Debido a un cambio de contraseña, tus privilegios de administrador en la organización se han limitado. Ya no se permiten las siguientes acciones:"
-      ],
-      "Reading emails of non-private users": [
-        "Leer correos de usuarios no privados"
       ]
     },
     "Role": {
