@@ -1,5 +1,6 @@
 import { BrowserWindow, Rectangle, Session, WebContents, app } from "electron";
 import contextMenu from "electron-context-menu";
+import log from "electron-log/main";
 import { getConfig } from "./config";
 import { APP, WINDOW_SIZES } from "./constants";
 import { isMac } from "./helpers";
@@ -68,6 +69,16 @@ const createGenericWindow = (session: Session, url: string, mapKey: APP, visible
     return window;
 };
 
+const addTagCookie = (session: Session) => {
+    try {
+        session.cookies.set({ url: config.url.account, name: "Tag", value: "alpha" });
+        session.cookies.set({ url: config.url.mail, name: "Tag", value: "alpha" });
+        session.cookies.set({ url: config.url.calendar, name: "Tag", value: "alpha" });
+    } catch (error) {
+        log.error(error);
+    }
+};
+
 export const createMailWindow = (session: Session, visible = true) => {
     const state = getWindowState("MAIL");
     const window = createGenericWindow(session, config.url.mail, "MAIL", visible, state);
@@ -87,6 +98,7 @@ export const createCalendarWindow = (session: Session, visible = true) => {
 };
 
 export const initialWindowCreation = ({ session, mailVisible, calendarVisible }: WindowCreationProps) => {
+    addTagCookie(session);
     const mailWindow = createMailWindow(session, mailVisible);
     mailWindow.webContents.on("did-finish-load", () => {
         const calendarWindow = createCalendarWindow(session, calendarVisible);
