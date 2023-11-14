@@ -202,7 +202,7 @@ export const searchForSnoozed = async (
     folders: Folder[] = []
 ) => {
     await searchForLabelsAndOpenModal(
-        [TRASH, ARCHIVE],
+        [TRASH, ARCHIVE, INBOX],
         SNOOZED,
         folderID,
         isMessage,
