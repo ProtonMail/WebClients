@@ -785,6 +785,9 @@
       ]
     },
     "bf2023: Deal details": {
+      "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
+        "進階版 ${ MAIL_SHORT_APP_NAME } 與 ${ CALENDAR_SHORT_APP_NAME }"
+      ],
       "${ storageSize } storage": [
         "${ storageSize } 儲存空間"
       ],
@@ -794,8 +797,20 @@
       "3 TB": [
         "3 TB"
       ],
+      "3,000+ servers across 65+ countries": [
+        "超過 3500 臺伺服器，遍布於 65 以上個國家"
+      ],
       "6 users": [
         "6 個使用者"
+      ],
+      "Access content worldwide": [
+        "存取跨國內容"
+      ],
+      "Ad-blocker and malware protection": [
+        "廣告攔截與惡意程式保護"
+      ],
+      "All paid ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_APP_NAME } features": [
+        "全部${ MAIL_SHORT_APP_NAME }付費及${ CALENDAR_APP_NAME }功能"
       ],
       "Extended version history": [
         "展開版本紀錄"
@@ -814,6 +829,11 @@
       ],
       "Premium Password Manager": [
         "進階版密碼管理器"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Includes support for 3 custom email domains, ${ addresses } email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "包含對 3 組自訂電子郵件網域、${ addresses } 組電子郵件位址、無限組 hide-my-email 別名、行事曆分享與更多功能的支援。"
       ]
     },
     "Bug category": {
