@@ -22,7 +22,11 @@ export const PasswordField: VFC<Props> = (props) => {
 
     const actions =
         rest.actions !== null ? (
-            <PasswordGeneratorButton key="password-generator-button" onSubmit={handlePasswordGeneratorDone} />
+            <PasswordGeneratorButton
+                key="password-generator-button"
+                onSubmit={handlePasswordGeneratorDone}
+                tabIndex={-1}
+            />
         ) : undefined;
 
     return (
