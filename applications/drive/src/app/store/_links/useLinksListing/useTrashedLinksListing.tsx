@@ -5,8 +5,9 @@ import { ListDriveVolumeTrashPayload } from '@proton/shared/lib/interfaces/drive
 
 import { useDebouncedRequest } from '../../_api';
 import useVolumesState from '../../_volumes/useVolumesState';
-import { DecryptedLink, EncryptedLink } from './../interface';
+import { DecryptedLink } from './../interface';
 import useLinksState from './../useLinksState';
+import { FetchLoadLinksMeta } from './interface';
 import { DEFAULT_SORTING, FetchMeta, PAGE_SIZE, SortParams, useLinksListingHelpers } from './useLinksListingHelpers';
 
 interface FetchTrashMeta extends FetchMeta {
@@ -18,16 +19,6 @@ type TrashFetchState = {
     [volumeId: string]: FetchTrashMeta;
 };
 
-type FetchLoadLinksMeta = (
-    abortSignal: AbortSignal,
-    query: string,
-    shareId: string,
-    linkIds: string[]
-) => Promise<{
-    links: EncryptedLink[];
-    parents: EncryptedLink[];
-}>;
-
 /**
  * Custom hook for managing and fetching trashed links for a given volume.
  */
@@ -36,7 +27,7 @@ export function useTrashedLinksListing() {
     const linksState = useLinksState();
     const volumesState = useVolumesState();
 
-    const { loadFullListing, cacheLoadedLinks, getDecryptedLinksAndDecryptRest } = useLinksListingHelpers();
+    const { loadFullListing, getDecryptedLinksAndDecryptRest } = useLinksListingHelpers();
     const trashFetchState = useRef<TrashFetchState>({});
 
     const getTrashFetchState = useCallback((volumeId: string) => {
@@ -77,8 +68,7 @@ export function useTrashedLinksListing() {
         loadLinksMeta: FetchLoadLinksMeta
     ) => {
         for (const shareId in transformedResponse) {
-            const result = await loadLinksMeta(signal, 'trash', shareId, transformedResponse[shareId].linkIds);
-            await cacheLoadedLinks(signal, shareId, result.links, result.parents);
+            await loadLinksMeta(signal, 'trash', shareId, transformedResponse[shareId].linkIds);
         }
     };
 
@@ -138,9 +128,9 @@ export function useTrashedLinksListing() {
                 );
             });
 
-            const links = result.reduce((acc, element) => {
+            const links = result.reduce<DecryptedLink[]>((acc, element) => {
                 return [...acc, ...element.links];
-            }, [] as DecryptedLink[]);
+            }, []);
 
             const isDecrypting = result.some((element) => {
                 return element.isDecrypting;
@@ -165,19 +155,16 @@ export function useTrashedLinksListing() {
  * and link IDs and parent IDs as values.
  */
 function transformTrashResponseToLinkMap(response: ListDriveVolumeTrashPayload) {
-    return response.Trash.reduce(
-        (acc, share) => {
-            acc[share.ShareID] = {
-                linkIds: share.LinkIDs,
-                parentIds: share.ParentIDs,
-            };
-            return acc;
-        },
-        {} as {
-            [shareId: string]: {
-                linkIds: string[];
-                parentIds: string[];
-            };
-        }
-    );
+    return response.Trash.reduce<{
+        [shareId: string]: {
+            linkIds: string[];
+            parentIds: string[];
+        };
+    }>((acc, share) => {
+        acc[share.ShareID] = {
+            linkIds: share.LinkIDs,
+            parentIds: share.ParentIDs,
+        };
+        return acc;
+    }, {});
 }

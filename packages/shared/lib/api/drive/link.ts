@@ -49,10 +49,10 @@ export const queryEmptyTrashOfShare = (ShareID: string) => ({
     url: `drive/shares/${ShareID}/trash`,
 });
 
-export const queryLinkMetaBatch = (shareId: string, linksIds: string[]) => ({
+export const queryLinkMetaBatch = (shareId: string, linksIds: string[], loadThumbnails: boolean = false) => ({
     method: 'post',
     url: `drive/shares/${shareId}/links/fetch_metadata`,
-    data: { LinkIDs: linksIds, Thumbnails: 1 },
+    data: { LinkIDs: linksIds, Thumbnails: loadThumbnails ? 1 : 0 },
 });
 
 export const queryShareMap = (shareID: string, lastIndex?: number, sessionName?: string, pageSize?: number) => ({
