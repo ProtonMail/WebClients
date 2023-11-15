@@ -62,12 +62,12 @@
         "unleash-proxy-client": "^3.1.0"
     },
     "devDependencies": {
-        "@babel/core": "^7.23.2",
+        "@babel/core": "^7.23.3",
         "@babel/plugin-proposal-object-rest-spread": "^7.20.7",
-        "@babel/plugin-transform-runtime": "^7.23.2",
-        "@babel/preset-env": "^7.23.2",
-        "@babel/preset-react": "^7.22.15",
-        "@babel/preset-typescript": "^7.23.2",
+        "@babel/plugin-transform-runtime": "^7.23.3",
+        "@babel/preset-env": "^7.23.3",
+        "@babel/preset-react": "^7.23.3",
+        "@babel/preset-typescript": "^7.23.3",
         "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton",
         "@proton/i18n": "workspace:packages/i18n",
         "@proton/shared": "workspace:packages/shared",
@@ -83,7 +83,7 @@
         "eslint": "^8.53.0",
         "jest": "^29.7.0",
         "jest-environment-jsdom": "^29.7.0",
-        "prettier": "^3.0.3",
+        "prettier": "^3.1.0",
         "typescript": "^5.2.2"
     },
     "peerDependencies": {
