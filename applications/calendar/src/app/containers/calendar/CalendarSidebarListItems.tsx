@@ -156,6 +156,7 @@ const CalendarSidebarListItems = ({
             props: {
                 onSubmit: (e: MouseEvent<HTMLButtonElement>) => {
                     textToClipboard(link, e.currentTarget);
+                    closeModal('shareLinkSuccessModal');
                     notifyLinkCopied();
                 },
                 accessLevel,
