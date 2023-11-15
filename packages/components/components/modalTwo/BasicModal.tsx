@@ -14,6 +14,7 @@ export interface BasicModalProps extends MainModalOwnProps {
     isOpen: boolean;
     hasClose?: boolean;
     subline?: string;
+    titleClassName?: string;
 }
 
 const BasicModal = <E extends ElementType>({
@@ -25,13 +26,14 @@ const BasicModal = <E extends ElementType>({
     onExit,
     hasClose,
     subline,
+    titleClassName,
     ...rest
 }: PolymorphicPropsWithoutRef<BasicModalProps, E>) => {
     const [modalProps] = useModalState({ open: isOpen, onClose, onExit });
 
     return (
         <ModalTwo {...rest} {...modalProps}>
-            <ModalTwoHeader title={title} subline={subline} hasClose={hasClose} />
+            <ModalTwoHeader titleClassName={titleClassName} title={title} subline={subline} hasClose={hasClose} />
             <ModalTwoContent>{children}</ModalTwoContent>
             {footer && <ModalTwoFooter>{footer}</ModalTwoFooter>}
         </ModalTwo>
