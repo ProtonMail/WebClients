@@ -56,7 +56,7 @@ export const LoginView: VFC<ItemViewProps<'login'>> = ({ vault, revision, ...ite
                 )}
 
                 {totpUri && !totpAllowed && (
-                    <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
+                    <ValueControl icon="lock" label={c('Label').t`2FA secret key (TOTP)`}>
                         <UpgradeButton inline />
                     </ValueControl>
                 )}
@@ -94,7 +94,8 @@ export const LoginView: VFC<ItemViewProps<'login'>> = ({ vault, revision, ...ite
                 info={[
                     {
                         label: c('Label').t`Last autofill`,
-                        values: [lastUseTime ? getFormattedDateFromTimestamp(lastUseTime) : c('Info').t`N/A`],
+                        // translator: when this login was last used
+                        values: [lastUseTime ? getFormattedDateFromTimestamp(lastUseTime) : c('Info').t`Never`],
                     },
                     {
                         label: c('Label').t`Modified`,
