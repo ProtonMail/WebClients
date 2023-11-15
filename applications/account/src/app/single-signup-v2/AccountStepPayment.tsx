@@ -209,7 +209,21 @@ const AccountStepPayment = ({
 
                 const sentryError = getSentryError(error);
                 if (sentryError) {
-                    captureMessage('Could not handle signup', { level: 'error', extra: { error: sentryError } });
+                    const context = {
+                        currency: options.currency,
+                        amount: options.checkResult.AmountDue,
+                        processorType: processor.meta.type,
+                        paymentMethod: paymentFacade.selectedMethodType,
+                        paymentMethodValue: paymentFacade.selectedMethodValue,
+                        cycle: options.cycle,
+                        plan: options.plan,
+                        planName: options.plan?.Name,
+                    };
+
+                    captureMessage('Payments: Failed to handle single-signup-v2', {
+                        level: 'error',
+                        extra: { error: sentryError, context },
+                    });
                 }
             }
         }

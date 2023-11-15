@@ -625,11 +625,18 @@ const SubscriptionContainer = ({
                         step: model.step,
                         cycle: model.cycle,
                         currency: model.currency,
+                        amount,
                         coupon: model.coupon,
                         planIDs,
                         audience,
+                        processorType: paymentFacade.selectedProcessor?.meta.type,
+                        paymentMethod: paymentFacade.selectedMethodType,
+                        paymentMethodValue: paymentFacade.selectedMethodValue,
                     };
-                    captureMessage('Could not handle checkout', { level: 'error', extra: { error, context } });
+                    captureMessage('Payments: failed to handle subscription', {
+                        level: 'error',
+                        extra: { error, context },
+                    });
                 }
             }
         });

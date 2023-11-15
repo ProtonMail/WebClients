@@ -123,7 +123,22 @@ const PaymentStep = ({
             } catch (e) {
                 const error = getSentryError(e);
                 if (error) {
-                    captureMessage('Could not handle signup', { level: 'error', extra: { error } });
+                    const context = {
+                        app: APP_NAME,
+                        plan: plan?.Name,
+                        cycle: subscriptionData.cycle,
+                        currency: subscriptionData.currency,
+                        amount: subscriptionData.checkResult.AmountDue,
+                        code: subscriptionData.checkResult.Coupon?.Code,
+                        processorType: paymentFacade.selectedProcessor?.meta.type,
+                        paymentMethod: paymentFacade.selectedMethodType,
+                        paymentMethodValue: paymentFacade.selectedMethodValue,
+                    };
+
+                    captureMessage('Payments: failed to handle classic signup', {
+                        level: 'error',
+                        extra: { error, context },
+                    });
                 }
             }
         });
