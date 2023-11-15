@@ -40,7 +40,7 @@ const createWindow = (session: Session, url: string, visible: boolean, windowCon
         transparent: isMac,
         frame: !isMac,
         webPreferences: {
-            devTools: config.devTools,
+            devTools: true,
             spellcheck: true,
             // Security additions
             session,
