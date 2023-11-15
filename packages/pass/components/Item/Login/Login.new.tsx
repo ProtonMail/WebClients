@@ -288,15 +288,15 @@ export const LoginNew: VFC<ItemNewViewProps<'login'>> = ({ shareId, url, onCance
                                     /* only allow adding a new TOTP code if user
                                      * has not reached his plan's TOTP limit */
                                     needsUpgrade ? (
-                                        <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
+                                        <ValueControl icon="lock" label={c('Label').t`2FA secret key (TOTP)`}>
                                             <UpgradeButton inline />
                                         </ValueControl>
                                     ) : (
                                         <Field
                                             hidden
                                             name="totpUri"
-                                            label={c('Label').t`2FA secret (TOTP)`}
-                                            placeholder={c('Placeholder').t`Add 2FA secret`}
+                                            label={c('Label').t`2FA secret key (TOTP)`}
+                                            placeholder={c('Placeholder').t`Add 2FA secret key`}
                                             component={TextField}
                                             icon="lock"
                                         />
