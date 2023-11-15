@@ -4,7 +4,7 @@ import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
-import { useAuthStore } from './AuthStoreProvider';
+import { authStore } from '../core';
 
 type ClientState = { status: AppStatus; loggedIn: boolean; localID: Maybe<number>; UID: Maybe<string> };
 type ClientContextValue = { state: ClientState; setStatus: (status: AppStatus) => void };
@@ -19,7 +19,6 @@ export const ClientContext = createContext<ClientContextValue>({
 export const useClient = (): ClientContextValue => useContext(ClientContext);
 
 export const ClientProvider: FC = ({ children }) => {
-    const authStore = useAuthStore();
     const [state, setState] = useState<ClientState>(getInitialClientState);
 
     return (
