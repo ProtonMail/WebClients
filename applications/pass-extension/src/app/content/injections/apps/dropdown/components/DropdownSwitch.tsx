@@ -5,13 +5,13 @@ import { ItemsList } from 'proton-pass-extension/app/content/injections/apps/dro
 import { PasswordAutoSuggest } from 'proton-pass-extension/app/content/injections/apps/dropdown/views/PasswordAutoSuggest';
 import type { DropdownActions, IFrameCloseOptions, IFrameMessage } from 'proton-pass-extension/app/content/types';
 import { DropdownAction } from 'proton-pass-extension/app/content/types';
-import { useAccountFork } from 'proton-pass-extension/lib/hooks/useNavigateToLogin';
+import { useRequestFork } from 'proton-pass-extension/lib/hooks/useRequestFork';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
-import { workerBusy } from '@proton/pass/lib/worker';
+import { clientBusy } from '@proton/pass/lib/client';
 import type { MaybeNull } from '@proton/pass/types';
-import { WorkerStatus } from '@proton/pass/types';
+import { AppStatus } from '@proton/pass/types';
 import { PassIconStatus } from '@proton/pass/types/data/pass-icon';
 import { pipe, tap } from '@proton/pass/utils/fp/pipe';
 import { FORK_TYPE } from '@proton/shared/lib/authentication/ForkInterface';
@@ -23,7 +23,7 @@ import { DropdownPinUnlock } from './DropdownPinUnlock';
 
 type Props = {
     state: MaybeNull<DropdownActions>;
-    status: WorkerStatus;
+    status: AppStatus;
     loggedIn: boolean;
     visible?: boolean;
     onClose?: (options?: IFrameCloseOptions) => void;
@@ -35,7 +35,7 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
     { state, loggedIn, status, visible, onClose, onReset = noop, onMessage = noop },
     ref
 ) => {
-    const accountFork = useAccountFork();
+    const accountFork = useRequestFork();
     const onMessageWithReset = pipe(onMessage, tap(onReset));
 
     return (
@@ -45,11 +45,11 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
             style={{ '--min-h-custom': `${DROPDOWN_ITEM_HEIGHT}rem` }}
         >
             {(() => {
-                if (state === null || workerBusy(status)) {
+                if (state === null || clientBusy(status)) {
                     return <CircleLoader className="absolute-center m-auto" />;
                 }
 
-                if (status === WorkerStatus.LOCKED) {
+                if (status === AppStatus.LOCKED) {
                     return <DropdownPinUnlock onUnlock={() => onClose?.({ refocus: true })} visible={visible} />;
                 }
 
