@@ -1,17 +1,17 @@
-/* eslint-disable no-console */
 import { type FC, createContext, useContext, useEffect, useMemo } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { useNotifications } from '@proton/components/hooks';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
-import { AppStatus, type Maybe } from '@proton/pass/types';
+import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { getBasename, getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { getConsumeForkParameters, removeHashParameters } from '@proton/shared/lib/authentication/sessionForking';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
+import { useServiceWorker } from '../ServiceWorker/ServiceWorkerProvider';
 import { useApi } from './ApiProvider';
 import { useAuthStore } from './AuthStoreProvider';
 import { useClient } from './ClientProvider';
@@ -36,6 +36,7 @@ export const useAuthService = (): AuthService => {
 export const AuthServiceProvider: FC = ({ children }) => {
     const api = useApi();
     const authStore = useAuthStore();
+    const sw = useServiceWorker();
     const client = useClient();
     const history = useHistory();
     const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
@@ -46,6 +47,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
         const auth = createAuthService({
             api,
             authStore,
+
             getPersistedSession: (localID) => {
                 const encryptedSession = localStorage.getItem(getSessionKey(localID));
                 if (!encryptedSession) return null;
@@ -69,6 +71,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
             },
 
             onAuthorize: () => client.setStatus(AppStatus.AUTHORIZING),
+
             onAuthorized: (localID) => {
                 /* on successful login redirect the user to the localID base
                  * path. FIXME: redirect to the previous URL stored in the
@@ -76,29 +79,40 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 history.replace(getBasename(localID) ?? '/');
                 client.setStatus(AppStatus.AUTHORIZED);
             },
-            onUnauthorized: (localID) => {
+
+            onUnauthorized: (localID, broadcast) => {
+                if (broadcast) sw.send({ type: 'unauthorized', localID, broadcast: true });
                 localStorage.removeItem(getSessionKey(localID));
                 client.setStatus(AppStatus.UNAUTHORIZED);
                 history.replace('/');
             },
+
             onForkConsumed: () => removeHashParameters(),
+
             onForkInvalid: () => {
                 history.replace('/');
             },
+
             onForkRequest: ({ url, state }) => {
                 sessionStorage.setItem(getStateKey(state), JSON.stringify({}));
                 window.location.replace(url);
             },
+
             onSessionEmpty: () => {
                 history.replace('/');
                 client.setStatus(AppStatus.UNAUTHORIZED);
                 if (getDefaultLocalID()) auth.init().catch(noop);
             },
-            onSessionLocked: () => client.setStatus(AppStatus.LOCKED),
 
-            onSessionRefresh: async (data) => {
-                const localID = authStore.getLocalID();
-                const persistedSession = await auth.getPersistedSession(localID);
+            onSessionLocked: (localID, broadcast) => {
+                client.setStatus(AppStatus.LOCKED);
+                if (broadcast) sw.send({ type: 'locked', localID, broadcast: true });
+            },
+
+            onSessionRefresh: async (localID, data, broadcast) => {
+                logger.info('[AuthServiceProvider] Session tokens have been refreshed');
+                if (broadcast) sw.send({ type: 'refresh', localID, data, broadcast: true });
+                const persistedSession = await auth.config.getPersistedSession(localID);
 
                 if (persistedSession) {
                     /* update the persisted session tokens without re-encrypting the
@@ -119,31 +133,34 @@ export const AuthServiceProvider: FC = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        /* listen to storage changes on persisted session keys. If another
-         * document has refreshed the tokens or triggered a new session persist,
-         * sync the current document's `authStore` */
-        const handleStorageChange = (event: StorageEvent) => {
-            const currentKey = getSessionKey(authStore.getLocalID());
-
-            if (event.key === currentKey) {
-                const ps = JSON.parse(localStorage.getItem(currentKey)!);
-                if (isValidPersistedSession(ps)) {
-                    logger.info('[AuthServiceProvider] Detected persisted session storage update');
-                    authStore.setAccessToken(ps.AccessToken);
-                    authStore.setRefreshToken(ps.RefreshToken);
-                    authStore.setRefreshTime(ps.RefreshTime);
-                }
-            }
-        };
-
         const { key, selector, state } = getConsumeForkParameters();
         const localState = sessionStorage.getItem(getStateKey(state));
 
         if (matchConsumeFork) void authService.consumeFork({ mode: 'sso', key, localState, state, selector });
         else void authService.init({ forceLock: false });
 
-        window.addEventListener('storage', handleStorageChange);
-        return () => window.removeEventListener('storage', handleStorageChange);
+        const matchLocalID = (localID?: number) => authStore.hasSession() && authStore.getLocalID() === localID;
+
+        /* setup listeners on the service worker's broadcasting channel in order to
+         * sync the current client if any authentication changes happened in another tab */
+        sw.on('unauthorized', ({ localID }) => {
+            if (matchLocalID(localID)) void authService.logout({ soft: true, broadcast: false });
+        });
+
+        sw.on('locked', ({ localID }) => {
+            const unlocked = authStore.getLockStatus() !== SessionLockStatus.LOCKED;
+            if (matchLocalID(localID) && unlocked) void authService.lock({ soft: true, broadcast: false });
+        });
+
+        sw.on('refresh', ({ localID, data }) => {
+            if (matchLocalID(localID)) {
+                authStore.setAccessToken(data.AccessToken);
+                authStore.setRefreshToken(data.RefreshToken);
+                authStore.setUID(data.UID);
+                authStore.setRefreshTime(data.RefreshTime);
+                void authService.config.onSessionRefresh?.(localID, data, false);
+            }
+        });
     }, []);
 
     return <AuthServiceContext.Provider value={authService}>{children}</AuthServiceContext.Provider>;

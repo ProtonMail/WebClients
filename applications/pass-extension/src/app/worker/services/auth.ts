@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { AccountForkResponse, getAccountForkResponsePayload } from '@proton/pass/lib/auth/fork';
 import {
     type AuthService,
-    type AuthServiceOptions,
+    type AuthServiceConfig,
     createAuthService as createCoreAuthService,
 } from '@proton/pass/lib/auth/service';
 import { clientLocked, clientReady } from '@proton/pass/lib/client';
@@ -39,7 +39,7 @@ import store from '../store';
 
 export const SESSION_LOCK_ALARM = 'alarm::session-lock';
 
-export const createAuthService = (options: AuthServiceOptions): AuthService => {
+export const createAuthService = (options: AuthServiceConfig): AuthService => {
     const authService = createCoreAuthService(options);
 
     const handleAccountFork = withContext<MessageHandlerCallback<WorkerMessageType.ACCOUNT_FORK>>(
