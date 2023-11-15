@@ -195,6 +195,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
     const activeSubscriptionPlan = getPlan(activeSubscription);
     const activeSubscriptionSameCoupon = activeSubscription?.CouponCode === coupon;
     const takingSameOffer =
+        activeSubscriptionPlan &&
         activeSubscriptionPlan?.Name === plan &&
         activeSubscription?.Cycle === parsedCycle &&
         activeSubscriptionSameCoupon;
@@ -288,7 +289,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                                             // Ignore visionary since it doesn't require a BF coupon
                                             !data.model.planIDs[PLANS.NEW_VISIONARY] &&
                                             // Tried to apply the BF coupon, but the API responded without it.
-                                            data.model.coupon === COUPON_CODES.BLACK_FRIDAY_2023 &&
+                                            coupon?.toUpperCase() === COUPON_CODES.BLACK_FRIDAY_2023 &&
                                             data.result.Coupon?.Code !== COUPON_CODES.BLACK_FRIDAY_2023
                                         ) {
                                             setError(offerUnavailableError);
