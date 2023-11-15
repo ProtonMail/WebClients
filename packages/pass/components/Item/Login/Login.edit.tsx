@@ -286,15 +286,15 @@ export const LoginEdit: VFC<ItemEditViewProps<'login'>> = ({ revision, url, vaul
                                      * a TOTP item, allow edit so user can retrieve
                                      * the secret or remove it */
                                     needsUpgrade && isEmptyString(form.values.totpUri) ? (
-                                        <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
+                                        <ValueControl icon="lock" label={c('Label').t`2FA secret key (TOTP)`}>
                                             <UpgradeButton inline />
                                         </ValueControl>
                                     ) : (
                                         <Field
                                             hidden
                                             name="totpUri"
-                                            label={c('Label').t`2FA secret (TOTP)`}
-                                            placeholder={c('Placeholder').t`Add 2FA secret`}
+                                            label={c('Label').t`2FA secret key (TOTP)`}
+                                            placeholder={c('Placeholder').t`Add 2FA secret key`}
                                             component={TextField}
                                             icon="lock"
                                         />
