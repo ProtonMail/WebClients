@@ -1,16 +1,19 @@
 import { useEffect, useMemo, useState } from 'react';
-
-import { Tooltip } from '@proton/components';
+import { useSelector } from 'react-redux';
 
 import { formatDistanceToNow, formatFullDate, formatSimpleDate } from '../../helpers/date';
 import { getDate } from '../../helpers/elements';
+import { params } from '../../logic/elements/elementsSelectors';
+import { getSnoozeTimeFromElement, isElementReminded, isElementSnoozed } from '../../logic/snoozehelpers';
 import { Element } from '../../models/element';
+import ItemDateRender from './ItemDateRender';
+import ItemDateSnoozedMessage from './ItemDateSnoozedMessage';
 
 const REFRESH_DATE_INTERVAL = 60 * 1000;
 
 type FormaterType = 'simple' | 'full' | 'distance';
 
-const FORMATERS = {
+const FORMATTERS = {
     simple: formatSimpleDate,
     full: formatFullDate,
     distance: formatDistanceToNow,
@@ -22,19 +25,22 @@ interface Props {
     className?: string;
     mode?: FormaterType;
     useTooltip?: boolean;
+    isInListView?: boolean;
 }
 
-const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = false }: Props) => {
-    const formater = FORMATERS[mode];
+const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = false, isInListView }: Props) => {
+    const formatter = FORMATTERS[mode];
+
+    const { conversationMode } = useSelector(params);
 
     const [formattedDate, setFormattedDate] = useState(() => {
         const date = getDate(element, labelID);
-        return date.getTime() === 0 ? '' : formater(date);
+        return date.getTime() === 0 ? '' : formatter(date);
     });
 
     const fullDate = useMemo(() => {
         const date = getDate(element, labelID);
-        return date.getTime() === 0 ? '' : FORMATERS.full(date);
+        return date.getTime() === 0 ? '' : FORMATTERS.full(date);
     }, [element, labelID]);
 
     useEffect(() => {
@@ -44,7 +50,7 @@ const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = f
             return;
         }
 
-        const update = () => setFormattedDate(formater(date));
+        const update = () => setFormattedDate(formatter(date));
 
         update();
 
@@ -54,29 +60,33 @@ const ItemDate = ({ element, labelID, className, mode = 'simple', useTooltip = f
         }
     }, [element, mode, labelID]);
 
-    const itemDate = (
-        <>
-            <span
-                className={className}
-                title={useTooltip ? undefined : fullDate}
-                aria-hidden="true"
-                data-testid={`item-date-${mode}`}
-            >
-                {formattedDate}
-            </span>
-            <span className="sr-only">{fullDate}</span>
-        </>
-    );
+    // Displays the orange date when the element has a snooze label
+    // Displays the orange "Reminded" text when the element has DisplaySnoozedReminder
+    const snoozeTime = getSnoozeTimeFromElement(element);
+    const isReminded = isElementReminded(element);
+    const isSnoozed = isElementSnoozed(element, conversationMode);
 
-    if (useTooltip) {
+    if (isInListView && (isReminded || (isSnoozed && snoozeTime))) {
         return (
-            <Tooltip title={fullDate}>
-                <span>{itemDate}</span>
-            </Tooltip>
+            <ItemDateSnoozedMessage
+                element={element}
+                labelID={labelID}
+                className={className}
+                snoozeTime={snoozeTime}
+                useTooltip={useTooltip}
+            />
         );
     }
 
-    return <>{itemDate}</>;
+    return (
+        <ItemDateRender
+            className={className}
+            useTooltip={useTooltip}
+            formattedDate={formattedDate}
+            fullDate={fullDate}
+            dataTestId={`item-date-${mode}`}
+        />
+    );
 };
 
 export default ItemDate;

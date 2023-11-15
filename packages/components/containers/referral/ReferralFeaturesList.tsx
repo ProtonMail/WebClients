@@ -22,7 +22,7 @@ const ReferralFeaturesList = () => {
             <StripedItem left={<Icon className="color-success" name="tag" size={20} />}>
                 {c('Info').t`Unlimited folders, labels, and filters`}
             </StripedItem>
-            <StripedItem left={<Icon className="color-success" name="paper-plane" size={20} />}>
+            <StripedItem left={<Icon className="color-success" name="paper-plane-horizontal" size={20} />}>
                 {c('Info').t`Unlimited messages`}
             </StripedItem>
             <StripedItem left={<Icon className="color-success" name="globe" size={20} />}>

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,6 +6,8 @@ import { Icon, ToolbarButton } from '@proton/components/components';
 import { useActiveBreakpoint, useElementBreakpoints } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
+import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
+import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
 import LabelsAndFolders from './LabelsAndFolders';
 import MoreActions from './MoreActions';
 import MoreDropdown from './MoreDropdown';
@@ -48,9 +50,9 @@ const ToolbarHeaderMessageNarrow = ({
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
-    const localIsTiny = breakpoint === 'extratiny' || breakpoint === 'tiny';
-    const localIsExtraTiny = breakpoint === 'extratiny';
-    const localIsNarrow = breakpoint === 'extratiny' || breakpoint === 'tiny' || breakpoint === 'small';
+    const { localIsExtraTiny, localIsNarrow } = getToolbarResponsiveSizes(breakpoint);
+    // We override this value because the "more" dropdown is not displayed in the toolbar otherwise
+    const isTiny = localIsNarrow;
 
     const viewportBreakpoint = useActiveBreakpoint();
 
@@ -81,7 +83,7 @@ const ToolbarHeaderMessageNarrow = ({
                         onDelete={onDelete}
                     />
 
-                    {!localIsTiny ? (
+                    {!isTiny ? (
                         <LabelsAndFolders
                             labelID={labelID}
                             selectedIDs={selectedIDs}
@@ -91,13 +93,15 @@ const ToolbarHeaderMessageNarrow = ({
                         />
                     ) : null}
 
+                    {!isTiny ? <SnoozeToolbarDropdown labelID={labelID} selectedIDs={selectedIDs} /> : null}
+
                     <MoreDropdown
                         labelID={labelID}
                         elementIDs={elementIDs}
                         selectedIDs={selectedIDs}
                         isSearch={isSearch}
                         isNarrow={localIsNarrow}
-                        isTiny={localIsTiny}
+                        isTiny={isTiny}
                         isExtraTiny={localIsExtraTiny}
                         onMove={onMove}
                         onDelete={onDelete}

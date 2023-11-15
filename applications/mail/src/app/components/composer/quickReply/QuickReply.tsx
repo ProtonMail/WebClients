@@ -332,7 +332,7 @@ const QuickReply = ({
                             className="ml-2"
                             data-testid="quick-reply-send-button"
                         >
-                            <Icon name="paper-plane" alt={c('loc_nightly_Action').t`Send quick reply`} />
+                            <Icon name="paper-plane-horizontal" alt={c('loc_nightly_Action').t`Send quick reply`} />
                         </Button>
                     </Tooltip>
                 </div>
