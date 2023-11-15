@@ -20,7 +20,7 @@ type Props = {
 
 export const NotificationSwitch: VFC<Props> = ({ children, visible, state, settings, onMessage, onClose }) => {
     return (
-        <div className="h-full p-5 bg-norm relative">
+        <div className="h-full p-3 bg-norm relative">
             {children}
             {(() => {
                 if (!state) return <CircleLoader className="absolute absolute-center m-auto" />;
