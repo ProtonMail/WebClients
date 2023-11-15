@@ -3,14 +3,11 @@ import { type VFC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import type { DropdownProps } from '@proton/components';
 import { Dropdown, DropdownMenu, Icon, usePopperAnchor } from '@proton/components';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import type { ExtraFieldType } from '@proton/pass/types';
 
 import { getExtraFieldOptions } from './ExtraField';
-
-const DROPDOWN_SIZE: DropdownProps['size'] = { width: '11rem' };
 
 type CustomFieldsDropdownProps = { onAdd: (type: ExtraFieldType) => void };
 
@@ -35,13 +32,7 @@ export const AddExtraFieldDropdown: VFC<CustomFieldsDropdownProps> = ({ onAdd })
                 <Icon className="mr-2" name="plus" />
                 <span className="line-height-1">{c('Action').t`Add more`}</span>
             </Button>
-            <Dropdown
-                anchorRef={anchorRef}
-                isOpen={isOpen}
-                onClose={close}
-                originalPlacement="top-start"
-                size={DROPDOWN_SIZE}
-            >
+            <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close} originalPlacement="top-start">
                 <DropdownMenu>
                     {Object.entries(getExtraFieldOptions()).map(([type, { icon, label }]) => (
                         <DropdownMenuButton
