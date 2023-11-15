@@ -5,8 +5,10 @@ import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import { checkInvoice } from '@proton/shared/lib/api/payments';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { toPrice } from '@proton/shared/lib/helpers/string';
 import { Currency } from '@proton/shared/lib/interfaces';
+import { getSentryError } from '@proton/shared/lib/keys';
 
 import { EllipsisLoader, Field, FormModal, Input, Label, Price, PrimaryButton, Row } from '../../components';
 import { useApiResult, useEventManager, useNotifications } from '../../hooks';
@@ -71,7 +73,24 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                     invoiceId: invoice.ID,
                 });
                 await processor.processPaymentToken();
-            } catch {}
+            } catch (e) {
+                const error = getSentryError(e);
+                if (error) {
+                    const context = {
+                        invoiceId: invoice.ID,
+                        currency,
+                        amount,
+                        processorType: paymentFacade.selectedProcessor?.meta.type,
+                        paymentMethod: paymentFacade.selectedMethodType,
+                        paymentMethodValue: paymentFacade.selectedMethodValue,
+                    };
+
+                    captureMessage('Payments: failed to pay invoice', {
+                        level: 'error',
+                        extra: { error, context },
+                    });
+                }
+            }
         });
 
     const submit =

@@ -22,6 +22,9 @@ export class InvalidCardDataError extends InvalidDataError {
     constructor(message?: string) {
         super(message);
         this.name = 'InvalidCardDataError';
+
+        // Flag to ignore this error and not send it to Sentry
+        (this as any).ignore = true;
     }
 }
 
@@ -84,18 +87,13 @@ export class CardPaymentProcessor extends PaymentProcessor<CardPaymentProcessorS
             return this.tokenCreated(this.fetchedPaymentToken);
         }
 
-        let token: TokenPaymentMethod;
-        try {
-            token = await this.verifyPayment({
-                Payment: this.getPaymentParameters().Payment,
-                Token: this.fetchedPaymentToken.Payment.Details.Token,
-                ApprovalURL: this.fetchedPaymentToken.approvalURL,
-                ReturnHost: this.fetchedPaymentToken.returnHost,
-                addCardMode: this.verifyOnly,
-            });
-        } catch (error: any) {
-            throw error;
-        }
+        const token: TokenPaymentMethod = await this.verifyPayment({
+            Payment: this.getPaymentParameters().Payment,
+            Token: this.fetchedPaymentToken.Payment.Details.Token,
+            ApprovalURL: this.fetchedPaymentToken.approvalURL,
+            ReturnHost: this.fetchedPaymentToken.returnHost,
+            addCardMode: this.verifyOnly,
+        });
 
         return this.tokenCreated(token);
     }
