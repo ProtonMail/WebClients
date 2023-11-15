@@ -295,6 +295,30 @@ export const getSupportContactURL = (params: { [key: string]: string | string[] 
     return getStaticURL(`/support/contact${stringifySearchParams(params, '?')}`);
 };
 
+export const getAppStaticUrl = (app: APP_NAMES) => {
+    if (app === 'proton-mail') {
+        return getStaticURL('/mail');
+    }
+
+    if (app === 'proton-drive') {
+        return getStaticURL('/drive');
+    }
+
+    if (app === 'proton-calendar') {
+        return getStaticURL('/calendar');
+    }
+
+    if (app === 'proton-pass') {
+        return getStaticURL('/pass');
+    }
+
+    if (app === 'proton-vpn-settings') {
+        return getStaticURL('/vpn');
+    }
+
+    return getStaticURL('');
+};
+
 export const getPrivacyPolicyURL = (app?: APP_NAMES) => {
     if (app === APPS.PROTONVPN_SETTINGS) {
         return 'https://protonvpn.com/privacy-policy';
