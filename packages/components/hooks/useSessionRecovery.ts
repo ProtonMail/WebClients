@@ -34,15 +34,15 @@ export const useSessionRecoveryState = () => {
 export const useIsSessionRecoveryEnabled = () => {
     const [userSettings] = useUserSettings();
 
-    return !!userSettings.SessionAccountRecovery;
+    return !!userSettings?.SessionAccountRecovery;
 };
 
 export const useHasRecoveryMethod = () => {
     const [user] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
 
-    const hasRecoveryEmail = !!userSettings.Email.Reset && !!userSettings.Email.Value;
-    const hasRecoveryPhone = !!userSettings.Phone.Reset && !!userSettings.Phone.Value;
+    const hasRecoveryEmail = !!userSettings?.Email.Reset && !!userSettings?.Email.Value;
+    const hasRecoveryPhone = !!userSettings?.Phone.Reset && !!userSettings?.Phone.Value;
     const hasRecoveryPhrase = user.MnemonicStatus === MNEMONIC_STATUS.SET;
     const hasRecoveryMethod = hasRecoveryEmail || hasRecoveryPhone || hasRecoveryPhrase;
 
