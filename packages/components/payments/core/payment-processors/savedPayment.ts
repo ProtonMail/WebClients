@@ -69,16 +69,11 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
             return this.tokenCreated(this.fetchedPaymentToken);
         }
 
-        let token: TokenPaymentMethod;
-        try {
-            token = await this.verifyPayment({
-                Token: this.fetchedPaymentToken.Payment.Details.Token,
-                ApprovalURL: this.fetchedPaymentToken.approvalURL,
-                ReturnHost: this.fetchedPaymentToken.returnHost,
-            });
-        } catch (error: any) {
-            throw error;
-        }
+        const token: TokenPaymentMethod = await this.verifyPayment({
+            Token: this.fetchedPaymentToken.Payment.Details.Token,
+            ApprovalURL: this.fetchedPaymentToken.approvalURL,
+            ReturnHost: this.fetchedPaymentToken.returnHost,
+        });
 
         return this.tokenCreated(token);
     }

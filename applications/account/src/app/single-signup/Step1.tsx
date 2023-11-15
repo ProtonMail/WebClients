@@ -987,8 +987,8 @@ const Step1 = ({
 
             try {
                 await processor.processPaymentToken();
-            } catch (error) {
-                observeApiError(error, (status) => {
+            } catch (e) {
+                observeApiError(e, (status) => {
                     measurePayError(telemetryType);
                     metrics.core_vpn_single_signup_step1_payment_2_total.increment({
                         status,
@@ -996,9 +996,28 @@ const Step1 = ({
                     });
                 });
 
-                const sentryError = getSentryError(error);
-                if (sentryError) {
-                    captureMessage('Could not handle signup', { level: 'error', extra: { error: sentryError } });
+                const error = getSentryError(e);
+                if (error) {
+                    const context = {
+                        mode,
+                        selectedPlan,
+                        selectedPlanName: selectedPlan.Name,
+                        isB2bPlan,
+                        step: model.step,
+                        currency: options.currency,
+                        cycle: options.cycle,
+                        amount: options.checkResult.AmountDue,
+                        coupon,
+                        processorType: paymentFacade.selectedProcessor?.meta.type,
+                        paymentMethod: paymentFacade.selectedMethodType,
+                        paymentMethodValue: paymentFacade.selectedMethodValue,
+                        subscriptionDataType: model.subscriptionData.type,
+                    };
+
+                    captureMessage('Payments: Failed to handle single-signup-v1', {
+                        level: 'error',
+                        extra: { error, context },
+                    });
                 }
             }
         }
