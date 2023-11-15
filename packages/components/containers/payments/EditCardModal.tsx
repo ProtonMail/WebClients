@@ -8,6 +8,8 @@ import { Autopay, isTokenPayment } from '@proton/components/payments/core';
 import { useCard } from '@proton/components/payments/react-extensions';
 import { useLoading } from '@proton/hooks';
 import { setPaymentMethod, updatePaymentMethod } from '@proton/shared/lib/api/payments';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
@@ -69,7 +71,22 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
     const process = async () => {
         try {
             await cardHook.processPaymentToken();
-        } catch {}
+        } catch (e) {
+            const error = getSentryError(e);
+            if (error) {
+                const context = {
+                    hasExistingCard: !!existingCard,
+                    renewState,
+                    paymentMethodId,
+                    processorType: cardHook.meta.type,
+                };
+
+                captureMessage('Payments: failed to add card', {
+                    level: 'error',
+                    extra: { error, context },
+                });
+            }
+        }
     };
 
     return (
