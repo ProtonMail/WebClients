@@ -36,8 +36,9 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
 
     const isInbox = labelID === MAILBOX_LABEL_IDS.INBOX && !isSearch;
     const isScheduled = labelID === MAILBOX_LABEL_IDS.SCHEDULED && !isSearch;
+    const isSnoozed = labelID === MAILBOX_LABEL_IDS.SNOOZED && !isSearch;
     const isSpam = labelID === MAILBOX_LABEL_IDS.SPAM && !isSearch;
-    const isFolder = !isInbox && !isScheduled && !isSearch && !isSpam;
+    const isFolder = !isInbox && !isScheduled && !isSnoozed && !isSearch && !isSpam;
 
     // We want to hide the "enable ES" part from the point when the user enables it. We do not want to see the downloading part from here
     const encryptedSearchEnabled =
@@ -72,6 +73,9 @@ const EmptyView = ({ labelID, isSearch, isUnread }: Props) => {
         }
         if (isScheduled) {
             return { src: noResultSearchSvg, alt: c('Search - no results').t`No messages scheduled` };
+        }
+        if (isSnoozed) {
+            return { src: noResultSearchSvg, alt: c('Search - no results').t`No snoozed messages` };
         }
     })();
 

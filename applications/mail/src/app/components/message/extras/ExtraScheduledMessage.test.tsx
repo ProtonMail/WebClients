@@ -1,5 +1,4 @@
-import { fireEvent } from '@testing-library/react';
-import { act } from '@testing-library/react';
+import { act, fireEvent } from '@testing-library/react';
 import { addHours, addSeconds } from 'date-fns';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';

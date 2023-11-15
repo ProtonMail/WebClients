@@ -15,6 +15,8 @@ import { getRecipients as getConversationRecipients, getSenders } from '../../he
 import { isMessage, isUnread } from '../../helpers/elements';
 import { isCustomLabel } from '../../helpers/labels';
 import { useRecipientLabel } from '../../hooks/contact/useRecipientLabel';
+import { selectSnoozeDropdownState } from '../../logic/snooze/snoozeSliceSelectors';
+import { useAppSelector } from '../../logic/store';
 import { Element } from '../../models/element';
 import { ESMessage } from '../../models/encryptedSearch';
 import { Breakpoints } from '../../models/utils';
@@ -75,6 +77,8 @@ const Item = ({
     const useContentSearch =
         dbExists && esEnabled && shouldHighlight() && contentIndexingDone && !!(element as ESMessage)?.decryptedBody;
 
+    const snoozeDropdownState = useAppSelector(selectSnoozeDropdownState);
+
     const elementRef = useRef<HTMLDivElement>(null);
 
     const displayRecipients =
@@ -109,7 +113,8 @@ const Item = ({
 
     const handleClick = (event: MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;
-        if (target.closest('.stop-propagation')) {
+
+        if (target.closest('.stop-propagation') || snoozeDropdownState) {
             event.stopPropagation();
             return;
         }

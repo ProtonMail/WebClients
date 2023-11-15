@@ -276,6 +276,7 @@ export type IconName =
     | 'paper-clip-vertical'
     | 'paper-plane'
     | 'paper-plane-horizontal'
+    | 'paper-plane-horizontal-clock'
     | 'pause'
     | 'pen'
     | 'pen-square'

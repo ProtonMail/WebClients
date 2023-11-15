@@ -7,18 +7,18 @@ import { RequireSome } from '@proton/shared/lib/interfaces/utils';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import { STATUS } from '@proton/shared/lib/models/cache';
 
-import useMailModel from 'proton-mail/hooks/useMailModel';
-
 import { updateCountersForMarkAs } from '../../helpers/counter';
 import { isUnread, isMessage as testIsMessage } from '../../helpers/elements';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { applyMarkAsChangesOnMessage } from '../../helpers/message/messages';
+import useMailModel from '../../hooks/useMailModel';
 import {
     optimisticMarkAsConversation,
     optimisticMarkAsConversationMessages,
 } from '../../logic/conversations/conversationsActions';
 import { optimisticMarkAs as optimisticMarkAsElementAction } from '../../logic/elements/elementsActions';
 import { optimisticMarkAs as optimisticMarkAsMessageAction } from '../../logic/messages/optimistic/messagesOptimisticActions';
+import { isElementReminded } from '../../logic/snoozehelpers';
 import { useAppDispatch } from '../../logic/store';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
@@ -27,10 +27,11 @@ import { MARK_AS_STATUS } from '../actions/useMarkAs';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
 
-export type MarkAsChanges = { status: MARK_AS_STATUS };
+export type MarkAsChanges = { status: MARK_AS_STATUS; displaySnoozedReminder: boolean };
 
 const computeRollbackMarkAsChanges = (element: Element, labelID: string, changes: MarkAsChanges) => {
     const isElementUnread = isUnread(element, labelID);
+    const displaySnoozedReminder = isElementReminded(element);
     const { status } = changes;
 
     // If same status nothing changes
@@ -40,13 +41,14 @@ const computeRollbackMarkAsChanges = (element: Element, labelID: string, changes
 
     return {
         status: isElementUnread ? MARK_AS_STATUS.UNREAD : MARK_AS_STATUS.READ,
+        displaySnoozedReminder,
     };
 };
 
 export const applyMarkAsChangesOnConversation = (
     conversation: Conversation,
     labelID: string,
-    { status }: MarkAsChanges
+    { status, displaySnoozedReminder }: MarkAsChanges
 ) => {
     const { NumUnread = 0, Labels = [] } = conversation;
     const { ContextNumUnread = 0 } = Labels.find(({ ID }) => ID === labelID) || {};
@@ -64,6 +66,7 @@ export const applyMarkAsChangesOnConversation = (
 
     return {
         ...conversation,
+        DisplaySnoozedReminder: displaySnoozedReminder,
         NumUnread: updatedNumUnread,
         ContextNumUnread: updatedContextNumUnread,
         Labels: updatedLabels,
@@ -74,7 +77,7 @@ export const applyMarkAsChangesOnConversation = (
 const applyMarkAsChangesOnConversationWithMessages = (
     conversation: Conversation,
     labelID: string,
-    { status }: MarkAsChanges
+    { status, displaySnoozedReminder }: MarkAsChanges
 ) => {
     const { NumUnread = 0, Labels = [] } = conversation;
     const { ContextNumUnread = 0 } = Labels.find(({ ID }) => ID === labelID) || {};
@@ -92,6 +95,7 @@ const applyMarkAsChangesOnConversationWithMessages = (
 
     return {
         ...conversation,
+        DisplaySnoozedReminder: displaySnoozedReminder,
         NumUnread: updatedNumUnread,
         ContextNumUnread: updatedContextNumUnread,
         Labels: updatedLabels,

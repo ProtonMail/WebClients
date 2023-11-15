@@ -14,6 +14,7 @@ import elements from './elements/elementsSlice';
 import incomingDefaults from './incomingDefaults/incomingDefaultsSlice';
 import layout from './layout/layoutSlice';
 import messages from './messages/messagesSlice';
+import snooze from './snooze/snoozeSlice';
 
 const thunkExtraArgs = {} as unknown as AppThunkExtra['extra'];
 
@@ -52,6 +53,7 @@ export const store = configureStore({
         incomingDefaults,
         composers,
         layout,
+        snooze,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

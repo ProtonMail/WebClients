@@ -160,9 +160,10 @@ export const moveSystemFolders: MoveSystemFolders = (draggedID, droppedId, syste
     return systemFolders;
 };
 
-export const getDefaultSytemFolders = (
+export const getDefaultSystemFolders = (
     showMoved: UseMoveSystemFoldersProps['showMoved'],
     showScheduled: UseMoveSystemFoldersProps['showScheduled'],
+    showSnoozed: UseMoveSystemFoldersProps['showSnoozed'],
     showAlmostAllMail: UseMoveSystemFoldersProps['showAlmostAllMail']
 ): BaseSystemFolder[] => [
     {
@@ -197,7 +198,7 @@ export const getDefaultSytemFolders = (
     },
     {
         labelID: MAILBOX_LABEL_IDS.SCHEDULED,
-        icon: 'clock',
+        icon: 'paper-plane-horizontal-clock',
         text: c('Link').t`Scheduled`,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SCHEDULED],
         visible: !!showScheduled,
@@ -205,23 +206,32 @@ export const getDefaultSytemFolders = (
         display: SYSTEM_FOLDER_SECTION.MAIN,
     },
     {
+        labelID: MAILBOX_LABEL_IDS.SNOOZED,
+        icon: 'clock',
+        text: c('Link').t`Snoozed`,
+        ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SNOOZED],
+        visible: !!showSnoozed,
+        order: 5,
+        display: SYSTEM_FOLDER_SECTION.MAIN,
+    },
+    {
         labelID: MAILBOX_LABEL_IDS.ALL_SENT,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_SENT],
-        icon: 'paper-plane',
+        icon: 'paper-plane-horizontal',
         text: c('Link').t`Sent`,
         shortcutText: '[G] [E]',
         visible: !!(showMoved & SHOW_MOVED.SENT),
-        order: 5,
+        order: 6,
         display: SYSTEM_FOLDER_SECTION.MAIN,
     },
     {
         labelID: MAILBOX_LABEL_IDS.SENT,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SENT],
-        icon: 'paper-plane',
+        icon: 'paper-plane-horizontal',
         text: c('Link').t`Sent`,
         shortcutText: '[G] [E]',
         visible: !(showMoved & SHOW_MOVED.SENT),
-        order: 6,
+        order: 7,
         display: SYSTEM_FOLDER_SECTION.MAIN,
     },
     {
@@ -231,7 +241,7 @@ export const getDefaultSytemFolders = (
         shortcutText: '[G] [*]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.STARRED],
         visible: true,
-        order: 7,
+        order: 8,
         display: SYSTEM_FOLDER_SECTION.MAIN,
     },
     {
@@ -241,7 +251,7 @@ export const getDefaultSytemFolders = (
         shortcutText: '[G] [A]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ARCHIVE],
         visible: true,
-        order: 8,
+        order: 9,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
     {
@@ -251,7 +261,7 @@ export const getDefaultSytemFolders = (
         shortcutText: '[G] [S]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.SPAM],
         visible: true,
-        order: 9,
+        order: 10,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
     {
@@ -261,7 +271,7 @@ export const getDefaultSytemFolders = (
         shortcutText: '[G] [T]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.TRASH],
         visible: true,
-        order: 10,
+        order: 11,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
     {
@@ -271,7 +281,7 @@ export const getDefaultSytemFolders = (
         shortcutText: '[G] [M]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_MAIL],
         visible: !showAlmostAllMail,
-        order: 11,
+        order: 12,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
     {
@@ -280,7 +290,7 @@ export const getDefaultSytemFolders = (
         icon: 'arrow-right',
         text: c('Link').t`Outbox`,
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.OUTBOX],
-        order: 12,
+        order: 13,
         visible: false,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
@@ -291,7 +301,7 @@ export const getDefaultSytemFolders = (
         shortcutText: '[G] [M]',
         ID: LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL],
         visible: !!showAlmostAllMail,
-        order: 13,
+        order: 14,
         display: SYSTEM_FOLDER_SECTION.MORE,
     },
 ];
@@ -299,11 +309,12 @@ export const getDefaultSytemFolders = (
 export const getSidebarNavItems = (
     showMoved: UseMoveSystemFoldersProps['showMoved'],
     showScheduled: UseMoveSystemFoldersProps['showScheduled'],
+    showSnoozed: UseMoveSystemFoldersProps['showSnoozed'],
     showAlmostAllMail: UseMoveSystemFoldersProps['showAlmostAllMail'],
     apiSystemFolders: SystemFolderPayload[]
 ): { orderedSystemFolders: SystemFolder[]; unexpectedFolderIDs: MAILBOX_LABEL_IDS[] } => {
     /** Harcoded system folders, used to complete missing infos in API fetched ones */
-    const defaultSystemFolders = getDefaultSytemFolders(showMoved, showScheduled, showAlmostAllMail);
+    const defaultSystemFolders = getDefaultSystemFolders(showMoved, showScheduled, showSnoozed, showAlmostAllMail);
 
     /**
      * 1 - Fill the needed data from API

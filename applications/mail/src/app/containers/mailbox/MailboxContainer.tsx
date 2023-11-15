@@ -284,6 +284,7 @@ const MailboxContainer = ({
         labelDropdownToggleRef,
         moveDropdownToggleRef,
         moveScheduledModal,
+        moveSnoozedModal,
         moveAllModal,
         moveToSpamModal,
         permanentDeleteModal,
@@ -420,7 +421,7 @@ const MailboxContainer = ({
                 shortcuts: ['G', 'D'],
             },
             {
-                icon: 'paper-plane',
+                icon: 'paper-plane-horizontal',
                 label: c('Commander action').t`Go to Sent`,
                 value: 'sent',
                 action: () =>
@@ -589,6 +590,7 @@ const MailboxContainer = ({
             {commanderRender ? <Commander list={commanderList} {...commanderModalProps} /> : null}
             {permanentDeleteModal}
             {moveScheduledModal}
+            {moveSnoozedModal}
             {moveAllModal}
             {moveToSpamModal}
             {deleteModal}
