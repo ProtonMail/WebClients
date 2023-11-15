@@ -103,33 +103,37 @@ $dummy-map: ();
 	align-self: center;
 }
 
-@include responsive-classes(flex-item-fluid) {
-	flex: 1 1 0px;
-}
+@include responsive-classes(
+	(
+		flex-item-fluid: (
+			flex: 1 1 0,
+		),
 
-@include responsive-classes(flex-item-fluid-auto) {
-	flex: 1 1 auto;
-}
+		flex-item-fluid-auto: (
+			flex: 1 1 auto,
+		),
 
-@include responsive-classes(flex-item-shrink) {
-	flex-shrink: 1;
-}
+		flex-item-grow: (
+			flex-grow: 1,
+		),
 
-.flex-item-noshrink {
-	flex-shrink: 0;
-}
+		flex-item-nogrow:(
+			flex-grow: 0,
+		),
 
-.flex-item-shrink {
-	flex-shrink: 1;
-}
+		flex-item-shrink: (
+			flex-shrink: 1,
+		),
 
-.flex-item-nogrow {
-	flex-grow: 0;
-}
+		flex-item-noshrink: (
+			flex-shrink: 0,
+		),
 
-.flex-item-grow {
-	flex-grow: 1;
-}
+		flex-initial: (
+			flex: 0 1 auto,
+		)
+	)
+);
 
 .flex-item-grow-2 {
 	flex-grow: 2;

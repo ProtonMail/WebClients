@@ -100,7 +100,7 @@ const EOHeaderExpanded = ({
                     {!messageLoaded && <span className="message-header-metas ml-2 inline-flex" />}
                 </div>
             </div>
-            <div className="flex flex-nowrap flex-align-items-center on-mobile-flex-wrap  mx-0 sm:mx-8 mt-0 mb-4">
+            <div className="flex md:flex-nowrap flex-align-items-center mx-0 sm:mx-8 mt-0 mb-4">
                 <MailRecipients
                     message={message}
                     recipientsOrGroup={recipientsOrGroup}
