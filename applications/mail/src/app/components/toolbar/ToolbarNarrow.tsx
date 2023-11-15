@@ -30,7 +30,6 @@ const ToolbarNarrow = ({
     onFilter,
     conversationMode,
     mailSettings,
-    isSearch,
     labelID,
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
@@ -54,7 +53,6 @@ const ToolbarNarrow = ({
                         filter={filter}
                         conversationMode={conversationMode}
                         mailSettings={mailSettings}
-                        isSearch={isSearch}
                         labelID={labelID}
                         filterAsDropdown={breakpoint === 'tiny'}
                     />
