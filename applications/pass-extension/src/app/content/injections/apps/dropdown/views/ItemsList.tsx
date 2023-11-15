@@ -1,7 +1,9 @@
 import type { VFC } from 'react';
 import { useEffect, useMemo } from 'react';
 
+import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/common/PauseListDropdown';
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/context/IFrameContextProvider';
+import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
 import { DropdownItem } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownItem';
 import { DropdownItemsList } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownItemsList';
 import type { IFrameCloseOptions, IFrameMessage } from 'proton-pass-extension/app/content/types';
@@ -19,13 +21,14 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 type Props = {
     items: SafeLoginItem[];
+    hostname: string;
     needsUpgrade: boolean;
     visible?: boolean;
     onClose?: (options?: IFrameCloseOptions) => void;
     onMessage?: (message: IFrameMessage) => void;
 };
 
-export const ItemsList: VFC<Props> = ({ items, needsUpgrade, visible, onMessage, onClose }) => {
+export const ItemsList: VFC<Props> = ({ hostname, items, needsUpgrade, visible, onMessage, onClose }) => {
     const { settings } = useIFrameContext();
     const navigateToUpgrade = useNavigateToUpgrade();
 
@@ -86,14 +89,33 @@ export const ItemsList: VFC<Props> = ({ items, needsUpgrade, visible, onMessage,
         [items, needsUpgrade, onMessage]
     );
 
-    return dropdownItems.length > 0 ? (
-        <DropdownItemsList>{dropdownItems}</DropdownItemsList>
-    ) : (
-        <DropdownItem
-            icon={PassIconStatus.ACTIVE}
-            onClick={() => onClose?.()}
-            title={PASS_APP_NAME}
-            subTitle={c('Info').t`No login found`}
-        />
+    return (
+        <>
+            <DropdownHeader
+                title={c('Title').t`Log in as...`}
+                extra={
+                    <PauseListDropdown
+                        visible={visible}
+                        hostname={hostname}
+                        onClose={onClose}
+                        criteria="Autofill"
+                        label={
+                            // translation: action to not suggest login item(s)
+                            c('Action').t`Do not suggest on this website`
+                        }
+                    />
+                }
+            />
+            {dropdownItems.length > 0 ? (
+                <DropdownItemsList>{dropdownItems}</DropdownItemsList>
+            ) : (
+                <DropdownItem
+                    icon={PassIconStatus.ACTIVE}
+                    onClick={() => onClose?.()}
+                    title={PASS_APP_NAME}
+                    subTitle={c('Info').t`No login found`}
+                />
+            )}
+        </>
     );
 };
