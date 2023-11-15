@@ -53,11 +53,7 @@ export const ItemsList: VFC<Props> = ({ hostname, items, needsUpgrade, visible, 
                         key={'upgrade-autofill'}
                         icon="arrow-out-square"
                         title={c('Info').t`Upgrade ${PASS_APP_NAME}`}
-                        subTitle={
-                            <span className="text-sm block">
-                                {c('Warning').t`Your plan only allows you to autofill from your first two vaults`}
-                            </span>
-                        }
+                        subTitle={c('Warning').t`Your plan only allows you to autofill from your first two vaults`}
                         onClick={navigateToUpgrade}
                         autogrow
                     />
@@ -95,14 +91,12 @@ export const ItemsList: VFC<Props> = ({ hostname, items, needsUpgrade, visible, 
                 title={c('Title').t`Log in as...`}
                 extra={
                     <PauseListDropdown
-                        visible={visible}
-                        hostname={hostname}
-                        onClose={onClose}
                         criteria="Autofill"
-                        label={
-                            // translation: action to not suggest login item(s)
-                            c('Action').t`Do not suggest on this website`
-                        }
+                        dense
+                        hostname={hostname}
+                        label={c('Action').t`Do not suggest on this website`}
+                        onClose={onClose}
+                        visible={visible}
                     />
                 }
             />
