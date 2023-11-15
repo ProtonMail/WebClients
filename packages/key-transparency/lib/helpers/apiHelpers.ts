@@ -48,7 +48,7 @@ export const fetchProof = async (EpochID: number, Identifier: string, Revision: 
     } catch (error: any) {
         // If the returned error is 422, it means that the epoch is stale, self audit should start over
         if (error?.status === HTTP_STATUS_CODE.UNPROCESSABLE_ENTITY) {
-            throw new StaleEpochError();
+            throw new StaleEpochError('Fetching proof with stale epoch');
         }
         throw error;
     }
