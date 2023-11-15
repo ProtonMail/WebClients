@@ -1084,4 +1084,26 @@ END:VCALENDAR`;
         expect(result.component).toEqual('vcalendar');
         expect(result.components[0].error).toMatch('invalid date-time value');
     });
+
+    it('should catch errors from badly formatted date-times (with recovery for those off)', () => {
+        const ics = `BEGIN:VCALENDAR
+X-LOTUS-CHARSET:UTF-8
+VERSION:2.0
+PRODID:http://www.bahn.de
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:bahn2023-06-21082400
+CLASS:PUBLIC
+SUMMARY:Hamburg Hbf -> Paris Est
+DTSTART;TZID=Europe/Berlin:2023-06-21T082400
+DTEND;TZID=Europe/Berlin:2023-06-21T165400
+DTSTAMP:2023-06-13T212500Z
+END:VEVENT
+END:VCALENDAR`;
+
+        const result = parseWithRecoveryAndMaybeErrors(ics, { retryDateTimes: false });
+
+        expect(result.component).toEqual('vcalendar');
+        expect(result.components[0].error).toMatch('invalid date-time value');
+    });
 });
