@@ -1,6 +1,8 @@
 /* eslint-disable deprecation/deprecation */
 import { type VFC, useEffect, useRef, useState } from 'react';
 
+import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/common/PauseListDropdown';
+import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
 import { DropdownItem } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownItem';
 import type { IFrameCloseOptions, IFrameMessage } from 'proton-pass-extension/app/content/types';
 import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
@@ -13,13 +15,14 @@ import { generatePassword } from '@proton/pass/lib/password/generator';
 import { type Maybe } from '@proton/pass/types';
 
 type Props = {
+    hostname: string;
     passwordOptions: GeneratePasswordOptions;
+    visible?: boolean;
     onClose?: (options?: IFrameCloseOptions) => void;
     onMessage?: (message: IFrameMessage) => void;
-    visible?: boolean;
 };
 
-export const PasswordAutoSuggest: VFC<Props> = ({ passwordOptions, onMessage, onClose, visible }) => {
+export const PasswordAutoSuggest: VFC<Props> = ({ hostname, passwordOptions, visible, onMessage, onClose }) => {
     const timer = useRef<Maybe<ReturnType<typeof setTimeout>>>();
     const inputRef = useRef<HTMLInputElement>(null);
     const password = generatePassword(passwordOptions);
@@ -47,6 +50,22 @@ export const PasswordAutoSuggest: VFC<Props> = ({ passwordOptions, onMessage, on
 
     return (
         <>
+            <DropdownHeader
+                title={c('Title').t`Password`}
+                extra={
+                    <PauseListDropdown
+                        visible={visible}
+                        hostname={hostname}
+                        onClose={onClose}
+                        criteria="Autosuggest"
+                        label={
+                            // translation: action to not suggest a password
+                            c('Action').t`Do not suggest on this website`
+                        }
+                    />
+                }
+            />
+
             <DropdownItem
                 subTheme={SubTheme.RED}
                 {...(copied
