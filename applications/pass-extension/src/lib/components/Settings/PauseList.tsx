@@ -21,7 +21,7 @@ import { hasCriteria, toggleCriteria } from '@proton/pass/lib/settings/criteria'
 import { settingsEditIntent } from '@proton/pass/store/actions';
 import { selectDisallowedDomains } from '@proton/pass/store/selectors';
 import type { CriteriaMasks } from '@proton/pass/types/worker/settings';
-import { CRITERIA_MASKS } from '@proton/pass/types/worker/settings';
+import { CRITERIAS_SETTING_CREATE, CRITERIA_MASKS } from '@proton/pass/types/worker/settings';
 import { merge } from '@proton/pass/utils/object/merge';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 import { PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -47,7 +47,11 @@ export const PauseList: VFC = () => {
             return createNotification({ text: c('Error').t`The URL is in the list`, type: 'error' });
         }
 
-        dispatch(settingsEditIntent('pause-list', { disallowedDomains: merge(disallowedDomains, { [domain]: 15 }) }));
+        dispatch(
+            settingsEditIntent('pause-list', {
+                disallowedDomains: merge(disallowedDomains, { [domain]: CRITERIAS_SETTING_CREATE }),
+            })
+        );
         setUrl('');
     };
 
@@ -70,11 +74,14 @@ export const PauseList: VFC = () => {
         dispatch(settingsEditIntent('pause-list', { disallowedDomains: update }));
     };
 
+    const nonEmptyList = Object.keys(disallowedDomains).length > 0;
+    const infoText = nonEmptyList ? ` ${c('Description').t`A checked box means the feature is disabled.`}` : '';
+
     return (
         <SettingsPanel
             title={c('Label').t`Pause list`}
             subTitle={c('Description')
-                .t`List of domains where certain auto functions in ${PASS_SHORT_APP_NAME} (Autofill, Autosuggest, Autosave) should not be run.`}
+                .t`List of domains where certain auto functions in ${PASS_SHORT_APP_NAME} (Autofill, Autosuggest, Autosave) should not be run.${infoText}`}
         >
             {Object.keys(disallowedDomains).length > 0 && (
                 <Table responsive="cards" hasActions>
@@ -134,6 +141,7 @@ export const PauseList: VFC = () => {
                                     <button
                                         className="button button-pill button-for-icon button-solid-weak"
                                         onClick={() => deleteDisallowedUrl(url)}
+                                        aria-label={c('Action').t`Remove`}
                                     >
                                         <Icon name="cross" size={12} />
                                     </button>
