@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-throw-literal */
+import { SSO_URL } from 'proton-pass-extension/app/config';
 import { c } from 'ttag';
 
 import { AccountForkResponse, getAccountForkResponsePayload } from '@proton/pass/lib/auth/fork';
@@ -47,7 +48,7 @@ export const createAuthService = (options: AuthServiceConfig): AuthService => {
             if (ctx.getState().loggedIn) throw getAccountForkResponsePayload(AccountForkResponse.CONFLICT);
 
             try {
-                await authService.consumeFork({ mode: 'secure', ...payload });
+                await authService.consumeFork({ mode: 'secure', ...payload }, `${SSO_URL}/api`);
                 if (clientLocked(ctx.status)) await ctx.service.storage.session.set(options.authStore.getSession());
                 return getAccountForkResponsePayload(AccountForkResponse.SUCCESS);
             } catch (error: unknown) {

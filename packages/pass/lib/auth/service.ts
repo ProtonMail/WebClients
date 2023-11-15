@@ -203,10 +203,10 @@ export const createAuthService = (config: AuthServiceConfig) => {
             return true;
         },
 
-        consumeFork: async (payload: ConsumeForkPayload): Promise<boolean> => {
+        consumeFork: async (payload: ConsumeForkPayload, apiUrl?: string): Promise<boolean> => {
             try {
                 config.onAuthorize?.();
-                const session = await consumeFork({ api, payload });
+                const session = await consumeFork({ api, payload, apiUrl });
                 config.onForkConsumed?.(session);
 
                 const loggedIn = await authService.login(session);
