@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { IconName, PassLogo } from '@proton/components/components';
+import { getSentinel } from '@proton/components/containers/payments/features/highlights';
 import { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import {
     get2FAAuthenticator,
@@ -87,14 +88,14 @@ export const getFreePassFeatures = () => {
     return [getLoginsAndNotes(), getDevices(), getHideMyEmailAliases(10), getVaultSharing(3)];
 };
 
-export const getCustomPassFeatures = () => {
+export const getCustomPassFeatures = (isSentinelPassplusEnabled: boolean) => {
     return [
         getLoginsAndNotes(),
         getDevices(),
         getHideMyEmailAliases('unlimited'),
         get2FAAuthenticator(true),
         getItems(),
-        getCreditCards(),
+        isSentinelPassplusEnabled ? getSentinel() : getCreditCards(),
         getVaultSharing(10),
     ];
 };
@@ -106,6 +107,7 @@ export const getPassConfiguration = ({
     vpnServersCountData,
     isPaidPass,
     isPaidPassVPNBundle,
+    isSentinelPassplusEnabled,
 }: {
     mode: SignupMode;
     hideFreePlan: boolean;
@@ -113,6 +115,7 @@ export const getPassConfiguration = ({
     vpnServersCountData: VPNServersCountData;
     isPaidPass: boolean;
     isPaidPassVPNBundle: boolean;
+    isSentinelPassplusEnabled: boolean;
 }): SignupConfiguration => {
     const logo = <PassLogo />;
 
@@ -131,7 +134,12 @@ export const getPassConfiguration = ({
         },
         {
             plan: PLANS.PASS_PLUS,
-            subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getCustomPassFeatures()} />,
+            subsection: (
+                <PlanCardFeatureList
+                    {...planCardFeatureProps}
+                    features={getCustomPassFeatures(isSentinelPassplusEnabled)}
+                />
+            ),
             type: 'best' as const,
             guarantee: true,
         },
