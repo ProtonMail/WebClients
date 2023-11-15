@@ -8,7 +8,7 @@ import { useDebouncedFunction } from '../_utils';
 import { useVolumesState } from '../_volumes';
 import { Share, ShareState, ShareWithKey } from './interface';
 import useShare from './useShare';
-import useSharesState, { findDefaultShareId } from './useSharesState';
+import useSharesState, { findDefaultPhotosShareId, findDefaultShareId } from './useSharesState';
 import useVolume from './useVolume';
 
 /**
@@ -66,6 +66,33 @@ export default function useDefaultShare() {
         [sharesState.getDefaultShareId, getShareWithKey]
     );
 
+    const getDefaultPhotosShare = useCallback(
+        async (abortSignal?: AbortSignal): Promise<ShareWithKey | undefined> => {
+            return debouncedFunction(
+                async (abortSignal: AbortSignal) => {
+                    let defaultPhotosShareId = sharesState.getDefaultPhotosShareId();
+
+                    // First try to load fresh list of shares from API
+                    if (!defaultPhotosShareId) {
+                        const shares = await loadUserShares();
+                        // Do not use sharesState.getDefaultPhotosShare as useState
+                        // is not sync operation and thus the new state might
+                        // not be set just yet.
+                        defaultPhotosShareId = findDefaultPhotosShareId(shares);
+                    }
+
+                    // We currently don't support photos share creation on web
+                    return defaultPhotosShareId
+                        ? getShareWithKey(abortSignal || new AbortController().signal, defaultPhotosShareId)
+                        : undefined;
+                },
+                ['getDefaultPhotosShare'],
+                abortSignal
+            );
+        },
+        [sharesState.getDefaultPhotosShareId, getShareWithKey]
+    );
+
     const isShareAvailable = useCallback(
         (abortSignal: AbortSignal, shareId: string): Promise<boolean> => {
             return debouncedFunction(
@@ -82,6 +109,7 @@ export default function useDefaultShare() {
 
     return {
         getDefaultShare,
+        getDefaultPhotosShare,
         isShareAvailable,
     };
 }
