@@ -62,8 +62,9 @@ const getSettings =
                             }),
                     },
                     {
-                        label: c('Label').t`Automatically open autofill when focusing login fields`,
-                        description: c('Info').t`The autofill dropdown will automatically open on field focus.`,
+                        label: c('Label').t`Automatically open autofill when a login field is focused`,
+                        description: c('Info')
+                            .t`The autofill dropdown will automatically open when you click or focus on the field.`,
                         checked: settings.autofill.inject && settings.autofill.openOnFocus,
                         disabled: !settings.autofill.inject,
                         onChange: (checked) => onSettingsUpdate({ autofill: { openOnFocus: checked } }),
@@ -114,7 +115,7 @@ const getSettings =
                     {
                         label: c('Label').t`Show website favicons`,
                         description: c('Info')
-                            .t`${PASS_APP_NAME} will display the item favicon via ${BRAND_NAME} anonymised image proxy.`,
+                            .t`${PASS_APP_NAME} will display the item favicon via ${BRAND_NAME} anonymized image proxy.`,
                         checked: settings.loadDomainImages,
                         onChange: (loadDomainImages) => onSettingsUpdate({ loadDomainImages }),
                     },
