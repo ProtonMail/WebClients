@@ -2,16 +2,16 @@ import type { FC } from 'react';
 
 import { c } from 'ttag';
 
-import type { ButtonLikeShape } from '@proton/atoms/Button';
+import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms/Button';
 import { Button } from '@proton/atoms/Button';
 import { Dropdown, DropdownMenu, Icon, usePopperAnchor } from '@proton/components/index';
 
-export const QuickActionsDropdown: FC<{ color?: 'weak' | 'norm'; disabled?: boolean; shape?: ButtonLikeShape }> = ({
-    children,
-    color,
-    disabled,
-    shape,
-}) => {
+export const QuickActionsDropdown: FC<{
+    color?: 'weak' | 'norm';
+    disabled?: boolean;
+    shape?: ButtonLikeShape;
+    size?: ButtonLikeSize;
+}> = ({ children, color, disabled, shape, size = 'medium' }) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     return (
@@ -21,7 +21,7 @@ export const QuickActionsDropdown: FC<{ color?: 'weak' | 'norm'; disabled?: bool
                 pill
                 color={color}
                 shape={shape}
-                size="medium"
+                size={size}
                 ref={anchorRef}
                 onClick={toggle}
                 disabled={disabled}

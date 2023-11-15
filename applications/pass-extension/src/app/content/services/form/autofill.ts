@@ -139,20 +139,23 @@ export const createAutofillService = () => {
     /* The `AUTOFILL_OTP_CHECK` message handler will take care of parsing
      * the current tab's url & check for any tracked form submissions in order
      * to pick the correct login item from which to derive the OTP code */
-    const reconciliate = withContext<() => Promise<boolean>>(async ({ service, getFeatures: getDomainCriterias }) => {
+    const reconciliate = withContext<() => Promise<boolean>>(async ({ service, getFeatures, getExtensionContext }) => {
         query().catch(noop);
 
         const otpFieldDetected = service.formManager
             .getTrackedForms()
             .some((form) => form.formType === FormType.MFA && form.getFieldsFor(FieldType.OTP).length > 0);
 
-        if (otpFieldDetected && getDomainCriterias().Autofill2FA) {
+        if (otpFieldDetected && getFeatures().Autofill2FA) {
+            const { subdomain, domain } = getExtensionContext().url;
+
             return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOFILL_OTP_CHECK }), (res) => {
                 if (res.type === 'success' && res.shouldPrompt) {
                     service.iframe.attachNotification();
                     service.iframe.notification?.open({
                         action: NotificationAction.AUTOFILL_OTP_PROMPT,
                         item: { shareId: res.shareId, itemId: res.itemId },
+                        hostname: subdomain ?? domain ?? '',
                     });
                     return true;
                 }

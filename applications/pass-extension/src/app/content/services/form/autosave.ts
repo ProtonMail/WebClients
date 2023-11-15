@@ -8,8 +8,8 @@ import { FormEntryStatus, WorkerMessageType } from '@proton/pass/types';
 
 export const createAutosaveService = () => {
     const promptAutoSave: (submission: FormEntryPrompt) => boolean = withContext(
-        ({ getFeatures: getDomainCriterias, service: { iframe } }, submission) => {
-            if (getDomainCriterias().Autosave) {
+        ({ getFeatures, service: { iframe } }, submission) => {
+            if (getFeatures().Autosave) {
                 iframe.attachNotification();
                 iframe.notification?.open({
                     action: NotificationAction.AUTOSAVE_PROMPT,

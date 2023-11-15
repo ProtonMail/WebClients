@@ -37,7 +37,14 @@ export const NotificationSwitch: VFC<Props> = ({ children, visible, state, setti
                         );
                     }
                     case NotificationAction.AUTOFILL_OTP_PROMPT: {
-                        return <AutofillOTP item={state.item} onMessage={onMessage} onClose={onClose} />;
+                        return (
+                            <AutofillOTP
+                                item={state.item}
+                                onMessage={onMessage}
+                                onClose={onClose}
+                                hostname={state.hostname}
+                            />
+                        );
                     }
                 }
             })()}

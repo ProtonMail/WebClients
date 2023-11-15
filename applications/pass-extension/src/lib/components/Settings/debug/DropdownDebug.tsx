@@ -56,6 +56,7 @@ export const DropdownDebug: VFC = () => {
                         status={AppStatus.READY}
                         state={{
                             action: DropdownAction.AUTOFILL,
+                            hostname: 'proton.me',
                             needsUpgrade: false,
                             items: [],
                         }}
@@ -68,6 +69,7 @@ export const DropdownDebug: VFC = () => {
                         status={AppStatus.LOCKED}
                         state={{
                             action: DropdownAction.AUTOFILL,
+                            hostname: 'proton.me',
                             needsUpgrade: false,
                             items: [],
                         }}
@@ -80,6 +82,7 @@ export const DropdownDebug: VFC = () => {
                         status={AppStatus.READY}
                         state={{
                             action: DropdownAction.AUTOFILL,
+                            hostname: 'proton.me',
                             needsUpgrade: false,
                             items: [LOGIN_ITEMS[1]],
                         }}
@@ -92,6 +95,7 @@ export const DropdownDebug: VFC = () => {
                         status={AppStatus.READY}
                         state={{
                             action: DropdownAction.AUTOFILL,
+                            hostname: 'proton.me',
                             needsUpgrade: true,
                             items: [LOGIN_ITEMS[0]],
                         }}
@@ -104,6 +108,7 @@ export const DropdownDebug: VFC = () => {
                         status={AppStatus.READY}
                         state={{
                             action: DropdownAction.AUTOFILL,
+                            hostname: 'proton.me',
                             needsUpgrade: false,
                             items: LOGIN_ITEMS,
                         }}
@@ -114,7 +119,11 @@ export const DropdownDebug: VFC = () => {
                     <DropdownSwitch
                         loggedIn
                         status={AppStatus.READY}
-                        state={{ action: DropdownAction.AUTOSUGGEST_PASSWORD, options: DEFAULT_RANDOM_PW_OPTIONS }}
+                        state={{
+                            action: DropdownAction.AUTOSUGGEST_PASSWORD,
+                            options: DEFAULT_RANDOM_PW_OPTIONS,
+                            hostname: 'proton.me',
+                        }}
                     />
                 </MockIFrameContainer>
 
@@ -122,7 +131,7 @@ export const DropdownDebug: VFC = () => {
                     <DropdownSwitch
                         loggedIn
                         status={AppStatus.READY}
-                        state={{ action: DropdownAction.AUTOSUGGEST_ALIAS, domain: 'proton.me', prefix: 'secret' }}
+                        state={{ action: DropdownAction.AUTOSUGGEST_ALIAS, hostname: 'proton.me', prefix: 'secret' }}
                     />
                 </MockIFrameContainer>
             </div>
