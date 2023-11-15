@@ -76,7 +76,7 @@ describe('useSharedLinksListing', () => {
 
         await act(async () => {
             await hook.current.loadSharedLinks(new AbortController().signal, volumeId, () =>
-                Promise.resolve({ links: [], parents: [] })
+                Promise.resolve({ links: [], parents: [], errors: [] })
             );
         });
 
@@ -110,7 +110,7 @@ describe('useSharedLinksListing', () => {
 
         await act(async () => {
             await loadSharedLinks(new AbortController().signal, volumeId, () =>
-                Promise.resolve({ links: [], parents: [] })
+                Promise.resolve({ links: [], parents: [], errors: [] })
             );
         });
 

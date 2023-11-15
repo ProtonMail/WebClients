@@ -3,47 +3,69 @@ import { useEffect, useState } from 'react';
 import { useLoading } from '@proton/hooks';
 
 import { sendErrorReport } from '../../utils/errorHandling';
-import { DecryptedLink, useLinks } from '../_links';
+import { DecryptedLink, useLinksListing } from '../_links';
 
 /**
  * useLinksDetailsView loads links if not cached yet and provides some
  * aggregated information such as their count or size.
  */
 export default function useLinksDetailsView(selectedLinks: DecryptedLink[]) {
-    const { getLinks } = useLinks();
+    const { loadLinksMeta } = useLinksListing();
 
     const [links, setLinks] = useState<DecryptedLink[]>([]);
-    const [error, setError] = useState<any>();
+    const [hasError, setHasError] = useState<any>();
     const [isLoading, withLoading] = useLoading();
 
     useEffect(() => {
-        const abortController = new AbortController();
-        void withLoading(
-            getLinks(
-                abortController.signal,
-                selectedLinks.map(({ linkId, rootShareId }) => ({ linkId, shareId: rootShareId }))
-            )
-                .then((links) => {
-                    setLinks(links);
-                })
-                .catch((err) => {
-                    setError(err);
-                    sendErrorReport(err);
-                })
-        );
-        return () => {
-            abortController.abort();
-        };
-    }, [selectedLinks]);
+        const ac = new AbortController();
 
-    const hasFile = links.some(({ isFile }) => isFile);
-    const hasFolder = links.some(({ isFile }) => !isFile);
+        const linksByShareId: Record<string, string[]> = {};
+
+        selectedLinks.forEach(({ rootShareId, linkId }) => {
+            if (!linksByShareId[rootShareId]) {
+                linksByShareId[rootShareId] = [];
+            }
+
+            linksByShareId[rootShareId].push(linkId);
+        });
+
+        void withLoading(async () => {
+            try {
+                const loadedLinks: DecryptedLink[] = [];
+
+                for (const shareId of Object.keys(linksByShareId)) {
+                    const linkIds = linksByShareId[shareId];
+                    const meta = await loadLinksMeta(ac.signal, 'details', shareId, linkIds);
+
+                    if (meta.errors.length > 0) {
+                        setHasError(true);
+                        console.error(new Error('Failed to load links meta in details modal'), {
+                            shareId,
+                            linkIds: linkIds.filter((id) => !meta.links.find((link) => link.linkId === id)),
+                            errors: meta.errors,
+                        });
+
+                        return;
+                    }
+
+                    loadedLinks.push(...meta.links);
+                }
+
+                setLinks(loadedLinks);
+            } catch (e) {
+                setHasError(true);
+                sendErrorReport(e);
+            }
+        });
+
+        return () => {
+            ac.abort();
+        };
+    }, []);
 
     return {
         isLoading,
-        error,
-        hasFile,
-        hasFolder,
+        hasError,
         count: links.length,
         size: links.reduce((sum, current) => sum + current.size, 0),
     };

@@ -5,7 +5,6 @@ import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { LinkDownload, useDownloadProvider } from '../_downloads';
 import { DriveEvents, useDriveEventManager } from '../_events';
 import { useLinksListing, useLinksQueue } from '../_links';
-import useLinksState from '../_links/useLinksState';
 import { isPhotoGroup, sortWithCategories, usePhotos } from '../_photos';
 import type { PhotoLink } from '../_photos';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder } from './utils';
@@ -33,9 +32,8 @@ export function updateByEvents(
 export const usePhotosView = () => {
     const events = useDriveEventManager();
     const { getCachedChildren, loadLinksMeta } = useLinksListing();
-    const linksState = useLinksState();
     const { shareId, linkId, isLoading, volumeId, photos, loadPhotos, removePhotosFromCache } = usePhotos();
-    const { addToQueue } = useLinksQueue();
+    const { addToQueue } = useLinksQueue({ loadThumbnails: true });
     const { download } = useDownloadProvider();
 
     const abortSignal = useAbortSignal([volumeId, shareId]);
@@ -138,24 +136,29 @@ export const usePhotosView = () => {
         }
 
         const ac = new AbortController();
+        const meta = await loadLinksMeta(ac.signal, 'photos-download', shareId, linkIds);
 
-        const cache = true;
-        await loadLinksMeta(ac.signal, 'photos-toolbar', shareId, linkIds, cache);
-
-        const links: LinkDownload[] = [];
-
-        for (let linkId of linkIds) {
-            const decrypted = linksState.getLink(shareId, linkId)?.decrypted;
-
-            if (!decrypted) {
-                throw new Error('Failed to load links for download');
-            }
-
-            links.push({
-                ...decrypted,
-                shareId: decrypted.rootShareId,
-            });
+        if (meta.links.length === 0) {
+            return;
         }
+
+        if (meta.errors.length > 0) {
+            console.error(new Error('Failed to load links meta for download'), {
+                shareId,
+                linkIds: linkIds.filter((id) => !meta.links.find((link) => link.linkId === id)),
+                errors: meta.errors,
+            });
+
+            return;
+        }
+
+        const links: LinkDownload[] = meta.links.map(
+            (link) =>
+                ({
+                    ...link,
+                    shareId: link.rootShareId,
+                }) satisfies LinkDownload
+        );
 
         await download(links);
     };
