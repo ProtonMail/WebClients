@@ -12,12 +12,12 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 /* `getUserFeatures` will only request pass feature flags from the api
  * if the `requestedAt` timestamp is more than a day old */
 function* syncFeatures(
-    { getAuth, onFeatureFlagsUpdate }: WorkerRootSagaOptions,
+    { getAuthStore, onFeatureFlagsUpdate }: WorkerRootSagaOptions,
     { meta }: ReturnType<typeof getUserFeaturesIntent>
 ) {
     try {
-        const loggedIn = getAuth().hasSession();
-        const locked = getAuth().getLockStatus() === SessionLockStatus.LOCKED;
+        const loggedIn = getAuthStore().hasSession();
+        const locked = getAuthStore().getLockStatus() === SessionLockStatus.LOCKED;
         if (!loggedIn || locked) throw new Error('Cannot fetch user features');
 
         const current: FeatureFlagState = yield select(selectFeatureFlags);

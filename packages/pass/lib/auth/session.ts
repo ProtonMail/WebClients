@@ -1,8 +1,7 @@
 /* Inspired from packages/shared/lib/authentication/persistedSessionHelper.ts */
-import type { Api, Maybe } from '@proton/pass/types';
+import type { Api } from '@proton/pass/types';
 import { isObject } from '@proton/pass/utils/object/is-object';
 import { getLocalKey, setLocalKey } from '@proton/shared/lib/api/auth';
-import { getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { InactiveSessionError } from '@proton/shared/lib/api/helpers/withApiHandlers';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getKey } from '@proton/shared/lib/authentication/cryptoHelper';
@@ -13,7 +12,7 @@ import { withAuthHeaders } from '@proton/shared/lib/fetch/headers';
 import { base64StringToUint8Array, uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 import type { User as UserType } from '@proton/shared/lib/interfaces';
 
-import type { AuthStore } from './authentication';
+import type { AuthStore } from './store';
 
 export type AuthSession = {
     AccessToken: string;
@@ -26,8 +25,8 @@ export type AuthSession = {
     UserID: string;
 };
 
-export type ExtensionPersistedSession = Omit<AuthSession, 'keyPassword' | 'sessionLockToken'> & { blob: string };
-export type ExtensionPersistedSessionBlob = Pick<AuthSession, 'keyPassword' | 'sessionLockToken'>;
+export type PersistedAuthSession = Omit<AuthSession, 'keyPassword' | 'sessionLockToken'> & { blob: string };
+export type PersistedAuthSessionBlob = Pick<AuthSession, 'keyPassword' | 'sessionLockToken'>;
 
 export const SESSION_KEYS: (keyof AuthSession)[] = [
     'AccessToken',
@@ -42,7 +41,7 @@ export const SESSION_KEYS: (keyof AuthSession)[] = [
 export const isValidSession = (data: Partial<AuthSession>): data is AuthSession =>
     Boolean(data.AccessToken && data.keyPassword && data.RefreshToken && data.UID && data.UserID);
 
-export const isValidPersistedSession = (data: any): data is ExtensionPersistedSession =>
+export const isValidPersistedSession = (data: any): data is PersistedAuthSession =>
     isObject(data) &&
     Boolean('AccessToken' in data && data.AccessToken) &&
     Boolean('RefreshToken' in data && data.RefreshToken) &&
@@ -81,7 +80,7 @@ const decryptPersistedSessionBlob = async (key: CryptoKey, blob: string): Promis
     }
 };
 
-const parsePersistedSessionBlob = (blob: string): ExtensionPersistedSessionBlob => {
+const parsePersistedSessionBlob = (blob: string): PersistedAuthSessionBlob => {
     try {
         const parsedValue = JSON.parse(blob);
         return {
@@ -93,7 +92,7 @@ const parsePersistedSessionBlob = (blob: string): ExtensionPersistedSessionBlob 
     }
 };
 
-export const decryptPersistedSession = async (key: CryptoKey, blob: string): Promise<ExtensionPersistedSessionBlob> => {
+export const decryptPersistedSession = async (key: CryptoKey, blob: string): Promise<PersistedAuthSessionBlob> => {
     const decryptedBlob = await decryptPersistedSessionBlob(key, blob);
     const persistedSessionBlob = parsePersistedSessionBlob(decryptedBlob);
     return persistedSessionBlob;
@@ -102,8 +101,8 @@ export const decryptPersistedSession = async (key: CryptoKey, blob: string): Pro
 type ResumeSessionOptions = {
     api: Api;
     authStore: AuthStore;
-    session: ExtensionPersistedSession;
-    onInvalidSession: () => void;
+    persistedSession: PersistedAuthSession;
+    onSessionInvalid?: () => void;
 };
 
 /* Session resuming flow responsible for decrypting the encrypted session
@@ -112,17 +111,17 @@ type ResumeSessionOptions = {
 export const resumeSession = async ({
     api,
     authStore,
-    session,
-    onInvalidSession,
-}: ResumeSessionOptions): Promise<Maybe<AuthSession>> => {
+    persistedSession,
+    onSessionInvalid,
+}: ResumeSessionOptions): Promise<AuthSession> => {
     try {
         const [sessionKey, { User }] = await Promise.all([
             getPersistedSessionKey(api),
             api<{ User: UserType }>(getUser()),
         ]);
 
-        if (session.UserID !== User.ID) throw InactiveSessionError();
-        const ps = await decryptPersistedSession(sessionKey, session.blob);
+        if (persistedSession.UserID !== User.ID) throw InactiveSessionError();
+        const ps = await decryptPersistedSession(sessionKey, persistedSession.blob);
 
         return {
             ...authStore.getSession(),
@@ -130,7 +129,7 @@ export const resumeSession = async ({
             sessionLockToken: ps.sessionLockToken,
         };
     } catch (error: any) {
-        if (getIs401Error(error) || error instanceof InvalidPersistentSessionError) onInvalidSession();
+        if (error instanceof InvalidPersistentSessionError) onSessionInvalid?.();
         throw error;
     }
 };

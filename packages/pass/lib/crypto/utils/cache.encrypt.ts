@@ -1,4 +1,4 @@
-import { authentication } from '@proton/pass/lib/auth/authentication';
+import { authentication } from '@proton/pass/lib/auth/store';
 import type { Maybe } from '@proton/pass/types';
 import { ENCRYPTION_ALGORITHM } from '@proton/shared/lib/authentication/cryptoHelper';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';

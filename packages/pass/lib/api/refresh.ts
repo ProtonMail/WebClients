@@ -13,7 +13,8 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
 export type RefreshHandler = (responseDate?: Date) => Promise<void>;
-export type OnRefreshCallback = (response: RefreshSessionResponse, refreshTime: number) => void;
+export type RefreshSessionData = RefreshSessionResponse & { RefreshTime: number };
+export type OnRefreshCallback = (response: RefreshSessionData) => void;
 
 type CreateRefreshHandlerOptions = {
     call: ApiCallFn;
@@ -76,10 +77,10 @@ export const createRefreshHandler = ({ call, getAuth, onRefresh }: CreateRefresh
                     if (lastRefreshDate === undefined || +(responseDate ?? new Date()) > lastRefreshDate) {
                         const response = await refresh({ call, getAuth, attempt: 1, maxAttempts: RETRY_ATTEMPTS_MAX });
                         const timestamp = getDateHeader(response.headers) ?? new Date();
-                        const result = await response.json();
+                        const result: RefreshSessionResponse = await response.json();
 
                         logger.info('[API] Successfully refreshed session tokens');
-                        onRefresh(result, +timestamp);
+                        onRefresh({ ...result, RefreshTime: +timestamp });
 
                         await wait(50);
                     }

@@ -35,11 +35,11 @@ const WorkerMessageBroker = createMessageBroker({
     ],
     onDisconnect: withContext((ctx, portName) => {
         const isPopup = portName.startsWith('popup');
-        const hasRegisteredLock = ctx.service.auth.store.getLockStatus() === SessionLockStatus.REGISTERED;
+        const hasRegisteredLock = ctx.authStore.getLockStatus() === SessionLockStatus.REGISTERED;
 
         if (isPopup) {
             store.dispatch(stateCache());
-            if (hasRegisteredLock) ctx.service.auth.syncLock().catch(noop);
+            if (hasRegisteredLock) ctx.service.auth.checkLock().catch(noop);
         }
     }),
 });

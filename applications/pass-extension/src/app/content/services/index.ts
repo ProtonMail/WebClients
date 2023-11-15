@@ -16,11 +16,11 @@ import { DOMCleanUp } from 'proton-pass-extension/app/content/injections/cleanup
 import type { ExtensionContextType } from 'proton-pass-extension/lib/context/extension-context';
 import { ExtensionContext, setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
+import { clientReady } from '@proton/pass/lib/client';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
-import { workerReady } from '@proton/pass/lib/worker';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import { WorkerMessageType, type WorkerMessageWithSender, type WorkerState } from '@proton/pass/types';
+import { type AppState, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
@@ -54,7 +54,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         context.service.formManager.sync();
 
         if (!loggedIn) context.service.autofill.reset();
-        else if (workerReady(status)) await context.service.autofill.reconciliate();
+        else if (clientReady(status)) await context.service.autofill.reconciliate();
     };
 
     const onFeatureFlagsChange = (features: FeatureFlagState) => context.setFeatureFlags(features);
@@ -64,7 +64,7 @@ export const createContentScriptClient = (scriptId: string, mainFrame: boolean) 
         if (context.getState().active) void reconciliate();
     };
 
-    const onWorkerStateChange = (workerState: WorkerState) => {
+    const onWorkerStateChange = (workerState: AppState) => {
         context.setState(workerState);
         if (context.getState().active) void reconciliate();
     };

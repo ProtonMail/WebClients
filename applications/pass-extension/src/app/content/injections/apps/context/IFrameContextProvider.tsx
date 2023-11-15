@@ -13,12 +13,12 @@ import locales from 'proton-pass-extension/app/locales';
 import type { Runtime } from 'webextension-polyfill';
 
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
+import { clientReady } from '@proton/pass/lib/client';
 import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
-import { workerReady } from '@proton/pass/lib/worker';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { INITIAL_SETTINGS, type ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { Maybe, MaybeNull, RecursivePartial, WorkerMessage, WorkerState } from '@proton/pass/types';
+import type { AppState, Maybe, MaybeNull, RecursivePartial, WorkerMessage } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
@@ -35,7 +35,7 @@ type IFrameContextValue = {
     settings: ProxiedSettings;
     userEmail: MaybeNull<string>;
     visible: boolean;
-    workerState: Maybe<Omit<WorkerState, 'UID'>>;
+    workerState: Maybe<Omit<AppState, 'UID'>>;
     closeIFrame: (options?: IFrameCloseOptions) => void;
     postMessage: (message: IFrameMessage) => void;
     registerHandler: <M extends IFrameMessage['type']>(type: M, handler: IFramePortMessageHandler<M>) => void;
@@ -118,7 +118,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     );
 
     useEffect(() => {
-        if (userEmail === null && workerState && workerReady(workerState?.status)) {
+        if (userEmail === null && workerState && clientReady(workerState?.status)) {
             sendMessage
                 .onSuccess(
                     contentScriptMessage({ type: WorkerMessageType.RESOLVE_USER_DATA }),

@@ -1,6 +1,6 @@
 import { type VFC, useCallback, useEffect, useRef, useState } from 'react';
 
-import { type MaybeNull, WorkerStatus } from '@proton/pass/types';
+import { AppStatus, type MaybeNull } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 import { type DropdownActions, type IFrameMessage, IFrameMessageType } from '../../../../types';
@@ -35,7 +35,7 @@ export const DropdownContent: VFC = () => {
         <DropdownSwitch
             ref={dropdownRef}
             state={dropdownState}
-            status={workerState?.status ?? WorkerStatus.IDLE}
+            status={workerState?.status ?? AppStatus.IDLE}
             loggedIn={workerState?.loggedIn ?? false}
             onMessage={postMessage}
             onClose={onClose}
