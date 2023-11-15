@@ -15,16 +15,16 @@ import { getLatestID } from '@proton/shared/lib/api/events';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { PullForkResponse, RefreshSessionResponse } from '@proton/shared/lib/authentication/interface';
 import { getGenericErrorPayload } from '@proton/shared/lib/broadcast';
+import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import createEventManager from '@proton/shared/lib/eventManager/eventManager';
 import { withAuthHeaders, withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
 import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
-import { getBrowserLocale, getClosestLocaleCode, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
+import { getBrowserLocale, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import { User, UserSettings } from '@proton/shared/lib/interfaces';
-import { UserModel, UserSettingsModel } from '@proton/shared/lib/models';
+import { UserModel } from '@proton/shared/lib/models';
 import { loadModels } from '@proton/shared/lib/models/helper';
 import getRandomString from '@proton/utils/getRandomString';
 
@@ -120,24 +120,20 @@ const Setup = ({ onLogin, UID, children }: Props) => {
                     eventManagerRef.current = createEventManager({ api: uidApi, eventID });
                 });
 
-            const modelsPromise = loadModels([UserSettingsModel, UserModel], {
+            const modelsPromise = loadModels([UserModel], {
                 api: uidApi,
                 cache,
-            }).then((result: any) => {
-                const [userSettings] = result as [UserSettings, User];
-                const languageParams = searchParams.get('language');
-                const browserLocale = getBrowserLocale();
-                const localeCode =
-                    getClosestLocaleMatch(languageParams || '', locales) ||
-                    getClosestLocaleCode(userSettings.Locale, locales);
-
-                return Promise.all([
-                    loadLocale(localeCode, locales),
-                    loadDateLocale(localeCode, browserLocale, userSettings),
-                ]);
             });
 
-            await Promise.all([eventManagerPromise, modelsPromise, loadCryptoWorker({ poolSize: 1 })]);
+            const loadLocales = () => {
+                const languageParams = searchParams.get('language');
+                const browserLocale = getBrowserLocale();
+                const localeCode = getClosestLocaleMatch(languageParams || browserLocale, locales) || DEFAULT_LOCALE;
+
+                return Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)]);
+            };
+
+            await Promise.all([eventManagerPromise, modelsPromise, loadLocales(), loadCryptoWorker({ poolSize: 1 })]);
 
             flushSync(() => {
                 onLogin(UID);
