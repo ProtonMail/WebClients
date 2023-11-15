@@ -7,9 +7,9 @@ import { buildTreeview, formatFolderName } from '@proton/shared/lib/helpers/fold
 import { FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
 import { SHOW_MOVED } from '@proton/shared/lib/mail/mailSettings';
 
+import useSnooze from 'proton-mail/hooks/actions/useSnooze';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { getLabelIDsToI18N } from '../../../../constants';
 import { getStandardFolders } from '../../../../helpers/labels';
 import useScheduleSendFeature from '../../../composer/actions/scheduleSend/useScheduleSendFeature';
 
@@ -66,6 +66,7 @@ const {
     ALL_DRAFTS,
     DRAFTS,
     SCHEDULED,
+    SNOOZED,
 } = MAILBOX_LABEL_IDS;
 
 const STANDARD_FOLDERS = getStandardFolders();
@@ -103,6 +104,7 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
     const [folders] = useFolders();
     const treeview = buildTreeview(folders);
     const { canScheduleSend } = useScheduleSendFeature();
+    const { isSnoozeEnabled } = useSnooze();
 
     const DRAFT_TYPE = hasBit(mailSettings.ShowMoved, SHOW_MOVED.DRAFTS) ? ALL_DRAFTS : DRAFTS;
     const SENT_TYPE = hasBit(mailSettings.ShowMoved, SHOW_MOVED.SENT) ? ALL_SENT : SENT;
@@ -111,43 +113,78 @@ export function useLocationFieldOptions(): UseLocationFieldOptionsReturn {
         AlmostAllMail
             ? {
                   value: ALMOST_ALL_MAIL,
-                  text: getLabelIDsToI18N()[ALMOST_ALL_MAIL],
-                  url: '/almost-all-mail',
-                  icon: 'envelopes',
+                  text: STANDARD_FOLDERS[ALMOST_ALL_MAIL].name,
+                  url: STANDARD_FOLDERS[ALMOST_ALL_MAIL].to,
+                  icon: STANDARD_FOLDERS[ALMOST_ALL_MAIL].icon,
               }
-            : { value: ALL_MAIL, text: getLabelIDsToI18N()[ALL_MAIL], url: '/all-mail', icon: 'envelopes' },
-        { value: INBOX, text: getLabelIDsToI18N()[INBOX], url: STANDARD_FOLDERS[INBOX].to, icon: 'inbox' },
+            : {
+                  value: ALL_MAIL,
+                  text: STANDARD_FOLDERS[ALL_MAIL].name,
+                  url: STANDARD_FOLDERS[ALL_MAIL].to,
+                  icon: STANDARD_FOLDERS[ALL_MAIL].icon,
+              },
+        {
+            value: INBOX,
+            text: STANDARD_FOLDERS[INBOX].name,
+            url: STANDARD_FOLDERS[INBOX].to,
+            icon: STANDARD_FOLDERS[INBOX].icon,
+        },
+        ...(isSnoozeEnabled
+            ? [
+                  {
+                      value: SNOOZED,
+                      text: STANDARD_FOLDERS[SNOOZED].name,
+                      url: STANDARD_FOLDERS[SNOOZED].to,
+                      icon: STANDARD_FOLDERS[SNOOZED].icon,
+                  },
+              ]
+            : []),
         {
             value: DRAFT_TYPE,
-            text: DRAFT_TYPE === ALL_DRAFTS ? getLabelIDsToI18N()[ALL_DRAFTS] : getLabelIDsToI18N()[DRAFTS],
+            text: DRAFT_TYPE === ALL_DRAFTS ? STANDARD_FOLDERS[ALL_DRAFTS].name : STANDARD_FOLDERS[DRAFTS].name,
             url: STANDARD_FOLDERS[DRAFT_TYPE].to,
-            icon: 'file-lines',
+            icon: STANDARD_FOLDERS[DRAFT_TYPE].icon,
         },
         ...(canScheduleSend
             ? [
                   {
                       value: SCHEDULED,
-                      text: getLabelIDsToI18N()[SCHEDULED],
+                      text: STANDARD_FOLDERS[SCHEDULED].name,
                       url: STANDARD_FOLDERS[SCHEDULED].to,
-                      icon: 'clock' as const,
+                      icon: STANDARD_FOLDERS[SCHEDULED].icon,
                   },
               ]
             : []),
         {
             value: SENT_TYPE,
-            text: SENT_TYPE === ALL_SENT ? getLabelIDsToI18N()[ALL_SENT] : getLabelIDsToI18N()[SENT],
-            url: '/sent',
-            icon: 'paper-plane',
+            text: SENT_TYPE === ALL_SENT ? STANDARD_FOLDERS[ALL_SENT].name : STANDARD_FOLDERS[SENT].name,
+            url: STANDARD_FOLDERS[SENT_TYPE].to,
+            icon: STANDARD_FOLDERS[SENT_TYPE].icon,
         },
-        { value: STARRED, text: getLabelIDsToI18N()[STARRED], url: '/starred', icon: 'star' },
+        {
+            value: STARRED,
+            text: STANDARD_FOLDERS[STARRED].name,
+            url: STANDARD_FOLDERS[STARRED].to,
+            icon: STANDARD_FOLDERS[STARRED].icon,
+        },
         {
             value: ARCHIVE,
-            text: getLabelIDsToI18N()[ARCHIVE],
+            text: STANDARD_FOLDERS[ARCHIVE].name,
             url: STANDARD_FOLDERS[ARCHIVE].to,
-            icon: 'archive-box',
+            icon: STANDARD_FOLDERS[ARCHIVE].icon,
         },
-        { value: SPAM, text: getLabelIDsToI18N()[SPAM], url: STANDARD_FOLDERS[SPAM].to, icon: 'fire' },
-        { value: TRASH, text: getLabelIDsToI18N()[TRASH], url: STANDARD_FOLDERS[TRASH].to, icon: 'trash' },
+        {
+            value: SPAM,
+            text: STANDARD_FOLDERS[SPAM].name,
+            url: STANDARD_FOLDERS[SPAM].to,
+            icon: STANDARD_FOLDERS[SPAM].icon,
+        },
+        {
+            value: TRASH,
+            text: STANDARD_FOLDERS[TRASH].name,
+            url: STANDARD_FOLDERS[TRASH].to,
+            icon: STANDARD_FOLDERS[TRASH].icon,
+        },
     ];
 
     const customFolders: ItemCustomFolder[] = treeview.reduce(

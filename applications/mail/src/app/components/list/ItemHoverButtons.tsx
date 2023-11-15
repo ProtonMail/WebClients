@@ -12,7 +12,10 @@ import { isMessage, isStarred as testIsStarred, isUnread as testIsUnread } from 
 import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
 import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
 import { useStar } from '../../hooks/actions/useStar';
+import { selectSnoozeDropdownState, selectSnoozeElement } from '../../logic/snooze/snoozeSliceSelectors';
+import { useAppSelector } from '../../logic/store';
 import { Element } from '../../models/element';
+import SnoozeDropdown from './snooze/containers/SnoozeDropdown';
 
 const { READ, UNREAD } = MARK_AS_STATUS;
 const { ARCHIVE, TRASH } = MAILBOX_LABEL_IDS;
@@ -37,8 +40,10 @@ const ItemHoverButtons = ({
     size = 'medium',
 }: Props) => {
     const markAs = useMarkAs();
-    const { moveToFolder, moveScheduledModal } = useMoveToFolder();
+    const { moveToFolder, moveScheduledModal, moveSnoozedModal } = useMoveToFolder();
     const star = useStar();
+    const snoozedElement = useAppSelector(selectSnoozeElement);
+    const snoozeDropdownState = useAppSelector(selectSnoozeDropdownState);
 
     const [loadingStar, withLoadingStar] = useLoading();
 
@@ -89,7 +94,10 @@ const ItemHoverButtons = ({
         <>
             <div
                 className={clsx(
-                    'flex-nowrap flex-justify-space-between relative item-hover-action-buttons no-mobile',
+                    'flex-nowrap flex-justify-space-between relative  no-mobile item-hover-action-buttons',
+                    snoozeDropdownState && snoozedElement?.ID === element.ID
+                        ? 'item-hover-action-buttons--dropdown-open'
+                        : '',
                     className
                 )}
             >
@@ -122,6 +130,8 @@ const ItemHoverButtons = ({
                         <Icon name="archive-box" alt={c('Action').t`Move to archive`} />
                     </Button>
                 </Tooltip>
+
+                <SnoozeDropdown elements={[element]} size={size} labelID={labelID} />
                 {hasStar && (
                     <Tooltip title={starAlt} tooltipClassName="no-pointer-events">
                         <Button
@@ -141,6 +151,7 @@ const ItemHoverButtons = ({
                 )}
             </div>
             {moveScheduledModal}
+            {moveSnoozedModal}
         </>
     );
 };

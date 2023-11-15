@@ -23,6 +23,7 @@ export interface Conversation {
     ContextExpirationTime?: number;
     AttachmentInfo?: { [key in MIME_TYPES]?: AttachmentInfo };
     AttachmentsMetadata?: AttachmentsMetadata[];
+    DisplaySnoozedReminder?: boolean;
 }
 
 export interface ConversationLabel {
@@ -33,4 +34,5 @@ export interface ConversationLabel {
     ContextExpirationTime?: number;
     ContextSize?: number;
     ContextNumAttachments?: number;
+    ContextSnoozeTime?: number;
 }

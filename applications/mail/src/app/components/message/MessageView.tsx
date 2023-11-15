@@ -35,6 +35,7 @@ import { useMessageHotkeys } from '../../hooks/message/useMessageHotkeys';
 import { useResignContact } from '../../hooks/message/useResignContact';
 import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
 import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
+import { isElementReminded } from '../../logic/snoozehelpers';
 import { Element } from '../../models/element';
 import { Breakpoints } from '../../models/utils';
 import QuickReplyContainer from '../composer/quickReply/QuickReplyContainer';
@@ -282,10 +283,21 @@ const MessageView = (
         }
     }, [expanded]);
 
-    // Mark as read a message already loaded (when user marked as unread)
+    /**
+     * Two cases here,
+     *     If the message is unread: mark as read a message already loaded (when user marked as unread)
+     *     If the message is read: mark message or conversation as read again if DisplaySnoozedReminder present (snooze feature)
+     */
     useEffect(() => {
+        const element = message.data as Element;
         if (expanded && unread && bodyLoaded) {
-            markAs([message.data as Element], labelID, MARK_AS_STATUS.READ);
+            markAs([element], labelID, MARK_AS_STATUS.READ);
+        }
+
+        // Mark the message as read again when DisplaySnoozedReminder is true (snooze feature)
+        const isReminded = isElementReminded(element);
+        if (!unread && isReminded && !conversationMode) {
+            markAs([element], labelID, MARK_AS_STATUS.READ);
         }
     }, [expanded, unread, bodyLoaded]);
 
@@ -321,6 +333,7 @@ const MessageView = (
         moveDropdownToggleRef,
         filterDropdownToggleRef,
         moveScheduledModal,
+        moveSnoozedModal,
         moveAllModal,
         moveToSpamModal,
     } = useMessageHotkeys(
@@ -455,6 +468,7 @@ const MessageView = (
                 />
             )}
             {moveScheduledModal}
+            {moveSnoozedModal}
             {moveAllModal}
             {moveToSpamModal}
         </article>

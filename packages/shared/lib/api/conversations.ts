@@ -1,4 +1,5 @@
 import { SPAM_ACTION } from '../mail/mailSettings';
+import { getAppropriateSort } from './helpers/snoozeSort';
 
 interface QueryConversationProps {
     Location: any;
@@ -55,7 +56,7 @@ export const queryConversations = ({
         PageSize,
         Limit,
         LabelID,
-        Sort,
+        Sort: getAppropriateSort(LabelID, Sort),
         Desc,
         Begin,
         End,
@@ -126,4 +127,16 @@ export const setExpiration = (IDs: string[], ExpirationTime: number | null) => (
     method: 'put',
     url: 'mail/v4/conversations/expire',
     data: { IDs, ExpirationTime },
+});
+
+export const snoozeConversations = (IDs: string[], SnoozeTime: number) => ({
+    method: 'put',
+    url: 'mail/v4/conversations/snooze',
+    data: { IDs, SnoozeTime },
+});
+
+export const unsnoozeConversations = (IDs: string[]) => ({
+    method: 'put',
+    url: 'mail/v4/conversations/unsnooze',
+    data: { IDs },
 });

@@ -82,6 +82,7 @@ export const isDraft = (message?: Partial<Message>) =>
 export const isOutbox = (message?: Partial<Message>) => message?.LabelIDs?.includes(MAILBOX_LABEL_IDS.OUTBOX);
 export const isExpiring = (message?: Partial<Message>) => !!message?.ExpirationTime;
 export const isScheduled = (message?: Partial<Message>) => message?.LabelIDs?.includes(MAILBOX_LABEL_IDS.SCHEDULED);
+export const isSnoozed = (message?: Partial<Message>) => message?.LabelIDs?.includes(MAILBOX_LABEL_IDS.SNOOZED);
 export const isScheduledSend = hasFlag(FLAG_SCHEDULED_SEND);
 export const isE2E = hasFlag(FLAG_E2E);
 export const isSentEncrypted = hasFlag(FLAG_E2E | FLAG_SENT);

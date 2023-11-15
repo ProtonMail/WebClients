@@ -1,6 +1,7 @@
 import { createSelector } from 'reselect';
 
 import { ESStatus, ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LabelCount } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -54,6 +55,15 @@ export const elements = createSelector(
         // Getting all params from the cache and not from scoped params
         // To prevent any desynchronization between cache and the output of the memo
         const { labelID, sort, filter } = params;
+        let finalSort = sort;
+        // The default sorting needs to be override when in inbox or snooze to display snoozed emails on top
+        const isInSnoozeOrInbox = labelID === MAILBOX_LABEL_IDS.INBOX || labelID === MAILBOX_LABEL_IDS.SNOOZED;
+        if (isInSnoozeOrInbox && sort.sort === 'Time') {
+            finalSort = {
+                sort: 'SnoozeTime',
+                desc: labelID === MAILBOX_LABEL_IDS.INBOX,
+            };
+        }
 
         const minPage = pages.reduce((acc, page) => (page < acc ? page : acc), pages[0]);
         const startIndex = (page - minPage) * PAGE_SIZE;
@@ -74,7 +84,7 @@ export const elements = createSelector(
                 const elementUnread = isUnread(element, labelID);
                 return filter.Unread ? elementUnread : !elementUnread;
             });
-        const sorted = sortElements(filtered, sort, labelID);
+        const sorted = sortElements(filtered, finalSort, labelID);
 
         return sorted.slice(startIndex, endIndex);
     }

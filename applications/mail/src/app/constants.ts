@@ -1,5 +1,3 @@
-import { c } from 'ttag';
-
 import { defaultESContext } from '@proton/encrypted-search';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
@@ -29,8 +27,9 @@ export const SCHEDULED_MAX_DATE_DAYS = 90;
 export const EXPIRATION_TIME_MAX_DAYS = 730; // 2 years
 /**
  * We can't schedule a message before this 120sec buffer
+ * This can be applied to snoozed message and schedule send
  */
-export const SCHEDULED_SEND_BUFFER = 120;
+export const FUTURE_MESSAGES_BUFFER = 120;
 
 export const MIN_DELAY_SENT_NOTIFICATION = 2500;
 
@@ -53,28 +52,13 @@ export const LABEL_IDS_TO_HUMAN = {
     [MAILBOX_LABEL_IDS.STARRED]: 'starred',
     [MAILBOX_LABEL_IDS.OUTBOX]: 'outbox',
     [MAILBOX_LABEL_IDS.SCHEDULED]: 'scheduled',
+    [MAILBOX_LABEL_IDS.SNOOZED]: 'snoozed',
 };
 
 export const HUMAN_TO_LABEL_IDS = Object.entries(LABEL_IDS_TO_HUMAN).reduce((acc, [key, value]) => {
     acc[value] = key;
     return acc;
 }, Object.create(null));
-
-export const getLabelIDsToI18N = () => ({
-    [MAILBOX_LABEL_IDS.INBOX]: c('Link').t`Inbox`,
-    [MAILBOX_LABEL_IDS.ALL_DRAFTS]: c('Link').t`Drafts`,
-    [MAILBOX_LABEL_IDS.ALL_SENT]: c('Link').t`Sent`,
-    [MAILBOX_LABEL_IDS.TRASH]: c('Link').t`Trash`,
-    [MAILBOX_LABEL_IDS.SPAM]: c('Link').t`Spam`,
-    [MAILBOX_LABEL_IDS.ALL_MAIL]: c('Link').t`All mail`,
-    [MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL]: c('Link').t`All mail`,
-    [MAILBOX_LABEL_IDS.ARCHIVE]: c('Link').t`Archive`,
-    [MAILBOX_LABEL_IDS.SENT]: c('Link').t`Sent`,
-    [MAILBOX_LABEL_IDS.DRAFTS]: c('Link').t`Drafts`,
-    [MAILBOX_LABEL_IDS.STARRED]: c('Link').t`Starred`,
-    [MAILBOX_LABEL_IDS.OUTBOX]: c('Link').t`Outbox`,
-    [MAILBOX_LABEL_IDS.SCHEDULED]: c('Link').t`Scheduled`,
-});
 
 // List of location where messages are marked automatically as read after moving by the API
 export const LABELS_AUTO_READ = [MAILBOX_LABEL_IDS.TRASH];
@@ -87,6 +71,7 @@ export const LABELS_UNMODIFIABLE_BY_USER = [
     MAILBOX_LABEL_IDS.ALL_DRAFTS,
     MAILBOX_LABEL_IDS.OUTBOX,
     MAILBOX_LABEL_IDS.SCHEDULED,
+    MAILBOX_LABEL_IDS.SNOOZED,
 ];
 
 export enum ENCRYPTED_STATUS {

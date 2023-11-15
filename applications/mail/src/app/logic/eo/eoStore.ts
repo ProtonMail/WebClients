@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
+import elements from '../elements/elementsSlice';
 import eo from './eoSlice';
 
 export const store = configureStore({
     reducer: {
         eo,
+        elements,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

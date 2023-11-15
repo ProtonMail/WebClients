@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 
 import { c, msgid } from 'ttag';
 
@@ -11,6 +11,7 @@ import UndoActionNotification from '../../components/notifications/UndoActionNot
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
+import { isElementReminded } from '../../logic/snoozehelpers';
 import { useAppDispatch } from '../../logic/store';
 import { Element } from '../../models/element';
 import { useOptimisticMarkAs } from '../optimistic/useOptimisticMarkAs';
@@ -76,6 +77,7 @@ export const useMarkAs = () => {
         const markAsReadAction = isMessage ? markMessageAsRead : markConversationsAsRead;
         const markAsUnreadAction = isMessage ? markMessageAsUnread : markConversationsAsUnread;
         const action = status === MARK_AS_STATUS.READ ? markAsReadAction : markAsUnreadAction;
+        const displaySnoozedReminder = status === MARK_AS_STATUS.READ ? false : isElementReminded(elements[0]);
 
         let rollback: (() => void) | undefined = () => {};
 
@@ -85,7 +87,10 @@ export const useMarkAs = () => {
                 // Stop the event manager to prevent race conditions
                 stop();
                 dispatch(backendActionStarted());
-                rollback = optimisticMarkAs(elements, labelID, { status });
+                rollback = optimisticMarkAs(elements, labelID, {
+                    status,
+                    displaySnoozedReminder,
+                });
                 const { UndoToken } = await api(
                     action(
                         elements.map((element) => element.ID),
