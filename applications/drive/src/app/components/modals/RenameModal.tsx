@@ -2,9 +2,10 @@ import React, { ChangeEvent, FocusEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Input } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import {
     Field,
+    InputFieldTwo,
     Label,
     ModalStateProps,
     ModalTwo,
@@ -82,7 +83,7 @@ const RenameModal = ({ item, onClose, ...modalProps }: Props & ModalStateProps) 
                 <Row className="my-4">
                     <Label>{!item.isFile ? c('Label').t`Folder name` : c('Label').t`File name`}</Label>
                     <Field>
-                        <Input
+                        <InputFieldTwo
                             id="link-name"
                             value={name}
                             autoFocus
@@ -92,6 +93,7 @@ const RenameModal = ({ item, onClose, ...modalProps }: Props & ModalStateProps) 
                             onFocus={selectNamePart}
                             error={validationError}
                             required
+                            data-testid="input-rename"
                         />
                     </Field>
                 </Row>
