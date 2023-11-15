@@ -68,13 +68,11 @@ export function useSharesStateProvider() {
         return findDefaultShareId(Object.entries(state).map(([, share]) => share));
     }, [state]);
 
-    const getActivePhotosShare = useCallback((): Share | ShareWithKey | undefined => {
-        return Object.values(state).find(
-            (share) => share.state === ShareState.active && !share.isLocked && share.type === ShareType.photos
-        );
+    const getDefaultPhotosShareId = useCallback((): string | undefined => {
+        return findDefaultPhotosShareId(Object.entries(state).map(([, share]) => share));
     }, [state]);
 
-    const getRestoredPhotoShares = useCallback((): Share[] | ShareWithKey[] | undefined => {
+    const getRestoredPhotosShares = useCallback((): Share[] | ShareWithKey[] | undefined => {
         return Object.values(state).filter(
             (share) => share.state === ShareState.restored && !share.isLocked && share.type === ShareType.photos
         );
@@ -86,8 +84,8 @@ export function useSharesStateProvider() {
         getShare,
         getLockedShares,
         getDefaultShareId,
-        getActivePhotosShare,
-        getRestoredPhotoShares,
+        getDefaultPhotosShareId,
+        getRestoredPhotosShares,
         setLockedVolumesForRestore,
         lockedVolumesForRestore,
     };
@@ -95,6 +93,13 @@ export function useSharesStateProvider() {
 
 export function findDefaultShareId(shares: (Share | ShareWithKey)[]) {
     const share = shares.find((share) => share.isDefault && !share.isLocked && !share.isVolumeSoftDeleted);
+    return share ? share.shareId : undefined;
+}
+
+export function findDefaultPhotosShareId(shares: (Share | ShareWithKey)[]) {
+    const share = shares.find(
+        (share) => share.state === ShareState.active && !share.isLocked && share.type === ShareType.photos
+    );
     return share ? share.shareId : undefined;
 }
 
