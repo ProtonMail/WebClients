@@ -34,7 +34,7 @@ import {
 } from './session-lock';
 import { type AuthStore } from './store';
 
-export interface AuthServiceOptions {
+export interface AuthServiceConfig {
     api: Api;
     /** Store holding the active session data */
     authStore: AuthStore;
@@ -44,7 +44,7 @@ export interface AuthServiceOptions {
     getMemorySession?: () => MaybePromise<any>;
     /** The persisted session will be parsed and decrypted to extract the
      * session data. Requires an API call to retrieve the local key. */
-    getPersistedSession: (localID?: number) => MaybePromise<MaybeNull<PersistedAuthSession>>;
+    getPersistedSession: (localID: Maybe<number>) => MaybePromise<MaybeNull<PersistedAuthSession>>;
     /**  Implement any service initialization logic in this hook. Should return
      * a boolean flag indicating wether user was authorized or not. */
     onInit: (options?: { forceLock: boolean }) => Promise<boolean>;
@@ -53,11 +53,12 @@ export interface AuthServiceOptions {
     onAuthorize?: () => void;
     /** Called whenever a user is successfully authenticated. This can happen
      * after consuming a fork or resuming a session.  */
-    onAuthorized?: (localID?: number) => void;
+    onAuthorized?: (localID: Maybe<number>) => void;
     /** Called whenever a user is unauthenticated. This will be triggered any time
      * the `logout` function is called (either via user action or when an inactive
-     * session is detected). */
-    onUnauthorized?: (localID?: number) => void;
+     * session is detected). The `broadcast` flag indicates wether we should
+     * broadcast the unauthorized session to other clients. */
+    onUnauthorized?: (localID: Maybe<number>, broadcast: boolean) => void;
     /** Called immediately after a fork has been successfully consumed. At this
      * point the user is not fully logged in yet. */
     onForkConsumed?: (session: AuthSession) => void;
@@ -74,8 +75,9 @@ export interface AuthServiceOptions {
      * resume a session. */
     onSessionEmpty?: () => void;
     /** Called when a session is locked either through user action or when a
-     * locked session is detected. */
-    onSessionLocked?: () => void;
+     * locked session is detected. The `broadcast` flag indicates wether we should
+     * broadcast the locked session to other clients. */
+    onSessionLocked?: (localID: Maybe<number>, broadcast: boolean) => void;
     /* Callback on session lock check. By default, this will be triggered
      * on every login sequence. */
     onSessionLockCheck?: (data: SessionLockCheckResult) => void;
@@ -87,44 +89,29 @@ export interface AuthServiceOptions {
     /** Called when resuming the session failed for any reason excluding inactive
      * session error. */
     onSessionResumeFailure?: () => void;
-    /** Called when session tokens have been refreshed  */
-    onSessionRefresh?: (data: RefreshSessionData) => MaybePromise<void>;
+    /** Called when session tokens have been refreshed. The`broadcast` flag indicates
+     * wether we should broadcast the refresh session data to other clients. */
+    onSessionRefresh?: (localId: Maybe<number>, data: RefreshSessionData, broadcast: boolean) => MaybePromise<void>;
     /** Implement how you want to handle notifications emitted from the service */
     onNotification?: (reason: string) => void;
 }
 
-export const createAuthService = ({
-    api,
-    authStore,
-    getMemorySession,
-    getPersistedSession,
-    onAuthorize,
-    onAuthorized,
-    onInit,
-    onForkConsumed,
-    onForkInvalid,
-    onForkRequest,
-    onNotification,
-    onSessionEmpty,
-    onSessionInvalid,
-    onSessionLockCheck,
-    onSessionLocked,
-    onSessionPersist,
-    onSessionRefresh,
-    onSessionResumeFailure,
-    onSessionUnlocked,
-    onUnauthorized,
-}: AuthServiceOptions) => {
+export const createAuthService = (config: AuthServiceConfig) => {
+    const { api, authStore } = config;
+
     const authService = {
         init: asyncLock((options?: { forceLock: boolean }) => {
             logger.info(`[AuthService] Initialization start`);
-            return onInit(options).catch((err) => {
+            return config.onInit(options).catch((err) => {
                 logger.warn(`[AuthService] Initialization failure`, err);
                 return false;
             });
         }),
 
-        getPersistedSession,
+        /** Stores the initial configuration object passed to the
+         * auth service factory function. Useful if you want to trigger
+         * certain handlers outside of the auth service flow. */
+        config,
 
         /** Removes any ongoing API listeners and starts listening for
          * authentication relevant API messages.*/
@@ -136,13 +123,13 @@ export const createAuthService = ({
                         api.unsubscribe();
 
                         if (event.status === 'inactive') {
-                            onNotification?.(c('Warning').t`Your session is inactive. Please log back in.`);
-                            return authService.logout({ soft: true });
+                            config.onNotification?.(c('Warning').t`Your session is inactive. Please log back in.`);
+                            return authService.logout({ soft: true, broadcast: true });
                         }
 
                         if (event.status === 'locked') {
-                            onNotification?.(c('Warning').t`Your session was locked due to inactivity.`);
-                            return authService.lock({ soft: true });
+                            config.onNotification?.(c('Warning').t`Your session was locked due to inactivity.`);
+                            return authService.lock({ soft: true, broadcast: true });
                         }
 
                         break;
@@ -154,7 +141,7 @@ export const createAuthService = ({
                         authStore.setRefreshToken(data.RefreshToken);
                         authStore.setUID(data.UID);
                         authStore.setRefreshTime(data.RefreshTime);
-                        void onSessionRefresh?.(data);
+                        void config.onSessionRefresh?.(authStore.getLocalID(), data, true);
                     }
                 }
             });
@@ -177,31 +164,31 @@ export const createAuthService = ({
 
                 if (lockStatus === SessionLockStatus.LOCKED) {
                     logger.info(`[AuthService] Detected locked session`);
-                    await authService.lock({ soft: true });
+                    await authService.lock({ soft: true, broadcast: false });
                     return false;
                 }
 
                 if (lockStatus === SessionLockStatus.REGISTERED && !session.sessionLockToken) {
                     logger.info(`[AuthService] Detected a registered session lock`);
-                    await authService.lock({ soft: true });
+                    await authService.lock({ soft: true, broadcast: false });
                     return false;
                 }
             } catch (error: any) {
                 /* if there is an API error on `checkSessionLock` we want to logout
                  * the user only if it is due to a 401 or 403 status response */
                 if (getIs401Error(error) || getApiError(error).status === 403) {
-                    void authService.logout({ soft: true });
+                    void authService.logout({ soft: true, broadcast: true });
                     return false;
                 }
             }
 
             logger.info(`[AuthService] User is authorized`);
-            onAuthorized?.(authStore.getLocalID());
+            config.onAuthorized?.(authStore.getLocalID());
 
             return true;
         },
 
-        logout: async (options: { soft: boolean }) => {
+        logout: async (options: { soft: boolean; broadcast?: boolean }) => {
             logger.info(`[AuthService] User is not authorized`);
 
             const localID = authStore.getLocalID();
@@ -211,25 +198,25 @@ export const createAuthService = ({
             api.unsubscribe();
             await api.reset();
 
-            onUnauthorized?.(localID);
+            config.onUnauthorized?.(localID, options.broadcast ?? true);
 
             return true;
         },
 
         consumeFork: async (payload: ConsumeForkPayload): Promise<boolean> => {
             try {
-                onAuthorize?.();
+                config.onAuthorize?.();
                 const session = await consumeFork({ api, payload });
-                onForkConsumed?.(session);
+                config.onForkConsumed?.(session);
 
                 const loggedIn = await authService.login(session);
                 if (loggedIn) await authService.persistSession();
 
                 return loggedIn;
             } catch (error: unknown) {
-                onNotification?.(c('Warning').t`Your session could not be authorized.`);
-                onForkInvalid?.();
-                await authService.logout({ soft: true });
+                config.onNotification?.(c('Warning').t`Your session could not be authorized.`);
+                config.onForkInvalid?.();
+                await authService.logout({ soft: true, broadcast: false });
 
                 return false;
             }
@@ -237,7 +224,7 @@ export const createAuthService = ({
 
         requestFork: (options: RequestForkOptions): RequestForkResult => {
             const result = requestFork(options);
-            onForkRequest?.(result);
+            config.onForkRequest?.(result);
 
             return result;
         },
@@ -266,7 +253,7 @@ export const createAuthService = ({
             void authService.persistSession();
         },
 
-        lock: async (options: { soft: boolean }): Promise<void> => {
+        lock: async (options: { soft: boolean; broadcast?: boolean }): Promise<void> => {
             logger.info(`[AuthService] Locking session [soft: ${options.soft}]`);
             if (!options?.soft) await forceSessionLock().catch(noop);
 
@@ -275,7 +262,7 @@ export const createAuthService = ({
             authStore.setLockToken(undefined);
             authStore.setLockLastExtendTime(undefined);
 
-            onSessionLocked?.();
+            config.onSessionLocked?.(authStore.getLocalID(), options.broadcast ?? false);
         },
 
         unlock: async (pin: string): Promise<void> => {
@@ -291,13 +278,13 @@ export const createAuthService = ({
                 await authService.persistSession();
                 await authService.login(authStore.getSession());
 
-                onSessionUnlocked?.(sessionLockToken);
+                config.onSessionUnlocked?.(sessionLockToken);
             } catch (error: unknown) {
                 /* if the session is inactive at this point, it likely means the user
                  * reached the maximum amount of unlock attempts. Error is thrown so
                  * clients can react. */
-                if (api.getState().sessionInactive) void authService.logout({ soft: true });
-                else void authService.lock({ soft: true });
+                if (api.getState().sessionInactive) void authService.logout({ soft: true, broadcast: true });
+                else void authService.lock({ soft: true, broadcast: false });
 
                 throw error;
             }
@@ -313,7 +300,7 @@ export const createAuthService = ({
             authStore.setLockTTL(lock.ttl);
             authStore.setLockLastExtendTime(getEpoch());
 
-            onSessionLockCheck?.(lock);
+            config.onSessionLockCheck?.(lock);
             return lock;
         },
 
@@ -325,14 +312,14 @@ export const createAuthService = ({
                 if (!isValidSession(session)) throw new Error('Trying to persist invalid session');
 
                 const encryptedSession = await encryptPersistedSession(api, session);
-                await onSessionPersist?.(encryptedSession);
+                await config.onSessionPersist?.(encryptedSession);
             } catch (error) {
                 logger.warn(`[AuthService] Persisting session failure`, error);
             }
         },
 
         resumeSession: async (localID: Maybe<number>, options?: { forceLock: boolean }): Promise<boolean> => {
-            const memorySession = await getMemorySession?.();
+            const memorySession = await config.getMemorySession?.();
 
             if (memorySession && isValidSession(memorySession)) {
                 logger.info(`[Worker::Auth] Resuming in-memory session`);
@@ -340,16 +327,16 @@ export const createAuthService = ({
             }
 
             try {
-                const persistedSession = await getPersistedSession(localID);
+                const persistedSession = await config.getPersistedSession(localID);
 
                 if (!persistedSession) {
                     logger.info(`[AuthService] No persisted session found`);
-                    onSessionEmpty?.();
+                    config.onSessionEmpty?.();
                     return false;
                 }
 
                 logger.info(`[AuthService] Resuming persisted session.`);
-                onAuthorize?.();
+                config.onAuthorize?.();
 
                 authStore.setUserID(persistedSession.UserID);
                 authStore.setUID(persistedSession.UID);
@@ -359,7 +346,12 @@ export const createAuthService = ({
                 authStore.setRefreshTime(persistedSession.RefreshTime);
 
                 authService.listen();
-                const session = await resumeSession({ api, authStore, persistedSession, onSessionInvalid });
+                const session = await resumeSession({
+                    api,
+                    authStore,
+                    persistedSession,
+                    onSessionInvalid: config.onSessionInvalid,
+                });
                 logger.info(`[AuthService] Session successfuly resumed`);
 
                 /* on `forceLock: true` remove the `sessionLockToken` from the
@@ -373,11 +365,11 @@ export const createAuthService = ({
             } catch (error: unknown) {
                 const reason = error instanceof Error ? getApiErrorMessage(error) ?? error?.message : '';
                 logger.warn(`[AuthService] Resuming session failed (${reason})`);
-                onNotification?.(c('Warning').t`Your session could not be resumed.`);
+                config.onNotification?.(c('Warning').t`Your session could not be resumed.`);
 
                 /* if session is inactive : trigger unauthorized sequence */
-                if (api.getState().sessionInactive) await authService.logout({ soft: true });
-                else onSessionResumeFailure?.();
+                if (api.getState().sessionInactive) await authService.logout({ soft: true, broadcast: true });
+                else config.onSessionResumeFailure?.();
 
                 return false;
             }
