@@ -19,7 +19,13 @@ describe('CardPaymentProcessor', () => {
     beforeEach(() => {
         addTokensResponse();
 
-        paymentProcessor = new CardPaymentProcessor(mockVerifyPayment, apiMock, amountAndCurrency, onTokenIsChargeable);
+        paymentProcessor = new CardPaymentProcessor(
+            mockVerifyPayment,
+            apiMock,
+            amountAndCurrency,
+            false,
+            onTokenIsChargeable
+        );
 
         mockCard = {
             fullname: 'Arthur Morgan',
@@ -182,6 +188,7 @@ describe('CardPaymentProcessor', () => {
                 },
                 Type: 'card',
             },
+            addCardMode: false,
         });
 
         expect(result).toEqual(
