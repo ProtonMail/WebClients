@@ -16,7 +16,7 @@ import { Icon, Label, Option, SelectTwo } from '../../components';
 import { DEFAULT_SEPARATOR, getFullList } from '../../helpers/countries';
 import { CardModel } from '../../payments/core';
 
-import './CreditCardNewDesign.scss';
+import './CreditCard.scss';
 
 const isPotentiallyCVV = (value: string, maxLength: number) => valid.cvv(value, maxLength).isPotentiallyValid;
 const isValidMonth = (m: string) => !m || (isNumber(m) && m.length <= 2);
@@ -94,7 +94,7 @@ const useAdvancer = (
     }, [currentFieldState, condition]);
 };
 
-const CreditCardNewDesign = ({
+const CreditCard = ({
     card,
     errors,
     onChange,
@@ -438,4 +438,4 @@ const CreditCardNewDesign = ({
     );
 };
 
-export default CreditCardNewDesign;
+export default CreditCard;
