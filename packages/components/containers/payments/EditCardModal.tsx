@@ -3,7 +3,7 @@ import { FormEvent } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { getDefaultVerifyPayment } from '@proton/components/containers/payments/usePaymentToken';
+import { getDefaultVerifyPayment } from '@proton/components/payments/client-extensions/validators/validators';
 import { Autopay, isTokenPayment } from '@proton/components/payments/core';
 import { useCard } from '@proton/components/payments/react-extensions';
 import { useLoading } from '@proton/hooks';

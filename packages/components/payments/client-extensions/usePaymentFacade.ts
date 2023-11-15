@@ -1,9 +1,5 @@
 import { useEffect } from 'react';
 
-import {
-    getDefaultVerifyPayment,
-    getDefaultVerifyPaypal,
-} from '@proton/components/containers/payments/usePaymentToken';
 import { Currency } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -16,6 +12,7 @@ import {
     usePaymentFacade as useInnerPaymentFacade,
 } from '../react-extensions';
 import { wrapMethods } from './useMethods';
+import { getDefaultVerifyPayment, getDefaultVerifyPaypal } from './validators/validators';
 
 type PaymentFacadeProps = {
     amount: number;
