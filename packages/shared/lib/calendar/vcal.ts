@@ -253,6 +253,12 @@ const getParameters = (type: string, property: any) => {
     return result;
 };
 
+const checkIfDateTimeValid = (dateTimeString: string) => {
+    if (/--/.test(dateTimeString)) {
+        throw new Error('invalid date-time value');
+    }
+};
+
 const fromIcalProperties = (properties = []) => {
     if (properties.length === 0) {
         return;
@@ -264,6 +270,9 @@ const fromIcalProperties = (properties = []) => {
             return acc;
         }
         const { type } = property;
+        if (type === 'date-time') {
+            checkIfDateTimeValid(property.toJSON()[3]);
+        }
         const values = property.getValues().map((value: any) => icalValueToInternalValue(type, value));
 
         const parameters = getParameters(type, property);
