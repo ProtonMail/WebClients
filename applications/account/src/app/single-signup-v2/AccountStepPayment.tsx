@@ -64,6 +64,7 @@ interface Props {
     measure: Measure;
     defaultMethod: PAYMENT_METHOD_TYPES | undefined;
     takeNullCreditCard?: boolean;
+    isSentinelPassplusEnabled: boolean;
 }
 
 const AccountStepPayment = ({
@@ -82,6 +83,7 @@ const AccountStepPayment = ({
     loadingSignup,
     withLoadingSignup,
     isDarkBg = false,
+    isSentinelPassplusEnabled,
 }: Props) => {
     const formRef = useRef<HTMLFormElement>(null);
     const { createModal } = useModals();
@@ -169,7 +171,7 @@ const AccountStepPayment = ({
         </Href>
     );
 
-    const summaryPlan = getSummaryPlan(options.plan, vpnServersCountData);
+    const summaryPlan = getSummaryPlan(options.plan, vpnServersCountData, isSentinelPassplusEnabled);
 
     const currentCheckout = getCheckout({
         planIDs: options.planIDs,
