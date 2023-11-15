@@ -8,13 +8,12 @@ import { INITIAL_SETTINGS } from '@proton/pass/store/reducers/settings';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 import { useAuthService } from '../Context/AuthServiceProvider';
-import { useAuthStore } from '../Context/AuthStoreProvider';
 import { useClient } from '../Context/ClientProvider';
+import { authStore } from '../core';
 import { rootSaga } from './root-saga';
 import { sagaMiddleware, store } from './store';
 
 export const StoreProvider: FC = ({ children }) => {
-    const authStore = useAuthStore();
     const authService = useAuthService();
     const client = useClient();
     const { createNotification } = useNotifications();

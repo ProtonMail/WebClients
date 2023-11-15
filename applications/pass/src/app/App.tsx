@@ -13,47 +13,41 @@ import { Portal } from '@proton/components/components/portal';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 
-import { ApiProvider } from './Context/ApiProvider';
 import { AuthServiceProvider } from './Context/AuthServiceProvider';
-import { AuthStoreProvider } from './Context/AuthStoreProvider';
 import { ClientContext, ClientProvider } from './Context/ClientProvider';
 import { ServiceWorkerProvider } from './ServiceWorker/ServiceWorkerProvider';
 import { StoreProvider } from './Store/StoreProvider';
 import { Routes } from './Views/Routes';
-import * as config from './config';
+import { PASS_CONFIG } from './core';
 
 import './app.scss';
 
 export const App = () => {
     return (
-        <ConfigProvider config={config}>
+        <ConfigProvider config={PASS_CONFIG}>
             <CompatibilityCheck>
                 <Icons />
                 <ThemeProvider />
                 <NotificationsProvider>
                     <ModalsProvider>
                         <ServiceWorkerProvider>
-                            <AuthStoreProvider>
-                                <ClientProvider>
-                                    <ClientContext.Consumer>
-                                        {(client) => (
-                                            <ApiProvider>
-                                                <BrowserRouter basename={getBasename(client.state.localID)}>
-                                                    <AuthServiceProvider>
-                                                        <StoreProvider>
-                                                            <Routes />
-                                                            <Portal>
-                                                                <ModalsChildren />
-                                                                <NotificationsChildren />
-                                                            </Portal>
-                                                        </StoreProvider>
-                                                    </AuthServiceProvider>
-                                                </BrowserRouter>
-                                            </ApiProvider>
-                                        )}
-                                    </ClientContext.Consumer>
-                                </ClientProvider>
-                            </AuthStoreProvider>
+                            <ClientProvider>
+                                <ClientContext.Consumer>
+                                    {(client) => (
+                                        <BrowserRouter basename={getBasename(client.state.localID)}>
+                                            <AuthServiceProvider>
+                                                <StoreProvider>
+                                                    <Routes />
+                                                    <Portal>
+                                                        <ModalsChildren />
+                                                        <NotificationsChildren />
+                                                    </Portal>
+                                                </StoreProvider>
+                                            </AuthServiceProvider>
+                                        </BrowserRouter>
+                                    )}
+                                </ClientContext.Consumer>
+                            </ClientProvider>
                         </ServiceWorkerProvider>
                     </ModalsProvider>
                 </NotificationsProvider>
