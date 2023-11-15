@@ -127,14 +127,12 @@ export const AliasAutoSuggest: VFC<Props> = ({ hostname, prefix, visible, onClos
                 title={c('Title').t`Email`}
                 extra={
                     <PauseListDropdown
-                        visible={visible}
-                        hostname={hostname}
-                        onClose={onClose}
                         criteria="Autosuggest"
-                        label={
-                            // translation: action to not suggest an email
-                            c('Action').t`Do not suggest on this website`
-                        }
+                        dense
+                        hostname={hostname}
+                        label={c('Action').t`Do not suggest on this website`}
+                        onClose={onClose}
+                        visible={visible}
                     />
                 }
             />

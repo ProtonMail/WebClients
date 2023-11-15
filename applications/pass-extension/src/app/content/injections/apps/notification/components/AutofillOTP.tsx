@@ -44,11 +44,11 @@ export const AutofillOTP: VFC<Props> = ({ hostname, item, visible, onMessage, on
                 title={c('Info').t`Verification code`}
                 extra={
                     <PauseListDropdown
-                        visible={visible}
-                        hostname={hostname}
-                        onClose={onClose}
                         criteria="Autofill2FA"
+                        hostname={hostname}
                         label={c('Action').t`Do not show on this website`}
+                        onClose={onClose}
+                        visible={visible}
                     />
                 }
                 onClose={onClose}

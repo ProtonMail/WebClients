@@ -12,13 +12,13 @@ type Props = { extra?: ReactElement; title: string; onClose?: (options?: IFrameC
 
 export const NotificationHeader: VFC<Props> = ({ extra, title, onClose }) => {
     return (
-        <div className="flex flex-nowrap flex-item-noshrink flex-align-items-center flex-justify-space-between">
-            <h3 className="flex text-bold text-2xl flex-align-items-center gap-3">
-                <PassIcon status={PassIconStatus.ACTIVE} size={24} />
+        <div className="flex flex-nowrap flex-item-noshrink flex-align-items-center flex-justify-space-between gap-2">
+            <h3 className="flex text-bold text-lg flex-align-items-center gap-2">
+                <PassIcon status={PassIconStatus.ACTIVE} size={22} />
                 <span className="flex-item-fluid text-ellipsis">{title}</span>
             </h3>
 
-            <div className="flex flex-nowrap flex-item-noshrink gap-1">
+            <div className="flex flex-item-noshrink gap-1">
                 {extra}
                 <Button
                     key="close-button"
@@ -26,10 +26,11 @@ export const NotificationHeader: VFC<Props> = ({ extra, title, onClose }) => {
                     pill
                     shape="solid"
                     color="weak"
+                    className="flex-item-noshrink"
                     onClick={() => onClose?.({ discard: true })}
                     title={c('Action').t`Cancel`}
                 >
-                    <Icon name="cross" alt={c('Action').t`Cancel`} />
+                    <Icon name="cross" alt={c('Action').t`Cancel`} size={16} />
                 </Button>
             </div>
         </div>
