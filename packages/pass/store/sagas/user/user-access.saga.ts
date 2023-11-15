@@ -6,10 +6,10 @@ import type { SafeUserAccessState } from '@proton/pass/store/reducers';
 import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
 import { SessionLockStatus } from '@proton/pass/types';
 
-function* syncPlan({ getAuth }: WorkerRootSagaOptions, { meta }: ReturnType<typeof getUserAccessIntent>) {
+function* syncPlan({ getAuthStore }: WorkerRootSagaOptions, { meta }: ReturnType<typeof getUserAccessIntent>) {
     try {
-        const loggedIn = getAuth().hasSession();
-        const locked = getAuth().getLockStatus() === SessionLockStatus.LOCKED;
+        const loggedIn = getAuthStore().hasSession();
+        const locked = getAuthStore().getLockStatus() === SessionLockStatus.LOCKED;
         if (!loggedIn || locked) throw new Error('Cannot fetch user plan');
 
         const access: SafeUserAccessState = yield getUserAccess();

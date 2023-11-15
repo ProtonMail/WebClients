@@ -19,14 +19,14 @@ export const checkSessionLock = async (): Promise<SessionLockCheckResult> => {
     }
 };
 
-export const lockSessionImmediate = async (): Promise<void> => {
+export const forceSessionLock = async (): Promise<void> => {
     await api({
         url: 'pass/v1/user/session/lock/force_lock',
         method: 'post',
     });
 };
 
-export const lockSession = async (LockCode: string, UnlockedSecs: number): Promise<string> =>
+export const createSessionLock = async (LockCode: string, UnlockedSecs: number): Promise<string> =>
     (
         await api({
             url: 'pass/v1/user/session/lock',

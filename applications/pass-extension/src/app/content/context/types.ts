@@ -7,10 +7,10 @@ import type { ExtensionContextType } from 'proton-pass-extension/lib/context/ext
 
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { WorkerState } from '@proton/pass/types';
+import type { AppState } from '@proton/pass/types';
 
-export type WorkerStateChangeHandler = (state: WorkerState) => void;
-export type CSContextState = WorkerState & { active: boolean };
+export type WorkerStateChangeHandler = (state: AppState) => void;
+export type CSContextState = AppState & { active: boolean };
 export type CSFeatures = 'Autofill' | 'Autofill2FA' | 'AutosuggestAlias' | 'AutosuggestPassword' | 'Autosave';
 export interface ContentScriptContext {
     mainFrame: boolean;

@@ -154,7 +154,7 @@ export const APPS_CONFIGURATION: { [key in APP_NAMES]: AppConfiguration } = {
     },
     [APPS.PROTONPASS]: {
         publicPath: '/pass',
-        subdomain: '',
+        subdomain: 'pass',
         name: PASS_APP_NAME,
         bareName: PASS_SHORT_APP_NAME,
         webClientID: 'web-pass',
@@ -1083,6 +1083,7 @@ export const FORKABLE_APPS = new Set(
         APPS.PROTONCONTACTS,
         APPS.PROTONDRIVE,
         APPS.PROTONCALENDAR,
+        APPS.PROTONPASS,
         APPS.PROTONEXTENSION,
         APPS.PROTONPASSBROWSEREXTENSION,
         APPS.PROTONVPNBROWSEREXTENSION,
