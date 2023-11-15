@@ -86,6 +86,7 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
             props: {
                 onSubmit: (e: MouseEvent<HTMLButtonElement>) => {
                     textToClipboard(link, e.currentTarget);
+                    closeModal('shareLinkSuccessModal');
                     notifyLinkCopied();
                 },
                 accessLevel,
