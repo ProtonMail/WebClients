@@ -63,7 +63,7 @@ export const MenuDropdown: VFC = () => {
 
     const feedbackLinks: SubmenuLinkItem[] = [
         {
-            icon: 'paper-plane-horizontal',
+            icon: 'paper-plane',
             label: c('Action').t`Send us a message`,
             actionTab: () => openSettings('support'),
         },
