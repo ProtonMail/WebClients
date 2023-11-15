@@ -1,9 +1,8 @@
-import { ensureTokenChargeable } from '@proton/components/payments/client-extensions';
-import { PAYMENT_METHOD_TYPES, PaymentVerificator } from '@proton/components/payments/core';
 import { Api } from '@proton/shared/lib/interfaces';
 
-import { PaymentVerificationModal } from '..';
-import { TokenPaymentMethod } from '../../payments/core/interface';
+import { PAYMENT_METHOD_TYPES, PaymentVerificator, TokenPaymentMethod } from '../../core';
+import { ensureTokenChargeable } from '../ensureTokenChargeable';
+import PaymentVerificationModal from './PaymentVerificationModal';
 
 export const getDefaultVerifyPayment = (createModal: (modal: JSX.Element) => void, api: Api): PaymentVerificator =>
     async function verify({
