@@ -16,7 +16,7 @@ import { Button } from '@proton/atoms/Button';
 import { Vr } from '@proton/atoms/Vr';
 import { Icon, IconName, InlineLinkButton } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { CurrencySelector, CycleSelector } from '@proton/components/containers';
+import { CurrencySelector, CycleSelector, useFlag } from '@proton/components/containers';
 import {
     getBlackFridayRenewalNoticeText,
     getRenewalNoticeText,
@@ -148,6 +148,8 @@ const Step1 = ({
     const [loadingPaymentDetails, withLoadingPaymentDetails] = useLoading();
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
     const accountStepPaymentRef = useRef<AccountStepPaymentRef>();
+
+    const isSentinelPassplusEnabled = !!useFlag('SentinelPassPlus');
 
     const createFlow = useFlowRef();
 
@@ -721,6 +723,7 @@ const Step1 = ({
                                     return accountDetailsRef.current?.validate() ?? true;
                                 }}
                                 withLoadingSignup={withLoadingSignup}
+                                isSentinelPassplusEnabled={isSentinelPassplusEnabled}
                             />
                         </BoxContent>
                     </Box>
