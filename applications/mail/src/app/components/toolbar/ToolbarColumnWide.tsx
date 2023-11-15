@@ -144,7 +144,6 @@ const ToolbarColumnWide = ({
                         filter={filter}
                         conversationMode={conversationMode}
                         mailSettings={mailSettings}
-                        isSearch={isSearch}
                         labelID={labelID}
                         filterAsDropdown={localIsTiny}
                     />
