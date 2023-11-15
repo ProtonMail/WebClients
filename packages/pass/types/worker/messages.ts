@@ -6,6 +6,7 @@ import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generato
 import type { Notification } from '@proton/pass/store/actions/with-notification';
 import type { AliasOptions, FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
+import type { CriteriaMasks } from '@proton/pass/types/worker/settings';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/sessionForking';
 import type { User } from '@proton/shared/lib/interfaces';
 
@@ -66,6 +67,7 @@ export enum WorkerMessageType {
     ONBOARDING_ACK = 'ONBOARDING_ACK',
     ONBOARDING_REQUEST = 'ONBOARDING_REQUEST',
     OTP_CODE_GENERATE = 'OTP_CODE_GENERATE',
+    PAUSE_WEBSITE = 'PAUSE_WEBSITE',
     PERMISSIONS_UPDATE = 'PERMISSIONS_UPDATE',
     POPUP_INIT = 'POPUP_INIT',
     PORT_FORWARDING_MESSAGE = 'PORT_FORWARDING',
@@ -118,6 +120,10 @@ export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { 
 export type OnboardingAckMessage = WithPayload<WorkerMessageType.ONBOARDING_ACK, { message: OnboardingMessage }>;
 export type OnboardingRequestMessage = { type: WorkerMessageType.ONBOARDING_REQUEST };
 export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
+export type PauseWebsiteMessage = WithPayload<
+    WorkerMessageType.PAUSE_WEBSITE,
+    { hostname: string; criteria: CriteriaMasks }
+>;
 export type PermissionsUpdateMessage = WithPayload<WorkerMessageType.PERMISSIONS_UPDATE, { check: boolean }>;
 export type PopupInitMessage = WithPayload<WorkerMessageType.POPUP_INIT, { tabId: TabId }>;
 export type PortUnauthorizedMessage = { type: WorkerMessageType.PORT_UNAUTHORIZED };
@@ -167,6 +173,7 @@ export type WorkerMessage =
     | OnboardingAckMessage
     | OnboardingRequestMessage
     | OTPCodeGenerateMessage
+    | PauseWebsiteMessage
     | PermissionsUpdateMessage
     | PopupInitMessage
     | PortFrameForwardingMessage
