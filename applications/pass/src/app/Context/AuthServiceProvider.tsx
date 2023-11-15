@@ -12,8 +12,7 @@ import { SSO_PATHS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { useServiceWorker } from '../ServiceWorker/ServiceWorkerProvider';
-import { useApi } from './ApiProvider';
-import { useAuthStore } from './AuthStoreProvider';
+import { api, authStore } from '../core';
 import { useClient } from './ClientProvider';
 
 const STORAGE_PREFIX = 'ps-';
@@ -33,9 +32,11 @@ export const useAuthService = (): AuthService => {
     return authService;
 };
 
+/** The only reason we have to wrap the AuthenticationService to a react context is
+ * to be able to leverage the history object provided by `react-router-dom` and the
+ * notifications handler. Ideally this could live outside of react-land by moving the
+ * authentication service to an event-bus architecture.. */
 export const AuthServiceProvider: FC = ({ children }) => {
-    const api = useApi();
-    const authStore = useAuthStore();
     const sw = useServiceWorker();
     const client = useClient();
     const history = useHistory();
