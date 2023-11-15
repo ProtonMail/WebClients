@@ -64,9 +64,10 @@ const getPublicKeysEmailHelper = async ({
         noCache,
     });
     if (result.ktVerificationResult?.status === KT_VERIFICATION_STATUS.VERIFICATION_FAILED) {
+        const visible = ktActivation === KeyTransparencyActivation.SHOW_UI;
         ktSentryReport('Key verification error', { email });
-        await ktKeyVerificationFailureTelemetry(api);
-        if (ktActivation === KeyTransparencyActivation.SHOW_UI) {
+        await ktKeyVerificationFailureTelemetry(api, visible);
+        if (visible) {
             return {
                 publicKeys: [],
                 ktVerificationResult: result.ktVerificationResult,
