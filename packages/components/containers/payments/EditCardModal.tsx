@@ -13,7 +13,7 @@ import noop from '@proton/utils/noop';
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
 import { useApi, useEventManager, useModals, useNotifications } from '../../hooks';
 import { CardModel } from '../../payments/core';
-import CreditCardNewDesign from './CreditCardNewDesign';
+import CreditCard from './CreditCard';
 import RenewToggle, { useRenewToggle } from './RenewToggle';
 
 interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
@@ -84,7 +84,7 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
         >
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
-                <CreditCardNewDesign
+                <CreditCard
                     card={cardHook.card}
                     errors={cardHook.errors}
                     onChange={cardHook.setCardProperty}

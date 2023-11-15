@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { useCard } from '@proton/components/payments/react-extensions';
 import { apiMock } from '@proton/testing';
 
-import CreditCardNewDesign, { Props } from './CreditCardNewDesign';
+import CreditCard, { Props } from './CreditCard';
 
 beforeEach(() => {
     jest.clearAllMocks();
@@ -25,7 +25,7 @@ const TestComponent = (rest?: Partial<Props>) => {
     );
 
     return (
-        <CreditCardNewDesign
+        <CreditCard
             card={cardHook.card}
             errors={cardHook.errors}
             fieldsStatus={cardHook.fieldsStatus}
