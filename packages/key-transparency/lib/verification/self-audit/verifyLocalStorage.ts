@@ -57,7 +57,7 @@ const verifyKTBlobContent = async (
     try {
         const { email, expectedMinEpochID, data, revision, creationTimestamp, isCatchall } = ktBlobContent;
 
-        if (expectedMinEpochID > epoch.EpochID) {
+        if (!isTimestampTooOld(creationTimestamp) && expectedMinEpochID > epoch.EpochID) {
             return LocalStorageAuditStatus.RetryLater;
         }
 
