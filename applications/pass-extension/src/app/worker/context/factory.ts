@@ -152,8 +152,8 @@ export const createWorkerContext = (config: ProtonConfig) => {
                 },
                 onSessionResumeFailure: () => context.setStatus(AppStatus.RESUMING_FAILED),
                 onNotification: (text) => store.dispatch(notification({ type: 'error', text, key: 'authservice' })),
-                onSessionRefresh: async ({ AccessToken, RefreshToken, RefreshTime }) => {
-                    const persistedSession = await context.service.auth.getPersistedSession();
+                onSessionRefresh: async (localID, { AccessToken, RefreshToken, RefreshTime }) => {
+                    const persistedSession = await context.service.auth.config.getPersistedSession(localID);
 
                     if (persistedSession) {
                         /* update the persisted session tokens without re-encrypting the
