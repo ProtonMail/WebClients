@@ -14,6 +14,7 @@ import {
     isTransferInitializing,
     isTransferPaused,
     isTransferProgress,
+    isTransferRetry,
 } from './transfer';
 
 describe('trasfer utils', () => {
@@ -202,6 +203,28 @@ describe('trasfer utils', () => {
                     message: `${name} error accured.`,
                 };
                 expect(isTransferCancelError(error)).toBeFalsy();
+            });
+        });
+    });
+
+    describe('isTransferRetry', () => {
+        ['TransferRetry'].forEach((name) => {
+            it(`should return true for error with name ${name}`, () => {
+                const error = {
+                    name,
+                    message: `${name} error accured.`,
+                };
+                expect(isTransferRetry(error)).toBeTruthy();
+            });
+        });
+
+        ['TypeError', 'SyntaxError'].forEach((name) => {
+            it(`should return false for error with name ${name}`, () => {
+                const error = {
+                    name,
+                    message: `${name} error accured.`,
+                };
+                expect(isTransferRetry(error)).toBeFalsy();
             });
         });
     });

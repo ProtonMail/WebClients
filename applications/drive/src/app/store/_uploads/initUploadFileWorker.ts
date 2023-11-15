@@ -14,6 +14,13 @@ import { getMediaInfo } from './media';
 import { mimeTypeFromFile } from './mimeTypeParser/mimeTypeParser';
 import { UploadWorkerController } from './workerController';
 
+class TransferRetry extends Error {
+    constructor(options: { message: string }) {
+        super(options.message);
+        this.name = 'TransferRetry';
+    }
+}
+
 export function initUploadFileWorker(
     file: File,
     isForPhotos: boolean,
@@ -100,6 +107,9 @@ export function initUploadFileWorker(
                 },
                 onCancel: () => {
                     reject(new TransferCancel({ message: `Transfer canceled for ${file.name}` }));
+                },
+                onHeartbeatTimeout: () => {
+                    reject(new TransferRetry({ message: `Heartbeat timeout` }));
                 },
             });
 
