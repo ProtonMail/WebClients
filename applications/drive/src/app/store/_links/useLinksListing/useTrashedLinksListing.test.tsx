@@ -70,7 +70,7 @@ describe('useTrashedLinksListing', () => {
 
         await act(async () => {
             await hook.current.loadTrashedLinks(new AbortController().signal, volumeId, () =>
-                Promise.resolve({ links: [], parents: [] })
+                Promise.resolve({ links: [], parents: [], errors: [] })
             );
         });
 
@@ -92,7 +92,7 @@ describe('useTrashedLinksListing', () => {
 
         await act(async () => {
             await loadTrashedLinks(new AbortController().signal, volumeId, () =>
-                Promise.resolve({ links: [], parents: [] })
+                Promise.resolve({ links: [], parents: [], errors: [] })
             );
         });
 

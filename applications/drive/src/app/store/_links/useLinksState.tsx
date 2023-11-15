@@ -33,6 +33,13 @@ type Tree = {
 };
 
 /**
+ * Returns whether or not a `Link` is decrypted.
+ */
+export function isLinkDecrypted(link: Link | undefined): link is Required<Link> {
+    return !!link && !!link.decrypted && !link.decrypted.isStale;
+}
+
+/**
  * useLinksStateProvider provides a storage to cache links.
  */
 export function useLinksStateProvider() {
