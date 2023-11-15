@@ -24,7 +24,7 @@ import Alert3DS from './Alert3ds';
 import Bitcoin from './Bitcoin';
 import BitcoinInfoMessage from './BitcoinInfoMessage';
 import Cash from './Cash';
-import CreditCardNewDesign from './CreditCardNewDesign';
+import CreditCard from './CreditCard';
 import PayPalInfoMessage from './PayPalInfoMessage';
 import PayPalView from './PayPalView';
 import useBitcoin, { OnBitcoinTokenValidated } from './useBitcoin';
@@ -198,7 +198,7 @@ export const PaymentsNoApi = ({
                     {method === PAYMENT_METHOD_TYPES.CARD && (
                         <>
                             <div ref={creditCardTopRef} />
-                            <CreditCardNewDesign
+                            <CreditCard
                                 card={card}
                                 errors={cardErrors}
                                 onChange={onCard}
