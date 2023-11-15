@@ -56,7 +56,7 @@ export const LoginView: VFC<ItemViewProps<'login'>> = ({ vault, revision, ...ite
                 )}
 
                 {totpUri && !totpAllowed && (
-                    <ValueControl icon="lock" label={c('Label').t`2FA secret (TOTP)`}>
+                    <ValueControl icon="lock" label={c('Label').t`2FA secret key (TOTP)`}>
                         <UpgradeButton inline />
                     </ValueControl>
                 )}
