@@ -2,7 +2,7 @@ import type { Runtime } from 'webextension-polyfill';
 
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { MaybeNull, WorkerState } from '@proton/pass/types';
+import type { AppState, MaybeNull } from '@proton/pass/types';
 import type { Rect } from '@proton/pass/types/utils/dom';
 
 import type { DropdownActions } from './dropdown';
@@ -73,7 +73,7 @@ export enum IFrameMessageType {
 }
 
 export type IFrameEndpoint = 'contentscript' | 'notification' | 'dropdown';
-export type IFrameInitPayload = { workerState: WorkerState; settings: ProxiedSettings; features: FeatureFlagState };
+export type IFrameInitPayload = { workerState: AppState; settings: ProxiedSettings; features: FeatureFlagState };
 
 export type IFrameMessage<T extends IFrameMessageType = IFrameMessageType> = Extract<
     | { type: IFrameMessageType.DROPDOWN_ACTION; payload: DropdownActions }

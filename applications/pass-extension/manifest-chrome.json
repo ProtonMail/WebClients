@@ -9,6 +9,12 @@
     "content_scripts": [
         {
             "matches": ["https://*/*", "http://*/*"],
+            "exclude_matches": [
+                "https://pass.proton.me/*",
+                "https://pass.proton.local/*",
+                "https://pass.proton.black/*",
+                "https://pass.proton.pink/*"
+            ],
             "js": ["orchestrator.js"],
             "all_frames": false,
             "run_at": "document_end"

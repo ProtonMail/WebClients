@@ -1,14 +1,57 @@
-import { c } from 'ttag';
+import { BrowserRouter } from 'react-router-dom';
+
+import {
+    CompatibilityCheck,
+    ConfigProvider,
+    Icons,
+    ModalsChildren,
+    ModalsProvider,
+    NotificationsChildren,
+    NotificationsProvider,
+} from '@proton/components';
+import { Portal } from '@proton/components/components/portal';
+import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
+import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
+
+import { AuthServiceProvider } from './Context/AuthServiceProvider';
+import { ClientContext, ClientProvider } from './Context/ClientProvider';
+import { ServiceWorkerProvider } from './ServiceWorker/ServiceWorkerProvider';
+import { StoreProvider } from './Store/StoreProvider';
+import { Routes } from './Views/Routes';
+import { PASS_CONFIG } from './core';
 
 import './app.scss';
 
-const App = () => {
+export const App = () => {
     return (
-        <>
-            <div className="text-bold text-4xl text-center w-full py-14">{c('Info').t`Hello from Pass web app`}</div>
-            <div className="text-xl text-center w-full h-full pb-14">{c('Info').t`Coming soon...`}</div>
-        </>
+        <ConfigProvider config={PASS_CONFIG}>
+            <CompatibilityCheck>
+                <Icons />
+                <ThemeProvider />
+                <NotificationsProvider>
+                    <ModalsProvider>
+                        <ServiceWorkerProvider>
+                            <ClientProvider>
+                                <ClientContext.Consumer>
+                                    {(client) => (
+                                        <BrowserRouter basename={getBasename(client.state.localID)}>
+                                            <AuthServiceProvider>
+                                                <StoreProvider>
+                                                    <Routes />
+                                                    <Portal>
+                                                        <ModalsChildren />
+                                                        <NotificationsChildren />
+                                                    </Portal>
+                                                </StoreProvider>
+                                            </AuthServiceProvider>
+                                        </BrowserRouter>
+                                    )}
+                                </ClientContext.Consumer>
+                            </ClientProvider>
+                        </ServiceWorkerProvider>
+                    </ModalsProvider>
+                </NotificationsProvider>
+            </CompatibilityCheck>
+        </ConfigProvider>
     );
 };
-
-export default App;

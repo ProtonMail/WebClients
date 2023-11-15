@@ -5,17 +5,17 @@ import { ExtensionContext } from 'proton-pass-extension/lib/context/extension-co
 import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message';
 import { sendMessage } from '@proton/pass/lib/extension/message';
 import type {
+    AppState,
     ExtensionEndpoint,
     TabId,
     WorkerMessageResponse,
     WorkerMessageWithSender,
-    WorkerState,
 } from '@proton/pass/types';
-import { WorkerMessageType, WorkerStatus } from '@proton/pass/types';
+import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
 type WakeupOptions = { tabId: TabId; endpoint: ExtensionEndpoint; messageFactory: MessageWithSenderFactory };
-type UseWorkerStateEventsOptions = WakeupOptions & { onWorkerStateChange: (state: WorkerState) => void };
+type UseWorkerStateEventsOptions = WakeupOptions & { onWorkerStateChange: (state: AppState) => void };
 
 const wakeup = (options: WakeupOptions): Promise<WorkerMessageResponse<WorkerMessageType.WORKER_WAKEUP>> =>
     sendMessage.on(
@@ -44,7 +44,7 @@ export const useWorkerStateEvents = ({ onWorkerStateChange, ...options }: UseWor
 
         wakeup(options)
             .then(({ UID, loggedIn, status }) => onWorkerStateChange({ UID, loggedIn, status }))
-            .catch(() => onWorkerStateChange({ UID: undefined, loggedIn: false, status: WorkerStatus.ERROR }));
+            .catch(() => onWorkerStateChange({ UID: undefined, loggedIn: false, status: AppStatus.ERROR }));
 
         return () => ExtensionContext.get().port.onMessage.removeListener(onMessage);
     }, []);

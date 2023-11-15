@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@proton/crypto';
 import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
-import { authentication } from '@proton/pass/lib/auth/authentication';
+import { authentication } from '@proton/pass/lib/auth/store';
 import type {
     PassCryptoManagerContext,
     PassCryptoWorker,
