@@ -5,6 +5,7 @@ import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage
 import { sendErrorReport } from '../../utils/errorHandling';
 import { DecryptedLink, useLinksActions, useLinksListing } from '../_links';
 import { Share, ShareWithKey } from '../_shares';
+import useSharesState from '../_shares/useSharesState';
 import { waitFor } from '../_utils';
 import { usePhotos } from './PhotosProvider';
 
@@ -24,7 +25,8 @@ export type RECOVERY_STATE =
 const RECOVERY_STATE_CACHE_KEY = 'photos-recovery-state';
 
 export const usePhotosRecovery = () => {
-    const { shareId, linkId, restoredShares, deletePhotosShare } = usePhotos();
+    const { shareId, linkId, deletePhotosShare } = usePhotos();
+    const { getRestoredPhotosShares } = useSharesState();
     const { getCachedChildren, loadChildren } = useLinksListing();
     const { moveLinks } = useLinksActions();
     const [countOfUnrecoveredLinksLeft, setCountOfUnrecoveredLinksLeft] = useState<number>(0);
@@ -33,10 +35,13 @@ export const usePhotosRecovery = () => {
     const [restoredData, setRestoredData] = useState<{ links: DecryptedLink[]; shareId: string }[]>([]);
     const [needsRecovery, setNeedsRecovery] = useState<boolean>(false);
 
-    useEffect(() => {
-        setNeedsRecovery(!!restoredShares?.length);
-    }, [restoredShares?.length]);
+    const [restoredShares, setRestoredShares] = useState<Share[] | ShareWithKey[] | undefined>();
 
+    useEffect(() => {
+        const shares = getRestoredPhotosShares();
+        setRestoredShares(shares);
+        setNeedsRecovery(!!shares?.length);
+    }, [getRestoredPhotosShares]);
     const handleFailed = (e: Error) => {
         setState('FAILED');
         setItem(RECOVERY_STATE_CACHE_KEY, 'failed');
