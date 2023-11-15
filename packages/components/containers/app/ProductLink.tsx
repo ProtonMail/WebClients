@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
+import { getAppStaticUrl } from '@proton/shared/lib/helpers/url';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
@@ -31,7 +32,21 @@ interface ProductLinkProps {
 const ProductLink = ({ ownerApp, app, appToLinkTo, user, current, className, children }: ProductLinkProps) => {
     const appToLinkToName = getAppName(appToLinkTo);
 
-    if (user && app && getRequiresAddressSetup(appToLinkTo, user)) {
+    if (!user) {
+        return (
+            <a
+                href={getAppStaticUrl(appToLinkTo)}
+                target="_blank"
+                className={className}
+                title={appToLinkToName}
+                aria-current={current}
+            >
+                {children}
+            </a>
+        );
+    }
+
+    if (app && getRequiresAddressSetup(appToLinkTo, user)) {
         const params = new URLSearchParams();
         params.set('to', appToLinkTo);
         params.set('from', app);
