@@ -6,6 +6,7 @@ import { useNotifications } from '@proton/components/hooks';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import { AppStatus, type Maybe } from '@proton/pass/types';
+import { logger } from '@proton/pass/utils/logger';
 import { getBasename, getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
 import { getConsumeForkParameters, removeHashParameters } from '@proton/shared/lib/authentication/sessionForking';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
@@ -127,6 +128,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
             if (event.key === currentKey) {
                 const ps = JSON.parse(localStorage.getItem(currentKey)!);
                 if (isValidPersistedSession(ps)) {
+                    logger.info('[AuthServiceProvider] Detected persisted session storage update');
                     authStore.setAccessToken(ps.AccessToken);
                     authStore.setRefreshToken(ps.RefreshToken);
                     authStore.setRefreshTime(ps.RefreshTime);
