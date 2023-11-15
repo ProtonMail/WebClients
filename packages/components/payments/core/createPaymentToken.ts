@@ -91,7 +91,7 @@ export const createPaymentToken = async (
 export const formatToken = (
     { Token, Status, ApprovalURL, ReturnHost }: PaymentTokenResult,
     type: PlainPaymentMethodType,
-    amountAndCurrency: AmountAndCurrency
+    amountAndCurrency?: AmountAndCurrency
 ): ChargeablePaymentToken | NonChargeablePaymentToken => {
     const chargeable = Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE;
     const tokenPaymentMethod = toTokenPaymentMethod(Token);
@@ -118,7 +118,7 @@ export const formatToken = (
 export const createPaymentTokenForCard = async (
     params: WrappedCardPayment,
     api: Api,
-    amountAndCurrency: AmountAndCurrency
+    amountAndCurrency?: AmountAndCurrency
 ): Promise<ChargeablePaymentToken | NonChargeablePaymentToken> => {
     const paymentTokenResult = await fetchPaymentToken(params, api, amountAndCurrency);
     return formatToken(paymentTokenResult, PAYMENT_METHOD_TYPES.CARD, amountAndCurrency);
