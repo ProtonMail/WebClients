@@ -1,7 +1,7 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "lib": ["DOM", "DOM.Iterable", "ESNext", "WebWorker"],
+        "lib": ["WebWorker", "DOM", "DOM.Iterable", "ESNext"],
         "types": ["webpack-env", "jest", "./globals.d.ts"]
     }
 }

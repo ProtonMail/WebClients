@@ -32,6 +32,10 @@ ErrorDocument 404 /assets/404.html
     Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT"
 </Files>
 
+<Files ~ "^pass.service-worker">
+  Header set Service-Worker-Allowed "/"
+  Header set Service-Worker "script"
+</Files>
 
 <IfModule mod_deflate.c>
   AddOutputFilter INCLUDES;DEFLATE svg
