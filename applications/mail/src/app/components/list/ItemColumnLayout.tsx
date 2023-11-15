@@ -16,6 +16,8 @@ import { canShowAttachmentThumbnails } from 'proton-mail/helpers/attachment/atta
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { getLabelIDs, isStarred as testIsStarred } from '../../helpers/elements';
 import { useExpiringElement } from '../../hooks/useExpiringElement';
+import { selectSnoozeDropdownState, selectSnoozeElement } from '../../logic/snooze/snoozeSliceSelectors';
+import { useAppSelector } from '../../logic/store';
 import { Element } from '../../models/element';
 import { ESMessage } from '../../models/encryptedSearch';
 import { Breakpoints } from '../../models/utils';
@@ -64,6 +66,8 @@ const ItemColumnLayout = ({
     const highlightData = shouldHighlight();
     const { contentIndexingDone } = esStatus;
     const canSeeThumbnailsFeature = useFlag('AttachmentThumbnails');
+    const snoozedElement = useAppSelector(selectSnoozeElement);
+    const snoozeDropdownState = useAppSelector(selectSnoozeDropdownState);
 
     const { expirationTime, hasExpiration } = useExpiringElement(element, labelID, conversationMode);
 
@@ -99,6 +103,7 @@ const ItemColumnLayout = ({
 
     const isStarred = testIsStarred(element || ({} as Element));
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
+    const isSnoozeDropdownOpen = snoozeDropdownState && snoozedElement?.ID === element.ID;
 
     const showThumbnails = canShowAttachmentThumbnails(
         isCompactView,
@@ -131,12 +136,17 @@ const ItemColumnLayout = ({
                             </span>
                         </div>
 
-                        <span className="item-firstline-infos flex-item-noshrink flex flex-nowrap flex-align-items-center">
+                        <span
+                            className={clsx(
+                                'item-firstline-infos flex-item-noshrink flex flex-nowrap flex-align-items-center',
+                                isSnoozeDropdownOpen && 'invisible'
+                            )}
+                        >
                             <ItemDate
                                 element={element}
                                 labelID={labelID}
                                 className="item-senddate-col text-sm"
-                                useTooltip
+                                isInListView
                             />
                         </span>
                     </div>

@@ -14,6 +14,12 @@ export const expectedAll = [
         icon: 'inbox',
     },
     {
+        icon: 'clock',
+        text: 'Snooze',
+        url: '/snoozed',
+        value: '16',
+    },
+    {
         value: '8',
         text: 'Drafts',
         url: '/drafts',
@@ -23,7 +29,7 @@ export const expectedAll = [
         value: '7',
         text: 'Sent',
         url: '/sent',
-        icon: 'paper-plane',
+        icon: 'paper-plane-horizontal',
     },
     {
         value: '10',
@@ -91,6 +97,12 @@ export const expectedGrouped: ItemsGroup = [
                 icon: 'inbox',
             },
             {
+                icon: 'clock',
+                text: 'Snooze',
+                url: '/snoozed',
+                value: '16',
+            },
+            {
                 value: '8',
                 text: 'Drafts',
                 url: '/drafts',
@@ -100,7 +112,7 @@ export const expectedGrouped: ItemsGroup = [
                 value: '7',
                 text: 'Sent',
                 url: '/sent',
-                icon: 'paper-plane',
+                icon: 'paper-plane-horizontal',
             },
             {
                 value: '10',

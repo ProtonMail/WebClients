@@ -29,7 +29,7 @@ const defaultFolders: useLocationFieldOptionsModule.ItemDefaultFolder[] = [
         value: '7',
         text: 'Sent',
         url: '/sent',
-        icon: 'paper-plane',
+        icon: 'paper-plane-horizontal',
     },
 ];
 

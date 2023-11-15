@@ -13,6 +13,7 @@ import clsx from '@proton/utils/clsx';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { hasLabel } from '../../helpers/elements';
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
+import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
 import { useConversation } from '../../hooks/conversation/useConversation';
 import { useConversationFocus } from '../../hooks/conversation/useConversationFocus';
 import { useConversationHotkeys } from '../../hooks/conversation/useConversationHotkeys';
@@ -20,6 +21,7 @@ import { useGetMessage } from '../../hooks/message/useMessage';
 import { usePlaceholders } from '../../hooks/usePlaceholders';
 import useShouldMoveOut from '../../hooks/useShouldMoveOut';
 import { removeAllQuickReplyFlags } from '../../logic/messages/draft/messagesDraftActions';
+import { isElementReminded } from '../../logic/snoozehelpers';
 import { Breakpoints } from '../../models/utils';
 import MessageView, { MessageViewRef } from '../message/MessageView';
 import ConversationErrorBanner from './ConversationErrorBanner';
@@ -109,6 +111,7 @@ const ConversationView = ({
     const loading = loadingConversation || loadingMessages;
     const showConversationError = !loading && conversationState?.Conversation?.Subject === undefined;
     const showMessagesError = !loading && !showConversationError && !conversationState?.Messages;
+    const markAs = useMarkAs();
 
     const { focusIndex, handleFocus, handleScrollToMessage, handleBlur, getFocusedId } =
         useConversationFocus(messagesWithoutQuickReplies);
@@ -149,6 +152,14 @@ const ConversationView = ({
         // When the user is switching conversation we need to remove potential quick replies draft flags
         dispatch(removeAllQuickReplyFlags());
     }, [conversationID]);
+
+    // Mark conversation as read when opened and reminded (snooze feature)
+    useEffect(() => {
+        const isReminded = isElementReminded(conversation);
+        if (isReminded && conversation) {
+            markAs([conversation], labelID, MARK_AS_STATUS.READ);
+        }
+    }, [conversation]);
 
     const handleOpenQuickReply = (messageIndex?: number) => {
         handleScrollToMessage(messageIndex, 'end');

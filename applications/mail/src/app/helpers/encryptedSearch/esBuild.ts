@@ -74,6 +74,7 @@ export const getBaseMessage = (message: Message | ESMessage) => {
         Time: message.Time,
         Order: message.Order,
         AttachmentInfo: message.AttachmentInfo,
+        SnoozeTime: message.SnoozeTime,
     };
     return baseMessage;
 };

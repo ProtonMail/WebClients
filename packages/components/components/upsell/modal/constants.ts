@@ -12,7 +12,8 @@ export type UpsellFeatureName =
     | 'more-storage'
     | 'more-email-addresses'
     | 'custom-email-domains'
-    | 'email-aliases';
+    | 'email-aliases'
+    | 'snooze-messages';
 
 const domain = 'proton.me';
 // Dirty fix because we cannot add twice the same variable in a string with ttag
@@ -27,7 +28,7 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature> = {
         getText: () => c('new_plans: feature').t`Auto-delete spam and trashed messages`,
     },
     'schedule-messages': {
-        icon: 'clock-paper-plane',
+        icon: 'paper-plane-horizontal-clock',
         getText: () => c('new_plans: feature').t`Schedule messages at any time`,
     },
     'unlimited-folders-and-labels': {
@@ -62,5 +63,10 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature> = {
         icon: 'eye-slash',
         getText: () => c('new_plans: feature').t`Hide-my-email aliases`,
         getTooltip: () => c('new_plans: feature info').t`Get unlimited aliases with SimpleLogin by ${BRAND_NAME}`,
+    },
+    'snooze-messages': {
+        icon: 'clock',
+        getText: () => c('new_plans: feature').t`Custom snooze time`,
+        getTooltip: () => c('new_plans: feature info').t`Snooze messages and get reminded when you want`,
     },
 };

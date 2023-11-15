@@ -29,9 +29,9 @@ import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import LocationAside from './LocationAside';
 
-const { ALL_MAIL, ALMOST_ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED } = MAILBOX_LABEL_IDS;
+const { ALL_MAIL, ALMOST_ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED, SNOOZED } = MAILBOX_LABEL_IDS;
 
-const NO_DROP: string[] = [ALL_MAIL, ALMOST_ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED];
+const NO_DROP: string[] = [ALL_MAIL, ALMOST_ALL_MAIL, DRAFTS, ALL_DRAFTS, SENT, ALL_SENT, SCHEDULED, SNOOZED];
 
 const defaultShortcutHandlers: HotkeyTuple[] = [];
 
@@ -82,7 +82,7 @@ const SidebarItem = ({
     const [refreshing, withRefreshing] = useLoading(false);
 
     const applyLabels = useApplyLabels();
-    const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder();
+    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal } = useMoveToFolder();
 
     const humanID = LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS]
         ? LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS]
@@ -175,6 +175,7 @@ const SidebarItem = ({
                 </SidebarListItemContent>
             </SidebarListItemLink>
             {moveScheduledModal}
+            {moveSnoozedModal}
             {moveAllModal}
             {moveToSpamModal}
         </SidebarListItem>
