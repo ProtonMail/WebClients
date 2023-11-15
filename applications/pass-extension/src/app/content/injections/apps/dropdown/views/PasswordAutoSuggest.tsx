@@ -54,14 +54,12 @@ export const PasswordAutoSuggest: VFC<Props> = ({ hostname, passwordOptions, vis
                 title={c('Title').t`Password`}
                 extra={
                     <PauseListDropdown
-                        visible={visible}
-                        hostname={hostname}
-                        onClose={onClose}
                         criteria="Autosuggest"
-                        label={
-                            // translation: action to not suggest a password
-                            c('Action').t`Do not suggest on this website`
-                        }
+                        dense
+                        hostname={hostname}
+                        label={c('Action').t`Do not suggest on this website`}
+                        onClose={onClose}
+                        visible={visible}
                     />
                 }
             />
