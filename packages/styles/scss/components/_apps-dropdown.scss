@@ -37,6 +37,15 @@
 			}
 		}
 
+		&,
+		&:hover,
+		&:focus,
+		&:active {
+			&[aria-current] {
+				pointer-events: auto;
+			}
+		}
+
 		@supports not selector(:focus-visible:has(a, b)) {
 			&:focus,
 			&:focus-within {
