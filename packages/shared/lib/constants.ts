@@ -588,6 +588,7 @@ export enum DASHBOARD_UPSELL_PATHS {
     UNLIMITED = 'unlimited-dashboard',
     DRIVE = 'drive-dashboard',
     PASS = 'pass-dashboard',
+    VPN = 'vpn-dashboard',
     FAMILY = 'family-dashboard',
     BUSINESS = 'business-dashboard',
 }
