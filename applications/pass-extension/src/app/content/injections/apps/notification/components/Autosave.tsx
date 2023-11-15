@@ -152,11 +152,11 @@ export const Autosave: VFC<Props> = ({ settings, submission, visible, onClose })
                     })()}
                     extra={
                         <PauseListDropdown
-                            visible={visible}
-                            hostname={submission.subdomain ?? submission.domain}
-                            onClose={onClose}
                             criteria="Autosave"
+                            hostname={submission.subdomain ?? submission.domain}
                             label={c('Action').t`Disable autosave on this website`}
+                            onClose={onClose}
+                            visible={visible}
                         />
                     }
                     onClose={onClose}
