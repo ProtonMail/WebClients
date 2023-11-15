@@ -1,6 +1,7 @@
 import { CryptoProxy, PrivateKeyReference, SessionKey, serverTime, updateServerTime } from '@proton/crypto';
 import { SafeErrorObject, getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
+import { HEARTBEAT_INTERVAL, HEARTBEAT_WAIT_TIME } from './constants';
 import type {
     EncryptedBlock,
     FileKeys,
@@ -138,6 +139,10 @@ type NotifySentryMessage = {
     error: SafeErrorObject;
 };
 
+type HeartbeatMessage = {
+    command: 'heartbeat';
+};
+
 /**
  * WorkerEvent contains all possible events which can come from the upload
  * web worker to the main thread.
@@ -150,7 +155,8 @@ type WorkerEvent = {
         | DoneMessage
         | NetworkErrorMessage
         | ErrorMessage
-        | NotifySentryMessage;
+        | NotifySentryMessage
+        | HeartbeatMessage;
 };
 
 /**
@@ -165,6 +171,7 @@ interface WorkerControllerHandlers {
     finalize: (signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) => void;
     onNetworkError: (error: string) => void;
     onError: (error: string) => void;
+    onHeartbeatTimeout: () => void;
     onCancel: () => void;
     notifySentry: (error: Error) => void;
 }
@@ -177,6 +184,8 @@ interface WorkerControllerHandlers {
 export class UploadWorker {
     worker: Worker;
 
+    heartbeatInterval?: NodeJS.Timeout;
+
     constructor(worker: Worker, { generateKeys, start, createdBlocks, pause, resume }: WorkerHandlers) {
         // Before the worker termination, we want to release securely crypto
         // proxy. That might need a bit of time, and we allow up to few seconds
@@ -185,6 +194,10 @@ export class UploadWorker {
         let closing = false;
 
         this.worker = worker;
+
+        // Set up the heartbeat. This notifies the main thread that the worker is still alive.
+        this.heartbeatInterval = setInterval(() => this.postHeartbeat(), HEARTBEAT_INTERVAL);
+
         worker.addEventListener('message', ({ data }: WorkerControllerEvent) => {
             switch (data.command) {
                 case 'generate_keys':
@@ -251,6 +264,7 @@ export class UploadWorker {
                     break;
                 case 'close':
                     closing = true;
+                    this.clearHeartbeatInterval();
                     void CryptoProxy.releaseEndpoint().then(() => self.close());
                     break;
                 default:
@@ -274,6 +288,12 @@ export class UploadWorker {
         });
     }
 
+    clearHeartbeatInterval() {
+        if (this.heartbeatInterval) {
+            clearInterval(this.heartbeatInterval);
+        }
+    }
+
     async postKeysGenerated(keys: FileKeys) {
         this.worker.postMessage({
             command: 'keys_generated',
@@ -283,7 +303,7 @@ export class UploadWorker {
                 passphrase: null,
                 format: 'binary',
             }),
-        } as KeysGeneratedMessage);
+        } satisfies KeysGeneratedMessage);
     }
 
     postCreateBlocks(fileBlocks: EncryptedBlock[], encryptedThumbnailBlocks?: ThumbnailEncryptedBlock[]) {
@@ -301,14 +321,14 @@ export class UploadWorker {
                 hash: thumbnailBlock.hash,
                 type: thumbnailBlock.thumbnailType,
             })),
-        } as CreateBlockMessage);
+        } satisfies CreateBlockMessage);
     }
 
     postProgress(increment: number) {
         this.worker.postMessage({
             command: 'progress',
             increment,
-        } as ProgressMessage);
+        } satisfies ProgressMessage);
     }
 
     postDone(signature: string, signatureAddress: string, xattr: string, photo?: PhotoUpload) {
@@ -318,28 +338,34 @@ export class UploadWorker {
             signatureAddress,
             xattr,
             photo,
-        } as DoneMessage);
+        } satisfies DoneMessage);
     }
 
     postNetworkError(error: string) {
         this.worker.postMessage({
             command: 'network_error',
             error,
-        } as NetworkErrorMessage);
+        } satisfies NetworkErrorMessage);
     }
 
     postError(error: string) {
         this.worker.postMessage({
             command: 'error',
             error,
-        } as ErrorMessage);
+        } satisfies ErrorMessage);
     }
 
     postNotifySentry(error: Error) {
         this.worker.postMessage({
             command: 'notify_sentry',
             error: getSafeErrorObject(error),
-        } as NotifySentryMessage);
+        } satisfies NotifySentryMessage);
+    }
+
+    postHeartbeat() {
+        this.worker.postMessage({
+            command: 'heartbeat',
+        } satisfies HeartbeatMessage);
     }
 }
 
@@ -353,6 +379,8 @@ export class UploadWorkerController {
 
     onCancel: () => void;
 
+    heartbeatTimeout?: NodeJS.Timeout;
+
     constructor(
         worker: Worker,
         {
@@ -364,10 +392,12 @@ export class UploadWorkerController {
             onError,
             onCancel,
             notifySentry,
+            onHeartbeatTimeout,
         }: WorkerControllerHandlers
     ) {
         this.worker = worker;
         this.onCancel = onCancel;
+
         worker.addEventListener('message', ({ data }: WorkerEvent) => {
             switch (data.command) {
                 case 'keys_generated':
@@ -396,16 +426,31 @@ export class UploadWorkerController {
                     onProgress(data.increment);
                     break;
                 case 'done':
+                    this.clearHeartbeatTimeout();
                     finalize(data.signature, data.signatureAddress, data.xattr, data.photo);
                     break;
                 case 'network_error':
                     onNetworkError(data.error);
                     break;
                 case 'error':
+                    this.clearHeartbeatTimeout();
                     onError(data.error);
                     break;
                 case 'notify_sentry':
                     notifySentry(data.error);
+                    break;
+                case 'heartbeat':
+                    this.clearHeartbeatTimeout();
+
+                    this.heartbeatTimeout = setTimeout(() => {
+                        notifySentry(new Error('Heartbeat was not received in time'));
+
+                        onHeartbeatTimeout();
+
+                        // Since the worker is stuck, we can terminate it
+                        this.worker.terminate();
+                    }, HEARTBEAT_WAIT_TIME);
+
                     break;
                 default:
                     // Type linters should prevent this error.
@@ -417,7 +462,14 @@ export class UploadWorkerController {
         });
     }
 
+    clearHeartbeatTimeout() {
+        if (this.heartbeatTimeout) {
+            clearTimeout(this.heartbeatTimeout);
+        }
+    }
+
     terminate() {
+        this.clearHeartbeatTimeout();
         this.worker.terminate();
     }
 
@@ -439,7 +491,7 @@ export class UploadWorkerController {
                 format: 'binary',
             }),
             serverTime: serverTime(),
-        } as GenerateKeysMessage);
+        } satisfies GenerateKeysMessage);
     }
 
     async postStart(
@@ -491,24 +543,24 @@ export class UploadWorkerController {
             command: 'created_blocks',
             fileLinks,
             thumbnailLinks,
-        } as CreatedBlocksMessage);
+        } satisfies CreatedBlocksMessage);
     }
 
     postPause() {
         this.worker.postMessage({
             command: 'pause',
-        } as PauseMessage);
+        } satisfies PauseMessage);
     }
 
     postResume() {
         this.worker.postMessage({
             command: 'resume',
-        } as ResumeMessage);
+        } satisfies ResumeMessage);
     }
 
     postClose() {
         this.worker.postMessage({
             command: 'close',
-        });
+        } satisfies CloseMessage);
     }
 }
