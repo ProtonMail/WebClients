@@ -236,6 +236,7 @@ export const LoginEdit: VFC<ItemEditViewProps<'login'>> = ({ revision, url, vaul
                                                     className="pass-item-icon"
                                                     title={c('Action').t`Generate alias`}
                                                     key="generate-alias"
+                                                    tabIndex={-1}
                                                     onClick={() =>
                                                         form
                                                             .setValues((values) =>
