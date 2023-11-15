@@ -5,7 +5,7 @@ import { TelemetryKeyTransparencyErrorEvents, TelemetryMeasurementGroups } from 
 import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
 import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { Api } from '@proton/shared/lib/interfaces';
+import { Api, SimpleMap } from '@proton/shared/lib/interfaces';
 
 import { EXPECTED_EPOCH_INTERVAL, KT_DOMAINS, MAX_EPOCH_INTERVAL } from '../constants/constants';
 
@@ -60,11 +60,15 @@ export const isTimestampOlderThanThreshold = (time: number) => time < +sub(serve
 /**
  * Helper to send outbound public key verification failures to the telemetry endpoint
  */
-export const ktKeyVerificationFailureTelemetry = (api: Api): Promise<void> => {
+export const ktKeyVerificationFailureTelemetry = (api: Api, visible: boolean): Promise<void> => {
+    const dimensions: SimpleMap<string> = {
+        visibility: visible ? 'visible' : 'hidden',
+    };
     return sendTelemetryReport({
         api,
         measurementGroup: TelemetryMeasurementGroups.keyTransparency,
         event: TelemetryKeyTransparencyErrorEvents.key_verification_failure,
+        dimensions,
     });
 };
 
