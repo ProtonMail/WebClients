@@ -17,6 +17,7 @@ import { ApiProvider } from './Context/ApiProvider';
 import { AuthServiceProvider } from './Context/AuthServiceProvider';
 import { AuthStoreProvider } from './Context/AuthStoreProvider';
 import { ClientContext, ClientProvider } from './Context/ClientProvider';
+import { ServiceWorkerProvider } from './ServiceWorker/ServiceWorkerProvider';
 import { StoreProvider } from './Store/StoreProvider';
 import { Routes } from './Views/Routes';
 import * as config from './config';
@@ -31,27 +32,29 @@ export const App = () => {
                 <ThemeProvider />
                 <NotificationsProvider>
                     <ModalsProvider>
-                        <AuthStoreProvider>
-                            <ClientProvider>
-                                <ClientContext.Consumer>
-                                    {(client) => (
-                                        <ApiProvider>
-                                            <BrowserRouter basename={getBasename(client.state.localID)}>
-                                                <AuthServiceProvider>
-                                                    <StoreProvider>
-                                                        <Routes />
-                                                        <Portal>
-                                                            <ModalsChildren />
-                                                            <NotificationsChildren />
-                                                        </Portal>
-                                                    </StoreProvider>
-                                                </AuthServiceProvider>
-                                            </BrowserRouter>
-                                        </ApiProvider>
-                                    )}
-                                </ClientContext.Consumer>
-                            </ClientProvider>
-                        </AuthStoreProvider>
+                        <ServiceWorkerProvider>
+                            <AuthStoreProvider>
+                                <ClientProvider>
+                                    <ClientContext.Consumer>
+                                        {(client) => (
+                                            <ApiProvider>
+                                                <BrowserRouter basename={getBasename(client.state.localID)}>
+                                                    <AuthServiceProvider>
+                                                        <StoreProvider>
+                                                            <Routes />
+                                                            <Portal>
+                                                                <ModalsChildren />
+                                                                <NotificationsChildren />
+                                                            </Portal>
+                                                        </StoreProvider>
+                                                    </AuthServiceProvider>
+                                                </BrowserRouter>
+                                            </ApiProvider>
+                                        )}
+                                    </ClientContext.Consumer>
+                                </ClientProvider>
+                            </AuthStoreProvider>
+                        </ServiceWorkerProvider>
                     </ModalsProvider>
                 </NotificationsProvider>
             </CompatibilityCheck>
