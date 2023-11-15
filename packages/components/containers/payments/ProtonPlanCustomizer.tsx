@@ -230,7 +230,7 @@ const AccountSizeCustomiser = ({
                     <div className="mb-4">{getAccountSizeString(maxUsers, price)}</div>
                 </>
             )}
-            <div className="flex-no-min-children flex-nowrap flex-align-items-center mb-4 on-mobile-flex-wrap">
+            <div className="flex-no-min-children md:flex-nowrap flex-align-items-center mb-4">
                 <label
                     htmlFor={addon.Name}
                     className="w-full md:w-auto min-w-custom md:min-w-custom flex-item-fluid plan-customiser-addon-label text-bold pr-2"
@@ -272,7 +272,7 @@ const AdditionalOptionsCustomiser = ({
                     </div>
                 </>
             )}
-            <div className="flex-no-min-children flex-nowrap flex-align-items-center mb-4 on-mobile-flex-wrap">
+            <div className="flex-no-min-children md:flex-nowrap flex-align-items-center mb-4">
                 <label
                     htmlFor={addon.Name}
                     className="w-full md:w-auto min-w-custom md:min-w-custom flex-item-fluid plan-customiser-addon-label text-bold pr-2"
@@ -331,7 +331,7 @@ const IPsNumberCustomiser = ({
                     </div>
                 </>
             )}
-            <div className="flex-no-min-children flex-nowrap flex-align-items-center mb-4 on-mobile-flex-wrap">
+            <div className="flex-no-min-children md:flex-nowrap flex-align-items-center mb-4">
                 <label
                     htmlFor={addon.Name}
                     className="w-full md:w-auto min-w-custom md:min-w-custom flex-item-fluid plan-customiser-addon-label text-bold pr-2"
