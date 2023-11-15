@@ -15,7 +15,6 @@ export { default as LossLoyaltyModal } from './LossLoyaltyModal';
 export { default as PayPalButton } from './PayPalButton';
 export { default as PaymentInfo } from './PaymentInfo';
 export { default as PaymentSelector } from './PaymentSelector';
-export { default as PaymentVerificationModal } from './PaymentVerificationModal';
 export { default as PlansSection } from './PlansSection';
 export * from './RenewalNotice';
 export { default as StyledPayPalButton } from './StyledPayPalButton';

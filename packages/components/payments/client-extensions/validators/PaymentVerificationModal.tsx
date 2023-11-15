@@ -3,14 +3,12 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { FormModal, Loader, PrimaryButton } from '@proton/components/components';
+import PaymentVerificationImage from '@proton/components/containers/payments/PaymentVerificationImage';
+import { useNotifications } from '@proton/components/hooks';
 import errorSvg from '@proton/styles/assets/img/errors/error-generic.svg';
 
-import { FormModal, Loader, PrimaryButton } from '../../components';
-import { useNotifications } from '../../hooks';
-import { CardPayment, TokenPaymentMethod } from '../../payments/core/interface';
-import { toTokenPaymentMethod } from '../../payments/core/utils';
-import PaymentVerificationImage from './PaymentVerificationImage';
+import { CardPayment, PAYMENT_METHOD_TYPES, TokenPaymentMethod, toTokenPaymentMethod } from '../../core';
 
 const STEPS = {
     REDIRECT: 'redirect',
