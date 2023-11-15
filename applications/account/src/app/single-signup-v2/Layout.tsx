@@ -69,7 +69,10 @@ const Layout = ({
                                 {footer}
                                 <div className="w-full flex flex-justify-space-between flex-column md:flex-row">
                                     <div className="flex gap-1 flex-column">
-                                        <LayoutLogosV2 size={20} className="on-mobile-flex-justify-center" />
+                                        <LayoutLogosV2
+                                            size={20}
+                                            className="flex-justify-center md:flex-justify-start"
+                                        />
                                         <span className="text-sm color-weak text-center mb-4 lg:mb-0">
                                             {
                                                 // translator: full sentence 'Proton. Privacy by default.'
