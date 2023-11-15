@@ -40,6 +40,7 @@ export class CardPaymentProcessor extends PaymentProcessor<CardPaymentProcessorS
         public verifyPayment: PaymentVerificator,
         public api: Api,
         amountAndCurrency: AmountAndCurrency,
+        private verifyOnly: boolean,
         onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
     ) {
         super(
@@ -53,7 +54,7 @@ export class CardPaymentProcessor extends PaymentProcessor<CardPaymentProcessorS
     }
 
     async fetchPaymentToken(): Promise<ChargeablePaymentToken | NonChargeablePaymentToken | null> {
-        if (this.amountAndCurrency.Amount === 0) {
+        if (this.amountAndCurrency.Amount === 0 && !this.verifyOnly) {
             return null;
         }
 
@@ -64,14 +65,14 @@ export class CardPaymentProcessor extends PaymentProcessor<CardPaymentProcessorS
         this.fetchedPaymentToken = await createPaymentTokenForCard(
             this.getPaymentParameters(),
             this.api,
-            this.amountAndCurrency
+            this.verifyOnly ? undefined : this.amountAndCurrency
         );
 
         return this.fetchedPaymentToken;
     }
 
     async verifyPaymentToken(): Promise<ChargeablePaymentParameters> {
-        if (this.amountAndCurrency.Amount === 0) {
+        if (this.amountAndCurrency.Amount === 0 && !this.verifyOnly) {
             return this.tokenCreated();
         }
 
@@ -90,6 +91,7 @@ export class CardPaymentProcessor extends PaymentProcessor<CardPaymentProcessorS
                 Token: this.fetchedPaymentToken.Payment.Details.Token,
                 ApprovalURL: this.fetchedPaymentToken.approvalURL,
                 ReturnHost: this.fetchedPaymentToken.returnHost,
+                addCardMode: this.verifyOnly,
             });
         } catch (error: any) {
             throw error;
@@ -112,7 +114,7 @@ export class CardPaymentProcessor extends PaymentProcessor<CardPaymentProcessorS
     }
 
     private handleCardSubmit(): boolean {
-        if (this.amountAndCurrency.Amount === 0) {
+        if (this.amountAndCurrency.Amount === 0 && !this.verifyOnly) {
             return true;
         }
 

@@ -45,6 +45,7 @@ export interface Props {
     amountAndCurrency: AmountAndCurrency;
     initialCard?: CardModel;
     onChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>;
+    verifyOnly?: boolean;
 }
 
 export type CardProcessorHook = PaymentProcessorHook & {
@@ -57,14 +58,14 @@ export type CardProcessorHook = PaymentProcessorHook & {
 };
 
 export const useCard = (
-    { amountAndCurrency, initialCard, onChargeable }: Props,
+    { amountAndCurrency, initialCard, verifyOnly, onChargeable }: Props,
     { api, verifyPayment }: Dependencies
 ): CardProcessorHook => {
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [submitted, setSubmitted] = useState(false);
 
     const paymentProcessor = usePaymentProcessor(
-        () => new CardPaymentProcessor(verifyPayment, api, amountAndCurrency, onChargeable)
+        () => new CardPaymentProcessor(verifyPayment, api, amountAndCurrency, !!verifyOnly, onChargeable)
     );
 
     const [card, setCard] = useState(paymentProcessor.card);

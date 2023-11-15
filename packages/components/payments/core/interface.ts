@@ -92,6 +92,10 @@ export type ChargeablePaymentToken = TokenPaymentMethod &
         chargeable: true;
     };
 
+export type VerifiedPaymentToken = TokenPaymentMethod & {
+    type: PAYMENT_METHOD_TYPES.CARD;
+};
+
 export type NonChargeablePaymentToken = Omit<ChargeablePaymentToken, 'chargeable'> & {
     chargeable: false;
     status: PAYMENT_TOKEN_STATUS;
