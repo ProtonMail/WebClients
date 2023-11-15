@@ -237,6 +237,25 @@ const getDriveUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUps
     });
 };
 
+const getVPNUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
+    return getUpsell({
+        plan: PLANS.VPN,
+        plansMap,
+        upsellPath: DASHBOARD_UPSELL_PATHS.VPN,
+        onUpgrade: () =>
+            openSubscriptionModal({
+                cycle,
+                plan: PLANS.VPN,
+                step: SUBSCRIPTION_STEPS.CHECKOUT,
+                disablePlanSelection: true,
+                metrics: {
+                    source: 'upsells',
+                },
+            }),
+        ...rest,
+    });
+};
+
 const getPassUpsell = ({ plansMap, openSubscriptionModal, ...rest }: GetPlanUpsellArgs): MaybeUpsell => {
     return getUpsell({
         plan: PLANS.PASS_PLUS,
@@ -460,6 +479,7 @@ export const resolveUpsellsToDisplay = ({
         const hasMailFree = isFree && app === APPS.PROTONMAIL;
         const hasDriveFree = isFree && app === APPS.PROTONDRIVE;
         const hasPassFree = isFree && app === APPS.PROTONPASS;
+        const hasVPNFree = isFree && app === APPS.PROTONVPN_SETTINGS;
 
         switch (true) {
             case Boolean(isTrial(subscription) && subscription.PeriodEnd):
@@ -476,6 +496,8 @@ export const resolveUpsellsToDisplay = ({
                 return [getDriveUpsell(upsellsPayload)];
             case Boolean(hasPassFree):
                 return [getPassUpsell(upsellsPayload)];
+            case Boolean(hasVPNFree):
+                return [getVPNUpsell(upsellsPayload)];
             case Boolean(isFree || hasOnePlusSubscription(subscription)):
                 return [getBundleUpsell({ ...upsellsPayload, isRecommended: true }), getFamilyUpsell(upsellsPayload)];
             case hasBundle(subscription):
