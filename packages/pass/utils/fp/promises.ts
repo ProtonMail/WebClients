@@ -24,13 +24,20 @@ export const awaiter = <T>(): Awaiter<T> => {
     return promise;
 };
 
-export const asyncLock = <P extends any[], R extends Promise<any>, F extends (...args: P) => R>(fn: F): F => {
-    const ctx: { pending: MaybeNull<Promise<R>> } = { pending: null };
+export type AsyncLockedFunc<F extends (...args: any[]) => Promise<any>> = F & {
+    getState: () => { pending: boolean };
+};
 
-    return (async (...args: P) => {
+export const asyncLock = <F extends (...args: any[]) => Promise<any>>(fn: F) => {
+    const ctx: { pending: MaybeNull<Promise<ReturnType<F>>> } = { pending: null };
+
+    const lock = (async (...args: Parameters<F>) => {
         if (ctx.pending !== null) return ctx.pending;
         ctx.pending = fn(...args);
 
         return ctx.pending.finally(() => (ctx.pending = null));
-    }) as F;
+    }) as AsyncLockedFunc<F>;
+
+    lock.getState = () => ({ pending: ctx.pending !== null });
+    return lock;
 };

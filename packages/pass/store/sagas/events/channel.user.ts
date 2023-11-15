@@ -24,7 +24,7 @@ import type { EventChannel } from './types';
 function* onUserEvent(
     event: EventManagerEvent<UserEvent>,
     _: EventChannel<UserEvent>,
-    { getAuth, getTelemetry }: WorkerRootSagaOptions
+    { getAuthStore, getTelemetry }: WorkerRootSagaOptions
 ) {
     const telemetry = getTelemetry();
     if ('error' in event) throw event.error;
@@ -42,7 +42,7 @@ function* onUserEvent(
 
     /* if the subscription/invoice changes, refetch the user Plan */
     if (event.Subscription || event.Invoices) {
-        const getPlanAction = withRevalidate(getUserAccessIntent(userAccessRequest(getAuth().getUserID()!)));
+        const getPlanAction = withRevalidate(getUserAccessIntent(userAccessRequest(getAuthStore().getUserID()!)));
         yield put(getPlanAction);
     }
 
@@ -61,7 +61,7 @@ function* onUserEvent(
 
         if (keysUpdated) {
             logger.info(`[Saga::Events] Detected user keys update`);
-            const keyPassword = getAuth().getPassword();
+            const keyPassword = getAuthStore().getPassword();
             const addresses = (yield select(selectAllAddresses)) as Address[];
             yield PassCrypto.hydrate({ user, keyPassword, addresses });
             yield put(syncIntent()); /* trigger a full data sync */

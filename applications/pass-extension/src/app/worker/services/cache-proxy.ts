@@ -1,5 +1,5 @@
 import { api } from '@proton/pass/lib/api/api';
-import { authentication } from '@proton/pass/lib/auth/authentication';
+import { authentication } from '@proton/pass/lib/auth/store';
 import browser from '@proton/pass/lib/globals/browser';
 import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
 import { truthy } from '@proton/pass/utils/fp/predicates';

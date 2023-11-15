@@ -5,7 +5,7 @@ import { isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
-import type { SynchronizationResult } from '@proton/pass/store/sagas/workers/sync';
+import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { Share, ShareAccessKeys, ShareRole } from '@proton/pass/types';
 import type {
     ShareAccessOptions,

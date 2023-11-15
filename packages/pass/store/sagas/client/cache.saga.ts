@@ -2,10 +2,10 @@ import type { AnyAction } from 'redux';
 import type { Task } from 'redux-saga';
 import { cancel, fork, select, take, takeLatest } from 'redux-saga/effects';
 
+import { clientReady } from '@proton/pass/lib/client';
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { CACHE_SALT_LENGTH, getCacheEncryptionKey } from '@proton/pass/lib/crypto/utils/cache.encrypt';
 import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { workerReady } from '@proton/pass/lib/worker';
 import { signoutIntent, stateLock } from '@proton/pass/store/actions';
 import { isCacheTriggeringAction } from '@proton/pass/store/actions/with-cache-block';
 import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/select-is-optimistic';
@@ -18,12 +18,12 @@ import { objectFilter } from '@proton/pass/utils/object/filter';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-function* cacheWorker(action: AnyAction, { getWorkerState, getAuth, setCache }: WorkerRootSagaOptions) {
+function* cacheWorker(action: AnyAction, { getAppState, getAuthStore, setCache }: WorkerRootSagaOptions) {
     yield wait(2_000);
 
-    if (getAuth().hasSession() && workerReady(getWorkerState().status)) {
+    if (getAuthStore().hasSession() && clientReady(getAppState().status)) {
         try {
-            const sessionLockToken = getAuth().getLockToken();
+            const sessionLockToken = getAuthStore().getLockToken();
             const cacheSalt = crypto.getRandomValues(new Uint8Array(CACHE_SALT_LENGTH));
             const key: CryptoKey = yield getCacheEncryptionKey(cacheSalt, sessionLockToken);
 

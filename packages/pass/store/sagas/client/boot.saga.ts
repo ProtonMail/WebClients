@@ -16,8 +16,8 @@ import {
 } from '@proton/pass/store/actions';
 import { userAccessRequest, userFeaturesRequest } from '@proton/pass/store/actions/requests';
 import type { FeatureFlagState, SafeUserAccessState, SafeUserState } from '@proton/pass/store/reducers';
-import type { SynchronizationResult } from '@proton/pass/store/sagas/workers/sync';
-import { SyncType, synchronize } from '@proton/pass/store/sagas/workers/sync';
+import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
+import { SyncType, synchronize } from '@proton/pass/store/sagas/client/sync';
 import { selectUserState } from '@proton/pass/store/selectors';
 import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
@@ -65,7 +65,7 @@ function* bootUserState(userId: string, state: State) {
 
 function* bootWorker(options: WorkerRootSagaOptions, { meta }: ReturnType<typeof bootIntent>) {
     try {
-        const auth = options.getAuth();
+        const auth = options.getAuthStore();
         const userId = auth.getUserID()!;
         const sessionLockToken = auth.getLockToken();
 

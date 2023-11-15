@@ -20,7 +20,7 @@ import type { FormEntry, FormEntryPrompt, NewFormEntry } from './form';
 import type { OnboardingMessage } from './onboarding';
 import type { OtpCode, OtpRequest } from './otp';
 import type { TabId } from './runtime';
-import type { PopupInitialState, WorkerState } from './state';
+import type { AppState, PopupInitialState } from './state';
 
 type WithPayload<T extends WorkerMessageType, P extends {}> = { type: T; payload: P };
 export type ExtensionEndpoint = 'popup' | 'contentscript' | 'background' | 'page' | 'notification' | 'dropdown';
@@ -134,7 +134,7 @@ export type UnloadContentScriptMessage = { type: WorkerMessageType.UNLOAD_CONTEN
 export type UnlockRequestMessage = WithPayload<WorkerMessageType.UNLOCK_REQUEST, { pin: string }>;
 export type UpdateAvailableMessage = { type: WorkerMessageType.UPDATE_AVAILABLE };
 export type WorkerInitMessage = { type: WorkerMessageType.WORKER_INIT; payload?: { forceLock: boolean } };
-export type WorkerStatusMessage = WithPayload<WorkerMessageType.WORKER_STATUS, { state: WorkerState }>;
+export type WorkerStatusMessage = WithPayload<WorkerMessageType.WORKER_STATUS, { state: AppState }>;
 export type WorkerWakeUpMessage = WithPayload<WorkerMessageType.WORKER_WAKEUP, { tabId: TabId }>;
 
 export type WorkerMessage =
@@ -214,8 +214,8 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.RESOLVE_TAB]: { tab: Maybe<Tabs.Tab> };
     [WorkerMessageType.RESOLVE_USER_DATA]: { user: MaybeNull<User> };
     [WorkerMessageType.UNLOCK_REQUEST]: Outcome<{}, { canRetry: boolean }>;
-    [WorkerMessageType.WORKER_INIT]: WorkerState;
-    [WorkerMessageType.WORKER_WAKEUP]: WorkerState & { settings: ProxiedSettings; features: FeatureFlagState };
+    [WorkerMessageType.WORKER_INIT]: AppState;
+    [WorkerMessageType.WORKER_WAKEUP]: AppState & { settings: ProxiedSettings; features: FeatureFlagState };
 };
 
 export type WorkerMessageResponse<MessageType> = MessageType extends keyof WorkerMessageResponseMap

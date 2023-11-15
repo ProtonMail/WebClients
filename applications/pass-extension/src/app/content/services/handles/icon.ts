@@ -12,8 +12,8 @@ import {
 } from 'proton-pass-extension/app/content/injections/icon';
 import type { FieldHandle, FieldIconHandle } from 'proton-pass-extension/app/content/types';
 
-import { workerErrored, workerLocked, workerLoggedOut, workerStale } from '@proton/pass/lib/worker';
-import type { WorkerStatus } from '@proton/pass/types';
+import { clientErrored, clientLocked, clientStale, clientUnauthorized } from '@proton/pass/lib/client';
+import type { AppStatus } from '@proton/pass/types';
 import { animatePositionChange } from '@proton/pass/utils/dom/position';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
@@ -29,10 +29,10 @@ export const createFieldIconHandle = ({ field }: CreateIconOptions): FieldIconHa
     const input = field.element as HTMLInputElement;
     const { icon, control } = createIcon(field);
 
-    const setStatus = (status: WorkerStatus) => {
+    const setStatus = (status: AppStatus) => {
         const iconUrl = (() => {
-            if (workerLocked(status)) return LOCKED_ICON_SRC;
-            if (or(workerLoggedOut, workerErrored, workerStale)(status)) return DISABLED_ICON_SRC;
+            if (clientLocked(status)) return LOCKED_ICON_SRC;
+            if (or(clientUnauthorized, clientErrored, clientStale)(status)) return DISABLED_ICON_SRC;
             return ACTIVE_ICON_SRC;
         })();
 
