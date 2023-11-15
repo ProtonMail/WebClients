@@ -1,7 +1,6 @@
 import { ReactNode, Ref } from 'react';
 
 import ElectronDraggeableHeaderWrapper from '@proton/components/components/electron/ElectronDraggeableHeaderWrapper';
-import clsx from '@proton/utils/clsx';
 
 interface Props {
     containerRef?: Ref<HTMLDivElement>;
@@ -28,9 +27,7 @@ const PrivateAppContainer = ({ header, sidebar, children, top, bottom, container
                         {sidebar}
                         <div className="flex flex-column flex-item-fluid flex-nowrap reset4print">
                             <div className="flex flex-item-fluid flex-nowrap">
-                                <div
-                                    className={clsx(['main ui-standard flex flex-column flex-nowrap flex-item-fluid'])}
-                                >
+                                <div className="main ui-standard flex flex-column flex-nowrap flex-item-fluid reset4print">
                                     {header}
                                     {children}
                                 </div>
