@@ -43,8 +43,8 @@ export const getExtraFieldOptions = (): Record<ExtraFieldType, ExtraFieldOption>
     },
     totp: {
         icon: 'lock',
-        label: c('Label').t`2FA secret (TOTP)`,
-        placeholder: c('Placeholder').t`Add 2FA secret`,
+        label: c('Label').t`2FA secret key (TOTP)`,
+        placeholder: c('Placeholder').t`Add 2FA secret key`,
     },
     hidden: {
         icon: 'eye-slash',

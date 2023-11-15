@@ -42,7 +42,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                     className="pass-password-generator--select border-none flex flex-item-fluid"
                     onValue={(type) => setPasswordOptions(type)}
                 >
-                    <Option title={c('Option').t`Memorable Password`} value="memorable" />
+                    <Option title={c('Option').t`Memorizable Password`} value="memorable" />
                     <Option title={c('Option').t`Random Password`} value="random" />
                 </SelectTwo>
             </div>
