@@ -60,4 +60,5 @@ export type FormTrackerFieldConfig = {
 export interface FormTracker {
     detach: () => void;
     reconciliate: () => void;
+    submit: () => void;
 }
