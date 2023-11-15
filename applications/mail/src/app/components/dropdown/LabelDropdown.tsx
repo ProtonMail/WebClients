@@ -119,7 +119,8 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     const [always, setAlways] = useState(false);
     const getElementsFromIDs = useGetElementsFromIDs();
     const applyLabels = useApplyLabels();
-    const { moveToFolder, moveScheduledModal, moveAllModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
+    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal } =
+        useMoveToFolder(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
 
     /*
@@ -409,6 +410,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                 </PrimaryButton>
             </div>
             {moveScheduledModal}
+            {moveSnoozedModal}
             {moveAllModal}
             {moveToSpamModal}
             {renderLabelModal && (

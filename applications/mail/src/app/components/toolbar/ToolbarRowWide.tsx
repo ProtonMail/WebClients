@@ -1,4 +1,4 @@
-import React, { useMemo, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -6,7 +6,9 @@ import { useElementBreakpoints, useFolders, useLabels } from '@proton/components
 import clsx from '@proton/utils/clsx';
 
 import { getLabelName } from '../../helpers/labels';
+import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
 import ListSettings from '../list/ListSettings';
+import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
 import LabelName from './LabelName';
 import LabelsAndFolders from './LabelsAndFolders';
 import MoreActions from './MoreActions';
@@ -54,9 +56,8 @@ const ToolbarRowWide = ({
 }: Props) => {
     const toolbarRef = useRef<HTMLDivElement>(null);
     const breakpoint = useElementBreakpoints(toolbarRef, BREAKPOINTS);
-    const localIsTiny = breakpoint === 'extratiny' || breakpoint === 'tiny';
-    const localIsExtraTiny = breakpoint === 'extratiny';
-    const localIsNarrow = breakpoint === 'extratiny' || breakpoint === 'tiny' || breakpoint === 'small';
+    const { localIsTiny, localIsExtraTiny, localIsNarrow } = getToolbarResponsiveSizes(breakpoint);
+    const localIsNarrowAndMedium = localIsNarrow || breakpoint === 'medium';
 
     const [labels] = useLabels();
     const [folders] = useFolders();
@@ -95,6 +96,8 @@ const ToolbarRowWide = ({
                         />
                     ) : null}
 
+                    {!localIsTiny ? <SnoozeToolbarDropdown selectedIDs={selectedIDs} labelID={labelID} /> : null}
+
                     <MoreDropdown
                         labelID={labelID}
                         elementIDs={elementIDs}
@@ -121,7 +124,7 @@ const ToolbarRowWide = ({
                         mailSettings={mailSettings}
                         isSearch={isSearch}
                         labelID={labelID}
-                        filterAsDropdown={localIsNarrow}
+                        filterAsDropdown={localIsNarrowAndMedium}
                     />
 
                     <PagingControls loading={loading} page={page} total={total} onPage={onPage} />
