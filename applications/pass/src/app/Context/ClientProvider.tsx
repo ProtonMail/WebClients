@@ -1,6 +1,7 @@
 import { type FC, createContext, useContext, useMemo, useState } from 'react';
 
-import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
+import { clientAuthorized } from '@proton/pass/lib/client';
+import { AppStatus, type Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
@@ -29,9 +30,7 @@ export const ClientProvider: FC = ({ children }) => {
                     setStatus: (status) =>
                         setState((prev) => {
                             logger.info(`[ClientContext] Status change : ${prev.status} -> ${status}`);
-                            const hasSession = authStore.hasSession();
-                            const unlocked = authStore.getLockStatus() !== SessionLockStatus.LOCKED;
-                            const loggedIn = hasSession && unlocked;
+                            const loggedIn = clientAuthorized(status);
                             const localID = authStore.getLocalID();
                             const UID = authStore.getUID();
 

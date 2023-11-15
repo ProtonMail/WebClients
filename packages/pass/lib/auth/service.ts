@@ -128,7 +128,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
                         }
 
                         if (event.status === 'locked') {
-                            config.onNotification?.(c('Warning').t`Your session was locked due to inactivity.`);
+                            config.onNotification?.(c('Warning').t`Your session was locked.`);
                             return authService.lock({ soft: true, broadcast: true });
                         }
 
