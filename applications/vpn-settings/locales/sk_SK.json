@@ -44,6 +44,9 @@
       "Authenticate": [
         "Overiť"
       ],
+      "Authenticating": [
+        "Overuje sa"
+      ],
       "Back": [
         "Späť"
       ],
@@ -740,10 +743,10 @@
     },
     "bf2023: header": {
       "Save with Black Friday deals on a high-speed Swiss VPN": [
-        "Ušetrite so zľavami Čierneho piatku na vysokorýchlostnú švajčiarsku sieť VPN"
+        "Ušetrite so zľavami Black Friday na vysokorýchlostnú švajčiarsku sieť VPN"
       ],
       "Select your Black Friday offer": [
-        "Vyberte si svoju čiernopiatkovú ponuku"
+        "Vyberte si ponuku Black Friday"
       ]
     },
     "bf2023: info": {
@@ -2332,13 +2335,13 @@
         "*Iba jedna bezplatná skúšobná verzia na používateľa."
       ],
       "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
-        "V predvolenom nastavení prideľujeme správcovskému účtu úložisko ${ formattedStorage }. Pridelené úložisko môžete spravovať tak, že sa môže neskôr rozdeliť medzi ďalších používateľov."
+        "V predvolenom nastavení prideľujeme správcovskému účtu ${ formattedStorage }. Pridelené úložisko môžete spravovať tak, že sa môže neskôr rozdeliť medzi ďalších používateľov."
       ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Vytvárajte a spravujte členov rodiny a priraďte im úložný priestor zdieľaný medzi ${ DRIVE_APP_NAME } a ${ MAIL_APP_NAME }"
       ],
       "If the user already has a ${ MAIL_APP_NAME } address, enter it here. Otherwise they need to create an account first.": [
-        "Ak už používateľ má adresu ${ MAIL_APP_NAME }, zadajte ju sem. V opačnom prípade si musia najprv vytvoriť účet."
+        "Ak používateľ už má adresu ${ MAIL_APP_NAME }, zadajte ju sem. V opačnom prípade si musí najprv vytvoriť účet."
       ],
       "The invitation will be cancelled and the user won't be able to join ${ organization.Name }.": [
         "Pozvánka bude zrušená a používateľ sa nebude môcť pripojiť k ${ organization.Name }."
@@ -2385,7 +2388,7 @@
         "${ member.Name } bol odstránený z ${ organization.Name }"
       ],
       "An error occurred, please try again": [
-        "Vyskytla sa chyba, skúste znova, prosím"
+        "Vyskytla sa chyba, skúste to znova, prosím"
       ],
       "Member updated": [
         "Člen aktualizovaný"
@@ -2476,18 +2479,18 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Pred zakázaním TOTP deaktivujte 2FA prostredníctvom bezpečnostného kľúča"
+        "Pred vypnutím TOTP deaktivujte 2FA prostredníctvom bezpečnostného kľúča"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Pri overovaní pomocou vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste znova."
       ],
       "Something went wrong registering your security key. Please try again.": [
-        "Pri registrácii vášho bezpečnostného kľúča sa vyskytla chyba. Prosím skúste to znova."
+        "Pri registrácii vášho bezpečnostného kľúča sa vyskytla chyba. Prosím, skúste to znova."
       ]
     },
     "fido2: Info": {
       "2FA via security key disabled": [
-        "2FA cez bezpečnostný kľúč deaktivované"
+        "2FA cez bezpečnostný kľúč deaktivovaná"
       ],
       "Add a name to identify your security key with.": [
         "Pridajte názov, pomocou ktorého identifikujete svoj bezpečnostný kľúč."
@@ -4025,7 +4028,7 @@
     },
     "Info when deleting payment method": {
       "To avoid any service interruption due to unpaid invoices, please make sure that you have at least 1 valid payment method saved at any point in time.": [
-        "Aby ste sa vyvarovali prerušeniu služieb z dôvodu neuhradených faktúr, prosím zaistite si, že máte aspoň 1 uloženú platobnú metódu."
+        "Aby ste sa vyhli prerušeniu služieb z dôvodu nezaplatených faktúr, uistite sa, že máte v každom okamihu uložený aspoň 1 platný spôsob platby."
       ]
     },
     "Info; access rights for shared calendar": {
@@ -5910,7 +5913,7 @@
     },
     "Restore administrator panel": {
       "Changing organization keys": [
-        "Zmena kľúča organizácie"
+        "Zmena kľúčov organizácie"
       ],
       "Changing organization password": [
         "Zmena hesla organizácie"
@@ -6156,12 +6159,12 @@
         "Keď bude obnovovanie hesla k dispozícii, budeme vás opäť kontaktovať."
       ],
       "You can check the status of your request at any time in the ${ accountAndPasswordSectionLink } of the settings.": [
-        "Stav svojej žiadosti môžete kedykoľvek skontrolovať v ${ accountAndPasswordSectionLink } v nastaveniach."
+        "Stav svojej žiadosti môžete kedykoľvek skontrolovať v nastaveniach v ${ accountAndPasswordSectionLink } ."
       ]
     },
     "session_recovery:initiation:link": {
       "account and password section": [
-        "sekcii Konto a heslo"
+        "sekcii Účet a heslo"
       ]
     },
     "session_recovery:initiation:notification": {
@@ -7546,7 +7549,7 @@
         "Člen"
       ],
       "Primary admin": [
-        "Hlavný Admin"
+        "Hlavný správca"
       ]
     },
     "Validation": {
@@ -7627,7 +7630,7 @@
         "30-mesačným"
       ],
       "Get ${ discount } off with a ${ billingCycle } subscription": [
-        "Získajte ${ discount } s ${ billingCycle } predplatným"
+        "Získajte ${ discount } zľavu s ${ billingCycle } predplatným"
       ],
       "monthly": [
         "mesačným"
