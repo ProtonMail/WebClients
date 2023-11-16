@@ -7,6 +7,13 @@ import {
     serialize,
 } from '../../lib/calendar/vcal';
 import { DAY, HOUR, MINUTE, SECOND, WEEK } from '../../lib/constants';
+import {
+    VcalErrorComponent,
+    VcalValarmComponent,
+    VcalVcalendarWithMaybeErrors,
+    VcalVeventComponent,
+    VcalVeventComponentWithMaybeErrors,
+} from '../../lib/interfaces/calendar';
 
 const vevent = `BEGIN:VEVENT
 DTSTAMP:20190719T130854Z
@@ -47,7 +54,6 @@ ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=NON-PARTICIPANT;RSVP=FALSE;CN=Miss Moneypen
 END:VEVENT`;
 
 const valarm = `BEGIN:VALARM
-UID:CF0E1C05-CD9A-43D5-AD24-6C631EA2E6A7
 TRIGGER:-PT15H
 ACTION:DISPLAY
 DESCRIPTION:asd
@@ -55,9 +61,11 @@ END:VALARM`;
 
 const valarmInVevent = `BEGIN:VEVENT
 UID:7E018059-2165-4170-B32F-6936E88E61E5
+DTSTAMP:20190719T110000Z
 DTSTART:20190719T120000Z
 DTEND:20190719T130000Z
 BEGIN:VALARM
+ACTION:DISPLAY
 TRIGGER:-PT15H
 END:VALARM
 END:VEVENT`;
@@ -321,13 +329,10 @@ END:VCALENDAR`);
     });
 
     it('should parse valarm', () => {
-        const result = parse(valarm);
+        const result = parse(valarm) as VcalValarmComponent;
 
         expect(result).toEqual({
             component: 'valarm',
-            uid: {
-                value: 'CF0E1C05-CD9A-43D5-AD24-6C631EA2E6A7',
-            },
             trigger: {
                 value: { weeks: 0, days: 0, hours: 15, minutes: 0, seconds: 0, isNegative: true },
             },
@@ -501,7 +506,7 @@ END:VCALENDAR`);
     });
 
     it('should parse all day vevent', () => {
-        const { dtstart } = parse(allDayVevent);
+        const { dtstart } = parse(allDayVevent) as VcalVeventComponent;
 
         expect(dtstart).toEqual({
             value: { year: 2019, month: 8, day: 12 },
@@ -510,7 +515,7 @@ END:VCALENDAR`);
     });
 
     it('should parse vevent with recurrence id', () => {
-        const { dtstart, 'recurrence-id': recurrenceId } = parse(veventWithRecurrenceId);
+        const { dtstart, 'recurrence-id': recurrenceId } = parse(veventWithRecurrenceId) as VcalVeventComponent;
 
         expect(recurrenceId).toEqual({
             value: { year: 2020, month: 3, day: 11, hours: 10, minutes: 0, seconds: 0, isUTC: false },
@@ -524,13 +529,14 @@ END:VCALENDAR`);
     });
 
     it('should parse valarm in vevent', () => {
-        const component = parse(valarmInVevent);
+        const component = parse(valarmInVevent) as VcalVeventComponent;
 
         expect(component).toEqual({
             component: 'vevent',
             components: [
                 {
                     component: 'valarm',
+                    action: { value: 'DISPLAY' },
                     trigger: {
                         value: { weeks: 0, days: 0, hours: 15, minutes: 0, seconds: 0, isNegative: true },
                     },
@@ -538,6 +544,9 @@ END:VCALENDAR`);
             ],
             uid: {
                 value: '7E018059-2165-4170-B32F-6936E88E61E5',
+            },
+            dtstamp: {
+                value: { year: 2019, month: 7, day: 19, hours: 11, minutes: 0, seconds: 0, isUTC: true },
             },
             dtstart: {
                 value: { year: 2019, month: 7, day: 19, hours: 12, minutes: 0, seconds: 0, isUTC: true },
@@ -948,7 +957,7 @@ END:VCALENDAR`);
         });
     });
 
-    const trimAll = (str) => str.replace(/\r?\n ?|\r/g, '');
+    const trimAll = (str: string) => str.replace(/\r?\n ?|\r/g, '');
 
     it('should round trip valarm in vevent', () => {
         const result = serialize(parse(valarmInVevent));
@@ -1037,7 +1046,8 @@ END:VEVENT`;
     });
 
     it('should filter out invalid vAlarm', () => {
-        expect(getVeventWithoutErrors(parseWithRecoveryAndMaybeErrors(veventWithInvalidVAlarm))).toEqual({
+        const parsed = parseWithRecoveryAndMaybeErrors(veventWithInvalidVAlarm) as VcalVeventComponentWithMaybeErrors;
+        expect(getVeventWithoutErrors(parsed)).toEqual({
             component: 'vevent',
             components: [],
             description: { value: '', parameters: { language: 'en-US' } },
@@ -1079,10 +1089,10 @@ DTSTAMP:20200405T143241Z
 DTSTART:20200309
 END:VEVENT
 END:VCALENDAR`;
-        const result = parseWithRecoveryAndMaybeErrors(ics, { retryDateTimes: false });
+        const result = parseWithRecoveryAndMaybeErrors(ics, { retryDateTimes: false }) as VcalVcalendarWithMaybeErrors;
 
         expect(result.component).toEqual('vcalendar');
-        expect(result.components[0].error).toMatch('invalid date-time value');
+        expect((result.components as VcalErrorComponent[])[0].error).toMatch('invalid date-time value');
     });
 
     it('should catch errors from badly formatted date-times (with recovery for those off)', () => {
@@ -1101,9 +1111,9 @@ DTSTAMP:2023-06-13T212500Z
 END:VEVENT
 END:VCALENDAR`;
 
-        const result = parseWithRecoveryAndMaybeErrors(ics, { retryDateTimes: false });
+        const result = parseWithRecoveryAndMaybeErrors(ics, { retryDateTimes: false }) as VcalVcalendarWithMaybeErrors;
 
         expect(result.component).toEqual('vcalendar');
-        expect(result.components[0].error).toMatch('invalid date-time value');
+        expect((result.components as VcalErrorComponent[])[0].error).toMatch('invalid date-time value');
     });
 });

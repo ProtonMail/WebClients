@@ -30,7 +30,11 @@ import {
     EventInvitationError,
 } from '@proton/shared/lib/calendar/icsSurgery/EventInvitationError';
 import { getIsVcalErrorComponent, getVcalendarHasNoErrorComponents } from '@proton/shared/lib/calendar/vcalHelper';
-import { VcalErrorComponent, VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
+import {
+    VcalErrorComponent,
+    VcalVcalendarWithMaybeErrors,
+    VisualCalendar,
+} from '@proton/shared/lib/interfaces/calendar';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { getAttachments, isBounced } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
@@ -48,8 +52,8 @@ import {
 import { getOrCreatePersonalCalendarsAndSettings } from '../../../helpers/calendar/inviteApi';
 import { isNetworkError } from '../../../helpers/errors';
 import { getMessageHasData } from '../../../helpers/message/messages';
-import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
+import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
 import { updateAttachment } from '../../../logic/attachments/attachmentsActions';
 import { MessageErrors, MessageStateWithData } from '../../../logic/messages/messagesTypes';
 import { errors as errorsAction } from '../../../logic/messages/read/messagesReadActions';
@@ -179,7 +183,9 @@ const ExtraEvents = ({ message }: Props) => {
                                         return new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.DECRYPTION_ERROR);
                                     }
                                     const icsBinaryString = arrayToBinaryString(download.data);
-                                    const parsedVcalendar = parseVcalendar(decodeUtf8(icsBinaryString));
+                                    const parsedVcalendar = parseVcalendar(
+                                        decodeUtf8(icsBinaryString)
+                                    ) as VcalVcalendarWithMaybeErrors;
                                     if (!parsedVcalendar) {
                                         return;
                                     }
