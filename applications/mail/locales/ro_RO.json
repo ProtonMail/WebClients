@@ -708,6 +708,9 @@
       "Next page": [
         "Pagina următoare"
       ],
+      "Next week": [
+        "Săptămâna viitoare"
+      ],
       "No": [
         "Nu"
       ],
@@ -5448,9 +5451,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
       ],
-      "Include Spam/Trash in your search results.": [
-        "Includeți în căutare și mesajele nedorite și din gunoi."
-      ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
       ],
@@ -5863,6 +5863,9 @@
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Expeditorul original al acestui mesaj nu mai este valid. Mesajul va fi trimis de la adresa implicită ${ defaultEmail }."
+      ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Proprietarul acestei adrese a dezactivat criptarea în ambele părți. Pentru a putea trimite mesaje criptate la această adresă, proprietarul trebuie să reactiveze criptarea în ambele părți."
       ],
       "The sender has requested a read receipt.": [
         "Expeditorul a solicitat o confirmare de primire a citirii."
@@ -7335,17 +7338,8 @@
       "Archive": [
         "Arhivă"
       ],
-      "Drafts": [
-        "Ciorne"
-      ],
       "Inbox": [
         "Primite"
-      ],
-      "Scheduled": [
-        "Programate"
-      ],
-      "Sent": [
-        "Trimise"
       ],
       "Spam": [
         "Nedorite"
@@ -8051,6 +8045,11 @@
     "Send email with changed preferences": {
       "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
         "Contactele pentru următoarele adrese au fost șterse, iar preferințele corespunzătoare de criptare au fost actualizate în consecință:"
+      ]
+    },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "Persoanele de contact pentru următoarele adrese au dezactivat criptarea în ambele părți în contul lor, astfel încât preferințele de criptare corespunzătoare au fost actualizate în consecință:"
       ]
     },
     "Send email with errors": {
@@ -9496,6 +9495,9 @@
       ],
       "Send with changed preferences?": [
         "Trimitere cu preferințele schimbate?"
+      ],
+      "Send with encryption disabled?": [
+        "Se trimite cu criptare dezactivată?"
       ],
       "Send without expiration?": [
         "Trimitere fără expirare?"
