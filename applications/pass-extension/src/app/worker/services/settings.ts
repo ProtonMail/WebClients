@@ -3,9 +3,11 @@ import { withContext } from 'proton-pass-extension/app/worker/context';
 import store from 'proton-pass-extension/app/worker/store';
 
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
+import { updatePauseListItem } from '@proton/pass/store/actions';
 import { INITIAL_SETTINGS, type ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import { selectProxiedSettings } from '@proton/pass/store/selectors';
 import { WorkerMessageType } from '@proton/pass/types';
+import { withPayload } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
@@ -47,5 +49,13 @@ export const createSettingsService = () => {
         return service.storage.local.set({ settings: JSON.stringify(initialSettings) });
     });
 
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.PAUSE_WEBSITE,
+        withPayload(async ({ criteria, hostname }) => {
+            store.dispatch(updatePauseListItem({ criteria, hostname }));
+            await sync(selectProxiedSettings(store.getState()));
+            return true;
+        })
+    );
     return { onInstall, sync, resolve };
 };

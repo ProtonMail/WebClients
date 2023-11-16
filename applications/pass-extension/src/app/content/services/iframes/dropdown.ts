@@ -71,23 +71,25 @@ export const createDropdown = (): InjectedDropdown => {
     const getPayloadForAction = withContext<(action: DropdownAction) => Promise<DropdownActions>>(
         async (ctx, action) => {
             const { loggedIn } = ctx.getState();
+            const { domain, subdomain, displayName } = ctx.getExtensionContext().url;
+            const hostname = subdomain ?? domain ?? '';
 
             switch (action) {
                 case DropdownAction.AUTOFILL: {
-                    if (!loggedIn) return { action, items: [], needsUpgrade: false };
+                    if (!loggedIn) return { action, hostname: '', items: [], needsUpgrade: false };
                     const { items, needsUpgrade } = ctx.service.autofill.getState() ?? {};
-                    return { action, items: items ?? [], needsUpgrade: Boolean(needsUpgrade) };
+                    return { action, hostname, items: items ?? [], needsUpgrade: Boolean(needsUpgrade) };
                 }
                 case DropdownAction.AUTOSUGGEST_ALIAS: {
-                    const { domain, subdomain, displayName } = ctx.getExtensionContext().url;
-                    return { action, domain: subdomain ?? domain!, prefix: deriveAliasPrefix(displayName!) };
+                    return { action, hostname, prefix: deriveAliasPrefix(displayName!) };
                 }
                 case DropdownAction.AUTOSUGGEST_PASSWORD: {
                     const options = await sendMessage.on(
                         contentScriptMessage({ type: WorkerMessageType.AUTOFILL_PASSWORD_OPTIONS }),
                         (res) => (res.type === 'success' ? res.options : DEFAULT_RANDOM_PW_OPTIONS)
                     );
-                    return { action, options };
+
+                    return { action, options, hostname };
                 }
             }
         }

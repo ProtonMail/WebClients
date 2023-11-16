@@ -1,8 +1,10 @@
 import { type VFC, useCallback, useEffect, useState } from 'react';
 
+import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/common/PauseListDropdown';
 import { useIFrameContext } from 'proton-pass-extension/app/content/injections/apps/context/IFrameContextProvider';
+import { DropdownHeader } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownHeader';
 import { DropdownItem } from 'proton-pass-extension/app/content/injections/apps/dropdown/components/DropdownItem';
-import type { IFrameMessage } from 'proton-pass-extension/app/content/types';
+import type { IFrameCloseOptions, IFrameMessage } from 'proton-pass-extension/app/content/types';
 import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
@@ -21,8 +23,10 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
 type Props = {
+    hostname: string;
     prefix: string;
-    domain: string;
+    visible?: boolean;
+    onClose?: (options?: IFrameCloseOptions) => void;
     onMessage?: (message: IFrameMessage) => void;
 };
 
@@ -31,7 +35,7 @@ const isValidAliasOptions = (options: AliasState['aliasOptions']): options is Al
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
-export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onMessage }) => {
+export const AliasAutoSuggest: VFC<Props> = ({ hostname, prefix, visible, onClose, onMessage }) => {
     const ensureMounted = useEnsureMounted();
     const navigateToUpgrade = useNavigateToUpgrade();
     const { userEmail } = useIFrameContext();
@@ -72,7 +76,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onMessage }) => {
                     contentScriptMessage({
                         type: WorkerMessageType.ALIAS_CREATE,
                         payload: {
-                            url: domain,
+                            url: hostname,
                             alias: {
                                 prefix,
                                 mailboxes: [mailboxes[0]],
@@ -104,7 +108,7 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onMessage }) => {
                 ensureMounted(setLoadingText)(null);
             }
         },
-        [domain]
+        [hostname]
     );
 
     useEffect(() => {
@@ -119,6 +123,19 @@ export const AliasAutoSuggest: VFC<Props> = ({ prefix, domain, onMessage }) => {
 
     return (
         <>
+            <DropdownHeader
+                title={c('Title').t`Email`}
+                extra={
+                    <PauseListDropdown
+                        criteria="Autosuggest"
+                        dense
+                        hostname={hostname}
+                        label={c('Action').t`Do not suggest on this website`}
+                        onClose={onClose}
+                        visible={visible}
+                    />
+                }
+            />
             <DropdownItem
                 title={c('Title').t`Use my email`}
                 disabled={!userEmail}
