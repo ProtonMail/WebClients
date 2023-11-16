@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { EasySwitchOauthImportButton } from '@proton/activation';
 import {
-    EASY_SWITCH_SOURCE,
     EasySwitchFeatureFlag,
     ImportProvider,
     ImportType,
+    NEW_EASY_SWITCH_SOURCES,
 } from '@proton/activation/src/interface';
 
 import { Loader, PrimaryButton } from '../../../components';
@@ -15,11 +15,11 @@ import { useFlag } from '../../unleash';
 
 interface Props {
     onImport: () => void;
-    easySwitchSource: EASY_SWITCH_SOURCE;
+    source: NEW_EASY_SWITCH_SOURCES;
     onClose?: () => void;
 }
 
-const ImportCsvContactButton = ({ easySwitchSource, onImport, onClose }: Props) => {
+const ImportCsvContactButton = ({ source, onImport, onClose }: Props) => {
     const [user, loadingUser] = useUser();
     const easySwitchFeature = useFeature<EasySwitchFeatureFlag>(FeatureCode.EasySwitch);
     const isImporterInMaintenance = useFlag('MaintenanceImporter');
@@ -38,7 +38,7 @@ const ImportCsvContactButton = ({ easySwitchSource, onImport, onClose }: Props) 
                         className="mr-4 mb-2 w-full"
                         defaultCheckedTypes={[ImportType.CONTACTS]}
                         displayOn="GoogleContacts"
-                        source={easySwitchSource}
+                        source={source}
                         onClick={onClose}
                         provider={ImportProvider.GOOGLE}
                     />
@@ -46,7 +46,7 @@ const ImportCsvContactButton = ({ easySwitchSource, onImport, onClose }: Props) 
                         className="mr-4 mb-2 w-full"
                         defaultCheckedTypes={[ImportType.CONTACTS]}
                         displayOn="OutlookContacts"
-                        source={easySwitchSource}
+                        source={source}
                         onClick={onClose}
                         provider={ImportProvider.OUTLOOK}
                     />

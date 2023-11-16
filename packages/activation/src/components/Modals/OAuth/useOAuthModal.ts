@@ -2,11 +2,12 @@ import { c } from 'ttag';
 
 import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import { EASY_SWITCH_SOURCE, OAuthProps } from '@proton/activation/src/interface';
+import { NEW_EASY_SWITCH_SOURCES, OAuthProps } from '@proton/activation/src/interface';
 import { createImporterThunk } from '@proton/activation/src/logic/draft/oauthDraft/createImporter.action';
 import { changeOAuthStep } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import {
     selectOauthDraftProvider,
+    selectOauthDraftSource,
     selectOauthImportStateScopes,
 } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.selector';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
@@ -25,6 +26,7 @@ const useOAuthModal = () => {
     const { defaultAddress } = useAvailableAddresses();
 
     const dispatch = useEasySwitchDispatch();
+    const storeSource = useEasySwitchSelector(selectOauthDraftSource);
 
     const scopes = useEasySwitchSelector(selectOauthImportStateScopes);
     const provider = useEasySwitchSelector(selectOauthDraftProvider);
@@ -51,7 +53,7 @@ const useOAuthModal = () => {
             provider,
             scope: finalScopes,
             callback: async (oAuthProps: OAuthProps) => {
-                const source = EASY_SWITCH_SOURCE.EASY_SWITCH_SETTINGS;
+                const source = storeSource ?? NEW_EASY_SWITCH_SOURCES.UNKNOWN;
                 dispatch(changeOAuthStep('loading-importer'));
                 await dispatch(createImporterThunk({ oAuthProps, source, user, defaultAddress }));
             },
