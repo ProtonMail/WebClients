@@ -679,6 +679,9 @@
       "Next page": [
         "下一页"
       ],
+      "Next week": [
+        "下一周"
+      ],
       "No": [
         "否"
       ],
@@ -5071,9 +5074,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "将您的数据从${ importedEmailAddress } 导入到${ toEmail }"
       ],
-      "Include Spam/Trash in your search results.": [
-        "在搜索结果中显示垃圾邮件和废件箱中的邮件。"
-      ],
       "Inherited from parent folder": [
         "与上层文件夹一致"
       ],
@@ -6898,17 +6898,8 @@
       "Archive": [
         "存档"
       ],
-      "Drafts": [
-        "草稿"
-      ],
       "Inbox": [
         "收件箱"
-      ],
-      "Scheduled": [
-        "已加入日程"
-      ],
-      "Sent": [
-        "已发送"
       ],
       "Spam": [
         "垃圾邮件"
