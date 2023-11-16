@@ -2,7 +2,7 @@ import { ReactNode, Ref, forwardRef, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import { ModalStateProps, useModalTwo } from '@proton/components/components';
+import { ModalStateProps } from '@proton/components/components';
 import { Portal } from '@proton/components/components/portal';
 import { FilePreview } from '@proton/components/containers';
 
@@ -73,11 +73,13 @@ const PortalPreview = (
         return null;
     }
 
+    const showCachedThumbnail = revisionId === link?.activeRevision?.id;
+
     return (
         <Portal>
             <div className={className}>
                 <FilePreview
-                    imgThumbnailUrl={link?.cachedThumbnailUrl}
+                    imgThumbnailUrl={showCachedThumbnail ? link?.cachedThumbnailUrl : undefined}
                     isMetaLoading={isLinkLoading}
                     isLoading={isContentLoading}
                     error={error ? error.message || error.toString?.() || c('Info').t`Unknown error` : undefined}
@@ -105,7 +107,3 @@ const PortalPreview = (
 };
 
 export default forwardRef(PortalPreview);
-
-export const usePortalPreview = () => {
-    return useModalTwo<Props, void>(PortalPreview, false);
-};
