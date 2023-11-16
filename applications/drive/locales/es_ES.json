@@ -508,6 +508,9 @@
       "Report a problem": [
         "Notificar un problema"
       ],
+      "Report an issue": [
+        "Notificar un problema"
+      ],
       "Request a feature": [
         "Solicitar una función"
       ],
@@ -630,6 +633,9 @@
       ],
       "Skip verification": [
         "Omitir verificación"
+      ],
+      "Start": [
+        "Iniciar"
       ],
       "Start import": [
         "Iniciar importación"
@@ -2558,6 +2564,9 @@
       "Access denied": [
         "Acceso denegado"
       ],
+      "App currently unavailable": [
+        "La aplicación no está disponible actualmente."
+      ],
       "Brace yourself till we get the error fixed.": [
         "Espera un momento hasta que se arregle el error."
       ],
@@ -2573,11 +2582,17 @@
       "Oops, something went wrong": [
         "Se ha producido un error."
       ],
+      "Open in browser": [
+        "Abrir en el navegador"
+      ],
       "Please refresh the page or try again later.": [
         "Vuelve a cargar la página o inténtalo de nuevo más tarde."
       ],
       "Something went wrong": [
         "Se ha producido un error."
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Para utilizar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, cambie a la versión web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
@@ -2648,6 +2663,12 @@
     "Event title": {
       "(no title)": [
         "(sin título)"
+      ]
+    },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } error",
+        "${ countOfFailedLinks } errores"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -3353,6 +3374,9 @@
       "An active recovery file": [
         "Un archivo de recuperación activo"
       ],
+      "An issue occurred during the restore process.": [
+        "Se ha producido un error durante el proceso de restauración."
+      ],
       "and": [
         "y"
       ],
@@ -3871,6 +3895,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "El formato PGP/MIME automáticamente envía el mensaje utilizando el modo de composición actual."
       ],
+      "Photos have been successfully recovered.": [
+        "Las fotos han sido recuperadas."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Introduce la contraseña para descifrar y visualizar el contenido."
       ],
@@ -3962,8 +3989,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "Restauración en proceso. Esto puede tardar algunos segundos."
       ],
+      "Restore Photos": [
+        "Restaurar las fotos"
+      ],
       "Restored files ${ formattedDate }": [
         "Archivos restaurados ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Restaurando Fotos... Deja la pestaña abierta."
       ],
       "Search cannot be enabled in this browser": [
         "No se puede activar la búsqueda en este navegador."
@@ -4081,6 +4114,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador no admite la previsualización de documentos PDF. Descarga el archivo."
+      ],
+      "This file is too large to preview": [
+        "Este archivo es demasiado grande para previsualizarlo."
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Es posible que este archivo se haya eliminado, movido o no esté disponible. Ponte en contacto con el propietario del archivo."
@@ -4776,9 +4812,6 @@
       "Replace existing folder": [
         "Reemplazar la carpeta existente"
       ],
-      "Report": [
-        "Notificar"
-      ],
       "Reveal password": [
         "Mostrar contraseña"
       ],
@@ -5059,6 +5092,9 @@
       "Custom email domains": [
         "Dominios de correo personalizados"
       ],
+      "Custom snooze time": [
+        "Tiempo de pausa personalizado"
+      ],
       "Hide-my-email aliases": [
         "Alias de Hide-my-email"
       ],
@@ -5084,6 +5120,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtén alias ilimitados con el servicio SimpleLogin de ${ BRAND_NAME }."
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Pausa los mensajes y recibe un recordatorio cuando quieras."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."
@@ -5969,6 +6008,10 @@
         "${ countMergeableContacts } contacto parece idéntico.",
         "${ countMergeableContacts } contactos parecen idénticos."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "Queda ${ countOfUnrecoveredLinksLeft }",
+        "Quedan ${ countOfUnrecoveredLinksLeft }"
+      ],
       "Address copied to clipboard": [
         "Dirección copiada al portapapeles"
       ],
@@ -6339,14 +6382,8 @@
       "File recovery process": [
         "Proceso de recuperación de archivos"
       ],
-      "Files details": [
-        "Detalles de los archivos"
-      ],
       "Folder details": [
         "Detalles de la carpeta"
-      ],
-      "Folders details": [
-        "Detalles de carpetas"
       ],
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } resultado encontrado",
@@ -6418,12 +6455,6 @@
       ],
       "Notes": [
         "Notas"
-      ],
-      "Number of files": [
-        "Número de archivos"
-      ],
-      "Number of folders": [
-        "Número de carpetas"
       ],
       "Number of items": [
         "Número de elementos"

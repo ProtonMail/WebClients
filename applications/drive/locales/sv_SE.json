@@ -508,6 +508,9 @@
       "Report a problem": [
         "Rapportera ett problem"
       ],
+      "Report an issue": [
+        "Rapportera ett problem"
+      ],
       "Request a feature": [
         "Begär en funktion"
       ],
@@ -630,6 +633,9 @@
       ],
       "Skip verification": [
         "Hoppa över verifiering"
+      ],
+      "Start": [
+        "Starta"
       ],
       "Start import": [
         "Starta import"
@@ -2558,6 +2564,9 @@
       "Access denied": [
         "Åtkomst nekad"
       ],
+      "App currently unavailable": [
+        "App är för närvarande inte tillgänglig"
+      ],
       "Brace yourself till we get the error fixed.": [
         "Ha tålamod medans vi åtgärdar felet."
       ],
@@ -2573,11 +2582,17 @@
       "Oops, something went wrong": [
         "Hoppsan, något gick fel"
       ],
+      "Open in browser": [
+        "Öppna i webbläsare"
+      ],
       "Please refresh the page or try again later.": [
         "Uppdatera sidan eller försök igen senare."
       ],
       "Something went wrong": [
         "Något gick fel"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Byt till webbversionen för att använda ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din Internetanslutning."
@@ -2648,6 +2663,12 @@
     "Event title": {
       "(no title)": [
         "(ingen rubrik)"
+      ]
+    },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } misslyckades",
+        "${ countOfFailedLinks } misslyckades"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -3353,6 +3374,9 @@
       "An active recovery file": [
         "En aktiv återställningsfil"
       ],
+      "An issue occurred during the restore process.": [
+        "Ett problem uppstod under återställningsprocessen."
+      ],
       "and": [
         "och"
       ],
@@ -3871,6 +3895,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME skickar automatiskt meddelandet med det aktuella kompositörsläget."
       ],
+      "Photos have been successfully recovered.": [
+        "Foton har återställts."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Ange lösenordet för att dekryptera och visa innehåll."
       ],
@@ -3962,8 +3989,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "Återställning pågår. Detta kan ta några sekunder."
       ],
+      "Restore Photos": [
+        "Återställ foton"
+      ],
       "Restored files ${ formattedDate }": [
         "Återställde filer ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Återställer foton... Håll fliken öppen"
       ],
       "Search cannot be enabled in this browser": [
         "Sökning kan inte aktiveras i denna webbläsare"
@@ -4081,6 +4114,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denna webbläsare stöder inte förhandsgranskning av PDF-dokument. Ladda ner filen."
+      ],
+      "This file is too large to preview": [
+        "Denna fil är för stor för att förhandsgranska"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Denna fil kan ha tagits bort, flyttats eller gjorts otillgänglig. Försök att kontakta filägaren."
@@ -4776,9 +4812,6 @@
       "Replace existing folder": [
         "Ersätt befintlig mapp"
       ],
-      "Report": [
-        "Rapportera"
-      ],
       "Reveal password": [
         "Visa lösenord"
       ],
@@ -5058,6 +5091,9 @@
       ],
       "Custom email domains": [
         "Anpassade e-postdomäner"
+      ],
+      "Custom snooze time": [
+        "Anpassad tid för snooza"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-alias"
@@ -5969,6 +6005,10 @@
         "${ countMergeableContacts } kontakt ser identisk ut.",
         "${ countMergeableContacts } kontakter ser identiska ut."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } kvar",
+        "${ countOfUnrecoveredLinksLeft } kvar"
+      ],
       "Address copied to clipboard": [
         "Adress kopierad till urklipp"
       ],
@@ -6339,13 +6379,7 @@
       "File recovery process": [
         "Filåterställningsprocess"
       ],
-      "Files details": [
-        "Fildetaljer"
-      ],
       "Folder details": [
-        "Mappdetaljer"
-      ],
-      "Folders details": [
         "Mappdetaljer"
       ],
       "Found ${ searchView.numberOfResults } result": [
@@ -6418,12 +6452,6 @@
       ],
       "Notes": [
         "Anteckningar"
-      ],
-      "Number of files": [
-        "Antal filer"
-      ],
-      "Number of folders": [
-        "Antal mappar"
       ],
       "Number of items": [
         "Antal objekt"

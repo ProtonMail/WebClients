@@ -508,6 +508,9 @@
       "Report a problem": [
         "Sorun bildirin"
       ],
+      "Report an issue": [
+        "Bir sorun bildirin"
+      ],
       "Request a feature": [
         "Bir özellik istiyorum"
       ],
@@ -630,6 +633,9 @@
       ],
       "Skip verification": [
         "Doğrulamayı atla"
+      ],
+      "Start": [
+        "Başlangıç"
       ],
       "Start import": [
         "İçe aktarmayı başlat"
@@ -2650,6 +2656,12 @@
         "(başlıksız)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } başarısız oldu",
+        "${ countOfFailedLinks } başarısız oldu"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3TB toplam depolama alanı"
@@ -3353,6 +3365,9 @@
       "An active recovery file": [
         "Etkn bir kurtarma dosyası"
       ],
+      "An issue occurred during the restore process.": [
+        "Geri yükleme sırasında bir sorun çıktı."
+      ],
       "and": [
         "ve"
       ],
@@ -3871,6 +3886,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME geçerli oluşturucu kipinde iletiyi otomatik olarak gönderir."
       ],
+      "Photos have been successfully recovered.": [
+        "Fotoğraflar geri yüklendi."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Lütfen şifreyi çözmek ve içeriği görüntülemek için parolayı yazın."
       ],
@@ -3962,8 +3980,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "Geri yükleniyor. Bu işlem bir kaç saniye sürebilir."
       ],
+      "Restore Photos": [
+        "Fotoğrafları geri yükle"
+      ],
       "Restored files ${ formattedDate }": [
         "${ formattedDate } tarihli dosyalar geri yüklendi"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Fotoğraflar geri yükleniyor... Lütfen sekmeyi açık tutun"
       ],
       "Search cannot be enabled in this browser": [
         "Bu tarayıcıda arama özelliği açılamaz"
@@ -4064,6 +4088,9 @@
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Şu ögeler üzerinde oynanmış olabilir: ${ items }. Yalnızca güveniyorsanız açın."
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Bu adresin sahibi uçtan uca şifrelemeyi kapatmış. Bu adrese şifrelenmiş e-postalar gönderebilmek için adres sahibi uçtan uca şifrelemeyi yeniden açmalıdır."
+      ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Hâlâ aktarılması gereken dosyalar var. Aktarma yöneticisinin kapatılması tüm işlemleri sonlandıracaktır."
       ],
@@ -4074,7 +4101,7 @@
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Bu adres kullanımdan kaldırılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
+        "Bu adres kullanım dışı bırakılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Bu tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
@@ -4095,10 +4122,10 @@
         "Bu bağlantı eski Drive sürümüyle oluşturulmuş ve düzenlenemiyor. Bu bağlantıyı silin ve ayarları değiştirmek için yeni bir tane oluşturun."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your file. To reshare the file, you will need a new link.": [
-        "Bu bağlantı kalıcı olarak kullanımdan kaldırılmış. Hiç kimse bu bağlantıyı kullanarak dosyanıza erişemeyecek. Dosyayı yeniden paylaşmak için yeni bir bağlantı oluşturmanız gerekecek."
+        "Bu bağlantı kalıcı olarak kullanım dışı bırakılmış. Hiç kimse bu bağlantıyı kullanarak dosyanıza erişemeyecek. Dosyayı yeniden paylaşmak için yeni bir bağlantı oluşturmanız gerekecek."
       ],
       "This link will be permanently disabled. No one with this link will be able to access your folder. To reshare the folder, you will need a new link.": [
-        "Bu bağlantı kalıcı olarak kullanımdan kaldırılacak. Hiç kimse bu bağlantıyı kullanarak klasörünüze erişemeyecek. Klasörü yeniden paylaşmak için yeni bir bağlantı oluşturmanız gerekecek."
+        "Bu bağlantı kalıcı olarak kullanım dışı bırakılacak. Hiç kimse bu bağlantıyı kullanarak klasörünüze erişemeyecek. Klasörü yeniden paylaşmak için yeni bir bağlantı oluşturmanız gerekecek."
       ],
       "This month": [
         "Bu ay"
@@ -4772,9 +4799,6 @@
       ],
       "Replace existing folder": [
         "Var olan klasör değiştirilsin"
-      ],
-      "Report": [
-        "Bildir"
       ],
       "Reveal password": [
         "Parolayı göster"
@@ -5966,6 +5990,10 @@
         "${ countMergeableContacts } kişi aynı görünüyor.",
         "${ countMergeableContacts } kişi aynı görünüyor."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } kaldı",
+        "${ countOfUnrecoveredLinksLeft } kaldı"
+      ],
       "Address copied to clipboard": [
         "Adres panoya kopyalandı"
       ],
@@ -6336,14 +6364,8 @@
       "File recovery process": [
         "Dosya kurtarma işlemi sürüyor"
       ],
-      "Files details": [
-        "Dosya bilgileri"
-      ],
       "Folder details": [
         "Klasör bilgileri"
-      ],
-      "Folders details": [
-        "Klasörlerin bilgileri"
       ],
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } sonuç bulundu",
@@ -6415,12 +6437,6 @@
       ],
       "Notes": [
         "Notlar"
-      ],
-      "Number of files": [
-        "Dosya sayısı"
-      ],
-      "Number of folders": [
-        "Klasör sayısı"
       ],
       "Number of items": [
         "Öge sayısı"

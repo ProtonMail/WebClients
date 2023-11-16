@@ -631,6 +631,9 @@
       "Skip verification": [
         "Omet la verificació"
       ],
+      "Start": [
+        "Inici"
+      ],
       "Start import": [
         "Comença la importació"
       ],
@@ -2629,6 +2632,12 @@
         "(sense títol)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } error",
+        "${ countOfFailedLinks } errors"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         " 3 TB d'emmagatzematge total"
@@ -3332,6 +3341,9 @@
       "An active recovery file": [
         "Un fitxer de recuperació actiu"
       ],
+      "An issue occurred during the restore process.": [
+        "S'ha produït un error durant el procés de restauració."
+      ],
       "and": [
         "i"
       ],
@@ -3850,6 +3862,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME envia automàticament el missatge utilitzant el mode d'editor actual."
       ],
+      "Photos have been successfully recovered.": [
+        "Les fotos s'han recuperat."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Introduïu la contrasenya per a desxifrar i veure el contingut."
       ],
@@ -3935,8 +3950,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "La restauració està en curs. Això pot trigar uns segons."
       ],
+      "Restore Photos": [
+        "Restaura les fotos"
+      ],
       "Restored files ${ formattedDate }": [
         "Fitxers restaurats ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "S'estan restaurant les fotos... Manteniu la pestanya oberta."
       ],
       "Search cannot be enabled in this browser": [
         "La cerca no es pot activar en aquest navegador"
@@ -4745,9 +4766,6 @@
       ],
       "Replace existing folder": [
         "Substitueix la carpeta existent"
-      ],
-      "Report": [
-        "Informa"
       ],
       "Reveal password": [
         "Mostra la contrasenya"
@@ -5939,6 +5957,10 @@
         "${ countMergeableContacts } contacte sembla idèntic.",
         "${ countMergeableContacts } contactes semblen idèntics."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "Queda ${ countOfUnrecoveredLinksLeft }",
+        "Quedan ${ countOfUnrecoveredLinksLeft }"
+      ],
       "Address copied to clipboard": [
         "Adreça copiada al porta-retalls"
       ],
@@ -6309,14 +6331,8 @@
       "File recovery process": [
         "Procés de recuperació de fitxers"
       ],
-      "Files details": [
-        "Detalls dels fitxers"
-      ],
       "Folder details": [
         "Detalls de la carpeta"
-      ],
-      "Folders details": [
-        "Característiques de les carpetes"
       ],
       "Found ${ searchView.numberOfResults } result": [
         "Trobat ${ searchView.numberOfResults } resultat",
@@ -6388,12 +6404,6 @@
       ],
       "Notes": [
         "Notes"
-      ],
-      "Number of files": [
-        "Nombre de fitxers"
-      ],
-      "Number of folders": [
-        "Nombre de carpetes"
       ],
       "Number of items": [
         "Nombre d'elements"

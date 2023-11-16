@@ -508,6 +508,9 @@
       "Report a problem": [
         "Reportar un problema"
       ],
+      "Report an issue": [
+        "Notificar un problema"
+      ],
       "Request a feature": [
         "Solicitar una característica"
       ],
@@ -2561,6 +2564,9 @@
       "Access denied": [
         "Acceso denegado"
       ],
+      "App currently unavailable": [
+        "La app no está disponible actualmente."
+      ],
       "Brace yourself till we get the error fixed.": [
         "Espere un tiempo hasta que arreglemos el error."
       ],
@@ -2576,11 +2582,17 @@
       "Oops, something went wrong": [
         "Hubo un problema"
       ],
+      "Open in browser": [
+        "Abrir en el navegador"
+      ],
       "Please refresh the page or try again later.": [
         "Actualice la página o intente nuevamente."
       ],
       "Something went wrong": [
         "Hubo un problema"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Para usar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, cambie a la versión web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No pudimos cargar esta página. Actualice la página o revise su conexión a internet."
@@ -3881,7 +3893,7 @@
         "PGP/Inline solo es compatible con el formato de Texto Plano."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
-        "PGP/MIME automáticamente envía el mensaje usando el modo de compositor actual."
+        "PGP/MIME automáticamente envía el mensaje usando el modo de editor actual."
       ],
       "Photos have been successfully recovered.": [
         "Se han recuperado las imágenes con éxito."
@@ -4102,6 +4114,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador no admite la previsualización de documentos PDF. Descargue el archivo."
+      ],
+      "This file is too large to preview": [
+        "Este archivo es demasiado grande para previsualizarlo."
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Es posible que este archivo se haya eliminado, movido o dejado de estar disponible. Póngase en contacto con el propietario del archivo."
@@ -4797,9 +4812,6 @@
       "Replace existing folder": [
         "Reemplazar carpeta existente"
       ],
-      "Report": [
-        "Notificar"
-      ],
       "Reveal password": [
         "Mostrar contraseña"
       ],
@@ -5080,6 +5092,9 @@
       "Custom email domains": [
         "Dominios de correo electrónico personalizados"
       ],
+      "Custom snooze time": [
+        "Tiempo de pausa personalizado"
+      ],
       "Hide-my-email aliases": [
         "Alias de Hide-my-email"
       ],
@@ -5105,6 +5120,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtenga aliases ilimitados con SimpleLogin de ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Pause los mensajes y reciba un recordatorio cuando quiera."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }"
@@ -6364,14 +6382,8 @@
       "File recovery process": [
         "Proceso de recuperación de archivos"
       ],
-      "Files details": [
-        "Detalles de archivos"
-      ],
       "Folder details": [
         "Detalles de la carpeta"
-      ],
-      "Folders details": [
-        "Detalles de carpetas"
       ],
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } resultado encontrado",
@@ -6443,12 +6455,6 @@
       ],
       "Notes": [
         "Notas"
-      ],
-      "Number of files": [
-        "Número de archivos"
-      ],
-      "Number of folders": [
-        "Número de carpetas"
       ],
       "Number of items": [
         "Número de elementos"
@@ -6662,7 +6668,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automático indica que el formato en el compositor se utiliza para enviar a este usuario. Texto Plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
+        "Automático indica que el formato en el editor se utiliza para enviar a este usuario. Texto Plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambie automáticamente entre sus temas preferidos para el día y la noche en sincronía con los modos de día y noche de su sistema"
