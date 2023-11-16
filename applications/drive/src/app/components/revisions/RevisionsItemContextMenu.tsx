@@ -1,6 +1,6 @@
 import { ContextSeparator } from '@proton/components/components';
-import { DriveFileRevision } from '@proton/shared/lib/interfaces/drive/file';
 
+import type { DriveFileRevision } from '../../store';
 import { ContextMenuProps } from '../FileBrowser';
 import { ItemContextMenu } from '../sections/ContextMenu/ItemContextMenu';
 import {

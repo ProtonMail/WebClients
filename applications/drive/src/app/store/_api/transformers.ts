@@ -2,6 +2,7 @@ import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { isMainShare } from '@proton/shared/lib/drive/utils/share';
 import type { DevicePayload } from '@proton/shared/lib/interfaces/drive/device';
 import type { DriveEventsResult } from '@proton/shared/lib/interfaces/drive/events';
+import { DriveFileRevisionPayload } from '@proton/shared/lib/interfaces/drive/file';
 import { LinkMeta, LinkType, SharedUrlInfo } from '@proton/shared/lib/interfaces/drive/link';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 import type { ShareMeta, ShareMetaShort } from '@proton/shared/lib/interfaces/drive/share';
@@ -11,6 +12,7 @@ import type { Device } from '../_devices';
 import type { DriveEvents } from '../_events';
 import type { EncryptedLink } from '../_links';
 import type { Photo } from '../_photos';
+import type { DriveFileRevision } from '../_revisions';
 import { hasCustomPassword, hasGeneratedPasswordIncluded } from '../_shares';
 import type { Share, ShareURL, ShareWithKey } from '../_shares';
 
@@ -177,5 +179,20 @@ export const photoPayloadToPhotos = (photo: PhotoPayload): Photo => {
         mainPhotoLinkId: photo.MainPhotoLinkID ?? undefined,
         hash: photo.Hash ?? undefined,
         contentHash: photo.ContentHash ?? undefined,
+    };
+};
+
+export const revisionPayloadToRevision = (revision: DriveFileRevisionPayload): DriveFileRevision => {
+    return {
+        id: revision.ID,
+        createTime: revision.CreateTime,
+        size: revision.Size,
+        state: revision.State,
+        manifestSignature: revision.ManifestSignature,
+        signatureAddress: revision.SignatureAddress,
+        signatureEmail: revision.SignatureEmail,
+        blocs: revision.Blocks,
+        thumbnails: revision.Thumbnails,
+        xAttr: revision.XAttr,
     };
 };
