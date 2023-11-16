@@ -562,6 +562,9 @@
       "label emails as": [
         "пазначыць лісты як"
       ],
+      "Later this week": [
+        "Пазней на гэтым тыдні"
+      ],
       "Learn more": [
         "Даведацца больш"
       ],
@@ -585,6 +588,9 @@
       ],
       "Manage labels": [
         "Кіраванне меткамі"
+      ],
+      "Manage Snooze": [
+        "Кіраваць адкладаннем"
       ],
       "Mark as read": [
         "Пазначыць як прачытанае"
@@ -711,6 +717,9 @@
       ],
       "Next page": [
         "Наступная старонка"
+      ],
+      "Next week": [
+        "Наступны тыдзень"
       ],
       "No": [
         "Не"
@@ -904,6 +913,9 @@
       "Select all messages": [
         "Выбраць усе паведамленні"
       ],
+      "Select date and time": [
+        "Выберыце дату і час"
+      ],
       "Self-destruct in 7 days": [
         "Самазнішчэнне праз 7 дзён"
       ],
@@ -1009,6 +1021,9 @@
       "Skip verification": [
         "Прапусціць праверку"
       ],
+      "Snooze": [
+        "Адкласці"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Немагчыма загрузіць некаторыя відарысы з уключанай абаронай ад адсочвання."
       ],
@@ -1038,6 +1053,9 @@
       ],
       "This message contains remote content.": [
         "Гэта паведамленне змяшчае аддаленае змесціва."
+      ],
+      "This weekend": [
+        "На выхадных"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Каб шукаць вашы лісты бяспечна, неабходна спампаваць копіі вашых паведамленняў для прагляду. Першапачатковае спампоўванне можа заняць некаторы час."
@@ -1092,6 +1110,9 @@
       ],
       "Unordered list": [
         "Неўпарадкаваны спіс"
+      ],
+      "Unsnooze": [
+        "Скасаваць адкладанне"
       ],
       "Unstar": [
         "Прыбраць зорачку"
@@ -3101,6 +3122,9 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Разблакіруйце магчымасць ствараць уласны расклад адпраўкі паведамленняў і іншыя перавагі пасля паляпшэння свайго тарыфнага плана."
       ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Разблакіруйце карыстальніцкі час адкладання пасля паляпшэння тарыфнага плана."
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Разблакіруйце неабмежаваную колькасць фільтраў, якія дапамогуць сартаваць вашу паштовую скрыню і іншыя прэміяльныя функцыі пасля паляпшэння."
       ],
@@ -3900,6 +3924,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Праграма часова недаступна"
+      ],
       "Error: ${ errorMessage }": [
         "Памылка: ${ errorMessage }"
       ],
@@ -3912,11 +3939,17 @@
       "Oops, something went wrong": [
         "Вой, нешта пайшло не так"
       ],
+      "Open in browser": [
+        "Адкрыць у браўзеры"
+      ],
       "Please refresh the page or try again later.": [
         "Абнавіце старонку або паспрабуйце яшчэ раз пазней."
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Пераключыцеся на вэб-версію, каб выкарыстоўваць ${ MAIL_APP_NAME } або ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Немагчыма загрузіць старонку. Абнавіце старонку або праверце злучэнне з інтэрнэтам."
@@ -5547,8 +5580,8 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Імпартаванне вашых даных з ${ importedEmailAddress } у ${ toEmail }."
       ],
-      "Include Spam/Trash in your search results.": [
-        "Уключыць у пошук папкі Спам і Сметніца."
+      "Include Spam/Trash.": [
+        "Уключыць Спам/Сметніцу"
       ],
       "Inherited from parent folder": [
         "Унаследавана ад бацькоўскай папкі"
@@ -5835,6 +5868,9 @@
       "Right-click for options": [
         "Націсніце правай кнопкай мышы для параметраў"
       ],
+      "Sat, ${ formatTime }": [
+        "Субота ў ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "Захавана ${ dateString }"
       ],
@@ -5912,6 +5948,18 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin забяспечвае просты спосаб для стварэння адрасоў электроннай пошты на старонніх сайтах, якім вы не надта давяраеце і не хочаце раскрываць свой сапраўдны адрас электроннай пошты."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Адкладзена да ${ dateString }, час: ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Адкладзена да сённяшняга дня, час: ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Адкладзена да заўтрашняга дня, час: ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "Адкладанне гэтай размовы будзе скасавана."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Прабачце, але гэтага паведамлення не існуе або яно пратэрмінаванае."
@@ -6018,6 +6066,9 @@
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Гэты ліст не прайшоў праверку на адпаведнасць нашым патрабаванням аўтэнтыфікацыі свайго дамена. Ён можа быць падроблены або перасланы неналежным чынам."
       ],
+      "This file is too large to preview": [
+        "Занадта вялікі файл для папярэдняга прагляду"
+      ],
       "This invitation is saved in a disabled calendar.": [
         "Гэта запрашэнне захавана ў адключаным календары."
       ],
@@ -6114,6 +6165,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Для таго, каб выкарыстоўваць праверку адраса вы павінны давяраць аднаму або некалькім з даступных публічных ключоў, уключаючы той, які вы хочаце выкарыстоўваць для адпраўкі. Гэта прадухіляе падробку ключоў шыфравання."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Заўтра у ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Занадта шмат паведамленняў чакаюць адпраўкі. Пачакайце, пакуль адправіцца іншае паведамленне, каб запланаваць гэта."
       ],
@@ -6158,6 +6212,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Палепшыце зараз, каб атрымаць прэміяльныя функцыі прадуктаў і сховішча па спецыяльным кошце"
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Палепшыце да ${ MAIL_APP_NAME } Plus, каб разблакіраваць"
       ],
       "Upgrade to add more addresses to your account.": [
         "Палепшыце ўліковы запіс, каб дадаць больш адрасоў."
@@ -7346,6 +7403,12 @@
       "Sign up for free": [
         "Зарэгіструйцеся бясплатна"
       ],
+      "Snooze": [
+        "Адкласці"
+      ],
+      "Snoozed": [
+        "Адкладзена"
+      ],
       "Spam": [
         "Спам"
       ],
@@ -7458,17 +7521,8 @@
       "Archive": [
         "Архіў"
       ],
-      "Drafts": [
-        "Чарнавікі"
-      ],
       "Inbox": [
         "Уваходныя"
-      ],
-      "Scheduled": [
-        "Запланавана"
-      ],
-      "Sent": [
-        "Адпраўленыя"
       ],
       "Spam": [
         "Спам"
@@ -7708,6 +7762,9 @@
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
       ],
+      "Custom snooze time": [
+        "Карыстальніцкі час адкладання"
+      ],
       "Hide-my-email aliases": [
         "Псеўданімаў Hide-my-email"
       ],
@@ -7733,6 +7790,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Атрымайце неабмежаваную колькасць псеўданімаў з SimpleLogin у ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Адкладайце паведамленні і атрымлівайце напаміны, калі вам гэта неабходна"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
@@ -8169,6 +8229,9 @@
       "No results found": [
         "Нічога не знойдзена"
       ],
+      "No snoozed messages": [
+        "Няма адкладзеных паведамленняў"
+      ],
       "No unread messages found": [
         "Непрачытаныя паведамленні не знойдзены"
       ]
@@ -8493,6 +8556,14 @@
       ],
       "Sign": [
         "Падпісаць"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Адкласці паведамленне"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Калі паведамленне павінна з'явіцца яшчэ раз у вашых уваходных?"
       ]
     },
     "Sort option": {
@@ -8861,6 +8932,18 @@
         "${ elementsCount } размовы выдалены з ${ labelName }.",
         "${ elementsCount } размоў выдалены з ${ labelName }.",
         "${ elementsCount } размовы выдалены з ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } размова адкладзена",
+        "${ elementsCount } размовы адкладзены",
+        "${ elementsCount } размоў адкладзены",
+        "${ elementsCount } размоў адкладзены"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "У ${ elementsCount } размове скасавана адкладанне",
+        "У ${ elementsCount } размовах скасавана адкладанне",
+        "У ${ elementsCount } размовах скасавана адкладанне",
+        "У ${ elementsCount } размовах скасавана адкладанне"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } паведамленне дададзена да ${ labelName }.",
@@ -9587,6 +9670,9 @@
       "Moving a scheduled message": [
         "Перамяшчэнне запланаванага паведамлення"
       ],
+      "Moving a snoozed message": [
+        "Перамяшчэнне адкладзенага паведамлення"
+      ],
       "New message": [
         "Новае паведамленне"
       ],
@@ -9728,6 +9814,12 @@
       "Sign out": [
         "Выйсці"
       ],
+      "Snooze": [
+        "Адкладанне"
+      ],
+      "Snooze message": [
+        "Адкладанне паведамлення"
+      ],
       "Sort conversations": [
         "Сартаванне размоў"
       ],
@@ -9775,6 +9867,9 @@
       ],
       "Verification error": [
         "Памылка праверкі"
+      ],
+      "Want to snooze any time?": [
+        "Хочаце адкладаць апавяшчэнні ў любы час?"
       ],
       "Warning": [
         "Папярэджанне"
@@ -10002,6 +10097,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ваш бясплатны выпрабавальны перыяд міне ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Панядзелак у ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Субота ў ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Нядзеля ў ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {
