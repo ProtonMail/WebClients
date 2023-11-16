@@ -554,6 +554,9 @@
       "label emails as": [
         "ορίστε ετικέτα στα email ως"
       ],
+      "Later this week": [
+        "Αργότερα αυτή την εβδομάδα"
+      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
@@ -577,6 +580,9 @@
       ],
       "Manage labels": [
         "Διαχείριση ετικετών"
+      ],
+      "Manage Snooze": [
+        "Διαχείριση Αναβολής"
       ],
       "Mark as read": [
         "Σήμανση ως διαβασμένο"
@@ -703,6 +709,9 @@
       ],
       "Next page": [
         "Επόμενη σελίδα"
+      ],
+      "Next week": [
+        "Επόμενη εβδομάδα"
       ],
       "No": [
         "Όχι"
@@ -896,6 +905,9 @@
       "Select all messages": [
         "Επιλογή όλων των μηνυμάτων"
       ],
+      "Select date and time": [
+        "Επιλέξτε ημερομηνία και ώρα"
+      ],
       "Self-destruct in 7 days": [
         "Αυτοκαταστροφή σε 7 ημέρες"
       ],
@@ -1001,6 +1013,9 @@
       "Skip verification": [
         "Παράλειψη επαλήθευσης"
       ],
+      "Snooze": [
+        "Αναβολή"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Ορισμένες εικόνες απέτυχαν να φορτωθούν με προστασία παρακολούθησης."
       ],
@@ -1030,6 +1045,9 @@
       ],
       "This message contains remote content.": [
         "Αυτό το μήνυμα περιέχει απομακρυσμένο περιεχόμενο."
+      ],
+      "This weekend": [
+        "Αυτό το σαββατοκύριακο"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Για να αναζητήσουμε τα email σας με ασφάλεια, πρέπει να κατεβάσουμε ένα αντίγραφο των μηνυμάτων σας στο πρόγραμμα περιήγησής σας. Η αρχική λήψη μπορεί να διαρκέσει λίγο."
@@ -1082,6 +1100,9 @@
       ],
       "Unordered list": [
         "Μη ταξινομημένη λίστα"
+      ],
+      "Unsnooze": [
+        "Αφαίρεση αναβολής"
       ],
       "Unstar": [
         "Αφαίρεση αστεριού"
@@ -3069,6 +3090,9 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Ξεκλειδώστε προσαρμοσμένο προγραμματισμό μηνυμάτων και άλλα οφέλη όταν αναβαθμίζετε το πρόγραμμά σας."
       ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Ξεκλειδώστε προσαρμοσμένους χρόνους αναβολής όταν αναβαθμίσετε το πλάνου σας."
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Ξεκλειδώστε απεριόριστα φίλτρα που ταξινομούν τα εισερχόμενά σας για εσάς και περισσότερες premium λειτουργίες κατά την αναβάθμιση."
       ],
@@ -3838,6 +3862,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Η εφαρμογή δεν είναι διαθέσιμη αυτήν τη στιγμή"
+      ],
       "Error: ${ errorMessage }": [
         "Σφάλμα: ${ errorMessage }"
       ],
@@ -3850,11 +3877,17 @@
       "Oops, something went wrong": [
         "Ωχ, κάτι πήγε στραβά"
       ],
+      "Open in browser": [
+        "Άνοιγμα στο πρόγραμμα περιήγησης"
+      ],
       "Please refresh the page or try again later.": [
         "Παρακαλούμε ανανεώστε τη σελίδα ή δοκιμάστε ξανά αργότερα."
       ],
       "Something went wrong": [
         "Κάτι πήγε στραβά"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Για να χρησιμοποιήσετε ${ MAIL_APP_NAME } ή ${ CALENDAR_APP_NAME }, μεταβείτε στην έκδοση ιστού."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Δεν ήταν δυνατή η φόρτωση αυτής της σελίδας. Ανανεώστε τη σελίδα ή ελέγξτε τη σύνδεσή σας στο διαδίκτυο."
@@ -4064,7 +4097,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλώ προσπαθήστε ξανά."
+        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
       ]
     },
     "fido2: Info": {
@@ -4505,7 +4538,7 @@
         "Οι εκδηλώσεις εισήχθησαν επιτυχώς. Οι εισαγόμενα εκδηλώσεις θα εμφανιστούν τώρα στο ημερολόγιό σας."
       ],
       "Please don't close the tab before the importing process is finished.": [
-        "Παρακαλώ μην κλείσετε την καρτέλα πριν ολοκληρωθεί η διαδικασία εισαγωγής."
+        "Παρακαλούμε μην κλείσετε την καρτέλα πριν ολοκληρωθεί η διαδικασία εισαγωγής."
       ]
     },
     "Import calendar warning": {
@@ -4606,7 +4639,7 @@
         "Η πρόσβαση IMAP είναι ενεργοποιημένη στον λογαριασμό σας στο Yahoo."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Πάρα πολλά πρόσφατα αιτήματα. Παρακαλώ δοκιμάστε ξανά σε λίγα λεπτά."
+        "Πάρα πολλά πρόσφατα αιτήματα. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά."
       ],
       "Use your app password if:": [
         "Χρησιμοποιήστε τον κωδικό της εφαρμογής εάν:"
@@ -5349,8 +5382,8 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Γίνεται εισαγωγή δεδομένων από ${ importedEmailAddress } προς ${ toEmail }."
       ],
-      "Include Spam/Trash in your search results.": [
-        "Συμπεριλάβετε τα Ανεπιθύμητα/Κάδο απορριμμάτων στα αποτελέσματα αναζήτησης."
+      "Include Spam/Trash.": [
+        "Συμπεριλάβετε Ανεπιθύμητα/Κάδο Απορριμάτων."
       ],
       "Inherited from parent folder": [
         "Κληρονoμήθηκαν από το γονικό φάκελο"
@@ -5635,6 +5668,9 @@
       "Right-click for options": [
         "Δεξί κλικ για επιλογές"
       ],
+      "Sat, ${ formatTime }": [
+        "Σαβ, ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "Αποθηκεύτηκε στις ${ dateString }"
       ],
@@ -5712,6 +5748,18 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "Το SimpleLogin προσφέρει έναν απλό τρόπο για να δημιουργήσετε όνομα και κωδικό χρήστη σε αναξιόπιστες σελίδες όπου δεν θέλετε να εκθέσετε την πραγματική σας ηλ. διεύθυνση."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Αναβολή έως ${ dateString } στις ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Αναβολή έως σήμερα, ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Αναβολή έως αύριο, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "Η αναβολή αυτής της συνομιλίας θα ακυρωθεί."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Λυπούμαστε, αυτό το μήνυμα δεν υπάρχει ή έχει ήδη λήξει."
@@ -5814,6 +5862,9 @@
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου απέτυχε στις απαιτήσεις ελέγχου ταυτότητας του τομέα του. Μπορεί να είναι πλαστογραφημένο ή εσφαλμένα."
       ],
+      "This file is too large to preview": [
+        "Αυτό το αρχείο είναι πολύ μεγάλο για προεπισκόπηση"
+      ],
       "This invitation is saved in a disabled calendar.": [
         "Αυτή η πρόσκληση είναι αποθηκευμένη σε ένα απενεργοποιημένο ημερολόγιο."
       ],
@@ -5908,6 +5959,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Για να χρησιμοποιήσετε την Επαλήθευση διεύθυνσης, πρέπει να χαρακτηρίσετε Αξιόπιστα ένα ή περισσότερα διαθέσιμα δημόσια κλειδιά, συμπεριλαμβανομένου αυτού που θέλετε να χρησιμοποιήσετε για αποστολή. Αυτό αποτρέπει την απομίμηση των κρυπτογραφημένων κλειδιών."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Αύριο, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Υπερβολικός αριθμός μηνυμάτων σε αναμονή αποστολής. Για προγραμματισμό αυτού του μηνύματος, παρακαλούμε περιμένετε μέχρι την αποστολή ενός άλλου."
       ],
@@ -5952,6 +6006,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Αναβαθμίστε τώρα τον λογαριασμό σας για να λάβετε premium χαρακτηριστικά, προϊόντα και αποθηκευτικό χώρο σε ειδική τιμή"
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Αναβάθμιση σε ${ MAIL_APP_NAME } Plus για ξεκλείδωμα"
       ],
       "Upgrade to add more addresses to your account.": [
         "Αναβαθμίστε για να προσθέσετε περισσότερες διευθύνσεις στο λογαριασμό σας."
@@ -7116,6 +7173,12 @@
       "Sign up for free": [
         "Εγγραφείτε δωρεάν"
       ],
+      "Snooze": [
+        "Αναβολή"
+      ],
+      "Snoozed": [
+        "Σε αναβολή"
+      ],
       "Spam": [
         "Ενοχλητικά"
       ],
@@ -7218,17 +7281,8 @@
       "Archive": [
         "Αρχειοθετημένα"
       ],
-      "Drafts": [
-        "Πρόχειρα"
-      ],
       "Inbox": [
         "Εισερχόμενα"
-      ],
-      "Scheduled": [
-        "Προγραμματισμένα"
-      ],
-      "Sent": [
-        "Απεσταλμένα"
       ],
       "Spam": [
         "Ενοχλητικά"
@@ -7462,6 +7516,9 @@
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
       ],
+      "Custom snooze time": [
+        "Προσαρμοσμένος χρόνος αναβολής"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email ψευδώνυμα"
       ],
@@ -7487,6 +7544,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Αποκτήστε απεριόριστα ψευδώνυμα με το SimpleLogin από ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Αναβολή μηνυμάτων και λήψη υπενθύμισης όποτε θέλετε"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }"
@@ -7915,6 +7975,9 @@
       "No results found": [
         "Κανένα αποτέλεσμα"
       ],
+      "No snoozed messages": [
+        "Δεν υπάρχουν μηνύματα σε αναβολή"
+      ],
       "No unread messages found": [
         "Δεν βρέθηκαν μη διαβασμένα μηνύματα"
       ]
@@ -8209,6 +8272,14 @@
       ],
       "Sign": [
         "Υπογράψτε"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Αναβολή Μηνύματος"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Πότε πρέπει να εμφανιστεί ξανά το μήνυμα στα εισερχόμενά σας;"
       ]
     },
     "Sort option": {
@@ -8541,6 +8612,14 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } συνομιλία αφαιρέθηκε από ${ labelName }.",
         "${ elementsCount } συνομιλίες αφαιρέθηκαν από ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } συνομιλία αναβλήθηκε",
+        "${ elementsCount } συνομιλίες αναβλήθηκαν"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } συνομιλία με αφαιρεμένη αναβολή",
+        "${ elementsCount } συνομιλίες με αφαιρεμένες αναβολές"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } μήνυμα προστέθηκε στο ${ labelName }.",
@@ -9213,6 +9292,9 @@
       "Moving a scheduled message": [
         "Γίνεται μετακίνηση ενός προγραμματισμένου μηνύματος"
       ],
+      "Moving a snoozed message": [
+        "Μετακίνηση μηνύματος σε αναβολή"
+      ],
       "New message": [
         "Νέο μήνυμα"
       ],
@@ -9354,6 +9436,12 @@
       "Sign out": [
         "Αποσύνδεση"
       ],
+      "Snooze": [
+        "Αναβολή"
+      ],
+      "Snooze message": [
+        "Αναβολή μηνύματος"
+      ],
       "Sort conversations": [
         "Ταξινόμηση συνομιλιών"
       ],
@@ -9399,6 +9487,9 @@
       ],
       "Verification error": [
         "Σφάλμα επαλήθευσης"
+      ],
+      "Want to snooze any time?": [
+        "Θέλετε να κάνετε αναβολή ανά πάσα στιγμή;"
       ],
       "Warning": [
         "Προειδοποίηση"
@@ -9616,6 +9707,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Η δωρεάν δοκιμή σας λήγει στις ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Δευ, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Σαβ, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Κυρ, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

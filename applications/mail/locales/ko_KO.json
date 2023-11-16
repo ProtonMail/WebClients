@@ -700,6 +700,9 @@
       "Next page": [
         "다음 페이지"
       ],
+      "Next week": [
+        "다음 주"
+      ],
       "No": [
         "아니오"
       ],
@@ -5250,9 +5253,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ toEmail } 에서 ${ importedEmailAddress } 로 데이터를 가져오세요."
       ],
-      "Include Spam/Trash in your search results.": [
-        "스팸/휴지통을 검색 결과에 포함합니다."
-      ],
       "Inherited from parent folder": [
         "상위폴더에 상속되어 있습니다"
       ],
@@ -5663,6 +5663,9 @@
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "원전송자의 메세지가 더 이상 유효하지 않습니다. 사용자의 메시지가 곧 일반 ${ defaultEmail } 로 전송됩니다."
+      ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
       ],
       "The sender has requested a read receipt.": [
         "발신자가 읽음 확인을 요청했습니다."
@@ -7095,17 +7098,8 @@
       "Archive": [
         "보관 편지함"
       ],
-      "Drafts": [
-        "임시 보관함"
-      ],
       "Inbox": [
         "받은 편지함"
-      ],
-      "Scheduled": [
-        "시간대 설정됨"
-      ],
-      "Sent": [
-        "보낸 편지함"
       ],
       "Spam": [
         "스팸함"
@@ -7797,6 +7791,11 @@
     "Send email with changed preferences": {
       "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
         "다음 주소의 연락처가 삭제되었으므로 해당 암호화 기본 설정이 그에 따라 업데이트되었습니다."
+      ]
+    },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "다음 주소의 연락처가 해당 계정에 종단 간 암호화를 비활성화 했으므로 해당 암호화 기본 설정이 그에 따라 변경되었습니ㅣ다."
       ]
     },
     "Send email with errors": {
@@ -9119,6 +9118,9 @@
       ],
       "Send with changed preferences?": [
         "변경된 설정으로 보내시겠습니까?"
+      ],
+      "Send with encryption disabled?": [
+        "암호화 없이 보낼까요?"
       ],
       "Send without expiration?": [
         "만료기한없이 발송하시겠습니까?"
