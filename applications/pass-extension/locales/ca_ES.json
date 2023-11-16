@@ -410,9 +410,6 @@
       "Could not resolve share members": [
         "No es poden definir els membres de la compartició."
       ],
-      "Could not resume your session : ${ description }": [
-        "No s'ha pogut reprendre la sessió: ${ description }"
-      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Al fitxer CSV li falten les capçaleres esperades: ${ missingHeaders }"
       ],
@@ -644,9 +641,6 @@
         "${ memberCount } membre",
         "${ memberCount } membres"
       ],
-      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "${ PASS_APP_NAME } mostrarà la icona de web de l'element a través del proxy d'imatges anònim ${ BRAND_NAME }."
-      ],
       "${ PASS_APP_NAME } will prompt you to save or update credentials.": [
         "${ PASS_APP_NAME } us demanarà que deseu o actualitzeu les credencials."
       ],
@@ -683,9 +677,6 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "S'ha mogut l'àlies \"${ item.aliasEmail }\" a la paperera - deixarà de reenviar correus electrònics a la vostra bústia"
-      ],
-      "All trashed items permanently removed": [
-        "S'han suprimit tots els elements a la paperera de manera permanent."
       ],
       "Auto-lock successfully disabled": [
         "El bloqueig automàtic s'ha desactivat correctament"
@@ -797,9 +788,6 @@
       "Loading": [
         "Carregant"
       ],
-      "Loading extension": [
-        "S'està carregant l'extensió"
-      ],
       "Loading...": [
         "S'està carregant..."
       ],
@@ -811,9 +799,6 @@
       ],
       "Multiple vaults": [
         "Diverses caixes fortes"
-      ],
-      "N/A": [
-        "No disponible"
       ],
       "None": [
         "Cap"
@@ -895,9 +880,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Gràcies, s'ha informat del problema"
-      ],
-      "The autofill dropdown will automatically open on field focus.": [
-        "El menú desplegable d'emplenament automàtic s'obrirà automàticament en el camp enfocat."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "No s'ha pogut importar ${ result.ignored.length } element:",
@@ -1012,9 +994,6 @@
       "15 minutes": [
         "15 minuts"
       ],
-      "2FA secret (TOTP)": [
-        "2FA secret (TOTP)"
-      ],
       "2FA token (TOTP)": [
         "Token 2FA (TOTP)"
       ],
@@ -1062,9 +1041,6 @@
       ],
       "Autofill 2FA": [
         "Emplenament automàtic A2F"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "Obre automàticament l'emplenament automàtic en enfocar els camps d'inici de sessió"
       ],
       "Autosave": [
         "Desa automàticament"
@@ -1401,9 +1377,6 @@
       "Hyphens": [
         "Guions"
       ],
-      "Memorable Password": [
-        "Contrasenya fàcil de recordar"
-      ],
       "Numbers": [
         "Números"
       ],
@@ -1424,9 +1397,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "Afegiu un secret 2FA"
-      ],
       "Add hidden text": [
         "Afegir text ocult"
       ],
@@ -1692,9 +1662,6 @@
       "Please enter a valid email address": [
         "Introduïu un correu electrònic vàlid."
       ],
-      "Please log back in": [
-        "Torneu a iniciar sessió"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Verifiqueu la vostra adreça de correu electrònic per poder utilitzar la compartició d'àlies de correu electrònic."
       ],
@@ -1736,9 +1703,6 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Ja no tindreu accés a aquesta caixa forta. Per tornar-hi a entrar, necessitareu una nova invitació."
-      ],
-      "Your session was locked due to inactivity": [
-        "S'ha bloquejat la vostra sessió per inactivitat"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La vostra subscripció no us permet crear diverses caixes fortes. Tots els elements s'importaran a la vostra primera caixa forta. Per a importar a diverses caixes fortes milloreu la vostra subscripció."

@@ -80,11 +80,11 @@
       "Create": [
         "Criar"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Criar uma conta na ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Criar uma conta no ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Criar uma conta na ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Criar um cofre para compartilhar"
@@ -445,9 +445,6 @@
       "Could not resolve share members": [
         "Não é possível determinar os membros do compartilhamento"
       ],
-      "Could not resume your session : ${ description }": [
-        "Não foi possível retomar sua sessão: ${ description }"
-      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "O arquivo CSV está faltando cabeçalhos esperados: ${ missingHeaders }"
       ],
@@ -487,6 +484,9 @@
       ],
       "Failed to edit user's access.": [
         "Falha ao editar o acesso do usuário."
+      ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Falha ao mover todos os itens de \"${ payload.content.name }\""
       ],
       "Failed to remove user's access.": [
         "Falha ao remover o acesso do usuário."
@@ -682,9 +682,6 @@
         "${ memberCount } membro",
         "${ memberCount } membros"
       ],
-      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "O ${ PASS_APP_NAME } exibirá o favicon do item através do proxy de imagem anonimizado da ${ BRAND_NAME }."
-      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importará somente inícios de sessão, notas e cartões de crédito."
       ],
@@ -733,6 +730,9 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "O alias \"${ item.aliasEmail }\" foi movido para a lixeira - ele deixará de encaminhar e-mails para a sua caixa de correio."
+      ],
+      "All trashed items successfully restored": [
+        "Todos os itens da lixeira foram restaurados"
       ],
       "Auto-lock successfully disabled": [
         "Bloqueio automático desativado"
@@ -883,14 +883,14 @@
       "Item successfully moved": [
         "Item movido"
       ],
+      "Leaving vault...": [
+        "Saindo do cofre..."
+      ],
       "Let's get you started by creating your first item": [
         "Vamos começar criando seu primeiro item"
       ],
       "Loading": [
         "Carregando"
-      ],
-      "Loading extension": [
-        "Carregando extensão"
       ],
       "Loading...": [
         "Carregando..."
@@ -901,11 +901,11 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Mais do que um gerenciador de senhas, o ${ PASS_APP_NAME } protege sua senha e seu endereço de e-mail pessoal através de aliases de email. Alimentado pela mesma tecnologia por trás do ${ MAIL_APP_NAME }, seus dados são criptografados de ponta a ponta e são acessíveis apenas por você."
       ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Movendo todos os itens de \"${ payload.content.name }\""
+      ],
       "Multiple vaults": [
         "Múltiplos cofres"
-      ],
-      "N/A": [
-        "N/D"
       ],
       "No login found": [
         "Nenhum início de sessão foi encontrado"
@@ -961,8 +961,14 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "A privacidade é uma grande preocupação para nós. Saiba por que o ${ PASS_APP_NAME } é diferente."
       ],
+      "Restoring trashed items...": [
+        "Restaurando os itens da lixeira..."
+      ],
       "Save login": [
         "Salvar início de sessão"
+      ],
+      "Select destination vault": [
+        "Selecione o cofre de destino"
       ],
       "Select where you want your imported vault(s) to be saved.": [
         "Selecione onde quer salvar seus cofres importados."
@@ -1008,9 +1014,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Nós lhe agradecemos. O problema foi relatado."
-      ],
-      "The autofill dropdown will automatically open on field focus.": [
-        "O menu suspenso do preenchimento automático abrirá automaticamente quando um campo for selecionado."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Não foi possível importar o seguinte ${ result.ignored.length } item.",
@@ -1144,9 +1147,6 @@
       "15 minutes": [
         "15 minutos"
       ],
-      "2FA secret (TOTP)": [
-        "Chave secreta 2FA (TOTP)"
-      ],
       "2FA token (TOTP)": [
         "Token A2F (TOTP)"
       ],
@@ -1194,9 +1194,6 @@
       ],
       "Autofill 2FA": [
         "Preenchimento automático de A2F"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "Abre automaticamente o preenchimento automático ao focar nos campos de login"
       ],
       "Autosave": [
         "Salvar automaticamente"
@@ -1533,9 +1530,6 @@
       "Hyphens": [
         "Hifens"
       ],
-      "Memorable Password": [
-        "Senha memorável"
-      ],
       "Numbers": [
         "Números"
       ],
@@ -1556,9 +1550,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "Adicionar chave secreta A2F"
-      ],
       "Add hidden text": [
         "Adicionar texto oculto"
       ],
@@ -1854,9 +1845,6 @@
       "Please enter a valid email address": [
         "Insira um endereço de e-mail válido"
       ],
-      "Please log back in": [
-        "Inicie sessão novamente"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Verifique seu endereço de e-mail para usar os aliases de e-mail"
       ],
@@ -1919,9 +1907,6 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Seu plano só permite o preenchimento automático dos dois primeiros cofres"
-      ],
-      "Your session was locked due to inactivity": [
-        "Sua sessão foi bloqueada devido à inatividade"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "A sua assinatura não permite que você crie múltiplos cofres. Todos os itens serão importados para o seu primeiro cofre. Para importar em múltiplos cofres, atualize a sua assinatura."

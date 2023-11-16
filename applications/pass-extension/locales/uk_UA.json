@@ -358,9 +358,6 @@
       "Could not open updated vault": [
         "Не вдалося відкрити оновлене сховище"
       ],
-      "Could not resume your session : ${ description }": [
-        "Не вдалося відновити сеанс : ${ description }"
-      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Файл CSV не містить необхідних заголовків: ${ missingHeaders }"
       ],
@@ -729,9 +726,6 @@
       "Loading": [
         "Завантаження"
       ],
-      "Loading extension": [
-        "Завантаження розширення"
-      ],
       "Loading...": [
         "Завантаження..."
       ],
@@ -743,9 +737,6 @@
       ],
       "Multiple vaults": [
         "Кілька сховищ"
-      ],
-      "N/A": [
-        "Н/Д"
       ],
       "None": [
         "Немає"
@@ -893,9 +884,6 @@
       "15 minutes": [
         "15 хвилин"
       ],
-      "2FA secret (TOTP)": [
-        "Секретний ключ 2FA (TOTP)"
-      ],
       "2FA token (TOTP)": [
         "Токен 2FA (TOTP)"
       ],
@@ -943,9 +931,6 @@
       ],
       "Autofill 2FA": [
         "Автозаповнення 2FA"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "Автоматично відкривати автозаповнення під час фокусування на полях для входу"
       ],
       "Autosave": [
         "Автозбереження"
@@ -1264,9 +1249,6 @@
       "Hyphens": [
         "Дефіси"
       ],
-      "Memorable Password": [
-        "Пароль, який легко запам'ятати"
-      ],
       "Numbers": [
         "Цифри"
       ],
@@ -1287,9 +1269,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "Додати секретний ключ 2FA"
-      ],
       "Add hidden text": [
         "Додати прихований текст"
       ],
@@ -1503,9 +1482,6 @@
       "Please enter a valid email address": [
         "Введіть дійсну адресу електронної пошти"
       ],
-      "Please log back in": [
-        "Увійдіть знову"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Звіти не захищаються наскрізним шифруванням. Будь ласка, не надсилайте в них жодних приватних даних."
       ],
@@ -1535,9 +1511,6 @@
       ],
       "You must select at least one mailbox": [
         "Виберіть принаймні одну поштову скриньку"
-      ],
-      "Your session was locked due to inactivity": [
-        "Ваш сеанс був заблокований через бездіяльність"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша передплата не дозволяє створювати кілька сховищ. Всі елементи будуть імпортовані до вашого першого сховища. Щоб імпортувати дані до кількох сховищ, передплатіть тарифний план вищого рівня."
