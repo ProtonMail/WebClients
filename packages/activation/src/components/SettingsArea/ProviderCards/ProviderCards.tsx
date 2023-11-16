@@ -1,15 +1,20 @@
 import { c } from 'ttag';
 
-import { ImportProvider, ImportType } from '@proton/activation/src/interface';
+import { ImportProvider, ImportType, NEW_EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { startImapDraft } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
 import { startOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { FeatureCode } from '@proton/components';
 import { useFeature, useUser } from '@proton/components/hooks';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { APPS } from '@proton/shared/lib/constants';
 
 import ProviderCard from './ProviderCard';
 
+const { ACCOUNT_WEB_SETTINGS, CALENDAR_WEB_SETTINGS } = NEW_EASY_SWITCH_SOURCES;
+
 const ProviderCards = () => {
+    const appFromPathname = getAppFromPathnameSafe(location.pathname);
     const dispatch = useEasySwitchDispatch();
     const [user, loadingUser] = useUser();
     const isLoading = loadingUser;
@@ -20,6 +25,7 @@ const ProviderCards = () => {
     const handleGoogleClick = () => {
         dispatch(
             startOauthDraft({
+                source: appFromPathname === APPS.PROTONMAIL ? ACCOUNT_WEB_SETTINGS : CALENDAR_WEB_SETTINGS,
                 provider: ImportProvider.GOOGLE,
                 products: [ImportType.CONTACTS, ImportType.CALENDAR, ImportType.MAIL],
             })
@@ -54,6 +60,7 @@ const ProviderCards = () => {
                             startOauthDraft({
                                 provider: ImportProvider.OUTLOOK,
                                 products: [ImportType.CONTACTS, ImportType.CALENDAR, ImportType.MAIL],
+                                source: NEW_EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS,
                             })
                         )
                     }

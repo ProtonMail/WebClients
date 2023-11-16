@@ -5,6 +5,7 @@ import { EasySwitchState } from '../../store';
 const selectOauthDraft = (state: EasySwitchState) => state.oauthDraft;
 export const selectOauthDraftStep = createSelector(selectOauthDraft, (draft) => draft.step);
 export const selectOauthDraftProvider = createSelector(selectOauthDraft, (draft) => draft.provider);
+export const selectOauthDraftSource = createSelector(selectOauthDraft, (draft) => draft.source);
 export const selectOauthDraftStepConfirmModalDisplay = createSelector(
     selectOauthDraft,
     (draft) => draft.displayConfirmLeaveModal

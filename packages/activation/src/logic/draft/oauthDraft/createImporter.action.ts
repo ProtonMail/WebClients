@@ -22,6 +22,7 @@ import {
     ImportToken,
     ImportType,
     ImportedCalendar,
+    NEW_EASY_SWITCH_SOURCES,
     OAuthProps,
 } from '@proton/activation/src/interface';
 import { getApiError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -36,7 +37,7 @@ import { ImporterCalendar, ImporterData } from './oauthDraft.interface';
 
 type Props = {
     oAuthProps: OAuthProps;
-    source: string;
+    source: NEW_EASY_SWITCH_SOURCES;
     defaultAddress: Address;
     user: UserModel;
 };

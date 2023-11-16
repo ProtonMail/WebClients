@@ -27,6 +27,8 @@ const oauthDraftSlice = createSlice({
         builder.addCase(actions.startOauthDraft, (state, action) => {
             state.step = 'started';
             state.provider = action.payload.provider;
+            state.source = action.payload.source;
+
             state.mailImport = {
                 ...state.mailImport,
                 products: action.payload.products,
