@@ -80,11 +80,11 @@
       "Create": [
         "Δημιουργία"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Δημιουργία ενός ${ BRAND_NAME } Λογαριασμού"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Δημιουργία ενός ${ BRAND_NAME } λογαριασμού"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Δημιουργία ενός ${ BRAND_NAME } Λογαριασμού"
       ],
       "Create a new vault to share": [
         "Δημιουργία νέας κρύπτης για κοινή χρήση"
@@ -445,9 +445,6 @@
       "Could not resolve share members": [
         "Δεν ήταν δυνατή η επίλυση μελών κοινής χρήσης"
       ],
-      "Could not resume your session : ${ description }": [
-        "Δεν ήταν δυνατή η συνέχιση της συνεδρίας σας : ${ description }"
-      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Λείπει το αρχείο CSV αναμενόμενες κεφαλίδες: ${ missingHeaders }"
       ],
@@ -688,9 +685,6 @@
         "${ memberCount } μέλος",
         "${ memberCount } μέλη"
       ],
-      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "Το ${ PASS_APP_NAME } θα εμφανίσει το favicon του στοιχείου μέσω ανώνυμου διακομιστή μεσολάβησης εικόνας ${ BRAND_NAME }."
-      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις, σημειώσεις και πιστωτικές κάρτες."
       ],
@@ -742,9 +736,6 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Όλα τα στοιχεία από το \"${ payload.content.name }\" μετακινήθηκαν με επιτυχία"
-      ],
-      "All trashed items permanently removed": [
-        "Όλα τα απορριφθέντα στοιχεία καταργήθηκαν οριστικά"
       ],
       "All trashed items successfully restored": [
         "Όλα τα απορριφθέντα στοιχεία αποκαταστάθηκαν με επιτυχία"
@@ -913,9 +904,6 @@
       "Loading": [
         "Φόρτωση"
       ],
-      "Loading extension": [
-        "Φόρτωση προέκτασης"
-      ],
       "Loading...": [
         "Φόρτωση..."
       ],
@@ -930,9 +918,6 @@
       ],
       "Multiple vaults": [
         "Πολλαπλές κρύπτες"
-      ],
-      "N/A": [
-        "Δ/Υ"
       ],
       "No login found": [
         "Δε βρέθηκαν διαπιστευτήρια"
@@ -1041,9 +1026,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Σας ευχαριστώ, το πρόβλημα έχει αναφερθεί"
-      ],
-      "The autofill dropdown will automatically open on field focus.": [
-        "Το αναπτυσσόμενο μενού αυτόματης συμπλήρωσης θα ανοίξει αυτόματα κατά την εστίαση πεδίου."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Δεν ήταν δυνατή η εισαγωγή του ${ result.ignored.length } στοιχείου:",
@@ -1177,9 +1159,6 @@
       "15 minutes": [
         "15 λεπτά"
       ],
-      "2FA secret (TOTP)": [
-        "Μυστικό 2FA (TOTP)"
-      ],
       "2FA token (TOTP)": [
         "Διακριτικό 2FA (TOTP)"
       ],
@@ -1227,9 +1206,6 @@
       ],
       "Autofill 2FA": [
         "Αυτόματη συμπλήρωση 2FA"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "Αυτόματο άνοιγμα της αυτόματης συμπλήρωσης κατά την εστίαση πεδίων σύνδεσης"
       ],
       "Autosave": [
         "Αυτόματη αποθήκευση"
@@ -1566,9 +1542,6 @@
       "Hyphens": [
         "Παύλες"
       ],
-      "Memorable Password": [
-        "Αξιομνημόνευτος Κωδικός Πρόσβασης"
-      ],
       "Numbers": [
         "Αριθμοί"
       ],
@@ -1589,9 +1562,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "Προσθέστε μυστικό 2FA"
-      ],
       "Add hidden text": [
         "Προσθήκη κρυφού κειμένου"
       ],
@@ -1885,10 +1855,7 @@
         "Το κρυπτογραφημένο αρχείο εξαγωγής PGP απαιτεί φράση πρόσβασης"
       ],
       "Please enter a valid email address": [
-        "Παρακαλώ εισάγετε μια έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου"
-      ],
-      "Please log back in": [
-        "Παρακαλούμε συνδεθείτε ξανά"
+        "Παρακαλούμε εισάγετε μια έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Please verify your email address in order to use email aliases": [
         "Παρακαλούμε επαληθεύστε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας για να χρησιμοποιήσετε ψευδώνυμα διευθύνσεων ηλεκτρονικού ταχυδρομείου"
@@ -1952,9 +1919,6 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Το πλάνο σας σάς επιτρέπει να συμπληρώνετε αυτόματα μόνο από τις πρώτες δύο κρύπτες σας"
-      ],
-      "Your session was locked due to inactivity": [
-        "Η περίοδος λειτουργίας σας κλειδώθηκε λόγω αδράνειας"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλαπλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην πρώτη κρύπτη σας. Για να κάνετε εισαγωγή σε πολλαπλές κρύπτες, αναβαθμίστε τη συνδρομή σας."

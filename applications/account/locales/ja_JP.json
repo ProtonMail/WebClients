@@ -4,6 +4,11 @@
     "language": "ja_JP"
   },
   "contexts": {
+    "A label for unlabeled shared calendar links": {
+      "Unlabeled": [
+        "ラベルなし"
+      ]
+    },
     "Access level": {
       "Full view (see all event details)": [
         "すべて表示 (すべてのイベント詳細)"
@@ -39,12 +44,6 @@
       "activate": [
         "有効にする"
       ],
-      "Activate ${ Name }@pm.me": [
-        "${ Name }@pm.me を有効にする"
-      ],
-      "Activate ${ user.Name }@pm.me": [
-        "${ user.Name }@pm.me を有効にする"
-      ],
       "Activate organization key": [
         "組織の鍵を有効化する"
       ],
@@ -75,15 +74,6 @@
       "Add domain": [
         "ドメインを追加"
       ],
-      "Add filter": [
-        "フィルターを追加"
-      ],
-      "Add folder": [
-        "フォルダーを追加"
-      ],
-      "Add label": [
-        "ラベルを追加"
-      ],
       "Add multiple users": [
         "複数のユーザーを追加する"
       ],
@@ -95,9 +85,6 @@
       ],
       "Add public holidays": [
         "祝日を追加"
-      ],
-      "Add sieve filter": [
-        "Sieve フィルターを追加"
       ],
       "Add user": [
         "ユーザーを追加"
@@ -119,9 +106,6 @@
       ],
       "Apply": [
         "適用"
-      ],
-      "Apply to existing messages": [
-        "存在するメッセージに適用"
       ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
@@ -282,6 +266,9 @@
       "Delete": [
         "削除"
       ],
+      "Delete and confirm": [
+        "削除と確認"
+      ],
       "Delete Gateway": [
         "ゲートウェイ削除"
       ],
@@ -293,9 +280,6 @@
       ],
       "Delete user": [
         "ユーザー削除"
-      ],
-      "Delete without exporting": [
-        "エクスポートせずに削除"
       ],
       "Delete your account": [
         "アカウントを削除"
@@ -348,9 +332,6 @@
       "Download recovery file": [
         "回復用ファイルをダウンロード"
       ],
-      "Download the Import-Export app": [
-        "Import-Export アプリをダウンロード"
-      ],
       "Edit": [
         "編集"
       ],
@@ -381,9 +362,6 @@
       "Edit servers": [
         "サーバーの編集"
       ],
-      "Edit sieve": [
-        "Sieve を編集"
-      ],
       "Edit sign-in details": [
         "サインイン詳細を編集"
       ],
@@ -402,26 +380,14 @@
       "Enable multi-user support": [
         "複数ユーザー対応を有効にする"
       ],
-      "Encrypt and export": [
-        "暗号化してエクスポート"
-      ],
       "Explore other ${ BRAND_NAME } plans": [
         "その他の ${ BRAND_NAME } プランを表示"
       ],
       "Export": [
         "エクスポート"
       ],
-      "Export key": [
-        "鍵をエクスポート"
-      ],
-      "Export key before deleting": [
-        "削除の前に鍵をエクスポート"
-      ],
       "Extend": [
         "延長"
-      ],
-      "Filters are being applied. This might take a few minutes.": [
-        "フィルターの適用が開始されました。これには数分かかります。"
       ],
       "Fit to window": [
         "ウィンドウに合わせる"
@@ -429,20 +395,11 @@
       "Font": [
         "フォント"
       ],
-      "Generate": [
-        "生成"
-      ],
-      "Generate key": [
-        "鍵を生成"
-      ],
       "Generate new recovery phrase": [
         "新しい回復用フレーズを生成"
       ],
       "Generate recovery phrase": [
         "回復フレーズを生成"
-      ],
-      "Generate token": [
-        "鍵を生成"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } を入手"
@@ -458,15 +415,6 @@
       ],
       "Get more addresses": [
         "さらにメールアドレスを取得"
-      ],
-      "Get more filters": [
-        "さらにフィルターを取得"
-      ],
-      "Get more folders": [
-        "さらにフォルダを取得"
-      ],
-      "Get more labels": [
-        "もっとラベルを取得"
       ],
       "Get more licenses": [
         "より多くのライセンスを取得する"
@@ -518,9 +466,6 @@
       ],
       "Import from Outlook": [
         "Outlook からインポート"
-      ],
-      "Import key": [
-        "鍵をインポート"
       ],
       "Increase": [
         "増加"
@@ -585,9 +530,6 @@
       "More info: ${ safeTitle }": [
         "詳細: ${ safeTitle }"
       ],
-      "More info: Keyboard shortcuts": [
-        "その他のお役立ち情報：キーボードのショートカット"
-      ],
       "move emails to": [
         "メールを移動"
       ],
@@ -645,9 +587,6 @@
       "Quote": [
         "引用"
       ],
-      "Reactivate keys": [
-        "鍵の再有効化"
-      ],
       "Reconnect": [
         "再接続"
       ],
@@ -695,9 +634,6 @@
       ],
       "Request new code": [
         "新しいコードのリクエスト"
-      ],
-      "Requires a verified recovery email address": [
-        "検証された回復用メールアドレスが必要です"
       ],
       "Resend code": [
         "コードを再送信"
@@ -753,6 +689,9 @@
       "Save address": [
         "メールアドレスを保存"
       ],
+      "Save changes": [
+        "変更を保存"
+      ],
       "Save selected": [
         "選択済みを保存"
       ],
@@ -777,9 +716,6 @@
       "Select calendar view": [
         "カレンダー表示を選択"
       ],
-      "Select files": [
-        "ファイルを選択"
-      ],
       "Select time zone": [
         "タイムゾーンを選択"
       ],
@@ -791,9 +727,6 @@
       ],
       "Send email reminder": [
         "メールでリマインダーを送信"
-      ],
-      "Send messages with @pm.me": [
-        "@pm.me でメッセージを送信"
       ],
       "Send my username": [
         "ユーザー名を送信"
@@ -869,9 +802,6 @@
       ],
       "Skip verification": [
         "検証をスキップする"
-      ],
-      "Sort": [
-        "並べ替え"
       ],
       "Spam": [
         "迷惑メール"
@@ -971,9 +901,6 @@
       ],
       "Use your current email instead": [
         "代わりに現在のメールアドレスを使用"
-      ],
-      "Use “${ label }” setting": [
-        "「${ label }」設定を使用する"
       ],
       "User": [
         "ユーザー"
@@ -1205,11 +1132,6 @@
         "サポートされていない予定です"
       ]
     },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "こちらは自動返信メッセージです。現在休暇中のため、大変申し訳ありませんが、お送りいただいたメールをすぐには確認できない可能性があることをご了承ください。"
-      ]
-    },
     "Badge for domain": {
       "Disabled": [
         "無効"
@@ -1254,11 +1176,6 @@
       ],
       "Two-year": [
         "2年払い"
-      ]
-    },
-    "Bridge version load failed": {
-      "Failed to find latest version": [
-        "最新バージョンが見つかりませんでした"
       ]
     },
     "Bug category": {
@@ -1360,6 +1277,11 @@
         "人またはグループを追加"
       ]
     },
+    "Calendar invite status label": {
+      "Invite sent": [
+        "招待状を送信しました"
+      ]
+    },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
         "ラベルが見えるのはあなただけです。"
@@ -1378,6 +1300,11 @@
     "Calendar self sharing error": {
       "You already have access to this calendar": [
         "すでにこのカレンダーにアクセスできます"
+      ]
+    },
+    "Calendar settings private share description": {
+      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
+        "他の ${ BRAND_NAME } ユーザーとカレンダーを共有します。カレンダー内でイベントを追加・編集できるようにして、コラボレーションを有効にしましょう。ユーザーの権限はいつでも変更できます。"
       ]
     },
     "Calendar settings sidebar": {
@@ -2668,6 +2595,11 @@
         "不明"
       ]
     },
+    "Delete calendar section description": {
+      "You will no longer have access to this calendar.": [
+        "このカレンダーにはアクセスできなくなります。"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "未払いの請求"
@@ -2989,61 +2921,14 @@
       "Add condition": [
         "条件追加"
       ],
-      "Add forwarding rule": [
-        "転送ルールの追加"
-      ],
-      "Back": [
-        "戻る"
-      ],
-      "Cancel": [
-        "キャンセル"
-      ],
       "Decline": [
         "拒否する"
-      ],
-      "Delete": [
-        "削除"
       ],
       "Delete this condition": [
         "この条件を削除する"
       ],
-      "Edit conditions": [
-        "編集条件"
-      ],
-      "Next": [
-        "次へ"
-      ],
-      "Pause": [
-        "一時停止"
-      ],
-      "Re-enable": [
-        "再有効化"
-      ],
-      "Re-send confirmation email": [
-        "確認メールを再送する"
-      ],
       "Remove “${ value }”": [
         "“${ value }” を削除します"
-      ],
-      "Request confirmation": [
-        "確認のリクエスト"
-      ],
-      "Resume": [
-        "再開する"
-      ],
-      "Save": [
-        "保存"
-      ],
-      "Send confirmation email": [
-        "確認メールを送信する"
-      ],
-      "Set up email forwarding": [
-        "メール転送の設定"
-      ]
-    },
-    "email_forwarding_2023: Description": {
-      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
-        "アップグレードすると、受信情報を簡単に管理できるメール転送機能や、その他のプレミアム機能が利用できるようになります。"
       ]
     },
     "email_forwarding_2023: Error": {
@@ -3064,46 +2949,12 @@
         "あなたに転送されたメールは除外され、転送されません。"
       ]
     },
-    "email_forwarding_2023: Header": {
-      "Actions": [
-        "動作"
-      ],
-      "From": [
-        "差出人"
-      ],
-      "Status": [
-        "状態"
-      ],
-      "To": [
-        "宛先"
-      ]
-    },
-    "email_forwarding_2023: Incoming forwarding tab name": {
-      "From me": [
-        "自分から"
-      ]
-    },
     "email_forwarding_2023: Info": {
-      "A confirmation email will be sent to ${ boldForwardeeEmail }": [
-        "確認メールが ${ boldForwardeeEmail } に送信されます"
-      ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "${ boldForwarderEmail } に対して新しい暗号化キーが生成されます。"
-      ],
       "Forwardee is invited and needs to accept/reject the invitation or update": [
         "転送先が招待されており、招待を承諾/拒否するか更新する必要があります"
       ],
       "Forwarding is active": [
         "転送が有効"
-      ],
-      "Forwarding to this address will become active once the recipient accepts the forwarding.": [
-        "このアドレスへの転送は、受信者が転送を承諾した時点で有効になります。"
-      ],
-      "No incoming forwarding rules": [
-        "受信転送ルールがありません"
-      ],
-      "No outgoing forwarding rules": [
-        "送信転送ルールなし"
       ],
       "Please update your forwarding keys": [
         "転送キーを更新してください"
@@ -3125,12 +2976,6 @@
       "And": [
         "かつ"
       ],
-      "Forward from": [
-        "転送元"
-      ],
-      "Forward to": [
-        "転送先"
-      ],
       "or": [
         "または"
       ],
@@ -3144,33 +2989,15 @@
         "添付ファイルなし"
       ]
     },
-    "email_forwarding_2023: Link": {
-      "Learn more": [
-        "より詳しく"
-      ]
-    },
-    "email_forwarding_2023: Outgoing forwarding tab name": {
-      "To me": [
-        "自分に"
-      ]
-    },
     "email_forwarding_2023: Placeholder": {
       "Condition:": [
         "状態："
-      ],
-      "Enter email address": [
-        "メールアドレスを入力"
       ],
       "Type text or keyword": [
         "テキストまたはキーワードを入力"
       ],
       "Type text or keyword for this condition:": [
         "この条件のテキストまたはキーワードを入力します："
-      ]
-    },
-    "email_forwarding_2023: Prompt": {
-      "Forwarding to the destination address will end.": [
-        "宛先アドレスへの転送は終了する。"
       ]
     },
     "email_forwarding_2023: Status": {
@@ -3191,15 +3018,6 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "${ forwarderEmail } 用に新しい暗号化キーが生成されました。"
-      ],
-      "Changes saved": [
-        "変更の保存"
-      ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "${ forward.ForwardeeEmail } に電子メールが送信されました"
-      ],
       "Forwarding accepted": [
         "転送を受け付けました"
       ],
@@ -3208,32 +3026,14 @@
       ],
       "Forwarding deleted": [
         "転送が削除されました"
-      ],
-      "Forwarding paused": [
-        "転送一時停止中"
-      ],
-      "Forwarding resumed": [
-        "転送再開"
       ]
     },
     "email_forwarding_2023: Title": {
-      "Automatically forward emails to other accounts": [
-        "他のアカウントにメールを自動転送"
-      ],
-      "Delete forwarding?": [
-        "転送を削除しますか？"
-      ],
       "Email forwarding deactivated": [
         "メール転送が無効になりました"
       ],
       "Forwarding activated": [
         "転送が有効化されました"
-      ],
-      "Request confirmation": [
-        "確認のリクエスト"
-      ],
-      "Set up forwarding": [
-        "転送の設定"
       ]
     },
     "email_forwarding_2023: Warning": {
@@ -3279,9 +3079,6 @@
       ],
       "Authentication error.": [
         "認証エラー。"
-      ],
-      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "自動返信は有料機能です。この機能を使用するには有料アカウントにアップグレードしてください。"
       ],
       "Calendar limit reached": [
         "カレンダーの制限に達しました"
@@ -3400,12 +3197,6 @@
       "Invalid postal code": [
         "無効な郵便番号です"
       ],
-      "Invalid private key file": [
-        "秘密鍵ファイルが無効です"
-      ],
-      "Invalid Sieve code": [
-        "無効な Sieve コードです"
-      ],
       "Invalid verification code": [
         "無効な検証コード"
       ],
@@ -3501,9 +3292,6 @@
       ],
       "Please set a recovery phone number first": [
         "まず回復用の電話番号を設定してください"
-      ],
-      "Please set a recovery/notification email first": [
-        "まず回復・通知用のメールアドレスを設定してください"
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "マルチユーザーサポートを受けるには、複数のユーザーを含むビジネスプランにアップグレードしてください"
@@ -3708,9 +3496,6 @@
       ],
       "You must set a name": [
         "名前を設定してください"
-      ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "SMTP送信トークンを生成するには、カスタムドメインアドレスが必要です。"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "あなたのアカウントあるいは組織には未払いの請求があります。すべての未払いの請求をお支払いください。"
@@ -4025,6 +3810,14 @@
     "Event title": {
       "(no title)": [
         "(タイトルなし)"
+      ]
+    },
+    "Export calendar": {
+      "${ totalProcessed }/${ totalToProcess } events exported": [
+        "${ totalProcessed }/${ totalToProcess } 件の予定がエクスポートされました"
+      ],
+      "Password reset - multiple events cannot be decrypted": [
+        "パスワードリセット - 複数の予定は復号化できません"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -4540,9 +4333,6 @@
       ]
     },
     "FilterSettings": {
-      "Add a custom filter to automatically perform certain actions, like labeling or archiving messages.": [
-        "仕分けフィルターを追加すると、メッセージのラベル付けやアーカイブなどの操作を自動で実行できます。"
-      ],
       "Allow:": [
         "許可:"
       ],
@@ -4715,9 +4505,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "操作"
-      ],
       "App version": [
         "アプリのバージョン"
       ],
@@ -4739,9 +4526,6 @@
       "Event": [
         "イベント"
       ],
-      "Folders": [
-        "フォルダー"
-      ],
       "IP address": [
         "IPアドレス"
       ],
@@ -4756,9 +4540,6 @@
       ],
       "Name": [
         "名前"
-      ],
-      "Notifications": [
-        "通知"
       ],
       "Organization key fingerprint": [
         "組織用の鍵のフィンガープリント"
@@ -4819,21 +4600,12 @@
         "値"
       ]
     },
-    "Header for table": {
-      "Actions": [
-        "動作"
+    "Header; Table with list of calendars arranged by type": {
+      "Holidays": [
+        "休日"
       ],
-      "Created": [
-        "作成日時"
-      ],
-      "Email address": [
-        "メールアドレス"
-      ],
-      "Last used": [
-        "最終使用日時"
-      ],
-      "Token name": [
-        "トークン名"
+      "Other": [
+        "その他"
       ]
     },
     "Heading in trial plan": {
@@ -5103,11 +4875,6 @@
         "${ boldExport } を選択して ICS ファイルとしてカレンダーをエクスポートします。"
       ]
     },
-    "Import key": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "秘密鍵をインポートしてよろしいですか？ 安全でない環境で生成された鍵や流出した鍵をインポートすると、メールのセキュリティに悪影響を及ぼす可能性があります。\n\nまた、秘密鍵に関連付けられた公開鍵は公開されたキーサーバーで利用できるようになります。鍵に本名などの個人情報が含まれていて公開したくない場合は、鍵をインポートする前に編集してください。"
-      ]
-    },
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } からインポート"
@@ -5214,6 +4981,9 @@
       ],
       "${ discountPercentage } forever": [
         "永久に ${ discountPercentage } 割引"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME }は以前のファイルバージョンを保存しなくなります。"
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } は無効です"
@@ -5368,9 +5138,6 @@
       "active": [
         "アクティブ"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "あなたのアカウントに @pm.me メールアドレスを追加します。このシンプルな短縮ドメインは「${ MAIL_APP_NAME } me」または「Private Message me」の略です。"
-      ],
       "Add a recovery email address": [
         "回復用メールアドレスを追加"
       ],
@@ -5473,9 +5240,6 @@
       "Are you sure you want to delete this domain?": [
         "このドメインを削除しますか?"
       ],
-      "Are you sure you want to delete this filter?": [
-        "このフィルターを削除してよろしいですか？"
-      ],
       "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
         "本当にこのフォルダーを削除してよろしいですか？サブフォルダーもすべて削除されます。"
       ],
@@ -5502,24 +5266,6 @@
       ],
       "Attention required": [
         "注意が必要です"
-      ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "自動返信は、毎月設定された日の開始時刻と終了時刻の間有効です。"
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "自動返信は、選択された曜日の開始時刻と終了時刻の間有効です。"
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "自動返信は、設定された開始日時と終了日時の間有効です。"
-      ],
-      "Auto-reply is active until you turn it off.": [
-        "自動返信は、オフにするまで有効です。"
-      ],
-      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "自動返信は、選択された曜日の開始日時と終了日時の間有効です。"
-      ],
-      "Available on macOS, Windows, and Linux.": [
-        "macOS、Windows、Linux に対応しています。"
       ],
       "Awaiting transaction": [
         "トランザクション待ち"
@@ -5559,9 +5305,6 @@
       ],
       "Billing cycle: ${ text }": [
         "支払いサイクル: ${ text }"
-      ],
-      "Blocks senders from seeing if and when you opened a message.": [
-        "あなたがメッセージを閲覧したかどうか、いつ閲覧したかを送信者が確認できないようにします。"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "FREEプランへダウングレードすると、現在の特典は利用できなくなります。今後アップグレードしても現在の特典は復活しません。"
@@ -5719,9 +5462,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "お気に入りのアプリをダウンロードし、どこにいてもプライバシーを保ってください。"
       ],
-      "Download your PGP keys for use with other PGP-compatible services.": [
-        "ほかの PGP 互換サービスで使用するためには PGP 鍵をダウンロードしてください。"
-      ],
       "Drop file here to upload": [
         "アップロードするファイルをここにドロップ"
       ],
@@ -5755,14 +5495,8 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "このラベルが付いたメールは削除されず、各フォルダで見つけることができます。"
       ],
-      "Enable TLS or SSL on the external service if it is supported.": [
-        "外部サービスが TLS または SSL に対応している場合は有効にします。"
-      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "もう一度回復を有効にすると新しい回復用フレーズが生成されます。"
-      ],
-      "Encryption setting updated": [
-        "暗号化の設定が更新されました。"
       ],
       "Enhance your network security": [
         "ネットワークセキュリティの強化"
@@ -5854,17 +5588,8 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } を入手"
       ],
-      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
-        "トークンを使用する予定のサービスなどのわかりやすい名前を付け、有効な独自ドメインアドレスを選択します。 このトークンでメールを送信できるのは、このアドレスだけです。"
-      ],
-      "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
-        "あなたの公開鍵を友達に渡すか、誰もがあなたにエンドツーエンドの暗号化メールを送れるようにオンラインで公開しましょう！"
-      ],
       "here": [
         "こちら"
-      ],
-      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        "プロキシを介してリモートコンテンツを読み込むことにより、識別情報を非表示にします。コンテンツを添付ファイルとして保存するオプション。"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "別の管理者がこのパスワードを変更した場合、変更した人に新しい組織パスワードを問合せてください。"
@@ -6025,9 +5750,6 @@
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "DKIM を使用し続ける限り、これらのレコードを DNS に登録したままにしておいてください。"
       ],
-      "Key deletion is irreversible!": [
-        "鍵を削除すると元に戻せません！"
-      ],
       "Label all imported messages as": [
         "インポートされたすべてのメッセージに次のようにラベル"
       ],
@@ -6046,14 +5768,8 @@
       "Learn more": [
         "詳細"
       ],
-      "learn more about Sieve programming language": [
-        "Sieve プログラミング言語の詳細について学ぶ"
-      ],
       "Left to Right": [
         "左から右"
-      ],
-      "Let your contacts know you care about their privacy.": [
-        "あなたが宛先の方のプライバシーに配慮していることを伝えましょう。"
       ],
       "Link copied to clipboard": [
         "リンクがクリップボードにコピーされました"
@@ -6066,9 +5782,6 @@
       ],
       "Link type": [
         "リンクの種類"
-      ],
-      "Loaded content is being protected by our proxy when tracker protection is activated.": [
-        "トラッカー防止が有効な場合、読み込まれたコンテンツはProtonのプロキシで保護されています。"
       ],
       "Loading": [
         "読み込み中"
@@ -6127,9 +5840,6 @@
       "New": [
         "新規"
       ],
-      "No account keys exist": [
-        "アカウントのキーが存在しません"
-      ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "アカウントの回復手段が設定されていません。アカウントにアクセスできなくなる危険性があります。"
       ],
@@ -6172,9 +5882,6 @@
       "Not a valid URL": [
         "有効な URL ではありません"
       ],
-      "Not yet available in our Android mobile app.": [
-        "Android携帯アプリではまだご利用いただけません。"
-      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "自分のデバイス以外からサインインする場合はプライベートブラウジングウィンドウを使用し、作業完了後にウィンドウを閉じてください。${ learnMore }"
       ],
@@ -6195,9 +5902,6 @@
       ],
       "One account. All ${ BRAND_NAME } services.": [
         "すべての ${ BRAND_NAME } サービスを 1 つのアカウントで。"
-      ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "この設定は、メールの宛先に PGP を使用している非 ${ BRAND_NAME } ユーザーがいる場合にのみ変更してください。"
       ],
       "Open source": [
         "オープンソース"
@@ -6256,9 +5960,6 @@
       "per month, billed every 24 months": [
         "月額、24ヶ月ごとに請求"
       ],
-      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "送信メッセージに署名がある場合、ほとんどの PGP クライアントは PGP 鍵を自動検出します。"
-      ],
       "Phone number": [
         "電話番号"
       ],
@@ -6297,9 +5998,6 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "注意: このドメインを削除することにより、このアドレスに関連付けられているすべてのアドレスは無効になります。"
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "このフィルターを削除すると、トリガーされるすべての自動アクションの処理が停止することに注意してください。"
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "確認ボタンをクリックすると、アカウントに ${ creditsRemaining } クレジットが残ります。"
@@ -6469,6 +6167,12 @@
       "Setting up your organization": [
         "組織の設定"
       ],
+      "Settings update failed": [
+        "設定の更新が失敗しました"
+      ],
+      "Settings updated": [
+        "設定が更新されました"
+      ],
       "Show original message": [
         "元のメッセージを表示"
       ],
@@ -6481,11 +6185,8 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "あなたは忠実なユーザーですので、あなたのアカウントには追加機能が有効になっています。"
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
-        "SMTP 送信により、サードパーティのサービスまたはデバイスがカスタム ドメイン アドレスの ${ MAIL_APP_NAME } を介して電子メールを送信できるようになります。 アクセスをリクエストするには、ユースケース、使用したいカスタム ドメイン、および予想される時間ごとおよび日ごとの電子メールの量を説明する ${ createTicket } を送信してください。"
-      ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
-        "SMTP 送信により、サードパーティのサービスまたはデバイスがカスタム ドメイン アドレスの ${ MAIL_APP_NAME } を介して電子メールを送信できるようになります。 この機能を使用するには、まず新しいトークンを生成します。"
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "SMTP送信は、サードパーティのサービスやデバイスがあなたの独自ドメインアドレス用に${ MAIL_APP_NAME }を介してメールを送信することを許可します。この機能は、独自ドメインを持つ${ BRAND_NAME }のビジネスユーザーのみに利用可能です。"
       ],
       "Some keys successfully reactivated": [
         "いくつかの鍵は正常に再度アクティブになりました"
@@ -6513,9 +6214,6 @@
       ],
       "Storage used by this user": [
         "ストレージはこのユーザーによって使われています"
-      ],
-      "Store this password and file in a safe place. You’ll need them again to import your key.": [
-        "このパスワードとファイルは安全な場所に保管してください。パスワードとファイルは鍵をインポートするときにもう一度必要になります。"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
@@ -6574,9 +6272,6 @@
       "The format of your CSV file is incorrect.": [
         "CSV ファイルのフォーマットが間違っています。"
       ],
-      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "Import-Export アプリを使うことで、ローカルなバックアップ用にメッセージをエクスポートしたり、以前のバックアップをアカウントに戻すことができます。"
-      ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "${ BRAND_NAME } アカウントを設定していないことを報告するリンクの有効期限が切れました。 この問題を解決するには、サポート チームにご連絡ください。"
       ],
@@ -6631,9 +6326,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "このリンクはホモグラフ攻撃の可能性があります。 これがあなたのアクセスしたいリンクであることを確認するか、開かないようにしてください。"
       ],
-      "This token won’t be available after you close this window, and you should not share it with anyone.": [
-        "このウィンドウを閉じると、トークンは確認できなくなります。トークンは誰とも共有しないでください。"
-      ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "この購読解除リンクは有効期限が切れています。 このメーリング リストから最新のメールを開いてください。"
       ],
@@ -6646,11 +6338,14 @@
       "This will cancel your current paid subscription and you will lose any loyalty benefits you have accumulated. The remaining balance of your subscription will be returned as account credits.": [
         "この操作により、現在の有料サブスクリプションがキャンセルされ、これまでに蓄積されたロイヤルティ特典が失われます。ご利用料金の残高分はアカウントクレジットとして返金されます。"
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "これにより、${ rententionLabel }より古い以前のファイルバージョンがすべて削除されます。"
+      ],
+      "This will delete all previous versions of your files.": [
+        "ファイルの以前のバージョンは全て削除されます。"
+      ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "現在の回復用フレーズは無効になります。この回復用フレーズでアカウントにアクセスしたりデータを復元することはできなくなります。"
-      ],
-      "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
-        "あなたの秘密鍵を含むファイルをダウンロードします。このファイルは必ずパスワードを用いて暗号化してください。"
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "これにより、PayPal を使用して ${ BRAND_NAME } のサブスクリプションの支払いが可能になります。 新しいブラウザタブで PayPal にリダイレクトします。 使用している場合は ポップアップブロッカーを一旦無効にしてから続行してください。"
@@ -6672,9 +6367,6 @@
       ],
       "to ${ product } Business": [
         "${ product }ビジネスへ"
-      ],
-      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
-        "データを失うことを避けるため、あなたが何をしているか理解していない場合やコピーをエクスポートしていない場合は削除しないでください。"
       ],
       "To cancel your subscription, please reach out to us.": [
         "サブスクリプションをキャンセルされる場合は、弊社までご連絡ください。"
@@ -6723,9 +6415,6 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "${ toAppName } を使用するには、${ MAIL_APP_NAME } アドレスが必要です。"
-      ],
-      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
-        "正常に動作させるには、それぞれのフィルターに正しい名前と有効な Sieve スクリプトが含まれている必要があります。${ link }ことができます。"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "新規プランに登録したり、現在のプランを更新するときに使えるクレジットをアカウントにチャージします。1 ${ i18nCurrency } ごとに 1 クレジットを取得できます。"
@@ -6802,8 +6491,8 @@
       "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "${ PLAN_NAMES[PLANS.BUNDLE] }、${ PLAN_NAMES[PLANS.FAMILY] }、または ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } プランにアップグレードすると、${ PROTON_SENTINEL_NAME } にアクセスできるようになります。"
       ],
-      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
-        "アップグレードして、アカウントにより短く共有しやすい @pm.me アドレスを追加します。これは \"私に ${ MAIL_APP_NAME } で\" と \"プライベートメッセージを私に\" という意味です。"
+      "Upgrade to unlock": [
+        "アップグレードしてロックを解除"
       ],
       "Upload picture": [
         "写真をアップロード"
@@ -6825,9 +6514,6 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "公式アプリを使わず${ VPN_APP_NAME }のサーバーに接続するには、以下の認証情報を使用してください。TunnelblickをMacOSで使う場合や、OpenVPNを使う場合などです。"
-      ],
-      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
-        "選択したメールアドレスを外部サービスの SMTP ユーザー名として、生成されたトークンを SMTP パスワードとして使用します。"
       ],
       "Users": [
         "ユーザー"
@@ -6852,6 +6538,9 @@
       ],
       "Version ${ version }": [
         "バージョン ${ version }"
+      ],
+      "Version history": [
+        "バージョン履歴"
       ],
       "Visa Secure logo": [
         "Visa Secure ロゴ"
@@ -6934,12 +6623,6 @@
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "現在ご利用のプランを、同じ料金でより多くのサービスを提供する改良型プランにアップグレードします。システムの更新中は、変更することはできません。アップデートが完了したら、すぐにメールでお知らせします。"
       ],
-      "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "無効にすると、知らないうちに画像が読み込まれることを防ぎます。"
-      ],
-      "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "通知を有効にすると、${ MAIL_APP_NAME } アカウントに新しいメッセージがある場合に回復用メールアドレスに通知を送信します。"
-      ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "紹介した友達がプランに登録すると、あなたのプランに使用できるクレジットが付与されます。"
       ],
@@ -6957,9 +6640,6 @@
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "ビジネス プランまたはエンタープライズ プランでは、組織用に ${ boldDedicatedServers } を購入し、${ boldGateways } を設定してアクセスできるユーザーを制御できます。"
-      ],
-      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
-        "現在のプランでは、@pm.me アドレスでメッセージを受信することだけが出来ます。@pm.me を使用してメッセージを送信したり、追加のアドレスを作成したりするには、アップグレードしてください。"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "有効化しない限り、新規ユーザーの作成、既存ユーザーへのメールアドレスの追加並びに、ユーザーのアカウントへのアクセスはできません。"
@@ -7030,9 +6710,6 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "この機能を有効にすると、このフォルダーに新しいメッセージが届いた際に通知されます。"
       ],
-      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "Outlook、メール (Apple)、Thunderbird などの IMAP/SMTP をサポートするデスクトップ向けメールクライアントでも ${ MAIL_APP_NAME } を使うことができます。"
-      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "以下の認証情報を使用すると、macOS 向け Tunnelblick や GNU/Linux 向け OpenVPN のようなサードパーティのオープンソースの VPN アプリで ${ VPN_APP_NAME } サーバーに接続できます。"
       ],
@@ -7078,17 +6755,11 @@
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "ストレージ容量が100%に達したため、新しいメールを送受信できません。${ freeUpMessage } ${ upgradeLink }"
       ],
-      "You should export a backup of this key in case you need to restore data it encrypted.": [
-        "暗号化されたデータを復元する必要が生じたときのために、この鍵のバックアップをエクスポートしておくことを推奨します。"
-      ],
       "You will be redirected to ${ destination } after signing in.": [
         "サインイン後、${ destination } にリダイレクトされます。"
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } を使うには ${ BRAND_NAME } アドレスが必要です"
-      ],
-      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
-        "このキーで暗号化されたどんなメッセージも、ファイルも、他のデータも、復号化することはできません。このキーで署名されたすべてのデータは、${ BRAND_NAME } アプリによって検証されなくなります。"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "支払いの検証のため、まもなく PayPal のサイトへリダイレクトされます。"
@@ -7190,11 +6861,6 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "鍵 ${ fingerprint } は正常にアップロードされました"
-      ]
-    },
-    "Info - folder colouring feature": {
-      "When enabled, sub-folders inherit the color of the parent folder.": [
-        "有効にすると、サブフォルダーは親フォルダーの色を継承します。"
       ]
     },
     "Info for cash payment method": {
@@ -7300,50 +6966,9 @@
         "サブスクリプション"
       ]
     },
-    "Key generation": {
-      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "既に同じ暗号化アルゴリズムのキーが存在します。ほかのキーを生成するとアカウントの読み込みが遅くなる原因になります。続行してよろしいですか?"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "同じ暗号化アルゴリズムを持つ鍵が、このアドレスに対してすでにアクティブです。別の鍵を生成すると、アカウントの読み込みが遅くなり、この鍵を削除すると問題が発生する可能性があります。古い鍵が侵害されために新しい鍵を生成している場合は、侵害された鍵をマークしてください。続行しますか?"
-      ],
-      "Generate key": [
-        "鍵の生成"
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "フィンガープリント ${ fp } の鍵が正常に作成されました。"
-      ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "暗号鍵を生成しています。これには数分かかり、ブラウザが一時的にフリーズする場合があります。"
-      ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "アドレスの暗号鍵を生成しています。これには数分かかり、ブラウザが一時的にフリーズする場合があります。"
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "現在の鍵が侵害されたと思われる場合は、新しい暗号鍵を生成できます。"
-      ]
-    },
     "Key state badge": {
-      "Active": [
-        "有効"
-      ],
-      "Compromised": [
-        "侵害された"
-      ],
-      "Disabled": [
-        "無効"
-      ],
       "Forwarding": [
         "転送"
-      ],
-      "Inactive": [
-        "無効"
-      ],
-      "Obsolete": [
-        "廃止された"
-      ],
-      "Primary": [
-        "プライマリー"
       ]
     },
     "Key type option": {
@@ -7535,44 +7160,6 @@
         "メッセージショートカット"
       ]
     },
-    "Keys actions": {
-      "Delete": [
-        "削除"
-      ],
-      "Disables encryption with this key": [
-        "この鍵での暗号化を無効にします"
-      ],
-      "Disables signature verification and encryption with this key": [
-        "この鍵での暗号化および、署名の検証を無効にします"
-      ],
-      "Enable encryption with this key": [
-        "この鍵での暗号化を有効にする"
-      ],
-      "Enable signature verification and encryption with this key": [
-        "この鍵での暗号化および、署名の検証を有効にします"
-      ],
-      "Export private key": [
-        "秘密鍵のエクスポート"
-      ],
-      "Export public key": [
-        "公開鍵をエクスポート"
-      ],
-      "Make primary": [
-        "プライマリーにする"
-      ],
-      "Mark compromised": [
-        "侵害された印をつける"
-      ],
-      "Mark not compromised": [
-        "侵害された印をはずす"
-      ],
-      "Mark not obsolete": [
-        "廃止された印をはずす"
-      ],
-      "Mark obsolete": [
-        "廃止された印をつける"
-      ]
-    },
     "Knowledge base link label": {
       "Here's how": [
         "詳細"
@@ -7593,9 +7180,6 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } アドレス"
-      ],
-      "${ MAIL_APP_NAME } footer": [
-        "${ MAIL_APP_NAME } フッター"
       ],
       "${ n } months": [
         "${ n } か月"
@@ -7639,9 +7223,6 @@
       "Allow": [
         "許可"
       ],
-      "Allow notifications by email": [
-        "メールによる通知を許可"
-      ],
       "Allow recovery by email": [
         "メールアドレスでの回復を許可"
       ],
@@ -7678,29 +7259,11 @@
       "Apply filter to existing emails": [
         "既存のメールにフィルターを適用"
       ],
-      "Attach public key": [
-        "公開鍵の添付"
-      ],
       "Attach screenshot(s)": [
         "スクリーンショットを添付"
       ],
       "Authenticator app": [
         "認証アプリ"
-      ],
-      "Auto show embedded images": [
-        "埋め込み画像の自動表示"
-      ],
-      "Auto show remote images": [
-        "外部画像の自動表示"
-      ],
-      "Auto-delete unwanted messages": [
-        "不要なメッセージを自動削除"
-      ],
-      "Auto-reply": [
-        "自動返信"
-      ],
-      "Auto-unsubscribe": [
-        "自動登録解除"
       ],
       "Awarded": [
         "進呈"
@@ -7713,9 +7276,6 @@
       ],
       "Block": [
         "ブロック"
-      ],
-      "Block email tracking": [
-        "メールのトラッキングをブロック"
       ],
       "Block malware only": [
         "マルウェアのみブロック"
@@ -7777,15 +7337,6 @@
       "Composer": [
         "メール作成"
       ],
-      "Composer default font/size": [
-        "作成画面の標準フォント/サイズ"
-      ],
-      "Composer mode": [
-        "新規作成時の書式"
-      ],
-      "Composer text direction": [
-        "新規作成時のテキスト方向"
-      ],
       "Conditions": [
         "条件"
       ],
@@ -7794,9 +7345,6 @@
       ],
       "Confirm email": [
         "メールの確認"
-      ],
-      "Confirm link URLs": [
-        "URL を確認"
       ],
       "Confirm login password": [
         "ログインパスワードの確認"
@@ -7815,9 +7363,6 @@
       ],
       "Contacts": [
         "連絡先"
-      ],
-      "Conversation grouping": [
-        "会話のグループ化"
       ],
       "Copy": [
         "コピー"
@@ -7849,23 +7394,14 @@
       "Current email": [
         "現在のメール"
       ],
-      "Daily email notifications": [
-        "毎日のメール通知"
-      ],
       "Date": [
         "日付"
       ],
       "Date format": [
         "日付のフォーマット"
       ],
-      "Days of the week": [
-        "曜日"
-      ],
       "Default language": [
         "デフォルトの言語"
-      ],
-      "Default PGP scheme": [
-        "標準 PGP 方式"
       ],
       "Default scrollbars": [
         "デフォルトのスクロールバー"
@@ -7909,8 +7445,8 @@
       "Don't ask again": [
         "今後表示しない"
       ],
-      "Duration": [
-        "期間"
+      "Don't keep versions": [
+        "バージョンを保持しない"
       ],
       "Email": [
         "メールアドレス"
@@ -7936,18 +7472,6 @@
       "Emails (last month)": [
         "メール (過去 1 か月)"
       ],
-      "End date": [
-        "終了日"
-      ],
-      "End day of month": [
-        "月の終わりの日"
-      ],
-      "End time": [
-        "終了日時"
-      ],
-      "End weekday": [
-        "週の終わり"
-      ],
       "Enter password": [
         "パスワードを入力"
       ],
@@ -7959,9 +7483,6 @@
       ],
       "Event notifications": [
         "予定の通知"
-      ],
-      "Exclude Spam/Trash from All mail": [
-        "すべてのメールからスパム/ゴミを除外する"
       ],
       "Expiration (${ patternExpiration })": [
         "有効期限 (${ patternExpiration })"
@@ -8026,12 +7547,6 @@
       "Import to:": [
         "インポート先："
       ],
-      "Inbox": [
-        "受信トレイ"
-      ],
-      "Inherit color from parent folder": [
-        "親フォルダーの色を継承"
-      ],
       "Interval": [
         "間隔"
       ],
@@ -8040,9 +7555,6 @@
       ],
       "Keep me signed in": [
         "サインインしたままにする"
-      ],
-      "Keep messages in Sent/Drafts": [
-        "送信済み/下書きを保持"
       ],
       "Key": [
         "鍵"
@@ -8091,9 +7603,6 @@
       ],
       "Mark as": [
         "印をつける"
-      ],
-      "Message": [
-        "メッセージ"
       ],
       "Moderate NAT": [
         "モデレート NAT"
@@ -8224,9 +7733,6 @@
       "Please add the following TXT record. Note, DNS records can take several hours to update.": [
         "次の TXT レコードを追加してください。（注: DNS レコードの更新には数時間を要する場合があります。）"
       ],
-      "Please select files to upload": [
-        "アップロードするファイルを選択してください"
-      ],
       "Please share any feedback to help us improve.": [
         "ご意見、ご感想がありましたら、ぜひお聞かせください。"
       ],
@@ -8239,14 +7745,8 @@
       "Previous password": [
         "以前のパスワード"
       ],
-      "Prompt to trust keys": [
-        "鍵を信頼するか確認する"
-      ],
       "Proration": [
         "日割り計算"
-      ],
-      "Protection mode": [
-        "保護モード"
       ],
       "Read": [
         "既読"
@@ -8293,32 +7793,11 @@
       "Send crash reports": [
         "クラッシュレポートを送信"
       ],
-      "Show sender images": [
-        "差出人画像を表示"
-      ],
       "Show unread count in Favicon": [
         "ファビコンに未読メッセージ数を表示"
       ],
       "Show week numbers": [
         "週番号を表示"
-      ],
-      "Sign external messages": [
-        "外部宛のメッセージへの署名"
-      ],
-      "Signature": [
-        "署名"
-      ],
-      "SMTP port": [
-        "SMTP ポート"
-      ],
-      "SMTP server": [
-        "SMTP サーバー"
-      ],
-      "SMTP token": [
-        "SMTP トークン"
-      ],
-      "SMTP username": [
-        "SMTP ユーザー名"
       ],
       "Spam": [
         "迷惑メール"
@@ -8329,20 +7808,8 @@
       "Start date": [
         "開始日"
       ],
-      "Start day of month": [
-        "月の始まりの日"
-      ],
-      "Start time": [
-        "開始日時"
-      ],
-      "Start weekday": [
-        "週の始まり"
-      ],
       "Statement": [
         "適用状態"
-      ],
-      "Sticky labels": [
-        "スティッキーラベル"
       ],
       "Subscription options": [
         "サブスクリプションのオプション"
@@ -8380,14 +7847,8 @@
       "To: ${ toEmail }": [
         "宛先: ${ toEmail }"
       ],
-      "Token name": [
-        "トークン名"
-      ],
       "Two-password mode": [
         "2 パスワードモード"
-      ],
-      "Undo send": [
-        "送信の取り消し"
       ],
       "Upload 1 or more encryption keys": [
         "1 つ以上の暗号鍵をアップロード"
@@ -8403,9 +7864,6 @@
       ],
       "Use a recovery phone number": [
         "回復用電話番号を使用"
-      ],
-      "Use folder colors": [
-        "フォルダーの色を使用"
       ],
       "User": [
         "ユーザー"
@@ -8547,30 +8005,6 @@
         "ベータ版"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "最大化"
-      ],
-      "Normal": [
-        "標準"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "通常"
-      ],
-      "Compact": [
-        "コンパクト"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "列"
-      ],
-      "Row": [
-        "行"
-      ]
-    },
     "Label, credit card": {
       "ZIP code": [
         "郵便番号"
@@ -8593,12 +8027,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } が作成されました"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } 更新されました"
-      ],
-      "Preference saved": [
-        "設定が保存されました"
       ]
     },
     "Limit of calendars reached": {
@@ -8639,9 +8067,6 @@
       ],
       "Contact us": [
         "お問い合わせ"
-      ],
-      "create a ticket": [
-        "チケットを作成する"
       ],
       "Create account": [
         "アカウントを作成"
@@ -8696,9 +8121,6 @@
       ],
       "Reset password": [
         "パスワードをリセット"
-      ],
-      "Set email address": [
-        "メールアドレスを設定"
       ],
       "Sign in": [
         "サインイン"
@@ -8788,6 +8210,16 @@
       ],
       "This feature is temporarily unavailable": [
         "この機能は一時的に利用できません。"
+      ]
+    },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } links per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "共有リンクは一つのカレンダーごとに${ MAX_LINKS_PER_CALENDAR }個まで作成できます。新しいリンクを作成するには、以下の中から一つ削除してください。"
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } members.": [
+        "カレンダーの最大人数（${ MAX_CALENDAR_MEMBERS }人）に達しました。"
       ]
     },
     "Member action": {
@@ -9096,6 +8528,26 @@
         "中程度の VPN 速度"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } へダウングレード"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "すべての ${ BRAND_NAME } プランを表示"
+      ],
+      "From ${ price }": [
+        "${ price } から"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "${ currentPlanName } アカウントを継続"
+      ],
+      "Upgrade": [
+        "アップグレード"
+      ],
+      "Upgrade now": [
+        "今すぐアップグレード"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "見直しを行う"
@@ -9135,26 +8587,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } へアップグレード"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } へダウングレード"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "すべての ${ BRAND_NAME } プランを表示"
-      ],
-      "From ${ price }": [
-        "${ price } から"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "${ currentPlanName } アカウントを継続"
-      ],
-      "Upgrade": [
-        "アップグレード"
-      ],
-      "Upgrade now": [
-        "今すぐアップグレード"
       ]
     },
     "new_plans: feature": {
@@ -9505,17 +8937,6 @@
         "チームマネジメント"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "トライアルは ${ formattedPeriodEndDate } に終了します"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 } で終わる ${ brand }"
@@ -9586,9 +9007,6 @@
       "Secure email with advanced features for your everyday communications.": [
         "毎日の会話のための、高度な機能を備えた安全な電子メールのプランです。"
       ],
-      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
-        "自動返信を設定して、外出中や返信できないことを送信者に知らせる。"
-      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "特定のセキュリティ ニーズを持つ大規模組織向けにカスタマイズされたソリューション"
       ],
@@ -9603,6 +9021,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "現在ご契約中のプランでは、キャンペーン価格をご利用いただけます。アカウントをダウングレードすると、キャンペーン価格が適用されなくなります。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "そうでない場合は、アカウントへのアクセスが制限され、最終的にはアカウントが無効化されます。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "プレミアム機能の ${ MAIL_APP_NAME } を使い続けるには、サブスクリプションと支払方法を選択してください。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "トライアルは ${ formattedPeriodEndDate } に終了します"
       ]
     },
     "new_plans: Label": {
@@ -9951,9 +9380,6 @@
       "IP Address copied to clipboard": [
         "IP アドレスがクリップボードにコピーされました"
       ],
-      "Key with fingerprint ${ fp } has been deleted.": [
-        "フィンガープリント ${ fp } の鍵が削除されました。"
-      ],
       "Link copied to clipboard": [
         "クリップボードにリンクがコピーされました"
       ],
@@ -10054,104 +9480,8 @@
       ]
     },
     "Option": {
-      "10th of the month": [
-        "月の10日"
-      ],
-      "11th of the month": [
-        "月の11日"
-      ],
-      "12th of the month": [
-        "月の12日"
-      ],
-      "13th of the month": [
-        "月の13日"
-      ],
-      "14th of the month": [
-        "月の14日"
-      ],
-      "15th of the month": [
-        "月の15日"
-      ],
-      "16th of the month": [
-        "月の16日"
-      ],
-      "17th of the month": [
-        "月の17日"
-      ],
-      "18th of the month": [
-        "月の18日"
-      ],
-      "19th of the month": [
-        "月の19日"
-      ],
-      "1st of the month": [
-        "月の1日"
-      ],
-      "20th of the month": [
-        "月の20日"
-      ],
-      "21st of the month": [
-        "月の21日"
-      ],
-      "22nd of the month": [
-        "月の22日"
-      ],
-      "23rd of the month": [
-        "月の23日"
-      ],
-      "24th of the month": [
-        "月の24日"
-      ],
-      "25th of the month": [
-        "月の25日"
-      ],
-      "26th of the month": [
-        "月の26日"
-      ],
-      "27th of the month": [
-        "月の27日"
-      ],
-      "28th of the month": [
-        "月の28日"
-      ],
-      "29th of the month": [
-        "月の29日"
-      ],
-      "2nd of the month": [
-        "月の2日"
-      ],
-      "30th of the month": [
-        "月の30日"
-      ],
-      "31st of the month": [
-        "月の31日"
-      ],
-      "3rd of the month": [
-        "月の3日"
-      ],
-      "4th of the month": [
-        "月の4日"
-      ],
-      "5th of the month": [
-        "月の5日"
-      ],
-      "6th of the month": [
-        "月の6日"
-      ],
-      "7th of the month": [
-        "月の7日"
-      ],
-      "8th of the month": [
-        "月の8日"
-      ],
-      "9th of the month": [
-        "月の9日"
-      ],
       "Add to existing group": [
         "既存のグループに追加"
-      ],
-      "Ask each time": [
-        "毎回確認"
       ],
       "Auto": [
         "自動"
@@ -10167,9 +9497,6 @@
       ],
       "Create new group": [
         "新しいグループを作成"
-      ],
-      "Fixed duration": [
-        "固定期間"
       ],
       "Free server configs": [
         "無料サーバーの設定ファイル"
@@ -10189,41 +9516,11 @@
       "It's too expensive": [
         "料金が高過ぎる"
       ],
-      "Left to Right": [
-        "左から右"
-      ],
       "My reason isn't listed": [
         "それ以外の理由"
       ],
       "No parent folder": [
         "親フォルダーなし"
-      ],
-      "Normal": [
-        "標準"
-      ],
-      "Off": [
-        "無効"
-      ],
-      "On": [
-        "有効"
-      ],
-      "Permanent": [
-        "無期限"
-      ],
-      "Plain text": [
-        "プレーンテキスト"
-      ],
-      "Repeat daily": [
-        "日次での繰り返し"
-      ],
-      "Repeat monthly": [
-        "月次での繰り返し"
-      ],
-      "Repeat weekly": [
-        "週次での繰り返し"
-      ],
-      "Right to Left": [
-        "右から左"
       ],
       "Router": [
         "ルーター"
@@ -10239,20 +9536,6 @@
       ],
       "The whole organization": [
         "組織全体"
-      ]
-    },
-    "Option delay send seconds": {
-      "0 seconds": [
-        "0 秒"
-      ],
-      "10 seconds": [
-        "10 秒"
-      ],
-      "20 seconds": [
-        "20 秒"
-      ],
-      "5 seconds": [
-        "5 秒"
       ]
     },
     "Option group": {
@@ -10272,14 +9555,6 @@
       ],
       "Merge with calendar": [
         "カレンダーと結合"
-      ]
-    },
-    "Option protection mode": {
-      "Load content via proxy (recommended)": [
-        "プロキシ経由でコンテンツを読み込む (推奨)"
-      ],
-      "Load content via proxy and store as attachments": [
-        "コンテンツをプロキシー経由で読み込み添付ファイルとして保持します"
       ]
     },
     "Organization capacity error": {
@@ -10306,20 +9581,6 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "現在のプランでは、最大${ humanReadableAvailableSpace } のストレージを作成できます。"
-      ]
-    },
-    "OS compatibility": {
-      ".deb (for Debian/Ubuntu)": [
-        ".deb (Debian/Ubuntu 用)"
-      ],
-      ".dmg (10.12 or later)": [
-        ".dmg (10.12 以降)"
-      ],
-      ".rpm (for Fedora/openSUSE)": [
-        ".rpm (Fedora/openSUSE 用)"
-      ],
-      "PKGBUILD (for other distributions)": [
-        "PKGBUILD (その他のディストリビューション用)"
       ]
     },
     "Participant name": {
@@ -10645,9 +9906,6 @@
       "Please select the main reason": [
         "主な理由をお選びください。"
       ],
-      "Printer": [
-        "プリンター"
-      ],
       "Search": [
         "検索"
       ],
@@ -10807,6 +10065,21 @@
       ],
       "State of the art": [
         "最新の暗号形式"
+      ]
+    },
+    "Remove calendar section description": {
+      "You will no longer have access to this calendar.": [
+        "このカレンダーにはアクセスできなくなります。"
+      ]
+    },
+    "Remove calendar section text": {
+      "If you leave this calendar, you'll have to ask the owner to join again.": [
+        "このカレンダーを退出する場合は、オーナーに再度参加を依頼する必要があります。"
+      ]
+    },
+    "Remove calendar section title": {
+      "Leave calendar?": [
+        "カレンダーから退出しますか？"
       ]
     },
     "Restore administrator panel": {
@@ -11169,38 +10442,6 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "設定の更新に失敗しました"
-      ]
-    },
-    "Settings/filters": {
-      "Filters": [
-        "フィルター"
-      ]
-    },
-    "Settings/filters - table": {
-      "Action": [
-        "操作"
-      ],
-      "Name": [
-        "名前"
-      ],
-      "Order": [
-        "順序"
-      ],
-      "Status": [
-        "ステータス"
-      ]
-    },
-    "Settings/labels": {
-      "Labels/Folders": [
-        "ラベル/フォルダー"
-      ]
-    },
-    "Settings/labels - table": {
-      "Actions": [
-        "動作"
-      ],
-      "Labels": [
-        "ラベル"
       ]
     },
     "Share calendar assistive text": {
@@ -11669,15 +10910,6 @@
       "Address added": [
         "アドレスが追加されました"
       ],
-      "Address updated": [
-        "アドレスが更新されました"
-      ],
-      "Auto-reply disabled": [
-        "自動返答をオフ"
-      ],
-      "Auto-reply updated": [
-        "自動返信が更新されました。"
-      ],
       "Bug reported": [
         "バグの報告が送信されました"
       ],
@@ -11771,20 +11003,11 @@
       "Phone number updated": [
         "電話番号が更新されました"
       ],
-      "Port copied to clipboard": [
-        "ポートがクリップボードにコピーされました"
-      ],
       "Preference saved": [
         "設定が保存されました"
       ],
-      "Premium address created": [
-        "プレミアムアドレスが作成されました"
-      ],
       "Resuming import": [
         "インポートを再開"
-      ],
-      "Server copied to clipboard": [
-        "サーバーがクリップボードにコピーされました"
       ],
       "Session revoked": [
         "セッションを失効しました"
@@ -11792,14 +11015,8 @@
       "Sessions revoked": [
         "セッションを失効しました"
       ],
-      "SMTP token deleted": [
-        "SMTP トークンを削除しました"
-      ],
       "SPF value copied to clipboard": [
         "SPF 値がクリップボードにコピーされました"
-      ],
-      "Token copied to clipboard": [
-        "トークンがクリップボードにコピーされました"
       ],
       "Undo in progress": [
         "取り消し中"
@@ -11837,16 +11054,6 @@
         "ユーザーが削除されました。"
       ]
     },
-    "Success message after sorting folders": {
-      "Folders sorted": [
-        "フォルダーを並べ替えました"
-      ]
-    },
-    "Success message after sorting labels": {
-      "Labels sorted": [
-        "ラベルを並べ替えました"
-      ]
-    },
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } が削除されました"
@@ -11872,14 +11079,8 @@
       "Creating config file for ${ serverName }": [
         "${ serverName } の設定ファイルを作成しています"
       ],
-      "Filter removed": [
-        "フィルターが削除されました。"
-      ],
       "Preference updated": [
         "設定が更新されました"
-      ],
-      "Status updated": [
-        "状態が更新されました。"
       ]
     },
     "Suffix": {
@@ -11995,11 +11196,6 @@
         "vCard フィールド"
       ]
     },
-    "TableRow": {
-      "No SMTP tokens found": [
-        "SMTP トークンがありません"
-      ]
-    },
     "Time unit for duration; displayed in the time picker": {
       "${ hours } h": [
         "${ hours } 時間"
@@ -12076,9 +11272,6 @@
       "Action": [
         "アクション"
       ],
-      "Activate @pm.me": [
-        "@pm.me を有効にする"
-      ],
       "Activate account and generate keys": [
         "アカウントをアクティブにしてキーを生成"
       ],
@@ -12115,9 +11308,6 @@
       "Add servers": [
         "サーバー追加"
       ],
-      "Add Sieve filter": [
-        "Sieve フィルターの追加"
-      ],
       "Add to allow list": [
         "許可リストに追加"
       ],
@@ -12151,9 +11341,6 @@
       "Appearance": [
         "外観"
       ],
-      "Apply filter to existing messages": [
-        "存在するメッセージにフィルターを適用"
-      ],
       "Apply gift code": [
         "ギフトコードを使用"
       ],
@@ -12169,17 +11356,11 @@
       "Auto-reply": [
         "自動返信"
       ],
-      "Automatically sign outgoing messages?": [
-        "送信メッセージに自動で署名しますか?"
-      ],
       "Backup and export": [
         "バックアップとエクスポート"
       ],
       "Billing cycle": [
         "支払い間隔"
-      ],
-      "Bridge for ${ platform }": [
-        "${ platform } 版 Bridge"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } サブスクリプションをキャンセル"
@@ -12343,23 +11524,14 @@
       "Delete ${ email }": [
         "${ email } を削除"
       ],
-      "Delete ${ filterName }": [
-        "${ filterName } を削除"
-      ],
       "Delete ${ label.Name } folder": [
         "${ label.Name } フォルダーを削除"
       ],
       "Delete ${ label.Name } label": [
         "${ label.Name } ラベルを削除"
       ],
-      "Delete ${ tokenNameToRemove }?": [
-        "${ tokenNameToRemove } を削除しますか？"
-      ],
       "Delete account": [
         "アカウントの削除"
-      ],
-      "Delete key permanently?": [
-        "鍵を完全に削除しますか？"
       ],
       "Delete logs": [
         "ログの削除"
@@ -12372,6 +11544,9 @@
       ],
       "Delete user?": [
         "ユーザーを削除しますか？"
+      ],
+      "Delete version history?": [
+        "バージョン履歴を削除しますか？"
       ],
       "Disable ${ email }": [
         "${ email } を無効化"
@@ -12414,9 +11589,6 @@
       ],
       "Edit servers": [
         "サーバー編集"
-      ],
-      "Edit Sieve filter": [
-        "Sieve フィルターの編集"
       ],
       "Edit the list of servers of the gateway": [
         "ゲートウェイのサーバーリストを編集する"
@@ -12463,12 +11635,6 @@
       "Export": [
         "エクスポート"
       ],
-      "Export private key": [
-        "秘密鍵のエクスポート"
-      ],
-      "Export public key": [
-        "公開鍵のエクスポート"
-      ],
       "External PGP settings": [
         "外部 PGP 設定"
       ],
@@ -12501,9 +11667,6 @@
       ],
       "Generate new recovery phrase?": [
         "新しい回復用フレーズを生成しますか？"
-      ],
-      "Generate SMTP token": [
-        "SMTP トークンの生成"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "すべてのサーバーに接続するために ${ vpnPlus } を入手"
@@ -12547,9 +11710,6 @@
       "Import failed": [
         "インポートに失敗"
       ],
-      "Import key": [
-        "キーをインポート"
-      ],
       "Import messages": [
         "メッセージのインポート"
       ],
@@ -12573,9 +11733,6 @@
       ],
       "Keep your inbox organized": [
         "受信トレイを整理整頓"
-      ],
-      "Keyboard shortcuts": [
-        "キーボードショートカット"
       ],
       "Labels": [
         "ラベル"
@@ -12826,12 +11983,6 @@
       "SMTP submission": [
         "SMTP 送信"
       ],
-      "Sort folders alphabetically": [
-        "フォルダーをアルファベット順に並べ替え"
-      ],
-      "Sort labels alphabetically": [
-        "ラベルをアルファベット順に並べ替え"
-      ],
       "Spam, block, and allow lists": [
         "迷惑メール・ブロックアドレス・許可アドレスリスト"
       ],
@@ -12843,9 +11994,6 @@
       ],
       "Status": [
         "状態"
-      ],
-      "Success": [
-        "完了"
       ],
       "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
         "${ localSuccessfullyCreatedUsers.length } ユーザー アカウントが正常に作成されました"
@@ -12958,9 +12106,6 @@
       "Your recovery status": [
         "回復状態"
       ],
-      "Your SMTP token": [
-        "あなたの SMTP トークン"
-      ],
       "Your subscriptions": [
         "あなたのサブスクリプション"
       ],
@@ -13017,20 +12162,6 @@
         "状態"
       ]
     },
-    "Title header for keys table": {
-      "Actions": [
-        "操作"
-      ],
-      "Fingerprint": [
-        "フィンガープリント"
-      ],
-      "Key type": [
-        "鍵の種類"
-      ],
-      "Status": [
-        "状態"
-      ]
-    },
     "Title header for members table": {
       "Addresses": [
         "メールアドレス"
@@ -13075,9 +12206,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "${ MAIL_APP_NAME } のユーザーは、既定でこの鍵を使用して送信します"
-      ],
       "Account is disconnected": [
         "アカウントは切断されました"
       ],
@@ -13099,9 +12227,6 @@
       "Customize import to reduce the number of labels": [
         "ラベルの数を減らすためにインポートをカスタマイズします"
       ],
-      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "ごみ箱と迷惑メールのメッセージを 30 日後に削除します。自動削除をオンにすると、既にごみ箱や迷惑メールにあるメッセージに、そこに移動された日に基づいた削除日が設定されます。"
-      ],
       "Device information such as operating system": [
         "オペレーティングシステムなどのデバイス情報"
       ],
@@ -13114,17 +12239,11 @@
       "Edit label names": [
         "ラベル名を編集"
       ],
-      "Enable/disable desktop and mobile notifications": [
-        "デスクトップおよびモバイル端末での通知の有効/無効"
-      ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "詳細ログを有効にすると、セキュリティログの各イベントの IP アドレスが記録されます。"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "Gmailは「ソーシャル」や「プロモーション」など、自動的にメールを種類分けしているものがあります。各種類のメールをどこにインポートするかを選択できます。"
-      ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "受信トレイの一連の会話をグループにします。無効にすると、それぞれ表示されます。"
       ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "ギフトコードを購入もしくはサポートチームから受け取った場合、こちらに入力してください。"
@@ -13132,29 +12251,11 @@
       "Members who do not use 2FA will get an email asking them to enable it as soon as possible.": [
         "2FA を使用していないメンバーには、できるだけ早く有効にするよう求めるメールが届きます。"
       ],
-      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "[送信済み] または[下書き] フォルダ内のメッセージは、別のフォルダに移動しても、引き続きそのフォルダに表示されます。"
-      ],
       "See number of unread messages in the tab icon": [
         "タブアイコンで未読メッセージの数を確認する"
       ],
-      "Set how your list of messages looks like by default.": [
-        "デフォルトで使用されるメッセージのリストを設定してください。"
-      ],
-      "Set the default Composer popup size as small or full screen.": [
-        "デフォルトの作成画面ポップアップサイズを小さくするか最大にするか設定します。"
-      ],
-      "Set the default layout for your Inbox.": [
-        "受信トレイの既定のレイアウトを設定します。"
-      ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "送信する電子メールに次のフッターを設定します: ${ signature } リンクは紹介リンクを指します。 フッターは署名の下に表示されます。 設定でいつでも署名をカスタマイズできます。"
-      ],
-      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
-        "メッセージリストに各送信者の画像を表示します。 写真が利用できない場合は、送信者のイニシャルが表示されます。"
-      ],
-      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        "この鍵でされた署名を無効なものとして扱い、暗号化にも使用できなくします"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "システムのサブフォルダーは ${ MAIL_APP_NAME } のそれそれのフォルダーとして表示されます"
@@ -13177,26 +12278,11 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "選択したテーマは、システムが「ライトモード」に設定されているときに有効になります。"
       ],
-      "This address has been disabled": [
-        "このアドレスは無効になっています"
-      ],
-      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "メールの送信を遅らせ、送信を取り消せる猶予時間を設けます。"
-      ],
       "This feature is only available for paid users": [
         "この機能は課金ユーザーのみが利用できます"
       ],
       "This feature is only available on Beta": [
         "この機能はベータ版でのみ利用可能です"
-      ],
-      "This key cannot be used for encryption": [
-        "この鍵は暗号化に使用できません"
-      ],
-      "This key is encrypted with an old password": [
-        "この鍵は旧いパスワードで暗号化されています。"
-      ],
-      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
-        "このキーは連絡先データを暗号化するのに ${ MAIL_APP_NAME } で使用されています"
       ],
       "This key is used for email forwarding": [
         "このキーはメール転送に使用されます。"
@@ -13216,18 +12302,6 @@
       "When enabled, animations and transitions will not show": [
         "有効にすると、アニメーションと遷移は表示されなくなります。"
       ],
-      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
-        "会話のメッセージにラベルを追加すると、その後同じ会話で送受信されるすべてのメッセージに同じラベルが適用されます。"
-      ],
-      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "リンクをクリックすると、フィッシング対策機能として新しい URL を開くときに続行するか確認することができます。"
-      ],
-      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
-        "メールを迷惑メールに移動した際に、自動的にその差出人のメーリングリストから登録を解除します。"
-      ],
-      "You have locally decrypted this key": [
-        "復号された鍵をローカルに所持します。"
-      ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "${ MAIL_APP_NAME } 受信トレイはもうすぐでいっぱいになります"
       ],
@@ -13236,26 +12310,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "外部アカウントが 24 時間の帯域幅制限に達している可能性があります。 ${ BRAND_NAME } は、できるだけ早くインポートを再開しようとします。"
-      ]
-    },
-    "Tooltip automatically attach public key": {
-      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "この設定を有効にすると、あなたが送信する各メッセージに公開鍵が自動的に追加されます。受信者はこれを使用して、メッセージの信頼性を検証し、あなたに暗号化されたメッセージを送信できます。"
-      ]
-    },
-    "Tooltip default pgp scheme": {
-      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
-        "${ BRAND_NAME } 以外の PGP ユーザーによるメッセージの署名または暗号化に使用するデフォルトの PGP 設定を選択します。 インライン PGP ではプレーン テキスト メッセージが強制されることに注意してください。"
-      ]
-    },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "連絡先に信頼できるキーを持たない別の ${ MAIL_APP_NAME } ユーザーからメールを受信すると、信頼できるキーを有効にするかどうかを尋ねるバナーが表示されます。"
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "ユーザーがあなたのメッセージの信頼性を確認できるように、すべての送信メッセージに自動的に署名します。これはデフォルトのPGP設定と組み合わせて行われます。"
       ]
     },
     "Tooltip; share calendar modal ": {
@@ -13283,6 +12337,19 @@
       ],
       "Your default font will look like following:": [
         "既定のフォントはこのようになります:"
+      ]
+    },
+    "Upgrade": {
+      "Upgrade to ${ passPlusPlanName } to get unlimited hide-my-email aliases": [
+        "${ passPlusPlanName } にアップグレードすると、無制限の Hide-my-email エイリアスを取得できます"
+      ],
+      "Upgrade to ${ planName } to connect up to ${ n } devices to the VPN at once": [
+        "${ planName } にアップグレードして同時に ${ n } のデバイスを VPN に接続します"
+      ]
+    },
+    "Upgrade notice": {
+      "Upgrade to a ${ MAIL_SHORT_APP_NAME } paid plan to share your calendar.": [
+        "カレンダーを共有するには、${ MAIL_SHORT_APP_NAME } 有料プランにアップグレードしてください。"
       ]
     },
     "upsell panel": {
@@ -13455,9 +12522,6 @@
       ],
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "デバイスの日時設定を同期できません。${ learnMore }"
-      ],
-      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
-        "このトークンを使用するデバイスまたはサービスは、${ MAIL_APP_NAME } を通じてメールを送信することが出来なくなります。"
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "このインポートは現在 ${ BRAND_NAME } アカウントで利用可能なストレージ容量を超えている可能性があります。インポートのカスタマイズを検討してください。"

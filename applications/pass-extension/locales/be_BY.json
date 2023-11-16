@@ -80,10 +80,10 @@
       "Create": [
         "Стварыць"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Стварыць уліковы запіс ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
@@ -445,9 +445,6 @@
       "Could not resolve share members": [
         "Немагчыма вырашыць абагуленне ўдзельнікаў"
       ],
-      "Could not resume your session : ${ description }": [
-        "Немагчыма ўзнавіць вашу сесію : ${ description }"
-      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Файл CSV не змяшчае неабходных загалоўкаў: ${ missingHeaders }"
       ],
@@ -708,9 +705,6 @@
         "${ memberCount } удзельнікаў",
         "${ memberCount } удзельнікаў"
       ],
-      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "${ PASS_APP_NAME } будзе адлюстроўваць элемент піктаграмы сайта праз проксі-сервер ананімнага відарыса ${ BRAND_NAME }."
-      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі і крэдытныя карткі."
       ],
@@ -770,9 +764,6 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Усе элементы з \"${ payload.content.name }\" паспяхова перамешчаны"
-      ],
-      "All trashed items permanently removed": [
-        "Усе элементы ў Сметніцы незваротна выдалены"
       ],
       "All trashed items successfully restored": [
         "Усе выдаленыя элементы паспяхова адноўлены"
@@ -945,9 +936,6 @@
       "Loading": [
         "Загрузка"
       ],
-      "Loading extension": [
-        "Загрузка пашырэння"
-      ],
       "Loading...": [
         "Загрузка..."
       ],
@@ -962,9 +950,6 @@
       ],
       "Multiple vaults": [
         "Некалькі сховішчаў"
-      ],
-      "N/A": [
-        "Недаступна"
       ],
       "No login found": [
         "Запіс уваходу не знойдзены"
@@ -1073,9 +1058,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Дзякуй, што паведамілі аб праблеме"
-      ],
-      "The autofill dropdown will automatically open on field focus.": [
-        "Выпадное меню аўтазапаўнення будзе аўтаматычна адкрывацца пры навядзенні на поле."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Наступны ${ result.ignored.length } элемент немагчыма імпартаваць:",
@@ -1217,9 +1199,6 @@
       "15 minutes": [
         "15 хвілін"
       ],
-      "2FA secret (TOTP)": [
-        "Сакрэтны ключ 2ФА (TOTP)"
-      ],
       "2FA token (TOTP)": [
         "Токен 2ФА (TOTP)"
       ],
@@ -1267,9 +1246,6 @@
       ],
       "Autofill 2FA": [
         "Аўтазапаўненне 2ФА"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "Аўтаматычна адкрываць аўтазапаўненне пры факусіроўцы палёў уваходу"
       ],
       "Autosave": [
         "Аўтазахаванне"
@@ -1606,9 +1582,6 @@
       "Hyphens": [
         "Злучкі"
       ],
-      "Memorable Password": [
-        "Пароль, які лёгка запомніць"
-      ],
       "Numbers": [
         "Лічбы"
       ],
@@ -1629,9 +1602,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "Дадаць сакрэтны ключ 2ФА"
-      ],
       "Add hidden text": [
         "Дадаць схаваны тэкст"
       ],
@@ -1931,9 +1901,6 @@
       "Please enter a valid email address": [
         "Увядзіце сапраўдны адрас электроннай пошты"
       ],
-      "Please log back in": [
-        "Увайдзіце паўторна"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Праверце свой адрас электроннай пошты, каб карыстацца псеўданімамі."
       ],
@@ -1996,9 +1963,6 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Ваш тарыфны план дазваляе аўтазапаўненне толькі з першых двух сховішчаў"
-      ],
-      "Your session was locked due to inactivity": [
-        "Ваш сеанс заблакіраваны па прычыне адсутнасці актыўнасці"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша першае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."

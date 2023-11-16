@@ -704,6 +704,9 @@
       "Next page": [
         "Sonraki sayfa"
       ],
+      "Next week": [
+        "Sonraki hafta"
+      ],
       "No": [
         "Hayır"
       ],
@@ -3317,7 +3320,7 @@
         "Taslak kaydedilemedi. Yeniden deneyin."
       ],
       "Email address disabled": [
-        "E-posta adresi kullanımdan kaldırılmış"
+        "E-posta adresi kullanım dışı"
       ],
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
@@ -4977,7 +4980,7 @@
         "Bu etiket ile kaydedilmiş tüm iletiler kalıcı olarak silinecek."
       ],
       "All your calendars are disabled.": [
-        "Tüm takvimleriniz kullanımdan kaldırılmış."
+        "Tüm takvimleriniz kullanım dışı bırakılmış."
       ],
       "All your changes will be lost.": [
         "Yaptığınız tüm değişiklikler kaybolacak."
@@ -5348,9 +5351,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
-      ],
-      "Include Spam/Trash in your search results.": [
-        "İstenmeyen ve Çöp klasörlerini de arayın"
       ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
@@ -5764,6 +5764,9 @@
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "Bu iletinin ilk göndericisi artık geçersiz. İletiniz varsayılan ${ defaultEmail } adresinizden gönderilecek."
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Bu adresin sahibi uçtan uca şifrelemeyi kapatmış. Bu adrese şifrelenmiş e-postalar gönderebilmek için adres sahibi uçtan uca şifrelemeyi yeniden açmalıdır."
+      ],
       "The sender has requested a read receipt.": [
         "Gönderici okundu bilgisi istedi."
       ],
@@ -5787,7 +5790,7 @@
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Bu adres kullanımdan kaldırılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
+        "Bu adres kullanım dışı bırakılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Bu tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
@@ -5812,7 +5815,7 @@
         "Bu e-posta, etki alanının doğrulama gereksinimlerini karşılayamadı. E-posta, sahte ya da hatalı iletilmiş olabilir."
       ],
       "This invitation is saved in a disabled calendar.": [
-        "Bu davet, kullanımdan kaldırılmış bir takvime kaydedilmiş."
+        "Bu davet, kullanım dışı bırakılmış bir takvime kaydedilmiş."
       ],
       "This link leads to a website that might be trying to steal your information, such as passwords and credit card details.": [
         "Bu bağlantı, parola ve kredi kartı gibi bilgilerinizi çalmayı deneyen bir siteye gidiyor olabilir."
@@ -7033,10 +7036,10 @@
         "Takvimlerinizden birine bağlı bir e-posta adresini kullanıma alın."
       ],
       "Enable the email address linked to the disabled calendar to cancel the event.": [
-        "Etkinliği iptal etmek için kullanımdan kaldırılan takvime bağlı e-posta adresini kullanıma alın."
+        "Etkinliği iptal etmek için kullanım dışı bırakılmış takvime bağlı e-posta adresini kullanıma alın."
       ],
       "Enable the email address linked to the disabled calendar to modify your answer.": [
-        "Yanıtınızı değiştirmek için kullanımdan kaldırılan takvime bağlı e-posta adresini kullanıma alın."
+        "Yanıtınızı değiştirmek için kullanım dışı bırakılmış takvime bağlı e-posta adresini kullanıma alın."
       ],
       "Enable your address again to modify your answer.": [
         "Yanıtınızı değiştirmek için adresinizi yeniden kullanıma alın."
@@ -7215,17 +7218,8 @@
       "Archive": [
         "Arşiv"
       ],
-      "Drafts": [
-        "Taslaklar"
-      ],
       "Inbox": [
         "Gelen kutusu"
-      ],
-      "Scheduled": [
-        "Zamanlanmış"
-      ],
-      "Sent": [
-        "Gönderilmiş"
       ],
       "Spam": [
         "İstenmeyen"
@@ -7924,6 +7918,11 @@
     "Send email with changed preferences": {
       "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
         "Şu adreslerin kişileri silindi. İlgili şifreleme ayarları uygun şekilde güncellendi:"
+      ]
+    },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "Şu adreslerin kişileri hesaplarında uçtan uca şifrelemeyi kapatmış. Bu nedenle ilgili şifreleme ayarları uygun şekilde güncellendi:"
       ]
     },
     "Send email with errors": {
@@ -9309,6 +9308,9 @@
       ],
       "Send with changed preferences?": [
         "Değiştirilmiş ayarlarla gönderilsin mi?"
+      ],
+      "Send with encryption disabled?": [
+        "Şifreleme kapatılarak gönderilsin mi?"
       ],
       "Send without expiration?": [
         "Geçerlilik süresi olmadan gönderilsin mi?"

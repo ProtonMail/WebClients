@@ -80,10 +80,10 @@
       "Create": [
         "Créer"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Créer un compte ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Créer un compte ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
@@ -445,9 +445,6 @@
       "Could not resolve share members": [
         "Impossible de définir les membres du partage"
       ],
-      "Could not resume your session : ${ description }": [
-        "Impossible de reprendre votre session : ${ description }"
-      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Le fichier CSV ne contient pas les en-têtes nécessaires : ${ missingHeaders }"
       ],
@@ -688,9 +685,6 @@
         "${ memberCount } membre",
         "${ memberCount } membres"
       ],
-      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "${ PASS_APP_NAME } affichera la vignette de l'élément en utilisant le proxy d'image anonyme ${ BRAND_NAME }."
-      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importera uniquement les identifiants, notes et cartes de paiement."
       ],
@@ -742,9 +736,6 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Tous les éléments ont été déplacés depuis « ${ payload.content.name } »."
-      ],
-      "All trashed items permanently removed": [
-        "Tous les éléments mis à la corbeille ont été définitivement supprimés."
       ],
       "All trashed items successfully restored": [
         "Tous les éléments mis à la corbeille ont été restaurés."
@@ -913,9 +904,6 @@
       "Loading": [
         "Chargement"
       ],
-      "Loading extension": [
-        "Chargement de l'extension en cours"
-      ],
       "Loading...": [
         "Chargement en cours"
       ],
@@ -930,9 +918,6 @@
       ],
       "Multiple vaults": [
         "Plusieurs coffres-forts"
-      ],
-      "N/A": [
-        "Non applicable"
       ],
       "No login found": [
         "Aucun identifiant n'a été trouvé."
@@ -1041,9 +1026,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Nous vous remercions. Le bug a été signalé."
-      ],
-      "The autofill dropdown will automatically open on field focus.": [
-        "La liste déroulante de remplissage automatique s'ouvre automatiquement dès que le champ est sélectionné."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } élément n'a pas pu être importé :",
@@ -1177,9 +1159,6 @@
       "15 minutes": [
         "15 minutes"
       ],
-      "2FA secret (TOTP)": [
-        "Clé secrète A2F (TOTP/mot de passe à usage unique basé sur le temps)"
-      ],
       "2FA token (TOTP)": [
         "Jeton A2F (TOTP/mot de passe à usage unique basé sur le temps)"
       ],
@@ -1227,9 +1206,6 @@
       ],
       "Autofill 2FA": [
         "Remplissage automatique A2F"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "Proposer automatiquement le remplissage automatique dans les champs d'identifiant"
       ],
       "Autosave": [
         "Enregistrement automatique"
@@ -1566,9 +1542,6 @@
       "Hyphens": [
         "Tirets"
       ],
-      "Memorable Password": [
-        "Mot de passe facile à mémoriser"
-      ],
       "Numbers": [
         "Chiffres"
       ],
@@ -1589,9 +1562,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "Ajoutez une clé secrète A2F"
-      ],
       "Add hidden text": [
         "Ajoutez un texte caché"
       ],
@@ -1887,9 +1857,6 @@
       "Please enter a valid email address": [
         "Saisissez une adresse e-mail valide."
       ],
-      "Please log back in": [
-        "Veuillez vous reconnecter."
-      ],
       "Please verify your email address in order to use email aliases": [
         "Vérifiez votre adresse e-mail pour utiliser les alias d'adresse e-mail."
       ],
@@ -1952,9 +1919,6 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Votre abonnement vous permet d'utiliser la fonctionnalité de remplissage automatique uniquement depuis vos deux premiers coffres-forts."
-      ],
-      "Your session was locked due to inactivity": [
-        "Votre session a été verrouillée suite à une période d'inactivité."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre premier coffre-fort. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."

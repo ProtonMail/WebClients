@@ -74,10 +74,10 @@
       "Create": [
         "Aanmaken"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Maak een ${ BRAND_NAME }-account aan"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Maak een ${ BRAND_NAME }-account aan"
       ],
       "Create a new vault to share": [
@@ -427,9 +427,6 @@
       "Could not resolve share members": [
         "Kon niet vaststellen met welke leden er gedeeld moest worden"
       ],
-      "Could not resume your session : ${ description }": [
-        "Kon uw sessie niet verderzetten: ${ description }"
-      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Csv-bestand mist verwachte headers: ${ missingHeaders }"
       ],
@@ -667,9 +664,6 @@
         "${ memberCount } lid",
         "${ memberCount } leden"
       ],
-      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "${ PASS_APP_NAME } zal het favicon van het item weergeven via de geanonimiseerde afbeeldingsproxy van ${ BRAND_NAME }."
-      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } zal enkel logins, notities en kredietkaarten importeren."
       ],
@@ -718,9 +712,6 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle items uit \"${ payload.content.name }\" succesvol verplaatst"
-      ],
-      "All trashed items permanently removed": [
-        "Alle verwijderde items permanent verwijderd"
       ],
       "All trashed items successfully restored": [
         "Alle verwijderde items succesvol hersteld"
@@ -868,9 +859,6 @@
       "Loading": [
         "Laden"
       ],
-      "Loading extension": [
-        "Extensie wordt geladen"
-      ],
       "Loading...": [
         "Laden..."
       ],
@@ -885,9 +873,6 @@
       ],
       "Multiple vaults": [
         "Meerdere kluizen"
-      ],
-      "N/A": [
-        "N.v.t."
       ],
       "None": [
         "Geen"
@@ -981,9 +966,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Bedankt, het probleem werd gemeld"
-      ],
-      "The autofill dropdown will automatically open on field focus.": [
-        "De vervolgkeuzelijst voor automatisch invullen wordt automatisch geopend bij focus op het veld."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Het volgende ${ result.ignored.length } item kon niet geïmporteerd worden:",
@@ -1105,9 +1087,6 @@
       "15 minutes": [
         "15 minuten"
       ],
-      "2FA secret (TOTP)": [
-        "2FA-geheim (TOTP)"
-      ],
       "2FA token (TOTP)": [
         "2FA-token (TOTP)"
       ],
@@ -1155,9 +1134,6 @@
       ],
       "Autofill 2FA": [
         "Automatisch invullen 2FA"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "Automatisch open automatisch aanvullen bij focus op inlogvelden"
       ],
       "Autosave": [
         "Automatisch opslaan"
@@ -1491,9 +1467,6 @@
       "Hyphens": [
         "Koppeltekens"
       ],
-      "Memorable Password": [
-        "Memorabel wachtwoord"
-      ],
       "Numbers": [
         "Nummers"
       ],
@@ -1514,9 +1487,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "2FA-sleutel toevoegen"
-      ],
       "Add hidden text": [
         "Verborgen tekst toevoegen"
       ],
@@ -1785,9 +1755,6 @@
       "Please enter a valid email address": [
         "Voer een geldig e-mailadres in"
       ],
-      "Please log back in": [
-        "Log opnieuw in"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Verifieer alstublieft uw e-mailadressen om uw e-mailaliassen te kunnen gebruiken"
       ],
@@ -1841,9 +1808,6 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "U zult geen toegang meer hebben tot deze kluis. Om opnieuw deel te nemen, heeft u een nieuwe uitnodiging nodig."
-      ],
-      "Your session was locked due to inactivity": [
-        "Uw sessie werd vergrendeld wegens inactiviteit"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Met uw abonnement kunt u niet meerdere kluizen maken. Alle items worden geïmporteerd in uw eerste kluis. Upgrade uw abonnement om in meerdere kluizen te importeren."

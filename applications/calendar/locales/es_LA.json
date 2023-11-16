@@ -2906,6 +2906,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "La app no está disponible actualmente."
+      ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
       ],
@@ -2915,11 +2918,17 @@
       "Oops, something went wrong": [
         "Hubo un problema"
       ],
+      "Open in browser": [
+        "Abrir en el navegador"
+      ],
       "Please refresh the page or try again later.": [
         "Actualice la página o intente nuevamente."
       ],
       "Something went wrong": [
         "Hubo un problema"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Para usar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, cambie a la versión web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No pudimos cargar esta página. Actualice la página o revise su conexión a internet."
@@ -4011,7 +4020,7 @@
         "PGP/Inline solo es compatible con el formato de Texto Plano."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
-        "PGP/MIME automáticamente envía el mensaje usando el modo de compositor actual."
+        "PGP/MIME automáticamente envía el mensaje usando el modo de editor actual."
       ],
       "Please note that addresses assigned to these groups will NOT be deleted.": [
         "Tome en cuenta que las direcciones asignadas a estos grupos NO se eliminarán."
@@ -5181,6 +5190,9 @@
       "Custom email domains": [
         "Dominios de correo electrónico personalizados"
       ],
+      "Custom snooze time": [
+        "Tiempo de pausa personalizado"
+      ],
       "Hide-my-email aliases": [
         "Alias de Hide-my-email"
       ],
@@ -5206,6 +5218,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtenga aliases ilimitados con SimpleLogin de ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Pause los mensajes y reciba un recordatorio cuando quiera."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }"
@@ -6834,7 +6849,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automático indica que el formato en el compositor se utiliza para enviar a este usuario. Texto Plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
+        "Automático indica que el formato en el editor se utiliza para enviar a este usuario. Texto Plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambie automáticamente entre sus temas preferidos para el día y la noche en sincronía con los modos de día y noche de su sistema"

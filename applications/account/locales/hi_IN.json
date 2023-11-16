@@ -39,9 +39,6 @@
       "activate": [
         "सक्रिय"
       ],
-      "Activate ${ user.Name }@pm.me": [
-        "${ user.Name }@pm.me सक्रिय करें"
-      ],
       "Activate organization key": [
         "संगठन की कुंजी सक्रिय करें"
       ],
@@ -69,15 +66,6 @@
       "Add domain": [
         "डोमेन जोड़ें"
       ],
-      "Add filter": [
-        "फ़िल्टर जोड़ें"
-      ],
-      "Add folder": [
-        "फ़ोल्डर जोड़ें"
-      ],
-      "Add label": [
-        "लेबल जोड़ें"
-      ],
       "Add notification": [
         "अधिसूचना जोड़ें"
       ],
@@ -86,9 +74,6 @@
       ],
       "Add public holidays": [
         "सार्वजनिक छुट्टियां जोड़ें"
-      ],
-      "Add sieve filter": [
-        "चलनी फ़िल्टर जोड़ें"
       ],
       "Add user": [
         "उपयोगकर्ता जोड़ें"
@@ -107,9 +92,6 @@
       ],
       "Apply": [
         "लागू करें"
-      ],
-      "Apply to existing messages": [
-        "मौजूदा संदेशो पे लागू करें"
       ],
       "Attach screenshot(s)": [
         "स्क्रीनशॉट जोड़ें"
@@ -261,9 +243,6 @@
       "Delete record": [
         "अभिलेख मिटाएँ"
       ],
-      "Delete without exporting": [
-        "निर्यात किए बिना मिटाएं"
-      ],
       "Delete your account": [
         "अपने खाते को नष्ट करो"
       ],
@@ -309,9 +288,6 @@
       "Download recovery file": [
         "पुनर्प्राप्ति फ़ाइल डाउनलोड करें"
       ],
-      "Download the Import-Export app": [
-        "आयात-निर्यात ऐप डाउनलोड करें"
-      ],
       "Edit": [
         "बदलें"
       ],
@@ -333,9 +309,6 @@
       "Edit phone number": [
         "फोन नंबर बदलें"
       ],
-      "Edit sieve": [
-        "चलनी संपादित करें"
-      ],
       "Edit sign-in details": [
         "साइनइन की जानकारी बदलें"
       ],
@@ -351,26 +324,14 @@
       "Enable multi-user support": [
         "बहु-उपयोगकर्ता समर्थन सक्षम करें"
       ],
-      "Encrypt and export": [
-        "एन्क्रिप्ट और निर्यात करें"
-      ],
       "Explore other ${ BRAND_NAME } plans": [
         "दूसरे ${ BRAND_NAME } प्लान देखें"
       ],
       "Export": [
         "निर्यात करें"
       ],
-      "Export key": [
-        "निर्यात कुंजी"
-      ],
-      "Export key before deleting": [
-        "मिटाने से पहले चाबी निर्यात करें"
-      ],
       "Extend": [
         "फैलाएं"
-      ],
-      "Filters are being applied. This might take a few minutes.": [
-        "फिल्टर लागू हो रहे है। इसमें कुछ मिनट लग सकते है।"
       ],
       "Fit to window": [
         "विंडो में फिट करें"
@@ -378,20 +339,11 @@
       "Font": [
         "फॉन्ट"
       ],
-      "Generate": [
-        "जेनरेट करें"
-      ],
-      "Generate key": [
-        "कुंजी उत्पन्न करें"
-      ],
       "Generate new recovery phrase": [
         "नया पुनर्प्राप्ति वाक्यांश उत्पन्न करें"
       ],
       "Generate recovery phrase": [
         "रिकवरी वाक्य बनाएं"
-      ],
-      "Generate token": [
-        "टोकन जेनरेट करे"
       ],
       "Get ${ vpnPlus }": [
         "${ vpnPlus } प्राप्त करें"
@@ -401,15 +353,6 @@
       ],
       "Get more addresses": [
         "ज़्यादा पते लें"
-      ],
-      "Get more filters": [
-        "ज़्यादा फिल्टर लें"
-      ],
-      "Get more folders": [
-        "ज़्यादा फोल्डर लें"
-      ],
-      "Get more labels": [
-        "ज़्यादा लेबल लें"
       ],
       "Get the deal": [
         "सौदा लें"
@@ -443,9 +386,6 @@
       ],
       "Import emails": [
         "ईमेल आयात करें"
-      ],
-      "Import key": [
-        "आयात कुंजी"
       ],
       "Increase": [
         "बढ़ना"
@@ -507,9 +447,6 @@
       "More info: ${ safeTitle }": [
         "और जानकारी: ${ safeTitle }"
       ],
-      "More info: Keyboard shortcuts": [
-        "और जानकारी: कीबोर्ड शोर्टकट"
-      ],
       "move emails to": [
         "ईमेल ले जाएं"
       ],
@@ -561,9 +498,6 @@
       "Quote": [
         "लफ्ज़"
       ],
-      "Reactivate keys": [
-        "चाबी को फिर से सक्रिय करें"
-      ],
       "Reconnect": [
         "वापस जुड़ें"
       ],
@@ -611,9 +545,6 @@
       ],
       "Request new code": [
         "नया कोड मांगें"
-      ],
-      "Requires a verified recovery email address": [
-        "एक सत्यापित रिक्वरी ईमेल पता चाहिए"
       ],
       "Resend code": [
         "कोड वापस भेजें"
@@ -689,9 +620,6 @@
       ],
       "Select calendar view": [
         "कैलेंडर दृश्य चुनें"
-      ],
-      "Select files": [
-        "फ़ाइल का चयन करें"
       ],
       "Select time zone": [
         "समय क्षेत्र चुनें"
@@ -770,9 +698,6 @@
       ],
       "Skip verification": [
         "सत्यापन छोड़ें"
-      ],
-      "Sort": [
-        "छांटें"
       ],
       "Spam": [
         "स्पैम"
@@ -860,9 +785,6 @@
       ],
       "Use your current email instead": [
         "इसके जगह चालू ईमेल पते इस्तेमाल करें"
-      ],
-      "Use “${ label }” setting": [
-        "\"${ label }” सेटिंग इस्तेमाल करें"
       ],
       "User": [
         "यूज़र"
@@ -1026,11 +948,6 @@
         "असमर्थित घटना"
       ]
     },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "मैं अपने ईमेल तक सीमित पहुंच के साथ कार्यालय से बाहर हूं।"
-      ]
-    },
     "Badge for domain": {
       "Disabled": [
         "डिसेबल्ड"
@@ -1070,11 +987,6 @@
       ],
       "Two-year": [
         "दो वर्ष"
-      ]
-    },
-    "Bridge version load failed": {
-      "Failed to find latest version": [
-        "नवीनतम संस्करण खोजने में विफल"
       ]
     },
     "Bug category": {
@@ -2484,9 +2396,6 @@
       "Track the status and activity of your referrals.": [
         "अपने रेफरल के स्थिति ट्रैक करें।"
       ],
-      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
-        "${ BRAND_NAME } ब्रांड का लोगो और उसके बाद एक प्लस साइन"
-      ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "आप मित्रों को आमंत्रित करना जारी रख सकते हैं, लेकिन आप अधिक क्रेडिट अर्जित नहीं कर पाएंगे"
       ],
@@ -2701,9 +2610,6 @@
       "Authentication error.": [
         "प्रमाणीकरण त्रुटि"
       ],
-      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "स्वचालित उत्तर एक सशुल्क सुविधा है। कृपया इस सुविधा का उपयोग करने के लिए सशुल्क खाते में अपग्रेड करें।"
-      ],
       "Calendar limit reached": [
         "कैलेंडर की सीमा पूरी हो गई"
       ],
@@ -2805,12 +2711,6 @@
       "Invalid postal code": [
         "अमान्य पोस्टल कोड"
       ],
-      "Invalid private key file": [
-        "अमान्य निजी कुंजी फ़ाइल"
-      ],
-      "Invalid Sieve code": [
-        "अमान्य चलनी कोड"
-      ],
       "Invalid verification code": [
         "अवैध सत्यापन कोड"
       ],
@@ -2908,9 +2808,6 @@
       ],
       "Please set a recovery phone number first": [
         "कृपया पहले एक पुनर्प्राप्ति फ़ोन नंबर सेट करें"
-      ],
-      "Please set a recovery/notification email first": [
-        "कृपया पहले एक पुनर्प्राप्ति / सूचना ईमेल सेट करें"
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "कई-यूज़र सपोर्ट लेने के लिए कृपया 1 से ज़्यादा यूज़र वाले बिज़नेस प्लान पे अपग्रेड करें।"
@@ -3107,9 +3004,6 @@
       ],
       "You must set a name": [
         "आपको एक नाम सेट करना होगा"
-      ],
-      "You need to have a custom domain address in order to generate an SMTP submission token.": [
-        "एक एसएमटीपी सब्मिशन टोकन बनाने के लिए आपके पास एक कस्टम डोमेन पता होना चाहिए।"
       ],
       "Your account or organization has an overdue invoice. Please pay all unpaid invoices.": [
         "आपके खाते या संगठन का इनवॉइस बकाया है. कृपया सभी बकाया चालानों का भुगतान करें।"
@@ -3411,6 +3305,12 @@
     "Event title": {
       "(no title)": [
         "(कोई शीर्षक नहीं)"
+      ]
+    },
+    "Export calendar": {
+      "${ totalProcessed }/${ totalToProcess } event exported": [
+        "${ totalProcessed }/${ totalToProcess } इवेंट निर्यात हुए",
+        "${ totalProcessed }/${ totalToProcess } इवेंट निर्यात हुए"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -3853,9 +3753,6 @@
       ]
     },
     "Header": {
-      "Actions": [
-        "एक्शन"
-      ],
       "App version": [
         "ऐप संस्करण"
       ],
@@ -3865,17 +3762,11 @@
       "Event": [
         "इवेंट"
       ],
-      "Folders": [
-        "फोल्डर"
-      ],
       "Key type": [
         "कुंजी प्रकार"
       ],
       "Name": [
         "नाम"
-      ],
-      "Notifications": [
-        "सूचनाएँ"
       ],
       "Organization key fingerprint": [
         "संगठन कुंजी फिंगरप्रिंट"
@@ -3922,23 +3813,6 @@
       ],
       "Value / Data / Points to": [
         "मान / डेटा / अंक को"
-      ]
-    },
-    "Header for table": {
-      "Actions": [
-        "एक्शन"
-      ],
-      "Created": [
-        "बनाया गए"
-      ],
-      "Email address": [
-        "ईमेल पता"
-      ],
-      "Last used": [
-        "पहले इस्तेमाल किये"
-      ],
-      "Token name": [
-        "टोकन नाम"
       ]
     },
     "Heading in trial plan": {
@@ -4215,11 +4089,6 @@
         "कैलेंडर एक ICS फाइल की तरह निर्यात करने के लिए ${ boldExport } चुनें।"
       ]
     },
-    "Import key": {
-      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "निजी चाबी पक्का आयात करें? असुरक्षित तरीके से बनाई गई या लीक हुई निजी चाबी आयात करना आपके ईमेल के सुरक्षा को नुकसान पहुंचा सकता है।\n\nये भी नोट करें कि इस निजी चाबी से जुड़ी सार्वजनिक चाबी हमारे चाबी सर्वर पे सार्वजनिक तरीके से मौजूद होगी। अगर चाबी में निजी जानकारी (जैसे आपका पूरा नाम) है जिसे प्रकाशित नहीं किया जाना चाहिए, तो चाबी आयात करने से पहले उसमें ज़रूरी बदलाव करें।"
-      ]
-    },
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } से आयात करें"
@@ -4473,9 +4342,6 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "कम-से-कम एक रिक्वरी तरीका सेट करे ताकि आप अपना ${ BRAND_NAME } खाता इस्तेमाल करना जारी रख सके जब भी आपका पासवर्ड खो जाए।"
       ],
-      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "अपने खाते में @pm.me ईमेल पता जोड़ें। यह सरल, छोटा डोमेन \"${ MAIL_APP_NAME } me\" या \"निजी संदेश मुझे\" के लिए है।"
-      ],
       "Add a recovery email address": [
         "पुनर्प्राप्ति ईमेल पता जोड़ें"
       ],
@@ -4559,9 +4425,6 @@
       "Are you sure you want to delete this domain?": [
         "क्या आप वाकई इस डोमेन को हटाना चाहते हैं?"
       ],
-      "Are you sure you want to delete this filter?": [
-        "क्या आप वाकई इस फ़िल्टर को हटाना चाहते हैं?"
-      ],
       "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
         "इस फोल्डर को पक्का मिटा दें? सारे उपफोल्डर भी मिट जाएंगे।"
       ],
@@ -4582,24 +4445,6 @@
       ],
       "Attention required": [
         "ध्यान देने की आवश्यकता है"
-      ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "चयनित प्रारंभ और समाप्ति समय के बीच प्रत्येक माह ऑटो-उत्तर सक्रिय होता है।"
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "चयनित प्रारंभ और समाप्ति समय के बीच प्रत्येक सप्ताह ऑटो-उत्तर सक्रिय होता है।"
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "ऑटो-रिप्लाई प्रारंभ समय से अंत समय तक सक्रिय रहता है।"
-      ],
-      "Auto-reply is active until you turn it off.": [
-        "जब तक आप इसे बंद नहीं करते, तब तक ऑटो-उत्तर सक्रिय है।"
-      ],
-      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
-        "चुने हुए घंटों के बीच, आपके द्वारा चुने गए सप्ताह के दिनों में ऑटो-रिप्लाई हमेशा सक्रिय रहता है।"
-      ],
-      "Available on macOS, Windows, and Linux.": [
-        "मैकओएस, विंडोज और लिनक्स पर उपलब्ध है।"
       ],
       "Background color": [
         "पीछे का रंग"
@@ -4630,9 +4475,6 @@
       ],
       "Billing cycle: ${ text }": [
         "बिल चक्र: ${ text }"
-      ],
-      "Blocks senders from seeing if and when you opened a message.": [
-        "प्रेषकों को यह देखने से रोकता है कि आपने कोई संदेश कब खोला है या नहीं।"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "एक नि: शुल्क योजना में अपग्रेड करने से, आप स्थायी रूप से इन लाभों को खो देंगे, भले ही आप भविष्य में फिर से अपग्रेड करें।"
@@ -4768,9 +4610,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "आज ही अपना पसंदीदा ऐप डाउनलोड करें और आप जहां भी जाएं, अपने साथ गोपनीयता रखें।"
       ],
-      "Download your PGP keys for use with other PGP-compatible services.": [
-        "अन्य पीजीपी-संगत सेवाओं के साथ उपयोग के लिए अपनी पीजीपी कुंजी डाउनलोड करें।"
-      ],
       "Each code can only be used once": [
         "हर कूटक का उपयोग केवल एक बार हो सकता है"
       ],
@@ -4795,14 +4634,8 @@
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "इस लेबल के साथ टैग किए गए ईमेल हटाए नहीं जाएंगे और अभी भी संबंधित फ़ोल्डर में पाए जा सकते हैं।"
       ],
-      "Enable TLS or SSL on the external service if it is supported.": [
-        "अगर बाहरी डिवाइस पे TSL या SSL सपोर्ट किया जाता है तो उसे सक्षम करें"
-      ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "वाक्यांश द्वारा पुनर्प्राप्ति को पुन: सक्षम करने से एक नया पुनर्प्राप्ति वाक्यांश जनरेट होगा."
-      ],
-      "Encryption setting updated": [
-        "एन्क्रिप्शन सेटिंग अपडेट की गई"
       ],
       "Enter key manually instead": [
         "इसके बजाय मैन्युअल रूप से कुंजी दर्ज करें"
@@ -4882,17 +4715,8 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } लें"
       ],
-      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
-        "टोकन को उसके बारे में बताने वाला नाम दें, जैसे की सेवा जिसके साथ आप उसे इस्तेमाल करना चाहते है, और अपना एक स्क्रीय कस्टम डोमेन पता चुनें। सिर्फ ये पता इस टोकन के साथ ईमेल भेज पाएगा।"
-      ],
-      "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
-        "अपनी सार्वजनिक कुंजी अपने दोस्तों को दें, या इसे ऑनलाइन प्रकाशित करें, ताकि हर कोई आपको एंड-टू-एंड एन्क्रिप्टेड ईमेल भेज सके!"
-      ],
       "here": [
         "यहां"
-      ],
-      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
-        "प्रॉक्सी के माध्यम से दूरस्थ सामग्री लोड करके पहचान की जानकारी छुपाता है। सामग्री को अनुलग्नकों के रूप में संग्रहीत करने का विकल्प।"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "यदि किसी अन्य व्यवस्थापक ने इस पासवर्ड को बदल दिया है, तो आपको उन्हें नए संगठन पासवर्ड के लिए पूछना होगा।"
@@ -5043,9 +4867,6 @@
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "जब तक आप DKIM का उपयोग करना चाहते हैं, तब तक उन रिकॉर्ड्स को अपने DNS में रखें।"
       ],
-      "Key deletion is irreversible!": [
-        "कुंजी हटाना अपरिवर्तनीय है!"
-      ],
       "Label all imported messages as": [
         "सभी आयातित संदेशों को लेबल करें"
       ],
@@ -5061,14 +4882,8 @@
       "Learn more": [
         "और जानें"
       ],
-      "learn more about Sieve programming language": [
-        "सीव प्रोग्रामिंग भाषा के बारे में और जानें"
-      ],
       "Left to Right": [
         "बाएं से दाएं"
-      ],
-      "Let your contacts know you care about their privacy.": [
-        "अपने संपर्कों को बताएं कि आप उनकी गोपनीयता की परवाह करते हैं।"
       ],
       "Link copied to clipboard": [
         "लिंक को क्लिपबोर्ड पर कॉपी किया गया"
@@ -5078,9 +4893,6 @@
       ],
       "Link type": [
         "लिंक प्रकार"
-      ],
-      "Loaded content is being protected by our proxy when tracker protection is activated.": [
-        "ट्रैकर सुरक्षा चालू होने पे लोड किया कंटेंट हमारे प्रॉक्सी से सुरक्षित है।"
       ],
       "Loading": [
         "लोड हो रहा है"
@@ -5126,9 +4938,6 @@
       ],
       "New": [
         "नया"
-      ],
-      "No account keys exist": [
-        "कोई खाता चाबी मौजूद नहीं"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
         "कोई खाता पुनर्प्राप्ति विधि सेट नहीं है; आपको अपने खाते तक पहुंच खोने का जोखिम है"
@@ -5181,9 +4990,6 @@
       "One account. All ${ BRAND_NAME } services.": [
         "एक खाता‌। सारे ${ BRAND_NAME } सेवाएं।"
       ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "इन सेटिंग्स को केवल तभी बदलें जब आप गैर-${ BRAND_NAME } प्राप्तकर्ताओं के साथ PGP का उपयोग कर रहे हों।"
-      ],
       "Or select a particular server:": [
         "या किसी विशेष सर्वर का चयन करें:"
       ],
@@ -5217,9 +5023,6 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "भुगतान टीएलएस एन्क्रिप्शन और स्विस गोपनीयता कानूनों के साथ सुरक्षित हैं"
-      ],
-      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
-        "यदि आउटगोइंग संदेशों पर हस्ताक्षर किए जाते हैं, तो PGP क्लाइंट आपके PGP कुंजियों का स्वचालित रूप से पता लगाने की संभावना रखते हैं।"
       ],
       "Phone number": [
         "फोन नंबर"
@@ -5261,9 +5064,6 @@
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
         "कृपया ध्यान दें कि यदि आप इस डोमेन को हटाते हैं, तो इससे जुड़े सभी पते अक्षम हो जाएंगे।"
-      ],
-      "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
-        "कृपया ध्यान दें कि यदि आप इस फ़िल्टर को हटाते हैं, तो हम ट्रिगर होने वाली सभी स्वचालित क्रियाओं को संसाधित करना बंद कर देंगे।"
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
         "कृपया ध्यान दें कि कन्फर्म बटन पर क्लिक करने पर, आपके खाते में ${ creditsRemaining } क्रेडिट शेष रह जाएंगे।"
@@ -5443,9 +5243,6 @@
       "Storage used by this user": [
         "इस यूज़र का स्टोरेज इस्तेमाल"
       ],
-      "Store this password and file in a safe place. You’ll need them again to import your key.": [
-        "इस पासवर्ड और फाइल को सुरक्षित जगह पर स्टोर करें। अपनी कुंजी आयात करने के लिए आपको उनकी फिर से आवश्यकता होगी."
-      ],
       "Support for 1 custom email domain": [
         "1 कस्टम ईमेल डोमेन के लिए सहायता"
       ],
@@ -5493,9 +5290,6 @@
       ],
       "The format of your CSV file is incorrect.": [
         "आपके CSV फाइल का फॉर्मेट गलत हैं।"
-      ],
-      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
-        "Import-Export ऐप आपको स्थानीय बैकअप के लिए संदेशों को निर्यात करने और अपने खाते में पिछले बैकअप को पुनर्स्थापित करने की अनुमति देता है।"
       ],
       "The name will be visible to your users while they are signed in.": [
         "नाम आपके साइनइन किए यूज़र को दिखाई देगा।"
@@ -5545,9 +5339,6 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "यह लिंक एक होमोग्राफ हमला हो सकता है। कृपया सत्यापित करें कि यह वह लिंक है जो आप यात्रा करना चाहते हैं, या इसे न खोलें।"
       ],
-      "This token won’t be available after you close this window, and you should not share it with anyone.": [
-        "ये विंडो बंद करने के बाद ये टोकन मौजूद नही होगा, और आपको इसे किसी के साथ शेयर नहीं करना चाहिए।"
-      ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "सदस्यता छोड़ने का लिंक खत्म हो गया। इस मेल लिस्ट से कोई दूसरा हाल ही का ईमेल खोलें।"
       ],
@@ -5559,9 +5350,6 @@
       ],
       "This will disable your current recovery phrase. You won't be able to use it to access your account or decrypt your data.": [
         "यह आपके वर्तमान पुनर्प्राप्ति वाक्यांश को अक्षम कर देगा। आप इसका उपयोग अपने खाते तक पहुंचने या अपने डेटा को डिक्रिप्ट करने के लिए नहीं कर पाएंगे।"
-      ],
-      "This will download a file containing your private key. Protect this file by encrypting it with a password.": [
-        "यह आपकी निजी कुंजी वाली फ़ाइल डाउनलोड करेगा। इस फ़ाइल को पासवर्ड से एन्क्रिप्ट करके सुरक्षित रखें।"
       ],
       "This will enable PayPal to be used to pay for your ${ BRAND_NAME } subscription. We will redirect you to PayPal in a new browser tab. If you use any pop-up blockers, please disable them to continue.": [
         "ये PayPal को ${ BRAND_NAME } सदस्यता के भुगतान के इस्तेमाल के लिए सक्षम कर देगा। हम आपको एक नए ब्राउज़र टैब में PayPal को रिडाइरेक्ट कर देंगे। अगर आप कोई पॉपअप ब्लॉकर इस्तेमाल करते है, तो जारी रखने के लिए कृपया उसे अक्षम कर दे।"
@@ -5577,9 +5365,6 @@
       ],
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "यह आपको किसी भी सक्रिय सत्र से साइन आउट कर देगा और 2-कारक प्रमाणीकरण को अक्षम कर देगा।"
-      ],
-      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
-        "डेटा हानि से बचने के लिए, इसे केवल तभी हटाएं जब आप जानते हों कि आप क्या कर रहे हैं या आपने एक प्रति निर्यात की है।"
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "पुष्टि करने के लिए, कृपया उस उपयोगकर्ता का नाम दर्ज करें जिसे आप हटाना चाहते हैं।"
@@ -5613,9 +5398,6 @@
       ],
       "To use ${ toAppName }, you need a ${ MAIL_APP_NAME } address.": [
         "${ toAppName } इस्तेमाल करने को आपको एक ${ MAIL_APP_NAME } पता चाहिए।"
-      ],
-      "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
-        "सही से काम करने को हर फिल्टर में कम-से-कम एक नाम और एक मान्य सीव स्क्रिप्ट होना चाहिए। ${ link }।"
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "अपने खाते को क्रेडिट के साथ ऊपर रखें, जिसका उपयोग आप किसी नई योजना की सदस्यता लेने या अपनी वर्तमान योजना को नवीनीकृत करने के लिए कर सकते हैं। आप खर्च किए गए प्रत्येक ${ i18nCurrency } के लिए एक क्रेडिट प्राप्त करते हैं।"
@@ -5698,9 +5480,6 @@
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "बिना ऐप के ${ VPN_APP_NAME } के सर्वर से जुड़ते समय इस प्रमाण का इस्तेमाल करें। उदाहरण स्थितियों में शामिल है: Tunnelblick macOS पे, OpenVPN GNU/Linux पे।"
       ],
-      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
-        "बाहरी सेवा में चुने गए ईमेल पते को एसएमटीपी यूज़रनेम की तरह इस्तेमाल करें, और बनाए गए टोकन को एसएमटीपी पासवर्ड की तरह।"
-      ],
       "Verification can take a few minutes.": [
         "सत्यापन में कुछ मिनट लग सकते हैं।"
       ],
@@ -5776,12 +5555,6 @@
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "हम आपकी वर्तमान योजना को एक बेहतर योजना में अपग्रेड कर रहे हैं जो समान मूल्य पर अधिक ऑफ़र करती है। जबकि हमारे सिस्टम अपडेट हो रहे हैं, आप इसे बदल नहीं पाएंगे। जैसे ही यह हो जाएगा हम आपको ईमेल करेंगे।"
       ],
-      "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "अक्षम होने पर, यह छवि फ़ाइलों को आपकी जानकारी के बिना आपके डिवाइस पर लोड होने से रोकता है।"
-      ],
-      "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "नोटिफ़िकेशन सक्षम होने पर, यदि आपके ${ MAIL_APP_NAME } खाते में नए संदेश हैं, तो हम आपके पुनर्प्राप्ति ईमेल पते पर एक अलर्ट भेजेंगे."
-      ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "जब वो किसी प्लान की सदस्यता लेते है, तब आपको अपने सदस्यता पे इस्तेमाल करने के लिए मिलता है।"
       ],
@@ -5855,9 +5628,6 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "नए ईमेल संदेश इस फ़ोल्डर में आने पर आप अलर्ट प्राप्त कर सकते हैं।"
       ],
-      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "आप किसी भी डेस्कटॉप ईमेल क्लाइंट के साथ ${ MAIL_APP_NAME } का इस्तेमाल कर सकते हैं जो Outlook, Apple Mail, और Thunderbird जैसे ऐपों की तरह IMAP/SMTP को सपोर्ट करता है।"
-      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "आप ${ VPN_APP_NAME } सर्वर से किसी तृतीय-पक्ष, ओपन सोर्स VPN ऐप का उपयोग करके कनेक्ट करने के लिए निम्न क्रेडेंशियल का उपयोग कर सकते हैं, जैसे macOS के लिए Tunnelblick या GNU/Linux के लिए OpenVPN।"
       ],
@@ -5900,9 +5670,6 @@
       ],
       "You reached 100% of your storage capacity. You cannot send or receive new emails. ${ freeUpMessage } ${ upgradeLink }": [
         "आप अपनी भंडारण क्षमता के 100% तक पहुंच गए। आप नए ईमेल भेज या प्राप्त नहीं कर सकते। ${ freeUpMessage } ${ upgradeLink }"
-      ],
-      "You should export a backup of this key in case you need to restore data it encrypted.": [
-        "यदि आपको इसे एन्क्रिप्ट किए गए डेटा को पुनर्स्थापित करने की आवश्यकता है तो आपको इस कुंजी का बैकअप निर्यात करना चाहिए।"
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "आपको एक ${ BRAND_NAME } पते कि जरूरत होगी ${ MAIL_APP_NAME } और ${ CALENDAR_APP_NAME } का इस्तेमाल करने के लिए।"
@@ -5993,11 +5760,6 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
-      ]
-    },
-    "Info - folder colouring feature": {
-      "When enabled, sub-folders inherit the color of the parent folder.": [
-        "सक्षम होने पर, उप-फ़ोल्डर मूल फ़ोल्डर का रंग इनहेरिट करते हैं।"
       ]
     },
     "Info for cash payment method": {
@@ -6096,49 +5858,6 @@
       ],
       "Subscription": [
         "सदस्यता"
-      ]
-    },
-    "Key generation": {
-      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "समान एन्क्रिप्शन एल्गोरिथम वाली एक कुंजी पहले से मौजूद है। दूसरी कुंजी बनाने से खाता लोड होने की गति धीमी हो जाएगी. क्या तुम वाकई जारी रखना चाहते हो?"
-      ],
-      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
-        "समान एन्क्रिप्शन एल्गोरिथ्म वाली एक कुंजी इस पते के लिए पहले से ही सक्रिय है। दूसरी कुंजी उत्पन्न करने से धीमी खाता लोडिंग हो जाएगी और इस कुंजी को हटाने से समस्याएं हो सकती हैं। यदि आप एक नई कुंजी उत्पन्न कर रहे हैं क्योंकि आपकी पुरानी कुंजी से समझौता किया गया है, तो कृपया उस कुंजी को समझौता के रूप में चिह्नित करें। क्या तुम वाकई जारी रखना चाहते हो?"
-      ],
-      "Generate key": [
-        "कुंजी उत्पन्न करें"
-      ],
-      "Key with fingerprint ${ fp } successfully created.": [
-        "फ़िंगरप्रिंट ${ fp } के साथ कुंजी सफलतापूर्वक बनाई गई।"
-      ],
-      "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "एन्क्रिप्शन कुंजी उत्पन्न की जा रही हैं। इसमें कई मिनट लग सकते हैं और आपका ब्राउज़र अस्थायी रूप से फ़्रीज़ हो सकता है।"
-      ],
-      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "आपके पते के लिए एन्क्रिप्शन कुंजियां जेनरेट की जा रही हैं. इसमें कई मिनट लग सकते हैं और आपका ब्राउज़र अस्थायी रूप से फ़्रीज़ हो सकता है।"
-      ],
-      "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "यदि आपको लगता है कि आपकी पिछली कुंजी से छेड़छाड़ की गई है तो आप एक नई एन्क्रिप्शन कुंजी उत्पन्न कर सकते हैं।"
-      ]
-    },
-    "Key state badge": {
-      "Active": [
-        "सक्रिय"
-      ],
-      "Compromised": [
-        "छेड़छाड़ की गई है"
-      ],
-      "Disabled": [
-        "डिसेबल्ड"
-      ],
-      "Inactive": [
-        "सक्रिय नहीं"
-      ],
-      "Obsolete": [
-        "अप्रचलित"
-      ],
-      "Primary": [
-        "मुख्य"
       ]
     },
     "Key type option": {
@@ -6327,44 +6046,6 @@
         "संदेश शॉर्टकट"
       ]
     },
-    "Keys actions": {
-      "Delete": [
-        "हटाएँ"
-      ],
-      "Disables encryption with this key": [
-        "इस कुंजी के साथ एन्क्रिप्शन अक्षम करता है"
-      ],
-      "Disables signature verification and encryption with this key": [
-        "इस कुंजी के साथ हस्ताक्षर सत्यापन और एन्क्रिप्शन अक्षम करता है"
-      ],
-      "Enable encryption with this key": [
-        "इस कुंजी के साथ एन्क्रिप्शन सक्षम करें"
-      ],
-      "Enable signature verification and encryption with this key": [
-        "इस कुंजी के साथ हस्ताक्षर सत्यापन और एन्क्रिप्शन सक्षम करें"
-      ],
-      "Export private key": [
-        "निजी कुंजी निर्यात करें"
-      ],
-      "Export public key": [
-        "सार्वजनिक चाबी निर्यात करें"
-      ],
-      "Make primary": [
-        "प्राथमिक बनाना"
-      ],
-      "Mark compromised": [
-        "मार्क समझौता"
-      ],
-      "Mark not compromised": [
-        "मार्क ने समझौता नहीं किया"
-      ],
-      "Mark not obsolete": [
-        "अप्रचलित मार्क ना करे"
-      ],
-      "Mark obsolete": [
-        "अप्रचलित चिह्नित करें"
-      ]
-    },
     "Knowledge base link label": {
       "Here's how": [
         "ऐसे"
@@ -6385,9 +6066,6 @@
       ],
       "${ MAIL_APP_NAME } address": [
         "${ MAIL_APP_NAME } पता"
-      ],
-      "${ MAIL_APP_NAME } footer": [
-        "${ MAIL_APP_NAME } फुटर"
       ],
       "${ n } month": [
         "${ n } महीना",
@@ -6432,9 +6110,6 @@
       "All-day event notifications": [
         "पूरे दिन इवेंट सूचनाएं"
       ],
-      "Allow notifications by email": [
-        "ईमेल से सूचना की अनुमति दें"
-      ],
       "Allow recovery by email": [
         "ईमेल द्वारा पुनर्प्राप्ति की अनुमति दें"
       ],
@@ -6471,38 +6146,17 @@
       "Apply filter to existing emails": [
         "मौजूदा संदेशो पे फिल्टर लागू करें"
       ],
-      "Attach public key": [
-        "सार्वजनिक कुंजी संलग्न करें"
-      ],
       "Attach screenshot(s)": [
         "स्क्रीनशॉट(स) संलग्न करें"
       ],
       "Authenticator app": [
         "प्रमाणीकरण अनुप्रयोग"
       ],
-      "Auto show embedded images": [
-        "अपनेआप दिखाएं अंदर डाले तस्वीर"
-      ],
-      "Auto show remote images": [
-        "रिमोट तस्वीर अपनेआप दिखाएं"
-      ],
-      "Auto-delete unwanted messages": [
-        "अनचाहे संदेश अपनेआप मिटाएं"
-      ],
-      "Auto-reply": [
-        "ऑटो-रिप्लाई"
-      ],
-      "Auto-unsubscribe": [
-        "ऑटो-सदस्यता-हटाना"
-      ],
       "Awarded": [
         "इनाम"
       ],
       "Billing cycle": [
         "बिल चक्र"
-      ],
-      "Block email tracking": [
-        "ईमेल ट्रैकिंग को ब्लॉक करें"
       ],
       "Block malware only": [
         "मैलवेयर ब्लॉक करें"
@@ -6555,23 +6209,11 @@
       "Composer": [
         "लिखें"
       ],
-      "Composer default font/size": [
-        "संगीतकार डिफ़ॉल्ट फ़ॉन्ट/आकार"
-      ],
-      "Composer mode": [
-        "कंपोजर मोड"
-      ],
-      "Composer text direction": [
-        "लखनेकि दिशा"
-      ],
       "Conditions": [
         "शर्ते"
       ],
       "Config to connect to ${ serverName }": [
         "${ serverName } से जुड़ने को बदले"
-      ],
-      "Confirm link URLs": [
-        "देखे लिंक यूआरएल सही है"
       ],
       "Confirm login password": [
         "लॉगिन पासवर्ड की पुष्टि करें"
@@ -6590,9 +6232,6 @@
       ],
       "Contacts": [
         "संपर्क"
-      ],
-      "Conversation grouping": [
-        "बातचीत समूहन"
       ],
       "Copy": [
         "कॉपी करें"
@@ -6621,23 +6260,14 @@
       "Current display name": [
         "अभी डिस्पले नाम"
       ],
-      "Daily email notifications": [
-        "दैनिक ईमेल सूचनाएं"
-      ],
       "Date": [
         "तारीख"
       ],
       "Date format": [
         "तिथि स्वरूप"
       ],
-      "Days of the week": [
-        "सप्ताह का दिन"
-      ],
       "Default language": [
         "डिफ़ॉल्ट भाषा"
-      ],
-      "Default PGP scheme": [
-        "डिफ़ॉल्ट पीजीपी योजना"
       ],
       "Default view": [
         "डिफॉल्ट व्यू"
@@ -6675,9 +6305,6 @@
       "Don't ask again": [
         "फिर से ना पूछें"
       ],
-      "Duration": [
-        "अवधि"
-      ],
       "Email": [
         "ईमेल"
       ],
@@ -6701,18 +6328,6 @@
       ],
       "Emails (last month)": [
         "ईमेल (पिछले महीने)"
-      ],
-      "End date": [
-        "समाप्ति दिनांक"
-      ],
-      "End day of month": [
-        "महीने का अंतिम दिन"
-      ],
-      "End time": [
-        "समाप्ति समय"
-      ],
-      "End weekday": [
-        "कार्यदिवस समाप्त करें"
       ],
       "Enter password": [
         "पासवर्ड दर्ज करें"
@@ -6777,12 +6392,6 @@
       "Import to:": [
         "इधर आयात करें:"
       ],
-      "Inbox": [
-        "इनबॉक्स"
-      ],
-      "Inherit color from parent folder": [
-        "मूल फ़ोल्डर से रंग इनहेरिट करें"
-      ],
       "Interval": [
         "अंतराल"
       ],
@@ -6791,9 +6400,6 @@
       ],
       "Keep me signed in": [
         "मुझे साइन इन बनाए रखें"
-      ],
-      "Keep messages in Sent/Drafts": [
-        "संदेशों को भेजे/ड्राफ्ट में रखें"
       ],
       "Key": [
         "चाबी"
@@ -6842,9 +6448,6 @@
       ],
       "Mark as": [
         "ऐसे चिन्हित करें"
-      ],
-      "Message": [
-        "संदेश"
       ],
       "Moderate NAT": [
         "मध्यम एनएटी"
@@ -6966,9 +6569,6 @@
       "Please add the following TXT record. Note, DNS records can take several hours to update.": [
         "कृपया निम्नलिखित TXT रिकॉर्ड जोड़ें। ध्यान दें, DNS रिकॉर्ड को अपडेट करने में कई घंटे लग सकते हैं।"
       ],
-      "Please select files to upload": [
-        "कृपया अपलोड करने के लिए फ़ाइलों का चयन करें"
-      ],
       "Port": [
         "पोर्ट"
       ],
@@ -6978,14 +6578,8 @@
       "Previous password": [
         "पिछला पासवर्ड"
       ],
-      "Prompt to trust keys": [
-        "कुंजी पर भरोसा करने का संकेत"
-      ],
       "Proration": [
         "प्रोडशन"
-      ],
-      "Protection mode": [
-        "सुरक्षा मोड"
       ],
       "Read": [
         "पढ़ें"
@@ -7020,29 +6614,8 @@
       "Send crash reports": [
         "क्रेश रिपोर्ट भेजे"
       ],
-      "Show sender images": [
-        "भेजनेवालो की तस्वीर दिखाएं"
-      ],
       "Show week numbers": [
         "हफ्ता नंबर दिखाएं"
-      ],
-      "Sign external messages": [
-        "बाहरी संदेशों पर हस्ताक्षर करें"
-      ],
-      "Signature": [
-        "हस्ताक्षर"
-      ],
-      "SMTP port": [
-        "SMTP पोर्ट"
-      ],
-      "SMTP server": [
-        "SMTP सर्वर"
-      ],
-      "SMTP token": [
-        "SMTP टोकन"
-      ],
-      "SMTP username": [
-        "SMTP यूज़रनेम"
       ],
       "Spam": [
         "स्पैम"
@@ -7053,20 +6626,8 @@
       "Start date": [
         "आरंभ करने की तिथि"
       ],
-      "Start day of month": [
-        "महीने का पहला दिन"
-      ],
-      "Start time": [
-        "प्रारंभ समय"
-      ],
-      "Start weekday": [
-        "कार्यदिवस प्रारंभ करें"
-      ],
       "Statement": [
         "बयान"
-      ],
-      "Sticky labels": [
-        "चिपकू लेबल"
       ],
       "Subscription options": [
         "सदस्यता विकल्प"
@@ -7101,14 +6662,8 @@
       "To: ${ toEmail }": [
         "को: ${ toEmail }"
       ],
-      "Token name": [
-        "टोकन नाम"
-      ],
       "Two-password mode": [
         "दो-पासवर्ड मोड"
-      ],
-      "Undo send": [
-        "भेजें पूर्ववत करें"
       ],
       "Upload 1 or more encryption keys": [
         "1 या अधिक एन्क्रिप्शन कुंजियाँ अपलोड करें"
@@ -7124,9 +6679,6 @@
       ],
       "Use a recovery phone number": [
         "रिक्वरी फोन नंबर इस्तेमाल करें"
-      ],
-      "Use folder colors": [
-        "फ़ोल्डर रंगों का प्रयोग करें"
       ],
       "User": [
         "यूज़र"
@@ -7254,30 +6806,6 @@
         "समय सीमा समाप्त"
       ]
     },
-    "Label to change composer mode": {
-      "Maximized": [
-        "अधिकतम"
-      ],
-      "Normal": [
-        "साधारण"
-      ]
-    },
-    "Label to change density": {
-      "Comfortable": [
-        "आरामदायक"
-      ],
-      "Compact": [
-        "कॉंपैक्ट"
-      ]
-    },
-    "Label to change view layout": {
-      "Column": [
-        "स्तंभ"
-      ],
-      "Row": [
-        "पंक्ति"
-      ]
-    },
     "Label, credit card": {
       "ZIP code": [
         "ज़िप कोड"
@@ -7300,12 +6828,6 @@
     "label/folder notification": {
       "${ Label.Name } created": [
         "${ Label.Name } बनाया गया"
-      ],
-      "${ label.Name } updated": [
-        "${ label.Name } अपडेट किया गया"
-      ],
-      "Preference saved": [
-        "वरीयता बचाई गई"
       ]
     },
     "Limit of calendars reached": {
@@ -7382,9 +6904,6 @@
       ],
       "Reset password": [
         "पासवर्ड रीसेट करें"
-      ],
-      "Set email address": [
-        "ईमेल पता सेट करें"
       ],
       "Sign in": [
         "साइनइन करें"
@@ -7464,6 +6983,18 @@
         "${ itemsToImportCount } में से ${ selectedItemsToImportCount } लेबल से सारे संदेश आयात करें और उन्हे लेबल करें"
       ]
     },
+    "Maximum calendar links reached warning": {
+      "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
+        "आप हर कैलेंडर पे ज़्यादा से ज़्यादा ${ MAX_LINKS_PER_CALENDAR } लिंक बना सकते है। इस कैलेंडर के लिए नया लिंक बनाने के लिए, एक लिंक मिटाए नीचे दिए गए सूची से।",
+        "आप हर कैलेंडर पे ज़्यादा से ज़्यादा ${ MAX_LINKS_PER_CALENDAR } लिंक बना सकते है। इस कैलेंडर के लिए नया लिंक बनाने के लिए, एक लिंक मिटाए नीचे दिए गए सूची से।"
+      ]
+    },
+    "Maximum shared calendar members reached alert": {
+      "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
+        "आप ${ MAX_CALENDAR_MEMBERS } सदस्य के सीमा पे पहुंच चुके हैं।",
+        "आप ${ MAX_CALENDAR_MEMBERS } सदस्य के सीमा पे पहुंच चुके हैं।"
+      ]
+    },
     "Member action": {
       "Delete": [
         "मिटाए"
@@ -7482,9 +7013,6 @@
       ]
     },
     "Message": {
-      "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
-        "सारे फिल्टर क्रिया आपके ${ MAIL_APP_NAME } खाते के सभी मैसेज पे लागू होंगे। कोई ऑटो-रिप्लाई ईमेल नहीं भेजा जाएगा।"
-      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "अपने कस्टम डोमेन को ${ BRAND_NAME } से कनेक्ट करें कस्टम ईमेल पते (उदहारण, you@yourcompany.com) को सेट करने के लिए। हमारा विजार्ड आपकी इस प्रक्रिया में सहायता देगा।"
       ],
@@ -7720,6 +7248,23 @@
         "मध्यम वीपीएन रफ्तार"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } पे डाउनग्रेड करें"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "सारे ${ BRAND_NAME } प्लान देखे"
+      ],
+      "From ${ price }": [
+        "${ price } से"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "मेरा ${ currentPlanName } खाता रखें"
+      ],
+      "Upgrade now": [
+        "अभी अपग्रेड करें"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "देखना जारी रखें"
@@ -7761,27 +7306,14 @@
         "${ upsellPlanHumanSize } पे अपग्रेड करें"
       ]
     },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } पे डाउनग्रेड करें"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "सारे ${ BRAND_NAME } प्लान देखे"
-      ],
-      "From ${ price }": [
-        "${ price } से"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "मेरा ${ currentPlanName } खाता रखें"
-      ],
-      "Upgrade now": [
-        "अभी अपग्रेड करें"
-      ]
-    },
     "new_plans: feature": {
       "${ n } calendar": [
         "${ n } कैलेंडर",
         "${ n } कैलेंडर"
+      ],
+      "${ n } calendar per user": [
+        "${ n } कैलेंडर हर यूज़र पे",
+        "${ n } कैलेंडर हर यूज़र पे"
       ],
       "${ n } custom email domain": [
         "${ n } कस्टम ईमेल डोमेन",
@@ -8065,14 +7597,6 @@
         "टीम संभालना"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } खत्म होता है ${ last4 } से"
@@ -8142,6 +7666,14 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "आप अपने अभी चल रहे प्लान पे छूट पा रहे हैं। अगर डाउनग्रेड करते हैं, तो आप छूट खो देंगे और अगर वापिस सदस्यता लेने की कोशिश करते है तो वो मौजूद नहीं होगा।"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
       ]
     },
     "new_plans: Label": {
@@ -8384,9 +7916,6 @@
       "An external address cannot be default": [
         "एक बाहरी पता डिफॉल्ट नहीं हो सकता"
       ],
-      "Key with fingerprint ${ fp } has been deleted.": [
-        "${ fp } फिंगरप्रिंट के साथ वाली चाबी मिटाई गई।"
-      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN / IKEv2 क्रेडेंशियल फिर से जनरेट किए गए"
       ]
@@ -8468,104 +7997,8 @@
       ]
     },
     "Option": {
-      "10th of the month": [
-        "महीने की 10 तारीख"
-      ],
-      "11th of the month": [
-        "महीने की 11 तारीख"
-      ],
-      "12th of the month": [
-        "महीने की 12 तारीख"
-      ],
-      "13th of the month": [
-        "महीने की 13 तारीख"
-      ],
-      "14th of the month": [
-        "महीने की 14 तारीख"
-      ],
-      "15th of the month": [
-        "महीने की 15 तारीख"
-      ],
-      "16th of the month": [
-        "महीने की 16 तारीख"
-      ],
-      "17th of the month": [
-        "महीने की 17 तारीख"
-      ],
-      "18th of the month": [
-        "महीने की 18 तारीख"
-      ],
-      "19th of the month": [
-        "महीने की 19 तारीख"
-      ],
-      "1st of the month": [
-        "महीने की पहली"
-      ],
-      "20th of the month": [
-        "महीने की 20 तारीख"
-      ],
-      "21st of the month": [
-        "महीने की 21 तारीख"
-      ],
-      "22nd of the month": [
-        "महीने की 22 तारीख"
-      ],
-      "23rd of the month": [
-        "महीने की 23 तारीख"
-      ],
-      "24th of the month": [
-        "महीने की 24 तारीख"
-      ],
-      "25th of the month": [
-        "महीने की 25 तारीख"
-      ],
-      "26th of the month": [
-        "महीने की 26 तारीख"
-      ],
-      "27th of the month": [
-        "महीने की 27 तारीख"
-      ],
-      "28th of the month": [
-        "महीने की 28 तारीख"
-      ],
-      "29th of the month": [
-        "महीने की 29 तारीख"
-      ],
-      "2nd of the month": [
-        "महीने का २"
-      ],
-      "30th of the month": [
-        "महीने की ३० तारीख"
-      ],
-      "31st of the month": [
-        "महीने की 31 तारीख"
-      ],
-      "3rd of the month": [
-        "महीने का ३"
-      ],
-      "4th of the month": [
-        "महीने की 4 तारीख"
-      ],
-      "5th of the month": [
-        "महीने की ५ तारीख"
-      ],
-      "6th of the month": [
-        "महीने की ६ तारीख"
-      ],
-      "7th of the month": [
-        "महीने की ७ तारीख"
-      ],
-      "8th of the month": [
-        "महीने की 8 तारीख"
-      ],
-      "9th of the month": [
-        "महीने की 9 तारीख"
-      ],
       "Add to existing group": [
         "मौजूदा समूह में जोड़ें"
-      ],
-      "Ask each time": [
-        "हर बार पूछें"
       ],
       "Automatic (${ defaultDay })": [
         "स्वचालित (${ defaultDay })"
@@ -8578,9 +8011,6 @@
       ],
       "Create new group": [
         "नया ग्रुप बनाएं"
-      ],
-      "Fixed duration": [
-        "निश्चित अवधि"
       ],
       "Free server configs": [
         "नि: शुल्क सर्वर कॉन्फ़िगरेशन"
@@ -8600,41 +8030,11 @@
       "It's too expensive": [
         "यह बहुत महंगा है"
       ],
-      "Left to Right": [
-        "बाएं से दाएं"
-      ],
       "My reason isn't listed": [
         "मेरा कारण सूचीबद्ध नहीं है"
       ],
       "No parent folder": [
         "कोई मूल फ़ोल्डर नहीं"
-      ],
-      "Normal": [
-        "साधारण"
-      ],
-      "Off": [
-        "बंद"
-      ],
-      "On": [
-        "चालू"
-      ],
-      "Permanent": [
-        "स्थायी"
-      ],
-      "Plain text": [
-        "साधारण शब्द"
-      ],
-      "Repeat daily": [
-        "रोजाना दोहराएं"
-      ],
-      "Repeat monthly": [
-        "मासिक दोहराएं"
-      ],
-      "Repeat weekly": [
-        "साप्ताहिक दोहराएं"
-      ],
-      "Right to Left": [
-        "दाएं से बाएं"
       ],
       "Router": [
         "राऊटर"
@@ -8644,20 +8044,6 @@
       ],
       "Standard server configs": [
         "स्टैंडर्ड सर्वर कॉन्फ़िगरेशन"
-      ]
-    },
-    "Option delay send seconds": {
-      "0 seconds": [
-        "0 सेकंड"
-      ],
-      "10 seconds": [
-        "१० सेकंड"
-      ],
-      "20 seconds": [
-        "२० सेकंड"
-      ],
-      "5 seconds": [
-        "५ सेकंड"
       ]
     },
     "Option group": {
@@ -8677,14 +8063,6 @@
       ],
       "Merge with calendar": [
         "कैलेंडर के साथ मर्ज करें"
-      ]
-    },
-    "Option protection mode": {
-      "Load content via proxy (recommended)": [
-        "प्रॉक्सी के माध्यम से सामग्री लोड करें (अनुशंसित)"
-      ],
-      "Load content via proxy and store as attachments": [
-        "प्रॉक्सी के माध्यम से सामग्री लोड करें और अटैचमेंट के रूप में स्टोर करें"
       ]
     },
     "Organization capacity error": {
@@ -8714,20 +8092,6 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "आपके प्लान में ${ humanReadableAvailableSpace } और स्टोरेज जगह है।"
-      ]
-    },
-    "OS compatibility": {
-      ".deb (for Debian/Ubuntu)": [
-        ".deb (डेबियन/उबंटू के लिए)"
-      ],
-      ".dmg (10.12 or later)": [
-        ".dmg (10.12 या बाद का)"
-      ],
-      ".rpm (for Fedora/openSUSE)": [
-        ".rpm (फेडोरा/ओपनएसयूएसई के लिए)"
-      ],
-      "PKGBUILD (for other distributions)": [
-        "PKGBUILD (अन्य वितरणों के लिए)"
       ]
     },
     "Participant name": {
@@ -8814,9 +8178,6 @@
       ],
       "Please select a country": [
         "एक देश चुनें"
-      ],
-      "Printer": [
-        "प्रिंटर"
       ],
       "Search": [
         "खोजें"
@@ -9028,38 +8389,6 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "सेटिंग अपडेट करने में असफल"
-      ]
-    },
-    "Settings/filters": {
-      "Filters": [
-        "फ़िल्टर"
-      ]
-    },
-    "Settings/filters - table": {
-      "Action": [
-        "कार्य"
-      ],
-      "Name": [
-        "नाम"
-      ],
-      "Order": [
-        "ऑर्डर"
-      ],
-      "Status": [
-        "स्थिति"
-      ]
-    },
-    "Settings/labels": {
-      "Labels/Folders": [
-        "लेबल / फ़ोल्डर"
-      ]
-    },
-    "Settings/labels - table": {
-      "Actions": [
-        "कार्रवाई"
-      ],
-      "Labels": [
-        "लेबलस"
       ]
     },
     "Share calendar assistive text": {
@@ -9452,15 +8781,6 @@
       "Address added": [
         "पता जोड़ा गया"
       ],
-      "Address updated": [
-        "पता अपडेट किया गया"
-      ],
-      "Auto-reply disabled": [
-        "स्वतः उत्तर अक्षम"
-      ],
-      "Auto-reply updated": [
-        "ऑटो-रिप्लाई अपडेट किया गया"
-      ],
       "Bug reported": [
         "बग की सूचना दी"
       ],
@@ -9551,20 +8871,11 @@
       "Phone number updated": [
         "फोन नंबर अपडेट किया गया"
       ],
-      "Port copied to clipboard": [
-        "पोर्ट क्लिपबोर्ड पे कॉपी किया गया"
-      ],
       "Preference saved": [
         "वरीयता बचाई गई"
       ],
-      "Premium address created": [
-        "प्रीमियम पता बनाया गया"
-      ],
       "Resuming import": [
         "आयात फिर से शुरू"
-      ],
-      "Server copied to clipboard": [
-        "सर्वर क्लिपबोर्ड पे कॉपी किया गया"
       ],
       "Session revoked": [
         "सत्र निरस्त हो गया"
@@ -9572,14 +8883,8 @@
       "Sessions revoked": [
         "सत्र निरस्त हो गया"
       ],
-      "SMTP token deleted": [
-        "एसएमटीपी टोकन मिटा दिया गया"
-      ],
       "SPF value copied to clipboard": [
         "क्लिपबोर्ड पर कॉपी किया गया SPF मान"
-      ],
-      "Token copied to clipboard": [
-        "टोकन क्लिपबोर्ड पे कॉपी किया गया"
       ],
       "Undo in progress": [
         "अनडू चल रहा"
@@ -9614,16 +8919,6 @@
         "उपयोगकर्ता को हटा दिया गया"
       ]
     },
-    "Success message after sorting folders": {
-      "Folders sorted": [
-        "फ़ोल्डर छांटे गए"
-      ]
-    },
-    "Success message after sorting labels": {
-      "Labels sorted": [
-        "लेबल क्रमबद्ध"
-      ]
-    },
     "Success notification": {
       "${ label.Name } removed": [
         "${ label.Name } हटाया गया"
@@ -9649,14 +8944,8 @@
       "Creating config file for ${ serverName }": [
         "${ serverName } के संरचना फाइल बना रहे"
       ],
-      "Filter removed": [
-        "फ़िल्टर हटा दिया गया"
-      ],
       "Preference updated": [
         "पसंद अपडेट किया गया"
-      ],
-      "Status updated": [
-        "स्थिति अपडेट की गई"
       ]
     },
     "Suffix": {
@@ -9730,11 +9019,6 @@
       ],
       "vCard field": [
         "vCard फील्ड"
-      ]
-    },
-    "TableRow": {
-      "No SMTP tokens found": [
-        "कोई एसएमटीपी टोकन नहीं मिला"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -9843,9 +9127,6 @@
       "Add PayPal payment method": [
         "पेपैल भुगतान विधि जोड़ें"
       ],
-      "Add Sieve filter": [
-        "छलनी फिल्टर जोड़ें"
-      ],
       "Add to spam list": [
         "स्पैम लिस्ट में डाले"
       ],
@@ -9864,9 +9145,6 @@
       "Appearance": [
         "दिखावट"
       ],
-      "Apply filter to existing messages": [
-        "मौजूदा संदेशो पे फिल्टर लागू करें"
-      ],
       "Apply gift code": [
         "उपहार कोड लागू करें"
       ],
@@ -9879,17 +9157,11 @@
       "Auto-reply": [
         "ऑटो-रिप्लाई"
       ],
-      "Automatically sign outgoing messages?": [
-        "स्वचालित रूप से आउटगोइंग संदेशों पर हस्ताक्षर करें?"
-      ],
       "Backup and export": [
         "बैकअप और निर्यात"
       ],
       "Billing cycle": [
         "बिलिंग चक्र"
-      ],
-      "Bridge for ${ platform }": [
-        "${ platform } के लिए Bridge"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME } सदस्यता रद्द करें"
@@ -10027,23 +9299,14 @@
       "Delete ${ email }": [
         "${ email } हटाएं"
       ],
-      "Delete ${ filterName }": [
-        "${ filterName } मिटाएं"
-      ],
       "Delete ${ label.Name } folder": [
         "${ label.Name } फोल्डर मिटाएं"
       ],
       "Delete ${ label.Name } label": [
         "${ label.Name } लेबल मिटाएं"
       ],
-      "Delete ${ tokenNameToRemove }?": [
-        "${ tokenNameToRemove } मिटाएं?"
-      ],
       "Delete account": [
         "खाता हटा दो"
-      ],
-      "Delete key permanently?": [
-        "चाबी हमेशा के लिए मिटाएं?"
       ],
       "Delete logs": [
         "लॉग हटाएं"
@@ -10084,9 +9347,6 @@
       "Edit filter": [
         "फिल्टर बदलाव करें"
       ],
-      "Edit Sieve filter": [
-        "चलनी फ़िल्टर संपादित करें"
-      ],
       "Edit user": [
         "यूजर को संपादित करो"
       ],
@@ -10117,12 +9377,6 @@
       "Export": [
         "निर्यात"
       ],
-      "Export private key": [
-        "निजी कुंजी निर्यात करें"
-      ],
-      "Export public key": [
-        "सार्वजनिक कुंजी निर्यात करें"
-      ],
       "External PGP settings": [
         "बाहरी PGP सेटिंग्स"
       ],
@@ -10150,9 +9404,6 @@
       ],
       "Generate new recovery phrase?": [
         "नया पुनर्प्राप्ति वाक्यांश उत्पन्न करें"
-      ],
-      "Generate SMTP token": [
-        "एसएमटीपी टोकन बनाएं"
       ],
       "Get ${ vpnPlus } to access all servers": [
         "${ vpnPlus } लें सारे सर्वर एक्सेस करने के लिए"
@@ -10197,9 +9448,6 @@
       "Import failed": [
         "आयात विफल"
       ],
-      "Import key": [
-        "आयात कुंजी"
-      ],
       "Import messages": [
         "संदेश आयात करें"
       ],
@@ -10223,9 +9471,6 @@
       ],
       "Keep your inbox organized": [
         "अपना इनबॉक्स व्यवस्थित रखें"
-      ],
-      "Keyboard shortcuts": [
-        "कीबोर्ड शॉर्टकट्स"
       ],
       "Labels": [
         "लेबल"
@@ -10443,12 +9688,6 @@
       "Signed in to member account": [
         "सदस्य खाते पे साइनइन हुए"
       ],
-      "Sort folders alphabetically": [
-        "फ़ोल्डरों को वर्णानुक्रम में क्रमबद्ध करें"
-      ],
-      "Sort labels alphabetically": [
-        "वर्णानुक्रम में लेबल छाँटें"
-      ],
       "Start a new import": [
         "एक नया आयात शुरू करें"
       ],
@@ -10457,9 +9696,6 @@
       ],
       "Status": [
         "स्थिति"
-      ],
-      "Success": [
-        "सफलता"
       ],
       "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
         "सफलतापूर्वक ${ localSuccessfullyCreatedUsers.length } यूज़र खाता बनाया गया",
@@ -10556,9 +9792,6 @@
       "Your recovery status": [
         "आपकी पुनर्प्राप्ति स्थिति"
       ],
-      "Your SMTP token": [
-        "आपका एसएमटीपी टोकन"
-      ],
       "Your subscriptions": [
         "आपकी सदस्यता"
       ],
@@ -10615,20 +9848,6 @@
         "स्थिति"
       ]
     },
-    "Title header for keys table": {
-      "Actions": [
-        "कार्रवाई"
-      ],
-      "Fingerprint": [
-        "फिंगरप्रिंट"
-      ],
-      "Key type": [
-        "कुंजी प्रकार"
-      ],
-      "Status": [
-        "स्थिति"
-      ]
-    },
     "Title header for members table": {
       "Addresses": [
         "पतों"
@@ -10659,9 +9878,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "${ MAIL_APP_NAME } यूज़र भेजने को ये चाबी डिफॉल्ट इस्तेमाल करेंगे"
-      ],
       "Account is disconnected": [
         "खाता डिस्कनेक्ट किया गया है"
       ],
@@ -10670,9 +9886,6 @@
       ],
       "Customize import to reduce the number of labels": [
         "लेबल की संख्या कम करने के लिए आयात को अनुकूलित करें"
-      ],
-      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
-        "कचरे और स्पैम संदेश को 30 दिन बाद मिटाएं। अपनेआप-मिटाएं चालू करने से कचरे और स्पैम संदेश को उनके उस फोल्डर में आने के तारीख के हिसाब से मिटने का तारीख मिलता है।"
       ],
       "Each imported email will have this label": [
         "प्रत्येक आयातित ईमेल में यह लेबल होगा"
@@ -10683,41 +9896,17 @@
       "Edit label names": [
         "लेबल नाम संपादित करें"
       ],
-      "Enable/disable desktop and mobile notifications": [
-        "डेस्कटॉप और मोबाइल सूचनाएं सक्षम/अक्षम करें"
-      ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "उन्नत लॉग सक्षम करना सुरक्षा लॉग में प्रत्येक ईवेंट के लिए IP पता रिकॉर्ड करता है।"
       ],
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "जीमेल अपने आप कुछ ईपत्रों को 'समाचिक' अथवा 'प्रचार ' जैसी श्रेणियों में डालता है। आप चुन सकते हैं कि इन ईपत्र को कहा पर आयात करना है।"
       ],
-      "Group emails in the same conversation together in your Inbox or display them separately.": [
-        "एक ही बातचीत में ईमेल को अपने इनबॉक्स में समूहित करें या उन्हें अलग से प्रदर्शित करें।"
-      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "यदि आपने एक उपहार कोड खरीदा है या हमारी सहायता टीम से एक प्राप्त किया है, तो आप इसे यहां दर्ज कर सकते हैं।"
       ],
-      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
-        "भेजे गए या ड्राफ़्ट फ़ोल्डर के संदेश उस फ़ोल्डर में दिखाई देते रहेंगे, भले ही आप उन्हें किसी अन्य फ़ोल्डर में ले जाएँ।"
-      ],
-      "Set how your list of messages looks like by default.": [
-        "सेट करें कि आपके संदेशों की सूची डिफ़ॉल्ट रूप से कैसी दिखती है।"
-      ],
-      "Set the default Composer popup size as small or full screen.": [
-        "डिफ़ॉल्ट संगीतकार पॉपअप आकार को छोटे या पूर्ण स्क्रीन के रूप में सेट करें।"
-      ],
-      "Set the default layout for your Inbox.": [
-        "अपने इनबॉक्स के लिए डिफ़ॉल्ट लेआउट सेट करें।"
-      ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "आपके भेजे गए ईमेल के फुटर में ये डाल देगा: ${ signature } लिंक आपके रेफरल लिंक पे ले जाएगा। फुटर आपके हस्ताक्षर के नीचे आएगा। आप सेटिंग में अपने हस्ताक्षर को कभी भी बदल सकते है।"
-      ],
-      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
-        "संदेश लिस्ट में भेजने वालो की तस्वीर दिखाएं। अगर तस्वीर नहीं है तो भेजने वालो के नाम का शुरुआती हिस्सा दिखाया जाएगा।"
-      ],
-      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
-        "इस कुंजी द्वारा निर्मित हस्ताक्षर को अमान्य माना जाता है और इस कुंजी का उपयोग एन्क्रिप्शन के लिए नहीं किया जा सकता है"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "तान्त्रिक उपसञ्चय ${ MAIL_APP_NAME } में अलग सञ्चय जैसे दिखेंगे"
@@ -10728,41 +9917,14 @@
       "The new subscription cycle starts on ${ formattedTime }": [
         "नई सदस्यता साइकिल ${ formattedTime } को शुरू होगी"
       ],
-      "This address has been disabled": [
-        "यह पता अक्षम कर दिया गया है"
-      ],
-      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
-        "यह सुविधा आपके ईमेल भेजने में देरी करती है, जिससे आपको चयनित समय सीमा के दौरान भेजने को पूर्ववत करने का अवसर मिलता है।"
-      ],
       "This feature is only available for paid users": [
         "यह सुविधा केवल सशुल्क उपयोगकर्ताओं के लिए उपलब्ध है"
-      ],
-      "This key cannot be used for encryption": [
-        "इस कुंजी का उपयोग एन्क्रिप्शन के लिए नहीं किया जा सकता है"
-      ],
-      "This key is encrypted with an old password": [
-        "यह कुंजी पुराने पासवर्ड से एन्क्रिप्ट की गई है"
-      ],
-      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
-        "ये चाबी ${ MAIL_APP_NAME } इस्तेमाल करता है आपके संपर्क का डाटा एन्क्रिप्ट करने के लिए"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "हमें आपके DNS कॉन्फ़िगरेशन में समस्या का पता चला है। कृपया सुनिश्चित करें कि आपके रिकॉर्ड नीचे दिए गए निर्देशों से मेल खाते हैं। यदि समस्या बनी रहती है, तो हमें डीकेआईएम को बंद करना होगा।"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "हमने आपके DNS कॉन्फ़िगरेशन के साथ समस्याओं के कारण DKIM हस्ताक्षर करना बंद कर दिया है। कृपया हस्ताक्षर शुरू करने के लिए नीचे दिए गए निर्देशों का पालन करें"
-      ],
-      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
-        "जब आप किसी वार्तालाप में किसी संदेश में कोई लेबल जोड़ते हैं, तो वह उस वार्तालाप में आपके द्वारा भेजे जाने वाले या प्राप्त होने वाले सभी भावी संदेशों पर स्वतः लागू हो जाएगा।"
-      ],
-      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
-        "जब आप किसी लिंक पर क्लिक करते हैं, तो यह एंटी-फ़िशिंग सुविधा आपको वेब पेज के URL की पुष्टि करने के लिए कहेगी।"
-      ],
-      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
-        "जब आप किसी ईमेल को स्पैम में भेजते हैं, तब आप उन भेजने वालो के मेल लिस्ट की सदस्यता अपनेआप खो देंगे।"
-      ],
-      "You have locally decrypted this key": [
-        "आपने इस कुंजी को स्थानीय रूप से डिक्रिप्ट किया है"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "आपका ${ MAIL_APP_NAME } इनबॉक्स भरने वाला है"
@@ -10772,21 +9934,6 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "आपका बाहरी खाता 24 घंटे की बैंडविड्थ सीमा तक पहुंच गया शायद। ${ BRAND_NAME } जल्द-से-जल्द आयात फिर से शुरू करने की कोशिश करेगा।"
-      ]
-    },
-    "Tooltip automatically attach public key": {
-      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "यह आपके द्वारा भेजे जाने वाले प्रत्येक संदेश में स्वचालित रूप से आपकी सार्वजनिक कुंजी जोड़ता है। प्राप्तकर्ता इसका उपयोग आपके संदेशों की प्रामाणिकता को सत्यापित करने और आपको एन्क्रिप्टेड संदेश भेजने के लिए कर सकते हैं।"
-      ]
-    },
-    "Tooltip prompt to trust keys": {
-      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "किसी दूसरे ${ MAIL_APP_NAME } यूज़र से ईमेल लेते समय जिनके पास आपके संपर्को में विश्वास करी हुई चाबी नहीं है, एक बैनर पूछेगा कि अगर आप विश्वास करी हुई चाबी सक्षम करना चाहते हो।"
-      ]
-    },
-    "Tooltip sign external messages": {
-      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
-        "अपने सभी आउटगोइंग संदेशों पर स्वचालित रूप से हस्ताक्षर करें ताकि उपयोगकर्ता आपके संदेशों की प्रामाणिकता को सत्यापित कर सकें। यह डिफ़ॉल्ट PGP सेटिंग्स के संयोजन में किया जाता है जिसे नीचे कॉन्फ़िगर किया जा सकता है।"
       ]
     },
     "Tooltip; share calendar modal ": {
@@ -10814,6 +9961,12 @@
       ],
       "Your default font will look like following:": [
         "आपका डिफ़ॉल्ट फ़ॉन्ट निम्न जैसा दिखेगा:"
+      ]
+    },
+    "Upgrade": {
+      "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
+        "${ n } डिवाइस तक को एक समय में वीपीएन से कनेक्ट करने के लिए ${ planName } पे अपग्रेड करे।",
+        "${ n } डिवाइस तक को एक समय में वीपीएन से कनेक्ट करने के लिए ${ planName } पे अपग्रेड करे।"
       ]
     },
     "User referee invited via email": {
@@ -10923,9 +10076,6 @@
       "The date and time settings on your device are out of sync. ${ learnMore }": [
         "आपके उपकरण की दिनांक और समय सेटिंग समन्वयन से बाहर हैं। ${ learnMore }"
       ],
-      "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
-        "इस टोकन को इस्तेमाल करने वाले डिवाइस और सेवा इसके बाद ${ MAIL_APP_NAME } से ईमेल नहीं भेज पाएगे।"
-      ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "ये आयात आपके ${ BRAND_NAME } खाते के मौजूदा स्टोरेज क्षमता से ज़्यादा हो सकता है। कृपया अपने आयात को बदलने पे विचार करें।"
       ],
@@ -10966,11 +10116,6 @@
       ],
       "It can take up to a day for DNS changes to update.": [
         "अद्यतन करने के लिए DNS परिवर्तनों में एक दिन तक का समय लग सकता है।"
-      ]
-    },
-    "Weak personal key warning": {
-      "This key no longer meets our security standards. We suggest you mark it as obsolete and generate a new key.": [
-        "यह कुंजी अब हमारे सुरक्षा मानकों को पूरा नहीं करती है। हमारा सुझाव है कि आप इसे अप्रचलित के रूप में चिह्नित करें और एक नई कुंजी बनाएं।"
       ]
     },
     "Weekly recurring event, frequency": {

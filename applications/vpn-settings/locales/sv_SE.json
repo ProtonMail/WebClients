@@ -2135,17 +2135,26 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "App är för närvarande inte tillgänglig"
+      ],
       "Error: ${ errorMessage }": [
         "Fel: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Hoppsan, något gick fel"
       ],
+      "Open in browser": [
+        "Öppna i webbläsare"
+      ],
       "Please refresh the page or try again later.": [
         "Uppdatera sidan eller försök igen senare."
       ],
       "Something went wrong": [
         "Något gick fel"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Byt till webbversionen för att använda ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din Internetanslutning."
@@ -3537,6 +3546,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Detta kan ta lite tid. Stäng inte denna sida eller koppla från Internet."
       ],
+      "This file is too large to preview": [
+        "Denna fil är för stor för att förhandsgranska"
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denna användare ansvarar för närvarande för betalningar för din organisation. Genom att degradera denna medlem, kommer du bli ansvarig för betalningar för din organisation."
       ],
@@ -4849,6 +4861,9 @@
       ],
       "Custom fields": [
         "Anpassade fält"
+      ],
+      "Custom snooze time": [
+        "Anpassad tid för snooza"
       ],
       "Data breach monitoring": [
         "Dataintrångsövervakning"
