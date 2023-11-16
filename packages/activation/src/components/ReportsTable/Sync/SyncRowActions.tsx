@@ -1,9 +1,14 @@
 import { c } from 'ttag';
 
 import { ApiSyncState } from '@proton/activation/src/api/api.interface';
-import { SYNC_G_OAUTH_SCOPES, SYNC_SOURCE } from '@proton/activation/src/constants';
+import { SYNC_G_OAUTH_SCOPES } from '@proton/activation/src/constants';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import { EasySwitchFeatureFlag, ImportProvider, OAuthProps } from '@proton/activation/src/interface';
+import {
+    EasySwitchFeatureFlag,
+    ImportProvider,
+    NEW_EASY_SWITCH_SOURCES,
+    OAuthProps,
+} from '@proton/activation/src/interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { deleteSyncItem, resumeSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectSyncById } from '@proton/activation/src/logic/sync/sync.selectors';
@@ -45,7 +50,7 @@ const SyncRowActions = ({ syncId }: Props) => {
                             Code,
                             Provider,
                             RedirectUri,
-                            Source: SYNC_SOURCE,
+                            Source: NEW_EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_SYNC,
                             notification: { text: c('action').t`Resuming forward` },
                             syncId,
                             importerId: syncItem.importerID,
