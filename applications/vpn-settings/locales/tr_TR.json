@@ -44,6 +44,9 @@
       "Authenticate": [
         "Kimliği doğrula"
       ],
+      "Authenticating": [
+        "Kimlik doğrulanıyor"
+      ],
       "Back": [
         "Geri"
       ],
@@ -620,7 +623,7 @@
         "Varsayılan"
       ],
       "Disabled": [
-        "Kullanımdan kaldırılmış"
+        "Kullanım dışı"
       ],
       "External": [
         "Dış"
@@ -4760,11 +4763,11 @@
         "Her kullanıcı için ${ n } VPN bağlantısı"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } ${ n } hide-my-email takma adı ile birlikte",
-        "${ PASS_APP_NAME } ${ n } hide-my-email takma adı ile birlikte"
+        "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı",
+        "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } sınırsız sayıda hide-my-email takma adı ile birlikte"
+        "${ PASS_APP_NAME } ve sınırsız sayıda hide-my-email takma adı"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } programı"
@@ -5145,7 +5148,7 @@
     },
     "new_plans: Info": {
       "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanım dışı bırakılacak."
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
@@ -5462,7 +5465,7 @@
     },
     "Notification": {
       "A disabled address cannot be default": [
-        "Kullanımdan kaldırılmış bir adres varsayılan olamaz"
+        "Kullanım dışı bırakılmış bir adres varsayılan olamaz"
       ],
       "An external address cannot be default": [
         "Bir dış adres varsayılan olamaz"
@@ -6571,7 +6574,7 @@
         "Adres silindi"
       ],
       "Address disabled": [
-        "Adres kullanımdan kaldırıldı"
+        "Adres kullanım dışı"
       ],
       "Address enabled": [
         "Adres kullanıma alındı"
@@ -6695,13 +6698,13 @@
         "1. Oluşturulacak yapılandırmaya bir ad verin"
       ],
       "1. Select platform": [
-        "1. Platform seçin"
+        "1. Platformu seçin"
       ],
       "2. Select platform": [
         "2. Platformu seçin"
       ],
       "2. Select protocol": [
-        "2. İletişim kuralı seçin"
+        "2. İletişim kuralını seçin"
       ],
       "3. Select config file and download": [
         "3. Yapılandırma dosyasını seçin ve indirin"
@@ -6934,7 +6937,7 @@
         "E-posta"
       ],
       "Email subscriptions": [
-        "Eposta abonelikleri"
+        "E-posta abonelikleri"
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } Beta programına katılmak için ${ BRAND_NAME } hesabınızın bilgilerini yazın"
@@ -7450,7 +7453,7 @@
         "Bu telefon numarasını silerseniz, hesabınızı kurtaramazsınız."
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Bu adresi kullanımdan kaldırdığınızda, bu adresi kullanarak e-posta gönderemez veya alamazsınız ve bağlantılı tüm ${ BRAND_NAME } ürünleri de kullanımdan kaldırılır. Bu adresi kullanımdan kaldırmak istediğinize emin misiniz?"
+        "Bu adresi kullanım dışı bıraktığınızda, bu adresi kullanarak e-posta gönderemez veya alamazsınız ve bağlantılı tüm ${ BRAND_NAME } ürünleri de kullanım dışı kalır. Bu adresi kullanım dışı bırakmak istediğinize emin misiniz?"
       ],
       "Please note that by choosing this payment method, your account cannot be upgraded immediately. We will update your account once the payment is cleared.": [
         "Lütfen bu ödeme yöntemini seçtiğinizde hesabınızın hemen güncellenemeyeceğini unutmayın. Hesabınızı ödemenin alındığını doğruladıktan sonra güncelleyeceğiz."

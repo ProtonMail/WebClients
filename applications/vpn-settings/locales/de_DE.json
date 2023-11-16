@@ -44,6 +44,9 @@
       "Authenticate": [
         "Authentifizieren"
       ],
+      "Authenticating": [
+        "Authentifiziere"
+      ],
       "Back": [
         "Zurück"
       ],
@@ -2104,6 +2107,9 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Du hast die max. Anzahl von Benutzern in deinem Abonnement ausgeschöpft. Bitte upgrade dein Abonnement, um weitere Benutzer hinzuzufügen."
       ],
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Du musst deine Organisationsschlüssel aktivieren. Ohne Aktivierung kannst du keine nicht-privaten Benutzer erstellen oder auf diese zugreifen."
+      ],
       "You must privatize all users before generating new organization keys": [
         "Du musst zunächst alle Benutzer privatisieren, bevor du neue Organisationsschlüssel erzeugst."
       ],
@@ -2129,17 +2135,26 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Die App ist derzeit nicht verfügbar."
+      ],
       "Error: ${ errorMessage }": [
         "Fehler: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Es ist ein Problem aufgetreten"
       ],
+      "Open in browser": [
+        "Im Browser öffnen"
+      ],
       "Please refresh the page or try again later.": [
         "Aktualisiere die Seite oder versuche es später erneut."
       ],
       "Something went wrong": [
         "Etwas ist schief gelaufen."
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Bitte wechsle zur Webversion, um ${ MAIL_APP_NAME } oder ${ CALENDAR_APP_NAME } zu verwenden."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Diese Seite konnte nicht geladen werden. Bitte aktualisiere die Seite oder überprüfe deine Internetverbindung."
@@ -5763,6 +5778,9 @@
       ],
       "Changing organization password": [
         "Passwort der Organisation ändern"
+      ],
+      "Creating or accessing non-private users": [
+        "Erstelle oder greife auf nicht-private Benutzer zu"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Aufgrund einer Passwortänderung wurden deine Organisations-Administrationsprivilegien eingeschränkt. Die folgenden Aktionen sind nicht länger erlaubt:"
