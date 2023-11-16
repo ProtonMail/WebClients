@@ -74,10 +74,10 @@
       "Create": [
         "Luo"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Luo ${ BRAND_NAME }-tili"
       ],
       "Create a new vault to share": [
@@ -427,9 +427,6 @@
       "Could not resolve share members": [
         "Jaon jäseniä ei voitu määrittää"
       ],
-      "Could not resume your session : ${ description }": [
-        "Istuntoasi ei voitu jatkaa: ${ description }"
-      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV-tiedostosta puuttuu odotettuja otsikoita: ${ missingHeaders }"
       ],
@@ -664,9 +661,6 @@
         "${ memberCount } jäsen",
         "${ memberCount } jäsentä"
       ],
-      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "${ PASS_APP_NAME } näyttää kohteiden sivustokuvakkeet ${ BRAND_NAME }in anonymisoidun kuvavälityspalvelimen välityksellä."
-      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } tuo vain kirjautumistiedot, muistiinpanot ja luottokortit."
       ],
@@ -712,9 +706,6 @@
       ],
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" siirrettiin roskakoriin, eikä se enää ohjaa viestejä postilaatikkoosi."
-      ],
-      "All trashed items permanently removed": [
-        "Kaikki roskakorin kohteet poistettiin pysyvästi"
       ],
       "All trashed items successfully restored": [
         "Kaikki roskakorin kohteet palautettiin"
@@ -853,9 +844,6 @@
       "Loading": [
         "Ladataan"
       ],
-      "Loading extension": [
-        "Ladataan laajennusta"
-      ],
       "Loading...": [
         "Ladataan..."
       ],
@@ -867,9 +855,6 @@
       ],
       "Multiple vaults": [
         "Useita holveja"
-      ],
-      "N/A": [
-        "Ei käytettävissä"
       ],
       "None": [
         "Ei mitään"
@@ -960,9 +945,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Kiitos, ongelmasta on ilmoitettu"
-      ],
-      "The autofill dropdown will automatically open on field focus.": [
-        "Määrittää avataanko automaattitäytön ponnahdus automaattisesti lomakekentän aktivoituessa."
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Teksti, jota yrität liittää, ylittää ${ maxLength }-merkin enimmäispituuden."
@@ -1080,9 +1062,6 @@
       "15 minutes": [
         "15 minuutin kuluttua"
       ],
-      "2FA secret (TOTP)": [
-        "2FA-salaisuus (TOTP)"
-      ],
       "2FA token (TOTP)": [
         "2FA-tunniste (TOTP)"
       ],
@@ -1130,9 +1109,6 @@
       ],
       "Autofill 2FA": [
         "Kaksivaiheisen todennuskoodin automaattitäyttö"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "Näytä automaattitäyttö automaattisesti kun kirjautumiskenttä aktivoidaan"
       ],
       "Autosave": [
         "Automaattitallennus"
@@ -1466,9 +1442,6 @@
       "Hyphens": [
         "Yhdysmerkki"
       ],
-      "Memorable Password": [
-        "Mieleenpainuva salasana"
-      ],
       "Numbers": [
         "Numerot"
       ],
@@ -1489,9 +1462,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "Lisää 2FA-salaisuus"
-      ],
       "Add hidden text": [
         "Lisää piilotettu teksti"
       ],
@@ -1760,9 +1730,6 @@
       "Please enter a valid email address": [
         "Syötä kelvollinen sähköpostiosoite"
       ],
-      "Please log back in": [
-        "Kirjaudu takaisin sisään"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Vahvista sähköpostiosoitteesi käyttääksesi sähköpostialiaksia"
       ],
@@ -1816,9 +1783,6 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Sinulla ei ole enää pääsyä tähän holviin. Jos haluat liittyä siihen uudelleen, tarvitset uuden kutsun."
-      ],
-      "Your session was locked due to inactivity": [
-        "Istuntosi lukittiin toimettomuuden seuraksena"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tilauksesi ei salli useiden holvien luontia ja kaikki kohteet tuodaan ensisijaiseen holviisi. Jos haluat tuoda useisiin holveihin, päivitä tilauksesi."

@@ -80,11 +80,11 @@
       "Create": [
         "Vytvořit"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Vytvořte účet ${ BRAND_NAME }"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Vytvořit účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Vytvořte účet ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
         "Vytvořit nový trezor ke sdílení"
@@ -445,9 +445,6 @@
       "Could not resolve share members": [
         "Nepodařilo se vyřešit členy sdílení"
       ],
-      "Could not resume your session : ${ description }": [
-        "Nelze obnovit vaši relaci : ${ description }"
-      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "V souboru CSV chybí očekávané hlavičky: ${ missingHeaders }"
       ],
@@ -708,9 +705,6 @@
         "${ memberCount } členů",
         "${ memberCount } členů"
       ],
-      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "${ PASS_APP_NAME } zobrazí favicon položky prostřednictvím anonymizovaného obrázkového proxy serveru ${ BRAND_NAME }."
-      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } bude importovat pouze přihlašovací údaje, poznámky a platební karty."
       ],
@@ -770,9 +764,6 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Všechny položky z \"${ payload.content.name }\" úspěšně přesunuty"
-      ],
-      "All trashed items permanently removed": [
-        "Všechny položky z koše úspěšně smazány"
       ],
       "All trashed items successfully restored": [
         "Všechny položky z koše úspěšně obnoveny"
@@ -945,9 +936,6 @@
       "Loading": [
         "Načítání"
       ],
-      "Loading extension": [
-        "Načítání rozšíření"
-      ],
       "Loading...": [
         "Načítání..."
       ],
@@ -962,9 +950,6 @@
       ],
       "Multiple vaults": [
         "Několik trezorů"
-      ],
-      "N/A": [
-        "Nedostupné"
       ],
       "No login found": [
         "Nebylo nalezeno žádné přihlášení"
@@ -1073,9 +1058,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Děkujeme, problém byl nahlášen"
-      ],
-      "The autofill dropdown will automatically open on field focus.": [
-        "Rozbalovací nabídka automatického vyplňování se automaticky otevře při zaměření pole."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Následující ${ result.ignored.length } položku nelze importovat:",
@@ -1217,9 +1199,6 @@
       "15 minutes": [
         "15 minut"
       ],
-      "2FA secret (TOTP)": [
-        "2FA secret (TOTP)"
-      ],
       "2FA token (TOTP)": [
         "2FA token (TOTP)"
       ],
@@ -1267,9 +1246,6 @@
       ],
       "Autofill 2FA": [
         "Automaticky vyplnit 2FA"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "Otevření automatického vyplňování při zaměření přihlašovacích polí"
       ],
       "Autosave": [
         "Automatické uložení"
@@ -1606,9 +1582,6 @@
       "Hyphens": [
         "Pomlčky"
       ],
-      "Memorable Password": [
-        "Zapamatovatelné heslo"
-      ],
       "Numbers": [
         "Čísla"
       ],
@@ -1629,9 +1602,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "Přidat 2FA secret"
-      ],
       "Add hidden text": [
         "Přidat skrytý text"
       ],
@@ -1931,9 +1901,6 @@
       "Please enter a valid email address": [
         "Prosím zadejte platnou e-mailovou adresu"
       ],
-      "Please log back in": [
-        "Přihlaste se prosím znovu"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Ověřte prosím svou e-mailovou adresu, abyste mohli používat e-mailové aliasy"
       ],
@@ -1996,9 +1963,6 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Váš tarif umožňuje automatické vyplňování pouze z prvních dvou trezorů"
-      ],
-      "Your session was locked due to inactivity": [
-        "Vaše relace byla uzamčena z důvodu neaktivity"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše předplatné neumožňuje vytvořit více trezorů. Všechny položky budou importovány do vašeho prvního trezoru. Chcete-li importovat do více trezorů, navyšte své předplatné."
