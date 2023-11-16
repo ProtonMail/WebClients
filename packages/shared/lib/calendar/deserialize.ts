@@ -45,7 +45,7 @@ export const readSessionKeys = async ({
     decryptedSharedKeyPacket,
     privateKeys,
 }: {
-    calendarEvent: CalendarEvent;
+    calendarEvent: Pick<CalendarEvent, 'SharedKeyPacket' | 'AddressKeyPacket' | 'CalendarKeyPacket'>;
     decryptedSharedKeyPacket?: string;
     privateKeys?: PrivateKeyReference | PrivateKeyReference[];
 }) => {
@@ -248,7 +248,7 @@ export const readCalendarEvent = async ({
         ID: eventID,
     },
     publicKeysMap = {},
-    addresses = [],
+    addresses,
     sharedSessionKey,
     calendarSessionKey,
     calendarSettings,
