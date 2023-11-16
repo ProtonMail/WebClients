@@ -46,16 +46,22 @@ export const createContentScriptContext = (options: {
         getExtensionContext: () => ExtensionContext.get(),
         getFeatureFlags: () => featureFlags,
         getFeatures: () => {
-            const domain = context.getExtensionContext().url.domain ?? '';
-            const mask = settings.disallowedDomains?.[domain];
+            const disallowed = settings.disallowedDomains ?? {};
+            const { domain, subdomain } = context.getExtensionContext().url;
+
+            /* merge domain and subdomain masks if we have both in the pause-list */
+            const domainMask = domain ? disallowed[domain] : 0;
+            const subDomainMask = subdomain ? disallowed[subdomain] : 0;
+            const mask = domainMask | subDomainMask;
+
             const { autofill, autosuggest, autosave } = settings;
 
             return {
-                Autofill: autofill.inject && (!mask || !hasCriteria(mask, 'Autofill')),
-                Autofill2FA: !mask || !hasCriteria(mask, 'Autofill2FA'),
-                AutosuggestPassword: autosuggest.password && (!mask || !hasCriteria(mask, 'Autosuggest')),
-                AutosuggestAlias: autosuggest.email && (!mask || !hasCriteria(mask, 'Autosuggest')),
-                Autosave: autosave.prompt && (!mask || !hasCriteria(mask, 'Autosave')),
+                Autofill: autofill.inject && !hasCriteria(mask, 'Autofill'),
+                Autofill2FA: !hasCriteria(mask, 'Autofill2FA'),
+                AutosuggestPassword: autosuggest.password && !hasCriteria(mask, 'Autosuggest'),
+                AutosuggestAlias: autosuggest.email && !hasCriteria(mask, 'Autosuggest'),
+                Autosave: autosave.prompt && !hasCriteria(mask, 'Autosave'),
             };
         },
         getSettings: () => settings,
