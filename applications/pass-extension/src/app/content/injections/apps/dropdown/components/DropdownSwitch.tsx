@@ -71,6 +71,7 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
                     case DropdownAction.AUTOFILL:
                         return (
                             <ItemsList
+                                hostname={state.hostname}
                                 items={state.items}
                                 needsUpgrade={state.needsUpgrade}
                                 onMessage={onMessageWithReset}
@@ -83,6 +84,7 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
                         return (
                             <PasswordAutoSuggest
                                 passwordOptions={state.options}
+                                hostname={state.hostname}
                                 onMessage={onMessage}
                                 onClose={onClose}
                                 visible={visible}
@@ -93,8 +95,10 @@ const DropdownSwitchRender: ForwardRefRenderFunction<HTMLDivElement, Props> = (
                         return (
                             <AliasAutoSuggest
                                 prefix={state.prefix}
-                                domain={state.domain}
+                                hostname={state.hostname}
+                                onClose={onClose}
                                 onMessage={onMessageWithReset}
+                                visible={visible}
                             />
                         );
                 }

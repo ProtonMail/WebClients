@@ -12,3 +12,5 @@ export const CRITERIA_MASKS = {
     Autosuggest: 1 << 2,
     Autosave: 1 << 3,
 };
+
+export const CRITERIAS_SETTING_CREATE = Object.values(CRITERIA_MASKS).reduce((acc, curr) => acc ^ curr, 0);
