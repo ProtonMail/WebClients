@@ -17,6 +17,7 @@ import {
     ImportedEvent,
     VcalCalendarComponentWithMaybeErrors,
     VcalErrorComponent,
+    VcalVcalendarWithMaybeErrors,
     VcalVeventComponent,
     VcalVtimezoneComponent,
 } from '../../interfaces/calendar';
@@ -49,7 +50,7 @@ export const parseIcs = async (ics: File) => {
         if (!icsAsString) {
             throw new ImportFileError(IMPORT_ERROR_TYPE.FILE_EMPTY, filename);
         }
-        const parsedVcalendar = parseWithRecoveryAndMaybeErrors(icsAsString);
+        const parsedVcalendar = parseWithRecoveryAndMaybeErrors(icsAsString) as VcalVcalendarWithMaybeErrors;
         if (parsedVcalendar.component?.toLowerCase() !== 'vcalendar') {
             throw new ImportFileError(IMPORT_ERROR_TYPE.INVALID_CALENDAR, filename);
         }
