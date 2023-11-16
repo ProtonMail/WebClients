@@ -80,11 +80,11 @@
       "Create": [
         "Vytvoriť"
       ],
-      "Create a ${ BRAND_NAME } Account": [
-        "Vytvoriť ${ BRAND_NAME } účet"
-      ],
       "Create a ${ BRAND_NAME } account": [
         "Vytvoriť účet ${ BRAND_NAME }"
+      ],
+      "Create a ${ BRAND_NAME } Account": [
+        "Vytvoriť ${ BRAND_NAME } účet"
       ],
       "Create a new vault to share": [
         "Vytvoriť nový trezor na zdieľanie"
@@ -445,9 +445,6 @@
       "Could not resolve share members": [
         "Nepodarilo sa vyriešiť členov zdieľania"
       ],
-      "Could not resume your session : ${ description }": [
-        "Reláciu sa nepodarilo obnoviť: ${ description }"
-      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "V súbore CSV chýbajú očakávané hlavičky: ${ missingHeaders }"
       ],
@@ -554,7 +551,7 @@
         "Obnovenie položky zlyhalo"
       ],
       "Restoring trashed items failed": [
-        "Obnovovanie položiek z koša zlyhalo"
+        "Obnova položiek z koša zlyhala"
       ],
       "Settings update failed": [
         "Aktualizácia nastavení zlyhala"
@@ -708,9 +705,6 @@
         "${ memberCount } členov",
         "${ memberCount } členov"
       ],
-      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "${ PASS_APP_NAME } zobrazí webové ikony prostredníctvom ${ BRAND_NAME }, anonymizovaného proxy servera."
-      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } naimportuje len prihlasovacie údaje, poznámky a platobné karty."
       ],
@@ -770,9 +764,6 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Všetky položky z \"${ payload.content.name }\" boli úspešne presunuté"
-      ],
-      "All trashed items permanently removed": [
-        "Všetky položky v koši boli natrvalo odstránené"
       ],
       "All trashed items successfully restored": [
         "Všetky položky z koša boli úspešne obnovené"
@@ -856,7 +847,7 @@
         "Export je šifrovaný pomocou PGP a vyžaduje silnú prístupovú frázu."
       ],
       "For easy access to your passwords and more.": [
-        "Pre jednoduchý prístup k heslám a k ďalším."
+        "Pre jednoduchý prístup k vašim heslám a ďalším údajom."
       ],
       "For security reason, your access needs to be confirmed": [
         "Z bezpečnostných dôvodov musí byť váš prístup potvrdený"
@@ -945,9 +936,6 @@
       "Loading": [
         "Načítavanie"
       ],
-      "Loading extension": [
-        "Načítavanie rozšírenia"
-      ],
       "Loading...": [
         "Načítavanie..."
       ],
@@ -962,9 +950,6 @@
       ],
       "Multiple vaults": [
         "Viacero trezorov"
-      ],
-      "N/A": [
-        "Nie je k dispozícii"
       ],
       "No login found": [
         "Prihlasovacie údaje nenájdené"
@@ -1073,9 +1058,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Ďakujeme, problém bol nahlásený"
-      ],
-      "The autofill dropdown will automatically open on field focus.": [
-        "Pri prechode na pole sa automaticky otvorí rozbaľovacie okno automatického vypĺňania."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Nasledujúcu ${ result.ignored.length } položku nebolo možné importovať:",
@@ -1217,9 +1199,6 @@
       "15 minutes": [
         "15 minútach"
       ],
-      "2FA secret (TOTP)": [
-        "2FA tajný kľúč (TOTP)"
-      ],
       "2FA token (TOTP)": [
         "2FA token (TOTP)"
       ],
@@ -1267,9 +1246,6 @@
       ],
       "Autofill 2FA": [
         "Automatické vypĺňanie 2FA"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "Automaticky otvoriť automatické vypĺňanie pri prechode na prihlasovacie pole"
       ],
       "Autosave": [
         "Automatické ukladanie"
@@ -1606,9 +1582,6 @@
       "Hyphens": [
         "Pomlčky"
       ],
-      "Memorable Password": [
-        "Zapamätateľné heslo"
-      ],
       "Numbers": [
         "Čísla"
       ],
@@ -1629,9 +1602,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "Pridať 2FA tajný kľúč"
-      ],
       "Add hidden text": [
         "Pridať skrytý text"
       ],
@@ -1931,9 +1901,6 @@
       "Please enter a valid email address": [
         "Zadajte platnú emailovú adresu, prosím"
       ],
-      "Please log back in": [
-        "Prihláste sa znova, prosím"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Ak chcete používať emailové aliasy, overte svoju emailovú adresu, prosím"
       ],
@@ -1996,9 +1963,6 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Váš plán umožňuje automatické vypĺňanie len z vašich prvých dvoch trezorov"
-      ],
-      "Your session was locked due to inactivity": [
-        "Vaša relácia bola uzamknutá kvôli nečinnosti"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do vášho prvého trezoru. Pre importovanie do viacerých trezorov si navýšte vaše predplatné."

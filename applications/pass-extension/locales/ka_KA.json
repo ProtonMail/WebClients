@@ -65,6 +65,12 @@
       "Continue": [
         "გაგრძელება"
       ],
+      "Continue without pinning": [
+        "მიმაგრების გარეშე გაგრძელება"
+      ],
+      "Copy & fill in": [
+        "კოპირება და შევსება"
+      ],
       "Copy and close": [
         "კოპირება და დახურვა"
       ],
@@ -74,10 +80,10 @@
       "Create": [
         "შექმნა"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "შექმენით ${ BRAND_NAME }-ის ანგარიში"
       ],
       "Create a new vault to share": [
@@ -176,6 +182,9 @@
       "Import": [
         "შემოტანა"
       ],
+      "Import your passwords": [
+        "თქვენი პაროლების შემოტანა"
+      ],
       "Importing": [
         "შემოტანა"
       ],
@@ -232,6 +241,9 @@
       ],
       "Move to trash": [
         "ნაგვის ყუთში გადატანა"
+      ],
+      "Not now": [
+        "არა ახლა"
       ],
       "OK": [
         "დიახ"
@@ -338,6 +350,9 @@
       "Update vault": [
         "საცავის განახლება"
       ],
+      "Updating": [
+        "განახლება"
+      ],
       "Upgrade": [
         "ტარიფის აწევა"
       ],
@@ -406,6 +421,9 @@
       "Auto-lock could not be disabled": [
         "ავტომატური დაბლოკვის გამორთვა შეუძლებელია"
       ],
+      "Cannot create alias (${ error }).": [
+        "ფსევდონიმის შექმნის შეცდომა (${ error })."
+      ],
       "Cannot send invitation to this address at the moment": [
         "ამ მისამართზე ამჟამად მოსაწვევს ვერ გავაგზავნი"
       ],
@@ -426,9 +444,6 @@
       ],
       "Could not resolve share members": [
         "გაზიარებულის წევრების ამოხსნა შეუძლებელია"
-      ],
-      "Could not resume your session : ${ description }": [
-        "თქვენი სესიის გაგრძელება შეუძლებელია : ${ description }"
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV ფაილს მოსალოდნელი თავსართები აკლია: ${ missingHeaders }"
@@ -520,6 +535,9 @@
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
         "გასაგრძელებლად აუცილებელია ${ PASS_APP_NAME }-ს საჭირო წვდომები მისცეთ"
+      ],
+      "Please pin the extension or select \"Continue without pinning\".": [
+        "მიამაგრეთ გაფართოება ან აირჩიეთ \"გაგრძელება მიმაგრების გარეშე\"."
       ],
       "Request timed out": [
         "მოთხოვნის ვადა გავიდა"
@@ -667,9 +685,6 @@
         "${ memberCount } წევრი",
         "${ memberCount } წევრი"
       ],
-      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "${ PASS_APP_NAME } ელემენტის favicon-ს ${ BRAND_NAME }-ს ანონიმიზებული გამოსახულებების პროქსით გაჩვენებთ."
-      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME }, მხოლოდ, შესვლის დეტალებს, შენიშვნებს და საკრედიტო ბარათებს შემოიტანს."
       ],
@@ -710,6 +725,9 @@
       "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
         "${ PASS_APP_NAME }-სთან წვდომას თქვენი სესიის განბლოკვისთვის PIN-კოდი დასჭირდება"
       ],
+      "Access your passwords on the go with our mobile apps.": [
+        "იქონიეთ წვდომა თქვენს პაროლებთან, ჩვენი მობილური აპლიკაციებით, მგზავრობის დროსაც."
+      ],
       "Admin": [
         "ადმინისტრატორი"
       ],
@@ -718,9 +736,6 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან წარმატებით დასრულდა"
-      ],
-      "All trashed items permanently removed": [
-        "ყველა ელემენტი ნაგვის ყუთიდან სამუდამოდ წაიშალა"
       ],
       "All trashed items successfully restored": [
         "ყველა ელემენტი ნაგვის ყუთიდან, წარმატებით, აღდგა"
@@ -733,6 +748,9 @@
       ],
       "Auto-lock successfully disabled": [
         "ავტომატური დაბლოკვა წარმატებით გამოირთო"
+      ],
+      "Autosaved on ${ submissionURL }": [
+        "ავტომატურად შენახულია ბმულზე ${ submissionURL }"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "შეუძლია ამ საცავის ელემენტების ჩასწორება, წაშლა და გატანა."
@@ -755,6 +773,9 @@
       "Copied to clipboard": [
         "დაკოპირდა გაცვლის ბაფერში"
       ],
+      "Creating alias...": [
+        "ფსევდონიმის შექმნა..."
+      ],
       "Credit cards, Custom fields": [
         "საკრედიტო ბარათები, მომხმარებლის ველები"
       ],
@@ -767,17 +788,26 @@
       "Deleting \"${ payload.content.name }\"": [
         "იშლება \"${ payload.content.name }\""
       ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "აღმოაჩინეთ ${ PASS_APP_NAME }-ის ვიდეო Youtube-ზე"
+      ],
       "Drop file here to upload": [
         "ასატვირთად გადმოათრიეთ ფაილები აქ"
       ],
       "Drop to import": [
         "შემოსატანად დააგდეთ"
       ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "ადვილად შემოიტანეთ თქვენი არსებული პაროლები ${ PASS_APP_NAME }-ში."
+      ],
       "Editor": [
         "რედაქტორი"
       ],
       "Emptying trash...": [
         "ნაგვის ყუთის დაცარიელება..."
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "ჩართეთ ${ PASS_APP_NAME } ${ BRAND_NAME }-ის ანგარიშის მიმაგრებით"
       ],
       "Enter verification code. Digit ${ digit }.": [
         "შეიყვანეთ გადამოწმების კოდი. ციფრი ${ digit }."
@@ -800,8 +830,14 @@
       "Generated passwords will be stored for a period of one day.": [
         "გენერირებული პაროლები ერთი დღით ინახება"
       ],
+      "Generating alias...": [
+        "ფსევდონიმის გენერაცია..."
+      ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "მიიღეთ უსაზღვრო რაოდენობის ფსევდონიმები, ისიამოვნეთ ექსკლუზიური ფუნქციებით და დაგვიჭირეთ მხარი, Pass Plus-ზე გადართვით."
+      ],
+      "Here you will find all the necessary information to get you started.": [
+        "აქ დასაწყებად საკმარის ინფორმაციას იპოვით."
       ],
       "Import in progress:": [
         "მიმდინარეობს შემოტანა:"
@@ -868,9 +904,6 @@
       "Loading": [
         "იტვირთება"
       ],
-      "Loading extension": [
-        "გაფართოების ჩატვირთვა"
-      ],
       "Loading...": [
         "ჩატვირთვა..."
       ],
@@ -886,8 +919,8 @@
       "Multiple vaults": [
         "ბევრი საცავი"
       ],
-      "N/A": [
-        "N/A"
+      "No login found": [
+        "შესვლის პარამეტრები აღმოჩენილი არაა"
       ],
       "None": [
         "არცერთი"
@@ -904,11 +937,17 @@
       "Pass Plus trial": [
         "Pass Plus-ის საცდელი"
       ],
+      "Password copied": [
+        "პაროლი დაკოპირდა"
+      ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "1 დღეზე ძველი პაროლები ისტორიიდან ავტომატურად იშლება."
       ],
       "Pending access to the shared data": [
         "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "${ PASS_APP_NAME }-ის მიმაგრება თქვენს ხელსაწყოების ზოლში"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-კოდის რეგისტრაცია წარმატებულია. გამოიყენეთ ის ${ PASS_APP_NAME }-ის განბლოკვისთვის"
@@ -937,6 +976,9 @@
       "Restoring trashed items...": [
         "ნაგვის ყუთში ჩაყრილი ელემენტების აღდგენა..."
       ],
+      "Save login": [
+        "შესვლის დეტალების დამახსოვრება"
+      ],
       "Select destination vault": [
         "აირჩიეთ სამიზნე საცავი"
       ],
@@ -957,6 +999,9 @@
       ],
       "Share with 10 others": [
         "გაუზიარეთ 10 პირს"
+      ],
+      "Sign in or create an account to continue.": [
+        "გასაგრძელებლად შედით ან შექმენით ანგარიში."
       ],
       "Sign in to your account": [
         "შედით თქვენს ანგარიშში"
@@ -981,9 +1026,6 @@
       ],
       "Thank you, the problem has been reported": [
         "მადლობა, პრობლემის შესახებ ინფორმაცია გადაცემულია"
-      ],
-      "The autofill dropdown will automatically open on field focus.": [
-        "შესაბამის ველზე გადართვისას ავტომატური შევსების მენიუ ავტომატურად გაიხსნება."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:",
@@ -1016,6 +1058,12 @@
       "Unlock it with your PIN to access the settings": [
         "პარამეტრებთან წვდომისთვის საჭიროა მისი განბლოკვა PIN კოდით"
       ],
+      "Update login": [
+        "შესვლის დეტალების განახლება"
+      ],
+      "Upgrade ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME }-ის ტარიფის აწევა"
+      ],
       "Use vaults to share this item with others.": [
         "ამ ელემენტის სხვებთან გასაზიარებლად, საცავები გამოიყენეთ."
       ],
@@ -1036,6 +1084,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "საცავი \"${ share.content.name }\" წაიშალა"
+      ],
+      "Verification code": [
+        "გადამოწმების კოდი"
       ],
       "Viewer": [
         "მთვალიერებელი"
@@ -1074,6 +1125,9 @@
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "როცა ${ PASS_APP_NAME } არააქტიურობის გამო თვითდაიბლოკება, ეს PIN-კოდი შეგიძლიათ, მის განსაბლოკად გამოიყენოთ."
       ],
+      "You're about to create": [
+        "აპირებთ, შექმნათ"
+      ],
       "You're invited to a vault.": [
         "მიწვეული ხართ საცავში."
       ],
@@ -1104,9 +1158,6 @@
       ],
       "15 minutes": [
         "15 წუთი"
-      ],
-      "2FA secret (TOTP)": [
-        "2FA საიდუმლო (TOTP)"
       ],
       "2FA token (TOTP)": [
         "2FA კოდი (TOTP)"
@@ -1155,9 +1206,6 @@
       ],
       "Autofill 2FA": [
         "2FA-ის ავტომატური შევსება"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "შესვლის ველებზე ფოკუსისას ავტომატური შევსების ავტომატური გახსნა"
       ],
       "Autosave": [
         "ავტომატური შენახვა"
@@ -1305,6 +1353,9 @@
       ],
       "Modified": [
         "შეცვლილია"
+      ],
+      "More than a month": [
+        "თვეზე მეტი"
       ],
       "Most recent": [
         "უახლესი"
@@ -1491,9 +1542,6 @@
       "Hyphens": [
         "დეფისები"
       ],
-      "Memorable Password": [
-        "დამახსოვრებადი პაროლი"
-      ],
       "Numbers": [
         "რიცხვები"
       ],
@@ -1514,9 +1562,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "2FA საიდუმლო გასაღების დამატება"
-      ],
       "Add hidden text": [
         "ფარული ტექსტის დამატება"
       ],
@@ -1627,8 +1672,17 @@
       "Enter your PIN": [
         "შეიყვანეთ PIN-კოდი"
       ],
+      "Fill & copy password": [
+        "შევსება და პაროლის კოპირება"
+      ],
+      "Get the mobile apps": [
+        "მობილური აპების დაყენება"
+      ],
       "Grant permissions": [
         "წვდომების მინიჭება"
+      ],
+      "Hide my email": [
+        "Hide my email"
       ],
       "Import - ${ date }": [
         "შემოტანა - ${ date }"
@@ -1657,6 +1711,9 @@
       "Permanently remove all items ?": [
         "წავშალო სამუდამოდ ყველა ელემენტი?"
       ],
+      "Pin the extension": [
+        "გაფართოების მიმაგრება"
+      ],
       "Secure your data": [
         "დაიცავით თქვენი მონაცემები"
       ],
@@ -1665,6 +1722,15 @@
       ],
       "Share with": [
         "გაზიარება"
+      ],
+      "Switching to ${ PASS_APP_NAME }?": [
+        "გადავერთო ${ PASS_APP_NAME }-ზე?"
+      ],
+      "Thank you for installing ${ PASS_APP_NAME }": [
+        "მადლობა ${ PASS_APP_NAME }-ის დაყენებისთვის"
+      ],
+      "The extension is now ready to use.": [
+        "გაფართოება, ახლა, გამოსაყენებლად მზადაა."
       ],
       "Transfer ownership": [
         "მფლობელობის გადაცემა"
@@ -1675,8 +1741,14 @@
       "Unlock ${ brandNameJSX }": [
         "განბლოკეთ ${ brandNameJSX }"
       ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "განბლოკეთ ${ PASS_APP_NAME }"
+      ],
       "Update available": [
         "განახლება ხელმისაწვდომია"
+      ],
+      "Use my email": [
+        "ჩემი ელფოსტის გამოყენება"
       ],
       "Vault shared with you": [
         "თქვენთან გაზიარებული საცავი"
@@ -1785,9 +1857,6 @@
       "Please enter a valid email address": [
         "შეიყვანეთ ელფოსტის სწორი მისამართი"
       ],
-      "Please log back in": [
-        "თავიდან შედით"
-      ],
       "Please verify your email address in order to use email aliases": [
         "ელფოსტის ფსევდონიმების გამოსაყენებლად საჭიროა თქვენი ანგარიშის გადამოწმება"
       ],
@@ -1811,6 +1880,9 @@
       ],
       "Trash alias ?": [
         "წავშალო ფსევდონიმები?"
+      ],
+      "Unable to save": [
+        "შენახვა შეუძლებელია"
       ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME }-ში შესვლა შეუძლებელია. ${ additionalMessage }"
@@ -1842,8 +1914,11 @@
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "საცავთან წვდომა აღარ გექნებათ. თავიდან მისაერთებლად, ახალი მოსაწვევი დაგჭირდებათ."
       ],
-      "Your session was locked due to inactivity": [
-        "თქვენი სესია დაიბლოკა არააქტიურობის გამო"
+      "Your plan does not allow you to create more aliases": [
+        "თქვენი სატარიფო გეგმა მეტი ფსევდონიმის შექმნის უფლებას არ გაძლევთ"
+      ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "თქვენი ტარიფი ავტომატურად შევსებას, მხოლოდ, პირველი ორი საცავიდან შეიცავს"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "თქვენი სატარიფო გეგმა ერთზე მეტი საცავის შექმნის უფლებას არ გაძლევთ. ყველა ელემენტი პირველ საცავში იქნება შემოტანილი. ერთზე მეტი საცავში შემოსატანად ასწიეთ თქვენი სატარიფო გეგმა."

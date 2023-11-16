@@ -4,9 +4,14 @@
     "language": "en_US"
   },
   "contexts": {
+    "Action": {
+      "Ok": [
+        "OK"
+      ]
+    },
     "Error": {
       "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "You must activate your organization keys. Without activation, you will not be able to create or access non-private users."
+        "To create non-private users and access their accounts, you'll need to activate your organization keys."
       ]
     },
     "familyOffer_2023:Action": {
@@ -54,6 +59,9 @@
     "new_plans: tooltip": {
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
         "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control"
+      ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Personalize your email signature with logos, images, social media icons, links to your contact details, and more"
       ],
       "Route your internet traffic through the Tor network with a single click": [
         "Route your internet traffic through the TOR network with a single click"

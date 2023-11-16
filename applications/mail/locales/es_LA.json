@@ -192,7 +192,7 @@
         "Cerrar y descartar"
       ],
       "Close composer": [
-        "Cerrar compositor"
+        "Cerrar el editor"
       ],
       "Close navigation": [
         "Cerrar navegación"
@@ -234,7 +234,7 @@
         "Continuar con Outlook"
       ],
       "Contract composer": [
-        "Contraer compositor"
+        "Reducir el editor"
       ],
       "Copy address": [
         "Copiar dirección"
@@ -386,7 +386,7 @@
         "excluya el contenido del mensaje"
       ],
       "Expand composer": [
-        "Expandir compositor"
+        "Expandir el editor"
       ],
       "Expand URL": [
         "Ampliar URL"
@@ -554,6 +554,9 @@
       "label emails as": [
         "etiquetar correos como"
       ],
+      "Later this week": [
+        "Más tarde esta semana"
+      ],
       "Learn more": [
         "Más información"
       ],
@@ -578,6 +581,9 @@
       "Manage labels": [
         "Gestionar etiquetas"
       ],
+      "Manage Snooze": [
+        "Gestionar la pausa"
+      ],
       "Mark as read": [
         "Marcar como leído"
       ],
@@ -594,7 +600,7 @@
         "Marcar como legítimo"
       ],
       "Maximize composer": [
-        "Maximizar compositor"
+        "Maximizar el editor"
       ],
       "Maybe": [
         "Quizás"
@@ -615,7 +621,7 @@
         "Mensajes a este destinatario"
       ],
       "Minimize composer": [
-        "Minimizar compositor"
+        "Minimizar el editor"
       ],
       "Monday": [
         "Lunes"
@@ -704,6 +710,9 @@
       "Next page": [
         "Página siguiente"
       ],
+      "Next week": [
+        "Semana siguiente"
+      ],
       "No": [
         "No"
       ],
@@ -723,7 +732,7 @@
         "Abrir ${ CALENDAR_APP_NAME }"
       ],
       "Open composer": [
-        "Abrir compositor"
+        "Abrir el editor"
       ],
       "Open navigation": [
         "Abrir navegación"
@@ -896,6 +905,9 @@
       "Select all messages": [
         "Seleccionar todos los mensajes"
       ],
+      "Select date and time": [
+        "Seleccionar la fecha y la hora"
+      ],
       "Self-destruct in 7 days": [
         "Autodestruir en 7 días"
       ],
@@ -1001,6 +1013,9 @@
       "Skip verification": [
         "Omitir verificación"
       ],
+      "Snooze": [
+        "Pausar"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Algunas imágenes no pudieron cargarse con la protección de rastreo."
       ],
@@ -1030,6 +1045,9 @@
       ],
       "This message contains remote content.": [
         "Este mensaje incluye contenido remoto."
+      ],
+      "This weekend": [
+        "Este fin de semana"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Para buscar sus correos electrónicos de manera segura, necesitamos descargar una copia de sus mensajes en su navegador. La descarga inicial puede tardar un momento."
@@ -1082,6 +1100,9 @@
       ],
       "Unordered list": [
         "Lista desordenada"
+      ],
+      "Unsnooze": [
+        "Desactivar la pausa"
       ],
       "Unstar": [
         "No destacar"
@@ -3069,6 +3090,9 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Desbloquee la programación de mensajes personalizados y otros beneficios cuando actualice su plan."
       ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Desbloquee las pausas personalizadas al mejorar su plan."
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Desbloquee filtros ilimitados que ordenan el buzón para usted y más funciones premium cuando actualiza su plan."
       ],
@@ -3621,8 +3645,8 @@
         "No puede enviar un correo a más de ${ maxContacts } destinatarios."
       ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
-        "No puede abrir más de ${ maxActiveComposer } ventana de compositor a la vez",
-        "No puede abrir más de ${ maxActiveComposer } ventanas de compositor a la vez"
+        "No puede abrir más de ${ maxActiveComposer } ventana de editor a la vez",
+        "No puede abrir más de ${ maxActiveComposer } ventanas de editor a la vez"
       ],
       "You did not provide a file.": [
         "No ha indicado un archivo."
@@ -3838,6 +3862,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "La app no está disponible actualmente."
+      ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
       ],
@@ -3850,11 +3877,17 @@
       "Oops, something went wrong": [
         "Hubo un problema"
       ],
+      "Open in browser": [
+        "Abrir en el navegador"
+      ],
       "Please refresh the page or try again later.": [
         "Actualice la página o intente nuevamente."
       ],
       "Something went wrong": [
         "Hubo un problema"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Para usar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, cambie a la versión web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No pudimos cargar esta página. Actualice la página o revise su conexión a internet."
@@ -5349,8 +5382,8 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importando sus datos desde ${ importedEmailAddress } a ${ toEmail }."
       ],
-      "Include Spam/Trash in your search results.": [
-        "Incluir Spam/Papelera en los resultados de búsqueda."
+      "Include Spam/Trash.": [
+        "Incluir Spam/Papelera"
       ],
       "Inherited from parent folder": [
         "Heredada de la carpeta padre"
@@ -5539,7 +5572,7 @@
         "PGP/Inline solo es compatible con el formato de Texto Plano."
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
-        "PGP/MIME automáticamente envía el mensaje usando el modo de compositor actual."
+        "PGP/MIME automáticamente envía el mensaje usando el modo de editor actual."
       ],
       "Phone number": [
         "Número de teléfono"
@@ -5635,6 +5668,9 @@
       "Right-click for options": [
         "Clic derecho para más opciones"
       ],
+      "Sat, ${ formatTime }": [
+        "Sáb. a las ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "Guardado a las ${ dateString }"
       ],
@@ -5712,6 +5748,18 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin proporciona una forma sencilla de crear inicios de sesión en sitios de terceros no confiables donde no quiere exponer su dirección de correo electrónico real."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "En pausa hasta ${ dateString } a las ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "En pausa hasta hoy a las ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "En pausa hasta mañana a las ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "Se cancelará la pausa de esta conversación."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Lo sentimos, este mensaje no existe o ya expiró."
@@ -5814,6 +5862,9 @@
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Este correo electrónico no cumple con con los requisitos de autenticación del dominio. Puede estar falsificado o reenviado incorrectamente."
       ],
+      "This file is too large to preview": [
+        "Este archivo es demasiado grande para previsualizarlo."
+      ],
       "This invitation is saved in a disabled calendar.": [
         "Esta invitación está guardada en un calendario desactivado."
       ],
@@ -5908,6 +5959,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para usar Verificación de Dirección, debe confiar una o más claves públicas disponibles, incluyendo la clave que quiere usar para enviar. Esto impedirá que las claves de cifrado sean falsificadas."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Mañana a las ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Demasiados mensajes esperando ser enviados. Espere hasta que se envíe otro mensaje para programar éste."
       ],
@@ -5952,6 +6006,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Actualice ahora para obtener funciones premium, productos y almacenamiento a un precio especial"
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Mejore para ${ MAIL_APP_NAME } Plus para desbloquear"
       ],
       "Upgrade to add more addresses to your account.": [
         "Actualice para añadir más direcciones a su cuenta."
@@ -6284,7 +6341,7 @@
         "Descartar borrador"
       ],
       "Expand / contract composer": [
-        "Expandir/contraer compositor"
+        "Expandir/reducir el editor"
       ],
       "Forward": [
         "Reenviar"
@@ -6338,7 +6395,7 @@
         "Marcar como no leído"
       ],
       "Minimize / maximize composer": [
-        "Minimizar/maximizar compositor"
+        "Minimizar/maximizar el editor"
       ],
       "Move down": [
         "Bajar"
@@ -6427,7 +6484,7 @@
         "Navegación básica"
       ],
       "Composer shortcuts": [
-        "Accesos directos del compositor"
+        "Accesos directos del editor"
       ],
       "Folder shortcuts": [
         "Accesos directos de carpetas"
@@ -6558,7 +6615,7 @@
         "Colores"
       ],
       "Composer": [
-        "Compositor"
+        "editor"
       ],
       "Conditions": [
         "Condiciones"
@@ -7116,6 +7173,12 @@
       "Sign up for free": [
         "Regístrese gratis"
       ],
+      "Snooze": [
+        "Pausar"
+      ],
+      "Snoozed": [
+        "En pausa"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -7218,17 +7281,8 @@
       "Archive": [
         "Archivo"
       ],
-      "Drafts": [
-        "Borradores"
-      ],
       "Inbox": [
         "Buzón"
-      ],
-      "Scheduled": [
-        "Programados"
-      ],
-      "Sent": [
-        "Enviados"
       ],
       "Spam": [
         "Spam"
@@ -7462,6 +7516,9 @@
       "Custom email domains": [
         "Dominios de correo electrónico personalizados"
       ],
+      "Custom snooze time": [
+        "Tiempo de pausa personalizado"
+      ],
       "Hide-my-email aliases": [
         "Alias de Hide-my-email"
       ],
@@ -7487,6 +7544,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtenga aliases ilimitados con SimpleLogin de ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Pause los mensajes y reciba un recordatorio cuando quiera."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }"
@@ -7915,6 +7975,9 @@
       "No results found": [
         "No se encontraron resultados"
       ],
+      "No snoozed messages": [
+        "No hay mensajes en pausa."
+      ],
       "No unread messages found": [
         "No se encontraron mensajes sin leer"
       ]
@@ -8209,6 +8272,14 @@
       ],
       "Sign": [
         "Firmar"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Pausar el mensaje"
+      ],
+      "When should the message reappear in your inbox?": [
+        "¿Cuándo debería volver a aparecer el mensaje en su bandeja de entrada?"
       ]
     },
     "Sort option": {
@@ -8541,6 +8612,14 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversación eliminada de ${ labelName }.",
         "${ elementsCount } conversaciones eliminadas de ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } conversación pausada",
+        "${ elementsCount } conversaciones pausadas"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } conversación con pausa desactivada",
+        "${ elementsCount } conversaciones con pausa desactivadas"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } mensaje añadido a ${ labelName }.",
@@ -9066,7 +9145,7 @@
         "Direcciones de correo"
       ],
       "Email composer": [
-        "Compositor del correo"
+        "editor del correo"
       ],
       "Email content": [
         "Contenido del correo electrónico"
@@ -9213,6 +9292,9 @@
       "Moving a scheduled message": [
         "Mover un mensaje programado"
       ],
+      "Moving a snoozed message": [
+        "Moviendo un mensaje en pausa"
+      ],
       "New message": [
         "Mensaje nuevo"
       ],
@@ -9354,6 +9436,12 @@
       "Sign out": [
         "Cerrar sesión"
       ],
+      "Snooze": [
+        "Pausar"
+      ],
+      "Snooze message": [
+        "Pausar el mensaje"
+      ],
       "Sort conversations": [
         "Ordenar conversaciones"
       ],
@@ -9400,6 +9488,9 @@
       "Verification error": [
         "Error de verificación"
       ],
+      "Want to snooze any time?": [
+        "¿Desea pausar sus mensajes cuando quiera?"
+      ],
       "Warning": [
         "Advertencia"
       ],
@@ -9436,7 +9527,7 @@
     },
     "Tooltip": {
       "Automatic indicates that the format in the composer is used to send to this user. Plain text indicates that the message will always be converted to plain text on send.": [
-        "Automático indica que el formato en el compositor se utiliza para enviar a este usuario. Texto Plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
+        "Automático indica que el formato en el editor se utiliza para enviar a este usuario. Texto Plano indica que el mensaje siempre se convertirá a texto plano al enviarlo."
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Cambie automáticamente entre sus temas preferidos para el día y la noche en sincronía con los modos de día y noche de su sistema"
@@ -9616,6 +9707,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Su prueba gratuita termina en ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Lun. a las ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Sáb. a las ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Dom. a las ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

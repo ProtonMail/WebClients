@@ -704,6 +704,9 @@
       "Next page": [
         "Næste side"
       ],
+      "Next week": [
+        "Næste uge"
+      ],
       "No": [
         "Nej"
       ],
@@ -5346,9 +5349,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
       ],
-      "Include Spam/Trash in your search results.": [
-        "Inkludér spam/papirkurv i dine søgeresultater."
-      ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
       ],
@@ -7215,17 +7215,8 @@
       "Archive": [
         "Arkiv"
       ],
-      "Drafts": [
-        "Kladder"
-      ],
       "Inbox": [
         "Indbakke"
-      ],
-      "Scheduled": [
-        "Planlagt"
-      ],
-      "Sent": [
-        "Sendt"
       ],
       "Spam": [
         "Spam"
@@ -7924,6 +7915,11 @@
     "Send email with changed preferences": {
       "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
         "Kontakterne til følgende adresser er blevet slettet, derfor er de tilsvarende krypteringspræferencer blevet opdateret i overensstemmelse hermed:"
+      ]
+    },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "Kontakterne for følgende adresser har deaktiveret ende-til-ende-kryptering på deres konto, hvorved de tilsvarende krypteringspræferencer er blevet opdateret i overensstemmelse hermed:"
       ]
     },
     "Send email with errors": {

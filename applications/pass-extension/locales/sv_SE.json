@@ -80,10 +80,10 @@
       "Create": [
         "Skapa"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Skapa ett ${ BRAND_NAME }-konto"
       ],
       "Create a new vault to share": [
@@ -442,9 +442,6 @@
       "Could not open updated vault": [
         "Kunde inte öppna uppdaterat valv"
       ],
-      "Could not resume your session : ${ description }": [
-        "Kunde inte återuppta din session : ${ description }"
-      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV-fil saknar förväntade rubriker: ${ missingHeaders }"
       ],
@@ -685,9 +682,6 @@
         "${ memberCount } medlem",
         "${ memberCount } medlemmar"
       ],
-      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "${ PASS_APP_NAME } kommer visa objektets favicon via ${ BRAND_NAME } anonymiserad bildproxy."
-      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } kommer endast importera inloggningar, anteckningar och kreditkort."
       ],
@@ -739,9 +733,6 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alla objekt från “${ payload.content.name }“ flyttades"
-      ],
-      "All trashed items permanently removed": [
-        "Alla kastade objekt borttagna permanent"
       ],
       "All trashed items successfully restored": [
         "Alla kastade objekt återställda"
@@ -910,9 +901,6 @@
       "Loading": [
         "Laddar"
       ],
-      "Loading extension": [
-        "Laddar tillägg"
-      ],
       "Loading...": [
         "Laddar..."
       ],
@@ -927,9 +915,6 @@
       ],
       "Multiple vaults": [
         "Flera valv"
-      ],
-      "N/A": [
-        "N/A"
       ],
       "No login found": [
         "Ingen inloggning hittades"
@@ -1038,9 +1023,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Tack, problemet har rapporterats"
-      ],
-      "The autofill dropdown will automatically open on field focus.": [
-        "Rullgardinsmenyn för autofyll öppnas automatiskt vid fältfokus."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Följande ${ result.ignored.length } objekt kunde inte importeras:",
@@ -1174,9 +1156,6 @@
       "15 minutes": [
         "15 minuter"
       ],
-      "2FA secret (TOTP)": [
-        "2FA-hemlighet (TOTP)"
-      ],
       "2FA token (TOTP)": [
         "2FA-token (TOTP)"
       ],
@@ -1224,9 +1203,6 @@
       ],
       "Autofill 2FA": [
         "Autofyll 2FA"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "Öppna autofyll automatiskt vid fokusering på inloggningsfält"
       ],
       "Autosave": [
         "Spara automatiskt"
@@ -1563,9 +1539,6 @@
       "Hyphens": [
         "Bindestreck"
       ],
-      "Memorable Password": [
-        "Minnesvärt lösenord"
-      ],
       "Numbers": [
         "Nummer"
       ],
@@ -1586,9 +1559,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "Lägg till 2FA-hemlighet"
-      ],
       "Add hidden text": [
         "Lägg till dold text"
       ],
@@ -1884,9 +1854,6 @@
       "Please enter a valid email address": [
         "Ange en giltig e-postadress"
       ],
-      "Please log back in": [
-        "Logga in igen"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Verifiera din e-postadress för att kunna använda e-postalias"
       ],
@@ -1949,9 +1916,6 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Ditt paket tillåter dig endast att fylla i automatiskt från dina två första valv"
-      ],
-      "Your session was locked due to inactivity": [
-        "Din session låstes på grund av inaktivitet"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt första valv. För att importera till flera valv, uppgradera din prenumeration."

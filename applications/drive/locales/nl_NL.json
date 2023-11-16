@@ -631,6 +631,9 @@
       "Skip verification": [
         "Verificatie overslaan"
       ],
+      "Start": [
+        "Start"
+      ],
       "Start import": [
         "Begin met importeren"
       ],
@@ -2650,6 +2653,12 @@
         "(geen titel)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } mislukt",
+        "${ countOfFailedLinks } mislukt"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB opslagruimte"
@@ -3353,6 +3362,9 @@
       "An active recovery file": [
         "Een actief herstelbestand"
       ],
+      "An issue occurred during the restore process.": [
+        "Er is een probleem opgetreden tijdens het herstelproces."
+      ],
       "and": [
         "en"
       ],
@@ -3871,6 +3883,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME verzendt automatisch het bericht gebruikmakend van de huidige opstelmodus."
       ],
+      "Photos have been successfully recovered.": [
+        "Foto's zijn succesvol hersteld."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Voer een wachtwoord in om de content te ontsleutelen en te bekijken."
       ],
@@ -3962,8 +3977,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "Bezig met herstellen. Dit kan enkele seconden duren."
       ],
+      "Restore Photos": [
+        "Foto's herstellen"
+      ],
       "Restored files ${ formattedDate }": [
         "Herstelde bestanden ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Foto's herstellen. Sluit het tabblad niet"
       ],
       "Search cannot be enabled in this browser": [
         "Zoeken kan niet ingeschakeld worden in deze browser"
@@ -4772,9 +4793,6 @@
       ],
       "Replace existing folder": [
         "Bestaande map vervangen"
-      ],
-      "Report": [
-        "Melden"
       ],
       "Reveal password": [
         "Wachtwoord tonen"
@@ -5966,6 +5984,10 @@
         "${ countMergeableContacts } contact ziet er identiek uit.",
         "${ countMergeableContacts } contacten zien er identiek uit."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } over",
+        "${ countOfUnrecoveredLinksLeft } over"
+      ],
       "Address copied to clipboard": [
         "Adres gekopieerd naar het klembord"
       ],
@@ -6336,14 +6358,8 @@
       "File recovery process": [
         "Herstelproces van bestanden"
       ],
-      "Files details": [
-        "Bestandsdetails"
-      ],
       "Folder details": [
         "Map details"
-      ],
-      "Folders details": [
-        "Details mappen"
       ],
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } zoekresultaat",
@@ -6415,12 +6431,6 @@
       ],
       "Notes": [
         "Notities"
-      ],
-      "Number of files": [
-        "Aantal bestanden"
-      ],
-      "Number of folders": [
-        "Aantal mappen"
       ],
       "Number of items": [
         "Aantal items"

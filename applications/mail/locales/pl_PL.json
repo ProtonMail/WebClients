@@ -712,6 +712,9 @@
       "Next page": [
         "Następna strona"
       ],
+      "Next week": [
+        "Następny tydzień"
+      ],
       "No": [
         "Nie"
       ],
@@ -904,6 +907,9 @@
       "Select all messages": [
         "Zaznacz wszystkie wiadomości"
       ],
+      "Select date and time": [
+        "Wybierz datę i godzinę"
+      ],
       "Self-destruct in 7 days": [
         "Samozniszczenie za 7 dni"
       ],
@@ -1009,6 +1015,9 @@
       "Skip verification": [
         "Pomiń weryfikację"
       ],
+      "Snooze": [
+        "Odłóż"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Niektóre obrazy nie mogły zostać załadowane z ochroną przed śledzeniem."
       ],
@@ -1038,6 +1047,9 @@
       ],
       "This message contains remote content.": [
         "Ta wiadomość zawiera zawartość zdalną."
+      ],
+      "This weekend": [
+        "Ten weekend"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Aby bezpiecznie wyszukiwać wiadomości, musimy pobrać ich kopię do przeglądarki. Pierwsze pobieranie może potrwać chwilę."
@@ -1092,6 +1104,9 @@
       ],
       "Unordered list": [
         "Lista punktowana"
+      ],
+      "Unsnooze": [
+        "Anuluj odłożenie"
       ],
       "Unstar": [
         "Usuń gwiazdkę"
@@ -3912,6 +3927,9 @@
       "Oops, something went wrong": [
         "Ups, coś poszło nie tak"
       ],
+      "Open in browser": [
+        "Otwórz w przeglądarce"
+      ],
       "Please refresh the page or try again later.": [
         "Odśwież stronę lub spróbuj ponownie później."
       ],
@@ -5547,8 +5565,8 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Trwa importowanie danych z konta ${ importedEmailAddress } do ${ toEmail }."
       ],
-      "Include Spam/Trash in your search results.": [
-        "Dołącz foldery Spam i Kosz do wyników wyszukiwania."
+      "Include Spam/Trash.": [
+        "Uwzględnij spam/śmieci."
       ],
       "Inherited from parent folder": [
         "Zastosowano z folderu nadrzędnego"
@@ -5912,6 +5930,15 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "Usługa SimpleLogin zapewnia łatwy sposób tworzenia adresów e-mail dla niezaufanych stron trzecich, gdzie nie chcesz ujawniać swojego prawdziwego adresu."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Odłożono do ${ dateString } do godziny ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Odłożono do dzisiaj do godziny ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Odłożono do jutra do godziny ${ formattedTime }"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Wiadomość nie istnieje lub już wygasła."
@@ -7346,6 +7373,12 @@
       "Sign up for free": [
         "Załóż darmowe konto"
       ],
+      "Snooze": [
+        "Odłóż"
+      ],
+      "Snoozed": [
+        "Odłożono"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -7458,17 +7491,8 @@
       "Archive": [
         "Archiwum"
       ],
-      "Drafts": [
-        "Szkice"
-      ],
       "Inbox": [
         "Odebrane"
-      ],
-      "Scheduled": [
-        "Zaplanowane"
-      ],
-      "Sent": [
-        "Wysłane"
       ],
       "Spam": [
         "Spam"
@@ -7707,6 +7731,9 @@
       ],
       "Custom email domains": [
         "Niestandardowe domeny"
+      ],
+      "Custom snooze time": [
+        "Niestandardowy czas odłożenia"
       ],
       "Hide-my-email aliases": [
         "Aliasy hide-my-email"
@@ -8169,6 +8196,9 @@
       "No results found": [
         "Nie znaleziono żadnych wyników"
       ],
+      "No snoozed messages": [
+        "Brak odłożonych wiadomości"
+      ],
       "No unread messages found": [
         "Brak nieprzeczytanych wiadomości"
       ]
@@ -8493,6 +8523,11 @@
       ],
       "Sign": [
         "Podpisz"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Odłóż wiadomość"
       ]
     },
     "Sort option": {
@@ -9587,6 +9622,9 @@
       "Moving a scheduled message": [
         "Przenoszenie zaplanowanej wiadomości"
       ],
+      "Moving a snoozed message": [
+        "Przenoszenie do odłożonych wiadomości"
+      ],
       "New message": [
         "Nowa wiadomość"
       ],
@@ -9727,6 +9765,12 @@
       ],
       "Sign out": [
         "Wyloguj"
+      ],
+      "Snooze": [
+        "Odłóż"
+      ],
+      "Snooze message": [
+        "Odłóż wiadomość"
       ],
       "Sort conversations": [
         "Sortuj wątki"
