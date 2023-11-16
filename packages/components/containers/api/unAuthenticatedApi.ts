@@ -28,19 +28,21 @@ const unAuthStorageKey = 'ua_uid';
 
 const context: {
     UID: string | undefined;
-    auth: boolean;
+    auth: { set: boolean; id: any };
     api: Api;
     refresh: () => void;
     abortController: AbortController;
+    promises: Promise<void>[];
     challenge: ReturnType<typeof createPromise<ChallengePayload | undefined>>;
 } = {
     UID: undefined,
-    api: undefined,
+    api: undefined as any,
     abortController: new AbortController(),
     challenge: createPromise<ChallengePayload | undefined>(),
-    auth: false,
+    auth: { set: false, id: {} },
+    promises: [],
     refresh: () => {},
-} as any;
+};
 
 export const updateUID = (UID: string) => {
     setItem(unAuthStorageKey, UID);
@@ -49,7 +51,8 @@ export const updateUID = (UID: string) => {
     metrics.setAuthHeaders(UID);
 
     context.UID = UID;
-    context.auth = false;
+    context.auth.set = false;
+    context.auth.id = {};
     context.abortController = new AbortController();
 };
 
@@ -161,8 +164,17 @@ export const apiCallback: Api = async (config: any) => {
         abortController.abort();
     };
     config.signal?.addEventListener('abort', otherAbortCb);
+    const id = {}; // Unique symbol for this run
 
     try {
+        // This is set BEFORE the API calls finishes. This might give false positives (when the credentials are incorrect) but
+        // it'll ensure that the session is reset if a user hits the back button before the auth call finishes and credentials are correct.
+        // It's also reset in case the credentials are incorrect, but that assumes that one user can only trigger one auth process at a time.
+        if (isAuthUrl) {
+            context.auth.set = true;
+            context.auth.id = id;
+        }
+
         const result = await context.api(
             withUIDHeaders(UID, {
                 ...config,
@@ -178,12 +190,11 @@ export const apiCallback: Api = async (config: any) => {
             })
         );
 
-        if (isAuthUrl) {
-            context.auth = true;
-        }
-
         return result;
     } catch (e: any) {
+        if (isAuthUrl && context.auth.id === id) {
+            context.auth.set = false;
+        }
         if (getIs401Error(e)) {
             const { code } = getApiError(e);
             // Don't attempt to refresh on 2fa 401 failures since the session has become invalidated.
@@ -210,7 +221,7 @@ export const setChallenge = (data: ChallengePayload | undefined) => {
 };
 
 export const startUnAuthFlow = createOnceHandler(async () => {
-    if (!(context.auth && context.UID)) {
+    if (!(context.auth.set && context.UID)) {
         return;
     }
 
