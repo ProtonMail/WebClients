@@ -54,8 +54,9 @@ export enum TelemetryAccountSignupEvents {
     signupFinish = 'fe.signup_finish',
 }
 
-export enum TelemetryKeyTransparencySelfAuditErrorEvents {
+export enum TelemetryKeyTransparencyErrorEvents {
     self_audit_error = 'self_audit_error',
+    key_verification_failure = 'key_verification_failure',
 }
 
 export enum TelemetryMailEvents {
@@ -67,7 +68,7 @@ export type TelemetryEvents =
     | TelemetryCalendarEvents
     | TelemetryAccountSignupBasicEvents
     | TelemetryAccountSignupEvents
-    | TelemetryKeyTransparencySelfAuditErrorEvents
+    | TelemetryKeyTransparencyErrorEvents
     | TelemetryMailEvents;
 
 export interface TelemetryReport {
