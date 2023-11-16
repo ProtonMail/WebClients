@@ -511,6 +511,9 @@
       "Report a problem": [
         "Raportare problemă"
       ],
+      "Report an issue": [
+        "Raportare o problemă"
+      ],
       "Request a feature": [
         "Solicitare funcție"
       ],
@@ -633,6 +636,9 @@
       ],
       "Skip verification": [
         "Ignorare verificare"
+      ],
+      "Start": [
+        "Start"
       ],
       "Start import": [
         "Pornire importare"
@@ -2667,6 +2673,13 @@
         "(fără titlu)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } a eșuat",
+        "${ countOfFailedLinks } au eșuat",
+        "${ countOfFailedLinks } au eșuat"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TiB spațiu total"
@@ -3415,6 +3428,9 @@
       "An active recovery file": [
         "Un fișier de recuperare activ"
       ],
+      "An issue occurred during the restore process.": [
+        "A apărut o problemă în timpul procesului de restaurare."
+      ],
       "and": [
         "și"
       ],
@@ -3938,6 +3954,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME trimite automat mesajul folosind modul curent de compunere."
       ],
+      "Photos have been successfully recovered.": [
+        "Fotografiile au fost recuperate."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Introduceți parola pentru a decripta și vizualiza conținutul."
       ],
@@ -4030,8 +4049,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "Restaurarea este în curs. Acest lucru poate dura câteva secunde."
       ],
+      "Restore Photos": [
+        "Restaurare fotografii"
+      ],
       "Restored files ${ formattedDate }": [
         "Fișiere restaurate ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Se restaurează fotografiile... Păstrați fila navigatorului deschisă."
       ],
       "Search cannot be enabled in this browser": [
         "Căutarea nu poate fi activată în acest navigator."
@@ -4131,6 +4156,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "Este posibil ca următoarele elemente să fi fost falsificate: ${ items }. Deschideți-l numai dacă aveți încredere în el."
+      ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Proprietarul acestei adrese a dezactivat criptarea în ambele părți. Pentru a putea trimite mesaje criptate la această adresă, proprietarul trebuie să reactiveze criptarea în ambele părți."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Încă mai sunt fișiere ce trebuie transferate. Închizând managerul de transfer va încheia toate operațiile."
@@ -4845,9 +4873,6 @@
       ],
       "Replace existing folder": [
         "Înlocuire folder existent"
-      ],
-      "Report": [
-        "Raportare"
       ],
       "Reveal password": [
         "Afișare parolă"
@@ -6082,6 +6107,11 @@
         "${ countMergeableContacts } contacte arată identic.",
         "${ countMergeableContacts } de contacte arată identic."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } rămas",
+        "${ countOfUnrecoveredLinksLeft } rămase",
+        "${ countOfUnrecoveredLinksLeft } rămase"
+      ],
       "Address copied to clipboard": [
         "Adresa a fost copiată în memorie"
       ],
@@ -6467,14 +6497,8 @@
       "File recovery process": [
         "Proces de recuperare a fișierelor"
       ],
-      "Files details": [
-        "Detalii fișiere"
-      ],
       "Folder details": [
         "Detalii folder"
-      ],
-      "Folders details": [
-        "Detalii foldere"
       ],
       "Found ${ searchView.numberOfResults } result": [
         "S-a găsit un rezultat",
@@ -6548,12 +6572,6 @@
       ],
       "Notes": [
         "Note"
-      ],
-      "Number of files": [
-        "Număr de fişiere"
-      ],
-      "Number of folders": [
-        "Număr de foldere"
       ],
       "Number of items": [
         "Număr de articole"

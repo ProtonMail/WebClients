@@ -631,6 +631,9 @@
       "Skip verification": [
         "შემოწმების გამოტოვება"
       ],
+      "Start": [
+        "დაწყება"
+      ],
       "Start import": [
         "შემოტანის დაწყება"
       ],
@@ -2650,6 +2653,12 @@
         "(უსათაურო)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } ჩავარდა",
+        "${ countOfFailedLinks } ჩავარდა"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 ტბ ჯამური საცავი"
@@ -3353,6 +3362,9 @@
       "An active recovery file": [
         "აღდგენის აქტიური ფაილი"
       ],
+      "An issue occurred during the restore process.": [
+        "აღდგენის პროცესში აღმოჩენილია პრობლემა."
+      ],
       "and": [
         "და"
       ],
@@ -3871,6 +3883,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME ავტომატურად აგზავნის შეტყობინებას, რედაქტორის მიმდინარე რეჟიმის გამოყენებით."
       ],
+      "Photos have been successfully recovered.": [
+        "ფოტოების აღდგენა წარმატებით დასრულდა."
+      ],
       "Please enter the password to decrypt and view content.": [
         "გთხოვთ, შეიყვანოთ პაროლი შინაარსის გასაშიფრად და სანახავად."
       ],
@@ -3962,8 +3977,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "მიმდინარეობს აღდგენა. ამას რამდენიმე წამი შეიძლება, დასჭირდეს."
       ],
+      "Restore Photos": [
+        "ფოტოების აღდგენა"
+      ],
       "Restored files ${ formattedDate }": [
         "აღდგენილია ფაილები ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "ფოტოების აღდგენა.. ნუ დახურავთ ამ ჩანართს"
       ],
       "Search cannot be enabled in this browser": [
         "ამ ბრაუზერში ძებნის ჩართვა შეუძლებელია"
@@ -4063,6 +4084,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "ეს ელემენტები შეიძლება შეიცვალა: ${ items }. გახსენით, მხოლოდ, მაშინ, თუ ენდობით."
+      ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "ამ მისამართის მფლობელმა გამჭოლი დაშიფვრა გამორთო. იმისათვის, რომ შეგეძლოთ, ამ მისამართზე დაშიფრული შეტყობინებები გააგზავნოთ, მფლობელმა გამჭოლი დაშიფვრა თავიდან უნდა ჩართოს."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "გადასატანი ფაილები ჯერ კიდევ დარჩენილია. გადაწერების მმართველის დახურვა დაასრულებს ამ ოპერაციებს."
@@ -4772,9 +4796,6 @@
       ],
       "Replace existing folder": [
         "არსებული საქაღალდის ჩანაცვლება"
-      ],
-      "Report": [
-        "ანგარიში"
       ],
       "Reveal password": [
         "პაროლის ჩვენება"
@@ -5966,6 +5987,10 @@
         "${ countMergeableContacts } ერთნაირია.",
         "${ countMergeableContacts } ერთნაირია."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "დარჩენილია ${ countOfUnrecoveredLinksLeft }",
+        "დარჩენილია ${ countOfUnrecoveredLinksLeft }"
+      ],
       "Address copied to clipboard": [
         "მისამართი დაკოპირდა გაცვლის ბაფერში"
       ],
@@ -6336,14 +6361,8 @@
       "File recovery process": [
         "ფაილის აღდგენის პროცესი"
       ],
-      "Files details": [
-        "ფაილის დეტალები"
-      ],
       "Folder details": [
         "საქაღალდის დეტალები"
-      ],
-      "Folders details": [
-        "საქაღალდეების დეტალები"
       ],
       "Found ${ searchView.numberOfResults } result": [
         "ნაპოვნია ${ searchView.numberOfResults } შედეგი",
@@ -6415,12 +6434,6 @@
       ],
       "Notes": [
         "შენიშვნები"
-      ],
-      "Number of files": [
-        "ფაილების რიცხვი"
-      ],
-      "Number of folders": [
-        "საქაღალდეების რაოდენობა"
       ],
       "Number of items": [
         "ელემენტების რაოდენობა"
