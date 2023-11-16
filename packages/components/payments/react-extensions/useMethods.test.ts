@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { queryPaymentMethodStatus, queryPaymentMethods } from '@proton/shared/lib/api/payments';
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { addApiMock, apiMock } from '@proton/testing';
 
 import { Autopay, PAYMENT_METHOD_TYPES, PaymentMethodStatus, SavedPaymentMethod } from '../core';
@@ -272,4 +273,63 @@ it('should set selected method', async () => {
 
     expect(result.current.savedSelectedMethod).toEqual(undefined);
     expect(result.current.isNewPaypal).toBe(true);
+});
+
+it('should update amount correctly even if the initialization is slow', async () => {
+    addApiMock(queryPaymentMethodStatus().url, async () => {
+        await wait(100);
+        return paymentMethodStatus;
+    });
+
+    const { result, waitForNextUpdate, rerender } = renderHook(
+        ({ amount }) =>
+            useMethods(
+                {
+                    paymentMethodStatus,
+                    amount,
+                    flow: 'credit',
+                },
+                {
+                    api: apiMock,
+                    isAuthenticated: true,
+                }
+            ),
+        {
+            initialProps: {
+                amount: 0,
+            },
+        }
+    );
+
+    expect(result.current.loading).toBe(true);
+    rerender({
+        amount: 10000,
+    });
+
+    await waitForNextUpdate();
+
+    expect(result.current.loading).toBe(false);
+    expect(result.current.newMethods.length).toBe(4);
+    expect(result.current.newMethods).toEqual([
+        {
+            isSaved: false,
+            type: PAYMENT_METHOD_TYPES.CARD,
+            value: PAYMENT_METHOD_TYPES.CARD,
+        },
+        {
+            isSaved: false,
+            type: PAYMENT_METHOD_TYPES.PAYPAL,
+            value: PAYMENT_METHOD_TYPES.PAYPAL,
+        },
+        {
+            isSaved: false,
+            type: PAYMENT_METHOD_TYPES.BITCOIN,
+            value: PAYMENT_METHOD_TYPES.BITCOIN,
+        },
+        {
+            isSaved: false,
+            type: PAYMENT_METHOD_TYPES.CASH,
+            value: PAYMENT_METHOD_TYPES.CASH,
+        },
+    ]);
 });

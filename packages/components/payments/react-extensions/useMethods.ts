@@ -55,6 +55,12 @@ export const useMethods = (
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
     const paymentMethodsRef = useRef<PaymentMethods>();
+    const pendingDataRef = useRef<{
+        pendingAmount?: number;
+        pendingCoupon?: string | null;
+        pendingFlow?: PaymentMethodFlows;
+    }>();
+
     const [loading, setLoading] = useState(true);
     const [availableMethods, setAvailableMethods] = useState<UsedAndNewMethods>({
         usedMethods: [],
@@ -79,11 +85,7 @@ export const useMethods = (
     };
 
     const updateMethods = () => {
-        if (!paymentMethodsRef.current) {
-            return;
-        }
-
-        const { usedMethods, methods: newMethods } = paymentMethodsRef.current.getAvailablePaymentMethods();
+        const { usedMethods, methods: newMethods } = paymentMethodsRef.current!.getAvailablePaymentMethods();
 
         const result = {
             usedMethods,
@@ -104,6 +106,29 @@ export const useMethods = (
                 flow
             );
 
+            // Initialization might take some time, so we need to check if there is any pending data
+            // If for example the amount changes before initialization is done, then it won't be updated by the usual
+            // useEffect handler below. In this case we need to update the amount manually.
+            // Same goes for coupon and flow.
+            if (pendingDataRef.current) {
+                // Getting the saved values and clearing the pending right away, because this is a one-time thing
+                const { pendingAmount, pendingCoupon, pendingFlow } = pendingDataRef.current;
+                pendingDataRef.current = undefined;
+
+                // Updating the coupon
+                paymentMethodsRef.current.coupon = pendingCoupon ?? '';
+
+                // Updating the amount
+                if (typeof pendingAmount === 'number') {
+                    paymentMethodsRef.current.amount = pendingAmount;
+                }
+
+                // Updating the flow
+                if (pendingFlow) {
+                    paymentMethodsRef.current.flow = pendingFlow;
+                }
+            }
+
             setStatus(paymentMethodsRef.current.paymentMethodStatus);
             setSavedMethods(paymentMethodsRef.current.paymentMethods);
 
@@ -119,6 +144,11 @@ export const useMethods = (
 
     useEffect(() => {
         if (!paymentMethodsRef.current) {
+            pendingDataRef.current = {
+                pendingAmount: amount,
+                pendingCoupon: coupon,
+                pendingFlow: flow,
+            };
             return;
         }
 
