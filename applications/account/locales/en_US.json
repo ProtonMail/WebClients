@@ -4,6 +4,11 @@
     "language": "en_US"
   },
   "contexts": {
+    "Action": {
+      "Ok": [
+        "OK"
+      ]
+    },
     "Calendar sharing access option label": {
       "Edit (view, create and edit event details)": [
         "Edit (view, create or edit event details)"
@@ -28,7 +33,7 @@
         "You have reached the number of contacts limit for your account"
       ],
       "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "You must activate your organization keys. Without activation, you will not be able to create or access non-private users."
+        "To create non-private users and access their accounts, you'll need to activate your organization keys."
       ]
     },
     "familyOffer_2023:Action": {
@@ -67,9 +72,6 @@
       "Lean more about gateways": [
         "Learn more about Gateways"
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains."
-      ],
       "The link to report that that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue."
       ],
@@ -107,6 +109,9 @@
       "Dedicated servers with dedicated IP address(es) can be added to private gateways to enable fine-tuned access control": [
         "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control"
       ],
+      "Personalize your email signature with logos, images, social media icons, links to your contact details, and more": [
+        "Personalize your email signature with logos, images, social media icons, links to your contact details, and more"
+      ],
       "Route your internet traffic through the Tor network with a single click": [
         "Route your internet traffic through the TOR network with a single click"
       ]
@@ -142,6 +147,11 @@
     "Title": {
       "Personalise your e-mail footer": [
         "Personalize your e-mail footer"
+      ]
+    },
+    "Tooltip": {
+      "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
+        "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalize your signature anytime in the settings."
       ]
     },
     "Tor out of date": {
