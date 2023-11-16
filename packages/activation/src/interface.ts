@@ -270,11 +270,19 @@ export interface ImportReport {
     RollbackState?: ApiReportRollbackState;
 }
 
-export enum EASY_SWITCH_SOURCE {
-    EASY_SWITCH_SETTINGS = 'easy-switch-settings',
-    CONTACTS_WIDGET_SETTINGS = 'contacts-widget-settings',
-    IMPORT_CALENDAR_SETTINGS = 'import-calendar-settings',
-    RECONNECT_IMPORT = 'reconnect-import',
+export enum NEW_EASY_SWITCH_SOURCES {
+    ACCOUNT_WEB_SETTINGS = 'account-web-settings',
+    CALENDAR_WEB_SETTINGS = 'calendar-web-settings',
+    CONTACTS_WEB_SETTINGS = 'contacts-web-settings',
+    ACCOUNT_WEB_RECONNECT_IMPORT = 'account-web-reconnect-import',
+    ACCOUNT_WEB_RECONNECT_SYNC = 'account-web-reconnect-sync',
+    WEB_ONBOARDING = 'web-onboarding',
+    MAIL_WEB_SIDEBAR = 'mail-web-sidebar',
+    CONTACT_WEB_IMPORT_BUTTON = 'contacts-web-import-button',
+    MAIL_WEB_CHECKLIST = 'mail-web-checklist',
+    MAIL_WEB_ONBOARDING = 'mail-web-onboarding',
+    // Used as fallback when source could be undefined, will allow ot indicate missing source in log tool
+    UNKNOWN = 'unknown',
 }
 
 export interface EasySwitchFeatureFlag {

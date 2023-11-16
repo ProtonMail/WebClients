@@ -3,13 +3,7 @@ import { c } from 'ttag';
 import { CreateNotificationOptions } from '@proton/components';
 import { EMAIL_PLACEHOLDER, USERNAME_PLACEHOLDER } from '@proton/shared/lib/constants';
 
-import {
-    EASY_SWITCH_SOURCE,
-    ImportProvider,
-    MailImportGmailCategories,
-    OAUTH_PROVIDER,
-    TIME_PERIOD,
-} from './interface';
+import { ImportProvider, MailImportGmailCategories, OAUTH_PROVIDER, TIME_PERIOD } from './interface';
 
 export const G_OAUTH_SCOPE_DEFAULT = ['email', 'openid'];
 
@@ -67,7 +61,6 @@ export const CALENDAR_TO_BE_CREATED_PREFIX = '###TO_BE_CREATED###';
 
 /* Sync specific */
 
-export const SYNC_SOURCE = EASY_SWITCH_SOURCE.EASY_SWITCH_SETTINGS;
 export const SYNC_G_OAUTH_SCOPES = [...G_OAUTH_SCOPE_DEFAULT, G_OAUTH_SCOPE_MAIL_READONLY];
 export const SYNC_SUCCESS_NOTIFICATION: CreateNotificationOptions = {
     type: 'success',
