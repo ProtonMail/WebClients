@@ -514,6 +514,9 @@
       "Report a problem": [
         "Nahlásit problém"
       ],
+      "Report an issue": [
+        "Nahlásit problém"
+      ],
       "Request a feature": [
         "Požádat o funkci"
       ],
@@ -636,6 +639,9 @@
       ],
       "Skip verification": [
         "Přeskočit ověření"
+      ],
+      "Start": [
+        "Začít"
       ],
       "Start import": [
         "Spustit import"
@@ -2592,6 +2598,9 @@
       "Access denied": [
         "Přístup zamítnut"
       ],
+      "App currently unavailable": [
+        "Aplikace je momentálně nedostupná"
+      ],
       "Brace yourself till we get the error fixed.": [
         "Vyčkejte do doby, než opravíme tuto chybu."
       ],
@@ -2607,11 +2616,17 @@
       "Oops, something went wrong": [
         "Jejda, něco se pokazilo"
       ],
+      "Open in browser": [
+        "Otevřít v prohlížeči"
+      ],
       "Please refresh the page or try again later.": [
         "Aktualizujte prosím stránku nebo to zkuste znovu později."
       ],
       "Something went wrong": [
         "Něco se pokazilo"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Chcete-li použít ${ MAIL_APP_NAME } nebo ${ CALENDAR_APP_NAME }, přejděte na webovou verzi."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Tuto stránku se nám nepodařilo načíst. Aktualizujte prosím stránku nebo zkontrolujte svoje internetové připojení."
@@ -2682,6 +2697,14 @@
     "Event title": {
       "(no title)": [
         "(bez názvu)"
+      ]
+    },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } selhal",
+        "${ countOfFailedLinks } selhaly",
+        "${ countOfFailedLinks } selhalo",
+        "${ countOfFailedLinks } selhalo"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -3477,6 +3500,9 @@
       "An active recovery file": [
         "Aktivní soubor pro obnovení"
       ],
+      "An issue occurred during the restore process.": [
+        "Během procesu obnovy došlo k chybě."
+      ],
       "and": [
         "a"
       ],
@@ -3853,7 +3879,7 @@
         "Vypadá to, že jste se nedávno pokusili nahrát ${ uploadName }. Pokud se nahrávání nezdařilo, nahrajte prosím ${ replaceFile }. Pokud nahrávání stále probíhá, nahrazení zruší probíhající nahrávání."
       ],
       "Items in the trash will stay here until you delete them permanently": [
-        "Položky v koši zde zůstanou, dokud je trvale neodstraníte"
+        "Položky zůstanou v koši, dokud je trvale nesmažete"
       ],
       "It’s as easy as drag and drop or selecting files": [
         "Je to stejně snadné jako přesouvání nebo výběr souborů"
@@ -4005,6 +4031,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME automaticky odešle zprávu pomocí aktuálního režimu psaní zpráv."
       ],
+      "Photos have been successfully recovered.": [
+        "Fotografie byly úspěšně obnoveny."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Prosím zadejte heslo pro dešifrování a zobrazení obsahu."
       ],
@@ -4098,8 +4127,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "Probíhá obnova. Toto může trvat několik sekund."
       ],
+      "Restore Photos": [
+        "Obnovit fotografie"
+      ],
       "Restored files ${ formattedDate }": [
         "Soubory obnoveny ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Obnovování fotografií... Ponechte prosím záložku otevřenou"
       ],
       "Search cannot be enabled in this browser": [
         "V tomto prohlížeči nelze zapnout vyhledávání"
@@ -4217,6 +4252,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Váš internetový prohlížeč nepodporuje zobrazení PDF dokumentů. Soubor si proto stáhněte."
+      ],
+      "This file is too large to preview": [
+        "Tento soubor je pro náhled příliš velký"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Tento soubor mohl být smazán, přesunut nebo znepřístupněn. Zkuste se obrátit na vlastníka souboru."
@@ -4432,7 +4470,7 @@
         "Můžete zapnout upozornění abyste obdrželi oznámení v případě, že do této složky přijde nový e-mail."
       ],
       "You cannot undo this action.": [
-        "Nemůžete vrátit zpět tuto akci."
+        "Tuto akci nemůžete vzít zpět."
       ],
       "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
         "Zbývá vám ${ expiresInDays } den na získání uvítacího bonusu 500 MB a ",
@@ -4830,7 +4868,7 @@
         "Pouze minulý měsíc"
       ],
       "Location": [
-        "Poloha"
+        "Umístění"
       ],
       "Mail Server (IMAP)": [
         "E-mailový server (IMAP)"
@@ -4921,9 +4959,6 @@
       ],
       "Replace existing folder": [
         "Nahradit existující složku"
-      ],
-      "Report": [
-        "Nahlásit"
       ],
       "Reveal password": [
         "Zobrazit heslo"
@@ -5215,6 +5250,9 @@
       "Custom email domains": [
         "Vlastní e-mailové domény"
       ],
+      "Custom snooze time": [
+        "Vlastní čas odložení"
+      ],
       "Hide-my-email aliases": [
         "Aliasy Hide-my-email"
       ],
@@ -5240,6 +5278,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Získejte neomezený počet aliasů skrze SimpleLogin od ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Odložte zprávy a nechte si je připomenout, kdy chcete"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
@@ -6201,6 +6242,12 @@
         "${ countMergeableContacts } kontaktů se shoduje.",
         "${ countMergeableContacts } kontaktů se shoduje."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "Zbývá ${ countOfUnrecoveredLinksLeft }",
+        "Zbývají ${ countOfUnrecoveredLinksLeft }",
+        "Zbývá ${ countOfUnrecoveredLinksLeft }",
+        "Zbývá ${ countOfUnrecoveredLinksLeft }"
+      ],
       "Address copied to clipboard": [
         "Adresa byla zkopírována do schránky"
       ],
@@ -6601,14 +6648,8 @@
       "File recovery process": [
         "Proces obnovy souboru"
       ],
-      "Files details": [
-        "Podrobnosti souborů"
-      ],
       "Folder details": [
         "Podrobnosti složky"
-      ],
-      "Folders details": [
-        "Podrobnosti složek"
       ],
       "Found ${ searchView.numberOfResults } result": [
         "Nalezen ${ searchView.numberOfResults } výsledek",
@@ -6684,12 +6725,6 @@
       ],
       "Notes": [
         "Poznámky"
-      ],
-      "Number of files": [
-        "Počet souborů"
-      ],
-      "Number of folders": [
-        "Počet složek"
       ],
       "Number of items": [
         "Počet položek"

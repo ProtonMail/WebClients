@@ -514,6 +514,9 @@
       "Report a problem": [
         "Паведаміць аб праблеме"
       ],
+      "Report an issue": [
+        "Паведаміць пра праблему"
+      ],
       "Request a feature": [
         "Запытаць функцыю"
       ],
@@ -636,6 +639,9 @@
       ],
       "Skip verification": [
         "Прапусціць праверку"
+      ],
+      "Start": [
+        "Пачаць"
       ],
       "Start import": [
         "Пачаць імпартаванне"
@@ -2592,6 +2598,9 @@
       "Access denied": [
         "У доступе адмоўлена"
       ],
+      "App currently unavailable": [
+        "Праграма часова недаступна"
+      ],
       "Brace yourself till we get the error fixed.": [
         "Пачакайце, пакуль мы выправім памылку."
       ],
@@ -2607,11 +2616,17 @@
       "Oops, something went wrong": [
         "Вой, нешта пайшло не так"
       ],
+      "Open in browser": [
+        "Адкрыць у браўзеры"
+      ],
       "Please refresh the page or try again later.": [
         "Абнавіце старонку або паспрабуйце яшчэ раз пазней."
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Пераключыцеся на вэб-версію, каб выкарыстоўваць ${ MAIL_APP_NAME } або ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Немагчыма загрузіць старонку. Абнавіце старонку або праверце злучэнне з інтэрнэтам."
@@ -2682,6 +2697,14 @@
     "Event title": {
       "(no title)": [
         "(без загалоўка)"
+      ]
+    },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } са збоем",
+        "${ countOfFailedLinks } са збоем",
+        "${ countOfFailedLinks } са збоем",
+        "${ countOfFailedLinks } са збоем"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -3477,6 +3500,9 @@
       "An active recovery file": [
         "Актыўны файл аднаўлення"
       ],
+      "An issue occurred during the restore process.": [
+        "Адбылася памылка падчас працэсу аднаўлення."
+      ],
       "and": [
         "і"
       ],
@@ -3508,7 +3534,7 @@
         "Вы сапраўды хочаце незваротна выдаліць выбраныя элементы са сметніцы?"
       ],
       "As soon as you have photos or videos on your device, they will appear here.": [
-        "Як толькі на вашай прыладзе будуць з'яўляцца відэа і фотаздымкі, яны адразу ж будуць трапляць і сюды."
+        "Як толькі на вашай прыладзе будуць з'яўляцца відэа і фатаграфіі, яны адразу ж будуць трапляць і сюды."
       ],
       "Attention required": [
         "Патрабуецца ўвага"
@@ -3949,7 +3975,7 @@
         "Група не знойдзена"
       ],
       "No photos yet": [
-        "Фатаграфіі пакуль адсутнічаюць"
+        "Пакуль няма фатаграфій"
       ],
       "No results found": [
         "Нічога не знойдзена"
@@ -4004,6 +4030,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME аўтаматычна адпраўляе паведамленні з выкарыстаннем бягучага рэжыму рэдактара."
+      ],
+      "Photos have been successfully recovered.": [
+        "Фатаграфіі былі паспяхова адноўлены."
       ],
       "Please enter the password to decrypt and view content.": [
         "Увядзіце пароль для расшыфроўкі і прагляду змесціва."
@@ -4098,8 +4127,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "Адбываецца аднаўленне. Гэта можа заняць некалькі секунд."
       ],
+      "Restore Photos": [
+        "Аднаўленне фатаграфій"
+      ],
       "Restored files ${ formattedDate }": [
         "Файлы адноўлены ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Аднаўленне фатаграфій... Не закрывайце ўкладку браўзера"
       ],
       "Search cannot be enabled in this browser": [
         "Немагчыма ўключыць пошук у гэтым браўзеры"
@@ -4217,6 +4252,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Дадзены браўзер не падтрымлівае папярэдні прагляд дакументаў PDF. Спампуйце файл."
+      ],
+      "This file is too large to preview": [
+        "Занадта вялікі файл для папярэдняга прагляду"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Гэты файл мог быць выдалены, перамешчаны або яго зрабілі недаступным. Паспрабуйце звязацца з уладальнікам файла."
@@ -4922,9 +4960,6 @@
       "Replace existing folder": [
         "Замяніць існуючую папку"
       ],
-      "Report": [
-        "Справаздача"
-      ],
       "Reveal password": [
         "Паказаць пароль"
       ],
@@ -5215,6 +5250,9 @@
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
       ],
+      "Custom snooze time": [
+        "Карыстальніцкі час адкладання"
+      ],
       "Hide-my-email aliases": [
         "Псеўданімаў Hide-my-email"
       ],
@@ -5240,6 +5278,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Атрымайце неабмежаваную колькасць псеўданімаў з SimpleLogin у ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Адкладайце паведамленні і атрымлівайце напаміны, калі вам гэта неабходна"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
@@ -6201,6 +6242,12 @@
         "${ countMergeableContacts } кантактаў выглядаюць ідэнтычна.",
         "${ countMergeableContacts } кантакты выглядаюць ідэнтычна."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } застаўся",
+        "${ countOfUnrecoveredLinksLeft } засталося",
+        "${ countOfUnrecoveredLinksLeft } засталося",
+        "${ countOfUnrecoveredLinksLeft } засталося"
+      ],
       "Address copied to clipboard": [
         "Адрас скапіяваны ў буфер абмену"
       ],
@@ -6601,14 +6648,8 @@
       "File recovery process": [
         "Працэс аднаўлення файлаў"
       ],
-      "Files details": [
-        "Падрабязнасці файлаў"
-      ],
       "Folder details": [
         "Падрабязнасці папкі"
-      ],
-      "Folders details": [
-        "Падрабязнасці папак"
       ],
       "Found ${ searchView.numberOfResults } result": [
         "Знойдзены ${ searchView.numberOfResults } вынік",
@@ -6684,12 +6725,6 @@
       ],
       "Notes": [
         "Нататкі"
-      ],
-      "Number of files": [
-        "Колькасць файлаў"
-      ],
-      "Number of folders": [
-        "Колькасць папак"
       ],
       "Number of items": [
         "Колькасць элементаў"

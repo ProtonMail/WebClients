@@ -508,6 +508,9 @@
       "Report a problem": [
         "Relatar um problema"
       ],
+      "Report an issue": [
+        "Reportar um problema"
+      ],
       "Request a feature": [
         "Solicitar um recurso"
       ],
@@ -630,6 +633,9 @@
       ],
       "Skip verification": [
         "Pular verificação"
+      ],
+      "Start": [
+        "Iniciar"
       ],
       "Start import": [
         "Iniciar importação"
@@ -1970,6 +1976,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Criptografando e importando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importação via arquivo CSV e VCF, certifique-se de que o arquivo não exceda ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contatos. Se o seu arquivo for maior, divida-o em arquivos menores. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contatos que você está importando contém alguns grupos. Verifique como esses grupos devem ser importados."
       ],
@@ -2555,6 +2564,9 @@
       "Access denied": [
         "Acesso negado"
       ],
+      "App currently unavailable": [
+        "Aplicativo atualmente indisponível"
+      ],
       "Brace yourself till we get the error fixed.": [
         "Fique tranquilo, logo iremos corrigir este erro."
       ],
@@ -2569,6 +2581,9 @@
       ],
       "Oops, something went wrong": [
         "Opa, alguma coisa deu errado"
+      ],
+      "Open in browser": [
+        "Abrir no navegador"
       ],
       "Please refresh the page or try again later.": [
         "Atualize a página ou tente novamente mais tarde."
@@ -2645,6 +2660,12 @@
     "Event title": {
       "(no title)": [
         "(sem título)"
+      ]
+    },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } erro",
+        "${ countOfFailedLinks } erros"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -3350,6 +3371,9 @@
       "An active recovery file": [
         "Um arquivo de recuperação ativo"
       ],
+      "An issue occurred during the restore process.": [
+        "Ocorreu um problema durante o processo de restauração."
+      ],
       "and": [
         "e"
       ],
@@ -3868,6 +3892,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME automaticamente envia a mensagem usando o modo compositor atual."
       ],
+      "Photos have been successfully recovered.": [
+        "As fotos foram recuperadas com sucesso."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Insira a senha para descriptografar e visualizar o conteúdo."
       ],
@@ -3893,6 +3920,9 @@
       "Please select which email address or addresses to add to ${ groupName }.": [
         "Selecione qual endereço de e-mail ou endereços adicionar a ${ groupName }."
       ],
+      "Please use another browser or download the file.": [
+        "Use outro navegador ou baixe o arquivo."
+      ],
       "Please wait till your changes are synced with the server.": [
         "Aguarde até que suas alterações sejam sincronizadas com o servidor."
       ],
@@ -3910,6 +3940,9 @@
       ],
       "Preview failed to be loaded": [
         "Não foi possível carregar a pré-visualização."
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "No momento, a visualização deste tipo de arquivo não é compatível com este navegador."
       ],
       "Preview for this file type is not supported": [
         "A pré-visualização deste arquivo não é suportada."
@@ -3953,8 +3986,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "A restauração está em progresso. Pode levar alguns segundos."
       ],
+      "Restore Photos": [
+        "Restaurar fotos"
+      ],
       "Restored files ${ formattedDate }": [
         "Arquivos restaurados ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Restaurando fotos... Mantenha a guia aberta"
       ],
       "Search cannot be enabled in this browser": [
         "Não é possível ativar a pesquisa nesse navegador."
@@ -4763,9 +4802,6 @@
       ],
       "Replace existing folder": [
         "Substituir pasta existente"
-      ],
-      "Report": [
-        "Reportar"
       ],
       "Reveal password": [
         "Mostrar senha"
@@ -5957,6 +5993,10 @@
         "${ countMergeableContacts } contato parece idêntico.",
         "${ countMergeableContacts } contatos parecem idênticos."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } restante",
+        "${ countOfUnrecoveredLinksLeft } restantes"
+      ],
       "Address copied to clipboard": [
         "O endereço foi copiado para a área de transferência"
       ],
@@ -6327,14 +6367,8 @@
       "File recovery process": [
         "Processo de recuperação de arquivo"
       ],
-      "Files details": [
-        "Detalhes dos arquivos"
-      ],
       "Folder details": [
         "Detalhes da pasta"
-      ],
-      "Folders details": [
-        "Detalhes da pastas"
       ],
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } resultado encontrado",
@@ -6406,12 +6440,6 @@
       ],
       "Notes": [
         "Notas"
-      ],
-      "Number of files": [
-        "Número de arquivos"
-      ],
-      "Number of folders": [
-        "Número de pastas"
       ],
       "Number of items": [
         "Número de itens"
