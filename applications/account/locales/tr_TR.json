@@ -143,6 +143,9 @@
       "Authenticate": [
         "Kimliği doğrula"
       ],
+      "Authenticating": [
+        "Kimlik doğrulanıyor"
+      ],
       "Back": [
         "Geri"
       ],
@@ -315,7 +318,7 @@
         "Kullanıcıyı sil"
       ],
       "Delete without exporting": [
-        "Anahtar dışar aktarılmadan silinsin"
+        "Anahtar dışarı aktarılmadan silinsin"
       ],
       "Delete your account": [
         "Hesabınızı silin"
@@ -681,7 +684,7 @@
         "Alıntıla"
       ],
       "Reactivate keys": [
-        "Anahtarı yeniden kullanıma al"
+        "Anahtarları yeniden kullanıma al"
       ],
       "Reconnect": [
         "Yeniden bağlan"
@@ -1188,7 +1191,7 @@
         "Varsayılan"
       ],
       "Disabled": [
-        "Kullanımdan kaldırılmış"
+        "Kullanım dışı"
       ],
       "External": [
         "Dış"
@@ -1282,7 +1285,7 @@
     },
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
-        "Takvime ekle ve bekliyor olarak işaretle"
+        "Takvime eklensin ve bekliyor olarak işaretlensin"
       ]
     },
     "Autoresponse": {
@@ -1292,7 +1295,7 @@
     },
     "Badge for domain": {
       "Disabled": [
-        "Kullanımdan kaldırılmış"
+        "Kullanım dışı"
       ],
       "Enabled": [
         "Kullanılıyor"
@@ -1543,7 +1546,7 @@
     },
     "Bridge version load failed": {
       "Failed to find latest version": [
-        "Son sürüm bulunamadı"
+        "En son sürüm bulunamadı"
       ]
     },
     "Bug category": {
@@ -1714,7 +1717,7 @@
         "Takvimi paylaş"
       ],
       "Share outside ${ BRAND_NAME }": [
-        "${ BRAND_NAME } dışındakilerle paylaş"
+        "${ BRAND_NAME } kullanmayanlarla paylaş"
       ],
       "Share with ${ BRAND_NAME } users": [
         "${ BRAND_NAME } kullanıcıları ile paylaş"
@@ -1763,7 +1766,7 @@
         "Varsayılan"
       ],
       "Disabled": [
-        "Kullanımdan kaldırılmış"
+        "Kullanım dışı"
       ],
       "Not synced": [
         "Eşitlenmemiş"
@@ -3052,7 +3055,7 @@
     },
     "Delete calendar section description": {
       "All events in this calendar will be deleted.": [
-        "Bu takvimdeki tün etkinlikler silinecek."
+        "Bu takvimdeki tüm etkinlikler silinecek."
       ],
       "You will no longer have access to this calendar.": [
         "Bu takvime artık erişiminiz yok."
@@ -3421,10 +3424,10 @@
         "Duraklat"
       ],
       "Re-enable": [
-        "Yeniden etkinleştir"
+        "Yeniden kullanıma al"
       ],
       "Re-send confirmation email": [
-        "Doğrulama e-postasını tekrar gönder"
+        "Doğrulama e-postasını yeniden gönder"
       ],
       "Remove “${ value }”": [
         "\"${ value }\" kaldır"
@@ -3473,13 +3476,13 @@
         "İşlemler"
       ],
       "From": [
-        "Nereden"
+        "Kimden"
       ],
       "Status": [
         "Durum"
       ],
       "To": [
-        "Nereye"
+        "Kime"
       ]
     },
     "email_forwarding_2023: Incoming forwarding tab name": {
@@ -3729,7 +3732,7 @@
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
       "Email address disabled": [
-        "E-posta adresi kullanımdan kaldırılmış"
+        "E-posta adresi kullanım dışı"
       ],
       "Email address is invalid": [
         "E-posta adresi geçersiz"
@@ -6331,7 +6334,7 @@
         "Kullanmak istediğiniz uygulamayı indirin ve gizliliğinizi gittiğiniz her yere götürün."
       ],
       "Download your PGP keys for use with other PGP-compatible services.": [
-        "PGP anahtarlarınızı diğer PGP uyumlu hizmetlerle kullanmak için indirin."
+        "Diğer PGP uyumlu hizmetlerle kullanmak için PGP anahtarlarınızı indirin."
       ],
       "Drop file here to upload": [
         "Yüklemek için dosyayı buraya bırakın"
@@ -6517,7 +6520,7 @@
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
       ],
       "If you have a custom domain with ${ MAIL_APP_NAME }, you can set a catch-all email address to receive messages sent to your domain but to an invalid email address (e.g., because of typos).": [
-        "${ MAIL_APP_NAME } üzerinde kullandığınız özel bir etki alanınız varsa, etki alanınıza geçersiz bir e-posta adresiyle (yazım hataları gibi) gönderilen iletileri alacak bir tümünü yakalayan e-posta adresi ayarlayabilirsiniz."
+        "${ MAIL_APP_NAME } üzerinde kullandığınız özel bir etki alanınız varsa, etki alanınıza geçersiz bir e-posta adresiyle (yazım hataları gibi) gönderilen iletileri alacak bir tümünü toplama e-posta adresi ayarlayabilirsiniz."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Hediye kodunuz varsa, indiriminizi almak için aşağıya yazın."
@@ -6936,7 +6939,7 @@
         "Lütfen bu adresi silerseniz, bu adresi kullanarak e-posta gönderip alamayacağınızı unutmayın."
       ],
       "Please note that if you delete this domain, all the addresses associated with it will be disabled.": [
-        "Bu etki alanını silerseniz, ilişkili tüm adreslerin kullanımdan kaldırılacağını unutmayın."
+        "Bu etki alanını silerseniz, ilişkili tüm adreslerin kullanım dışı bırakılacağını unutmayın."
       ],
       "Please note that if you delete this filter, we will stop processing all the automated actions it triggers.": [
         "Bu süzgeci silerseniz, tetiklediği tüm otomatik işlemlerin durdurulacağını unutmayın."
@@ -7399,7 +7402,7 @@
         "Hesabınıza erişimi kaybetmemek için, bir hesap kurtarma yöntemi belirleyin"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
-        "${ DRIVE_APP_NAME }, önemli verilerinizi korumak için, siz ve iş birliği yaptığınız kişiler dosyalarınızı\ndeğiştirdikçe öncekli sürümlerini kaydeder. ${ BRAND_NAME } tarafından önceki sürümlerin ne kadar süreyle tutulacağını seçin."
+        "${ DRIVE_APP_NAME }, önemli verilerinizi korumak için, siz ve iş birliği yaptığınız kişiler dosyalarınızı\ndeğiştirdikçe öncekli sürümlerini kaydeder. Önceki sürümlerin ${ BRAND_NAME } tarafından ne kadar süreyle tutulacağını seçin."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
@@ -7465,7 +7468,7 @@
         "Ne yazık ki bu hesap için bir kurtarma yöntemi kaydedilmemiş."
       ],
       "Unless you sign out of your account or change your password, your session will remain active. Sessions expire after 60 days of inactivity.": [
-        "Hesap oturumunuzu kapatmadığınız ya da parolanızı değiştirmediğiniz sürece oturumunuz etkin kalır. Oturumlar 60 günlük hareketsizlikten sonra kapanır."
+        "Hesap oturumunuzu kapatmadığınız ya da parolanızı değiştirmediğiniz sürece oturumunuz açık kalır. 60 gün boyunca herhangi bir etkinlik görülmeyen oturumlar kapatılır."
       ],
       "Unlimited folders, labels, and filters": [
         "Sınırsız sayıda klasör, etiket ve süzgeç"
@@ -8074,7 +8077,7 @@
         "Adresiniz için şifreleme anahtarları oluşturuluyor. Bu işlem birkaç dakika sürebilir ve tarayıcınızın geçici olarak donmasına neden olabilir."
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Eğer önceki anahtarınızın ele geçirildiğini düşünüyorsanız, yeni bir şifreleme anahtarı oluşturabilirsiniz."
+        "Önceki anahtarınızın ele geçirildiğini düşünüyorsanız, yeni bir şifreleme anahtarı oluşturabilirsiniz."
       ]
     },
     "Key state badge": {
@@ -8085,7 +8088,7 @@
         "Ele geçirilmiş"
       ],
       "Disabled": [
-        "Kullanımdan kaldırılmış"
+        "Kullanım dışı"
       ],
       "Forwarding": [
         "İletme"
@@ -8560,7 +8563,7 @@
         "E-posta adresi onayı"
       ],
       "Confirm link URLs": [
-        "Bağlantı adreslerini onaylayın"
+        "Bağlantı adresleri onaylansın"
       ],
       "Confirm login password": [
         "Yeni oturum açma parolası onayı"
@@ -8716,7 +8719,7 @@
         "Bitiş saati"
       ],
       "End weekday": [
-        "Hafta bitiş günü"
+        "Haftanın bitiş günü"
       ],
       "Enter password": [
         "Parolayı yazın"
@@ -9016,7 +9019,7 @@
         "Önceki parola"
       ],
       "Prompt to trust keys": [
-        "Anahtarlara güvenme sorulsun"
+        "Güvenilen anahtarlar sorulsun"
       ],
       "Proration": [
         "Hesap bakiyesi"
@@ -9070,7 +9073,7 @@
         "Çökme bildirimleri gönderilsin"
       ],
       "Send in": [
-        "Şu zamanda gönder"
+        "Şu zamanda gönderilsin"
       ],
       "Show secondary time zone": [
         "İkincil saat dilimi görüntülensin"
@@ -9082,7 +9085,7 @@
         "Okunmamış sayısı site simgesinde görüntülensin"
       ],
       "Show week numbers": [
-        "Hafta numaraları görüntülensin"
+        "Hafta numaraları"
       ],
       "Sign external messages": [
         "Dış iletiler imzalansın"
@@ -9118,13 +9121,13 @@
         "Başlangıç saati"
       ],
       "Start weekday": [
-        "Hafta başlangıç günü"
+        "Haftanın başlangıç günü"
       ],
       "Statement": [
         "Değerlendirme"
       ],
       "Sticky labels": [
-        "Sabit etiketler"
+        "Etiketler sabitlensin"
       ],
       "Subscription options": [
         "Abonelik seçenekleri"
@@ -9202,7 +9205,7 @@
         "Doğrulama kodu"
       ],
       "Verify keys with Key Transparency": [
-        "Anahtar Saydamlığı ile anahtarları doğrulayın"
+        "Anahtarlar anahtar saydamlığı ile doğrulansın"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Gitmenize üzüldük. Lütfen kendimizi geliştirmemize yardımcı olmak için neden ayrıldığınızı açıklayın."
@@ -9619,8 +9622,8 @@
     },
     "Maximum shared calendar members reached alert": {
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "Bu takvime eklenebilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız.",
-        "Bu takvime eklenebilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız."
+        "Eklenebilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız.",
+        "Eklenebilecek en fazla ${ MAX_CALENDAR_MEMBERS } üye sayısına ulaştınız."
       ]
     },
     "Member action": {
@@ -9935,6 +9938,26 @@
         "Orta VPN hızı"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "${ downgradedPlanName } tarifesine düşür"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
+      ],
+      "From ${ price }": [
+        "${ price } ile başlar"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "${ currentPlanName } hesabımı koru"
+      ],
+      "Upgrade": [
+        "Yükselt"
+      ],
+      "Upgrade now": [
+        "Şimdi yükselt"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Gözden geçirmeyi sürdür"
@@ -9974,26 +9997,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "${ upsellPlanHumanSize } tarifesine yükselt"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "${ downgradedPlanName } tarifesine düşür"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Tüm diğer ${ BRAND_NAME } tarifelerine bakın"
-      ],
-      "From ${ price }": [
-        "${ price } ile başlar"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "${ currentPlanName } hesabımı koru"
-      ],
-      "Upgrade": [
-        "Yükselt"
-      ],
-      "Upgrade now": [
-        "Şimdi yükselt"
       ]
     },
     "new_plans: feature": {
@@ -10054,11 +10057,11 @@
         "Her kullanıcı için ${ n } VPN bağlantısı"
       ],
       "${ PASS_APP_NAME } with ${ n } hide-my-email alias": [
-        "${ PASS_APP_NAME } ${ n } hide-my-email takma adı ile birlikte",
-        "${ PASS_APP_NAME } ${ n } hide-my-email takma adı ile birlikte"
+        "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı",
+        "${ PASS_APP_NAME } ve ${ n } hide-my-email takma adı"
       ],
       "${ PASS_APP_NAME } with unlimited hide-my-email aliases": [
-        "${ PASS_APP_NAME } sınırsız sayıda hide-my-email takma adı ile birlikte"
+        "${ PASS_APP_NAME } ve sınırsız sayıda hide-my-email takma adı"
       ],
       "${ PROTON_SENTINEL_NAME } program": [
         "${ PROTON_SENTINEL_NAME } programı"
@@ -10369,17 +10372,6 @@
         "Ekip yönetimi"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanımdan kaldırılacak."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, ${ last4 } içinde sona erecek"
@@ -10467,6 +10459,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Geçerli tarifenizde bir fırsat ücretinden yararlanıyorsunuz. Hesap tarifenizi düşürürseniz, fırsat ücretinizi kaybedersiniz ve bu tarifeye yeniden abone olamazsınız."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Yoksa hesabınıza erişim sınırlanacak ve sonunda hesabınız kullanım dışı bırakılacak."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } uygulamasını ücretli tarife özellikleriyle kullanmayı sürdürmek istiyorsanız, abonelik ve ödeme seçeneklerinizi belirleyin."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Deneme süreniz ${ formattedPeriodEndDate } tarihinde sona eriyor"
       ]
     },
     "new_plans: Label": {
@@ -10819,7 +10822,7 @@
         "${ PROTON_SENTINEL_NAME } özelliği açıldı"
       ],
       "A disabled address cannot be default": [
-        "Kullanımdan kaldırılmış bir adres varsayılan olamaz"
+        "Kullanım dışı bırakılmış bir adres varsayılan olamaz"
       ],
       "An external address cannot be default": [
         "Bir dış adres varsayılan olamaz"
@@ -11215,6 +11218,9 @@
       ],
       ".dmg (10.12 or later)": [
         ".dmg (10.12 ya da üzeri)"
+      ],
+      ".exe (64-bit)": [
+        ".exe (64-bit)"
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (Fedora/openSUSE için)"
@@ -11796,7 +11802,7 @@
         "Takvim silinsin mi?"
       ],
       "Leave calendar?": [
-        "Takvimden ayrıl?"
+        "Takvimden ayrılınsın mı?"
       ],
       "Remove calendar": [
         "Takvimi kaldır"
@@ -12911,7 +12917,7 @@
         "Adres silindi"
       ],
       "Address disabled": [
-        "Adres kullanımdan kaldırıldı"
+        "Adres kullanım dışı"
       ],
       "Address enabled": [
         "Adres kullanıma alındı"
@@ -13113,13 +13119,13 @@
         "1. Oluşturulacak yapılandırmaya bir ad verin"
       ],
       "1. Select platform": [
-        "1. Platform seçin"
+        "1. Platformu seçin"
       ],
       "2. Select platform": [
         "2. Platformu seçin"
       ],
       "2. Select protocol": [
-        "2. İletişim kuralı seçin"
+        "2. İletişim kuralını seçin"
       ],
       "3. Select config file and download": [
         "3. Yapılandırma dosyasını seçin ve indirin"
@@ -13526,7 +13532,7 @@
         "E-posta gizliliği"
       ],
       "Email subscriptions": [
-        "Eposta abonelikleri"
+        "E-posta abonelikleri"
       ],
       "Encryption and keys": [
         "Şifreleme ve anahtarlar"
@@ -14277,7 +14283,7 @@
         "Sisteminiz \"açık temaya\" geçtiğinde seçilmiş tema kullanılacak"
       ],
       "This address has been disabled": [
-        "Bu adres kullanımdan kaldırıldı"
+        "Bu adres kullanım dışı bırakılmış"
       ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "Bu özellik, e-postalarınızı göndermeyi geciktirerek belirtilen süre içinde göndermeyi geri alma olanağı sağlar."
@@ -14301,7 +14307,7 @@
         "Bu anahtar, e-posta iletimi için kullanılır"
       ],
       "Use your browser’s default scrollbars. These are typically larger and easier to use": [
-        "Tarayıcınızın varsayılan kaydırma çubuklarını kullanın. Bunlar genellikle daha geniştir ve daha kolay kullanılır"
+        "Açıldığında, tarayıcınızın varsayılan kaydırma çubukları kullanılır. Bunlar genellikle daha geniştir ve daha kolay kullanılır"
       ],
       "Verified email address": [
         "E-posta adresi doğrulanmış"
@@ -14313,7 +14319,7 @@
         "DNS yapılandırmanızdaki sorunlar nedeniyle DKIM imzalamasını durdurduk. İmzalamayı sürdürmek için aşağıdaki yönergeleri izleyin."
       ],
       "When enabled, animations and transitions will not show": [
-        "Bu seçenek açıldığında, canlandırma ve geçişler görüntülenmez"
+        "Açıldığında, canlandırma ve geçişler görüntülenmez"
       ],
       "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
         "Bir yazışmadaki bir iletiyi etiketlediğinizde, bu etiket yazışmada göndereceğiniz veya alacağınız tüm yeni iletilere otomatik olarak uygulanır."
@@ -14344,7 +14350,7 @@
     },
     "Tooltip automatically attach public key": {
       "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
-        "Bu seçenek, gönderdiğiniz her iletiye otomatik olarak herkese açık anahtarınızın eklenmesini sağlar. Alıcılar bu anahtarı kullanarak, iletilerinizi doğrulayabilir ve size şifrelenmiş iletiler gönderebilir."
+        "Açıldığında, gönderdiğiniz her iletiye otomatik olarak herkese açık anahtarınızın eklenmesini sağlar. Alıcılar bu anahtarı kullanarak, iletilerinizi doğrulayabilir ve size şifrelenmiş iletiler gönderebilir."
       ]
     },
     "Tooltip default pgp scheme": {
@@ -14362,7 +14368,7 @@
     },
     "Tooltip prompt to trust keys": {
       "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
-        "Kişilerinizde güvenilen anahtarları olmayan başka bir ${ MAIL_APP_NAME } kullanıcısından bir e-posta aldığınızda, güvenilen anahtarlar özelliğini açmak isteyip istemediğiniz sorulur."
+        "Kişilerinizde, güvenilen anahtarları bulunmayan bir ${ MAIL_APP_NAME } kullanıcısından e-posta aldığınızda, güvenilen anahtarlar özelliğini açmak isteyip istemediğiniz sorulur."
       ]
     },
     "Tooltip sign external messages": {
@@ -14575,7 +14581,7 @@
         "Günlük kayıtları özelliğini kapattığınızda, bütün günlük geçmişinizi de temizlemiş olursunuz. Günlük kaydını kapatmak istediğinize emin misiniz?"
       ],
       "By disabling this address, you will no longer be able to send or receive emails using this address and all the linked ${ BRAND_NAME } products will also be disabled. Are you sure you want to disable this address?": [
-        "Bu adresi kullanımdan kaldırdığınızda, bu adresi kullanarak e-posta gönderemez veya alamazsınız ve bağlantılı tüm ${ BRAND_NAME } ürünleri de kullanımdan kaldırılır. Bu adresi kullanımdan kaldırmak istediğinize emin misiniz?"
+        "Bu adresi kullanım dışı bıraktığınızda, bu adresi kullanarak e-posta gönderemez veya alamazsınız ve bağlantılı tüm ${ BRAND_NAME } ürünleri de kullanım dışı kalır. Bu adresi kullanım dışı bırakmak istediğinize emin misiniz?"
       ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Bu içe aktarma işlemini iptal ederseniz, daha sonra sürdüremezsiniz. ${ BRAND_NAME }, tüm ilerlemeyi hesabınıza kaydetti. Yine de işlemi iptal etmek istiyor musunuz?"

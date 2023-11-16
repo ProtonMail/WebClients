@@ -704,6 +704,9 @@
       "Next page": [
         "Pagina successiva"
       ],
+      "Next week": [
+        "Settimana seguente"
+      ],
       "No": [
         "No"
       ],
@@ -1965,13 +1968,13 @@
         "Crea una nuova etichetta"
       ],
       "Go to Archive": [
-        "Vai all'Archivio"
+        "Vai all'archivio"
       ],
       "Go to Drafts": [
-        "Vai alle Bozze"
+        "Vai alle bozze"
       ],
       "Go to Inbox": [
-        "Vai alla posta in entrata"
+        "Vai alla posta in arrivo"
       ],
       "Go to Sent": [
         "Vai alla posta inviata"
@@ -3300,7 +3303,7 @@
         "Impossibile abilitare la ricerca nel contenuto in questo browser. Esci dalla modalità in incognito o usa un altro browser."
       ],
       "Decryption error: decryption of this message's encrypted content failed.": [
-        "Errore di decriptazione: decriptazione del contenuto crittografato di questo messaggio non riuscita."
+        "Errore di decrittografia: decrittografia del contenuto crittografato di questo messaggio non riuscita."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deseleziona almeno ${ calendarsToFixCount } calendario",
@@ -5349,9 +5352,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importazione dei tuoi dati da ${ importedEmailAddress } a ${ toEmail }."
       ],
-      "Include Spam/Trash in your search results.": [
-        "Includi Spam/Cestino nei risultati di ricerca."
-      ],
       "Inherited from parent folder": [
         "Ereditato dalla cartella principale"
       ],
@@ -6290,16 +6290,16 @@
         "Inoltra"
       ],
       "Go to All Mail": [
-        "Vai a Tutta la posta"
+        "Vai a tutta la posta"
       ],
       "Go to Archive": [
         "Vai all'archivio"
       ],
       "Go to Drafts": [
-        "Vai alle Bozze"
+        "Vai alle bozze"
       ],
       "Go to Inbox": [
-        "Vai alla posta in entrata"
+        "Vai alla posta in arrivo"
       ],
       "Go to Sent": [
         "Vai alla posta inviata"
@@ -6365,7 +6365,7 @@
         "Sposta in..."
       ],
       "Move up": [
-        "Sposta su"
+        "Sposta in alto"
       ],
       "New message": [
         "Nuovo messaggio"
@@ -6374,7 +6374,7 @@
         "Apri il pannello dei comandi"
       ],
       "Open next message": [
-        "Apri il prossimo messaggio"
+        "Apri messaggio successivo"
       ],
       "Open previous message": [
         "Apri messaggio precedente"
@@ -6389,7 +6389,7 @@
         "Rispondi a tutti"
       ],
       "Save draft": [
-        "Salva la bozza"
+        "Salva bozza"
       ],
       "Search": [
         "Cerca"
@@ -6413,7 +6413,7 @@
         "Mostra email non lette"
       ],
       "Star": [
-        "Importante"
+        "Segna come importante"
       ]
     },
     "Keyboard shortcut section name": {
@@ -7218,17 +7218,8 @@
       "Archive": [
         "Archivio"
       ],
-      "Drafts": [
-        "Bozze"
-      ],
       "Inbox": [
         "Posta in arrivo"
-      ],
-      "Scheduled": [
-        "Programmata"
-      ],
-      "Sent": [
-        "Inviata"
       ],
       "Spam": [
         "Spam"
@@ -8870,7 +8861,7 @@
         "${ emailsCount } indirizzi email"
       ],
       "${ MAIL_APP_NAME } Keyboard Shortcuts": [
-        "${ MAIL_APP_NAME } Scorciatoie da tastiera"
+        "Scorciatoie da tastiera di ${ MAIL_APP_NAME }"
       ],
       "${ unreads } unread message": [
         "${ unreads } messaggio non letto",
@@ -8998,7 +8989,7 @@
         "Tema giorno"
       ],
       "Decryption error": [
-        "Errore di decriptazione"
+        "Errore di decrittografia"
       ],
       "Delete ${ count } contact": [
         "Elimina ${ count } contatto",

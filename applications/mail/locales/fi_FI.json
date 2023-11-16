@@ -704,6 +704,9 @@
       "Next page": [
         "Seuraava sivu"
       ],
+      "Next week": [
+        "Seuraava viikko"
+      ],
       "No": [
         "En"
       ],
@@ -5349,9 +5352,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Tietojasi tuodaan tililtä ${ importedEmailAddress } tilille ${ toEmail }."
       ],
-      "Include Spam/Trash in your search results.": [
-        "Sisällytä roskaposti ja roskakori hakutuloksiisi."
-      ],
       "Inherited from parent folder": [
         "Peritty yläkansiosta"
       ],
@@ -7218,17 +7218,8 @@
       "Archive": [
         "Arkisto"
       ],
-      "Drafts": [
-        "Luonnokset"
-      ],
       "Inbox": [
         "Saapuneet"
-      ],
-      "Scheduled": [
-        "Ajoitetut"
-      ],
-      "Sent": [
-        "Lähetetyt"
       ],
       "Spam": [
         "Roskaposti"

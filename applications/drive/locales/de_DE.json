@@ -631,6 +631,9 @@
       "Skip verification": [
         "Überprüfung überspringen"
       ],
+      "Start": [
+        "Starten"
+      ],
       "Start import": [
         "Importvorgang starten"
       ],
@@ -2558,6 +2561,9 @@
       "Access denied": [
         "Zugriff verweigert"
       ],
+      "App currently unavailable": [
+        "Die App ist derzeit nicht verfügbar."
+      ],
       "Brace yourself till we get the error fixed.": [
         "Bitte habe etwas Geduld, bis wir den Fehler behoben haben."
       ],
@@ -2573,11 +2579,17 @@
       "Oops, something went wrong": [
         "Es ist ein Problem aufgetreten"
       ],
+      "Open in browser": [
+        "Im Browser öffnen"
+      ],
       "Please refresh the page or try again later.": [
         "Aktualisiere die Seite oder versuche es später erneut."
       ],
       "Something went wrong": [
         "Etwas ist schief gelaufen."
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Bitte wechsle zur Webversion, um ${ MAIL_APP_NAME } oder ${ CALENDAR_APP_NAME } zu verwenden."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Diese Seite konnte nicht geladen werden. Bitte aktualisiere die Seite oder überprüfe deine Internetverbindung."
@@ -2648,6 +2660,12 @@
     "Event title": {
       "(no title)": [
         "(Kein Titel)"
+      ]
+    },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } fehlgeschlagen",
+        "${ countOfFailedLinks } fehlgeschlagen"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -3353,6 +3371,9 @@
       "An active recovery file": [
         "Eine aktive Wiederherstellungsdatei"
       ],
+      "An issue occurred during the restore process.": [
+        "Beim Wiederherstellen der Fotos ist ein Fehler aufgetreten."
+      ],
       "and": [
         "und"
       ],
@@ -3871,6 +3892,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME sendet die Nachricht automatisch unter Verwendung des aktuellen Verfassen-Modus."
       ],
+      "Photos have been successfully recovered.": [
+        "Die Fotos wurden erfolgreich wiederhergestellt."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Bitte gib das Passwort ein, um den Inhalt zu entschlüsseln und anzuzeigen."
       ],
@@ -3962,8 +3986,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "Die Wiederherstellung läuft gerade. Dies kann einige Sekunden dauern."
       ],
+      "Restore Photos": [
+        "Fotos wiederherstellen"
+      ],
       "Restored files ${ formattedDate }": [
         "Wiederhergestellte Dateien ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Fotos werden wiederhergestellt... bitte behalte die Registerkarte offen."
       ],
       "Search cannot be enabled in this browser": [
         "Die Suche kann in diesem Browser nicht aktiviert werden"
@@ -4775,9 +4805,6 @@
       ],
       "Replace existing folder": [
         "Vorhandenen Ordner ersetzen"
-      ],
-      "Report": [
-        "Melden"
       ],
       "Reveal password": [
         "Passwort anzeigen"
@@ -5969,6 +5996,10 @@
         "${ countMergeableContacts } Kontakt könnte identisch sein.",
         "${ countMergeableContacts } Kontakte könnten identisch sein."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } verbleibend",
+        "${ countOfUnrecoveredLinksLeft } verbleibend"
+      ],
       "Address copied to clipboard": [
         "Adresse in die Zwischenablage kopiert"
       ],
@@ -6339,13 +6370,7 @@
       "File recovery process": [
         "Dateiwiederherstellungsprozess"
       ],
-      "Files details": [
-        "Dateidetails"
-      ],
       "Folder details": [
-        "Ordnerdetails"
-      ],
-      "Folders details": [
         "Ordnerdetails"
       ],
       "Found ${ searchView.numberOfResults } result": [
@@ -6418,12 +6443,6 @@
       ],
       "Notes": [
         "Notizen"
-      ],
-      "Number of files": [
-        "Anzahl der Dateien"
-      ],
-      "Number of folders": [
-        "Anzahl der Ordner"
       ],
       "Number of items": [
         "Anzahl der Elemente"

@@ -2906,6 +2906,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "La aplicación no está disponible actualmente."
+      ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
       ],
@@ -2915,11 +2918,17 @@
       "Oops, something went wrong": [
         "Se ha producido un error."
       ],
+      "Open in browser": [
+        "Abrir en el navegador"
+      ],
       "Please refresh the page or try again later.": [
         "Vuelve a cargar la página o inténtalo de nuevo más tarde."
       ],
       "Something went wrong": [
         "Se ha producido un error."
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Para utilizar ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, cambie a la versión web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "No hemos podido cargar esta página. Vuelve a cargar la página o verifica tu conexión a internet."
@@ -5181,6 +5190,9 @@
       "Custom email domains": [
         "Dominios de correo personalizados"
       ],
+      "Custom snooze time": [
+        "Tiempo de pausa personalizado"
+      ],
       "Hide-my-email aliases": [
         "Alias de Hide-my-email"
       ],
@@ -5206,6 +5218,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtén alias ilimitados con el servicio SimpleLogin de ${ BRAND_NAME }."
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Pausa los mensajes y recibe un recordatorio cuando quieras."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "El espacio de almacenamiento es compartido entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } y ${ DRIVE_APP_NAME }."

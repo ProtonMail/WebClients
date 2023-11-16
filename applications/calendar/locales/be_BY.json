@@ -2966,6 +2966,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Праграма часова недаступна"
+      ],
       "Error: ${ errorMessage }": [
         "Памылка: ${ errorMessage }"
       ],
@@ -2975,11 +2978,17 @@
       "Oops, something went wrong": [
         "Вой, нешта пайшло не так"
       ],
+      "Open in browser": [
+        "Адкрыць у браўзеры"
+      ],
       "Please refresh the page or try again later.": [
         "Абнавіце старонку або паспрабуйце яшчэ раз пазней."
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Пераключыцеся на вэб-версію, каб выкарыстоўваць ${ MAIL_APP_NAME } або ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Немагчыма загрузіць старонку. Абнавіце старонку або праверце злучэнне з інтэрнэтам."
@@ -5343,6 +5352,9 @@
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
       ],
+      "Custom snooze time": [
+        "Карыстальніцкі час адкладання"
+      ],
       "Hide-my-email aliases": [
         "Псеўданімаў Hide-my-email"
       ],
@@ -5368,6 +5380,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Атрымайце неабмежаваную колькасць псеўданімаў з SimpleLogin у ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Адкладайце паведамленні і атрымлівайце напаміны, калі вам гэта неабходна"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"

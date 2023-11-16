@@ -143,6 +143,9 @@
       "Authenticate": [
         "Autenticar"
       ],
+      "Authenticating": [
+        "Autenticando"
+      ],
       "Back": [
         "Voltar"
       ],
@@ -3082,6 +3085,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Criptografando e importando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importação via arquivo CSV e VCF, certifique-se de que o arquivo não exceda ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contatos. Se o seu arquivo for maior, divida-o em arquivos menores. ${ learnMoreLink }."
+      ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "Receba até ${ credits } em créditos convidando amigos para a ${ BRAND_NAME }."
       ],
@@ -3565,6 +3571,9 @@
       ]
     },
     "email_forwarding_2023: Success": {
+      "A new encryption key has been generated for ${ forwarderEmail }.": [
+        "Uma nova chave de criptografia foi gerada para ${ forwarderEmail }."
+      ],
       "Changes saved": [
         "Alterações salvas"
       ],
@@ -3591,6 +3600,9 @@
       ]
     },
     "email_forwarding_2023: Title": {
+      "Automatically forward emails to other accounts": [
+        "Encaminhar e-mails automaticamente para outras contas"
+      ],
       "Delete forwarding?": [
         "Excluir encaminhamento?"
       ],
@@ -3745,6 +3757,9 @@
       ],
       "Incorrect username": [
         "Nome de usuário incorreto"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "O destinatário pretendido não oferece suporte ao compartilhamento de calendário"
       ],
       "Invalid ${ name } code": [
         "O código ${ name } não é válido."
@@ -4079,6 +4094,9 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Você usou todos os usuários do seu plano. Faça o upgrade do seu plano para adicionar um novo usuário."
       ],
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Você deve ativar as chaves da sua organização. Sem a ativação, você não poderá criar ou acessar usuários não privados."
+      ],
       "You must privatize all users before generating new organization keys": [
         "Você deve tornar privados todos os usuários antes de gerar novas chaves de organização"
       ],
@@ -4284,6 +4302,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Aplicativo atualmente indisponível"
+      ],
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
       ],
@@ -4292,6 +4313,9 @@
       ],
       "Oops, something went wrong": [
         "Opa, alguma coisa deu errado"
+      ],
+      "Open in browser": [
+        "Abrir no navegador"
       ],
       "Please refresh the page or try again later.": [
         "Atualize a página ou tente novamente mais tarde."
@@ -5281,7 +5305,7 @@
         "Ações"
       ],
       "Created": [
-        "Criação"
+        "Criado"
       ],
       "Email address": [
         "Endereço de e-mail"
@@ -5746,6 +5770,9 @@
         "${ numberOfNonPrivateKeys } arquivo enviado não é uma chave privada válida. Verifique e tente novamente.",
         "${ numberOfNonPrivateKeys } arquivos enviados não são chaves privadas válidas. Verifique e tente novamente."
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } removido. Oferta de pacote não disponível em um plano de 1 mês."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado servidor${ serverPricePerMonth }"
       ],
@@ -6103,6 +6130,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de começar a enviar e receber e-mails de seus novos endereços, você precisa criar chaves de criptografia para eles."
+      ],
+      "Billed at ${ price }": [
+        "Cobrado a ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de faturamento: ${ text }"
@@ -6777,7 +6807,7 @@
         "Uma conta. Todos os serviços da ${ BRAND_NAME }."
       ],
       "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam o ${ BRAND_NAME }."
+        "Altere essas configurações apenas se você estiver usando o PGP com destinatários que não usam a ${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
         "Somente você pode ver os marcadores."
@@ -6908,6 +6938,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Tente novamente, use um método de pagamento diferente ou entre em contato com seu banco."
       ],
+      "Please use another browser or download the file.": [
+        "Use outro navegador ou baixe o arquivo."
+      ],
       "Please verify payment at the new tab which was opened.": [
         "Verifique o pagamento na nova guia que foi aberta."
       ],
@@ -6919,6 +6952,9 @@
       ],
       "Preview failed to be loaded": [
         "Não foi possível carregar a pré-visualização."
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "No momento, a visualização deste tipo de arquivo não é compatível com este navegador."
       ],
       "Preview for this file type is not supported": [
         "A pré-visualização deste arquivo não é suportada."
@@ -7100,6 +7136,9 @@
       "SPF is used to specify who is allowed to send email for the domain so we strongly recommend including ${ MAIL_APP_NAME } in your SPF record. Please add the following TXT record into your DNS. This can typically be done in the control panel of your domain name registrar.": [
         "O SPF é usado para especificar quem tem permissão de enviar e-mails usando este domínio, por isso recomendamos que inclua o ${ MAIL_APP_NAME } em seu registro SPF. Adicione o seguinte registro TXT ao seu DNS. Isso geralmente pode ser feito no painel de controle de sua hospedagem ou registrador de nomes de domínio."
       ],
+      "Stay tuned for future promotions.": [
+        "Fique atento às futuras promoções."
+      ],
       "Step ${ step }": [
         "Etapa ${ step }",
         "Etapas ${ step }"
@@ -7220,6 +7259,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Essas credenciais não podem ser usadas para fazer login em nossos aplicativos oficiais ${ VPN_APP_NAME }. ${ learnMore }"
+      ],
+      "They will be removed from your organization": [
+        "Eles serão removidos da sua organização"
       ],
       "They'll receive a free month of ${ planName }.": [
         "Eles receberão um mês grátis de ${ planName }."
@@ -7440,6 +7482,9 @@
       "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Faça upgrade para um plano ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, ou ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } para ter acesso a ${ PROTON_SENTINEL_NAME }"
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Fazer upgrade para o plano ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, ou ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } para acessar a ${ PROTON_SENTINEL_NAME }."
+      ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Faça o upgrade do seu plano para adicionar um endereço curto @pm.me para a sua conta para compartilhá-la facilmente. Ele significa \"${ MAIL_APP_NAME } me\" ou \"Private Message me\"."
       ],
@@ -7496,6 +7541,9 @@
       ],
       "Version history": [
         "Histórico de versões"
+      ],
+      "View, download, and manage your invoices.": [
+        "Ver, baixar e gerenciar suas notas ficais"
       ],
       "Visa Secure logo": [
         "Logotipo do Visa Secure"
@@ -7896,6 +7944,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Você pode adicionar um método de pagamento para renovar sua assinatura automaticamente. Outros métodos de pagamento também estão disponíveis."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Informe um nome e endereço para você ou sua organização. Esses detalhes serão adicionados às faturas pessoais e organizacionais."
       ]
     },
     "Info on errors": {
@@ -9296,7 +9349,7 @@
         "Confortável"
       ],
       "Compact": [
-        "Compacta"
+        "Compacto"
       ]
     },
     "Label to change view layout": {
@@ -9861,6 +9914,26 @@
         "Velocidade média de VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Fazer o downgrade para o ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Explorar todos os planos da ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "A partir de ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Manter minha conta do ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Fazer upgrade"
+      ],
+      "Upgrade now": [
+        "Fazer upgrade agora"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Prosseguir para a revisão"
@@ -9900,26 +9973,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Fazer upgrade para o ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Fazer o downgrade para o ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Explorar todos os planos da ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "A partir de ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Manter minha conta do ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Fazer upgrade"
-      ],
-      "Upgrade now": [
-        "Fazer upgrade agora"
       ]
     },
     "new_plans: feature": {
@@ -10295,17 +10348,6 @@
         "Gerenciamento de equipes"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Sua avaliação termina em ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } com final ${ last4 }"
@@ -10393,6 +10435,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Sua avaliação termina em ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11038,7 +11091,7 @@
         "Permanente"
       ],
       "Plain text": [
-        "Texto Simples"
+        "Texto sem formatação"
       ],
       "Repeat daily": [
         "Repetir diariamente"
@@ -11150,6 +11203,9 @@
       ],
       ".dmg (10.12 or later)": [
         ".dmg (10.12 ou mais recente)"
+      ],
+      ".exe (64-bit)": [
+        ".exe (64-bit)"
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (para Fedora/openSUSE)"
@@ -11542,6 +11598,18 @@
       ],
       "yourdomain.com": [
         "seudominio.com"
+      ]
+    },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "por favor ${ contactHref } nossa equipe de vendas."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Selecione o número de IPs a serem incluídos no seu plano. Cada IP adicional custa ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Se você precisar de mais de ${ maxIPs } IP, ",
+        "Se você precisar de mais de ${ maxIPs } IPs, "
       ]
     },
     "plan customizer, users": {
@@ -12860,6 +12928,11 @@
     "Suffix for price": {
       "per month": [
         "por mês"
+      ]
+    },
+    "Summary of errors during export calendar": {
+      "Details about events that couldn't be exported": [
+        "Detalhes sobre os eventos que não puderam ser exportados"
       ]
     },
     "summer2023: Deal details": {
@@ -14256,6 +14329,14 @@
     "Tooltip default pgp scheme": {
       "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
         "Selecione as configurações PGP padrão usadas para assinar ou criptografar mensagens com usuários PGP que não utilizam ${ BRAND_NAME }. Observe que o PGP Inline força mensagens em texto simples."
+      ]
+    },
+    "Tooltip for news": {
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
+        "Receba as notícias mais recentes sobre privacidade e o que está acontecendo no universo ${ BRAND_NAME }"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Participe de pesquisas para melhorar os serviços da ${ BRAND_NAME }"
       ]
     },
     "Tooltip prompt to trust keys": {

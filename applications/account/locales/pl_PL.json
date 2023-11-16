@@ -143,6 +143,9 @@
       "Authenticate": [
         "Uwierzytelnij"
       ],
+      "Authenticating": [
+        "Uwierzytelnianie"
+      ],
       "Back": [
         "Wstecz"
       ],
@@ -1289,11 +1292,6 @@
     "Auto import invitations setting": {
       "Add to calendar and mark as pending": [
         "Dodaj zaproszenia do kalendarza i oznacz status uczestnictwa na brak odpowiedzi"
-      ]
-    },
-    "Autoresponse": {
-      "I'm out of the office with limited access to my email.": [
-        "Jestem poza biurem i mam ograniczony dostęp do poczty."
       ]
     },
     "Badge for domain": {
@@ -3132,17 +3130,11 @@
       "Track the status and activity of your referrals.": [
         "Sprawdź status i aktywność linku polecającego."
       ],
-      "Unlock shorter email addresses and other premium features by upgrading.": [
-        "Ulepsza konto, aby odblokować krótsze adresy e-mail i inne funkcje premium."
-      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Ulepsz konto, aby odblokować nieograniczoną liczbę filtrów i wiele więcej funkcji premium."
       ],
       "Unlock unlimited folders, labels and more premium features when you upgrade.": [
         "Ulepsz konto, aby odblokować nieograniczoną liczbę folderów, etykiet i wiele więcej funkcji premium."
-      ],
-      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
-        "Ikona zawierająca logo ${ BRAND_NAME } i znak plusa"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Możesz nadal zapraszać znajomych, ale nie będziesz mógł zdobyć więcej środków"
@@ -3514,12 +3506,6 @@
       ]
     },
     "email_forwarding_2023: Info": {
-      "A confirmation email will be sent to ${ boldForwardeeEmail }": [
-        "Potwierdzenie odczytu zostanie wysłane na adres ${ boldForwardeeEmail }"
-      ],
-      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
-        "Nowy klucz szyfrowania zostanie wygenerowany dla adresu ${ boldForwarderEmail }."
-      ],
       "Automatically forward emails to another email address.": [
         "Automatyczne przekierowanie wiadomości na inny adres e-mail."
       ],
@@ -3564,9 +3550,6 @@
       "Forward from": [
         "Przekaż od"
       ],
-      "Forward to": [
-        "Przekaż do"
-      ],
       "or": [
         "lub"
       ],
@@ -3607,9 +3590,6 @@
     "email_forwarding_2023: Prompt": {
       "End-to-end encryption will be re-enabled for the sender address.": [
         "Szyfrowanie end-to-end zostanie ponownie włączone dla tego nadawcy."
-      ],
-      "Forwarding to the destination address will end.": [
-        "Przekierowywanie zostanie zakończone."
       ]
     },
     "email_forwarding_2023: Status": {
@@ -3630,14 +3610,8 @@
       ]
     },
     "email_forwarding_2023: Success": {
-      "A new encryption key has been generated for ${ forwarderEmail }.": [
-        "Nowy klucz szyfrowania zostanie wygenerowany dla adresu ${ forwarderEmail }."
-      ],
       "Changes saved": [
         "Zmiany zostały zapisane"
-      ],
-      "Email sent to ${ forward.ForwardeeEmail }": [
-        "Wiadomość została wysłana do ${ forward.ForwardeeEmail }"
       ],
       "Email sent to ${ model.forwardeeEmail }.": [
         "Wiadomość została wysłana do ${ model.forwardeeEmail }."
@@ -3650,18 +3624,9 @@
       ],
       "Forwarding deleted": [
         "Przekierowanie zostało usunięte"
-      ],
-      "Forwarding paused": [
-        "Przekierowywanie zostało wstrzymane"
-      ],
-      "Forwarding resumed": [
-        "Przekierowywanie zostało wznowione"
       ]
     },
     "email_forwarding_2023: Title": {
-      "Automatically forward emails to other accounts": [
-        "Automatyczne przekierowanie wiadomości do innych kont"
-      ],
       "Delete forwarding?": [
         "Usunąć przekierowanie?"
       ],
@@ -3673,9 +3638,6 @@
       ],
       "Request confirmation": [
         "Poproś o potwierdzenie"
-      ],
-      "Set up forwarding": [
-        "Ustaw przekierowanie"
       ]
     },
     "email_forwarding_2023: Warning": {
@@ -4381,6 +4343,9 @@
       ],
       "Oops, something went wrong": [
         "Ups, coś poszło nie tak"
+      ],
+      "Open in browser": [
+        "Otwórz w przeglądarce"
       ],
       "Please refresh the page or try again later.": [
         "Odśwież stronę lub spróbuj ponownie później."
@@ -5106,9 +5071,6 @@
       "Spam:": [
         "Spam:"
       ],
-      "Take control over what lands in your inbox by creating the following lists:": [
-        "Przejmij kontrolę nad tym, co ląduje w Twojej skrzynce odbiorczej za pomocą następujących list:"
-      ],
       "Take control over what lands in your organization members' inboxes by creating the following lists:": [
         "Przejmij kontrolę nad tym, co ląduje w skrzynkach odbiorczych użytkowników organizacji za pomocą następujących list:"
       ],
@@ -5120,12 +5082,6 @@
       ],
       "To prevent junk mail from clogging up inboxes": [
         "Aby zapobiegać zapychaniu skrzynek odbiorczych przez wiadomości-śmieci"
-      ],
-      "To prevent junk mail from clogging up your inbox": [
-        "Aby zapobiegać zapychaniu skrzynki odbiorczej przez wiadomości-śmieci"
-      ],
-      "To stop phishing or suspicious emails from entering your email system": [
-        "Aby zapobiegać przedostawaniu się prób wyłudzenia informacji lub podejrzanych wiadomości do poczty"
       ],
       "To stop phishing or suspicious emails from entering your organization's email system": [
         "Aby zapobiegać przedostawaniu się prób wyłudzenia informacji lub podejrzanych wiadomości do poczty organizacji"
@@ -5388,9 +5344,6 @@
     "Header for table": {
       "Actions": [
         "Akcje"
-      ],
-      "Created": [
-        "Utworzono"
       ],
       "Email address": [
         "Adres e-mail"
@@ -6227,23 +6180,11 @@
       "Attention required": [
         "Wymagana uwaga"
       ],
-      "Auto-reply is active each month between the selected start and end time.": [
-        "Autoresponder jest aktywny co miesiąc w wybranym przedziale czasowym."
-      ],
-      "Auto-reply is active each week between the selected start and end time.": [
-        "Autoresponder jest aktywny co tydzień w wybranym przedziale czasowym."
-      ],
-      "Auto-reply is active from the start time to the end time.": [
-        "Autoresponder jest aktywny w wybranym przedziale czasowym."
-      ],
       "Auto-reply is active until you turn it off.": [
         "Autoresponder jest aktywny, dopóki go nie wyłączysz."
       ],
       "Auto-reply is always active on the days of the week you select, between the selected hours.": [
         "Autoresponder jest zawsze aktywny w wybranych dniach tygodnia i godzinach."
-      ],
-      "Available on macOS, Windows, and Linux.": [
-        "Dostępna na macOS, Windowsa i Linuksa."
       ],
       "Awaiting transaction": [
         "Transakcja oczekująca"
@@ -6286,9 +6227,6 @@
       ],
       "Billing cycle: ${ text }": [
         "Cykl rozliczeniowy: ${ text }"
-      ],
-      "Blocks senders from seeing if and when you opened a message.": [
-        "Blokuje nadawcom możliwość sprawdzenia, czy i kiedy otwierasz wiadomość."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Obniżając plan do wersji Free, utracisz te bonusy na zawsze, nawet jeśli w przyszłości ponownie ulepszysz swoje konto."
@@ -6464,9 +6402,6 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Pobierz swoją ulubioną aplikację i ciesz się prywatnością, gdziekolwiek jesteś."
       ],
-      "Download your PGP keys for use with other PGP-compatible services.": [
-        "Pobierz swoje klucze PGP, aby korzystać z nich w innych aplikacjach."
-      ],
       "Drop file here to upload": [
         "Upuść, aby przesłać"
       ],
@@ -6505,9 +6440,6 @@
       ],
       "Enable this address to join this calendar": [
         "Włącz ten adres, aby dołączyć do kalendarza"
-      ],
-      "Enable TLS or SSL on the external service if it is supported.": [
-        "Jeśli w zewnętrznej usłudze szyfrowanie TLS lub SSL jest obsługiwane, włącz je."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Włączenie odzyskiwania za pomocą hasła wygeneruje nowe hasło odzyskiwania."
@@ -6815,14 +6747,8 @@
       "Learn more": [
         "Dowiedz się więcej"
       ],
-      "learn more about Sieve programming language": [
-        "Dowiedz się więcej o języku programowania Sieve"
-      ],
       "Left to Right": [
         "Od lewej do prawej"
-      ],
-      "Let your contacts know you care about their privacy.": [
-        "Pokaż swoim kontaktom, że dbasz o ich prywatność."
       ],
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
@@ -6838,9 +6764,6 @@
       ],
       "Link type": [
         "Typ linku"
-      ],
-      "Loaded content is being protected by our proxy when tracker protection is activated.": [
-        "Załadowana zawartość jest chroniona przez nasz serwer proxy, kiedy funkcja ochrony przed śledzeniem jest włączona."
       ],
       "Loading": [
         "Ładowanie"
@@ -6944,9 +6867,6 @@
       "Not a valid URL": [
         "To nie jest prawidłowy adres URL"
       ],
-      "Not yet available in our Android mobile app.": [
-        "Funkcja nie jest dostępna w aplikacji mobilnej na Androida."
-      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "To nie jest Twoje urządzenie? Zaloguj się przy użyciu okna prywatnego. ${ learnMore }"
       ],
@@ -6967,9 +6887,6 @@
       ],
       "One account. All ${ BRAND_NAME } services.": [
         "Jedno konto. Wszystkie usługi ${ BRAND_NAME }."
-      ],
-      "Only change these settings if you are using PGP with non-${ BRAND_NAME } recipients.": [
-        "Zmień te ustawienia tylko, gdy używasz PGP z odbiorcami spoza ${ BRAND_NAME }."
       ],
       "Only you can see the labels.": [
         "Tylko Ty możesz zobaczyć etykiety."
@@ -8114,11 +8031,6 @@
         "Klucz ${ fingerprint } został już przesłany"
       ]
     },
-    "Info - folder colouring feature": {
-      "When enabled, sub-folders inherit the color of the parent folder.": [
-        "Jeśli włączysz tę opcję, kolor folderu nadrzędnego zostanie zastosowany do podfolderów."
-      ]
-    },
     "Info for cash payment method": {
       "Please contact us at ${ email } for instructions on how to pay us with cash.": [
         "Skontaktuj się z nami pod adresem ${ email }, aby otrzymać instrukcję zapłaty gotówką."
@@ -8468,9 +8380,6 @@
       ],
       "Disables encryption with this key": [
         "Wyłącza szyfrowanie za pomocą tego klucza"
-      ],
-      "Disables signature verification and encryption with this key": [
-        "Wyłącza weryfikację podpisu i szyfrowanie za pomocą tego klucza"
       ],
       "Enable encryption with this key": [
         "Włącza szyfrowanie za pomocą tego klucza"
@@ -8887,17 +8796,11 @@
       "Emails (last month)": [
         "Wiadomości (ostatni miesiąc)"
       ],
-      "End date": [
-        "Data zakończenia"
-      ],
       "End day of month": [
         "Ostatni dzień miesiąca"
       ],
       "End time": [
         "Czas zakończenia"
-      ],
-      "End weekday": [
-        "Dzień zakończenia"
       ],
       "Enter password": [
         "Wpisz hasło"
@@ -9291,9 +9194,6 @@
       ],
       "Start date": [
         "Data rozpoczęcia"
-      ],
-      "Start day of month": [
-        "Pierwszy dzień miesiąca"
       ],
       "Start time": [
         "Czas rozpoczęcia"
@@ -10138,6 +10038,26 @@
         "Umiarkowana prędkość VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Obniż plan do wersji ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Pokaż wszystkie plany ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Od ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Zachowaj moje konto ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Ulepsz"
+      ],
+      "Upgrade now": [
+        "Ulepsz teraz"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Przejdź do przeglądu"
@@ -10177,26 +10097,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Ulepszenie do planu ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Obniż plan do wersji ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Pokaż wszystkie plany ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Od ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Zachowaj moje konto ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Ulepsz"
-      ],
-      "Upgrade now": [
-        "Ulepsz teraz"
       ]
     },
     "new_plans: feature": {
@@ -10367,6 +10267,9 @@
       ],
       "Custom fields": [
         "Pola niestandardowe"
+      ],
+      "Custom snooze time": [
+        "Niestandardowy czas odłożenia"
       ],
       "Data breach monitoring": [
         "Monitoring wycieku danych"
@@ -10610,17 +10513,6 @@
         "Zarządzanie zespołem"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
@@ -10708,6 +10600,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11077,9 +10980,6 @@
       "IP Address copied to clipboard": [
         "Adres IP został skopiowany do schowka"
       ],
-      "Key with fingerprint ${ fp } has been deleted.": [
-        "Klucz z odciskiem ${ fp } został usunięty."
-      ],
       "Link copied to clipboard": [
         "Link został skopiowany do schowka"
       ],
@@ -11356,12 +11256,6 @@
       "Normal": [
         "Standardowy"
       ],
-      "Off": [
-        "Wyłączone"
-      ],
-      "On": [
-        "Włączone"
-      ],
       "Permanent": [
         "Na stałe"
       ],
@@ -11478,6 +11372,9 @@
       ],
       ".dmg (10.12 or later)": [
         ".dmg (10.12 lub nowszy)"
+      ],
+      ".exe (64-bit)": [
+        ".exe (64-bit)"
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (dla Fedora/openSUSE)"
@@ -13566,9 +13463,6 @@
       "Appearance": [
         "Wygląd"
       ],
-      "Apply filter to existing messages": [
-        "Zastosuj filtr do obecnych wiadomości"
-      ],
       "Apply gift code": [
         "Zastosuj kod podarunkowy"
       ],
@@ -13583,9 +13477,6 @@
       ],
       "Auto-reply": [
         "Autoresponder"
-      ],
-      "Automatically sign outgoing messages?": [
-        "Czy chcesz podpisywać automatycznie wiadomości wychodzące?"
       ],
       "Backup and export": [
         "Kopia zapasowa i eksport"
@@ -13941,9 +13832,6 @@
       "Generate new recovery phrase?": [
         "Wygenerować nowe hasło odzyskiwania?"
       ],
-      "Generate SMTP token": [
-        "Generuj token SMTP"
-      ],
       "Get ${ vpnPlus } to access all servers": [
         "Wybierz plan ${ vpnPlus }, aby uzyskać dostęp do wszystkich serwerów"
       ],
@@ -14292,9 +14180,6 @@
       "Status": [
         "Status"
       ],
-      "Success": [
-        "Sukces"
-      ],
       "Successfully created ${ localSuccessfullyCreatedUsers.length } user account": [
         "Utworzono ${ localSuccessfullyCreatedUsers.length } konto użytkownika",
         "Utworzono ${ localSuccessfullyCreatedUsers.length } konta użytkowników",
@@ -14476,7 +14361,7 @@
         "Akcje"
       ],
       "Fingerprint": [
-        "Odcisk klucza"
+        "Odcisk palca"
       ],
       "Key type": [
         "Typ klucza"
@@ -14529,9 +14414,6 @@
       ]
     },
     "Tooltip": {
-      "${ MAIL_APP_NAME } users will use this key by default for sending": [
-        "Użytkownicy ${ MAIL_APP_NAME } będą domyślnie używać tego klucza do wysyłania wiadomości"
-      ],
       "Account is disconnected": [
         "Konto zostało odłączone"
       ],
@@ -14569,7 +14451,7 @@
         "Edytuj nazwy etykiet"
       ],
       "Enable/disable desktop and mobile notifications": [
-        "Włącz/wyłącz powiadomienia na pulpicie i urządzeniach mobilnych"
+        "Włącz lub wyłącz powiadomienia na pulpicie i urządzeniach mobilnych"
       ],
       "Enabling advanced logs records the IP address for each event in the security log.": [
         "Włączenie zaawansowanych logów spowoduje zapisywanie adresu IP każdej aktywności."
@@ -14642,15 +14524,6 @@
       ],
       "This feature is only available on Beta": [
         "Ta funkcja jest dostępna w wersji beta"
-      ],
-      "This key cannot be used for encryption": [
-        "Ten klucz nie może zostać użyty do szyfrowania"
-      ],
-      "This key is encrypted with an old password": [
-        "Ten klucz jest zaszyfrowany za pomocą starego hasła"
-      ],
-      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
-        "Ten klucz jest używany przez ${ MAIL_APP_NAME } do szyfrowania danych kontaktów"
       ],
       "This key is used for email forwarding": [
         "Klucz jest używany do przekierowywania wiadomości"

@@ -704,6 +704,9 @@
       "Next page": [
         "შემდეგი გვერდი"
       ],
+      "Next week": [
+        "შემდეგი კვირა"
+      ],
       "No": [
         "არა"
       ],
@@ -5349,9 +5352,6 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "მიმდინარეობს მონაცემების ${ importedEmailAddress }-დან ${ toEmail }-ში შემოტანა."
       ],
-      "Include Spam/Trash in your search results.": [
-        "ძებნის შედეგებში სპამის/სანაგვე ყუთის ჩასმა."
-      ],
       "Inherited from parent folder": [
         "მემკვიდრეობით მშობელი საქაღალდისგან"
       ],
@@ -5763,6 +5763,9 @@
       ],
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "ამ შეტყობინების საწყისი გამოგზავნი მოქმედი აღარაა. შეტყობინება თქვენი ნაგულისხმები მისამართიდან გაიგზავნება ${ defaultEmail }."
+      ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "ამ მისამართის მფლობელმა გამჭოლი დაშიფვრა გამორთო. იმისათვის, რომ შეგეძლოთ, ამ მისამართზე დაშიფრული შეტყობინებები გააგზავნოთ, მფლობელმა გამჭოლი დაშიფვრა თავიდან უნდა ჩართოს."
       ],
       "The sender has requested a read receipt.": [
         "გამომგზავნმა მოითხოვა წაკითხვის ანგარიშის გადაგზავნა."
@@ -7215,17 +7218,8 @@
       "Archive": [
         "არქივი"
       ],
-      "Drafts": [
-        "მონახაზები"
-      ],
       "Inbox": [
         "შემომავალი"
-      ],
-      "Scheduled": [
-        "დაგეგმილია"
-      ],
-      "Sent": [
-        "გაგზავნილები"
       ],
       "Spam": [
         "სპამი"
@@ -7924,6 +7918,11 @@
     "Send email with changed preferences": {
       "The contacts for the following addresses have been deleted, so the corresponding encryption preferences have been updated accordingly:": [
         "შემდეგი მისამართების კონტაქტები წაშლილია, ამიტომ დაშიფვრის შესაბამისი პარამეტრები შესაბამისად განახლდა:"
+      ]
+    },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "ამ მისამართების შემცველმა კონტაქტებმა თავიანთ ანგარიშზე გამჭოლი დაშიფვრა გამორთეს, ასე რომ, შესაბამისი დაშიფვრის პარამეტრები განახლდა:"
       ]
     },
     "Send email with errors": {
@@ -9309,6 +9308,9 @@
       ],
       "Send with changed preferences?": [
         "გავაგზავნო შეცვლილი პარამეტრებით?"
+      ],
+      "Send with encryption disabled?": [
+        "გავაგზავნო გათიშული დაშიფვრით?"
       ],
       "Send without expiration?": [
         "გავაგზავნო ვადის გარეშე?"

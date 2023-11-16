@@ -562,6 +562,9 @@
       "label emails as": [
         "označit e-maily jako"
       ],
+      "Later this week": [
+        "Koncem tohoto týdne"
+      ],
       "Learn more": [
         "Více informací"
       ],
@@ -585,6 +588,9 @@
       ],
       "Manage labels": [
         "Spravovat štítky"
+      ],
+      "Manage Snooze": [
+        "Spravovat odložení"
       ],
       "Mark as read": [
         "Označit jako přečtené"
@@ -711,6 +717,9 @@
       ],
       "Next page": [
         "Další stránka"
+      ],
+      "Next week": [
+        "Následující týden"
       ],
       "No": [
         "Ne"
@@ -904,6 +913,9 @@
       "Select all messages": [
         "Označit všechny zprávy"
       ],
+      "Select date and time": [
+        "Vyberte datum a čas"
+      ],
       "Self-destruct in 7 days": [
         "Samozničit za 7 dní"
       ],
@@ -1009,6 +1021,9 @@
       "Skip verification": [
         "Přeskočit ověření"
       ],
+      "Snooze": [
+        "Odložit"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Některé obrázky nemohly být načteny kvůli ochraně před sledovacími prvky."
       ],
@@ -1038,6 +1053,9 @@
       ],
       "This message contains remote content.": [
         "Tato zpráva obsahuje vzdálený obsah."
+      ],
+      "This weekend": [
+        "Tento víkend"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Abychom mohli bezpečně prohledávat vaše e-maily, musíme do prohlížeče stáhnout kopie vašich zpráv. Počáteční stahování může chvíli trvat."
@@ -1092,6 +1110,9 @@
       ],
       "Unordered list": [
         "Neseřazený seznam"
+      ],
+      "Unsnooze": [
+        "Zrušit odložení"
       ],
       "Unstar": [
         "Odebrat hvězdičku"
@@ -2042,7 +2063,7 @@
     },
     "Composer size": {
       "Maximized": [
-        "Maximalizováno"
+        "Maximální"
       ],
       "Normal": [
         "Normální"
@@ -3101,6 +3122,9 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Odemkněte si vlastní plánování zpráv a další výhody navýšením tarifu."
       ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Odemkněte si vlastní časy odložení navýšením tarifu."
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Navýšením tarifu odemknete neomezený počet filtrů, které za vás třídí doručenou poštu a další prémiové funkce."
       ],
@@ -3900,6 +3924,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Aplikace je momentálně nedostupná"
+      ],
       "Error: ${ errorMessage }": [
         "Chyba: ${ errorMessage }"
       ],
@@ -3912,11 +3939,17 @@
       "Oops, something went wrong": [
         "Jejda, něco se pokazilo"
       ],
+      "Open in browser": [
+        "Otevřít v prohlížeči"
+      ],
       "Please refresh the page or try again later.": [
         "Aktualizujte prosím stránku nebo to zkuste znovu později."
       ],
       "Something went wrong": [
         "Něco se pokazilo"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Chcete-li použít ${ MAIL_APP_NAME } nebo ${ CALENDAR_APP_NAME }, přejděte na webovou verzi."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Tuto stránku se nám nepodařilo načíst. Aktualizujte prosím stránku nebo zkontrolujte svoje internetové připojení."
@@ -5547,8 +5580,8 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše data z ${ importedEmailAddress } do ${ toEmail }."
       ],
-      "Include Spam/Trash in your search results.": [
-        "Zahrnutí spamu/koše do výsledků vyhledávání."
+      "Include Spam/Trash.": [
+        "Zahrnout spam/koš."
       ],
       "Inherited from parent folder": [
         "Převzato z nadřazené složky"
@@ -5835,6 +5868,9 @@
       "Right-click for options": [
         "Klikněte pravým tlačítkem myši pro možnosti"
       ],
+      "Sat, ${ formatTime }": [
+        "Sobota, ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "Uloženo v ${ dateString }"
       ],
@@ -5912,6 +5948,18 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin poskytuje jednoduchý způsob vytváření přihlašovacích údajů na nedůvěryhodných webech třetích stran, kde nechcete zveřejnit svou skutečnou e-mailovou adresu."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Odloženo do ${ dateString }, ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Odloženo do dneška, ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Odloženo do zítřka, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "Odložení této konverzace bude zrušeno."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Je nám líto, tato zpráva neexistuje, nebo jí již vypršela platnost."
@@ -6018,6 +6066,9 @@
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "U tohoto e-mailu nebyly splněny požadavky na ověření domény odesílatele. E-mail může být podvržený a nebo nesprávně přeposlaný."
       ],
+      "This file is too large to preview": [
+        "Tento soubor je pro náhled příliš velký"
+      ],
       "This invitation is saved in a disabled calendar.": [
         "Tato pozvánka je uložena v zakázaném kalendáři."
       ],
@@ -6114,6 +6165,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Chcete-li použít Ověření Adresy, musíte důvěřovat jednomu nebo více dostupným veřejným klíčům, včetně toho, který chcete použít pro odesílání. Toto zamezuje zfalšování šifrovacích klíčů."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Zítra, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Příliš mnoho zpráv čeká na odeslání. Prosím počkejte až bude další zpráva odeslána k naplánování této zprávy."
       ],
@@ -6158,6 +6212,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navyšte tarif nyní a získejte tím prémiové funkce, produkty a úložiště za speciální cenu"
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Pro odemknutí navyšte tarif na ${ MAIL_APP_NAME } Plus"
       ],
       "Upgrade to add more addresses to your account.": [
         "Navyšte svůj účet a přidejte více e-mailových adres k vašemu účtu."
@@ -6944,7 +7001,7 @@
         "Rozložení"
       ],
       "Location": [
-        "Poloha"
+        "Umístění"
       ],
       "Mail Server (IMAP)": [
         "E-mailový server (IMAP)"
@@ -7346,6 +7403,12 @@
       "Sign up for free": [
         "Zaregistrujte se zdarma"
       ],
+      "Snooze": [
+        "Odložit"
+      ],
+      "Snoozed": [
+        "Odloženo"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -7458,17 +7521,8 @@
       "Archive": [
         "Archiv"
       ],
-      "Drafts": [
-        "Koncepty"
-      ],
       "Inbox": [
         "Doručená pošta"
-      ],
-      "Scheduled": [
-        "Naplánováno"
-      ],
-      "Sent": [
-        "Odeslané"
       ],
       "Spam": [
         "Spam"
@@ -7708,6 +7762,9 @@
       "Custom email domains": [
         "Vlastní e-mailové domény"
       ],
+      "Custom snooze time": [
+        "Vlastní čas odložení"
+      ],
       "Hide-my-email aliases": [
         "Aliasy Hide-my-email"
       ],
@@ -7733,6 +7790,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Získejte neomezený počet aliasů skrze SimpleLogin od ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Odložte zprávy a nechte si je připomenout, kdy chcete"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný prostor je sdílen mezi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
@@ -8169,6 +8229,9 @@
       "No results found": [
         "Nenalezen žádný výsledek"
       ],
+      "No snoozed messages": [
+        "Žádné odložené zprávy"
+      ],
       "No unread messages found": [
         "Nebyly nalezeny žádné nepřečtené zprávy"
       ]
@@ -8493,6 +8556,14 @@
       ],
       "Sign": [
         "Podepsat"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Odložit zprávu"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Kdy se má zpráva znovu zobrazit v doručené poště?"
       ]
     },
     "Sort option": {
@@ -8861,6 +8932,18 @@
         "${ elementsCount } konverzace odstraněny z ${ labelName }.",
         "${ elementsCount } konverzací odstraněno z ${ labelName }.",
         "${ elementsCount } konverzací odstraněno z ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } konverzace odložena",
+        "${ elementsCount } konverzace odloženy",
+        "${ elementsCount } konverzací odloženo",
+        "${ elementsCount } konverzací odloženo"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } konverzaci zrušeno odložení",
+        "${ elementsCount } konverzacím zrušeno odložení",
+        "${ elementsCount } konverzacím zrušeno odložení",
+        "${ elementsCount } konverzacím zrušeno odložení"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } zpráva přidána do ${ labelName }.",
@@ -9587,6 +9670,9 @@
       "Moving a scheduled message": [
         "Přesun naplánované zprávy"
       ],
+      "Moving a snoozed message": [
+        "Přesunutí odložené zprávy"
+      ],
       "New message": [
         "Nová zpráva"
       ],
@@ -9728,6 +9814,12 @@
       "Sign out": [
         "Odhlásit se"
       ],
+      "Snooze": [
+        "Odložit"
+      ],
+      "Snooze message": [
+        "Odložit zprávu"
+      ],
       "Sort conversations": [
         "Seřadit konverzace"
       ],
@@ -9775,6 +9867,9 @@
       ],
       "Verification error": [
         "Chyba při ověření"
+      ],
+      "Want to snooze any time?": [
+        "Chcete odložit kdykoliv?"
       ],
       "Warning": [
         "Varování"
@@ -10002,6 +10097,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Bezplatná zkušební verze končí ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Pondělí, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Sobota, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Neděle, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {
