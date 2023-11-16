@@ -545,6 +545,9 @@
       ],
       "Saving": [
         "Mentés"
+      ],
+      "Set as default": [
+        "Beállítás alapértelmezettként"
       ]
     },
     "Address status": {
@@ -587,6 +590,9 @@
       "Close": [
         "Bezárás"
       ],
+      "Get the deal": [
+        "Érdekel az ajánlat"
+      ],
       "Remove": [
         "Eltávolítás"
       ],
@@ -597,6 +603,9 @@
     "bf2023: Deal details": {
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } Plus és ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "${ storageSize } storage": [
+        "${ storageSize } tárhely"
       ],
       "1 user": [
         "1 felhasználó"
@@ -615,11 +624,25 @@
       ],
       "Premium ${ VPN_SHORT_APP_NAME }": [
         "Prémium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Prémium jelszókezelő"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "A kedvezmények a standard havi árazás alapján kerülnek kiszámításra."
       ]
     },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 napos pénzvisszatérítési garancia"
+      ]
+    },
+    "bf2023: renew": {
+      "${ n } month": [
+        "${ n } hónap",
+        "az első ${ n } hónapban"
       ]
     },
     "bf2023: Tooltip": {
@@ -746,6 +769,9 @@
       ]
     },
     "Checkout summary": {
+      "month": [
+        "hónap"
+      ],
       "Servers": [
         "Szerver"
       ],
@@ -2058,9 +2084,19 @@
         "A jelenlegi csomagja nem csatlakozhat egy Visionary vagy Family csomaghoz."
       ]
     },
+    "familyOffer_2023:Label": {
+      "Enter organization name to confirm": [
+        "Írja be a szervezet nevét a jóváhagyáshoz"
+      ]
+    },
     "familyOffer_2023:Member downgrade modal": {
       "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
         "Ez véglegesen törli a szervezetéhez tartozó összes al-felhasználót, fiókot és adatot."
+      ]
+    },
+    "familyOffer_2023:Title": {
+      "Delete organization?": [
+        "Szervezet törlése?"
       ]
     },
     "familyOffer_2023:Tooltip": {
@@ -2514,6 +2550,9 @@
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Mielőtt elkezdhetne küldeni és fogadni e-maileket az új címével, létre kell hoznia titkosítási kulcsokat hozzá."
       ],
+      "Billing cycle: ${ text }": [
+        "Számlázási ciklus: ${ text }"
+      ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Az ingyenes verzióra való váltás során véglegesen elveszti a következő előnyeit, még akkor is, ha később ismét előfizetéses szolgáltatásra vált."
       ],
@@ -2801,6 +2840,9 @@
       ],
       "Other administrators exist in your organization, you are responsible for communicating the new password to them.": [
         "A szervezetben más adminisztrátorok is vannak. Az ön feladata eljuttatni hozzájuk az új jelszót."
+      ],
+      "Password copied to clipboard": [
+        "Jelszó a vágólapra másolva"
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Fizetés adatait TLS titkosítással védjük. Svájci adatvédelmi törvények vonatkoznak rá."
@@ -4034,6 +4076,10 @@
         "${ n } naptár",
         "${ n } naptár"
       ],
+      "${ n } calendar per user": [
+        "${ n } naptár felhasználónként",
+        "${ n } naptár felhasználónként"
+      ],
       "${ n } custom email domain": [
         "${ n } saját e-mail domain név",
         "${ n } saját e-mail domain név"
@@ -4134,6 +4180,9 @@
       "Contact groups management": [
         "Névjegy csoportok kezelése"
       ],
+      "Custom domains for email aliases": [
+        "Saját domain név használata e-mail álnevekhez"
+      ],
       "Custom email domains": [
         "Saját domain nevek"
       ],
@@ -4180,6 +4229,9 @@
       "HTML signatures": [
         "HTML aláírás"
       ],
+      "Integrated 2FA authenticator": [
+        "Beépített kétlépcsős hitelesítés"
+      ],
       "Kill switch/always-on VPN": [
         "Kill Switch és mindig bekapcsolt VPN"
       ],
@@ -4188,6 +4240,9 @@
       ],
       "Multiple admin roles": [
         "Több adminisztrátori szerep"
+      ],
+      "No-logs policy": [
+        "Nincs naplózás"
       ],
       "Password-protected Emails": [
         "Jelszóval védett e-mailek"
@@ -4232,6 +4287,9 @@
       ],
       "Sign in as user": [
         "Bejelentkezés felhasználóként"
+      ],
+      "SMTP submission": [
+        "SMTP beküldés"
       ],
       "SMTP submission for select organizations": [
         "SMTP beküldése kiválasztott szervezeteknek"
@@ -4388,6 +4446,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "Ahhoz, hogy tudja folytatni a ${ MAIL_APP_NAME } használatát a prémium funkciókkal, válassza ki előfizetési csomagját és a fizetés módját."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Próbaideje véget ér: ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -4884,6 +4945,14 @@
         "CSV fájl feltöltése"
       ]
     },
+    "Server-Info": {
+      "active": [
+        "aktív"
+      ],
+      "pending": [
+        "függőben"
+      ]
+    },
     "session_recovery:available:action": {
       "Cancel password reset": [
         "Jelszó visszaállítás megszakítása"
@@ -5028,6 +5097,9 @@
       ]
     },
     "session_recovery:initiation:action": {
+      "Got it": [
+        "Rendben"
+      ],
       "Request password reset": [
         "Jelszóváltoztatás kérése"
       ]
@@ -5332,6 +5404,11 @@
         "Jelenlegi tárhelye:"
       ]
     },
+    "Subscription": {
+      "Billed monthly": [
+        "Havonta számlázva"
+      ]
+    },
     "Subscription attribute": {
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikált szerver",
@@ -5400,6 +5477,11 @@
       "High-speed VPN on ${ maxVpn } device": [
         "Nagysebességű VPN ${ maxVpn } eszközön",
         "Nagysebességű VPN ${ maxVpn } eszközön"
+      ]
+    },
+    "Subscription change warning": {
+      "Got it": [
+        "Rendben"
       ]
     },
     "Subscription price": {
@@ -6022,6 +6104,9 @@
       "Sign in to join the Beta program": [
         "Jelentkezzen be a Béta programhoz való csatlakozáshoz"
       ],
+      "Sign in to your organization": [
+        "Jelentkezzen be a szervezetébe"
+      ],
       "Sign in with 2FA": [
         "Bejelentkezés kétlépcsős hitelesítéssel"
       ],
@@ -6151,6 +6236,9 @@
       ],
       "Plan": [
         "Csomag"
+      ],
+      "Status": [
+        "Állapot"
       ]
     },
     "Tooltip": {
@@ -6173,6 +6261,11 @@
       ],
       "This version of Tor Browser is not supported. Please update to the latest ${ stableRelease }": [
         "Az a Tor Browser verzió nem támogatott. Kérjük, frissítsen a legfrissebb ${ stableRelease }"
+      ]
+    },
+    "upsell panel": {
+      "Recommended": [
+        "Ajánlott"
       ]
     },
     "User role": {
@@ -6199,6 +6292,12 @@
     "VPN B2B cancellation reason": {
       "I found another service that I like better": [
         "Találtam egy másik szolgáltatást, ami jobban tetszik"
+      ],
+      "It’s too expensive": [
+        "Túl drága"
+      ],
+      "Other": [
+        "Egyéb"
       ]
     },
     "VPN info": {
@@ -6224,6 +6323,11 @@
         "${ numberOfServers } ${ numberOfCountries } országban"
       ]
     },
+    "vpn_2step: billing": {
+      "Billed monthly": [
+        "Havonta számlázva"
+      ]
+    },
     "vpn_2step: feature": {
       "No ads": [
         "Nincsenek hirdetések"
@@ -6237,11 +6341,17 @@
       "${ n } year": [
         "${ n } év",
         "${ n } év"
+      ],
+      "Try ${ upsellPlanName } risk-free": [
+        "${ upsellPlanName } kipróbálása"
       ]
     },
     "Warning": {
       "Are you sure you want to delete the phone number?": [
         "Biztosan törli ezt a telefonszámot?"
+      ],
+      "Are you sure you want to delete this address?": [
+        "Biztosan törli ezt a címet?"
       ],
       "By deleting this address, you will no longer be able to receive daily email notifications.": [
         "A cím törlésével többé nem kaphat napi e-mailes értesítéseket."

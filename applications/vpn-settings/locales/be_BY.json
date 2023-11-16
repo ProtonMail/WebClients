@@ -2151,17 +2151,26 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Праграма часова недаступна"
+      ],
       "Error: ${ errorMessage }": [
         "Памылка: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Вой, нешта пайшло не так"
       ],
+      "Open in browser": [
+        "Адкрыць у браўзеры"
+      ],
       "Please refresh the page or try again later.": [
         "Абнавіце старонку або паспрабуйце яшчэ раз пазней."
       ],
       "Something went wrong": [
         "Нешта пайшло не так"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Пераключыцеся на вэб-версію, каб выкарыстоўваць ${ MAIL_APP_NAME } або ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Немагчыма загрузіць старонку. Абнавіце старонку або праверце злучэнне з інтэрнэтам."
@@ -3606,6 +3615,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Гэта можа заняць некаторы час. Не закрывайце старонку і не адключайцеся ад інтэрнэту."
       ],
+      "This file is too large to preview": [
+        "Занадта вялікі файл для папярэдняга прагляду"
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Гэты карыстальнік з'яўляецца адказным за плацяжы ў вашай арганізацыі. Паніжэнне правоў гэтага ўдзельніка прывядзе да таго, што за плацяжы арганізацыі будзеце адказваць вы."
       ],
@@ -4968,6 +4980,9 @@
       "Custom fields": [
         "Карыстальніцкія палі"
       ],
+      "Custom snooze time": [
+        "Карыстальніцкі час адкладання"
+      ],
       "Data breach monitoring": [
         "Адсочванне ўзлому даных"
       ],
@@ -5194,6 +5209,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Атрымайце неабмежаваную колькасць псеўданімаў з SimpleLogin у ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Адкладайце паведамленні і атрымлівайце напаміны, калі вам гэта неабходна"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Прастора сховішча размеркавана паміж ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } і ${ DRIVE_APP_NAME }"
