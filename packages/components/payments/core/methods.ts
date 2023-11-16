@@ -49,6 +49,11 @@ export class PaymentMethods {
         };
     }
 
+    /**
+     * Formats the list of saved payment methods. It can be then used to render the list of payment methods.
+     * Depending on your application, you might need to enrich the list with additional UI-specific information, e.g.
+     * name of the payment method, or icon, etc.
+     */
     getUsedMethods(): AvailablePaymentMethod[] {
         const usedMethods: AvailablePaymentMethod[] = this.paymentMethods
             .filter((paymentMethod) => {
@@ -80,6 +85,11 @@ export class PaymentMethods {
         return usedMethods;
     }
 
+    /**
+     * @returns a list of new (i.e. non-saved) payment methods. Each method is individually checked for availability
+     * and filtered out otherwise. The availability is controlled by the paymentMethodStatus object and by the selected
+     * payment flow.
+     */
     getNewMethods(): AvailablePaymentMethod[] {
         const methods: AvailablePaymentMethod[] = [
             {
@@ -166,6 +176,9 @@ async function getPaymentMethodStatus(api: Api): Promise<PaymentMethodStatus> {
     return api<PaymentMethodStatus>(queryPaymentMethodStatus());
 }
 
+/**
+ * Initialize payment methods object. If user is authenticated, fetches saved payment methods.
+ **/
 export async function initializePaymentMethods(
     api: Api,
     maybePaymentMethodStatus: PaymentMethodStatus | undefined,

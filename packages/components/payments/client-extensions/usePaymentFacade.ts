@@ -17,6 +17,20 @@ import { getDefaultVerifyPayment, getDefaultVerifyPaypal } from './validators/va
 type PaymentFacadeProps = {
     amount: number;
     currency: Currency;
+    coupon?: string;
+    /**
+     * The flow parameter can modify the list of available payment methods and modify their behavior in certain cases.
+     */
+    flow: PaymentMethodFlows;
+    /**
+     * The main callback that will be called when the payment is ready to be charged
+     * after the payment token is fetched and verified with 3DS or other confirmation from the user.
+     * @param operations - provides a common set of actions that can be performed with the verified payment token.
+     * For example, the verified (that is, chargeable) payment token can be used to create a subscription or buy
+     * credits.
+     * @param data - provides the raw payment token, the payment source (or processor type) and operation context
+     * like Plan or Cycle for subscription.
+     */
     onChargeable: (
         operations: Operations,
         data: {
@@ -25,11 +39,20 @@ type PaymentFacadeProps = {
             context: OperationsData;
         }
     ) => Promise<unknown>;
+    /**
+     * The callback that will be called when the payment method is changed by the user.
+     */
     onMethodChanged?: OnMethodChangedHandler;
-    coupon?: string;
-    flow: PaymentMethodFlows;
 };
 
+/**
+ * Entry point for the payment logic for the monorepo clients. It's a wrapper around the
+ * react-specific facade. The main purpose of this wrapper is to provide the default
+ * implementation for the client-specific logic. It includes the implementation of the
+ * token verification that depends on the view, as it requires user action. It also includes
+ * pre-fetching of the payment tokens for PayPal and PayPal Credit. In addition, the payment
+ * methods objects are enriched with the icons and texts.
+ */
 export const usePaymentFacade = ({
     amount,
     currency,

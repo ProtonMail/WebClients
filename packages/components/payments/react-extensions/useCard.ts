@@ -57,6 +57,11 @@ export type CardProcessorHook = PaymentProcessorHook & {
     submitted: boolean;
 };
 
+/**
+ * React wrapper for {@link CardPaymentProcessor}. It provides a set of proxies and also some additional functionality
+ * like `processPaymentToken` method that supposed to be the main action. It also provides some data usefull for
+ * the credit card component.
+ */
 export const useCard = (
     { amountAndCurrency, initialCard, verifyOnly, onChargeable }: Props,
     { api, verifyPayment }: Dependencies
