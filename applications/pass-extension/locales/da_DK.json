@@ -80,10 +80,10 @@
       "Create": [
         "Opret"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Opret en ${ BRAND_NAME }-konto"
       ],
       "Create a new vault to share": [
@@ -442,9 +442,6 @@
       "Could not resolve share members": [
         "Kunne ikke afgøre delingsmedlemmer"
       ],
-      "Could not resume your session : ${ description }": [
-        "Kunne ikke genoptage din session : ${ description }"
-      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV-fil mangler forventede overskrifter: ${ missingHeaders }"
       ],
@@ -685,9 +682,6 @@
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
       ],
-      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "${ PASS_APP_NAME } vil vise elementets favicon via ${ BRAND_NAME } anonymiseret billedproxy."
-      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } vil kun importere logins, noter og betalingskort."
       ],
@@ -736,9 +730,6 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle elementer fra \"${ payload.content.name }\" blev flyttet"
-      ],
-      "All trashed items permanently removed": [
-        "Alle elementer i papirkurven blev fjernet permanent"
       ],
       "All trashed items successfully restored": [
         "Alle elementer i papirkurven blev genoprettet"
@@ -901,9 +892,6 @@
       "Loading": [
         "Indlæser"
       ],
-      "Loading extension": [
-        "Indlæser udvidelse"
-      ],
       "Loading...": [
         "Indlæser..."
       ],
@@ -918,9 +906,6 @@
       ],
       "Multiple vaults": [
         "Flere bokse"
-      ],
-      "N/A": [
-        "Ikke tilgængelig"
       ],
       "No login found": [
         "Intet login fundet"
@@ -1029,9 +1014,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Tak, problemet er blevet rapporteret"
-      ],
-      "The autofill dropdown will automatically open on field focus.": [
-        "Autogem-dropdown vil automatisk åbne, når feltet er i fokus."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Følgende ${ result.ignored.length } element kunne ikke importeres:",
@@ -1165,9 +1147,6 @@
       "15 minutes": [
         "15 minutter"
       ],
-      "2FA secret (TOTP)": [
-        "2FA hemmelighed (TOTP)"
-      ],
       "2FA token (TOTP)": [
         "2FA token (TOTP)"
       ],
@@ -1215,9 +1194,6 @@
       ],
       "Autofill 2FA": [
         "Autofyld 2FA"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "Åbn automatisk autofyld, når der fokuseres på login-felter"
       ],
       "Autosave": [
         "Gem automatisk"
@@ -1554,9 +1530,6 @@
       "Hyphens": [
         "Bindestreger"
       ],
-      "Memorable Password": [
-        "Huskværdig adgangskode"
-      ],
       "Numbers": [
         "Tal"
       ],
@@ -1577,9 +1550,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "Tilføj 2FA-hemmelighed"
-      ],
       "Add hidden text": [
         "Tilføj skjult tekst"
       ],
@@ -1866,9 +1836,6 @@
       "Please enter a valid email address": [
         "Angiv venligst en gyldig e-mailadresse"
       ],
-      "Please log back in": [
-        "Log venligst ind igen"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Bekræft din e-mailadresse for at bruge e-mail-aliasser."
       ],
@@ -1925,9 +1892,6 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du vil ikke længere have adgang til denne boks. Hvis du vil være med igen, skal du have en ny invitation."
-      ],
-      "Your session was locked due to inactivity": [
-        "Din session blev låst grundet inaktivitet"
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."

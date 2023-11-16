@@ -335,9 +335,6 @@
       "Could not resolve share members": [
         "Не удалось сопоставить членов общего доступа"
       ],
-      "Could not resume your session : ${ description }": [
-        "Не удалось возобновить вашу сессию: ${ description }"
-      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "В файле CSV отсутствуют ожидаемые заголовки: ${ missingHeaders }"
       ],
@@ -628,9 +625,6 @@
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Все элементы из \"${ payload.content.name }\" успешно удалены"
       ],
-      "All trashed items permanently removed": [
-        "Все элементы из корзины окончательно удалены"
-      ],
       "All trashed items successfully restored": [
         "Все элементы из корзины успешно восстановлены"
       ],
@@ -760,9 +754,6 @@
       "Loading": [
         "Загрузка"
       ],
-      "Loading extension": [
-        "Загрузка расширения"
-      ],
       "Loading...": [
         "Загрузка..."
       ],
@@ -777,9 +768,6 @@
       ],
       "Multiple vaults": [
         "Несколько хранилищ"
-      ],
-      "N/A": [
-        "Н/Д"
       ],
       "None": [
         "Ничего"
@@ -972,9 +960,6 @@
       "15 minutes": [
         "15 минут"
       ],
-      "2FA secret (TOTP)": [
-        "Секрет 2ФА (TOTP)"
-      ],
       "2FA token (TOTP)": [
         "Токен 2ФА (TOTP)"
       ],
@@ -1022,9 +1007,6 @@
       ],
       "Autofill 2FA": [
         "Автозаполнение 2ФА"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "Автоматически открывать автозаполнение при установке курсора на поля входа"
       ],
       "Autosave": [
         "Автосохранение"
@@ -1340,9 +1322,6 @@
       "Hyphens": [
         "Дефисы"
       ],
-      "Memorable Password": [
-        "Запоминающийся пароль"
-      ],
       "Numbers": [
         "Цифры"
       ],
@@ -1363,9 +1342,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "Добавить секрет 2FA"
-      ],
       "Add hidden text": [
         "Добавить скрытый текст"
       ],
@@ -1572,9 +1548,6 @@
       "Please enter a valid email address": [
         "Пожалуйста, введите действительный адрес эл. почты"
       ],
-      "Please log back in": [
-        "Пожалуйста, войдите обратно"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Отчеты отправляются без сквозного шифрования. Пожалуйста, не указывайте никакой конфиденциальной информации."
       ],
@@ -1604,9 +1577,6 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "У вас больше не будет доступа к этому хранилищу. Чтобы присоединиться снова, вам понадобится новое приглашение."
-      ],
-      "Your session was locked due to inactivity": [
-        "Ваша сессия заблокирована из-за отсутствия активности"
       ]
     }
   }
