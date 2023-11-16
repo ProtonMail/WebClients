@@ -33,3 +33,8 @@ export type ItemNewViewProps<T extends ItemType = ItemType> = {
     onCancel: () => void;
     onSubmit: (item: ItemCreateIntent<T>) => void;
 };
+
+export type ItemRouteParams = {
+    shareId: string;
+    itemId: string;
+};
