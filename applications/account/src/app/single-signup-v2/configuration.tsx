@@ -27,7 +27,11 @@ import bundleVpnPass from './bundle-vpn-pass.svg';
 import bundle from './bundle.svg';
 import { getCustomPassFeatures } from './pass/configuration';
 
-export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNServersCountData) => {
+export const getSummaryPlan = (
+    plan: Plan | undefined,
+    vpnServersCountData: VPNServersCountData,
+    isSentinelPassplusEnabled: boolean
+) => {
     const iconSize = 24;
 
     if (plan && plan?.Name === PLANS.VPN) {
@@ -46,7 +50,7 @@ export const getSummaryPlan = (plan: Plan | undefined, vpnServersCountData: VPNS
             logo: <PassLogo variant="glyph-only" size={iconSize} />,
             ...shortPlan,
             plan,
-            features: getCustomPassFeatures(),
+            features: getCustomPassFeatures(isSentinelPassplusEnabled),
         };
     }
 
