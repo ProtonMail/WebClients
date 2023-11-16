@@ -18,7 +18,7 @@ import { Challenge, ChallengeError, ChallengeRef, ChallengeResult } from '../cha
 import useKTActivation from '../keyTransparency/useKTActivation';
 import AbuseModal from './AbuseModal';
 import { AuthActionResponse, AuthCacheResult, AuthStep } from './interface';
-import { handleLogin, handleTotp, handleUnlock } from './loginActions';
+import { handleLogin, handleNextLogin, handleTotp, handleUnlock } from './loginActions';
 
 const UnlockForm = ({
     onSubmit,
@@ -330,12 +330,20 @@ const MinimalLoginContainer = ({ onLogin, hasChallenge = false, ignoreUnlock = f
                     onSubmit={async (username, password, payload) => {
                         try {
                             await startUnAuthFlow();
-                            const result = await handleLogin({
+                            const loginResult = await handleLogin({
+                                username,
+                                persistent: false,
+                                payload,
+                                password,
+                                api: silentApi,
+                            });
+                            const result = await handleNextLogin({
+                                authResponse: loginResult.authResult.result,
+                                authVersion: loginResult.authResult.authVersion,
                                 appName: APP_NAME,
                                 toApp: APP_NAME,
                                 username,
                                 password,
-                                payload,
                                 api: silentApi,
                                 ignoreUnlock,
                                 hasTrustedDeviceRecovery: false,

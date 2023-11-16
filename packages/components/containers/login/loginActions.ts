@@ -8,13 +8,14 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 import { getKeySalts } from '@proton/shared/lib/api/keys';
 import { getSettings, upgradePassword } from '@proton/shared/lib/api/settings';
 import { getUser } from '@proton/shared/lib/api/user';
-import { Fido2Data, InfoResponse, SSOInfoResponse } from '@proton/shared/lib/authentication/interface';
+import { AuthResponse, AuthVersion, Fido2Data, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import loginWithFallback from '@proton/shared/lib/authentication/loginWithFallback';
 import { maybeResumeSessionByUser, persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
 import { HTTP_ERROR_CODES } from '@proton/shared/lib/errors';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { getHostname } from '@proton/shared/lib/helpers/url';
 import {
     Api,
     KeyTransparencyActivation,
@@ -417,16 +418,43 @@ export const handleTotp = async ({
 export const handleLogin = async ({
     username,
     password,
+    payload,
+    persistent,
+    api,
+}: {
+    username: string;
+    password: string;
+    payload: ChallengeResult;
+    persistent: boolean;
+    api: Api;
+}) => {
+    const infoResult = await api<InfoResponse>(getInfo(username));
+    const authResult = await loginWithFallback({
+        api,
+        credentials: { username, password },
+        initialAuthInfo: infoResult,
+        payload,
+        persistent,
+    });
+    return { infoResult, authResult };
+};
+
+export const handleNextLogin = async ({
+    authResponse,
+    authVersion,
+    username,
+    password,
     persistent,
     api,
     ignoreUnlock,
     hasTrustedDeviceRecovery,
     appName,
     toApp,
-    payload,
     setupVPN,
     ktActivation,
 }: {
+    authVersion: AuthVersion;
+    authResponse: AuthResponse;
     username: string;
     password: string;
     persistent: boolean;
@@ -435,19 +463,9 @@ export const handleLogin = async ({
     hasTrustedDeviceRecovery: boolean;
     appName: APP_NAMES;
     toApp: APP_NAMES | undefined;
-    payload?: ChallengeResult;
     setupVPN: boolean;
     ktActivation: KeyTransparencyActivation;
 }): Promise<AuthActionResponse> => {
-    const infoResult = await api<InfoResponse>(getInfo(username));
-    const { authVersion, result: authResponse } = await loginWithFallback({
-        api,
-        credentials: { username, password },
-        initialAuthInfo: infoResult,
-        payload,
-        persistent,
-    });
-
     const cache: AuthCacheResult = {
         authResponse,
         authVersion,
@@ -465,14 +483,82 @@ export const handleLogin = async ({
         preAuthKTVerifier: createPreAuthKTVerifier(ktActivation, api),
         keyMigrationKTVerifier: createKeyMigrationKTVerifier(ktActivation, api),
     };
-
     return next({ cache, from: AuthStep.LOGIN });
 };
 
-export const handleExternalSSOLogin = async ({ api, username }: { api: Api; username: string }) => {
-    const info = await api<SSOInfoResponse>(getInfo(username, 'SSO'));
-    if (!info.SSOChallengeToken) {
+export const handleExternalSSOLogin = ({ token, signal }: { token: string; signal: AbortSignal }) => {
+    if (!token) {
         throw new Error('Unexpected response');
     }
-    document.location.assign(`${window.location.origin}/api/auth/sso/${info.SSOChallengeToken}`);
+
+    const url = `${window.location.origin}/api/auth/sso/${token}`;
+
+    const handleMessage = (event: MessageEvent) => {
+        if (event.data.action === 'sso' && event.data.payload) {
+            const uid: string = event.data.payload.uid;
+            const token: string = event.data.payload.token;
+            return {
+                action: 'resolve' as const,
+                payload: { uid, token },
+            };
+        } else {
+            return {
+                action: 'reject' as const,
+                payload: new Error('Unknown message'),
+            };
+        }
+    };
+
+    const tab = window.open(url);
+
+    if (!tab) {
+        throw new Error('Unable to open tab');
+    }
+
+    return new Promise<{ uid: string; token: string }>((resolve, reject) => {
+        let handle: ReturnType<typeof setInterval> | undefined = undefined;
+        let reset: () => void;
+
+        const assertOpen = () => {
+            if (!tab || tab.closed) {
+                reset();
+                reject(new Error('Process closed'));
+            }
+        };
+
+        function onMessage(event: MessageEvent) {
+            if (event.source !== tab && getHostname(event.origin) !== window.location.origin) {
+                return;
+            }
+
+            const result = handleMessage(event);
+            if (result) {
+                if (result.action === 'resolve') {
+                    resolve(result.payload);
+                } else if (result.action === 'reject') {
+                    reject(result.payload);
+                }
+                reset();
+                tab?.close?.();
+            }
+        }
+
+        function abort() {
+            reset();
+            tab?.close?.();
+            reject(new Error('Process aborted'));
+        }
+
+        reset = () => {
+            clearInterval(handle);
+            signal.removeEventListener('abort', abort);
+            window.removeEventListener('message', onMessage, false);
+        };
+
+        signal.addEventListener('abort', abort);
+        window.addEventListener('message', onMessage, false);
+        handle = setInterval(() => {
+            assertOpen();
+        }, 5000);
+    });
 };
