@@ -13,14 +13,12 @@ import {
     useFeature,
     useIsInboxElectronApp,
 } from '@proton/components';
-import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import ElectronBlockedContainer from '@proton/components/containers/app/ElectronBlockedContainer';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
-import { AuthActionResponse, AuthCacheResult, AuthStep } from '@proton/components/containers/login/interface';
+import { AuthActionResponse, AuthCacheResult, AuthStep, AuthType } from '@proton/components/containers/login/interface';
 import {
-    handleExternalSSOLogin,
     handleFido2,
-    handleLogin,
+    handleNextLogin,
     handleSetupPassword,
     handleTotp,
     handleUnlock,
@@ -30,7 +28,6 @@ import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelpe
 import { getIsVPNApp } from '@proton/shared/lib/authentication/apps';
 import { APPS, APP_NAMES, BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import noop from '@proton/utils/noop';
 
 import type { Paths } from '../content/helper';
 import Content from '../public/Content';
@@ -94,9 +91,9 @@ const LoginContainer = ({
     render = defaultRender,
     testflight,
 }: Props) => {
-    const { state } = useLocation<{ username?: string } | undefined>();
+    const { state } = useLocation<{ username?: string; authType?: AuthType; externalSSOToken?: string } | undefined>();
     const { APP_NAME } = useConfig();
-    const [authType, setAuthType] = useState<'srp' | 'external-sso'>('srp');
+    const [authType, setAuthType] = useState<AuthType>(state?.authType || AuthType.SRP);
     const { isElectronDisabled } = useIsInboxElectronApp();
 
     useMetaTags(metaTags);
@@ -122,17 +119,6 @@ const LoginContainer = ({
     const [step, setStep] = useState(AuthStep.LOGIN);
 
     const createFlow = useFlowRef();
-
-    useEffect(() => {
-        if (step === AuthStep.LOGIN) {
-            // This handles the case for:
-            // 1) Being on the unlock/2fa screen and hitting the back button
-            // 2) Being on the unlock/2fa screen and hitting the browser back button e.g. ending up on signup and then
-            // going back here
-            // And preemptively starting it before user interaction
-            startUnAuthFlow().catch(noop);
-        }
-    }, [step]);
 
     useEffect(() => {
         // Preparing login improvements
@@ -187,7 +173,7 @@ const LoginContainer = ({
             };
         }
         const continueTo = toAppName ? c('Info').t`to continue to ${toAppName}` : '';
-        if (authType === 'external-sso') {
+        if (authType === AuthType.ExternalSSO) {
             return {
                 title: c('Title').t`Sign in to your organization`,
                 subTitle: continueTo,
@@ -227,8 +213,10 @@ const LoginContainer = ({
                                     </>
                                 ) : null}
                                 <LoginForm
+                                    api={silentApi}
                                     modal={modal}
                                     externalSSO={APP_NAME === APPS.PROTONACCOUNT && getIsVPNApp(toApp)}
+                                    externalSSOToken={state?.externalSSOToken}
                                     signInText={showContinueTo ? `Continue to ${toAppName}` : undefined}
                                     paths={paths}
                                     defaultUsername={previousUsernameRef.current}
@@ -238,29 +226,25 @@ const LoginContainer = ({
                                     onChangeAuthType={(authType) => {
                                         setAuthType(authType);
                                     }}
-                                    onSubmit={async ({ username, password, payload, persistent }) => {
+                                    onSubmit={async (data) => {
                                         try {
-                                            await startUnAuthFlow();
-                                            if (authType === 'external-sso') {
-                                                await handleExternalSSOLogin({ api: silentApi, username });
-                                            } else {
-                                                const validateFlow = createFlow();
-                                                const result = await handleLogin({
-                                                    username,
-                                                    password,
-                                                    persistent,
-                                                    api: silentApi,
-                                                    hasTrustedDeviceRecovery,
-                                                    appName: APP_NAME,
-                                                    toApp,
-                                                    ignoreUnlock: false,
-                                                    payload,
-                                                    setupVPN,
-                                                    ktActivation,
-                                                });
-                                                if (validateFlow()) {
-                                                    return await handleResult(result);
-                                                }
+                                            const validateFlow = createFlow();
+                                            const result = await handleNextLogin({
+                                                api: silentApi,
+                                                hasTrustedDeviceRecovery,
+                                                appName: APP_NAME,
+                                                toApp,
+                                                ignoreUnlock: false,
+                                                setupVPN,
+                                                ktActivation,
+                                                username: data.username,
+                                                password: data.password,
+                                                persistent: data.persistent,
+                                                authResponse: data.authResponse,
+                                                authVersion: data.authVersion,
+                                            });
+                                            if (validateFlow()) {
+                                                return await handleResult(result);
                                             }
                                         } catch (e) {
                                             handleError(e);
