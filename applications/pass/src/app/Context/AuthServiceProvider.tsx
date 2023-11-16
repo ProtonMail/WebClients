@@ -1,4 +1,4 @@
-import { type FC, createContext, useContext, useEffect, useMemo } from 'react';
+import { type FC, createContext, useContext, useEffect, useMemo, useRef } from 'react';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { useNotifications } from '@proton/components/hooks';
@@ -6,7 +6,11 @@ import { type AuthService, createAuthService } from '@proton/pass/lib/auth/servi
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
-import { getBasename, getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
+import {
+    getBasename,
+    getLocalIDFromPathname,
+    stripLocalBasenameFromPathname,
+} from '@proton/shared/lib/authentication/pathnameHelper';
 import { getConsumeForkParameters, removeHashParameters } from '@proton/shared/lib/authentication/sessionForking';
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -42,6 +46,9 @@ export const AuthServiceProvider: FC = ({ children }) => {
     const history = useHistory();
     const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
 
+    const redirectPath = useRef(stripLocalBasenameFromPathname(location.pathname));
+    const setRedirectPath = (redirect: string) => (redirectPath.current = redirect);
+
     const { createNotification } = useNotifications();
 
     const authService = useMemo(() => {
@@ -71,13 +78,15 @@ export const AuthServiceProvider: FC = ({ children }) => {
                     : auth.resumeSession(initialLocalID, { forceLock: true });
             },
 
-            onAuthorize: () => client.setStatus(AppStatus.AUTHORIZING),
+            onAuthorize: () => {
+                client.setStatus(AppStatus.AUTHORIZING);
+            },
 
             onAuthorized: (localID) => {
                 /* on successful login redirect the user to the localID base
                  * path. FIXME: redirect to the previous URL stored in the
                  * local `f${state}` */
-                history.replace(getBasename(localID) ?? '/');
+                history.replace((getBasename(localID) ?? '/') + redirectPath.current);
                 client.setStatus(AppStatus.AUTHORIZED);
             },
 
@@ -88,14 +97,22 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 history.replace('/');
             },
 
-            onForkConsumed: () => removeHashParameters(),
+            onForkConsumed: (_, state) => {
+                removeHashParameters();
+                try {
+                    const data = JSON.parse(sessionStorage.getItem(getStateKey(state))!);
+                    if ('url' in data && typeof data.url === 'string') setRedirectPath(data.url);
+                } catch {
+                    setRedirectPath('/');
+                }
+            },
 
             onForkInvalid: () => {
                 history.replace('/');
             },
 
             onForkRequest: ({ url, state }) => {
-                sessionStorage.setItem(getStateKey(state), JSON.stringify({}));
+                sessionStorage.setItem(getStateKey(state), JSON.stringify({ url: redirectPath.current }));
                 window.location.replace(url);
             },
 
