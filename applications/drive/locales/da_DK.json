@@ -631,6 +631,9 @@
       "Skip verification": [
         "Spring e-mail-verifikation over"
       ],
+      "Start": [
+        "Start"
+      ],
       "Start import": [
         "Start importering"
       ],
@@ -2650,6 +2653,12 @@
         "(ingen titel)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } mislykkedes",
+        "${ countOfFailedLinks } mislykkedes"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB samlet lagerplads"
@@ -3353,6 +3362,9 @@
       "An active recovery file": [
         "En aktiv gendannelsesfil"
       ],
+      "An issue occurred during the restore process.": [
+        "Et problem opstod under genoprettelsesprocessen."
+      ],
       "and": [
         "og"
       ],
@@ -3871,6 +3883,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME sender automatisk beskeden ved hjælp af den aktuelle komponisttilstand."
       ],
+      "Photos have been successfully recovered.": [
+        "Billederne er genoprettet uden komplikationer."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Indtast venligst kodeordet for, at dekryptere og se indholdet."
       ],
@@ -3962,8 +3977,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "Gendannelsen er i gang. Dette kan tage nogle sekunder."
       ],
+      "Restore Photos": [
+        "Genopretter billeder"
+      ],
       "Restored files ${ formattedDate }": [
         "Gendannede filer ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Genopretter billeder... Venligst hold fanen åben."
       ],
       "Search cannot be enabled in this browser": [
         "Søgning kan ikke aktiveres i denne browser"
@@ -4775,9 +4796,6 @@
       ],
       "Replace existing folder": [
         "Erstat eksisterende mappe"
-      ],
-      "Report": [
-        "Anmeld"
       ],
       "Reveal password": [
         "Vis adgangskode"
@@ -5969,6 +5987,10 @@
         "${ countMergeableContacts } kontakt ser identisk ud.",
         "${ countMergeableContacts } kontakter ser identiske ud."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } tilbage",
+        "${ countOfUnrecoveredLinksLeft } tilbage"
+      ],
       "Address copied to clipboard": [
         "Adresse kopieret til udklipsholder"
       ],
@@ -6339,13 +6361,7 @@
       "File recovery process": [
         "Filgendannelse fremskridt"
       ],
-      "Files details": [
-        "Filens detaljer"
-      ],
       "Folder details": [
-        "Mappedetaljer"
-      ],
-      "Folders details": [
         "Mappedetaljer"
       ],
       "Found ${ searchView.numberOfResults } result": [
@@ -6418,12 +6434,6 @@
       ],
       "Notes": [
         "Noter"
-      ],
-      "Number of files": [
-        "Antal filer"
-      ],
-      "Number of folders": [
-        "Antal mapper"
       ],
       "Number of items": [
         "Antal elementer"

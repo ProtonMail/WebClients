@@ -554,6 +554,9 @@
       "label emails as": [
         "märk e-postmeddelanden som"
       ],
+      "Later this week": [
+        "Senare denna vecka"
+      ],
       "Learn more": [
         "Lär dig mer"
       ],
@@ -577,6 +580,9 @@
       ],
       "Manage labels": [
         "Hantera etiketter"
+      ],
+      "Manage Snooze": [
+        "Hantera snooze"
       ],
       "Mark as read": [
         "Markera som läst"
@@ -703,6 +709,9 @@
       ],
       "Next page": [
         "Nästa sida"
+      ],
+      "Next week": [
+        "Nästa vecka"
       ],
       "No": [
         "Nej"
@@ -896,6 +905,9 @@
       "Select all messages": [
         "Markera alla meddelanden"
       ],
+      "Select date and time": [
+        "Välj datum och tid"
+      ],
       "Self-destruct in 7 days": [
         "Självförstör om 7 dagar"
       ],
@@ -1001,6 +1013,9 @@
       "Skip verification": [
         "Hoppa över verifiering"
       ],
+      "Snooze": [
+        "Snooza"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Några bilder kunde inte laddas med spårningsskydd."
       ],
@@ -1082,6 +1097,9 @@
       ],
       "Unordered list": [
         "Osorterad lista"
+      ],
+      "Unsnooze": [
+        "Stäng av snooze"
       ],
       "Unstar": [
         "Ta bort stjärnmärkning"
@@ -3838,6 +3856,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "App är för närvarande inte tillgänglig"
+      ],
       "Error: ${ errorMessage }": [
         "Fel: ${ errorMessage }"
       ],
@@ -3850,11 +3871,17 @@
       "Oops, something went wrong": [
         "Hoppsan, något gick fel"
       ],
+      "Open in browser": [
+        "Öppna i webbläsare"
+      ],
       "Please refresh the page or try again later.": [
         "Uppdatera sidan eller försök igen senare."
       ],
       "Something went wrong": [
         "Något gick fel"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Byt till webbversionen för att använda ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din Internetanslutning."
@@ -5349,8 +5376,8 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerar din data från ${ importedEmailAddress } till ${ toEmail }."
       ],
-      "Include Spam/Trash in your search results.": [
-        "Inkludera skräppost/papperskorg i dina sökresultat."
+      "Include Spam/Trash.": [
+        "Inkludera skräppost/papperskorg."
       ],
       "Inherited from parent folder": [
         "Ärvd från överordnad mapp"
@@ -5635,6 +5662,9 @@
       "Right-click for options": [
         "Högerklicka för alternativ"
       ],
+      "Sat, ${ formatTime }": [
+        "Lör. ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "Sparad den ${ dateString }"
       ],
@@ -5712,6 +5742,15 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin tillhandahåller ett enkelt sätt att skapa inloggningar på opålitliga tredjepartswebbplatser där du inte vill avslöja din faktiska e-postadress."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Snoozad till ${ dateString } kl. ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Snoozad till idag, ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Snoozad till imorgon, ${ formattedTime }"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Detta meddelande finns inte eller har redan löpt ut."
@@ -5814,6 +5853,9 @@
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Detta e-postmeddelande har misslyckats med domänens autentiseringskrav. Det kan vara förfalskat eller felaktigt vidarebefordrat."
       ],
+      "This file is too large to preview": [
+        "Denna fil är för stor för att förhandsgranska"
+      ],
       "This invitation is saved in a disabled calendar.": [
         "Denna inbjudan är sparad i en inaktiverad kalender."
       ],
@@ -5908,6 +5950,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "För att använda adressverifiering måste du lita på en eller flera tillgängliga offentliga nycklar, inklusive den du vill använda för att skicka. Detta förhindrar krypteringsnycklarna att förfalskas."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Imorgon, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Många meddelanden väntar på att skickas. Vänta tills ett annat meddelande har skickats för att schemalägga detta."
       ],
@@ -5952,6 +5997,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Uppgradera till ${ MAIL_APP_NAME } Plus för att låsa upp"
       ],
       "Upgrade to add more addresses to your account.": [
         "Uppgradera för att lägga till fler adresser till ditt konto."
@@ -7116,6 +7164,12 @@
       "Sign up for free": [
         "Registrera gratis"
       ],
+      "Snooze": [
+        "Snooza"
+      ],
+      "Snoozed": [
+        "Snoozad"
+      ],
       "Spam": [
         "Skräppost"
       ],
@@ -7218,17 +7272,8 @@
       "Archive": [
         "Arkiv"
       ],
-      "Drafts": [
-        "Utkast"
-      ],
       "Inbox": [
         "Inkorg"
-      ],
-      "Scheduled": [
-        "Schemalagd"
-      ],
-      "Sent": [
-        "Skickat"
       ],
       "Spam": [
         "Skräppost"
@@ -7461,6 +7506,9 @@
       ],
       "Custom email domains": [
         "Anpassade e-postdomäner"
+      ],
+      "Custom snooze time": [
+        "Anpassad tid för snooza"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-alias"
@@ -8209,6 +8257,11 @@
       ],
       "Sign": [
         "Signera"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Snooza meddelande"
       ]
     },
     "Sort option": {
@@ -9213,6 +9266,9 @@
       "Moving a scheduled message": [
         "Flyttar ett schemalagt meddelande"
       ],
+      "Moving a snoozed message": [
+        "Flyttar ett snoozat meddelande"
+      ],
       "New message": [
         "Nytt meddelande"
       ],
@@ -9354,6 +9410,12 @@
       "Sign out": [
         "Logga ut"
       ],
+      "Snooze": [
+        "Snooza"
+      ],
+      "Snooze message": [
+        "Snooza meddelande"
+      ],
       "Sort conversations": [
         "Sortera konversationer"
       ],
@@ -9399,6 +9461,9 @@
       ],
       "Verification error": [
         "Verifieringsfel"
+      ],
+      "Want to snooze any time?": [
+        "Vill du snooza valfri tid?"
       ],
       "Warning": [
         "Varning"
@@ -9616,6 +9681,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis provperiod slutar den ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Mån. ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Lör. ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Sön. ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

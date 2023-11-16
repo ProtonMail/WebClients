@@ -44,6 +44,9 @@
       "Authenticate": [
         "Autentikasi"
       ],
+      "Authenticating": [
+        "Mengautentikasi"
+      ],
       "Back": [
         "Kembali"
       ],
@@ -2124,17 +2127,26 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Aplikasi saat ini tidak tersedia"
+      ],
       "Error: ${ errorMessage }": [
         "Kesalahan: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Aduh, ada yang tidak beres"
       ],
+      "Open in browser": [
+        "Buka di browser"
+      ],
       "Please refresh the page or try again later.": [
         "Silakan muat ulang laman atau coba lagi nanti."
       ],
       "Something went wrong": [
         "Terdapat suatu kesalahan"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Untuk menggunakan ${ MAIL_APP_NAME } atau ${ CALENDAR_APP_NAME }, beralihlah ke versi web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Kami tidak dapat memuat laman ini. Silakan muat ulang laman atau periksa koneksi internet Anda."

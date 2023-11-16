@@ -229,6 +229,9 @@
       "Continue with Google": [
         "Продолжить с Google"
       ],
+      "Continue with Outlook": [
+        "Продолжить с Outlook"
+      ],
       "Contract composer": [
         "Сжать редактор писем"
       ],
@@ -430,6 +433,9 @@
       "Get verification code": [
         "Получить проверочный код"
       ],
+      "Go to first page": [
+        "Перейти на первую страницу"
+      ],
       "Go to label": [
         "Перейти к ярлыку"
       ],
@@ -504,6 +510,12 @@
       ],
       "Import from .csv or vCard": [
         "Импорт из .csv или vCard"
+      ],
+      "Import from Google": [
+        "Импортировать из Google"
+      ],
+      "Import from Outlook": [
+        "Импортировать из Outlook"
       ],
       "In the morning": [
         "Утром"
@@ -693,6 +705,9 @@
       ],
       "Next page": [
         "Следующая страница"
+      ],
+      "Next week": [
+        "Следующая неделя"
       ],
       "No": [
         "Нет"
@@ -3967,6 +3982,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Платная версия ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Платные версии ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Платная версия ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "До 6 пользователей"
       ]
@@ -5449,9 +5473,6 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Импорт ваших данных из ${ importedEmailAddress } в ${ toEmail }."
-      ],
-      "Include Spam/Trash in your search results.": [
-        "Включите спам и корзину в результаты поиска."
       ],
       "Inherited from parent folder": [
         "Унаследовано от родительской папки"
@@ -7349,17 +7370,8 @@
       "Archive": [
         "Архив"
       ],
-      "Drafts": [
-        "Черновики"
-      ],
       "Inbox": [
         "Входящие"
-      ],
-      "Scheduled": [
-        "Запланированные"
-      ],
-      "Sent": [
-        "Отправленные"
       ],
       "Spam": [
         "Спам"
@@ -7654,6 +7666,9 @@
       ],
       "Contact group updated": [
         "Группа контактов обновлена"
+      ],
+      "Link copied to clipboard": [
+        "Ссылка скопирована в буфер обмена"
       ],
       "Password has been set successfully": [
         "Пароль был успешно установлен"
@@ -8171,6 +8186,11 @@
         "Сбросить пароль"
       ]
     },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
+      ]
+    },
     "session_recovery:available:info": {
       "${ timeRemaining.inDays } day": [
         "${ timeRemaining.inDays } день",
@@ -8381,6 +8401,12 @@
       ],
       "Highest VPN speed": [
         "Высочайшая скорость VPN"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Платные версии ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Платная версия ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Ранний доступ"
@@ -8873,6 +8899,14 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Отзыв отправлен"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Платная версия ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Платные версии ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {

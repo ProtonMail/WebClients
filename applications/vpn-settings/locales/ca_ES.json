@@ -3260,6 +3260,9 @@
       "Scan this code with your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Escaneja aquest codi Qr amb el teu disposiu d'autenticació en dos passos per a configurar el vostre compte. ${ switchButton }."
       ],
+      "Secure your ${ BRAND_NAME } Account": [
+        "Protegiu el vostre compte de ${ BRAND_NAME }"
+      ],
       "Securing your account": [
         "S'està protegint el compte"
       ],
@@ -3542,6 +3545,9 @@
       ],
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Us redireccionarem a PayPal en una pestanya nova del navegador per completar aquesta transacció. Si utilitzeu bloquejadors emergents, inhabiliteu-los per continuar."
+      ],
+      "We'll get back to you shortly.": [
+        "Ens posarem en contacte amb vostè tan aviat com puguem."
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviarem un codi de verificació nou a ${ strong }"
@@ -4602,6 +4608,9 @@
       "Centralized billing": [
         "Facturació centralitzada"
       ],
+      "Centralized settings and billings": [
+        "Preferències i facturació centralitzades"
+      ],
       "Contact groups": [
         "Grups de contactes"
       ],
@@ -4755,6 +4764,9 @@
       "Split tunneling (Android and Windows)": [
         "Tunelització dividida (Android i Windows)"
       ],
+      "Start protecting your organization": [
+        "Comenceu a protegir la vostra organització"
+      ],
       "Start protecting yourself online in 2 easy steps": [
         "Comenceu a protegir-vos en línia en 2 passos senzills"
       ],
@@ -4817,6 +4829,10 @@
       ],
       "User session management": [
         "Gestió de sessions d'usuari"
+      ],
+      "Vault sharing (up to ${ n } person)": [
+        "Compartició de la caixa forta (fins a ${ n } persona)",
+        "Compartició de la caixa forta (fins a ${ n } persones)"
       ]
     },
     "new_plans: feature info": {
@@ -6783,6 +6799,9 @@
       ],
       "Sign in": [
         "Inicia la sessió"
+      ],
+      "Sign in to join the Beta program": [
+        "Inicieu la sessió per unir-vos al programa Beta"
       ],
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"

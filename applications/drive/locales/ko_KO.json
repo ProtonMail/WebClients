@@ -505,6 +505,9 @@
       "Report a problem": [
         "문제 신고"
       ],
+      "Report an issue": [
+        "문제 보고하기"
+      ],
       "Request a feature": [
         "기능 요청"
       ],
@@ -627,6 +630,9 @@
       ],
       "Skip verification": [
         "인증 건너뛰기"
+      ],
+      "Start": [
+        "시작"
       ],
       "Start import": [
         "가져오기 시작"
@@ -2633,6 +2639,11 @@
         "(제목 없음)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks }개 실패"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "총 3TB 저장공간"
@@ -3291,6 +3302,9 @@
       "An active recovery file": [
         "활성 복구 파일"
       ],
+      "An issue occurred during the restore process.": [
+        "복구 절차 중 오류 발생."
+      ],
       "and": [
         "그리고"
       ],
@@ -3804,6 +3818,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME이 현재 작성 모드를 사용하여 자동으로 메시지를 보냅니다."
       ],
+      "Photos have been successfully recovered.": [
+        "사진이 성공적으로 복구되었습니다."
+      ],
       "Please enter the password to decrypt and view content.": [
         "복호화하고 내용을 보려면 비밀번호를 입력하세요."
       ],
@@ -3894,8 +3911,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "복구 진행 중... 시간이 걸립니다."
       ],
+      "Restore Photos": [
+        "사진 복구"
+      ],
       "Restored files ${ formattedDate }": [
         "복구된 파일 ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "사진 복구 중... 탭을 계속 열어 두세요."
       ],
       "Search cannot be enabled in this browser": [
         "이 브라우저에서 검색을 활성화할 수 없습니다"
@@ -3995,6 +4018,9 @@
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "다음은 변조되었을 수 있습니다: ${ items }. 신뢰할 수 있는 경우에만 여십시오."
+      ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "이 주소의 주인이 종단 간 암호화를 비활성화 시켰습니다. 따라서 이 주소로 암호화된 이메일을 보내려면, 해당 주소 주인이 종단 간 암호화 재활성화를 해야합니다."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "아직 이동이 필요한 파일이 있습니다. 이동 관리자를 닫으면 모든 작업이 종료됩니다."
@@ -4699,9 +4725,6 @@
       ],
       "Replace existing folder": [
         "기존 폴더 대체"
-      ],
-      "Report": [
-        "신고"
       ],
       "Reveal password": [
         "비밀번호 표시"
@@ -5845,6 +5868,9 @@
       "${ countMergeableContacts } contacts look identical.": [
         "${ countMergeableContacts }개 연락처가 동일한 것 같습니다."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft }개 남음"
+      ],
       "Address copied to clipboard": [
         "주소가 클립보드에 복사되었습니다"
       ],
@@ -6197,13 +6223,7 @@
       "File recovery process": [
         "파일 복구 진행도"
       ],
-      "Files details": [
-        "파일 세부 정보"
-      ],
       "Folder details": [
-        "폴더 세부 정보"
-      ],
-      "Folders details": [
         "폴더 세부 정보"
       ],
       "Found ${ searchView.numberOfResults } results": [
@@ -6274,12 +6294,6 @@
       ],
       "Notes": [
         "메모"
-      ],
-      "Number of files": [
-        "파일 수"
-      ],
-      "Number of folders": [
-        "폴더 수"
       ],
       "Number of items": [
         "항목 수"

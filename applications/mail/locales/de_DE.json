@@ -704,6 +704,9 @@
       "Next page": [
         "Nächste Seite"
       ],
+      "Next week": [
+        "Nächste Woche"
+      ],
       "No": [
         "Nein"
       ],
@@ -3838,6 +3841,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Die App ist derzeit nicht verfügbar."
+      ],
       "Error: ${ errorMessage }": [
         "Fehler: ${ errorMessage }"
       ],
@@ -3850,11 +3856,17 @@
       "Oops, something went wrong": [
         "Es ist ein Problem aufgetreten"
       ],
+      "Open in browser": [
+        "Im Browser öffnen"
+      ],
       "Please refresh the page or try again later.": [
         "Aktualisiere die Seite oder versuche es später erneut."
       ],
       "Something went wrong": [
         "Etwas ist schief gelaufen."
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Bitte wechsle zur Webversion, um ${ MAIL_APP_NAME } oder ${ CALENDAR_APP_NAME } zu verwenden."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Diese Seite konnte nicht geladen werden. Bitte aktualisiere die Seite oder überprüfe deine Internetverbindung."
@@ -5349,8 +5361,8 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Deine Daten werden von ${ importedEmailAddress } nach ${ toEmail } importiert."
       ],
-      "Include Spam/Trash in your search results.": [
-        "Spam/Papierkorb in die Suche einbeziehen."
+      "Include Spam/Trash.": [
+        "Spam/Papierkorb einschließen."
       ],
       "Inherited from parent folder": [
         "Von übergeordnetem Ordner übernommen"
@@ -7218,17 +7230,8 @@
       "Archive": [
         "Archivieren"
       ],
-      "Drafts": [
-        "Entwürfe"
-      ],
       "Inbox": [
         "Posteingang"
-      ],
-      "Scheduled": [
-        "Geplant"
-      ],
-      "Sent": [
-        "Gesendet"
       ],
       "Spam": [
         "Spam"

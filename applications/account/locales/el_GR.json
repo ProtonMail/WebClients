@@ -375,7 +375,7 @@
         "Κατέβασμα αρχείου ανάκτησης"
       ],
       "Download the Import-Export app": [
-        "Κατεβάστε την εφαρμογή Import-Export"
+        "Κατεβάστε την εφαρμογή Εισαγωγής-Εξαγωγής (Import-Export)"
       ],
       "Edit": [
         "Επεξεργασία"
@@ -462,7 +462,7 @@
         "Δημιουργία"
       ],
       "Generate key": [
-        "Δημιουργία κλειδιού"
+        "Παραγωγή κλειδιού"
       ],
       "Generate new recovery phrase": [
         "Παραγωγή νέας φράσης ανάκτησης"
@@ -741,7 +741,7 @@
         "Ζητήστε νέο κωδικό"
       ],
       "Requires a verified recovery email address": [
-        "Απαιτεί επαληθευμένη διεύθυνση ανάκτησης"
+        "Απαιτεί επαληθευμένη διεύθυνση ηλεκτρονικού ταχυδρομείου ανάκτησης"
       ],
       "Resend code": [
         "Επαναποστολή κωδικού"
@@ -834,7 +834,7 @@
         "Επιλέξτε αρχεία"
       ],
       "Select language for invitation emails": [
-        "Επιλέξτε γλώσσα για τα προσκλητήρια email"
+        "Επιλέξτε γλώσσα για τα προσκλητήρια μηνύματα ηλεκτρονικού ταχυδρομείου"
       ],
       "Select time zone": [
         "Επιλογή ζώνης ώρας"
@@ -1290,7 +1290,7 @@
     },
     "Autoresponse": {
       "I'm out of the office with limited access to my email.": [
-        "Είμαι εκτός γραφείου με περιορισμένη πρόσβαση στο email μου."
+        "Είμαι εκτός γραφείου με περιορισμένη πρόσβαση στο ηλεκτρονικό ταχυδρομείο μου."
       ]
     },
     "Badge for domain": {
@@ -3119,7 +3119,7 @@
         "Ξεκλειδώστε απεριόριστους φακέλους, ετικέτες και περισσότερες premium λειτουργίες κατά την αναβάθμιση."
       ],
       "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
-        "Εικονίδιο upsell που περιέχει λογότυπο ${ BRAND_NAME } ακολουθούμενο από ένα σύμβολο συν"
+        "Εικονίδιο μεταπώλησης που περιέχει λογότυπο ${ BRAND_NAME } ακολουθούμενο από ένα σύμβολο συν"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "Μπορείτε να συνεχίσετε να προσκαλείτε φίλους, αλλά δεν θα μπορείτε να κερδίσετε περισσότερες πιστώσεις"
@@ -3427,7 +3427,7 @@
         "Επανενεργοποιήσετε"
       ],
       "Re-send confirmation email": [
-        "Επαναποστολή email επιβεβαίωσης"
+        "Επαναποστολή μηνύματος επιβεβαίωσης"
       ],
       "Remove “${ value }”": [
         "Αφαίρεση “${ value }”"
@@ -3445,7 +3445,7 @@
         "Αποστολή email επιβεβαίωσης"
       ],
       "Set up email forwarding": [
-        "Ρύθμιση email προώθησης"
+        "Ρύθμιση προώθησης μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ]
     },
     "email_forwarding_2023: Description": {
@@ -3492,7 +3492,7 @@
     },
     "email_forwarding_2023: Info": {
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
-        "Ένα email επιβεβαίωσης θα σταλεί στο ${ boldForwardeeEmail }"
+        "Ένα μήνυμα επιβεβαίωσης θα σταλεί στο ${ boldForwardeeEmail }"
       ],
       "A new encryption key will be generated for ${ boldForwarderEmail }.": [
         "Ένα νέο κλειδί κρυπτογράφησης θα δημιουργηθεί για το ${ boldForwarderEmail }."
@@ -3559,7 +3559,7 @@
     },
     "email_forwarding_2023: Link": {
       "Learn more": [
-        "Μάθετε περισσότερα"
+        "Περισσότερες πληροφορίες"
       ]
     },
     "email_forwarding_2023: Outgoing forwarding tab name": {
@@ -3572,7 +3572,7 @@
         "Προϋπόθεση:"
       ],
       "Enter email address": [
-        "Εισάγετε την διεύθυνση email σας"
+        "Εισάγετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας"
       ],
       "Type text or keyword": [
         "Πληκτρολόγηση κειμένου ή λέξης-κλειδιού"
@@ -3614,10 +3614,10 @@
         "Έχουν αποθηκευτεί οι αλλαγές"
       ],
       "Email sent to ${ forward.ForwardeeEmail }": [
-        "Το Email στάλθηκε στο ${ forward.ForwardeeEmail }"
+        "Το Μήνυμα στάλθηκε στο ${ forward.ForwardeeEmail }"
       ],
       "Email sent to ${ model.forwardeeEmail }.": [
-        "Το Email στάλθηκε στο ${ model.forwardeeEmail }."
+        "Το Μήνυμα στάλθηκε στο ${ model.forwardeeEmail }."
       ],
       "Forwarding accepted": [
         "Η προώθηση έγινε δεκτή"
@@ -3929,7 +3929,7 @@
         "Παρακαλούμε ορίστε πρώτα ένα τηλέφωνο ανάκτησης"
       ],
       "Please set a recovery/notification email first": [
-        "Ορίστε πρώτα ένα E-mail ανάκτησης / ειδοποίησης"
+        "Παρακαλούμε ορίστε πρώτα μια διεύθυνση ηλεκτρονικού ταχυδρομείου ανάκτησης/ειδοποίησης"
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Παρακαλώ αναβαθμίστε σε επιχειρηματικό πλάνο με περισσότερους από 1 χρήστες ώστε να λάβετε υποστήριξη πολλαπλών χρηστών"
@@ -4338,6 +4338,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Η εφαρμογή δεν είναι διαθέσιμη αυτήν τη στιγμή"
+      ],
       "Error: ${ errorMessage }": [
         "Σφάλμα: ${ errorMessage }"
       ],
@@ -4347,11 +4350,17 @@
       "Oops, something went wrong": [
         "Ωχ, κάτι πήγε στραβά"
       ],
+      "Open in browser": [
+        "Άνοιγμα στο πρόγραμμα περιήγησης"
+      ],
       "Please refresh the page or try again later.": [
         "Παρακαλούμε ανανεώστε τη σελίδα ή δοκιμάστε ξανά αργότερα."
       ],
       "Something went wrong": [
         "Κάτι πήγε στραβά"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Για να χρησιμοποιήσετε ${ MAIL_APP_NAME } ή ${ CALENDAR_APP_NAME }, μεταβείτε στην έκδοση ιστού."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Πάρα πολλές υποσυνεδρίες, παρακαλούμε καθαρίστε τα cookies σας και συνδεθείτε ξανά."
@@ -4411,10 +4420,10 @@
     },
     "Error when exporting event from calendar": {
       "Event @ ${ timeString }": [
-        "Γεγονός @ ${ timeString }"
+        "Εκδήλωση @ ${ timeString }"
       ],
       "Event from ${ timeString }, ${ rruleString }": [
-        "Γεγονός από ${ timeString }, ${ rruleString }"
+        "Εκδήλωση από ${ timeString }, ${ rruleString }"
       ]
     },
     "Event invitation error": {
@@ -4468,8 +4477,8 @@
     },
     "Export calendar": {
       "${ totalProcessed }/${ totalToProcess } event exported": [
-        "${ totalProcessed }/${ totalToProcess } γεγονός εξάγεται",
-        "${ totalProcessed }/${ totalToProcess } γεγονότα εξάγονται"
+        "${ totalProcessed }/${ totalToProcess } εκδήλωση εξάγεται",
+        "${ totalProcessed }/${ totalToProcess } εκδηλώσεις εξάγονται"
       ],
       "Calendar successfully exported. You can now save the ICS file.": [
         "Το ημερολόγιο εξήχθη με επιτυχία. Τώρα μπορείτε να αποθηκεύσετε το αρχείο ICS."
@@ -4759,7 +4768,7 @@
         "Το ${ member.Name } αφαιρέθηκε από το ${ organization.Name }"
       ],
       "An error occurred, please try again": [
-        "Παρουσιάστηκε σφάλμα. Παρακαλώ προσπαθήστε ξανά."
+        "Παρουσιάστηκε σφάλμα. Παρακαλούμε προσπαθήστε ξανά."
       ],
       "Member updated": [
         "Το μέλος ενημερώθηκε"
@@ -4853,10 +4862,10 @@
         "Απενεργοποιήστε το 2FA μέσω κλειδιού ασφαλείας πριν απενεργοποιήσετε το TOTP"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλώ προσπαθήστε ξανά."
+        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
       ],
       "Something went wrong registering your security key. Please try again.": [
-        "Παρουσιάστηκε κάποιο πρόβλημα κατά την καταχώρηση του κλειδιού ασφαλείας σας. Παρακαλώ προσπαθήστε ξανά."
+        "Παρουσιάστηκε κάποιο πρόβλημα κατά την καταχώρηση του κλειδιού ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
       ]
     },
     "fido2: Info": {
@@ -5269,7 +5278,7 @@
         "Αποτύπωμα κλειδιού οργανισμού"
       ],
       "Permissions": [
-        "Άδειες"
+        "Δικαιώματα"
       ],
       "Protection": [
         "Προστασία"
@@ -5338,10 +5347,10 @@
         "Δημιουργήθηκε"
       ],
       "Email address": [
-        "Διεύθυνση E-mail"
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Last used": [
-        "Χρήση τελευταίας μορφής"
+        "Τελευταία χρήση"
       ],
       "Token name": [
         "Όνομα διακριτικού"
@@ -5355,7 +5364,7 @@
         "Άλλα"
       ],
       "Subscribed": [
-        "Εγγραφήκατε"
+        "Εγγεγραμμένα"
       ]
     },
     "Heading in trial plan": {
@@ -5411,7 +5420,7 @@
         "Οι εκδηλώσεις εισήχθησαν επιτυχώς. Οι εισαγόμενα εκδηλώσεις θα εμφανιστούν τώρα στο ημερολόγιό σας."
       ],
       "Please don't close the tab before the importing process is finished.": [
-        "Παρακαλώ μην κλείσετε την καρτέλα πριν ολοκληρωθεί η διαδικασία εισαγωγής."
+        "Παρακαλούμε μην κλείσετε την καρτέλα πριν ολοκληρωθεί η διαδικασία εισαγωγής."
       ]
     },
     "Import calendar warning": {
@@ -5512,7 +5521,7 @@
         "Η πρόσβαση IMAP είναι ενεργοποιημένη στον λογαριασμό σας στο Yahoo."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Πάρα πολλά πρόσφατα αιτήματα. Παρακαλώ δοκιμάστε ξανά σε λίγα λεπτά."
+        "Πάρα πολλά πρόσφατα αιτήματα. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά."
       ],
       "Use your app password if:": [
         "Χρησιμοποιήστε τον κωδικό της εφαρμογής εάν:"
@@ -5946,7 +5955,7 @@
         "ενεργό"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "Προσθέστε μια @pm.me διεύθυνση ηλεκτρονικού ταχυδρομείου στο λογαριασμό σας. Αυτός ο απλός, συντομότερος τομέας ερμηνεύεται ως \"${ MAIL_APP_NAME } me\" ή \"Private Message me.\""
+        "Προσθέστε μια @pm.me διεύθυνση ηλεκτρονικού ταχυδρομείου στον λογαριασμό σας. Αυτός ο απλός, συντομότερος τομέας ερμηνεύεται ως \"${ MAIL_APP_NAME } me\" ή \"Private Message me.\" (Στείλε μου Προσωπικό Μήνυμα)"
       ],
       "Add a recovery email address": [
         "Προσθήκη ηλ. διεύθυνσης ανάκτησης"
@@ -7146,10 +7155,10 @@
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Η υποβολή SMTP επιτρέπει σε υπηρεσίες τρίτων ή συσκευές για να στείλουν μηνύματα ηλεκτρονικού ταχυδρομείου ${ MAIL_APP_NAME } για τις προσαρμοσμένες διευθύνσεις τομέα σας. Αυτή η δυνατότητα είναι διαθέσιμη μόνο σε ${ BRAND_NAME } for Business με προσαρμοσμένους τομείς."
+        "Η υποβολή SMTP επιτρέπει σε υπηρεσίες τρίτων ή συσκευές για να στείλουν μηνύματα ηλεκτρονικού ταχυδρομείου ${ MAIL_APP_NAME } για τις προσαρμοσμένες διευθύνσεις τομέα σας. Αυτή η δυνατότητα είναι διαθέσιμη μόνο σε ${ BRAND_NAME } για επιχειρηματικούς χρήστες με προσαρμοσμένους τομείς."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
-        "Οι υποβολές SMTP επιτρέπουν σε υπηρεσίες τρίτων μερών ή σε συσκευές να στείλουν ηλεκτρονικό μήνυμα μέσω του ${ MAIL_APP_NAME } για τις διευθύνσεις του δικού σας προσαρμοσμένου τομέα. Για να ζητήσετε πρόσβαση, παρακαλώ ${ createTicket } περιγράφοντας τις περιπτώσεις που χρησιμοποιείτε, ποιούς προσαρμοσμένους τομείς θέλετε να χρησιμοποιήσετε, και τον αναμενόμενο ωριαίο και ημερήσιο όγκο ηλεκτρονικών μηνυμάτων."
+        "Οι υποβολές SMTP επιτρέπουν σε υπηρεσίες τρίτων μερών ή σε συσκευές να στείλουν ηλεκτρονικό μήνυμα μέσω του ${ MAIL_APP_NAME } για τις διευθύνσεις του δικού σας προσαρμοσμένου τομέα. Για να ζητήσετε πρόσβαση, παρακαλούμε ${ createTicket } περιγράφοντας τις περιπτώσεις που χρησιμοποιείτε, ποιούς προσαρμοσμένους τομείς θέλετε να χρησιμοποιήσετε, και τον αναμενόμενο ωριαίο και ημερήσιο όγκο ηλεκτρονικών μηνυμάτων."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "Οι υποβολές SMTP επιτρέπουν σε υπηρεσίες τρίτων μερών ή σε συσκευές να στείλουν ηλεκτρονικό μήνυμα μέσω του ${ MAIL_APP_NAME } για τις διευθύνσεις του δικού σας προσαρμοσμένου τομέα. Για να χρησιμοποιήσετε αυτό το χαρακτηριστικό, ξεκινήστε δημιουργώντας ένα νέο αδειοδοτικό."
@@ -7305,6 +7314,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Αυτό μπορεί να διαρκέσει αρκετό χρόνο. Μην κλείνετε αυτή τη σελίδα και μην αποσυνδέεστε από το διαδίκτυο."
       ],
+      "This file is too large to preview": [
+        "Αυτό το αρχείο είναι πολύ μεγάλο για προεπισκόπηση"
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Αυτή είναι μια 12-λεκτη φράση που σας είχε ζητηθεί να ορίσετε."
       ],
@@ -7429,7 +7441,7 @@
         "Για να χρησιμοποιήσετε ${ toAppName }, χρειάζεστε μια ${ MAIL_APP_NAME } διεύθυνση."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
-        "Για να δουλέψει σωστά, κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα και ένα έγκυρο script Sieve. Μπορείτε να ${ link }."
+        "Για να δουλέψει σωστά, κάθε φίλτρο πρέπει να περιέχει τουλάχιστον ένα όνομα και ένα έγκυρο πρόγραμμα Sieve. Μπορείτε να ${ link }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Προσθέστε στο λογαριασμό πιστωτικές μονάδες, τις οποίες μπορείτε να χρησιμοποιήσετε για να έχετε μια νέα συνδρομή πακέτου/πλάνου ή να ανανεώσετε το τρέχον πακέτο σας. Λαμβάνετε μία πιστωτική μονάδα για κάθε ${ i18nCurrency } που ξοδεύτηκε."
@@ -7513,7 +7525,7 @@
         "Αναβαθμίστε στο ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, ή ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } πλάνο για να αποκτήσετε πρόσβαση στο ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
-        "Κάντε αναβάθμιση για να προσθέσετε μια συντομότερη διεύθυνση @pm.me στον λογαριασμό σας, η οποία θα είναι πιο εύκολη στην κοινή χρήση. Σημαίνει \"${ MAIL_APP_NAME } me\" ή \"Private Message me\"."
+        "Κάντε αναβάθμιση για να προσθέσετε μια συντομότερη διεύθυνση @pm.me στον λογαριασμό σας, η οποία θα είναι πιο εύκολη στην κοινή χρήση. Σημαίνει \"${ MAIL_APP_NAME } me\" ή \"Private Message me\". (Στείλε μου Προσωπικό Μήνυμα)"
       ],
       "Upgrade to unlock": [
         "Αναβαθμίστε για να ξεκλειδώσετε"
@@ -8068,7 +8080,7 @@
         "Ένα κλειδί με τον ίδιο αλγόριθμο κρυπτογράφησης είναι ήδη ενεργό για αυτήν τη διεύθυνση. Η δημιουργία ενός άλλου κλειδιού θα προκαλέσει πιο αργή φόρτωση του λογαριασμού και η διαγραφή αυτού του κλειδιού μπορεί να προκαλέσει προβλήματα. Αν δημιουργείτε ένα νέο κλειδί επειδή το παλιό σας κλειδί είναι παραβιασμένο/εκτεθειμένο, επισημάνετε το κλειδί ως εκτεθειμένο. Είστε σίγουροι ότι θέλετε να συνεχίσετε;"
       ],
       "Generate key": [
-        "Παραγωγή κλειδιού"
+        "Δημιουργία κλειδιού"
       ],
       "Key with fingerprint ${ fp } successfully created.": [
         "Το κλειδί με αποτύπωμα ${ fp } δημιουργήθηκε."
@@ -8620,7 +8632,7 @@
         "Τρέχουσα διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
       "Daily email notifications": [
-        "Καθημερινές ειδοποιήσεις E-mail"
+        "Καθημερινές ειδοποιήσεις ηλεκτρονικού ταχυδρομείου"
       ],
       "Date": [
         "Ημερομηνία"
@@ -8713,7 +8725,7 @@
         "Μηνύματα ηλεκτρονικού ταχυδρομείου (τελευταίος μήνας)"
       ],
       "End date": [
-        "Ημερομηνία Λήξης"
+        "Ημερομηνία λήξης"
       ],
       "End day of month": [
         "Ημερομηνία λήξης του μήνα"
@@ -9365,10 +9377,10 @@
     },
     "Label to change composer mode": {
       "Maximized": [
-        "Μεγιστοποιημένος"
+        "Μεγιστοποιημένο"
       ],
       "Normal": [
-        "Κανονικός"
+        "Κανονικό"
       ]
     },
     "Label to change density": {
@@ -9514,7 +9526,7 @@
         "Επαναφορά κωδικού πρόσβασης"
       ],
       "Set email address": [
-        "Ορισμός διεύθυνσης email"
+        "Ορισμός διεύθυνσης ηλεκτρονικού ταχυδρομείου"
       ],
       "Sign in": [
         "Είσοδος"
@@ -9941,6 +9953,26 @@
         "Μέτρια ταχύτητα VPN"
       ]
     },
+    "new_plans: Action": {
+      "Downgrade to ${ downgradedPlanName }": [
+        "Υποβάθμιση σε ${ downgradedPlanName }"
+      ],
+      "Explore all ${ BRAND_NAME } plans": [
+        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
+      ],
+      "From ${ price }": [
+        "Από ${ price }"
+      ],
+      "Keep my ${ currentPlanName } account": [
+        "Διατήρηση του λογαριασμού μου ${ currentPlanName }"
+      ],
+      "Upgrade": [
+        "Αναβάθμιση"
+      ],
+      "Upgrade now": [
+        "Αναβάθμιση τώρα"
+      ]
+    },
     "new_plans: action": {
       "Continue to review": [
         "Συνεχίστε την αξιολόγηση"
@@ -9980,26 +10012,6 @@
       ],
       "Upgrade to ${ upsellPlanHumanSize }": [
         "Αναβάθμιση σε ${ upsellPlanHumanSize }"
-      ]
-    },
-    "new_plans: Action": {
-      "Downgrade to ${ downgradedPlanName }": [
-        "Υποβάθμιση σε ${ downgradedPlanName }"
-      ],
-      "Explore all ${ BRAND_NAME } plans": [
-        "Εξερεύνηση όλων των προγραμμάτων ${ BRAND_NAME }"
-      ],
-      "From ${ price }": [
-        "Από ${ price }"
-      ],
-      "Keep my ${ currentPlanName } account": [
-        "Διατήρηση του λογαριασμού μου ${ currentPlanName }"
-      ],
-      "Upgrade": [
-        "Αναβάθμιση"
-      ],
-      "Upgrade now": [
-        "Αναβάθμιση τώρα"
       ]
     },
     "new_plans: feature": {
@@ -10140,6 +10152,9 @@
       ],
       "Custom fields": [
         "Προσαρμοσμένα πεδία"
+      ],
+      "Custom snooze time": [
+        "Προσαρμοσμένος χρόνος αναβολής"
       ],
       "Data breach monitoring": [
         "Παρακολούθηση παραβίασης δεδομένων"
@@ -10360,6 +10375,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Αποκτήστε απεριόριστα ψευδώνυμα με το SimpleLogin από ${ BRAND_NAME }"
       ],
+      "Snooze messages and get reminded when you want": [
+        "Αναβολή μηνυμάτων και λήψη υπενθύμισης όποτε θέλετε"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }"
       ],
@@ -10373,17 +10391,6 @@
       ],
       "Team management": [
         "Διαχείριση ομάδας"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10473,6 +10480,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Απολαμβάνετε μια τιμή προσφοράς στο τρέχον πλάνο σας. Εάν υποβαθμίσετε τον λογαριασμό σας, θα χάσετε την τιμή προσφοράς και δε θα είναι διαθέσιμη εάν προσπαθήσετε να εγγραφείτε ξανά."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Ειδάλλως η πρόσβαση στον λογαριασμό σας θα περιοριστεί, και εν τέλη ο λογαριασμός σας θα απενεργοποιηθεί."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Για συνέχιση της χρήσης του ${ MAIL_APP_NAME } με προηγμένα χαρακτηριστικά, επιλέξτε τη συνδρομή και τον τρόπο πληρωμής σας."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Η δοκιμαστική σας περίοδος λήγει στις ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10748,7 +10766,7 @@
     },
     "new_plans: upgrade": {
       "Included with ${ BRAND_NAME } for Business, ${ familyPlanName } and ${ mailProPlanName }.": [
-        "Περιλαμβάνεται με ${ BRAND_NAME } for Business, ${ familyPlanName } και ${ mailProPlanName }."
+        "Περιλαμβάνεται με ${ BRAND_NAME } για Business, ${ familyPlanName } και ${ mailProPlanName }."
       ],
       "Included with ${ plus }, ${ bundle }, and ${ BRAND_NAME } for Business.": [
         "Περιλαμβάνεται στα ${ plus }, ${ bundle } και ${ BRAND_NAME } για Επιχειρήσεις."
@@ -11094,7 +11112,7 @@
         "Είναι πολύ ακριβό"
       ],
       "Left to Right": [
-        "Αριστερά προς τα δεξιά"
+        "Αριστερά προς Δεξιά"
       ],
       "My reason isn't listed": [
         "Ο λόγος δεν συμπεριλαμβάνεται στη λίστα"
@@ -11127,7 +11145,7 @@
         "Επανάληψη εβδομαδιαία"
       ],
       "Right to Left": [
-        "Δεξιά προς τα αριστερά"
+        "Δεξιά προς Αριστερά"
       ],
       "Router": [
         "Ρούτερ"
@@ -11220,7 +11238,10 @@
         ".deb (για Debian/Ubuntu)"
       ],
       ".dmg (10.12 or later)": [
-        ".dmg (10.12 or later)"
+        ".dmg (10.12 ή αργότερο)"
+      ],
+      ".exe (64-bit)": [
+        ".exe (64-bit)"
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (για Fedora/openSUSE)"
@@ -12861,7 +12882,7 @@
         "Η τιμή SPF αντιγράφηκε στο πρόχειρο"
       ],
       "Token copied to clipboard": [
-        "Το token αντιγράφηκε στο πρόχειρο"
+        "Το διακριτικό αντιγράφηκε στο πρόχειρο"
       ],
       "Undo in progress": [
         "Αναίρεση σε εξέλιξη"
@@ -14599,7 +14620,7 @@
         "Οι ρυθμίσεις ημερομηνίας και ώρας στη συσκευή σας είναι εκτός συγχρονισμού. ${ learnMore }"
       ],
       "The device or service using this token will no longer be able to send email through ${ MAIL_APP_NAME }.": [
-        "Η συσκευή ή η υπηρεσία που χρησιμοποιεί αυτό το διακριτικό δε θα μπορεί πλέον να στέλνει email μέσω ${ MAIL_APP_NAME }."
+        "Η συσκευή ή η υπηρεσία που χρησιμοποιεί αυτό το διακριτικό δε θα μπορεί πλέον να στέλνει μηνύματα ηλεκτρονικού ταχυδρομείου μέσω ${ MAIL_APP_NAME }."
       ],
       "This import may exceed the storage capacity currently available in your ${ BRAND_NAME } account. Please consider customizing your import.": [
         "Αυτή η εισαγωγή ενδέχεται να υπερβαίνει τη χωρητικότητα αποθήκευσης που διατίθεται αυτήν τη στιγμή στον λογαριασμό σας ${ BRAND_NAME }. Εξετάστε το ενδεχόμενο να προσαρμόσετε την εισαγωγή σας."
