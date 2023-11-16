@@ -345,12 +345,19 @@ export const parse = (vcal = ''): VcalCalendarComponent => {
  */
 export const parseWithRecoveryAndMaybeErrors = (
     vcal: string,
-    retry = { retryLineBreaks: true, retryEnclosing: true, retryDateTimes: true, retryOrganizer: true }
-): VcalVcalendarWithMaybeErrors => {
+    retry?: {
+        retryLineBreaks?: boolean;
+        retryEnclosing?: boolean;
+        retryDateTimes?: boolean;
+        retryOrganizer?: boolean;
+    }
+): VcalVcalendarWithMaybeErrors | VcalCalendarComponentWithMaybeErrors => {
     try {
         return parseWithRecovery(vcal, retry) as VcalVcalendar;
     } catch (e) {
-        return fromIcalComponentWithMaybeErrors(new ICAL.Component(ICAL.parse(vcal))) as VcalVcalendarWithMaybeErrors;
+        return fromIcalComponentWithMaybeErrors(new ICAL.Component(ICAL.parse(vcal))) as
+            | VcalVcalendarWithMaybeErrors
+            | VcalCalendarComponentWithMaybeErrors;
     }
 };
 
