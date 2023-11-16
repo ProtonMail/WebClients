@@ -2245,17 +2245,17 @@
     },
     "Disabled calendar": {
       "Disabled": [
-        "Kullanımdan kaldırılmış"
+        "Kullanım dışı"
       ]
     },
     "Disabled calendar name suffix": {
       "Disabled": [
-        "Kullanımdan kaldırılmış"
+        "Kullanım dışı"
       ]
     },
     "Disabled calendar tooltip": {
       "The event belongs to a disabled calendar.": [
-        "Etkinlik, kullanımdan kaldırılmış bir takvime ait."
+        "Etkinlik, kullanım dışı bırakılmış bir takvimde bulunuyor."
       ]
     },
     "Don't ask to update timezone checkbox label": {
@@ -2438,7 +2438,7 @@
         "Etki alanı kullanılamıyor. Bir süre sonra yeniden deneyin"
       ],
       "Email address disabled": [
-        "E-posta adresi kullanımdan kaldırılmış"
+        "E-posta adresi kullanım dışı"
       ],
       "Email address is required": [
         "E-posta adresinin yazılması zorunludur"
@@ -4122,11 +4122,14 @@
       "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
         "Davet edilen adresten e-posta gönderemeyeceğiniz için bu etkinlik dizisinin düzenleyicisine daveti reddettiğiniz bildirilemeyecek. Yine de dizideki tüm etkinlikleri silmek ister misiniz?"
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "Bu adresin sahibi uçtan uca şifrelemeyi kapatmış. Bu adrese şifrelenmiş e-postalar gönderebilmek için adres sahibi uçtan uca şifrelemeyi yeniden açmalıdır."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Bu hesap, ilkeye aykırı kullanım olasılığı nedeniyle askıya alınmış."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Bu adres kullanımdan kaldırılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
+        "Bu adres kullanım dışı bırakılmış. Bu adrese e-posta gönderebilmek için önce sahibi adresi kullanıma almalıdır."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Bu etkinlik düzenleyici tarafından güncellendi. Yanıtınızı yalnızca bu dizideki bu etkinlik için değiştirmek ister misiniz?"
@@ -4318,10 +4321,10 @@
         "Hesabınızda süresi geçmiş en az bir fatura var. Hesabınıza erişim kısıtlandı. Ödeme yapmazsanız e-postalarınız ve paylaşım bağlantılarınız engellenecek. ${ payInvoiceLink }"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
-        "Adresiniz kullanımdan kaldırılmış. Etkinlik katılımcılarına bir iptal bildirimi e-postası gönderilemeyecek. Yine de bu dizideki tüm etkinlikleri silmek ister misiniz?"
+        "Adresiniz kullanım dışı bırakılmış. Etkinlik katılımcılarına bir iptal bildirimi e-postası gönderilemeyecek. Yine de bu dizideki tüm etkinlikleri silmek ister misiniz?"
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete this event anyway?": [
-        "Adresiniz kullanımdan kaldırılmış. Etkinlik katılımcılarına bir iptal bildirimi e-postası gönderilemeyecek. Yine de bu etkinliği silmek ister misiniz?"
+        "Adresiniz kullanım dışı bırakılmış. Etkinlik katılımcılarına bir iptal bildirimi e-postası gönderilemeyecek. Yine de bu etkinliği silmek ister misiniz?"
       ],
       "Your data is ready to import from ${ importedEmailAddressStrong } to your ${ BRAND_NAME } account.": [
         "Verileriniz ${ importedEmailAddressStrong } üzerinden ${ BRAND_NAME } hesabınız içine aktarılmaya hazır."
@@ -4748,7 +4751,7 @@
         "İkincil saat dilimi"
       ],
       "Show week numbers": [
-        "Hafta numaraları görüntülensin"
+        "Hafta numaraları"
       ],
       "Sign emails": [
         "E-postaları imzala"
@@ -7002,7 +7005,7 @@
         "Bu paylaşılan takvime erişebilmek için bu adresi kullanıma alın ya da ${ boldCalendarOwnerEmail } ile görüşerek bir adrese yeni bir davet göndermesini isteyin."
       ],
       "You cannot join this calendar because your invited email address (${ boldInvitedAddress }) is disabled.": [
-        "Davet edildiğiniz e-posta adresi (${ boldInvitedAddress }) kullanımdan kaldırılmış olduğundan bu takvime katılamazsınız."
+        "Davet edildiğiniz e-posta adresi (${ boldInvitedAddress }) kullanım dışı bırakılmış olduğundan bu takvime katılamazsınız."
       ]
     },
     "Weekly recurring event, frequency": {

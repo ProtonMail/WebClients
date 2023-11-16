@@ -2199,6 +2199,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Criptografando e importando contatos... Isso pode levar alguns minutos. Quando o processo estiver concluído, você poderá fechar esta janela."
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "Para importação via arquivo CSV e VCF, certifique-se de que o arquivo não exceda ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ MAX_IMPORT_CONTACTS_STRING } contatos. Se o seu arquivo for maior, divida-o em arquivos menores. ${ learnMoreLink }."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contatos que você está importando contém alguns grupos. Verifique como esses grupos devem ser importados."
       ],
@@ -2487,6 +2490,9 @@
       ],
       "Incorrect username": [
         "Nome de usuário incorreto"
+      ],
+      "Intended recipient does not support calendar sharing": [
+        "O destinatário pretendido não oferece suporte ao compartilhamento de calendário"
       ],
       "Interval cannot be empty": [
         "O intervalo não pode estar vazio"
@@ -2900,6 +2906,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Aplicativo atualmente indisponível"
+      ],
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
       ],
@@ -2908,6 +2917,9 @@
       ],
       "Oops, something went wrong": [
         "Opa, alguma coisa deu errado"
+      ],
+      "Open in browser": [
+        "Abrir no navegador"
       ],
       "Please refresh the page or try again later.": [
         "Atualize a página ou tente novamente mais tarde."

@@ -2906,6 +2906,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "App är för närvarande inte tillgänglig"
+      ],
       "Error: ${ errorMessage }": [
         "Fel: ${ errorMessage }"
       ],
@@ -2915,11 +2918,17 @@
       "Oops, something went wrong": [
         "Hoppsan, något gick fel"
       ],
+      "Open in browser": [
+        "Öppna i webbläsare"
+      ],
       "Please refresh the page or try again later.": [
         "Uppdatera sidan eller försök igen senare."
       ],
       "Something went wrong": [
         "Något gick fel"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Byt till webbversionen för att använda ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunde inte ladda denna sida. Uppdatera sidan eller kontrollera din Internetanslutning."
@@ -5180,6 +5189,9 @@
       ],
       "Custom email domains": [
         "Anpassade e-postdomäner"
+      ],
+      "Custom snooze time": [
+        "Anpassad tid för snooza"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-alias"
