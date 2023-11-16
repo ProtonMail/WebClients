@@ -20,9 +20,8 @@ import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader'
 import { useLoading } from '@proton/hooks';
 import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';
 import humanSize, { bytesSize } from '@proton/shared/lib/helpers/humanSize';
-import { DriveFileRevision } from '@proton/shared/lib/interfaces/drive/file';
 
-import { SignatureIssues, useLinkDetailsView } from '../../store';
+import { DriveFileRevision, SignatureIssues, useLinkDetailsView } from '../../store';
 import { ParsedExtendedAttributes } from '../../store/_links/extendedAttributes';
 import useRevisions from '../../store/_revisions/useRevisions';
 import { formatAccessCount } from '../../utils/formatters';
@@ -68,7 +67,7 @@ export function RevisionDetailsModal({
     useEffect(() => {
         const ac = new AbortController();
         void withIsLoading(
-            getRevisionDecryptedXattrs(ac.signal, revision.XAttr, revision.SignatureAddress).then((decryptedXattrs) => {
+            getRevisionDecryptedXattrs(ac.signal, revision.xAttr, revision.signatureAddress).then((decryptedXattrs) => {
                 if (!decryptedXattrs) {
                     return;
                 }
@@ -83,12 +82,12 @@ export function RevisionDetailsModal({
         return () => {
             ac.abort();
         };
-    }, [revision.XAttr, revision.SignatureAddress]);
+    }, [revision.xAttr, revision.signatureAddress]);
 
     useEffect(() => {
         const ac = new AbortController();
         void withSignatureLoading(
-            checkRevisionSignature(ac.signal, revision.ID).then((blocksSignatureIssues) => {
+            checkRevisionSignature(ac.signal, revision.id).then((blocksSignatureIssues) => {
                 if (signatureIssues) {
                     setSignatureIssues({ ...signatureIssues, ...blocksSignatureIssues });
                 } else {
@@ -101,7 +100,7 @@ export function RevisionDetailsModal({
         return () => {
             ac.abort();
         };
-    }, [revision.ID]);
+    }, [revision.id]);
     const renderModalState = () => {
         return (
             <ModalTwoContent>
@@ -109,7 +108,7 @@ export function RevisionDetailsModal({
                     loading={isSignatureLoading}
                     signatureIssues={signatureIssues}
                     signatureNetworkError={signatureNetworkError}
-                    signatureAddress={revision.SignatureAddress}
+                    signatureAddress={revision.signatureAddress}
                     isFile
                     name={name}
                     className="mb-4"
@@ -118,10 +117,10 @@ export function RevisionDetailsModal({
                     <FileNameDisplay text={name} />
                 </DetailsRow>
                 <DetailsRow label={c('Title').t`Uploaded by`}>
-                    <span className="text-pre">{revision.SignatureEmail}</span>
+                    <span className="text-pre">{revision.signatureEmail}</span>
                 </DetailsRow>
                 <DetailsRow label={c('Title').t`Uploaded`}>
-                    <TimeCell time={revision.CreateTime} />
+                    <TimeCell time={revision.createTime} />
                 </DetailsRow>
                 <DetailsRow label={c('Title').t`Modified`}>
                     {xattrs?.Common.ModificationTime ? (
@@ -151,7 +150,7 @@ export function RevisionDetailsModal({
                         </>
                     }
                 >
-                    <span title={bytesSize(revision.Size)}>{humanSize(revision.Size)}</span>
+                    <span title={bytesSize(revision.size)}>{humanSize(revision.size)}</span>
                 </DetailsRow>
                 <DetailsRow label={c('Title').t`Original size`}>
                     {xattrs?.Common.Size ? (

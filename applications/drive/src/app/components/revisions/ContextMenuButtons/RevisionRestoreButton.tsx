@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { DriveFileRevision } from '@proton/shared/lib/interfaces/drive/file';
-
+import type { DriveFileRevision } from '../../../store';
 import { ContextMenuButton } from '../../sections/ContextMenu';
 import { RevisionsProviderState } from '../RevisionsProvider';
 
