@@ -72,15 +72,7 @@ export const createOTPService = () => {
             ? otpItems.find((item) => deobfuscate(item.data.content.username) === submission.data.username)
             : otpItems[0];
 
-        if (match) {
-            return {
-                shouldPrompt: true,
-                shareId: match.shareId,
-                itemId: match.itemId,
-            };
-        }
-
-        return { shouldPrompt: false };
+        return match ? { shouldPrompt: true, shareId: match.shareId, itemId: match.itemId } : { shouldPrompt: false };
     });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.OTP_CODE_GENERATE, withPayload(handleTOTPRequest));

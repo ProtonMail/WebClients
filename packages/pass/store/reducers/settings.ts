@@ -1,5 +1,6 @@
 import type { Reducer } from 'redux';
 
+import { toggleCriteria } from '@proton/pass/lib/settings/criteria';
 import {
     itemCreationSuccess,
     sessionLockDisableSuccess,
@@ -7,6 +8,7 @@ import {
     sessionLockSync,
     settingsEditSuccess,
     syncLocalSettings,
+    updatePauseListItem,
 } from '@proton/pass/store/actions';
 import { SessionLockStatus } from '@proton/pass/types';
 import type {
@@ -74,6 +76,17 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
         /* `disallowedDomains` update should act as a setter */
         if ('disallowedDomains' in action.payload) update.disallowedDomains = {};
         return partialMerge<SettingsState>(update, action.payload);
+    }
+
+    if (updatePauseListItem.match(action)) {
+        const { hostname, criteria } = action.payload;
+        const criteriasSetting = state.disallowedDomains[hostname] ?? 0;
+
+        return partialMerge<SettingsState>(state, {
+            disallowedDomains: {
+                [hostname]: toggleCriteria(criteriasSetting, criteria),
+            },
+        });
     }
 
     if (itemCreationSuccess.match(action)) {

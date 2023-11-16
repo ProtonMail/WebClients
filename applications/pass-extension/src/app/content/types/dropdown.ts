@@ -11,9 +11,9 @@ export enum DropdownAction {
 }
 
 export type DropdownActions =
-    | { action: DropdownAction.AUTOFILL; items: SafeLoginItem[]; needsUpgrade: boolean }
-    | { action: DropdownAction.AUTOSUGGEST_PASSWORD; options: GeneratePasswordOptions }
-    | { action: DropdownAction.AUTOSUGGEST_ALIAS; domain: string; prefix: string };
+    | { action: DropdownAction.AUTOFILL; hostname: string; items: SafeLoginItem[]; needsUpgrade: boolean }
+    | { action: DropdownAction.AUTOSUGGEST_PASSWORD; hostname: string; options: GeneratePasswordOptions }
+    | { action: DropdownAction.AUTOSUGGEST_ALIAS; hostname: string; prefix: string };
 
 export type DropdownOpenOptions = {
     action: DropdownAction;

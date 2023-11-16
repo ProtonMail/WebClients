@@ -2,6 +2,7 @@ import { type VFC, useEffect, useState } from 'react';
 
 import type { FormikErrors } from 'formik';
 import { Field, Form, FormikProvider, useFormik } from 'formik';
+import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/common/PauseListDropdown';
 import type { IFrameCloseOptions } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
@@ -30,14 +31,14 @@ import { NotificationHeader } from './NotificationHeader';
 import './Autosave.scss';
 
 type Props = {
-    visible?: boolean;
-    submission: FormEntryPrompt;
     settings: ProxiedSettings;
+    submission: FormEntryPrompt;
+    visible?: boolean;
     onClose?: (options?: IFrameCloseOptions) => void;
 };
 type AutosaveFormValues = { name: string; username: string; password: string };
 
-export const Autosave: VFC<Props> = ({ visible, submission, settings, onClose }) => {
+export const Autosave: VFC<Props> = ({ settings, submission, visible, onClose }) => {
     const { createNotification } = useNotifications();
     const [busy, setBusy] = useState(false);
     const submissionURL = submission.subdomain ?? submission.domain;
@@ -149,6 +150,15 @@ export const Autosave: VFC<Props> = ({ visible, submission, settings, onClose })
                                 return c('Info').t`Update login`;
                         }
                     })()}
+                    extra={
+                        <PauseListDropdown
+                            criteria="Autosave"
+                            hostname={submission.subdomain ?? submission.domain}
+                            label={c('Action').t`Disable autosave on this website`}
+                            onClose={onClose}
+                            visible={visible}
+                        />
+                    }
                     onClose={onClose}
                 />
                 <div>
