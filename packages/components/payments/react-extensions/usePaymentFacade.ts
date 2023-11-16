@@ -34,6 +34,10 @@ export interface OperationsData {
     invoice?: OperationsInvoiceData;
 }
 
+/**
+ * Common operations that can be performed with a chargeable payment token. The operations are ment to be available in
+ * onChargeable callback.
+ */
 export interface Operations {
     buyCredit: () => Promise<unknown>;
     payInvoice: () => Promise<unknown>;
@@ -73,6 +77,10 @@ function getOperations(api: Api, params: ChargeablePaymentParameters, operations
     };
 }
 
+/**
+ * Stores the data for operations. That's meant to bypass React's rendering cycle.
+ * Perhaps will be changed in the future.
+ */
 const usePaymentContext = () => {
     const subscriptionData = useRef<OperationsSubscriptionData>();
     const invoiceData = useRef<OperationsInvoiceData>();
@@ -99,6 +107,12 @@ const usePaymentContext = () => {
     };
 };
 
+/**
+ * The idea of this hook is gather together all the payment methods and their implementation and provide some
+ * meaningful default configurations. This facade might be reused in other apps (like static) in the future.
+ * The implementation attempts to avoid dependencies on the monorepo's client-specific code. There are still some
+ * leftovers that might be removed later.
+ */
 export const usePaymentFacade = (
     {
         amount,
