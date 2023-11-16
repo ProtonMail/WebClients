@@ -1,5 +1,6 @@
 import { type VFC, useEffect } from 'react';
 
+import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/common/PauseListDropdown';
 import type { IFrameCloseOptions, IFrameMessage } from 'proton-pass-extension/app/content/types';
 import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
@@ -16,12 +17,14 @@ import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { NotificationHeader } from './NotificationHeader';
 
 type Props = {
+    hostname: string;
     item: SelectedItem;
+    visible?: boolean;
     onMessage?: (message: IFrameMessage) => void;
     onClose?: (options?: IFrameCloseOptions) => void;
 };
 
-export const AutofillOTP: VFC<Props> = ({ item, onMessage, onClose }) => {
+export const AutofillOTP: VFC<Props> = ({ hostname, item, visible, onMessage, onClose }) => {
     const [otp, percent] = usePeriodicOtpCode({ ...item, type: 'item' });
 
     useEffect(() => {
@@ -37,7 +40,19 @@ export const AutofillOTP: VFC<Props> = ({ item, onMessage, onClose }) => {
 
     return (
         <div className="flex flex-column flex-nowrap flex-justify-space-between h-full">
-            <NotificationHeader title={c('Info').t`Verification code`} onClose={onClose} />
+            <NotificationHeader
+                title={c('Info').t`Verification code`}
+                extra={
+                    <PauseListDropdown
+                        criteria="Autofill2FA"
+                        hostname={hostname}
+                        label={c('Action').t`Do not show on this website`}
+                        onClose={onClose}
+                        visible={visible}
+                    />
+                }
+                onClose={onClose}
+            />
             <div className="max-w-full">
                 <div className="flex flex-nowrap flex-align-items-center flex-justify-center mb-2 gap-4">
                     <div className="text-4xl max-w-4/5 text-ellipsis">
