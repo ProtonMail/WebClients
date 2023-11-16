@@ -505,6 +505,9 @@
       "Report a problem": [
         "Laporkan masalah"
       ],
+      "Report an issue": [
+        "Laporkan masalah"
+      ],
       "Request a feature": [
         "Minta fitur"
       ],
@@ -627,6 +630,9 @@
       ],
       "Skip verification": [
         "Lewati verifikasi"
+      ],
+      "Start": [
+        "Mulai"
       ],
       "Start import": [
         "Mulai impor"
@@ -2541,6 +2547,9 @@
       "Access denied": [
         "Akses ditolak"
       ],
+      "App currently unavailable": [
+        "Aplikasi saat ini tidak tersedia"
+      ],
       "Brace yourself till we get the error fixed.": [
         "Kami sedang perbaiki. Mohon bersabar."
       ],
@@ -2556,11 +2565,17 @@
       "Oops, something went wrong": [
         "Aduh, ada yang tidak beres"
       ],
+      "Open in browser": [
+        "Buka di browser"
+      ],
       "Please refresh the page or try again later.": [
         "Silakan muat ulang laman atau coba lagi nanti."
       ],
       "Something went wrong": [
         "Terdapat suatu kesalahan"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Untuk menggunakan ${ MAIL_APP_NAME } atau ${ CALENDAR_APP_NAME }, beralihlah ke versi web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Kami tidak dapat memuat laman ini. Silakan muat ulang laman atau periksa koneksi internet Anda."
@@ -2631,6 +2646,11 @@
     "Event title": {
       "(no title)": [
         "(tanpa judul)"
+      ]
+    },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } gagal diproses"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -3291,6 +3311,9 @@
       "An active recovery file": [
         "Berkas pemulihan yang aktif"
       ],
+      "An issue occurred during the restore process.": [
+        "Terdapat masalah dalam proses pemulihan."
+      ],
       "and": [
         "dan"
       ],
@@ -3804,6 +3827,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "Enkripsi PGP/MIME akan secara otomatis mengirim pesan dengan mode komposer yang saat ini digunakan."
       ],
+      "Photos have been successfully recovered.": [
+        "Foto telah berhasi dipulihkan."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Silakan masukkan kata sandi untuk mendekripsi dan melihat isi konten."
       ],
@@ -3894,8 +3920,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "Proses pemulihan sedang berlangsung. Hal ini dapat memakan waktu sejenak."
       ],
+      "Restore Photos": [
+        "Pulihkan Foto"
+      ],
       "Restored files ${ formattedDate }": [
         "Berkas yang dipulihkan ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Memulihkan Foto... Mohon biarkan tab ini terbuka"
       ],
       "Search cannot be enabled in this browser": [
         "Pencarian tidak dapat diaktifkan pada browser ini"
@@ -4458,7 +4490,7 @@
         "Buat akun ${ BRAND_NAME }"
       ],
       "Create a share link": [
-        "Buat tautan untuk dibagi"
+        "Buat tautan berbagi"
       ],
       "Created": [
         "Waktu Dibuat"
@@ -4702,9 +4734,6 @@
       ],
       "Replace existing folder": [
         "Gantikan folder yang telah ada"
-      ],
-      "Report": [
-        "Laporkan"
       ],
       "Reveal password": [
         "Perlihatkan kata sandi"
@@ -5228,7 +5257,7 @@
     },
     "Onboarding Info": {
       "Create a share link": [
-        "Buat tautan untuk dibagi"
+        "Buat tautan berbagi"
       ],
       "Get started using ${ DRIVE_APP_NAME } and we'll double your free storage to 1GB!": [
         "Mulai gunakan ${ DRIVE_APP_NAME } dan kami akan menggandakan kuota penyimpanan gratis Anda menjadi 1GB!"
@@ -5853,6 +5882,9 @@
       "${ countMergeableContacts } contacts look identical.": [
         "${ countMergeableContacts } kontak terlihat identik."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } tersisa"
+      ],
       "Address copied to clipboard": [
         "Alamat disalin ke clipboard"
       ],
@@ -6205,13 +6237,7 @@
       "File recovery process": [
         "Proses pemulihan berkas"
       ],
-      "Files details": [
-        "Informasi berkas"
-      ],
       "Folder details": [
-        "Rincian folder"
-      ],
-      "Folders details": [
         "Rincian folder"
       ],
       "Found ${ searchView.numberOfResults } results": [
@@ -6282,12 +6308,6 @@
       ],
       "Notes": [
         "Catatan"
-      ],
-      "Number of files": [
-        "Jumlah berkas"
-      ],
-      "Number of folders": [
-        "Jumlah folder"
       ],
       "Number of items": [
         "Jumlah item"
