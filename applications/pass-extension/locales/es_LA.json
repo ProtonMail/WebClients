@@ -80,10 +80,10 @@
       "Create": [
         "Crear"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "Crear una cuenta de ${ BRAND_NAME }"
       ],
       "Create a new vault to share": [
@@ -445,9 +445,6 @@
       "Could not resolve share members": [
         "No se pudieron determinar los destinatarios del recurso compartido"
       ],
-      "Could not resume your session : ${ description }": [
-        "No se pudo reanudar su sesión: ${ description }"
-      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "Faltan los encabezados esperados del archivo CSV: ${ missingHeaders }"
       ],
@@ -688,9 +685,6 @@
         "${ memberCount } miembro",
         "${ memberCount } miembros"
       ],
-      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "${ PASS_APP_NAME } mostrará el favicono del elemento a través del proxy de imagen anónimo de ${ BRAND_NAME }."
-      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } solo importará inicios de sesión, notas y tarjetas de crédito."
       ],
@@ -742,9 +736,6 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Todos los elementos de \"${ payload.content.name }\" fueron movidos."
-      ],
-      "All trashed items permanently removed": [
-        "Todos los elementos de la papelera fueron eliminados permanentemente"
       ],
       "All trashed items successfully restored": [
         "Todos los elementos de la papelera fueron restaurados."
@@ -913,14 +904,14 @@
       "Loading": [
         "Cargando"
       ],
-      "Loading extension": [
-        "Cargando extensión"
+      "Loading ${ PASS_APP_NAME }": [
+        "Cargando ${ PASS_APP_NAME }"
       ],
       "Loading...": [
         "Cargando..."
       ],
       "me": [
-        "yo"
+        "conmigo"
       ],
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "Más que un gestor de contraseñas, ${ PASS_APP_NAME } protege su contraseña y su dirección de correo personal a través de alias de correo electrónico. Desarrollado por la misma tecnología detrás de ${ MAIL_APP_NAME }, sus datos están cifrados de extremo a extremo y solo usted puede acceder a ellos."
@@ -930,9 +921,6 @@
       ],
       "Multiple vaults": [
         "Bóvedas múltiples"
-      ],
-      "N/A": [
-        "N/D"
       ],
       "No login found": [
         "Ningún inicio de sesión fue encontrado."
@@ -1041,9 +1029,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Gracias, el problema ha sido reportado"
-      ],
-      "The autofill dropdown will automatically open on field focus.": [
-        "El menú desplegable de autocompletar se abrirá automáticamente en el campo enfocado."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } elemento no pudo importarse:",
@@ -1177,9 +1162,6 @@
       "15 minutes": [
         "15 minutos"
       ],
-      "2FA secret (TOTP)": [
-        "Clave secreta 2FA (TOTP)"
-      ],
       "2FA token (TOTP)": [
         "Token 2FA (TOTP)"
       ],
@@ -1227,9 +1209,6 @@
       ],
       "Autofill 2FA": [
         "Autocompletar 2FA"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "Abrir automáticamente el completado automático al enfocar los campos de inicio de sesión"
       ],
       "Autosave": [
         "Guardar automáticamente"
@@ -1566,9 +1545,6 @@
       "Hyphens": [
         "Guiones"
       ],
-      "Memorable Password": [
-        "Contraseña memorizable"
-      ],
       "Numbers": [
         "Números"
       ],
@@ -1589,9 +1565,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "Añadir una clave secreta 2FA"
-      ],
       "Add hidden text": [
         "Añadir texto oculto"
       ],
@@ -1887,9 +1860,6 @@
       "Please enter a valid email address": [
         "Ingrese una dirección de correo válida"
       ],
-      "Please log back in": [
-        "Vuelva a iniciar sesión"
-      ],
       "Please verify your email address in order to use email aliases": [
         "Verifique su dirección de correo para poder usar alias de correo."
       ],
@@ -1953,8 +1923,17 @@
       "Your plan only allows you to autofill from your first two vaults": [
         "Su plan solo le permite completar automáticamente desde sus primeras dos bóvedas"
       ],
-      "Your session was locked due to inactivity": [
-        "Se bloqueó su sesión por inactividad"
+      "Your session could not be authorized.": [
+        "Su sesión no ha podido ser autorizada."
+      ],
+      "Your session could not be resumed.": [
+        "Su sesión no ha podido reanudarse."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Su sesión está inactiva. Vuelva a conectarse."
+      ],
+      "Your session was locked.": [
+        "Su sesión está bloqueada."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Su suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a su primera bóveda. Para importar a varias bóvedas mejore su suscripción."

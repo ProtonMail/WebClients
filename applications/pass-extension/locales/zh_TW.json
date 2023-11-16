@@ -74,10 +74,10 @@
       "Create": [
         "建立"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "建立一個${ BRAND_NAME } 帳號"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "建立一個${ BRAND_NAME } 帳號"
       ],
       "Create a new vault to share": [
@@ -409,9 +409,6 @@
       ],
       "Could not open updated vault": [
         "無法開啟已更新的保管庫"
-      ],
-      "Could not resume your session : ${ description }": [
-        "無法復原作業階段:${ description }"
       ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "CSV檔案失去表頭。${ missingHeaders }"
@@ -769,9 +766,6 @@
       "Loading": [
         "正在載入"
       ],
-      "Loading extension": [
-        "正在載入擴充"
-      ],
       "Loading...": [
         "載入中‧‧‧"
       ],
@@ -783,9 +777,6 @@
       ],
       "Multiple vaults": [
         "多重保險庫"
-      ],
-      "N/A": [
-        "不適用"
       ],
       "None": [
         "無"
@@ -954,9 +945,6 @@
       "15 minutes": [
         "15 分鐘"
       ],
-      "2FA secret (TOTP)": [
-        "雙重驗證一次性驗證碼(TOTP)"
-      ],
       "2FA token (TOTP)": [
         "雙重驗證憑證  (TOTP)"
       ],
@@ -1004,9 +992,6 @@
       ],
       "Autofill 2FA": [
         "自動填入雙重驗證"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "登入欄位取得焦點時自動開啟自動填入"
       ],
       "Autosave": [
         "自動儲存"
@@ -1340,9 +1325,6 @@
       "Hyphens": [
         "連字號"
       ],
-      "Memorable Password": [
-        "紀錄密碼"
-      ],
       "Numbers": [
         "數字"
       ],
@@ -1363,9 +1345,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "加入雙重驗證碼"
-      ],
       "Add hidden text": [
         "新增隱藏文件"
       ],
@@ -1602,9 +1581,6 @@
       "Please enter a valid email address": [
         "請輸入一個有效的電子郵件地址"
       ],
-      "Please log back in": [
-        "請重新登入"
-      ],
       "Please verify your email address in order to use email aliases": [
         "請驗證您的電子郵件位址以啟用電子郵件別名"
       ],
@@ -1649,9 +1625,6 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "您不再擁有保管庫的存取權。若要重新加入，您需要新的邀請。"
-      ],
-      "Your session was locked due to inactivity": [
-        "您的作業階段因為使用而鎖定"
       ]
     }
   }
