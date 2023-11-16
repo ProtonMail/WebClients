@@ -78,7 +78,11 @@ export type EnsureTokenChargeableInputs = Pick<PaymentTokenResult, 'ApprovalURL'
 };
 
 /**
- * Initialize new tab and listen it
+ * Accepts the payment token as the input and processes it to make it chargeable.
+ * Currently initializes a new tab where user can confirm the payment (3DS or Paypal confirmation).
+ * After the verification tab is closed, the function checks the status of the token and resolves if it's chargeable.
+ * An additional purpose of this function is to abstract away the verification mechanism and thus stress out that
+ * alternative implementations are possible.
  */
 export const ensureTokenChargeable = (
     { Token, api, ApprovalURL, ReturnHost, signal }: EnsureTokenChargeableInputs,

@@ -29,6 +29,11 @@ export interface SavedMethodProcessorHook extends PaymentProcessorHook {
     paymentProcessor?: SavedPaymentProcessor;
 }
 
+/**
+ * React wrapper for {@link SavedPaymentProcessor}. It provides a set of proxies and also some additional functionality
+ * like `processPaymentToken` method that supposed to be the main action. The saved payment method can be either a card
+ * or PayPal (not paypal-credit which can't be saved by design, as it supposed to provide one-time payment).
+ */
 export const useSavedMethod = (
     { amountAndCurrency, savedMethod, onChargeable }: Props,
     { verifyPayment, api }: Dependencies

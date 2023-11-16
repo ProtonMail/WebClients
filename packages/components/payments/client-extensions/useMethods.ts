@@ -3,14 +3,14 @@ import { c } from 'ttag';
 import { IconName } from '../../components/icon';
 import { useApi, useAuthentication } from '../../hooks';
 import { AvailablePaymentMethod, PAYMENT_METHOD_TYPES, PaymentMethodFlows, SavedPaymentMethod } from '../core';
-import { Props, MethodsHook as _Result, useMethods as _useMethods } from '../react-extensions/useMethods';
+import { MethodsHook, Props, useMethods as _useMethods } from '../react-extensions/useMethods';
 
 export interface ViewPaymentMethod extends AvailablePaymentMethod {
     readonly icon: IconName | undefined;
     readonly text: string;
 }
 
-interface ClientMethodsHook extends _Result {
+interface ClientMethodsHook extends MethodsHook {
     usedMethods: ViewPaymentMethod[];
     newMethods: ViewPaymentMethod[];
     allMethods: ViewPaymentMethod[];
@@ -52,9 +52,12 @@ const getMethod = (paymentMethod: SavedPaymentMethod): string => {
     }
 };
 
+/**
+ * Transform the payment method object from the react-extensions package to a view model that can be used in the UI.
+ */
 export function convertMethod(
     method: AvailablePaymentMethod,
-    getSavedMethodById: _Result['getSavedMethodByID'],
+    getSavedMethodById: MethodsHook['getSavedMethodByID'],
     flow: PaymentMethodFlows
 ): ViewPaymentMethod {
     if (method.paymentMethodId) {
@@ -97,11 +100,17 @@ export function convertMethod(
     };
 }
 
-export const wrapMethods = (result: _Result, flow: PaymentMethodFlows): ClientMethodsHook => {
-    const { getSavedMethodByID, usedMethods, newMethods, allMethods, lastUsedMethod } = result;
+/**
+ * Enhance the methods hook with client specific data like icons and text.
+ * @param methodsHook - output of the useMethods hook from the react-extensions package
+ * @param flow – current payment flow. Might modify the text of the payment methods
+ * @returns
+ */
+export const wrapMethods = (methodsHook: MethodsHook, flow: PaymentMethodFlows): ClientMethodsHook => {
+    const { getSavedMethodByID, usedMethods, newMethods, allMethods, lastUsedMethod } = methodsHook;
 
     return {
-        ...result,
+        ...methodsHook,
         usedMethods: usedMethods.map((method) => convertMethod(method, getSavedMethodByID, flow)),
         newMethods: newMethods.map((method) => convertMethod(method, getSavedMethodByID, flow)),
         allMethods: allMethods.map((method) => convertMethod(method, getSavedMethodByID, flow)),
@@ -109,6 +118,10 @@ export const wrapMethods = (result: _Result, flow: PaymentMethodFlows): ClientMe
     };
 };
 
+/**
+ * A preconfigured version of the useMethods hook from the react-extensions package.
+ * Returns view models of methods that can be used in the UI.
+ */
 export const useMethods = (props: Props): ClientMethodsHook => {
     const api = useApi();
     const { UID } = useAuthentication();
