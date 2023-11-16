@@ -40,16 +40,23 @@ export const PauseList: VFC = () => {
     const [url, setUrl] = useState<string>('');
 
     const addDisallowedUrl = (url: string) => {
-        const domain = parseUrl(url).domain;
-        if (!domain) return createNotification({ text: c('Error').t`Invalid URL`, type: 'error' });
+        const { subdomain, domain } = parseUrl(url);
+        const hostname = subdomain ?? domain;
 
-        if (disallowedDomains[domain]) {
-            return createNotification({ text: c('Error').t`The URL is in the list`, type: 'error' });
+        if (!hostname) return createNotification({ text: c('Error').t`Invalid URL`, type: 'error' });
+
+        if (disallowedDomains[hostname]) {
+            return createNotification({
+                text: c('Error').t`The URL is in the list`,
+                type: 'error',
+            });
         }
 
         dispatch(
             settingsEditIntent('pause-list', {
-                disallowedDomains: merge(disallowedDomains, { [domain]: CRITERIAS_SETTING_CREATE }),
+                disallowedDomains: merge(disallowedDomains, {
+                    [hostname]: CRITERIAS_SETTING_CREATE,
+                }),
             })
         );
         setUrl('');
