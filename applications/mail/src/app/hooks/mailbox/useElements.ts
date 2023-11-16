@@ -287,3 +287,22 @@ export const useGetElementsFromIDs = () => {
             .filter(isTruthy);
     }, []);
 };
+
+/**
+ * Use this helper carefully since it might return a combination of objects from Element state and from Message state.
+ * It is used to get messages from a list of IDs. If the object do exist in the Message state, we return it, otherwise the element is returned.
+ */
+export const useGetMessagesOrElementsFromIDs = () => {
+    const store = useStore<RootState>();
+
+    return useCallback((elementIDs: string[]): Element[] => {
+        const state = store.getState();
+        return elementIDs
+            .map((ID: string) => {
+                const messageFromMessageState = messageByID(state, { ID });
+
+                return messageFromMessageState?.data || state.elements.elements[ID];
+            })
+            .filter(isTruthy);
+    }, []);
+};
