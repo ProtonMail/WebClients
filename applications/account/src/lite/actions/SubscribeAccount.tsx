@@ -193,15 +193,16 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
 
     const activeSubscription = subscription?.UpcomingSubscription ?? subscription;
     const activeSubscriptionPlan = getPlan(activeSubscription);
-    const activeSubscriptionSameCoupon = activeSubscription?.CouponCode === coupon;
+    const activeSubscriptionSameCoupon = !!coupon && activeSubscription?.CouponCode === coupon;
     const takingSameOffer =
-        activeSubscriptionPlan &&
-        activeSubscriptionPlan?.Name === plan &&
-        activeSubscription?.Cycle === parsedCycle &&
+        !!activeSubscription &&
+        !!activeSubscriptionPlan &&
+        activeSubscriptionPlan.Name === plan &&
+        activeSubscription.Cycle === parsedCycle &&
         activeSubscriptionSameCoupon;
 
-    const isOfferPlusPlan = plusPlans.some((planName) => planName === plan);
-    const isOfferBundlePlan = plan === PLANS.BUNDLE;
+    const isOfferPlusPlan = !!maybePlanName && plusPlans.some((planName) => planName === plan);
+    const isOfferBundlePlan = !!maybePlanName && plan === PLANS.BUNDLE;
 
     const isBundleDowngrade =
         activeSubscriptionPlan?.Name === PLANS.BUNDLE && isOfferPlusPlan && activeSubscriptionSameCoupon;
@@ -211,7 +212,8 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
         (isOfferPlusPlan || isOfferBundlePlan) &&
         activeSubscriptionSameCoupon;
 
-    const isVisionaryDowngrade = activeSubscriptionPlan?.Name === PLANS.NEW_VISIONARY && plan !== PLANS.NEW_VISIONARY;
+    const isVisionaryDowngrade =
+        activeSubscriptionPlan?.Name === PLANS.NEW_VISIONARY && !!maybePlanName && plan !== PLANS.NEW_VISIONARY;
 
     if (takingSameOffer || isBundleDowngrade || isFamilyDowngrade || isVisionaryDowngrade) {
         return <PromotionAlreadyApplied />;
