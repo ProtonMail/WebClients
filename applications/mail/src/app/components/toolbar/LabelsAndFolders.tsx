@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { Kbd, Vr } from '@proton/atoms';
 import { Breakpoints, DropdownSizeUnit, Icon } from '@proton/components';
 
+import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
@@ -26,13 +27,13 @@ const LabelsAndFolders = ({
     labelDropdownToggleRef,
     moveDropdownToggleRef,
 }: Props) => {
-    const { Shortcuts } = useMailModel('MailSettings');
+    const mailSettings = useMailModel('MailSettings');
 
     if (!selectedIDs.length) {
         return null;
     }
 
-    const titleMove = Shortcuts ? (
+    const titleMove = mailSettings.Shortcuts ? (
         <>
             {c('Title').t`Move to`}
             <br />
@@ -42,7 +43,7 @@ const LabelsAndFolders = ({
         c('Title').t`Move to`
     );
 
-    const titleLabel = Shortcuts ? (
+    const titleLabel = mailSettings.Shortcuts ? (
         <>
             {c('Title').t`Label as`}
             <br />
@@ -76,6 +77,7 @@ const LabelsAndFolders = ({
                             onClose={onClose}
                             onLock={onLock}
                             breakpoints={breakpoints}
+                            isMessage={!isConversationMode(labelID, mailSettings)}
                         />
                     ),
                 }}

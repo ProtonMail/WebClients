@@ -213,6 +213,7 @@ const HeaderMoreDropdown = ({
                           onClose={onClose}
                           onLock={onLock}
                           breakpoints={breakpoints}
+                          isMessage
                       />
                   ),
               },
@@ -372,6 +373,7 @@ const HeaderMoreDropdown = ({
                                     onClose={onClose}
                                     onLock={onLock}
                                     breakpoints={breakpoints}
+                                    isMessage
                                 />
                             ),
                         }}
