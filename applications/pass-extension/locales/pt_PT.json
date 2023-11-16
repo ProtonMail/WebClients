@@ -331,9 +331,6 @@
       "Could not open updated vault": [
         "Não foi possível abrir o cofre actualizado"
       ],
-      "Could not resume your session : ${ description }": [
-        "Não foi possível retomar a sua sessão: ${ description }"
-      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "O ficheiro CSV não tem os cabeçalhos esperados: ${ missingHeaders }"
       ],
@@ -636,9 +633,6 @@
       "Loading": [
         "A carregar"
       ],
-      "Loading extension": [
-        "A carregar a extensão"
-      ],
       "Loading...": [
         "A carregar..."
       ],
@@ -647,9 +641,6 @@
       ],
       "Multiple vaults": [
         "Vários cofres"
-      ],
-      "N/A": [
-        "N/D"
       ],
       "None": [
         "Nenhum"
@@ -781,9 +772,6 @@
       "15 minutes": [
         "15 minutos"
       ],
-      "2FA secret (TOTP)": [
-        "Chave secreta 2FA (TOTP)"
-      ],
       "2FA token (TOTP)": [
         "Token 2FA (TOTP)"
       ],
@@ -831,9 +819,6 @@
       ],
       "Autofill 2FA": [
         "Preenchimento automático de A2F"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "Abrir automaticamente o preenchimento automático ao focar nos campos de início de sessão."
       ],
       "Autosave": [
         "Guardar automaticamente"
@@ -1158,9 +1143,6 @@
       "Hyphens": [
         "Hífens"
       ],
-      "Memorable Password": [
-        "Palavra-passe memorável"
-      ],
       "Numbers": [
         "Números"
       ],
@@ -1181,9 +1163,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "Adicionar chave secreta 2FA"
-      ],
       "Add hidden text": [
         "Adicionar texto oculto"
       ],
@@ -1400,9 +1379,6 @@
       "PGP encrypted export file requires passphrase": [
         "O ficheiro de exportação encriptado com PGP requer uma frase secreta."
       ],
-      "Please log back in": [
-        "Por favor, volte a iniciar sessão"
-      ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Os relatórios não são encriptados de ponta a ponta. Não envie nenhuma informação sensível."
       ],
@@ -1429,9 +1405,6 @@
       ],
       "You must select at least one mailbox": [
         "É necessário selecionar pelo menos uma caixa de correio"
-      ],
-      "Your session was locked due to inactivity": [
-        "A sua sessão foi bloqueada devido à inatividade."
       ]
     }
   }
