@@ -61,7 +61,7 @@ export interface AuthServiceConfig {
     onUnauthorized?: (localID: Maybe<number>, broadcast: boolean) => void;
     /** Called immediately after a fork has been successfully consumed. At this
      * point the user is not fully logged in yet. */
-    onForkConsumed?: (session: AuthSession) => void;
+    onForkConsumed?: (session: AuthSession, state: string) => void;
     /** Called when a fork could not be successfully consumed. This can happen
      * if the fork data is invalid */
     onForkInvalid?: () => void;
@@ -207,7 +207,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             try {
                 config.onAuthorize?.();
                 const session = await consumeFork({ api, payload, apiUrl });
-                config.onForkConsumed?.(session);
+                config.onForkConsumed?.(session, payload.state);
 
                 const loggedIn = await authService.login(session);
                 if (loggedIn) await authService.persistSession();
