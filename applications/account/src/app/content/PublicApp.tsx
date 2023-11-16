@@ -16,6 +16,7 @@ import {
 import { ActiveSessionData, ProduceForkData, SSOType } from '@proton/components/containers/app/SSOForkProducer';
 import { OnLoginCallbackArguments, ProtonLoginCallback } from '@proton/components/containers/app/interface';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
+import { AuthType } from '@proton/components/containers/login/interface';
 import { pushForkSession } from '@proton/shared/lib/api/auth';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { OAuthLastAccess, getOAuthLastAccess } from '@proton/shared/lib/api/oauth';
@@ -528,7 +529,15 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                                                 )}
                                                 <Route path={SSO_PATHS.EXTERNAL_SSO_LOGIN}>
                                                     <UnAuthenticated>
-                                                        <ExternalSSOConsumer loader={loader} onLogin={handleLogin} />
+                                                        <ExternalSSOConsumer
+                                                            loader={loader}
+                                                            onLogin={(token) =>
+                                                                history.replace(SSO_PATHS.LOGIN, {
+                                                                    authType: AuthType.ExternalSSO,
+                                                                    externalSSOToken: token,
+                                                                })
+                                                            }
+                                                        />
                                                     </UnAuthenticated>
                                                 </Route>
                                                 <Route path={SSO_PATHS.SWITCH}>
