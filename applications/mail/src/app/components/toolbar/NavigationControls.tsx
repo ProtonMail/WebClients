@@ -84,7 +84,7 @@ const NavigationControls = ({
                 disabled={loading || index <= 0}
                 title={conversationMode ? titlePreviousConversation : titlePreviousMessage}
                 onClick={handlePrevious}
-                className="no-tablet no-mobile"
+                className="hidden lg:flex"
                 data-testid="toolbar:previous-element"
                 icon={
                     <Icon
@@ -97,7 +97,7 @@ const NavigationControls = ({
                 disabled={loading || index >= elementIDs.length - 1}
                 title={conversationMode ? titleNextConversation : titleNextMessage}
                 onClick={handleNext}
-                className="no-tablet no-mobile"
+                className="hidden lg:flex"
                 data-testid="toolbar:next-element"
                 icon={
                     <Icon
