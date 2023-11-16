@@ -508,6 +508,9 @@
       "Report a problem": [
         "Signaler un bug"
       ],
+      "Report an issue": [
+        "Signaler un bug"
+      ],
       "Request a feature": [
         "Demander une fonctionnalité"
       ],
@@ -630,6 +633,9 @@
       ],
       "Skip verification": [
         "Ignorer la vérification"
+      ],
+      "Start": [
+        "Commencer"
       ],
       "Start import": [
         "Démarrer l'importation"
@@ -2558,6 +2564,9 @@
       "Access denied": [
         "L'accès est refusé."
       ],
+      "App currently unavailable": [
+        "L'application n'est pas disponible actuellement."
+      ],
       "Brace yourself till we get the error fixed.": [
         "Nous vous invitons à patienter jusqu'à ce que nous corrigions l'erreur."
       ],
@@ -2573,11 +2582,17 @@
       "Oops, something went wrong": [
         "Une erreur s'est produite."
       ],
+      "Open in browser": [
+        "Ouvrir dans le navigateur"
+      ],
       "Please refresh the page or try again later.": [
         "Nous vous invitons à actualiser la page ou à réessayer plus tard."
       ],
       "Something went wrong": [
         "Une erreur s'est produite."
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Pour utiliser ${ MAIL_APP_NAME } ou ${ CALENDAR_APP_NAME }, passez sur la version web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
@@ -2648,6 +2663,12 @@
     "Event title": {
       "(no title)": [
         "(sans titre)"
+      ]
+    },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } erreur",
+        "${ countOfFailedLinks } erreurs"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -3353,6 +3374,9 @@
       "An active recovery file": [
         "Un fichier de récupération actif"
       ],
+      "An issue occurred during the restore process.": [
+        "Un problème est survenu pendant la restauration."
+      ],
       "and": [
         "et"
       ],
@@ -3871,6 +3895,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME envoie automatiquement le message en utilisant le mode actuel de l'éditeur."
       ],
+      "Photos have been successfully recovered.": [
+        "Les photos ont été récupérées."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Saisissez le mot de passe pour déchiffrer et voir le contenu."
       ],
@@ -3962,8 +3989,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "La restauration est en cours. Cela peut prendre quelques secondes."
       ],
+      "Restore Photos": [
+        "Restaurer les photos"
+      ],
       "Restored files ${ formattedDate }": [
         "Fichiers restaurés ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Restauration des photos en cours. Gardez l'onglet ouvert."
       ],
       "Search cannot be enabled in this browser": [
         "La recherche ne peut pas être activée dans ce navigateur."
@@ -4081,6 +4114,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Téléchargez le fichier."
+      ],
+      "This file is too large to preview": [
+        "Ce fichier est trop volumineux pour en afficher un aperçu."
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Ce fichier a peut-être été supprimé, déplacé ou rendu indisponible. Prenez contact avec le propriétaire du fichier."
@@ -4776,9 +4812,6 @@
       "Replace existing folder": [
         "Remplacer le dossier existant"
       ],
-      "Report": [
-        "Signaler"
-      ],
       "Reveal password": [
         "Afficher le mot de passe"
       ],
@@ -5059,14 +5092,17 @@
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
       ],
+      "Custom snooze time": [
+        "Personnalisation des périodes de mise en pause des notifications"
+      ],
       "Hide-my-email aliases": [
         "Alias « hide-my-email »"
       ],
       "Schedule messages at any time": [
-        "Planifiez l'envoi de messages quand vous le voulez"
+        "Planification de l'envoi de messages quand vous le voulez"
       ],
       "Search message content": [
-        "Rechercher dans le contenu des messages"
+        "Recherche dans le contenu des messages"
       ],
       "Unlimited folders, labels, and filters": [
         "Nombre illimité de dossiers, de labels et de filtres"
@@ -5085,8 +5121,11 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Profitez d'un nombre illimité d'alias avec SimpleLogin de ${ BRAND_NAME }"
       ],
+      "Snooze messages and get reminded when you want": [
+        "Mettez en pause les notifications des messages et recevez un rappel quand vous le voulez."
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
+        "Espace de stockage partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
         "Utilisez votre adresse e-mail personnalisée à partir de votre propre nom de domaine (vous@votrenom.com)."
@@ -5969,6 +6008,10 @@
         "${ countMergeableContacts } contact semble identique.",
         "${ countMergeableContacts } contacts semblent identiques."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } restant",
+        "${ countOfUnrecoveredLinksLeft } restants"
+      ],
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
       ],
@@ -6339,14 +6382,8 @@
       "File recovery process": [
         "Processus de récupération des fichiers"
       ],
-      "Files details": [
-        "Informations sur les fichiers"
-      ],
       "Folder details": [
         "Informations sur le dossier"
-      ],
-      "Folders details": [
-        "Informations sur les dossiers"
       ],
       "Found ${ searchView.numberOfResults } result": [
         "${ searchView.numberOfResults } résultat trouvé",
@@ -6418,12 +6455,6 @@
       ],
       "Notes": [
         "Notes"
-      ],
-      "Number of files": [
-        "Nombre de fichiers"
-      ],
-      "Number of folders": [
-        "Nombre de dossiers"
       ],
       "Number of items": [
         "Nombre d'éléments"

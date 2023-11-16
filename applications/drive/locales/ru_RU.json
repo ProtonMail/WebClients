@@ -163,6 +163,9 @@
       "Continue with Google": [
         "Продолжить с Google"
       ],
+      "Continue with Outlook": [
+        "Продолжить с Outlook"
+      ],
       "Copy address": [
         "Копировать адрес"
       ],
@@ -372,6 +375,12 @@
       ],
       "Import from .csv or vCard": [
         "Импорт из .csv или vCard"
+      ],
+      "Import from Google": [
+        "Импортировать из Google"
+      ],
+      "Import from Outlook": [
+        "Импортировать из Outlook"
       ],
       "Learn more": [
         "Подробнее"
@@ -2668,6 +2677,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Платная версия ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Платные версии ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Платная версия ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "До 6 пользователей"
       ]
@@ -4806,9 +4824,6 @@
       "Replace existing folder": [
         "Заменить существующую папку"
       ],
-      "Report": [
-        "Пожаловаться"
-      ],
       "Reveal password": [
         "Показать пароль"
       ],
@@ -5299,6 +5314,9 @@
       "File or folder is missing a name": [
         "У папки или файла отсутствует имя"
       ],
+      "Link copied to clipboard": [
+        "Ссылка скопирована в буфер обмена"
+      ],
       "Move ${ itemsToMoveCount } file": [
         "Переместить ${ itemsToMoveCount } файл",
         "Переместить ${ itemsToMoveCount } файла",
@@ -5645,6 +5663,11 @@
         "Сбросить пароль"
       ]
     },
+    "session_recovery:available:error": {
+      "Please generate keys before you try to change your password": [
+        "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
+      ]
+    },
     "session_recovery:available:info": {
       "${ timeRemaining.inDays } day": [
         "${ timeRemaining.inDays } день",
@@ -5821,6 +5844,12 @@
       ],
       "Highest VPN speed": [
         "Высочайшая скорость VPN"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Платные версии ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "Платная версия ${ VPN_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "Ранний доступ"
@@ -6037,6 +6066,14 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "Отзыв отправлен"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "Платная версия ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "Платные версии ${ MAIL_SHORT_APP_NAME } и ${ CALENDAR_SHORT_APP_NAME }"
       ]
     },
     "summer2023: Tooltip": {
@@ -6362,13 +6399,7 @@
       "File recovery process": [
         "Процесс восстановления файлов"
       ],
-      "Files details": [
-        "Информация о файлах"
-      ],
       "Folder details": [
-        "Информация о папке"
-      ],
-      "Folders details": [
         "Информация о папке"
       ],
       "Found ${ searchView.numberOfResults } result": [
@@ -6445,12 +6476,6 @@
       ],
       "Notes": [
         "Заметки"
-      ],
-      "Number of files": [
-        "Количество файлов"
-      ],
-      "Number of folders": [
-        "Количество папок"
       ],
       "Number of items": [
         "Количество элементов"

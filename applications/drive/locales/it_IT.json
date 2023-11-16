@@ -508,6 +508,9 @@
       "Report a problem": [
         "Segnala un problema"
       ],
+      "Report an issue": [
+        "Segnala un problema"
+      ],
       "Request a feature": [
         "Richiedi una funzionalità"
       ],
@@ -630,6 +633,9 @@
       ],
       "Skip verification": [
         "Salta verifica"
+      ],
+      "Start": [
+        "Inizia"
       ],
       "Start import": [
         "Avvia importazione"
@@ -2650,6 +2656,12 @@
         "(nessun titolo)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } non riuscito",
+        "${ countOfFailedLinks } non riusciti"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB di archiviazione totale"
@@ -3353,6 +3365,9 @@
       "An active recovery file": [
         "Un file di recupero attivo"
       ],
+      "An issue occurred during the restore process.": [
+        "Si è verificato un errore nel processo di ripristino."
+      ],
       "and": [
         "e"
       ],
@@ -3871,6 +3886,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME invia automaticamente il messaggio usando l'attuale modalità di composizione."
       ],
+      "Photos have been successfully recovered.": [
+        "Le foto sono state recuperate con successo."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Prego immettere la password per decrittare e vedere il contenuto."
       ],
@@ -3962,8 +3980,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "Il ripristino è in corso. Questo può richiedere alcuni secondi."
       ],
+      "Restore Photos": [
+        "Ripristina le foto"
+      ],
       "Restored files ${ formattedDate }": [
         "File ripristinati ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Ripristino delle foto in corso. Mantieni aperta la scheda."
       ],
       "Search cannot be enabled in this browser": [
         "La ricerca non può essere abilitata in questo browser"
@@ -4775,9 +4799,6 @@
       ],
       "Replace existing folder": [
         "Sostituisci la cartella esistente"
-      ],
-      "Report": [
-        "Segnala"
       ],
       "Reveal password": [
         "Mostra la password"
@@ -5969,6 +5990,10 @@
         "${ countMergeableContacts } contatto sembra identico.",
         "${ countMergeableContacts } contatti sembrano identici."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } rimanente",
+        "${ countOfUnrecoveredLinksLeft } rimanenti"
+      ],
       "Address copied to clipboard": [
         "Indirizzo copiato negli appunti"
       ],
@@ -6339,14 +6364,8 @@
       "File recovery process": [
         "Processo di recupero file"
       ],
-      "Files details": [
-        "Dettagli dei file"
-      ],
       "Folder details": [
         "Dettagli cartella"
-      ],
-      "Folders details": [
-        "Dettagli cartelle"
       ],
       "Found ${ searchView.numberOfResults } result": [
         "Trovato ${ searchView.numberOfResults } risultato",
@@ -6418,12 +6437,6 @@
       ],
       "Notes": [
         "Note"
-      ],
-      "Number of files": [
-        "Numero di file"
-      ],
-      "Number of folders": [
-        "Numero di cartelle"
       ],
       "Number of items": [
         "Numero di elementi"

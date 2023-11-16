@@ -80,10 +80,10 @@
       "Create": [
         "Erstellen"
       ],
-      "Create a ${ BRAND_NAME } Account": [
+      "Create a ${ BRAND_NAME } account": [
         "${ BRAND_NAME }-Konto erstellen"
       ],
-      "Create a ${ BRAND_NAME } account": [
+      "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-Konto erstellen"
       ],
       "Create a new vault to share": [
@@ -445,9 +445,6 @@
       "Could not resolve share members": [
         "Mitglieder der Freigabe können nicht festgelegt werden"
       ],
-      "Could not resume your session : ${ description }": [
-        "Deine Sitzung konnte nicht fortgesetzt werden: ${ description }"
-      ],
       "CSV file is missing expected headers: ${ missingHeaders }": [
         "In der CSV-Datei fehlen erwartete Kopfzeilen: ${ missingHeaders }"
       ],
@@ -487,6 +484,9 @@
       ],
       "Failed to edit user's access.": [
         "Fehler beim Bearbeiten des Benutzerzugriffs."
+      ],
+      "Failed to move all items from \"${ payload.content.name }\"": [
+        "Fehler beim Verschieben der Einträge von \"${ payload.content.name }\"."
       ],
       "Failed to remove user's access.": [
         "Fehler beim Löschen des Benutzerzugriffs."
@@ -547,6 +547,9 @@
       ],
       "Restoring item failed": [
         "Fehler beim Wiederherstellen des Eintrags."
+      ],
+      "Restoring trashed items failed": [
+        "Fehler beim Wiederherstellen der Einträge aus dem Papierkorb."
       ],
       "Settings update failed": [
         "Fehler beim Aktualisieren der Einstellungen."
@@ -682,9 +685,6 @@
         "${ memberCount } Mitglied",
         "${ memberCount } Mitglieder"
       ],
-      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymised image proxy.": [
-        "${ PASS_APP_NAME } zeigt das Website-Symbol des Eintrags über den anonymisierten Bild-Proxy von ${ BRAND_NAME } an."
-      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importiert nur Logins, Notizen und Kreditkarten."
       ],
@@ -734,11 +734,17 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" wurde in den Papierkorb verschoben - er wird keine E-Mails mehr an dein Postfach weiterleiten."
       ],
-      "All trashed items permanently removed": [
-        "Alle Einträge im Papierkorb werden dauerhaft gelöscht."
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Alle Einträge von \"${ payload.content.name }\" erfolgreich verschoben."
+      ],
+      "All trashed items successfully restored": [
+        "Alle Einträge aus dem Papierkorb erfolgreich wiederhergestellt."
       ],
       "An item previously shared with you was removed": [
         "Ein zuvor mit dir geteilter Eintrag wurde entfernt."
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Bist du dir sicher, dass du alle Einträge von \"${ fromVaultName }\" nach \"${ toVaultName }\" verschieben willst?"
       ],
       "Auto-lock successfully disabled": [
         "Automatisches Sperren erfolgreich deaktiviert."
@@ -799,6 +805,9 @@
       ],
       "Emptying trash...": [
         "Papierkorb wird geleert..."
+      ],
+      "Enable ${ PASS_APP_NAME } by connecting your ${ BRAND_NAME } account": [
+        "Aktiviere ${ PASS_APP_NAME }, indem du dein ${ BRAND_NAME }-Konto verbindest."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "Bestätigungscode eingeben. Ziffer ${ digit }."
@@ -895,9 +904,6 @@
       "Loading": [
         "Wird geladen"
       ],
-      "Loading extension": [
-        "Die Erweiterung wird geladen"
-      ],
       "Loading...": [
         "Wird geladen..."
       ],
@@ -907,11 +913,11 @@
       "More than a password manager, ${ PASS_APP_NAME } protects your password and your personal email address via email aliases. Powered by the same technology behind ${ MAIL_APP_NAME }, your data is end to end encrypted and is only accessible by you.": [
         "${ PASS_APP_NAME } ist mehr als nur ein Passwort-Manager: Er schützt dein Passwort und deine persönliche E-Mail-Adresse über E-Mail-Aliasse. Dank der gleichen Technologie wie bei ${ MAIL_APP_NAME } sind deine Daten durchgängig verschlüsselt und nur für dich zugänglich."
       ],
+      "Moving all items from \"${ payload.content.name }\"": [
+        "Verschiebe alle Einträge von \"${ payload.content.name }\""
+      ],
       "Multiple vaults": [
         "Mehrere Tresore"
-      ],
-      "N/A": [
-        "N/A"
       ],
       "No login found": [
         "Keine Zugangsdaten gefunden."
@@ -967,6 +973,9 @@
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "Der Datenschutz ist uns ein großes Anliegen. Erfahre, warum ${ PASS_APP_NAME } anders ist."
       ],
+      "Restoring trashed items...": [
+        "Stelle Einträge aus dem Papierkorb wieder her..."
+      ],
       "Save login": [
         "Anmeldedaten speichern"
       ],
@@ -1017,9 +1026,6 @@
       ],
       "Thank you, the problem has been reported": [
         "Vielen Dank, das Problem wurde gemeldet."
-      ],
-      "The autofill dropdown will automatically open on field focus.": [
-        "Das Dropdown-Menü für das automatische Ausfüllen wird automatisch geöffnet, sobald das Feld im Fokus ist."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Der folgende ${ result.ignored.length } Eintrag konnte nicht importiert werden:",
@@ -1153,9 +1159,6 @@
       "15 minutes": [
         "15 Minuten"
       ],
-      "2FA secret (TOTP)": [
-        "2FA-Geheimnis (TOTP)"
-      ],
       "2FA token (TOTP)": [
         "2FA-Token (TOTP)"
       ],
@@ -1203,9 +1206,6 @@
       ],
       "Autofill 2FA": [
         "2FA automatisch ausfüllen"
-      ],
-      "Automatically open autofill when focusing login fields": [
-        "Automatisches Öffnen der Autofill-Funktion beim Fokussieren von Anmeldefeldern"
       ],
       "Autosave": [
         "Auto-Speichern"
@@ -1542,9 +1542,6 @@
       "Hyphens": [
         "Bindestriche"
       ],
-      "Memorable Password": [
-        "Einprägsames Passwort"
-      ],
       "Numbers": [
         "Zahlen"
       ],
@@ -1565,9 +1562,6 @@
       ]
     },
     "Placeholder": {
-      "Add 2FA secret": [
-        "2FA-Geheimnis hinzufügen"
-      ],
       "Add hidden text": [
         "Versteckten Text hinzufügen"
       ],
@@ -1863,9 +1857,6 @@
       "Please enter a valid email address": [
         "Bitte gib eine gültige E-Mail-Adresse ein."
       ],
-      "Please log back in": [
-        "Bitte melde dich erneut an."
-      ],
       "Please verify your email address in order to use email aliases": [
         "Bitte bestätige deine E-Mail-Adresse, um E-Mail-Aliasse verwenden zu können."
       ],
@@ -1928,9 +1919,6 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Dein Abonnement gestattet dir nur das automatische Ausfüllen aus deinen ersten zwei Tresoren."
-      ],
-      "Your session was locked due to inactivity": [
-        "Deine Sitzung wurde aufgrund von Inaktivität gesperrt."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden in deinen ersten Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."

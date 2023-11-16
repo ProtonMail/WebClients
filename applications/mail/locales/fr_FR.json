@@ -554,6 +554,9 @@
       "label emails as": [
         "labelliser les messages comme"
       ],
+      "Later this week": [
+        "Plus tard dans la semaine"
+      ],
       "Learn more": [
         "En savoir plus"
       ],
@@ -577,6 +580,9 @@
       ],
       "Manage labels": [
         "Gérer les labels"
+      ],
+      "Manage Snooze": [
+        "Gérer la mise en pause des notifications"
       ],
       "Mark as read": [
         "Marquer comme lu"
@@ -703,6 +709,9 @@
       ],
       "Next page": [
         "Page suivante"
+      ],
+      "Next week": [
+        "Semaine suivante"
       ],
       "No": [
         "Non"
@@ -896,6 +905,9 @@
       "Select all messages": [
         "Sélectionner tous les messages"
       ],
+      "Select date and time": [
+        "Sélectionner la date et l'heure"
+      ],
       "Self-destruct in 7 days": [
         "Autodétruire dans 7 jours"
       ],
@@ -1001,6 +1013,9 @@
       "Skip verification": [
         "Ignorer la vérification"
       ],
+      "Snooze": [
+        "Mettre en pause les notifications"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Certaines images n'ont pas pu être chargées avec la protection contre les traqueurs."
       ],
@@ -1030,6 +1045,9 @@
       ],
       "This message contains remote content.": [
         "Ce message comporte du contenu distant."
+      ],
+      "This weekend": [
+        "Ce week-end"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Pour faire des recherches sécurisées dans vos messages, nous devons télécharger une copie de vos messages dans votre navigateur. Le téléchargement initial peut prendre un certain temps."
@@ -1082,6 +1100,9 @@
       ],
       "Unordered list": [
         "Liste à puces"
+      ],
+      "Unsnooze": [
+        "Réactiver les notifications"
       ],
       "Unstar": [
         "Retirer des Favoris"
@@ -3069,6 +3090,9 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Profitez de la fonctionnalité de programmation personnalisée des messages et d'autres fonctionnalités en passant à un abonnement supérieur."
       ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Changez d'abonnement pour personnaliser les périodes de mise en pause des notifications."
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Bénéficiez d'un nombre illimité de filtres pour trier automatiquement votre boite de réception et d'autres fonctionnalités premium en passant à un abonnement supérieur."
       ],
@@ -3838,6 +3862,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "L'application n'est pas disponible actuellement."
+      ],
       "Error: ${ errorMessage }": [
         "Erreur : ${ errorMessage }"
       ],
@@ -3850,11 +3877,17 @@
       "Oops, something went wrong": [
         "Une erreur s'est produite."
       ],
+      "Open in browser": [
+        "Ouvrir dans le navigateur"
+      ],
       "Please refresh the page or try again later.": [
         "Nous vous invitons à actualiser la page ou à réessayer plus tard."
       ],
       "Something went wrong": [
         "Une erreur s'est produite."
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Pour utiliser ${ MAIL_APP_NAME } ou ${ CALENDAR_APP_NAME }, passez sur la version web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
@@ -5349,8 +5382,8 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Vos données sont en cours d'importation depuis ${ importedEmailAddress } vers ${ toEmail }."
       ],
-      "Include Spam/Trash in your search results.": [
-        "Ajoutez les dossiers Indésirables/spam et Corbeille dans les résultats de vos recherches."
+      "Include Spam/Trash.": [
+        "Inclure les messages qui sont dans les dossiers Indésirables/spam et Corbeille."
       ],
       "Inherited from parent folder": [
         "Hérité du dossier dans lequel il est placé."
@@ -5635,6 +5668,9 @@
       "Right-click for options": [
         "Faites un clic droit avec la souris pour afficher les options."
       ],
+      "Sat, ${ formatTime }": [
+        "Samedi, ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "Enregistré à ${ dateString }"
       ],
@@ -5712,6 +5748,18 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin offre un moyen simple de créer des identifiants sur des sites tiers peu fiables pour lesquels vous ne voulez pas révéler votre véritable adresse e-mail."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Notifications mises en pause jusqu'au ${ dateString }, ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Notifications mises en pause jusqu'à aujourd'hui, ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Notifications mises en pause jusqu'à demain, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "La mise en pause des notifications pour cette conversation sera annulée."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Désolé, ce message n'existe pas ou a déjà expiré."
@@ -5814,6 +5862,9 @@
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Cette adresse e-mail ne répond pas aux exigences d'authentification de son domaine. Elle a peut-être été falsifiée ou transférée de manière incorrecte."
       ],
+      "This file is too large to preview": [
+        "Ce fichier est trop volumineux pour en afficher un aperçu."
+      ],
       "This invitation is saved in a disabled calendar.": [
         "Cette invitation est enregistrée dans un calendrier désactivé."
       ],
@@ -5908,6 +5959,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Pour utiliser la vérification d’adresse, vous devez approuver une ou plusieurs clés publiques disponibles, y compris celle que vous voulez utiliser pour l’envoi. Cela empêche la falsification des clés de chiffrement."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Demain, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Trop de messages sont en attente d'être envoyés. Vous devez attendre qu'un autre message ait été envoyé pour programmer celui-ci."
       ],
@@ -5952,6 +6006,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Passez à ${ MAIL_APP_NAME } Plus pour en disposer"
       ],
       "Upgrade to add more addresses to your account.": [
         "Passez à un abonnement supérieur pour ajouter plus d'adresses à votre compte."
@@ -7116,6 +7173,12 @@
       "Sign up for free": [
         "Inscrivez-vous gratuitement"
       ],
+      "Snooze": [
+        "Mettre les notifications en pause"
+      ],
+      "Snoozed": [
+        "Les notifications sont mises en pause"
+      ],
       "Spam": [
         "Indésirables/spam"
       ],
@@ -7218,17 +7281,8 @@
       "Archive": [
         "Archives"
       ],
-      "Drafts": [
-        "Brouillons"
-      ],
       "Inbox": [
         "Boite de réception"
-      ],
-      "Scheduled": [
-        "Programmés"
-      ],
-      "Sent": [
-        "Envoyés"
       ],
       "Spam": [
         "Indésirables/spam"
@@ -7462,14 +7516,17 @@
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
       ],
+      "Custom snooze time": [
+        "Personnalisation des périodes de mise en pause des notifications"
+      ],
       "Hide-my-email aliases": [
         "Alias « hide-my-email »"
       ],
       "Schedule messages at any time": [
-        "Planifiez l'envoi de messages quand vous le voulez"
+        "Planification de l'envoi de messages quand vous le voulez"
       ],
       "Search message content": [
-        "Rechercher dans le contenu des messages"
+        "Recherche dans le contenu des messages"
       ],
       "Unlimited folders, labels, and filters": [
         "Nombre illimité de dossiers, de labels et de filtres"
@@ -7488,8 +7545,11 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Profitez d'un nombre illimité d'alias avec SimpleLogin de ${ BRAND_NAME }"
       ],
+      "Snooze messages and get reminded when you want": [
+        "Mettez en pause les notifications des messages et recevez un rappel quand vous le voulez."
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
+        "Espace de stockage partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
         "Utilisez votre adresse e-mail personnalisée à partir de votre propre nom de domaine (vous@votrenom.com)."
@@ -7915,6 +7975,9 @@
       "No results found": [
         "Aucun résultat n'a été trouvé."
       ],
+      "No snoozed messages": [
+        "Il n'y a aucun message dont les notifications ont été mises en pause."
+      ],
       "No unread messages found": [
         "Aucun message non lu n'a été trouvé."
       ]
@@ -8209,6 +8272,14 @@
       ],
       "Sign": [
         "Signer"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Pause des notifications pour le message"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Quand le message doit-il réapparaître dans votre boite de réception ?"
       ]
     },
     "Sort option": {
@@ -8541,6 +8612,14 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversation retirée de ${ labelName }.",
         "${ elementsCount } conversations retirées de ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "Les notifications de ${ elementsCount } conversation sont mises en pause.",
+        "Les notifications de ${ elementsCount } conversations sont mises en pause."
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "Les notifications de ${ elementsCount } conversation sont réactivées.",
+        "Les notifications de ${ elementsCount } conversations sont réactivées."
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } message ajouté à ${ labelName }.",
@@ -9213,6 +9292,9 @@
       "Moving a scheduled message": [
         "Déplacement d'un message programmé"
       ],
+      "Moving a snoozed message": [
+        "Déplacer un message dont les notifications ont été mises en pause"
+      ],
       "New message": [
         "Nouveau message"
       ],
@@ -9354,6 +9436,12 @@
       "Sign out": [
         "Se déconnecter"
       ],
+      "Snooze": [
+        "Mise en pause des notifications"
+      ],
+      "Snooze message": [
+        "Pause des notifications pour le message"
+      ],
       "Sort conversations": [
         "Trier les conversations"
       ],
@@ -9399,6 +9487,9 @@
       ],
       "Verification error": [
         "Erreur de vérification"
+      ],
+      "Want to snooze any time?": [
+        "Vous voulez personnaliser les périodes pendant lesquelles les notifications sont mises en pause ?"
       ],
       "Warning": [
         "Attention"
@@ -9616,6 +9707,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Votre essai gratuit se termine le ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Lundi, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Samedi, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Dimanche, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

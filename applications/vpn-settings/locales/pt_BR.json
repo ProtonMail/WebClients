@@ -44,6 +44,9 @@
       "Authenticate": [
         "Autenticar"
       ],
+      "Authenticating": [
+        "Autenticando"
+      ],
       "Back": [
         "Voltar"
       ],
@@ -2104,6 +2107,9 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "Você usou todos os usuários do seu plano. Faça o upgrade do seu plano para adicionar um novo usuário."
       ],
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "Você deve ativar as chaves da sua organização. Sem a ativação, você não poderá criar ou acessar usuários não privados."
+      ],
       "You must privatize all users before generating new organization keys": [
         "Você deve tornar privados todos os usuários antes de gerar novas chaves de organização"
       ],
@@ -2129,11 +2135,17 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Aplicativo atualmente indisponível"
+      ],
       "Error: ${ errorMessage }": [
         "Erro: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Opa, alguma coisa deu errado"
+      ],
+      "Open in browser": [
+        "Abrir no navegador"
       ],
       "Please refresh the page or try again later.": [
         "Atualize a página ou tente novamente mais tarde."
@@ -2741,6 +2753,9 @@
         "${ number } servidor",
         "${ number } servidores"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } removido. Oferta de pacote não disponível em um plano de 1 mês."
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado servidor${ serverPricePerMonth }"
       ],
@@ -2901,6 +2916,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "Antes de começar a enviar e receber e-mails de seus novos endereços, você precisa criar chaves de criptografia para eles."
+      ],
+      "Billed at ${ price }": [
+        "Cobrado a ${ price }"
       ],
       "Billing cycle: ${ text }": [
         "Ciclo de faturamento: ${ text }"
@@ -3323,6 +3341,9 @@
       "Please try again, use a different payment method, or contact PayPal for assistance.": [
         "Tente novamente, use um método de pagamento diferente ou entre em contato com seu banco."
       ],
+      "Please use another browser or download the file.": [
+        "Use outro navegador ou baixe o arquivo."
+      ],
       "Please verify payment at the new tab which was opened.": [
         "Verifique o pagamento na nova guia que foi aberta."
       ],
@@ -3334,6 +3355,9 @@
       ],
       "Preview failed to be loaded": [
         "Não foi possível carregar a pré-visualização."
+      ],
+      "Preview for this file type is currently not supported on this browser.": [
+        "No momento, a visualização deste tipo de arquivo não é compatível com este navegador."
       ],
       "Preview for this file type is not supported": [
         "A pré-visualização deste arquivo não é suportada."
@@ -3504,6 +3528,9 @@
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Essas credenciais não podem ser usadas para fazer login em nossos aplicativos oficiais ${ VPN_APP_NAME }. ${ learnMore }"
       ],
+      "They will be removed from your organization": [
+        "Eles serão removidos da sua organização"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Essa conta foi suspensa devido a uma potencial violação da política."
       ],
@@ -3659,6 +3686,9 @@
       ],
       "Version ${ version }": [
         "Versão ${ version }"
+      ],
+      "View, download, and manage your invoices.": [
+        "Ver, baixar e gerenciar suas notas ficais"
       ],
       "Visa Secure logo": [
         "Logotipo do Visa Secure"
@@ -3907,6 +3937,11 @@
     "Info for payment methods": {
       "You can add a payment method to have your subscription renewed automatically. Other payment methods are also available.": [
         "Você pode adicionar um método de pagamento para renovar sua assinatura automaticamente. Outros métodos de pagamento também estão disponíveis."
+      ]
+    },
+    "Info message for custom invoice modal": {
+      "Enter a name and address for yourself or your organization. These details will be added to both personal and organizational invoices.": [
+        "Informe um nome e endereço para você ou sua organização. Esses detalhes serão adicionados às faturas pessoais e organizacionais."
       ]
     },
     "Info subscription": {
@@ -5641,6 +5676,18 @@
         "Andrea Braga"
       ]
     },
+    "plan customizer, ips": {
+      "please ${ contactHref } our Sales team.": [
+        "por favor ${ contactHref } nossa equipe de vendas."
+      ],
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Selecione o número de IPs a serem incluídos no seu plano. Cada IP adicional custa ${ price }."
+      ],
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Se você precisar de mais de ${ maxIPs } IP, ",
+        "Se você precisar de mais de ${ maxIPs } IPs, "
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "contato"
@@ -7266,6 +7313,14 @@
     "tooltip": {
       "${ PASS_APP_NAME }: Secure logins on all your devices. Includes unlimited aliases, sharing, integrated 2FA, and more.": [
         "${ PASS_APP_NAME }: Inícios de sessão seguros em todos os seus dispositivos. Inclui aliases ilimitados, compartilhamento, 2FA integrado e muito mais."
+      ]
+    },
+    "Tooltip for news": {
+      "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
+        "Receba as notícias mais recentes sobre privacidade e o que está acontecendo no universo ${ BRAND_NAME }"
+      ],
+      "Participate in surveys to improve ${ BRAND_NAME } services": [
+        "Participe de pesquisas para melhorar os serviços da ${ BRAND_NAME }"
       ]
     },
     "Tor out of date": {

@@ -631,6 +631,9 @@
       "Skip verification": [
         "Ohita vahvistus"
       ],
+      "Start": [
+        "Aloita"
+      ],
       "Start import": [
         "Aloita tuonti"
       ],
@@ -2650,6 +2653,12 @@
         "(ei nimikettä)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } epäonnistui",
+        "${ countOfFailedLinks } epäonnistui"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 Tt kokonaistallennustila"
@@ -3353,6 +3362,9 @@
       "An active recovery file": [
         "Aktiivinen palautustiedosto"
       ],
+      "An issue occurred during the restore process.": [
+        "Palautusprosessissa tapahtui virhe."
+      ],
       "and": [
         "ja"
       ],
@@ -3871,6 +3883,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME lähettää viestin automaattisesti käyttäen nykyistä kirjoitustilaa."
       ],
+      "Photos have been successfully recovered.": [
+        "Kuvat on palautettu."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Syötä salasana purkaaksesi salauksen ja nähdäksesi sisällön."
       ],
@@ -3962,8 +3977,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "Palautus on käynnissä. Tämä voi kestää muutamia sekunteja."
       ],
+      "Restore Photos": [
+        "Palauta kuvat"
+      ],
       "Restored files ${ formattedDate }": [
         "${ formattedDate } palautetut tiedostot"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Kuvia palautetaan... Pidä välilehti avoinna"
       ],
       "Search cannot be enabled in this browser": [
         "Hakua ei voida käyttää tässä selaimessa"
@@ -4775,9 +4796,6 @@
       ],
       "Replace existing folder": [
         "Korvaa olemassa oleva kansio"
-      ],
-      "Report": [
-        "Ilmoita"
       ],
       "Reveal password": [
         "Näytä salasana"
@@ -5969,6 +5987,10 @@
         "${ countMergeableContacts } yhteystieto näyttää identtiseltä.",
         "${ countMergeableContacts } yhteystietoa näyttää identtiseltä."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } jäljellä",
+        "${ countOfUnrecoveredLinksLeft } jäljellä"
+      ],
       "Address copied to clipboard": [
         "Osoite kopioitiin leikepöydälle"
       ],
@@ -6339,14 +6361,8 @@
       "File recovery process": [
         "Tiedoston palautusprosessi"
       ],
-      "Files details": [
-        "Tiedostojen tiedot"
-      ],
       "Folder details": [
         "Kansion tiedot"
-      ],
-      "Folders details": [
-        "Kansioiden tiedot"
       ],
       "Found ${ searchView.numberOfResults } result": [
         "Löytyi ${ searchView.numberOfResults } tulos",
@@ -6418,12 +6434,6 @@
       ],
       "Notes": [
         "Muistiinpanot"
-      ],
-      "Number of files": [
-        "Tiedostomäärä"
-      ],
-      "Number of folders": [
-        "Kansiomäärä"
       ],
       "Number of items": [
         "Kohdemäärä"

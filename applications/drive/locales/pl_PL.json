@@ -514,6 +514,9 @@
       "Report a problem": [
         "Zgłoś problem"
       ],
+      "Report an issue": [
+        "Zgłoś problem"
+      ],
       "Request a feature": [
         "Poproś o dodatkową funkcję"
       ],
@@ -636,6 +639,9 @@
       ],
       "Skip verification": [
         "Pomiń weryfikację"
+      ],
+      "Start": [
+        "Rozpocznij"
       ],
       "Start import": [
         "Rozpocznij importowanie"
@@ -2607,6 +2613,9 @@
       "Oops, something went wrong": [
         "Ups, coś poszło nie tak"
       ],
+      "Open in browser": [
+        "Otwórz w przeglądarce"
+      ],
       "Please refresh the page or try again later.": [
         "Odśwież stronę lub spróbuj ponownie później."
       ],
@@ -3477,6 +3486,9 @@
       "An active recovery file": [
         "Aktywny plik odzyskiwania"
       ],
+      "An issue occurred during the restore process.": [
+        "Wystąpił błąd podczas procesu przywracania."
+      ],
       "and": [
         "i"
       ],
@@ -4005,6 +4017,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "Schemat PGP/MIME automatycznie wysyła wiadomości przy użyciu obecnego trybu edytora."
       ],
+      "Photos have been successfully recovered.": [
+        "Pomyślnie odzyskano zdjęcia."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Wpisz hasło, aby odszyfrować zawartość."
       ],
@@ -4098,8 +4113,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "Przywracanie jest w toku. Proces może potrwać kilka sekund."
       ],
+      "Restore Photos": [
+        "Przywróć zdjęcia"
+      ],
       "Restored files ${ formattedDate }": [
         "Przywrócone pliki ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Przywracanie zdjęć... Pozostaw kartę otwartą"
       ],
       "Search cannot be enabled in this browser": [
         "Nie można włączyć wyszukiwania w tej przeglądarce"
@@ -4922,9 +4943,6 @@
       "Replace existing folder": [
         "Zastąp obecny folder"
       ],
-      "Report": [
-        "Zgłoś"
-      ],
       "Reveal password": [
         "Pokaż hasło"
       ],
@@ -5214,6 +5232,9 @@
       ],
       "Custom email domains": [
         "Niestandardowe domeny"
+      ],
+      "Custom snooze time": [
+        "Niestandardowy czas odłożenia"
       ],
       "Hide-my-email aliases": [
         "Aliasy hide-my-email"
@@ -6601,14 +6622,8 @@
       "File recovery process": [
         "Proces odzyskiwania pliku"
       ],
-      "Files details": [
-        "Szczegóły plików"
-      ],
       "Folder details": [
         "Szczegóły folderu"
-      ],
-      "Folders details": [
-        "Szczegóły folderów"
       ],
       "Found ${ searchView.numberOfResults } result": [
         "Znaleziono ${ searchView.numberOfResults } wynik",
@@ -6684,12 +6699,6 @@
       ],
       "Notes": [
         "Notatki"
-      ],
-      "Number of files": [
-        "Liczba plików"
-      ],
-      "Number of folders": [
-        "Liczba folderów"
       ],
       "Number of items": [
         "Liczba elementów"
