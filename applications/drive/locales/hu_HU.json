@@ -508,6 +508,9 @@
       "Report a problem": [
         "Probléma jelentése"
       ],
+      "Report an issue": [
+        "Hibabejelentés"
+      ],
       "Request a feature": [
         "Funkció ajánlása"
       ],
@@ -630,6 +633,9 @@
       ],
       "Skip verification": [
         "Ellenőrzés átugrása"
+      ],
+      "Start": [
+        "Kezdet"
       ],
       "Start import": [
         "Importálás indítása"
@@ -827,6 +833,9 @@
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } Plus és ${ CALENDAR_SHORT_APP_NAME }"
       ],
+      "${ storageSize } storage": [
+        "${ storageSize } tárhely"
+      ],
       "1 user": [
         "1 felhasználó"
       ],
@@ -844,6 +853,14 @@
       ],
       "Premium ${ VPN_SHORT_APP_NAME }": [
         "Prémium ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "Prémium jelszókezelő"
+      ]
+    },
+    "bf2023: Footer": {
+      "Discounts are based on standard monthly pricing.": [
+        "A kedvezmények a standard havi árazás alapján kerülnek kiszámításra."
       ]
     },
     "bf2023: Offers": {
@@ -4696,9 +4713,6 @@
       "Replace existing folder": [
         "Cserélje le a meglévő mappát"
       ],
-      "Report": [
-        "Jelentés"
-      ],
       "Reveal password": [
         "Jelszó felfedése"
       ],
@@ -6256,13 +6270,7 @@
       "File recovery process": [
         "Fájl helyreállító folyamat"
       ],
-      "Files details": [
-        "Fájlok adatai"
-      ],
       "Folder details": [
-        "Mappa adatai"
-      ],
-      "Folders details": [
         "Mappa adatai"
       ],
       "Found ${ searchView.numberOfResults } result": [
@@ -6335,12 +6343,6 @@
       ],
       "Notes": [
         "Jegyzetek"
-      ],
-      "Number of files": [
-        "Fájlok száma"
-      ],
-      "Number of folders": [
-        "Mappák száma"
       ],
       "Number of items": [
         "Elemek száma"

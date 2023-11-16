@@ -508,6 +508,9 @@
       "Report a problem": [
         "Αναφορά προβλήματος"
       ],
+      "Report an issue": [
+        "Αναφορά προβλήματος"
+      ],
       "Request a feature": [
         "Ζητήστε μια δυνατότητα"
       ],
@@ -630,6 +633,9 @@
       ],
       "Skip verification": [
         "Παράλειψη επαλήθευσης"
+      ],
+      "Start": [
+        "Έναρξη"
       ],
       "Start import": [
         "Έναρξη εισαγωγής"
@@ -2558,6 +2564,9 @@
       "Access denied": [
         "Δεν επιτρέπεται η πρόσβαση"
       ],
+      "App currently unavailable": [
+        "Η εφαρμογή δεν είναι διαθέσιμη αυτήν τη στιγμή"
+      ],
       "Brace yourself till we get the error fixed.": [
         "Φροντίστε τον εαυτό σας μέχρι να επιδιορθώσουμε το πρόβλημα."
       ],
@@ -2573,11 +2582,17 @@
       "Oops, something went wrong": [
         "Ωχ, κάτι πήγε στραβά"
       ],
+      "Open in browser": [
+        "Άνοιγμα στο πρόγραμμα περιήγησης"
+      ],
       "Please refresh the page or try again later.": [
         "Παρακαλούμε ανανεώστε τη σελίδα ή δοκιμάστε ξανά αργότερα."
       ],
       "Something went wrong": [
         "Κάτι πήγε στραβά"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Για να χρησιμοποιήσετε ${ MAIL_APP_NAME } ή ${ CALENDAR_APP_NAME }, μεταβείτε στην έκδοση ιστού."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Δεν ήταν δυνατή η φόρτωση αυτής της σελίδας. Ανανεώστε τη σελίδα ή ελέγξτε τη σύνδεσή σας στο διαδίκτυο."
@@ -2648,6 +2663,12 @@
     "Event title": {
       "(no title)": [
         "(χωρίς τίτλο)"
+      ]
+    },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } απέτυχε",
+        "${ countOfFailedLinks } απέτυχαν"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -2782,7 +2803,7 @@
     },
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
-        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλώ προσπαθήστε ξανά."
+        "Παρουσιάστηκε κάποιο πρόβλημα κατά τον έλεγχο ταυτότητας με το κλειδί ασφαλείας σας. Παρακαλούμε προσπαθήστε ξανά."
       ]
     },
     "fido2: Info": {
@@ -2938,7 +2959,7 @@
         "Οι εκδηλώσεις εισήχθησαν επιτυχώς. Οι εισαγόμενα εκδηλώσεις θα εμφανιστούν τώρα στο ημερολόγιό σας."
       ],
       "Please don't close the tab before the importing process is finished.": [
-        "Παρακαλώ μην κλείσετε την καρτέλα πριν ολοκληρωθεί η διαδικασία εισαγωγής."
+        "Παρακαλούμε μην κλείσετε την καρτέλα πριν ολοκληρωθεί η διαδικασία εισαγωγής."
       ]
     },
     "Import calendar warning": {
@@ -3039,7 +3060,7 @@
         "Η πρόσβαση IMAP είναι ενεργοποιημένη στον λογαριασμό σας στο Yahoo."
       ],
       "Too many recent requests. Please try again in a few moments.": [
-        "Πάρα πολλά πρόσφατα αιτήματα. Παρακαλώ δοκιμάστε ξανά σε λίγα λεπτά."
+        "Πάρα πολλά πρόσφατα αιτήματα. Παρακαλούμε δοκιμάστε ξανά σε λίγα λεπτά."
       ],
       "Use your app password if:": [
         "Χρησιμοποιήστε τον κωδικό της εφαρμογής εάν:"
@@ -3352,6 +3373,9 @@
       ],
       "An active recovery file": [
         "Ένα ενεργό αρχείο ανάκτησης"
+      ],
+      "An issue occurred during the restore process.": [
+        "Παρουσιάστηκε ένα πρόβλημα κατά τη διαδικασία επαναφοράς."
       ],
       "and": [
         "και"
@@ -3871,6 +3895,9 @@
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME στέλνει αυτόματα το μήνυμα με την παρούσα λειτουργία συνθέτη."
       ],
+      "Photos have been successfully recovered.": [
+        "Οι φωτογραφίες έχουν ανακτηθεί με επιτυχία."
+      ],
       "Please enter the password to decrypt and view content.": [
         "Εισαγάγετε τον κωδικό πρόσβασης για να αποκρυπτογραφήσετε και να προβάλετε περιεχόμενο."
       ],
@@ -3962,8 +3989,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "Η επαναφορά είναι σε εξέλιξη. Αυτό μπορεί να διαρκέσει μερικά δευτερόλεπτα."
       ],
+      "Restore Photos": [
+        "Επαναφορά Φωτογραφιών"
+      ],
       "Restored files ${ formattedDate }": [
         "Επαναφορά αρχείων ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Επαναφορά Φωτογραφιών... Κρατήστε την καρτέλα ανοιχτή"
       ],
       "Search cannot be enabled in this browser": [
         "Η αναζήτηση δεν γίνεται να ενεργοποιηθεί σε αυτόν τον περιηγητή"
@@ -4081,6 +4114,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Αυτός ο περιηγητής δεν υποστηρίζει προεπισκόπηση αρχείων PDF. Παρακαλούμε κατεβάστε το αρχείο."
+      ],
+      "This file is too large to preview": [
+        "Αυτό το αρχείο είναι πολύ μεγάλο για προεπισκόπηση"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Αυτό το αρχείο ενδέχεται να έχει διαγραφεί, μετακινηθεί ή να μην είναι διαθέσιμο. Δοκιμάστε να επικοινωνήσετε με τον κάτοχο του αρχείου."
@@ -4776,9 +4812,6 @@
       "Replace existing folder": [
         "Αντικατάσταση υπάρχοντος φακέλου"
       ],
-      "Report": [
-        "Αναφορά"
-      ],
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
@@ -5059,6 +5092,9 @@
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
       ],
+      "Custom snooze time": [
+        "Προσαρμοσμένος χρόνος αναβολής"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email ψευδώνυμα"
       ],
@@ -5084,6 +5120,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Αποκτήστε απεριόριστα ψευδώνυμα με το SimpleLogin από ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Αναβολή μηνυμάτων και λήψη υπενθύμισης όποτε θέλετε"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Ο αποθηκευτικός χώρος μοιράζεται μεταξύ των ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } και ${ DRIVE_APP_NAME }"
@@ -5223,7 +5262,7 @@
         "Αποτυχία λήψης αρχείων: ${ err }"
       ],
       "Failed to move, please try again": [
-        "Αποτυχία μετακίνησης, παρακαλώ δοκιμάστε ξανά"
+        "Αποτυχία μετακίνησης, παρακαλούμε δοκιμάστε ξανά"
       ],
       "Failed to upload files: ${ err }": [
         "Αποτυχία ανεβάσματος αρχείων: ${ err }"
@@ -5430,7 +5469,7 @@
         "Εισάγετε ένα νέο όνομα αρχείου"
       ],
       "Enter a new folder name": [
-        "Παρακαλώ εισάγετε ένα νέο όνομα φακέλου"
+        "Παρακαλούμε εισάγετε ένα νέο όνομα φακέλου"
       ],
       "Enter device name": [
         "Εισάγετε όνομα συσκευής"
@@ -5969,6 +6008,10 @@
         "${ countMergeableContacts } επαφή φαίνεται πανομοιότυπη.",
         "${ countMergeableContacts } επαφές φαίνονται πανομοιότυπες."
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } απομένει",
+        "${ countOfUnrecoveredLinksLeft } απομένουν"
+      ],
       "Address copied to clipboard": [
         "Η διεύθυνση αντιγράφηκε στο πρόχειρο"
       ],
@@ -6339,13 +6382,7 @@
       "File recovery process": [
         "Διαδικασία ανάκτησης αρχείων"
       ],
-      "Files details": [
-        "Λεπτομέρειες αρχείων"
-      ],
       "Folder details": [
-        "Λεπτομέρειες φακέλου"
-      ],
-      "Folders details": [
         "Λεπτομέρειες φακέλου"
       ],
       "Found ${ searchView.numberOfResults } result": [
@@ -6418,12 +6455,6 @@
       ],
       "Notes": [
         "Σημειώσεις"
-      ],
-      "Number of files": [
-        "Αριθμός αρχείων"
-      ],
-      "Number of folders": [
-        "Πλήθος φακέλων"
       ],
       "Number of items": [
         "Πλήθος αντικειμένων"
