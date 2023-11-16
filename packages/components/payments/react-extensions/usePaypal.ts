@@ -32,6 +32,10 @@ export type PaypalProcessorHook = PaymentProcessorHook & {
     };
 };
 
+/**
+ * React wrapper for {@link PaypalPaymentProcessor}. It provides a set of proxies and also some additional functionality
+ * like `processPaymentToken` method that supposed to be the main action.
+ */
 export const usePaypal = (
     { amountAndCurrency, isCredit, onChargeable, ignoreAmountCheck }: Props,
     { api, verifyPayment }: Dependencies
