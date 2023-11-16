@@ -44,6 +44,9 @@
       "Authenticate": [
         "S'authentifier"
       ],
+      "Authenticating": [
+        "Authentification en cours"
+      ],
       "Back": [
         "Précédent"
       ],
@@ -2105,7 +2108,7 @@
         "Tous les utilisateurs de votre abonnement sont utilisés. Nous vous invitons à mettre à jour votre abonnement pour ajouter un nouvel utilisateur."
       ],
       "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Vous devez activer vos clés d'organisation. Sans cette activation, vous ne pourrez pas créer d'utilisateurs non privés ni accéder à leurs messages."
+        "Pour créer des utilisateurs non privés et accéder à leurs comptes, vous devez activer vos clés d'organisation."
       ],
       "You must privatize all users before generating new organization keys": [
         "Vous devez rendre tous les utilisateurs privés avant de générer de nouvelles clés d'organisation."
@@ -2132,17 +2135,26 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "L'application n'est pas disponible actuellement."
+      ],
       "Error: ${ errorMessage }": [
         "Erreur : ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Une erreur s'est produite."
       ],
+      "Open in browser": [
+        "Ouvrir dans le navigateur"
+      ],
       "Please refresh the page or try again later.": [
         "Nous vous invitons à actualiser la page ou à réessayer plus tard."
       ],
       "Something went wrong": [
         "Une erreur s'est produite."
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Pour utiliser ${ MAIL_APP_NAME } ou ${ CALENDAR_APP_NAME }, passez sur la version web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nous n'avons pas pu charger cette page. Actualisez la page ou vérifiez votre connexion internet."
@@ -3531,6 +3543,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Cela peut prendre un moment. Ne fermez pas cette page et ne vous déconnectez pas d'internet."
       ],
+      "This file is too large to preview": [
+        "Ce fichier est trop volumineux pour en afficher un aperçu."
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Cet utilisateur est actuellement responsable des paiements pour votre organisation. Si vous lui attribuez un abonnement inférieur, vous deviendrez responsable des paiements pour votre organisation."
       ],
@@ -4841,6 +4856,9 @@
       "Custom fields": [
         "Champs personnalisés"
       ],
+      "Custom snooze time": [
+        "Personnalisation des périodes de mise en pause des notifications"
+      ],
       "Data breach monitoring": [
         "Surveillance des fuites de données"
       ],
@@ -4949,10 +4967,10 @@
         "Prise en charge des routeurs"
       ],
       "Schedule messages at any time": [
-        "Planifiez l'envoi de messages quand vous le voulez"
+        "Planification de l'envoi de messages quand vous le voulez"
       ],
       "Search message content": [
-        "Rechercher dans le contenu des messages"
+        "Recherche dans le contenu des messages"
       ],
       "Secure Core servers": [
         "Serveurs Secure Core"
@@ -5060,8 +5078,11 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Profitez d'un nombre illimité d'alias avec SimpleLogin de ${ BRAND_NAME }"
       ],
+      "Snooze messages and get reminded when you want": [
+        "Mettez en pause les notifications des messages et recevez un rappel quand vous le voulez."
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
-        "L'espace de stockage est partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
+        "Espace de stockage partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
       ],
       "Use your own custom email domain address, e.g., you@yourname.com": [
         "Utilisez votre adresse e-mail personnalisée à partir de votre propre nom de domaine (vous@votrenom.com)."

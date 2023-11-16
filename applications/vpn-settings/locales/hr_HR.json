@@ -89,6 +89,9 @@
       "Delete": [
         "Izbriši"
       ],
+      "Delete user": [
+        "Izbriši korisnika"
+      ],
       "Delete your account": [
         "Izbrišite vaš račun"
       ],
@@ -178,6 +181,9 @@
       ],
       "Open navigation": [
         "Otvori navigaciju"
+      ],
+      "Or": [
+        "Ili"
       ],
       "Organization": [
         "Organizacija"
@@ -346,6 +352,9 @@
       "Disable": [
         "Onemogući"
       ],
+      "Edit": [
+        "Uredi"
+      ],
       "Enable": [
         "Omogući"
       ],
@@ -370,6 +379,16 @@
         "Siroče"
       ]
     },
+    "Admin": {
+      "admin": [
+        "administrator"
+      ]
+    },
+    "bf2023: Action": {
+      "Close": [
+        "Zatvori"
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 korisnik"
@@ -379,6 +398,12 @@
       ]
     },
     "Billing cycle option": {
+      "12 months": [
+        "12 mjeseci"
+      ],
+      "24 months": [
+        "24 mjeseca"
+      ],
       "Annually": [
         "Godišnje"
       ],
@@ -1076,6 +1101,11 @@
         "(putem ${ entryCountryName })"
       ]
     },
+    "Cycle": {
+      "/month": [
+        "/mjesec"
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Neplaćena faktura"
@@ -1239,6 +1269,9 @@
       "Access to all countries": [
         "Pristup svim državama"
       ],
+      "Add": [
+        "Dodaj"
+      ],
       "Connection for up to ${ plusVpnConnections } device": [
         "Veza za ${ plusVpnConnections } uređaj",
         "Veza za do ${ plusVpnConnections } uređaja",
@@ -1255,6 +1288,11 @@
       ],
       "Torrenting support (P2P)": [
         "Torrent podrška (P2P)"
+      ]
+    },
+    "fido2: Label": {
+      "Key name": [
+        "Naziv ključa"
       ]
     },
     "file size format": {
@@ -1308,6 +1346,9 @@
       ]
     },
     "Header": {
+      "Best deal": [
+        "Najbolja ponuda"
+      ],
       "Name": [
         "Naziv"
       ]
@@ -1507,6 +1548,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Za postavljanje računa, ručno unesite ove podatke u vaš uređaj za dvofaktorsku autentikaciju. ${ switchButton }."
       ],
+      "MM/YY": [
+        "MM/GG"
+      ],
       "Multi-user support not enabled.": [
         "Višekorisnička podrška nije omogućena."
       ],
@@ -1522,6 +1566,9 @@
       "of": [
         "od"
       ],
+      "Open source": [
+        "Otvoreni kôd"
+      ],
       "Organization keys activated": [
         "Aktivirani su ključevi organizacije"
       ],
@@ -1533,6 +1580,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "Plaćanja su zaštićena TLS enkripcijom i švicarskim zakonima o privatnosti."
+      ],
+      "per month": [
+        "mjesečno"
       ],
       "Plan upgrade required": [
         "Potrebna je nadogradnja plana"
@@ -1579,8 +1629,17 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Budući da ste odani korisnik, na vašem su računu omogućene dodatne značajke."
       ],
+      "Summary": [
+        "Sažetak"
+      ],
       "support team": [
         "tim za podršku"
+      ],
+      "Swiss based": [
+        "Bazirano u Švicarskoj"
+      ],
+      "Thank you": [
+        "Hvala vam"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Vaš račun je suspendiran zbog mogućih kršenja pravila."
@@ -1639,6 +1698,9 @@
       "Unsupported file": [
         "Nepodržana datoteka"
       ],
+      "Users": [
+        "Korisnici"
+      ],
       "Verification can take a few minutes.": [
         "Potvrda može potrajati nekoliko minuta."
       ],
@@ -1651,8 +1713,14 @@
       "We will redirect you to PayPal in a new browser tab to complete this transaction. If you use any pop-up blockers, please disable them to continue.": [
         "Preusmjerit ćemo vas na PayPal u novoj kartici preglednika da biste dovršili ovu transakciju. Ako koristite bilo koje blokade skočnih prozora, onemogućite ih kako bi mogli nastaviti."
       ],
+      "Welcome": [
+        "Dobrodošli"
+      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Kada se vaša pretplata obnovi, primijenit ćemo sve dostupne kredite prije nego što naplatimo gore navedeni način plaćanja."
+      ],
+      "Why?": [
+        "Zašto?"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Bez aktivacije nećete moći stvarati nove korisnike, dodavati adrese postojećim korisnicima niti pristupati neprivatnim korisničkim računima."
@@ -1894,6 +1962,9 @@
       "Navigation": [
         "Navigacija"
       ],
+      "New email": [
+        "Nova e-pošta"
+      ],
       "New login password": [
         "Nova lozinka za prijavu"
       ],
@@ -1986,6 +2057,9 @@
       ]
     },
     "Label for new member": {
+      "Admin": [
+        "Administrator"
+      ],
       "Private": [
         "Privatno"
       ]
@@ -2061,6 +2135,9 @@
       "Edit": [
         "Uredi"
       ],
+      "Remove": [
+        "Ukloni"
+      ],
       "Revoke sessions": [
         "Opozovi sesije"
       ],
@@ -2082,6 +2159,9 @@
       ]
     },
     "new_plans: Action": {
+      "Upgrade": [
+        "Nadogradnja"
+      ],
       "Upgrade now": [
         "Nadogradi sada"
       ]
@@ -2095,6 +2175,9 @@
       ]
     },
     "new_plans: feature": {
+      "1 user": [
+        "1 korisnik"
+      ],
       "Encrypted contact details": [
         "Šifrirani podaci o kontaktu"
       ],
@@ -2108,6 +2191,11 @@
     "new_plans: heading": {
       "Support": [
         "Podrška"
+      ]
+    },
+    "new_plans: info": {
+      "Popular": [
+        "Popularno"
       ]
     },
     "new_plans: title": {
@@ -2222,6 +2310,9 @@
       ],
       "Phone number": [
         "Broj telefona"
+      ],
+      "Phrase": [
+        "Fraza"
       ]
     },
     "Recovery Phone": {
@@ -2264,6 +2355,11 @@
         "Više informacija"
       ]
     },
+    "session_recovery:initiation:action": {
+      "Got it": [
+        "Razumijem"
+      ]
+    },
     "session_recovery:sign_out:action": {
       "Sign out": [
         "Odjavite se"
@@ -2274,7 +2370,15 @@
         "Poništavanje lozinke"
       ]
     },
+    "session_recovery:status:info": {
+      "Available": [
+        "Dostupno"
+      ]
+    },
     "Signup label": {
+      "Password": [
+        "Lozinka"
+      ],
       "Username": [
         "Korisničko ime"
       ]
@@ -2322,9 +2426,19 @@
         "Ugrađeni bloker oglasa (NetShield)"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "Razumijem"
+      ]
+    },
     "Subscription saving": {
       "Save": [
         "Spremi"
+      ]
+    },
+    "Subscription status": {
+      "Active": [
+        "Aktivno"
       ]
     },
     "Success": {
@@ -2420,6 +2534,11 @@
         "Adresa je omogućena"
       ]
     },
+    "Suffix for price": {
+      "per month": [
+        "mjesečno"
+      ]
+    },
     "TableHeader": {
       "Action": [
         "Radnja"
@@ -2438,6 +2557,9 @@
       ],
       "Name": [
         "Naziv"
+      ],
+      "Role": [
+        "Uloga"
       ]
     },
     "Themes": {
@@ -2653,6 +2775,9 @@
       "Processing...": [
         "Obrada..."
       ],
+      "Recommended": [
+        "Preporučeno"
+      ],
       "Report a problem": [
         "Prijavi problem"
       ],
@@ -2698,6 +2823,9 @@
       "Sign out": [
         "Odjava"
       ],
+      "Summary": [
+        "Sažetak"
+      ],
       "Switch to one-password mode": [
         "Prijeđite na način rada s jednom lozinkom"
       ],
@@ -2732,6 +2860,9 @@
       ],
       "Method": [
         "Metoda"
+      ],
+      "Status": [
+        "Status"
       ]
     },
     "Title header for members table": {
@@ -2748,12 +2879,31 @@
         "Uloga"
       ]
     },
+    "Title subscription": {
+      "End date": [
+        "Krajnji datum"
+      ],
+      "Plan": [
+        "Plan"
+      ],
+      "Status": [
+        "Status"
+      ]
+    },
     "Tooltip": {
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "Ako ste kupili darovni kôd ili ga dobili od našeg tima za podršku, možete ga unijeti ovdje."
       ]
     },
+    "upsell panel": {
+      "Recommended": [
+        "Preporučeno"
+      ]
+    },
     "User role": {
+      "Admin": [
+        "Administrator"
+      ],
       "Member": [
         "Član"
       ],
@@ -2768,9 +2918,27 @@
         "Lozinka mora sadržavati najmanje ${ length } znakova"
       ]
     },
+    "VPN B2B cancellation reason": {
+      "Other": [
+        "Ostalo"
+      ]
+    },
     "VPN info": {
       "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now, and more.": [
         "Netflix, Amazon Prime Video, BBC iPlayer, ESPN+, Disney+, HBO Now i drugi."
+      ]
+    },
+    "vpn_2step: discount": {
+      "1-year": [
+        "1 godina"
+      ],
+      "2-year": [
+        "2 godina"
+      ]
+    },
+    "vpn_2step: feature": {
+      "No ads": [
+        "Bez oglasa"
       ]
     },
     "Warning": {
