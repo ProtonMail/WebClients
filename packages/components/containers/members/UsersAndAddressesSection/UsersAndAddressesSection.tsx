@@ -374,12 +374,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                 data-testid="users-and-addresses-table:memberRole"
                                 style={{ verticalAlign: 'baseline' }}
                             >
-                                <div
-                                    className={clsx(
-                                        'flex flex-column flex-nowrap flex-item-align-baseline',
-                                        !hasVpnB2BPlan && 'lg:py-4'
-                                    )}
-                                >
+                                <div className="flex flex-column flex-nowrap flex-item-align-baseline">
                                     <MemberRole member={member} />
                                     {isInvitationPending && (
                                         <span>
@@ -392,6 +387,13 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                             </TableCell>
                         );
 
+                        const memberName = (() => {
+                            if (hasFamily(subscription) && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN) {
+                                return member?.Addresses?.[0]?.Email || member.Name;
+                            }
+
+                            return member.Name;
+                        })();
                         return (
                             <TableRow
                                 key={member.ID}
@@ -399,44 +401,49 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                 className={clsx('align-top', isInvitationPending && 'color-weak')}
                             >
                                 <TableCell style={{ verticalAlign: 'baseline' }}>
-                                    <div
-                                        className={clsx('flex flex-align-items-center', !hasVpnB2BPlan && 'lg:py-4')}
-                                        title={member.Name}
-                                    >
-                                        {hasVpnB2BPlan && (
-                                            <Avatar className="mr-3 flex-item-noshrink text-rg" color="weak">
-                                                {getInitials(member.Name)}
-                                            </Avatar>
-                                        )}
-                                        <div>
-                                            <span
-                                                className="block text-ellipsis flex-item-fluid"
-                                                data-testid="users-and-addresses-table:memberName"
-                                            >
-                                                {hasFamily(subscription) &&
-                                                member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN
-                                                    ? member?.Addresses?.[0]?.Email || member.Name
-                                                    : member.Name}
-                                            </span>
+                                    <div className="flex flex-align-items-center gap-3">
+                                        <Avatar className="flex-item-noshrink text-rg" color="weak">
+                                            {getInitials(memberName)}
+                                        </Avatar>
+                                        <div
+                                            className="text-ellipsis flex-item-fluid min-w-custom"
+                                            style={{ '--min-w-custom': '6rem' }}
+                                            data-testid="users-and-addresses-table:memberName"
+                                            title={memberName}
+                                        >
+                                            {memberName}
+                                        </div>
+                                        <div className="flex flex-align-items-center gap-1">
                                             {!hasVpnB2BPlan && Boolean(member.Private) && !hasFamily(subscription) && (
-                                                <span
+                                                <Badge
+                                                    type="origin"
+                                                    className="rounded-sm"
                                                     data-testid="users-and-addresses-table:memberIsPrivate"
-                                                    className="mr-1"
                                                 >
-                                                    <Badge type="origin" className="rounded-sm">{c('Private Member')
-                                                        .t`private`}</Badge>
-                                                </span>
+                                                    {c('Private Member').t`private`}
+                                                </Badge>
                                             )}
                                             {member['2faStatus'] > 0 && (
-                                                <Badge type="origin" className="rounded-sm">{c('Enabled 2FA')
-                                                    .t`2FA`}</Badge>
+                                                <Badge type="origin" className="rounded-sm">
+                                                    {c('Enabled 2FA').t`2FA`}
+                                                </Badge>
+                                            )}
+                                            {member.SSO > 0 && (
+                                                <Badge
+                                                    type="success"
+                                                    className="rounded-sm"
+                                                    tooltip={c('Users table: single sign-on tooltip')
+                                                        .t`SSO user provided by your Identity Provider`}
+                                                >
+                                                    {c('Users table: single sign-on enabled').t`SSO`}
+                                                </Badge>
                                             )}
                                         </div>
                                     </div>
                                 </TableCell>
                                 {!hasVpnB2BPlan && roleCell}
                                 <TableCell style={{ verticalAlign: 'baseline' }}>
-                                    <div className={clsx(!hasVpnB2BPlan && 'lg:py-4')}>
+                                    <div>
                                         {member.State && member.State === FAMILY_PLAN_INVITE_STATE.STATUS_INVITED ? (
                                             <p className="m-0 text-ellipsis">{member.Name}</p>
                                         ) : (
@@ -447,26 +454,22 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                 {hasVpnB2BPlan && roleCell}
                                 {!hasVpnB2BPlan && (
                                     <TableCell>
-                                        <div className="lg:py-4">
-                                            <MemberFeatures member={member} organization={organization} />
-                                        </div>
+                                        <MemberFeatures member={member} organization={organization} />
                                     </TableCell>
                                 )}
                                 <TableCell style={{ verticalAlign: 'baseline' }}>
-                                    <div className={clsx(!hasVpnB2BPlan && 'lg:py-4')}>
-                                        <MemberActions
-                                            onEdit={handleEditUser}
-                                            onDelete={handleDeleteUser}
-                                            onRevoke={handleRevokeUserSessions}
-                                            onLogin={handleLoginUser}
-                                            onChangePassword={handleChangeMemberPassword}
-                                            member={member}
-                                            addresses={memberAddresses}
-                                            organization={organization}
-                                            organizationKey={organizationKey}
-                                            mode={mode}
-                                        />
-                                    </div>
+                                    <MemberActions
+                                        onEdit={handleEditUser}
+                                        onDelete={handleDeleteUser}
+                                        onRevoke={handleRevokeUserSessions}
+                                        onLogin={handleLoginUser}
+                                        onChangePassword={handleChangeMemberPassword}
+                                        member={member}
+                                        addresses={memberAddresses}
+                                        organization={organization}
+                                        organizationKey={organizationKey}
+                                        mode={mode}
+                                    />
                                 </TableCell>
                             </TableRow>
                         );
