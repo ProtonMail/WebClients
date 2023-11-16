@@ -84,3 +84,8 @@ export type AuthActionResponse =
           cache: AuthCacheResult;
           to: Exclude<AuthStep, AuthStep.DONE>;
       };
+
+export enum AuthType {
+    SRP,
+    ExternalSSO,
+}
