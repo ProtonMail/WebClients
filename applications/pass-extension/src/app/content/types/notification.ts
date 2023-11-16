@@ -9,7 +9,7 @@ export enum NotificationAction {
 
 export type NotificationActions =
     | { action: NotificationAction.AUTOSAVE_PROMPT; submission: FormEntryPrompt }
-    | { action: NotificationAction.AUTOFILL_OTP_PROMPT; item: SelectedItem };
+    | { action: NotificationAction.AUTOFILL_OTP_PROMPT; item: SelectedItem; hostname: string };
 
 export type NotificationAutosaveRequestPayload = { item: Item<'login'>; submission: FormEntryPrompt };
 

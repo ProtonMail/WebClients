@@ -20,7 +20,7 @@ type Props = {
 
 export const NotificationSwitch: VFC<Props> = ({ children, visible, state, settings, onMessage, onClose }) => {
     return (
-        <div className="h-full p-5 bg-norm relative">
+        <div className="h-full p-3 bg-norm relative">
             {children}
             {(() => {
                 if (!state) return <CircleLoader className="absolute absolute-center m-auto" />;
@@ -37,7 +37,14 @@ export const NotificationSwitch: VFC<Props> = ({ children, visible, state, setti
                         );
                     }
                     case NotificationAction.AUTOFILL_OTP_PROMPT: {
-                        return <AutofillOTP item={state.item} onMessage={onMessage} onClose={onClose} />;
+                        return (
+                            <AutofillOTP
+                                item={state.item}
+                                onMessage={onMessage}
+                                onClose={onClose}
+                                hostname={state.hostname}
+                            />
+                        );
                     }
                 }
             })()}

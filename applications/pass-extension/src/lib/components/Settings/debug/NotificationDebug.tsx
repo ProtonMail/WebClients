@@ -110,6 +110,7 @@ export const NotificationDebug: VFC = () => {
                             state={{
                                 action: NotificationAction.AUTOFILL_OTP_PROMPT,
                                 item: { shareId: otpItem.shareId, itemId: otpItem.itemId },
+                                hostname: 'proton.me',
                             }}
                             settings={MockSettings}
                         />
