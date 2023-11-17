@@ -1,19 +1,26 @@
+import { FC } from 'react';
+
 import { c } from 'ttag';
 
-import { EmptyViewContainer } from '@proton/components';
-import uploadSvg from '@proton/styles/assets/img/illustrations/empty-device-root.svg';
+import emptySvg from '@proton/styles/assets/img/illustrations/empty-device-root.svg';
 
-const EmptyDeviceRoot = () => {
+import { DriveEmptyView } from '../../layout/DriveEmptyView';
+
+type Props = {};
+
+const EmptyDeviceRoot: FC<Props> = () => {
     return (
-        <div role="presentation" className="flex w-full flex flex-item-fluid">
-            <EmptyViewContainer
-                imageProps={{ src: uploadSvg, title: c('Info').t`No synced folders` }}
-                data-testid="my-files-device-root-empty-placeholder"
-            >
-                <h3 className="text-bold">{c('Info').t`No synced folders`}</h3>
-                <p className="color-weak">{c('Info').t`Folders you sync from your computer will appear here.`}</p>
-            </EmptyViewContainer>
-        </div>
+        <DriveEmptyView
+            image={emptySvg}
+            title={
+                // translator: Shown when accessing an empty computer
+                c('Info').t`No synced folders`
+            }
+            subtitle={
+                // translator: Shown when accessing an empty computer
+                c('Info').t`Folders you sync from your computer will appear here.`
+            }
+        />
     );
 };
 
