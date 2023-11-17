@@ -28,7 +28,9 @@ export const openPassDB = async (userID: string): Promise<Maybe<IDBPDatabase<Pas
     }).catch(noop);
 
 /** Writes the encrypted pass state to the cache object store.
- * Converts the encrypted strings to blobs */
+ * Converts the encrypted strings to blobs. Concurrent writes
+ * can happen if multiple tabs are trying to cache the current
+ * app state. */
 export const writeDBCache = async (userID: string, cache: EncryptedPassCache): Promise<void> => {
     try {
         const db = await openPassDB(userID);

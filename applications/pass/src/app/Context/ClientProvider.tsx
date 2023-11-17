@@ -1,4 +1,4 @@
-import { type FC, createContext, useContext, useMemo, useState } from 'react';
+import { type FC, createContext, useContext, useMemo, useRef, useState } from 'react';
 
 import { clientReady } from '@proton/pass/lib/client';
 import { AppStatus, type Maybe } from '@proton/pass/types';
@@ -18,6 +18,15 @@ export const ClientContext = createContext<ClientContextValue>({
 });
 
 export const useClient = (): ClientContextValue => useContext(ClientContext);
+
+/** wraps the client context in a ref when you need to access
+ * it outside of the react life-cycle.  */
+export const useClientRef = () => {
+    const client = useClient();
+    const clientRef = useRef(client);
+    clientRef.current = client;
+    return clientRef;
+};
 
 export const ClientProvider: FC = ({ children }) => {
     const [state, setState] = useState<ClientState>(getInitialClientState);
