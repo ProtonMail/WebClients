@@ -43,7 +43,8 @@
             "@proton/styles/*": ["./packages/styles/*"],
             "@proton/testing/*": ["./packages/testing/*"],
             "@proton/utils/*": ["./packages/utils/*"],
-            "@proton/recovery-kit/*": ["./packages/recovery-kit/*"]
+            "@proton/recovery-kit/*": ["./packages/recovery-kit/*"],
+            "@proton/chargebee": ["./packages/chargebee/*"]
         }
     },
     "exclude": ["**/node_modules", "**/.*/"]

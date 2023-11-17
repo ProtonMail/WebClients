@@ -1,9 +1,11 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { useChargebeeEnabledCache } from '@proton/components/payments/client-extensions/useChargebeeContext';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { APPS } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { Icon, Loader, useModalState } from '../../components';
 import { useConfig, useMozillaCheck, usePaymentMethods } from '../../hooks';
@@ -19,6 +21,7 @@ const PaymentMethodsSection = () => {
     const [isManagedByMozilla, loadingCheck] = useMozillaCheck();
     const [creditCardModalProps, setCreditCardModalOpen, renderCreditCardModal] = useModalState();
     const [paypalModalProps, setPaypalModalOpen, renderPaypalModal] = useModalState();
+    const chargebeeEnabled = useChargebeeEnabledCache();
 
     if (loadingPaymentMethods || loadingCheck) {
         return <Loader />;
@@ -33,7 +36,9 @@ const PaymentMethodsSection = () => {
             ? 'https://protonvpn.com/support/payment-options/'
             : getKnowledgeBaseUrl('/payment-options');
 
-    const hasPayPal = paymentMethods.some((method) => method.Type === PAYMENT_METHOD_TYPES.PAYPAL);
+    const canAddPaypal =
+        !paymentMethods.some((method) => method.Type === PAYMENT_METHOD_TYPES.PAYPAL) &&
+        chargebeeEnabled !== ChargebeeEnabled.CHARGEBEE_FORCED;
 
     return (
         <SettingsSection>
@@ -47,7 +52,7 @@ const PaymentMethodsSection = () => {
                     <span>{c('Action').t`Add credit / debit card`}</span>
                 </Button>
 
-                {!hasPayPal && (
+                {canAddPaypal && (
                     <Button shape="outline" onClick={() => setPaypalModalOpen(true)}>
                         <Icon name="brand-paypal" className="mr-2" />
                         <span>{c('Action').t`Add PayPal`}</span>

@@ -97,12 +97,16 @@ const PaymentMethodDetailsPaypal = ({ details }: { details: PayPalDetails }) => 
 };
 
 interface Props {
-    type: PAYMENT_METHOD_TYPES.CARD | PAYMENT_METHOD_TYPES.PAYPAL;
+    type:
+        | PAYMENT_METHOD_TYPES.CARD
+        | PAYMENT_METHOD_TYPES.PAYPAL
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_CARD
+        | PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
     details: SavedCardDetails | PayPalDetails;
 }
 
 const PaymentMethodDetails = ({ type, details }: Props) => {
-    if (type === PAYMENT_METHOD_TYPES.CARD) {
+    if (type === PAYMENT_METHOD_TYPES.CARD || type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
         if (!isSavedCardDetails(details)) {
             return null;
         }
@@ -110,7 +114,7 @@ const PaymentMethodDetails = ({ type, details }: Props) => {
         return <PaymentMethodDetailsCard details={details} />;
     }
 
-    if (type === PAYMENT_METHOD_TYPES.PAYPAL) {
+    if (type === PAYMENT_METHOD_TYPES.PAYPAL || type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
         if (!isPaypalDetails(details)) {
             return null;
         }

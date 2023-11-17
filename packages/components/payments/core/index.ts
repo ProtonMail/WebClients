@@ -10,3 +10,5 @@ export * from './payment-processors/paymentProcessor';
 export * from './payment-processors/paypalPayment';
 export * from './payment-processors/savedPayment';
 export * from './utils';
+export * from './payment-processors/chargebeeCardPayment';
+export * from './payment-processors/chargebeePaypalPayment';
