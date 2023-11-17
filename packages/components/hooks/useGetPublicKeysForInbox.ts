@@ -44,7 +44,8 @@ export const useGetPublicKeysForInbox = () => {
                     silence: true,
                     noCache,
                 });
-            return getPromiseValue(subCache, email, miss, lifetime);
+            const cacheEntryID = `${email},${ktActivation},${internalKeysOnly},${includeInternalKeysWithE2EEDisabledForMail}`;
+            return getPromiseValue(subCache, cacheEntryID, miss, lifetime);
         },
         [api, cache, ktActivation]
     );
