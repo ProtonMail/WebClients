@@ -56,7 +56,7 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                             disabled={!allowNewVault}
                         >
                             <span className="flex items-center">
-                                <Icon name="plus" size={14} className="mr-3 flex-item-nogrow" />
+                                <Icon name="plus" size={14} className="mr-3 grow-0" />
                                 <span className="flex-1 text-ellipsis">{c('Label').t`New vault`}</span>
                             </span>
                         </Option>,
@@ -75,7 +75,7 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                                                 : 'pass-home'
                                         }
                                         size={14}
-                                        className="mr-3 flex-item-nogrow"
+                                        className="mr-3 grow-0"
                                     />
                                     <span className="flex-1 text-ellipsis">{vault.content.name}</span>
                                 </span>

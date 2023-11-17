@@ -52,7 +52,7 @@ const AccountsLoginModalServiceItem = ({
             data-testid="accounts-login-modal-service-item"
             style={{ '--h-custom': isNarrow ? 'auto' : '3rem' }}
         >
-            <div className="flex items-center flex-item-grow-2 gap-2">
+            <div className="flex items-center grow-2 gap-2">
                 <div
                     className={clsx(
                         'flex justify-center w-custom h-custom',

@@ -78,7 +78,7 @@ const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled
         <>
             <DateInput
                 id="epirationDateInputId"
-                className="flex-1 flex-item-grow-2"
+                className="flex-1 grow-2"
                 disabled={disabled}
                 value={expDate}
                 onChange={handleChangeDate}

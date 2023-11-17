@@ -33,7 +33,7 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
             <div>
                 <div className="flex flex-nowrap mb-2">
                     <div
-                        className="flex-no-min-children flex-1 flex-column flex-item-grow-custom"
+                        className="flex-no-min-children flex-1 flex-column grow-custom"
                         style={{ '--grow-custom': '1.25' }}
                     >
                         <DateInput
@@ -61,7 +61,7 @@ const MiniDateTimeRows = ({ model, setModel, displayWeekNumbers, weekStartsOn, e
                 </div>
                 <div className="flex flex-nowrap mb-1">
                     <div
-                        className="flex-no-min-children flex-1 flex-column flex-item-grow-custom"
+                        className="flex-no-min-children flex-1 flex-column grow-custom"
                         style={{ '--grow-custom': '1.25' }}
                     >
                         <DateInput

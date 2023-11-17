@@ -65,7 +65,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                 </div>
             </div>
             {Boolean(dailyEvents.length) && (
-                <div className="flex-item-grow search-day flex flex-nowrap flex-column pl-7 lg:pl-0 mt-2 lg:mt-0">
+                <div className="grow search-day flex flex-nowrap flex-column pl-7 lg:pl-0 mt-2 lg:mt-0">
                     {dailyEvents.map((event) => {
                         const {
                             UID,
