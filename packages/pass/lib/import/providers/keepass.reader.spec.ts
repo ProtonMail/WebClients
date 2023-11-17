@@ -50,7 +50,7 @@ describe('Import KeePass xml', () => {
         expect(loginItem.content.password).toEqual('proton123');
         expect(loginItem.content.urls).toEqual(['https://account.proton.me/']);
         expect(loginItem.content.totpUri).toEqual(
-            'otpauth://totp/Entry%20A:nobodyA%40proton.me%40account.proton.me?issuer=Entry%20A&secret=VZKDI2A4UP2NG5BB&algorithm=SHA1&digits=6&period=30'
+            'otpauth://totp/Entry%20A:nobodyA%40proton.me?issuer=Entry%20A&secret=VZKDI2A4UP2NG5BB&algorithm=SHA1&digits=6&period=30'
         );
         expect(loginItem.extraFields).toEqual([
             {
