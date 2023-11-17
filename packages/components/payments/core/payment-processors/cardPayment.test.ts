@@ -126,12 +126,8 @@ describe('CardPaymentProcessor', () => {
             type: PAYMENT_METHOD_TYPES.CARD,
             ...paymentProcessor.amountAndCurrency,
             chargeable: true,
-            Payment: {
-                Type: PAYMENT_METHOD_TYPES.TOKEN,
-                Details: {
-                    Token: MOCK_TOKEN_RESPONSE.Token,
-                },
-            },
+            PaymentToken: MOCK_TOKEN_RESPONSE.Token,
+            v: 5,
         };
 
         await paymentProcessor.fetchPaymentToken();

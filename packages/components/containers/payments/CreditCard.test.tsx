@@ -29,7 +29,7 @@ const TestComponent = (rest?: Partial<Props>) => {
             card={cardHook.card}
             errors={cardHook.errors}
             fieldsStatus={cardHook.fieldsStatus}
-            onChange={cardHook.setCardProperty}
+            setCardProperty={cardHook.setCardProperty}
             {...rest}
         />
     );

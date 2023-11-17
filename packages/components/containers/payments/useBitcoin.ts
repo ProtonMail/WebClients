@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { CreateBitcoinTokenData, createToken, getTokenStatus } from '@proton/shared/lib/api/payments';
+import { CreateBitcoinTokenData, createTokenV4, getTokenStatusV4 } from '@proton/shared/lib/api/payments';
 import { MAX_BITCOIN_AMOUNT, MIN_BITCOIN_AMOUNT } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Api } from '@proton/shared/lib/interfaces';
@@ -44,7 +44,7 @@ const useCheckStatus = ({
 
         const validate = async (token: string): Promise<TokenValidationStatus> => {
             try {
-                const { Status } = await api<any>(getTokenStatus(token));
+                const { Status } = await api<any>(getTokenStatusV4(token));
                 if (Status === PAYMENT_TOKEN_STATUS.STATUS_CHARGEABLE) {
                     return 'chargeable';
                 }
@@ -181,7 +181,7 @@ const useBitcoin = ({
                     },
                 },
             };
-            const { Token, Data } = await silentApi<any>(createToken(data));
+            const { Token, Data } = await silentApi<any>(createTokenV4(data));
             setModel({
                 amountBitcoin: Data.CoinAmount,
                 address: Data.CoinAddress,

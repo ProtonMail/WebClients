@@ -1,0 +1,34 @@
+import { c } from 'ttag';
+
+import { Currency, Tax } from '@proton/shared/lib/interfaces';
+import withDecimalPrecision from '@proton/utils/withDecimalPrecision';
+
+import { Price } from '../../components/price';
+
+interface Props {
+    tax: Tax;
+    currency: Currency;
+    className?: string;
+}
+
+const InclusiveVatText = ({ tax, currency, className }: Partial<Props>) => {
+    if (!tax || !currency) {
+        return null;
+    }
+
+    const formattedTaxRate = withDecimalPrecision(tax.Rate, 4);
+    const price = (
+        <Price key="price" currency={currency}>
+            {tax.Amount}
+        </Price>
+    );
+    const taxName = tax.Name ?? c('Label').t`VAT`;
+
+    return (
+        <div className={className}>
+            <span>{c('Info').jt`Including ${formattedTaxRate}% ${taxName}: ${price}`}</span>
+        </div>
+    );
+};
+
+export default InclusiveVatText;

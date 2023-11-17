@@ -1,8 +1,16 @@
-import { queryPaymentMethodStatus, queryPaymentMethods } from '@proton/shared/lib/api/payments';
+import { queryPaymentMethods } from '@proton/shared/lib/api/payments';
 import { BLACK_FRIDAY } from '@proton/shared/lib/constants';
+import { ChargebeeEnabled } from '@proton/shared/lib/interfaces';
 
 import { PAYMENT_METHOD_TYPES } from './constants';
-import { Autopay, PaymentMethodFlows, PaymentMethodStatus, SavedPaymentMethod } from './interface';
+import {
+    Autopay,
+    MethodStorage,
+    PaymentMethodFlows,
+    PaymentMethodStatus,
+    PaymentsApi,
+    SavedPaymentMethod,
+} from './interface';
 import { PaymentMethods, initializePaymentMethods } from './methods';
 
 let status: PaymentMethodStatus;
@@ -19,7 +27,15 @@ beforeEach(() => {
 
 describe('getNewMethods()', () => {
     it('should include card when card is available', () => {
-        const methods = new PaymentMethods(status, [], 500, '', 'subscription');
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            500,
+            '',
+            'subscription',
+            undefined
+        );
 
         expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(true);
     });
@@ -27,20 +43,44 @@ describe('getNewMethods()', () => {
     it('should not include card when card is not available', () => {
         status.Card = false;
 
-        const methods = new PaymentMethods(status, [], 500, '', 'subscription');
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            500,
+            '',
+            'subscription',
+            undefined
+        );
 
         expect(methods.getNewMethods().some((method) => method.type === 'card')).toBe(false);
     });
 
     // tests for PayPal
     it('should include PayPal when PayPal is available', () => {
-        const methods = new PaymentMethods(status, [], 500, '', 'subscription');
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            500,
+            '',
+            'subscription',
+            undefined
+        );
 
         expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(true);
     });
 
     it('should not include PayPal when PayPal is not available due to amount less than minimum', () => {
-        const methods = new PaymentMethods(status, [], 50, '', 'subscription');
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            50,
+            '',
+            'subscription',
+            undefined
+        );
 
         expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(false);
     });
@@ -58,24 +98,43 @@ describe('getNewMethods()', () => {
                         PayerID: '123',
                         Payer: '123',
                     },
+                    External: MethodStorage.INTERNAL,
                 },
             ],
+            ChargebeeEnabled.INHOUSE_FORCED,
             500,
             '',
-            'subscription'
+            'subscription',
+            undefined
         );
 
         expect(methods.getNewMethods().some((method) => method.type === 'paypal')).toBe(false);
     });
 
     it('should include Bitcoin when Bitcoin is available', () => {
-        const methods = new PaymentMethods(status, [], 500, '', 'subscription');
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            500,
+            '',
+            'subscription',
+            undefined
+        );
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(true);
     });
 
     it('should not include Bitcoin when Bitcoin is not available due to coupon', () => {
-        const methods = new PaymentMethods(status, [], 500, BLACK_FRIDAY.COUPON_CODE, 'subscription');
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            500,
+            BLACK_FRIDAY.COUPON_CODE,
+            'subscription',
+            undefined
+        );
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
     });
@@ -83,26 +142,50 @@ describe('getNewMethods()', () => {
     it.each(['signup', 'human-verification'] as PaymentMethodFlows[])(
         'should not include Bitcoin when Bitcoin is not available due to flow %s',
         (flow) => {
-            const methods = new PaymentMethods(status, [], 500, '', flow);
+            const methods = new PaymentMethods(status, [], ChargebeeEnabled.INHOUSE_FORCED, 500, '', flow, undefined);
 
             expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
         }
     );
 
     it('should not include bitcoin due to amount less than minimum', () => {
-        const methods = new PaymentMethods(status, [], 50, '', 'subscription');
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            50,
+            '',
+            'subscription',
+            undefined
+        );
 
         expect(methods.getNewMethods().some((method) => method.type === 'bitcoin')).toBe(false);
     });
 
     it('should include Cash when Cash is available', () => {
-        const methods = new PaymentMethods(status, [], 500, '', 'subscription');
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            500,
+            '',
+            'subscription',
+            undefined
+        );
 
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(true);
     });
 
     it('should not include Cash when Cash is not available due to coupon', () => {
-        const methods = new PaymentMethods(status, [], 500, BLACK_FRIDAY.COUPON_CODE, 'subscription');
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            500,
+            BLACK_FRIDAY.COUPON_CODE,
+            'subscription',
+            undefined
+        );
 
         expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
     });
@@ -110,11 +193,49 @@ describe('getNewMethods()', () => {
     it.each(['signup', 'signup-pass', 'human-verification'] as PaymentMethodFlows[])(
         'should not include Cash when Cash is not available due to flow %s',
         (flow) => {
-            const methods = new PaymentMethods(status, [], 500, '', flow);
+            const methods = new PaymentMethods(status, [], ChargebeeEnabled.INHOUSE_FORCED, 500, '', flow, undefined);
 
             expect(methods.getNewMethods().some((method) => method.type === 'cash')).toBe(false);
         }
     );
+
+    it('should return chargebee methods when they are enabled', () => {
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.CHARGEBEE_FORCED,
+            500,
+            '',
+            'subscription',
+            undefined
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBe(
+            true
+        );
+        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL)).toBe(
+            true
+        );
+    });
+
+    it('should not return chargebee methods when they are disabled', () => {
+        const methods = new PaymentMethods(
+            status,
+            [],
+            ChargebeeEnabled.INHOUSE_FORCED,
+            500,
+            '',
+            'subscription',
+            undefined
+        );
+
+        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)).toBe(
+            false
+        );
+        expect(methods.getNewMethods().some((method) => method.type === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL)).toBe(
+            false
+        );
+    });
 });
 
 describe('getUsedMethods()', () => {
@@ -131,6 +252,7 @@ describe('getUsedMethods()', () => {
                         PayerID: '123',
                         Payer: '123',
                     },
+                    External: MethodStorage.INTERNAL,
                 },
                 {
                     ID: '2',
@@ -146,6 +268,7 @@ describe('getUsedMethods()', () => {
                         Last4: '1234',
                         Brand: 'Visa',
                     },
+                    External: MethodStorage.INTERNAL,
                 },
                 // one more card
                 {
@@ -162,11 +285,14 @@ describe('getUsedMethods()', () => {
                         Last4: '4242',
                         Brand: 'Visa',
                     },
+                    External: MethodStorage.INTERNAL,
                 },
             ],
+            ChargebeeEnabled.INHOUSE_FORCED,
             500,
             '',
-            'subscription'
+            'subscription',
+            undefined
         );
 
         expect(methods.getUsedMethods().some((method) => method.type === 'paypal')).toBe(true);
@@ -191,6 +317,7 @@ describe('getAvailablePaymentMethods()', () => {
                         PayerID: '123',
                         Payer: '123',
                     },
+                    External: MethodStorage.INTERNAL,
                 },
                 {
                     ID: '2',
@@ -206,6 +333,7 @@ describe('getAvailablePaymentMethods()', () => {
                         Last4: '1234',
                         Brand: 'Visa',
                     },
+                    External: MethodStorage.INTERNAL,
                 },
                 // one more card
                 {
@@ -222,11 +350,14 @@ describe('getAvailablePaymentMethods()', () => {
                         Last4: '4242',
                         Brand: 'Visa',
                     },
+                    External: MethodStorage.INTERNAL,
                 },
             ],
+            ChargebeeEnabled.INHOUSE_FORCED,
             500,
             '',
-            'subscription'
+            'subscription',
+            undefined
         );
 
         const availableMethods = methods.getAvailablePaymentMethods();
@@ -257,6 +388,7 @@ describe('getLastUsedMethod()', () => {
                         PayerID: '123',
                         Payer: '123',
                     },
+                    External: MethodStorage.INTERNAL,
                 },
                 {
                     ID: '2',
@@ -272,6 +404,7 @@ describe('getLastUsedMethod()', () => {
                         Last4: '1234',
                         Brand: 'Visa',
                     },
+                    External: MethodStorage.INTERNAL,
                 },
                 // one more card
                 {
@@ -288,11 +421,14 @@ describe('getLastUsedMethod()', () => {
                         Last4: '4242',
                         Brand: 'Visa',
                     },
+                    External: MethodStorage.INTERNAL,
                 },
             ],
+            ChargebeeEnabled.INHOUSE_FORCED,
             500,
             '',
-            'subscription'
+            'subscription',
+            undefined
         );
 
         const lastUsedMethod = methods.getLastUsedMethod();
@@ -321,6 +457,7 @@ describe('getSavedMethodById()', () => {
                         PayerID: '123',
                         Payer: '123',
                     },
+                    External: MethodStorage.INTERNAL,
                 },
                 {
                     ID: '2',
@@ -336,6 +473,7 @@ describe('getSavedMethodById()', () => {
                         Last4: '1234',
                         Brand: 'Visa',
                     },
+                    External: MethodStorage.INTERNAL,
                 },
                 // one more card
                 {
@@ -352,11 +490,31 @@ describe('getSavedMethodById()', () => {
                         Last4: '4242',
                         Brand: 'Visa',
                     },
+                    External: MethodStorage.INTERNAL,
+                },
+                // external card
+                {
+                    ID: '4',
+                    Type: PAYMENT_METHOD_TYPES.CARD,
+                    Order: 503,
+                    Autopay: Autopay.ENABLE,
+                    Details: {
+                        Name: 'Arthur Morgan',
+                        ExpMonth: '10',
+                        ExpYear: '2029',
+                        ZIP: '54321',
+                        Country: 'US',
+                        Last4: '4242',
+                        Brand: 'Visa',
+                    },
+                    External: MethodStorage.EXTERNAL,
                 },
             ],
+            ChargebeeEnabled.INHOUSE_FORCED,
             500,
             '',
-            'subscription'
+            'subscription',
+            undefined
         );
 
         const savedMethod = methods.getSavedMethodById('2');
@@ -375,6 +533,26 @@ describe('getSavedMethodById()', () => {
                 Last4: '1234',
                 Brand: 'Visa',
             },
+            External: MethodStorage.INTERNAL,
+        });
+
+        const externalMethod = methods.getSavedMethodById('4');
+
+        expect(externalMethod).toEqual({
+            ID: '4',
+            Type: PAYMENT_METHOD_TYPES.CARD,
+            Order: 503,
+            Autopay: Autopay.ENABLE,
+            Details: {
+                Name: 'Arthur Morgan',
+                ExpMonth: '10',
+                ExpYear: '2029',
+                ZIP: '54321',
+                Country: 'US',
+                Last4: '4242',
+                Brand: 'Visa',
+            },
+            External: MethodStorage.EXTERNAL,
         });
     });
 });
@@ -405,6 +583,7 @@ describe('initializePaymentMethods()', () => {
                     Last4: '1234',
                     Brand: 'Visa',
                 },
+                External: MethodStorage.INTERNAL,
             },
         ];
 
@@ -415,8 +594,13 @@ describe('initializePaymentMethods()', () => {
                 };
             }
 
-            if (url === queryPaymentMethodStatus().url) {
+            if (url === 'payments/v4/status') {
                 return paymentMethodStatus;
+            }
+            if (url === 'payments/v5/status') {
+                return {
+                    VendorStatus: paymentMethodStatus,
+                };
             }
         });
 
@@ -427,7 +611,12 @@ describe('initializePaymentMethods()', () => {
             true,
             500,
             'coupon',
-            'subscription' as PaymentMethodFlows
+            'subscription' as PaymentMethodFlows,
+            ChargebeeEnabled.INHOUSE_FORCED,
+            {
+                statusExtendedAutomatic: () => paymentMethodStatus,
+            } as any as PaymentsApi,
+            undefined
         );
 
         expect(methods).toBeDefined();
@@ -449,7 +638,10 @@ describe('initializePaymentMethods()', () => {
         };
 
         apiMock.mockImplementation(({ url }) => {
-            if (url === queryPaymentMethodStatus().url) {
+            if (url === 'payments/v4/status') {
+                return paymentMethodStatus;
+            }
+            if (url === 'payments/v5/status') {
                 return paymentMethodStatus;
             }
         });
@@ -461,7 +653,12 @@ describe('initializePaymentMethods()', () => {
             false,
             500,
             'coupon',
-            'subscription' as PaymentMethodFlows
+            'subscription' as PaymentMethodFlows,
+            ChargebeeEnabled.INHOUSE_FORCED,
+            {
+                statusExtendedAutomatic: () => paymentMethodStatus,
+            } as any as PaymentsApi,
+            undefined
         );
 
         expect(methods).toBeDefined();

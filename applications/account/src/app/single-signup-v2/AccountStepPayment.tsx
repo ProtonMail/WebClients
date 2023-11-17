@@ -8,11 +8,24 @@ import { Href } from '@proton/atoms/Href';
 import { Info, Price } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import { PayPalButton, PlanCustomization, StyledPayPalButton } from '@proton/components/containers';
+import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
+import {
+    OnBillingAddressChange,
+    WrappedTaxCountrySelector,
+} from '@proton/components/containers/payments/TaxCountrySelector';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import useHandler from '@proton/components/hooks/useHandler';
+import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { CardPayment, PAYMENT_METHOD_TYPES, PaypalPayment, TokenPayment } from '@proton/components/payments/core';
+import {
+    PAYMENT_METHOD_TYPES,
+    PaymentMethodFlows,
+    TokenPayment,
+    TokenPaymentWithPaymentsVersion,
+    isV5PaymentToken,
+    v5PaymentTokenToLegacyPaymentToken,
+} from '@proton/components/payments/core';
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { WithLoading } from '@proton/hooks/useLoading';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
@@ -20,7 +33,7 @@ import { getCheckout } from '@proton/shared/lib/helpers/checkout';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getIsB2BAudienceFromPlan } from '@proton/shared/lib/helpers/subscription';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { Api, VPNServersCountData, isTaxInclusive } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -49,7 +62,7 @@ interface Props {
     loadingPaymentDetails: boolean;
     loadingSignup: boolean;
     onPay: (
-        payment: 'signup-token' | PaypalPayment | TokenPayment | CardPayment | undefined,
+        payment: 'signup-token' | TokenPaymentWithPaymentsVersion | undefined,
         type: 'pp' | 'btc' | 'cc' | undefined
     ) => Promise<void>;
     onValidate: () => boolean;
@@ -59,6 +72,7 @@ interface Props {
     defaultMethod: PAYMENT_METHOD_TYPES | undefined;
     takeNullCreditCard?: boolean;
     handleOptimistic: (optimistic: Partial<OptimisticOptions>) => Promise<void>;
+    onBillingAddressChange: OnBillingAddressChange;
 }
 
 const AccountStepPayment = ({
@@ -76,6 +90,7 @@ const AccountStepPayment = ({
     loadingPaymentDetails,
     loadingSignup,
     withLoadingSignup,
+    onBillingAddressChange,
 }: Props) => {
     const formRef = useRef<HTMLFormElement>(null);
 
@@ -123,14 +138,17 @@ const AccountStepPayment = ({
         },
     }));
 
+    const flow: PaymentMethodFlows = 'signup-pass';
+
     const paymentFacade = usePaymentFacade({
         amount: options.checkResult.AmountDue,
         currency: options.currency,
-        flow: 'signup-pass',
+        selectedPlanName: options.plan?.Name,
+        flow,
         paymentMethods: model.session?.paymentMethods,
-        paymentMethodStatus: model.paymentMethodStatus,
+        paymentMethodStatusExtended: model.paymentMethodStatusExtended,
         api: normalApi,
-        onChargeable: (_, { chargeablePaymentParameters }) => {
+        onChargeable: (_, { chargeablePaymentParameters, paymentsVersion }) => {
             return withLoadingSignup(async () => {
                 const isFreeSignup = chargeablePaymentParameters.Amount <= 0;
                 if (isFreeSignup) {
@@ -145,7 +163,17 @@ const AccountStepPayment = ({
                 } else {
                     paymentType = 'cc';
                 }
-                await onPay(chargeablePaymentParameters.Payment, paymentType);
+
+                const legacyTokenPayment: TokenPayment | undefined = isV5PaymentToken(chargeablePaymentParameters)
+                    ? v5PaymentTokenToLegacyPaymentToken(chargeablePaymentParameters).Payment
+                    : undefined;
+
+                const withVersion: TokenPaymentWithPaymentsVersion = {
+                    ...legacyTokenPayment,
+                    paymentsVersion,
+                };
+
+                await onPay(withVersion, paymentType);
             });
         },
         onMethodChanged: (newMethod) => {
@@ -291,7 +319,15 @@ const AccountStepPayment = ({
                             isAuthenticated={isAuthenticated} // needed for Bitcoin signup
                             onBitcoinTokenValidated={(data) => {
                                 measurePaySubmit('pay_btc');
-                                return withLoadingSignup(onPay(data.Payment, 'btc')).catch(() => {
+                                return withLoadingSignup(
+                                    onPay(
+                                        {
+                                            ...data.Payment,
+                                            paymentsVersion: 'v4',
+                                        },
+                                        'btc'
+                                    )
+                                ).catch(() => {
                                     measurePayError('pay_btc');
                                 });
                             }}
@@ -331,6 +367,18 @@ const AccountStepPayment = ({
                                         {c('Link').t`Paypal without credit card`}
                                     </PayPalButton>
                                 </div>
+                            );
+                        }
+
+                        if (
+                            paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL &&
+                            options.checkResult.AmountDue > 0
+                        ) {
+                            return (
+                                <ChargebeePaypalWrapper
+                                    chargebeePaypal={paymentFacade.chargebeePaypal}
+                                    iframeHandles={paymentFacade.iframeHandles}
+                                />
                             );
                         }
 
@@ -405,6 +453,14 @@ const AccountStepPayment = ({
 
                 const showAmountDue = proration !== 0 || credits !== 0;
 
+                const taxInclusiveText = (
+                    <InclusiveVatText
+                        tax={options.checkResult?.Taxes?.[0]}
+                        currency={subscriptionData.currency}
+                        className="text-sm color-weak"
+                    />
+                );
+
                 return (
                     <RightSummary variant="border" className="mx-auto md:mx-0 rounded-xl">
                         <RightPlanSummary
@@ -422,6 +478,13 @@ const AccountStepPayment = ({
                             checkout={currentCheckout}
                             mode={isB2BPlan ? 'addons' : undefined}
                         >
+                            {paymentFacade.showTaxCountry && (
+                                <WrappedTaxCountrySelector
+                                    className="mb-2"
+                                    onBillingAddressChange={onBillingAddressChange}
+                                    statusExtended={model.paymentMethodStatusExtended}
+                                />
+                            )}
                             <div className="flex flex-column gap-2">
                                 {(() => {
                                     return [
@@ -456,6 +519,11 @@ const AccountStepPayment = ({
                                             right: credits,
                                             bold: false,
                                         },
+                                        !showAmountDue &&
+                                            isTaxInclusive(options.checkResult) && {
+                                                id: 'vat',
+                                                left: taxInclusiveText,
+                                            },
                                     ]
                                         .filter(isTruthy)
                                         .map(({ id, bold, left, right }) => {
@@ -470,6 +538,10 @@ const AccountStepPayment = ({
                                                     {left}
                                                     <span>
                                                         {(() => {
+                                                            if (!right) {
+                                                                return null;
+                                                            }
+
                                                             if (loadingPaymentDetails) {
                                                                 // When we don't show amount due, we put the circle loader instead of empty value.
                                                                 if (!showAmountDue) {
@@ -507,6 +579,7 @@ const AccountStepPayment = ({
                                                 )}
                                             </span>
                                         </div>
+                                        {isTaxInclusive(options.checkResult) && taxInclusiveText}
                                     </>
                                 )}
                             </div>

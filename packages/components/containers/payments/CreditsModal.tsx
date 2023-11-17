@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button, Href } from '@proton/atoms';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import { AmountAndCurrency, PAYMENT_METHOD_TYPES, TokenPaymentMethod } from '@proton/components/payments/core';
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
@@ -21,6 +22,7 @@ import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Currency } from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
+import noop from '@proton/utils/noop';
 
 import {
     Form,
@@ -33,6 +35,7 @@ import {
     useDebounceInput,
 } from '../../components';
 import { useApi, useConfig, useEventManager, useNotifications } from '../../hooks';
+import { ChargebeePaypalWrapper } from '../../payments/chargebee/ChargebeeWrapper';
 import AmountRow from './AmountRow';
 import PaymentInfo from './PaymentInfo';
 import PaymentWrapper from './PaymentWrapper';
@@ -57,17 +60,25 @@ const CreditsModal = (props: ModalProps) => {
     const i18n = getCurrenciesI18N();
     const i18nCurrency = i18n[currency];
     const api = useApi();
+    const pollEventsMultipleTimes = usePollEvents();
 
     const paymentFacade = usePaymentFacade({
         amount: debouncedAmount,
         currency,
         onChargeable: (operations) => {
-            return withLoading(async () => {
+            const run = async () => {
                 await operations.buyCredit();
                 await call();
                 props.onClose?.();
                 createNotification({ text: c('Success').t`Credits added` });
-            });
+            };
+
+            const promise = run();
+            void withLoading(promise);
+
+            promise.then(() => pollEventsMultipleTimes()).catch(noop);
+
+            return promise;
         },
         flow: 'credit',
     });
@@ -105,6 +116,19 @@ const CreditsModal = (props: ModalProps) => {
                     disabled={amountLoading}
                     data-testid="paypal-button"
                 />
+            );
+        }
+
+        if (paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
+            return (
+                <div className="flex justify-end">
+                    <div className="w-1/2 mr-1">
+                        <ChargebeePaypalWrapper
+                            chargebeePaypal={paymentFacade.chargebeePaypal}
+                            iframeHandles={paymentFacade.iframeHandles}
+                        />
+                    </div>
+                </div>
             );
         }
 

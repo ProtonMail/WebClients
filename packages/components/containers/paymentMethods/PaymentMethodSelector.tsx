@@ -1,15 +1,15 @@
+import { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
+import { PaymentMethodType } from '@proton/components/payments/core';
 import clsx from '@proton/utils/clsx';
 
 import { DropdownSizeUnit, Icon, Option, Radio, SelectTwo } from '../../components';
 import { DropdownSize } from '../../components/dropdown/utils';
-import { PaymentMethodType } from '../../payments/core';
-import { PaymentMethodData } from './interface';
 
 interface Props {
-    options: PaymentMethodData[];
+    options: ViewPaymentMethod[];
     method?: PaymentMethodType;
     onChange: (value: PaymentMethodType) => void;
-    lastUsedMethod?: PaymentMethodData;
+    lastUsedMethod?: ViewPaymentMethod;
     forceDropdown?: boolean;
     narrow?: boolean;
 }
@@ -18,7 +18,7 @@ const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange, forc
     if (options.length <= 2 && !forceDropdown) {
         return (
             <>
-                {options.map(({ text, value, disabled, icon }) => {
+                {options.map(({ text, value, icon }) => {
                     return (
                         <label
                             htmlFor={value}
@@ -29,7 +29,6 @@ const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange, forc
                             ])}
                         >
                             <Radio
-                                disabled={disabled}
                                 className="mr-2"
                                 id={value}
                                 name="value"

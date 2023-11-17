@@ -8,7 +8,7 @@ import PaymentVerificationImage from '@proton/components/containers/payments/Pay
 import { useNotifications } from '@proton/components/hooks';
 import errorSvg from '@proton/styles/assets/img/errors/error-generic.svg';
 
-import { CardPayment, PAYMENT_METHOD_TYPES, TokenPaymentMethod, toTokenPaymentMethod } from '../../core';
+import { CardPayment, PAYMENT_METHOD_TYPES } from '../../core';
 
 const STEPS = {
     REDIRECT: 'redirect',
@@ -25,9 +25,8 @@ export interface PromiseWithController {
 }
 
 export interface Props {
-    onSubmit: (paymentMethod: TokenPaymentMethod) => void;
+    onSubmit: () => void;
     onClose: () => void;
-    token: string;
     payment?: CardPayment | {};
     isAddCard?: boolean;
     type?: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT | PAYMENT_METHOD_TYPES.CARD;
@@ -37,7 +36,6 @@ export interface Props {
 }
 
 const PaymentVerificationModal = ({
-    token,
     onSubmit,
     payment = {},
     isAddCard,
@@ -84,7 +82,7 @@ const PaymentVerificationModal = ({
             }, processingDelay);
             abortRef.current = abort;
             await promise;
-            onSubmit(toTokenPaymentMethod(token));
+            onSubmit();
             rest.onClose();
         } catch (error: any) {
             window.clearTimeout(timeoutRef.current);

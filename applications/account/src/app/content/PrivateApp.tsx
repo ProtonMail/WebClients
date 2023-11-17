@@ -55,9 +55,9 @@ const PrivateApp = () => {
                 if (state.error) {
                     return <StandardLoadErrorPage errorMessage={state.error.message} />;
                 }
-
+                const loader = <AccountLoaderPage />;
                 if (!state.MainContainer || !state.store) {
-                    return <AccountLoaderPage />;
+                    return loader;
                 }
 
                 return (
@@ -78,6 +78,7 @@ const PrivateApp = () => {
                                                             hasReadableMemberKeyActivation
                                                             hasMemberKeyMigration
                                                             hasPrivateMemberKeyGeneration
+                                                            loader={loader}
                                                         >
                                                             <state.MainContainer />
                                                         </StandardPrivateApp>

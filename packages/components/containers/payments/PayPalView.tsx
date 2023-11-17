@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
+import { PaymentMethodFlows } from '@proton/components/payments/core';
 import { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
 import { MAX_PAYPAL_AMOUNT, MIN_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
 import { Currency } from '@proton/shared/lib/interfaces';
 
 import { Alert, Price } from '../../components';
-import { PaymentMethodFlows } from '../paymentMethods/interface';
 import PayPalButton from './PayPalButton';
 import PayPalInfoMessage from './PayPalInfoMessage';
 
@@ -79,9 +79,7 @@ const PayPalView = ({
                         {c('Info')
                             .t`You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.`}
                     </div>
-                    <div>
-                        {clickHere}
-                    </div>
+                    <div>{clickHere}</div>
                 </>
             ) : null}
             {isAllowedOtherType ? <PayPalInfoMessage /> : null}

@@ -1,15 +1,20 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
+import { PaymentsVersion } from '@proton/shared/lib/api/payments';
+import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { useApi, useAuthentication, useModals } from '../../hooks';
+import { useCbIframe } from '../chargebee/ChargebeeIframe';
+import { ChargebeeIframeEvents, ChargebeeIframeHandles } from '../core';
 import {
     ChargeablePaymentParameters,
     PAYMENT_METHOD_TYPES,
     PaymentMethodFlows,
-    PaymentMethodStatus,
+    PaymentMethodStatusExtended,
     PaymentMethodType,
+    PlainPaymentMethodType,
     SavedPaymentMethod,
 } from '../core';
 import {
@@ -18,8 +23,14 @@ import {
     OperationsData,
     usePaymentFacade as useInnerPaymentFacade,
 } from '../react-extensions';
+import { useChargebeeEnabledCache, useChargebeeKillSwitch, useChargebeeUserStatusTracker } from './useChargebeeContext';
 import { wrapMethods } from './useMethods';
-import { getDefaultVerifyPayment, getDefaultVerifyPaypal } from './validators/validators';
+import {
+    getDefaultVerifyPayment,
+    getDefaultVerifyPaypal,
+    useChargebeeCardVerifyPayment,
+    useChargebeePaypalHandles,
+} from './validators/validators';
 
 type PaymentFacadeProps = {
     amount: number;
@@ -43,7 +54,9 @@ type PaymentFacadeProps = {
         data: {
             chargeablePaymentParameters: ChargeablePaymentParameters;
             source: PaymentMethodType;
+            sourceType: PlainPaymentMethodType;
             context: OperationsData;
+            paymentsVersion: PaymentsVersion;
         }
     ) => Promise<unknown>;
     /**
@@ -51,11 +64,15 @@ type PaymentFacadeProps = {
      */
     onMethodChanged?: OnMethodChangedHandler;
     paymentMethods?: SavedPaymentMethod[];
-    paymentMethodStatus?: PaymentMethodStatus;
+    paymentMethodStatusExtended?: PaymentMethodStatusExtended;
     /**
      * Optional override for the API object. Can be helpful for auth/unauth flows.
      */
     api?: Api;
+    /**
+     * The selected plan will impact the displayed payment methods.
+     */
+    selectedPlanName?: PLANS | ADDON_NAMES;
 };
 
 /**
@@ -74,14 +91,26 @@ export const usePaymentFacade = ({
     flow,
     onMethodChanged,
     paymentMethods,
-    paymentMethodStatus,
+    paymentMethodStatusExtended,
     api: apiOverride,
+    selectedPlanName,
 }: PaymentFacadeProps) => {
     const defaultApi = useApi();
     const api = apiOverride ?? defaultApi;
     const { createModal } = useModals();
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID;
+
+    const iframeHandles = useCbIframe();
+    const chargebeeHandles: ChargebeeIframeHandles = iframeHandles.handles;
+    const chargebeeEvents: ChargebeeIframeEvents = iframeHandles.events;
+
+    const chargebeeEnabled = useChargebeeEnabledCache();
+    const { chargebeeKillSwitch, forceEnableChargebee } = useChargebeeKillSwitch();
+    useChargebeeUserStatusTracker();
+
+    const verifyPaymentChargebeeCard = useChargebeeCardVerifyPayment(api);
+    const chargebeePaypalModalHandles = useChargebeePaypalHandles();
 
     const hook = useInnerPaymentFacade(
         {
@@ -92,13 +121,21 @@ export const usePaymentFacade = ({
             flow,
             onMethodChanged,
             paymentMethods,
-            paymentMethodStatus,
+            paymentMethodStatusExtended,
+            chargebeeEnabled,
+            chargebeeKillSwitch,
+            forceEnableChargebee,
+            selectedPlanName,
         },
         {
             api,
             isAuthenticated,
             verifyPaymentPaypal: getDefaultVerifyPaypal(createModal, api),
             verifyPayment: getDefaultVerifyPayment(createModal, api),
+            verifyPaymentChargebeeCard,
+            chargebeeHandles,
+            chargebeeEvents,
+            chargebeePaypalModalHandles,
         }
     );
 
@@ -111,6 +148,8 @@ export const usePaymentFacade = ({
         [PAYMENT_METHOD_TYPES.PAYPAL]: true,
         [PAYMENT_METHOD_TYPES.PAYPAL_CREDIT]: true,
         [PAYMENT_METHOD_TYPES.TOKEN]: false,
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_CARD]: true,
+        [PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL]: true,
     };
 
     const userCanTriggerSelected = methods.selectedMethod?.type ? userCanTrigger[methods.selectedMethod.type] : false;
@@ -149,9 +188,61 @@ export const usePaymentFacade = ({
         run().catch(noop);
     }, [hook.methods.isNewPaypal, amount, currency]);
 
+    const paypalAbortRef = useRef<AbortController | null>(null);
+    useEffect(() => {
+        const abort = () => {
+            paypalAbortRef.current?.abort();
+            paypalAbortRef.current = null;
+        };
+
+        async function run() {
+            if (hook.methods.selectedMethod?.type !== PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
+                return;
+            }
+
+            paypalAbortRef.current = new AbortController();
+
+            hook.chargebeePaypal.reset();
+            try {
+                await hook.chargebeePaypal.initialize(paypalAbortRef.current.signal);
+            } catch {
+                abort();
+            }
+        }
+
+        void run();
+
+        return abort;
+    }, [hook.methods.selectedMethod?.type, amount, currency]);
+
+    const taxCountryLoading = methods.loading;
+    const getShowTaxCountry = () => {
+        if (taxCountryLoading) {
+            return false;
+        }
+
+        const method = methods.selectedMethod?.type;
+        const savedMethod = methods.savedInternalSelectedMethod;
+
+        const methodsWithTaxCountry: (string | undefined)[] = [
+            PAYMENT_METHOD_TYPES.CHARGEBEE_CARD,
+            PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL,
+        ];
+        const flowsWithTaxCountry: PaymentMethodFlows[] = ['signup', 'signup-pass', 'signup-vpn', 'subscription'];
+
+        const isNewAllowedMethod = methodsWithTaxCountry.includes(method);
+        const isSavedAllowedMethod = savedMethod && methodsWithTaxCountry.includes(savedMethod.Type);
+
+        const showTaxCountry = (isNewAllowedMethod || isSavedAllowedMethod) && flowsWithTaxCountry.includes(flow);
+        return showTaxCountry;
+    };
+
     const helpers = {
         selectedMethodValue: methods.selectedMethod?.value,
         selectedMethodType: methods.selectedMethod?.type,
+        showTaxCountry: getShowTaxCountry(),
+        taxCountryLoading,
+        statusExtended: methods.status,
     };
 
     return {
@@ -161,5 +252,7 @@ export const usePaymentFacade = ({
         api,
         userCanTrigger,
         userCanTriggerSelected,
+        iframeHandles,
+        chargebeeEnabled,
     };
 };

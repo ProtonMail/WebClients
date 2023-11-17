@@ -18,13 +18,16 @@ import {
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import { AuthSession } from '@proton/components/containers/login/interface';
-import { PAYMENT_METHOD_TYPES, PaymentMethodStatus } from '@proton/components/payments/core';
+import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
+import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getSilentApi, getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
-import { getFreePlan, queryPaymentMethodStatus, queryPlans } from '@proton/shared/lib/api/payments';
+import { getFreePlan, queryPlans } from '@proton/shared/lib/api/payments';
 import { TelemetryAccountSignupEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getUser } from '@proton/shared/lib/api/user';
 import { getExtension } from '@proton/shared/lib/apps/helper';
@@ -114,6 +117,7 @@ const getDefaultSubscriptionData = (cycle: Cycle): SubscriptionData => {
         cycle,
         planIDs: {},
         checkResult: getFreeCheckResult(),
+        billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
     };
 };
 
@@ -139,12 +143,14 @@ export const defaultSignupModel: SignupModelV2 = {
     domains: [],
     subscriptionData: subscriptionDataCycleMapping[PLANS.FREE][CYCLE.YEARLY],
     subscriptionDataCycleMapping,
-    paymentMethodStatus: {
-        Card: false,
-        Paypal: false,
-        Apple: false,
-        Cash: false,
-        Bitcoin: false,
+    paymentMethodStatusExtended: {
+        VendorStates: {
+            Card: false,
+            Paypal: false,
+            Apple: false,
+            Cash: false,
+            Bitcoin: false,
+        },
     },
     humanVerificationMethods: [],
     humanVerificationToken: '',
@@ -220,7 +226,7 @@ const SingleSignupContainerV2 = ({
     }
 
     const unauthApi = useApi();
-
+    const { getPaymentsApi } = usePaymentsApi();
     const UID = model.session?.UID;
     const normalApi = UID ? getUIDApi(UID, unauthApi) : unauthApi;
     const silentApi = getSilentApi(normalApi);
@@ -512,6 +518,7 @@ const SingleSignupContainerV2 = ({
 
             let silentApi = getSilentApi(unauthApi);
             const silentUnAuthApi = silentApi;
+            const paymentsApi = getPaymentsApi(silentUnAuthApi);
             let resumedSession: ResumedSessionResult | undefined;
 
             if (maybeSession?.persisted.UID) {
@@ -522,13 +529,15 @@ const SingleSignupContainerV2 = ({
                 }
             }
 
+            const forcePaymentsVersion = getMaybeForcePaymentsVersion(resumedSession?.User);
             const plans = await silentApi<{ Plans: Plan[] }>(
                 queryPlans(
                     signupParameters.currency
                         ? {
                               Currency: signupParameters.currency,
                           }
-                        : undefined
+                        : undefined,
+                    forcePaymentsVersion
                 )
             ).then(({ Plans }) => Plans);
             const planParameters = getPlanIDsFromParams(plans, signupParameters, defaults);
@@ -550,7 +559,7 @@ const SingleSignupContainerV2 = ({
                 subscriptionDataCycleMapping,
             ] = await Promise.all([
                 silentApi<{ Domains: string[] }>(queryAvailableDomains('signup')),
-                silentApi<PaymentMethodStatus>(queryPaymentMethodStatus()),
+                paymentsApi.statusExtendedAutomatic(),
                 invite?.type === 'mail'
                     ? await silentApi(checkReferrer(invite.data.referrer))
                           .then(() => ({
@@ -562,6 +571,7 @@ const SingleSignupContainerV2 = ({
                 getUserInfo({
                     audience,
                     api: silentApi,
+                    paymentsApi,
                     user: resumedSession?.User,
                     plans,
                     plansMap,
@@ -573,6 +583,7 @@ const SingleSignupContainerV2 = ({
                         currency,
                         cycle,
                         coupon,
+                        billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
                     },
                     toApp: product,
                 }),
@@ -593,9 +604,10 @@ const SingleSignupContainerV2 = ({
                                 planIDs,
                                 plansMap,
                                 cycles: signupConfiguration.cycles,
-                                api: silentUnAuthApi,
+                                paymentsApi,
                                 coupon: couponToFetch,
                                 currency,
+                                billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
                             });
                         })
                     );
@@ -649,7 +661,7 @@ const SingleSignupContainerV2 = ({
                 subscriptionDataCycleMapping,
                 referralData,
                 inviteData: signupParameters.invite?.type === 'generic' ? signupParameters.invite.data : undefined,
-                paymentMethodStatus,
+                paymentMethodStatusExtended: paymentMethodStatus,
                 subscriptionData,
                 cache: undefined,
                 source: signupParameters.source,
@@ -697,7 +709,7 @@ const SingleSignupContainerV2 = ({
             }
             measure({
                 event: TelemetryAccountSignupEvents.bePaymentMethods,
-                dimensions: getPaymentMethodsAvailable(paymentMethodStatus),
+                dimensions: getPaymentMethodsAvailable(paymentMethodStatus.VendorStates),
             });
         };
 
@@ -749,11 +761,13 @@ const SingleSignupContainerV2 = ({
             const { subscriptionData, upsell } = await getUserInfo({
                 audience,
                 api: silentApi,
+                paymentsApi: getPaymentsApi(silentApi),
                 options: {
                     cycle,
                     currency: model.subscriptionData.currency,
                     planIDs,
                     coupon: signupParameters.coupon,
+                    billingAddress: model.subscriptionData.billingAddress,
                 },
                 planParameters: model.planParameters!,
                 signupParameters,
@@ -798,6 +812,7 @@ const SingleSignupContainerV2 = ({
             const { subscriptionData, upsell, ...userInfo } = await getUserInfo({
                 api: silentApi,
                 audience,
+                paymentsApi: getPaymentsApi(silentApi),
                 user,
                 plans: model.plans,
                 plansMap: model.plansMap,
@@ -808,8 +823,8 @@ const SingleSignupContainerV2 = ({
                     cycle: model.subscriptionData.cycle,
                     currency: model.subscriptionData.currency,
                     planIDs: model.subscriptionData.planIDs,
-
                     coupon: model.subscriptionData.checkResult?.Coupon?.Code,
+                    billingAddress: model.subscriptionData.billingAddress,
                 },
                 toApp: product,
             });

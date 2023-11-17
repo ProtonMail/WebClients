@@ -76,7 +76,16 @@ export interface SubscriptionCheckoutData {
 
 export type RequiredCheckResponse = Pick<
     SubscriptionCheckResponse,
-    'Amount' | 'AmountDue' | 'Cycle' | 'CouponDiscount' | 'Proration' | 'Credit' | 'Coupon' | 'Gift'
+    | 'Amount'
+    | 'AmountDue'
+    | 'Cycle'
+    | 'CouponDiscount'
+    | 'Proration'
+    | 'Credit'
+    | 'Coupon'
+    | 'Gift'
+    | 'Taxes'
+    | 'TaxInclusive'
 >;
 
 export const getUsersAndAddons = (planIDs: PlanIDs, plansMap: PlansMap) => {

@@ -1,7 +1,13 @@
 import { render, waitFor } from '@testing-library/react';
 
 import { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
-import { CardModel, PAYMENT_METHOD_TYPES, SavedPaymentMethod } from '@proton/components/payments/core';
+import {
+    CardModel,
+    MethodStorage,
+    PAYMENT_METHOD_TYPES,
+    SavedPaymentMethod,
+    SavedPaymentMethodInternal,
+} from '@proton/components/payments/core';
 import { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
 
 import { PaymentsNoApi } from './Payment';
@@ -58,6 +64,7 @@ beforeEach(() => {
                 Country: 'US',
                 ZIP: '11111',
             },
+            External: MethodStorage.INTERNAL,
         },
         {
             ID: 'methodid2',
@@ -68,6 +75,7 @@ beforeEach(() => {
                 PayerID: 'Payer1',
                 Payer: 'buyer@example.com',
             },
+            External: MethodStorage.INTERNAL,
         },
         {
             ID: 'methodid3',
@@ -83,6 +91,7 @@ beforeEach(() => {
                 Country: 'US',
                 ZIP: '1211',
             },
+            External: MethodStorage.INTERNAL,
         },
     ];
 
@@ -138,7 +147,7 @@ describe('Payment', () => {
         apiMock.mockReturnValue({});
 
         const method = PAYMENT_METHOD_TYPES.CARD;
-        const customPaymentMethod = paymentMethods.find(({ ID }) => method === ID);
+        const savedMethodInternal = paymentMethods.find(({ ID }) => method === ID) as SavedPaymentMethodInternal;
 
         render(
             <PaymentsNoApi
@@ -157,9 +166,12 @@ describe('Payment', () => {
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
-                customPaymentMethod={customPaymentMethod}
+                savedMethodInternal={savedMethodInternal}
                 loading={false}
                 currency="USD"
+                iframeHandles={null as any}
+                chargebeeCard={null as any}
+                chargebeePaypal={null as any}
             />
         );
     });
@@ -184,9 +196,12 @@ describe('Payment', () => {
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
-                customPaymentMethod={undefined}
+                savedMethodInternal={undefined}
                 loading={false}
                 currency="USD"
+                iframeHandles={null as any}
+                chargebeeCard={null as any}
+                chargebeePaypal={null as any}
             />
         );
 
@@ -215,9 +230,12 @@ describe('Payment', () => {
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
-                customPaymentMethod={undefined}
+                savedMethodInternal={undefined}
                 loading={false}
                 currency="USD"
+                iframeHandles={null as any}
+                chargebeeCard={null as any}
+                chargebeePaypal={null as any}
             />
         );
 
@@ -257,10 +275,11 @@ describe('Payment', () => {
                     Country: 'US',
                     ZIP: '11111',
                 },
+                External: MethodStorage.INTERNAL,
             },
         ];
 
-        let customPaymentMethod = paymentMethods[0];
+        let savedMethodInternal = paymentMethods[0] as SavedPaymentMethodInternal;
 
         let { container } = render(
             <PaymentsNoApi
@@ -279,9 +298,12 @@ describe('Payment', () => {
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
-                customPaymentMethod={customPaymentMethod}
+                savedMethodInternal={savedMethodInternal}
                 loading={false}
                 currency="USD"
+                iframeHandles={{} as any}
+                chargebeeCard={null as any}
+                chargebeePaypal={null as any}
             />
         );
 
@@ -316,10 +338,11 @@ describe('Payment', () => {
                     PayerID: 'Payer1',
                     Payer: '',
                 },
+                External: MethodStorage.INTERNAL,
             },
         ];
 
-        let customPaymentMethod = paymentMethods[0];
+        let savedMethodInternal: SavedPaymentMethodInternal = paymentMethods[0] as SavedPaymentMethodInternal;
 
         let { container } = render(
             <PaymentsNoApi
@@ -338,9 +361,12 @@ describe('Payment', () => {
                 isAuthenticated={true}
                 lastUsedMethod={lastUsedMethod}
                 allMethods={allMethods}
-                customPaymentMethod={customPaymentMethod}
+                savedMethodInternal={savedMethodInternal}
                 loading={false}
                 currency="USD"
+                iframeHandles={null as any}
+                chargebeeCard={null as any}
+                chargebeePaypal={null as any}
             />
         );
 

@@ -1,20 +1,22 @@
 import { Location } from 'history';
 
-import { checkSubscription } from '@proton/shared/lib/api/payments';
+import { BillingAddress, PaymentsApi } from '@proton/components/payments/core';
+import { CheckSubscriptionData } from '@proton/shared/lib/api/payments';
 import { APP_NAMES, COUPON_CODES, PLANS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
-import { Api, Currency, Cycle, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
+import { Currency, Cycle } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
 
 import { PlanIDs } from './interfaces';
 
-export const getSubscriptionPrices = async (
-    api: Api,
+export async function getSubscriptionPrices(
+    paymentsApi: PaymentsApi,
     planIDs: PlanIDs,
     currency: Currency,
     cycle: Cycle,
+    billingAddress?: BillingAddress,
     maybeCoupon?: string
-) => {
+) {
     if (!hasPlanIDs(planIDs)) {
         return getFreeCheckResult(currency, cycle);
     }
@@ -25,15 +27,22 @@ export const getSubscriptionPrices = async (
         coupon = COUPON_CODES.PASS_B2B_INTRO;
     }
 
-    return api<SubscriptionCheckResponse>(
-        checkSubscription({
-            Plans: planIDs,
-            Currency: currency,
-            Cycle: cycle,
-            CouponCode: coupon,
-        })
-    );
-};
+    const data: CheckSubscriptionData = {
+        Plans: planIDs,
+        Currency: currency,
+        Cycle: cycle,
+        CouponCode: coupon,
+    };
+
+    if (billingAddress) {
+        data.BillingAddress = {
+            State: billingAddress.State,
+            CountryCode: billingAddress.CountryCode,
+        };
+    }
+
+    return paymentsApi.checkWithAutomaticVersion(data);
+}
 
 export const isMailTrialSignup = (location: Location) => {
     return location.pathname.includes(SSO_PATHS.TRIAL);

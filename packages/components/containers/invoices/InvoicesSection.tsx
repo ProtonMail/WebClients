@@ -66,7 +66,9 @@ const InvoicesSection = () => {
         },
         loading,
         request: requestInvoices,
-    } = useApiResult<InvoiceResponse, typeof query>(query, [page, owner]);
+        error,
+    } = useApiResult<InvoiceResponse, typeof query>(query, [page, owner], false);
+
     const { Invoices: invoices, Total: total } = result;
     const hasUnpaid = invoices.find(({ State }) => State === INVOICE_STATE.UNPAID);
 
@@ -89,7 +91,9 @@ const InvoicesSection = () => {
         downloadFile(blob, getFilename(invoice));
     };
 
-    const isEmpty = page === 1 && !loading && invoices.length === 0;
+    const showError = !!error;
+    const isEmpty = page === 1 && !loading && invoices.length === 0 && !showError;
+    const showContent = !isEmpty && !showError;
 
     return (
         <>
@@ -132,9 +136,9 @@ const InvoicesSection = () => {
                         onSelect={onSelect}
                     />
                 </Block>
-                {isEmpty ? (
-                    c('Error').t`You have no invoices.`
-                ) : (
+                {showError && c('Error').t`Coudn't load invoices. Please try again later.`}
+                {isEmpty && c('Info').t`You have no invoices.`}
+                {showContent && (
                     <div style={{ overflow: 'auto' }}>
                         <Table hasActions responsive="cards">
                             <TableHeader>
@@ -166,7 +170,9 @@ const InvoicesSection = () => {
                                                 <InvoiceAmount key={key} invoice={invoice} />,
                                                 <InvoiceType key={key} invoice={invoice} />,
                                                 <InvoiceState key={key} invoice={invoice} />,
-                                                <Time key={key}>{invoice.CreateTime}</Time>,
+                                                <Time key={key} sameDayFormat={false}>
+                                                    {invoice.CreateTime}
+                                                </Time>,
                                                 <InvoiceActions
                                                     key={key}
                                                     invoice={invoice}

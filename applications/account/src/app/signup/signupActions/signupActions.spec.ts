@@ -1,4 +1,5 @@
-import { PAYMENT_METHOD_TYPES, TokenPayment } from '@proton/components/payments/core';
+import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/components/containers/payments/TaxCountrySelector';
+import { PAYMENT_METHOD_TYPES, TokenPaymentWithPaymentsVersion } from '@proton/components/payments/core';
 import { APPS, CLIENT_TYPES, CYCLE } from '@proton/shared/lib/constants';
 import { HumanVerificationMethodType, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
@@ -35,6 +36,7 @@ describe('signupActions', () => {
                     Additions: null,
                     PeriodEnd: 999,
                 },
+                billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
             };
 
             const cache: SignupCacheResult = {
@@ -71,11 +73,12 @@ describe('signupActions', () => {
         it('should use payment token for human verification if it exists: VPN', async () => {
             handleCreateUserMock.mockReturnValue('handleCreateUser-result');
 
-            const payment: TokenPayment = {
+            const payment: TokenPaymentWithPaymentsVersion = {
                 Type: PAYMENT_METHOD_TYPES.TOKEN,
                 Details: {
                     Token: 'payment-token-123',
                 },
+                paymentsVersion: 'v4',
             };
 
             const subscriptionData: SubscriptionData = {
@@ -93,6 +96,7 @@ describe('signupActions', () => {
                     PeriodEnd: 999,
                 },
                 payment,
+                billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
             };
 
             const cache: SignupCacheResult = {
@@ -137,11 +141,12 @@ describe('signupActions', () => {
         it('should use payment token for human verification if it exists: Username', async () => {
             handleCreateUserMock.mockReturnValue('handleCreateUser-result');
 
-            const payment: TokenPayment = {
+            const payment: TokenPaymentWithPaymentsVersion = {
                 Type: PAYMENT_METHOD_TYPES.TOKEN,
                 Details: {
                     Token: 'payment-token-123',
                 },
+                paymentsVersion: 'v4',
             };
 
             const subscriptionData: SubscriptionData = {
@@ -159,6 +164,7 @@ describe('signupActions', () => {
                     PeriodEnd: 999,
                 },
                 payment,
+                billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
             };
 
             const cache: SignupCacheResult = {
@@ -220,6 +226,7 @@ describe('signupActions', () => {
                     PeriodEnd: 999,
                 },
                 payment,
+                billingAddress: DEFAULT_TAX_BILLING_ADDRESS,
             };
 
             const humanVerificationResult = {

@@ -23,6 +23,8 @@ import {
     getRenewalNoticeText,
 } from '@proton/components/containers/payments/RenewalNotice';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
+import { BillingAddress } from '@proton/components/payments/core';
+import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
@@ -157,6 +159,7 @@ const Step1 = ({
     activeSessions?: LocalSessionPersisted[];
 }) => {
     const silentApi = getSilentApi(normalApi);
+    const { getPaymentsApi } = usePaymentsApi();
     const [loadingSignup, withLoadingSignup] = useLoading();
     const [loadingSignout, withLoadingSignout] = useLoading();
     const [loadingChallenge, setLoadingChallenge] = useState(false);
@@ -218,7 +221,14 @@ const Step1 = ({
             // If there's a couponCode, we ignore optimistically setting new values because they'll be incorrect.
             setOptimisticDiff(newOptimistic);
 
-            const checkResult = await getSubscriptionPrices(silentApi, newPlanIDs, newCurrency, newCycle, couponCode);
+            const checkResult = await getSubscriptionPrices(
+                getPaymentsApi(silentApi),
+                newPlanIDs,
+                newCurrency,
+                newCycle,
+                model.subscriptionData.billingAddress,
+                couponCode
+            );
 
             if (!validateFlow()) {
                 return;
@@ -272,6 +282,26 @@ const Step1 = ({
         }
 
         return handleOptimistic({ plan, planIDs });
+    };
+
+    const handleChangeBillingAddress = async (billingAddress: BillingAddress) => {
+        const checkResult = await getSubscriptionPrices(
+            getPaymentsApi(silentApi),
+            options.planIDs,
+            options.currency,
+            options.cycle,
+            billingAddress,
+            model.subscriptionData.checkResult.Coupon?.Code || signupParameters.coupon
+        );
+
+        setModel((old) => ({
+            ...old,
+            subscriptionData: {
+                ...model.subscriptionData,
+                billingAddress,
+                checkResult,
+            },
+        }));
     };
 
     useImperativeHandle(step1Ref, () => ({
@@ -841,6 +871,7 @@ const Step1 = ({
                                     return accountDetailsRef.current?.validate() ?? true;
                                 }}
                                 withLoadingSignup={withLoadingSignup}
+                                onBillingAddressChange={handleChangeBillingAddress}
                             />
                         </BoxContent>
                     </Box>

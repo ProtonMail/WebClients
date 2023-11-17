@@ -1,7 +1,6 @@
 import { c } from 'ttag';
 
-import { isPaypalDetails, isSavedCardDetails } from '@proton/components/payments/core';
-import { SavedPaymentMethod } from '@proton/components/payments/core';
+import { SavedPaymentMethod, isPaypalDetails } from '@proton/components/payments/core';
 import orderBy from '@proton/utils/orderBy';
 
 import { Table, TableBody, TableHeader, TableRow } from '../../components';
@@ -31,7 +30,7 @@ const MethodCell = ({ method }: { method: SavedPaymentMethod }) => {
         );
     }
 
-    if (isSavedCardDetails(method.Details)) {
+    if (method.Details && method.Details.Brand && method.Details.Last4) {
         return (
             <span data-testid="card-details">
                 {method.Details.Brand} (•••• {method.Details.Last4})

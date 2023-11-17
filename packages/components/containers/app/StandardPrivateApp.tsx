@@ -10,6 +10,7 @@ import ForceRefreshProvider from '../forceRefresh/Provider';
 import { KeyTransparencyManager } from '../keyTransparency';
 import { DensityInjector } from '../layouts';
 import { ModalsChildren } from '../modals';
+import PaymentSwitcher from '../payments/PaymentSwitcher';
 import { ThemeInjector } from '../themes/ThemeInjector';
 import ElectronBlockedContainer from './ElectronBlockedContainer';
 import KeyBackgroundManager from './KeyBackgroundManager';
@@ -21,6 +22,7 @@ interface Props {
     hasPrivateMemberKeyGeneration?: boolean;
     hasReadableMemberKeyActivation?: boolean;
     hasMemberKeyMigration?: boolean;
+    loader: ReactNode;
 }
 
 const StandardPrivateApp = ({
@@ -29,6 +31,7 @@ const StandardPrivateApp = ({
     hasMemberKeyMigration,
     hasReadableMemberKeyActivation,
     noModals,
+    loader,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const { isElectronDisabled } = useIsInboxElectronApp();
@@ -38,24 +41,26 @@ const StandardPrivateApp = ({
     }
 
     return (
-        <ContactProvider>
-            <KeyTransparencyManager appName={APP_NAME}>
-                <SessionRecoveryLocalStorageManager>
-                    <EventNotices />
-                    <ThemeInjector />
-                    <DensityInjector />
-                    <NotificationsChildren />
-                    {!noModals && <ModalsChildren />}
-                    <KeyBackgroundManager
-                        hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
-                        hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
-                        hasMemberKeyMigration={hasMemberKeyMigration}
-                    />
-                    <StorageListener />
-                    <ForceRefreshProvider>{children}</ForceRefreshProvider>
-                </SessionRecoveryLocalStorageManager>
-            </KeyTransparencyManager>
-        </ContactProvider>
+        <PaymentSwitcher loader={loader}>
+            <ContactProvider>
+                <KeyTransparencyManager appName={APP_NAME}>
+                    <SessionRecoveryLocalStorageManager>
+                        <EventNotices />
+                        <ThemeInjector />
+                        <DensityInjector />
+                        <NotificationsChildren />
+                        {!noModals && <ModalsChildren />}
+                        <KeyBackgroundManager
+                            hasPrivateMemberKeyGeneration={hasPrivateMemberKeyGeneration}
+                            hasReadableMemberKeyActivation={hasReadableMemberKeyActivation}
+                            hasMemberKeyMigration={hasMemberKeyMigration}
+                        />
+                        <StorageListener />
+                        <ForceRefreshProvider>{children}</ForceRefreshProvider>
+                    </SessionRecoveryLocalStorageManager>
+                </KeyTransparencyManager>
+            </ContactProvider>
+        </PaymentSwitcher>
     );
 };
 

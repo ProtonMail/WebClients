@@ -5,21 +5,27 @@ import { c } from 'ttag';
 import { ViewPaymentMethod } from '@proton/components/payments/client-extensions';
 import {
     PAYMENT_METHOD_TYPES,
+    PaymentMethodFlows,
     PaymentMethodStatus,
     PaymentMethodType,
     SavedPaymentMethod,
+    SavedPaymentMethodExternal,
+    SavedPaymentMethodInternal,
 } from '@proton/components/payments/core';
 import { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
+import { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
+import { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import { useLoading } from '@proton/hooks';
 import { MIN_CREDIT_AMOUNT, MIN_DONATION_AMOUNT } from '@proton/shared/lib/constants';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Alert, Loader, Price } from '../../components';
+import { CbIframeHandles } from '../../payments/chargebee/ChargebeeIframe';
+import { ChargebeeCreditCardWrapper, ChargebeeSavedCardWrapper } from '../../payments/chargebee/ChargebeeWrapper';
 import { CardModel } from '../../payments/core';
 import PaymentMethodDetails from '../paymentMethods/PaymentMethodDetails';
 import PaymentMethodSelector from '../paymentMethods/PaymentMethodSelector';
-import { PaymentMethodData, PaymentMethodFlows } from '../paymentMethods/interface';
 import Alert3DS from './Alert3ds';
 import Bitcoin from './Bitcoin';
 import BitcoinInfoMessage from './BitcoinInfoMessage';
@@ -57,14 +63,18 @@ export interface Props {
     triggersDisabled?: boolean;
     hideSavedMethodsDetails?: boolean;
     defaultMethod?: PAYMENT_METHOD_TYPES;
+    iframeHandles: CbIframeHandles;
+    chargebeeCard: ChargebeeCardProcessorHook;
+    chargebeePaypal: ChargebeePaypalProcessorHook;
 }
 
 export interface NoApiProps extends Props {
-    lastUsedMethod?: PaymentMethodData | ViewPaymentMethod;
-    allMethods: PaymentMethodData[];
+    lastUsedMethod?: ViewPaymentMethod;
+    allMethods: ViewPaymentMethod[];
     isAuthenticated: boolean;
     loading: boolean;
-    customPaymentMethod?: SavedPaymentMethod;
+    savedMethodInternal?: SavedPaymentMethodInternal;
+    savedMethodExternal?: SavedPaymentMethodExternal;
     currency: Currency;
     amount: number;
     onPaypalCreditClick?: () => void;
@@ -92,7 +102,8 @@ export const PaymentsNoApi = ({
     allMethods,
     isAuthenticated,
     loading,
-    customPaymentMethod,
+    savedMethodInternal,
+    savedMethodExternal,
     api,
     onPaypalCreditClick,
     onAwaitingBitcoinPayment,
@@ -100,6 +111,9 @@ export const PaymentsNoApi = ({
     triggersDisabled,
     hideSavedMethodsDetails,
     defaultMethod,
+    iframeHandles,
+    chargebeeCard,
+    chargebeePaypal,
 }: NoApiProps) => {
     const [handlingBitcoinPayment, withHandlingBitcoinPayment] = useLoading();
 
@@ -124,8 +138,8 @@ export const PaymentsNoApi = ({
         }
 
         const selectedMethod = allMethods.find((otherMethod) => otherMethod.value === method);
-        const result = allMethods.find(({ disabled }) => !disabled);
-        if ((!selectedMethod || selectedMethod.disabled) && result) {
+        const result = allMethods[0];
+        if (!selectedMethod && result) {
             onMethod(result.value);
         }
     }, [loading, allMethods.length]);
@@ -173,6 +187,14 @@ export const PaymentsNoApi = ({
     const isSingleSignup = isSignupPass || isSignupVpn;
     const isSignup = type === 'signup' || isSignupPass || isSignupVpn;
 
+    const sharedCbProps = {
+        iframeHandles,
+        chargebeeCard,
+        chargebeePaypal,
+    };
+
+    const savedMethod = savedMethodInternal ?? savedMethodExternal;
+
     return (
         <>
             <div
@@ -201,12 +223,19 @@ export const PaymentsNoApi = ({
                             <CreditCard
                                 card={card}
                                 errors={cardErrors}
-                                onChange={onCard}
+                                setCardProperty={onCard}
                                 fieldsStatus={cardFieldStatus}
                             />
                             {!isSignup && <Alert3DS />}
                         </>
                     )}
+                    {method === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && (
+                        <>
+                            <ChargebeeCreditCardWrapper {...sharedCbProps} />
+                        </>
+                    )}
+                    {/* the paypal button is rendered in another place */}
+                    {method === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL && <></>}
                     {method === PAYMENT_METHOD_TYPES.CASH && <Cash />}
                     {showBitcoinMethod && (
                         <>
@@ -238,15 +267,16 @@ export const PaymentsNoApi = ({
                         />
                     )}
                     {method === PAYMENT_METHOD_TYPES.PAYPAL && isSingleSignup && <PayPalInfoMessage />}
-                    {customPaymentMethod && (
+                    {savedMethod && (
                         <>
                             {!hideSavedMethodsDetails && (
-                                <PaymentMethodDetails
-                                    type={customPaymentMethod.Type}
-                                    details={customPaymentMethod.Details}
-                                />
+                                <PaymentMethodDetails type={savedMethod.Type} details={savedMethod.Details} />
                             )}
-                            {customPaymentMethod.Type === PAYMENT_METHOD_TYPES.CARD && <Alert3DS />}
+                            {(savedMethod.Type === PAYMENT_METHOD_TYPES.CARD ||
+                                savedMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) && <Alert3DS />}
+                            {savedMethod.Type === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD && (
+                                <ChargebeeSavedCardWrapper {...sharedCbProps} />
+                            )}
                         </>
                     )}
                     {children}

@@ -6,11 +6,13 @@ import {
     organizationDefaultResponse,
     plansDefaultResponse,
 } from '@proton/components/hooks/helpers/test';
-import { createToken, subscribe } from '@proton/shared/lib/api/payments';
+import * as paymentsDataUtilsModule from '@proton/components/payments/client-extensions/data-utils';
+import { createTokenV4, subscribe } from '@proton/shared/lib/api/payments';
 import { ADDON_NAMES, PLANS } from '@proton/shared/lib/constants';
 import { Audience, Organization, Plan } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 import { defaultVPNServersCountData as mockDefaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
+import { buildUser } from '@proton/testing/builders';
 import {
     apiMock,
     applyHOCs,
@@ -64,6 +66,8 @@ const ContextSubscriptionContainer = applyHOCs(
     withDeprecatedModals(),
     withAuthentication()
 )(SubscriptionContainer);
+
+jest.spyOn(paymentsDataUtilsModule, 'useCachedUser').mockReturnValue(buildUser());
 
 describe('SubscriptionContainer', () => {
     let props: SubscriptionContainerProps;
@@ -172,8 +176,8 @@ describe('SubscriptionContainer', () => {
 
         fireEvent.submit(form);
 
-        const createTokenUrl = createToken({} as any).url;
-        const subscribeUrl = subscribe({} as any, '' as any).url;
+        const createTokenUrl = createTokenV4({} as any).url;
+        const subscribeUrl = subscribe({} as any, '' as any, 'v4').url;
 
         await waitFor(() => {});
         expect(apiMock).not.toHaveBeenCalledWith(expect.objectContaining({ url: createTokenUrl }));

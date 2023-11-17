@@ -30,7 +30,6 @@ const EmojiPicker = (props: any) => {
 
     useEffect(() => {
         const picker = new Picker({ ...props, data, ref });
-
         // Inject custom CSS inside the custom elements of the emoji picker
         picker.injectStyles(emojiPickerCss);
     }, []);

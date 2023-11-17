@@ -1,7 +1,13 @@
 import { c } from 'ttag';
 
 import { FeatureCode } from '@proton/components/containers';
-import { PAYMENT_METHOD_TYPES, SavedPaymentMethod } from '@proton/components/payments/core';
+import { getMaybeForcePaymentsVersion } from '@proton/components/payments/client-extensions';
+import {
+    BillingAddress,
+    PAYMENT_METHOD_TYPES,
+    PaymentsApi,
+    SavedPaymentMethod,
+} from '@proton/components/payments/core';
 import { updateFeatureValue } from '@proton/shared/lib/api/features';
 import { getOrganization } from '@proton/shared/lib/api/organization';
 import { getSubscription, queryPaymentMethods } from '@proton/shared/lib/api/payments';
@@ -82,12 +88,13 @@ export const getFreeSubscriptionData = (
     };
 };
 
-const getSubscriptionData = async (api: Api, options: Options): Promise<SubscriptionData> => {
+const getSubscriptionData = async (paymentsApi: PaymentsApi, options: Options): Promise<SubscriptionData> => {
     const { planIDs, checkResult } = await getSubscriptionPrices(
-        api,
+        paymentsApi,
         options.planIDs || {},
         options.currency,
         options.cycle,
+        options.billingAddress,
         options.coupon
     )
         .then((checkResult) => {
@@ -113,6 +120,7 @@ const getSubscriptionData = async (api: Api, options: Options): Promise<Subscrip
         checkResult,
         planIDs: planIDs || {},
         skipUpsell: !!planIDs,
+        billingAddress: options.billingAddress,
     };
 };
 
@@ -396,6 +404,7 @@ const hasAccess = ({
 export const getUserInfo = async ({
     api,
     audience,
+    paymentsApi,
     user,
     options,
     plansMap,
@@ -406,6 +415,7 @@ export const getUserInfo = async ({
     toApp,
 }: {
     api: Api;
+    paymentsApi: PaymentsApi;
     user?: User | undefined;
     options: Options;
     plansMap: PlansMap;
@@ -428,7 +438,7 @@ export const getUserInfo = async ({
         return {
             paymentMethods: [],
             subscription: undefined,
-            subscriptionData: await getSubscriptionData(api, options),
+            subscriptionData: await getSubscriptionData(paymentsApi, options),
             organization: undefined,
             defaultPaymentMethod: undefined,
             state: {
@@ -448,17 +458,14 @@ export const getUserInfo = async ({
         access: false,
     };
 
+    const forcePaymentsVersion = getMaybeForcePaymentsVersion(user);
+
     const [paymentMethods, subscription, organization] = await Promise.all([
         state.payable
-            ? api<{
-                  PaymentMethods: SavedPaymentMethod[];
-              }>(queryPaymentMethods()).then(({ PaymentMethods }) => PaymentMethods)
+            ? api(queryPaymentMethods(forcePaymentsVersion)).then(({ PaymentMethods }) => PaymentMethods)
             : [],
         state.payable && state.admin && state.subscribed
-            ? api<{
-                  Subscription: Subscription;
-                  UpcomingSubscription?: Subscription;
-              }>(getSubscription()).then(
+            ? api(getSubscription(forcePaymentsVersion)).then(
                   ({ Subscription, UpcomingSubscription }) => UpcomingSubscription ?? Subscription
               )
             : (FREE_SUBSCRIPTION as unknown as Subscription),
@@ -504,7 +511,7 @@ export const getUserInfo = async ({
         }
 
         if (upsell.plan) {
-            return getSubscriptionData(api, {
+            return getSubscriptionData(paymentsApi, {
                 ...optionsWithSubscriptionDefaults,
                 ...upsell.subscriptionOptions,
                 planIDs: switchPlan({
@@ -516,7 +523,7 @@ export const getUserInfo = async ({
             });
         }
 
-        return getSubscriptionData(api, optionsWithSubscriptionDefaults);
+        return getSubscriptionData(paymentsApi, optionsWithSubscriptionDefaults);
     })();
 
     if (toApp === APPS.PROTONPASS) {
@@ -627,17 +634,19 @@ export type SubscriptionDataCycleMapping = Partial<{ [key in PLANS]: CycleMappin
 export const getPlanCardSubscriptionData = async ({
     planIDs,
     plansMap,
-    api,
+    paymentsApi,
     coupon,
     currency,
     cycles,
+    billingAddress,
 }: {
     cycles: CYCLE[];
     planIDs: PlanIDs[];
     plansMap: PlansMap;
-    api: Api;
+    paymentsApi: PaymentsApi;
     coupon?: string;
     currency: Currency;
+    billingAddress: BillingAddress;
 }): Promise<SubscriptionDataCycleMapping> => {
     const result = await Promise.all(
         planIDs.flatMap((planIDs) =>
@@ -656,13 +665,15 @@ export const getPlanCardSubscriptionData = async ({
                                 PeriodEnd: 0,
                                 Additions: null,
                             },
+                            billingAddress,
                         };
                     }
-                    const subscriptionData = await getSubscriptionData(api, {
+                    const subscriptionData = await getSubscriptionData(paymentsApi, {
                         planIDs,
                         cycle,
                         coupon,
                         currency,
+                        billingAddress,
                     });
                     return subscriptionData;
                 })
