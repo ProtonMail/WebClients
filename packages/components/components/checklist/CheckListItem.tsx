@@ -64,7 +64,7 @@ const CheckListItem = ({
                 alt=""
                 data-testid={smallVariant ? 'checklist-item-icon-small' : 'checklist-item-icon-large'}
             />
-            <span className={clsx('flex-item-fluid px-2', done && 'opacity-50')}>{text}</span>
+            <span className={clsx('flex-1 px-2', done && 'opacity-50')}>{text}</span>
             <div
                 className={clsx(
                     'w-custom h-custom flex self-center',

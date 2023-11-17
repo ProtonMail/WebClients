@@ -65,7 +65,7 @@ const RecipientDropdownItem = ({
                     )}
                 </span>
             </span>
-            <div className="flex flex-column flex-item-fluid px-2" data-testid="recipient:dropdown-item--contact-name">
+            <div className="flex flex-column flex-1 px-2" data-testid="recipient:dropdown-item--contact-name">
                 <span className="text-ellipsis inline-block max-w-full user-select" title={label}>
                     {label}
                     {!simple && recipient && <ProtonBadgeType recipient={recipient} />}

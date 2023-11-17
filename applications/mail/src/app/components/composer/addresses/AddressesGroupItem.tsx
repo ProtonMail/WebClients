@@ -150,14 +150,14 @@ const AddressesGroupItem = ({
                         onClick={handleCopy}
                     >
                         <Icon name="squares" className="mr-2" />
-                        <span className="flex-item-fluid my-auto">{c('Action').t`Copy addresses`}</span>
+                        <span className="flex-1 my-auto">{c('Action').t`Copy addresses`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="text-left flex flex-nowrap items-center"
                         onClick={() => showModalCallback(true)}
                     >
                         <Icon name="user" className="mr-2" />
-                        <span className="flex-item-fluid my-auto">{c('Action').t`View recipients`}</span>
+                        <span className="flex-1 my-auto">{c('Action').t`View recipients`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
                         className="text-left flex flex-nowrap items-center"
@@ -165,7 +165,7 @@ const AddressesGroupItem = ({
                         onClick={handleRemove}
                     >
                         <Icon name="cross-circle" className="mr-2" />
-                        <span className="flex-item-fluid my-auto">{c('Action').t`Remove`}</span>
+                        <span className="flex-1 my-auto">{c('Action').t`Remove`}</span>
                     </DropdownMenuButton>
                 </DropdownMenu>
             </ContextMenu>

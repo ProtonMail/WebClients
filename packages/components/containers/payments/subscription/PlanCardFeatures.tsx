@@ -83,7 +83,7 @@ export const PlanCardFeatureList = ({
                             <span className={clsx('flex flex-item-noshrink', iconSize < 20 ? 'mr-1' : 'mr-3')}>
                                 {iconToDisplay}
                             </span>
-                            <span className="flex-item-fluid text-left">
+                            <span className="flex-1 text-left">
                                 <span className="mr-2 align-middle">{feature.text}</span>
                                 {tooltip && feature.tooltip ? (
                                     <Info

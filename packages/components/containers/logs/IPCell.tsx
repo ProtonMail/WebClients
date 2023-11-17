@@ -20,7 +20,7 @@ const IPCell = ({ ip, isAuthLogAdvanced, isProtonSentinelEnabled, firstRow }: Pr
 
     if (firstRow) {
         return (
-            <span className="flex-item-fluid text-bold color-weak">
+            <span className="flex-1 text-bold color-weak">
                 {!isProtonSentinelEnabled && !isAuthLogAdvanced
                     ? advancedLogsAndProtonSentinelUpsell
                     : advancedLogsUpsell}

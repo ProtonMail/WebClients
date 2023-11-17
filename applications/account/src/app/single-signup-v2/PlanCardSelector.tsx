@@ -118,7 +118,7 @@ const PlanCardView = ({
     return (
         <div
             className={clsx(
-                'flex-item-noshrink lg:flex-item-fluid w-full lg:w-auto pricing-box-content-cycle mx-auto lg:mx-0',
+                'flex-item-noshrink lg:flex-1 w-full lg:w-auto pricing-box-content-cycle mx-auto lg:mx-0',
                 highlightPrice && 'pricing-box-content-cycle--highlighted',
                 hasMaxWidth && 'max-w-custom'
             )}
@@ -156,7 +156,7 @@ const PlanCardView = ({
                 <div className="py-6 px-4">
                     <div className="flex items-center flex-column">
                         <div className="w-full flex-no-min-children flex-row flex-nowrap gap-1">
-                            <strong className="text-2xl text-ellipsis flex-item-fluid text-center" id={`${cycle}-text`}>
+                            <strong className="text-2xl text-ellipsis flex-1 text-center" id={`${cycle}-text`}>
                                 {text}
                             </strong>
                         </div>

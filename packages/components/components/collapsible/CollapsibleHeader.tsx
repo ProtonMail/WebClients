@@ -64,7 +64,7 @@ const CollapsibleHeader = <E extends ElementType = typeof defaultElement>({
         >
             <div
                 id={headerId}
-                className={clsx(!disableFullWidth && 'flex-item-fluid')}
+                className={clsx(!disableFullWidth && 'flex-1')}
                 data-testid="collapsible-header"
             >
                 {children}

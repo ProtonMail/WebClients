@@ -70,7 +70,7 @@ export const Sandbox = () => {
                         options={variants.map((variant) => ({ value: variant, label: variant }))}
                     />
                 </div>
-                <div className="flex flex-item-fluid items-center justify-center border">{logo}</div>
+                <div className="flex flex-1 items-center justify-center border">{logo}</div>
             </div>
         </div>
     );

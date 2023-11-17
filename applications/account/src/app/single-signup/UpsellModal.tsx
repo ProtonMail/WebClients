@@ -18,7 +18,7 @@ const UpsellModal = ({ title, img, info, features, footer, ...rest }: Props) => 
         <ModalTwo {...rest} size="xlarge">
             <Scroll>
                 <div className="flex flex-nowrap">
-                    <div className="flex-item-fluid hidden md:flex">
+                    <div className="flex-1 hidden md:flex">
                         {cloneElement(img, {
                             className: 'h-full',
                             style: {
@@ -26,7 +26,7 @@ const UpsellModal = ({ title, img, info, features, footer, ...rest }: Props) => 
                             },
                         })}
                     </div>
-                    <div className="flex-item-fluid">
+                    <div className="flex-1">
                         <ModalTwoHeader />
                         <div className="px-8">
                             <h1 className="h2 text-bold mb-6">{title}</h1>

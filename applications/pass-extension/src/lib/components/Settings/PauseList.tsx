@@ -160,7 +160,7 @@ export const PauseList: VFC = () => {
             )}
 
             <div className="flex mt-2">
-                <div className="flex-item-fluid mr-2">
+                <div className="flex-1 mr-2">
                     <InputFieldTwo
                         value={url}
                         onValue={setUrl}

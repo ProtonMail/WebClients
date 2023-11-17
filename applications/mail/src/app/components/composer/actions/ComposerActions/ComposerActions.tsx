@@ -128,7 +128,7 @@ const ComposerActions = ({
                     />
                 </ComposerScheduleSendSpotlight>
 
-                <div className="flex flex-item-fluid">
+                <div className="flex flex-1">
                     <div className="flex">
                         <Tooltip title={titleDeleteDraft}>
                             <Button
@@ -154,7 +154,7 @@ const ComposerActions = ({
                             onChange={onChange}
                         />
                     </div>
-                    <div className="flex-item-fluid flex pr-4">
+                    <div className="flex-1 flex pr-4">
                         <span className="mr-2 m-auto hidden md:flex color-weak">{dateMessage}</span>
                         <Tooltip title={titleAttachment}>
                             <AttachmentsButton

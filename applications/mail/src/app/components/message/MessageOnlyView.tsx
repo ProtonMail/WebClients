@@ -143,7 +143,7 @@ const MessageOnlyView = ({
                 loading={!messageLoaded}
                 element={message.data}
             />
-            <div className="flex-item-fluid px-4 mt-4 max-w-full outline-none" ref={messageContainerRef} tabIndex={-1}>
+            <div className="flex-1 px-4 mt-4 max-w-full outline-none" ref={messageContainerRef} tabIndex={-1}>
                 <MessageView
                     // Break the reuse of the MessageView accross multiple message
                     // Solve a lot of reuse issues, reproduce the same as in conversation mode with a map on conversation messages

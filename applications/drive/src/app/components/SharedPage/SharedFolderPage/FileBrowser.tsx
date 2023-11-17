@@ -43,7 +43,7 @@ export default function SharedFileBrowser({ folderName, items, isLoading, sortPa
     const contentCells = isNarrow ? contentCellsMobile : contentCellsDesktop;
     const headerCells = isNarrow ? headerCellsMobile : headerCellsDesktop;
 
-    const classname = clsx(['flex flex-column flex-nowrap shared-url-file-browser', isNarrow && 'flex-item-fluid']);
+    const classname = clsx(['flex flex-column flex-nowrap shared-url-file-browser', isNarrow && 'flex-1']);
 
     const isListEmpty = items.length === 0 && !isLoading;
 

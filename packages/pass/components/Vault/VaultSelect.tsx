@@ -84,7 +84,7 @@ export const VaultSelect: VFC<Props> = ({ downgradeMessage, onSubmit, optionsSel
                                 color={vault.content.display.color}
                                 icon={vault.content.display.icon}
                             />
-                            <div className="flex flex-item-fluid flex-column">
+                            <div className="flex flex-1 flex-column">
                                 <span className="text-ellipsis inline-block max-w-full color-norm">
                                     {vault.content.name}
                                 </span>

@@ -154,7 +154,7 @@ const Item = ({
                 onDragStart={(event) => onDragStart(event, element)}
                 onDragEnd={onDragEnd}
                 className={clsx([
-                    'flex-item-fluid flex flex-nowrap cursor-pointer',
+                    'flex-1 flex flex-nowrap cursor-pointer',
                     columnLayout ? 'item-container item-container-column' : 'item-container-row',
                     isSelected && 'item-is-selected',
                     !unread && 'read',

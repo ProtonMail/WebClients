@@ -27,7 +27,7 @@ export const Main: FC = () => {
         <InviteProvider onVaultCreated={useCallback((shareId) => setFilters({ selectedShareId: shareId }), [])}>
             <PasswordProvider>
                 <SpotlightProvider>
-                    <div className="content-container flex flex-row flex-nowrap no-scroll flex-item-fluid relative w-full h-full anime-fade-in">
+                    <div className="content-container flex flex-row flex-nowrap no-scroll flex-1 relative w-full h-full anime-fade-in">
                         <Sidebar expanded={expanded} onToggle={toggle}>
                             <VaultActionsProvider onVaultCreated={noop} onVaultDeleted={noop}>
                                 <Menu onToggle={toggle} />
@@ -36,7 +36,7 @@ export const Main: FC = () => {
 
                         <Route path={`/${getLocalIDPath(client.state.localID)}`}>
                             {(route) => (
-                                <main id="main" className="content flex-item-fluid overflow-hidden">
+                                <main id="main" className="content flex-1 overflow-hidden">
                                     <div className="flex flex-nowrap flex-column h-full">
                                         <Header hamburger={<Hamburger expanded={expanded} onToggle={toggle} />} />
                                         <div className="flex items-center justify-center flex-nowrap w-full h-full">

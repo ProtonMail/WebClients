@@ -122,7 +122,7 @@ const RecipientItemLayout = ({
         <span
             className={clsx([
                 'inline-flex items-center flex-nowrap message-recipient-item max-w-full cursor-pointer',
-                isLoading && 'flex-item-fluid',
+                isLoading && 'flex-1',
             ])}
             role="button"
             tabIndex={0}
@@ -134,11 +134,11 @@ const RecipientItemLayout = ({
             data-testid={customDataTestId ? customDataTestId : `recipient:details-dropdown-${title}`}
         >
             <span
-                className={clsx(['flex items-center flex-nowrap max-w-full', isLoading && 'flex-item-fluid'])}
+                className={clsx(['flex items-center flex-nowrap max-w-full', isLoading && 'flex-1'])}
             >
                 <span
                     className={clsx([
-                        'inline-flex flex-item-fluid flex-nowrap relative',
+                        'inline-flex flex-1 flex-nowrap relative',
                         !isOutside && showDropdown && 'message-recipient-item-label-address',
                     ])}
                 >

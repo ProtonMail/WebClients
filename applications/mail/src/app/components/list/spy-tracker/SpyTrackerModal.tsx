@@ -31,7 +31,7 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
     const getHeaderContent = (tracker: Tracker) => {
         return (
             <div className="flex items-center">
-                <div className="flex-item-fluid text-break">{tracker.name}</div>
+                <div className="flex-1 text-break">{tracker.name}</div>
                 <NumberOfElementsBubble
                     numberOfElements={tracker.urls.length}
                     className="flex-item-noshrink"
@@ -56,7 +56,7 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
             <ModalTwoContent>
                 <div className="border rounded-lg mb-4 p-4 flex flex-nowrap items-center">
                     <img src={trackersImg} alt={imageTrackerText} className="flex-item-noshrink" />
-                    <p className="color-weak flex-item-fluid pl-4 my-0" data-testid="trackersModal:description">
+                    <p className="color-weak flex-1 pl-4 my-0" data-testid="trackersModal:description">
                         {c('Info')
                             .t`We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.`}
                         <br />

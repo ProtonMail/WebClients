@@ -165,7 +165,7 @@ const ContactDetailsModal = ({
             <ModalTwoContent>
                 <ErrorBoundary
                     key={contactID}
-                    component={<GenericError className="pt-7 view-column-detail flex-item-fluid" />}
+                    component={<GenericError className="pt-7 view-column-detail flex-1" />}
                 >
                     <div ref={modalRef}>
                         {isLoading ? (

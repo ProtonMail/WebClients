@@ -77,7 +77,7 @@ const ContactViewEmails = ({
                     >
                         <span className="w-full flex">
                             <a
-                                className="mr-2 flex-item-fluid text-ellipsis"
+                                className="mr-2 flex-1 text-ellipsis"
                                 href={`mailto:${email.value}`}
                                 title={email.value}
                             >

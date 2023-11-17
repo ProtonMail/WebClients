@@ -65,8 +65,8 @@ export const ShareMember: VFC<ShareMemberProps> = ({
     return (
         <div className="flex flex-nowrap items-center border rounded-xl px-4 py-3 w-full">
             <ShareMemberAvatar value={initials} loading={loading} />
-            <div className="flex-item-fluid">
-                <div className="flex flex-nowrap flex-item-fluid items-center gap-2">
+            <div className="flex-1">
+                <div className="flex flex-nowrap flex-1 items-center gap-2">
                     <div className="text-ellipsis">{email}</div>
                     {me && <span className="color-primary text-sm">({c('Info').t`me`})</span>}
                 </div>

@@ -98,7 +98,7 @@ const PagingControls = ({
                                             data-testid={`toolbar:page-number-${pageNumber}`}
                                             className={clsx(['flex flex-row'])}
                                         >
-                                            <span className="text-left flex-item-fluid">{pageNumber}</span>
+                                            <span className="text-left flex-1">{pageNumber}</span>
                                             {active ? <Icon name="checkmark" className="mt-0.5" /> : null}
                                         </DropdownMenuButton>
                                     );

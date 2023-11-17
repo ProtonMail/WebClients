@@ -67,7 +67,7 @@ const MessagesGeneralSection = () => {
             <SettingsSection>
                 <SettingsLayout>
                     <SettingsLayoutLeft>
-                        <label htmlFor="shortcutsToggle" className="flex-item-fluid">
+                        <label htmlFor="shortcutsToggle" className="flex-1">
                             <span className="text-semibold">{c('Title').t`Keyboard shortcuts`}</span>
                             <button
                                 type="button"
@@ -83,13 +83,13 @@ const MessagesGeneralSection = () => {
                             </button>
                         </label>
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="flex flex-item-fluid items-center">
+                    <SettingsLayoutRight className="flex flex-1 items-center">
                         <ShortcutsToggle className="mr-4" id="shortcutsToggle" />
                     </SettingsLayoutRight>
                 </SettingsLayout>
                 <SettingsLayout>
                     <SettingsLayoutLeft>
-                        <label htmlFor="dailyNotificationsToggle" className="flex-item-fluid">
+                        <label htmlFor="dailyNotificationsToggle" className="flex-1">
                             <span className="pr-2 text-semibold">{c('Label').t`Daily email notifications`}</span>
                             <Info
                                 url={getStaticURL('/support/notification-email')}
@@ -108,7 +108,7 @@ const MessagesGeneralSection = () => {
                             </div>
                         )}
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="flex flex-item-fluid items-center">
+                    <SettingsLayoutRight className="flex flex-1 items-center">
                         {!userLoading && showRecoveryEmailInput && (
                             <RecoveryEmail
                                 className="mb-4 md:mb-0"
@@ -126,7 +126,7 @@ const MessagesGeneralSection = () => {
                                 onChange={handleChangeEmailNotify}
                             />
                             {!userLoading && showRecoveryEmailInput && (
-                                <label htmlFor="dailyNotificationsToggle" className="flex-item-fluid">
+                                <label htmlFor="dailyNotificationsToggle" className="flex-1">
                                     {c('Label').t`Allow notifications by email`}
                                 </label>
                             )}

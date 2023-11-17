@@ -15,10 +15,10 @@ const InviteSection = () => {
     return (
         <SettingsSectionWide>
             <div className="flex justify-space-between gap-4 mb-8 invite-section">
-                <BorderedBox className="flex-item-fluid">
+                <BorderedBox className="flex-1">
                     <InviteShareLink />
                 </BorderedBox>
-                <BorderedBox className="flex-item-fluid">
+                <BorderedBox className="flex-1">
                     <InviteSendEmail />
                 </BorderedBox>
             </div>

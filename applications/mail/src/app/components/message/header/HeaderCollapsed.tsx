@@ -75,7 +75,7 @@ const HeaderCollapsed = ({
             onClick={handleClick}
             data-testid={`message-header-collapsed:${conversationIndex}`}
         >
-            <div className="flex flex-item-fluid flex-nowrap items-center mr-2">
+            <div className="flex flex-1 flex-nowrap items-center mr-2">
                 <RecipientItem
                     message={message}
                     recipientOrGroup={{ recipient: message.data?.Sender }}
@@ -102,7 +102,7 @@ const HeaderCollapsed = ({
                 )}
 
                 {messageLoaded && (
-                    <div className="ml-2 flex-item-fluid flex flex-nowrap">
+                    <div className="ml-2 flex-1 flex flex-nowrap">
                         <ItemLabels
                             className="hidden md:inline-flex"
                             element={message.data}

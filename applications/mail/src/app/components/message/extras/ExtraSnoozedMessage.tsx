@@ -84,7 +84,7 @@ const ExtraSnoozedMessage = ({ message }: Props) => {
             data-testid="message:snooze-banner"
         >
             <Icon name="clock" className="mt-1 ml-0.5 flex-item-noshrink color-warning" />
-            <span className={clsx(['px-2 flex-item-fluid mt-1'])}>{getSnoozeBannerMessage()}</span>
+            <span className={clsx(['px-2 flex-1 mt-1'])}>{getSnoozeBannerMessage()}</span>
             {!isUnsnoozeShortly ? (
                 <span className="flex-item-noshrink items-start flex">
                     <Button

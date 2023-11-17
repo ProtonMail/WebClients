@@ -15,7 +15,7 @@ const ReportsTableCell = ({ product: app, title, isSync }: Props) => (
             <div className="flex-item-noshrink mr-2 hidden md:flex">
                 <Icon name={getImportIconNameByProduct(app, isSync)} className="color-weak" />
             </div>
-            <div className="flex-item-fluid">
+            <div className="flex-1">
                 <div className="w-full text-ellipsis" title={title}>
                     {title}
                 </div>

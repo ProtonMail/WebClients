@@ -14,7 +14,7 @@ const StripedItem = ({ left, tooltip, children, className, ...rest }: StripedIte
         <li className={clsx('px-3 py-2 rounded', className)} {...rest}>
             <div className="flex flex-nowrap items-baseline">
                 <div className="flex-item-noshrink mr-2">{left}</div>
-                <div className="flex-item-fluid">
+                <div className="flex-1">
                     <span className="align-middle">{children}</span>
                     {tooltip ? <Info buttonClass="ml-2 align-middle" title={tooltip} /> : null}
                 </div>

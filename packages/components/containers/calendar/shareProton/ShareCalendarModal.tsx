@@ -618,7 +618,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                 options={[
                                     {
                                         label: (
-                                            <span className="flex-item-fluid">
+                                            <span className="flex-1">
                                                 {c('Calendar sharing access option label')
                                                     .t`View (see all event details)`}
                                             </span>
@@ -627,7 +627,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                     },
                                     {
                                         label: (
-                                            <span className="flex-item-fluid">
+                                            <span className="flex-1">
                                                 {c('Calendar sharing access option label')
                                                     .t`Edit (view, create and edit event details)`}
                                             </span>

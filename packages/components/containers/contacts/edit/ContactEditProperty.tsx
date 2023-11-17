@@ -116,8 +116,8 @@ const ContactEditProperty = (
                     />
                 </span>
 
-                <div className="flex flex-nowrap items-startoupas md:flex-item-fluid flex-item-noshrink">
-                    <span className="flex-item-fluid mb-4">
+                <div className="flex flex-nowrap items-startoupas md:flex-1 flex-item-noshrink">
+                    <span className="flex-1 mb-4">
                         <ContactFieldProperty
                             ref={ref}
                             vCardProperty={vCardProperty}

@@ -83,7 +83,7 @@ export const LobbyContent: VFC<Props> = ({ status, onLogin, onLogout, onRegister
                 </span>
             </div>
 
-            <div className="flex-item-fluid mt-8 flex flex-column gap-2">
+            <div className="flex-1 mt-8 flex flex-column gap-2">
                 {!locked && (
                     <Button pill shape="solid" color="norm" className="w-full" onClick={onLogin}>
                         {clientErrored(status)

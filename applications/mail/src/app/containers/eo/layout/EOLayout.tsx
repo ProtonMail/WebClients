@@ -61,7 +61,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                     </div>
                 </div>
             </header>
-            <div className="eo-layout-container sm:mx-7 flex-item-fluid flex flex-nowrap flex-column">
+            <div className="eo-layout-container sm:mx-7 flex-1 flex flex-nowrap flex-column">
                 <div>{children}</div>
                 <div className="mx-auto mt-8">
                     <Href

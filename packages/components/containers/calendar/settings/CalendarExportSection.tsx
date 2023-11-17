@@ -56,7 +56,7 @@ const CalendarExportSection = ({ personalCalendars, fallbackCalendar }: Props) =
 
             <div className="flex">
                 {selectedCalendar && (
-                    <span className="flex-item-fluid mr-4">
+                    <span className="flex-1 mr-4">
                         <CalendarSelect
                             calendarID={selectedCalendar.ID}
                             options={calendarOptions}

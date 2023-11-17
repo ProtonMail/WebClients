@@ -30,7 +30,7 @@ const Deal = forwardRef<HTMLDivElement, Props>(({ children, ...props }: Props, r
             <div
                 ref={ref}
                 className={clsx([
-                    'relative flex flex-item-fluid offer-plan-container mt-4 md:mt-0',
+                    'relative flex flex-1 offer-plan-container mt-4 md:mt-0',
                     isMostPopular && 'offer-plan-container--mostPopular',
                     isSecondMostPopular && 'offer-plan-container--secondMostPopular',
                     isThirdMostPopular && 'offer-plan-container--thirdMostPopular',

@@ -120,7 +120,7 @@ const ComposerTitleBar = ({
         >
             <span
                 className={clsx([
-                    'flex-item-fluid p-2 pr-4 pl-3 text-ellipsis user-select-none',
+                    'flex-1 p-2 pr-4 pl-3 text-ellipsis user-select-none',
                     (!maximized || minimized) && 'cursor-move',
                 ])}
                 onMouseDown={handleStartDragging}

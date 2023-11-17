@@ -34,7 +34,7 @@ const ContactViewTels = ({ vCardContact, isSignatureVerified = false }: Props) =
                     isSignatureVerified={isSignatureVerified}
                 >
                     <span className="w-full flex">
-                        <a className="mr-2 flex-item-fluid text-ellipsis" href={`tel:${tel.value}`}>
+                        <a className="mr-2 flex-1 text-ellipsis" href={`tel:${tel.value}`}>
                             {tel.value}
                         </a>
                         <span className=" flex-item-noshrink flex py-1 contact-view-actions h-4">

@@ -52,7 +52,7 @@ function DriveView() {
             <UploadDragDrop
                 shareId={activeFolder.shareId}
                 linkId={activeFolder.linkId}
-                className="flex flex-column flex-nowrap flex-item-fluid"
+                className="flex flex-column flex-nowrap flex-1"
                 disabled={folderView.isActiveLinkReadOnly}
             >
                 <ToolbarRow titleArea={breadcrumbs} toolbar={toolbar} />

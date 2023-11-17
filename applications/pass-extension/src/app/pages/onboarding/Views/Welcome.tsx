@@ -86,7 +86,7 @@ export const Welcome: VFC = () => {
                         <div className="flex gap-14">
                             {/* left section */}
                             <div className="flex pass-welcome--on-medium-default-grow" style={{ flex: 2 }}>
-                                <div className="flex flex-column flex-item-fluid">
+                                <div className="flex flex-column flex-1">
                                     <h1 className="text-xl pass-onboarding--white-text mb-4 text-bold">
                                         <span className="text-rg">{c('Title')
                                             .jt`The extension is now ready to use.`}</span>
@@ -107,7 +107,7 @@ export const Welcome: VFC = () => {
 
                             {/* right section */}
                             <div className="flex pass-welcome--on-medium-default-grow" style={{ flex: 1 }}>
-                                <div className="flex flex-column flex-item-fluid gap-12">
+                                <div className="flex flex-column flex-1 gap-12">
                                     {/* right section upper subsection */}
                                     <div className="flex flex-column gap-5">
                                         <h1 className="text-xl pass-onboarding--white-text text-bold">

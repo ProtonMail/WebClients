@@ -60,13 +60,13 @@ const EOHeaderExpanded = ({
             data-testid={`message-header-expanded:${message.data?.Subject}`}
         >
             <div className="flex flex-nowrap items-center mx-0 mb-3 sm:mx-8">
-                <span className="flex flex-item-fluid flex-nowrap mr-2">
-                    <div className={clsx(['flex flex-nowrap', !messageLoaded && 'flex-item-fluid'])}>
+                <span className="flex flex-1 flex-nowrap mr-2">
+                    <div className={clsx(['flex flex-nowrap', !messageLoaded && 'flex-1'])}>
                         <RecipientType
                             label={c('Label Recipient').t`From`}
                             className={clsx([
                                 'flex items-start flex-nowrap',
-                                !messageLoaded && 'flex-item-fluid',
+                                !messageLoaded && 'flex-1',
                             ])}
                         >
                             <RecipientItem

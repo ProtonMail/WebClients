@@ -79,7 +79,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     );
 
     return (
-        <div className="flex flex-column flex-nowrap justify-space-between flex-item-fluid scroll-if-needed gap-2">
+        <div className="flex flex-column flex-nowrap justify-space-between flex-1 scroll-if-needed gap-2">
             <Button
                 icon
                 size="medium"
@@ -93,7 +93,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 <Icon name="plus" alt={c('Action').t`Create a new vault`} />
             </Button>
 
-            <Scroll className="flex flex-item-fluid h-1/2 min-h-custom" style={{ '--min-h-custom': '5em' }}>
+            <Scroll className="flex flex-1 h-1/2 min-h-custom" style={{ '--min-h-custom': '5em' }}>
                 <div className="flex mx-3">
                     <VaultMenu selectedShareId={selectedShareId} inTrash={matchTrash} onSelect={onVaultSelect} />
                 </div>

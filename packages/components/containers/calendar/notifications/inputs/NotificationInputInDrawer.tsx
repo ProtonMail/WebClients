@@ -80,7 +80,7 @@ const NotificationInputInDrawer = ({
     return (
         <div
             key={notification.id}
-            className={clsx('flex flex-column items-stretch flex-item-fluid gap-2 mb-4', className)}
+            className={clsx('flex flex-column items-stretch flex-1 gap-2 mb-4', className)}
         >
             {hasType && (
                 <span className="flex flex-nowrap gap-2">
@@ -90,7 +90,7 @@ const NotificationInputInDrawer = ({
                         disabled={disabled}
                         onChange={({ value }) => onEdit({ ...notification, type: +value })}
                         title={howToSendText}
-                        className="flex-item-fluid"
+                        className="flex-1"
                         {...errorProps}
                     >
                         {[
@@ -124,7 +124,7 @@ const NotificationInputInDrawer = ({
                 <span
                     className={clsx(
                         'flex flex-nowrap gap-2 flex-item-grow-custom',
-                        fullWidth ? 'md:flex-item-fluid' : 'lg:flex-item-fluid'
+                        fullWidth ? 'md:flex-1' : 'lg:flex-1'
                     )}
                     style={{ '--grow-custom': '1.5' }}
                 >
@@ -154,7 +154,7 @@ const NotificationInputInDrawer = ({
                             />
                         </span>
                     )}
-                    <span className={clsx(fullWidth ? 'md:flex-item-fluid' : 'lg:flex-item-fluid')}>
+                    <span className={clsx(fullWidth ? 'md:flex-1' : 'lg:flex-1')}>
                         <SelectTwo
                             data-testid="notification-time-dropdown"
                             value={optionsValue}
@@ -180,7 +180,7 @@ const NotificationInputInDrawer = ({
                     </span>
                 </span>
                 {isAllDay && at && (
-                    <span className={clsx(fullWidth ? 'md:flex-item-fluid' : 'lg:flex-item-fluid')}>
+                    <span className={clsx(fullWidth ? 'md:flex-1' : 'lg:flex-1')}>
                         <TimeInput
                             data-testid="notification-time-at"
                             value={at}

@@ -357,7 +357,7 @@ const Step1 = ({
                         return (
                             <div className="signup-v2-offer-banner py-2 px-4 rounded-lg color-primary md:text-lg inline-flex flex-nowrap mt-4">
                                 <Icon name={iconName} size={14} className="flex-item-noshrink mt-1" />
-                                <span className="ml-2 flex-item-fluid">{textLaunchOffer}</span>
+                                <span className="ml-2 flex-1">{textLaunchOffer}</span>
                             </div>
                         );
                     };
@@ -545,7 +545,7 @@ const Step1 = ({
                                     />
                                     <BoxContent>
                                         <div className="flex justify-space-between gap-14">
-                                            <div className="flex-item-fluid w-0">
+                                            <div className="flex-1 w-0">
                                                 <AccountSwitcherItem user={user} />
                                                 {hasSelectedFree && (
                                                     <Button
@@ -597,7 +597,7 @@ const Step1 = ({
                                 />
                                 <BoxContent>
                                     <div className="flex items-start justify-space-between gap-14">
-                                        <div className="flex-item-fluid w-0 relative">
+                                        <div className="flex-1 w-0 relative">
                                             <AccountStepDetails
                                                 {...(signupParameters.invite?.type === 'pass'
                                                     ? {
