@@ -213,7 +213,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                 ) : (
                     <>
                         <div className={clsx(['mb-2 flex flex-nowrap gap-4', isNarrow && 'flex-column'])}>
-                            <div className="flex-item-grow-2">
+                            <div className="grow-2">
                                 <SearchInput
                                     ref={searchInputRef}
                                     value={searchValue}

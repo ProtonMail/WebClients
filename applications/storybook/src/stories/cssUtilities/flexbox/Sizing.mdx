@@ -22,10 +22,10 @@ Use `.flex-1` or `.flex-auto` on flex items to set the sizing behaviour.
     <Story id="css-utilities-flexbox-sizing--flex-auto" />
 </div>
 
-`.flex-item-grow-2` will grow by factor 2.
+`.grow-2` will grow by factor 2.
 
 <div className="border p-2 rounded bg-weak" style={{ width: '320px', resize: 'both', overflow: 'auto' }}>
-    <Story id="css-utilities-flexbox-sizing--flex-item-grow" />
+    <Story id="css-utilities-flexbox-sizing--grow" />
 </div>
 
 `.flex-item-noshrink` This item will not shrink and not wrap text.
@@ -34,13 +34,13 @@ Use `.flex-1` or `.flex-auto` on flex items to set the sizing behaviour.
     <Story id="css-utilities-flexbox-sizing--flex-item-no-shrink" />
 </div>
 
-`.flex-item-nogrow` This item will shrink but it will not grow.
+`.grow-0` This item will shrink but it will not grow.
 
 <div className="border p-2 rounded bg-weak" style={{ width: '320px', resize: 'both', overflow: 'auto' }}>
     <Story id="css-utilities-flexbox-sizing--flex-item-no-grow" />
 </div>
 
-`.flex-item-nogrow .flex-item-noshrink` This item will not shrink and not grow.
+`.grow-0 .flex-item-noshrink` This item will not shrink and not grow.
 
 <div className="border p-2 rounded bg-weak" style={{ width: '320px', resize: 'both', overflow: 'auto' }}>
     <Story id="css-utilities-flexbox-sizing--flex-item-no-grow-no-shrink" />
