@@ -12,11 +12,17 @@ export interface Photo {
 }
 
 export type PhotoLink = DeepPartial<DecryptedLink> & {
+    // These properties are always present, even on incomplete links
     linkId: string;
-    // If the link is in photos share it should always have activeRevision
+    rootShareId: string;
+    parentLinkId: string;
+    isFile: boolean;
     activeRevision: DeepPartial<DecryptedLink['activeRevision']> & {
         photo: Photo;
     };
+
+    // This is required for trashing and notifications
+    name: string;
 };
 export type PhotoGroup = string;
 export type PhotoGridItem = PhotoLink | PhotoGroup;
