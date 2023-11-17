@@ -8,7 +8,7 @@ const DealGuarantee = () => {
     const { deal } = useDealContext();
     if (deal?.isGuaranteed === true) {
         return (
-            <p className="flex mx-auto flex-items-align-center text-sm m-0 max-w-full flex-nowrap color-success">
+            <p className="flex mx-auto text-sm m-0 max-w-full flex-nowrap color-success">
                 <span className="shrink-0 flex mr-1">
                     <Icon name="shield" />
                 </span>

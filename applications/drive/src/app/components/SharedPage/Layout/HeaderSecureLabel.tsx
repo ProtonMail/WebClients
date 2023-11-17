@@ -7,7 +7,7 @@ interface Props {
     className?: string;
 }
 const HeaderSecureLabel = ({ className }: Props) => (
-    <div className={clsx('color-success flex flex-row flex-align-center', className)}>
+    <div className={clsx('color-success flex flex-row', className)}>
         <Icon name="lock-open-check-filled" className="mr-2" />
         <span className="encryption-block-text">{c('Info').t`End-to-end encrypted`}</span>
     </div>

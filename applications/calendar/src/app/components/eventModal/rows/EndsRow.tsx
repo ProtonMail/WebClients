@@ -112,7 +112,7 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
                                 title={c('Title').t`Choose how many times this event will repeat`}
                             />
                         </div>
-                        <div className="flex-item-shrink-0 ml-2">
+                        <div className="shrink-0 ml-2">
                             {c('Custom frequency option').ngettext(msgid`time`, `times`, safeCountPlural)}
                         </div>
                     </div>

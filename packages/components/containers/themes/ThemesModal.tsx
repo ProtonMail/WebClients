@@ -19,7 +19,7 @@ const ThemesModal = (props: ModalProps) => {
             <ModalTwoHeader title={c('Title').t`Select a theme`} />
             <ModalTwoContent>
                 <p className="mb-4">{c('Info').t`Customize the look and feel of ${BRAND_NAME} applications.`}</p>
-                <div className="inline-flex flex-align-item-center mb-4">
+                <div className="inline-flex mb-4">
                     <label htmlFor="themeSyncToggle" className="text-semibold">
                         <span className="mr-2">{c('Label').t`Synchronize with system`}</span>
                         <Info

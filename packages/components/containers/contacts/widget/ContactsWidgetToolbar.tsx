@@ -74,7 +74,7 @@ const ContactsWidgetToolbar = ({
     }, [selected, contactList.contactEmailsMap]);
 
     return (
-        <div className="flex flex-items-align-center">
+        <div className="flex">
             <Tooltip title={allChecked ? c('Action').t`Deselect all` : c('Action').t`Select all`}>
                 <span className="mr-4 flex">
                     <Checkbox
