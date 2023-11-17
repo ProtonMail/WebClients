@@ -377,7 +377,7 @@ export const Sandbox = () => {
                 </div>
             </div>
             <strong>Classes:</strong>{' '}
-            <code className="inline-block user-select rounded-sm py-1 px-2 border bg-weak text-norm text-sm hidden-empty">
+            <code className="inline-block user-select rounded-sm py-1 px-2 border bg-weak text-norm text-sm empty:hidden">
                 {assembleClasses(selectedPadding)}
             </code>
         </>

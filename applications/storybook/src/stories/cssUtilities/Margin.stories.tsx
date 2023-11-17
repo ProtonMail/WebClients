@@ -124,8 +124,7 @@ export const MarginsTable = () => {
     );
 };
 
-const demoItemClasses =
-    'user-select flex items-center justify-center bg-primary rounded-sm text-center';
+const demoItemClasses = 'user-select flex items-center justify-center bg-primary rounded-sm text-center';
 
 // Storybooks <code> styling is not available inside stories, so we have to use a custom component
 type CodeProps = {
@@ -133,7 +132,7 @@ type CodeProps = {
 };
 
 const Code = ({ children }: CodeProps) => (
-    <code className="inline-block user-select rounded-sm p-1 px-2 border bg-weak text-norm text-sm hidden-empty">
+    <code className="inline-block user-select rounded-sm p-1 px-2 border bg-weak text-norm text-sm empty:hidden">
         {children}
     </code>
 );
@@ -197,11 +196,7 @@ export const MarginY = () => {
     return (
         <div className="border rounded overflow-hidden w-full relative flex flex-nowrap scroll-if-needed items-center justify-space-between text-2xs">
             {marginSizes.map((size) => (
-                <div
-                    key={size.class}
-                    className="bg-strong rounded-sm shrink-0"
-                    style={{ display: 'flow-root' }}
-                >
+                <div key={size.class} className="bg-strong rounded-sm shrink-0" style={{ display: 'flow-root' }}>
                     <div className={`${demoItemClasses} my-${size.class}`} style={{ width: '3rem', height: '3rem' }}>
                         my-{size.class}
                     </div>
@@ -243,11 +238,7 @@ export const MarginX = () => {
     return (
         <div className="border rounded overflow-hidden w-full relative flex flex-column flex-nowrap items-center gap-2 text-2xs">
             {marginSizes.map((size) => (
-                <div
-                    key={size.class}
-                    className="bg-strong rounded-sm shrink-0"
-                    style={{ display: 'flow-root' }}
-                >
+                <div key={size.class} className="bg-strong rounded-sm shrink-0" style={{ display: 'flow-root' }}>
                     <div className={`${demoItemClasses} mx-${size.class}`} style={{ width: '5rem', height: '1.5rem' }}>
                         mx-{size.class}
                     </div>
