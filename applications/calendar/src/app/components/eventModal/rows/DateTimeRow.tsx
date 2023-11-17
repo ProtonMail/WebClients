@@ -72,9 +72,9 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
         <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Date and time`}>
             <div className={clsx([isAllDay && 'w-full md:w-1/2'])}>
                 <div className="flex flex-nowrap flex-column md:flex-row mb-2">
-                    <div className="flex flex-nowrap md:flex-1 flex-item-grow">
+                    <div className="flex flex-nowrap md:flex-1 grow">
                         <div
-                            className="flex-no-min-children flex-1 flex-item-grow-custom"
+                            className="flex-no-min-children flex-1 grow-custom"
                             style={{ '--grow-custom': '1.25' }}
                         >
                             <DateInput
@@ -118,9 +118,9 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                 </div>
 
                 <div className="flex flex-nowrap flex-column md:flex-row mb-2">
-                    <div className="flex flex-nowrap md:flex-1 flex-item-grow">
+                    <div className="flex flex-nowrap md:flex-1 grow">
                         <div
-                            className="flex-no-min-children flex-1 flex-item-grow-custom"
+                            className="flex-no-min-children flex-1 grow-custom"
                             style={{ '--grow-custom': '1.25' }}
                         >
                             <DateInput

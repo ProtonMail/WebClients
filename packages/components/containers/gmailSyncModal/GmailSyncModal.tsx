@@ -78,7 +78,7 @@ const GmailSyncModal = ({ onSyncCallback, onSyncSkipCallback, source, reduceHeig
                         <br className="lg:hidden" />
                         {c('Gmail forwarding').t`Gmail messages to your inbox`}
                     </h1>
-                    <div className="lg:hidden flex-item-grow-2">
+                    <div className="lg:hidden grow-2">
                         <GmailSyncModalAnimation reduceHeight={reduceHeight} />
                     </div>
                     <div className="flex flex-column items-center gap-4">
