@@ -1,7 +1,7 @@
 import type { AnyAction } from 'redux';
 
 import { signoutSuccess } from '@proton/pass/store/actions/creators/auth';
-import { stateDestroy, stateLock } from '@proton/pass/store/actions/creators/worker';
+import { stateDestroy, stateLock } from '@proton/pass/store/actions/creators/client';
 import { or } from '@proton/pass/utils/fp/predicates';
 
 export const isStateResetAction = (action: AnyAction) =>
