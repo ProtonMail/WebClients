@@ -191,7 +191,7 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
                     >
                         {progressStatus}
                     </span>
-                    <div className="flex flex-justify-space-between">
+                    <div className="flex justify-space-between">
                         {progressBar}
                         {showPauseResumeButton && pauseResumeButton}
                     </div>

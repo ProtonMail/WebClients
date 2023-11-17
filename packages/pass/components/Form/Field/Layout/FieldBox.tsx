@@ -43,7 +43,7 @@ export const FieldBox: FC<FieldBoxProps> = (props) => {
             {icon && (
                 <span
                     className={clsx(
-                        'flex flex-justify-center flex-align-items-center flex-item-noshrink pr-4',
+                        'flex justify-center flex-align-items-center flex-item-noshrink pr-4',
                         isCoreIcon && 'mt-2'
                     )}
                     style={{ color: 'var(--fieldset-cluster-icon-color)' }}

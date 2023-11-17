@@ -16,7 +16,7 @@ interface Props {
 const RegisterSecurityKeyContent = ({ loading, error, checkbox }: Props) => {
     return (
         <>
-            <div className="flex flex-justify-center mt-4 mb-6 relative">
+            <div className="flex justify-center mt-4 mb-6 relative">
                 {loading && (
                     <div className="text-center absolute absolute-center">
                         <CircleLoader className="color-primary" />

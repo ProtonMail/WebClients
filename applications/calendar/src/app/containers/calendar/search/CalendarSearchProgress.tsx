@@ -55,7 +55,7 @@ const CalendarSearchProgress = ({ esIndexingProgressState, isPaused = false }: P
             <span className="color-weak relative advanced-search-progress-status" aria-live="polite" aria-atomic="true">
                 {statusMessage}
             </span>
-            <div className="flex flex-justify-space-between">
+            <div className="flex justify-space-between">
                 <Progress
                     value={currentProgressValue}
                     aria-describedby="timeRemaining"

@@ -37,7 +37,7 @@ const VPNPassPromotionButton = ({ onClick, currency, cycle }: VPNPassPromotionBu
                     <div className="mt-4">
                         <Button
                             onClick={onClick}
-                            className="flex flex-nowrap flex-align-items-center flex-justify-center"
+                            className="flex flex-nowrap flex-align-items-center justify-center"
                             fullWidth
                             shape="outline"
                             color="norm"

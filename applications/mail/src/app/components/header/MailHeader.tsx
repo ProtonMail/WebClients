@@ -75,7 +75,7 @@ const MailHeader = ({ labelID, elementID, selectedIDs = [], breakpoints, toolbar
                 }
                 actionArea={
                     breakpoints.isNarrow || breakpoints.isTablet || (breakpoints.isSmallDesktop && elementID) ? (
-                        <div className="flex flex-nowrap flex-justify-space-between">
+                        <div className="flex flex-nowrap justify-space-between">
                             {toolbar}
                             {!elementID && (
                                 <MailSearch

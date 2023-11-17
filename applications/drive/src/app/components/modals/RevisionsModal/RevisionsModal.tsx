@@ -31,7 +31,7 @@ const RevisionsSettingsBanner = ({
 }) => {
     const retentionLabel = getRetentionLabel(revisionRetentionDays);
     return (
-        <div className="flex flex-align-items-center flex-justify-space-between">
+        <div className="flex flex-align-items-center justify-space-between">
             <p className="m-0 color-weak">
                 {revisionRetentionDays === 0
                     ? c('Info').t`Previous versions are not saved`

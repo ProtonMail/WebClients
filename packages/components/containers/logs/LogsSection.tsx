@@ -188,7 +188,7 @@ const LogsSection = () => {
                 </SettingsLayout>
             )}
 
-            <div className="flex flex-justify-space-between flex-align-items-start mt-8 mb-4">
+            <div className="flex justify-space-between flex-align-items-start mt-8 mb-4">
                 {logAuth !== DISABLE && (
                     <div className="mb-2">
                         <Button

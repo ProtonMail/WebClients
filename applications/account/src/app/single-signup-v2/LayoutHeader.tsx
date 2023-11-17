@@ -27,7 +27,7 @@ const LayoutHeader = ({
         <header
             className={clsx(
                 className,
-                'flex flex-justify-space-between flex-align-items-center flex-item-noshrink flex-nowrap signup-v2-header gap-1 md:px-8 md:py-6 py-4 px-3'
+                'flex justify-space-between flex-align-items-center flex-item-noshrink flex-nowrap signup-v2-header gap-1 md:px-8 md:py-6 py-4 px-3'
             )}
         >
             <div className="inline-flex flex-nowrap flex-item-noshrink">

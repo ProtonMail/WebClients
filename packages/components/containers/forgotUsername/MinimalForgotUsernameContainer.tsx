@@ -47,7 +47,7 @@ const MinimalForgotUsernameContainer = () => {
                     required
                 />
             </div>
-            <div className="flex flex-nowrap flex-justify-space-between mb-4">
+            <div className="flex flex-nowrap justify-space-between mb-4">
                 <Link to="/login">{c('Link').t`Back to login`}</Link>
                 <PrimaryButton loading={loading} type="submit">{c('Action').t`Email me my username(s)`}</PrimaryButton>
             </div>

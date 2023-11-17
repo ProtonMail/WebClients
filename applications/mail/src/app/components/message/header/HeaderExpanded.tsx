@@ -198,7 +198,7 @@ const HeaderExpanded = ({
         >
             {canShowTrackersIcon && <ItemSpyTrackerIcon message={message} />}
             {isNarrow && messageLoaded && (
-                <div className="flex flex-align-items-center flex-justify-space-between my-2" onClick={handleClick}>
+                <div className="flex flex-align-items-center justify-space-between my-2" onClick={handleClick}>
                     <span className="inline-flex">
                         <ItemLocation element={message.data} labelID={labelID} />
                         <ItemAttachmentIcon
@@ -302,7 +302,7 @@ const HeaderExpanded = ({
                 </>
             )}
 
-            <div className="pt-0 flex flex-justify-space-between">
+            <div className="pt-0 flex justify-space-between">
                 <div className="flex">
                     <HeaderMoreDropdown
                         labelID={labelID}

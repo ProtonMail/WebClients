@@ -68,7 +68,7 @@ const CheckListItem = ({
             <div
                 className={clsx(
                     'w-custom h-custom flex flex-align-self-center',
-                    done && 'bg-primary rounded-50 flex flex-align-items-center flex-justify-center flex-item-noshrink'
+                    done && 'bg-primary rounded-50 flex flex-align-items-center justify-center flex-item-noshrink'
                 )}
                 style={{
                     '--h-custom': smallVariant || !done ? '1rem' : '1.5rem',

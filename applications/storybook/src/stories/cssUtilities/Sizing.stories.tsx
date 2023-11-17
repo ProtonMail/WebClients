@@ -13,7 +13,7 @@ export default {
 };
 
 const demoItemClasses =
-    'user-select flex flex-align-items-center py-2 flex-justify-center bg-strong rounded-sm text-center text-nowrap';
+    'user-select flex flex-align-items-center py-2 justify-center bg-strong rounded-sm text-center text-nowrap';
 const demoContainerClasses = 'border p-4 my-4 rounded w-full relative flex flex-column gap-2 overflow-auto text-sm';
 
 export const Fractions = () => {

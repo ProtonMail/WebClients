@@ -5,7 +5,7 @@ import clsx from '@proton/utils/clsx';
 import { TransfersManagerButtonsProps } from './interfaces';
 
 const Buttons = ({ className, buttons, id }: TransfersManagerButtonsProps) => {
-    const elClassName = clsx(['flex flex-nowrap flex-justify-end', className]);
+    const elClassName = clsx(['flex flex-nowrap justify-end', className]);
 
     return (
         <div className={elClassName} id={id}>

@@ -74,7 +74,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
                 </div>
             )}
 
-            <div className="transfers-manager-list-item-status flex flex-nowrap flex-align-items-center flex-justify-end text-ellipsis">
+            <div className="transfers-manager-list-item-status flex flex-nowrap flex-align-items-center justify-end text-ellipsis">
                 <TransferStateIndicator transfer={transfer} type={type} speed={speed} />
             </div>
 

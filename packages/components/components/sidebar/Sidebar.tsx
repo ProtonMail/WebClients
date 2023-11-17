@@ -130,7 +130,7 @@ const Sidebar = ({
                 />
 
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
-                <div className="logo-container hidden md:flex flex-item-noshrink flex-justify-space-between flex-align-items-center flex-nowrap">
+                <div className="logo-container hidden md:flex flex-item-noshrink justify-space-between flex-align-items-center flex-nowrap">
                     {logo}
                     <div className="hidden md:block">{appsDropdown}</div>
                 </div>
@@ -160,7 +160,7 @@ const Sidebar = ({
                             )}`}
                             value={Math.ceil(spacePercentage)}
                         />
-                        <div className="flex flex-nowrap flex-justify-space-between py-2">
+                        <div className="flex flex-nowrap justify-space-between py-2">
                             <span>
                                 {canAddStorage ? (
                                     <Tooltip title={c('Storage').t`Upgrade storage`}>

@@ -27,7 +27,7 @@ const AliasFormBase: FC<{
 }> = ({ children, disabled, loading, mailboxes, toggleShowAdvanced }) => {
     return (
         <>
-            <div className="flex flex-justify-end mb-2">
+            <div className="flex justify-end mb-2">
                 <Button shape="ghost" onClick={toggleShowAdvanced}>
                     <span className="flex flex-align-items-center color-weak text-sm">
                         <Icon name="cog-wheel" className="mr-1" />

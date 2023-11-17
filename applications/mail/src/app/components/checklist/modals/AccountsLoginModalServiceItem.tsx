@@ -55,7 +55,7 @@ const AccountsLoginModalServiceItem = ({
             <div className="flex flex-align-items-center flex-item-grow-2 gap-2">
                 <div
                     className={clsx(
-                        'flex flex-justify-center w-custom h-custom',
+                        'flex justify-center w-custom h-custom',
                         isNarrow && 'flex-align-self-start',
                         !isNarrow && 'flex-align-items-center'
                     )}

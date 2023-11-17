@@ -142,7 +142,7 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                             content={
                                 <div
                                     className={clsx([
-                                        'flex flex-nowrap flex-align-items-center flex-justify-space-between w-full py-2 treeview-item relative',
+                                        'flex flex-nowrap flex-align-items-center justify-space-between w-full py-2 treeview-item relative',
                                         isOverred && position === BEFORE && 'treeview-item--move-top',
                                         isOverred && position === AFTER && 'treeview-item--move-bottom',
                                         isOverred && position === INSIDE && 'treeview-item--move-inside',

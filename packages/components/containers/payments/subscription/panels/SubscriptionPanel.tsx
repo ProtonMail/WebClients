@@ -103,7 +103,7 @@ const SubscriptionItems = ({ items }: SubscriptionListProps) => {
                             left={<Icon className={clsx(included && 'color-success')} size={20} name={icon} />}
                         >
                             <div
-                                className="flex flex-justify-space-between flex-align-items-baseline"
+                                className="flex justify-space-between flex-align-items-baseline"
                                 data-testid={dataTestId}
                             >
                                 {text}

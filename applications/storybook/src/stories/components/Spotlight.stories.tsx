@@ -76,14 +76,14 @@ export const Sandbox = () => {
                         options={placementOptions}
                     />
                 </div>
-                <div className="flex flex-item-fluid flex-align-items-center flex-justify-center border">
+                <div className="flex flex-item-fluid flex-align-items-center justify-center border">
                     <Spotlight
                         content="Content of the spotlight"
                         show={show}
                         originalPlacement={placement}
                         key={placement}
                     >
-                        <div className="border rounded flex flex-align-items-center flex-justify-center" style={style}>
+                        <div className="border rounded flex flex-align-items-center justify-center" style={style}>
                             Something to put spotlight on
                         </div>
                     </Spotlight>

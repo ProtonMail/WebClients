@@ -54,7 +54,7 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
 
     return (
         <>
-            <div className="code-input-container block md:flex flex-justify-center">
+            <div className="code-input-container block md:flex justify-center">
                 <div className="code-input-div flex-item-fluid flex flex-column text-center pb-4 md:pb-0 pt-2 md:pt-0">
                     <Input
                         ref={refFirstInput}

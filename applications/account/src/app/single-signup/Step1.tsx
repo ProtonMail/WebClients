@@ -342,7 +342,7 @@ const getPlanTitle = (selected: string) => {
 };
 const FeatureItem = ({ left, text }: { left: ReactNode; text: string }) => {
     return (
-        <div className="flex flex-align-items-center text-center flex-column md:flex-row flex-justify-center">
+        <div className="flex flex-align-items-center text-center flex-column md:flex-row justify-center">
             <div className="md:mr-4 text-center">{left}</div>
             <div>{text}</div>
         </div>
@@ -351,7 +351,7 @@ const FeatureItem = ({ left, text }: { left: ReactNode; text: string }) => {
 
 const BoxHeader = ({ step, title, right }: { step?: number; title: string; right?: ReactNode }) => {
     return (
-        <div className="flex flex-align-items-center flex-justify-space-between flex-nowrap">
+        <div className="flex flex-align-items-center justify-space-between flex-nowrap">
             <div className="flex md:flex-align-items-center flex-column md:flex-row md:gap-4 gap-2">
                 {step !== undefined && (
                     <div className="flex-item-noshrink">
@@ -1176,7 +1176,7 @@ const Step1 = ({
                                                       },
                                                   }}
                                               >
-                                                  <div className="flex flex-justify-space-between gap-4 flex-column lg:flex-row">
+                                                  <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
                                                       <CycleSelector
                                                           bg
                                                           onGetTheDeal={(cycle) => {
@@ -1217,7 +1217,7 @@ const Step1 = ({
                                                       },
                                                   }}
                                               >
-                                                  <div className="flex flex-justify-space-between gap-4 flex-column lg:flex-row">
+                                                  <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
                                                       <CycleSelector
                                                           bg
                                                           onGetTheDeal={(cycle) => {
@@ -1238,7 +1238,7 @@ const Step1 = ({
                                       );
                                   })()
                                 : checkoutMappingPlanIDs && (
-                                      <div className="flex flex-justify-space-between gap-4 flex-column lg:flex-row">
+                                      <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
                                           <CycleSelector
                                               onGetTheDeal={(cycle) => {
                                                   handleUpdate('plan');
@@ -1264,7 +1264,7 @@ const Step1 = ({
                                           />
                                       </div>
                                   )}
-                            <div className="flex flex-column flex-align-items-center gap-1 lg:flex-row lg:flex-justify-space-between mt-10">
+                            <div className="flex flex-column flex-align-items-center gap-1 lg:flex-row lg:justify-space-between mt-10">
                                 <span className="text-sm">
                                     <Guarantee />
                                 </span>
@@ -1290,7 +1290,7 @@ const Step1 = ({
                     </Box>
                 )}
                 <Box className="mt-8 w-full">
-                    <div className="flex flex-justify-space-between flex-column lg:flex-row ">
+                    <div className="flex justify-space-between flex-column lg:flex-row ">
                         <div className={`lg:flex-item-fluid ${padding}`}>
                             <BoxHeader
                                 step={showStepLabel ? step++ : undefined}
@@ -1421,7 +1421,7 @@ const Step1 = ({
                                         removeBundle={
                                             options.planIDs[PLANS.VPN_PASS_BUNDLE] && (
                                                 <Button
-                                                    className="flex flex-nowrap flex-align-items-center flex-justify-center"
+                                                    className="flex flex-nowrap flex-align-items-center justify-center"
                                                     color="weak"
                                                     shape="outline"
                                                     size="small"
@@ -1451,7 +1451,7 @@ const Step1 = ({
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader step={showStepLabel ? step++ : undefined} title={c('Header').t`Checkout`} />
                         <BoxContent>
-                            <div className="flex flex-justify-space-between md:gap-14 gap-6 flex-column lg:flex-row">
+                            <div className="flex justify-space-between md:gap-14 gap-6 flex-column lg:flex-row">
                                 <div className="lg:flex-item-fluid md:pr-1 order-1 lg:order-0">
                                     <form
                                         onFocus={(e) => {
@@ -1805,7 +1805,7 @@ const Step1 = ({
 
                                             {isB2bPlan && (
                                                 <>
-                                                    <div className="mx-3 text-bold flex flex-justify-space-between text-rg gap-2">
+                                                    <div className="mx-3 text-bold flex justify-space-between text-rg gap-2">
                                                         <span>{getTotalBillingText(options.cycle)}</span>
                                                         <span>
                                                             <Price currency={options.currency}>
@@ -1871,7 +1871,7 @@ const Step1 = ({
 
                                             <div className="mx-3 flex flex-column gap-2">
                                                 {showLifetimeDeal && actualCheckout.discountPercent > 0 && (
-                                                    <div className={clsx('flex flex-justify-space-between text-rg')}>
+                                                    <div className={clsx('flex justify-space-between text-rg')}>
                                                         <span>{c('specialoffer: Label').t`Lifetime deal`}</span>
                                                         <span>
                                                             <span className="color-success">
@@ -1887,7 +1887,7 @@ const Step1 = ({
                                                 <div
                                                     className={clsx(
                                                         'text-bold',
-                                                        'flex flex-justify-space-between text-rg gap-2'
+                                                        'flex justify-space-between text-rg gap-2'
                                                     )}
                                                 >
                                                     <span>

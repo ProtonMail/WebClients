@@ -48,7 +48,7 @@ export const MnemonicPhraseStepContent = ({
                 <>
                     <span className="text-semibold">{c('Label').t`Recovery phrase`}</span>
                     <Card
-                        className="mt-2 flex flex-justify-space-between flex-align-items-center flex-nowrap"
+                        className="mt-2 flex justify-space-between flex-align-items-center flex-nowrap"
                         bordered={false}
                         rounded
                     >
