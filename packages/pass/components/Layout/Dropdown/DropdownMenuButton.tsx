@@ -79,6 +79,7 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
 interface DropdownMenuButtonProps extends DropdownMenuButtonCoreProps, DropdownMenuButtonLabelProps {
     children?: ReactNode;
     className?: string;
+    parentClassName?: string;
     isSelected?: boolean;
     quickActions?: ReactNode;
     size?: 'small' | 'medium';
@@ -87,6 +88,7 @@ interface DropdownMenuButtonProps extends DropdownMenuButtonCoreProps, DropdownM
 export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     children,
     className,
+    parentClassName,
     isSelected,
     quickActions,
     size = 'medium',
@@ -101,7 +103,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     const extraPadding = quickActions !== undefined ? 'pr-5' : '';
 
     return (
-        <div className="relative">
+        <div className={clsx('relative', parentClassName)}>
             <DropdownMenuButtonCore
                 className={clsx(size === 'small' && 'text-sm', className)}
                 // translator : "Selected" is singular only

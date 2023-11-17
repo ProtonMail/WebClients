@@ -1,0 +1,5 @@
+.pass-vault-submenu-vault-item {
+	&.selected {
+		background-color: rgb(var(--vault-icon-color) / 0.24) !important;
+	}
+}
