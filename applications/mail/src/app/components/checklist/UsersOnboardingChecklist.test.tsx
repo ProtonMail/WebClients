@@ -11,6 +11,8 @@ import { minimalCache, render } from 'proton-mail/helpers/test/helper';
 import MailSidebar from '../sidebar/MailSidebar';
 import UsersOnboardingChecklist from './UsersOnboardingChecklist';
 
+// import UsersOnboardingChecklist from './UsersOnboardingChecklist';
+
 jest.mock('../../containers/onboardingChecklist/provider/GetStartedChecklistProvider', () => ({
     __esModule: true,
     useGetStartedChecklist: jest.fn(),
