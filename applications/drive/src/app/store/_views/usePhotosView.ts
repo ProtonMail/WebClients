@@ -42,11 +42,20 @@ export const usePhotosView = () => {
 
     // This will be flattened to contain categories and links
     const { photosViewData, photoLinkIdToIndexMap, photoLinkIds } = useMemo(() => {
+        if (!shareId || !linkId) {
+            return {
+                photosViewData: [],
+                photoLinkIdToIndexMap: {},
+                photoLinkIds: [],
+            };
+        }
+
         const result: Record<string, PhotoLink> = {};
 
         // We create "fake" links to avoid complicating the rest of the code
         photos.forEach((photo) => {
             result[photo.linkId] = {
+                name: 'Photo',
                 linkId: photo.linkId,
                 rootShareId: shareId,
                 parentLinkId: linkId,
