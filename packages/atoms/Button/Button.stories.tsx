@@ -64,7 +64,7 @@ export const Sandbox = () => {
     );
 
     return (
-        <div className="flex-no-min-children flex-column md:flex-row py-7">
+        <div className="flex children-min-size-auto flex-column md:flex-row py-7">
             <div className="flex flex-column flex-nowrap md:flex-1">
                 <div className="mr-8 mb-4">
                     <strong className="block mb-4">Color</strong>

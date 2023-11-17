@@ -246,7 +246,7 @@ const CalendarSearchView = ({
     const hasResults = Boolean(visualItems.length);
 
     return (
-        <div className="relative flex-no-min-children flex-column flex-nowrap justify-start items-start w-full h-full reset4print">
+        <div className="relative flex children-min-size-auto flex-column flex-nowrap justify-start items-start w-full h-full reset4print">
             <div className="toolbar toolbar--heavy flex flex-nowrap shrink-0 items-center gap-2 no-print justify-space-between py-1 pr-2 pl-4 w-full">
                 <h2 className="h6 text-semibold">
                     {hasResults ? c('esCalendar').t`Results` : c('esCalendar').t`No result`}
