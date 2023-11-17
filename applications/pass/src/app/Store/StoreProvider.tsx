@@ -5,11 +5,13 @@ import { useNotifications } from '@proton/components/hooks';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { INITIAL_SETTINGS } from '@proton/pass/store/reducers/settings';
+import { AppStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
+import { authStore } from '../../lib/core';
+import { getDBCache, writeDBCache } from '../../lib/database';
 import { useAuthService } from '../Context/AuthServiceProvider';
 import { useClient } from '../Context/ClientProvider';
-import { authStore } from '../core';
 import { rootSaga } from './root-saga';
 import { sagaMiddleware, store } from './store';
 
@@ -25,15 +27,16 @@ export const StoreProvider: FC = ({ children }) => {
     useEffect(() => {
         sagaMiddleware.run(
             rootSaga.bind(null, {
-                getAuthStore: () => authStore,
+                getAppState: () => clientRef.current.state,
                 getAuthService: () => authService,
-                getCache: async () => ({}),
+                getAuthStore: () => authStore,
+                getCache: () => getDBCache(authStore.getUserID()!),
                 getEventInterval: () => ACTIVE_POLLING_TIMEOUT,
                 getLocalSettings: async () => INITIAL_SETTINGS,
                 getTelemetry: () => null,
-                getAppState: () => clientRef.current.state,
-                setCache: async () => {},
+                onBoot: ({ ok }) => client.setStatus(ok ? AppStatus.READY : AppStatus.ERROR),
                 onNotification: pipe(notificationEnhancer, createNotification),
+                setCache: (encryptedCache) => writeDBCache(authStore.getUserID()!, encryptedCache),
             })
         );
     }, []);
