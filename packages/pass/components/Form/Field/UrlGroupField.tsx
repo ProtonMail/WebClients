@@ -64,7 +64,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                         <>
                             <ul className="unstyled m-0 mb-1">
                                 {values.urls.map(({ url, id }, index) => (
-                                    <li key={id} className="flex flex-align-items-center flex-nowrap">
+                                    <li key={id} className="flex items-center flex-nowrap">
                                         <InputFieldTwo
                                             error={(errors.urls?.[index] as FormikErrors<UrlItem>)?.url}
                                             onValue={handleReplace(index)}
@@ -117,7 +117,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                                 shape="ghost"
                                 size="small"
                                 title={c('Action').t`Add`}
-                                className="flex flex-align-items-center gap-1"
+                                className="flex items-center gap-1"
                                 onClick={() => handleAdd(values.url).then(() => inputRef.current?.focus())}
                             >
                                 <Icon name="plus" /> {c('Action').t`Add`}

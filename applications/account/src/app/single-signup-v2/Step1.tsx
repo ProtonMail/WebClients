@@ -329,7 +329,7 @@ const Step1 = ({
             bottomRight={<SignupSupportDropdown isDarkBg={isDarkBg} />}
             className={className}
         >
-            <div className="flex flex-align-items-center flex-column">
+            <div className="flex items-center flex-column">
                 <div
                     className={clsx(
                         'single-signup-header-v2 text-center mt-8 mb-4',
@@ -596,7 +596,7 @@ const Step1 = ({
                                           })}
                                 />
                                 <BoxContent>
-                                    <div className="flex flex-align-items-start justify-space-between gap-14">
+                                    <div className="flex items-start justify-space-between gap-14">
                                         <div className="flex-item-fluid w-0 relative">
                                             <AccountStepDetails
                                                 {...(signupParameters.invite?.type === 'pass'

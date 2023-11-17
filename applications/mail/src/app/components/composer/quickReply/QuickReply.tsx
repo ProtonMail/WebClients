@@ -241,7 +241,7 @@ const QuickReply = ({
 
     return (
         <div ref={quickReplyFrameRef}>
-            <div className="flex flex-nowrap flex-align-items-center mx-4 mt-4 mb-2">
+            <div className="flex flex-nowrap items-center mx-4 mt-4 mb-2">
                 <QuickReplyType
                     referenceMessage={referenceMessage}
                     modelMessage={modelMessage}

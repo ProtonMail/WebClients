@@ -342,7 +342,7 @@ const getPlanTitle = (selected: string) => {
 };
 const FeatureItem = ({ left, text }: { left: ReactNode; text: string }) => {
     return (
-        <div className="flex flex-align-items-center text-center flex-column md:flex-row justify-center">
+        <div className="flex items-center text-center flex-column md:flex-row justify-center">
             <div className="md:mr-4 text-center">{left}</div>
             <div>{text}</div>
         </div>
@@ -351,8 +351,8 @@ const FeatureItem = ({ left, text }: { left: ReactNode; text: string }) => {
 
 const BoxHeader = ({ step, title, right }: { step?: number; title: string; right?: ReactNode }) => {
     return (
-        <div className="flex flex-align-items-center justify-space-between flex-nowrap">
-            <div className="flex md:flex-align-items-center flex-column md:flex-row md:gap-4 gap-2">
+        <div className="flex items-center justify-space-between flex-nowrap">
+            <div className="flex md:items-center flex-column md:flex-row md:gap-4 gap-2">
                 {step !== undefined && (
                     <div className="flex-item-noshrink">
                         <StepLabel step={step} />
@@ -1041,7 +1041,7 @@ const Step1 = ({
             background={background}
             isB2bPlan={isB2bPlan}
         >
-            <div className="flex flex-align-items-center flex-column">
+            <div className="flex items-center flex-column">
                 <div className="signup-v1-header mb-4 text-center">
                     <h1 className="m-0 large-font lg:px-4 text-semibold">
                         {(() => {
@@ -1264,7 +1264,7 @@ const Step1 = ({
                                           />
                                       </div>
                                   )}
-                            <div className="flex flex-column flex-align-items-center gap-1 lg:flex-row lg:justify-space-between mt-10">
+                            <div className="flex flex-column items-center gap-1 lg:flex-row lg:justify-space-between mt-10">
                                 <span className="text-sm">
                                     <Guarantee />
                                 </span>
@@ -1421,7 +1421,7 @@ const Step1 = ({
                                         removeBundle={
                                             options.planIDs[PLANS.VPN_PASS_BUNDLE] && (
                                                 <Button
-                                                    className="flex flex-nowrap flex-align-items-center justify-center"
+                                                    className="flex flex-nowrap items-center justify-center"
                                                     color="weak"
                                                     shape="outline"
                                                     size="small"
@@ -1704,7 +1704,7 @@ const Step1 = ({
                                                                         </div>
                                                                     )}
                                                                 </div>
-                                                                <div className="flex-item-fluid flex flex-align-items-center gap-2">
+                                                                <div className="flex-item-fluid flex items-center gap-2">
                                                                     <div className="flex-item-fluid text-sm">
                                                                         <span className="color-weak mr-1">
                                                                             {getBilledText(options.cycle)}
@@ -1748,7 +1748,7 @@ const Step1 = ({
                                                         {upsell && (
                                                             <>
                                                                 <div className="border-top border-weak" />
-                                                                <div className="p-2 flex gap-1 flex-align-items-center">
+                                                                <div className="p-2 flex gap-1 items-center">
                                                                     {upsell}
                                                                 </div>
                                                             </>

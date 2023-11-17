@@ -82,7 +82,7 @@ $dummy-map: ();
 	$dummy-map: map.merge(
 		$dummy-map,
 		(
-			flex-align-items-#{$align}:
+			items-#{$align}:
 				(
 					align-items: #{dash-join($prefix, $align)},
 				),
@@ -99,7 +99,7 @@ $dummy-map: ();
 
 // ----------------------------------------------------------------------------
 
-.flex-flex-align-items-center > * {
+.flex-items-center > * {
 	align-items: center;
 }
 

@@ -96,7 +96,7 @@ const ItemRowLayout = ({
 
     return (
         <div className="w-full">
-            <div className="flex flex-align-items-center flex-nowrap flex-row item-titlesender">
+            <div className="flex items-center flex-nowrap flex-row item-titlesender">
                 <div className="my-auto flex w-custom" style={{ '--w-custom': '2em' }} data-testid={unread}>
                     <ItemStar element={element} />
                 </div>
@@ -105,7 +105,7 @@ const ItemRowLayout = ({
                     <ItemAction element={element} className="mr-2 flex-item-noshrink my-auto" />
                     {senders && (
                         <span
-                            className="max-w-full text-ellipsis flex flex-align-items-center"
+                            className="max-w-full text-ellipsis flex items-center"
                             data-testid="message-row:sender-address"
                         >
                             {senders}
@@ -113,7 +113,7 @@ const ItemRowLayout = ({
                     )}
                 </div>
 
-                <div className="item-subject flex-item-fluid flex flex-align-items-center flex-nowrap m-auto">
+                <div className="item-subject flex-item-fluid flex items-center flex-nowrap m-auto">
                     <div className="flex flex-column inline-block w-full">
                         <span
                             role="heading"
@@ -176,7 +176,7 @@ const ItemRowLayout = ({
                 </span>
 
                 <span
-                    className="ml-4 flex w-custom flex-nowrap flex-align-items-center justify-end"
+                    className="ml-4 flex w-custom flex-nowrap items-center justify-end"
                     style={{ '--w-custom': '13em' }}
                 >
                     <ItemHoverButtons
@@ -189,7 +189,7 @@ const ItemRowLayout = ({
                     />
                     <span
                         className={clsx(
-                            'item-senddate-row ml-2 flex flex-item-fluid flex-nowrap justify-end flex-align-items-center',
+                            'item-senddate-row ml-2 flex flex-item-fluid flex-nowrap justify-end items-center',
                             snoozeDropdownState && snoozedElement?.ID === element.ID && 'invisible'
                         )}
                     >
@@ -203,7 +203,7 @@ const ItemRowLayout = ({
                 </span>
             </div>
             {showThumbnails && (
-                <div className="flex flex-align-items-center flex-nowrap flex-row">
+                <div className="flex items-center flex-nowrap flex-row">
                     <div className="my-auto flex w-custom" style={{ '--w-custom': '2em' }}></div>
                     <div className={clsx(['item-senders flex pr-4'])}></div>
                     <ItemAttachmentThumbnails

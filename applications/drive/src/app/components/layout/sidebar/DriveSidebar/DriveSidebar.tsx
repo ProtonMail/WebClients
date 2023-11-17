@@ -91,7 +91,7 @@ const DriveSidebar = ({ logo, primary, isHeaderExpanded, toggleHeaderExpanded }:
             extraFooter={
                 shouldShowDriveUpsell && (
                     <ButtonLike
-                        className="my-2 w-full flex gap-2 flex-align-items-center justify-center"
+                        className="my-2 w-full flex gap-2 items-center justify-center"
                         as={SettingsLink}
                         color="norm"
                         shape="outline"

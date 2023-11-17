@@ -124,7 +124,7 @@ const ProtonMailBridgeSection = () => {
 
         return (
             <div key={id} className="flex">
-                <div className="border p-7 flex-item-fluid rounded flex flex-column flex-align-items-center">
+                <div className="border p-7 flex-item-fluid rounded flex flex-column items-center">
                     <Icon size={48} name={icon} className="mb-4" />
 
                     <h3 className="text-bold text-xl m-0 text-center">{c('Title').t`Bridge for ${platform}`}</h3>

@@ -22,7 +22,7 @@ const CalendarSettingsBreadcrumbs = ({ calendar, calendars }: Props) => {
     }
 
     return (
-        <div className="flex flex-nowrap flex-align-items-center md:hidden">
+        <div className="flex flex-nowrap items-center md:hidden">
             <CollapsingBreadcrumbs
                 breadcrumbs={[
                     {
@@ -56,7 +56,7 @@ const CalendarSettingsBreadcrumbs = ({ calendar, calendars }: Props) => {
                     >
                         {calendars.map(({ ID, Name, Color }) => (
                             <Option key={ID} value={ID} title={Name}>
-                                <div className="flex flex-nowrap flex-align-items-center">
+                                <div className="flex flex-nowrap items-center">
                                     <CalendarSelectIcon color={Color} className="flex-item-noshrink mr-3" />
                                     <div className="text-ellipsis">{Name}</div>
                                 </div>

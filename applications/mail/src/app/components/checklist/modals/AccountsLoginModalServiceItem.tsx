@@ -17,7 +17,7 @@ interface ServiceDetailsProps {
 
 const ServiceItemAction = ({ service, onServiceDone, serviceMarkedAsDone }: ServiceDetailsProps) => {
     return (
-        <div className="flex flex-align-items-center gap-2 account-login--actions">
+        <div className="flex items-center gap-2 account-login--actions">
             <ButtonLike
                 as="a"
                 target="_blank"
@@ -52,12 +52,12 @@ const AccountsLoginModalServiceItem = ({
             data-testid="accounts-login-modal-service-item"
             style={{ '--h-custom': isNarrow ? 'auto' : '3rem' }}
         >
-            <div className="flex flex-align-items-center flex-item-grow-2 gap-2">
+            <div className="flex items-center flex-item-grow-2 gap-2">
                 <div
                     className={clsx(
                         'flex justify-center w-custom h-custom',
                         isNarrow && 'flex-align-self-start',
-                        !isNarrow && 'flex-align-items-center'
+                        !isNarrow && 'items-center'
                     )}
                     style={{ '--w-custom': isNarrow ? '2.25rem' : '3rem', '--h-custom': isNarrow ? '2.25rem' : '3rem' }}
                 >

@@ -29,7 +29,7 @@ const CalendarSearchActivation = ({ onClose }: Props) => {
 
     return (
         <div className="px-6 py-4">
-            <h4 className="text-bold text-xl flex justify-space-between flex-align-items-center flex-nowrap mb-4">
+            <h4 className="text-bold text-xl flex justify-space-between items-center flex-nowrap mb-4">
                 {c('Title').t`We're setting up Calendar search`}
             </h4>
             <div className="mb-4">

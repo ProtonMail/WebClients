@@ -18,7 +18,7 @@ const ShortcutsSectionView = ({ name, shortcuts }: Props) => {
             {shortcuts.length > 0 && (
                 <ul className="unstyled mt-4 list-2columns-no-break">
                     {shortcuts.map(({ name, keys }) => (
-                        <li key={name} className="flex flex-align-items-center justify-space-between mb-2">
+                        <li key={name} className="flex items-center justify-space-between mb-2">
                             <span>{name}</span>
                             {typeof keys === 'string' ? (
                                 <Kbd shortcut={keys} />

@@ -21,7 +21,7 @@ const AttachmentThumbnail = ({ attachmentMetadata, onClick, ...rest }: Props) =>
         <Button
             shape="outline"
             onClick={handleClick}
-            className="text-sm flex flex-align-items-center flex-nowrap gap-2 attachment-thumbnail"
+            className="text-sm flex items-center flex-nowrap gap-2 attachment-thumbnail"
             {...rest}
         >
             <FileIcon mimeType={attachmentMetadata?.MIMEType || 'unknown'} className="flex-item-noshrink" />

@@ -49,7 +49,7 @@ const ExpandableRow = ({
                 className={clsx(['folder-tree-list-item', !isDisabled && 'cursor-pointer', isSelected && 'bg-strong'])}
                 onClick={handleSelect}
             >
-                <td className="flex flex-align-items-center flex-nowrap m-0 pl-custom relative">
+                <td className="flex items-center flex-nowrap m-0 pl-custom relative">
                     <div
                         className={clsx([
                             `folder-tree-list-item-selected flex flex-item-noshrink`,
@@ -82,7 +82,7 @@ const ExpandableRow = ({
                     </div>
                     <div
                         key="Name"
-                        className="folder-tree-list-item-name flex flex-align-items-center flex-nowrap w-full"
+                        className="folder-tree-list-item-name flex items-center flex-nowrap w-full"
                     >
                         <FileIcon mimeType={link.isFile ? link.mimeType : 'Folder'} className="mr-2" />
                         <Tooltip title={link.name} originalPlacement="bottom">

@@ -204,7 +204,7 @@ const ContactEditProperties = (
 
     return (
         <div className="border-bottom mb-4" data-testid={title}>
-            <h3 className="mb-4 flex flex-nowrap flex-align-items-center flex-item-noshrink">
+            <h3 className="mb-4 flex flex-nowrap items-center flex-item-noshrink">
                 <Icon className="mr-1 flex-item-noshrink" name={iconName} />
                 <span className="ml-0.5 mr-2">{title}</span>
                 {((field && !['fn', 'email'].includes(field)) || field === undefined) && (
@@ -232,7 +232,7 @@ const ContactEditProperties = (
             )}
             {canAdd && (
                 <div className="flex flex-nowrap flex-item-noshrink">
-                    <div className="mr-2 flex flex-align-items-center flex-item-noshrink">
+                    <div className="mr-2 flex items-center flex-item-noshrink">
                         <Icon name="text-align-justify" className="visibility-hidden" />
                     </div>
                     <div className="flex flex-nowrap w-custom" style={{ '--w-custom': '95%' }}>

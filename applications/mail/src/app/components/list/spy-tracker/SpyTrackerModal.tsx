@@ -30,7 +30,7 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
 
     const getHeaderContent = (tracker: Tracker) => {
         return (
-            <div className="flex flex-align-items-center">
+            <div className="flex items-center">
                 <div className="flex-item-fluid text-break">{tracker.name}</div>
                 <NumberOfElementsBubble
                     numberOfElements={tracker.urls.length}
@@ -54,7 +54,7 @@ const SpyTrackerModal = ({ message, ...rest }: Props) => {
         <ModalTwo data-testid="spyTrackerModal:trackers" {...rest}>
             <ModalTwoHeader title={imageTrackerText} data-testid="trackersModal:title" />
             <ModalTwoContent>
-                <div className="border rounded-lg mb-4 p-4 flex flex-nowrap flex-align-items-center">
+                <div className="border rounded-lg mb-4 p-4 flex flex-nowrap items-center">
                     <img src={trackersImg} alt={imageTrackerText} className="flex-item-noshrink" />
                     <p className="color-weak flex-item-fluid pl-4 my-0" data-testid="trackersModal:description">
                         {c('Info')

@@ -75,7 +75,7 @@ const ToolbarRowWide = ({
                 aria-label={c('Label').t`Toolbar`}
                 ref={toolbarRef}
             >
-                <div className="flex flex-align-items-center flex-nowrap toolbar-inner gap-2">
+                <div className="flex items-center flex-nowrap toolbar-inner gap-2">
                     {selectAll}
                     <LabelName selectedIDs={selectedIDs} labelName={labelName} />
 
@@ -118,7 +118,7 @@ const ToolbarRowWide = ({
                     <MoreActions selectedIDs={selectedIDs} />
                 </div>
 
-                <div className="flex flex-align-items-center flex-item-noshrink flex-nowrap toolbar-inner gap-2">
+                <div className="flex items-center flex-item-noshrink flex-nowrap toolbar-inner gap-2">
                     <ListSettings
                         sort={sort}
                         onSort={onSort}

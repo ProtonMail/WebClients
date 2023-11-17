@@ -198,7 +198,7 @@ const HeaderExpanded = ({
         >
             {canShowTrackersIcon && <ItemSpyTrackerIcon message={message} />}
             {isNarrow && messageLoaded && (
-                <div className="flex flex-align-items-center justify-space-between my-2" onClick={handleClick}>
+                <div className="flex items-center justify-space-between my-2" onClick={handleClick}>
                     <span className="inline-flex">
                         <ItemLocation element={message.data} labelID={labelID} />
                         <ItemAttachmentIcon
@@ -215,7 +215,7 @@ const HeaderExpanded = ({
                 </div>
             )}
             <div
-                className="flex flex-nowrap flex-align-items-center message-header-from-container"
+                className="flex flex-nowrap items-center message-header-from-container"
                 onClick={handleClick}
             >
                 <span className="flex flex-item-fluid flex-nowrap mr-2">
@@ -235,7 +235,7 @@ const HeaderExpanded = ({
 
                 {!isNarrow && (
                     <div
-                        className="message-header-metas-container flex flex-align-items-center flex-item-noshrink"
+                        className="message-header-metas-container flex items-center flex-item-noshrink"
                         data-testid="message:message-header-metas"
                     >
                         <span className="message-header-star mr-2 inline-flex">
@@ -259,7 +259,7 @@ const HeaderExpanded = ({
                     </div>
                 )}
             </div>
-            <div className="flex md:flex-nowrap flex-align-items-center mb-2 message-header-ccbcc-container">
+            <div className="flex md:flex-nowrap items-center mb-2 message-header-ccbcc-container">
                 <MailRecipients
                     message={message}
                     recipientsOrGroup={recipientsOrGroup}
@@ -290,7 +290,7 @@ const HeaderExpanded = ({
 
             {messageLoaded && (
                 <>
-                    <div className="mb-3 flex-item-noshrink flex flex-align-items-center message-header-expanded-label-container">
+                    <div className="mb-3 flex-item-noshrink flex items-center message-header-expanded-label-container">
                         <ItemLabels
                             element={message.data}
                             labelID={labelID}

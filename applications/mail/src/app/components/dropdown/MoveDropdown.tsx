@@ -41,7 +41,7 @@ import { Breakpoints } from '../../models/utils';
 
 import './MoveDropdown.scss';
 
-export const moveDropdownContentProps = { className: 'flex flex-column flex-nowrap flex-align-items-stretch' };
+export const moveDropdownContentProps = { className: 'flex flex-column flex-nowrap items-stretch' };
 
 type FolderItem = Folder & { icon: IconName; level: number };
 
@@ -182,10 +182,10 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
 
     return (
         <form
-            className="flex flex-column flex-nowrap justify-start flex-align-items-stretch flex-item-fluid-auto"
+            className="flex flex-column flex-nowrap justify-start items-stretch flex-item-fluid-auto"
             onSubmit={handleSubmit}
         >
-            <div className="flex flex-item-noshrink justify-space-between flex-align-items-center m-4 mb-0">
+            <div className="flex flex-item-noshrink justify-space-between items-center m-4 mb-0">
                 <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Move to`}
                 </span>
@@ -195,7 +195,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                         color="norm"
                         size="small"
                         onClick={handleCreate}
-                        className="flex flex-align-items-center"
+                        className="flex items-center"
                         data-testid="folder-dropdown:add-folder"
                         data-prevent-arrow-navigation
                     >
@@ -223,7 +223,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                         return (
                             <li
                                 key={folder.ID}
-                                className="dropdown-item dropdown-item-button relative cursor-pointer w-full flex flex-nowrap flex-align-items-center py-2 px-4"
+                                className="dropdown-item dropdown-item-button relative cursor-pointer w-full flex flex-nowrap items-center py-2 px-4"
                             >
                                 <Radio
                                     className="flex-item-noshrink mr-2"
@@ -236,7 +236,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                                 <label
                                     htmlFor={folderButtonID(folder.ID)}
                                     data-level={folder.level}
-                                    className="flex flex-nowrap flex-align-items-center flex-item-fluid"
+                                    className="flex flex-nowrap items-center flex-item-fluid"
                                     data-testid={`folder-dropdown:folder-${folder.Name}`}
                                     onClick={() => handleApplyDirectly(folder.ID, folder.Name)}
                                 >

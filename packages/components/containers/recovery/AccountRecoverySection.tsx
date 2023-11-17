@@ -66,7 +66,7 @@ const AccountRecoverySection = () => {
                         hasReset={!!userSettings.Email.Reset}
                         hasNotify={!!userSettings.Email.Notify}
                     />
-                    <div className="flex flex-align-items-center">
+                    <div className="flex items-center">
                         <Toggle
                             className="mr-2"
                             loading={loadingEmailReset}
@@ -98,7 +98,7 @@ const AccountRecoverySection = () => {
                         phone={userSettings.Phone}
                         hasReset={!!userSettings.Phone.Reset}
                     />
-                    <div className="flex flex-align-items-center">
+                    <div className="flex items-center">
                         <Toggle
                             className="mr-2"
                             loading={loadingPhoneReset}

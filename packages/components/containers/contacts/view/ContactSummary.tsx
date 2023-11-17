@@ -47,7 +47,7 @@ const ContactSummary = ({ vCardContact, leftBlockWidth = 'w-1/3', style }: Props
             <div
                 className={clsx(
                     'contactsummary-container my-4',
-                    !isNarrow && 'flex flex-nowrap flex-align-items-center'
+                    !isNarrow && 'flex flex-nowrap items-center'
                 )}
             >
                 <div

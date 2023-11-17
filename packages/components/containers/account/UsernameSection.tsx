@@ -159,7 +159,7 @@ const UsernameSection = ({ app }: Props) => {
                 {canEditExternalAddress && (
                     <Card className="mb-8" rounded bordered={true} background={false}>
                         <div className="h3 text-bold mb-6">{c('Info').t`Secure your ${BRAND_NAME} Account`}</div>
-                        <div className="flex gap-4 flex-nowrap flex-align-items-start">
+                        <div className="flex gap-4 flex-nowrap items-start">
                             <img className="flex-item-noshrink" width="40" height="40" src={unverified} alt="" />
                             <div>
                                 <div className="mb-2 text-lg text-semibold flex">

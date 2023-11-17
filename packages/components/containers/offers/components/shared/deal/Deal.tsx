@@ -52,7 +52,7 @@ const Deal = forwardRef<HTMLDivElement, Props>(({ children, ...props }: Props, r
                 ) : null}
                 <div
                     className={clsx([
-                        'offer-plan w-full border rounded p-4 mb-4 flex flex-column flex-align-items-center justify-end',
+                        'offer-plan w-full border rounded p-4 mb-4 flex flex-column items-center justify-end',
                         isMostPopular && 'border-primary is-focused',
                     ])}
                 >

@@ -129,7 +129,7 @@ const ExtraScheduledMessage = ({ message }: Props) => {
                 {getScheduleBannerMessage()}
             </span>
             {!isScheduleSentShortly ? (
-                <span className="flex-item-noshrink flex-align-items-start flex">
+                <span className="flex-item-noshrink items-start flex">
                     <Button
                         size="small"
                         color="info"

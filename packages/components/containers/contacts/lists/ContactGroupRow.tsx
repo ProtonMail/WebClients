@@ -84,7 +84,7 @@ const ContactGroupRow = ({
             data-shortcut-target="contact-container"
             data-testid={`group-item:${group.Name}`}
         >
-            <div className="flex flex-nowrap w-full h-full my-auto flex-align-items-start">
+            <div className="flex flex-nowrap w-full h-full my-auto items-start">
                 <ItemCheckbox
                     ID={ID}
                     name={Name}

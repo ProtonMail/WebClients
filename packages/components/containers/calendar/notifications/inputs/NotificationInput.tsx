@@ -167,7 +167,7 @@ const NotificationInput = ({
                     {isAllDay && at && (
                         <span
                             className={clsx(
-                                'flex flex-nowrap sm:flex-item-fluid flex-align-items-center mt-2',
+                                'flex flex-nowrap sm:flex-item-fluid items-center mt-2',
                                 fullWidth ? 'md:mt-0' : 'lg:mt-0'
                             )}
                         >

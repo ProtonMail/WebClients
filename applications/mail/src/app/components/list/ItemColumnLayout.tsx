@@ -117,10 +117,10 @@ const ItemColumnLayout = ({
             className="flex-item-fluid flex flex-nowrap flex-column justify-center item-titlesender pr-1"
             data-testid="message-list:message"
         >
-            <div className="flex flex-align-items-center flex-nowrap">
+            <div className="flex items-center flex-nowrap">
                 <div className="flex-item-fluid">
-                    <div className="flex flex-align-items-center item-firstline">
-                        <div className="item-senders flex-item-fluid flex flex-align-items-center flex-nowrap pr-4">
+                    <div className="flex items-center item-firstline">
+                        <div className="item-senders flex-item-fluid flex items-center flex-nowrap pr-4">
                             <ItemUnread
                                 element={element}
                                 labelID={labelID}
@@ -140,7 +140,7 @@ const ItemColumnLayout = ({
 
                         <span
                             className={clsx(
-                                'item-firstline-infos flex-item-noshrink flex flex-nowrap flex-align-items-center',
+                                'item-firstline-infos flex-item-noshrink flex flex-nowrap items-center',
                                 isSnoozeDropdownOpen && 'invisible'
                             )}
                         >
@@ -153,8 +153,8 @@ const ItemColumnLayout = ({
                         </span>
                     </div>
 
-                    <div className="flex flex-nowrap flex-align-items-center item-secondline max-w-full">
-                        <div className="item-subject flex-item-fluid flex flex-nowrap flex-align-items-center">
+                    <div className="flex flex-nowrap items-center item-secondline max-w-full">
+                        <div className="item-subject flex-item-fluid flex flex-nowrap items-center">
                             {showIcon && (
                                 <span className="flex flex-item-noshrink">
                                     <ItemLocation element={element} labelID={labelID} />
@@ -231,7 +231,7 @@ const ItemColumnLayout = ({
             {showThumbnails && <ItemAttachmentThumbnails attachmentsMetadata={attachmentsMetadata} className="mt-1" />}
 
             {hasLabels && !isCompactView && (
-                <div className="flex flex-nowrap flex-align-items-center max-w-full no-scroll">
+                <div className="flex flex-nowrap items-center max-w-full no-scroll">
                     <div className="item-icons flex flex-item-noshrink flex-nowrap mt-1">
                         <ItemLabels
                             className="ml-2"
@@ -249,12 +249,12 @@ const ItemColumnLayout = ({
                 <>
                     <div
                         className={clsx([
-                            'flex flex-nowrap flex-align-items-center item-secondline item-es-result max-w-4/5 no-scroll',
+                            'flex flex-nowrap items-center item-secondline item-es-result max-w-4/5 no-scroll',
                             isCompactView && 'mb-3',
                         ])}
                         aria-hidden="true"
                     >
-                        <div className="item-subject flex-item-fluid flex flex-nowrap flex-align-items-center">
+                        <div className="item-subject flex-item-fluid flex flex-nowrap items-center">
                             <span className="inline-block max-w-full text-ellipsis" title={bodyTitle}>
                                 {resultJSX}
                             </span>

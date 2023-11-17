@@ -33,7 +33,7 @@ const StandardLoadErrorPage = ({ errorMessage }: Props) => {
     }, []);
 
     return (
-        <div className="h-full flex flex-align-items-center pb-4 scroll-if-needed">
+        <div className="h-full flex items-center pb-4 scroll-if-needed">
             <GenericError isNetworkError>
                 <div
                     className="text-weak text-sm text-center max-w-custom"

@@ -72,7 +72,7 @@ const ExtraErrors = ({ message }: Props) => {
                             </span>
                         </div>
                         {showReload && (
-                            <span className="flex-item-noshrink flex-align-items-start flex w-full md:w-auto">
+                            <span className="flex-item-noshrink items-start flex w-full md:w-auto">
                                 <Button
                                     size="small"
                                     color="weak"
@@ -85,7 +85,7 @@ const ExtraErrors = ({ message }: Props) => {
                             </span>
                         )}
                         {showKeysLink && (
-                            <span className="flex-item-noshrink flex-align-items-start flex w-full md:w-auto">
+                            <span className="flex-item-noshrink items-start flex w-full md:w-auto">
                                 <SettingsLink
                                     path="/encryption-keys"
                                     app={APPS.PROTONMAIL}

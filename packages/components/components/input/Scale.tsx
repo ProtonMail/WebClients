@@ -34,7 +34,7 @@ const Scale = ({ from, to, fromLabel, toLabel, value, InputButtonProps, onChange
 
     return (
         <div className={clsx([className, 'inline-flex flex-column gap-4'])} {...rest}>
-            <div className="flex justify-start flex-align-items-center gap-4">
+            <div className="flex justify-start items-center gap-4">
                 {scale.map((n) => (
                     <InputButton
                         key={n}

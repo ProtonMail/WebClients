@@ -33,7 +33,7 @@ const EmptyDevices: FC<Props> = () => {
                             <Button
                                 key={platform}
                                 onClick={startDownload}
-                                className="mx-auto flex flex-align-items-center justify-center gap-2 w-2/3"
+                                className="mx-auto flex items-center justify-center gap-2 w-2/3"
                                 disabled={!url}
                                 color="norm"
                                 shape={index === 0 ? 'solid' : 'outline'}

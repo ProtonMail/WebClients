@@ -406,7 +406,7 @@ const PlanSelection = ({
     );
 
     const logosRow = (
-        <div className="my-6 flex justify-center flex-nowrap flex-align-items-center color-weak">
+        <div className="my-6 flex justify-center flex-nowrap items-center color-weak">
             <MailLogo variant="glyph-only" />
             <Icon name="plus" alt="+" className="mx-2" />
             <CalendarLogo variant="glyph-only" />

@@ -23,7 +23,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
 
     return (
         <div className="flex-column flex gap-y-2">
-            <div className="my-4 px-4 py-2 flex flex-align-items-center">
+            <div className="my-4 px-4 py-2 flex items-center">
                 <span
                     className="text-2xl text-center text-break-all text-monospace m-auto min-h-custom"
                     style={{ '--min-h-custom': '4.5rem' }}
@@ -32,7 +32,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                 </span>
             </div>
 
-            <div className="flex flex-align-items-center gap-x-2">
+            <div className="flex items-center gap-x-2">
                 <label htmlFor="password-type" className="w-custom" style={{ '--w-custom': '5.625rem' }}>
                     {c('Label').t`Type`}
                 </label>
@@ -51,7 +51,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
 
             {passwordOptions.type === 'random' && (
                 <>
-                    <div className="flex flex-align-items-center justify-space-between">
+                    <div className="flex items-center justify-space-between">
                         <label htmlFor="password-length" className="w-custom" style={{ '--w-custom': '6.875rem' }}>
                             {c('Label').ngettext(
                                 msgid`${passwordOptions.options.length} character`,
@@ -73,7 +73,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                         </div>
                     </div>
                     <hr className="m-0" />
-                    <div className="flex flex-align-items-center justify-space-between">
+                    <div className="flex items-center justify-space-between">
                         <label htmlFor="password-special-chars" className="w-custom" style={{ '--w-custom': '10rem' }}>
                             {c('Label').t`Special characters (!&*)`}
                         </label>
@@ -87,7 +87,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                     {showAdvanced && (
                         <>
                             <hr className="m-0" />
-                            <div className="flex flex-align-items-center justify-space-between">
+                            <div className="flex items-center justify-space-between">
                                 <label
                                     htmlFor="password-capitalise"
                                     className="w-custom"
@@ -103,7 +103,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                                 />
                             </div>
                             <hr className="m-0" />
-                            <div className="flex flex-align-items-center justify-space-between">
+                            <div className="flex items-center justify-space-between">
                                 <label htmlFor="password-digits" className="w-custom" style={{ '--w-custom': '10rem' }}>
                                     {c('Label').t`Include numbers (0-9)`}
                                 </label>
@@ -121,7 +121,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
 
             {passwordOptions.type === 'memorable' && (
                 <>
-                    <div className="flex flex-align-items-center justify-space-between">
+                    <div className="flex items-center justify-space-between">
                         <label htmlFor="password-word-count" className="w-custom" style={{ '--w-custom': '6.875rem' }}>
                             {c('Label').ngettext(
                                 msgid`${passwordOptions.options.wordCount} word`,
@@ -143,7 +143,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                         </div>
                     </div>
                     <hr className="m-0" />
-                    <div className="flex flex-align-items-center justify-space-between">
+                    <div className="flex items-center justify-space-between">
                         <label htmlFor="password-capitalise" className="w-custom" style={{ '--w-custom': '10rem' }}>
                             {c('Label').t`Capitalise`}
                         </label>
@@ -156,7 +156,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                     {showAdvanced && (
                         <>
                             <hr className="m-0" />
-                            <div className="flex flex-align-items-center gap-x-2">
+                            <div className="flex items-center gap-x-2">
                                 <label
                                     htmlFor="password-seperator"
                                     className="w-custom"
@@ -180,7 +180,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                                 </SelectTwo>
                             </div>
                             <hr className="m-0" />
-                            <div className="flex flex-align-items-center justify-space-between">
+                            <div className="flex items-center justify-space-between">
                                 <label
                                     htmlFor="password-extra-numbers"
                                     className="w-custom"
@@ -206,7 +206,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
 
             <div className="flex justify-end">
                 <Button shape="ghost" onClick={() => setShowAdvanced((advanced) => !advanced)}>
-                    <span className="flex flex-align-items-center color-weak text-sm">
+                    <span className="flex items-center color-weak text-sm">
                         <Icon name={showAdvanced ? 'cross' : 'cog-wheel'} className="mr-1" />
                         {showAdvanced ? c('Action').t`Close advanced options` : c('Action').t`Advanced options`}
                     </span>

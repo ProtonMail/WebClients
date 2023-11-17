@@ -68,7 +68,7 @@ const ComposerMoreActions = ({
             {toolbarExtension}
             <div className="dropdown-item-hr" key="hr-more-options" />
             <DropdownMenuButton
-                className="text-left flex flex-nowrap flex-align-items-center"
+                className="text-left flex flex-nowrap items-center"
                 onClick={onExpiration}
                 aria-pressed={isExpiration}
                 disabled={lock}
@@ -82,7 +82,7 @@ const ComposerMoreActions = ({
 
             {isExpiration && (
                 <DropdownMenuButton
-                    className="text-left flex flex-nowrap flex-align-items-center color-danger"
+                    className="text-left flex flex-nowrap items-center color-danger"
                     onClick={handleRemoveExpiration}
                     aria-pressed={isExpiration}
                     disabled={lock}

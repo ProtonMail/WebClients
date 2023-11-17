@@ -14,7 +14,7 @@ const StandardErrorPage = ({ children, big }: Props) => {
     useDocumentTitle(c('Error message').t`Oops, something went wrong`);
 
     return (
-        <div className="h-full flex flex-align-items-center pb-14 scroll-if-needed">
+        <div className="h-full flex items-center pb-14 scroll-if-needed">
             <GenericError big={big}>{children}</GenericError>
         </div>
     );

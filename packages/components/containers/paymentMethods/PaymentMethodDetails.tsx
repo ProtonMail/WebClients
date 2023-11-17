@@ -88,7 +88,7 @@ const PaymentMethodDetailsPaypal = ({ details }: { details: PayPalDetails }) => 
             <div>
                 <img width="70" src={bankIcon} alt="PayPal" className="mb-4" />
             </div>
-            <div className="flex flex-wrap flex-align-items-center">
+            <div className="flex flex-wrap items-center">
                 <label className="flex-item-noshrink mr-4" htmlFor="paypal-payer">{c('Label').t`Payer`}</label>
                 <code id="paypal-payer" className="block text-xl mb-0 mb-4 text-ellipsis" title={Payer}>
                     {Payer}

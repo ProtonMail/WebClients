@@ -62,7 +62,7 @@ export const UpsellingModal: VFC<Props> = ({ type, ...props }) => {
             size="medium"
             actions={[<UpgradeButton key="upgrade-button" label={upgradeLabel} />]}
         >
-            <div className="flex flex-column flex-align-items-center w-full gap-5 m-auto">
+            <div className="flex flex-column items-center w-full gap-5 m-auto">
                 <img src={onboardingSVG} className="w-3/5 " alt="user onboarding graphic" />
                 <h3 className="text-bold ">{title}</h3>
                 {description && <p className="m-2 text-md">{description}</p>}
@@ -76,7 +76,7 @@ export const UpsellingModal: VFC<Props> = ({ type, ...props }) => {
                     {features.map(({ className, icon, label }, idx) => (
                         <div
                             className={clsx(
-                                'flex flex-align-items-center py-3',
+                                'flex items-center py-3',
                                 idx < features.length - 1 && 'border-bottom',
                                 className
                             )}

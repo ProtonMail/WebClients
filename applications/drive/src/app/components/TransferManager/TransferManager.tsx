@@ -233,7 +233,7 @@ const TransferManager = ({
         <>
             {entries.length === 0 && (
                 <div
-                    className="transfers-manager-list-placeholder flex justify-center flex-align-items-center"
+                    className="transfers-manager-list-placeholder flex justify-center items-center"
                     style={{ height: calcultateItemsHeight(1) }}
                 >
                     <span className="mb-4">{c('Info').t`No results found`} </span>

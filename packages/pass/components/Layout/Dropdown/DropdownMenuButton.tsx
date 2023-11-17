@@ -80,10 +80,10 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
 }) => {
     return (
         <div
-            className="flex justify-space-between flex-align-items-center flex-nowrap gap-2 max-h-custom"
+            className="flex justify-space-between items-center flex-nowrap gap-2 max-h-custom"
             style={{ '--max-h-custom': '1.25rem' }}
         >
-            <div className={clsx(labelClassname, 'flex flex-align-items-center flex-nowrap gap-2')}>
+            <div className={clsx(labelClassname, 'flex items-center flex-nowrap gap-2')}>
                 {typeof icon === 'string' ? (
                     <Icon name={icon} className={clsx(danger ? 'color-danger' : 'color-weak', 'flex-item-noshrink')} />
                 ) : (
@@ -148,7 +148,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     extra={
                         <div
                             className={clsx(
-                                'flex flex-align-items-center flex-item-noshrink flex-nowrap color-weak',
+                                'flex items-center flex-item-noshrink flex-nowrap color-weak',
                                 extraPadding
                             )}
                         >
@@ -163,7 +163,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                 />
             </DropdownMenuButtonCore>
 
-            <div className="absolute flex flex-align-items-center h-full right top">
+            <div className="absolute flex items-center h-full right top">
                 {quickActions && <QuickActionsDropdown>{quickActions}</QuickActionsDropdown>}
             </div>
         </div>

@@ -188,12 +188,12 @@ const LogsSection = () => {
                 </SettingsLayout>
             )}
 
-            <div className="flex justify-space-between flex-align-items-start mt-8 mb-4">
+            <div className="flex justify-space-between items-start mt-8 mb-4">
                 {logAuth !== DISABLE && (
                     <div className="mb-2">
                         <Button
                             shape="outline"
-                            className="mr-4 inline-flex flex-align-items-center"
+                            className="mr-4 inline-flex items-center"
                             loading={loadingRefresh}
                             onClick={() => withLoadingRefresh(wait(1000).then(fetchAndSetState))}
                             title={c('Action').t`Reload`}

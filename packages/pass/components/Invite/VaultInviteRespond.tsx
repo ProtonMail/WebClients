@@ -44,7 +44,7 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
                           subline: c('Info').t`invites you to access items in`,
                       })}
             />
-            <ModalTwoContent className="flex flex-column flex-align-items-center">
+            <ModalTwoContent className="flex flex-column items-center">
                 <VaultIcon
                     color={vault.content.display.color}
                     icon={vault.content.display.icon}
@@ -62,7 +62,7 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
                 </div>
             </ModalTwoContent>
 
-            <ModalTwoFooter className="flex flex-column flex-align-items-stretch text-center">
+            <ModalTwoFooter className="flex flex-column items-stretch text-center">
                 {!userVerified && <UserVerificationMessage />}
                 {userVerified && vaultLimitReached && (
                     <Card className="mb-2">
@@ -94,7 +94,7 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
                 </Button>
 
                 {acceptInvite.loading && (
-                    <div className="ui-purple flex gap-x-2 flex-align-items-center">
+                    <div className="ui-purple flex gap-x-2 items-center">
                         <Progress
                             value={
                                 invite.vault.itemCount > 0

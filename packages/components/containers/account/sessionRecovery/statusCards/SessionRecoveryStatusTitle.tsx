@@ -26,7 +26,7 @@ const SessionRecoveryStatusTitle = ({ status }: Props) => {
 
     return (
         <>
-            <div className="flex flex-nowrap flex-align-items-baseline">
+            <div className="flex flex-nowrap items-baseline">
                 <h2 className="h3 text-bold mr-2">{c('session_recovery:status:title').t`Password reset request`}</h2>
                 <span
                     className={clsx(

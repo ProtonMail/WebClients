@@ -53,7 +53,7 @@ const OrganizationTwoFARemindersSection = ({ organization }: Props) => {
                         />
                     </span>
                 </Label>
-                <div className="flex flex-align-items-center">
+                <div className="flex items-center">
                     <Button
                         id="send-email-reminder-button"
                         onClick={() => createModal(<SendEmailReminderTwoFAModal members={noTwoFAMembers} />)}

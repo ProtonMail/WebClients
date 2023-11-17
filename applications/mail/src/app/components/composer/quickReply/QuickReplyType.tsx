@@ -72,7 +72,7 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
             >
                 <DropdownMenu>
                     <DropdownMenuButton
-                        className="flex flex-align-items-center text-left"
+                        className="flex items-center text-left"
                         onClick={() => handleChangeReplyType(REPLY)}
                         data-testid="quick-reply-type-dropdown-reply-button"
                     >
@@ -80,7 +80,7 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
                         {c('Action').t`Reply`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="flex flex-align-items-center text-left"
+                        className="flex items-center text-left"
                         onClick={() => handleChangeReplyType(REPLY_ALL)}
                         data-testid="quick-reply-type-dropdown-reply-all-button"
                     >

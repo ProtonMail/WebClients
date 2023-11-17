@@ -31,7 +31,7 @@ const LocationField = ({ value, onChange }: Props) => {
     return (
         <>
             <span className="block text-semibold mb-2">{c('Label').t`Search in`}</span>
-            <div className="flex flex-wrap flex-align-items-start mb-2 gap-2">
+            <div className="flex flex-wrap items-start mb-2 gap-2">
                 {mainOptions.map((option) => (
                     <Button
                         key={option.value}
@@ -55,7 +55,7 @@ const LocationField = ({ value, onChange }: Props) => {
 
                 {showCustomValue ? (
                     <Button
-                        className="flex flex-nowrap flex-align-items-center"
+                        className="flex flex-nowrap items-center"
                         onClick={() => onChange(AlmostAllMail ? ALMOST_ALL_MAIL : ALL_MAIL)}
                         color="norm"
                         shape="solid"

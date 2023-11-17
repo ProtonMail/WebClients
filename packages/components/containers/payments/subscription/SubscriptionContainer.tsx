@@ -876,7 +876,7 @@ const SubscriptionContainer = ({
                                                     {model.planIDs[PLANS.VPN_PASS_BUNDLE] &&
                                                         !hasPassPlus(subscription) && (
                                                             <Button
-                                                                className="flex flex-nowrap flex-align-items-center justify-center"
+                                                                className="flex flex-nowrap items-center justify-center"
                                                                 fullWidth
                                                                 color="weak"
                                                                 shape="outline"
@@ -969,7 +969,7 @@ const SubscriptionContainer = ({
                                     gift={
                                         <>
                                             {couponCode && (
-                                                <div className="flex flex-align-items-center mb-1">
+                                                <div className="flex items-center mb-1">
                                                     <Icon name="gift" className="mr-2 mb-1" />
                                                     <Tooltip title={couponDescription}>
                                                         <code>{couponCode.toUpperCase()}</code>
@@ -1099,7 +1099,7 @@ const SubscriptionContainer = ({
                                 gift={
                                     <>
                                         {couponCode && (
-                                            <div className="flex flex-align-items-center mb-1">
+                                            <div className="flex items-center mb-1">
                                                 <Icon name="gift" className="mr-2 mb-1" />
                                                 <Tooltip title={couponDescription}>
                                                     <code>{couponCode.toUpperCase()}</code>

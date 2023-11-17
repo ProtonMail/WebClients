@@ -28,7 +28,7 @@ const StepIndicator = ({
             firstItem={firstItem}
             active={active}
             complete={complete}
-            className={clsx('relative flex-item-fluid flex flex-column flex-align-items-center flex-nowrap', className)}
+            className={clsx('relative flex-item-fluid flex flex-column items-center flex-nowrap', className)}
             {...rest}
         >
             {!firstItem && <div className="stepper-item-connector" />}

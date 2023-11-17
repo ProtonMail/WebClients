@@ -22,7 +22,7 @@ const IllustrationPlaceholder = ({
     titleSize = 'big',
 }: Props) => {
     return (
-        <div className={clsx('flex-no-min-children flex-column flex-nowrap flex-align-items-center w-full', className)}>
+        <div className={clsx('flex-no-min-children flex-column flex-nowrap items-center w-full', className)}>
             <img src={url} alt={title} className={clsx('p-1 mb-4', illustrationClassName)} />
             {!!title && (
                 <h1

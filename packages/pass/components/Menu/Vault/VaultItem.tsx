@@ -129,7 +129,7 @@ export const VaultItem: VFC<Props> = ({
                           allowSharing && shared && (
                               <DropdownMenuButton
                                   key="vault-manage"
-                                  className="flex flex-align-items-center py-2 px-4"
+                                  className="flex items-center py-2 px-4"
                                   icon="users"
                                   label={
                                       vault.shareRoleId === ShareRole.ADMIN
@@ -143,7 +143,7 @@ export const VaultItem: VFC<Props> = ({
                           allowSharing && !shared && (
                               <DropdownMenuButton
                                   key="vault-share"
-                                  className="flex flex-align-items-center py-2 px-4"
+                                  className="flex items-center py-2 px-4"
                                   disabled={!isWritableVault(vault)}
                                   icon="user-plus"
                                   label={c('Action').t`Share`}
@@ -166,7 +166,7 @@ export const VaultItem: VFC<Props> = ({
                           allowSharing && shared && !vault.owner ? (
                               <DropdownMenuButton
                                   key="vault-leave"
-                                  className="flex flex-align-items-center py-2 px-4"
+                                  className="flex items-center py-2 px-4"
                                   onClick={handleClickEvent(onLeave)}
                                   icon="cross-circle"
                                   label={c('Action').t`Leave vault`}

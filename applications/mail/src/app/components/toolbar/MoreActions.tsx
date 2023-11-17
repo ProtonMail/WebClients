@@ -32,7 +32,7 @@ const MoreActions = ({ selectedIDs }: Props) => {
 
     const blockSenderMenuButton = (
         <DropdownMenuButton
-            className="flex flex-align-items-center text-left"
+            className="flex items-center text-left"
             onClick={handleClickBlockSender}
             data-testid="toolbar:block-sender"
             disabled={!canShowBlockSender}

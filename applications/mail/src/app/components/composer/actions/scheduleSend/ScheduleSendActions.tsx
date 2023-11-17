@@ -82,7 +82,7 @@ const ScheduleSendActions = ({
             },
             {
                 title: (
-                    <div className="flex justify-start flex-align-items-center">
+                    <div className="flex justify-start items-center">
                         <span className="pr-2">{c('Action').t`Custom`}</span>
                         {!canScheduleSendCustom && (
                             <span>
@@ -124,7 +124,7 @@ const ScheduleSendActions = ({
                 {actions.map((action) => (
                     <DropdownMenuButton
                         key={action.testId}
-                        className="flex flex-align-items-center justify-space-between flex-nowrap gap-4"
+                        className="flex items-center justify-space-between flex-nowrap gap-4"
                         data-testid={action.testId}
                         onClick={action.onSubmit}
                     >

@@ -105,7 +105,7 @@ const AddressesInput = forwardRef<HTMLDivElement, AddressesInputProps>(function 
                     {placeholder}
                     <div className="flex max-w-full max-h-full relative flex-item-grow-2">
                         <div
-                            className={clsx(['flex-item-fluid flex flex-align-items-center', inputContainerClassName])}
+                            className={clsx(['flex-item-fluid flex items-center', inputContainerClassName])}
                         >
                             {autocomplete}
                         </div>

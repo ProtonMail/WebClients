@@ -34,7 +34,7 @@ const RightPlanSummary = ({ logo, title, features, bundle, removeBundle }: Props
                     <div key={title}>
                         <div className="color-weak mb-2">
                             {last ? (
-                                <div className="flex flex-align-items-center gap-2">
+                                <div className="flex items-center gap-2">
                                     {title} {removeBundle}
                                 </div>
                             ) : (

@@ -189,7 +189,7 @@ const AttachmentList = ({
                     type="button"
                     title={titleButton}
                     tabIndex={-1}
-                    className="flex flex-align-items-center outline-none"
+                    className="flex items-center outline-none"
                     onClick={handleToggleExpand}
                 >
                     {size !== 0 && (

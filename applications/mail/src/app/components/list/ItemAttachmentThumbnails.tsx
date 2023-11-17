@@ -118,7 +118,7 @@ const ItemAttachmentThumbnails = ({
 
                 {otherAttachmentNumber > 0 && (
                     <span
-                        className="rounded text-sm flex flex-item-noshrink flex-align-items-center flex-nowrap attachment-thumbnail attachment-thumbnail--number"
+                        className="rounded text-sm flex flex-item-noshrink items-center flex-nowrap attachment-thumbnail attachment-thumbnail--number"
                         data-testid="attachment-thumbnail:other-attachment-number"
                     >
                         <Tooltip title={otherAttachmentsTitle} originalPlacement="bottom">

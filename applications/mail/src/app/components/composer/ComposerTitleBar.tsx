@@ -114,7 +114,7 @@ const ComposerTitleBar = ({
 
     return (
         <header
-            className="composer-title-bar ui-prominent flex flex-row flex-align-items-stretch flex-nowrap pl-4 pr-1 w-full"
+            className="composer-title-bar ui-prominent flex flex-row items-stretch flex-nowrap pl-4 pr-1 w-full"
             data-testid="composer:header"
             onDoubleClick={handleDoubleClick}
         >

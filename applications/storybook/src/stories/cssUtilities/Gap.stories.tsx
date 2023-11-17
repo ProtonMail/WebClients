@@ -105,7 +105,7 @@ export const GapTable = () => {
     );
 };
 
-const demoItemClasses = 'flex flex-align-items-center justify-center bg-primary user-select';
+const demoItemClasses = 'flex items-center justify-center bg-primary user-select';
 
 const DemoItems = () => {
     return (
@@ -129,7 +129,7 @@ export const Gap = () => {
             {sizes.map((size) => (
                 <div
                     key={size.class}
-                    className="border rounded w-1/3 flex flex-column flex-align-items-center gap-2 p-2"
+                    className="border rounded w-1/3 flex flex-column items-center gap-2 p-2"
                 >
                     <span className="text-2xs">gap-{size.class}</span>
                     <div
@@ -154,7 +154,7 @@ export const GapY = () => {
             {sizes.map((size) => (
                 <div
                     key={size.class}
-                    className="border rounded w-1/3 flex flex-column flex-align-items-center gap-2 p-2"
+                    className="border rounded w-1/3 flex flex-column items-center gap-2 p-2"
                 >
                     <span className="text-2xs">gap-y-{size.class}</span>
                     <div
@@ -179,7 +179,7 @@ export const GapX = () => {
             {sizes.map((size) => (
                 <div
                     key={size.class}
-                    className="border rounded w-1/3 flex flex-column flex-align-items-center gap-2 p-2"
+                    className="border rounded w-1/3 flex flex-column items-center gap-2 p-2"
                 >
                     <span className="text-2xs">gap-x-{size.class}</span>
                     <div

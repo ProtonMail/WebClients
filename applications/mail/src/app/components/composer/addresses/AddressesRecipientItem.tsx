@@ -237,14 +237,14 @@ const AddressesRecipientItem = ({
             >
                 <DropdownMenu>
                     <DropdownMenuButton
-                        className="text-left flex flex-nowrap flex-align-items-center"
+                        className="text-left flex flex-nowrap items-center"
                         onClick={handleCopy}
                     >
                         <Icon name="squares" className="mr-2" />
                         <span className="flex-item-fluid my-auto">{c('Action').t`Copy address`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="text-left flex flex-nowrap flex-align-items-center"
+                        className="text-left flex flex-nowrap items-center"
                         onClick={handleDoubleClick}
                     >
                         <Icon name="pen" className="mr-2" />
@@ -252,7 +252,7 @@ const AddressesRecipientItem = ({
                     </DropdownMenuButton>
                     {ContactID ? (
                         <DropdownMenuButton
-                            className="text-left flex flex-nowrap flex-align-items-center"
+                            className="text-left flex flex-nowrap items-center"
                             onClick={handleClickContact}
                         >
                             <Icon name="user" className="mr-2" />
@@ -260,7 +260,7 @@ const AddressesRecipientItem = ({
                         </DropdownMenuButton>
                     ) : (
                         <DropdownMenuButton
-                            className="text-left flex flex-nowrap flex-align-items-center"
+                            className="text-left flex flex-nowrap items-center"
                             onClick={handleClickContact}
                         >
                             <Icon name="user-plus" className="mr-2" />
@@ -268,7 +268,7 @@ const AddressesRecipientItem = ({
                         </DropdownMenuButton>
                     )}
                     <DropdownMenuButton
-                        className="text-left flex flex-nowrap flex-align-items-center border-top"
+                        className="text-left flex flex-nowrap items-center border-top"
                         liClassName="dropdown-item--delete"
                         onClick={handleRemove}
                     >

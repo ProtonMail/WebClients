@@ -103,8 +103,8 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
         return (
             <>
                 <div className="mb-8">
-                    <div className="flex w-full justify-space-between flex-align-items-start">
-                        <div className="flex flex-align-items-start">
+                    <div className="flex w-full justify-space-between items-start">
+                        <div className="flex items-start">
                             <Avatar className="mr-2 mt-1">{user?.DisplayName?.toUpperCase()?.[0]}</Avatar>
                             <span>
                                 <span className="block text-semibold text-ellipsis">{user?.DisplayName}</span>
@@ -112,7 +112,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
                                 <span className="block color-weak text-sm text-italic">{planDisplayName}</span>
                             </span>
                         </div>
-                        <div className="flex flex-align-items-end flex-column">
+                        <div className="flex items-end flex-column">
                             {passPlan !== UserPassPlan.PLUS && (
                                 <>
                                     <span className="block mb-1">
@@ -154,7 +154,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     }
 
     return (
-        <div className="flex flex-column flex-align-items-center justify-center my-auto">
+        <div className="flex flex-column items-center justify-center my-auto">
             <Icon name="lock-filled" size={42} className="mb-4" />
             {context.state.status === AppStatus.LOCKED && (
                 <>

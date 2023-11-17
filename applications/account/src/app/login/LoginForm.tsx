@@ -347,7 +347,7 @@ const LoginForm = ({
                 )}
 
                 {hasRemember && authType !== AuthType.ExternalSSO && !isElectron && (
-                    <div className="flex flex-row flex-align-items-start">
+                    <div className="flex flex-row items-start">
                         <Checkbox
                             id="staySignedIn"
                             className="mt-2 mr-2"
@@ -357,7 +357,7 @@ const LoginForm = ({
 
                         {hasTrustedDeviceRecovery ? (
                             <div className="flex-item-fluid">
-                                <Label htmlFor="staySignedIn" className="flex flex-align-items-center">
+                                <Label htmlFor="staySignedIn" className="flex items-center">
                                     {c('Label').t`Keep me signed in`}
                                 </Label>
                                 <div className="color-weak">
@@ -366,7 +366,7 @@ const LoginForm = ({
                             </div>
                         ) : (
                             <div className="flex-item-fluid">
-                                <Label htmlFor="staySignedIn" className="flex flex-align-items-center">
+                                <Label htmlFor="staySignedIn" className="flex items-center">
                                     <span className="pr-2">{c('Label').t`Keep me signed in`}</span>
                                     <span className="flex">
                                         <Info
@@ -475,14 +475,14 @@ const LoginForm = ({
                                         >
                                             <Link
                                                 to={paths.reset}
-                                                className="dropdown-item-link w-full px-4 py-2 flex flex-align-items-center text-no-decoration text-left"
+                                                className="dropdown-item-link w-full px-4 py-2 flex items-center text-no-decoration text-left"
                                             >
                                                 <Icon name="key" className="mr-2" />
                                                 {c('Link').t`Reset password`}
                                             </Link>
                                             <Link
                                                 to={paths.forgotUsername}
-                                                className="dropdown-item-link w-full px-4 py-2 flex flex-align-items-center text-no-decoration text-left"
+                                                className="dropdown-item-link w-full px-4 py-2 flex items-center text-no-decoration text-left"
                                             >
                                                 <Icon name="user-circle" className="mr-2" />
                                                 {c('Link').t`Forgot username?`}

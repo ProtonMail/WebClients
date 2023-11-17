@@ -108,7 +108,7 @@ const InsertImageModal = ({ onAddUrl, onAddImages, onClose, ...rest }: Props) =>
                     <div className="md:flex-item-fluid" data-testid="insert-image:upload">
                         <FileButton
                             id={`editor-image-upload-${uid}`}
-                            className="inline-flex relative flex-align-items-center"
+                            className="inline-flex relative items-center"
                             onAddFiles={handleAddFiles}
                         >
                             {c('Action').t`Upload picture`}

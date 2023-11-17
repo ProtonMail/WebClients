@@ -101,7 +101,7 @@ export const ItemsListPlaceholder: FC<Props> = ({ noActions, noImport }) => {
     if (showUpgrade && !matchTrash) {
         return (
             <div
-                className="flex flex-column flex-align-items-center gap-3 text-center p-2 w-2/3 max-w-custom"
+                className="flex flex-column items-center gap-3 text-center p-2 w-2/3 max-w-custom"
                 style={{ '--max-w-custom': '20rem' }}
             >
                 <span className="text-semibold inline-block">{c('Title').t`Your vault is empty`}</span>

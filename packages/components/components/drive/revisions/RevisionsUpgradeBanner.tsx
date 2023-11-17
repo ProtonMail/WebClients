@@ -7,7 +7,7 @@ import { APPS } from '@proton/shared/lib/constants';
 const RevisionsUpgradeBanner = () => {
     return (
         <div
-            className="bg-weak p-4 rounded flex flex-align-items-center justify-space-between"
+            className="bg-weak p-4 rounded flex items-center justify-space-between"
             data-testid="revisions-upgrade-banner"
         >
             <p className="mx-0 my-1">{c('Info').t`Your plan is limited to 10 versions for up to 7 days`}</p>

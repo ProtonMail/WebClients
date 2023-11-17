@@ -57,7 +57,7 @@ const colors: Required<ButtonGroupProps>['color'][] = ['norm', 'weak'];
 
 const sizes: Required<ButtonGroupProps>['size'][] = ['small', 'medium', 'large'];
 
-const buttonContainerClassName = 'flex flex-item-fluid flex-align-items-center justify-center border';
+const buttonContainerClassName = 'flex flex-item-fluid items-center justify-center border';
 
 export const Sandbox = () => {
     const [selectedShape, setSelectedShape] = useState<Required<ButtonGroupProps>['shape']>('solid');
@@ -91,7 +91,7 @@ export const Sandbox = () => {
 
     return (
         <div className="my-8">
-            <div className="flex flex-align-items-stretch">
+            <div className="flex items-stretch">
                 <div className="mr-8">
                     <strong className="block mb-4">Color</strong>
                     <RadioGroup
