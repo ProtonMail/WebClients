@@ -10,7 +10,7 @@ const SharedPageFooter = ({ rootItem, items }: Props) => {
     if (isNarrow && items.length > 0) {
         return (
             <div className="fixed bottom p-4 flex justify-center bg-weak w-full">
-                <DownloadButton className="flex-item flex-1" rootItem={rootItem} items={items} />
+                <DownloadButton className="flex-1" rootItem={rootItem} items={items} />
             </div>
         );
     }
