@@ -44,26 +44,22 @@ export const wakeupSuccess = createAction(
     withRequestSuccess((receiver: EndpointOptions) => pipe(withCacheBlock, withReceiver(receiver))({ payload: {} }))
 );
 
-export const bootIntent = createAction(
-    'boot::intent',
-    pipe(withCacheBlock, withRequest({ id: bootRequest(), type: 'start' }))
+export const bootIntent = createAction('boot::intent', () =>
+    pipe(withCacheBlock, withRequest({ id: bootRequest(), type: 'start' }))({ payload: {} })
 );
 
-export const bootFailure = createAction(
-    'boot::failure',
-    withRequestFailure((error: unknown) =>
-        pipe(
-            withCacheBlock,
-            withNotification({ type: 'error', text: c('Error').t`Unable to boot`, error })
-        )({ payload: {} })
-    )
+export const bootFailure = createAction('boot::failure', (error: unknown) =>
+    pipe(
+        withCacheBlock,
+        withRequest({ id: bootRequest(), type: 'failure' }),
+        withNotification({ type: 'error', text: c('Error').t`Unable to boot`, error })
+    )({ payload: {}, error })
 );
 
 export const bootSuccess = createAction(
     'boot::success',
-    withRequestSuccess((payload: { userState: SafeUserState; sync: Maybe<SynchronizationResult> }) =>
-        withCacheBlock({ payload })
-    )
+    (payload: { userState: SafeUserState; sync: Maybe<SynchronizationResult> }) =>
+        withRequest({ id: bootRequest(), type: 'success' })({ payload })
 );
 
 export const syncIntent = createAction('sync::intent', () =>
