@@ -1,11 +1,11 @@
 import { type FC, createContext, useContext, useMemo, useState } from 'react';
 
-import { clientAuthorized } from '@proton/pass/lib/client';
+import { clientReady } from '@proton/pass/lib/client';
 import { AppStatus, type Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
-import { authStore } from '../core';
+import { authStore } from '../../lib/core';
 
 type ClientState = { status: AppStatus; loggedIn: boolean; localID: Maybe<number>; UID: Maybe<string> };
 type ClientContextValue = { state: ClientState; setStatus: (status: AppStatus) => void };
@@ -30,7 +30,7 @@ export const ClientProvider: FC = ({ children }) => {
                     setStatus: (status) =>
                         setState((prev) => {
                             logger.info(`[ClientContext] Status change : ${prev.status} -> ${status}`);
-                            const loggedIn = clientAuthorized(status);
+                            const loggedIn = clientReady(status);
                             const localID = authStore.getLocalID();
                             const UID = authStore.getUID();
 
