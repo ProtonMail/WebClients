@@ -2,6 +2,7 @@ import { type FC, useEffect } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 
 import { useNotifications } from '@proton/components/hooks';
+import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { INITIAL_SETTINGS } from '@proton/pass/store/reducers/settings';
@@ -19,7 +20,8 @@ export const StoreProvider: FC = ({ children }) => {
     const authService = useAuthService();
     const client = useClientRef();
     const { createNotification } = useNotifications();
-    const notificationEnhancer = useNotificationEnhancer({ onLink: (url) => window.open(url, '_blank') });
+    const { onLink } = useNavigation();
+    const notificationEnhancer = useNotificationEnhancer({ onLink });
 
     useEffect(() => {
         sagaMiddleware.run(
