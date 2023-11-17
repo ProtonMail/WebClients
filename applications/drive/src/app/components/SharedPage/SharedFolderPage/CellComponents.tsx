@@ -118,7 +118,7 @@ function DownloadCell({ item }: { item: PublicLink }) {
     const isAnyInProgress = downloads.some((transfer) => isTransferActive(transfer) || isTransferPaused(transfer));
 
     const className = clsx([
-        'flex-item-centered-vert ',
+        'self-center my-auto ',
         'file-browser-list--download-button',
         'mouse:group-hover:opacity-100',
     ]);

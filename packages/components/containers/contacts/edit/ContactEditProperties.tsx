@@ -209,7 +209,7 @@ const ContactEditProperties = (
                 <span className="ml-0.5 mr-2">{title}</span>
                 {((field && !['fn', 'email'].includes(field)) || field === undefined) && (
                     <EncryptedIcon
-                        className="flex flex-item-centered-vert shrink-0"
+                        className="flex self-center my-auto shrink-0"
                         isSignatureVerified={isSignatureVerified}
                     />
                 )}

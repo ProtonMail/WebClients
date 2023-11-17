@@ -336,7 +336,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                         const cells = [
                             <div key={fingerprint} title={fingerprint} className="flex flex-nowrap">
                                 <ContactKeyWarningIcon
-                                    className="mr-2 shrink-0 flex-item-centered-vert"
+                                    className="mr-2 shrink-0 self-center my-auto"
                                     publicKey={publicKey}
                                     emailAddress={model.emailAddress}
                                     isInternal={model.isPGPInternal}
