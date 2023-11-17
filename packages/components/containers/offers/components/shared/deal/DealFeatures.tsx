@@ -21,7 +21,7 @@ const DealFeatures = ({ isExpanded, expand }: Props) => {
     }
 
     return (
-        <div className="flex-item-fluid-auto w-full">
+        <div className="flex-auto w-full">
             {isExpanded && (
                 <StripedList alternate="odd">
                     {features.map((feature) => (

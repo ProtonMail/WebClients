@@ -51,7 +51,7 @@ const VideoPreview = ({ contents, mimeType, onDownload }: Props) => {
 
     if (error) {
         return (
-            <div className="flex flex-item-fluid-auto relative">
+            <div className="flex flex-auto relative">
                 <UnsupportedPreview onDownload={onDownload} type="video" />
             </div>
         );

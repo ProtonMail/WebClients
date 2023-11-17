@@ -164,7 +164,7 @@ const PlanCard = ({
                 <div className="text-bold">{title}</div>
                 <div className="color-weak">{description}</div>
             </div>
-            <div {...cycleProps} className={clsx('p-4 rounded-lg w-full flex-item-fluid-auto', cycleProps?.className)}>
+            <div {...cycleProps} className={clsx('p-4 rounded-lg w-full flex-auto', cycleProps?.className)}>
                 {children}
             </div>
         </div>
