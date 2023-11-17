@@ -121,10 +121,13 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 window.location.replace(url);
             },
 
-            onSessionEmpty: () => {
+            onSessionEmpty: async () => {
                 history.replace('/');
                 client.current.setStatus(AppStatus.UNAUTHORIZED);
-                if (getDefaultLocalID()) auth.init().catch(noop);
+                if (getDefaultLocalID() !== undefined) {
+                    await auth.init.getState().pending;
+                    auth.init().catch(noop);
+                }
             },
 
             onSessionLocked: (localID, broadcast) => {
