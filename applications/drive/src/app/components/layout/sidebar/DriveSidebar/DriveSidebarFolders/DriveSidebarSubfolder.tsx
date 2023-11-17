@@ -53,7 +53,7 @@ export default function DriveSidebarSubfolder({ shareId, folder, level, toggleEx
                         {isLoading ? (
                             <Loader className="flex shrink-0 drive-sidebar--icon" />
                         ) : (
-                            <FileIcon className="flex-item-centered-vert drive-sidebar--icon" mimeType="Folder" />
+                            <FileIcon className="self-center my-auto drive-sidebar--icon" mimeType="Folder" />
                         )}
                         <FileNameDisplay text={folder.link.name} />
                     </div>
