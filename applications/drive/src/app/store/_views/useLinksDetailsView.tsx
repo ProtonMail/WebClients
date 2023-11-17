@@ -9,7 +9,7 @@ import { DecryptedLink, useLinksListing } from '../_links';
  * useLinksDetailsView loads links if not cached yet and provides some
  * aggregated information such as their count or size.
  */
-export default function useLinksDetailsView(selectedLinks: DecryptedLink[]) {
+export default function useLinksDetailsView(selectedLinks: { rootShareId: string; linkId: string }[]) {
     const { loadLinksMeta } = useLinksListing();
 
     const [links, setLinks] = useState<DecryptedLink[]>([]);
