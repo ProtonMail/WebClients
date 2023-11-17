@@ -20,7 +20,7 @@ export const TrashItemsList: FC = () => {
     const listRef = useRef<List>(null);
 
     return searched.length === 0 ? (
-        <div className="absolute-center flex justify-center flex-align-items-center w-4/6">
+        <div className="absolute-center flex justify-center items-center w-4/6">
             <span className="block text-break color-weak text-sm p-2 text-center text-break">
                 {totalCount === 0 ? (
                     <span>

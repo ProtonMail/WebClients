@@ -10,7 +10,7 @@ interface ContactRowItemFirstLineProps {
 
 export const ContactRowItemFirstLine = ({ ID, Name, className }: ContactRowItemFirstLineProps) => {
     return (
-        <div className="flex flex-nowrap flex-align-items-center item-firstline max-w-full">
+        <div className="flex flex-nowrap items-center item-firstline max-w-full">
             <div className={clsx('flex flex-item-fluid w-0', className)}>
                 <span role="heading" aria-level={2} className="text-bold inline-block max-w-full text-ellipsis" id={ID}>
                     {Name}

@@ -11,7 +11,7 @@ const TaskRunningBanner = ({ className }: Props) => {
     return (
         <div
             className={clsx([
-                'bg-weak rounded mx-2 px-4 py-2 flex flex-wrap justify-start flex-align-items-center',
+                'bg-weak rounded mx-2 px-4 py-2 flex flex-wrap justify-start items-center',
                 className,
             ])}
         >

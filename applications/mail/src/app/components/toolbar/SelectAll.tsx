@@ -71,7 +71,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                     render: () => (
                         <DropdownMenu>
                             <DropdownMenuButton
-                                className="flex flex-align-items-center text-left"
+                                className="flex items-center text-left"
                                 onClick={handleAll(true)}
                                 data-testid="toolbar:select-all"
                             >
@@ -79,7 +79,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                                 {c('Action').t`Select All`}
                             </DropdownMenuButton>
                             <DropdownMenuButton
-                                className="flex flex-align-items-center text-left"
+                                className="flex items-center text-left"
                                 onClick={handleRead(true)}
                                 data-testid="toolbar:all-read"
                             >
@@ -87,7 +87,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                                 {c('Action').t`All Read`}
                             </DropdownMenuButton>
                             <DropdownMenuButton
-                                className="flex flex-align-items-center text-left"
+                                className="flex items-center text-left"
                                 onClick={handleRead(false)}
                                 data-testid="toolbar:all-unread"
                             >
@@ -95,7 +95,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                                 {c('Action').t`All Unread`}
                             </DropdownMenuButton>
                             <DropdownMenuButton
-                                className="flex flex-align-items-center text-left"
+                                className="flex items-center text-left"
                                 onClick={handleStarred(true)}
                                 data-testid="toolbar:all-starred"
                             >
@@ -103,7 +103,7 @@ const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck
                                 {c('Action').t`All Starred`}
                             </DropdownMenuButton>
                             <DropdownMenuButton
-                                className="flex flex-align-items-center text-left"
+                                className="flex items-center text-left"
                                 onClick={handleStarred(false)}
                                 data-testid="toolbar:all-unstarred"
                             >

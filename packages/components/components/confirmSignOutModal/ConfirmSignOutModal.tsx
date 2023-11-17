@@ -52,7 +52,7 @@ const ConfirmSignOutModal = ({ onSignOut, onClose, ...rest }: Props) => {
                 {c('Info').t`Recovery information will remain on this device unless you select to delete it.`}
             </p>
 
-            <div className="flex flex-row flex-align-items-start">
+            <div className="flex flex-row items-start">
                 <Checkbox
                     id="delete-recovery-storage"
                     className="mt-2 mr-2"

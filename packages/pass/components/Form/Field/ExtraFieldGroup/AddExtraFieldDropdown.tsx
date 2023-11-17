@@ -23,7 +23,7 @@ export const AddExtraFieldDropdown: VFC<CustomFieldsDropdownProps> = ({ onAdd })
         <>
             <Button
                 pill
-                className="flex flex-align-items-center mb-2"
+                className="flex items-center mb-2"
                 color="norm"
                 onClick={toggle}
                 ref={anchorRef}

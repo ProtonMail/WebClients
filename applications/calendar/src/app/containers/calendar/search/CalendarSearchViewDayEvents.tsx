@@ -48,7 +48,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
         >
             <div
                 data-testid="month-day-block"
-                className="flex-no-min-children flex-item-noshrink flex-align-items-baseline search-month-day"
+                className="flex-no-min-children flex-item-noshrink items-baseline search-month-day"
                 aria-current={isToday ? `date` : undefined}
             >
                 <div
@@ -101,7 +101,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                 type="button"
                                 key={`${CalendarID}-${ID}-${fakeUTCStartDate}`}
                                 className={clsx(
-                                    'flex flex-nowrap search-event-cell flex-align-items-center text-left relative interactive-pseudo w-full color-norm rounded-sm pl-1',
+                                    'flex flex-nowrap search-event-cell items-center text-left relative interactive-pseudo w-full color-norm rounded-sm pl-1',
                                     isCancelled && 'text-strike',
                                     isOpen && 'bg-weak'
                                 )}

@@ -29,7 +29,7 @@ export const Basic = () => {
     ]);
 
     return (
-        <div className="flex flex-align-items-stretch justify-space-between py-7">
+        <div className="flex items-stretch justify-space-between py-7">
             <div className="w-1/2">
                 <strong className="block mb-4">Upsell Features</strong>
                 <ul className="unstyled">

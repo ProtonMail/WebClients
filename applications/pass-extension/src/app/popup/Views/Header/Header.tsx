@@ -42,7 +42,7 @@ export const Header: VFC = () => {
     return (
         <VaultActionsProvider onVaultCreated={onVaultCreated} onVaultDeleted={onVaultDeleted}>
             <HeaderComponent className="border-bottom h-auto p-2">
-                <div className="flex flex-align-items-center gap-x-2 w-full">
+                <div className="flex items-center gap-x-2 w-full">
                     <MenuDropdown />
 
                     <SearchBar

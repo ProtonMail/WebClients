@@ -146,21 +146,21 @@ const AddressesGroupItem = ({
             >
                 <DropdownMenu>
                     <DropdownMenuButton
-                        className="text-left flex flex-nowrap flex-align-items-center"
+                        className="text-left flex flex-nowrap items-center"
                         onClick={handleCopy}
                     >
                         <Icon name="squares" className="mr-2" />
                         <span className="flex-item-fluid my-auto">{c('Action').t`Copy addresses`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="text-left flex flex-nowrap flex-align-items-center"
+                        className="text-left flex flex-nowrap items-center"
                         onClick={() => showModalCallback(true)}
                     >
                         <Icon name="user" className="mr-2" />
                         <span className="flex-item-fluid my-auto">{c('Action').t`View recipients`}</span>
                     </DropdownMenuButton>
                     <DropdownMenuButton
-                        className="text-left flex flex-nowrap flex-align-items-center"
+                        className="text-left flex flex-nowrap items-center"
                         liClassName="dropdown-item--delete"
                         onClick={handleRemove}
                     >

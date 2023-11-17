@@ -829,7 +829,7 @@ const WireGuardConfigurationSection = () => {
                                 <label className="field-two-container w-full" htmlFor={'wg-feature-' + key}>
                                     {isFeatureSelection(featuresConfig[key]) ? (
                                         <>
-                                            <div className="flex field-two-label-container justify-space-between flex-nowrap flex-align-items-end">
+                                            <div className="flex field-two-label-container justify-space-between flex-nowrap items-end">
                                                 <span className="field-two-label">
                                                     {featuresConfig[key].name}
                                                     {getFeatureLink(featuresConfig[key])}

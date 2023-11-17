@@ -169,7 +169,7 @@ const CalendarSidebar = ({
             data-testid="calendar-view:new-event-button"
             disabled={!onCreateEvent}
             onClick={onCreateEvent}
-            className="hidden md:flex flex-align-items-center justify-center flex-nowrap gap-2"
+            className="hidden md:flex items-center justify-center flex-nowrap gap-2"
         >
             <span className="text-ellipsis">{c('Action').t`New event`}</span>
         </SidebarPrimaryButton>
@@ -202,7 +202,7 @@ const CalendarSidebar = ({
                 toggle={displayMyCalendars}
                 onToggle={() => setDisplayMyCalendars((prevState) => !prevState)}
                 right={
-                    <div className="flex flex-nowrap flex-align-items-center">
+                    <div className="flex flex-nowrap items-center">
                         {!isOtherCalendarsLimitReached ? (
                             <Spotlight
                                 show={shouldShowHolidaysSpotlight}

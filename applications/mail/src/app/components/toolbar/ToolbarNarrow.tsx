@@ -44,9 +44,9 @@ const ToolbarNarrow = ({
                 aria-label={c('Label').t`Toolbar`}
                 ref={toolbarRef}
             >
-                <div className="flex flex-align-items-center toolbar-inner gap-2">{selectAll}</div>
+                <div className="flex items-center toolbar-inner gap-2">{selectAll}</div>
 
-                <div className="flex flex-align-items-center toolbar-inner gap-2">
+                <div className="flex items-center toolbar-inner gap-2">
                     <ListSettings
                         sort={sort}
                         onSort={onSort}

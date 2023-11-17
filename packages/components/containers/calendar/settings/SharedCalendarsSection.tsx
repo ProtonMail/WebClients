@@ -62,7 +62,7 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
     const subline = getCalendarNameSubline({ calendarType, displayEmail, memberEmail, memberPermissions });
 
     const statusHeader = (
-        <div className="flex flex-align-items-center">
+        <div className="flex items-center">
             <span className="mr-2">{c('Header').t`Status`}</span>
             <Info url={getKnowledgeBaseUrl('/calendar-status')} />
         </div>
@@ -73,7 +73,7 @@ const SharedCalendarRow = ({ calendar, displayEmail }: { calendar: VisualCalenda
             <TableCell label={c('Header').t`Name`}>
                 <div className="grid-align-icon-center">
                     <CalendarSelectIcon color={Color} className="mr-3 flex-item-noshrink keep-left" />
-                    <div className="flex flex-align-items-center flex-nowrap overflow-hidden">
+                    <div className="flex items-center flex-nowrap overflow-hidden">
                         <div className="text-ellipsis" title={calendarNameWithOwner}>
                             {calendarNameWithOwner}
                         </div>
@@ -154,7 +154,7 @@ const InvitationRow = ({
             <TableCell>
                 <div className="grid-align-icon-center">
                     <CalendarSelectIcon border color={Calendar.Color} className="mr-3 flex-item-noshrink keep-left" />
-                    <div className="flex flex-align-items-center flex-nowrap overflow-hidden">
+                    <div className="flex items-center flex-nowrap overflow-hidden">
                         <div className="text-ellipsis" title={calendarNameWithOwner}>
                             {calendarNameWithOwner}
                         </div>
@@ -166,7 +166,7 @@ const InvitationRow = ({
                 <div key="status">{isInvitedAddressDisabled && <CalendarBadge {...getDisabledCalendarBadge()} />}</div>
             </TableCell>
             <TableCell>
-                <div className="flex flex-nowrap justify-start lg:justify-end flex-align-items-center gap-2">
+                <div className="flex flex-nowrap justify-start lg:justify-end items-center gap-2">
                     {isAcceptButtonDisabled && (
                         <Info
                             title={

@@ -442,7 +442,7 @@ const HeaderMoreDropdown = ({
                             return (
                                 <DropdownMenu>
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                        className="text-left flex flex-nowrap items-center"
                                         onClick={handleStar}
                                         data-testid="message-view-more-dropdown:star"
                                     >
@@ -453,7 +453,7 @@ const HeaderMoreDropdown = ({
                                     <hr className="my-2" />
 
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                        className="text-left flex flex-nowrap items-center"
                                         onClick={handleMove(ARCHIVE, fromFolderID)}
                                         data-testid="message-view-more-dropdown:archive"
                                     >
@@ -462,7 +462,7 @@ const HeaderMoreDropdown = ({
                                     </DropdownMenuButton>
                                     {isNarrow && (
                                         <DropdownMenuButton
-                                            className="text-left flex flex-nowrap flex-align-items-center"
+                                            className="text-left flex flex-nowrap items-center"
                                             onClick={() => onOpenAdditional(0)}
                                         >
                                             <Icon name="folder-arrow-in" className="mr-2" />
@@ -471,7 +471,7 @@ const HeaderMoreDropdown = ({
                                     )}
                                     {isNarrow && (
                                         <DropdownMenuButton
-                                            className="text-left flex flex-nowrap flex-align-items-center"
+                                            className="text-left flex flex-nowrap items-center"
                                             onClick={() => onOpenAdditional(1)}
                                         >
                                             <Icon name="tag" className="mr-2" />
@@ -481,7 +481,7 @@ const HeaderMoreDropdown = ({
                                     )}
                                     {isNarrow && (
                                         <DropdownMenuButton
-                                            className="text-left flex flex-nowrap flex-align-items-center"
+                                            className="text-left flex flex-nowrap items-center"
                                             onClick={() => onOpenAdditional(2)}
                                         >
                                             <Icon name="filter" className="mr-2" />
@@ -491,7 +491,7 @@ const HeaderMoreDropdown = ({
                                     )}
                                     {isSpam ? (
                                         <DropdownMenuButton
-                                            className="text-left flex flex-nowrap flex-align-items-center"
+                                            className="text-left flex flex-nowrap items-center"
                                             onClick={handleUnread}
                                             data-testid="message-view-more-dropdown:unread"
                                         >
@@ -501,7 +501,7 @@ const HeaderMoreDropdown = ({
                                         </DropdownMenuButton>
                                     ) : (
                                         <DropdownMenuButton
-                                            className="text-left flex flex-nowrap flex-align-items-center"
+                                            className="text-left flex flex-nowrap items-center"
                                             onClick={handleMove(SPAM, fromFolderID)}
                                             data-testid="message-view-more-dropdown:move-to-spam"
                                         >
@@ -512,7 +512,7 @@ const HeaderMoreDropdown = ({
                                     )}
                                     {isInTrash ? (
                                         <DropdownMenuButton
-                                            className="text-left flex flex-nowrap flex-align-items-center"
+                                            className="text-left flex flex-nowrap items-center"
                                             onClick={() => setMessagePermanentDeleteModalOpen(true)}
                                             data-testid="message-view-more-dropdown:delete"
                                         >
@@ -525,7 +525,7 @@ const HeaderMoreDropdown = ({
                                             <hr className="my-2" />
                                             {willExpire ? (
                                                 <DropdownMenuButton
-                                                    className="text-left flex flex-nowrap flex-align-items-center"
+                                                    className="text-left flex flex-nowrap items-center"
                                                     onClick={() => handleExpire(0)}
                                                     data-testid="message-view-more-dropdown:remove-expiration"
                                                 >
@@ -536,7 +536,7 @@ const HeaderMoreDropdown = ({
                                             ) : (
                                                 <>
                                                     <DropdownMenuButton
-                                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                                        className="text-left flex flex-nowrap items-center"
                                                         onClick={() => handleExpire(7)}
                                                         data-testid="message-view-more-dropdown:expire-7-days"
                                                     >
@@ -545,7 +545,7 @@ const HeaderMoreDropdown = ({
                                                             .t`Self-destruct in 7 days`}</span>
                                                     </DropdownMenuButton>
                                                     <DropdownMenuButton
-                                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                                        className="text-left flex flex-nowrap items-center"
                                                         onClick={() => openCustomExpirationModal(true)}
                                                         data-testid="message-view-more-dropdown:expire-30-days"
                                                     >
@@ -561,7 +561,7 @@ const HeaderMoreDropdown = ({
                                     <hr className="my-2" />
 
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                        className="text-left flex flex-nowrap items-center"
                                         onClick={handleExport}
                                         data-testid="message-view-more-dropdown:export"
                                     >
@@ -569,7 +569,7 @@ const HeaderMoreDropdown = ({
                                         <span className="flex-item-fluid my-auto">{c('Action').t`Export`}</span>
                                     </DropdownMenuButton>
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                        className="text-left flex flex-nowrap items-center"
                                         onClick={() => setMessagePrintModalOpen(true)}
                                         data-testid="message-view-more-dropdown:print"
                                     >
@@ -580,7 +580,7 @@ const HeaderMoreDropdown = ({
                                     <hr className="my-2" />
 
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                        className="text-left flex flex-nowrap items-center"
                                         onClick={() => setMessageDetailsModalOpen(true)}
                                         data-testid="message-view-more-dropdown:view-message-details"
                                     >
@@ -589,7 +589,7 @@ const HeaderMoreDropdown = ({
                                             .t`View message details`}</span>
                                     </DropdownMenuButton>
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                        className="text-left flex flex-nowrap items-center"
                                         onClick={() => setMessageHeaderModalOpen(true)}
                                         data-testid="message-view-more-dropdown:view-message-headers"
                                     >
@@ -598,7 +598,7 @@ const HeaderMoreDropdown = ({
                                     </DropdownMenuButton>
                                     {!sourceMode && (
                                         <DropdownMenuButton
-                                            className="text-left flex flex-nowrap flex-align-items-center"
+                                            className="text-left flex flex-nowrap items-center"
                                             onClick={() => onSourceMode(true)}
                                             data-testid="message-view-more-dropdown:view-html"
                                         >
@@ -608,7 +608,7 @@ const HeaderMoreDropdown = ({
                                     )}
                                     {sourceMode && (
                                         <DropdownMenuButton
-                                            className="text-left flex flex-nowrap flex-align-items-center"
+                                            className="text-left flex flex-nowrap items-center"
                                             onClick={() => onSourceMode(false)}
                                             data-testid="message-view-more-dropdown:view-rendered-html"
                                         >
@@ -621,7 +621,7 @@ const HeaderMoreDropdown = ({
                                     <hr className="my-2" />
 
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap flex-align-items-center color-danger"
+                                        className="text-left flex flex-nowrap items-center color-danger"
                                         onClick={() => setMessagePhishingModalOpen(true)}
                                         data-testid="message-view-more-dropdown:report-phishing"
                                     >

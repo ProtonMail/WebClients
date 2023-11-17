@@ -82,7 +82,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
         >
             <span
                 className={clsx(
-                    'relative flex flex-nowrap flex-align-items-center gap-2',
+                    'relative flex flex-nowrap items-center gap-2',
                     responsive && isDesktop ? 'w-full' : undefined
                 )}
             >

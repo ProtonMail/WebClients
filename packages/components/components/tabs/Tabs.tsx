@@ -111,7 +111,7 @@ export const Tabs = ({
                         className={clsx([
                             'tabs-list unstyled flex flex-nowrap relative m-0 p-0',
                             fullWidth && 'tabs-list--fullWidth',
-                            'flex-align-items-end',
+                            'items-end',
                         ])}
                         role="tablist"
                         ref={containerRef}

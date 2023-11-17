@@ -167,7 +167,7 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
                     {FILTER_TYPES.map((filterType: FilterType) => (
                         <li
                             key={filterType.value}
-                            className="dropdown-item w-full flex flex-nowrap flex-align-items-center py-2 px-4"
+                            className="dropdown-item w-full flex flex-nowrap items-center py-2 px-4"
                         >
                             <Checkbox
                                 className="flex-item-noshrink mr-2"

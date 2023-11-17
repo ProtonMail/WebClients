@@ -246,8 +246,8 @@ const CalendarSearchView = ({
     const hasResults = Boolean(visualItems.length);
 
     return (
-        <div className="relative flex-no-min-children flex-column flex-nowrap justify-start flex-align-items-start w-full h-full reset4print">
-            <div className="toolbar toolbar--heavy flex flex-nowrap flex-item-noshrink flex-align-items-center gap-2 no-print justify-space-between py-1 pr-2 pl-4 w-full">
+        <div className="relative flex-no-min-children flex-column flex-nowrap justify-start items-start w-full h-full reset4print">
+            <div className="toolbar toolbar--heavy flex flex-nowrap flex-item-noshrink items-center gap-2 no-print justify-space-between py-1 pr-2 pl-4 w-full">
                 <h2 className="h6 text-semibold">
                     {hasResults ? c('esCalendar').t`Results` : c('esCalendar').t`No result`}
                 </h2>
@@ -321,7 +321,7 @@ const CalendarSearchView = ({
                         </div>
                     )}
 
-                    <div className="flex flex-column justify-center flex-align-items-center flex-item-grow w-full">
+                    <div className="flex flex-column justify-center items-center flex-item-grow w-full">
                         <IllustrationPlaceholder title={c('Info message').t`No results found`} url={noResultsImg} />
                         <div className="text-center">
                             {c('Info calendar search')

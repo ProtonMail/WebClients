@@ -200,7 +200,7 @@ const ContactImportGroups = ({ model, setModel, onClose }: Props) => {
         return (
             <div
                 key={name}
-                className="flex flex-nowrap flex-item-fluid flex-align-items-stretch sm:flex-align-items-center flex-column sm:flex-row mb-4 gap-2"
+                className="flex flex-nowrap flex-item-fluid items-stretch sm:items-center flex-column sm:flex-row mb-4 gap-2"
             >
                 <div className="sm:flex-item-fluid text-ellipsis" title={categoryString}>
                     {categoryString}

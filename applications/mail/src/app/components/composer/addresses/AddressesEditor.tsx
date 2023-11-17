@@ -52,14 +52,14 @@ const AddressesEditor = ({
     };
 
     return (
-        <div className="flex flex-column flex-nowrap flex-align-items-start mt-0">
+        <div className="flex flex-column flex-nowrap items-start mt-0">
             <div className="flex flex-row w-full relative flex-column md:flex-row" data-testid="composer:to-field">
                 <Label htmlFor={`to-${uid}`} className="composer-meta-label text-semibold">
                     {c('Title').t`To`}
                 </Label>
                 <div
                     className={clsx([
-                        'flex flex-nowrap field flex-align-items-center flex-nowrap md:flex-item-fluid w-full composer-to-editor composer-light-field',
+                        'flex flex-nowrap field items-center flex-nowrap md:flex-item-fluid w-full composer-to-editor composer-light-field',
                         expanded ? 'composer-editor-expanded' : 'composer-editor-collapsed',
                     ])}
                     ref={toListAnchorRef}

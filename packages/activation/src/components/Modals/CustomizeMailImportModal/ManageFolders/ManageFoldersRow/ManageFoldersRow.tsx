@@ -24,7 +24,7 @@ interface WrapperProps {
 
 const Wrapper = ({ checked, editMode, disabled, checkboxId, children }: WrapperProps) => {
     const classNames = clsx([
-        'flex flex-nowrap flex-align-items-center py-4',
+        'flex flex-nowrap items-center py-4',
         !checked && DIMMED_OPACITY_CLASSNAMES,
         (disabled || editMode) && 'cursor-default',
     ]);
@@ -82,7 +82,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
     return (
         <li className="border-bottom">
             <Wrapper checked={checked} editMode={editMode} disabled={disabled} checkboxId={folderItem.id}>
-                <div className="flex w-1/2 flex-nowrap flex-align-items-center flex-item-noshrink pr-2">
+                <div className="flex w-1/2 flex-nowrap items-center flex-item-noshrink pr-2">
                     <div
                         className="flex-item-noshrink ml-custom"
                         style={indentStyle(providerPath.length)}
@@ -108,7 +108,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                 </div>
                 <div className="flex w-1/2 pl-2">
                     <div
-                        className={clsx(['flex flex-nowrap flex-align-items-center ml-custom'])}
+                        className={clsx(['flex flex-nowrap items-center ml-custom'])}
                         style={indentStyle(protonPath.length)}
                         data-testid="CustomizeModal:destinationItem"
                     >
@@ -126,7 +126,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                     <div
                         data-testid="CustomizeModal:FolderRow:protonName"
                         className={clsx([
-                            'flex flex-nowrap flex-item-fluid flex-align-items-center',
+                            'flex flex-nowrap flex-item-fluid items-center',
                             hasError && 'color-danger',
                             errors.includes(MailImportPayloadError.MERGE_WARNING) && 'color-warning',
                         ])}
@@ -147,7 +147,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                                 {isLabel && !systemFolder ? (
                                     <div
                                         className={clsx([
-                                            'flex-item-fluid-auto text-ellipsis flex flex-align-items-center',
+                                            'flex-item-fluid-auto text-ellipsis flex items-center',
                                             (hasError || errors.includes(MailImportPayloadError.MERGE_WARNING)) &&
                                                 'text-bold',
                                         ])}
@@ -169,7 +169,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                                 ) : (
                                     <div
                                         className={clsx([
-                                            'text-ellipsis flex flex-align-items-center',
+                                            'text-ellipsis flex items-center',
                                             (hasError || errors.includes(MailImportPayloadError.MERGE_WARNING)) &&
                                                 'text-bold',
                                         ])}

@@ -69,7 +69,7 @@ const ContactDecryptionErrorModal = ({ contactID, onClearDataConfirm, ...rest }:
                         .t`To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.`}
                 </Alert>
                 {errorKey && (
-                    <div className="flex flex-align-items-center mb-4">
+                    <div className="flex items-center mb-4">
                         <span className="mr-4">{c('Info').t`Key fingerprint`}</span>
                         <span className="flex-item-fluid text-ellipsis mr-4">{errorKey.Fingerprint}</span>
                         <Copy

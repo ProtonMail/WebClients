@@ -137,7 +137,7 @@ const NotificationsContainer = ({
         <div
             ref={containerRef}
             className={clsx(
-                'notifications-container flex flex-column flex-align-items-center no-print',
+                'notifications-container flex flex-column items-center no-print',
                 offset?.y || offset?.x || 0 > 0 ? 'notifications-container--shifted' : undefined
             )}
             style={{

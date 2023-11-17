@@ -49,7 +49,7 @@ const RecipientDropdownItem = ({
     };
 
     return (
-        <div className="flex flex-nowrap flex-align-items-center p-2" onClick={handleClick}>
+        <div className="flex flex-nowrap items-center p-2" onClick={handleClick}>
             <span className="item-icon flex flex-item-noshrink rounded mx-2" aria-hidden="true">
                 <span className="m-auto">
                     {simple ? (

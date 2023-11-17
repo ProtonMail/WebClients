@@ -29,7 +29,7 @@ const AliasFormBase: FC<{
         <>
             <div className="flex justify-end mb-2">
                 <Button shape="ghost" onClick={toggleShowAdvanced}>
-                    <span className="flex flex-align-items-center color-weak text-sm">
+                    <span className="flex items-center color-weak text-sm">
                         <Icon name="cog-wheel" className="mr-1" />
                         {c('Action').t`Advanced options`}
                     </span>

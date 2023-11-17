@@ -30,7 +30,7 @@ export const DropdownItem: VFC<
         onClick={onClick}
         disabled={disabled}
     >
-        <div className="flex flex-align-items-center gap-3">
+        <div className="flex items-center gap-3">
             <DropdownItemIcon {...(url ? { url, icon } : { icon })} />
             <div className="flex-item-fluid">
                 {title && <span className="block text-ellipsis">{title}</span>}

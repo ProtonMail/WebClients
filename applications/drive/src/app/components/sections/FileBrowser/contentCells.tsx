@@ -24,7 +24,7 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | TrashIte
     });
 
     return (
-        <TableCell className="m-0 flex flex-align-items-center flex-nowrap flex-item-fluid" data-testid="column-name">
+        <TableCell className="m-0 flex items-center flex-nowrap flex-item-fluid" data-testid="column-name">
             {item.cachedThumbnailUrl ? (
                 <img
                     src={item.cachedThumbnailUrl}
@@ -49,7 +49,7 @@ export const DeviceNameCell = ({ item }: { item: DeviceItem }) => {
 
     return (
         <TableCell
-            className="m-0 flex flex-align-items-center flex-nowrap flex-item-fluid filebrowser-list-device-name-cell"
+            className="m-0 flex items-center flex-nowrap flex-item-fluid filebrowser-list-device-name-cell"
             data-testid="column-name"
         >
             <Icon name="tv" alt={iconText} className="mr-2" />
@@ -60,7 +60,7 @@ export const DeviceNameCell = ({ item }: { item: DeviceItem }) => {
 
 export const ModifiedCell = ({ item }: { item: DriveItem }) => {
     return (
-        <TableCell className="flex flex-align-items-center m-0 w-1/6" data-testid="column-modified">
+        <TableCell className="flex items-center m-0 w-1/6" data-testid="column-modified">
             <TimeCell time={item.fileModifyTime} />
         </TableCell>
     );
@@ -68,7 +68,7 @@ export const ModifiedCell = ({ item }: { item: DriveItem }) => {
 
 export const ModifiedCellDevice = ({ item }: { item: DeviceItem }) => {
     return (
-        <TableCell className="flex flex-align-items-center m-0 w-1/6" data-testid="column-modified">
+        <TableCell className="flex items-center m-0 w-1/6" data-testid="column-modified">
             <TimeCell time={item.modificationTime} />
         </TableCell>
     );
@@ -78,7 +78,7 @@ export function SizeCell({ item }: { item: DriveItem | TrashItem }) {
     const { isDesktop } = useActiveBreakpoint();
     return (
         <TableCell
-            className={clsx(['flex flex-align-items-center m-0', isDesktop ? 'w-1/10' : 'w-1/6'])}
+            className={clsx(['flex items-center m-0', isDesktop ? 'w-1/10' : 'w-1/6'])}
             data-testid="column-size"
         >
             {item.isFile ? <SizeCellBase size={item.size} /> : '-'}
@@ -154,7 +154,7 @@ export const ShareOptionsCell = ({ item }: { item: DriveItem }) => {
 
     return (
         <TableCell
-            className="m-0 file-browser-list--icon-column file-browser-list--context-menu-column flex flex-align-items-center"
+            className="m-0 file-browser-list--icon-column file-browser-list--context-menu-column flex items-center"
             data-testid="column-share-options"
         >
             {item.shareUrl ? (

@@ -42,7 +42,7 @@ const Panel = ({
             )}
             data-testid={dataTestId}
         >
-            <div className="flex justify-space-between flex-align-items-baseline">
+            <div className="flex justify-space-between items-baseline">
                 {titleElementToRender}
                 {secondaryTitleElement}
             </div>

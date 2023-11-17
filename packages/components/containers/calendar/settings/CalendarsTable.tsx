@@ -54,7 +54,7 @@ const CalendarsTable = ({
 
     const nameHeader = inputNameHeader || c('Header').t`Name`;
     const statusHeader = (
-        <div className="flex flex-align-items-center">
+        <div className="flex items-center">
             <span className="mr-2">{c('Header').t`Status`}</span>
             <Info url={getKnowledgeBaseUrl('/calendar-status')} />
         </div>

@@ -65,7 +65,7 @@ const ProtonVPNClientsSection = () => {
         },
     ].map(({ href, children }) => {
         return (
-            <div className="flex flex-align-items-center no-scroll" key={children}>
+            <div className="flex items-center no-scroll" key={children}>
                 <DropdownMenuLink className="flex-item-fluid" href={href}>
                     {children}
                 </DropdownMenuLink>

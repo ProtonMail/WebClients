@@ -121,7 +121,7 @@ const MailOnboardingModal = (props: Props) => {
                 <OnboardingContent title={c('Onboarding modal').t`Congratulations on choosing privacy`}>
                     <div className="flex gap-y-4 pt-4 sm:gap-y-8 sm:pt-6">
                         {privacyFeature.map(({ title, description, imgSrc }, index) => (
-                            <div className="flex flex-row gap-4 flex-align-items-center" key={index}>
+                            <div className="flex flex-row gap-4 items-center" key={index}>
                                 <img
                                     className={clsx('w-custom', isNarrow && 'flex-align-self-start')}
                                     style={{ '--w-custom': isNarrow ? '3rem' : '5rem' }}

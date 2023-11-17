@@ -144,9 +144,9 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
                                                     onClose();
                                                 }}
                                                 isSelected={active === index}
-                                                className="w-full flex flex-align-items-center justify-space-between text-left p-3"
+                                                className="w-full flex items-center justify-space-between text-left p-3"
                                             >
-                                                <span className="flex flex-align-items-center text-left text-pre">
+                                                <span className="flex items-center text-left text-pre">
                                                     <Icon name={item.icon} className="mr-4" />
                                                     <Mark value={value}>{item.label}</Mark>
                                                 </span>

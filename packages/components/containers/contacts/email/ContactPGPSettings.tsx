@@ -162,7 +162,7 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                                     .t`Email encryption forces email signature to help authenticate your sent messages`}
                             />
                         </Label>
-                        <Field className="pt-2 flex flex-align-items-center">
+                        <Field className="pt-2 flex items-center">
                             <Toggle
                                 className="mr-2"
                                 id="encrypt-toggle"

@@ -247,7 +247,7 @@ const AddressesInput = ({
                         </Fragment>
                     ))}
                     {placeholderPosition === recipientsOrGroups.length && dragPlaceholder}
-                    <div className="flex-item-fluid flex flex-align-items-center composer-addresses-input-container">
+                    <div className="flex-item-fluid flex items-center composer-addresses-input-container">
                         <AddressesAutocomplete
                             id={id}
                             anchorRef={anchorRef}

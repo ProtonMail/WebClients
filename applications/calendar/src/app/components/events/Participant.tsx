@@ -42,12 +42,12 @@ const Participant = ({
     return (
         <div
             className={clsx([
-                'participant flex flex-nowrap flex-align-items-center w-full relative interactive-pseudo interactive--no-background text-left',
+                'participant flex flex-nowrap items-center w-full relative interactive-pseudo interactive--no-background text-left',
                 className,
             ])}
         >
             <Tooltip title={tooltip}>
-                <div className="participant-display item-icon relative flex flex-item-noshrink flex-align-items-center justify-center">
+                <div className="participant-display item-icon relative flex flex-item-noshrink items-center justify-center">
                     <div className="item-abbr">{initials}</div>
                     <span className="participant-status">{icon}</span>
                 </div>

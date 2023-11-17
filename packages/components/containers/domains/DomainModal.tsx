@@ -407,7 +407,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                             icon
                             key={label}
                             className={clsx([
-                                'flex flex-nowrap flex-align-items-center',
+                                'flex flex-nowrap items-center',
                                 index === step && 'is-selected',
                             ])}
                             disabled={

@@ -60,7 +60,7 @@ export const AutofillOTP: VFC<Props> = ({ hostname, item, visible, onMessage, on
                 onClose={onClose}
             />
             <div className="max-w-full">
-                <div className="flex flex-nowrap flex-align-items-center justify-center mb-2 gap-4">
+                <div className="flex flex-nowrap items-center justify-center mb-2 gap-4">
                     <div className="text-4xl max-w-4/5 text-ellipsis">
                         <span className="text-4xl">
                             <OTPValue code={otp?.token} />

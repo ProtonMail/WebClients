@@ -34,19 +34,19 @@ const StepPrepareContent = ({
 
     return (
         <>
-            <div className="mb-4 flex flex-align-items-center">
+            <div className="mb-4 flex items-center">
                 <Icon className="mr-2" name="inbox" />
                 {c('Info').t`Import mailbox`}
             </div>
 
-            <div className="mb-4 ml-4 flex flex-align-items-center">
+            <div className="mb-4 ml-4 flex items-center">
                 <Icon className="mr-2" name="clock" />
                 {c('Label').t`Import interval`}
                 {`: `}
                 <strong className="ml-2">{timeUnitLabels[selectedPeriod]}</strong>
             </div>
 
-            <div className="mb-4 ml-4 flex flex-align-items-center flex-nowrap">
+            <div className="mb-4 ml-4 flex items-center flex-nowrap">
                 <Icon className="flex-item-noshrink mr-2" name="tag" />
                 <span className="flex-item-noshrink">{c('Info').t`Label all imported messages as`}</span>
                 {importLabel && (
@@ -65,7 +65,7 @@ const StepPrepareContent = ({
                 )}
             </div>
 
-            <div className="mb-4 ml-4 flex flex-align-items-center">
+            <div className="mb-4 ml-4 flex items-center">
                 <Icon className="mr-2" name={isLabelMapping ? 'tags' : 'folders'} />
                 {trans.foundCount(providerFoldersNumLocalized, providerFoldersNum)}
 
@@ -77,7 +77,7 @@ const StepPrepareContent = ({
             </div>
 
             {selectedFoldersCount !== providerFoldersNum && (
-                <div className="mb-4 ml-8 flex flex-align-items-center">
+                <div className="mb-4 ml-8 flex items-center">
                     <strong>
                         <Icon className="mr-2" name={isLabelMapping ? 'tags' : 'folders'} />
                         {trans.selectedCount(selectedFoldersCountLocalized, selectedFoldersCount)}

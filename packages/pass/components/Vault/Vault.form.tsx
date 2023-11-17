@@ -19,7 +19,7 @@ type Props<V extends VaultFormValues> = { form: FormikContextType<V>; autoFocus?
 
 export const VaultForm = <V extends VaultFormValues>({ form, disabled, autoFocus }: Props<V>) => (
     <div style={{ '--column-count': VAULT_COLORS.length - 2 }}>
-        <div className="flex flex-align-items-center gap-x-3">
+        <div className="flex items-center gap-x-3">
             <VaultIcon color={form.values.color} icon={form.values.icon} size={20} background />
             <div className="flex-item-fluid">
                 <FieldsetCluster>

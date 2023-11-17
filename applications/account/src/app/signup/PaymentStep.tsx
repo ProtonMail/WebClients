@@ -141,7 +141,7 @@ const PaymentStep = ({
         });
 
     return (
-        <div className="sign-layout-mobile-columns w-full flex flex-align-items-start justify-center gap-7">
+        <div className="sign-layout-mobile-columns w-full flex items-start justify-center gap-7">
             <Main center={false}>
                 <Header
                     onBack={onBack}

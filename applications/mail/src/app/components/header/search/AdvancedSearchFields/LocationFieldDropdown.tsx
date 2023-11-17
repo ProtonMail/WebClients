@@ -89,7 +89,7 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                                         >
                                             <div
                                                 className={clsx([
-                                                    'flex flex-nowrap flex-align-items-center',
+                                                    'flex flex-nowrap items-center',
                                                     isCustomFolder(item) && item.className,
                                                 ])}
                                             >

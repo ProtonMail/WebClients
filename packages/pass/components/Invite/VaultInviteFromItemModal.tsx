@@ -43,7 +43,7 @@ export const VaultInviteFromItemModal: VFC<Props> = ({
                 hasClose={false}
             />
 
-            <ModalTwoFooter className="flex flex-column flex-align-items-stretch text-center">
+            <ModalTwoFooter className="flex flex-column items-stretch text-center">
                 <Button
                     pill
                     size="large"
@@ -52,7 +52,7 @@ export const VaultInviteFromItemModal: VFC<Props> = ({
                     className="max-w-full"
                     onClick={handleShareVaultClick}
                 >
-                    <div className="flex justify-space-between flex-align-items-center flex-nowrap max-w-full gap-4">
+                    <div className="flex justify-space-between items-center flex-nowrap max-w-full gap-4">
                         <span className="flex flex-item-noshrink text-no-wrap">{c('Action').t`Share this vault`}</span>
                         <VaultTag
                             title={vault.content.name}

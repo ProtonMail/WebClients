@@ -58,7 +58,7 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
                     </Href>
                 </span>
             </div>
-            <span className="flex-item-noshrink flex-align-items-start flex w-full md:w-auto">
+            <span className="flex-item-noshrink items-start flex w-full md:w-auto">
                 <Button
                     size="small"
                     color="weak"

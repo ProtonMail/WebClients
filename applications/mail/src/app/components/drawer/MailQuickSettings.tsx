@@ -185,7 +185,7 @@ const MailQuickSettings = () => {
                                         key={option.value}
                                         value={option.value}
                                         title={option.text}
-                                        className="flex flex-align-items-center flex-nowrap gap-2 flex-item-noshrink"
+                                        className="flex items-center flex-nowrap gap-2 flex-item-noshrink"
                                     >
                                         <>
                                             {option.icon && <Icon name={option.icon} className="flex-item-noshrink" />}
@@ -221,7 +221,7 @@ const MailQuickSettings = () => {
                                         key={option.value}
                                         value={option.value}
                                         title={option.text}
-                                        className="flex flex-align-items-center flex-nowrap gap-2 flex-item-noshrink"
+                                        className="flex items-center flex-nowrap gap-2 flex-item-noshrink"
                                     >
                                         <>
                                             {option.icon && <Icon name={option.icon} className="flex-item-noshrink" />}
@@ -257,7 +257,7 @@ const MailQuickSettings = () => {
                                         key={option.value}
                                         value={option.value}
                                         title={option.text}
-                                        className="flex flex-align-items-center flex-nowrap gap-2 flex-item-noshrink"
+                                        className="flex items-center flex-nowrap gap-2 flex-item-noshrink"
                                     >
                                         <>
                                             {option.icon && <Icon name={option.icon} className="flex-item-noshrink" />}
