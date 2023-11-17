@@ -44,7 +44,7 @@ describe('Import bitwarden json', () => {
         expect(loginItem1.content.urls[0]).toBe('https://test.url1/');
         expect(loginItem1.content.urls[1]).toBe('https://test.url2/');
         expect(loginItem1.content.totpUri).toBe(
-            'otpauth://totp/proton:test?issuer=proton&secret=PROTON33&algorithm=SHA1&digits=6&period=30'
+            'otpauth://totp/test?issuer=proton&secret=PROTON33&algorithm=SHA1&digits=6&period=30'
         );
         const loginItem1ExtraField1 = loginItem1.extraFields[0] as ItemExtraField<'text'>;
         expect(loginItem1ExtraField1.fieldName).toBe('Text 1');
