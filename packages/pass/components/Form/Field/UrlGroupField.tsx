@@ -71,7 +71,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                                             onBlur={() => handleReplace(index)(isValidURL(url).url)}
                                             value={url}
                                             unstyled
-                                            assistContainerClassName="hidden-empty"
+                                            assistContainerClassName="empty:hidden"
                                             inputClassName="color-norm p-0 rounded-none"
                                             placeholder="https://"
                                             onKeyDown={onKeyEnter}
@@ -95,7 +95,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                             <InputFieldTwo
                                 unstyled
                                 id="next-url-field"
-                                assistContainerClassName="hidden-empty"
+                                assistContainerClassName="empty:hidden"
                                 inputClassName="color-norm p-0 rounded-none"
                                 placeholder="https://"
                                 name="url"
