@@ -160,7 +160,7 @@ const MailOnboardingModal = (props: Props) => {
                     title={c('Onboarding modal').t`Automatically forward emails`}
                     description={c('Onboarding modal').t`Forward Gmail messages to your inbox.`}
                 >
-                    <div className="flex gap-1 flex-justify-center">
+                    <div className="flex gap-1 justify-center">
                         <div className="text-sm w-full h-full">
                             <GmailSyncModalAnimation reduceHeight />
                         </div>

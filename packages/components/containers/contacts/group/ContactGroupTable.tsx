@@ -56,7 +56,7 @@ const ContactGroupTable = ({ contactEmails, onDelete }: Props) => {
 
             {!contactEmails.length ? (
                 <div
-                    className="flex flex-align-items-center flex-justify-center min-h-custom"
+                    className="flex flex-align-items-center justify-center min-h-custom"
                     style={{ '--min-h-custom': '9.375rem' }}
                 >
                     {c('Info').t`No contacts added yet`}

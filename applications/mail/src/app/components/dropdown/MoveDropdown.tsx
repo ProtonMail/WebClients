@@ -182,10 +182,10 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
 
     return (
         <form
-            className="flex flex-column flex-nowrap flex-justify-start flex-align-items-stretch flex-item-fluid-auto"
+            className="flex flex-column flex-nowrap justify-start flex-align-items-stretch flex-item-fluid-auto"
             onSubmit={handleSubmit}
         >
-            <div className="flex flex-item-noshrink flex-justify-space-between flex-align-items-center m-4 mb-0">
+            <div className="flex flex-item-noshrink justify-space-between flex-align-items-center m-4 mb-0">
                 <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Move to`}
                 </span>

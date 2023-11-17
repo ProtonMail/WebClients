@@ -125,7 +125,7 @@ export const MarginsTable = () => {
 };
 
 const demoItemClasses =
-    'user-select flex flex-align-items-center flex-justify-center bg-primary rounded-sm text-center';
+    'user-select flex flex-align-items-center justify-center bg-primary rounded-sm text-center';
 
 // Storybooks <code> styling is not available inside stories, so we have to use a custom component
 type CodeProps = {
@@ -141,7 +141,7 @@ const Code = ({ children }: CodeProps) => (
 export const Margin = () => {
     return (
         <div
-            className="border rounded w-full relative flex flex-nowrap gap-2 scroll-if-needed flex-align-items-center flex-justify-space-between"
+            className="border rounded w-full relative flex flex-nowrap gap-2 scroll-if-needed flex-align-items-center justify-space-between"
             style={{ height: '10rem' }}
         >
             {marginSizes.map((size) => (
@@ -162,7 +162,7 @@ export const Margin = () => {
 export const MarginTop = () => {
     return (
         <div
-            className="border rounded w-full relative flex flex-nowrap scroll-if-needed flex-align-items-start flex-justify-space-between text-2xs"
+            className="border rounded w-full relative flex flex-nowrap scroll-if-needed flex-align-items-start justify-space-between text-2xs"
             style={{ height: '8rem' }}
         >
             {marginSizes.map((size) => (
@@ -179,7 +179,7 @@ export const MarginTop = () => {
 export const MarginBottom = () => {
     return (
         <div
-            className="border rounded overflow-hidden w-full relative flex flex-nowrap scroll-if-needed flex-align-items-end flex-justify-space-between text-2xs"
+            className="border rounded overflow-hidden w-full relative flex flex-nowrap scroll-if-needed flex-align-items-end justify-space-between text-2xs"
             style={{ height: '8rem' }}
         >
             {marginSizes.map((size) => (
@@ -195,7 +195,7 @@ export const MarginBottom = () => {
 
 export const MarginY = () => {
     return (
-        <div className="border rounded overflow-hidden w-full relative flex flex-nowrap scroll-if-needed flex-align-items-center flex-justify-space-between text-2xs">
+        <div className="border rounded overflow-hidden w-full relative flex flex-nowrap scroll-if-needed flex-align-items-center justify-space-between text-2xs">
             {marginSizes.map((size) => (
                 <div
                     key={size.class}
@@ -502,7 +502,7 @@ export const Sandbox = () => {
 
     return (
         <>
-            <div className="flex flex-justify-space-between mb-7">
+            <div className="flex justify-space-between mb-7">
                 <div className="w-1/4">
                     {selectedMargin.map(({ id, checked, value }) => (
                         <Label htmlFor={id} key={id} className="flex flex-nowrap flex-align-items-center gap-4 mb-4">
@@ -516,11 +516,11 @@ export const Sandbox = () => {
 
                             <span className="text-semibold w-1/10">{id}</span>
 
-                            <span className="w-1/10 flex flex-item-noshrink flex-justify-center">
+                            <span className="w-1/10 flex flex-item-noshrink justify-center">
                                 <span className="bg-primary rounded-sm flex-item-noshrink flex-item-nogrow">
                                     <span className={`${id}0-25 block rounded-sm bg-primary`}>
                                         <span
-                                            className="flex flex-align-items-center flex-justify-center bg-norm opacity-65"
+                                            className="flex flex-align-items-center justify-center bg-norm opacity-65"
                                             style={{ width: '1em', height: '1em' }}
                                         ></span>
                                     </span>

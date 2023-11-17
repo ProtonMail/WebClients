@@ -105,7 +105,7 @@ export const GapTable = () => {
     );
 };
 
-const demoItemClasses = 'flex flex-align-items-center flex-justify-center bg-primary user-select';
+const demoItemClasses = 'flex flex-align-items-center justify-center bg-primary user-select';
 
 const DemoItems = () => {
     return (

@@ -20,7 +20,7 @@ const DropdownMenuContainer = (
         <div
             ref={ref}
             className={clsx([
-                'dropdown-item-container flex flex-justify-space-between flex-nowrap relative',
+                'dropdown-item-container flex justify-space-between flex-nowrap relative',
                 className,
             ])}
         >

@@ -47,7 +47,7 @@ export const Clickable = () => <LabelStack labels={labelListWithHandlers} />;
 export const WithDelete = () => <LabelStack labels={labelListWithHandlers} showDelete />;
 
 export const Stacked = () => (
-    <div className="flex flex-justify-space-between">
+    <div className="flex justify-space-between">
         <LabelStack labels={labelList} isStacked leftToRight />
         <LabelStack labels={labelList} isStacked />
     </div>

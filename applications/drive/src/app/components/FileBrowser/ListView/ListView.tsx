@@ -58,7 +58,7 @@ const ListItemRow = <T extends FileBrowserBaseItem>({ index, style, data }: List
     if (loading && index === itemCount - 1) {
         return (
             <tr style={style} className="flex">
-                <TableCellBusy className="flex w-full text-lg flex-justify-center flex-align-items-center m-0" />
+                <TableCellBusy className="flex w-full text-lg justify-center flex-align-items-center m-0" />
             </tr>
         );
     }

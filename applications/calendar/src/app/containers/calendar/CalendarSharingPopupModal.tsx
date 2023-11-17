@@ -35,7 +35,7 @@ const CalendarSharingPopupModal = ({ onDisplayed, ...rest }: Props) => {
                     .t`Invite others with a ${BRAND_NAME} account to view or edit events in your calendar.`}</div>
                 <Href href={getKnowledgeBaseUrl('/share-calendar-with-proton-users')}>{c('Link').t`Learn more`}</Href>
             </ModalContent>
-            <ModalFooter className="flex-justify-end">
+            <ModalFooter className="justify-end">
                 <PrimaryButton onClick={rest.onClose}>{c('Action').t`Got it`}</PrimaryButton>
             </ModalFooter>
         </Modal>

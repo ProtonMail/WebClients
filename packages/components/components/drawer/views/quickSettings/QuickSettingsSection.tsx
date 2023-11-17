@@ -13,7 +13,7 @@ const QuickSettingsSection = ({ children, className }: Props) => {
     return (
         <div
             className={clsx(
-                'quickSettingsSection w-full flex-no-min-children flex-column gap-2 flex-item-noshrink flex-justify-center px-4 py-2 rounded-lg shadow-norm',
+                'quickSettingsSection w-full flex-no-min-children flex-column gap-2 flex-item-noshrink justify-center px-4 py-2 rounded-lg shadow-norm',
                 className
             )}
         >

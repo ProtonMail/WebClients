@@ -140,7 +140,7 @@ export const Autosave: VFC<Props> = ({ settings, submission, visible, onClose })
 
     return (
         <FormikProvider value={form}>
-            <Form className="ui-violet flex flex-column flex-nowrap flex-justify-space-between h-full">
+            <Form className="ui-violet flex flex-column flex-nowrap justify-space-between h-full">
                 <NotificationHeader
                     title={(() => {
                         switch (submission.autosave.data.action) {
@@ -191,7 +191,7 @@ export const Autosave: VFC<Props> = ({ settings, submission, visible, onClose })
                         <Field hidden name="password" component={TextField} label={c('Label').t`Password`} />
                     </FieldsetCluster>
                 </div>
-                <div className="flex flex-justify-space-between gap-3">
+                <div className="flex justify-space-between gap-3">
                     <Button pill color="norm" shape="outline" onClick={() => onClose?.({ discard: true })}>{c('Action')
                         .t`Not now`}</Button>
                     <Button

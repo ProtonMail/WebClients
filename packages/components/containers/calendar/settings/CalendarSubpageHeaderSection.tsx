@@ -76,7 +76,7 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, holidaysCalen
                     onEditCalendar={onEdit}
                 />
             )}
-            <div className="my-6 flex flex-justify-space-between flex-nowrap">
+            <div className="my-6 flex justify-space-between flex-nowrap">
                 <div className="grid-align-icon">
                     <CalendarSelectIcon large color={Color} className="mr-3 mt-4 flex-item-noshrink keep-left" />
                     <h1 className="h1 mb-2 text-bold text-break" title={Name}>

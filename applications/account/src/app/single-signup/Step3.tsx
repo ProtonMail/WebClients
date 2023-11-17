@@ -93,7 +93,7 @@ const GeneratedPasswordDisplay = ({
     return (
         <div
             className={clsx(
-                'pl-4 py-1 bg-weak rounded flex flex-justify-space-between flex-align-items-center',
+                'pl-4 py-1 bg-weak rounded flex justify-space-between flex-align-items-center',
                 className
             )}
         >
@@ -196,7 +196,7 @@ const Step3 = ({
                 <Content>
                     <div className="flex gap-2 mb-6">
                         <Avatar color="weak">{getInitials(email)}</Avatar>
-                        <div className="flex text-ellipsis flex-align-items-center flex-justify-center">{email}</div>
+                        <div className="flex text-ellipsis flex-align-items-center justify-center">{email}</div>
                     </div>
                     <form
                         name="setPasswordForm"

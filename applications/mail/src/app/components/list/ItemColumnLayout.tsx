@@ -114,7 +114,7 @@ const ItemColumnLayout = ({
 
     return (
         <div
-            className="flex-item-fluid flex flex-nowrap flex-column flex-justify-center item-titlesender pr-1"
+            className="flex-item-fluid flex flex-nowrap flex-column justify-center item-titlesender pr-1"
             data-testid="message-list:message"
         >
             <div className="flex flex-align-items-center flex-nowrap">

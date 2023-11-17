@@ -168,7 +168,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                 </div>
             </div>
 
-            <div className="flex flex-justify-space-between gap-2">
+            <div className="flex justify-space-between gap-2">
                 <AllDayCheckbox
                     title={
                         model.isAllDay

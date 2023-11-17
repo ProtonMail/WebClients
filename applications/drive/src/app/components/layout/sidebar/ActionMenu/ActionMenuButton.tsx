@@ -47,7 +47,7 @@ export const ActionMenuButton = ({ disabled, className }: PropsWithChildren<Prop
             <SidebarPrimaryButton
                 ref={anchorRef}
                 disabled={disabled}
-                className={clsx(className, 'flex flex-justify-center flex-align-items-center')}
+                className={clsx(className, 'flex justify-center flex-align-items-center')}
                 onClick={toggle}
             >
                 <Icon className="mr-2" name="plus" />

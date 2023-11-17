@@ -322,7 +322,7 @@ const TimeGrid = ({
                     {!isDrawerApp && <div className="calendar-aside" />}
 
                     {isDrawerApp ? (
-                        <div className="ml-4 mr-2 my-2 flex flex-align-items-end flex-justify-space-between w-full">
+                        <div className="ml-4 mr-2 my-2 flex flex-align-items-end justify-space-between w-full">
                             <ButtonGroup size="small" color="weak" shape="outline">
                                 <Tooltip title={previousDay}>
                                     <Button icon onClick={handleClickPrevDay}>
@@ -346,16 +346,16 @@ const TimeGrid = ({
 
                 <div className="flex calendar-fullday-row">
                     {canDisplaySecondaryTimeZone && !isDrawerApp ? (
-                        <div className="calendar-aside text-center flex flex-column flex-justify-end">
+                        <div className="calendar-aside text-center flex flex-column justify-end">
                             <div className="calendar-secondary-timezone-cell calendar-secondary-timezone-cell--header">
                                 {secondaryTimezone}
                             </div>
                         </div>
                     ) : null}
-                    <div className="calendar-aside text-center flex flex-column flex-justify-end">
+                    <div className="calendar-aside text-center flex flex-column justify-end">
                         {isDrawerApp ? (
                             <span
-                                className="h-custom flex flex-column flex-justify-center pt-1"
+                                className="h-custom flex flex-column justify-center pt-1"
                                 style={{ '--h-custom': `${dayEventHeight / 16}rem` }}
                             >
                                 {primaryTimezone}

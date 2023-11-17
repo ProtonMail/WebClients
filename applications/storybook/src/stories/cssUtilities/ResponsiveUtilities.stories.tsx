@@ -9,7 +9,7 @@ export default {
     },
 };
 
-const demoItemClasses = 'flex flex-align-items-center flex-justify-center bg-primary user-select';
+const demoItemClasses = 'flex flex-align-items-center justify-center bg-primary user-select';
 
 export const Responsive = () => {
     return (
@@ -20,7 +20,7 @@ export const Responsive = () => {
                     style={{ backgroundColor: 'rgba(0,0,0,.2)' }}
                 >
                     <div
-                        className="flex flex-align-items-center flex-justify-center bg-primary"
+                        className="flex flex-align-items-center justify-center bg-primary"
                         style={{ height: '3rem', width: '3rem' }}
                     ></div>
                 </div>

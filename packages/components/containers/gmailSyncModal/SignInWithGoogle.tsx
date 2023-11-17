@@ -32,7 +32,7 @@ const SignInWithGoogle = ({ loading, disabled, onClick, fullWidth, reduceHeight 
             style={{ '--h-custom': buttonHeight }}
         >
             <span
-                className="bg-norm rounded-sm flex flex-justify-center flex-align-items-center w-custom min-h-custom"
+                className="bg-norm rounded-sm flex justify-center flex-align-items-center w-custom min-h-custom"
                 style={{ '--w-custom': googleLogoSize, '--min-h-custom': googleLogoSize }}
             >
                 <img src={googleLogo} alt="" width={googleImageSize} height={googleImageSize} aria-hidden="true" />

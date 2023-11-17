@@ -53,7 +53,7 @@ const ProviderCard = ({ className, provider, ...rest }: Props) => {
             aria-label={c('Import provider').t`Import from ${provider}`}
             {...rest}
         >
-            <div className="flex-item-fluid flex flex-justify-center w-full">
+            <div className="flex-item-fluid flex justify-center w-full">
                 {provider === ImportProvider.DEFAULT ? (
                     <Icon name={logo} className="flex-align-self-center" size={40} />
                 ) : (

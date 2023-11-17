@@ -49,7 +49,7 @@ export const Welcome: VFC = () => {
         <>
             <ExtensionHead title={c('Title').t`Thank you for installing ${PASS_APP_NAME}`} />
             <div className="pass-onboarding ui-standard w-full min-h-custom" style={{ '--min-h-custom': '100vh' }}>
-                <div className="m-auto p-14 color-norm flex flex-justify-center">
+                <div className="m-auto p-14 color-norm flex justify-center">
                     <div className="pass-onboarding--gradient"></div>
                     <div className="flex flex-column max-w-custom" style={{ '--max-w-custom': '64rem' }}>
                         <div className="flex flex-align-items-center gap-2 mb-5">

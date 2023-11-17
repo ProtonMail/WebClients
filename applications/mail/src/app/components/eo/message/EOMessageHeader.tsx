@@ -48,7 +48,7 @@ const EOMessageHeader = ({ message, messageLoaded, id, numberOfReplies }: Props)
         <div
             className={clsx([
                 'flex flex-align-items-center border-bottom px-7 py-5',
-                !canReply && 'flex-justify-space-between',
+                !canReply && 'justify-space-between',
             ])}
         >
             <h1 className="text-ellipsis m-0 mb-2 eo-layout-title" title={subject} data-testid="eo:subject">

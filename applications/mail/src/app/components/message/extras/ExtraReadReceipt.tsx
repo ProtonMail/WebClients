@@ -32,7 +32,7 @@ const ExtraReadReceipt = ({ message }: Props) => {
 
     if (receiptSent) {
         return (
-            <span className="mr-2 mb-3 color-success flex w-full md:w-auto flex-align-items-center flex-justify-center md:flex-justify-start">
+            <span className="mr-2 mb-3 color-success flex w-full md:w-auto flex-align-items-center justify-center md:justify-start">
                 <Icon name="checkmark" className="flex-item-noshrink my-auto" />
                 <span className="ml-2" data-testid="message-view:sent-receipt">{c('Action').t`Read receipt sent`}</span>
             </span>
@@ -45,7 +45,7 @@ const ExtraReadReceipt = ({ message }: Props) => {
                 onClick={() => withLoading(handleClick())}
                 disabled={loading}
                 data-testid="message-view:send-receipt"
-                className="inline-flex flex-align-items-center w-full md:w-auto flex-justify-center md:flex-justify-start mr-0 md:mr-2 mb-3 px-2"
+                className="inline-flex flex-align-items-center w-full md:w-auto justify-center md:justify-start mr-0 md:mr-2 mb-3 px-2"
             >
                 <Icon name="bell" className="flex-item-noshrink ml-1" />
                 <span className="ml-2">{c('Action').t`Send read receipt`}</span>

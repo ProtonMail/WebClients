@@ -276,7 +276,7 @@ const SubscriptionCycleSelector = ({
                     {cycles.map((cycle) => {
                         return (
                             <Option value={cycle} title={getShortBillingText(cycle)} key={cycle}>
-                                <div className="flex flex-justify-space-between">
+                                <div className="flex justify-space-between">
                                     <span className="flex-item-noshrink">{getShortBillingText(cycle)}</span>
                                     <span
                                         className={clsx([

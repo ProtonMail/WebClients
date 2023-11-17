@@ -35,7 +35,7 @@ const sizes: Required<ButtonProps>['size'][] = ['small', 'medium', 'large'];
 
 const toggles = ['loading', 'pill', 'fullWidth', 'icon', 'disabled'] as const;
 
-const buttonContainerClassName = 'flex md:flex-item-fluid flex-align-items-center flex-justify-center border';
+const buttonContainerClassName = 'flex md:flex-item-fluid flex-align-items-center justify-center border';
 
 export const Sandbox = () => {
     const [selectedShape, setSelectedShape] = useState<Required<ButtonProps>['shape']>('solid');
@@ -141,7 +141,7 @@ export const Variants = () => {
                         <TableCell>{shape}</TableCell>
                         {colors.map((color) => (
                             <TableCell key={color}>
-                                <div className="flex gap-2 flex-justify-center">
+                                <div className="flex gap-2 justify-center">
                                     <Button shape={shape} color={color}>
                                         Lorem
                                     </Button>

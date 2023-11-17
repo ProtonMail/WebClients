@@ -27,7 +27,7 @@ export const EmptyPhotos: FC<Props> = () => {
             }
         >
             <div
-                className="mt-10 flex flex-align-items-center flex-justify-center gap-4"
+                className="mt-10 flex flex-align-items-center justify-center gap-4"
                 data-testid="photos-empty-page:mobile-apps"
             >
                 <Href href={DRIVE_ANDROID_APP}>

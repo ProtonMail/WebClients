@@ -75,7 +75,7 @@ export const LobbyContent: VFC<Props> = ({ status, onLogin, onLogout, onRegister
     return (
         <div key="lobby" className="anime-fade-in" style={{ '--anime-delay': '250ms' }}>
             <div className="flex flex-column flex-align-items-center gap-3">
-                <span className="pass-lobby--heading text-bold text-norm flex flex-align-items-end flex-justify-center user-select-none">
+                <span className="pass-lobby--heading text-bold text-norm flex flex-align-items-end justify-center user-select-none">
                     {locked ? c('Title').jt`Unlock ${brandNameJSX}` : c('Title').jt`Welcome to ${brandNameJSX}`}
                 </span>
                 <span className="text-norm">

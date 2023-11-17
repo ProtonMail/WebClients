@@ -36,7 +36,7 @@ const ThemeSyncModeDropdown = ({ mode, className, themeIdentifier, list, onChang
 
     return (
         <div className={clsx('', className)}>
-            <div className={clsx('flex flex-justify-space-between flex-nowrap gap-2 mb-2')}>
+            <div className={clsx('flex justify-space-between flex-nowrap gap-2 mb-2')}>
                 <div className="flex flex-align-items-center flex-nowrap gap-2 text-sm">
                     <Icon name={mode === 'light' ? 'sun' : 'moon'} className={clsx('color-weak flex-item-noshrink')} />
                     <span className="color-weak">
@@ -55,7 +55,7 @@ const ThemeSyncModeDropdown = ({ mode, className, themeIdentifier, list, onChang
                 contentProps={{
                     size: { width: DropdownSizeUnit.Anchor, height: DropdownSizeUnit.Dynamic, maxHeight: '10rem' },
                 }}
-                className={clsx('w-full flex flex-nowrap flex-justify-space-between p-2 gap-3 text-left', className)}
+                className={clsx('w-full flex flex-nowrap justify-space-between p-2 gap-3 text-left', className)}
             >
                 <DropdownMenu>
                     {list.map(({ identifier, label, thumbColors }) => {

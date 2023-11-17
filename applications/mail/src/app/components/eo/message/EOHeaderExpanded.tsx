@@ -121,7 +121,7 @@ const EOHeaderExpanded = ({
             )}
 
             {!showDetails && isNarrow && (
-                <div className="flex flex-justify-space-between flex-align-items-center border-top mx-0 sm:mx-8 pt-2 mb-2">
+                <div className="flex justify-space-between flex-align-items-center border-top mx-0 sm:mx-8 pt-2 mb-2">
                     {messageLoaded ? (
                         <>
                             <div className="flex flex-nowrap flex-align-items-center">

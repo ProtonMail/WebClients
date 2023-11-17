@@ -286,7 +286,7 @@ function WelcomeAction({
             <div
                 className={clsx([
                     'flex-item-nowrap h-custom w-custom rounded mr-2',
-                    'flex flex-justify-center flex-align-items-center',
+                    'flex justify-center flex-align-items-center',
                     isDone ? 'bg-success' : 'bg-weak',
                 ])}
                 style={{ '--w-custom': '2.5em', '--h-custom': '2.5em' }}

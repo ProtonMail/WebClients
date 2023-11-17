@@ -187,7 +187,7 @@ export const CalendarModal = ({
     };
 
     const getFakeLabel = (labelText: string) => (
-        <span className="flex field-two-label-container flex-justify-space-between flex-nowrap flex-align-items-end">
+        <span className="flex field-two-label-container justify-space-between flex-nowrap flex-align-items-end">
             <span className="field-two-label">{labelText}</span>
         </span>
     );

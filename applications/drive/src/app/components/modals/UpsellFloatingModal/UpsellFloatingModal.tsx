@@ -25,7 +25,7 @@ interface ChildProps {
 const UpsellFloatingModalContent = ({ onClose }: Pick<ChildProps, 'onClose'>) => {
     return (
         <>
-            <div className="upsell-floating-modal-content w-full flex flex-justify-center p-14">
+            <div className="upsell-floating-modal-content w-full flex justify-center p-14">
                 <Tooltip className="upsell-floating-modal-tooltip" title={c('Action').t`Close`} onClick={onClose}>
                     <Button className="flex-item-noshrink" icon shape="ghost" data-testid="modal:close">
                         <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />

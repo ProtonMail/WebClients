@@ -12,7 +12,7 @@ export default {
 
 export const JustifyStart = () => {
     return (
-        <div className="flex flex-justify-start rounded overflow-hidden border">
+        <div className="flex justify-start rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
             <span className="bg-primary p-4">span</span>
             <em className="bg-primary p-4">em</em>
@@ -22,7 +22,7 @@ export const JustifyStart = () => {
 
 export const JustifyCenter = () => {
     return (
-        <div className="flex flex-justify-center rounded overflow-hidden border">
+        <div className="flex justify-center rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
             <span className="bg-primary p-4">span</span>
             <em className="bg-primary p-4">em</em>
@@ -32,7 +32,7 @@ export const JustifyCenter = () => {
 
 export const JustifyEnd = () => {
     return (
-        <div className="flex flex-justify-end rounded overflow-hidden border">
+        <div className="flex justify-end rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
             <span className="bg-primary p-4">span</span>
             <em className="bg-primary p-4">em</em>
@@ -42,7 +42,7 @@ export const JustifyEnd = () => {
 
 export const JustifyBetween = () => {
     return (
-        <div className="flex flex-justify-space-between rounded overflow-hidden border">
+        <div className="flex justify-space-between rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
             <span className="bg-primary p-4">span</span>
             <em className="bg-primary p-4">em</em>
@@ -52,7 +52,7 @@ export const JustifyBetween = () => {
 
 export const JustifyAround = () => {
     return (
-        <div className="flex flex-justify-space-around rounded overflow-hidden border">
+        <div className="flex justify-space-around rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
             <span className="bg-primary p-4">span</span>
             <em className="bg-primary p-4">em</em>
@@ -62,7 +62,7 @@ export const JustifyAround = () => {
 
 export const JustifyEvenly = () => {
     return (
-        <div className="flex flex-justify-space-evenly rounded overflow-hidden border">
+        <div className="flex justify-space-evenly rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
             <span className="bg-primary p-4">span</span>
             <em className="bg-primary p-4">em</em>
