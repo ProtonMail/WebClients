@@ -3,7 +3,10 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
+import { VAULT_COLOR_MAP } from '@proton/pass/components/Vault/constants';
 import { selectAllTrashedItems } from '@proton/pass/store/selectors';
+import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
+import clsx from '@proton/utils/clsx';
 
 import { CountLabel } from '../../Layout/Dropdown/CountLabel';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
@@ -23,8 +26,12 @@ export const TrashItem: VFC<Props> = ({ selected, handleTrashRestore, handleTras
         <DropdownMenuButton
             label={<CountLabel label={getVaultOptionInfo('trash').label} count={count} />}
             icon="trash"
-            isSelected={selected}
             onClick={onSelect}
+            className={clsx('pass-vault-submenu-vault-item rounded-lg', selected && 'selected')}
+            parentClassName="w-full mx-1"
+            style={{
+                '--vault-icon-color': VAULT_COLOR_MAP[VaultColor.COLOR_UNSPECIFIED],
+            }}
             quickActions={
                 <>
                     <DropdownMenuButton
