@@ -92,7 +92,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                                 createNotification({ text: c('Success').t`Preference saved` });
                             }}
                             active={information.colorScheme === ColorScheme.Light}
-                            className="flex-item-noflex"
+                            className="flex-none"
                         />
                         <ThemeSyncModeDropdown
                             mode="dark"
@@ -103,7 +103,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                                 createNotification({ text: c('Success').t`Preference saved` });
                             }}
                             active={information.colorScheme === ColorScheme.Dark}
-                            className="flex-item-noflex"
+                            className="flex-none"
                         />
                     </div>
                 ) : (

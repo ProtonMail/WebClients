@@ -89,7 +89,7 @@ export const FlexItemNoFlex = () => {
                 150px wide
             </div>
             <span className="bg-primary p-4 w-1/4">25% wide</span>
-            <em className="flex-item-noflex bg-info p-4">.flex-item-noflex</em>
+            <em className="flex-none bg-info p-4">.flex-none</em>
         </div>
     );
 };
