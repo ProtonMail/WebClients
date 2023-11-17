@@ -283,7 +283,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
 
     return (
         <form
-            className="flex flex-column flex-nowrap justify-start items-stretch flex-item-fluid-auto"
+            className="flex flex-column flex-nowrap justify-start items-stretch flex-auto"
             onSubmit={handleSubmit}
         >
             <div className="flex flex-item-noshrink justify-space-between items-center m-4 mb-0">
@@ -317,7 +317,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                 />
             </div>
             <div
-                className="label-dropdown-list overflow-auto mt-4 flex-item-fluid-auto"
+                className="label-dropdown-list overflow-auto mt-4 flex-auto"
                 data-testid="label-dropdown-list"
             >
                 <ul className="unstyled my-0">

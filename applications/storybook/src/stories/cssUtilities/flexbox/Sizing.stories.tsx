@@ -29,7 +29,7 @@ export const FlexItemFluidAuto = () => {
                 150px wide
             </div>
             <span className="bg-primary p-4 w-1/4">25% wide</span>
-            <em className="flex-item-fluid-auto bg-info p-4">.flex-item-fluid-auto</em>
+            <em className="flex-auto bg-info p-4">.flex-auto</em>
         </div>
     );
 };

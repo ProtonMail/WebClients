@@ -100,7 +100,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                     </div>
                     <div
                         data-testid="CustomizeModal:FolderRow:providerName"
-                        className="ml-2 flex-item-fluid-auto text-ellipsis"
+                        className="ml-2 flex-auto text-ellipsis"
                         title={folderProviderName}
                     >
                         {folderProviderName}
@@ -147,7 +147,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                                 {isLabel && !systemFolder ? (
                                     <div
                                         className={clsx([
-                                            'flex-item-fluid-auto text-ellipsis flex items-center',
+                                            'flex-auto text-ellipsis flex items-center',
                                             (hasError || errors.includes(MailImportPayloadError.MERGE_WARNING)) &&
                                                 'text-bold',
                                         ])}

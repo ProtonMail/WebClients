@@ -36,7 +36,7 @@ const Deals = (props: OfferProps) => {
                     <DealPrice />
                     <DealCTA />
                     <DealGuarantee />
-                    <div className="offer-features flex-item-fluid-auto w-full mb-4">
+                    <div className="offer-features flex-auto w-full mb-4">
                         <DealFeatures isExpanded={isExpanded} expand={() => setIsExpanded(true)} />
                     </div>
                     <DealPriceInfos />

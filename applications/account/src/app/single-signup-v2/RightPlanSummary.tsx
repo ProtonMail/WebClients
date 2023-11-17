@@ -50,13 +50,13 @@ const RightPlanSummary = ({
                         {(() => {
                             if (free) {
                                 return (
-                                    <div className="flex-item-fluid-auto color-weak">{c('Info').t`Free forever`}</div>
+                                    <div className="flex-auto color-weak">{c('Info').t`Free forever`}</div>
                                 );
                             }
                             if (discount > 0) {
                                 return (
                                     <>
-                                        <div className="flex-item-fluid-auto">
+                                        <div className="flex-auto">
                                             <SaveLabel percent={discount} />
                                         </div>
                                         <span className="inline-flex">
