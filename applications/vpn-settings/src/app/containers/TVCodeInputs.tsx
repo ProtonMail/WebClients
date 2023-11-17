@@ -54,7 +54,7 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
 
     return (
         <>
-            <div className="code-input-container flex flex-justify-center auto-mobile">
+            <div className="code-input-container block md:flex flex-justify-center">
                 <div className="code-input-div flex-item-fluid flex flex-column text-center pb-4 md:pb-0 pt-2 md:pt-0">
                     <Input
                         ref={refFirstInput}
@@ -70,7 +70,7 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
                         autoFocus
                     />
                 </div>
-                <hr className="w-custom tv-hr mx-4 mt-6 mb-auto no-mobile" style={{ '--w-custom': '5%' }} />
+                <hr className="w-custom tv-hr mx-4 mt-6 mb-auto hidden md:flex" style={{ '--w-custom': '5%' }} />
                 <div className="code-input-div flex-item-fluid flex flex-column text-center pb-4 md:pb-0 pt-2 md:pt-0">
                     <Input
                         ref={refSecondInput}
