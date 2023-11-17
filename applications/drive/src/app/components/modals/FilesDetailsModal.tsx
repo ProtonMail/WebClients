@@ -15,11 +15,11 @@ import {
 } from '@proton/components';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import { DecryptedLink, useLinksDetailsView } from '../../store';
+import { useLinksDetailsView } from '../../store';
 import ModalContentLoader from './ModalContentLoader';
 
 interface Props {
-    selectedItems: DecryptedLink[];
+    selectedItems: { rootShareId: string; linkId: string }[];
     onClose?: () => void;
 }
 
