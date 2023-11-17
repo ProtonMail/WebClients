@@ -13,7 +13,7 @@ const ManageFoldersRowLabelErrors = ({ checked, errors }: Props) => {
     const alreadyUsed = errors.includes(MailImportPayloadError.UNAVAILABLE_NAMES);
 
     return checked ? (
-        <div className="flex-item-noshrink inline-flex flex-align-self-center flex-item-noshrink ml-4">
+        <div className="flex-item-noshrink inline-flex self-center flex-item-noshrink ml-4">
             {tooLong && (
                 <Tooltip title={trans.errorNameTooLong()} type="error">
                     <Icon tabIndex={-1} name="info-circle" className="color-danger" />

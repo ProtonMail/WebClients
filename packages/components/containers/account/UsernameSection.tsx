@@ -200,7 +200,7 @@ const UsernameSection = ({ app }: Props) => {
                                             <Icon
                                                 name="checkmark-circle-filled"
                                                 size={16}
-                                                className="ml-2 color-success flex-align-self-center"
+                                                className="ml-2 color-success self-center"
                                             />
                                         </Tooltip>
                                     </div>
@@ -223,7 +223,7 @@ const UsernameSection = ({ app }: Props) => {
                                                         {c('Action').t`Edit`}
                                                     </InlineLinkButton>
                                                     <Info
-                                                        className="flex-align-self-center"
+                                                        className="self-center"
                                                         title={c('Info')
                                                             .t`You can edit this once to ensure the correct email address for verification.`}
                                                     />
@@ -234,7 +234,7 @@ const UsernameSection = ({ app }: Props) => {
                                             <Icon
                                                 name="exclamation-circle-filled"
                                                 size={16}
-                                                className="mr-1 color-danger flex-align-self-center"
+                                                className="mr-1 color-danger self-center"
                                             />
                                             <span className="color-weak mr-1">
                                                 {c('Info').t`Unverified email address.`}

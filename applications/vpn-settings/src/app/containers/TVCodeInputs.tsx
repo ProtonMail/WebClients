@@ -64,7 +64,7 @@ const TVCodeInputs = ({ value, setValue }: Props) => {
                         onChange={handleOnChangeFirst}
                         onKeyUp={handleKeyUpFirst}
                         placeholder="1234"
-                        className="text-bold max-w-custom flex-align-self-end m-auto"
+                        className="text-bold max-w-custom self-end m-auto"
                         style={{ '--max-w-custom': '15em' }}
                         required
                         autoFocus

@@ -116,7 +116,7 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
                                     <Button
                                         color="weak"
                                         shape="ghost"
-                                        className="inline-flex flex-align-self-center text-no-decoration relative"
+                                        className="inline-flex self-center text-no-decoration relative"
                                         onClick={onClickDefault}
                                         data-testid={`editor-toolbar:font-face:dropdown-item:${fontId}:default`}
                                     >

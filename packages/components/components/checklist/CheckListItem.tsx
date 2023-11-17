@@ -67,7 +67,7 @@ const CheckListItem = ({
             <span className={clsx('flex-item-fluid px-2', done && 'opacity-50')}>{text}</span>
             <div
                 className={clsx(
-                    'w-custom h-custom flex flex-align-self-center',
+                    'w-custom h-custom flex self-center',
                     done && 'bg-primary rounded-50 flex items-center justify-center flex-item-noshrink'
                 )}
                 style={{

@@ -154,7 +154,7 @@ export const AlignItemCenter = () => {
     return (
         <div className="flex items-start rounded overflow-hidden border">
             <div className="bg-primary p-8">div</div>
-            <span className="flex-align-self-center bg-info p-2">Only this is centered</span>
+            <span className="self-center bg-info p-2">Only this is centered</span>
             <em className="bg-primary p-4">em</em>
         </div>
     );
@@ -164,7 +164,7 @@ export const AlignItemStart = () => {
     return (
         <div className="flex items-end rounded overflow-hidden border">
             <div className="bg-primary p-8">div</div>
-            <span className="flex-align-self-start bg-info p-2">This is aligned to the top</span>
+            <span className="self-start bg-info p-2">This is aligned to the top</span>
             <em className="bg-primary p-4">em</em>
         </div>
     );
@@ -174,7 +174,7 @@ export const AlignItemEnd = () => {
     return (
         <div className="flex items-start rounded overflow-hidden border">
             <div className="bg-primary p-8">div</div>
-            <span className="flex-align-self-end bg-info p-2">This is aligned to the end</span>
+            <span className="self-end bg-info p-2">This is aligned to the end</span>
             <em className="bg-primary p-4">em</em>
         </div>
     );
@@ -184,7 +184,7 @@ export const AlignItemStretch = () => {
     return (
         <div className="flex items-start rounded overflow-hidden border">
             <div className="bg-primary p-8">div</div>
-            <span className="flex-align-self-stretch bg-info p-2">This is stretched</span>
+            <span className="self-stretch bg-info p-2">This is stretched</span>
             <em className="bg-primary p-4">em</em>
         </div>
     );
