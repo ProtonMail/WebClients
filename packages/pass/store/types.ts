@@ -2,7 +2,7 @@ import type { AuthService } from '@proton/pass/lib/auth/service';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import type { AppState, MaybeNull } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
-import type { EncryptedExtensionCache } from '@proton/pass/types/worker/cache';
+import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 
 import type * as actions from './actions';
 import type { Notification } from './actions/with-notification';
@@ -16,7 +16,7 @@ export type Telemetry = { start: () => void; stop: () => void; pushEvent: (event
 export interface WorkerRootSagaOptions {
     getAuthStore: () => AuthStore;
     getAuthService: () => AuthService;
-    getCache: () => Promise<Partial<EncryptedExtensionCache>>;
+    getCache: () => Promise<Partial<EncryptedPassCache>>;
     getEventInterval: () => number;
     getLocalSettings: () => Promise<ProxiedSettings>;
     getTelemetry: () => MaybeNull<Telemetry>;
@@ -28,5 +28,5 @@ export interface WorkerRootSagaOptions {
     onSettingUpdate?: (settings: ProxiedSettings) => Promise<void>;
     onShareEventDisabled?: (shareId: string) => void;
     onShareEventItemsDeleted?: (shareId: string, itemIds: string[]) => void;
-    setCache: (encrypted: EncryptedExtensionCache) => Promise<void>;
+    setCache: (encrypted: EncryptedPassCache) => Promise<void>;
 }
