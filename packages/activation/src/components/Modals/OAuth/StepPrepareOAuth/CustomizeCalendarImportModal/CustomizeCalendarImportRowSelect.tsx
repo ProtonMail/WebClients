@@ -90,14 +90,14 @@ const CustomizeCalendarImportRowSelect = ({
                             ]}
                         </SelectTwo>
                     </div>
-                    <div className="flex-item-noshrink flex-align-self-center">{newMergeLabel}</div>
+                    <div className="flex-item-noshrink self-center">{newMergeLabel}</div>
                 </>
             ) : (
                 <>
                     <div className="mr-4 text-ellipsis" title={source}>
                         {source}
                     </div>
-                    <div className="flex-item-noshrink flex-align-self-center">{newMergeLabel}</div>
+                    <div className="flex-item-noshrink self-center">{newMergeLabel}</div>
                 </>
             )}
         </div>

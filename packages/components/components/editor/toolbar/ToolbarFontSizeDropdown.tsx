@@ -80,7 +80,7 @@ const ToolbarFontSizeDropdown = ({ setValue, value, onClickDefault, defaultValue
                                     <Button
                                         color="weak"
                                         shape="ghost"
-                                        className="inline-flex flex-align-self-center text-no-decoration relative"
+                                        className="inline-flex self-center text-no-decoration relative"
                                         onClick={onClickDefault}
                                     >
                                         <Badge className="color-info">{c('Font Size Default').t`Default`}</Badge>

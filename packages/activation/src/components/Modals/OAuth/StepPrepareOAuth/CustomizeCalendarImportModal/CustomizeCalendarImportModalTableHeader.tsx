@@ -73,7 +73,7 @@ const CustomizeCalendarImportModalTableHeader = ({
                         {calendarLimitReached && (
                             <Icon
                                 name="exclamation-circle-filled"
-                                className="color-danger flex-align-self-center mr-2"
+                                className="color-danger self-center mr-2"
                             />
                         )}
                         {importSummaryRenderer()}

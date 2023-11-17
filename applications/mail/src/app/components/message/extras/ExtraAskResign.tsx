@@ -51,7 +51,7 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
         >
             <div className="md:flex-item-fluid flex flex-nowrap mb-2 md:mb-0">
                 <Icon name="exclamation-circle-filled" className="flex-item-noshrink ml-0.5 mt-1 color-danger" />
-                <span className="px-2 mt-0 flex-item-fluid flex-align-self-center">
+                <span className="px-2 mt-0 flex-item-fluid self-center">
                     <span className="mr-1">{c('Info').t`We could not verify the sender's trusted keys.`}</span>
                     <Href className="mr-4 inline-block" href={getKnowledgeBaseUrl('/address-verification')}>
                         {c('Info').t`Learn more`}

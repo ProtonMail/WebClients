@@ -114,7 +114,7 @@ const EOHeaderExpanded = ({
             </div>
             {showDetails && (
                 <div className="my-2 mx-8 flex flex-nowrap color-weak">
-                    <span className="flex-align-self-center mr-2 text-ellipsis">
+                    <span className="self-center mr-2 text-ellipsis">
                         <ItemDate element={message.data} labelID={labelID} mode="full" useTooltip />
                     </span>
                 </div>

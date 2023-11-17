@@ -188,7 +188,7 @@ const ItemColumnLayout = ({
                                 {hasExpiration && !isSnoozeDropdownOpen && (
                                     <ItemExpiration
                                         expirationTime={expirationTime}
-                                        className="ml-1 flex-align-self-center"
+                                        className="ml-1 self-center"
                                         element={element}
                                         labelID={labelID}
                                     />
@@ -197,7 +197,7 @@ const ItemColumnLayout = ({
                                     <ItemAttachmentIcon
                                         icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                                         element={element}
-                                        className="ml-1 flex-align-self-center"
+                                        className="ml-1 self-center"
                                     />
                                 )}
                                 <span className="ml-1 flex-flex-children flex-item-centered-vert hidden-empty">
@@ -210,14 +210,14 @@ const ItemColumnLayout = ({
                                 <ItemExpiration
                                     element={element}
                                     expirationTime={expirationTime}
-                                    className="ml-1 flex-align-self-center"
+                                    className="ml-1 self-center"
                                     labelID={labelID}
                                 />
                             )}
                             <ItemAttachmentIcon
                                 icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                                 element={element}
-                                className="ml-1 flex-align-self-center"
+                                className="ml-1 self-center"
                             />
                             <span className="ml-1 flex-flex-children flex-item-centered-vert hidden-empty">
                                 <ItemStar element={element} />

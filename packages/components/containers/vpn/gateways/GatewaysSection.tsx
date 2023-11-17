@@ -150,7 +150,7 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                         </p>
                     </div>
                     {isAdmin && (
-                        <div className="m-4 mr-6 flex-item-noshrink flex-align-self-center">
+                        <div className="m-4 mr-6 flex-item-noshrink self-center">
                             <Button
                                 color="norm"
                                 onClick={getCustomizeSubscriptionOpener('upsells')}
