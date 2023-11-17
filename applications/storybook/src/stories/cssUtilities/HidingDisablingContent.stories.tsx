@@ -56,7 +56,7 @@ export const PointerEventsNone = () => (
     /*
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
-    <div class="w-1/2 flex-align-self-center">
+    <div class="w-1/2 self-center">
         Applies <code>pointer-events: none</code> to element.
         <br />
         If you need to remove pointer events on all children of an element, you may use{' '}

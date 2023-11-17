@@ -479,7 +479,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                             >
                                 {c('Action').t`Help`}
                             </a>
-                            <span className="flex-align-self-center color-weak" aria-hidden="true">
+                            <span className="self-center color-weak" aria-hidden="true">
                                 •
                             </span>
                             <button

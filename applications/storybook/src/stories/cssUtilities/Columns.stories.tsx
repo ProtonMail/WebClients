@@ -11,7 +11,7 @@ export default {
 };
 
 export const Columns = () => (
-    <div className="w-1/2 flex-align-self-center">
+    <div className="w-1/2 self-center">
         <ul className="list-columns md:column-2">
             <li>This is</li>
             <li>just</li>

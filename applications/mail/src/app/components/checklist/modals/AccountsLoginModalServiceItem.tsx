@@ -56,7 +56,7 @@ const AccountsLoginModalServiceItem = ({
                 <div
                     className={clsx(
                         'flex justify-center w-custom h-custom',
-                        isNarrow && 'flex-align-self-start',
+                        isNarrow && 'self-start',
                         !isNarrow && 'items-center'
                     )}
                     style={{ '--w-custom': isNarrow ? '2.25rem' : '3rem', '--h-custom': isNarrow ? '2.25rem' : '3rem' }}
