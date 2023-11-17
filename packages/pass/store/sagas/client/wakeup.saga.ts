@@ -33,7 +33,7 @@ function* wakeupWorker(
         case AppStatus.IDLE:
         case AppStatus.ERROR: {
             if (loggedIn) {
-                yield put(bootIntent({}));
+                yield put(bootIntent());
                 yield take(bootSuccess.match);
             }
             break;

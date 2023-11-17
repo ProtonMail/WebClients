@@ -91,12 +91,12 @@ function* bootWorker(options: WorkerRootSagaOptions) {
 
         /* trigger a partial synchronization */
         const sync = (yield synchronize(state, SyncType.PARTIAL, userState.features, options)) as SynchronizationResult;
-        yield put(bootSuccess(meta.request.id, { sync, userState }));
+        yield put(bootSuccess({ sync, userState }));
 
         options.onBoot?.({ ok: true });
     } catch (error: unknown) {
         logger.warn('[Saga::Boot]', error);
-        yield put(bootFailure(meta.request.id, error));
+        yield put(bootFailure(error));
         options.onBoot?.({ ok: false, clearCache: isPassCryptoError(error) });
     }
 }
