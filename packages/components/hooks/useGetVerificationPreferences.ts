@@ -76,6 +76,8 @@ const useGetVerificationPreferences = () => {
                 lifetime,
                 // messages from internal senders with e2ee disabled are still signed, thus we need to fetch the corresponding verification keys
                 includeInternalKeysWithE2EEDisabledForMail: true,
+                // untrusted WKD keys are not used for verification, and requesting WKD keys leaks to the sender's domain owner that the message has been read.
+                internalKeysOnly: true,
             });
             const isInternal = RecipientType === RECIPIENT_TYPES.TYPE_INTERNAL;
             const { publicKeys } = splitKeys(await getUserKeys());
