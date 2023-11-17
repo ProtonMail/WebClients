@@ -273,7 +273,7 @@ const HeaderExpanded = ({
             </div>
             {showDetails && (
                 <div className="mb-2 flex flex-nowrap color-weak">
-                    <span className="flex-align-self-center mr-2 text-ellipsis">
+                    <span className="self-center mr-2 text-ellipsis">
                         <ItemDate element={message.data} labelID={labelID} mode="full" useTooltip />
                     </span>
                 </div>

@@ -103,7 +103,7 @@ const UsersOnboardingChecklist = ({
                         isColumnMode(mailSettings) && !smallVariant && !isNarrow && 'justify-center h-full',
                         !isNarrow && !smallVariant && 'm-auto',
                         smallVariant
-                            ? 'px-2 flex-align-self-end'
+                            ? 'px-2 self-end'
                             : 'max-w-full md:max-w-custom p-3 md:p-6 px-4 md:px-0 my-3 md:my-auto gap-6'
                     )}
                     style={smallVariant ? undefined : { '--md-max-w-custom': '30em' }}

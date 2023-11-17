@@ -14,7 +14,7 @@ const RecipientType = ({
     return (
         <span className={className} data-testid={`message-header-expanded:${label}`}>
             <span className="container-to pt-2 text-semibold">{label}</span>
-            <span className="flex-align-self-center message-recipient-item-expanded-content">{children}</span>
+            <span className="self-center message-recipient-item-expanded-content">{children}</span>
         </span>
     );
 };
