@@ -100,7 +100,7 @@ const UsersOnboardingChecklist = ({
                         'w-full flex flex-column flex-item-noshrink',
                         // The checklist is displayed on both the list and details (right side when column mode), we need to hide it on the list when the side details view is visible
                         displayOnMobile && 'free-checklist--container',
-                        isColumnMode(mailSettings) && !smallVariant && !isNarrow && 'flex-justify-center h-full',
+                        isColumnMode(mailSettings) && !smallVariant && !isNarrow && 'justify-center h-full',
                         !isNarrow && !smallVariant && 'm-auto',
                         smallVariant
                             ? 'px-2 flex-align-self-end'

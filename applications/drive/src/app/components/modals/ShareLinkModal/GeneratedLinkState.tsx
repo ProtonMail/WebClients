@@ -163,7 +163,7 @@ function GeneratedLinkState({
                                 data-testid="sharing-modal-url"
                             />
                         </div>
-                        <div className="flex-no-min-children flex-justify-end ml-0 md:ml-2">
+                        <div className="flex-no-min-children justify-end ml-0 md:ml-2">
                             <PrimaryButton
                                 id="copy-url-button"
                                 onClick={handleCopyURLClick}
@@ -197,7 +197,7 @@ function GeneratedLinkState({
                                         <span className="mr-2">{c('Label').t`Protect with password`}</span>
                                     </Label>
                                     <div
-                                        className="flex flex-justify-start pt-2 mr-0 md:mr-2"
+                                        className="flex justify-start pt-2 mr-0 md:mr-2"
                                         data-testid="sharing-modal-passwordModeToggle"
                                     >
                                         <Toggle
@@ -244,7 +244,7 @@ function GeneratedLinkState({
                                         <span className="mr-2">{c('Label').t`Set expiration date`}</span>
                                     </Label>
                                     <div
-                                        className="flex flex-justify-start pt-2 mr-0 md:mr-2"
+                                        className="flex justify-start pt-2 mr-0 md:mr-2"
                                         data-testid="sharing-modal-expirationTimeModeToggle"
                                     >
                                         <Toggle
@@ -272,7 +272,7 @@ function GeneratedLinkState({
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <div className="flex flex-justify-space-between w-full">
+                <div className="flex justify-space-between w-full">
                     <Button
                         loading={deleting}
                         disabled={saving}

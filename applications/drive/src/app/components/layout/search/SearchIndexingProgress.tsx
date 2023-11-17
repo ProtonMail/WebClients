@@ -47,7 +47,7 @@ export const SearchIndexingProgress = () => {
             <span className="color-weak relative advanced-search-progress-status" aria-live="polite" aria-atomic="true">
                 {progressStatus}
             </span>
-            <div className="flex flex-justify-space-between">
+            <div className="flex justify-space-between">
                 <Progress
                     value={progressValue || 0}
                     aria-describedby="timeRemaining"

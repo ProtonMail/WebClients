@@ -77,7 +77,7 @@ const SessionRecoveryInProgressModal = ({ onClose, ...rest }: ModalProps) => {
                 title: c('session_recovery:in_progress:title').t`Password reset requested`,
                 content: (
                     <>
-                        <div className="flex flex-justify-center">
+                        <div className="flex justify-center">
                             <SessionRecoveryInProgressModalIllustration hoursRemaining={gracePeriodHoursRemaining} />
                         </div>
                         <p>

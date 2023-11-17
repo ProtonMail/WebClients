@@ -43,7 +43,7 @@ export const NoSearchResultsView: FC<Props> = () => {
     return (
         <DriveEmptyView image={noResultSearchSvg} title={getTitle(isReady)} subtitle={getSubtitles(isReady)}>
             {!isReady && (
-                <div className="flex flex-justify-center">
+                <div className="flex justify-center">
                     <PrimaryButton
                         size="large"
                         className="text-bold"

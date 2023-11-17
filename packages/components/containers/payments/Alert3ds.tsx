@@ -11,7 +11,7 @@ const Alert3ds = () => {
             <div className="mb-2 text-sm" data-testid="3ds-info">
                 {c('Info').t`We use 3-D Secure to protect your payments`}
             </div>
-            <div className="flex flex-nowrap flex-align-items-center flex-justify-center">
+            <div className="flex flex-nowrap flex-align-items-center justify-center">
                 <img
                     alt={c('Info').t`Visa Secure logo`}
                     className="mr-4"

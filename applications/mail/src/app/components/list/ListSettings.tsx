@@ -32,7 +32,7 @@ const ListSettings = ({
     filterAsDropdown,
 }: Props) => {
     return (
-        <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center gap-2 m-auto">
+        <div className="flex flex-nowrap justify-space-between flex-align-items-center gap-2 m-auto">
             {selectAll && <div className="mr-auto">{selectAll}</div>}
             <FilterActions filter={filter} onFilter={onFilter} mailSettings={mailSettings} dropdown={filterAsDropdown} />
             <SortDropdown

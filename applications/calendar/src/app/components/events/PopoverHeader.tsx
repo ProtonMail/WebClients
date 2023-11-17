@@ -13,7 +13,7 @@ interface Props extends React.ComponentPropsWithRef<'header'> {
 const PopoverHeader = ({ children, onClose, actions, className, ...rest }: Props) => {
     return (
         <header className={clsx(['eventpopover-header', className])} {...rest}>
-            <div className="eventpopover-actions flex flex-justify-end">
+            <div className="eventpopover-actions flex justify-end">
                 {actions}
                 {!!actions && <span className="eventpopover-actions-separator" />}
                 <PopoverCloseButton onClose={onClose} />

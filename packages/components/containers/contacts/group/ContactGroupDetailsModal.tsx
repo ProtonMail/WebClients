@@ -186,7 +186,7 @@ const ContactGroupDetailsModal = ({
                         color="norm"
                         onClick={handleCompose}
                         disabled={loading}
-                        className="inline-flex flex-justify-center"
+                        className="inline-flex justify-center"
                     >
                         <Icon
                             name="pen-square"

@@ -166,7 +166,7 @@ const PlanCardView = ({
                                 id={`${cycle}-price`}
                                 className={clsx(
                                     totals.discount > 0 ? '' : 'flex-align-items-baseline',
-                                    'flex gap-1 flex-align-items-center flex-justify-center'
+                                    'flex gap-1 flex-align-items-center justify-center'
                                 )}
                             >
                                 <span className={clsx(highlightPrice && 'color-primary', 'text-bold h1')}>
@@ -174,7 +174,7 @@ const PlanCardView = ({
                                 </span>
                                 <div
                                     className={clsx(
-                                        totals.discount > 0 && 'flex flex-column flex-justify-center',
+                                        totals.discount > 0 && 'flex flex-column justify-center',
                                         'text-left'
                                     )}
                                 >
@@ -253,7 +253,7 @@ export const PlanCardSelector = ({
     onSelectedClick?: () => void;
 }) => {
     return (
-        <div className="flex flex-justify-space-between gap-4 flex-column lg:flex-row">
+        <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
             {planCards.map((planCard) => {
                 const isFreePlan = planCard.plan === PLANS.FREE;
                 const planIDs = isFreePlan ? {} : { [planCard.plan]: 1 };
@@ -376,7 +376,7 @@ export const UpsellCardSelector = ({
                         }
                     })()}
             </div>
-            <div className="flex flex-justify-space-between gap-4 flex-column lg:flex-row">
+            <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
                 {(() => {
                     if (!hasCurrentPlan) {
                         return null;

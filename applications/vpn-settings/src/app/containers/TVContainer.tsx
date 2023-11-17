@@ -80,7 +80,7 @@ const TVContainer = () => {
             return (
                 <>
                     <h2>{c('Title').t`Device connected!`}</h2>
-                    <div className="flex flex-justify-center my-8">
+                    <div className="flex justify-center my-8">
                         <span className="inline-flex bg-success rounded-50 p-7">
                             <Icon name="checkmark" size={60} />
                         </span>
@@ -94,7 +94,7 @@ const TVContainer = () => {
 
     return (
         <div className="ui-prominent background-container h-full flex-no-min-children flex-column flex-nowrap flex-align-items-center scroll-if-needed">
-            <div className="flex flex-justify-center flex-align-items-center pt-7">
+            <div className="flex justify-center flex-align-items-center pt-7">
                 <div className="w-custom" style={{ '--w-custom': '9.375rem' }}>
                     <Href href="https://protonvpn.com" target="_self">
                         <VpnLogo />

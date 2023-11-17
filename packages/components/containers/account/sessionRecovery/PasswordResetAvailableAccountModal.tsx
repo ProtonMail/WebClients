@@ -162,7 +162,7 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                 />
                 <ModalContent>
                     <>
-                        <div className="flex flex-justify-center">
+                        <div className="flex justify-center">
                             <img src={passwordResetIllustration} alt="" />
                         </div>
                         <div>
@@ -207,7 +207,7 @@ const PasswordResetAvailableAccountModal = ({ skipInfoStep = false, onClose, ...
                 subline: infoSubline,
                 content: (
                     <>
-                        <div className="flex flex-justify-center">
+                        <div className="flex justify-center">
                             <img src={passwordResetIllustration} alt="" />
                         </div>
                         <div>

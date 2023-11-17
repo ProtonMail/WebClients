@@ -13,7 +13,7 @@ const SidebarBackButton = ({ children, ...rest }: AppLinkProps) => {
             color="weak"
             shape="solid"
             fullWidth
-            className="flex flex-align-items-center flex-justify-center flex-nowrap gap-2"
+            className="flex flex-align-items-center justify-center flex-nowrap gap-2"
             {...rest}
         >
             <Icon name="arrow-left" className="on-rtl-mirror flex-item-noshrink" />

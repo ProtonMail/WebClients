@@ -233,7 +233,7 @@ const AccountStepPayment = ({
     };
 
     return (
-        <div className="flex flex-column md:flex-row flex-align-items-stretch md:flex-align-items-start flex-justify-space-between gap-14">
+        <div className="flex flex-column md:flex-row flex-align-items-stretch md:flex-align-items-start justify-space-between gap-14">
             <div className="flex-item-noshrink md:flex-item-fluid order-1 md:order-0">
                 <form
                     ref={formRef}
@@ -429,7 +429,7 @@ const AccountStepPayment = ({
                                                     key={id}
                                                     className={clsx(
                                                         bold && 'text-bold',
-                                                        'flex flex-justify-space-between text-rg'
+                                                        'flex justify-space-between text-rg'
                                                     )}
                                                 >
                                                     {left}
@@ -460,7 +460,7 @@ const AccountStepPayment = ({
                                 {showAmountDue && (
                                     <>
                                         <hr className="m-0" />
-                                        <div className="flex flex-justify-space-between text-bold text-rg">
+                                        <div className="flex justify-space-between text-bold text-rg">
                                             <span className="">{c('Label').t`Amount due`}</span>
                                             <span>
                                                 {loadingPaymentDetails ? (

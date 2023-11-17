@@ -7,7 +7,7 @@ import { DRIVE_LANDING_PAGE } from '@proton/shared/lib/drive/urls';
 import noContentSvg from '@proton/styles/assets/img/illustrations/shared-page-empty-list.svg';
 
 export const EmptyPlaceholder = () => (
-    <div className="flex flex-item-fluid flex-justify-center shared-folder-empty-placeholder-container">
+    <div className="flex flex-item-fluid justify-center shared-folder-empty-placeholder-container">
         <EmptyViewContainer
             className="p-4"
             imageProps={{ src: noContentSvg, title: c('Info').t`Nothing here yet` }}
@@ -18,7 +18,7 @@ export const EmptyPlaceholder = () => (
                 {c('Info').t`Need to share a file? Then get ${DRIVE_APP_NAME},
                         the safest way to share, store, and sync your files.`}
             </p>
-            <div className="flex flex-justify-center">
+            <div className="flex justify-center">
                 <ButtonLike color="norm" shape="outline" as="a" href={DRIVE_LANDING_PAGE} target="_blank">
                     {c('Action').t`Get ${DRIVE_APP_NAME}`}
                 </ButtonLike>

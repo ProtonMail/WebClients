@@ -12,7 +12,7 @@ const AccountSwitcherItem = ({ user }: Props) => {
 
     return (
         <div className="rounded-lg border p-4 pr-6">
-            <div className="flex gap-4 flex-justify-space-between flex-align-items-center">
+            <div className="flex gap-4 justify-space-between flex-align-items-center">
                 <div className="flex gap-4 flex-align-items-center">
                     <Avatar>{initials}</Avatar>
                     <div className="flex flex-column">

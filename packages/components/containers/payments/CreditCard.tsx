@@ -373,7 +373,7 @@ const CreditCard = ({
                 .t`Billing address`}</Label>
             <Input
                 placeholder={title}
-                className="country-select flex-justify-space-between divide-x"
+                className="country-select justify-space-between divide-x"
                 inputClassName="ml-1"
                 prefixClassName="flex-item-fluid"
                 ref={zipRef}

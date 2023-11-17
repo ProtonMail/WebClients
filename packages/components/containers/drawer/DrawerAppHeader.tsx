@@ -136,7 +136,7 @@ const DrawerAppHeader = ({ title, onCloseDropdown, customDropdown }: PrivateIfra
     return (
         <div className="relative ui-standard color-norm flex-item-noshrink" ref={wrapperRef}>
             <Header className="header--drawer p-3">
-                <div className="drawer-app-header-actions flex flex-justify-space-between flex-align-items-center w-full">
+                <div className="drawer-app-header-actions flex justify-space-between flex-align-items-center w-full">
                     <span className="text-bold text-lg">{title}</span>
 
                     <div className="flex flex-align-items-center flex-nowrap gap-2">

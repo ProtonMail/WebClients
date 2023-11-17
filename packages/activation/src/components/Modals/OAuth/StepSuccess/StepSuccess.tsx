@@ -39,7 +39,7 @@ const StepSuccessFooterAction = ({ handleModalDisplay, isCurrentLocationImportPa
 
     if (isCurrentLocationImportPage) {
         return (
-            <ModalFooter className="flex-justify-end">
+            <ModalFooter className="justify-end">
                 <Button data-testid="StepSuccess:CloseButton" shape="outline" onClick={() => handleClose(false)}>
                     {c('Action').t`Close`}
                 </Button>

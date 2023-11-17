@@ -3,7 +3,7 @@ import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 
 const { ACCEPTED, DECLINED, TENTATIVE, DELEGATED, NEEDS_ACTION } = ICAL_ATTENDEE_STATUS;
 
-const iconContainerClassName = 'inline-flex rounded-50 flex-align-items-center flex-justify-center partstatIcon';
+const iconContainerClassName = 'inline-flex rounded-50 flex-align-items-center justify-center partstatIcon';
 const iconClassName = '';
 
 const IconYes = () => (

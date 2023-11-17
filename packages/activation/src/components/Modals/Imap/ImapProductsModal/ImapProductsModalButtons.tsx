@@ -35,7 +35,7 @@ const ImportTypeButton = ({ importType, onClick, disabled }: ImportTypeButtonPro
     return (
         <Button
             aria-label={typeMap[importType].title}
-            className="flex flex-align-center flex-justify-center pt-5 pb-4 px-7"
+            className="flex flex-align-center justify-center pt-5 pb-4 px-7"
             color="weak"
             disabled={disabled}
             onClick={onClick}

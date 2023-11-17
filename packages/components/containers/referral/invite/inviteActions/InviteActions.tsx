@@ -32,7 +32,7 @@ const InviteActions = () => {
         <>
             <div
                 className={clsx([
-                    'flex flex-justify-space-between flex-align-items-center',
+                    'flex justify-space-between flex-align-items-center',
                     showHowItWorksSection && 'mb-8',
                 ])}
             >

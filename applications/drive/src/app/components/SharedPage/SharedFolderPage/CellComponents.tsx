@@ -76,7 +76,7 @@ function SizeCell({ item }: { item: PublicLink }) {
     if (item.progress) {
         return (
             <TableCell
-                className="m-0 w-custom flex flex-nowrap flex-justify-end flex-align-items-center"
+                className="m-0 w-custom flex flex-nowrap justify-end flex-align-items-center"
                 style={{ '--w-custom': '11em' }}
                 data-testid="column-size"
             >
@@ -94,7 +94,7 @@ function SizeCell({ item }: { item: PublicLink }) {
 
     return (
         <TableCell
-            className="m-0 flex flex-nowrap flex-justify-end w-custom"
+            className="m-0 flex flex-nowrap justify-end w-custom"
             style={{ '--w-custom': styleValue }}
             data-testid="column-size"
         >
@@ -125,7 +125,7 @@ function DownloadCell({ item }: { item: PublicLink }) {
 
     return (
         <TableCell
-            className="m-0 flex flex-nowrap flex-justify-end file-browser-list--icon-column w-custom"
+            className="m-0 flex flex-nowrap justify-end file-browser-list--icon-column w-custom"
             style={{ '--w-custom': '11em' }}
             data-testid="column-size"
         >

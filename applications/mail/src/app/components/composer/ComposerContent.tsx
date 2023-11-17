@@ -58,7 +58,7 @@ const ComposerContent = ({
             {disabled && (
                 <>
                     <div className="absolute absolute-cover placeholder opacity-50" />
-                    <div className="absolute absolute-cover color-weak flex flex-justify-center flex-align-items-center">
+                    <div className="absolute absolute-cover color-weak flex justify-center flex-align-items-center">
                         {c('Info').t`Loading message`}
                         <EllipsisLoader />
                     </div>
