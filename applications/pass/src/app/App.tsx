@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import {
@@ -11,6 +12,7 @@ import {
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
+import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 
 import { PASS_CONFIG } from '../lib/core';
@@ -23,6 +25,8 @@ import { Routes } from './Views/Routes';
 import './app.scss';
 
 export const App = () => {
+    const onLink = useCallback((url) => window.open(url, '_blank'), []);
+
     return (
         <ConfigProvider config={PASS_CONFIG}>
             <CompatibilityCheck>
@@ -35,15 +39,17 @@ export const App = () => {
                                 <ClientContext.Consumer>
                                     {(client) => (
                                         <BrowserRouter basename={getBasename(client.state.localID)}>
-                                            <AuthServiceProvider>
-                                                <StoreProvider>
-                                                    <Routes />
-                                                    <Portal>
-                                                        <ModalsChildren />
-                                                        <NotificationsChildren />
-                                                    </Portal>
-                                                </StoreProvider>
-                                            </AuthServiceProvider>
+                                            <NavigationProvider onLink={onLink}>
+                                                <AuthServiceProvider>
+                                                    <StoreProvider>
+                                                        <Routes />
+                                                        <Portal>
+                                                            <ModalsChildren />
+                                                            <NotificationsChildren />
+                                                        </Portal>
+                                                    </StoreProvider>
+                                                </AuthServiceProvider>
+                                            </NavigationProvider>
                                         </BrowserRouter>
                                     )}
                                 </ClientContext.Consumer>
