@@ -22,6 +22,7 @@ export const PayPalButton = ({
     loading,
     disabled: disabledProp,
     currency,
+    onClick,
     ...rest
 }: PayPalButtonProps) => {
     const disabled = disabledProp || paypal.disabled;
@@ -42,7 +43,7 @@ export const PayPalButton = ({
     }
 
     return (
-        <Button loading={paypal.processingToken || loading} disabled={disabled} {...rest}>
+        <Button loading={paypal.processingToken || loading} disabled={disabled} onClick={onClick} {...rest}>
             {children}
         </Button>
     );

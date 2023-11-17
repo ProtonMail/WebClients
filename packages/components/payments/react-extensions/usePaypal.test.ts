@@ -364,5 +364,8 @@ it('should have isInitialState === true when tokenFetched === false and verifica
     expect(result.current.isInitialState).toBe(false);
 
     result.current.reset();
+    expect(result.current.isInitialState).toBe(false); // because reset() must NOT clear verificationError.
+
+    result.current.paymentProcessor!.updateState({ verificationError: null });
     expect(result.current.isInitialState).toBe(true);
 });
