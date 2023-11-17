@@ -136,7 +136,7 @@ const PlanCard = ({
                     <div className="mb-1 plan-selection-spacing">{actionLabel}</div>
                 ) : null}
 
-                <div className="flex flex-column flex-nowrap flex-item-fluid-auto mt-2">{features}</div>
+                <div className="flex flex-column flex-nowrap flex-auto mt-2">{features}</div>
             </div>
         </>
     );

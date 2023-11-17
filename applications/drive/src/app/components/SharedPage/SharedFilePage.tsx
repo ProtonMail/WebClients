@@ -37,7 +37,7 @@ export default function SharedFilePage({ token, link }: Props) {
                             linkId={link.linkId}
                             className="w-full lg:w-auto shared-folder-header-breadcrumbs pb-1"
                         />
-                        <div className="flex flex-item-fluid-auto lg:flex-row-reverse lg:flex-item-fluid">
+                        <div className="flex flex-auto lg:flex-row-reverse lg:flex-item-fluid">
                             <HeaderSecureLabel className="lg:ml-auto" />
                             {link.size ? <HeaderSize size={link.size} /> : null}
                         </div>

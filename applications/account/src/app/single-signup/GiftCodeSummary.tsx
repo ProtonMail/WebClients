@@ -48,7 +48,7 @@ const GiftCodeSummary = ({ coupon, onApplyCode, onRemoveCode }: Props) => {
                         {removingCode ? <CircleLoader /> : <Icon onClick={handleRemoveCode} name="cross" />}
                     </span>
                 </div>
-                <div className="color-weak flex-item-fluid-auto">{description}</div>
+                <div className="color-weak flex-auto">{description}</div>
                 <Price currency={currency} className="color-weak">
                     {discount}
                 </Price>

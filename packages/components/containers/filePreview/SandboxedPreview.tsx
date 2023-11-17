@@ -79,7 +79,7 @@ export const SandboxedPreview: FC<Props> = ({ contents, mimeType, onDownload }) 
 
     if (isError) {
         return (
-            <div className="flex flex-item-fluid-auto relative">
+            <div className="flex flex-auto relative">
                 <UnsupportedPreview onDownload={onDownload} type="file" />
             </div>
         );

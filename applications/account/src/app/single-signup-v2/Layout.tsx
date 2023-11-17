@@ -56,7 +56,7 @@ const Layout = ({
                 languageSelect={languageSelect}
                 logo={logo}
             />
-            <div className="flex-item-fluid-auto flex flex-nowrap flex-column justify-space-between mx-6">
+            <div className="flex-auto flex flex-nowrap flex-column justify-space-between mx-6">
                 {children}
                 {hasDecoration && (
                     <div className="flex items-center flex-column">

@@ -12,7 +12,7 @@ const PromotionAlreadyApplied = () => {
                 className="max-w-custom min-h-custom flex flex-column flex-nowrap"
                 style={{ '--min-h-custom': '100vh', '--max-w-custom': '33.3rem' }}
             >
-                <div className="flex-item-fluid-auto m-6">
+                <div className="flex-auto m-6">
                     <div className="flex justify-center">
                         <ProtonLogo />
                     </div>

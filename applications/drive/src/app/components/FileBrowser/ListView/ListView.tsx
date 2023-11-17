@@ -158,7 +158,7 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
 
     return (
         <div
-            className="flex flex-column flex-item-fluid-auto flex-nowrap"
+            className="flex flex-column flex-auto flex-nowrap"
             onClick={selectionControls?.clearSelections}
             onContextMenu={onViewContextMenu}
             ref={containerRef}

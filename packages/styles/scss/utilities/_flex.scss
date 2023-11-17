@@ -112,10 +112,10 @@ $dummy-map: ();
 @include responsive-classes(
 	(
 		flex-item-fluid: (
-			flex: 1 1 0,
+			flex: 1 1 0%,
 		),
 
-		flex-item-fluid-auto: (
+		flex-auto: (
 			flex: 1 1 auto,
 		),
 

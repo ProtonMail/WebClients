@@ -242,7 +242,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
     return (
         <div className={clsx(bgClassName, 'h-full overflow-auto')}>
             <div className="min-h-custom flex flex-column flex-nowrap" style={{ '--min-h-custom': '100vh' }}>
-                <div className="flex-item-fluid-auto">
+                <div className="flex-auto">
                     <div
                         className={clsx('mb-0 sm:mb-4 pb-0 p-4 sm:pb-6 sm:p-6 m-auto max-w-custom')}
                         style={{ '--max-w-custom': '74rem' }}

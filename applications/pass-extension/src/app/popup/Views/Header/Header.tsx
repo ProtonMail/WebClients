@@ -53,7 +53,7 @@ export const Header: VFC = () => {
 
                     <ItemQuickActions onCreate={onCreate} origin={subdomain ?? domain ?? hostname ?? null} />
 
-                    <div className="flex-item-fluid-auto w-full">
+                    <div className="flex-auto w-full">
                         <div
                             className={clsx(
                                 'pass-spotlight-panel',

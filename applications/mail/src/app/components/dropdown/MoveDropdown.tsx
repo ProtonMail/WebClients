@@ -182,7 +182,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
 
     return (
         <form
-            className="flex flex-column flex-nowrap justify-start items-stretch flex-item-fluid-auto"
+            className="flex flex-column flex-nowrap justify-start items-stretch flex-auto"
             onSubmit={handleSubmit}
         >
             <div className="flex flex-item-noshrink justify-space-between items-center m-4 mb-0">
@@ -215,7 +215,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                 />
             </div>
             <div
-                className="move-dropdown-list overflow-auto mt-4 flex-item-fluid-auto"
+                className="move-dropdown-list overflow-auto mt-4 flex-auto"
                 data-testid="move-dropdown-list"
             >
                 <ul className="unstyled my-0">

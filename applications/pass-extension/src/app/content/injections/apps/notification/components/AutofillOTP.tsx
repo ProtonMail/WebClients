@@ -77,7 +77,7 @@ export const AutofillOTP: VFC<Props> = ({ hostname, item, visible, onMessage, on
                     pill
                     color="norm"
                     type="submit"
-                    className="flex-item-fluid-auto"
+                    className="flex-auto"
                     onClick={() => {
                         if (otp?.token) {
                             onMessage?.({

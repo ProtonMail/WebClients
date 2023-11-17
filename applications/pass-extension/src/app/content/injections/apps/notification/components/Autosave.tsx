@@ -171,7 +171,7 @@ export const Autosave: VFC<Props> = ({ settings, submission, visible, onClose })
                             className="flex-item-noshrink"
                             loadImage={settings.loadDomainImages}
                         />
-                        <div className="flex-item-fluid-auto">
+                        <div className="flex-auto">
                             <Field
                                 lengthLimiters
                                 name="name"
@@ -200,7 +200,7 @@ export const Autosave: VFC<Props> = ({ settings, submission, visible, onClose })
                         type="submit"
                         loading={busy}
                         disabled={busy}
-                        className="flex-item-fluid-auto"
+                        className="flex-auto"
                     >
                         {(() => {
                             switch (submission.autosave.data.action) {

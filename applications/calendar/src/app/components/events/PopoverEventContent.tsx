@@ -143,7 +143,7 @@ const PopoverEventContent = ({
 
             return (
                 <>
-                    <span className="text-break flex-item-fluid-auto flex-item-nogrow mr-2">{calendarName}</span>
+                    <span className="text-break flex-auto flex-item-nogrow mr-2">{calendarName}</span>
                     <span className="text-no-wrap flex-item-noshrink">
                         {disabledText} <Info title={tooltipText} />
                     </span>

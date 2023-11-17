@@ -91,7 +91,7 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
                 )}
                 <div
                     className={clsx(
-                        'flex flex-nowrap flex-item-fluid-auto gap-1',
+                        'flex flex-nowrap flex-auto gap-1',
                         ellipsis && 'text-ellipsis',
                         danger && 'color-danger'
                     )}
