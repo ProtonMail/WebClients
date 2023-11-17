@@ -68,7 +68,7 @@ export const Header: FC<Props> = ({ hamburger }) => {
                     );
                 })()}
 
-                <div className="flex-item-fluid-auto w-full">
+                <div className="flex-auto w-full">
                     <div
                         className={clsx(
                             'pass-spotlight-panel',

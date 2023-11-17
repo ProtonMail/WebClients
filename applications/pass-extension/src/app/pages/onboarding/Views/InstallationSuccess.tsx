@@ -94,7 +94,7 @@ export const InstallationSuccess: VFC = () => {
 
                         <div className="flex items-center gap-2 mb-4">
                             <span className="text-bold">Step {isPinned ? 2 : 1} of 2</span>
-                            <hr className="pass-installation--white-separator my-2 flex flex-item-fluid-auto" />
+                            <hr className="pass-installation--white-separator my-2 flex flex-auto" />
                         </div>
 
                         <div className="mx-auto flex justify-center flex-nowrap flex-column lg:flex-row gap-12">

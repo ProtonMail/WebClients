@@ -66,7 +66,7 @@ export const SubscriptionItemView = ({
         <div className={singleClassName}>
             <div className="flex-item-fluid pl-2">
                 <div className="flex items-center">
-                    <div className="flex-item-fluid-auto mr-4">
+                    <div className="flex-auto mr-4">
                         <strong className="text-lg">{title}</strong>
                     </div>
                     <strong className="text-lg flex-item-noshrink color-primary">
@@ -74,7 +74,7 @@ export const SubscriptionItemView = ({
                     </strong>
                 </div>
                 <div className="flex items-center">
-                    <span className="color-weak flex flex-item-fluid-auto">
+                    <span className="color-weak flex flex-auto">
                         {loading ? <EllipsisLoader /> : bottomLeft}
                     </span>
                     <span className="color-success flex flex-item-noshrink">{loading ? null : bottomRight}</span>
@@ -108,7 +108,7 @@ const CycleItemView = ({
     return (
         <div className="flex-item-fluid pl-2">
             <div className="flex items-center">
-                <div className="flex-item-fluid-auto mr-4">
+                <div className="flex-auto mr-4">
                     <strong className="text-lg">{text}</strong>
                     {freeMonths > 0 && (
                         <span className="color-success">
@@ -132,7 +132,7 @@ const CycleItemView = ({
             </div>
             <div className="flex items-center">
                 <span
-                    className="color-weak flex flex-item-fluid-auto"
+                    className="color-weak flex flex-auto"
                     data-testid={`price-per-user-per-month-${cycle}`}
                 >
                     {loading ? (
