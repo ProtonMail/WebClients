@@ -27,7 +27,7 @@ const ReferralSpotlight = ({ children, show, onDisplayed, anchorRef, user }: Pro
             content={
                 <>
                     <div className="flex flex-nowrap my-2">
-                        <div className="flex-item-noshrink mr-4">
+                        <div className="shrink-0 mr-4">
                             <img src={starImg} alt="star" className="w-custom" style={{ '--w-custom': '4em' }} />
                         </div>
                         <div>

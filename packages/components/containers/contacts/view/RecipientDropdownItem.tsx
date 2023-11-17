@@ -50,7 +50,7 @@ const RecipientDropdownItem = ({
 
     return (
         <div className="flex flex-nowrap items-center p-2" onClick={handleClick}>
-            <span className="item-icon flex flex-item-noshrink rounded mx-2" aria-hidden="true">
+            <span className="item-icon flex shrink-0 rounded mx-2" aria-hidden="true">
                 <span className="m-auto">
                     {simple ? (
                         <>{getInitials(label)}</>
@@ -77,7 +77,7 @@ const RecipientDropdownItem = ({
             {additionalAction}
             <Copy
                 value={recipient.Address}
-                className="mr-2 flex-item-noshrink"
+                className="mr-2 shrink-0"
                 onCopy={handleCopyEmail}
                 tooltipText={c('Action').t`Copy email to clipboard`}
                 shape="ghost"

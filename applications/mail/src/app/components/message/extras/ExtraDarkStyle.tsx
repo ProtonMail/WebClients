@@ -42,7 +42,7 @@ const ExtraDarkStyle = ({ message }: Props) => {
                 data-testid="message-view:remove-dark-style"
                 className="inline-flex items-center w-full md:w-auto justify-center md:justify-start mr-0 md:mr-2 mb-3 px-2"
             >
-                <Icon name="circle-half-filled" className="flex-item-noshrink ml-1" />
+                <Icon name="circle-half-filled" className="shrink-0 ml-1" />
                 <span className="ml-2">{c('Action').t`Revert to original display`}</span>
             </Button>
         </Tooltip>

@@ -22,12 +22,12 @@ interface Props {
 const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
     <ToolbarDropdown
         content={<Icon name="three-dots-horizontal" size={COMPOSER_TOOLBAR_ICON_SIZE} alt={c('Action').t`More`} />}
-        className="flex-item-noshrink ml-auto editor-toolbar-more-dropdown"
+        className="shrink-0 ml-auto editor-toolbar-more-dropdown"
         title={c('Action').t`More`}
         data-testid="editor-toolbar-more"
         hasCaret={false}
     >
-        <DropdownMenu className="editor-toolbar-more-menu flex-item-noshrink">
+        <DropdownMenu className="editor-toolbar-more-menu shrink-0">
             {!isNarrow && metadata.supportImages && (
                 <DropdownMenuButton
                     key={17}

@@ -120,7 +120,7 @@ const AttachmentItem = ({
             >
                 <span className="relative flex flex-1 rounded message-attachmentPrimaryAction interactive-pseudo">
                     <button
-                        className="pl-2 py-2 flex flex-item-noshrink message-attachmentTypeIcon"
+                        className="pl-2 py-2 flex shrink-0 message-attachmentTypeIcon"
                         type="button"
                         onClick={handleAction(true)}
                         tabIndex={-1}
@@ -142,7 +142,7 @@ const AttachmentItem = ({
                         <span className="my-auto flex items-baseline flex-nowrap pr-2">
                             <FileNameDisplay text={name} />
                             <span
-                                className="message-attachmentSize sr-only align-baseline inline-block flex-item-noshrink ml-1"
+                                className="message-attachmentSize sr-only align-baseline inline-block shrink-0 ml-1"
                                 data-testid="attachment-item:size"
                             >
                                 {humanAttachmentSize}
@@ -166,7 +166,7 @@ const AttachmentItem = ({
                         >
                             {humanAttachmentSize}
                         </span>
-                        <span className="message-attachmentSecondaryAction-download flex flex-item-noshrink">
+                        <span className="message-attachmentSecondaryAction-download flex shrink-0">
                             {loading ? (
                                 <CircleLoader className="m-auto" size="small" />
                             ) : (

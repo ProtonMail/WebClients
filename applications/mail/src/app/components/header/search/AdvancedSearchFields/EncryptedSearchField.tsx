@@ -80,7 +80,7 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
             <span>
                 <Toggle
                     id="es-toggle"
-                    className="ml-auto flex-item-noshrink"
+                    className="ml-auto shrink-0"
                     checked={contentIndexingDone && esEnabled && !isEnablingContentSearch}
                     onChange={toggleEncryptedSearch}
                     disabled={showProgress}

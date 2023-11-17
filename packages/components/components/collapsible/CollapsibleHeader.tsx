@@ -70,7 +70,7 @@ const CollapsibleHeader = <E extends ElementType = typeof defaultElement>({
                 {children}
             </div>
 
-            {suffix && <div className="flex flex-item-noshrink ml-2">{suffix}</div>}
+            {suffix && <div className="flex shrink-0 ml-2">{suffix}</div>}
         </Element>
     );
 };

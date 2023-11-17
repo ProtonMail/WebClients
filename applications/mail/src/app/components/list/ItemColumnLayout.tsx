@@ -124,10 +124,10 @@ const ItemColumnLayout = ({
                             <ItemUnread
                                 element={element}
                                 labelID={labelID}
-                                className={clsx('item-unread-dot flex-item-noshrink', isCompactView && 'mr-1')}
+                                className={clsx('item-unread-dot shrink-0', isCompactView && 'mr-1')}
                                 isSelected={isSelected}
                             />
-                            <ItemAction element={element} className="mr-1 my-auto flex-item-noshrink" />
+                            <ItemAction element={element} className="mr-1 my-auto shrink-0" />
                             {senders && (
                                 <span
                                     className="inline-flex max-w-full text-ellipsis"
@@ -140,7 +140,7 @@ const ItemColumnLayout = ({
 
                         <span
                             className={clsx(
-                                'item-firstline-infos flex-item-noshrink flex flex-nowrap items-center',
+                                'item-firstline-infos shrink-0 flex flex-nowrap items-center',
                                 isSnoozeDropdownOpen && 'invisible'
                             )}
                         >
@@ -156,12 +156,12 @@ const ItemColumnLayout = ({
                     <div className="flex flex-nowrap items-center item-secondline max-w-full">
                         <div className="item-subject flex-1 flex flex-nowrap items-center">
                             {showIcon && (
-                                <span className="flex flex-item-noshrink">
+                                <span className="flex shrink-0">
                                     <ItemLocation element={element} labelID={labelID} />
                                 </span>
                             )}
                             {conversationMode && (
-                                <NumMessages className="mr-1 flex-item-noshrink" conversation={element} />
+                                <NumMessages className="mr-1 shrink-0" conversation={element} />
                             )}
                             <span
                                 role="heading"
@@ -174,7 +174,7 @@ const ItemColumnLayout = ({
                             </span>
                         </div>
 
-                        <div className="item-icons hidden md:flex flex-item-noshrink flex-nowrap">
+                        <div className="item-icons hidden md:flex shrink-0 flex-nowrap">
                             <span className="flex item-meta-infos">
                                 {hasLabels && isCompactView && !isSnoozeDropdownOpen && (
                                     <ItemLabels
@@ -205,7 +205,7 @@ const ItemColumnLayout = ({
                                 </span>
                             </span>
                         </div>
-                        <div className="item-icons flex flex-row flex-item-noshrink flex-nowrap md:hidden">
+                        <div className="item-icons flex flex-row shrink-0 flex-nowrap md:hidden">
                             {hasExpiration && (
                                 <ItemExpiration
                                     element={element}
@@ -232,7 +232,7 @@ const ItemColumnLayout = ({
 
             {hasLabels && !isCompactView && (
                 <div className="flex flex-nowrap items-center max-w-full no-scroll">
-                    <div className="item-icons flex flex-item-noshrink flex-nowrap mt-1">
+                    <div className="item-icons flex shrink-0 flex-nowrap mt-1">
                         <ItemLabels
                             className="ml-2"
                             labels={labels}

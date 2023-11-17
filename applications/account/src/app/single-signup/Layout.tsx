@@ -94,13 +94,13 @@ const Layout = ({
                 logo={
                     hasDecoration && href ? (
                         <Href
-                            className="flex-item-noshrink relative interactive-pseudo-protrude rounded interactive--no-background"
+                            className="shrink-0 relative interactive-pseudo-protrude rounded interactive--no-background"
                             href={href}
                         >
                             {protonLogo}
                         </Href>
                     ) : (
-                        <div className="flex-item-noshrink flex flex-align-item-center">{protonLogo}</div>
+                        <div className="shrink-0 flex flex-align-item-center">{protonLogo}</div>
                     )
                 }
                 isDarkBg={isDarkBg && !isTinyMobile}

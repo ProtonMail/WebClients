@@ -152,14 +152,14 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
 
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
-                <div className="flex items-center justify-space-between flex-item-noshrink flex-nowrap gap-2 mt-2 pl-4 pr-2 mx-3">
+                <div className="flex items-center justify-space-between shrink-0 flex-nowrap gap-2 mt-2 pl-4 pr-2 mx-3">
                     <span
                         className={clsx(
                             'flex items-center flex-nowrap',
                             passPlan === UserPassPlan.PLUS && 'ui-orange'
                         )}
                     >
-                        <Icon name="star" className="mr-3 flex-item-noshrink" color="var(--interaction-norm)" />
+                        <Icon name="star" className="mr-3 shrink-0" color="var(--interaction-norm)" />
                         <span className="text-left">
                             <div className="text-sm text-ellipsis">{user?.Email}</div>
                             <div className="text-sm" style={{ color: 'var(--interaction-norm)' }}>

@@ -43,7 +43,7 @@ export const FieldBox: FC<FieldBoxProps> = (props) => {
             {icon && (
                 <span
                     className={clsx(
-                        'flex justify-center items-center flex-item-noshrink pr-4',
+                        'flex justify-center items-center shrink-0 pr-4',
                         isCoreIcon && 'mt-2'
                     )}
                     style={{ color: 'var(--fieldset-cluster-icon-color)' }}
@@ -55,7 +55,7 @@ export const FieldBox: FC<FieldBoxProps> = (props) => {
             <div className="w-full">{children}</div>
 
             {actions && (
-                <span className={clsx('flex-item-noshrink ml-3', actionsContainerClassName)}>
+                <span className={clsx('shrink-0 ml-3', actionsContainerClassName)}>
                     {stopOnClickPropagation(actions)}
                 </span>
             )}

@@ -45,7 +45,7 @@ const PromotionBanner = ({
     return (
         <div
             className={clsx(
-                'flex flex-nowrap flex-item-noshrink bg-promotion relative',
+                'flex flex-nowrap shrink-0 bg-promotion relative',
                 contentCentered && 'text-left lg:text-center p-0-5',
                 rounded && 'rounded',
                 className
@@ -76,13 +76,13 @@ const PromotionBanner = ({
                     />
                 ) : (
                     <>
-                        {icon && <div className="flex-item-noshrink mr-2">{icon}</div>}
+                        {icon && <div className="shrink-0 mr-2">{icon}</div>}
                         {description && (
                             <div className={clsx('bg-promotion-text', !contentCentered && 'flex-1')}>
                                 {description}
                             </div>
                         )}
-                        {cta && <div className="flex-item-noshrink ml-2 max-w-1/2 text-right">{cta}</div>}
+                        {cta && <div className="shrink-0 ml-2 max-w-1/2 text-right">{cta}</div>}
                     </>
                 )}
             </div>

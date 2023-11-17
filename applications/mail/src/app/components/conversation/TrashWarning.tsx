@@ -41,7 +41,7 @@ const TrashWarning = ({ inTrash, filter, onToggle }: Props, ref: React.Ref<HTMLD
             data-shortcut-target="trash-warning"
         >
             <div className="flex flex-nowrap items-center">
-                <Icon name="trash" className="mr-4 flex-item-noshrink" />
+                <Icon name="trash" className="mr-4 shrink-0" />
                 <span>
                     {inTrash
                         ? c('Info').t`This conversation contains non-trashed messages.`

@@ -326,7 +326,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                                 render={({ onSubmit, title, content, footer, step }) => {
                                     return (
                                         <LiteBox maxWidth={step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? 72 : undefined}>
-                                            <div className="flex flex-nowrap flex-item-noshrink items-start justify-space-between">
+                                            <div className="flex flex-nowrap shrink-0 items-start justify-space-between">
                                                 <div>
                                                     {title && (
                                                         <>
@@ -338,7 +338,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                                                 {!hideClose && (
                                                     <Tooltip title={c('Action').t`Close`}>
                                                         <Button
-                                                            className="flex-item-noshrink"
+                                                            className="shrink-0"
                                                             icon
                                                             shape="ghost"
                                                             onClick={handleClose}

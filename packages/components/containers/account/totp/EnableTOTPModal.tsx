@@ -200,7 +200,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                                         {sharedSecret}
                                     </code>
                                     <Copy
-                                        className="ml-2 flex-item-noshrink"
+                                        className="ml-2 shrink-0"
                                         tooltipText={c('Action').t`Copy key to the clipboard`}
                                         value={sharedSecret}
                                         onCopy={() =>

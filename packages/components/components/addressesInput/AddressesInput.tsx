@@ -56,7 +56,7 @@ export const AddressesInputItem = forwardRef<HTMLDivElement, AddressesInputItemP
                 <Tooltip title={c('Action').t`Remove`}>
                     <button
                         {...removeProps}
-                        className="pill-remove inline-flex flex-item-noshrink p-2 no-pointer-events-children h-full interactive"
+                        className="pill-remove inline-flex shrink-0 p-2 no-pointer-events-children h-full interactive"
                         onClick={onRemove}
                         type="button"
                     >

@@ -46,7 +46,7 @@ const DMARCSection = () => {
                             <div className="flex flex-nowrap items-center" key="value">
                                 <Copy
                                     onCopy={handleCopy}
-                                    className="flex-item-noshrink mr-2"
+                                    className="shrink-0 mr-2"
                                     size="small"
                                     value={value}
                                 />{' '}

@@ -46,7 +46,7 @@ const ItemsListItemRaw: VFC<Props> = ({ item, search = '', active = false, ...re
                 <ItemIcon
                     item={item}
                     size={20}
-                    className={clsx('mr-3  flex-item-noshrink', itemTypeToSubThemeClassName[data.type])}
+                    className={clsx('mr-3  shrink-0', itemTypeToSubThemeClassName[data.type])}
                 />
                 <div className="text-left">
                     <span className="flex items-center">

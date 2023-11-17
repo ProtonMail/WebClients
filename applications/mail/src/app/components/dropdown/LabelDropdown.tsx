@@ -286,7 +286,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
             className="flex flex-column flex-nowrap justify-start items-stretch flex-auto"
             onSubmit={handleSubmit}
         >
-            <div className="flex flex-item-noshrink justify-space-between items-center m-4 mb-0">
+            <div className="flex shrink-0 justify-space-between items-center m-4 mb-0">
                 <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Label as`}
                 </span>
@@ -304,7 +304,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     </Button>
                 </Tooltip>
             </div>
-            <div className="flex-item-noshrink m-4 mb-0">
+            <div className="shrink-0 m-4 mb-0">
                 <SearchInput
                     value={search}
                     onChange={updateSearch}
@@ -327,7 +327,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                             className="dropdown-item dropdown-item-button relative cursor-pointer w-full flex flex-nowrap items-center py-2 px-4"
                         >
                             <Checkbox
-                                className="flex-item-noshrink mr-2"
+                                className="shrink-0 mr-2"
                                 id={labelCheckID(ID)}
                                 checked={selectedLabelIDs[ID] === LabelState.On}
                                 indeterminate={selectedLabelIDs[ID] === LabelState.Indeterminate}
@@ -345,7 +345,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                                     name="circle-filled"
                                     size={16}
                                     color={Color}
-                                    className="flex-item-noshrink relative mx-2"
+                                    className="shrink-0 relative mx-2"
                                 />
                                 <span className="text-ellipsis">
                                     <Mark value={search}>{Name}</Mark>
@@ -373,8 +373,8 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     )}
                 </ul>
             </div>
-            <hr className="m-0 flex-item-noshrink" />
-            <div className={clsx(['px-4 mt-4 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
+            <hr className="m-0 shrink-0" />
+            <div className={clsx(['px-4 mt-4 shrink-0', alwaysCheckboxDisabled && 'color-disabled'])}>
                 <Checkbox
                     id={alwaysCheckID}
                     checked={always}
@@ -386,7 +386,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     {c('Label').t`Always label sender's emails`}
                 </Checkbox>
             </div>
-            <div className="px-4 mt-4 flex-item-noshrink">
+            <div className="px-4 mt-4 shrink-0">
                 <Checkbox
                     id={archiveCheckID}
                     checked={alsoArchive}
@@ -397,7 +397,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     {c('Label').t`Also archive`}
                 </Checkbox>
             </div>
-            <div className="m-4 flex-item-noshrink">
+            <div className="m-4 shrink-0">
                 <PrimaryButton
                     className="w-full"
                     loading={loading}

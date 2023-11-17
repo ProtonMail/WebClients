@@ -60,7 +60,7 @@ const ContactViewAdrs = ({ vCardContact, isSignatureVerified = false }: Props) =
                                     </Fragment>
                                 ))}
                             </span>
-                            <span className="flex-item-noshrink flex py-1 contact-view-actions h-4">
+                            <span className="shrink-0 flex py-1 contact-view-actions h-4">
                                 <Copy
                                     className="ml-2 py-2 mt-0.5"
                                     value={lines.join(', ')}

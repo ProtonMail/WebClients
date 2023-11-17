@@ -185,10 +185,10 @@ const MailQuickSettings = () => {
                                         key={option.value}
                                         value={option.value}
                                         title={option.text}
-                                        className="flex items-center flex-nowrap gap-2 flex-item-noshrink"
+                                        className="flex items-center flex-nowrap gap-2 shrink-0"
                                     >
                                         <>
-                                            {option.icon && <Icon name={option.icon} className="flex-item-noshrink" />}
+                                            {option.icon && <Icon name={option.icon} className="shrink-0" />}
                                             <span className="text-nowrap">{option.text}</span>
                                         </>
                                     </Option>
@@ -221,11 +221,11 @@ const MailQuickSettings = () => {
                                         key={option.value}
                                         value={option.value}
                                         title={option.text}
-                                        className="flex items-center flex-nowrap gap-2 flex-item-noshrink"
+                                        className="flex items-center flex-nowrap gap-2 shrink-0"
                                     >
                                         <>
-                                            {option.icon && <Icon name={option.icon} className="flex-item-noshrink" />}
-                                            <span className="flex-item-noshrink">{option.text}</span>
+                                            {option.icon && <Icon name={option.icon} className="shrink-0" />}
+                                            <span className="shrink-0">{option.text}</span>
                                         </>
                                     </Option>
                                 );
@@ -257,11 +257,11 @@ const MailQuickSettings = () => {
                                         key={option.value}
                                         value={option.value}
                                         title={option.text}
-                                        className="flex items-center flex-nowrap gap-2 flex-item-noshrink"
+                                        className="flex items-center flex-nowrap gap-2 shrink-0"
                                     >
                                         <>
-                                            {option.icon && <Icon name={option.icon} className="flex-item-noshrink" />}
-                                            <span className="text-nowrap flex-item-noshrink">{option.text}</span>
+                                            {option.icon && <Icon name={option.icon} className="shrink-0" />}
+                                            <span className="text-nowrap shrink-0">{option.text}</span>
                                         </>
                                     </Option>
                                 );

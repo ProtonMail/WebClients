@@ -72,7 +72,7 @@ const EventColorSelect = ({ model, setModel, isNarrow, isDrawerApp }: Props) => 
                 originalPlacement="right"
                 onDisplayed={onDisplayed}
             >
-                <div className="flex-item-noshrink">
+                <div className="shrink-0">
                     <ColorPicker
                         color={color}
                         onChange={handleChangeColor}

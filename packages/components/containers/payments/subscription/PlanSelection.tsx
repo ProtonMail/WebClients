@@ -140,7 +140,7 @@ const ActionLabel = ({ plan, currency, cycle }: { plan: Plan; currency: Currency
 
     return (
         <div className="mt-6 flex flex-nowrap color-weak">
-            <div className="flex-item-noshrink mr-2">
+            <div className="shrink-0 mr-2">
                 <Icon name="info-circle" />
             </div>
             <div>{c('Info').jt`${plan.Title} requires at least 1 dedicated server ${serverPricePerMonth}`}</div>

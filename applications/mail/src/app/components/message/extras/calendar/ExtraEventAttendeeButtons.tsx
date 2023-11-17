@@ -258,7 +258,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: P
                 backgroundColor={BannerBackgroundColor.DANGER}
                 icon="exclamation-circle"
                 action={
-                    <span className="flex-item-noshrink flex">
+                    <span className="shrink-0 flex">
                         <InlineLinkButton onClick={handleRetry} className="text-underline color-inherit">
                             {c('Action').t`Try again`}
                         </InlineLinkButton>

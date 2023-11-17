@@ -60,7 +60,7 @@ function NameCell({ item }: { item: PublicLink }) {
                 <img
                     src={item.cachedThumbnailUrl}
                     alt={iconText}
-                    className="file-browser-list-item--thumbnail flex-item-noshrink mr-2"
+                    className="file-browser-list-item--thumbnail shrink-0 mr-2"
                 />
             ) : (
                 <FileIcon mimeType={item.isFile ? item.mimeType : 'Folder'} alt={iconText} className="mr-2" />

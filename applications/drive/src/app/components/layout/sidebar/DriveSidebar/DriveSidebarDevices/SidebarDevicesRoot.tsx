@@ -29,10 +29,10 @@ export function SidebarDevicesRoot({
                 {sectionTitle}
             </span>
             {isLoading ? (
-                <Loader className="drive-sidebar--icon inline-flex flex-item-noshrink" />
+                <Loader className="drive-sidebar--icon inline-flex shrink-0" />
             ) : (
                 cachedDevices.length > 0 && (
-                    <ExpandButton className="flex-item-noshrink" expanded={isExpanded} onClick={() => toggleExpand()} />
+                    <ExpandButton className="shrink-0" expanded={isExpanded} onClick={() => toggleExpand()} />
                 )
             )}
         </DriveSidebarListItem>

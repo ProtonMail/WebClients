@@ -42,7 +42,7 @@ const VPNPassPromotionButton = ({ onClick, currency, cycle }: VPNPassPromotionBu
                             shape="outline"
                             color="norm"
                         >
-                            <Logo appName="proton-pass" variant="glyph-only" className="flex-item-noshrink" size={16} />
+                            <Logo appName="proton-pass" variant="glyph-only" className="shrink-0" size={16} />
                             <span className="ml-2">
                                 {cycle === CYCLE.MONTHLY
                                     ? c('bf2023: Action').t`Get the deal`

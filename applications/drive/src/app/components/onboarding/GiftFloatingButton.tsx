@@ -66,7 +66,7 @@ function WelcomeActionsDoneSpotlight({ onSeen }: { onSeen: (dismiss?: boolean) =
 
     const spotlightContent = (
         <div className="flex flex-nowrap">
-            <figure className="flex-item flex-item-noshrink mr-4">
+            <figure className="flex-item shrink-0 mr-4">
                 <img src={spotlightIcon} alt="" />
             </figure>
             <div className="flex-item">
@@ -107,7 +107,7 @@ function WelcomeActionsSpotlight({
 
     const spotlightContent = showPopup ? (
         <div className="flex flex-nowrap">
-            <figure className="flex-item flex-item-noshrink mr-4">
+            <figure className="flex-item shrink-0 mr-4">
                 <img src={spotlightIcon} alt="" />
             </figure>
             <div className="flex-item">

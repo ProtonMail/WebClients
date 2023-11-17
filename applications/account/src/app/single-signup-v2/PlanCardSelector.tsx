@@ -118,7 +118,7 @@ const PlanCardView = ({
     return (
         <div
             className={clsx(
-                'flex-item-noshrink lg:flex-1 w-full lg:w-auto pricing-box-content-cycle mx-auto lg:mx-0',
+                'shrink-0 lg:flex-1 w-full lg:w-auto pricing-box-content-cycle mx-auto lg:mx-0',
                 highlightPrice && 'pricing-box-content-cycle--highlighted',
                 hasMaxWidth && 'max-w-custom'
             )}

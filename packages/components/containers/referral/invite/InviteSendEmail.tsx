@@ -145,7 +145,7 @@ const InviteSendEmail = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex-item-noshrink text-right">
+                <div className="shrink-0 text-right">
                     <Button
                         title={c('Button').t`Invite`}
                         color="norm"
@@ -154,7 +154,7 @@ const InviteSendEmail = () => {
                         disabled={hasInvalidRecipients}
                     >
                         <span className="flex flex-nowrap items-center">
-                            <Icon name="paper-plane" className="mr-1 flex-item-noshrink" /> {c('Button').t`Send`}
+                            <Icon name="paper-plane" className="mr-1 shrink-0" /> {c('Button').t`Send`}
                         </span>
                     </Button>
                 </div>

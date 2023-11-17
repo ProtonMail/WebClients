@@ -45,7 +45,7 @@ const ComposerMeta = ({
     };
 
     return (
-        <div className="composer-meta flex-item-noshrink ml-2 mr-5 pl-5 pr-1">
+        <div className="composer-meta shrink-0 ml-2 mr-5 pl-5 pr-1">
             <div className="flex flex-row flex-nowrap flex-column md:flex-row items-center w-full">
                 <Label
                     htmlFor={`from-${uid}`}

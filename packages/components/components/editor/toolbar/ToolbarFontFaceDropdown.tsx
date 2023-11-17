@@ -112,7 +112,7 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
                         buttonContent={<span className="pr-2">{fontLabel}</span>}
                         extraContent={
                             displayDefaultFontButton(defaultValue, fontId, !!showDefaultFontSelector) ? (
-                                <div className="flex px-2 flex-item-noshrink">
+                                <div className="flex px-2 shrink-0">
                                     <Button
                                         color="weak"
                                         shape="ghost"

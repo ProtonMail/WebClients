@@ -31,7 +31,7 @@ export const PanelHeader: VFC<Props> = ({ className, actions, ...props }) => {
             {withActions && (
                 <div
                     className={clsx(
-                        'flex flex-nowrap justify-space-between items-center flex-item-noshrink gap-1',
+                        'flex flex-nowrap justify-space-between items-center shrink-0 gap-1',
                         onlyActions && 'w-full'
                     )}
                 >

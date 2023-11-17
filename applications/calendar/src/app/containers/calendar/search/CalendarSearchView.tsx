@@ -247,7 +247,7 @@ const CalendarSearchView = ({
 
     return (
         <div className="relative flex-no-min-children flex-column flex-nowrap justify-start items-start w-full h-full reset4print">
-            <div className="toolbar toolbar--heavy flex flex-nowrap flex-item-noshrink items-center gap-2 no-print justify-space-between py-1 pr-2 pl-4 w-full">
+            <div className="toolbar toolbar--heavy flex flex-nowrap shrink-0 items-center gap-2 no-print justify-space-between py-1 pr-2 pl-4 w-full">
                 <h2 className="h6 text-semibold">
                     {hasResults ? c('esCalendar').t`Results` : c('esCalendar').t`No result`}
                 </h2>
@@ -308,7 +308,7 @@ const CalendarSearchView = ({
                 <div className="flex flex-column w-full h-full">
                     {shouldDisplayCalendarDisplayWarning && (
                         <div className="bg-weak rounded m-2 px-4 py-2 flex">
-                            <div className="flex-item-noshrink">
+                            <div className="shrink-0">
                                 <Icon name="magnifier" className="mr-2" />
                             </div>
                             <div className="flex-1 pl-1">

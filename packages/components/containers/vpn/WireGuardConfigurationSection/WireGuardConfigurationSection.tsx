@@ -693,7 +693,7 @@ const WireGuardConfigurationSection = () => {
                                 <Summary>
                                     <Row className="justify-space-between" collapseOnMobile={false}>
                                         <div className="text-ellipsis">{name}</div>
-                                        <div className="flex-item-noshrink">
+                                        <div className="shrink-0">
                                             &nbsp;&nbsp;
                                             {expirationString}
                                             &nbsp;&nbsp;
@@ -709,7 +709,7 @@ const WireGuardConfigurationSection = () => {
                                                 ) : (
                                                     <button
                                                         type="button"
-                                                        className="label-stack-item-delete flex-item-noshrink"
+                                                        className="label-stack-item-delete shrink-0"
                                                         onClick={askForRevocation(certificate)}
                                                         title={
                                                             // translator: name is arbitrary name given by the user or a random key if not set

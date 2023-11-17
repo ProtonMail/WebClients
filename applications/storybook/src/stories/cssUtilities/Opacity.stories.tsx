@@ -24,7 +24,7 @@ export const Opacity = () => {
             {values.map((value) => (
                 <div
                     key={value}
-                    className="bg-strong flex-item-noshrink rounded"
+                    className="bg-strong shrink-0 rounded"
                     style={{ display: 'flow-root', '--border-radius-md': '10%' }}
                 >
                     <div className={`${demoItemClasses} opacity-${value}`} style={{ width: '4rem', height: '3rem' }}>

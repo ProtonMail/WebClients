@@ -47,8 +47,8 @@ const StepPrepareContent = ({
             </div>
 
             <div className="mb-4 ml-4 flex items-center flex-nowrap">
-                <Icon className="flex-item-noshrink mr-2" name="tag" />
-                <span className="flex-item-noshrink">{c('Info').t`Label all imported messages as`}</span>
+                <Icon className="shrink-0 mr-2" name="tag" />
+                <span className="shrink-0">{c('Info').t`Label all imported messages as`}</span>
                 {importLabel && (
                     <span className="ml-2">
                         <LabelStack

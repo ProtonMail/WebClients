@@ -59,7 +59,7 @@ export const TypeFilter: FC<Props> = ({ items, value, onChange }) => {
     return (
         <>
             <DropdownButton
-                className="flex text-sm text-semibold flex-auto grow-0 flex-item-noshrink"
+                className="flex text-sm text-semibold flex-auto grow-0 shrink-0"
                 onClick={toggle}
                 ref={anchorRef}
                 color="weak"

@@ -354,13 +354,13 @@ const BoxHeader = ({ step, title, right }: { step?: number; title: string; right
         <div className="flex items-center justify-space-between flex-nowrap">
             <div className="flex md:items-center flex-column md:flex-row md:gap-4 gap-2">
                 {step !== undefined && (
-                    <div className="flex-item-noshrink">
+                    <div className="shrink-0">
                         <StepLabel step={step} />
                     </div>
                 )}
                 <h2 className="text-bold text-4xl md:flex-1">{title}</h2>
             </div>
-            {right && <div className="flex-item-noshrink">{right}</div>}
+            {right && <div className="shrink-0">{right}</div>}
         </div>
     );
 };

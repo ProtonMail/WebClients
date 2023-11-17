@@ -312,7 +312,7 @@ const TimeGrid = ({
         <div className="flex flex-column flex-nowrap w-full">
             <div
                 ref={titleRef}
-                className={clsx(['calendar-row-heading flex-item-noshrink shadow-norm bg-norm', displayViewClass])}
+                className={clsx(['calendar-row-heading shrink-0 shadow-norm bg-norm', displayViewClass])}
             >
                 <div
                     data-testid="calendar-day-week-view:week-header"
