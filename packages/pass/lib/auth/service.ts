@@ -53,12 +53,12 @@ export interface AuthServiceConfig {
     onAuthorize?: () => void;
     /** Called whenever a user is successfully authenticated. This can happen
      * after consuming a fork or resuming a session.  */
-    onAuthorized?: (localID: Maybe<number>) => void;
+    onAuthorized?: (userID: string, localID: Maybe<number>) => void;
     /** Called whenever a user is unauthenticated. This will be triggered any time
      * the `logout` function is called (either via user action or when an inactive
      * session is detected). The `broadcast` flag indicates wether we should
      * broadcast the unauthorized session to other clients. */
-    onUnauthorized?: (localID: Maybe<number>, broadcast: boolean) => void;
+    onUnauthorized?: (userID: Maybe<string>, localID: Maybe<number>, broadcast: boolean) => void;
     /** Called immediately after a fork has been successfully consumed. At this
      * point the user is not fully logged in yet. */
     onForkConsumed?: (session: AuthSession, state: string) => void;
@@ -183,7 +183,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             }
 
             logger.info(`[AuthService] User is authorized`);
-            config.onAuthorized?.(authStore.getLocalID());
+            config.onAuthorized?.(authStore.getUserID()!, authStore.getLocalID());
 
             return true;
         },
@@ -192,13 +192,15 @@ export const createAuthService = (config: AuthServiceConfig) => {
             logger.info(`[AuthService] User is not authorized`);
 
             const localID = authStore.getLocalID();
+            const userID = authStore.getUserID();
+
             if (!options?.soft) void api({ ...revoke(), silent: true });
 
             authStore.clear();
             api.unsubscribe();
             await api.reset();
 
-            config.onUnauthorized?.(localID, options.broadcast ?? true);
+            config.onUnauthorized?.(userID, localID, options.broadcast ?? true);
 
             return true;
         },

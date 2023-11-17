@@ -1,11 +1,11 @@
-import { type FC, createContext, useContext, useMemo, useState } from 'react';
+import { type FC, createContext, useContext, useMemo, useRef, useState } from 'react';
 
-import { clientAuthorized } from '@proton/pass/lib/client';
+import { clientReady } from '@proton/pass/lib/client';
 import { AppStatus, type Maybe } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
-import { authStore } from '../core';
+import { authStore } from '../../lib/core';
 
 type ClientState = { status: AppStatus; loggedIn: boolean; localID: Maybe<number>; UID: Maybe<string> };
 type ClientContextValue = { state: ClientState; setStatus: (status: AppStatus) => void };
@@ -19,6 +19,15 @@ export const ClientContext = createContext<ClientContextValue>({
 
 export const useClient = (): ClientContextValue => useContext(ClientContext);
 
+/** wraps the client context in a ref when you need to access
+ * it outside of the react life-cycle.  */
+export const useClientRef = () => {
+    const client = useClient();
+    const clientRef = useRef(client);
+    clientRef.current = client;
+    return clientRef;
+};
+
 export const ClientProvider: FC = ({ children }) => {
     const [state, setState] = useState<ClientState>(getInitialClientState);
 
@@ -30,7 +39,7 @@ export const ClientProvider: FC = ({ children }) => {
                     setStatus: (status) =>
                         setState((prev) => {
                             logger.info(`[ClientContext] Status change : ${prev.status} -> ${status}`);
-                            const loggedIn = clientAuthorized(status);
+                            const loggedIn = clientReady(status);
                             const localID = authStore.getLocalID();
                             const UID = authStore.getUID();
 
