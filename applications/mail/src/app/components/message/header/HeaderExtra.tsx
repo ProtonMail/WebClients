@@ -51,7 +51,7 @@ const HeaderExtra = ({
     }
 
     return (
-        <section className="message-header-extra pt-2 hidden-empty">
+        <section className="message-header-extra pt-2 empty:hidden">
             <ExtraDecryptedSubject message={message} />
             <ExtraSpamScore message={message} />
             <ExtraErrors message={message} />
@@ -79,7 +79,7 @@ const HeaderExtra = ({
             {isSnoozeMessage ? <ExtraSnoozedMessage message={message} /> : null}
             <ExtraExpiration message={message} />
 
-            <span className="inline-flex flex-row w-full md:w-auto hidden-empty">
+            <span className="inline-flex flex-row w-full md:w-auto empty:hidden">
                 <ExtraReadReceipt message={message.data} />
                 {!sourceMode && (
                     <ExtraImages

@@ -107,7 +107,7 @@ export const RadioButtonGroupField: FC<RadioButtonGroupFieldProps> = ({ field, f
     return (
         <InputFieldTwo<typeof RadioButtonGroup>
             as={RadioButtonGroup}
-            assistContainerClassName="hidden-empty"
+            assistContainerClassName="empty:hidden"
             error={error}
             {...field}
             {...props}
