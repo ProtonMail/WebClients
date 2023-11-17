@@ -25,6 +25,8 @@ import { VaultItem } from './VaultSubmenu.VaultItem';
 import type { VaultOption } from './VaultSubmenu.utils';
 import { getVaultOptionInfo } from './VaultSubmenu.utils';
 
+import './VaultSubmenu.VaultItem.scss';
+
 type Props = {
     inTrash: boolean;
     selectedShareId: MaybeNull<string>;
@@ -91,7 +93,7 @@ export const VaultSubmenu: VFC<Props> = ({
                     <span className="block text-ellipsis">{selectedVaultOption.label}</span>
                 </span>
             </CollapsibleHeader>
-            <CollapsibleContent as="ul" className="unstyled">
+            <CollapsibleContent as="ul" className="unstyled mx-1">
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
                 <VaultItem
