@@ -109,7 +109,7 @@ export const Basic = () => {
                     />
                 </QuickSettingsSection>
 
-                <Button onClick={() => {}} className="flex-item-noshrink text-sm mx-auto" shape="ghost" color="norm">
+                <Button onClick={() => {}} className="shrink-0 text-sm mx-auto" shape="ghost" color="norm">
                     Action
                 </Button>
             </QuickSettingsMain>

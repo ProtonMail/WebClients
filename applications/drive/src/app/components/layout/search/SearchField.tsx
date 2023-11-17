@@ -85,7 +85,7 @@ export const SearchField = () => {
                 onDisplayed={searchSpotlight.onDisplayed}
                 content={
                     <div className="flex flex-nowrap">
-                        <figure className="flex-item flex-item-noshrink pr-4">
+                        <figure className="flex-item shrink-0 pr-4">
                             {imageProps && <img className="h-auto" {...imageProps} alt={imageProps.alt || ''} />}
                         </figure>
                         <div className="flex-item">

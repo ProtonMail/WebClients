@@ -57,7 +57,7 @@ const ToolbarFontSizeDropdown = ({ setValue, value, onClickDefault, defaultValue
         <ToolbarDropdown
             originalPlacement="bottom-start"
             content={selectedValue}
-            className="flex-item-noshrink"
+            className="shrink-0"
             data-testid="editor-font-size"
             title={c('Action').t`Size`}
         >
@@ -76,7 +76,7 @@ const ToolbarFontSizeDropdown = ({ setValue, value, onClickDefault, defaultValue
                         buttonContent={<span>{sizeInPx}</span>}
                         extraContent={
                             sizeInPx === defaultValue && showDefaultFontSelector ? (
-                                <div className="flex px-2 flex-item-noshrink">
+                                <div className="flex px-2 shrink-0">
                                     <Button
                                         color="weak"
                                         shape="ghost"

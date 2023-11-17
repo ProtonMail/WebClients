@@ -78,7 +78,7 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, holidaysCalen
             )}
             <div className="my-6 flex justify-space-between flex-nowrap">
                 <div className="grid-align-icon">
-                    <CalendarSelectIcon large color={Color} className="mr-3 mt-4 flex-item-noshrink keep-left" />
+                    <CalendarSelectIcon large color={Color} className="mr-3 mt-4 shrink-0 keep-left" />
                     <h1 className="h1 mb-2 text-bold text-break" title={Name}>
                         {Name}
                     </h1>
@@ -126,7 +126,7 @@ const CalendarSubpageHeaderSection = ({ calendar, defaultCalendar, holidaysCalen
                         </Alert>
                     )}
                 </div>
-                <span className="ml-4 pt-2 flex-item-noshrink">
+                <span className="ml-4 pt-2 shrink-0">
                     <Tooltip title={editCalendarText}>
                         <ButtonLike shape="outline" onClick={handleEdit} icon disabled={!canEdit}>
                             <Icon name="pen" alt={editCalendarText} />

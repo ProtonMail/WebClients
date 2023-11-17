@@ -222,7 +222,7 @@ const AttachmentList = ({
                     )}
                 </TagButton>
                 {canShowDownloadAll && (
-                    <div className="flex-item-noshrink">
+                    <div className="shrink-0">
                         <Tooltip title={c('Download attachments').t`Download all`} originalPlacement="top">
                             <Button
                                 icon

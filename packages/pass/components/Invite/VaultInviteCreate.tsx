@@ -97,7 +97,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                         <PanelHeader
                             actions={[
                                 <Button
-                                    className="flex-item-noshrink"
+                                    className="shrink-0"
                                     icon
                                     key="modal-close-button"
                                     onClick={close}
@@ -136,7 +136,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                                         name={form.values.name}
                                     />
                                     <Button
-                                        className="flex-item-noshrink"
+                                        className="shrink-0"
                                         color="weak"
                                         onClick={() => form.setFieldValue('step', 'vault')}
                                         pill

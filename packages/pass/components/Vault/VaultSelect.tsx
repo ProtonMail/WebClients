@@ -55,7 +55,7 @@ export const VaultSelect: VFC<Props> = ({ downgradeMessage, onSubmit, optionsSel
                         actions={[
                             <Button
                                 key="close-modal-button"
-                                className="flex-item-noshrink"
+                                className="shrink-0"
                                 icon
                                 pill
                                 shape="solid"

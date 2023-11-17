@@ -26,7 +26,7 @@ export const PasswordHistoryItem: VFC<PasswordHistoryEntry> = ({ value, origin, 
                 actions={[
                     <Button
                         key="pw-delete-button"
-                        className="flex-item-noshrink"
+                        className="shrink-0"
                         icon
                         pill
                         shape="solid"

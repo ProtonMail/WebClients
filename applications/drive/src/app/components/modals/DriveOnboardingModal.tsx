@@ -75,15 +75,15 @@ const DriveOnboardingModal = (props: Props) => {
                     )}
                     <ul className="unstyled mt-4">
                         <li className="my-2 flex flex-nowrap">
-                            <Icon name="checkmark-circle" className="flex-item-noshrink mr-1 mt-0.5" />
+                            <Icon name="checkmark-circle" className="shrink-0 mr-1 mt-0.5" />
                             <span className="flex-1">{c('Onboarding Info').t`Upload a file`}</span>
                         </li>
                         <li className="my-2 flex flex-nowrap">
-                            <Icon name="checkmark-circle" className="flex-item-noshrink mr-1 mt-0.5" />{' '}
+                            <Icon name="checkmark-circle" className="shrink-0 mr-1 mt-0.5" />{' '}
                             <span className="flex-1">{c('Onboarding Info').t`Create a share link`}</span>
                         </li>
                         <li className="my-2 flex flex-nowrap">
-                            <Icon name="checkmark-circle" className="flex-item-noshrink mr-1 mt-0.5" />{' '}
+                            <Icon name="checkmark-circle" className="shrink-0 mr-1 mt-0.5" />{' '}
                             <span className="flex-1">{c('Onboarding Info').t`Set a recovery method`}</span>
                         </li>
                     </ul>

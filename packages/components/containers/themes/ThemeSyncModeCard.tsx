@@ -33,7 +33,7 @@ const ThemeSyncModeCard = ({
         <div className={clsx('border rounded-lg p-4', className)}>
             <div className={clsx(size !== 'small' && 'flex justify-space-between flex-nowrap gap-2', 'mb-4')}>
                 <div className="flex items-center flex-nowrap gap-2">
-                    <Icon name={mode === 'light' ? 'sun' : 'moon'} className="flex-item-noshrink" />
+                    <Icon name={mode === 'light' ? 'sun' : 'moon'} className="shrink-0" />
                     <span className={clsx(active && 'text-semibold')}>
                         {mode === 'light' ? c('Title').t`Day theme` : c('Title').t`Night theme`}
                         {active && ` ${c('Title').t`(active)`}`}

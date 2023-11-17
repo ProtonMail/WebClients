@@ -83,7 +83,7 @@ const LabelStackItem = ({ label, showDelete = false, showDropdown = false }: Pro
             {showDelete && (
                 <button
                     type="button"
-                    className="label-stack-item-delete label-stack-item-button flex-item-noshrink"
+                    className="label-stack-item-delete label-stack-item-button shrink-0"
                     onClick={label.onDelete}
                     title={`${c('Action').t`Remove`} ${label.title}`}
                     data-testid="label-item:close-button"

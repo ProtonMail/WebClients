@@ -82,9 +82,9 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
     return (
         <li className="border-bottom">
             <Wrapper checked={checked} editMode={editMode} disabled={disabled} checkboxId={folderItem.id}>
-                <div className="flex w-1/2 flex-nowrap items-center flex-item-noshrink pr-2">
+                <div className="flex w-1/2 flex-nowrap items-center shrink-0 pr-2">
                     <div
-                        className="flex-item-noshrink ml-custom"
+                        className="shrink-0 ml-custom"
                         style={indentStyle(providerPath.length)}
                         data-testid="CustomizeModal:sourceItem"
                     >
@@ -116,7 +116,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                             <Icon
                                 name={systemFolder ? FOLDER_ICONS[systemFolder] : 'folder'}
                                 className={clsx([
-                                    'flex-item-noshrink mr-2',
+                                    'shrink-0 mr-2',
                                     hasError && 'color-danger',
                                     errors.includes(MailImportPayloadError.MERGE_WARNING) && 'color-warning',
                                 ])}

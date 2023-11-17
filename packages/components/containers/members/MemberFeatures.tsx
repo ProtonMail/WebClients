@@ -17,7 +17,7 @@ const MemberFeatures = ({ member, organization }: Props) => {
         <>
             {organization.MaxSpace > 0 ? (
                 <span className="mb-2 flex flex-nowrap">
-                    <span className="flex-item-noshrink flex mt-0.5">
+                    <span className="shrink-0 flex mt-0.5">
                         <Icon name="filing-cabinet" />
                     </span>
                     <span className="flex-1 pl-1" data-testid="users-and-addresses-table:storage">
@@ -27,7 +27,7 @@ const MemberFeatures = ({ member, organization }: Props) => {
             ) : null}
             {organization.MaxVPN > 0 ? (
                 <span className="flex flex-nowrap">
-                    <span className="flex-item-noshrink flex mt-0.5">
+                    <span className="shrink-0 flex mt-0.5">
                         <Icon name="brand-proton-vpn" />
                     </span>
                     <span className="flex-1 pl-1" data-testid="users-and-addresses-table:vpnConnections">

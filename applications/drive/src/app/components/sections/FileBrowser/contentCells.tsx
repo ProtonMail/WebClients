@@ -29,7 +29,7 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | TrashIte
                 <img
                     src={item.cachedThumbnailUrl}
                     alt={iconText}
-                    className="file-browser-list-item--thumbnail flex-item-noshrink mr-2"
+                    className="file-browser-list-item--thumbnail shrink-0 mr-2"
                 />
             ) : (
                 <FileIcon mimeType={item.isFile ? item.mimeType : 'Folder'} alt={iconText} className="mr-2" />
@@ -37,7 +37,7 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | TrashIte
             <SignatureIcon
                 signatureIssues={item.signatureIssues}
                 isFile={item.isFile}
-                className="mr-2 flex-item-noshrink"
+                className="mr-2 shrink-0"
             />
             <NameCellBase name={item.name} />
         </TableCell>

@@ -58,7 +58,7 @@ export const VaultInviteForm: VFC<Props> = ({ form, autoFocus }) => {
                         className="flex items-center flex-nowrap gap-3 mb-3"
                         onClick={() => form.setFieldValue('step', 'email')}
                     >
-                        <IconBox size={18} mode="icon" className="flex-item-noshrink">
+                        <IconBox size={18} mode="icon" className="shrink-0">
                             <Icon
                                 className={'absolute-center'}
                                 color="var(--interaction-norm)"

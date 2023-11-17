@@ -103,7 +103,7 @@ interface Props extends Omit<MimeIconProps, 'name'> {
 const FileIcon = ({ mimeType, className, ...rest }: Props) => {
     const name = getIconName(mimeType);
 
-    return <MimeIcon name={name} className={clsx(['flex-item-noshrink', className])} {...rest} />;
+    return <MimeIcon name={name} className={clsx(['shrink-0', className])} {...rest} />;
 };
 
 export default FileIcon;

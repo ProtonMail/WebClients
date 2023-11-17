@@ -50,7 +50,7 @@ const DropdownButtonBase = <E extends ElementType = typeof defaultElement>(
             )}
             {hasCaret && (
                 <DropdownCaret
-                    className={clsx(['flex-item-noshrink', children ? ' ml-1' : '', caretClassName])}
+                    className={clsx(['shrink-0', children ? ' ml-1' : '', caretClassName])}
                     isOpen={isOpen}
                 />
             )}

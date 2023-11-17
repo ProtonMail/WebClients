@@ -22,7 +22,7 @@ export const SettingsDropdown: FC = () => {
     );
 
     return (
-        <QuickActionsDropdown icon="cog-wheel" size="small" shape="ghost" className="flex-item-noshrink ml-1">
+        <QuickActionsDropdown icon="cog-wheel" size="small" shape="ghost" className="shrink-0 ml-1">
             {settings.map((setting) => (
                 <DropdownMenuButton
                     key={setting.key}

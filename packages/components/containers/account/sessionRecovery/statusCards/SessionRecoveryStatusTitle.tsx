@@ -31,7 +31,7 @@ const SessionRecoveryStatusTitle = ({ status }: Props) => {
                 <span
                     className={clsx(
                         backgroundClass,
-                        'flex-item-noshrink text-uppercase text-sm text-semibold rounded-sm px-1 text-nowrap mt-1.5'
+                        'shrink-0 text-uppercase text-sm text-semibold rounded-sm px-1 text-nowrap mt-1.5'
                     )}
                 >
                     {statusText}

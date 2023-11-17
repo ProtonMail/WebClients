@@ -102,8 +102,8 @@ const TVContainer = () => {
                 </div>
                 <h3 className="mb-0 pl-1 text-uppercase text-bold">{c('Title').t`TV sign in`}</h3>
             </div>
-            <div className="flex flex-column flex-1 flex-nowrap flex-item-noshrink">
-                <div className="m-auto p-7 flex-item-noshrink max-w-custom" style={{ '--max-w-custom': '30em' }}>
+            <div className="flex flex-column flex-1 flex-nowrap shrink-0">
+                <div className="m-auto p-7 shrink-0 max-w-custom" style={{ '--max-w-custom': '30em' }}>
                     {render()}
                 </div>
             </div>

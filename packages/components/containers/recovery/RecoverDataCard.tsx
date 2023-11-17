@@ -22,7 +22,7 @@ const RecoverDataCard = ({ onDismiss, onReactivate, className }: Props) => {
             style={{ '--max-w-custom': '46em' }}
         >
             <SettingsSectionTitle className="h3 flex items-center flex-nowrap">
-                <Icon className="flex-item-noshrink color-danger" name="exclamation-circle-filled" size={18} />
+                <Icon className="shrink-0 color-danger" name="exclamation-circle-filled" size={18} />
                 <span className="ml-2">{c('Title').t`Data locked`}</span>
             </SettingsSectionTitle>
             <p>{c('Info').t`It appears some of your data is encrypted and locked.`}</p>

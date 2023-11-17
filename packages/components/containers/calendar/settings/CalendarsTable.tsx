@@ -85,7 +85,7 @@ const CalendarsTable = ({
                                     <div className="grid-align-icon-center">
                                         <CalendarSelectIcon
                                             color={Color}
-                                            className="mr-3 flex-item-noshrink keep-left"
+                                            className="mr-3 shrink-0 keep-left"
                                         />
                                         <div className="text-ellipsis" title={Name}>
                                             {Name}
@@ -144,7 +144,7 @@ const CalendarsTable = ({
                                             size="small"
                                             icon
                                             disabled={!!isLoading}
-                                            className="flex-item-noshrink"
+                                            className="shrink-0"
                                         >
                                             <Icon
                                                 name="cog-wheel"

@@ -12,7 +12,7 @@ interface Props {
 const ReportsTableCell = ({ product: app, title, isSync }: Props) => (
     <TableCell>
         <div className="flex">
-            <div className="flex-item-noshrink mr-2 hidden md:flex">
+            <div className="shrink-0 mr-2 hidden md:flex">
                 <Icon name={getImportIconNameByProduct(app, isSync)} className="color-weak" />
             </div>
             <div className="flex-1">

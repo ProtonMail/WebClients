@@ -79,7 +79,7 @@ export const UrlGroupField = <T extends UrlGroupValues>({ form, renderExtraActio
                                         <Button
                                             icon
                                             pill
-                                            className="flex-item-noshrink ml-2"
+                                            className="shrink-0 ml-2"
                                             color="weak"
                                             onClick={handleRemove(index)}
                                             shape="ghost"

@@ -60,7 +60,7 @@ const Notifications = ({
                         <Tooltip title={removeNotificationText}>
                             <ButtonLike
                                 data-testid="delete-notification"
-                                className="flex flex-item-noshrink ml-2"
+                                className="flex shrink-0 ml-2"
                                 disabled={disabled}
                                 onClick={() => onChange(removeItem(notifications, index))}
                                 icon
@@ -68,7 +68,7 @@ const Notifications = ({
                                 shape="ghost"
                                 color="norm"
                             >
-                                <Icon name="trash" className="flex-item-noshrink" />
+                                <Icon name="trash" className="shrink-0" />
                                 <span className="sr-only">{removeNotificationText}</span>
                             </ButtonLike>
                         </Tooltip>

@@ -262,13 +262,13 @@ const ExtraUnsubscribe = ({ message }: Props) => {
             <div className="md:flex-1 flex flex-nowrap mb-2 md:mb-0">
                 <Icon
                     name="envelope"
-                    className="mt-custom ml-0.5 flex-item-noshrink"
+                    className="mt-custom ml-0.5 shrink-0"
                     style={{ marginTop: '0.375rem' }}
                 />
                 <span className="px-1 flex flex-1 items-center">{c('Status')
                     .t`This message is from a mailing list.`}</span>
             </div>
-            <span className="flex-item-noshrink items-start flex w-full md:w-auto pt-0.5">
+            <span className="shrink-0 items-start flex w-full md:w-auto pt-0.5">
                 <Tooltip title={c('Info').t`This message is from a mailing list.`}>
                     <Button
                         onClick={() => setUnsubscribeModalOpen(true)}

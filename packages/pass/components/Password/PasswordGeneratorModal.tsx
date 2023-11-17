@@ -34,7 +34,7 @@ export const PasswordGeneratorModal: VFC<Props> = ({ onSubmit, actionLabel, ...p
                         actions={[
                             <Button
                                 key="close-modal-button"
-                                className="flex-item-noshrink"
+                                className="shrink-0"
                                 icon
                                 pill
                                 shape="solid"
@@ -52,7 +52,7 @@ export const PasswordGeneratorModal: VFC<Props> = ({ onSubmit, actionLabel, ...p
                                     icon
                                     pill
                                     shape="solid"
-                                    className="flex-item-noshrink"
+                                    className="shrink-0"
                                     onClick={passwordGenerator.regeneratePassword}
                                 >
                                     <Icon name="arrows-rotate" alt={c('Action').t`Regenerate`} />

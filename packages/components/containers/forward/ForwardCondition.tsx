@@ -109,7 +109,7 @@ const ForwardCondition = ({
                 </div>
 
                 {displayDelete && (
-                    <div className="flex-item-noshrink w-custom" style={{ '--w-custom': '3em' }}>
+                    <div className="shrink-0 w-custom" style={{ '--w-custom': '3em' }}>
                         <Tooltip title={c('email_forwarding_2023: Action').t`Delete this condition`}>
                             <Button
                                 data-testid={`forward:condition:delete-button_${index}`}

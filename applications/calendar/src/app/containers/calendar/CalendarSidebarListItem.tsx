@@ -72,7 +72,7 @@ const CalendarSidebarListItem = ({
         </div>
     ) : (
         <Checkbox
-            className="flex-item-noshrink ml-custom"
+            className="shrink-0 ml-custom"
             labelProps={{
                 'data-testid': `calendar-checkbox-${ID}`,
                 style: { '--ml-custom': 'calc(var(--space-1) * -1)' },
@@ -109,7 +109,7 @@ const CalendarSidebarListItem = ({
                                 {Name}
                             </div>
                             {!isCalendarDisabled && isNotSyncedInfo && (
-                                <div className="flex-item-noshrink max-w-full text-ellipsis">
+                                <div className="shrink-0 max-w-full text-ellipsis">
                                     &nbsp;
                                     <Tooltip title={isNotSyncedInfo.text}>
                                         <span>({isNotSyncedInfo.label})</span>
@@ -117,7 +117,7 @@ const CalendarSidebarListItem = ({
                                 </div>
                             )}
                             {isCalendarDisabled && (
-                                <div className="flex-item-noshrink">
+                                <div className="shrink-0">
                                     &nbsp;({c('Disabled calendar name suffix').t`Disabled`})
                                 </div>
                             )}
@@ -130,7 +130,7 @@ const CalendarSidebarListItem = ({
                                 hasCaret={false}
                                 shape="ghost"
                                 size="small"
-                                className="calendar-sidebar-list-item-action group-hover:opacity-100 group-hover:opacity-100-no-width ml-2 mr-custom right-0 rounded-sm flex-item-noshrink hidden md:inline-flex"
+                                className="calendar-sidebar-list-item-action group-hover:opacity-100 group-hover:opacity-100-no-width ml-2 mr-custom right-0 rounded-sm shrink-0 hidden md:inline-flex"
                                 style={{ '--mr-custom': 'calc(var(--space-1) * -1)' }}
                                 loading={isSubscribedCalendar && loadingSubscriptionParameters}
                                 content={<Icon name="three-dots-horizontal" />}

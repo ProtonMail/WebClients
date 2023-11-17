@@ -53,7 +53,7 @@ export const FlexItemNoShrink = () => {
                 150px wide
             </div>
             <span className="bg-primary p-4 w-1/4">25% wide</span>
-            <em className="flex-item-noshrink bg-info p-4">.flex-item-noshrink</em>
+            <em className="shrink-0 bg-info p-4">.shrink-0</em>
         </div>
     );
 };
@@ -77,7 +77,7 @@ export const FlexItemNoGrowNoShrink = () => {
                 150px wide
             </div>
             <span className="bg-primary p-4 w-1/4">25% wide</span>
-            <em className="grow-0 flex-item-noshrink bg-info p-4">static width</em>
+            <em className="grow-0 shrink-0 bg-info p-4">static width</em>
         </div>
     );
 };

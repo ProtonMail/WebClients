@@ -117,7 +117,7 @@ const MessagesOtherSection = () => {
                             loading={loadingFontFace}
                         />
                     </div>
-                    <div className="flex-item-noshrink">
+                    <div className="shrink-0">
                         <FontSizeSelect
                             id="fontSize"
                             aria-describedby="label-composer-default-font-size"

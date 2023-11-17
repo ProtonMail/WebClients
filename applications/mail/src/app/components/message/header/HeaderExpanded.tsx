@@ -226,7 +226,7 @@ const HeaderExpanded = ({
                             <RecipientType label={c('Label Recipient').t`From`}>{from}</RecipientType>
                         )}
                         {messageLoaded && isSendingMessage && !isScheduledMessage && (
-                            <span className="ml-2 flex-item-noshrink my-auto">
+                            <span className="ml-2 shrink-0 my-auto">
                                 <span className="badge-label-primary">{c('Info').t`Sending`}</span>
                             </span>
                         )}
@@ -235,7 +235,7 @@ const HeaderExpanded = ({
 
                 {!isNarrow && (
                     <div
-                        className="message-header-metas-container flex items-center flex-item-noshrink"
+                        className="message-header-metas-container flex items-center shrink-0"
                         data-testid="message:message-header-metas"
                     >
                         <span className="message-header-star mr-2 inline-flex">
@@ -290,7 +290,7 @@ const HeaderExpanded = ({
 
             {messageLoaded && (
                 <>
-                    <div className="mb-3 flex-item-noshrink flex items-center message-header-expanded-label-container">
+                    <div className="mb-3 shrink-0 flex items-center message-header-expanded-label-container">
                         <ItemLabels
                             element={message.data}
                             labelID={labelID}

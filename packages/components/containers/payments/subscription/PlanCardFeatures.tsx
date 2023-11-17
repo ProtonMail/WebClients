@@ -80,7 +80,7 @@ export const PlanCardFeatureList = ({
                                 feature.included && feature.status === 'coming-soon' && 'color-weak'
                             )}
                         >
-                            <span className={clsx('flex flex-item-noshrink', iconSize < 20 ? 'mr-1' : 'mr-3')}>
+                            <span className={clsx('flex shrink-0', iconSize < 20 ? 'mr-1' : 'mr-3')}>
                                 {iconToDisplay}
                             </span>
                             <span className="flex-1 text-left">

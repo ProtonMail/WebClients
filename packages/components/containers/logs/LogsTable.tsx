@@ -104,7 +104,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                             <TableCell key={header} className={className} type="header">
                                 <div className="flex items-center flex-nowrap">
                                     {header}
-                                    {info && <Info className="ml-2 flex-item-noshrink" title={info} />}
+                                    {info && <Info className="ml-2 shrink-0" title={info} />}
                                 </div>
                             </TableCell>
                         ))}

@@ -26,7 +26,7 @@ const MessagePrintFooterItem = ({ attachment }: ItemProps) => {
         <div className="proton-print-footer-item flex flex-nowrap rounded">
             <div className="flex items-baseline flex-nowrap">
                 <FileNameDisplay text={name} />
-                <div className="proton-print-footer-item-size flex-item-noshrink">{humanAttachmentSize}</div>
+                <div className="proton-print-footer-item-size shrink-0">{humanAttachmentSize}</div>
             </div>
         </div>
     );

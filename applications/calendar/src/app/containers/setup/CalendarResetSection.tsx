@@ -37,7 +37,7 @@ const CalendarResetSection = ({ calendarsToReset = [], resetAll }: Props) => {
         <div>
             {calendarsToReset.map(({ ID, Name, Color }) => (
                 <div key={ID} className="flex flex-nowrap w-full items-center mb-2">
-                    <span className="flex flex-item-noshrink">
+                    <span className="flex shrink-0">
                         <CalendarSelectIcon color={Color} className="mr-2" />
                     </span>
                     <span className="text-ellipsis" title={Name}>

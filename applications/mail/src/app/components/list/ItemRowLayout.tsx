@@ -102,7 +102,7 @@ const ItemRowLayout = ({
                 </div>
                 <div className={clsx(['item-senders flex flex-nowrap m-auto pr-4', unread && 'text-bold'])}>
                     <ItemUnread element={element} labelID={labelID} className="mr-0.5 item-unread-dot" />
-                    <ItemAction element={element} className="mr-2 flex-item-noshrink my-auto" />
+                    <ItemAction element={element} className="mr-2 shrink-0 my-auto" />
                     {senders && (
                         <span
                             className="max-w-full text-ellipsis flex items-center"
@@ -123,13 +123,13 @@ const ItemRowLayout = ({
                             data-testid="message-row:subject"
                         >
                             {showIcon && (
-                                <span className="mr-1 inline-flex flex-item-noshrink align-bottom">
+                                <span className="mr-1 inline-flex shrink-0 align-bottom">
                                     <ItemLocation element={element} labelID={labelID} />
                                 </span>
                             )}
                             {conversationMode && (
                                 <NumMessages
-                                    className={clsx(['mr-1 flex-item-noshrink', unread && 'text-bold'])}
+                                    className={clsx(['mr-1 shrink-0', unread && 'text-bold'])}
                                     conversation={element}
                                 />
                             )}
@@ -156,7 +156,7 @@ const ItemRowLayout = ({
                     element={element}
                     labelID={labelID}
                     maxNumber={1}
-                    className="flex-item-noshrink ml-auto"
+                    className="shrink-0 ml-auto"
                     showDropdown={false}
                     isCollapsed={false}
                 />
@@ -171,7 +171,7 @@ const ItemRowLayout = ({
                     <ItemAttachmentIcon
                         icon={hasOnlyIcsAttachments ? 'calendar-grid' : undefined}
                         element={element}
-                        className="flex-item-noshrink ml-2"
+                        className="shrink-0 ml-2"
                     />
                 </span>
 

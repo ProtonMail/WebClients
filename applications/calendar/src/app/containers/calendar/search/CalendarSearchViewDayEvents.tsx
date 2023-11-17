@@ -48,7 +48,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
         >
             <div
                 data-testid="month-day-block"
-                className="flex-no-min-children flex-item-noshrink items-baseline search-month-day"
+                className="flex-no-min-children shrink-0 items-baseline search-month-day"
                 aria-current={isToday ? `date` : undefined}
             >
                 <div
@@ -109,7 +109,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                             >
                                 <span
                                     className={clsx(
-                                        'search-calendar-border flex-item-noshrink my-1',
+                                        'search-calendar-border shrink-0 my-1',
                                         isUnanswered && 'isUnanswered'
                                     )}
                                     style={{ '--calendar-color': getColor(visualCalendar, Color) }}

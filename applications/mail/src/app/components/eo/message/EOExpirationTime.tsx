@@ -71,7 +71,7 @@ const EOExpirationTime = ({ message }: Props) => {
                     className="inline-flex items-center w-full md:w-auto justify-center md:justify-start mb-3 px-2"
                     onClick={() => setExpirationModalOpen(true)}
                 >
-                    <Icon name="hourglass" className="flex-item-noshrink ml-1" />
+                    <Icon name="hourglass" className="shrink-0 ml-1" />
                     <span className="ml-2">{buttonMessage}</span>
                 </ButtonLike>
             </Tooltip>

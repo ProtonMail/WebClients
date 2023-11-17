@@ -123,7 +123,7 @@ export const Padding = () => {
     return (
         <div className="border rounded w-full relative flex gap-2 flex-nowrap scroll-if-needed items-center justify-space-between">
             {paddingSizes.map((size) => (
-                <div key={size.class} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
+                <div key={size.class} className="bg-primary shrink-0 rounded-sm overflow-hidden">
                     <div className={`p-${size.class}`} style={{ backgroundColor: 'rgba(0,0,0,.2)' }}>
                         <div className={demoItemClasses} style={{ width: '3rem', height: '2rem' }}>
                             <span className="text-2xs">p-{size.class}</span>
@@ -139,7 +139,7 @@ export const PaddingTop = () => {
     return (
         <div className="border rounded w-full relative flex gap-2 flex-nowrap scroll-if-needed items-start justify-space-between text-2xs">
             {paddingSizes.map((size) => (
-                <div key={size.class} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
+                <div key={size.class} className="bg-primary shrink-0 rounded-sm overflow-hidden">
                     <div className={`pt-${size.class}`} style={{ width: '3rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
                         <div className={demoItemClasses} style={{ height: '2rem' }}>
                             pt-{size.class}
@@ -155,7 +155,7 @@ export const PaddingBottom = () => {
     return (
         <div className="border rounded w-full relative flex gap-2 flex-nowrap scroll-if-needed items-end justify-space-between text-2xs">
             {paddingSizes.map((size) => (
-                <div key={size.class} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
+                <div key={size.class} className="bg-primary shrink-0 rounded-sm overflow-hidden">
                     <div className={`pb-${size.class}`} style={{ width: '3rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
                         <div className={demoItemClasses} style={{ height: '2rem' }}>
                             pb-{size.class}
@@ -171,7 +171,7 @@ export const PaddingY = () => {
     return (
         <div className="border rounded w-full relative flex gap-2 flex-nowrap scroll-if-needed items-center justify-space-between text-2xs">
             {paddingSizes.map((size) => (
-                <div key={size.class} className="bg-primary flex-item-noshrink rounded-sm overflow-hidden">
+                <div key={size.class} className="bg-primary shrink-0 rounded-sm overflow-hidden">
                     <div className={`py-${size.class}`} style={{ width: '3rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
                         <div className={demoItemClasses} style={{ height: '2rem' }}>
                             py-{size.class}
@@ -346,8 +346,8 @@ export const Sandbox = () => {
 
                             <span className="text-semibold w-1/10">{id}</span>
 
-                            <span className="w-1/10 flex flex-item-noshrink justify-center">
-                                <span className="bg-primary rounded-sm flex-item-noshrink grow-0">
+                            <span className="w-1/10 flex shrink-0 justify-center">
+                                <span className="bg-primary rounded-sm shrink-0 grow-0">
                                     <span className={`${id}0-25 block rounded-sm bg-primary`}>
                                         <span
                                             className="flex items-center justify-center bg-norm opacity-65"

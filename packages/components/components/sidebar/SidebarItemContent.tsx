@@ -19,7 +19,7 @@ const SidebarItemContent = ({ icon, iconColor, iconSize = 16, title, text, aside
                     color={iconColor}
                     name={icon}
                     size={iconSize}
-                    className="navigation-icon flex-item-noshrink flex-item-centered-vert"
+                    className="navigation-icon shrink-0 flex-item-centered-vert"
                 />
             )}
             <span className="flex-1 text-ellipsis max-w-full">{text}</span>

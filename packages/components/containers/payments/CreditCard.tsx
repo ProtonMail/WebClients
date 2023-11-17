@@ -57,7 +57,7 @@ const WarningIcon = ({ className }: { className?: string }) => {
     return (
         <Icon
             name="exclamation-circle-filled"
-            className={clsx('flex-item-noshrink color-danger', className)}
+            className={clsx('shrink-0 color-danger', className)}
             size={18}
         />
     );

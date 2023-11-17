@@ -46,17 +46,17 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
                     'sign-layout-main-header gap-1 sm:gap-4 px-6 py-3 lg:px-12 md:pt-5 md:pb-10 mb-2 md:mb-0'
                 )}
             >
-                <div className="inline-flex flex-nowrap flex-item-noshrink">
-                    <div className="md:hidden flex-item-noshrink">{onBack && <BackButton onClick={onBack} />}</div>
+                <div className="inline-flex flex-nowrap shrink-0">
+                    <div className="md:hidden shrink-0">{onBack && <BackButton onClick={onBack} />}</div>
                     {hasDecoration ? (
                         <Href
-                            className="flex-item-noshrink relative interactive-pseudo-protrude rounded interactive--no-background"
+                            className="shrink-0 relative interactive-pseudo-protrude rounded interactive--no-background"
                             href={APP_NAME === APPS.PROTONVPN_SETTINGS ? 'https://protonvpn.com ' : getStaticURL('')}
                         >
                             {protonLogoBrand}
                         </Href>
                     ) : (
-                        <div className="flex-item-noshrink">{protonLogoBrand}</div>
+                        <div className="shrink-0">{protonLogoBrand}</div>
                     )}
                 </div>
                 <div>
@@ -82,7 +82,7 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
                 <main className={clsx(centeredContent && 'flex flex-item-centered-vert')}>
                     {children}
                     {hasDecoration && (
-                        <div className="flex-item-noshrink text-center px-4 pt-0 pb-0 sm:px-5 sm:pt-8 sm:pb-0">
+                        <div className="shrink-0 text-center px-4 pt-0 pb-0 sm:px-5 sm:pt-8 sm:pb-0">
                             <LayoutLogos size={48} />
                         </div>
                     )}
@@ -90,7 +90,7 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
             </div>
             {hasDecoration ? (
                 <>
-                    <LayoutFooter app={APP_NAME} className="flex-item-noshrink text-center p-4" version={appVersion} />
+                    <LayoutFooter app={APP_NAME} className="shrink-0 text-center p-4" version={appVersion} />
                     <div className="static lg:fixed m-0 lg:m-8 lg:mr-12 mb-4 lg:mb-12 bottom right text-center lg:text-right text-sm sm:text-rg">
                         {bottomRight}
                     </div>

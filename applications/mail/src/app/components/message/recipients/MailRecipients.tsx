@@ -63,7 +63,7 @@ const MailRecipients = ({
                 />
             )}
             {!isLoading && (
-                <div className="flex-item-noshrink flex ml-auto">
+                <div className="shrink-0 flex ml-auto">
                     <Button
                         onClick={toggleDetails}
                         aria-expanded={expanded}

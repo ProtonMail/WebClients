@@ -218,7 +218,7 @@ const OrganizationSection = ({ app, organization, onSetupOrganization }: Props) 
                 <Field className="pt-2 mb-2 md:mb-0">
                     <div className="text-bold text-ellipsis">{organizationName}</div>
                 </Field>
-                <div className="ml-0 md:ml-auto flex-item-noshrink">
+                <div className="ml-0 md:ml-auto shrink-0">
                     <Button
                         id="organization-name-edit-button"
                         color="norm"

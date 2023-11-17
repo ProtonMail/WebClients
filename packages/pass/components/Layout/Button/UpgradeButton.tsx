@@ -21,7 +21,7 @@ export const UpgradeButton: VFC<UpgradeButtonProps> = ({ className, inline = fal
     return (
         <ButtonComponent
             className={clsx(
-                'items-center flex-nowrap flex-item-noshrink',
+                'items-center flex-nowrap shrink-0',
                 inline ? 'inline-flex' : 'flex text-sm',
                 className
             )}

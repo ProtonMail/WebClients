@@ -64,7 +64,7 @@ const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange, forc
                 const child = (
                     <Option key={option.value} value={option.value} title={option.text}>
                         <span className="inline-flex max-w-full flex-nowrap flex-items-align-center justify-start">
-                            {option.icon && <Icon className="mr-2 my-auto flex-item-noshrink" name={option.icon} />}
+                            {option.icon && <Icon className="mr-2 my-auto shrink-0" name={option.icon} />}
                             <span className="text-ellipsis">{option.text}</span>
                         </span>
                     </Option>
