@@ -123,7 +123,7 @@ const NotificationInputInDrawer = ({
             <span className={clsx('flex flex-column gap-2', fullWidth ? 'md:flex-row' : 'lg:flex-row')}>
                 <span
                     className={clsx(
-                        'flex flex-nowrap gap-2 flex-item-grow-custom',
+                        'flex flex-nowrap gap-2 grow-custom',
                         fullWidth ? 'md:flex-1' : 'lg:flex-1'
                     )}
                     style={{ '--grow-custom': '1.5' }}

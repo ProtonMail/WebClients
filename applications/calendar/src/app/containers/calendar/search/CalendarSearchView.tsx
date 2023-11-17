@@ -321,7 +321,7 @@ const CalendarSearchView = ({
                         </div>
                     )}
 
-                    <div className="flex flex-column justify-center items-center flex-item-grow w-full">
+                    <div className="flex flex-column justify-center items-center grow w-full">
                         <IllustrationPlaceholder title={c('Info message').t`No results found`} url={noResultsImg} />
                         <div className="text-center">
                             {c('Info calendar search')
