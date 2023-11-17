@@ -374,7 +374,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                 data-testid="users-and-addresses-table:memberRole"
                                 style={{ verticalAlign: 'baseline' }}
                             >
-                                <div className="flex flex-column flex-nowrap flex-item-align-baseline">
+                                <div className="flex flex-column flex-nowrap">
                                     <MemberRole member={member} />
                                     {isInvitationPending && (
                                         <span>

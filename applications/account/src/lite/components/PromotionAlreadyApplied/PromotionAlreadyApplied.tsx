@@ -16,7 +16,7 @@ const PromotionAlreadyApplied = () => {
                     <div className="flex justify-center">
                         <ProtonLogo />
                     </div>
-                    <div className="my-16 text-center flex flex-column gap-6 flex-align-center p-11 border rounded-lg">
+                    <div className="my-16 text-center flex flex-column gap-6 p-11 border rounded-lg">
                         <img src={promotionApplied} alt="" />
                         <h1 className="text-bold text-2xl">
                             {c('Info').t`Your account was successfully updated with this promotion`}
