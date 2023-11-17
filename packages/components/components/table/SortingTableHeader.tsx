@@ -14,7 +14,7 @@ interface SortingTableCellHeaderProps {
 
 export const SortingTableCellHeader = ({ content, onClick = noop, direction }: SortingTableCellHeaderProps) => {
     return (
-        <div className="flex-nowrap inline-flex-vcenter">
+        <div className="flex-nowrap inline-flex children-self-center">
             <span
                 tabIndex={0}
                 role="button"
