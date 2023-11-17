@@ -276,15 +276,22 @@ describe('PaypalPaymentProcessor', () => {
         expect(token).toBeDefined();
     });
 
-    it('should remove token and error on reset()', () => {
+    // It's necessary to keep the error to support the retry mechanism properly.
+    // Properly means: when there is an error, the user sees Retry button. When the user clicks on it,
+    // the error is removed and the token is fetched again. Very important: the token is NOT verified until user
+    // clicks on the button the second time. This is because Safari doesn't allow to open a new window without
+    // a synchronous user action handling. So, we need to wait for the user to click on the button and then
+    // open the window.
+    it('should remove token and KEEP error on reset()', () => {
+        const error = new Error('error');
         paymentProcessor.updateState({
             fetchedPaymentToken: 'token' as any,
-            verificationError: new Error('error'),
+            verificationError: error,
         });
 
         paymentProcessor.reset();
 
         expect(paymentProcessor.fetchedPaymentToken).toBeNull();
-        expect(paymentProcessor.verificationError).toBeNull();
+        expect(paymentProcessor.verificationError).toBe(error);
     });
 });
