@@ -23,7 +23,7 @@ const TopNavbarListItem = ({
         <li
             className={clsx([
                 'topnav-listItem',
-                noShrink && 'flex-item-noshrink',
+                noShrink && 'shrink-0',
                 !collapsedOnDesktop && 'topnav-listItem--noCollapse',
                 noCollapse && 'topnav-listItem--noCollapse',
                 className,

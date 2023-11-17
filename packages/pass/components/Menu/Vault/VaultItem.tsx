@@ -104,12 +104,12 @@ export const VaultItem: VFC<Props> = ({
                             <Icon name="users" alt={c('Action').t`See members`} color="var(--text-weak)" />
                         </ButtonLike>
                     )}
-                    <span className="pass-vault--count flex-item-noshrink color-weak mx-1">{count}</span>
+                    <span className="pass-vault--count shrink-0 color-weak mx-1">{count}</span>
                 </>
             }
             icon={
                 <VaultIcon
-                    className="flex-item-noshrink"
+                    className="shrink-0"
                     size={14}
                     color={vault?.content.display.color}
                     icon={vault?.content.display.icon}

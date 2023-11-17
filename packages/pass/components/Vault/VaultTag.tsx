@@ -27,9 +27,9 @@ export const VaultTag: VFC<Props> = ({ title, shared = false, icon, color, count
             )}
             style={shared ? { '--vault-icon-color': VAULT_COLOR_MAP[color ?? VaultColor.COLOR1] } : undefined}
         >
-            {<Icon className="flex-item-noshrink" name={icon} size={iconSize} />}
+            {<Icon className="shrink-0" name={icon} size={iconSize} />}
             <span className="text-ellipsis">{title}</span>
-            {count !== undefined && count > 1 && <span className="flex-item-noshrink">• {count}</span>}
+            {count !== undefined && count > 1 && <span className="shrink-0">• {count}</span>}
         </div>
     );
 };

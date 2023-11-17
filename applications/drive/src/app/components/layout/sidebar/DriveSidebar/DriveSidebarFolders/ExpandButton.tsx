@@ -24,7 +24,7 @@ export default function ExpandButton({ className, expanded, onClick, style }: Pr
             size="small"
             icon
             className={clsx([
-                'flex-item-noshrink flex items-center drive-sidebar--button-expand',
+                'shrink-0 flex items-center drive-sidebar--button-expand',
                 className,
             ])}
             onClick={handleClick}

@@ -30,9 +30,9 @@ export const Submenu: FC<Props> = ({ contentClassname, headerClassname, icon, it
     const { onLink } = usePassCore();
 
     return (
-        <Collapsible className="flex-item-noshrink">
+        <Collapsible className="shrink-0">
             <CollapsibleHeader
-                className={clsx(headerClassname, 'flex-item-noshrink pl-4 pr-2')}
+                className={clsx(headerClassname, 'shrink-0 pl-4 pr-2')}
                 suffix={
                     <CollapsibleHeaderIconButton className="p-0" pill size="small">
                         <Icon name="chevron-down" />

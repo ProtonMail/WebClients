@@ -141,7 +141,7 @@ const UsernameSection = ({ app }: Props) => {
                                     mode="banner"
                                     rounded
                                     contentCentered={false}
-                                    icon={<img width="40" src={mailCalendar} alt="" className="flex-item-noshrink" />}
+                                    icon={<img width="40" src={mailCalendar} alt="" className="shrink-0" />}
                                     description={getBoldFormattedText(
                                         c('Info')
                                             .t`**Get a ${BRAND_NAME} address** to use all ${BRAND_NAME_TWO} services including ${MAIL_SHORT_APP_NAME} and ${CALENDAR_SHORT_APP_NAME}.`
@@ -160,7 +160,7 @@ const UsernameSection = ({ app }: Props) => {
                     <Card className="mb-8" rounded bordered={true} background={false}>
                         <div className="h3 text-bold mb-6">{c('Info').t`Secure your ${BRAND_NAME} Account`}</div>
                         <div className="flex gap-4 flex-nowrap items-start">
-                            <img className="flex-item-noshrink" width="40" height="40" src={unverified} alt="" />
+                            <img className="shrink-0" width="40" height="40" src={unverified} alt="" />
                             <div>
                                 <div className="mb-2 text-lg text-semibold flex">
                                     <div className="mr-2 text-ellipsis">{primaryAddress.Email}</div>

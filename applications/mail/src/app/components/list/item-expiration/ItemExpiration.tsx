@@ -48,7 +48,7 @@ const ItemExpiration = ({ className, expirationTime, element, labelID }: Props) 
                 ])}
                 data-testid="item-expiration"
             >
-                <Icon name={iconName} className="flex-item-noshrink" size={14} alt={tooltipMessage} />
+                <Icon name={iconName} className="shrink-0" size={14} alt={tooltipMessage} />
                 <span className="ml-1 text-sm text-nowrap">{shortMessage}</span>
             </div>
         </Tooltip>

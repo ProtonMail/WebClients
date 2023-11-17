@@ -14,7 +14,7 @@ const OfferCloseButton = ({ onClose, darkBackground = false }: Props) => {
         <Tooltip title={c('specialoffer: Action').t`Close`}>
             <Button
                 className={clsx(
-                    'flex-item-noshrink offer-close-button absolute right mr-2 top-custom',
+                    'shrink-0 offer-close-button absolute right mr-2 top-custom',
                     darkBackground && 'offer-close-button--dark'
                 )}
                 icon

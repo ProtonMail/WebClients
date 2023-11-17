@@ -101,11 +101,11 @@ const NotificationInputInDrawer = ({
                             <Option key={value} value={value} title={text} />
                         ))}
                     </SelectTwo>
-                    <span className="flex-item-noshrink">
+                    <span className="shrink-0">
                         <Tooltip title={removeNotificationText}>
                             <ButtonLike
                                 data-testid="delete-notification"
-                                className="flex flex-item-noshrink"
+                                className="flex shrink-0"
                                 disabled={disabled}
                                 onClick={onDelete}
                                 icon
@@ -113,7 +113,7 @@ const NotificationInputInDrawer = ({
                                 shape="ghost"
                                 color="norm"
                             >
-                                <Icon name="trash" className="flex-item-noshrink" />
+                                <Icon name="trash" className="shrink-0" />
                                 <span className="sr-only">{removeNotificationText}</span>
                             </ButtonLike>
                         </Tooltip>
@@ -129,7 +129,7 @@ const NotificationInputInDrawer = ({
                     style={{ '--grow-custom': '1.5' }}
                 >
                     {hasValueInput && (
-                        <span className="flex-item-noshrink w-custom" style={{ '--w-custom': '4.5em' }}>
+                        <span className="shrink-0 w-custom" style={{ '--w-custom': '4.5em' }}>
                             <IntegerInput
                                 id={NOTIFICATION_INPUT_ID}
                                 data-testid="notification-time-input"

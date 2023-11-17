@@ -95,7 +95,7 @@ const ButtonNumberInput = ({
     const isValidTmpValue = getIsValidValue(tmpValue);
 
     return (
-        <div className="border rounded flex-item-noshrink flex flex-nowrap">
+        <div className="border rounded shrink-0 flex flex-nowrap">
             <button
                 type="button"
                 title={c('Action').t`Decrease`}

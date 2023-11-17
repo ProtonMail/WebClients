@@ -12,13 +12,13 @@ type Props = { extra?: ReactElement; title: string; onClose?: (options?: IFrameC
 
 export const NotificationHeader: VFC<Props> = ({ extra, title, onClose }) => {
     return (
-        <div className="flex flex-nowrap flex-item-noshrink items-center justify-space-between gap-2">
+        <div className="flex flex-nowrap shrink-0 items-center justify-space-between gap-2">
             <h3 className="flex text-bold text-lg items-center gap-2">
                 <PassIcon status={PassIconStatus.ACTIVE} size={22} />
                 <span className="flex-1 text-ellipsis">{title}</span>
             </h3>
 
-            <div className="flex flex-item-noshrink gap-1">
+            <div className="flex shrink-0 gap-1">
                 {extra}
                 <Button
                     key="close-button"
@@ -27,7 +27,7 @@ export const NotificationHeader: VFC<Props> = ({ extra, title, onClose }) => {
                     shape="solid"
                     color="weak"
                     size="small"
-                    className="flex-item-noshrink"
+                    className="shrink-0"
                     onClick={() => onClose?.({ discard: true })}
                     title={c('Action').t`Cancel`}
                 >

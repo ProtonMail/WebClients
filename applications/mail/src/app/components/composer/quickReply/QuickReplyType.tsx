@@ -63,7 +63,7 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
                 className="flex mr-2 p-2 color-weak"
                 content={
                     <Icon
-                        className="flex-item-noshrink mr-custom"
+                        className="shrink-0 mr-custom"
                         style={{ '--mr-custom': 'calc(var(--space-2) * -1)' }}
                         name={iconName}
                     />

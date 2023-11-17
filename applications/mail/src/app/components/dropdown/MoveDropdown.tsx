@@ -185,7 +185,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
             className="flex flex-column flex-nowrap justify-start items-stretch flex-auto"
             onSubmit={handleSubmit}
         >
-            <div className="flex flex-item-noshrink justify-space-between items-center m-4 mb-0">
+            <div className="flex shrink-0 justify-space-between items-center m-4 mb-0">
                 <span className="text-bold" tabIndex={-2}>
                     {c('Label').t`Move to`}
                 </span>
@@ -203,7 +203,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                     </Button>
                 </Tooltip>
             </div>
-            <div className="flex-item-noshrink m-4 mb-0">
+            <div className="shrink-0 m-4 mb-0">
                 <SearchInput
                     value={search}
                     onChange={updateSearch}
@@ -226,7 +226,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                                 className="dropdown-item dropdown-item-button relative cursor-pointer w-full flex flex-nowrap items-center py-2 px-4"
                             >
                                 <Radio
-                                    className="flex-item-noshrink mr-2"
+                                    className="shrink-0 mr-2"
                                     id={folderButtonID(folder.ID)}
                                     name={uid}
                                     checked={selectedFolder?.ID === folder.ID}
@@ -243,7 +243,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                                     <FolderIcon
                                         folder={folder}
                                         name={folder.icon}
-                                        className="flex-item-noshrink mr-2"
+                                        className="shrink-0 mr-2"
                                     />
                                     <span className="text-ellipsis" title={folder.Name}>
                                         <Mark value={search}>{folder.Name}</Mark>
@@ -272,8 +272,8 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                     )}
                 </ul>
             </div>
-            <hr className="m-0 flex-item-noshrink" />
-            <div className={clsx(['mx-4 mt-4 flex-item-noshrink', alwaysCheckboxDisabled && 'color-disabled'])}>
+            <hr className="m-0 shrink-0" />
+            <div className={clsx(['mx-4 mt-4 shrink-0', alwaysCheckboxDisabled && 'color-disabled'])}>
                 <Checkbox
                     id={alwaysCheckID}
                     checked={always}
@@ -285,7 +285,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
                     {c('Label').t`Always move sender's emails`}
                 </Checkbox>
             </div>
-            <div className="m-4 flex-item-noshrink">
+            <div className="m-4 shrink-0">
                 <PrimaryButton
                     className="w-full"
                     loading={loading}

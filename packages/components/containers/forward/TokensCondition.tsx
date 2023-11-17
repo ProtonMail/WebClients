@@ -21,7 +21,7 @@ const Token = ({ index, value, onRemove }: TokenProps) => {
                 </small>
                 <button
                     type="button"
-                    className="flex flex-item-noshrink ml-2"
+                    className="flex shrink-0 ml-2"
                     title={c('email_forwarding_2023: Action').t`Remove “${value}”`}
                     onClick={() => onRemove(index)}
                 >

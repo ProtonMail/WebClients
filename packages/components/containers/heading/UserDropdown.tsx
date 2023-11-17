@@ -259,7 +259,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                     <div className="px-4 py-3 flex flex-nowrap gap-4 justify-space-between text-sm">
                         {planName ? (
                             <span
-                                className="text-semibold block flex-item-noshrink"
+                                className="text-semibold block shrink-0"
                                 data-testid="userdropdown:label:plan-name"
                             >
                                 {planName}
@@ -291,7 +291,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                     {!isNarrow && (
                         <div className="px-4 pb-4 text-sm flex flex-nowrap items-center">
                             <span
-                                className="my-auto text-sm rounded border p-1 inline-block relative flex flex-item-noshrink user-initials"
+                                className="my-auto text-sm rounded border p-1 inline-block relative flex shrink-0 user-initials"
                                 aria-hidden="true"
                             >
                                 <span className="m-auto">{initials}</span>
@@ -399,7 +399,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                             <Logo
                                                 appName={appToLinkTo}
                                                 variant="glyph-only"
-                                                className="flex-item-noshrink mr-2"
+                                                className="shrink-0 mr-2"
                                             />
                                             <span className={clsx(current && 'color-norm text-semibold')} aria-hidden>
                                                 {appToLinkToName}

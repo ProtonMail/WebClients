@@ -83,7 +83,7 @@ const ContactViewEmails = ({
                             >
                                 {email.value}
                             </a>
-                            <span className="flex-item-noshrink flex py-1 contact-view-actions">
+                            <span className="shrink-0 flex py-1 contact-view-actions">
                                 {!isPreview && (
                                     <>
                                         <Copy

@@ -17,7 +17,7 @@ const RecoveryCardStatus = ({ type, statusText, callToActions: items = [] }: Rec
     return (
         <>
             <span className="flex items-center flex-nowrap">
-                <RecoveryStatusIcon className="flex-item-noshrink" type={type} />
+                <RecoveryStatusIcon className="shrink-0" type={type} />
                 <RecoveryStatusText className="ml-4" type={type}>
                     {statusText}
                 </RecoveryStatusText>

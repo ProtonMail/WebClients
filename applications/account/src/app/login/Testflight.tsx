@@ -11,7 +11,7 @@ const Testflight = (props: Props) => {
     return (
         <Card rounded {...props}>
             <div className="flex flex-nowrap gap-3">
-                <img src={testflight} height={40} width={40} alt="" className="flex-item-noshrink rounded" />
+                <img src={testflight} height={40} width={40} alt="" className="shrink-0 rounded" />
                 <span>
                     {
                         // translator: Full sentence: You will be redirected to Apple Testflight after signing in.

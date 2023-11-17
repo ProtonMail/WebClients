@@ -31,10 +31,10 @@ const ContactImportCsvTableHeader = ({
                         <span className="flex-item-centered-vert mr-2">{c('TableHeader').t`Values`}</span>
                         <span className="flex flex-nowrap">
                             <Button icon disabled={disabledPrevious} onClick={onPrevious}>
-                                <Icon name="chevron-left" className="flex-item-noshrink" />
+                                <Icon name="chevron-left" className="shrink-0" />
                             </Button>
                             <Button icon disabled={disabledNext} onClick={onNext}>
-                                <Icon name="chevron-right" className="flex-item-noshrink" />
+                                <Icon name="chevron-right" className="shrink-0" />
                             </Button>
                         </span>
                     </div>

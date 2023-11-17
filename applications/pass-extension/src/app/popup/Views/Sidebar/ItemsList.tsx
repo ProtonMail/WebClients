@@ -36,7 +36,7 @@ export const ItemsList: VFC = () => {
     return (
         <>
             {totalCount > 0 && (
-                <div className="flex flex-row grow-0 flex-item-noshrink flex-nowrap p-3 gap-1 scroll-horizontal-if-needed">
+                <div className="flex flex-row grow-0 shrink-0 flex-nowrap p-3 gap-1 scroll-horizontal-if-needed">
                     <TypeFilter items={searched} value={type} onChange={setType} />
                     <SortFilter value={sort} onChange={setSort} />
                 </div>

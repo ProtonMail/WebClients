@@ -69,7 +69,7 @@ export const SubscriptionItemView = ({
                     <div className="flex-auto mr-4">
                         <strong className="text-lg">{title}</strong>
                     </div>
-                    <strong className="text-lg flex-item-noshrink color-primary">
+                    <strong className="text-lg shrink-0 color-primary">
                         {loading ? <EllipsisLoader /> : topRight}
                     </strong>
                 </div>
@@ -77,7 +77,7 @@ export const SubscriptionItemView = ({
                     <span className="color-weak flex flex-auto">
                         {loading ? <EllipsisLoader /> : bottomLeft}
                     </span>
-                    <span className="color-success flex flex-item-noshrink">{loading ? null : bottomRight}</span>
+                    <span className="color-success flex shrink-0">{loading ? null : bottomRight}</span>
                 </div>
             </div>
         </div>
@@ -117,7 +117,7 @@ const CycleItemView = ({
                         </span>
                     )}
                 </div>
-                <strong className="text-lg flex-item-noshrink color-primary">
+                <strong className="text-lg shrink-0 color-primary">
                     {loading ? (
                         <EllipsisLoader />
                     ) : (
@@ -143,7 +143,7 @@ const CycleItemView = ({
                         </Price>
                     )}
                 </span>
-                <span className="color-success flex flex-item-noshrink">
+                <span className="color-success flex shrink-0">
                     {loading ? null : getDiscountPrice(discount, currency)}
                 </span>
             </div>
@@ -277,10 +277,10 @@ const SubscriptionCycleSelector = ({
                         return (
                             <Option value={cycle} title={getShortBillingText(cycle)} key={cycle}>
                                 <div className="flex justify-space-between">
-                                    <span className="flex-item-noshrink">{getShortBillingText(cycle)}</span>
+                                    <span className="shrink-0">{getShortBillingText(cycle)}</span>
                                     <span
                                         className={clsx([
-                                            'flex-item-noshrink',
+                                            'shrink-0',
                                             cycle !== cycleSelected && 'color-success',
                                         ])}
                                     >
@@ -312,7 +312,7 @@ const SubscriptionCycleSelector = ({
                             type="button"
                             aria-pressed={isSelected}
                         >
-                            <div className="flex-item-noshrink" aria-hidden="true">
+                            <div className="shrink-0" aria-hidden="true">
                                 <Radio
                                     id={`${cycle}`}
                                     name="cycleFakeField"

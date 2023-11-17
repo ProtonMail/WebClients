@@ -168,7 +168,7 @@ export const Autosave: VFC<Props> = ({ settings, submission, visible, onClose })
                             icon={'user'}
                             size={20}
                             alt=""
-                            className="flex-item-noshrink"
+                            className="shrink-0"
                             loadImage={settings.loadDomainImages}
                         />
                         <div className="flex-auto">

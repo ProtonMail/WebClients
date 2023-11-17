@@ -204,12 +204,12 @@ const ContactEditProperties = (
 
     return (
         <div className="border-bottom mb-4" data-testid={title}>
-            <h3 className="mb-4 flex flex-nowrap items-center flex-item-noshrink">
-                <Icon className="mr-1 flex-item-noshrink" name={iconName} />
+            <h3 className="mb-4 flex flex-nowrap items-center shrink-0">
+                <Icon className="mr-1 shrink-0" name={iconName} />
                 <span className="ml-0.5 mr-2">{title}</span>
                 {((field && !['fn', 'email'].includes(field)) || field === undefined) && (
                     <EncryptedIcon
-                        className="flex flex-item-centered-vert flex-item-noshrink"
+                        className="flex flex-item-centered-vert shrink-0"
                         isSignatureVerified={isSignatureVerified}
                     />
                 )}
@@ -231,8 +231,8 @@ const ContactEditProperties = (
                 <div>{rows}</div>
             )}
             {canAdd && (
-                <div className="flex flex-nowrap flex-item-noshrink">
-                    <div className="mr-2 flex items-center flex-item-noshrink">
+                <div className="flex flex-nowrap shrink-0">
+                    <div className="mr-2 flex items-center shrink-0">
                         <Icon name="text-align-justify" className="visibility-hidden" />
                     </div>
                     <div className="flex flex-nowrap w-custom" style={{ '--w-custom': '95%' }}>

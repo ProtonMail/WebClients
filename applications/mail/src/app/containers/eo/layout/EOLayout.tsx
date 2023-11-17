@@ -48,7 +48,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h-full eo-layout-bg scroll-if-needed">
             <PublicTopBanners />
-            <header className="flex flex-nowrap justify-space-between items-center flex-item-noshrink p-7 flex-column sm:flex-row">
+            <header className="flex flex-nowrap justify-space-between items-center shrink-0 p-7 flex-column sm:flex-row">
                 <AppLink to="/" toApp={toApp} target="_self">
                     <Logo appName={toApp} />
                 </AppLink>
@@ -94,14 +94,14 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                     </Href>
                 </div>
             </div>
-            <footer className="flex-item-noshrink text-center p-4">
+            <footer className="shrink-0 text-center p-4">
                 <div>
                     {
                         // translator: full sentence 'Proton. Privacy by default.'
                         c('Footer').t`${BRAND_NAME}. Privacy by default.`
                     }
                 </div>
-                <div className="text-center text-sm m-0 pt-4 pb-2 flex-item-noshrink">
+                <div className="text-center text-sm m-0 pt-4 pb-2 shrink-0">
                     <span className="block md:inline">{termsLink}</span>
                     <span className="color-weak px-3 hidden md:inline" aria-hidden="true">
                         |

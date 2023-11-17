@@ -38,7 +38,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
             <ModalTwoHeader title={utmTrackerText} data-testid="trackersModal:title" />
             <ModalTwoContent>
                 <div className="border rounded-lg mb-4 p-4 flex flex-nowrap items-center">
-                    <img src={cleanLinkImg} alt="" className="flex-item-noshrink" />
+                    <img src={cleanLinkImg} alt="" className="shrink-0" />
                     <p className="color-weak flex-1 pl-4 my-0" data-testid="trackersModal:description">
                         {c('Info')
                             .t`We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.`}
@@ -56,7 +56,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                                     <div className="text-ellipsis w-full flex-1" title={tracker.originalURL}>
                                         {tracker.originalURL}
                                     </div>
-                                    <div className="group-hover:opacity-100 group-hover:opacity-100-no-width flex-item-noshrink">
+                                    <div className="group-hover:opacity-100 group-hover:opacity-100-no-width shrink-0">
                                         <Tooltip title={c('Label').t`Open in a new tab`}>
                                             <Button
                                                 icon
@@ -77,7 +77,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                                     <div className="text-ellipsis w-full flex-1" title={tracker.cleanedURL}>
                                         {tracker.cleanedURL}
                                     </div>
-                                    <div className="group-hover:opacity-100 group-hover:opacity-100-no-width flex-item-noshrink">
+                                    <div className="group-hover:opacity-100 group-hover:opacity-100-no-width shrink-0">
                                         <Tooltip title={c('Label').t`Open in a new tab`}>
                                             <Button
                                                 icon

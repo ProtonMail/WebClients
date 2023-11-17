@@ -274,7 +274,7 @@ const ContactGroupDropdown = ({
                                             className="dropdown-item w-full flex flex-nowrap items-center py-2 px-4"
                                         >
                                             <Checkbox
-                                                className="flex-item-noshrink"
+                                                className="shrink-0"
                                                 id={checkboxId}
                                                 checked={model[ID] === CHECKED}
                                                 indeterminate={model[ID] === INDETERMINATE}
@@ -287,7 +287,7 @@ const ContactGroupDropdown = ({
                                             >
                                                 <Icon
                                                     name="circle-filled"
-                                                    className="ml-1 mr-2 flex-item-noshrink"
+                                                    className="ml-1 mr-2 shrink-0"
                                                     size={16}
                                                     color={Color}
                                                 />

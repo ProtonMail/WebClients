@@ -47,7 +47,7 @@ const SortDropdownMenu = ({ labelID, sort: { sort, desc }, onSort, isSearch, bor
                 onClick={() => onSort({ sort: TIME, desc: true })}
             >
                 <span className="text-left flex-1">{SORT_OPTIONS.NEW_TO_OLD}</span>
-                {isNewToOld ? <Icon name="checkmark" className="flex-item-noshrink mt-0.5" /> : null}
+                {isNewToOld ? <Icon name="checkmark" className="shrink-0 mt-0.5" /> : null}
             </DropdownMenuButton>
             <DropdownMenuButton
                 data-testid="toolbar:sort-old-to-new"
@@ -57,7 +57,7 @@ const SortDropdownMenu = ({ labelID, sort: { sort, desc }, onSort, isSearch, bor
                 onClick={() => onSort({ sort: TIME, desc: false })}
             >
                 <span className="text-left flex-1">{SORT_OPTIONS.OLD_TO_NEW}</span>
-                {isOldToNew ? <Icon name="checkmark" className="flex-item-noshrink mt-0.5" /> : null}
+                {isOldToNew ? <Icon name="checkmark" className="shrink-0 mt-0.5" /> : null}
             </DropdownMenuButton>
             {!hideSizeSorting && (
                 <DropdownMenuButton
@@ -68,7 +68,7 @@ const SortDropdownMenu = ({ labelID, sort: { sort, desc }, onSort, isSearch, bor
                     onClick={() => onSort({ sort: SIZE, desc: true })}
                 >
                     <span className="text-left flex-1">{SORT_OPTIONS.LARGE_TO_SMALL}</span>
-                    {isLargeToSmall ? <Icon name="checkmark" className="flex-item-noshrink mt-0.5" /> : null}
+                    {isLargeToSmall ? <Icon name="checkmark" className="shrink-0 mt-0.5" /> : null}
                 </DropdownMenuButton>
             )}
             {!hideSizeSorting && (
@@ -80,7 +80,7 @@ const SortDropdownMenu = ({ labelID, sort: { sort, desc }, onSort, isSearch, bor
                     onClick={() => onSort({ sort: SIZE, desc: false })}
                 >
                     <span className="text-left flex-1">{SORT_OPTIONS.SMALL_TO_LARGE}</span>
-                    {isSmallToLarge ? <Icon name="checkmark" className="flex-item-noshrink mt-0.5" /> : null}
+                    {isSmallToLarge ? <Icon name="checkmark" className="shrink-0 mt-0.5" /> : null}
                 </DropdownMenuButton>
             )}
         </DropdownMenu>

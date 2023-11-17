@@ -140,7 +140,7 @@ const Spotlight = ({
                     onAnimationEnd={handleAnimationEnd}
                 >
                     <div className={clsx(['spotlight-inner', type && 'flex flex-nowrap items-start'])}>
-                        {illustrationURL && <img className="flex-item-noshrink mr-6" src={illustrationURL} alt="" />}
+                        {illustrationURL && <img className="shrink-0 mr-6" src={illustrationURL} alt="" />}
                         <div>{content}</div>
                     </div>
 

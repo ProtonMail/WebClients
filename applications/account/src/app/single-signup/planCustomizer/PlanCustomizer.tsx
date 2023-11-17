@@ -153,7 +153,7 @@ const PlanCustomizer = ({
                                 {buttonNumberInput}
                             </AddonField>
                             <div className="mt-2 p-3 color-weak bg-weak rounded flex flex-nowrap">
-                                <Icon name="info-circle" className="mr-2 mt-0.5 flex-item-noshrink" />
+                                <Icon name="info-circle" className="mr-2 mt-0.5 shrink-0" />
                                 <span>
                                     {c('Info')
                                         .t`We recommend having at least 2 servers in order to provide redundancy.`}

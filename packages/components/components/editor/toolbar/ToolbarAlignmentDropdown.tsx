@@ -15,7 +15,7 @@ interface Props {
 const ToolbarAlignmentDropdown = ({ setAlignment }: Props) => (
     <ToolbarDropdown
         content={<Icon name="text-align-left" size={COMPOSER_TOOLBAR_ICON_SIZE} alt={c('Action').t`Alignment`} />}
-        className="flex-item-noshrink"
+        className="shrink-0"
         data-testid="editor-alignment"
         title={c('Action').t`Alignment`}
     >

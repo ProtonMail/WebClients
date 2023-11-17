@@ -228,7 +228,7 @@ const ContactsWidgetContainer = ({
 
     return (
         <div className="flex flex-column flex-nowrap h-full">
-            <div className="contacts-widget-search-container flex-item-noshrink">
+            <div className="contacts-widget-search-container shrink-0">
                 <label htmlFor="id_contact-widget-search" className="sr-only">{c('Placeholder')
                     .t`Search for name or email`}</label>
                 <SearchInput
@@ -247,7 +247,7 @@ const ContactsWidgetContainer = ({
                     )}
                 </span>
             </div>
-            <div className="contacts-widget-toolbar py-3 border-bottom border-weak flex-item-noshrink">
+            <div className="contacts-widget-toolbar py-3 border-bottom border-weak shrink-0">
                 <ContactsWidgetToolbar
                     allChecked={hasCheckedAllFiltered}
                     selected={selectedIDs}

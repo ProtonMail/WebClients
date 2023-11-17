@@ -72,7 +72,7 @@ const ProtonVPNClientsSection = () => {
                 <Copy
                     shape="ghost"
                     value={href}
-                    className="flex-item-noshrink mr-2"
+                    className="shrink-0 mr-2"
                     onCopy={() => {
                         createNotification({
                             text: c('Success').t`Link copied to clipboard`,

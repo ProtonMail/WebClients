@@ -73,7 +73,7 @@ const ColorPicker = ({ color = '#5252CC', onChange, displayColorName = true, onC
                 <span className="flex-1 text-left flex flex-nowrap items-center gap-2">
                     <span className="sr-only">{c('info').t`Selected color:`}</span>
                     <Icon
-                        className="flex-item-noshrink"
+                        className="shrink-0"
                         name="circle-filled"
                         size={28}
                         color={iconColor}

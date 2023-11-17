@@ -53,7 +53,7 @@ export const VaultInviteFromItemModal: VFC<Props> = ({
                     onClick={handleShareVaultClick}
                 >
                     <div className="flex justify-space-between items-center flex-nowrap max-w-full gap-4">
-                        <span className="flex flex-item-noshrink text-no-wrap">{c('Action').t`Share this vault`}</span>
+                        <span className="flex shrink-0 text-no-wrap">{c('Action').t`Share this vault`}</span>
                         <VaultTag
                             title={vault.content.name}
                             color={vault.content.display.color}

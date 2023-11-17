@@ -51,7 +51,7 @@ export default function DriveSidebarSubfolder({ shareId, folder, level, toggleEx
                     >
                         <ExpandButton expanded={folder.isExpanded} onClick={toggleExpand} style={expandeButtonStyle} />
                         {isLoading ? (
-                            <Loader className="flex flex-item-noshrink drive-sidebar--icon" />
+                            <Loader className="flex shrink-0 drive-sidebar--icon" />
                         ) : (
                             <FileIcon className="flex-item-centered-vert drive-sidebar--icon" mimeType="Folder" />
                         )}

@@ -112,7 +112,7 @@ const NotificationInput = ({
             )}
             <span className={clsx('flex flex-nowrap', fullWidth ? 'md:flex-1' : 'lg:flex-1')}>
                 {hasValueInput && (
-                    <span className="flex-item-noshrink mr-2 w-custom" style={{ '--w-custom': '5em' }}>
+                    <span className="shrink-0 mr-2 w-custom" style={{ '--w-custom': '5em' }}>
                         <IntegerInput
                             id={NOTIFICATION_INPUT_ID}
                             data-testid="notification-time-input"
@@ -171,7 +171,7 @@ const NotificationInput = ({
                                 fullWidth ? 'md:mt-0' : 'lg:mt-0'
                             )}
                         >
-                            <span className={clsx('flex-item-noshrink ml-0 mr-2', fullWidth ? 'md:ml-2' : 'lg:ml-2')}>
+                            <span className={clsx('shrink-0 ml-0 mr-2', fullWidth ? 'md:ml-2' : 'lg:ml-2')}>
                                 {atText}
                             </span>
                             <span className="w-custom" style={{ '--w-custom': '8em' }}>

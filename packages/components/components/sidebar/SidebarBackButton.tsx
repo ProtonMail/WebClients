@@ -16,7 +16,7 @@ const SidebarBackButton = ({ children, ...rest }: AppLinkProps) => {
             className="flex items-center justify-center flex-nowrap gap-2"
             {...rest}
         >
-            <Icon name="arrow-left" className="on-rtl-mirror flex-item-noshrink" />
+            <Icon name="arrow-left" className="on-rtl-mirror shrink-0" />
             <span className="text-ellipsis">{children ? children : c('Navigation').t`Back`}</span>
         </ButtonLike>
     );

@@ -356,7 +356,7 @@ const Step1 = ({
                     const wrap = (iconName: IconName, textLaunchOffer: ReactNode) => {
                         return (
                             <div className="signup-v2-offer-banner py-2 px-4 rounded-lg color-primary md:text-lg inline-flex flex-nowrap mt-4">
-                                <Icon name={iconName} size={14} className="flex-item-noshrink mt-1" />
+                                <Icon name={iconName} size={14} className="shrink-0 mt-1" />
                                 <span className="ml-2 flex-1">{textLaunchOffer}</span>
                             </div>
                         );

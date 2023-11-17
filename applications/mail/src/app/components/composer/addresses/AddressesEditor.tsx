@@ -76,7 +76,7 @@ const AddressesEditor = ({
                         classname="composer-editor-to flex-1"
                         anchorRef={toListAnchorRef}
                     />
-                    <span className="flex-no-min-children flex-nowrap flex-item-noshrink max-w-1/2 sm:max-w-1/3 md:max-w-none self-start pt-2 composer-to-ccbcc-buttons sticky-top">
+                    <span className="flex-no-min-children flex-nowrap shrink-0 max-w-1/2 sm:max-w-1/3 md:max-w-none self-start pt-2 composer-to-ccbcc-buttons sticky-top">
                         <>
                             {!ccExpanded && (
                                 <AddressesCCButton
@@ -99,7 +99,7 @@ const AddressesEditor = ({
                                 tabIndex={-1}
                                 onClick={handleContactModal('ToList')}
                                 color="weak"
-                                className="py-2 flex-item-noshrink composer-addresses-to-contact-button"
+                                className="py-2 shrink-0 composer-addresses-to-contact-button"
                                 shape="ghost"
                                 icon
                                 data-testid="composer:to-button"

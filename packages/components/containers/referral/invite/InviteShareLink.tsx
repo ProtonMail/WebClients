@@ -45,7 +45,7 @@ const InviteShareLink = () => {
                 <div className="flex gap-2 flex-nowrap justify-end">
                     <Button color="norm" onClick={onCopyButtonClick} title={c('Info').t`Copy your referral link`}>
                         <span className="flex flex-nowrap items-center">
-                            <Icon name="link" className="mr-1 flex-item-noshrink" /> {c('Button').t`Copy`}
+                            <Icon name="link" className="mr-1 shrink-0" /> {c('Button').t`Copy`}
                         </span>
                     </Button>
                     <TwitterButton
@@ -57,7 +57,7 @@ const InviteShareLink = () => {
                         target="_blank"
                     >
                         <span className="flex flex-nowrap items-center">
-                            <Icon name="brand-twitter" className="mr-1 flex-item-noshrink" /> {c('Button').t`Tweet`}
+                            <Icon name="brand-twitter" className="mr-1 shrink-0" /> {c('Button').t`Tweet`}
                         </span>
                     </TwitterButton>
                 </div>

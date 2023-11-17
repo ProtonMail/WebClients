@@ -70,7 +70,7 @@ const SendEmailReminderTwoFAModal = ({ onClose, members, ...rest }: Props) => {
                                     className="py-2 flex flex-nowrap items-center border-bottom"
                                     title={member.Name}
                                 >
-                                    <Avatar className="mr-2 flex-item-noshrink">{getInitials(member.Name)}</Avatar>
+                                    <Avatar className="mr-2 shrink-0">{getInitials(member.Name)}</Avatar>
                                     <div className="flex-items-fluid">
                                         <div className="text-ellipsis max-100" title={member.Name}>
                                             {member.Name}
@@ -80,7 +80,7 @@ const SendEmailReminderTwoFAModal = ({ onClose, members, ...rest }: Props) => {
                                                 {memberAddresses[0].Email}
                                             </span>
                                             {member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN && (
-                                                <span className="flex-item-noshrink">
+                                                <span className="shrink-0">
                                                     <Badge type="light">{c('Admin').t`admin`}</Badge>
                                                 </span>
                                             )}

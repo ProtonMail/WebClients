@@ -356,7 +356,7 @@ const CalendarSidebar = ({
             )}
 
             <SidebarNav data-testid="calendar-sidebar:calendars-list-area">
-                <div className="flex-item-noshrink">{miniCalendar}</div>
+                <div className="shrink-0">{miniCalendar}</div>
                 {myCalendarsList}
                 {otherCalendarsList}
             </SidebarNav>

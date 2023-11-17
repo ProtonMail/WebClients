@@ -8,7 +8,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 export const SidebarListItemHeaderLinkButton = ({ info, icon, ...rest }: Props) => {
     return (
-        <button className="navigation-link-header-group-control flex-item-noshrink" type="button" {...rest}>
+        <button className="navigation-link-header-group-control shrink-0" type="button" {...rest}>
             <Icon name={icon} className="navigation-icon" />
             <span className="sr-only">{info}</span>
         </button>

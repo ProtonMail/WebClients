@@ -87,10 +87,10 @@ const HeaderCollapsed = ({
                 />
 
                 {messageLoaded && isDraftMessage && (
-                    <span className="badge-label-success ml-2 flex-item-noshrink">{c('Info').t`Draft`}</span>
+                    <span className="badge-label-success ml-2 shrink-0">{c('Info').t`Draft`}</span>
                 )}
                 {messageLoaded && isOutboxMessage && !isScheduledMessage && (
-                    <span className="badge-label-primary ml-2 flex-item-noshrink">{c('Info').t`Sending`}</span>
+                    <span className="badge-label-primary ml-2 shrink-0">{c('Info').t`Sending`}</span>
                 )}
                 {messageLoaded && isExpiringMessage && (
                     <ItemExpiration
@@ -115,7 +115,7 @@ const HeaderCollapsed = ({
                     </div>
                 )}
             </div>
-            <div className="flex items-center flex-nowrap flex-item-noshrink">
+            <div className="flex items-center flex-nowrap shrink-0">
                 {messageLoaded ? (
                     <>
                         <span className="message-header-star mr-2 flex">

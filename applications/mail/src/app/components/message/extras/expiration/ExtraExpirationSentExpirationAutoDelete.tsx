@@ -20,7 +20,7 @@ const ExtraExpirationSentExpirationAutoDelete = ({ message, autoDelete }: Props)
             )}
             data-testid="expiration-banner"
         >
-            <Icon name={autoDelete ? 'trash-clock' : 'hourglass'} className="flex-item-noshrink" />
+            <Icon name={autoDelete ? 'trash-clock' : 'hourglass'} className="shrink-0" />
             <span className="flex flex-1 items-center">{expirationMessage}</span>
         </div>
     );
