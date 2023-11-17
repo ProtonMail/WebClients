@@ -4,7 +4,7 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 import { useNotifications } from '@proton/components/hooks';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
-import { bootIntent } from '@proton/pass/store/actions';
+import { bootIntent, stateDestroy } from '@proton/pass/store/actions';
 import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import {
@@ -20,7 +20,7 @@ import { api, authStore } from '../../lib/core';
 import { deletePassDB } from '../../lib/database';
 import { useServiceWorker } from '../ServiceWorker/ServiceWorkerProvider';
 import { store } from '../Store/store';
-import { useClient } from './ClientProvider';
+import { useClientRef } from './ClientProvider';
 
 const STORAGE_PREFIX = 'ps-';
 const getSessionKey = (localId?: number) => `${STORAGE_PREFIX}${localId ?? 0}`;
@@ -45,7 +45,7 @@ export const useAuthService = (): AuthService => {
  * authentication service to an event-bus architecture.. */
 export const AuthServiceProvider: FC = ({ children }) => {
     const sw = useServiceWorker();
-    const client = useClient();
+    const client = useClientRef();
     const history = useHistory();
     const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
 
@@ -82,15 +82,15 @@ export const AuthServiceProvider: FC = ({ children }) => {
             },
 
             onAuthorize: () => {
-                client.setStatus(AppStatus.AUTHORIZING);
+                client.current.setStatus(AppStatus.AUTHORIZING);
             },
 
             onAuthorized: (_, localID) => {
                 const redirect = stripLocalBasenameFromPathname(redirectPath.current);
                 history.replace((getBasename(localID) ?? '/') + redirect);
-                client.setStatus(AppStatus.AUTHORIZED);
+                client.current.setStatus(AppStatus.AUTHORIZED);
                 store.dispatch(bootIntent());
-                client.setStatus(AppStatus.BOOTING);
+                client.current.setStatus(AppStatus.BOOTING);
             },
 
             onUnauthorized: (userID, localID, broadcast) => {
@@ -98,7 +98,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 if (userID) void deletePassDB(userID); /* wipe the local DB cache */
 
                 localStorage.removeItem(getSessionKey(localID));
-                client.setStatus(AppStatus.UNAUTHORIZED);
+                client.current.setStatus(AppStatus.UNAUTHORIZED);
                 history.replace('/');
             },
 
@@ -123,12 +123,12 @@ export const AuthServiceProvider: FC = ({ children }) => {
 
             onSessionEmpty: () => {
                 history.replace('/');
-                client.setStatus(AppStatus.UNAUTHORIZED);
+                client.current.setStatus(AppStatus.UNAUTHORIZED);
                 if (getDefaultLocalID()) auth.init().catch(noop);
             },
 
             onSessionLocked: (localID, broadcast) => {
-                client.setStatus(AppStatus.LOCKED);
+                client.current.setStatus(AppStatus.LOCKED);
                 if (broadcast) sw.send({ type: 'locked', localID, broadcast: true });
             },
 
@@ -148,7 +148,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 }
             },
             onSessionPersist: (encrypted) => localStorage.setItem(getSessionKey(authStore.getLocalID()), encrypted),
-            onSessionResumeFailure: () => client.setStatus(AppStatus.RESUMING_FAILED),
+            onSessionResumeFailure: () => client.current.setStatus(AppStatus.RESUMING_FAILED),
             onNotification: (text) =>
                 createNotification({ type: 'error', text, key: 'authservice', deduplicate: true }),
         });
@@ -185,6 +185,21 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 void authService.config.onSessionRefresh?.(localID, data, false);
             }
         });
+
+        const onVisibilityChange = () => {
+            const visible = document.visibilityState === 'visible';
+            if (visible) void authService.init({ forceLock: false });
+            else {
+                /* when the document loses visibility: reset client
+                 * state and wipe the in-memory store. */
+                setRedirectPath(location.pathname);
+                client.current.setStatus(AppStatus.IDLE);
+                store.dispatch(stateDestroy());
+            }
+        };
+
+        document.addEventListener('visibilitychange', onVisibilityChange);
+        return () => document.removeEventListener('visibilitychange', onVisibilityChange);
     }, []);
 
     return <AuthServiceContext.Provider value={authService}>{children}</AuthServiceContext.Provider>;
