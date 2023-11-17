@@ -4,6 +4,7 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 import { useNotifications } from '@proton/components/hooks';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
+import { bootIntent } from '@proton/pass/store/actions';
 import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import {
@@ -15,8 +16,10 @@ import { getConsumeForkParameters, removeHashParameters } from '@proton/shared/l
 import { SSO_PATHS } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
+import { api, authStore } from '../../lib/core';
+import { deletePassDB } from '../../lib/database';
 import { useServiceWorker } from '../ServiceWorker/ServiceWorkerProvider';
-import { api, authStore } from '../core';
+import { store } from '../Store/store';
 import { useClient } from './ClientProvider';
 
 const STORAGE_PREFIX = 'ps-';
@@ -82,16 +85,18 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 client.setStatus(AppStatus.AUTHORIZING);
             },
 
-            onAuthorized: (localID) => {
-                /* on successful login redirect the user to the localID base
-                 * path. FIXME: redirect to the previous URL stored in the
-                 * local `f${state}` */
-                history.replace((getBasename(localID) ?? '/') + redirectPath.current);
+            onAuthorized: (_, localID) => {
+                const redirect = stripLocalBasenameFromPathname(redirectPath.current);
+                history.replace((getBasename(localID) ?? '/') + redirect);
                 client.setStatus(AppStatus.AUTHORIZED);
+                store.dispatch(bootIntent());
+                client.setStatus(AppStatus.BOOTING);
             },
 
-            onUnauthorized: (localID, broadcast) => {
+            onUnauthorized: (userID, localID, broadcast) => {
                 if (broadcast) sw.send({ type: 'unauthorized', localID, broadcast: true });
+                if (userID) void deletePassDB(userID); /* wipe the local DB cache */
+
                 localStorage.removeItem(getSessionKey(localID));
                 client.setStatus(AppStatus.UNAUTHORIZED);
                 history.replace('/');

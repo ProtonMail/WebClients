@@ -13,12 +13,12 @@ import { Portal } from '@proton/components/components/portal';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 
+import { PASS_CONFIG } from '../lib/core';
 import { AuthServiceProvider } from './Context/AuthServiceProvider';
 import { ClientContext, ClientProvider } from './Context/ClientProvider';
 import { ServiceWorkerProvider } from './ServiceWorker/ServiceWorkerProvider';
 import { StoreProvider } from './Store/StoreProvider';
 import { Routes } from './Views/Routes';
-import { PASS_CONFIG } from './core';
 
 import './app.scss';
 
