@@ -1,4 +1,4 @@
-import { createToken } from '@proton/shared/lib/api/payments';
+import { createTokenV4 } from '@proton/shared/lib/api/payments';
 import { MAX_CREDIT_AMOUNT, MIN_CREDIT_AMOUNT, MIN_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
 import { Api } from '@proton/shared/lib/interfaces';
 
@@ -9,7 +9,7 @@ import {
     ChargeablePaymentParameters,
     ChargeablePaymentToken,
     NonChargeablePaymentToken,
-    TokenPaymentMethod,
+    V5PaymentToken,
     WrappedPaypalPayment,
 } from '../interface';
 import { PaymentProcessor } from './paymentProcessor';
@@ -40,7 +40,7 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
         public api: Api,
         amountAndCurrency: AmountAndCurrency,
         private isCredit: boolean,
-        onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>,
+        public onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>,
         private ignoreAmountCheck?: boolean
     ) {
         super(
@@ -49,8 +49,7 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
                 verificationError: null,
                 disabled: false,
             },
-            amountAndCurrency,
-            onTokenIsChargeable
+            amountAndCurrency
         );
     }
 
@@ -74,7 +73,7 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
         let paypalToken;
         try {
             paypalToken = await this.api(
-                createToken({
+                createTokenV4({
                     ...this.amountAndCurrency,
                     Payment: {
                         Type: this.getType(),
@@ -109,11 +108,11 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
             return this.tokenCreated(this.fetchedPaymentToken);
         }
 
-        let token: TokenPaymentMethod;
+        let token: V5PaymentToken;
         try {
             token = await this.verifyPayment({
                 Payment: this.getPaymentParameters().Payment,
-                Token: this.fetchedPaymentToken.Payment.Details.Token,
+                Token: this.fetchedPaymentToken.PaymentToken,
                 ApprovalURL: this.fetchedPaymentToken.approvalURL,
                 ReturnHost: this.fetchedPaymentToken.returnHost,
             });
@@ -140,7 +139,7 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
         this.updateState({ disabled });
     }
 
-    private tokenCreated(token?: TokenPaymentMethod): ChargeablePaymentParameters {
+    private tokenCreated(token?: V5PaymentToken): ChargeablePaymentParameters {
         const result: ChargeablePaymentParameters = {
             type: this.getType(),
             chargeable: true,
@@ -148,7 +147,7 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
             ...token,
         };
 
-        this.onTokenIsChargeable?.(result);
+        void this.onTokenIsChargeable?.(result);
 
         return result;
     }

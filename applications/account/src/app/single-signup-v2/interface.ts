@@ -2,7 +2,7 @@ import { FunctionComponent, Key, ReactNode } from 'react';
 
 import { AuthSession } from '@proton/components/containers/login/interface';
 import type { SelectedProductPlans } from '@proton/components/containers/payments/subscription/PlanSelection';
-import type { PaymentMethodStatus } from '@proton/components/payments/core';
+import type { BillingAddress, PaymentMethodStatusExtended } from '@proton/components/payments/core';
 import type { APP_NAMES, CYCLE } from '@proton/shared/lib/constants';
 import { PLANS } from '@proton/shared/lib/constants';
 import type { RequiredCheckResponse } from '@proton/shared/lib/helpers/checkout';
@@ -62,7 +62,7 @@ export interface SignupModelV2 {
     domains: string[];
     plans: Plan[];
     plansMap: PlansMap;
-    paymentMethodStatus: PaymentMethodStatus;
+    paymentMethodStatusExtended: PaymentMethodStatusExtended;
     humanVerificationMethods: HumanVerificationMethodType[];
     humanVerificationToken: string;
     selectedProductPlans: SelectedProductPlans;
@@ -103,6 +103,7 @@ export interface Options {
     currency: Currency;
     coupon?: string;
     planIDs: PlanIDs | undefined;
+    billingAddress: BillingAddress;
 }
 
 export interface Upsell {

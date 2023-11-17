@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms';
 import { ensureTokenChargeable } from '@proton/components/payments/client-extensions';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
-import { createToken, setPaymentMethod } from '@proton/shared/lib/api/payments';
+import { createTokenV4, setPaymentMethodV4 } from '@proton/shared/lib/api/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { ModalProps, Prompt } from '../../components';
@@ -29,7 +29,7 @@ const PayPalModal = ({ onClose, ...rest }: ModalProps) => {
     useEffect(() => {
         const run = async () => {
             const result = await api<PaymentTokenResult>(
-                createToken({
+                createTokenV4({
                     Amount: PAYMENT_AUTHORIZATION_AMOUNT,
                     Currency: PAYMENT_AUTHORIZATION_CURRENCY,
                     Payment: {
@@ -56,7 +56,7 @@ const PayPalModal = ({ onClose, ...rest }: ModalProps) => {
                 signal: abortRef.current.signal,
             });
             await api(
-                setPaymentMethod({
+                setPaymentMethodV4({
                     Type: PAYMENT_METHOD_TYPES.TOKEN,
                     Details: {
                         Token: data.Token,

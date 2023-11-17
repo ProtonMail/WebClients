@@ -4,9 +4,9 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
+import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
-import { checkSubscription } from '@proton/shared/lib/api/payments';
-import { APPS, APP_NAMES, DEFAULT_CYCLE, PLANS } from '@proton/shared/lib/constants';
+import { APPS, APP_NAMES, DEFAULT_CYCLE, FREE_SUBSCRIPTION, PLANS } from '@proton/shared/lib/constants';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { hasPlanIDs } from '@proton/shared/lib/helpers/planIDs';
 import {
@@ -15,14 +15,7 @@ import {
     getValidAudience,
     getValidCycle,
 } from '@proton/shared/lib/helpers/subscription';
-import {
-    Audience,
-    Currency,
-    PlanIDs,
-    PlansMap,
-    Subscription,
-    SubscriptionCheckResponse,
-} from '@proton/shared/lib/interfaces';
+import { Audience, Currency, PlanIDs, PlansMap } from '@proton/shared/lib/interfaces';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { Icon, Loader } from '../../components';
@@ -32,8 +25,6 @@ import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
 import { getCurrency, getDefaultSelectedProductPlans } from './subscription/helpers';
-
-const FREE_SUBSCRIPTION = {} as Subscription;
 
 const getSearchParams = (search: string) => {
     const params = new URLSearchParams(search);
@@ -59,6 +50,7 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
     const [vpnServers] = useVPNServersCount();
     const [user] = useUser();
     const api = useApi();
+    const { paymentsApi } = usePaymentsApi(api);
     const location = useLocation();
     const currentPlanIDs = getPlanIDs(subscription);
     const searchParams = getSearchParams(location.search);
@@ -86,14 +78,12 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
         }
 
         const couponCode = CouponCode || undefined; // From current subscription; CouponCode can be null
-        const { Coupon } = await api<SubscriptionCheckResponse>(
-            checkSubscription({
-                Plans: newPlanIDs,
-                Currency: currency,
-                Cycle: cycle,
-                CouponCode: couponCode,
-            })
-        );
+        const { Coupon } = await paymentsApi.checkWithAutomaticVersion({
+            Plans: newPlanIDs,
+            Currency: currency,
+            Cycle: cycle,
+            CouponCode: couponCode,
+        });
 
         const step =
             newPlanIDs[PLANS.VPN_BUSINESS] || newPlanIDs[PLANS.VPN_PRO]

@@ -86,7 +86,7 @@ const makeProtonFetchTransport = (options: BrowserTransportOptions) => {
 };
 
 const isLocalhost = (host: string) => host.startsWith('localhost');
-const isProduction = (host: string) => host.endsWith('.proton.me') || host === VPN_HOSTNAME;
+export const isProduction = (host: string) => host.endsWith('.proton.me') || host === VPN_HOSTNAME;
 
 const getDefaultSentryConfig = ({ APP_VERSION, COMMIT }: ProtonConfig): SentryConfig => {
     const { host } = window.location;
