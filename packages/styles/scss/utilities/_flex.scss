@@ -8,8 +8,7 @@
 	align-items: center;
 }
 
-.children-self-center > *,
-.flex-item-centered-vert {
+.children-self-center > * {
 	margin-block: auto;
 	align-self: center;
 }

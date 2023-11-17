@@ -183,7 +183,7 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                                             name="circle-filled"
                                             color={option.value.Color}
                                             size={12}
-                                            className="mr-2 shrink-0 flex-item-centered-vert"
+                                            className="mr-2 shrink-0 self-center my-auto"
                                         />
                                         <span className="mr-2 text-ellipsis">
                                             <Marks chunks={chunks}>{text}</Marks>

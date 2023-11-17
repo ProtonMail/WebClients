@@ -92,7 +92,7 @@ const Notifications = ({
                 >
                     {addIcon ? (
                         <span className="flex flex-nowrap w-full items-center">
-                            <Icon name={addIcon} className="mr-2 flex-item-centered-vert" />
+                            <Icon name={addIcon} className="mr-2 self-center my-auto" />
                             {addNotificationText}
                         </span>
                     ) : (

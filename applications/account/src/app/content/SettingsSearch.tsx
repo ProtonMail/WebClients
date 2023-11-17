@@ -125,7 +125,7 @@ const SettingsSearch = ({ routes, path, app }: Props) => {
 
     return (
         <>
-            <div className="searchbox flex-item-centered-vert">
+            <div className="searchbox self-center my-auto">
                 <Input
                     {...inputProps}
                     placeholder={

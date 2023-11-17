@@ -200,7 +200,7 @@ const ItemColumnLayout = ({
                                         className="ml-1 self-center"
                                     />
                                 )}
-                                <span className="ml-1 flex children-flex flex-item-centered-vert hidden-empty">
+                                <span className="ml-1 flex children-flex self-center my-auto hidden-empty">
                                     {isStarred && !isSnoozeDropdownOpen && <ItemStar element={element} />}
                                 </span>
                             </span>
@@ -219,7 +219,7 @@ const ItemColumnLayout = ({
                                 element={element}
                                 className="ml-1 self-center"
                             />
-                            <span className="ml-1 flex children-flex flex-item-centered-vert hidden-empty">
+                            <span className="ml-1 flex children-flex self-center my-auto hidden-empty">
                                 <ItemStar element={element} />
                             </span>
                         </div>

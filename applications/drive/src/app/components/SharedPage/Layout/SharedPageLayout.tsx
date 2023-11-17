@@ -41,7 +41,7 @@ export default function SharedPageLayout({ FooterComponent, children, className 
                         <UnAuthenticatedAppsDropdown />
                     </div>
 
-                    <div className="flex justify-end flex-1 flex-item-centered-vert">
+                    <div className="flex justify-end flex-1 self-center my-auto">
                         {isProtonUser ? (
                             <ButtonLike color="norm" as="a" href={APPS.PROTONDRIVE} target="_blank">
                                 {c('Action').t`Go to Drive`}
