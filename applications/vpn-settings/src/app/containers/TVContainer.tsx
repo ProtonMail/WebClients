@@ -93,7 +93,7 @@ const TVContainer = () => {
     };
 
     return (
-        <div className="ui-prominent background-container h-full flex-no-min-children flex-column flex-nowrap items-center scroll-if-needed">
+        <div className="ui-prominent background-container h-full flex children-min-size-auto flex-column flex-nowrap items-center scroll-if-needed">
             <div className="flex justify-center items-center pt-7">
                 <div className="w-custom" style={{ '--w-custom': '9.375rem' }}>
                     <Href href="https://protonvpn.com" target="_self">

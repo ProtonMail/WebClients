@@ -155,7 +155,7 @@ const PlanCardView = ({
                 )}
                 <div className="py-6 px-4">
                     <div className="flex items-center flex-column">
-                        <div className="w-full flex-no-min-children flex-row flex-nowrap gap-1">
+                        <div className="w-full flex children-min-size-auto flex-row flex-nowrap gap-1">
                             <strong className="text-2xl text-ellipsis flex-1 text-center" id={`${cycle}-text`}>
                                 {text}
                             </strong>

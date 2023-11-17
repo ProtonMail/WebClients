@@ -82,7 +82,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                     />
                 }
                 {settings.Mode === ThemeModeSetting.Auto ? (
-                    <div className="flex-no-min-children flex-column gap-4 mt-1">
+                    <div className="flex children-min-size-auto flex-column gap-4 mt-1">
                         <ThemeSyncModeDropdown
                             mode="light"
                             list={themes}
