@@ -22,6 +22,8 @@ export const readCSV = async <T extends Record<string, any>>(options: {
                 transformHeader: (h) => h.trim(),
                 skipEmptyLines: true,
                 delimiter: ',',
+                newline: '\n',
+                transform: (value) => value.replaceAll('\r', ''),
                 complete: ({ data, errors }) => {
                     if (errors.length > 0) {
                         const errorDetails = errors.map((err) => err.message).join(', ');
