@@ -71,11 +71,11 @@ const SendEmailReminderTwoFAModal = ({ onClose, members, ...rest }: Props) => {
                                     title={member.Name}
                                 >
                                     <Avatar className="mr-2 shrink-0">{getInitials(member.Name)}</Avatar>
-                                    <div className="flex-items-fluid">
+                                    <div>
                                         <div className="text-ellipsis max-100" title={member.Name}>
                                             {member.Name}
                                         </div>
-                                        <div className="max-w-full flex flex-">
+                                        <div className="max-w-full flex">
                                             <span className="flex-1 mr-2 text-ellipsis">
                                                 {memberAddresses[0].Email}
                                             </span>

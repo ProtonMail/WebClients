@@ -100,7 +100,7 @@ const Layout = ({
                             {protonLogo}
                         </Href>
                     ) : (
-                        <div className="shrink-0 flex flex-align-item-center">{protonLogo}</div>
+                        <div className="shrink-0 flex">{protonLogo}</div>
                     )
                 }
                 isDarkBg={isDarkBg && !isTinyMobile}
