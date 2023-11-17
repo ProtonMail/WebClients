@@ -45,7 +45,7 @@ const PlusBadge = () => (
 const ServerDown = () => (
     <span className="ml-2">
         <Tooltip title={c('Info').t`Server is currently down`}>
-            <div className="flex inline-flex-vcenter">
+            <div className="flex inline-flex children-self-center">
                 <Icon className="color-danger" size={20} name="exclamation-circle" />
             </div>
         </Tooltip>
@@ -127,11 +127,11 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onS
                                 <Country key="country" server={server} />
                             ),
                             category === CATEGORY.SERVER ? (
-                                <div className="inline-flex-vcenter" key="city">
+                                <div className="inline-flex children-self-center" key="city">
                                     {server.City}
                                 </div>
                             ) : null,
-                            <div className="inline-flex-vcenter" key="status">
+                            <div className="inline-flex children-self-center" key="status">
                                 <LoadIndicator server={server} />
                                 {server.Tier === 2 && <PlusBadge />}
                                 {server.Servers.every(({ Status }) => !Status) && <ServerDown />}

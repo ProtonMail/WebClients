@@ -1,10 +1,5 @@
 @use 'sass:map';
 
-.inline-flex-vcenter {
-	display: inline-flex;
-	flex-wrap: wrap;
-}
-
 .children-flex > * {
 	display: flex;
 }
@@ -13,7 +8,7 @@
 	align-items: center;
 }
 
-.inline-flex-vcenter > *,
+.children-self-center > *,
 .flex-item-centered-vert {
 	margin-block: auto;
 	align-self: center;

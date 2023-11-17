@@ -204,7 +204,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                                 onChange={() => setPlatform(value)}
                                                 checked={platform === value}
                                                 name="platform"
-                                                className="flex inline-flex-vcenter mb-2"
+                                                className="flex inline-flex children-self-center mb-2"
                                             >
                                                 {label}
                                             </Radio>
