@@ -322,3 +322,47 @@ it('should update desabled state when the amount changes', () => {
     });
     expect(result.current.disabled).toBe(false);
 });
+
+it('should have isInitialState === true when tokenFetched === false and verificationError === null', () => {
+    const { result } = renderHook(
+        ({ Amount }) =>
+            usePaypal(
+                {
+                    amountAndCurrency: {
+                        Amount,
+                        Currency: 'USD',
+                    },
+                    isCredit: false,
+                    onChargeable: onChargeableMock,
+                },
+                {
+                    api: apiMock,
+                    verifyPayment: verifyPaymentMock,
+                }
+            ),
+        {
+            initialProps: {
+                Amount: 0,
+            },
+        }
+    );
+    expect(result.current.isInitialState).toBe(true);
+
+    result.current.paymentProcessor!.updateState({ fetchedPaymentToken: 'token' });
+    expect(result.current.isInitialState).toBe(false);
+
+    result.current.paymentProcessor!.updateState({ fetchedPaymentToken: null });
+    expect(result.current.isInitialState).toBe(true);
+
+    result.current.paymentProcessor!.updateState({ verificationError: 'error' });
+    expect(result.current.isInitialState).toBe(false);
+
+    result.current.paymentProcessor!.updateState({ verificationError: null });
+    expect(result.current.isInitialState).toBe(true);
+
+    result.current.paymentProcessor!.updateState({ fetchedPaymentToken: 'token', verificationError: 'error' });
+    expect(result.current.isInitialState).toBe(false);
+
+    result.current.reset();
+    expect(result.current.isInitialState).toBe(true);
+});

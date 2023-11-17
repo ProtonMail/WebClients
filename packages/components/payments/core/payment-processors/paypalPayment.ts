@@ -124,6 +124,7 @@ export class PaypalPaymentProcessor extends PaymentProcessor<PaypalPaymentState>
     reset() {
         this.updateState({
             fetchedPaymentToken: null,
+            verificationError: null,
         });
     }
 
