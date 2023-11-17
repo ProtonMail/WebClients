@@ -356,7 +356,7 @@ const LoginForm = ({
                         />
 
                         {hasTrustedDeviceRecovery ? (
-                            <div className="flex-item-fluid">
+                            <div className="flex-1">
                                 <Label htmlFor="staySignedIn" className="flex items-center">
                                     {c('Label').t`Keep me signed in`}
                                 </Label>
@@ -365,7 +365,7 @@ const LoginForm = ({
                                 </div>
                             </div>
                         ) : (
-                            <div className="flex-item-fluid">
+                            <div className="flex-1">
                                 <Label htmlFor="staySignedIn" className="flex items-center">
                                     <span className="pr-2">{c('Label').t`Keep me signed in`}</span>
                                     <span className="flex">

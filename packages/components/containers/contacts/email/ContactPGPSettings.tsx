@@ -175,7 +175,7 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                                     })
                                 }
                             />
-                            <div className="flex-item-fluid">
+                            <div className="flex-1">
                                 {model.encrypt && c('Info').t`Emails are automatically signed`}
                             </div>
                         </Field>

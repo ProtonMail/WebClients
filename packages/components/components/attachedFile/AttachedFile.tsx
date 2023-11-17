@@ -21,7 +21,7 @@ const AttachedFile = ({ file, iconName, className, clear, onClear, ...rest }: Pr
                 <Icon name={iconName} className="m-auto" />
             </div>
             <div className="message-attachmentInfo p-2 flex flex-nowrap w-9/10">
-                <div className="flex-item-fluid pr-4">
+                <div className="flex-1 pr-4">
                     <div className="text-ellipsis" title={fileName}>
                         {fileName}
                     </div>

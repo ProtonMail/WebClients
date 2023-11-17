@@ -163,7 +163,7 @@ const Header = ({ downloads, uploads, stats, onClose, onToggleMinimize, minimize
         <div className="transfers-manager-heading ui-prominent flex items-center flex-nowrap px-2">
             <div
                 role="presentation"
-                className="flex-item-fluid p-2"
+                className="flex-1 p-2"
                 aria-atomic="true"
                 aria-live="polite"
                 data-testid="drive-transfers-manager:header"

@@ -196,7 +196,7 @@ const PlanComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, children, p
     return (
         <div className="border border-primary rounded-xl p-4 pb-2">
             <div className="flex gap-6 px-4">
-                <div className="flex-item-fluid text-center">
+                <div className="flex-1 text-center">
                     <div className="mb-3 mt-2 text-sm color-weak text-ellipsis">{c('Title').t`Your plan`}</div>
                     <ul className="unstyled w-full plan-comparison-list mt-0">
                         {sortedLeft.map((item, index, list) => {
@@ -213,7 +213,7 @@ const PlanComparison = ({ dark, currentPlan, upsellPlan, unlockPlan, children, p
                         })}
                     </ul>
                 </div>
-                <div className="flex-item-fluid text-center">
+                <div className="flex-1 text-center">
                     <div className="mb-3 mt-2 text-sm color-weak text-ellipsis">
                         {c('pass_signup_2023: Title').t`${upsellPlanTitle} plan`}
                     </div>

@@ -33,7 +33,7 @@ export const DriveEmptyView = forwardRef<HTMLDivElement, Props>(
     ({ image, title, subtitle, dataTestId, onClick, children }, ref) => (
         // onClick is used for context menu, so we don't need to care about keyboard events
         // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
-        <div ref={ref} onClick={onClick} className="flex w-full flex flex-item-fluid overflow-auto">
+        <div ref={ref} onClick={onClick} className="flex w-full flex flex-1 overflow-auto">
             <EmptyViewContainer
                 imageProps={{
                     src: image,

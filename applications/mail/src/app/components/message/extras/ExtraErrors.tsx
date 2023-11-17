@@ -62,12 +62,12 @@ const ExtraErrors = ({ message }: Props) => {
                         className="bg-norm border rounded pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap flex-column md:flex-row"
                         data-testid="errors-banner"
                     >
-                        <div className="md:flex-item-fluid flex flex-nowrap mb-2 md:mb-0">
+                        <div className="md:flex-1 flex flex-nowrap mb-2 md:mb-0">
                             <Icon
                                 name="exclamation-circle-filled"
                                 className="flex-item-noshrink mt-1 ml-0.5 color-danger"
                             />
-                            <span className="px-2 mt-1 flex-item-fluid" data-testid="errors-banner:content">
+                            <span className="px-2 mt-1 flex-1" data-testid="errors-banner:content">
                                 {getTranslations(errorType, alreadyTried)}
                             </span>
                         </div>

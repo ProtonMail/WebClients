@@ -43,7 +43,7 @@ const DropdownMenuButton = forwardRef<HTMLButtonElement, Props>(
             >
                 {loading ? (
                     <div className="flex items-center flex-nowrap">
-                        <span className="flex-item-fluid text-ellipsis">{children}</span>
+                        <span className="flex-1 text-ellipsis">{children}</span>
                         <CircleLoader className="flex-item-noshrink" />
                     </div>
                 ) : (

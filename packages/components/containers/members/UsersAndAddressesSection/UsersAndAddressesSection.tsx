@@ -406,7 +406,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                             {getInitials(memberName)}
                                         </Avatar>
                                         <div
-                                            className="text-ellipsis flex-item-fluid min-w-custom"
+                                            className="text-ellipsis flex-1 min-w-custom"
                                             style={{ '--min-w-custom': '6rem' }}
                                             data-testid="users-and-addresses-table:memberName"
                                             title={memberName}

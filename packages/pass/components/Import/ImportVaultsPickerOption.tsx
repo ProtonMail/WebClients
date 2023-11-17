@@ -57,7 +57,7 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                         >
                             <span className="flex items-center">
                                 <Icon name="plus" size={14} className="mr-3 flex-item-nogrow" />
-                                <span className="flex-item-fluid text-ellipsis">{c('Label').t`New vault`}</span>
+                                <span className="flex-1 text-ellipsis">{c('Label').t`New vault`}</span>
                             </span>
                         </Option>,
                         ...vaults.map((vault) => (
@@ -77,7 +77,7 @@ export const ImportVaultPickerOption: FC<VaultsPickerOptionProps> = ({
                                         size={14}
                                         className="mr-3 flex-item-nogrow"
                                     />
-                                    <span className="flex-item-fluid text-ellipsis">{vault.content.name}</span>
+                                    <span className="flex-1 text-ellipsis">{vault.content.name}</span>
                                 </span>
                             </Option>
                         )),

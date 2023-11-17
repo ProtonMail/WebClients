@@ -37,7 +37,7 @@ const SignInWithGoogle = ({ loading, disabled, onClick, fullWidth, reduceHeight 
             >
                 <img src={googleLogo} alt="" width={googleImageSize} height={googleImageSize} aria-hidden="true" />
             </span>
-            <span className="text-semibold flex-item-fluid text-left pl-4 pr-8">{c('Gmail forwarding')
+            <span className="text-semibold flex-1 text-left pl-4 pr-8">{c('Gmail forwarding')
                 .t`Sign in with Google`}</span>
         </Button>
     );

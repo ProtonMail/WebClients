@@ -42,7 +42,7 @@ const DrawerHeaderTitleDropdown = ({ title, options, onClickOption }: Props) => 
                             key={index}
                             data-testid={`drawer-app-header-actions:${option.text}`}
                         >
-                            <span className="ml-2 my-auto flex-item-fluid">{option.text}</span>
+                            <span className="ml-2 my-auto flex-1">{option.text}</span>
                         </DropdownMenuButton>
                     ))}
                 </DropdownMenu>

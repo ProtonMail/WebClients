@@ -54,7 +54,7 @@ const DriveBreadcrumbs = ({ activeFolder }: Props) => {
                         key: linkId,
                         text: name,
                         richText: (
-                            <span className="flex items-center flex-nowrap flex-item-fluid">
+                            <span className="flex items-center flex-nowrap flex-1">
                                 <SignatureIcon
                                     isFile={link.isFile}
                                     signatureIssues={link.signatureIssues}

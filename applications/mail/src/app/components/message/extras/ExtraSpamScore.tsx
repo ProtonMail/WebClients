@@ -35,7 +35,7 @@ const ExtraSpamScore = ({ message }: Props) => {
                 data-testid="spam-banner:failed-dmarc-validation"
             >
                 <Icon name="exclamation-circle-filled" className="flex-item-noshrink mt-1 ml-0.5 color-danger" />
-                <span className="px-2 pb-1 mt-0.5 flex-item-fluid">
+                <span className="px-2 pb-1 mt-0.5 flex-1">
                     {c('Info')
                         .t`This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.`}{' '}
                     <Href
@@ -64,7 +64,7 @@ const ExtraSpamScore = ({ message }: Props) => {
                 data-testid="spam-banner:phishing-banner"
             >
                 <Icon name="exclamation-circle-filled" className="flex-item-noshrink ml-0.5 mt-1" />
-                <span className="px-2 mt-0.5 flex-item-fluid">
+                <span className="px-2 mt-0.5 flex-1">
                     {isSuspiciousFlagged ? (
                         <>
                             {c('Info')

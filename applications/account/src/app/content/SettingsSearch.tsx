@@ -160,7 +160,7 @@ const SettingsSearch = ({ routes, path, app }: Props) => {
                                 <div className="pr-4">
                                     <Icon name={option.icon} />
                                 </div>
-                                <div className="flex-item-fluid">
+                                <div className="flex-1">
                                     <div>
                                         <Marks chunks={chunks}>{text}</Marks>
                                     </div>

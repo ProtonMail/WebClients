@@ -39,7 +39,7 @@ const OfferLayout = ({ children, offer }: Props) => {
             <div
                 className={clsx(
                     'offer-main-content-container',
-                    !hasMultipleDeals && 'flex-item-fluid px-0 sm:px-4 md:px-6'
+                    !hasMultipleDeals && 'flex-1 px-0 sm:px-4 md:px-6'
                 )}
             >
                 {hasMultipleDeals ? (

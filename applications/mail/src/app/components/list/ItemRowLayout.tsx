@@ -113,7 +113,7 @@ const ItemRowLayout = ({
                     )}
                 </div>
 
-                <div className="item-subject flex-item-fluid flex items-center flex-nowrap m-auto">
+                <div className="item-subject flex-1 flex items-center flex-nowrap m-auto">
                     <div className="flex flex-column inline-block w-full">
                         <span
                             role="heading"
@@ -189,7 +189,7 @@ const ItemRowLayout = ({
                     />
                     <span
                         className={clsx(
-                            'item-senddate-row ml-2 flex flex-item-fluid flex-nowrap justify-end items-center',
+                            'item-senddate-row ml-2 flex flex-1 flex-nowrap justify-end items-center',
                             snoozeDropdownState && snoozedElement?.ID === element.ID && 'invisible'
                         )}
                     >
@@ -209,7 +209,7 @@ const ItemRowLayout = ({
                     <ItemAttachmentThumbnails
                         attachmentsMetadata={attachmentsMetadata}
                         maxAttachment={MAX_ROW_ATTACHMENT_THUMBNAILS}
-                        className="flex-item-fluid attachment-thumbnail-row"
+                        className="flex-1 attachment-thumbnail-row"
                     />
                 </div>
             )}

@@ -131,7 +131,7 @@ export const InstallationSuccess: VFC = () => {
                                                             />
                                                         </div>
 
-                                                        <div className="flex-item-fluid text-left">{description}</div>
+                                                        <div className="flex-1 text-left">{description}</div>
                                                     </li>
                                                 ))}
                                             </ol>

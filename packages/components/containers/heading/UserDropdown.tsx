@@ -296,7 +296,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                             >
                                 <span className="m-auto">{initials}</span>
                             </span>
-                            <div className="flex-item-fluid ml-2">
+                            <div className="flex-1 ml-2">
                                 {nameToDisplay ? (
                                     <div
                                         className="text-ellipsis"

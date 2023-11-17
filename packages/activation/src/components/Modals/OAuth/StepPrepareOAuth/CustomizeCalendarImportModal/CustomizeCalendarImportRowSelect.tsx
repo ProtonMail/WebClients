@@ -53,7 +53,7 @@ const CustomizeCalendarImportRowSelect = ({
         <div className="flex flex-nowrap">
             {options.length > 0 ? (
                 <>
-                    <div className="flex-item-fluid mr-4">
+                    <div className="flex-1 mr-4">
                         <SelectTwo
                             value={value}
                             onChange={({ value }) => handleMappingChange(value)}

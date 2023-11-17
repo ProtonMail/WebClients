@@ -27,7 +27,7 @@ const Benefits = ({ className, features, ...rest }: Props) => {
                                 className="align-text-top"
                             />
                         </div>
-                        <div className="flex-item-fluid color-weak text-sm">{item.text}</div>
+                        <div className="flex-1 color-weak text-sm">{item.text}</div>
                     </li>
                 );
             })}

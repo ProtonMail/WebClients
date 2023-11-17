@@ -115,7 +115,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                     style={{ '--calendar-color': getColor(visualCalendar, Color) }}
                                 />
                                 <span
-                                    className="flex-no-min-children flex-nowrap flex-item-fluid search-event-time-details flex-column lg:flex-row"
+                                    className="flex-no-min-children flex-nowrap flex-1 search-event-time-details flex-column lg:flex-row"
                                     ref={isClosestToDate ? closestToDateRef : null}
                                 >
                                     <span
@@ -126,7 +126,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                     </span>
                                     <span
                                         className={clsx(
-                                            'text-ellipsis lg:flex-item-fluid pl-2 lg:pl-0 search-event-summary text-bold'
+                                            'text-ellipsis lg:flex-1 pl-2 lg:pl-0 search-event-summary text-bold'
                                         )}
                                     >
                                         {getDisplayTitle(Summary)}

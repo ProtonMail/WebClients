@@ -331,7 +331,7 @@ const PopoverEventContent = ({
                 </IconRow>
             )}
             <IconRow
-                className="flex-item-fluid"
+                className="flex-1"
                 labelClassName="inline-flex pt-1"
                 title={c('Label').t`Calendar`}
                 icon="calendar-grid"

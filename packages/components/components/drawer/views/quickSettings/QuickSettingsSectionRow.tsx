@@ -12,7 +12,7 @@ const QuickSettingsSectionRow = ({ label, labelInfo, action }: Props) => {
     return (
         <label className="quickSettingsSectionRow flex flex-nowrap justify-space-between items-center gap-2 w-full">
             <span className="flex items-center gap-2">
-                <span className="flex-item-fluid text-left text-ellipsis">{label}</span>
+                <span className="flex-1 text-left text-ellipsis">{label}</span>
                 {labelInfo}
             </span>
             <span className="quickSettingsSectionRow-action flex-item-noshrink">{action}</span>

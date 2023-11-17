@@ -259,13 +259,13 @@ const ExtraUnsubscribe = ({ message }: Props) => {
 
     return (
         <div className="bg-norm rounded border pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap flex-column md:flex-row">
-            <div className="md:flex-item-fluid flex flex-nowrap mb-2 md:mb-0">
+            <div className="md:flex-1 flex flex-nowrap mb-2 md:mb-0">
                 <Icon
                     name="envelope"
                     className="mt-custom ml-0.5 flex-item-noshrink"
                     style={{ marginTop: '0.375rem' }}
                 />
-                <span className="px-1 flex flex-item-fluid items-center">{c('Status')
+                <span className="px-1 flex flex-1 items-center">{c('Status')
                     .t`This message is from a mailing list.`}</span>
             </div>
             <span className="flex-item-noshrink items-start flex w-full md:w-auto pt-0.5">

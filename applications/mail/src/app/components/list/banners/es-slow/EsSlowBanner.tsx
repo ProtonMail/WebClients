@@ -42,7 +42,7 @@ const EsSlowBanner = ({ className }: Props) => {
             <div className="flex-item-noshrink">
                 <Icon name="magnifier" className="mr-2" />
             </div>
-            <div className="flex-item-fluid pl-1">
+            <div className="flex-1 pl-1">
                 {
                     // translator: sentence appears when a message content search takes too long . Complete sentence example: "Search taking too long? <Refine it> or <exclude message content> from this search session.
                     c('Info')

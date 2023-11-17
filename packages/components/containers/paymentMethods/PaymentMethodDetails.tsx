@@ -60,7 +60,7 @@ const PaymentMethodDetailsCard = ({ details }: { details: SavedCardDetails }) =>
                 </svg>
             </div>
             <div className="flex flex-nowrap max-w-full">
-                <div className="flex-item-fluid">
+                <div className="flex-1">
                     {!!Name && (
                         <>
                             <span className="block mb-2 opacity-40">{c('Label').t`Card holder`}</span>

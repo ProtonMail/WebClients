@@ -40,12 +40,12 @@ const RightPlanSummary = ({
                 <div className="border rounded-lg p-2" title={title}>
                     {logo}
                 </div>
-                <div className="flex-item-fluid ">
+                <div className="flex-1 ">
                     <div className="flex gap-2">
-                        <div className="text-rg text-bold flex-item-fluid">{title}</div>
+                        <div className="text-rg text-bold flex-1">{title}</div>
                         <div className="text-rg text-bold">{price}</div>
                     </div>
-                    <div className="flex flex-item-fluid items-center gap-1 text-sm">
+                    <div className="flex flex-1 items-center gap-1 text-sm">
                         {!free && <div className="color-weak text-ellipsis">{getDealDurationText(cycle)}</div>}
                         {(() => {
                             if (free) {

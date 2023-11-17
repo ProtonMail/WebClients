@@ -21,7 +21,7 @@ export const VaultForm = <V extends VaultFormValues>({ form, disabled, autoFocus
     <div style={{ '--column-count': VAULT_COLORS.length - 2 }}>
         <div className="flex items-center gap-x-3">
             <VaultIcon color={form.values.color} icon={form.values.icon} size={20} background />
-            <div className="flex-item-fluid">
+            <div className="flex-1">
                 <FieldsetCluster>
                     <Field
                         name="name"

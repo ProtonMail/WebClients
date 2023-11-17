@@ -347,11 +347,11 @@ const EventForm = ({
             icon={getCalendarIcon()}
             title={c('Label').t`Calendar`}
             id={CALENDAR_INPUT_ID}
-            className="flex flex-nowrap flex-item-fluid flex-item-grow"
+            className="flex flex-nowrap flex-1 flex-item-grow"
         >
             <CreateEventCalendarSelect
                 id={CALENDAR_INPUT_ID}
-                className="w-full flex-item-fluid"
+                className="w-full flex-1"
                 title={c('Title').t`Select which calendar to add this event to`}
                 frozen={!canChangeCalendar}
                 model={model}
