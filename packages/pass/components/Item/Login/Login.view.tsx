@@ -52,7 +52,14 @@ export const LoginView: VFC<ItemViewProps<'login'>> = ({ vault, revision, ...ite
                 </ValueControl>
 
                 {totpUri && totpAllowed && (
-                    <OTPValueControl shareId={shareId} itemId={itemId} totpUri={totpUri} type="item" />
+                    <OTPValueControl
+                        payload={{
+                            itemId,
+                            shareId,
+                            totpUri,
+                            type: 'item',
+                        }}
+                    />
                 )}
 
                 {totpUri && !totpAllowed && (

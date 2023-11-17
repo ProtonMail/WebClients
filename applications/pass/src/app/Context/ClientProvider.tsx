@@ -1,7 +1,9 @@
-import { type FC, createContext, useContext, useMemo, useRef, useState } from 'react';
+import { type FC, createContext, useCallback, useContext, useMemo, useRef, useState } from 'react';
 
+import { OTPProvider } from '@proton/pass/components/Otp/OTPProvider';
 import { clientReady } from '@proton/pass/lib/client';
-import { AppStatus, type Maybe } from '@proton/pass/types';
+import { generateTOTPCode } from '@proton/pass/lib/otp/generate';
+import { AppStatus, type Maybe, type OtpRequest } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
@@ -30,6 +32,7 @@ export const useClientRef = () => {
 
 export const ClientProvider: FC = ({ children }) => {
     const [state, setState] = useState<ClientState>(getInitialClientState);
+    const generateOTP = useCallback(({ totpUri }: OtpRequest) => generateTOTPCode(totpUri), []);
 
     return (
         <ClientContext.Provider
@@ -49,7 +52,7 @@ export const ClientProvider: FC = ({ children }) => {
                 [state]
             )}
         >
-            {children}
+            <OTPProvider generate={generateOTP}>{children}</OTPProvider>
         </ClientContext.Provider>
     );
 };
