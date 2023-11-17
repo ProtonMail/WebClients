@@ -21,7 +21,7 @@ import { SyncType, synchronize } from '@proton/pass/store/sagas/client/sync';
 import { selectUserState } from '@proton/pass/store/selectors';
 import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
-import type { EncryptedExtensionCache, ExtensionCache } from '@proton/pass/types/worker/cache';
+import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
@@ -63,14 +63,14 @@ function* bootUserState(userId: string, state: State) {
     return <SafeUserState>{ ...userState, ...access };
 }
 
-function* bootWorker(options: WorkerRootSagaOptions, { meta }: ReturnType<typeof bootIntent>) {
+function* bootWorker(options: WorkerRootSagaOptions) {
     try {
         const auth = options.getAuthStore();
         const userId = auth.getUserID()!;
         const sessionLockToken = auth.getLockToken();
 
-        const encryptedCache: Partial<EncryptedExtensionCache> = yield options.getCache();
-        const cache: Maybe<ExtensionCache> = yield decryptCachedState(encryptedCache, sessionLockToken);
+        const encryptedCache: Partial<EncryptedPassCache> = yield options.getCache();
+        const cache: Maybe<PassCache> = yield decryptCachedState(encryptedCache, sessionLockToken);
 
         const currentState: State = yield select();
         const state = cache?.state ? merge(currentState, cache.state, { excludeEmpty: true }) : currentState;
@@ -91,12 +91,12 @@ function* bootWorker(options: WorkerRootSagaOptions, { meta }: ReturnType<typeof
 
         /* trigger a partial synchronization */
         const sync = (yield synchronize(state, SyncType.PARTIAL, userState.features, options)) as SynchronizationResult;
-        yield put(bootSuccess(meta.request.id, { sync, userState }));
+        yield put(bootSuccess({ sync, userState }));
 
         options.onBoot?.({ ok: true });
     } catch (error: unknown) {
         logger.warn('[Saga::Boot]', error);
-        yield put(bootFailure(meta.request.id, error));
+        yield put(bootFailure(error));
         options.onBoot?.({ ok: false, clearCache: isPassCryptoError(error) });
     }
 }
