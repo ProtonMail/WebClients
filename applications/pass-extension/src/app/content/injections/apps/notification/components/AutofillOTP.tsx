@@ -1,4 +1,4 @@
-import { type VFC, useEffect } from 'react';
+import { type VFC, useCallback, useEffect } from 'react';
 
 import { PauseListDropdown } from 'proton-pass-extension/app/content/injections/apps/common/PauseListDropdown';
 import type { IFrameCloseOptions, IFrameMessage } from 'proton-pass-extension/app/content/types';
@@ -11,6 +11,7 @@ import { OTPValue } from '@proton/pass/components/Otp/OTPValue';
 import { usePeriodicOtpCode } from '@proton/pass/hooks/usePeriodicOtpCode';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
+import type { OtpRequest } from '@proton/pass/types';
 import { type SelectedItem, WorkerMessageType } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
@@ -25,7 +26,17 @@ type Props = {
 };
 
 export const AutofillOTP: VFC<Props> = ({ hostname, item, visible, onMessage, onClose }) => {
-    const [otp, percent] = usePeriodicOtpCode({ ...item, type: 'item' });
+    const [otp, percent] = usePeriodicOtpCode({
+        generate: useCallback(
+            (payload: OtpRequest) =>
+                sendMessage.on(
+                    contentScriptMessage({ type: WorkerMessageType.OTP_CODE_GENERATE, payload }),
+                    (response) => (response.type === 'success' ? response : null)
+                ),
+            []
+        ),
+        payload: { ...item, type: 'item' },
+    });
 
     useEffect(() => {
         void sendMessage(
