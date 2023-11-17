@@ -23,7 +23,7 @@ interface Props extends ThHTMLAttributes<HTMLTableCellElement> {
 
 const TableHeaderCell = ({ children, direction, isLoading, onSort, ...rest }: Props) => {
     const content = onSort ? (
-        <div className="flex-nowrap inline-flex-vcenter cursor-pointer table-header-cell-hover" onClick={onSort}>
+        <div className="flex-nowrap inline-flex children-self-center cursor-pointer table-header-cell-hover" onClick={onSort}>
             <span className="mr-1">{children}</span>
             {direction && (
                 <Icon

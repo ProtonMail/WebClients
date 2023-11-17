@@ -10,7 +10,7 @@ interface Props {
 const CityNumber = ({ group }: Props) => {
     const number = uniqueBy(group, ({ City }) => City).length;
     return (
-        <div className="inline-flex-vcenter">
+        <div className="inline-flex children-self-center">
             {c('Info').ngettext(msgid`${number} city`, `${number} cities`, number)}
         </div>
     );
