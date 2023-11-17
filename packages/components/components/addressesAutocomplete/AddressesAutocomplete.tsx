@@ -178,7 +178,7 @@ const AddressesAutocomplete = forwardRef<HTMLInputElement, Props>(
                                 onChange={handleSelect}
                             >
                                 {option.type === 'group' ? (
-                                    <div className="flex flex-nowrap flex-items-center">
+                                    <div className="flex flex-nowrap children-items-center">
                                         <Icon
                                             name="circle-filled"
                                             color={option.value.Color}
