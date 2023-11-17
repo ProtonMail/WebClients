@@ -1,4 +1,4 @@
-import { authenticatedPath } from './authenticatedPath';
+import { authenticatedPath } from './authenticated-path';
 
 describe('Should append application localID', () => {
     test('should add perfix /u/*/ if we send string', () => {
