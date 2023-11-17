@@ -8,7 +8,11 @@ import { Icon, InlineLinkButton } from '@proton/components/components';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
 import clsx from '@proton/utils/clsx';
 
-type UpgradeButtonProps = { className?: string; inline?: boolean; label?: string };
+type UpgradeButtonProps = {
+    className?: string;
+    inline?: boolean;
+    label?: string;
+};
 
 export const UpgradeButton: VFC<UpgradeButtonProps> = ({ className, inline = false, label }) => {
     const navigateToUpgrade = useNavigateToUpgrade();
