@@ -22,7 +22,9 @@ import {
     isCyberWeekPeriod as getIsCyberWeekPeriod,
 } from '@proton/components/containers/offers/helpers/offerPeriods';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
+import InclusiveVatText from '@proton/components/containers/payments/InclusiveVatText';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
+import { WrappedTaxCountrySelector } from '@proton/components/containers/payments/TaxCountrySelector';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';
 import { getMailAppFeature } from '@proton/components/containers/payments/features/mail';
@@ -50,9 +52,18 @@ import {
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
 import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
 import { useActiveBreakpoint, useApi } from '@proton/components/hooks';
+import { ChargebeePaypalWrapper } from '@proton/components/payments/chargebee/ChargebeeWrapper';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { CardPayment, PAYMENT_METHOD_TYPES, PaypalPayment, TokenPayment } from '@proton/components/payments/core';
+import {
+    BillingAddress,
+    PAYMENT_METHOD_TYPES,
+    TokenPayment,
+    TokenPaymentWithPaymentsVersion,
+    isV5PaymentToken,
+    v5PaymentTokenToLegacyPaymentToken,
+} from '@proton/components/payments/core';
 import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
+import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebCoreVpnSingleSignupStep1InteractionTotal } from '@proton/metrics/types/web_core_vpn_single_signup_step1_interaction_total_v1.schema';
@@ -81,7 +92,14 @@ import {
     getTotalFromPricing,
 } from '@proton/shared/lib/helpers/subscription';
 import { stringifySearchParams } from '@proton/shared/lib/helpers/url';
-import { Currency, Cycle, CycleMapping, Plan, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import {
+    Currency,
+    Cycle,
+    CycleMapping,
+    Plan,
+    VPNServersCountData,
+    isTaxInclusive,
+} from '@proton/shared/lib/interfaces';
 import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
@@ -372,6 +390,7 @@ const Step1 = ({
     const [loadingChallenge, setLoadingChallenge] = useState(false);
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
+    const { getPaymentsApi } = usePaymentsApi();
     const [toggleUpsell, setToggleUpsell] = useState<{ from: CYCLE; to: CYCLE } | undefined>(undefined);
     const accountDetailsRef = useRef<AccountStepDetailsRef>();
     const [couponCode, setCouponCode] = useState(model.subscriptionData.checkResult.Coupon?.Code);
@@ -466,7 +485,15 @@ const Step1 = ({
 
             const coupon =
                 couponCode || options.checkResult.Coupon?.Code || subscriptionMapping?.checkResult.Coupon?.Code;
-            const checkResult = await getSubscriptionPrices(silentApi, newPlanIDs, newCurrency, newCycle, coupon);
+
+            const checkResult = await getSubscriptionPrices(
+                getPaymentsApi(silentApi),
+                newPlanIDs,
+                newCurrency,
+                newCycle,
+                model.subscriptionData.billingAddress,
+                coupon
+            );
 
             if (!validateFlow()) {
                 return;
@@ -554,6 +581,26 @@ const Step1 = ({
             });
     };
 
+    const handleChangeBillingAddress = async (billingAddress: BillingAddress) => {
+        const checkResult = await getSubscriptionPrices(
+            getPaymentsApi(silentApi),
+            options.planIDs,
+            options.currency,
+            options.cycle,
+            billingAddress,
+            couponCode || options.checkResult.Coupon?.Code
+        );
+
+        setModel((old) => ({
+            ...old,
+            subscriptionData: {
+                ...model.subscriptionData,
+                billingAddress,
+                checkResult,
+            },
+        }));
+    };
+
     const handleCompletion = async (subscriptionData: SubscriptionData) => {
         const accountDataWithoutPassword = await accountDetailsRef.current?.data();
         if (!accountDataWithoutPassword) {
@@ -568,10 +615,7 @@ const Step1 = ({
         return onComplete({ subscriptionData, accountData, type: 'signup' });
     };
 
-    const onPay = async (
-        payment: PaypalPayment | TokenPayment | CardPayment | undefined,
-        type: 'cc' | 'pp' | undefined
-    ) => {
+    const onPay = async (payment: TokenPaymentWithPaymentsVersion | undefined, type: 'cc' | 'pp' | undefined) => {
         const subscriptionData: SubscriptionData = {
             ...model.subscriptionData,
             payment,
@@ -617,7 +661,8 @@ const Step1 = ({
     const paymentFacade = usePaymentFacade({
         amount: options.checkResult.AmountDue,
         currency: options.currency,
-        onChargeable: (_, { chargeablePaymentParameters, source }) => {
+        selectedPlanName: getPlanFromPlanIDs(model.plansMap, options.planIDs)?.Name,
+        onChargeable: (_, { chargeablePaymentParameters, sourceType, paymentsVersion }) => {
             return withLoadingSignup(async () => {
                 const isFreeSignup = chargeablePaymentParameters.Amount <= 0;
 
@@ -632,13 +677,22 @@ const Step1 = ({
                 });
 
                 let paymentType: 'cc' | 'pp';
-                if (source === PAYMENT_METHOD_TYPES.PAYPAL || source === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
+                if (sourceType === PAYMENT_METHOD_TYPES.PAYPAL || sourceType === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
                     paymentType = 'pp';
                 } else {
                     paymentType = 'cc';
                 }
 
-                await onPay(chargeablePaymentParameters.Payment, paymentType);
+                const legacyTokenPayment: TokenPayment | undefined = isV5PaymentToken(chargeablePaymentParameters)
+                    ? v5PaymentTokenToLegacyPaymentToken(chargeablePaymentParameters).Payment
+                    : undefined;
+
+                const withVersion: TokenPaymentWithPaymentsVersion = {
+                    ...legacyTokenPayment,
+                    paymentsVersion,
+                };
+
+                await onPay(withVersion, paymentType);
             });
         },
         flow: 'signup-vpn',
@@ -1331,6 +1385,19 @@ const Step1 = ({
                                                 );
                                             }
 
+                                            if (
+                                                paymentFacade.selectedMethodType ===
+                                                    PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL &&
+                                                options.checkResult.AmountDue > 0
+                                            ) {
+                                                return (
+                                                    <ChargebeePaypalWrapper
+                                                        chargebeePaypal={paymentFacade.chargebeePaypal}
+                                                        iframeHandles={paymentFacade.iframeHandles}
+                                                    />
+                                                );
+                                            }
+
                                             return (
                                                 <>
                                                     <Button
@@ -1632,10 +1699,11 @@ const Step1 = ({
                                                             coupon={coupon}
                                                             onApplyCode={async (code) => {
                                                                 const checkResult = await getSubscriptionPrices(
-                                                                    silentApi,
+                                                                    getPaymentsApi(silentApi),
                                                                     options.planIDs,
                                                                     options.currency,
                                                                     options.cycle,
+                                                                    model.subscriptionData.billingAddress,
                                                                     code
                                                                 );
 
@@ -1655,10 +1723,11 @@ const Step1 = ({
                                                             }}
                                                             onRemoveCode={async () => {
                                                                 const checkResult = await getSubscriptionPrices(
-                                                                    silentApi,
+                                                                    getPaymentsApi(silentApi),
                                                                     options.planIDs,
                                                                     options.currency,
-                                                                    options.cycle
+                                                                    options.cycle,
+                                                                    model.subscriptionData.billingAddress
                                                                 );
 
                                                                 setModel((old) => ({
@@ -1678,6 +1747,12 @@ const Step1 = ({
                                             )}
 
                                             <div className="mx-3 flex flex-column gap-2">
+                                                {paymentFacade.showTaxCountry && (
+                                                    <WrappedTaxCountrySelector
+                                                        onBillingAddressChange={handleChangeBillingAddress}
+                                                        statusExtended={paymentFacade.statusExtended}
+                                                    />
+                                                )}
                                                 <div
                                                     className={clsx(
                                                         'text-bold',
@@ -1702,6 +1777,14 @@ const Step1 = ({
                                                         )}
                                                     </span>
                                                 </div>
+
+                                                {isTaxInclusive(options.checkResult) && (
+                                                    <InclusiveVatText
+                                                        tax={options.checkResult?.Taxes?.[0]}
+                                                        currency={options.currency}
+                                                        className="text-sm color-weak"
+                                                    />
+                                                )}
                                             </div>
                                         </div>
                                     </div>

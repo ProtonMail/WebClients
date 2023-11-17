@@ -28,7 +28,6 @@ beforeEach(() => {
     props = {
         onSubmit: jest.fn(),
         onClose: jest.fn(),
-        token: 'token123',
         onProcess: jest.fn().mockReturnValue(promiseWithController),
     };
 });

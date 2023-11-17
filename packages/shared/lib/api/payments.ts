@@ -1,20 +1,31 @@
 import { PlanIDs } from 'proton-account/src/app/signup/interfaces';
 
-import { Autopay, WrappedCryptoPayment } from '@proton/components/payments/core';
+import {
+    Autopay,
+    PAYMENT_METHOD_TYPES,
+    PAYMENT_TOKEN_STATUS,
+    WrappedCryptoPayment,
+} from '@proton/components/payments/core';
 import {
     AmountAndCurrency,
+    BillingAddress,
+    BillingAddressProperty,
     ChargeablePaymentParameters,
     ExistingPayment,
+    SavedPaymentMethod,
     TokenPayment,
     TokenPaymentMethod,
+    V5PaymentToken,
     WrappedCardPayment,
     WrappedPaypalPayment,
+    isTokenPaymentMethod,
+    isV5PaymentToken,
 } from '@proton/components/payments/core/interface';
 import { INVOICE_OWNER, INVOICE_STATE, INVOICE_TYPE } from '@proton/shared/lib/constants';
 import { FREE_PLAN } from '@proton/shared/lib/subscription/freePlans';
 
 import { ProductParam, getProductHeaders } from '../apps/product';
-import { Api, Currency, Cycle, FreePlanDefault, Renew } from '../interfaces';
+import { Api, Currency, Cycle, FreePlanDefault, Renew, Subscription } from '../interfaces';
 
 export const queryFreePlan = (params?: QueryPlansParams) => ({
     url: 'payments/v4/plans/default',
@@ -44,8 +55,19 @@ export const getFreePlan = ({
         })
         .catch(() => FREE_PLAN);
 
-export const getSubscription = () => ({
-    url: 'payments/v4/subscription',
+export type PaymentsVersion = 'v4' | 'v5';
+let paymentsVersion: PaymentsVersion = 'v4';
+
+export function setPaymentsVersion(version: PaymentsVersion) {
+    paymentsVersion = version;
+}
+
+export function getPaymentsVersion(): PaymentsVersion {
+    return paymentsVersion;
+}
+
+export const getSubscription = (forceVersion?: PaymentsVersion) => ({
+    url: `payments/${forceVersion ?? paymentsVersion}/subscription`,
     method: 'get',
 });
 
@@ -57,7 +79,7 @@ export interface FeedbackDowngradeData {
 }
 
 export const deleteSubscription = (data: FeedbackDowngradeData) => ({
-    url: 'payments/v4/subscription',
+    url: `payments/${paymentsVersion}/subscription`,
     method: 'delete',
     data,
 });
@@ -68,31 +90,107 @@ export type CheckSubscriptionData = {
     Cycle: Cycle;
     CouponCode?: string;
     Codes?: string[];
+    /**
+     * For taxes
+     */
+    BillingAddress?: BillingAddress;
 };
 
-export const checkSubscription = (data: CheckSubscriptionData) => ({
-    url: 'payments/v4/subscription/check',
-    method: 'post',
-    data,
-});
-
-export type SubscribeData = {
+type CommonSubscribeData = {
     Plans: PlanIDs;
     Currency: Currency;
     Cycle: Cycle;
     Codes?: string[];
-} & (TokenPaymentMethod | WrappedCardPayment | ExistingPayment | {}) &
-    AmountAndCurrency;
+} & AmountAndCurrency;
 
-export const subscribe = (data: SubscribeData, product: ProductParam) => ({
-    url: 'payments/v4/subscription',
-    method: 'post',
-    data,
-    headers: getProductHeaders(product, {
-        endpoint: 'payments/v4/subscription',
-        product,
-    }),
-});
+type SubscribeDataV4 = CommonSubscribeData & TokenPaymentMethod & BillingAddressProperty;
+type SubscribeDataV5 = CommonSubscribeData & V5PaymentToken & BillingAddressProperty;
+type SubscribeDataNoPayment = CommonSubscribeData;
+export type SubscribeData = SubscribeDataV4 | SubscribeDataV5 | SubscribeDataNoPayment;
+
+function isCommonSubscribeData(data: any): data is CommonSubscribeData {
+    return !!data.Plans && !!data.Currency && !!data.Cycle && !!data.Amount && !!data.Currency;
+}
+
+function isSubscribeDataV4(data: any): data is SubscribeDataV4 {
+    return isCommonSubscribeData(data) && isTokenPaymentMethod(data);
+}
+
+function isSubscribeDataV5(data: any): data is SubscribeDataV5 {
+    return isCommonSubscribeData(data) && isV5PaymentToken(data);
+}
+
+function isSubscribeDataNoPayment(data: any): data is SubscribeDataNoPayment {
+    return isCommonSubscribeData(data);
+}
+
+export function isSubscribeData(data: any): data is SubscribeData {
+    return isSubscribeDataV4(data) || isSubscribeDataV5(data) || isSubscribeDataNoPayment(data);
+}
+
+function prepareSubscribeDataPayload(data: SubscribeData): SubscribeData {
+    const allowedProps: (keyof SubscribeDataV4 | keyof SubscribeDataV5)[] = [
+        'Plans',
+        'Currency',
+        'Cycle',
+        'Codes',
+        'PaymentToken',
+        'Payment',
+        'Amount',
+        'Currency',
+        'BillingAddress',
+    ];
+    const payload: any = {};
+    Object.keys(data).forEach((key: any) => {
+        if (allowedProps.includes(key)) {
+            payload[key] = (data as any)[key];
+        }
+    });
+
+    return payload as SubscribeData;
+}
+
+export const subscribe = (rawData: SubscribeData, product: ProductParam, version: PaymentsVersion) => {
+    const sanitizedData = prepareSubscribeDataPayload(rawData);
+
+    let data: SubscribeData = sanitizedData;
+    if (version === 'v5' && isSubscribeDataV4(sanitizedData)) {
+        const v5Data: SubscribeDataV5 = {
+            ...sanitizedData,
+            PaymentToken: sanitizedData.Payment.Details.Token,
+            v: 5,
+        };
+
+        data = v5Data;
+        delete (data as any).Payment;
+    } else if (version === 'v4' && isSubscribeDataV5(sanitizedData)) {
+        const v4Data: SubscribeDataV4 = {
+            ...sanitizedData,
+            Payment: {
+                Type: PAYMENT_METHOD_TYPES.TOKEN,
+                Details: {
+                    Token: sanitizedData.PaymentToken,
+                },
+            },
+        };
+
+        data = v4Data;
+        delete (data as any).PaymentToken;
+    }
+
+    const config = {
+        url: `payments/${version}/subscription`,
+        method: 'post',
+        data,
+        headers: getProductHeaders(product, {
+            endpoint: `payments/${version}/subscription`,
+            product,
+        }),
+        timeout: 60000 * 2,
+    };
+
+    return config;
+};
 
 export interface QueryInvoicesParams {
     /**
@@ -109,7 +207,7 @@ export interface QueryInvoicesParams {
  * Query list of invoices for the current user. The response is {@link InvoiceResponse}
  */
 export const queryInvoices = ({ Page, PageSize, Owner, State, Type }: QueryInvoicesParams) => ({
-    url: 'payments/v4/invoices',
+    url: `payments/${paymentsVersion}/invoices`,
     method: 'get',
     params: { Page, PageSize, Owner, State, Type },
 });
@@ -118,33 +216,40 @@ export interface QueryPlansParams {
     Currency?: Currency;
 }
 
-export const queryPlans = (params?: QueryPlansParams) => ({
-    url: 'payments/v4/plans',
+export const queryPlans = (params?: QueryPlansParams, forceVersion?: PaymentsVersion) => ({
+    url: `payments/${forceVersion ?? paymentsVersion}/plans`,
     method: 'get',
     params,
 });
 
 export const getInvoice = (invoiceID: string) => ({
-    url: `payments/v4/invoices/${invoiceID}`,
+    url: `payments/${paymentsVersion}/invoices/${invoiceID}`,
     method: 'get',
     output: 'arrayBuffer',
 });
 
 export const checkInvoice = (invoiceID: string, GiftCode?: string) => ({
-    url: `payments/v4/invoices/${invoiceID}/check`,
+    url: `payments/${paymentsVersion}/invoices/${invoiceID}/check`,
     method: 'put',
     data: { GiftCode },
 });
 
-export const queryPaymentMethods = () => ({
-    url: 'payments/v4/methods',
+export const queryPaymentMethods = (forceVersion?: PaymentsVersion) => ({
+    url: `payments/${forceVersion ?? paymentsVersion}/methods`,
     method: 'get',
 });
 
-export type SetPaymentMethodData = TokenPayment & { Autopay?: Autopay };
+export type SetPaymentMethodDataV4 = TokenPayment & { Autopay?: Autopay };
 
-export const setPaymentMethod = (data: SetPaymentMethodData) => ({
+export const setPaymentMethodV4 = (data: SetPaymentMethodDataV4) => ({
     url: 'payments/v4/methods',
+    method: 'post',
+    data,
+});
+
+export type SetPaymentMethodDataV5 = V5PaymentToken & { Autopay?: Autopay };
+export const setPaymentMethodV5 = (data: SetPaymentMethodDataV5) => ({
+    url: 'payments/v5/methods',
     method: 'post',
     data,
 });
@@ -154,26 +259,14 @@ export interface UpdatePaymentMethodsData {
 }
 
 export const updatePaymentMethod = (methodId: string, data: UpdatePaymentMethodsData) => ({
-    url: `payments/v4/methods/${methodId}`,
+    url: `payments/${paymentsVersion}/methods/${methodId}`,
     method: 'put',
     data,
 });
 
 export const deletePaymentMethod = (methodID: string) => ({
-    url: `payments/v4/methods/${methodID}`,
+    url: `payments/${paymentsVersion}/methods/${methodID}`,
     method: 'delete',
-});
-
-export const createBitcoinPayment = (Amount: number, Currency: Currency) => ({
-    url: 'payments/bitcoin', // blocked by PAY-963
-    method: 'post',
-    data: { Amount, Currency },
-});
-
-export const createBitcoinDonation = (Amount: number, Currency: Currency) => ({
-    url: 'payments/bitcoin/donate', // blocked by PAY-963
-    method: 'post',
-    data: { Amount, Currency },
 });
 
 /**
@@ -182,18 +275,13 @@ export const createBitcoinDonation = (Amount: number, Currency: Currency) => ({
  * must be set to 0 and payment token must not be supplied.
  */
 export const payInvoice = (invoiceID: string, data: (TokenPaymentMethod & AmountAndCurrency) | AmountAndCurrency) => ({
-    url: `payments/v4/invoices/${invoiceID}`,
+    url: `payments/${paymentsVersion}/invoices/${invoiceID}`,
     method: 'post',
     data,
 });
 
-export const queryPaymentMethodStatus = () => ({
-    url: 'payments/v4/status',
-    method: 'get',
-});
-
 export const orderPaymentMethods = (PaymentMethodIDs: string[]) => ({
-    url: 'payments/v4/methods/order',
+    url: `payments/${paymentsVersion}/methods/order`,
     method: 'put',
     data: { PaymentMethodIDs },
 });
@@ -206,7 +294,7 @@ export interface GiftCodeData {
 export const buyCredit = (
     data: (TokenPaymentMethod & AmountAndCurrency) | GiftCodeData | ChargeablePaymentParameters
 ) => ({
-    url: 'payments/v4/credit',
+    url: `payments/${paymentsVersion}/credit`,
     method: 'post',
     data,
 });
@@ -216,7 +304,7 @@ export interface ValidateCreditData {
 }
 
 export const validateCredit = (data: ValidateCreditData) => ({
-    url: 'payments/v4/credit/check',
+    url: `payments/${paymentsVersion}/credit/check`,
     method: 'post',
     data,
 });
@@ -227,19 +315,24 @@ export type CreateTokenData =
     | ((AmountAndCurrency | {}) & (WrappedPaypalPayment | WrappedCardPayment | ExistingPayment))
     | CreateBitcoinTokenData;
 
-export const createToken = (data: CreateTokenData) => ({
-    url: 'payments/v4/tokens',
+export const createTokenV4 = (data: CreateTokenData) => ({
+    url: `payments/v4/tokens`,
     method: 'post',
     data,
 });
 
-export const getTokenStatus = (paymentToken: string) => ({
+export const getTokenStatusV4 = (paymentToken: string) => ({
     url: `payments/v4/tokens/${paymentToken}`,
     method: 'get',
 });
 
+export const getTokenStatusV5 = (paymentToken: string) => ({
+    url: `payments/v5/tokens/${paymentToken}`,
+    method: 'get',
+});
+
 export const getLastCancelledSubscription = () => ({
-    url: 'payments/v4/subscription/latest',
+    url: `payments/${paymentsVersion}/subscription/latest`,
     method: 'get',
 });
 
@@ -253,7 +346,140 @@ export type RenewalStateData =
       };
 
 export const changeRenewState = (data: RenewalStateData) => ({
-    url: 'payments/v4/subscription/renew',
+    url: `payments/${paymentsVersion}/subscription/renew`,
     method: 'put',
     data,
 });
+
+export type SubscribeV5Data = {
+    PaymentToken?: string;
+    Plans: PlanIDs;
+    Amount: number;
+    Currency: Currency;
+    Cycle: Cycle;
+    Codes?: string[];
+};
+
+export type CreatePaymentIntentPaypalData = AmountAndCurrency & {
+    Payment: {
+        Type: 'paypal';
+    };
+};
+
+export type CreatePaymentIntentCardData = AmountAndCurrency & {
+    Payment: {
+        Type: 'card';
+        Details: {
+            Bin: string;
+        };
+    };
+};
+
+export type CreatePaymentIntentSavedCardData = AmountAndCurrency & {
+    PaymentMethodID: string;
+};
+
+export type CreatePaymentIntentData =
+    | CreatePaymentIntentPaypalData
+    | CreatePaymentIntentCardData
+    | CreatePaymentIntentSavedCardData;
+
+export const createPaymentIntentV5 = (data: CreatePaymentIntentData) => ({
+    url: `payments/v5/tokens`,
+    method: 'post',
+    data,
+});
+
+export type BackendPaymentIntent = {
+    ID: string;
+    Status: 'inited' | 'authorized';
+    Amount: number;
+    GatewayAccountID: string;
+    ExpiresAt: number;
+    PaymentMethodType: 'card' | 'paypal';
+    CreatedAt: number;
+    ModifiedAt: number;
+    UpdatedAt: number;
+    ResourceVersion: number;
+    Object: 'payment_intent';
+    CustomerID: string;
+    CurrencyCode: Currency;
+    Gateway: string;
+    ReferenceID: string;
+};
+
+export type FetchPaymentIntentV5Response = {
+    Token: string;
+    Status: PAYMENT_TOKEN_STATUS;
+    Data: BackendPaymentIntent;
+};
+
+export const fetchPaymentIntentV5 = (
+    api: Api,
+    data: CreatePaymentIntentData,
+    signal?: AbortSignal
+): Promise<FetchPaymentIntentV5Response> => {
+    return api<FetchPaymentIntentV5Response>({
+        ...createPaymentIntentV5(data),
+        signal,
+    });
+};
+
+export type FetchPaymentIntentForExistingV5Response = {
+    Token: string;
+    Status: PAYMENT_TOKEN_STATUS;
+    Data: BackendPaymentIntent | null;
+};
+
+export const fetchPaymentIntentForExistingV5 = (
+    api: Api,
+    data: CreatePaymentIntentData,
+    signal?: AbortSignal
+): Promise<FetchPaymentIntentForExistingV5Response> => {
+    return api<FetchPaymentIntentForExistingV5Response>({
+        ...createPaymentIntentV5(data),
+        signal,
+    });
+};
+
+export interface GetChargebeeConfigurationResponse {
+    Code: number;
+    Site: string;
+    PublishableKey: string;
+    Domain: string;
+}
+
+export const getChargebeeConfiguration = () => ({
+    url: `payments/v5/web-configuration`,
+    method: 'get',
+});
+
+// returns the ID. Or is it user's ID? hopefully.
+// Call only if ChargebeeEnabled is set to 0 (the system already supports cb but this user was not migrated yet)
+// Do not call for signups.
+// Do not call if ChargebeeEnabled is undefined.
+// If ChargebeeEnabled === 1 then always go to v5 and do not call this.
+export const importAccount = () => ({
+    url: 'payments/v5/import',
+    method: 'post',
+});
+
+export const checkImport = () => ({
+    url: 'payments/v5/import',
+    method: 'head',
+});
+
+// no parameter, ideally. Always call before importAccount.
+export const cleanupImport = () => ({
+    url: 'payments/v5/import',
+    method: 'delete',
+});
+
+export type GetSubscriptionResponse = {
+    Subscription: Subscription;
+    UpcomingSubscription?: Subscription;
+};
+
+export type GetPaymentMethodsResponse = {
+    PaymentMethods: SavedPaymentMethod[];
+};

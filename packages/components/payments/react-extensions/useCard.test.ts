@@ -155,12 +155,8 @@ it('should fetch payment token when the card is provided initially', async () =>
     expect(token).toEqual({
         Amount: 100,
         Currency: 'USD',
-        Payment: {
-            Type: 'token',
-            Details: {
-                Token: 'token123',
-            },
-        },
+        PaymentToken: 'token123',
+        v: 5,
         chargeable: true,
         type: 'card',
     });
@@ -199,12 +195,8 @@ it('should fetch payment token when the card is provided later', async () => {
     expect(token).toEqual({
         Amount: 100,
         Currency: 'USD',
-        Payment: {
-            Type: 'token',
-            Details: {
-                Token: 'token123',
-            },
-        },
+        PaymentToken: 'token123',
+        v: 5,
         chargeable: true,
         type: 'card',
     });
@@ -232,12 +224,8 @@ it('should reset payment token when currency or amount is changed', async () => 
     expect(result.current.paymentProcessor.fetchedPaymentToken).toEqual({
         Amount: 100,
         Currency: 'USD',
-        Payment: {
-            Type: 'token',
-            Details: {
-                Token: 'token123',
-            },
-        },
+        PaymentToken: 'token123',
+        v: 5,
         chargeable: true,
         type: 'card',
     });
@@ -253,12 +241,8 @@ it('should reset payment token when currency or amount is changed', async () => 
 it('should verify the payment token', async () => {
     addTokensResponse().pending();
     mockVerifyPayment.mockResolvedValue({
-        Payment: {
-            Type: 'token',
-            Details: {
-                Token: 'token123',
-            },
-        },
+        PaymentToken: 'token123',
+        v: 5,
     });
 
     const { result } = renderHook(
@@ -283,12 +267,8 @@ it('should verify the payment token', async () => {
     expect(result.current.paymentProcessor.fetchedPaymentToken).toEqual({
         Amount: 100,
         Currency: 'USD',
-        Payment: {
-            Type: 'token',
-            Details: {
-                Token: 'token123',
-            },
-        },
+        PaymentToken: 'token123',
+        v: 5,
         chargeable: false,
         type: 'card',
         status: PAYMENT_TOKEN_STATUS.STATUS_PENDING,
@@ -303,12 +283,8 @@ it('should verify the payment token', async () => {
 
     const verifiedToken = await verifyPromise;
     expect(verifiedToken).toEqual({
-        Payment: {
-            Type: 'token',
-            Details: {
-                Token: 'token123',
-            },
-        },
+        PaymentToken: 'token123',
+        v: 5,
         Amount: 100,
         Currency: 'USD',
         chargeable: true,
@@ -342,12 +318,8 @@ it('should throw an error during token processing if verification failed', async
     expect(result.current.paymentProcessor.fetchedPaymentToken).toEqual({
         Amount: 100,
         Currency: 'USD',
-        Payment: {
-            Type: 'token',
-            Details: {
-                Token: 'token123',
-            },
-        },
+        PaymentToken: 'token123',
+        v: 5,
         chargeable: false,
         type: 'card',
         status: PAYMENT_TOKEN_STATUS.STATUS_PENDING,
