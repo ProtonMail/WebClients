@@ -75,7 +75,7 @@ export const PlanCardFeatureList = ({
                     <li key={key} className={clsx(odd && 'px-3 py-2 rounded', itemClassName, 'flex')}>
                         <div
                             className={clsx(
-                                'flex-no-min-children flex-nowrap',
+                                'flex children-min-size-auto flex-nowrap',
                                 !feature.included && 'color-hint',
                                 feature.included && feature.status === 'coming-soon' && 'color-weak'
                             )}

@@ -1,6 +1,14 @@
 @use 'sass:math';
 @use 'sass:map';
 
+// Usually used with `flex` when we want to avoid min sizes to 0 on direct children
+.children-min-size-auto > * {
+	min-block-size: auto;
+	min-inline-size: auto;
+}
+
+// ----------------------------------------------------------------------------
+
 @function pixel-to-rem($value) {
 	@return if(type-of($value) == 'number' and unitless($value), rem($value), $value);
 }

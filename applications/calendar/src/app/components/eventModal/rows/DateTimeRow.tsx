@@ -74,7 +74,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                 <div className="flex flex-nowrap flex-column md:flex-row mb-2">
                     <div className="flex flex-nowrap md:flex-1 grow">
                         <div
-                            className="flex-no-min-children flex-1 grow-custom"
+                            className="flex children-min-size-auto flex-1 grow-custom"
                             style={{ '--grow-custom': '1.25' }}
                         >
                             <DateInput
@@ -120,7 +120,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                 <div className="flex flex-nowrap flex-column md:flex-row mb-2">
                     <div className="flex flex-nowrap md:flex-1 grow">
                         <div
-                            className="flex-no-min-children flex-1 grow-custom"
+                            className="flex children-min-size-auto flex-1 grow-custom"
                             style={{ '--grow-custom': '1.25' }}
                         >
                             <DateInput
