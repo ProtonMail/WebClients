@@ -375,7 +375,7 @@ const CreditCard = ({
                 placeholder={title}
                 className="country-select justify-space-between divide-x"
                 inputClassName="ml-1"
-                prefixClassName="flex-item-fluid"
+                prefixClassName="flex-1"
                 ref={zipRef}
                 prefix={
                     <SelectTwo

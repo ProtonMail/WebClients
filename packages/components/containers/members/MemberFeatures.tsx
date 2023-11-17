@@ -20,7 +20,7 @@ const MemberFeatures = ({ member, organization }: Props) => {
                     <span className="flex-item-noshrink flex mt-0.5">
                         <Icon name="filing-cabinet" />
                     </span>
-                    <span className="flex-item-fluid pl-1" data-testid="users-and-addresses-table:storage">
+                    <span className="flex-1 pl-1" data-testid="users-and-addresses-table:storage">
                         {humanSize(UsedSpace, 'GB')} / {humanSize(MaxSpace, 'GB')}
                     </span>
                 </span>
@@ -30,7 +30,7 @@ const MemberFeatures = ({ member, organization }: Props) => {
                     <span className="flex-item-noshrink flex mt-0.5">
                         <Icon name="brand-proton-vpn" />
                     </span>
-                    <span className="flex-item-fluid pl-1" data-testid="users-and-addresses-table:vpnConnections">
+                    <span className="flex-1 pl-1" data-testid="users-and-addresses-table:vpnConnections">
                         {c('Feature').ngettext(msgid`${MaxVPN} VPN connection`, `${MaxVPN} VPN connections`, MaxVPN)}
                     </span>
                 </span>

@@ -33,7 +33,7 @@ const VerticalStep = ({ title, description, icon, status = 'next', className, ..
             </div>
             <div
                 className={clsx(
-                    'flex-item-fluid pl-2 flex flex-column flex-nowrap relative vertical-steps-item-text',
+                    'flex-1 pl-2 flex flex-column flex-nowrap relative vertical-steps-item-text',
                     status === 'passed' && 'color-disabled'
                 )}
             >

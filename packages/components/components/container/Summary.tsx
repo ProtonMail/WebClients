@@ -13,7 +13,7 @@ const Summary = ({ children, ...rest }: Props) => (
     <summary {...rest}>
         <div className="flex flex-nowrap">
             <Icon name="chevron-down" className="summary-caret mr-1 mt-1 flex-item-noshrink" />
-            <div className="flex-item-fluid">{children}</div>
+            <div className="flex-1">{children}</div>
         </div>
     </summary>
 );

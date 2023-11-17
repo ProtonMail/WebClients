@@ -396,7 +396,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                         {model.isExternal ? (
                             <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3">
                                 <Icon name="exclamation-circle" className="flex-item-noshrink color-danger" />
-                                <p className="text-sm color-weak flex-item-fluid pl-4 my-0">
+                                <p className="text-sm color-weak flex-1 pl-4 my-0">
                                     {c('email_forwarding_2023: Info')
                                         .jt`Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${boldForwarderEmail} address, but zero-access encryption remains enabled. ${learnMoreLink}`}
                                 </p>
@@ -405,7 +405,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                         {model.isExternal || model.keySupportE2EEForwarding ? null : (
                             <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3">
                                 <Icon name="exclamation-circle" className="flex-item-noshrink color-danger" />
-                                <p className="text-sm color-weak flex-item-fluid pl-4 my-0">
+                                <p className="text-sm color-weak flex-1 pl-4 my-0">
                                     {c('email_forwarding_2023: Info')
                                         .jt`A new encryption key will be generated for ${boldForwarderEmail}.`}
                                 </p>
@@ -414,7 +414,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                         {model?.keyErrors?.length ? (
                             <div className="border rounded-lg p-4 flex flex-nowrap items-center">
                                 <Icon name="exclamation-circle" className="flex-item-noshrink color-danger" />
-                                <p className="text-sm color-weak flex-item-fluid pl-4 my-0">
+                                <p className="text-sm color-weak flex-1 pl-4 my-0">
                                     {model.keyErrors.join(' ')}
                                 </p>
                             </div>

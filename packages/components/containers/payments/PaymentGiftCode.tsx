@@ -38,7 +38,7 @@ const PaymentGiftCode = ({ giftCodeRef, giftCode = '', onApply, loading }: Props
     if (giftCode) {
         return (
             <div className="flex items-center">
-                <span className="flex-item-fluid flex-nowrap items-center">
+                <span className="flex-1 flex-nowrap items-center">
                     <Icon name="gift" className="mr-2 mb-1 flex-item-noshrink" />
                     <code>{getFormattedGiftCode(giftCode)}</code>
                 </span>
@@ -65,7 +65,7 @@ const PaymentGiftCode = ({ giftCodeRef, giftCode = '', onApply, loading }: Props
 
         return (
             <div className="flex flex-nowrap items-center items-start mb-2">
-                <div className="pr-2 flex-item-fluid">
+                <div className="pr-2 flex-1">
                     <Input
                         value={code}
                         ref={giftCodeRef}

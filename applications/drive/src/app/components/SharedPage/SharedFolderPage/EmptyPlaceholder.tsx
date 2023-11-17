@@ -7,7 +7,7 @@ import { DRIVE_LANDING_PAGE } from '@proton/shared/lib/drive/urls';
 import noContentSvg from '@proton/styles/assets/img/illustrations/shared-page-empty-list.svg';
 
 export const EmptyPlaceholder = () => (
-    <div className="flex flex-item-fluid justify-center shared-folder-empty-placeholder-container">
+    <div className="flex flex-1 justify-center shared-folder-empty-placeholder-container">
         <EmptyViewContainer
             className="p-4"
             imageProps={{ src: noContentSvg, title: c('Info').t`Nothing here yet` }}

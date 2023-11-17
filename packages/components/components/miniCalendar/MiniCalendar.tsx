@@ -158,7 +158,7 @@ const MiniCalendar = ({
         <div className="minicalendar" onMouseDown={handleMouseDown} aria-label={monthLabel}>
             <h2 className="sr-only">{c('Title').t`Minicalendar`}</h2>
             <div className="flex items-center flex-nowrap p-3 pt-1">
-                <span className="text-bold flex-item-fluid text-ellipsis">{monthLabel}</span>
+                <span className="text-bold flex-1 text-ellipsis">{monthLabel}</span>
 
                 {hasToday ? (
                     <Tooltip title={todayTitle}>

@@ -202,7 +202,7 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
                             </span>
                         </span>
                         <div
-                            className="account-button-content mx-3 flex-item-fluid mt-custom"
+                            className="account-button-content mx-3 flex-1 mt-custom"
                             style={{ '--mt-custom': `-0.25em` }}
                         >
                             <button

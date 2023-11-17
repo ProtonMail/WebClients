@@ -95,17 +95,17 @@ const AddressesInput = forwardRef<HTMLDivElement, AddressesInputProps>(function 
     ref
 ) {
     return (
-        <div className={clsx(['w-full flex-item-fluid relative', className])} ref={ref} onClick={onClick}>
+        <div className={clsx(['w-full flex-1 relative', className])} ref={ref} onClick={onClick}>
             <div
-                className={clsx(['flex-no-min-children flex-item-fluid', autocompleteContainerClassName])}
+                className={clsx(['flex-no-min-children flex-1', autocompleteContainerClassName])}
                 {...autocompleteContainerRest}
             >
-                <div className="flex-item-fluid flex max-w-full max-h-full relative">
+                <div className="flex-1 flex max-w-full max-h-full relative">
                     {items}
                     {placeholder}
                     <div className="flex max-w-full max-h-full relative flex-item-grow-2">
                         <div
-                            className={clsx(['flex-item-fluid flex items-center', inputContainerClassName])}
+                            className={clsx(['flex-1 flex items-center', inputContainerClassName])}
                         >
                             {autocomplete}
                         </div>

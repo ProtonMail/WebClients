@@ -24,7 +24,7 @@ export const NameCell = ({ item }: { item: DriveItem | SharedLinkItem | TrashIte
     });
 
     return (
-        <TableCell className="m-0 flex items-center flex-nowrap flex-item-fluid" data-testid="column-name">
+        <TableCell className="m-0 flex items-center flex-nowrap flex-1" data-testid="column-name">
             {item.cachedThumbnailUrl ? (
                 <img
                     src={item.cachedThumbnailUrl}
@@ -49,7 +49,7 @@ export const DeviceNameCell = ({ item }: { item: DeviceItem }) => {
 
     return (
         <TableCell
-            className="m-0 flex items-center flex-nowrap flex-item-fluid filebrowser-list-device-name-cell"
+            className="m-0 flex items-center flex-nowrap flex-1 filebrowser-list-device-name-cell"
             data-testid="column-name"
         >
             <Icon name="tv" alt={iconText} className="mr-2" />

@@ -73,7 +73,7 @@ const GiftCodeSummary = ({ coupon, onApplyCode, onRemoveCode }: Props) => {
     if (showInput) {
         return (
             <div className="flex flex-nowrap items-center items-start">
-                <div className="pr-2 flex-item-fluid">
+                <div className="pr-2 flex-1">
                     <Input
                         value={inputValue}
                         onValue={setInputValue}

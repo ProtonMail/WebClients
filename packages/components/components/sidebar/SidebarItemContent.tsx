@@ -22,7 +22,7 @@ const SidebarItemContent = ({ icon, iconColor, iconSize = 16, title, text, aside
                     className="navigation-icon flex-item-noshrink flex-item-centered-vert"
                 />
             )}
-            <span className="flex-item-fluid text-ellipsis max-w-full">{text}</span>
+            <span className="flex-1 text-ellipsis max-w-full">{text}</span>
             {aside && <span className="flex items-center">{aside}</span>}
         </span>
     );

@@ -39,7 +39,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
             <ModalTwoContent>
                 <div className="border rounded-lg mb-4 p-4 flex flex-nowrap items-center">
                     <img src={cleanLinkImg} alt="" className="flex-item-noshrink" />
-                    <p className="color-weak flex-item-fluid pl-4 my-0" data-testid="trackersModal:description">
+                    <p className="color-weak flex-1 pl-4 my-0" data-testid="trackersModal:description">
                         {c('Info')
                             .t`We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.`}
                         <br />
@@ -53,7 +53,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                             <div className="flex flex-column mb-1">
                                 <span className="color-weak text-sm">{c('Label').t`Original link`}</span>
                                 <div className="flex flex-nowrap group-hover-opacity-container max-w-full items-center">
-                                    <div className="text-ellipsis w-full flex-item-fluid" title={tracker.originalURL}>
+                                    <div className="text-ellipsis w-full flex-1" title={tracker.originalURL}>
                                         {tracker.originalURL}
                                     </div>
                                     <div className="group-hover:opacity-100 group-hover:opacity-100-no-width flex-item-noshrink">
@@ -74,7 +74,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                             <div className="flex flex-column">
                                 <span className="color-primary text-sm">{c('Label').t`Cleaned`}</span>
                                 <div className="flex flex-nowrap group-hover-opacity-container max-w-full items-center">
-                                    <div className="text-ellipsis w-full flex-item-fluid" title={tracker.cleanedURL}>
+                                    <div className="text-ellipsis w-full flex-1" title={tracker.cleanedURL}>
                                         {tracker.cleanedURL}
                                     </div>
                                     <div className="group-hover:opacity-100 group-hover:opacity-100-no-width flex-item-noshrink">

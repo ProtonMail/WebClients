@@ -76,7 +76,7 @@ const SendEmailReminderTwoFAModal = ({ onClose, members, ...rest }: Props) => {
                                             {member.Name}
                                         </div>
                                         <div className="max-w-full flex flex-">
-                                            <span className="flex-item-fluid mr-2 text-ellipsis">
+                                            <span className="flex-1 mr-2 text-ellipsis">
                                                 {memberAddresses[0].Email}
                                             </span>
                                             {member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN && (

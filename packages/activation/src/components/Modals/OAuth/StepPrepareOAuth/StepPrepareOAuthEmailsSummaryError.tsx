@@ -13,7 +13,7 @@ const StepPrepareEmailsSummaryError = ({ errors }: Props) => {
         <div className="flex color-danger">
             <Icon name="exclamation-circle-filled" className="mr-2 flex-nowrap" style={{ marginTop: 4 }} />
 
-            <div className="flex-item-fluid">
+            <div className="flex-1">
                 {errors.includes(MailImportPayloadError.MAX_FOLDERS_LIMIT_REACHED) && (
                     <div className="mb-4">
                         {c('Error')

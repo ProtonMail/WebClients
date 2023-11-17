@@ -26,7 +26,7 @@ export const SharePendingMember: VFC<SharePendingMemberProps> = ({ actions, emai
     <div className="border rounded-xl px-4 py-3 max-w-full">
         <div className="flex flex-nowrap items-center w-full">
             <ShareMemberAvatar value={email.toUpperCase().slice(0, 2) ?? ''} loading={loading} />
-            <div className="flex-item-fluid">
+            <div className="flex-1">
                 <div className="text-ellipsis">{email}</div>
                 <div className="flex items-center gap-1">
                     <span className="color-weak">{c('Info').t`Invitation sent`}</span>

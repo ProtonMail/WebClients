@@ -358,7 +358,7 @@ const BoxHeader = ({ step, title, right }: { step?: number; title: string; right
                         <StepLabel step={step} />
                     </div>
                 )}
-                <h2 className="text-bold text-4xl md:flex-item-fluid">{title}</h2>
+                <h2 className="text-bold text-4xl md:flex-1">{title}</h2>
             </div>
             {right && <div className="flex-item-noshrink">{right}</div>}
         </div>
@@ -1159,7 +1159,7 @@ const Step1 = ({
                                       return (
                                           <div className="flex gap-6 flex-column lg:flex-row lg:gap-3 ">
                                               <PlanCard
-                                                  className="lg:flex-item-fluid"
+                                                  className="lg:flex-1"
                                                   title={vpnPlan?.Title}
                                                   description={c('bf2023: info')
                                                       .t`Secure browsing and premium VPN features.`}
@@ -1291,7 +1291,7 @@ const Step1 = ({
                 )}
                 <Box className="mt-8 w-full">
                     <div className="flex justify-space-between flex-column lg:flex-row ">
-                        <div className={`lg:flex-item-fluid ${padding}`}>
+                        <div className={`lg:flex-1 ${padding}`}>
                             <BoxHeader
                                 step={showStepLabel ? step++ : undefined}
                                 title={c('Header').t`Create your account`}
@@ -1452,7 +1452,7 @@ const Step1 = ({
                         <BoxHeader step={showStepLabel ? step++ : undefined} title={c('Header').t`Checkout`} />
                         <BoxContent>
                             <div className="flex justify-space-between md:gap-14 gap-6 flex-column lg:flex-row">
-                                <div className="lg:flex-item-fluid md:pr-1 order-1 lg:order-0">
+                                <div className="lg:flex-1 md:pr-1 order-1 lg:order-0">
                                     <form
                                         onFocus={(e) => {
                                             const autocomplete = e.target.getAttribute('autocomplete');
@@ -1667,7 +1667,7 @@ const Step1 = ({
                                                             />
                                                             <label
                                                                 htmlFor="toggle-upsell-plan"
-                                                                className="flex-item-fluid text-sm"
+                                                                className="flex-1 text-sm"
                                                             >
                                                                 {label}
                                                             </label>
@@ -1693,9 +1693,9 @@ const Step1 = ({
                                                                     {planInformation.logo}
                                                                 </div>
                                                             </div>
-                                                            <div className="flex-item-fluid">
+                                                            <div className="flex-1">
                                                                 <div className="flex gap-2">
-                                                                    <div className="text-rg text-bold flex-item-fluid">
+                                                                    <div className="text-rg text-bold flex-1">
                                                                         {planInformation.title}
                                                                     </div>
                                                                     {!isB2bPlan && (
@@ -1704,8 +1704,8 @@ const Step1 = ({
                                                                         </div>
                                                                     )}
                                                                 </div>
-                                                                <div className="flex-item-fluid flex items-center gap-2">
-                                                                    <div className="flex-item-fluid text-sm">
+                                                                <div className="flex-1 flex items-center gap-2">
+                                                                    <div className="flex-1 text-sm">
                                                                         <span className="color-weak mr-1">
                                                                             {getBilledText(options.cycle)}
                                                                         </span>
@@ -1720,7 +1720,7 @@ const Step1 = ({
                                                                     </div>
 
                                                                     {free && (
-                                                                        <div className="flex-item-fluid text-sm color-weak">
+                                                                        <div className="flex-1 text-sm color-weak">
                                                                             {c('Info').t`Free forever`}
                                                                         </div>
                                                                     )}

@@ -144,9 +144,9 @@ const FilterConditionsFormRow = ({
 
     const renderGenericCondition = () => {
         return (
-            <div className="mt-4 flex-item-fluid">
+            <div className="mt-4 flex-1">
                 <div className="flex flex-nowrap">
-                    <span className="flex-item-fluid pr-4">
+                    <span className="flex-1 pr-4">
                         <Input
                             onChange={onChangeInputValue}
                             type="text"

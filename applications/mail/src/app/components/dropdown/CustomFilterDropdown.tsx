@@ -179,7 +179,7 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
                             <label
                                 htmlFor={filterType.value}
                                 title={filterType.label}
-                                className="flex-item-fluid text-ellipsis"
+                                className="flex-1 text-ellipsis"
                             >
                                 {filterType.label}
                             </label>

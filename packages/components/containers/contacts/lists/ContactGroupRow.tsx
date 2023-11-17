@@ -93,7 +93,7 @@ const ContactGroupRow = ({
                     iconName="users"
                     color={checked ? colors[2] : Color}
                 />
-                <div className="flex-item-fluid ml-2 conversation-titlesender">
+                <div className="flex-1 ml-2 conversation-titlesender">
                     <ContactRowItemFirstLine ID={ID} Name={Name} />
 
                     <ContactRowItemSecondLine title={title}>

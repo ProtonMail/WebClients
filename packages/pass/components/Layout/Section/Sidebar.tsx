@@ -22,7 +22,7 @@ export const Sidebar: FC<Props> = ({ children, expanded = false, onToggle }) => 
             </div>
 
             <div className="mt-1 md:mt-0" aria-hidden="true" />
-            <div className="flex-item-fluid flex-nowrap flex flex-column overflow-overlay pb-2 md:mt-2">{children}</div>
+            <div className="flex-1 flex-nowrap flex flex-column overflow-overlay pb-2 md:mt-2">{children}</div>
         </div>
 
         {expanded && <div className="sidebar-backdrop" onClick={onToggle} /> /* FIXME: a11y for backdrop */}

@@ -39,7 +39,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                 <SelectTwo<GeneratePasswordOptions['type']>
                     id="password-type"
                     value={passwordOptions.type}
-                    className="pass-password-generator--select border-none flex flex-item-fluid text-rg"
+                    className="pass-password-generator--select border-none flex flex-1 text-rg"
                     onValue={(type) => setPasswordOptions(type)}
                 >
                     <Option title={c('Option').t`Memorizable Password`} value="memorable" />
@@ -59,7 +59,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                                 passwordOptions.options.length
                             )}
                         </label>
-                        <div className="flex flex-item-fluid">
+                        <div className="flex flex-1">
                             <Slider
                                 id="password-length"
                                 min={4}
@@ -129,7 +129,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                                 passwordOptions.options.wordCount
                             )}
                         </label>
-                        <div className="flex flex-item-fluid">
+                        <div className="flex flex-1">
                             <Slider
                                 id="password-word-count"
                                 min={1}
@@ -167,7 +167,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                                 <SelectTwo<MemorablePasswordOptions['seperator']>
                                     id="password-seperator"
                                     value={passwordOptions.options.seperator}
-                                    className="pass-password-generator--select border-none flex flex-item-fluid text-rg"
+                                    className="pass-password-generator--select border-none flex flex-1 text-rg"
                                     onValue={(seperator) => setPasswordOptions('memorable', { seperator })}
                                 >
                                     {Object.values(SeperatorOptions).map((seperator) => (
