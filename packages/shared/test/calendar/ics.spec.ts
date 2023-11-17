@@ -216,6 +216,26 @@ END:VEVENT
 END:VCALENDAR`);
     });
 
+    it('reformats date-time properties with "DeutscheBahn format"', () => {
+        expect(
+            reformatDateTimes(`BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:2023-06-21T082400
+DTEND;TZID=Europe/Berlin:2023-06-21T165400
+DTSTAMP:2023-06-13T212500Z
+END:VEVENT
+END:VCALENDAR`)
+        ).toEqual(`BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART;TZID=Europe/Berlin:20230621T082400
+DTEND;TZID=Europe/Berlin:20230621T165400
+DTSTAMP:20230613T212500Z
+END:VEVENT
+END:VCALENDAR`);
+    });
+
     it('reformats all-day date-time properties missing', () => {
         expect(
             reformatDateTimes(`BEGIN:VCALENDAR
