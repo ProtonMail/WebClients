@@ -162,7 +162,7 @@ const ItemRowLayout = ({
                 />
 
                 <span
-                    className="flex flex-nowrap w-custom ml-2 text-center flex-justify-end"
+                    className="flex flex-nowrap w-custom ml-2 text-center justify-end"
                     style={{ '--w-custom': '7em' }}
                 >
                     {hasExpiration && (
@@ -176,7 +176,7 @@ const ItemRowLayout = ({
                 </span>
 
                 <span
-                    className="ml-4 flex w-custom flex-nowrap flex-align-items-center flex-justify-end"
+                    className="ml-4 flex w-custom flex-nowrap flex-align-items-center justify-end"
                     style={{ '--w-custom': '13em' }}
                 >
                     <ItemHoverButtons
@@ -189,7 +189,7 @@ const ItemRowLayout = ({
                     />
                     <span
                         className={clsx(
-                            'item-senddate-row ml-2 flex flex-item-fluid flex-nowrap flex-justify-end flex-align-items-center',
+                            'item-senddate-row ml-2 flex flex-item-fluid flex-nowrap justify-end flex-align-items-center',
                             snoozeDropdownState && snoozedElement?.ID === element.ID && 'invisible'
                         )}
                     >

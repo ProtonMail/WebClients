@@ -11,7 +11,7 @@ const QuickSettingsButtonSection = ({ children, className }: Props) => {
     return (
         <div
             className={clsx(
-                'quickSettingsButtonSection mt-auto w-full flex-no-min-children flex-column flex-item-noshrink flex-justify-center gap-2',
+                'quickSettingsButtonSection mt-auto w-full flex-no-min-children flex-column flex-item-noshrink justify-center gap-2',
                 className
             )}
         >

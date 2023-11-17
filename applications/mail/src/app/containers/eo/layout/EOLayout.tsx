@@ -48,7 +48,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     return (
         <div className="flex-no-min-children flex-nowrap flex-column h-full eo-layout-bg scroll-if-needed">
             <PublicTopBanners />
-            <header className="flex flex-nowrap flex-justify-space-between flex-align-items-center flex-item-noshrink p-7 flex-column sm:flex-row">
+            <header className="flex flex-nowrap justify-space-between flex-align-items-center flex-item-noshrink p-7 flex-column sm:flex-row">
                 <AppLink to="/" toApp={toApp} target="_self">
                     <Logo appName={toApp} />
                 </AppLink>

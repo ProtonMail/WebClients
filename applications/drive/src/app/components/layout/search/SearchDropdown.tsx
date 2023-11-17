@@ -58,7 +58,7 @@ export const SearchDropdown = ({ isOpen, anchorRef, onClose, onClosed }: Props) 
                         </p>
                     </div>
                     {showProgress && <SearchIndexingProgress />}
-                    <div className="flex flex-justify-end mt-4">
+                    <div className="flex justify-end mt-4">
                         <Button shape="ghost" color="norm" onClick={onClose}>{c('Action').t`Got it`}</Button>
                     </div>
                 </div>

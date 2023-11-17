@@ -230,7 +230,7 @@ const ContactGroupDropdown = ({
                 size={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
             >
                 <form onSubmit={handleSubmit}>
-                    <div className="flex flex-justify-space-between flex-align-items-center m-4 mb-0">
+                    <div className="flex justify-space-between flex-align-items-center m-4 mb-0">
                         <strong>{c('Label').t`Add to group`}</strong>
                         <Tooltip
                             title={

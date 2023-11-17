@@ -66,7 +66,7 @@ const Header = ({
     };
 
     return (
-        <div className="flex flex-justify-space-between flex-align-items-center p-7 relative">
+        <div className="flex justify-space-between flex-align-items-center p-7 relative">
             <div
                 className="file-preview-filename flex flex-align-items-center flex-nowrap"
                 data-testid="preview:file-name"

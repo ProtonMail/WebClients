@@ -45,7 +45,7 @@ export const AutofillOTP: VFC<Props> = ({ hostname, item, visible, onMessage, on
     }, []);
 
     return (
-        <div className="flex flex-column flex-nowrap flex-justify-space-between h-full">
+        <div className="flex flex-column flex-nowrap justify-space-between h-full">
             <NotificationHeader
                 title={c('Info').t`Verification code`}
                 extra={
@@ -60,7 +60,7 @@ export const AutofillOTP: VFC<Props> = ({ hostname, item, visible, onMessage, on
                 onClose={onClose}
             />
             <div className="max-w-full">
-                <div className="flex flex-nowrap flex-align-items-center flex-justify-center mb-2 gap-4">
+                <div className="flex flex-nowrap flex-align-items-center justify-center mb-2 gap-4">
                     <div className="text-4xl max-w-4/5 text-ellipsis">
                         <span className="text-4xl">
                             <OTPValue code={otp?.token} />
@@ -72,7 +72,7 @@ export const AutofillOTP: VFC<Props> = ({ hostname, item, visible, onMessage, on
                     </div>
                 </div>
             </div>
-            <div className="flex flex-justify-space-between gap-3">
+            <div className="flex justify-space-between gap-3">
                 <Button
                     pill
                     color="norm"

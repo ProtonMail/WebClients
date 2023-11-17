@@ -103,7 +103,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
         return (
             <>
                 <div className="mb-8">
-                    <div className="flex w-full flex-justify-space-between flex-align-items-start">
+                    <div className="flex w-full justify-space-between flex-align-items-start">
                         <div className="flex flex-align-items-start">
                             <Avatar className="mr-2 mt-1">{user?.DisplayName?.toUpperCase()?.[0]}</Avatar>
                             <span>
@@ -154,7 +154,7 @@ const SettingsTabs: FC<{ pathname: string }> = ({ pathname }) => {
     }
 
     return (
-        <div className="flex flex-column flex-align-items-center flex-justify-center my-auto">
+        <div className="flex flex-column flex-align-items-center justify-center my-auto">
             <Icon name="lock-filled" size={42} className="mb-4" />
             {context.state.status === AppStatus.LOCKED && (
                 <>

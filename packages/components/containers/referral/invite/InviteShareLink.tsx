@@ -42,7 +42,7 @@ const InviteShareLink = () => {
                 >
                     <span className="text-ellipsis">{referrerLink}</span>
                 </div>
-                <div className="flex gap-2 flex-nowrap flex-justify-end">
+                <div className="flex gap-2 flex-nowrap justify-end">
                     <Button color="norm" onClick={onCopyButtonClick} title={c('Info').t`Copy your referral link`}>
                         <span className="flex flex-nowrap flex-align-items-center">
                             <Icon name="link" className="mr-1 flex-item-noshrink" /> {c('Button').t`Copy`}

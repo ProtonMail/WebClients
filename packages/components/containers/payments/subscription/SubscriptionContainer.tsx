@@ -876,7 +876,7 @@ const SubscriptionContainer = ({
                                                     {model.planIDs[PLANS.VPN_PASS_BUNDLE] &&
                                                         !hasPassPlus(subscription) && (
                                                             <Button
-                                                                className="flex flex-nowrap flex-align-items-center flex-justify-center"
+                                                                className="flex flex-nowrap flex-align-items-center justify-center"
                                                                 fullWidth
                                                                 color="weak"
                                                                 shape="outline"

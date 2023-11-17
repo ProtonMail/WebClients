@@ -244,7 +244,7 @@ const AdvancedSearch = ({
                         </div>
                         <div
                             className={clsx(
-                                'mb-2 flex flex-justify-space-between flex-column md:flex-row',
+                                'mb-2 flex justify-space-between flex-column md:flex-row',
                                 isNarrow ? 'gap-2' : 'gap-4'
                             )}
                         >
@@ -325,7 +325,7 @@ const AdvancedSearch = ({
                     </>
                 )}
             </div>
-            <div className="my-4 mx-5 flex flex-align-items-center flex-justify-space-between">
+            <div className="my-4 mx-5 flex flex-align-items-center justify-space-between">
                 {showMore ? null : (
                     <Button
                         data-testid="advanced-search:show-more"

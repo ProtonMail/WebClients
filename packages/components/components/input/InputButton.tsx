@@ -34,7 +34,7 @@ const InputButton = ({
                 as="span"
                 {...ButtonLikeProps}
                 className={clsx([
-                    'input-button flex flex-justify-center flex-item-noshrink rounded-50',
+                    'input-button flex justify-center flex-item-noshrink rounded-50',
                     ButtonLikeProps.className,
                 ])}
             >

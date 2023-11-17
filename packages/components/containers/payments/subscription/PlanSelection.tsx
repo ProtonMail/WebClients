@@ -386,9 +386,9 @@ const PlanSelection = ({
         <CurrencySelector mode="select-two" currency={currency} onSelect={onChangeCurrency} disabled={loading} />
     );
     const currencySelectorRow = (
-        <div className="flex flex-justify-space-between flex-column md:flex-row">
+        <div className="flex justify-space-between flex-column md:flex-row">
             <div className="hidden md:inline-block visibility-hidden">{currencyItem}</div>
-            <div className="flex flex-justify-center md:flex-justify-start w-full md:w-auto">
+            <div className="flex justify-center md:justify-start w-full md:w-auto">
                 <CycleSelector
                     mode="buttons"
                     cycle={cycle}
@@ -406,7 +406,7 @@ const PlanSelection = ({
     );
 
     const logosRow = (
-        <div className="my-6 flex flex-justify-center flex-nowrap flex-align-items-center color-weak">
+        <div className="my-6 flex justify-center flex-nowrap flex-align-items-center color-weak">
             <MailLogo variant="glyph-only" />
             <Icon name="plus" alt="+" className="mx-2" />
             <CalendarLogo variant="glyph-only" />

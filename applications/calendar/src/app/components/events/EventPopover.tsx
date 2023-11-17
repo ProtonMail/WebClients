@@ -332,8 +332,8 @@ const EventPopover = ({
         const actions =
             deleteButton || showReload ? (
                 <>
-                    {showReload && <div className="flex flex-nowrap flex-justify-end">{reloadButton}</div>}
-                    {deleteButton && <div className="flex flex-nowrap flex-justify-end">{deleteButton}</div>}
+                    {showReload && <div className="flex flex-nowrap justify-end">{reloadButton}</div>}
+                    {deleteButton && <div className="flex flex-nowrap justify-end">{deleteButton}</div>}
                 </>
             ) : null;
 
@@ -418,7 +418,7 @@ const EventPopover = ({
             </div>
             {getCanReplyToEvent({ isOwnedCalendar, isCalendarWritable, isAttendee: model.isAttendee, isCancelled }) && (
                 <PopoverFooter
-                    className="flex-item-noshrink flex-align-items-start md:flex-align-items-center flex-justify-space-between gap-4 flex-column md:flex-row"
+                    className="flex-item-noshrink flex-align-items-start md:flex-align-items-center justify-space-between gap-4 flex-column md:flex-row"
                     key={targetEvent.uniqueId}
                 >
                     <div>

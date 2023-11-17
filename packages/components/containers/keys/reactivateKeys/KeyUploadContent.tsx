@@ -158,7 +158,7 @@ const KeyUploadContent = ({
                                     cells={[
                                         <div
                                             key={1}
-                                            className="flex flex-row flex-nowrap flex-align-items-center flex-justify-space-between"
+                                            className="flex flex-row flex-nowrap flex-align-items-center justify-space-between"
                                         >
                                             <code className="max-w-full inline-block text-ellipsis" title={fingerprint}>
                                                 {fingerprint}

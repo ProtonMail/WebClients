@@ -47,7 +47,7 @@ const Participant = ({
             ])}
         >
             <Tooltip title={tooltip}>
-                <div className="participant-display item-icon relative flex flex-item-noshrink flex-align-items-center flex-justify-center">
+                <div className="participant-display item-icon relative flex flex-item-noshrink flex-align-items-center justify-center">
                     <div className="item-abbr">{initials}</div>
                     <span className="participant-status">{icon}</span>
                 </div>

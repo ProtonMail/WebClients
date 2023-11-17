@@ -48,7 +48,7 @@ const LabelStackItem = ({ label, showDelete = false, showDropdown = false }: Pro
 
     return (
         <li
-            className="label-stack-item flex flex-row flex-align-items-stretch flex-justify-start flex-nowrap"
+            className="label-stack-item flex flex-row flex-align-items-stretch justify-start flex-nowrap"
             style={
                 label.color
                     ? {

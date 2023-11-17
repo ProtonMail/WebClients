@@ -10,7 +10,7 @@ interface Props {
 
 const QuickSettingsSectionRow = ({ label, labelInfo, action }: Props) => {
     return (
-        <label className="quickSettingsSectionRow flex flex-nowrap flex-justify-space-between flex-align-items-center gap-2 w-full">
+        <label className="quickSettingsSectionRow flex flex-nowrap justify-space-between flex-align-items-center gap-2 w-full">
             <span className="flex flex-align-items-center gap-2">
                 <span className="flex-item-fluid text-left text-ellipsis">{label}</span>
                 {labelInfo}

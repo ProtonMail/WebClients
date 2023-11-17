@@ -166,7 +166,7 @@ const InvitationRow = ({
                 <div key="status">{isInvitedAddressDisabled && <CalendarBadge {...getDisabledCalendarBadge()} />}</div>
             </TableCell>
             <TableCell>
-                <div className="flex flex-nowrap flex-justify-start lg:flex-justify-end flex-align-items-center gap-2">
+                <div className="flex flex-nowrap justify-start lg:justify-end flex-align-items-center gap-2">
                     {isAcceptButtonDisabled && (
                         <Info
                             title={

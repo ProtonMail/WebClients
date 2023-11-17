@@ -96,7 +96,7 @@ const RenewToggle = ({ renewState, onChange, disableRenewModal, loading }: Props
     return (
         <>
             {disableRenewModal}
-            <div className="flex flex-justify-space-between mx-2">
+            <div className="flex justify-space-between mx-2">
                 <label htmlFor={toggleId}>
                     <span>{c('Subscription renewal state').t`Enable auto-pay support`}</span>
                 </label>

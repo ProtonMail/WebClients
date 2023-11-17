@@ -56,22 +56,22 @@ const Layout = ({
                 languageSelect={languageSelect}
                 logo={logo}
             />
-            <div className="flex-item-fluid-auto flex flex-nowrap flex-column flex-justify-space-between mx-6">
+            <div className="flex-item-fluid-auto flex flex-nowrap flex-column justify-space-between mx-6">
                 {children}
                 {hasDecoration && (
                     <div className="flex flex-align-items-center flex-column">
                         <Box className="w-full">
                             <footer
-                                className="w-full min-h-custom pb-8 flex flex-column flex-justify-space-between gap-4"
+                                className="w-full min-h-custom pb-8 flex flex-column justify-space-between gap-4"
                                 style={{ '--min-h-custom': '12rem' }}
                             >
                                 <div className="mb-6"></div>
                                 {footer}
-                                <div className="w-full flex flex-justify-space-between flex-column md:flex-row">
+                                <div className="w-full flex justify-space-between flex-column md:flex-row">
                                     <div className="flex gap-1 flex-column">
                                         <LayoutLogosV2
                                             size={20}
-                                            className="flex-justify-center md:flex-justify-start"
+                                            className="justify-center md:justify-start"
                                         />
                                         <span className="text-sm color-weak text-center mb-4 lg:mb-0">
                                             {

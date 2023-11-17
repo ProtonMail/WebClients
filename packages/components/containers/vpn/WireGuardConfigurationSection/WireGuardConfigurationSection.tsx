@@ -691,7 +691,7 @@ const WireGuardConfigurationSection = () => {
                                 onToggle={getToggleCallback(certificate)}
                             >
                                 <Summary>
-                                    <Row className="flex-justify-space-between" collapseOnMobile={false}>
+                                    <Row className="justify-space-between" collapseOnMobile={false}>
                                         <div className="text-ellipsis">{name}</div>
                                         <div className="flex-item-noshrink">
                                             &nbsp;&nbsp;
@@ -829,7 +829,7 @@ const WireGuardConfigurationSection = () => {
                                 <label className="field-two-container w-full" htmlFor={'wg-feature-' + key}>
                                     {isFeatureSelection(featuresConfig[key]) ? (
                                         <>
-                                            <div className="flex field-two-label-container flex-justify-space-between flex-nowrap flex-align-items-end">
+                                            <div className="flex field-two-label-container justify-space-between flex-nowrap flex-align-items-end">
                                                 <span className="field-two-label">
                                                     {featuresConfig[key].name}
                                                     {getFeatureLink(featuresConfig[key])}

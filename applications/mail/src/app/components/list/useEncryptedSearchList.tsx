@@ -30,7 +30,7 @@ const useEncryptedSearchList = (isSearch: boolean, loading: boolean, page: numbe
 
     const loadingText = isSearching ? c('Info').t`Loading` : c('Info').t`No more results found`;
     const loadingElement = (
-        <div className="flex flex-nowrap flex-align-items-center flex-justify-center color-weak my-6">
+        <div className="flex flex-nowrap flex-align-items-center justify-center color-weak my-6">
             {loadingText}
             {isSearching && <EllipsisLoader />}
         </div>

@@ -11,7 +11,7 @@ export type Props = Omit<ModalProps, 'onSubmit'>;
 export const PendingShareAccessModal: VFC<Props> = ({ ...props }) => {
     return (
         <OnboardingModal {...props} size="large">
-            <div className="flex flex-column flex-align-items-center flex-justify-center gap-5">
+            <div className="flex flex-column flex-align-items-center justify-center gap-5">
                 <img
                     src={accountImg}
                     alt="pending share access graphic"

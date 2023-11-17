@@ -43,7 +43,7 @@ const CalendarToolbar = ({
                 {dateCursorButtons}
                 {searchField}
 
-                <span className="md:ml-auto md:flex-item-fluid flex flex-nowrap flex-justify-end">
+                <span className="md:ml-auto md:flex-item-fluid flex flex-nowrap justify-end">
                     {searchButton && (
                         <>
                             <Vr className="mx-1 md:hidden" />

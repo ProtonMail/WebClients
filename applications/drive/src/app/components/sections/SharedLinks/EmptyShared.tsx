@@ -36,7 +36,7 @@ const EmptyShared: FC<Props> = ({ shareId }) => {
             }
             dataTestId="shared-links-empty-placeholder"
         >
-            <div className="flex flex-justify-center">
+            <div className="flex justify-center">
                 <PrimaryButton
                     size="large"
                     className="text-bold w-custom"

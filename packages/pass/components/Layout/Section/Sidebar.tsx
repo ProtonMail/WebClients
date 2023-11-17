@@ -17,7 +17,7 @@ export const Sidebar: FC<Props> = ({ children, expanded = false, onToggle }) => 
             data-expanded={expanded}
         >
             <h1 className="sr-only">{getAppName(APPS.PROTONPASS)}</h1>
-            <div className="logo-container hidden md:flex flex-item-noshrink flex-justify-space-between flex-align-items-center flex-nowrap">
+            <div className="logo-container hidden md:flex flex-item-noshrink justify-space-between flex-align-items-center flex-nowrap">
                 <Logo appName={APPS.PROTONPASS} />
             </div>
 

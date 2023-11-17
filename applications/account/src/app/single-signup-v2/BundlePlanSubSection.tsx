@@ -33,7 +33,7 @@ const BundlePlanSubSection = ({
                 <br />
                 {c('pass_signup_2023: Info').t`One easy subscription.`}
             </div>
-            <div className="flex flex-justify-center flex-nowrap gap-2">
+            <div className="flex justify-center flex-nowrap gap-2">
                 {[
                     {
                         app: APPS.PROTONMAIL,

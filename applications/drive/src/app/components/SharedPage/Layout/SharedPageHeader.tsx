@@ -12,7 +12,7 @@ export default function SharedPageHeader({ children, rootItem, items, className 
     const { isNarrow } = useActiveBreakpoint();
 
     return (
-        <div className={clsx('flex flex-nowrap flex-justify-space-between flex-align-items-center', className)}>
+        <div className={clsx('flex flex-nowrap justify-space-between flex-align-items-center', className)}>
             <div className="flex flex-nowrap flex-item-fluid flex-align-items-center mb-0 pb-0 mr-4 shared-page-layout-header">
                 {children}
             </div>

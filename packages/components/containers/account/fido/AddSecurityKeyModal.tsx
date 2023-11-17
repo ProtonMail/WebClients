@@ -38,7 +38,7 @@ enum Steps {
 const RegisteredContent = () => {
     return (
         <>
-            <div className="flex flex-justify-center mt-4 mb-6 relative">
+            <div className="flex justify-center mt-4 mb-6 relative">
                 <img src={physicalKeyRegistered} alt={c('fido2: Info').t`Security key`} />
             </div>
             <div className="text-center">{c('fido2: Info').t`Your two-factor authentication key is ready to use.`}</div>
