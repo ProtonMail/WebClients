@@ -1,17 +1,16 @@
-import { c } from 'ttag';
-
 import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
+    title: string;
     className?: string;
     expanded: boolean;
     onClick: () => void;
     style?: React.CSSProperties;
 }
 
-export default function ExpandButton({ className, expanded, onClick, style }: Props) {
+export default function SidebarExpandButton({ className, title, expanded, onClick, style }: Props) {
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
         e.stopPropagation();
         e.preventDefault();
@@ -26,14 +25,11 @@ export default function ExpandButton({ className, expanded, onClick, style }: Pr
             className={clsx(['shrink-0 flex items-center drive-sidebar--button-expand', className])}
             onClick={handleClick}
             aria-expanded={expanded}
-            title={expanded ? c('Action').t`Collapse folder` : c('Action').t`Expand folder`}
+            title={title}
             style={style}
             data-testid={expanded ? 'sidebar-expanded-folder' : 'sidebar-expand-folder'}
         >
-            <Icon
-                name={expanded ? 'chevron-down-filled' : 'chevron-right-filled'}
-                alt={expanded ? c('Action').t`Collapse folder` : c('Action').t`Expand folder`}
-            />
+            <Icon name={expanded ? 'chevron-down-filled' : 'chevron-right-filled'} alt={title} />
         </Button>
     );
 }

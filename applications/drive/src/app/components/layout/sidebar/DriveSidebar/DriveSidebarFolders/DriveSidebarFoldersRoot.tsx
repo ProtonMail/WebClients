@@ -6,7 +6,7 @@ import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import { TreeItem } from '../../../../../store';
 import FileRecoveryIcon from '../../../../ResolveLockedVolumes/FileRecovery/FileRecoveryIcon';
 import DriveSidebarListItem from '../DriveSidebarListItem';
-import ExpandButton from './ExpandButton';
+import ExpandButton from './DriveExpandButton';
 
 interface Props {
     shareId: string;
