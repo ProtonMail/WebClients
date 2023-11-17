@@ -33,7 +33,7 @@ const CalendarSettingsBreadcrumbs = ({ calendar, calendars }: Props) => {
                     {
                         text: calendar.Name,
                         key: calendar.ID,
-                        className: 'flex-item-fluid',
+                        className: 'flex-1',
                     },
                 ]}
             />

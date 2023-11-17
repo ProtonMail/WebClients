@@ -17,7 +17,7 @@ export const FlexItemFluid = () => {
                 150px wide
             </div>
             <span className="bg-primary p-4 w-1/4">25% wide</span>
-            <em className="flex-item-fluid bg-info p-4">.flex-item-fluid</em>
+            <em className="flex-1 bg-info p-4">.flex-1</em>
         </div>
     );
 };

@@ -60,12 +60,12 @@ const CustomizeCalendarImportModalTableHeader = ({
 
     return (
         <div className="flex mt-8">
-            <div className="flex-item-fluid">
+            <div className="flex-1">
                 <div className="text-sm text-bold m-0 lh100 mb-2">{c('Info').t`Import from`}</div>
                 <strong className="block mb-2">{importedEmailAddress}</strong>
                 <div className="color-weak">{calendarsSelectedCopy}</div>
             </div>
-            <div className="flex-item-fluid">
+            <div className="flex-1">
                 <div className="text-sm text-bold m-0 lh100 mb-2">{c('Info').t`Create in`}</div>
                 <strong className="block mb-2">{defaultAddress.Email}</strong>
                 {selectedCalendarsTotal > 0 && (

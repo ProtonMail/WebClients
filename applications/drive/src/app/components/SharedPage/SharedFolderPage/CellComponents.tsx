@@ -55,7 +55,7 @@ function NameCell({ item }: { item: PublicLink }) {
     });
 
     return (
-        <TableCell className="m-0 flex items-center flex-nowrap flex-item-fluid" data-testid="column-name">
+        <TableCell className="m-0 flex items-center flex-nowrap flex-1" data-testid="column-name">
             {item.cachedThumbnailUrl ? (
                 <img
                     src={item.cachedThumbnailUrl}

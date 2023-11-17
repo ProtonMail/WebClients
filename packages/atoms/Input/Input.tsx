@@ -36,7 +36,7 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
     return (
         <div
             className={clsx(
-                'input flex flex-nowrap items-stretch flex-item-fluid relative',
+                'input flex flex-nowrap items-stretch flex-1 relative',
                 Boolean(error) && 'error',
                 disabled && 'disabled',
                 unstyled && 'unstyled',
@@ -58,7 +58,7 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
                 </div>
             )}
 
-            <div className="flex flex-item-fluid">
+            <div className="flex flex-1">
                 <input
                     autoComplete="off"
                     autoCapitalize="off"

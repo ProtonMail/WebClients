@@ -59,7 +59,7 @@ const ConfirmSignOutModal = ({ onSignOut, onClose, ...rest }: Props) => {
                     checked={clearData}
                     onChange={() => setClearData(!clearData)}
                 />
-                <div className="flex-item-fluid">
+                <div className="flex-1">
                     <Label htmlFor="delete-recovery-storage" className="block">
                         {c('Label').jt`Delete recovery-related information.`}{' '}
                         <Href href={getKnowledgeBaseUrl('/trusted-device/recovery/')}>{c('Link').t`What’s this?`}</Href>

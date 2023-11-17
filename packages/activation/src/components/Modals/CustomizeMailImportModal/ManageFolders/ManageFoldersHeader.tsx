@@ -11,11 +11,11 @@ const ManageFoldersHeader = ({ fromLabel, toLabel }: Props) => {
             <div className="mb-4 mt-8">{c('Info').t`Please select the folders you would like to import:`}</div>
 
             <div className="flex pt-4">
-                <div className="flex-item-fluid text-ellipsis pr-2" title={fromLabel}>
+                <div className="flex-1 text-ellipsis pr-2" title={fromLabel}>
                     <strong>{fromLabel}</strong>
                 </div>
 
-                <div className="flex-item-fluid text-ellipsis pl-2" title={toLabel}>
+                <div className="flex-1 text-ellipsis pl-2" title={toLabel}>
                     <strong>{toLabel}</strong>
                 </div>
             </div>

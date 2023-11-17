@@ -22,7 +22,7 @@ const ActionCard = ({ iconName, title, subtitle, loading, disabled, ...rest }: A
             <div className="bg-strong rounded button-for-icon">
                 <Icon name={iconName} />
             </div>
-            <div className="mr-auto flex-item-fluid">
+            <div className="mr-auto flex-1">
                 <div className="h6 lh100 m-0 text-bold">{title}</div>
                 {subtitle && <p className="color-weak m-0">{subtitle}</p>}
             </div>

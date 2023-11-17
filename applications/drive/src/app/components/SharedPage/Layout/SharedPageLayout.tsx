@@ -41,7 +41,7 @@ export default function SharedPageLayout({ FooterComponent, children, className 
                         <UnAuthenticatedAppsDropdown />
                     </div>
 
-                    <div className="flex justify-end flex-item-fluid flex-item-centered-vert">
+                    <div className="flex justify-end flex-1 flex-item-centered-vert">
                         {isProtonUser ? (
                             <ButtonLike color="norm" as="a" href={APPS.PROTONDRIVE} target="_blank">
                                 {c('Action').t`Go to Drive`}
@@ -53,8 +53,8 @@ export default function SharedPageLayout({ FooterComponent, children, className 
                         )}
                     </div>
                 </Header>
-                <main className="shared-page-layout-container flex flex-no-min-children flex-nowrap flex-column md:flex-row flex-item-fluid">
-                    <div className="flex-item-fluid mb-4 md:mb-0 flex flex-column flex-nowrap">{children}</div>
+                <main className="shared-page-layout-container flex flex-no-min-children flex-nowrap flex-column md:flex-row flex-1">
+                    <div className="flex-1 mb-4 md:mb-0 flex flex-column flex-nowrap">{children}</div>
                 </main>
                 <Footer className="justify-space-between items-center p-0 mt-6 md:mt-0">
                     {FooterComponent}

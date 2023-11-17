@@ -140,7 +140,7 @@ export const PhotosView: FC<void> = () => {
                 isForPhotos
                 shareId={shareId}
                 linkId={linkId}
-                className="flex flex-column flex-nowrap flex-item-fluid"
+                className="flex flex-column flex-nowrap flex-1"
             >
                 <ToolbarRow
                     titleArea={

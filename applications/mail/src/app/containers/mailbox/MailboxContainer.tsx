@@ -483,7 +483,7 @@ const MailboxContainer = ({
             <div
                 ref={elementRef}
                 tabIndex={-1}
-                className="flex-item-fluid flex flex-column flex-nowrap outline-none"
+                className="flex-1 flex flex-column flex-nowrap outline-none"
                 data-testid="mailbox"
             >
                 <MailHeader
@@ -544,7 +544,7 @@ const MailboxContainer = ({
                     <ErrorBoundary>
                         <section
                             className={clsx([
-                                'view-column-detail flex flex-column flex-item-fluid flex-nowrap relative',
+                                'view-column-detail flex flex-column flex-1 flex-nowrap relative',
                                 !showContentPanel && 'hidden',
                                 showContentView ? 'no-scroll' : 'scroll-if-needed',
                             ])}

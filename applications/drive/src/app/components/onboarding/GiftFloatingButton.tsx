@@ -293,7 +293,7 @@ function WelcomeAction({
             >
                 <Icon name={icon} />
             </div>
-            <div className={clsx(['flex-item-fluid', isDone && 'text-strike color-weak'])}>
+            <div className={clsx(['flex-1', isDone && 'text-strike color-weak'])}>
                 {title}
                 {!isDone && text && <div className="color-weak">{text}</div>}
             </div>

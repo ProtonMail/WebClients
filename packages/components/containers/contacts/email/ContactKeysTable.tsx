@@ -342,7 +342,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                     isInternal={model.isPGPInternal}
                                     supportsEncryption={supportsEncryption}
                                 />
-                                <span className="flex-item-fluid text-ellipsis">{fingerprint}</span>
+                                <span className="flex-1 text-ellipsis">{fingerprint}</span>
                             </div>,
                             !isNarrow && (isValid(creation) ? format(creation, 'PP', { locale: dateLocale }) : '-'),
                             !isTinyMobile &&

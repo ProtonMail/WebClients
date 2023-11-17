@@ -52,7 +52,7 @@ const Participant = ({
                     <span className="participant-status">{icon}</span>
                 </div>
             </Tooltip>
-            <div className="ml-4 flex-item-fluid" title={title}>
+            <div className="ml-4 flex-1" title={title}>
                 <div className="max-w-full participant-text text-ellipsis">{name}</div>
                 {showEmailAddress ? (
                     <div className="max-w-full text-ellipsis participant-extra-text text-sm m-0">{email}</div>

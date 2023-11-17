@@ -182,7 +182,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                 </div>
 
                 <div className="flex gap-2 flex-row">
-                    <div className="flex-item-fluid">
+                    <div className="flex-1">
                         <InputFieldTwo
                             as={DateInputTwo}
                             id="expiration-date"
@@ -198,7 +198,7 @@ const ComposerExpirationModal = ({ message, onClose, onChange }: Props) => {
                             required
                         />
                     </div>
-                    <div className="flex-item-fluid">
+                    <div className="flex-1">
                         <InputFieldTwo
                             as={TimeInput}
                             id="expiration-time"

@@ -30,7 +30,7 @@ const ContactViewNotes = ({ vCardContact, isSignatureVerified = false }: Props) 
                         type={note.params?.type}
                         isSignatureVerified={isSignatureVerified}
                     >
-                        <span className="mr-2 flex-item-fluid">{value}</span>
+                        <span className="mr-2 flex-1">{value}</span>
                     </ContactViewProperty>
                 );
             })}

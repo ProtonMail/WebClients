@@ -49,7 +49,7 @@ const DrawerView = ({
             {...rest}
         >
             <DrawerAppHeader title={drawerHeaderTitle} />
-            <div className="flex-item-fluid contacts-widget w-full">{content}</div>
+            <div className="flex-1 contacts-widget w-full">{content}</div>
             {footerButtons && <DrawerAppFooter buttons={footerButtons} />}
         </div>
     );

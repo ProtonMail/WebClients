@@ -13,7 +13,7 @@ export default function SharedPageHeader({ children, rootItem, items, className 
 
     return (
         <div className={clsx('flex flex-nowrap justify-space-between items-center', className)}>
-            <div className="flex flex-nowrap flex-item-fluid items-center mb-0 pb-0 mr-4 shared-page-layout-header">
+            <div className="flex flex-nowrap flex-1 items-center mb-0 pb-0 mr-4 shared-page-layout-header">
                 {children}
             </div>
             {isNarrow || items.length === 0 ? null : <DownloadButton rootItem={rootItem} items={items} />}

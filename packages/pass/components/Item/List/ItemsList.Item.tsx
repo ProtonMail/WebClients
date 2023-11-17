@@ -53,7 +53,7 @@ const ItemsListItemRaw: VFC<Props> = ({ item, search = '', active = false, ...re
                         {search && (
                             <VaultIcon size={12} icon={vault?.content.display.icon} className="color-weak mr-1" />
                         )}
-                        <span className="flex-item-fluid text-ellipsis">
+                        <span className="flex-1 text-ellipsis">
                             <Marks chunks={matchChunks(heading, search)}>{heading}</Marks>
                         </span>
                     </span>

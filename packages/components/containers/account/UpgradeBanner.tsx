@@ -21,7 +21,7 @@ interface Props {
 const UpgradeBanner = ({ free, className, children, audience, upsellPath }: Props) => {
     return (
         <Card className={clsx(['flex items-center', className])} rounded>
-            <p className="m-0 mr-8 flex-item-fluid">{children}</p>
+            <p className="m-0 mr-8 flex-1">{children}</p>
             <ButtonLike
                 as={SettingsLink}
                 path={(() => {

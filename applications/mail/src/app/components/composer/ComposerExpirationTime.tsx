@@ -31,7 +31,7 @@ const ComposerExpirationTime = ({ message, onEditExpiration }: Props) => {
             data-testid="expiration-banner"
         >
             <Icon name="hourglass" className="flex-item-noshrink my-auto" />
-            <span className="flex-item-fluid">{expireOnMessage}</span>
+            <span className="flex-1">{expireOnMessage}</span>
             <span className="w-full md:w-auto flex-item-noshrink items-start flex">
                 <Button
                     size="small"

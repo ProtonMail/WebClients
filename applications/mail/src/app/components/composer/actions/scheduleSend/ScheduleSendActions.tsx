@@ -128,7 +128,7 @@ const ScheduleSendActions = ({
                         data-testid={action.testId}
                         onClick={action.onSubmit}
                     >
-                        <span className="flex-item-fluid text-left">{action.title}</span>
+                        <span className="flex-1 text-left">{action.title}</span>
                         <span className="text-right color-weak">{action.value}</span>
                     </DropdownMenuButton>
                 ))}

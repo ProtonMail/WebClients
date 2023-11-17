@@ -85,7 +85,7 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
     return (
         <ToolbarDropdown
             originalPlacement="bottom-start"
-            className="composer-toolbar-fontDropDown flex-item-fluid text-right flex no-scroll"
+            className="composer-toolbar-fontDropDown flex-1 text-right flex no-scroll"
             title={c('Action').t`Font`}
             data-testid="editor-font-face"
             content={

@@ -34,7 +34,7 @@ const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref:
             <DropdownCaret className="md:hidden ml-1 color-weak" isOpen={isOpen} />
 
             {nameToDisplay ? (
-                <span className="flex-item-fluid lh130 user-dropdown-text">
+                <span className="flex-1 lh130 user-dropdown-text">
                     <span className="block text-ellipsis text-sm user-dropdown-displayName">{nameToDisplay}</span>
                     {Email ? (
                         <span className="block text-ellipsis color-weak text-sm m-0 lh-rg user-dropdown-email">

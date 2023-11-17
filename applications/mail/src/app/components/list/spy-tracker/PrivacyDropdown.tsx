@@ -106,7 +106,7 @@ const PrivacyDropdown = ({ message }: Props) => {
             <span className="flex mr-2 flex-item-noshrink color-success">
                 <Icon name={'checkmark-circle-filled'} className="my-auto" />
             </span>
-            <span className="flex-item-fluid">{imageTrackerText}</span>
+            <span className="flex-1">{imageTrackerText}</span>
             {hasImageTrackers && (
                 <span className="flex on-rtl-mirror ml-4">
                     <Icon name="chevron-right" />
@@ -120,7 +120,7 @@ const PrivacyDropdown = ({ message }: Props) => {
             <span className="flex mr-2 flex-item-noshrink color-success">
                 <Icon name={'checkmark-circle-filled'} />
             </span>
-            <span className="flex-item-fluid">{utmTrackerText}</span>
+            <span className="flex-1">{utmTrackerText}</span>
             {hasUTMTrackers && (
                 <span className="flex on-rtl-mirror ml-4">
                     <Icon name="chevron-right" />

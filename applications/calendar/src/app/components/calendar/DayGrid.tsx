@@ -113,7 +113,7 @@ const DayGrid = ({
     }, [rows, formatDate]);
 
     return (
-        <div className="flex-item-fluid scroll-if-needed h-full is-month-view" {...rest}>
+        <div className="flex-1 scroll-if-needed h-full is-month-view" {...rest}>
             {children}
             <div className="calendar-daygrid flex flex-column relative h-full">
                 <div data-testid="calendar-month-view:week-header" className="flex calendar-daygrid-days">
@@ -121,7 +121,7 @@ const DayGrid = ({
                     {rows[0].map((day) => {
                         return (
                             <div
-                                className="flex-item-fluid text-center calendar-daygrid-day text-lg m-0 p-3 text-ellipsis"
+                                className="flex-1 text-center calendar-daygrid-day text-lg m-0 p-3 text-ellipsis"
                                 key={day.getUTCDate()}
                                 aria-current={
                                     day.getUTCDay() === now.getUTCDay() && isSameMonth(date, now) ? 'true' : undefined
@@ -137,7 +137,7 @@ const DayGrid = ({
                         );
                     })}
                 </div>
-                <div className="flex flex-item-fluid">
+                <div className="flex flex-1">
                     {displayWeekNumbers ? (
                         <div className="flex flex-column calendar-daygrid-weeknumber-width">
                             {rows.map((days) => {
@@ -149,7 +149,7 @@ const DayGrid = ({
                                 return (
                                     <div
                                         key={+monday}
-                                        className="flex-item-fluid flex flex-column flex relative calendar-daygrid-weeknumber"
+                                        className="flex-1 flex flex-column flex relative calendar-daygrid-weeknumber"
                                     >
                                         <span className="m-auto opacity-40 text-sm">{week}</span>
                                     </div>
@@ -158,13 +158,13 @@ const DayGrid = ({
                         </div>
                     ) : null}
 
-                    <div className="flex flex-item-fluid flex-column calendar-daygrid-rows" ref={rowsWrapperRef}>
+                    <div className="flex flex-1 flex-column calendar-daygrid-rows" ref={rowsWrapperRef}>
                         {rows.map((days, rowIndex) => {
                             const { eventsInRow, eventsInRowStyles, eventsInRowSummary } = eventsPerRows[rowIndex];
 
                             return (
                                 // eslint-disable-next-line react/no-array-index-key
-                                <div key={rowIndex} className="flex-item-fluid flex flex-column h-full w-full relative">
+                                <div key={rowIndex} className="flex-1 flex flex-column h-full w-full relative">
                                     <div
                                         data-testid="calendar-month-view:week-row"
                                         className="flex calendar-daygrid-columns no-pointer-events"
@@ -173,7 +173,7 @@ const DayGrid = ({
                                             return (
                                                 <div
                                                     data-testid="calendar-month-view:day-cell"
-                                                    className="flex-item-fluid calendar-daygrid-column"
+                                                    className="flex-1 calendar-daygrid-column"
                                                     key={day.getUTCDate()}
                                                 />
                                             );
@@ -189,7 +189,7 @@ const DayGrid = ({
                                         />
                                     </div>
                                     <div
-                                        className="relative flex-item-fluid calendar-daygrid-row"
+                                        className="relative flex-1 calendar-daygrid-row"
                                         data-row={rowIndex}
                                         {...(rowIndex === 0 ? { ref: firstRowRef } : undefined)}
                                     >

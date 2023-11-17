@@ -59,7 +59,7 @@ const CalendarSearchProgress = ({ esIndexingProgressState, isPaused = false }: P
                 <Progress
                     value={currentProgressValue}
                     aria-describedby="timeRemaining"
-                    className={clsx(['my-2 flex-item-fluid', isPaused ? 'progress-bar--disabled' : undefined])}
+                    className={clsx(['my-2 flex-1', isPaused ? 'progress-bar--disabled' : undefined])}
                 />
             </div>
             <span

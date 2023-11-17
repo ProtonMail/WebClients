@@ -41,7 +41,7 @@ const ConversationHeader = ({ className, loading, element }: Props) => {
             <div className="flex flex-nowrap">
                 <h1
                     className={clsx([
-                        'message-conversation-summary-header my-0 h3 text-bold text-ellipsis-two-lines lh-rg flex-item-fluid',
+                        'message-conversation-summary-header my-0 h3 text-bold text-ellipsis-two-lines lh-rg flex-1',
                     ])}
                     title={element?.Subject}
                     data-testid="conversation-header:subject"

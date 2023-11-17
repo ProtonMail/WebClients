@@ -238,7 +238,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                         {filteredContactEmails.length ? (
                             <>
                                 {!isNarrow && (
-                                    <div className="flex flex-nowrap flex-item-fluid contact-list-row p-4">
+                                    <div className="flex flex-nowrap flex-1 contact-list-row p-4">
                                         <div>
                                             <Checkbox
                                                 className="w-full h-full"
@@ -246,11 +246,11 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                                                 onChange={handleCheckAll}
                                             />
                                         </div>
-                                        <div className="flex flex-item-fluid self-center">
+                                        <div className="flex flex-1 self-center">
                                             <div className="w-custom pl-4" style={{ '--w-custom': '45%' }}>
                                                 <strong className="text-uppercase">{c('Label').t`Name`}</strong>
                                             </div>
-                                            <div className="flex-item-fluid">
+                                            <div className="flex-1">
                                                 <strong className="text-uppercase">{c('Label').t`Email`}</strong>
                                             </div>
                                         </div>

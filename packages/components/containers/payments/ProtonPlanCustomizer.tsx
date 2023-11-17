@@ -233,7 +233,7 @@ const AccountSizeCustomiser = ({
             <div className="flex-no-min-children md:flex-nowrap items-center mb-4">
                 <label
                     htmlFor={addon.Name}
-                    className="w-full md:w-auto min-w-custom md:min-w-custom flex-item-fluid plan-customiser-addon-label text-bold pr-2"
+                    className="w-full md:w-auto min-w-custom md:min-w-custom flex-1 plan-customiser-addon-label text-bold pr-2"
                     style={{ '--min-w-custom': '8em', '--md-min-w-custom': '14em' }}
                 >
                     {c('Info').t`Users`}
@@ -275,7 +275,7 @@ const AdditionalOptionsCustomiser = ({
             <div className="flex-no-min-children md:flex-nowrap items-center mb-4">
                 <label
                     htmlFor={addon.Name}
-                    className="w-full md:w-auto min-w-custom md:min-w-custom flex-item-fluid plan-customiser-addon-label text-bold pr-2"
+                    className="w-full md:w-auto min-w-custom md:min-w-custom flex-1 plan-customiser-addon-label text-bold pr-2"
                     style={{ '--min-w-custom': '8em', '--md-min-w-custom': '14em' }}
                 >
                     {c('Info').t`Custom email domains`}
@@ -334,7 +334,7 @@ const IPsNumberCustomiser = ({
             <div className="flex-no-min-children md:flex-nowrap items-center mb-4">
                 <label
                     htmlFor={addon.Name}
-                    className="w-full md:w-auto min-w-custom md:min-w-custom flex-item-fluid plan-customiser-addon-label text-bold pr-2"
+                    className="w-full md:w-auto min-w-custom md:min-w-custom flex-1 plan-customiser-addon-label text-bold pr-2"
                     style={{ '--min-w-custom': '8em', '--md-min-w-custom': '14em' }}
                 >
                     {title}

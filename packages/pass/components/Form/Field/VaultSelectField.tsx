@@ -75,7 +75,7 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = ({
                                     size={16}
                                     highlighted={selected}
                                 />
-                                <span className="flex-item-fluid text-ellipsis">{content.name}</span>
+                                <span className="flex-1 text-ellipsis">{content.name}</span>
                                 {shared && (
                                     <Icon
                                         name="users"
@@ -97,7 +97,7 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = ({
                                     color={selectedId ? VaultColor.COLOR_CUSTOM : color}
                                     highlighted={selectedId === value}
                                 />
-                                <span className="flex-item-fluid text-ellipsis">{title}</span>
+                                <span className="flex-1 text-ellipsis">{title}</span>
                             </div>
                         </Option>
                     ))

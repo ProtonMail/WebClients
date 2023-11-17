@@ -151,7 +151,7 @@ const CodeMethod = ({
                         <div className="flex-item-noshrink">
                             <Icon name="info-circle" className="color-primary" />
                         </div>
-                        <div className="flex-item-fluid">
+                        <div className="flex-1">
                             {c('Info').t`A phone number can only be used to verify one ${BRAND_NAME} account`}
                         </div>
                     </Card>

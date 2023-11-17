@@ -31,7 +31,7 @@ const AlmostAllMailBanner = ({ className }: Props) => {
             <div className="flex-item-noshrink">
                 <Icon name="magnifier" className="mr-2" />
             </div>
-            <div className="flex-item-fluid pl-1">
+            <div className="flex-1 pl-1">
                 {
                     // translator: sentence appear when a user has AlmostAllMail setting on, excluding spam/trash. Complete sentence example: "Can't find what you're looking for? <Include Spam/Trash.>"
                     c('Info').jt`Can't find what you're looking for? ${displayAllMailButton}`

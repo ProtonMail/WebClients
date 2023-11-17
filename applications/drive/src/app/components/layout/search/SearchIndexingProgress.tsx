@@ -51,7 +51,7 @@ export const SearchIndexingProgress = () => {
                 <Progress
                     value={progressValue || 0}
                     aria-describedby="timeRemaining"
-                    className={clsx(['my-2 flex-item-fluid'])}
+                    className={clsx(['my-2 flex-1'])}
                 />
             </div>
             <span

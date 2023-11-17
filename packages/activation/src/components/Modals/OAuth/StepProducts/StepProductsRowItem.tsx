@@ -35,7 +35,7 @@ const StepProductsRowItem = ({ id, label, disabled, value, setValue, error, chil
                 className="mr-2 self-start"
                 disabled={disabled}
             />
-            <div className="flex flex-column flex-item-fluid">
+            <div className="flex flex-column flex-1">
                 <div className={clsx(disabled && 'color-weak')}>
                     {label}
                     {disabled && (

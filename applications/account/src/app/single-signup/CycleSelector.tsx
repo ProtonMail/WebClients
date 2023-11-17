@@ -71,7 +71,7 @@ const CycleItemView = ({
     bg?: boolean;
 }) => {
     return (
-        <div className="lg:flex-item-fluid w-full pricing-box-content-cycle max-w-custom mx-auto lg:mx-0" style={{ '--max-w-custom': '30em' }}>
+        <div className="lg:flex-1 w-full pricing-box-content-cycle max-w-custom mx-auto lg:mx-0" style={{ '--max-w-custom': '30em' }}>
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
             <div
                 className={clsx(

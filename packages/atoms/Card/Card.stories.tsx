@@ -27,7 +27,7 @@ export const Basic = () => (
 
 export const WithActionHorizontal = () => (
     <Card className="flex items-center">
-        <p className="m-0 mr-8 flex-item-fluid">
+        <p className="m-0 mr-8 flex-1">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore ipsa dolores delectus fugit consequuntur
             impedit velit officia tenetur, magni placeat, voluptatum porro unde repudiandae cum explicabo assumenda
             distinctio, mollitia voluptate.

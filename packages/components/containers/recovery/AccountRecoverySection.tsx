@@ -59,7 +59,7 @@ const AccountRecoverySection = () => {
                         {c('Label').t`Recovery email address`}
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="flex-item-fluid">
+                <SettingsLayoutRight className="flex-1">
                     <RecoveryEmail
                         className="mb-4 md:mb-0"
                         email={userSettings.Email}
@@ -76,7 +76,7 @@ const AccountRecoverySection = () => {
                                 withLoadingEmailReset(handleChangePasswordEmailToggle(+checked))
                             }
                         />
-                        <label htmlFor="passwordEmailResetToggle" className="flex-item-fluid">
+                        <label htmlFor="passwordEmailResetToggle" className="flex-1">
                             {c('Label').t`Allow recovery by email`}
                         </label>
                     </div>
@@ -91,7 +91,7 @@ const AccountRecoverySection = () => {
                         {c('label').t`Recovery phone number`}
                     </label>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="flex-item-fluid">
+                <SettingsLayoutRight className="flex-1">
                     <RecoveryPhone
                         className="mb-4 md:mb-0"
                         defaultCountry={defaultCountry}
@@ -108,7 +108,7 @@ const AccountRecoverySection = () => {
                                 withLoadingPhoneReset(handleChangePasswordPhoneToggle(+checked))
                             }
                         />
-                        <label htmlFor="passwordPhoneResetToggle" className="flex-item-fluid">
+                        <label htmlFor="passwordPhoneResetToggle" className="flex-1">
                             {c('Label').t`Allow recovery by phone`}
                         </label>
                     </div>

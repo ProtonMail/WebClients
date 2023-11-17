@@ -53,9 +53,9 @@ const ExtraExpirationTime = ({ message }: Props) => {
                 expiresInLessThan24Hours && 'color-danger border-danger'
             )}
         >
-            <div className="md:flex-item-fluid flex flex-nowrap mb-2 md:mb-0" data-testid="expiration-banner">
+            <div className="md:flex-1 flex flex-nowrap mb-2 md:mb-0" data-testid="expiration-banner">
                 <Icon name="hourglass" className="mt-1 ml-0.5 flex-item-noshrink" />
-                <span className={clsx(!canExpire && 'mt-1', 'px-2 flex flex-item-fluid items-center')}>
+                <span className={clsx(!canExpire && 'mt-1', 'px-2 flex flex-1 items-center')}>
                     {expirationMessage}
                 </span>
             </div>

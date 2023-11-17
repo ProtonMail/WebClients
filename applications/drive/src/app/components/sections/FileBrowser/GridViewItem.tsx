@@ -30,7 +30,7 @@ const GridViewItemBase = ({
     const isContextMenuButtonActive = contextMenuControls.isOpen && selectionControls.selectedItemIds.includes(item.id);
     return (
         <>
-            <div className="flex flex-item-fluid justify-center items-center file-browser-grid-item--container">
+            <div className="flex flex-1 justify-center items-center file-browser-grid-item--container">
                 {IconComponent}
             </div>
             <div

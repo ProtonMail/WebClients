@@ -36,7 +36,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     data-testid="editor-insert-image"
                 >
                     <Icon name="checkmark" className="visibility-hidden" />
-                    <span className="ml-2 my-auto flex-item-fluid">{c('Action').t`Insert image`}</span>
+                    <span className="ml-2 my-auto flex-1">{c('Action').t`Insert image`}</span>
                 </DropdownMenuButton>
             )}
             {isNarrow && [
@@ -46,7 +46,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     onClick={config.unorderedList.toggle}
                 >
                     <Icon name="checkmark" className={getClassname(config.unorderedList.isActive)} />
-                    <span className="ml-2 my-auto flex-item-fluid">{c('Action').t`Unordered list`}</span>
+                    <span className="ml-2 my-auto flex-1">{c('Action').t`Unordered list`}</span>
                     <Icon name="list-bullets" className="mr-2" />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
@@ -55,7 +55,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     onClick={config.orderedList.toggle}
                 >
                     <Icon name="checkmark" className={getClassname(config.orderedList.isActive)} />
-                    <span className="ml-2 my-auto flex-item-fluid">{c('Action').t`Ordered list`}</span>
+                    <span className="ml-2 my-auto flex-1">{c('Action').t`Ordered list`}</span>
                     <Icon name="list-numbers" className="mr-2" />
                 </DropdownMenuButton>,
                 <div className="dropdown-item-hr" key="hr-1" />,
@@ -65,7 +65,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     onClick={() => config.alignment.setValue(Alignment.Left)}
                 >
                     <Icon name="checkmark" className="visibility-hidden" />
-                    <span className="ml-2 my-auto flex-item-fluid">{c('Action').t`Align left`}</span>
+                    <span className="ml-2 my-auto flex-1">{c('Action').t`Align left`}</span>
                     <Icon name="text-align-left" className="mr-2" />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
@@ -74,7 +74,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     onClick={() => config.alignment.setValue(Alignment.Center)}
                 >
                     <Icon name="checkmark" className="visibility-hidden" />
-                    <span className="ml-2 my-auto flex-item-fluid">{c('Action').t`Align center`}</span>
+                    <span className="ml-2 my-auto flex-1">{c('Action').t`Align center`}</span>
                     <Icon name="text-align-center" className="mr-2" />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
@@ -83,7 +83,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     onClick={() => config.alignment.setValue(Alignment.Center)}
                 >
                     <Icon name="checkmark" className="visibility-hidden" />
-                    <span className="ml-2 my-auto flex-item-fluid">{c('Action').t`Align right`}</span>
+                    <span className="ml-2 my-auto flex-1">{c('Action').t`Align right`}</span>
                     <Icon name="text-align-right" className="mr-2" />
                 </DropdownMenuButton>,
                 <div className="dropdown-item-hr" key="hr-2" />,
@@ -93,7 +93,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     onClick={config.blockquote.toggle}
                 >
                     <Icon name="checkmark" className={getClassname(config.blockquote.isActive)} />
-                    <span className="ml-2 my-auto flex-item-fluid">{c('Action').t`Quote`}</span>
+                    <span className="ml-2 my-auto flex-1">{c('Action').t`Quote`}</span>
                     <Icon name="text-quote" className="mr-2" />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
@@ -102,7 +102,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     onClick={config.link.showModal}
                 >
                     <Icon name="checkmark" className="visibility-hidden" />
-                    <span className="ml-2 my-auto flex-item-fluid">{c('Action').t`Insert link`}</span>
+                    <span className="ml-2 my-auto flex-1">{c('Action').t`Insert link`}</span>
                     <Icon name="link" className="mr-2" />
                 </DropdownMenuButton>,
                 <DropdownMenuButton
@@ -111,7 +111,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     onClick={() => config.formatting.clear()}
                 >
                     <Icon name="checkmark" className="visibility-hidden" />
-                    <span className="ml-2 my-auto flex-item-fluid">{c('Action').t`Clear all formatting`}</span>
+                    <span className="ml-2 my-auto flex-1">{c('Action').t`Clear all formatting`}</span>
                     <Icon name="eraser" className="mr-2" />
                 </DropdownMenuButton>,
                 <div className="dropdown-item-hr" key="hr-3" />,
@@ -122,7 +122,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                         onClick={() => config.image.showModal()}
                     >
                         <Icon name="checkmark" className="visibility-hidden" />
-                        <span className="ml-2 my-auto flex-item-fluid">{c('Action').t`Insert image`}</span>
+                        <span className="ml-2 my-auto flex-1">{c('Action').t`Insert image`}</span>
                         <Icon name="file-image" className="mr-2" />
                     </DropdownMenuButton>,
                     (metadata.supportRightToLeft || metadata.supportPlainText) && (
@@ -142,7 +142,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                             name="checkmark"
                             className={getClassname(metadata.rightToLeft === DIRECTION.LEFT_TO_RIGHT)}
                         />
-                        <span className="ml-2 my-auto flex-item-fluid">{c('Info').t`Left to Right`}</span>
+                        <span className="ml-2 my-auto flex-1">{c('Info').t`Left to Right`}</span>
                     </DropdownMenuButton>,
                     <DropdownMenuButton
                         key={2}
@@ -154,7 +154,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                             name="checkmark"
                             className={getClassname(metadata.rightToLeft === DIRECTION.RIGHT_TO_LEFT)}
                         />
-                        <span className="ml-2 my-auto flex-item-fluid">{c('Info').t`Right to Left`}</span>
+                        <span className="ml-2 my-auto flex-1">{c('Info').t`Right to Left`}</span>
                     </DropdownMenuButton>,
                 ]}
         </DropdownMenu>

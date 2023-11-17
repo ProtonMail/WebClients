@@ -53,7 +53,7 @@ const IconRow = ({
                     <Tooltip title={title}>{iconResult}</Tooltip>
                 </Label>
             )}
-            <div className={className || 'flex-item-fluid'}>{children}</div>
+            <div className={className || 'flex-1'}>{children}</div>
         </div>
     );
 };

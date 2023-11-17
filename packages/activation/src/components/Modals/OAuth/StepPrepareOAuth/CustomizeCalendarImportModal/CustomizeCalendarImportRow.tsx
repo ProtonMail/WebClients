@@ -24,7 +24,7 @@ const CustomizeCalendarImportRow = ({
 
     return (
         <Label htmlFor={calendar.id} className="w-full label flex flex-items-center py-7 border-bottom">
-            <div className={clsx(['flex flex-item-fluid', checked && 'mr-4'])}>
+            <div className={clsx(['flex flex-1', checked && 'mr-4'])}>
                 <Checkbox
                     id={calendar.id}
                     checked={checked}
@@ -32,12 +32,12 @@ const CustomizeCalendarImportRow = ({
                     className="mr-2"
                     data-testid="CustomizeCalendarImportRow:checkbox"
                 />
-                <div className="flex-item-fluid text-ellipsis" title={source}>
+                <div className="flex-1 text-ellipsis" title={source}>
                     {source}
                 </div>
             </div>
             {checked && (
-                <div className="flex-item-fluid">
+                <div className="flex-1">
                     {
                         <CustomizeCalendarImportRowSelect
                             calendar={calendar}

@@ -248,7 +248,7 @@ const AdvancedSearch = ({
                                 isNarrow ? 'gap-2' : 'gap-4'
                             )}
                         >
-                            <div className="md:flex-item-fluid">
+                            <div className="md:flex-1">
                                 <Label className="advanced-search-label text-semibold" htmlFor="begin-date">{c('Label')
                                     .t`From`}</Label>
                                 <DateInput
@@ -259,7 +259,7 @@ const AdvancedSearch = ({
                                     onChange={handleStartDateChange}
                                 />
                             </div>
-                            <div className="md:flex-item-fluid">
+                            <div className="md:flex-1">
                                 <Label className="advanced-search-label text-semibold" htmlFor="end-date">{c('Label')
                                     .t`To`}</Label>
                                 <DateInput
@@ -284,7 +284,7 @@ const AdvancedSearch = ({
                                 onChange={(from) => updateModel({ ...model, from })}
                                 placeholder={c('Placeholder').t`Name or email address`}
                                 anchorRef={senderListAnchorRef}
-                                classname="flex-item-fluid"
+                                classname="flex-1"
                             />
                         </div>
                         <div className="mb-2" ref={toListAnchorRef}>
@@ -300,7 +300,7 @@ const AdvancedSearch = ({
                                 onChange={(to) => updateModel({ ...model, to })}
                                 placeholder={c('Placeholder').t`Name or email address`}
                                 anchorRef={toListAnchorRef}
-                                classname="flex-item-fluid"
+                                classname="flex-1"
                             />
                         </div>
                         <div className="mb-2">

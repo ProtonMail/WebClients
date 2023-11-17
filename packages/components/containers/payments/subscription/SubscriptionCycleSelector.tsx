@@ -64,7 +64,7 @@ export const SubscriptionItemView = ({
 }) => {
     return (
         <div className={singleClassName}>
-            <div className="flex-item-fluid pl-2">
+            <div className="flex-1 pl-2">
                 <div className="flex items-center">
                     <div className="flex-auto mr-4">
                         <strong className="text-lg">{title}</strong>
@@ -106,7 +106,7 @@ const CycleItemView = ({
     cycle: CYCLE;
 }) => {
     return (
-        <div className="flex-item-fluid pl-2">
+        <div className="flex-1 pl-2">
             <div className="flex items-center">
                 <div className="flex-auto mr-4">
                     <strong className="text-lg">{text}</strong>

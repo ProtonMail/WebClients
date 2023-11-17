@@ -60,7 +60,7 @@ const UpsellBox = ({ description, handleUpgrade, title, features, hideInfo, head
                                 <div className="mr-3 flex-item-noshrink flex">
                                     <Icon className="color-primary m-auto" size={20} name={feature.icon} />
                                 </div>
-                                <div className="flex-item-fluid">
+                                <div className="flex-1">
                                     {feature.getText()}
                                     {feature.getTooltip && !hideInfo ? (
                                         <Info buttonClass="ml-2" title={feature.getTooltip()} />

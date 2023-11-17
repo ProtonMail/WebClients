@@ -161,7 +161,7 @@ const RecipientsDetails = ({
     return isPrintModal ? (
         outputRecipientsDetails
     ) : (
-        <div className="flex flex-column items-start flex-item-fluid">{outputRecipientsDetails}</div>
+        <div className="flex flex-column items-start flex-1">{outputRecipientsDetails}</div>
     );
 };
 

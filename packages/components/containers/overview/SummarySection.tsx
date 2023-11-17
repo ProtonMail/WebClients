@@ -74,11 +74,11 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                         <ul className="unstyled my-0">
                             <li className="flex flex-nowrap items-center">
                                 <Icon name="brand-proton-vpn" className="mr-2 flex-item-noshrink" />
-                                <span className="flex-item-fluid">{getPlanTitle(vpnPlan, VPN_APP_NAME)}</span>
+                                <span className="flex-1">{getPlanTitle(vpnPlan, VPN_APP_NAME)}</span>
                             </li>
                             <li className="flex flex-nowrap items-center">
                                 <Icon name="brand-proton-mail" className="mr-2 flex-item-noshrink" />
-                                <span className="flex-item-fluid">{getPlanTitle(mailPlan, MAIL_APP_NAME)}</span>
+                                <span className="flex-1">{getPlanTitle(mailPlan, MAIL_APP_NAME)}</span>
                             </li>
                         </ul>
                     )}
@@ -90,7 +90,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                     <ul className="unstyled my-0">
                         <li className="flex flex-nowrap items-center">
                             <Icon name="globe" className="mr-2 flex-item-noshrink" />
-                            <span className="flex-item-fluid">{languageText}</span>
+                            <span className="flex-1">{languageText}</span>
                         </li>
                     </ul>
                 </div>

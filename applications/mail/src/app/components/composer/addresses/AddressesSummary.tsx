@@ -50,13 +50,13 @@ const AddressesSummary = ({
             </Label>
             <div
                 className={clsx([
-                    'field flex composer-addresses-fakefield composer-meta-fakefield-summary composer-light-field flex-row items-center flex-nowrap flex-item-fluid w-full',
+                    'field flex composer-addresses-fakefield composer-meta-fakefield-summary composer-light-field flex-row items-center flex-nowrap flex-1 w-full',
                     disabled && 'disabled',
                 ])}
                 data-testid="composer:address"
             >
                 <span
-                    className="text-ellipsis flex-item-fluid composer-addresses-fakefield-inner pr-4"
+                    className="text-ellipsis flex-1 composer-addresses-fakefield-inner pr-4"
                     title={title}
                     onClick={onFocus}
                     onFocus={onFocus}

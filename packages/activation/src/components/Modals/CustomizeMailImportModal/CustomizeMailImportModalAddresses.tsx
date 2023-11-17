@@ -20,7 +20,7 @@ const CustomizeMailImportModalAddresses = ({ selectedAddressID, onChange }: Prop
                         <Label className="flex items-center">{c('Label').t`Import to email address`}</Label>
                         <Field>
                             <SelectTwo
-                                className="flex-item-fluid"
+                                className="flex-1"
                                 value={selectedAddressID}
                                 onChange={({ value: addressID }) => {
                                     const nextAddress = availableAddresses.find((address) => address.ID === addressID);

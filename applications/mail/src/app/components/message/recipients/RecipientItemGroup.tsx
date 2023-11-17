@@ -131,7 +131,7 @@ const RecipientItemGroup = ({
                             data-testid="recipient:new-message-to-group"
                         >
                             <Icon name="pen-square" className="mr-2" />
-                            <span className="flex-item-fluid my-auto">{c('Action').t`New message`}</span>
+                            <span className="flex-1 my-auto">{c('Action').t`New message`}</span>
                         </DropdownMenuButton>
                         <DropdownMenuButton
                             className="text-left flex flex-nowrap items-center"
@@ -139,7 +139,7 @@ const RecipientItemGroup = ({
                             data-testid="recipient:copy-group-emails"
                         >
                             <Icon name="squares" className="mr-2" />
-                            <span className="flex-item-fluid my-auto">{c('Action').t`Copy addresses`}</span>
+                            <span className="flex-1 my-auto">{c('Action').t`Copy addresses`}</span>
                         </DropdownMenuButton>
                         <DropdownMenuButton
                             className="text-left flex flex-nowrap items-center"
@@ -147,7 +147,7 @@ const RecipientItemGroup = ({
                             data-testid="recipient:view-group-recipients"
                         >
                             <Icon name="user" className="mr-2" />
-                            <span className="flex-item-fluid my-auto">{c('Action').t`View recipients`}</span>
+                            <span className="flex-1 my-auto">{c('Action').t`View recipients`}</span>
                         </DropdownMenuButton>
                     </DropdownMenu>
                 </Dropdown>

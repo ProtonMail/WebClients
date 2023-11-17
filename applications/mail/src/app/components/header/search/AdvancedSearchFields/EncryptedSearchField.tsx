@@ -101,12 +101,12 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
         />
     );
     const esHeader = showToggle ? (
-        <Label htmlFor="es-toggle" className="text-bold p-0 pr-4 flex flex-item-fluid items-center w-full">
+        <Label htmlFor="es-toggle" className="text-bold p-0 pr-4 flex flex-1 items-center w-full">
             {esTitle}
             {info}
         </Label>
     ) : (
-        <div className="text-bold p-0 pr-4 flex flex-item-fluid items-center">
+        <div className="text-bold p-0 pr-4 flex flex-1 items-center">
             {esTitle}
             {info}
         </div>
@@ -152,7 +152,7 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
         <Progress
             value={progressValue || 0}
             aria-describedby="timeRemaining"
-            className={clsx(['my-4 flex-item-fluid', isContentIndexingPaused ? 'progress-bar--disabled' : undefined])}
+            className={clsx(['my-4 flex-1', isContentIndexingPaused ? 'progress-bar--disabled' : undefined])}
         />
     );
     const disablePauseResumeButton = contentIndexingDone && !isEnablingContentSearch;

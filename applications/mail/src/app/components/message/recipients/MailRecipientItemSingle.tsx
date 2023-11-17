@@ -172,7 +172,7 @@ const MailRecipientItemSingle = ({
                 data-testid="recipient:new-message"
             >
                 <Icon name="pen-square" className="mr-2" />
-                <span className="flex-item-fluid my-auto">{c('Action').t`New message`}</span>
+                <span className="flex-1 my-auto">{c('Action').t`New message`}</span>
             </DropdownMenuButton>
             {ContactID ? (
                 <DropdownMenuButton
@@ -181,7 +181,7 @@ const MailRecipientItemSingle = ({
                     data-testid="recipient:view-contact-details"
                 >
                     <Icon name="user" className="mr-2" />
-                    <span className="flex-item-fluid my-auto">{c('Action').t`View contact details`}</span>
+                    <span className="flex-1 my-auto">{c('Action').t`View contact details`}</span>
                 </DropdownMenuButton>
             ) : (
                 <DropdownMenuButton
@@ -190,7 +190,7 @@ const MailRecipientItemSingle = ({
                     data-testid="recipient:create-new-contact"
                 >
                     <Icon name="user-plus" className="mr-2" />
-                    <span className="flex-item-fluid my-auto">{c('Action').t`Create new contact`}</span>
+                    <span className="flex-1 my-auto">{c('Action').t`Create new contact`}</span>
                 </DropdownMenuButton>
             )}
             <DropdownMenuButton
@@ -199,7 +199,7 @@ const MailRecipientItemSingle = ({
                 data-testid="recipient:search-messages"
             >
                 <Icon name="envelope-magnifying-glass" className="mr-2" />
-                <span className="flex-item-fluid my-auto">
+                <span className="flex-1 my-auto">
                     {isRecipient ? c('Action').t`Messages to this recipient` : c('Action').t`Messages from this sender`}
                 </span>
             </DropdownMenuButton>
@@ -210,7 +210,7 @@ const MailRecipientItemSingle = ({
                     data-testid="block-sender:button"
                 >
                     <Icon name="circle-slash" className="mr-2" />
-                    <span className="flex-item-fluid my-auto">{c('Action').t`Block messages from this sender`}</span>
+                    <span className="flex-1 my-auto">{c('Action').t`Block messages from this sender`}</span>
                 </DropdownMenuButton>
             )}
             {showTrustPublicKey && (
@@ -220,7 +220,7 @@ const MailRecipientItemSingle = ({
                     data-testid="recipient:show-trust-public-key"
                 >
                     <Icon name="user" className="mr-2" />
-                    <span className="flex-item-fluid my-auto">{c('Action').t`Trust public key`}</span>
+                    <span className="flex-1 my-auto">{c('Action').t`Trust public key`}</span>
                 </DropdownMenuButton>
             )}
         </>
