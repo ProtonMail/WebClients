@@ -3,7 +3,7 @@ import type { ItemsByShareId } from '@proton/pass/store/reducers';
 import type { State } from '@proton/pass/store/types';
 import type { Maybe, PassCryptoSnapshot, SerializedCryptoContext } from '@proton/pass/types';
 import { PassEncryptionTag } from '@proton/pass/types';
-import type { EncryptedExtensionCache, ExtensionCache } from '@proton/pass/types/worker/cache';
+import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { logger } from '@proton/pass/utils/logger';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
@@ -31,9 +31,9 @@ const decrypt = async <T extends object>(options: {
 };
 
 export const decryptCachedState = async (
-    { state: encryptedState, snapshot: encryptedSnapshot, salt }: Partial<EncryptedExtensionCache>,
+    { state: encryptedState, snapshot: encryptedSnapshot, salt }: Partial<EncryptedPassCache>,
     sessionLockToken: Maybe<string>
-): Promise<Maybe<ExtensionCache>> => {
+): Promise<Maybe<PassCache>> => {
     if (!encryptedState) logger.warn(`[Cache::decrypt] Cached state not found`);
     if (!encryptedSnapshot) logger.warn(`[Cache::decrypt] Crypto snapshot not found`);
     if (!salt) logger.warn(`[Cache::decrypt] Salt not found`);
