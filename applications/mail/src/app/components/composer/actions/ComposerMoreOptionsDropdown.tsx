@@ -60,7 +60,7 @@ const ComposerMoreOptionsDropdown = ({
                     caretClassName="editor-toolbar-icon"
                     disabled={disabled}
                     className={clsx([
-                        'editor-toolbar-button interactive composer-toolbar-fontDropDown max-w-full flex flex-align-items-center flex-nowrap',
+                        'editor-toolbar-button interactive composer-toolbar-fontDropDown max-w-full flex items-center flex-nowrap',
                         className,
                     ])}
                     title={title}

@@ -26,7 +26,7 @@ export const Main: VFC = () => {
             style={{ '--anime-delay': '50ms' }}
         >
             <Header />
-            <div className="flex flex-align-items-center justify-center flex-nowrap w-full h-full">
+            <div className="flex items-center justify-center flex-nowrap w-full h-full">
                 <SubSidebar>
                     <Switch>
                         <Route path="/trash">

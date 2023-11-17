@@ -48,7 +48,7 @@ const ExploreStep = ({ onExplore }: Props) => {
                                         data-testid={app.replace('proton-', 'explore-')}
                                         size="large"
                                         shape="ghost"
-                                        className="flex flex-align-items-center text-left my-2"
+                                        className="flex items-center text-left my-2"
                                         fullWidth
                                         onClick={() => {
                                             if (loading) {

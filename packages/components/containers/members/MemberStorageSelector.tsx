@@ -207,7 +207,7 @@ const MemberStorageSelector = ({
                                 <div ref={labelRef}>
                                     <div ref={sizeRef} style={{ width: `${sizeElementWidth}px` }} />
                                     {segments.map(({ label, size, tooltip, value: [share, color] }) => (
-                                        <div className="mb-4 flex flex-align-items-center" key={tooltip}>
+                                        <div className="mb-4 flex items-center" key={tooltip}>
                                             <Tooltip
                                                 title={
                                                     <>

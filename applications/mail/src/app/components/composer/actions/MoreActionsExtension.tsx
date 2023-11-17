@@ -89,7 +89,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
             {editorMetadata.supportPlainText && [
                 <DropdownMenuButton
                     key={3}
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={() => {
                         if (editorMetadata.isPlainText !== false) {
                             handleChangeMetadata({ isPlainText: false });
@@ -102,7 +102,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={4}
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={() => {
                         if (editorMetadata.isPlainText !== true) {
                             handleChangeMetadata({ isPlainText: true });
@@ -116,7 +116,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                 <div className="dropdown-item-hr" key="hr-more-options" />,
             ]}
             <DropdownMenuButton
-                className="text-left flex flex-nowrap flex-align-items-center"
+                className="text-left flex flex-nowrap items-center"
                 onClick={handleTogglePublicKey}
                 data-testid="composer:attach-public-key-button"
             >
@@ -124,7 +124,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                 <Icon name="checkmark" className={clsx(['ml-4', getClassname(isAttachPublicKey)])} />
             </DropdownMenuButton>
             <DropdownMenuButton
-                className="text-left flex flex-nowrap flex-align-items-center"
+                className="text-left flex flex-nowrap items-center"
                 onClick={handleToggleReceiptRequest}
                 data-testid="composer:read-receipt-button"
             >

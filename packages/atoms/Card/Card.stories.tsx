@@ -26,7 +26,7 @@ export const Basic = () => (
 );
 
 export const WithActionHorizontal = () => (
-    <Card className="flex flex-align-items-center">
+    <Card className="flex items-center">
         <p className="m-0 mr-8 flex-item-fluid">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore ipsa dolores delectus fugit consequuntur
             impedit velit officia tenetur, magni placeat, voluptatum porro unde repudiandae cum explicabo assumenda
@@ -55,7 +55,7 @@ export const Sandbox = () => {
     );
 
     return (
-        <div className="flex flex-align-items-stretch py-7">
+        <div className="flex items-stretch py-7">
             <div>{tabsExample}</div>
             <div className="mr-8">
                 <strong className="block mt-4">Options</strong>

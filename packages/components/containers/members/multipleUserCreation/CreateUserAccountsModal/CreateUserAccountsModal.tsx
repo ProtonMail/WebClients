@@ -333,7 +333,7 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
             return {
                 title: c('Title').t`Create user accounts`,
                 additionalContent: (
-                    <div className="flex flex-align-items-center justify-end mt-4 px-3">
+                    <div className="flex items-center justify-end mt-4 px-3">
                         <Input
                             className="max-w-custom"
                             style={{ '--max-w-custom': '16.875rem' }}
@@ -419,7 +419,7 @@ const CreateUserAccountsModal = ({ verifiedDomains, usersToImport, app, onClose,
                     </Table>
                 ) : (
                     <div
-                        className="flex flex-align-items-center justify-center min-h-custom"
+                        className="flex items-center justify-center min-h-custom"
                         style={{ '--min-h-custom': '10em' }}
                     >
                         <p className="color-weak">{c('Create user accounts empty state').t`No search results found`}</p>

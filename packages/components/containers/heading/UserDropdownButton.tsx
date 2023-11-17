@@ -28,7 +28,7 @@ const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref:
             aria-expanded={isOpen}
             ref={ref}
             {...rest}
-            className="max-w-full flex flex-align-items-center flex-nowrap gap-3 user-dropdown-button relative interactive-pseudo-protrude rounded interactive--no-background"
+            className="max-w-full flex items-center flex-nowrap gap-3 user-dropdown-button relative interactive-pseudo-protrude rounded interactive--no-background"
             title={`${nameToDisplay} <${Email}>`}
         >
             <DropdownCaret className="md:hidden ml-1 color-weak" isOpen={isOpen} />

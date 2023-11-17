@@ -32,7 +32,7 @@ const ContactSelectorRow = ({ style, onCheck, contact, checked, isNarrow }: Prop
                 >
                     <div
                         className={clsx([
-                            'flex-item-fluid flex-align-items-center max-w-full h-full',
+                            'flex-item-fluid items-center max-w-full h-full',
                             !isNarrow && 'flex',
                         ])}
                     >

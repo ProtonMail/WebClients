@@ -103,7 +103,7 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
             </SettingsParagraph>
 
             {currentMember && !user.isSubUser && (
-                <div className="mb-4 flex gap-2 flex-align-self-start flex-align-items-center">
+                <div className="mb-4 flex gap-2 flex-align-self-start items-center">
                     <div className="mr-4">
                         {mustActivateOrganizationKey ? (
                             <Alert className="mb-4" type="warning">

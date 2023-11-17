@@ -16,10 +16,10 @@ interface PublicLayoutProps {
 const PublicLayout = ({ img, header, main, footer, below, className }: PublicLayoutProps) => {
     const width = '30rem';
     return (
-        <div className={clsx('flex flex-column flex-nowrap flex-align-items-center', className)}>
+        <div className={clsx('flex flex-column flex-nowrap items-center', className)}>
             <ProtonLogo className="mb-4 mt-7 flex-item-noshrink" />
             <div
-                className="w-custom max-w-4/5 flex flex-column flex-item-noshrink flex-align-items-center mt-14 mb-8 border rounded-xl p-11"
+                className="w-custom max-w-4/5 flex flex-column flex-item-noshrink items-center mt-14 mb-8 border rounded-xl p-11"
                 style={{ '--w-custom': width }}
             >
                 {img && <div className="mb-6 flex-item-noshrink">{img}</div>}

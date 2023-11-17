@@ -38,7 +38,7 @@ const Price = ({
     isDisplayedInSentence = false,
     large,
     'data-testid': dataTestId,
-    wrapperClassName = 'flex-item-noshrink inline-flex flex-align-items-baseline',
+    wrapperClassName = 'flex-item-noshrink inline-flex items-baseline',
     suffixClassName,
     currencyClassName,
     amountClassName,

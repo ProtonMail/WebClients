@@ -278,7 +278,7 @@ function WelcomeAction({
 
     return (
         <Row
-            className={clsx(['flex flex-align-items-center rounded', !isDone && 'cursor-pointer'])}
+            className={clsx(['flex items-center rounded', !isDone && 'cursor-pointer'])}
             onClick={isDone ? undefined : action}
             onMouseEnter={() => setOnHover(true)}
             onMouseLeave={() => setOnHover(false)}
@@ -286,7 +286,7 @@ function WelcomeAction({
             <div
                 className={clsx([
                     'flex-item-nowrap h-custom w-custom rounded mr-2',
-                    'flex justify-center flex-align-items-center',
+                    'flex justify-center items-center',
                     isDone ? 'bg-success' : 'bg-weak',
                 ])}
                 style={{ '--w-custom': '2.5em', '--h-custom': '2.5em' }}

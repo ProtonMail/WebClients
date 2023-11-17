@@ -158,7 +158,7 @@ const KeyUploadContent = ({
                                     cells={[
                                         <div
                                             key={1}
-                                            className="flex flex-row flex-nowrap flex-align-items-center justify-space-between"
+                                            className="flex flex-row flex-nowrap items-center justify-space-between"
                                         >
                                             <code className="max-w-full inline-block text-ellipsis" title={fingerprint}>
                                                 {fingerprint}
@@ -189,7 +189,7 @@ const KeyUploadContent = ({
     }
 
     return (
-        <div className="flex flex-wrap flex-column md:flex-row flex-align-items-center">
+        <div className="flex flex-wrap flex-column md:flex-row items-center">
             <div className="mr-0 md:mr-4 md:flex-item-fluid min-w-custom" style={{ '--min-w-custom': '14em' }}>
                 <InputFieldTwo
                     id={id}

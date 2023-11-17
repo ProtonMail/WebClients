@@ -37,7 +37,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
         <ModalTwo data-testid="utmTrackerModal:trackers" {...rest}>
             <ModalTwoHeader title={utmTrackerText} data-testid="trackersModal:title" />
             <ModalTwoContent>
-                <div className="border rounded-lg mb-4 p-4 flex flex-nowrap flex-align-items-center">
+                <div className="border rounded-lg mb-4 p-4 flex flex-nowrap items-center">
                     <img src={cleanLinkImg} alt="" className="flex-item-noshrink" />
                     <p className="color-weak flex-item-fluid pl-4 my-0" data-testid="trackersModal:description">
                         {c('Info')
@@ -52,7 +52,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                         <div key={`${tracker.originalURL}`} className="mb-4">
                             <div className="flex flex-column mb-1">
                                 <span className="color-weak text-sm">{c('Label').t`Original link`}</span>
-                                <div className="flex flex-nowrap group-hover-opacity-container max-w-full flex-align-items-center">
+                                <div className="flex flex-nowrap group-hover-opacity-container max-w-full items-center">
                                     <div className="text-ellipsis w-full flex-item-fluid" title={tracker.originalURL}>
                                         {tracker.originalURL}
                                     </div>
@@ -73,7 +73,7 @@ const UTMTrackerModal = ({ message, ...rest }: Props) => {
                             </div>
                             <div className="flex flex-column">
                                 <span className="color-primary text-sm">{c('Label').t`Cleaned`}</span>
-                                <div className="flex flex-nowrap group-hover-opacity-container max-w-full flex-align-items-center">
+                                <div className="flex flex-nowrap group-hover-opacity-container max-w-full items-center">
                                     <div className="text-ellipsis w-full flex-item-fluid" title={tracker.cleanedURL}>
                                         {tracker.cleanedURL}
                                     </div>

@@ -217,7 +217,7 @@ const ExtraPinKey = ({ message, messageVerification }: Props) => {
                     </span>
                 </div>
             </div>
-            <span className="flex-align-items-start flex-item-noshrink w-full md:w-auto pt-0.5">
+            <span className="items-start flex-item-noshrink w-full md:w-auto pt-0.5">
                 <Button
                     size="small"
                     color="weak"

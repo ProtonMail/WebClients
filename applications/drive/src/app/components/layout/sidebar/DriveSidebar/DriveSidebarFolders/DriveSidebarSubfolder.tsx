@@ -45,7 +45,7 @@ export default function DriveSidebarSubfolder({ shareId, folder, level, toggleEx
             >
                 <SidebarListItemContent>
                     <div
-                        className="flex flex-nowrap flex-align-items-center gap-2"
+                        className="flex flex-nowrap items-center gap-2"
                         data-testid="sidebar-sub-folders"
                         style={generateSidebarItemStyle(level)}
                     >

@@ -30,7 +30,7 @@ const DriveOnboardingModal = (props: Props) => {
         return (
             <ModalTwo open={true} size="small">
                 <ModalTwoContent className="my-8">
-                    <div className="flex flex-column flex-align-items-center">
+                    <div className="flex flex-column items-center">
                         <Loader size="medium" className="my-4" />
                     </div>
                 </ModalTwoContent>

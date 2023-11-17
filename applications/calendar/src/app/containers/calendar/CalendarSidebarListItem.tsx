@@ -65,7 +65,7 @@ const CalendarSidebarListItem = ({
 
     const leftNode = loadingVisibility ? (
         <div
-            className="flex flex-align-items-center justify-center w-custom ml-custom"
+            className="flex items-center justify-center w-custom ml-custom"
             style={{ '--w-custom': '1.25rem', '--ml-custom': 'calc(var(--space-1) * -1)' }}
         >
             <CircleLoader size="small" color={Color} />
@@ -103,7 +103,7 @@ const CalendarSidebarListItem = ({
                     left={leftNode}
                     className={clsx(['flex w-full gap-2', (isCalendarDisabled || isNotSyncedInfo) && 'color-weak'])}
                 >
-                    <div className="flex flex-nowrap justify-space-between flex-align-items-center w-full relative">
+                    <div className="flex flex-nowrap justify-space-between items-center w-full relative">
                         <div className="flex flex-nowrap">
                             <div className="text-ellipsis" title={Name}>
                                 {Name}

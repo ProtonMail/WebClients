@@ -128,7 +128,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                     <br />
                     <Href href={getKnowledgeBaseUrl('/smtp-submission')}>{c('Link').t`Learn more`}</Href>
                 </p>
-                <div className="flex flex-align-items-center flex-nowrap mb-4">
+                <div className="flex items-center flex-nowrap mb-4">
                     <InputFieldTwo
                         id="smtp-username"
                         label={c('Label').t`SMTP username`}
@@ -144,7 +144,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         onCopy={handleCopyEmail}
                     />
                 </div>
-                <div className="flex flex-align-items-center flex-nowrap mb-4">
+                <div className="flex items-center flex-nowrap mb-4">
                     <InputFieldTwo
                         id="smtp-token"
                         label={c('Label').t`SMTP token`}
@@ -162,7 +162,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                 </div>
                 <p className="color-danger">{c('Info')
                     .t`This token won’t be available after you close this window, and you should not share it with anyone.`}</p>
-                <div className="flex flex-align-items-center flex-nowrap mb-4">
+                <div className="flex items-center flex-nowrap mb-4">
                     <InputFieldTwo
                         id="server"
                         label={c('Label').t`SMTP server`}
@@ -178,7 +178,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         onCopy={handleCopyServer}
                     />
                 </div>
-                <div className="flex flex-align-items-center flex-nowrap mb-4">
+                <div className="flex items-center flex-nowrap mb-4">
                     <InputFieldTwo
                         id="port"
                         label={c('Label').t`SMTP port`}

@@ -289,7 +289,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                     </div>
 
                     {!isNarrow && (
-                        <div className="px-4 pb-4 text-sm flex flex-nowrap flex-align-items-center">
+                        <div className="px-4 pb-4 text-sm flex flex-nowrap items-center">
                             <span
                                 className="my-auto text-sm rounded border p-1 inline-block relative flex flex-item-noshrink user-initials"
                                 aria-hidden="true"
@@ -308,7 +308,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                 ) : null}
 
                                 {Email ? (
-                                    <div className="flex flex-nowrap justify-space-between flex-align-items-center">
+                                    <div className="flex flex-nowrap justify-space-between items-center">
                                         <Tooltip title={c('Action').t`Copy address`}>
                                             <button
                                                 type="button"
@@ -394,7 +394,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                             app={app}
                                             appToLinkTo={appToLinkTo}
                                             user={user}
-                                            className="flex flex-nowrap flex-align-items-center color-weak text-no-decoration border-weak border-bottom interactive-pseudo relative py-1"
+                                            className="flex flex-nowrap items-center color-weak text-no-decoration border-weak border-bottom interactive-pseudo relative py-1"
                                         >
                                             <Logo
                                                 appName={appToLinkTo}

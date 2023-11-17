@@ -15,7 +15,7 @@ const Token = ({ index, value, onRemove }: TokenProps) => {
     return (
         <Fragment key={`${value}-${index}`}>
             {index > 0 && <span className="mx-2 text-sm mb-2">{c('email_forwarding_2023: Label').t`or`}</span>}
-            <span className="inline-flex max-w-full flex-nowrap flex-row flex-align-items-center mb-2 condition-token">
+            <span className="inline-flex max-w-full flex-nowrap flex-row items-center mb-2 condition-token">
                 <small className="text-ellipsis text-no-decoration" title={value}>
                     {value}
                 </small>
@@ -40,7 +40,7 @@ interface Props {
 
 const TokensCondition = ({ condition, onRemove }: Props) => {
     const renderToken = (token: string, i: number) => <Token key={i} index={i} value={token} onRemove={onRemove} />;
-    return <div className="mb-4 flex flex-align-items-center">{condition.values?.map(renderToken)}</div>;
+    return <div className="mb-4 flex items-center">{condition.values?.map(renderToken)}</div>;
 };
 
 export default TokensCondition;

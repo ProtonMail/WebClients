@@ -40,8 +40,8 @@ const FreeUserLiveChatModal = ({ open, onExit, onClose }: Props) => {
             {render && <AuthenticatedBugModal {...bugReportModal} onClose={onCloseChildModal} />}
             <Modal open={open} onExit={onExit} onClose={handleClose} size="small">
                 <ModalHeader />
-                <ModalContent className="flex flex-column flex-align-items-center mb-8">
-                    <div className="flex flex-row justify-center flex-align-items-center p-4 rounded-full bg-weak">
+                <ModalContent className="flex flex-column items-center mb-8">
+                    <div className="flex flex-row justify-center items-center p-4 rounded-full bg-weak">
                         <Icon name="speech-bubble" size={20} className="color-primary" />
                     </div>
                     <h3 className="text-3xl color-primary text-center mt-4 mb-1">

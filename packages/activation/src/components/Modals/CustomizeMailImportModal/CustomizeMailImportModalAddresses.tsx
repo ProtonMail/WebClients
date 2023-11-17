@@ -15,9 +15,9 @@ const CustomizeMailImportModalAddresses = ({ selectedAddressID, onChange }: Prop
     return (
         <>
             {availableAddresses.length > 1 && (
-                <div className="mb-4 border-bottom flex-align-items-center">
+                <div className="mb-4 border-bottom items-center">
                     <Row>
-                        <Label className="flex flex-align-items-center">{c('Label').t`Import to email address`}</Label>
+                        <Label className="flex items-center">{c('Label').t`Import to email address`}</Label>
                         <Field>
                             <SelectTwo
                                 className="flex-item-fluid"

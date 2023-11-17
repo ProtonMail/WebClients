@@ -154,7 +154,7 @@ const PlanCardView = ({
                     </div>
                 )}
                 <div className="py-6 px-4">
-                    <div className="flex flex-align-items-center flex-column">
+                    <div className="flex items-center flex-column">
                         <div className="w-full flex-no-min-children flex-row flex-nowrap gap-1">
                             <strong className="text-2xl text-ellipsis flex-item-fluid text-center" id={`${cycle}-text`}>
                                 {text}
@@ -165,8 +165,8 @@ const PlanCardView = ({
                             <div
                                 id={`${cycle}-price`}
                                 className={clsx(
-                                    totals.discount > 0 ? '' : 'flex-align-items-baseline',
-                                    'flex gap-1 flex-align-items-center justify-center'
+                                    totals.discount > 0 ? '' : 'items-baseline',
+                                    'flex gap-1 items-center justify-center'
                                 )}
                             >
                                 <span className={clsx(highlightPrice && 'color-primary', 'text-bold h1')}>

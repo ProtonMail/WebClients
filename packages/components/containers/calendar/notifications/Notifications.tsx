@@ -47,7 +47,7 @@ const Notifications = ({
                 const uniqueId = index === 0 ? id : `${id}-${index}`;
 
                 return (
-                    <div className="mb-2 flex flex-nowrap flex-align-items-center" key={notification.id}>
+                    <div className="mb-2 flex flex-nowrap items-center" key={notification.id}>
                         <NotificationInput
                             id={uniqueId}
                             hasWhen={hasWhen}
@@ -91,7 +91,7 @@ const Notifications = ({
                     }
                 >
                     {addIcon ? (
-                        <span className="flex flex-nowrap w-full flex-align-items-center">
+                        <span className="flex flex-nowrap w-full items-center">
                             <Icon name={addIcon} className="mr-2 flex-item-centered-vert" />
                             {addNotificationText}
                         </span>

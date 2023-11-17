@@ -108,7 +108,7 @@ const Layout = ({
             <main className="flex-item-fluid-auto flex flex-nowrap flex-column justify-space-between md:mx-12 mx-6">
                 {children}
                 {hasDecoration && (
-                    <div className="flex flex-align-items-center flex-column">
+                    <div className="flex items-center flex-column">
                         <Box className="w-full">
                             <footer
                                 className="w-full min-h-custom pb-8 flex flex-column justify-space-between gap-4"

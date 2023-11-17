@@ -102,7 +102,7 @@ const AccessibilitySection = () => {
                             return (
                                 <Option
                                     key={id}
-                                    className={clsx('flex flex-nowrap flex-align-items-center gap-2 py-0 h-custom')}
+                                    className={clsx('flex flex-nowrap items-center gap-2 py-0 h-custom')}
                                     style={{
                                         '--h-custom': '2.5rem',
                                     }}

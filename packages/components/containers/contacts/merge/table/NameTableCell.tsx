@@ -16,11 +16,11 @@ const NameTableCell = ({ name, contactID, highlightedID, checked, deleted, greye
     const handleToggle = () => onToggle(contactID);
 
     return (
-        <div className="flex flex-nowrap flex-align-items-center">
+        <div className="flex flex-nowrap items-center">
             <Checkbox
                 checked={checked}
                 onChange={handleToggle}
-                className={`flex flex-align-items-center flex-item-noshrink mr-2 ${deleted ? 'visibility-hidden' : ''}`}
+                className={`flex items-center flex-item-noshrink mr-2 ${deleted ? 'visibility-hidden' : ''}`}
                 data-testid="merge-model:name-checkbox"
             />
             <span

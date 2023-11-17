@@ -92,9 +92,9 @@ function NewLabelForm({
                         )}
                     </div>
                 ) : null}
-                <div className="flex justify-start flex-align-items-center">
+                <div className="flex justify-start items-center">
                     <Label htmlFor="notification" className="w-auto">
-                        <span className="inline-flex flex-align-items-center">
+                        <span className="inline-flex items-center">
                             <span className="mr-2 text-semibold">{c('Label').t`Notification`}</span>
                             <Info
                                 title={c('Info')

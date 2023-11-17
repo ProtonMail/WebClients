@@ -54,7 +54,7 @@ const PromotionBanner = ({
         >
             <div
                 className={clsx(
-                    'inline-flex mx-auto flex-nowrap flex-align-items-center ',
+                    'inline-flex mx-auto flex-nowrap items-center ',
                     (() => {
                         if (contentCentered) {
                             return 'm-0.5 px-2';

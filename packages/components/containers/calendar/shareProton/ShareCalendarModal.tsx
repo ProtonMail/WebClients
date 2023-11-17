@@ -234,7 +234,7 @@ const getAddressInputItemAttributes = ({ loading, error, Address, isKeyPinned }:
     if (error) {
         return {
             icon: (
-                <div className="flex flex-align-items-center flex-item-noshrink ml-2">
+                <div className="flex items-center flex-item-noshrink ml-2">
                     <Icon name="exclamation-circle" />
                 </div>
             ),

@@ -9,7 +9,7 @@ interface Props {
 }
 
 const UserCell = ({ referral }: Props) => (
-    <div className="flex flex-nowrap flex-align-items-center">
+    <div className="flex flex-nowrap items-center">
         <span className="hidden md:flex flex-item-noshrink mr-4">
             <Icon name={referral.Email ? 'envelope' : 'link'} />
         </span>

@@ -21,7 +21,7 @@ const ShowSecondaryTimezoneToggleSection = ({
                     <span className="mr-2">{c('Label').t`Show secondary time zone`}</span>
                 </label>
             </SettingsLayoutLeft>
-            <SettingsLayoutRight className="pt-2 flex flex-align-items-center">
+            <SettingsLayoutRight className="pt-2 flex items-center">
                 <ShowSecondaryTimezoneToggle calendarUserSettings={calendarUserSettings}/>
             </SettingsLayoutRight>
         </SettingsLayout>

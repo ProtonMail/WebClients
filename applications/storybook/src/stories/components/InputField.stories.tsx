@@ -106,7 +106,7 @@ export const Sandbox = () => {
 
     return (
         <>
-            <div className="flex flex-item-fluid flex-align-items-center justify-center border p-7">
+            <div className="flex flex-item-fluid items-center justify-center border p-7">
                 <InputFieldTwo
                     label={label}
                     hint={hint}

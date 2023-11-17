@@ -102,7 +102,7 @@ const PrivacyDropdown = ({ message }: Props) => {
     };
 
     const imageTrackerRow = (
-        <span className="flex flex-nowrap flex-align-items-center text-left px-2 py-2" data-testid="privacy:image-row">
+        <span className="flex flex-nowrap items-center text-left px-2 py-2" data-testid="privacy:image-row">
             <span className="flex mr-2 flex-item-noshrink color-success">
                 <Icon name={'checkmark-circle-filled'} className="my-auto" />
             </span>
@@ -116,7 +116,7 @@ const PrivacyDropdown = ({ message }: Props) => {
     );
 
     const utmTrackerRow = (
-        <span className="flex flex-nowrap flex-align-items-center text-left px-2 py-2" data-testid="privacy:utm-row">
+        <span className="flex flex-nowrap items-center text-left px-2 py-2" data-testid="privacy:utm-row">
             <span className="flex mr-2 flex-item-noshrink color-success">
                 <Icon name={'checkmark-circle-filled'} />
             </span>
@@ -175,7 +175,7 @@ const PrivacyDropdown = ({ message }: Props) => {
                             <hr className="my-4" />
 
                             <div className="text-center">
-                                <div className="inline-flex flex-nowrap flex-align-items-center justify-center">
+                                <div className="inline-flex flex-nowrap items-center justify-center">
                                     <PreventTrackingToggle
                                         id="preventTrackingToggle"
                                         preventTracking={mailSettings.ImageProxy}

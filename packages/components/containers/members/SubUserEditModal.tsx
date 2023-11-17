@@ -203,7 +203,7 @@ const SubUserEditModal = ({ member, mode, ...rest }: Props) => {
                     </div>
                 )}
                 {(canMakeAdmin || canRevokeAdmin) && (
-                    <div className="flex flex-align-items-center mb-6">
+                    <div className="flex items-center mb-6">
                         <label className={clsx(['text-semibold', isVpnB2B ? 'mr-1' : 'mr-4'])} htmlFor="admin-toggle">
                             {c('Label for new member').t`Admin`}
                         </label>

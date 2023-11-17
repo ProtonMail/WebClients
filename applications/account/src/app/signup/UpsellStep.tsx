@@ -183,7 +183,7 @@ const UpsellStep = ({
     return (
         <div
             className={clsx(
-                'sign-layout-mobile-columns w-full flex flex-align-items-start justify-center mb-8',
+                'sign-layout-mobile-columns w-full flex items-start justify-center mb-8',
                 mostPopularPlanName ? 'sign-layout-three-columns gap-4' : 'gap-6'
             )}
         >

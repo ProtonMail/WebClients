@@ -56,7 +56,7 @@ const UpsellBox = ({ description, handleUpgrade, title, features, hideInfo, head
                     const feature = upsellFeatures[featureName];
                     return (
                         <li className="py-2 rounded" key={feature.getText()}>
-                            <div className="flex flex-nowrap flex-align-items-center">
+                            <div className="flex flex-nowrap items-center">
                                 <div className="mr-3 flex-item-noshrink flex">
                                     <Icon className="color-primary m-auto" size={20} name={feature.icon} />
                                 </div>

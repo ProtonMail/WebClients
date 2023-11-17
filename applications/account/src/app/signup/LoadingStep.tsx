@@ -32,7 +32,7 @@ export const LoadingTextStepper = ({ steps }: { steps: string[] }) => {
                     <div className="text-lg" key={step}>
                         <div
                             className={clsx(
-                                'flex-no-min-children flex-align-items-center flex-nowrap',
+                                'flex-no-min-children items-center flex-nowrap',
                                 isCurrentStep && 'color-primary'
                             )}
                         >

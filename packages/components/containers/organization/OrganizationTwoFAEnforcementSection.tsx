@@ -83,7 +83,7 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
                         />
                     </span>
                 </Label>
-                <div className="flex flex-align-items-center">
+                <div className="flex items-center">
                     <Toggle
                         id="two-fa-admin"
                         className="mr-0.5 pt-0.5"
@@ -110,7 +110,7 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
                         />
                     </span>
                 </Label>
-                <div className="flex flex-align-items-center">
+                <div className="flex items-center">
                     <Toggle
                         id="two-fa-member"
                         className="mr-0.5 pt-0.5"

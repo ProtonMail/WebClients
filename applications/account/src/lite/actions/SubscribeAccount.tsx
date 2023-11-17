@@ -95,7 +95,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
     // Error in usage (this action is not meant to be shown if it cannot be triggered, so untranslated.
     if (!canEdit) {
         return (
-            <LiteLayout searchParams={searchParams} className="flex justify-center flex-align-items-center">
+            <LiteLayout searchParams={searchParams} className="flex justify-center items-center">
                 <LiteBox>Please contact the administrator of the organization to manage the subscription</LiteBox>
             </LiteLayout>
         );
@@ -221,7 +221,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
 
     if (isManagedExternally(subscription)) {
         return (
-            <div className="h-full flex flex-column justify-center flex-align-items-center bg-norm text-center">
+            <div className="h-full flex flex-column justify-center items-center bg-norm text-center">
                 <div className="max-w-custom p-11" style={{ '--max-w-custom': '33.3rem' }}>
                     <InAppText subscription={subscription} />
                 </div>
@@ -231,7 +231,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
 
     if (error.title && error.message) {
         return (
-            <div className="h-full flex flex-column justify-center flex-align-items-center bg-norm text-center">
+            <div className="h-full flex flex-column justify-center items-center bg-norm text-center">
                 <h1 className="text-bold text-2xl mb-2">{error.title}</h1>
                 <div>{error.message}</div>
                 {error.error && <div className="mt-2 color-weak text-sm">{error.error}</div>}
@@ -326,7 +326,7 @@ const SubscribeAccount = ({ app, redirect, searchParams }: Props) => {
                                 render={({ onSubmit, title, content, footer, step }) => {
                                     return (
                                         <LiteBox maxWidth={step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? 72 : undefined}>
-                                            <div className="flex flex-nowrap flex-item-noshrink flex-align-items-start justify-space-between">
+                                            <div className="flex flex-nowrap flex-item-noshrink items-start justify-space-between">
                                                 <div>
                                                     {title && (
                                                         <>

@@ -142,12 +142,12 @@ export const PhotosCard: FC<Props> = ({
                             className="w-full h-full photos-card-thumbnail"
                         />
                     ) : (
-                        <div className="flex flex-align-items-center justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty">
+                        <div className="flex items-center justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty">
                             <FileIcon mimeType={photo.mimeType || ''} size={48} />
                         </div>
                     )}
                     {(photo.signatureIssues || photo.isShared) && (
-                        <div className="absolute top right mr-2 mt-2 flex flex-align-items-center gap-1">
+                        <div className="absolute top right mr-2 mt-2 flex items-center gap-1">
                             {photo.signatureIssues && (
                                 <SignatureIcon
                                     isFile
@@ -156,14 +156,14 @@ export const PhotosCard: FC<Props> = ({
                                 />
                             )}
                             {photo.isShared && (
-                                <div className="photos-card-share-icon rounded-50 flex flex-align-items-center justify-center">
+                                <div className="photos-card-share-icon rounded-50 flex items-center justify-center">
                                     <Icon name="link" color="white" size={12} />
                                 </div>
                             )}
                         </div>
                     )}
                     {photo.mimeType && isVideo(photo.mimeType) && (
-                        <div className="w-full absolute bottom flex justify-end flex-align-items-center px-2 py-2 photos-card-video-info">
+                        <div className="w-full absolute bottom flex justify-end items-center px-2 py-2 photos-card-video-info">
                             {photo.duration && (
                                 <time
                                     className="text-semibold mr-1"

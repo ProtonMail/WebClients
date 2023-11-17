@@ -185,9 +185,9 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                                 .jt`Manually enter this information into your two-factor authentication device to set up your account. ${switchButton}.`}
                         </div>
                         <div>
-                            <div className="flex flex-column sm:flex-row sm:flex-align-items-center flex-nowrap max-w-full mb-2">
+                            <div className="flex flex-column sm:flex-row sm:items-center flex-nowrap max-w-full mb-2">
                                 <div className="sm:w-1/5 my-auto" id="label-key-desc">{c('Label').t`Key`}</div>
-                                <div className="sm:w-4/5 flex flex-align-items-center text-bold">
+                                <div className="sm:w-4/5 flex items-center text-bold">
                                     {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
                                     <code
                                         className="text-ellipsis flex-item-fluid py-2"
@@ -211,13 +211,13 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                                     />
                                 </div>
                             </div>
-                            <div className="flex flex-column sm:flex-row sm:flex-align-items-center flex-nowrap max-w-full  mb-4">
+                            <div className="flex flex-column sm:flex-row sm:items-center flex-nowrap max-w-full  mb-4">
                                 <div className="sm:w-1/5 my-auto">{c('Label').t`Interval`}</div>
                                 <div className="sm:w-4/5 text-bold">
                                     <code>{period}</code>
                                 </div>
                             </div>
-                            <div className="flex flex-column sm:flex-row sm:flex-align-items-center flex-nowrap max-w-full  mb-4">
+                            <div className="flex flex-column sm:flex-row sm:items-center flex-nowrap max-w-full  mb-4">
                                 <div className="sm:w-1/5 my-auto">{c('Label').t`Digits`}</div>
                                 <div className="sm:w-4/5 text-bold">
                                     <code>{digits}</code>
