@@ -53,8 +53,8 @@ const PlanDescription = ({ list }: { list: Included[] }) => {
                         if (item.type === 'value') {
                             return (
                                 <div key={`${item.text}${item.type}`} className="flex flex-nowrap mb-2">
-                                    <div className="flex-item-fluid-auto text-ellipsis mr-4">{item.text}</div>
-                                    <div className="flex-item-fluid-auto flex-item-noshrink text-right">
+                                    <div className="flex-auto text-ellipsis mr-4">{item.text}</div>
+                                    <div className="flex-auto flex-item-noshrink text-right">
                                         {item.value}
                                     </div>
                                 </div>
@@ -63,7 +63,7 @@ const PlanDescription = ({ list }: { list: Included[] }) => {
                         if (item.type === 'text') {
                             return (
                                 <div key={`${item.text}${item.type}`} className="flex flex-nowrap mb-2">
-                                    <div className="flex-item-fluid-auto text-ellipsis">{item.text}</div>
+                                    <div className="flex-auto text-ellipsis">{item.text}</div>
                                 </div>
                             );
                         }

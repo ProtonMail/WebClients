@@ -105,7 +105,7 @@ const Layout = ({
                 }
                 isDarkBg={isDarkBg && !isTinyMobile}
             />
-            <main className="flex-item-fluid-auto flex flex-nowrap flex-column justify-space-between md:mx-12 mx-6">
+            <main className="flex-auto flex flex-nowrap flex-column justify-space-between md:mx-12 mx-6">
                 {children}
                 {hasDecoration && (
                     <div className="flex items-center flex-column">

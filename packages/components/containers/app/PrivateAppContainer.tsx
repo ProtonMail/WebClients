@@ -22,7 +22,7 @@ const PrivateAppContainer = ({ header, sidebar, children, top, bottom, container
                 ref={containerRef}
             >
                 {top}
-                <div className="content ui-prominent flex-item-fluid-auto flex flex-column flex-nowrap reset4print">
+                <div className="content ui-prominent flex-auto flex flex-column flex-nowrap reset4print">
                     <div className="flex flex-item-fluid flex-nowrap">
                         {sidebar}
                         <div className="flex flex-column flex-item-fluid flex-nowrap reset4print">

@@ -124,7 +124,7 @@ export const Size = () => {
                             <pre className="w-custom" style={{ '--w-custom': '20em' }}>
                                 {row.sizeKey}:
                             </pre>
-                            <div className="flex-item-fluid-auto">
+                            <div className="flex-auto">
                                 <Editor sizeKey={row.sizeKey} options={row.options.map(getOption)} />
                             </div>
                         </div>
