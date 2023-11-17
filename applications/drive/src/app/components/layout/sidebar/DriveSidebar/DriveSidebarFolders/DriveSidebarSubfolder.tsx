@@ -9,7 +9,7 @@ import {
 
 import { TreeItem } from '../../../../../store';
 import { generateSidebarItemStyle } from '../utils';
-import ExpandButton from './ExpandButton';
+import ExpandButton from './DriveExpandButton';
 import useSubfolderLoading from './useSubfolderLoading';
 
 interface Props {
