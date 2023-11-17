@@ -24,8 +24,8 @@ export const Hidden = () => (
 export const HiddenEmpty = () => (
     <div className="p-7 bg-weak">
         Here are two elements, one empty, one not empty:
-        <p className="hidden-empty m-0">I'm not empty</p>
-        <p className="hidden-empty m-0">{/* I'm empty */}</p>
+        <p className="empty:hidden m-0">I'm not empty</p>
+        <p className="empty:hidden m-0">{/* I'm empty */}</p>
     </div>
 );
 

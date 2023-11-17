@@ -25,6 +25,7 @@
 		hidden: (
 			display: none,
 		),
+
 		table-cell: (
 			display: table-cell,
 		),
@@ -67,7 +68,7 @@
 }
 
 [hidden],
-.hidden-empty:empty {
+.empty\:hidden:empty {
 	display: none;
 }
 

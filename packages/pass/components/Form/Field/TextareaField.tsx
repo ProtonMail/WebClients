@@ -43,7 +43,7 @@ const BaseTextAreaFieldRender: ForwardRefRenderFunction<HTMLTextAreaElement, Bas
             ref={ref}
             autoGrow
             unstyled
-            assistContainerClassName="hidden-empty"
+            assistContainerClassName="empty:hidden"
             className={clsx(
                 'border-none flex p-0 resize-none',
                 props.disabled ? 'color-disabled' : 'color-norm',

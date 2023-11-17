@@ -160,9 +160,7 @@ const ItemColumnLayout = ({
                                     <ItemLocation element={element} labelID={labelID} />
                                 </span>
                             )}
-                            {conversationMode && (
-                                <NumMessages className="mr-1 shrink-0" conversation={element} />
-                            )}
+                            {conversationMode && <NumMessages className="mr-1 shrink-0" conversation={element} />}
                             <span
                                 role="heading"
                                 aria-level={2}
@@ -200,7 +198,7 @@ const ItemColumnLayout = ({
                                         className="ml-1 self-center"
                                     />
                                 )}
-                                <span className="ml-1 flex children-flex self-center my-auto hidden-empty">
+                                <span className="ml-1 flex children-flex self-center my-auto empty:hidden">
                                     {isStarred && !isSnoozeDropdownOpen && <ItemStar element={element} />}
                                 </span>
                             </span>
@@ -219,7 +217,7 @@ const ItemColumnLayout = ({
                                 element={element}
                                 className="ml-1 self-center"
                             />
-                            <span className="ml-1 flex children-flex self-center my-auto hidden-empty">
+                            <span className="ml-1 flex children-flex self-center my-auto empty:hidden">
                                 <ItemStar element={element} />
                             </span>
                         </div>
