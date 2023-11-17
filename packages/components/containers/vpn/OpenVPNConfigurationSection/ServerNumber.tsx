@@ -9,7 +9,7 @@ interface Props {
 const ServerNumber = ({ group }: Props) => {
     const number = group.reduce((acc, { Servers }) => acc + Servers.length, 0);
     return (
-        <div className="inline-flex-vcenter">
+        <div className="inline-flex children-self-center">
             {c('Info').ngettext(msgid`${number} server`, `${number} servers`, number)}
         </div>
     );
