@@ -54,7 +54,7 @@ const PlanDescription = ({ list }: { list: Included[] }) => {
                             return (
                                 <div key={`${item.text}${item.type}`} className="flex flex-nowrap mb-2">
                                     <div className="flex-auto text-ellipsis mr-4">{item.text}</div>
-                                    <div className="flex-auto flex-item-noshrink text-right">
+                                    <div className="flex-auto shrink-0 text-right">
                                         {item.value}
                                     </div>
                                 </div>

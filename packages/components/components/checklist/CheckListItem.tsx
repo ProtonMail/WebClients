@@ -55,7 +55,7 @@ const CheckListItem = ({
             data-testid={dataTestId}
         >
             <img
-                className={clsx('w-custom h-custom flex-item-noshrink', done && 'opacity-50')}
+                className={clsx('w-custom h-custom shrink-0', done && 'opacity-50')}
                 src={smallVariant ? smallIcon : largeIcon}
                 style={{
                     '--w-custom': smallVariant ? '1.75rem' : '5.5rem',
@@ -68,7 +68,7 @@ const CheckListItem = ({
             <div
                 className={clsx(
                     'w-custom h-custom flex self-center',
-                    done && 'bg-primary rounded-50 flex items-center justify-center flex-item-noshrink'
+                    done && 'bg-primary rounded-50 flex items-center justify-center shrink-0'
                 )}
                 style={{
                     '--h-custom': smallVariant || !done ? '1rem' : '1.5rem',

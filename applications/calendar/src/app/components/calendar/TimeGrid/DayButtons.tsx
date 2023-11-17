@@ -48,7 +48,7 @@ const DayButtons = ({
                         {weekdaysSingle[day.getUTCDay()]}
                     </span>
                 </span>
-                <span className="calendar-grid-heading-number inline-flex justify-center items-center color-norm flex-item-noshrink">
+                <span className="calendar-grid-heading-number inline-flex justify-center items-center color-norm shrink-0">
                     {day.getUTCDate()}
                 </span>
             </button>

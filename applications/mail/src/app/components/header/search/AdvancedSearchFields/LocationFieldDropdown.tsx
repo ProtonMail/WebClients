@@ -60,7 +60,7 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                     className: 'flex flex-column flex-nowrap',
                 }}
             >
-                <div className="p-4 flex-item-noshrink">
+                <div className="p-4 shrink-0">
                     <SearchInput
                         value={search}
                         onChange={setSearch}
@@ -97,16 +97,16 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                                                     <Icon
                                                         name="circle-filled"
                                                         color={item.color}
-                                                        className="flex-item-noshrink mr-2"
+                                                        className="shrink-0 mr-2"
                                                     />
                                                 )}
                                                 {isDefaultFolder(item) && (
-                                                    <Icon name={item.icon} className="flex-item-noshrink mr-2" />
+                                                    <Icon name={item.icon} className="shrink-0 mr-2" />
                                                 )}
                                                 {isCustomFolder(item) && (
                                                     <FolderIcon
                                                         folder={item.folderEntity}
-                                                        className="flex-item-noshrink mr-2"
+                                                        className="shrink-0 mr-2"
                                                     />
                                                 )}
                                                 <span className="text-ellipsis">

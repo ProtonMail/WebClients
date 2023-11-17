@@ -38,7 +38,7 @@ const CustomizeMailImportModalLabel = ({ label, onEditLabel }: Props) => {
                         <Button
                             icon
                             shape="ghost"
-                            className="flex-item-noshrink ml-4"
+                            className="shrink-0 ml-4"
                             onClick={() => openEditLabelModal(true)}
                             data-testid="CustomizeModal:editLabel"
                         >

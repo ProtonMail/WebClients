@@ -153,11 +153,11 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                                         {isNarrow ? null : (
                                             <Icon
                                                 name="text-align-justify"
-                                                className="mr-4 flex-item-noshrink cursor-row-resize"
+                                                className="mr-4 shrink-0 cursor-row-resize"
                                             />
                                         )}
                                         <FolderIcon
-                                            className="mr-2 flex-item-noshrink"
+                                            className="mr-2 shrink-0"
                                             folder={{ ...item, subfolders: parents[item.ID] }}
                                         />
                                         <span className="text-ellipsis" title={item.Name}>

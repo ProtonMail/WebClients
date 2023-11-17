@@ -191,7 +191,7 @@ const PaymentStep = ({
                     <div className="text-sm">
                         {hasGuarantee && (
                             <div className="flex flex-nowrap color-weak mb-2">
-                                <span className="flex-item-noshrink mr-2">
+                                <span className="shrink-0 mr-2">
                                     <Icon name="clock" className="align-top" />
                                 </span>
                                 <span className="flex-1">{c('Info').t`30-day money-back guarantee.`}</span>
@@ -239,7 +239,7 @@ const PaymentStep = ({
                                 </Button>
                                 <Alert3ds />
                                 <div className="flex flex-nowrap color-weak mb-2 text-sm mx-7">
-                                    <span className="flex-item-noshrink mr-2">
+                                    <span className="shrink-0 mr-2">
                                         <Icon name="shield" />
                                     </span>
                                     <span className="flex-1">{c('Info')

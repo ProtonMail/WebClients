@@ -63,7 +63,7 @@ const PagingControls = ({
     );
 
     return (
-        <div className="flex flex-item-noshrink">
+        <div className="flex shrink-0">
             <ToolbarButton
                 disabled={loading || page <= 1}
                 title={c('Action').t`Previous page`}

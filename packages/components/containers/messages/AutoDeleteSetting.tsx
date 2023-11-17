@@ -44,7 +44,7 @@ const AutoDeleteSetting = ({ settingValue = AUTO_DELETE_SPAM_AND_TRASH_DAYS.DISA
                         <span className="mr-2 flex-1">
                             <span className="mr-2">{c('Label').t`Auto-delete unwanted messages`}</span>
                             <Info
-                                className="flex-item-noshrink"
+                                className="shrink-0"
                                 title={c('Tooltip')
                                     .t`Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.`}
                             />

@@ -87,7 +87,7 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
             {...rest}
         >
             <div className="flex flex-column flex-nowrap h-full">
-                <div className="border-bottom commander-search-wrapper py-1 flex-item-noshrink">
+                <div className="border-bottom commander-search-wrapper py-1 shrink-0">
                     <label className="sr-only" htmlFor="commander-search-input">
                         {c('Label').t`Type a command...`}
                     </label>

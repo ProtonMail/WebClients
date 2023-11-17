@@ -15,7 +15,7 @@ const QuickSettingsSectionRow = ({ label, labelInfo, action }: Props) => {
                 <span className="flex-1 text-left text-ellipsis">{label}</span>
                 {labelInfo}
             </span>
-            <span className="quickSettingsSectionRow-action flex-item-noshrink">{action}</span>
+            <span className="quickSettingsSectionRow-action shrink-0">{action}</span>
         </label>
     );
 };

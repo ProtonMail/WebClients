@@ -40,13 +40,13 @@ export const PauseListDropdown: FC<Props> = ({ criteria, dense, hostname, label,
             shape="solid"
             {...(dense
                 ? {
-                      className: 'flex-item-noshrink button-xs',
+                      className: 'shrink-0 button-xs',
                       iconSize: 12,
                       menuClassName: 'text-xs',
                       offset: 2,
                       size: 'small',
                   }
-                : { size: 'small', iconSize: 18, className: 'flex-item-noshrink' })}
+                : { size: 'small', iconSize: 18, className: 'shrink-0' })}
         >
             <DropdownMenuButton onClick={addToPauseList} label={label} ellipsis={false} />
         </QuickActionsDropdown>

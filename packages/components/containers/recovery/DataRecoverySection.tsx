@@ -268,7 +268,7 @@ const DataRecoverySection = () => {
                         {hasOutdatedRecoveryFile && (
                             <p className="color-danger flex flex-nowrap">
                                 <Icon
-                                    className="mr-2 flex-item-noshrink mt-0.5"
+                                    className="mr-2 shrink-0 mt-0.5"
                                     name="exclamation-circle-filled"
                                     size={14}
                                 />

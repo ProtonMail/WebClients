@@ -38,7 +38,7 @@ const ThemeSyncModeDropdown = ({ mode, className, themeIdentifier, list, onChang
         <div className={clsx('', className)}>
             <div className={clsx('flex justify-space-between flex-nowrap gap-2 mb-2')}>
                 <div className="flex items-center flex-nowrap gap-2 text-sm">
-                    <Icon name={mode === 'light' ? 'sun' : 'moon'} className={clsx('color-weak flex-item-noshrink')} />
+                    <Icon name={mode === 'light' ? 'sun' : 'moon'} className={clsx('color-weak shrink-0')} />
                     <span className="color-weak">
                         {mode === 'light' ? c('Title').t`Day theme` : c('Title').t`Night theme`}
                     </span>

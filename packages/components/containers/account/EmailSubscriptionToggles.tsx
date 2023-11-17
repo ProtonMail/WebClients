@@ -42,7 +42,7 @@ const EmailSubscriptionToggles = ({
                     <li key={id} className="mb-4 flex flex-nowrap gap-4">
                         <Toggle
                             id={id}
-                            className="flex-item-noshrink"
+                            className="shrink-0"
                             checked={isSubscribed}
                             disabled={disabled}
                             onChange={handleChange(flag)}

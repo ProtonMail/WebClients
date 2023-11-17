@@ -55,7 +55,7 @@ export const MnemonicPhraseStepContent = ({
                         <span className="mr-2" data-testid="account:recovery:generatedRecoveryPhrase">
                             {mnemonic}
                         </span>
-                        <Copy className="bg-norm flex-item-noshrink" value={mnemonic} onCopy={onCopy} />
+                        <Copy className="bg-norm shrink-0" value={mnemonic} onCopy={onCopy} />
                     </Card>
                 </>
             )}

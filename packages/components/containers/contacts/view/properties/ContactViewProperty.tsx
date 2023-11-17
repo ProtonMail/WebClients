@@ -22,10 +22,10 @@ const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Pro
             >
                 <div
                     className={clsx([
-                        'contact-view-row-label flex-no-min-children w-full md:w-1/5 flex-item-noshrink items-start label',
+                        'contact-view-row-label flex-no-min-children w-full md:w-1/5 shrink-0 items-start label',
                     ])}
                 >
-                    <div className="flex flex-item-noshrink flex-1 items-center max-w-full">
+                    <div className="flex shrink-0 flex-1 items-center max-w-full">
                         <div role="heading" aria-level={3} className="mr-2">
                             <ContactLabelProperty field={field} type={type} />
                         </div>

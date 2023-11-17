@@ -21,7 +21,7 @@ const TopBanner = ({ children, className, onClose, ...rest }: Props) => {
         <div
             role="alert"
             className={clsx([
-                'flex flex-item-noshrink flex-nowrap text-center relative text-bold no-print',
+                'flex shrink-0 flex-nowrap text-center relative text-bold no-print',
                 className,
                 isElectronOnMacComputers && 'pt-4',
             ])}
@@ -32,7 +32,7 @@ const TopBanner = ({ children, className, onClose, ...rest }: Props) => {
                 <Button
                     icon
                     shape="ghost"
-                    className="flex-item-noshrink rounded-none"
+                    className="shrink-0 rounded-none"
                     onClick={onClose}
                     title={c('Action').t`Close this banner`}
                 >

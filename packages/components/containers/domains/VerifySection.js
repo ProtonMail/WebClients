@@ -47,7 +47,7 @@ const VerifySection = ({ domain }) => {
                                 <Copy
                                     onCopy={handleCopy}
                                     size="small"
-                                    className="flex-item-noshrink mr-2"
+                                    className="shrink-0 mr-2"
                                     value={domain.VerifyCode}
                                 />{' '}
                                 <code className="text-ellipsis lh-rg" title={domain.VerifyCode}>

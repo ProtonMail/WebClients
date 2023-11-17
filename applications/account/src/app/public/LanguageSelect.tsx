@@ -57,7 +57,7 @@ const LanguageSelect = ({ className, style, locales = {}, outlined, globe, color
         <>
             {globe && (
                 <>
-                    <Icon className="mr-2 flex-item-noshrink no-tiny-mobile" name="globe" />
+                    <Icon className="mr-2 shrink-0 no-tiny-mobile" name="globe" />
                 </>
             )}
             <span className="text-ellipsis" lang={getLanguageCode(localeCode)}>

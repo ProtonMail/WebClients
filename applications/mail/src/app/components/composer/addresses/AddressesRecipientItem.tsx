@@ -197,7 +197,7 @@ const AddressesRecipientItem = ({
             >
                 <span className="relative interactive-pseudo-inset flex flex-row flex-nowrap">
                     {(icon || loading) && (
-                        <span className="flex pl-2 my-auto flex-item-noshrink">
+                        <span className="flex pl-2 my-auto shrink-0">
                             <EncryptionStatusIcon loading={loading} {...icon} shouldHaveHref={shouldHaveHref} />
                         </span>
                     )}
@@ -220,7 +220,7 @@ const AddressesRecipientItem = ({
                 <Tooltip title={c('Action').t`Remove`}>
                     <button
                         type="button"
-                        className="composer-addresses-item-remove flex flex-item-noshrink p-2 relative interactive-pseudo-inset"
+                        className="composer-addresses-item-remove flex shrink-0 p-2 relative interactive-pseudo-inset"
                         onClick={handleRemove}
                         data-testid={`remove-address-button-${recipient.Address}`}
                     >

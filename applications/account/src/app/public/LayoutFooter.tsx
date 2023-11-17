@@ -21,7 +21,7 @@ const LayoutFooter = ({ className, app, version }: FooterProps) => {
                     c('Footer').t`${BRAND_NAME}. Privacy by default.`
                 }
             </div>
-            <div className="text-center m-0 pt-4 pb-0 sm:pb-4 flex-item-noshrink">
+            <div className="text-center m-0 pt-4 pb-0 sm:pb-4 shrink-0">
                 <span className="block sm:inline">
                     <Href key="terms" className="signup-link link-focus" href={getLocaleTermsURL()}>{c('Link')
                         .t`Terms`}</Href>

@@ -10,7 +10,7 @@ interface Props extends AppLinkProps {
 export const SidebarListItemHeaderLinkButton = ({ alt, icon, ...rest }: Props, ref: Ref<HTMLAnchorElement>) => {
     return (
         <AppLink
-            className="flex navigation-link-header-group-control flex-item-noshrink"
+            className="flex navigation-link-header-group-control shrink-0"
             type="button"
             ref={ref}
             {...rest}

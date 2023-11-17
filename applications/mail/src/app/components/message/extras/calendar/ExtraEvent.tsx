@@ -324,7 +324,7 @@ const ExtraEvent = ({
                 icon="exclamation-circle"
                 action={
                     canTryAgain && (
-                        <span className="flex-item-noshrink flex">
+                        <span className="shrink-0 flex">
                             <InlineLinkButton onClick={handleReloadWidget}>{c('Action').t`Try again`}</InlineLinkButton>
                         </span>
                     )

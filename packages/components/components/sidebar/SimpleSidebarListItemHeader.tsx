@@ -75,7 +75,7 @@ const SimpleSidebarListItemHeader = ({
                     data-testid={testId}
                 >
                     {hasCaret && (
-                        <span className="flex-item-noshrink">
+                        <span className="shrink-0">
                             <Icon
                                 name="chevron-down-filled"
                                 className={clsx(['navigation-icon--expand', !toggle && 'rotateZ-270'])}

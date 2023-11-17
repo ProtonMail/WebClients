@@ -140,7 +140,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         color="norm"
                         shape="solid"
                         value={emailAddress}
-                        className="smtp-token-copy relative flex-item-noshrink ml-2"
+                        className="smtp-token-copy relative shrink-0 ml-2"
                         onCopy={handleCopyEmail}
                     />
                 </div>
@@ -156,7 +156,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         color="norm"
                         shape="solid"
                         value={token}
-                        className="smtp-token-copy relative flex-item-noshrink ml-2"
+                        className="smtp-token-copy relative shrink-0 ml-2"
                         onCopy={handleCopyToken}
                     />
                 </div>
@@ -174,7 +174,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         color="norm"
                         shape="solid"
                         value={SMTP_SERVER}
-                        className="smtp-token-copy relative flex-item-noshrink ml-2"
+                        className="smtp-token-copy relative shrink-0 ml-2"
                         onCopy={handleCopyServer}
                     />
                 </div>
@@ -190,7 +190,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         color="norm"
                         shape="solid"
                         value={SMTP_PORT}
-                        className="smtp-token-copy relative flex-item-noshrink ml-2"
+                        className="smtp-token-copy relative shrink-0 ml-2"
                         onCopy={handleCopyPort}
                     />
                 </div>

@@ -103,7 +103,7 @@ const PrivacyDropdown = ({ message }: Props) => {
 
     const imageTrackerRow = (
         <span className="flex flex-nowrap items-center text-left px-2 py-2" data-testid="privacy:image-row">
-            <span className="flex mr-2 flex-item-noshrink color-success">
+            <span className="flex mr-2 shrink-0 color-success">
                 <Icon name={'checkmark-circle-filled'} className="my-auto" />
             </span>
             <span className="flex-1">{imageTrackerText}</span>
@@ -117,7 +117,7 @@ const PrivacyDropdown = ({ message }: Props) => {
 
     const utmTrackerRow = (
         <span className="flex flex-nowrap items-center text-left px-2 py-2" data-testid="privacy:utm-row">
-            <span className="flex mr-2 flex-item-noshrink color-success">
+            <span className="flex mr-2 shrink-0 color-success">
                 <Icon name={'checkmark-circle-filled'} />
             </span>
             <span className="flex-1">{utmTrackerText}</span>
