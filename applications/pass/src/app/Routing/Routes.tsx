@@ -4,8 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 import { ErrorBoundary, StandardErrorPage } from '@proton/components';
 
 import { useClient } from '../Context/ClientProvider';
-import { Lobby } from './Lobby';
-import { Main } from './Main';
+import { Lobby } from '../Views/Lobby';
+import { Main } from '../Views/Main';
 
 export const Routes: FC = () => {
     const client = useClient();
