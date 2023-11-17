@@ -278,7 +278,7 @@ const CalendarSearchView = ({
             </div>
 
             {hasResults ? (
-                <div className="w-full flex-item-fluid overflow-auto reset4print">
+                <div className="w-full flex-1 overflow-auto reset4print">
                     {maybeWithEmptyToday.reduce((acc: React.JSX.Element[], dailyEvents, index) => {
                         const isEmptyDay = !dailyEvents.length;
                         const utcStartDate = isEmptyDay ? startOfDay(new Date()) : dailyEvents[0]?.fakeUTCStartDate;
@@ -311,7 +311,7 @@ const CalendarSearchView = ({
                             <div className="flex-item-noshrink">
                                 <Icon name="magnifier" className="mr-2" />
                             </div>
-                            <div className="flex-item-fluid pl-1">
+                            <div className="flex-1 pl-1">
                                 {
                                     // translator: This is a warning displayed to the user when he gets no result on current search but has some in hidden calendars
                                     c('Info')

@@ -40,7 +40,7 @@ const MailRecipients = ({
         <div
             id="message-recipients"
             className={clsx([
-                'flex flex-nowrap flex-item-fluid message-recipient',
+                'flex flex-nowrap flex-1 message-recipient',
                 expanded && 'message-recipient-expanded',
             ])}
         >

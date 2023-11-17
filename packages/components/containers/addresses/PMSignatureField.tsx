@@ -47,9 +47,9 @@ const PMSignature = ({ id, mailSettings = {}, userSettings = {} }: Props) => {
     };
 
     return (
-        <div className="flex flex-item-fluid">
+        <div className="flex flex-1">
             <div
-                className="border-container flex-item-fluid pr-4 py-2 mb-4"
+                className="border-container flex-1 pr-4 py-2 mb-4"
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
                     __html: getProtonMailSignature({

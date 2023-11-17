@@ -126,7 +126,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                     <div
                         data-testid="CustomizeModal:FolderRow:protonName"
                         className={clsx([
-                            'flex flex-nowrap flex-item-fluid items-center',
+                            'flex flex-nowrap flex-1 items-center',
                             hasError && 'color-danger',
                             errors.includes(MailImportPayloadError.MERGE_WARNING) && 'color-warning',
                         ])}
@@ -161,7 +161,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                                                     title: folderProtonName,
                                                 },
                                             ]}
-                                            className="max-w-full flex-item-fluid"
+                                            className="max-w-full flex-1"
                                         />
 
                                         <ManageFoldersRowLabelErrors checked={checked} errors={errors} />
@@ -175,7 +175,7 @@ const ManageFoldersRow = ({ index, folderItem, onRename, onToggleCheck, onErrorS
                                         ])}
                                         title={folderProtonName}
                                     >
-                                        <div className="flex-item-fluid text-ellipsis" title={folderProtonName}>
+                                        <div className="flex-1 text-ellipsis" title={folderProtonName}>
                                             {folderProtonName}
                                         </div>
 

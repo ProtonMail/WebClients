@@ -101,7 +101,7 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
                                     ? Math.round(100 * (acceptInvite.progress / invite.vault.itemCount))
                                     : 0
                             }
-                            className="flex-item-fluid progress-bar--norm"
+                            className="flex-1 progress-bar--norm"
                         />
 
                         <small className="block">

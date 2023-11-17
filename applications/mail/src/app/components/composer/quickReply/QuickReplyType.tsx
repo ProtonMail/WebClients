@@ -91,7 +91,7 @@ const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }:
             </SimpleDropdown>
 
             <div
-                className="flex-item-fluid text-ellipsis"
+                className="flex-1 text-ellipsis"
                 aria-level={2}
                 role="heading"
                 title={replyToString}

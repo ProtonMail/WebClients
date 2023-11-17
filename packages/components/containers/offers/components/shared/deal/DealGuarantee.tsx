@@ -12,7 +12,7 @@ const DealGuarantee = () => {
                 <span className="flex-item-noshrink flex mr-1">
                     <Icon name="shield" />
                 </span>
-                <span className="flex-item-fluid">{c('bf2023: Offers').t`30-day money-back guarantee`}</span>
+                <span className="flex-1">{c('bf2023: Offers').t`30-day money-back guarantee`}</span>
             </p>
         );
     }

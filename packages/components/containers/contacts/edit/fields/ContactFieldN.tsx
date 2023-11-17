@@ -46,7 +46,7 @@ const ContactFieldN = (
 
     return (
         <div className="flex flex-column md:flex-row gap-2">
-            <div className="md:flex-item-fluid">
+            <div className="md:flex-1">
                 <ContactFieldString
                     ref={firstNameFieldRef}
                     placeholder={c('Placeholder').t`First name`}
@@ -58,7 +58,7 @@ const ContactFieldN = (
                 />
                 {givenNameTooLong ? <ErrorZone>{c('Error').t`First name is too long`}</ErrorZone> : null}
             </div>
-            <div className="md:flex-item-fluid">
+            <div className="md:flex-1">
                 <ContactFieldString
                     placeholder={c('Placeholder').t`Last name`}
                     data-testid="Last name"

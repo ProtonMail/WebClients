@@ -39,7 +39,7 @@ const ContactViewBdy = ({ vCardContact, isSignatureVerified = false }: Props) =>
                         type={bday.params?.type}
                         isSignatureVerified={isSignatureVerified}
                     >
-                        <span className="mr-2 flex-item-fluid text-ellipsis">{formattedBday}</span>
+                        <span className="mr-2 flex-1 text-ellipsis">{formattedBday}</span>
                     </ContactViewProperty>
                 );
             })}

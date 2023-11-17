@@ -184,7 +184,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                                 isAuthLogAdvanced &&
                                     isProtonSentinelEnabled && {
                                         label: 'ISP',
-                                        content: <span className="flex-item-fluid">{InternetProvider || '-'}</span>,
+                                        content: <span className="flex-1">{InternetProvider || '-'}</span>,
                                     },
                                 isProtonSentinelEnabled && {
                                     label: c('Header').t`Device`,

@@ -133,7 +133,7 @@ const PartDayEvent = ({
             return (
                 <div className="flex flex-nowrap items-center">
                     <Icon name="lock-filled" className="calendar-eventcell-lock-icon" />
-                    <span className="flex-item-fluid text-ellipsis">&nbsp;</span>
+                    <span className="flex-1 text-ellipsis">&nbsp;</span>
                 </div>
             );
         }

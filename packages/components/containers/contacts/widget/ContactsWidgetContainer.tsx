@@ -295,7 +295,7 @@ const ContactsWidgetContainer = ({
             {showList && countMergeableContacts ? (
                 <MergeContactBanner onMerge={() => handleMerge(true)} countMergeableContacts={countMergeableContacts} />
             ) : null}
-            <div className="flex-item-fluid w-full">
+            <div className="flex-1 w-full">
                 {loading ? (
                     <div className="flex h-full">
                         <CircleLoader className="m-auto color-primary" size="large" />

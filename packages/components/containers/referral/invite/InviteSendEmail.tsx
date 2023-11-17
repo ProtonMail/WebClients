@@ -109,7 +109,7 @@ const InviteSendEmail = () => {
         <div>
             <h2 className="h3 text-bold" id="id_desc_invite_email">{c('Label').t`Invite via email`}</h2>
             <div className="flex gap-2 flex-nowrap items-end flex-column md:flex-row rounded">
-                <div className="md:flex-item-fluid w-full md:w-auto">
+                <div className="md:flex-1 w-full md:w-auto">
                     <div
                         className="addresses-wrapper field h-auto flex gap-2 px-2"
                         onClick={() => {
@@ -127,7 +127,7 @@ const InviteSendEmail = () => {
                                 }}
                             />
                         ))}
-                        <div className="flex-item-fluid flex referral-program-invite-input">
+                        <div className="flex-1 flex referral-program-invite-input">
                             <AddressesAutocomplete
                                 id="recipientsAutocomplete"
                                 className="border-none p-1"

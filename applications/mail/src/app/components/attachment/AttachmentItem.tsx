@@ -118,7 +118,7 @@ const AttachmentItem = ({
                     loading && 'message-attachmentList-item--loading',
                 ])}
             >
-                <span className="relative flex flex-item-fluid rounded message-attachmentPrimaryAction interactive-pseudo">
+                <span className="relative flex flex-1 rounded message-attachmentPrimaryAction interactive-pseudo">
                     <button
                         className="pl-2 py-2 flex flex-item-noshrink message-attachmentTypeIcon"
                         type="button"
@@ -133,7 +133,7 @@ const AttachmentItem = ({
                         )}
                     </button>
                     <button
-                        className="flex-item-fluid flex flex-nowrap outline-none--at-all"
+                        className="flex-1 flex flex-nowrap outline-none--at-all"
                         title={primaryActionTitle}
                         type="button"
                         onClick={handleAction(true)}

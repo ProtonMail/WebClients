@@ -59,7 +59,7 @@ const AddressesEditor = ({
                 </Label>
                 <div
                     className={clsx([
-                        'flex flex-nowrap field items-center flex-nowrap md:flex-item-fluid w-full composer-to-editor composer-light-field',
+                        'flex flex-nowrap field items-center flex-nowrap md:flex-1 w-full composer-to-editor composer-light-field',
                         expanded ? 'composer-editor-expanded' : 'composer-editor-collapsed',
                     ])}
                     ref={toListAnchorRef}
@@ -73,7 +73,7 @@ const AddressesEditor = ({
                         placeholder={c('Placeholder').t`Email address`}
                         expanded={expanded}
                         dataTestId="composer:to"
-                        classname="composer-editor-to flex-item-fluid"
+                        classname="composer-editor-to flex-1"
                         anchorRef={toListAnchorRef}
                     />
                     <span className="flex-no-min-children flex-nowrap flex-item-noshrink max-w-1/2 sm:max-w-1/3 md:max-w-none self-start pt-2 composer-to-ccbcc-buttons sticky-top">
@@ -135,7 +135,7 @@ const AddressesEditor = ({
                                 inputFocusRef={inputFocusRefs.cc}
                                 addContactButton={c('Title').t`CC`}
                                 addContactAction={handleContactModal('CCList')}
-                                classname="composer-editor-cc md:flex-item-fluid"
+                                classname="composer-editor-cc md:flex-1"
                                 hasLighterFieldDesign
                                 anchorRef={ccListAnchorRef}
                             />
@@ -164,7 +164,7 @@ const AddressesEditor = ({
                                 addContactButton={c('Title').t`BCC`}
                                 inputFocusRef={inputFocusRefs.bcc}
                                 addContactAction={handleContactModal('BCCList')}
-                                classname="composer-editor-bcc md:flex-item-fluid"
+                                classname="composer-editor-bcc md:flex-1"
                                 hasLighterFieldDesign
                                 anchorRef={bccListAnchorRef}
                             />

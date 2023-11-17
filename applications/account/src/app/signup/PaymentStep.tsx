@@ -194,7 +194,7 @@ const PaymentStep = ({
                                 <span className="flex-item-noshrink mr-2">
                                     <Icon name="clock" className="align-top" />
                                 </span>
-                                <span className="flex-item-fluid">{c('Info').t`30-day money-back guarantee.`}</span>
+                                <span className="flex-1">{c('Info').t`30-day money-back guarantee.`}</span>
                             </div>
                         )}
                     </div>
@@ -242,7 +242,7 @@ const PaymentStep = ({
                                     <span className="flex-item-noshrink mr-2">
                                         <Icon name="shield" />
                                     </span>
-                                    <span className="flex-item-fluid">{c('Info')
+                                    <span className="flex-1">{c('Info')
                                         .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
                                 </div>
                             </>

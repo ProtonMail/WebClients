@@ -23,7 +23,7 @@ const UpgradeBanner = ({ className }: { className?: string }) => {
 
     return (
         <Card className={clsx('flex items-center gap-2', className)} rounded>
-            <span className="flex-item-fluid">
+            <span className="flex-1">
                 {
                     // translator: Variable here is a plan name
                     c('Upgrade').t`Upgrade to ${passPlusPlanName} to get unlimited hide-my-email aliases`

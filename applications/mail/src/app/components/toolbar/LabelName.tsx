@@ -9,7 +9,7 @@ const LabelName = ({ selectedIDs = [], labelName }: Props) => {
     return (
         <>
             {selectedIDs.length === 0 && (
-                <div className="flex-item-fluid">
+                <div className="flex-1">
                     <h2 title={labelName} className="text-lg text-bold text-ellipsis">
                         {labelName}
                     </h2>

@@ -38,7 +38,7 @@ export const PreSelect = () => {
 
     return (
         <>
-            <div className="flex flex-item-fluid items-center justify-center border p-7">
+            <div className="flex flex-1 items-center justify-center border p-7">
                 <CountrySelect
                     options={options}
                     preSelectedOption={options[0]}

@@ -114,13 +114,13 @@ const ItemColumnLayout = ({
 
     return (
         <div
-            className="flex-item-fluid flex flex-nowrap flex-column justify-center item-titlesender pr-1"
+            className="flex-1 flex flex-nowrap flex-column justify-center item-titlesender pr-1"
             data-testid="message-list:message"
         >
             <div className="flex items-center flex-nowrap">
-                <div className="flex-item-fluid">
+                <div className="flex-1">
                     <div className="flex items-center item-firstline">
-                        <div className="item-senders flex-item-fluid flex items-center flex-nowrap pr-4">
+                        <div className="item-senders flex-1 flex items-center flex-nowrap pr-4">
                             <ItemUnread
                                 element={element}
                                 labelID={labelID}
@@ -154,7 +154,7 @@ const ItemColumnLayout = ({
                     </div>
 
                     <div className="flex flex-nowrap items-center item-secondline max-w-full">
-                        <div className="item-subject flex-item-fluid flex flex-nowrap items-center">
+                        <div className="item-subject flex-1 flex flex-nowrap items-center">
                             {showIcon && (
                                 <span className="flex flex-item-noshrink">
                                     <ItemLocation element={element} labelID={labelID} />
@@ -254,7 +254,7 @@ const ItemColumnLayout = ({
                         ])}
                         aria-hidden="true"
                     >
-                        <div className="item-subject flex-item-fluid flex flex-nowrap items-center">
+                        <div className="item-subject flex-1 flex flex-nowrap items-center">
                             <span className="inline-block max-w-full text-ellipsis" title={bodyTitle}>
                                 {resultJSX}
                             </span>

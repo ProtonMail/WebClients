@@ -75,7 +75,7 @@ const ComposerMoreActions = ({
                 data-testid="composer:expiration-button"
             >
                 <Icon name="hourglass" />
-                <span className="ml-2 my-auto flex-item-fluid">
+                <span className="ml-2 my-auto flex-1">
                     {isExpiration ? c('Action').t`Set expiration time` : c('Action').t`Expiration time`}
                 </span>
             </DropdownMenuButton>
@@ -89,7 +89,7 @@ const ComposerMoreActions = ({
                     data-testid="composer:remove-expiration-button"
                 >
                     <Icon name="trash" />
-                    <span className="ml-2 my-auto flex-item-fluid">{c('Action').t`Remove expiration time`}</span>
+                    <span className="ml-2 my-auto flex-1">{c('Action').t`Remove expiration time`}</span>
                 </DropdownMenuButton>
             )}
         </ComposerMoreOptionsDropdown>

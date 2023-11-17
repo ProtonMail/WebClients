@@ -118,7 +118,7 @@ const AccessibilitySection = () => {
                                     >
                                         Aa
                                     </span>
-                                    <span className="flex-item-fluid">{label}</span>
+                                    <span className="flex-1">{label}</span>
                                 </Option>
                             );
                         })}

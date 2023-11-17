@@ -170,7 +170,7 @@ export const AliasEdit: VFC<ItemEditViewProps<'alias'>> = ({ vault, revision, on
                                     {!loading ? (
                                         <span className="mt-1 text-xs color-weak flex items-center gap-1">
                                             <Icon name="exclamation-circle" size={16} />
-                                            <span className="text-pre-wrap flex-item-fluid">{c('Info')
+                                            <span className="text-pre-wrap flex-1">{c('Info')
                                                 .t`You cannot change the mailboxes for this alias.`}</span>
                                         </span>
                                     ) : undefined}

@@ -772,7 +772,7 @@ const SubscriptionContainer = ({
             )}
             {model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && (
                 <div className="subscriptionCheckout-top-container">
-                    <div className="flex-item-fluid w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
+                    <div className="flex-1 w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
                         <div className="max-w-custom" style={{ '--max-w-custom': '50em' }}>
                             <PlanCustomization
                                 loading={loadingCheck}
@@ -824,7 +824,7 @@ const SubscriptionContainer = ({
             {model.step === SUBSCRIPTION_STEPS.CHECKOUT && (
                 <>
                     <div className="subscriptionCheckout-top-container">
-                        <div className="flex-item-fluid w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
+                        <div className="flex-1 w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
                             <div
                                 className="mx-auto max-w-custom subscriptionCheckout-options"
                                 style={{ '--max-w-custom': '37em' }}
@@ -1001,7 +1001,7 @@ const SubscriptionContainer = ({
             )}
             {model.step === SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION && (
                 <div className="subscriptionCheckout-top-container">
-                    <div className="flex-item-fluid w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
+                    <div className="flex-1 w-full md:w-auto pr-4 md:pr-0 lg:pr-6 pt-6">
                         <h2 className="text-2xl text-bold mb-6">{c('Label').t`Organization size`}</h2>
                         <PlanCustomization
                             loading={blockAccountSizeSelector}

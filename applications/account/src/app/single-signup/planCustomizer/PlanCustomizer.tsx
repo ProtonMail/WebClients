@@ -70,7 +70,7 @@ const AddonField = ({ id, label, tooltip, className, children, ...rest }: AddonF
         >
             <label
                 htmlFor={id}
-                className="min-w-custom flex-item-fluid plan-customiser-addon-label text-bold pr-2 w-full md:w-auto mb-1"
+                className="min-w-custom flex-1 plan-customiser-addon-label text-bold pr-2 w-full md:w-auto mb-1"
                 style={{ '--min-w-custom': '14em' }}
             >
                 {label}

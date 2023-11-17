@@ -30,7 +30,7 @@ const ThemeSyncModeDropdown = ({ mode, className, themeIdentifier, list, onChang
                     className="rounded-sm"
                 />
             </span>
-            <span className="flex-item-fluid">{PROTON_THEMES_MAP[themeIdentifier].label}</span>
+            <span className="flex-1">{PROTON_THEMES_MAP[themeIdentifier].label}</span>
         </>
     );
 

@@ -22,7 +22,7 @@ const ExtraAutoReply = ({ message }: Props) => {
             data-testid="auto-reply-banner"
         >
             <Icon name="robot" className="flex-item-noshrink ml-1 mt-1" />
-            <span className="px-2 mt-1 pb-1 flex-item-fluid">
+            <span className="px-2 mt-1 pb-1 flex-1">
                 {c('Info').t`This message is automatically generated as a response to a previous message.`}{' '}
                 <Href href={getKnowledgeBaseUrl('/auto-reply')}>{c('Info').t`Learn more`}</Href>
             </span>

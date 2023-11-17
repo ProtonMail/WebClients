@@ -366,7 +366,7 @@ const TimeGrid = ({
                             </div>
                         )}
                     </div>
-                    <div className="flex-item-fluid relative">
+                    <div className="flex-1 relative">
                         <div
                             className="calendar-time-fullday h-custom"
                             style={{ '--h-custom': `${(actualRows * dayEventHeight) / 16}rem` }}
@@ -393,7 +393,7 @@ const TimeGrid = ({
                 </div>
             </div>
             <div
-                className={clsx(['flex-item-fluid scroll-if-needed h-full calendar-time-grid', displayViewClass])}
+                className={clsx(['flex-1 scroll-if-needed h-full calendar-time-grid', displayViewClass])}
                 ref={scrollRef}
                 {...rest}
             >
@@ -408,7 +408,7 @@ const TimeGrid = ({
                             />
                         ) : null}
                         <HourTexts className="calendar-aside calendar-primary-timezone-cell" hours={formattedHours} />
-                        <div className="flex flex-item-fluid relative calendar-grid-gridcells" ref={timeGridRef}>
+                        <div className="flex flex-1 relative calendar-grid-gridcells" ref={timeGridRef}>
                             <HourLines hours={hours} />
                             {days.map((day, dayIndex) => {
                                 const key = getKey(day);
@@ -419,7 +419,7 @@ const TimeGrid = ({
                                 return (
                                     <div
                                         data-testid="calendar-week-day-view:weekday-column"
-                                        className="flex-item-fluid relative calendar-grid-gridcell h-full"
+                                        className="flex-1 relative calendar-grid-gridcell h-full"
                                         key={key}
                                     >
                                         <DayEvents

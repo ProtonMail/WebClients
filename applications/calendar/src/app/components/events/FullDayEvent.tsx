@@ -79,7 +79,7 @@ const FullDayEvent = ({
     })();
 
     const content = (
-        <div className="flex flex-nowrap flex-item-fluid items-center">
+        <div className="flex flex-nowrap flex-1 items-center">
             {!isAllDay ? (
                 <Icon className="mr-2 flex-item-noshrink calendar-dayeventcell-circle" size={16} name="circle-filled" />
             ) : null}
@@ -88,7 +88,7 @@ const FullDayEvent = ({
 
             {eventReadError ? <Icon name="lock-filled" className="calendar-dayeventcell-lock-icon" /> : null}
 
-            <span data-testid="calendar-view:all-day-event" className="flex-item-fluid text-ellipsis">
+            <span data-testid="calendar-view:all-day-event" className="flex-1 text-ellipsis">
                 {startTimeString && <span className="calendar-dayeventcell-time">{startTimeString}</span>}
                 <span className="calendar-dayeventcell-title">{titleString}</span>
             </span>

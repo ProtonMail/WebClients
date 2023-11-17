@@ -72,14 +72,14 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
         <IconRow id={DATE_INPUT_ID} icon="clock" title={c('Label').t`Date and time`}>
             <div className={clsx([isAllDay && 'w-full md:w-1/2'])}>
                 <div className="flex flex-nowrap flex-column md:flex-row mb-2">
-                    <div className="flex flex-nowrap md:flex-item-fluid flex-item-grow">
+                    <div className="flex flex-nowrap md:flex-1 flex-item-grow">
                         <div
-                            className="flex-no-min-children flex-item-fluid flex-item-grow-custom"
+                            className="flex-no-min-children flex-1 flex-item-grow-custom"
                             style={{ '--grow-custom': '1.25' }}
                         >
                             <DateInput
                                 id={DATE_INPUT_ID}
-                                className="flex-item-fluid h-full"
+                                className="flex-1 h-full"
                                 required
                                 value={start.date}
                                 onChange={handleChangeStartDate}
@@ -92,7 +92,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         </div>
 
                         {!isAllDay && (
-                            <div className="ml-2 flex-item-fluid">
+                            <div className="ml-2 flex-1">
                                 <TimeInput
                                     id="event-startTime"
                                     value={start.time}
@@ -105,7 +105,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
 
                     {!isAllDay && showTzSelector && (
                         <TimeZoneSelector
-                            className="field ml-0 md:ml-2 mt-2 md:mt-0 mb-2 md:mb-2 md:flex-item-fluid"
+                            className="field ml-0 md:ml-2 mt-2 md:mt-0 mb-2 md:mb-2 md:flex-1"
                             id="event-start-timezone-select"
                             data-testid="create-event-modal/start:time-zone-dropdown"
                             timezone={start.tzid}
@@ -118,14 +118,14 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                 </div>
 
                 <div className="flex flex-nowrap flex-column md:flex-row mb-2">
-                    <div className="flex flex-nowrap md:flex-item-fluid flex-item-grow">
+                    <div className="flex flex-nowrap md:flex-1 flex-item-grow">
                         <div
-                            className="flex-no-min-children flex-item-fluid flex-item-grow-custom"
+                            className="flex-no-min-children flex-1 flex-item-grow-custom"
                             style={{ '--grow-custom': '1.25' }}
                         >
                             <DateInput
                                 id="event-endDate"
-                                className="flex-item-fluid h-full"
+                                className="flex-1 h-full"
                                 required
                                 value={end.date}
                                 onChange={handleChangeEndDate}
@@ -139,7 +139,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         </div>
 
                         {!isAllDay && (
-                            <div className="ml-2 flex-item-fluid">
+                            <div className="ml-2 flex-1">
                                 <TimeInput
                                     id="event-endTime"
                                     value={end.time}
@@ -155,7 +155,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
 
                     {!isAllDay && showTzSelector && (
                         <TimeZoneSelector
-                            className="field ml-0 md:ml-2 mt-2 md:mt-0 mb-2 md:mb-2 md:flex-item-fluid"
+                            className="field ml-0 md:ml-2 mt-2 md:mt-0 mb-2 md:mb-2 md:flex-1"
                             id="event-end-timezone-select"
                             data-testid="create-event-modal/end:time-zone-dropdown"
                             timezone={end.tzid}

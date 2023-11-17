@@ -80,7 +80,7 @@ export const GatewayCountrySelection = ({
                     key={'country-' + country}
                     className="flex-no-min-children md:flex-nowrap items-center mb-4"
                 >
-                    <Label htmlFor={'country-number-' + country} className="flex-item-fluid">
+                    <Label htmlFor={'country-number-' + country} className="flex-1">
                         {getCountryFlagAndName(language, country, undefined, {
                             key: country + '-country-label-image',
                         })}

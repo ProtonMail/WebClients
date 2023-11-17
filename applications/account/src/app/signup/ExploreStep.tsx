@@ -65,7 +65,7 @@ const ExploreStep = ({ onExplore }: Props) => {
                                             className="flex-item-noshrink mr-2"
                                             aria-hidden="true"
                                         />{' '}
-                                        <span className="flex-item-fluid">{name}</span>
+                                        <span className="flex-1">{name}</span>
                                         {!showLoader && (
                                             <span className="flex-item-noshrink" aria-hidden="true">
                                                 <Icon name="arrow-right" />

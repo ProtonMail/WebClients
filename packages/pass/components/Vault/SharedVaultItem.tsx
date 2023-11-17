@@ -29,7 +29,7 @@ export const SharedVaultItem: VFC<SharedVaultItemProps> = ({
     return (
         <div className={clsx(['flex items-center gap-3', className])}>
             <VaultIcon color={color} icon={icon} size={20} background />
-            <div className="flex-item-fluid">
+            <div className="flex-1">
                 <div className="text-xl text-bold text-ellipsis">{name}</div>
                 {count !== null && (
                     <span className="color-weak">

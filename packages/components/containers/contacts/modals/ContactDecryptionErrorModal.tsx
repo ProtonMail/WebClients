@@ -71,7 +71,7 @@ const ContactDecryptionErrorModal = ({ contactID, onClearDataConfirm, ...rest }:
                 {errorKey && (
                     <div className="flex items-center mb-4">
                         <span className="mr-4">{c('Info').t`Key fingerprint`}</span>
-                        <span className="flex-item-fluid text-ellipsis mr-4">{errorKey.Fingerprint}</span>
+                        <span className="flex-1 text-ellipsis mr-4">{errorKey.Fingerprint}</span>
                         <Copy
                             value={errorKey.Fingerprint}
                             onCopy={() => {

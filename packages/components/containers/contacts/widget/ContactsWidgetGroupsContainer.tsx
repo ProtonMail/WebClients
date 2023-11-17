@@ -209,7 +209,7 @@ const ContactsWidgetGroupsContainer = ({
                     isDrawer={isDrawer}
                 />
             </div>
-            <div className="flex-item-fluid w-full">
+            <div className="flex-1 w-full">
                 {loading ? (
                     <div className="flex h-full">
                         <CircleLoader className="m-auto color-primary" size="large" />

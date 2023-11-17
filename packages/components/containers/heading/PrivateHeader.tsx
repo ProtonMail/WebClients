@@ -50,7 +50,7 @@ const PrivateHeader = ({
         <Header className={clsx(isProminent && 'ui-prominent')}>
             {!hideMenuButton && <Hamburger expanded={expanded} onToggle={onToggleExpand} />}
             {/* Handle actionArea in components itself rather than here */}
-            <div className="flex-item-fluid">{actionArea}</div>
+            <div className="flex-1">{actionArea}</div>
 
             <TopNavbar>
                 <TopNavbarList>

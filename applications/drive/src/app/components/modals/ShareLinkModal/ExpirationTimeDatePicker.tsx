@@ -78,7 +78,7 @@ const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled
         <>
             <DateInput
                 id="epirationDateInputId"
-                className="flex-item-fluid flex-item-grow-2"
+                className="flex-1 flex-item-grow-2"
                 disabled={disabled}
                 value={expDate}
                 onChange={handleChangeDate}
@@ -93,7 +93,7 @@ const ExpirationTimeDatePicker = ({ expiration, handleExpirationChange, disabled
             {allowTime && expTime && (
                 <TimeInput
                     id="epirationTimeInputId"
-                    className="ml-2 flex-item-fluid"
+                    className="ml-2 flex-1"
                     disabled={disabled}
                     value={expTime}
                     onChange={handleChangeTime}

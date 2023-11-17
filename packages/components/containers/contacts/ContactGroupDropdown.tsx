@@ -282,7 +282,7 @@ const ContactGroupDropdown = ({
                                             />
                                             <label
                                                 htmlFor={checkboxId}
-                                                className="flex items-center flex-item-fluid flex-nowrap"
+                                                className="flex items-center flex-1 flex-nowrap"
                                                 data-testid={`contact-group-dropdown:item-${Name}`}
                                             >
                                                 <Icon
@@ -291,7 +291,7 @@ const ContactGroupDropdown = ({
                                                     size={16}
                                                     color={Color}
                                                 />
-                                                <span className="flex-item-fluid text-ellipsis" title={Name}>
+                                                <span className="flex-1 text-ellipsis" title={Name}>
                                                     <Mark value={keyword}>{Name}</Mark>
                                                 </span>
                                             </label>

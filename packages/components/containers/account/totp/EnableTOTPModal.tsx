@@ -190,7 +190,7 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                                 <div className="sm:w-4/5 flex items-center text-bold">
                                     {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
                                     <code
-                                        className="text-ellipsis flex-item-fluid py-2"
+                                        className="text-ellipsis flex-1 py-2"
                                         data-testid="totp:secret-key"
                                         aria-label={labelCode}
                                         aria-describedby="label-key-desc"

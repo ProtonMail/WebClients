@@ -37,7 +37,7 @@ const ThemesModal = (props: ModalProps) => {
                 {settings.Mode === ThemeModeSetting.Auto ? (
                     <div className="flex flex-nowrap gap-4 flex-column md:flex-row">
                         <ThemeSyncModeCard
-                            className="md:flex-item-fluid"
+                            className="md:flex-1"
                             mode="light"
                             size="small"
                             list={themes}
@@ -48,7 +48,7 @@ const ThemesModal = (props: ModalProps) => {
                             active={information.colorScheme === ColorScheme.Light}
                         />
                         <ThemeSyncModeCard
-                            className="md:flex-item-fluid"
+                            className="md:flex-1"
                             mode="dark"
                             size="small"
                             list={themes}

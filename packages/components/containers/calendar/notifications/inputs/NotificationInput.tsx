@@ -76,7 +76,7 @@ const NotificationInput = ({
     return (
         <div
             className={clsx(
-                'flex flex-column flex-nowrap flex-item-fluid',
+                'flex flex-column flex-nowrap flex-1',
                 className,
                 fullWidth ? 'md:flex-row' : 'lg:flex-row'
             )}
@@ -110,7 +110,7 @@ const NotificationInput = ({
                     </SelectTwo>
                 </span>
             )}
-            <span className={clsx('flex flex-nowrap', fullWidth ? 'md:flex-item-fluid' : 'lg:flex-item-fluid')}>
+            <span className={clsx('flex flex-nowrap', fullWidth ? 'md:flex-1' : 'lg:flex-1')}>
                 {hasValueInput && (
                     <span className="flex-item-noshrink mr-2 w-custom" style={{ '--w-custom': '5em' }}>
                         <IntegerInput
@@ -139,7 +139,7 @@ const NotificationInput = ({
                 )}
                 <SelectTwo
                     data-testid="notification-time-dropdown"
-                    className="flex-item-fluid"
+                    className="flex-1"
                     size={{ width: DropdownSizeUnit.Dynamic }}
                     value={optionsValue}
                     disabled={disabled}
@@ -167,7 +167,7 @@ const NotificationInput = ({
                     {isAllDay && at && (
                         <span
                             className={clsx(
-                                'flex flex-nowrap sm:flex-item-fluid items-center mt-2',
+                                'flex flex-nowrap sm:flex-1 items-center mt-2',
                                 fullWidth ? 'md:mt-0' : 'lg:mt-0'
                             )}
                         >

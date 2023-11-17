@@ -78,7 +78,7 @@ const PromotionBanner = ({
                     <>
                         {icon && <div className="flex-item-noshrink mr-2">{icon}</div>}
                         {description && (
-                            <div className={clsx('bg-promotion-text', !contentCentered && 'flex-item-fluid')}>
+                            <div className={clsx('bg-promotion-text', !contentCentered && 'flex-1')}>
                                 {description}
                             </div>
                         )}

@@ -80,7 +80,7 @@ const QuickReplyContainer = ({
                     <Icon className="mr-2 flex-item-noshrink" name="arrow-up-and-left-big" aria-hidden="true" />
                     <button
                         type="button"
-                        className="flex-item-fluid text-ellipsis text-left increase-click-surface"
+                        className="flex-1 text-ellipsis text-left increase-click-surface"
                         onClick={handleEdit}
                         disabled={!isReferenceMessageInitialized}
                         onKeyDown={handleOpenFromKeydown}

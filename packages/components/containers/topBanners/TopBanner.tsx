@@ -27,7 +27,7 @@ const TopBanner = ({ children, className, onClose, ...rest }: Props) => {
             ])}
             {...rest}
         >
-            <div className="flex-item-fluid p-2">{children}</div>
+            <div className="flex-1 p-2">{children}</div>
             {onClose ? (
                 <Button
                     icon

@@ -218,8 +218,8 @@ const HeaderExpanded = ({
                 className="flex flex-nowrap items-center message-header-from-container"
                 onClick={handleClick}
             >
-                <span className="flex flex-item-fluid flex-nowrap mr-2">
-                    <div className={clsx(['flex flex-nowrap', !messageLoaded && 'flex-item-fluid'])}>
+                <span className="flex flex-1 flex-nowrap mr-2">
+                    <div className={clsx(['flex flex-nowrap', !messageLoaded && 'flex-1'])}>
                         {isNarrow ? (
                             <span className="message-header-recipient-mobile">{from}</span>
                         ) : (

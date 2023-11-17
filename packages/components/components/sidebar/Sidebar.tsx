@@ -145,7 +145,7 @@ const Sidebar = ({
                 <div className="mt-1 md:mt-0" aria-hidden="true" />
                 <div
                     className={clsx(
-                        growContent ? 'flex-item-fluid' : 'flex-item-nogrow',
+                        growContent ? 'flex-1' : 'flex-item-nogrow',
                         'flex-nowrap flex flex-column overflow-overlay pb-2 md:mt-2'
                     )}
                 >

@@ -5,7 +5,7 @@ interface Props {
 }
 
 const DeviceCell = ({ device }: Props) => {
-    return <span className="flex-item-fluid">{device || '-'}</span>;
+    return <span className="flex-1">{device || '-'}</span>;
 };
 
 export default DeviceCell;

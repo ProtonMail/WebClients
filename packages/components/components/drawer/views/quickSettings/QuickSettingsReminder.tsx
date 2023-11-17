@@ -21,7 +21,7 @@ const QuickSettingsReminder = ({ reminder }: Props) => {
                 )}
                 <span
                     className={clsx(
-                        'flex-item-fluid text-left text-ellipsis',
+                        'flex-1 text-left text-ellipsis',
                         reminder.color === ThemeColor.Danger && 'color-danger'
                     )}
                 >
