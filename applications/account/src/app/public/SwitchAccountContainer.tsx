@@ -192,7 +192,7 @@ const SwitchAccountContainer = ({ metaTags, toAppName, onLogin, activeSessions, 
                 <Fragment key={LocalID}>
                     <div
                         className={clsx(
-                            'account-button p-3 interactive-pseudo-inset flex flex-align-items-start w-full text-left rounded relative',
+                            'account-button p-3 interactive-pseudo-inset flex items-start w-full text-left rounded relative',
                             isLoading && 'is-loading'
                         )}
                     >

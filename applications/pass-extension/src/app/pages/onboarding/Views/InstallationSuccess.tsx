@@ -77,7 +77,7 @@ export const InstallationSuccess: VFC = () => {
                     <div className="pass-onboarding--gradient"></div>
                     <div className="flex flex-column">
                         <div className="flex flex-column">
-                            <div className="pt-2 flex flex-align-items-center gap-2 mb-4">
+                            <div className="pt-2 flex items-center gap-2 mb-4">
                                 {
                                     <img
                                         src="/assets/protonpass-icon.svg"
@@ -92,7 +92,7 @@ export const InstallationSuccess: VFC = () => {
                                 .jt`Welcome to your new password manager!`}</h1>
                         </div>
 
-                        <div className="flex flex-align-items-center gap-2 mb-4">
+                        <div className="flex items-center gap-2 mb-4">
                             <span className="text-bold">Step {isPinned ? 2 : 1} of 2</span>
                             <hr className="pass-installation--white-separator my-2 flex flex-item-fluid-auto" />
                         </div>
@@ -111,7 +111,7 @@ export const InstallationSuccess: VFC = () => {
                                         <div className="mb-1">
                                             <ol className="unstyled m-0">
                                                 {steps.map(({ key, icon, description }, idx) => (
-                                                    <li key={key} className="flex mb-5 flex-align-items-center">
+                                                    <li key={key} className="flex mb-5 items-center">
                                                         <div
                                                             className="pass-installation--dot rounded-50 text-center mr-3 relative"
                                                             aria-hidden="true"
@@ -200,7 +200,7 @@ export const InstallationSuccess: VFC = () => {
                                         </Button>
                                     </div>
 
-                                    <div className="flex justify-center flex-align-items-center">
+                                    <div className="flex justify-center items-center">
                                         <img
                                             src="assets/onboarding-connect-illustration.svg"
                                             alt=""

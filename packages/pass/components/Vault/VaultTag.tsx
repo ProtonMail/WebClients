@@ -22,7 +22,7 @@ export const VaultTag: VFC<Props> = ({ title, shared = false, icon, color, count
     return (
         <div
             className={clsx(
-                'pass-vault-tag flex flex-align-items-center text-sm gap-x-2 flex-nowrap',
+                'pass-vault-tag flex items-center text-sm gap-x-2 flex-nowrap',
                 shared && 'pass-vault-tag--shared'
             )}
             style={shared ? { '--vault-icon-color': VAULT_COLOR_MAP[color ?? VaultColor.COLOR1] } : undefined}

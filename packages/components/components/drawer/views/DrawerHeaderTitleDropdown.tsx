@@ -37,7 +37,7 @@ const DrawerHeaderTitleDropdown = ({ title, options, onClickOption }: Props) => 
                 <DropdownMenu className="flex-item-noshrink">
                     {options.map((option, index) => (
                         <DropdownMenuButton
-                            className="text-left flex flex-nowrap flex-align-items-center"
+                            className="text-left flex flex-nowrap items-center"
                             onClick={() => onClickOption?.(option)}
                             key={index}
                             data-testid={`drawer-app-header-actions:${option.text}`}

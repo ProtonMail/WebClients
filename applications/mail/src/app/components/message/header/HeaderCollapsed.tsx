@@ -66,7 +66,7 @@ const HeaderCollapsed = ({
     return (
         <div
             className={clsx([
-                'message-header message-header-collapsed px-5 flex flex-nowrap flex-align-items-center',
+                'message-header message-header-collapsed px-5 flex flex-nowrap items-center',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
                 isUnreadMessage && 'is-unread',
                 !messageLoaded && 'is-loading',
@@ -75,7 +75,7 @@ const HeaderCollapsed = ({
             onClick={handleClick}
             data-testid={`message-header-collapsed:${conversationIndex}`}
         >
-            <div className="flex flex-item-fluid flex-nowrap flex-align-items-center mr-2">
+            <div className="flex flex-item-fluid flex-nowrap items-center mr-2">
                 <RecipientItem
                     message={message}
                     recipientOrGroup={{ recipient: message.data?.Sender }}
@@ -115,7 +115,7 @@ const HeaderCollapsed = ({
                     </div>
                 )}
             </div>
-            <div className="flex flex-align-items-center flex-nowrap flex-item-noshrink">
+            <div className="flex items-center flex-nowrap flex-item-noshrink">
                 {messageLoaded ? (
                     <>
                         <span className="message-header-star mr-2 flex">

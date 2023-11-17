@@ -8,7 +8,7 @@ interface Props {
 const CreateNewFolderButton = ({ onClick }: Props) => {
     return (
         <DropdownMenuButton
-            className="text-left flex flex-align-items-center"
+            className="text-left flex items-center"
             onClick={onClick}
             data-testid="dropdown-new-folder"
         >

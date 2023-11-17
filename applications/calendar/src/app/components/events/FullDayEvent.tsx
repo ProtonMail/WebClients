@@ -79,7 +79,7 @@ const FullDayEvent = ({
     })();
 
     const content = (
-        <div className="flex flex-nowrap flex-item-fluid flex-align-items-center">
+        <div className="flex flex-nowrap flex-item-fluid items-center">
             {!isAllDay ? (
                 <Icon className="mr-2 flex-item-noshrink calendar-dayeventcell-circle" size={16} name="circle-filled" />
             ) : null}

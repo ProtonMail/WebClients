@@ -50,7 +50,7 @@ export const LobbyContent: VFC<Props> = ({ status, onLogin, onLogout, onRegister
         ) : (
             <div
                 key="lobby-loading"
-                className="flex flex-column flex-align-items-center gap-3 mt-12 w-full anime-fade-in"
+                className="flex flex-column items-center gap-3 mt-12 w-full anime-fade-in"
                 style={{ '--anime-delay': '250ms' }}
             >
                 <CircleLoader size="medium" />
@@ -74,8 +74,8 @@ export const LobbyContent: VFC<Props> = ({ status, onLogin, onLogout, onRegister
 
     return (
         <div key="lobby" className="anime-fade-in" style={{ '--anime-delay': '250ms' }}>
-            <div className="flex flex-column flex-align-items-center gap-3">
-                <span className="pass-lobby--heading text-bold text-norm flex flex-align-items-end justify-center user-select-none">
+            <div className="flex flex-column items-center gap-3">
+                <span className="pass-lobby--heading text-bold text-norm flex items-end justify-center user-select-none">
                     {locked ? c('Title').jt`Unlock ${brandNameJSX}` : c('Title').jt`Welcome to ${brandNameJSX}`}
                 </span>
                 <span className="text-norm">

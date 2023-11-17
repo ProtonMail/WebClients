@@ -22,7 +22,7 @@ const UpgradeBanner = ({ className }: { className?: string }) => {
     const passPlusPlanName = passPlan.Title;
 
     return (
-        <Card className={clsx('flex flex-align-items-center gap-2', className)} rounded>
+        <Card className={clsx('flex items-center gap-2', className)} rounded>
             <span className="flex-item-fluid">
                 {
                     // translator: Variable here is a plan name

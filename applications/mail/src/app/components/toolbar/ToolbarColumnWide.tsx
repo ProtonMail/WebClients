@@ -78,7 +78,7 @@ const ToolbarColumnWide = ({
                 aria-label={c('Label').t`Toolbar`}
                 ref={toolbarRef}
             >
-                <div className="flex flex-align-items-center flex-nowrap toolbar-inner gap-2">
+                <div className="flex items-center flex-nowrap toolbar-inner gap-2">
                     <LabelName selectedIDs={selectedIDs} labelName={labelName} />
 
                     <ReadUnreadButtons selectedIDs={selectedIDs} onMarkAs={onMarkAs} />
@@ -121,7 +121,7 @@ const ToolbarColumnWide = ({
                 </div>
 
                 {(!localIsTiny && selectedIDs.length > 0) || selectedIDs.length === 0 ? (
-                    <div className="flex flex-align-items-center flex-item-noshrink toolbar-inner gap-2">
+                    <div className="flex items-center flex-item-noshrink toolbar-inner gap-2">
                         <PagingControls
                             loading={loading}
                             page={page}

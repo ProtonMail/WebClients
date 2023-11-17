@@ -17,7 +17,7 @@ const CatchAllModal = ({ domain, domainAddresses, ...rest }: Props) => {
         <ModalTwo {...rest}>
             <ModalTwoHeader
                 title={
-                    <span className="inline-flex flex-align-items-center">
+                    <span className="inline-flex items-center">
                         {c('Title').t`Catch-All address`}
                         <Info buttonClass="ml-2" url={getKnowledgeBaseUrl('/catch-all')} />
                     </span>

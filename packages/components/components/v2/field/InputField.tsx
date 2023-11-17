@@ -102,12 +102,12 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
             rootClassName,
         ]),
         labelContainer: clsx([
-            'field-two-label-container flex justify-space-between flex-nowrap flex-align-items-end gap-2',
+            'field-two-label-container flex justify-space-between flex-nowrap items-end gap-2',
             labelContainerClassName,
         ]),
         inputContainer: clsx(['field-two-input-container relative', inputContainerClassName]),
         assistContainer: clsx([
-            'field-two-assist flex flex-nowrap flex-align-items-start',
+            'field-two-assist flex flex-nowrap items-start',
             isDense && 'sr-only',
             assistContainerClassName,
         ]),

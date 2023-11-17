@@ -18,7 +18,7 @@ const VerticalStep = ({ title, description, icon, status = 'next', className, ..
         <li
             {...rest}
             className={clsx(
-                'flex flex-nowrap flex-align-items-start vertical-steps-item',
+                'flex flex-nowrap items-start vertical-steps-item',
                 status === 'passed' && 'vertical-steps-item--next-done',
                 className
             )}

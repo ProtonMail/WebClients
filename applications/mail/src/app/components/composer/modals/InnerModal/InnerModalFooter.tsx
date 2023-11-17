@@ -12,7 +12,7 @@ const InnerModalFooter = ({
     isColumn,
     className = clsx([
         'flex flex-nowrap',
-        isColumn ? 'flex-column' : 'justify-space-between flex-align-items-center',
+        isColumn ? 'flex-column' : 'justify-space-between items-center',
     ]),
     ...rest
 }: Props) => {

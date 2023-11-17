@@ -116,7 +116,7 @@ const MessageDetailsModal = ({
                     data-testid="message:message-expanded-header-extra"
                 >
                     {icon && (
-                        <div className="mb-2 flex flex-nowrap flex-align-items-center">
+                        <div className="mb-2 flex flex-nowrap items-center">
                             <span className="mr-2 flex">
                                 <EncryptionStatusIcon useTooltip={true} isDetailsModal {...icon} />
                             </span>
@@ -146,8 +146,8 @@ const MessageDetailsModal = ({
                         </div>
                     )}
                     {displayTrackerIcon && (
-                        <div className="mb-2 flex flex-nowrap flex-align-items-center">
-                            <span className="mr-2 relative inline-flex item-spy-tracker-link flex-align-items-center">
+                        <div className="mb-2 flex flex-nowrap items-center">
+                            <span className="mr-2 relative inline-flex item-spy-tracker-link items-center">
                                 <SpyTrackerIcon
                                     numberOfTrackers={numberOfImageTrackers + numberOfUTMTrackers}
                                     needsMoreProtection={needsMoreProtection}

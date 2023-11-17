@@ -272,7 +272,7 @@ const ExtraEventAttendeeButtons = ({ model, setModel, message, reloadWidget }: P
 
     if (method === ICAL_METHOD.REQUEST && partstat) {
         return (
-            <div className="mt-6 flex flex-align-items-center">
+            <div className="mt-6 flex items-center">
                 <div className="text-bold mr-4">{c('Calendar invite buttons label').t`Attending?`}</div>
                 <CalendarInviteButtons actions={actions} partstat={partstat} disabled={buttonsDisabled} />
             </div>

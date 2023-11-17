@@ -57,7 +57,7 @@ const CopyRecoveryStep = ({ onMeasureClick, onContinue, mnemonic }: Props) => {
                         )}
                     </p>
                     <Card
-                        className="mt-2 flex justify-space-between flex-align-items-center flex-nowrap"
+                        className="mt-2 flex justify-space-between items-center flex-nowrap"
                         bordered={false}
                         rounded
                     >

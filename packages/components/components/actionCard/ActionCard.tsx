@@ -15,7 +15,7 @@ const ActionCard = ({ iconName, title, subtitle, loading, disabled, ...rest }: A
     return (
         <button
             type="button"
-            className="action-card text-left w-full flex flex-align-items-center flex-wrap-nowrap p-4 rounded"
+            className="action-card text-left w-full flex items-center flex-wrap-nowrap p-4 rounded"
             disabled={disabled || loading}
             {...rest}
         >

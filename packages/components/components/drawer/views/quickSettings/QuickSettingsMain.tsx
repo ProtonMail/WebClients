@@ -11,7 +11,7 @@ interface Props {
 const QuickSettingsMain = ({ children }: Props) => {
     return (
         <Scroll>
-            <div className="h-full p-3 pt-0.5 flex-no-min-children flex-column flex-nowrap flex-align-items-start gap-3">
+            <div className="h-full p-3 pt-0.5 flex-no-min-children flex-column flex-nowrap items-start gap-3">
                 {children}
             </div>
         </Scroll>

@@ -120,7 +120,7 @@ export const Size = () => {
                     },
                 ].map((row) => {
                     return (
-                        <div className="flex flex-align-items-center">
+                        <div className="flex items-center">
                             <pre className="w-custom" style={{ '--w-custom': '20em' }}>
                                 {row.sizeKey}:
                             </pre>

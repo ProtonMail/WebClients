@@ -20,7 +20,7 @@ const CustomizeMailImportModalCustomizeFoldersToggle = ({
     const t = EasyTrans.get(isLabelMapping);
 
     return (
-        <div className="mb-4 flex-align-items-center">
+        <div className="mb-4 items-center">
             <Row>
                 <Label>{t.manage()}</Label>
                 <Tooltip title={t.manage()}>

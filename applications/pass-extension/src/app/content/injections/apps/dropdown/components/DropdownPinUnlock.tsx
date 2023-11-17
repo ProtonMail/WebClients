@@ -48,7 +48,7 @@ export const DropdownPinUnlock: VFC<{
 
     return (
         <div className="px-4 py-3">
-            <div className="flex flex-align-items-center gap-3 mb-3">
+            <div className="flex items-center gap-3 mb-3">
                 <DropdownItemIcon icon={PassIconStatus.LOCKED_DROPDOWN} />
                 <div className="flex-item-fluid">
                     <span className="block text-ellipsis">{c('Title').t`Unlock ${PASS_APP_NAME}`}</span>

@@ -262,7 +262,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
                                         color="norm"
                                         className="flex-item-noshrink"
                                     >
-                                        <div className="flex flex-align-items-center">
+                                        <div className="flex items-center">
                                             <span className="mr-3">{c('Action').t`Open ${CALENDAR_APP_NAME}`}</span>
                                             <Icon name="arrow-out-square" />
                                         </div>

@@ -394,7 +394,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                                 .t`Forwarding to this address will become active once the recipient accepts the forwarding.`}</p>
                         </div>
                         {model.isExternal ? (
-                            <div className="border rounded-lg p-4 flex flex-nowrap flex-align-items-center mb-3">
+                            <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3">
                                 <Icon name="exclamation-circle" className="flex-item-noshrink color-danger" />
                                 <p className="text-sm color-weak flex-item-fluid pl-4 my-0">
                                     {c('email_forwarding_2023: Info')
@@ -403,7 +403,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                             </div>
                         ) : null}
                         {model.isExternal || model.keySupportE2EEForwarding ? null : (
-                            <div className="border rounded-lg p-4 flex flex-nowrap flex-align-items-center mb-3">
+                            <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3">
                                 <Icon name="exclamation-circle" className="flex-item-noshrink color-danger" />
                                 <p className="text-sm color-weak flex-item-fluid pl-4 my-0">
                                     {c('email_forwarding_2023: Info')
@@ -412,7 +412,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                             </div>
                         )}
                         {model?.keyErrors?.length ? (
-                            <div className="border rounded-lg p-4 flex flex-nowrap flex-align-items-center">
+                            <div className="border rounded-lg p-4 flex flex-nowrap items-center">
                                 <Icon name="exclamation-circle" className="flex-item-noshrink color-danger" />
                                 <p className="text-sm color-weak flex-item-fluid pl-4 my-0">
                                     {model.keyErrors.join(' ')}

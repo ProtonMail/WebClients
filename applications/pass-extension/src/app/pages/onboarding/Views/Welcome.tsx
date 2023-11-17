@@ -52,7 +52,7 @@ export const Welcome: VFC = () => {
                 <div className="m-auto p-14 color-norm flex justify-center">
                     <div className="pass-onboarding--gradient"></div>
                     <div className="flex flex-column max-w-custom" style={{ '--max-w-custom': '64rem' }}>
-                        <div className="flex flex-align-items-center gap-2 mb-5">
+                        <div className="flex items-center gap-2 mb-5">
                             {
                                 <img
                                     src="/assets/protonpass-icon.svg"

@@ -255,7 +255,7 @@ function GeneratedLinkState({
                                             onChange={onIncludeExpirationTimeToogle}
                                         />
                                     </div>
-                                    <div className="flex-no-min-children md:flex-item-fluid flex-align-items-center mb-2 md:mb-0 field-two-icon-container-empty min-h-0 md:min-h-none">
+                                    <div className="flex-no-min-children md:flex-item-fluid items-center mb-2 md:mb-0 field-two-icon-container-empty min-h-0 md:min-h-none">
                                         {expirationToggledOn && (
                                             <ExpirationTimeDatePicker
                                                 disabled={saving}
@@ -277,7 +277,7 @@ function GeneratedLinkState({
                         loading={deleting}
                         disabled={saving}
                         onClick={onDeleteLinkClick}
-                        className="mb-2 md:mb-0 inline-flex flex-align-items-center"
+                        className="mb-2 md:mb-0 inline-flex items-center"
                     >
                         <Icon name="link-slash" className="mr-2" />
                         {c('Action').t`Stop sharing`}

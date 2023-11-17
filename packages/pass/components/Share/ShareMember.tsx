@@ -63,14 +63,14 @@ export const ShareMember: VFC<ShareMemberProps> = ({
     const loading = transferOwnership.loading || removeAccess.loading || editAccess.loading;
 
     return (
-        <div className="flex flex-nowrap flex-align-items-center border rounded-xl px-4 py-3 w-full">
+        <div className="flex flex-nowrap items-center border rounded-xl px-4 py-3 w-full">
             <ShareMemberAvatar value={initials} loading={loading} />
             <div className="flex-item-fluid">
-                <div className="flex flex-nowrap flex-item-fluid flex-align-items-center gap-2">
+                <div className="flex flex-nowrap flex-item-fluid items-center gap-2">
                     <div className="text-ellipsis">{email}</div>
                     {me && <span className="color-primary text-sm">({c('Info').t`me`})</span>}
                 </div>
-                <div className="flex flex-align-items-center gap-1">
+                <div className="flex items-center gap-1">
                     <span className="color-weak">{title}</span>
                     <Info title={description} className="color-weak" questionMark />
                 </div>

@@ -24,7 +24,7 @@ const PaymentMethodSelector = ({ method, lastUsedMethod, options, onChange, forc
                             htmlFor={value}
                             key={value}
                             className={clsx([
-                                'py-2 flex flex-nowrap flex-align-items-center',
+                                'py-2 flex flex-nowrap items-center',
                                 lastUsedMethod?.value === value && 'border-bottom',
                             ])}
                         >

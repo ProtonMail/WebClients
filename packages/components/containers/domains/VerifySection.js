@@ -43,7 +43,7 @@ const VerifySection = ({ domain }) => {
                         cells={[
                             <code key="txt">TXT</code>,
                             <code key="at">@</code>,
-                            <div className="flex flex-nowrap flex-align-items-center" key="value">
+                            <div className="flex flex-nowrap items-center" key="value">
                                 <Copy
                                     onCopy={handleCopy}
                                     size="small"

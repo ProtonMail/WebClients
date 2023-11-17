@@ -54,7 +54,7 @@ const MergeTable = ({
                 const beMergedIDs = activeIDs.length > 1 ? activeIDs : [];
 
                 return (
-                    <Block key={`${group && group[0].Name}`} className="mb-8 flex flex-column flex-align-items-center">
+                    <Block key={`${group && group[0].Name}`} className="mb-8 flex flex-column items-center">
                         <OrderableTable onSortEnd={onSortEnd(i)} className="mb-4" helperClass="row--orderable">
                             <MergeTableHeader />
                             <MergeTableBody

@@ -37,10 +37,10 @@ const TrashWarning = ({ inTrash, filter, onToggle }: Props, ref: React.Ref<HTMLD
         <div
             ref={ref}
             tabIndex={0}
-            className="border rounded m-2 mb-4 p-4 flex flex-nowrap flex-align-items-center justify-space-between trashed-messages outline-none"
+            className="border rounded m-2 mb-4 p-4 flex flex-nowrap items-center justify-space-between trashed-messages outline-none"
             data-shortcut-target="trash-warning"
         >
-            <div className="flex flex-nowrap flex-align-items-center">
+            <div className="flex flex-nowrap items-center">
                 <Icon name="trash" className="mr-4 flex-item-noshrink" />
                 <span>
                     {inTrash

@@ -36,7 +36,7 @@ const AttachmentsButton = (
     }, []);
 
     return (
-        <div className="composer-attachments-button-wrapper flex flex-flex-align-items-center">
+        <div className="composer-attachments-button-wrapper flex flex-items-center">
             <ButtonLike
                 icon
                 role="button"

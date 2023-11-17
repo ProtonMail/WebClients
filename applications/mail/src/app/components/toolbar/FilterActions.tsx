@@ -85,7 +85,7 @@ const FilterActions = ({ filter = {}, mailSettings, onFilter, dropdown }: Props)
                 hasCaret={true}
                 className="toolbar-button toolbar-button--small"
                 content={
-                    <span className="flex flex-align-items-center flex-nowrap" data-testid="toolbar:filter-dropdown">
+                    <span className="flex items-center flex-nowrap" data-testid="toolbar:filter-dropdown">
                         <span className="text-sm m-0">{text}</span>
                     </span>
                 }

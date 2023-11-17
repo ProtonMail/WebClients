@@ -15,7 +15,7 @@ import ToolbarRowWide from './ToolbarRowWide';
 
 const defaultSelectedIDs: string[] = [];
 const BASE_TOOLBAR_CLASSNAME =
-    'toolbar toolbar--heavy flex flex-nowrap flex-item-noshrink flex-align-items-center gap-2 no-print flex-item-fluid-auto';
+    'toolbar toolbar--heavy flex flex-nowrap flex-item-noshrink items-center gap-2 no-print flex-item-fluid-auto';
 
 export interface Props extends ListSettingsProps {
     loading?: boolean;

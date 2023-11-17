@@ -362,23 +362,23 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                     c('Title').t`Get ${vpnPlus} to access all servers`
                                 }</h3>
                                 <ul className="unstyled inline-flex mt-0 mb-8 flex-column md:flex-row">
-                                    <li className="flex flex-nowrap flex-align-items-center mr-4">
+                                    <li className="flex flex-nowrap items-center mr-4">
                                         <Icon name="checkmark" className="color-success mr-2" />
                                         <span className="text-bold">{c('Feature').t`Access to all countries`}</span>
                                     </li>
-                                    <li className="flex flex-nowrap flex-align-items-center mr-4">
+                                    <li className="flex flex-nowrap items-center mr-4">
                                         <Icon name="checkmark" className="color-success mr-2" />
                                         <span className="text-bold">{c('Feature').t`Secure Core servers`}</span>
                                     </li>
-                                    <li className="flex flex-nowrap flex-align-items-center mr-4">
+                                    <li className="flex flex-nowrap items-center mr-4">
                                         <Icon name="checkmark" className="color-success mr-2" />
                                         <span className="text-bold">{c('Feature').t`Fastest VPN servers`}</span>
                                     </li>
-                                    <li className="flex flex-nowrap flex-align-items-center mr-4">
+                                    <li className="flex flex-nowrap items-center mr-4">
                                         <Icon name="checkmark" className="color-success mr-2" />
                                         <span className="text-bold">{c('Feature').t`Torrenting support (P2P)`}</span>
                                     </li>
-                                    <li className="flex flex-nowrap flex-align-items-center mr-4">
+                                    <li className="flex flex-nowrap items-center mr-4">
                                         <Icon name="checkmark" className="color-success mr-2" />
                                         <span className="text-bold">
                                             {c('Feature').ngettext(
@@ -388,7 +388,7 @@ const OpenVPNConfigurationSection = ({ onSelect, selecting, listOnly = false, ex
                                             )}
                                         </span>
                                     </li>
-                                    <li className="flex flex-nowrap flex-align-items-center ">
+                                    <li className="flex flex-nowrap items-center ">
                                         <Icon name="checkmark" className="color-success mr-2" />
                                         <span className="text-bold mr-2">{c('Feature')
                                             .t`Secure streaming support`}</span>

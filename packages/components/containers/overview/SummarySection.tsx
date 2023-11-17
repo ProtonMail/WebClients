@@ -72,11 +72,11 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                         <Loader />
                     ) : (
                         <ul className="unstyled my-0">
-                            <li className="flex flex-nowrap flex-align-items-center">
+                            <li className="flex flex-nowrap items-center">
                                 <Icon name="brand-proton-vpn" className="mr-2 flex-item-noshrink" />
                                 <span className="flex-item-fluid">{getPlanTitle(vpnPlan, VPN_APP_NAME)}</span>
                             </li>
-                            <li className="flex flex-nowrap flex-align-items-center">
+                            <li className="flex flex-nowrap items-center">
                                 <Icon name="brand-proton-mail" className="mr-2 flex-item-noshrink" />
                                 <span className="flex-item-fluid">{getPlanTitle(mailPlan, MAIL_APP_NAME)}</span>
                             </li>
@@ -88,7 +88,7 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                 <div className="mb-4">
                     <strong className="block mb-2">{c('Title').t`Default language`}</strong>
                     <ul className="unstyled my-0">
-                        <li className="flex flex-nowrap flex-align-items-center">
+                        <li className="flex flex-nowrap items-center">
                             <Icon name="globe" className="mr-2 flex-item-noshrink" />
                             <span className="flex-item-fluid">{languageText}</span>
                         </li>
@@ -124,13 +124,13 @@ const SummarySection = ({ user, userSettings, organization, subscription }: Prop
                 <div className="mb-4">
                     <strong className="block mb-2">{c('Title').t`Application settings`}</strong>
                     <ul className="unstyled my-0">
-                        <li className="flex flex-nowrap flex-align-items-center">
+                        <li className="flex flex-nowrap items-center">
                             <Icon name="brand-proton-mail" className="mr-2 flex-item-noshrink" />
                             <SettingsLink path="/general" app={APPS.PROTONMAIL}>
                                 {c('Link').t`${MAIL_APP_NAME} settings`}
                             </SettingsLink>
                         </li>
-                        <li className="flex flex-nowrap flex-align-items-center">
+                        <li className="flex flex-nowrap items-center">
                             <Icon name="brand-proton-calendar" className="mr-2 flex-item-noshrink" />
                             <SettingsLink path="/general" app={APPS.PROTONCALENDAR}>
                                 {c('Link').t`${CALENDAR_APP_NAME} settings`}

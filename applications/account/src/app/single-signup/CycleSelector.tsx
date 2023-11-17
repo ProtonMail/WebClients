@@ -95,7 +95,7 @@ const CycleItemView = ({
                 )}
                 <div className="p-4 pt-6" data-testid={`plan-${cycle}`}>
                     <div>
-                        <div className="flex flex-align-items-center flex-nowrap gap-3">
+                        <div className="flex items-center flex-nowrap gap-3">
                             <Radio
                                 id={`${cycle}`}
                                 aria-labelledby={`${cycle}-text ${cycle}-save ${cycle}-price ${cycle}-billed ${cycle}-guarantee `}

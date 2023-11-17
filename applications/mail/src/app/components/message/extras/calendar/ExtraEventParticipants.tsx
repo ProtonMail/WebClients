@@ -37,7 +37,7 @@ const ExtraEventParticipants = ({ list }: Props) => {
         <>
             <ExtraEventParticipant participant={organizer} isOrganizer />
             {!isShowingMore && (
-                <div className="flex flex-align-items-center">
+                <div className="flex items-center">
                     <span className="mr-2">
                         {c('ICS widget label for event details').ngettext(
                             msgid`${totalAttendees} participant`,

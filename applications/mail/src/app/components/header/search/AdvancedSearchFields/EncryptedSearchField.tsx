@@ -101,12 +101,12 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
         />
     );
     const esHeader = showToggle ? (
-        <Label htmlFor="es-toggle" className="text-bold p-0 pr-4 flex flex-item-fluid flex-align-items-center w-full">
+        <Label htmlFor="es-toggle" className="text-bold p-0 pr-4 flex flex-item-fluid items-center w-full">
             {esTitle}
             {info}
         </Label>
     ) : (
-        <div className="text-bold p-0 pr-4 flex flex-item-fluid flex-align-items-center">
+        <div className="text-bold p-0 pr-4 flex flex-item-fluid items-center">
             {esTitle}
             {info}
         </div>
@@ -176,7 +176,7 @@ const EncryptedSearchField = ({ esIndexingProgressState }: Props) => {
     return (
         <div className="pt-0">
             <div className="flex flex-column">
-                <div className="flex flex-nowrap flex-align-items-center mb-4">
+                <div className="flex flex-nowrap items-center mb-4">
                     {esHeader}
                     {esCTA}
                 </div>

@@ -89,7 +89,7 @@ const ToolbarDropdown = ({
                     disabled={disabled}
                     caretClassName="toolbar-icon"
                     className={clsx([
-                        'toolbar-button flex flex-align-items-center',
+                        'toolbar-button flex items-center',
                         hasCaret && 'toolbar-button--dropdown',
                         className,
                     ])}

@@ -129,7 +129,7 @@ const FilterConditionsFormRow = ({
             {i > 0 && <span className="mx-2 text-sm">{c('Label').t`or`}</span>}
             <span
                 key={`condition-${conditionIndex}-token-${i}`}
-                className="inline-flex flex-row flex-align-items-center mb-2 condition-token"
+                className="inline-flex flex-row items-center mb-2 condition-token"
             >
                 <span className="text-ellipsis text-no-decoration" title={token}>
                     {token}

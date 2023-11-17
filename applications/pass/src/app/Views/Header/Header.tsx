@@ -34,12 +34,12 @@ export const Header: FC<Props> = ({ hamburger }) => {
 
     return (
         <CoreHeader className="border-bottom h-auto p-2">
-            <div className="flex flex-align-items-center gap-x-2 w-full">
+            <div className="flex items-center gap-x-2 w-full">
                 {hamburger}
                 {(() => {
                     if (matchSettings) {
                         return (
-                            <div className="flex flex-align-items-center gap-2">
+                            <div className="flex items-center gap-2">
                                 <Button
                                     className="flex-item-noshrink"
                                     size="small"

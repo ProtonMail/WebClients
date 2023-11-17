@@ -26,7 +26,7 @@ export const Developer: VFC = () => {
                         )
                     }
                 >
-                    <div className="flex flex-align-items-center flex flex-align-items-center">
+                    <div className="flex items-center flex items-center">
                         <Icon name="brand-chrome" className="mr-2" />
                         <span className="flex-item-fluid text-left">Trigger update</span>
                         <span className="text-xs color-weak">Triggers a fake update (keep popup opened)</span>
@@ -45,7 +45,7 @@ export const Developer: VFC = () => {
                         )
                     }
                 >
-                    <div className="flex flex-align-items-center flex flex-align-items-center">
+                    <div className="flex items-center flex items-center">
                         <Icon name="drive" className="mr-2" />
                         <span className="flex-item-fluid text-left">Trigger full disk</span>
                         <span className="text-xs color-weak">Triggers a fake disk full event (open popup after)</span>

@@ -12,8 +12,8 @@ export default function SharedPageHeader({ children, rootItem, items, className 
     const { isNarrow } = useActiveBreakpoint();
 
     return (
-        <div className={clsx('flex flex-nowrap justify-space-between flex-align-items-center', className)}>
-            <div className="flex flex-nowrap flex-item-fluid flex-align-items-center mb-0 pb-0 mr-4 shared-page-layout-header">
+        <div className={clsx('flex flex-nowrap justify-space-between items-center', className)}>
+            <div className="flex flex-nowrap flex-item-fluid items-center mb-0 pb-0 mr-4 shared-page-layout-header">
                 {children}
             </div>
             {isNarrow || items.length === 0 ? null : <DownloadButton rootItem={rootItem} items={items} />}

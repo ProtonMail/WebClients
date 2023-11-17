@@ -276,7 +276,7 @@ const FilePreview = (
                 date={date}
             >
                 {isDirty ? (
-                    <div className="flex flex-align-items-center absolute-center">{c('Info').t`Unsaved changes`}</div>
+                    <div className="flex items-center absolute-center">{c('Info').t`Unsaved changes`}</div>
                 ) : (
                     navigationControls
                 )}

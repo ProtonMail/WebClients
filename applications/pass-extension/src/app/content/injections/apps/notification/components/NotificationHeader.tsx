@@ -12,8 +12,8 @@ type Props = { extra?: ReactElement; title: string; onClose?: (options?: IFrameC
 
 export const NotificationHeader: VFC<Props> = ({ extra, title, onClose }) => {
     return (
-        <div className="flex flex-nowrap flex-item-noshrink flex-align-items-center justify-space-between gap-2">
-            <h3 className="flex text-bold text-lg flex-align-items-center gap-2">
+        <div className="flex flex-nowrap flex-item-noshrink items-center justify-space-between gap-2">
+            <h3 className="flex text-bold text-lg items-center gap-2">
                 <PassIcon status={PassIconStatus.ACTIVE} size={22} />
                 <span className="flex-item-fluid text-ellipsis">{title}</span>
             </h3>

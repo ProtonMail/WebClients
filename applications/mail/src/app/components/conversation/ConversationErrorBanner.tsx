@@ -33,7 +33,7 @@ const ConversationErrorBanner = ({ errors = {}, onRetry }: Props, ref: React.Ref
         <div
             ref={ref}
             tabIndex={-1}
-            className="bg-danger rounded p-2 m-4 flex flex-nowrap flex-align-items-center"
+            className="bg-danger rounded p-2 m-4 flex flex-nowrap items-center"
             data-shortcut-target="trash-warning"
         >
             <Icon name="exclamation-circle" className="mr-4" />

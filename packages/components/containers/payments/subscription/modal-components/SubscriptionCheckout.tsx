@@ -310,7 +310,7 @@ const SubscriptionCheckout = ({
             {isProration && proration !== 0 && (
                 <CheckoutRow
                     title={
-                        <span className="inline-flex flex-align-items-center">
+                        <span className="inline-flex items-center">
                             <span className="mr-2">{c('Label').t`Proration`}</span>
                             <Info
                                 title={

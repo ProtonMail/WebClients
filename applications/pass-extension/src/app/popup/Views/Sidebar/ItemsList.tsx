@@ -43,7 +43,7 @@ export const ItemsList: VFC = () => {
             )}
 
             {filtered.length === 0 ? (
-                <div className="flex justify-center flex-align-items-center w-full m-auto overflow-x-auto py-3">
+                <div className="flex justify-center items-center w-full m-auto overflow-x-auto py-3">
                     <ItemsListPlaceholder />
                 </div>
             ) : (

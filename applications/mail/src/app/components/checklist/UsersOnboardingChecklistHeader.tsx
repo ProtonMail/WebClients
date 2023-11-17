@@ -34,7 +34,7 @@ const UsersOnboardingChecklistHeader = ({ smallVariant }: Props) => {
     };
 
     return smallVariant ? (
-        <div className="flex justify-space-between flex-align-items-center flex-nowrap text-sm px-2 mb-2">
+        <div className="flex justify-space-between items-center flex-nowrap text-sm px-2 mb-2">
             <p className="m-0">
                 {isChecklistFinished
                     ? c('Get started checklist instructions').t`Congratulation, you finished!`

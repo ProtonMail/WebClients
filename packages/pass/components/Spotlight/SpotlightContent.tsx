@@ -61,7 +61,7 @@ export const SpotlightContent: VFC<Props> = ({
     return (
         <div
             className={clsx(
-                `pass-spotlight-content flex flex-align-items-center gap-4 p-4 pr-6 rounded relative mt-2`,
+                `pass-spotlight-content flex items-center gap-4 p-4 pr-6 rounded relative mt-2`,
                 className,
                 weak && 'weak'
             )}

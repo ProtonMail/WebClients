@@ -106,13 +106,13 @@ const PlanCard = ({
                         </div>
                     </div>
                 ) : null}
-                <div className="flex flex-row flex-align-items-center">
+                <div className="flex flex-row items-center">
                     <h2 className="h3 plan-selection-title flex text-bold text-capitalize mb-2" id={`desc_${planName}`}>
                         {planTitle}
                     </h2>
                 </div>
                 <p className="text-lg plan-selection-info text-left color-weak mb-4">{info}</p>
-                <div className="mb-4 flex flex-wrap flex-align-items-baseline plan-selection-price">
+                <div className="mb-4 flex flex-wrap items-baseline plan-selection-price">
                     {typeof price === 'number' ? (
                         <>
                             <span className="mr-2">

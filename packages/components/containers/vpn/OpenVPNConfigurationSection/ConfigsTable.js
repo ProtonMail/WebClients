@@ -168,7 +168,7 @@ const ConfigsTable = ({ loading, servers = [], platform, protocol, category, onS
                                         },
                                         category !== CATEGORY.SECURE_CORE && {
                                             text: (
-                                                <div className="flex flex-nowrap flex-align-items-center justify-space-between">
+                                                <div className="flex flex-nowrap items-center justify-space-between">
                                                     <span className="mr-2">{server.Domain}</span>
                                                     <Icon name="squares" title={c('Action').t`Copy`} />
                                                 </div>

@@ -46,7 +46,7 @@ const TopNavbarListItemButtonBase = <E extends ElementType = typeof defaultEleme
             color={color}
             shape={shape}
             className={clsx([
-                'topnav-link inline-flex flex-nowrap flex-align-items-center flex-item-noshrink relative',
+                'topnav-link inline-flex flex-nowrap items-center flex-item-noshrink relative',
                 className,
                 notificationDotColor && 'topnav-link--notification',
             ])}

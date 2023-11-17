@@ -11,9 +11,9 @@ export default {
 };
 
 const demoItemClasses =
-    'user-select flex flex-align-items-center p-4 justify-center bg-primary rounded-sm text-center';
+    'user-select flex items-center p-4 justify-center bg-primary rounded-sm text-center';
 
-const demoContainerClasses = 'border rounded w-full relative flex p-4 flex-align-items-center justify-space-around';
+const demoContainerClasses = 'border rounded w-full relative flex p-4 items-center justify-space-around';
 
 export const Mirror = () => {
     return (

@@ -71,8 +71,8 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
 
             {form.values.provider && (
                 <>
-                    <div className="flex justify-space-between flex-align-items-center mt-3 mb-4">
-                        <div className="flex flex-align-items-center">
+                    <div className="flex justify-space-between items-center mt-3 mb-4">
+                        <div className="flex items-center">
                             <div className="mr-2">
                                 <img
                                     src={`/assets/${form.values.provider}-icon-48.png`}
@@ -91,7 +91,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                         {PROVIDER_INFO_MAP[form.values.provider].tutorialUrl && (
                             <Href
                                 href={PROVIDER_INFO_MAP[form.values.provider].tutorialUrl}
-                                className="flex flex-align-items-center"
+                                className="flex items-center"
                             >
                                 {c('Action').t`How do I export my data from ${
                                     PROVIDER_INFO_MAP[form.values.provider].title
@@ -103,7 +103,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                     <Dropzone onDrop={dropzone.onDrop} disabled={busy} border={false}>
                         <Bordered
                             className={clsx([
-                                'flex flex-columns justify-center flex-align-items-center relative p-4 mb-4 rounded border-weak min-h-custom pass-import-upload',
+                                'flex flex-columns justify-center items-center relative p-4 mb-4 rounded border-weak min-h-custom pass-import-upload',
                                 form.values.file ? 'pass-import-upload--has-file' : 'border-dashed',
                                 form.errors.file && 'border-danger',
                             ])}
