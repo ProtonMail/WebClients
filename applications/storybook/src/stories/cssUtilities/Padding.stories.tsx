@@ -187,7 +187,7 @@ export const PaddingLeft = () => {
     return (
         <div className="border rounded w-full relative flex flex-column flex-nowrap items-start gap-2 text-2xs">
             {paddingSizes.map((size) => (
-                <div key={size.class} className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
+                <div key={size.class} className="bg-primary grow-0 rounded-sm overflow-hidden">
                     <div className={`pl-${size.class}`} style={{ height: '2rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
                         <div className={demoItemClasses} style={{ width: '3rem', height: '2rem' }}>
                             pl-{size.class}
@@ -203,7 +203,7 @@ export const PaddingRight = () => {
     return (
         <div className="border rounded w-full relative flex flex-column flex-nowrap items-end gap-2 text-2xs">
             {paddingSizes.map((size) => (
-                <div key={size.class} className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
+                <div key={size.class} className="bg-primary grow-0 rounded-sm overflow-hidden">
                     <div className={`pr-${size.class}`} style={{ height: '2rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
                         <div className={demoItemClasses} style={{ width: '3rem', height: '2rem' }}>
                             pr-{size.class}
@@ -219,7 +219,7 @@ export const PaddingX = () => {
     return (
         <div className="border rounded w-full relative flex flex-column flex-nowrap items-center gap-2 text-2xs">
             {paddingSizes.map((size) => (
-                <div key={size.class} className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
+                <div key={size.class} className="bg-primary grow-0 rounded-sm overflow-hidden">
                     <div className={`px-${size.class}`} style={{ height: '2rem', backgroundColor: 'rgba(0,0,0,.2)' }}>
                         <div className={demoItemClasses} style={{ width: '3rem', height: '2rem' }}>
                             px-{size.class}
@@ -347,7 +347,7 @@ export const Sandbox = () => {
                             <span className="text-semibold w-1/10">{id}</span>
 
                             <span className="w-1/10 flex flex-item-noshrink justify-center">
-                                <span className="bg-primary rounded-sm flex-item-noshrink flex-item-nogrow">
+                                <span className="bg-primary rounded-sm flex-item-noshrink grow-0">
                                     <span className={`${id}0-25 block rounded-sm bg-primary`}>
                                         <span
                                             className="flex items-center justify-center bg-norm opacity-65"
@@ -366,7 +366,7 @@ export const Sandbox = () => {
                     ))}
                 </div>
                 <div className="border rounded w-4/6 relative flex justify-center items-center p-14">
-                    <div className="bg-primary flex-item-nogrow rounded-sm overflow-hidden">
+                    <div className="bg-primary grow-0 rounded-sm overflow-hidden">
                         <div
                             className={assembleClasses(selectedPadding)}
                             style={{ backgroundColor: 'rgba(0,0,0,.4)', transition: 'all .25s ease' }}

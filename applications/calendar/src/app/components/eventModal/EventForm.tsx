@@ -347,7 +347,7 @@ const EventForm = ({
             icon={getCalendarIcon()}
             title={c('Label').t`Calendar`}
             id={CALENDAR_INPUT_ID}
-            className="flex flex-nowrap flex-1 flex-item-grow"
+            className="flex flex-nowrap flex-1 grow"
         >
             <CreateEventCalendarSelect
                 id={CALENDAR_INPUT_ID}

@@ -103,7 +103,7 @@ const AddressesInput = forwardRef<HTMLDivElement, AddressesInputProps>(function 
                 <div className="flex-1 flex max-w-full max-h-full relative">
                     {items}
                     {placeholder}
-                    <div className="flex max-w-full max-h-full relative flex-item-grow-2">
+                    <div className="flex max-w-full max-h-full relative grow-2">
                         <div
                             className={clsx(['flex-1 flex items-center', inputContainerClassName])}
                         >

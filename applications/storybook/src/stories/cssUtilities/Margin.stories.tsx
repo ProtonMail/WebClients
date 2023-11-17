@@ -517,7 +517,7 @@ export const Sandbox = () => {
                             <span className="text-semibold w-1/10">{id}</span>
 
                             <span className="w-1/10 flex flex-item-noshrink justify-center">
-                                <span className="bg-primary rounded-sm flex-item-noshrink flex-item-nogrow">
+                                <span className="bg-primary rounded-sm flex-item-noshrink grow-0">
                                     <span className={`${id}0-25 block rounded-sm bg-primary`}>
                                         <span
                                             className="flex items-center justify-center bg-norm opacity-65"
