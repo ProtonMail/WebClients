@@ -36,6 +36,9 @@ const PaymentWrapper = ({
     disabled,
     isAuthenticated: isAuthenticatedProp,
     defaultMethod,
+    iframeHandles,
+    chargebeeCard,
+    chargebeePaypal,
 }: Props) => {
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID || !!isAuthenticatedProp;
@@ -55,7 +58,8 @@ const PaymentWrapper = ({
             paypalCredit={paypalCredit}
             lastUsedMethod={methods.lastUsedMethod}
             loading={methods.loading}
-            customPaymentMethod={methods.savedSelectedMethod}
+            savedMethodInternal={methods.savedInternalSelectedMethod}
+            savedMethodExternal={methods.savedExternalSelectedMethod}
             allMethods={methods.allMethods}
             isAuthenticated={isAuthenticated}
             noMaxWidth={noMaxWidth}
@@ -68,6 +72,9 @@ const PaymentWrapper = ({
             hideSavedMethodsDetails={hideSavedMethodsDetails}
             disabled={disabled}
             defaultMethod={defaultMethod}
+            iframeHandles={iframeHandles}
+            chargebeeCard={chargebeeCard}
+            chargebeePaypal={chargebeePaypal}
         />
     );
 };

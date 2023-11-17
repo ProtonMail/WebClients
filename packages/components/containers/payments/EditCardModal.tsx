@@ -1,19 +1,24 @@
-import { FormEvent } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { getDefaultVerifyPayment } from '@proton/components/payments/client-extensions/validators/validators';
-import { Autopay, isTokenPayment } from '@proton/components/payments/core';
-import { useCard } from '@proton/components/payments/react-extensions';
+import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import {
+    Autopay,
+    PAYMENT_METHOD_TYPES,
+    isV5PaymentToken,
+    v5PaymentTokenToLegacyPaymentToken,
+} from '@proton/components/payments/core';
 import { useLoading } from '@proton/hooks';
-import { setPaymentMethod, updatePaymentMethod } from '@proton/shared/lib/api/payments';
+import { setPaymentMethodV4, setPaymentMethodV5, updatePaymentMethod } from '@proton/shared/lib/api/payments';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
-import { useApi, useEventManager, useModals, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useNotifications, useUser } from '../../hooks';
+import { ChargebeeCreditCardWrapper } from '../../payments/chargebee/ChargebeeWrapper';
 import { CardModel } from '../../payments/core';
 import CreditCard from './CreditCard';
 import RenewToggle, { useRenewToggle } from './RenewToggle';
@@ -26,11 +31,14 @@ interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
 
 const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...rest }: Props) => {
     const api = useApi();
-    const { createModal } = useModals();
+    const [user] = useUser();
+
     const { call } = useEventManager();
-    const [loading, withLoading] = useLoading();
+    const [processing, withProcessing] = useLoading();
     const { createNotification } = useNotifications();
     const title = existingCard ? c('Title').t`Edit credit/debit card` : c('Title').t`Add credit/debit card`;
+
+    const [chargebeeFormInitialized, setChargebeeFormInitialized] = useState(false);
 
     const {
         onChange: renewOnChange,
@@ -38,39 +46,44 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
         ...renewToggleProps
     } = useRenewToggle({ initialRenewState: renewState });
 
-    const cardHook = useCard(
-        {
-            verifyOnly: true,
-            amountAndCurrency: {
-                Amount: 0,
-                Currency: 'USD',
-            },
-            initialCard: existingCard,
-            onChargeable: async (chargeablePaymentParameters) => {
-                withLoading(async () => {
-                    const { Payment } = chargeablePaymentParameters;
-                    if (!isTokenPayment(Payment)) {
-                        return;
-                    }
+    const paymentFacade = usePaymentFacade({
+        amount: 0,
+        currency: user.Currency,
+        flow: 'add-card',
+        onChargeable: async (_, { chargeablePaymentParameters, sourceType }) => {
+            withProcessing(async () => {
+                if (!isV5PaymentToken(chargeablePaymentParameters)) {
+                    return;
+                }
 
+                if (sourceType === PAYMENT_METHOD_TYPES.CARD) {
+                    const legacyPaymentToken = v5PaymentTokenToLegacyPaymentToken(chargeablePaymentParameters);
                     await api(
-                        setPaymentMethod({
-                            ...Payment,
+                        setPaymentMethodV4({
+                            ...legacyPaymentToken.Payment,
                             Autopay: renewToggleProps.renewState,
                         })
                     );
-                    await call();
-                    rest.onClose?.();
-                    createNotification({ text: c('Success').t`Payment method updated` });
-                }).catch(noop);
-            },
+                } else if (sourceType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD) {
+                    await api(
+                        setPaymentMethodV5({
+                            PaymentToken: chargeablePaymentParameters.PaymentToken,
+                            v: 5,
+                            Autopay: renewToggleProps.renewState,
+                        })
+                    );
+                }
+
+                await call();
+                rest.onClose?.();
+                createNotification({ text: c('Success').t`Payment method updated` });
+            }).catch(noop);
         },
-        { api, verifyPayment: getDefaultVerifyPayment(createModal, api) }
-    );
+    });
 
     const process = async () => {
         try {
-            await cardHook.processPaymentToken();
+            await paymentFacade.selectedProcessor?.processPaymentToken();
         } catch (e) {
             const error = getSentryError(e);
             if (error) {
@@ -78,7 +91,7 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
                     hasExistingCard: !!existingCard,
                     renewState,
                     paymentMethodId,
-                    processorType: cardHook.meta.type,
+                    processorType: paymentFacade.selectedProcessor?.meta.type,
                 };
 
                 captureMessage('Payments: failed to add card', {
@@ -89,27 +102,36 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
         }
     };
 
-    return (
-        <ModalTwo
-            size="small"
-            as="form"
-            onSubmit={(event: FormEvent) => {
-                event.preventDefault();
-                withLoading(process()).catch(noop);
-            }}
-            {...rest}
-        >
-            <ModalTwoHeader title={title} />
-            <ModalTwoContent>
-                <CreditCard
-                    card={cardHook.card}
-                    errors={cardHook.errors}
-                    onChange={cardHook.setCardProperty}
-                    loading={loading}
-                    fieldsStatus={cardHook.fieldsStatus}
+    const loading = paymentFacade.methods.loading;
+    useEffect(() => {
+        if (loading) {
+            return;
+        }
+
+        if (paymentFacade.methods.isMethodTypeEnabled(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD)) {
+            paymentFacade.methods.selectMethod(PAYMENT_METHOD_TYPES.CHARGEBEE_CARD);
+        } else {
+            paymentFacade.methods.selectMethod(PAYMENT_METHOD_TYPES.CARD);
+        }
+    }, [loading]);
+
+    const isInhouseCard = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CARD;
+    const isChargebeeCard = paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
+    const formFullyLoaded = isInhouseCard || (isChargebeeCard && chargebeeFormInitialized);
+
+    const content = (
+        <>
+            {isInhouseCard && <CreditCard {...paymentFacade.card} loading={processing} />}
+            {isChargebeeCard && (
+                <ChargebeeCreditCardWrapper
+                    onInitialized={() => setChargebeeFormInitialized(true)}
+                    iframeHandles={paymentFacade.iframeHandles}
+                    chargebeeCard={paymentFacade.chargebeeCard}
                 />
+            )}
+            {formFullyLoaded && (
                 <RenewToggle
-                    loading={loading}
+                    loading={processing}
                     onChange={async () => {
                         const result = await renewOnChange();
 
@@ -123,7 +145,7 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
                             return;
                         }
 
-                        void withLoading(async () => {
+                        void withProcessing(async () => {
                             try {
                                 await api(
                                     updatePaymentMethod(paymentMethodId, {
@@ -147,12 +169,50 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
                     }}
                     {...renewToggleProps}
                 />
+            )}
+        </>
+    );
+
+    return (
+        <ModalTwo
+            size="small"
+            as="form"
+            onSubmit={(event: FormEvent) => {
+                event.preventDefault();
+                withProcessing(process()).catch(noop);
+            }}
+            {...rest}
+        >
+            <ModalTwoHeader title={title} />
+            <ModalTwoContent>
+                {/* In the future, this spinner can be passed inside of chargebee card component to 
+                replace its internal spinner and make to loading animation continious 
+                currently there are two stages: first wait till the facade is fully loaded, 
+                then wait till the chargebee form is initialized. We need to find a way to use one loading spinner 
+                for both stages
+                */}
+                {/* {loading ? (
+                    <div
+                        className="flex justify-center items-center h-custom"
+                        style={{
+                            '--h-custom': '27rem',
+                        }}
+                    >
+                        <CircleLoader size="large" />
+                    </div>
+                ) : (
+                    content
+                )} */}
+                {content}
             </ModalTwoContent>
-            <ModalTwoFooter>
-                <Button disabled={loading} onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
-                <Button loading={loading} color="norm" type="submit" data-testid="edit-card-action-save">{c('Action')
-                    .t`Save`}</Button>
-            </ModalTwoFooter>
+            {formFullyLoaded && (
+                <ModalTwoFooter>
+                    <Button disabled={processing} onClick={rest.onClose}>{c('Action').t`Cancel`}</Button>
+                    <Button loading={processing} color="norm" type="submit" data-testid="edit-card-action-save">{c(
+                        'Action'
+                    ).t`Save`}</Button>
+                </ModalTwoFooter>
+            )}
         </ModalTwo>
     );
 };

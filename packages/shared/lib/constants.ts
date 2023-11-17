@@ -722,12 +722,17 @@ export enum PLAN_SERVICES {
 // You don't need more, use `user.isPaid`
 export const FREE_SUBSCRIPTION = {
     isFreeSubscription: true,
+    Plans: undefined,
+    Currency: undefined,
+    CouponCode: undefined,
+    Cycle: undefined,
+    UpcomingSubscription: undefined,
 };
 
 export type FreeSubscription = typeof FREE_SUBSCRIPTION;
 
 export function isFreeSubscription(obj: any): obj is FreeSubscription {
-    return !!obj && obj.isFreeSubscription && Object.keys(obj).length === 1;
+    return !!obj && obj.isFreeSubscription && Object.keys(obj).filter((key) => obj[key] !== undefined).length === 1;
 }
 
 export const FREE_ORGANIZATION = {}; // You don't need more, use `user.isPaid`

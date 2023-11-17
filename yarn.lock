@@ -2940,6 +2940,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fullhuman/postcss-purgecss@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "@fullhuman/postcss-purgecss@npm:5.0.0"
+  dependencies:
+    purgecss: "npm:^5.0.0"
+  peerDependencies:
+    postcss: ^8.0.0
+  checksum: 10c0/27a87a708c316b5d84d2ee6a557a3c0301eae1cea355276670d0c1c76d146a19f40ffa0a79fecaea270ff4b609448c6490ec54b585f81114b502aa9519f642e6
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.11.13":
   version: 0.11.13
   resolution: "@humanwhocodes/config-array@npm:0.11.13"
@@ -4511,6 +4522,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@octokit/auth-token@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@octokit/auth-token@npm:4.0.0"
+  checksum: 10c0/57acaa6c394c5abab2f74e8e1dcf4e7a16b236f713c77a54b8f08e2d14114de94b37946259e33ec2aab0566b26f724c2b71d2602352b59e541a9854897618f3c
+  languageName: node
+  linkType: hard
+
 "@octokit/core@npm:^4.2.1":
   version: 4.2.1
   resolution: "@octokit/core@npm:4.2.1"
@@ -4526,6 +4544,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@octokit/core@npm:^5.0.0":
+  version: 5.1.0
+  resolution: "@octokit/core@npm:5.1.0"
+  dependencies:
+    "@octokit/auth-token": "npm:^4.0.0"
+    "@octokit/graphql": "npm:^7.0.0"
+    "@octokit/request": "npm:^8.0.2"
+    "@octokit/request-error": "npm:^5.0.0"
+    "@octokit/types": "npm:^12.0.0"
+    before-after-hook: "npm:^2.2.0"
+    universal-user-agent: "npm:^6.0.0"
+  checksum: 10c0/a1d2882373b4a33cd9f6e56d76bcc82e5589a477829fc3491b1ef471a8a83fa437b339a2c76d97d9e8ea4ca12bf3ebf32e66119ba16977e542d98f1f5dd3c994
+  languageName: node
+  linkType: hard
+
 "@octokit/endpoint@npm:^7.0.0":
   version: 7.0.2
   resolution: "@octokit/endpoint@npm:7.0.2"
@@ -4537,6 +4570,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@octokit/endpoint@npm:^9.0.0":
+  version: 9.0.4
+  resolution: "@octokit/endpoint@npm:9.0.4"
+  dependencies:
+    "@octokit/types": "npm:^12.0.0"
+    universal-user-agent: "npm:^6.0.0"
+  checksum: 10c0/f1c857c5d85afa9d7e8857f7f97dbec28d3b6ab1dc21fe35172f1bc9e5512c8a3a26edabf6b2d83bb60d700f7ad290c96be960496aa83606095630edfad06db4
+  languageName: node
+  linkType: hard
+
 "@octokit/graphql@npm:^5.0.0":
   version: 5.0.1
   resolution: "@octokit/graphql@npm:5.0.1"
@@ -4545,6 +4588,17 @@ __metadata:
     "@octokit/types": "npm:^7.0.0"
     universal-user-agent: "npm:^6.0.0"
   checksum: 10c0/096ca4d78790b5e43422b5076b721b1b6d8b7b55fc5a33c5edca66a613ba043a072cf20a739ef2f76380fecaf1f9d2bf26af290aff2e158a354a4b2aea5b38e2
+  languageName: node
+  linkType: hard
+
+"@octokit/graphql@npm:^7.0.0":
+  version: 7.0.2
+  resolution: "@octokit/graphql@npm:7.0.2"
+  dependencies:
+    "@octokit/request": "npm:^8.0.1"
+    "@octokit/types": "npm:^12.0.0"
+    universal-user-agent: "npm:^6.0.0"
+  checksum: 10c0/96e5d6b970be60877134cc147b9249534f3a79d691b9932d731d453426fa1e1a0a36111a1b0a6ab43d61309c630903a65db5559b5c800300dc26cf588f50fea8
   languageName: node
   linkType: hard
 
@@ -4562,6 +4616,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@octokit/openapi-types@npm:^19.1.0":
+  version: 19.1.0
+  resolution: "@octokit/openapi-types@npm:19.1.0"
+  checksum: 10c0/ae8081f52b797b91a12d4f6cddc475699c9d34b06645b337adc77d30b583d8fe8506597a45c42f8f1a96bfb2a9d092cee257d8a65d718bfeed23a0d153448eea
+  languageName: node
+  linkType: hard
+
 "@octokit/plugin-paginate-rest@npm:^6.1.2":
   version: 6.1.2
   resolution: "@octokit/plugin-paginate-rest@npm:6.1.2"
@@ -4574,12 +4635,43 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@octokit/plugin-paginate-rest@npm:^9.0.0":
+  version: 9.1.5
+  resolution: "@octokit/plugin-paginate-rest@npm:9.1.5"
+  dependencies:
+    "@octokit/types": "npm:^12.4.0"
+  peerDependencies:
+    "@octokit/core": ">=5"
+  checksum: 10c0/a17055dff8fde5ebc03bf935294ffa4605ed714cb15252f0fa63cda1b95e738fafb5ab9748b18fbdfa5615d5f6686cbf193c6d6426e7dc4fd1dda91c87263f3b
+  languageName: node
+  linkType: hard
+
 "@octokit/plugin-request-log@npm:^1.0.4":
   version: 1.0.4
   resolution: "@octokit/plugin-request-log@npm:1.0.4"
   peerDependencies:
     "@octokit/core": ">=3"
   checksum: 10c0/7238585445555db553912e0cdef82801c89c6e5cbc62c23ae086761c23cc4a403d6c3fddd20348bbd42fb7508e2c2fce370eb18fdbe3fbae2c0d2c8be974f4cc
+  languageName: node
+  linkType: hard
+
+"@octokit/plugin-request-log@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@octokit/plugin-request-log@npm:4.0.0"
+  peerDependencies:
+    "@octokit/core": ">=5"
+  checksum: 10c0/ca6db112f288326d2f11de5170e7d6429ba54f04a22dc1e5d06c8d626f72bd2effeb0218a8f73bc9e23657b5a89194cd297964ace54693d2dfdfba3828920b45
+  languageName: node
+  linkType: hard
+
+"@octokit/plugin-rest-endpoint-methods@npm:^10.0.0":
+  version: 10.2.0
+  resolution: "@octokit/plugin-rest-endpoint-methods@npm:10.2.0"
+  dependencies:
+    "@octokit/types": "npm:^12.3.0"
+  peerDependencies:
+    "@octokit/core": ">=5"
+  checksum: 10c0/4d00a2334753955f0c3841ba8fc0880c093b94838e011864ee737d958d2d64e3d45d34fa4c8b64bccf9e13c6de81318cbd6e2b24df37992941d12f54def28432
   languageName: node
   linkType: hard
 
@@ -4606,6 +4698,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@octokit/request-error@npm:^5.0.0":
+  version: 5.0.1
+  resolution: "@octokit/request-error@npm:5.0.1"
+  dependencies:
+    "@octokit/types": "npm:^12.0.0"
+    deprecation: "npm:^2.0.0"
+    once: "npm:^1.4.0"
+  checksum: 10c0/e72a4627120de345b54876a1f007664095e5be9d624fce2e14fccf7668cd8f5e4929d444d8fc085d48e1fb5cd548538453974aab129a669101110d6679dce6c6
+  languageName: node
+  linkType: hard
+
 "@octokit/request@npm:^6.0.0":
   version: 6.2.1
   resolution: "@octokit/request@npm:6.2.1"
@@ -4617,6 +4720,18 @@ __metadata:
     node-fetch: "npm:^2.6.7"
     universal-user-agent: "npm:^6.0.0"
   checksum: 10c0/61329ea64f032240a1ee6f77d94840f0aa1c24c2467acd747cad1ca78a49c4526116a09641f696f4e47cb5a82ffcd000555fcf6127f5b07d2f871285b9f5ee04
+  languageName: node
+  linkType: hard
+
+"@octokit/request@npm:^8.0.1, @octokit/request@npm:^8.0.2":
+  version: 8.1.6
+  resolution: "@octokit/request@npm:8.1.6"
+  dependencies:
+    "@octokit/endpoint": "npm:^9.0.0"
+    "@octokit/request-error": "npm:^5.0.0"
+    "@octokit/types": "npm:^12.0.0"
+    universal-user-agent: "npm:^6.0.0"
+  checksum: 10c0/ef84418e0b1f28335c105bca2b1518b04797791761024d26f80f60a528cdcf468baf9897fd34f535c42af0643a598884f882bc832e68edbfe1ea530c2df563a4
   languageName: node
   linkType: hard
 
@@ -4632,10 +4747,31 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@octokit/rest@npm:^20.0.2":
+  version: 20.0.2
+  resolution: "@octokit/rest@npm:20.0.2"
+  dependencies:
+    "@octokit/core": "npm:^5.0.0"
+    "@octokit/plugin-paginate-rest": "npm:^9.0.0"
+    "@octokit/plugin-request-log": "npm:^4.0.0"
+    "@octokit/plugin-rest-endpoint-methods": "npm:^10.0.0"
+  checksum: 10c0/e9bfc617d0e0bfb0ba9dea3d1e0a19167c5a255beac622dd34280e1754dfab7688323b3251f8e8c85494b39548ecc52385e8b84e21ce0627f58176562a6e2fae
+  languageName: node
+  linkType: hard
+
 "@octokit/tsconfig@npm:^1.0.2":
   version: 1.0.2
   resolution: "@octokit/tsconfig@npm:1.0.2"
   checksum: 10c0/84db70b495beeed69259dd4def14cdfb600edeb65ef32811558c99413ee2b414ed10bff9c4dcc7a43451d0fd36b4925ada9ef7d4272b5eae38cb005cc2f459ac
+  languageName: node
+  linkType: hard
+
+"@octokit/types@npm:^12.0.0, @octokit/types@npm:^12.3.0, @octokit/types@npm:^12.4.0":
+  version: 12.4.0
+  resolution: "@octokit/types@npm:12.4.0"
+  dependencies:
+    "@octokit/openapi-types": "npm:^19.1.0"
+  checksum: 10c0/b52b3fd8af307a1868846991f8376548a790814b20639dee1110271a768c0489081970df893ca2230f6285066003230d22f5877eeac90418971a475c79808241
   languageName: node
   linkType: hard
 
@@ -5257,6 +5393,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/chargebee@workspace:packages/chargebee":
+  version: 0.0.0-use.local
+  resolution: "@proton/chargebee@workspace:packages/chargebee"
+  dependencies:
+    "@fullhuman/postcss-purgecss": "npm:^5.0.0"
+    "@proton/styles": "workspace:packages/styles"
+    eslint: "npm:^8.56.0"
+    jest: "npm:^29.7.0"
+    postcss: "npm:^8.4.33"
+    typescript: "npm:^5.3.3"
+    vite: "npm:^5.0.12"
+    vite-plugin-html: "npm:^3.2.1"
+    vite-plugin-mkcert: "npm:^1.17.3"
+    vite-plugin-singlefile: "npm:^1.0.0"
+  languageName: unknown
+  linkType: soft
+
 "@proton/colors@workspace:^, @proton/colors@workspace:packages/colors":
   version: 0.0.0-use.local
   resolution: "@proton/colors@workspace:packages/colors"
@@ -5296,6 +5449,7 @@ __metadata:
     "@noble/ed25519": "npm:1.7.3"
     "@proton/account": "workspace:^"
     "@proton/calendar": "workspace:^"
+    "@proton/chargebee": "workspace:packages/chargebee"
     "@proton/eslint-config-proton": "workspace:packages/eslint-config-proton"
     "@proton/features": "workspace:^"
     "@proton/i18n": "workspace:packages/i18n"
@@ -6269,7 +6423,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@rollup/pluginutils@npm:^4.0.0":
+"@rollup/pluginutils@npm:^4.0.0, @rollup/pluginutils@npm:^4.2.0":
   version: 4.2.1
   resolution: "@rollup/pluginutils@npm:4.2.1"
   dependencies:
@@ -11465,6 +11619,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:^1.6.5":
+  version: 1.6.7
+  resolution: "axios@npm:1.6.7"
+  dependencies:
+    follow-redirects: "npm:^1.15.4"
+    form-data: "npm:^4.0.0"
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 10c0/131bf8e62eee48ca4bd84e6101f211961bf6a21a33b95e5dfb3983d5a2fe50d9fffde0b57668d7ce6f65063d3dc10f2212cbcb554f75cfca99da1c73b210358d
+  languageName: node
+  linkType: hard
+
 "axobject-query@npm:^3.2.1":
   version: 3.2.1
   resolution: "axobject-query@npm:3.2.1"
@@ -14265,7 +14430,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"colorette@npm:^2.0.10, colorette@npm:^2.0.14, colorette@npm:^2.0.20":
+"colorette@npm:^2.0.10, colorette@npm:^2.0.14, colorette@npm:^2.0.16, colorette@npm:^2.0.20":
   version: 2.0.20
   resolution: "colorette@npm:2.0.20"
   checksum: 10c0/e94116ff33b0ff56f3b83b9ace895e5bf87c2a7a47b3401b8c3f3226e050d5ef76cf4072fb3325f9dc24d1698f9b730baf4e05eeaf861d74a1883073f4c98a40
@@ -14397,7 +14562,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"commander@npm:^9.3.0":
+"commander@npm:^9.0.0, commander@npm:^9.3.0":
   version: 9.5.0
   resolution: "commander@npm:9.5.0"
   checksum: 10c0/5f7784fbda2aaec39e89eb46f06a999e00224b3763dc65976e05929ec486e174fe9aac2655f03ba6a5e83875bd173be5283dc19309b7c65954701c02025b3c1d
@@ -14576,6 +14741,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"connect-history-api-fallback@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "connect-history-api-fallback@npm:1.6.0"
+  checksum: 10c0/6d59c68070fcb2f6d981992f88d050d7544e8e1af6600c23ad680d955e316216794a742a1669d1f14ed5171fc628b916f8a4e15c5a1e55bffc8ccc60bfeb0b2c
+  languageName: node
+  linkType: hard
+
 "connect-history-api-fallback@npm:^2.0.0":
   version: 2.0.0
   resolution: "connect-history-api-fallback@npm:2.0.0"
@@ -14592,6 +14764,13 @@ __metadata:
     parseurl: "npm:~1.3.3"
     utils-merge: "npm:1.0.1"
   checksum: 10c0/f120c6116bb16a0a7d2703c0b4a0cd7ed787dc5ec91978097bf62aa967289020a9f41a9cd3c3276a7b92aaa36f382d2cd35fed7138fd466a55c8e9fdbed11ca8
+  languageName: node
+  linkType: hard
+
+"consola@npm:^2.15.3":
+  version: 2.15.3
+  resolution: "consola@npm:2.15.3"
+  checksum: 10c0/34a337e6b4a1349ee4d7b4c568484344418da8fdb829d7d71bfefcd724f608f273987633b6eef465e8de510929907a092e13cb7a28a5d3acb3be446fcc79fd5e
   languageName: node
   linkType: hard
 
@@ -15291,7 +15470,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-select@npm:^4.1.3":
+"css-select@npm:^4.1.3, css-select@npm:^4.2.1":
   version: 4.3.0
   resolution: "css-select@npm:4.3.0"
   dependencies:
@@ -16441,10 +16620,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv-expand@npm:^8.0.2":
+  version: 8.0.3
+  resolution: "dotenv-expand@npm:8.0.3"
+  checksum: 10c0/bf928bdd75ec632918e41fc5822d507dcf4081ae1d07b47aaee086141f6bbdc202add9f214b4064e118db1ca343b59f3924b0721327954a7af46897069271672
+  languageName: node
+  linkType: hard
+
 "dotenv@npm:16.0.3":
   version: 16.0.3
   resolution: "dotenv@npm:16.0.3"
   checksum: 10c0/109457ac5f9e930ca8066ea33887b6f839ab24d647a7a8b49ddcd1f32662e2c35591c5e5b9819063e430148a664d0927f0cbe60cf9575d89bc524f47ff7e78f0
+  languageName: node
+  linkType: hard
+
+"dotenv@npm:^16.0.0":
+  version: 16.4.1
+  resolution: "dotenv@npm:16.4.1"
+  checksum: 10c0/ef3d95f48f38146df0881a4b58447ae437d2da3f6d645074b84de4e64ef64ba75fc357c5ed66b3c2b813b5369fdeb6a4777d6ade2d50e54eed6aa06dddc98bc4
   languageName: node
   linkType: hard
 
@@ -18844,6 +19037,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"follow-redirects@npm:^1.15.4":
+  version: 1.15.5
+  resolution: "follow-redirects@npm:1.15.5"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: 10c0/418d71688ceaf109dfd6f85f747a0c75de30afe43a294caa211def77f02ef19865b547dfb73fde82b751e1cc507c06c754120b848fe5a7400b0a669766df7615
+  languageName: node
+  linkType: hard
+
 "fontkit@npm:^2.0.2":
   version: 2.0.2
   resolution: "fontkit@npm:2.0.2"
@@ -19148,7 +19351,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fs-extra@npm:^10.0.0":
+"fs-extra@npm:^10.0.0, fs-extra@npm:^10.0.1":
   version: 10.1.0
   resolution: "fs-extra@npm:10.1.0"
   dependencies:
@@ -20437,7 +20640,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"he@npm:1.2.x, he@npm:^1.2.0":
+"he@npm:1.2.0, he@npm:1.2.x, he@npm:^1.2.0":
   version: 1.2.0
   resolution: "he@npm:1.2.0"
   bin:
@@ -20607,7 +20810,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"html-minifier-terser@npm:^6.0.2":
+"html-minifier-terser@npm:^6.0.2, html-minifier-terser@npm:^6.1.0":
   version: 6.1.0
   resolution: "html-minifier-terser@npm:6.1.0"
   dependencies:
@@ -26018,6 +26221,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-html-parser@npm:^5.3.3":
+  version: 5.4.2
+  resolution: "node-html-parser@npm:5.4.2"
+  dependencies:
+    css-select: "npm:^4.2.1"
+    he: "npm:1.2.0"
+  checksum: 10c0/5a46ce4dc29dcb656067a977ef977d09328b21d1e26e6105176230bb151970cf7deb2db0dd084abeb98106ac79a83102232ad0d9a45d0a686f3eb6931a048663
+  languageName: node
+  linkType: hard
+
 "node-int64@npm:^0.4.0":
   version: 0.4.0
   resolution: "node-int64@npm:0.4.0"
@@ -27470,6 +27683,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pathe@npm:^0.2.0":
+  version: 0.2.0
+  resolution: "pathe@npm:0.2.0"
+  checksum: 10c0/4ea3bc19d421926d1e6b767ca5dc62fd8d053791f5f93b806ef64ea9c7c21071385429e12c0b1838129ae53904bfc6a243ac6890d3189fa5f45c417db49507cf
+  languageName: node
+  linkType: hard
+
 "pathe@npm:^1.1.0, pathe@npm:^1.1.1":
   version: 1.1.1
   resolution: "pathe@npm:1.1.1"
@@ -28301,7 +28521,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-selector-parser@npm:^6.0.0, postcss-selector-parser@npm:^6.0.11, postcss-selector-parser@npm:^6.0.13, postcss-selector-parser@npm:^6.0.15, postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4":
+"postcss-selector-parser@npm:^6.0.0, postcss-selector-parser@npm:^6.0.11, postcss-selector-parser@npm:^6.0.13, postcss-selector-parser@npm:^6.0.15, postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4, postcss-selector-parser@npm:^6.0.7":
   version: 6.0.15
   resolution: "postcss-selector-parser@npm:6.0.15"
   dependencies:
@@ -28365,7 +28585,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.2.14, postcss@npm:^8.2.15, postcss@npm:^8.4.23, postcss@npm:^8.4.28, postcss@npm:^8.4.32, postcss@npm:^8.4.33":
+"postcss@npm:^8.2.14, postcss@npm:^8.2.15, postcss@npm:^8.4.23, postcss@npm:^8.4.28, postcss@npm:^8.4.32, postcss@npm:^8.4.33, postcss@npm:^8.4.4":
   version: 8.4.33
   resolution: "postcss@npm:8.4.33"
   dependencies:
@@ -29350,6 +29570,20 @@ __metadata:
   version: 6.0.1
   resolution: "pure-rand@npm:6.0.1"
   checksum: 10c0/d8e046e066d4a980140b501021a8426da0d7a01af901cb03ba8e1863c3960cd01216d997cd2ea7f370f1e9056c31fd88e925679a19787fb874dbc45f51d756e2
+  languageName: node
+  linkType: hard
+
+"purgecss@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "purgecss@npm:5.0.0"
+  dependencies:
+    commander: "npm:^9.0.0"
+    glob: "npm:^8.0.3"
+    postcss: "npm:^8.4.4"
+    postcss-selector-parser: "npm:^6.0.7"
+  bin:
+    purgecss: bin/purgecss.js
+  checksum: 10c0/d5a459adc0ad653da9393e643eae9f2084307a3655d10d6c570605292bafe39017bdf57f3d9cf7b95b3ee7a4240435268213511628946f2b5f3985d6cbc7ba05
   languageName: node
   linkType: hard
 
@@ -36281,6 +36515,54 @@ __metadata:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
   checksum: 10c0/c200844504b92ee025e3fbeaaaec243c516f6456c1acdc2a7e4413119e5955d481fbff923809f28017794eda9775af5d036ce1620c5701f590092f48e8f8e0ce
+  languageName: node
+  linkType: hard
+
+"vite-plugin-html@npm:^3.2.1":
+  version: 3.2.2
+  resolution: "vite-plugin-html@npm:3.2.2"
+  dependencies:
+    "@rollup/pluginutils": "npm:^4.2.0"
+    colorette: "npm:^2.0.16"
+    connect-history-api-fallback: "npm:^1.6.0"
+    consola: "npm:^2.15.3"
+    dotenv: "npm:^16.0.0"
+    dotenv-expand: "npm:^8.0.2"
+    ejs: "npm:^3.1.6"
+    fast-glob: "npm:^3.2.11"
+    fs-extra: "npm:^10.0.1"
+    html-minifier-terser: "npm:^6.1.0"
+    node-html-parser: "npm:^5.3.3"
+    pathe: "npm:^0.2.0"
+  peerDependencies:
+    vite: ">=2.0.0"
+  checksum: 10c0/34628f44f07a9656875c66ba0c4dbe6be39646c50f961cb771179b930dd5727281836ee4293d7e89fe36043703a0ff40df06b15b90260d48a642420e008eb76a
+  languageName: node
+  linkType: hard
+
+"vite-plugin-mkcert@npm:^1.17.3":
+  version: 1.17.3
+  resolution: "vite-plugin-mkcert@npm:1.17.3"
+  dependencies:
+    "@octokit/rest": "npm:^20.0.2"
+    axios: "npm:^1.6.5"
+    debug: "npm:^4.3.4"
+    picocolors: "npm:^1.0.0"
+  peerDependencies:
+    vite: ">=3"
+  checksum: 10c0/ac0c39feca622d8b35e2f3e34471db169f0d6a00038dfb1505f6aa1f4aeff51325a67469a40f05e6e4ad48c8676676e67e785df9a5d014382607ba6f8492c2b4
+  languageName: node
+  linkType: hard
+
+"vite-plugin-singlefile@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "vite-plugin-singlefile@npm:1.0.0"
+  dependencies:
+    micromatch: "npm:^4.0.5"
+  peerDependencies:
+    rollup: ^4.9.5
+    vite: ^5.0.11
+  checksum: 10c0/2877c0e7eff17611dc145d4c9b211916a34326eaaba52d87e974c34cb3297d01449f9ad5138a325da5b26b673f5236fccd09d16b5a5e95627042ab193d0ec396
   languageName: node
   linkType: hard
 

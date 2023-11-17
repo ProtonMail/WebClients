@@ -5,10 +5,11 @@ import { PaypalProcessorHook } from '@proton/components/payments/react-extension
 import { Currency, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
 import { Price, PrimaryButton } from '../../../components';
+import { ChargebeePaypalWrapper, ChargebeePaypalWrapperProps } from '../../../payments/chargebee/ChargebeeWrapper';
 import StyledPayPalButton from '../StyledPayPalButton';
 import { SUBSCRIPTION_STEPS } from './constants';
 
-interface Props {
+type Props = {
     className?: string;
     currency: Currency;
     step: SUBSCRIPTION_STEPS;
@@ -18,7 +19,7 @@ interface Props {
     paymentMethodValue?: PaymentMethodType;
     paypal: PaypalProcessorHook;
     disabled?: boolean;
-}
+} & Pick<ChargebeePaypalWrapperProps, 'chargebeePaypal' | 'iframeHandles'>;
 
 const SubscriptionSubmitButton = ({
     className,
@@ -30,6 +31,8 @@ const SubscriptionSubmitButton = ({
     checkResult,
     disabled,
     onDone,
+    chargebeePaypal,
+    iframeHandles,
 }: Props) => {
     const amountDue = checkResult?.AmountDue || 0;
 
@@ -74,6 +77,10 @@ const SubscriptionSubmitButton = ({
         );
     }
 
+    if (paymentMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL) {
+        return <ChargebeePaypalWrapper chargebeePaypal={chargebeePaypal} iframeHandles={iframeHandles} />;
+    }
+
     if (!loading && paymentMethodValue === PAYMENT_METHOD_TYPES.CASH) {
         return (
             <PrimaryButton className={className} disabled={disabled} loading={loading} onClick={onDone}>
@@ -97,9 +104,17 @@ const SubscriptionSubmitButton = ({
     );
 
     return (
-        <PrimaryButton className={className} loading={loading} disabled={disabled} type="submit" data-testid="confirm">
-            {amountDue > 0 ? c('Action').jt`Pay ${price} now` : c('Action').t`Confirm`}
-        </PrimaryButton>
+        <>
+            <PrimaryButton
+                className={className}
+                loading={loading}
+                disabled={disabled}
+                type="submit"
+                data-testid="confirm"
+            >
+                {amountDue > 0 ? c('Action').jt`Pay ${price} now` : c('Action').t`Confirm`}
+            </PrimaryButton>
+        </>
     );
 };
 
