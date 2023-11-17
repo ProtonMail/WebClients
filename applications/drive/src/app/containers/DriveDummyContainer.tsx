@@ -102,7 +102,7 @@ const DriveDummyContainer = () => {
             <PrivateAppContainer header={header} sidebar={sidebar}>
                 <PrivateMainArea
                     hasToolbar
-                    className="flex-no-min-children flex-column flex-nowrap "
+                    className="flex children-min-size-auto flex-column flex-nowrap "
                     drawerSidebar={<DrawerSidebar buttons={drawerSidebarButtons} />}
                     drawerVisibilityButton={canShowDrawer ? <DrawerVisibilityButton /> : undefined}
                 >
