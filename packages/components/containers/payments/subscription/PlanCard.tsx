@@ -100,7 +100,7 @@ const PlanCard = ({
             >
                 {recommended ? (
                     <div className="plan-selection-plan-recommended-pill-container text-aligncenter flex">
-                        <div className="plan-selection-plan-recommended-pill inline-flex mx-auto flex-items-align-center bg-primary py-1 px-3">
+                        <div className="plan-selection-plan-recommended-pill inline-flex mx-auto bg-primary py-1 px-3">
                             <Icon name="star-filled" className="my-auto" />
                             <span className="ml-1">{c('Title').t`Recommended`}</span>
                         </div>

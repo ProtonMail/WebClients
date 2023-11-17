@@ -66,10 +66,10 @@ function WelcomeActionsDoneSpotlight({ onSeen }: { onSeen: (dismiss?: boolean) =
 
     const spotlightContent = (
         <div className="flex flex-nowrap">
-            <figure className="flex-item shrink-0 mr-4">
+            <figure className="shrink-0 mr-4">
                 <img src={spotlightIcon} alt="" />
             </figure>
-            <div className="flex-item">
+            <div>
                 <h6 className="text-semibold">{c('Title').t`You’ve got 1 GB of storage`}</h6>
                 <div className="mb-4 color-weak">{c('Info').t`Way to go, you’ve just doubled your free storage!`}</div>
             </div>
@@ -107,10 +107,10 @@ function WelcomeActionsSpotlight({
 
     const spotlightContent = showPopup ? (
         <div className="flex flex-nowrap">
-            <figure className="flex-item shrink-0 mr-4">
+            <figure className="shrink-0 mr-4">
                 <img src={spotlightIcon} alt="" />
             </figure>
-            <div className="flex-item">
+            <div>
                 <h6 className="text-semibold">{c('Title').t`Your 500 MB bonus`}</h6>
                 {/* translator: You have X days left to claim your 500 MB welcome bonus and double your storage */}
                 {c('Info').ngettext(
@@ -285,7 +285,7 @@ function WelcomeAction({
         >
             <div
                 className={clsx([
-                    'flex-item-nowrap h-custom w-custom rounded mr-2',
+                    'h-custom w-custom rounded mr-2',
                     'flex justify-center items-center',
                     isDone ? 'bg-success' : 'bg-weak',
                 ])}

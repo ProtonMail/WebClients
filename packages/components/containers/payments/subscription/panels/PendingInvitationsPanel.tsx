@@ -40,7 +40,7 @@ const PendingInvitationPanel = ({ invites }: Props) => {
     return (
         <>
             <div className="border rounded px-6 py-5">
-                <div className="flex flex-wrap flex-item-space-between">
+                <div className="flex">
                     <h3 className="text-lg mb-6">
                         <strong>
                             {invites.length === 1

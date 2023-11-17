@@ -328,7 +328,7 @@ const SubUserCreateModal = ({
                         />
 
                         {hasVPN && (
-                            <div className="flex flex-align-center mb-5">
+                            <div className="flex mb-5">
                                 <label className="text-semibold mr-4" htmlFor="vpn-toggle">
                                     {c('Label for new member').t`VPN connections`}
                                 </label>
@@ -340,7 +340,7 @@ const SubUserCreateModal = ({
                             </div>
                         )}
 
-                        <div className="flex flex-align-center mb-6">
+                        <div className="flex mb-6">
                             <label className="text-semibold mr-4" htmlFor="private-toggle">
                                 {c('Label for new member').t`Private`}
                             </label>

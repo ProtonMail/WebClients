@@ -94,7 +94,7 @@ const HeaderCollapsed = ({
                 )}
                 {messageLoaded && isExpiringMessage && (
                     <ItemExpiration
-                        className="badge-label-weak ml-2 py-0-5 TOCHECK flex-item-no-shrink"
+                        className="badge-label-weak ml-2 py-0-5 TOCHECK"
                         expirationTime={message.data?.ExpirationTime}
                         element={message.data as Message}
                         labelID={labelID}
