@@ -120,11 +120,22 @@ const usePayment = ({
     };
 
     useEffect(() => {
-        paypal.clear();
-        paypalCredit.clear();
-        if (isPayPalActive && amount && paypalPrefetchToken) {
-            paypal.onToken().then(() => paypalCredit.onToken());
+        async function run() {
+            paypal.clear();
+            paypalCredit.clear();
+            if (isPayPalActive && amount && paypalPrefetchToken) {
+                try {
+                    await paypal.onToken();
+                } catch {}
+                // even if token fetching fails (for example because of network or Human Verification),
+                // we still want to try to fetch the token for paypal-credit
+                try {
+                    await paypalCredit.onToken();
+                } catch {}
+            }
         }
+
+        run();
     }, [isPayPalActive, amount, currency]);
 
     return {

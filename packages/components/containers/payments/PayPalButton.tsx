@@ -66,7 +66,7 @@ export const LegacyPayPalButton = ({
         return null;
     }
 
-    if (retry) {
+    if (retry || !!paypal.tokenFetchError) {
         const handleRetry = async () => {
             let model = await paypal.onToken();
             if (prefetchToken) {

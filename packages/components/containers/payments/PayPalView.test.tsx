@@ -96,7 +96,7 @@ it('should render the message of paypal credit and "click here" button', () => {
     expect(getByTestId('paypal-credit-button')).toBeInTheDocument();
 });
 
-it('should disabled the "click here" button when triggers are disabled', () => {
+it('should disable the "click here" button when triggers are disabled', () => {
     const { result: paypal } = paypalHook({ isCredit: false, ...amountAndCurrency });
     const { result: paypalCredit } = paypalHook({ isCredit: true, ...amountAndCurrency });
 
@@ -109,6 +109,24 @@ it('should disabled the "click here" button when triggers are disabled', () => {
             amount={amountAndCurrency.Amount}
             currency={amountAndCurrency.Currency}
             triggersDisabled={true}
+        />
+    );
+
+    expect(getByTestId('paypal-credit-button')).toBeDisabled();
+});
+
+it('should disable the "click here" button when paypal credit is in initial state', () => {
+    const { result: paypal } = paypalHook({ isCredit: false, ...amountAndCurrency });
+    const { result: paypalCredit } = paypalHook({ isCredit: true, ...amountAndCurrency });
+
+    const { getByTestId } = render(
+        <PayPalView
+            type="credit"
+            paypal={paypal.current}
+            paypalCredit={paypalCredit.current}
+            onClick={onClick}
+            amount={amountAndCurrency.Amount}
+            currency={amountAndCurrency.Currency}
         />
     );
 
