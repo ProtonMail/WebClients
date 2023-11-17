@@ -37,12 +37,14 @@ export const ExtraFieldsControl: VFC<ExtraFieldsControlProps> = ({ extraFields, 
                     ) : (
                         <OTPValueControl
                             key={key}
-                            itemId={itemId}
                             label={fieldName}
-                            shareId={shareId}
-                            totpUri={data.totpUri}
-                            type="extraField"
-                            index={index}
+                            payload={{
+                                index,
+                                itemId,
+                                shareId,
+                                totpUri: data.totpUri,
+                                type: 'extraField',
+                            }}
                         />
                     );
                 case 'hidden':
