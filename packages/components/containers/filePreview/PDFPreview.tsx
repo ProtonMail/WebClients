@@ -24,7 +24,7 @@ const PDFPreview = ({ filename = 'preview.pdf', contents }: Props) => {
             {url && (
                 <object
                     data={url}
-                    className="w-full flex-no-min-children flex-auto flex-column-reverse"
+                    className="w-full flex children-min-size-auto flex-auto flex-column-reverse"
                     type="application/pdf"
                     title={filename}
                 >

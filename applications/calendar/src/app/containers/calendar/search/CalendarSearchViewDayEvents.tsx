@@ -48,7 +48,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
         >
             <div
                 data-testid="month-day-block"
-                className="flex-no-min-children shrink-0 items-baseline search-month-day"
+                className="flex children-min-size-auto shrink-0 items-baseline search-month-day"
                 aria-current={isToday ? `date` : undefined}
             >
                 <div
@@ -115,7 +115,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                     style={{ '--calendar-color': getColor(visualCalendar, Color) }}
                                 />
                                 <span
-                                    className="flex-no-min-children flex-nowrap flex-1 search-event-time-details flex-column lg:flex-row"
+                                    className="flex children-min-size-auto flex-nowrap flex-1 search-event-time-details flex-column lg:flex-row"
                                     ref={isClosestToDate ? closestToDateRef : null}
                                 >
                                     <span

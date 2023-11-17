@@ -200,7 +200,7 @@ const ImagePreview = ({
                     <UnsupportedPreview onDownload={onDownload} type="image" />
                 ) : (
                     <div
-                        className="flex-no-min-children m-auto relative"
+                        className="flex children-min-size-auto m-auto relative"
                         style={{
                             ...imageStyles,
                             overflow: !isLowResImageHidden && placeholderSrc ? 'hidden' : 'initial',
