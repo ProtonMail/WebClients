@@ -28,7 +28,7 @@ const ContactImportCsvTableHeader = ({
                 <TableCell type="header" className="text-center">{c('TableHeader').t`vCard field`}</TableCell>
                 <TableCell type="header" className="w-3/10 text-center">
                     <div className="inline-flex">
-                        <span className="flex-item-centered-vert mr-2">{c('TableHeader').t`Values`}</span>
+                        <span className="self-center my-auto mr-2">{c('TableHeader').t`Values`}</span>
                         <span className="flex flex-nowrap">
                             <Button icon disabled={disabledPrevious} onClick={onPrevious}>
                                 <Icon name="chevron-left" className="shrink-0" />

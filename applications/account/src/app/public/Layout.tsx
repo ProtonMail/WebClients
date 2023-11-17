@@ -79,7 +79,7 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
                     centeredContent && 'absolute h-full w-full'
                 )}
             >
-                <main className={clsx(centeredContent && 'flex flex-item-centered-vert')}>
+                <main className={clsx(centeredContent && 'flex self-center my-auto')}>
                     {children}
                     {hasDecoration && (
                         <div className="shrink-0 text-center px-4 pt-0 pb-0 sm:px-5 sm:pt-8 sm:pb-0">
