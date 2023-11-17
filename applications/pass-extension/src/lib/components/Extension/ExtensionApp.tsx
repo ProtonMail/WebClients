@@ -1,4 +1,4 @@
-import { type FC, type ReactNode, useEffect, useState } from 'react';
+import { type FC, type ReactNode, useCallback, useEffect, useState } from 'react';
 
 import { setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
@@ -12,7 +12,9 @@ import {
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
+import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
+import browser from '@proton/pass/lib/globals/browser';
 import type { WorkerMessage } from '@proton/pass/types';
 import { type ExtensionEndpoint, WorkerMessageType } from '@proton/pass/types';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
@@ -29,6 +31,7 @@ export const ExtensionApp: FC<{
 }> = ({ endpoint, children }) => {
     const [ready, setReady] = useState(false);
     const [locale, setLocale] = useState(DEFAULT_LOCALE);
+    const onLink = useCallback((url) => browser.tabs.create({ url }).catch(noop), []);
 
     /* resolve the extension locale through the I18nService instead of reading
      * from the store as some extension sub-apps are not redux connected but
@@ -74,11 +77,13 @@ export const ExtensionApp: FC<{
             <ThemeProvider />
             <NotificationsProvider>
                 <ModalsProvider>
-                    {children(ready, locale)}
-                    <Portal>
-                        <ModalsChildren />
-                        <NotificationsChildren />
-                    </Portal>
+                    <NavigationProvider onLink={onLink}>
+                        {children(ready, locale)}
+                        <Portal>
+                            <ModalsChildren />
+                            <NotificationsChildren />
+                        </Portal>
+                    </NavigationProvider>
                 </ModalsProvider>
             </NotificationsProvider>
         </ConfigProvider>
