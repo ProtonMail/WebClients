@@ -18,9 +18,9 @@ import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 import { PASS_CONFIG } from '../lib/core';
 import { AuthServiceProvider } from './Context/AuthServiceProvider';
 import { ClientContext, ClientProvider } from './Context/ClientProvider';
+import { Routes } from './Routing/Routes';
 import { ServiceWorkerProvider } from './ServiceWorker/ServiceWorkerProvider';
 import { StoreProvider } from './Store/StoreProvider';
-import { Routes } from './Views/Routes';
 
 import './app.scss';
 
