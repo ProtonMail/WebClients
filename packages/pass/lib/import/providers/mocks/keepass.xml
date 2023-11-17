@@ -95,7 +95,7 @@
         </String>
         <String>
           <Key>otp</Key>
-          <Value>otpauth://totp/Entry%20A:nobodyA@proton.me@account.proton.me?algorithm=sha1&amp;issuer=Entry%20A:nobodyA@proton.me@account.proton.me&amp;period=30&amp;digits=6&amp;secret=VZKDI2A4UP2NG5BB</Value>
+          <Value>otpauth://totp/Entry%20A:nobodyA@proton.me?algorithm=sha1&amp;issuer=Entry%20A&amp;period=30&amp;digits=6&amp;secret=VZKDI2A4UP2NG5BB</Value>
         </String>
         <String>
 					<Key>Text 1</Key>
@@ -361,7 +361,7 @@
             </String>
             <String>
               <Key>otp</Key>
-              <Value ProtectInMemory="True">otpauth://totp/Entry%20A:nobodyA@proton.me@account.proton.me?algorithm=sha1&amp;issuer=Entry%20A:nobodyA@proton.me@account.proton.me&amp;period=30&amp;digits=6&amp;secret=</Value>
+              <Value ProtectInMemory="True">otpauth://totp/Entry%20A:nobodyA@proton.me?algorithm=sha1&amp;issuer=Entry%20A&amp;period=30&amp;digits=6&amp;secret=</Value>
             </String>
             <String>
               <Key>TimeOtp-Secret-Base32</Key>
@@ -410,7 +410,7 @@
             </String>
             <String>
               <Key>otp</Key>
-              <Value>otpauth://totp/Entry%20A:nobodyA@proton.me@account.proton.me?algorithm=sha1&amp;issuer=Entry%20A:nobodyA@proton.me@account.proton.me&amp;period=30&amp;digits=6&amp;secret=VZKDI2A4UP2NG5BB</Value>
+              <Value>otpauth://totp/Entry%20A:nobodyA@proton.me?algorithm=sha1&amp;issuer=Entry%20A&amp;period=30&amp;digits=6&amp;secret=VZKDI2A4UP2NG5BB</Value>
             </String>
             <String>
               <Key>TimeOtp-Secret-Base32</Key>
@@ -459,7 +459,7 @@
             </String>
             <String>
               <Key>otp</Key>
-              <Value>otpauth://totp/Entry%20A:nobodyA@proton.me@account.proton.me?algorithm=sha1&amp;issuer=Entry%20A:nobodyA@proton.me@account.proton.me&amp;period=30&amp;digits=6&amp;secret=VZKDI2A4UP2NG5BB</Value>
+              <Value>otpauth://totp/Entry%20A:nobodyA@proton.me?algorithm=sha1&amp;issuer=Entry%20A&amp;period=30&amp;digits=6&amp;secret=VZKDI2A4UP2NG5BB</Value>
             </String>
             <String>
               <Key>TimeOtp-Secret-Base32</Key>
