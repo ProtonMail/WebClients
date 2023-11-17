@@ -69,7 +69,7 @@ const LoaderPage = ({ documentTitle = '', text, loaderClassName = '' }: Props) =
                 <TextLoader className="color-weak">{textToDisplay}</TextLoader>
             </div>
             {isDrawerApp && (
-                <div className="header pl-4 flex justify-end flex-align-items-center">
+                <div className="header pl-4 flex justify-end items-center">
                     <Tooltip title={c('Action').t`Close`}>
                         <Button icon color="weak" shape="ghost" onClick={handleCloseIFrame}>
                             <Icon name="cross-big" size={16} />

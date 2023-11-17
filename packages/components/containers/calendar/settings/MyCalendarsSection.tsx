@@ -171,7 +171,7 @@ const MyCalendarsSection = ({
     );
     const isCalendarsLimitReachedNode = isFreeUser ? (
         <Card rounded className="mb-4">
-            <div className="flex flex-nowrap flex-align-items-center">
+            <div className="flex flex-nowrap items-center">
                 <p className="flex-item-fluid my-0 pr-7">{calendarsLimitReachedText}</p>
                 <ButtonLike
                     as={SettingsLink}

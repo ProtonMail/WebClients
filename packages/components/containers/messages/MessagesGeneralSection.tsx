@@ -83,7 +83,7 @@ const MessagesGeneralSection = () => {
                             </button>
                         </label>
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="flex flex-item-fluid flex-align-items-center">
+                    <SettingsLayoutRight className="flex flex-item-fluid items-center">
                         <ShortcutsToggle className="mr-4" id="shortcutsToggle" />
                     </SettingsLayoutRight>
                 </SettingsLayout>
@@ -108,7 +108,7 @@ const MessagesGeneralSection = () => {
                             </div>
                         )}
                     </SettingsLayoutLeft>
-                    <SettingsLayoutRight className="flex flex-item-fluid flex-align-items-center">
+                    <SettingsLayoutRight className="flex flex-item-fluid items-center">
                         {!userLoading && showRecoveryEmailInput && (
                             <RecoveryEmail
                                 className="mb-4 md:mb-0"
@@ -117,7 +117,7 @@ const MessagesGeneralSection = () => {
                                 hasNotify={!!userSettings.Email.Notify}
                             />
                         )}
-                        <div className="flex flex-align-items-center">
+                        <div className="flex items-center">
                             <DailyEmailNotificationToggle
                                 id="dailyNotificationsToggle"
                                 className="mr-2"

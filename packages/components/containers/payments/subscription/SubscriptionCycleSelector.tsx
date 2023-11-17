@@ -47,7 +47,7 @@ export const getDiscountPrice = (discount: number, currency: Currency) => {
 };
 
 const singleClassName =
-    'p-4 mb-4 border rounded bg-norm flex flex-nowrap flex-align-items-stretch border-primary border-2';
+    'p-4 mb-4 border rounded bg-norm flex flex-nowrap items-stretch border-primary border-2';
 
 export const SubscriptionItemView = ({
     title,
@@ -65,7 +65,7 @@ export const SubscriptionItemView = ({
     return (
         <div className={singleClassName}>
             <div className="flex-item-fluid pl-2">
-                <div className="flex flex-align-items-center">
+                <div className="flex items-center">
                     <div className="flex-item-fluid-auto mr-4">
                         <strong className="text-lg">{title}</strong>
                     </div>
@@ -73,7 +73,7 @@ export const SubscriptionItemView = ({
                         {loading ? <EllipsisLoader /> : topRight}
                     </strong>
                 </div>
-                <div className="flex flex-align-items-center">
+                <div className="flex items-center">
                     <span className="color-weak flex flex-item-fluid-auto">
                         {loading ? <EllipsisLoader /> : bottomLeft}
                     </span>
@@ -107,7 +107,7 @@ const CycleItemView = ({
 }) => {
     return (
         <div className="flex-item-fluid pl-2">
-            <div className="flex flex-align-items-center">
+            <div className="flex items-center">
                 <div className="flex-item-fluid-auto mr-4">
                     <strong className="text-lg">{text}</strong>
                     {freeMonths > 0 && (
@@ -130,7 +130,7 @@ const CycleItemView = ({
                     )}
                 </strong>
             </div>
-            <div className="flex flex-align-items-center">
+            <div className="flex items-center">
                 <span
                     className="color-weak flex flex-item-fluid-auto"
                     data-testid={`price-per-user-per-month-${cycle}`}
@@ -300,7 +300,7 @@ const SubscriptionCycleSelector = ({
             {cycles.map((cycle) => {
                 const isSelected = cycle === cycleSelected;
                 return (
-                    <li key={`${cycle}`} className="flex flex-align-items-stretch mb-4" data-testid={`cycle-${cycle}`}>
+                    <li key={`${cycle}`} className="flex items-stretch mb-4" data-testid={`cycle-${cycle}`}>
                         <button
                             className={clsx([
                                 'w-full p-4 plan-cycle-button flex flex-nowrap border rounded text-left',

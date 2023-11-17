@@ -67,7 +67,7 @@ const SendEmailReminderTwoFAModal = ({ onClose, members, ...rest }: Props) => {
                             const memberAddresses = memberAddressesMap?.[member.ID] || [];
                             return (
                                 <li
-                                    className="py-2 flex flex-nowrap flex-align-items-center border-bottom"
+                                    className="py-2 flex flex-nowrap items-center border-bottom"
                                     title={member.Name}
                                 >
                                     <Avatar className="mr-2 flex-item-noshrink">{getInitials(member.Name)}</Avatar>

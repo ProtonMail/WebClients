@@ -57,7 +57,7 @@ export const Sandbox = () => {
 
     return (
         <div className="p-7">
-            <div className="flex flex-align-items-stretch">
+            <div className="flex items-stretch">
                 <div className="mr-8">
                     <strong className="block mb-4">Target size</strong>
                     <RadioGroup
@@ -76,14 +76,14 @@ export const Sandbox = () => {
                         options={placementOptions}
                     />
                 </div>
-                <div className="flex flex-item-fluid flex-align-items-center justify-center border">
+                <div className="flex flex-item-fluid items-center justify-center border">
                     <Spotlight
                         content="Content of the spotlight"
                         show={show}
                         originalPlacement={placement}
                         key={placement}
                     >
-                        <div className="border rounded flex flex-align-items-center justify-center" style={style}>
+                        <div className="border rounded flex items-center justify-center" style={style}>
                             Something to put spotlight on
                         </div>
                     </Spotlight>

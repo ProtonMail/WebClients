@@ -167,7 +167,7 @@ const MailRecipientItemSingle = ({
         <>
             <hr className="my-2" />
             <DropdownMenuButton
-                className="text-left flex flex-nowrap flex-align-items-center"
+                className="text-left flex flex-nowrap items-center"
                 onClick={handleCompose}
                 data-testid="recipient:new-message"
             >
@@ -176,7 +176,7 @@ const MailRecipientItemSingle = ({
             </DropdownMenuButton>
             {ContactID ? (
                 <DropdownMenuButton
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={handleClickContact}
                     data-testid="recipient:view-contact-details"
                 >
@@ -185,7 +185,7 @@ const MailRecipientItemSingle = ({
                 </DropdownMenuButton>
             ) : (
                 <DropdownMenuButton
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={handleClickContact}
                     data-testid="recipient:create-new-contact"
                 >
@@ -194,7 +194,7 @@ const MailRecipientItemSingle = ({
                 </DropdownMenuButton>
             )}
             <DropdownMenuButton
-                className="text-left flex flex-nowrap flex-align-items-center"
+                className="text-left flex flex-nowrap items-center"
                 onClick={handleClickSearch}
                 data-testid="recipient:search-messages"
             >
@@ -205,7 +205,7 @@ const MailRecipientItemSingle = ({
             </DropdownMenuButton>
             {showBlockSenderOption && (
                 <DropdownMenuButton
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={handleClickBlockSender}
                     data-testid="block-sender:button"
                 >
@@ -215,7 +215,7 @@ const MailRecipientItemSingle = ({
             )}
             {showTrustPublicKey && (
                 <DropdownMenuButton
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={handleClickTrust}
                     data-testid="recipient:show-trust-public-key"
                 >

@@ -54,7 +54,7 @@ const KeysTable = ({
                                 '',
                             ]}
                             cells={[
-                                <div key={1} className="flex flex-row flex-nowrap flex-align-items-center">
+                                <div key={1} className="flex flex-row flex-nowrap items-center">
                                     <Copy
                                         size="small"
                                         value={fingerprint}

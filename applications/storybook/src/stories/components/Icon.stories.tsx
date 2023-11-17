@@ -26,13 +26,13 @@ export const Color = () => {
 
     return (
         <div>
-            <div className="flex flex-align-items-end justify-center">
+            <div className="flex items-end justify-center">
                 {sizes.map((size) => (
                     <Icon name="brand-proton-mail" size={size} className="mr-4" />
                 ))}
             </div>
             {colors.map((color) => (
-                <div className="flex flex-align-items-end justify-center">
+                <div className="flex items-end justify-center">
                     {sizes.map((size) => (
                         <Icon name="brand-proton-mail" size={size} className={`color-${color} mr-4`} />
                     ))}

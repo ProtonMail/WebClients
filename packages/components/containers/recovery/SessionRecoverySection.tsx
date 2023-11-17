@@ -77,7 +77,7 @@ const SessionRecoverySection = () => {
                         </label>
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="flex-item-fluid pt-2">
-                        <div className="flex flex-align-items-center">
+                        <div className="flex items-center">
                             <Toggle
                                 loading={loadingSessionRecovery}
                                 checked={isSessionRecoveryEnabled}

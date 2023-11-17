@@ -55,7 +55,7 @@ export const VaultInviteForm: VFC<Props> = ({ form, autoFocus }) => {
                 <div className="anime-fade-in">
                     <h2 className="text-xl text-bold mb-3">{c('Title').t`Set access level`}</h2>
                     <button
-                        className="flex flex-align-items-center flex-nowrap gap-3 mb-3"
+                        className="flex items-center flex-nowrap gap-3 mb-3"
                         onClick={() => form.setFieldValue('step', 'email')}
                     >
                         <IconBox size={18} mode="icon" className="flex-item-noshrink">

@@ -21,7 +21,7 @@ const CalendarSelect = ({ calendarID, options, onChange, displayColor = true, fr
         const { name, color } = options[0];
 
         return (
-            <div className="field border-none flex flex-nowrap flex-align-items-center pl-0 w-full">
+            <div className="field border-none flex flex-nowrap items-center pl-0 w-full">
                 {displayColor && <CalendarSelectIcon color={color} className="flex-item-noshrink mr-3" />}
                 <span className="text-ellipsis">{name}</span>
             </div>
@@ -32,7 +32,7 @@ const CalendarSelect = ({ calendarID, options, onChange, displayColor = true, fr
         <SelectTwo value={calendarID} onChange={onChange} {...rest}>
             {options.map(({ id, name, color }) => (
                 <Option key={id} value={id} title={name}>
-                    <div className="flex flex-nowrap flex-align-items-center">
+                    <div className="flex flex-nowrap items-center">
                         {displayColor && <CalendarSelectIcon color={color} className="flex-item-noshrink mr-3" />}
                         <div className="text-ellipsis">{name}</div>
                     </div>

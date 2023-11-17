@@ -44,13 +44,13 @@ const ExtraExpirationSelfDestruction = ({ message }: Props) => {
     return (
         <div
             className={clsx(
-                'bg-norm rounded border flex flex-align-items-center py-2 px-2 mb-2 gap-4',
+                'bg-norm rounded border flex items-center py-2 px-2 mb-2 gap-4',
                 expiresInLessThan24Hours && 'color-danger border-danger'
             )}
             data-testid="expiration-banner"
         >
             <Icon name="hourglass" className="flex-item-noshrink" />
-            <span className="flex flex-item-fluid flex-align-items-center">{expirationMessage}</span>
+            <span className="flex flex-item-fluid items-center">{expirationMessage}</span>
             {canExpire && (
                 <span className="flex-item-noshrink w-full md:w-auto">
                     <Tooltip title={c('Cancel expiration of the message').t`Cancel expiration`}>

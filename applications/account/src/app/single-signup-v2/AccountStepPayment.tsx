@@ -233,7 +233,7 @@ const AccountStepPayment = ({
     };
 
     return (
-        <div className="flex flex-column md:flex-row flex-align-items-stretch md:flex-align-items-start justify-space-between gap-14">
+        <div className="flex flex-column md:flex-row items-stretch md:items-start justify-space-between gap-14">
             <div className="flex-item-noshrink md:flex-item-fluid order-1 md:order-0">
                 <form
                     ref={formRef}
@@ -399,7 +399,7 @@ const AccountStepPayment = ({
                                         proration !== 0 && {
                                             id: 'proration',
                                             left: (
-                                                <span className="inline-flex flex-align-items-center">
+                                                <span className="inline-flex items-center">
                                                     <span className="mr-2">{c('Label').t`Proration`}</span>
                                                     <Info
                                                         title={

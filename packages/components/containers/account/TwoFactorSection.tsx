@@ -169,7 +169,7 @@ const TwoFactorSection = () => {
                                     onClick={() => {
                                         setAddSecurityKeyModal(true);
                                     }}
-                                    className="flex flex-nowrap flex-align-items-center"
+                                    className="flex flex-nowrap items-center"
                                 >
                                     <Icon name="plus" className="mr-2" />
                                     {c('fido2: Action').t`Add security key`}
@@ -182,7 +182,7 @@ const TwoFactorSection = () => {
                                 {registeredKeys.map((registeredKey) => {
                                     const id = getId(registeredKey);
                                     return (
-                                        <div key={id} className="flex flex-align-items-center py-2 border-bottom">
+                                        <div key={id} className="flex items-center py-2 border-bottom">
                                             <div className="flex-item-fluid text-break mr-2">{registeredKey.Name}</div>
                                             <ButtonGroup size="small">
                                                 <Button

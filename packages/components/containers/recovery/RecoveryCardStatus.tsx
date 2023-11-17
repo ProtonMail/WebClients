@@ -16,7 +16,7 @@ export interface RecoveryCardStatusProps {
 const RecoveryCardStatus = ({ type, statusText, callToActions: items = [] }: RecoveryCardStatusProps) => {
     return (
         <>
-            <span className="flex flex-align-items-center flex-nowrap">
+            <span className="flex items-center flex-nowrap">
                 <RecoveryStatusIcon className="flex-item-noshrink" type={type} />
                 <RecoveryStatusText className="ml-4" type={type}>
                     {statusText}
@@ -27,7 +27,7 @@ const RecoveryCardStatus = ({ type, statusText, callToActions: items = [] }: Rec
                 <ul className="unstyled ml-14">
                     {items.map(({ text, path }) => {
                         return (
-                            <li key={text} className="flex flex-align-items-center flex-nowrap">
+                            <li key={text} className="flex items-center flex-nowrap">
                                 <span className="mr-2">{text}</span>
                                 <ButtonLike
                                     as={SettingsLink}

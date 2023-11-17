@@ -64,7 +64,7 @@ const ComposerPasswordActions = ({ isPassword, onChange, onPassword }: Props) =>
                 }
             >
                 <DropdownMenuButton
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={onPassword}
                     data-testid="composer:edit-outside-encryption"
                 >
@@ -72,7 +72,7 @@ const ComposerPasswordActions = ({ isPassword, onChange, onPassword }: Props) =>
                     <span className="ml-2 my-auto flex-item-fluid">{c('Action').t`Edit encryption`}</span>
                 </DropdownMenuButton>
                 <DropdownMenuButton
-                    className="text-left flex flex-nowrap flex-align-items-center color-danger"
+                    className="text-left flex flex-nowrap items-center color-danger"
                     onClick={handleRemoveOutsideEncryption}
                     data-testid="composer:remove-outside-encryption"
                 >

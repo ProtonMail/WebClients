@@ -20,7 +20,7 @@ const UsersAndAddressesSectionHeader = ({ mode }: { mode: UserManagementMode }) 
     const roleCell: HeaderCellItem = {
         key: 'role',
         node: (
-            <div className="flex gap-2 flex-flex-children flex-align-items-center">
+            <div className="flex gap-2 flex-flex-children items-center">
                 <span>{c('Title header for members table').t`Role`}</span>
                 <span className="hidden md:inline">
                     <Info

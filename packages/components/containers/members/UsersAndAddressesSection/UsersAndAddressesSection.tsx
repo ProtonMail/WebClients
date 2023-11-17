@@ -251,7 +251,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     return (
         <SettingsSectionWide>
             <RestoreAdministratorPrivileges />
-            <SettingsParagraph large className="flex flex-align-items-baseline mb-6">
+            <SettingsParagraph large className="flex items-baseline mb-6">
                 {settingsTitle}
                 {hasVpnB2BPlan && user.canPay && (
                     <Button className="ml-2" shape="outline" color="norm" size="small" onClick={handleGetMoreLicense}>
@@ -259,7 +259,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                     </Button>
                 )}
             </SettingsParagraph>
-            <Block className="flex flex-align-items-start">
+            <Block className="flex items-start">
                 {renderAddAddressModal && members && (
                     <AddressModal members={members} organizationKey={organizationKey} {...addAddressModalProps} />
                 )}
@@ -311,7 +311,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                         {...inviteOrCreateUserModalProps}
                     />
                 )}
-                <div className="flex flex-align-items-center mb-2 gap-2 mr-4">
+                <div className="flex items-center mb-2 gap-2 mr-4">
                     {hasSetupOrganization && (
                         <Button color="norm" disabled={disableInviteUserButton} onClick={handleInviteUser}>
                             {c('Action').t`Invite user`}
@@ -401,7 +401,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                 className={clsx('align-top', isInvitationPending && 'color-weak')}
                             >
                                 <TableCell style={{ verticalAlign: 'baseline' }}>
-                                    <div className="flex flex-align-items-center gap-3">
+                                    <div className="flex items-center gap-3">
                                         <Avatar className="flex-item-noshrink text-rg" color="weak">
                                             {getInitials(memberName)}
                                         </Avatar>
@@ -413,7 +413,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                         >
                                             {memberName}
                                         </div>
-                                        <div className="flex flex-align-items-center gap-1">
+                                        <div className="flex items-center gap-1">
                                             {!hasVpnB2BPlan && Boolean(member.Private) && !hasFamily(subscription) && (
                                                 <Badge
                                                     type="origin"

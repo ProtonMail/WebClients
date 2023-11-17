@@ -81,7 +81,7 @@ const Bitcoin = ({ amount, currency, processingToken, paymentValidated, model, l
                 </span>
                 <div className="my-6 flex justify-center">
                     <BitcoinQRCode
-                        className="flex flex-align-items-center flex-column"
+                        className="flex items-center flex-column"
                         amount={model.amountBitcoin}
                         address={model.address}
                         status={qrCodeStatus}

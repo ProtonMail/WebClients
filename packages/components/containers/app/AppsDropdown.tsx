@@ -62,7 +62,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                                         current={current}
                                     >
                                         <div
-                                            className="apps-dropdown-logo-wrapper flex flex-align-items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
+                                            className="apps-dropdown-logo-wrapper flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
                                             style={{ '--w-custom': '3.25rem', '--h-custom': '3.25rem' }}
                                         >
                                             <Logo

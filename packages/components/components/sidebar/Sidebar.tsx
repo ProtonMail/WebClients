@@ -130,7 +130,7 @@ const Sidebar = ({
                 />
 
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
-                <div className="logo-container hidden md:flex flex-item-noshrink justify-space-between flex-align-items-center flex-nowrap">
+                <div className="logo-container hidden md:flex flex-item-noshrink justify-space-between items-center flex-nowrap">
                     {logo}
                     <div className="hidden md:block">{appsDropdown}</div>
                 </div>

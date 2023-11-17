@@ -54,7 +54,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
             data-testid="transfer-item-row"
             {...rest}
         >
-            <div className="transfers-manager-list-item-name flex flex-nowrap flex-align-items-center text-ellipsis">
+            <div className="transfers-manager-list-item-name flex flex-nowrap items-center text-ellipsis">
                 <span className="transfers-manager-list-item-icon flex flex-item-noshrink mr-2">
                     {isInitializing ? <Loader size="small" /> : <FileIcon mimeType={transfer.meta.mimeType} />}
                 </span>
@@ -74,7 +74,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
                 </div>
             )}
 
-            <div className="transfers-manager-list-item-status flex flex-nowrap flex-align-items-center justify-end text-ellipsis">
+            <div className="transfers-manager-list-item-status flex flex-nowrap items-center justify-end text-ellipsis">
                 <TransferStateIndicator transfer={transfer} type={type} speed={speed} />
             </div>
 

@@ -13,7 +13,7 @@ const StorageRewardModal = (props: ModalProps) => {
     return (
         <ModalTwo {...props} size="small">
             <ModalTwoContent>
-                <div className="flex flex-align-items-center flex-column gap-4 text-center">
+                <div className="flex items-center flex-column gap-4 text-center">
                     <img src={storageUnlocked} alt={c('Get started checklist instructions').t`Storage unlocked`} />
                     <h1 className="text-lg text-bold">
                         {isUserPaid

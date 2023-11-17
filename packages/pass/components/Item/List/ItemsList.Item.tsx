@@ -42,14 +42,14 @@ const ItemsListItemRaw: VFC<Props> = ({ item, search = '', active = false, ...re
             shape="ghost"
             {...rest}
         >
-            <div className="flex-nowrap flex w-full px-3 py-2 flex-align-items-center">
+            <div className="flex-nowrap flex w-full px-3 py-2 items-center">
                 <ItemIcon
                     item={item}
                     size={20}
                     className={clsx('mr-3  flex-item-noshrink', itemTypeToSubThemeClassName[data.type])}
                 />
                 <div className="text-left">
-                    <span className="flex flex-align-items-center">
+                    <span className="flex items-center">
                         {search && (
                             <VaultIcon size={12} icon={vault?.content.display.icon} className="color-weak mr-1" />
                         )}

@@ -57,7 +57,7 @@ const RecipientItemGroup = ({
     const labelText = getGroupLabel(group, true);
 
     const label = (
-        <div className="text-left flex flex-nowrap flex-align-items-center">
+        <div className="text-left flex flex-nowrap items-center">
             <Icon name="users" className="mr-1" />
             <span>{labelText}</span>
         </div>
@@ -126,7 +126,7 @@ const RecipientItemGroup = ({
                         })}
                         <hr className="my-2" />
                         <DropdownMenuButton
-                            className="text-left flex flex-nowrap flex-align-items-center"
+                            className="text-left flex flex-nowrap items-center"
                             onClick={handleCompose}
                             data-testid="recipient:new-message-to-group"
                         >
@@ -134,7 +134,7 @@ const RecipientItemGroup = ({
                             <span className="flex-item-fluid my-auto">{c('Action').t`New message`}</span>
                         </DropdownMenuButton>
                         <DropdownMenuButton
-                            className="text-left flex flex-nowrap flex-align-items-center"
+                            className="text-left flex flex-nowrap items-center"
                             onClick={handleCopy}
                             data-testid="recipient:copy-group-emails"
                         >
@@ -142,7 +142,7 @@ const RecipientItemGroup = ({
                             <span className="flex-item-fluid my-auto">{c('Action').t`Copy addresses`}</span>
                         </DropdownMenuButton>
                         <DropdownMenuButton
-                            className="text-left flex flex-nowrap flex-align-items-center"
+                            className="text-left flex flex-nowrap items-center"
                             onClick={handleRecipients}
                             data-testid="recipient:view-group-recipients"
                         >

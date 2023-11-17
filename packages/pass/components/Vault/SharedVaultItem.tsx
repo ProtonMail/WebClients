@@ -27,7 +27,7 @@ export const SharedVaultItem: VFC<SharedVaultItemProps> = ({
     const count = useSelector(selectVaultItemsCount(shareId));
 
     return (
-        <div className={clsx(['flex flex-align-items-center gap-3', className])}>
+        <div className={clsx(['flex items-center gap-3', className])}>
             <VaultIcon color={color} icon={icon} size={20} background />
             <div className="flex-item-fluid">
                 <div className="text-xl text-bold text-ellipsis">{name}</div>

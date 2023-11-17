@@ -51,7 +51,7 @@ export const Sandbox = () => {
 
     return (
         <div className="my-8">
-            <div className="flex flex-align-items-stretch">
+            <div className="flex items-stretch">
                 <div className="mr-8">
                     <strong className="block mb-4">App Name</strong>
                     <RadioGroup
@@ -70,7 +70,7 @@ export const Sandbox = () => {
                         options={variants.map((variant) => ({ value: variant, label: variant }))}
                     />
                 </div>
-                <div className="flex flex-item-fluid flex-align-items-center justify-center border">{logo}</div>
+                <div className="flex flex-item-fluid items-center justify-center border">{logo}</div>
             </div>
         </div>
     );

@@ -353,7 +353,7 @@ const SubUserCreateModal = ({
                     </>
                 )}
 
-                <div className="flex flex-align-items-center mb-6">
+                <div className="flex items-center mb-6">
                     <label className="text-semibold mr-1" htmlFor="admin-toggle">
                         {c('Label for new member').t`Admin`}
                     </label>

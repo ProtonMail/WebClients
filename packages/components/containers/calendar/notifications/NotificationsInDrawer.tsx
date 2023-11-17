@@ -73,7 +73,7 @@ const NotificationsInDrawer = ({
                         }
                     >
                         {addIcon ? (
-                            <span className="flex flex-nowrap w-full flex-align-items-center">
+                            <span className="flex flex-nowrap w-full items-center">
                                 <Icon name={addIcon} className="mr-2 flex-item-centered-vert" />
                                 {addNotificationText}
                             </span>

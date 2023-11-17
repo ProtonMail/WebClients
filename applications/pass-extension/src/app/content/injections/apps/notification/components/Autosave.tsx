@@ -162,7 +162,7 @@ export const Autosave: VFC<Props> = ({ settings, submission, visible, onClose })
                     onClose={onClose}
                 />
                 <div>
-                    <div className="flex flex-nowrap flex-align-items-center mb-2">
+                    <div className="flex flex-nowrap items-center mb-2">
                         <BaseItemIcon
                             url={submission.domain}
                             icon={'user'}

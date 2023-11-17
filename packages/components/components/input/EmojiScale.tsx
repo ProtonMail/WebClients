@@ -38,7 +38,7 @@ const EmojiScale = ({ fromLabel, toLabel, value, InputButtonProps, onChange, cla
 
     return (
         <div className={clsx([className, 'flex flex-column gap-4'])} {...rest}>
-            <div className="flex justify-space-between flex-align-items-center">
+            <div className="flex justify-space-between items-center">
                 {scale.map((option) => (
                     <Tooltip title={option.label()} key={option.value}>
                         <span>

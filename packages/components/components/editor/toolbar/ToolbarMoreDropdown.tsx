@@ -31,7 +31,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
             {!isNarrow && metadata.supportImages && (
                 <DropdownMenuButton
                     key={17}
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={() => config.image.showModal()}
                     data-testid="editor-insert-image"
                 >
@@ -42,7 +42,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
             {isNarrow && [
                 <DropdownMenuButton
                     key={12}
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={config.unorderedList.toggle}
                 >
                     <Icon name="checkmark" className={getClassname(config.unorderedList.isActive)} />
@@ -51,7 +51,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={13}
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={config.orderedList.toggle}
                 >
                     <Icon name="checkmark" className={getClassname(config.orderedList.isActive)} />
@@ -61,7 +61,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                 <div className="dropdown-item-hr" key="hr-1" />,
                 <DropdownMenuButton
                     key={8}
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={() => config.alignment.setValue(Alignment.Left)}
                 >
                     <Icon name="checkmark" className="visibility-hidden" />
@@ -70,7 +70,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={9}
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={() => config.alignment.setValue(Alignment.Center)}
                 >
                     <Icon name="checkmark" className="visibility-hidden" />
@@ -79,7 +79,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={10}
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={() => config.alignment.setValue(Alignment.Center)}
                 >
                     <Icon name="checkmark" className="visibility-hidden" />
@@ -89,7 +89,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                 <div className="dropdown-item-hr" key="hr-2" />,
                 <DropdownMenuButton
                     key={14}
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={config.blockquote.toggle}
                 >
                     <Icon name="checkmark" className={getClassname(config.blockquote.isActive)} />
@@ -98,7 +98,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={15}
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={config.link.showModal}
                 >
                     <Icon name="checkmark" className="visibility-hidden" />
@@ -107,7 +107,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                 </DropdownMenuButton>,
                 <DropdownMenuButton
                     key={16}
-                    className="text-left flex flex-nowrap flex-align-items-center"
+                    className="text-left flex flex-nowrap items-center"
                     onClick={() => config.formatting.clear()}
                 >
                     <Icon name="checkmark" className="visibility-hidden" />
@@ -118,7 +118,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                 metadata.supportImages && [
                     <DropdownMenuButton
                         key={17}
-                        className="text-left flex flex-nowrap flex-align-items-center"
+                        className="text-left flex flex-nowrap items-center"
                         onClick={() => config.image.showModal()}
                     >
                         <Icon name="checkmark" className="visibility-hidden" />
@@ -134,7 +134,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                 !metadata.isPlainText && [
                     <DropdownMenuButton
                         key={1}
-                        className="text-left flex flex-nowrap flex-align-items-center"
+                        className="text-left flex flex-nowrap items-center"
                         onClick={() => config.textDirection.setValue(DIRECTION.LEFT_TO_RIGHT)}
                         data-testid="editor-left-to-right"
                     >
@@ -146,7 +146,7 @@ const ToolbarMoreDropdown = ({ metadata, isNarrow = false, config }: Props) => (
                     </DropdownMenuButton>,
                     <DropdownMenuButton
                         key={2}
-                        className="text-left flex flex-nowrap flex-align-items-center"
+                        className="text-left flex flex-nowrap items-center"
                         onClick={() => config.textDirection.setValue(DIRECTION.RIGHT_TO_LEFT)}
                         data-testid="editor-right-to-left"
                     >

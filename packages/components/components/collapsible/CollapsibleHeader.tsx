@@ -57,7 +57,7 @@ const CollapsibleHeader = <E extends ElementType = typeof defaultElement>({
             onClick={handleContainerClick}
             className={clsx(
                 className,
-                'flex flex-nowrap flex-align-items-center',
+                'flex flex-nowrap items-center',
                 disabled && 'no-pointer-events',
                 !disabled && !disableContainerToggle && 'collapsible-header--clickable'
             )}

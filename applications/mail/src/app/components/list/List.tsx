@@ -273,7 +273,7 @@ const List = (
                                 {useLoadingElement && loadingElement}
 
                                 {total > 1 && (
-                                    <div className="p-5 flex flex-column flex-align-items-center flex-item-noshrink">
+                                    <div className="p-5 flex flex-column items-center flex-item-noshrink">
                                         <ListPagination {...pagingHandlers} loading={loading} />
                                     </div>
                                 )}

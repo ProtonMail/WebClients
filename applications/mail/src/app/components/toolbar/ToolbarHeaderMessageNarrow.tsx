@@ -64,7 +64,7 @@ const ToolbarHeaderMessageNarrow = ({
                 aria-label={c('Label').t`Toolbar`}
                 ref={toolbarRef}
             >
-                <div className="flex flex-align-items-center toolbar-inner gap-2">
+                <div className="flex items-center toolbar-inner gap-2">
                     <ToolbarButton
                         icon={<Icon name="arrow-left" alt={c('Action').t`Back`} />}
                         onClick={onBack}

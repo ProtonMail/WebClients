@@ -68,7 +68,7 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = ({
                             /* only allow selecting writable vaults if a downgrade was detected */
                             disabled={didDowngrade && !writableShareIds.includes(shareId)}
                         >
-                            <div className="flex gap-x-3 flex-align-items-center">
+                            <div className="flex gap-x-3 items-center">
                                 <VaultIcon
                                     icon={content.display.icon}
                                     color={content.display.color}
@@ -90,7 +90,7 @@ export const VaultSelectField: VFC<VaultSelectFieldProps> = ({
                 .concat(
                     ...extraOptions.map(({ value, title, icon, color }) => (
                         <Option key={value} value={value} title={title}>
-                            <div className="flex gap-x-3 flex-align-items-center">
+                            <div className="flex gap-x-3 items-center">
                                 <VaultIcon
                                     icon={icon}
                                     size={16}

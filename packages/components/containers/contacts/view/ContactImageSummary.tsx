@@ -57,7 +57,7 @@ const ContactImageSummary = ({ photo, name, loadImageDirectRef, onToggleLoadDire
             {display === 'loadDirectFailed' && (
                 <div className="border rounded bg-norm ratio-container-square mb-0">
                     <span className="inner-ratio-container flex">
-                        <span className="m-auto lh-rg flex flex-column flex-align-items-center">
+                        <span className="m-auto lh-rg flex flex-column items-center">
                             <Tooltip title={c('Tooltip').t`The image could not be loaded`}>
                                 <Icon name="cross-circle" size={24} className="color-danger" />
                             </Tooltip>
@@ -68,7 +68,7 @@ const ContactImageSummary = ({ photo, name, loadImageDirectRef, onToggleLoadDire
             {display === 'needsLoadDirect' && (
                 <div className="border rounded bg-norm ratio-container-square mb-0">
                     <span className="inner-ratio-container flex">
-                        <span className="m-auto lh-rg flex flex-column flex-align-items-center">
+                        <span className="m-auto lh-rg flex flex-column items-center">
                             <Tooltip title={c('Tooltip').t`The image could not be loaded using proxy`}>
                                 <Icon name="file-shapes" size={24} />
                             </Tooltip>
@@ -105,7 +105,7 @@ const ContactImageSummary = ({ photo, name, loadImageDirectRef, onToggleLoadDire
                     onClick={handleClick}
                 >
                     <span className="inner-ratio-container flex">
-                        <span className="m-auto lh-rg flex flex-column flex-align-items-center">
+                        <span className="m-auto lh-rg flex flex-column items-center">
                             <Icon name="file-shapes" />
                             <div className="m-2 color-primary">{c('Action').t`Load image`}</div>
                         </span>

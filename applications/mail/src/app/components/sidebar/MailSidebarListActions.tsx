@@ -44,7 +44,7 @@ const MailSidebarListActions = ({ type, items }: Props) => {
     };
 
     return (
-        <div className="flex flex-align-items-center">
+        <div className="flex items-center">
             <Tooltip title={type === 'label' ? c('Action').t`Create a new label` : c('Action').t`Create a new folder`}>
                 <button
                     type="button"

@@ -175,7 +175,7 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
                     </>
                 )}
                 <Dropzone onDrop={onAddFiles} size="small" shape="flashy">
-                    <div className="flex flex-align-items-center justify-center border p-4 rounded-xl">
+                    <div className="flex items-center justify-center border p-4 rounded-xl">
                         {model.fileAttached ? (
                             <AttachedFile
                                 file={model.fileAttached}

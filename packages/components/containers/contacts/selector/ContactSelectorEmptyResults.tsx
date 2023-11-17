@@ -18,7 +18,7 @@ const ContactSelectorEmptyResults = ({ query = '', onClearSearch }: Props) => {
     );
 
     return (
-        <div className="flex flex-column flex-align-items-center flex-item-fluid p-2">
+        <div className="flex flex-column items-center flex-item-fluid p-2">
             <h2>{title}</h2>
             <img src={noResultsImg} alt={title} className="px-4 pb-4 mb-4" />
             <span>{c('Info').jt`You can either update your search query or ${button}`}</span>

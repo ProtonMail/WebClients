@@ -139,7 +139,7 @@ const AttachmentItem = ({
                         onClick={handleAction(true)}
                         data-testid={`attachment-item:${name}--primary-action`}
                     >
-                        <span className="my-auto flex flex-align-items-baseline flex-nowrap pr-2">
+                        <span className="my-auto flex items-baseline flex-nowrap pr-2">
                             <FileNameDisplay text={name} />
                             <span
                                 className="message-attachmentSize sr-only align-baseline inline-block flex-item-noshrink ml-1"

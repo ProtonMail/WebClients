@@ -58,7 +58,7 @@ const ReferralSignatureToggle = () => {
     );
 
     return (
-        <div className="flex flex-align-items-center">
+        <div className="flex items-center">
             <Toggle
                 id="toggleSharedFooterLink"
                 title={c('Button').t`Add link to your email footer`}

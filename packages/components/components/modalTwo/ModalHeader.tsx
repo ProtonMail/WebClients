@@ -64,7 +64,7 @@ const ModalHeader = ({
         <div className="modal-two-header">
             <div
                 className={clsx(
-                    'flex flex-nowrap flex-item-noshrink flex-align-items-start',
+                    'flex flex-nowrap flex-item-noshrink items-start',
                     title ? 'justify-space-between' : 'justify-end'
                 )}
                 {...rest}
@@ -85,7 +85,7 @@ const ModalHeader = ({
                     </div>
                 )}
 
-                <div className="modal-two-header-actions flex flex-item-noshrink flex-nowrap flex-align-items-stretch">
+                <div className="modal-two-header-actions flex flex-item-noshrink flex-nowrap items-stretch">
                     {actions && (
                         <>
                             {actionsArray.map((action) =>

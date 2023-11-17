@@ -39,7 +39,7 @@ const AddressesSummary = ({
     const title = getRecipientsOrGroupsLabels(getRecipientsOrGroups(recipients)).join(', ');
 
     return (
-        <div className="flex flex-row flex-nowrap flex-column md:flex-row flex-align-items-center relative my-0">
+        <div className="flex flex-row flex-nowrap flex-column md:flex-row items-center relative my-0">
             <Label
                 className={clsx([
                     'composer-meta-label composer-meta-label-to pr-2 text-semibold',
@@ -50,7 +50,7 @@ const AddressesSummary = ({
             </Label>
             <div
                 className={clsx([
-                    'field flex composer-addresses-fakefield composer-meta-fakefield-summary composer-light-field flex-row flex-align-items-center flex-nowrap flex-item-fluid w-full',
+                    'field flex composer-addresses-fakefield composer-meta-fakefield-summary composer-light-field flex-row items-center flex-nowrap flex-item-fluid w-full',
                     disabled && 'disabled',
                 ])}
                 data-testid="composer:address"
