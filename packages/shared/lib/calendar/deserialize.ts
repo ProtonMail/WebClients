@@ -24,7 +24,7 @@ import {
     getDecryptedSessionKey,
 } from './crypto/decrypt';
 import { unwrap } from './helper';
-import { parse } from './vcal';
+import { parseWithFoldingRecovery } from './icsSurgery/ics';
 import { getAttendeePartstat, getIsEventComponent } from './vcalHelper';
 
 export const readSessionKey = (
@@ -45,7 +45,7 @@ export const readSessionKeys = async ({
     decryptedSharedKeyPacket,
     privateKeys,
 }: {
-    calendarEvent: CalendarEvent;
+    calendarEvent: Pick<CalendarEvent, 'SharedKeyPacket' | 'AddressKeyPacket' | 'CalendarKeyPacket'>;
     decryptedSharedKeyPacket?: string;
     privateKeys?: PrivateKeyReference | PrivateKeyReference[];
 }) => {
@@ -219,7 +219,14 @@ const readCalendarAlarms = (
 interface ReadCalendarEventArguments {
     event: Pick<
         CalendarEvent,
-        'SharedEvents' | 'CalendarEvents' | 'AttendeesEvents' | 'Attendees' | 'Notifications' | 'FullDay'
+        | 'SharedEvents'
+        | 'CalendarEvents'
+        | 'AttendeesEvents'
+        | 'Attendees'
+        | 'Notifications'
+        | 'FullDay'
+        | 'CalendarID'
+        | 'ID'
     >;
     publicKeysMap?: SimpleMap<PublicKeyReference | PublicKeyReference[]>;
     sharedSessionKey?: SessionKey;
@@ -230,9 +237,18 @@ interface ReadCalendarEventArguments {
 }
 
 export const readCalendarEvent = async ({
-    event: { SharedEvents = [], CalendarEvents = [], AttendeesEvents = [], Attendees = [], Notifications, FullDay },
+    event: {
+        SharedEvents = [],
+        CalendarEvents = [],
+        AttendeesEvents = [],
+        Attendees = [],
+        Notifications,
+        FullDay,
+        CalendarID: calendarID,
+        ID: eventID,
+    },
     publicKeysMap = {},
-    addresses = [],
+    addresses,
     sharedSessionKey,
     calendarSessionKey,
     calendarSettings,
@@ -255,7 +271,7 @@ export const readCalendarEvent = async ({
         if (!event) {
             return acc;
         }
-        const parsedComponent = parse(unwrap(event));
+        const parsedComponent = parseWithFoldingRecovery(unwrap(event), { calendarID, eventID });
         if (!getIsEventComponent(parsedComponent)) {
             return acc;
         }
@@ -271,7 +287,7 @@ export const readCalendarEvent = async ({
         if (!event) {
             return acc;
         }
-        const parsedComponent = parse(unwrap(event));
+        const parsedComponent = parseWithFoldingRecovery(unwrap(event), { calendarID, eventID });
         if (!getIsEventComponent(parsedComponent)) {
             return acc;
         }

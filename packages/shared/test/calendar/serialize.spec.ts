@@ -1,6 +1,5 @@
-import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
-
-import {getIsAllDay} from "@proton/shared/lib/calendar/veventHelper";
+import { CryptoProxy, PublicKeyReference, SessionKey, toPublicKeyReference } from '@proton/crypto';
+import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
 
 import { ATTENDEE_STATUS_API, EVENT_VERIFICATION_STATUS } from '../../lib/calendar/constants';
@@ -9,9 +8,16 @@ import { unwrap, wrap } from '../../lib/calendar/helper';
 import { createCalendarEvent } from '../../lib/calendar/serialize';
 import { setVcalProdId } from '../../lib/calendar/vcalConfig';
 import { toCRLF } from '../../lib/helpers/string';
+import { RequireSome } from '../../lib/interfaces';
+import {
+    Attendee,
+    CalendarEventData,
+    CreateOrUpdateCalendarEventData,
+    VcalVeventComponent,
+} from '../../lib/interfaces/calendar';
 import { DecryptableKey, DecryptableKey2 } from '../keys/keys.data';
 
-const veventComponent = {
+const veventComponent: VcalVeventComponent = {
     component: 'vevent',
     components: [
         {
@@ -71,12 +77,34 @@ const veventComponent = {
     ],
 };
 
-const transformToExternal = (data, publicAddressKey, sharedSessionKey, calendarSessionKey, isAllDay) => {
-    const withAuthor = (x, author) => {
-        if (!x) {
-            return;
-        }
+interface CreateCalendarEventData
+    extends RequireSome<
+        Partial<Omit<CreateOrUpdateCalendarEventData, 'Permissions'>>,
+        | 'SharedEventContent'
+        | 'CalendarEventContent'
+        | 'AttendeesEventContent'
+        | 'SharedKeyPacket'
+        | 'CalendarKeyPacket'
+    > {
+    AddressKeyPacket: string | null;
+}
+
+const transformToExternal = (
+    data: CreateCalendarEventData,
+    publicAddressKey: PublicKeyReference,
+    isAllDay: boolean,
+    sharedSessionKey?: SessionKey,
+    calendarSessionKey?: SessionKey
+) => {
+    const withAuthor = (x: Omit<CalendarEventData, 'Author'>[], author: string): CalendarEventData[] => {
         return x.map((y) => ({ ...y, Author: author }));
+    };
+    const withFullAttendee = (
+        x?: Omit<Attendee, 'UpdateTime' | 'ID'>[],
+        ID = 'dummyID',
+        UpdateTime = 0
+    ): Attendee[] => {
+        return (x || []).map((y, i) => ({ ...y, ID: `${ID}-${i}`, UpdateTime }));
     };
 
     return {
@@ -84,9 +112,11 @@ const transformToExternal = (data, publicAddressKey, sharedSessionKey, calendarS
             SharedEvents: withAuthor(data.SharedEventContent, 'me'),
             CalendarEvents: withAuthor(data.CalendarEventContent, 'me'),
             AttendeesEvents: withAuthor(data.AttendeesEventContent, 'me'),
-            Attendees: data.Attendees,
+            Attendees: withFullAttendee(data.Attendees),
             Notifications: data.Notifications,
             FullDay: +isAllDay,
+            CalendarID: 'calendarID',
+            ID: 'eventID',
         },
         publicKeysMap: {
             me: [publicAddressKey],
@@ -94,9 +124,13 @@ const transformToExternal = (data, publicAddressKey, sharedSessionKey, calendarS
         sharedSessionKey,
         calendarSessionKey,
         calendarSettings: {
+            ID: 'settingsID',
+            CalendarID: 'calendarID',
+            DefaultEventDuration: 30,
             DefaultPartDayNotifications: [],
             DefaultFullDayNotifications: [],
         },
+        addresses: [],
     };
 };
 
@@ -241,15 +275,14 @@ describe('calendar encryption', () => {
         const publicKey = await toPublicKeyReference(calendarKey);
         const publicAddressKey = await toPublicKeyReference(addressKey);
 
-        const data = await createCalendarEvent({
+        const data = (await createCalendarEvent({
             eventComponent: veventComponent,
-            prodId: 'Proton Calendar',
             privateKey: addressKey,
             publicKey,
             isCreateEvent: true,
             isSwitchCalendar: false,
             hasDefaultNotifications: false,
-        });
+        })) as CreateCalendarEventData;
         const [sharedSessionKey, calendarSessionKey] = await readSessionKeys({
             calendarEvent: data,
             privateKeys: calendarKey,
@@ -259,9 +292,9 @@ describe('calendar encryption', () => {
             transformToExternal(
                 data,
                 publicAddressKey,
+                getIsAllDay(veventComponent),
                 sharedSessionKey,
-                calendarSessionKey,
-                getIsAllDay(veventComponent)
+                calendarSessionKey
             )
         );
 
