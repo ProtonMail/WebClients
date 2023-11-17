@@ -92,7 +92,7 @@ export const reformatLineBreaks = (vcal = '') => {
  * * Add missing VALUE=DATE for date values
  * * Complete with zeroes incomplete date-times
  * * Trim spaces
- * * Transforms ISO formatting and removes milliseconds
+ * * Transforms ISO (and partial ISO) formatting and removes milliseconds
  * * Remove duplicate Zulu markers
  */
 export const reformatDateTimes = (vcal = '') => {
@@ -106,9 +106,11 @@ export const reformatDateTimes = (vcal = '') => {
 
             if (['dtstart', 'dtend', 'dtstamp', 'last-modified', 'created', 'recurrence-id'].includes(field)) {
                 // In case the line matches the ISO standard, we replace it by the ICS standard
-                const standardizedLine = line.replace(
-                    /(\d\d\d\d)-(\d\d)-(\d\d)[Tt](\d\d):(\d\d):(\d\d).*?([Zz]*$)/,
-                    `$1$2$3T$4$5$6$7`
+                // We do the replacement in two steps to account for providers that use a partial ISO
+                const partiallyStandardizedLine = line.replace(/(\d\d\d\d)-(\d\d)-(\d\d)[Tt](.*)/, `$1$2$3T$4`);
+                const standardizedLine = partiallyStandardizedLine.replace(
+                    /(\d{8})[Tt](\d\d):(\d\d):(\d\d).*?([Zz]*$)/,
+                    `$1T$2$3$4$5`
                 );
                 const parts = standardizedLine
                     .split(':')

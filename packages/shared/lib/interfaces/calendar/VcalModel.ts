@@ -190,6 +190,16 @@ export interface VcalStatusProperty {
     value: ICAL_EVENT_STATUS | string;
 }
 
+export interface VcalDescriptionPropertyParameters {
+    language?: string;
+    altrep?: string;
+}
+
+export interface VcalDescriptionProperty {
+    value: string;
+    parameters?: VcalDescriptionPropertyParameters;
+}
+
 export interface VcalAttendeePropertyParameters extends VcalOrganizerPropertyParameters {
     cn?: string;
     cutype?: string;
@@ -241,13 +251,13 @@ export interface VcalVeventComponent {
     exdate?: VcalDateOrDateTimeProperty[];
     organizer?: VcalOrganizerProperty;
     attendee?: VcalAttendeeProperty[];
-    description?: VcalStringProperty;
+    description?: VcalDescriptionProperty;
     summary?: VcalStringProperty;
     duration?: VcalDurationProperty;
-    location?: VcalStringProperty;
+    location?: VcalDescriptionProperty;
     geo?: VcalNumberArrayProperty;
     class?: VcalStringProperty;
-    priority?: VcalStringProperty;
+    priority?: VcalNumberProperty;
     sequence?: VcalNumberProperty;
     status?: VcalStatusProperty;
     created?: VcalDateTimeProperty;
@@ -287,10 +297,34 @@ export interface VcalVjournalComponent {
     uid: VcalUidProperty;
 }
 
+export interface VcalFreeBusyStartEndValue {
+    start: VcalDateTimeValue;
+    end: VcalDateTimeValue;
+}
+
+export interface VcalFreeBusyStartDurationValue {
+    start: VcalDateTimeValue;
+    duration: VcalDurationValue;
+}
+
+type VcalFreeBusyValue = VcalFreeBusyStartEndValue | VcalFreeBusyStartDurationValue;
+
+export interface VcalFreeBusyProperty {
+    value: VcalFreeBusyValue[];
+}
+
 export interface VcalVfreebusyComponent {
     component: 'vfreebusy';
     components?: VcalValarmComponent[]; // Not complete. Can be other components.
     uid: VcalUidProperty;
+    dtstamp: VcalDateTimeProperty;
+    dtstart?: VcalDateOrDateTimeProperty;
+    dtend?: VcalDateOrDateTimeProperty;
+    organizer?: VcalOrganizerProperty;
+    attendee?: VcalAttendeeProperty[];
+    freebusy?: VcalFreeBusyProperty[];
+    url?: VcalStringProperty;
+    comment?: VcalStringProperty[];
 }
 
 export interface VcalVtimezoneComponent {
@@ -331,6 +365,7 @@ export interface VcalVcalendar {
     calscale?: VcalStringProperty;
     method?: VcalStringProperty;
     'x-wr-timezone'?: VcalStringProperty;
+    'x-wr-calname'?: VcalStringProperty;
     // RFC 7986
     name?: VcalStringProperty;
     description?: VcalStringProperty;
