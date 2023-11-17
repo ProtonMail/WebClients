@@ -52,7 +52,7 @@ describe('Import Safari CSV', () => {
         expect(deobfuscate(loginItem2faScanned.content.username)).toEqual('2fa-scanned');
         expect(deobfuscate(loginItem2faScanned.content.password)).toEqual('pass');
         expect(deobfuscate(loginItem2faScanned.content.totpUri)).toEqual(
-            'otpauth://totp/Proton:db%40example.com?issuer=Proton&secret=OTDED5QZA64L6YRUWJLD65QQ3Z6PZ3A3&algorithm=SHA1&digits=6&period=30'
+            'otpauth://totp/db%40example.com?issuer=Proton&secret=OTDED5QZA64L6YRUWJLD65QQ3Z6PZ3A3&algorithm=SHA1&digits=6&period=30'
         );
         expect(loginItem2faScanned.content.urls).toEqual(['https://2fa.example.com/']);
         expect(loginItem2faScanned.trashed).toEqual(false);
