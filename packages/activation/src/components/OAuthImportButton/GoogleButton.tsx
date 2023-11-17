@@ -19,7 +19,7 @@ const GoogleButton = ({ className, disabled, onClick, label }: Props) => {
             onClick={onClick}
             data-testid="OAuthImportButton:button:google"
         >
-            <img src={googleLogo} className="mr-2 flex-align-self-center" alt="" />
+            <img src={googleLogo} className="mr-2 self-center" alt="" />
             {label ?? c('Action').t`Continue with Google`}
         </Button>
     );

@@ -44,7 +44,7 @@ const DevicesToolbar = ({ items }: Props) => {
         <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container">
             <div className="gap-2 flex">{renderSelectionActions()}</div>
             <span className="ml-auto flex flex-nowrap">
-                <DesktopDownloadDropdown className="flex-align-self-center mr-2" />
+                <DesktopDownloadDropdown className="self-center mr-2" />
                 <LayoutButton />
             </span>
         </Toolbar>

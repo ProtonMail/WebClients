@@ -187,7 +187,7 @@ const MemberStorageSelector = ({
                         suffix={sizeLabelSuffix}
                     />
                 </div>
-                <div className="flex sm:flex-item-fluid justify-end flex-align-self-start">
+                <div className="flex sm:flex-item-fluid justify-end self-start">
                     {orgInitialization ? (
                         <>
                             <div>

@@ -86,7 +86,7 @@ $dummy-map: ();
 				(
 					align-items: #{dash-join($prefix, $align)},
 				),
-			flex-align-self-#{$align}:
+			self-#{$align}:
 				(
 					align-self: #{dash-join($prefix, $align)},
 				)

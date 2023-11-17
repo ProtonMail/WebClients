@@ -9,7 +9,7 @@ import { getTitle } from '../../helpers/title';
 For some components/special cases (responsive <code>iframe</code>, making a responsive square shape, responsive typography with SVG, etc.), we have to use the “padding-hack” technique, which is basically:
 
 <div class="flex justify-space-between mb-8 flex-column md:flex-row">
-    <div class="w-1/2 flex-align-self-center">
+    <div class="w-1/2 self-center">
         <ul>
             <li>A container uses padding-hack to get the desired ratio</li>
             <li>And content inside is positioned in absolute and takes all available space.</li>

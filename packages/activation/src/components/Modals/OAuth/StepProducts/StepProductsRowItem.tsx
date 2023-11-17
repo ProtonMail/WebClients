@@ -32,7 +32,7 @@ const StepProductsRowItem = ({ id, label, disabled, value, setValue, error, chil
                 id={id}
                 checked={disabled ? false : value}
                 onChange={(e) => setValue(e.target.checked)}
-                className="mr-2 flex-align-self-start"
+                className="mr-2 self-start"
                 disabled={disabled}
             />
             <div className="flex flex-column flex-item-fluid">

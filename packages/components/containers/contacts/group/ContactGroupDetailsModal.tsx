@@ -190,7 +190,7 @@ const ContactGroupDetailsModal = ({
                     >
                         <Icon
                             name="pen-square"
-                            className="flex-align-self-center mr-2"
+                            className="self-center mr-2"
                             alt={c('Action').t`New message`}
                         />
                         {c('Action').t`New message`}

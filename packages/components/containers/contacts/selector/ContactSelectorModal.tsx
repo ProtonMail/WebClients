@@ -246,7 +246,7 @@ const ContactSelectorModal = ({ onResolve, onReject, inputValue, onGroupDetails,
                                                 onChange={handleCheckAll}
                                             />
                                         </div>
-                                        <div className="flex flex-item-fluid flex-align-self-center">
+                                        <div className="flex flex-item-fluid self-center">
                                             <div className="w-custom pl-4" style={{ '--w-custom': '45%' }}>
                                                 <strong className="text-uppercase">{c('Label').t`Name`}</strong>
                                             </div>
