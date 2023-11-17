@@ -29,10 +29,10 @@ const TableHeaderCell = ({ children, direction, isLoading, onSort, ...rest }: Pr
                 <Icon
                     name="arrow-up"
                     size={16}
-                    className={`mr-1 flex-item-noshrink ${direction === SORT_DIRECTION.ASC ? '' : 'rotateX-180'}`}
+                    className={`mr-1 shrink-0 ${direction === SORT_DIRECTION.ASC ? '' : 'rotateX-180'}`}
                 />
             )}
-            {isLoading && <Loader className="flex flex-item-noshrink" />}
+            {isLoading && <Loader className="flex shrink-0" />}
         </div>
     ) : (
         children

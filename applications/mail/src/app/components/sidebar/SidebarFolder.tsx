@@ -54,7 +54,7 @@ const SidebarFolder = ({
         ],
     ];
 
-    const noChevron = treeMode ? <span className="navigation-icon-empty flex-item-noshrink" /> : null;
+    const noChevron = treeMode ? <span className="navigation-icon-empty shrink-0" /> : null;
 
     return (
         <SidebarItem
@@ -72,7 +72,7 @@ const SidebarFolder = ({
                     {folder.subfolders?.length ? (
                         <button
                             type="button"
-                            className="flex-item-noshrink navigation-link--expand relative interactive-pseudo-inset interactive--no-background"
+                            className="shrink-0 navigation-link--expand relative interactive-pseudo-inset interactive--no-background"
                             aria-expanded={!!folder.Expanded}
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -92,7 +92,7 @@ const SidebarFolder = ({
                         noChevron
                     )}
                     <FolderIcon
-                        className="navigation-icon flex-item-noshrink"
+                        className="navigation-icon shrink-0"
                         alt={c('Info').t`Folder`}
                         folder={folder}
                     />

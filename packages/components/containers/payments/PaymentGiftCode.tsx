@@ -39,7 +39,7 @@ const PaymentGiftCode = ({ giftCodeRef, giftCode = '', onApply, loading }: Props
         return (
             <div className="flex items-center">
                 <span className="flex-1 flex-nowrap items-center">
-                    <Icon name="gift" className="mr-2 mb-1 flex-item-noshrink" />
+                    <Icon name="gift" className="mr-2 mb-1 shrink-0" />
                     <code>{getFormattedGiftCode(giftCode)}</code>
                 </span>
                 <Button

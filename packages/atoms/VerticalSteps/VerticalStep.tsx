@@ -25,7 +25,7 @@ const VerticalStep = ({ title, description, icon, status = 'next', className, ..
         >
             <div
                 className={clsx(
-                    'flex-item-noshrink rounded-50 vertical-steps-icon-container flex',
+                    'shrink-0 rounded-50 vertical-steps-icon-container flex',
                     ['done', 'passed'].includes(status) ? 'bg-success' : 'bg-strong'
                 )}
             >

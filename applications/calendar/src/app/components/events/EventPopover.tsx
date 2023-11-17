@@ -323,7 +323,7 @@ const EventPopover = ({
     };
     const commonHeaderProps = {
         onClose,
-        className: 'flex-item-noshrink',
+        className: 'shrink-0',
     };
 
     if (eventReadError) {
@@ -386,7 +386,7 @@ const EventPopover = ({
                 <div className="flex mb-4 flex-nowrap">
                     <span
                         className={clsx(
-                            'event-popover-calendar-border relative flex-item-noshrink my-1',
+                            'event-popover-calendar-border relative shrink-0 my-1',
                             isUnanswered && !isCancelled && 'isUnanswered'
                         )}
                         style={{ '--calendar-color': color }}
@@ -418,7 +418,7 @@ const EventPopover = ({
             </div>
             {getCanReplyToEvent({ isOwnedCalendar, isCalendarWritable, isAttendee: model.isAttendee, isCancelled }) && (
                 <PopoverFooter
-                    className="flex-item-noshrink items-start md:items-center justify-space-between gap-4 flex-column md:flex-row"
+                    className="shrink-0 items-start md:items-center justify-space-between gap-4 flex-column md:flex-row"
                     key={targetEvent.uniqueId}
                 >
                     <div>

@@ -47,7 +47,7 @@ const UsersOnboardingChecklistHeader = ({ smallVariant }: Props) => {
                     icon
                     shape="ghost"
                     size="small"
-                    className="flex-item-noshrink"
+                    className="shrink-0"
                     onClick={() => changeChecklistDisplay(CHECKLIST_DISPLAY_TYPE.HIDDEN)}
                 >
                     <Icon

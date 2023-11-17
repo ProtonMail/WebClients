@@ -15,7 +15,7 @@ function LabelItem({ label, ...rest }: Props) {
         <OrderableTableRow
             cells={[
                 <div key="label" className="flex flex-nowrap">
-                    <Icon name="tag" style={{ fill: Color }} className="icon-16p flex-item-noshrink mr-4 my-auto" />
+                    <Icon name="tag" style={{ fill: Color }} className="icon-16p shrink-0 mr-4 my-auto" />
                     <span className="text-ellipsis" title={Name} data-testid="folders/labels:item-name">
                         {Name}
                     </span>

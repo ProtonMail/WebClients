@@ -49,10 +49,10 @@ const ExtraExpirationSelfDestruction = ({ message }: Props) => {
             )}
             data-testid="expiration-banner"
         >
-            <Icon name="hourglass" className="flex-item-noshrink" />
+            <Icon name="hourglass" className="shrink-0" />
             <span className="flex flex-1 items-center">{expirationMessage}</span>
             {canExpire && (
-                <span className="flex-item-noshrink w-full md:w-auto">
+                <span className="shrink-0 w-full md:w-auto">
                     <Tooltip title={c('Cancel expiration of the message').t`Cancel expiration`}>
                         <Button
                             onClick={handleClick}

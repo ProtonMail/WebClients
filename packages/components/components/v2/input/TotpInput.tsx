@@ -169,7 +169,7 @@ const TotpInput: ForwardRefRenderFunction<HTMLInputElement, TotpInputProps> = (
                             }}
                             type={inputType ?? (type === 'number' ? 'tel' : 'text')}
                             inputMode={type === 'number' ? 'numeric' : undefined}
-                            inputClassName="text-center p-0 flex-item-noshrink"
+                            inputClassName="text-center p-0 shrink-0"
                             error={error}
                             aria-label={c('Info').t`Enter verification code. Digit ${digit}.`}
                             autoComplete={i === 0 ? autoComplete : undefined}

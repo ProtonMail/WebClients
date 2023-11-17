@@ -110,7 +110,7 @@ const AccessibilitySection = () => {
                                     value={id}
                                 >
                                     <span
-                                        className="flex-item-noshrink w-custom text-center text-nowrap text-bold"
+                                        className="shrink-0 w-custom text-center text-nowrap text-bold"
                                         style={{
                                             fontSize: `${value / 14}em`,
                                             '--w-custom': '1.5rem',

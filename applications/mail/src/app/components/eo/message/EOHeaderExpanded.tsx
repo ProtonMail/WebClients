@@ -80,7 +80,7 @@ const EOHeaderExpanded = ({
                     </div>
                 </span>
                 <div
-                    className="message-header-metas-container flex items-center flex-item-noshrink"
+                    className="message-header-metas-container flex items-center shrink-0"
                     data-testid="message:message-header-metas"
                 >
                     {messageLoaded && (

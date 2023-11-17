@@ -164,7 +164,7 @@ const ScheduleSendActionsWrapper = forwardRef<HTMLElement, Props>(
             <>
                 <SimpleDropdown
                     as={Button}
-                    className="flex-item-noshrink composer-actions-secondary"
+                    className="shrink-0 composer-actions-secondary"
                     data-testid="composer:scheduled-send:open-dropdown"
                     icon
                     loading={loading}

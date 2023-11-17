@@ -25,7 +25,7 @@ const RoundedIcon = (
 ) => {
     return (
         <span
-            className={clsx(['inline-flex rounded-50 flex-item-noshrink', className, padding, type && TYPES[type]])}
+            className={clsx(['inline-flex rounded-50 shrink-0', className, padding, type && TYPES[type]])}
             title={title}
             ref={ref}
         >

@@ -64,7 +64,7 @@ const CopyRecoveryStep = ({ onMeasureClick, onContinue, mnemonic }: Props) => {
                         <span className="mr-2 text-bold" data-testid="account:recovery:generatedRecoveryPhrase">
                             {mnemonic.mnemonic}
                         </span>
-                        <Copy className="bg-norm flex-item-noshrink" value={mnemonic.mnemonic} onCopy={onCopy} />
+                        <Copy className="bg-norm shrink-0" value={mnemonic.mnemonic} onCopy={onCopy} />
                     </Card>
                 </div>
                 <Button

@@ -119,7 +119,7 @@ export const GatewayCountrySelection = ({
             {needUpsell && (
                 <>
                     <Row className="rounded p-2 bg-info">
-                        <div className="flex-item-noshrink">
+                        <div className="shrink-0">
                             <Icon name="info-circle" />
                         </div>
                         <div className="ml-2">
@@ -153,7 +153,7 @@ export const GatewayCountrySelection = ({
                 </>
             )}
             <Row className="rounded p-2 bg-weak">
-                <div className="flex-item-noshrink">
+                <div className="shrink-0">
                     <Icon name="info-circle" />
                 </div>
                 <div className="ml-2">

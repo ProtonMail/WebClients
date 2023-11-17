@@ -15,7 +15,7 @@ const TaskRunningBanner = ({ className }: Props) => {
                 className,
             ])}
         >
-            <div className="flex-item-noshrink flex">
+            <div className="shrink-0 flex">
                 <Icon name="clock" className="mr-2" />
             </div>
             <div className="flex-1 pl-1">{c('Info').t`Moving messages. This may take a while.`}</div>

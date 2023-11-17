@@ -71,7 +71,7 @@ const HeaderCell = <T,>({
                         ) : null}
                     </Checkbox>
                     {selection?.selectionState !== SelectionState.NONE && isLoading ? (
-                        <Loader className="flex flex-item-noshrink" />
+                        <Loader className="flex shrink-0" />
                     ) : null}
                 </div>
             </TableHeaderCell>

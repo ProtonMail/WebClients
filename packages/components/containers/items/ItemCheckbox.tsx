@@ -70,7 +70,7 @@ const ItemCheckbox = ({
                 data-testid="item-checkbox"
             />
             <span
-                className="item-icon flex-item-noshrink relative rounded inline-flex"
+                className="item-icon shrink-0 relative rounded inline-flex"
                 style={{
                     backgroundColor: color ?? '',
                 }}

@@ -118,7 +118,7 @@ const ToolbarRowWide = ({
                     <MoreActions selectedIDs={selectedIDs} />
                 </div>
 
-                <div className="flex items-center flex-item-noshrink flex-nowrap toolbar-inner gap-2">
+                <div className="flex items-center shrink-0 flex-nowrap toolbar-inner gap-2">
                     <ListSettings
                         sort={sort}
                         onSort={onSort}

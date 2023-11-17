@@ -51,9 +51,9 @@ const SelectButton = forwardRef<HTMLButtonElement, SelectButtonProps>(
                 <span className="flex-1 text-ellipsis text-left">{children}</span>
 
                 {loading ? (
-                    <CircleLoader className="flex-item-noshrink ml-1" />
+                    <CircleLoader className="shrink-0 ml-1" />
                 ) : (
-                    <DropdownCaret className="flex-item-noshrink ml-1" isOpen={isOpen} />
+                    <DropdownCaret className="shrink-0 ml-1" isOpen={isOpen} />
                 )}
             </button>
         );

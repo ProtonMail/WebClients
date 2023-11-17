@@ -58,7 +58,7 @@ const KeysTable = ({
                                     <Copy
                                         size="small"
                                         value={fingerprint}
-                                        className="flex-item-noshrink mr-2 md:mr-4"
+                                        className="shrink-0 mr-2 md:mr-4"
                                         onCopy={() => {
                                             createNotification({
                                                 text: c('Success').t`Fingerprint copied to clipboard`,
@@ -73,7 +73,7 @@ const KeysTable = ({
                                         {fingerprint}
                                     </code>
                                     {status.isWeak && (
-                                        <PersonalKeyWarningIcon className="ml-auto hidden md:flex flex-item-noshrink" />
+                                        <PersonalKeyWarningIcon className="ml-auto hidden md:flex shrink-0" />
                                     )}
                                 </div>,
                                 algorithm,

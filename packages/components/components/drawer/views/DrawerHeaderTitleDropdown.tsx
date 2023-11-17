@@ -34,7 +34,7 @@ const DrawerHeaderTitleDropdown = ({ title, options, onClickOption }: Props) => 
             </DropdownButton>
 
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
-                <DropdownMenu className="flex-item-noshrink">
+                <DropdownMenu className="shrink-0">
                     {options.map((option, index) => (
                         <DropdownMenuButton
                             className="text-left flex flex-nowrap items-center"

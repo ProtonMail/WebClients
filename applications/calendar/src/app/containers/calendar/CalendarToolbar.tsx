@@ -66,7 +66,7 @@ const CalendarToolbar = ({
                         </div>
                     ) : undefined}
                 </span>
-                <span className="hidden md:flex flex-item-noshrink ml-auto lg:ml-1">{viewSelector}</span>
+                <span className="hidden md:flex shrink-0 ml-auto lg:ml-1">{viewSelector}</span>
             </Toolbar>
         </div>
     );

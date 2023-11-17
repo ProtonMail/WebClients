@@ -28,7 +28,7 @@ const SubscriptionCancelPlan = ({ name, info, features, downgrade = false }: Pro
                                 : `${feature.tooltip}-${feature.icon}-${feature.included}-${feature.status}`;
                         return (
                             <li key={key} className="flex flex-nowrap mb-2">
-                                <span className={clsx('flex-item-noshrink mr-4', downgrade && 'color-weak')}>
+                                <span className={clsx('shrink-0 mr-4', downgrade && 'color-weak')}>
                                     {downgrade ? '-' : <Icon name="checkmark" className="color-primary" />}
                                 </span>
                                 <span className="flex-1">

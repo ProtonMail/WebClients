@@ -28,7 +28,7 @@ const AlmostAllMailBanner = ({ className }: Props) => {
 
     return (
         <div className={clsx(['bg-weak rounded mx-2 px-4 py-2 flex flex-nowrap', className])}>
-            <div className="flex-item-noshrink">
+            <div className="shrink-0">
                 <Icon name="magnifier" className="mr-2" />
             </div>
             <div className="flex-1 pl-1">

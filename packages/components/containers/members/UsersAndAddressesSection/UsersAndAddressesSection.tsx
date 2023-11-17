@@ -402,7 +402,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                             >
                                 <TableCell style={{ verticalAlign: 'baseline' }}>
                                     <div className="flex items-center gap-3">
-                                        <Avatar className="flex-item-noshrink text-rg" color="weak">
+                                        <Avatar className="shrink-0 text-rg" color="weak">
                                             {getInitials(memberName)}
                                         </Avatar>
                                         <div

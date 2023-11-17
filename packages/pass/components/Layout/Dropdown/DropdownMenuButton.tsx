@@ -85,7 +85,7 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
         >
             <div className={clsx(labelClassname, 'flex items-center flex-nowrap gap-2')}>
                 {typeof icon === 'string' ? (
-                    <Icon name={icon} className={clsx(danger ? 'color-danger' : 'color-weak', 'flex-item-noshrink')} />
+                    <Icon name={icon} className={clsx(danger ? 'color-danger' : 'color-weak', 'shrink-0')} />
                 ) : (
                     icon
                 )}
@@ -132,7 +132,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     const extraPadding = quickActions !== undefined ? 'pr-3' : '';
 
     return (
-        <div className={clsx('relative flex-item-noshrink', parentClassName)} style={style}>
+        <div className={clsx('relative shrink-0', parentClassName)} style={style}>
             <DropdownMenuButtonCore
                 className={clsx(size === 'small' && 'text-sm', className)}
                 // translator : "Selected" is singular only
@@ -148,7 +148,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     extra={
                         <div
                             className={clsx(
-                                'flex items-center flex-item-noshrink flex-nowrap color-weak',
+                                'flex items-center shrink-0 flex-nowrap color-weak',
                                 extraPadding
                             )}
                         >

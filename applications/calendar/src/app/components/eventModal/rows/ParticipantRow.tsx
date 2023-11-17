@@ -39,14 +39,14 @@ const ParticipantRow = ({ attendee, contactEmailsMap, onToggleOptional, onDelete
                     icon
                     shape="ghost"
                     type="button"
-                    className="flex flex-item-noshrink"
+                    className="flex shrink-0"
                     onClick={() => onToggleOptional(attendee)}
                 >
                     <Icon name={isOptional ? 'user' : 'user-filled'} alt={c('Action').t`Remove this participant`} />
                 </Button>
             </Tooltip>
             <Tooltip title={c('Action').t`Remove this participant`}>
-                <Button icon shape="ghost" className="flex flex-item-noshrink" onClick={() => onDelete(attendee)}>
+                <Button icon shape="ghost" className="flex shrink-0" onClick={() => onDelete(attendee)}>
                     <Icon name="trash" alt={c('Action').t`Remove this participant`} />
                 </Button>
             </Tooltip>

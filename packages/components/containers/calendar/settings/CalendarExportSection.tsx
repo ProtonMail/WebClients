@@ -65,7 +65,7 @@ const CalendarExportSection = ({ personalCalendars, fallbackCalendar }: Props) =
                         />
                     </span>
                 )}
-                <span className="flex-item-noshrink">
+                <span className="shrink-0">
                     <PrimaryButton onClick={handleExport} disabled={!selectedCalendar}>{c('Action')
                         .t`Download ICS`}</PrimaryButton>
                 </span>

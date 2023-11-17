@@ -193,9 +193,9 @@ const List = (
                     )}
                     data-testid={`message-list-${loading ? 'loading' : 'loaded'}`}
                 >
-                    <div className="flex-item-noshrink">{toolbar}</div>
+                    <div className="shrink-0">{toolbar}</div>
                     <div className="h-full scroll-if-needed flex flex-column flex-nowrap w-full">
-                        <div className="flex-item-noshrink">
+                        <div className="shrink-0">
                             <ListBanners
                                 labelID={labelID}
                                 columnLayout={columnLayout}
@@ -217,7 +217,7 @@ const List = (
                                 <div
                                     className={clsx(
                                         !columnLayout && 'border-right border-weak',
-                                        'w-full flex-item-noshrink'
+                                        'w-full shrink-0'
                                     )}
                                 >
                                     {elements.map((element, index) => {
@@ -273,7 +273,7 @@ const List = (
                                 {useLoadingElement && loadingElement}
 
                                 {total > 1 && (
-                                    <div className="p-5 flex flex-column items-center flex-item-noshrink">
+                                    <div className="p-5 flex flex-column items-center shrink-0">
                                         <ListPagination {...pagingHandlers} loading={loading} />
                                     </div>
                                 )}

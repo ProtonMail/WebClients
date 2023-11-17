@@ -37,7 +37,7 @@ const ContactViewTels = ({ vCardContact, isSignatureVerified = false }: Props) =
                         <a className="mr-2 flex-1 text-ellipsis" href={`tel:${tel.value}`}>
                             {tel.value}
                         </a>
-                        <span className=" flex-item-noshrink flex py-1 contact-view-actions h-4">
+                        <span className=" shrink-0 flex py-1 contact-view-actions h-4">
                             <Copy
                                 className="ml-2 py-2 mt-0.5"
                                 value={tel.value}

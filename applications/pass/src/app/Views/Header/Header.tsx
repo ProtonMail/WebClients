@@ -41,7 +41,7 @@ export const Header: FC<Props> = ({ hamburger }) => {
                         return (
                             <div className="flex items-center gap-2">
                                 <Button
-                                    className="flex-item-noshrink"
+                                    className="shrink-0"
                                     size="small"
                                     icon
                                     pill

@@ -121,7 +121,7 @@ const ToolbarColumnWide = ({
                 </div>
 
                 {(!localIsTiny && selectedIDs.length > 0) || selectedIDs.length === 0 ? (
-                    <div className="flex items-center flex-item-noshrink toolbar-inner gap-2">
+                    <div className="flex items-center shrink-0 toolbar-inner gap-2">
                         <PagingControls
                             loading={loading}
                             page={page}

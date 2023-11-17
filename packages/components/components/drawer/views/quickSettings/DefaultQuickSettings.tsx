@@ -124,7 +124,7 @@ const DefaultQuickSettings = ({ inAppReminders }: Props) => {
                     .t`Try new ${BRAND_NAME} features, updates and products before they are released to the public. This will reload the application`}
             >
                 {/* additional div needed for tooltip */}
-                <div className="w-full flex-item-noshrink">
+                <div className="w-full shrink-0">
                     <QuickSettingsSection>
                         <QuickSettingsSectionRow
                             label={c('Label').t`Beta Access`}

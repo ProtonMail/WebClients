@@ -86,7 +86,7 @@ const ComposerActions = ({
     return (
         <footer
             data-testid="composer:footer"
-            className={clsx(['composer-actions flex-item-noshrink flex max-w-full', className])}
+            className={clsx(['composer-actions shrink-0 flex max-w-full', className])}
             onClick={addressesBlurRef.current}
         >
             <div className="flex flex-row-reverse self-center w-full ml-2 mr-6 pl-5 pr-1 mb-4">

@@ -170,7 +170,7 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
                             className="dropdown-item w-full flex flex-nowrap items-center py-2 px-4"
                         >
                             <Checkbox
-                                className="flex-item-noshrink mr-2"
+                                className="shrink-0 mr-2"
                                 id={filterType.value}
                                 data-testid={`custom-filter-checkbox:${filterType.value}`}
                                 checked={filtersState[filterType.value]}

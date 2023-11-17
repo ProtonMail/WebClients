@@ -37,7 +37,7 @@ export const LoadingTextStepper = ({ steps }: { steps: string[] }) => {
                             )}
                         >
                             <div
-                                className="mr-2 min-w-custom flex flex-item-noshrink"
+                                className="mr-2 min-w-custom flex shrink-0"
                                 style={{ '--min-w-custom': '2em' }}
                             >
                                 {isCurrentStep ? (
