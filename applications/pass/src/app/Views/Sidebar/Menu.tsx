@@ -79,7 +79,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     );
 
     return (
-        <div className="flex flex-column flex-nowrap flex-justify-space-between flex-item-fluid scroll-if-needed gap-2">
+        <div className="flex flex-column flex-nowrap justify-space-between flex-item-fluid scroll-if-needed gap-2">
             <Button
                 icon
                 size="medium"
@@ -87,7 +87,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 onClick={vaultActions.create}
                 shape="ghost"
                 title={c('Action').t`Create a new vault`}
-                className="flex flex-align-items-center flex-justify-space-between flex-nowrap py-2 pl-3 px-2 mx-3"
+                className="flex flex-align-items-center justify-space-between flex-nowrap py-2 pl-3 px-2 mx-3"
             >
                 <div className="flex text-ellipsis">{c('Label').t`Vaults`}</div>
                 <Icon name="plus" alt={c('Action').t`Create a new vault`} />
@@ -152,7 +152,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
 
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
-                <div className="flex flex-align-items-center flex-justify-space-between flex-item-noshrink flex-nowrap gap-2 mt-2 pl-4 pr-2 mx-3">
+                <div className="flex flex-align-items-center justify-space-between flex-item-noshrink flex-nowrap gap-2 mt-2 pl-4 pr-2 mx-3">
                     <span
                         className={clsx(
                             'flex flex-align-items-center flex-nowrap',

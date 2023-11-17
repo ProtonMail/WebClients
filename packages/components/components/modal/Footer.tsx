@@ -15,7 +15,7 @@ const Footer = ({
     isColumn,
     className = clsx([
         'flex flex-nowrap',
-        isColumn ? 'flex-column' : 'flex-justify-space-between flex-align-items-center',
+        isColumn ? 'flex-column' : 'justify-space-between flex-align-items-center',
     ]),
     ...rest
 }: Props) => {

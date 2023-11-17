@@ -14,7 +14,7 @@ interface Props {
 const GoogleButton = ({ className, disabled, onClick, label }: Props) => {
     return (
         <Button
-            className={clsx(['inline-flex flex-justify-center', className])}
+            className={clsx(['inline-flex justify-center', className])}
             disabled={disabled}
             onClick={onClick}
             data-testid="OAuthImportButton:button:google"

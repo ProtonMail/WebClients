@@ -114,7 +114,7 @@ export const MenuDropdown: VFC = () => {
                     size={DROPDOWN_SIZE}
                 >
                     <DropdownMenu>
-                        <div className="flex flex-align-items-center flex-justify-space-between flex-nowrap gap-2 py-2 px-4">
+                        <div className="flex flex-align-items-center justify-space-between flex-nowrap gap-2 py-2 px-4">
                             <span
                                 className={clsx(
                                     'flex flex-align-items-center flex-nowrap',

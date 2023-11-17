@@ -144,7 +144,7 @@ export const Tabs = ({
                                             onChange(index);
                                         }}
                                         type="button"
-                                        className="tabs-list-link flex flex-justify-center relative"
+                                        className="tabs-list-link flex justify-center relative"
                                         id={label}
                                         role="tab"
                                         aria-controls={key}

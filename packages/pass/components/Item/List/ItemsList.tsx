@@ -30,7 +30,7 @@ export const ItemsList: FC<Props> = ({ items, filters, selectedItem, onSelect, p
     return (
         <>
             {items.length === 0 ? (
-                <div className="flex flex-justify-center flex-align-items-center w-full m-auto overflow-x-auto py-3">
+                <div className="flex justify-center flex-align-items-center w-full m-auto overflow-x-auto py-3">
                     {placeholder()}
                 </div>
             ) : (

@@ -39,7 +39,7 @@ const PagingControls = ({
     const useLoadMore = isSearch && !loading && dbExists && esEnabled && isCacheLimited && isSearchPartial;
 
     const loadMore = isSearching ? (
-        <div className="flex flex-justify-center">
+        <div className="flex justify-center">
             <EllipsisLoader />
         </div>
     ) : (

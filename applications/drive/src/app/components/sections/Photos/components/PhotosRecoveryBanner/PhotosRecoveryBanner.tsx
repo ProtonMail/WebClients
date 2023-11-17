@@ -68,7 +68,7 @@ const PhotosRecoveryBanner = () => {
                 recoveryState !== 'FAILED' && recoveryState !== 'SUCCEED' && 'bg-warning'
             )}
         >
-            <div className="flex flex-align-items-center flex-justify-center">
+            <div className="flex flex-align-items-center justify-center">
                 <span className="mr-2 py-1 inline-block">
                     {getPhotosRecoveryProgressText(recoveryState, countOfUnrecoveredLinksLeft, countOfFailedLinks)}
                 </span>

@@ -16,7 +16,7 @@ export default function SharedPageError() {
                     className="password-page--form-container ui-standard w-full relative shadow-lifted max-w-custom mx-auto px-8 py-11 rounded"
                     style={{ '--max-w-custom': '30rem' }}
                 >
-                    <figure className="flex flex-justify-center pb-7">
+                    <figure className="flex justify-center pb-7">
                         <img className="h-auto" src={notFoundSvg} alt={c('Info').t`Shared link not found`} />
                     </figure>
                     <h3 className="text-center text-bold">{c('Title').t`Hm, we couldn't find that one`}</h3>

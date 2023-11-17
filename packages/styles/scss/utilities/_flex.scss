@@ -33,14 +33,14 @@ $dummy-map: ();
 	);
 }
 
-// Add `flex-justify` utilities to the map
+// Add `justify` utilities to the map
 @each $justify in (start, center, end, space-between, space-around, space-evenly) {
 	// Remove prefix when 'start' and 'end' will be recognized by browsers
 	$prefix: if($justify == start or $justify == end, 'flex', '');
 	$dummy-map: map.merge(
 		$dummy-map,
 		(
-			flex-justify-#{$justify}:
+			justify-#{$justify}:
 				(
 					justify-content: #{dash-join($prefix, $justify)},
 				)

@@ -22,7 +22,7 @@ const Header = ({ center, className, right, title, subTitle, onBack, headingLeve
                 </span>
             ) : null}
             {title ? (
-                <div className={clsx(!!right && 'flex flex-align-items-center flex-justify-space-between')}>
+                <div className={clsx(!!right && 'flex flex-align-items-center justify-space-between')}>
                     <h1 className="sign-layout-title" aria-level={headingLevel}>
                         {title}
                     </h1>

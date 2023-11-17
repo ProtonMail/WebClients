@@ -71,7 +71,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
 
             {form.values.provider && (
                 <>
-                    <div className="flex flex-justify-space-between flex-align-items-center mt-3 mb-4">
+                    <div className="flex justify-space-between flex-align-items-center mt-3 mb-4">
                         <div className="flex flex-align-items-center">
                             <div className="mr-2">
                                 <img
@@ -103,7 +103,7 @@ export const ImportForm: VFC<Omit<ImportFormContext, 'reset' | 'result'>> = ({ f
                     <Dropzone onDrop={dropzone.onDrop} disabled={busy} border={false}>
                         <Bordered
                             className={clsx([
-                                'flex flex-columns flex-justify-center flex-align-items-center relative p-4 mb-4 rounded border-weak min-h-custom pass-import-upload',
+                                'flex flex-columns justify-center flex-align-items-center relative p-4 mb-4 rounded border-weak min-h-custom pass-import-upload',
                                 form.values.file ? 'pass-import-upload--has-file' : 'border-dashed',
                                 form.errors.file && 'border-danger',
                             ])}

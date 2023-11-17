@@ -157,7 +157,7 @@ const PrivacyDropdown = ({ message }: Props) => {
             <Dropdown anchorRef={anchorRef} isOpen={isOpen} onClose={close} originalPlacement="bottom-end">
                 <div className="p-4" data-testid="privacy:dropdown-content">
                     <img src={hasTrackers ? trackersImage : noTrackersImage} alt={title} className="block m-auto" />
-                    <div className="flex text-center flex-justify-center">
+                    <div className="flex text-center justify-center">
                         <span className="my-4">
                             <h5 className="text-bold mb-2" tabIndex={-2} data-testid="privacy:title">
                                 {title}
@@ -175,7 +175,7 @@ const PrivacyDropdown = ({ message }: Props) => {
                             <hr className="my-4" />
 
                             <div className="text-center">
-                                <div className="inline-flex flex-nowrap flex-align-items-center flex-justify-center">
+                                <div className="inline-flex flex-nowrap flex-align-items-center justify-center">
                                     <PreventTrackingToggle
                                         id="preventTrackingToggle"
                                         preventTracking={mailSettings.ImageProxy}

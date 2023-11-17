@@ -23,7 +23,7 @@ type ColorPaletteProps = {
 const ColorItem = ({ className }: ColorItemProps) => (
     <div
         className={clsx(
-            'w-custom text-sm flex flex-align-items-center flex-justify-center p-4 rounded shadow-norm border user-select',
+            'w-custom text-sm flex flex-align-items-center justify-center p-4 rounded shadow-norm border user-select',
             className
         )}
         style={{ 'aspect-ratio': '1', '--w-custom': '8em' }}
@@ -35,7 +35,7 @@ const ColorItem = ({ className }: ColorItemProps) => (
 const TextItem = ({ className }: ColorItemProps) => (
     <div
         className={clsx(
-            'flex flex-align-items-center flex-justify-center p-4 rounded shadow-norm border user-select',
+            'flex flex-align-items-center justify-center p-4 rounded shadow-norm border user-select',
             className,
             className === 'color-invert' ? 'bg-primary' : ''
         )}

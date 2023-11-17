@@ -51,7 +51,7 @@ const AttachingModalContent = ({ model, calendars, onSelectCalendar, onAttach, o
         <>
             {alert}
             <Dropzone onDrop={onDrop} size="small" shape="flashy">
-                <div className="flex flex-align-items-center flex-justify-center border p-4 rounded-xl mb-4">
+                <div className="flex flex-align-items-center justify-center border p-4 rounded-xl mb-4">
                     {model.fileAttached ? (
                         <AttachedFile
                             file={model.fileAttached}

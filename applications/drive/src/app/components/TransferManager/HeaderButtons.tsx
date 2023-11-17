@@ -101,7 +101,7 @@ const HeaderButton = ({ entries, className }: HeaderButtonProps) => {
 
     return (
         <div
-            className={clsx(['flex', 'flex-nowrap', 'flex-justify-end', 'no-scroll', 'flex-item-noshrink', className])}
+            className={clsx(['flex', 'flex-nowrap', 'justify-end', 'no-scroll', 'flex-item-noshrink', className])}
         >
             <Buttons buttons={buttons} className="flex-item-noshrink" />
         </div>

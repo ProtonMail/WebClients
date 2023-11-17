@@ -28,7 +28,7 @@ const EmptyTrashNotification = ({ disabled, className }: Props) => {
                     {c('Info').t`Items in the trash will stay here until you delete them permanently`}
                 </p>
                 <Button
-                    className="text-sm flex flex-justify-end"
+                    className="text-sm flex justify-end"
                     color="norm"
                     size="medium"
                     shape="ghost"

@@ -39,7 +39,7 @@ export const Main: FC = () => {
                                 <main id="main" className="content flex-item-fluid overflow-hidden">
                                     <div className="flex flex-nowrap flex-column h-full">
                                         <Header hamburger={<Hamburger expanded={expanded} onToggle={toggle} />} />
-                                        <div className="flex flex-align-items-center flex-justify-center flex-nowrap w-full h-full">
+                                        <div className="flex flex-align-items-center justify-center flex-nowrap w-full h-full">
                                             <Switch>
                                                 <Route
                                                     exact

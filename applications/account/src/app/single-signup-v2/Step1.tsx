@@ -477,7 +477,7 @@ const Step1 = ({
                                 />
                             )}
                             {model.upsell.mode === UpsellTypes.PLANS && (
-                                <div className="flex flex-justify-start lg:flex-justify-end mt-1 flex-justify-center gap-4">
+                                <div className="flex justify-start lg:justify-end mt-1 justify-center gap-4">
                                     <div className="color-primary">
                                         <CurrencySelector
                                             mode="select-two"
@@ -544,7 +544,7 @@ const Step1 = ({
                                             .t`Continue with your ${BRAND_NAME} account`}
                                     />
                                     <BoxContent>
-                                        <div className="flex flex-justify-space-between gap-14">
+                                        <div className="flex justify-space-between gap-14">
                                             <div className="flex-item-fluid w-0">
                                                 <AccountSwitcherItem user={user} />
                                                 {hasSelectedFree && (
@@ -596,7 +596,7 @@ const Step1 = ({
                                           })}
                                 />
                                 <BoxContent>
-                                    <div className="flex flex-align-items-start flex-justify-space-between gap-14">
+                                    <div className="flex flex-align-items-start justify-space-between gap-14">
                                         <div className="flex-item-fluid w-0 relative">
                                             <AccountStepDetails
                                                 {...(signupParameters.invite?.type === 'pass'

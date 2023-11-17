@@ -28,7 +28,7 @@ const BitcoinDetailsLine = ({
             <div className="text-rg text-semibold mb-1">{label}</div>
             <div
                 className={clsx(
-                    'rounded bg-weak py-1 px-3 flex flex-justify-space-between flex-align-items-center',
+                    'rounded bg-weak py-1 px-3 flex justify-space-between flex-align-items-center',
                     className
                 )}
             >

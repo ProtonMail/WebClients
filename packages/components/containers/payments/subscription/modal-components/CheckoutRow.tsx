@@ -32,7 +32,7 @@ const CheckoutRow = ({
 }: Props) => {
     if (amount === 0 && !currency) {
         return (
-            <div className={clsx(['flex flex-nowrap flex-justify-space-between mb-4', className])}>
+            <div className={clsx(['flex flex-nowrap justify-space-between mb-4', className])}>
                 <div className="pr-2">{title}</div>
                 <span>{c('Price').t`Free`}</span>
             </div>
@@ -41,7 +41,7 @@ const CheckoutRow = ({
     return (
         <>
             <div
-                className={clsx(['flex flex-nowrap flex-justify-space-between', !suffixNextLine && 'mb-4', className])}
+                className={clsx(['flex flex-nowrap justify-space-between', !suffixNextLine && 'mb-4', className])}
             >
                 <div className="pr-2">{title}</div>
                 {loading ? (
@@ -56,7 +56,7 @@ const CheckoutRow = ({
                 )}
             </div>
             {suffixNextLine ? (
-                <div className="mb-4 flex flex-justify-end" data-testid="next-line-suffix">
+                <div className="mb-4 flex justify-end" data-testid="next-line-suffix">
                     {suffix}
                 </div>
             ) : null}

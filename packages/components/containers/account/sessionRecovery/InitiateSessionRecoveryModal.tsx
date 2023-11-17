@@ -101,7 +101,7 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onClose, ...rest 
                 subline={user.Email}
             />
             <ModalContent>
-                <div className="flex flex-justify-center">
+                <div className="flex justify-center">
                     <img src={sessionRecoveryIllustration} alt="" />
                 </div>
 

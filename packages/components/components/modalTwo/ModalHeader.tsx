@@ -65,7 +65,7 @@ const ModalHeader = ({
             <div
                 className={clsx(
                     'flex flex-nowrap flex-item-noshrink flex-align-items-start',
-                    title ? 'flex-justify-space-between' : 'flex-justify-end'
+                    title ? 'justify-space-between' : 'justify-end'
                 )}
                 {...rest}
             >

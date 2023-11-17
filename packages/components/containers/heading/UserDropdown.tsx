@@ -256,7 +256,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                 }}
             >
                 <DropdownMenu className="pb-4">
-                    <div className="px-4 py-3 flex flex-nowrap gap-4 flex-justify-space-between text-sm">
+                    <div className="px-4 py-3 flex flex-nowrap gap-4 justify-space-between text-sm">
                         {planName ? (
                             <span
                                 className="text-semibold block flex-item-noshrink"
@@ -308,7 +308,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                                 ) : null}
 
                                 {Email ? (
-                                    <div className="flex flex-nowrap flex-justify-space-between flex-align-items-center">
+                                    <div className="flex flex-nowrap justify-space-between flex-align-items-center">
                                         <Tooltip title={c('Action').t`Copy address`}>
                                             <button
                                                 type="button"
@@ -466,7 +466,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
                             </div>
                         )}
 
-                        <div className="flex flex-nowrap mx-auto flex-justify-center">
+                        <div className="flex flex-nowrap mx-auto justify-center">
                             <a
                                 className="px-1 link link-focus color-weak text-no-decoration on-hover-color-norm"
                                 href={

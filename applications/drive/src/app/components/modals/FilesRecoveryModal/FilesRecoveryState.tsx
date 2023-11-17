@@ -26,7 +26,7 @@ const FilesRecoveryState = ({ onRecovery, onClose, recovering }: Props) => {
                 </Alert>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <div className="flex flex-justify-space-between w-full flex-nowrap">
+                <div className="flex justify-space-between w-full flex-nowrap">
                     <Button
                         disabled={recovering}
                         autoFocus

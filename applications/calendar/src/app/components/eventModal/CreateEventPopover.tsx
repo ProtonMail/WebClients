@@ -183,7 +183,7 @@ const CreateEventPopover = ({
                     isNarrow={isNarrow}
                     isDrawerApp={isDrawerApp}
                 />
-                <PopoverFooter className="flex-justify-end flex-nowrap flex-column-reverse sm:flex-row gap-2">
+                <PopoverFooter className="justify-end flex-nowrap flex-column-reverse sm:flex-row gap-2">
                     <Button
                         disabled={loadingAction}
                         data-testid="create-event-popover:more-event-options"

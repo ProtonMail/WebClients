@@ -44,7 +44,7 @@ const Stepper = ({ activeStep, position = 'center', className, children, ...rest
 
     const sharedUlClasses = clsx(
         'unstyled flex-no-min-children gap-2 flex-nowrap m-0',
-        `flex-justify-${position}`
+        `justify-${position}`
     );
 
     return (
