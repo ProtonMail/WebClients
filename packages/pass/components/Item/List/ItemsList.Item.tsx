@@ -13,9 +13,9 @@ import type { ItemRevisionWithOptimistic, ShareType } from '@proton/pass/types';
 import { isEmptyString } from '@proton/pass/utils/string/is-empty-string';
 import clsx from '@proton/utils/clsx';
 
-import { presentListItem } from './ItemListItem.utils';
+import { presentListItem } from './utils';
 
-import './ItemsListItem.scss';
+import './ItemsList.Item.scss';
 
 type Props = Partial<LinkProps> &
     ButtonLikeProps<any> & {

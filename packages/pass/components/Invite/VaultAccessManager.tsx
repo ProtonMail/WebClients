@@ -6,8 +6,8 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { Icon, Prompt } from '@proton/components/components';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteContextProvider';
-import { ItemCard } from '@proton/pass/components/Item/ItemCard';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
@@ -151,7 +151,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                                 canTransfer={vault.owner && hasMultipleOwnedWritableVaults}
                             />
                         ))}
-                        {warning && <ItemCard>{warning}</ItemCard>}
+                        {warning && <Card>{warning}</Card>}
                     </div>
                 ) : (
                     <div className="absolute-center flex flex-column gap-y-3 text-center color-weak text-sm">
