@@ -2,13 +2,16 @@ import { type FC } from 'react';
 import { useSelector } from 'react-redux';
 import { Redirect, type RouteChildrenProps } from 'react-router-dom';
 
-import { useFilters } from '@proton/pass/hooks/useFilters';
+import {
+    getItemRoute,
+    getLocalPath,
+    preserveSearch,
+    useNavigation,
+} from '@proton/pass/components/Core/NavigationProvider';
 import { selectItemsSearchResult } from '@proton/pass/store/selectors';
 
-import { getItemRoute } from '../../lib/routing';
-
 export const Autoselect: FC<RouteChildrenProps> = () => {
-    const { filters } = useFilters();
+    const { filters } = useNavigation();
 
     const { filtered } = useSelector(
         selectItemsSearchResult({
@@ -20,6 +23,7 @@ export const Autoselect: FC<RouteChildrenProps> = () => {
     );
 
     const autoselect = filtered[0];
+    const to = autoselect ? getItemRoute(autoselect.shareId, autoselect.itemId) : getLocalPath('/empty');
 
-    return <Redirect exact to={autoselect ? getItemRoute(autoselect.shareId, autoselect.itemId) : '/empty'} />;
+    return <Redirect exact to={preserveSearch(to)} />;
 };
