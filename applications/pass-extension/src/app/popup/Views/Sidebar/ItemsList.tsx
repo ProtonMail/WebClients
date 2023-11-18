@@ -5,7 +5,7 @@ import { useItems } from 'proton-pass-extension/lib/hooks/useItems';
 import { useNavigationContext } from 'proton-pass-extension/lib/hooks/useNavigationContext';
 import { useSelectItemClick } from 'proton-pass-extension/lib/hooks/useSelectItemClick';
 
-import { ItemsListItem } from '@proton/pass/components/Item/ItemsListItem';
+import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsList.Item';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { interpolateRecentItems } from '@proton/pass/lib/items/item.utils';

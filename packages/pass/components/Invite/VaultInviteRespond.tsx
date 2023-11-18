@@ -6,7 +6,7 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Progress } from '@proton/components/components';
-import { ItemCard } from '@proton/pass/components/Item/ItemCard';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actions';
@@ -65,9 +65,9 @@ export const VaultInviteRespond: VFC<Invite> = (invite) => {
             <ModalTwoFooter className="flex flex-column flex-align-items-stretch text-center">
                 {!userVerified && <UserVerificationMessage />}
                 {userVerified && vaultLimitReached && (
-                    <ItemCard className="mb-2">
+                    <Card className="mb-2">
                         {c('Warning').t`You have reached the limit of vaults you can have in your plan.`}
-                    </ItemCard>
+                    </Card>
                 )}
                 <Button
                     pill
