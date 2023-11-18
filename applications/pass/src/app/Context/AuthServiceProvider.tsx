@@ -104,6 +104,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
 
             onForkConsumed: (_, state) => {
                 removeHashParameters();
+
                 try {
                     const data = JSON.parse(sessionStorage.getItem(getStateKey(state))!);
                     if ('url' in data && typeof data.url === 'string') setRedirectPath(data.url);
@@ -141,12 +142,13 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 const persistedSession = await auth.config.getPersistedSession(localID);
 
                 if (persistedSession) {
+                    const { AccessToken, RefreshTime, RefreshToken } = data;
                     /* update the persisted session tokens without re-encrypting the
                      * session blob as session refresh may happen before a full login
                      * with a partially hydrated authentication store. */
-                    persistedSession.AccessToken = data.AccessToken;
-                    persistedSession.RefreshToken = data.RefreshToken;
-                    persistedSession.RefreshTime = data.RefreshTime;
+                    persistedSession.AccessToken = AccessToken;
+                    persistedSession.RefreshToken = RefreshToken;
+                    persistedSession.RefreshTime = RefreshTime;
                     localStorage.setItem(getSessionKey(localID), JSON.stringify(persistedSession));
                 }
             },

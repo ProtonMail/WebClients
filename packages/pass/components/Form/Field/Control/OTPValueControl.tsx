@@ -2,8 +2,8 @@ import { type VFC } from 'react';
 
 import { c } from 'ttag';
 
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { OTPDonut } from '@proton/pass/components/Otp/OTPDonut';
-import { useOTPGenerate } from '@proton/pass/components/Otp/OTPProvider';
 import { OTPValue } from '@proton/pass/components/Otp/OTPValue';
 import { usePeriodicOtpCode } from '@proton/pass/hooks/usePeriodicOtpCode';
 import { type OtpRequest } from '@proton/pass/types';
@@ -18,8 +18,8 @@ type Props = { label?: string; payload: OtpRequest };
  * re-rendering. eg: we do not want to re-render `Login.view`
  * everytime the OTP countdown updates */
 export const OTPValueControl: VFC<Props> = ({ label, payload }) => {
-    const generate = useOTPGenerate();
-    const [otp, percent] = usePeriodicOtpCode({ generate, payload });
+    const { generateOTP } = usePassCore();
+    const [otp, percent] = usePeriodicOtpCode({ generate: generateOTP, payload });
 
     return (
         <ValueControl
