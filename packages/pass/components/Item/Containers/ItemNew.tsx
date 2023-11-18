@@ -11,6 +11,8 @@ import { itemCreationIntent } from '@proton/pass/store/actions';
 import { selectDefaultVault, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemCreateIntent, ItemType } from '@proton/pass/types';
 
+import { useNavigation } from '../../Core/NavigationProvider';
+
 const itemNewMap: { [T in ItemType]: VFC<ItemNewViewProps<T>> } = {
     login: LoginNew,
     note: NoteNew,
@@ -18,15 +20,14 @@ const itemNewMap: { [T in ItemType]: VFC<ItemNewViewProps<T>> } = {
     creditCard: CreditCardNew,
 };
 
-export const ItemNewContainer: VFC = () => {
+export const ItemNew: VFC = () => {
+    const { selectItem, setFilters, filters } = useNavigation();
+    const selectedShareId = filters.selectedShareId;
+
     const history = useHistory();
     const dispatch = useDispatch();
-    //TODO see for this const { url } = usePopupContext();
 
     const { activeShareId, itemType } = useParams<{ activeShareId: string; itemType: ItemType }>();
-    // not needed we have the item from route const { selectItem } = useNavigationContext();
-    // TO DO migrate this context const { shareId: selectedShareId, setShareId } = useItemsFilteringContext();
-
     const { didDowngrade } = useSelector(selectVaultLimits);
 
     /* if user downgraded - always auto-select the default vault id */
@@ -36,22 +37,15 @@ export const ItemNewContainer: VFC = () => {
     const ItemNewComponent = itemNewMap[itemType];
 
     const handleSubmit = (createIntent: ItemCreateIntent) => {
-        const action = itemCreationIntent(createIntent);
-        dispatch(action);
+        dispatch(itemCreationIntent(createIntent));
 
-        /* if the user put the item in a vault which is
-         * currently not selected - autoselect it so the
-         * following call to `selectItem` passes */
-
-        /* TODO we might not need this we can just redirect the user to the new path
+        /* if the user put the item in a vault which is currently not selected,
+         *  autoselect it so the following call to `selectItem` passes */
         if (selectedShareId && selectedShareId !== createIntent.shareId) {
-            setShareId(createIntent.shareId);
+            setFilters({ selectedShareId: createIntent.shareId });
         }
 
-        selectItem(createIntent.shareId, action.payload.optimisticId);
-        */
-        // Just navigate to the new one
-        history.push(`/share/${shareId}/item/${action.payload.optimisticId}`);
+        selectItem(createIntent.shareId, createIntent.optimisticId);
     };
 
     const handleCancel = () => history.goBack();
