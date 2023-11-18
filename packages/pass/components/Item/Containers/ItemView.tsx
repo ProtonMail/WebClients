@@ -1,16 +1,16 @@
 import { type VFC, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { Redirect, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import { getLocalPath, preserveSearch, useNavigation } from '@proton/pass/components/Core/NavigationProvider';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteContextProvider';
 import { VaultInviteFromItemModal } from '@proton/pass/components/Invite/VaultInviteFromItemModal';
 import { AliasView } from '@proton/pass/components/Item/Alias/Alias.view';
 import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCard.view';
 import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
 import { NoteView } from '@proton/pass/components/Item/Note/Note.view';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { VaultSelect, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
 import type { ItemRouteParams, ItemViewProps } from '@proton/pass/components/Views/types';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
@@ -44,12 +44,11 @@ const itemTypeViewMap: { [T in ItemType]: VFC<ItemViewProps<T>> } = {
     creditCard: CreditCardView,
 };
 
-export const ItemViewContainer: VFC = () => {
-    // TODO  const filters = useItemsFilteringContext();
+export const ItemView: VFC = () => {
+    const { selectItem } = useNavigation();
     const inviteContext = useInviteContext();
 
     const dispatch = useDispatch();
-    const history = useHistory();
     const { shareId, itemId } = useParams<ItemRouteParams>();
     const [inviteOpen, setInviteOpen] = useState(false);
     const { closeVaultSelect, openVaultSelect, modalState } = useVaultSelectModalHandles();
@@ -62,11 +61,11 @@ export const ItemViewContainer: VFC = () => {
     const item = useSelector(itemSelector);
     const failure = useSelector(failedItemActionSelector);
 
-    if (item === undefined) return <Panel />;
+    if (item === undefined) return <Redirect to={preserveSearch(getLocalPath('/'))} />;
 
     const trashed = isTrashed(item);
 
-    const handleEdit = () => history.push(`/share/${shareId}/item/${itemId}/edit`);
+    const handleEdit = () => selectItem(shareId, itemId, { view: 'edit', mode: 'push' });
     const handleRetry = () => failure !== undefined && dispatch(failure.action);
     const handleTrash = () => dispatch(itemTrashIntent({ itemId, shareId, item }));
     const handleMove = () => openVaultSelect(item.shareId, selectWritableVaultsWithItemsCount);
@@ -99,13 +98,9 @@ export const ItemViewContainer: VFC = () => {
     };
 
     const doMoveItem = (destinationShareId: string) => {
-        const optimisticId = uniqueId();
-        dispatch(itemMoveIntent({ item, shareId: destinationShareId, optimisticId }));
-
-        // TODO we might not needed if (filters.shareId) filters.setShareId(destinationShareId);
-        // TODO check this navigate to the new one selectItem(destinationShareId, optimisticId);
-        // Just navigate to the new one
-        history.push(`/share/${optimisticId}/item/${itemId}`);
+        const optimisticShareId = uniqueId();
+        dispatch(itemMoveIntent({ item, shareId: destinationShareId, optimisticId: optimisticShareId }));
+        selectItem(optimisticShareId, itemId, { mode: 'replace' });
         closeVaultSelect();
         setInviteOpen(false);
     };

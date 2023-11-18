@@ -2,6 +2,7 @@ import { type VFC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect, useParams } from 'react-router-dom';
 
+import { getLocalPath, preserveSearch, useNavigation } from '@proton/pass/components/Core/NavigationProvider';
 import { AliasEdit } from '@proton/pass/components/Item/Alias/Alias.edit';
 import { CreditCardEdit } from '@proton/pass/components/Item/CreditCard/CreditCard.edit';
 import { LoginEdit } from '@proton/pass/components/Item/Login/Login.edit';
@@ -18,10 +19,9 @@ const itemEditMap: { [T in ItemType]: VFC<ItemEditViewProps<T>> } = {
     creditCard: CreditCardEdit,
 };
 
-export const ItemEditContainer: VFC = () => {
-    //const location = useLocation();
-    // TODO const url = location.pathname;
+export const ItemEdit: VFC = () => {
     const { shareId, itemId } = useParams<ItemRouteParams>();
+    const { selectItem } = useNavigation();
     const dispatch = useDispatch();
 
     const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
@@ -29,14 +29,19 @@ export const ItemEditContainer: VFC = () => {
 
     const handleSubmit = (data: ItemEditIntent) => {
         dispatch(itemEditIntent(data));
-        // selectItem(shareId, itemId) we gonna heve this from route
+        selectItem(shareId, itemId, { mode: 'replace', preserveSearch: true });
     };
 
-    if (!item) {
-        return <Redirect to="/" />;
-    }
+    if (item === undefined) return <Redirect to={preserveSearch(getLocalPath('/'))} />;
 
     const EditViewComponent = itemEditMap[item.data.type] as VFC<ItemEditViewProps>;
-
-    return <EditViewComponent vault={vault} revision={item} onSubmit={handleSubmit} url={null} onCancel={() => {}} />;
+    return (
+        <EditViewComponent
+            vault={vault}
+            revision={item}
+            onSubmit={handleSubmit}
+            url={null}
+            onCancel={() => selectItem(shareId, itemId, { mode: 'replace' })}
+        />
+    );
 };
