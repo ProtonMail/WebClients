@@ -6,8 +6,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon, type ModalProps } from '@proton/components/components';
-import { ItemCard } from '@proton/pass/components/Item/ItemCard';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
@@ -99,11 +99,11 @@ export const VaultNew: VFC<Props> = ({ onSuccess, ...modalProps }) => {
                 >
                     <>
                         {vaultLimitReached && (
-                            <ItemCard className="mb-4">
+                            <Card className="mb-4">
                                 {c('Info').t`You have reached the limit of vaults you can create.`}
                                 {passPlan === UserPassPlan.FREE &&
                                     c('Info').t` Upgrade to a paid plan to create multiple vaults.`}
-                            </ItemCard>
+                            </Card>
                         )}
                         <FormikProvider value={form}>
                             <Form id={FORM_ID} className="flex flex-column gap-y-4">
