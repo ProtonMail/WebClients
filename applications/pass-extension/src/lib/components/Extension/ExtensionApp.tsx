@@ -1,9 +1,8 @@
-import { type FC, type ReactNode, useCallback, useEffect, useState } from 'react';
+import { type FC, type ReactNode, useEffect, useState } from 'react';
 
 import { setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
 import {
-    ConfigProvider,
     Icons,
     ModalsChildren,
     ModalsProvider,
@@ -12,9 +11,7 @@ import {
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
-import { NavigationProvider } from '@proton/pass/components/Navigation/NavigationProvider';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
-import browser from '@proton/pass/lib/globals/browser';
 import type { WorkerMessage } from '@proton/pass/types';
 import { type ExtensionEndpoint, WorkerMessageType } from '@proton/pass/types';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
@@ -22,8 +19,8 @@ import { loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import noop from '@proton/utils/noop';
 
-import * as config from '../../../app/config';
 import locales from '../../../app/locales';
+import { PassExtensionCore } from './PassExtensionCore';
 
 export const ExtensionApp: FC<{
     endpoint: ExtensionEndpoint;
@@ -31,7 +28,6 @@ export const ExtensionApp: FC<{
 }> = ({ endpoint, children }) => {
     const [ready, setReady] = useState(false);
     const [locale, setLocale] = useState(DEFAULT_LOCALE);
-    const onLink = useCallback((url) => browser.tabs.create({ url }).catch(noop), []);
 
     /* resolve the extension locale through the I18nService instead of reading
      * from the store as some extension sub-apps are not redux connected but
@@ -72,20 +68,18 @@ export const ExtensionApp: FC<{
     }, []);
 
     return (
-        <ConfigProvider config={config}>
+        <PassExtensionCore endpoint={endpoint}>
             <Icons />
             <ThemeProvider />
             <NotificationsProvider>
                 <ModalsProvider>
-                    <NavigationProvider onLink={onLink}>
-                        {children(ready, locale)}
-                        <Portal>
-                            <ModalsChildren />
-                            <NotificationsChildren />
-                        </Portal>
-                    </NavigationProvider>
+                    {children(ready, locale)}
+                    <Portal>
+                        <ModalsChildren />
+                        <NotificationsChildren />
+                    </Portal>
                 </ModalsProvider>
             </NotificationsProvider>
-        </ConfigProvider>
+        </PassExtensionCore>
     );
 };
