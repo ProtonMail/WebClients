@@ -1,4 +1,4 @@
-import { type FC, createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { type FC, createContext, useContext, useEffect, useMemo, useState } from 'react';
 
 import {
     ExtensionConnect,
@@ -12,14 +12,13 @@ import { c } from 'ttag';
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { NotificationsContext } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
-import { useNavigation } from '@proton/pass/components/Navigation/NavigationProvider';
-import { OTPProvider } from '@proton/pass/components/Otp/OTPProvider';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useActionRequestEffect } from '@proton/pass/hooks/useActionRequestEffect';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { clientReady } from '@proton/pass/lib/client';
 import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { syncRequest } from '@proton/pass/store/actions/requests';
-import type { AppState, MaybeNull, OtpRequest, PopupInitialState } from '@proton/pass/types';
+import type { AppState, MaybeNull, PopupInitialState } from '@proton/pass/types';
 import { AppStatus, WorkerMessageType, type WorkerMessageWithSender } from '@proton/pass/types';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 import { parseUrl } from '@proton/pass/utils/url/parser';
@@ -111,7 +110,7 @@ const PopupContextContainer: FC = ({ children }) => {
 
 export const PopupContextProvider: FC = ({ children }) => {
     const { createNotification } = useNotifications();
-    const { onLink } = useNavigation();
+    const { onLink } = usePassCore();
     const notificationEnhancer = useNotificationEnhancer({ onLink });
 
     const onWorkerMessage = (message: WorkerMessageWithSender) => {
@@ -120,19 +119,9 @@ export const PopupContextProvider: FC = ({ children }) => {
         }
     };
 
-    const generateOTP = useCallback(
-        (payload: OtpRequest) =>
-            sendMessage.on(popupMessage({ type: WorkerMessageType.OTP_CODE_GENERATE, payload }), (response) =>
-                response.type === 'success' ? response : null
-            ),
-        []
-    );
-
     return (
         <ExtensionConnect endpoint="popup" messageFactory={popupMessage} onWorkerMessage={onWorkerMessage}>
-            <PopupContextContainer>
-                <OTPProvider generate={generateOTP}>{children}</OTPProvider>
-            </PopupContextContainer>
+            <PopupContextContainer>{children}</PopupContextContainer>
         </ExtensionConnect>
     );
 };
