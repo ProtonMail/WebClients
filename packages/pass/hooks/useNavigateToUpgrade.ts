@@ -1,10 +1,6 @@
-import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
-
-import { useNavigation } from '../components/Navigation/NavigationProvider';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 
 export const useNavigateToUpgrade = () => {
-    const { SSO_URL } = usePassConfig();
-    const { onLink } = useNavigation();
-
-    return () => onLink(`${SSO_URL}/pass/upgrade`);
+    const { onLink, config } = usePassCore();
+    return () => onLink(`${config.SSO_URL}/pass/upgrade`);
 };
