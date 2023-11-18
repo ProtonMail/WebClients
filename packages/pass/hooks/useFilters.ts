@@ -28,7 +28,7 @@ export const useFilters = () => {
     const location = useLocation();
     const [filters, setFilters] = useState(() => parseFilters(location.search));
 
-    useEffect(() => history.listen(({ search }) => setFilters(parseFilters(search))), [history, location.search]);
+    useEffect(() => history.listen(({ search }) => setFilters(parseFilters(search))), []);
 
     return useMemo(
         () => ({
@@ -37,7 +37,7 @@ export const useFilters = () => {
                 const encodedFilter = btoa(JSON.stringify({ ...filters, ...update }));
                 const params = new URLSearchParams(location.search);
                 params.set('filters', encodedFilter);
-                history.push({ search: `?${params.toString()}` });
+                history.replace({ search: `?${params.toString()}` });
             },
         }),
         [filters]

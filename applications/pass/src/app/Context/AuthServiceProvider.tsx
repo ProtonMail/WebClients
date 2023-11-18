@@ -2,6 +2,7 @@ import { type FC, createContext, useContext, useEffect, useMemo, useRef } from '
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { useNotifications } from '@proton/components/hooks';
+import { preserveSearch } from '@proton/pass/components/Core/NavigationProvider';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import { bootIntent, stateDestroy } from '@proton/pass/store/actions';
@@ -49,7 +50,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
     const history = useHistory();
     const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
 
-    const redirectPath = useRef(stripLocalBasenameFromPathname(location.pathname));
+    const redirectPath = useRef(stripLocalBasenameFromPathname(preserveSearch(location.pathname)));
     const setRedirectPath = (redirect: string) => (redirectPath.current = redirect);
 
     const { createNotification } = useNotifications();
@@ -197,7 +198,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
             else {
                 /* when the document loses visibility: reset client
                  * state and wipe the in-memory store. */
-                setRedirectPath(location.pathname);
+                setRedirectPath(preserveSearch(location.pathname));
                 client.current.setStatus(AppStatus.IDLE);
                 store.dispatch(stateDestroy());
             }

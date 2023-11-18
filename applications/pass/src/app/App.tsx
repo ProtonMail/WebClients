@@ -9,6 +9,7 @@ import {
     NotificationsProvider,
 } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
+import { NavigationProvider } from '@proton/pass/components/Core/NavigationProvider';
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { API_PROXY_KEY, withAuthHash } from '@proton/pass/lib/api/proxy';
@@ -59,15 +60,17 @@ export const App = () => {
                                 <ClientContext.Consumer>
                                     {(client) => (
                                         <BrowserRouter basename={getBasename(client.state.localID)}>
-                                            <AuthServiceProvider>
-                                                <StoreProvider>
-                                                    <Routes />
-                                                    <Portal>
-                                                        <ModalsChildren />
-                                                        <NotificationsChildren />
-                                                    </Portal>
-                                                </StoreProvider>
-                                            </AuthServiceProvider>
+                                            <NavigationProvider>
+                                                <AuthServiceProvider>
+                                                    <StoreProvider>
+                                                        <Routes />
+                                                        <Portal>
+                                                            <ModalsChildren />
+                                                            <NotificationsChildren />
+                                                        </Portal>
+                                                    </StoreProvider>
+                                                </AuthServiceProvider>
+                                            </NavigationProvider>
                                         </BrowserRouter>
                                     )}
                                 </ClientContext.Consumer>
