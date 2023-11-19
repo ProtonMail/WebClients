@@ -1,7 +1,8 @@
 import { type FC } from 'react';
 
 import { Header as CoreHeader } from '@proton/components';
-import { getLocalPath, useNavigation } from '@proton/pass/components/Core/NavigationProvider';
+import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
+import { getLocalPath } from '@proton/pass/components/Core/routing';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';
 import type { ItemType } from '@proton/pass/types';
