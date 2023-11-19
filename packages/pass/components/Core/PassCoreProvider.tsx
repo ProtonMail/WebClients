@@ -2,9 +2,10 @@ import type { FC } from 'react';
 import { createContext, useContext, useMemo } from 'react';
 
 import { ConfigProvider } from '@proton/components/containers/config';
-import { type PassConfig } from '@proton/pass/hooks/usePassConfig';
-import { type UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpCode';
+import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
+import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpCode';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 
 type PassCoreContextValue = {
     config: PassConfig;
@@ -17,6 +18,8 @@ type PassCoreContextValue = {
      * In extension, this will leverage the `browser.tabs` API
      * whereas in the web-app, we can use `window.location` */
     onLink: (url: string) => void;
+    /** Processes a telemetry event */
+    onTelemetry: (event: TelemetryEvent) => void;
 };
 
 const PassCoreContext = createContext<MaybeNull<PassCoreContextValue>>(null);
