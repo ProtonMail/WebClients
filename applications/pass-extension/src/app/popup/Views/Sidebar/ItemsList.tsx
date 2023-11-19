@@ -5,14 +5,14 @@ import { useItems } from 'proton-pass-extension/lib/hooks/useItems';
 import { useNavigationContext } from 'proton-pass-extension/lib/hooks/useNavigationContext';
 import { useSelectItemClick } from 'proton-pass-extension/lib/hooks/useSelectItemClick';
 
+import { SortFilter } from '@proton/pass/components/Item/Filters/Sort';
+import { TypeFilter } from '@proton/pass/components/Item/Filters/Type';
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsList.Item';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { interpolateRecentItems } from '@proton/pass/lib/items/item.utils';
 
-import { ItemsFilter } from './ItemsFilter';
 import { ItemsListPlaceholder } from './ItemsListPlaceholder';
-import { ItemsSort } from './ItemsSort';
 
 export const ItemsList: VFC = () => {
     const { selectedItem } = useNavigationContext();
@@ -21,6 +21,7 @@ export const ItemsList: VFC = () => {
     const {
         filtering: { search, type, sort, setSort, setType },
         filtered,
+        searched,
         totalCount,
     } = useItems();
 
@@ -36,8 +37,8 @@ export const ItemsList: VFC = () => {
         <>
             {totalCount > 0 && (
                 <div className="flex flex-row flex-item-nogrow flex-item-noshrink flex-nowrap p-3 gap-1 scroll-horizontal-if-needed">
-                    <ItemsFilter value={type} onChange={setType} />
-                    <ItemsSort sort={sort} onSortChange={setSort} />
+                    <TypeFilter items={searched} value={type} onChange={setType} />
+                    <SortFilter value={sort} onChange={setSort} />
                 </div>
             )}
 
