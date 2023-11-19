@@ -33,7 +33,7 @@ export const ItemEdit: VFC = () => {
         selectItem(shareId, itemId, { mode: 'replace', preserveSearch: true });
     };
 
-    if (!(item && vault)) return <Redirect to={preserveSearch(getLocalPath('/'))} />;
+    if (!(item && vault)) return <Redirect to={preserveSearch(getLocalPath('/'))} push={false} />;
 
     const EditViewComponent = itemEditMap[item.data.type] as VFC<ItemEditViewProps>;
     return (

@@ -39,6 +39,11 @@ export const selectByShareId = (state: State) => state.items.byShareId;
 export const selectByOptimisticIds = (state: State) => state.items.byOptimistcId;
 export const selectItemDraft = (state: State) => state.popup.draft;
 
+/** Give an itemId, returns wether it is optimistic by checking for
+ * presence in the `byOptimisticId` dictionary state */
+export const selectResolvedOptimisticId = (optimisticId: string) =>
+    createSelector(selectByOptimisticIds, (optimisticIds) => optimisticId in optimisticIds);
+
 export const selectByShareIdAsIfNotFailed = createSelector(selectByShareId, asIfNotFailed);
 export const selectByShareIdAsIfNotOptimistic = createSelector(selectByShareId, asIfNotOptimistic);
 export const selectItems = createSelector([selectByShareId], unwrapOptimisticState);

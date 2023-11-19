@@ -5,7 +5,7 @@ import { Redirect, useParams } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
-import { getLocalPath, preserveSearch } from '@proton/pass/components/Core/routing';
+import { getItemRoute, getLocalPath, preserveSearch } from '@proton/pass/components/Core/routing';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteContextProvider';
 import { VaultInviteFromItemModal } from '@proton/pass/components/Invite/VaultInviteFromItemModal';
 import { AliasView } from '@proton/pass/components/Item/Alias/Alias.view';
@@ -30,6 +30,7 @@ import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-f
 import {
     selectByShareId,
     selectItemWithOptimistic,
+    selectResolvedOptimisticId,
     selectShare,
     selectWritableSharedVaultsWithItemsCount,
     selectWritableVaultsWithItemsCount,
@@ -55,6 +56,7 @@ export const ItemView: VFC = () => {
     const { closeVaultSelect, openVaultSelect, modalState } = useVaultSelectModalHandles();
 
     const optimisticItemId = getItemActionId({ itemId, shareId });
+    const optimisticResolved = useSelector(selectResolvedOptimisticId(itemId));
     const itemSelector = useMemo(() => selectItemWithOptimistic(shareId, itemId), [shareId, itemId]);
     const failedItemActionSelector = pipe(selectByShareId, selectFailedAction(optimisticItemId));
 
@@ -62,7 +64,10 @@ export const ItemView: VFC = () => {
     const item = useSelector(itemSelector);
     const failure = useSelector(failedItemActionSelector);
 
-    if (!(vault && item)) return <Redirect to={preserveSearch(getLocalPath('/'))} />;
+    /* if vault or item cannot be found : redirect to base path */
+    if (!(vault && item)) return <Redirect to={preserveSearch(getLocalPath('/'))} push={false} />;
+    /* if the item is optimistic and can be resolved to a non-optimistic item : replace */
+    if (optimisticResolved) return <Redirect to={preserveSearch(getItemRoute(shareId, item.itemId))} push={false} />;
 
     const trashed = isTrashed(item);
 
