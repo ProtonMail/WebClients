@@ -9,7 +9,7 @@ import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper
 import { useClient } from '../../Context/ClientProvider';
 import { Autoselect } from './Autoselect';
 
-const Empty = () => <>Empty</>;
+const Empty = () => <></>;
 
 export const ItemSwitch: FC = () => {
     const client = useClient();
@@ -26,7 +26,7 @@ export const ItemSwitch: FC = () => {
                             <Route exact path={sub('(trash/)?share/:shareId/item/:itemId')} component={ItemView} />
                             <Route exact path={sub('share/:shareId/item/:itemId/edit')} component={ItemEdit} />
                             <Route exact path={sub('item/new/:itemType')} component={ItemNew} />
-                            <Route exact path={sub('empty')} component={Empty} />
+                            <Route exact path={sub('(trash/)?empty')} component={Empty} />
                             <Route component={Autoselect} />
                         </Switch>
                     );
