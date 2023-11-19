@@ -1,6 +1,5 @@
-import { type VFC, useMemo } from 'react';
+import { type FC, useMemo } from 'react';
 
-import { useItems } from 'proton-pass-extension/lib/hooks/useItems';
 import { c } from 'ttag';
 
 import type { DropdownProps, IconName } from '@proton/components';
@@ -8,12 +7,13 @@ import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@
 import { CountLabel } from '@proton/pass/components/Layout/Dropdown/CountLabel';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
-import type { ItemTypeFilter } from '@proton/pass/types';
+import type { ItemRevisionWithOptimistic, ItemTypeFilter } from '@proton/pass/types';
 
-interface ItemsFilterProps {
+type Props = {
+    items: ItemRevisionWithOptimistic[];
     value: ItemTypeFilter;
     onChange: (value: ItemTypeFilter) => void;
-}
+};
 
 const DROPDOWN_SIZE: DropdownProps['size'] = { width: '12rem' };
 
@@ -40,9 +40,8 @@ export const getItemTypeOptions = (): { [key in ItemTypeFilter]: { label: string
     },
 });
 
-export const ItemsFilter: VFC<ItemsFilterProps> = ({ value, onChange }) => {
+export const TypeFilter: FC<Props> = ({ items, value, onChange }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
-    const { searched } = useItems();
 
     const options = useMemo(
         () =>
@@ -50,9 +49,9 @@ export const ItemsFilter: VFC<ItemsFilterProps> = ({ value, onChange }) => {
                 type: type as ItemTypeFilter,
                 label,
                 icon,
-                count: type === '*' ? searched.length : searched.filter((item) => item.data.type === type).length,
+                count: type === '*' ? items.length : items.filter((item) => item.data.type === type).length,
             })),
-        [searched]
+        [items]
     );
 
     const selectedOption = options.find(({ type }) => type === value)!;

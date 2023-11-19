@@ -39,6 +39,11 @@ export const selectByShareId = (state: State) => state.items.byShareId;
 export const selectByOptimisticIds = (state: State) => state.items.byOptimistcId;
 export const selectItemDraft = (state: State) => state.popup.draft;
 
+/** Give an itemId, returns wether it is optimistic by checking for
+ * presence in the `byOptimisticId` dictionary state */
+export const selectResolvedOptimisticId = (optimisticId: string) =>
+    createSelector(selectByOptimisticIds, (optimisticIds) => optimisticId in optimisticIds);
+
 export const selectByShareIdAsIfNotFailed = createSelector(selectByShareId, asIfNotFailed);
 export const selectByShareIdAsIfNotOptimistic = createSelector(selectByShareId, asIfNotOptimistic);
 export const selectItems = createSelector([selectByShareId], unwrapOptimisticState);
@@ -63,63 +68,52 @@ export const selectItemByShareIdAndId = (shareId: string, itemId: string) =>
         return idFromOptimisticId ? byItemId?.[idFromOptimisticId] : byItemId?.[itemId];
     });
 
-const selectItemsWithOptimisticFactory = ({ trash }: { trash: boolean }) =>
-    createSelector(
-        [selectAllItems, selectByShareIdAsIfNotFailed, selectByShareIdAsIfNotOptimistic],
-        (items, withoutFailed, withoutOptimistic) => {
-            return items
-                .filter((item) => (trash ? isTrashed(item) : !isTrashed(item)))
-                .map(
-                    (item): ItemRevisionWithOptimistic => ({
-                        ...item,
-                        failed: withoutFailed[item.shareId]?.[item.itemId]?.revision !== item.revision,
-                        optimistic: withoutOptimistic[item.shareId]?.[item.itemId]?.revision !== item.revision,
-                    })
-                );
-        }
-    );
+/** Unwraps the optimistic item state and hydrates the `failed` and
+ * `optimistic` properties of the returned `ItemRevisionWithOptimistic` */
+const selectItemsWithOptimistic = createSelector(
+    [selectAllItems, selectByShareIdAsIfNotFailed, selectByShareIdAsIfNotOptimistic],
+    (items, withoutFailed, withoutOptimistic) =>
+        items.map(
+            (item): ItemRevisionWithOptimistic => ({
+                ...item,
+                failed: withoutFailed[item.shareId]?.[item.itemId]?.revision !== item.revision,
+                optimistic: withoutOptimistic[item.shareId]?.[item.itemId]?.revision !== item.revision,
+            })
+        )
+);
 
-export const selectItemsWithOptimistic = selectItemsWithOptimisticFactory({ trash: false });
-export const selectTrashItemsWithOptimistic = selectItemsWithOptimisticFactory({ trash: true });
-
-/* Selectors organized to separate sort from search, as sorting can be computationally
- * expensive when the number of items is high. The search is expected to change more
- * frequently than the shareId / sortOption */
 const selectSortedItemsByType = createSelector(
     [
         selectItemsWithOptimistic,
-        (_state: State, { shareId }: SelectItemsOptions) => shareId,
-        (_state: State, { sort }: SelectItemsOptions) => sort,
+        (_: State, { trashed }: SelectItemsOptions) => trashed ?? false,
+        (_: State, { shareId }: SelectItemsOptions) => shareId,
+        (_: State, { sort }: SelectItemsOptions) => sort,
     ],
-    (items, shareId, sort) => pipe(filterItemsByShareId(shareId), sortItems(sort))(items)
+    (items, trashed, shareId, sort) =>
+        pipe(
+            filterItemsByShareId(shareId),
+            sortItems(sort)
+        )(items.filter((item) => (trashed ? isTrashed(item) : !isTrashed(item))))
 );
 
+/** Search result selector is organized to separate sort from search, as sorting can
+ * be computationally expensive when the number of items is high. The `search` is expected
+ * to change more frequently than the shareId / sortOption */
 const itemsSearchResultSelector = createSelector(
     [
         selectSortedItemsByType,
         (_state: State, { search }: SelectItemsOptions) => search,
-        (_state: State, { itemType }: SelectItemsOptions) => itemType,
+        (_state: State, { type }: SelectItemsOptions) => type,
     ],
-    (byShareId, search, itemType) => {
+    (byShareId, search, type) => {
         const searched = searchItems(byShareId, search);
-        const filtered = filterItemsByType(itemType)(searched);
+        const filtered = filterItemsByType(type)(searched);
         return { filtered, searched, totalCount: byShareId.length };
     }
 );
 
 export const selectItemsSearchResult = (options: SelectItemsOptions) => (state: State) =>
     itemsSearchResultSelector(state, options);
-
-const trashedItemsSearchResultSelector = createSelector(
-    [selectTrashItemsWithOptimistic, (_state: State, search?: string) => search],
-    (items, search) => {
-        const searched = searchItems(items, search);
-        return { searched, totalCount: items.length };
-    }
-);
-
-export const selectTrashedItemsSearchResults = (search?: string) => (state: State) =>
-    trashedItemsSearchResultSelector(state, search);
 
 export const selectItemWithOptimistic = (shareId: string, itemId: string) =>
     createSelector(
@@ -163,6 +157,7 @@ const itemsByDomainSelector = createSelector(
     (items, domain, protocolFilter, isPrivate, shareIds, sortOn) =>
         (typeof domain === 'string' && !isEmptyString(domain)
             ? items
+                  .filter(invert(isTrashed))
                   .reduce<{ item: ItemRevisionWithOptimistic; priority: ItemUrlMatch }[]>((matches, item) => {
                       const validShareIds = !shareIds || shareIds.includes(item.shareId);
                       const validItem = !item.optimistic;

@@ -7,10 +7,11 @@ export type ItemMatchFunc<T extends ItemType = ItemType, Options extends any = a
 ) => (searchTerm: string, options?: Options) => boolean;
 
 export type SelectItemsOptions = {
-    itemType?: MaybeNull<ItemType>;
+    type?: MaybeNull<ItemType>;
     shareId?: MaybeNull<string>;
     search?: string;
     sort?: MaybeNull<ItemSortFilter>;
+    trashed?: boolean;
 };
 
 export type SelectItemsByDomainOptions = {

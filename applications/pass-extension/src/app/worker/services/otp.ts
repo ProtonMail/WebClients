@@ -1,6 +1,4 @@
-import type { TOTP } from 'otpauth';
-import { URI } from 'otpauth';
-
+import { generateTOTPCode } from '@proton/pass/lib/otp/generate';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import { selectAutofillCandidates, selectItemByShareIdAndId } from '@proton/pass/store/selectors';
 import type { OtpRequest, WorkerMessageResponse } from '@proton/pass/types';
@@ -8,7 +6,6 @@ import { type OtpCode, WorkerMessageType } from '@proton/pass/types';
 import { withPayload } from '@proton/pass/utils/fp/lens';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import type { ParsedSender } from '@proton/pass/utils/url/parser';
 import { parseSender } from '@proton/pass/utils/url/parser';
 
@@ -16,24 +13,15 @@ import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
 
+/* Although clients should store a complete OTP URI in the `totpUri` field.
+ * We take this with a grain of salt to account from possible faulty imports.
+ * And treat the `totpUri` field value as if it was user input, either:
+ * - a valid OTP URI
+ * - a valid secret from which we can create a valid TOTP URI with our defaults
+ * - an invalid string
+ * Each of the following OTP-related operations may throw. */
 export const createOTPService = () => {
-    /* Although clients should store a complete OTP URI in the `totpUri` field.
-     * We take this with a grain of salt to account from possible faulty imports.
-     * And treat the `totpUri` field value as if it was user input, either:
-     * - a valid OTP URI
-     * - a valid secret from which we can create a valid TOTP URI with our defaults
-     * - an invalid string
-     * Each of the following OTP-related operations may throw. */
-    const generateTOTPCode = (totpUri: string): OtpCode => {
-        const otp = URI.parse(totpUri) as TOTP;
-        const token = otp.generate();
-        const timestamp = getEpoch();
-        const expiry = timestamp + otp.period - (timestamp % otp.period);
-
-        return { token, period: otp.period, expiry };
-    };
-
-    const handleTOTPRequest = (otpRequest: OtpRequest) => {
+    const handleTOTPRequest = (otpRequest: OtpRequest): OtpCode => {
         const { shareId, itemId, ...request } = otpRequest;
 
         try {
@@ -47,16 +35,15 @@ export const createOTPService = () => {
                         ? item?.data.content.totpUri
                         : extraField?.type === 'totp' && extraField.data.totpUri;
 
-                if (totpUri) return generateTOTPCode(parseOTPValue(deobfuscate(totpUri)));
+                if (totpUri) {
+                    const otp = generateTOTPCode(parseOTPValue(deobfuscate(totpUri)));
+                    if (otp) return otp;
+                }
             }
 
             throw new Error('Cannot generate an OTP code from such item');
-        } catch (err) {
-            logger.error(
-                `[Worker::OTP] Unable to generate OTP code for item ${logId(itemId)} on share ${logId(shareId)}`,
-                err
-            );
-
+        } catch (err: unknown) {
+            logger.error(`[Worker::OTP] OTP generation error for item ${logId(itemId)} on share ${logId(shareId)}`);
             throw err;
         }
     };
