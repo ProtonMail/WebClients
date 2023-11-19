@@ -11,8 +11,8 @@ import { TextAreaField } from '@proton/pass/components/Form/Field/TextareaField'
 import { TitleField } from '@proton/pass/components/Form/Field/TitleField';
 import { VaultSelectField } from '@proton/pass/components/Form/Field/VaultSelectField';
 import { AliasForm } from '@proton/pass/components/Item/Alias/Alias.form';
-import { ItemCard } from '@proton/pass/components/Item/ItemCard';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
@@ -155,16 +155,16 @@ export const AliasNew: VFC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmi
             {({ didEnter }) => (
                 <>
                     {needsUpgrade && (
-                        <ItemCard className="mb-2">
+                        <Card className="mb-2">
                             {c('Info')
                                 .t`You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.`}
-                        </ItemCard>
+                        </Card>
                     )}
 
                     {!userVerified && (
-                        <ItemCard className="mb-2">
+                        <Card className="mb-2">
                             {c('Warning').t`Please verify your email address in order to use email aliases`}
-                        </ItemCard>
+                        </Card>
                     )}
 
                     <FormikProvider value={form}>

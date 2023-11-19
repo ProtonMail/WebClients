@@ -6,6 +6,7 @@ import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { OTPDonut } from '@proton/pass/components/Otp/OTPDonut';
 import { OTPValue } from '@proton/pass/components/Otp/OTPValue';
 import { usePeriodicOtpCode } from '@proton/pass/hooks/usePeriodicOtpCode';
@@ -25,7 +26,12 @@ type Props = {
 };
 
 export const AutofillOTP: VFC<Props> = ({ hostname, item, visible, onMessage, onClose }) => {
-    const [otp, percent] = usePeriodicOtpCode({ ...item, type: 'item' });
+    const { generateOTP } = usePassCore();
+
+    const [otp, percent] = usePeriodicOtpCode({
+        generate: generateOTP,
+        payload: { ...item, type: 'item' },
+    });
 
     useEffect(() => {
         void sendMessage(

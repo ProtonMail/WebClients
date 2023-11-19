@@ -10,6 +10,7 @@ import type {
 } from 'proton-pass-extension/app/content/types';
 import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
 import locales from 'proton-pass-extension/app/locales';
+import { PassExtensionCore } from 'proton-pass-extension/lib/components/Extension/PassExtensionCore';
 import type { Runtime } from 'webextension-polyfill';
 
 import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
@@ -266,7 +267,11 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
         ]
     );
 
-    return <IFrameContext.Provider value={context}>{children}</IFrameContext.Provider>;
+    return (
+        <PassExtensionCore endpoint={endpoint}>
+            <IFrameContext.Provider value={context}>{children}</IFrameContext.Provider>
+        </PassExtensionCore>
+    );
 };
 
 export const useIFrameContext = () => useContext(IFrameContext);

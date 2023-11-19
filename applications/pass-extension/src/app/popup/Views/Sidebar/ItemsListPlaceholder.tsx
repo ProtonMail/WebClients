@@ -10,8 +10,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import type { IconName } from '@proton/components/components';
 import { Icon } from '@proton/components/components';
-import { ItemCard } from '@proton/pass/components/Item/ItemCard';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import { isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
@@ -91,10 +91,10 @@ export const ItemsListPlaceholder: VFC = () => {
                 style={{ '--max-w-custom': '20rem' }}
             >
                 <span className="text-semibold inline-block">{c('Title').t`Your vault is empty`}</span>
-                <ItemCard>
+                <Card>
                     {c('Info')
                         .t`You have exceeded the number of vaults included in your subscription. New items can only be created in your first two vaults. To create new items in all vaults upgrade your subscription.`}
-                </ItemCard>
+                </Card>
                 <UpgradeButton />
             </div>
         );

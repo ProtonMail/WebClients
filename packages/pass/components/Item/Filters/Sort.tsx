@@ -1,4 +1,4 @@
-import type { VFC } from 'react';
+import type { FC } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,10 +7,10 @@ import { Dropdown, DropdownButton, DropdownMenu, Icon, usePopperAnchor } from '@
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { type ItemSortFilter } from '@proton/pass/types';
 
-interface ItemsSortProps {
-    onSortChange: (option: ItemSortFilter) => void;
-    sort: ItemSortFilter;
-}
+type Props = {
+    value: ItemSortFilter;
+    onChange: (value: ItemSortFilter) => void;
+};
 
 const getSortOptionDetails = (option: ItemSortFilter) => {
     const options: Record<string, { label: string; shortLabel: string; icon: IconName }> = {
@@ -50,7 +50,7 @@ const getSortOptionDetails = (option: ItemSortFilter) => {
 const DROPDOWN_SIZE: DropdownProps['size'] = { width: '13rem' };
 const ITEMS_SORT_OPTIONS: ItemSortFilter[] = ['recent', 'titleASC', 'createTimeDESC', 'createTimeASC'];
 
-export const ItemsSort: VFC<ItemsSortProps> = ({ sort, onSortChange }) => {
+export const SortFilter: FC<Props> = ({ value, onChange }) => {
     const { anchorRef, isOpen, close, toggle } = usePopperAnchor<HTMLButtonElement>();
 
     return (
@@ -64,9 +64,9 @@ export const ItemsSort: VFC<ItemsSortProps> = ({ sort, onSortChange }) => {
                 title={c('Action').t`Sort vault items`}
                 className="text-sm text-semibold flex-item-fluid-auto flex-item-nogrow flex-item-noshrink"
             >
-                <span className="sr-only">{getSortOptionDetails(sort).label}</span>
-                <Icon name={getSortOptionDetails(sort).icon as IconName} className="inline mr-2" />
-                {getSortOptionDetails(sort).shortLabel}
+                <span className="sr-only">{getSortOptionDetails(value).label}</span>
+                <Icon name={getSortOptionDetails(value).icon as IconName} className="inline mr-2" />
+                {getSortOptionDetails(value).shortLabel}
             </DropdownButton>
 
             <Dropdown
@@ -83,8 +83,8 @@ export const ItemsSort: VFC<ItemsSortProps> = ({ sort, onSortChange }) => {
                         return (
                             <DropdownMenuButton
                                 key={type}
-                                onClick={() => onSortChange(type)}
-                                isSelected={sort === type}
+                                onClick={() => onChange(type)}
+                                isSelected={value === type}
                                 size="small"
                                 label={label}
                                 icon={icon}

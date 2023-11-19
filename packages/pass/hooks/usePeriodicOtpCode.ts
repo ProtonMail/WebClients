@@ -3,25 +3,20 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
-import { popupMessage, sendMessage } from '@proton/pass/lib/extension/message';
-import type { MaybeNull, OtpCode, OtpRequest } from '@proton/pass/types';
-import { WorkerMessageType } from '@proton/pass/types';
+import type { MaybeNull, MaybePromise, OtpCode, OtpRequest } from '@proton/pass/types';
 
 import { useEnsureMounted } from './useEnsureMounted';
 
-export type UsePeriodOtpCodeOptions = OtpRequest & { totpUri?: string };
+export type UsePeriodOtpCodeOptions = {
+    /** defines how you want to resolve the OTP Code. In the case of the
+     * extension we can leverage worker messaging. For the web-app, this
+     * will use the OTP generation utilities in-place. */
+    generate: (payload: OtpRequest) => MaybePromise<MaybeNull<OtpCode>>;
+    payload: OtpRequest;
+};
 
-const requestOtpCodeGeneration = async (payload: OtpRequest): Promise<MaybeNull<OtpCode>> =>
-    sendMessage.on(
-        popupMessage({
-            type: WorkerMessageType.OTP_CODE_GENERATE,
-            payload,
-        }),
-        (response) => (response.type === 'success' ? response : null)
-    );
-
-export const usePeriodicOtpCode = ({ totpUri, ...request }: UsePeriodOtpCodeOptions): [MaybeNull<OtpCode>, number] => {
-    const { shareId, itemId, type } = request;
+export const usePeriodicOtpCode = ({ generate, payload }: UsePeriodOtpCodeOptions): [MaybeNull<OtpCode>, number] => {
+    const { shareId, itemId, type } = payload;
     const [otp, setOtp] = useState<MaybeNull<OtpCode>>(null);
     const [percentage, setPercentage] = useState<number>(-1);
     const requestAnimationRef = useRef<number>(-1);
@@ -32,7 +27,7 @@ export const usePeriodicOtpCode = ({ totpUri, ...request }: UsePeriodOtpCodeOpti
     /* Only trigger the countdown if we have a valid
      * OTP code with a valid period - else do nothing */
     const doRequestOtpCodeGeneration = useCallback(async () => {
-        const otpCode = await requestOtpCodeGeneration(request);
+        const otpCode = await generate(payload);
         ensureMounted(setOtp)(otpCode);
 
         if (otpCode === null) {
@@ -72,7 +67,7 @@ export const usePeriodicOtpCode = ({ totpUri, ...request }: UsePeriodOtpCodeOpti
             setPercentage(-1);
             cancelAnimationFrame(requestAnimationRef.current);
         },
-        [shareId, itemId, type, totpUri]
+        [shareId, itemId, type, payload.totpUri]
     );
 
     return [otp, percentage];

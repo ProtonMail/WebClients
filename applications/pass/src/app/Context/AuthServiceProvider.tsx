@@ -2,6 +2,7 @@ import { type FC, createContext, useContext, useEffect, useMemo, useRef } from '
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { useNotifications } from '@proton/components/hooks';
+import { preserveSearch } from '@proton/pass/components/Core/routing';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import { bootIntent, stateDestroy } from '@proton/pass/store/actions';
@@ -49,7 +50,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
     const history = useHistory();
     const matchConsumeFork = useRouteMatch(SSO_PATHS.FORK);
 
-    const redirectPath = useRef(stripLocalBasenameFromPathname(location.pathname));
+    const redirectPath = useRef(stripLocalBasenameFromPathname(preserveSearch(location.pathname)));
     const setRedirectPath = (redirect: string) => (redirectPath.current = redirect);
 
     const { createNotification } = useNotifications();
@@ -100,10 +101,12 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 localStorage.removeItem(getSessionKey(localID));
                 client.current.setStatus(AppStatus.UNAUTHORIZED);
                 history.replace('/');
+                store.dispatch(stateDestroy());
             },
 
             onForkConsumed: (_, state) => {
                 removeHashParameters();
+
                 try {
                     const data = JSON.parse(sessionStorage.getItem(getStateKey(state))!);
                     if ('url' in data && typeof data.url === 'string') setRedirectPath(data.url);
@@ -121,10 +124,13 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 window.location.replace(url);
             },
 
-            onSessionEmpty: () => {
+            onSessionEmpty: async () => {
                 history.replace('/');
                 client.current.setStatus(AppStatus.UNAUTHORIZED);
-                if (getDefaultLocalID()) auth.init().catch(noop);
+                if (getDefaultLocalID() !== undefined) {
+                    await auth.init.getState().pending;
+                    auth.init().catch(noop);
+                }
             },
 
             onSessionLocked: (localID, broadcast) => {
@@ -138,12 +144,13 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 const persistedSession = await auth.config.getPersistedSession(localID);
 
                 if (persistedSession) {
+                    const { AccessToken, RefreshTime, RefreshToken } = data;
                     /* update the persisted session tokens without re-encrypting the
                      * session blob as session refresh may happen before a full login
                      * with a partially hydrated authentication store. */
-                    persistedSession.AccessToken = data.AccessToken;
-                    persistedSession.RefreshToken = data.RefreshToken;
-                    persistedSession.RefreshTime = data.RefreshTime;
+                    persistedSession.AccessToken = AccessToken;
+                    persistedSession.RefreshToken = RefreshToken;
+                    persistedSession.RefreshTime = RefreshTime;
                     localStorage.setItem(getSessionKey(localID), JSON.stringify(persistedSession));
                 }
             },
@@ -192,7 +199,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
             else {
                 /* when the document loses visibility: reset client
                  * state and wipe the in-memory store. */
-                setRedirectPath(location.pathname);
+                setRedirectPath(preserveSearch(location.pathname));
                 client.current.setStatus(AppStatus.IDLE);
                 store.dispatch(stateDestroy());
             }
