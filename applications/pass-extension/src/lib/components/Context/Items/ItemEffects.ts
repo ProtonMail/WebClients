@@ -17,7 +17,7 @@
 import { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { useItems, useTrashItems } from 'proton-pass-extension/lib/hooks/useItems';
+import { useItems } from 'proton-pass-extension/lib/hooks/useItems';
 import { useNavigationContext } from 'proton-pass-extension/lib/hooks/useNavigationContext';
 import { usePopupContext } from 'proton-pass-extension/lib/hooks/usePopupContext';
 import { useShareEventEffect } from 'proton-pass-extension/lib/hooks/useShareEventEffect';
@@ -52,9 +52,8 @@ export const ItemEffects = () => {
     const { selectedItem, selectItem, unselectItem, isCreating, isEditing, inTrash } = useNavigationContext();
     const {
         filtering: { search, sort, type, shareId, shareBeingDeleted, setShareId, setShareBeingDeleted },
-        filtered: filteredItems,
-    } = useItems();
-    const { searched: trashedItems } = useTrashItems();
+        filtered: items,
+    } = useItems({ trashed: inTrash });
 
     const itemFromSelectedOptimisticId = useSelector(selectItemIdByOptimisticId(selectedItem?.itemId));
     const autoselect = !(isEditing || isCreating) && popup.ready;
@@ -81,15 +80,6 @@ export const ItemEffects = () => {
             }
         },
     });
-
-    /**
-     * FIXME:
-     * Ideally, we wouldn't need to store the current item in any state,
-     * apart from the shareId + itemId in the history location (~URL) params.
-     * Auto-selection, would then just be a matter of `push` or `replace` the history,
-     * from the currently filtered or trashed items (depending if we're viewing the items list or trash).
-     */
-    const items = inTrash ? trashedItems : filteredItems;
 
     useEffect(() => {
         /* if the current selected item has an optimistic id
