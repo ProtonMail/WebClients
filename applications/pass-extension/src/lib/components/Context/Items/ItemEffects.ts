@@ -51,7 +51,7 @@ export const ItemEffects = () => {
 
     const { selectedItem, selectItem, unselectItem, isCreating, isEditing, inTrash } = useNavigationContext();
     const {
-        filtering: { debouncedSearch, sort, type, shareId, shareBeingDeleted, setShareId, setShareBeingDeleted },
+        filtering: { search, sort, type, shareId, shareBeingDeleted, setShareId, setShareBeingDeleted },
         filtered: filteredItems,
     } = useItems();
     const { searched: trashedItems } = useTrashItems();
@@ -61,13 +61,13 @@ export const ItemEffects = () => {
 
     const popupTabState = useMemo(
         () => ({
-            tabId: popup.context!.tabId,
             domain: popup.url.subdomain ?? popup.url.domain ?? null,
+            filters: { search, sort, type, selectedShareId: shareId },
+            search,
             selectedItem: selectedItem ? { shareId: selectedItem.shareId, itemId: selectedItem.itemId } : null,
-            search: debouncedSearch,
-            filters: { sort, type, shareId },
+            tabId: popup.context!.tabId,
         }),
-        [selectedItem, debouncedSearch, sort, type, shareId]
+        [selectedItem, search, sort, type, shareId]
     );
 
     useShareEventEffect({
@@ -140,7 +140,7 @@ export const ItemEffects = () => {
 
     useEffect(() => {
         dispatch(popupTabStateSave(popupTabState));
-    });
+    }, [popupTabState]);
 
     return null;
 };
