@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
 
-import { selectItemsSearchResult } from '../store/selectors';
-import { type PassFilters } from './useFilters';
+import { selectItemsSearchResult } from '@proton/pass/store/selectors';
+import type { ItemFilters } from '@proton/pass/types';
 
-export const useFilteredItems = (filters: PassFilters) =>
+export const useFilteredItems = (filters: ItemFilters) =>
     useSelector(
         selectItemsSearchResult({
             itemType: filters.type === '*' ? null : filters.type,
