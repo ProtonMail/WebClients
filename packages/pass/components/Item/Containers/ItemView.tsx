@@ -29,7 +29,7 @@ import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-f
 import {
     selectByShareId,
     selectItemWithOptimistic,
-    selectShareOrThrow,
+    selectShare,
     selectWritableSharedVaultsWithItemsCount,
     selectWritableVaultsWithItemsCount,
 } from '@proton/pass/store/selectors';
@@ -57,11 +57,11 @@ export const ItemView: VFC = () => {
     const itemSelector = useMemo(() => selectItemWithOptimistic(shareId, itemId), [shareId, itemId]);
     const failedItemActionSelector = pipe(selectByShareId, selectFailedAction(optimisticItemId));
 
-    const vault = useSelector(selectShareOrThrow<ShareType.Vault>(shareId));
+    const vault = useSelector(selectShare<ShareType.Vault>(shareId));
     const item = useSelector(itemSelector);
     const failure = useSelector(failedItemActionSelector);
 
-    if (item === undefined) return <Redirect to={preserveSearch(getLocalPath('/'))} />;
+    if (!(vault && item)) return <Redirect to={preserveSearch(getLocalPath('/'))} />;
 
     const trashed = isTrashed(item);
 
