@@ -8,8 +8,8 @@ import { Button } from '@proton/atoms';
 import { Icon } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { RadioButtonGroup, RadioLabelledButton } from '@proton/pass/components/Form/Field/RadioButtonGroupField';
-import { ItemCard } from '@proton/pass/components/Item/ItemCard';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
@@ -69,7 +69,7 @@ export const VaultSelect: VFC<Props> = ({ downgradeMessage, onSubmit, optionsSel
                 }
             >
                 {title && <div className="mb-2 text-bold text-xl">{title}</div>}
-                {didDowngrade && <ItemCard>{downgradeMessage}</ItemCard>}
+                {didDowngrade && <Card>{downgradeMessage}</Card>}
 
                 <RadioButtonGroup name="vault-select" className="flex-columns" value={shareId} onChange={onSubmit}>
                     {sortedVaults.map((vault) => (

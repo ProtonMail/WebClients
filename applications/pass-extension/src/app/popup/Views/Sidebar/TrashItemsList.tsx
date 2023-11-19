@@ -1,12 +1,12 @@
 import { type FC, useRef } from 'react';
 import type { List } from 'react-virtualized';
 
-import { useTrashItems } from 'proton-pass-extension/lib/hooks/useItems';
+import { useItems } from 'proton-pass-extension/lib/hooks/useItems';
 import { useNavigationContext } from 'proton-pass-extension/lib/hooks/useNavigationContext';
 import { useSelectItemClick } from 'proton-pass-extension/lib/hooks/useSelectItemClick';
 import { c } from 'ttag';
 
-import { ItemsListItem } from '@proton/pass/components/Item/ItemsListItem';
+import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsList.Item';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 
@@ -14,11 +14,8 @@ export const TrashItemsList: FC = () => {
     const { selectedItem } = useNavigationContext();
     const onSelectItem = useSelectItemClick();
 
-    const {
-        filtering: { search },
-        searched,
-        totalCount,
-    } = useTrashItems();
+    const { filtering, searched, totalCount } = useItems({ trashed: true });
+    const { search } = filtering;
 
     const listRef = useRef<List>(null);
 

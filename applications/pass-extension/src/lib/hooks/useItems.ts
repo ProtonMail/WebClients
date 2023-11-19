@@ -1,31 +1,27 @@
 import { useContext } from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectItemsSearchResult, selectTrashedItemsSearchResults } from '@proton/pass/store/selectors';
+import { selectItemsSearchResult } from '@proton/pass/store/selectors';
 
 import { ItemsFilteringContext } from '../components/Context/Items/ItemsFilteringContext';
 
-export const useItems = () => {
+export const useItems = (options?: { trashed: boolean }) => {
     const filtering = useContext(ItemsFilteringContext);
-    const { debouncedSearch, sort, type, shareId } = filtering;
+    const { search, sort, type, shareId } = filtering;
 
     const matchedAndFilteredItems = useSelector(
-        selectItemsSearchResult({
-            itemType: type === '*' ? null : type,
-            search: debouncedSearch,
-            shareId,
-            sort,
-        })
+        selectItemsSearchResult(
+            options?.trashed
+                ? { search, trashed: true }
+                : {
+                      search,
+                      shareId,
+                      sort,
+                      trashed: false,
+                      type: type === '*' ? null : type,
+                  }
+        )
     );
 
     return { filtering, ...matchedAndFilteredItems };
-};
-
-export const useTrashItems = () => {
-    const filtering = useContext(ItemsFilteringContext);
-    const { debouncedSearch } = filtering;
-
-    const matched = useSelector(selectTrashedItemsSearchResults(debouncedSearch));
-
-    return { filtering, ...matched };
 };

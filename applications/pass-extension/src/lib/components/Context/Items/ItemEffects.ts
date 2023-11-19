@@ -17,7 +17,7 @@
 import { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { useItems, useTrashItems } from 'proton-pass-extension/lib/hooks/useItems';
+import { useItems } from 'proton-pass-extension/lib/hooks/useItems';
 import { useNavigationContext } from 'proton-pass-extension/lib/hooks/useNavigationContext';
 import { usePopupContext } from 'proton-pass-extension/lib/hooks/usePopupContext';
 import { useShareEventEffect } from 'proton-pass-extension/lib/hooks/useShareEventEffect';
@@ -51,23 +51,22 @@ export const ItemEffects = () => {
 
     const { selectedItem, selectItem, unselectItem, isCreating, isEditing, inTrash } = useNavigationContext();
     const {
-        filtering: { debouncedSearch, sort, type, shareId, shareBeingDeleted, setShareId, setShareBeingDeleted },
-        filtered: filteredItems,
-    } = useItems();
-    const { searched: trashedItems } = useTrashItems();
+        filtering: { search, sort, type, shareId, shareBeingDeleted, setShareId, setShareBeingDeleted },
+        filtered: items,
+    } = useItems({ trashed: inTrash });
 
     const itemFromSelectedOptimisticId = useSelector(selectItemIdByOptimisticId(selectedItem?.itemId));
     const autoselect = !(isEditing || isCreating) && popup.ready;
 
     const popupTabState = useMemo(
         () => ({
-            tabId: popup.context!.tabId,
             domain: popup.url.subdomain ?? popup.url.domain ?? null,
+            filters: { search, sort, type, selectedShareId: shareId },
+            search,
             selectedItem: selectedItem ? { shareId: selectedItem.shareId, itemId: selectedItem.itemId } : null,
-            search: debouncedSearch,
-            filters: { sort, type, shareId },
+            tabId: popup.context!.tabId,
         }),
-        [selectedItem, debouncedSearch, sort, type, shareId]
+        [selectedItem, search, sort, type, shareId]
     );
 
     useShareEventEffect({
@@ -81,15 +80,6 @@ export const ItemEffects = () => {
             }
         },
     });
-
-    /**
-     * FIXME:
-     * Ideally, we wouldn't need to store the current item in any state,
-     * apart from the shareId + itemId in the history location (~URL) params.
-     * Auto-selection, would then just be a matter of `push` or `replace` the history,
-     * from the currently filtered or trashed items (depending if we're viewing the items list or trash).
-     */
-    const items = inTrash ? trashedItems : filteredItems;
 
     useEffect(() => {
         /* if the current selected item has an optimistic id
@@ -140,7 +130,7 @@ export const ItemEffects = () => {
 
     useEffect(() => {
         dispatch(popupTabStateSave(popupTabState));
-    });
+    }, [popupTabState]);
 
     return null;
 };
