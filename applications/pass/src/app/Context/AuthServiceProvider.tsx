@@ -2,7 +2,7 @@ import { type FC, createContext, useContext, useEffect, useMemo, useRef } from '
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { useNotifications } from '@proton/components/hooks';
-import { preserveSearch } from '@proton/pass/components/Core/NavigationProvider';
+import { preserveSearch } from '@proton/pass/components/Core/routing';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import { bootIntent, stateDestroy } from '@proton/pass/store/actions';

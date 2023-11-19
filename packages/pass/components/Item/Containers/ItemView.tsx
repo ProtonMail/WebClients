@@ -4,7 +4,8 @@ import { Redirect, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { getLocalPath, preserveSearch, useNavigation } from '@proton/pass/components/Core/NavigationProvider';
+import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
+import { getLocalPath, preserveSearch } from '@proton/pass/components/Core/routing';
 import { useInviteContext } from '@proton/pass/components/Invite/InviteContextProvider';
 import { VaultInviteFromItemModal } from '@proton/pass/components/Invite/VaultInviteFromItemModal';
 import { AliasView } from '@proton/pass/components/Item/Alias/Alias.view';
@@ -98,9 +99,9 @@ export const ItemView: VFC = () => {
     };
 
     const doMoveItem = (destinationShareId: string) => {
-        const optimisticShareId = uniqueId();
-        dispatch(itemMoveIntent({ item, shareId: destinationShareId, optimisticId: optimisticShareId }));
-        selectItem(optimisticShareId, itemId, { mode: 'replace' });
+        const optimisticId = uniqueId();
+        dispatch(itemMoveIntent({ item, shareId: destinationShareId, optimisticId }));
+        selectItem(destinationShareId, optimisticId, { mode: 'replace' });
         closeVaultSelect();
         setInviteOpen(false);
     };
