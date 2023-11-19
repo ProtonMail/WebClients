@@ -2,9 +2,9 @@ import type { FC } from 'react';
 import { createContext, useCallback, useContext, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { type PassFilters, useFilters } from '@proton/pass/hooks/useFilters';
+import { useFilters } from '@proton/pass/hooks/useFilters';
 import { authentication } from '@proton/pass/lib/auth/store';
-import type { MaybeNull } from '@proton/pass/types';
+import type { ItemFilters, MaybeNull } from '@proton/pass/types';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
 export const getLocalPath = (path: string) => `/${getLocalIDPath(authentication.getLocalID())}/${path}`;
@@ -16,7 +16,7 @@ type ItemSelectOptions = NavigateOptions & { view?: 'edit' | 'view'; trash?: boo
 
 type NavigationContextValue = {
     /** Parsed search parameter filters. */
-    filters: PassFilters;
+    filters: ItemFilters;
     /** Wraps react-router-dom's `useHistory` and provides extra options
      * to chose the navigation mode (push, replace) and wether search parameters
      * should be preserved when navigating */
@@ -25,7 +25,7 @@ type NavigationContextValue = {
      * but this can be customized via options. */
     selectItem: (shareId: string, itemId: string, options?: ItemSelectOptions) => void;
     /** Sets the filters and updates the location's search parameters */
-    setFilters: (filters: Partial<PassFilters>) => void;
+    setFilters: (filters: Partial<ItemFilters>) => void;
 };
 
 const NavigationContext = createContext<MaybeNull<NavigationContextValue>>(null);
