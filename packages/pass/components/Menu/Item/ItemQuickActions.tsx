@@ -1,6 +1,5 @@
-import { type VFC, useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
+import { type FC, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -11,70 +10,47 @@ import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
 import { usePasswordContext } from '@proton/pass/components/PasswordGenerator/PasswordContext';
 import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
-import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { selectAliasLimits, selectPassPlan } from '@proton/pass/store/selectors';
-import type { ItemType, Maybe } from '@proton/pass/types';
+import type { ItemType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
-import type { ParsedUrl } from '@proton/pass/utils/url/parser';
+import noop from '@proton/utils/noop';
 
-type QuickAddAction = { label: string; type: ItemType };
+type Props = {
+    disabled?: boolean;
+    onNewItem: (type: ItemType) => void;
+    onPasswordGenerated?: (password: string) => void;
+};
 
-export const QuickActionsDropdown: VFC<{ disabled?: boolean; parsedUrl: Maybe<ParsedUrl> }> = ({
-    disabled = false,
-    parsedUrl,
-}) => {
-    const history = useHistory();
-
-    const dispatch = useDispatch();
-    const copyToClipboard = useCopyToClipboard();
+export const ItemQuickActions: FC<Props> = ({ disabled = false, onNewItem, onPasswordGenerated }) => {
     const { generatePassword } = usePasswordContext();
+    const copyToClipboard = useCopyToClipboard();
 
     const { needsUpgrade, aliasLimit, aliasLimited, aliasTotalCount } = useSelector(selectAliasLimits);
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-
     const withClose = <T extends (...args: any[]) => void>(action: T) => pipe(action, close) as T;
-
-    const handleNewItemClick = (type: ItemType) => {
-        /* Trick to be able to return to the initial route using
-         * history.goBack() if user switches from iteam creation
-         * routes for multiple subsequent item types. */
-        const shouldReplace = history.location.pathname.includes('/item/new/');
-        history[shouldReplace ? 'replace' : 'push'](`/item/new/${type}`);
-    };
 
     const handleNewPasswordClick = () => {
         void generatePassword({
             actionLabel: c('Action').t`Copy and close`,
             className: 'ui-red',
             onSubmit: (password) => {
-                const { domain, subdomain, hostname } = parsedUrl ?? {};
-                const url = subdomain ?? domain ?? hostname ?? null;
-
-                dispatch(
-                    passwordSave({
-                        createTime: getEpoch(),
-                        id: uniqueId(),
-                        origin: url,
-                        value: password,
-                    })
-                );
-                void copyToClipboard(password);
+                onPasswordGenerated?.(password);
+                copyToClipboard(password).catch(noop);
             },
         });
     };
 
-    const quickAddActions = useMemo<QuickAddAction[]>(
-        () => [
-            { label: c('Label').t`Login`, type: 'login' },
-            { label: c('Label').t`Alias`, type: 'alias' },
-            { label: c('Label').t`Card`, type: 'creditCard' },
-            { label: c('Label').t`Note`, type: 'note' },
-        ],
+    const quickActions = useMemo(
+        () =>
+            [
+                { label: c('Label').t`Login`, type: 'login' },
+                { label: c('Label').t`Alias`, type: 'alias' },
+                { label: c('Label').t`Card`, type: 'creditCard' },
+                { label: c('Label').t`Note`, type: 'note' },
+            ] as const,
         []
     );
 
@@ -100,11 +76,11 @@ export const QuickActionsDropdown: VFC<{ disabled?: boolean; parsedUrl: Maybe<Pa
                 originalPlacement="bottom-start"
             >
                 <DropdownMenu>
-                    {quickAddActions.map(({ type, label }) => (
+                    {quickActions.map(({ type, label }) => (
                         <DropdownMenuButton
                             key={`item-type-dropdown-button-${type}`}
                             className={itemTypeToSubThemeClassName[type]}
-                            onClick={withClose(() => handleNewItemClick(type))}
+                            onClick={withClose(() => onNewItem(type))}
                             disabled={isFreePlan && type === 'creditCard'}
                         >
                             <DropdownMenuButtonLabel

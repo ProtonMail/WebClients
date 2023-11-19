@@ -3,7 +3,6 @@ import { type FC, type ReactNode, useEffect, useState } from 'react';
 import { setupExtensionContext } from 'proton-pass-extension/lib/context/extension-context';
 
 import {
-    ConfigProvider,
     Icons,
     ModalsChildren,
     ModalsProvider,
@@ -20,8 +19,8 @@ import { loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import noop from '@proton/utils/noop';
 
-import * as config from '../../../app/config';
 import locales from '../../../app/locales';
+import { PassExtensionCore } from './PassExtensionCore';
 
 export const ExtensionApp: FC<{
     endpoint: ExtensionEndpoint;
@@ -69,7 +68,7 @@ export const ExtensionApp: FC<{
     }, []);
 
     return (
-        <ConfigProvider config={config}>
+        <PassExtensionCore endpoint={endpoint}>
             <Icons />
             <ThemeProvider />
             <NotificationsProvider>
@@ -81,6 +80,6 @@ export const ExtensionApp: FC<{
                     </Portal>
                 </ModalsProvider>
             </NotificationsProvider>
-        </ConfigProvider>
+        </PassExtensionCore>
     );
 };

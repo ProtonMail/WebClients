@@ -8,8 +8,8 @@ import { Button } from '@proton/atoms';
 import { Icon, type ModalProps } from '@proton/components/components';
 import { AliasPreview } from '@proton/pass/components/Alias/Alias.preview';
 import { AliasForm } from '@proton/pass/components/Item/Alias/Alias.form';
-import { ItemCard } from '@proton/pass/components/Item/ItemCard';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
@@ -100,10 +100,10 @@ export const AliasModal = <T extends AliasFormValues>({
                 }
             >
                 {needsUpgrade && (
-                    <ItemCard>
+                    <Card>
                         {c('Info')
                             .t`You have reached the limit of aliases you can create. Create an unlimited number of aliases when you upgrade your subscription.`}
-                    </ItemCard>
+                    </Card>
                 )}
                 <FormikProvider value={form}>
                     <AliasPreview
