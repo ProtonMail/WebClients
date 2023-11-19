@@ -24,7 +24,7 @@ export const StoreProvider: FC = ({ children }) => {
     const notificationEnhancer = useNotificationEnhancer({ onLink });
 
     useEffect(() => {
-        sagaMiddleware.run(
+        const runner = sagaMiddleware.run(
             rootSaga.bind(null, {
                 getAppState: () => client.current.state,
                 getAuthService: () => authService,
@@ -38,6 +38,10 @@ export const StoreProvider: FC = ({ children }) => {
                 setCache: (encryptedCache) => writeDBCache(authStore.getUserID()!, encryptedCache),
             })
         );
+
+        /* when hot-reloading: this `useEffect` will re-trigger,
+         * so cancel the on-going saga runner. */
+        return () => runner.cancel();
     }, []);
 
     return <ReduxProvider store={store}>{children}</ReduxProvider>;
