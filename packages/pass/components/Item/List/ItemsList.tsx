@@ -3,23 +3,23 @@ import type { List } from 'react-virtualized';
 
 import { ItemsListItem } from '@proton/pass/components/Item/List/ItemsList.Item';
 import { VirtualList } from '@proton/pass/components/Layout/List/VirtualList';
-import { type PassFilters } from '@proton/pass/hooks/useFilters';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
 import { interpolateRecentItems } from '@proton/pass/lib/items/item.utils';
-import type { ItemRevisionWithOptimistic, SelectedItem } from '@proton/pass/types';
+import type { ItemFilters, ItemRevisionWithOptimistic, SelectedItem } from '@proton/pass/types';
 
 type Props = {
-    filters: PassFilters;
+    filters: ItemFilters;
     items: ItemRevisionWithOptimistic[];
     selectedItem?: SelectedItem;
     totalCount: number;
-    onFilter: (update: Partial<PassFilters>) => void;
+    onFilter: (update: Partial<ItemFilters>) => void;
     onSelect: (shareId: string, itemId: string) => void;
     placeholder: () => ReactElement;
 };
 
 export const ItemsList: FC<Props> = ({ items, filters, selectedItem, onSelect, placeholder }) => {
     const listRef = useRef<List>(null);
+
     useEffect(() => listRef.current?.scrollToRow(0), [filters.type, filters.sort]);
 
     const { interpolation, interpolationIndexes } = useMemo(
