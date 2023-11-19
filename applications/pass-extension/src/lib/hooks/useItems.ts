@@ -7,12 +7,12 @@ import { ItemsFilteringContext } from '../components/Context/Items/ItemsFilterin
 
 export const useItems = () => {
     const filtering = useContext(ItemsFilteringContext);
-    const { debouncedSearch, sort, type, shareId } = filtering;
+    const { search, sort, type, shareId } = filtering;
 
     const matchedAndFilteredItems = useSelector(
         selectItemsSearchResult({
             itemType: type === '*' ? null : type,
-            search: debouncedSearch,
+            search,
             shareId,
             sort,
         })
@@ -23,9 +23,9 @@ export const useItems = () => {
 
 export const useTrashItems = () => {
     const filtering = useContext(ItemsFilteringContext);
-    const { debouncedSearch } = filtering;
+    const { search } = filtering;
 
-    const matched = useSelector(selectTrashedItemsSearchResults(debouncedSearch));
+    const matched = useSelector(selectTrashedItemsSearchResults(search));
 
     return { filtering, ...matched };
 };
