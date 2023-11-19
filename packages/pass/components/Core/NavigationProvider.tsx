@@ -3,16 +3,12 @@ import { createContext, useCallback, useContext, useMemo } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { useFilters } from '@proton/pass/hooks/useFilters';
-import { authentication } from '@proton/pass/lib/auth/store';
 import type { ItemFilters, MaybeNull } from '@proton/pass/types';
-import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 
-export const getLocalPath = (path: string) => `/${getLocalIDPath(authentication.getLocalID())}/${path}`;
-export const getItemRoute = (shareId: string, itemId: string) => getLocalPath(`share/${shareId}/item/${itemId}`);
-export const preserveSearch = (path: string) => path + location.search;
+import { getItemRoute } from './routing';
 
-type NavigateOptions = { mode: 'push' | 'replace'; preserveSearch?: boolean };
-type ItemSelectOptions = NavigateOptions & { view?: 'edit' | 'view'; trash?: boolean };
+type NavigateOptions = { mode?: 'push' | 'replace'; preserveSearch?: boolean };
+type ItemSelectOptions = NavigateOptions & { view?: 'edit' | 'view'; inTrash?: boolean };
 
 type NavigationContextValue = {
     /** Parsed search parameter filters. */
@@ -36,7 +32,10 @@ export const NavigationProvider: FC = ({ children }) => {
 
     const navigate = useCallback(
         (pathname: string, options: NavigateOptions = { mode: 'push', preserveSearch: true }) =>
-            history[options.mode]({ pathname, search: options.preserveSearch ? location.search : '' }),
+            history[options.mode ?? 'push']({
+                pathname,
+                search: options.preserveSearch ? location.search : '',
+            }),
         []
     );
 
@@ -45,10 +44,9 @@ export const NavigationProvider: FC = ({ children }) => {
             filters,
             navigate,
             selectItem: (shareId: string, itemId: string, options?: ItemSelectOptions) => {
-                const base = getItemRoute(shareId, itemId);
-                const prefix = `${options?.trash ? '/trash' : ''}`;
+                const base = getItemRoute(shareId, itemId, options?.inTrash);
                 const view = options?.view && options.view !== 'view' ? `/${options.view}` : '';
-                navigate(base + prefix + view, options);
+                navigate(base + view, options);
             },
             setFilters,
         }),
