@@ -101,6 +101,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 localStorage.removeItem(getSessionKey(localID));
                 client.current.setStatus(AppStatus.UNAUTHORIZED);
                 history.replace('/');
+                store.dispatch(stateDestroy());
             },
 
             onForkConsumed: (_, state) => {
