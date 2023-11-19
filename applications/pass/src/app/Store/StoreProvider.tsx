@@ -2,6 +2,7 @@ import { type FC, useEffect } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 
 import { useNotifications } from '@proton/components/hooks';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { INITIAL_SETTINGS } from '@proton/pass/store/reducers/settings';
@@ -19,10 +20,11 @@ export const StoreProvider: FC = ({ children }) => {
     const authService = useAuthService();
     const client = useClientRef();
     const { createNotification } = useNotifications();
-    const notificationEnhancer = useNotificationEnhancer({ onLink: (url) => window.open(url, '_blank') });
+    const { onLink } = usePassCore();
+    const notificationEnhancer = useNotificationEnhancer({ onLink });
 
     useEffect(() => {
-        sagaMiddleware.run(
+        const runner = sagaMiddleware.run(
             rootSaga.bind(null, {
                 getAppState: () => client.current.state,
                 getAuthService: () => authService,
@@ -36,6 +38,10 @@ export const StoreProvider: FC = ({ children }) => {
                 setCache: (encryptedCache) => writeDBCache(authStore.getUserID()!, encryptedCache),
             })
         );
+
+        /* when hot-reloading: this `useEffect` will re-trigger,
+         * so cancel the on-going saga runner. */
+        return () => runner.cancel();
     }, []);
 
     return <ReduxProvider store={store}>{children}</ReduxProvider>;
