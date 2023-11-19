@@ -1,27 +1,25 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import type { ItemSortFilter, ItemTypeFilter } from '@proton/pass/types';
+import type { ItemFilters } from '@proton/pass/types';
+import { partialMerge } from '@proton/pass/utils/object/merge';
 
-export type PassFilters = {
-    search?: string;
-    selectedShareId?: string;
-    sort?: ItemSortFilter;
-    type?: ItemTypeFilter;
-};
+const INITIAL_FILTERS: ItemFilters = { search: '', sort: 'recent', type: '*', selectedShareId: null };
 
-const parseFilters = (search: string): PassFilters => {
-    try {
-        const params = new URLSearchParams(search);
-        const filters = params.get('filters');
-
-        /* probably needs validation here */
-        if (!filters) return {};
-        return JSON.parse(atob(filters));
-    } catch {
-        return {};
-    }
-};
+const parseFilters = (search: string): ItemFilters =>
+    partialMerge(
+        INITIAL_FILTERS,
+        (() => {
+            try {
+                const params = new URLSearchParams(search);
+                const filters = params.get('filters');
+                if (!filters) return {};
+                return JSON.parse(atob(filters));
+            } catch {
+                return {};
+            }
+        })()
+    );
 
 export const useFilters = () => {
     const history = useHistory();
@@ -33,7 +31,7 @@ export const useFilters = () => {
     return useMemo(
         () => ({
             filters,
-            setFilters: (update: Partial<PassFilters>) => {
+            setFilters: (update: Partial<ItemFilters>) => {
                 const encodedFilter = btoa(JSON.stringify({ ...filters, ...update }));
                 const params = new URLSearchParams(location.search);
                 params.set('filters', encodedFilter);
