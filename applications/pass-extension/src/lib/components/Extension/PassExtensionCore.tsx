@@ -7,6 +7,7 @@ import { API_PROXY_KEY } from '@proton/pass/lib/api/proxy';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
 import { type ExtensionEndpoint, type Maybe, type OtpRequest, WorkerMessageType } from '@proton/pass/types';
+import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import noop from '@proton/utils/noop';
 
 const getDomainImageURL = (domain?: string): Maybe<string> => {
@@ -23,12 +24,21 @@ const createOTPGenerator = (endpoint: ExtensionEndpoint) => (payload: OtpRequest
 
 const onLink = (url: string) => browser.tabs.create({ url }).catch(noop);
 
+const createTelemetryHandler = (endpoint: ExtensionEndpoint) => (event: TelemetryEvent) =>
+    sendMessage(
+        resolveMessageFactory(endpoint)({
+            type: WorkerMessageType.TELEMETRY_EVENT,
+            payload: { event },
+        })
+    );
+
 export const PassExtensionCore: FC<{ endpoint: ExtensionEndpoint }> = ({ children, endpoint }) => (
     <PassCoreProvider
         config={config}
         generateOTP={useCallback(createOTPGenerator(endpoint), [])}
         getDomainImageURL={getDomainImageURL}
         onLink={onLink}
+        onTelemetry={useCallback(createTelemetryHandler(endpoint), [])}
     >
         {children}
     </PassCoreProvider>
