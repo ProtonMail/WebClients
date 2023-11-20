@@ -78,6 +78,150 @@ const deprecatedClassNames = [
         deprecatedClassName: 'on-hover-opacity-100',
         suggestedClassName: '',
     },
+    {
+        deprecatedClassName: 'flex-justify-start',
+        suggestedClassName: 'justify-start',
+    },
+    {
+        deprecatedClassName: 'flex-justify-center',
+        suggestedClassName: 'justify-center',
+    },
+    {
+        deprecatedClassName: 'flex-justify-end',
+        suggestedClassName: 'justify-end',
+    },
+    {
+        deprecatedClassName: 'flex-justify-space-between',
+        suggestedClassName: 'justify-space-between',
+    },
+    {
+        deprecatedClassName: 'flex-justify-space-around',
+        suggestedClassName: 'justify-space-around',
+    },
+    {
+        deprecatedClassName: 'flex-justify-space-evenly',
+        suggestedClassName: 'justify-space-evenly',
+    },
+    {
+        deprecatedClassName: 'flex-align-items-start',
+        suggestedClassName: 'items-start',
+    },
+    {
+        deprecatedClassName: 'flex-align-items-center',
+        suggestedClassName: 'items-center',
+    },
+    {
+        deprecatedClassName: 'flex-align-items-end',
+        suggestedClassName: 'items-end',
+    },
+    {
+        deprecatedClassName: 'flex-align-items-baseline',
+        suggestedClassName: 'items-baseline',
+    },
+    {
+        deprecatedClassName: 'flex-align-items-stretch',
+        suggestedClassName: 'items-stretch',
+    },
+    {
+        deprecatedClassName: 'flex-align-items-inherit',
+        suggestedClassName: 'items-inherit',
+    },
+    {
+        deprecatedClassName: 'flex-align-self-start',
+        suggestedClassName: 'self-start',
+    },
+    {
+        deprecatedClassName: 'flex-align-self-center',
+        suggestedClassName: 'self-center',
+    },
+    {
+        deprecatedClassName: 'flex-align-self-end',
+        suggestedClassName: 'self-end',
+    },
+    {
+        deprecatedClassName: 'flex-align-self-baseline',
+        suggestedClassName: 'self-baseline',
+    },
+    {
+        deprecatedClassName: 'flex-align-self-stretch',
+        suggestedClassName: 'self-stretch',
+    },
+    {
+        deprecatedClassName: 'flex-align-self-inherit',
+        suggestedClassName: 'self-inherit',
+    },
+    {
+        deprecatedClassName: 'flex-item-fluid-auto',
+        suggestedClassName: 'flex-auto',
+    },
+    {
+        deprecatedClassName: 'flex-item-fluid',
+        suggestedClassName: 'flex-1',
+    },
+    {
+        deprecatedClassName: 'flex-item-noflex',
+        suggestedClassName: 'flex-none',
+    },
+    {
+        deprecatedClassName: 'flex-item-grow',
+        suggestedClassName: 'grow',
+    },
+    {
+        deprecatedClassName: 'flex-item-grow-2',
+        suggestedClassName: 'grow-2',
+    },
+    {
+        deprecatedClassName: 'flex-item-nogrow',
+        suggestedClassName: 'grow-0',
+    },
+    {
+        deprecatedClassName: 'flex-item-grow-custom',
+        suggestedClassName: 'grow-custom',
+    },
+    {
+        deprecatedClassName: 'flex-item-shrink',
+        suggestedClassName: 'shrink',
+    },
+    {
+        deprecatedClassName: 'flex-item-noshrink',
+        suggestedClassName: 'shrink-0',
+    },
+    {
+        deprecatedClassName: 'flex-flex-children',
+        suggestedClassName: 'flex and children-flex',
+    },
+    {
+        deprecatedClassName: 'flex-items-center',
+        suggestedClassName: 'children-items-center',
+    },
+    {
+        deprecatedClassName: 'inline-flex-vcenter',
+        suggestedClassName: 'inline-flex and children-self-center',
+    },
+    {
+        deprecatedClassName: 'flex-item-centered-vert',
+        suggestedClassName: 'self-center and my-auto',
+    },
+    {
+        deprecatedClassName: 'flex-no-min-children',
+        suggestedClassName: 'flex and children-min-size-auto',
+    },
+    {
+        deprecatedClassName: 'hidden-empty',
+        suggestedClassName: 'empty:hidden',
+    },
+    {
+        deprecatedClassName: 'scroll-if-needed',
+        suggestedClassName: 'overflow-auto',
+    },
+    {
+        deprecatedClassName: 'scroll-horizontal-if-needed',
+        suggestedClassName: 'overflow-x-auto',
+    },
+    {
+        deprecatedClassName: 'no-scroll',
+        suggestedClassName: 'overflow-hidden',
+    },
 ];
 
 module.exports = {
