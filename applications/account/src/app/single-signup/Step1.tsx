@@ -923,50 +923,35 @@ const Step1 = ({
             return;
         }
         if (!options.planIDs[PLANS.VPN_PASS_BUNDLE]) {
-            const cycleChange = ![CYCLE.FIFTEEN, CYCLE.THIRTY].includes(options.cycle)
-                ? { cycle: CYCLE.FIFTEEN }
-                : undefined;
-
-            if (cycleChange) {
-                setToggleUpsell({
-                    from: options.cycle,
-                    to: CYCLE.FIFTEEN,
-                });
-            }
-
+            setToggleUpsell(undefined);
             return withLoadingPaymentDetails(
                 handleOptimistic({
                     planIDs: {
                         [PLANS.VPN_PASS_BUNDLE]: 1,
                     },
-                    ...cycleChange,
                 })
             ).catch(noop);
         } else {
-            const cycleChange = toggleUpsell?.from === CYCLE.MONTHLY ? { cycle: CYCLE.MONTHLY } : undefined;
-
-            if (cycleChange) {
-                setToggleUpsell(undefined);
-            }
-
+            setToggleUpsell(undefined);
             return withLoadingPaymentDetails(
                 handleOptimistic({
                     planIDs: {
                         [PLANS.VPN]: 1,
                     },
-                    ...cycleChange,
                 })
             ).catch(noop);
         }
     };
 
-    const isBlackFriday = options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023;
+    const isBlackFriday =
+        getSubscriptionMapping({ [PLANS.VPN]: 1 })?.mapping[CYCLE.FIFTEEN]?.checkResult.Coupon?.Code ===
+        COUPON_CODES.BLACK_FRIDAY_2023;
 
     const renewalNotice = !hasSelectedFree && (
         <div className="w-full text-sm color-norm opacity-70 text-center">
             <div className="mx-auto w-full md:w-7/10">
                 *
-                {isBlackFriday
+                {options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023
                     ? getBlackFridayRenewalNoticeText({
                           price: options.checkResult.Amount + (options.checkResult.CouponDiscount || 0),
                           cycle: options.cycle,

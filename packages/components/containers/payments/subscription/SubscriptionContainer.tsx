@@ -24,7 +24,6 @@ import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@
 import {
     APPS,
     COUPON_CODES,
-    CYCLE,
     DEFAULT_CURRENCY,
     DEFAULT_CYCLE,
     PASS_APP_NAME,
@@ -679,12 +678,8 @@ const SubscriptionContainer = ({
 
         let newModel: Model;
         if (model.planIDs[PLANS.VPN]) {
-            const cycleChange = ![CYCLE.FIFTEEN, CYCLE.THIRTY].includes(model.cycle)
-                ? { cycle: CYCLE.FIFTEEN }
-                : undefined;
             newModel = {
                 ...model,
-                ...cycleChange,
                 planIDs: {
                     [PLANS.VPN_PASS_BUNDLE]: 1,
                 },
