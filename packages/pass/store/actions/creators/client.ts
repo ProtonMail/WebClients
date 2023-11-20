@@ -2,7 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { bootRequest, syncRequest, wakeupRequest } from '@proton/pass/store/actions/requests';
-import { withCache } from '@proton/pass/store/actions/with-cache';
+import { withCache, withCacheImmediate } from '@proton/pass/store/actions/with-cache';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import type { EndpointOptions } from '@proton/pass/store/actions/with-receiver';
 import { withReceiver } from '@proton/pass/store/actions/with-receiver';
@@ -52,7 +52,7 @@ export const bootFailure = createAction('boot::failure', (error: unknown) =>
 export const bootSuccess = createAction(
     'boot::success',
     (payload: { userState: SafeUserState; sync: Maybe<SynchronizationResult> }) =>
-        pipe(withCache, withRequest({ id: bootRequest(), type: 'success' }))({ payload })
+        pipe(withCacheImmediate, withRequest({ id: bootRequest(), type: 'success' }))({ payload })
 );
 
 export const syncIntent = createAction('sync::intent', () =>
