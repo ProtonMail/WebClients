@@ -6,13 +6,12 @@ import { clientReady } from '@proton/pass/lib/client';
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { CACHE_SALT_LENGTH, getCacheEncryptionKey } from '@proton/pass/lib/crypto/utils/cache.encrypt';
 import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
-import { signoutIntent, stateLock } from '@proton/pass/store/actions';
+import { cacheCancel } from '@proton/pass/store/actions';
 import { isCacheTriggeringAction } from '@proton/pass/store/actions/with-cache-block';
 import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/select-is-optimistic';
 import { reducerMap } from '@proton/pass/store/reducers';
 import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
 import { PassEncryptionTag } from '@proton/pass/types';
-import { or } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { objectFilter } from '@proton/pass/utils/object/filter';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
@@ -67,8 +66,8 @@ export default function* watcher(options: WorkerRootSagaOptions) {
     yield takeLatest(isCacheTriggeringAction, function* (action: AnyAction) {
         const cacheTask: Task = yield fork(cacheWorker, action, options);
 
-        yield take(or(stateLock.match, signoutIntent.match));
-        logger.info(`[Saga::Cache] Invalidating all caching tasks`);
+        yield take(cacheCancel.match);
         yield cancel(cacheTask);
+        logger.info(`[Saga::Cache] Invalidated all caching tasks`);
     });
 }
