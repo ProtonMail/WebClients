@@ -52,7 +52,7 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
 
                         return (
                             <Fragment key={appToLinkTo}>
-                                <li className="dropdown-item apps-dropdown-item">
+                                <li className="dropdown-item apps-dropdown-item" data-testid="apps-dropdown-item">
                                     <ProductLink
                                         ownerApp={APP_NAME}
                                         app={app}
