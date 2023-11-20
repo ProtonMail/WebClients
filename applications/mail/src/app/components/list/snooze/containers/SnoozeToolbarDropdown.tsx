@@ -6,7 +6,9 @@ import { Icon, useModalState } from '@proton/components/components';
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import ToolbarDropdown, { DropdownRenderProps } from '../../../toolbar/ToolbarDropdown';
 import SnoozeUpsellModal from '../components/SnoozeUpsellModal';
-import SnoozeToolbarDropdownStepWrapper from './SnoozeToolbarDropdownStepWrapper';
+import SnoozeToolbarDropdownStepWrapper, {
+    SnoozeToolbarDropdownStepWrapperProps,
+} from './SnoozeToolbarDropdownStepWrapper';
 
 interface Props {
     labelID: string;
@@ -33,6 +35,7 @@ const SnoozeToolbarDropdown = ({ selectedIDs }: Props) => {
                 autoClose={false}
             >
                 {{
+                    contentProps: SnoozeToolbarDropdownStepWrapperProps,
                     render: ({ onClose, onLock }: DropdownRenderProps) => (
                         <>
                             <SnoozeToolbarDropdownStepWrapper
