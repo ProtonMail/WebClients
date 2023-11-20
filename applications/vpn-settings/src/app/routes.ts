@@ -24,6 +24,7 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
     const hasOrganization = hasOrganizationSetup(organization);
 
     const multiUserTitle = c('Title').t`Multi-user support`;
+    const isSSOUser = user.Flags.sso === true;
 
     return {
         dashboard: <SectionConfig>{
@@ -112,6 +113,7 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
             subsections: [
                 {
                     id: 'account',
+                    available: !isSSOUser,
                 },
                 {
                     id: 'language',
@@ -120,6 +122,7 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
                 {
                     text: c('Title').t`Two-factor authentication`,
                     id: 'two-fa',
+                    available: !isSSOUser,
                 },
                 {
                     text: c('Title').t`OpenVPN / IKEv2 username`,
@@ -128,6 +131,7 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
                 {
                     text: c('Title').t`Recovery`,
                     id: 'email',
+                    available: !isSSOUser,
                 },
                 {
                     text: c('Title').t`Email subscriptions`,

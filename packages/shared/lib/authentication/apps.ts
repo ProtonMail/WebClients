@@ -61,7 +61,7 @@ export const getToApp = (toApp: APP_NAMES | undefined, user: User) => {
     if (toApp) {
         return toApp;
     }
-    if (getIsVPNOnlyAccount(user)) {
+    if (user.Flags.sso || getIsVPNOnlyAccount(user)) {
         return APPS.PROTONVPN_SETTINGS;
     }
     if (getIsExternalAccount(user)) {

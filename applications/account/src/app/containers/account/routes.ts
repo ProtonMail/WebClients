@@ -60,6 +60,7 @@ export const getAccountAppRoutes = ({
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
 
     const cancellablePlan = hasCancellablePlan(subscription);
+    const isSSOUser = user.Flags.sso === true;
 
     return <const>{
         header: c('Settings section title').t`Account`,
@@ -138,7 +139,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Recovery`,
                 to: '/recovery',
                 icon: 'key',
-                available: isPrivate,
+                available: isPrivate && !isSSOUser,
                 notification: recoveryNotification,
                 subsections: [
                     {
@@ -165,6 +166,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Account and password`,
                 to: '/account-password',
                 icon: 'user',
+                available: !isSSOUser,
                 subsections: [
                     {
                         text: '',
@@ -242,15 +244,18 @@ export const getAccountAppRoutes = ({
                         id: 'sentinel',
                         available:
                             isProtonSentinelFeatureEnabled &&
-                            (isProtonSentinelEligible || isProtonSentinelUpsellEnabled),
+                            (isProtonSentinelEligible || isProtonSentinelUpsellEnabled) &&
+                            !isSSOUser,
                     },
                     {
                         text: c('Title').t`Session management`,
                         id: 'sessions',
+                        available: !isSSOUser,
                     },
                     {
                         text: c('Title').t`Security logs`,
                         id: 'logs',
+                        available: !isSSOUser,
                     },
                     {
                         text: c('Title').t`Privacy and data collection`,
@@ -278,7 +283,7 @@ export const getAccountAppRoutes = ({
                 text: c('Title').t`Import via ${PRODUCT_NAMES.EASY_SWITCH}`,
                 to: '/easy-switch',
                 icon: 'arrow-down-to-square',
-                available: !isExternal && app !== APPS.PROTONPASS,
+                available: !isExternal && app !== APPS.PROTONPASS && !isSSOUser,
                 description: isGmailSyncEnabled
                     ? c('Settings description')
                           .t`Complete the transition to privacy with our secure importing and forwarding tools.`

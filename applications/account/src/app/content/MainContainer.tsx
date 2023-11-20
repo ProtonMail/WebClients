@@ -94,7 +94,15 @@ const getDefaultRedirect = (accountRoutes: ReturnType<typeof getRoutes>['account
     if (getIsSectionAvailable(accountRoutes.routes.recovery)) {
         return accountRoutes.routes.recovery.to;
     }
-    return accountRoutes.routes.password.to;
+    if (getIsSectionAvailable(accountRoutes.routes.password)) {
+        return accountRoutes.routes.password.to;
+    }
+    const config = Object.values(accountRoutes.routes).find((config) => {
+        if (getIsSectionAvailable(config)) {
+            return config;
+        }
+    });
+    return config?.to || '';
 };
 
 const MainContainer = () => {
