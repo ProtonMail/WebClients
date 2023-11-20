@@ -17,6 +17,7 @@ export const TextAreaReadonly: VFC<Props> = ({ children, className }) => {
         <textarea
             ref={ref}
             readOnly
+            disabled
             value={children}
             className={clsx('w-full h-full text-pre-wrap overflow-hidden resize-none h-custom', className)}
             style={{ '--h-custom': `${height}px` }}

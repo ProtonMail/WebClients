@@ -43,7 +43,6 @@ export const createActivationService = () => {
     const handleBoot = withContext((ctx) => {
         if (clientCanBoot(ctx.status)) {
             ctx.setStatus(AppStatus.BOOTING);
-
             store.dispatch(bootIntent());
         }
     });
