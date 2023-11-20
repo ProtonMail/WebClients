@@ -383,7 +383,7 @@ const UserDropdown = ({ onOpenChat, app, hasAppLinks = true, ...rest }: Props) =
 
                     {isNarrow && hasAppLinks ? (
                         <ul className="px-4 pb-4 unstyled text-sm">
-                            {apps().map((appToLinkTo) => {
+                            {apps(user).map((appToLinkTo) => {
                                 const appToLinkToName = getAppShortName(appToLinkTo);
                                 const current = app && appToLinkTo === app;
 
