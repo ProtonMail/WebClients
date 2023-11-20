@@ -12,12 +12,14 @@ jest.mock('@proton/pass/utils/time/get-epoch', () => ({
 }));
 
 describe('Import LastPass csv', () => {
-    let sourceData: string;
-    let payload: ImportPayload;
+    let sourceFiles = [`${__dirname}/mocks/lastpass.csv`, `${__dirname}/mocks/lastpass.crcrlf.terminated.csv`];
+    let payloads: Record<string, ImportPayload> = {};
 
     beforeAll(async () => {
-        sourceData = await fs.promises.readFile(__dirname + '/mocks/lastpass.csv', 'utf8');
-        payload = await readLastPassData(sourceData);
+        for (let sourceFile of sourceFiles) {
+            const sourceData = await fs.promises.readFile(sourceFile, 'utf-8');
+            payloads[sourceFile] = await readLastPassData(sourceData);
+        }
     });
 
     afterAll(() => (getEpoch as jest.Mock).mockClear());
@@ -27,14 +29,16 @@ describe('Import LastPass csv', () => {
     });
 
     it('converts LastPass folders to vaults correctly', () => {
-        const [primary, secondary] = payload.vaults;
-        expect(payload.vaults.length).toEqual(2);
+        const [source] = sourceFiles;
+        const [primary, secondary] = payloads[source].vaults;
+        expect(payloads[source].vaults.length).toEqual(2);
         expect(primary.name).toEqual('Import - 27 Apr 2023');
         expect(secondary.name).toEqual('company services');
     });
 
     it('parses primary `LastPass import` vault items correctly', () => {
-        const [primary] = payload.vaults;
+        const [source] = sourceFiles;
+        const [primary] = payloads[source].vaults;
         expect(primary.items.length).toEqual(3);
 
         /* Login */
@@ -65,7 +69,8 @@ describe('Import LastPass csv', () => {
     });
 
     it('parses secondary vault items correctly', async () => {
-        const [, secondary] = payload.vaults;
+        const [source] = sourceFiles;
+        const [, secondary] = payloads[source].vaults;
         expect(secondary.items.length).toEqual(4);
         /* Login */
         const loginItem2 = deobfuscateItem(secondary.items[0] as any) as unknown as ItemImportIntent<'login'>;
@@ -111,8 +116,17 @@ describe('Import LastPass csv', () => {
     });
 
     test('correctly keeps a reference to ignored items', () => {
-        expect(payload.ignored).not.toEqual([]);
-        expect(payload.ignored[0]).toEqual('[Bank Account] test');
-        expect(payload.ignored[1]).toEqual('[Address] TestID');
+        const [source] = sourceFiles;
+        expect(payloads[source].ignored).not.toEqual([]);
+        expect(payloads[source].ignored[0]).toEqual('[Bank Account] test');
+        expect(payloads[source].ignored[1]).toEqual('[Address] TestID');
+    });
+
+    test('correctly handles CR CR LF line endings', () => {
+        const [, source] = sourceFiles;
+        const payload = payloads[source];
+        const [primary] = payload.vaults;
+        expect(primary.items.length).toEqual(3);
+        expect(primary.items.filter((n) => n.type === 'note').length).toEqual(3);
     });
 });
