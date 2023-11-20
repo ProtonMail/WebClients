@@ -3,6 +3,7 @@ import { nextFriday, nextMonday, nextSaturday, nextSunday, nextThursday, nextTue
 
 import { useUser, useUserSettings } from '@proton/components/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { SETTINGS_WEEK_START } from '@proton/shared/lib/interfaces';
 
 import SnoozeDurationSelection from './SnoozeDurationSelection';
 
@@ -20,7 +21,7 @@ const renderComponent = (canUnsnooze: boolean) => {
     );
 };
 
-describe('SnoozeDurationSelection', () => {
+describe('SnoozeDurationSelection when start of week is Monday', () => {
     const useUserMock = useUser as jest.Mock;
     const useUserSettingsMock = useUserSettings as jest.Mock;
     beforeAll(() => {
@@ -41,6 +42,7 @@ describe('SnoozeDurationSelection', () => {
         expect(getByTestId('snooze-duration-later'));
         expect(getByTestId('snooze-duration-weekend'));
         expect(getByTestId('snooze-duration-nextweek'));
+        expect(getByTestId('snooze-duration-custom'));
     });
 
     it('should render all Tuesday options', () => {
@@ -52,26 +54,28 @@ describe('SnoozeDurationSelection', () => {
         expect(getByTestId('snooze-duration-later'));
         expect(getByTestId('snooze-duration-weekend'));
         expect(getByTestId('snooze-duration-nextweek'));
+        expect(getByTestId('snooze-duration-custom'));
     });
 
     it('should render all Wednesday options', () => {
         const date = nextWednesday(new Date());
         jest.useFakeTimers({ now: date.getTime() });
 
-        const screen = renderComponent(false);
-        expect(screen.getByTestId('snooze-duration-tomorrow'));
-        expect(screen.getByTestId('snooze-duration-later'));
-        expect(screen.getByTestId('snooze-duration-weekend'));
-        expect(screen.getByTestId('snooze-duration-nextweek'));
-        expect(screen.getByTestId('snooze-duration-custom'));
+        const { getByTestId } = renderComponent(false);
+        expect(getByTestId('snooze-duration-tomorrow'));
+        expect(getByTestId('snooze-duration-later'));
+        expect(getByTestId('snooze-duration-weekend'));
+        expect(getByTestId('snooze-duration-nextweek'));
+        expect(getByTestId('snooze-duration-custom'));
     });
 
     it('should render all Thursday options', () => {
         const date = nextThursday(new Date());
         jest.useFakeTimers({ now: date.getTime() });
 
-        const { getByTestId } = renderComponent(false);
+        const { getByTestId, queryByTestId } = renderComponent(false);
         expect(getByTestId('snooze-duration-tomorrow'));
+        expect(queryByTestId('snooze-duration-later')).toBeNull();
         expect(getByTestId('snooze-duration-weekend'));
         expect(getByTestId('snooze-duration-nextweek'));
         expect(getByTestId('snooze-duration-custom'));
@@ -81,9 +85,10 @@ describe('SnoozeDurationSelection', () => {
         const date = nextFriday(new Date());
         jest.useFakeTimers({ now: date.getTime() });
 
-        const { getByTestId } = renderComponent(false);
+        const { getByTestId, queryByTestId } = renderComponent(false);
         expect(getByTestId('snooze-duration-tomorrow'));
         expect(getByTestId('snooze-duration-later'));
+        expect(queryByTestId('snooze-duration-weekend')).toBeNull();
         expect(getByTestId('snooze-duration-nextweek'));
         expect(getByTestId('snooze-duration-custom'));
     });
@@ -92,8 +97,10 @@ describe('SnoozeDurationSelection', () => {
         const date = nextSaturday(new Date());
         jest.useFakeTimers({ now: date.getTime() });
 
-        const { getByTestId } = renderComponent(false);
+        const { getByTestId, queryByTestId } = renderComponent(false);
         expect(getByTestId('snooze-duration-tomorrow'));
+        expect(queryByTestId('snooze-duration-later')).toBeNull();
+        expect(queryByTestId('snooze-duration-weekend')).toBeNull();
         expect(getByTestId('snooze-duration-nextweek'));
         expect(getByTestId('snooze-duration-custom'));
     });
@@ -102,8 +109,11 @@ describe('SnoozeDurationSelection', () => {
         const date = nextSunday(new Date());
         jest.useFakeTimers({ now: date.getTime() });
 
-        const { getByTestId } = renderComponent(false);
+        const { getByTestId, queryByTestId } = renderComponent(false);
         expect(getByTestId('snooze-duration-tomorrow'));
+        expect(queryByTestId('snooze-duration-later')).toBeNull();
+        expect(queryByTestId('snooze-duration-weekend')).toBeNull();
+        expect(queryByTestId('snooze-duration-nextweek')).toBeNull();
         expect(getByTestId('snooze-duration-custom'));
     });
 
@@ -122,5 +132,195 @@ describe('SnoozeDurationSelection', () => {
 
         const { queryByAltText } = renderComponent(false);
         expect(queryByAltText(`Upgrade to ${MAIL_APP_NAME} Plus to unlock`)).toBeNull();
+    });
+});
+
+describe('SnoozeDurationSelection when start of week is Saturday', () => {
+    const useUserMock = useUser as jest.Mock;
+    const useUserSettingsMock = useUserSettings as jest.Mock;
+    beforeAll(() => {
+        useUserMock.mockImplementation(() => [{ hasPaidMail: false }, jest.fn]);
+        useUserSettingsMock.mockImplementation(() => [{ WeekStart: SETTINGS_WEEK_START.SATURDAY }]);
+    });
+    afterAll(() => {
+        useUserMock.mockReset();
+        useUserSettingsMock.mockReset();
+    });
+
+    it('should render all Monday options', () => {
+        const date = nextMonday(new Date());
+        jest.useFakeTimers({ now: date.getTime() });
+
+        const { getByTestId, queryByTestId } = renderComponent(false);
+        expect(getByTestId('snooze-duration-tomorrow'));
+        expect(getByTestId('snooze-duration-later'));
+        expect(queryByTestId('snooze-duration-weekend')).toBeNull();
+        expect(getByTestId('snooze-duration-nextweek'));
+    });
+
+    it('should render all Tuesday options', () => {
+        const date = nextTuesday(new Date());
+        jest.useFakeTimers({ now: date.getTime() });
+
+        const { getByTestId, queryByTestId } = renderComponent(false);
+        expect(getByTestId('snooze-duration-tomorrow'));
+        expect(getByTestId('snooze-duration-later'));
+        expect(queryByTestId('snooze-duration-weekend')).toBeNull();
+        expect(getByTestId('snooze-duration-nextweek'));
+    });
+
+    it('should render all Wednesday options', () => {
+        const date = nextWednesday(new Date());
+        jest.useFakeTimers({ now: date.getTime() });
+
+        const { getByTestId, queryByTestId } = renderComponent(false);
+        expect(getByTestId('snooze-duration-tomorrow'));
+        expect(getByTestId('snooze-duration-later'));
+        expect(queryByTestId('snooze-duration-weekend')).toBeNull();
+        expect(getByTestId('snooze-duration-nextweek'));
+        expect(getByTestId('snooze-duration-custom'));
+    });
+
+    it('should render all Thursday options', () => {
+        const date = nextThursday(new Date());
+        jest.useFakeTimers({ now: date.getTime() });
+
+        const { getByTestId, queryByTestId } = renderComponent(false);
+        expect(getByTestId('snooze-duration-tomorrow'));
+        expect(queryByTestId('snooze-duration-later')).toBeNull();
+        expect(queryByTestId('snooze-duration-weekend')).toBeNull();
+        expect(getByTestId('snooze-duration-nextweek'));
+        expect(getByTestId('snooze-duration-custom'));
+    });
+
+    it('should render all Friday options', () => {
+        const date = nextFriday(new Date());
+        jest.useFakeTimers({ now: date.getTime() });
+
+        const { getByTestId, queryByTestId } = renderComponent(false);
+        expect(getByTestId('snooze-duration-tomorrow'));
+        expect(getByTestId('snooze-duration-later'));
+        expect(queryByTestId('snooze-duration-nextweek'));
+        expect(getByTestId('snooze-duration-nextweek'));
+        expect(getByTestId('snooze-duration-custom'));
+    });
+
+    it('should render all Saturday options', () => {
+        const date = nextSaturday(new Date());
+        jest.useFakeTimers({ now: date.getTime() });
+
+        const { getByTestId, queryByTestId } = renderComponent(false);
+        expect(getByTestId('snooze-duration-tomorrow'));
+        expect(queryByTestId('snooze-duration-later')).toBeNull();
+        expect(getByTestId('snooze-duration-nextweek'));
+        expect(getByTestId('snooze-duration-nextweek'));
+        expect(getByTestId('snooze-duration-custom'));
+    });
+
+    it('should render all Sunday options', () => {
+        const date = nextSunday(new Date());
+        jest.useFakeTimers({ now: date.getTime() });
+
+        const { getByTestId, queryByTestId } = renderComponent(false);
+        expect(getByTestId('snooze-duration-tomorrow'));
+        expect(queryByTestId('snooze-duration-later')).toBeNull();
+        expect(queryByTestId('snooze-duration-nextweek')).toBeNull();
+        expect(queryByTestId('snooze-duration-nextweek')).toBeNull();
+        expect(getByTestId('snooze-duration-custom'));
+    });
+});
+
+describe('SnoozeDurationSelection when start of week is Sunday', () => {
+    const useUserMock = useUser as jest.Mock;
+    const useUserSettingsMock = useUserSettings as jest.Mock;
+    beforeAll(() => {
+        useUserMock.mockImplementation(() => [{ hasPaidMail: false }, jest.fn]);
+        useUserSettingsMock.mockImplementation(() => [{ WeekStart: SETTINGS_WEEK_START.SUNDAY }]);
+    });
+    afterAll(() => {
+        useUserMock.mockReset();
+        useUserSettingsMock.mockReset();
+    });
+
+    it('should render all Monday options', () => {
+        const date = nextMonday(new Date());
+        jest.useFakeTimers({ now: date.getTime() });
+
+        const { getByTestId, queryByTestId } = renderComponent(false);
+        expect(getByTestId('snooze-duration-tomorrow'));
+        expect(getByTestId('snooze-duration-later'));
+        expect(queryByTestId('snooze-duration-weekend')).toBeNull();
+        expect(getByTestId('snooze-duration-nextweek'));
+    });
+
+    it('should render all Tuesday options', () => {
+        const date = nextTuesday(new Date());
+        jest.useFakeTimers({ now: date.getTime() });
+
+        const { getByTestId, queryByTestId } = renderComponent(false);
+        expect(getByTestId('snooze-duration-tomorrow'));
+        expect(getByTestId('snooze-duration-later'));
+        expect(queryByTestId('snooze-duration-weekend')).toBeNull();
+        expect(getByTestId('snooze-duration-nextweek'));
+    });
+
+    it('should render all Wednesday options', () => {
+        const date = nextWednesday(new Date());
+        jest.useFakeTimers({ now: date.getTime() });
+
+        const { getByTestId, queryByTestId } = renderComponent(false);
+        expect(getByTestId('snooze-duration-tomorrow'));
+        expect(getByTestId('snooze-duration-later'));
+        expect(queryByTestId('snooze-duration-weekend')).toBeNull();
+        expect(getByTestId('snooze-duration-nextweek'));
+        expect(getByTestId('snooze-duration-custom'));
+    });
+
+    it('should render all Thursday options', () => {
+        const date = nextThursday(new Date());
+        jest.useFakeTimers({ now: date.getTime() });
+
+        const { getByTestId, queryByTestId } = renderComponent(false);
+        expect(getByTestId('snooze-duration-tomorrow'));
+        expect(queryByTestId('snooze-duration-later')).toBeNull();
+        expect(queryByTestId('snooze-duration-weekend')).toBeNull();
+        expect(getByTestId('snooze-duration-nextweek'));
+        expect(getByTestId('snooze-duration-custom'));
+    });
+
+    it('should render all Friday options', () => {
+        const date = nextFriday(new Date());
+        jest.useFakeTimers({ now: date.getTime() });
+
+        const { getByTestId, queryByTestId } = renderComponent(false);
+        expect(getByTestId('snooze-duration-tomorrow'));
+        expect(getByTestId('snooze-duration-later'));
+        expect(queryByTestId('snooze-duration-nextweek'));
+        expect(getByTestId('snooze-duration-nextweek'));
+        expect(getByTestId('snooze-duration-custom'));
+    });
+
+    it('should render all Saturday options', () => {
+        const date = nextSaturday(new Date());
+        jest.useFakeTimers({ now: date.getTime() });
+
+        const { getByTestId, queryByTestId } = renderComponent(false);
+        expect(getByTestId('snooze-duration-tomorrow'));
+        expect(queryByTestId('snooze-duration-later')).toBeNull();
+        expect(getByTestId('snooze-duration-nextweek'));
+        expect(getByTestId('snooze-duration-nextweek'));
+        expect(getByTestId('snooze-duration-custom'));
+    });
+
+    it('should render all Sunday options', () => {
+        const date = nextSunday(new Date());
+        jest.useFakeTimers({ now: date.getTime() });
+
+        const { getByTestId, queryByTestId } = renderComponent(false);
+        expect(getByTestId('snooze-duration-tomorrow'));
+        expect(queryByTestId('snooze-duration-later')).toBeNull();
+        expect(queryByTestId('snooze-duration-nextweek')).toBeNull();
+        expect(queryByTestId('snooze-duration-nextweek')).toBeNull();
+        expect(getByTestId('snooze-duration-custom'));
     });
 });

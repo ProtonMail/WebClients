@@ -83,7 +83,7 @@ const SnoozeCustomTime = ({ onClose, onLock, handleSnooze }: Props) => {
                 <PrimaryButton
                     disabled={disabled}
                     onClick={(event: MouseEvent) => handleSnooze(event, 'custom', scheduleDateTime)}
-                >{c('Action').t`Save`}</PrimaryButton>
+                >{c('Action').t`Snooze`}</PrimaryButton>
                 <Button onClick={handleClose}>{c('Action').t`Cancel`}</Button>
             </div>
         </div>

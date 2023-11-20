@@ -94,7 +94,15 @@ const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
                     <Icon name="clock" alt={labelText} />
                 </DropdownButton>
             </Tooltip>
-            <Dropdown isOpen={isOpen && snoozeState === 'snooze-selection'} anchorRef={anchorRef} onClose={onClose}>
+            <Dropdown
+                isOpen={isOpen && snoozeState === 'snooze-selection'}
+                anchorRef={anchorRef}
+                onClose={onClose}
+                size={{
+                    width: '22em',
+                    maxWidth: '22em',
+                }}
+            >
                 <SnoozeDurationSelection
                     canUnsnooze={canUnsnooze}
                     handleUnsnoozeClick={handleUnsnooze}

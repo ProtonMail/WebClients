@@ -259,7 +259,7 @@ const MoreDropdown = ({
                                         <Icon name="tag" className="mr-2" />
                                         {c('Title').t`Label as`}
                                     </DropdownMenuButton>
-                                    {isSnoozeEnabled && (
+                                    {isSnoozeEnabled && (canSnooze || canUnsnooze) && (
                                         <DropdownMenuButton
                                             className="text-left"
                                             onClick={() => onOpenAdditional(2)}
