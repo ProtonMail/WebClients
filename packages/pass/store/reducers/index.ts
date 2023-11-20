@@ -1,7 +1,6 @@
 import { type Reducer, combineReducers } from 'redux';
 
-import { stateSync } from '@proton/pass/store/actions';
-import { isStateResetAction } from '@proton/pass/store/actions/utils';
+import { stateDestroy, stateSync } from '@proton/pass/store/actions';
 import type { State } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
@@ -43,11 +42,11 @@ export const rootReducer = combineReducers(reducerMap);
 
 const wrappedRootReducer: Reducer<State> = (previousState, action) => {
     /* Certain actions act as `state` overrides :
-     * - on `signout` or `stateLock` : reset to initial state
+     * - on `stateDestroy` : reset to initial state
      * - on `stateSync` : merge the incoming state */
     return rootReducer(
         ((): Maybe<State> => {
-            if (isStateResetAction(action)) return undefined;
+            if (stateDestroy.match(action)) return undefined;
             if (stateSync.match(action)) return merge(previousState ?? {}, action.payload.state);
 
             return previousState;

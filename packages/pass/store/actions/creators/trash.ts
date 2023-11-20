@@ -1,12 +1,11 @@
 import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
+import { trashEmptyRequest, trashRestoreRequest } from '@proton/pass/store/actions/requests';
+import { withCache } from '@proton/pass/store/actions/with-cache';
 import withNotification from '@proton/pass/store/actions/with-notification';
+import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-
-import { trashEmptyRequest, trashRestoreRequest } from '../requests';
-import withRequest, { withRequestFailure, withRequestSuccess } from '../with-request';
 
 export const emptyTrashIntent = createAction('trash::empty::intent', () =>
     pipe(
@@ -16,32 +15,31 @@ export const emptyTrashIntent = createAction('trash::empty::intent', () =>
             text: c('Info').t`Emptying trash...`,
             loading: true,
             expiration: -1,
-        }),
-        withCacheBlock
+        })
     )({ payload: {} })
 );
 
 export const emptyTrashFailure = createAction(
     'trash::empty::failure',
     withRequestFailure((error: unknown) =>
-        pipe(
-            withCacheBlock,
-            withNotification({
-                type: 'error',
-                text: c('Error').t`Emptying trash failed`,
-                error,
-            })
-        )({ payload: {}, error })
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Emptying trash failed`,
+            error,
+        })({ payload: {}, error })
     )
 );
 
 export const emptyTrashSuccess = createAction(
     'trash::empty::success',
     withRequestSuccess(() =>
-        withNotification({
-            type: 'success',
-            text: c('Info').t`All trashed items permanently deleted`,
-        })({ payload: {} })
+        pipe(
+            withCache,
+            withNotification({
+                type: 'success',
+                text: c('Info').t`All trashed items permanently deleted`,
+            })
+        )({ payload: {} })
     )
 );
 
@@ -53,31 +51,30 @@ export const restoreTrashIntent = createAction('trash::restore::intent', () =>
             text: c('Info').t`Restoring trashed items...`,
             loading: true,
             expiration: -1,
-        }),
-        withCacheBlock
+        })
     )({ payload: {} })
 );
 
 export const restoreTrashFailure = createAction(
     'trash::restore::failure',
     withRequestFailure((error: unknown) =>
-        pipe(
-            withCacheBlock,
-            withNotification({
-                type: 'error',
-                text: c('Error').t`Restoring trashed items failed`,
-                error,
-            })
-        )({ payload: {}, error })
+        withNotification({
+            type: 'error',
+            text: c('Error').t`Restoring trashed items failed`,
+            error,
+        })({ payload: {}, error })
     )
 );
 
 export const restoreTrashSuccess = createAction(
     'trash::restore::success',
     withRequestSuccess(() =>
-        withNotification({
-            type: 'success',
-            text: c('Info').t`All trashed items successfully restored`,
-        })({ payload: {} })
+        pipe(
+            withCache,
+            withNotification({
+                type: 'success',
+                text: c('Info').t`All trashed items successfully restored`,
+            })
+        )({ payload: {} })
     )
 );
