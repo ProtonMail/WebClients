@@ -1,7 +1,10 @@
 import { ReactNode } from 'react';
 
+import { IS_PROTON_USER_COOKIE_NAME } from '@proton/components/hooks/useIsProtonUserCookie';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
+import { getCookie } from '@proton/shared/lib/helpers/cookies';
+import { getAppStaticUrl } from '@proton/shared/lib/helpers/url';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { UserModel } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
@@ -20,9 +23,9 @@ export const apps = () => {
 
 interface ProductLinkProps {
     ownerApp: APP_NAMES;
-    app: APP_NAMES;
+    app?: APP_NAMES;
     appToLinkTo: APP_NAMES;
-    user: UserModel;
+    user?: UserModel;
     current?: boolean;
     className?: string;
     children: ReactNode;
@@ -31,7 +34,7 @@ interface ProductLinkProps {
 const ProductLink = ({ ownerApp, app, appToLinkTo, user, current, className, children }: ProductLinkProps) => {
     const appToLinkToName = getAppName(appToLinkTo);
 
-    if (getRequiresAddressSetup(appToLinkTo, user)) {
+    if (user && app && getRequiresAddressSetup(appToLinkTo, user)) {
         const params = new URLSearchParams();
         params.set('to', appToLinkTo);
         params.set('from', app);
@@ -49,6 +52,22 @@ const ProductLink = ({ ownerApp, app, appToLinkTo, user, current, className, chi
             >
                 {children}
             </AppLink>
+        );
+    }
+
+    // This does not allow to get any user information but allow us to know if the user was already logged in Proton
+    const isProtonUser = !!getCookie(IS_PROTON_USER_COOKIE_NAME);
+    if (!isProtonUser) {
+        return (
+            <a
+                href={getAppStaticUrl(appToLinkTo)}
+                target="_blank"
+                className={className}
+                title={appToLinkToName}
+                aria-current={current}
+            >
+                {children}
+            </a>
         );
     }
 

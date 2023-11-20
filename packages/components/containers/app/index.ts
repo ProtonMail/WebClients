@@ -1,4 +1,4 @@
-export { default as AppsDropdown } from './AppsDropdown';
+export { default as AppsDropdown, UnAuthenticatedAppsDropdown } from './AppsDropdown';
 export { default as ErrorBoundary } from './ErrorBoundary';
 export { default as LocationErrorBoundary } from './LocationErrorBoundary';
 export { default as LoaderPage } from './LoaderPage';
