@@ -71,7 +71,7 @@ export const ItemView: VFC = () => {
 
     const trashed = isTrashed(item);
 
-    const handleEdit = () => selectItem(shareId, itemId, { view: 'edit', mode: 'push' });
+    const handleEdit = () => selectItem(shareId, itemId, { view: 'edit', mode: 'replace' });
     const handleRetry = () => failure !== undefined && dispatch(failure.action);
     const handleTrash = () => dispatch(itemTrashIntent({ itemId, shareId, item }));
     const handleMove = () => openVaultSelect(item.shareId, selectWritableVaultsWithItemsCount);
