@@ -148,6 +148,8 @@ export const createAuthService = (config: AuthServiceConfig) => {
         },
 
         login: async (session: AuthSession) => {
+            config.onAuthorize?.();
+
             authStore.setUID(session.UID);
             authStore.setUserID(session.UserID);
             authStore.setLocalID(session.LocalID);

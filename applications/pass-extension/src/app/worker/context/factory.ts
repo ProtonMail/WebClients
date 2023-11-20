@@ -150,7 +150,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
                     context.service.storage.local.set({ ps: encryptedSession }).catch(noop);
                     context.service.storage.session.set(authStore.getSession()).catch(noop);
                 },
-                onSessionResumeFailure: () => context.setStatus(AppStatus.RESUMING_FAILED),
+                onSessionResumeFailure: () => context.setStatus(AppStatus.ERROR),
                 onNotification: (text) =>
                     store.dispatch(
                         notification({

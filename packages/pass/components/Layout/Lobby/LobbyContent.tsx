@@ -58,7 +58,6 @@ export const LobbyContent: VFC<Props> = ({ status, onLogin, onLogout, onRegister
                             switch (status) {
                                 case AppStatus.AUTHORIZED:
                                 case AppStatus.AUTHORIZING:
-                                case AppStatus.RESUMING:
                                     // translator: status message displayed when loading
                                     return c('Info').t`Signing you in`;
                                 case AppStatus.BOOTING:

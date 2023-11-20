@@ -155,7 +155,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 }
             },
             onSessionPersist: (encrypted) => localStorage.setItem(getSessionKey(authStore.getLocalID()), encrypted),
-            onSessionResumeFailure: () => client.current.setStatus(AppStatus.RESUMING_FAILED),
+            onSessionResumeFailure: () => client.current.setStatus(AppStatus.ERROR),
             onNotification: (text) =>
                 createNotification({ type: 'error', text, key: 'authservice', deduplicate: true }),
         });
