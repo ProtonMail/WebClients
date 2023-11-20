@@ -25,7 +25,7 @@ export const addressKeysCache = createCache<string, { status: number; value: Par
 export const base64Cache = createCache<string, string>() as Base64Cache;
 
 export const minimalCache = () => {
-    addToCache('User', { UsedSpace: 10, MaxSpace: 100 });
+    addToCache('User', { UsedSpace: 10, MaxSpace: 100, Flags: {} });
     addToCache('Addresses', []);
     // Enable hotkeys to trigger composer save easily
     addToCache('MailSettings', { Shortcuts: SHORTCUTS.ENABLED });
