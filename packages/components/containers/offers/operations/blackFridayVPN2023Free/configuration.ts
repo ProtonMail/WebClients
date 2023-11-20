@@ -18,19 +18,6 @@ const config: OfferConfig = {
     darkBackground: true,
     deals: [
         {
-            ref: 'bf_23_vpn-free-modal-v30p',
-            dealName: PLAN_NAMES[PLANS.VPN],
-            planIDs: {
-                [PLANS.VPN]: 1,
-            },
-            cycle: CYCLE.THIRTY,
-            couponCode: COUPON_CODES.BLACK_FRIDAY_2023,
-            features: getVPNFeatures,
-            popular: 1,
-            mobileOrder: 1,
-            isGuaranteed: true,
-        },
-        {
             ref: 'bf_23_vpn-free-modal-v15p',
             dealName: PLAN_NAMES[PLANS.VPN],
             planIDs: {
@@ -44,15 +31,16 @@ const config: OfferConfig = {
             isGuaranteed: true,
         },
         {
-            ref: 'bf_23_vpn-free-modal-v1',
+            ref: 'bf_23_vpn-free-modal-v30p',
             dealName: PLAN_NAMES[PLANS.VPN],
             planIDs: {
                 [PLANS.VPN]: 1,
             },
-            cycle: CYCLE.MONTHLY,
+            cycle: CYCLE.THIRTY,
             couponCode: COUPON_CODES.BLACK_FRIDAY_2023,
             features: getVPNFeatures,
-            mobileOrder: 3,
+            popular: 1,
+            mobileOrder: 1,
             isGuaranteed: true,
         },
         {
@@ -65,7 +53,7 @@ const config: OfferConfig = {
             couponCode: COUPON_CODES.BLACK_FRIDAY_2023,
             features: getUnlimitedVPNFeatures,
             popular: 2,
-            mobileOrder: 4,
+            mobileOrder: 3,
             isGuaranteed: true,
         },
     ],
