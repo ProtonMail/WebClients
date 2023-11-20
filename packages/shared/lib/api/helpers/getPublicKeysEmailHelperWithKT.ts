@@ -65,27 +65,17 @@ const getPublicKeysEmailHelperWithKT = async ({
             noCache,
         });
 
-        // First we use verified internal address keys from non-external accounts.
-        // Users with internal custom domains but with bad UX setup will not be properly identifiable, but for the current uses of this helper, this was deemed ok.
-        if (addressKeys.length > 0 && hasValidProtonMX) {
+        // First we use verified internal address keys from internal recipients.
+        // Users with internal custom domains but with bad MX setup will not be properly identifiable if they also don't have address keys
+        // valid for mail encryption. For the current uses of this helper, this was deemed ok.
+        if (addressKeys.length > 0) {
+            const intendedForMailEncryption = !includeInternalKeysWithE2EEDisabledForMail;
+            // E2EE is disabled with external forwarding, as well as in some setups with custom addresses.
+            // unclear when/if it can happen that some keys have e2ee-disabled and some are not, but for now we cover the case.
             const addressKeysForMailEncryption = addressKeys.filter((key) => supportsMail(key.flags));
-            // E2EE is disabled with external forwarding, as well as in some setups with custom addresses
             const hasDisabledE2EEForMail = addressKeysForMailEncryption.length === 0;
 
-            if (includeInternalKeysWithE2EEDisabledForMail) {
-                return {
-                    publicKeys: castKeys(addressKeys),
-                    ktVerificationResult: addressKTResult,
-                    RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL, // as e2ee-disabled flags are ignored, then from the perspective of the caller, this is an internal recipient
-                    isCatchAll: false,
-                    isInternalWithDisabledE2EEForMail: hasDisabledE2EEForMail,
-                    ...rest,
-                };
-            }
-
-            // Filter out keys not valid for mail encryption
-            // unclear when/if it can happen that some keys have e2ee-disabled and some are not, but for now we cover the case.
-            if (addressKeysForMailEncryption.length > 0) {
+            if (intendedForMailEncryption && addressKeysForMailEncryption.length > 0) {
                 return {
                     publicKeys: castKeys(addressKeysForMailEncryption),
                     ktVerificationResult: addressKTResult,
@@ -94,21 +84,30 @@ const getPublicKeysEmailHelperWithKT = async ({
                     isInternalWithDisabledE2EEForMail: false,
                     ...rest,
                 };
-            }
-
-            // All keys are disabled for E2EE in mail
-            return {
-                publicKeys: [],
-                RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
-                isCatchAll: false,
-                isInternalWithDisabledE2EEForMail: true,
-                ktVerificationResult: {
-                    status: getFailedOrUnVerified(
-                        addressKTResult?.status === KT_VERIFICATION_STATUS.VERIFICATION_FAILED
-                    ),
-                },
-                ...rest,
-            };
+            } else if (intendedForMailEncryption && hasDisabledE2EEForMail && hasValidProtonMX) {
+                // All keys are disabled for E2EE in mail, hence the recipient may be treated as external
+                return {
+                    publicKeys: [],
+                    RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
+                    isCatchAll: false,
+                    isInternalWithDisabledE2EEForMail: true,
+                    ktVerificationResult: {
+                        status: getFailedOrUnVerified(
+                            addressKTResult?.status === KT_VERIFICATION_STATUS.VERIFICATION_FAILED
+                        ),
+                    },
+                    ...rest,
+                };
+            } else if (!intendedForMailEncryption && (addressKeysForMailEncryption.length > 0 || hasValidProtonMX)) {
+                return {
+                    publicKeys: castKeys(addressKeys), // we checked `addressKeysForMailEncryption` to determine if the recipient is internal, but we return all keys as that's requested by the caller
+                    ktVerificationResult: addressKTResult,
+                    RecipientType: RECIPIENT_TYPES.TYPE_INTERNAL, // as e2ee-disabled flags are ignored, then from the perspective of the caller, this is an internal recipient
+                    isCatchAll: false,
+                    isInternalWithDisabledE2EEForMail: hasDisabledE2EEForMail, // unused, could also be set to undefined
+                    ...rest,
+                };
+            } // else, the recipient is believed external, and no address keys are returned
         }
 
         const keysChangedRecently = !!addressKTResult?.keysChangedRecently || !!catchAllKTResult?.keysChangedRecently;
