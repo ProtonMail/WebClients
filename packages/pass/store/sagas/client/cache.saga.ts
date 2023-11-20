@@ -7,7 +7,7 @@ import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { CACHE_SALT_LENGTH, getCacheEncryptionKey } from '@proton/pass/lib/crypto/utils/cache.encrypt';
 import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { cacheCancel } from '@proton/pass/store/actions';
-import { isCachingAction } from '@proton/pass/store/actions/with-cache';
+import { type WithCache, isCachingAction } from '@proton/pass/store/actions/with-cache';
 import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/select-is-optimistic';
 import { reducerMap } from '@proton/pass/store/reducers';
 import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
@@ -17,8 +17,11 @@ import { objectFilter } from '@proton/pass/utils/object/filter';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-function* cacheWorker(action: AnyAction, { getAppState, getAuthStore, setCache }: WorkerRootSagaOptions) {
-    yield wait(2_000);
+function* cacheWorker(
+    { meta, type }: WithCache<AnyAction>,
+    { getAppState, getAuthStore, setCache }: WorkerRootSagaOptions
+) {
+    yield wait(meta.immediate ? 0 : 2_000);
 
     if (getAuthStore().hasSession() && clientReady(getAppState().status)) {
         try {
@@ -52,7 +55,7 @@ function* cacheWorker(action: AnyAction, { getAppState, getAuthStore, setCache }
                 PassEncryptionTag.Cache
             );
 
-            logger.info(`[Saga::Cache] Caching store and crypto state @ action["${action.type}"]`);
+            logger.info(`[Saga::Cache] Caching store and crypto state @ action["${type}"]`);
             yield setCache({
                 salt: uint8ArrayToString(cacheSalt),
                 state: uint8ArrayToString(encryptedData),
@@ -63,7 +66,7 @@ function* cacheWorker(action: AnyAction, { getAppState, getAuthStore, setCache }
 }
 
 export default function* watcher(options: WorkerRootSagaOptions) {
-    yield takeLatest(isCachingAction, function* (action: AnyAction) {
+    yield takeLatest(isCachingAction, function* (action) {
         const cacheTask: Task = yield fork(cacheWorker, action, options);
 
         yield take(cacheCancel.match);
