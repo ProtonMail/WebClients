@@ -53,6 +53,16 @@ export interface User {
     MnemonicStatus: MNEMONIC_STATUS;
     Idle: 0 | 1;
     CreateTime: number;
+    Flags: {
+        protected: boolean;
+        'drive-early-access': boolean;
+        'onboard-checklist-storage-granted': boolean;
+        'has-temporary-password': boolean;
+        'test-account': boolean;
+        'no-login': boolean;
+        'recovery-attempt': boolean;
+        sso: boolean;
+    };
     AccountRecovery: {
         State: SessionRecoveryState;
         StartTime: number;
