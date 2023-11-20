@@ -35,7 +35,7 @@ import {
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
-import { notification, sessionLockSync, stateDestroy, stateLock } from '@proton/pass/store/actions';
+import { cacheCancel, notification, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
@@ -100,6 +100,9 @@ export const createWorkerContext = (config: ProtonConfig) => {
                     setSentryUID(authStore.getUID());
                 },
                 onUnauthorized: () => {
+                    store.dispatch(cacheCancel());
+                    store.dispatch(stopEventPolling());
+
                     /* important to call setStatus before dispatching the
                      * the `stateDestroy` action : we might have active
                      * clients currently consuming the store data */
@@ -128,11 +131,12 @@ export const createWorkerContext = (config: ProtonConfig) => {
                 onSessionEmpty: () => context.setStatus(AppStatus.UNAUTHORIZED),
 
                 onSessionLocked: () => {
+                    store.dispatch(stopEventPolling());
+
                     context.setStatus(AppStatus.LOCKED);
                     context.service.autofill.clearTabsBadgeCount();
                     PassCrypto.clear();
 
-                    store.dispatch(stateLock());
                     context.service.auth.init().catch(noop);
                 },
 

@@ -14,7 +14,7 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import identity from '@proton/utils/identity';
 
 export const startEventPolling = createAction('events::polling::start');
-export const stopEventPolling = createAction('events::polling::stop');
+export const stopEventPolling = createAction('events::polling::stop', () => withCacheBlock({ payload: {} }));
 
 /* ⚠️ do not cast payload::cache to type `State` in order to avoid circular type
  * refs. Do not cache block `stateSync` if it is for the background store */
@@ -25,8 +25,9 @@ export const stateSync = createAction('state::sync', (state: any, options?: Endp
     )({ payload: { state } })
 );
 
-export const stateCache = createAction('state::cache');
-export const stateLock = createAction('state::lock', () => withCacheBlock({ payload: {} }));
+export const cacheRequest = createAction('cache::request');
+export const cacheCancel = createAction('cache::cancel', () => withCacheBlock({ payload: {} }));
+
 export const stateDestroy = createAction('state::destroy', () => withCacheBlock({ payload: {} }));
 
 export const wakeupIntent = createAction(
