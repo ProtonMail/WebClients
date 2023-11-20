@@ -13,8 +13,10 @@ import type { DropdownProps } from '@proton/components';
 import { Dropdown, DropdownMenu, DropdownSizeUnit, Icon, usePopperAnchor } from '@proton/components';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { Submenu, type SubmenuLinkItem } from '@proton/pass/components/Menu/Submenu';
+import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultSubmenu } from '@proton/pass/components/Menu/Vault/VaultSubmenu';
+import type { MenuItem } from '@proton/pass/components/Menu/hooks';
+import { useFeedbackLinks } from '@proton/pass/components/Menu/hooks';
 import { usePasswordContext } from '@proton/pass/components/PasswordGenerator/PasswordContext';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
@@ -61,35 +63,10 @@ export const MenuDropdown: VFC = () => {
         setSearch('');
     });
 
-    const feedbackLinks: SubmenuLinkItem[] = [
-        {
-            icon: 'paper-plane',
-            label: c('Action').t`Send us a message`,
-            actionTab: () => openSettings('support'),
-        },
-        {
-            url: 'https://twitter.com/Proton_Pass',
-            icon: 'brand-twitter',
-            label: c('Action').t`Write us on Twitter`,
-        },
-        {
-            url: 'https://www.reddit.com/r/ProtonPass/',
-            icon: 'brand-reddit',
-            label: c('Action').t`Write us on Reddit`,
-        },
-        {
-            url: 'https://github.com/ProtonMail/WebClients/tree/main/applications/pass-extension',
-            icon: 'brand-github',
-            label: c('Action').t`Help us improve`,
-        },
-        {
-            url: 'https://protonmail.uservoice.com/forums/953584-proton-pass',
-            icon: 'rocket',
-            label: c('Action').t`Request a feature`,
-        },
-    ];
+    /* define for download, advanced links etc.. */
+    const feedbackLinks = useFeedbackLinks();
 
-    const downloadLinks: SubmenuLinkItem[] = [
+    const downloadLinks: MenuItem[] = [
         {
             url: 'https://play.google.com/store/apps/details?id=proton.android.pass',
             icon: 'brand-android',
@@ -104,16 +81,16 @@ export const MenuDropdown: VFC = () => {
 
     const { openPasswordHistory } = usePasswordContext();
 
-    const advancedLinks: SubmenuLinkItem[] = [
+    const advancedLinks: MenuItem[] = [
         {
             icon: 'key-history',
             label: c('Action').t`Generated passwords`,
-            actionTab: withClose(openPasswordHistory),
+            onClick: withClose(openPasswordHistory),
         },
         {
             icon: 'arrow-rotate-right',
             label: c('Action').t`Manually sync your data`,
-            actionTab: withClose(sync),
+            onClick: withClose(sync),
         },
     ];
 
@@ -222,6 +199,7 @@ export const MenuDropdown: VFC = () => {
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
                         <Submenu submenuIcon="bug" submenuLabel={c('Action').t`Feedback`} linkItems={feedbackLinks} />
+
                         <Submenu
                             submenuIcon="mobile"
                             submenuLabel={c('Action').t`Get mobile apps`}
