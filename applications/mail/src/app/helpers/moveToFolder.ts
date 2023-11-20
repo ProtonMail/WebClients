@@ -1,13 +1,17 @@
 import { c, msgid } from 'ttag';
 
 import { updateSpamAction } from '@proton/shared/lib/api/mailSettings';
+import { TelemetryMailSelectAllEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 import { Api, MailSettings } from '@proton/shared/lib/interfaces';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { SPAM_ACTION } from '@proton/shared/lib/mail/mailSettings';
 import { isUnsubscribable } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
+
+import { isCustomFolder } from 'proton-mail/helpers/labels';
 
 import { Conversation } from '../models/conversation';
 import { Element } from '../models/element';
@@ -251,4 +255,28 @@ export const askToUnsubscribe = async (
 
         return mailSettings.SpamAction;
     }
+};
+
+// Return the labelID if the folder is a system folder, 'custom_folder' otherwise
+export const getCleanedFolderID = (labelID: string, folders: Folder[]) => {
+    return isCustomFolder(labelID, folders) ? 'custom_folder' : labelID;
+};
+
+export const sendSelectAllTelemetryReport = async ({
+    api,
+    sourceLabelID,
+    event,
+}: {
+    api: Api;
+    sourceLabelID: string;
+    event: TelemetryMailSelectAllEvents;
+}) => {
+    void sendTelemetryReport({
+        api: api,
+        measurementGroup: TelemetryMeasurementGroups.mailSelectAll,
+        event,
+        dimensions: {
+            sourceLabelID,
+        },
+    });
 };

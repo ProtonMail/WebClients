@@ -3,8 +3,11 @@ import { useCallback, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { ErrorButton, Prompt, useModalState } from '@proton/components';
+import { ErrorButton, Prompt, useApi, useFolders, useModalState } from '@proton/components';
+import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+
+import { getCleanedFolderID, sendSelectAllTelemetryReport } from 'proton-mail/helpers/moveToFolder';
 
 import { moveAll } from '../../logic/elements/elementsActions';
 import { useAppDispatch } from '../../logic/store';
@@ -32,6 +35,9 @@ const getContent = (destinationLabelID: string) => {
 };
 
 export const useMoveAll = () => {
+    const [folders = []] = useFolders();
+    const api = useApi();
+
     const dispatch = useAppDispatch();
 
     const [modalProps, setModalOpen] = useModalState();
@@ -41,6 +47,18 @@ export const useMoveAll = () => {
     });
 
     const handleSubmit = async () => {
+        // We want to see how much and how the Move all feature is used
+        // For that, we need to know from where the user performed the action
+        // However custom folders have a unique ID, so we return "custom_folder" instead
+        const { SourceLabelID } = actionProps;
+        const cleanedSourceLabelID = getCleanedFolderID(SourceLabelID, folders);
+
+        void sendSelectAllTelemetryReport({
+            api,
+            sourceLabelID: cleanedSourceLabelID,
+            event: TelemetryMailSelectAllEvents.notification_move_to,
+        });
+
         void dispatch(moveAll({ ...actionProps }));
         modalProps.onClose?.();
     };
