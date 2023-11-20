@@ -135,27 +135,6 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 				}
 			}
 		}
-
-		// special redorder feature for four plan case
-		@include media('<=small') {
-			.offer-plan-container {
-				&--mostPopularOnMobile {
-					order: -4;
-				}
-
-				&--secondMostPopularOnMobile {
-					order: -3;
-				}
-
-				&--thirdMostPopularOnMobile {
-					order: -2;
-				}
-
-				&--fourthMostPopularOnMobile {
-					order: -1;
-				}
-			}
-		}
 	}
 
 	// contents of offers
@@ -179,8 +158,19 @@ $amount-size: 34; // should be 36, but don't increase more than 34, otherwise we
 		@include media('<=small') {
 			max-inline-size: none;
 
-			&--mostPopular {
-				// most popular first on mobile
+			&--mostPopularOnMobile {
+				order: -4;
+			}
+
+			&--secondMostPopularOnMobile {
+				order: -3;
+			}
+
+			&--thirdMostPopularOnMobile {
+				order: -2;
+			}
+
+			&--fourthMostPopularOnMobile {
 				order: -1;
 			}
 		}
