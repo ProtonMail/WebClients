@@ -1,15 +1,26 @@
 import { useState } from 'react';
 
-
-
 import { Button } from '@proton/atoms';
-import { BasicModal, Checkbox, Form, Icon, InputFieldTwo, ModalProps, ModalSize, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, Prompt, RadioGroup, Tooltip, useModalState } from '@proton/components';
-
-
+import {
+    BasicModal,
+    Checkbox,
+    Form,
+    Icon,
+    InputFieldTwo,
+    ModalProps,
+    ModalSize,
+    ModalTwo,
+    ModalTwoContent,
+    ModalTwoFooter,
+    ModalTwoHeader,
+    Prompt,
+    RadioGroup,
+    Tooltip,
+    useModalState,
+} from '@proton/components';
 
 import { getTitle } from '../../helpers/title';
 import mdx from './Modal.mdx';
-
 
 export default {
     component: ModalTwo,
@@ -82,7 +93,7 @@ export const Primary = () => {
                             name="selected-shape"
                             onChange={setSize}
                             value={size}
-                            options={['small', 'medium', 'large', 'xlarge', 'full'].map((size) => ({
+                            options={(['small', 'medium', 'large', 'xlarge', 'full'] as const).map((size) => ({
                                 value: size,
                                 label: size,
                             }))}

@@ -175,6 +175,7 @@ const CalendarShareUrlSection = ({ calendar, user, canShare, noTitle }: Props) =
                     onClick={() => updateModal('shareLinkModal', { isOpen: true })}
                     color="norm"
                     disabled={!canShare}
+                    aria-label={c('Action').t`Create a link to share with anyone outside ${BRAND_NAME}`}
                 >
                     {c('Action').t`Create link`}
                 </Button>
