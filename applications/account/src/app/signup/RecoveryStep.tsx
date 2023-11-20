@@ -119,7 +119,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
     };
     return (
         <Main>
-            <Header title={c('Title').t`Save contact details`} onBack={onBack} />
+            <Header title={c('Title').t`Set up a recovery method`} onBack={onBack} />
             <Content>
                 {renderConfirmModal && (
                     <RecoveryConfirmModal
@@ -231,7 +231,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                         disabled={loadingDiscard}
                         className="mt-6"
                     >
-                        {c('Action').t`Save selected`}
+                        {c('Action').t`Save`}
                     </Button>
                     <Button
                         size="large"
