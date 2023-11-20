@@ -2,7 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { bootRequest, syncRequest, wakeupRequest } from '@proton/pass/store/actions/requests';
-import withCacheBlock from '@proton/pass/store/actions/with-cache-block';
+import { withCache } from '@proton/pass/store/actions/with-cache';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import type { EndpointOptions } from '@proton/pass/store/actions/with-receiver';
 import { withReceiver } from '@proton/pass/store/actions/with-receiver';
@@ -14,44 +14,36 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import identity from '@proton/utils/identity';
 
 export const startEventPolling = createAction('events::polling::start');
-export const stopEventPolling = createAction('events::polling::stop', () => withCacheBlock({ payload: {} }));
+export const stopEventPolling = createAction('events::polling::stop');
 
 /* ⚠️ do not cast payload::cache to type `State` in order to avoid circular type
- * refs. Do not cache block `stateSync` if it is for the background store */
+ * refs. Only cache `stateSync` if it is for the background store */
 export const stateSync = createAction('state::sync', (state: any, options?: EndpointOptions) =>
-    pipe(
-        options?.endpoint !== 'background' ? withCacheBlock : identity,
-        withReceiver(options ?? {})
-    )({ payload: { state } })
+    pipe(options?.endpoint === 'background' ? withCache : identity, withReceiver(options ?? {}))({ payload: { state } })
 );
 
-export const cacheRequest = createAction('cache::request');
-export const cacheCancel = createAction('cache::cancel', () => withCacheBlock({ payload: {} }));
+export const cacheRequest = createAction('cache::request', () => withCache({ payload: {} }));
+export const cacheCancel = createAction('cache::cancel');
 
-export const stateDestroy = createAction('state::destroy', () => withCacheBlock({ payload: {} }));
+export const stateDestroy = createAction('state::destroy');
 
 export const wakeupIntent = createAction(
     'wakeup::intent',
     (payload: { status: AppStatus }, receiver: EndpointOptions) =>
-        pipe(
-            withCacheBlock,
-            withReceiver(receiver),
-            withRequest({ id: wakeupRequest(receiver), type: 'start' })
-        )({ payload })
+        pipe(withReceiver(receiver), withRequest({ id: wakeupRequest(receiver), type: 'start' }))({ payload })
 );
 
 export const wakeupSuccess = createAction(
     'wakeup::success',
-    withRequestSuccess((receiver: EndpointOptions) => pipe(withCacheBlock, withReceiver(receiver))({ payload: {} }))
+    withRequestSuccess((receiver: EndpointOptions) => withReceiver(receiver)({ payload: {} }))
 );
 
 export const bootIntent = createAction('boot::intent', () =>
-    pipe(withCacheBlock, withRequest({ id: bootRequest(), type: 'start' }))({ payload: {} })
+    withRequest({ id: bootRequest(), type: 'start' })({ payload: {} })
 );
 
 export const bootFailure = createAction('boot::failure', (error: unknown) =>
     pipe(
-        withCacheBlock,
         withRequest({ id: bootRequest(), type: 'failure' }),
         withNotification({ type: 'error', text: c('Error').t`Unable to boot`, error })
     )({ payload: {}, error })
@@ -60,26 +52,26 @@ export const bootFailure = createAction('boot::failure', (error: unknown) =>
 export const bootSuccess = createAction(
     'boot::success',
     (payload: { userState: SafeUserState; sync: Maybe<SynchronizationResult> }) =>
-        withRequest({ id: bootRequest(), type: 'success' })({ payload })
+        pipe(withCache, withRequest({ id: bootRequest(), type: 'success' }))({ payload })
 );
 
 export const syncIntent = createAction('sync::intent', () =>
-    pipe(withCacheBlock, withRequest({ id: syncRequest(), type: 'start' }))({ payload: {} })
+    withRequest({ id: syncRequest(), type: 'start' })({ payload: {} })
 );
 
 export const syncSuccess = createAction(
     'sync::success',
     withRequestSuccess((payload: SynchronizationResult) =>
-        withNotification({ type: 'info', text: c('Info').t`Successfully synced all vaults` })({ payload })
+        pipe(
+            withCache,
+            withNotification({ type: 'info', text: c('Info').t`Successfully synced all vaults` })
+        )({ payload })
     )
 );
 
 export const syncFailure = createAction(
     'sync::failure',
     withRequestFailure((error: unknown) =>
-        pipe(
-            withCacheBlock,
-            withNotification({ type: 'error', text: c('Error').t`Unable to sync`, error })
-        )({ payload: {} })
+        withNotification({ type: 'error', text: c('Error').t`Unable to sync`, error })({ payload: {} })
     )
 );
