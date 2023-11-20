@@ -4,7 +4,7 @@ import { Provider as ReduxProvider } from 'react-redux';
 import { useNotifications } from '@proton/components/hooks';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
-import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
+import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { INITIAL_SETTINGS } from '@proton/pass/store/reducers/settings';
 import { AppStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -30,7 +30,8 @@ export const StoreProvider: FC = ({ children }) => {
                 getAuthService: () => authService,
                 getAuthStore: () => authStore,
                 getCache: () => getDBCache(authStore.getUserID()!),
-                getEventInterval: () => ACTIVE_POLLING_TIMEOUT,
+                getEventInterval: () =>
+                    document.visibilityState === 'visible' ? ACTIVE_POLLING_TIMEOUT : INACTIVE_POLLING_TIMEOUT,
                 getLocalSettings: async () => INITIAL_SETTINGS,
                 getTelemetry: () => null,
                 onBoot: ({ ok }) => client.current.setStatus(ok ? AppStatus.READY : AppStatus.ERROR),
