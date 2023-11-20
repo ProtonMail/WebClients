@@ -79,7 +79,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         >
                             <DateInput
                                 id={DATE_INPUT_ID}
-                                className="flex-item-fluid"
+                                className="flex-item-fluid h-full"
                                 required
                                 value={start.date}
                                 onChange={handleChangeStartDate}
@@ -125,7 +125,7 @@ const DateTimeRow = ({ model, setModel, displayWeekNumbers, weekStartsOn, endErr
                         >
                             <DateInput
                                 id="event-endDate"
-                                className="flex-item-fluid"
+                                className="flex-item-fluid h-full"
                                 required
                                 value={end.date}
                                 onChange={handleChangeEndDate}
