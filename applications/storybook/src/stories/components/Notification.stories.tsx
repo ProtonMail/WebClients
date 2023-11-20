@@ -64,7 +64,7 @@ export const Basic = () => {
     const BuildYourOwn = () => {
         const [byoExpiration, setByoExpiration] = useState(5000);
         const [byoText, setByoText] = useState('Lorem ipsum');
-        const [byoType, setByoType] = useState(types[0]);
+        const [byoType, setByoType] = useState<(typeof types)[number]>(types[0]);
         const [byoCloseButton, setCloseButton] = useState(true);
 
         const [byoButtonShow, setByoButtonShow] = useState(false);
