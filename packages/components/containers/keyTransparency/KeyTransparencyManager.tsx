@@ -1,8 +1,7 @@
 import { ReactNode, useEffect, useState } from 'react';
 
-import { serverTime } from 'pmcrypto';
-
 import useApiStatus from '@proton/components/hooks/useApiStatus';
+import { serverTime } from '@proton/crypto';
 import { ktSentryReportError } from '@proton/key-transparency/lib';
 import { APP_NAMES, SECOND } from '@proton/shared/lib/constants';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
