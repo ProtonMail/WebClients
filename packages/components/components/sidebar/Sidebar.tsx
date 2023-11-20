@@ -105,6 +105,8 @@ const Sidebar = ({
             <span
                 className={clsx(['used-space text-bold', `color-${getMeterColor(spacePercentage)}`])}
                 style={{ '--signal-success': 'initial' }}
+                // Used by Drive E2E tests
+                data-testid="app-used-space"
             >
                 {humanSize(UsedSpace)}
             </span>
