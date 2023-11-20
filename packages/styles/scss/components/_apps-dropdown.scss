@@ -43,6 +43,7 @@
 		&:active {
 			&[aria-current] {
 				pointer-events: auto;
+				background-color: transparent;
 			}
 		}
 
