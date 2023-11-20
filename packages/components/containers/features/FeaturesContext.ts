@@ -118,6 +118,7 @@ export enum FeatureCode {
     SpotlightGetStartedChecklist = 'SpotlightGetStartedChecklist',
     SpotlightLoadContent = 'SpotlightLoadContent',
     SpotlightScheduledSend = 'SpotlightScheduledSend',
+    SpotlightSnooze = 'SpotlightSnooze',
     SpyTrackerProtectionIncorporator = 'SpyTrackerProtectionIncorporator',
     TrustedDeviceRecovery = 'TrustedDeviceRecovery',
     UnreadFavicon = 'UnreadFavicon',
