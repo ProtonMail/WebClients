@@ -182,7 +182,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
     const handleSetup = async () => {
         const [forwarderAddressKeys, forwardeeKeysConfig] = await Promise.all([
             getAddressKeys(model.addressID),
-            getPublicKeysForInbox({ email: model.forwardeeEmail }),
+            getPublicKeysForInbox({ email: model.forwardeeEmail, lifetime: 0 }),
         ]);
 
         // Abort the setup if e.g. the given address is internal but does not exist
