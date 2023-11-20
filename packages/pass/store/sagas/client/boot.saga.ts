@@ -11,7 +11,9 @@ import {
     bootSuccess,
     getUserAccessSuccess,
     getUserFeaturesSuccess,
+    startEventPolling,
     stateSync,
+    stopEventPolling,
     syncLocalSettings,
 } from '@proton/pass/store/actions';
 import { userAccessRequest, userFeaturesRequest } from '@proton/pass/store/actions/requests';
@@ -34,6 +36,7 @@ import { type User } from '@proton/shared/lib/interfaces';
 type UserData = Omit<SafeUserState, keyof SafeUserAccessState> & { access: SafeUserAccessState };
 
 function* bootUserState(userId: string, state: State) {
+    yield put(stopEventPolling());
     const { plan, waitingNewUserInvites, ...cached } = selectUserState(state);
 
     const { access, ...userState }: UserData = yield all({
@@ -94,6 +97,7 @@ function* bootWorker(options: WorkerRootSagaOptions) {
         yield put(bootSuccess({ sync, userState }));
 
         options.onBoot?.({ ok: true });
+        yield put(startEventPolling());
     } catch (error: unknown) {
         logger.warn('[Saga::Boot]', error);
         yield put(bootFailure(error));
