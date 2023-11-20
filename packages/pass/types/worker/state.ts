@@ -11,8 +11,6 @@ export enum AppStatus {
     UNAUTHORIZED = 'UNAUTHORIZED' /* app is pending login */,
     AUTHORIZED = 'AUTHORIZED' /* user is logged in */,
     LOCKED = 'LOCKED' /* app is locked (session may not) */,
-    RESUMING = 'RESUMING' /* app is trying to resume session */,
-    RESUMING_FAILED = 'RESUMING_FAILED' /* session resuming failed */,
     BOOTING = 'BOOTING' /* app is currently in the boot sequence */,
     READY = 'READY' /* app is authorized and has booted */,
     ERROR = 'ERROR' /* app is in an error state */,
