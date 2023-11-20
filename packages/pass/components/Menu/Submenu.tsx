@@ -13,18 +13,16 @@ import {
     DropdownMenuButtonLabel,
 } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 
-export type SubmenuLinkItem = {
-    url?: string;
-    icon: IconName;
-    label: string;
-    actionTab?: (...args: any[]) => any;
-};
+import { usePassCore } from '../Core/PassCoreProvider';
+import type { MenuItem } from './hooks';
 
-export const Submenu: VFC<{ submenuLabel: string; submenuIcon: IconName; linkItems: SubmenuLinkItem[] }> = ({
+export const Submenu: VFC<{ submenuLabel: string; submenuIcon: IconName; linkItems: MenuItem[] }> = ({
     submenuIcon,
     submenuLabel,
     linkItems,
 }) => {
+    const { onLink } = usePassCore();
+
     return (
         <Collapsible>
             <CollapsibleHeader
@@ -38,12 +36,12 @@ export const Submenu: VFC<{ submenuLabel: string; submenuIcon: IconName; linkIte
                 <DropdownMenuButtonLabel label={submenuLabel} icon={submenuIcon} />
             </CollapsibleHeader>
             <CollapsibleContent as="ul">
-                {linkItems.map((itemLink: SubmenuLinkItem) => (
+                {linkItems.map(({ url, label, icon, onClick }: MenuItem) => (
                     <DropdownMenuButton
-                        onClick={itemLink.url ? () => window.open(itemLink.url, '_blank') : itemLink.actionTab}
-                        key={itemLink.label}
-                        label={itemLink.label}
-                        icon={itemLink.icon}
+                        onClick={url ? () => onLink(url) : onClick}
+                        key={label}
+                        label={label}
+                        icon={icon}
                     />
                 ))}
             </CollapsibleContent>

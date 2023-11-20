@@ -13,7 +13,11 @@ type Props = {
 export const FadeIn: FC<Props> = ({ children, className, duration = 250, delay = 0, style, ...attributes }) => (
     <div
         className={clsx(className, 'anime-fade-in')}
-        style={{ '--anime-duration': `${duration}ms`, '--anime-delay': `${delay}ms`, ...(style ?? {}) }}
+        style={{
+            '--anime-duration': `${duration}ms`,
+            '--anime-delay': `${delay}ms`,
+            ...(style ?? {}),
+        }}
         {...attributes}
     >
         {children}

@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 
 import browser from '@proton/pass/lib/globals/browser';
 
+/* use PassCore::openSettings and remove this */
 export const useOpenSettingsTab = () => {
     return useCallback(async (page?: string) => {
         try {
