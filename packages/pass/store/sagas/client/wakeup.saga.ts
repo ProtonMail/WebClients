@@ -1,9 +1,8 @@
-import { fork, put, select, take, takeEvery } from 'redux-saga/effects';
+import { fork, put, select, takeEvery } from 'redux-saga/effects';
 
+import { clientErrored } from '@proton/pass/lib/client';
 import { filterDeletedTabIds } from '@proton/pass/lib/extension/utils/tabs';
 import {
-    bootIntent,
-    bootSuccess,
     getUserAccessIntent,
     getUserFeaturesIntent,
     stateSync,
@@ -18,7 +17,6 @@ import { withRevalidate } from '@proton/pass/store/actions/with-request';
 import { selectPopupStateTabIds } from '@proton/pass/store/selectors';
 import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
 import type { TabId } from '@proton/pass/types';
-import { AppStatus } from '@proton/pass/types';
 import identity from '@proton/utils/identity';
 
 function* wakeupWorker(
@@ -29,44 +27,25 @@ function* wakeupWorker(
     const loggedIn = getAuth().hasSession();
     const userId = getAuth().getUserID();
 
-    switch (status) {
-        case AppStatus.IDLE:
-        case AppStatus.ERROR: {
-            if (loggedIn) {
-                yield put(bootIntent());
-                yield take(bootSuccess.match);
-            }
-            break;
-        }
-        case AppStatus.BOOTING:
-        case AppStatus.RESUMING: {
-            yield take(bootSuccess.match);
-            break;
-        }
-        default: {
-            break;
-        }
-    }
-
-    /* synchronise the consumer app */
+    /* synchronise the target client app state */
     yield put(stateSync((yield select()) as State, { endpoint, tabId }));
 
-    if (userId) {
+    if (loggedIn && userId && !clientErrored(status)) {
         const maybeRevalidate = endpoint === 'popup' ? withRevalidate : identity;
         yield put(maybeRevalidate(getUserAccessIntent(userAccessRequest(userId))));
         yield put(getUserFeaturesIntent(userFeaturesRequest(userId)));
-    }
 
-    /* garbage collect any stale popup tab
-     * state on each popup wakeup call */
-    if (endpoint === 'popup') {
-        yield put(passwordHistoryGarbageCollect());
+        /* garbage collect any stale popup tab
+         * state on each popup wakeup call */
+        if (endpoint === 'popup') {
+            yield put(passwordHistoryGarbageCollect());
 
-        yield fork(function* () {
-            const tabIds: TabId[] = yield select(selectPopupStateTabIds);
-            const deletedTabIds: TabId[] = yield filterDeletedTabIds(tabIds);
-            yield put(popupTabStateGarbageCollect({ tabIds: deletedTabIds }));
-        });
+            yield fork(function* () {
+                const tabIds: TabId[] = yield select(selectPopupStateTabIds);
+                const deletedTabIds: TabId[] = yield filterDeletedTabIds(tabIds);
+                yield put(popupTabStateGarbageCollect({ tabIds: deletedTabIds }));
+            });
+        }
     }
 
     yield put(wakeupSuccess(meta.request.id, { endpoint, tabId }));
