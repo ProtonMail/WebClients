@@ -20,6 +20,8 @@ type PassCoreContextValue = {
     onLink: (url: string) => void;
     /** Processes a telemetry event */
     onTelemetry: (event: TelemetryEvent) => void;
+    /** Open the settings view at a particular page */
+    openSettings?: (page?: string) => void;
 };
 
 const PassCoreContext = createContext<MaybeNull<PassCoreContextValue>>(null);
