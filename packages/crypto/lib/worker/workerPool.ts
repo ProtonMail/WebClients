@@ -1,5 +1,8 @@
 import { Remote, releaseProxy, transferHandlers, wrap } from 'comlink';
 
+import { getIsNetworkError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+
 import type { Api as CryptoApi, ApiInterface as CryptoApiInterface } from './api';
 import { mainThreadTransferHandlers } from './transferHandlers';
 
@@ -17,6 +20,17 @@ export interface WorkerPoolInterface extends CryptoApiInterface {
      */
     destroy(): Promise<void>;
 }
+
+const networkErrorReporter = (err: Error) => {
+    if (getIsNetworkError(err)) {
+        captureMessage('Network error in crypto worker', {
+            level: 'info',
+            extra: { message: err.message },
+        });
+    }
+
+    throw err;
+};
 
 // Singleton worker pool.
 export const CryptoWorkerPool: WorkerPoolInterface = (() => {
@@ -81,37 +95,38 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
             workerPool = null;
         },
         // @ts-ignore marked as non-callable, unclear why, might be due to a limitation of type Remote
-        encryptMessage: (opts) => getWorker().encryptMessage(opts),
-        decryptMessage: (opts) => getWorker().decryptMessage(opts),
-        decryptMessageLegacy: (opts) => getWorker().decryptMessageLegacy(opts),
+        encryptMessage: (opts) => getWorker().encryptMessage(opts).catch(networkErrorReporter),
+        decryptMessage: (opts) => getWorker().decryptMessage(opts).catch(networkErrorReporter),
+        decryptMessageLegacy: (opts) => getWorker().decryptMessageLegacy(opts).catch(networkErrorReporter),
         // @ts-ignore marked as non-callable, unclear why, might be due to a limitation of type Remote
-        signMessage: (opts) => getWorker().signMessage(opts),
+        signMessage: (opts) => getWorker().signMessage(opts).catch(networkErrorReporter),
         // @ts-ignore marked as non-callable, unclear why, might be due to a limitation of type Remote
         verifyMessage: (opts) => getWorker().verifyMessage(opts),
-        verifyCleartextMessage: (opts) => getWorker().verifyCleartextMessage(opts),
-        processMIME: (opts) => getWorker().processMIME(opts),
-        computeHash: (opts) => getWorker().computeHash(opts),
-        computeHashStream: (opts) => getWorker().computeHashStream(opts),
+        verifyCleartextMessage: (opts) => getWorker().verifyCleartextMessage(opts).catch(networkErrorReporter),
+        processMIME: (opts) => getWorker().processMIME(opts).catch(networkErrorReporter),
+        computeHash: (opts) => getWorker().computeHash(opts).catch(networkErrorReporter),
+        computeHashStream: (opts) => getWorker().computeHashStream(opts).catch(networkErrorReporter),
 
-        generateSessionKey: (opts) => getWorker().generateSessionKey(opts),
-        generateSessionKeyForAlgorithm: (opts) => getWorker().generateSessionKeyForAlgorithm(opts),
-        encryptSessionKey: (opts) => getWorker().encryptSessionKey(opts),
-        decryptSessionKey: (opts) => getWorker().decryptSessionKey(opts),
+        generateSessionKey: (opts) => getWorker().generateSessionKey(opts).catch(networkErrorReporter),
+        generateSessionKeyForAlgorithm: (opts) =>
+            getWorker().generateSessionKeyForAlgorithm(opts).catch(networkErrorReporter),
+        encryptSessionKey: (opts) => getWorker().encryptSessionKey(opts).catch(networkErrorReporter),
+        decryptSessionKey: (opts) => getWorker().decryptSessionKey(opts).catch(networkErrorReporter),
         importPrivateKey: async (opts) => {
             const [first, ...rest] = getAllWorkers();
-            const result = await first.importPrivateKey(opts);
+            const result = await first.importPrivateKey(opts).catch(networkErrorReporter);
             await Promise.all(rest.map((worker) => worker.importPrivateKey(opts, result._idx)));
             return result;
         },
         importPublicKey: async (opts) => {
             const [first, ...rest] = getAllWorkers();
-            const result = await first.importPublicKey(opts);
+            const result = await first.importPublicKey(opts).catch(networkErrorReporter);
             await Promise.all(rest.map((worker) => worker.importPublicKey(opts, result._idx)));
             return result;
         },
         generateKey: async (opts) => {
             const [first, ...rest] = getAllWorkers();
-            const keyReference = await first.generateKey(opts);
+            const keyReference = await first.generateKey(opts).catch(networkErrorReporter);
             const key = await first.exportPrivateKey({ privateKey: keyReference, passphrase: null, format: 'binary' });
             await Promise.all(
                 rest.map((worker) => worker.importPrivateKey({ binaryKey: key, passphrase: null }, keyReference._idx))
@@ -120,31 +135,33 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
         },
         reformatKey: async (opts) => {
             const [first, ...rest] = getAllWorkers();
-            const keyReference = await first.reformatKey(opts);
+            const keyReference = await first.reformatKey(opts).catch(networkErrorReporter);
             const key = await first.exportPrivateKey({ privateKey: keyReference, passphrase: null, format: 'binary' });
             await Promise.all(
                 rest.map((worker) => worker.importPrivateKey({ binaryKey: key, passphrase: null }, keyReference._idx))
             );
             return keyReference;
         },
-        generateE2EEForwardingMaterial: (opts) => getWorker().generateE2EEForwardingMaterial(opts),
-        doesKeySupportE2EEForwarding: async (opts) => getWorker().doesKeySupportE2EEForwarding(opts),
-        isE2EEForwardingKey: async (opts) => getWorker().isE2EEForwardingKey(opts),
+        generateE2EEForwardingMaterial: (opts) =>
+            getWorker().generateE2EEForwardingMaterial(opts).catch(networkErrorReporter),
+        doesKeySupportE2EEForwarding: async (opts) =>
+            getWorker().doesKeySupportE2EEForwarding(opts).catch(networkErrorReporter),
+        isE2EEForwardingKey: async (opts) => getWorker().isE2EEForwardingKey(opts).catch(networkErrorReporter),
 
         replaceUserIDs: async (opts) => {
             await Promise.all(getAllWorkers().map((worker) => worker.replaceUserIDs(opts)));
         },
         cloneKeyAndChangeUserIDs: async (opts) => {
             const [first, ...rest] = getAllWorkers();
-            const keyReference = await first.cloneKeyAndChangeUserIDs(opts);
+            const keyReference = await first.cloneKeyAndChangeUserIDs(opts).catch(networkErrorReporter);
             const key = await first.exportPrivateKey({ privateKey: keyReference, passphrase: null, format: 'binary' });
             await Promise.all(
                 rest.map((worker) => worker.importPrivateKey({ binaryKey: key, passphrase: null }, keyReference._idx))
             );
             return keyReference;
         },
-        exportPublicKey: (opts) => getWorker().exportPublicKey(opts),
-        exportPrivateKey: (opts) => getWorker().exportPrivateKey(opts),
+        exportPublicKey: (opts) => getWorker().exportPublicKey(opts).catch(networkErrorReporter),
+        exportPrivateKey: (opts) => getWorker().exportPrivateKey(opts).catch(networkErrorReporter),
         clearKeyStore: async () => {
             await Promise.all(getAllWorkers().map((worker) => worker.clearKeyStore()));
         },
@@ -152,13 +169,13 @@ export const CryptoWorkerPool: WorkerPoolInterface = (() => {
             await Promise.all(getAllWorkers().map((worker) => worker.clearKey(opts)));
         },
 
-        isExpiredKey: (opts) => getWorker().isExpiredKey(opts),
-        isRevokedKey: (opts) => getWorker().isRevokedKey(opts),
-        canKeyEncrypt: (opts) => getWorker().canKeyEncrypt(opts),
+        isExpiredKey: (opts) => getWorker().isExpiredKey(opts).catch(networkErrorReporter),
+        isRevokedKey: (opts) => getWorker().isRevokedKey(opts).catch(networkErrorReporter),
+        canKeyEncrypt: (opts) => getWorker().canKeyEncrypt(opts).catch(networkErrorReporter),
         getSHA256Fingerprints: (opts) => getWorker().getSHA256Fingerprints(opts),
-        getMessageInfo: (opts) => getWorker().getMessageInfo(opts),
-        getKeyInfo: (opts) => getWorker().getKeyInfo(opts),
-        getSignatureInfo: (opts) => getWorker().getSignatureInfo(opts),
+        getMessageInfo: (opts) => getWorker().getMessageInfo(opts).catch(networkErrorReporter),
+        getKeyInfo: (opts) => getWorker().getKeyInfo(opts).catch(networkErrorReporter),
+        getSignatureInfo: (opts) => getWorker().getSignatureInfo(opts).catch(networkErrorReporter),
         getArmoredKeys: (opts) => getWorker().getArmoredKeys(opts),
         getArmoredSignature: (opts) => getWorker().getArmoredSignature(opts),
         getArmoredMessage: (opts) => getWorker().getArmoredMessage(opts),
