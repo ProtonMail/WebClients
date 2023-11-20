@@ -960,7 +960,9 @@ const Step1 = ({
         }
     };
 
-    const isBlackFriday = options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023;
+    const isBlackFriday =
+        getSubscriptionMapping({ [PLANS.VPN]: 1 })?.mapping[CYCLE.FIFTEEN]?.checkResult.Coupon?.Code ===
+        COUPON_CODES.BLACK_FRIDAY_2023;
 
     const renewalNotice = !hasSelectedFree && (
         <div className="w-full text-sm color-norm opacity-70 text-center">
