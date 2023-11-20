@@ -24,6 +24,8 @@
         "@types/prettier": "^3.0.0",
         "@types/react": "^17.0.70",
         "@types/react-dom": "^17.0.23",
+        "json5": "^2.2.3",
+        "merge": "^2.1.1",
         "rfc2047@^2.0.1": "patch:rfc2047@npm%3A2.0.1#./.yarn/patches/rfc2047-npm-2.0.1-60a2a07c99.patch",
         "safe-buffer": "^5.2.1",
         "terser": "^5.24.0"
