@@ -113,6 +113,8 @@ const CalendarShareSection = ({
         isSettings: true,
     });
 
+    const sectionTitle = c('Calendar settings section title').t`Share with ${BRAND_NAME} users`;
+
     return (
         <SettingsSectionWide className="container-section-sticky-section">
             {renderShareCalendarModal && (
@@ -126,15 +128,14 @@ const CalendarShareSection = ({
                 />
             )}
             <SubSettingsSection title={title} id={CALENDAR_SETTINGS_SECTION_ID.SHARE}>
-                {hasPaidMail ? (
-                    isCalendarSharingEnabled ? (
+                {hasPaidMail &&
+                    (isCalendarSharingEnabled ? (
                         <>
                             <div className="mb-11 mt-6">
                                 <div className="mb-6">
-                                    <h3
-                                        className="text-bold mb-2"
-                                        id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PRIVATELY}
-                                    >{c('Calendar settings section title').t`Share with ${BRAND_NAME} users`}</h3>
+                                    <h3 className="text-bold mb-2" id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PRIVATELY}>
+                                        {sectionTitle}
+                                    </h3>
                                     <SettingsParagraph
                                         learnMoreUrl={getKnowledgeBaseUrl('/share-calendar-with-proton-users')}
                                     >
@@ -146,6 +147,7 @@ const CalendarShareSection = ({
                                             onClick={handleShare}
                                             disabled={isLoading || !canShare || isMaximumMembersReached}
                                             color="norm"
+                                            aria-label={sectionTitle}
                                         >
                                             {c('Action').t`Share`}
                                         </Button>
@@ -170,8 +172,8 @@ const CalendarShareSection = ({
                             user={user}
                             canShare={canShare}
                         />
-                    )
-                ) : (
+                    ))}
+                {!hasPaidMail && (
                     <Card rounded className="mt-4" data-testid="card:upgrade">
                         <div className="flex flex-nowrap flex-align-items-center">
                             <p className="flex-item-fluid my-0 pr-7">
