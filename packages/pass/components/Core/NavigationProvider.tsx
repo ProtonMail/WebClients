@@ -31,10 +31,10 @@ export const NavigationProvider: FC = ({ children }) => {
     const { filters, setFilters } = useFilters();
 
     const navigate = useCallback(
-        (pathname: string, options: NavigateOptions = { mode: 'push', preserveSearch: true }) =>
-            history[options.mode ?? 'push']({
+        (pathname: string, options?: NavigateOptions) =>
+            history[options?.mode ?? 'replace']({
                 pathname,
-                search: options.preserveSearch ? location.search : '',
+                search: options?.preserveSearch ?? true ? location.search : '',
             }),
         []
     );
