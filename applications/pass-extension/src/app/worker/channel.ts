@@ -1,5 +1,5 @@
 import { createMessageBroker } from '@proton/pass/lib/extension/message';
-import { stateCache } from '@proton/pass/store/actions';
+import { cacheRequest } from '@proton/pass/store/actions';
 import { SessionLockStatus, WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -38,7 +38,7 @@ const WorkerMessageBroker = createMessageBroker({
         const hasRegisteredLock = ctx.authStore.getLockStatus() === SessionLockStatus.REGISTERED;
 
         if (isPopup) {
-            store.dispatch(stateCache());
+            store.dispatch(cacheRequest());
             if (hasRegisteredLock) ctx.service.auth.checkLock().catch(noop);
         }
     }),

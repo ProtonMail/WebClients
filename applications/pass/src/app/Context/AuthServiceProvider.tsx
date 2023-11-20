@@ -5,7 +5,7 @@ import { useNotifications } from '@proton/components/hooks';
 import { preserveSearch } from '@proton/pass/components/Core/routing';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
-import { bootIntent, stateDestroy } from '@proton/pass/store/actions';
+import { bootIntent, cacheCancel, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import {
@@ -95,12 +95,16 @@ export const AuthServiceProvider: FC = ({ children }) => {
             },
 
             onUnauthorized: (userID, localID, broadcast) => {
+                store.dispatch(cacheCancel());
+                store.dispatch(stopEventPolling());
+
                 if (broadcast) sw.send({ type: 'unauthorized', localID, broadcast: true });
                 if (userID) void deletePassDB(userID); /* wipe the local DB cache */
 
                 localStorage.removeItem(getSessionKey(localID));
                 client.current.setStatus(AppStatus.UNAUTHORIZED);
                 history.replace('/');
+
                 store.dispatch(stateDestroy());
             },
 
@@ -134,6 +138,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
             },
 
             onSessionLocked: (localID, broadcast) => {
+                store.dispatch(stopEventPolling());
                 client.current.setStatus(AppStatus.LOCKED);
                 if (broadcast) sw.send({ type: 'locked', localID, broadcast: true });
             },
@@ -201,6 +206,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
                  * state and wipe the in-memory store. */
                 setRedirectPath(preserveSearch(location.pathname));
                 client.current.setStatus(AppStatus.IDLE);
+                store.dispatch(stopEventPolling());
                 store.dispatch(stateDestroy());
             }
         };

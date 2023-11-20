@@ -13,6 +13,7 @@ import reportProblem from '@proton/pass/store/sagas/client/report-problem.saga';
 import request from '@proton/pass/store/sagas/client/request-saga';
 import settings from '@proton/pass/store/sagas/client/settings.saga';
 import sync from '@proton/pass/store/sagas/client/sync.saga';
+import events from '@proton/pass/store/sagas/events/events.saga';
 import itemsImport from '@proton/pass/store/sagas/import/import.saga';
 import inviteAccept from '@proton/pass/store/sagas/invites/invite-accept.saga';
 import inviteCreate from '@proton/pass/store/sagas/invites/invite-create.saga';
@@ -50,7 +51,7 @@ export function* rootSaga(options: WorkerRootSagaOptions) {
             aliasOptionsRequest,
             boot,
             cache,
-            // events,
+            events,
             featureFlags,
             inviteAccept,
             inviteCreate,
@@ -79,7 +80,6 @@ export function* rootSaga(options: WorkerRootSagaOptions) {
             shareEditRole,
             shareLeave,
             shareRemoveMember,
-            // signout,
             sync,
             trashDelete,
             trashRestore,
