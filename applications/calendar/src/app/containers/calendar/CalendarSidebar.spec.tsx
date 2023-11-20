@@ -72,8 +72,8 @@ jest.mock('@proton/components/hooks/useAuthentication', () => () => ({}));
 
 jest.mock('@proton/components/hooks/useUser', () => ({
     __esModule: true,
-    default: jest.fn(() => [{ hasPaidMail: true }, false]),
-    useGetUser: jest.fn(() => () => [{ hasPaidMail: true }, false]),
+    default: jest.fn(() => [{ hasPaidMail: true, Flags: {} }, false]),
+    useGetUser: jest.fn(() => () => [{ hasPaidMail: true, Flags: {} }, false]),
 }));
 
 jest.mock('@proton/components/hooks/useSubscribedCalendars', () => ({
