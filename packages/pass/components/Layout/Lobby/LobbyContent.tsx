@@ -12,7 +12,7 @@ import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import './LobbyContent.scss';
 
-const PROMPT_FOR_RELOAD_TIMEOUT = 10_000;
+const ERROR_TIMEOUT = 15_000;
 
 type Props = {
     status: AppStatus;
@@ -30,9 +30,8 @@ export const LobbyContent: VFC<Props> = ({ status, onLogin, onLogout, onRegister
     const canSignOut = clientErrored(status) || locked;
 
     useEffect(() => {
-        let timer: Maybe<NodeJS.Timeout> = stale
-            ? setTimeout(() => setTimeoutError(true), PROMPT_FOR_RELOAD_TIMEOUT)
-            : undefined;
+        setTimeoutError(false);
+        let timer: Maybe<NodeJS.Timeout> = stale ? setTimeout(() => setTimeoutError(true), ERROR_TIMEOUT) : undefined;
         return () => clearTimeout(timer);
     }, [stale]);
 
@@ -58,7 +57,6 @@ export const LobbyContent: VFC<Props> = ({ status, onLogin, onLogout, onRegister
                             switch (status) {
                                 case AppStatus.AUTHORIZED:
                                 case AppStatus.AUTHORIZING:
-                                case AppStatus.RESUMING:
                                     // translator: status message displayed when loading
                                     return c('Info').t`Signing you in`;
                                 case AppStatus.BOOTING:
