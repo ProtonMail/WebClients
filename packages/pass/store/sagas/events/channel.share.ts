@@ -10,7 +10,7 @@ import { getShareLatestEventId } from '@proton/pass/lib/shares/share.requests';
 import {
     itemDeleteSync,
     itemEditSync,
-    itemLastUseTimeUpdated,
+    itemUsedSync,
     shareDeleteSync,
     shareEditSync,
     shareEvent,
@@ -68,7 +68,7 @@ const onShareEvent = (shareId: string) =>
                 })
             ),
             ...(LastUseItems ?? []).map(({ ItemID, LastUseTime }) =>
-                put(itemLastUseTimeUpdated({ shareId, itemId: ItemID, lastUseTime: LastUseTime }))
+                put(itemUsedSync({ shareId, itemId: ItemID, lastUseTime: LastUseTime }))
             ),
         ]);
 

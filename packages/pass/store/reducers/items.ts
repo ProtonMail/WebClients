@@ -21,7 +21,6 @@ import {
     itemEditIntent,
     itemEditSuccess,
     itemEditSync,
-    itemLastUseTimeUpdated,
     itemMoveFailure,
     itemMoveIntent,
     itemMoveSuccess,
@@ -31,6 +30,7 @@ import {
     itemTrashFailure,
     itemTrashIntent,
     itemTrashSuccess,
+    itemUsedSync,
     restoreTrashSuccess,
     shareDeleteSync,
     shareLeaveSuccess,
@@ -200,7 +200,7 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             return fullMerge(state, { [shareId]: { [itemId]: item } });
         }
 
-        if (itemLastUseTimeUpdated.match(action)) {
+        if (itemUsedSync.match(action)) {
             const { shareId, itemId, lastUseTime } = action.payload;
 
             return partialMerge(state, { [shareId]: { [itemId]: { lastUseTime } } });
