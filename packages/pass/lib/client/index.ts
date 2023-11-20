@@ -12,16 +12,10 @@ export const clientReady = oneOf(AppStatus.READY);
 export const clientAuthorized = oneOf(AppStatus.AUTHORIZED);
 export const clientUnauthorized = oneOf(AppStatus.UNAUTHORIZED, AppStatus.LOCKED);
 export const clientLocked = oneOf(AppStatus.LOCKED);
-export const clientErrored = oneOf(AppStatus.ERROR, AppStatus.RESUMING_FAILED);
+export const clientErrored = oneOf(AppStatus.ERROR);
 export const clientStale = oneOf(AppStatus.IDLE);
 
-export const clientBusy = oneOf(
-    AppStatus.IDLE,
-    AppStatus.AUTHORIZED,
-    AppStatus.AUTHORIZING,
-    AppStatus.BOOTING,
-    AppStatus.RESUMING
-);
+export const clientBusy = oneOf(AppStatus.IDLE, AppStatus.AUTHORIZED, AppStatus.AUTHORIZING, AppStatus.BOOTING);
 
 export const clientStatusResolved = or(clientReady, clientUnauthorized, clientErrored);
 export const clientCanBoot = or(clientAuthorized, clientUnauthorized, clientErrored);
