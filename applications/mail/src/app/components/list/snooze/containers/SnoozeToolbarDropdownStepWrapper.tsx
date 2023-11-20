@@ -7,7 +7,10 @@ import { useGetElementsFromIDs } from '../../../../hooks/mailbox/useElements';
 import SnoozeCustomTime from '../components/SnoozeCustomTime';
 import SnoozeDurationSelection from '../components/SnoozeDurationSelection';
 
-export const SnoozeToolbarDropdownStepWrapperProps = { className: 'w-custom h-auto', style: { '--w-custom': '22rem' } };
+export const SnoozeToolbarDropdownStepWrapperProps = {
+    className: 'min-w-custom h-auto',
+    style: { '--min-w-custom': '20rem', width: 'min-content' },
+};
 
 interface Props {
     onClose: () => void;
