@@ -44,6 +44,10 @@ const OrganizationSettingsRouter = ({
         routes: { gateways, setup, domains, orgKeys, users, filter, security },
     } = organizationAppRoutes;
 
+    if (!organizationAppRoutes.available) {
+        return <>{redirect}</>;
+    }
+
     return (
         <Switch>
             {getIsSectionAvailable(gateways) && (
