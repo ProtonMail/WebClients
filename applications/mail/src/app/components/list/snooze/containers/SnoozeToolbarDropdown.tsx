@@ -5,6 +5,7 @@ import { Icon, useModalState } from '@proton/components/components';
 
 import useSnooze from '../../../../hooks/actions/useSnooze';
 import ToolbarDropdown, { DropdownRenderProps } from '../../../toolbar/ToolbarDropdown';
+import SnoozeSpotlight from '../components/SnoozeSpotlight';
 import SnoozeUpsellModal from '../components/SnoozeUpsellModal';
 import SnoozeToolbarDropdownStepWrapper, {
     SnoozeToolbarDropdownStepWrapperProps,
@@ -14,6 +15,14 @@ interface Props {
     labelID: string;
     selectedIDs: string[];
 }
+
+const SnoozeToolbarButonWithSpotlight = () => {
+    return (
+        <SnoozeSpotlight>
+            <Icon className="toolbar-icon" name="clock" />
+        </SnoozeSpotlight>
+    );
+};
 
 const SnoozeToolbarDropdown = ({ selectedIDs }: Props) => {
     const { canSnooze, canUnsnooze, isSnoozeEnabled } = useSnooze();
@@ -28,7 +37,7 @@ const SnoozeToolbarDropdown = ({ selectedIDs }: Props) => {
             <Vr />
             <ToolbarDropdown
                 disabled={!selectedIDs || !selectedIDs.length}
-                content={<Icon className="toolbar-icon" name="clock" />}
+                content={<SnoozeToolbarButonWithSpotlight />}
                 title={c('Title').t`Snooze`}
                 data-testid="toolbar:snooze"
                 hasCaret={false}
