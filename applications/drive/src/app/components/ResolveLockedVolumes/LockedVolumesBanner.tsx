@@ -42,7 +42,11 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
     }, [isReadyForPreparation, prepareVolumesForRestore]);
 
     const StartRecoveryButton = (
-        <InlineLinkButton key="file-recovery-more" onClick={() => showFilesRecoveryModal()}>
+        <InlineLinkButton
+            key="file-recovery-more"
+            onClick={() => showFilesRecoveryModal()}
+            data-testid="recovery-banner:start-recovery-button"
+        >
             {c('Info').t`More`}
         </InlineLinkButton>
     );
@@ -64,7 +68,7 @@ const LockedVolumesBanner = ({ onClose }: Props) => {
 
     return !loading && hasLockedVolumes ? (
         <>
-            <TopBanner className="bg-danger" onClose={onClose}>
+            <TopBanner className="bg-danger" onClose={onClose} data-testid="recovery-banner:main">
                 {hasVolumesForRestore ? recoveryMessage : reactivateMessage}
             </TopBanner>
             {filesRecoveryModal}
