@@ -8,6 +8,7 @@ export enum TelemetryMeasurementGroups {
     accountSignup = 'account.any.signup',
     keyTransparency = 'any.web.key_transparency',
     mailPrivacyDropdown = 'mail.web.privacy_dropdown',
+    mailSelectAll = 'mail.web.select_all',
 }
 
 export enum TelemetrySimpleLoginEvents {
@@ -63,13 +64,23 @@ export enum TelemetryMailEvents {
     privacy_dropdown_opened = 'privacy_dropdown_opened',
 }
 
+export enum TelemetryMailSelectAllEvents {
+    notification_move_to = 'notification_move_to',
+    // The rest will be used soon with the new Select all feature
+    banner_move_to = 'banner_move_to',
+    banner_label_as = 'banner_label_as',
+    banner_mark_as_read = 'banner_mark_as_read',
+    banner_mark_as_unread = 'banner_mark_as_unread',
+}
+
 export type TelemetryEvents =
     | TelemetrySimpleLoginEvents
     | TelemetryCalendarEvents
     | TelemetryAccountSignupBasicEvents
     | TelemetryAccountSignupEvents
     | TelemetryKeyTransparencyErrorEvents
-    | TelemetryMailEvents;
+    | TelemetryMailEvents
+    | TelemetryMailSelectAllEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
