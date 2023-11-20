@@ -216,7 +216,7 @@ END:VEVENT
 END:VCALENDAR`);
     });
 
-    it('reformats date-time properties with "DeutscheBahn format"', () => {
+    it('reformats date-time properties with "Deutsche Bahn format"', () => {
         expect(
             reformatDateTimes(`BEGIN:VCALENDAR
 VERSION:2.0
@@ -231,6 +231,26 @@ VERSION:2.0
 BEGIN:VEVENT
 DTSTART;TZID=Europe/Berlin:20230621T082400
 DTEND;TZID=Europe/Berlin:20230621T165400
+DTSTAMP:20230613T212500Z
+END:VEVENT
+END:VCALENDAR`);
+    });
+
+    it('reformats date properties with "Deutsche Bahn format"', () => {
+        expect(
+            reformatDateTimes(`BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:2023-06-21
+DTEND;VALUE=DATE:2023-06-22
+DTSTAMP:2023-06-13T212500Z
+END:VEVENT
+END:VCALENDAR`)
+        ).toEqual(`BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20230621
+DTEND;VALUE=DATE:20230622
 DTSTAMP:20230613T212500Z
 END:VEVENT
 END:VCALENDAR`);
