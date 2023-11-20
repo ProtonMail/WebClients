@@ -3,7 +3,7 @@ import type { ExportPayload } from '@proton/pass/lib/export/types';
 import { deobfuscateItem } from '@proton/pass/lib/items/item.obfuscation';
 import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
 import { selectShareOrThrow, selectUser } from '@proton/pass/store/selectors';
-import { type VaultShareContent, WorkerMessageType } from '@proton/pass/types';
+import { SessionLockStatus, type VaultShareContent, WorkerMessageType } from '@proton/pass/types';
 import { uint8ArrayToBase64String } from '@proton/shared/lib/helpers/encoding';
 
 import * as config from '../../config';
@@ -50,7 +50,10 @@ export const createExportService = () => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.EXPORT_REQUEST,
-        onContextReady(async (_, { payload }) => {
+        onContextReady(async (ctx, { payload }) => {
+            const lock = await ctx.service.auth.checkLock();
+            if (lock.status === SessionLockStatus.LOCKED) throw Error('Session locked');
+
             const exportData = await getExportData(payload.encrypted);
             const zip = await createExportZip(exportData);
 
