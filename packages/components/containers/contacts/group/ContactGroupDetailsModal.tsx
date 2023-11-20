@@ -87,7 +87,7 @@ const ContactGroupDetailsModal = ({
     const getComposeAction = (recipient: Recipient) => {
         return (
             onCompose && (
-                <div className="group-hover:opacity-100 mr-2">
+                <div className="mr-2">
                     <Tooltip title={c('Action').t`Compose`}>
                         <Button color="weak" shape="ghost" icon onClick={() => handleComposeSingle(recipient)}>
                             <Icon name="pen-square" alt={c('Action').t`Compose`} />
