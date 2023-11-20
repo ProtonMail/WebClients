@@ -7,7 +7,7 @@ import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { CACHE_SALT_LENGTH, getCacheEncryptionKey } from '@proton/pass/lib/crypto/utils/cache.encrypt';
 import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { cacheCancel } from '@proton/pass/store/actions';
-import { isCacheTriggeringAction } from '@proton/pass/store/actions/with-cache-block';
+import { isCachingAction } from '@proton/pass/store/actions/with-cache';
 import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/select-is-optimistic';
 import { reducerMap } from '@proton/pass/store/reducers';
 import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
@@ -63,7 +63,7 @@ function* cacheWorker(action: AnyAction, { getAppState, getAuthStore, setCache }
 }
 
 export default function* watcher(options: WorkerRootSagaOptions) {
-    yield takeLatest(isCacheTriggeringAction, function* (action: AnyAction) {
+    yield takeLatest(isCachingAction, function* (action: AnyAction) {
         const cacheTask: Task = yield fork(cacheWorker, action, options);
 
         yield take(cacheCancel.match);
