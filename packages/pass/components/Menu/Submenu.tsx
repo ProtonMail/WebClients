@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type FC } from 'react';
 
 import type { IconName } from '@proton/components';
 import {
@@ -14,14 +14,25 @@ import {
     DropdownMenuButtonLabel,
 } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import type { MenuItem } from '@proton/pass/hooks/useMenuItems';
+import clsx from '@proton/utils/clsx';
 
-export const Submenu: VFC<{ label: string; icon: IconName; items: MenuItem[] }> = ({ label, icon, items }) => {
+import './Submenu.scss';
+
+type Props = {
+    contentClassname?: string;
+    headerClassname?: string;
+    icon: IconName;
+    items: MenuItem[];
+    label: string;
+};
+
+export const Submenu: FC<Props> = ({ contentClassname, headerClassname, icon, items, label }) => {
     const { onLink } = usePassCore();
 
     return (
-        <Collapsible>
+        <Collapsible className="flex-item-noshrink">
             <CollapsibleHeader
-                className="pl-4 pr-2"
+                className={clsx(headerClassname, 'flex-item-noshrink pl-4 pr-2')}
                 suffix={
                     <CollapsibleHeaderIconButton className="p-0" pill size="small">
                         <Icon name="chevron-down" />
@@ -30,12 +41,11 @@ export const Submenu: VFC<{ label: string; icon: IconName; items: MenuItem[] }> 
             >
                 <DropdownMenuButtonLabel label={label} icon={icon} />
             </CollapsibleHeader>
-            <CollapsibleContent as="ul" className="unstyled mx-2">
+            <CollapsibleContent as="ul" className={clsx(contentClassname, 'unstyled mx-2 my-1')}>
                 {items.map(({ url, label, icon, onClick }: MenuItem) => (
                     <DropdownMenuButton
                         onClick={url ? () => onLink(url) : onClick}
-                        className="pass-vault-submenu-vault-item"
-                        parentClassName="w-full"
+                        parentClassName="w-full pass-submenu--item"
                         key={label}
                         label={label}
                         icon={icon}

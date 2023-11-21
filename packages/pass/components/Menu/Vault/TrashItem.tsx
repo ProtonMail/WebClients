@@ -13,13 +13,14 @@ import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
 import { getVaultOptionInfo } from './utils';
 
 type Props = {
+    dense?: boolean;
     selected: boolean;
     handleTrashEmpty: () => void;
     handleTrashRestore: () => void;
     onSelect: () => void;
 };
 
-export const TrashItem: VFC<Props> = ({ selected, handleTrashRestore, handleTrashEmpty, onSelect }) => {
+export const TrashItem: VFC<Props> = ({ dense, selected, handleTrashRestore, handleTrashEmpty, onSelect }) => {
     const count = useSelector(selectAllTrashedItems).length;
 
     return (
@@ -27,8 +28,8 @@ export const TrashItem: VFC<Props> = ({ selected, handleTrashRestore, handleTras
             label={<CountLabel label={getVaultOptionInfo('trash').label} count={count} />}
             icon="trash"
             onClick={onSelect}
-            className={clsx('pass-vault-submenu-vault-item rounded-lg', selected && 'selected')}
-            parentClassName="w-full"
+            className={clsx(!dense && 'py-2')}
+            parentClassName={clsx('pass-vault-submenu-vault-item w-full', selected && 'selected')}
             style={{
                 '--vault-icon-color': VAULT_COLOR_MAP[VaultColor.COLOR_UNSPECIFIED],
             }}
