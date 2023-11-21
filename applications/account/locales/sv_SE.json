@@ -806,9 +806,6 @@
       "Save ICS file": [
         "Spara ICS-fil"
       ],
-      "Save selected": [
-        "Spara valda"
-      ],
       "Search": [
         "Sök"
       ],
@@ -1323,9 +1320,6 @@
       ],
       "Add ${ plan } for ${ price } per month": [
         "Lägg till ${ plan } för ${ price } per månad"
-      ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "Lägg till ${ plan } till ditt paket genom att prenumerera på 15 månader"
       ],
       "Become a Visionary": [
         "Bli en Visionary"
@@ -5641,6 +5635,11 @@
         "Välj ${ boldExport } för att exportera kalendern som en ICS-fil."
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "Är du säker på att du vill importera en privat nyckel? Att importera en osäkert genererad eller läckt privat nyckel kan skada säkerheten för din e-post.\n\nObservera också att den offentliga nyckeln som motsvarar denna privata nyckel kommer att vara allmänt tillgänglig från vår nyckelserver. Om nyckeln innehåller personliga detaljer (som ditt fullständiga namn) som du inte vill publicera, redigera nyckeln innan du importerar den."
+      ]
+    },
     "Import provider": {
       "Import from ${ provider }": [
         "Importera från ${ provider }"
@@ -8074,6 +8073,9 @@
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
         "En nyckel med samma krypteringsalgoritm finns redan. Att generera en annan nyckel kommer att orsaka långsammare kontoladdning. Är du säker på att du vill fortsätta?"
       ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        "En nyckel med samma krypteringsalgoritm är redan aktiv för denna adress. Att generera en annan nyckel kommer att orsaka långsammare kontoladdning och borttagning av denna nyckel kan orsaka problem. Om du genererar en ny nyckel för att din gamla nyckel är komprometterad, markera den nyckeln som komprometterad. Är du säker på att du vill fortsätta?"
+      ],
       "Generate key": [
         "Generera nyckel"
       ],
@@ -8093,6 +8095,9 @@
     "Key state badge": {
       "Active": [
         "Aktiv"
+      ],
+      "Compromised": [
+        "Komprometterad"
       ],
       "Disabled": [
         "Inaktiverad"
@@ -8324,6 +8329,12 @@
       "Make primary": [
         "Gör primär"
       ],
+      "Mark compromised": [
+        "Markera komprometterad"
+      ],
+      "Mark not compromised": [
+        "Markera ej komprometterad"
+      ],
       "Mark not obsolete": [
         "Markera inte föråldrat"
       ],
@@ -8545,8 +8556,14 @@
       "Composer": [
         "Redigeringsfönster"
       ],
+      "Composer default font/size": [
+        "Redigeringsfönstrets standardtypsnitt/textstorlek"
+      ],
       "Composer mode": [
         "Skrivläge"
+      ],
+      "Composer text direction": [
+        "Redigeringsfönstrets textriktning"
       ],
       "Conditions": [
         "Villkor"
@@ -8713,6 +8730,9 @@
       "End time": [
         "Sluttid"
       ],
+      "End weekday": [
+        "Sista veckodagen"
+      ],
       "Enter password": [
         "Ange lösenord"
       ],
@@ -8724,6 +8744,9 @@
       ],
       "Event notifications": [
         "Händelseaviseringar"
+      ],
+      "Exclude Spam/Trash from All mail": [
+        "Exkludera skräppost/papperskorg från “All e-post“"
       ],
       "Expiration (${ patternExpiration })": [
         "Löper ut (${ patternExpiration })"
@@ -9108,6 +9131,9 @@
       ],
       "Start time": [
         "Starttid"
+      ],
+      "Start weekday": [
+        "Första veckodagen"
       ],
       "Statement": [
         "Uttalande"
@@ -10349,6 +10375,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Få obegränsade alias med SimpleLogin av ${ BRAND_NAME }"
       ],
+      "Snooze messages and get reminded when you want": [
+        "Snooza meddelanden och bli påmind när du vill"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagringsutrymmet delas mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } och ${ DRIVE_APP_NAME }"
       ],
@@ -10362,6 +10391,17 @@
       ],
       "Team management": [
         "Teamhantering"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din provperiod slutar den ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: info": {
@@ -10451,17 +10491,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din provperiod slutar den ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10947,6 +10976,99 @@
       ]
     },
     "Option": {
+      "10th of the month": [
+        "10:e dagen i månaden"
+      ],
+      "11th of the month": [
+        "11:e dagen i månaden"
+      ],
+      "12th of the month": [
+        "12:e dagen i månaden"
+      ],
+      "13th of the month": [
+        "13:e dagen i månaden"
+      ],
+      "14th of the month": [
+        "14:e dagen i månaden"
+      ],
+      "15th of the month": [
+        "15:e dagen i månaden"
+      ],
+      "16th of the month": [
+        "16:e dagen i månaden"
+      ],
+      "17th of the month": [
+        "17:e dagen i månaden"
+      ],
+      "18th of the month": [
+        "18:e dagen i månaden"
+      ],
+      "19th of the month": [
+        "19:e dagen i månaden"
+      ],
+      "1st of the month": [
+        "1:a dagen i månaden"
+      ],
+      "20th of the month": [
+        "20:e dagen i månaden"
+      ],
+      "21st of the month": [
+        "21:e dagen i månaden"
+      ],
+      "22nd of the month": [
+        "22:e dagen i månaden"
+      ],
+      "23rd of the month": [
+        "23:e dagen i månaden"
+      ],
+      "24th of the month": [
+        "24:e dagen i månaden"
+      ],
+      "25th of the month": [
+        "25:e dagen i månaden"
+      ],
+      "26th of the month": [
+        "26:e dagen i månaden"
+      ],
+      "27th of the month": [
+        "27:e dagen i månaden"
+      ],
+      "28th of the month": [
+        "28:e dagen i månaden"
+      ],
+      "29th of the month": [
+        "29:e dagen i månaden"
+      ],
+      "2nd of the month": [
+        "2:a dagen i månaden"
+      ],
+      "30th of the month": [
+        "30:e dagen i månaden"
+      ],
+      "31st of the month": [
+        "31:a dagen i månaden"
+      ],
+      "3rd of the month": [
+        "3:e dagen i månaden"
+      ],
+      "4th of the month": [
+        "4:e dagen i månaden"
+      ],
+      "5th of the month": [
+        "5:e dagen i månaden"
+      ],
+      "6th of the month": [
+        "6:e dagen i månaden"
+      ],
+      "7th of the month": [
+        "7:e dagen i månaden"
+      ],
+      "8th of the month": [
+        "8:e dagen i månaden"
+      ],
+      "9th of the month": [
+        "9:e dagen i månaden"
+      ],
       "Add to existing group": [
         "Lägg till i befintlig grupp"
       ],
@@ -11138,6 +11260,9 @@
       ],
       ".dmg (10.12 or later)": [
         ".dmg (10.12 eller senare)"
+      ],
+      ".exe (64-bit)": [
+        ".exe (64-bitars)"
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (för Fedora/openSUSE)"
@@ -13753,9 +13878,6 @@
       "Revoke certificate": [
         "Återkalla certifikat"
       ],
-      "Save contact details": [
-        "Spara kontaktdetaljer"
-      ],
       "Save time with email filters": [
         "Spara tid med e-postfilter"
       ],
@@ -13800,6 +13922,9 @@
       ],
       "Set organization password": [
         "Ställ in organisationslösenord"
+      ],
+      "Set up a recovery method": [
+        "Ställ in en återställningsmetod"
       ],
       "Set up forwarding": [
         "Ställ in vidarebefordran"
@@ -14280,6 +14405,11 @@
         "Delta i undersökningar för att förbättra ${ BRAND_NAME }-tjänsterna"
       ]
     },
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "När du får ett e-postmeddelande från en annan ${ MAIL_APP_NAME }-användare som inte har betrodda nycklar i dina kontakter, kommer en banner att fråga om du vill aktivera betrodda nycklar."
+      ]
+    },
     "Tooltip sign external messages": {
       "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
         "Signera automatiskt alla dina utgående meddelanden så att användare kan verifiera äktheten av dina meddelanden. Detta görs i kombination med standardinställningarna för PGP som kan konfigureras nedan."
@@ -14350,6 +14480,16 @@
       ],
       "Primary admin": [
         "Primär admin"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "SSO-användare tillhandahållen av din identitetsleverantör"
       ]
     },
     "Validation": {
