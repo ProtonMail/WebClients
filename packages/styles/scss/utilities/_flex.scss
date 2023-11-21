@@ -1,9 +1,5 @@
 @use 'sass:map';
 
-.children-flex > * {
-	display: flex;
-}
-
 .children-items-center > * {
 	align-items: center;
 }
@@ -12,8 +8,6 @@
 	margin-block: auto;
 	align-self: center;
 }
-
-// ----------------------------------------------------------------------------
 
 // Create an empty map to make it reachable outside of loops
 $dummy-map: ();
@@ -123,8 +117,12 @@ $dummy-map: ();
 			flex-grow: 2,
 		),
 
-		grow-0:(
+		grow-0: (
 			flex-grow: 0,
+		),
+
+		grow-custom: (
+			flex-grow: var(--#{'[BPN]' + 'grow-custom'}),
 		),
 
 		shrink: (
@@ -136,7 +134,3 @@ $dummy-map: ();
 		),
 	)
 );
-
-.grow-custom {
-	flex-grow: var(--grow-custom);
-}

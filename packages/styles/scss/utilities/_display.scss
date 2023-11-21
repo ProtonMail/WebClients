@@ -1,3 +1,7 @@
+.children-flex > * {
+	display: flex;
+}
+
 @include responsive-classes(
 	(
 		block: (
