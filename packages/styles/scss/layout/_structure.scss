@@ -4,7 +4,7 @@
 
 /* fix bug on Chrome */
 body {
-	@extend .no-scroll;
+	@extend .overflow-hidden;
 
 	block-size: 100%;
 }
@@ -220,7 +220,7 @@ html,
 	color: var(--text-norm);
 	overflow: auto;
 
-	&.no-scroll {
+	&.overflow-hidden {
 		overflow: hidden;
 	}
 

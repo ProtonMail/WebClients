@@ -15,8 +15,6 @@
 	overflow: overlay;
 }
 
-.mod--hidden,
-.no-scroll,
 .overflow-hidden {
 	overflow: hidden;
 }
@@ -33,7 +31,6 @@
 	float: inline-end;
 }
 
-/* clear floats */
 .clear {
 	clear: both;
 }

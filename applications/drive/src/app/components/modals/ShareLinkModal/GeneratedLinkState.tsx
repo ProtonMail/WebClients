@@ -159,7 +159,7 @@ function GeneratedLinkState({
                             <Input
                                 readOnly
                                 value={url}
-                                className="no-scroll text-ellipsis"
+                                className="overflow-hidden text-ellipsis"
                                 data-testid="sharing-modal-url"
                             />
                         </div>
