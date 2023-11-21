@@ -9,8 +9,10 @@ import {
     ChargeablePaymentParameters,
     PAYMENT_METHOD_TYPES,
     PaymentMethodFlows,
+    PaymentMethodStatus,
     PaymentMethodType,
     PaymentVerificator,
+    SavedPaymentMethod,
     isExistingPaymentMethod,
 } from '../core';
 import { useCard } from './useCard';
@@ -121,6 +123,8 @@ export const usePaymentFacade = (
         coupon,
         flow,
         onMethodChanged,
+        paymentMethods,
+        paymentMethodStatus,
     }: {
         amount: number;
         currency: Currency;
@@ -135,6 +139,8 @@ export const usePaymentFacade = (
         coupon?: string;
         flow: PaymentMethodFlows;
         onMethodChanged?: OnMethodChangedHandler;
+        paymentMethods?: SavedPaymentMethod[];
+        paymentMethodStatus?: PaymentMethodStatus;
     },
     {
         api,
@@ -164,6 +170,8 @@ export const usePaymentFacade = (
             coupon: coupon ?? '',
             flow,
             onMethodChanged,
+            paymentMethods,
+            paymentMethodStatus,
         },
         {
             api,

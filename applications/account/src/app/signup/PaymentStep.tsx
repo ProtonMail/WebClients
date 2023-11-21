@@ -77,12 +77,9 @@ const PaymentStep = ({
                 let type: 'cc' | 'pp';
                 if (source === PAYMENT_METHOD_TYPES.PAYPAL || source === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
                     type = 'pp';
-                } else if (source === PAYMENT_METHOD_TYPES.CARD) {
-                    type = 'cc';
                 } else {
-                    throw new Error('Invalid payment source');
+                    type = 'cc';
                 }
-
                 await onPay(chargeablePaymentParameters.Payment, type);
             });
         },
