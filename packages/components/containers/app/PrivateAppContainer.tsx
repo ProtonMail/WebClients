@@ -18,7 +18,7 @@ const PrivateAppContainer = ({ header, sidebar, children, top, bottom, container
         <div className="flex flex-row flex-nowrap h-full">
             <ElectronDraggeableHeaderWrapper />
             <div
-                className="content-container flex flex-column flex-nowrap no-scroll flex-1 relative"
+                className="content-container flex flex-column flex-nowrap overflow-hidden flex-1 relative"
                 ref={containerRef}
             >
                 {top}

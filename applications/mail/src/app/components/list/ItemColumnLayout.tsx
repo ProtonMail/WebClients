@@ -229,7 +229,7 @@ const ItemColumnLayout = ({
             {showThumbnails && <ItemAttachmentThumbnails attachmentsMetadata={attachmentsMetadata} className="mt-1" />}
 
             {hasLabels && !isCompactView && (
-                <div className="flex flex-nowrap items-center max-w-full no-scroll">
+                <div className="flex flex-nowrap items-center max-w-full overflow-hidden">
                     <div className="item-icons flex shrink-0 flex-nowrap mt-1">
                         <ItemLabels
                             className="ml-2"
@@ -247,7 +247,7 @@ const ItemColumnLayout = ({
                 <>
                     <div
                         className={clsx([
-                            'flex flex-nowrap items-center item-secondline item-es-result max-w-4/5 no-scroll',
+                            'flex flex-nowrap items-center item-secondline item-es-result max-w-4/5 overflow-hidden',
                             isCompactView && 'mb-3',
                         ])}
                         aria-hidden="true"
