@@ -1,3 +1,14 @@
+## Release 5.0.17 — Nov 21st, 2023
+
+### Improvements
+
+-   Fixed an issue where event invitations from the Deutsche Bahn would have the wrong dates due to an invalid format in the ICS file
+-   Updates to your calendar events are now visible in the search results immediately
+
+### Fixes
+
+-   Fixed an issue where certain events imported from the Android Proton Calendar app would not be readable
+
 ## Release 5.0.16 — Nov 1st, 2023
 
 ### New features
