@@ -20,6 +20,7 @@ enum AccountFlag {
     MaintenanceImporter = 'MaintenanceImporter',
     VisionarySignup = 'VisionarySignup',
     DesktopAppUpsellModal = 'DesktopAppUpsellModal',
+    SSOVpnSettings = 'SSOVpnSettings',
 }
 
 enum CalendarFeatureFlag {
