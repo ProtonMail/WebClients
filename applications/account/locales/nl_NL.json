@@ -806,9 +806,6 @@
       "Save ICS file": [
         "ICS-bestand opslaan"
       ],
-      "Save selected": [
-        "Geselecteerde bewaren"
-      ],
       "Search": [
         "Zoeken"
       ],
@@ -1323,9 +1320,6 @@
       ],
       "Add ${ plan } for ${ price } per month": [
         "Voeg ${ plan } toe voor ${ price } per maand"
-      ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "Voeg ${ plan } aan je abonnement toe door te kiezen voor 15 maanden"
       ],
       "Become a Visionary": [
         "Kies voor Visionary"
@@ -3700,7 +3694,7 @@
         "Verificatiefout."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Automatische antwoorden is een betaalde functie. Upgrade naar een betaald account om deze functie te gebruiken."
+        "Automatische antwoorden is een betalende functie. Upgrade naar een betaald account om deze functie te gebruiken."
       ],
       "Calendar cannot be found": [
         "Agenda kan niet gevonden worden"
@@ -3929,7 +3923,7 @@
         "Stel eerst een hersteltelefoonnummer in"
       ],
       "Please set a recovery/notification email first": [
-        "Geef eerst een herstel/notificatie e-mailadres op"
+        "Geef eerst een herstel/notificatie-e-mailadres op"
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
         "Upgrade naar een zakelijk abonnement met meer dan 1 gebruiker om multi-gebruiker ondersteuning te ontvangen"
@@ -5946,7 +5940,7 @@
         "actief"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
-        "Voeg een @pm.me-e-mailadres toe aan uw account. Dit eenvoudige kortere domein staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me.\""
+        "Voeg een @pm.me-e-mailadres toe aan uw account. Dit eenvoudige, kortere domein staat voor \"${ MAIL_APP_NAME } me\" of \"Private Message me.\""
       ],
       "Add a recovery email address": [
         "Voeg een herstel-e-mailadres toe"
@@ -6054,7 +6048,7 @@
         "Iedereen met deze link kan zien of u beschikbaar of bezet bent op uw agenda. Ze zien geen afspraakgegevens, zoals titel, locatie of deelnemers."
       ],
       "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
-        "Iedereen met deze koppeling kan niet synchroniseren of toekomstige updates voor uw agenda krijgen. Als u hen weer toegang wilt geven, moet u een nieuwe link aanmaken."
+        "Iedereen met deze koppeling zal niet meer kunnen synchroniseren of toekomstige updates voor uw agenda krijgen. Als u hen terug toegang wilt geven, moet u een nieuwe link aanmaken."
       ],
       "Are you sure you want to delete this address?": [
         "Weet u zeker dat u dit adres wil verwijderen?"
@@ -6075,7 +6069,7 @@
         "Weet u zeker dat u dit domein wilt verwijderen?"
       ],
       "Are you sure you want to delete this filter?": [
-        "Weet u zeker dat u dit filter wil verwijderen?"
+        "Weet u zeker dat u deze filter wil verwijderen?"
       ],
       "Are you sure you want to delete this folder? All subfolders will also be deleted.": [
         "Weet u zeker dat u deze map wilt verwijderen? Alle onderliggende mappen zullen ook worden verwijderd."
@@ -6660,7 +6654,7 @@
         "Houd deze records in uw DNS voor zolang u DKIM wilt gebruiken."
       ],
       "Key deletion is irreversible!": [
-        "Het verwijderen van een sleutel in onomkeerbaar!"
+        "Het verwijderen van een sleutel is onomkeerbaar!"
       ],
       "Label all imported messages as": [
         "Label alle geïmporteerde berichten als"
@@ -7050,7 +7044,7 @@
         "Vergeet niet om de inloggegevens van de gebruiker met hen te delen."
       ],
       "Remove one of your calendars to join this one": [
-        "Verwijderen één van uw agenda's om lid te worden van deze"
+        "Verwijder één van uw agenda's om lid te worden van deze"
       ],
       "Report link expired": [
         "Rapportlink verstreken"
@@ -7375,7 +7369,7 @@
         "naar ${ product } Business"
       ],
       "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
-        "Om verlies van data te voorkomen, verwijder alleen als u weet wat u doet of een kopie hebt geëxporteerd."
+        "Om dataverlies te vermijden, verwijdert u dit alleen indien u weet waarmee u bezig bent of een geëxporteerde kopie hebt."
       ],
       "To cancel your subscription, please reach out to us.": [
         "Om uw abonnement op te zeggen, neem contact met ons op."
@@ -7426,7 +7420,7 @@
         "Om ${ toAppName } te gebruiken, heeft u een ${ MAIL_APP_NAME }-adres nodig."
       ],
       "To work properly, each filter must contain at least a name and a valid Sieve script. You can ${ link }.": [
-        "Om goed te werken, moet elk filter minstens een naam en een geldig Sieve-script bevatten. U kunt ${ link }."
+        "Om goed te werken, moet elke filter minstens een naam en een geldig Sieve-script bevatten. U kunt ${ link }."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Vul uw account op met credits die u kunt gebruiken om zich aan te melden bij een nieuw plan of uw huidige abonnement te vernieuwen. U krijgt één krediet voor elke ${ i18nCurrency } die u gebruikt."
@@ -7651,10 +7645,10 @@
         "We zijn uw huidig abonnement aan het upgraden naar een verbeterd abonnement dat meer biedt voor dezelfde prijs. U kan uw abonnement niet wijzigen terwijl onze systemen aan het updaten zijn. We sturen u een e-mail wanneer het klaar is."
       ],
       "When disabled, this prevents image files from loading on your device without your knowledge.": [
-        "Indien uitgeschakeld, voorkomt dit dat afbeeldingsbestanden op uw apparaat laden zonder uw informatie."
+        "Indien uitgeschakeld, voorkomt dit dat afbeeldingsbestanden op uw apparaat laden zonder dat u het weet."
       ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
-        "Wanneer notificaties zijn ingeschakeld sturen wij een melding naar uw herstel-e-mailadres als u nieuwe berichten in uw ${ MAIL_APP_NAME } account heeft."
+        "Wanneer notificaties zijn ingeschakeld sturen wij een melding naar uw herstel-e-mailadres als u nieuwe berichten in uw ${ MAIL_APP_NAME }-account heeft."
       ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "U zal tegoed ontvangen om op uw abonnement te gebruiken wanneer zij zich abonneren."
@@ -7678,7 +7672,7 @@
         "Met een versleuteld ${ BRAND_NAME }-adres, kan je gebruik maken van alle ${ BRAND_NAME }-diensten"
       ],
       "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
-        "Met je huidige abonnement kun je alleen berichten ontvangen met je @pm.me-adres. Upgrade om berichten te verzenden en extra adressen aan te maken met @pm.me."
+        "Met je huidige abonnement kunt u met uw @pm.me-adres enkel berichten ontvangen. Upgrade om berichten te verzenden en extra adressen aan te maken met @pm.me."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Zonder activatie kun u nog geen nieuwe gebruikers maken, adressen aan bestaande gebruikers toewijzen of toegang krijgen tot niet-privé gebruikersaccounts."
@@ -7812,7 +7806,7 @@
         "U heeft 100% van uw opslagruimte bereikt. U kunt geen nieuwe e-mails verzenden of ontvangen. ${ freeUpMessage } ${ upgradeLink }"
       ],
       "You should export a backup of this key in case you need to restore data it encrypted.": [
-        "U exporteert best een back-up van deze sleutel voor het geval u de gegevens die het versleutelde wilt herstellen."
+        "U exporteert best een back-up van deze sleutel voor het geval u de gegevens die het versleutelde, wilt herstellen."
       ],
       "You still need to reply to invitations for the host to see your response.": [
         "U moet nog steeds reageren op uitnodigingen om de organisator uw reactie te laten zien."
@@ -8395,7 +8389,7 @@
         "Geautoriseerde adressen"
       ],
       "Allow notifications by email": [
-        "Meldingen van e-mail toestaan"
+        "Meldingen per e-mail toestaan"
       ],
       "Allow recovery by email": [
         "Herstellen via e-mail toestaan"
@@ -8542,7 +8536,7 @@
         "Opstelmodus"
       ],
       "Composer text direction": [
-        "Opstelvenster tekstrichting"
+        "Tekstrichting opstelvenster"
       ],
       "Conditions": [
         "Voorwaarden"
@@ -10360,6 +10354,17 @@
         "Teambeheer"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -10447,17 +10452,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -13182,7 +13176,7 @@
         "Servers toevoegen"
       ],
       "Add Sieve filter": [
-        "Sievefilter toevoegen"
+        "Sieve-filter toevoegen"
       ],
       "Add to allow list": [
         "Toevoegen aan Toegestane Lijst"
@@ -13429,7 +13423,7 @@
         "Agenda verwijderen"
       ],
       "Delete key permanently?": [
-        "Key permanent verwijderen?"
+        "Sleutel permanent verwijderen?"
       ],
       "Delete logs": [
         "Logs wissen"
@@ -13493,7 +13487,7 @@
         "Servers bewerken"
       ],
       "Edit Sieve filter": [
-        "Sieve filter bewerken"
+        "Sieve-filter bewerken"
       ],
       "Edit the list of servers of the gateway": [
         "De lijst van servers van de gateway bewerken"
@@ -13824,9 +13818,6 @@
       "Revoke certificate": [
         "Certificaat intrekken"
       ],
-      "Save contact details": [
-        "Bewaar contactgegevens"
-      ],
       "Save time with email filters": [
         "Bespaar tijd met e-mailfilters"
       ],
@@ -13918,10 +13909,10 @@
         "SMTP-indiening"
       ],
       "Sort folders alphabetically": [
-        "Sorteer mappen alfabetisch"
+        "Mappen alfabetisch sorteren"
       ],
       "Sort labels alphabetically": [
-        "Sorteer labels alfabetisch"
+        "Labels alfabetisch sorteren"
       ],
       "Spam, block, and allow lists": [
         "Spam, blokkeer en accepteer lijsten"

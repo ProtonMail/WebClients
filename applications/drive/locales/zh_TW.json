@@ -250,9 +250,6 @@
       "Download apps": [
         "下載應用程式"
       ],
-      "Download Drive for Windows": [
-        "於Windows下載雲端磁碟"
-      ],
       "Drive Locked": [
         "雲端硬碟已上鎖"
       ],
@@ -505,6 +502,9 @@
       "Report a problem": [
         "回報問題"
       ],
+      "Report an issue": [
+        "回報問題"
+      ],
       "Request a feature": [
         "提出新功能建議"
       ],
@@ -628,6 +628,9 @@
       "Skip verification": [
         "略過驗證"
       ],
+      "Start": [
+        "開始"
+      ],
       "Start import": [
         "開始匯入"
       ],
@@ -704,9 +707,6 @@
         "仍要上載"
       ],
       "Upload file": [
-        "上載檔案"
-      ],
-      "Upload files": [
         "上載檔案"
       ],
       "Upload folder": [
@@ -861,6 +861,11 @@
       ],
       "Premium Password Manager": [
         "進階版密碼管理器"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 天退款保障"
       ]
     },
     "bf2023: Tooltip": {
@@ -2579,6 +2584,11 @@
         "(無標題)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks }失敗"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB 的總儲存空間"
@@ -3267,9 +3277,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "您確定要從垃圾桶中永久刪除已所選取的項目嗎？"
       ],
-      "As soon as you have photos or videos on your device, they will appear here.": [
-        "一旦您的裝置上有照片或影片，它們就會在此處出現。"
-      ],
       "Attention required": [
         "需要您的處理"
       ],
@@ -3432,9 +3439,6 @@
       "Emails are automatically signed": [
         "電子郵件已自動簽章"
       ],
-      "Enable drive search": [
-        "啟用 Drive 搜尋"
-      ],
       "Enabling drive search": [
         "正在啟用硬碟搜尋"
       ],
@@ -3534,9 +3538,6 @@
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "了解 ${ DRIVE_APP_NAME } 並獲得您的 500 MB 儲存空間獎勵！今天就行動。"
       ],
-      "Go ahead, upload a file": [
-        "來吧，上載檔案"
-      ],
       "Go to \"My files\" and upload some files first.": [
         "請先前往「我的檔案」，並上載一些檔案。"
       ],
@@ -3602,9 +3603,6 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "垃圾桶中的項目都將保留在此處，直到您將它們永久刪除為止"
-      ],
-      "It’s as easy as drag and drop or selecting files": [
-        "就像拖放或選取檔案一樣簡單"
       ],
       "It’s easy and secure": [
         "既簡單又安全"
@@ -3695,9 +3693,6 @@
       ],
       "No group found": [
         "未找到群組"
-      ],
-      "No photos yet": [
-        "尚無照片"
       ],
       "No results found": [
         "找不到相符的結果"
@@ -3837,6 +3832,9 @@
       "Restore is in progress. This can take a few seconds.": [
         "還原進行中。這可能需要幾秒鐘。"
       ],
+      "Restore Photos": [
+        "復原圖片"
+      ],
       "Restored files ${ formattedDate }": [
         "已還原的檔案 ${ formattedDate }"
       ],
@@ -3845,6 +3843,9 @@
       ],
       "Search Enabled": [
         "搜尋已啟用"
+      ],
+      "Select a folder to move to.": [
+        "選擇要移動至的資料夾。"
       ],
       "Select all items for": [
         "選取全部項目"
@@ -3912,12 +3913,6 @@
       "Swiss encrypted file storage": [
         "瑞士的加密檔案儲存空間"
       ],
-      "Sync folders from your computer": [
-        "從電腦同步資料夾"
-      ],
-      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "透過電腦同步的應用程式同步資料夾，以確保檔案為最新狀態且隨時隨地皆可使用"
-      ],
       "Temporarily unavailable. Please check back later.": [
         "暫時無法使用，請稍後再試。"
       ],
@@ -3938,9 +3933,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "目前仍有檔案等候傳輸，關閉傳輸管理員將會終止所有操作。"
-      ],
-      "There are no files yet": [
-        "目前還沒有任何檔案"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "此帳號可能因違反政策而遭停用。"
@@ -5317,11 +5309,6 @@
         "名稱"
       ]
     },
-    "Platform": {
-      "Windows": [
-        "Windows"
-      ]
-    },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contacts successfully exported.": [
         "${ countContacts } 位聯絡人之中，有 ${ contactsExported.length } 位已成功匯出。"
@@ -6072,6 +6059,9 @@
       ],
       "Discard changes?": [
         "捨棄變更？"
+      ],
+      "Download ${ date }.zip": [
+        "下載${ date }zip"
       ],
       "Download unverified file?": [
         "要下載未驗證的檔案嗎？"

@@ -658,9 +658,6 @@
       "Add ${ plan } for ${ price } per month": [
         "დაამატეთ ${ plan } თვეში ${ price }-ად"
       ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "დაამატეთ ${ plan } თქვენს ტარიფს, 15 თვით გამოწერით"
-      ],
       "Cancel": [
         "გაუქმება"
       ],
@@ -7330,6 +7327,16 @@
       ],
       "Primary admin": [
         "ძირითადი ადმინისტრატორი"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "თქვენი იდენტიფიკატორების მომწოდებლის მიერ გამოყოფილი SSO მომხმარებელი"
       ]
     },
     "Validation": {

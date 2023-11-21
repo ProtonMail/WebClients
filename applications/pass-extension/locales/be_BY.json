@@ -131,11 +131,20 @@
       "Delete vault": [
         "Выдаліць сховішча"
       ],
+      "Disable autosave on this website": [
+        "Адключыць аўтазахаванне на гэтым сайце"
+      ],
       "Discard": [
         "Адхіліць"
       ],
       "Dismiss": [
         "Закрыць"
+      ],
+      "Do not show on this website": [
+        "Не паказваць на гэтым сайце"
+      ],
+      "Do not suggest on this website": [
+        "Не прапаноўваць на гэтым сайце"
       ],
       "Done": [
         "Гатова"
@@ -275,6 +284,9 @@
       "Reload extension": [
         "Перазагрузіць пашырэнне"
       ],
+      "Remove": [
+        "Выдаліць"
+      ],
       "Remove access": [
         "Выдаліць доступ"
       ],
@@ -401,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Спіс даменаў, дзе некаторыя функцыі ў праграме ${ PASS_SHORT_APP_NAME } (аўтазапаўненне, аўтапрапанова, аўтазахаванне) могуць не працаваць."
+      "A checked box means the feature is disabled.": [
+        "Сцяжок азначае, што функцыя адключана."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Спіс даменаў, дзе некаторыя функцыі ў праграме ${ PASS_SHORT_APP_NAME } (аўтазапаўненне, аўтапрапанова, аўтазахаванне) могуць не працаваць.${ infoText }"
       ]
     },
     "Error": {
@@ -410,7 +425,7 @@
         "Не атрымалася прааналізаваць файл ${ provider }. ${ errorDetail }"
       ],
       "Alias options could not be resolved": [
-        "Немагчыма вызначыць параметры псеўданіма"
+        "Не атрымалася вызначыць параметры псеўданіма"
       ],
       "Authentication error": [
         "Памылка аўтэнтыфікацыі"
@@ -497,7 +512,7 @@
         "Збой перадачы права ўласнасці гэтага сховішча"
       ],
       "File could not be parsed": [
-        "Немагчыма прааналізаваць файл"
+        "Не атрымалася прааналізаваць файл"
       ],
       "Import failed for vault \"${ vaultData.name }\" : ${ description }": [
         "Збой імпартавання для сховішча \"${ vaultData.name }\" : ${ description }"
@@ -608,7 +623,7 @@
         "Збой стварэння сховішча \"${ payload.content.name }\""
       ],
       "Vault \"${ vaultData.name }\" could not be created": [
-        "Немагчыма стварыць сховішча \"${ vaultData.name }\""
+        "Не атрымалася стварыць сховішча \"${ vaultData.name }\""
       ],
       "Vault name does not match": [
         "Назва сховішча не супадае"
@@ -705,6 +720,9 @@
         "${ memberCount } удзельнікаў",
         "${ memberCount } удзельнікаў"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } будзе адлюстроўваць элемент піктаграмы сайта праз проксі-сервер ананімнага відарыса ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } імпартуе толькі запісы ўваходу, нататкі і крэдытныя карткі."
       ],
@@ -764,6 +782,9 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Усе элементы з \"${ payload.content.name }\" паспяхова перамешчаны"
+      ],
+      "All trashed items permanently deleted": [
+        "Усе элементы са сметніцы незваротна выдалены"
       ],
       "All trashed items successfully restored": [
         "Усе выдаленыя элементы паспяхова адноўлены"
@@ -936,6 +957,9 @@
       "Loading": [
         "Загрузка"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Загрузка ${ PASS_APP_NAME }"
+      ],
       "Loading...": [
         "Загрузка..."
       ],
@@ -950,6 +974,9 @@
       ],
       "Multiple vaults": [
         "Некалькі сховішчаў"
+      ],
+      "Never": [
+        "Ніколі"
       ],
       "No login found": [
         "Запіс уваходу не знойдзены"
@@ -1059,11 +1086,14 @@
       "Thank you, the problem has been reported": [
         "Дзякуй, што паведамілі аб праблеме"
       ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Выпадное меню аўтазапаўнення будзе аўтаматычна адкрывацца пры націску або навядзенні на поле."
+      ],
       "The following ${ result.ignored.length } item could not be imported:": [
-        "Наступны ${ result.ignored.length } элемент немагчыма імпартаваць:",
-        "Наступныя ${ result.ignored.length } элементы немагчыма імпартаваць:",
-        "Наступныя ${ result.ignored.length } элементаў немагчыма імпартаваць:",
-        "Наступныя ${ result.ignored.length } элементаў немагчыма імпартаваць:"
+        "Не атрымалася імпартаваць наступны ${ result.ignored.length } элемент:",
+        "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементы:",
+        "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементаў:",
+        "Не атрымалася імпартаваць наступныя ${ result.ignored.length } элементаў:"
       ],
       "The text you're trying to paste is longer than the maximum allowed length of ${ maxLength } characters.": [
         "Тэкст, які вы спрабуеце ўставіць перавышае максімальную даўжыню. Дазволена сімвалаў: ${ maxLength }."
@@ -1199,6 +1229,9 @@
       "15 minutes": [
         "15 хвілін"
       ],
+      "2FA secret key (TOTP)": [
+        "Сакрэтны ключ 2ФА (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "Токен 2ФА (TOTP)"
       ],
@@ -1246,6 +1279,9 @@
       ],
       "Autofill 2FA": [
         "Аўтазапаўненне 2ФА"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Аўтаматычна адкрываць аўтазапаўненне пры навядзенні на поле ўваходу"
       ],
       "Autosave": [
         "Аўтазахаванне"
@@ -1582,6 +1618,9 @@
       "Hyphens": [
         "Злучкі"
       ],
+      "Memorizable Password": [
+        "Запамінальны пароль"
+      ],
       "Numbers": [
         "Лічбы"
       ],
@@ -1602,6 +1641,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Дадаць сакрэтны ключ 2ФА"
+      ],
       "Add hidden text": [
         "Дадаць схаваны тэкст"
       ],
@@ -1708,6 +1750,9 @@
       "Discard changes?": [
         "Адхіліць змены?"
       ],
+      "Email": [
+        "Электронная пошта"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Падабаецца ${ PASS_APP_NAME }?"
       ],
@@ -1735,6 +1780,9 @@
       "Leave vault ?": [
         "Выйсці са сховішча?"
       ],
+      "Log in as...": [
+        "Выконваецца ўваход ад імя..."
+      ],
       "Low disk space": [
         "Недастаткова месца на дыску"
       ],
@@ -1746,6 +1794,9 @@
       ],
       "Our welcome gift to you": [
         "Наш прывітальны падарунак для вас"
+      ],
+      "Password": [
+        "Пароль"
       ],
       "Pending access to the shared data": [
         "Чаканне доступу да абагуленых даных"
@@ -1963,6 +2014,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Ваш тарыфны план дазваляе аўтазапаўненне толькі з першых двух сховішчаў"
+      ],
+      "Your session could not be authorized.": [
+        "Не атрымалася аўтарызаваць ваш сеанс."
+      ],
+      "Your session could not be resumed.": [
+        "Не атрымалася ўзнавіць ваш сеанс."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Ваш сеанс неактыўны. Увайдзіце ў сістэму паўторна."
+      ],
+      "Your session was locked.": [
+        "Ваш сеанс быў заблакіраваны."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша першае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."

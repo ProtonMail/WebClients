@@ -131,11 +131,20 @@
       "Delete vault": [
         "Elimina cassaforte"
       ],
+      "Disable autosave on this website": [
+        "Disabilita il salvataggio automatico su questo sito web"
+      ],
       "Discard": [
         "Scarta"
       ],
       "Dismiss": [
         "Ignora"
+      ],
+      "Do not show on this website": [
+        "Non mostrare su questo sito"
+      ],
+      "Do not suggest on this website": [
+        "Non suggerire su questo sito"
       ],
       "Done": [
         "Fatto"
@@ -275,6 +284,9 @@
       "Reload extension": [
         "Ricarica estensione"
       ],
+      "Remove": [
+        "Rimuovi"
+      ],
       "Remove access": [
         "Rimuovi accesso"
       ],
@@ -360,7 +372,7 @@
         "Effettua l'upgrade ora"
       ],
       "Upgrade now to share with more people": [
-        "Effettua l’upgrade ora per condividere con più persone"
+        "Effettua l'upgrade ora per condividere con più persone"
       ],
       "Write us on Reddit": [
         "Scrivici su Reddit"
@@ -401,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Elenco di domini in cui alcune funzioni automatiche in ${ PASS_SHORT_APP_NAME } (Compilazione automatica, Suggerimento automatico, Salvataggio automatico) non dovrebbero essere eseguite."
+      "A checked box means the feature is disabled.": [
+        "Una casella selezionata significa che la funzione è disabilitata."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Lista di domini dove alcune funzioni automatiche di ${ PASS_SHORT_APP_NAME } (Compilazione automatica, Suggerimento automatico, Salvataggio automatico) non dovrebbero essere eseguite. ${ infoText }"
       ]
     },
     "Error": {
@@ -685,6 +700,9 @@
         "${ memberCount } membro",
         "${ memberCount } membri"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } mostrerà la favicon dell'elemento tramite il proxy per le immagini anonimizzato di ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importerà solamente i login, le note e le carte di credito."
       ],
@@ -736,6 +754,9 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Tutti gli elementi di \"${ payload.content.name }\" spostati con successo"
+      ],
+      "All trashed items permanently deleted": [
+        "Tutti gli elementi nel cestino sono stati eliminati definitivamente"
       ],
       "All trashed items successfully restored": [
         "Tutti gli elementi nel cestino sono stati ripristinati correttamente"
@@ -904,6 +925,9 @@
       "Loading": [
         "Caricamento in corso"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Caricamento di ${ PASS_APP_NAME } in corso"
+      ],
       "Loading...": [
         "Caricamento in corso..."
       ],
@@ -918,6 +942,9 @@
       ],
       "Multiple vaults": [
         "Molteplici casseforti"
+      ],
+      "Never": [
+        "Mai"
       ],
       "No login found": [
         "Nessun login trovato"
@@ -1026,6 +1053,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Grazie, il problema è stato segnalato"
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Il menu di compilazione automatica si aprirà automaticamente quando clicchi o selezioni il campo."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Impossibile importare il seguente ${ result.ignored.length } elemento:",
@@ -1159,6 +1189,9 @@
       "15 minutes": [
         "15 minuti"
       ],
+      "2FA secret key (TOTP)": [
+        "Chiave segreta 2FA (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "Token 2FA (TOTP)"
       ],
@@ -1206,6 +1239,9 @@
       ],
       "Autofill 2FA": [
         "Compilazione automatica 2FA"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Apri automaticamente la compilazione automatica quando è selezionato un campo di accesso"
       ],
       "Autosave": [
         "Salvataggio automatico"
@@ -1542,6 +1578,9 @@
       "Hyphens": [
         "Trattini"
       ],
+      "Memorizable Password": [
+        "Password facile da ricordare"
+      ],
       "Numbers": [
         "Numeri"
       ],
@@ -1562,6 +1601,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Aggiungi chiave segreta 2FA"
+      ],
       "Add hidden text": [
         "Aggiungi testo nascosto"
       ],
@@ -1666,6 +1708,9 @@
       "Discard changes?": [
         "Annullare le modifiche?"
       ],
+      "Email": [
+        "Email"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Ti piace ${ PASS_APP_NAME }?"
       ],
@@ -1693,6 +1738,9 @@
       "Leave vault ?": [
         "Abbandonare la cassaforte?"
       ],
+      "Log in as...": [
+        "Effettua l'accesso come..."
+      ],
       "Low disk space": [
         "Spazio su disco insufficiente"
       ],
@@ -1704,6 +1752,9 @@
       ],
       "Our welcome gift to you": [
         "Il nostro regalo di benvenuto per te"
+      ],
+      "Password": [
+        "Password"
       ],
       "Pending access to the shared data": [
         "Accesso ai dati condivisi in attesa"
@@ -1919,6 +1970,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Il tuo piano ti consente la compilazione automatica solamente dalle prime due casseforti"
+      ],
+      "Your session could not be authorized.": [
+        "Impossibile autorizzare la tua sessione."
+      ],
+      "Your session could not be resumed.": [
+        "Impossibile riprendere la tua sessione."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "La tua sessione non è attiva. Effettua nuovamente l'accesso."
+      ],
+      "Your session was locked.": [
+        "La tua sessione è stata bloccata."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Il tuo abbonamento non ti consente di creare più casseforti. Tutti gli elementi verranno importati nella tua prima cassaforte. Per importare in più casseforti, effettua l'upgrade del tuo abbonamento."

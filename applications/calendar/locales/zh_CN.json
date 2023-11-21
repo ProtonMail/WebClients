@@ -306,6 +306,12 @@
       "Import from .csv or vCard": [
         "从 .csv 或 vCard 导入"
       ],
+      "Import from Google": [
+        "从 Google 导入"
+      ],
+      "Import from Outlook": [
+        "从 Outlook 导入"
+      ],
       "Join calendar": [
         "加入日历"
       ],
@@ -782,6 +788,9 @@
       "3 TB": [
         "3 TB"
       ],
+      "3,000+ servers across 65+ countries": [
+        "遍布超过65个国家/地区的3000多台服务器"
+      ],
       "6 users": [
         "6 位用户"
       ],
@@ -796,14 +805,43 @@
       ],
       "High speed streaming": [
         "高速看视频"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "高级 ${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 账户"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "高级 ${ VPN_SHORT_APP_NAME } 账户"
       ]
     },
     "bf2023: Footer": {
       "Discounts are based on standard monthly pricing.": [
         "折扣基于标准月费计算。"
+      ],
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "您的订阅将在到期后以标准优惠价自动续订。"
+      ]
+    },
+    "bf2023: Offers": {
+      "30-day money-back guarantee": [
+        "30 天退款保证"
       ]
     },
     "bf2023: Tooltip": {
+      "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
+        "随时随地畅享 Netflix、Disney+、Prime Video 等精彩内容。"
+      ],
+      "Bypass local internet blocks and censorship with our global network of servers.": [
+        "通过我们遍布全球的服务器网络规避运营商和政府审查。"
+      ],
+      "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
+        "支持 1 个自有域名、10 个邮箱地址、10 个 Hide-my-email 邮箱别名、日程共享等功能。"
+      ],
+      "Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "使用加密的云存储保护您的文件。包括版本历史记录、加密文件共享等。"
+      ],
+      "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
+        "完善的 NetShield 机制能够屏蔽广告、追踪脚本和恶意软件，增强设备安全性，提升网络性能."
+      ],
       "Storage space is shared across all ${ BRAND_NAME } apps.": [
         "所有 ${ BRAND_NAME } 服务共用同一存储空间。"
       ]
@@ -2949,6 +2987,12 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "高级 ${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 账户"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "高级 ${ VPN_SHORT_APP_NAME } 账户"
+      ],
       "Up to 6 users": [
         "多达 6 位用户"
       ]
@@ -3086,6 +3130,9 @@
       ],
       "Megabytes": [
         "MB"
+      ],
+      "Terabytes": [
+        "TB"
       ]
     },
     "Filter notification": {
@@ -5028,6 +5075,9 @@
       ],
       "Contact group updated": [
         "群组已更改"
+      ],
+      "Link copied to clipboard": [
+        "链接已复制到剪贴板"
       ]
     },
     "Notification in holidays calendar modal": {
@@ -5776,14 +5826,23 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } months": [
+        "${ n } 月"
+      ],
       "/ month": [
         "/ 月"
       ],
       "1 year": [
         "一年"
       ],
+      "15 months": [
+        "15 个月"
+      ],
       "2 years": [
         "两年"
+      ],
+      "30 months": [
+        "30 个月"
       ],
       "Billed at ${ amount } for 1 month": [
         "一个月的费用为${ amount }"
@@ -6055,6 +6114,11 @@
     "Success notification when user send feedback": {
       "Feedback sent": [
         "反馈已发送"
+      ]
+    },
+    "summer2023: Deal details": {
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "高级 ${ MAIL_SHORT_APP_NAME } 与 ${ CALENDAR_SHORT_APP_NAME } 账户"
       ]
     },
     "summer2023: Tooltip": {

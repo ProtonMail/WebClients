@@ -206,6 +206,9 @@
       "Invite user": [
         "यूज़र को न्योता भेजें"
       ],
+      "Keep my Plus subscription": [
+        "मेरा प्लस सब्सक्रिप्शन रखें"
+      ],
       "Load more": [
         "और लोड करें"
       ],
@@ -484,6 +487,27 @@
     "Alter": {
       "This will disconnect all the routers and clients using this certificate.": [
         "ये इस प्रमाण का इस्तेमाल करने वाले सारे राऊटर और क्लाइंट का कनेक्शन तोड़ देगा।"
+      ]
+    },
+    "bf2023: Footer": {
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "आपकी सदस्यता आपके बिलिंग चक्र के अंत में मानक रियायती दर और अवधि पर स्वचालित रूप से नवीनीकृत हो जाएगी"
+      ]
+    },
+    "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "${ discountedPrice } की विशेष रियायती कीमत ${ discountedMonths } के लिए मान्य है। फिर इसे ${ nextMonths } के लिए ${ nextPrice } की रियायती कीमत पर स्वचालित रूप से नवीनीकृत किया जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "${ discountedPrice } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ nextPrice } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 65+ देशों में 3,000+ सर्वर, उच्चतम वीपीएन गति, दुनिया भर में स्ट्रीमिंग सेवाओं तक पहुंच, मैलवेयर और विज्ञापन-अवरोधक, तेज़ बिटटोरेंट डाउनलोड और बहुत कुछ शामिल है।"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "अपने ईमेल और शेड्यूल को एंड-टू-एंड एन्क्रिप्शन के साथ सुरक्षित करें। इसमें कस्टम ईमेल डोमेन, 15 ईमेल पते, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण और बहुत कुछ के लिए समर्थन शामिल है।"
       ]
     },
     "Billing cycle option": {
@@ -1856,6 +1880,9 @@
     "familyOffer_2023:Info": {
       "*Only one free trial per user.": [
         "*हर यूज़र पे सिर्फ एक मुफ्त ट्रायल।"
+      ],
+      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
+        "डिफ़ॉल्ट रूप से हम व्यवस्थापक खाते को ${ formattedStorage } संग्रहण सौंपते हैं। आप बाद में अतिरिक्त उपयोगकर्ताओं के बीच वितरित करने के लिए निर्दिष्ट संग्रहण का प्रबंधन कर सकते हैं।"
       ]
     },
     "familyOffer_2023:Label": {
@@ -1867,6 +1894,11 @@
       ],
       "Family name": [
         "परिवार नाम"
+      ]
+    },
+    "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "यह आपके संगठन से जुड़े सभी उप-उपयोगकर्ताओं, खातों और डेटा को स्थायी रूप से हटा देगा।"
       ]
     },
     "familyOffer_2023:Success": {
@@ -2058,6 +2090,9 @@
       "(1-2 emails per month)": [
         "(प्रति माह 1-2 ईमेल)"
       ],
+      "(2-4 emails per year)": [
+        "(प्रति वर्ष 2-4 ईमेल)"
+      ],
       "(during your first month)": [
         "(आपके पहले महीने में)"
       ]
@@ -2167,6 +2202,9 @@
       ],
       "${ vpnPlus } required for Secure Core feature.": [
         "Secure Core सुविधा के लिए ${ vpnPlus } चाहिए।"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice }/महीना)"
       ],
       "+${ bonusSpace } bonus storage": [
         "+${ bonusSpace } बोनस भंडारण"
@@ -2514,6 +2552,9 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "आपका उपकरण नहीं है? साइन इन करने के लिए एक निजी ब्राउज़िंग विंडो का उपयोग करें और हो जाने पर इसे बंद कर दें। ${ learnMore }"
       ],
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "आपके द्वारा असाइन करने का प्रयास किए जाने वाले समर्पित सर्वरों की संख्या (${ addedCount }) आपके प्लान में अभी भी उपलब्ध (${ remainingCount }) से अधिक है क्योंकि आपके पास ${ ownedCount } है और आप पहले से ही ${ usedCount } का उपयोग करते हैं।"
+      ],
       "of": [
         "का"
       ],
@@ -2742,6 +2783,9 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "यह आपको किसी भी सक्रिय सत्र से साइन आउट कर देगा और 2-कारक प्रमाणीकरण को अक्षम कर देगा।"
       ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "ये प्रक्रिया आपके ${ BRAND_NAME } खाते पे दो-कदम सत्यापन (2-एफए) सक्षम करेगा। दो-कदम सत्यापन आपके ${ BRAND_NAME_TWO } खाते को और सुरक्षित बना देगा और इसलिए हम इसे सक्षम करने की सलाह देते हैं।"
+      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "पुष्टि करने के लिए, कृपया उस उपयोगकर्ता का नाम दर्ज करें जिसे आप हटाना चाहते हैं।"
       ],
@@ -2873,6 +2917,9 @@
       ],
       "Why?": [
         "क्यों?"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "एक एन्क्रिप्ट किए ${ BRAND_NAME } पते के साथ आप सारे ${ BRAND_NAME } सेवाएं इस्तेमाल कर सकते हैं"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "सक्रियण के बिना आप नए उपयोगकर्ता नहीं बना पाएंगे, मौजूदा उपयोगकर्ताओं के पते जोड़ सकते हैं या गैर-निजी उपयोगकर्ता खातों का उपयोग कर सकते हैं।"
@@ -3563,6 +3610,14 @@
         "${ appName } का एक नया संस्करण उपलब्ध है। ${ reloadButton }।"
       ]
     },
+    "Metadata title": {
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "अपना ${ BRAND_NAME } खाता पासवर्ड भूल गए? पुनर्प्राप्ति कोड, ईमेल या एसएमएस का उपयोग करके इसे यहां रीसेट करें और अपने ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, और अधिक तक पहुंच पुनः प्राप्त करें।"
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "अपना ${ BRAND_NAME } खाता उपयोगकर्ता नाम भूल गए? अपने पुनर्प्राप्ति ईमेल या फ़ोन नंबर का उपयोग करके इसे ढूंढें और अपने ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, और अन्य तक पहुंच पुनः प्राप्त करें।"
+      ]
+    },
     "Monetary unit": {
       "Dollar": [
         "डॉलर"
@@ -3981,6 +4036,9 @@
       ],
       "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
         "${ MAIL_APP_NAME } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "आपका ट्रायल ${ formattedPeriodEndDate } पे खत्म होगा"
       ]
     },
     "new_plans: Label": {
@@ -4027,6 +4085,12 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: अपने ईमेल को एंड-टू-एंड एन्क्रिप्शन से सुरक्षित करें। इसमें कस्टम ईमेल डोमेन, 15 ईमेल पते, असीमित hide-my-email उपनाम और बहुत कुछ के लिए समर्थन शामिल है।"
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें ${ serversAndCountries }, उच्चतम वीपीएन गति, दुनिया भर में स्ट्रीमिंग सेवाओं तक पहुंच, मैलवेयर और विज्ञापन-अवरोधक, तेज़ बिटटोरेंट डाउनलोड और बहुत कुछ शामिल है।"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Netflix, Disney+, Prime Video और वैसे स्ट्रीम सेवाओं के कंटेंट तक पहुंचे, चाहे आप जहा भी हो।"
       ],
@@ -4081,6 +4145,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "बिज़नेस दिनों में, मांगने के 24 घंटे के अंदर ${ BRAND_NAME } ग्राहक सहायता टीम से मदद पाएं।"
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "एक वीपीएन कनेक्शन एक डिवाइस को ${ BRAND_NAME } वीपीएन से एक समय में जुड़ने देता है। उदाहरण के लिए, एक फोन और एक लैपटॉप को ${ BRAND_NAME_TWO } वीपीएन से एक समय में जोड़ने के लिए आपको दो वीपीएन कनेक्शन चाहिए होंगे।"
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "पूरे संदेश और संपर्क जानकारी के साथ निजी-नहीं यूज़र इनबॉक्स देखने का विकल्प।"
@@ -4428,6 +4495,11 @@
         "CSV फाइल अपलोड करे"
       ]
     },
+    "session_recovery:in_progress:info": {
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "यह सुनिश्चित करने के लिए कि वास्तव में आप ही अपना पासवर्ड रीसेट करने का प्रयास कर रहे हैं, हम अनुरोधों को स्वीकृत करने से पहले 72 घंटे तक प्रतीक्षा करते हैं। आप अपना पासवर्ड ${ boldTimeLeft } में बदल सकते हैं। ${ viewRequest }"
+      ]
+    },
     "Signup label": {
       "Email address": [
         "ईमेल पता"
@@ -4577,6 +4649,17 @@
       ],
       "End of Year Sale": [
         "साल खत्म होने का सेल"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 60 से अधिक देशों में 1700 सर्वर, उच्चतम वीपीएन गति, प्रति उपयोगकर्ता 10 वीपीएन कनेक्शन, दुनिया भर में स्ट्रीमिंग सेवाएं, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 60 से अधिक देशों में 1700 सर्वर, उच्चतम वीपीएन गति, 10 वीपीएन कनेक्शन, दुनिया भर में स्ट्रीमिंग सेवाएं, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "हमारी सभी प्रीमियम सेवाएँ अपनी उच्चतम सीमा के साथ: 100 ईमेल पते, 10 कस्टम डोमेन के लिए समर्थन, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण, एन्क्रिप्टेड क्लाउड स्टोरेज और फ़ाइल साझाकरण, और बहुत कुछ।"
       ]
     },
     "Spotlight": {

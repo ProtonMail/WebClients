@@ -131,11 +131,20 @@
       "Delete vault": [
         "საცავის წაშლა"
       ],
+      "Disable autosave on this website": [
+        "ავტოშენახვის გამორთვა ამ ვებგვერდზე"
+      ],
       "Discard": [
         "მოცილება"
       ],
       "Dismiss": [
         "მოცილება"
+      ],
+      "Do not show on this website": [
+        "არ მაჩვენო ამ ვებგვერდზე"
+      ],
+      "Do not suggest on this website": [
+        "არ მირჩიო ამ ვებგვერდზე"
       ],
       "Done": [
         "მზადაა"
@@ -275,6 +284,9 @@
       "Reload extension": [
         "გაფართოების გადატვირთვა"
       ],
+      "Remove": [
+        "წაშლა"
+      ],
       "Remove access": [
         "წვდომის გაუქმება"
       ],
@@ -401,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "დომენების სია, სადაც ${ PASS_SHORT_APP_NAME }-ში მითითებული ავტომატური ფუნქციები (ავტომატური შევსება, ავტომატური შეთავაზება და ავტომატური შენახვა) არ უნდა მუშაობდეს."
+      "A checked box means the feature is disabled.": [
+        "ჩართული ნიშნავს, რომ ეს ფუნქცია გამორთულია."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "დომენების სია, სადაც ${ PASS_SHORT_APP_NAME }-ში მითითებული ავტომატური ფუნქციები (ავტომატური შევსება, ავტომატური შეთავაზება და ავტომატური შენახვა) არ უნდა მუშაობდეს. ${ infoText }"
       ]
     },
     "Error": {
@@ -685,6 +700,9 @@
         "${ memberCount } წევრი",
         "${ memberCount } წევრი"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } ელემენტის favicon-ს ${ BRAND_NAME }-ს ანონიმიზებული გამოსახულებების პროქსით გაჩვენებთ."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME }, მხოლოდ, შესვლის დეტალებს, შენიშვნებს და საკრედიტო ბარათებს შემოიტანს."
       ],
@@ -736,6 +754,9 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან წარმატებით დასრულდა"
+      ],
+      "All trashed items permanently deleted": [
+        "ყველა ელემენტი ნაგვის ყუთიდან სამუდამოდ წაიშალა"
       ],
       "All trashed items successfully restored": [
         "ყველა ელემენტი ნაგვის ყუთიდან, წარმატებით, აღდგა"
@@ -904,6 +925,9 @@
       "Loading": [
         "იტვირთება"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "იტვირთება ${ PASS_APP_NAME }"
+      ],
       "Loading...": [
         "ჩატვირთვა..."
       ],
@@ -918,6 +942,9 @@
       ],
       "Multiple vaults": [
         "ბევრი საცავი"
+      ],
+      "Never": [
+        "არასოდეს"
       ],
       "No login found": [
         "შესვლის პარამეტრები აღმოჩენილი არაა"
@@ -1026,6 +1053,9 @@
       ],
       "Thank you, the problem has been reported": [
         "მადლობა, პრობლემის შესახებ ინფორმაცია გადაცემულია"
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "როცა მომხმარებლის სახელის ველს აირჩევთ, მისი შევსების მენიუ გაიხსნება."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } ელემენტი, რომლის შემოტანაც ვერ მოხერხდა:",
@@ -1159,6 +1189,9 @@
       "15 minutes": [
         "15 წუთი"
       ],
+      "2FA secret key (TOTP)": [
+        "2FA საიდუმლო გასაღები (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "2FA კოდი (TOTP)"
       ],
@@ -1206,6 +1239,9 @@
       ],
       "Autofill 2FA": [
         "2FA-ის ავტომატური შევსება"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "როცა მომხმარებლის სახელის ველს მონიშნავთ, მისი ავტომატური შევსების გახსნა"
       ],
       "Autosave": [
         "ავტომატური შენახვა"
@@ -1542,6 +1578,9 @@
       "Hyphens": [
         "დეფისები"
       ],
+      "Memorizable Password": [
+        "დამახსოვრებადი პაროლი"
+      ],
       "Numbers": [
         "რიცხვები"
       ],
@@ -1562,6 +1601,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "2FA საიდუმლო გასაღების დამატება"
+      ],
       "Add hidden text": [
         "ფარული ტექსტის დამატება"
       ],
@@ -1666,6 +1708,9 @@
       "Discard changes?": [
         "ცვლილებების გაუქმება?"
       ],
+      "Email": [
+        "ელ-ფოსტა"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "მოგწონთ${ PASS_APP_NAME }?"
       ],
@@ -1693,6 +1738,9 @@
       "Leave vault ?": [
         "გავიდე საცავიდან?"
       ],
+      "Log in as...": [
+        "შესვლა, როგორც..."
+      ],
       "Low disk space": [
         "დისკზე ადგილი ცოტაღაა"
       ],
@@ -1704,6 +1752,9 @@
       ],
       "Our welcome gift to you": [
         "ჩვენი მისალმების საჩუქარი"
+      ],
+      "Password": [
+        "პაროლი"
       ],
       "Pending access to the shared data": [
         "გაზიარებულ მონაცემებთან წვდომის მოლოდინი"
@@ -1919,6 +1970,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "თქვენი ტარიფი ავტომატურად შევსებას, მხოლოდ, პირველი ორი საცავიდან შეიცავს"
+      ],
+      "Your session could not be authorized.": [
+        "თქვენის სესიის ავტორიზაცია შეუძლებელია."
+      ],
+      "Your session could not be resumed.": [
+        "თქვენის სესიის გაგრძელება შეუძლებელია."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "თქვენი სესია არააქტიურია. თავიდან შედით."
+      ],
+      "Your session was locked.": [
+        "თქვენი სესია დაბლოკილია."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "თქვენი სატარიფო გეგმა ერთზე მეტი საცავის შექმნის უფლებას არ გაძლევთ. ყველა ელემენტი პირველ საცავში იქნება შემოტანილი. ერთზე მეტი საცავში შემოსატანად ასწიეთ თქვენი სატარიფო გეგმა."

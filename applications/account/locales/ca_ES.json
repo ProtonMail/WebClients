@@ -609,7 +609,7 @@
         "D'acord"
       ],
       "Ok": [
-        "OK"
+        "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME } settings": [
         "Obrir ajustos de ${ CALENDAR_APP_NAME }"
@@ -770,9 +770,6 @@
       "Save ICS file": [
         "Desa el fitxer ICS"
       ],
-      "Save selected": [
-        "Desa la selecció"
-      ],
       "Search": [
         "Cerca"
       ],
@@ -783,7 +780,7 @@
         "Configuració de cerca"
       ],
       "See how": [
-        "Mira com"
+        "Veieu com"
       ],
       "See plan features": [
         "Mostra les característiques del pla"
@@ -1198,7 +1195,7 @@
         "S'han eliminat 5 rastrejadors"
       ],
       "Auto forwarded": [
-        "S'ha reenviat automàticament"
+        "Reenviat automàticament"
       ],
       "Email received": [
         "S'ha rebut el correu"
@@ -1380,7 +1377,7 @@
     },
     "bf2023: Tooltip": {
       "Access content on streaming services including Netflix, Disney+, Prime Video, and more, from anywhere.": [
-        "Accediu al contingut dels serveis de streaming com ara Netflix, Disney+ i Prime Video i més des de qualsevol lloc."
+        "Accediu al contingut dels serveis de streaming com ara Netflix, Disney+, Prime Video i altres des de qualsevol lloc."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inclou suport per a 1 domini de correu electrònic personalitzat, 10 adreces de correu electrònic, 10 àlies hide-my-email, compartició de calendari i més."
@@ -1393,7 +1390,7 @@
         "Protegiu els vostres fitxers amb emmagatzematge xifrat al núvol. Inclou, entre d'altres, historial de versions i compartició de fitxers xifrats."
       ],
       "Specially designed NetShield protects your devices and speeds up your browsing by blocking ads, trackers, and malware.": [
-        "NetShield, dissenyat especialment, protegeix els vostres dispositius i accelera la navegació bloquejant anuncis, rastrejadors i programari maliciós."
+        "NetShield, dissenyat especialment, protegeix els vostres dispositius i accelera la navegació en bloquejar anuncis, rastrejadors i programari maliciós."
       ],
       "Storage space is shared across all ${ BRAND_NAME } apps.": [
         "L'espai d'emmagatzematge està compartit entre totes les aplicacions de ${ BRAND_NAME }."
@@ -9705,6 +9702,17 @@
         "Gestió d'equips"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "El període de prova acaba el ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } acabant en ${ last4 }."
@@ -9780,17 +9788,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Esteu gaudint d'un preu promocional al vostre pla actual. Si feu una baixada de categoria al vostre compte, perdreu el preu promocional i no estarà disponible si intenteu subscriure-us novament."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "En cas contrari, es limitarà l'accés al vostre compte i, finalment, el compte es desactivarà."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuar utilitzant ${ MAIL_APP_NAME } amb característiques prèmium, trieu les opcions de subscripció i pagament."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "El període de prova acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -11104,7 +11101,7 @@
         "S'ha aprovat la sol·licitud de restabliment de la contrasenya ( ${ user.Email } ). Teniu ${ timeRemaining.inHours } hores per a restablir la vostra contrasenya."
       ],
       "Please go to the signed-in device (in the session where the request was initiated) to change your password.": [
-        "Aneu a l'aparell connectat (a la sessió on es va iniciar la sol·licitud) per canviar la vostra contrasenya."
+        "Aneu al dispositiu en què heu iniciat la sessió (en la qual es va iniciar la sol·licitud) per canviar la vostra contrasenya."
       ],
       "This permission expires in ${ timeRemaining.inDays } day": [
         "Aquest permís caduca en ${ timeRemaining.inDays } dia.",
@@ -11123,7 +11120,7 @@
     },
     "session_recovery:available:link": {
       "See how": [
-        "Mira com"
+        "Veieu com"
       ]
     },
     "session_recovery:available:notification": {
@@ -11133,17 +11130,17 @@
     },
     "session_recovery:available:title": {
       "Reset your password": [
-        "Restableix la contrasenya"
+        "Restabliu la contrasenya"
       ]
     },
     "session_recovery:cancellation:action": {
       "Cancel password reset": [
-        "Cancel·la el restabliment de contrasenya"
+        "Cancel·la el restabliment de la contrasenya"
       ]
     },
     "session_recovery:cancellation:info": {
       "Enter your current password to cancel the password reset process. No other changes will take effect.": [
-        "Introduïu la vostra contrasenya actual per cancel·lar el procés de restabliment de contrasenya. No es tindran en compte cap altre canvi."
+        "Introduïu la vostra contrasenya actual per cancel·lar el procés de restabliment de contrasenya. Cap altre canvi tindrà efecte."
       ]
     },
     "session_recovery:cancellation:notification": {
@@ -11153,17 +11150,17 @@
     },
     "session_recovery:cancellation:title": {
       "Cancel password reset?": [
-        "Cancel·la el restabliment de contrasenya?"
+        "Voleu cancel·lar el restabliment de la contrasenya?"
       ]
     },
     "session_recovery:cancelled:info": {
       "Password reset request cancelled (${ user.Email }). If you didn’t make this request, ${ changePasswordLink }.": [
-        "S'ha cancel·lat la sol·licitud de restabliment de contrasenya (${ user.Email }). Si no heu sol·licitat aquesta sol·licitud, ${ changePasswordLink }."
+        "S'ha cancel·lat la sol·licitud de restabliment de contrasenya (${ user.Email }). Si no heu fet aquesta sol·licitud, ${ changePasswordLink }."
       ]
     },
     "session_recovery:cancelled:link": {
       "change your password now": [
-        "canvieu la vostra contrasenya ara"
+        "canvieu la vostra contrasenya"
       ]
     },
     "session_recovery:disable:action": {
@@ -11202,14 +11199,14 @@
         "Si no heu demanat restablir la teva contrasenya, cancel·leu la sol·licitud ara mateix."
       ],
       "If you didn’t ask to reset your password, cancel this request now.": [
-        "Si no heu demanat restablir la teva contrasenya, cancel·leu aquesta sol·licitud ara mateix."
+        "Si no heu demanat restablir la contrasenya, cancel·leu aquesta sol·licitud."
       ],
       "Password reset requested (${ user.Email }). You can change your password in ${ hoursRemaining } hour.": [
         "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hora.",
         "S'ha sol·licitat el restabliment de la contrasenya (${ user.Email }). Podeu canviar la vostra contrasenya en ${ hoursRemaining } hores."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "Per assegurar-nos que sou vosaltres qui intenteu restablir la vostra contrasenya, esperem 72 hores abans d'aprovar les sol·licituds. Podeu canviar la vostra contrasenya en ${ boldTimeLeft }. ${ viewRequest }."
+        "Per a assegurar-nos que sou vós qui intenteu restablir la vostra contrasenya, esperem 72 hores abans d'aprovar les sol·licituds. Podeu canviar la contrasenya en ${ boldTimeLeft }. ${ viewRequest }."
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Hem rebut una sol·licitud de restabliment de contrasenya per a ${ boldEmail }."
@@ -11281,7 +11278,7 @@
         "${ gracePeriodHoursRemaining } hores"
       ],
       "${ passwordReset } is now available.": [
-        "${ passwordReset } ara està disponible."
+        "${ passwordReset } està disponible."
       ],
       "If you sign out before you reset your password, you could lose access to your account.": [
         "Si tanqueu la sessió abans de restablir la contrasenya, podríeu perdre l'accés al vostre compte."
@@ -11300,7 +11297,7 @@
     },
     "session_recovery:sign_out:title": {
       "Sign out without password reset?": [
-        "Tancar la sessió sense restabliment de contrasenya?"
+        "Voleu tancar la sessió sense restablir la contrasenya?"
       ]
     },
     "session_recovery:status:info": {
@@ -11631,7 +11628,7 @@
         "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN per usuari, serveis de retransmissió a tot el món, bloquejador de programari maliciós i anuncis i més."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN, serveis de retransmissió a tot el món, bloquejador de programari maliciós i anuncis i més."
+        "Accediu al contingut bloquejat i navegueu de manera privada. Inclou 1700 servidors en més de 60 països, la màxima velocitat VPN, 10 connexions VPN, serveis de streaming a tot el món, bloquejador de programari maliciós i anuncis i més."
       ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere.": [
         "Accediu al contingut dels serveis de retransmissió, com ara Netflix, Disney+ i Prime Video, des de qualsevol lloc."
@@ -12430,7 +12427,7 @@
         "Neteja"
       ],
       "Clear out the junk": [
-        "Netegeu les escombraries"
+        "Elimineu els missatges innecessaris"
       ],
       "Composing": [
         "Redacció"
@@ -12923,9 +12920,6 @@
       ],
       "Revoke certificate": [
         "Revoca el certificat"
-      ],
-      "Save contact details": [
-        "Desa els detalls de contacte"
       ],
       "Save time with email filters": [
         "Estalvieu temps amb els filtres de correu electrònic"
