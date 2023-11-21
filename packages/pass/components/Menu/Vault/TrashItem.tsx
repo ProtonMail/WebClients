@@ -10,7 +10,7 @@ import clsx from '@proton/utils/clsx';
 
 import { CountLabel } from '../../Layout/Dropdown/CountLabel';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
-import { getVaultOptionInfo } from './VaultSubmenu.utils';
+import { getVaultOptionInfo } from './utils';
 
 type Props = {
     selected: boolean;
@@ -28,7 +28,7 @@ export const TrashItem: VFC<Props> = ({ selected, handleTrashRestore, handleTras
             icon="trash"
             onClick={onSelect}
             className={clsx('pass-vault-submenu-vault-item rounded-lg', selected && 'selected')}
-            parentClassName="w-full mx-1"
+            parentClassName="w-full"
             style={{
                 '--vault-icon-color': VAULT_COLOR_MAP[VaultColor.COLOR_UNSPECIFIED],
             }}
