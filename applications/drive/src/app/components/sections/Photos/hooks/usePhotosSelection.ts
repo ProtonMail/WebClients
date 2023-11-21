@@ -26,11 +26,17 @@ export const getGroupLinkIds = <T extends SelectionItem>(data: (T | SelectionGro
     return items;
 };
 
+export type HandleSelectionArgs = {
+    isSelected: boolean;
+    isMultiSelect?: boolean;
+};
+
 export const usePhotosSelection = <T extends SelectionItem>(
     data: (T | SelectionGroup)[],
     photoLinkIdToIndexMap: Record<string, number>
 ) => {
     const [selection, setSelection] = useState<Record<string, boolean>>({});
+    const [lastIndex, setLastIndex] = useState<number | undefined>();
 
     const setSelected = useCallback(
         (isSelected: boolean, ...linkIds: string[]) => {
@@ -53,19 +59,37 @@ export const usePhotosSelection = <T extends SelectionItem>(
 
     const clearSelection = useCallback(() => {
         setSelection({});
+        setLastIndex(undefined);
     }, [setSelection]);
 
     const handleSelection = useCallback(
-        (index: number, isSelected: boolean) => {
+        (index: number, { isSelected, isMultiSelect }: HandleSelectionArgs) => {
             const item = data[index];
 
             if (isPhotoGroup(item)) {
-                setSelected(isSelected, ...getGroupLinkIds(data, index));
+                const groupLinkIds = getGroupLinkIds(data, index);
+                setSelected(isSelected, ...groupLinkIds);
+                const lastIndexLinkId = groupLinkIds.shift();
+                setLastIndex(lastIndexLinkId ? photoLinkIdToIndexMap[lastIndexLinkId] : undefined);
             } else {
+                if (isMultiSelect && lastIndex !== undefined) {
+                    const startIndex = lastIndex < index ? lastIndex : index;
+                    const endIndex = lastIndex < index ? index : lastIndex;
+
+                    const items = (
+                        data.slice(startIndex, endIndex + 1).filter((item) => !isPhotoGroup(item)) as T[]
+                    ).map((item) => item.linkId);
+
+                    setSelection({});
+                    setSelected(true, ...items);
+                    return;
+                }
+
+                setLastIndex(index);
                 setSelected(isSelected, item.linkId);
             }
         },
-        [setSelected, data]
+        [data, setSelected, photoLinkIdToIndexMap, lastIndex]
     );
 
     const selectedItems = useMemo(
