@@ -108,6 +108,7 @@ export const useSavedMethod = (
         paymentProcessor,
         meta: {
             type: 'saved',
+            data: savedMethod,
         },
     };
 };
