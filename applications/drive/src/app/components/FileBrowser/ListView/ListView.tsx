@@ -176,7 +176,10 @@ export const ListView = <T extends FileBrowserBaseItem, T1>({
                 />
             </Table>
 
-            <div className="flex children-min-size-auto flex-column flex-1 w-full no-scroll" ref={contextMenuAnchorRef}>
+            <div
+                className="flex children-min-size-auto flex-column flex-1 w-full overflow-hidden"
+                ref={contextMenuAnchorRef}
+            >
                 {rect && (
                     <FixedSizeList
                         direction={isRTL ? 'rtl' : 'ltr'}

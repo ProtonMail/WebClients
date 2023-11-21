@@ -156,7 +156,10 @@ const Verify = () => {
 
     const wrapInMain = (child: ReactNode) => (
         <main className="hv h-full" ref={registerRootRef}>
-            <div className="hv-container sm:shadow-lifted shadow-color-primary ui-standard relative no-scroll w-full max-w-custom mx-auto" style={{ '--max-w-custom': '30rem' }}>
+            <div
+                className="hv-container sm:shadow-lifted shadow-color-primary ui-standard relative overflow-hidden w-full max-w-custom mx-auto"
+                style={{ '--max-w-custom': '30rem' }}
+            >
                 {child}
             </div>
         </main>
