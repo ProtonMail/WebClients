@@ -384,7 +384,7 @@
         "Editar datos de facturación"
       ],
       "Edit display name": [
-        "Editar nombre para mostrar"
+        "Editar Nombre a mostrar"
       ],
       "Edit email address": [
         "Editar dirección de correo electrónico"
@@ -805,9 +805,6 @@
       ],
       "Save ICS file": [
         "Guardar el archivo ICS"
-      ],
-      "Save selected": [
-        "Guardar seleccionado"
       ],
       "Search": [
         "Buscar"
@@ -1323,9 +1320,6 @@
       ],
       "Add ${ plan } for ${ price } per month": [
         "Añadir ${ plan } por ${ price } por mes"
-      ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "Añadir ${ plan } a tu plan al suscribirte durante 15 meses"
       ],
       "Become a Visionary": [
         "Elige Visionary"
@@ -8626,7 +8620,7 @@
         "Créditos utilizados"
       ],
       "Current display name": [
-        "Nombre para mostrar actual"
+        "Nombre a mostrar actual"
       ],
       "Current email": [
         "Correo electrónico actual"
@@ -8680,7 +8674,7 @@
         "Desactivar las animaciones"
       ],
       "Display name": [
-        "Nombre para mostrar"
+        "Nombre a mostrar"
       ],
       "Do you have any suggestions for our team?": [
         "¿Tienes alguna sugerencia para nuestro equipo?"
@@ -8914,7 +8908,7 @@
         "Navegación"
       ],
       "New display name": [
-        "Nuevo nombre para mostrar"
+        "Nuevo Nombre a mostrar"
       ],
       "New email": [
         "Nuevo correo electrónico"
@@ -10393,6 +10387,17 @@
         "Gestión de equipos"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones premium, suscríbete y elige el método de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina con ${ last4 }"
@@ -10482,17 +10487,6 @@
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones premium, suscríbete y elige el método de pago."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -10529,7 +10523,7 @@
         "términos y condiciones"
       ],
       "To get started, choose a display name. This is what people will see when you send an email, invite them to an event, or share a file.": [
-        "Para empezar, elige un nombre para mostrar. Será el nombre que verán las demás personas cuando les envíes un correo, las invites a un evento o compartas archivos con ellas."
+        "Para empezar, elige un Nombre a mostrar. Será el nombre que verán las demás personas cuando les envíes un correo, las invites a un evento o compartas archivos con ellas."
       ],
       "Your ${ planName } subscription is now active.": [
         "Tu suscripción de ${ planName } ahora está activa."
@@ -11564,7 +11558,7 @@
         "Elige un nombre"
       ],
       "Choose display name": [
-        "Elige un nombre para mostrar"
+        "Elige un Nombre a mostrar"
       ],
       "Confirm": [
         "Confirmar"
@@ -12289,7 +12283,7 @@
         "Confirmar contraseña"
       ],
       "Display name": [
-        "Nombre para mostrar"
+        "Nombre a mostrar"
       ],
       "Email": [
         "Correo electrónico"
@@ -12789,7 +12783,7 @@
         "El calendario por defecto ha sido actualizado."
       ],
       "Display name updated": [
-        "Nombre para mostrar actualizado"
+        "Nombre a mostrar actualizado"
       ],
       "DMARC value copied to clipboard": [
         "Valor DMARC copiado en el portapapeles"
@@ -13040,7 +13034,7 @@
         "Campo CSV"
       ],
       "Display name": [
-        "Nombre para mostrar"
+        "Nombre a mostrar"
       ],
       "Edit": [
         "Editar"
@@ -13487,7 +13481,7 @@
         "Desactivar la autenticación de doble factor"
       ],
       "Display name and signature": [
-        "Nombre para mostrar y firma"
+        "Nombre a mostrar y firma"
       ],
       "Domain names": [
         "Nombres de dominio"
@@ -13505,7 +13499,7 @@
         "Editar tarjeta de crédito/débito"
       ],
       "Edit display name": [
-        "Editar nombre para mostrar"
+        "Editar Nombre a mostrar"
       ],
       "Edit domain": [
         "Editar dominio"
@@ -13856,9 +13850,6 @@
       ],
       "Revoke certificate": [
         "Revocar certificado"
-      ],
-      "Save contact details": [
-        "Guardar detalles de contacto"
       ],
       "Save time with email filters": [
         "Ahorra tiempo con filtros de correo."
@@ -14462,6 +14453,16 @@
       ],
       "Primary admin": [
         "Administrador principal"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "Usuario SSO proporcionado por tu proveedor de identidad"
       ]
     },
     "Validation": {
