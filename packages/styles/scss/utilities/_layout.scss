@@ -2,14 +2,17 @@
 	overflow: auto;
 }
 
+.overflow-x-auto {
+	overflow-x: auto;
+}
+
+.overflow-y-auto {
+	overflow-y: auto;
+}
+
 .overflow-overlay {
 	overflow: auto; // fallback
 	overflow: overlay;
-}
-
-.scroll-horizontal-if-needed,
-.overflow-x-auto {
-	overflow-x: auto;
 }
 
 .mod--hidden,

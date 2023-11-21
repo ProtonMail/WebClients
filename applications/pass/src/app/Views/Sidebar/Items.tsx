@@ -24,7 +24,7 @@ export const Items: FC = () => {
     return (
         <>
             {!matchTrash && items.totalCount > 0 && (
-                <div className="flex flex-row grow-0 shrink-0 flex-nowrap p-3 gap-1 scroll-horizontal-if-needed">
+                <div className="flex flex-row grow-0 shrink-0 flex-nowrap p-3 gap-1 overflow-x-auto">
                     <TypeFilter items={items.searched} value={filters.type} onChange={(type) => setFilters({ type })} />
                     <SortFilter value={filters.sort} onChange={(sort) => setFilters({ sort })} />
                 </div>
