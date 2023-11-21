@@ -81,7 +81,7 @@ const RoosterEditor = ({
         <>
             <div
                 className={clsx([
-                    'editor-wrapper fill w-full h-full scroll-if-needed flex-1 flex flex-column relative',
+                    'editor-wrapper fill w-full h-full overflow-auto flex-1 flex flex-column relative',
                     className,
                 ])}
             >

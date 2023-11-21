@@ -18,7 +18,7 @@ const demoItemClasses =
 export const Opacity = () => {
     return (
         <div
-            className="border rounded w-full relative flex flex-nowrap gap-2 scroll-if-needed items-center justify-space-around text-2xs"
+            className="border rounded w-full relative flex flex-nowrap gap-2 overflow-auto items-center justify-space-around text-2xs"
             style={{ height: '9rem' }}
         >
             {values.map((value) => (

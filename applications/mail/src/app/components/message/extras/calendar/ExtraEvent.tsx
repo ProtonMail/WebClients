@@ -342,7 +342,7 @@ const ExtraEvent = ({
     return (
         <div className="calendar-widget mb-3">
             <ExtraEventTimeStatus model={model} />
-            <div className="rounded border bg-norm scroll-if-needed">
+            <div className="rounded border bg-norm overflow-auto">
                 <div className="p-5">
                     <ExtraEventSummary model={model} />
                     <ExtraEventHeader model={model} />

@@ -546,7 +546,7 @@ const MailboxContainer = ({
                             className={clsx([
                                 'view-column-detail flex flex-column flex-1 flex-nowrap relative',
                                 !showContentPanel && 'hidden',
-                                showContentView ? 'no-scroll' : 'scroll-if-needed',
+                                showContentView ? 'no-scroll' : 'overflow-auto',
                             ])}
                         >
                             {showPlaceholder && (
