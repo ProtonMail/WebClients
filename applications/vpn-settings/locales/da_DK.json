@@ -708,6 +708,11 @@
         "Dit abonnement vil automatisk blive fornyet til den nedsatte standardpris og varighed ved slutningen af din faktureringscyklus."
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 dages tilbagebetalingsgaranti"
@@ -717,6 +722,11 @@
       "${ n } month": [
         "${ n } måned",
         "de første ${ n } måneder"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "Tilbud ikke tilgængeligt"
       ]
     },
     "bf2023: Tooltip": {
@@ -2063,17 +2073,26 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "App ikke tilgængelig i øjeblikket"
+      ],
       "Error: ${ errorMessage }": [
         "Fejl: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Ups, noget gik galt"
       ],
+      "Open in browser": [
+        "Åbn i browser"
+      ],
       "Please refresh the page or try again later.": [
         "Opdater venligst siden eller prøv igen senere."
       ],
       "Something went wrong": [
         "Noget gik galt"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Skift til webversionen for at bruge ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
@@ -2365,8 +2384,14 @@
       "This will delete all security keys linked to your account.": [
         "Dette vil slette alle sikkerhedsnøgler forbundet til din konto."
       ],
+      "To turn on 2FA via security key, you'll need to activate 2FA via authenticator app": [
+        "For at slå 2FA til via sikkerhedsnøgle skal du aktivere 2FA via godkendelsesappen"
+      ],
       "Verify your identity with a physical U2F or FIDO2 security key": [
         "Bekræft din identitet med en fysisk U2F eller FIDO2 sikkerhedsnøgle"
+      ],
+      "Your two-factor authentication key is ready to use.": [
+        "Din to-faktor-godkendelsesnøgle er klar til brug."
       ]
     },
     "fido2: Label": {
@@ -3383,6 +3408,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dette kan tage noget tid. Luk ikke denne side, og afbryd ikke forbindelsen til internettet."
       ],
+      "This file is too large to preview": [
+        "Denne fil er for stor til forhåndsvisning"
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Denne bruger er pt. ansvarlig for betalinger for din organisation. Ved at degradere dette medlem, bliver du ansvarlig for betalinger for din organisation."
       ],
@@ -3442,6 +3470,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Genopfyld din konto med kredit, som du kan benytte på et nyt abonnement eller fornyelse af dit nuværende. Du får én kredit pr. brugte ${ i18nCurrency }."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "Samlet antal e-mailadresser"
@@ -4654,6 +4685,9 @@
       "Custom fields": [
         "Brugerdefinerede felter"
       ],
+      "Custom snooze time": [
+        "Brugerdefineret udsættelsestid"
+      ],
       "Data breach monitoring": [
         "Overvågning af databrud"
       ],
@@ -4866,6 +4900,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Få ubegrænsede aliaser med SimpleLogin fra ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Udsæt beskeder, og bliv mindet om dem, når du ønsker det"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"
@@ -5350,6 +5387,12 @@
       ],
       "Thomas Anderson": [
         "Thomas Andersen"
+      ]
+    },
+    "plan customizer, ips": {
+      "Should you need more than ${ maxIPs } IP, ": [
+        "Hvis du skulle have brug for flere end ${ maxIPs } IP-adresse, ",
+        "Hvis du skulle have brug for flere end ${ maxIPs } IP-adresser, "
       ]
     },
     "plan customizer, users": {
