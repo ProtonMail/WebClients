@@ -14,6 +14,7 @@ import type { ShareType } from '@proton/pass/types';
 import { ShareRole } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
+import { truthy } from '@proton/pass/utils/fp/predicates';
 import clsx from '@proton/utils/clsx';
 
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
@@ -115,70 +116,74 @@ export const VaultItem: VFC<Props> = ({
                 />
             }
             quickActions={
-                withActions && (
-                    <>
-                        <DropdownMenuButton
-                            disabled={!onEdit}
-                            label={c('Action').t`Edit vault`}
-                            icon="pen"
-                            onClick={handleClickEvent(onEdit)}
-                        />
+                withActions
+                    ? [
+                          <DropdownMenuButton
+                              key="vault-edit"
+                              disabled={!onEdit}
+                              label={c('Action').t`Edit vault`}
+                              icon="pen"
+                              onClick={handleClickEvent(onEdit)}
+                          />,
 
-                        {allowSharing && shared && (
-                            <DropdownMenuButton
-                                className="flex flex-align-items-center py-2 px-4"
-                                icon="users"
-                                label={
-                                    vault.shareRoleId === ShareRole.ADMIN
-                                        ? c('Action').t`Manage access`
-                                        : c('Action').t`See members`
-                                }
-                                onClick={handleClickEvent(onManage)}
-                            />
-                        )}
+                          allowSharing && shared && (
+                              <DropdownMenuButton
+                                  key="vault-manage"
+                                  className="flex flex-align-items-center py-2 px-4"
+                                  icon="users"
+                                  label={
+                                      vault.shareRoleId === ShareRole.ADMIN
+                                          ? c('Action').t`Manage access`
+                                          : c('Action').t`See members`
+                                  }
+                                  onClick={handleClickEvent(onManage)}
+                              />
+                          ),
 
-                        {allowSharing && !shared && (
-                            <DropdownMenuButton
-                                className="flex flex-align-items-center py-2 px-4"
-                                disabled={!isWritableVault(vault)}
-                                icon="user-plus"
-                                label={c('Action').t`Share`}
-                                onClick={
-                                    plan === UserPassPlan.FREE && isVaultMemberLimitReached(vault)
-                                        ? () => spotlight.setUpselling('pass-plus')
-                                        : handleClickEvent(onInvite)
-                                }
-                            />
-                        )}
+                          allowSharing && !shared && (
+                              <DropdownMenuButton
+                                  key="vault-share"
+                                  className="flex flex-align-items-center py-2 px-4"
+                                  disabled={!isWritableVault(vault)}
+                                  icon="user-plus"
+                                  label={c('Action').t`Share`}
+                                  onClick={
+                                      plan === UserPassPlan.FREE && isVaultMemberLimitReached(vault)
+                                          ? () => spotlight.setUpselling('pass-plus')
+                                          : handleClickEvent(onInvite)
+                                  }
+                              />
+                          ),
 
-                        {
-                            <DropdownMenuButton
-                                disabled={!onMove}
-                                onClick={handleClickEvent(onMove)}
-                                label={c('Action').t`Move all items`}
-                                icon="folder-arrow-in"
-                            />
-                        }
+                          <DropdownMenuButton
+                              key="vault-move"
+                              disabled={!onMove}
+                              onClick={handleClickEvent(onMove)}
+                              label={c('Action').t`Move all items`}
+                              icon="folder-arrow-in"
+                          />,
 
-                        {allowSharing && shared && !vault.owner ? (
-                            <DropdownMenuButton
-                                className="flex flex-align-items-center py-2 px-4"
-                                onClick={handleClickEvent(onLeave)}
-                                icon="cross-circle"
-                                label={c('Action').t`Leave vault`}
-                                danger
-                            />
-                        ) : (
-                            <DropdownMenuButton
-                                disabled={!onDelete}
-                                onClick={handleClickEvent(onDelete)}
-                                label={c('Action').t`Delete vault`}
-                                icon="trash"
-                                danger
-                            />
-                        )}
-                    </>
-                )
+                          allowSharing && shared && !vault.owner ? (
+                              <DropdownMenuButton
+                                  key="vault-leave"
+                                  className="flex flex-align-items-center py-2 px-4"
+                                  onClick={handleClickEvent(onLeave)}
+                                  icon="cross-circle"
+                                  label={c('Action').t`Leave vault`}
+                                  danger
+                              />
+                          ) : (
+                              <DropdownMenuButton
+                                  key="vault-delete"
+                                  disabled={!onDelete}
+                                  onClick={handleClickEvent(onDelete)}
+                                  label={c('Action').t`Delete vault`}
+                                  icon="trash"
+                                  danger
+                              />
+                          ),
+                      ].filter(truthy)
+                    : undefined
             }
         />
     );
