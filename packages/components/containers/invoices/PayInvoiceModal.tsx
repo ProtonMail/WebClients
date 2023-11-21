@@ -94,7 +94,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
         });
 
     const submit =
-        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.PAYPAL ? (
+        paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.PAYPAL ? (
             <StyledPayPalButton
                 type="submit"
                 paypal={paymentFacade.paypal}
