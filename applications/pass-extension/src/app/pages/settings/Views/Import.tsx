@@ -145,7 +145,7 @@ export const Import: VFC = () => {
                                         )}
                                     </span>
                                 )}
-                                <div className="color-weak scroll-if-needed" style={{ maxHeight: 150 }}>
+                                <div className="color-weak overflow-auto" style={{ maxHeight: 150 }}>
                                     {result.ignored.map((description, idx) => (
                                         <span className="block" key={`ignored-${idx}`}>
                                             {description}

@@ -194,7 +194,7 @@ const List = (
                     data-testid={`message-list-${loading ? 'loading' : 'loaded'}`}
                 >
                     <div className="shrink-0">{toolbar}</div>
-                    <div className="h-full scroll-if-needed flex flex-column flex-nowrap w-full">
+                    <div className="h-full overflow-auto flex flex-column flex-nowrap w-full">
                         <div className="shrink-0">
                             <ListBanners
                                 labelID={labelID}

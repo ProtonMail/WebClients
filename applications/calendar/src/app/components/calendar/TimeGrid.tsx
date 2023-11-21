@@ -393,7 +393,7 @@ const TimeGrid = ({
                 </div>
             </div>
             <div
-                className={clsx(['flex-1 scroll-if-needed h-full calendar-time-grid', displayViewClass])}
+                className={clsx(['flex-1 overflow-auto h-full calendar-time-grid', displayViewClass])}
                 ref={scrollRef}
                 {...rest}
             >

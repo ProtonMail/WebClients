@@ -89,7 +89,7 @@ const MorePopoverEvent = ({
                     {dateString}
                 </h1>
             </PopoverHeader>
-            <div className="scroll-if-needed">{eventsContent}</div>
+            <div className="overflow-auto">{eventsContent}</div>
         </PopoverContainer>
     );
 };
