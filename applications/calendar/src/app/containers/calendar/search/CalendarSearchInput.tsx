@@ -133,7 +133,7 @@ const CalendarSearchInput = (
                     color="norm"
                     onClick={handleSearch}
                     disabled={cannotSearch}
-                    className="no-mobile"
+                    className="hidden md:inline-flex"
                 >{c('Action').t`Search`}</Button>
             </div>
         </>

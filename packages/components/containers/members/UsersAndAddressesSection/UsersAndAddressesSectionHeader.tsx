@@ -22,7 +22,7 @@ const UsersAndAddressesSectionHeader = ({ mode }: { mode: UserManagementMode }) 
         node: (
             <div className="flex gap-2 flex-flex-children flex-align-items-center">
                 <span>{c('Title header for members table').t`Role`}</span>
-                <span className="no-mobile">
+                <span className="hidden md:inline">
                     <Info
                         title={mode === UserManagementMode.VPN_B2B ? vpnB2bAdminTooltipTitle : undefined}
                         url={mode === UserManagementMode.DEFAULT ? getKnowledgeBaseUrl('/user-roles') : undefined}

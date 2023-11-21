@@ -85,8 +85,8 @@ const ItemHoverButtons = ({
             ? c('Alt').t`Unstar message`
             : c('Alt').t`Star message`
         : isStarred
-        ? c('Alt').t`Unstar conversation`
-        : c('Alt').t`Star conversation`;
+          ? c('Alt').t`Unstar conversation`
+          : c('Alt').t`Star conversation`;
 
     const buttonTxt = isMessage(element) ? c('Alt').t`Star message` : c('Alt').t`Star conversation`;
 
@@ -94,7 +94,7 @@ const ItemHoverButtons = ({
         <>
             <div
                 className={clsx(
-                    'flex-nowrap flex-justify-space-between relative  no-mobile item-hover-action-buttons',
+                    'hidden md:flex flex-nowrap flex-justify-space-between relative item-hover-action-buttons',
                     snoozeDropdownState && snoozedElement?.ID === element.ID
                         ? 'item-hover-action-buttons--dropdown-open'
                         : '',

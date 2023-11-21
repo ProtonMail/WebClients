@@ -144,7 +144,7 @@ const Header = ({
                         shape="ghost"
                         title={c('Action').t`Details`}
                         onClick={onDetails}
-                        className="ml-2 no-mobile"
+                        className="ml-2 hidden md:inline-flex"
                         data-testid="file-preview:actions:details"
                     >
                         <Icon name="info-circle" size={20} alt={c('Action').t`Details`} />
@@ -156,7 +156,7 @@ const Header = ({
                         shape="ghost"
                         title={sharedStatus === '' ? c('Action').t`Share via link` : c('Action').t`Sharing options`}
                         onClick={onShare}
-                        className="ml-2 no-mobile"
+                        className="ml-2 md:inline-flex"
                         data-testid="file-preview:actions:share"
                     >
                         <Icon

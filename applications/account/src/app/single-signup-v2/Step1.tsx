@@ -513,7 +513,7 @@ const Step1 = ({
                         ) : (
                             <RightSummary
                                 gradient={!isDarkBg}
-                                className={clsx('p-6 no-mobile rounded-xl', isDarkBg && 'border border-weak')}
+                                className={clsx('p-6 hidden md:flex rounded-xl', isDarkBg && 'border border-weak')}
                             >
                                 {benefits}
                             </RightSummary>
