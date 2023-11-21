@@ -664,9 +664,6 @@
       "Add ${ plan } for ${ price } per month": [
         "Pridať ${ plan } za ${ price } mesačne"
       ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "Pridajte ${ plan } do vášho plánu predplatením na 15 mesiacov"
-      ],
       "Cancel": [
         "Zrušiť"
       ],
@@ -3664,7 +3661,7 @@
         "Ak chcete zabezpečiť svoje internetové pripojenie, stiahnite a nainštalujte si aplikáciu ${ VPN_APP_NAME } pre svoje zariadenie a pripojte sa k serveru."
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
-        "Doplňte si svoj účet kreditmi, ktoré môžete použiť k predplateniu nového plánu alebo obnovenie aktuálneho plánu. Za každých minutých ${ i18nCurrency } získate jeden kredit."
+        "Doplňte si účet kreditmi, ktoré môžete použiť na predplatenie nového plánu alebo obnovenie aktuálneho plánu. Za každé minuté ${ i18nCurrency } získate jeden kredit."
       ],
       "Tor": [
         "Tor"
@@ -4284,7 +4281,7 @@
         "Koniec platnosti "
       ],
       "Expires": [
-        "Vyprší"
+        "Exspiruje"
       ],
       "Gateway name": [
         "Názov brány"
@@ -5504,7 +5501,7 @@
         "Začnite s ${ freeStorageSize } a odomknite si ďalší úložný priestor. Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }": [
-        "Úložný priestor je zdieľaný cez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
+        "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, and ${ DRIVE_APP_NAME }. Administrators can allocate different storage amounts to users in their organization": [
         "Úložný priestor je zdieľaný cez ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }. Administrátori môžu používateľom vo svojej organizácii prideliť rôznu veľkosť úložného priestoru"
@@ -7550,6 +7547,16 @@
       ],
       "Primary admin": [
         "Hlavný správca"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "Používateľ SSO od vášho poskytovateľa identít"
       ]
     },
     "Validation": {
