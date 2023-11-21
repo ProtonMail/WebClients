@@ -131,11 +131,20 @@
       "Delete vault": [
         "Tresor löschen"
       ],
+      "Disable autosave on this website": [
+        "Automatisches Speichern auf dieser Website deaktivieren"
+      ],
       "Discard": [
         "Verwerfen"
       ],
       "Dismiss": [
         "Verwerfen"
+      ],
+      "Do not show on this website": [
+        "Auf dieser Website nicht anzeigen"
+      ],
+      "Do not suggest on this website": [
+        "Auf dieser Website nichts vorschlagen"
       ],
       "Done": [
         "Fertig"
@@ -275,6 +284,9 @@
       "Reload extension": [
         "Erweiterung neu laden"
       ],
+      "Remove": [
+        "Entfernen"
+      ],
       "Remove access": [
         "Zugriff entfernen"
       ],
@@ -401,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Liste der Domains, in denen bestimmte automatische Funktionen in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) nicht ausgeführt werden sollen."
+      "A checked box means the feature is disabled.": [
+        "Ein angekreuztes Kästchen bedeutet, dass die Funktion deaktiviert ist."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Liste der Domains, bei denen bestimmte automatische Funktionen in ${ PASS_SHORT_APP_NAME } (Automatisches Ausfüllen, automatische Vorschläge, automatisches Speichern) nicht ausgeführt werden sollen. ${ infoText }"
       ]
     },
     "Error": {
@@ -685,6 +700,9 @@
         "${ memberCount } Mitglied",
         "${ memberCount } Mitglieder"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } zeigt das Website-Symbol des Eintrags über den anonymisierten Bild-Proxy von ${ BRAND_NAME } an."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importiert nur Logins, Notizen und Kreditkarten."
       ],
@@ -736,6 +754,9 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle Einträge von \"${ payload.content.name }\" erfolgreich verschoben."
+      ],
+      "All trashed items permanently deleted": [
+        "Alle Einträge im Papierkorb dauerhaft gelöscht."
       ],
       "All trashed items successfully restored": [
         "Alle Einträge aus dem Papierkorb erfolgreich wiederhergestellt."
@@ -904,6 +925,9 @@
       "Loading": [
         "Wird geladen"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } wird geladen"
+      ],
       "Loading...": [
         "Wird geladen..."
       ],
@@ -918,6 +942,9 @@
       ],
       "Multiple vaults": [
         "Mehrere Tresore"
+      ],
+      "Never": [
+        "Niemals"
       ],
       "No login found": [
         "Keine Zugangsdaten gefunden."
@@ -1026,6 +1053,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Vielen Dank, das Problem wurde gemeldet."
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Die Auswahlliste zum automatischen Ausfüllen wird automatisch geöffnet, wenn du auf ein Feld klickst oder dieses fokussiert wird."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Der folgende ${ result.ignored.length } Eintrag konnte nicht importiert werden:",
@@ -1159,6 +1189,9 @@
       "15 minutes": [
         "15 Minuten"
       ],
+      "2FA secret key (TOTP)": [
+        "Geheimer 2FA-Schlüssel (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "2FA-Token (TOTP)"
       ],
@@ -1206,6 +1239,9 @@
       ],
       "Autofill 2FA": [
         "2FA automatisch ausfüllen"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Automatisches Ausfüllen automatisch öffnen, wenn ein Login-Feld fokussiert wird."
       ],
       "Autosave": [
         "Auto-Speichern"
@@ -1542,6 +1578,9 @@
       "Hyphens": [
         "Bindestriche"
       ],
+      "Memorizable Password": [
+        "Einprägsames Passwort"
+      ],
       "Numbers": [
         "Zahlen"
       ],
@@ -1562,6 +1601,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Geheimen 2FA-Schlüssel hinzufügen"
+      ],
       "Add hidden text": [
         "Versteckten Text hinzufügen"
       ],
@@ -1666,6 +1708,9 @@
       "Discard changes?": [
         "Änderungen verwerfen?"
       ],
+      "Email": [
+        "E-Mail-Adresse"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gefällt dir ${ PASS_APP_NAME }?"
       ],
@@ -1693,6 +1738,9 @@
       "Leave vault ?": [
         "Tresor verlassen?"
       ],
+      "Log in as...": [
+        "Anmelden als..."
+      ],
       "Low disk space": [
         "Wenig Speicherplatz auf der Festplatte"
       ],
@@ -1704,6 +1752,9 @@
       ],
       "Our welcome gift to you": [
         "Unser Willkommensgeschenk an dich"
+      ],
+      "Password": [
+        "Passwort"
       ],
       "Pending access to the shared data": [
         "Zugriff auf die geteilten Daten ist ausstehend"
@@ -1919,6 +1970,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Dein Abonnement gestattet dir nur das automatische Ausfüllen aus deinen ersten zwei Tresoren."
+      ],
+      "Your session could not be authorized.": [
+        "Deine Sitzung konnte nicht autorisiert werden."
+      ],
+      "Your session could not be resumed.": [
+        "Deine Sitzung konnte nicht fortgesetzt werden."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Deine Sitzung ist abgelaufen. Bitte melde dich erneut an."
+      ],
+      "Your session was locked.": [
+        "Deine Sitzung wurde gesperrt."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden in deinen ersten Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."

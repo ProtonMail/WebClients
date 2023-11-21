@@ -131,11 +131,20 @@
       "Delete vault": [
         "Usuń sejf"
       ],
+      "Disable autosave on this website": [
+        "Wyłącz automatyczne zapisywanie na tej stronie"
+      ],
       "Discard": [
         "Odrzuć"
       ],
       "Dismiss": [
         "Odrzuć"
+      ],
+      "Do not show on this website": [
+        "Nie pokazuj na tej stronie"
+      ],
+      "Do not suggest on this website": [
+        "Nie sugeruj na tej stronie"
       ],
       "Done": [
         "Gotowe"
@@ -275,6 +284,9 @@
       "Reload extension": [
         "Odśwież rozszerzenie"
       ],
+      "Remove": [
+        "Usuń"
+      ],
       "Remove access": [
         "Usuń dostęp"
       ],
@@ -401,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Lista domen, w których niektóre funkcje aplikacji ${ PASS_SHORT_APP_NAME } (autouzupełnianie, automatyczne sugestie, automatyczne zapisywanie) nie powinny zostać uruchamiane."
+      "A checked box means the feature is disabled.": [
+        "Zaznaczone pole oznacza włączoną funkcję."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Lista domen, w których niektóre funkcje aplikacji ${ PASS_SHORT_APP_NAME } (autouzupełnianie, automatyczne sugestie, automatyczne zapisywanie) nie powinny zostać uruchamiane.${ infoText }"
       ]
     },
     "Error": {
@@ -705,6 +720,9 @@
         "${ memberCount } użytkowników",
         "${ memberCount } użytkowników"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } będzie wyświetlał ikonę stron przez anonimową proxy ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } obsługuje tylko importowanie danych logowania, notatek i kart płatniczych."
       ],
@@ -764,6 +782,9 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Wszystkie elementy z sejfu \"${ payload.content.name }\" zostały przeniesione"
+      ],
+      "All trashed items permanently deleted": [
+        "Wszystkie usunięte elementy zostały trwale usunięte"
       ],
       "All trashed items successfully restored": [
         "Wszystkie usunięte elementy zostały przywrócone"
@@ -954,6 +975,9 @@
       "Multiple vaults": [
         "Wiele sejfów"
       ],
+      "Never": [
+        "Nigdy"
+      ],
       "No login found": [
         "Nie znaleziono danych logowania"
       ],
@@ -1061,6 +1085,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Dziękujemy. Problem został zgłoszony"
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Menu autouzupełniania będzie otwierane w polach logowania."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Następujący ${ result.ignored.length } element nie może zostać zaimportowany:",
@@ -1202,6 +1229,9 @@
       "15 minutes": [
         "15 minut"
       ],
+      "2FA secret key (TOTP)": [
+        "Klucz uwierzytelniający (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "Token TOTP"
       ],
@@ -1249,6 +1279,9 @@
       ],
       "Autofill 2FA": [
         "Autouzupełnianie uwierzytelniania dwustopniowego"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Automatycznie otwieraj autouzupełnianie w polach logowania"
       ],
       "Autosave": [
         "Automatyczne zapisywanie"
@@ -1582,6 +1615,9 @@
       "Hyphens": [
         "Myślniki"
       ],
+      "Memorizable Password": [
+        "Hasło wyrazowe"
+      ],
       "Numbers": [
         "Cyfry"
       ],
@@ -1602,6 +1638,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Dodaj klucz uwierzytelniający"
+      ],
       "Add hidden text": [
         "Dodaj ukryty tekst"
       ],
@@ -1708,6 +1747,9 @@
       "Discard changes?": [
         "Czy chcesz odrzucić zmiany?"
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Lubisz ${ PASS_APP_NAME }?"
       ],
@@ -1735,6 +1777,9 @@
       "Leave vault ?": [
         "Opuścić sejf?"
       ],
+      "Log in as...": [
+        "Zaloguj się jako..."
+      ],
       "Low disk space": [
         "Mało miejsca na dysku"
       ],
@@ -1746,6 +1791,9 @@
       ],
       "Our welcome gift to you": [
         "Nasz prezent powitalny"
+      ],
+      "Password": [
+        "Hasło"
       ],
       "Pending access to the shared data": [
         "Oczekujący dostęp do udostępnionych danych"
@@ -1963,6 +2011,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Twój plan pozwala na autouzupełnianie tylko z sejfu głównego"
+      ],
+      "Your session could not be authorized.": [
+        "Sesja nie może zostać autoryzowana."
+      ],
+      "Your session could not be resumed.": [
+        "Sesja nie może zostać wznowiona."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Sesja jest nieaktywna. Zaloguj się ponownie."
+      ],
+      "Your session was locked.": [
+        "Sesja została zablokowana."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Subskrypcja nie pozwala na tworzenie wielu sejfów. Wszystkie elementy zostaną zaimportowane do pierwszego sejfu. Ulepsz plan, aby importować do wielu sejfów."
