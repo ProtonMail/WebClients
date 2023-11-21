@@ -3,22 +3,18 @@ import React, { useRef } from 'react';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href';
-import { Spotlight, useSpotlightShow } from '@proton/components/components';
-import { FeatureCode } from '@proton/components/containers';
-import { useSpotlightOnFeature } from '@proton/components/hooks';
+import { Spotlight } from '@proton/components/components';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import useSnooze from 'proton-mail/hooks/actions/useSnooze';
-
 interface Props {
+    show: boolean;
+    onDisplayed: () => void;
+    onClose: () => void;
     children: React.ReactNode;
 }
 
-const SnoozeSpotlight = ({ children }: Props) => {
+const SnoozeSpotlight = ({ children, show, onDisplayed, onClose }: Props) => {
     const ref = useRef<HTMLDivElement>(null);
-    const { canSnooze } = useSnooze();
-    const { show: showSpotlight, onDisplayed, onClose } = useSpotlightOnFeature(FeatureCode.SpotlightSnooze, canSnooze);
-    const show = useSpotlightShow(showSpotlight);
 
     return (
         <Spotlight
