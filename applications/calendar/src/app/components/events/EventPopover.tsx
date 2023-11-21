@@ -393,7 +393,7 @@ const EventPopover = ({
                     />
                     <div className="pt-2">
                         <h1
-                            className="eventpopover-title lh-rg text-hyphens scroll-if-needed mb-0"
+                            className="eventpopover-title lh-rg text-hyphens overflow-auto mb-0"
                             title={eventTitleSafe}
                         >
                             {eventTitleSafe}
@@ -405,7 +405,7 @@ const EventPopover = ({
                     </div>
                 </div>
             </PopoverHeader>
-            <div className="scroll-if-needed mb-4" ref={popoverEventContentRef}>
+            <div className="overflow-auto mb-4" ref={popoverEventContentRef}>
                 <PopoverEventContent
                     key={targetEvent.uniqueId}
                     calendar={calendarData}

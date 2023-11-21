@@ -113,7 +113,7 @@ const DayGrid = ({
     }, [rows, formatDate]);
 
     return (
-        <div className="flex-1 scroll-if-needed h-full is-month-view" {...rest}>
+        <div className="flex-1 overflow-auto h-full is-month-view" {...rest}>
             {children}
             <div className="calendar-daygrid flex flex-column relative h-full">
                 <div data-testid="calendar-month-view:week-header" className="flex calendar-daygrid-days">
