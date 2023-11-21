@@ -54,7 +54,7 @@ export const PhotosCard: FC<Props> = ({
 
     // Once we have link meta data (link has name which is missing during
     // photo listing), we can initiate thumbnail loading.
-    // The separation is needed to call thumbanil queue when link is already
+    // The separation is needed to call thumbnail queue when link is already
     // present in cache to not fetch or decrypt meta data more than once.
     useEffect(() => {
         if (photo.name) {
@@ -113,7 +113,11 @@ export const PhotosCard: FC<Props> = ({
                 className="absolute top-0 left-0 ml-2 mt-2"
                 checked={selected}
                 onClick={stopPropagation}
-                onKeyDown={stopPropagation}
+                onKeyDown={(e) => {
+                    if (e.key !== 'Shift') {
+                        e.stopPropagation();
+                    }
+                }}
                 onChange={() => {
                     onSelect(!selected);
                 }}
