@@ -13,7 +13,7 @@ import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCa
 import { LoginView } from '@proton/pass/components/Item/Login/Login.view';
 import { NoteView } from '@proton/pass/components/Item/Note/Note.view';
 import { VaultSelect, useVaultSelectModalHandles } from '@proton/pass/components/Vault/VaultSelect';
-import type { ItemRouteParams, ItemViewProps } from '@proton/pass/components/Views/types';
+import type { ItemViewProps } from '@proton/pass/components/Views/types';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
 import {
@@ -35,7 +35,7 @@ import {
     selectWritableSharedVaultsWithItemsCount,
     selectWritableVaultsWithItemsCount,
 } from '@proton/pass/store/selectors';
-import type { ItemType, ShareType } from '@proton/pass/types';
+import type { ItemType, SelectedItem, ShareType } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
@@ -51,7 +51,7 @@ export const ItemView: VFC = () => {
     const inviteContext = useInviteContext();
 
     const dispatch = useDispatch();
-    const { shareId, itemId } = useParams<ItemRouteParams>();
+    const { shareId, itemId } = useParams<SelectedItem>();
     const [inviteOpen, setInviteOpen] = useState(false);
     const { closeVaultSelect, openVaultSelect, modalState } = useVaultSelectModalHandles();
 
