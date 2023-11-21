@@ -806,9 +806,6 @@
       "Save ICS file": [
         "ICS 파일 저장"
       ],
-      "Save selected": [
-        "선택항목 저장"
-      ],
       "Search": [
         "검색"
       ],
@@ -1320,9 +1317,6 @@
       ],
       "Add ${ plan } for ${ price } per month": [
         "${ price } 당 개월로 ${ plan } 추가"
-      ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "15개월 구독하여 ${ plan }을(를) 사용자의 플랜에 추가"
       ],
       "Become a Visionary": [
         "Visionary가 되기"
@@ -3389,17 +3383,38 @@
       "Back": [
         "이전"
       ],
+      "Cancel": [
+        "취소"
+      ],
       "Decline": [
         "거부"
+      ],
+      "Delete": [
+        "삭제"
       ],
       "Delete this condition": [
         "이 조건 삭제"
       ],
+      "Edit conditions": [
+        "조건 편집"
+      ],
       "Next": [
         "다음"
       ],
+      "Pause": [
+        "일시 중지"
+      ],
+      "Re-enable": [
+        "재활성화"
+      ],
+      "Re-send confirmation email": [
+        "확인 이메일 재전송"
+      ],
       "Remove “${ value }”": [
         "\"${ value }\" 삭제"
+      ],
+      "Request confirmation": [
+        "확인 요청"
       ],
       "Resume": [
         "재개"
@@ -4926,7 +4941,7 @@
         "보관"
       ],
       "Do not move": [
-        "제거하지 마십시오"
+        "이동 안함"
       ],
       "Inbox": [
         "받은편지함"
@@ -5280,6 +5295,23 @@
         "값 / 데이터 / 목적지"
       ]
     },
+    "Header for table": {
+      "Actions": [
+        "작업"
+      ],
+      "Created": [
+        "생성됨"
+      ],
+      "Email address": [
+        "이메일 주소"
+      ],
+      "Last used": [
+        "마지막으로 사용됨"
+      ],
+      "Token name": [
+        "토큰 이름"
+      ]
+    },
     "Header; Table with list of calendars arranged by type": {
       "Holidays": [
         "휴일"
@@ -5556,6 +5588,11 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "캘린더를 ICS 파일로 내보내려면 ${ boldExport } 을(를) 선택하세요."
+      ]
+    },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "개인 키를 가져오고 싶으세요? 안전하지 않게 생성되거나 유출된 개인 키를 가져오는 것은 이메일의 보안에 해를 끼칠 수 있습니다.\n\n또한 이 개인 키에 해당하는 공개 키는 우리의 키 서버에서 공개적으로 사용할 수 있다는 점에 유의하십시오. 키에 게시하고 싶지 않은 개인 정보(예: 전체 이름) 가 포함되어 있다면, 가져오기 전에 키를 편집하십시오."
       ]
     },
     "Import provider": {
@@ -6611,7 +6648,7 @@
         "로그는 ${ BRAND_NAME_TWO } 자격 증명을 사용하는 모든 ${ BRAND_NAME } 서비스의 인증 시도를 포함합니다."
       ],
       "Make sure you ${ addARecoveryMethod } so that you can get back into your account if you forget your password.": [
-        "계정의 비밀번호를 잊어버렸을 때 다시 계정에 로그인할 수 있도록 ${ addARecoveryMethod }을 설정하세요."
+        "계정의 비밀번호를 잊어버렸을 때 다시 계정에 로그인 할 수 있도록 ${ addARecoveryMethod }를 하시기 바랍니다."
       ],
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "2단계 인증 기기에 본 정보를 직접 입력하여 계정을 설정하세요. ${ switchButton }"
@@ -7939,6 +7976,9 @@
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
         "동일한 암호화 알고리즘을 가진 키가 이미 존재합니다. 다른 키를 생성하면 계정 로딩이 느려질 수 있습니다. 정말 계속하시겠습니까?"
       ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        "동일한 암호화 알고리즘을 가진 키가 이미 이 주소에 대해 활성화되어 있습니다. 다른 키를 생성하면 계정 로딩이 느려지고 이 키를 삭제하면 문제가 발생할 수 있습니다. 이전 키가 손상되었기 때문에 새 키를 생성하는 경우, 해당 키를 손상된 것으로 표시하십시오. 이를 계속하시겠습니까?"
+      ],
       "Generate key": [
         "키 생성"
       ],
@@ -7956,8 +7996,26 @@
       ]
     },
     "Key state badge": {
+      "Active": [
+        "활성"
+      ],
+      "Compromised": [
+        "유출됨"
+      ],
+      "Disabled": [
+        "비활성화됨"
+      ],
       "Forwarding": [
         "전달"
+      ],
+      "Inactive": [
+        "비활성화"
+      ],
+      "Obsolete": [
+        "만료"
+      ],
+      "Primary": [
+        "우선 순위"
       ]
     },
     "Key type option": {
@@ -8156,8 +8214,14 @@
       "Disables encryption with this key": [
         "이 키의 암호화 비활성화"
       ],
+      "Disables signature verification and encryption with this key": [
+        "이 키의 서명 인증 및 암호화 비활성화"
+      ],
       "Enable encryption with this key": [
         "이 키의 암호화 활성화"
+      ],
+      "Enable signature verification and encryption with this key": [
+        "이 키의 서명 인증 및 암호화 활성화"
       ],
       "Export private key": [
         "개인 키 내보내기"
@@ -8170,6 +8234,12 @@
       ],
       "Mark compromised": [
         "유출된 것으로 표시"
+      ],
+      "Mark not compromised": [
+        "유출되지 않은 것으로 표시"
+      ],
+      "Mark not obsolete": [
+        "만료 되지 않은 것으로 표시"
       ],
       "Mark obsolete": [
         "만료 된 것으로 표시"
@@ -9297,6 +9367,9 @@
       "Contact us": [
         "문의"
       ],
+      "create a ticket": [
+        "티켓을 생성"
+      ],
       "Create account": [
         "계정 생성"
       ],
@@ -10183,6 +10256,17 @@
         "팀 관리"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "그렇지 않으면 귀하의 계정에 접근하는 것이 제한될 것이며, 귀하의 계정은 결국 비활성화됩니다."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } 의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ last4 }(으)로 끝나는 ${ brand }"
@@ -10253,6 +10337,9 @@
       "Secure email with advanced features for your everyday communications.": [
         "일상적인 커뮤니케이션을 위한 고급 기능을 갖춘 안전한 이메일"
       ],
+      "Set automatic replies to inform senders you are out of the office or unable to respond.": [
+        "자동 회신을 설정하여 부재중이거나 응답할 수 없는 전송자에 알릴 수 있습니다."
+      ],
       "Tailor-made solutions for larger organizations with specific security needs": [
         "특정 보안 요구 사항을 갖춘 대규모 조직을 위한 맞춤형 솔루션"
       ],
@@ -10267,17 +10354,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "현재 플랜을 프로모션이 적용된 가격으로 즐기고 계십니다. 만약 계정을 다운그레이드 하신다면, 프로모션이 적용된 가격을 잃게되어 만일 다시 구독을 시도하더라도 다시 누리실 수 없습니다."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "그렇지 않으면 귀하의 계정에 접근하는 것이 제한될 것이며, 귀하의 계정은 결국 비활성화됩니다."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } 의 프리미엄 기능을 계속 사용하려면, 구독 및 결제 옵션을 선택하세요."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "무료 체험이 ${ formattedPeriodEndDate }에 종료됩니다."
       ]
     },
     "new_plans: Label": {
@@ -10917,6 +10993,9 @@
       "Off": [
         "끄기"
       ],
+      "On": [
+        "켬"
+      ],
       "Permanent": [
         "영구"
       ],
@@ -10958,6 +11037,20 @@
       ],
       "Windows": [
         "Windows"
+      ]
+    },
+    "Option delay send seconds": {
+      "0 seconds": [
+        "0초"
+      ],
+      "10 seconds": [
+        "10초"
+      ],
+      "20 seconds": [
+        "20초"
+      ],
+      "5 seconds": [
+        "5초"
       ]
     },
     "Option group": {
@@ -11019,6 +11112,9 @@
       ],
       ".dmg (10.12 or later)": [
         ".dmg (10.12 이상)"
+      ],
+      ".exe (64-bit)": [
+        ".exe (64비트)"
       ],
       ".rpm (for Fedora/openSUSE)": [
         ".rpm (Fedora/openSUSE)"
@@ -11972,6 +12068,25 @@
         "설정 업데이트 실패"
       ]
     },
+    "Settings/filters": {
+      "Filters": [
+        "필터"
+      ]
+    },
+    "Settings/filters - table": {
+      "Action": [
+        "동작"
+      ],
+      "Name": [
+        "이름"
+      ],
+      "Order": [
+        "주문"
+      ],
+      "Status": [
+        "상태"
+      ]
+    },
     "Settings/labels": {
       "Labels/Folders": [
         "라벨/폴더"
@@ -12470,6 +12585,15 @@
       "Address added": [
         "주소 추가됨"
       ],
+      "Address updated": [
+        "주소 업데이트됨"
+      ],
+      "Auto-reply disabled": [
+        "자동응답 비활성화됨"
+      ],
+      "Auto-reply updated": [
+        "자동응답 업데이트됨"
+      ],
       "Bug reported": [
         "버그 신고됨"
       ],
@@ -12589,6 +12713,9 @@
       ],
       "Sessions revoked": [
         "세션 취소됨"
+      ],
+      "SMTP token deleted": [
+        "SMTP 토큰 삭제됨"
       ],
       "SPF value copied to clipboard": [
         "SPF 값 복사됨"
@@ -12798,6 +12925,11 @@
       ],
       "vCard field": [
         "vCard 란"
+      ]
+    },
+    "TableRow": {
+      "No SMTP tokens found": [
+        "발견된 SMTP 토큰 없음"
       ]
     },
     "Time unit for duration; displayed in the time picker": {
@@ -13551,9 +13683,6 @@
       "Revoke certificate": [
         "인증서 취소"
       ],
-      "Save contact details": [
-        "연락처 세부정보 저장"
-      ],
       "Save time with email filters": [
         "이메일 필터로 시간을 절약하세요"
       ],
@@ -13971,6 +14100,9 @@
       "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
         "메시지 목록에서 각 보낸 이의 프로필 사진를 확인하십시오. 사진을 사용할 수 없는 경우 보낸 이의 이니셜이 표시됩니다."
       ],
+      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
+        "이 키로 생성된 서명은 유효하지 않은 것으로 취급되며 이 키는 암호화에 사용할 수 없습니다."
+      ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }의 시스템 하위폴더가 별도로 폴더를 표시합니다"
       ],
@@ -13992,6 +14124,9 @@
       "The selected theme will be active when your system is set to \"light mode\"": [
         "사용자의 시스템이 \"라이트 모드\"일 때 선택된 테마가 적용됩니다"
       ],
+      "This address has been disabled": [
+        "이 주소는 비활성화되어 있습니다"
+      ],
       "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
         "이 기능은 이메일 전송을 지연시켜 설정된 시간내에 전송을 취소할 수 있도록 도와줍니다."
       ],
@@ -14000,6 +14135,12 @@
       ],
       "This feature is only available on Beta": [
         "이 기능은 베타에서만 사용할 수 있어요."
+      ],
+      "This key cannot be used for encryption": [
+        "이 키를 암호화에 사용할 수 없습니다"
+      ],
+      "This key is encrypted with an old password": [
+        "이 키는 이전 비밀번호로 암호화 되었습니다"
       ],
       "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
         "이 키는 사용자의 연락처 데이터를 암호화하기 위해 ${ MAIL_APP_NAME }에서 사용합니다"
@@ -14049,12 +14190,32 @@
         "${ PASS_APP_NAME }: 무제한 별명, 공유, 통합된 2FA 등을 포함하는 비밀번호 관리자로 모든 기기에서 로그인을 보호하세요."
       ]
     },
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "이는 당신이 보내는 각 메시지에 공개 키를 자동으로 추가합니다. 수신자는 이것을 사용하여 메시지의 진위를 확인하고 암호화된 메시지를 보낼 수 있습니다."
+      ]
+    },
+    "Tooltip default pgp scheme": {
+      "Select the default PGP settings used to sign or encrypt messages with non-${ BRAND_NAME } PGP users. Note that Inline PGP forces plain text messages.": [
+        "${ BRAND_NAME } PGP 사용자가 아닌 메시지에 서명하거나 암호화하는 데 사용되는 기본 PGP 설정을 선택하십시오. 인라인 PGP는 일반 문자 메시지를 강제한다는 점에 유의하십시오."
+      ]
+    },
     "Tooltip for news": {
       "Get the latest privacy news and what is going on in the ${ BRAND_NAME } universe": [
         "${ BRAND_NAME } 생태계의 새 기능 및 제품과 따끈따근한 프라이버시 뉴스를 받아보세요."
       ],
       "Participate in surveys to improve ${ BRAND_NAME } services": [
         "${ BRAND_NAME } 서비스 개선을 위한 설문 조사 참여"
+      ]
+    },
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "연락처에 신뢰할 수 있는 키가 없는 다른 ${ MAIL_APP_NAME } 사용자로부터 이메일을 받으면, 신뢰할 수 있는 키를 활성화할지 묻는 배너가 표시됩니다."
+      ]
+    },
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "사용자가 메시지의 진위를 확인할 수 있도록 모든 발신 메시지에 자동으로 서명하세요. 이는 아래에서 구성할 수 있는 기본 PGP 설정과 함께 수행됩니다."
       ]
     },
     "Tooltip; share calendar modal ": {
