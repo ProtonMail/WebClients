@@ -582,7 +582,7 @@
         "Gérer les labels"
       ],
       "Manage Snooze": [
-        "Gérer la mise en pause des notifications"
+        "Gérer la mise en attente"
       ],
       "Mark as read": [
         "Marquer comme lu"
@@ -1014,7 +1014,7 @@
         "Ignorer la vérification"
       ],
       "Snooze": [
-        "Mettre en pause les notifications"
+        "Mettre en attente"
       ],
       "Some images could not be loaded with tracker protection.": [
         "Certaines images n'ont pas pu être chargées avec la protection contre les traqueurs."
@@ -1102,7 +1102,7 @@
         "Liste à puces"
       ],
       "Unsnooze": [
-        "Réactiver les notifications"
+        "Arrêter la mise en attente"
       ],
       "Unstar": [
         "Retirer des Favoris"
@@ -3091,7 +3091,7 @@
         "Profitez de la fonctionnalité de programmation personnalisée des messages et d'autres fonctionnalités en passant à un abonnement supérieur."
       ],
       "Unlock custom snooze times when you upgrade your plan.": [
-        "Changez d'abonnement pour personnaliser les périodes de mise en pause des notifications."
+        "Changez d'abonnement pour personnaliser les périodes de mise en attente."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Bénéficiez d'un nombre illimité de filtres pour trier automatiquement votre boite de réception et d'autres fonctionnalités premium en passant à un abonnement supérieur."
@@ -4105,12 +4105,12 @@
         "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
       ],
       "Security key": [
-        "Clef de sécurité"
+        "Clé de sécurité"
       ]
     },
     "fido2: Label": {
       "Security key": [
-        "Clef de sécurité"
+        "Clé de sécurité"
       ]
     },
     "file size format": {
@@ -5383,7 +5383,7 @@
         "Vos données sont en cours d'importation depuis ${ importedEmailAddress } vers ${ toEmail }."
       ],
       "Include Spam/Trash.": [
-        "Inclure les messages qui sont dans les dossiers Indésirables/spam et Corbeille."
+        "Inclure les messages des dossiers Indésirables/spam et Corbeille."
       ],
       "Inherited from parent folder": [
         "Hérité du dossier dans lequel il est placé."
@@ -5750,16 +5750,16 @@
         "SimpleLogin offre un moyen simple de créer des identifiants sur des sites tiers peu fiables pour lesquels vous ne voulez pas révéler votre véritable adresse e-mail."
       ],
       "Snoozed until  ${ dateString } at ${ formattedTime }": [
-        "Notifications mises en pause jusqu'au ${ dateString }, ${ formattedTime }"
+        "En attente jusqu'au ${ dateString }, ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
-        "Notifications mises en pause jusqu'à aujourd'hui, ${ formattedTime }"
+        "En attente jusqu'à aujourd'hui, ${ formattedTime }"
       ],
       "Snoozed until tomorrow, ${ formattedTime }": [
-        "Notifications mises en pause jusqu'à demain, ${ formattedTime }"
+        "En attente jusqu'à demain, ${ formattedTime }"
       ],
       "Snoozing this conversation will be cancelled.": [
-        "La mise en pause des notifications pour cette conversation sera annulée."
+        "La mise en attente de cette conversation sera annulée."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Désolé, ce message n'existe pas ou a déjà expiré."
@@ -5863,7 +5863,7 @@
         "Cette adresse e-mail ne répond pas aux exigences d'authentification de son domaine. Elle a peut-être été falsifiée ou transférée de manière incorrecte."
       ],
       "This file is too large to preview": [
-        "Ce fichier est trop volumineux pour en afficher un aperçu."
+        "Ce fichier est trop volumineux pour afficher un aperçu."
       ],
       "This invitation is saved in a disabled calendar.": [
         "Cette invitation est enregistrée dans un calendrier désactivé."
@@ -6008,7 +6008,7 @@
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
       ],
       "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
-        "Passez à ${ MAIL_APP_NAME } Plus pour en disposer"
+        "Passez à ${ MAIL_APP_NAME } Plus pour disposer de cette fonctionnalité."
       ],
       "Upgrade to add more addresses to your account.": [
         "Passez à un abonnement supérieur pour ajouter plus d'adresses à votre compte."
@@ -7174,10 +7174,10 @@
         "Inscrivez-vous gratuitement"
       ],
       "Snooze": [
-        "Mettre les notifications en pause"
+        "Mettre en attente"
       ],
       "Snoozed": [
-        "Les notifications sont mises en pause"
+        "En attente"
       ],
       "Spam": [
         "Indésirables/spam"
@@ -7517,7 +7517,7 @@
         "Domaines de messagerie personnalisés"
       ],
       "Custom snooze time": [
-        "Personnalisation des périodes de mise en pause des notifications"
+        "Personnalisation des périodes de mise en attente"
       ],
       "Hide-my-email aliases": [
         "Alias « hide-my-email »"
@@ -7546,7 +7546,7 @@
         "Profitez d'un nombre illimité d'alias avec SimpleLogin de ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Mettez en pause les notifications des messages et recevez un rappel quand vous le voulez."
+        "Mettez les messages en attente et recevez un rappel quand vous le voulez."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Espace de stockage partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
@@ -7743,7 +7743,7 @@
         "Un moyen de vous contacter"
       ],
       "E.g., ": [
-        "p. ex., "
+        "Par exemple, "
       ],
       "Email address": [
         "Adresse e-mail"
@@ -7752,13 +7752,13 @@
         "Date de fin"
       ],
       "Filter folders": [
-        "Filtrer les dossiers"
+        "Filtrez les dossiers."
       ],
       "Filter groups": [
-        "Filtrer les groupes"
+        "Filtrez les groupes."
       ],
       "Filter labels": [
-        "Filtrer les labels"
+        "Filtrez les labels."
       ],
       "First name": [
         "Prénom"
@@ -7794,25 +7794,25 @@
         "Décrivez le problème et incluez les éventuels messages d'erreur."
       ],
       "Please insert link first": [
-        "Insérez d'abord le lien"
+        "Insérez d'abord le lien."
       ],
       "Search date, name, email address, or subject line": [
-        "Rechercher par date, nom, adresse e-mail ou objet du message"
+        "Recherchez par date, nom, adresse e-mail ou objet du message."
       ],
       "Search for group name": [
-        "Rechercher un nom de groupe"
+        "Recherchez un nom de groupe."
       ],
       "Search for name or email": [
-        "Rechercher par nom ou adresse e-mail"
+        "Recherchez par nom ou adresse e-mail."
       ],
       "Search messages": [
-        "Rechercher des messages"
+        "Recherchez des messages."
       ],
       "Search name, email or group": [
-        "Rechercher un nom, une adresse e-mail ou un groupe"
+        "Recherchez un nom, une adresse e-mail ou un groupe."
       ],
       "Select": [
-        "Sélectionner"
+        "Sélectionnez"
       ],
       "Start date": [
         "Date de début"
@@ -7976,7 +7976,7 @@
         "Aucun résultat n'a été trouvé."
       ],
       "No snoozed messages": [
-        "Il n'y a aucun message dont les notifications ont été mises en pause."
+        "Aucun message en attente"
       ],
       "No unread messages found": [
         "Aucun message non lu n'a été trouvé."
@@ -8276,7 +8276,7 @@
     },
     "Snooze message": {
       "Snooze Message": [
-        "Pause des notifications pour le message"
+        "Mise en attente du message"
       ],
       "When should the message reappear in your inbox?": [
         "Quand le message doit-il réapparaître dans votre boite de réception ?"
@@ -8516,7 +8516,7 @@
         "La recherche est devenue plus intelligente et plus rapide."
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
-        "Le dossier « Tous les messages » exclut automatiquement les messages des dossiers « Indésirables/spam » et « Corbeille ». ${ settingsLink }"
+        "Le dossier Tous les messages exclut automatiquement les messages des dossiers Indésirables/spam et Corbeille. ${ settingsLink }"
       ],
       "Try it today.": [
         "Essayez dès maintenant."
@@ -8614,12 +8614,12 @@
         "${ elementsCount } conversations retirées de ${ labelName }."
       ],
       "${ elementsCount } conversation snoozed": [
-        "Les notifications de ${ elementsCount } conversation sont mises en pause.",
-        "Les notifications de ${ elementsCount } conversations sont mises en pause."
+        "${ elementsCount } conversation est en attente.",
+        "${ elementsCount } conversations sont en attente."
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "Les notifications de ${ elementsCount } conversation sont réactivées.",
-        "Les notifications de ${ elementsCount } conversations sont réactivées."
+        "${ elementsCount } conversation n'est plus en attente.",
+        "${ elementsCount } conversations ne sont plus en attente."
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } message ajouté à ${ labelName }.",
@@ -9124,7 +9124,7 @@
         "Suppression des contacts"
       ],
       "Don't give spam a chance": [
-        "Ne laissez aucune chance aux indésirables/spam"
+        "Ne laissez aucune chance aux messages indésirables/spam"
       ],
       "Edit contact": [
         "Modifier le contact"
@@ -9293,7 +9293,7 @@
         "Déplacement d'un message programmé"
       ],
       "Moving a snoozed message": [
-        "Déplacer un message dont les notifications ont été mises en pause"
+        "Déplacement d'un message mis en attente"
       ],
       "New message": [
         "Nouveau message"
@@ -9437,10 +9437,10 @@
         "Se déconnecter"
       ],
       "Snooze": [
-        "Mise en pause des notifications"
+        "Mise en attente"
       ],
       "Snooze message": [
-        "Pause des notifications pour le message"
+        "Mise en attente d'un message"
       ],
       "Sort conversations": [
         "Trier les conversations"
@@ -9489,7 +9489,7 @@
         "Erreur de vérification"
       ],
       "Want to snooze any time?": [
-        "Vous voulez personnaliser les périodes pendant lesquelles les notifications sont mises en pause ?"
+        "Vous voulez personnaliser les périodes de mise en attente ?"
       ],
       "Warning": [
         "Attention"

@@ -554,6 +554,9 @@
       "label emails as": [
         "Nachrichten folgender Kategorie zuordnen"
       ],
+      "Later this week": [
+        "Später in dieser Woche"
+      ],
       "Learn more": [
         "Mehr erfahren"
       ],
@@ -899,6 +902,9 @@
       "Select all messages": [
         "Alle Nachrichten auswählen"
       ],
+      "Select date and time": [
+        "Datum und Uhrzeit auswählen"
+      ],
       "Self-destruct in 7 days": [
         "Selbstzerstören in 7 Tagen"
       ],
@@ -1033,6 +1039,9 @@
       ],
       "This message contains remote content.": [
         "Diese Nachricht enthält Inhalte aus externen Quellen."
+      ],
+      "This weekend": [
+        "Dieses Wochenende"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Um deine E-Mails sicher durchsuchen zu können, müssen wir eine Kopie deiner Nachrichten in deinem Browser herunterladen. Der erste Download kann einen Moment dauern."
@@ -5725,6 +5734,9 @@
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin bietet eine einfache Möglichkeit, Anmeldungen auf nicht vertrauenswürdigen Websites von Drittanbietern zu erstellen, auf denen du deine tatsächliche E-Mail-Adresse nicht preisgeben möchtest."
       ],
+      "Snoozing this conversation will be cancelled.": [
+        "Das Stummschalten dieser Unterhaltung wird abgebrochen."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Entschuldigung, diese Nachricht existiert nicht oder ist bereits abgelaufen."
       ],
@@ -5826,6 +5838,9 @@
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Diese E-Mail hat die Domain-Authentifizierungsanforderungen nicht bestanden. Sie könnte gefälscht oder unsachgemäß weitergeleitet worden sein."
       ],
+      "This file is too large to preview": [
+        "Die Datei ist zu groß, um in der Vorschau angezeigt zu werden."
+      ],
       "This invitation is saved in a disabled calendar.": [
         "Diese Einladung wurde in einem deaktivierten Kalender gespeichert."
       ],
@@ -5919,6 +5934,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Um die Adressprüfung verwenden zu können, musst du einem oder mehreren verfügbaren öffentlichen Schlüsseln vertrauen, einschließlich desjenigen, den du zum Senden verwenden möchtest. Dadurch wird verhindert, dass die Verschlüsselungsschlüssel gefälscht werden können."
+      ],
+      "Tomorrow, ${ formattedTime }": [
+        "Morgen, ${ formattedTime }"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Es befinden sich zu viele Nachrichten für den Versand in der Warteschlange. Bitte warte, bis eine andere Nachricht gesendet wurde, um diese Nachricht planen zu können."
@@ -8214,6 +8232,11 @@
         "Signieren"
       ]
     },
+    "Snooze message": {
+      "When should the message reappear in your inbox?": [
+        "Wann soll diese Nachricht wieder in deinem Posteingang erscheinen?"
+      ]
+    },
     "Sort option": {
       "Largest first": [
         "Nach Größe absteigend"
@@ -8544,6 +8567,10 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } Unterhaltung aus „${ labelName }“ entfernt.",
         "${ elementsCount } Unterhaltungen aus „${ labelName }“ entfernt."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } Unterhaltung stumm geschaltet",
+        "${ elementsCount } Unterhaltungen stumm geschaltet"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } Nachricht zu „${ labelName }“ hinzugefügt.",
