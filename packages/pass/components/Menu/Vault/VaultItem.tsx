@@ -24,7 +24,6 @@ type Props = {
     count: number;
     label: string;
     selected: boolean;
-    sharable?: boolean;
     vault?: ShareItem<ShareType.Vault>;
     onDelete?: () => void;
     onEdit?: () => void;
@@ -45,8 +44,6 @@ export const VaultItem: VFC<Props> = ({
     count,
     label,
     selected,
-    // TODO: remove sharable feature flag
-    sharable = false,
     vault,
     onDelete,
     onEdit,
@@ -57,7 +54,7 @@ export const VaultItem: VFC<Props> = ({
     onSelect,
 }) => {
     const withActions = onEdit || onDelete || onInvite || onManage || onLeave;
-    const allowSharing = sharable && vault !== undefined;
+    const allowSharing = vault !== undefined;
     const shared = vault?.shared ?? false;
     const notification = (vault?.newUserInvitesReady ?? 0) > 0;
     const spotlight = useSpotlightContext();
@@ -67,13 +64,12 @@ export const VaultItem: VFC<Props> = ({
         <DropdownMenuButton
             onClick={() => onSelect()}
             label={<CountLabel label={label} count={count} />}
-            className={clsx('pass-vault-submenu-vault-item rounded-lg', selected && 'selected')}
-            parentClassName="w-full mx-1"
+            className={clsx('pass-vault-submenu-vault-item', selected && 'selected')}
+            parentClassName="w-full"
             style={{
                 '--vault-icon-color': VAULT_COLOR_MAP[vault?.content.display.color ?? VaultColor.COLOR1],
             }}
             extra={
-                sharable &&
                 shared && (
                     <ButtonLike
                         as="div"
