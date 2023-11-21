@@ -2966,6 +2966,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Aplikacja jest niedostępna"
+      ],
       "Error: ${ errorMessage }": [
         "Błąd: ${ errorMessage }"
       ],
@@ -2983,6 +2986,9 @@
       ],
       "Something went wrong": [
         "Coś poszło nie tak"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Otwórz przeglądarkę, aby korzystać z ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nie możemy załadować strony. Odśwież stronę lub sprawdź swoje połączenie."
@@ -5374,6 +5380,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Uzyskaj nieograniczoną liczbę aliasów SimpleLogin przez ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Odłóż wiadomości i otrzymaj powiadomienie o nich w dowolnym momencie"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
