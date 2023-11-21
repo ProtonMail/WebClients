@@ -12,7 +12,7 @@ import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 import '@proton/pass/components/Spotlight/Spotlight.scss';
 import { SpotlightContent } from '@proton/pass/components/Spotlight/SpotlightContent';
-import { ONBOARDING_LINK } from '@proton/pass/constants';
+import { PASS_ANDROID_URL, PASS_IOS_URL, PASS_VIDEO_URL } from '@proton/pass/constants';
 import { clientReady } from '@proton/pass/lib/client';
 import { pageMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
@@ -97,7 +97,7 @@ export const Welcome: VFC = () => {
                                     </h3>
                                     <div className="pass-welcome--onboarding-video rounded-xl">
                                         <iframe
-                                            src={ONBOARDING_LINK.YOUTUBE}
+                                            src={PASS_VIDEO_URL}
                                             title={c('Info').t`Discover ${PASS_APP_NAME} Youtube Video`}
                                             allowFullScreen
                                         />
@@ -139,7 +139,7 @@ export const Welcome: VFC = () => {
                                         <div className="text-xl">{c('Info')
                                             .t`Access your passwords on the go with our mobile apps.`}</div>
                                         <div className="flex gap-3 flex-nowrap">
-                                            <Href href={ONBOARDING_LINK.ANDROID}>
+                                            <Href href={PASS_ANDROID_URL}>
                                                 <img
                                                     className="h-custom"
                                                     style={{ '--h-custom': '2.5rem' }}
@@ -147,7 +147,7 @@ export const Welcome: VFC = () => {
                                                     alt="Play Store"
                                                 />
                                             </Href>
-                                            <Href href={ONBOARDING_LINK.IOS}>
+                                            <Href href={PASS_IOS_URL}>
                                                 <img
                                                     className="h-custom"
                                                     style={{ '--h-custom': '2.5rem ' }}
