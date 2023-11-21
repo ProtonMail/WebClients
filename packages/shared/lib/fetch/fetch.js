@@ -34,7 +34,7 @@ const fetchHelper = ({ url: urlString, params, signal, timeout = DEFAULT_TIMEOUT
                 throw createTimeoutError(config);
             }
 
-            if (e.name === 'AbortError') {
+            if (e?.name === 'AbortError') {
                 throw e;
             }
 
