@@ -259,9 +259,6 @@
       "Download apps": [
         "Stiahnuť aplikácie"
       ],
-      "Download Drive for Windows": [
-        "Stiahnuť Drive pre Windows"
-      ],
       "Drive Locked": [
         "Drive zamknutý"
       ],
@@ -514,6 +511,9 @@
       "Report a problem": [
         "Nahlásiť problém"
       ],
+      "Report an issue": [
+        "Nahlásiť problém"
+      ],
       "Request a feature": [
         "Požiadavka na funkciu"
       ],
@@ -637,6 +637,9 @@
       "Skip verification": [
         "Preskočiť overenie"
       ],
+      "Start": [
+        "Štart"
+      ],
       "Start import": [
         "Spustiť import"
       ],
@@ -714,9 +717,6 @@
       ],
       "Upload file": [
         "Nahrať súbor"
-      ],
-      "Upload files": [
-        "Nahrať súbory"
       ],
       "Upload folder": [
         "Nahrať priečinok"
@@ -2684,6 +2684,14 @@
         "(bez názvu)"
       ]
     },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } zlyhal",
+        "${ countOfFailedLinks } zlyhali",
+        "${ countOfFailedLinks } zlyhalo",
+        "${ countOfFailedLinks } zlyhalo"
+      ]
+    },
     "familyOffer_2023: Deal details": {
       "3 TB total storage": [
         "3 TB celkového úložiska"
@@ -3336,6 +3344,12 @@
         "${ doneUploadsCount } nahratých",
         "${ doneUploadsCount } nahratých"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } v App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } v Play Store"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } zlyhal",
         "${ errorCount } zlyhali",
@@ -3477,6 +3491,9 @@
       "An active recovery file": [
         "Aktívny súbor na obnovenie"
       ],
+      "An issue occurred during the restore process.": [
+        "Počas procesu obnovy došlo k chybe."
+      ],
       "and": [
         "a"
       ],
@@ -3506,9 +3523,6 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Naozaj chcete vybrané položky natrvalo vymazať z koša?"
-      ],
-      "As soon as you have photos or videos on your device, they will appear here.": [
-        "Akonáhle budete mať v zariadení fotografie alebo videá, zobrazia sa tu."
       ],
       "Attention required": [
         "Vyžaduje sa pozornosť"
@@ -3636,6 +3650,9 @@
       "double your storage": [
         "zdvojnásobte svoje úložisko"
       ],
+      "Download ${ name } app": [
+        "Prevziať aplikáciu ${ name }"
+      ],
       "Download canceled": [
         "Sťahovanie zrušené"
       ],
@@ -3663,6 +3680,9 @@
       "Drop file here to upload": [
         "Sem presuňte súbor na nahranie"
       ],
+      "Drop files here": [
+        "Presuňte súbory sem"
+      ],
       "Drop to import": [
         "Presuňte na import"
       ],
@@ -3677,9 +3697,6 @@
       ],
       "Emails are automatically signed": [
         "Emaily sú automaticky podpísané"
-      ],
-      "Enable drive search": [
-        "Povoliť vyhľadávanie na disku"
       ],
       "Enabling drive search": [
         "Zapínanie vyhľadávania na disku"
@@ -3780,11 +3797,14 @@
       "from the version history?": [
         "z histórie verzií?"
       ],
+      "Get the app to backup photos from your phone.": [
+        "Získajte aplikáciu na zálohovanie fotografií z vášho telefónu."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Získajte desktopovú aplikáciu na synchronizáciu súborov z vášho počítača."
+      ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Zoznámte sa s ${ DRIVE_APP_NAME } a získajte bonus 500 MB úložného priestoru! Začnite ešte dnes."
-      ],
-      "Go ahead, upload a file": [
-        "Nech sa páči, nahrajte súbor"
       ],
       "Go to \"My files\" and upload some files first.": [
         "Prejdite do „Moje súbory“ a najprv nahrajte súbory."
@@ -3854,9 +3874,6 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Položky v koši tam zostanú až kým ich natrvalo nevymažete"
-      ],
-      "It’s as easy as drag and drop or selecting files": [
-        "Je to také jednoduché ako ťahaj a pusť alebo výber súborov"
       ],
       "It’s easy and secure": [
         "Je to jednoduché a bezpečné"
@@ -3936,6 +3953,9 @@
       "No": [
         "Nie"
       ],
+      "No computers syncing": [
+        "Bez synchronizácie s počítačmi"
+      ],
       "No contacts added yet": [
         "Zatiaľ neboli pridané žiadne kontakty"
       ],
@@ -3947,9 +3967,6 @@
       ],
       "No group found": [
         "Nebola nájdená žiadna skupina"
-      ],
-      "No photos yet": [
-        "Zatiaľ bez fotografií"
       ],
       "No results found": [
         "Nenájdené žiadne výsledky"
@@ -3993,6 +4010,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Iba ľudia s odkazom a heslom majú prístup k tomuto priečinku."
       ],
+      "Or use the \"+ New\" button": [
+        "Alebo použite tlačidlo \"+ Nový\""
+      ],
       "Paused": [
         "Pozastavené"
       ],
@@ -4004,6 +4024,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME automaticky odošle správu pomocou aktuálneho režimu písania správ."
+      ],
+      "Photos have been successfully recovered.": [
+        "Fotografie boli úspešne obnovené."
       ],
       "Please enter the password to decrypt and view content.": [
         "Vložte heslo na dešifrovanie a zobrazenie obsahu, prosím."
@@ -4077,6 +4100,9 @@
       "Queued": [
         "V poradí"
       ],
+      "Ready to add some photos?": [
+        "Chcete pridať nejaké fotografie?"
+      ],
       "recommended browser": [
         "odporúčaný prehliadač"
       ],
@@ -4098,8 +4124,14 @@
       "Restore is in progress. This can take a few seconds.": [
         "Prebieha obnovenie. Môže to trvať niekoľko sekúnd."
       ],
+      "Restore Photos": [
+        "Obnoviť fotografie"
+      ],
       "Restored files ${ formattedDate }": [
         "Súbory obnovené ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "Obnovovanie fotografií... Ponechajte prosím záložku otvorenú"
       ],
       "Search cannot be enabled in this browser": [
         "Vyhľadávanie nemôže byť spustené v tomto prehliadači"
@@ -4176,12 +4208,6 @@
       "Swiss encrypted file storage": [
         "Švajčiarske šifrované úložisko súborov"
       ],
-      "Sync folders from your computer": [
-        "Synchronizovať priečinky z vášho počítača"
-      ],
-      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "Synchronizujte priečinky s ľahkosťou s našou aplikáciou pre počítače, aby vaše súbory boli vždy aktuálne a dostupné odkiaľkoľvek."
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasne nedostupné. Skúste to neskôr."
       ],
@@ -4205,9 +4231,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Niektoré súbory ešte potrebujú byť presunuté. Zatvorením správcu prenosu sa ukončia všetky operácie."
-      ],
-      "There are no files yet": [
-        "Zatiaľ tu nie sú žiadne súbory"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Tento účet bol zablokovaný kvôli možnému porušeniu pravidiel."
@@ -4749,7 +4772,7 @@
         "Vypršal"
       ],
       "Expires": [
-        "Vyprší"
+        "Exspiruje"
       ],
       "Export contacts": [
         "Exportovať kontakty"
@@ -6192,6 +6215,12 @@
         "${ countMergeableContacts } kontakty vyzerá rovnako.",
         "${ countMergeableContacts } kontaktov vyzerá rovnako.",
         "${ countMergeableContacts } kontaktov vyzerá rovnako."
+      ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "Zostáva ${ countOfUnrecoveredLinksLeft }",
+        "Zostávajú ${ countOfUnrecoveredLinksLeft }",
+        "Zostáva ${ countOfUnrecoveredLinksLeft }",
+        "Zostáva ${ countOfUnrecoveredLinksLeft }"
       ],
       "Address copied to clipboard": [
         "Adresa bola skopírovaná do schránky"

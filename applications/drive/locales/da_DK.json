@@ -253,9 +253,6 @@
       "Download apps": [
         "Download apps"
       ],
-      "Download Drive for Windows": [
-        "Hent Drive til Windows"
-      ],
       "Drive Locked": [
         "Drev låst"
       ],
@@ -508,6 +505,9 @@
       "Report a problem": [
         "Anmeld et problem"
       ],
+      "Report an issue": [
+        "Anmeld en fejl"
+      ],
       "Request a feature": [
         "Anmod om en funktion"
       ],
@@ -711,9 +711,6 @@
       ],
       "Upload file": [
         "Upload fil"
-      ],
-      "Upload files": [
-        "Upload filer"
       ],
       "Upload folder": [
         "Upload mappe"
@@ -2561,6 +2558,9 @@
       "Access denied": [
         "Adgang nægtet"
       ],
+      "App currently unavailable": [
+        "App ikke tilgængelig i øjeblikket"
+      ],
       "Brace yourself till we get the error fixed.": [
         "Fejlen rettes hurtigst muligt, Tak for din tålmodighed."
       ],
@@ -2576,11 +2576,17 @@
       "Oops, something went wrong": [
         "Ups, noget gik galt"
       ],
+      "Open in browser": [
+        "Åbn i browser"
+      ],
       "Please refresh the page or try again later.": [
         "Opdater venligst siden eller prøv igen senere."
       ],
       "Something went wrong": [
         "Noget gik galt"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Skift til webversionen for at bruge ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
@@ -3255,6 +3261,12 @@
         "${ doneUploadsCount } uploadet",
         "${ doneUploadsCount } uploadet"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } i App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } i Play Store"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } mislykkedes",
         "${ errorCount } mislykkedes"
@@ -3395,9 +3407,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Er du sikker på, at du ønsker at slette de valgte elementer permanent fra papirkurven?"
       ],
-      "As soon as you have photos or videos on your device, they will appear here.": [
-        "Så snart du har fotos eller videoer på din enhed, vil de blive vist her."
-      ],
       "Attention required": [
         "Opmærksomhed påkrævet"
       ],
@@ -3520,6 +3529,9 @@
       "double your storage": [
         "fordoble din lagerplads"
       ],
+      "Download ${ name } app": [
+        "Download ${ name }-app"
+      ],
       "Download canceled": [
         "Overførslen afbrudt"
       ],
@@ -3547,6 +3559,9 @@
       "Drop file here to upload": [
         "Træk fil hertil for at uploade"
       ],
+      "Drop files here": [
+        "Slip filer her"
+      ],
       "Drop to import": [
         "Slip for at importere"
       ],
@@ -3561,9 +3576,6 @@
       ],
       "Emails are automatically signed": [
         "E-mails er automatisk signeret"
-      ],
-      "Enable drive search": [
-        "Aktivér søgning på drev"
       ],
       "Enabling drive search": [
         "Aktiverer søgning på drev"
@@ -3662,11 +3674,14 @@
       "from the version history?": [
         "fra versionshistorikken"
       ],
+      "Get the app to backup photos from your phone.": [
+        "Hent appen for at sikkerhedskopiere fotos fra din telefon."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Hent desktop-appen for at synkronisere filer fra din computer."
+      ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Lær ${ DRIVE_APP_NAME } at kende og optjen din bonus på 500 MB lagerplads! Gør noget i dag."
-      ],
-      "Go ahead, upload a file": [
-        "Værsgo, upload en fil"
       ],
       "Go to \"My files\" and upload some files first.": [
         "Gå til \"Mine filer\" og upload nogle filer først."
@@ -3734,9 +3749,6 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Indhold i papirkurven forbliver der, indtil du sletter det permanent"
-      ],
-      "It’s as easy as drag and drop or selecting files": [
-        "Det er lige så nemt som at trække og slippe eller vælge filer"
       ],
       "It’s easy and secure": [
         "Det er nemt og sikkert"
@@ -3816,6 +3828,9 @@
       "No": [
         "Nej"
       ],
+      "No computers syncing": [
+        "Ingen computere synkroniserer"
+      ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
       ],
@@ -3827,9 +3842,6 @@
       ],
       "No group found": [
         "Ingen gruppe fundet"
-      ],
-      "No photos yet": [
-        "Ingen billeder endnu"
       ],
       "No results found": [
         "Ingen resultater fundet"
@@ -3870,6 +3882,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Kun personer med linket og adgangskoden kan få adgang til denne mappe."
+      ],
+      "Or use the \"+ New\" button": [
+        "Eller brug knappen \"+ Ny\""
       ],
       "Paused": [
         "Sat på pause"
@@ -3955,6 +3970,9 @@
       ],
       "Queued": [
         "Sat i kø"
+      ],
+      "Ready to add some photos?": [
+        "Klar til at tilføje nogle fotos?"
       ],
       "recommended browser": [
         "anbefalet browser"
@@ -4061,12 +4079,6 @@
       "Swiss encrypted file storage": [
         "Schweizisk krypteret fillagring"
       ],
-      "Sync folders from your computer": [
-        "Synkroniser mapper fra din computer"
-      ],
-      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "Synkroniser nemt mapper med vores desktop-app, så dine filer altid er opdaterede og tilgængelige overalt."
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Midlertidigt utilgængelig. Tjek igen senere."
       ],
@@ -4091,9 +4103,6 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Der er stadig filer, der skal overføres. Ved at lukke overførselsadministratoren afsluttes alle operationer."
       ],
-      "There are no files yet": [
-        "Der er ingen filer endnu"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
       ],
@@ -4102,6 +4111,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Denne browser understøtter ikke forhåndsvisning af PDF-dokumenter. Download venligst filen."
+      ],
+      "This file is too large to preview": [
+        "Denne fil er for stor til forhåndsvisning"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Denne fil er blevet slettet, flyttet eller gjort utilgængelig. Prøv at kontakte fil-ejeren."
@@ -5077,6 +5089,9 @@
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
       ],
+      "Custom snooze time": [
+        "Brugerdefineret udsættelsestid"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliasser"
       ],
@@ -5102,6 +5117,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Få ubegrænsede aliaser med SimpleLogin fra ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Udsæt beskeder, og bliv mindet om dem, når du ønsker det"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"
@@ -5502,11 +5520,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Navn"
-      ]
-    },
-    "Platform": {
-      "Windows": [
-        "Windows"
       ]
     },
     "Progress bar description": {
