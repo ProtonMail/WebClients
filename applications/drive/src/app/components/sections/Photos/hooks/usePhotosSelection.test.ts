@@ -109,7 +109,7 @@ describe('usePhotosSelection', () => {
             act(() => {
                 hook.current.handleSelection(
                     data.findIndex((group) => group === id),
-                    true
+                    { isSelected: true }
                 );
             });
 
@@ -121,7 +121,7 @@ describe('usePhotosSelection', () => {
             const index = indexMap[id];
 
             act(() => {
-                hook.current.handleSelection(index, true);
+                hook.current.handleSelection(index, { isSelected: true });
             });
 
             expect(hook.current.selectedItems).toStrictEqual([data[index]]);
@@ -234,6 +234,98 @@ describe('usePhotosSelection', () => {
             });
 
             expect(hook.current.isItemSelected(otherId)).toBe(false);
+        });
+    });
+    describe('isMultiSelect', () => {
+        it('select multiple items', () => {
+            const id = 'id1';
+            const lastId = 'id6';
+
+            act(() => {
+                hook.current.handleSelection(
+                    data.findIndex((link) => typeof link !== 'string' && link.linkId === id),
+                    { isSelected: true, isMultiSelect: true }
+                );
+            });
+            expect(hook.current.isItemSelected(id)).toBe(true);
+
+            act(() => {
+                hook.current.handleSelection(
+                    data.findIndex((link) => typeof link !== 'string' && link.linkId === lastId),
+                    { isSelected: true, isMultiSelect: true }
+                );
+            });
+            expect(hook.current.selectedItems).toStrictEqual(data.filter((item) => typeof item !== 'string'));
+        });
+
+        it('select multiple items after selecting a group', () => {
+            const id = 'group1';
+            const lastId = 'id6';
+
+            act(() => {
+                hook.current.handleSelection(
+                    data.findIndex((group) => group === id),
+                    { isSelected: true, isMultiSelect: true }
+                );
+            });
+
+            act(() => {
+                hook.current.handleSelection(
+                    data.findIndex((link) => typeof link !== 'string' && link.linkId === lastId),
+                    { isSelected: true, isMultiSelect: true }
+                );
+            });
+            expect(hook.current.selectedItems).toStrictEqual(data.filter((item) => typeof item !== 'string'));
+        });
+
+        it('select multiple from higher index to lower', () => {
+            const id = 'id6';
+            const lastId = 'id1';
+
+            act(() => {
+                hook.current.handleSelection(
+                    data.findIndex((link) => typeof link !== 'string' && link.linkId === id),
+                    { isSelected: true, isMultiSelect: true }
+                );
+            });
+            expect(hook.current.isItemSelected(id)).toBe(true);
+
+            act(() => {
+                hook.current.handleSelection(
+                    data.findIndex((link) => typeof link !== 'string' && link.linkId === lastId),
+                    { isSelected: true, isMultiSelect: true }
+                );
+            });
+            expect(hook.current.selectedItems).toStrictEqual(data.filter((item) => typeof item !== 'string'));
+        });
+
+        it('unselect multiple items ', () => {
+            const id = 'id1';
+            const id2 = 'id2';
+            const lastId = 'id6';
+
+            act(() => {
+                hook.current.handleSelection(
+                    data.findIndex((link) => typeof link !== 'string' && link.linkId === id),
+                    { isSelected: true, isMultiSelect: true }
+                );
+            });
+            act(() => {
+                hook.current.handleSelection(
+                    data.findIndex((link) => typeof link !== 'string' && link.linkId === lastId),
+                    { isSelected: true, isMultiSelect: true }
+                );
+            });
+
+            expect(hook.current.selectedItems).toStrictEqual(data.filter((item) => typeof item !== 'string'));
+
+            act(() => {
+                hook.current.handleSelection(
+                    data.findIndex((link) => typeof link !== 'string' && link.linkId === id2),
+                    { isSelected: true, isMultiSelect: true }
+                );
+            });
+            expect(hook.current.isGroupSelected(data.findIndex((item) => item === id || item === id2))).toBe(false);
         });
     });
 });
