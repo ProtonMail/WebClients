@@ -8,19 +8,14 @@ import {
     CollapsibleHeaderIconButton,
     Icon,
 } from '@proton/components';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import {
     DropdownMenuButton,
     DropdownMenuButtonLabel,
 } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
+import type { MenuItem } from '@proton/pass/hooks/useMenuItems';
 
-import { usePassCore } from '../Core/PassCoreProvider';
-import type { MenuItem } from './hooks';
-
-export const Submenu: VFC<{ submenuLabel: string; submenuIcon: IconName; linkItems: MenuItem[] }> = ({
-    submenuIcon,
-    submenuLabel,
-    linkItems,
-}) => {
+export const Submenu: VFC<{ label: string; icon: IconName; items: MenuItem[] }> = ({ label, icon, items }) => {
     const { onLink } = usePassCore();
 
     return (
@@ -33,12 +28,14 @@ export const Submenu: VFC<{ submenuLabel: string; submenuIcon: IconName; linkIte
                     </CollapsibleHeaderIconButton>
                 }
             >
-                <DropdownMenuButtonLabel label={submenuLabel} icon={submenuIcon} />
+                <DropdownMenuButtonLabel label={label} icon={icon} />
             </CollapsibleHeader>
-            <CollapsibleContent as="ul">
-                {linkItems.map(({ url, label, icon, onClick }: MenuItem) => (
+            <CollapsibleContent as="ul" className="unstyled mx-2">
+                {items.map(({ url, label, icon, onClick }: MenuItem) => (
                     <DropdownMenuButton
                         onClick={url ? () => onLink(url) : onClick}
+                        className="pass-vault-submenu-vault-item"
+                        parentClassName="w-full"
                         key={label}
                         label={label}
                         icon={icon}
