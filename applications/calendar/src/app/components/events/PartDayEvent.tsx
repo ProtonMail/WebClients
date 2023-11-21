@@ -46,7 +46,7 @@ export const PartDayEventView = forwardRef<HTMLDivElement, PartDayEventViewProps
             role="button"
             tabIndex={0}
             className={clsx([
-                'calendar-eventcell no-scroll',
+                'calendar-eventcell overflow-hidden',
                 isLoaded && 'isLoaded',
                 isPast && 'isPast',
                 isSelected && 'isSelected',
