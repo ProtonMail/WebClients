@@ -76,7 +76,7 @@ const Layout = ({
     return (
         <div
             className={clsx(
-                'flex children-min-size-auto flex-nowrap flex-column h-full scroll-if-needed relative',
+                'flex children-min-size-auto flex-nowrap flex-column h-full overflow-auto relative',
                 background === 'dark'
                     ? 'signup-v1-bg--dark'
                     : background === 'bf2023'

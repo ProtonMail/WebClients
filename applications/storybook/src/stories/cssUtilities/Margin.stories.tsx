@@ -140,7 +140,7 @@ const Code = ({ children }: CodeProps) => (
 export const Margin = () => {
     return (
         <div
-            className="border rounded w-full relative flex flex-nowrap gap-2 scroll-if-needed items-center justify-space-between"
+            className="border rounded w-full relative flex flex-nowrap gap-2 overflow-auto items-center justify-space-between"
             style={{ height: '10rem' }}
         >
             {marginSizes.map((size) => (
@@ -161,7 +161,7 @@ export const Margin = () => {
 export const MarginTop = () => {
     return (
         <div
-            className="border rounded w-full relative flex flex-nowrap scroll-if-needed items-start justify-space-between text-2xs"
+            className="border rounded w-full relative flex flex-nowrap overflow-auto items-start justify-space-between text-2xs"
             style={{ height: '8rem' }}
         >
             {marginSizes.map((size) => (
@@ -178,7 +178,7 @@ export const MarginTop = () => {
 export const MarginBottom = () => {
     return (
         <div
-            className="border rounded overflow-hidden w-full relative flex flex-nowrap scroll-if-needed items-end justify-space-between text-2xs"
+            className="border rounded overflow-hidden w-full relative flex flex-nowrap overflow-auto items-end justify-space-between text-2xs"
             style={{ height: '8rem' }}
         >
             {marginSizes.map((size) => (
@@ -194,7 +194,7 @@ export const MarginBottom = () => {
 
 export const MarginY = () => {
     return (
-        <div className="border rounded overflow-hidden w-full relative flex flex-nowrap scroll-if-needed items-center justify-space-between text-2xs">
+        <div className="border rounded overflow-hidden w-full relative flex flex-nowrap overflow-auto items-center justify-space-between text-2xs">
             {marginSizes.map((size) => (
                 <div key={size.class} className="bg-strong rounded-sm shrink-0" style={{ display: 'flow-root' }}>
                     <div className={`${demoItemClasses} my-${size.class}`} style={{ width: '3rem', height: '3rem' }}>

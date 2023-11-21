@@ -79,7 +79,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     );
 
     return (
-        <div className="flex flex-column flex-nowrap justify-space-between flex-1 scroll-if-needed gap-2">
+        <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto gap-2">
             <Button
                 icon
                 size="medium"

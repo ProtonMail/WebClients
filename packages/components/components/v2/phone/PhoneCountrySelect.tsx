@@ -148,7 +148,7 @@ const CountrySelect = ({ value, options, onChange, embedded, onClosed }: Props) 
                                     height={height}
                                     width={width}
                                     rowHeight={cache.rowHeight}
-                                    className="unstyled m-0 p-0 scroll-if-needed"
+                                    className="unstyled m-0 p-0 overflow-auto"
                                     scrollToIndex={selectedIndex < 0 ? 0 : selectedIndex}
                                     rowCount={filteredOptions.length}
                                     rowRenderer={({ index, key, parent, style }) => {
