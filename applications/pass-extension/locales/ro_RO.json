@@ -131,11 +131,20 @@
       "Delete vault": [
         "Ștergere seif"
       ],
+      "Disable autosave on this website": [
+        "Dezactivare autosalvare pe acest site web"
+      ],
       "Discard": [
         "Renunțare"
       ],
       "Dismiss": [
         "Renunțare"
+      ],
+      "Do not show on this website": [
+        "Nu mai arăta pe acest site web"
+      ],
+      "Do not suggest on this website": [
+        "Nu mai sugera pe acest site web"
       ],
       "Done": [
         "Gata"
@@ -275,6 +284,9 @@
       "Reload extension": [
         "Reîncărcare extensie"
       ],
+      "Remove": [
+        "Eliminare"
+      ],
       "Remove access": [
         "Eliminare acces"
       ],
@@ -401,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Lista de domenii în care anumite funcții automate din ${ PASS_SHORT_APP_NAME } (autocompletare, autosugerare, autosalvare) nu ar trebui să fie executate."
+      "A checked box means the feature is disabled.": [
+        "O casetă bifată înseamnă că funcția e dezactivată."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Lista de domenii în care anumite funcții automate din ${ PASS_SHORT_APP_NAME } (autocompletare, autosugerare) nu ar trebui să fie executate. ${ infoText }"
       ]
     },
     "Error": {
@@ -695,6 +710,9 @@
         "${ memberCount } membri",
         "${ memberCount } de membri"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } va afișa fișierul favicon prin proxy-ul de imagini anonim ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } va importa doar autentificări, note și carduri de plată."
       ],
@@ -750,6 +768,9 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "S-au mutat toate articolele din „${ payload.content.name }”."
+      ],
+      "All trashed items permanently deleted": [
+        "Toate articolele din gunoi au fost șterse permanent."
       ],
       "All trashed items successfully restored": [
         "Toate articolele din gunoi au fost restaurate."
@@ -920,6 +941,9 @@
       "Loading": [
         "Se încarcă"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Se încarcă ${ PASS_APP_NAME }"
+      ],
       "Loading...": [
         "Se încarcă…"
       ],
@@ -934,6 +958,9 @@
       ],
       "Multiple vaults": [
         "Seifuri multiple"
+      ],
+      "Never": [
+        "Niciodată"
       ],
       "No login found": [
         "Nu există date de autentificare"
@@ -1042,6 +1069,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Mulțumim, problema a fost raportată."
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Meniul derulant de autocompletare se va deschide automat când se dă clic sau se focalizează pe un câmp."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Nu s-a putut importa ${ result.ignored.length } articol:",
@@ -1179,6 +1209,9 @@
       "15 minutes": [
         "15 minute"
       ],
+      "2FA secret key (TOTP)": [
+        "Cheie secretă A2F (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "Token A2F (TOTP)"
       ],
@@ -1226,6 +1259,9 @@
       ],
       "Autofill 2FA": [
         "Autocompletare A2F"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Deschidere automată autocompletare când este accesat un câmp"
       ],
       "Autosave": [
         "Autosalvare"
@@ -1562,6 +1598,9 @@
       "Hyphens": [
         "Cratime"
       ],
+      "Memorizable Password": [
+        "Parole memorabile"
+      ],
       "Numbers": [
         "Cifre"
       ],
@@ -1582,6 +1621,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Adăugare cheie secretă A2F"
+      ],
       "Add hidden text": [
         "Adăugare text ascuns"
       ],
@@ -1687,6 +1729,9 @@
       "Discard changes?": [
         "Anulare modificări?"
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vă bucurați de ${ PASS_APP_NAME }?"
       ],
@@ -1714,6 +1759,9 @@
       "Leave vault ?": [
         "Părăsiți seiful ?"
       ],
+      "Log in as...": [
+        "Autentificare ca..."
+      ],
       "Low disk space": [
         "Spațiu pe disc redus"
       ],
@@ -1725,6 +1773,9 @@
       ],
       "Our welcome gift to you": [
         "Cadoul nostru de bun venit"
+      ],
+      "Password": [
+        "Parola"
       ],
       "Pending access to the shared data": [
         "În așteptarea accesului la datele partajate"
@@ -1941,6 +1992,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Planul actual vă permite să descărcați doar din primele două seifuri."
+      ],
+      "Your session could not be authorized.": [
+        "Sesiunea nu a putut fi autorizată."
+      ],
+      "Your session could not be resumed.": [
+        "Sesiunea nu a putut fi reluată."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Sesiunea nu este activă. Reautentificați-vă."
+      ],
+      "Your session was locked.": [
+        "Sesiunea a fost blocată."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonamentul nu vă permite să creați mai multe seifuri. Toate articolele vor fi importate în primul seif. Pentru a importa în mai multe seifuri, modificați-vă abonamentul."
