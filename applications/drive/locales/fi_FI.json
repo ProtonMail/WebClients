@@ -253,9 +253,6 @@
       "Download apps": [
         "Lataa sovellukset"
       ],
-      "Download Drive for Windows": [
-        "Lataa Drive Windowsille"
-      ],
       "Drive Locked": [
         "Drive on lukittu"
       ],
@@ -508,6 +505,9 @@
       "Report a problem": [
         "Ilmoita ongelmasta"
       ],
+      "Report an issue": [
+        "Ilmoita ongelmasta"
+      ],
       "Request a feature": [
         "Pyydä ominaisuutta"
       ],
@@ -711,9 +711,6 @@
       ],
       "Upload file": [
         "Tallenna tiedosto"
-      ],
-      "Upload files": [
-        "Tallenna tiedostoja"
       ],
       "Upload folder": [
         "Tallenna kansio"
@@ -3395,9 +3392,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Haluatko varmasti poistaa valitut kohteet roskakorista pysyvästi?"
       ],
-      "As soon as you have photos or videos on your device, they will appear here.": [
-        "Heti kun laitteellasi on kuvia tai videoita, ne näkyvät täällä."
-      ],
       "Attention required": [
         "Huomiota vaaditaan"
       ],
@@ -3562,9 +3556,6 @@
       "Emails are automatically signed": [
         "Viestit allekirjoitetaan automaattisesti"
       ],
-      "Enable drive search": [
-        "Käytä levyhakua"
-      ],
       "Enabling drive search": [
         "Hakua otetaan käyttöön"
       ],
@@ -3665,9 +3656,6 @@
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Tutustu ${ DRIVE_APP_NAME }en ja ansaitse 500 Mt tallennustilabonus! Toimi tänään."
       ],
-      "Go ahead, upload a file": [
-        "Aloita tallentamalla tiedosto"
-      ],
       "Go to \"My files\" and upload some files first.": [
         "Avaa \"Omat tiedostot\" ja tallenna ensin joitakin tiedostoja."
       ],
@@ -3734,9 +3722,6 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Roskakorissa olevat kohteet säilyvät siellä kunnes poistat ne pysyvästi"
-      ],
-      "It’s as easy as drag and drop or selecting files": [
-        "Se onnistuu helposti vetämällä ja pudottamalla tai selaamalla tiedostoja"
       ],
       "It’s easy and secure": [
         "Se on helppoa ja turvallista"
@@ -3827,9 +3812,6 @@
       ],
       "No group found": [
         "Ryhmää ei löytynyt"
-      ],
-      "No photos yet": [
-        "Kuvia ei vielä ole"
       ],
       "No results found": [
         "Tuloksia ei löytynyt"
@@ -4061,12 +4043,6 @@
       "Swiss encrypted file storage": [
         "Sveitsiläinen salattu tallennustila"
       ],
-      "Sync folders from your computer": [
-        "Synkronoi tietokoneesi kansioita"
-      ],
-      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "Synkronoi kansiot helposti työpöytäsovelluksemme avulla, jotta tiedostosi ovat aina ajan tasalla ja käytettävissä missä tahansa."
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
       ],
@@ -4090,9 +4066,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Siirrettäviä tiedostoja on vielä jäljellä. Siirtojen hallinnan sulkeminen peruu kaikki siirrot."
-      ],
-      "There are no files yet": [
-        "Tiedostoja ei vielä ole"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Tili on jäädytetty mahdollisen käyttöehtorikkeen vuoksi."
@@ -5502,11 +5475,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Nimi"
-      ]
-    },
-    "Platform": {
-      "Windows": [
-        "Windows"
       ]
     },
     "Progress bar description": {

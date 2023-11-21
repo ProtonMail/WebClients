@@ -253,9 +253,6 @@
       "Download apps": [
         "Λήψη εφαρμογών"
       ],
-      "Download Drive for Windows": [
-        "Λήψη του Drive για Windows"
-      ],
       "Drive Locked": [
         "Αρχειοθήκη Κλειδωμένη"
       ],
@@ -714,9 +711,6 @@
       ],
       "Upload file": [
         "Ανέβασμα αρχείου"
-      ],
-      "Upload files": [
-        "Ανέβασμα αρχείων"
       ],
       "Upload folder": [
         "Ανέβασμα φακέλου"
@@ -3267,6 +3261,12 @@
         "${ doneUploadsCount } φορτώθηκε",
         "${ doneUploadsCount } φορτώθηκαν"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } στο App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } στο Play Store"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } απέτυχε",
         "${ errorCount } απέτυχαν"
@@ -3407,9 +3407,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Είστε βέβαιοι ότι θέλετε να εξαλείψετε οριστικά τα επιλεγμένα διαγραμμένα στοιχεία;"
       ],
-      "As soon as you have photos or videos on your device, they will appear here.": [
-        "Μόλις έχετε φωτογραφίες ή βίντεο στη συσκευή σας, θα εμφανιστούν εδώ."
-      ],
       "Attention required": [
         "Χρειάζεται προσοχή"
       ],
@@ -3532,6 +3529,9 @@
       "double your storage": [
         "διπλασιάστε τον αποθηκευτικό σας χώρο"
       ],
+      "Download ${ name } app": [
+        "Λήψη ${ name } εφαρμογής"
+      ],
       "Download canceled": [
         "Η λήψη ακυρώθηκε"
       ],
@@ -3559,6 +3559,9 @@
       "Drop file here to upload": [
         "Σύρετε ένα αρχείο εδώ για μεταφόρτωση"
       ],
+      "Drop files here": [
+        "Σύρετε αρχεία εδώ"
+      ],
       "Drop to import": [
         "Απόθεση για εισαγωγή"
       ],
@@ -3573,9 +3576,6 @@
       ],
       "Emails are automatically signed": [
         "Τα μηνύματα υπογράφονται αυτόματα"
-      ],
-      "Enable drive search": [
-        "Ενεργοποίηση τοπικής αναζήτησης"
       ],
       "Enabling drive search": [
         "Ενεργοποίηση τοπικής αναζήτησης"
@@ -3674,11 +3674,14 @@
       "from the version history?": [
         "από το ιστορικό εκδόσεων;"
       ],
+      "Get the app to backup photos from your phone.": [
+        "Αποκτήστε την εφαρμογή για δημιουργία αντιγράφων ασφαλείας φωτογραφιών από το τηλέφωνό σας."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Αποκτήστε την εφαρμογή επιφάνειας εργασίας για συγχρονισμό αρχείων από τον υπολογιστή σας."
+      ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Γνωρίστε το ${ DRIVE_APP_NAME } και κερδίστε το 500 MB μπόνους αποθήκευσης σας! Αναλάβετε δράση σήμερα."
-      ],
-      "Go ahead, upload a file": [
-        "Προχωρήστε, ανεβάστε ένα αρχείο"
       ],
       "Go to \"My files\" and upload some files first.": [
         "Πηγαίνετε στο \"Τα αρχεία μου\" και ανεβάστε πρώτα μερικά αρχεία."
@@ -3746,9 +3749,6 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Τα στοιχεία στα Διαγραμμένα θα παραμείνουν εδώ μέχρι να τα διαγράψετε οριστικά"
-      ],
-      "It’s as easy as drag and drop or selecting files": [
-        "Είναι τόσο εύκολο όσο η μεταφορά και απόθεση ή επιλέξτε αρχεία"
       ],
       "It’s easy and secure": [
         "Είναι εύκολο και ασφαλές"
@@ -3828,6 +3828,9 @@
       "No": [
         "Όχι"
       ],
+      "No computers syncing": [
+        "Δε συγχρονίζεται κανένας υπολογιστής"
+      ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
       ],
@@ -3839,9 +3842,6 @@
       ],
       "No group found": [
         "Καμία ομάδα δεν βρέθηκε"
-      ],
-      "No photos yet": [
-        "Καμία φωτογραφία ακόμα"
       ],
       "No results found": [
         "Δεν βρέθηκαν αποτελέσματα"
@@ -3882,6 +3882,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Μόνο άτομα που κατέχουν τον σύνδεσμο και το συνθηματικό έχουν πρόσβαση σε αυτό το φάκελο."
+      ],
+      "Or use the \"+ New\" button": [
+        "Ή χρησιμοποιήστε το \"+ Νέο\" κουμπί"
       ],
       "Paused": [
         "Σε παύση"
@@ -3967,6 +3970,9 @@
       ],
       "Queued": [
         "Σε αναμονή"
+      ],
+      "Ready to add some photos?": [
+        "Είστε έτοιμοι να προσθέσετε φωτογραφίες;"
       ],
       "recommended browser": [
         "συνιστώμενο πρόγραμμα περιήγησης"
@@ -4073,12 +4079,6 @@
       "Swiss encrypted file storage": [
         "Ελβετική κρυπτογραφημένη αποθήκευση αρχείων"
       ],
-      "Sync folders from your computer": [
-        "Συγχρονισμός φακέλων από τον υπολογιστή σας"
-      ],
-      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "Συγχρονίστε φακέλους με ευκολία χρησιμοποιώντας την εφαρμογή μας για υπολογιστές, διασφαλίζοντας ότι τα αρχεία σας είναι πάντα ενημερωμένα και προσβάσιμα από οπουδήποτε."
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Προσωρινά μη διαθέσιμο. Παρακαλούμε ελέγξτε ξανά αργότερα."
       ],
@@ -4102,9 +4102,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Υπάρχουν ακόμη αρχεία που χρειάζονται μεταφορά. Το κλείσιμο του διαχειριστή μεταφορών θα τερματίσει όλες τις εργασίες."
-      ],
-      "There are no files yet": [
-        "Δεν υπάρχουν ακόμη αρχεία"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Αυτός ο λογαριασμός έχει ανασταλεί λόγω ενδεχόμενης παραβίασης πολιτικής."
@@ -5523,11 +5520,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Όνομα"
-      ]
-    },
-    "Platform": {
-      "Windows": [
-        "Windows"
       ]
     },
     "Progress bar description": {
