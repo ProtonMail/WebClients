@@ -608,7 +608,10 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                     />
                 </div>
                 <div>
-                    <InputField as="div" label={c('Calendar permissions label').t`Permissions`}>
+                    <div className=" flex flex-nowrap flex-column">
+                        <span className="field-two-label-container" id="desc-label-permission">{c(
+                            'Calendar permissions label'
+                        ).t`Permissions`}</span>
                         <div>
                             <RadioGroup
                                 name="calendar-sharing-access"
@@ -634,12 +637,13 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                 ]}
                                 onChange={(value) => setPermissions(value)}
                                 value={permissions}
+                                ariaDescribedBy="desc-label-permission"
                             />
                         </div>
                         <div className="color-weak">
                             {c('Calendar permissions hint').t`You can change or remove permissions at any time.`}
                         </div>
-                    </InputField>
+                    </div>
                 </div>
             </ModalContent>
             <ModalFooter>
