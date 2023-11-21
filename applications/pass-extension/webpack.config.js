@@ -119,6 +119,8 @@ module.exports = {
         modules: [path.resolve(__dirname), 'node_modules'],
         alias: {
             'proton-pass-extension': path.resolve(__dirname, 'src/'),
+            /* friends don't let friends publish code with `eval` : but that didn't stop `ttag`  */
+            ttag$: path.resolve(__dirname, '../../node_modules/ttag/dist/ttag.min.js'),
         },
     },
     cache: {
