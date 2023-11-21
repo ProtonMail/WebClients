@@ -17,7 +17,7 @@
 
 ### Improvements
 
--   Implement a mechanism to auto-reload events that we fail to load when there are network issues
+-   Implemented a mechanism to auto-reload events that we fail to load when there are network issues
 
 ### Fixes
 
@@ -31,24 +31,24 @@
 
 ### Improvements
 
--   Improve the performance when loading the app and exporting calendars
+-   Improved the performance when loading the app and exporting calendars
 
 ### Fixes
 
--   Fix incorrect display of event ending on midnight created in time zones with negative offset
+-   Fixed incorrect display of event ending on midnight created in time zones with negative offset
 
 ## Release 5.0.14 — Aug 23, 2023
 
 ### Improvements
 
 -   The settings button has moved from the top right to the sidebar on the right-hand side
--   Improve the app layout and increased the space for calendar events
+-   Improved the app layout and increased the space for calendar events
 
 ## Release 5.0.13 — Aug 9, 2023
 
 ### Improvements
 
--   Add the ability to easily see the addresses of events' participants, copy them and create or view linked contacts
+-   Added the ability to easily see the addresses of events' participants, copy them and create or view linked contacts
 
 ### Fixes
 
@@ -62,7 +62,7 @@
 
 ### Improvements
 
--   Add app languages: Finnish, Hindi and Swedish
+-   Added app languages: Finnish, Hindi and Swedish
 
 ### Fixes
 
@@ -76,15 +76,15 @@
 
 ### Improvements
 
--   Optimize events loading at app startup
--   Improve sidebar spacing and app switcher design
--   Support invitations with an empty organiser field in the ICS
--   Allow importing events with alarm components with invalid duration
+-   Optimized events loading at app startup
+-   Improved sidebar spacing and app switcher design
+-   Added support for invitations with an empty organiser field in the ICS
+-   Allowed importing events with alarm components with invalid duration
 
 ### Fixes
 
--   Refactor logic for updating favicon, which stopped working for Chromium-based browsers
--   Add RFC-mandatory fields for alarms when exporting calendar
+-   Refactored logic for updating favicon, which stopped working for Chromium-based browsers
+-   Added RFC-mandatory fields for alarms when exporting calendar
 
 ## Release: 5.0.10 — April 12, 2023
 
@@ -94,15 +94,15 @@
 
 ### Improvements
 
--   Update time zone offsets to the IANA time zone database 2022g
--   Update spelling of Europe/Kiev time zone to Europe/Kyiv
--   Enable the possibility to interact with the contacts in the side panel while creating an event in your calendar
+-   Updated time zone offsets to the IANA time zone database 2022g
+-   Updated spelling of Europe/Kiev time zone to Europe/Kyiv
+-   Enabled the possibility to interact with the contacts in the side panel while creating an event in your calendar
 
 ## Release: 5.0.9 — March 8, 2023
 
 ### New features
 
--   Lift restrictions for the number of calendars you can create by category. Create up to 3 calendars as a free user and 25 if you have a Mail subscription
+-   Lifted restrictions for the number of calendars you can create by category. Create up to 3 calendars as a free user and 25 if you have a Mail subscription
 
 ### Fixes
 
@@ -112,20 +112,20 @@
 
 ### Improvements
 
--   Increase support for importing ICS files with dates that do not follow the RFC 5545 standard (including dates missing seconds and ISO-formatted dates)
--   Redesign of app notifications
+-   Increased support for importing ICS files with dates that do not follow the RFC 5545 standard (including dates missing seconds and ISO-formatted dates)
+-   Redesigned of app notifications
 -   Minor UI improvements
 
 ## Release: 5.0.7 — January 25, 2023
 
 ### Improvements
 
--   Add reload mechanism for events that failed to be decrypted because of network issues
--   Improve notification update system for all calendar types
+-   Added a reload mechanism for events that failed to be decrypted because of network issues
+-   Improved notification update system for all calendar types
 
 ### Fixes
 
--   Update for some time zones conversion to canonical time zones
+-   Updated some time zones conversion to canonical time zones
 
 ## Release: 5.0.6 — December 14, 2022
 
@@ -139,7 +139,7 @@
 
 ### Fixes
 
--   Fix issue where some white spaces in event details could be trimmed when saving
+-   Fixed issue where some white spaces in event details could be trimmed when saving
 
 ## Release: 5.0.5 — October 5, 2022
 
@@ -151,12 +151,12 @@
 
 ### New features
 
--   Add invitations from the inbox to the calendar and mark as pending
+-   Added invitations from the inbox to the calendar and mark as pending
 
 ### Improvements
 
 -   Reorganisation of the calendar settings
--   Improve the performance and security of crypto operations
+-   Improved the performance and security of crypto operations
 -   Use account primary time zone when importing events without time zone (floating time)
 
 ## Release: 5.0.3 — July 20, 2022
@@ -169,18 +169,18 @@
 ### Improvements
 
 -   Validate calendar subscription links as soon as the URL is entered
--   Add possibility to disable the setting for time zone auto-detection directly from the pop-up
+-   Added possibility to disable the setting for time zone auto-detection directly from the pop-up
 
 ### Fixes
 
--   Fix issue where the app would not load because of calendars with a broken setup
+-   Fixed issue where the app would not load because of calendars with a broken setup
 
 ## Release: 5.0.2 — June 22, 2022
 
 ### Improvements
 
--   Make ICS parsing more robust
--   Make displayed GMT offset more representative of the date range in view
+-   Made ICS parsing more robust
+-   Made displayed GMT offset more representative of the date range in view
 
 # Introducing Proton's refreshed look.
 
@@ -194,13 +194,13 @@ Proton - Privacy by default.
 
 ### Improvements
 
--   Improve the visibility of today indicator
--   Improve calendar creation
+-   Improved the visibility of today indicator
+-   Improved calendar creation
 
 ### Fixes
 
--   Improve support for invalid ICS formats that other providers sometimes use (Office Holidays Ltd.)
--   Fix wrong conversion of some localized time zones that Microsoft Exchange 2010 uses
+-   Improved support for invalid ICS formats that other providers sometimes use (Office Holidays Ltd.)
+-   Fixed wrong conversion of some localized time zones that Microsoft Exchange 2010 uses
 
 ## Release: 4.0.8 — Feb 9, 2022
 
@@ -210,12 +210,12 @@ Proton - Privacy by default.
 
 ### Improvements
 
--   Update modals designs
+-   Updated modals designs
 -   Reactivate calendar keys automatically when opening an invitation in mail
 
 ### Fixes
 
--   Fix time zone aliases conversion
+-   Fixed time zone aliases conversion
 
 ## Release: 4.0.7 — Jan 13, 2022
 
@@ -227,9 +227,9 @@ Proton - Privacy by default.
 
 ### Improvements
 
--   Improve the browser print rendering of calendar
+-   Improved the browser print rendering of calendar
 -   Differentiate invitation emails with calendar icons in the mailbox
--   Extend supported time zone formats (Bluejeans, Mozilla and others using globally defined time zone registries)
+-   Extended supported time zone formats (Bluejeans, Mozilla and others using globally defined time zone registries)
 -   Support certain ICS formats that would result in the error "File does not have the right format" when trying to import them
 -   Better handling of large ICS files import
 -   Minor UI and accessibility improvements
@@ -246,10 +246,10 @@ Proton - Privacy by default.
 
 ### Improvements
 
--   Add shortcuts in the sidebar to import and subscribe to calendars
+-   Added shortcuts in the sidebar to import and subscribe to calendars
 -   Support ICS files with no version
 -   Fit more text in event cells for events with long duration
--   Reduce width of event popover to block less space in the UI
+-   Reduced width of event popover to block less space in the UI
 -   Other minor UI and accessibility improvements
 
 ## Release: 4.0.5 — November 3, 2021
@@ -258,24 +258,24 @@ Proton - Privacy by default.
 
 -   Allow importing invitations
 -   Do not leak event title in the email subject when replying to invitations from Calendar
--   Fix "not synced" status that could be displayed erroneously for subscribed calendars under some circumstances
+-   Fixed "not synced" status that could be displayed erroneously for subscribed calendars under some circumstances
 -   Support events with DURATION field via import
--   Improve support for non-standard replies sent by Yahoo Calendar
--   Update favicon without reloading the tab when day changes
+-   Improved support for non-standard replies sent by Yahoo Calendar
+-   Updated favicon without reloading the tab when day changes
 -   Minor UI and accessibility improvements
 
 ### Fixes
 
--   Fix faulty keyboard navigation in time zone selector
+-   Fixed faulty keyboard navigation in time zone selector
 -   Allow adding invitations with unsupported email addresses to Calendar when replying to them
--   Fix issue where editing multiple times a recurring event with the "this and following" option would result in an error
+-   Fixed issue where editing multiple times a recurring event with the "this and following" option would result in an error
 
 ## Release: 4.0.4 — September 22, 2021
 
 ### Improvements
 
--   Add participants from reduced event creation form
--   Redesign of event popover
+-   Added participants from reduced event creation form
+-   Redesigned of event popover
 
 ### Fixes
 
@@ -290,23 +290,23 @@ Proton - Privacy by default.
 
 ### Improvements
 
--   Invert day name and date in calendar view
+-   Inverted day name and date in calendar view
 
 ### Fixes
 
 -   Redirect Myanmar time zone to Indian/Cocos
 -   Handle case where an email address is disabled under one user and active under another in the same organisation
--   Extend support to recognize invitations formatted with floating times
+-   Extended support to recognize invitations formatted with floating times
 
 ## Release: 4.0.2 — July 28, 2021
 
 ### Improvements
 
--   Add shortcuts for calendar creation, edition and sharing from the calendar sidebar
+-   Added shortcuts for calendar creation, edition and sharing from the calendar sidebar
 -   Allow import of events with missing UID
 -   Design improvements in mini calendar
--   Make the calendar linked address more obvious in the settings list of calendars
--   Add calendar color in the calendar select when creating or editing an event
+-   Made the calendar linked address more obvious in the settings list of calendars
+-   Added calendar color in the calendar select when creating or editing an event
 
 ### Fixes
 
@@ -325,7 +325,7 @@ Proton - Privacy by default.
 
 ### Fixes
 
--   Fix the display of sent invitations with specific security settings that would show as encrypted in the sent folder
+-   Fixed the display of sent invitations with specific security settings that would show as encrypted in the sent folder
 
 # Proton Calendar for web is live!
 
