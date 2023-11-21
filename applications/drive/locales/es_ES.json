@@ -253,9 +253,6 @@
       "Download apps": [
         "Descargar aplicaciones"
       ],
-      "Download Drive for Windows": [
-        "Descargar Drive para Windows"
-      ],
       "Drive Locked": [
         "Unidad bloqueada"
       ],
@@ -714,9 +711,6 @@
       ],
       "Upload file": [
         "Cargar archivo"
-      ],
-      "Upload files": [
-        "Cargar archivos"
       ],
       "Upload folder": [
         "Cargar carpeta"
@@ -3267,6 +3261,12 @@
         "${ doneUploadsCount } cargado",
         "${ doneUploadsCount } cargados"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } en App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } en Play Store"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } error",
         "${ errorCount } errores"
@@ -3407,9 +3407,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "¿Estás seguro de que quieres eliminar permanentemente los elementos seleccionados de la papelera?"
       ],
-      "As soon as you have photos or videos on your device, they will appear here.": [
-        "En cuanto tengas fotos o vídeos en tu dispositivo, aparecerán aquí."
-      ],
       "Attention required": [
         "Atención requerida"
       ],
@@ -3532,6 +3529,9 @@
       "double your storage": [
         "doblar tu almacenamiento"
       ],
+      "Download ${ name } app": [
+        "Descargar la aplicación para ${ name }"
+      ],
       "Download canceled": [
         "Descarga cancelada"
       ],
@@ -3559,6 +3559,9 @@
       "Drop file here to upload": [
         "Suelta tus archivos aquí para cargarlos"
       ],
+      "Drop files here": [
+        "Suelta los archivos aquí"
+      ],
       "Drop to import": [
         "Suelta aquí para importar"
       ],
@@ -3573,9 +3576,6 @@
       ],
       "Emails are automatically signed": [
         "Los correos electrónicos son firmados automáticamente."
-      ],
-      "Enable drive search": [
-        "Activar la búsqueda en Drive"
       ],
       "Enabling drive search": [
         "Activación de la búsqueda en tu unidad"
@@ -3674,11 +3674,14 @@
       "from the version history?": [
         "del historial de versiones?"
       ],
+      "Get the app to backup photos from your phone.": [
+        "Obtén la aplicación para hacer copias de seguridad de imágenes desde tu teléfono."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Obtén la aplicación de escritorio para sincronizar archivos desde tu ordenador."
+      ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Conoce ${ DRIVE_APP_NAME } y gana tu bono de 500 MB de almacenamiento."
-      ],
-      "Go ahead, upload a file": [
-        "¡Adelante: carga un archivo!"
       ],
       "Go to \"My files\" and upload some files first.": [
         "Ve a \"Mis archivos\" y carga algunos archivos primero."
@@ -3746,9 +3749,6 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Los elementos de la papelera permanecerán aquí hasta que los borres permanentemente."
-      ],
-      "It’s as easy as drag and drop or selecting files": [
-        "Es tan fácil como arrastrar y soltar o seleccionar archivos."
       ],
       "It’s easy and secure": [
         "Es fácil y seguro"
@@ -3828,6 +3828,9 @@
       "No": [
         "No"
       ],
+      "No computers syncing": [
+        "No hay ordenadores sincronizados."
+      ],
       "No contacts added yet": [
         "Todavía no se han añadido contactos."
       ],
@@ -3839,9 +3842,6 @@
       ],
       "No group found": [
         "No se ha encontrado ningún grupo."
-      ],
-      "No photos yet": [
-        "Aún no hay fotos."
       ],
       "No results found": [
         "No se han encontrado resultados."
@@ -3882,6 +3882,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Solo las personas con el enlace y la contraseña tienen acceso a esta carpeta."
+      ],
+      "Or use the \"+ New\" button": [
+        "O utiliza el botón \"Más\""
       ],
       "Paused": [
         "En pausa"
@@ -3967,6 +3970,9 @@
       ],
       "Queued": [
         "En espera"
+      ],
+      "Ready to add some photos?": [
+        "¿Listo para añadir algunas imágenes?"
       ],
       "recommended browser": [
         "navegador recomendado"
@@ -4073,12 +4079,6 @@
       "Swiss encrypted file storage": [
         "Almacenamiento cifrado de archivos suizo"
       ],
-      "Sync folders from your computer": [
-        "Sincronizar carpetas desde tu ordenador"
-      ],
-      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "Sincroniza tus carpetas fácilmente utilizando nuestra aplicación de escritorio, asegurándote de que tus archivos siempre están actualizados y disponibles desde cualquier lugar."
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporalmente no disponible. Intenta comprobarlo más tarde."
       ],
@@ -4102,9 +4102,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Hay archivos que aún se deben transferir. Al cerrar el administrador de transferencias se terminan todas las operaciones."
-      ],
-      "There are no files yet": [
-        "Aún no hay archivos."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta cuenta ha sido suspendida debido a una posible violación de los términos y condiciones."
@@ -5525,11 +5522,6 @@
         "Nombre"
       ]
     },
-    "Platform": {
-      "Windows": [
-        "Windows"
-      ]
-    },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "${ contactsExported.length } de ${ countContacts } contacto exportado.",
@@ -6136,7 +6128,7 @@
         "Campo CSV"
       ],
       "Display name": [
-        "Nombre para mostrar"
+        "Nombre a mostrar"
       ],
       "First name": [
         "Nombre"

@@ -253,9 +253,6 @@
       "Download apps": [
         "Ladda ner appar"
       ],
-      "Download Drive for Windows": [
-        "Ladda ner Drive för Windows"
-      ],
       "Drive Locked": [
         "Drive låst"
       ],
@@ -714,9 +711,6 @@
       ],
       "Upload file": [
         "Ladda upp fil"
-      ],
-      "Upload files": [
-        "Ladda upp filer"
       ],
       "Upload folder": [
         "Ladda upp mapp"
@@ -3267,6 +3261,12 @@
         "${ doneUploadsCount } uppladdad",
         "${ doneUploadsCount } uppladdade"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } på App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } på Play Store"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } misslyckades",
         "${ errorCount } misslyckades"
@@ -3407,9 +3407,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Är du säker på att du vill ta bort markerade objekt permanent från papperskorgen?"
       ],
-      "As soon as you have photos or videos on your device, they will appear here.": [
-        "Så fort du har foton eller videoklipp på din enhet kommer de att visas här."
-      ],
       "Attention required": [
         "Uppmärksamhet krävs"
       ],
@@ -3532,6 +3529,9 @@
       "double your storage": [
         "dubbla ditt lagringsutrymme"
       ],
+      "Download ${ name } app": [
+        "Ladda ner ${ name }-appen"
+      ],
       "Download canceled": [
         "Nedladdning avbröts"
       ],
@@ -3559,6 +3559,9 @@
       "Drop file here to upload": [
         "Släpp filer här för att ladda upp"
       ],
+      "Drop files here": [
+        "Släpp filer här"
+      ],
       "Drop to import": [
         "Släpp för att importera"
       ],
@@ -3573,9 +3576,6 @@
       ],
       "Emails are automatically signed": [
         "E-post signeras automatiskt"
-      ],
-      "Enable drive search": [
-        "Aktivera enhets-sökning"
       ],
       "Enabling drive search": [
         "Aktiverar sökning på lagringsenhet"
@@ -3674,11 +3674,14 @@
       "from the version history?": [
         "från versionshistoriken?"
       ],
+      "Get the app to backup photos from your phone.": [
+        "Skaffa appen för att säkerhetskopiera foton från din telefon."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Skaffa appen för stationär dator för att synkronisera filer från din dator."
+      ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Lär känna ${ DRIVE_APP_NAME } och erhåll din 500 MB lagringsbonus! Passa på idag."
-      ],
-      "Go ahead, upload a file": [
-        "Varsågod, ladda upp en fil"
       ],
       "Go to \"My files\" and upload some files first.": [
         "Gå till \"Mina filer\" och ladda upp några filer först."
@@ -3746,9 +3749,6 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Objekt i papperskorgen blir kvar här tills du tar bort dem permanent"
-      ],
-      "It’s as easy as drag and drop or selecting files": [
-        "Det är lika enkelt som att dra och släppa eller välja filer"
       ],
       "It’s easy and secure": [
         "Det är enkelt och säkert"
@@ -3828,6 +3828,9 @@
       "No": [
         "Nej"
       ],
+      "No computers syncing": [
+        "Inga datorer synkroniseras"
+      ],
       "No contacts added yet": [
         "Inga kontakter tillagda ännu"
       ],
@@ -3839,9 +3842,6 @@
       ],
       "No group found": [
         "Ingen grupp hittades"
-      ],
-      "No photos yet": [
-        "Inga foton än"
       ],
       "No results found": [
         "Inga resultat hittades"
@@ -3882,6 +3882,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Endast personer med länken och lösenordet kan komma åt denna mapp."
+      ],
+      "Or use the \"+ New\" button": [
+        "Eller använd knappen “+ Ny“"
       ],
       "Paused": [
         "Pausad"
@@ -3967,6 +3970,9 @@
       ],
       "Queued": [
         "Köad"
+      ],
+      "Ready to add some photos?": [
+        "Redo att lägga till några foton?"
       ],
       "recommended browser": [
         "rekommenderad webbläsare"
@@ -4073,12 +4079,6 @@
       "Swiss encrypted file storage": [
         "Schweizisk krypterad fillagring"
       ],
-      "Sync folders from your computer": [
-        "Synkronisera mappar från din dator"
-      ],
-      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "Synkronisera mappar enkelt med vår app för stationär dator för att säkerställa att dina filer alltid är uppdaterade och åtkomliga från var som helst."
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Tillfälligt otillgänglig. Återkom senare."
       ],
@@ -4102,9 +4102,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Det finns fortfarande filer som behöver överföras. Att stänga överföringshanteraren avbryter alla åtgärder."
-      ],
-      "There are no files yet": [
-        "Det finns inga filer ännu"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Detta konto har stängts av på grund av en potentiell policyöverträdelse."
@@ -5121,6 +5118,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Få obegränsade alias med SimpleLogin av ${ BRAND_NAME }"
       ],
+      "Snooze messages and get reminded when you want": [
+        "Snooza meddelanden och bli påmind när du vill"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagringsutrymmet delas mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } och ${ DRIVE_APP_NAME }"
       ],
@@ -5520,11 +5520,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Namn"
-      ]
-    },
-    "Platform": {
-      "Windows": [
-        "Windows"
       ]
     },
     "Progress bar description": {
