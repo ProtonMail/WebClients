@@ -3246,6 +3246,9 @@
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "この設定ファイルを WireGuard ルーターや公式クライアントで使用できます。"
       ],
+      "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
+        "これらの認証情報は、公式 ${ VPN_APP_NAME } アプリへのサインインには使用できません。 ${ learnMore }"
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
       ],
@@ -3317,6 +3320,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "新規プランに登録したり、現在のプランを更新するときに使えるクレジットをアカウントにチャージします。1 ${ i18nCurrency } ごとに 1 クレジットを取得できます。"
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Total email addresses": [
         "総メールアドレス数"

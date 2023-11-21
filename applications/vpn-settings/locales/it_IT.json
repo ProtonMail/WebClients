@@ -658,9 +658,6 @@
       "Add ${ plan } for ${ price } per month": [
         "Aggiungi ${ plan } al costo di ${ price } al mese"
       ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "Aggiungi ${ plan } al tuo piano abbonandoti per 15 mesi"
-      ],
       "Cancel": [
         "Annulla"
       ],
@@ -2108,7 +2105,7 @@
         "Hai utilizzato tutti gli utenti del tuo piano. Per favore effettua l'upgrade del tuo piano per aggiungere un nuovo utente."
       ],
       "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
-        "Devi attivare le chiavi della tua organizzazione. Senza l'attivazione non potrai creare o accedere agli utenti non privati."
+        "Per creare utenti non privati e accedere ai loro account, dovrai attivare le chiavi della tua organizzazione."
       ],
       "You must privatize all users before generating new organization keys": [
         "Si devono privatizzare tutti gli account prima di generare nuove chiavi dell'organizzazione"
@@ -2135,17 +2132,26 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "App attualmente non disponibile"
+      ],
       "Error: ${ errorMessage }": [
         "Errore: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Ops, si è verificato un errore"
       ],
+      "Open in browser": [
+        "Apri nel browser"
+      ],
       "Please refresh the page or try again later.": [
         "Aggiorna la pagina o riprova più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Per utilizzare ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, passa alla versione web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Non è stato possibile caricare questa pagina. Aggiornar questa pagina o controlla la connessione internet."
@@ -2986,7 +2992,7 @@
         "NON dimenticare questa password. Se la dimentichi, non sarai più in grado di gestire la tua organizzazione."
       ],
       "Do NOT forget this password. If you forget it, you will not be able to sign in or decrypt your messages.": [
-        "NON dimenticare questa password. Se la dovessi dimenticare, non sarai più in grado di accedere o di decriptare i tuoi messaggi."
+        "Non dimenticare questa password. Se la dovessi dimenticare, non potrai più accedere o decrittografare i tuoi messaggi."
       ],
       "Done": [
         "Fatto"
@@ -3133,7 +3139,7 @@
         "Se desideri combinare questo account con un altro, NON eliminarlo."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Importante: per favore, assicurati di salvare i codici di recupero. Altrimenti non potrai mai più accedere al tuo account qualora perdessi il tuo dispositivo per l'autenticazione a 2 fattori."
+        "Importante: Assicurati di salvare i codici di recupero. Altrimenti non potrai mai più accedere al tuo account qualora perdessi il tuo dispositivo per l'autenticazione a due fattori."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Nel passaggio successivo, sarai in grado di inviare un deposito utilizzando un indirizzo Bitcoin."
@@ -3537,6 +3543,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Questo potrebbe richiedere del tempo. Non chiudere questa pagina e non disconnetterti da Internet."
       ],
+      "This file is too large to preview": [
+        "Questo file è troppo grande per l'anteprima"
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Questo utente è attualmente responsabile dei pagamenti per l'organizzazione. Abbassando il livello di questo membro, si diventa responsabile per pagamenti dell'organizzazione."
       ],
@@ -3562,7 +3571,7 @@
         "Questo ti disconnetterà da tutte le sessioni attive e disabiliterà l'autenticazione a 2 fattori."
       ],
       "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
-        "Questa procedura guidata abiliterà l'autenticazione a due fattori (2FA) sul tuo account ${ BRAND_NAME }. L'autenticazione a due fattori renderà il tuo account ${ BRAND_NAME_TWO } molto più sicuro e per questo ti raccomandiamo di attivarla."
+        "Questa procedura guidata abiliterà l'autenticazione a due fattori (2FA) sul tuo account ${ BRAND_NAME }. L'autenticazione a due fattori renderà il tuo account ${ BRAND_NAME_TWO } molto più sicuro e per questo ti raccomandiamo di abilitarla."
       ],
       "to ${ product } Business": [
         "su ${ product } Business"
@@ -3622,10 +3631,10 @@
         "Autenticazione a due fattori attivata"
       ],
       "Two-password mode requires two passwords: one to sign in to your account and one to decrypt your mailbox. (Advanced)": [
-        "La modalità a doppia password richiede due password: una per accedere al tuo account e una per decriptare la tua casella di posta. (Avanzato)"
+        "La modalità a doppia password richiede due password: una per accedere al tuo account e un'altra per decrittografare la tua casella di posta. (Avanzato)"
       ],
       "Two-password mode uses separate passwords for login and mailbox decryption. This provides a minor security benefit in some situations, however we recommend one-password mode for most users. To switch to two password mode, first set a login password and then set a mailbox password.": [
-        "La modalità a doppia password utilizza due password separate per l'accesso e la decriptazione della casella di posta. Questo fornisce un minimo vantaggio in termini di sicurezza in alcune situazioni, tuttavia noi consigliamo la modalità a singola password per la maggior parte degli utenti. Per passare alla modalità a doppia password, imposta prima una password di accesso e poi una per la casella di posta."
+        "La modalità a doppia password utilizza due password separate per l'accesso e per la decrittografia della casella di posta. Questo fornisce un minimo vantaggio in termini di sicurezza in alcune situazioni, tuttavia noi consigliamo la modalità a singola password per la maggior parte degli utenti. Per passare alla modalità a doppia password, imposta prima una password di accesso e poi una per la casella di posta."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Purtroppo non c'è nessun metodo di recupero salvato per questo account."
@@ -4850,6 +4859,9 @@
       "Custom fields": [
         "Campi personalizzati"
       ],
+      "Custom snooze time": [
+        "Periodo di posticipazione personalizzato"
+      ],
       "Data breach monitoring": [
         "Monitoraggio di violazioni di dati"
       ],
@@ -5069,6 +5081,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Ottieni un numero illimitato di alias con SimpleLogin di ${ BRAND_NAME }"
       ],
+      "Snooze messages and get reminded when you want": [
+        "Posticipa i messaggi e ricevili quando vuoi"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
       ],
@@ -5244,7 +5259,7 @@
         "L'invio massiccio di email promozionali o programmatiche non è attualmente supportato. Consigliamo di utilizzare un fornitore di servizi email dedicato per questo caso d'uso."
       ],
       "Control access to your shared files by adding password protection and link expiration dates": [
-        "Controlla l’accesso ai file condivisi aggiungendo una protezione con password e date di scadenza dei link"
+        "Controlla l'accesso ai file condivisi aggiungendo una protezione con password e date di scadenza dei link"
       ],
       "Create multiple email addresses for your online identities, e.g., JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain } for news subscription": [
         "Crea più indirizzi email per le tue identità online, ad esempio LuigiShopping@${ domain } per gli account di shopping, LuigiNotizie@${ domain } per gli abbonamenti alle notizie"
@@ -6118,7 +6133,7 @@
         "Chiudi"
       ],
       "Don't show this offer again": [
-        "Non mostrare più quest’offerta"
+        "Non mostrare più quest'offerta"
       ],
       "Special offer": [
         "Offerta speciale"
@@ -6289,7 +6304,7 @@
         "Sconti di fine anno"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "Effettua l’upgrade e risparmia ancora di più con 2 anni di ${ planName }"
+        "Effettua l'upgrade e risparmia ancora di più con 2 anni di ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -7360,6 +7375,16 @@
       ],
       "Primary admin": [
         "Amministratore principale"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "Utente SSO fornito dal tuo fornitore di identità"
       ]
     },
     "Validation": {
