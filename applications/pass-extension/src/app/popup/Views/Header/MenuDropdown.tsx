@@ -44,8 +44,8 @@ import clsx from '@proton/utils/clsx';
 
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
     height: DropdownSizeUnit.Dynamic,
-    maxHeight: '380px',
-    width: `20em`,
+    maxHeight: '30em',
+    width: `22em`,
 };
 
 export const MenuDropdown: VFC = () => {
@@ -140,6 +140,7 @@ export const MenuDropdown: VFC = () => {
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
                         <VaultMenu
+                            dense
                             inTrash={inTrash}
                             onAction={close}
                             onSelect={onVaultSelect}
@@ -188,7 +189,6 @@ export const MenuDropdown: VFC = () => {
                         <DropdownMenuButton
                             onClick={withClose(() => openSettings())}
                             label={c('Label').t`Settings`}
-                            labelClassname="flex-item-fluid"
                             icon={'cog-wheel'}
                         />
 
