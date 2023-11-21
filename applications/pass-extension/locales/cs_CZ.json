@@ -131,11 +131,20 @@
       "Delete vault": [
         "Smazat trezor"
       ],
+      "Disable autosave on this website": [
+        "Zakázat automatické ukládání na této webové stránce"
+      ],
       "Discard": [
         "Zahodit"
       ],
       "Dismiss": [
         "Skrýt"
+      ],
+      "Do not show on this website": [
+        "Nezobrazovat na této webové stránce"
+      ],
+      "Do not suggest on this website": [
+        "Nenavrhovat na této webové stránce"
       ],
       "Done": [
         "Hotovo"
@@ -275,6 +284,9 @@
       "Reload extension": [
         "Znovu načíst rozšíření"
       ],
+      "Remove": [
+        "Odstranit"
+      ],
       "Remove access": [
         "Odebrat přístup"
       ],
@@ -401,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Seznam domén, na kterých by neměly být spuštěny automatické funkce ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave)."
+      "A checked box means the feature is disabled.": [
+        "Zaškrtnuté políčko znamená, že je funkce zakázána."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Seznam domén, na kterých by neměly být spuštěny automatické funkce ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave).${ infoText }"
       ]
     },
     "Error": {
@@ -705,6 +720,9 @@
         "${ memberCount } členů",
         "${ memberCount } členů"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } zobrazí favicon položky prostřednictvím anonymizovaného obrázkového proxy serveru ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } bude importovat pouze přihlašovací údaje, poznámky a platební karty."
       ],
@@ -764,6 +782,9 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Všechny položky z \"${ payload.content.name }\" úspěšně přesunuty"
+      ],
+      "All trashed items permanently deleted": [
+        "Všechny položky z koše trvale smazány"
       ],
       "All trashed items successfully restored": [
         "Všechny položky z koše úspěšně obnoveny"
@@ -936,6 +957,9 @@
       "Loading": [
         "Načítání"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Načítání aplikace ${ PASS_APP_NAME }"
+      ],
       "Loading...": [
         "Načítání..."
       ],
@@ -950,6 +974,9 @@
       ],
       "Multiple vaults": [
         "Několik trezorů"
+      ],
+      "Never": [
+        "Nikdy"
       ],
       "No login found": [
         "Nebylo nalezeno žádné přihlášení"
@@ -1058,6 +1085,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Děkujeme, problém byl nahlášen"
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Rozbalovací nabídka automatického vyplňování se automaticky otevře, když na pole kliknete nebo ho vyberete."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Následující ${ result.ignored.length } položku nelze importovat:",
@@ -1199,6 +1229,9 @@
       "15 minutes": [
         "15 minut"
       ],
+      "2FA secret key (TOTP)": [
+        "Klíč 2FA secret (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "2FA token (TOTP)"
       ],
@@ -1246,6 +1279,9 @@
       ],
       "Autofill 2FA": [
         "Automaticky vyplnit 2FA"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Automatické otevření automatického vyplňování při vybrání přihlašovacího pole"
       ],
       "Autosave": [
         "Automatické uložení"
@@ -1582,6 +1618,9 @@
       "Hyphens": [
         "Pomlčky"
       ],
+      "Memorizable Password": [
+        "Zapamatovatelné heslo"
+      ],
       "Numbers": [
         "Čísla"
       ],
@@ -1602,6 +1641,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Přidat klíč 2FA secret"
+      ],
       "Add hidden text": [
         "Přidat skrytý text"
       ],
@@ -1708,6 +1750,9 @@
       "Discard changes?": [
         "Zahodit změny?"
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Užíváte si ${ PASS_APP_NAME }?"
       ],
@@ -1735,6 +1780,9 @@
       "Leave vault ?": [
         "Opustit trezor ?"
       ],
+      "Log in as...": [
+        "Přihlaste se jako..."
+      ],
       "Low disk space": [
         "Málo místa na disku"
       ],
@@ -1746,6 +1794,9 @@
       ],
       "Our welcome gift to you": [
         "Náš dárek na přivítanou pro vás"
+      ],
+      "Password": [
+        "Heslo"
       ],
       "Pending access to the shared data": [
         "Čekání na přístup ke sdíleným datům"
@@ -1963,6 +2014,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Váš tarif umožňuje automatické vyplňování pouze z prvních dvou trezorů"
+      ],
+      "Your session could not be authorized.": [
+        "Vaše relace nemohla být autorizována."
+      ],
+      "Your session could not be resumed.": [
+        "Vaše relace nemohla být obnovena."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Vaše relace je neaktivní. Přihlaste se prosím zpět."
+      ],
+      "Your session was locked.": [
+        "Vaše relace byla uzamčena."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše předplatné neumožňuje vytvořit více trezorů. Všechny položky budou importovány do vašeho prvního trezoru. Chcete-li importovat do více trezorů, navyšte své předplatné."

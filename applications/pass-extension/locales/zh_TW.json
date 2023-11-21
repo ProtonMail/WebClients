@@ -263,6 +263,9 @@
       "Reload extension": [
         "重新整理擴充功能"
       ],
+      "Remove": [
+        "移除"
+      ],
       "Remove access": [
         "移除存取權限"
       ],
@@ -372,11 +375,6 @@
       ],
       "Expand": [
         "展開"
-      ]
-    },
-    "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "不應執行 ${ PASS_SHORT_APP_NAME } 中的某些自動功能（自動填寫、自動建議、自動儲存）的網域清單。"
       ]
     },
     "Error": {
@@ -1445,6 +1443,9 @@
       "Discard changes?": [
         "捨棄變更？"
       ],
+      "Email": [
+        "電子郵件"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "享受 ${ PASS_APP_NAME }?"
       ],
@@ -1468,6 +1469,9 @@
       ],
       "Move all items ?": [
         "移動所有項目?"
+      ],
+      "Password": [
+        "密碼"
       ],
       "Permanently remove all items ?": [
         "永久刪除所有項目嗎?"

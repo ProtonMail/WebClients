@@ -131,11 +131,20 @@
       "Delete vault": [
         "Kasayı sil"
       ],
+      "Disable autosave on this website": [
+        "Bu sitede otomatik kayıt kullanılmasın"
+      ],
       "Discard": [
         "Sil"
       ],
       "Dismiss": [
         "Yok say"
+      ],
+      "Do not show on this website": [
+        "Bu sitede görüntülenmesin"
+      ],
+      "Do not suggest on this website": [
+        "Bu site için öneride bulunulmasın"
       ],
       "Done": [
         "Tamam"
@@ -275,6 +284,9 @@
       "Reload extension": [
         "Eklentiyi yeniden yükle"
       ],
+      "Remove": [
+        "Kaldır"
+      ],
       "Remove access": [
         "Erişimi kaldır"
       ],
@@ -401,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "${ PASS_SHORT_APP_NAME } içinde belirli otomatik işlemlerin (otomatik doldurma, otomatik önerme, otomatik kaydetme) yapılmayacağı etki alanlarının listesi."
+      "A checked box means the feature is disabled.": [
+        "Seçeneğin işaretlenmesi özelliğin kapatılmasını sağlar."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "${ PASS_SHORT_APP_NAME } içinde belirli otomatik işlemlerin (otomatik doldurma, otomatik önerme, otomatik kaydetme) yapılmayacağı etki alanlarının listesi.${ infoText }"
       ]
     },
     "Error": {
@@ -685,6 +700,9 @@
         "${ memberCount } üye",
         "${ memberCount } üye"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME }, ${ BRAND_NAME } anonimleştirilmiş görsel vekil sunucusunu kullanarak ögenin İnternet simgesini görüntüleyecek."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } yalnızca oturum açma, not ve kredi kartı kayıtlarını içe aktarır."
       ],
@@ -736,6 +754,9 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "\"${ payload.content.name }\" içindeki tüm ögeler taşındı"
+      ],
+      "All trashed items permanently deleted": [
+        "Çöpe atılmış tüm ögeler kalıcı olarak silindi"
       ],
       "All trashed items successfully restored": [
         "Çöpe atılmış tüm ögeler geri yüklendi"
@@ -834,7 +855,7 @@
         "Takma ad üretiliyor..."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
-        "Sınırsız sayıda takma ad edinin, ücretli özelliklerin keyfini sürün ve Pass Plus tarifesine abone olarak bizi destekleyin."
+        "Sınırsız sayıda takma ad edinin, ücretli özelliklerin tadını çıkarın ve Pass Plus tarifesine abone olarak bizi destekleyin."
       ],
       "Here you will find all the necessary information to get you started.": [
         "Başlamak için gereken tüm bilgileri burada bulabilirsiniz."
@@ -904,6 +925,9 @@
       "Loading": [
         "Yükleniyor"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } yükleniyor"
+      ],
       "Loading...": [
         "Yükleniyor..."
       ],
@@ -918,6 +942,9 @@
       ],
       "Multiple vaults": [
         "Birden çok kasa"
+      ],
+      "Never": [
+        "Asla"
       ],
       "No login found": [
         "Herhangi bir oturum açma kaydı bulunamadı"
@@ -1026,6 +1053,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Teşekkürler. Sorununuz bildirildi"
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Alana tıkladığınızda ya da üzerine geldiğinizde otomatik doldurma penceresi açılır."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Şu ${ result.ignored.length } öge içe aktarılamadı:",
@@ -1159,6 +1189,9 @@
       "15 minutes": [
         "15 dakika"
       ],
+      "2FA secret key (TOTP)": [
+        "İki adımlı doğrulama gizli anahtarı (tek kullanımlık)"
+      ],
       "2FA token (TOTP)": [
         "İki adımlı doğrulama kodu (tek kullanımlık)"
       ],
@@ -1206,6 +1239,9 @@
       ],
       "Autofill 2FA": [
         "Otomatik iki adımlı doğrulama doldurma"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Bir oturum açma alanına gelindiğinde otomatik doldurma açılsın"
       ],
       "Autosave": [
         "Otomatik kaydet"
@@ -1542,6 +1578,9 @@
       "Hyphens": [
         "Tire"
       ],
+      "Memorizable Password": [
+        "Hatırlanabilir parola"
+      ],
       "Numbers": [
         "Rakamlar"
       ],
@@ -1562,6 +1601,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "İki adımlı doğrulama gizli anahtarı ekle"
+      ],
       "Add hidden text": [
         "Gizli metin ekle"
       ],
@@ -1666,6 +1708,9 @@
       "Discard changes?": [
         "Değişiklikler silinsin mi?"
       ],
+      "Email": [
+        "E-posta"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } hoşunuza gitti mi?"
       ],
@@ -1693,6 +1738,9 @@
       "Leave vault ?": [
         "Kasa bırakılsın mı?"
       ],
+      "Log in as...": [
+        "Şu olarak oturum aç..."
+      ],
       "Low disk space": [
         "Boş disk alanı azaldı"
       ],
@@ -1704,6 +1752,9 @@
       ],
       "Our welcome gift to you": [
         "Karşılama hediyemiz"
+      ],
+      "Password": [
+        "Parola"
       ],
       "Pending access to the shared data": [
         "Paylaşılmış verilere erişilmesi bekleniyor"
@@ -1919,6 +1970,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Tarifeniz yalnızca ilk iki kasanızdan otomatik doldurmaya izin veriyor"
+      ],
+      "Your session could not be authorized.": [
+        "Oturumunuza yetki verilemedi."
+      ],
+      "Your session could not be resumed.": [
+        "Oturumunuz sürdürülemiyor."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Oturumunuz etkin değil. Lütfen yeniden oturum açın."
+      ],
+      "Your session was locked.": [
+        "Oturumunuz kilitlenmiş."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Abonelik tarifeniz birden fazla kasa oluşturmanıza izin vermiyor. Tüm ögeler ilk kasanıza aktarılacak. İçe aktarımda birden fazla kasa kullanabilmek için abonelik tarifenizi yükseltin."
