@@ -18,7 +18,7 @@ const UpsellModal = ({ title, img, info, features, footer, ...rest }: Props) => 
         <ModalTwo {...rest} size="xlarge">
             <Scroll>
                 <div className="flex flex-nowrap">
-                    <div className="flex-item-fluid no-mobile">
+                    <div className="flex-item-fluid hidden md:flex">
                         {cloneElement(img, {
                             className: 'h-full',
                             style: {

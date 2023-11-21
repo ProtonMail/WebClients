@@ -169,7 +169,7 @@ const CalendarSidebar = ({
             data-testid="calendar-view:new-event-button"
             disabled={!onCreateEvent}
             onClick={onCreateEvent}
-            className="flex flex-align-items-center flex-justify-center flex-nowrap gap-2 no-mobile"
+            className="hidden md:flex flex-align-items-center flex-justify-center flex-nowrap gap-2"
         >
             <span className="text-ellipsis">{c('Action').t`New event`}</span>
         </SidebarPrimaryButton>
