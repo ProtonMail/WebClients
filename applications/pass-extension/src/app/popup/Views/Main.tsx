@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import { useNotifications } from '@proton/components/hooks';
 import { FadeIn } from '@proton/pass/components/Layout/Animation/FadeIn';
 import { Content } from '@proton/pass/components/Layout/Section/Content';
-import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
+import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
 
 import { Header } from './Header/Header';
 import { ItemEditContainer } from './Item/ItemEditContainer';
@@ -23,7 +23,7 @@ export const Main: VFC = () => {
         <FadeIn id="main" className="flex flex-column flex-nowrap w-full h-full overflow-hidden" key="main" delay={50}>
             <Header />
             <main className="flex flex-align-items-center flex-justify-center flex-nowrap w-full h-full">
-                <Sidebar>
+                <SubSidebar>
                     <Switch>
                         <Route path="/trash">
                             <TrashItemsList />
@@ -32,7 +32,7 @@ export const Main: VFC = () => {
                             <ItemsList />
                         </Route>
                     </Switch>
-                </Sidebar>
+                </SubSidebar>
 
                 <Content>
                     <Switch>
