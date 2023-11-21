@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { PAYMENT_METHOD_TYPES, PlainPaymentMethodType } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES, PaymentMethodType } from '@proton/components/payments/core';
 import { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
 import { Currency, SubscriptionCheckResponse } from '@proton/shared/lib/interfaces';
 
@@ -15,7 +15,7 @@ interface Props {
     onDone?: () => void;
     checkResult?: SubscriptionCheckResponse;
     loading?: boolean;
-    paymentMethodType?: PlainPaymentMethodType;
+    paymentMethodValue?: PaymentMethodType;
     paypal: PaypalProcessorHook;
     disabled?: boolean;
 }
@@ -26,7 +26,7 @@ const SubscriptionSubmitButton = ({
     currency,
     step,
     loading,
-    paymentMethodType,
+    paymentMethodValue,
     checkResult,
     disabled,
     onDone,
@@ -61,7 +61,7 @@ const SubscriptionSubmitButton = ({
         );
     }
 
-    if (paymentMethodType === PAYMENT_METHOD_TYPES.PAYPAL) {
+    if (paymentMethodValue === PAYMENT_METHOD_TYPES.PAYPAL) {
         return (
             <StyledPayPalButton
                 type="submit"
@@ -74,7 +74,7 @@ const SubscriptionSubmitButton = ({
         );
     }
 
-    if (!loading && paymentMethodType === PAYMENT_METHOD_TYPES.CASH) {
+    if (!loading && paymentMethodValue === PAYMENT_METHOD_TYPES.CASH) {
         return (
             <PrimaryButton className={className} disabled={disabled} loading={loading} onClick={onDone}>
                 {c('Action').t`Done`}
@@ -82,7 +82,7 @@ const SubscriptionSubmitButton = ({
         );
     }
 
-    if (paymentMethodType === PAYMENT_METHOD_TYPES.BITCOIN) {
+    if (paymentMethodValue === PAYMENT_METHOD_TYPES.BITCOIN) {
         return (
             <PrimaryButton className={className} disabled={true} loading={loading}>
                 {c('Info').t`Awaiting transaction`}
