@@ -259,9 +259,6 @@
       "Download apps": [
         "Pobierz aplikacje"
       ],
-      "Download Drive for Windows": [
-        "Pobierz Proton Drive na Windowsa"
-      ],
       "Drive Locked": [
         "Dysk jest zablokowany"
       ],
@@ -720,9 +717,6 @@
       ],
       "Upload file": [
         "Prześlij plik"
-      ],
-      "Upload files": [
-        "Prześlij pliki"
       ],
       "Upload folder": [
         "Prześlij folder"
@@ -2598,6 +2592,9 @@
       "Access denied": [
         "Odmowa dostępu"
       ],
+      "App currently unavailable": [
+        "Aplikacja jest niedostępna"
+      ],
       "Brace yourself till we get the error fixed.": [
         "Poczekaj chwilę, naprawiamy ten błąd."
       ],
@@ -2621,6 +2618,9 @@
       ],
       "Something went wrong": [
         "Coś poszło nie tak"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Otwórz przeglądarkę, aby korzystać z ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Nie możemy załadować strony. Odśwież stronę lub sprawdź swoje połączenie."
@@ -2691,6 +2691,14 @@
     "Event title": {
       "(no title)": [
         "(brak tytułu)"
+      ]
+    },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "Odzyskanie ${ countOfFailedLinks } zdjęcia nie powiodło się",
+        "Odzyskanie ${ countOfFailedLinks } zdjęć nie powiodło się",
+        "Odzyskanie ${ countOfFailedLinks } zdjęć nie powiodło się",
+        "Odzyskanie ${ countOfFailedLinks } zdjęć nie powiodło się"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -3345,6 +3353,12 @@
         "Przesłano ${ doneUploadsCount } plików",
         "Przesłano ${ doneUploadsCount } plików"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } w App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } w Google Play"
+      ],
       "${ errorCount } failed": [
         "Transfer ${ errorCount } pliku zakończył się niepowodzeniem",
         "Transfer ${ errorCount } plików zakończył się niepowodzeniem",
@@ -3519,9 +3533,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Czy na pewno chcesz trwale usunąć zaznaczone elementy?"
       ],
-      "As soon as you have photos or videos on your device, they will appear here.": [
-        "Zdjęcia i filmy pojawią się tutaj."
-      ],
       "Attention required": [
         "Wymagana uwaga"
       ],
@@ -3648,6 +3659,9 @@
       "double your storage": [
         "podwoić przestrzeń dyskową"
       ],
+      "Download ${ name } app": [
+        "Pobierz aplikację dla systemu ${ name }"
+      ],
       "Download canceled": [
         "Pobieranie zostało anulowane"
       ],
@@ -3675,6 +3689,9 @@
       "Drop file here to upload": [
         "Upuść, aby przesłać"
       ],
+      "Drop files here": [
+        "Upuść pliki tutaj"
+      ],
       "Drop to import": [
         "Upuść, aby zaimportować"
       ],
@@ -3689,9 +3706,6 @@
       ],
       "Emails are automatically signed": [
         "Wiadomości są automatyczne podpisywane"
-      ],
-      "Enable drive search": [
-        "Włącz wyszukiwanie zawartości dysku"
       ],
       "Enabling drive search": [
         "Włączanie wyszukiwania zawartości dysku"
@@ -3792,11 +3806,14 @@
       "from the version history?": [
         "z historii wersji?"
       ],
+      "Get the app to backup photos from your phone.": [
+        "Pobierz aplikację, aby tworzyć kopię zapasową zdjęć z telefonu."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Pobierz aplikację desktopową, aby synchronizować pliki na komputerze."
+      ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Poznaj dysk ${ DRIVE_APP_NAME } i odbierz bonus 500 MB!"
-      ],
-      "Go ahead, upload a file": [
-        "Prześlij plik"
       ],
       "Go to \"My files\" and upload some files first.": [
         "Przejdź do sekcji \"Moje pliki\" i zacznij przesyłać pliki."
@@ -3866,9 +3883,6 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Elementy w Koszu pozostaną tutaj, dopóki nie zostaną trwale usunięte"
-      ],
-      "It’s as easy as drag and drop or selecting files": [
-        "To jest łatwe jak przeciąganie i upuszczanie lub zaznaczanie plików"
       ],
       "It’s easy and secure": [
         "To łatwe i bezpieczne"
@@ -3948,6 +3962,9 @@
       "No": [
         "Nie"
       ],
+      "No computers syncing": [
+        "Brak zsynchronizowanych urządzeń"
+      ],
       "No contacts added yet": [
         "Nie dodano jeszcze żadnych kontaktów"
       ],
@@ -3959,9 +3976,6 @@
       ],
       "No group found": [
         "Nie znaleziono grupy"
-      ],
-      "No photos yet": [
-        "Brak zdjęć"
       ],
       "No results found": [
         "Nie znaleziono żadnych wyników"
@@ -4005,6 +4019,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Tylko posiadacz linku i hasła ma dostęp do folderu."
       ],
+      "Or use the \"+ New\" button": [
+        "Możesz też użyć przycisku \"+ Nowy\""
+      ],
       "Paused": [
         "Wstrzymano"
       ],
@@ -4018,7 +4035,7 @@
         "Schemat PGP/MIME automatycznie wysyła wiadomości przy użyciu obecnego trybu edytora."
       ],
       "Photos have been successfully recovered.": [
-        "Pomyślnie odzyskano zdjęcia."
+        "Zdjęcia zostały odzyskane."
       ],
       "Please enter the password to decrypt and view content.": [
         "Wpisz hasło, aby odszyfrować zawartość."
@@ -4091,6 +4108,9 @@
       ],
       "Queued": [
         "W kolejce"
+      ],
+      "Ready to add some photos?": [
+        "Gotowy, aby dodać zdjęcia?"
       ],
       "recommended browser": [
         "zalecanej przeglądarki"
@@ -4197,12 +4217,6 @@
       "Swiss encrypted file storage": [
         "Szwajcarska zaszyfrowana przestrzeń dyskowa"
       ],
-      "Sync folders from your computer": [
-        "Synchronizuj foldery ze swoim urządzeniem"
-      ],
-      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "Synchronizuj foldery za pomocą aplikacji desktopowej, aby Twoje pliki były aktualne i dostępne, gdziekolwiek jesteś."
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Usługa jest tymczasowo niedostępna. Spróbuj ponownie później."
       ],
@@ -4227,9 +4241,6 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Masz pliki, które muszą zostać przesłane. Zamknięcie menedżera przesyłania spowoduje anulowanie wszystkich aktywnych operacji."
       ],
-      "There are no files yet": [
-        "Nie masz tu jeszcze żadnych plików"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Konto zostało zawieszone z powodu potencjalnego naruszenia regulaminu."
       ],
@@ -4238,6 +4249,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Ta przeglądarka nie obsługuje podglądu dokumentów PDF. Pobierz plik."
+      ],
+      "This file is too large to preview": [
+        "Plik jest zbyt duży do podglądu"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Plik mógł zostać usunięty, przeniesiony lub jest niedostępny. Skontaktuj się z właścicielem pliku."
@@ -5262,6 +5276,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Uzyskaj nieograniczoną liczbę aliasów SimpleLogin przez ${ BRAND_NAME }"
       ],
+      "Snooze messages and get reminded when you want": [
+        "Odłóż wiadomości i otrzymaj powiadomienie o nich w dowolnym momencie"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Przestrzeń dyskowa jest dzielona pomiędzy usługami ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } i ${ DRIVE_APP_NAME }"
       ],
@@ -5699,11 +5716,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Nazwa"
-      ]
-    },
-    "Platform": {
-      "Windows": [
-        "Windows"
       ]
     },
     "Progress bar description": {
@@ -6221,6 +6233,12 @@
         "${ countMergeableContacts } kontakty wyglądają identycznie.",
         "${ countMergeableContacts } kontaktów wygląda identycznie.",
         "${ countMergeableContacts } kontaktów wygląda identycznie."
+      ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "Pozostało ${ countOfUnrecoveredLinksLeft } zdjęcie",
+        "Pozostały ${ countOfUnrecoveredLinksLeft } zdjęcia",
+        "Pozostało ${ countOfUnrecoveredLinksLeft } zdjęć",
+        "Pozostało ${ countOfUnrecoveredLinksLeft } zdjęć"
       ],
       "Address copied to clipboard": [
         "Adres został skopiowany do schowka"

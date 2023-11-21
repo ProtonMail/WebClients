@@ -259,9 +259,6 @@
       "Download apps": [
         "Спампаваць праграмы"
       ],
-      "Download Drive for Windows": [
-        "Спампаваць Drive для Windows"
-      ],
       "Drive Locked": [
         "Дыск заблакіраваны"
       ],
@@ -356,7 +353,7 @@
         "Схаваць меткі"
       ],
       "Image could not be loaded with tracker protection.": [
-        "Немагчыма загрузіць відарыс з уключанай абаронай ад праграм сачэння."
+        "Не атрымалася загрузіць відарыс з уключанай абаронай ад праграм сачэння."
       ],
       "Image will be loaded without a proxy": [
         "Відарыс будзе загружаны без проксі-сервера"
@@ -720,9 +717,6 @@
       ],
       "Upload file": [
         "Запампаваць файл"
-      ],
-      "Upload files": [
-        "Запампаваць файлы"
       ],
       "Upload folder": [
         "Запампаваць папку"
@@ -2652,10 +2646,10 @@
     },
     "Event invitation error": {
       "Attached ICS file could not be decrypted": [
-        "Немагчыма расшыфраваць далучаны файл ICS"
+        "Не атрымалася расшыфраваць далучаны файл ICS"
       ],
       "Attached ICS file could not be read": [
-        "Немагчыма прачытаць далучаны файл ICS"
+        "Не атрымалася прачытаць далучаны файл ICS"
       ],
       "Invalid invitation": [
         "Памылковае запрашэнне"
@@ -2664,10 +2658,10 @@
         "Памылковы адказ"
       ],
       "The event could not be added to your calendar. No answer was sent": [
-        "Немагчыма дадаць падзею ў ваш каляндар. Адказ не адпраўлены"
+        "Не атрымалася дадаць падзею ў ваш каляндар. Адказ не адпраўлены"
       ],
       "The event could not be updated in your calendar. No answer was sent": [
-        "Немагчыма абнавіць падзею ў вашым календары. Адказ не адпраўлены"
+        "Не атрымалася абнавіць падзею ў вашым календары. Адказ не адпраўлены"
       ],
       "Unexpected error": [
         "Нечаканая памылка"
@@ -3533,9 +3527,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Вы сапраўды хочаце незваротна выдаліць выбраныя элементы са сметніцы?"
       ],
-      "As soon as you have photos or videos on your device, they will appear here.": [
-        "Як толькі на вашай прыладзе будуць з'яўляцца відэа і фатаграфіі, яны адразу ж будуць трапляць і сюды."
-      ],
       "Attention required": [
         "Патрабуецца ўвага"
       ],
@@ -3704,9 +3695,6 @@
       "Emails are automatically signed": [
         "Лісты падпісваюцца аўтаматычна"
       ],
-      "Enable drive search": [
-        "Уключыць пошук на дыску"
-      ],
       "Enabling drive search": [
         "Уключэнне пошуку на дыску"
       ],
@@ -3809,9 +3797,6 @@
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Пазнаёмцеся з ${ DRIVE_APP_NAME } і атрымайце бонус у 500 МБ! Гэта можна зрабіць ужо сёння."
       ],
-      "Go ahead, upload a file": [
-        "Працягнуць і запампаваць файл"
-      ],
       "Go to \"My files\" and upload some files first.": [
         "Перайдзіце ў раздзел \"Мае файлы\" і спачатку запампуйце якія-небудзь файлы."
       ],
@@ -3880,9 +3865,6 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Элементы будуць заставацца ў сметніцы, пакуль вы не выдаліце іх незваротна"
-      ],
-      "It’s as easy as drag and drop or selecting files": [
-        "Гэта таксама проста, як перацягванне або выбар файлаў"
       ],
       "It’s easy and secure": [
         "Гэта лёгка і бяспечна"
@@ -3973,9 +3955,6 @@
       ],
       "No group found": [
         "Група не знойдзена"
-      ],
-      "No photos yet": [
-        "Пакуль няма фатаграфій"
       ],
       "No results found": [
         "Нічога не знойдзена"
@@ -4211,12 +4190,6 @@
       "Swiss encrypted file storage": [
         "Швейцарскае зашыфраванае файлавае сховішча"
       ],
-      "Sync folders from your computer": [
-        "Сінхранізацыя папак з вашага камп'ютара"
-      ],
-      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "З лёгкасцю сінхранізуйце папкі выкарыстоўваючы нашу праграму для камп'ютараў, каб вашы файлы заўсёды былі ў актуальным стане і даступны з любога месца ў свеце."
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Часова недаступны. Паўтарыце спробу пазней."
       ],
@@ -4236,13 +4209,10 @@
         "Магчыма, што гэтыя элементы былі падроблены: ${ items }. Адкрывайце толькі калі давяраеце ім."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
-        "Уладальнік гэтага адраса адключыў скразное шыфраванне. Яму неабходна паўторна ўключыць скразное шыфраванне, каб мець магчымасць адпраўляць зашыфраваныя лісты на гэты адрас."
+        "Уладальнік гэтага адраса адключыў скразное шыфраванне. Яму неабходна паўторна ўключыць яго, каб мець магчымасць адпраўляць зашыфраваныя лісты на гэты адрас."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Яшчэ ёсць файлы, якія неабходна перадаць. Закрыццё менеджара перадачы завершыць усе аперацыі."
-      ],
-      "There are no files yet": [
-        "Пакуль у вас няма файлаў"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Дзеянне гэтага ўліковага запісу было прыпынена па прычыне патэнцыйнага парушэння ўмоў выкарыстання."
@@ -5721,11 +5691,6 @@
         "Назва"
       ]
     },
-    "Platform": {
-      "Windows": [
-        "Windows"
-      ]
-    },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "${ contactsExported.length } з ${ countContacts } кантакту паспяхова экспартаваны.",
@@ -6243,10 +6208,10 @@
         "${ countMergeableContacts } кантакты выглядаюць ідэнтычна."
       ],
       "${ countOfUnrecoveredLinksLeft } left": [
-        "${ countOfUnrecoveredLinksLeft } застаўся",
-        "${ countOfUnrecoveredLinksLeft } засталося",
-        "${ countOfUnrecoveredLinksLeft } засталося",
-        "${ countOfUnrecoveredLinksLeft } засталося"
+        "Застаўся ${ countOfUnrecoveredLinksLeft }",
+        "Засталося ${ countOfUnrecoveredLinksLeft }",
+        "Засталося ${ countOfUnrecoveredLinksLeft }",
+        "Засталося ${ countOfUnrecoveredLinksLeft }"
       ],
       "Address copied to clipboard": [
         "Адрас скапіяваны ў буфер абмену"
@@ -6986,10 +6951,10 @@
         "Сістэмныя падпапкі будуць адлюстроўвацца ў якасці асобных папак у ${ MAIL_APP_NAME }"
       ],
       "The image could not be loaded": [
-        "Немагчыма загрузіць відарыс"
+        "Не атрымалася загрузіць відарыс"
       ],
       "The image could not be loaded using proxy": [
-        "Немагчыма загрузіць відарыс з выкарыстаннем проксі-сервера"
+        "Не атрымалася загрузіць відарыс з выкарыстаннем проксі-сервера"
       ],
       "The import will start with the most recent messages.": [
         "Імпартаванне пачнецца з самых апошніх паведамленняў."
@@ -7069,7 +7034,7 @@
         "Вы сапраўды хочаце незваротна выдаліць гэты кантакт?"
       ],
       "Contacts could not be merged": [
-        "Не ўдалося аб'яднаць кантакты"
+        "Не атрымалася аб'яднаць кантакты"
       ],
       "If you don’t remember your password, it is impossible to re-activate your key. We can help you dismiss the alert banner but in the process you will permanently lose access to all the data encrypted with that key.": [
         "Калі вы не памятаеце свой пароль, то немагчыма паўторна актываваць ваш ключ. Мы можам дапамагчы вам ігнараваць банер папярэджання, але ў працэсе вы незваротна страціце доступ да ўсіх даных, якія зашыфраваны гэтым ключом."

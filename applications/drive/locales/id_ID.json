@@ -250,9 +250,6 @@
       "Download apps": [
         "Unduh aplikasi"
       ],
-      "Download Drive for Windows": [
-        "Unduh Drive untuk Windows"
-      ],
       "Drive Locked": [
         "Drive Terkunci"
       ],
@@ -710,9 +707,6 @@
         "Tetap unggah"
       ],
       "Upload file": [
-        "Unggah berkas"
-      ],
-      "Upload files": [
         "Unggah berkas"
       ],
       "Upload folder": [
@@ -3066,7 +3060,7 @@
         "Tergantung dari layanan surel Anda sebelumnya, Anda mungkin akan perlu untuk membuat ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat mengimpor ke ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
-        "Tampilkan lebih banyak pilihan pada menu dropdown dengan mengklik tombol 3 titik (...)."
+        "Tampilkan lebih banyak pilihan pada menu dropdown dengan mengeklik tombol 3 titik (...)."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Buat ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh ${ BRAND_NAME }."
@@ -3344,9 +3338,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Apakah Anda yakin untuk menghapus item-item yang terpilih dari sampah secara permanen?"
       ],
-      "As soon as you have photos or videos on your device, they will appear here.": [
-        "Foto dan video di perangkat Anda akan ditampilkan di sini."
-      ],
       "Attention required": [
         "Diperlukan perhatian"
       ],
@@ -3509,9 +3500,6 @@
       "Emails are automatically signed": [
         "Surel ditandatangani secara otomatis"
       ],
-      "Enable drive search": [
-        "Aktifkan pencarian drive"
-      ],
       "Enabling drive search": [
         "Mengaktifkan pencarian drive"
       ],
@@ -3611,9 +3599,6 @@
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Kenali ${ DRIVE_APP_NAME } lebih dalam dan dapatkan bonus kuota penyimpanan 500 GB! Jangan lewatkan kesempatan ini sekarang juga."
       ],
-      "Go ahead, upload a file": [
-        "Unggah berkas"
-      ],
       "Go to \"My files\" and upload some files first.": [
         "Masuk ke \"Berkas saya\" dan unggah beberapa berkas terlebih dahulu."
       ],
@@ -3679,9 +3664,6 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Item di sampah akan tetap ada di sini sampai Anda menghapusnya secara permanen"
-      ],
-      "It’s as easy as drag and drop or selecting files": [
-        "Mengunggah berkas semudah menarik atau memilih berkas"
       ],
       "It’s easy and secure": [
         "Mudah dan aman"
@@ -3772,9 +3754,6 @@
       ],
       "No group found": [
         "Tidak ada grup yang ditemukan"
-      ],
-      "No photos yet": [
-        "Belum ada foto"
       ],
       "No results found": [
         "Tidak ada hasil yang ditemukan"
@@ -4004,17 +3983,11 @@
       "Swiss encrypted file storage": [
         "Layanan penyimpanan berkas terenkripsi dari Swiss"
       ],
-      "Sync folders from your computer": [
-        "Sinkronkan folder dari komputer Anda"
-      ],
-      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "Sinkronkan folder dengan mudah melalui aplikasi desktop kami, memastikan berkas Anda selalu terkini dan dapat diakses dari mana saja."
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Hal yang Anda tuju saat ini sedang tidak tersedia. Mohon periksa lagi nanti."
       ],
       "The account may have a new key, or the following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Akun ini mungkin memiliki kunci baru, atau berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon hanya buka berkas/folder berikut apabila Anda mempercayai sumbernya."
+        "Akun ini mungkin memiliki kunci baru, atau berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon buka berkas/folder ini hanya apabila Anda memercayai sumbernya."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
         "Aplikasi perlu mendekripsi kontak Anda secara lokal sebelum dapat diekspor. Di akhir proses, berkas VCF akan dibuat dan Anda dapat mengunduhnya."
@@ -4026,16 +3999,13 @@
         "Data yang terenkripsi akan berukuran sedikit lebih besar berkat sisipan overhead enkripsi dan tanda tangan digital yang memastikan keamanan data Anda."
       ],
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
-        "Berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon hanya buka berkas/folder apabila Anda mempercayai sumbernya."
+        "Berkas/folder berikut mungkin telah dimodifikasi: ${ items }. Mohon buka berkas/folder ini hanya apabila Anda memercayai sumbernya."
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Pemilik alamat ini telah menonaktifkan enkripsi ujung ke ujung. Untuk dapat mengirim surel terenkripsi kealamat ini, pemiliknya harus mengaktifkan ulang enkripsi ujung ke ujung."
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Terdapat berkas yang masih perlu untuk ditransfer. Dengan menutup jendela transfer, seluruh proses yang sedang berlangsung akan dibatalkan."
-      ],
-      "There are no files yet": [
-        "Anda belum memiliki berkas apa pun"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Akun ini telah ditangguhkan karena ditenggarai telah melanggar ketentuan penggunaan yang berlaku."
@@ -4045,6 +4015,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Browser ini tidak mendukung pratinjau dokumen PDF. Mohon unduh berkas yang bersangkutan."
+      ],
+      "This file is too large to preview": [
+        "Berkas ini terlalu besar untuk dipratinjau"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Berkas ini mungkin telah dihapus, dipindahkan, atau tidak lagi tersedia. Cobalah untuk menghubungi pemilik berkas yang bersangkutan."
@@ -5010,6 +4983,9 @@
       "Custom email domains": [
         "Domain surel khusus"
       ],
+      "Custom snooze time": [
+        "Pilih sendiri waktu tunda"
+      ],
       "Hide-my-email aliases": [
         "Alias hide-my-email"
       ],
@@ -5035,6 +5011,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Dapatkan alamat surel samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Tunda pesan dan ingatkan saat Anda mau"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan"
@@ -5416,11 +5395,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Nama"
-      ]
-    },
-    "Platform": {
-      "Windows": [
-        "Windows"
       ]
     },
     "Progress bar description": {

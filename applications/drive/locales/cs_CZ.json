@@ -259,9 +259,6 @@
       "Download apps": [
         "Stáhnout aplikace"
       ],
-      "Download Drive for Windows": [
-        "Stáhnout Drive pro Windows"
-      ],
       "Drive Locked": [
         "Disk uzamčen"
       ],
@@ -720,9 +717,6 @@
       ],
       "Upload file": [
         "Nahrát soubor"
-      ],
-      "Upload files": [
-        "Nahrát soubory"
       ],
       "Upload folder": [
         "Nahrát složku"
@@ -3359,6 +3353,12 @@
         "${ doneUploadsCount } nahráno",
         "${ doneUploadsCount } nahráno"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } v App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } v Obchodu Play"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } selhal",
         "${ errorCount } selhaly",
@@ -3533,9 +3533,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Opravdu chcete trvale smazat vybrané položky z koše?"
       ],
-      "As soon as you have photos or videos on your device, they will appear here.": [
-        "Jakmile budete mít v zařízení fotky nebo videa, zobrazí se zde."
-      ],
       "Attention required": [
         "Vyžadována pozornost"
       ],
@@ -3662,6 +3659,9 @@
       "double your storage": [
         "zdvojnásobte své úložiště"
       ],
+      "Download ${ name } app": [
+        "Stáhnout aplikaci pro ${ name }"
+      ],
       "Download canceled": [
         "Stahování zrušeno"
       ],
@@ -3689,6 +3689,9 @@
       "Drop file here to upload": [
         "Sem přetáhněte soubor pro nahrání"
       ],
+      "Drop files here": [
+        "Sem přetáhněte soubory"
+      ],
       "Drop to import": [
         "Přetažením provedete import"
       ],
@@ -3703,9 +3706,6 @@
       ],
       "Emails are automatically signed": [
         "E-maily jsou automaticky podepsány"
-      ],
-      "Enable drive search": [
-        "Povolit hledání na disku"
       ],
       "Enabling drive search": [
         "Zapínání vyhledávání na disku"
@@ -3806,11 +3806,14 @@
       "from the version history?": [
         "z historie verzí?"
       ],
+      "Get the app to backup photos from your phone.": [
+        "Získejte aplikaci pro zálohování fotografií z telefonu."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Získejte desktopovou aplikaci pro synchronizaci souborů z počítače."
+      ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Seznamte se s ${ DRIVE_APP_NAME } a získejte bonus 500 MB úložného prostoru! Učiňte tak ještě dnes."
-      ],
-      "Go ahead, upload a file": [
-        "Nahrajte soubor"
       ],
       "Go to \"My files\" and upload some files first.": [
         "Jděte na \"Moje Soubory\" a nahrajte nejdříve soubory."
@@ -3880,9 +3883,6 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Položky zůstanou v koši, dokud je trvale nesmažete"
-      ],
-      "It’s as easy as drag and drop or selecting files": [
-        "Je to stejně snadné jako přesouvání nebo výběr souborů"
       ],
       "It’s easy and secure": [
         "Je to snadné a bezpečné"
@@ -3962,6 +3962,9 @@
       "No": [
         "Ne"
       ],
+      "No computers syncing": [
+        "Žádné počítače k synchronizaci"
+      ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
       ],
@@ -3973,9 +3976,6 @@
       ],
       "No group found": [
         "Nebyla nalezena žádná skupina"
-      ],
-      "No photos yet": [
-        "Zatím bez fotografií"
       ],
       "No results found": [
         "Nebyly nalezeny žádné výsledky"
@@ -4018,6 +4018,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Kdokoli s tímto odkazem a heslem má přístup k této složce."
+      ],
+      "Or use the \"+ New\" button": [
+        "Nebo použijte \"nové tlačítko +\""
       ],
       "Paused": [
         "Pozastaveno"
@@ -4105,6 +4108,9 @@
       ],
       "Queued": [
         "Ve frontě"
+      ],
+      "Ready to add some photos?": [
+        "Jste připraveni přidat nějaké fotografie?"
       ],
       "recommended browser": [
         "doporučený prohlížeč"
@@ -4211,12 +4217,6 @@
       "Swiss encrypted file storage": [
         "Švýcarské šifrované úložiště souborů"
       ],
-      "Sync folders from your computer": [
-        "Synchronizovat složky z vašeho počítače"
-      ],
-      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "Snadno synchronizujte složky pomocí naší aplikace pro stolní počítače, aby byly vaše soubory vždy aktuální a dostupné odkudkoli."
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Dočasně nedostupné. Zkontrolujte to prosím později."
       ],
@@ -4240,9 +4240,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Ještě je třeba přenést některé soubory. Zavřením správce přenosu se ukončí všechny operace."
-      ],
-      "There are no files yet": [
-        "Nejsou tady zatím žádné soubory"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Tento účet byl zablokován kvůli možnému porušení pravidel."
@@ -5719,11 +5716,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Jméno"
-      ]
-    },
-    "Platform": {
-      "Windows": [
-        "Windows"
       ]
     },
     "Progress bar description": {
