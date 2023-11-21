@@ -312,7 +312,7 @@ const AccountStepDetails = ({
             const focusChallenge = (id: string) => {
                 // This is a hack prevent scroll since we'd need to add support for that in challenge
                 // TODO: Add support for preventScroll
-                const scrollEl = document.body.querySelector('.scroll-if-needed');
+                const scrollEl = document.body.querySelector('.overflow-auto');
                 if (!scrollEl) {
                     return;
                 }

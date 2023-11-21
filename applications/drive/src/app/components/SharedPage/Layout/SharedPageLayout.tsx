@@ -27,7 +27,7 @@ export default function SharedPageLayout({ FooterComponent, children, className 
     const isProtonUser = !!getCookie(IS_PROTON_USER_COOKIE_NAME);
 
     const containerClassname = clsx([
-        'shared-page-layout-bg flex children-min-size-auto flex-nowrap flex-column h-full scroll-if-needed relative',
+        'shared-page-layout-bg flex children-min-size-auto flex-nowrap flex-column h-full overflow-auto relative',
         className,
     ]);
 

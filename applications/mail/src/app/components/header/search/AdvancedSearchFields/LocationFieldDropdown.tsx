@@ -74,7 +74,7 @@ const LocationFieldDropdown = ({ value, onChange }: Props) => {
                         data-prevent-arrow-navigation
                     />
                 </div>
-                <div className="scroll-if-needed">
+                <div className="overflow-auto">
                     <DropdownMenu>
                         {options.map((group) =>
                             group.items.length ? (

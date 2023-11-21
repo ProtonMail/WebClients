@@ -263,7 +263,7 @@ const ContactGroupDropdown = ({
                             data-prevent-arrow-navigation
                         />
                     </div>
-                    <div className="scroll-if-needed mt-4 contactGroupDropdown-list-container">
+                    <div className="overflow-auto mt-4 contactGroupDropdown-list-container">
                         {filteredContactGroups.length ? (
                             <ul className="unstyled my-0">
                                 {filteredContactGroups.map(({ ID, Name, Color }) => {
