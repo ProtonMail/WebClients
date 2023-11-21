@@ -684,10 +684,8 @@ const Step1 = ({
                 let paymentType: 'cc' | 'pp';
                 if (source === PAYMENT_METHOD_TYPES.PAYPAL || source === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
                     paymentType = 'pp';
-                } else if (source === PAYMENT_METHOD_TYPES.CARD) {
-                    paymentType = 'cc';
                 } else {
-                    throw new Error('Invalid payment source');
+                    paymentType = 'cc';
                 }
 
                 await onPay(chargeablePaymentParameters.Payment, paymentType);
