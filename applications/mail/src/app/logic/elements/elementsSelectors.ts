@@ -61,7 +61,7 @@ export const elements = createSelector(
         if (isInSnoozeOrInbox && sort.sort === 'Time') {
             finalSort = {
                 sort: 'SnoozeTime',
-                desc: labelID === MAILBOX_LABEL_IDS.INBOX,
+                desc: labelID === MAILBOX_LABEL_IDS.SNOOZED ? !sort.desc : sort.desc,
             };
         }
 
