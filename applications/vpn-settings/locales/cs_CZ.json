@@ -156,7 +156,7 @@
         "Downgradovat"
       ],
       "Downgrade account": [
-        "Downgrade účtu"
+        "Snížit úroveň účtu"
       ],
       "Download": [
         "Stáhnout"
@@ -663,9 +663,6 @@
       ],
       "Add ${ plan } for ${ price } per month": [
         "Přidejte ${ plan } za ${ price } měsíčně"
-      ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "Přidejte ${ plan } do svého tarifu předplacením na 15 měsíců"
       ],
       "Cancel": [
         "Zrušit"
@@ -3835,7 +3832,7 @@
         "Při nastavení dvoufázového ověřování poskytujeme kódy pro obnovení, které můžete použít k přihlášení, pokud ztratíte přístup k ověřovací aplikaci."
       ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
-        "Až se Vaše předplatné obnoví, použijeme všechny dostupné kredity před tím, než budeme účtovat výše uvedenou platební metodu."
+        "Při obnovení vašeho předplatného, ještě před použitím vaší platební metody, budou použity všechny dostupné kredity."
       ],
       "Whole organization": [
         "Celá organizace"
@@ -7595,6 +7592,16 @@
       ],
       "Primary admin": [
         "Hlavní Admin"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "SSO uživatel poskytnutý poskytovatelem identity"
       ]
     },
     "Validation": {

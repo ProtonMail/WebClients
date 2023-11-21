@@ -655,9 +655,6 @@
       "Add ${ plan } for ${ price } per month": [
         "Tambahkan ${ plan } seharga ${ price } per bulan"
       ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "Tambahkan ${ plan } ke paket Anda dengan berlangganan selama 15 bulan"
-      ],
       "Cancel": [
         "Batal"
       ],
@@ -3298,7 +3295,7 @@
         "Harap diperhatikan bahwa dengan menghapus alamat ini, Anda tidak lagi akan dapat mengirim atau menerima surel melalui alamat ini."
       ],
       "Please note that upon clicking the Confirm button, your account will have ${ creditsRemaining } credits remaining.": [
-        "Harap diperhatikan bahwa dengan mengklik tombol Konfirmasi, total saldo Anda akan berkurang menjadi ${ creditsRemaining }."
+        "Harap diperhatikan bahwa dengan mengeklik tombol Konfirmasi, total saldo Anda akan berkurang menjadi ${ creditsRemaining }."
       ],
       "Please provide an email address in case we need to contact you.": [
         "Harap sertakan alamat surel seandainya kami perlu menghubungi Anda."
@@ -3506,6 +3503,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Proses ini dapat memakan waktu sejenak. Mohon untuk tidak menutup halaman ini atau memutuskan koneksi internet Anda."
+      ],
+      "This file is too large to preview": [
+        "Berkas ini terlalu besar untuk dipratinjau"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Pengguna ini saat ini bertanggung jawab atas pembayaran untuk organisasi Anda. Dengan menurunkan anggota ini, Anda akan bertanggung jawab atas pembayaran untuk organisasi Anda."
@@ -4791,6 +4791,9 @@
       "Custom fields": [
         "Kolom khusus"
       ],
+      "Custom snooze time": [
+        "Pilih sendiri waktu tunda"
+      ],
       "Data breach monitoring": [
         "Pemantauan kebocoran data"
       ],
@@ -5006,6 +5009,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Dapatkan alamat surel samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
       ],
+      "Snooze messages and get reminded when you want": [
+        "Tunda pesan dan ingatkan saat Anda mau"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan"
       ],
@@ -5117,7 +5123,7 @@
     },
     "new_plans: signup": {
       "By clicking on \"Pay\", you agree to our ${ termsAndConditions }.": [
-        "Dengan mengklik tombol \"Bayar\", Anda menyatakan diri setuju pada ${ termsAndConditions } kami."
+        "Dengan mengeklik tombol \"Bayar\", Anda menyatakan diri setuju dengan ${ termsAndConditions } kami."
       ],
       "terms and conditions": [
         "syarat dan ketentuan"
@@ -7229,6 +7235,16 @@
       ],
       "Primary admin": [
         "Admin utama"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "Pengguna SSO disediakan oleh Penyedia Identitas Anda"
       ]
     },
     "Validation": {
