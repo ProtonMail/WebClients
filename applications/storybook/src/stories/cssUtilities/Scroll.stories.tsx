@@ -35,7 +35,7 @@ export const Overflow = () => {
 
 export const OverflowHorizontal = () => {
     return (
-        <div className="scroll-horizontal-if-needed bg-weak p-7" style={{ height: '100px' }}>
+        <div className="overflow-x-auto bg-weak p-7" style={{ height: '100px' }}>
             <p className="m-0">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
