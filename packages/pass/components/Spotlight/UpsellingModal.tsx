@@ -11,7 +11,7 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { TRIAL_BLOG_URL } from '@proton/pass/constants';
+import { PASS_BLOG_TRIAL_URL } from '@proton/pass/constants';
 import { selectTrialDaysRemaining } from '@proton/pass/store/selectors';
 import clsx from '@proton/utils/clsx';
 
@@ -116,7 +116,7 @@ export const UpsellingModal: VFC<Props> = ({ type, ...props }) => {
                     </div>
                 )}
                 {type === 'free-trial' && (
-                    <InlineLinkButton className="text-sm" onClick={() => window.open(TRIAL_BLOG_URL, '_blank')}>
+                    <InlineLinkButton className="text-sm" onClick={() => window.open(PASS_BLOG_TRIAL_URL, '_blank')}>
                         {c('Action').t`Learn more`}
                     </InlineLinkButton>
                 )}
