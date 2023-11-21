@@ -1,4 +1,12 @@
-import type { FC, MouseEvent, ReactElement, ReactNode } from 'react';
+import {
+    Children,
+    type FC,
+    type MouseEvent,
+    type ReactElement,
+    type ReactNode,
+    cloneElement,
+    isValidElement,
+} from 'react';
 
 import { c } from 'ttag';
 
@@ -9,7 +17,10 @@ import type { Props as DropdownMenuButtonCoreProps } from '@proton/components/co
 import { default as DropdownMenuButtonCore } from '@proton/components/components/dropdown/DropdownMenuButton';
 import clsx from '@proton/utils/clsx';
 
-const QuickActionsDropdown: FC<{ children: ReactNode }> = ({ children }) => {
+type QuickActionChildProp = { onClick: (evt: MouseEvent) => void };
+type QuickActionChild = ReactElement<QuickActionChildProp>;
+
+const QuickActionsDropdown: FC<{ children: QuickActionChild[] }> = ({ children }) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const handleClick = (evt: MouseEvent) => {
@@ -33,7 +44,18 @@ const QuickActionsDropdown: FC<{ children: ReactNode }> = ({ children }) => {
             </Button>
 
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
-                <DropdownMenu>{children}</DropdownMenu>
+                <DropdownMenu>
+                    {Children.toArray(children).map((child) =>
+                        isValidElement<QuickActionChildProp>(child)
+                            ? cloneElement<QuickActionChildProp>(child, {
+                                  onClick: (evt: MouseEvent) => {
+                                      child.props.onClick?.(evt);
+                                      close();
+                                  },
+                              })
+                            : null
+                    )}
+                </DropdownMenu>
             </Dropdown>
         </>
     );
@@ -87,7 +109,7 @@ interface DropdownMenuButtonProps extends DropdownMenuButtonCoreProps, DropdownM
     className?: string;
     parentClassName?: string;
     isSelected?: boolean;
-    quickActions?: ReactNode;
+    quickActions?: QuickActionChild[];
     size?: 'small' | 'medium';
 }
 

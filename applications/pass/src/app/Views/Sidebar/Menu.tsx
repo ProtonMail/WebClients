@@ -23,10 +23,11 @@ import noop from '@proton/utils/noop';
 import { useAuthService } from '../../Context/AuthServiceProvider';
 
 export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
-    const menu = useMenuItems({ onAction: onToggle });
     const authService = useAuthService();
-    const { openPasswordHistory } = usePasswordContext();
+    const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
+
+    const { openPasswordHistory } = usePasswordContext();
     const dispatch = useDispatch();
 
     const { filters, matchEmpty, matchTrash, setFilters } = useNavigation();
