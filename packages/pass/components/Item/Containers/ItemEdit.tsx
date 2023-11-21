@@ -8,10 +8,10 @@ import { AliasEdit } from '@proton/pass/components/Item/Alias/Alias.edit';
 import { CreditCardEdit } from '@proton/pass/components/Item/CreditCard/CreditCard.edit';
 import { LoginEdit } from '@proton/pass/components/Item/Login/Login.edit';
 import { NoteEdit } from '@proton/pass/components/Item/Note/Note.edit';
-import type { ItemEditViewProps, ItemRouteParams } from '@proton/pass/components/Views/types';
+import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { itemEditIntent } from '@proton/pass/store/actions';
 import { selectItemByShareIdAndId, selectShare } from '@proton/pass/store/selectors';
-import type { ItemEditIntent, ItemType, ShareType } from '@proton/pass/types';
+import type { ItemEditIntent, ItemType, SelectedItem, ShareType } from '@proton/pass/types';
 
 const itemEditMap: { [T in ItemType]: VFC<ItemEditViewProps<T>> } = {
     login: LoginEdit,
@@ -21,7 +21,7 @@ const itemEditMap: { [T in ItemType]: VFC<ItemEditViewProps<T>> } = {
 };
 
 export const ItemEdit: VFC = () => {
-    const { shareId, itemId } = useParams<ItemRouteParams>();
+    const { shareId, itemId } = useParams<SelectedItem>();
     const { selectItem } = useNavigation();
     const dispatch = useDispatch();
 
@@ -30,7 +30,7 @@ export const ItemEdit: VFC = () => {
 
     const handleSubmit = (data: ItemEditIntent) => {
         dispatch(itemEditIntent(data));
-        selectItem(shareId, itemId, { mode: 'replace', preserveSearch: true });
+        selectItem(shareId, itemId, { mode: 'replace' });
     };
 
     if (!(item && vault)) return <Redirect to={preserveSearch(getLocalPath('/'))} push={false} />;
