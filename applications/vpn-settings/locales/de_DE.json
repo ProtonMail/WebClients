@@ -658,9 +658,6 @@
       "Add ${ plan } for ${ price } per month": [
         "Füge ${ plan } für ${ price } pro Monat hinzu"
       ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "Füge ${ plan } zu deinem Abonnement hinzu, indem du 15 Monate abonnierst"
-      ],
       "Cancel": [
         "Abbrechen"
       ],
@@ -3542,6 +3539,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Dies kann einige Zeit dauern. Bitte schließe diese Seite nicht und trenne die Verbindung zum Internet nicht."
+      ],
+      "This file is too large to preview": [
+        "Die Datei ist zu groß, um in der Vorschau angezeigt zu werden."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Dieser Benutzer ist zurzeit für Zahlungen für deine Organisation zuständig. Wenn du den Benutzer zurückstufst, wirst du für die Zahlungen deiner Organisation zuständig."
@@ -7339,6 +7339,11 @@
       ],
       "Primary admin": [
         "Hauptadministrator"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
       ]
     },
     "Validation": {

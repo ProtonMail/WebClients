@@ -2906,6 +2906,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "App ikke tilgængelig i øjeblikket"
+      ],
       "Error: ${ errorMessage }": [
         "Fejl: ${ errorMessage }"
       ],
@@ -2915,11 +2918,17 @@
       "Oops, something went wrong": [
         "Ups, noget gik galt"
       ],
+      "Open in browser": [
+        "Åbn i browser"
+      ],
       "Please refresh the page or try again later.": [
         "Opdater venligst siden eller prøv igen senere."
       ],
       "Something went wrong": [
         "Noget gik galt"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Skift til webversionen for at bruge ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
@@ -5181,6 +5190,9 @@
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
       ],
+      "Custom snooze time": [
+        "Brugerdefineret udsættelsestid"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliasser"
       ],
@@ -5206,6 +5218,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Få ubegrænsede aliaser med SimpleLogin fra ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Udsæt beskeder, og bliv mindet om dem, når du ønsker det"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"

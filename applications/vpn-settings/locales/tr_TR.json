@@ -658,9 +658,6 @@
       "Add ${ plan } for ${ price } per month": [
         "${ plan } tarifesini aylık ${ price } ile ekle"
       ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "15 ay abone olarak tarifenize ek ${ plan } ekleyin"
-      ],
       "Cancel": [
         "İptal"
       ],
@@ -7330,6 +7327,16 @@
       ],
       "Primary admin": [
         "Birincil yönetici"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "Tek oturum açma"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "Kimlik hizmeti sağlayıcınızın belirttiği tek oturum açma"
       ]
     },
     "Validation": {

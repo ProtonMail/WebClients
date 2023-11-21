@@ -156,7 +156,7 @@
         "Passer à un abonnement inférieur"
       ],
       "Downgrade account": [
-        "Passer à un plan inférieur"
+        "Passer à un abonnement inférieur"
       ],
       "Download": [
         "Télécharger"
@@ -657,9 +657,6 @@
       ],
       "Add ${ plan } for ${ price } per month": [
         "Ajouter ${ plan } pour ${ price } par mois"
-      ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "Ajoutez ${ plan } à votre abonnement en souscrivant pour 15 mois."
       ],
       "Cancel": [
         "Annuler"
@@ -2498,7 +2495,7 @@
         "Insérez votre clé de sécurité dans le port USB de votre appareil."
       ],
       "Security key": [
-        "Clef de sécurité"
+        "Clé de sécurité"
       ],
       "Security key removed": [
         "La clé de sécurité a été supprimée."
@@ -2524,7 +2521,7 @@
         "Nom de la clé"
       ],
       "Security key": [
-        "Clef de sécurité"
+        "Clé de sécurité"
       ]
     },
     "fido2: Title": {
@@ -3417,7 +3414,7 @@
         "Sécurisation de votre compte"
       ],
       "Send emails to encourage your members to protect their accounts with 2FA.": [
-        "Envoyez un message à vos membres pour les encourager à protéger leurs comptes en utilisant l'authentification à deux facteurs (A2F)."
+        "Envoyez un message à vos membres pour les encourager à protéger leurs comptes en utilisant l'authentification à deux facteurs."
       ],
       "Server is currently down": [
         "Ce serveur est actuellement indisponible."
@@ -3544,7 +3541,7 @@
         "Cela peut prendre un moment. Ne fermez pas cette page et ne vous déconnectez pas d'internet."
       ],
       "This file is too large to preview": [
-        "Ce fichier est trop volumineux pour en afficher un aperçu."
+        "Ce fichier est trop volumineux pour afficher un aperçu."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Cet utilisateur est actuellement responsable des paiements pour votre organisation. Si vous lui attribuez un abonnement inférieur, vous deviendrez responsable des paiements pour votre organisation."
@@ -3727,7 +3724,7 @@
         "Nous conseillons l'utilisation de plusieurs serveurs dans différents endroits pour assurer la redondance."
       ],
       "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
-        "Nous vous recommandons de prévenir les membres de l'organisation et de leur demander de configurer l'authentification à deux facteurs (A2F) sur leurs comptes avant de leur imposer son utilisation."
+        "Nous vous recommandons de prévenir les membres de l'organisation et de leur demander de configurer l'authentification à deux facteurs sur leurs comptes avant de leur imposer son utilisation."
       ],
       "We recommend using your recovery phrase instead.": [
         "Nous vous suggérons d'utiliser une phrase de récupération à la place."
@@ -4345,10 +4342,10 @@
         "Phrase de récupération"
       ],
       "Require 2FA for administrators": [
-        "Exiger l'authentification à deux facteurs (A2F) pour les administrateurs"
+        "Exiger l'A2F pour les administrateurs"
       ],
       "Require 2FA for everyone": [
-        "Exiger l'authentification à deux facteurs (A2F) pour tout le monde"
+        "Exiger l'A2F pour tout le monde"
       ],
       "Reveal password": [
         "Afficher le mot de passe"
@@ -4696,7 +4693,7 @@
         "Supprimer le compte"
       ],
       "Downgrade account": [
-        "Passer à un plan inférieur"
+        "Passer à un abonnement inférieur"
       ],
       "Get ${ BRAND_NAME } for free": [
         "Obtenir gratuitement ${ BRAND_NAME }"
@@ -4857,7 +4854,7 @@
         "Champs personnalisés"
       ],
       "Custom snooze time": [
-        "Personnalisation des périodes de mise en pause des notifications"
+        "Personnalisation des périodes de mise en attente"
       ],
       "Data breach monitoring": [
         "Surveillance des fuites de données"
@@ -5079,7 +5076,7 @@
         "Profitez d'un nombre illimité d'alias avec SimpleLogin de ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Mettez en pause les notifications des messages et recevez un rappel quand vous le voulez."
+        "Mettez les messages en attente et recevez un rappel quand vous le voulez."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Espace de stockage partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
@@ -5204,7 +5201,7 @@
         "Supprimer le compte ?"
       ],
       "Downgrade account?": [
-        "Passer à un plan inférieur ?"
+        "Passer à un abonnement inférieur ?"
       ],
       "Improved plans coming soon!": [
         "Bientôt de nouveaux abonnements !"
@@ -5622,16 +5619,16 @@
         "Un moyen de vous contacter"
       ],
       "Add gift code": [
-        "Ajouter un code cadeau"
+        "Ajoutez un code cadeau."
       ],
       "Address": [
         "Adresse"
       ],
       "Choose a name": [
-        "Choisir un nom"
+        "Choisissez un nom."
       ],
       "Choose display name": [
-        "Choisir un nom d'affichage"
+        "Choisissez un nom d'affichage."
       ],
       "Confirm": [
         "Confirmer"
@@ -5661,16 +5658,16 @@
         "Rechercher"
       ],
       "Search for a user or address": [
-        "Recherchez un utilisateur ou une adresse"
+        "Recherchez un utilisateur ou une adresse."
       ],
       "Search users": [
-        "Rechercher des utilisateurs"
+        "Recherchez des utilisateurs."
       ],
       "Select": [
-        "Sélectionner"
+        "Sélectionnez"
       ],
       "Select a reason": [
-        "Sélectionnez une raison"
+        "Sélectionnez une raison."
       ],
       "Thomas Anderson": [
         "Andréa Durant"
@@ -5789,7 +5786,7 @@
         "Changement du mot de passe de l'organisation"
       ],
       "Creating or accessing non-private users": [
-        "Création d'utilisateurs non privés et accès à leurs messages"
+        "Création d'utilisateurs non privés et accès à leur compte"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "En raison d'un changement du mot de passe, les droits administrateur de votre organisation ont été restreints. Les actions suivantes ne sont plus autorisées :"
@@ -6913,7 +6910,7 @@
         "Désactiver l'authentification à deux facteurs"
       ],
       "Downgrade account": [
-        "Passer à un plan inférieur"
+        "Passer à un abonnement inférieur"
       ],
       "Download ${ VPN_APP_NAME }": [
         "Télécharger ${ VPN_APP_NAME }"
@@ -7348,6 +7345,16 @@
       ],
       "Primary admin": [
         "Administrateur principal"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "Authentification unique (SSO)"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "Authentification unique (SSO) de l'utilisateur fournie par votre fournisseur d'identité"
       ]
     },
     "Validation": {
