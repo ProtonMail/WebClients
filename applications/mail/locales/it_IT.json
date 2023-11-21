@@ -554,6 +554,9 @@
       "label emails as": [
         "etichetta le email come"
       ],
+      "Later this week": [
+        "Più tardi questa settimana"
+      ],
       "Learn more": [
         "Scopri di più"
       ],
@@ -577,6 +580,9 @@
       ],
       "Manage labels": [
         "Gestisci etichette"
+      ],
+      "Manage Snooze": [
+        "Gestisci la posticipazione"
       ],
       "Mark as read": [
         "Segna come letta"
@@ -899,6 +905,9 @@
       "Select all messages": [
         "Seleziona tutti i messaggi"
       ],
+      "Select date and time": [
+        "Seleziona la data e l'ora"
+      ],
       "Self-destruct in 7 days": [
         "Auto-distruzione in 7 giorni"
       ],
@@ -1004,6 +1013,9 @@
       "Skip verification": [
         "Salta verifica"
       ],
+      "Snooze": [
+        "Posticipa"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Impossibile caricare alcune immagini con la protezione dai tracker attiva."
       ],
@@ -1033,6 +1045,9 @@
       ],
       "This message contains remote content.": [
         "Questo messaggio contiene contenuti remoti."
+      ],
+      "This weekend": [
+        "Questo fine settimana"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Per cercare in modo sicuro le tue email, dobbiamo scaricare una copia dei tuoi messaggi nel tuo browser. Il download iniziale potrebbe richiedere un attimo."
@@ -1085,6 +1100,9 @@
       ],
       "Unordered list": [
         "Lista non ordinata"
+      ],
+      "Unsnooze": [
+        "Non posticipare"
       ],
       "Unstar": [
         "Segna come non importante"
@@ -3027,7 +3045,7 @@
         "Cancella automaticamente i messaggi indesiderati e cestinati più vecchi di 30 giorni. Usufruisci di questo e altri benefici quando effettui l'upgrade."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Decriptazione dei contatti... Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, sarai in grado di scaricare il file con tutti i tuoi contatti esportati."
+        "Decrittografia dei contatti... Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, sarai in grado di scaricare il file con tutti i tuoi contatti esportati."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminando i contatti... Questo potrebbe richiedere qualche minuto. Quando il processo è completato, puoi chiudere questo modale."
@@ -3071,6 +3089,9 @@
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Sblocca la programmazione dei messaggi personalizzata e altri vantaggi quando effettui l'upgrade del tuo piano."
+      ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Sblocca i periodi di posticipazione personalizzati quando effettui l'upgrade del tuo piano."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Sblocca filtri illimitati che ordinano la tua posta in arrivo per te e altre funzionalità premium quando effettui l'upgrade."
@@ -3532,14 +3553,14 @@
         "Qualcosa è andato storto, ${ refresh } per procedere. Se continui a vedere questo errore contatta il nostro ${ supportTeam }."
       ],
       "Sorry, ${ BRAND_NAME } can't decrypt your message. Please check that all your keys are active.": [
-        "Siamo spiacenti, ${ BRAND_NAME } non può decriptare il messaggio. Controlla che tutte le tue chiavi siano attive."
+        "Siamo spiacenti, ${ BRAND_NAME } non può decrittografare il messaggio. Controlla che tutte le tue chiavi siano attive."
       ],
       "status page": [
         "pagina di stato"
       ],
       "The attachment could not be decrypted.\nIf you have the corresponding private key, you will still be able to decrypt\nthe file with a program such as GnuPG.": [
-        "L'allegato non può essere decriptato.\nSe hai la chiave privata corrispondente, sarai comunque in grado di decriptare il file con un programma come GnuPG.",
-        "Alcuni allegati non possono essere decriptati.\nSe hai la chiave privata corrispondente, sarai comunque in grado di decriptare i file con un programma come GnuPG."
+        "L'allegato non può essere decrittografato.\nSe hai la chiave privata corrispondente, potrai comunque decrittografare il file con un programma come GnuPG.",
+        "Alcuni allegati non possono essere decrittografati.\nSe hai la chiave privata corrispondente, potrai comunque decrittografare i file con un programma come GnuPG."
       ],
       "The email addresses do not match": [
         "Gli indirizzi email non corrispondono."
@@ -3841,6 +3862,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "App attualmente non disponibile"
+      ],
       "Error: ${ errorMessage }": [
         "Errore: ${ errorMessage }"
       ],
@@ -3853,11 +3877,17 @@
       "Oops, something went wrong": [
         "Ops, si è verificato un errore"
       ],
+      "Open in browser": [
+        "Apri nel browser"
+      ],
       "Please refresh the page or try again later.": [
         "Aggiorna la pagina o riprova più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Per utilizzare ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, passa alla versione web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Non è stato possibile caricare questa pagina. Aggiornar questa pagina o controlla la connessione internet."
@@ -4957,7 +4987,7 @@
         "Aggiungi URL immagine"
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "La verifica dell’indirizzo con le chiavi attendibili è abilitata per questo indirizzo. Per poter inviare a questo indirizzo, prima considera attendibili le chiavi pubbliche che possono essere usate per l'invio."
+        "La verifica dell'indirizzo con le chiavi attendibili è abilitata per questo indirizzo. Per poter inviare a questo indirizzo, prima considera attendibili le chiavi pubbliche che possono essere usate per l'invio."
       ],
       "Align left": [
         "Allinea a sinistra"
@@ -5230,7 +5260,7 @@
         "immagini incorporate"
       ],
       "Encrypt message": [
-        "Cripta messaggio"
+        "Crittografa messaggio"
       ],
       "Enter the code from your authenticator app": [
         "Inserisci il codice dalla tua app di autenticazione"
@@ -5351,6 +5381,9 @@
       ],
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importazione dei tuoi dati da ${ importedEmailAddress } a ${ toEmail }."
+      ],
+      "Include Spam/Trash.": [
+        "Includi spam/cestino."
       ],
       "Inherited from parent folder": [
         "Ereditato dalla cartella principale"
@@ -5635,6 +5668,9 @@
       "Right-click for options": [
         "Click col destro per le opzioni"
       ],
+      "Sat, ${ formatTime }": [
+        "Sab, ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "Salvato il ${ dateString }"
       ],
@@ -5684,7 +5720,7 @@
         "Invio in corso"
       ],
       "Sending message...": [
-        "Inviando il messaggio..."
+        "Invio del messaggio in corso"
       ],
       "Sending messages from @pm.me address is a paid feature. Your message will be sent from your default address ${ email }": [
         "L'invio dei messaggi dall'indirizzo @pm.me è una funzionalità a pagamento. Il tuo messaggio sarà inviato dal tuo indirizzo predefinito ${ email }"
@@ -5712,6 +5748,18 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin fornisce un modo semplice per creare accessi a siti di terze parti non attendibili in cui non si desidera esporre il proprio indirizzo email."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Posticipata fino alle ${ formattedTime } del ${ dateString }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Posticipata fino alle ${ formattedTime } di oggi"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Posticipata fino alle ${ formattedTime } di domani"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "La posticipazione di questa conversazione verrà annullata."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Siamo spiacenti, questo messaggio non esiste o è già scaduto."
@@ -5747,7 +5795,7 @@
         "Testo da visualizzare"
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "L'applicazione deve decriptare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo, verrà generato un file VCF e sarai in grado di scaricarlo."
+        "L'applicazione deve decrittografare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo, verrà generato un file VCF e sarai in grado di scaricarlo."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "I dati inseriti nella bozza non possono essere salvati se si lascia la pagina."
@@ -5813,6 +5861,9 @@
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Quest'email non ha superato i requisiti d'autenticazione del suo dominio. Potrebbe esser falsificata o inoltrata impropriamente."
+      ],
+      "This file is too large to preview": [
+        "Questo file è troppo grande per l'anteprima"
       ],
       "This invitation is saved in a disabled calendar.": [
         "Questo invito è salvato in un calendario disabilitato."
@@ -5908,6 +5959,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Per usare la verifica dell'indirizzo, devi considerare attendibile una o più chiavi pubbliche disponibili, compresa quella che vuoi usare per l'invio. In questo modo si evita che le chiavi di crittografia vengano falsificate."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Domani, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Troppi messaggi sono in attesa di essere inviati. Per programmare questo messaggio, attendi finché un altro non verrà inviato."
       ],
@@ -5952,6 +6006,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Effettua l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Effettua l'upgrade a ${ MAIL_APP_NAME } Plus per sbloccare"
       ],
       "Upgrade to add more addresses to your account.": [
         "Effettua l'upgrade per aggiungere più indirizzi al tuo profilo."
@@ -7116,6 +7173,12 @@
       "Sign up for free": [
         "Registrati gratuitamente"
       ],
+      "Snooze": [
+        "Posticipa"
+      ],
+      "Snoozed": [
+        "Posticipato"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -7453,6 +7516,9 @@
       "Custom email domains": [
         "Domini email personalizzati"
       ],
+      "Custom snooze time": [
+        "Periodo di posticipazione personalizzato"
+      ],
       "Hide-my-email aliases": [
         "Alias Hide-my-email"
       ],
@@ -7478,6 +7544,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Ottieni un numero illimitato di alias con SimpleLogin di ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Posticipa i messaggi e ricevili quando vuoi"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
@@ -7906,6 +7975,9 @@
       "No results found": [
         "Nessun risultato trovato"
       ],
+      "No snoozed messages": [
+        "Nessun messaggio posticipato"
+      ],
       "No unread messages found": [
         "Nessun messaggio non letto trovato"
       ]
@@ -8202,6 +8274,14 @@
         "Firma"
       ]
     },
+    "Snooze message": {
+      "Snooze Message": [
+        "Posticipa messaggio"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Quando dovrebbe il messaggio riapparire nella tua posta in arrivo?"
+      ]
+    },
     "Sort option": {
       "Largest first": [
         "Più grande prima"
@@ -8221,7 +8301,7 @@
         "Chiudi"
       ],
       "Don't show this offer again": [
-        "Non mostrare più quest’offerta"
+        "Non mostrare più quest'offerta"
       ],
       "Special offer": [
         "Offerta speciale"
@@ -8387,7 +8467,7 @@
         "Sconti di fine anno"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "Effettua l’upgrade e risparmia ancora di più con 2 anni di ${ planName }"
+        "Effettua l'upgrade e risparmia ancora di più con 2 anni di ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -8532,6 +8612,14 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversazione rimossa da ${ labelName }.",
         "${ elementsCount } conversazioni rimosse da ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } conversazione posticipata",
+        "${ elementsCount } conversazioni posticipate"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } conversazione non posticipata",
+        "${ elementsCount } conversazioni non posticipate"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } messaggio aggiunto a ${ labelName }.",
@@ -9204,6 +9292,9 @@
       "Moving a scheduled message": [
         "Spostamento di un messaggio programmato"
       ],
+      "Moving a snoozed message": [
+        "Spostamento di un messaggio posticipato in corso"
+      ],
       "New message": [
         "Nuovo messaggio"
       ],
@@ -9345,6 +9436,12 @@
       "Sign out": [
         "Disconnetti"
       ],
+      "Snooze": [
+        "Posticipazione"
+      ],
+      "Snooze message": [
+        "Posticipa messaggio"
+      ],
       "Sort conversations": [
         "Ordina conversazioni"
       ],
@@ -9390,6 +9487,9 @@
       ],
       "Verification error": [
         "Errore di verifica"
+      ],
+      "Want to snooze any time?": [
+        "Vuoi posticipare in qualsiasi momento?"
       ],
       "Warning": [
         "Attenzione"
@@ -9475,10 +9575,10 @@
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
       ],
       "The image could not be loaded": [
-        "Impossibile caricare l’immagine"
+        "Impossibile caricare l'immagine"
       ],
       "The image could not be loaded using proxy": [
-        "Impossibile caricare l’immagine usando il proxy."
+        "Impossibile caricare l'immagine usando il proxy"
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."
@@ -9585,7 +9685,7 @@
         "Le impostazioni di data e ora sul dispositivo non sono sincronizzate. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "Decriptazione del contenuto crittografato non riuscita."
+        "Decrittografia del contenuto crittografato non riuscita."
       ],
       "The verification of the contact details' signature failed.": [
         "La verifica della firma dei dati del contatto non è riuscita."
@@ -9607,6 +9707,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La tua prova gratuita termina il ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Lun, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Sab, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Dom, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

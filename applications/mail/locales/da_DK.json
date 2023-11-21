@@ -554,6 +554,9 @@
       "label emails as": [
         "giv e-mails etiketten"
       ],
+      "Later this week": [
+        "Senere denne uge"
+      ],
       "Learn more": [
         "Få mere at vide"
       ],
@@ -577,6 +580,9 @@
       ],
       "Manage labels": [
         "Administrer etiketter"
+      ],
+      "Manage Snooze": [
+        "Administrer udsættelse"
       ],
       "Mark as read": [
         "Markér som læst"
@@ -899,6 +905,9 @@
       "Select all messages": [
         "Vælg alle beskeder"
       ],
+      "Select date and time": [
+        "Vælg dato og tid"
+      ],
       "Self-destruct in 7 days": [
         "Selvdestruér om 7 dage"
       ],
@@ -1004,6 +1013,9 @@
       "Skip verification": [
         "Spring e-mail-verifikation over"
       ],
+      "Snooze": [
+        "Udsæt"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Nogle billeder kunne ikke indlæses med sporingsbeskyttelse."
       ],
@@ -1033,6 +1045,9 @@
       ],
       "This message contains remote content.": [
         "Denne besked indeholder eksternt indhold."
+      ],
+      "This weekend": [
+        "Denne weekend"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "For at søge sikkert i dine e-mails, har vi brug for at downloade en kopi af dine beskeder til din browser. Den første download kan tage et stykke tid."
@@ -1085,6 +1100,9 @@
       ],
       "Unordered list": [
         "Usorteret liste"
+      ],
+      "Unsnooze": [
+        "Annullér udsættelse"
       ],
       "Unstar": [
         "Fjern stjernemarkering"
@@ -3072,6 +3090,9 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Få adgang til brugerdefineret planlægning af beskeder og andre fordele, når du opgraderer dit abonnement."
       ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Lås op for brugerdefinerede udsættelsestider, når du opgraderer dit abonnement."
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Lås op for ubegrænsede filter der sorterer din indbakke for dig og flere premium-funktioner når du opgraderer."
       ],
@@ -3841,6 +3862,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "App ikke tilgængelig i øjeblikket"
+      ],
       "Error: ${ errorMessage }": [
         "Fejl: ${ errorMessage }"
       ],
@@ -3853,11 +3877,17 @@
       "Oops, something went wrong": [
         "Ups, noget gik galt"
       ],
+      "Open in browser": [
+        "Åbn i browser"
+      ],
       "Please refresh the page or try again later.": [
         "Opdater venligst siden eller prøv igen senere."
       ],
       "Something went wrong": [
         "Noget gik galt"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Skift til webversionen for at bruge ${ MAIL_APP_NAME } eller ${ CALENDAR_APP_NAME }."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Vi kunne ikke indlæse denne side. Opdater siden eller tjek din internetforbindelse."
@@ -5349,6 +5379,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importerer dine data fra ${ importedEmailAddress } til ${ toEmail }."
       ],
+      "Include Spam/Trash.": [
+        "Inkludér spam/papirkurv"
+      ],
       "Inherited from parent folder": [
         "Nedarvet fra overordnet mappe"
       ],
@@ -5632,6 +5665,9 @@
       "Right-click for options": [
         "Højreklik for flere muligheder"
       ],
+      "Sat, ${ formatTime }": [
+        "Lør, ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "Gemt ${ dateString }"
       ],
@@ -5709,6 +5745,18 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin tilbyder en let måde at oprette konti hos upålidelige tredjepartssider hvor du ikke ønsker at vise din rigtige e-mailadresse."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Udsat indtil  ${ dateString } kl. ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Udsat indtil i dag, ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Udsat indtil i morgen, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "Udsættelse af denne samtale vil blive annulleret."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Beklager, denne besked findes ikke eller er allerede udløbet."
@@ -5811,6 +5859,9 @@
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Denne e-mail bestod ikke sit domænes godkendelseskrav. Den kan være falsk eller ukorrekt videresendt."
       ],
+      "This file is too large to preview": [
+        "Denne fil er for stor til forhåndsvisning"
+      ],
       "This invitation is saved in a disabled calendar.": [
         "Denne invitation er gemt i en deaktiveret kalender."
       ],
@@ -5905,6 +5956,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "For at bruge Adressebekræftelse skal mindst én offentlig nøgle være betroet, herunder dén, der ønskes brugt til afsendelse. Dette forhindrer forfalskning af de kryptererede nøgler."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "I morgen, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Der er for mange meddelelser, der venter på at blive afsendt. Vent med at planlægge denne meddelelse, indtil en anden er blevet sendt."
       ],
@@ -5949,6 +6003,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Opgrader nu for at få premium-funktioner, produkter og lagerplads til en speciel pris"
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Opgrader til ${ MAIL_APP_NAME } Plus for at få adgang"
       ],
       "Upgrade to add more addresses to your account.": [
         "Opgrader for at tilføje flere adresser til din konto."
@@ -7113,6 +7170,12 @@
       "Sign up for free": [
         "Tilmeld gratis"
       ],
+      "Snooze": [
+        "Udsæt"
+      ],
+      "Snoozed": [
+        "Udsat"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -7450,6 +7513,9 @@
       "Custom email domains": [
         "Brugerdefinerede e-maildomæner"
       ],
+      "Custom snooze time": [
+        "Brugerdefineret udsættelsestid"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliasser"
       ],
@@ -7475,6 +7541,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Få ubegrænsede aliaser med SimpleLogin fra ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Udsæt beskeder, og bliv mindet om dem, når du ønsker det"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagerplads er delt mellem ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, og ${ DRIVE_APP_NAME }"
@@ -7903,6 +7972,9 @@
       "No results found": [
         "Ingen resultater fundet"
       ],
+      "No snoozed messages": [
+        "Ingen udsatte beskeder"
+      ],
       "No unread messages found": [
         "Ingen ulæste beskeder fundet"
       ]
@@ -8197,6 +8269,14 @@
       ],
       "Sign": [
         "Signér"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Udsæt besked"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Hvornår skal beskeden dukke op i din indbakke igen?"
       ]
     },
     "Sort option": {
@@ -8529,6 +8609,14 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } samtale fjernet fra ${ labelName }.",
         "${ elementsCount } samtaler fjernet fra ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } samtale udsat",
+        "${ elementsCount } samtaler udsat"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "Udsættelse annulleret for ${ elementsCount } samtale",
+        "Udsættelse annulleret for ${ elementsCount } samtaler"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } besked føjet til ${ labelName }.",
@@ -9201,6 +9289,9 @@
       "Moving a scheduled message": [
         "Flytter en planlagt besked"
       ],
+      "Moving a snoozed message": [
+        "Flytter en udsat besked"
+      ],
       "New message": [
         "Ny besked"
       ],
@@ -9342,6 +9433,12 @@
       "Sign out": [
         "Log ud"
       ],
+      "Snooze": [
+        "Udsæt"
+      ],
+      "Snooze message": [
+        "Udsæt besked"
+      ],
       "Sort conversations": [
         "Sorter samtaler"
       ],
@@ -9387,6 +9484,9 @@
       ],
       "Verification error": [
         "Bekræftelsesfejl"
+      ],
+      "Want to snooze any time?": [
+        "Vil du frit kunne bestemme udsættelsestid?"
       ],
       "Warning": [
         "Advarsel"
@@ -9604,6 +9704,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis prøveperiode udløber den ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Man, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Lør, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Søn, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {
