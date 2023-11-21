@@ -1,0 +1,16 @@
+# Start by ignoring everything and include only what's needed
+*
+
+!/yarn.lock
+!/.yarnrc.yml
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+!.yarn/plugin*
+
+!/package.json
+!/**/*/package.json
+
+!/packages/pack
