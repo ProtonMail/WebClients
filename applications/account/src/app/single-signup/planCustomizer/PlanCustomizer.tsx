@@ -64,10 +64,7 @@ interface AddonFieldProps extends ComponentPropsWithoutRef<'div'> {
 
 const AddonField = ({ id, label, tooltip, className, children, ...rest }: AddonFieldProps) => {
     return (
-        <div
-            className={clsx('flex children-min-size-auto flex-wrap md:flex-nowrap items-center', className)}
-            {...rest}
-        >
+        <div className={clsx('flex md:flex-nowrap items-center', className)} {...rest}>
             <label
                 htmlFor={id}
                 className="min-w-custom flex-1 plan-customiser-addon-label text-bold pr-2 w-full md:w-auto mb-1"
