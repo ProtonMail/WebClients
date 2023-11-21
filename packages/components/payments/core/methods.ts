@@ -182,13 +182,24 @@ async function getPaymentMethodStatus(api: Api): Promise<PaymentMethodStatus> {
 export async function initializePaymentMethods(
     api: Api,
     maybePaymentMethodStatus: PaymentMethodStatus | undefined,
+    maybePaymentMethods: SavedPaymentMethod[] | undefined,
     isAuthenticated: boolean,
     amount: number,
     coupon: string,
     flow: PaymentMethodFlows
 ) {
     const paymentMethodStatusPromise = maybePaymentMethodStatus ?? getPaymentMethodStatus(api);
-    const paymentMethodsPromise = isAuthenticated ? getPaymentMethods(api) : [];
+    const paymentMethodsPromise = (() => {
+        if (maybePaymentMethods) {
+            return maybePaymentMethods;
+        }
+
+        if (isAuthenticated) {
+            return getPaymentMethods(api);
+        }
+
+        return [];
+    })();
 
     const [paymentMethodStatus, paymentMethods] = await Promise.all([
         paymentMethodStatusPromise,

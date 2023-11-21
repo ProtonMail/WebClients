@@ -1,10 +1,17 @@
 import { useEffect } from 'react';
 
-import { Currency } from '@proton/shared/lib/interfaces';
+import { Api, Currency } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { useApi, useAuthentication, useModals } from '../../hooks';
-import { ChargeablePaymentParameters, PAYMENT_METHOD_TYPES, PaymentMethodFlows, PaymentMethodType } from '../core';
+import {
+    ChargeablePaymentParameters,
+    PAYMENT_METHOD_TYPES,
+    PaymentMethodFlows,
+    PaymentMethodStatus,
+    PaymentMethodType,
+    SavedPaymentMethod,
+} from '../core';
 import {
     OnMethodChangedHandler,
     Operations,
@@ -43,6 +50,12 @@ type PaymentFacadeProps = {
      * The callback that will be called when the payment method is changed by the user.
      */
     onMethodChanged?: OnMethodChangedHandler;
+    paymentMethods?: SavedPaymentMethod[];
+    paymentMethodStatus?: PaymentMethodStatus;
+    /**
+     * Optional override for the API object. Can be helpful for auth/unauth flows.
+     */
+    api?: Api;
 };
 
 /**
@@ -60,8 +73,12 @@ export const usePaymentFacade = ({
     coupon,
     flow,
     onMethodChanged,
+    paymentMethods,
+    paymentMethodStatus,
+    api: apiOverride,
 }: PaymentFacadeProps) => {
-    const api = useApi();
+    const defaultApi = useApi();
+    const api = apiOverride ?? defaultApi;
     const { createModal } = useModals();
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID;
@@ -74,6 +91,8 @@ export const usePaymentFacade = ({
             coupon,
             flow,
             onMethodChanged,
+            paymentMethods,
+            paymentMethodStatus,
         },
         {
             api,
