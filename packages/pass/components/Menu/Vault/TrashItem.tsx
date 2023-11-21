@@ -33,22 +33,22 @@ export const TrashItem: VFC<Props> = ({ dense, selected, handleTrashRestore, han
             style={{
                 '--vault-icon-color': VAULT_COLOR_MAP[VaultColor.COLOR_UNSPECIFIED],
             }}
-            quickActions={
-                <>
-                    <DropdownMenuButton
-                        onClick={handleTrashRestore}
-                        label={c('Label').t`Restore all items`}
-                        icon="arrow-up-and-left"
-                    />
+            quickActions={[
+                <DropdownMenuButton
+                    key="trash-restore"
+                    onClick={handleTrashRestore}
+                    label={c('Label').t`Restore all items`}
+                    icon="arrow-up-and-left"
+                />,
 
-                    <DropdownMenuButton
-                        onClick={handleTrashEmpty}
-                        label={c('Label').t`Empty trash`}
-                        icon="trash-cross"
-                        danger
-                    />
-                </>
-            }
+                <DropdownMenuButton
+                    key="trash-empty"
+                    onClick={handleTrashEmpty}
+                    label={c('Label').t`Empty trash`}
+                    icon="trash-cross"
+                    danger
+                />,
+            ]}
         />
     );
 };
