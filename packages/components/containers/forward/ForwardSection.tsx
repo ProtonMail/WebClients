@@ -55,12 +55,12 @@ const ForwardSection = () => {
     useEffect(() => {
         if (hash === '#forward' && isIncomingTableAvailable && isOutgoingTableAvailable) {
             setActiveTab(1); // Incoming tab is second
-            location.hash = ''; 
+            location.hash = '';
         }
     }, [hash, isIncomingTableAvailable, isOutgoingTableAvailable]);
 
     return (
-        <SettingsSectionWide className="no-scroll">
+        <SettingsSectionWide className="overflow-hidden">
             <SettingsSection>
                 <SettingsParagraph>
                     <span>

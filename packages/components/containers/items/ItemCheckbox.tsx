@@ -77,7 +77,7 @@ const ItemCheckbox = ({
                 data-testid="element-list:message-checkbox"
                 aria-hidden="true"
             >
-                <span className="m-auto item-abbr rounded no-scroll" aria-hidden="true">
+                <span className="m-auto item-abbr rounded overflow-hidden" aria-hidden="true">
                     {iconName ? (
                         <Icon name={iconName} color="white" />
                     ) : (
