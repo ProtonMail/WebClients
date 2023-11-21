@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react-hooks';
 
 import { addTokensResponse, apiMock } from '@proton/testing';
 
-import { Autopay, PAYMENT_METHOD_TYPES, SavedPaymentMethod } from '../core';
+import { Autopay, PAYMENT_METHOD_TYPES, PaymentMethodPaypal, SavedPaymentMethod } from '../core';
 import { useSavedMethod } from './useSavedMethod';
 
 const onChargeableMock = jest.fn();
@@ -245,4 +245,50 @@ it('should reset token if verification failed', async () => {
     await expect(result.current.processPaymentToken()).rejects.toThrowError('Verification failed');
     expect(result.current.verifyingToken).toBe(false);
     expect(result.current.paymentProcessor?.fetchedPaymentToken).toEqual(null);
+});
+
+it('should update the saved method', async () => {
+    const { result, rerender } = renderHook(
+        ({ savedMethod }) =>
+            useSavedMethod(
+                {
+                    amountAndCurrency: {
+                        Amount: 1000,
+                        Currency: 'USD',
+                    },
+                    savedMethod,
+                    onChargeable: onChargeableMock,
+                },
+                {
+                    api: apiMock,
+                    verifyPayment: verifyPaymentMock,
+                }
+            ),
+        {
+            initialProps: {
+                savedMethod: savedMethod as SavedPaymentMethod,
+            },
+        }
+    );
+
+    expect((result.current.paymentProcessor as any).state.method.paymentMethodId).toEqual(savedMethod.ID);
+    expect((result.current.paymentProcessor as any).state.method.type).toEqual(savedMethod.Type);
+
+    const newSavedMethod: PaymentMethodPaypal = {
+        Order: 400,
+        ID: '2',
+        Type: PAYMENT_METHOD_TYPES.PAYPAL,
+        Details: {
+            BillingAgreementID: 'BA-123',
+            PayerID: 'pid123',
+            Payer: 'payer123',
+        },
+    };
+
+    rerender({
+        savedMethod: newSavedMethod,
+    });
+
+    expect((result.current.paymentProcessor as any).state.method.paymentMethodId).toEqual(newSavedMethod.ID);
+    expect((result.current.paymentProcessor as any).state.method.type).toEqual(newSavedMethod.Type);
 });

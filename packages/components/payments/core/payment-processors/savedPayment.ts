@@ -78,6 +78,13 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
         return this.tokenCreated(token);
     }
 
+    updateSavedMethod(savedMethod: SavedPaymentMethod) {
+        this.state.method = {
+            paymentMethodId: savedMethod.ID,
+            type: savedMethod.Type,
+        };
+    }
+
     reset() {
         this.fetchedPaymentToken = null;
     }

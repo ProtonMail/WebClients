@@ -70,6 +70,8 @@ export const useSavedMethod = (
         if (paymentProcessor && savedMethod) {
             paymentProcessor.onTokenIsChargeable = (chargeablePaymentParameters: ChargeablePaymentParameters) =>
                 onChargeable(chargeablePaymentParameters, savedMethod.ID);
+
+            paymentProcessor.updateSavedMethod(savedMethod);
         }
     }, [savedMethod, onChargeable]);
 
