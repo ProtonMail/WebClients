@@ -131,11 +131,20 @@
       "Delete vault": [
         "Διαγραφή κρύπτης"
       ],
+      "Disable autosave on this website": [
+        "Απενεργοποιήστε την αυτόματη αποθήκευση σε αυτόν τον ιστότοπο"
+      ],
       "Discard": [
         "Απόρριψη"
       ],
       "Dismiss": [
         "Παράβλεψη"
+      ],
+      "Do not show on this website": [
+        "Μην εμφανίζεστε σε αυτόν τον ιστότοπο"
+      ],
+      "Do not suggest on this website": [
+        "Μην προτείνετε σε αυτόν τον ιστότοπο"
       ],
       "Done": [
         "Ολοκληρώθηκε"
@@ -275,6 +284,9 @@
       "Reload extension": [
         "Επαναφόρτωση επέκτασης"
       ],
+      "Remove": [
+        "Αφαίρεση"
+      ],
       "Remove access": [
         "Αφαίρεση πρόσβασης"
       ],
@@ -401,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Λίστα τομέων όπου ορισμένες αυτόματες λειτουργίες στο ${ PASS_SHORT_APP_NAME } (Αυτόματη συμπλήρωση, Αυτόματη πρόταση, Αυτόματη αποθήκευση) δεν πρέπει να εκτελούνται."
+      "A checked box means the feature is disabled.": [
+        "Ένα επιλεγμένο πλαίσιο σημαίνει ότι η δυνατότητα είναι απενεργοποιημένη."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Λίστα τομέων όπου ορισμένες αυτόματες λειτουργίες στο ${ PASS_SHORT_APP_NAME } (Αυτόματη συμπλήρωση, Αυτόματη πρόταση, Αυτόματη αποθήκευση) δεν πρέπει να εκτελούνται.${ infoText }"
       ]
     },
     "Error": {
@@ -685,6 +700,9 @@
         "${ memberCount } μέλος",
         "${ memberCount } μέλη"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "Το ${ PASS_APP_NAME } θα εμφανίσει το favicon του στοιχείου μέσω ανώνυμου διακομιστή μεσολάβησης εικόνας ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "Το ${ PASS_APP_NAME } θα εισάγει μόνο συνδέσεις, σημειώσεις και πιστωτικές κάρτες."
       ],
@@ -736,6 +754,9 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Όλα τα στοιχεία από το \"${ payload.content.name }\" μετακινήθηκαν με επιτυχία"
+      ],
+      "All trashed items permanently deleted": [
+        "Όλα τα απορριφθέντα στοιχεία διαγράφηκαν οριστικά"
       ],
       "All trashed items successfully restored": [
         "Όλα τα απορριφθέντα στοιχεία αποκαταστάθηκαν με επιτυχία"
@@ -904,6 +925,9 @@
       "Loading": [
         "Φόρτωση"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Φόρτωση ${ PASS_APP_NAME }"
+      ],
       "Loading...": [
         "Φόρτωση..."
       ],
@@ -918,6 +942,9 @@
       ],
       "Multiple vaults": [
         "Πολλαπλές κρύπτες"
+      ],
+      "Never": [
+        "Ποτέ"
       ],
       "No login found": [
         "Δε βρέθηκαν διαπιστευτήρια"
@@ -1026,6 +1053,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Σας ευχαριστώ, το πρόβλημα έχει αναφερθεί"
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Το αναπτυσσόμενο μενού αυτόματης συμπλήρωσης θα ανοίξει αυτόματα όταν κάνετε κλικ ή εστιάσετε στο πεδίο."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Δεν ήταν δυνατή η εισαγωγή του ${ result.ignored.length } στοιχείου:",
@@ -1159,6 +1189,9 @@
       "15 minutes": [
         "15 λεπτά"
       ],
+      "2FA secret key (TOTP)": [
+        "Μυστικό κλειδί 2FA (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "Διακριτικό 2FA (TOTP)"
       ],
@@ -1206,6 +1239,9 @@
       ],
       "Autofill 2FA": [
         "Αυτόματη συμπλήρωση 2FA"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Αυτόματο άνοιγμα της αυτόματης συμπλήρωσης όταν εστιάζεται ένα πεδίο σύνδεσης"
       ],
       "Autosave": [
         "Αυτόματη αποθήκευση"
@@ -1542,6 +1578,9 @@
       "Hyphens": [
         "Παύλες"
       ],
+      "Memorizable Password": [
+        "Απομνημόνευτος Κωδικός Πρόσβασης"
+      ],
       "Numbers": [
         "Αριθμοί"
       ],
@@ -1562,6 +1601,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Προσθέστε μυστικό κλειδί 2FA"
+      ],
       "Add hidden text": [
         "Προσθήκη κρυφού κειμένου"
       ],
@@ -1666,6 +1708,9 @@
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
       ],
+      "Email": [
+        "Διεύθυνση ηλεκτρονικού ταχυδρομείου"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Απολαμβάνετε το ${ PASS_APP_NAME };"
       ],
@@ -1693,6 +1738,9 @@
       "Leave vault ?": [
         "Αποχώρηση από την κρύπτη;"
       ],
+      "Log in as...": [
+        "Συνδεθείτε ως..."
+      ],
       "Low disk space": [
         "Περιορισμένος χώρος στο δίσκο"
       ],
@@ -1704,6 +1752,9 @@
       ],
       "Our welcome gift to you": [
         "Το δώρο καλωσορίσματος σας"
+      ],
+      "Password": [
+        "Κωδικός"
       ],
       "Pending access to the shared data": [
         "Εκκρεμής πρόσβαση στα κοινόχρηστα δεδομένα"
@@ -1919,6 +1970,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Το πλάνο σας σάς επιτρέπει να συμπληρώνετε αυτόματα μόνο από τις πρώτες δύο κρύπτες σας"
+      ],
+      "Your session could not be authorized.": [
+        "Δεν ήταν δυνατή η εξουσιοδότηση της συνεδρίας σας."
+      ],
+      "Your session could not be resumed.": [
+        "Δεν ήταν δυνατή η συνέχιση της συνεδρίας σας."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Η συνεδρία σας είναι ανενεργή. Παρακαλούμε συνδεθείτε ξανά."
+      ],
+      "Your session was locked.": [
+        "Η συνεδρία σας ήταν κλειδωμένη."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Η συνδρομή σας δε σας επιτρέπει να δημιουργήσετε πολλαπλές κρύπτες. Όλα τα στοιχεία θα εισαχθούν στην πρώτη κρύπτη σας. Για να κάνετε εισαγωγή σε πολλαπλές κρύπτες, αναβαθμίστε τη συνδρομή σας."

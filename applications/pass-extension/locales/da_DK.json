@@ -131,11 +131,20 @@
       "Delete vault": [
         "Slet boks"
       ],
+      "Disable autosave on this website": [
+        "Deaktivér autogem på dette websted"
+      ],
       "Discard": [
         "Kassér"
       ],
       "Dismiss": [
         "Afvis"
+      ],
+      "Do not show on this website": [
+        "Vis ikke på dette websted"
+      ],
+      "Do not suggest on this website": [
+        "Foreslå ikke på dette websted"
       ],
       "Done": [
         "Udført"
@@ -181,6 +190,9 @@
       ],
       "Import": [
         "Importér"
+      ],
+      "Import your passwords": [
+        "Importér dine adgangskoder"
       ],
       "Importing": [
         "Importerer"
@@ -271,6 +283,9 @@
       ],
       "Reload extension": [
         "Genindlæs udvidelse"
+      ],
+      "Remove": [
+        "Fjern"
       ],
       "Remove access": [
         "Fjern adgang"
@@ -398,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Liste over domæner, hvor visse automatiske funktioner i ${ PASS_SHORT_APP_NAME } (Autofyld, Autoforslag, Autogem) ikke skal køre."
+      "A checked box means the feature is disabled.": [
+        "Et afkrydset felt betyder, at funktionen er deaktiveret."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Liste over domæner, hvor visse automatiske funktioner i ${ PASS_SHORT_APP_NAME } (Autofyld, Autoforslag, Autogem) ikke skal køre.${ infoText }"
       ]
     },
     "Error": {
@@ -682,6 +700,9 @@
         "${ memberCount } medlem",
         "${ memberCount } medlemmer"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } vil vise elementets favicon via ${ BRAND_NAME } anonymiseret billedproxy."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } vil kun importere logins, noter og betalingskort."
       ],
@@ -722,6 +743,9 @@
       "Access to ${ PASS_APP_NAME } will require a PIN code to unlock your session": [
         "Adgang til ${ PASS_APP_NAME } vil kræve en pinkode for at låse din session op."
       ],
+      "Access your passwords on the go with our mobile apps.": [
+        "Tilgå dine adgangskoder på farten med vores mobil-apps."
+      ],
       "Admin": [
         "Admin"
       ],
@@ -730,6 +754,9 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alle elementer fra \"${ payload.content.name }\" blev flyttet"
+      ],
+      "All trashed items permanently deleted": [
+        "Alle elementer i papirkurven slettet permanent"
       ],
       "All trashed items successfully restored": [
         "Alle elementer i papirkurven blev genoprettet"
@@ -782,11 +809,17 @@
       "Deleting \"${ payload.content.name }\"": [
         "Sletter \"${ payload.content.name }\""
       ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "Opdag ${ PASS_APP_NAME } YouTube-video"
+      ],
       "Drop file here to upload": [
         "Træk fil hertil for at uploade"
       ],
       "Drop to import": [
         "Slip for at importere"
+      ],
+      "Easily import your existing passwords into ${ PASS_APP_NAME }.": [
+        "Importer nemt dine eksisterende adgangskoder til ${ PASS_APP_NAME }."
       ],
       "Editor": [
         "Redaktør"
@@ -892,6 +925,9 @@
       "Loading": [
         "Indlæser"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Indlæser ${ PASS_APP_NAME }"
+      ],
       "Loading...": [
         "Indlæser..."
       ],
@@ -906,6 +942,9 @@
       ],
       "Multiple vaults": [
         "Flere bokse"
+      ],
+      "Never": [
+        "Aldrig"
       ],
       "No login found": [
         "Intet login fundet"
@@ -1014,6 +1053,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Tak, problemet er blevet rapporteret"
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Autofyld-menuen åbner automatisk når du trykker eller fokuserer på et felt."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Følgende ${ result.ignored.length } element kunne ikke importeres:",
@@ -1147,6 +1189,9 @@
       "15 minutes": [
         "15 minutter"
       ],
+      "2FA secret key (TOTP)": [
+        "2FA hemmelig nøgle (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "2FA token (TOTP)"
       ],
@@ -1194,6 +1239,9 @@
       ],
       "Autofill 2FA": [
         "Autofyld 2FA"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Åbn automatisk autofyld når et login-felt fokuseres"
       ],
       "Autosave": [
         "Gem automatisk"
@@ -1530,6 +1578,9 @@
       "Hyphens": [
         "Bindestreger"
       ],
+      "Memorizable Password": [
+        "Adgangskode, man kan huske"
+      ],
       "Numbers": [
         "Tal"
       ],
@@ -1550,6 +1601,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Tilføj 2FA hemmelig nøgle"
+      ],
       "Add hidden text": [
         "Tilføj skjult tekst"
       ],
@@ -1654,6 +1708,9 @@
       "Discard changes?": [
         "Kassér ændringer?"
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Glad for ${ PASS_APP_NAME }?"
       ],
@@ -1663,8 +1720,14 @@
       "Fill & copy password": [
         "Udfyld og kopiér adgangskode"
       ],
+      "Get the mobile apps": [
+        "Hent mobil-apps"
+      ],
       "Grant permissions": [
         "Giv tilladelser"
+      ],
+      "Hide my email": [
+        "Hide my email"
       ],
       "Import - ${ date }": [
         "Import - ${ date }"
@@ -1674,6 +1737,9 @@
       ],
       "Leave vault ?": [
         "Forlad boks?"
+      ],
+      "Log in as...": [
+        "Log ind som..."
       ],
       "Low disk space": [
         "Kun lidt diskplads"
@@ -1686,6 +1752,9 @@
       ],
       "Our welcome gift to you": [
         "Vores velkomstgave til dig"
+      ],
+      "Password": [
+        "Adgangskode"
       ],
       "Pending access to the shared data": [
         "Afventer adgang til de delte data"
@@ -1722,6 +1791,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "Lås op for ${ brandNameJSX }"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Lås op for ${ PASS_APP_NAME }"
       ],
       "Update available": [
         "Opdatering tilgængelig"
@@ -1892,6 +1964,24 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Du vil ikke længere have adgang til denne boks. Hvis du vil være med igen, skal du have en ny invitation."
+      ],
+      "Your plan does not allow you to create more aliases": [
+        "Dit abonnement giver dig ikke mulighed for at oprette flere aliasser"
+      ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Dit abonnement tillader kun autofyld fra dine to første bokse."
+      ],
+      "Your session could not be authorized.": [
+        "Din session kunne ikke autoriseres."
+      ],
+      "Your session could not be resumed.": [
+        "Din session kunne ikke fortsættes."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Din session er inaktiv. Log ind igen."
+      ],
+      "Your session was locked.": [
+        "Din session blev låst."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dit abonnement giver dig ikke mulighed for at oprette flere bokse. Alle elementer vil blive importeret til din første boks. For at importere til flere bokse skal du opgradere dit abonnement."

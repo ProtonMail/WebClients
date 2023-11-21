@@ -131,11 +131,20 @@
       "Delete vault": [
         "Eliminar caja fuerte"
       ],
+      "Disable autosave on this website": [
+        "Desactivar el guardado automático en este sitio web"
+      ],
       "Discard": [
         "Descartar"
       ],
       "Dismiss": [
         "Descartar"
+      ],
+      "Do not show on this website": [
+        "No mostrar en este sitio web"
+      ],
+      "Do not suggest on this website": [
+        "No sugerir en este sitio web"
       ],
       "Done": [
         "Hecho"
@@ -275,6 +284,9 @@
       "Reload extension": [
         "Recargar la extensión"
       ],
+      "Remove": [
+        "Eliminar"
+      ],
       "Remove access": [
         "Eliminar el acceso"
       ],
@@ -401,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Lista de dominios donde ciertas funciones automáticas en ${ PASS_SHORT_APP_NAME } (rellenar automáticamente, sugerencias automáticas, guardar automáticamente) no deberían de ejecutarse."
+      "A checked box means the feature is disabled.": [
+        "Una casilla marcada significa que la función está desactivada."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Lista de dominios donde ciertas funciones automáticas en ${ PASS_SHORT_APP_NAME } (completado automático, sugerencia automática, guardado automático) no deberían de ejecutarse. ${ infoText }"
       ]
     },
     "Error": {
@@ -685,6 +700,9 @@
         "${ memberCount } miembro",
         "${ memberCount } miembros"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } mostrará el favicono del elemento a través del proxy de imagen anónimo de ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } solo importará inicios de sesión, notas y tarjetas de crédito."
       ],
@@ -736,6 +754,9 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Todos los elementos de \"${ payload.content.name }\" han sido movidos."
+      ],
+      "All trashed items permanently deleted": [
+        "Todos los elementos de la papelera han sido eliminados permanentemente."
       ],
       "All trashed items successfully restored": [
         "Todos los elementos de la papelera han sido restaurados."
@@ -904,6 +925,9 @@
       "Loading": [
         "Cargando"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Cargando ${ PASS_APP_NAME }"
+      ],
       "Loading...": [
         "Cargando..."
       ],
@@ -918,6 +942,9 @@
       ],
       "Multiple vaults": [
         "Múltiples cajas fuertes"
+      ],
+      "Never": [
+        "Nunca"
       ],
       "No login found": [
         "Ningún inicio de sesión ha sido encontrado"
@@ -1026,6 +1053,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Gracias por notificar el problema."
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "El menú desplegable de completado automático se abrirá automáticamente cuando haga clic o se centre en el campo."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } elemento no ha podido importarse:",
@@ -1159,6 +1189,9 @@
       "15 minutes": [
         "15 minutos"
       ],
+      "2FA secret key (TOTP)": [
+        "Clave secreta 2FA (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "Token 2FA (TOTP)"
       ],
@@ -1206,6 +1239,9 @@
       ],
       "Autofill 2FA": [
         "Autorrellenar 2FA"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Abrir el completado automático cuando un campo de inicio de sesión está enfocado."
       ],
       "Autosave": [
         "Guardar automáticamente"
@@ -1542,6 +1578,9 @@
       "Hyphens": [
         "Guiones"
       ],
+      "Memorizable Password": [
+        "Contraseña memorizable"
+      ],
       "Numbers": [
         "Números"
       ],
@@ -1562,6 +1601,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Añadir una clave secreta 2FA"
+      ],
       "Add hidden text": [
         "Añadir texto oculto"
       ],
@@ -1666,6 +1708,9 @@
       "Discard changes?": [
         "¿Descartar los cambios?"
       ],
+      "Email": [
+        "Correo electrónico"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "¿Disfrutando de ${ PASS_APP_NAME }?"
       ],
@@ -1693,6 +1738,9 @@
       "Leave vault ?": [
         "¿Dejar la caja fuerte?"
       ],
+      "Log in as...": [
+        "Iniciar sesión como..."
+      ],
       "Low disk space": [
         "Poco espacio en el disco"
       ],
@@ -1704,6 +1752,9 @@
       ],
       "Our welcome gift to you": [
         "Nuestro regalo de bienvenida para ti"
+      ],
+      "Password": [
+        "Contraseña"
       ],
       "Pending access to the shared data": [
         "Acceso pendiente a los datos compartidos"
@@ -1919,6 +1970,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Tu plan solo le permite rellenar automáticamente desde tus primeras dos cajas fuertes."
+      ],
+      "Your session could not be authorized.": [
+        "No se ha podido autorizar tu sesión."
+      ],
+      "Your session could not be resumed.": [
+        "Tu sesión no ha podido reanudarse."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Tu sesión está inactiva. Vuelve a conectarte."
+      ],
+      "Your session was locked.": [
+        "Tu sesión está bloqueada."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tu suscripción no te permite crear varias cajas fuertes. Todos los elementos serán importados atsu primera caja fuerte. Para importar a varias cajas fuertes mejora tu suscripción."
