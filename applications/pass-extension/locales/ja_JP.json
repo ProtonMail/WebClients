@@ -254,6 +254,9 @@
       "Reload extension": [
         "リロード拡張機能"
       ],
+      "Remove": [
+        "削除"
+      ],
       "Remove access": [
         "アクセス権の削除"
       ],
@@ -359,11 +362,6 @@
       ],
       "Expand": [
         "開く"
-      ]
-    },
-    "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "${ PASS_SHORT_APP_NAME } の特定の自動機能 (自動入力、自動提案、自動保存) を実行すべきでないドメインのリスト。"
       ]
     },
     "Error": {
@@ -498,6 +496,9 @@
       ],
       "Restoring item failed": [
         "アイテムの復元に失敗しました"
+      ],
+      "Restoring trashed items failed": [
+        "ごみ箱の項目の復元に失敗しました"
       ],
       "Settings update failed": [
         "設定の更新に失敗しました"
@@ -645,6 +646,9 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "エイリアス「${ item.aliasEmail }」はゴミ箱に移動されました - メールボックスへのメールの転送は停止されます"
       ],
+      "All trashed items successfully restored": [
+        "ごみ箱の項目がすべて正常に復元されました"
+      ],
       "Auto-lock successfully disabled": [
         "オートロックは正常に無効化された"
       ],
@@ -683,6 +687,9 @@
       ],
       "Editor": [
         "エディター"
+      ],
+      "Emptying trash...": [
+        "ごみ箱を空にしています..."
       ],
       "Enter verification code. Digit ${ digit }.": [
         "検証コードを入力してください。桁数は ${ digit } 桁です。"
@@ -803,6 +810,9 @@
       ],
       "Privacy is a big concern for us. Learn why ${ PASS_APP_NAME } is different.": [
         "プライバシーは私たちにとって大きな懸念事項です。 ${ PASS_APP_NAME } が異なる理由をご覧ください。"
+      ],
+      "Restoring trashed items...": [
+        "ごみ箱の項目を復元しています..."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
         "サーバーに接続できません。数分後にもう一度お試しください"
@@ -1433,6 +1443,9 @@
       "Discard changes?": [
         "変更を破棄しますか?"
       ],
+      "Email": [
+        "メールアドレス"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME } をお楽しみですか?"
       ],
@@ -1459,6 +1472,9 @@
       ],
       "Our welcome gift to you": [
         "あなたへのウェルカムギフト"
+      ],
+      "Password": [
+        "パスワード"
       ],
       "Pending access to the shared data": [
         "共有データへのアクセスが保留中です"

@@ -131,11 +131,20 @@
       "Delete vault": [
         "Hapus brankas"
       ],
+      "Disable autosave on this website": [
+        "Nonaktifkan penyimpanan otomatis pada situs web ini"
+      ],
       "Discard": [
         "Buang"
       ],
       "Dismiss": [
         "Abaikan"
+      ],
+      "Do not show on this website": [
+        "Jangan tampilkan pada situs web ini"
+      ],
+      "Do not suggest on this website": [
+        "Jangan sarankan pada situs web ini"
       ],
       "Done": [
         "Selesai"
@@ -275,6 +284,9 @@
       "Reload extension": [
         "Muat ulang ekstensi"
       ],
+      "Remove": [
+        "Hapus"
+      ],
       "Remove access": [
         "Hapus akses"
       ],
@@ -401,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Daftar domain yang tidak akan memberlakukan fungsi otomatis ${ PASS_SHORT_APP_NAME } tertentu (Autofill, Autosuggest, Autosave)"
+      "A checked box means the feature is disabled.": [
+        "Boks yang tercentang merupakan tanda bahwa fitur tersebut sedang dinonaktifkan."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Daftar domain tempat fungsi otomatis tertentu di ${ PASS_SHORT_APP_NAME } (IsiOtomatis, Saran Otomatis, Simpan Otomatis) tidak boleh dijalankan.${ infoText }"
       ]
     },
     "Error": {
@@ -675,6 +690,9 @@
       "${ memberCount } members": [
         "${ memberCount } anggota"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } akan menampilkan favicon item melalui proxy gambar anonim ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } hanya akan mengimpor rincian masuk, catatan, dan kartu kredit."
       ],
@@ -722,6 +740,9 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Semua item dari \"${ payload.content.name }\" berhasil dipindahkan"
+      ],
+      "All trashed items permanently deleted": [
+        "Seluruh item yang dibuang dihapus secara permanen"
       ],
       "All trashed items successfully restored": [
         "Semua item yang dibuang berhasil dipulihkan"
@@ -808,7 +829,7 @@
         "Untuk akses mudah ke kata sandi Anda dan lainnya."
       ],
       "For security reason, your access needs to be confirmed": [
-        "Demi alasan keamanan, akses Anda harus dikonfirmasi"
+        "Demi alasan keamanan, akses Anda perlu untuk dikonfirmasi"
       ],
       "For security reasons, your access needs to be confirmed": [
         "Demi alasan keamanan, akses Anda perlu untuk dikonfirmasi"
@@ -888,6 +909,9 @@
       "Loading": [
         "Memuat"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Memuat ${ PASS_APP_NAME }"
+      ],
       "Loading...": [
         "Memuat..."
       ],
@@ -902,6 +926,9 @@
       ],
       "Multiple vaults": [
         "Dukungan lebih dari satu brankas"
+      ],
+      "Never": [
+        "Tidak pernah"
       ],
       "No login found": [
         "Tidak ada login yang ditemukan"
@@ -1010,6 +1037,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Terima kasih, masalah ini telah dilaporkan"
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Dropdown pengisian otomatis akan terbuka setiap kali Anda mengeklik atau mengarahkan kursor Anda ke kolom yang bersangkutan."
       ],
       "The following ${ result.ignored.length } items could not be imported:": [
         "${ result.ignored.length } item berikut tidak dapat diimpor:"
@@ -1139,6 +1169,9 @@
       "15 minutes": [
         "15 menit"
       ],
+      "2FA secret key (TOTP)": [
+        "Kunci rahasia 2FA (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "Token 2FA (TOTP)"
       ],
@@ -1186,6 +1219,9 @@
       ],
       "Autofill 2FA": [
         "Isi 2FA otomatis"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Buka modul pengisian otomatis setiap kali kursor terfokus pada kolom login"
       ],
       "Autosave": [
         "Simpan otomatis"
@@ -1522,6 +1558,9 @@
       "Hyphens": [
         "Tanda hubung"
       ],
+      "Memorizable Password": [
+        "Kata Sandi yang Mudah Diingat"
+      ],
       "Numbers": [
         "Angka"
       ],
@@ -1542,6 +1581,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Tambah kunci rahasia 2FA"
+      ],
       "Add hidden text": [
         "Tambahkan teks tersembunyi"
       ],
@@ -1645,6 +1687,9 @@
       "Discard changes?": [
         "Batalkan perubahan?"
       ],
+      "Email": [
+        "Surel"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Menikmati ${ PASS_APP_NAME }?"
       ],
@@ -1672,6 +1717,9 @@
       "Leave vault ?": [
         "Tinggalkan brankas?"
       ],
+      "Log in as...": [
+        "Masuk sebagai..."
+      ],
       "Low disk space": [
         "Ruang penyimpanan rendah"
       ],
@@ -1683,6 +1731,9 @@
       ],
       "Our welcome gift to you": [
         "Hadiah selamat datang kami kepada Anda"
+      ],
+      "Password": [
+        "Kata sandi"
       ],
       "Pending access to the shared data": [
         "Menunggu akses ke data yang dibagikan"
@@ -1897,6 +1948,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Paket Anda hanya mengizinkan pengisian otomatis dari dua brankas pertama Anda"
+      ],
+      "Your session could not be authorized.": [
+        "Sesi Anda tidak dapat diautorisasi."
+      ],
+      "Your session could not be resumed.": [
+        "Sesi Anda tidak dapat dilanjutkan."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Sesi Anda tidak aktif. Silakan masuk kembali."
+      ],
+      "Your session was locked.": [
+        "Sesi Anda dikunci."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Paket langganan Anda tidak mengizinkan Anda untuk membuat lebih dari satu brankas. Seluruh item akan diimpor ke brankas pertama Anda. Untuk mengimpor ke lebih dari satu brankas, tingkatkan paket langganan Anda."

@@ -263,6 +263,9 @@
       "Reload extension": [
         "Extensie opnieuw laden"
       ],
+      "Remove": [
+        "Verwijderen"
+      ],
       "Remove access": [
         "Toegang verwijderen"
       ],
@@ -383,11 +386,6 @@
       ],
       "Expand": [
         "Uitvouwen"
-      ]
-    },
-    "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Lijst van domeinen waar bepaalde automatische functies in ${ PASS_SHORT_APP_NAME } (Automatisch invullen, automatisch suggesties geven, automatisch opslaan) niet mogen uitgevoerd worden."
       ]
     },
     "Error": {
@@ -1591,6 +1589,9 @@
       "Discard changes?": [
         "Wijzigingen annuleren?"
       ],
+      "Email": [
+        "E-mailadres"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Tevreden met ${ PASS_APP_NAME }?"
       ],
@@ -1620,6 +1621,9 @@
       ],
       "Our welcome gift to you": [
         "Ons welkomstgeschenk voor u"
+      ],
+      "Password": [
+        "Wachtwoord"
       ],
       "Pending access to the shared data": [
         "Toegang tot gedeelde data hangende"

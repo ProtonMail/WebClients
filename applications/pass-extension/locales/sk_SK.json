@@ -69,7 +69,7 @@
         "Pokračovať bez pripnutia"
       ],
       "Copy & fill in": [
-        "Skopírovať a doplniť"
+        "Skopírovať a vyplniť"
       ],
       "Copy and close": [
         "Kopírovať a zatvoriť"
@@ -131,11 +131,20 @@
       "Delete vault": [
         "Odstrániť trezor"
       ],
+      "Disable autosave on this website": [
+        "Zakázať automatické ukladanie na tejto webovej stránke"
+      ],
       "Discard": [
         "Zahodiť"
       ],
       "Dismiss": [
         "Odmietnuť"
+      ],
+      "Do not show on this website": [
+        "Nezobrazovať na tejto webovej stránke"
+      ],
+      "Do not suggest on this website": [
+        "Nenavrhovať na tejto webovej stránke"
       ],
       "Done": [
         "Hotovo"
@@ -275,6 +284,9 @@
       "Reload extension": [
         "Znova načítať rozšírenie"
       ],
+      "Remove": [
+        "Vymazať"
+      ],
       "Remove access": [
         "Odstrániť prístup"
       ],
@@ -401,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Zoznam domén, na ktorých by nemali prebiehať niektoré automatické funkcie v ${ PASS_SHORT_APP_NAME } (automatické vypĺňanie, automatické návrhy, automatické ukladanie)."
+      "A checked box means the feature is disabled.": [
+        "Začiarknuté políčko znamená, že funkcia je vypnutá."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Zoznam domén, kde by sa nemali spúšťať určité automatické funkcie v ${ PASS_SHORT_APP_NAME } (Automatické vypĺňanie, automatické návrhy, automatické ukladanie). ${ infoText }"
       ]
     },
     "Error": {
@@ -705,6 +720,9 @@
         "${ memberCount } členov",
         "${ memberCount } členov"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } zobrazí webové ikony položiek prostredníctvom ${ BRAND_NAME } anonymizovaného proxy servera."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } naimportuje len prihlasovacie údaje, poznámky a platobné karty."
       ],
@@ -764,6 +782,9 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Všetky položky z \"${ payload.content.name }\" boli úspešne presunuté"
+      ],
+      "All trashed items permanently deleted": [
+        "Všetky položky v koši natrvalo odstránené"
       ],
       "All trashed items successfully restored": [
         "Všetky položky z koša boli úspešne obnovené"
@@ -936,6 +957,9 @@
       "Loading": [
         "Načítavanie"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Načítanie ${ PASS_APP_NAME }"
+      ],
       "Loading...": [
         "Načítavanie..."
       ],
@@ -950,6 +974,9 @@
       ],
       "Multiple vaults": [
         "Viacero trezorov"
+      ],
+      "Never": [
+        "Nikdy"
       ],
       "No login found": [
         "Prihlasovacie údaje nenájdené"
@@ -1058,6 +1085,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Ďakujeme, problém bol nahlásený"
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Rozbaľovacia ponuka automatického vypĺňania sa automaticky otvorí po kliknutí alebo zvolení poľa."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Nasledujúcu ${ result.ignored.length } položku nebolo možné importovať:",
@@ -1199,6 +1229,9 @@
       "15 minutes": [
         "15 minútach"
       ],
+      "2FA secret key (TOTP)": [
+        "2FA tajný kľúč (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "2FA token (TOTP)"
       ],
@@ -1246,6 +1279,9 @@
       ],
       "Autofill 2FA": [
         "Automatické vypĺňanie 2FA"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Automaticky otvorí automatické vypĺňanie pri zvolení prihlasovacieho poľa"
       ],
       "Autosave": [
         "Automatické ukladanie"
@@ -1582,6 +1618,9 @@
       "Hyphens": [
         "Pomlčky"
       ],
+      "Memorizable Password": [
+        "Zapamätateľné heslo"
+      ],
       "Numbers": [
         "Čísla"
       ],
@@ -1602,6 +1641,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Pridať 2FA tajný kľúč"
+      ],
       "Add hidden text": [
         "Pridať skrytý text"
       ],
@@ -1708,6 +1750,9 @@
       "Discard changes?": [
         "Zrušiť zmeny?"
       ],
+      "Email": [
+        "Email"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Páči sa vám ${ PASS_APP_NAME }?"
       ],
@@ -1735,6 +1780,9 @@
       "Leave vault ?": [
         "Opustiť trezor ?"
       ],
+      "Log in as...": [
+        "Prihláste sa ako..."
+      ],
       "Low disk space": [
         "Málo miesta na disku"
       ],
@@ -1746,6 +1794,9 @@
       ],
       "Our welcome gift to you": [
         "Náš uvítací darček pre vás"
+      ],
+      "Password": [
+        "Heslo"
       ],
       "Pending access to the shared data": [
         "Čaká sa na prístup k zdieľaným údajom"
@@ -1963,6 +2014,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Váš plán umožňuje automatické vypĺňanie len z vašich prvých dvoch trezorov"
+      ],
+      "Your session could not be authorized.": [
+        "Vašu reláciu sa nepodarilo autorizovať."
+      ],
+      "Your session could not be resumed.": [
+        "Vašu reláciu sa nepodarilo obnoviť."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Vaša relácia je neaktívna. Prihláste sa znova."
+      ],
+      "Your session was locked.": [
+        "Vaša relácia bola uzamknutá."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Vaše predplatné vám neumožňuje vytvoriť viacero trezorov. Všetky položky budú importované do vášho prvého trezoru. Pre importovanie do viacerých trezorov si navýšte vaše predplatné."

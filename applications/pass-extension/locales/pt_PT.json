@@ -221,6 +221,9 @@
       "Reload extension": [
         "Recarregar a extensão"
       ],
+      "Remove": [
+        "Remover"
+      ],
       "Remove access": [
         "Remover o acesso"
       ],
@@ -302,11 +305,6 @@
       ],
       "Expand": [
         "Expandir"
-      ]
-    },
-    "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Lista de domínios onde determinadas funções automáticas em ${ PASS_SHORT_APP_NAME } (preenchimento automático, sugestão automática, gravação automática) não devem ser executadas."
       ]
     },
     "Error": {
@@ -1255,6 +1253,9 @@
       "Discard changes?": [
         "Descartar alterações?"
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Está a gostar do ${ PASS_APP_NAME }?"
       ],
@@ -1275,6 +1276,9 @@
       ],
       "Low disk space": [
         "Pouco espaço em disco"
+      ],
+      "Password": [
+        "Palavra-passe"
       ],
       "Permanently remove all items ?": [
         "Remover permanentemente todos os itens?"

@@ -260,6 +260,9 @@
       "Reload extension": [
         "Tornar a carregar l'extensió"
       ],
+      "Remove": [
+        "Suprimeix"
+      ],
       "Remove access": [
         "Suprimeix l'accés"
       ],
@@ -369,11 +372,6 @@
       ],
       "Expand": [
         "Amplia"
-      ]
-    },
-    "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Llista de domini on no s'han d'executar certes funcions automàtiques a ${ PASS_SHORT_APP_NAME } (emplenament automàtic, suggeriment automàtic, desament automàtic)."
       ]
     },
     "Error": {
@@ -1495,6 +1493,9 @@
       "Discard changes?": [
         "Voleu descartar els canvis?"
       ],
+      "Email": [
+        "Correu electrònic"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gaudint ${ PASS_APP_NAME }?"
       ],
@@ -1524,6 +1525,9 @@
       ],
       "Member limit": [
         "Límit de nombre de membres"
+      ],
+      "Password": [
+        "Contrasenya"
       ],
       "Permanently remove all items ?": [
         "Voleu eliminar els elements de manera permanent?"
