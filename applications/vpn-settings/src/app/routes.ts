@@ -12,7 +12,14 @@ import {
 import { Organization, Renew, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 import { getIsSSOVPNOnlyAccount } from '@proton/shared/lib/keys';
 
-export const getRoutes = (user: UserModel, subscription?: Subscription, organization?: Organization) => {
+interface Arguments {
+    user: UserModel;
+    subscription?: Subscription;
+    organization?: Organization;
+    ssoVpnSettingFeature: boolean;
+}
+
+export const getRoutes = ({ user, subscription, organization, ssoVpnSettingFeature }: Arguments) => {
     const hasVpnB2BPlan = getHasVpnB2BPlan(subscription);
     const hasVpnBusinessPlan = hasVpnBusiness(subscription);
     const cancellablePlan = hasCancellablePlan(subscription);
@@ -224,6 +231,19 @@ export const getRoutes = (user: UserModel, subscription?: Subscription, organiza
                 {
                     text: c('Title').t`Two-factor authentication enforcement`,
                     id: 'two-factor-authentication-enforcement',
+                },
+            ],
+        },
+        sso: <SectionConfig>{
+            text: c('Title').t`Single Sign-On`,
+            to: '/single-sign-on',
+            icon: 'key',
+            available:
+                ssoVpnSettingFeature && hasVpnB2BPlan && canHaveOrganization && (hasOrganizationKey || hasOrganization),
+            subsections: [
+                {
+                    text: c('Title').t`SAML authentication`,
+                    id: 'saml-authentication',
                 },
             ],
         },
