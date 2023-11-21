@@ -253,9 +253,6 @@
       "Download apps": [
         "Apps herunterladen"
       ],
-      "Download Drive for Windows": [
-        "Drive für Windows herunterladen"
-      ],
       "Drive Locked": [
         "Laufwerk gesperrt"
       ],
@@ -508,6 +505,9 @@
       "Report a problem": [
         "Ein Problem melden"
       ],
+      "Report an issue": [
+        "Ein Problem melden"
+      ],
       "Request a feature": [
         "Funktion vorschlagen"
       ],
@@ -711,9 +711,6 @@
       ],
       "Upload file": [
         "Datei hochladen"
-      ],
-      "Upload files": [
-        "Dateien hochladen"
       ],
       "Upload folder": [
         "Ordner hochladen"
@@ -3404,9 +3401,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Bist du sicher, dass die ausgewählten Elemente dauerhaft aus dem Papierkorb gelöscht werden sollen?"
       ],
-      "As soon as you have photos or videos on your device, they will appear here.": [
-        "Sobald du Fotos oder Videos auf deinem Gerät hast, werden sie hier angezeigt."
-      ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
@@ -3571,9 +3565,6 @@
       "Emails are automatically signed": [
         "E-Mails werden automatisch signiert."
       ],
-      "Enable drive search": [
-        "Drive durchsuchen aktivieren"
-      ],
       "Enabling drive search": [
         "Suche in Drive wird aktiviert"
       ],
@@ -3674,9 +3665,6 @@
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Lerne ${ DRIVE_APP_NAME } kennen und sichere dir deinen 500 MB Speicherplatzbonus! Fange noch heute an."
       ],
-      "Go ahead, upload a file": [
-        "Na los, lade etwas hoch"
-      ],
       "Go to \"My files\" and upload some files first.": [
         "Wechsle zu „Meine Dateien“ und lade zunächst einige Dateien hoch."
       ],
@@ -3743,9 +3731,6 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Elemente im Papierkorb verbleiben hier, bis sie dauerhaft gelöscht werden."
-      ],
-      "It’s as easy as drag and drop or selecting files": [
-        "Du kannst sie einfach hierhin ziehen oder unten auswählen"
       ],
       "It’s easy and secure": [
         "Es ist einfach und sicher"
@@ -3836,9 +3821,6 @@
       ],
       "No group found": [
         "Keine Gruppe gefunden"
-      ],
-      "No photos yet": [
-        "Noch keine Fotos"
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
@@ -4070,12 +4052,6 @@
       "Swiss encrypted file storage": [
         "Verschlüsselter Schweizer Dateispeicher"
       ],
-      "Sync folders from your computer": [
-        "Synchronisiere Ordner von deinem Computer"
-      ],
-      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "Synchronisiere Ordner ganz einfach mit unserer Desktop-Anwendung, um sicherzustellen, dass deine Dateien immer auf dem neuesten Stand und von überall aus zugänglich sind."
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei."
       ],
@@ -4100,9 +4076,6 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Es gibt noch Dateien, die übertragen werden müssen. Wenn du den Übertragungsmanager schließt, werden alle Vorgänge beendet."
       ],
-      "There are no files yet": [
-        "Es sind noch keine Dateien vorhanden"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Dieses Konto wurde aufgrund eines möglichen Verstoßes gegen die Nutzungsbedingungen gesperrt."
       ],
@@ -4111,6 +4084,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Dieser Browser unterstützt keine Vorschau von PDF-Dokumenten. Bitte lade die Datei herunter."
+      ],
+      "This file is too large to preview": [
+        "Die Datei ist zu groß, um in der Vorschau angezeigt zu werden."
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Die Datei wurde möglicherweise gelöscht, verschoben oder nicht mehr verfügbar gemacht. Versuche den Eigentümer der Datei zu kontaktieren."
@@ -5511,11 +5487,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Name"
-      ]
-    },
-    "Platform": {
-      "Windows": [
-        "Windows"
       ]
     },
     "Progress bar description": {

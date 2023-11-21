@@ -550,6 +550,9 @@
       "label emails as": [
         "labeli surel sebagai"
       ],
+      "Later this week": [
+        "Selama minggu ini"
+      ],
       "Learn more": [
         "Pelajari lebih lanjut"
       ],
@@ -573,6 +576,9 @@
       ],
       "Manage labels": [
         "Kelola label"
+      ],
+      "Manage Snooze": [
+        "Atur penundaan"
       ],
       "Mark as read": [
         "Tandai telah dibaca"
@@ -895,6 +901,9 @@
       "Select all messages": [
         "Pilih semua pesan"
       ],
+      "Select date and time": [
+        "Pilih tanggal dan jam"
+      ],
       "Self-destruct in 7 days": [
         "Hapus otomatis dalam 7 hari"
       ],
@@ -1000,6 +1009,9 @@
       "Skip verification": [
         "Lewati verifikasi"
       ],
+      "Snooze": [
+        "Tunda"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Sebagian gambar tidak dapat dimuat dengan perlindungan pelacak yang aktif."
       ],
@@ -1029,6 +1041,9 @@
       ],
       "This message contains remote content.": [
         "Pesan ini mengandung remote content."
+      ],
+      "This weekend": [
+        "Minggu ini"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Untuk mencari surel Anda dengan aman, kami perlu mengunduh salinan pesan Anda ke peramban Anda. Unduhan awal mungkin membutuhkan beberapa waktu."
@@ -1080,6 +1095,9 @@
       ],
       "Unordered list": [
         "Daftar tak berurut"
+      ],
+      "Unsnooze": [
+        "Buka kembali"
       ],
       "Unstar": [
         "Hapus bintang"
@@ -3056,6 +3074,9 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Dapatkan fitur penjadwalan pesan khusus dan berbagai kelebihan lainnya dengan meningkatkan akun Anda."
       ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Buka pilih sendiri waktu penundaan setelah meningkatkan langganan"
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Dapatkan saringan tidak terbatas yang mengurutkan kotak masuk untuk Anda dan lebih banyak fitur premium ketika Anda tingkatkan."
       ],
@@ -4618,7 +4639,7 @@
         "Tergantung dari layanan surel Anda sebelumnya, Anda mungkin akan perlu untuk membuat ${ knowledgeBaseLink } terlebih dahulu sebelum Anda dapat mengimpor ke ${ BRAND_NAME }."
       ],
       "Expand the dropdown menu by clicking on the 3 dots (...).": [
-        "Tampilkan lebih banyak pilihan pada menu dropdown dengan mengklik tombol 3 titik (...)."
+        "Tampilkan lebih banyak pilihan pada menu dropdown dengan mengeklik tombol 3 titik (...)."
       ],
       "Generate the ${ boldAppPassword } and use it in place of your regular password when prompted by ${ BRAND_NAME }.": [
         "Buat ${ boldAppPassword } dan gunakan kata sandi tersebut ketika diminta oleh ${ BRAND_NAME }."
@@ -5547,6 +5568,9 @@
       "Right-click for options": [
         "Klik-kanan untuk menampilkan pilihan"
       ],
+      "Sat, ${ formatTime }": [
+        "Sab, ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "Disimpan pada ${ dateString }"
       ],
@@ -5611,7 +5635,7 @@
         "Masa berlaku sesi telah berakhir"
       ],
       "Set ${ MAIL_APP_NAME } as your default email application for this browser. ${ MAIL_APP_NAME } will open automatically when you click an email link.": [
-        "Tentukan ${ MAIL_APP_NAME } sebagai aplikasi surel default untuk browser ini. ${ MAIL_APP_NAME } akan terbuka secara otomatis ketika Anda mengklik tautan surel."
+        "Tentukan ${ MAIL_APP_NAME } sebagai aplikasi surel bawaan untuk browser ini. ${ MAIL_APP_NAME } akan terbuka secara otomatis ketika Anda mengeklik tautan surel."
       ],
       "Setting up PGP allows you to send end-to-end encrypted emails with a non-${ BRAND_NAME } user that uses a PGP compatible service.": [
         "Memasang PGP memungkinkan Anda untuk saling bertukar surel yang terenkripsi secara ujung ke ujung dengan para pengguna non-${ BRAND_NAME } yang juga mendukung PGP."
@@ -5624,6 +5648,18 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin memudahkan Anda untuk dapat membuat akun pada situs pihak ketiga yang tidak terpercaya di kala Anda tidak ingin menggunakan alamat surel asli Anda."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Tunda sampai ${ dateString } pada ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Tunda sampai hari ini, ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Tunda sampai besok, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "Penundaan percakapan ini akan dibatalkan."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Maaf, pesan ini tidak ada atau telah kedaluwarsa."
@@ -5727,6 +5763,9 @@
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Surel ini tidak memenuhi syarat autentikasi domainnya. Surel ini mungkin telah dipalsukan atau tidak diteruskan dengan benar."
       ],
+      "This file is too large to preview": [
+        "Berkas ini terlalu besar untuk dipratinjau"
+      ],
       "This invitation is saved in a disabled calendar.": [
         "Undangan ini disimpan di kalender nonaktif."
       ],
@@ -5817,6 +5856,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Untuk menggunakan Verifikasi Alamat, Anda harus terlebih dahulu memercayai satu atau lebih kunci publik yang tersedia, termasuk yang ingin Anda gunakan untuk mengirim. Hal ini mencegah kunci enkripsi untuk dapat dipalsukan."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Besok, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Pesan yang akan dikirim sudah terlalu banyak. Mohon tunggu sejenak sebelum Anda menjadwalkan pengiriman pesan ini."
       ],
@@ -5861,6 +5903,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Tingkatkan sekarang untuk memperoleh berbagai fitur, produk, dan ruang penyimpanan berkapasitas premium dengan harga khusus"
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Tingkatkan ke ${ MAIL_APP_NAME } Plus untuk membuka"
       ],
       "Upgrade to add more addresses to your account.": [
         "Tingkatkan jenis akun Anda untuk dapat menambahkan lebih banyak alamat ke dalam akun Anda."
@@ -7013,6 +7058,12 @@
       "Sign up for free": [
         "Daftar gratis"
       ],
+      "Snooze": [
+        "Tunda"
+      ],
+      "Snoozed": [
+        "Ditunda"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -7342,6 +7393,9 @@
       "Custom email domains": [
         "Domain surel khusus"
       ],
+      "Custom snooze time": [
+        "Pilih sendiri waktu tunda"
+      ],
       "Hide-my-email aliases": [
         "Alias hide-my-email"
       ],
@@ -7367,6 +7421,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Dapatkan alamat surel samaran tanpa batasan jumlah dengan SimpleLogin oleh ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Tunda pesan dan ingatkan saat Anda mau"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Kuota penyimpanan diperuntukkan bagi ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, dan ${ DRIVE_APP_NAME } secara bersamaan"
@@ -7791,6 +7848,9 @@
       "No results found": [
         "Tidak ada hasil yang ditemukan"
       ],
+      "No snoozed messages": [
+        "Tidak ada pesan tertunda"
+      ],
       "No unread messages found": [
         "Tidak ada pesan yang belum dibaca yang ditemukan"
       ]
@@ -8070,6 +8130,14 @@
       ],
       "Sign": [
         "Tandatangani"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Pesan tertunda"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Kapan pesan muncul kembali di kotak masuk?"
       ]
     },
     "Sort option": {
@@ -8384,6 +8452,12 @@
       ],
       "${ elementsCount } conversations removed from ${ labelName }.": [
         "${ elementsCount } percakapan dihapus dari ${ labelName }."
+      ],
+      "${ elementsCount } conversations snoozed": [
+        "${ elementsCount } percakapan ditunda"
+      ],
+      "${ elementsCount } conversations unsnoozed": [
+        "${ elementsCount } percakapan dibuka kembali"
       ],
       "${ elementsCount } messages added to ${ labelName }.": [
         "${ elementsCount } pesan ditambahkan ke ${ labelName }."
@@ -9026,6 +9100,9 @@
       "Moving a scheduled message": [
         "Memindahkan pesan yang terjadwal"
       ],
+      "Moving a snoozed message": [
+        "Pindah pesan tertunda"
+      ],
       "New message": [
         "Pesan baru"
       ],
@@ -9167,6 +9244,12 @@
       "Sign out": [
         "Keluar"
       ],
+      "Snooze": [
+        "Tunda"
+      ],
+      "Snooze message": [
+        "Tunda pesan"
+      ],
       "Sort conversations": [
         "Urutkan percakapan"
       ],
@@ -9211,6 +9294,9 @@
       ],
       "Verification error": [
         "Kesalahan verifikasi"
+      ],
+      "Want to snooze any time?": [
+        "Ingin menunda kapan pun?"
       ],
       "Warning": [
         "Peringatan"
@@ -9386,7 +9472,7 @@
         "Lewati verifikasi?"
       ],
       "Some of the attachments' signatures failed verification.\nYou can still download these attachments but they might have been tampered with.": [
-        "Tanda tangan lampiran gagal diverifikasi.\nAnda tetap dapat mengunduh lampiran ini tapi mungkin saja sudah rusak."
+        "Tanda tangan lampiran gagal diverifikasi.\nAnda akan tetap dapat mengunduh lampiran ini, namun lampiran ini mungkin saja telah dimodifikasi."
       ],
       "Some of the contacts to be merged display errors. Please review them individually": [
         "Sebagian kontak yang akan digabung rusak. Mohon periksa satu per satu"
@@ -9423,6 +9509,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Masa uji coba gratis Anda akan berakhir pada ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Sen, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Sab, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Ming, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

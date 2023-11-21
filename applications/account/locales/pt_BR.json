@@ -806,9 +806,6 @@
       "Save ICS file": [
         "Salvar arquivo ICS"
       ],
-      "Save selected": [
-        "Salvar selecionado"
-      ],
       "Search": [
         "Pesquisar"
       ],
@@ -1323,9 +1320,6 @@
       ],
       "Add ${ plan } for ${ price } per month": [
         "Adicione ${ plan } por ${ price } por mês"
-      ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "Adicione ${ plan } ao seu plano assinando 15 meses"
       ],
       "Become a Visionary": [
         "Torne-se um Visionary"
@@ -3448,6 +3442,11 @@
         "Configurar encaminhamento de e-mail"
       ]
     },
+    "email_forwarding_2023: Description": {
+      "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
+        "Desbloqueie o encaminhamento de e-mail para gerenciar facilmente as informações recebidas e mais recursos premium ao atualizar."
+      ]
+    },
     "email_forwarding_2023: Error": {
       "Condition incomplete, please add a token": [
         "Condição incompleta, adicione um token"
@@ -3459,6 +3458,11 @@
     "email_forwarding_2023: Error message, recovery": {
       "Please try opening the link again.": [
         "Tente abrir o link novamente."
+      ]
+    },
+    "email_forwarding_2023: Forwarding tooltip": {
+      "Emails forwarded to you are excluded and will not be forwarded.": [
+        "Os e-mails encaminhados para você são excluídos e não serão encaminhados."
       ]
     },
     "email_forwarding_2023: Header": {
@@ -3484,8 +3488,23 @@
       "A confirmation email will be sent to ${ boldForwardeeEmail }": [
         "Um e-mail de confirmação será enviado para ${ boldForwardeeEmail }"
       ],
+      "A new encryption key will be generated for ${ boldForwarderEmail }.": [
+        "Uma nova chave de criptografia será gerada para ${ boldForwarderEmail }."
+      ],
+      "Automatically forward emails to another email address.": [
+        "Encaminhe e-mails automaticamente para outro endereço de e-mail."
+      ],
+      "Forwardee is invited and needs to accept/reject the invitation or update": [
+        "O encaminhador foi convidado e precisa aceitar/rejeitar o convite ou atualizar"
+      ],
       "Forwarding is active": [
         "Encaminhamento está ativo"
+      ],
+      "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "O encaminhamento para um endereço sem criptografia de ponta a ponta desabilitará a criptografia de ponta a ponta para seu endereço ${ boldForwarderEmail }, mas a criptografia de acesso zero permanecerá habilitada. ${ learnMoreLink }"
+      ],
+      "Forwarding to this address will become active once the recipient accepts the forwarding.": [
+        "O encaminhamento para este endereço ficará ativo assim que o destinatário aceitar o encaminhamento."
       ],
       "No incoming forwarding rules": [
         "Nenhuma regra de encaminhamento de entrada."
@@ -3504,6 +3523,9 @@
       ],
       "You can safely close this tab.": [
         "Você pode fechar esta guia com segurança."
+      ],
+      "You won't receive emails forwarded automatically from ${ boldForwarderEmail }.": [
+        "Você não receberá e-mails encaminhados automaticamente de ${ boldForwarderEmail }."
       ]
     },
     "email_forwarding_2023: Label": {
@@ -3551,6 +3573,14 @@
       ],
       "Type text or keyword for this condition:": [
         "Digite o texto ou palavra-chave para esta condição."
+      ]
+    },
+    "email_forwarding_2023: Prompt": {
+      "End-to-end encryption will be re-enabled for the sender address.": [
+        "A criptografia de ponta a ponta será reativada para o endereço do remetente."
+      ],
+      "Forwarding to the destination address will end.": [
+        "O encaminhamento para o endereço de destino terminará."
       ]
     },
     "email_forwarding_2023: Status": {
@@ -10348,6 +10378,17 @@
         "Gerenciamento de equipes"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Sua avaliação termina em ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } com final ${ last4 }"
@@ -10435,17 +10476,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Seu plano atual está com um preço promocional. Se fizer o downgrade da sua conta, você perderá seu preço promocional, o qual não estará mais disponível se você tentar assinar novamente."
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e, futuramente, sua conta será desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar usando o ${ MAIL_APP_NAME } com recursos premium, escolha sua assinatura e opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Sua avaliação termina em ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11325,6 +11355,12 @@
       "All premium ${ BRAND_NAME } services.": [
         "Todos os serviços premium da ${ BRAND_NAME }."
       ],
+      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "Mas você pode obter ${ discount } de desconto atualizando para **${ upsellPlanTitle }** — é apenas ${ relativePrice } a mais por mês."
+      ],
+      "But you can get ${ discount } off by upgrading to **${ upsellPlanTitle }**.": [
+        "Mas você pode obter ${ discount } de desconto atualizando para **${ upsellPlanTitle }**."
+      ],
       "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
         "Mas você pode desbloquear **${ unlockPlanTitle }** e todos os serviços premium ${ BRAND_NAME } atualizando para o **${ upsellPlanTitle }** — por apenas ${ relativePrice } extras por mês."
       ],
@@ -11444,6 +11480,9 @@
       ],
       "Verifying your payment": [
         "Verificando seu pagamento"
+      ],
+      "Welcome to ${ shortName } Plus": [
+        "Boas-vindas ao ${ shortName } Plus"
       ],
       "Works on all devices": [
         "Funciona em todos os dispositivos"
@@ -11793,6 +11832,9 @@
       ],
       "Changing organization password": [
         "Alterando a senha da organização"
+      ],
+      "Creating or accessing non-private users": [
+        "Criando ou acessando usuários não privados"
       ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Devido a uma alteração de senha, seus privilégios de administrador da organização foram restritos. As seguintes ações já não são permitidas:"
@@ -13809,9 +13851,6 @@
       "Revoke certificate": [
         "Revogar certificado"
       ],
-      "Save contact details": [
-        "Salvar detalhes do contato"
-      ],
       "Save time with email filters": [
         "Economize tempo com filtros no e-mail"
       ],
@@ -14414,6 +14453,16 @@
       ],
       "Primary admin": [
         "Administrador principal"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "Usuário SSO fornecido pelo seu Provedor de Identidade"
       ]
     },
     "Validation": {

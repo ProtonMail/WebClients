@@ -658,9 +658,6 @@
       "Add ${ plan } for ${ price } per month": [
         "Adicione ${ plan } por ${ price } por mês"
       ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "Adicione ${ plan } ao seu plano assinando 15 meses"
-      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -5788,6 +5785,9 @@
       "Changing organization password": [
         "Alterando a senha da organização"
       ],
+      "Creating or accessing non-private users": [
+        "Criando ou acessando usuários não privados"
+      ],
       "Due to a password change, your organization administrator privileges have been restricted. The following actions are no longer permitted:": [
         "Devido a uma alteração de senha, seus privilégios de administrador da organização foram restritos. As seguintes ações já não são permitidas:"
       ]
@@ -7345,6 +7345,16 @@
       ],
       "Primary admin": [
         "Administrador principal"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "Usuário SSO fornecido pelo seu Provedor de Identidade"
       ]
     },
     "Validation": {

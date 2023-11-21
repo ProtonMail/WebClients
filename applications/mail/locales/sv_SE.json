@@ -1046,6 +1046,9 @@
       "This message contains remote content.": [
         "Detta meddelande innehåller fjärrinnehåll."
       ],
+      "This weekend": [
+        "Denna helg"
+      ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "För att söka i din e-post på ett säkert sätt måste vi ladda ner en kopia av dina meddelanden till din webbläsare. Den första nedladdningen kan ta en stund."
       ],
@@ -3086,6 +3089,9 @@
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Lås upp anpassat meddelandeschemaläggning och andra fördelar när du uppgraderar ditt paket."
+      ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Lås upp anpassade tider för snooze när du uppgraderar ditt paket."
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Lås upp obegränsade filter som sorterar din inkorg åt dig och fler premiumfunktioner när du uppgraderar."
@@ -5752,6 +5758,9 @@
       "Snoozed until tomorrow, ${ formattedTime }": [
         "Snoozad till imorgon, ${ formattedTime }"
       ],
+      "Snoozing this conversation will be cancelled.": [
+        "Snoozning av denna konversation kommer att avbrytas."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Detta meddelande finns inte eller har redan löpt ut."
       ],
@@ -7536,6 +7545,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Få obegränsade alias med SimpleLogin av ${ BRAND_NAME }"
       ],
+      "Snooze messages and get reminded when you want": [
+        "Snooza meddelanden och bli påmind när du vill"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagringsutrymmet delas mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } och ${ DRIVE_APP_NAME }"
       ],
@@ -7963,6 +7975,9 @@
       "No results found": [
         "Inga resultat hittades"
       ],
+      "No snoozed messages": [
+        "Inga snoozade meddelanden"
+      ],
       "No unread messages found": [
         "Inga olästa meddelanden hittades"
       ]
@@ -8262,6 +8277,9 @@
     "Snooze message": {
       "Snooze Message": [
         "Snooza meddelande"
+      ],
+      "When should the message reappear in your inbox?": [
+        "När ska meddelandet dyka upp igen i din inkorg?"
       ]
     },
     "Sort option": {
@@ -8594,6 +8612,14 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } konversation borttaget från ${ labelName }.",
         "${ elementsCount } konversationer borttagna från ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } konversation snoozad",
+        "${ elementsCount } konversationer snoozade"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } konversation ej snoozad",
+        "${ elementsCount } konversationer ej snoozade"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } meddelande tillagd till ${ labelName }.",

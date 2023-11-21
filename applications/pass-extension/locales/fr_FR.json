@@ -12,7 +12,7 @@
         "Ajouter l'URL actuelle"
       ],
       "Add domain to pause list": [
-        "Ajouter le domaine à la liste des fonctionnalités et domaines exclus"
+        "Ajouter le domaine à la liste des domaines et fonctionnalités exclus"
       ],
       "Add more": [
         "Ajouter"
@@ -131,11 +131,20 @@
       "Delete vault": [
         "Supprimer le coffre-fort"
       ],
+      "Disable autosave on this website": [
+        "Désactiver l'enregistrement automatique sur ce site internet"
+      ],
       "Discard": [
         "Abandonner"
       ],
       "Dismiss": [
         "Annuler"
+      ],
+      "Do not show on this website": [
+        "Ne pas afficher sur ce site internet"
+      ],
+      "Do not suggest on this website": [
+        "Ne pas faire de suggestions sur ce site internet"
       ],
       "Done": [
         "Terminé"
@@ -275,6 +284,9 @@
       "Reload extension": [
         "Recharger l'extension"
       ],
+      "Remove": [
+        "Supprimer"
+      ],
       "Remove access": [
         "Supprimer l'accès"
       ],
@@ -401,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Liste des domaines pour lesquels certaines fonctionnalités automatiques de ${ PASS_SHORT_APP_NAME } (remplissage, suggestion ou enregistrement automatique) ne doivent pas être exécutées."
+      "A checked box means the feature is disabled.": [
+        "Une case cochée signifie que la fonctionnalité est désactivée."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Liste des domaines pour lesquels certaines fonctionnalités automatiques de ${ PASS_SHORT_APP_NAME } (remplissage, suggestion ou enregistrement automatique) ne doivent pas être exécutées.${ infoText }"
       ]
     },
     "Error": {
@@ -685,6 +700,9 @@
         "${ memberCount } membre",
         "${ memberCount } membres"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } affichera la vignette de l'élément en utilisant le proxy d'image anonyme ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importera uniquement les identifiants, notes et cartes de paiement."
       ],
@@ -736,6 +754,9 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Tous les éléments ont été déplacés depuis « ${ payload.content.name } »."
+      ],
+      "All trashed items permanently deleted": [
+        "Tous les éléments dans la corbeille ont été définitivement supprimés."
       ],
       "All trashed items successfully restored": [
         "Tous les éléments mis à la corbeille ont été restaurés."
@@ -904,6 +925,9 @@
       "Loading": [
         "Chargement"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Chargement de ${ PASS_APP_NAME }"
+      ],
       "Loading...": [
         "Chargement en cours"
       ],
@@ -918,6 +942,9 @@
       ],
       "Multiple vaults": [
         "Plusieurs coffres-forts"
+      ],
+      "Never": [
+        "Jamais"
       ],
       "No login found": [
         "Aucun identifiant n'a été trouvé."
@@ -1026,6 +1053,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Nous vous remercions. Le bug a été signalé."
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "La liste déroulante de remplissage automatique s'ouvrira automatiquement quand vous cliquez sur un champ ou que vous le sélectionnez."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "${ result.ignored.length } élément n'a pas pu être importé :",
@@ -1159,6 +1189,9 @@
       "15 minutes": [
         "15 minutes"
       ],
+      "2FA secret key (TOTP)": [
+        "Clé secrète A2F (TOTP/mot de passe à usage unique basé sur le temps)"
+      ],
       "2FA token (TOTP)": [
         "Jeton A2F (TOTP/mot de passe à usage unique basé sur le temps)"
       ],
@@ -1207,11 +1240,14 @@
       "Autofill 2FA": [
         "Remplissage automatique A2F"
       ],
+      "Automatically open autofill when a login field is focused": [
+        "Ouvrir automatiquement le remplissage automatique dès qu'un champ de connexion est sélectionné."
+      ],
       "Autosave": [
         "Enregistrement automatique"
       ],
       "Autosave vault": [
-        "Coffre-fort avec sauvegarde automatique"
+        "Coffre-fort avec enregistrement automatique"
       ],
       "Autosuggest": [
         "Suggestion automatique"
@@ -1343,7 +1379,7 @@
         "En savoir plus"
       ],
       "Login": [
-        "Connexion"
+        "Identifiant"
       ],
       "Logins": [
         "Identifiants"
@@ -1406,7 +1442,7 @@
         "Mots de passe"
       ],
       "Pause list": [
-        "Fonctionnalités et domaines exclus"
+        "Domaines et fonctionnalités exclus"
       ],
       "PIN": [
         "Code PIN"
@@ -1542,6 +1578,9 @@
       "Hyphens": [
         "Tirets"
       ],
+      "Memorizable Password": [
+        "Mot de passe facile à mémoriser"
+      ],
       "Numbers": [
         "Chiffres"
       ],
@@ -1562,29 +1601,32 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Ajoutez la clé secrète d'authentification à deux facteurs (A2F)."
+      ],
       "Add hidden text": [
-        "Ajoutez un texte caché"
+        "Ajoutez du texte caché."
       ],
       "Add note": [
-        "Ajoutez une note"
+        "Ajoutez une note."
       ],
       "Add text": [
-        "Ajoutez du texte"
+        "Ajoutez du texte."
       ],
       "Email address": [
         "Adresse e-mail"
       ],
       "Enter a note...": [
-        "Ajouter une note…"
+        "Ajoutez une note…"
       ],
       "Enter a prefix": [
-        "Saisir un préfixe"
+        "Saisissez un préfixe."
       ],
       "Enter email or username": [
-        "Saisissez un e-mail ou un nom d’utilisateur"
+        "Saisissez un e-mail ou un nom d’utilisateur."
       ],
       "Enter password": [
-        "Saisissez le mot de passe"
+        "Saisissez le mot de passe."
       ],
       "Full Name": [
         "Nom complet"
@@ -1596,7 +1638,7 @@
         "Autre"
       ],
       "Pick a vault": [
-        "Sélectionnez un coffre-fort"
+        "Sélectionnez un coffre-fort."
       ],
       "Please describe the problem and include any error messages": [
         "Décrivez le problème et incluez les éventuels messages d'erreur."
@@ -1605,22 +1647,22 @@
         "Saisissez à nouveau « ${ vaultName } » pour confirmer la suppression."
       ],
       "Search ${ pluralItemType } in ${ vault.content.name }": [
-        "Rechercher les ${ pluralItemType } dans ${ vault.content.name }"
+        "Recherchez les ${ pluralItemType } dans ${ vault.content.name }."
       ],
       "Search ${ pluralItemType } in all vaults": [
-        "Rechercher les ${ pluralItemType } dans tous les coffres-forts"
+        "Recherchez les ${ pluralItemType } dans tous les coffres-forts."
       ],
       "Search in ${ vault.content.name }": [
-        "Rechercher dans ${ vault.content.name }"
+        "Recherchez dans ${ vault.content.name }."
       ],
       "Search in all vaults": [
-        "Rechercher dans tous les coffres-forts"
+        "Recherchez dans tous les coffres-forts."
       ],
       "Search in Trash": [
-        "Rechercher dans la corbeille"
+        "Recherchez dans la corbeille."
       ],
       "Select a suffix": [
-        "Sélectionner un suffixe"
+        "Sélectionnez un suffixe."
       ],
       "Shared vault": [
         "Coffre-fort partagé"
@@ -1635,7 +1677,7 @@
         "Utilisé sur ${ url }"
       ],
       "Write your note": [
-        "Rédigez votre note"
+        "Rédigez votre note."
       ]
     },
     "Success": {
@@ -1666,6 +1708,9 @@
       "Discard changes?": [
         "Abandonner les modifications ?"
       ],
+      "Email": [
+        "Adresse e-mail"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Vous appréciez ${ PASS_APP_NAME } ?"
       ],
@@ -1693,6 +1738,9 @@
       "Leave vault ?": [
         "Quitter le coffre-fort ?"
       ],
+      "Log in as...": [
+        "Connexion en tant que…"
+      ],
       "Low disk space": [
         "Il y a peu d'espace disque."
       ],
@@ -1704,6 +1752,9 @@
       ],
       "Our welcome gift to you": [
         "Notre cadeau de bienvenue"
+      ],
+      "Password": [
+        "Mot de passe"
       ],
       "Pending access to the shared data": [
         "En attente d'accès aux données partagées"
@@ -1919,6 +1970,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Votre abonnement vous permet d'utiliser la fonctionnalité de remplissage automatique uniquement depuis vos deux premiers coffres-forts."
+      ],
+      "Your session could not be authorized.": [
+        "Votre session n'a pas pu être autorisée."
+      ],
+      "Your session could not be resumed.": [
+        "Votre session n'a pas pu être relancée."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Votre session est inactive. Reconnectez-vous."
+      ],
+      "Your session was locked.": [
+        "Votre session a été verrouillée."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre premier coffre-fort. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."

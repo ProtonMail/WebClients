@@ -661,9 +661,6 @@
       "Add ${ plan } for ${ price } per month": [
         "Adăugați ${ plan } cu ${ price } pe lună"
       ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "Adăugați-vă ${ plan } la planul curent abonându-vă 15 luni"
-      ],
       "Cancel": [
         "Anulare"
       ],
@@ -7467,6 +7464,16 @@
       ],
       "Primary admin": [
         "Administrator principal"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "Autentificare unică (SSO)"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "Utilizator cu autentificare unică (SSO) oferit de furnizorul de identitate personal"
       ]
     },
     "Validation": {

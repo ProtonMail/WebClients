@@ -230,6 +230,9 @@
       "Reload extension": [
         "Перезавантажити розширення"
       ],
+      "Remove": [
+        "Вилучити"
+      ],
       "Remove access": [
         "Вилучити доступ"
       ],
@@ -323,11 +326,6 @@
       ],
       "Expand": [
         "Розгорнути"
-      ]
-    },
-    "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Список доменів, для яких не повинні виконуватися певні автоматичні функції ${ PASS_SHORT_APP_NAME }, як-от автозаповнення, пропозиції чи автозбереження."
       ]
     },
     "Error": {
@@ -1361,6 +1359,9 @@
       "Discard changes?": [
         "Відхилити зміни?"
       ],
+      "Email": [
+        "Е-пошта"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Вам подобається ${ PASS_APP_NAME }?"
       ],
@@ -1378,6 +1379,9 @@
       ],
       "Low disk space": [
         "Бракує місця на диску"
+      ],
+      "Password": [
+        "Пароль"
       ],
       "Permanently remove all items ?": [
         "Остаточно видалити всі елементи ?"

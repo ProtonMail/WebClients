@@ -131,11 +131,20 @@
       "Delete vault": [
         "Ta bort valv"
       ],
+      "Disable autosave on this website": [
+        "Inaktivera spara automatiskt på denna webbplats"
+      ],
       "Discard": [
         "Avfärda"
       ],
       "Dismiss": [
         "Avfärda"
+      ],
+      "Do not show on this website": [
+        "Visa inte på denna webbplats"
+      ],
+      "Do not suggest on this website": [
+        "Föreslå inte på denna webbplats"
       ],
       "Done": [
         "Klar"
@@ -275,6 +284,9 @@
       "Reload extension": [
         "Ladda om tillägg"
       ],
+      "Remove": [
+        "Ta bort"
+      ],
       "Remove access": [
         "Ta bort åtkomst"
       ],
@@ -401,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Lista över domäner där vissa automatiska funktioner i ${ PASS_SHORT_APP_NAME } (automatisk ifyllnad, automatiskt förslag, automatiskt spara) inte bör köras."
+      "A checked box means the feature is disabled.": [
+        "En ikryssad ruta betyder att funktionen är inaktiverad."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Lista över domäner där vissa automatiska funktioner i ${ PASS_SHORT_APP_NAME } (automatisk ifyllnad, automatiskt förslag, automatiskt spara) inte ska köras.${ infoText }"
       ]
     },
     "Error": {
@@ -682,6 +697,9 @@
         "${ memberCount } medlem",
         "${ memberCount } medlemmar"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME } kommer visa objektets favicon via ${ BRAND_NAME } anonymiserade bildproxy."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } kommer endast importera inloggningar, anteckningar och kreditkort."
       ],
@@ -733,6 +751,9 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "Alla objekt från “${ payload.content.name }“ flyttades"
+      ],
+      "All trashed items permanently deleted": [
+        "Alla kastade objekt borttagna permanent"
       ],
       "All trashed items successfully restored": [
         "Alla kastade objekt återställda"
@@ -901,6 +922,9 @@
       "Loading": [
         "Laddar"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Laddar in ${ PASS_APP_NAME }"
+      ],
       "Loading...": [
         "Laddar..."
       ],
@@ -915,6 +939,9 @@
       ],
       "Multiple vaults": [
         "Flera valv"
+      ],
+      "Never": [
+        "Aldrig"
       ],
       "No login found": [
         "Ingen inloggning hittades"
@@ -1023,6 +1050,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Tack, problemet har rapporterats"
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "Rullgardinsmenyn för automatisk ifyllnad kommer öppnas automatiskt när du klickar eller fokuserar på fältet."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Följande ${ result.ignored.length } objekt kunde inte importeras:",
@@ -1156,6 +1186,9 @@
       "15 minutes": [
         "15 minuter"
       ],
+      "2FA secret key (TOTP)": [
+        "Hemlig nyckel för 2FA (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "2FA-token (TOTP)"
       ],
@@ -1203,6 +1236,9 @@
       ],
       "Autofill 2FA": [
         "Autofyll 2FA"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Öppna autofyll automatiskt när ett inloggningsfält är fokuserat"
       ],
       "Autosave": [
         "Spara automatiskt"
@@ -1539,6 +1575,9 @@
       "Hyphens": [
         "Bindestreck"
       ],
+      "Memorizable Password": [
+        "Minnesvärt lösenord"
+      ],
       "Numbers": [
         "Nummer"
       ],
@@ -1559,6 +1598,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Lägg till hemlig nyckel för 2FA"
+      ],
       "Add hidden text": [
         "Lägg till dold text"
       ],
@@ -1663,6 +1705,9 @@
       "Discard changes?": [
         "Ignorera ändringar?"
       ],
+      "Email": [
+        "E-post"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Gillar du ${ PASS_APP_NAME }?"
       ],
@@ -1690,6 +1735,9 @@
       "Leave vault ?": [
         "Lämna valv?"
       ],
+      "Log in as...": [
+        "Logga in som..."
+      ],
       "Low disk space": [
         "Lågt diskutrymme"
       ],
@@ -1701,6 +1749,9 @@
       ],
       "Our welcome gift to you": [
         "Vår välkomstgåva till dig"
+      ],
+      "Password": [
+        "Lösenord"
       ],
       "Pending access to the shared data": [
         "Väntar på åtkomst till delade data"
@@ -1916,6 +1967,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Ditt paket tillåter dig endast att fylla i automatiskt från dina två första valv"
+      ],
+      "Your session could not be authorized.": [
+        "Din session kunde inte auktoriseras."
+      ],
+      "Your session could not be resumed.": [
+        "Din session kunde inte återupptas."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Din session är inaktiv. Logga in igen."
+      ],
+      "Your session was locked.": [
+        "Din session var låst."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt första valv. För att importera till flera valv, uppgradera din prenumeration."

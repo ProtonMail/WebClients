@@ -253,9 +253,6 @@
       "Download apps": [
         "Scarica le app"
       ],
-      "Download Drive for Windows": [
-        "Scarica Drive per Windows"
-      ],
       "Drive Locked": [
         "Spazio Bloccato"
       ],
@@ -713,9 +710,6 @@
         "Carica comunque"
       ],
       "Upload file": [
-        "Carica file"
-      ],
-      "Upload files": [
         "Carica file"
       ],
       "Upload folder": [
@@ -1968,7 +1962,7 @@
     },
     "Description": {
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Decriptazione dei contatti... Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, sarai in grado di scaricare il file con tutti i tuoi contatti esportati."
+        "Decrittografia dei contatti... Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, sarai in grado di scaricare il file con tutti i tuoi contatti esportati."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminando i contatti... Questo potrebbe richiedere qualche minuto. Quando il processo è completato, puoi chiudere questo modale."
@@ -2564,6 +2558,9 @@
       "Access denied": [
         "Accesso negato"
       ],
+      "App currently unavailable": [
+        "App attualmente non disponibile"
+      ],
       "Brace yourself till we get the error fixed.": [
         "Tieniti forte finché non risolviamo l'errore."
       ],
@@ -2579,11 +2576,17 @@
       "Oops, something went wrong": [
         "Ops, si è verificato un errore"
       ],
+      "Open in browser": [
+        "Apri nel browser"
+      ],
       "Please refresh the page or try again later.": [
         "Aggiorna la pagina o riprova più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Per utilizzare ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, passa alla versione web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Non è stato possibile caricare questa pagina. Aggiornar questa pagina o controlla la connessione internet."
@@ -3258,6 +3261,12 @@
         "${ doneUploadsCount } caricato",
         "${ doneUploadsCount } caricati"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } su App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } su Play Store"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } non riuscito",
         "${ errorCount } non riusciti"
@@ -3342,7 +3351,7 @@
         "A causa di fatture non pagate, l'accesso all'account è stato limitato. Per favore, contatta il tuo amministratore."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "La verifica dell’indirizzo con le chiavi attendibili è abilitata per questo indirizzo. Per poter inviare a questo indirizzo, prima considera attendibili le chiavi pubbliche che possono essere usate per l'invio."
+        "La verifica dell'indirizzo con le chiavi attendibili è abilitata per questo indirizzo. Per poter inviare a questo indirizzo, prima considera attendibili le chiavi pubbliche che possono essere usate per l'invio."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tutti (${ totalFoldersCount } cartella)",
@@ -3397,9 +3406,6 @@
       ],
       "Are you sure you want to permanently delete selected items from trash?": [
         "Sei sicuro di voler eliminare definitivamente gli elementi selezionati dal cestino?"
-      ],
-      "As soon as you have photos or videos on your device, they will appear here.": [
-        "Appena avrai foto o video sul tuo dispositivo, questi appariranno qui."
       ],
       "Attention required": [
         "Attenzione"
@@ -3523,6 +3529,9 @@
       "double your storage": [
         "raddoppia il tuo spazio"
       ],
+      "Download ${ name } app": [
+        "Scarica l'app per ${ name }"
+      ],
       "Download canceled": [
         "Download annullato"
       ],
@@ -3550,6 +3559,9 @@
       "Drop file here to upload": [
         "Trascina qui i file da caricare."
       ],
+      "Drop files here": [
+        "Rilascia qui i file"
+      ],
       "Drop to import": [
         "Trascina per importare"
       ],
@@ -3564,9 +3576,6 @@
       ],
       "Emails are automatically signed": [
         "Le email sono firmate in automatico"
-      ],
-      "Enable drive search": [
-        "Abilita la ricerca di unità"
       ],
       "Enabling drive search": [
         "Abilitazione della ricerca di unità"
@@ -3665,11 +3674,14 @@
       "from the version history?": [
         "della cronologia delle versioni?"
       ],
+      "Get the app to backup photos from your phone.": [
+        "Ottieni l'app per eseguire il backup delle foto dal tuo telefono."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Ottieni l'app desktop per sincronizzare i file dal tuo computer."
+      ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Vieni a conoscere ${ DRIVE_APP_NAME } ed guadagnati 500 MB di bonus memoria! Agisci ora."
-      ],
-      "Go ahead, upload a file": [
-        "Procedi, carica un file"
       ],
       "Go to \"My files\" and upload some files first.": [
         "Vai a \"I miei file\" e carica dei file."
@@ -3737,9 +3749,6 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Gli elementi eliminati rimarranno nel cestino finché non li elimini definitivamente"
-      ],
-      "It’s as easy as drag and drop or selecting files": [
-        "È semplicissimo, trascina e rilascia o seleziona i file"
       ],
       "It’s easy and secure": [
         "È facile e sicuro"
@@ -3819,6 +3828,9 @@
       "No": [
         "No"
       ],
+      "No computers syncing": [
+        "Nessun computer sincronizzato"
+      ],
       "No contacts added yet": [
         "Non sono ancora stati aggiunti contatti"
       ],
@@ -3830,9 +3842,6 @@
       ],
       "No group found": [
         "Nessun gruppo trovato"
-      ],
-      "No photos yet": [
-        "Non ci sono ancora foto"
       ],
       "No results found": [
         "Nessun risultato trovato"
@@ -3873,6 +3882,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Solamente le persone con il link e la password possono accedere a questa cartella."
+      ],
+      "Or use the \"+ New\" button": [
+        "Oppure clicca su \"+ Nuovo\""
       ],
       "Paused": [
         "In pausa"
@@ -3958,6 +3970,9 @@
       ],
       "Queued": [
         "Accodato"
+      ],
+      "Ready to add some photos?": [
+        "Pronto ad aggiungere qualche foto?"
       ],
       "recommended browser": [
         "browser consigliato"
@@ -4064,12 +4079,6 @@
       "Swiss encrypted file storage": [
         "Spazio di archiviazione crittografato svizzero"
       ],
-      "Sync folders from your computer": [
-        "Sincronizza cartelle dal tuo computer"
-      ],
-      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "Sincronizza le cartelle con facilità utilizzando la nostra applicazione desktop, assicurandoti che i tuoi file siano sempre aggiornati e accessibili da qualsiasi luogo."
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito."
       ],
@@ -4077,7 +4086,7 @@
         "L'account potrebbe avere una nuova chiave o quanto segue potrebbe essere stato manomesso: ${ items }. Aprilo solo se ti fidi."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "L'applicazione deve decriptare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo, verrà generato un file VCF e sarai in grado di scaricarlo."
+        "L'applicazione deve decrittografare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo, verrà generato un file VCF e sarai in grado di scaricarlo."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Il conteggio dei download include sia i download effettivi sia le volte in cui i file vengono mostrati in anteprima."
@@ -4094,9 +4103,6 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Ci sono file che devono ancora essere trasferiti. La chiusura del gestore trasferimenti interromperà tutte le operazioni."
       ],
-      "There are no files yet": [
-        "Non ci sono ancora file"
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Questo account è stato sospeso a causa di una potenziale violazione delle politiche."
       ],
@@ -4105,6 +4111,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Questo browser non supporta l'anteprima dei documenti PDF. Scarica il file."
+      ],
+      "This file is too large to preview": [
+        "Questo file è troppo grande per l'anteprima"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Questo file potrebbe essere stato eliminato, spostato o reso non disponibile. Prova a contattare il proprietario del file."
@@ -5080,6 +5089,9 @@
       "Custom email domains": [
         "Domini email personalizzati"
       ],
+      "Custom snooze time": [
+        "Periodo di posticipazione personalizzato"
+      ],
       "Hide-my-email aliases": [
         "Alias Hide-my-email"
       ],
@@ -5105,6 +5117,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Ottieni un numero illimitato di alias con SimpleLogin di ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Posticipa i messaggi e ricevili quando vuoi"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
@@ -5507,11 +5522,6 @@
         "Nome"
       ]
     },
-    "Platform": {
-      "Windows": [
-        "Windows"
-      ]
-    },
     "Progress bar description": {
       "${ contactsExported.length } out of ${ countContacts } contact successfully exported.": [
         "${ contactsExported.length } contatto su ${ countContacts } esportato con successo.",
@@ -5762,7 +5772,7 @@
         "Chiudi"
       ],
       "Don't show this offer again": [
-        "Non mostrare più quest’offerta"
+        "Non mostrare più quest'offerta"
       ],
       "Special offer": [
         "Offerta speciale"
@@ -5928,7 +5938,7 @@
         "Sconti di fine anno"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "Effettua l’upgrade e risparmia ancora di più con 2 anni di ${ planName }"
+        "Effettua l'upgrade e risparmia ancora di più con 2 anni di ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -6698,10 +6708,10 @@
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
       ],
       "The image could not be loaded": [
-        "Impossibile caricare l’immagine"
+        "Impossibile caricare l'immagine"
       ],
       "The image could not be loaded using proxy": [
-        "Impossibile caricare l’immagine usando il proxy."
+        "Impossibile caricare l'immagine usando il proxy"
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."
@@ -6797,7 +6807,7 @@
         "Le impostazioni di data e ora sul dispositivo non sono sincronizzate. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "Decriptazione del contenuto crittografato non riuscita."
+        "Decrittografia del contenuto crittografato non riuscita."
       ],
       "The verification of the contact details' signature failed.": [
         "La verifica della firma dei dati del contatto non è riuscita."
