@@ -65,6 +65,12 @@
       "Continue": [
         "Jatka"
       ],
+      "Continue without pinning": [
+        "Jatka kiinnittämättä"
+      ],
+      "Copy & fill in": [
+        "Kopioi ja täytä"
+      ],
       "Copy and close": [
         "Kopioi ja sulje"
       ],
@@ -131,6 +137,12 @@
       "Dismiss": [
         "Hylkää"
       ],
+      "Do not show on this website": [
+        "Älä näytä tällä verkkosivustolla"
+      ],
+      "Do not suggest on this website": [
+        "Älä ehdota tällä verkkosivustolla"
+      ],
       "Done": [
         "Valmis"
       ],
@@ -175,6 +187,9 @@
       ],
       "Import": [
         "Tuo"
+      ],
+      "Import your passwords": [
+        "Tuo salasanasi"
       ],
       "Importing": [
         "Tuodaan"
@@ -233,6 +248,9 @@
       "Move to trash": [
         "Siirrä roskakoriin"
       ],
+      "Not now": [
+        "Ei nyt"
+      ],
       "OK": [
         "OK"
       ],
@@ -262,6 +280,9 @@
       ],
       "Reload extension": [
         "Lataa laajennus uudelleen"
+      ],
+      "Remove": [
+        "Poista"
       ],
       "Remove access": [
         "Mitätöi käyttöoikeus"
@@ -338,6 +359,9 @@
       "Update vault": [
         "Päivitä holvi"
       ],
+      "Updating": [
+        "Päivitetään"
+      ],
       "Upgrade": [
         "Päivitä"
       ],
@@ -383,11 +407,6 @@
       ],
       "Expand": [
         "Laajenna"
-      ]
-    },
-    "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Listaus verkkotunnuksista, joilla joitakin ${ PASS_SHORT_APP_NAME }in automaattisia toimintoja ei suoriteta (automaattitäyttö, -ehdotus ja -tallennus)."
       ]
     },
     "Error": {
@@ -514,6 +533,9 @@
       ],
       "Please grant ${ PASS_APP_NAME } the necessary extension permissions in order to continue": [
         "Jatka myöntämällä ${ PASS_APP_NAME }ille tarvittavat laajennusoikeudet."
+      ],
+      "Please pin the extension or select \"Continue without pinning\".": [
+        "Kiinnitä laajennus tai valitse \"Jatka kiinnittämättä\"."
       ],
       "Request timed out": [
         "Pyyntö aikakatkaistiin"
@@ -707,6 +729,9 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "Alias \"${ item.aliasEmail }\" siirrettiin roskakoriin, eikä se enää ohjaa viestejä postilaatikkoosi."
       ],
+      "All trashed items permanently deleted": [
+        "Kaikki roskakorin kohteet poistettiin pysyvästi"
+      ],
       "All trashed items successfully restored": [
         "Kaikki roskakorin kohteet palautettiin"
       ],
@@ -731,11 +756,17 @@
       "Can view items in this vault.": [
         "Voi tarkastella holvin kohteita."
       ],
+      "Click the icon to open it anytime.": [
+        "Avaa se koska tahansa klikkaamalla kuvaketta."
+      ],
       "Congratulations, your access has been confirmed": [
         "Onnittelut, pääsysi on vahvistettu"
       ],
       "Copied to clipboard": [
         "Kopioitiin leikepöydälle"
+      ],
+      "Creating alias...": [
+        "Luodaan aliasta.."
       ],
       "Credit cards, Custom fields": [
         "Maksukortit, omat kentät"
@@ -775,6 +806,9 @@
       ],
       "Generated passwords will be stored for a period of one day.": [
         "Luotuja salasanoja säilytetään yhden päivän ajan."
+      ],
+      "Generating alias...": [
+        "Luodaan aliasta.."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Tilaa Pass Plus ja saat rajattomasti aliaksia, nautit ainutlaatuisista ominaisuuksista ja tuet meitä."
@@ -856,6 +890,12 @@
       "Multiple vaults": [
         "Useita holveja"
       ],
+      "Never": [
+        "Ei koskaan"
+      ],
+      "No login found": [
+        "Kirjautumistietoa ei löytynyt"
+      ],
       "None": [
         "Ei mitään"
       ],
@@ -871,8 +911,17 @@
       "Pass Plus trial": [
         "Pass Plus -kokeilu"
       ],
+      "Password copied": [
+        "Salasana kopioitiin"
+      ],
       "Passwords older than 1 day are automatically deleted from history.": [
         "Päivää vanhemmat salasanat poistetaan historiasta automaattisesti."
+      ],
+      "Pending access to the shared data": [
+        "Odotetaan pääsyä jaettuihin tietoihin"
+      ],
+      "Pin ${ PASS_APP_NAME } to your toolbar": [
+        "Kiinnitä ${ PASS_APP_NAME } työkalupalkkiisi"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN-koodi on rekisteröity ja voit nyt avata ${ PASS_APP_NAME }in sillä."
@@ -900,6 +949,9 @@
       ],
       "Restoring trashed items...": [
         "Palautetaan roskakorin kohteita..."
+      ],
+      "Save login": [
+        "Tallenna kirjautumistieto"
       ],
       "Select destination vault": [
         "Valitse kohdeholvi"
@@ -973,6 +1025,12 @@
       "Unlock it with your PIN to access the settings": [
         "Avaa lukitus PIN-koodillasi päästäksesi asetuksiin."
       ],
+      "Update login": [
+        "Päivitä kirjautumistieto"
+      ],
+      "Upgrade ${ PASS_APP_NAME }": [
+        "Päivitä ${ PASS_APP_NAME }"
+      ],
       "Use vaults to share this item with others.": [
         "Jaa tämä kohde muiden kanssa holvien avulla."
       ],
@@ -993,6 +1051,9 @@
       ],
       "Vault \"${ share.content.name }\" was removed": [
         "Holvi \"${ share.content.name }\" poistettiin"
+      ],
+      "Verification code": [
+        "Vahvistuskoodi"
       ],
       "Viewer": [
         "Tarkastelu"
@@ -1442,6 +1503,9 @@
       "Hyphens": [
         "Yhdysmerkki"
       ],
+      "Memorizable Password": [
+        "Mieleenpainuva salasana"
+      ],
       "Numbers": [
         "Numerot"
       ],
@@ -1566,14 +1630,26 @@
       "Discard changes?": [
         "Hylätäänkö muutokset?"
       ],
+      "Email": [
+        "Sähköposti"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Nautitko ${ PASS_APP_NAME }ista?"
       ],
       "Enter your PIN": [
         "Syötä PIN-koodi"
       ],
+      "Fill & copy password": [
+        "Täytä ja kopioi salasana"
+      ],
+      "Get the mobile apps": [
+        "Hanki mobiilisovellukset"
+      ],
       "Grant permissions": [
         "Myönnä käyttöoikeudet"
+      ],
+      "Hide my email": [
+        "Hide my email"
       ],
       "Import - ${ date }": [
         "Tuontipäivä - ${ date }"
@@ -1583,6 +1659,9 @@
       ],
       "Leave vault ?": [
         "Poistutaanko holvista?"
+      ],
+      "Log in as...": [
+        "Kirjaudu käyttäjänä..."
       ],
       "Low disk space": [
         "Tallennustila on vähissä"
@@ -1596,11 +1675,17 @@
       "Our welcome gift to you": [
         "Tervetuliaislahjamme sinulle"
       ],
+      "Password": [
+        "Salasana"
+      ],
       "Pending access to the shared data": [
         "Odotetaan pääsyä jaettuihin tietoihin"
       ],
       "Permanently remove all items ?": [
         "Poistetaanko kaikki kohteet pysyvästi?"
+      ],
+      "Pin the extension": [
+        "Kiinnitä laajennus"
       ],
       "Secure your data": [
         "Suojaa tietosi"
@@ -1610,6 +1695,9 @@
       ],
       "Share with": [
         "Jaa käyttäjille"
+      ],
+      "The extension is now ready to use.": [
+        "Laajennus on nyt käyttövalmis."
       ],
       "Transfer ownership": [
         "Siirrä omistajuus"
@@ -1622,6 +1710,9 @@
       ],
       "Update available": [
         "Päivitys saatavilla"
+      ],
+      "Use my email": [
+        "Käytä sähköpostiosoitettani"
       ],
       "Vault shared with you": [
         "Sinulle on jaettu holvi"
@@ -1754,6 +1845,9 @@
       "Trash alias ?": [
         "Siirretäänkö alias roskakoriin?"
       ],
+      "Unable to save": [
+        "Tallennus ei onnistu"
+      ],
       "Unable to sign in to ${ PASS_APP_NAME }. ${ additionalMessage }": [
         "${ PASS_APP_NAME }iin kirjautuminen ei onnistu. ${ additionalMessage }"
       ],
@@ -1783,6 +1877,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Sinulla ei ole enää pääsyä tähän holviin. Jos haluat liittyä siihen uudelleen, tarvitset uuden kutsun."
+      ],
+      "Your session could not be resumed.": [
+        "Istuntoa ei voitu jatkaa."
+      ],
+      "Your session was locked.": [
+        "Istuntosi on lukittu."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Tilauksesi ei salli useiden holvien luontia ja kaikki kohteet tuodaan ensisijaiseen holviisi. Jos haluat tuoda useisiin holveihin, päivitä tilauksesi."

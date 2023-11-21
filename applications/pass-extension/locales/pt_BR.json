@@ -131,11 +131,20 @@
       "Delete vault": [
         "Excluir cofre"
       ],
+      "Disable autosave on this website": [
+        "Desativar salvamento automático nesse site"
+      ],
       "Discard": [
         "Descartar"
       ],
       "Dismiss": [
         "Descartar"
+      ],
+      "Do not show on this website": [
+        "Não mostrar esse site"
+      ],
+      "Do not suggest on this website": [
+        "Não sugerir esse site"
       ],
       "Done": [
         "Concluído"
@@ -275,6 +284,9 @@
       "Reload extension": [
         "Recarregar extensão"
       ],
+      "Remove": [
+        "Remover"
+      ],
       "Remove access": [
         "Remover o acesso"
       ],
@@ -401,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "Lista de domínios onde determinadas funções automáticas no ${ PASS_SHORT_APP_NAME } (Preenchimento automático, sugestão automática e salvamento automático) não deveriam ser executadas."
+      "A checked box means the feature is disabled.": [
+        "Uma caixa marcada significa que o recurso está desativado."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "Lista de domínios onde certas funções automáticas em ${ PASS_SHORT_APP_NAME } (preenchimento automático, sugestão automática, salvamento automático) não devem ser executadas.${ infoText }"
       ]
     },
     "Error": {
@@ -548,6 +563,9 @@
       "Restoring item failed": [
         "Erro ao restaurar item"
       ],
+      "Restoring trashed items failed": [
+        "Falha ao restaurar itens da lixeira"
+      ],
       "Settings update failed": [
         "Erro ao atualizar as configurações"
       ],
@@ -682,6 +700,9 @@
         "${ memberCount } membro",
         "${ memberCount } membros"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "O ${ PASS_APP_NAME } exibirá o favicon do item através do proxy de imagem anonimizado da ${ BRAND_NAME }."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME } importará somente inícios de sessão, notas e cartões de crédito."
       ],
@@ -731,8 +752,20 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "O alias \"${ item.aliasEmail }\" foi movido para a lixeira - ele deixará de encaminhar e-mails para a sua caixa de correio."
       ],
+      "All items from \"${ payload.content.name }\" successfully moved": [
+        "Todos os itens de \"${ payload.content.name }\" movidos com sucesso"
+      ],
+      "All trashed items permanently deleted": [
+        "Todos os itens da lixeira foram excluídos permanentemente"
+      ],
       "All trashed items successfully restored": [
         "Todos os itens da lixeira foram restaurados"
+      ],
+      "An item previously shared with you was removed": [
+        "Um item compartilhado anteriormente com você foi removido"
+      ],
+      "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
+        "Você tem certeza de que deseja mover todos os itens de \"${ fromVaultName }\" para \"${ toVaultName }\"?"
       ],
       "Auto-lock successfully disabled": [
         "Bloqueio automático desativado"
@@ -892,6 +925,9 @@
       "Loading": [
         "Carregando"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Carregando o ${ PASS_APP_NAME }"
+      ],
       "Loading...": [
         "Carregando..."
       ],
@@ -906,6 +942,9 @@
       ],
       "Multiple vaults": [
         "Múltiplos cofres"
+      ],
+      "Never": [
+        "Nunca"
       ],
       "No login found": [
         "Nenhum início de sessão foi encontrado"
@@ -1014,6 +1053,9 @@
       ],
       "Thank you, the problem has been reported": [
         "Nós lhe agradecemos. O problema foi relatado."
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "O menu suspenso de preenchimento automático será aberto automaticamente quando você clicar ou focar no campo."
       ],
       "The following ${ result.ignored.length } item could not be imported:": [
         "Não foi possível importar o seguinte ${ result.ignored.length } item.",
@@ -1147,6 +1189,9 @@
       "15 minutes": [
         "15 minutos"
       ],
+      "2FA secret key (TOTP)": [
+        "Chave secreta A2F (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "Token A2F (TOTP)"
       ],
@@ -1194,6 +1239,9 @@
       ],
       "Autofill 2FA": [
         "Preenchimento automático de A2F"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "Abrir preenchimento automático automaticamente quando um campo de login estiver em foco"
       ],
       "Autosave": [
         "Salvar automaticamente"
@@ -1530,6 +1578,9 @@
       "Hyphens": [
         "Hifens"
       ],
+      "Memorizable Password": [
+        "Senha memorável"
+      ],
       "Numbers": [
         "Números"
       ],
@@ -1550,6 +1601,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "Adicionar chave secreta A2F"
+      ],
       "Add hidden text": [
         "Adicionar texto oculto"
       ],
@@ -1654,6 +1708,9 @@
       "Discard changes?": [
         "Descartar alterações?"
       ],
+      "Email": [
+        "E-mail"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "Aproveitando o ${ PASS_APP_NAME }?"
       ],
@@ -1681,6 +1738,9 @@
       "Leave vault ?": [
         "Deixar cofre ?"
       ],
+      "Log in as...": [
+        "Iniciar sessão como..."
+      ],
       "Low disk space": [
         "Pouco espaço no disco"
       ],
@@ -1692,6 +1752,9 @@
       ],
       "Our welcome gift to you": [
         "Nosso presente de boas-vindas para você"
+      ],
+      "Password": [
+        "Senha"
       ],
       "Pending access to the shared data": [
         "Acesso pendente para compartilhar os dados."
@@ -1907,6 +1970,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Seu plano só permite o preenchimento automático dos dois primeiros cofres"
+      ],
+      "Your session could not be authorized.": [
+        "Sua sessão não pôde ser autorizada."
+      ],
+      "Your session could not be resumed.": [
+        "Não foi possível retomar sua sessão."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Sua sessão está inativa. Faça login novamente."
+      ],
+      "Your session was locked.": [
+        "Sua sessão foi bloqueada."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "A sua assinatura não permite que você crie múltiplos cofres. Todos os itens serão importados para o seu primeiro cofre. Para importar em múltiplos cofres, atualize a sua assinatura."

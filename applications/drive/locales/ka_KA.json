@@ -253,9 +253,6 @@
       "Download apps": [
         "გადმოწერეთ აპები"
       ],
-      "Download Drive for Windows": [
-        "გადმოწერეთ Drive-ი Windows-ისთვის"
-      ],
       "Drive Locked": [
         "საცავი ჩაკეტილია"
       ],
@@ -508,6 +505,9 @@
       "Report a problem": [
         "პრობლემის შესახებ შეტყობინება"
       ],
+      "Report an issue": [
+        "პრობლემის ანგარიშის გადაგზავნა"
+      ],
       "Request a feature": [
         "თვისების მოთხოვნა"
       ],
@@ -711,9 +711,6 @@
       ],
       "Upload file": [
         "ფაილის ატვირთვა"
-      ],
-      "Upload files": [
-        "ფაილების ატვირთვა"
       ],
       "Upload folder": [
         "საქაღალდის ატვირთვა"
@@ -3395,9 +3392,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "დარწმუნებული ბრძანდებით, რომ გნებავთ, სამუდამოდ წაშალოთ ელემენტები სანაგვე ყუთიდან?"
       ],
-      "As soon as you have photos or videos on your device, they will appear here.": [
-        "როგორც კი თქვენს მოწყობილობაზე სურათები ან ვიდეოები გაგიჩნდებათ, ისინი აქაც გამოჩნდება."
-      ],
       "Attention required": [
         "საჭიროა ყურადღება"
       ],
@@ -3562,9 +3556,6 @@
       "Emails are automatically signed": [
         "ელფოსტების ხელმოწერა ავტომატურია"
       ],
-      "Enable drive search": [
-        "Drive-ზე ძებნის ჩართვა"
-      ],
       "Enabling drive search": [
         "Drive-ზე ძებნის ჩართვა"
       ],
@@ -3665,9 +3656,6 @@
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "გაიცანით ${ DRIVE_APP_NAME } და მიიღეთ 500მბ საცავი დამატებით! იმოქმედეთ დღესვე."
       ],
-      "Go ahead, upload a file": [
-        "მიდი, ატვირთე ფაილი"
-      ],
       "Go to \"My files\" and upload some files first.": [
         "ჯერ გადადით \"ჩემს ფაილებზე\" და ატვირთეთ რამდენიმე ფაილი."
       ],
@@ -3734,9 +3722,6 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "ჩანაწერები სანაგვე ყუთში მანამდე დარჩება, სანამ ხელით არ წაშლით"
-      ],
-      "It’s as easy as drag and drop or selecting files": [
-        "ეს ადვილია, უბრალოდ, აიღეთ ფაილი და დააგდეთ ზედ"
       ],
       "It’s easy and secure": [
         "ეს ადვილია და დაცულია"
@@ -3827,9 +3812,6 @@
       ],
       "No group found": [
         "ჯგუფი ნაპოვნი არაა"
-      ],
-      "No photos yet": [
-        "ჯერ ფოტოები არ გაქვთ"
       ],
       "No results found": [
         "შედეგების გარეშე"
@@ -4061,12 +4043,6 @@
       "Swiss encrypted file storage": [
         "შვეიცარული დაშიფრული ფაილების საცავი"
       ],
-      "Sync folders from your computer": [
-        "დაასინქრონიზეთ საქაღალდეები თქვენი კომპიუტერიდან"
-      ],
-      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "დასინქეთ მომხმარებლები ადვილად, ჩვენი სამუშო მაგიდის აპით, რომელიც უზრუნველყოფს, რომ თქვენი ფაილები ყოველთვის განახლებული და დედამიწის ყველა წერტილიდან წვდომადი იქნება."
-      ],
       "Temporarily unavailable. Please check back later.": [
         "დროებით მიუწვდომელია. მოგვიანებით სცადეთ."
       ],
@@ -4090,9 +4066,6 @@
       ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "გადასატანი ფაილები ჯერ კიდევ დარჩენილია. გადაწერების მმართველის დახურვა დაასრულებს ამ ოპერაციებს."
-      ],
-      "There are no files yet": [
-        "ჯერ ფაილები არაა"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "ანგარიში შეჩერებულია წესების დარღვევის დიდი შანსის გამო."
@@ -5502,11 +5475,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "სახელი"
-      ]
-    },
-    "Platform": {
-      "Windows": [
-        "ფანჯრები"
       ]
     },
     "Progress bar description": {

@@ -658,9 +658,6 @@
       "Add ${ plan } for ${ price } per month": [
         "Προσθέστε ${ plan } για ${ price } ανά μήνα"
       ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "Προσθέστε ${ plan } στο πλάνο σας κάνοντας εγγραφή σε 15 μήνες"
-      ],
       "Cancel": [
         "Ακύρωση"
       ],
@@ -7345,6 +7342,16 @@
       ],
       "Primary admin": [
         "Κύριος διαχειριστής"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "Χρήστης SSO που παρέχεται από τον Πάροχο Ταυτότητάς σας"
       ]
     },
     "Validation": {

@@ -1078,7 +1078,7 @@
     },
     "Calendar subscription not synced error": {
       "Calendar could not be decrypted": [
-        "Impossibile decriptare il calendario"
+        "Impossibile decrittografare il calendario"
       ],
       "Calendar is syncing": [
         "Il calendario si sta sincronizzando"
@@ -2191,7 +2191,7 @@
     },
     "Description": {
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Decriptazione dei contatti... Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, sarai in grado di scaricare il file con tutti i tuoi contatti esportati."
+        "Decrittografia dei contatti... Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, sarai in grado di scaricare il file con tutti i tuoi contatti esportati."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminando i contatti... Questo potrebbe richiedere qualche minuto. Quando il processo è completato, puoi chiudere questo modale."
@@ -2906,6 +2906,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "App attualmente non disponibile"
+      ],
       "Error: ${ errorMessage }": [
         "Errore: ${ errorMessage }"
       ],
@@ -2915,11 +2918,17 @@
       "Oops, something went wrong": [
         "Ops, si è verificato un errore"
       ],
+      "Open in browser": [
+        "Apri nel browser"
+      ],
       "Please refresh the page or try again later.": [
         "Aggiorna la pagina o riprova più tardi."
       ],
       "Something went wrong": [
         "Qualcosa è andato storto"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Per utilizzare ${ MAIL_APP_NAME } o ${ CALENDAR_APP_NAME }, passa alla versione web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Non è stato possibile caricare questa pagina. Aggiornar questa pagina o controlla la connessione internet."
@@ -3690,7 +3699,7 @@
         "I partecipanti aggiunti e rimossi saranno notificati."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
-        "La verifica dell’indirizzo con le chiavi attendibili è abilitata per questo indirizzo. Per poter inviare a questo indirizzo, prima considera attendibili le chiavi pubbliche che possono essere usate per l'invio."
+        "La verifica dell'indirizzo con le chiavi attendibili è abilitata per questo indirizzo. Per poter inviare a questo indirizzo, prima considera attendibili le chiavi pubbliche che possono essere usate per l'invio."
       ],
       "All (${ totalFoldersCount } folder)": [
         "Tutti (${ totalFoldersCount } cartella)",
@@ -4093,7 +4102,7 @@
         "Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "L'applicazione deve decriptare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo, verrà generato un file VCF e sarai in grado di scaricarlo."
+        "L'applicazione deve decrittografare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo, verrà generato un file VCF e sarai in grado di scaricarlo."
       ],
       "The following participants cannot be notified about your changes:": [
         "I seguenti partecipanti non possono essere avvisati delle tue modifiche:"
@@ -5181,6 +5190,9 @@
       "Custom email domains": [
         "Domini email personalizzati"
       ],
+      "Custom snooze time": [
+        "Periodo di posticipazione personalizzato"
+      ],
       "Hide-my-email aliases": [
         "Alias Hide-my-email"
       ],
@@ -5206,6 +5218,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Ottieni un numero illimitato di alias con SimpleLogin di ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Posticipa i messaggi e ricevili quando vuoi"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lo spazio di archiviazione è condiviso tra ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } e ${ DRIVE_APP_NAME }"
@@ -5931,7 +5946,7 @@
         "Chiudi"
       ],
       "Don't show this offer again": [
-        "Non mostrare più quest’offerta"
+        "Non mostrare più quest'offerta"
       ],
       "Special offer": [
         "Offerta speciale"
@@ -6097,7 +6112,7 @@
         "Sconti di fine anno"
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
-        "Effettua l’upgrade e risparmia ancora di più con 2 anni di ${ planName }"
+        "Effettua l'upgrade e risparmia ancora di più con 2 anni di ${ planName }"
       ]
     },
     "specialoffer: Tooltip": {
@@ -6882,10 +6897,10 @@
         "Le sottocartelle di sistema verranno visualizzate come cartelle separate in ${ MAIL_APP_NAME }"
       ],
       "The image could not be loaded": [
-        "Impossibile caricare l’immagine"
+        "Impossibile caricare l'immagine"
       ],
       "The image could not be loaded using proxy": [
-        "Impossibile caricare l’immagine usando il proxy."
+        "Impossibile caricare l'immagine usando il proxy"
       ],
       "The import will start with the most recent messages.": [
         "L'importazione inizierà con i messaggi più recenti."
@@ -6976,7 +6991,7 @@
         "Le impostazioni di data e ora sul dispositivo non sono sincronizzate. ${ learnMore }"
       ],
       "The decryption of the encrypted content failed.": [
-        "Decriptazione del contenuto crittografato non riuscita."
+        "Decrittografia del contenuto crittografato non riuscita."
       ],
       "The verification of the contact details' signature failed.": [
         "La verifica della firma dei dati del contatto non è riuscita."

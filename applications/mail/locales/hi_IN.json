@@ -1233,6 +1233,19 @@
         "भेजनेवाले का सत्यापन सफल"
       ]
     },
+    "bf2023: Footer": {
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "आपकी सदस्यता आपके बिलिंग चक्र के अंत में मानक रियायती दर और अवधि पर स्वचालित रूप से नवीनीकृत हो जाएगी"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 65+ देशों में 3,000+ सर्वर, उच्चतम वीपीएन गति, दुनिया भर में स्ट्रीमिंग सेवाओं तक पहुंच, मैलवेयर और विज्ञापन-अवरोधक, तेज़ बिटटोरेंट डाउनलोड और बहुत कुछ शामिल है।"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "अपने ईमेल और शेड्यूल को एंड-टू-एंड एन्क्रिप्शन के साथ सुरक्षित करें। इसमें कस्टम ईमेल डोमेन, 15 ईमेल पते, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण और बहुत कुछ के लिए समर्थन शामिल है।"
+      ]
+    },
     "Bug category": {
       "Application problem": [
         "अनुप्रयोग समस्या"
@@ -2805,6 +2818,9 @@
       ],
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को एन्क्रिप्ट और आयात किया जा रहा है... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
+      ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV और VCF फ़ाइल के माध्यम से आयात के लिए, सुनिश्चित करें कि फ़ाइल ${ MAX_IMPORT_FILE_SIZE_STRING } या ${ MAX_IMPORT_CONTACTS_STRING } संपर्कों से अधिक न हो। यदि आपकी फ़ाइल बड़ी है, तो कृपया उसे छोटी फ़ाइलों में विभाजित करें। ${ learnMoreLink }।"
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "ऐसा लगता है कि आप जिस संपर्क सूची को आयात कर रहे हैं उसमें कुछ समूह हैं। कृपया समीक्षा करें कि इन समूहों को कैसे आयात किया जाना चाहिए।"
@@ -5069,6 +5085,9 @@
       "Show original message": [
         "मूल संदेश दिखाएं"
       ],
+      "SimpleLogin is a ${ BRAND_NAME } service, and your ${ BRAND_NAME_TWO } Account includes hide-my-email aliases. To start masking your email address, go to SimpleLogin and create your first alias.": [
+        "SimpleLogin एक ${ BRAND_NAME } सेवा है, और आपके ${ BRAND_NAME_TWO } खाते में hide-my-email उपनाम शामिल हैं। अपने ईमेल पते को छिपाना शुरू करने के लिए, SimpleLogin पर जाएं और अपना पहला उपनाम बनाएं।"
+      ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "अगर आप किसी वेबसाइट पे भरोसा नहीं करते और उनको अपना असली ईमेल पता नहीं देना चाहते, तो SimpleLogin उनपे लॉगइन करने का एक आसान तरीका है।"
       ],
@@ -5242,6 +5261,9 @@
       ],
       "To re-sign your contacts, we need to check every contact against the list of encryption keys available in your account. If no match is found, your contact will be re-signed with the primary encryption key.": [
         "अपने संपर्कों को फिर से हस्ताक्षर करने के लिए, हमें आपके खाते में उपलब्ध एन्क्रिप्शन कुंजी की सूची के विरुद्ध प्रत्येक संपर्क की जांच करने की आवश्यकता है। यदि कोई मिलान नहीं मिलता है, तो आपके संपर्क को प्राथमिक एन्क्रिप्शन कुंजी के साथ फिर से हस्ताक्षरित किया जाएगा।"
+      ],
+      "To recover your data, you need to re-activate the account key used at the time when the data was created. This will require you to remember the password used when the key was generated.": [
+        "अपना डेटा पुनर्प्राप्त करने के लिए, आपको उस समय उपयोग की गई खाता कुंजी को फिर से सक्रिय करना होगा जब डेटा बनाया गया था। इसके लिए आपको कुंजी उत्पन्न करते समय उपयोग किए गए पासवर्ड को याद रखना होगा।"
       ],
       "To unsubscribe from this mailing list, an email will be sent from ${ boldFrom } with following details as defined by the sender of the newsletter:": [
         "इस मेलिंग सूची से सदस्यता समाप्त करने के लिए, समाचार पत्र के प्रेषक द्वारा परिभाषित विवरण के साथ एक ईमेल ${ boldFrom } से भेजा जाएगा:"
@@ -7206,6 +7228,11 @@
         "शून्य-पहुंच एन्क्रिप्शन के साथ संग्रहीत"
       ]
     },
+    "session_recovery:in_progress:info": {
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "यह सुनिश्चित करने के लिए कि वास्तव में आप ही अपना पासवर्ड रीसेट करने का प्रयास कर रहे हैं, हम अनुरोधों को स्वीकृत करने से पहले 72 घंटे तक प्रतीक्षा करते हैं। आप अपना पासवर्ड ${ boldTimeLeft } में बदल सकते हैं। ${ viewRequest }"
+      ]
+    },
     "Signature verification warning": {
       "PGP-encrypted message. Sender verification failed: ${ verificationErrorsMessage }": [
         "PGP इन्क्रिप्ट किया संदेश। भेजनेवालो का सत्यापन असफल: ${ verificationErrorsMessage }"
@@ -7384,6 +7411,17 @@
       ],
       "End of Year Sale": [
         "साल खत्म होने का सेल"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 60 से अधिक देशों में 1700 सर्वर, उच्चतम वीपीएन गति, प्रति उपयोगकर्ता 10 वीपीएन कनेक्शन, दुनिया भर में स्ट्रीमिंग सेवाएं, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 60 से अधिक देशों में 1700 सर्वर, उच्चतम वीपीएन गति, 10 वीपीएन कनेक्शन, दुनिया भर में स्ट्रीमिंग सेवाएं, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "हमारी सभी प्रीमियम सेवाएँ अपनी उच्चतम सीमा के साथ: 100 ईमेल पते, 10 कस्टम डोमेन के लिए समर्थन, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण, एन्क्रिप्टेड क्लाउड स्टोरेज और फ़ाइल साझाकरण, और बहुत कुछ।"
       ]
     },
     "Spotlight": {
