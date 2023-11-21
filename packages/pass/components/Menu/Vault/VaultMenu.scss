@@ -1,4 +1,6 @@
 .pass-vault-submenu-vault-item {
+	border-radius: 2em !important;
+
 	&.selected {
 		background-color: rgb(var(--vault-icon-color) / 0.24) !important;
 	}
