@@ -58,16 +58,22 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
 }) => {
     return (
         <div
-            className="flex flex-justify-space-between flex-align-items-center flex-nowrap gap-3 max-h-custom"
+            className="flex flex-justify-space-between flex-align-items-center flex-nowrap gap-2 max-h-custom"
             style={{ '--max-h-custom': '1.25rem' }}
         >
-            <div className={'flex flex-align-items-center flex-nowrap gap-2'}>
+            <div className={clsx(labelClassname, 'flex flex-align-items-center flex-nowrap gap-2')}>
                 {typeof icon === 'string' ? (
                     <Icon name={icon} className={clsx(danger ? 'color-danger' : 'color-weak', 'flex-item-noshrink')} />
                 ) : (
                     icon
                 )}
-                <div className={clsx(labelClassname, ellipsis && 'text-ellipsis', danger && 'color-danger')}>
+                <div
+                    className={clsx(
+                        'flex flex-nowrap flex-item-fluid-auto gap-1',
+                        ellipsis && 'text-ellipsis',
+                        danger && 'color-danger'
+                    )}
+                >
                     {label}
                 </div>
             </div>
@@ -98,12 +104,13 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     labelClassname,
     extra,
     ellipsis = true,
+    style,
     ...rest
 }) => {
-    const extraPadding = quickActions !== undefined ? 'pr-5' : '';
+    const extraPadding = quickActions !== undefined ? 'pr-3' : '';
 
     return (
-        <div className={clsx('relative', parentClassName)}>
+        <div className={clsx('relative flex-item-noshrink', parentClassName)} style={style}>
             <DropdownMenuButtonCore
                 className={clsx(size === 'small' && 'text-sm', className)}
                 // translator : "Selected" is singular only
@@ -115,7 +122,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     ellipsis={ellipsis}
                     danger={danger}
                     label={label}
-                    labelClassname={clsx('flex flex-nowrap flex-item-fluid-auto gap-1', labelClassname)}
+                    labelClassname={labelClassname}
                     extra={
                         <div
                             className={clsx(
@@ -124,7 +131,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                             )}
                         >
                             {isSelected && (
-                                <div className={clsx('ml-auto', quickActions !== undefined && 'pr-2')}>
+                                <div className={clsx('ml-auto')}>
                                     <Icon name="checkmark" color="var(--interaction-norm-major-1)" />
                                 </div>
                             )}
@@ -134,7 +141,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                 />
             </DropdownMenuButtonCore>
 
-            <div className="absolute flex flex-align-items-center h-full right top pr-2">
+            <div className="absolute flex flex-align-items-center h-full right top">
                 {quickActions && <QuickActionsDropdown>{quickActions}</QuickActionsDropdown>}
             </div>
         </div>

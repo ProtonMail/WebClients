@@ -16,6 +16,7 @@ import { type VaultMenuOption, getVaultOptionInfo } from './utils';
 import './VaultMenu.scss';
 
 type Props = {
+    dense?: boolean;
     inTrash: boolean;
     selectedShareId: MaybeNull<string>;
     onSelect: (selected: string) => void;
@@ -23,7 +24,14 @@ type Props = {
     render?: (selectedVaultOption: VaultMenuOption, menu: ReactElement) => ReactElement;
 };
 
-export const VaultMenu: FC<Props> = ({ inTrash, selectedShareId, onSelect, render, onAction = noop }) => {
+export const VaultMenu: FC<Props> = ({
+    dense = false,
+    inTrash,
+    selectedShareId,
+    onSelect,
+    render,
+    onAction = noop,
+}) => {
     const vaults = useSelector(selectVaultsWithItemsCount);
     const selectedVault = useSelector(selectShare<ShareType.Vault>(selectedShareId));
     const selectedVaultOption = getVaultOptionInfo(selectedVault || (inTrash ? 'trash' : 'all'));
@@ -41,6 +49,7 @@ export const VaultMenu: FC<Props> = ({ inTrash, selectedShareId, onSelect, rende
                     count={totalItemCount}
                     selected={!inTrash && !selectedShareId}
                     onSelect={withAction(() => onSelect('all'))}
+                    dense={dense}
                 />
 
                 {vaults.map((vault) => {
@@ -62,6 +71,7 @@ export const VaultMenu: FC<Props> = ({ inTrash, selectedShareId, onSelect, rende
                             onManage={withAction(() => vaultActions.manage(vault))}
                             onMove={canMove ? withAction(() => vaultActions.moveItems(vault)) : undefined}
                             onLeave={withAction(() => vaultActions.leave(vault))}
+                            dense={dense}
                         />
                     );
                 })}
@@ -71,6 +81,7 @@ export const VaultMenu: FC<Props> = ({ inTrash, selectedShareId, onSelect, rende
                     handleTrashEmpty={withAction(vaultActions.trashEmpty)}
                     onSelect={withAction(() => onSelect('trash'))}
                     selected={inTrash}
+                    dense={dense}
                 />
             </>
         );

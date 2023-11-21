@@ -16,12 +16,12 @@ import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
 import clsx from '@proton/utils/clsx';
 
-import { CountLabel } from '../../Layout/Dropdown/CountLabel';
 import { DropdownMenuButton } from '../../Layout/Dropdown/DropdownMenuButton';
 import { VaultIcon } from '../../Vault/VaultIcon';
 
 type Props = {
     count: number;
+    dense?: boolean;
     label: string;
     selected: boolean;
     vault?: ShareItem<ShareType.Vault>;
@@ -42,6 +42,7 @@ const handleClickEvent = (handler?: () => void) => (evt: React.MouseEvent) => {
 
 export const VaultItem: VFC<Props> = ({
     count,
+    dense,
     label,
     selected,
     vault,
@@ -63,45 +64,52 @@ export const VaultItem: VFC<Props> = ({
     return (
         <DropdownMenuButton
             onClick={() => onSelect()}
-            label={<CountLabel label={label} count={count} />}
-            className={clsx('pass-vault-submenu-vault-item', selected && 'selected')}
-            parentClassName="w-full"
+            label={<span className="block text-ellipsis">{label}</span>}
+            parentClassName={clsx(
+                'pass-vault-submenu-vault-item w-full',
+                selected && 'selected',
+                !withActions && 'pass-vault-submenu-vault-item--no-actions'
+            )}
+            className={clsx(!dense && 'py-3')}
             style={{
                 '--vault-icon-color': VAULT_COLOR_MAP[vault?.content.display.color ?? VaultColor.COLOR1],
             }}
             extra={
-                shared && (
-                    <ButtonLike
-                        as="div"
-                        icon
-                        pill
-                        size="small"
-                        color="weak"
-                        onClick={handleClickEvent(onManage)}
-                        shape="ghost"
-                        title={c('Action').t`See members`}
-                        className="relative"
-                    >
-                        {notification && (
-                            <Icon
-                                name="exclamation-circle-filled"
-                                size={12}
-                                className="absolute top-custom right-custom"
-                                style={{
-                                    '--top-custom': '-1px',
-                                    '--right-custom': '-1px',
-                                    color: 'var(--signal-danger)',
-                                }}
-                            />
-                        )}
-                        <Icon name="users" alt={c('Action').t`See members`} color="var(--text-weak)" />
-                    </ButtonLike>
-                )
+                <>
+                    {shared && (
+                        <ButtonLike
+                            as="div"
+                            icon
+                            pill
+                            size="small"
+                            color="weak"
+                            onClick={handleClickEvent(onManage)}
+                            shape="ghost"
+                            title={c('Action').t`See members`}
+                            className="relative"
+                        >
+                            {notification && (
+                                <Icon
+                                    name="exclamation-circle-filled"
+                                    size={12}
+                                    className="absolute top-custom right-custom"
+                                    style={{
+                                        '--top-custom': '-1px',
+                                        '--right-custom': '-1px',
+                                        color: 'var(--signal-danger)',
+                                    }}
+                                />
+                            )}
+                            <Icon name="users" alt={c('Action').t`See members`} color="var(--text-weak)" />
+                        </ButtonLike>
+                    )}
+                    <span className="pass-vault--count flex-item-noshrink color-weak mx-1">{count}</span>
+                </>
             }
             icon={
                 <VaultIcon
                     className="flex-item-noshrink"
-                    size={16}
+                    size={14}
                     color={vault?.content.display.color}
                     icon={vault?.content.display.icon}
                 />
