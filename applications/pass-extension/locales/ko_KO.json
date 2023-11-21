@@ -131,11 +131,20 @@
       "Delete vault": [
         "금고 삭제"
       ],
+      "Disable autosave on this website": [
+        "이 웹사이트에서 자동 저장 비활성화"
+      ],
       "Discard": [
         "저장 안함"
       ],
       "Dismiss": [
         "무시"
+      ],
+      "Do not show on this website": [
+        "이 웹사이트에서 보이지 않기"
+      ],
+      "Do not suggest on this website": [
+        "이 웹사이트에서 제안 끔"
       ],
       "Done": [
         "완료"
@@ -275,6 +284,9 @@
       "Reload extension": [
         "확장 프로그램 재시작"
       ],
+      "Remove": [
+        "삭제"
+      ],
       "Remove access": [
         "접근 제거"
       ],
@@ -401,8 +413,11 @@
       ]
     },
     "Description": {
-      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.": [
-        "${ PASS_SHORT_APP_NAME } (자동 완성, 자동 제안, 자동 저장)의 특정 자동 기능을 실행해서는 안 되는 도메인 목록."
+      "A checked box means the feature is disabled.": [
+        "해당 체크박스가 이 기능이 비활성화 상태임을 의미합니다."
+      ],
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "${ PASS_SHORT_APP_NAME } (자동 완성, 자동 제안, 자동 저장)의 특정 자동 기능을 실행해서는 안 되는 도메인 목록.${ infoText }"
       ]
     },
     "Error": {
@@ -675,6 +690,9 @@
       "${ memberCount } members": [
         "${ memberCount }명 회원"
       ],
+      "${ PASS_APP_NAME } will display the item favicon via ${ BRAND_NAME } anonymized image proxy.": [
+        "${ PASS_APP_NAME }가 항목 아이콘을 ${ BRAND_NAME } 비공개 이미지 프록시를 통해 표시합니다."
+      ],
       "${ PASS_APP_NAME } will only import logins, notes and credit cards.": [
         "${ PASS_APP_NAME }가 로그인 정보, 노트 및 신용카드에 한해 불러옵니다."
       ],
@@ -722,6 +740,9 @@
       ],
       "All items from \"${ payload.content.name }\" successfully moved": [
         "\"${ payload.content.name }\" 내의 모든 항목을 성공적으로 이동했습니다."
+      ],
+      "All trashed items permanently deleted": [
+        "모든 항목을 성공적으로 삭제했습니다."
       ],
       "All trashed items successfully restored": [
         "모든 휴지통 내의 항목이 성공적으로 복구되었습니다."
@@ -888,6 +909,9 @@
       "Loading": [
         "로딩 중"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "${ PASS_APP_NAME } 로딩 중"
+      ],
       "Loading...": [
         "불러오는 중..."
       ],
@@ -902,6 +926,9 @@
       ],
       "Multiple vaults": [
         "다중 금고"
+      ],
+      "Never": [
+        "안 함"
       ],
       "No login found": [
         "발견된 로그인 없음"
@@ -1010,6 +1037,9 @@
       ],
       "Thank you, the problem has been reported": [
         "감사합니다, 문제가 보고되었습니다."
+      ],
+      "The autofill dropdown will automatically open when you click or focus on the field.": [
+        "입력 란을 클릭했을 때 자동 완성 드롭다운이 자동으로 열립니다."
       ],
       "The following ${ result.ignored.length } items could not be imported:": [
         "다음 ${ result.ignored.length }개 항목은 불러올 수 없습니다:"
@@ -1139,6 +1169,9 @@
       "15 minutes": [
         "15분"
       ],
+      "2FA secret key (TOTP)": [
+        "2FA 시크릿 키 (TOTP)"
+      ],
       "2FA token (TOTP)": [
         "2FA 토큰 (TOTP)"
       ],
@@ -1186,6 +1219,9 @@
       ],
       "Autofill 2FA": [
         "2FA 자동 완성"
+      ],
+      "Automatically open autofill when a login field is focused": [
+        "로그인 입력란에 위치해 있다면 자동 완성을 자동으로 엽니다."
       ],
       "Autosave": [
         "자동 저장"
@@ -1522,6 +1558,9 @@
       "Hyphens": [
         "하이픈"
       ],
+      "Memorizable Password": [
+        "기억 가능한 비밀번호"
+      ],
       "Numbers": [
         "숫자"
       ],
@@ -1542,6 +1581,9 @@
       ]
     },
     "Placeholder": {
+      "Add 2FA secret key": [
+        "2FA 시크릿 키 생성"
+      ],
       "Add hidden text": [
         "숨겨진 텍스트 추가"
       ],
@@ -1645,6 +1687,9 @@
       "Discard changes?": [
         "변경 사항을 취소할까요?"
       ],
+      "Email": [
+        "이메일"
+      ],
       "Enjoying ${ PASS_APP_NAME }?": [
         "${ PASS_APP_NAME }를 잘 사용하고 계신가요?"
       ],
@@ -1672,6 +1717,9 @@
       "Leave vault ?": [
         "금고를 떠납니까?"
       ],
+      "Log in as...": [
+        "다음으로 로그인..."
+      ],
       "Low disk space": [
         "디스크 저장공간 부족"
       ],
@@ -1683,6 +1731,9 @@
       ],
       "Our welcome gift to you": [
         "당신께 드리는 웰컴 기프트"
+      ],
+      "Password": [
+        "비밀번호"
       ],
       "Pending access to the shared data": [
         "공유 데이터에 대한 접근 대기 중"
@@ -1897,6 +1948,18 @@
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "사용자의 플랜에서 처음 두개 금고에서만 자동 완성을 지원합니다."
+      ],
+      "Your session could not be authorized.": [
+        "사용자 세션을 승인할 수 없습니다."
+      ],
+      "Your session could not be resumed.": [
+        "사용자 세션을 재게할 수 없습니다."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "세션이 비활성화됨. 다시 로그인 하세요."
+      ],
+      "Your session was locked.": [
+        "사용자의 세션이 잠겼습니다."
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "현재 구독에서 다중 금고 생성을 지원하지 않습니다. 모든 항목이 처음 금고에 저장됩니다. 여러 개의 금고를 생성하려면 구독을 업그레이드 하세요."

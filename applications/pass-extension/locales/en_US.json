@@ -9,6 +9,11 @@
         "Your password manager is not here? Request it."
       ]
     },
+    "Description": {
+      "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
+        "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run. ${ infoText }"
+      ]
+    },
     "Error": {
       "Cannot create alias (${ error }).": [
         "Cannot create alias: (${ error })."

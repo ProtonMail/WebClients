@@ -658,9 +658,6 @@
       "Add ${ plan } for ${ price } per month": [
         "Lägg till ${ plan } för ${ price } per månad"
       ],
-      "Add ${ plan } to your plan by subscribing to 15 months": [
-        "Lägg till ${ plan } till ditt paket genom att prenumerera på 15 månader"
-      ],
       "Cancel": [
         "Avbryt"
       ],
@@ -5084,6 +5081,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Få obegränsade alias med SimpleLogin av ${ BRAND_NAME }"
       ],
+      "Snooze messages and get reminded when you want": [
+        "Snooza meddelanden och bli påmind när du vill"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Lagringsutrymmet delas mellan ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } och ${ DRIVE_APP_NAME }"
       ],
@@ -7372,6 +7372,16 @@
       ],
       "Primary admin": [
         "Primär admin"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
+      ]
+    },
+    "Users table: single sign-on tooltip": {
+      "SSO user provided by your Identity Provider": [
+        "SSO-användare tillhandahållen av din identitetsleverantör"
       ]
     },
     "Validation": {

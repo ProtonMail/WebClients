@@ -1004,6 +1004,9 @@
       "Skip verification": [
         "Pular verificação"
       ],
+      "Snooze": [
+        "Adiar"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Não foi possível carregar algumas imagens com proteção de rastreamento."
       ],
@@ -1033,6 +1036,9 @@
       ],
       "This message contains remote content.": [
         "Esta mensagem contém conteúdo remoto."
+      ],
+      "This weekend": [
+        "Este fim de semana"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Para pesquisar seus e-mails com segurança, precisamos baixar uma cópia de suas mensagens para o navegador. O download inicial pode demorar um pouco."
@@ -5773,6 +5779,9 @@
       "The original sender of this message is no longer valid. Your message will be sent from your default address ${ defaultEmail }.": [
         "O remetente original desta mensagem não é mais válido. Sua mensagem será enviada do seu endereço padrão ${ defaultEmail }."
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "O proprietário deste endereço desativou a criptografia de ponta a ponta. Para poder enviar e-mails criptografados para este endereço, o proprietário deve reativar a criptografia de ponta a ponta."
+      ],
       "The sender has requested a read receipt.": [
         "O remetente solicitou uma confirmação de leitura."
       ],
@@ -5913,6 +5922,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Para poder usar a verificação de endereço, você deve confiar em uma ou mais chaves públicas disponíveis, incluindo aquela que você deseja usar para o envio. Isso evita que as chaves de criptografia possam ser falsificadas."
+      ],
+      "Tomorrow, ${ formattedTime }": [
+        "Amanhã, ${ formattedTime }"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Muitas mensagens esperando para serem enviadas. Aguarde até que outra mensagem seja enviada para agendar esta."
@@ -7121,6 +7133,12 @@
       ],
       "Sign up for free": [
         "Cadastre-se gratuitamente"
+      ],
+      "Snooze": [
+        "Adiar"
+      ],
+      "Snoozed": [
+        "Adiado"
       ],
       "Spam": [
         "Spam"
@@ -9350,6 +9368,9 @@
       ],
       "Sign out": [
         "Encerrar sessão"
+      ],
+      "Snooze": [
+        "Adiar"
       ],
       "Sort conversations": [
         "Ordenar conversas"

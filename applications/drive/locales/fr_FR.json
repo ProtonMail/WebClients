@@ -253,9 +253,6 @@
       "Download apps": [
         "Télécharger les applications"
       ],
-      "Download Drive for Windows": [
-        "Téléchargez Drive pour Windows"
-      ],
       "Drive Locked": [
         "Disque verrouillé"
       ],
@@ -714,9 +711,6 @@
       ],
       "Upload file": [
         "Importer un fichier"
-      ],
-      "Upload files": [
-        "Charger des fichiers"
       ],
       "Upload folder": [
         "Importer un dossier"
@@ -2811,12 +2805,12 @@
         "Insérez une clé de sécurité liée à votre compte ${ BRAND_NAME }."
       ],
       "Security key": [
-        "Clef de sécurité"
+        "Clé de sécurité"
       ]
     },
     "fido2: Label": {
       "Security key": [
-        "Clef de sécurité"
+        "Clé de sécurité"
       ]
     },
     "file size format": {
@@ -3267,6 +3261,12 @@
         "${ doneUploadsCount } importé",
         "${ doneUploadsCount } importés"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } sur l'App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } sur le Play Store"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } erreur",
         "${ errorCount } erreurs"
@@ -3407,9 +3407,6 @@
       "Are you sure you want to permanently delete selected items from trash?": [
         "Voulez-vous vraiment définitivement supprimer les éléments sélectionnés du dossier Corbeille ?"
       ],
-      "As soon as you have photos or videos on your device, they will appear here.": [
-        "Dès que vous aurez des photos ou des vidéos sur votre appareil, elles apparaîtront ici."
-      ],
       "Attention required": [
         "Attention requise"
       ],
@@ -3532,6 +3529,9 @@
       "double your storage": [
         "doubler votre espace de stockage."
       ],
+      "Download ${ name } app": [
+        "Télécharger l'application ${ name }"
+      ],
       "Download canceled": [
         "Le téléchargement a été annulé."
       ],
@@ -3559,6 +3559,9 @@
       "Drop file here to upload": [
         "Déposez les fichiers ici pour les importer."
       ],
+      "Drop files here": [
+        "Déposez des fichiers ici."
+      ],
       "Drop to import": [
         "Déposez ici pour importer"
       ],
@@ -3573,9 +3576,6 @@
       ],
       "Emails are automatically signed": [
         "Les messages sont automatiquement signés."
-      ],
-      "Enable drive search": [
-        "Activer la recherche dans Drive"
       ],
       "Enabling drive search": [
         "Activation de la recherche dans Drive"
@@ -3674,11 +3674,14 @@
       "from the version history?": [
         "de l'historique des versions ?"
       ],
+      "Get the app to backup photos from your phone.": [
+        "Téléchargez l'application pour sauvegarder les photos de votre téléphone."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Utilisez l'application de bureau pour synchroniser les fichiers de votre ordinateur."
+      ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Faites connaissance avec ${ DRIVE_APP_NAME } et gagnez votre bonus de 500 Mo d'espace de stockage !"
-      ],
-      "Go ahead, upload a file": [
-        "Chargez un fichier."
       ],
       "Go to \"My files\" and upload some files first.": [
         "Allez dans Mes fichiers et commencez à charger des fichiers."
@@ -3746,9 +3749,6 @@
       ],
       "Items in the trash will stay here until you delete them permanently": [
         "Les éléments dans le dossier Corbeille y resteront jusqu'à ce que vous les supprimiez définitivement."
-      ],
-      "It’s as easy as drag and drop or selecting files": [
-        "Il suffit de glisser-déposer ou de sélectionner des fichiers."
       ],
       "It’s easy and secure": [
         "C'est simple et sécurisé"
@@ -3828,6 +3828,9 @@
       "No": [
         "Non"
       ],
+      "No computers syncing": [
+        "Aucun ordinateur synchronisé"
+      ],
       "No contacts added yet": [
         "Aucun contact n'a encore été ajouté."
       ],
@@ -3839,9 +3842,6 @@
       ],
       "No group found": [
         "Aucun groupe n'a été trouvé."
-      ],
-      "No photos yet": [
-        "Il n'y a aucune photo pour l'instant."
       ],
       "No results found": [
         "Aucun résultat n'a été trouvé."
@@ -3882,6 +3882,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Seules les personnes ayant le lien et le mot de passe peuvent accéder à ce dossier."
+      ],
+      "Or use the \"+ New\" button": [
+        "Ou utilisez le bouton « + Nouveau »."
       ],
       "Paused": [
         "En pause"
@@ -3967,6 +3970,9 @@
       ],
       "Queued": [
         "En file d'attente"
+      ],
+      "Ready to add some photos?": [
+        "Prêt à ajouter des photos ?"
       ],
       "recommended browser": [
         "navigateur recommandé"
@@ -4073,12 +4079,6 @@
       "Swiss encrypted file storage": [
         "Stockage de fichiers chiffrés, basé en Suisse"
       ],
-      "Sync folders from your computer": [
-        "Synchronisez des dossiers depuis votre ordinateur"
-      ],
-      "Sync folders with ease using our desktop app, ensuring your files are always up to date and accessible from anywhere.": [
-        "Synchronisez facilement vos dossiers avec notre application de bureau, pour que vos fichiers soient toujours à jour et accessibles, où que vous soyez."
-      ],
       "Temporarily unavailable. Please check back later.": [
         "Temporairement indisponible. Nous vous invitons à vérifier plus tard."
       ],
@@ -4103,9 +4103,6 @@
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "Certains fichiers doivent encore être transférés. Si vous fermez le gestionnaire de transfert, toutes les opérations seront arrêtées."
       ],
-      "There are no files yet": [
-        "Il n'y a aucun fichier pour le moment."
-      ],
       "This account has been suspended due to a potential policy violation.": [
         "Ce compte a été suspendu en raison d’une violation potentielle des règles d’utilisation."
       ],
@@ -4116,7 +4113,7 @@
         "Ce navigateur ne prend pas en charge l'aperçu des documents PDF. Téléchargez le fichier."
       ],
       "This file is too large to preview": [
-        "Ce fichier est trop volumineux pour en afficher un aperçu."
+        "Ce fichier est trop volumineux pour afficher un aperçu."
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Ce fichier a peut-être été supprimé, déplacé ou rendu indisponible. Prenez contact avec le propriétaire du fichier."
@@ -5093,7 +5090,7 @@
         "Domaines de messagerie personnalisés"
       ],
       "Custom snooze time": [
-        "Personnalisation des périodes de mise en pause des notifications"
+        "Personnalisation des périodes de mise en attente"
       ],
       "Hide-my-email aliases": [
         "Alias « hide-my-email »"
@@ -5122,7 +5119,7 @@
         "Profitez d'un nombre illimité d'alias avec SimpleLogin de ${ BRAND_NAME }"
       ],
       "Snooze messages and get reminded when you want": [
-        "Mettez en pause les notifications des messages et recevez un rappel quand vous le voulez."
+        "Mettez les messages en attente et recevez un rappel quand vous le voulez."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Espace de stockage partagé entre ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } et ${ DRIVE_APP_NAME }."
@@ -5463,7 +5460,7 @@
         "Un moyen de vous contacter"
       ],
       "E.g., ": [
-        "p. ex., "
+        "Par exemple, "
       ],
       "Enter a new file name": [
         "Saisissez un nouveau nom de fichier."
@@ -5472,13 +5469,13 @@
         "Saisissez un nouveau nom de dossier."
       ],
       "Enter device name": [
-        "Saisir le nom de l'appareil"
+        "Saisissez le nom de l'appareil."
       ],
       "Enter your email address": [
         "Saisissez votre adresse e-mail."
       ],
       "Filter groups": [
-        "Filtrer les groupes"
+        "Filtrez les groupes."
       ],
       "First name": [
         "Prénom"
@@ -5508,13 +5505,13 @@
         "Décrivez le problème et incluez les éventuels messages d'erreur."
       ],
       "Search for group name": [
-        "Rechercher un nom de groupe"
+        "Recherchez un nom de groupe."
       ],
       "Search for name or email": [
-        "Rechercher par nom ou adresse e-mail"
+        "Recherchez par nom ou adresse e-mail."
       ],
       "Select": [
-        "Sélectionner"
+        "Sélectionnez"
       ],
       "Start typing an email address": [
         "Commencez à saisir une adresse e-mail."
@@ -5523,11 +5520,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Nom"
-      ]
-    },
-    "Platform": {
-      "Windows": [
-        "Windows"
       ]
     },
     "Progress bar description": {

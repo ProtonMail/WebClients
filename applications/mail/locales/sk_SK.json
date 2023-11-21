@@ -5835,6 +5835,9 @@
       "Right-click for options": [
         "Kliknite pravým tlačidlom myši pre možnosti"
       ],
+      "Sat, ${ formatTime }": [
+        "Sob, ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "Uložené ${ dateString }"
       ],
@@ -6113,6 +6116,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Ak chcete použiť overenie adresy, musíte nastaviť povolenie dôveryhodných kľúčov a nadviazať tak na jeden alebo viac dostupných verejných kľúčov, vrátane primárneho kľúča pre túto adresu. Zabránite tak použitiu falošných šifrovacích kľúčov."
+      ],
+      "Tomorrow, ${ formattedTime }": [
+        "Zajtra, ${ formattedTime }"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Príliš veľa správ čaká na odoslanie. Ak chcete naplánovať túto správu, počkajte, kým nebude odoslaná ďalšia správa."
@@ -9993,6 +9999,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Bezplatná skúšobná verzia končí ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Pon, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Sob, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Ned, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

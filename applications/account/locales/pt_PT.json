@@ -746,9 +746,6 @@
       "Save ICS file": [
         "Guardar ficheiro ICS"
       ],
-      "Save selected": [
-        "Guardar selecionado"
-      ],
       "Search": [
         "Pesquisar"
       ],
@@ -3301,7 +3298,7 @@
         "O código postal é inválido."
       ],
       "Invalid private key file": [
-        "O ficheiro de chave privada não é válido."
+        "O ficheiro de chave privada é inválido."
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
@@ -5592,7 +5589,7 @@
         "Ao continuar, isto ligará a sua conta da ${ BRAND_NAME } a ${ name }."
       ],
       "Copy the link to clipboard": [
-        "Copiar o \"link\" para a área de transferência"
+        "Copiar a ligação para a área de transferência"
       ],
       "Copy the suggested password to clipboard": [
         "Copie a palavra-passe sugerida para a área de transferência"
@@ -7337,7 +7334,7 @@
         "As chaves de encriptação para o seu endereço estão a ser geradas. Isto pode levar alguns minutos e bloquear temporariamente o seu navegador."
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Pode gerar uma nova chave de encriptação se pensa que a sua chave anterior foi comprometida."
+        "Pode gerar uma nova chave de encriptação se pensar que a sua chave anterior foi comprometida."
       ]
     },
     "Key state badge": {
@@ -7691,7 +7688,7 @@
         "Eliminar as mensagens indesejadas automaticamente"
       ],
       "Auto-detect primary time zone": [
-        "Auto-detectar fuso horário primário"
+        "Auto detetar o fuso horário primário"
       ],
       "Awarded": [
         "Premiado"
@@ -8240,7 +8237,7 @@
         "Enviar relatórios de erro fatal"
       ],
       "Send in": [
-        "Enviar"
+        "Enviar em"
       ],
       "Show secondary time zone": [
         "Mostrar fuso horário secundário"
@@ -8348,7 +8345,7 @@
         "Código de verificação"
       ],
       "Verify keys with Key Transparency": [
-        "Verifique as chaves com transparência de chave"
+        "Verifique as chaves com Key Transparency"
       ],
       "We are sorry to see you go. Please explain why you are leaving to help us improve.": [
         "Lamentamos a sua partida. Diga-nos porquê, para podermos melhorar o serviço."
@@ -8453,7 +8450,7 @@
         "Anúncios de produtos da ${ BRAND_NAME }"
       ],
       "${ BRAND_NAME } welcome emails": [
-        "Correios electronicos de boas-vindas da ${ BRAND_NAME }"
+        "E-mails de boas-vindas de ${ BRAND_NAME }"
       ]
     },
     "Label in domain modal": {
@@ -9438,6 +9435,17 @@
         "Gestão de equipa"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para continuar a utilizar ${ MAIL_APP_NAME } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "A sua avaliação termina em ${ formattedPeriodEndDate }."
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina com ${ last4 }"
@@ -9524,17 +9532,6 @@
         "Está a beneficiar de um preço promocional no seu plano atual. Ao alterar a sua subscrição da sua conta, perderá o preço promocional e este não estará disponível se tentar subscrever novamente."
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Caso contrário, o acesso à sua conta será limitado e a sua conta acabará por ser desativada."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para continuar a utilizar ${ MAIL_APP_NAME } com funcionalidades premium, escolha a sua subscrição e as opções de pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "A sua avaliação termina em ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } de ${ humanMaxSpace }"
@@ -9562,7 +9559,7 @@
         "Detalhes de pagamento"
       ],
       "Save your email address or phone number to use for verification if you need to reset your account.": [
-        "Guarde o seu endereço de e-mail ou número de telefone para utilizar na verificação se precisar redefinir sua conta."
+        "Guarde o seu endereço de e-mail ou número de telefone para utilizar na verificação se precisar redefinir a sua conta."
       ],
       "Subscription": [
         "Subscrição"
@@ -10198,7 +10195,7 @@
         "Selecione o seu plano"
       ],
       "Upgrade your plan": [
-        "Actualize o seu plano"
+        "Atualize o seu plano"
       ]
     },
     "pass_signup_2023: Info": {
@@ -10361,7 +10358,7 @@
         "Crie a sua conta do ${ BRAND_NAME }"
       ],
       "Request your organization administrator to upgrade": [
-        "Solicite uma actualização ao administrador da sua organização"
+        "Solicite uma atualização ao administrador da sua organização"
       ],
       "Secure your account": [
         "Proteja a sua conta"
@@ -10477,7 +10474,7 @@
         "Texto"
       ],
       "Thomas Anderson": [
-        "Andrea Silva"
+        "Thomas Anderson"
       ],
       "Type text or keyword": [
         "Introduza o texto ou palavra-chave"
@@ -10851,7 +10848,7 @@
         "Reposição de palavra-passe pedida (${ user.Email }). Pode mudar a sua palavra-passe em ${ hoursRemaining } horas."
       ],
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
-        "Para ter a certeza que é realmente você a tentar repor a sua palavra-passe, vamos esperar 72 horas antes de aprovar pedidos. Pode repor a sua palavra-passe em ${ boldTimeLeft }. ${ viewRequest }"
+        "Para termos a certeza de que é realmente o utilizador que está a tentar redefinir a sua palavra-passe, esperamos 72 horas antes de aprovar os pedidos. Pode alterar a sua palavra-passe em ${ boldTimeLeft }. ${ viewRequest }"
       ],
       "We received a password reset request for ${ boldEmail }.": [
         "Recebemos um pedido de reposição de palavra-passe para ${ boldEmail }."
@@ -12479,9 +12476,6 @@
       "Revoke certificate": [
         "Revogar o certificado"
       ],
-      "Save contact details": [
-        "Guardar detalhes do contacto"
-      ],
       "Save time with email filters": [
         "Economize tempo com filtros de e-mail"
       ],
@@ -12946,8 +12940,8 @@
         "Atualize para ${ passPlusPlanName } para obter aliases Hide-my-email ilimitados."
       ],
       "Upgrade to ${ planName } to connect up to ${ n } device to the VPN at once": [
-        "Actualize para ${ planName } para puder ligar até ${ n } dispositivo à VPN ao mesmo tempo.",
-        "Actualize para ${ planName } para puder ligar até ${ n } dispositivos à VPN ao mesmo tempo."
+        "Atualize para ${ planName } para ligar até ${ n } dispositivo à VPN de uma só vez",
+        "Atualize para ${ planName } para ligar até ${ n } dispositivos à VPN de uma só vez"
       ]
     },
     "Upgrade notice": {
