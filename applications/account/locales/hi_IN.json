@@ -339,6 +339,9 @@
       "Font": [
         "फॉन्ट"
       ],
+      "Generate key": [
+        "कुंजी उत्पन्न करें"
+      ],
       "Generate new recovery phrase": [
         "नया पुनर्प्राप्ति वाक्यांश उत्पन्न करें"
       ],
@@ -410,6 +413,9 @@
       ],
       "Keep": [
         "रखें"
+      ],
+      "Keep my Plus subscription": [
+        "मेरा प्लस सब्सक्रिप्शन रखें"
       ],
       "label emails as": [
         "ईमेल को लेबल करें"
@@ -599,9 +605,6 @@
       ],
       "Save address": [
         "पता सहेजें"
-      ],
-      "Save selected": [
-        "चयनित सहेजें"
       ],
       "Search": [
         "खोजें"
@@ -969,6 +972,27 @@
         "${ mailPlus }: निजता-सबसे-पहले ईमेल और कैलेंडर आपके रोज़मर्रा के बातचीत जरूरतों के लिए।"
       ]
     },
+    "bf2023: Footer": {
+      "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
+        "आपकी सदस्यता आपके बिलिंग चक्र के अंत में मानक रियायती दर और अवधि पर स्वचालित रूप से नवीनीकृत हो जाएगी"
+      ]
+    },
+    "bf2023: renew": {
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "${ discountedPrice } की विशेष रियायती कीमत ${ discountedMonths } के लिए मान्य है। फिर इसे ${ nextMonths } के लिए ${ nextPrice } की रियायती कीमत पर स्वचालित रूप से नवीनीकृत किया जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "${ discountedPrice } की विशेष रियायती कीमत पहले महीने के लिए वैध है। फिर यह स्वचालित रूप से हर महीने ${ nextPrice } पर नवीनीकृत हो जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
+      ]
+    },
+    "bf2023: Tooltip": {
+      "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 65+ देशों में 3,000+ सर्वर, उच्चतम वीपीएन गति, दुनिया भर में स्ट्रीमिंग सेवाओं तक पहुंच, मैलवेयर और विज्ञापन-अवरोधक, तेज़ बिटटोरेंट डाउनलोड और बहुत कुछ शामिल है।"
+      ],
+      "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "अपने ईमेल और शेड्यूल को एंड-टू-एंड एन्क्रिप्शन के साथ सुरक्षित करें। इसमें कस्टम ईमेल डोमेन, 15 ईमेल पते, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण और बहुत कुछ के लिए समर्थन शामिल है।"
+      ]
+    },
     "Billing cycle option": {
       "1 month": [
         "1 महीना"
@@ -1088,6 +1112,22 @@
         "लोग या समूह जोड़े"
       ]
     },
+    "Calendar export section description": {
+      "Download an ICS file with all the events from the selected calendar.": [
+        "चुने गए कैलेंडर के सारे इवेंट के साथ वाला एक ICS फाइल डाउनलोड करें।"
+      ]
+    },
+    "Calendar link purpose update success message": {
+      "Label added": [
+        "लेबल जोड़ा गया"
+      ],
+      "Label deleted": [
+        "लेबल हटा दिया गया"
+      ],
+      "Label edited": [
+        "लेबल बदला गया"
+      ]
+    },
     "Calendar link sharing label input assistive text": {
       "Only you can see the label": [
         "सिर्फ आप लेबल देख सकते हैं"
@@ -1106,6 +1146,16 @@
     "Calendar self sharing error": {
       "You already have access to this calendar": [
         "आपके पास पहले से इस कैलेंडर का एक्सेस हैं"
+      ]
+    },
+    "Calendar settings link share description": {
+      "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
+        "अपने कैलेंडर के लिए एक लिंक बनाएं और इसे ${ BRAND_NAME } के बाहर के किसी व्यक्ति के साथ शेयर करें। केवल आप इवेंट जोड़ या हटा सकते हैं।"
+      ]
+    },
+    "Calendar settings private share description": {
+      "Share your calendar with other ${ BRAND_NAME } users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.": [
+        "अपना कैलेंडर दूसरे ${ BRAND_NAME } यूज़र के साथ शेयर करें। उनको अपने कैलेंडर में इवेंट जोड़ने और बदलने की अनुमति देकर साथ में काम करें। आप कभी भी यूज़र अनुमति बदल सकते है।"
       ]
     },
     "Calendar sharing access option label": {
@@ -2384,6 +2434,9 @@
       "Encrypting and importing contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "संपर्कों को एन्क्रिप्ट और आयात किया जा रहा है... इसमें कुछ मिनट लग सकते हैं. जब प्रक्रिया पूरी हो जाती है, तो आप इस मोडल को बंद कर सकते हैं।"
       ],
+      "For import via CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ MAX_IMPORT_CONTACTS_STRING } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "CSV और VCF फ़ाइल के माध्यम से आयात के लिए, सुनिश्चित करें कि फ़ाइल ${ MAX_IMPORT_FILE_SIZE_STRING } या ${ MAX_IMPORT_CONTACTS_STRING } संपर्कों से अधिक न हो। यदि आपकी फ़ाइल बड़ी है, तो कृपया उसे छोटी फ़ाइलों में विभाजित करें। ${ learnMoreLink }।"
+      ],
       "Get up to ${ credits } in credits by inviting friends to ${ BRAND_NAME }.": [
         "${ BRAND_NAME } पे दोस्तों को बुला के ${ credits } तक क्रेडिट लें।"
       ],
@@ -2395,6 +2448,9 @@
       ],
       "Track the status and activity of your referrals.": [
         "अपने रेफरल के स्थिति ट्रैक करें।"
+      ],
+      "Upsell icon containing ${ BRAND_NAME } logo followed by a plus sign": [
+        "${ BRAND_NAME } ब्रांड का लोगो और उसके बाद एक प्लस साइन"
       ],
       "You can continue to invite friends, but you wont be able to earn more credits": [
         "आप मित्रों को आमंत्रित करना जारी रख सकते हैं, लेकिन आप अधिक क्रेडिट अर्जित नहीं कर पाएंगे"
@@ -2409,6 +2465,11 @@
       ],
       "We have detected the following fields in the CSV file you uploaded. Check the ones you want to import.": [
         "हमने आपके द्वारा अपलोड की गई CSV फ़ाइल में निम्न फ़ील्ड का पता लगाया है। उन लोगों की जाँच करें जिन्हें आप आयात करना चाहते हैं।"
+      ]
+    },
+    "Disable account": {
+      "You can safely close this tab.": [
+        "आप इस टैब को सुरक्षित रूप से बंद कर सकते हैं।"
       ]
     },
     "Domain label": {
@@ -2481,6 +2542,11 @@
       ],
       "90 minutes": [
         "90 मिनट"
+      ]
+    },
+    "Email": {
+      "You can safely close this tab.": [
+        "आप इस टैब को सुरक्षित रूप से बंद कर सकते हैं।"
       ]
     },
     "Email body for description (description part)": {
@@ -2574,6 +2640,14 @@
         "आपने ${ categoriesJsx } ईमेल से सदस्यता समाप्त कर ली है।"
       ]
     },
+    "email_forwarding_2023: Info": {
+      "Forwarding to an address without end-to-end encryption will disable end-to-end encryption for your ${ boldForwarderEmail } address, but zero-access encryption remains enabled. ${ learnMoreLink }": [
+        "एंड-टू-एंड एन्क्रिप्शन के बिना किसी पते पर अग्रेषित करने से आपके ${ boldForwarderEmail } पते के लिए एंड-टू-एंड एन्क्रिप्शन अक्षम हो जाएगा, लेकिन शून्य-एक्सेस एन्क्रिप्शन सक्षम रहेगा। ${ learnMoreLink }"
+      ],
+      "You can safely close this tab.": [
+        "आप इस टैब को सुरक्षित रूप से बंद कर सकते हैं।"
+      ]
+    },
     "Enabled 2FA": {
       "2FA": [
         "2-एफए"
@@ -2609,6 +2683,9 @@
       ],
       "Authentication error.": [
         "प्रमाणीकरण त्रुटि"
+      ],
+      "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
+        "स्वचालित उत्तर एक सशुल्क सुविधा है। कृपया इस सुविधा का उपयोग करने के लिए सशुल्क खाते में अपग्रेड करें।"
       ],
       "Calendar limit reached": [
         "कैलेंडर की सीमा पूरी हो गई"
@@ -3311,6 +3388,21 @@
       "${ totalProcessed }/${ totalToProcess } event exported": [
         "${ totalProcessed }/${ totalToProcess } इवेंट निर्यात हुए",
         "${ totalProcessed }/${ totalToProcess } इवेंट निर्यात हुए"
+      ],
+      "Decrypting events from your calendar: ${ totalProcessed }/${ totalToProcess }": [
+        "आपके कैलेंडर से इवेंट डिक्रिप्ट कर रहे: ${ totalProcessed }/${ totalToProcess }"
+      ],
+      "Due to a password reset, none of your events could be decrypted and exported.": [
+        "एक पासवर्ड रीसेट के वजह से आपका कोई भी इवेंट डिक्रिप्ट और निर्यात नहीं किया जा सकाता।"
+      ],
+      "Due to a password reset, some of your events could not be decrypted and exported.": [
+        "एक पासवर्ड रीसेट के वजह से आपके कुछ इवेंट डिक्रिप्ट और निर्यात नहीं किया जा सकते।"
+      ],
+      "Please don't close the tab before the exporting process is finished.": [
+        "निर्यात खत्म होने से पहले टैब बंद ना करें।"
+      ],
+      "The internet connection was interrupted, causing the export process to fail. Please try again.": [
+        "इंटरनेट कनेक्शन में रोकटोक हुई, जिससे निर्यात असफल हो गया। वापस कोशिश करें।"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -3416,6 +3508,9 @@
       "*Only one free trial per user.": [
         "*हर यूज़र पे सिर्फ एक मुफ्त ट्रायल।"
       ],
+      "By default we assign ${ formattedStorage } of storage to the administrator account. You can manage the assigned storage to be distributed among additional users later on.": [
+        "डिफ़ॉल्ट रूप से हम व्यवस्थापक खाते को ${ formattedStorage } संग्रहण सौंपते हैं। आप बाद में अतिरिक्त उपयोगकर्ताओं के बीच वितरित करने के लिए निर्दिष्ट संग्रहण का प्रबंधन कर सकते हैं।"
+      ],
       "You left this plan": [
         "आपने ये प्लान छोड़ा"
       ]
@@ -3429,6 +3524,11 @@
       ],
       "Family name": [
         "परिवार नाम"
+      ]
+    },
+    "familyOffer_2023:Member downgrade modal": {
+      "This will permanently delete all sub-users, accounts, and data associated with your organization.": [
+        "यह आपके संगठन से जुड़े सभी उप-उपयोगकर्ताओं, खातों और डेटा को स्थायी रूप से हटा देगा।"
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -3710,6 +3810,9 @@
       "(1-2 emails per month)": [
         "(प्रति माह 1-2 ईमेल)"
       ],
+      "(2-4 emails per year)": [
+        "(प्रति वर्ष 2-4 ईमेल)"
+      ],
       "(during your first month)": [
         "(आपके पहले महीने में)"
       ]
@@ -3764,6 +3867,9 @@
       ],
       "Key type": [
         "कुंजी प्रकार"
+      ],
+      "Label": [
+        "लेबल"
       ],
       "Name": [
         "नाम"
@@ -4089,6 +4195,11 @@
         "कैलेंडर एक ICS फाइल की तरह निर्यात करने के लिए ${ boldExport } चुनें।"
       ]
     },
+    "Import key": {
+      "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
+        "क्या आप वाकई एक निजी चाबी आयात करना चाहते हैं? असुरक्षित रूप से उत्पन्न या लीक हुई निजी चाबी को आयात करना आपके ईमेल की सुरक्षा को नुकसान पहुंचा सकता है।\n\nकृपया यह भी ध्यान दें कि इस निजी चाबी से संबंधित सार्वजनिक चाबी हमारे चाबी सर्वर से सार्वजनिक रूप से उपलब्ध होगी। यदि चाबी में व्यक्तिगत विवरण (जैसे आपका पूरा नाम) है जिसे आप प्रकाशित नहीं करना चाहते हैं, तो कृपया इसे आयात करने से पहले उसमें ज़रूरी बदलाव करें।"
+      ]
+    },
     "Import provider": {
       "Import from ${ provider }": [
         "${ provider } से आयात करें"
@@ -4170,6 +4281,9 @@
       "${ boldWarning } You will lose access to all current encrypted data in your account if you continue.": [
         "${ boldWarning } अगर आप जारी रखते हैं तो आप अपने खाते के सभी मौजूदा एन्क्रिप्टेड डेटा तक पहुंच खो देंगे।"
       ],
+      "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
+        "${ BRAND_NAME } वह गोपनीयता है जिस पर आप भरोसा कर सकते हैं, जो मजबूत एन्क्रिप्शन, ओपन-सोर्स कोड और स्विस गोपनीयता कानूनों द्वारा सुनिश्चित की गई है। हमारा मानना है कि कोई भी आपके डेटा का दुरुपयोग नहीं कर पाएगा। हमारी तकनीक और व्यवसाय मौलिक रूप से मजबूत गोपनीयता की इस मजबूत परिभाषा पर आधारित हैं।"
+      ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "दूसरे ईमेल प्रदाता से कनेक्शन खोने की वजह से ${ BRAND_NAME } ने एक आयात रोक दिया। कृपया वापिस जुड़े।"
       ],
@@ -4202,6 +4316,9 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: कम-क्वालिटी का प्रिव्यू"
       ],
+      "${ firstRemainingCalendarName } will be set as default calendar.": [
+        "${ firstRemainingCalendarName } डिफॉल्ट कैलेंडर सेट होगा।"
+      ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and mailbox password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } को सिर्फ एक पासवर्ड से भी इस्तेमाल कर सकते है जो आपके लॉग इन और मेलबॉक्स पासवर्ड की जगह ले लेगा। एक पासवर्ड मोड पे जाने के लिए, पासवर्ड डाले जो आप इस्तेमाल करना चाहते है और सेव दबाएं।"
       ],
@@ -4226,6 +4343,9 @@
       "${ numberOfNonPrivateKeys } uploaded file is not a valid private key. Please verify and try again.": [
         "${ numberOfNonPrivateKeys } अपलोड की गई फाइल मान्य निजी चाबी नहीं है। कृपया सत्यापित करें और वापिस कोशिश करें।",
         "${ numberOfNonPrivateKeys } अपलोड की गई फाइलें मान्य निजी चाबीयां नहीं है। कृपया सत्यापित करें और वापिस कोशिश करें।"
+      ],
+      "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
+        "${ PROTON_SENTINEL_NAME } एक उन्नत खाता सुरक्षा कार्यक्रम है जो परिष्कृत एआई सिस्टम और विशेषज्ञों द्वारा संचालित है जो आपको बुरे तत्वों और सुरक्षा खतरों से बचाने के लिए चौबीसों घंटे काम करता है।"
       ],
       "${ providerFoldersNumLocalized } folder found": [
         "${ providerFoldersNumLocalized } फोल्डर मिला",
@@ -4274,6 +4394,9 @@
       "(${ memberCount } member)": [
         "(${ memberCount } सदस्य)",
         "(${ memberCount } सदस्य)"
+      ],
+      "(${ serverPrice } /month)": [
+        "(${ serverPrice }/महीना)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(फ़िल्टर करें यदि सभी निम्नलिखित शर्तों को पूरा करते हैं)"
@@ -4324,6 +4447,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "सिर्फ एक यूज़रनेम, मेलबॉक्स, और इंसान से जुड़े खाते को यूज़र कहते है।"
       ],
+      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
+        "आसानी से अलग-अलग डिवाइसो पे अपने पासवर्ड एक्सेस करें और अपने ऑनलाइन पहचान की रक्षा करें। ज़रूरी ${ PASS_APP_NAME } ऐप और एक्सटेंशन डाउनलोड और इंस्टॉल करें।"
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "अवैतनिक चालान के कारण खाता पहुंच प्रतिबंधित है। कृपया अपने व्यवस्थापक से संपर्क करें।"
       ],
@@ -4341,6 +4467,9 @@
       ],
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "कम-से-कम एक रिक्वरी तरीका सेट करे ताकि आप अपना ${ BRAND_NAME } खाता इस्तेमाल करना जारी रख सके जब भी आपका पासवर्ड खो जाए।"
+      ],
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
+        "अपने खाते में @pm.me ईमेल पता जोड़ें। यह सरल, छोटा डोमेन \"${ MAIL_APP_NAME } me\" या \"निजी संदेश मुझे\" के लिए है।"
       ],
       "Add a recovery email address": [
         "पुनर्प्राप्ति ईमेल पता जोड़ें"
@@ -4419,8 +4548,17 @@
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "इस लिंक के साथ कोई भी इंसान देख सकता है कि आप खाली है या अपने कैलेंडर में व्यस्त है। वो शीर्षक, स्थान या प्रतिभागियों जैसे इवेंट जानकारी नहीं देख सकते है।"
       ],
+      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
+        "इस लिंक के साथ कोई भी व्यक्ति आपके कैलेंडर के लिए सिंक या भविष्य के अपडेट लेने में सक्षम नहीं होगा। अगर आप उन्हें फिर से एक्सेस देना चाहते हैं, तो आपको एक नया लिंक बनाना होगा।"
+      ],
       "Are you sure you want to delete this address?": [
         "क्या आप वाकई इस पते को हटाना चाहते हैं?"
+      ],
+      "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
+        "आप पक्का इस कैलेंडर को मिटाना चाहते हैं? आपने जिन-जिन पतो को ये कैलेंडर शेयर किया है वो इसका एक्सेस खो देंगे।"
+      ],
+      "Are you sure you want to delete this calendar? All events in it will be deleted.": [
+        "क्या आप पक्का इस कैलेंडर को मिटाना चाहते हैं? उसके सभी इवेंट भी मिटा दिए जाएंगे।"
       ],
       "Are you sure you want to delete this domain?": [
         "क्या आप वाकई इस डोमेन को हटाना चाहते हैं?"
@@ -4445,6 +4583,12 @@
       ],
       "Attention required": [
         "ध्यान देने की आवश्यकता है"
+      ],
+      "Auto-reply is active each week between the selected start and end time.": [
+        "चयनित प्रारंभ और समाप्ति समय के बीच प्रत्येक सप्ताह ऑटो-उत्तर सक्रिय होता है।"
+      ],
+      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
+        "चुने हुए घंटों के बीच, आपके द्वारा चुने गए सप्ताह के दिनों में ऑटो-रिप्लाई हमेशा सक्रिय रहता है।"
       ],
       "Background color": [
         "पीछे का रंग"
@@ -4475,6 +4619,9 @@
       ],
       "Billing cycle: ${ text }": [
         "बिल चक्र: ${ text }"
+      ],
+      "Blocks senders from seeing if and when you opened a message.": [
+        "प्रेषकों को यह देखने से रोकता है कि आपने कोई संदेश कब खोला है या नहीं।"
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "एक नि: शुल्क योजना में अपग्रेड करने से, आप स्थायी रूप से इन लाभों को खो देंगे, भले ही आप भविष्य में फिर से अपग्रेड करें।"
@@ -4610,6 +4757,9 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "आज ही अपना पसंदीदा ऐप डाउनलोड करें और आप जहां भी जाएं, अपने साथ गोपनीयता रखें।"
       ],
+      "Download your PGP keys for use with other PGP-compatible services.": [
+        "अन्य पीजीपी-संगत सेवाओं के साथ उपयोग के लिए अपनी पीजीपी कुंजी डाउनलोड करें।"
+      ],
       "Each code can only be used once": [
         "हर कूटक का उपयोग केवल एक बार हो सकता है"
       ],
@@ -4715,14 +4865,26 @@
       "Get ${ upsellPlanName }": [
         "${ upsellPlanName } लें"
       ],
+      "Give the token a descriptive name, such as the service you plan to use it with, and select one of your active custom domain addresses. Only this address will be able to send emails with this token.": [
+        "टोकन को उसके बारे में बताने वाला नाम दें, जैसे की सेवा जिसके साथ आप उसे इस्तेमाल करना चाहते है, और अपना एक स्क्रीय कस्टम डोमेन पता चुनें। सिर्फ ये पता इस टोकन के साथ ईमेल भेज पाएगा।"
+      ],
+      "Give your public key to your friends, or publish it online, so that everyone can send you end-to-end encrypted email!": [
+        "अपनी सार्वजनिक कुंजी अपने दोस्तों को दें, या इसे ऑनलाइन प्रकाशित करें, ताकि हर कोई आपको एंड-टू-एंड एन्क्रिप्टेड ईमेल भेज सके!"
+      ],
       "here": [
         "यहां"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        "प्रॉक्सी के माध्यम से दूरस्थ सामग्री लोड करके पहचान की जानकारी छुपाता है। सामग्री को अनुलग्नकों के रूप में संग्रहीत करने का विकल्प।"
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "यदि किसी अन्य व्यवस्थापक ने इस पासवर्ड को बदल दिया है, तो आपको उन्हें नए संगठन पासवर्ड के लिए पूछना होगा।"
       ],
       "If it’s not right for you, we’ll refund you.": [
         "अगर ये आपके लिए सही नहीं, तो हम आपको पूरे पैसे वापस कर देंगे।"
+      ],
+      "If the system time zone does not match the current time zone preference, you will be asked to update it (at most once per day).": [
+        "अगर आपका सिस्टम समय क्षेत्र आपके मनपसंद समय क्षेत्र से मेल नहीं खाता, तो आपको वो अपडेट करने के लिए बोला जाएगा (ज़्यादा-से-ज़्यादा दिन में एक बार)।"
       ],
       "If this domain is currently receiving emails, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "यदि यह डोमेन वर्तमान में ईमेल प्राप्त कर रहा है, तो ${ boldAddresses } टैब चुनें और एक चिकनी संक्रमण सुनिश्चित करने के लिए MX रिकॉर्ड बदलने से पहले सभी सक्रिय ईमेल पते जोड़ें।"
@@ -4867,6 +5029,9 @@
       "Keep those records in your DNS for as long as you want to use DKIM.": [
         "जब तक आप DKIM का उपयोग करना चाहते हैं, तब तक उन रिकॉर्ड्स को अपने DNS में रखें।"
       ],
+      "Key deletion is irreversible!": [
+        "कुंजी हटाना अपरिवर्तनीय है!"
+      ],
       "Label all imported messages as": [
         "सभी आयातित संदेशों को लेबल करें"
       ],
@@ -4978,6 +5143,9 @@
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "आपका उपकरण नहीं है? साइन इन करने के लिए एक निजी ब्राउज़िंग विंडो का उपयोग करें और हो जाने पर इसे बंद कर दें। ${ learnMore }"
       ],
+      "Number of dedicated servers you try to assign (${ addedCount }) is more than what is still available in your plan (${ remainingCount }) as you own ${ ownedCount } and you already use ${ usedCount }.": [
+        "आपके द्वारा असाइन करने का प्रयास किए जाने वाले समर्पित सर्वरों की संख्या (${ addedCount }) आपके प्लान में अभी भी उपलब्ध (${ remainingCount }) से अधिक है क्योंकि आपके पास ${ ownedCount } है और आप पहले से ही ${ usedCount } का उपयोग करते हैं।"
+      ],
       "of": [
         "का"
       ],
@@ -5023,6 +5191,9 @@
       ],
       "Payments are protected with TLS encryption and Swiss privacy laws.": [
         "भुगतान टीएलएस एन्क्रिप्शन और स्विस गोपनीयता कानूनों के साथ सुरक्षित हैं"
+      ],
+      "PGP clients are more likely to automatically detect your PGP keys if outgoing messages are signed.": [
+        "यदि आउटगोइंग संदेशों पर हस्ताक्षर किए जाते हैं, तो PGP क्लाइंट आपके PGP कुंजियों का स्वचालित रूप से पता लगाने की संभावना रखते हैं।"
       ],
       "Phone number": [
         "फोन नंबर"
@@ -5218,6 +5389,12 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "चूंकि आप एक वफादार उपयोगकर्ता हैं, इसलिए आपके खाते में अतिरिक्त सुविधाएं सक्षम हैं।"
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
+        "एसएमटीपी सबमिशन तृतीय-पक्ष सेवाओं या उपकरणों को आपके कस्टम डोमेन पते के लिए ${ MAIL_APP_NAME } के माध्यम से ईमेल भेजने की अनुमति देता है। पहुंच का अनुरोध करने के लिए, कृपया ${ createTicket } अपने उपयोग के मामलों, आप कौन से कस्टम डोमेन का उपयोग करना चाहते हैं, और अपेक्षित प्रति घंटा और दैनिक ईमेल वॉल्यूम का वर्णन करें।"
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
+        "एसएमटीपी सबमिशन तृतीय-पक्ष सेवाओं या उपकरणों को आपके कस्टम डोमेन पते के लिए ${ MAIL_APP_NAME } के माध्यम से ईमेल भेजने की अनुमति देता है। इस सुविधा का उपयोग करने के लिए, एक नया टोकन जनरेट करके प्रारंभ करें।"
+      ],
       "Some keys successfully reactivated": [
         "कुछ कुंजियाँ सफलतापूर्वक पुन: सक्रिय हो गईं"
       ],
@@ -5242,6 +5419,9 @@
       ],
       "Storage used by this user": [
         "इस यूज़र का स्टोरेज इस्तेमाल"
+      ],
+      "Store this password and file in a safe place. You’ll need them again to import your key.": [
+        "इस पासवर्ड और फाइल को सुरक्षित जगह पर स्टोर करें। अपनी कुंजी आयात करने के लिए आपको उनकी फिर से आवश्यकता होगी."
       ],
       "Support for 1 custom email domain": [
         "1 कस्टम ईमेल डोमेन के लिए सहायता"
@@ -5291,6 +5471,9 @@
       "The format of your CSV file is incorrect.": [
         "आपके CSV फाइल का फॉर्मेट गलत हैं।"
       ],
+      "The Import-Export app allows you to export messages for local backups and to restore previous backups to your account.": [
+        "Import-Export ऐप आपको स्थानीय बैकअप के लिए संदेशों को निर्यात करने और अपने खाते में पिछले बैकअप को पुनर्स्थापित करने की अनुमति देता है।"
+      ],
       "The name will be visible to your users while they are signed in.": [
         "नाम आपके साइनइन किए यूज़र को दिखाई देगा।"
       ],
@@ -5339,6 +5522,9 @@
       "This link may be a homograph attack. Please verify this is the link you wish to visit, or don't open it.": [
         "यह लिंक एक होमोग्राफ हमला हो सकता है। कृपया सत्यापित करें कि यह वह लिंक है जो आप यात्रा करना चाहते हैं, या इसे न खोलें।"
       ],
+      "This token won’t be available after you close this window, and you should not share it with anyone.": [
+        "ये विंडो बंद करने के बाद ये टोकन मौजूद नही होगा, और आपको इसे किसी के साथ शेयर नहीं करना चाहिए।"
+      ],
       "This unsubscribe link has expired. Please open a more recent email from this mailing list.": [
         "सदस्यता छोड़ने का लिंक खत्म हो गया। इस मेल लिस्ट से कोई दूसरा हाल ही का ईमेल खोलें।"
       ],
@@ -5366,6 +5552,12 @@
       "This will sign you out of any active sessions and disable 2-factor authentication.": [
         "यह आपको किसी भी सक्रिय सत्र से साइन आउट कर देगा और 2-कारक प्रमाणीकरण को अक्षम कर देगा।"
       ],
+      "This wizard will enable Two-Factor Authentication (2FA) on your ${ BRAND_NAME } account. Two-factor authentication will make your ${ BRAND_NAME_TWO } account more secure so we recommend enabling it.": [
+        "ये प्रक्रिया आपके ${ BRAND_NAME } खाते पे दो-कदम सत्यापन (2-एफए) सक्षम करेगा। दो-कदम सत्यापन आपके ${ BRAND_NAME_TWO } खाते को और सुरक्षित बना देगा और इसलिए हम इसे सक्षम करने की सलाह देते हैं।"
+      ],
+      "To avoid data loss, only delete it if you know what you’re doing or have exported a copy.": [
+        "डेटा हानि से बचने के लिए, इसे केवल तभी हटाएं जब आप जानते हों कि आप क्या कर रहे हैं या आपने एक प्रति निर्यात की है।"
+      ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "पुष्टि करने के लिए, कृपया उस उपयोगकर्ता का नाम दर्ज करें जिसे आप हटाना चाहते हैं।"
       ],
@@ -5380,6 +5572,9 @@
       ],
       "To ensure continuous access to your account, set an account recovery method": [
         "अपने खाते तक निरंतर पहुंच सुनिश्चित करने के लिए, खाता पुनर्प्राप्ति विधि सेट करें"
+      ],
+      "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
+        "यह सुनिश्चित करने के लिए कि आप महत्वपूर्ण डेटा न खोएं, ${ DRIVE_APP_NAME } आपके और आपके सहयोगियों द्वारा परिवर्तन किए जाने पर आपकी फ़ाइलों के पुराने संस्करणों को सहेजता है। चुनें कि ${ BRAND_NAME } को पिछले संस्करण को कितने समय तक रखना चाहिए।"
       ],
       "To fight spam and abuse, please verify you are human.": [
         "स्पैम और दुर्व्यवहार से लड़ने के लिए, कृपया सत्यापित करें कि आप इंसान हैं"
@@ -5465,6 +5660,9 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "विशेष मूल्य पर प्रीमियम सुविधाएं, उत्पाद और संग्रहण प्राप्त करने के लिए अभी अपग्रेड करें"
       ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "${ PROTON_SENTINEL_NAME } तक पहुंच प्राप्त करने के लिए ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, या ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } प्लान में अपग्रेड करें।"
+      ],
       "Upload picture": [
         "तसवीर डालें"
       ],
@@ -5479,6 +5677,9 @@
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "बिना ऐप के ${ VPN_APP_NAME } के सर्वर से जुड़ते समय इस प्रमाण का इस्तेमाल करें। उदाहरण स्थितियों में शामिल है: Tunnelblick macOS पे, OpenVPN GNU/Linux पे।"
+      ],
+      "Use the selected email address as the SMTP username in the external service, and the generated token as the SMTP password.": [
+        "बाहरी सेवा में चुने गए ईमेल पते को एसएमटीपी यूज़रनेम की तरह इस्तेमाल करें, और बनाए गए टोकन को एसएमटीपी पासवर्ड की तरह।"
       ],
       "Verification can take a few minutes.": [
         "सत्यापन में कुछ मिनट लग सकते हैं।"
@@ -5555,6 +5756,9 @@
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "हम आपकी वर्तमान योजना को एक बेहतर योजना में अपग्रेड कर रहे हैं जो समान मूल्य पर अधिक ऑफ़र करती है। जबकि हमारे सिस्टम अपडेट हो रहे हैं, आप इसे बदल नहीं पाएंगे। जैसे ही यह हो जाएगा हम आपको ईमेल करेंगे।"
       ],
+      "When disabled, this prevents image files from loading on your device without your knowledge.": [
+        "अक्षम होने पर, यह छवि फ़ाइलों को आपकी जानकारी के बिना आपके डिवाइस पर लोड होने से रोकता है।"
+      ],
       "When they subscribe to a plan, you'll get credits to use on your subscription.": [
         "जब वो किसी प्लान की सदस्यता लेते है, तब आपको अपने सदस्यता पे इस्तेमाल करने के लिए मिलता है।"
       ],
@@ -5566,6 +5770,9 @@
       ],
       "Why?": [
         "क्यों?"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "एक एन्क्रिप्ट किए ${ BRAND_NAME } पते के साथ आप सारे ${ BRAND_NAME } सेवाएं इस्तेमाल कर सकते हैं"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "सक्रियण के बिना आप नए उपयोगकर्ता नहीं बना पाएंगे, मौजूदा उपयोगकर्ताओं के पते जोड़ सकते हैं या गैर-निजी उपयोगकर्ता खातों का उपयोग कर सकते हैं।"
@@ -5628,6 +5835,9 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "नए ईमेल संदेश इस फ़ोल्डर में आने पर आप अलर्ट प्राप्त कर सकते हैं।"
       ],
+      "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
+        "आप किसी भी डेस्कटॉप ईमेल क्लाइंट के साथ ${ MAIL_APP_NAME } का इस्तेमाल कर सकते हैं जो Outlook, Apple Mail, और Thunderbird जैसे ऐपों की तरह IMAP/SMTP को सपोर्ट करता है।"
+      ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "आप ${ VPN_APP_NAME } सर्वर से किसी तृतीय-पक्ष, ओपन सोर्स VPN ऐप का उपयोग करके कनेक्ट करने के लिए निम्न क्रेडेंशियल का उपयोग कर सकते हैं, जैसे macOS के लिए Tunnelblick या GNU/Linux के लिए OpenVPN।"
       ],
@@ -5665,6 +5875,9 @@
       "You must have a credit card or bank account linked with your PayPal account. If your PayPal account doesn't have that, please click on the button below.": [
         "आपके पास एक क्रेडिट कार्ड या बैंक खाता होना चाहिए जो आपके PayPal खाते से जुड़ा हो। यदि आपके पेपैल खाते में यह नहीं है, तो कृपया नीचे दिए गए बटन पर क्लिक करें।"
       ],
+      "You need to have an active personal calendar to import your events from ICS.": [
+        "ICS से अपने इवेंट आयात करने के लिए आपके पास एक सक्रिय कैलेंडर होना चाहिए।"
+      ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "आप अपनी संग्रहण क्षमता का ${ spaceDisplayed }% तक पहुँच गए। ${ freeUpMessage } ${ upgradeLink }"
       ],
@@ -5673,6 +5886,9 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "आपको एक ${ BRAND_NAME } पते कि जरूरत होगी ${ MAIL_APP_NAME } और ${ CALENDAR_APP_NAME } का इस्तेमाल करने के लिए।"
+      ],
+      "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
+        "आप इस कुंजी से एन्क्रिप्ट किए गए किसी भी संदेश, फ़ाइल और अन्य डेटा को डिक्रिप्ट नहीं कर पाएंगे। इस कुंजी से हस्ताक्षरित सभी डेटा को अब ${ BRAND_NAME } एप्लिकेशन द्वारा सत्यापित नहीं किया जाएगा।"
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "आपको अपने भुगतान को सत्यापित करने के लिए जल्द ही PayPal पर पुनर्निर्देशित किया जाएगा।"
@@ -5760,6 +5976,11 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "कुंजी ${ fingerprint } पहले ही अपलोड की जा चुकी है"
+      ]
+    },
+    "Info - folder colouring feature": {
+      "When enabled, sub-folders inherit the color of the parent folder.": [
+        "सक्षम होने पर, उप-फ़ोल्डर मूल फ़ोल्डर का रंग इनहेरिट करते हैं।"
       ]
     },
     "Info for cash payment method": {
@@ -5858,6 +6079,23 @@
       ],
       "Subscription": [
         "सदस्यता"
+      ]
+    },
+    "Key generation": {
+      "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
+        "समान एन्क्रिप्शन एल्गोरिथम वाली एक कुंजी पहले से मौजूद है। दूसरी कुंजी बनाने से खाता लोड होने की गति धीमी हो जाएगी. क्या तुम वाकई जारी रखना चाहते हो?"
+      ],
+      "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
+        "इस पते के लिए समान एन्क्रिप्शन एल्गोरिदम वाली एक कुंजी पहले से ही सक्रिय है। दूसरी कुंजी उत्पन्न करने से खाता लोड करने में धीमी गति आएगी और इस कुंजी को हटाने से समस्याएँ हो सकती हैं। यदि आप एक नई कुंजी उत्पन्न कर रहे हैं क्योंकि आपकी पुरानी कुंजी से समझौता हो गया है, तो कृपया उस कुंजी को समझौता के रूप में चिह्नित करें। क्या आप वाकई जारी रखना चाहते हैं?"
+      ],
+      "Generate key": [
+        "कुंजी उत्पन्न करें"
+      ],
+      "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
+        "आपके पते के लिए एन्क्रिप्शन कुंजियां जेनरेट की जा रही हैं. इसमें कई मिनट लग सकते हैं और आपका ब्राउज़र अस्थायी रूप से फ़्रीज़ हो सकता है।"
+      ],
+      "You can generate a new encryption key if you think your previous key has been compromised.": [
+        "यदि आपको लगता है कि आपकी पिछली कुंजी से छेड़छाड़ की गई है तो आप एक नई एन्क्रिप्शन कुंजी उत्पन्न कर सकते हैं।"
       ]
     },
     "Key type option": {
@@ -7013,6 +7251,9 @@
       ]
     },
     "Message": {
+      "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
+        "सारे फिल्टर क्रिया आपके ${ MAIL_APP_NAME } खाते के सभी मैसेज पे लागू होंगे। कोई ऑटो-रिप्लाई ईमेल नहीं भेजा जाएगा।"
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "अपने कस्टम डोमेन को ${ BRAND_NAME } से कनेक्ट करें कस्टम ईमेल पते (उदहारण, you@yourcompany.com) को सेट करने के लिए। हमारा विजार्ड आपकी इस प्रक्रिया में सहायता देगा।"
       ],
@@ -7023,6 +7264,20 @@
     "Message display when a new app version is available": {
       "A new version of ${ appName } is available. ${ reloadButton }.": [
         "${ appName } का एक नया संस्करण उपलब्ध है। ${ reloadButton }।"
+      ]
+    },
+    "Metadata title": {
+      "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
+        "केवल एक लॉगिन के साथ सभी एन्क्रिप्टेड ${ BRAND_NAME } सेवाओं जैसे ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, और अधिक का उपयोग करने के लिए एक ${ BRAND_NAME } खाता बनाएं। निःशुल्क ${ BRAND_NAME } खाता प्राप्त करें।"
+      ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "अपना ${ BRAND_NAME } खाता पासवर्ड भूल गए? पुनर्प्राप्ति कोड, ईमेल या एसएमएस का उपयोग करके इसे यहां रीसेट करें और अपने ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, और अधिक तक पहुंच पुनः प्राप्त करें।"
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "अपना ${ BRAND_NAME } खाता उपयोगकर्ता नाम भूल गए? अपने पुनर्प्राप्ति ईमेल या फ़ोन नंबर का उपयोग करके इसे ढूंढें और अपने ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, और अन्य तक पहुंच पुनः प्राप्त करें।"
+      ],
+      "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
+        "सभी एन्क्रिप्टेड ${ BRAND_NAME } सेवाओं जैसे कि ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, आदि तक पहुंचने के लिए अपने ${ BRAND_NAME } खाते में साइन इन करें। कोई खाता नहीं है? मुफ़्त में एक बनाएं।"
       ]
     },
     "Modal title": {
@@ -7597,6 +7852,17 @@
         "टीम संभालना"
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "${ MAIL_APP_NAME } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "आपका ट्रायल ${ formattedPeriodEndDate } पे खत्म होगा"
+      ]
+    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } खत्म होता है ${ last4 } से"
@@ -7666,14 +7932,6 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "आप अपने अभी चल रहे प्लान पे छूट पा रहे हैं। अगर डाउनग्रेड करते हैं, तो आप छूट खो देंगे और अगर वापिस सदस्यता लेने की कोशिश करते है तो वो मौजूद नहीं होगा।"
-      ]
-    },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "वरना आपके खाते तक का एक्सेस सीमित होगा, और आखिर में आपका खाता अक्षम कर दिया जाएगा।"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "${ MAIL_APP_NAME } के प्रीमियम सुविधाओं का इस्तेमाल जारी रखने के लिए अपनी सदस्यता और भुगतान तरीका चुनें।"
       ]
     },
     "new_plans: Label": {
@@ -7747,6 +8005,12 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
+        "${ MAIL_APP_NAME }: अपने ईमेल को एंड-टू-एंड एन्क्रिप्शन से सुरक्षित करें। इसमें कस्टम ईमेल डोमेन, 15 ईमेल पते, असीमित hide-my-email उपनाम और बहुत कुछ के लिए समर्थन शामिल है।"
+      ],
+      "${ VPN_APP_NAME }: Access blocked content and browse privately. Includes ${ serversAndCountries }, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
+        "${ VPN_APP_NAME }: अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें ${ serversAndCountries }, उच्चतम वीपीएन गति, दुनिया भर में स्ट्रीमिंग सेवाओं तक पहुंच, मैलवेयर और विज्ञापन-अवरोधक, तेज़ बिटटोरेंट डाउनलोड और बहुत कुछ शामिल है।"
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Netflix, Disney+, Prime Video और वैसे स्ट्रीम सेवाओं के कंटेंट तक पहुंचे, चाहे आप जहा भी हो।"
       ],
@@ -7801,6 +8065,9 @@
       ],
       "On business days, receive support from the ${ BRAND_NAME } Customer Support team within 24 hours of requests": [
         "बिज़नेस दिनों में, मांगने के 24 घंटे के अंदर ${ BRAND_NAME } ग्राहक सहायता टीम से मदद पाएं।"
+      ],
+      "One VPN connection allows one device to connect to ${ BRAND_NAME } VPN at any given time. For instance, to connect a phone and a laptop to ${ BRAND_NAME_TWO } VPN at the same time, you need two VPN connections.": [
+        "एक वीपीएन कनेक्शन एक डिवाइस को ${ BRAND_NAME } वीपीएन से एक समय में जुड़ने देता है। उदाहरण के लिए, एक फोन और एक लैपटॉप को ${ BRAND_NAME_TWO } वीपीएन से एक समय में जोड़ने के लिए आपको दो वीपीएन कनेक्शन चाहिए होंगे।"
       ],
       "Option to view non-private user inboxes as the user would, including full message and contact details": [
         "पूरे संदेश और संपर्क जानकारी के साथ निजी-नहीं यूज़र इनबॉक्स देखने का विकल्प।"
@@ -8099,12 +8366,33 @@
         "आप"
       ]
     },
+    "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "यह योजना बनाये रखें"
+      ]
+    },
+    "pass_signup_2023: Info": {
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. To add premium features of ${ PASS_APP_NAME_2 } to your current subscription, we suggest upgrading to the ${ upsellPlanName } plan.": [
+        "${ PASS_APP_NAME } कठोर एंड-टू-एंड एन्क्रिप्शन के साथ आपके पासवर्ड और पहचान को सुरक्षित रखता है। आपकी वर्तमान सदस्यता में ${ PASS_APP_NAME_2 } की प्रीमियम सुविधाएं जोड़ने के लिए, हम ${ upsellPlanName } योजना में अपग्रेड करने का सुझाव देते हैं।"
+      ],
+      "${ PASS_APP_NAME } keeps your passwords and identity secure with rigorous end-to-end encryption. Your current plan already gives you access to premium ${ PASS_APP_NAME_2 } features — no need to purchase again.": [
+        "${ PASS_APP_NAME } कठोर एंड-टू-एंड एन्क्रिप्शन के साथ आपके पासवर्ड और पहचान को सुरक्षित रखता है। आपकी वर्तमान योजना आपको पहले से ही प्रीमियम ${ PASS_APP_NAME_2 } सुविधाओं तक पहुंच प्रदान करती है - दोबारा खरीदारी करने की कोई आवश्यकता नहीं है।"
+      ],
+      "But you can unlock **${ unlockPlanTitle }** and all premium ${ BRAND_NAME } services by upgrading to **${ upsellPlanTitle }** — it’s just ${ relativePrice } extra per month.": [
+        "लेकिन आप **${ upsellPlanTitle }** में अपग्रेड करके **${ unlockPlanTitle }** और सभी प्रीमियम ${ BRAND_NAME } सेवाओं को अनलॉक कर सकते हैं - यह प्रति माह केवल ${ relativePrice } अतिरिक्त है।"
+      ]
+    },
     "Payment method option": {
       "Credit/debit card": [
         "क्रेडिट/डेबिट कार्ड"
       ],
       "New credit/debit card": [
         "नया क्रेडिट/डेबिट कार्ड"
+      ]
+    },
+    "Personal calendar section description": {
+      "Create a calendar to stay on top of your schedule while keeping your data secure.": [
+        "अपने डाटा को सुरक्षित रखते हुए अपने शेड्यूल पे रहने के लिए एक कैलेंडर बनाएं।"
       ]
     },
     "PGP key warning": {
@@ -8338,6 +8626,11 @@
         "अत्याधुनिक"
       ]
     },
+    "Remove calendar section description": {
+      "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
+        "सदस्यता छोड़ कर आप इस कैलेंडर को आगे एक्सेस नहीं कर पाएंगे। आपके खाते से इस कैलेंडर के सारे इवेंट मिटा दिए जाएगे, लेकिन वो असली सार्वजनिक लिंक में बने रहेंगे।"
+      ]
+    },
     "Restore administrator panel": {
       "Changing organization keys": [
         "संगठन की चाबियाँ बदलना"
@@ -8370,12 +8663,20 @@
         "कोई परिणाम नहीं मिला"
       ]
     },
+    "session_recovery:in_progress:info": {
+      "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
+        "यह सुनिश्चित करने के लिए कि वास्तव में आप ही अपना पासवर्ड रीसेट करने का प्रयास कर रहे हैं, हम अनुरोधों को स्वीकृत करने से पहले 72 घंटे तक प्रतीक्षा करते हैं। आप अपना पासवर्ड ${ boldTimeLeft } में बदल सकते हैं। ${ viewRequest }"
+      ]
+    },
     "Settings description": {
       "Complete the transition to privacy with our secure importing and forwarding tools.": [
         "हमारे सुरक्षित आयात और फॉरवर्ड प्रोडक्ट के साथ अपने ज़िंदगी को निजी करने के सफर को पूरा करें।"
       ],
       "Complete the transition to privacy with our secure importing tools.": [
         "हमारे सुरक्षित आयात प्रोडक्ट के साथ अपने ज़िंदगी को निजी करने के सफर को पूरा करें"
+      ],
+      "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
+        "अपने इनबॉक्स को फ़ोल्डर्स और लेबल के साथ व्यवस्थित रखें। ${ learnMoreLink }"
       ]
     },
     "Settings section title": {
@@ -8591,6 +8892,17 @@
       ],
       "End of Year Sale": [
         "साल खत्म होने का सेल"
+      ]
+    },
+    "specialoffer: Tooltip": {
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
+        "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 60 से अधिक देशों में 1700 सर्वर, उच्चतम वीपीएन गति, प्रति उपयोगकर्ता 10 वीपीएन कनेक्शन, दुनिया भर में स्ट्रीमिंग सेवाएं, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
+      ],
+      "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
+        "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 60 से अधिक देशों में 1700 सर्वर, उच्चतम वीपीएन गति, 10 वीपीएन कनेक्शन, दुनिया भर में स्ट्रीमिंग सेवाएं, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
+      ],
+      "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
+        "हमारी सभी प्रीमियम सेवाएँ अपनी उच्चतम सीमा के साथ: 100 ईमेल पते, 10 कस्टम डोमेन के लिए समर्थन, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण, एन्क्रिप्टेड क्लाउड स्टोरेज और फ़ाइल साझाकरण, और बहुत कुछ।"
       ]
     },
     "Spotlight": {
@@ -9472,6 +9784,9 @@
       "Keep your inbox organized": [
         "अपना इनबॉक्स व्यवस्थित रखें"
       ],
+      "Keyboard shortcuts": [
+        "कीबोर्ड शॉर्टकट्स"
+      ],
       "Labels": [
         "लेबल"
       ],
@@ -9609,9 +9924,6 @@
       ],
       "Revoke certificate": [
         "प्रमाणपत्र रद्द करें"
-      ],
-      "Save contact details": [
-        "संपर्क विवरण सहेजें"
       ],
       "Save time with email filters": [
         "ईमेल फिल्टर के साथ समय बचाएं"
@@ -9878,6 +10190,9 @@
       ]
     },
     "Tooltip": {
+      "${ MAIL_APP_NAME } users will use this key by default for sending": [
+        "${ MAIL_APP_NAME } यूज़र भेजने को ये चाबी डिफॉल्ट इस्तेमाल करेंगे"
+      ],
       "Account is disconnected": [
         "खाता डिस्कनेक्ट किया गया है"
       ],
@@ -9886,6 +10201,9 @@
       ],
       "Customize import to reduce the number of labels": [
         "लेबल की संख्या कम करने के लिए आयात को अनुकूलित करें"
+      ],
+      "Delete trash and spam messages after 30 days. Turning on auto-delete gives messages already in trash/spam a deletion date based on the date they were moved there.": [
+        "कचरे और स्पैम संदेश को 30 दिन बाद मिटाएं। अपनेआप-मिटाएं चालू करने से कचरे और स्पैम संदेश को उनके उस फोल्डर में आने के तारीख के हिसाब से मिटने का तारीख मिलता है।"
       ],
       "Each imported email will have this label": [
         "प्रत्येक आयातित ईमेल में यह लेबल होगा"
@@ -9902,11 +10220,23 @@
       "Gmail automatically categorizes some emails like Social or Promotions. You can select where to import these emails to.": [
         "जीमेल अपने आप कुछ ईपत्रों को 'समाचिक' अथवा 'प्रचार ' जैसी श्रेणियों में डालता है। आप चुन सकते हैं कि इन ईपत्र को कहा पर आयात करना है।"
       ],
+      "Group emails in the same conversation together in your Inbox or display them separately.": [
+        "एक ही बातचीत में ईमेल को अपने इनबॉक्स में समूहित करें या उन्हें अलग से प्रदर्शित करें।"
+      ],
       "If you purchased a gift code or received one from our support team, you can enter it here.": [
         "यदि आपने एक उपहार कोड खरीदा है या हमारी सहायता टीम से एक प्राप्त किया है, तो आप इसे यहां दर्ज कर सकते हैं।"
       ],
+      "Messages in the Sent or Drafts folder will continue to appear in that folder, even if you move them to another folder.": [
+        "भेजे गए या ड्राफ़्ट फ़ोल्डर के संदेश उस फ़ोल्डर में दिखाई देते रहेंगे, भले ही आप उन्हें किसी अन्य फ़ोल्डर में ले जाएँ।"
+      ],
       "Sets the following footer in the emails you send: ${ signature } The link points to your referral link. The footer will appear below your signature. You can personalise your signature anytime in the settings.": [
         "आपके भेजे गए ईमेल के फुटर में ये डाल देगा: ${ signature } लिंक आपके रेफरल लिंक पे ले जाएगा। फुटर आपके हस्ताक्षर के नीचे आएगा। आप सेटिंग में अपने हस्ताक्षर को कभी भी बदल सकते है।"
+      ],
+      "Show each sender's image in the message list. The sender's initials will be shown if a photo is not available.": [
+        "संदेश लिस्ट में भेजने वालो की तस्वीर दिखाएं। अगर तस्वीर नहीं है तो भेजने वालो के नाम का शुरुआती हिस्सा दिखाया जाएगा।"
+      ],
+      "Signatures produced by this key are treated as invalid and this key cannot be used for encryption": [
+        "इस कुंजी द्वारा निर्मित हस्ताक्षर को अमान्य माना जाता है और इस कुंजी का उपयोग एन्क्रिप्शन के लिए नहीं किया जा सकता है"
       ],
       "System subfolders will show up as separate folders in ${ MAIL_APP_NAME }": [
         "तान्त्रिक उपसञ्चय ${ MAIL_APP_NAME } में अलग सञ्चय जैसे दिखेंगे"
@@ -9917,14 +10247,29 @@
       "The new subscription cycle starts on ${ formattedTime }": [
         "नई सदस्यता साइकिल ${ formattedTime } को शुरू होगी"
       ],
+      "This feature delays sending your emails, giving you the opportunity to undo send during the selected time frame.": [
+        "यह सुविधा आपके ईमेल भेजने में देरी करती है, जिससे आपको चयनित समय सीमा के दौरान भेजने को पूर्ववत करने का अवसर मिलता है।"
+      ],
       "This feature is only available for paid users": [
         "यह सुविधा केवल सशुल्क उपयोगकर्ताओं के लिए उपलब्ध है"
+      ],
+      "This key is used by ${ MAIL_APP_NAME } to encrypt your contact's data": [
+        "ये चाबी ${ MAIL_APP_NAME } इस्तेमाल करता है आपके संपर्क का डाटा एन्क्रिप्ट करने के लिए"
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "हमें आपके DNS कॉन्फ़िगरेशन में समस्या का पता चला है। कृपया सुनिश्चित करें कि आपके रिकॉर्ड नीचे दिए गए निर्देशों से मेल खाते हैं। यदि समस्या बनी रहती है, तो हमें डीकेआईएम को बंद करना होगा।"
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "हमने आपके DNS कॉन्फ़िगरेशन के साथ समस्याओं के कारण DKIM हस्ताक्षर करना बंद कर दिया है। कृपया हस्ताक्षर शुरू करने के लिए नीचे दिए गए निर्देशों का पालन करें"
+      ],
+      "When you add a label to a message in a conversation, it will automatically be applied to all future messages you send or receive in that conversation.": [
+        "जब आप किसी वार्तालाप में किसी संदेश में कोई लेबल जोड़ते हैं, तो वह उस वार्तालाप में आपके द्वारा भेजे जाने वाले या प्राप्त होने वाले सभी भावी संदेशों पर स्वतः लागू हो जाएगा।"
+      ],
+      "When you click on a link, this anti-phishing feature will ask you to confirm the URL of the web page.": [
+        "जब आप किसी लिंक पर क्लिक करते हैं, तो यह एंटी-फ़िशिंग सुविधा आपको वेब पेज के URL की पुष्टि करने के लिए कहेगी।"
+      ],
+      "When you move an email to spam, you’ll automatically be unsubscribed from the sender’s mailing lists.": [
+        "जब आप किसी ईमेल को स्पैम में भेजते हैं, तब आप उन भेजने वालो के मेल लिस्ट की सदस्यता अपनेआप खो देंगे।"
       ],
       "Your ${ MAIL_APP_NAME } inbox is almost full": [
         "आपका ${ MAIL_APP_NAME } इनबॉक्स भरने वाला है"
@@ -9934,6 +10279,21 @@
       ],
       "Your external account may have reached its 24-hour bandwidth limit. ${ BRAND_NAME } will try to resume the import as soon as possible.": [
         "आपका बाहरी खाता 24 घंटे की बैंडविड्थ सीमा तक पहुंच गया शायद। ${ BRAND_NAME } जल्द-से-जल्द आयात फिर से शुरू करने की कोशिश करेगा।"
+      ]
+    },
+    "Tooltip automatically attach public key": {
+      "This automatically adds your public key to each message you send. Recipients can use this to verify the authenticity of your messages and send encrypted messages to you.": [
+        "यह आपके द्वारा भेजे जाने वाले प्रत्येक संदेश में स्वचालित रूप से आपकी सार्वजनिक कुंजी जोड़ता है। प्राप्तकर्ता इसका उपयोग आपके संदेशों की प्रामाणिकता को सत्यापित करने और आपको एन्क्रिप्टेड संदेश भेजने के लिए कर सकते हैं।"
+      ]
+    },
+    "Tooltip prompt to trust keys": {
+      "When receiving an email from another ${ MAIL_APP_NAME } user who does not have trusted keys in your contacts, a banner will ask if you want to enable trusted keys.": [
+        "किसी दूसरे ${ MAIL_APP_NAME } यूज़र से ईमेल लेते समय जिनके पास आपके संपर्को में विश्वास करी हुई चाबी नहीं है, एक बैनर पूछेगा कि अगर आप विश्वास करी हुई चाबी सक्षम करना चाहते हो।"
+      ]
+    },
+    "Tooltip sign external messages": {
+      "Automatically sign all your outgoing messages so users can verify the authenticity of your messages. This is done in combination with the default PGP settings which can be configured below.": [
+        "अपने सभी आउटगोइंग संदेशों पर स्वचालित रूप से हस्ताक्षर करें ताकि उपयोगकर्ता आपके संदेशों की प्रामाणिकता को सत्यापित कर सकें। यह डिफ़ॉल्ट PGP सेटिंग्स के संयोजन में किया जाता है जिसे नीचे कॉन्फ़िगर किया जा सकता है।"
       ]
     },
     "Tooltip; share calendar modal ": {
