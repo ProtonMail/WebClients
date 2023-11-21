@@ -63,6 +63,7 @@ const AccountStepPayment = ({
     measure,
     cta,
     accountStepPaymentRef,
+    api: normalApi,
     defaultMethod,
     onPay,
     onValidate,
@@ -125,7 +126,10 @@ const AccountStepPayment = ({
         amount: options.checkResult.AmountDue,
         currency: options.currency,
         flow: 'signup-pass',
-        onChargeable: (_, { chargeablePaymentParameters, source }) => {
+        paymentMethods: model.session?.paymentMethods,
+        paymentMethodStatus: model.paymentMethodStatus,
+        api: normalApi,
+        onChargeable: (_, { chargeablePaymentParameters }) => {
             return withLoadingSignup(async () => {
                 const isFreeSignup = chargeablePaymentParameters.Amount <= 0;
                 if (isFreeSignup) {
@@ -133,13 +137,12 @@ const AccountStepPayment = ({
                     return;
                 }
 
+                const type = chargeablePaymentParameters.type;
                 let paymentType: 'cc' | 'pp';
-                if (source === PAYMENT_METHOD_TYPES.PAYPAL || source === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
+                if (type === PAYMENT_METHOD_TYPES.PAYPAL || type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
                     paymentType = 'pp';
-                } else if (source === PAYMENT_METHOD_TYPES.CARD) {
-                    paymentType = 'cc';
                 } else {
-                    throw new Error('Invalid payment source');
+                    paymentType = 'cc';
                 }
                 await onPay(chargeablePaymentParameters.Payment, paymentType);
             });
@@ -273,7 +276,7 @@ const AccountStepPayment = ({
                     )}
                     {(() => {
                         if (
-                            paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.PAYPAL &&
+                            paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.PAYPAL &&
                             options.checkResult.AmountDue > 0
                         ) {
                             return (

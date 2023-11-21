@@ -21,6 +21,7 @@ export interface Props {
     coupon?: string | null;
     flow: PaymentMethodFlows;
     paymentMethodStatus?: PaymentMethodStatus;
+    paymentMethods?: SavedPaymentMethod[];
     onMethodChanged?: OnMethodChangedHandler;
 }
 
@@ -51,7 +52,7 @@ type UsedAndNewMethods = {
 };
 
 export const useMethods = (
-    { paymentMethodStatus, amount, coupon, flow, onMethodChanged }: Props,
+    { paymentMethodStatus, paymentMethods, amount, coupon, flow, onMethodChanged }: Props,
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
     const paymentMethodsRef = useRef<PaymentMethods>();
@@ -100,6 +101,7 @@ export const useMethods = (
             paymentMethodsRef.current = await initializePaymentMethods(
                 api,
                 paymentMethodStatus,
+                paymentMethods,
                 isAuthenticated,
                 amount,
                 coupon ?? '',
