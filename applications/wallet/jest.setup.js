@@ -8,6 +8,12 @@ import '@proton/testing/lib/mockUnleash';
 global.TextEncoder = TextEncoder;
 global.TextDecoder = TextDecoder;
 
+window.ResizeObserver = jest.fn().mockImplementation(() => ({
+    observe: jest.fn(),
+    unobserve: jest.fn(),
+    disconnect: jest.fn(),
+}));
+
 // Do not start crypto worker pool, let the single tests setup/mock the CryptoProxy as needed
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     __esModule: true,
