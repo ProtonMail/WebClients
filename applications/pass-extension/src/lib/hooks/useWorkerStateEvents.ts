@@ -6,7 +6,7 @@ import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/messag
 import { sendMessage } from '@proton/pass/lib/extension/message';
 import type {
     AppState,
-    ExtensionEndpoint,
+    ClientEndpoint,
     TabId,
     WorkerMessageResponse,
     WorkerMessageWithSender,
@@ -14,7 +14,7 @@ import type {
 import { AppStatus, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
-type WakeupOptions = { tabId: TabId; endpoint: ExtensionEndpoint; messageFactory: MessageWithSenderFactory };
+type WakeupOptions = { tabId: TabId; endpoint: ClientEndpoint; messageFactory: MessageWithSenderFactory };
 type UseWorkerStateEventsOptions = WakeupOptions & { onWorkerStateChange: (state: AppState) => void };
 
 const wakeup = (options: WakeupOptions): Promise<WorkerMessageResponse<WorkerMessageType.WORKER_WAKEUP>> =>
