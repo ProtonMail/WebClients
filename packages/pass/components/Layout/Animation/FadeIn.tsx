@@ -2,8 +2,6 @@ import type { FC, HTMLAttributes, ReactNode } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
-import './FadeIn.scss';
-
 type Props = {
     duration?: number;
     delay?: number;
