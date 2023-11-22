@@ -1,6 +1,6 @@
 import browser from '@proton/pass/lib/globals/browser';
 import type {
-    ExtensionEndpoint,
+    ClientEndpoint,
     MessageFailure,
     PortFrameForwardingMessage,
     WorkerMessage,
@@ -65,7 +65,7 @@ sendMessage.onSuccess = async <T extends WorkerMessageWithSender>(
 export type MessageWithSenderFactory = <T extends WorkerMessage>(message: T) => WorkerMessageWithSender<T>;
 
 const messageCreator =
-    (sender: ExtensionEndpoint): MessageWithSenderFactory =>
+    (sender: ClientEndpoint): MessageWithSenderFactory =>
     (message) => ({
         ...message,
         sender,
@@ -77,7 +77,7 @@ export const popupMessage = messageCreator('popup');
 export const pageMessage = messageCreator('page');
 export const contentScriptMessage = messageCreator('contentscript');
 
-export const portForwardingMessage = <T extends { sender: ExtensionEndpoint }>(
+export const portForwardingMessage = <T extends { sender: ClientEndpoint }>(
     forwardTo: string,
     payload: T
 ): WorkerMessageWithSender<PortFrameForwardingMessage> => ({
