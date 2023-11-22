@@ -8,7 +8,7 @@ import noop from '@proton/utils/noop';
 
 import { CLIENT_CHANNEL, type ServiceWorkerMessage, type ServiceWorkerMessageType, type WithOrigin } from './channel';
 
-type ServiceWorkerMessageHandler<T extends ServiceWorkerMessageType = any> = (
+export type ServiceWorkerMessageHandler<T extends ServiceWorkerMessageType = any> = (
     message: Extract<ServiceWorkerMessage, { type: T }>
 ) => void;
 
@@ -18,9 +18,13 @@ type ServiceWorkerContextValue = {
         type: T,
         handler: ServiceWorkerMessageHandler<T>
     ) => void;
+    off: <T extends ServiceWorkerMessageType = ServiceWorkerMessageType>(
+        type: T,
+        handler: ServiceWorkerMessageHandler<T>
+    ) => void;
 };
 
-export const ServiceWorkerContext = createContext<ServiceWorkerContextValue>({ send: noop, on: noop });
+export const ServiceWorkerContext = createContext<ServiceWorkerContextValue>({ send: noop, on: noop, off: noop });
 export const ServiceWorkerClientID = uniqueId(16);
 
 export const ServiceWorkerProvider: FC = ({ children }) => {
@@ -36,6 +40,11 @@ export const ServiceWorkerProvider: FC = ({ children }) => {
                 const handlersForType = handlers.current.get(type) ?? [];
                 handlersForType.push(handler);
                 handlers.current.set(type, handlersForType);
+            },
+            off: (type, handler) => {
+                const handlersForType = handlers.current.get(type) ?? [];
+                const filtered = handlersForType.filter((handlerForType) => handlerForType !== handler);
+                handlers.current.set(type, filtered);
             },
         }),
         []
