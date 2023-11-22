@@ -19,6 +19,7 @@ import noop from '@proton/utils/noop';
 
 import { api, authStore } from '../../lib/core';
 import { deletePassDB } from '../../lib/database';
+import type { ServiceWorkerMessageHandler } from '../ServiceWorker/ServiceWorkerProvider';
 import { useServiceWorker } from '../ServiceWorker/ServiceWorkerProvider';
 import { store } from '../Store/store';
 import { useClientRef } from './ClientProvider';
@@ -77,7 +78,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
                  * session lock revalidation on init */
                 authStore.setLockStatus(undefined);
 
-                return authStore.hasSession() && session.LocalID === pathLocalID
+                return authStore.hasSession(pathLocalID)
                     ? auth.login(session)
                     : auth.resumeSession(initialLocalID, { forceLock: true });
             },
@@ -175,44 +176,37 @@ export const AuthServiceProvider: FC = ({ children }) => {
         if (matchConsumeFork) void authService.consumeFork({ mode: 'sso', key, localState, state, selector });
         else void authService.init({ forceLock: false });
 
-        const matchLocalID = (localID?: number) => authStore.hasSession() && authStore.getLocalID() === localID;
-
         /* setup listeners on the service worker's broadcasting channel in order to
          * sync the current client if any authentication changes happened in another tab */
-        sw.on('unauthorized', ({ localID }) => {
-            if (matchLocalID(localID)) void authService.logout({ soft: true, broadcast: false });
-        });
 
-        sw.on('locked', ({ localID }) => {
+        const handleUnauthorized: ServiceWorkerMessageHandler<'unauthorized'> = ({ localID }) => {
+            if (authStore.hasSession(localID)) authService.logout({ soft: true, broadcast: false }).catch(noop);
+        };
+
+        const handleLocked: ServiceWorkerMessageHandler<'locked'> = ({ localID }) => {
             const unlocked = authStore.getLockStatus() !== SessionLockStatus.LOCKED;
-            if (matchLocalID(localID) && unlocked) void authService.lock({ soft: true, broadcast: false });
-        });
+            if (authStore.hasSession(localID) && unlocked) void authService.lock({ soft: true, broadcast: false });
+        };
 
-        sw.on('refresh', ({ localID, data }) => {
-            if (matchLocalID(localID)) {
+        const handleRefresh: ServiceWorkerMessageHandler<'refresh'> = ({ localID, data }) => {
+            if (authStore.hasSession(localID)) {
                 authStore.setAccessToken(data.AccessToken);
                 authStore.setRefreshToken(data.RefreshToken);
                 authStore.setUID(data.UID);
                 authStore.setRefreshTime(data.RefreshTime);
                 void authService.config.onSessionRefresh?.(localID, data, false);
             }
-        });
-
-        const onVisibilityChange = () => {
-            const visible = document.visibilityState === 'visible';
-            if (visible) void authService.init({ forceLock: false });
-            else {
-                /* when the document loses visibility: reset client
-                 * state and wipe the in-memory store. */
-                setRedirectPath(preserveSearch(location.pathname));
-                client.current.setStatus(AppStatus.IDLE);
-                store.dispatch(stopEventPolling());
-                store.dispatch(stateDestroy());
-            }
         };
 
-        document.addEventListener('visibilitychange', onVisibilityChange);
-        return () => document.removeEventListener('visibilitychange', onVisibilityChange);
+        sw.on('unauthorized', handleUnauthorized);
+        sw.on('locked', handleLocked);
+        sw.on('refresh', handleRefresh);
+
+        return () => {
+            sw.off('unauthorized', handleUnauthorized);
+            sw.off('locked', handleLocked);
+            sw.off('refresh', handleRefresh);
+        };
     }, []);
 
     return <AuthServiceContext.Provider value={authService}>{children}</AuthServiceContext.Provider>;

@@ -7,7 +7,7 @@ import { withCache } from '@proton/pass/store/actions/with-cache';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { ImportEntry } from '@proton/pass/store/reducers';
-import type { ExtensionEndpoint, ItemRevision } from '@proton/pass/types';
+import type { ClientEndpoint, ItemRevision } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
 export const importItemsIntent = createAction(
@@ -18,7 +18,7 @@ export const importItemsIntent = createAction(
 
 export const importItemsSuccess = createAction(
     'import::items::success',
-    withRequestSuccess((payload: ImportEntry, endpoint?: ExtensionEndpoint) =>
+    withRequestSuccess((payload: ImportEntry, endpoint?: ClientEndpoint) =>
         pipe(
             withCache,
             withNotification({
@@ -37,7 +37,7 @@ export const importItemsSuccess = createAction(
 
 export const importItemsFailure = createAction(
     'import::items::failure',
-    withRequestFailure((error: unknown, endpoint?: ExtensionEndpoint) =>
+    withRequestFailure((error: unknown, endpoint?: ClientEndpoint) =>
         withNotification({
             type: 'error',
             endpoint,

@@ -1,6 +1,6 @@
 import type { AuthService } from '@proton/pass/lib/auth/service';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
-import type { AppState, MaybeNull } from '@proton/pass/types';
+import type { AppState, ClientEndpoint, MaybeNull } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import type { EncryptedPassCache } from '@proton/pass/types/worker/cache';
 
@@ -14,6 +14,7 @@ export type Action = ReturnType<(typeof actions)[keyof typeof actions]>;
 export type Telemetry = { start: () => void; stop: () => void; pushEvent: (event: TelemetryEvent) => Promise<boolean> };
 
 export interface WorkerRootSagaOptions {
+    endpoint: ClientEndpoint;
     getAuthStore: () => AuthStore;
     getAuthService: () => AuthService;
     getCache: () => Promise<Partial<EncryptedPassCache>>;
