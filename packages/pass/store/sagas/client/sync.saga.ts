@@ -17,7 +17,7 @@ import { selectUser } from '@proton/pass/store/selectors';
 import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-function* syncWorker(options: WorkerRootSagaOptions, { meta }: ReturnType<typeof syncIntent>) {
+function* syncWorker(options: WorkerRootSagaOptions) {
     yield put(stopEventPolling());
 
     const state = (yield select()) as State;
@@ -31,9 +31,9 @@ function* syncWorker(options: WorkerRootSagaOptions, { meta }: ReturnType<typeof
         yield put(withRevalidate(getUserAccessIntent(userAccessRequest(user.ID))));
         yield put(withRevalidate(getUserFeaturesIntent(userFeaturesRequest(user.ID))));
 
-        yield put(syncSuccess(meta.request.id, yield call(synchronize, { type: SyncType.FULL }, options)));
+        yield put(syncSuccess(yield call(synchronize, { type: SyncType.FULL }, options)));
     } catch (e: unknown) {
-        yield put(syncFailure(meta.request.id, e));
+        yield put(syncFailure(e));
     } finally {
         yield put(startEventPolling());
     }
@@ -44,9 +44,9 @@ function* syncWorker(options: WorkerRootSagaOptions, { meta }: ReturnType<typeof
 export default function* watcher(options: WorkerRootSagaOptions): Generator {
     while (true) {
         yield call(function* () {
-            const action: ReturnType<typeof syncIntent> = yield take(syncIntent.match);
+            yield take(syncIntent.match);
             yield race({
-                sync: syncWorker(options, action),
+                sync: syncWorker(options),
                 cancel: take(stateDestroy.match),
             });
         });
