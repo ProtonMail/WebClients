@@ -103,17 +103,9 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         },
     ],
     (state = {}, action: AnyAction) => {
-        if (bootSuccess.match(action) && action.payload.sync?.items !== undefined) {
-            return action.payload.sync.items;
-        }
-
-        if (syncSuccess.match(action)) {
-            return action.payload.items;
-        }
-
-        if (sharesSync.match(action)) {
-            return fullMerge(state, action.payload.items);
-        }
+        if (bootSuccess.match(action) && action.payload?.items !== undefined) return action.payload.items;
+        if (syncSuccess.match(action)) return action.payload.items;
+        if (sharesSync.match(action)) return fullMerge(state, action.payload.items);
 
         if (itemCreationIntent.match(action)) {
             const { shareId, optimisticId, createTime, ...item } = action.payload;
