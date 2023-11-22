@@ -40,7 +40,9 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
         (selected: string) => {
             switch (selected) {
                 case 'all':
-                    return setFilters({ selectedShareId: null, search: '' }, matchEmpty ? getLocalPath() : undefined);
+                    /* if in trash or empty screen -> trigger autoselect via redirect */
+                    const redirect = matchEmpty || matchTrash ? getLocalPath() : undefined;
+                    return setFilters({ selectedShareId: null, search: '' }, redirect);
                 case 'trash':
                     return setFilters({ selectedShareId: null, search: '' }, getTrashRoute());
                 default: {
