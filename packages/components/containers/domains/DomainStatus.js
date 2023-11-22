@@ -1,7 +1,14 @@
 import PropTypes from 'prop-types';
 import { c, msgid } from 'ttag';
 
-import { DKIM_STATE, DMARC_STATE, DOMAIN_STATE, MX_STATE, SPF_STATE, VERIFY_STATE } from '@proton/shared/lib/constants';
+import {
+    DKIM_STATE,
+    DMARC_STATE,
+    DOMAIN_STATE,
+    MX_STATE,
+    SPF_STATE,
+    VERIFY_STATE,
+} from '@proton/shared/lib/interfaces';
 
 import { Badge } from '../../components';
 

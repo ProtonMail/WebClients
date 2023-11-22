@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { DKIM_STATE, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import { DKIM_STATE } from '@proton/shared/lib/interfaces';
 
 import { Alert, Copy, Table, TableBody, TableCell, TableHeader, TableRow } from '../../components';
 import { useNotifications } from '../../hooks';
