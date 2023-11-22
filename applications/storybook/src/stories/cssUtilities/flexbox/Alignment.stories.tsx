@@ -70,7 +70,7 @@ export const JustifyEvenly = () => {
     );
 };
 
-export const AlignItemsStartColumn = () => {
+export const ItemsStartColumn = () => {
     return (
         <div className="flex flex-column items-start rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
@@ -80,7 +80,7 @@ export const AlignItemsStartColumn = () => {
     );
 };
 
-export const AlignItemsCenterColumn = () => {
+export const ItemsCenterColumn = () => {
     return (
         <div className="flex flex-column items-center rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
@@ -90,7 +90,7 @@ export const AlignItemsCenterColumn = () => {
     );
 };
 
-export const AlignItemsEndColumn = () => {
+export const ItemsEndColumn = () => {
     return (
         <div className="flex flex-column items-end rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
@@ -100,7 +100,7 @@ export const AlignItemsEndColumn = () => {
     );
 };
 
-export const AlignItemsStart = () => {
+export const ItemsStart = () => {
     return (
         <div className="flex items-start rounded overflow-hidden border">
             <div className="bg-primary p-8">div</div>
@@ -110,7 +110,7 @@ export const AlignItemsStart = () => {
     );
 };
 
-export const AlignItemsEnd = () => {
+export const ItemsEnd = () => {
     return (
         <div className="flex items-end rounded overflow-hidden border">
             <div className="bg-primary p-8">div</div>
@@ -120,7 +120,7 @@ export const AlignItemsEnd = () => {
     );
 };
 
-export const AlignItemsCenter = () => {
+export const ItemsCenter = () => {
     return (
         <div className="flex items-center rounded overflow-hidden border">
             <div className="bg-primary p-2">div</div>
@@ -130,7 +130,7 @@ export const AlignItemsCenter = () => {
     );
 };
 
-export const AlignItemsBaseline = () => {
+export const ItemsBaseline = () => {
     return (
         <div className="flex items-baseline rounded overflow-hidden border">
             <div className="bg-primary p-2">div</div>
@@ -140,7 +140,7 @@ export const AlignItemsBaseline = () => {
     );
 };
 
-export const AlignItemsStretch = () => {
+export const ItemsStretch = () => {
     return (
         <div className="flex items-stretch rounded overflow-hidden border">
             <div className="bg-primary p-2">div</div>
@@ -150,7 +150,7 @@ export const AlignItemsStretch = () => {
     );
 };
 
-export const AlignItemCenter = () => {
+export const SelfCenter = () => {
     return (
         <div className="flex items-start rounded overflow-hidden border">
             <div className="bg-primary p-8">div</div>
@@ -160,7 +160,7 @@ export const AlignItemCenter = () => {
     );
 };
 
-export const AlignItemStart = () => {
+export const SelfStart = () => {
     return (
         <div className="flex items-end rounded overflow-hidden border">
             <div className="bg-primary p-8">div</div>
@@ -170,7 +170,7 @@ export const AlignItemStart = () => {
     );
 };
 
-export const AlignItemEnd = () => {
+export const SelfEnd = () => {
     return (
         <div className="flex items-start rounded overflow-hidden border">
             <div className="bg-primary p-8">div</div>
@@ -180,7 +180,7 @@ export const AlignItemEnd = () => {
     );
 };
 
-export const AlignItemStretch = () => {
+export const SelfStretch = () => {
     return (
         <div className="flex items-start rounded overflow-hidden border">
             <div className="bg-primary p-8">div</div>
