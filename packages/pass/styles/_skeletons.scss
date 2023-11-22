@@ -15,9 +15,35 @@
 			}
 		}
 
-		&--alias-preview {
+		&--item-heading {
+			&::before {
+				inline-size: 90%;
+			}
+		}
+
+		&--item-subheading {
+			&::before {
+				inline-size: 65%;
+			}
+		}
+
+		&--item-icon {
+			&::before {
+				inline-size: em(16);
+				block-size: em(16);
+			}
+		}
+
+		&--alias-preview,
+		&--value {
 			&::before {
 				inline-size: 80%;
+			}
+		}
+
+		&--alias-mailbox {
+			&::before {
+				inline-size: 50%;
 			}
 		}
 	}
