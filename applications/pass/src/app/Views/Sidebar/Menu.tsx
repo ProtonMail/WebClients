@@ -18,7 +18,6 @@ import { syncIntent } from '@proton/pass/store/actions';
 import { selectPassPlan, selectPlanDisplayName, selectUser } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
 
 import { useAuthService } from '../../Context/AuthServiceProvider';
 
@@ -30,7 +29,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const { openPasswordHistory } = usePasswordContext();
     const dispatch = useDispatch();
 
-    const { filters, matchEmpty, matchTrash, setFilters } = useNavigation();
+    const { filters, matchEmpty, matchTrash, navigate, setFilters } = useNavigation();
     const { selectedShareId } = filters;
 
     const passPlan = useSelector(selectPassPlan);
@@ -135,7 +134,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                         icon
                         size="small"
                         color="weak"
-                        onClick={noop /* FIXME: needs settings in webapp */}
+                        onClick={() => navigate(getLocalPath('settings'))}
                         shape="ghost"
                         title={c('Action').t`Settings`}
                         className="flex-item-noshrink ml-1"
