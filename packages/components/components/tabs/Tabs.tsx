@@ -93,6 +93,10 @@ export const Tabs = ({
         return <>{content}</>;
     }
 
+    if (!tabs?.length) {
+        return null;
+    }
+
     return (
         <div className={clsx(['tabs', 'tabs--' + variant, className])}>
             <div className={clsx([navContainerClassName, stickyTabs && 'sticky-top bg-norm'])}>
@@ -117,7 +121,9 @@ export const Tabs = ({
                             const key = toKey(index, 'key_');
                             const label = toKey(index, 'label_');
                             const selected = value === index;
+
                             return (
+                                /* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */
                                 <li
                                     key={key}
                                     className={clsx(
