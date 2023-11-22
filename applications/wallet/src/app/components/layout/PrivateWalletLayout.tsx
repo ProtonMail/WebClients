@@ -20,7 +20,7 @@ const PrivateWalletLayout = ({ children }: Props) => {
             sidebar={<WalletSidebar />}
             drawerApp={<DrawerApp customAppSettings={<WalletQuickSettings />} />}
         >
-            <PrivateMainArea hasToolbar data-testid="wallet-view:events-area">
+            <PrivateMainArea hasToolbar data-testid="wallet-view:events-area" className="p-8">
                 {children}
             </PrivateMainArea>
         </PrivateAppContainer>

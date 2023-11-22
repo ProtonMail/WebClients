@@ -4,6 +4,7 @@ import { ErrorBoundary, StandardErrorPage } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 
 import { PrivateWalletLayout } from '../components';
+import { BitcoinTransferContainer } from './BitcoinTransferContainer';
 import { DashboardContainer } from './DashboardContainer';
 
 const MainContainer = () => {
@@ -14,6 +15,9 @@ const MainContainer = () => {
             <QuickSettingsRemindersProvider>
                 <PrivateWalletLayout>
                     <Switch>
+                        <Route path={'/transfer'}>
+                            <BitcoinTransferContainer />
+                        </Route>
                         <Route path={'*'}>
                             <DashboardContainer />
                         </Route>
