@@ -32,6 +32,22 @@ const createTelemetryHandler = (endpoint: ExtensionEndpoint) => (event: Telemetr
         })
     );
 
+const openSettings = (page?: string) => {
+    const settingsUrl = browser.runtime.getURL('/settings.html');
+    const url = `${settingsUrl}#/${page ?? ''}`;
+
+    browser.tabs
+        .query({ url: settingsUrl })
+        .then(async (match) => {
+            await (match.length > 0 && match[0].id
+                ? browser.tabs.update(match[0].id, { highlighted: true, url })
+                : browser.tabs.create({ url }));
+
+            window.close();
+        })
+        .catch(noop);
+};
+
 export const PassExtensionCore: FC<{ endpoint: ExtensionEndpoint }> = ({ children, endpoint }) => (
     <PassCoreProvider
         config={config}
@@ -39,6 +55,7 @@ export const PassExtensionCore: FC<{ endpoint: ExtensionEndpoint }> = ({ childre
         getDomainImageURL={getDomainImageURL}
         onLink={onLink}
         onTelemetry={useCallback(createTelemetryHandler(endpoint), [])}
+        openSettings={openSettings}
     >
         {children}
     </PassCoreProvider>

@@ -31,11 +31,11 @@ export const useFilters = () => {
     return useMemo(
         () => ({
             filters,
-            setFilters: (update: Partial<ItemFilters>) => {
+            setFilters: (update: Partial<ItemFilters>, pathname?: string) => {
                 const encodedFilter = btoa(JSON.stringify({ ...filters, ...update }));
-                const params = new URLSearchParams(location.search);
+                const params = new URLSearchParams(history.location.search);
                 params.set('filters', encodedFilter);
-                history.replace({ search: `?${params.toString()}` });
+                history.replace({ pathname, search: `?${params.toString()}` });
             },
         }),
         [filters]

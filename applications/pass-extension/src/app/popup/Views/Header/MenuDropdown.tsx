@@ -1,5 +1,6 @@
 import { type VFC } from 'react';
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 
 import { useExpandPopup } from 'proton-pass-extension/lib/hooks/useExpandPopup';
 import { useItemsFilteringContext } from 'proton-pass-extension/lib/hooks/useItemsFilteringContext';
@@ -10,14 +11,24 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import type { DropdownProps } from '@proton/components';
-import { Dropdown, DropdownMenu, DropdownSizeUnit, Icon, usePopperAnchor } from '@proton/components';
+import {
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleHeader,
+    CollapsibleHeaderIconButton,
+    Dropdown,
+    DropdownMenu,
+    DropdownSizeUnit,
+    Icon,
+    usePopperAnchor,
+} from '@proton/components';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
-import { Submenu, type SubmenuLinkItem } from '@proton/pass/components/Menu/Submenu';
-import { VaultSubmenu } from '@proton/pass/components/Menu/Vault/VaultSubmenu';
-import { usePasswordContext } from '@proton/pass/components/PasswordGenerator/PasswordContext';
+import { Submenu } from '@proton/pass/components/Menu/Submenu';
+import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
+import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import {
     selectHasRegisteredLock,
     selectPassPlan,
@@ -25,20 +36,21 @@ import {
     selectShare,
     selectUser,
 } from '@proton/pass/store/selectors';
-import type { MaybeNull, ShareType } from '@proton/pass/types';
+import type { ShareType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { VaultColor } from '@proton/pass/types/protobuf/vault-v1';
-import { pipe, tap } from '@proton/pass/utils/fp/pipe';
+import { withTap } from '@proton/pass/utils/fp/pipe';
 import clsx from '@proton/utils/clsx';
 
 const DROPDOWN_SIZE: NonNullable<DropdownProps['size']> = {
-    width: `20em`,
     height: DropdownSizeUnit.Dynamic,
-    maxHeight: '380px',
+    maxHeight: '30em',
+    width: `22em`,
 };
 
 export const MenuDropdown: VFC = () => {
-    const { sync, lock, logout, ready, expanded } = usePopupContext();
+    const history = useHistory();
+    const { lock, logout, ready, expanded } = usePopupContext();
     const { inTrash, unselectItem } = useNavigationContext();
     const { shareId, setSearch, setShareId } = useItemsFilteringContext();
     const vaultActions = useVaultActions();
@@ -53,69 +65,24 @@ export const MenuDropdown: VFC = () => {
     const expandPopup = useExpandPopup();
 
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const withClose = <P extends any[], R extends any>(cb: (...args: P) => R) => pipe(cb, tap(close));
+    const menu = useMenuItems({ onAction: close });
+    const withClose = withTap(close);
 
-    const handleVaultSelect = withClose((vaultShareId: MaybeNull<string>) => {
+    const onVaultSelect = (selected: string) => {
         unselectItem();
-        setShareId(vaultShareId);
         setSearch('');
-    });
 
-    const feedbackLinks: SubmenuLinkItem[] = [
-        {
-            icon: 'paper-plane',
-            label: c('Action').t`Send us a message`,
-            actionTab: () => openSettings('support'),
-        },
-        {
-            url: 'https://twitter.com/Proton_Pass',
-            icon: 'brand-twitter',
-            label: c('Action').t`Write us on Twitter`,
-        },
-        {
-            url: 'https://www.reddit.com/r/ProtonPass/',
-            icon: 'brand-reddit',
-            label: c('Action').t`Write us on Reddit`,
-        },
-        {
-            url: 'https://github.com/ProtonMail/WebClients/tree/main/applications/pass-extension',
-            icon: 'brand-github',
-            label: c('Action').t`Help us improve`,
-        },
-        {
-            url: 'https://protonmail.uservoice.com/forums/953584-proton-pass',
-            icon: 'rocket',
-            label: c('Action').t`Request a feature`,
-        },
-    ];
-
-    const downloadLinks: SubmenuLinkItem[] = [
-        {
-            url: 'https://play.google.com/store/apps/details?id=proton.android.pass',
-            icon: 'brand-android',
-            label: c('Action').t`Pass for Android`,
-        },
-        {
-            url: 'https://apps.apple.com/us/app/proton-pass-password-manager/id6443490629',
-            icon: 'brand-apple',
-            label: c('Action').t`Pass for iOS`,
-        },
-    ];
-
-    const { openPasswordHistory } = usePasswordContext();
-
-    const advancedLinks: SubmenuLinkItem[] = [
-        {
-            icon: 'key-history',
-            label: c('Action').t`Generated passwords`,
-            actionTab: withClose(openPasswordHistory),
-        },
-        {
-            icon: 'arrow-rotate-right',
-            label: c('Action').t`Manually sync your data`,
-            actionTab: withClose(sync),
-        },
-    ];
+        switch (selected) {
+            case 'all':
+            case 'trash':
+                setShareId(null);
+                return history.push(`/${selected === 'trash' ? 'trash' : ''}`);
+            default: {
+                setShareId(selected);
+                return history.push(`/share/${selected}`);
+            }
+        }
+    };
 
     return (
         <>
@@ -140,10 +107,10 @@ export const MenuDropdown: VFC = () => {
 
                 <Dropdown
                     anchorRef={anchorRef}
+                    autoClose={false}
                     isOpen={isOpen}
                     onClose={close}
                     originalPlacement="bottom"
-                    autoClose={false}
                     size={DROPDOWN_SIZE}
                 >
                     <DropdownMenu>
@@ -172,27 +139,56 @@ export const MenuDropdown: VFC = () => {
 
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
-                        <VaultSubmenu
+                        <VaultMenu
+                            dense
                             inTrash={inTrash}
+                            onAction={close}
+                            onSelect={onVaultSelect}
                             selectedShareId={shareId}
-                            handleVaultSelect={withClose(handleVaultSelect)}
-                            handleVaultCreate={withClose(vaultActions.create)}
-                            handleVaultEdit={withClose(vaultActions.edit)}
-                            handleVaultMoveAllItems={withClose(vaultActions.moveItems)}
-                            handleVaultDelete={withClose(vaultActions.delete)}
-                            handleVaultInvite={withClose(vaultActions.invite)}
-                            handleVaultManage={withClose(vaultActions.manage)}
-                            handleVaultLeave={withClose(vaultActions.leave)}
-                            handleTrashEmpty={withClose(vaultActions.trashEmpty)}
-                            handleTrashRestore={withClose(vaultActions.trashRestore)}
+                            render={(selected, menu) => (
+                                <Collapsible>
+                                    <CollapsibleHeader
+                                        className="pl-4 pr-2"
+                                        suffix={
+                                            <CollapsibleHeaderIconButton className="p-0" pill size="small">
+                                                <Icon name="chevron-down" />
+                                            </CollapsibleHeaderIconButton>
+                                        }
+                                    >
+                                        <span className="flex flex-align-items-center flex-nowrap gap-2">
+                                            <VaultIcon
+                                                className="flex-item-noshrink"
+                                                size={16}
+                                                color={selected.color}
+                                                icon={selected?.icon}
+                                            />
+                                            <span className="block text-ellipsis">{selected.label}</span>
+                                        </span>
+                                    </CollapsibleHeader>
+                                    <CollapsibleContent as="ul" className="unstyled mx-2">
+                                        <hr className="dropdown-item-hr my-2 mx-2" aria-hidden="true" />
+                                        {menu}
+                                        <div className="mt-2 mb-4 w-full">
+                                            <Button
+                                                className="w-full"
+                                                color="weak"
+                                                pill
+                                                shape="solid"
+                                                onClick={withClose(vaultActions.create)}
+                                            >
+                                                {c('Action').t`Create vault`}
+                                            </Button>
+                                        </div>
+                                    </CollapsibleContent>
+                                </Collapsible>
+                            )}
                         />
 
                         <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
                         <DropdownMenuButton
-                            onClick={() => openSettings()}
+                            onClick={withClose(() => openSettings())}
                             label={c('Label').t`Settings`}
-                            labelClassname="flex-item-fluid"
                             icon={'cog-wheel'}
                         />
 
@@ -213,20 +209,10 @@ export const MenuDropdown: VFC = () => {
                             />
                         )}
 
-                        <Submenu
-                            submenuIcon="notepad-checklist"
-                            submenuLabel={c('Action').t`Advanced`}
-                            linkItems={advancedLinks}
-                        />
-
-                        <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
-
-                        <Submenu submenuIcon="bug" submenuLabel={c('Action').t`Feedback`} linkItems={feedbackLinks} />
-                        <Submenu
-                            submenuIcon="mobile"
-                            submenuLabel={c('Action').t`Get mobile apps`}
-                            linkItems={downloadLinks}
-                        />
+                        <Submenu icon="notepad-checklist" label={c('Action').t`Advanced`} items={menu.advanced} />
+                        <hr className="dropdown-item-hr my-3 mx-4" aria-hidden="true" />
+                        <Submenu icon="bug" label={c('Action').t`Feedback`} items={menu.feedback} />
+                        <Submenu icon="mobile" label={c('Action').t`Get mobile apps`} items={menu.download} />
 
                         <DropdownMenuButton
                             onClick={() => logout({ soft: false })}

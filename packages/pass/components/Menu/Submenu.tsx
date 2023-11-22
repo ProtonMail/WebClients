@@ -1,4 +1,4 @@
-import { type VFC } from 'react';
+import { type FC } from 'react';
 
 import type { IconName } from '@proton/components';
 import {
@@ -8,42 +8,47 @@ import {
     CollapsibleHeaderIconButton,
     Icon,
 } from '@proton/components';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import {
     DropdownMenuButton,
     DropdownMenuButtonLabel,
 } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
+import type { MenuItem } from '@proton/pass/hooks/useMenuItems';
+import clsx from '@proton/utils/clsx';
 
-export type SubmenuLinkItem = {
-    url?: string;
+import './Submenu.scss';
+
+type Props = {
+    contentClassname?: string;
+    headerClassname?: string;
     icon: IconName;
+    items: MenuItem[];
     label: string;
-    actionTab?: (...args: any[]) => any;
 };
 
-export const Submenu: VFC<{ submenuLabel: string; submenuIcon: IconName; linkItems: SubmenuLinkItem[] }> = ({
-    submenuIcon,
-    submenuLabel,
-    linkItems,
-}) => {
+export const Submenu: FC<Props> = ({ contentClassname, headerClassname, icon, items, label }) => {
+    const { onLink } = usePassCore();
+
     return (
-        <Collapsible>
+        <Collapsible className="flex-item-noshrink">
             <CollapsibleHeader
-                className="pl-4 pr-2"
+                className={clsx(headerClassname, 'flex-item-noshrink pl-4 pr-2')}
                 suffix={
                     <CollapsibleHeaderIconButton className="p-0" pill size="small">
                         <Icon name="chevron-down" />
                     </CollapsibleHeaderIconButton>
                 }
             >
-                <DropdownMenuButtonLabel label={submenuLabel} icon={submenuIcon} />
+                <DropdownMenuButtonLabel label={label} icon={icon} />
             </CollapsibleHeader>
-            <CollapsibleContent as="ul">
-                {linkItems.map((itemLink: SubmenuLinkItem) => (
+            <CollapsibleContent as="ul" className={clsx(contentClassname, 'unstyled mx-2 my-1')}>
+                {items.map(({ url, label, icon, onClick }: MenuItem) => (
                     <DropdownMenuButton
-                        onClick={itemLink.url ? () => window.open(itemLink.url, '_blank') : itemLink.actionTab}
-                        key={itemLink.label}
-                        label={itemLink.label}
-                        icon={itemLink.icon}
+                        onClick={url ? () => onLink(url) : onClick}
+                        parentClassName="w-full pass-submenu--item"
+                        key={label}
+                        label={label}
+                        icon={icon}
                     />
                 ))}
             </CollapsibleContent>
