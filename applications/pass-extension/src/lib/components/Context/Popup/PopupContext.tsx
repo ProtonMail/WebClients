@@ -7,9 +7,7 @@ import {
 } from 'proton-pass-extension/lib/components/Extension/ExtensionConnect';
 import { useExpanded } from 'proton-pass-extension/lib/hooks/useExpanded';
 import { useExtensionConnectContext } from 'proton-pass-extension/lib/hooks/useExtensionConnectContext';
-import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { NotificationsContext } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
@@ -61,25 +59,13 @@ const PopupContextContainer: FC = ({ children }) => {
     const { status } = extensionContext.state;
     const { url, tabId } = extensionContext.context!;
 
-    const { createNotification } = useNotifications();
     const notificationsManager = useContext(NotificationsContext);
     useEffect(() => notificationsManager.setOffset({ y: 10 }), []);
 
     const [initial, setInitial] = useState<MaybeNull<PopupInitialState>>(null);
     const expanded = useExpanded();
 
-    const sync = useActionRequestEffect(syncRequest(), {
-        onStart: () =>
-            createNotification({
-                key: syncRequest(),
-                showCloseButton: false,
-                text: (
-                    <>
-                        {c('Info').t`Syncing your vaults…`} <CircleLoader />
-                    </>
-                ),
-            }),
-    });
+    const sync = useActionRequestEffect(syncRequest(), {});
 
     const syncing = sync.loading || extensionContext.state.status === AppStatus.BOOTING;
 
