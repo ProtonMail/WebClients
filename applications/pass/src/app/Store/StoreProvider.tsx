@@ -16,7 +16,7 @@ import { authStore } from '../../lib/core';
 import { deletePassDB, getDBCache, writeDBCache } from '../../lib/database';
 import { useAuthService } from '../Context/AuthServiceProvider';
 import { useClientRef } from '../Context/ClientProvider';
-import { useServiceWorker } from '../ServiceWorker/ServiceWorkerProvider';
+import { type ServiceWorkerMessageHandler, useServiceWorker } from '../ServiceWorker/ServiceWorkerProvider';
 import { rootSaga } from './root.saga';
 import { sagaMiddleware, store } from './store';
 
@@ -42,7 +42,7 @@ export const StoreProvider: FC = ({ children }) => {
                 onBoot: (res) => {
                     client.current.setStatus(res.ok ? AppStatus.READY : AppStatus.ERROR);
                     if (res.ok && isDocumentVisible()) store.dispatch(startEventPolling());
-                    if (!res.ok && res.clearCache) deletePassDB(authStore.getUserID()!);
+                    if (!res.ok && res.clearCache) void deletePassDB(authStore.getUserID()!);
                 },
                 onNotification: pipe(notificationEnhancer, createNotification),
                 setCache: async (encryptedCache) => {
@@ -52,11 +52,18 @@ export const StoreProvider: FC = ({ children }) => {
             })
         );
 
-        sw.on('action', ({ action, localID }) => authStore.hasSession(localID) && store.dispatch(action));
+        const handleAction: ServiceWorkerMessageHandler<'action'> = ({ localID, action }) => {
+            if (authStore.hasSession(localID)) store.dispatch(action);
+        };
+
+        sw.on('action', handleAction);
 
         /** When hot-reloading: this `useEffect` can re-trigger,
          * so cancel the on-going saga runner. */
-        return () => runner.cancel();
+        return () => {
+            runner.cancel();
+            sw.off('action', handleAction);
+        };
     }, []);
 
     useVisibleEffect((visible) => {
