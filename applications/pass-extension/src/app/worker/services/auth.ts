@@ -24,20 +24,6 @@ import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
 
-/* Consumes a session fork request, and sends a response to the account app.
- * Depending on the login result, session persistence may occur.
- * If the session is API locked, persist to session storage only. */
-/* Persists the auth session in local and session storage.
- * Session data is kept encrypted in local storage.
- * Session storage is used for session recovery within a browser session. */
-/* set the lock status before dispatching
- * the `stateLock` so the UI can pick up
- * the locked state before wiping the store */
-/* Updates the `authStore` lock state values & persists
- * them in memory & local persisted sessions */
-/* Calling this function when a lock is registered and active
- * will extend the lock by resetting the ttl server-side */
-
 export const SESSION_LOCK_ALARM = 'alarm::session-lock';
 
 export const createAuthService = (options: AuthServiceConfig): AuthService => {
