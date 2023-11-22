@@ -3,11 +3,11 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import { requestMiddleware } from '@proton/pass/store/middlewares/request-middleware';
 import reducer from '@proton/pass/store/reducers';
-import type { ExtensionEndpoint, TabId } from '@proton/pass/types';
+import type { ClientEndpoint, TabId } from '@proton/pass/types';
 
 import { proxyActionsMiddleware } from './proxy-actions.middleware';
 
-export const createClientStore = (endpoint: ExtensionEndpoint, tabId: TabId) => {
+export const createClientStore = (endpoint: ClientEndpoint, tabId: TabId) => {
     const store = configureStore({
         reducer,
         middleware: [requestMiddleware, proxyActionsMiddleware({ endpoint, tabId })],

@@ -4,7 +4,7 @@ import type { Runtime } from 'webextension-polyfill';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
 import { getCurrentTab } from '@proton/pass/lib/extension/utils/tabs';
 import browser from '@proton/pass/lib/globals/browser';
-import { type ExtensionEndpoint, type TabId, WorkerMessageType } from '@proton/pass/types';
+import { type ClientEndpoint, type TabId, WorkerMessageType } from '@proton/pass/types';
 import { createSharedContext } from '@proton/pass/utils/context';
 import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { logger } from '@proton/pass/utils/logger';
@@ -14,7 +14,7 @@ import { parseUrl } from '@proton/pass/utils/url/parser';
 import.meta.webpackHot?.decline();
 
 export type ExtensionContextType = {
-    endpoint: ExtensionEndpoint;
+    endpoint: ClientEndpoint;
     tabId: TabId;
     port: Runtime.Port;
     url: ParsedUrl;
@@ -22,7 +22,7 @@ export type ExtensionContextType = {
 };
 
 export type ExtensionContextOptions = {
-    endpoint: ExtensionEndpoint;
+    endpoint: ClientEndpoint;
     onDisconnect: (previousCtx?: ExtensionContextType) => { recycle: boolean };
     onRecycle: (nextCtx: ExtensionContextType) => void;
 };

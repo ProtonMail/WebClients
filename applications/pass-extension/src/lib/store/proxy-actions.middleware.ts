@@ -4,7 +4,7 @@ import type { AnyAction, Middleware } from 'redux';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
 import { acceptActionWithReceiver, withSender } from '@proton/pass/store/actions/with-receiver';
 import { isClientSynchronousAction } from '@proton/pass/store/actions/with-synchronous-client-action';
-import type { ExtensionEndpoint, TabId, WorkerMessageWithSender } from '@proton/pass/types';
+import type { ClientEndpoint, TabId, WorkerMessageWithSender } from '@proton/pass/types';
 import { WorkerMessageType } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -18,7 +18,7 @@ import noop from '@proton/utils/noop';
  */
 
 type ProxyActionsMiddlewareOptions = {
-    endpoint: ExtensionEndpoint;
+    endpoint: ClientEndpoint;
     tabId: TabId;
 };
 
