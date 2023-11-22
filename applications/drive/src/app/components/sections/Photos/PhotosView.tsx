@@ -12,7 +12,7 @@ import { useDetailsModal } from '../../modals/DetailsModal';
 import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 import UploadDragDrop from '../../uploads/UploadDragDrop/UploadDragDrop';
 import ToolbarRow from '../ToolbarRow/ToolbarRow';
-import { PhotosEmptyView } from './PhotosEmptyView';
+import { EmptyPhotos } from './EmptyPhotos';
 import { PhotosGrid } from './PhotosGrid';
 import { PhotosClearSelectionButton } from './components/PhotosClearSelectionButton';
 import PhotosRecoveryBanner from './components/PhotosRecoveryBanner/PhotosRecoveryBanner';
@@ -84,7 +84,7 @@ export const PhotosView: FC<void> = () => {
     }
 
     if (!shareId || !linkId) {
-        return <PhotosEmptyView />;
+        return <EmptyPhotos />;
     }
 
     const isEmpty = photos.length === 0;
@@ -171,7 +171,7 @@ export const PhotosView: FC<void> = () => {
                 />
 
                 {isEmpty ? (
-                    <PhotosEmptyView />
+                    <EmptyPhotos />
                 ) : (
                     <PhotosGrid
                         data={photos}
