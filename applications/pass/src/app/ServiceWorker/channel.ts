@@ -1,3 +1,5 @@
+import type { AnyAction } from 'redux';
+
 import { type RefreshSessionData } from '@proton/pass/lib/api/refresh';
 
 export type ServiceWorkerMessageBase = {
@@ -5,14 +7,16 @@ export type ServiceWorkerMessageBase = {
      * the service worker in order to broadcast the message back to
      * every claimed clients */
     broadcast?: boolean;
+    localID?: number;
 };
 
 export type ServiceWorkerMessage = ServiceWorkerMessageBase &
     (
         | { type: 'ping' }
-        | { type: 'unauthorized'; localID?: number }
-        | { type: 'locked'; localID?: number }
-        | { type: 'refresh'; localID?: number; data: RefreshSessionData }
+        | { type: 'unauthorized' }
+        | { type: 'locked' }
+        | { type: 'refresh'; data: RefreshSessionData }
+        | { type: 'action'; action: AnyAction }
     );
 
 export type WithOrigin<T> = T & {

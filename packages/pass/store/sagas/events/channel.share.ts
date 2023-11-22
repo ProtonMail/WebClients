@@ -16,6 +16,7 @@ import {
     shareEvent,
     vaultDeleteSuccess,
 } from '@proton/pass/store/actions';
+import type { ShareItem } from '@proton/pass/store/reducers/shares';
 import { selectAllShares, selectShare } from '@proton/pass/store/selectors';
 import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
 import type { Api, ItemRevision, Maybe, PassEventListResponse, Share } from '@proton/pass/types';
@@ -29,7 +30,7 @@ import type { EventChannel } from './types';
 
 export type ShareEventResponse = { Events: PassEventListResponse };
 
-/* It is Important to call onShareEventItemsDeleted before
+/* It is important to call onShareEventItemsDeleted before
  * actually dispatching the resulting action : we may be dealing
  * with a share or an item being selected in the pop-up and need
  * to run the side-effect before clearing the data from the store
@@ -42,11 +43,14 @@ const onShareEvent = (shareId: string) =>
     ) {
         if ('error' in event) throw event.error;
 
-        yield put(shareEvent({ ...event, shareId }));
-
         const { Events } = event;
         const { LatestEventID: eventId, DeletedItemIDs, UpdatedItems, UpdatedShare, LastUseItems } = Events;
+        const currentEventId = ((yield select(selectShare(shareId))) as Maybe<ShareItem>)?.eventId;
+
         logger.info(`[Saga::ShareChannel] event ${logId(eventId)} for share ${logId(shareId)}`);
+
+        /* dispatch only if there was a change */
+        if (currentEventId !== eventId) yield put(shareEvent({ ...event, shareId }));
 
         if (UpdatedShare && UpdatedShare.TargetType === ShareType.Vault) {
             const share: Maybe<Share<ShareType.Vault>> = yield parseShareResponse(UpdatedShare, { eventId });

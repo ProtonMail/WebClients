@@ -15,6 +15,8 @@ type NavigationContextValue = {
     filters: ItemFilters;
     /** Flag indicating wether we are currently on an empty route */
     matchEmpty: boolean;
+    /** Flag indicating wether we are currently on a settings route */
+    matchSettings: boolean;
     /** Flag indicating wether we are currently on a trash route */
     matchTrash: boolean;
     /** Selected item's `itemId` and `shareId` parsed from URL */
@@ -37,8 +39,9 @@ export const NavigationProvider: FC = ({ children }) => {
     const history = useHistory();
     const { filters, setFilters } = useFilters();
 
-    const matchTrash = useRouteMatch(getTrashRoute()) !== null;
     const matchEmpty = useRouteMatch(getLocalPath('empty')) !== null;
+    const matchSettings = useRouteMatch(getLocalPath('settings')) !== null;
+    const matchTrash = useRouteMatch(getTrashRoute()) !== null;
     const selectedItem = useRouteMatch<SelectedItem>(getItemRoute(':shareId', ':itemId', matchTrash))?.params;
 
     const navigate = useCallback(
@@ -54,6 +57,7 @@ export const NavigationProvider: FC = ({ children }) => {
         () => ({
             filters,
             matchEmpty,
+            matchSettings,
             matchTrash,
             selectedItem,
             navigate,
@@ -64,7 +68,7 @@ export const NavigationProvider: FC = ({ children }) => {
             },
             setFilters,
         }),
-        [filters, matchTrash, matchEmpty, setFilters]
+        [filters, matchEmpty, matchSettings, matchTrash, setFilters]
     );
 
     return <NavigationContext.Provider value={navigation}>{children}</NavigationContext.Provider>;
