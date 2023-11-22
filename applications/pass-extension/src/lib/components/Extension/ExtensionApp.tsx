@@ -13,7 +13,7 @@ import { Portal } from '@proton/components/components/portal';
 import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvider';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
 import type { WorkerMessage } from '@proton/pass/types';
-import { type ExtensionEndpoint, WorkerMessageType } from '@proton/pass/types';
+import { type ClientEndpoint, WorkerMessageType } from '@proton/pass/types';
 import { DEFAULT_LOCALE } from '@proton/shared/lib/constants';
 import { loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
@@ -23,7 +23,7 @@ import locales from '../../../app/locales';
 import { PassExtensionCore } from './PassExtensionCore';
 
 export const ExtensionApp: FC<{
-    endpoint: ExtensionEndpoint;
+    endpoint: ClientEndpoint;
     children: (ready: boolean, locale: string) => ReactNode;
 }> = ({ endpoint, children }) => {
     const [ready, setReady] = useState(false);

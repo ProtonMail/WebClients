@@ -9,7 +9,7 @@ import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/messag
 import { sessionLockIntent, signoutIntent, syncIntent } from '@proton/pass/store/actions';
 import { wakeupRequest } from '@proton/pass/store/actions/requests';
 import { selectRequestInFlight } from '@proton/pass/store/selectors';
-import type { AppState, ExtensionEndpoint, MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
+import type { AppState, ClientEndpoint, MaybeNull, WorkerMessageWithSender } from '@proton/pass/types';
 import { AppStatus } from '@proton/pass/types';
 import { setUID as setSentryUID } from '@proton/shared/lib/helpers/sentry';
 import noop from '@proton/utils/noop';
@@ -40,14 +40,14 @@ export const ExtensionConnectContext = createContext<ExtensionConnectContextValu
     sync: noop,
 });
 
-type ExtensionConnectProps<T extends ExtensionEndpoint> = {
+type ExtensionConnectProps<T extends ClientEndpoint> = {
     endpoint: T;
     messageFactory: MessageWithSenderFactory;
     onWorkerMessage?: (message: WorkerMessageWithSender) => void;
     children: React.ReactNode;
 };
 
-export const ExtensionConnect = <T extends ExtensionEndpoint>({
+export const ExtensionConnect = <T extends ClientEndpoint>({
     endpoint,
     messageFactory,
     onWorkerMessage,
