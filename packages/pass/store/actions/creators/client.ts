@@ -7,25 +7,21 @@ import withNotification from '@proton/pass/store/actions/with-notification';
 import type { EndpointOptions } from '@proton/pass/store/actions/with-receiver';
 import { withReceiver } from '@proton/pass/store/actions/with-receiver';
 import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
-import type { SafeUserState } from '@proton/pass/store/reducers';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { AppStatus, Maybe } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
-import identity from '@proton/utils/identity';
 
 export const startEventPolling = createAction('events::polling::start');
 export const stopEventPolling = createAction('events::polling::stop');
 
-/* ⚠️ do not cast payload::cache to type `State` in order to avoid circular type
- * refs. Only cache `stateSync` if it is for the background store */
-export const stateSync = createAction('state::sync', (state: any, options?: EndpointOptions) =>
-    pipe(options?.endpoint === 'background' ? withCache : identity, withReceiver(options ?? {}))({ payload: { state } })
+export const stateDestroy = createAction('state::destroy');
+export const stateSync = createAction('state::sync');
+export const stateHydrate = createAction('state::hydrate', (state: any, options?: EndpointOptions) =>
+    options ? withReceiver(options)({ payload: { state } }) : { payload: { state } }
 );
 
 export const cacheRequest = createAction('cache::request', () => withCache({ payload: {} }));
 export const cacheCancel = createAction('cache::cancel');
-
-export const stateDestroy = createAction('state::destroy');
 
 export const wakeupIntent = createAction(
     'wakeup::intent',
@@ -49,10 +45,8 @@ export const bootFailure = createAction('boot::failure', (error: unknown) =>
     )({ payload: {}, error })
 );
 
-export const bootSuccess = createAction(
-    'boot::success',
-    (payload: { userState: SafeUserState; sync: Maybe<SynchronizationResult> }) =>
-        pipe(withCacheImmediate, withRequest({ id: bootRequest(), type: 'success' }))({ payload })
+export const bootSuccess = createAction('boot::success', (payload: Maybe<SynchronizationResult>) =>
+    pipe(withCacheImmediate, withRequest({ id: bootRequest(), type: 'success' }))({ payload })
 );
 
 export const syncIntent = createAction('sync::intent', () =>

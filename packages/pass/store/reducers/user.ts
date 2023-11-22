@@ -1,11 +1,11 @@
 import type { Reducer } from 'redux';
 
-import { bootSuccess, getUserAccessSuccess, getUserFeaturesSuccess, userEvent } from '@proton/pass/store/actions';
+import { getUserAccessSuccess, getUserFeaturesSuccess, userEvent } from '@proton/pass/store/actions';
 import type { MaybeNull, PassPlanResponse, RequiredNonNull } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
 import type { PassFeature } from '@proton/pass/types/api/features';
 import { objectDelete } from '@proton/pass/utils/object/delete';
-import { fullMerge, merge, partialMerge } from '@proton/pass/utils/object/merge';
+import { merge, partialMerge } from '@proton/pass/utils/object/merge';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import type { Address, SETTINGS_STATUS, User } from '@proton/shared/lib/interfaces';
 
@@ -40,19 +40,6 @@ const initialState: UserState = {
 };
 
 const reducer: Reducer<UserState> = (state = initialState, action) => {
-    if (bootSuccess.match(action)) {
-        const { userState } = action.payload;
-        return fullMerge(state, {
-            addresses: userState.addresses,
-            eventId: userState.eventId,
-            features: userState.features,
-            plan: userState.plan,
-            user: userState.user,
-            userSettings: userState.userSettings,
-            waitingNewUserInvites: userState.waitingNewUserInvites,
-        });
-    }
-
     if (userEvent.match(action)) {
         if (action.payload.EventID === state.eventId) return state;
 

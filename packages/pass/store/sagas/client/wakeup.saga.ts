@@ -5,7 +5,7 @@ import { filterDeletedTabIds } from '@proton/pass/lib/extension/utils/tabs';
 import {
     getUserAccessIntent,
     getUserFeaturesIntent,
-    stateSync,
+    stateHydrate,
     wakeupIntent,
     wakeupSuccess,
 } from '@proton/pass/store/actions';
@@ -28,7 +28,7 @@ function* wakeupWorker(
     const userId = getAuth().getUserID();
 
     /* synchronise the target client app state */
-    yield put(stateSync((yield select()) as State, { endpoint, tabId }));
+    yield put(stateHydrate((yield select()) as State, { endpoint, tabId }));
 
     if (loggedIn && userId && !clientErrored(status)) {
         const maybeRevalidate = endpoint === 'popup' ? withRevalidate : identity;
