@@ -1,4 +1,12 @@
-import type { FC, MouseEvent, ReactElement, ReactNode } from 'react';
+import {
+    Children,
+    type FC,
+    type MouseEvent,
+    type ReactElement,
+    type ReactNode,
+    cloneElement,
+    isValidElement,
+} from 'react';
 
 import { c } from 'ttag';
 
@@ -9,7 +17,10 @@ import type { Props as DropdownMenuButtonCoreProps } from '@proton/components/co
 import { default as DropdownMenuButtonCore } from '@proton/components/components/dropdown/DropdownMenuButton';
 import clsx from '@proton/utils/clsx';
 
-const QuickActionsDropdown: FC<{ children: ReactNode }> = ({ children }) => {
+type QuickActionChildProp = { onClick: (evt: MouseEvent) => void };
+type QuickActionChild = ReactElement<QuickActionChildProp>;
+
+const QuickActionsDropdown: FC<{ children: QuickActionChild[] }> = ({ children }) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
     const handleClick = (evt: MouseEvent) => {
@@ -33,7 +44,18 @@ const QuickActionsDropdown: FC<{ children: ReactNode }> = ({ children }) => {
             </Button>
 
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
-                <DropdownMenu>{children}</DropdownMenu>
+                <DropdownMenu>
+                    {Children.toArray(children).map((child) =>
+                        isValidElement<QuickActionChildProp>(child)
+                            ? cloneElement<QuickActionChildProp>(child, {
+                                  onClick: (evt: MouseEvent) => {
+                                      child.props.onClick?.(evt);
+                                      close();
+                                  },
+                              })
+                            : null
+                    )}
+                </DropdownMenu>
             </Dropdown>
         </>
     );
@@ -58,16 +80,22 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
 }) => {
     return (
         <div
-            className="flex flex-justify-space-between flex-align-items-center flex-nowrap gap-3 max-h-custom"
+            className="flex flex-justify-space-between flex-align-items-center flex-nowrap gap-2 max-h-custom"
             style={{ '--max-h-custom': '1.25rem' }}
         >
-            <div className={'flex flex-align-items-center flex-nowrap gap-2'}>
+            <div className={clsx(labelClassname, 'flex flex-align-items-center flex-nowrap gap-2')}>
                 {typeof icon === 'string' ? (
                     <Icon name={icon} className={clsx(danger ? 'color-danger' : 'color-weak', 'flex-item-noshrink')} />
                 ) : (
                     icon
                 )}
-                <div className={clsx(labelClassname, ellipsis && 'text-ellipsis', danger && 'color-danger')}>
+                <div
+                    className={clsx(
+                        'flex flex-nowrap flex-item-fluid-auto gap-1',
+                        ellipsis && 'text-ellipsis',
+                        danger && 'color-danger'
+                    )}
+                >
                     {label}
                 </div>
             </div>
@@ -79,14 +107,16 @@ export const DropdownMenuButtonLabel: FC<DropdownMenuButtonLabelProps> = ({
 interface DropdownMenuButtonProps extends DropdownMenuButtonCoreProps, DropdownMenuButtonLabelProps {
     children?: ReactNode;
     className?: string;
+    parentClassName?: string;
     isSelected?: boolean;
-    quickActions?: ReactNode;
+    quickActions?: QuickActionChild[];
     size?: 'small' | 'medium';
 }
 
 export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     children,
     className,
+    parentClassName,
     isSelected,
     quickActions,
     size = 'medium',
@@ -96,12 +126,13 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
     labelClassname,
     extra,
     ellipsis = true,
+    style,
     ...rest
 }) => {
-    const extraPadding = quickActions !== undefined ? 'pr-5' : '';
+    const extraPadding = quickActions !== undefined ? 'pr-3' : '';
 
     return (
-        <div className="relative">
+        <div className={clsx('relative flex-item-noshrink', parentClassName)} style={style}>
             <DropdownMenuButtonCore
                 className={clsx(size === 'small' && 'text-sm', className)}
                 // translator : "Selected" is singular only
@@ -113,7 +144,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                     ellipsis={ellipsis}
                     danger={danger}
                     label={label}
-                    labelClassname={clsx('flex flex-nowrap flex-item-fluid-auto gap-1', labelClassname)}
+                    labelClassname={labelClassname}
                     extra={
                         <div
                             className={clsx(
@@ -122,7 +153,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                             )}
                         >
                             {isSelected && (
-                                <div className={clsx('ml-auto', quickActions !== undefined && 'pr-2')}>
+                                <div className={clsx('ml-auto')}>
                                     <Icon name="checkmark" color="var(--interaction-norm-major-1)" />
                                 </div>
                             )}
@@ -132,7 +163,7 @@ export const DropdownMenuButton: FC<DropdownMenuButtonProps> = ({
                 />
             </DropdownMenuButtonCore>
 
-            <div className="absolute flex flex-align-items-center h-full right top pr-2">
+            <div className="absolute flex flex-align-items-center h-full right top">
                 {quickActions && <QuickActionsDropdown>{quickActions}</QuickActionsDropdown>}
             </div>
         </div>
