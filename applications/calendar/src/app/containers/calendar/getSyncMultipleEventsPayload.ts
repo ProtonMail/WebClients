@@ -50,6 +50,7 @@ export interface UpdateEventActionOperation {
         cancelledOccurrenceVevent?: VcalVeventComponent;
         hasDefaultNotifications: boolean;
         isAttendee: boolean;
+        isBreakingChange?: boolean;
         removedAttendeesEmails?: string[];
         addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
         color?: string;
@@ -102,6 +103,7 @@ export const getUpdateSyncOperation = (data: {
     calendarEvent: CalendarEvent;
     hasDefaultNotifications: boolean;
     isAttendee: boolean;
+    isBreakingChange?: boolean;
     removedAttendeesEmails?: string[];
     addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
 }): UpdateEventActionOperation => ({
@@ -110,7 +112,9 @@ export const getUpdateSyncOperation = (data: {
         ...data,
         veventComponent: withoutRedundantDtEnd(data.veventComponent),
         color: getVeventColorValue(data.veventComponent),
-        cancelledOccurrenceVevent: data.cancelledOccurrenceVevent ?  withoutRedundantDtEnd(data.cancelledOccurrenceVevent) : undefined
+        cancelledOccurrenceVevent: data.cancelledOccurrenceVevent
+            ? withoutRedundantDtEnd(data.cancelledOccurrenceVevent)
+            : undefined,
     },
 });
 
@@ -222,6 +226,7 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     calendarEvent,
                     hasDefaultNotifications,
                     isAttendee,
+                    isBreakingChange,
                     removedAttendeesEmails,
                     addedAttendeesPublicKeysMap,
                     cancelledOccurrenceVevent,
@@ -255,10 +260,12 @@ const getSyncMultipleEventsPayload = async ({ getAddressKeys, getCalendarKeys, s
                     })),
                 });
                 const isOrganizerData = { IsOrganizer: booleanToNumber(!isAttendee) };
+                const isBreakingChangeData = { IsBreakingChange: booleanToNumber(isBreakingChange || false) };
 
                 const dataComplete = {
                     ...permissionData,
                     ...isOrganizerData,
+                    ...isBreakingChangeData,
                     ...data,
                 };
 

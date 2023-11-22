@@ -455,6 +455,7 @@ const getSaveEventActions = async ({
         canEditOnlyPersonalPart,
         isOrganizer,
         isAttendee,
+        isBreakingChange,
         sendIcs,
         reencryptSharedEvent,
         selfAttendeeToken,
