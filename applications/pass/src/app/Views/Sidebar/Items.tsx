@@ -1,21 +1,26 @@
-import { type FC } from 'react';
-import { useRouteMatch } from 'react-router-dom';
+import { type FC, useEffect } from 'react';
 
 import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
-import { getItemRoute, getTrashRoute } from '@proton/pass/components/Core/routing';
+import { getLocalPath } from '@proton/pass/components/Core/routing';
 import { SortFilter } from '@proton/pass/components/Item/Filters/Sort';
 import { TypeFilter } from '@proton/pass/components/Item/Filters/Type';
 import { ItemsList } from '@proton/pass/components/Item/List/ItemsList';
-import { type ItemRouteParams } from '@proton/pass/components/Views/types';
 import { useFilteredItems } from '@proton/pass/hooks/useFilteredItems';
+import { itemEq } from '@proton/pass/lib/items/item.predicates';
 
 import { ItemsPlaceholder } from './Placeholder';
 
 export const Items: FC = () => {
-    const { filters, setFilters, selectItem } = useNavigation();
-    const inTrash = useRouteMatch(getTrashRoute()) !== null;
-    const itemMatch = useRouteMatch<ItemRouteParams>(getItemRoute(':shareId', ':itemId', inTrash));
-    const items = useFilteredItems({ ...filters, trashed: inTrash });
+    const { filters, matchEmpty, matchTrash, selectedItem, setFilters, selectItem, navigate } = useNavigation();
+    const shareId = selectedItem?.shareId;
+    const itemId = selectedItem?.itemId;
+    const items = useFilteredItems({ ...filters, trashed: matchTrash });
+
+    useEffect(() => {
+        const itemNotInFilters = itemId && shareId && !items.filtered.some(itemEq({ itemId, shareId }));
+        const emptyRouteButResults = matchEmpty && items.filtered.length > 0;
+        if (itemNotInFilters || emptyRouteButResults) navigate(getLocalPath());
+    }, [items, itemId, shareId, matchEmpty]);
 
     return (
         <>
@@ -31,10 +36,10 @@ export const Items: FC = () => {
                 items={items.filtered}
                 totalCount={items.totalCount}
                 onFilter={setFilters}
-                onSelect={(shareId, itemId) => selectItem(shareId, itemId, { inTrash })}
-                selectedItem={itemMatch ? itemMatch.params : undefined}
+                onSelect={(shareId, itemId) => selectItem(shareId, itemId, { inTrash: matchTrash })}
+                selectedItem={selectedItem}
                 placeholder={() => (
-                    <ItemsPlaceholder inTrash={inTrash} search={filters.search} totalCount={items.totalCount} />
+                    <ItemsPlaceholder inTrash={matchTrash} search={filters.search} totalCount={items.totalCount} />
                 )}
             />
         </>

@@ -1,3 +1,5 @@
+import { default as pipe } from 'lodash/flow';
+
 export { default as pipe } from 'lodash/flow';
 
 export const tap =
@@ -27,3 +29,8 @@ export const orThrow =
 
         return fn?.(...args);
     };
+
+export const withTap =
+    <Effect extends () => void>(effect: Effect) =>
+    <Fn extends () => void>(fn: Fn) =>
+        pipe(fn, tap(effect)) as Fn;
