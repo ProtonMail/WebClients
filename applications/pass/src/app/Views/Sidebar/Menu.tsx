@@ -95,7 +95,15 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                     icon="bug"
                     label={c('Action').t`Feedback`}
                     items={menu.feedback}
-                    headerClassname="mx-3 pr-2"
+                    headerClassname="mx-3 pr-2 py-1"
+                    contentClassname="mx-3"
+                />
+
+                <Submenu
+                    icon="mobile"
+                    label={c('Action').t`Get mobile apps`}
+                    items={menu.download}
+                    headerClassname="mx-3 pr-2 py-1"
                     contentClassname="mx-3"
                 />
 
