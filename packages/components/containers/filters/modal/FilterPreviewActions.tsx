@@ -1,4 +1,4 @@
-import { Fragment, useMemo } from 'react';
+import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
@@ -30,33 +30,39 @@ const FilterPreviewActions = ({ isOpen, toggleOpen, labels, folders, model }: Pr
     const { actions } = model;
     const labelsMap = toMap(labels, 'Name');
 
-    const actionsRenderer = useMemo(() => {
+    const actionsRenderer = (() => {
         const actionsRows = [];
 
         if (actions.labelAs.labels.length) {
             const labelsTitles = actions.labelAs.labels.map((l, i) => {
                 return i > 0 ? c('Label').t` and ${l}` : l;
             });
-            const labelsElements = actions.labelAs.labels.map((l, i) => (
-                <Fragment key={l}>
-                    {i > 0 && c('Label').t` and `}
-                    {isOpen ? (
-                        <span className="mb-2">
-                            <LabelStack
-                                labels={[
-                                    {
-                                        name: labelsMap[l].Name,
-                                        color: labelsMap[l].Color,
-                                        title: labelsMap[l].Name,
-                                    },
-                                ]}
-                            />
-                        </span>
-                    ) : (
-                        <strong>{l}</strong>
-                    )}
-                </Fragment>
-            ));
+            const labelsElements = actions.labelAs.labels.map((l, i) => {
+                const label = labelsMap[l];
+                if (!label) {
+                    return null;
+                }
+                return (
+                    <Fragment key={l}>
+                        {i > 0 && c('Label').t` and `}
+                        {isOpen ? (
+                            <span className="mb-2">
+                                <LabelStack
+                                    labels={[
+                                        {
+                                            name: label.Name,
+                                            color: label.Color,
+                                            title: label.Name,
+                                        },
+                                    ]}
+                                />
+                            </span>
+                        ) : (
+                            <strong>{l}</strong>
+                        )}
+                    </Fragment>
+                );
+            });
 
             actionsRows.push({
                 element: (
@@ -182,7 +188,7 @@ const FilterPreviewActions = ({ isOpen, toggleOpen, labels, folders, model }: Pr
                 ))}
             </div>
         );
-    }, [isOpen]);
+    })();
 
     return (
         <div className="border-bottom mb-8">
