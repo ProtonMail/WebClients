@@ -77,7 +77,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
                  * session lock revalidation on init */
                 authStore.setLockStatus(undefined);
 
-                return authStore.hasSession() && session.LocalID === pathLocalID
+                return authStore.hasSession(pathLocalID)
                     ? auth.login(session)
                     : auth.resumeSession(initialLocalID, { forceLock: true });
             },
@@ -175,21 +175,19 @@ export const AuthServiceProvider: FC = ({ children }) => {
         if (matchConsumeFork) void authService.consumeFork({ mode: 'sso', key, localState, state, selector });
         else void authService.init({ forceLock: false });
 
-        const matchLocalID = (localID?: number) => authStore.hasSession() && authStore.getLocalID() === localID;
-
         /* setup listeners on the service worker's broadcasting channel in order to
          * sync the current client if any authentication changes happened in another tab */
         sw.on('unauthorized', ({ localID }) => {
-            if (matchLocalID(localID)) void authService.logout({ soft: true, broadcast: false });
+            if (authStore.hasSession(localID)) void authService.logout({ soft: true, broadcast: false });
         });
 
         sw.on('locked', ({ localID }) => {
             const unlocked = authStore.getLockStatus() !== SessionLockStatus.LOCKED;
-            if (matchLocalID(localID) && unlocked) void authService.lock({ soft: true, broadcast: false });
+            if (authStore.hasSession(localID) && unlocked) void authService.lock({ soft: true, broadcast: false });
         });
 
         sw.on('refresh', ({ localID, data }) => {
-            if (matchLocalID(localID)) {
+            if (authStore.hasSession(localID)) {
                 authStore.setAccessToken(data.AccessToken);
                 authStore.setRefreshToken(data.RefreshToken);
                 authStore.setUID(data.UID);
@@ -197,22 +195,6 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 void authService.config.onSessionRefresh?.(localID, data, false);
             }
         });
-
-        const onVisibilityChange = () => {
-            const visible = document.visibilityState === 'visible';
-            if (visible) void authService.init({ forceLock: false });
-            else {
-                /* when the document loses visibility: reset client
-                 * state and wipe the in-memory store. */
-                setRedirectPath(preserveSearch(location.pathname));
-                client.current.setStatus(AppStatus.IDLE);
-                store.dispatch(stopEventPolling());
-                store.dispatch(stateDestroy());
-            }
-        };
-
-        document.addEventListener('visibilitychange', onVisibilityChange);
-        return () => document.removeEventListener('visibilitychange', onVisibilityChange);
     }, []);
 
     return <AuthServiceContext.Provider value={authService}>{children}</AuthServiceContext.Provider>;
