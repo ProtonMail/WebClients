@@ -2,6 +2,7 @@ import type { MaybeNull } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
 import { withContext } from '../../context/context';
+import { isIFrameRootAttached } from '../../injections/iframe/create-iframe-root';
 import type { IFrameAppService, InjectedDropdown, InjectedNotification } from '../../types';
 import { createDropdown } from './dropdown';
 import { createNotification } from './notification';
@@ -51,7 +52,10 @@ export const createIFrameService = () => {
     });
 
     const attachNotification = withContext(({ scriptId }) => {
-        if (ctx.apps.notification === null) {
+        const iframeRootAttached = isIFrameRootAttached();
+
+        if (ctx.apps.notification === null || !iframeRootAttached) {
+            if (!iframeRootAttached) detachDropdown();
             logger.info(`[ContentScript::${scriptId}] attaching notification iframe`);
             ctx.apps.notification = createNotification();
         }
