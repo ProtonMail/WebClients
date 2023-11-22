@@ -7,22 +7,20 @@ import { useLoading } from '@proton/hooks';
 import { addressType } from '@proton/shared/lib/api/addresses';
 import { addDomain, getDomain } from '@proton/shared/lib/api/domains';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
-import {
-    ADDRESS_TYPE,
-    DKIM_STATE,
-    DMARC_STATE,
-    DOMAIN_STATE,
-    MX_STATE,
-    SPF_STATE,
-    VERIFY_STATE,
-} from '@proton/shared/lib/constants';
+import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import {
     Address,
     Api,
+    DKIM_STATE,
+    DMARC_STATE,
+    DOMAIN_STATE,
     DecryptedKey,
     Domain,
     DomainAddress,
     KeyTransparencyVerify,
+    MX_STATE,
+    SPF_STATE,
+    VERIFY_STATE,
 } from '@proton/shared/lib/interfaces';
 import { clearExternalFlags, getSignedKeyListWithDeferredPublish } from '@proton/shared/lib/keys';
 import { getActiveKeys, getNormalizedActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
@@ -240,7 +238,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
     ];
 
     const breadcrumbIcons = [
-        !domainModel.State || domainModel.State === DOMAIN_STATE.DOMAIN_STATE_DEFAULT ? null : (
+        domainModel.State === DOMAIN_STATE.DOMAIN_STATE_DEFAULT || !domainModel.State ? null : (
             <RoundedIcon
                 className="mr-1 md:mr-2 p-1 md:p-0"
                 key="domain-icon"
@@ -248,7 +246,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                 name={domainModel.State === DOMAIN_STATE.DOMAIN_STATE_VERIFIED ? 'checkmark' : 'cross'}
             />
         ),
-        !domainModel.VerifyState || domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_DEFAULT ? null : (
+        domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_DEFAULT || !domainModel.VerifyState ? null : (
             <RoundedIcon
                 className="mr-1 md:mr-2 p-1 md:p-0"
                 key="verify-icon"
@@ -256,7 +254,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                 name={domainModel.VerifyState === VERIFY_STATE.VERIFY_STATE_GOOD ? 'checkmark' : 'cross'}
             />
         ),
-        !domainModel.MxState || domainModel.MxState === MX_STATE.MX_STATE_DEFAULT ? null : (
+        domainModel.MxState === MX_STATE.MX_STATE_DEFAULT || !domainModel.MxState ? null : (
             <RoundedIcon
                 className="mr-1 md:mr-2 p-1 md:p-0"
                 key="mx-icon"
@@ -264,7 +262,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
                 name={domainModel.MxState === MX_STATE.MX_STATE_GOOD ? 'checkmark' : 'cross'}
             />
         ),
-        !domainModel.SpfState || domainModel.SpfState === SPF_STATE.SPF_STATE_DEFAULT ? null : (
+        domainModel.SpfState === SPF_STATE.SPF_STATE_DEFAULT || !domainModel.SpfState ? null : (
             <RoundedIcon
                 className="mr-1 md:mr-2 p-1 md:p-0"
                 key="spf-icon"
@@ -277,7 +275,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
         )
             ? renderDKIMIcon()
             : null,
-        !domainModel.DmarcState || domainModel.DmarcState === DMARC_STATE.DMARC_STATE_DEFAULT ? null : (
+        domainModel.DmarcState === DMARC_STATE.DMARC_STATE_DEFAULT || !domainModel.DmarcState ? null : (
             <RoundedIcon
                 className="mr-1 md:mr-2 p-1 md:p-0"
                 key="dmarc-icon"
