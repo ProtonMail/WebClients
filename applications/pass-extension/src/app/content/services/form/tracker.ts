@@ -3,7 +3,7 @@ import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FieldHandle, FormHandle, FormTracker } from 'proton-pass-extension/app/content/types';
 import { DropdownAction, FieldInjectionRule } from 'proton-pass-extension/app/content/types';
 
-import { FieldType, FormType } from '@proton/pass/fathom';
+import { FieldType, FormType, kButtonSubmitSelector } from '@proton/pass/fathom';
 import { contentScriptMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import { type MaybeNull, WorkerMessageType } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
@@ -176,6 +176,9 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
     };
 
     listeners.addListener(form.element, 'submit', onSubmitHandler);
+    form.element.querySelectorAll<HTMLButtonElement>(kButtonSubmitSelector).forEach((button) => {
+        listeners.addListener(button, 'click', onSubmitHandler);
+    });
 
     return { detach, reconciliate, submit };
 };
