@@ -137,7 +137,7 @@ export const getShareAccessOptionsIntent = createAction('share::access-options::
 
 export const getShareAccessOptionsSuccess = createAction(
     'share::access-options::success',
-    withRequestSuccess((payload: ShareAccessOptions) => withCache({ payload }), { maxAge: 15 })
+    withRequestSuccess((payload: ShareAccessOptions) => ({ payload }), { maxAge: 15 })
 );
 
 export const getShareAccessOptionsFailure = createAction(

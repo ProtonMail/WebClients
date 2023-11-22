@@ -14,7 +14,6 @@ export const cacheMiddleware: Middleware = () => (next) => (action: AnyAction) =
     if (isCachingAction(action)) {
         const sanitized = sanitizeWithCallbackAction({ ...action });
         sanitized.meta.cache = false;
-        sanitized.meta.immediate = false;
 
         const message: WithOrigin<ServiceWorkerMessage> = {
             action: sanitized,
