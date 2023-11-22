@@ -8,6 +8,7 @@ import sessionLockImmediate from '@proton/pass/store/sagas/auth/session-lock-imm
 import sessionUnlock from '@proton/pass/store/sagas/auth/session-unlock.saga';
 import boot from '@proton/pass/store/sagas/client/boot.saga';
 import cache from '@proton/pass/store/sagas/client/cache.saga';
+import hydrate from '@proton/pass/store/sagas/client/hydrate.saga';
 import notification from '@proton/pass/store/sagas/client/notification.saga';
 import reportProblem from '@proton/pass/store/sagas/client/report-problem.saga';
 import request from '@proton/pass/store/sagas/client/request-saga';
@@ -53,6 +54,7 @@ export function* rootSaga(options: WorkerRootSagaOptions) {
             cache,
             events,
             featureFlags,
+            hydrate,
             inviteAccept,
             inviteCreate,
             inviteReject,
