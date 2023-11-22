@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { reportBugRequest } from '@proton/pass/store/actions/requests';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
-import { type ExtensionEndpoint } from '@proton/pass/types';
+import { type ClientEndpoint } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { type BugPayload } from '@proton/shared/lib/api/reports';
 
@@ -14,7 +14,7 @@ export const reportBugIntent = createAction('report::bug::intent', (payload: Bug
 
 export const reportBugSuccess = createAction(
     'report::bug::success',
-    withRequestSuccess((endpoint?: ExtensionEndpoint) =>
+    withRequestSuccess((endpoint?: ClientEndpoint) =>
         withNotification({
             type: 'success',
             text: c('Info').t`Thank you, the problem has been reported`,
@@ -25,7 +25,7 @@ export const reportBugSuccess = createAction(
 
 export const reportBugFailure = createAction(
     'report::bug::failure',
-    withRequestFailure((error: unknown, endpoint?: ExtensionEndpoint) =>
+    withRequestFailure((error: unknown, endpoint?: ClientEndpoint) =>
         withNotification({
             type: 'error',
             text: c('Error').t`Error reporting problem`,
