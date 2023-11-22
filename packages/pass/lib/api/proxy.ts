@@ -65,7 +65,7 @@ const shouldRevalidate = (response: Response): boolean => {
 
 /** Opens the API proxy cache and wipes every stale
  * entries. This allows triggering revalidation */
-export const cleanCache = async () => {
+export const cleanAPIProxyCache = async () => {
     try {
         const cache = await caches.open(API_PROXY_KEY);
         const cacheKeys = await cache.keys();
@@ -84,8 +84,8 @@ export const cleanCache = async () => {
     } catch {}
 };
 
-/* clears the whole API proxy cache */
-export const clearCache = () => caches.delete(API_PROXY_KEY).catch(noop);
+/** Clears the whole API proxy cache */
+export const clearAPIProxyCache = () => caches.delete(API_PROXY_KEY).catch(noop);
 
 const createAPIProxyHandler =
     (options: APIProxyOptions) =>
