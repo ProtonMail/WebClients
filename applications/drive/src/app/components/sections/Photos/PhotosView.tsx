@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 import { NavigationControl, TopBanner, useAppTitle, useFlag } from '@proton/components';
 import { Loader } from '@proton/components/components';
 
+import { useShiftKey } from '../../../hooks/util/useShiftKey';
 import { PhotoLink, usePhotosView, useThumbnailsDownload } from '../../../store';
 import PortalPreview from '../../PortalPreview';
 import { useDetailsModal } from '../../modals/DetailsModal';
@@ -41,7 +42,7 @@ export const PhotosView: FC<void> = () => {
     const [detailsModal, showDetailsModal] = useDetailsModal();
     const [linkSharingModal, showLinkSharingModal] = useLinkSharingModal();
     const [previewLinkId, setPreviewLinkId] = useState<string | undefined>();
-
+    const isShiftPressed = useShiftKey();
     const thumbnails = useThumbnailsDownload();
 
     const handleItemRender = (itemLinkId: string, domRef: React.MutableRefObject<unknown>) =>
@@ -179,7 +180,9 @@ export const PhotosView: FC<void> = () => {
                         isLoadingMore={isLoadingMore}
                         onItemClick={setPreviewLinkId}
                         hasSelection={selectedCount > 0}
-                        onSelectChange={handleSelection}
+                        onSelectChange={(i, isSelected) =>
+                            handleSelection(i, { isSelected, isMultiSelect: isShiftPressed() })
+                        }
                         isGroupSelected={isGroupSelected}
                         isItemSelected={isItemSelected}
                     />
