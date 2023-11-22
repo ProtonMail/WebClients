@@ -1,5 +1,8 @@
 import { authentication } from '@proton/pass/lib/auth/store';
+import { type ItemType } from '@proton/pass/types';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
+
+export type ItemNewRouteParams = { type: ItemType };
 
 /** Joins the current location search parameters to the provided path */
 export const preserveSearch = (path: string) => path + location.search;

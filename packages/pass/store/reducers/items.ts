@@ -2,12 +2,12 @@ import type { AnyAction, Reducer } from 'redux';
 
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import {
-    autofillIntent,
     bootSuccess,
     emptyTrashSuccess,
     importItemsBatchSuccess,
     inviteAcceptSuccess,
     inviteCreationSuccess,
+    itemAutofilled,
     itemCreationDismiss,
     itemCreationFailure,
     itemCreationIntent,
@@ -103,17 +103,9 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
         },
     ],
     (state = {}, action: AnyAction) => {
-        if (bootSuccess.match(action) && action.payload.sync?.items !== undefined) {
-            return action.payload.sync.items;
-        }
-
-        if (syncSuccess.match(action)) {
-            return action.payload.items;
-        }
-
-        if (sharesSync.match(action)) {
-            return fullMerge(state, action.payload.items);
-        }
+        if (bootSuccess.match(action) && action.payload?.items !== undefined) return action.payload.items;
+        if (syncSuccess.match(action)) return action.payload.items;
+        if (sharesSync.match(action)) return fullMerge(state, action.payload.items);
 
         if (itemCreationIntent.match(action)) {
             const { shareId, optimisticId, createTime, ...item } = action.payload;
@@ -286,11 +278,8 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             );
         }
 
-        if (autofillIntent.match(action)) {
-            const {
-                payload: { shareId, itemId },
-            } = action;
-
+        if (itemAutofilled.match(action)) {
+            const { shareId, itemId } = action.payload;
             return partialMerge(state, { [shareId]: { [itemId]: { lastUseTime: getEpoch() } } });
         }
 
@@ -304,7 +293,6 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
 
         if (vaultMoveAllItemsSuccess.match(action)) {
             const { shareId, movedItems, destinationShareId } = action.payload;
-
             return fullMerge({ ...state, [shareId]: {} }, { [destinationShareId]: toMap(movedItems, 'itemId') });
         }
 

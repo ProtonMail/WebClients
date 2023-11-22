@@ -6,7 +6,7 @@ import { withCache } from '@proton/pass/store/actions/with-cache';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { ExtensionEndpoint, RecursivePartial } from '@proton/pass/types';
+import type { ClientEndpoint, RecursivePartial } from '@proton/pass/types';
 import { type CriteriaMasks } from '@proton/pass/types/worker/settings';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
@@ -18,7 +18,7 @@ export const settingsEditIntent = createAction(
 
 export const settingsEditFailure = createAction(
     'settings::edit::failure',
-    withRequestFailure((error: unknown, endpoint?: ExtensionEndpoint) =>
+    withRequestFailure((error: unknown, endpoint?: ClientEndpoint) =>
         withNotification({ type: 'error', text: c('Error').t`Settings update failed`, endpoint, error })({
             payload: {},
         })
@@ -27,7 +27,7 @@ export const settingsEditFailure = createAction(
 
 export const settingsEditSuccess = createAction(
     'settings::edit::success',
-    withRequestSuccess((payload: RecursivePartial<ProxiedSettings>, endpoint?: ExtensionEndpoint) =>
+    withRequestSuccess((payload: RecursivePartial<ProxiedSettings>, endpoint?: ClientEndpoint) =>
         pipe(
             withCache,
             withNotification({ type: 'success', text: c('Info').t`Settings successfully updated`, endpoint })
