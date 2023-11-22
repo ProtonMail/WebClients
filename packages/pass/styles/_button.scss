@@ -34,6 +34,14 @@ a {
 			inline-size: 2rem;
 		}
 	}
+
+	&.button-xs {
+		block-size: 1.5rem;
+
+		&.button-for-icon {
+			inline-size: 1.5rem;
+		}
+	}
 }
 
 .button-for-icon {
