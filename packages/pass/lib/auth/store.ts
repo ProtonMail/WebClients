@@ -22,7 +22,9 @@ export const createAuthStore = (store: Store) => {
     const authStore = {
         clear: () => store.reset(),
 
-        hasSession: () => Boolean(authStore.getUID()),
+        hasSession: (localID?: number) =>
+            Boolean(authStore.getUID() && (!localID || authStore.getLocalID() === localID)),
+
         getSession: (): AuthSession => ({
             AccessToken: authStore.getAccessToken() ?? '',
             keyPassword: authStore.getPassword(),
