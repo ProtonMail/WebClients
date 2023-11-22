@@ -24,10 +24,10 @@ import type { TabId } from './runtime';
 import type { AppState, PopupInitialState } from './state';
 
 type WithPayload<T extends WorkerMessageType, P extends {}> = { type: T; payload: P };
-export type ExtensionEndpoint = 'popup' | 'contentscript' | 'background' | 'page' | 'notification' | 'dropdown';
+export type ClientEndpoint = 'popup' | 'contentscript' | 'background' | 'page' | 'notification' | 'dropdown' | 'web';
 
 export type WorkerMessageWithSender<T extends WorkerMessage = WorkerMessage> = T & {
-    sender: ExtensionEndpoint;
+    sender: ClientEndpoint;
     version: string;
 };
 
@@ -232,10 +232,10 @@ export type WorkerMessageResponse<MessageType> = MessageType extends keyof Worke
 export type WorkerResponse<T extends Maybe<WorkerMessage | WorkerMessageWithSender>> = T extends undefined
     ? MessageFailure
     : T extends WorkerMessage
-    ? T['type'] extends infer MessageType
-        ? MaybeMessage<WorkerMessageResponse<MessageType>>
-        : never
-    : never;
+      ? T['type'] extends infer MessageType
+          ? MaybeMessage<WorkerMessageResponse<MessageType>>
+          : never
+      : never;
 
 export type WorkerSendResponse<T extends Maybe<WorkerMessage> = Maybe<WorkerMessage>> = (
     response: WorkerResponse<T>

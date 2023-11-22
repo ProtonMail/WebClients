@@ -2,8 +2,8 @@ import { api } from '@proton/pass/lib/api/api';
 import {
     API_PROXY_IMAGE_ENDPOINT,
     API_PROXY_KEY,
-    cleanCache,
-    clearCache,
+    cleanAPIProxyCache,
+    clearAPIProxyCache,
     handleAPIProxy,
 } from '@proton/pass/lib/api/proxy';
 import { authentication } from '@proton/pass/lib/auth/store';
@@ -23,7 +23,7 @@ export const createCacheProxyService = () => {
             fetch: (url, init) => api<Response>({ url: url.toString(), method: init?.method, output: 'raw' }),
         });
 
-        return { clean: cleanCache, clear: clearCache };
+        return { clean: cleanAPIProxyCache, clear: clearAPIProxyCache };
     }
 
     /* Firefox does not support service workers yet : reassess

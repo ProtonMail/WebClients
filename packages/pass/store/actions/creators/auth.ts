@@ -7,7 +7,7 @@ import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
-import type { ExtensionEndpoint } from '@proton/pass/types';
+import type { ClientEndpoint } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -28,7 +28,7 @@ export const sessionLockEnableIntent = createAction(
 
 export const sessionLockEnableFailure = createAction(
     'session::lock::enable::failure',
-    withRequestFailure((error: unknown, endpoint?: ExtensionEndpoint) =>
+    withRequestFailure((error: unknown, endpoint?: ClientEndpoint) =>
         withNotification({
             type: 'error',
             endpoint,
@@ -40,7 +40,7 @@ export const sessionLockEnableFailure = createAction(
 
 export const sessionLockEnableSuccess = createAction(
     'session::lock::enable::success',
-    withRequestSuccess((payload: { sessionLockToken: string; ttl: number }, endpoint?: ExtensionEndpoint) =>
+    withRequestSuccess((payload: { sessionLockToken: string; ttl: number }, endpoint?: ClientEndpoint) =>
         pipe(
             withCache,
             withNotification({
@@ -58,7 +58,7 @@ export const sessionLockDisableIntent = createAction('session::lock::disable::in
 
 export const sessionLockDisableFailure = createAction(
     'session::lock::disable::failure',
-    withRequestFailure((error: unknown, endpoint?: ExtensionEndpoint) =>
+    withRequestFailure((error: unknown, endpoint?: ClientEndpoint) =>
         withNotification({
             type: 'error',
             endpoint,
@@ -70,7 +70,7 @@ export const sessionLockDisableFailure = createAction(
 
 export const sessionLockDisableSuccess = createAction(
     'session::lock::disable::success',
-    withRequestSuccess((endpoint?: ExtensionEndpoint) =>
+    withRequestSuccess((endpoint?: ClientEndpoint) =>
         pipe(
             withCache,
             withNotification({

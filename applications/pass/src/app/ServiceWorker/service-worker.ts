@@ -1,9 +1,10 @@
-import { API_PROXY_KEY, cleanCache, clearCache, handleAPIProxy } from '@proton/pass/lib/api/proxy';
+import { API_PROXY_KEY, cleanAPIProxyCache, clearAPIProxyCache, handleAPIProxy } from '@proton/pass/lib/api/proxy';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
 import { API_URL } from '../config';
 import { CLIENT_CHANNEL, type ServiceWorkerMessage, type WithOrigin } from './channel';
+import { clearPollingCache, matchPollingRoute, processPolling } from './polling';
 import { processRefresh } from './refresh';
 
 export default null;
@@ -11,12 +12,13 @@ declare let self: ServiceWorkerGlobalScope;
 
 self.addEventListener('install', () => {
     logger.info('[ServiceWorker] Skip waiting..');
-    void self.skipWaiting();
+    self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
     logger.info('[ServiceWorker] Activation in progress..');
-    void cleanCache().catch(noop);
+    cleanAPIProxyCache().catch(noop);
+    clearPollingCache().catch(noop);
     event.waitUntil(self.clients.claim());
 });
 
@@ -37,11 +39,12 @@ self.addEventListener('fetch', (event) => {
     const { pathname } = new URL(url);
 
     if (pathname === '/api/auth/refresh' && method === 'POST') return processRefresh(event);
-    return apiProxyHandler(event);
+    if (matchPollingRoute(pathname)) return processPolling(event);
+    else return apiProxyHandler(event);
 });
 
 self.addEventListener('message', (event) => {
     const message = event.data as WithOrigin<ServiceWorkerMessage>;
-    if (message.type === 'unauthorized') void clearCache().catch(noop);
+    if (message.type === 'unauthorized') void clearAPIProxyCache().catch(noop);
     if (message.broadcast) CLIENT_CHANNEL.postMessage(event.data);
 });
