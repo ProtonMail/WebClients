@@ -63,10 +63,8 @@ function* hydrateWorker(options: WorkerRootSagaOptions) {
     try {
         yield put(stopEventPolling());
         yield hydrateFromCache((_, incoming) => incoming, options);
-    } catch {
-    } finally {
         yield put(startEventPolling());
-    }
+    } catch {}
 }
 
 export default function* watcher(options: WorkerRootSagaOptions) {
