@@ -57,6 +57,7 @@ interface SaveRecurringArguments {
     canEditOnlyPersonalPart: boolean;
     isOrganizer: boolean;
     isAttendee: boolean;
+    isBreakingChange: boolean;
     inviteActions: InviteActions;
     sendIcs: (data: SendIcsActionData) => Promise<{
         veventComponent?: VcalVeventComponent;
@@ -93,6 +94,7 @@ const getSaveRecurringEventActions = async ({
     hasDefaultNotifications,
     canEditOnlyPersonalPart,
     isAttendee,
+    isBreakingChange,
     sendIcs,
     reencryptSharedEvent,
     selfAttendeeToken,
@@ -401,6 +403,7 @@ const getSaveRecurringEventActions = async ({
             calendarEvent: originalEvent,
             hasDefaultNotifications,
             isAttendee,
+            isBreakingChange,
             removedAttendeesEmails: updatedInviteActions.removedAttendees?.map(unary(getAttendeeEmail)),
             addedAttendeesPublicKeysMap,
         });
