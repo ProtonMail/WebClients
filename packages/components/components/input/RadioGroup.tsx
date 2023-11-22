@@ -15,10 +15,17 @@ export interface Props<T> {
     onChange: (value: T) => void;
     value: T;
     className?: string;
-    ariaDescribedBy?: string;
+    ['aria-describedby']?: string;
 }
 
-const RadioGroup = <T,>({ name, options, onChange, value, className, ariaDescribedBy }: Props<T>) => {
+const RadioGroup = <T,>({
+    name,
+    options,
+    onChange,
+    value,
+    className,
+    'aria-describedby': ariaDescribedBy,
+}: Props<T>) => {
     return (
         <>
             {options.map((option, i) => (
