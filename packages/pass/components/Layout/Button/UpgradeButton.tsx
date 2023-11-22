@@ -2,7 +2,6 @@ import { type VFC } from 'react';
 
 import { c } from 'ttag';
 
-import type { ButtonLikeShape } from '@proton/atoms';
 import { Button } from '@proton/atoms';
 import { Icon, InlineLinkButton } from '@proton/components/components';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
@@ -17,11 +16,7 @@ type UpgradeButtonProps = {
 export const UpgradeButton: VFC<UpgradeButtonProps> = ({ className, inline = false, label }) => {
     const navigateToUpgrade = useNavigateToUpgrade();
     const ButtonComponent = inline ? InlineLinkButton : Button;
-
-    const buttonProps = {
-        pill: true,
-        shape: 'solid' as ButtonLikeShape,
-    };
+    const buttonProps = { pill: true, shape: 'solid' } as const;
 
     return (
         <ButtonComponent

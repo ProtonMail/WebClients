@@ -68,7 +68,7 @@ export const PasswordGeneratorModal: VFC<Props> = ({ onSubmit, actionLabel, ...p
 
                 <button
                     className="w-full flex flex-align-items-center flex-justify-space-between"
-                    onClick={() => openPasswordHistory(true)}
+                    onClick={openPasswordHistory}
                 >
                     <span>{c('Label').t`Password history`}</span>
                     <Icon name="chevron-right" />
