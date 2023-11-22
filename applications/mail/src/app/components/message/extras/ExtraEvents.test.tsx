@@ -169,6 +169,7 @@ const getSetup = async ({
     alternativeCalendarKeysAndPassphrasePromise,
     alternativeAddressKeyPromise,
     userAddressEnabled = true,
+    isSimpleLogin = false,
 }: {
     userEmailAddress?: string;
     senderEmailAddress?: string;
@@ -188,6 +189,7 @@ const getSetup = async ({
     alternativeCalendarKeysAndPassphrasePromise?: ReturnType<typeof generateCalendarKeysAndPassphrase>;
     alternativeAddressKeyPromise?: ReturnType<typeof generateAddressKeys>;
     userAddressEnabled?: boolean;
+    isSimpleLogin?: boolean;
 }) => {
     const addressKey = userAddressKey || dummyAddressKey;
     const alternativeAddressKey = await alternativeAddressKeyPromise;
@@ -307,7 +309,7 @@ const getSetup = async ({
         localID: '1',
         data: {
             ID: '1',
-            Sender: { Name: senderEmailAddress, Address: senderEmailAddress },
+            Sender: { Name: senderEmailAddress, Address: senderEmailAddress, IsSimpleLogin: isSimpleLogin ? 1 : 0 },
             AddressID: userPrimaryAddressID,
             Subject: emailSubject,
             Time: new Date().getTime() / 1000,
@@ -1421,6 +1423,29 @@ END:VCALENDAR`;
                     expect(screen.getByText(/Yes/, { selector: 'button' })).toBeInTheDocument();
                     expect(screen.getByText(/Maybe/, { selector: 'button' })).toBeInTheDocument();
                     expect(screen.getByText(/No/, { selector: 'button' })).toBeInTheDocument();
+                });
+
+                it('should not be possible to accept party crasher events when the mail is coming from SimpleLogin', async () => {
+                    const message = await getSetup({
+                        attachments: [
+                            { attachmentID: dummyAttachmentID, filename: dummyFileName, ics: partyCrasherExternalICS },
+                        ],
+                        methodInMimeType: ICAL_METHOD.REQUEST,
+                        userCalendarSettings: dummyCalendarUserSettings,
+                        senderEmailAddress: dummyRecipientExternalEmailAddress,
+                        isSimpleLogin: true,
+                    });
+                    await render(<ExtraEvents message={message} />, false);
+                    // Alert is displayed
+                    expect(
+                        await screen.findByText('Your email address is not in the original participants list.')
+                    ).toBeInTheDocument();
+
+                    // test buttons
+                    expect(screen.queryByText(/Attending?/)).not.toBeInTheDocument();
+                    expect(screen.queryByText(/Yes/, { selector: 'button' })).not.toBeInTheDocument();
+                    expect(screen.queryByText(/Maybe/, { selector: 'button' })).not.toBeInTheDocument();
+                    expect(screen.queryByText(/No/, { selector: 'button' })).not.toBeInTheDocument();
                 });
             });
         });
