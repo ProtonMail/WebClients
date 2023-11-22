@@ -6,7 +6,7 @@ import { withCache } from '@proton/pass/store/actions/with-cache';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import type { EndpointOptions } from '@proton/pass/store/actions/with-receiver';
 import { withReceiver } from '@proton/pass/store/actions/with-receiver';
-import withRequest, { withRequestFailure, withRequestSuccess } from '@proton/pass/store/actions/with-request';
+import withRequest, { withRequestSuccess } from '@proton/pass/store/actions/with-request';
 import type { SynchronizationResult } from '@proton/pass/store/sagas/client/sync';
 import type { AppStatus, Maybe } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -50,22 +50,29 @@ export const bootSuccess = createAction('boot::success', (payload: Maybe<Synchro
 );
 
 export const syncIntent = createAction('sync::intent', () =>
-    withRequest({ id: syncRequest(), type: 'start' })({ payload: {} })
+    pipe(
+        withRequest({ id: syncRequest(), type: 'start' }),
+        withNotification({
+            text: c('Info').t`Syncing your vaults…`,
+            type: 'info',
+            expiration: -1,
+            showCloseButton: false,
+            loading: true,
+        })
+    )({ payload: {} })
 );
 
-export const syncSuccess = createAction(
-    'sync::success',
-    withRequestSuccess((payload: SynchronizationResult) =>
-        pipe(
-            withCache,
-            withNotification({ type: 'info', text: c('Info').t`Successfully synced all vaults` })
-        )({ payload })
-    )
+export const syncSuccess = createAction('sync::success', (payload: SynchronizationResult) =>
+    pipe(
+        withCache,
+        withRequest({ id: syncRequest(), type: 'success' }),
+        withNotification({ type: 'info', text: c('Info').t`Successfully synced all vaults` })
+    )({ payload })
 );
 
-export const syncFailure = createAction(
-    'sync::failure',
-    withRequestFailure((error: unknown) =>
-        withNotification({ type: 'error', text: c('Error').t`Unable to sync`, error })({ payload: {} })
-    )
+export const syncFailure = createAction('sync::failure', (error: unknown) =>
+    pipe(
+        withRequest({ id: syncRequest(), type: 'failure' }),
+        withNotification({ type: 'error', text: c('Error').t`Unable to sync`, error })
+    )({ payload: {} })
 );
