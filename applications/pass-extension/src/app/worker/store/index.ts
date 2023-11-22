@@ -8,6 +8,7 @@ import createSagaMiddleware from 'redux-saga';
 
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
+import { startEventPolling } from '@proton/pass/store/actions';
 import { requestMiddleware } from '@proton/pass/store/middlewares/request-middleware';
 import reducer from '@proton/pass/store/reducers';
 import { workerRootSaga } from '@proton/pass/store/sagas';
@@ -35,6 +36,7 @@ const store = configureStore({
 });
 
 const options: WorkerRootSagaOptions = {
+    endpoint: 'background',
     getAuthStore: withContext((ctx) => ctx.authStore),
     getAuthService: withContext((ctx) => ctx.service.auth),
     getCache: withContext(async (ctx) => {
@@ -62,15 +64,16 @@ const options: WorkerRootSagaOptions = {
     /* Sets the worker status according to the
      * boot sequence's result. On boot failure,
      * clear */
-    onBoot: withContext(async (ctx, result) => {
-        if (result.ok) {
+    onBoot: withContext(async (ctx, res) => {
+        if (res.ok) {
+            store.dispatch(startEventPolling());
             void ctx.service.telemetry?.start();
             ctx.setStatus(AppStatus.READY);
             WorkerMessageBroker.buffer.flush();
         } else {
             ctx.service.telemetry?.stop();
             ctx.setStatus(AppStatus.ERROR);
-            if (result.clearCache) await ctx.service.storage.local.unset(['salt', 'state', 'snapshot']);
+            if (res.clearCache) await ctx.service.storage.local.unset(['salt', 'state', 'snapshot']);
         }
     }),
 
