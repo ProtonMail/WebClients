@@ -3,6 +3,11 @@ import type { AnyAction } from 'redux';
 import type { HistoryItem, OptimisticReducersMapObject, WrappedOptimisticState } from '../types';
 import { isCombinedOptimisticReducer } from './assertions';
 
+export const wrapOptimisticState = <T>(state: T): WrappedOptimisticState<T> => ({
+    ...state,
+    optimistic: { history: [] },
+});
+
 export const unwrapOptimisticState = <T>(state: WrappedOptimisticState<T>): T => {
     const { optimistic, ...inner } = state;
 

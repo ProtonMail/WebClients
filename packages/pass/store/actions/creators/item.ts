@@ -238,7 +238,7 @@ export const itemRestoreSuccess = createOptimisticAction(
     ({ payload }) => getItemActionId(payload)
 );
 
-export const itemUsed = createAction('item::used', (payload: SelectedItem) => withCache({ payload }));
+export const itemAutofilled = createAction('item::autofilled', (payload: SelectedItem) => ({ payload }));
 
 export const itemUsedSync = createAction(
     'item::used::sync',

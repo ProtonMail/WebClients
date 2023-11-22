@@ -8,7 +8,7 @@ import { DEFAULT_RANDOM_PW_OPTIONS } from '@proton/pass/hooks/usePasswordGenerat
 import { clientReady } from '@proton/pass/lib/client';
 import browser from '@proton/pass/lib/globals/browser';
 import type { SelectAutofillCandidatesOptions } from '@proton/pass/lib/search/types';
-import { autofillIntent, itemUsed } from '@proton/pass/store/actions';
+import { itemAutofilled } from '@proton/pass/store/actions';
 import {
     selectAutofillCandidates,
     selectItemByShareIdAndId,
@@ -44,7 +44,7 @@ export const createAutoFillService = () => {
         const item = selectItemByShareIdAndId(shareId, itemId)(state);
 
         if (item !== undefined && item.data.type === 'login') {
-            store.dispatch(autofillIntent({ shareId, itemId }));
+            store.dispatch(itemAutofilled({ shareId, itemId }));
             return {
                 username: deobfuscate(item.data.content.username),
                 password: deobfuscate(item.data.content.password),
@@ -131,12 +131,8 @@ export const createAutoFillService = () => {
         WorkerMessageType.AUTOFILL_SELECT,
         onContextReady(async (_, message) => {
             const credentials = getAutofillData(message.payload);
+            if (credentials === undefined) throw new Error('Could not get credentials for autofill request');
 
-            if (credentials === undefined) {
-                throw new Error('Could not get credentials for autofill request');
-            }
-
-            store.dispatch(itemUsed(message.payload));
             return credentials;
         })
     );

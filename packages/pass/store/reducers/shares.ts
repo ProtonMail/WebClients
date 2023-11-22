@@ -40,17 +40,9 @@ export type VaultShareItem = ShareItem<ShareType.Vault>;
 export type SharesState = { [shareId: string]: ShareItem };
 
 export const shares: Reducer<SharesState> = (state = {}, action: AnyAction) => {
-    if (bootSuccess.match(action) && action.payload.sync?.shares !== undefined) {
-        return action.payload.sync.shares;
-    }
-
-    if (syncSuccess.match(action)) {
-        return action.payload.shares;
-    }
-
-    if (sharesSync.match(action)) {
-        return fullMerge(state, action.payload.shares);
-    }
+    if (bootSuccess.match(action) && action.payload?.shares !== undefined) return action.payload.shares;
+    if (syncSuccess.match(action)) return action.payload.shares;
+    if (sharesSync.match(action)) return fullMerge(state, action.payload.shares);
 
     if (shareEvent.match(action) && state !== null) {
         const { shareId, Events } = action.payload;

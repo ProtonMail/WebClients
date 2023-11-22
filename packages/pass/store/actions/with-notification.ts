@@ -1,11 +1,11 @@
 import type { AnyAction } from 'redux';
 
 import type { CreateNotificationOptions, NotificationType } from '@proton/components/index';
-import type { ExtensionEndpoint } from '@proton/pass/types';
+import type { ClientEndpoint } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
-export type Notification = CreateNotificationOptions & { endpoint?: ExtensionEndpoint; loading?: boolean };
+export type Notification = CreateNotificationOptions & { endpoint?: ClientEndpoint; loading?: boolean };
 export type WithNotification<T = AnyAction> = T & { meta: { notification: Notification } };
 export type NotificationOptions = Notification &
     ({ type: 'error'; error: unknown } | { type: Exclude<NotificationType, 'error'> });

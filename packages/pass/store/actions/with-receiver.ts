@@ -1,9 +1,9 @@
 import type { AnyAction } from 'redux';
 
-import type { ExtensionEndpoint, TabId } from '@proton/pass/types';
+import type { ClientEndpoint, TabId } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 
-export type EndpointOptions = { endpoint?: ExtensionEndpoint; tabId?: TabId };
+export type EndpointOptions = { endpoint?: ClientEndpoint; tabId?: TabId };
 export type WithReceiverAction<T = AnyAction> = T & { meta: { receiver: EndpointOptions } };
 export type WithSenderAction<T = AnyAction> = T & { meta: { sender?: EndpointOptions } };
 
@@ -13,7 +13,7 @@ export const isActionWithReceiver = <T extends AnyAction>(action?: T): action is
     return meta?.receiver !== undefined || meta?.tabId !== undefined;
 };
 
-export const acceptActionWithReceiver = (action: AnyAction, endpoint: ExtensionEndpoint, tabId?: TabId) => {
+export const acceptActionWithReceiver = (action: AnyAction, endpoint: ClientEndpoint, tabId?: TabId) => {
     if (isActionWithReceiver(action)) {
         const { meta } = action;
         return (

@@ -6,7 +6,7 @@ import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider'
 import { API_PROXY_KEY } from '@proton/pass/lib/api/proxy';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
-import { type ExtensionEndpoint, type Maybe, type OtpRequest, WorkerMessageType } from '@proton/pass/types';
+import { type ClientEndpoint, type Maybe, type OtpRequest, WorkerMessageType } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import noop from '@proton/utils/noop';
 
@@ -16,7 +16,7 @@ const getDomainImageURL = (domain?: string): Maybe<string> => {
     return `${basePath}/core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;
 };
 
-const createOTPGenerator = (endpoint: ExtensionEndpoint) => (payload: OtpRequest) =>
+const createOTPGenerator = (endpoint: ClientEndpoint) => (payload: OtpRequest) =>
     sendMessage.on(
         resolveMessageFactory(endpoint)({ type: WorkerMessageType.OTP_CODE_GENERATE, payload }),
         (response) => (response.type === 'success' ? response : null)
@@ -24,7 +24,7 @@ const createOTPGenerator = (endpoint: ExtensionEndpoint) => (payload: OtpRequest
 
 const onLink = (url: string) => browser.tabs.create({ url }).catch(noop);
 
-const createTelemetryHandler = (endpoint: ExtensionEndpoint) => (event: TelemetryEvent) =>
+const createTelemetryHandler = (endpoint: ClientEndpoint) => (event: TelemetryEvent) =>
     sendMessage(
         resolveMessageFactory(endpoint)({
             type: WorkerMessageType.TELEMETRY_EVENT,
@@ -48,7 +48,7 @@ const openSettings = (page?: string) => {
         .catch(noop);
 };
 
-export const PassExtensionCore: FC<{ endpoint: ExtensionEndpoint }> = ({ children, endpoint }) => (
+export const PassExtensionCore: FC<{ endpoint: ClientEndpoint }> = ({ children, endpoint }) => (
     <PassCoreProvider
         config={config}
         generateOTP={useCallback(createOTPGenerator(endpoint), [])}

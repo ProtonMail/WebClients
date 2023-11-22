@@ -25,13 +25,13 @@ import inviteRemove from './invites/invite-remove.saga';
 import inviteResend from './invites/invite-resend.saga';
 import newUserInvitePromote from './invites/new-user-invite-promote.saga';
 import newUserInviteRemove from './invites/new-user-invite-remove.saga';
+import itemAutofilled from './items/item-autofill.saga';
 import itemCreation from './items/item-creation.saga';
 import itemDelete from './items/item-delete.saga';
 import itemEdit from './items/item-edit.saga';
 import itemMove from './items/item-move.saga';
 import itemRestore from './items/item-restore.saga';
 import itemTrash from './items/item-trash.saga';
-import itemUsed from './items/item-used.saga';
 import shareAccessOptions from './shares/share-access-options.saga';
 import shareEditRole from './shares/share-edit-role.saga';
 import shareLeave from './shares/share-leave.saga';
@@ -67,7 +67,7 @@ export function* workerRootSaga(options: WorkerRootSagaOptions) {
             itemRestore,
             itemsImport,
             itemTrash,
-            itemUsed,
+            itemAutofilled,
             newUserInvitePromote,
             newUserInviteRemove,
             notification,
