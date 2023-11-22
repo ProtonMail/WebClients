@@ -70,7 +70,7 @@ import {
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { Attachment } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome, Unwrap } from '@proton/shared/lib/interfaces/utils';
-import { getOriginalTo } from '@proton/shared/lib/mail/messages';
+import { getOriginalTo, hasSimpleLoginSender } from '@proton/shared/lib/mail/messages';
 import unary from '@proton/utils/unary';
 
 import { hasIcalExtension } from 'proton-mail/helpers/attachment/attachment';
@@ -478,7 +478,7 @@ export const processEventInvitation = <T>(
         } else if (!isImport) {
             // The user is a party crasher
             isPartyCrasher = true;
-            if (!hasProtonUID) {
+            if (!hasProtonUID && !hasSimpleLoginSender(message.data)) {
                 // To let the user reply, we fake it being in the attendee list
                 const { participant, selfAttendee, selfAddress } =
                     buildPartyCrasherParticipantData(originalTo, ownAddresses, contactEmails, attendees) || {};
@@ -749,10 +749,9 @@ export const getDoNotDisplayButtons = (model: RequireSome<InvitationModel, 'invi
     const {
         isImport,
         hasMultipleVevents,
-        hasProtonUID,
         isOrganizerMode,
         isPartyCrasher,
-        invitationIcs: { method, vevent: veventIcs },
+        invitationIcs: { method, vevent: veventIcs, attendee: attendeeIcs },
         invitationApi,
         calendarData,
         isOutdated,
@@ -771,7 +770,7 @@ export const getDoNotDisplayButtons = (model: RequireSome<InvitationModel, 'invi
         !!isOutdated ||
         !isAddressActive ||
         !!calendarData?.isCalendarDisabled ||
-        (isPartyCrasher && hasProtonUID)
+        (isPartyCrasher && !attendeeIcs)
     );
 };
 
