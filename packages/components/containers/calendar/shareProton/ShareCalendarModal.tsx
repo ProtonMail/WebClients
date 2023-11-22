@@ -637,7 +637,7 @@ const ShareCalendarModal = ({ calendar, addresses, onFinish, members, invitation
                                 ]}
                                 onChange={(value) => setPermissions(value)}
                                 value={permissions}
-                                ariaDescribedBy="desc-label-permission"
+                                aria-describedby="desc-label-permission"
                             />
                         </div>
                         <div className="color-weak">
