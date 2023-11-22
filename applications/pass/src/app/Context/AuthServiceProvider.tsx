@@ -19,6 +19,7 @@ import noop from '@proton/utils/noop';
 
 import { api, authStore } from '../../lib/core';
 import { deletePassDB } from '../../lib/database';
+import type { ServiceWorkerMessageHandler } from '../ServiceWorker/ServiceWorkerProvider';
 import { useServiceWorker } from '../ServiceWorker/ServiceWorkerProvider';
 import { store } from '../Store/store';
 import { useClientRef } from './ClientProvider';
@@ -177,16 +178,17 @@ export const AuthServiceProvider: FC = ({ children }) => {
 
         /* setup listeners on the service worker's broadcasting channel in order to
          * sync the current client if any authentication changes happened in another tab */
-        sw.on('unauthorized', ({ localID }) => {
-            if (authStore.hasSession(localID)) void authService.logout({ soft: true, broadcast: false });
-        });
 
-        sw.on('locked', ({ localID }) => {
+        const handleUnauthorized: ServiceWorkerMessageHandler<'unauthorized'> = ({ localID }) => {
+            if (authStore.hasSession(localID)) authService.logout({ soft: true, broadcast: false }).catch(noop);
+        };
+
+        const handleLocked: ServiceWorkerMessageHandler<'locked'> = ({ localID }) => {
             const unlocked = authStore.getLockStatus() !== SessionLockStatus.LOCKED;
             if (authStore.hasSession(localID) && unlocked) void authService.lock({ soft: true, broadcast: false });
-        });
+        };
 
-        sw.on('refresh', ({ localID, data }) => {
+        const handleRefresh: ServiceWorkerMessageHandler<'refresh'> = ({ localID, data }) => {
             if (authStore.hasSession(localID)) {
                 authStore.setAccessToken(data.AccessToken);
                 authStore.setRefreshToken(data.RefreshToken);
@@ -194,7 +196,17 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 authStore.setRefreshTime(data.RefreshTime);
                 void authService.config.onSessionRefresh?.(localID, data, false);
             }
-        });
+        };
+
+        sw.on('unauthorized', handleUnauthorized);
+        sw.on('locked', handleLocked);
+        sw.on('refresh', handleRefresh);
+
+        return () => {
+            sw.off('unauthorized', handleUnauthorized);
+            sw.off('locked', handleLocked);
+            sw.off('refresh', handleRefresh);
+        };
     }, []);
 
     return <AuthServiceContext.Provider value={authService}>{children}</AuthServiceContext.Provider>;
