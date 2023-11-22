@@ -10,11 +10,11 @@ enum MailFeatureFlag {
 }
 enum CommonFeatureFlag {
     DisableElectronMail = 'DisableElectronMail',
+    SignedInAccountRecovery = 'SignedInAccountRecovery',
 }
 
 enum AccountFlag {
     MaintenanceImporter = 'MaintenanceImporter',
-    SignedInAccountRecovery = 'SignedInAccountRecovery',
     BF2023IsExpired = 'BF2023IsExpired',
     BF2023OfferCheck = 'BF2023OfferCheck',
     SentinelPassPlus = 'SentinelPassPlus',
