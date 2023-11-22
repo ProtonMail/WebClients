@@ -5,12 +5,11 @@ import { type EncryptedPassCache } from '@proton/pass/types/worker/cache';
 import { logger } from '@proton/pass/utils/logger';
 import noop from '@proton/utils/noop';
 
-export const CACHE_DB_VERSION = 1;
-export const CACHE_KEYS: (keyof EncryptedPassCache)[] = ['state', 'snapshot', 'salt'];
-
 export interface PassDB extends DBSchema {
-    cache: { value: Blob; key: keyof EncryptedPassCache };
+    cache: { key: 'state'; value: Blob } | { key: 'snapshot'; value: Blob } | { key: 'salt'; value: Blob };
 }
+
+export const CACHE_DB_VERSION = 1;
 
 /** DB is created for each userID for future-proofing account switching
  * capabilities. */
@@ -38,7 +37,9 @@ export const writeDBCache = async (userID: string, cache: EncryptedPassCache): P
         const tx = db.transaction('cache', 'readwrite');
 
         await Promise.all([
-            ...CACHE_KEYS.map((key) => tx.store.put(new Blob([cache[key] ?? ''], { type: 'text/plain' }), key)),
+            tx.store.put(new Blob([cache.state ?? ''], { type: 'text/plain' }), 'state'),
+            tx.store.put(new Blob([cache.snapshot ?? ''], { type: 'text/plain' }), 'snapshot'),
+            tx.store.put(new Blob([cache.salt ?? ''], { type: 'text/plain' }), 'salt'),
             tx.done,
         ]);
 
@@ -56,9 +57,11 @@ export const getDBCache = async (userID: string): Promise<Partial<EncryptedPassC
         const tx = db.transaction('cache', 'readwrite');
 
         const [state, snapshot, salt] = await Promise.all([
-            ...CACHE_KEYS.map((key) => tx.store.get(key).then((blob) => blob?.text())),
+            tx.store.get('state').then((value) => (value instanceof Blob ? value?.text() : undefined)),
+            tx.store.get('snapshot').then((value) => (value instanceof Blob ? value?.text() : undefined)),
+            tx.store.get('salt').then((value) => (value instanceof Blob ? value?.text() : undefined)),
             tx.done.then(noop),
-        ]);
+        ] as const);
 
         db.close();
 
