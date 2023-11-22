@@ -1,7 +1,9 @@
-import { type VFC } from 'react';
+import type { VFC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 
+import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
+import type { ItemNewRouteParams } from '@proton/pass/components/Core/routing';
 import { AliasNew } from '@proton/pass/components/Item/Alias/Alias.new';
 import { CreditCardNew } from '@proton/pass/components/Item/CreditCard/CreditCard.new';
 import { LoginNew } from '@proton/pass/components/Item/Login/Login.new';
@@ -10,8 +12,6 @@ import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { itemCreationIntent } from '@proton/pass/store/actions';
 import { selectDefaultVault, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { ItemCreateIntent, ItemType } from '@proton/pass/types';
-
-import { useNavigation } from '../../Core/NavigationProvider';
 
 const itemNewMap: { [T in ItemType]: VFC<ItemNewViewProps<T>> } = {
     login: LoginNew,
@@ -27,14 +27,14 @@ export const ItemNew: VFC = () => {
     const history = useHistory();
     const dispatch = useDispatch();
 
-    const { activeShareId, itemType } = useParams<{ activeShareId: string; itemType: ItemType }>();
+    const { type } = useParams<ItemNewRouteParams>();
     const { didDowngrade } = useSelector(selectVaultLimits);
 
     /* if user downgraded - always auto-select the default vault id */
     const defaultVault = useSelector(selectDefaultVault);
-    const shareId = didDowngrade ? defaultVault.shareId : activeShareId ?? defaultVault.shareId;
+    const shareId = didDowngrade ? defaultVault.shareId : selectedShareId ?? defaultVault.shareId;
 
-    const ItemNewComponent = itemNewMap[itemType];
+    const ItemNewComponent = itemNewMap[type];
 
     const handleSubmit = (createIntent: ItemCreateIntent) => {
         dispatch(itemCreationIntent(createIntent));
