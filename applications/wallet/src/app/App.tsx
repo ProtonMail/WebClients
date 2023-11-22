@@ -1,6 +1,19 @@
 import { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
+import {
+    ArcElement,
+    CategoryScale,
+    Chart as ChartJS,
+    Filler,
+    Legend,
+    LineElement,
+    LinearScale,
+    PointElement,
+    Title,
+    Tooltip,
+} from 'chart.js';
+
 import { LoaderPage, ProtonApp, StandardPublicApp, StandardSetup, getSessionTrackingEnabled } from '@proton/components';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import metrics from '@proton/metrics/index';
@@ -22,6 +35,8 @@ newVersionUpdater(config);
 sentry({ config, uid: authentication.getUID(), sessionTracking: getSessionTrackingEnabled() });
 
 metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
+
+ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement, LineElement, Title, Filler);
 
 const App = () => {
     const [hasInitialAuth] = useState(() => {

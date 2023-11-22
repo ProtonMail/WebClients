@@ -4533,6 +4533,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@kurkle/color@npm:^0.3.0":
+  version: 0.3.2
+  resolution: "@kurkle/color@npm:0.3.2"
+  checksum: a9e8e3e35dcd59dec4dd4f0105919c05e24823a96347bcf152965c29e48d6290b66d5fb96c071875db752e10930724c48ce6d338fefbd65e0ce5082d5c78970e
+  languageName: node
+  linkType: hard
+
 "@leichtgewicht/ip-codec@npm:^2.0.1":
   version: 2.0.3
   resolution: "@leichtgewicht/ip-codec@npm:2.0.3"
@@ -15931,7 +15938,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"check-error@npm:^1.0.2":
+"chart.js@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "chart.js@npm:4.4.0"
+  dependencies:
+    "@kurkle/color": "npm:^0.3.0"
+  checksum: a81a65ef4767c79b4645703a08947811966d231824868c2483172a6a2dffcb269fae32a3ffd692cb0dee6ff982d4b15e2cfb1d56373f0f0d3ea51d7e9b7b96cd
+  languageName: node
+  linkType: hard
+
+"check-error@npm:^1.0.3":
   version: 1.0.3
   resolution: "check-error@npm:1.0.3"
   dependencies:
@@ -33485,6 +33501,7 @@ __metadata:
     "@types/react-window": "npm:^1.8.7"
     babel-plugin-transform-class-properties: "npm:^6.24.1"
     babel-plugin-transform-require-context: "npm:^0.1.1"
+    chart.js: "npm:^4.4.0"
     client-zip: "npm:^2.4.4"
     cross-env: "npm:^7.0.3"
     cross-var: "npm:^1.1.0"
@@ -33499,6 +33516,7 @@ __metadata:
     prettier: "npm:^3.0.3"
     pretty-format: "npm:^29.7.0"
     react: "npm:^17.0.2"
+    react-chartjs-2: "npm:^5.2.0"
     react-dom: "npm:^17.0.2"
     react-router-dom: "npm:^5.3.4"
     react-window: "npm:^1.8.9"
@@ -34531,6 +34549,16 @@ __metadata:
     lodash.flow: "npm:^3.3.0"
     pure-color: "npm:^1.2.0"
   checksum: 10c0/4887ac57b36fedc7e1ebc99ae431c5feb07d60a9150770d0ca3a59f4ae7059434ea8813ca4f915e7434d4d8d8529b9ba072ceb85041fd52ca1cd6289c57c9621
+  languageName: node
+  linkType: hard
+
+"react-chartjs-2@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "react-chartjs-2@npm:5.2.0"
+  peerDependencies:
+    chart.js: ^4.1.1
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 437e443a268b7eebab3f1a6f0f5d936e58caf650fca55f568a612a46c563d22af683a64185eac8005aa644e4960a5a72cc1075a2574b89ec46c7653aaf4025e2
   languageName: node
   linkType: hard
 
