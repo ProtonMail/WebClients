@@ -2,7 +2,6 @@ import type { AnyAction } from 'redux';
 import type { Task } from 'redux-saga';
 import { cancel, fork, select, take, takeLatest } from 'redux-saga/effects';
 
-import { clientReady } from '@proton/pass/lib/client';
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { CACHE_SALT_LENGTH, getCacheEncryptionKey } from '@proton/pass/lib/crypto/utils/cache.encrypt';
 import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
@@ -11,19 +10,17 @@ import { type WithCache, isCachingAction } from '@proton/pass/store/actions/with
 import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/select-is-optimistic';
 import { reducerMap } from '@proton/pass/store/reducers';
 import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
-import { PassEncryptionTag } from '@proton/pass/types';
+import { AppStatus, PassEncryptionTag } from '@proton/pass/types';
+import { oneOf } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { objectFilter } from '@proton/pass/utils/object/filter';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
-import { wait } from '@proton/shared/lib/helpers/promise';
 
-function* cacheWorker(
-    { meta, type }: WithCache<AnyAction>,
-    { getAppState, getAuthStore, setCache }: WorkerRootSagaOptions
-) {
-    yield wait(meta.immediate ? 0 : 2_000);
+function* cacheWorker({ type }: WithCache<AnyAction>, { getAppState, getAuthStore, setCache }: WorkerRootSagaOptions) {
+    const loggedIn = getAuthStore().hasSession();
+    const booted = oneOf(AppStatus.READY, AppStatus.BOOTING)(getAppState().status);
 
-    if (getAuthStore().hasSession() && clientReady(getAppState().status)) {
+    if (loggedIn && booted) {
         try {
             const sessionLockToken = getAuthStore().getLockToken();
             const cacheSalt = crypto.getRandomValues(new Uint8Array(CACHE_SALT_LENGTH));
@@ -61,7 +58,7 @@ function* cacheWorker(
                 state: uint8ArrayToString(encryptedData),
                 snapshot: uint8ArrayToString(encryptedWorkerSnapshot),
             });
-        } catch (_) {}
+        } catch {}
     }
 }
 
