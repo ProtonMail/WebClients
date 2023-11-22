@@ -1,23 +1,25 @@
 import { type FC, useCallback } from 'react';
+import { Route, Switch } from 'react-router-dom';
 
 import { Hamburger } from '@proton/components';
 import { useToggle } from '@proton/components/hooks';
 import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
 import { InviteContextProvider } from '@proton/pass/components/Invite/InviteContextProvider';
-import { Content } from '@proton/pass/components/Layout/Section/Content';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
-import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
 import { PasswordContextProvider } from '@proton/pass/components/PasswordGenerator/PasswordContext';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
+import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 import noop from '@proton/utils/noop';
 
+import { useClient } from '../Context/ClientProvider';
 import { Header } from './Header/Header';
 import { ItemSwitch } from './Item/ItemSwitch';
-import { Items } from './Sidebar/Items';
+import { Settings } from './Settings/Settings';
 import { Menu } from './Sidebar/Menu';
 
 export const Main: FC = () => {
-    const { setFilters } = useNavigation();
+    const client = useClient();
+    const { setFilters, matchSettings } = useNavigation();
     const { state: expanded, toggle } = useToggle();
 
     return (
@@ -30,19 +32,24 @@ export const Main: FC = () => {
                         </VaultActionsProvider>
                     </Sidebar>
 
-                    <main id="main" className="content flex-item-fluid overflow-hidden">
-                        <div className="flex flex-nowrap flex-column h-full">
-                            <Header hamburger={<Hamburger expanded={expanded} onToggle={toggle} />} />
-                            <div className="flex flex-align-items-center flex-justify-center flex-nowrap w-full h-full">
-                                <SubSidebar>
-                                    <Items />
-                                </SubSidebar>
-                                <Content>
-                                    <ItemSwitch />
-                                </Content>
-                            </div>
-                        </div>
-                    </main>
+                    <Route path={`/${getLocalIDPath(client.state.localID)}`}>
+                        {(route) => (
+                            <main id="main" className="content flex-item-fluid overflow-hidden">
+                                <div className="flex flex-nowrap flex-column h-full">
+                                    <Header
+                                        hamburger={<Hamburger expanded={expanded} onToggle={toggle} />}
+                                        searchable={!matchSettings}
+                                    />
+                                    <div className="flex flex-align-items-center flex-justify-center flex-nowrap w-full h-full">
+                                        <Switch>
+                                            <Route exact path={`${route.match!.path}/settings`} component={Settings} />
+                                            <Route component={ItemSwitch} />
+                                        </Switch>
+                                    </div>
+                                </div>
+                            </main>
+                        )}
+                    </Route>
                 </div>
             </PasswordContextProvider>
         </InviteContextProvider>
