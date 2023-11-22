@@ -29,7 +29,10 @@ function* onUserEvent(
     const telemetry = getTelemetry();
     if ('error' in event) throw event.error;
 
-    yield put(userEvent(event));
+    const currentEventId = (yield select(selectLatestEventId)) as MaybeNull<string>;
+
+    /* dispatch only if there was a change */
+    if (currentEventId !== event.EventID) yield put(userEvent(event));
 
     logger.info(`[ServerEvents::User] event ${logId(event.EventID!)}`);
     const { User: user } = event;
