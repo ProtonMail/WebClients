@@ -2,12 +2,12 @@ import type { AnyAction, Reducer } from 'redux';
 
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
 import {
-    autofillIntent,
     bootSuccess,
     emptyTrashSuccess,
     importItemsBatchSuccess,
     inviteAcceptSuccess,
     inviteCreationSuccess,
+    itemAutofilled,
     itemCreationDismiss,
     itemCreationFailure,
     itemCreationIntent,
@@ -278,11 +278,8 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
             );
         }
 
-        if (autofillIntent.match(action)) {
-            const {
-                payload: { shareId, itemId },
-            } = action;
-
+        if (itemAutofilled.match(action)) {
+            const { shareId, itemId } = action.payload;
             return partialMerge(state, { [shareId]: { [itemId]: { lastUseTime: getEpoch() } } });
         }
 
@@ -296,7 +293,6 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
 
         if (vaultMoveAllItemsSuccess.match(action)) {
             const { shareId, movedItems, destinationShareId } = action.payload;
-
             return fullMerge({ ...state, [shareId]: {} }, { [destinationShareId]: toMap(movedItems, 'itemId') });
         }
 
