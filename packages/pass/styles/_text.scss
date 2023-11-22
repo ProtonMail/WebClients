@@ -1,0 +1,27 @@
+@import '~@proton/styles/scss/lib/config';
+
+pre {
+	// override default monospaced font applied to pre tag
+	font-family: var(--optional-font-family, 'Inter', #{$fallback-fonts});
+	margin: 0;
+}
+
+.line-height-1 {
+	line-height: 1;
+}
+
+/*
+* FIXME
+* handle line-height within core spacing-two?
+*/
+.text-sm {
+	line-height: 1rem;
+}
+
+.text-lg {
+	line-height: 1.25rem;
+}
+
+.text-2xl {
+	line-height: 1.5rem;
+}

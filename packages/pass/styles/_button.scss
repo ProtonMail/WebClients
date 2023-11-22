@@ -1,0 +1,45 @@
+a {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+.button {
+	padding-block: 0.5rem;
+	padding-inline: 0.75rem;
+
+	&.button-small {
+		padding-block: 0.375rem;
+		padding-inline: 0.5rem;
+	}
+}
+
+.button-solid-norm,
+.button-solid-weak {
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	block-size: 2.25rem;
+
+	&.button-for-icon {
+		inline-size: 2.25rem;
+	}
+
+	&.button-small {
+		block-size: 2rem;
+
+		&.button-for-icon {
+			inline-size: 2rem;
+		}
+	}
+}
+
+.button-for-icon {
+	padding: 0.5rem;
+
+	&.button-small {
+		padding: 0.375rem;
+	}
+}
