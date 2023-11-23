@@ -51,6 +51,7 @@ const getDomainImageURL = (domain?: string): Maybe<string> =>
 export const App = () => {
     return (
         <PassCoreProvider
+            endpoint="web"
             config={PASS_CONFIG}
             generateOTP={generateOTP}
             getDomainImageURL={getDomainImageURL}
