@@ -253,9 +253,11 @@ const getParameters = (type: string, property: any) => {
     return result;
 };
 
-const checkIfDateTimeValid = (dateTimeString: string) => {
-    if (/--/.test(dateTimeString)) {
-        throw new Error('invalid date-time value');
+const checkIfDateOrDateTimeValid = (dateOrDateTimeString: string, isDateType = false) => {
+    if (/--/.test(dateOrDateTimeString)) {
+        // just to be consistent with error messages from ical.js
+        const message = isDateType ? 'could not extract integer from' : 'invalid date-time value';
+        throw new Error(message);
     }
 };
 
@@ -270,8 +272,8 @@ const fromIcalProperties = (properties = []) => {
             return acc;
         }
         const { type } = property;
-        if (type === 'date-time') {
-            checkIfDateTimeValid(property.toJSON()[3]);
+        if (['date-time', 'date'].includes(type)) {
+            checkIfDateOrDateTimeValid(property.toJSON()[3], type === 'date');
         }
         const values = property.getValues().map((value: any) => icalValueToInternalValue(type, value));
 
