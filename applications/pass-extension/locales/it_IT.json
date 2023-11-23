@@ -464,7 +464,7 @@
         "Il file CSV non contiene le seguenti intestazioni previste: ${ missingHeaders }"
       ],
       "Decrypting your ${ PASS_APP_NAME } export file failed. ${ errorDetail }": [
-        "Decriptazione del tuo file esportato da ${ PASS_APP_NAME } non riuscita. ${ errorDetail }"
+        "Decrittografia del tuo file esportato da ${ PASS_APP_NAME } non riuscita. ${ errorDetail }"
       ],
       "Deleting item failed": [
         "Eliminazione dell'elemento non riuscita"
@@ -801,7 +801,7 @@
         "Carte di credito, Campi personalizzati"
       ],
       "Decrypting your data": [
-        "Decriptazione dei tuoi dati in corso..."
+        "Decrittografia dei tuoi dati in corso"
       ],
       "Deleted items will be moved here first": [
         "Gli elementi eliminati verranno spostati prima qui"

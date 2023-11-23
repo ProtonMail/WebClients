@@ -780,6 +780,9 @@
       "Deleting \"${ payload.content.name }\"": [
         "Poistetaan \"${ payload.content.name }\""
       ],
+      "Discover ${ PASS_APP_NAME } Youtube Video": [
+        "Katso ${ PASS_APP_NAME } -YouTube-video"
+      ],
       "Drop file here to upload": [
         "Pudota ladattava tiedosto tähän"
       ],
@@ -801,6 +804,12 @@
       "Export is encrypted using PGP and requires a strong passphrase.": [
         "Tuonti salataan PGP:llä ja se vaatii vahvan tunnuslausekkeen."
       ],
+      "For easy access to your passwords and more.": [
+        "Helppo pääsy salasanoihisi ja muuhun."
+      ],
+      "For security reason, your access needs to be confirmed": [
+        "Turvallisuussyistä pääsysi on vahvistettava"
+      ],
       "For security reasons, your access needs to be confirmed": [
         "Turvallisuussyistä pääsysi on vahvistettava"
       ],
@@ -812,6 +821,9 @@
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Tilaa Pass Plus ja saat rajattomasti aliaksia, nautit ainutlaatuisista ominaisuuksista ja tuet meitä."
+      ],
+      "Here you will find all the necessary information to get you started.": [
+        "Täältä löydät kaikki tarvittavat tiedot, jotta pääset alkuun."
       ],
       "Import in progress:": [
         "Tuonti on käynnissä:"
@@ -973,6 +985,9 @@
       ],
       "Share with 10 others": [
         "Jaa 10 muun kanssa"
+      ],
+      "Sign in or create an account to continue.": [
+        "Jatka kirjautumalla tai luomalla tili."
       ],
       "Sign in to your account": [
         "Kirjaudu tilillesi"
