@@ -1,6 +1,5 @@
 import ReactDOM from 'react-dom';
 
-import '@proton/pass/styles/common.scss';
 import sentry from '@proton/shared/lib/helpers/sentry';
 
 import * as config from '../../config';
