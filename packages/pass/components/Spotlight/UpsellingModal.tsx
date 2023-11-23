@@ -3,14 +3,13 @@ import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { Button, Card } from '@proton/atoms';
+import { Card } from '@proton/atoms';
 import type { IconName } from '@proton/components';
 import { Icon, InlineLinkButton } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import onboardingSVG from '@proton/pass/assets/onboarding.svg';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
-import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
-import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
-import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
+import { OnboardingModal } from '@proton/pass/components/Layout/Modal/OnboardingModal';
 import { PASS_BLOG_TRIAL_URL } from '@proton/pass/constants';
 import { selectTrialDaysRemaining } from '@proton/pass/store/selectors';
 import clsx from '@proton/utils/clsx';
@@ -58,35 +57,20 @@ export const UpsellingModal: VFC<Props> = ({ type, ...props }) => {
     const features = getFeatures();
 
     return (
-        <SidebarModal {...props}>
-            <Panel
-                className="text-center"
-                header={
-                    <PanelHeader
-                        actions={[
-                            <Button
-                                key="close-modal-button"
-                                className="flex-item-noshrink"
-                                icon
-                                pill
-                                shape="solid"
-                                onClick={props.onClose}
-                            >
-                                <Icon className="modal-close-icon" name="cross" alt={c('Action').t`Close`} />
-                            </Button>,
-                            <UpgradeButton key="upgrade-button" label={upgradeLabel} />,
-                        ]}
-                    />
-                }
-            >
-                <img src="/assets/onboarding.svg" className="mb-2 w-2/3" alt="user onboarding graphic" />
-                <h3 className="mb-4 text-bold ">{title}</h3>
-                {description && <p className="mb-6 text-rg">{description}</p>}
+        <OnboardingModal
+            {...props}
+            size="medium"
+            actions={[<UpgradeButton key="upgrade-button" label={upgradeLabel} />]}
+        >
+            <div className="flex flex-column flex-align-items-center w-full gap-5 m-auto">
+                <img src={onboardingSVG} className="w-3/5 " alt="user onboarding graphic" />
+                <h3 className="text-bold ">{title}</h3>
+                {description && <p className="m-2 text-md">{description}</p>}
 
                 <Card
                     rounded
                     bordered={false}
-                    className="mb-4 rounded-lg"
+                    className="w-full m-auto rounded-lg"
                     style={{ backgroundColor: 'var(--field-norm)', padding: '0 1rem' }}
                 >
                     {features.map(({ className, icon, label }, idx) => (
@@ -120,7 +104,7 @@ export const UpsellingModal: VFC<Props> = ({ type, ...props }) => {
                         {c('Action').t`Learn more`}
                     </InlineLinkButton>
                 )}
-            </Panel>
-        </SidebarModal>
+            </div>
+        </OnboardingModal>
     );
 };
