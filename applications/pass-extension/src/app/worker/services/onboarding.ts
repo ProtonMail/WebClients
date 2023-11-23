@@ -1,6 +1,16 @@
 import { PASS_BF_2023_DATES } from '@proton/pass/constants';
 import { api } from '@proton/pass/lib/api/api';
 import browser from '@proton/pass/lib/globals/browser';
+import type {
+    OnboardingAck,
+    OnboardingRule,
+    OnboardingStore,
+    OnboardingWhen,
+} from '@proton/pass/lib/onboarding/service';
+import {
+    createOnboardingService as createCoreOnboardingService,
+    createOnboardingRule,
+} from '@proton/pass/lib/onboarding/service';
 import {
     selectFeatureFlag,
     selectHasRegisteredLock,
@@ -8,44 +18,18 @@ import {
     selectUserState,
 } from '@proton/pass/store/selectors';
 import type { MaybeNull, TabId } from '@proton/pass/types';
-import {
-    type Maybe,
-    type OnboardingAcknowledgment,
-    OnboardingMessage,
-    type OnboardingState,
-    WorkerMessageType,
-} from '@proton/pass/types';
+import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { withPayloadLens } from '@proton/pass/utils/fp/lens';
-import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
 import { UNIX_DAY } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
-import identity from '@proton/utils/identity';
 import noop from '@proton/utils/noop';
 
 import WorkerMessageBroker from '../channel';
 import { withContext } from '../context';
 import store from '../store';
-
-type OnboardingContext = { state: OnboardingState };
-type OnboardingWhen = (previousAck: Maybe<OnboardingAcknowledgment>, state: OnboardingState) => boolean;
-type OnboardingOnAck = (ack: OnboardingAcknowledgment) => OnboardingAcknowledgment;
-type OnboardingRule = { message: OnboardingMessage; when?: OnboardingWhen; onAcknowledge?: OnboardingOnAck };
-
-export const INITIAL_ONBOARDING_STATE: OnboardingState = {
-    installedOn: -1,
-    updatedOn: -1,
-    acknowledged: [],
-};
-
-const createOnboardingRule = (options: OnboardingRule): OnboardingRule => ({
-    message: options.message,
-    onAcknowledge: options.onAcknowledge,
-    when: (previousAck, state) =>
-        options.when?.(previousAck, state) ?? !state.acknowledged.some((data) => data.message === options.message),
-});
 
 /* Define the onboarding rules here :
  * - each rule must be registered on a specific `OnboardingMessage` type
@@ -72,15 +56,11 @@ const ONBOARDING_RULES: OnboardingRule[] = [
     }),
     createOnboardingRule({
         message: OnboardingMessage.UPDATE_AVAILABLE,
-        onAcknowledge: withContext<OnboardingOnAck>((ctx, ack) => {
-            /* keep a reference to the current available update so as
-             * not to re-prompt the user with this update if ignored */
-            return merge(ack, {
-                extraData: {
-                    version: ctx.service.activation.getAvailableUpdate(),
-                },
-            });
-        }),
+        /* keep a reference to the current available update so as
+         * not to re-prompt the user with this update if ignored */
+        onAcknowledge: withContext<OnboardingAck>((ctx, ack) =>
+            merge(ack, { extraData: { version: ctx.service.activation.getAvailableUpdate() } })
+        ),
         when: withContext<OnboardingWhen>((ctx, previous) => {
             const availableVersion = ctx.service.activation.getAvailableUpdate();
             const previousAckVersion = previous?.extraData?.version as MaybeNull<string>;
@@ -129,39 +109,12 @@ const ONBOARDING_RULES: OnboardingRule[] = [
     }),
 ];
 
-export const createOnboardingService = () => {
-    const ctx: OnboardingContext = { state: INITIAL_ONBOARDING_STATE };
-
-    /* Every setState call will have the side-effect of
-     * updating the locally stored onboarding state  */
-    const setState = withContext<(state: Partial<OnboardingState>) => void>(({ service }, state) => {
-        ctx.state = merge(ctx.state, state);
-        void service.storage.local.set({ onboarding: JSON.stringify(ctx.state) });
-    });
+export const createOnboardingService = (store: OnboardingStore) => {
+    const { acknowledge, init, setState, state } = createCoreOnboardingService({ store, rules: ONBOARDING_RULES });
 
     const onInstall = () => setState({ installedOn: getEpoch() });
     const onUpdate = () => setState({ updatedOn: getEpoch() });
-
-    /* Reset the state's acknowledged messages. This may be
-     * useful when logging out a user - preserves timestamps */
     const reset = () => setState({ acknowledged: [] });
-
-    /* Acknowledges the current onboarding message by either pushing
-     * it to the acknowledged messages list or updating the entry */
-    const acknowledge = (message: OnboardingMessage) => {
-        logger.info(`[Worker::Onboarding] Acknowledging "${OnboardingMessage[message]}"`);
-        const acknowledged = ctx.state.acknowledged.find((data) => data.message === message);
-        const onAcknowledge = ONBOARDING_RULES.find((rule) => rule.message === message)?.onAcknowledge ?? identity;
-
-        setState({
-            acknowledged: [
-                ...ctx.state.acknowledged.filter((data) => data.message !== message),
-                onAcknowledge({ message, acknowledgedOn: getEpoch(), count: (acknowledged?.count ?? 0) + 1 }),
-            ],
-        });
-
-        return true;
-    };
 
     /* Define extra rules in the `ONBOARDING_RULES` constant :
      * we will resolve the first message that matches the rule's
@@ -170,8 +123,8 @@ export const createOnboardingService = () => {
         message: ONBOARDING_RULES.find(
             ({ message, when }) =>
                 when?.(
-                    ctx.state.acknowledged.find((ack) => message === ack.message),
-                    ctx.state
+                    state.acknowledged.find((ack) => message === ack.message),
+                    state
                 )
         )?.message,
     });
@@ -181,15 +134,6 @@ export const createOnboardingService = () => {
         await browser.tabs.update(tabId, { url: welcomePage }).catch(noop);
         return true;
     };
-
-    /* hydrate the onboarding state value from the storage
-     * on service creation. This will noop on first install */
-    const hydrate = withContext(async ({ service }) => {
-        try {
-            const { onboarding } = await service.storage.local.get(['onboarding']);
-            if (onboarding) setState(JSON.parse(onboarding));
-        } catch {}
-    });
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.ONBOARDING_ACK, withPayloadLens('message', acknowledge));
     WorkerMessageBroker.registerMessage(WorkerMessageType.ONBOARDING_REQUEST, () => getOnboardingMessage());
@@ -210,7 +154,7 @@ export const createOnboardingService = () => {
         tab?.id ? navigateToOnboarding(tab.id) : false
     );
 
-    return { hydrate, reset, onInstall, onUpdate };
+    return { init, reset, onInstall, onUpdate };
 };
 
 export type OnboardingService = ReturnType<typeof createOnboardingService>;
