@@ -16,9 +16,15 @@ export const defaultTranslations: EnsureTokenChargeableTranslations = {
     tabClosedError: c('Error').t`Tab closed`,
 };
 
+/**
+ * Partially preconfigured ensureTokenChargeable function.
+ */
 export const getEnsureTokenChargeable =
     (translations: EnsureTokenChargeableTranslations = defaultTranslations) =>
     (inputs: EnsureTokenChargeableInputs, delay?: number) =>
         innerEnsureTokenChargeable(inputs, translations, delay);
 
+/**
+ * Default implementation of the ensureTokenChargeable function.
+ */
 export const ensureTokenChargeable = getEnsureTokenChargeable();

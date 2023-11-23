@@ -22,6 +22,9 @@ export class InvalidCardDataError extends InvalidDataError {
     constructor(message?: string) {
         super(message);
         this.name = 'InvalidCardDataError';
+
+        // Flag to ignore this error and not send it to Sentry
+        (this as any).ignore = true;
     }
 }
 
@@ -37,21 +40,41 @@ export class CardPaymentProcessor extends PaymentProcessor<CardPaymentProcessorS
     }
 
     constructor(
+        /**
+         * A function that is called when the payment token is non-chargeable. It's supposed to be used to show the
+         * confirmation dialog to the user. The function is supposed to return a promise that resolves when the user
+         * confirms the payment, and rejects when the user cancels the payment.
+         */
         public verifyPayment: PaymentVerificator,
         public api: Api,
+        /**
+         * The payment token will be fetched for the specific amount and currency. Once it's changes, the
+         * pre-fetched payment must be reset, and the token must be fetched again.
+         */
         amountAndCurrency: AmountAndCurrency,
-        private onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
+        /**
+         * If this flag is set to `true`, then the payment token will be fetched without specifying the amount and
+         * currency. This is useful when you want to verify the card without charging it. For example, when user adds a
+         * card to the account, but not use it right away for subscription or top-up.
+         */
+        private verifyOnly: boolean,
+        onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
     ) {
         super(
             {
                 card: getDefaultCard(),
                 cardSubmitted: false,
             },
-            amountAndCurrency
+            amountAndCurrency,
+            onTokenIsChargeable
         );
     }
 
-    async fetchPaymentToken(): Promise<ChargeablePaymentToken | NonChargeablePaymentToken> {
+    async fetchPaymentToken(): Promise<ChargeablePaymentToken | NonChargeablePaymentToken | null> {
+        if (this.amountAndCurrency.Amount === 0 && !this.verifyOnly) {
+            return null;
+        }
+
         if (!this.handleCardSubmit()) {
             throw new InvalidCardDataError();
         }
@@ -59,14 +82,16 @@ export class CardPaymentProcessor extends PaymentProcessor<CardPaymentProcessorS
         this.fetchedPaymentToken = await createPaymentTokenForCard(
             this.getPaymentParameters(),
             this.api,
-            this.amountAndCurrency
+            this.verifyOnly ? undefined : this.amountAndCurrency
         );
 
         return this.fetchedPaymentToken;
     }
 
     async verifyPaymentToken(): Promise<ChargeablePaymentParameters> {
-        if (this.amountAndCurrency.Amount === 0) {
+        if (this.amountAndCurrency.Amount === 0 && !this.verifyOnly) {
+            // The amount is 0, so there is no payment token to verify.
+            // We can just return the payment parameters, and they can be charged right away.
             return this.tokenCreated();
         }
 
@@ -75,20 +100,19 @@ export class CardPaymentProcessor extends PaymentProcessor<CardPaymentProcessorS
         }
 
         if (this.fetchedPaymentToken.chargeable) {
+            // Is it already chargeable? Great! Then format it, mark is as ChargeablePaymentParameters, and return.
             return this.tokenCreated(this.fetchedPaymentToken);
         }
 
-        let token: TokenPaymentMethod;
-        try {
-            token = await this.verifyPayment({
-                Payment: this.getPaymentParameters().Payment,
-                Token: this.fetchedPaymentToken.Payment.Details.Token,
-                ApprovalURL: this.fetchedPaymentToken.approvalURL,
-                ReturnHost: this.fetchedPaymentToken.returnHost,
-            });
-        } catch (error: any) {
-            throw error;
-        }
+        // Otherwise, actually call the payment verificator. It will typically open a modal and/or a new tab
+        // where user needs to confirm the payment.
+        const token: TokenPaymentMethod = await this.verifyPayment({
+            Payment: this.getPaymentParameters().Payment,
+            Token: this.fetchedPaymentToken.Payment.Details.Token,
+            ApprovalURL: this.fetchedPaymentToken.approvalURL,
+            ReturnHost: this.fetchedPaymentToken.returnHost,
+            addCardMode: this.verifyOnly,
+        });
 
         return this.tokenCreated(token);
     }
@@ -107,7 +131,7 @@ export class CardPaymentProcessor extends PaymentProcessor<CardPaymentProcessorS
     }
 
     private handleCardSubmit(): boolean {
-        if (this.amountAndCurrency.Amount === 0) {
+        if (this.amountAndCurrency.Amount === 0 && !this.verifyOnly) {
             return true;
         }
 

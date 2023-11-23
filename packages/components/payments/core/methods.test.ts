@@ -423,6 +423,7 @@ describe('initializePaymentMethods()', () => {
         const methods = await initializePaymentMethods(
             apiMock,
             undefined,
+            undefined,
             true,
             500,
             'coupon',
@@ -455,6 +456,7 @@ describe('initializePaymentMethods()', () => {
 
         const methods = await initializePaymentMethods(
             apiMock,
+            undefined,
             undefined,
             false,
             500,
