@@ -1,4 +1,5 @@
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
 
 import { useAuthentication } from '../..';
 import { Props as PaymentProps, PaymentsNoApi } from './Payment';
@@ -9,6 +10,11 @@ export type Props = ReturnType<typeof usePaymentFacade> & {
     onBitcoinTokenValidated?: PaymentProps['onBitcoinTokenValidated'];
     onAwaitingBitcoinPayment?: PaymentProps['onAwaitingBitcoinPayment'];
     triggersDisabled?: boolean;
+    hideFirstLabel?: boolean;
+    hideSavedMethodsDetails?: boolean;
+    disabled?: boolean;
+    isAuthenticated?: boolean;
+    defaultMethod?: PAYMENT_METHOD_TYPES;
 };
 
 const PaymentWrapper = ({
@@ -25,9 +31,14 @@ const PaymentWrapper = ({
     onBitcoinTokenValidated,
     onAwaitingBitcoinPayment,
     triggersDisabled,
+    hideFirstLabel,
+    hideSavedMethodsDetails,
+    disabled,
+    isAuthenticated: isAuthenticatedProp,
+    defaultMethod,
 }: Props) => {
     const { UID } = useAuthentication();
-    const isAuthenticated = !!UID;
+    const isAuthenticated = !!UID || !!isAuthenticatedProp;
 
     return (
         <PaymentsNoApi
@@ -52,6 +63,11 @@ const PaymentWrapper = ({
             onBitcoinTokenValidated={onBitcoinTokenValidated}
             onAwaitingBitcoinPayment={onAwaitingBitcoinPayment}
             triggersDisabled={triggersDisabled}
+            hideFirstLabel={hideFirstLabel}
+            cardFieldStatus={card.fieldsStatus}
+            hideSavedMethodsDetails={hideSavedMethodsDetails}
+            disabled={disabled}
+            defaultMethod={defaultMethod}
         />
     );
 };

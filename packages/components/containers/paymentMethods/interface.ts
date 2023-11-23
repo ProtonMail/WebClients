@@ -13,6 +13,7 @@ export type PaymentMethodFlows =
     | 'invoice'
     | 'signup'
     | 'signup-pass'
+    | 'signup-vpn'
     | 'human-verification'
     | 'credit'
     | 'donation'
