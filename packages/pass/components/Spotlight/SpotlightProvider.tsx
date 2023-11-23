@@ -34,9 +34,6 @@ export type SpotlightContextValue = {
     /** Sets the current message - if an invite  */
     setOnboardingMessage: (message: MaybeNull<SpotlightMessageDefinition>) => void;
     state: SpotlightState;
-    /** Flag indicating wether the spotlight should show : controlled by
-     * a timeout to be able to animate entering/exiting animations.. */
-    visible: boolean;
 };
 
 const INITIAL_STATE: SpotlightState = { open: false, message: null, upselling: null, pendingShareAccess: false };
@@ -47,7 +44,6 @@ export const SpotlightContext = createContext<SpotlightContextValue>({
     setPendingShareAccess: noop,
     setOnboardingMessage: noop,
     state: INITIAL_STATE,
-    visible: false,
 });
 
 export const SpotlightProvider: FC = ({ children }) => {
@@ -85,7 +81,6 @@ export const SpotlightProvider: FC = ({ children }) => {
             setUpselling: (upselling) => setState((prev) => ({ ...prev, upselling })),
             setOnboardingMessage,
             state,
-            visible: state.open && !state.pendingShareAccess && !state.upselling,
         }),
         [state]
     );
