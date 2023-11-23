@@ -50,6 +50,7 @@ import store from '../store';
 import { WorkerContext, withContext } from './context';
 
 export const createWorkerContext = (config: ProtonConfig) => {
+    const storage = createStorageService();
     const authStore = exposeAuthStore(createAuthStore(createStore()));
 
     const api = createApi({
@@ -190,10 +191,10 @@ export const createWorkerContext = (config: ProtonConfig) => {
             i18n: createI18nService(),
             injection: createInjectionService(),
             logger: createLoggerService(),
-            onboarding: createOnboardingService(),
+            onboarding: createOnboardingService(storage.local),
             otp: createOTPService(),
             settings: createSettingsService(),
-            storage: createStorageService(),
+            storage,
             store: createStoreService(),
             telemetry: BUILD_TARGET !== 'firefox' ? createTelemetryService() : null,
         },
@@ -230,7 +231,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
     });
 
     context.service.i18n.init().catch(noop);
-    context.service.onboarding.hydrate();
+    context.service.onboarding.init().catch(noop);
     context.service.cacheProxy.clean?.().catch(noop);
 
     if (ENV === 'development') {
