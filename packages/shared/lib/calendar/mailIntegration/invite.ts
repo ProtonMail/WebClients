@@ -191,7 +191,7 @@ interface CreateInviteVeventParams {
 export const createInviteVevent = ({ method, attendeesTo, vevent, keepDtstamp }: CreateInviteVeventParams) => {
     if ([ICAL_METHOD.REPLY, ICAL_METHOD.CANCEL].includes(method) && attendeesTo?.length) {
         const propertiesToKeepForCancel: (keyof VcalVeventComponent)[] = ['x-pm-shared-event-id'];
-        const propertiesToKeepForReply: (keyof VcalVeventComponent)[] = ['x-pm-proton-reply'];
+        const propertiesToKeepForReply: (keyof VcalVeventComponent)[] = ['x-pm-proton-reply', 'exdate'];
         const keepDtStampProperty: (keyof VcalVeventComponent)[] = ['dtstamp'];
 
         // only put RFC-mandatory fields to make reply as short as possible
