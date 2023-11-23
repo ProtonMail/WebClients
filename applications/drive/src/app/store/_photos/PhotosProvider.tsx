@@ -1,12 +1,11 @@
-import { FC, createContext, useContext, useState } from 'react';
+import { FC, createContext, useContext, useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks/index';
 import { queryDeletePhotosShare, queryPhotos } from '@proton/shared/lib/api/drive/photos';
 import type { Photo as PhotoPayload } from '@proton/shared/lib/interfaces/drive/photos';
 
 import { photoPayloadToPhotos, useDebouncedRequest } from '../_api';
-import { Share, ShareWithKey } from '../_shares';
-import useSharesState from '../_shares/useSharesState';
+import { ShareWithKey, useDefaultShare } from '../_shares';
 import type { Photo } from './interface';
 
 export const PhotosContext = createContext<{
@@ -18,20 +17,22 @@ export const PhotosContext = createContext<{
     photos: Photo[];
     loadPhotos: (abortSignal: AbortSignal, volumeId: string) => void;
     removePhotosFromCache: (linkIds: string[]) => void;
-    restoredShares: Share[] | ShareWithKey[] | undefined;
     deletePhotosShare: (volumeId: string, shareId: string) => Promise<void>;
 } | null>(null);
 
 export const PhotosProvider: FC = ({ children }) => {
-    const { getActivePhotosShare, getDefaultShareId, getRestoredPhotoShares } = useSharesState();
-    const defaultShareId = getDefaultShareId();
-    const share = getActivePhotosShare();
-    const restoredShares = getRestoredPhotoShares();
+    const [photosShare, setPhotosShare] = useState<ShareWithKey>();
+    const [share, setShare] = useState<ShareWithKey>();
+    const { getDefaultShare, getDefaultPhotosShare } = useDefaultShare();
 
     const request = useDebouncedRequest();
     const [photosLoading, withPhotosLoading] = useLoading();
 
     const [photos, setPhotos] = useState<Photo[]>([]);
+
+    useEffect(() => {
+        void Promise.all([getDefaultShare().then(setShare), getDefaultPhotosShare().then(setPhotosShare)]);
+    }, [getDefaultPhotosShare, getDefaultShare]);
 
     const loadPhotos = async (abortSignal: AbortSignal, volumeId: string) => {
         const photoCall = async (lastLinkId?: string) => {
@@ -62,22 +63,21 @@ export const PhotosProvider: FC = ({ children }) => {
         await request(queryDeletePhotosShare(volumeId, shareId));
     };
 
-    if (!defaultShareId) {
+    if (!share) {
         return <PhotosContext.Provider value={null}>{children}</PhotosContext.Provider>;
     }
 
     return (
         <PhotosContext.Provider
             value={{
-                shareId: share?.shareId,
-                linkId: share?.rootLinkId,
-                volumeId: share?.volumeId,
-                hasPhotosShare: !!share,
-                isLoading: (!defaultShareId && !share) || photosLoading,
+                shareId: photosShare?.shareId,
+                linkId: photosShare?.rootLinkId,
+                volumeId: photosShare?.volumeId,
+                hasPhotosShare: !!photosShare,
+                isLoading: (!share && !photosShare) || photosLoading,
                 photos,
                 loadPhotos,
                 removePhotosFromCache,
-                restoredShares,
                 deletePhotosShare,
             }}
         >
