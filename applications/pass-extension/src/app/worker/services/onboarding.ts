@@ -4,7 +4,7 @@ import browser from '@proton/pass/lib/globals/browser';
 import type {
     OnboardingAck,
     OnboardingRule,
-    OnboardingStore,
+    OnboardingStorageData,
     OnboardingWhen,
 } from '@proton/pass/lib/onboarding/service';
 import {
@@ -17,7 +17,7 @@ import {
     selectPassPlan,
     selectUserState,
 } from '@proton/pass/store/selectors';
-import type { MaybeNull, TabId } from '@proton/pass/types';
+import type { MaybeNull, Storage, TabId } from '@proton/pass/types';
 import { OnboardingMessage, WorkerMessageType } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -109,7 +109,7 @@ const ONBOARDING_RULES: OnboardingRule[] = [
     }),
 ];
 
-export const createOnboardingService = (store: OnboardingStore) => {
+export const createOnboardingService = (store: Storage<OnboardingStorageData>) => {
     const { acknowledge, init, setState, state } = createCoreOnboardingService({ store, rules: ONBOARDING_RULES });
 
     const onInstall = () => setState({ installedOn: getEpoch() });
