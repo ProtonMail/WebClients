@@ -21,7 +21,7 @@ const OfferLayout = ({ children, offer }: Props) => {
             )}
         >
             {hasMultipleDeals ? null : (
-                <div className="offer-side-image-container no-mobile no-scroll relative">
+                <div className="offer-side-image-container hidden md:flex no-scroll relative">
                     <picture>
                         <source
                             media="(-webkit-min-device-pixel-ratio: 1.25), min-resolution: 1.25dppx"
@@ -43,7 +43,7 @@ const OfferLayout = ({ children, offer }: Props) => {
                 )}
             >
                 {hasMultipleDeals ? (
-                    <div className="offer-top-banner-container text-center mb-4 no-mobile">
+                    <div className="offer-top-banner-container text-center mb-4 hidden md:flex">
                         {/* if viewport is higher than 990 px (image size), we'll use the 2x version for a proper display */}
                         <picture>
                             <source media="(min-width: 61.875em)" srcSet={`${bannerImage2x}`} />
