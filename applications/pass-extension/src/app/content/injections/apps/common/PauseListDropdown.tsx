@@ -35,11 +35,18 @@ export const PauseListDropdown: FC<Props> = ({ criteria, dense, hostname, label,
             /* Trick to re-render this component so that quickActions
              * dropdown is closed when iframe visibility changes */
             key={`item-quick-actions-dropdown-${visible}`}
-            className="flex-item-noshrink"
             color="weak"
             originalPlacement="bottom-end"
             shape="solid"
-            {...(dense ? { size: 'small', iconSize: 10, offset: 2, menuClassName: 'text-xs' } : { iconSize: 16 })}
+            {...(dense
+                ? {
+                      className: 'flex-item-noshrink button-xs',
+                      iconSize: 12,
+                      menuClassName: 'text-xs',
+                      offset: 2,
+                      size: 'small',
+                  }
+                : { size: 'small', iconSize: 18, className: 'flex-item-noshrink' })}
         >
             <DropdownMenuButton onClick={addToPauseList} label={label} ellipsis={false} />
         </QuickActionsDropdown>
