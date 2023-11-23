@@ -251,6 +251,9 @@
       "Create": [
         "Vytvoriť"
       ],
+      "Create a link to share with anyone outside ${ BRAND_NAME }": [
+        "Vytvorte odkaz na zdieľanie s kýmkoľvek mimo ${ BRAND_NAME }"
+      ],
       "Create account": [
         "Vytvoriť účet"
       ],
@@ -3470,7 +3473,7 @@
     },
     "email_forwarding_2023: Description": {
       "Unlock email forwarding to easily manage incoming information and more premium features when you upgrade.": [
-        "Odomknite si presmerovanie emailov na jednoduchú správu prichádzajúcich informácií a ďalšie prémiové funkcie po aktualizácii."
+        "Odomknutie presmerovania emailov na jednoduchú správu prichádzajúcich informácií a ďalších prémiových funkcií po navýšení účtu."
       ]
     },
     "email_forwarding_2023: Error": {
@@ -3657,7 +3660,7 @@
     },
     "email_forwarding_2023: Title": {
       "Automatically forward emails to other accounts": [
-        "Automaticky preposielať emaily na iné kontá"
+        "Automaticky preposielať emaily na iné účty"
       ],
       "Delete forwarding?": [
         "Vymazať preposielanie?"
@@ -4370,6 +4373,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Aplikácia momentálne nie je k dispozícii"
+      ],
       "Error: ${ errorMessage }": [
         "Chyba: ${ errorMessage }"
       ],
@@ -4379,11 +4385,17 @@
       "Oops, something went wrong": [
         "Ups, niečo sa pokazilo"
       ],
+      "Open in browser": [
+        "Otvoriť v prehliadači"
+      ],
       "Please refresh the page or try again later.": [
         "Obnovte stránku, prosím, alebo skúste znovu neskôr."
       ],
       "Something went wrong": [
         "Niečo sa pokazilo"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Pre použitie ${ MAIL_APP_NAME } alebo ${ CALENDAR_APP_NAME }, prejdite na webovú verziu."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Príliš veľa detských relácií, vymažte prosím súbory cookie a prihláste sa znova."
@@ -5700,7 +5712,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "Naozaj chcete importovať súkromný kľúč? Import nezabezpečene vygenerovaného alebo uniknutého súkromného kľúča môže poškodiť zabezpečenie vašich emailov.\n\nUpozorňujeme tiež, že verejný kľúč zodpovedajúci tomuto súkromnému kľúču bude verejne dostupný na našom serveri kľúčov. Pokiaľ kľúč obsahuje osobné údaje (ako je vaše celé meno), ktoré nechcete zverejniť, pred importom kľúč upravte."
+        "Naozaj chcete importovať súkromný kľúč? Importovanie nezabezpečeného vygenerovaného alebo uniknutého súkromného kľúča môže poškodiť bezpečnosť vašich e-mailov.\n\nUpozorňujeme tiež, že verejný kľúč zodpovedajúci tomuto súkromnému kľúču bude verejne dostupný na našom serveri kľúčov. Pokiaľ kľúč obsahuje osobné údaje (ako je vaše celé meno), ktoré nechcete zverejniť, pred importom kľúč upravte."
       ]
     },
     "Import provider": {
@@ -7451,6 +7463,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Môže to trvať nejaký čas. Nezatvárajte prosím túto stránku, ani sa neodpájajte od internetu."
       ],
+      "This file is too large to preview": [
+        "Tento súbor je príliš veľký na zobrazenie ukážky"
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Toto je 12-slovná fráza, ktorú musíte nastaviť."
       ],
@@ -8037,7 +8052,7 @@
         "Váš účet bol úspešne aktualizovaný"
       ],
       "Your account recovery method is set": [
-        "Je nastavený spôsob obnovy vášho účtu"
+        "Spôsob, ako obnoviť váš účet, je nastavený"
       ],
       "Your account was successfully updated with this promotion": [
         "Váš účet bol úspešne aktualizovaný touto akciovou ponukou"
@@ -8049,7 +8064,7 @@
         "Vaše údaje sú pripravené na import z ${ importedEmailAddressStrong } do vášho účtu ${ BRAND_NAME }."
       ],
       "Your data recovery method is set": [
-        "Váš spôsob obnovenia údajov je nastavený"
+        "Spôsob, ako obnoviť vaše údaje, je nastavený"
       ],
       "Your email will only be used for this one-time verification.": [
         "Váš email bude použitý iba pre toto jednorazové overenie."
@@ -8238,13 +8253,13 @@
         "Kľúč s odtlačkom ${ fp } úspešne vytvorený."
       ],
       "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
-        "Šifrovacie kľúče sú generované. Môže to trvať niekoľko minút a váš prehliadač môže dočasne zamrznúť."
+        "Šifrovacie kľúče sa generujú. Môže to trvať niekoľko minút a váš prehliadač môže dočasne zamrznúť."
       ],
       "The encryption keys for your address are being generated. This may take several minutes and temporarily freeze your browser.": [
         "Šifrovacie kľúče pre vašu adresu sa generujú. Môže to trvať niekoľko minút a váš prehliadač môže dočasne zamrznúť."
       ],
       "You can generate a new encryption key if you think your previous key has been compromised.": [
-        "Môžete si vytvoriť nový šifrovací kľúč, ak si myslíte, že Váš súčasný bol prelomený."
+        "Môžete si vytvoriť nový šifrovací kľúč, ak si myslíte, že váš súčasný bol prelomený."
       ]
     },
     "Key state badge": {
@@ -8255,7 +8270,7 @@
         "Kompromitovaný"
       ],
       "Disabled": [
-        "Zakázané"
+        "Zakázaný"
       ],
       "Forwarding": [
         "Preposielanie"
@@ -9716,7 +9731,7 @@
         "Čo je to?"
       ],
       "Why set recovery methods?": [
-        "Prečo nastaviť metódy obnovy?"
+        "Prečo nastaviť spôsob obnovy?"
       ]
     },
     "Loading info": {
@@ -10365,6 +10380,9 @@
       "Custom fields": [
         "Vlastné polia"
       ],
+      "Custom snooze time": [
+        "Vlastný čas odloženia"
+      ],
       "Data breach monitoring": [
         "Monitorovanie úniku dát"
       ],
@@ -10591,6 +10609,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Získajte neobmedzené množstvo aliasov so službou SimpleLogin od ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Odložte správy a pripomeňte si ich, keď chcete"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
@@ -14225,6 +14246,9 @@
       ],
       "Set organization password": [
         "Nastaviť heslo organizácie"
+      ],
+      "Set up a recovery method": [
+        "Nastavte metódu obnovenia"
       ],
       "Set up forwarding": [
         "Nastaviť preposielanie"

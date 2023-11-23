@@ -251,6 +251,9 @@
       "Create": [
         "შექმნა"
       ],
+      "Create a link to share with anyone outside ${ BRAND_NAME }": [
+        "${ BRAND_NAME }-ის გარეთ გაზიარების ბმულის შექმნა"
+      ],
       "Create account": [
         "ანგარიშის შექმნა"
       ],
@@ -4332,6 +4335,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "აპი ამჟამად ხელმიუწვდომელია"
+      ],
       "Error: ${ errorMessage }": [
         "შეცდომა: ${ errorMessage }"
       ],
@@ -4341,11 +4347,17 @@
       "Oops, something went wrong": [
         "უფს, რაღაც არასწორად წავიდა"
       ],
+      "Open in browser": [
+        "ბრაუზერში გახსნა"
+      ],
       "Please refresh the page or try again later.": [
         "განაახლეთ გვერდი ან მოგვიანებთ სცადეთ."
       ],
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME } ან ${ CALENDAR_APP_NAME }-ს გამოსაყენებლად ვების ვერსიაზე გადაერთეთ."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "მეტისმეტად ბევრი შვილი სესია. გაასუფთავეთ ქუქიები და თავიდან შემოდით."
@@ -7299,6 +7311,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "ამას საკმაო დროს შეიძლება, დასჭირდეს. ნუ დახურავთ ამ გვერდს და ნუ გათიშავთ ინტერნეტს."
       ],
+      "This file is too large to preview": [
+        "მინიატურისთვის ეს ფაილი მეტისმეტად დიდია"
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "12-სიტყვიანი ფრაზა, რომლის შეყვანაც გთხოვეთ."
       ],
@@ -10135,6 +10150,9 @@
       "Custom fields": [
         "მორგებადი ველები"
       ],
+      "Custom snooze time": [
+        "მომხმარებლის დროებით დადუმების დრო"
+      ],
       "Data breach monitoring": [
         "მონაცემების გაჟონვის თვალყურის დევნება"
       ],
@@ -10353,6 +10371,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "მიიღეთ განუსაზღვრელი მეტსახელები SimpleLogin-სგან (${ BRAND_NAME })"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "დაადუმეთ დროებით შეტყობინებები და ჩვენ შეგახსენებთ, როცა გნებავთ"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } და ${ DRIVE_APP_NAME } შორის"
@@ -13877,6 +13898,9 @@
       ],
       "Set organization password": [
         "ორგანიზაციის პაროლის დაყენება"
+      ],
+      "Set up a recovery method": [
+        "აღდგენის მეთოდის დაყენება"
       ],
       "Set up forwarding": [
         "გადაგზავნის მორგება"
