@@ -25,6 +25,10 @@ export type { enums } from 'pmcrypto/lib/openpgp';
 export type MaybeArray<T> = T[] | T;
 export type { SessionKey, AlgorithmInfo, MIMEAttachment };
 
+export interface InitOptions {
+    checkEdDSAFaultySignatures?: boolean;
+}
+
 // TODO TS: do not allow mutually exclusive properties
 export interface WorkerDecryptionOptions
     extends Omit<
