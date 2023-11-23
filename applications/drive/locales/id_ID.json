@@ -3215,6 +3215,12 @@
       "${ doneUploadsCount } uploaded": [
         "${ doneUploadsCount } terunggah"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } di App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } di Play Store"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } gagal terproses"
       ],
@@ -3458,6 +3464,9 @@
       "double your storage": [
         "menggandakan kuota penyimpanan Anda"
       ],
+      "Download ${ name } app": [
+        "Unduh aplikasi ${ name }"
+      ],
       "Download canceled": [
         "Unduhan dibatalkan"
       ],
@@ -3484,6 +3493,9 @@
       ],
       "Drop file here to upload": [
         "Lepaskan berkas di sini untuk mengunggah"
+      ],
+      "Drop files here": [
+        "Lepaskan berkas di sini"
       ],
       "Drop to import": [
         "Lepaskan untuk mengimpor"
@@ -3595,6 +3607,12 @@
       ],
       "from the version history?": [
         "dari riwayat versi secara permanen?"
+      ],
+      "Get the app to backup photos from your phone.": [
+        "Dapatkan aplikasi untuk menyinkron foto dari ponsel Anda."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Dapatkan aplikasi desktop untuk menyinkron berkas dari komputer Anda."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Kenali ${ DRIVE_APP_NAME } lebih dalam dan dapatkan bonus kuota penyimpanan 500 GB! Jangan lewatkan kesempatan ini sekarang juga."
@@ -3743,6 +3761,9 @@
       "No": [
         "Tidak"
       ],
+      "No computers syncing": [
+        "Tidak ada komputer yang sedang menyinkron"
+      ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
       ],
@@ -3793,6 +3814,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Hanya mereka yang memiliki tautan dan kata sandi yang dapat mengakses folder ini."
+      ],
+      "Or use the \"+ New\" button": [
+        "Atau gunakan tombol \"+ Baru\""
       ],
       "Paused": [
         "Dijeda"
@@ -3877,6 +3901,9 @@
       ],
       "Queued": [
         "Ditempatkan dalam antrian"
+      ],
+      "Ready to add some photos?": [
+        "Siap menambahkan foto?"
       ],
       "recommended browser": [
         "browser yang disarankan"

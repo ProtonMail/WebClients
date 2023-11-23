@@ -2841,6 +2841,9 @@
       ],
       "You have successfully joined the Family plan": [
         "आप परिवार प्लान से जुड़ गए है"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "आपका खाता ${ usedSpace } स्टोरेज का उपयोग कर रहा है, जो आपको दिए गए ${ inviteSpace } से अधिक है। कुछ डेटा हटाएं या प्लान एडमिन से अपना स्टोरेज बढ़ाने के लिए कहें।"
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -3371,6 +3374,9 @@
       "Calendar side panel": [
         "कैलेंडर साइड पैनल"
       ],
+      "Can't find the events you're looking for? Some events in hidden calendars match your query. To see those results, turn on visibility for ${ hiddenWithItemsCalendarList }.": [
+        "क्या वे इवेंट नहीं मिल रहे जिन्हें आप ढूंढ रहे हैं? छिपे हुए कैलेंडर में कुछ ईवेंट आपकी क्वेरी से मेल खाते हैं। उन परिणामों को देखने के लिए, ${ hiddenWithItemsCalendarList } के लिए दृश्यता चालू करें।"
+      ],
       "Cannot remember your password? We can help you clear the encrypted data of all contacts encrypted with this key and in the process dismiss the alert.": [
         "आपका पासवर्ड याद नहीं है? हम इस कुंजी के साथ एन्क्रिप्ट किए गए सभी संपर्कों के एन्क्रिप्टेड डेटा को साफ़ करने में आपकी सहायता कर सकते हैं और प्रक्रिया में अलर्ट को खारिज कर सकते हैं।"
       ],
@@ -3716,6 +3722,9 @@
       ],
       "The organizer of this series of events will not be notified that you decline the invitation as you can't send emails from the invited address. Would you like to delete all the events in this series anyway?": [
         "इस इवेंट के आयोजक को सूचित नहीं किया जाएगा कि आप न्योते को अस्वीकार करते है क्योंकि आप आमंत्रित पते से ईमेल नहीं भेज सकते है। फिर भी इस सीरीज़ के सभी इवेंट मिटाएं?"
+      ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "इस पते के स्वामी ने एंड-टू-एंड एन्क्रिप्शन अक्षम कर दिया है। इस पते पर एन्क्रिप्टेड ईमेल भेजने में सक्षम होने के लिए, स्वामी को एंड-टू-एंड एन्क्रिप्शन को फिर से सक्षम करना होगा।"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "संभावित नीति उल्लंघन के कारण इस खाते को निलंबित कर दिया गया है।"
@@ -4743,6 +4752,9 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "अपनी ऑनलाइन पहचान के लिए एकाधिक ईमेल पते बनाएं, उदा. शॉपिंग खातों के लिए जॉनशॉपर@${ domain }, समाचार सदस्यता के लिए जॉनन्यूज@${ domain2 }"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "${ BRAND_NAME } के SimpleLogin से असीमित नकलीनाम लें"
       ],
@@ -5410,6 +5422,9 @@
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "हमारी सभी प्रीमियम सेवाएँ अपनी उच्चतम सीमा के साथ: 100 ईमेल पते, 10 कस्टम डोमेन के लिए समर्थन, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण, एन्क्रिप्टेड क्लाउड स्टोरेज और फ़ाइल साझाकरण, और बहुत कुछ।"
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "भविष्य में हमारे द्वारा जारी की जाने वाली सभी नई गोपनीयता सेवाओं के भुगतान की आवश्यकता वाले संस्करण बिना किसी अतिरिक्त लागत के प्राप्त करें, साथ ही भविष्य की सभी सुविधाओं और उत्पादों तक शीघ्र पहुंच प्राप्त करें।"
       ]
     },
     "Spotlight": {
@@ -5437,6 +5452,9 @@
     "Subscribe to calendar modal": {
       "Calendar URL": [
         "कैलेंडर यूआरएल"
+      ],
+      "To subscribe to an external or public calendar and its updates, enter the URL. A read-only version of the calendar will be added to your Other calendars.\n${ kbLink }": [
+        "किसी बाहरी या सार्वजनिक कैलेंडर और उसके अपडेट की सदस्यता लेने के लिए, यूआरएल दर्ज करें। कैलेंडर का केवल पढ़ने योग्य संस्करण आपके अन्य कैलेंडर में जोड़ा जाएगा।\n${ kbLink }"
       ]
     },
     "Subscribe to calendar modal description": {

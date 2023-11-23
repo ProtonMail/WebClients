@@ -5175,6 +5175,9 @@
       "active": [
         "aktiv"
       ],
+      "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
+        "Tilføj en @pm.me e-mailadresse til din konto. Dette simple, kortere domæne står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me.\""
+      ],
       "Add a recovery email address": [
         "Tilføj en e-mailadresse til gendannelse"
       ],
@@ -5189,6 +5192,9 @@
       ],
       "Add image URL": [
         "Tilføj billed-URL"
+      ],
+      "Add label": [
+        "Tilføj etikette"
       ],
       "Add multiple users to your organization at once.": [
         "Tilføj flere brugere til din organisation på én gang."
@@ -5276,6 +5282,9 @@
       ],
       "Anyone with this link can see whether you’re free or busy on your calendar. They can’t see event details, such as title, location, or participants.": [
         "Alle med dette link kan se, om du er fri eller optaget på din kalender. De kan ikke se begivenhedsdetaljer, såsom titel, placering eller deltagere."
+      ],
+      "Anyone with this link won't be able to sync or get future updates for your calendar. If you want to give them access again, you will have to create a new link.": [
+        "Alle med dette link vil ikke kunne synkronisere eller få fremtidige opdateringer til din kalender. Hvis du vil give dem adgang igen, skal du oprette et nyt link."
       ],
       "Are you sure you want to delete this address?": [
         "Er du sikker på, at du vil slette denne adresse?"
@@ -5489,6 +5498,9 @@
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "Slet eventuelle andre MX-poster eller sørg for, at ${ MAIL_APP_NAME }'s prioritet har det laveste tal."
       ],
+      "Delete link?": [
+        "Slet link?"
+      ],
       "Deleting ${ deletedServerCount } gateway server": [
         "Sletter ${ deletedServerCount } gateway-server",
         "Sletter ${ deletedServerCount } gateway-servere"
@@ -5542,6 +5554,9 @@
       "Edit email address": [
         "Rediger e-mailadresse"
       ],
+      "Edit label": [
+        "Rediger etikette"
+      ],
       "Edit link": [
         "Redigér link"
       ],
@@ -5562,6 +5577,9 @@
       ],
       "Emails tagged with this label will not be deleted and can still be found in the respective folder.": [
         "E-mails med denne etikette vil ikke blive slettet og kan stadig findes i den respektive mappe."
+      ],
+      "Enable this address to join this calendar": [
+        "Aktivér denne adresse for at blive medlem af denne kalender"
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Hvis du aktiverer gendannelse ved hjælp af en sætning igen, genereres der en ny gendannelsessætning."
@@ -5862,6 +5880,9 @@
       "Link created": [
         "Link oprettet"
       ],
+      "Link deleted": [
+        "Linket er slettet"
+      ],
       "Link expired": [
         "Link udløbet"
       ],
@@ -5967,6 +5988,9 @@
       "Not a valid URL": [
         "Ugyldig URL"
       ],
+      "Not yet available in our Android mobile app.": [
+        "Endnu ikke tilgængelig i vores Android-mobilapp."
+      ],
       "Not your device? Use a private browsing window to sign in and close it when done. ${ learnMore }": [
         "Ikke din enhed? Brug et privat browsing vindue til at logge ind og luk det når du er færdig. ${ learnMore }"
       ],
@@ -5987,6 +6011,9 @@
       ],
       "One account. All ${ BRAND_NAME } services.": [
         "Én konto. Alle ${ BRAND_NAME }-tjenester."
+      ],
+      "Only you can see the labels.": [
+        "Kun du kan se etiketterne."
       ],
       "Open source": [
         "Open source"
@@ -6631,6 +6658,9 @@
       "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Opgradér til ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } eller ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }-abonnement for at få adgang til ${ PROTON_SENTINEL_NAME }."
       ],
+      "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
+        "Opgrader for at tilføje en kortere @pm.me adresse til din konto, som er lettere at dele. Det står for “${ MAIL_APP_NAME } me” eller “Private Message me”."
+      ],
       "Upgrade to unlock": [
         "Opgrader for at låse op"
       ],
@@ -6681,6 +6711,9 @@
       ],
       "Version history": [
         "Versionshistorik"
+      ],
+      "View, download, and manage your invoices.": [
+        "Se, download og administrer dine fakturaer."
       ],
       "Visa Secure logo": [
         "Visa Secure logo"
@@ -6763,6 +6796,9 @@
       "We’re upgrading your current plan to an improved plan that offers more for the same price. While our systems are updating, you won’t be able to change it. We’ll email you as soon as it’s done.": [
         "Vi opgraderer dit nuværende abonnement til et forbedret abonnement, der giver mere for den samme pris. Mens vores systemer opdateres, vil du ikke kunne ændre det. Vi sender dig en e-mail, så snart det er gjort."
       ],
+      "When disabled, this prevents image files from loading on your device without your knowledge.": [
+        "Når deaktiveret, forhindrer dette billedfiler i at blive indlæst på din enhed uden din viden.\t"
+      ],
       "When notifications are enabled, we'll send an alert to your recovery email address if you have new messages in your ${ MAIL_APP_NAME } account.": [
         "Når notifikationer er aktiveret, sender vi en advisering til din gendannelses-adresse, hvis du har nye beskeder på din ${ MAIL_APP_NAME }-konto."
       ],
@@ -6786,6 +6822,9 @@
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en krypteret ${ BRAND_NAME }-adresse kan du bruge alle ${ BRAND_NAME }-tjenester"
+      ],
+      "With your current plan, you can only receive messages with your @pm.me address. Upgrade to send messages and create additional addresses using @pm.me.": [
+        "Med dit nuværende abonnement kan du kun modtage beskeder med din @pm.me-adresse. Opgrader for at sende beskeder og oprette yderligere adresser med @pm.me."
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Uden aktivering kan du ikke oprette nye brugere, føje adresser til eksisterende brugere eller få adgang til ikke-private brugerkonti."
