@@ -13,7 +13,7 @@ import {
 import TXTSection from './TXTSection';
 
 interface Props extends ModalProps {
-    domain?: Domain;
+    domain: Domain;
 }
 
 const TXTRecordModal = ({ domain, ...rest }: Props) => {
