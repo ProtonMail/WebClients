@@ -2,7 +2,6 @@ import { type VFC, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { useNotifications } from '@proton/components/hooks';
-import { FadeIn } from '@proton/pass/components/Layout/Animation/FadeIn';
 import { Content } from '@proton/pass/components/Layout/Section/Content';
 import { SubSidebar } from '@proton/pass/components/Layout/Section/SubSidebar';
 
@@ -20,9 +19,14 @@ export const Main: VFC = () => {
     useEffect(() => () => clearNotifications(), []);
 
     return (
-        <FadeIn id="main" className="flex flex-column flex-nowrap w-full h-full overflow-hidden" key="main" delay={50}>
+        <main
+            key="main"
+            id="main"
+            className="flex flex-column flex-nowrap w-full h-full overflow-hidden anime-fade-in"
+            style={{ '--anime-delay': '50ms' }}
+        >
             <Header />
-            <main className="flex flex-align-items-center flex-justify-center flex-nowrap w-full h-full">
+            <div className="flex flex-align-items-center flex-justify-center flex-nowrap w-full h-full">
                 <SubSidebar>
                     <Switch>
                         <Route path="/trash">
@@ -49,7 +53,7 @@ export const Main: VFC = () => {
                         </Route>
                     </Switch>
                 </Content>
-            </main>
-        </FadeIn>
+            </div>
+        </main>
     );
 };

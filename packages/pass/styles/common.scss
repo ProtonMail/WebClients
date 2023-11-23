@@ -1,5 +1,11 @@
 @import '~@proton/styles/scss/proton-pass';
 
-@import 'lobby';
 @import 'overrides';
+
+@import 'animation';
+@import 'button';
+@import 'fields';
+@import 'lobby';
+@import 'scroll';
 @import 'skeletons';
+@import 'text';

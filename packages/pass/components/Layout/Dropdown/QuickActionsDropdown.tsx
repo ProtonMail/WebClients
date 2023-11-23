@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { CSSProperties, FC } from 'react';
 
 import { c } from 'ttag';
 
@@ -23,6 +23,7 @@ export type QuickActionsDropdownProps = {
     originalPlacement?: PopperPlacement;
     shape?: ButtonLikeShape;
     size?: ButtonLikeSize;
+    style?: CSSProperties;
 };
 
 export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
@@ -36,6 +37,7 @@ export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
     originalPlacement,
     shape,
     size = 'medium',
+    style,
 }) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
@@ -52,6 +54,7 @@ export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
                 onClick={toggle}
                 disabled={disabled}
                 title={c('Action').t`More options`}
+                style={style}
             >
                 <Icon name="three-dots-vertical" alt={c('Action').t`More options`} size={iconSize} />
             </Button>

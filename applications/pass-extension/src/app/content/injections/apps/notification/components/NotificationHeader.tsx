@@ -26,6 +26,7 @@ export const NotificationHeader: VFC<Props> = ({ extra, title, onClose }) => {
                     pill
                     shape="solid"
                     color="weak"
+                    size="small"
                     className="flex-item-noshrink"
                     onClick={() => onClose?.({ discard: true })}
                     title={c('Action').t`Cancel`}
