@@ -30,7 +30,7 @@ const Header = ({ isNarrow }: HeaderProps) => {
                 {isNarrow ? null : <Icon name="arrows-cross" className="mr-4" />}
                 {c('Header').t`Folders`}
             </span>
-            <span className="w-custom no-mobile flex flex-align-items-center gap-2" style={{ '--w-custom': '10em' }}>
+            <span className="w-custom hidden md:flex flex-align-items-center gap-2" style={{ '--w-custom': '10em' }}>
                 <span className="text-bold">{c('Header').t`Notifications`}</span>
                 <Info title={c('Tooltip').t`Enable/disable desktop and mobile notifications`} />
             </span>
@@ -165,7 +165,7 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                                         </span>
                                     </div>
                                     <div
-                                        className="w-custom md:w-custom no-mobile inline-flex"
+                                        className="w-custom md:w-custom hidden md:inline-flex"
                                         style={{ '--w-custom': '6.25rem', '--md-w-custom': '10em' }}
                                     >
                                         <ToggleNotify label={item} />

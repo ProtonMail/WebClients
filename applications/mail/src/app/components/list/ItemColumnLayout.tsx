@@ -172,7 +172,7 @@ const ItemColumnLayout = ({
                             </span>
                         </div>
 
-                        <div className="item-icons flex flex-item-noshrink flex-nowrap no-mobile">
+                        <div className="item-icons hidden md:flex flex-item-noshrink flex-nowrap">
                             <span className="flex item-meta-infos">
                                 {hasLabels && isCompactView && (
                                     <ItemLabels

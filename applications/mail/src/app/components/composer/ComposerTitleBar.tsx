@@ -128,7 +128,7 @@ const ComposerTitleBar = ({
                 {title}
             </span>
             <TitleBarButton
-                className={clsx(['no-mobile', minimized && 'rotateX-180'])}
+                className={clsx(['hidden md:flex', minimized && 'rotateX-180'])}
                 title={titleMinimize}
                 onClick={toggleMinimized}
                 dataTestId="composer:minimize-button"
@@ -138,7 +138,7 @@ const ComposerTitleBar = ({
             </TitleBarButton>
             <TitleBarButton
                 title={titleMaximize}
-                className="no-mobile"
+                className="hidden md:flex"
                 onClick={toggleMaximized}
                 dataTestId="composer:maximize-button"
             >

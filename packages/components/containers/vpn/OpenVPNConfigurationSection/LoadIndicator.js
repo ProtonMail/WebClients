@@ -9,7 +9,7 @@ const LoadIndicator = ({ server: { Load = 0 } }) => {
     // 90-100% load is RED color #ec5858
     const className = Load < 50 ? '' : Load < 90 ? 'circle-bar--medium' : 'circle-bar--full';
     return (
-        <span className="min-w-custom no-mobile" style={{ '--min-w-custom': '5em' }}>
+        <span className="min-w-custom hidden md:inline" style={{ '--min-w-custom': '5em' }}>
             <Tooltip title={c('Info').t`Server load`}>
                 <div className="flex inline-flex-vcenter">
                     <CircularProgress progress={Load} size={22} className={className}>
