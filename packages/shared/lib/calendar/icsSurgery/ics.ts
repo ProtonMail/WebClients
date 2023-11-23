@@ -107,7 +107,7 @@ export const reformatDateTimes = (vcal = '') => {
             if (['dtstart', 'dtend', 'dtstamp', 'last-modified', 'created', 'recurrence-id'].includes(field)) {
                 // In case the line matches the ISO standard, we replace it by the ICS standard
                 // We do the replacement in two steps to account for providers that use a partial ISO
-                const partiallyStandardizedLine = line.replace(/(\d\d\d\d)-(\d\d)-(\d\d)[Tt](.*)/, `$1$2$3T$4`);
+                const partiallyStandardizedLine = line.replace(/(\d\d\d\d)-(\d\d)-(\d\d)(.*)/, `$1$2$3$4`);
                 const standardizedLine = partiallyStandardizedLine.replace(
                     /(\d{8})[Tt](\d\d):(\d\d):(\d\d).*?([Zz]*$)/,
                     `$1T$2$3$4$5`
@@ -120,7 +120,9 @@ export const reformatDateTimes = (vcal = '') => {
 
                 if (totalParts === 2 && /^\d{8}$/.test(parts[1])) {
                     // it's a date value
-                    return `${parts[0]};VALUE=DATE:${parts[1]}`;
+                    return parts[0].includes(';VALUE=DATE')
+                        ? `${parts[0]}:${parts[1]}`
+                        : `${parts[0]};VALUE=DATE:${parts[1]}`;
                 }
 
                 return parts
