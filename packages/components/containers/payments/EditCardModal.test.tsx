@@ -18,7 +18,6 @@ jest.mock('@proton/components/components/portal/Portal');
 jest.mock('@proton/components/components/toggle/Toggle');
 
 const defaultCard: CardModel = {
-    fullname: '',
     number: '',
     month: '',
     year: '',

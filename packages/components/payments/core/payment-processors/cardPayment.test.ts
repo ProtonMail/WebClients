@@ -28,7 +28,6 @@ describe('CardPaymentProcessor', () => {
         );
 
         mockCard = {
-            fullname: 'Arthur Morgan',
             number: '4111111111111111',
             month: '01',
             year: '32',
@@ -182,7 +181,6 @@ describe('CardPaymentProcessor', () => {
                     Country: 'US',
                     ExpMonth: '01',
                     ExpYear: '2032',
-                    Name: 'Arthur Morgan',
                     Number: '4111111111111111',
                     ZIP: '12345',
                 },
