@@ -85,14 +85,14 @@ export const createWorkerContext = (config: ProtonConfig) => {
                 }),
 
                 getPersistedSession: async () => {
-                    const { ps } = await context.service.storage.local.get(['ps']);
+                    const ps = await context.service.storage.local.getItem('ps');
                     if (!ps) return null;
 
                     const persistedSession = JSON.parse(ps);
                     return isValidPersistedSession(persistedSession) ? persistedSession : null;
                 },
 
-                getMemorySession: () => context.service.storage.session.get(SESSION_KEYS),
+                getMemorySession: () => context.service.storage.session.getItems(SESSION_KEYS),
                 onAuthorize: () => context.setStatus(AppStatus.AUTHORIZING),
                 onAuthorized: () => {
                     context.setStatus(AppStatus.AUTHORIZED);
@@ -117,14 +117,14 @@ export const createWorkerContext = (config: ProtonConfig) => {
                     context.service.onboarding.reset();
                     context.service.autofill.clearTabsBadgeCount();
                     context.service.cacheProxy.clear?.().catch(noop);
-                    context.service.storage.session.clear().catch(noop);
-                    context.service.storage.local.clear().catch(noop);
+                    void context.service.storage.session.clear();
+                    void context.service.storage.local.clear();
                     browser.alarms.clear(SESSION_LOCK_ALARM).catch(noop);
                 },
                 onSessionInvalid: () => {
                     authStore.clear();
-                    context.service.storage.local.unset(['ps']).catch(noop);
-                    context.service.storage.session.clear().catch(noop);
+                    void context.service.storage.local.remove('ps');
+                    void context.service.storage.session.clear();
                 },
 
                 onSessionUnlocked: () => {},
@@ -152,8 +152,8 @@ export const createWorkerContext = (config: ProtonConfig) => {
                 },
 
                 onSessionPersist: (encryptedSession) => {
-                    context.service.storage.local.set({ ps: encryptedSession }).catch(noop);
-                    context.service.storage.session.set(authStore.getSession()).catch(noop);
+                    void context.service.storage.local.setItem('ps', encryptedSession);
+                    void context.service.storage.session.setItems(authStore.getSession());
                 },
                 onSessionResumeFailure: () => context.setStatus(AppStatus.ERROR),
                 onNotification: (text) =>
@@ -176,8 +176,8 @@ export const createWorkerContext = (config: ProtonConfig) => {
                         persistedSession.RefreshToken = RefreshToken;
                         persistedSession.RefreshTime = RefreshTime;
 
-                        context.service.storage.local.set({ ps: JSON.stringify(persistedSession) }).catch(noop);
-                        context.service.storage.session.set({ AccessToken, RefreshToken, RefreshTime }).catch(noop);
+                        void context.service.storage.local.setItem('ps', JSON.stringify(persistedSession));
+                        void context.service.storage.session.setItems({ AccessToken, RefreshToken, RefreshTime });
                     }
                 },
             }),

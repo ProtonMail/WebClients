@@ -1,6 +1,17 @@
-import type { MaybeNull } from '@proton/pass/types';
+import type { MaybeNull, MaybePromise } from '@proton/pass/types';
 
-export type Storage = Record<string, any>;
+export interface Store<T = any, K extends StorageKeys<T> = StorageKeys<T>> {
+    set: (key: K, value: T[K]) => void;
+    get: (key: K) => MaybeNull<T[K]>;
+    reset: () => void;
+}
+
+export interface Storage<T = any, K extends StorageKeys<T> = StorageKeys<T>> {
+    setItem: (key: K, value: T[K]) => MaybePromise<void>;
+    getItem: (key: K) => MaybePromise<MaybeNull<T[K]>>;
+    clear: () => MaybePromise<void>;
+}
+
 export type StorageKeys<T> = Extract<keyof T, string>;
 export type StorageQuery<T, K extends StorageKeys<T>[]> = Partial<Pick<T, K[number]>>;
 
