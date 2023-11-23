@@ -11,11 +11,12 @@ dist
 config.ts
 tsconfig.tsbuildinfo
 .yarn/*
-!.yarn/releases
+!.yarn/patches
 !.yarn/plugins
+!.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-!.yarn/patches
+!.yarn/plugin*
 .pnp.*
 .netlify
 storybook-static
