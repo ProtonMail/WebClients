@@ -4,6 +4,7 @@ import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
 import { DecryptedLink, useLinksActions, useLinksListing } from '../_links';
+import useSharesState from '../_shares/useSharesState';
 import { usePhotos } from './PhotosProvider';
 import { RECOVERY_STATE, usePhotosRecovery } from './usePhotosRecovery';
 
@@ -33,6 +34,8 @@ jest.mock('../_links', () => {
     const useLinksListing = jest.fn();
     return { useLinksActions, useLinksListing };
 });
+
+jest.mock('../_shares/useSharesState');
 
 jest.mock('./PhotosProvider', () => {
     return {
@@ -80,6 +83,7 @@ describe('usePhotosRecovery', () => {
     const mockedUsePhotos = jest.mocked(usePhotos);
     const mockedUseLinksListing = jest.mocked(useLinksListing);
     const mockedUseLinksActions = jest.mocked(useLinksActions);
+    const mockedUseShareState = jest.mocked(useSharesState);
     const mockedGetCachedChildren = jest.fn();
     const mockedLoadChildren = jest.fn();
     const mockedMoveLinks = jest.fn();
@@ -93,7 +97,15 @@ describe('usePhotosRecovery', () => {
     mockedUsePhotos.mockReturnValue({
         shareId: 'shareId',
         linkId: 'linkId',
-        restoredShares: [
+        deletePhotosShare: mockedDeletePhotosShare,
+    });
+    // @ts-ignore
+    mockedUseLinksActions.mockReturnValue({
+        moveLinks: mockedMoveLinks,
+    });
+    // @ts-ignore
+    mockedUseShareState.mockReturnValue({
+        getRestoredPhotosShares: () => [
             {
                 shareId: 'shareId',
                 rootLinkId: 'rootLinkId',
@@ -107,11 +119,6 @@ describe('usePhotosRecovery', () => {
                 state: 1,
             },
         ],
-        deletePhotosShare: mockedDeletePhotosShare,
-    });
-    // @ts-ignore
-    mockedUseLinksActions.mockReturnValue({
-        moveLinks: mockedMoveLinks,
     });
 
     beforeAll(() => {});
