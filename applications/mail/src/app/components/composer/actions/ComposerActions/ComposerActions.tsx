@@ -155,7 +155,7 @@ const ComposerActions = ({
                         />
                     </div>
                     <div className="flex-item-fluid flex pr-4">
-                        <span className="mr-2 m-auto no-mobile color-weak">{dateMessage}</span>
+                        <span className="mr-2 m-auto hidden md:flex color-weak">{dateMessage}</span>
                         <Tooltip title={titleAttachment}>
                             <AttachmentsButton
                                 isAttachments={isAttachments}

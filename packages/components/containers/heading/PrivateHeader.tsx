@@ -57,12 +57,12 @@ const PrivateHeader = ({
                     {upsellButton !== undefined ? upsellButton : !hideUpsellButton && <TopNavbarUpsell app={app} />}
                     {feedbackButton ? <TopNavbarListItem noShrink>{feedbackButton}</TopNavbarListItem> : null}
                     {settingsButton ? (
-                        <TopNavbarListItem noShrink className="no-mobile">
+                        <TopNavbarListItem noShrink className="hidden md:flex">
                             {settingsButton}
                         </TopNavbarListItem>
                     ) : null}
                     {userDropdown && !isNarrow ? (
-                        <TopNavbarListItem className="relative no-mobile">{userDropdown}</TopNavbarListItem>
+                        <TopNavbarListItem className="relative hidden md:flex">{userDropdown}</TopNavbarListItem>
                     ) : null}
                 </TopNavbarList>
             </TopNavbar>

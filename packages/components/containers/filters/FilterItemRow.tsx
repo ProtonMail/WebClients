@@ -101,7 +101,7 @@ function FilterItemRow({ filter, filters, index, onApplyFilter, ...rest }: Props
                     <div key="name" className="text-ellipsis max-w-full" title={Name}>
                         {Name}
                     </div>,
-                    <div key="toggle" className="w-1/10">
+                    <div key="toggle" className="w-1/10 flex">
                         <Toggle
                             id={`item-${ID}`}
                             loading={loading}

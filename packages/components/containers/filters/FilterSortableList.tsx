@@ -22,7 +22,7 @@ const FilterSortableList = ({ items, onApplyFilter, ...rest }: Props) => (
                     <span className="sr-only">{c('Settings/filters - table').t`Order`}</span>
                 </th>
                 <th scope="col">{c('Settings/filters - table').t`Name`}</th>
-                <th scope="col" className="w-custom no-mobile" style={{ '--w-custom': '8em' }}>
+                <th scope="col" className="w-custom hidden md:table-cell" style={{ '--w-custom': '8em' }}>
                     {c('Settings/filters - table').t`Status`}
                 </th>
                 <th scope="col" className="w-custom" style={{ '--w-custom': '10em' }}>
