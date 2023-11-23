@@ -22,7 +22,7 @@ import { useNavigationContext } from 'proton-pass-extension/lib/hooks/useNavigat
 import { usePopupContext } from 'proton-pass-extension/lib/hooks/usePopupContext';
 import { useShareEventEffect } from 'proton-pass-extension/lib/hooks/useShareEventEffect';
 
-import { useInviteContext } from '@proton/pass/components/Invite/InviteContextProvider';
+import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
 import { belongsToShare, itemEq } from '@proton/pass/lib/items/item.predicates';
 import { popupTabStateSave } from '@proton/pass/store/actions/creators/popup';
 import { selectItemIdByOptimisticId } from '@proton/pass/store/selectors';
