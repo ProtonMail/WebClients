@@ -35,7 +35,6 @@ it('should return empty card by default', () => {
     );
 
     expect(result.current.card).toEqual({
-        fullname: '',
         number: '',
         month: '',
         year: '',
@@ -126,7 +125,6 @@ it('should fetch payment token when the card is provided initially', async () =>
                 amountAndCurrency: { Amount: 100, Currency: 'USD' },
                 onChargeable: onChargeableMock,
                 initialCard: {
-                    fullname: 'John Doe',
                     number: '4242424242424242',
                     month: '12',
                     year: '2032',
@@ -181,7 +179,6 @@ it('should fetch payment token when the card is provided later', async () => {
 
     expect(result.current.fetchingToken).toEqual(false);
 
-    result.current.setCardProperty('fullname', 'John Doe');
     result.current.setCardProperty('number', '4242424242424242');
     result.current.setCardProperty('month', '12');
     result.current.setCardProperty('year', '2032');
@@ -224,7 +221,6 @@ it('should reset payment token when currency or amount is changed', async () => 
         }
     );
 
-    result.current.setCardProperty('fullname', 'John Doe');
     result.current.setCardProperty('number', '4242424242424242');
     result.current.setCardProperty('month', '12');
     result.current.setCardProperty('year', '2032');
@@ -275,7 +271,6 @@ it('should verify the payment token', async () => {
         }
     );
 
-    result.current.setCardProperty('fullname', 'John Doe');
     result.current.setCardProperty('number', '4242424242424242');
     result.current.setCardProperty('month', '12');
     result.current.setCardProperty('year', '2032');
@@ -335,7 +330,6 @@ it('should throw an error during token processing if verification failed', async
         }
     );
 
-    result.current.setCardProperty('fullname', 'John Doe');
     result.current.setCardProperty('number', '4242424242424242');
     result.current.setCardProperty('month', '12');
     result.current.setCardProperty('year', '2032');
