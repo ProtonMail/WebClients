@@ -28,7 +28,7 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature> = {
         getText: () => c('new_plans: feature').t`Auto-delete spam and trashed messages`,
     },
     'schedule-messages': {
-        icon: 'paper-plane-horizontal-clock',
+        icon: 'paper-plane-clock',
         getText: () => c('new_plans: feature').t`Schedule messages at any time`,
     },
     'unlimited-folders-and-labels': {
