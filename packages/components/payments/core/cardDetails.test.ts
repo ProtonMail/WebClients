@@ -3,7 +3,6 @@ import { CardModel, toDetails } from './cardDetails';
 describe('cardDetails', () => {
     it('should format card details correctly', () => {
         let card: CardModel = {
-            fullname: 'Arthur Morgan',
             number: '4111 1111 1111 1111',
             month: '10',
             year: '2020',
@@ -13,7 +12,6 @@ describe('cardDetails', () => {
         };
 
         expect(toDetails(card)).toEqual({
-            Name: 'Arthur Morgan',
             Number: '4111111111111111',
             ExpMonth: '10',
             ExpYear: '2020',
@@ -23,7 +21,6 @@ describe('cardDetails', () => {
         });
 
         card = {
-            fullname: '    Arthur Morgan     ',
             number: '4111 1111 1111 1111',
             month: '10',
             year: '32',
@@ -33,7 +30,6 @@ describe('cardDetails', () => {
         };
 
         expect(toDetails(card)).toEqual({
-            Name: 'Arthur Morgan',
             Number: '4111111111111111',
             ExpMonth: '10',
             ExpYear: '2032',
