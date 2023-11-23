@@ -104,6 +104,7 @@ export const PhotosCard: FC<Props> = ({
                 !showCheckbox && 'photos-card--hide-checkbox',
                 selected && 'photos-card--selected'
             )}
+            data-testid="photos-card"
             onClick={onClick}
             onKeyDown={onKeyDown}
             tabIndex={0}
@@ -111,6 +112,7 @@ export const PhotosCard: FC<Props> = ({
         >
             <Checkbox
                 className="absolute top-0 left-0 ml-2 mt-2"
+                data-testid="photos-card-checkbox"
                 checked={selected}
                 onClick={stopPropagation}
                 onKeyDown={(e) => {
@@ -134,7 +136,7 @@ export const PhotosCard: FC<Props> = ({
                 <div className="w-full h-full relative">
                     {thumbUrl ? (
                         <img
-                            data-testid="photo-card"
+                            data-testid="photo-card-thumbnail"
                             src={thumbUrl}
                             alt={getAltText(photo)}
                             className="w-full h-full photos-card-thumbnail"

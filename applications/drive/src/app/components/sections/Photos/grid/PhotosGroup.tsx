@@ -23,6 +23,7 @@ export const PhotosGroup: FC<Props> = ({ style, text, showSeparatorLine, onSelec
             <Checkbox
                 className="mr-2"
                 checked={!!selected}
+                data-testid="photos-group-checkbox"
                 indeterminate={selected === 'some'}
                 onChange={() => {
                     if (selected === 'some') {
