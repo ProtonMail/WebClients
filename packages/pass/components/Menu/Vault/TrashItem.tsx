@@ -28,7 +28,7 @@ export const TrashItem: VFC<Props> = ({ dense, selected, handleTrashRestore, han
             label={<CountLabel label={getVaultOptionInfo('trash').label} count={count} />}
             icon="trash"
             onClick={onSelect}
-            className={clsx(!dense && 'py-2')}
+            className={clsx(!dense && 'py-3')}
             parentClassName={clsx('pass-vault-submenu-vault-item w-full', selected && 'selected')}
             style={{
                 '--vault-icon-color': VAULT_COLOR_MAP[VaultColor.COLOR_UNSPECIFIED],
