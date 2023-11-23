@@ -2592,6 +2592,9 @@
       "Access denied": [
         "Prístup zamietnutý"
       ],
+      "App currently unavailable": [
+        "Aplikácia momentálne nie je k dispozícii"
+      ],
       "Brace yourself till we get the error fixed.": [
         "Vyčkajte, kým chybu opravíme."
       ],
@@ -2607,11 +2610,17 @@
       "Oops, something went wrong": [
         "Ups, niečo sa pokazilo"
       ],
+      "Open in browser": [
+        "Otvoriť v prehliadači"
+      ],
       "Please refresh the page or try again later.": [
         "Obnovte stránku, prosím, alebo skúste znovu neskôr."
       ],
       "Something went wrong": [
         "Niečo sa pokazilo"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Pre použitie ${ MAIL_APP_NAME } alebo ${ CALENDAR_APP_NAME }, prejdite na webovú verziu."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Túto stránku sa nepodarilo načítať. Obnovte stránku, prosím, alebo skontrolujte svoje internetové pripojenie."
@@ -3873,7 +3882,7 @@
         "Vyzerá to, že ste sa nedávno pokúsili načítať ${ uploadName }. Ak načítanie zlyhalo, prosím, ${ replaceFile }. Ak načítanie stále prebieha, jeho nahradenie zruší prebiehajúce načítanie."
       ],
       "Items in the trash will stay here until you delete them permanently": [
-        "Položky v koši tam zostanú až kým ich natrvalo nevymažete"
+        "Položky v koši zostanú, až kým ich natrvalo nevymažete"
       ],
       "It’s easy and secure": [
         "Je to jednoduché a bezpečné"
@@ -4240,6 +4249,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Váš internetový prehliadač nepodporuje zobrazenie PDF dokumentov. Súbor si preto stiahnite."
+      ],
+      "This file is too large to preview": [
+        "Tento súbor je príliš veľký na zobrazenie ukážky"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Tento súbor mohol byť vymazaný, presunutý alebo zneprístupnený. Skúste kontaktovať vlastníka súboru."
@@ -5235,6 +5247,9 @@
       "Custom email domains": [
         "Vlastné emailové domény"
       ],
+      "Custom snooze time": [
+        "Vlastný čas odloženia"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email aliasy"
       ],
@@ -5260,6 +5275,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Získajte neobmedzené množstvo aliasov so službou SimpleLogin od ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Odložte správy a pripomeňte si ich, keď chcete"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"

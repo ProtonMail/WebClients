@@ -2558,6 +2558,9 @@
       "Access denied": [
         "წვდომა აკრძალულია"
       ],
+      "App currently unavailable": [
+        "აპი ამჟამად ხელმიუწვდომელია"
+      ],
       "Brace yourself till we get the error fixed.": [
         "გამხნევდით, სანამ შეცდომას არ გამოვასწორებთ."
       ],
@@ -2573,11 +2576,17 @@
       "Oops, something went wrong": [
         "უფს, რაღაც არასწორად წავიდა"
       ],
+      "Open in browser": [
+        "ბრაუზერში გახსნა"
+      ],
       "Please refresh the page or try again later.": [
         "განაახლეთ გვერდი ან მოგვიანებთ სცადეთ."
       ],
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME } ან ${ CALENDAR_APP_NAME }-ს გამოსაყენებლად ვების ვერსიაზე გადაერთეთ."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "ეს გვერდი ვერ ჩავტვირთეთ. განაახლეთ ეს გვერდი ან შეამოწმეთ თქვენი ინტერნეტკავშირი."
@@ -3252,6 +3261,12 @@
         "ატვირთულია ${ doneUploadsCount }",
         "ატვირთულია ${ doneUploadsCount }"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME }-ი App Store-ში"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME }-ი Play Store-ში"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } წარუმატებელია",
         "${ errorCount } წარუმატებელია"
@@ -3514,6 +3529,9 @@
       "double your storage": [
         "გააორმაგეთ თქვენი საცავი"
       ],
+      "Download ${ name } app": [
+        "გადმოწერეთ აპი ${ name }"
+      ],
       "Download canceled": [
         "გადმოწერა გაუქმებულია"
       ],
@@ -3540,6 +3558,9 @@
       ],
       "Drop file here to upload": [
         "ასატვირთად გადმოათრიეთ ფაილები აქ"
+      ],
+      "Drop files here": [
+        "ფაილები აქ დაყარეთ"
       ],
       "Drop to import": [
         "შემოსატანად დააგდეთ"
@@ -3652,6 +3673,12 @@
       ],
       "from the version history?": [
         "ვერსიის ისტორიიდან?"
+      ],
+      "Get the app to backup photos from your phone.": [
+        "დააყენეთ აპი სურათების თქვენი ტელეფონიდან მარქაფისთვის."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "გადმოწერეთ აპი კომპიუტერისთვის, რათა ფაილების იქიდანაც დაასინქრონოთ."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "გაიცანით ${ DRIVE_APP_NAME } და მიიღეთ 500მბ საცავი დამატებით! იმოქმედეთ დღესვე."
@@ -3801,6 +3828,9 @@
       "No": [
         "არა"
       ],
+      "No computers syncing": [
+        "დასინქრონებული კომპიუტერების გარეშე"
+      ],
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
       ],
@@ -3852,6 +3882,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "ამ საქაღლდესთნ წვდომა, მხოლოდ, მას აქვს, ვისაც ეს ბმული და მისი პაროლი გააჩნია."
+      ],
+      "Or use the \"+ New\" button": [
+        "ან გამოიყენეთ ღილაკი '+ ახალი'"
       ],
       "Paused": [
         "შეჩერებულია"
@@ -3937,6 +3970,9 @@
       ],
       "Queued": [
         "რიგშია"
+      ],
+      "Ready to add some photos?": [
+        "მზად ბრძანდებით, სურათები დაამატოთ?"
       ],
       "recommended browser": [
         "რეკომენდებული ბრაუზერი"
@@ -4075,6 +4111,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "ამ ბრაუზერს PDF-ის გადახედვის მხარდაჭერა არ გააჩნია. გადმოწერეთ ფაილი."
+      ],
+      "This file is too large to preview": [
+        "მინიატურისთვის ეს ფაილი მეტისმეტად დიდია"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "ფაილი წაშლილი, გადატანილი ან წვდომებმოხნილია. მოსაძებნად მის მფლობელს დაუკავშირდით."
@@ -5050,6 +5089,9 @@
       "Custom email domains": [
         "თქვენი ელფოსტის დომენები"
       ],
+      "Custom snooze time": [
+        "მომხმარებლის დროებით დადუმების დრო"
+      ],
       "Hide-my-email aliases": [
         "მეტსახელი Hide My Email-სთვის"
       ],
@@ -5075,6 +5117,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "მიიღეთ განუსაზღვრელი მეტსახელები SimpleLogin-სგან (${ BRAND_NAME })"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "დაადუმეთ დროებით შეტყობინებები და ჩვენ შეგახსენებთ, როცა გნებავთ"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } და ${ DRIVE_APP_NAME } შორის"
