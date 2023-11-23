@@ -124,7 +124,12 @@ const MailOnboardingModal = (props: Props) => {
                     className="h-custom"
                     style={{ '--h-custom': maxContentHeight }}
                 >
-                    <div className={clsx('flex', isNarrow ? 'gap-y-4 pt-4' : 'gap-y-8 pt-6')}>
+                    <div
+                        className={clsx('flex overflow-auto max-h-custom', isNarrow ? 'gap-y-4 pt-4' : 'gap-y-8 pt-6')}
+                        style={{
+                            '--max-h-custom': maxContentHeight ? '25rem' : 'auto',
+                        }}
+                    >
                         {privacyFeature.map(({ title, description, imgSrc }, index) => (
                             <div className="flex flex-row gap-4 flex-align-items-center" key={index}>
                                 <img
