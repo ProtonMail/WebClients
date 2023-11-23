@@ -8,6 +8,7 @@ export const ALIAS_DETAILS_MAX_AGE = 30;
 export const MAX_ITEM_NAME_LENGTH = 200;
 export const MAX_ITEM_NOTE_LENGTH = 25_000;
 
+export const PASS_LEARN_MORE_URL = 'https://proton.me/pass';
 export const PASS_VIDEO_URL = 'https://www.youtube.com/embed/Nm4DCAjePOM?cc_load_policy=1';
 export const PASS_ANDROID_URL = 'https://play.google.com/store/apps/details?id=proton.android.pass';
 export const PASS_IOS_URL = 'https://apps.apple.com/us/app/proton-pass-password-manager/id6443490629';
@@ -16,6 +17,8 @@ export const PASS_REDDIT_URL = 'https://www.reddit.com/r/ProtonPass/';
 export const PASS_GITHUB_URL = 'https://github.com/ProtonMail/WebClients/tree/main/applications/pass-extension';
 export const PASS_REQUEST_URL = 'https://protonmail.uservoice.com/forums/953584-proton-pass';
 export const PASS_BLOG_TRIAL_URL = 'https://proton.me/support/pass-trial';
+export const PASS_CHROME_URL = 'https://chrome.google.com/webstore/detail/proton-pass/ghmbeldphafepmbegfdlkpapadhbakde';
+export const PASS_FIREFOX_URL = 'https://addons.mozilla.org/en-US/firefox/addon/proton-pass/';
 
 export const PASS_BF_MONTHLY_PRICE = 199;
 

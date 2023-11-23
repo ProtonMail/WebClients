@@ -2,6 +2,8 @@ export type AutoFillSettings = { inject: boolean; openOnFocus: boolean };
 export type AutoSaveSettings = { prompt: boolean; shareId?: string };
 export type AutoSuggestSettings = { password: boolean; email: boolean };
 
+export type PauseListEntry = { hostname: string; criteria: CriteriaMasks };
+
 export type CriteriaMask = number;
 export type CriteriaMasks = keyof typeof CRITERIA_MASKS;
 export type DomainCriterias = Record<string, CriteriaMask>;
