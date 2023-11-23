@@ -14,7 +14,11 @@ const EmptyTrash: FC<Props> = () => {
             image={noContentSvg}
             title={
                 // translator: Shown on empty Trash page
-                c('Info').t`No files or folders in trash`
+                c('Info').t`Trash is empty`
+            }
+            subtitle={
+                // translator: Shown on empty Trash page
+                c('Info').t`Items moved to the trash will stay here until deleted`
             }
         />
     );

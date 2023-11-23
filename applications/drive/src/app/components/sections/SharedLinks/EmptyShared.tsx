@@ -3,7 +3,7 @@ import { FC } from 'react';
 import { c } from 'ttag';
 
 import { PrimaryButton } from '@proton/components';
-import noLinksSvg from '@proton/styles/assets/img/illustrations/file-share.svg';
+import noLinksSvg from '@proton/styles/assets/img/illustrations/empty-shared.svg';
 
 import { DriveEmptyView } from '../../layout/DriveEmptyView';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal/SelectLinkToShareModal';
