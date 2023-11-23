@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BalanceOverview } from '../components';
+import { BalanceOverview, YourWalletsSection } from '../components';
 import { Transaction, Wallet, WalletKind } from '../types';
 
 // TODO: replace by wallets from API when done
@@ -44,8 +44,7 @@ export const WalletsDashboardContainer = () => {
             <div>
                 <BalanceOverview wallets={wallets} transactions={transactions} />
 
-                {/*TODO: Wallets details */}
-                <div></div>
+                <YourWalletsSection wallets={wallets} />
 
                 {/*TODO: Explore */}
                 <div></div>
