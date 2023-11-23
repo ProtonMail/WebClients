@@ -25,8 +25,9 @@ export const colors: string[] = [
 ];
 
 export const doughtnutChartOptions: ChartOptions<'doughnut'> = {
+    maintainAspectRatio: false,
     plugins: {
-        legend: { display: false },
+        legend: { position: 'right', labels: { boxHeight: 10, boxWidth: 10 } },
         title: { display: false },
     },
 };
