@@ -42,11 +42,12 @@ import {
     verifyMessage,
 } from 'pmcrypto';
 import type { Data, Key, PrivateKey, PublicKey } from 'pmcrypto';
-import { UserID, enums } from 'pmcrypto/lib/openpgp';
+import { UserID, config, enums } from 'pmcrypto/lib/openpgp';
 
 import { arrayToHexString } from '../utils';
 import {
     ComputeHashStreamOptions,
+    InitOptions,
     KeyInfo,
     KeyReference,
     MaybeArray,
@@ -422,8 +423,9 @@ export class Api extends KeyManagementApi {
     /**
      * Init pmcrypto and set the underlying global OpenPGP config.
      */
-    static init() {
+    static init({ checkEdDSAFaultySignatures = false }: InitOptions) {
         initPmcrypto();
+        config.checkEdDSAFaultySignatures = checkEdDSAFaultySignatures;
     }
 
     /**
