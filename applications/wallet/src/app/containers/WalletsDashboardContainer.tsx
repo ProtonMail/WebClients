@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BalanceOverview, YourWalletsSection } from '../components';
+import { BalanceOverview, ExploreProtonWalletSection, YourWalletsSection } from '../components';
 import { Transaction, Wallet, WalletKind } from '../types';
 
 // TODO: replace by wallets from API when done
@@ -46,8 +46,7 @@ export const WalletsDashboardContainer = () => {
 
                 <YourWalletsSection wallets={wallets} />
 
-                {/*TODO: Explore */}
-                <div></div>
+                <ExploreProtonWalletSection />
             </div>
 
             {/*TODO: Side content */}
