@@ -1,15 +1,14 @@
-import type { AsyncStore, Store } from '@proton/pass/types';
+import type { Storage } from '@proton/pass/types';
 import { type Maybe, type OnboardingAcknowledgment, OnboardingMessage, type OnboardingState } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import identity from '@proton/utils/identity';
 
 export type OnboardingStorageData = { onboarding: string };
-export type OnboardingStore = Store<OnboardingStorageData> | AsyncStore<OnboardingStorageData>;
 
 export type OnboardingServiceOptions = {
     /** defines where onboarding data will be stored */
-    store: OnboardingStore;
+    storage: Storage<OnboardingStorageData>;
     /** defines which onboarding rule this service supports  */
     rules: OnboardingRule[];
 };
@@ -29,7 +28,7 @@ export type OnboardingRule = {
 };
 
 export const INITIAL_ONBOARDING_STATE: OnboardingState = {
-    installedOn: -1,
+    installedOn: getEpoch(),
     updatedOn: -1,
     acknowledged: [],
 };
@@ -49,8 +48,22 @@ export const createOnboardingService = (options: OnboardingServiceOptions) => {
         state.acknowledged = update.acknowledged ?? state.acknowledged;
         state.installedOn = update.installedOn ?? state.installedOn;
         state.updatedOn = update.updatedOn ?? state.updatedOn;
-        void options.store.set('onboarding', JSON.stringify(state));
+        void options.storage.setItem('onboarding', JSON.stringify(state));
     };
+
+    /* Define extra rules in the `ONBOARDING_RULES` constant :
+     * we will resolve the first message that matches the rule's
+     * `when` condition */
+    const getMessage = () => ({
+        message:
+            options.rules.find(
+                ({ message, when }) =>
+                    when?.(
+                        state.acknowledged.find((ack) => message === ack.message),
+                        state
+                    )
+            )?.message ?? null,
+    });
 
     /** Resets the state's acknowledged message list. This may be
      * useful when logging out a user - preserves timestamps */
@@ -75,12 +88,15 @@ export const createOnboardingService = (options: OnboardingServiceOptions) => {
 
     const init = async () => {
         try {
-            const onboarding = await options.store.get('onboarding');
+            const onboarding = await options.storage.getItem('onboarding');
             if (typeof onboarding === 'string') setState(JSON.parse(onboarding));
-        } catch {}
+            else throw Error('Onboarding data not found');
+        } catch {
+            setState(state);
+        }
     };
 
-    return { acknowledge, init, reset, setState, state };
+    return { acknowledge, init, reset, setState, getMessage, state };
 };
 
 export type OnboardingService = ReturnType<typeof createOnboardingService>;
