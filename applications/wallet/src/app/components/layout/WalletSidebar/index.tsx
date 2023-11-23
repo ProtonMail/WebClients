@@ -7,7 +7,7 @@ import changelog from '../../../../../CHANGELOG.md';
 import { BitcoinMovementNavItems } from './BitcoinMovementNavItems';
 import { SecurityChecklist } from './SecurityChecklist';
 import { TransactionsNavItem } from './TransactionsNavItem';
-import { WalletsList } from './WalletsList';
+import { WalletsList } from './WalletsSidebarList';
 
 interface Props {
     expanded?: boolean;

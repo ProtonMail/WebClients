@@ -22,13 +22,12 @@ export const formatWalletToDoughnutChart = (wallets: any[]) => {
                         ...accDataset,
                         data: [...accDataset.data, wallet.balance],
                         backgroundColor: [...accDataset.backgroundColor, color],
-                        borderColor: [...accDataset.borderColor, color],
                         cutout: '70%',
                     },
                 ],
             ];
         },
-        [[], [{ label: 'Balance', data: [], backgroundColor: [], borderColor: [], borderWidth: 1 }]]
+        [[], [{ label: 'Balance', data: [], backgroundColor: [], borderWidth: 0 }]]
     );
 
     return { labels, datasets };
