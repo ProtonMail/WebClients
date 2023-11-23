@@ -5431,6 +5431,10 @@ __metadata:
 "@proton/config@workspace:packages/config":
   version: 0.0.0-use.local
   resolution: "@proton/config@workspace:packages/config"
+  dependencies:
+    "@manypkg/find-root": "npm:^2.2.1"
+    "@manypkg/get-packages": "npm:^2.2.0"
+    execa: "npm:^5.1.1"
   languageName: unknown
   linkType: soft
 
