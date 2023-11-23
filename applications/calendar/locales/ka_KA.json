@@ -2906,6 +2906,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "აპი ამჟამად ხელმიუწვდომელია"
+      ],
       "Error: ${ errorMessage }": [
         "შეცდომა: ${ errorMessage }"
       ],
@@ -2915,11 +2918,17 @@
       "Oops, something went wrong": [
         "უფს, რაღაც არასწორად წავიდა"
       ],
+      "Open in browser": [
+        "ბრაუზერში გახსნა"
+      ],
       "Please refresh the page or try again later.": [
         "განაახლეთ გვერდი ან მოგვიანებთ სცადეთ."
       ],
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME } ან ${ CALENDAR_APP_NAME }-ს გამოსაყენებლად ვების ვერსიაზე გადაერთეთ."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "ეს გვერდი ვერ ჩავტვირთეთ. განაახლეთ ეს გვერდი ან შეამოწმეთ თქვენი ინტერნეტკავშირი."
@@ -5181,6 +5190,9 @@
       "Custom email domains": [
         "თქვენი ელფოსტის დომენები"
       ],
+      "Custom snooze time": [
+        "მომხმარებლის დროებით დადუმების დრო"
+      ],
       "Hide-my-email aliases": [
         "მეტსახელი Hide My Email-სთვის"
       ],
@@ -5206,6 +5218,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "მიიღეთ განუსაზღვრელი მეტსახელები SimpleLogin-სგან (${ BRAND_NAME })"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "დაადუმეთ დროებით შეტყობინებები და ჩვენ შეგახსენებთ, როცა გნებავთ"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } და ${ DRIVE_APP_NAME } შორის"

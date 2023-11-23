@@ -2359,7 +2359,7 @@
         "域名不可用，请稍后再试"
       ],
       "Email address disabled": [
-        "邮件地址已禁用"
+        "邮箱地址已停用"
       ],
       "Email address is required": [
         "邮箱地址必须填写"
@@ -3640,6 +3640,9 @@
       ],
       "Contact unassigned to group ${ contactGroupName }": [
         "联系人已从 ${ contactGroupName } 群组中移除"
+      ],
+      "Country code": [
+        "国家/地区代码"
       ],
       "Create ${ calendarsToBeCreatedCount } new calendars": [
         "创建 ${ calendarsToBeCreatedCount } 份新日历"
