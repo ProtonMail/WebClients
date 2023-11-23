@@ -40,7 +40,9 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
         (selected: string) => {
             switch (selected) {
                 case 'all':
-                    return setFilters({ selectedShareId: null, search: '' }, matchEmpty ? getLocalPath() : undefined);
+                    /* if in trash or empty screen -> trigger autoselect via redirect */
+                    const redirect = matchEmpty || matchTrash ? getLocalPath() : undefined;
+                    return setFilters({ selectedShareId: null, search: '' }, redirect);
                 case 'trash':
                     return setFilters({ selectedShareId: null, search: '' }, getTrashRoute());
                 default: {
@@ -115,7 +117,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
 
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
 
-                <div className="flex flex-align-items-center flex-justify-space-between flex-item-noshrink flex-nowrap gap-2 mt-2 px-4 mx-3">
+                <div className="flex flex-align-items-center flex-justify-space-between flex-item-noshrink flex-nowrap gap-2 mt-2 pl-4 pr-2 mx-3">
                     <span
                         className={clsx(
                             'flex flex-align-items-center flex-nowrap flex-item-noshrink',
@@ -132,6 +134,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                     </span>
                     <Button
                         icon
+                        pill
                         size="small"
                         color="weak"
                         onClick={() => navigate(getLocalPath('settings'))}
