@@ -1,5 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
-import { CryptoWorkerPool, WorkerPoolInterface } from '@proton/crypto/lib/worker/workerPool';
+import { CryptoWorkerPool, WorkerPoolInitOptions as CryptoWorkerOptions } from '@proton/crypto/lib/worker/workerPool';
 
 import { hasModulesSupport, isIos11, isSafari11 } from './browser';
 
@@ -15,7 +15,7 @@ const isUnsupportedWorker = () => {
  * Initialize worker pool and set it as CryptoProxy endpoint.
  * If workers are not supported by the current browser, the pmcrypto API is imported instead.
  */
-const init = async (options?: Parameters<WorkerPoolInterface['init']>[0]) => {
+const init = async (options?: CryptoWorkerOptions) => {
     const isCompat = !hasModulesSupport();
 
     // Compat browsers do not support the worker.
@@ -24,7 +24,7 @@ const init = async (options?: Parameters<WorkerPoolInterface['init']>[0]) => {
         const { Api: CryptoApi } = await import(
             /* webpackChunkName: "crypto-worker-api" */ '@proton/crypto/lib/worker/api'
         );
-        CryptoApi.init();
+        CryptoApi.init(options?.openpgpConfigOptions || {});
         CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
     } else {
         await CryptoWorkerPool.init(options);
@@ -38,7 +38,7 @@ const init = async (options?: Parameters<WorkerPoolInterface['init']>[0]) => {
  * If the browser does not support workers, the pmcrypto API (including OpenPGP.js) is loaded directly in the main thread.
  * @returns init promise singleton
  */
-export const loadCryptoWorker = (options?: Parameters<typeof init>[0]) => {
+export const loadCryptoWorker = (options?: CryptoWorkerOptions) => {
     if (!promise) {
         promise = init(options);
     }
@@ -53,3 +53,5 @@ export const destroyCryptoWorker = () => {
 
     return CryptoProxy.releaseEndpoint();
 };
+
+export type { CryptoWorkerOptions };
