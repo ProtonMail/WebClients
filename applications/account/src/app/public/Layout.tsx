@@ -76,7 +76,7 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
             <div
                 className={clsx(
                     'sign-layout-container p-0 sm:px-6 flex flex-nowrap flex-column flex-justify-space-between',
-                    centeredContent && 'h-full'
+                    centeredContent && 'absolute h-full w-full'
                 )}
             >
                 <main className={clsx(centeredContent && 'flex flex-item-centered-vert')}>
