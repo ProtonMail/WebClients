@@ -1,6 +1,8 @@
 import type { FC } from 'react';
-import { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
 
+import { selectMostRecentInvite } from '@proton/pass/store/selectors/invites';
 import type { MaybeNull } from '@proton/pass/types';
 import type { Invite } from '@proton/pass/types/data/invites';
 import noop from '@proton/utils/noop';
@@ -10,6 +12,7 @@ import { VaultInviteCreate, type VaultInviteCreateValues } from './VaultInviteCr
 import { VaultInviteRespond } from './VaultInviteRespond';
 
 export type InviteContextValue = {
+    latestInvite: MaybeNull<Invite>;
     close: () => void;
     createInvite: (props: VaultInviteCreateValues<false>) => void;
     createSharedVault: (props: VaultInviteCreateValues<true>) => void;
@@ -20,6 +23,7 @@ export type InviteContextValue = {
 };
 
 const InviteContext = createContext<InviteContextValue>({
+    latestInvite: null,
     close: noop,
     createInvite: noop,
     createSharedVault: noop,
@@ -36,9 +40,10 @@ type InviteContextState =
 
 type InviteContextProps = { onVaultCreated?: (shareId: string) => void };
 
-export const InviteContextProvider: FC<InviteContextProps> = ({ children, onVaultCreated }) => {
+export const InviteProvider: FC<InviteContextProps> = ({ children, onVaultCreated }) => {
     const [state, setState] = useState<MaybeNull<InviteContextState>>(null);
     const [invite, setInvite] = useState<MaybeNull<Invite>>(null);
+    const latestInvite = useSelector(selectMostRecentInvite);
 
     const handles = useMemo(
         () => ({
@@ -54,6 +59,7 @@ export const InviteContextProvider: FC<InviteContextProps> = ({ children, onVaul
     const contextValue = useMemo<InviteContextValue>(
         () => ({
             ...handles,
+            latestInvite,
             onShareDisabled: (disabledShareId: string) => {
                 const shareId = (() => {
                     switch (state?.view) {
@@ -73,8 +79,14 @@ export const InviteContextProvider: FC<InviteContextProps> = ({ children, onVaul
             },
             respondToInvite: setInvite,
         }),
-        [state]
+        [state, latestInvite]
     );
+
+    useEffect(() => {
+        /* If the latest invite was promoted from a new user invite,
+         * auto prompt the "respond to invite" modal */
+        if (latestInvite?.fromNewUser) setInvite(latestInvite);
+    }, [latestInvite]);
 
     return (
         <InviteContext.Provider value={contextValue}>

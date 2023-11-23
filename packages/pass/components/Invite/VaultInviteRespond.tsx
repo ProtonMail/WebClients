@@ -13,7 +13,7 @@ import { inviteAcceptIntent, inviteRejectIntent } from '@proton/pass/store/actio
 import { selectUserVerified, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { Invite } from '@proton/pass/types/data/invites';
 
-import { useInviteContext } from './InviteContextProvider';
+import { useInviteContext } from './InviteProvider';
 import { UserVerificationMessage } from './UserVerificationMessage';
 
 export const VaultInviteRespond: VFC<Invite> = (invite) => {

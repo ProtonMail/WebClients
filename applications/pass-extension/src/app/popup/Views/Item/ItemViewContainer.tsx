@@ -6,7 +6,7 @@ import { useItemsFilteringContext } from 'proton-pass-extension/lib/hooks/useIte
 import { useNavigationContext } from 'proton-pass-extension/lib/hooks/useNavigationContext';
 import { c } from 'ttag';
 
-import { useInviteContext } from '@proton/pass/components/Invite/InviteContextProvider';
+import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
 import { VaultInviteFromItemModal } from '@proton/pass/components/Invite/VaultInviteFromItemModal';
 import { AliasView } from '@proton/pass/components/Item/Alias/Alias.view';
 import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCard.view';
