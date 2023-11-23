@@ -46,7 +46,7 @@ const OrganizationTwoFARemindersSection = ({ organization }: Props) => {
             <Row className="mt-1">
                 <Label>
                     <span className="mr-0.5">{c('Label').t`Email`}</span>
-                    <span className="no-mobile">
+                    <span className="hidden md:inline">
                         <Info
                             title={c('Tooltip')
                                 .t`Members who do not use 2FA will get an email asking them to enable it as soon as possible.`}

@@ -22,12 +22,12 @@ const MailSidebarPrimaryButton = ({ handleCompose }: Props) => {
 
     const sideBarPrimaryButton = Shortcuts ? (
         <Tooltip title={titlePrimaryButton} originalPlacement="top">
-            <SidebarPrimaryButton className="no-mobile" onClick={handleCompose} data-testid="sidebar:compose">
+            <SidebarPrimaryButton className="hidden md:inline" onClick={handleCompose} data-testid="sidebar:compose">
                 {c('Action').t`New message`}
             </SidebarPrimaryButton>
         </Tooltip>
     ) : (
-        <SidebarPrimaryButton className="no-mobile" onClick={handleCompose} data-testid="sidebar:compose">
+        <SidebarPrimaryButton className="hidden md:inline" onClick={handleCompose} data-testid="sidebar:compose">
             {c('Action').t`New message`}
         </SidebarPrimaryButton>
     );
