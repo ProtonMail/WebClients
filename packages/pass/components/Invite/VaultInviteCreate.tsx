@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
-import { FadeIn } from '@proton/pass/components/Layout/Animation/FadeIn';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
@@ -123,9 +122,9 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                     }
                 >
                     {form.values.step !== 'vault' && (
-                        <FadeIn
+                        <div
                             className={clsx(
-                                'flex flex-justify-space-between flex-align-items-center flex-nowrap mt-3 mb-6 gap-3',
+                                'flex flex-justify-space-between flex-align-items-center flex-nowrap mt-3 mb-6 gap-3 anime-fade-in',
                                 props.withVaultCreation && 'border rounded-xl p-3'
                             )}
                         >
@@ -156,7 +155,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                                     shareId={props.vault.shareId}
                                 />
                             )}
-                        </FadeIn>
+                        </div>
                     )}
 
                     <FormikProvider value={form}>
