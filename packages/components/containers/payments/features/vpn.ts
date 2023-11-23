@@ -314,12 +314,12 @@ export const getRefundable = (): PlanCardFeatureDefinition => {
         included: true,
     };
 };
-const getSplitTunnel = (): PlanCardFeatureDefinition => {
+const getSplitTunnel = (included: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Split tunneling (Android and Windows)`,
         tooltip: c('new_plans: tooltip')
             .t`Allows you to access more than one network at the same time, e.g., stream a film from another country while still getting local search results`,
-        included: true,
+        included: included,
     };
 };
 export const getVPNDevices = (n: number): PlanCardFeatureDefinition => {
@@ -705,17 +705,17 @@ export const getVPNFeatures = (serversCount: VPNServersCountData): PlanCardFeatu
         {
             name: 'split-tunnel',
             plans: {
-                [PLANS.FREE]: getSplitTunnel(),
-                [PLANS.BUNDLE]: getSplitTunnel(),
-                [PLANS.MAIL]: getSplitTunnel(),
-                [PLANS.VPN]: getSplitTunnel(),
-                [PLANS.DRIVE]: getSplitTunnel(),
-                [PLANS.PASS_PLUS]: getSplitTunnel(),
-                [PLANS.FAMILY]: getSplitTunnel(),
-                [PLANS.MAIL_PRO]: getSplitTunnel(),
-                [PLANS.BUNDLE_PRO]: getSplitTunnel(),
-                [PLANS.VPN_PRO]: getSplitTunnel(),
-                [PLANS.VPN_BUSINESS]: getSplitTunnel(),
+                [PLANS.FREE]: getSplitTunnel(false),
+                [PLANS.BUNDLE]: getSplitTunnel(true),
+                [PLANS.MAIL]: getSplitTunnel(false),
+                [PLANS.VPN]: getSplitTunnel(true),
+                [PLANS.DRIVE]: getSplitTunnel(false),
+                [PLANS.PASS_PLUS]: getSplitTunnel(false),
+                [PLANS.FAMILY]: getSplitTunnel(true),
+                [PLANS.MAIL_PRO]: getSplitTunnel(false),
+                [PLANS.BUNDLE_PRO]: getSplitTunnel(true),
+                [PLANS.VPN_PRO]: getSplitTunnel(true),
+                [PLANS.VPN_BUSINESS]: getSplitTunnel(true),
             },
         },
     ];
