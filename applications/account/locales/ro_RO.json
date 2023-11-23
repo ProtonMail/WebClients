@@ -4351,6 +4351,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Aplicație momentan indisponibilă"
+      ],
       "Error: ${ errorMessage }": [
         "Eroare: ${ errorMessage }"
       ],
@@ -4360,11 +4363,17 @@
       "Oops, something went wrong": [
         "Hopa, ceva nu a mers bine!"
       ],
+      "Open in browser": [
+        "Deschidere în navigator web"
+      ],
       "Please refresh the page or try again later.": [
         "Reîmprospătați pagina sau reîncercați mai târziu."
       ],
       "Something went wrong": [
         "Ceva nu a funcționat corect."
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Pentru a folosi ${ MAIL_APP_NAME } sau ${ CALENDAR_APP_NAME }, comutați la versiunea web."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Prea multe sesiuni secundare, ștergeți fişierele cookie și reconectați-vă."
@@ -7375,6 +7384,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Asta ar putea dura ceva timp. Nu închideți această pagină și nu vă deconectați de la internet."
       ],
+      "This file is too large to preview": [
+        "Acest fișier este prea mare pentru a fi examinat."
+      ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Aceasta este o frază de 12 cuvinte care vi s-a solicitat să o setați."
       ],
@@ -10253,6 +10265,9 @@
       "Custom fields": [
         "Câmpuri personalizate"
       ],
+      "Custom snooze time": [
+        "Timp amânare personal"
+      ],
       "Data breach monitoring": [
         "Monitorizarea divulgării datelor"
       ],
@@ -10475,6 +10490,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obțineți aliasuri nelimitate cu SimpleLogin de la ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Amânați mesajele și fiți notificat când doriți."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."

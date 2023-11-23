@@ -2467,6 +2467,9 @@
       ],
       "You have successfully joined the Family plan": [
         "आप परिवार प्लान से जुड़ गए है"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "आपका खाता ${ usedSpace } स्टोरेज का उपयोग कर रहा है, जो आपको दिए गए ${ inviteSpace } से अधिक है। कुछ डेटा हटाएं या प्लान एडमिन से अपना स्टोरेज बढ़ाने के लिए कहें।"
       ]
     },
     "familyOffer_2023:Onboarding Proton": {
@@ -3642,6 +3645,9 @@
       "The following may have been tampered with: ${ items }. Only open if you trust it.": [
         "इस चीज़ के साथ छेड़छाड़ हुई हो सकती है: ${ items }। तभी खोले जब उसपे भरोसा हो।"
       ],
+      "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
+        "इस पते के स्वामी ने एंड-टू-एंड एन्क्रिप्शन अक्षम कर दिया है। इस पते पर एन्क्रिप्टेड ईमेल भेजने में सक्षम होने के लिए, स्वामी को एंड-टू-एंड एन्क्रिप्शन को फिर से सक्षम करना होगा।"
+      ],
       "There are files that still need to be transferred. Closing the transfer manager will end all operations.": [
         "ऐसी फाइलें हैं जिन्हें अभी भी स्थानांतरित करने की आवश्यकता है। ट्रांसफर मैनेजर को बंद करने से सभी ऑपरेशन खत्म हो जाएंगे।"
       ],
@@ -4584,6 +4590,9 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "अपनी ऑनलाइन पहचान के लिए एकाधिक ईमेल पते बनाएं, उदा. शॉपिंग खातों के लिए जॉनशॉपर@${ domain }, समाचार सदस्यता के लिए जॉनन्यूज@${ domain2 }"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "${ BRAND_NAME } के SimpleLogin से असीमित नकलीनाम लें"
       ],
@@ -5201,6 +5210,9 @@
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "हमारी सभी प्रीमियम सेवाएँ अपनी उच्चतम सीमा के साथ: 100 ईमेल पते, 10 कस्टम डोमेन के लिए समर्थन, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण, एन्क्रिप्टेड क्लाउड स्टोरेज और फ़ाइल साझाकरण, और बहुत कुछ।"
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "भविष्य में हमारे द्वारा जारी की जाने वाली सभी नई गोपनीयता सेवाओं के भुगतान की आवश्यकता वाले संस्करण बिना किसी अतिरिक्त लागत के प्राप्त करें, साथ ही भविष्य की सभी सुविधाओं और उत्पादों तक शीघ्र पहुंच प्राप्त करें।"
       ]
     },
     "Spotlight": {
