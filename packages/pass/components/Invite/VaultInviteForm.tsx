@@ -9,7 +9,6 @@ import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { RadioGroupField } from '@proton/pass/components/Form/Field/RadioGroupField';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
-import { FadeIn } from '@proton/pass/components/Layout/Animation/FadeIn';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
 import { shareRoleOptions } from '@proton/pass/components/Share/ShareRoleOptions';
 import { VaultForm } from '@proton/pass/components/Vault/Vault.form';
@@ -30,7 +29,7 @@ export const VaultInviteForm: VFC<Props> = ({ form, autoFocus }) => {
         <>
             {!userVerified && <UserVerificationMessage />}
             {step === 'email' && (
-                <FadeIn>
+                <div className="anime-fade-in">
                     <h2 className="text-xl text-bold mb-3">{c('Title').t`Share with`}</h2>
                     <FieldsetCluster>
                         <Field
@@ -43,17 +42,17 @@ export const VaultInviteForm: VFC<Props> = ({ form, autoFocus }) => {
                             key={`autofocus-email-${autoFocus}`}
                         />
                     </FieldsetCluster>
-                </FadeIn>
+                </div>
             )}
 
             {step === 'vault' && (
-                <FadeIn className="flex flex-column gap-y-4">
+                <div className="flex flex-column gap-y-4 anime-fade-in">
                     <VaultForm form={form as FormikContextType<InviteFormValues<true>>} autoFocus={autoFocus} />
-                </FadeIn>
+                </div>
             )}
 
             {step === 'permissions' && (
-                <FadeIn>
+                <div className="anime-fade-in">
                     <h2 className="text-xl text-bold mb-3">{c('Title').t`Set access level`}</h2>
                     <button
                         className="flex flex-align-items-center flex-nowrap gap-3 mb-3"
@@ -77,7 +76,7 @@ export const VaultInviteForm: VFC<Props> = ({ form, autoFocus }) => {
                             options={shareRoleOptions()}
                         />
                     </div>
-                </FadeIn>
+                </div>
             )}
         </>
     );

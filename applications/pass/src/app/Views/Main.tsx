@@ -25,7 +25,7 @@ export const Main: FC = () => {
     return (
         <InviteContextProvider onVaultCreated={useCallback((shareId) => setFilters({ selectedShareId: shareId }), [])}>
             <PasswordContextProvider initial={null}>
-                <div className="content-container flex flex-row flex-nowrap no-scroll flex-item-fluid relative w-full h-full">
+                <div className="content-container flex flex-row flex-nowrap no-scroll flex-item-fluid relative w-full h-full anime-fade-in">
                     <Sidebar expanded={expanded} onToggle={toggle}>
                         <VaultActionsProvider onVaultCreated={noop} onVaultDeleted={noop}>
                             <Menu onToggle={toggle} />
