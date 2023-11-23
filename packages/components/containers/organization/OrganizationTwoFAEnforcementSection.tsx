@@ -73,7 +73,7 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
             <Row>
                 <Label>
                     <span className="mr-0.5">{c('Label').t`Require 2FA for administrators`}</span>
-                    <span className="no-mobile">
+                    <span className="hidden md:inline">
                         <Info
                             url={
                                 APP_NAME === APPS.PROTONVPN_SETTINGS
@@ -100,7 +100,7 @@ const OrganizationTwoFAEnforcementSection = ({ organization }: Props) => {
             <Row>
                 <Label>
                     <span className="mr-0.5">{c('Label').t`Require 2FA for everyone`}</span>
-                    <span className="no-mobile">
+                    <span className="hidden md:inline">
                         <Info
                             url={
                                 APP_NAME === APPS.PROTONVPN_SETTINGS

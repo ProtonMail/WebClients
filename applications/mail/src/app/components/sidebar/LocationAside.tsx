@@ -83,7 +83,7 @@ const LocationAside = ({
             {itemOptions && (
                 <span
                     className={clsx(
-                        'group-hover:opacity-100 group-hover:opacity-100-no-width flex-item-noshrink no-mobile mr-custom right-custom',
+                        'group-hover:opacity-100 group-hover:opacity-100-no-width flex-item-noshrink hidden md:flex mr-custom right-custom',
                         isOptionDropdownOpened && 'is-active'
                     )}
                     style={{ '--mr-custom': 'calc(var(--space-1) * -1)', '--right-custom': 'var(--space-2)' }}

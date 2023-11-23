@@ -104,7 +104,7 @@ const HeaderCollapsed = ({
                 {messageLoaded && (
                     <div className="ml-2 flex-item-fluid flex flex-nowrap">
                         <ItemLabels
-                            className="no-mobile"
+                            className="hidden md:inline-flex"
                             element={message.data}
                             labels={labels}
                             labelID={labelID}
