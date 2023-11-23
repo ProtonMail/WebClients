@@ -8,9 +8,9 @@ import {
 import { NavigationContextProvider } from 'proton-pass-extension/lib/components/Context/Navigation/NavigationContext';
 import { usePopupContext } from 'proton-pass-extension/lib/hooks/usePopupContext';
 
-import { InviteContextProvider } from '@proton/pass/components/Invite/InviteContextProvider';
+import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { PasswordContextProvider } from '@proton/pass/components/PasswordGenerator/PasswordContext';
-import { SpotlightContextProvider } from '@proton/pass/components/Spotlight/SpotlightContext';
+import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 
 import { Lobby } from './Views/Lobby/Lobby';
 import { Main } from './Views/Main';
@@ -26,14 +26,14 @@ export const App: VFC = () => {
             <ItemsFilteringContextProvider>
                 <ItemsFilteringContext.Consumer>
                     {({ setShareId }) => (
-                        <InviteContextProvider onVaultCreated={setShareId}>
+                        <InviteProvider onVaultCreated={setShareId}>
                             <ItemEffects />
                             <PasswordContextProvider initial={state.initial.passwordOptions}>
-                                <SpotlightContextProvider>
+                                <SpotlightProvider>
                                     <Main />
-                                </SpotlightContextProvider>
+                                </SpotlightProvider>
                             </PasswordContextProvider>
-                        </InviteContextProvider>
+                        </InviteProvider>
                     )}
                 </ItemsFilteringContext.Consumer>
             </ItemsFilteringContextProvider>

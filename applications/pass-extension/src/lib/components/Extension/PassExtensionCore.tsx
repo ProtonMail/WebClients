@@ -1,11 +1,14 @@
 import { type FC, useCallback } from 'react';
 
 import * as config from 'proton-pass-extension/app/config';
+import { promptForPermissions } from 'proton-pass-extension/lib/utils/permissions';
 
 import { PassCoreProvider } from '@proton/pass/components/Core/PassCoreProvider';
 import { API_PROXY_KEY } from '@proton/pass/lib/api/proxy';
 import { resolveMessageFactory, sendMessage } from '@proton/pass/lib/extension/message';
+import { getWebStoreUrl } from '@proton/pass/lib/extension/utils/browser';
 import browser from '@proton/pass/lib/globals/browser';
+import type { OnboardingMessage } from '@proton/pass/types';
 import { type ClientEndpoint, type Maybe, type OtpRequest, WorkerMessageType } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 import noop from '@proton/utils/noop';
@@ -48,14 +51,29 @@ const openSettings = (page?: string) => {
         .catch(noop);
 };
 
+const createOnboardingAck = (endpoint: ClientEndpoint) => (message: OnboardingMessage) => {
+    void sendMessage(
+        resolveMessageFactory(endpoint)({
+            type: WorkerMessageType.ONBOARDING_ACK,
+            payload: { message },
+        })
+    );
+};
+
+const onForceUpdate = () => browser.runtime.reload();
+
 export const PassExtensionCore: FC<{ endpoint: ClientEndpoint }> = ({ children, endpoint }) => (
     <PassCoreProvider
         config={config}
         generateOTP={useCallback(createOTPGenerator(endpoint), [])}
         getDomainImageURL={getDomainImageURL}
+        getRatingURL={getWebStoreUrl}
+        onForceUpdate={onForceUpdate}
         onLink={onLink}
+        onOnboardingAck={createOnboardingAck(endpoint)}
         onTelemetry={useCallback(createTelemetryHandler(endpoint), [])}
         openSettings={openSettings}
+        promptForPermissions={promptForPermissions}
     >
         {children}
     </PassCoreProvider>
