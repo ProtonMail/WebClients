@@ -17,7 +17,6 @@ import { PaymentProcessorHook } from './interface';
 import { usePaymentProcessor } from './usePaymentProcessor';
 
 export type CardFieldStatus = {
-    fullname: boolean;
     number: boolean;
     month: boolean;
     year: boolean;
@@ -27,7 +26,6 @@ export type CardFieldStatus = {
 };
 
 export const getInitialFieldStatus = (): CardFieldStatus => ({
-    fullname: true,
     number: true,
     month: true,
     year: true,
