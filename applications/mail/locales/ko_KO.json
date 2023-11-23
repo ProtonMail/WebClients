@@ -3006,7 +3006,7 @@
     },
     "Description": {
       "${ manageBlockedAddressesSettingsLink } in settings.": [
-        "설정에서 ${ manageBlockedAddressesSettingsLink }"
+        "${ manageBlockedAddressesSettingsLink }는 설정에서 상세히 가능합니다."
       ],
       "Automatically clear out messages older than 30 days from trash and spam. Enjoy this and other benefits when you upgrade.": [
         "휴지통과 스팸함의 30일 이상 된 메시지를 자동으로 삭제합니다. 업그레이드하여 이 기능과 다른 혜택들을 누려보세요."
@@ -3030,10 +3030,10 @@
         "연락처 병합 중... 몇 분이 걸릴 수 있습니다. 이 처리가 완료되면, 이 모달을 닫을 수 있습니다."
       ],
       "New emails from ${ senderEmailAddress } and ${ otherSendersCount } others won't be delivered and will be permanently deleted.": [
-        "${ senderEmailAddress } 로 부터의 새로운 이메일과 ${ otherSendersCount } 개를 전송할 수 없으며, 완전히 삭제됩니다."
+        "${ senderEmailAddress }을(를) 포함한 ${ otherSendersCount }개 주소로 새로운 이메일을 전송할 수 없으며, 완전히 삭제됩니다."
       ],
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
-        "${ senderEmailAddress } 로 부터의 새로운 이메일을전송할 수 없으며, 완전히 삭제됩니다."
+        "${ senderEmailAddress }(으)로 새로운 이메일을 전송할 수 없으며, 완전히 삭제됩니다."
       ],
       "No folders": [
         "폴더 없음"
@@ -5344,7 +5344,7 @@
         "메시지 전송 완료"
       ],
       "Message sent.": [
-        "메시지 전송 완료."
+        "메시지를 전송했습니다."
       ],
       "Message will be sent in the morning at ${ formattedTime }": [
         "메시지가 아침 ${ formattedTime } 에 전송됩니다"
@@ -5521,7 +5521,7 @@
         "페이지를 새로고침하거나 ${ link } 대부분의 문제가 자동으로 해결됩니다."
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
-        "피싱 시도로 메시지를 보고하면 메시지를 분석하여 필터를 개선할 수 있습니다. 이것은 우리가 메시지의 내용을 전체적으로 볼 수 있다는 것을 의미합니다."
+        "피싱 시도로 메시지를 보고하면 메시지를 분석하여 필터를 개선할 수 있습니다. 다만, 분석을 위해 Proton에서 메시지의 내용을 전반적으로 확인할 수 있습니다."
       ],
       "Request read receipt": [
         "수신 확인 요청"
@@ -8373,6 +8373,9 @@
       "${ elementsCount } conversations removed from ${ labelName }.": [
         "${ labelName }에서 대화 ${ elementsCount }개를 삭제했습니다."
       ],
+      "${ elementsCount } conversations snoozed": [
+        "${ elementsCount }개 항목을 음소거 했습니다."
+      ],
       "${ elementsCount } messages added to ${ labelName }.": [
         "${ elementsCount } 메시지가 ${ labelName } 로 추가됨."
       ],
@@ -8503,13 +8506,13 @@
         "메시지가 ${ folderName } 으로 이동되었으며 보낸 사람이 스팸 아님 목록에 추가되었습니다."
       ],
       "Message moved to ${ folderName }.": [
-        "메시지가 ${ folderName } 으로 이동되었습니다."
+        "메시지가 ${ folderName }(으)로 이동되었습니다."
       ],
       "Message moved to spam and sender added to your spam list.": [
         "메시지가 스팸으로 이동되었고 보낸 사람이 스팸 목록에 추가되었습니다."
       ],
       "Message removed from ${ labelName }.": [
-        "메시지가 ${ labelName } 에서 삭제되었습니다."
+        "메시지가 ${ labelName }(에)서 삭제되었습니다."
       ],
       "Messages from ${ sendersList } will be labelled as ${ labelsList }": [
         "${ sendersList } 로 부터 전송된 메시지가 ${ labelsList } 로 라벨됩니다."
