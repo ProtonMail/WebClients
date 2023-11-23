@@ -13,7 +13,7 @@ import { DriveEmptyView } from '../../layout/DriveEmptyView';
 
 type Props = {};
 
-export const PhotosEmptyView: FC<Props> = () => {
+export const EmptyPhotos: FC<Props> = () => {
     return (
         <DriveEmptyView
             image={emptyPhotosSvg}
@@ -38,4 +38,4 @@ export const PhotosEmptyView: FC<Props> = () => {
     );
 };
 
-export default PhotosEmptyView;
+export default EmptyPhotos;

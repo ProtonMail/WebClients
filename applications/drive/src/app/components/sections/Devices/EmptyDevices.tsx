@@ -19,7 +19,7 @@ const EmptyDevices: FC<Props> = () => {
             image={emptyDevicesImg}
             title={
                 // translator: Shown as a call to action when there are no computers synced
-                c('Info').t`No computers syncing`
+                c('Info').t`Want to sync files faster?`
             }
             subtitle={
                 // translator: Shown as a call to action when there are no computers synced
