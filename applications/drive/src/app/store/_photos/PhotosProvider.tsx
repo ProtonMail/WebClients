@@ -32,7 +32,7 @@ export const PhotosProvider: FC = ({ children }) => {
 
     useEffect(() => {
         void Promise.all([getDefaultShare().then(setShare), getDefaultPhotosShare().then(setPhotosShare)]);
-    }, [getDefaultPhotosShare, getDefaultShare]);
+    }, []);
 
     const loadPhotos = async (abortSignal: AbortSignal, volumeId: string) => {
         const photoCall = async (lastLinkId?: string) => {
