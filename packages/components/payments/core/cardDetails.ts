@@ -10,9 +10,8 @@ const formatYear = (year: any) => {
     const pre = String(year).length === 2 ? '20' : '';
     return `${pre}${year}`;
 };
-const clear = (v: any) => String(v).trim();
+
 export interface CardModel {
-    fullname?: string;
     number: string;
     month: string;
     year: string;
@@ -26,12 +25,10 @@ export const toDetails = ({
     month: ExpMonth,
     year,
     cvc: CVC,
-    fullname,
     zip: ZIP,
     country: Country,
 }: CardModel): CreateCardDetailsBackend => {
     return {
-        Name: clear(fullname),
         Number: String(number).replace(/\s+/g, ''),
         ExpMonth,
         ExpYear: formatYear(year),
@@ -44,7 +41,6 @@ export const getDefaultCard = (): CardModel => {
     const { value: country } = getFirstTop();
 
     return {
-        fullname: '',
         number: '',
         month: '',
         year: '',
@@ -93,7 +89,7 @@ const check = (card: CardModel, key: KeyOfCardModel): string | undefined => {
     }
 };
 export const getErrors = (card: CardModel): Partial<CardModel> => {
-    return ['fullname', 'number', 'month', 'year', 'cvc', 'zip', 'country'].reduce((acc, key) => {
+    return ['number', 'month', 'year', 'cvc', 'zip', 'country'].reduce((acc, key) => {
         const error = check(card, key as KeyOfCardModel);
         if (error) {
             acc[key] = error;

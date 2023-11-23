@@ -35,7 +35,7 @@ describe('PaymentProcessor', () => {
 
     it('should call the handler when the state is updated', () => {
         paymentProcessor.onStateUpdated(mockHandler);
-        const newState = { card: { ...getDefaultCard(), fullname: 'John Doe' } };
+        const newState = { card: { ...getDefaultCard(), number: '4242424242424242' } };
         paymentProcessor.updateState(newState);
         expect(mockHandler).toHaveBeenCalledWith(newState);
     });
@@ -48,7 +48,7 @@ describe('PaymentProcessor', () => {
     it('should not call the handler when the state is updated after the processor was destroyed', () => {
         paymentProcessor.onStateUpdated(mockHandler);
         paymentProcessor.destroy();
-        const newState = { card: { ...getDefaultCard(), fullname: 'John Doe' } };
+        const newState = { card: { ...getDefaultCard(), number: '4242424242424242' } };
         paymentProcessor.updateState(newState);
         expect(mockHandler).not.toHaveBeenCalled();
     });
@@ -56,7 +56,7 @@ describe('PaymentProcessor', () => {
     it('should not call the handler when the state is updated after the handler was removed', () => {
         const id = paymentProcessor.onStateUpdated(mockHandler);
         paymentProcessor.removeHandler(id);
-        const newState = { card: { ...getDefaultCard(), fullname: 'John Doe' } };
+        const newState = { card: { ...getDefaultCard(), number: '4242424242424242' } };
         paymentProcessor.updateState(newState);
         expect(mockHandler).not.toHaveBeenCalled();
     });
@@ -64,7 +64,7 @@ describe('PaymentProcessor', () => {
     it('should not call the handler when the state is updated after the handler was removed by handler instance', () => {
         paymentProcessor.onStateUpdated(mockHandler);
         paymentProcessor.removeHandler(mockHandler);
-        const newState = { card: { ...getDefaultCard(), fullname: 'John Doe' } };
+        const newState = { card: { ...getDefaultCard(), number: '4242424242424242' } };
         paymentProcessor.updateState(newState);
         expect(mockHandler).not.toHaveBeenCalled();
     });
