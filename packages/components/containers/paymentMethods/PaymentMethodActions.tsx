@@ -18,7 +18,6 @@ import EditCardModal from '../payments/EditCardModal';
 
 const toCardModel = ({ Details }: PaymentMethodCardDetails): CardModel => {
     return {
-        fullname: Details.Name ?? undefined,
         month: `${Details.ExpMonth}`, // ExpMonth is a number
         number: '',
         year: `${Details.ExpYear}`.slice(-2), // ExpYear is a number
