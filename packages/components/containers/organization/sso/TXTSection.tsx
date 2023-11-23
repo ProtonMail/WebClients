@@ -8,7 +8,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Domain } from '@proton/shared/lib/interfaces';
 
 interface Props {
-    domain?: Domain;
+    domain: Domain;
 }
 
 interface ReadOnlyInputFieldProps {
@@ -39,7 +39,7 @@ const ReadOnlyInputField: React.FC<ReadOnlyInputFieldProps> = ({ label, value }:
 };
 
 const TXTSection = ({ domain }: Props) => {
-    const domainName = <b key={domain?.ID}>{domain?.DomainName}</b>;
+    const domainName = <b key={domain.ID}>{domain.DomainName}</b>;
 
     return (
         <div>
@@ -58,9 +58,9 @@ const TXTSection = ({ domain }: Props) => {
 
             <h3 className="text-semibold text-rg mt-2 mb-1">{c('Info').t`DNS TXT record`}</h3>
             <div className="rounded border border-weak flex flex-column gap-2 p-4">
-                <ReadOnlyInputField label="Type" value="TXT" />
-                <ReadOnlyInputField label="Name" value="@" />
-                <ReadOnlyInputField label="Value" value={domain?.VerifyCode || ''} />
+                <ReadOnlyInputField label={c('Label').t`Type`} value="TXT" />
+                <ReadOnlyInputField label={c('Label').t`Name`} value="@" />
+                <ReadOnlyInputField label={c('Label').t`Value`} value={domain.VerifyCode} />
             </div>
             <p className="color-weak text-sm mt-2 mb-3">
                 {c('Hint').t`Add this record to your domain in the control panel of your domain name registrar`}
