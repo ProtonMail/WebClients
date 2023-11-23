@@ -31,7 +31,7 @@ describe('URL validation', () => {
             expect(isValidURL(`${scheme}someurl`).valid).toBe(true);
             expect(isValidURL(`${scheme}//someurl`).valid).toBe(true);
             expect(isValidURL('someurl', scheme).valid).toBe(true);
-            expect(isValidURL('someurl', `${scheme}//`).valid).toBe(true);
+            expect(isValidURL('someurl', scheme).valid).toBe(true);
         });
     });
 
@@ -46,6 +46,11 @@ describe('URL validation', () => {
         expect(isValidURL('proton.me/login/?foo=bar').url).toEqual('https://proton.me/login/?foo=bar');
         expect(isValidURL('proton.me/login/?foo=bar', 'wss:').url).toEqual('wss://proton.me/login/?foo=bar');
         expect(isValidURL('https://proton.me/login/?foo=bar').url).toEqual('https://proton.me/login/?foo=bar');
+    });
+
+    test('shout preserve ports', () => {
+        expect(isValidURL('http://localhost:3000').url).toEqual('http://localhost:3000/');
+        expect(isValidURL('https://localhost:3001?foo=bar').url).toEqual('https://localhost:3001/?foo=bar');
     });
 
     test('should invalidate URLs containing internal white-spaces', () => {
