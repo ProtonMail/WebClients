@@ -3353,6 +3353,12 @@
         "${ doneUploadsCount } запампавана",
         "${ doneUploadsCount } запампавана"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } у App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } у Play Store"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } са збоем",
         "${ errorCount } са збоем",
@@ -3653,6 +3659,9 @@
       "double your storage": [
         "падвоіць ваша сховішча"
       ],
+      "Download ${ name } app": [
+        "Спампаваць праграму ${ name }"
+      ],
       "Download canceled": [
         "Спампоўванне скасавана"
       ],
@@ -3679,6 +3688,9 @@
       ],
       "Drop file here to upload": [
         "Перацягніце файл сюды, каб запампаваць"
+      ],
+      "Drop files here": [
+        "Перацягніце сюды файлы"
       ],
       "Drop to import": [
         "Перацягніце для імпартавання"
@@ -3793,6 +3805,12 @@
       ],
       "from the version history?": [
         "з гісторыі версій?"
+      ],
+      "Get the app to backup photos from your phone.": [
+        "Атрымаць праграму для рэзервовай копіі фатаграфій з вашай прылады."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Атрымаць праграму для камп'ютара для сінхранізацыі файлаў."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Пазнаёмцеся з ${ DRIVE_APP_NAME } і атрымайце бонус у 500 МБ! Гэта можна зрабіць ужо сёння."
@@ -3944,6 +3962,9 @@
       "No": [
         "Не"
       ],
+      "No computers syncing": [
+        "Няма сінхранізаваных камп'ютараў"
+      ],
       "No contacts added yet": [
         "Кантакты пакуль не дададзены"
       ],
@@ -3997,6 +4018,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Толькі людзі ў якіх будзе спасылка і пароль змогуць атрымаць доступ да папкі."
+      ],
+      "Or use the \"+ New\" button": [
+        "Або скарыстайцеся кнопкай \"+ Новы\""
       ],
       "Paused": [
         "Прыпынена"
@@ -4084,6 +4108,9 @@
       ],
       "Queued": [
         "У чарзе"
+      ],
+      "Ready to add some photos?": [
+        "Гатовыя дадаць некаторыя фатаграфіі?"
       ],
       "recommended browser": [
         "рэкамендаваны браўзер"

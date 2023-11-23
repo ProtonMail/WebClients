@@ -554,6 +554,9 @@
       "label emails as": [
         "ელ-ფოსტების მონიშვნა, როგორც"
       ],
+      "Later this week": [
+        "მოგვიანებით ამ კვირაში"
+      ],
       "Learn more": [
         "გაიგეთ მეტი"
       ],
@@ -577,6 +580,9 @@
       ],
       "Manage labels": [
         "ჭდეების მართვა"
+      ],
+      "Manage Snooze": [
+        "დროებით დადუმების მართვა"
       ],
       "Mark as read": [
         "წაკითხულად მონიშვნა"
@@ -899,6 +905,9 @@
       "Select all messages": [
         "ყველა შეტყობინების მონიშვნა"
       ],
+      "Select date and time": [
+        "აირჩიეთ თარიღი და დრო"
+      ],
       "Self-destruct in 7 days": [
         "თვითგანადგურება 7 დღეში"
       ],
@@ -1004,6 +1013,9 @@
       "Skip verification": [
         "შემოწმების გამოტოვება"
       ],
+      "Snooze": [
+        "დროებით დადუმება"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "ტრეკინგისგან დაცვით ზოგიერთი გამოსახულების ჩატვირთვა შეუძლებელია."
       ],
@@ -1033,6 +1045,9 @@
       ],
       "This message contains remote content.": [
         "შეტყობინება შეიცავს მონაცემებს გარე სერვერებიდან."
+      ],
+      "This weekend": [
+        "ამ კვირას"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "თქვენს ელფოსტებში უსაფრთხოდ ძებნისთვის თქვენი შეტყობინების ასლი თქვენს ბრაუზერში უნდა გადმოწეროთ. საწყის გადმოწერას, მხოლოდ, რამდენიმე წამი დასჭირდება."
@@ -1085,6 +1100,9 @@
       ],
       "Unordered list": [
         "დაულაგებელი სია"
+      ],
+      "Unsnooze": [
+        "დროებით დადუმების გაუქმება"
       ],
       "Unstar": [
         "ვარსკვლავის მოხსნა"
@@ -3072,6 +3090,9 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "განბლოკეთ შეტყობინებების მორგებული დაგეგმვა და სხვა უპირატესობები თქვენი გეგმის განახლებისას."
       ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "განბლოკეთ მომხმარებლის დროებით დადუმების დროებით, როცა თქვენს სატარიფო გეგმას ასწევთ."
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "ასწიეთ სატარიფო გეგმა და მიიღეთ განუსაზღვრელი რაოდენობის ფილტრები და სხვა ფასიანი ფუნქციები."
       ],
@@ -3841,6 +3862,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "აპი ამჟამად ხელმიუწვდომელია"
+      ],
       "Error: ${ errorMessage }": [
         "შეცდომა: ${ errorMessage }"
       ],
@@ -3853,11 +3877,17 @@
       "Oops, something went wrong": [
         "უფს, რაღაც არასწორად წავიდა"
       ],
+      "Open in browser": [
+        "ბრაუზერში გახსნა"
+      ],
       "Please refresh the page or try again later.": [
         "განაახლეთ გვერდი ან მოგვიანებთ სცადეთ."
       ],
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME } ან ${ CALENDAR_APP_NAME }-ს გამოსაყენებლად ვების ვერსიაზე გადაერთეთ."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "ეს გვერდი ვერ ჩავტვირთეთ. განაახლეთ ეს გვერდი ან შეამოწმეთ თქვენი ინტერნეტკავშირი."
@@ -5352,6 +5382,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "მიმდინარეობს მონაცემების ${ importedEmailAddress }-დან ${ toEmail }-ში შემოტანა."
       ],
+      "Include Spam/Trash.": [
+        "სპამის/ნაგვის ყუთის ჩათვლა"
+      ],
       "Inherited from parent folder": [
         "მემკვიდრეობით მშობელი საქაღალდისგან"
       ],
@@ -5635,6 +5668,9 @@
       "Right-click for options": [
         "მოსარგებად მარჯვენა ღილაკი"
       ],
+      "Sat, ${ formatTime }": [
+        "შაბათს, ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "შენახვის დრო ${ dateString }"
       ],
@@ -5712,6 +5748,18 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin გაძლევთ მარტივ გზას, შექმნათ მომხმარებლები არასანდო საიტებისთვის, სადაც თქვენი ელფოსტის ნამდვილი მისამართის გამოაშკარავებას არ ისურვებდით."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "დროებით დადუმებულია ${ dateString } ${ formattedTime }-მდე"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "დროებით დადუმებულია დღევანდლამდე, ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "დროებით დადუმებულია ხვალამდე, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "ამ საუბრის დროებით დადუმება გაუქმდება"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "ეს შეტყობინება არ არსებობს, ან ვადა გაუვიდა."
@@ -5814,6 +5862,9 @@
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "ამ ელფოსტამ ვერ დააკმაყოფილა დომენის ავთენტიფიკაციის მოთხოვნები. ის შეიძლება იყოს გაყალბებული ან არასწორად გადაგზავნილი."
       ],
+      "This file is too large to preview": [
+        "მინიატურისთვის ეს ფაილი მეტისმეტად დიდია"
+      ],
       "This invitation is saved in a disabled calendar.": [
         "ეს მოსაწვევი შენახულია გამორთულ კალენდარში."
       ],
@@ -5908,6 +5959,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "მისამართის დადასტურების გამოსაყენებლად უნდა ენდოთ ერთ ან მეტ საჯარო გასაღებს, მათ შორის, რომლის გამოყენებაც გსურთ გასაგზავნად. ეს ხელს უშლის დაშიფვრის გასაღებების გაყალბებას."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "ხვალ, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "გაგზავნას მეტისმეტად ბევრი შეტყობინება ელოდება. დაელოდეთ, სანამ ერთი მაინც გაიგზავნება."
       ],
@@ -5952,6 +6006,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "განაახლეთ ახლავე, რომ მიიღოთ პრემიუმ ფუნქციები, პროდუქტები და საცავი სპეციალურ ფასად"
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "განბლოკვისთვის ასწიეთ ტარიფი ${ MAIL_APP_NAME } Plus-მდე"
       ],
       "Upgrade to add more addresses to your account.": [
         "თქვენს ანგარიშზე მისამართების დასამატებლად განაახლეთ თქვენი სატარიფო გეგმა."
@@ -7116,6 +7173,12 @@
       "Sign up for free": [
         "უფასო რეგისტრაცია"
       ],
+      "Snooze": [
+        "დროებით დადუმება"
+      ],
+      "Snoozed": [
+        "დროებით დადუმებულია"
+      ],
       "Spam": [
         "სპამი"
       ],
@@ -7453,6 +7516,9 @@
       "Custom email domains": [
         "თქვენი ელფოსტის დომენები"
       ],
+      "Custom snooze time": [
+        "მომხმარებლის დროებით დადუმების დრო"
+      ],
       "Hide-my-email aliases": [
         "მეტსახელი Hide My Email-სთვის"
       ],
@@ -7478,6 +7544,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "მიიღეთ განუსაზღვრელი მეტსახელები SimpleLogin-სგან (${ BRAND_NAME })"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "დაადუმეთ დროებით შეტყობინებები და ჩვენ შეგახსენებთ, როცა გნებავთ"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } და ${ DRIVE_APP_NAME } შორის"
@@ -7906,6 +7975,9 @@
       "No results found": [
         "შედეგების გარეშე"
       ],
+      "No snoozed messages": [
+        "დროებით დადუმებული შეტყობინებების გარეშე"
+      ],
       "No unread messages found": [
         "წაუკითხავი შეტყობინებები ნაპოვნი არაა"
       ]
@@ -8200,6 +8272,14 @@
       ],
       "Sign": [
         "ხელმოწერა"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "შეტყობინების დროებით დადუმება"
+      ],
+      "When should the message reappear in your inbox?": [
+        "როცა უნდა გამოჩნდეს შეტყობინება თავიდან, თქვენს საფოსტო ყუთში?"
       ]
     },
     "Sort option": {
@@ -8532,6 +8612,14 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ labelName }-დან წაშლილია ${ elementsCount } საუბარი.",
         "${ labelName }-დან წაშლილია ${ elementsCount } საუბარი."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } შეტყობინება დროებით დადუმებულია",
+        "${ elementsCount } შეტყობინება დროებით დადუმებულია"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } საუბრის დროებით დადუმება გაუქმდა",
+        "${ elementsCount } საუბრის დროებით დადუმება გაუქმდა"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } შეტყობინება დამატებულია ${ labelName }-ში.",
@@ -9204,6 +9292,9 @@
       "Moving a scheduled message": [
         "დაგეგმილი შეტყობინების გადატანა"
       ],
+      "Moving a snoozed message": [
+        "დროებით დადუმებული შეტყობინების გადატანა"
+      ],
       "New message": [
         "ახალი შეტყობინება"
       ],
@@ -9345,6 +9436,12 @@
       "Sign out": [
         "გასვლა"
       ],
+      "Snooze": [
+        "დროებით დადუმება"
+      ],
+      "Snooze message": [
+        "შეტყობინების დროებით დადუმება"
+      ],
       "Sort conversations": [
         "საუბრების დალაგება"
       ],
@@ -9390,6 +9487,9 @@
       ],
       "Verification error": [
         "შემოწმების შეცდომა"
+      ],
+      "Want to snooze any time?": [
+        "გნებავთ, დროებით დაადუმოთ ნებისმიერ დროს?"
       ],
       "Warning": [
         "გაფრთხილება"
@@ -9607,6 +9707,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "თქვენი უფასო სატესტო ვერსიის დამთავრების თარიღია ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "ორშ, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "შაბათს, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "კვირას, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

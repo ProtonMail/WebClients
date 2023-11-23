@@ -2575,6 +2575,9 @@
       "Access denied": [
         "Acces respins"
       ],
+      "App currently unavailable": [
+        "Aplicație momentan indisponibilă"
+      ],
       "Brace yourself till we get the error fixed.": [
         "Așteptați până când vom rezolva eroarea."
       ],
@@ -2590,11 +2593,17 @@
       "Oops, something went wrong": [
         "Hopa, ceva nu a mers bine!"
       ],
+      "Open in browser": [
+        "Deschidere în navigator web"
+      ],
       "Please refresh the page or try again later.": [
         "Reîmprospătați pagina sau reîncercați mai târziu."
       ],
       "Something went wrong": [
         "Ceva nu a funcționat corect."
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Pentru a folosi ${ MAIL_APP_NAME } sau ${ CALENDAR_APP_NAME }, comutați la versiunea web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Această pagină nu s-a putut încărca. Reîmprospătați pagina sau verificați conexiunea la internet."
@@ -3298,6 +3307,12 @@
         "S-au încărcat ${ doneUploadsCount }",
         "S-au încărcat ${ doneUploadsCount }"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } din App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } din Magazinul Play"
+      ],
       "${ errorCount } failed": [
         "Unul a eșuat",
         "${ errorCount } au eșuat",
@@ -3579,6 +3594,9 @@
       "double your storage": [
         "dublați spațiul de stocare."
       ],
+      "Download ${ name } app": [
+        "Descărcați aplicația ${ name }"
+      ],
       "Download canceled": [
         "Descărcare anulată."
       ],
@@ -3605,6 +3623,9 @@
       ],
       "Drop file here to upload": [
         "Plasați fișiere aici pentru încărcare"
+      ],
+      "Drop files here": [
+        "Trageți fișierele aici"
       ],
       "Drop to import": [
         "Plasare pentru importare"
@@ -3718,6 +3739,12 @@
       ],
       "from the version history?": [
         "din istoricul versiunilor?"
+      ],
+      "Get the app to backup photos from your phone.": [
+        "Luați aplicația pentru a vă conserva fotografiile din dispozitiv."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Luați aplicația pentru desktop pentru a sincroniza fișiere din calculator."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Descoperiți ${ DRIVE_APP_NAME } și câștigați 500 MiB spațiu bonus! Acționați astăzi."
@@ -3868,6 +3895,9 @@
       "No": [
         "Nu"
       ],
+      "No computers syncing": [
+        "Nu există calculatoare sincronizate."
+      ],
       "No contacts added yet": [
         "Încă nu s-au adăugat contacte"
       ],
@@ -3920,6 +3950,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Numai persoanele care au legătura și parola pot accesa acest folder."
+      ],
+      "Or use the \"+ New\" button": [
+        "Sau folosiți butonul „+ Nou”"
       ],
       "Paused": [
         "Suspendat"
@@ -4006,6 +4039,9 @@
       ],
       "Queued": [
         "În așteptare"
+      ],
+      "Ready to add some photos?": [
+        "Sunteți gata să adăugați fotografii?"
       ],
       "recommended browser": [
         "navigator recomandat"
@@ -4144,6 +4180,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Acest navigator nu acceptă previzualizarea documentelor PDF. Descărcați fișierul."
+      ],
+      "This file is too large to preview": [
+        "Acest fișier este prea mare pentru a fi examinat."
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Acest fișier a fost probabil șters, mutat sau făcut indisponibil. Contactați proprietarul."
@@ -5129,6 +5168,9 @@
       "Custom email domains": [
         "Domenii personale de e-mail"
       ],
+      "Custom snooze time": [
+        "Timp amânare personal"
+      ],
       "Hide-my-email aliases": [
         "Aliasuri hide-my-email"
       ],
@@ -5154,6 +5196,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obțineți aliasuri nelimitate cu SimpleLogin de la ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Amânați mesajele și fiți notificat când doriți."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
