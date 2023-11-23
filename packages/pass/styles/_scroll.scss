@@ -1,0 +1,24 @@
+@import '~@proton/styles/scss/lib/config';
+
+.overflow-overlay {
+	overflow: overlay;
+}
+
+// Scroll.scss override
+// Allow overlay scrollbar in scrollable
+// containers in extension : this css feature
+// has limited support but we're targetting modern
+// browsers. TODO: double check when supporting Firefox
+.scroll-outer-vertical .scroll-inner {
+	overflow-y: overlay;
+}
+
+.scroll-outer-vertical .scroll-start-shadow,
+.scroll-outer-vertical .scroll-end-shadow {
+	block-size: 1.5rem;
+	background: linear-gradient(180deg, rgb(14 14 14 / 0.35), transparent);
+}
+
+.scroll-outer-vertical .scroll-end-shadow {
+	background: linear-gradient(0deg, rgb(14 14 14 / 0.35), transparent);
+}
