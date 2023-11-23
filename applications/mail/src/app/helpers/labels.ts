@@ -89,12 +89,12 @@ export const getStandardFolders = (): FolderMap => ({
         to: '/archive',
     },
     [SENT]: {
-        icon: 'paper-plane-horizontal',
+        icon: 'paper-plane',
         name: c('Link').t`Sent`,
         to: `/${LABEL_IDS_TO_HUMAN[SENT]}`,
     },
     [ALL_SENT]: {
-        icon: 'paper-plane-horizontal',
+        icon: 'paper-plane',
         name: c('Link').t`Sent`,
         to: `/${LABEL_IDS_TO_HUMAN[ALL_SENT]}`,
     },
@@ -109,7 +109,7 @@ export const getStandardFolders = (): FolderMap => ({
         to: `/${LABEL_IDS_TO_HUMAN[ALL_DRAFTS]}`,
     },
     [SCHEDULED]: {
-        icon: 'paper-plane-horizontal-clock',
+        icon: 'paper-plane-clock',
         name: c('Link').t`Scheduled`,
         to: `/${LABEL_IDS_TO_HUMAN[SCHEDULED]}`,
     },
