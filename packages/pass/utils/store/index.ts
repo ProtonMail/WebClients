@@ -1,12 +1,5 @@
 import { decodeUtf8Base64, encodeUtf8Base64 } from '@proton/crypto/lib/utils';
-
-import type { Maybe } from '../../types';
-
-export interface Store {
-    set: (key: string, value: any) => void;
-    get: (key: string) => any;
-    reset: () => void;
-}
+import type { Maybe, Store } from '@proton/pass/types';
 
 export const encodedGetter =
     (store: Store) =>
