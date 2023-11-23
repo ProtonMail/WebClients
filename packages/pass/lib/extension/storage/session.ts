@@ -8,9 +8,17 @@
  * safely port it to webextension-polyfill
  * ⚠️ ⚠️ ⚠️ */
 import { chromeAPI } from '@proton/pass/lib/globals/browser';
+import type {
+    GetItem,
+    GetItems,
+    RemoveItem,
+    RemoveItems,
+    SetItem,
+    SetItems,
+    StorageInterface,
+} from '@proton/pass/types';
 
 import { createMemoryStorage } from './memory';
-import type { GetItem, GetItems, RemoveItem, RemoveItems, SetItem, SetItems, StorageInterface } from './types';
 
 const getItems: GetItems = (keys) =>
     new Promise((resolve, reject) => {
