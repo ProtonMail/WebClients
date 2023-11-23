@@ -4,9 +4,10 @@ import { Route, Switch } from 'react-router-dom';
 import { Hamburger } from '@proton/components';
 import { useToggle } from '@proton/components/hooks';
 import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
-import { InviteContextProvider } from '@proton/pass/components/Invite/InviteContextProvider';
+import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
 import { PasswordContextProvider } from '@proton/pass/components/PasswordGenerator/PasswordContext';
+import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
 import noop from '@proton/utils/noop';
@@ -23,35 +24,41 @@ export const Main: FC = () => {
     const { state: expanded, toggle } = useToggle();
 
     return (
-        <InviteContextProvider onVaultCreated={useCallback((shareId) => setFilters({ selectedShareId: shareId }), [])}>
+        <InviteProvider onVaultCreated={useCallback((shareId) => setFilters({ selectedShareId: shareId }), [])}>
             <PasswordContextProvider initial={null}>
-                <div className="content-container flex flex-row flex-nowrap no-scroll flex-item-fluid relative w-full h-full anime-fade-in">
-                    <Sidebar expanded={expanded} onToggle={toggle}>
-                        <VaultActionsProvider onVaultCreated={noop} onVaultDeleted={noop}>
-                            <Menu onToggle={toggle} />
-                        </VaultActionsProvider>
-                    </Sidebar>
+                <SpotlightProvider>
+                    <div className="content-container flex flex-row flex-nowrap no-scroll flex-item-fluid relative w-full h-full anime-fade-in">
+                        <Sidebar expanded={expanded} onToggle={toggle}>
+                            <VaultActionsProvider onVaultCreated={noop} onVaultDeleted={noop}>
+                                <Menu onToggle={toggle} />
+                            </VaultActionsProvider>
+                        </Sidebar>
 
-                    <Route path={`/${getLocalIDPath(client.state.localID)}`}>
-                        {(route) => (
-                            <main id="main" className="content flex-item-fluid overflow-hidden">
-                                <div className="flex flex-nowrap flex-column h-full">
-                                    <Header
-                                        hamburger={<Hamburger expanded={expanded} onToggle={toggle} />}
-                                        searchable={!matchSettings}
-                                    />
-                                    <div className="flex flex-align-items-center flex-justify-center flex-nowrap w-full h-full">
-                                        <Switch>
-                                            <Route exact path={`${route.match!.path}/settings`} component={Settings} />
-                                            <Route component={ItemSwitch} />
-                                        </Switch>
+                        <Route path={`/${getLocalIDPath(client.state.localID)}`}>
+                            {(route) => (
+                                <main id="main" className="content flex-item-fluid overflow-hidden">
+                                    <div className="flex flex-nowrap flex-column h-full">
+                                        <Header
+                                            hamburger={<Hamburger expanded={expanded} onToggle={toggle} />}
+                                            searchable={!matchSettings}
+                                        />
+                                        <div className="flex flex-align-items-center flex-justify-center flex-nowrap w-full h-full">
+                                            <Switch>
+                                                <Route
+                                                    exact
+                                                    path={`${route.match!.path}/settings`}
+                                                    component={Settings}
+                                                />
+                                                <Route component={ItemSwitch} />
+                                            </Switch>
+                                        </div>
                                     </div>
-                                </div>
-                            </main>
-                        )}
-                    </Route>
-                </div>
+                                </main>
+                            )}
+                        </Route>
+                    </div>
+                </SpotlightProvider>
             </PasswordContextProvider>
-        </InviteContextProvider>
+        </InviteProvider>
     );
 };

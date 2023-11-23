@@ -21,6 +21,7 @@ import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 import noop from '@proton/utils/noop';
 
 import { PASS_CONFIG, authStore } from '../lib/core';
+import { onboarding } from '../lib/onboarding';
 import { AuthServiceProvider } from './Context/AuthServiceProvider';
 import { ClientContext, ClientProvider } from './Context/ClientProvider';
 import { ServiceWorkerProvider } from './ServiceWorker/ServiceWorkerProvider';
@@ -55,6 +56,7 @@ export const App = () => {
             getDomainImageURL={getDomainImageURL}
             onLink={onLink}
             onTelemetry={onTelemetry}
+            onOnboardingAck={onboarding.acknowledge}
         >
             <CompatibilityCheck>
                 <Icons />
