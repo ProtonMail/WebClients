@@ -562,6 +562,9 @@
       "label emails as": [
         "označiť emaily ako"
       ],
+      "Later this week": [
+        "Neskôr tento týždeň"
+      ],
       "Learn more": [
         "Zistiť viac"
       ],
@@ -585,6 +588,9 @@
       ],
       "Manage labels": [
         "Spravovať štítky"
+      ],
+      "Manage Snooze": [
+        "Spravovať odloženie"
       ],
       "Mark as read": [
         "Označiť ako prečítané"
@@ -907,6 +913,9 @@
       "Select all messages": [
         "Označiť všetky správy"
       ],
+      "Select date and time": [
+        "Vyberte dátum a čas"
+      ],
       "Self-destruct in 7 days": [
         "Samodeštrukcia za 7 dní"
       ],
@@ -1012,6 +1021,9 @@
       "Skip verification": [
         "Preskočiť overenie"
       ],
+      "Snooze": [
+        "Odložiť"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Niektoré obrázky nebolo možné načítať s ochranou proti sledovaniu."
       ],
@@ -1041,6 +1053,9 @@
       ],
       "This message contains remote content.": [
         "Táto správa obsahuje vzdialený obsah."
+      ],
+      "This weekend": [
+        "Tento víkend"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Aby sme mohli bezpečne prehľadávať vaše emaily, musíme si stiahnuť kópiu vašich správ do vášho prehliadača. Počiatočné sťahovanie môže chvíľu trvať."
@@ -1095,6 +1110,9 @@
       ],
       "Unordered list": [
         "Nezoradený zoznam"
+      ],
+      "Unsnooze": [
+        "Zrušiť odloženie"
       ],
       "Unstar": [
         "Odstrániť hviezdičku"
@@ -3104,6 +3122,9 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Odomknite vlastné plánovanie správ a ďalšie výhody navýšením svojho plánu."
       ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Odomknite vlastné časy odloženia po upgrade plánu."
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Odomknite upgradovaním neobmedzené množstvo filtrov na triedenie vašej doručenej pošty a ďalšie prémiové funkcie."
       ],
@@ -3903,6 +3924,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Aplikácia momentálne nie je k dispozícii"
+      ],
       "Error: ${ errorMessage }": [
         "Chyba: ${ errorMessage }"
       ],
@@ -3915,11 +3939,17 @@
       "Oops, something went wrong": [
         "Ups, niečo sa pokazilo"
       ],
+      "Open in browser": [
+        "Otvoriť v prehliadači"
+      ],
       "Please refresh the page or try again later.": [
         "Obnovte stránku, prosím, alebo skúste znovu neskôr."
       ],
       "Something went wrong": [
         "Niečo sa pokazilo"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Pre použitie ${ MAIL_APP_NAME } alebo ${ CALENDAR_APP_NAME }, prejdite na webovú verziu."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Túto stránku sa nepodarilo načítať. Obnovte stránku, prosím, alebo skontrolujte svoje internetové pripojenie."
@@ -5550,6 +5580,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Importujeme Vaše dáta z ${ importedEmailAddress } do ${ toEmail }."
       ],
+      "Include Spam/Trash.": [
+        "Zahrnúť Spam/Kôš."
+      ],
       "Inherited from parent folder": [
         "Zdedené z nadradeného priečinka"
       ],
@@ -5916,6 +5949,18 @@
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin poskytuje jednoduchý spôsob vytvárania prihlasovacích údajov na nedôveryhodných weboch tretích strán, kde nechcete zverejniť svoju skutočnú emailovú adresu."
       ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Odložené do ${ dateString } do ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Odložené do dnešného dňa, ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Odložené do zajtra, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "Odloženie tejto konverzácie bude zrušené."
+      ],
       "Sorry, this message does not exist or has already expired.": [
         "Je nám ľúto, táto správa neexistuje, alebo jej už vypršala platnosť."
       ],
@@ -6020,6 +6065,9 @@
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Tento email nesplnil požiadavky na overenie svojej domény. Môže byť sfalšovaný alebo nesprávne preposlaný."
+      ],
+      "This file is too large to preview": [
+        "Tento súbor je príliš veľký na zobrazenie ukážky"
       ],
       "This invitation is saved in a disabled calendar.": [
         "Táto pozvánka je uložená v zakázanom kalendári."
@@ -6164,6 +6212,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Upgradnite na ${ MAIL_APP_NAME } Plus pre odomknutie"
       ],
       "Upgrade to add more addresses to your account.": [
         "Ak chcete do svojho konta pridať viac adries, upgradujte váš plán."
@@ -6310,10 +6361,10 @@
         "Nemáte tu žiadne správy"
       ],
       "You have ${ totalLabel } in your inbox.": [
-        "V doručenej pošte máte ${ totalLabel }."
+        "Vo vašej schránke máte ${ totalLabel }."
       ],
       "You have ${ unreadsLabel } in your inbox.": [
-        "V doručenej pošte máte ${ unreadsLabel }."
+        "Vo vašej schránke máte ${ unreadsLabel }."
       ],
       "You have **${ count } conversation** stored in this folder": [
         "V tomto priečinku máte uloženú **${ count } konverzáciu**",
@@ -7352,6 +7403,12 @@
       "Sign up for free": [
         "Zaregistrujte sa zadarmo"
       ],
+      "Snooze": [
+        "Odložiť"
+      ],
+      "Snoozed": [
+        "Odložené"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -7705,6 +7762,9 @@
       "Custom email domains": [
         "Vlastné emailové domény"
       ],
+      "Custom snooze time": [
+        "Vlastný čas odloženia"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email aliasy"
       ],
@@ -7730,6 +7790,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Získajte neobmedzené množstvo aliasov so službou SimpleLogin od ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Odložte správy a pripomeňte si ich, keď chcete"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"
@@ -8166,6 +8229,9 @@
       "No results found": [
         "Neboli nájdené žiadne výsledky"
       ],
+      "No snoozed messages": [
+        "Žiadne odložené správy"
+      ],
       "No unread messages found": [
         "Neboli nájdené žiadne neprečítané správy"
       ]
@@ -8490,6 +8556,14 @@
       ],
       "Sign": [
         "Podpísať"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Odložiť správu"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Kedy sa má správa znovu objaviť v doručenej pošte?"
       ]
     },
     "Sort option": {
@@ -8858,6 +8932,18 @@
         "${ elementsCount } konverzácie boli odstránené z ${ labelName }.",
         "${ elementsCount } konverzácií bolo odstránených z ${ labelName }.",
         "${ elementsCount } konverzácií bolo odstránených z ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } konverzácia odložená",
+        "${ elementsCount } konverzácie odložené",
+        "${ elementsCount } konverzácií odložených",
+        "${ elementsCount } konverzácií odložených"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "Pre ${ elementsCount } konverzáciu zrušené odloženie",
+        "Pre ${ elementsCount } konverzácie zrušené odloženie",
+        "Pre ${ elementsCount } konverzácií zrušené odloženie",
+        "Pre ${ elementsCount } konverzácií zrušené odloženie"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } správa pridaná do ${ labelName }.",
@@ -9584,6 +9670,9 @@
       "Moving a scheduled message": [
         "Presunutie naplánovanej správy"
       ],
+      "Moving a snoozed message": [
+        "Presunutie odloženej správy"
+      ],
       "New message": [
         "Nová správa"
       ],
@@ -9725,6 +9814,12 @@
       "Sign out": [
         "Odhlásiť sa"
       ],
+      "Snooze": [
+        "Odložiť"
+      ],
+      "Snooze message": [
+        "Odložiť správu"
+      ],
       "Sort conversations": [
         "Triedenie konverzácií"
       ],
@@ -9772,6 +9867,9 @@
       ],
       "Verification error": [
         "Chyba pri overovaní"
+      ],
+      "Want to snooze any time?": [
+        "Chcete kedykoľvek odložiť?"
       ],
       "Warning": [
         "Upozornenie"
