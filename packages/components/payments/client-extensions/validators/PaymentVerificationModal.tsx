@@ -3,18 +3,14 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
-import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
+import { FormModal, Loader, PrimaryButton } from '@proton/components/components';
+import PaymentVerificationImage from '@proton/components/containers/payments/PaymentVerificationImage';
+import { useNotifications } from '@proton/components/hooks';
 import errorSvg from '@proton/styles/assets/img/errors/error-generic.svg';
 
-import { DoNotWindowOpenAlertError, FormModal, Loader, PrimaryButton } from '../../components';
-import { useNotifications } from '../../hooks';
-import { CardPayment, TokenPaymentMethod } from '../../payments/core/interface';
-import { toTokenPaymentMethod } from '../../payments/core/utils';
-import PaymentVerificationImage from './PaymentVerificationImage';
+import { CardPayment, PAYMENT_METHOD_TYPES, TokenPaymentMethod, toTokenPaymentMethod } from '../../core';
 
 const STEPS = {
-    DO_NOT_WINDOW_OPEN: 'do_not_window_open',
     REDIRECT: 'redirect',
     REDIRECTING: 'redirecting',
     REDIRECTED: 'redirected',
@@ -63,14 +59,13 @@ const PaymentVerificationModal = ({
     }
 
     const TITLES = {
-        [STEPS.DO_NOT_WINDOW_OPEN]: c('Title').t`Unsupported browser`,
         [STEPS.REDIRECT]: isAddCard ? c('Title').t`Card verification` : c('Title').t`Payment verification`,
         [STEPS.REDIRECTING]: c('Title').t`Processing...`,
         [STEPS.REDIRECTED]: isAddCard ? c('Title').t`Verifying your card...` : c('Title').t`Verifying your payment...`,
         [STEPS.FAIL]: failTitle,
     };
 
-    const [step, setStep] = useState(() => (doNotWindowOpen() ? STEPS.DO_NOT_WINDOW_OPEN : STEPS.REDIRECT));
+    const [step, setStep] = useState(() => STEPS.REDIRECT);
     const [error, setError] = useState<{ tryAgain?: boolean }>({});
     const { createNotification } = useNotifications();
     const abortRef = useRef<AbortController>();
@@ -174,12 +169,6 @@ const PaymentVerificationModal = ({
                         </p>
                         <div className="mb-4" data-testid="redirected-message">{c('Info')
                             .t`Verification may take a few minutes.`}</div>
-                    </>
-                ),
-                [STEPS.DO_NOT_WINDOW_OPEN]: () => (
-                    <>
-                        <DoNotWindowOpenAlertError />
-                        <Button onClick={handleCancel}>{c('Action').t`Close`}</Button>
                     </>
                 ),
                 [STEPS.FAIL]: () => (

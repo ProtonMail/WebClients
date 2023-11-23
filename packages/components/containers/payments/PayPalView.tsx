@@ -1,19 +1,17 @@
 import { c } from 'ttag';
 
-import { PaypalProcessorHook, isPaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
+import { PaypalProcessorHook } from '@proton/components/payments/react-extensions/usePaypal';
 import { MAX_PAYPAL_AMOUNT, MIN_PAYPAL_AMOUNT } from '@proton/shared/lib/constants';
-import { doNotWindowOpen } from '@proton/shared/lib/helpers/browser';
 import { Currency } from '@proton/shared/lib/interfaces';
 
-import { Alert, DoNotWindowOpenAlertError, Price } from '../../components';
+import { Alert, Price } from '../../components';
 import { PaymentMethodFlows } from '../paymentMethods/interface';
 import PayPalButton from './PayPalButton';
 import PayPalInfoMessage from './PayPalInfoMessage';
-import { PayPalHook } from './usePayPal';
 
 interface Props {
-    paypal: PayPalHook | PaypalProcessorHook;
-    paypalCredit: PayPalHook | PaypalProcessorHook;
+    paypal: PaypalProcessorHook;
+    paypalCredit: PaypalProcessorHook;
     type?: PaymentMethodFlows;
     amount: number;
     currency: Currency;
@@ -45,11 +43,7 @@ const PayPalView = ({
         return <Alert className="mb-4" type="error">{c('Error').t`Amount above the maximum.`}</Alert>;
     }
 
-    if (doNotWindowOpen()) {
-        return <DoNotWindowOpenAlertError />;
-    }
-
-    const clickHere = isPaypalProcessorHook(paypalCredit) ? (
+    const clickHere = (
         <PayPalButton
             id="paypal-credit"
             data-testid="paypal-credit-button"
@@ -65,23 +59,6 @@ const PayPalView = ({
             currency={currency}
             onClick={onClick}
             loading={paypalCredit.processingToken}
-        >
-            {c('Link').t`click here`}
-        </PayPalButton>
-    ) : (
-        <PayPalButton
-            id="paypal-credit"
-            data-testid="paypal-credit-button"
-            shape="outline"
-            color="norm"
-            flow={type}
-            key="click-here"
-            size="small"
-            paypal={paypalCredit}
-            amount={amount}
-            disabled={disabled || triggersDisabled}
-            prefetchToken={prefetchToken}
-            loading={paypalCredit.loadingVerification}
         >
             {c('Link').t`click here`}
         </PayPalButton>

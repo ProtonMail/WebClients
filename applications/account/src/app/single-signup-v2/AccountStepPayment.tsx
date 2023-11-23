@@ -7,30 +7,22 @@ import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Href } from '@proton/atoms/Href';
 import { Info, Price } from '@proton/components/components';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import {
-    PayPalButton,
-    Payment as PaymentComponent,
-    StyledPayPalButton,
-    usePayment,
-} from '@proton/components/containers';
+import { PayPalButton, StyledPayPalButton } from '@proton/components/containers';
+import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { getTotalBillingText } from '@proton/components/containers/payments/helper';
-import { getDefaultVerifyPayment } from '@proton/components/containers/payments/usePaymentToken';
-import useModals from '@proton/components/hooks/useModals';
-import {
-    AmountAndCurrency,
-    CardPayment,
-    PAYMENT_METHOD_TYPES,
-    PaypalPayment,
-    TokenPayment,
-    createPaymentToken,
-} from '@proton/components/payments/core';
+import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import { CardPayment, PAYMENT_METHOD_TYPES, PaypalPayment, TokenPayment } from '@proton/components/payments/core';
+import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { WithLoading } from '@proton/hooks/useLoading';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Api, VPNServersCountData } from '@proton/shared/lib/interfaces';
+import { getSentryError } from '@proton/shared/lib/keys';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
 import { getLocaleTermsURL } from '../content/helper';
 import Guarantee from './Guarantee';
@@ -68,7 +60,6 @@ interface Props {
 }
 
 const AccountStepPayment = ({
-    takeNullCreditCard,
     measure,
     cta,
     accountStepPaymentRef,
@@ -86,7 +77,6 @@ const AccountStepPayment = ({
     isSentinelPassplusEnabled,
 }: Props) => {
     const formRef = useRef<HTMLFormElement>(null);
-    const { createModal } = useModals();
 
     const measurePay = (
         type: TelemetryPayType,
@@ -95,7 +85,8 @@ const AccountStepPayment = ({
         if (!options.plan) {
             return;
         }
-        measure({
+
+        void measure({
             event,
             dimensions: {
                 type: type,
@@ -113,7 +104,7 @@ const AccountStepPayment = ({
         return measurePay(type, TelemetryAccountSignupEvents.checkoutError);
     };
 
-    const { session: maybeSession, paymentMethodStatus, subscriptionData } = model;
+    const { subscriptionData } = model;
 
     const validatePayment = () => {
         if (loadingSignup || loadingPaymentDetails) {
@@ -131,34 +122,39 @@ const AccountStepPayment = ({
         },
     }));
 
-    const {
-        card,
-        setCard,
-        cardErrors,
-        method,
-        setMethod,
-        handleCardSubmit,
-        parameters: paymentParameters,
-        paypal,
-        paypalCredit,
-        cardFieldStatus,
-    } = usePayment({
-        ignoreName: true,
-        api: normalApi,
-        defaultMethod,
+    const paymentFacade = usePaymentFacade({
         amount: options.checkResult.AmountDue,
         currency: options.currency,
-        onPaypalError: (type) => {
-            measurePayError(type);
-        },
-        onValidatePaypal: (type) => {
-            measurePaySubmit(type);
-            return onValidate() && validatePayment();
-        },
-        onPaypalPay({ Payment, type }) {
-            return withLoadingSignup(onPay(Payment, 'pp')).catch(() => {
-                measurePayError(type === PAYMENT_METHOD_TYPES.PAYPAL ? 'pay_pp' : 'pay_pp_no_cc');
+        flow: 'signup-pass',
+        paymentMethods: model.session?.paymentMethods,
+        paymentMethodStatus: model.paymentMethodStatus,
+        api: normalApi,
+        onChargeable: (_, { chargeablePaymentParameters }) => {
+            return withLoadingSignup(async () => {
+                const isFreeSignup = chargeablePaymentParameters.Amount <= 0;
+                if (isFreeSignup) {
+                    await onPay(undefined, undefined);
+                    return;
+                }
+
+                const type = chargeablePaymentParameters.type;
+                let paymentType: 'cc' | 'pp';
+                if (type === PAYMENT_METHOD_TYPES.PAYPAL || type === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
+                    paymentType = 'pp';
+                } else {
+                    paymentType = 'cc';
+                }
+                await onPay(chargeablePaymentParameters.Payment, paymentType);
             });
+        },
+        onMethodChanged: (newMethod) => {
+            const value = getPaymentMethod(newMethod.type);
+            if (value) {
+                void measure({
+                    event: TelemetryAccountSignupEvents.paymentSelect,
+                    dimensions: { type: value },
+                });
+            }
         },
     });
 
@@ -181,6 +177,63 @@ const AccountStepPayment = ({
 
     const isAuthenticated = !!model.session?.UID;
 
+    const process = (processor: PaymentProcessorHook | undefined) => {
+        if (!onValidate() || !validatePayment()) {
+            return;
+        }
+
+        const telemetryType = (() => {
+            const isFreeSignup = paymentFacade.amount <= 0;
+
+            if (isFreeSignup) {
+                return 'free';
+            }
+
+            if (processor?.meta.type === 'paypal') {
+                return 'pay_pp';
+            }
+
+            if (processor?.meta.type === 'paypal-credit') {
+                return 'pay_pp_no_cc';
+            }
+
+            return 'pay_cc';
+        })();
+        measurePaySubmit(telemetryType);
+
+        async function run() {
+            if (!processor) {
+                return;
+            }
+            try {
+                await processor.processPaymentToken();
+            } catch (error) {
+                measurePayError(telemetryType);
+
+                const sentryError = getSentryError(error);
+                if (sentryError) {
+                    const context = {
+                        currency: options.currency,
+                        amount: options.checkResult.AmountDue,
+                        processorType: processor.meta.type,
+                        paymentMethod: paymentFacade.selectedMethodType,
+                        paymentMethodValue: paymentFacade.selectedMethodValue,
+                        cycle: options.cycle,
+                        plan: options.plan,
+                        planName: options.plan?.Name,
+                    };
+
+                    captureMessage('Payments: Failed to handle single-signup-v2', {
+                        level: 'error',
+                        extra: { error: sentryError, context },
+                    });
+                }
+            }
+        }
+
+        withLoadingSignup(run()).catch(noop);
+    };
+
     return (
         <div className="flex on-mobile-flex-column flex-align-items-start flex-justify-space-between gap-14">
             <div className="flex-item-fluid order-1 md:order-0">
@@ -189,110 +242,61 @@ const AccountStepPayment = ({
                     onFocus={(e) => {
                         const autocomplete = e.target.getAttribute('autocomplete');
                         if (autocomplete) {
-                            measure({
+                            void measure({
                                 event: TelemetryAccountSignupEvents.interactCreditCard,
                                 dimensions: { field: autocomplete as any },
                             });
                         }
                     }}
                     name="payment-form"
-                    onSubmit={async (event) => {
+                    onSubmit={(event) => {
                         event.preventDefault();
 
-                        const amountAndCurrency: AmountAndCurrency = {
-                            Currency: options.currency,
-                            Amount: options.checkResult.AmountDue,
-                        };
-
-                        const run = async () => {
-                            if (amountAndCurrency.Amount <= 0 && !takeNullCreditCard) {
-                                return onPay(undefined, undefined);
-                            }
-
-                            if (!paymentParameters) {
-                                throw new Error('Missing payment parameters');
-                            }
-
-                            if (amountAndCurrency.Amount <= 0 && takeNullCreditCard) {
-                                amountAndCurrency.Amount = null as any;
-                            }
-
-                            const data = await createPaymentToken(
-                                paymentParameters,
-                                getDefaultVerifyPayment(createModal, normalApi),
-                                normalApi,
-                                { amountAndCurrency }
-                            );
-                            return onPay(data.Payment, 'cc');
-                        };
-
-                        const type = amountAndCurrency.Amount <= 0 ? 'free' : 'pay_cc';
-                        measurePaySubmit(type);
-                        if (onValidate() && handleCardSubmit(takeNullCreditCard) && validatePayment()) {
-                            withLoadingSignup(run()).catch(() => {
-                                measurePayError(type);
-                            });
-                        }
+                        process(paymentFacade.selectedProcessor);
                     }}
                     method="post"
                 >
-                    {options.checkResult.AmountDue || takeNullCreditCard ? (
-                        <PaymentComponent
-                            takeNullCreditCard={takeNullCreditCard}
-                            isAuthenticated={!!maybeSession?.UID}
-                            api={normalApi}
-                            type="signup-pass"
-                            paypal={paypal}
-                            paypalCredit={paypalCredit}
-                            paymentMethods={maybeSession?.paymentMethods}
-                            paymentMethodStatus={paymentMethodStatus}
-                            method={method}
+                    {options.checkResult.AmountDue ? (
+                        <PaymentWrapper
+                            {...paymentFacade}
+                            defaultMethod={defaultMethod} // needed for Bitcoin signup
+                            isAuthenticated={isAuthenticated} // needed for Bitcoin signup
                             onBitcoinTokenValidated={(data) => {
                                 measurePaySubmit('pay_btc');
                                 return withLoadingSignup(onPay(data.Payment, 'btc')).catch(() => {
                                     measurePayError('pay_btc');
                                 });
                             }}
-                            amount={options.checkResult.AmountDue}
-                            currency={options.currency}
-                            card={card}
-                            onMethod={(newMethod) => {
-                                if (method && newMethod && method !== newMethod) {
-                                    const value = getPaymentMethod(newMethod);
-                                    if (value) {
-                                        measure({
-                                            event: TelemetryAccountSignupEvents.paymentSelect,
-                                            dimensions: { type: value },
-                                        });
-                                    }
-                                }
-                                setMethod(newMethod);
-                            }}
-                            onCard={(card, value) => setCard(card, value)}
-                            cardErrors={cardErrors}
                             disabled={loadingSignup || loadingPaymentDetails}
-                            noMaxWidth={true}
-                            cardFieldStatus={cardFieldStatus}
+                            noMaxWidth
+                            hideFirstLabel
                         />
                     ) : (
                         <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
                     )}
                     {(() => {
-                        if (method === PAYMENT_METHOD_TYPES.PAYPAL && options.checkResult.AmountDue > 0) {
+                        if (
+                            paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.PAYPAL &&
+                            options.checkResult.AmountDue > 0
+                        ) {
                             return (
                                 <div className="flex flex-column gap-2">
                                     <StyledPayPalButton
-                                        paypal={paypal}
-                                        amount={options.checkResult.AmountDue}
+                                        paypal={paymentFacade.paypal}
+                                        amount={paymentFacade.amount}
+                                        currency={paymentFacade.currency}
                                         loading={loadingSignup}
+                                        onClick={() => process(paymentFacade.paypal)}
                                     />
                                     <PayPalButton
                                         id="paypal-credit"
                                         shape="ghost"
                                         color="norm"
-                                        paypal={paypalCredit}
+                                        paypal={paymentFacade.paypalCredit}
                                         disabled={loadingSignup}
-                                        amount={options.checkResult.AmountDue}
+                                        amount={paymentFacade.amount}
+                                        currency={paymentFacade.currency}
+                                        onClick={() => process(paymentFacade.paypalCredit)}
                                     >
                                         {c('Link').t`Paypal without credit card`}
                                     </PayPalButton>
@@ -300,7 +304,10 @@ const AccountStepPayment = ({
                             );
                         }
 
-                        if (method === PAYMENT_METHOD_TYPES.BITCOIN && options.checkResult.AmountDue > 0) {
+                        if (
+                            paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.BITCOIN &&
+                            options.checkResult.AmountDue > 0
+                        ) {
                             if (isAuthenticated) {
                                 return null;
                             }

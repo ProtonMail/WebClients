@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import { Api } from '@proton/shared/lib/interfaces';
@@ -7,11 +7,13 @@ import noop from '@proton/utils/noop';
 import { AmountAndCurrency, ChargeablePaymentParameters, PaymentVerificator } from '../core';
 import { PaypalPaymentProcessor } from '../core/payment-processors/paypalPayment';
 import { PaymentProcessorHook } from './interface';
+import { usePaymentProcessor } from './usePaymentProcessor';
 
 interface Props {
     amountAndCurrency: AmountAndCurrency;
     isCredit: boolean;
     onChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>;
+    ignoreAmountCheck?: boolean;
 }
 
 interface Dependencies {
@@ -30,16 +32,17 @@ export type PaypalProcessorHook = PaymentProcessorHook & {
     };
 };
 
-export function isPaypalProcessorHook(hook: any): hook is PaypalProcessorHook {
-    return hook && hook.meta && (hook.meta.type === 'paypal' || hook.meta.type === 'paypal-credit');
-}
-
+/**
+ * React wrapper for {@link PaypalPaymentProcessor}. It provides a set of proxies and also some additional functionality
+ * like `processPaymentToken` method that supposed to be the main action.
+ */
 export const usePaypal = (
-    { amountAndCurrency, isCredit, onChargeable }: Props,
+    { amountAndCurrency, isCredit, onChargeable, ignoreAmountCheck }: Props,
     { api, verifyPayment }: Dependencies
 ): PaypalProcessorHook => {
-    const paymentProcessorRef = useRef(
-        new PaypalPaymentProcessor(verifyPayment, api, amountAndCurrency, isCredit, onChargeable)
+    const paymentProcessor = usePaymentProcessor(
+        () =>
+            new PaypalPaymentProcessor(verifyPayment, api, amountAndCurrency, isCredit, onChargeable, ignoreAmountCheck)
     );
     const [fetchingToken, withFetchingToken] = useLoading();
     const [verifyingToken, withVerifyingToken] = useLoading();
@@ -53,11 +56,15 @@ export const usePaypal = (
     const isInitialState = !tokenFetched && !verificationError;
 
     useEffect(() => {
-        paymentProcessorRef.current.setAmountAndCurrency(amountAndCurrency);
+        paymentProcessor.setAmountAndCurrency(amountAndCurrency);
     }, [amountAndCurrency]);
 
     useEffect(() => {
-        paymentProcessorRef.current.onStateUpdated((state) => {
+        paymentProcessor.onTokenIsChargeable = onChargeable;
+    }, [onChargeable]);
+
+    useEffect(() => {
+        paymentProcessor.onStateUpdated((state) => {
             if (Object.hasOwn(state, 'fetchedPaymentToken')) {
                 setTokenFetched(state.fetchedPaymentToken !== null);
             }
@@ -71,19 +78,19 @@ export const usePaypal = (
             }
         });
 
-        return () => paymentProcessorRef.current.destroy();
+        return () => paymentProcessor.destroy();
     }, []);
 
-    const reset = () => paymentProcessorRef.current.reset();
+    const reset = () => paymentProcessor.reset();
 
-    const fetchPaymentToken = async () => withFetchingToken(paymentProcessorRef.current.fetchPaymentToken());
+    const fetchPaymentToken = async () => withFetchingToken(paymentProcessor.fetchPaymentToken());
     const verifyPaymentToken = async () => {
-        const tokenPromise = paymentProcessorRef.current.verifyPaymentToken();
+        const tokenPromise = paymentProcessor.verifyPaymentToken();
         withVerifyingToken(tokenPromise).catch(noop);
         return tokenPromise;
     };
     const processPaymentToken = async () => {
-        if (!paymentProcessorRef.current.fetchedPaymentToken) {
+        if (!paymentProcessor.fetchedPaymentToken) {
             await fetchPaymentToken();
         }
 
@@ -101,7 +108,7 @@ export const usePaypal = (
         fetchingToken,
         verifyPaymentToken,
         verifyingToken,
-        paymentProcessor: paymentProcessorRef.current,
+        paymentProcessor,
         reset,
         processPaymentToken,
         processingToken,

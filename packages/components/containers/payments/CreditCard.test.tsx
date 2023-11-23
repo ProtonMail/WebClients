@@ -1,17 +1,38 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import CreditCardNewDesign, { Props } from './CreditCardNewDesign';
-import useCard from './useCard';
+import { useCard } from '@proton/components/payments/react-extensions';
+import { apiMock } from '@proton/testing';
+
+import CreditCard, { Props } from './CreditCard';
 
 beforeEach(() => {
     jest.clearAllMocks();
 });
 
 const TestComponent = (rest?: Partial<Props>) => {
-    const cardHook = useCard();
+    const cardHook = useCard(
+        {
+            amountAndCurrency: {
+                Amount: 0,
+                Currency: 'USD',
+            },
+        },
+        {
+            api: apiMock,
+            verifyPayment: jest.fn(),
+        }
+    );
 
-    return <CreditCardNewDesign {...cardHook} onChange={cardHook.setCard} {...rest} />;
+    return (
+        <CreditCard
+            card={cardHook.card}
+            errors={cardHook.errors}
+            fieldsStatus={cardHook.fieldsStatus}
+            onChange={cardHook.setCardProperty}
+            {...rest}
+        />
+    );
 };
 
 it('should render', () => {

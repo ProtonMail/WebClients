@@ -49,6 +49,11 @@ export class PaymentMethods {
         };
     }
 
+    /**
+     * Formats the list of saved payment methods. It can be then used to render the list of payment methods.
+     * Depending on your application, you might need to enrich the list with additional UI-specific information, e.g.
+     * name of the payment method, or icon, etc.
+     */
     getUsedMethods(): AvailablePaymentMethod[] {
         const usedMethods: AvailablePaymentMethod[] = this.paymentMethods
             .filter((paymentMethod) => {
@@ -80,6 +85,11 @@ export class PaymentMethods {
         return usedMethods;
     }
 
+    /**
+     * @returns a list of new (i.e. non-saved) payment methods. Each method is individually checked for availability
+     * and filtered out otherwise. The availability is controlled by the paymentMethodStatus object and by the selected
+     * payment flow.
+     */
     getNewMethods(): AvailablePaymentMethod[] {
         const methods: AvailablePaymentMethod[] = [
             {
@@ -123,14 +133,14 @@ export class PaymentMethods {
     }
 
     private isCashAvailable() {
-        const isSignup = this.flow === 'signup' || this.flow === 'signup-pass';
+        const isSignup = this.flow === 'signup' || this.flow === 'signup-pass' || this.flow === 'signup-vpn';
         const isHumanVerification = this.flow === 'human-verification';
 
         return !isSignup && !isHumanVerification && this.coupon !== BLACK_FRIDAY.COUPON_CODE;
     }
 
     private isBitcoinAvailable() {
-        const isSignup = this.flow === 'signup';
+        const isSignup = this.flow === 'signup' || this.flow === 'signup-vpn'; // for signup-pass, bitcoin IS available
         const isHumanVerification = this.flow === 'human-verification';
         const isInvoice = this.flow === 'invoice';
 
@@ -166,16 +176,30 @@ async function getPaymentMethodStatus(api: Api): Promise<PaymentMethodStatus> {
     return api<PaymentMethodStatus>(queryPaymentMethodStatus());
 }
 
+/**
+ * Initialize payment methods object. If user is authenticated, fetches saved payment methods.
+ **/
 export async function initializePaymentMethods(
     api: Api,
     maybePaymentMethodStatus: PaymentMethodStatus | undefined,
+    maybePaymentMethods: SavedPaymentMethod[] | undefined,
     isAuthenticated: boolean,
     amount: number,
     coupon: string,
     flow: PaymentMethodFlows
 ) {
     const paymentMethodStatusPromise = maybePaymentMethodStatus ?? getPaymentMethodStatus(api);
-    const paymentMethodsPromise = isAuthenticated ? getPaymentMethods(api) : [];
+    const paymentMethodsPromise = (() => {
+        if (maybePaymentMethods) {
+            return maybePaymentMethods;
+        }
+
+        if (isAuthenticated) {
+            return getPaymentMethods(api);
+        }
+
+        return [];
+    })();
 
     const [paymentMethodStatus, paymentMethods] = await Promise.all([
         paymentMethodStatusPromise,

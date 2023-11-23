@@ -14,11 +14,15 @@ import {
     isExistingPaymentMethod,
 } from '../core';
 
+export type OnMethodChangedHandler = (method: AvailablePaymentMethod) => void;
+
 export interface Props {
     amount: number;
     coupon?: string | null;
     flow: PaymentMethodFlows;
     paymentMethodStatus?: PaymentMethodStatus;
+    paymentMethods?: SavedPaymentMethod[];
+    onMethodChanged?: OnMethodChangedHandler;
 }
 
 interface Dependencies {
@@ -42,16 +46,24 @@ export type MethodsHook = {
     isNewPaypal: boolean;
 };
 
+type UsedAndNewMethods = {
+    usedMethods: AvailablePaymentMethod[];
+    newMethods: AvailablePaymentMethod[];
+};
+
 export const useMethods = (
-    { paymentMethodStatus, amount, coupon, flow }: Props,
+    { paymentMethodStatus, paymentMethods, amount, coupon, flow, onMethodChanged }: Props,
     { api, isAuthenticated }: Dependencies
 ): MethodsHook => {
     const paymentMethodsRef = useRef<PaymentMethods>();
+    const pendingDataRef = useRef<{
+        pendingAmount?: number;
+        pendingCoupon?: string | null;
+        pendingFlow?: PaymentMethodFlows;
+    }>();
+
     const [loading, setLoading] = useState(true);
-    const [availableMethods, setAvailableMethods] = useState<{
-        usedMethods: AvailablePaymentMethod[];
-        newMethods: AvailablePaymentMethod[];
-    }>({
+    const [availableMethods, setAvailableMethods] = useState<UsedAndNewMethods>({
         usedMethods: [],
         newMethods: [],
     });
@@ -60,10 +72,7 @@ export const useMethods = (
     const [status, setStatus] = useState<PaymentMethodStatus | undefined>();
     const [savedMethods, setSavedMethods] = useState<SavedPaymentMethod[] | undefined>();
 
-    const getComputedMethods = (availableMethodsParam?: {
-        usedMethods: AvailablePaymentMethod[];
-        newMethods: AvailablePaymentMethod[];
-    }) => {
+    const getComputedMethods = (availableMethodsParam?: UsedAndNewMethods) => {
         const { usedMethods, newMethods } = availableMethodsParam ?? availableMethods;
         const allMethods = [...usedMethods, ...newMethods];
         const lastUsedMethod = usedMethods[usedMethods.length - 1];
@@ -77,11 +86,7 @@ export const useMethods = (
     };
 
     const updateMethods = () => {
-        if (!paymentMethodsRef.current) {
-            return;
-        }
-
-        const { usedMethods, methods: newMethods } = paymentMethodsRef.current.getAvailablePaymentMethods();
+        const { usedMethods, methods: newMethods } = paymentMethodsRef.current!.getAvailablePaymentMethods();
 
         const result = {
             usedMethods,
@@ -96,20 +101,43 @@ export const useMethods = (
             paymentMethodsRef.current = await initializePaymentMethods(
                 api,
                 paymentMethodStatus,
+                paymentMethods,
                 isAuthenticated,
                 amount,
                 coupon ?? '',
                 flow
             );
 
+            // Initialization might take some time, so we need to check if there is any pending data
+            // If for example the amount changes before initialization is done, then it won't be updated by the usual
+            // useEffect handler below. In this case we need to update the amount manually.
+            // Same goes for coupon and flow.
+            if (pendingDataRef.current) {
+                // Getting the saved values and clearing the pending right away, because this is a one-time thing
+                const { pendingAmount, pendingCoupon, pendingFlow } = pendingDataRef.current;
+                pendingDataRef.current = undefined;
+
+                // Updating the coupon
+                paymentMethodsRef.current.coupon = pendingCoupon ?? '';
+
+                // Updating the amount
+                if (typeof pendingAmount === 'number') {
+                    paymentMethodsRef.current.amount = pendingAmount;
+                }
+
+                // Updating the flow
+                if (pendingFlow) {
+                    paymentMethodsRef.current.flow = pendingFlow;
+                }
+            }
+
             setStatus(paymentMethodsRef.current.paymentMethodStatus);
             setSavedMethods(paymentMethodsRef.current.paymentMethods);
 
             const methods = updateMethods();
-
             const { allMethods } = getComputedMethods(methods);
-            setSelectedMethod(allMethods[0]);
 
+            setSelectedMethod(allMethods[0]);
             setLoading(false);
         }
 
@@ -118,6 +146,11 @@ export const useMethods = (
 
     useEffect(() => {
         if (!paymentMethodsRef.current) {
+            pendingDataRef.current = {
+                pendingAmount: amount,
+                pendingCoupon: coupon,
+                pendingFlow: flow,
+            };
             return;
         }
 
@@ -146,6 +179,9 @@ export const useMethods = (
 
         const method = allMethods.find((method) => method.value === id);
         if (method) {
+            if (selectedMethod?.value !== method.value) {
+                onMethodChanged?.(method);
+            }
             setSelectedMethod(method);
             return method;
         }
