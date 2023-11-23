@@ -494,6 +494,11 @@
         "आपकी सदस्यता आपके बिलिंग चक्र के अंत में मानक रियायती दर और अवधि पर स्वचालित रूप से नवीनीकृत हो जाएगी"
       ]
     },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "क्षमा करें, यह ऑफ़र आपके वर्तमान प्लान के साथ उपलब्ध नहीं है। लेकिन जब आप **${ months }** के लिए सदस्यता लेते हैं तो आप **${ plan.Title } पर ${ discountPercentage }** की छूट पा सकते हैं।"
+      ]
+    },
     "bf2023: renew": {
       "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
         "${ discountedPrice } की विशेष रियायती कीमत ${ discountedMonths } के लिए मान्य है। फिर इसे ${ nextMonths } के लिए ${ nextPrice } की रियायती कीमत पर स्वचालित रूप से नवीनीकृत किया जाएगा। आप किसी भी समय निरस्त कर सकते हैं।"
@@ -1875,6 +1880,9 @@
       ],
       "You have successfully joined the Family plan": [
         "आप परिवार प्लान से जुड़ गए है"
+      ],
+      "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
+        "आपका खाता ${ usedSpace } स्टोरेज का उपयोग कर रहा है, जो आपको दिए गए ${ inviteSpace } से अधिक है। कुछ डेटा हटाएं या प्लान एडमिन से अपना स्टोरेज बढ़ाने के लिए कहें।"
       ]
     },
     "familyOffer_2023:Info": {
@@ -2795,6 +2803,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "स्पैम और दुर्व्यवहार से लड़ने के लिए, कृपया सत्यापित करें कि आप इंसान हैं"
       ],
+      "To keep up with the latest development at ${ BRAND_NAME } products, you can subscribe to our various emails and ${ blogLink } from time to time.": [
+        "${ BRAND_NAME } उत्पादों के नवीनतम विकास से जुड़े रहने के लिए, आप समय-समय पर हमारे विभिन्न ईमेल और ${ blogLink } की सदस्यता ले सकते हैं।"
+      ],
       "To proceed, select an account recovery method so we can verify the request.": [
         "आगे बढ़ने के लिए, खाता पुनर्प्राप्ति विधि चुनें ताकि हम अनुरोध को सत्यापित कर सकें।"
       ],
@@ -2918,6 +2929,9 @@
       "Why?": [
         "क्यों?"
       ],
+      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "व्यवसाय या एंटरप्राइज़ योजना के साथ, आप अपने संगठन के लिए ${ boldDedicatedServers } खरीद सकते हैं, और ${ boldGateways } सेट कर सकते हैं यह नियंत्रित करने के लिए कि कौन से उपयोगकर्ता उन तक पहुंच सकते हैं।"
+      ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "एक एन्क्रिप्ट किए ${ BRAND_NAME } पते के साथ आप सारे ${ BRAND_NAME } सेवाएं इस्तेमाल कर सकते हैं"
       ],
@@ -2938,6 +2952,9 @@
       ],
       "You are signed in to the account ${ memberAddress }.": [
         "${ memberAddress } खाते से साइनइन हो।"
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "आप अपनी योजना में आईपी पतों की संख्या में ${ specificCountryCount } जोड़कर उपरोक्त सेटअप को तुरंत अनलॉक कर सकते हैं या अनुकूलित समाधानों के लिए हम तक पहुंच सकते हैं।"
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "आप ${ MAX_CALENDARS_FREE } कैलेंडर तक रख सकत है। अपना ${ MAIL_SHORT_APP_NAME } सब्सक्रिप्शन रद्द करने से पहले कृपया शेयर किये गए कैलेंडर लिंक और किसी भी ${ BRAND_NAME } यूज़र जिसके साथ आपने पहले कैलेंडर शेयर किया है को हटाए।",
@@ -3023,6 +3040,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "आपके ईमेल का उपयोग केवल इस एक बार के सत्यापन के लिए किया जाएगा।"
+      ],
+      "Your existing messages, calendars, or contacts will be locked. To recover this data, you’ll need your recovery phrase or your ${ oldPassword }.": [
+        "आपके मौजूदा संदेश, कैलेंडर या संपर्क लॉक कर दिए जाएंगे। इस डेटा को पुनर्प्राप्त करने के लिए, आपको अपने पुनर्प्राप्ति वाक्यांश या अपने ${ oldPassword } की आवश्यकता होगी।"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "आपके संगठन का पासवर्ड अन्य उपयोगकर्ताओं के साथ साझा किया जा सकता है जिन्हें आप प्रशासनिक विशेषाधिकार देना चाहते हैं। यदि आप अपने खाते तक पहुँच खोते हैं तो यह आपके संगठन तक पहुँच प्राप्त करने के लिए एक आपातकालीन पुनर्प्राप्ति कोड भी है। कृपया इस पासवर्ड को सहेजें और इसे सुरक्षित रखें।"
@@ -3962,6 +3982,9 @@
       ]
     },
     "new_plans: feature info": {
+      "Create multiple email addresses for your online identities e.g. JohnShopper@${ domain } for shopping accounts, JohnNews@${ domain2 } for news subscription": [
+        "अपनी ऑनलाइन पहचान के लिए एकाधिक ईमेल पते बनाएं, उदा. शॉपिंग खातों के लिए जॉनशॉपर@${ domain }, समाचार सदस्यता के लिए जॉनन्यूज@${ domain2 }"
+      ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "${ BRAND_NAME } के SimpleLogin से असीमित नकलीनाम लें"
       ],
@@ -4115,6 +4138,9 @@
       "Create up to ${ n } calendar or add calendars from friends, family, colleagues, and organizations": [
         "${ n } कैलेंडर बनाएं या दोस्त, परिवार, सहकर्मी, और संगठन से कैलेंडर जोड़े।",
         "${ n } कैलेंडर तक बनाएं या दोस्त, परिवार, सहकर्मी, और संगठन से कैलेंडर जोड़े।"
+      ],
+      "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
+        "${ n } तक ईमेल पते/उपनाम बनाएं जिन्हें आप परिवार के सदस्यों को निर्दिष्ट कर सकें। ऑनलाइन पहचान के लिए उनका उपयोग करें, उदाहरण के लिए, शॉपिंग खातों के लिए जॉनशॉपर@${ domain }।"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "कई सर्वरों से आपके इंटरनेट ट्रैफिक को गुज़ार के वीपीएन निजता के खतरों के खिलाफ आपकी रक्षा करता है।"
@@ -4660,6 +4686,9 @@
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "हमारी सभी प्रीमियम सेवाएँ अपनी उच्चतम सीमा के साथ: 100 ईमेल पते, 10 कस्टम डोमेन के लिए समर्थन, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण, एन्क्रिप्टेड क्लाउड स्टोरेज और फ़ाइल साझाकरण, और बहुत कुछ।"
+      ],
+      "Receive at no extra cost the paid versions of all new privacy services we release in the future, along with early access to all future features and products.": [
+        "भविष्य में हमारे द्वारा जारी की जाने वाली सभी नई गोपनीयता सेवाओं के भुगतान की आवश्यकता वाले संस्करण बिना किसी अतिरिक्त लागत के प्राप्त करें, साथ ही भविष्य की सभी सुविधाओं और उत्पादों तक शीघ्र पहुंच प्राप्त करें।"
       ]
     },
     "Spotlight": {

@@ -2148,17 +2148,26 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Aplikácia momentálne nie je k dispozícii"
+      ],
       "Error: ${ errorMessage }": [
         "Chyba: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Ups, niečo sa pokazilo"
       ],
+      "Open in browser": [
+        "Otvoriť v prehliadači"
+      ],
       "Please refresh the page or try again later.": [
         "Obnovte stránku, prosím, alebo skúste znovu neskôr."
       ],
       "Something went wrong": [
         "Niečo sa pokazilo"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Pre použitie ${ MAIL_APP_NAME } alebo ${ CALENDAR_APP_NAME }, prejdite na webovú verziu."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Túto stránku sa nepodarilo načítať. Obnovte stránku, prosím, alebo skontrolujte svoje internetové pripojenie."
@@ -3603,6 +3612,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Môže to trvať nejaký čas. Nezatvárajte prosím túto stránku, ani sa neodpájajte od internetu."
       ],
+      "This file is too large to preview": [
+        "Tento súbor je príliš veľký na zobrazenie ukážky"
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tento užívateľ je aktuálne zodpovedný za platby vo vašej organizácii. Znížením úrovne tohto užívateľa sa stanete zodpovedným za platby vo vašej organizácii práve vy."
       ],
@@ -4965,6 +4977,9 @@
       "Custom fields": [
         "Vlastné polia"
       ],
+      "Custom snooze time": [
+        "Vlastný čas odloženia"
+      ],
       "Data breach monitoring": [
         "Monitorovanie úniku dát"
       ],
@@ -5191,6 +5206,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Získajte neobmedzené množstvo aliasov so službou SimpleLogin od ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Odložte správy a pripomeňte si ich, keď chcete"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Úložný priestor zdieľajú ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } a ${ DRIVE_APP_NAME }"

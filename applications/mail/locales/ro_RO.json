@@ -558,6 +558,9 @@
       "label emails as": [
         "etichetare mesaje ca"
       ],
+      "Later this week": [
+        "La sfârșitul săptămânii"
+      ],
       "Learn more": [
         "Detalii"
       ],
@@ -581,6 +584,9 @@
       ],
       "Manage labels": [
         "Gestionare etichete"
+      ],
+      "Manage Snooze": [
+        "Gestionare amânări"
       ],
       "Mark as read": [
         "Marcare ca citit"
@@ -903,6 +909,9 @@
       "Select all messages": [
         "Selectare toate mesajele"
       ],
+      "Select date and time": [
+        "Selectați data și ora"
+      ],
       "Self-destruct in 7 days": [
         "Autodistrugere în 7 zile"
       ],
@@ -1008,6 +1017,9 @@
       "Skip verification": [
         "Ignorare verificare"
       ],
+      "Snooze": [
+        "Amânare"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Unele imagini nu au putut fi încărcate cu protecția împotriva urmăririi activată."
       ],
@@ -1037,6 +1049,9 @@
       ],
       "This message contains remote content.": [
         "Acest mesaj conține conținut de la distanță."
+      ],
+      "This weekend": [
+        "În acest weekend"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Pentru a căuta în siguranță în mesaje, trebuie să se descarce o copie a acestora în navigator. Descărcarea inițială poate dura un ceva timp."
@@ -1090,6 +1105,9 @@
       ],
       "Unordered list": [
         "Listă neordonată"
+      ],
+      "Unsnooze": [
+        "Anulare amânare"
       ],
       "Unstar": [
         "Fără stea"
@@ -3088,6 +3106,9 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Deblocați programarea personalizată a mesajelor și alte avantaje trecând la un plan superior."
       ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Deblocați amânări personalizate când treceți la un plan cu plată."
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Deblocați filtre nelimitate care vă sortează mesajele și alte funcții premium dacă modernizați contul."
       ],
@@ -3872,6 +3893,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Aplicație momentan indisponibilă"
+      ],
       "Error: ${ errorMessage }": [
         "Eroare: ${ errorMessage }"
       ],
@@ -3884,11 +3908,17 @@
       "Oops, something went wrong": [
         "Hopa, ceva nu a mers bine!"
       ],
+      "Open in browser": [
+        "Deschidere în navigator web"
+      ],
       "Please refresh the page or try again later.": [
         "Reîmprospătați pagina sau reîncercați mai târziu."
       ],
       "Something went wrong": [
         "Ceva nu a funcționat corect."
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Pentru a folosi ${ MAIL_APP_NAME } sau ${ CALENDAR_APP_NAME }, comutați la versiunea web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Această pagină nu s-a putut încărca. Reîmprospătați pagina sau verificați conexiunea la internet."
@@ -5451,6 +5481,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Se importă datele de la ${ importedEmailAddress } la ${ toEmail }."
       ],
+      "Include Spam/Trash.": [
+        "Includere Nedorite/Gunoi."
+      ],
       "Inherited from parent folder": [
         "Moştenit de la folderul părinte"
       ],
@@ -5735,6 +5768,9 @@
       "Right-click for options": [
         "Clic dreapta pentru opțiuni"
       ],
+      "Sat, ${ formatTime }": [
+        "Sâm, ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "Salvat ${ dateString }"
       ],
@@ -5812,6 +5848,18 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin furnizează o metodă simplă de a crea adrese de autorizare pe site-urile de neîncredere unde nu doriți să vă expuneți adevărata adresă de e-mail."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Amânat până ${ dateString } la ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Amânat până astăzi, ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Amânat până mâine, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "Amânarea acestei conversații va fi anulată."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Ne pare rău, acest mesaj nu există sau a expirat deja."
@@ -5916,6 +5964,9 @@
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Acest e-mail nu respectă cerințele de autentificare ale domeniul său. Ar putea fi falsificat sau redirecționat eronat."
       ],
+      "This file is too large to preview": [
+        "Acest fișier este prea mare pentru a fi examinat."
+      ],
       "This invitation is saved in a disabled calendar.": [
         "Această invitație este salvată într-un calendar dezactivat."
       ],
@@ -6011,6 +6062,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Pentru a utiliza verificarea adresei, trebuie să aprobați una sau mai multe chei publice disponibile, inclusiv pe cea care o veți folosi pentru trimiteri. Aceasta va împiedica falsificarea cheilor de criptare."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Mâine, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Prea multe mesaje așteaptă să fie trimise. Așteptați până când un alt mesaj va fi trimis pentru a-l programa pe acesta."
       ],
@@ -6055,6 +6109,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Treceți la ${ MAIL_APP_NAME } Plus pentru a debloca"
       ],
       "Upgrade to add more addresses to your account.": [
         "Treceți la un plan superior pentru a adăuga mai multe adrese în contul personal."
@@ -7231,6 +7288,12 @@
       "Sign up for free": [
         "Înscriere gratuită"
       ],
+      "Snooze": [
+        "Amânare"
+      ],
+      "Snoozed": [
+        "Amânat"
+      ],
       "Spam": [
         "Nedorite"
       ],
@@ -7576,6 +7639,9 @@
       "Custom email domains": [
         "Domenii personale de e-mail"
       ],
+      "Custom snooze time": [
+        "Timp amânare personal"
+      ],
       "Hide-my-email aliases": [
         "Aliasuri hide-my-email"
       ],
@@ -7601,6 +7667,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obțineți aliasuri nelimitate cu SimpleLogin de la ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Amânați mesajele și fiți notificat când doriți."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Spațiul de stocare este distribuit între ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } și ${ DRIVE_APP_NAME }."
@@ -8033,6 +8102,9 @@
       "No results found": [
         "Nu s-au găsit rezultate"
       ],
+      "No snoozed messages": [
+        "Nu există mesaje amânate."
+      ],
       "No unread messages found": [
         "Nu au fost găsite mesaje necitite"
       ]
@@ -8342,6 +8414,14 @@
       ],
       "Sign": [
         "Semnare"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Mesaj amânare"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Când ar trebui să reapară acest mesaj în mesajele primite?"
       ]
     },
     "Sort option": {
@@ -8692,6 +8772,16 @@
         "S-a șters o conversație din ${ labelName }.",
         "S-au șters ${ elementsCount } conversații din ${ labelName }.",
         "S-au șters ${ elementsCount } de conversații din ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } conversație este amânată.",
+        "${ elementsCount } conversații sunt amânate.",
+        "${ elementsCount } de conversații sunt amânate."
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } conversație este reluată.",
+        "${ elementsCount } conversații sunt reluate.",
+        "${ elementsCount } de conversații sunt reluate."
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "S-a adăugat un mesaj în ${ labelName }.",
@@ -9391,6 +9481,9 @@
       "Moving a scheduled message": [
         "Se mută un mesaj programat"
       ],
+      "Moving a snoozed message": [
+        "Se mută un mesaj amânat"
+      ],
       "New message": [
         "Mesaj nou"
       ],
@@ -9532,6 +9625,12 @@
       "Sign out": [
         "Deconectare"
       ],
+      "Snooze": [
+        "Amânare"
+      ],
+      "Snooze message": [
+        "Amânare mesaj"
+      ],
       "Sort conversations": [
         "Sortare conversații"
       ],
@@ -9578,6 +9677,9 @@
       ],
       "Verification error": [
         "Eroare verificare"
+      ],
+      "Want to snooze any time?": [
+        "Doriți să modificați perioada de amânare?"
       ],
       "Warning": [
         "Avertizare"
@@ -9800,6 +9902,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Perioada de probare se încheie în curând la ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Lun, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Sâm, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Dum, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {
