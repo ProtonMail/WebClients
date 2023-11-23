@@ -35,7 +35,7 @@ export const SpotlightContent: VFC<Props> = ({
         switch (action?.type) {
             case 'link':
                 return (
-                    <button onClick={action.onClick} className="unstyled text-sm color-invert">
+                    <button onClick={action.onClick} className="unstyled text-sm color-invert px-3">
                         <span className="text-underline">{action.label}</span>
                     </button>
                 );

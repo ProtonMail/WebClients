@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
-import { useInviteContext } from '@proton/pass/components/Invite/InviteContextProvider';
+import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
 import { VaultDelete } from '@proton/pass/components/Vault/Vault.delete';
 import { emptyTrashIntent, restoreTrashIntent, shareLeaveIntent } from '@proton/pass/store/actions';
 import type { VaultShareItem } from '@proton/pass/store/reducers';

@@ -8,7 +8,7 @@ import { Icon } from '@proton/components';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
-import { useSpotlightContext } from '@proton/pass/components/Spotlight/SpotlightContext';
+import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { VaultTag } from '@proton/pass/components/Vault/VaultTag';
 import { VAULT_ICON_MAP } from '@proton/pass/components/Vault/constants';
 import type { ItemViewProps } from '@proton/pass/components/Views/types';
@@ -61,7 +61,7 @@ export const ItemViewPanel: FC<Props> = ({
     const showVaultTag = hasMultipleVaults || shared;
     const readOnly = shareRoleId === ShareRole.READ;
     const sharedReadOnly = shared && readOnly;
-    const spotlight = useSpotlightContext();
+    const spotlight = useSpotlight();
 
     return (
         <Panel
