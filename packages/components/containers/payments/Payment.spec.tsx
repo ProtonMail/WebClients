@@ -18,7 +18,6 @@ jest.mock('../../hooks/useApi', () => {
 });
 
 const defaultCard: CardModel = {
-    fullname: '',
     number: '',
     month: '',
     year: '',
@@ -28,7 +27,6 @@ const defaultCard: CardModel = {
 };
 
 const cardFieldStatus: CardFieldStatus = {
-    fullname: false,
     number: false,
     month: false,
     year: false,

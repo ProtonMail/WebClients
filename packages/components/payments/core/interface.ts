@@ -3,7 +3,6 @@ import { Currency } from '@proton/shared/lib/interfaces';
 import { PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from './constants';
 
 export interface CreateCardDetailsBackend {
-    Name?: string;
     Number: string;
     ExpMonth: string;
     ExpYear: string;
@@ -124,6 +123,10 @@ export function isPaypalDetails(obj: any): obj is PayPalDetails {
 }
 
 export interface SavedCardDetails {
+    /**
+     * Even though you can't add the name to the card, it's still returned from the API for old users who already
+     * have the card name.
+     */
     Name?: string | null;
     ExpMonth: string;
     ExpYear: string;
