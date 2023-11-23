@@ -2,9 +2,10 @@ import React, { ChangeEvent, FocusEvent, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { Button, Input } from '@proton/atoms';
+import { Button } from '@proton/atoms';
 import {
     Field,
+    InputFieldTwo,
     Label,
     ModalStateProps,
     ModalTwo,
@@ -16,7 +17,6 @@ import {
     useModalTwo,
 } from '@proton/components';
 import { useLoading } from '@proton/hooks';
-import { MAX_NAME_LENGTH } from '@proton/shared/lib/drive/constants';
 import noop from '@proton/utils/noop';
 
 import { DecryptedLink, formatLinkName, splitLinkName, useActions, validateLinkNameField } from '../../store';
@@ -83,17 +83,17 @@ const RenameModal = ({ item, onClose, ...modalProps }: Props & ModalStateProps) 
                 <Row className="my-4">
                     <Label>{!item.isFile ? c('Label').t`Folder name` : c('Label').t`File name`}</Label>
                     <Field>
-                        <Input
+                        <InputFieldTwo
                             id="link-name"
                             value={name}
                             autoFocus
-                            maxLength={MAX_NAME_LENGTH}
                             placeholder={c('Placeholder').t`New name`}
                             onChange={handleChange}
                             onBlur={handleBlur}
                             onFocus={selectNamePart}
                             error={validationError}
                             required
+                            data-testid="input-rename"
                         />
                     </Field>
                 </Row>
