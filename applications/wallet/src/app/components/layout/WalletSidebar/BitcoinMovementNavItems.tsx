@@ -11,13 +11,11 @@ export const BitcoinMovementNavItems = () => {
     return (
         <>
             <SidebarListItem className="my-5">
-                {/** TODO: change to correct route */}
-                <SidebarListItemLink to="wallet-settings/buy">
+                <SidebarListItemLink to="/buy">
                     <SidebarItemContent icon="money-bills" data-testid="wallet-sidebar:buy" label={labelBuyBitcoin} />
                 </SidebarListItemLink>
             </SidebarListItem>
             <SidebarListItem>
-                {/** TODO: change to correct route */}
                 <SidebarListItemLink to="/transfer">
                     <SidebarItemContent
                         icon="credit-card"
