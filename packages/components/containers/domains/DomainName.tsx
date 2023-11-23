@@ -1,5 +1,4 @@
-import { DOMAIN_STATE } from '@proton/shared/lib/constants';
-import { Domain } from '@proton/shared/lib/interfaces';
+import { DOMAIN_STATE, Domain } from '@proton/shared/lib/interfaces';
 
 import { Icon } from '../../components';
 
@@ -22,7 +21,7 @@ const DomainName = ({ domain }: Props) => {
 
     return (
         <span className="flex flex-nowrap flex-align-items-center">
-            {ICONS[domain.State as DOMAIN_STATE]}
+            {ICONS[domain.State]}
             <span className="text-ellipsis ml-2" title={domain.DomainName}>
                 {domain.DomainName}
             </span>
