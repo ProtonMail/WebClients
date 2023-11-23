@@ -27,7 +27,7 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
         public api: Api,
         amountAndCurrency: AmountAndCurrency,
         savedMethod: SavedPaymentMethod,
-        private onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
+        onTokenIsChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>
     ) {
         super(
             {
@@ -36,11 +36,16 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
                     type: savedMethod.Type,
                 },
             },
-            amountAndCurrency
+            amountAndCurrency,
+            onTokenIsChargeable
         );
     }
 
-    async fetchPaymentToken(): Promise<ChargeablePaymentToken | NonChargeablePaymentToken> {
+    async fetchPaymentToken(): Promise<ChargeablePaymentToken | NonChargeablePaymentToken | null> {
+        if (this.amountAndCurrency.Amount === 0) {
+            return null;
+        }
+
         this.fetchedPaymentToken = await createPaymentTokenForExistingPayment(
             this.state.method.paymentMethodId,
             this.state.method.type,
@@ -64,18 +69,20 @@ export class SavedPaymentProcessor extends PaymentProcessor<SavedPaymentState> {
             return this.tokenCreated(this.fetchedPaymentToken);
         }
 
-        let token: TokenPaymentMethod;
-        try {
-            token = await this.verifyPayment({
-                Token: this.fetchedPaymentToken.Payment.Details.Token,
-                ApprovalURL: this.fetchedPaymentToken.approvalURL,
-                ReturnHost: this.fetchedPaymentToken.returnHost,
-            });
-        } catch (error: any) {
-            throw error;
-        }
+        const token: TokenPaymentMethod = await this.verifyPayment({
+            Token: this.fetchedPaymentToken.Payment.Details.Token,
+            ApprovalURL: this.fetchedPaymentToken.approvalURL,
+            ReturnHost: this.fetchedPaymentToken.returnHost,
+        });
 
         return this.tokenCreated(token);
+    }
+
+    updateSavedMethod(savedMethod: SavedPaymentMethod) {
+        this.state.method = {
+            paymentMethodId: savedMethod.ID,
+            type: savedMethod.Type,
+        };
     }
 
     reset() {

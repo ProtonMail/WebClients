@@ -1,24 +1,19 @@
-import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
-import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
+import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
-import { checkInvoice, payInvoice } from '@proton/shared/lib/api/payments';
+import { checkInvoice } from '@proton/shared/lib/api/payments';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { toPrice } from '@proton/shared/lib/helpers/string';
 import { Currency } from '@proton/shared/lib/interfaces';
+import { getSentryError } from '@proton/shared/lib/keys';
 
-import { Field, FormModal, Input, Label, Price, PrimaryButton, Row } from '../../components';
-import { useApi, useApiResult, useEventManager, useNotifications } from '../../hooks';
-import {
-    AmountAndCurrency,
-    ExistingPayment,
-    TokenPaymentMethod,
-    WrappedCardPayment,
-} from '../../payments/core/interface';
-import Payment from '../payments/Payment';
+import { EllipsisLoader, Field, FormModal, Input, Label, Price, PrimaryButton, Row } from '../../components';
+import { useApiResult, useEventManager, useNotifications } from '../../hooks';
+import PaymentWrapper from '../payments/PaymentWrapper';
 import StyledPayPalButton from '../payments/StyledPayPalButton';
-import usePayment from '../payments/usePayment';
 import { Invoice } from './interface';
 
 interface CheckInvoiceResponse {
@@ -40,64 +35,88 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const { call } = useEventManager();
-    const createPaymentToken = usePaymentToken();
-    const api = useApi();
-    const { result, loading: isLoading } = useApiResult<CheckInvoiceResponse, typeof checkInvoice>(
+    const { result, loading: amountLoading } = useApiResult<CheckInvoiceResponse, typeof checkInvoice>(
         () => checkInvoice(invoice.ID),
         []
     );
 
     const { AmountDue, Amount, Currency, Credit } = result ?? {};
 
-    /**
-     * @param params must be null if user pays from the credit balance.
-     */
-    const handleSubmit = async (params: WrappedCardPayment | TokenPaymentMethod | ExistingPayment | null) => {
-        const amountAndCurrency: AmountAndCurrency = { Amount: AmountDue as number, Currency: Currency as Currency };
+    const amount = AmountDue ?? 0;
+    const currency = Currency as Currency;
 
-        let payInvoiceData: (TokenPaymentMethod & AmountAndCurrency) | AmountAndCurrency = {
-            ...amountAndCurrency,
-        };
+    const paymentFacade = usePaymentFacade({
+        amount,
+        currency,
+        onChargeable: (operations) => {
+            return withLoading(async () => {
+                await operations.payInvoice();
+                await Promise.all([
+                    call(), // Update user.Delinquent to hide TopBanner
+                    fetchInvoices(),
+                ]);
+                rest.onClose?.();
+                createNotification({ text: c('Success').t`Invoice paid` });
+            });
+        },
+        flow: 'invoice',
+    });
 
-        if (params) {
-            let paymentToken = await createPaymentToken(params, { amountAndCurrency });
+    const process = async (processor?: PaymentProcessorHook) =>
+        withLoading(async () => {
+            if (!processor) {
+                return;
+            }
 
-            payInvoiceData = { ...payInvoiceData, ...paymentToken };
-        }
+            try {
+                paymentFacade.paymentContext.setInvoiceData({
+                    invoiceId: invoice.ID,
+                });
+                await processor.processPaymentToken();
+            } catch (e) {
+                const error = getSentryError(e);
+                if (error) {
+                    const context = {
+                        invoiceId: invoice.ID,
+                        currency,
+                        amount,
+                        processorType: paymentFacade.selectedProcessor?.meta.type,
+                        paymentMethod: paymentFacade.selectedMethodType,
+                        paymentMethodValue: paymentFacade.selectedMethodValue,
+                    };
 
-        await api(payInvoice(invoice.ID, payInvoiceData));
-        await Promise.all([
-            call(), // Update user.Delinquent to hide TopBanner
-            fetchInvoices(),
-        ]);
-        rest.onClose?.();
-        createNotification({ text: c('Success').t`Invoice paid` });
-    };
-
-    const { card, setCard, cardErrors, handleCardSubmit, method, setMethod, parameters, canPay, paypal, paypalCredit } =
-        usePayment({
-            api,
-            amount: AmountDue as number,
-            currency: Currency as Currency,
-            onPaypalPay: handleSubmit,
+                    captureMessage('Payments: failed to pay invoice', {
+                        level: 'error',
+                        extra: { error, context },
+                    });
+                }
+            }
         });
 
     const submit =
-        method === PAYMENT_METHOD_TYPES.PAYPAL ? (
-            <StyledPayPalButton paypal={paypal} flow="invoice" amount={AmountDue ?? 0} />
+        paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.PAYPAL ? (
+            <StyledPayPalButton
+                type="submit"
+                paypal={paymentFacade.paypal}
+                amount={amount}
+                currency={paymentFacade.currency}
+                loading={loading}
+                data-testid="paypal-button"
+            />
         ) : (
-            <PrimaryButton loading={loading} disabled={!canPay} type="submit">{c('Action').t`Pay`}</PrimaryButton>
+            <PrimaryButton
+                loading={loading}
+                disabled={paymentFacade.methods.loading || !paymentFacade.userCanTriggerSelected}
+                type="submit"
+                data-testid="pay-invoice-button"
+            >
+                {c('Action').t`Pay`}
+            </PrimaryButton>
         );
 
     return (
         <FormModal
-            onSubmit={() => {
-                if (!handleCardSubmit()) {
-                    return;
-                }
-
-                withLoading(handleSubmit(parameters));
-            }}
+            onSubmit={() => process(paymentFacade.selectedProcessor)}
             loading={loading}
             close={c('Action').t`Close`}
             submit={submit}
@@ -105,14 +124,16 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
             data-testid="pay-invoice-modal"
             {...rest}
         >
-            {!isLoading && (
+            {amountLoading ? (
+                <EllipsisLoader />
+            ) : (
                 <>
                     {!!Credit && (
                         <>
                             <Row>
                                 <Label>{c('Label').t`Amount`}</Label>
                                 <Field className="text-right">
-                                    <Price className="label" currency={Currency}>
+                                    <Price className="label" currency={currency}>
                                         {Amount ?? 0}
                                     </Price>
                                 </Field>
@@ -120,7 +141,7 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                             <Row>
                                 <Label>{c('Label').t`Credits used`}</Label>
                                 <Field className="text-right">
-                                    <Price className="label" currency={Currency}>
+                                    <Price className="label" currency={currency}>
                                         {Credit}
                                     </Price>
                                 </Field>
@@ -133,34 +154,21 @@ const PayInvoiceModal = ({ invoice, fetchInvoices, ...rest }: Props) => {
                             <Input
                                 className="field--highlight no-pointer-events text-strong text-right"
                                 readOnly
-                                value={toPrice(AmountDue, Currency)}
+                                value={toPrice(amount, currency)}
                             />
                         </Field>
                     </Row>
-                    {AmountDue && AmountDue > 0 ? (
-                        <Payment
-                            api={api}
-                            type="invoice"
-                            paypal={paypal}
-                            paypalCredit={paypalCredit}
-                            method={method}
-                            amount={AmountDue}
-                            currency={Currency}
-                            card={card}
-                            onMethod={setMethod}
-                            onCard={setCard}
-                            cardErrors={cardErrors}
+                    {amount > 0 ? (
+                        <PaymentWrapper
+                            {...paymentFacade}
+                            onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
+                            noMaxWidth
                         />
                     ) : null}
                 </>
             )}
         </FormModal>
     );
-};
-
-PayInvoiceModal.propTypes = {
-    invoice: PropTypes.object.isRequired,
-    fetchInvoices: PropTypes.func.isRequired,
 };
 
 export default PayInvoiceModal;

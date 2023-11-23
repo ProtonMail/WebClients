@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import { Api } from '@proton/shared/lib/interfaces';
@@ -29,22 +29,28 @@ export interface SavedMethodProcessorHook extends PaymentProcessorHook {
     paymentProcessor?: SavedPaymentProcessor;
 }
 
+/**
+ * React wrapper for {@link SavedPaymentProcessor}. It provides a set of proxies and also some additional functionality
+ * like `processPaymentToken` method that supposed to be the main action. The saved payment method can be either a card
+ * or PayPal (not paypal-credit which can't be saved by design, as it supposed to provide one-time payment).
+ */
 export const useSavedMethod = (
     { amountAndCurrency, savedMethod, onChargeable }: Props,
     { verifyPayment, api }: Dependencies
 ): SavedMethodProcessorHook => {
-    const paymentProcessor = useMemo(() => {
-        if (savedMethod) {
-            return new SavedPaymentProcessor(
-                verifyPayment,
-                api,
-                amountAndCurrency,
-                savedMethod,
-                (chargeablePaymentParameters: ChargeablePaymentParameters) =>
-                    onChargeable(chargeablePaymentParameters, savedMethod.ID)
-            );
-        }
-    }, [savedMethod]);
+    const paymentProcessorRef = useRef<SavedPaymentProcessor>();
+    if (!paymentProcessorRef.current && savedMethod) {
+        paymentProcessorRef.current = new SavedPaymentProcessor(
+            verifyPayment,
+            api,
+            amountAndCurrency,
+            savedMethod,
+            (chargeablePaymentParameters: ChargeablePaymentParameters) =>
+                onChargeable(chargeablePaymentParameters, savedMethod.ID)
+        );
+    }
+
+    const paymentProcessor = paymentProcessorRef.current;
 
     const [fetchingToken, withFetchingToken] = useLoading();
     const [verifyingToken, withVerifyingToken] = useLoading();
@@ -59,6 +65,15 @@ export const useSavedMethod = (
             paymentProcessor.amountAndCurrency = amountAndCurrency;
         }
     }, [amountAndCurrency]);
+
+    useEffect(() => {
+        if (paymentProcessor && savedMethod) {
+            paymentProcessor.onTokenIsChargeable = (chargeablePaymentParameters: ChargeablePaymentParameters) =>
+                onChargeable(chargeablePaymentParameters, savedMethod.ID);
+
+            paymentProcessor.updateSavedMethod(savedMethod);
+        }
+    }, [savedMethod, onChargeable]);
 
     const reset = () => paymentProcessor?.reset();
 
@@ -95,6 +110,7 @@ export const useSavedMethod = (
         paymentProcessor,
         meta: {
             type: 'saved',
+            data: savedMethod,
         },
     };
 };

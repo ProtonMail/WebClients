@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { FormEvent, useEffect } from 'react';
 
 import { c } from 'ttag';
 
@@ -7,32 +7,30 @@ import { Icon, Price, useConfig } from '@proton/components';
 import {
     Alert3ds,
     CurrencySelector,
-    Payment as PaymentComponent,
     PlanCustomization,
     StyledPayPalButton,
     SubscriptionCheckoutCycleItem,
     SubscriptionCycleSelector,
     getRenewalNoticeText,
-    usePayment,
-    usePaymentToken,
 } from '@proton/components/containers/payments';
+import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
+import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import {
-    AmountAndCurrency,
     CardPayment,
     PAYMENT_METHOD_TYPES,
     PaymentMethodStatus,
     PaypalPayment,
     TokenPayment,
-    TokenPaymentMethod,
 } from '@proton/components/payments/core';
+import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import metrics from '@proton/metrics';
 import { PLANS } from '@proton/shared/lib/constants';
 import { getIsCustomCycle } from '@proton/shared/lib/helpers/checkout';
 import { toMap } from '@proton/shared/lib/helpers/object';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Api, Currency, Cycle, Plan, PlansMap } from '@proton/shared/lib/interfaces';
-import isTruthy from '@proton/utils/isTruthy';
-import noop from '@proton/utils/noop';
+import { getSentryError } from '@proton/shared/lib/keys';
 
 import Content from '../public/Content';
 import Header from '../public/Header';
@@ -55,7 +53,6 @@ export interface Props {
 }
 
 const PaymentStep = ({
-    api,
     onBack,
     onPay,
     onChangeCycle,
@@ -64,40 +61,30 @@ const PaymentStep = ({
     plan,
     plans,
     planName: planNameString,
-    paymentMethodStatus,
     subscriptionData,
 }: Props) => {
     const { APP_NAME } = useConfig();
     const [loading, withLoading] = useLoading();
-    const paymentMethods = [
-        paymentMethodStatus?.Card && PAYMENT_METHOD_TYPES.CARD,
-        paymentMethodStatus?.Paypal && PAYMENT_METHOD_TYPES.PAYPAL,
-    ].filter(isTruthy);
 
     const plansMap = toMap(plans, 'Name') as PlansMap;
     const hasGuarantee = plan?.Name === PLANS.VPN;
 
-    const {
-        card,
-        setCard,
-        cardErrors,
-        method,
-        setMethod,
-        handleCardSubmit,
-        parameters: paymentParameters,
-        paypal,
-        paypalCredit,
-    } = usePayment({
-        api,
-        defaultMethod: paymentMethods[0],
+    const paymentFacade = usePaymentFacade({
         amount: subscriptionData.checkResult.AmountDue,
         currency: subscriptionData.currency,
-        onPaypalPay({ Payment }: TokenPaymentMethod) {
-            return withLoading(onPay(Payment, 'pp'));
+        onChargeable: (_, { chargeablePaymentParameters, source }) => {
+            return withLoading(async () => {
+                let type: 'cc' | 'pp';
+                if (source === PAYMENT_METHOD_TYPES.PAYPAL || source === PAYMENT_METHOD_TYPES.PAYPAL_CREDIT) {
+                    type = 'pp';
+                } else {
+                    type = 'cc';
+                }
+                await onPay(chargeablePaymentParameters.Payment, type);
+            });
         },
+        flow: 'signup',
     });
-
-    const createPaymentToken = usePaymentToken();
 
     useEffect(() => {
         void metrics.core_signup_pageLoad_total.increment({
@@ -121,6 +108,37 @@ const PaymentStep = ({
     // Disable cycles during signup for custom cycles or if there is a coupon. (Since the cycle selector will show values which don't include the coupon discount).
     const disableCycleSelector =
         getIsCustomCycle(subscriptionData.cycle) || !!subscriptionData.checkResult.Coupon?.Code;
+
+    const process = async (processor?: PaymentProcessorHook) =>
+        withLoading(async () => {
+            if (!processor) {
+                return;
+            }
+
+            try {
+                await processor.processPaymentToken();
+            } catch (e) {
+                const error = getSentryError(e);
+                if (error) {
+                    const context = {
+                        app: APP_NAME,
+                        plan: plan?.Name,
+                        cycle: subscriptionData.cycle,
+                        currency: subscriptionData.currency,
+                        amount: subscriptionData.checkResult.AmountDue,
+                        code: subscriptionData.checkResult.Coupon?.Code,
+                        processorType: paymentFacade.selectedProcessor?.meta.type,
+                        paymentMethod: paymentFacade.selectedMethodType,
+                        paymentMethodValue: paymentFacade.selectedMethodValue,
+                    };
+
+                    captureMessage('Payments: failed to handle classic signup', {
+                        level: 'error',
+                        extra: { error, context },
+                    });
+                }
+            }
+        });
 
     return (
         <div className="sign-layout-mobile-columns w-full flex flex-align-items-start flex-justify-center gap-7">
@@ -187,50 +205,30 @@ const PaymentStep = ({
                 <Content>
                     <form
                         name="payment-form"
-                        onSubmit={async (event) => {
-                            event.preventDefault();
-                            const handle = async () => {
-                                if (!handleCardSubmit() || !paymentParameters) {
-                                    return;
-                                }
+                        onSubmit={async (e: FormEvent) => {
+                            e.preventDefault();
 
-                                const amountAndCurrency: AmountAndCurrency = {
-                                    Currency: subscriptionData.currency,
-                                    Amount: subscriptionData.checkResult.AmountDue,
-                                };
-                                const data = await createPaymentToken(paymentParameters, { amountAndCurrency });
-
-                                return onPay(data.Payment, 'cc');
-                            };
-                            withLoading(handle()).catch(noop);
+                            void withLoading(process(paymentFacade.selectedProcessor));
                         }}
                         method="post"
                     >
                         {subscriptionData.checkResult?.AmountDue ? (
-                            <PaymentComponent
-                                api={api}
-                                type="signup"
-                                paypal={paypal}
-                                paypalCredit={paypalCredit}
-                                paymentMethodStatus={paymentMethodStatus}
-                                method={method}
-                                amount={subscriptionData.checkResult.AmountDue}
-                                currency={subscriptionData.currency}
-                                card={card}
-                                onMethod={setMethod}
-                                onCard={setCard}
-                                cardErrors={cardErrors}
-                                disabled={loading}
+                            <PaymentWrapper
+                                {...paymentFacade}
+                                onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
+                                noMaxWidth
                             />
                         ) : (
                             <div className="mb-4">{c('Info').t`No payment is required at this time.`}</div>
                         )}
-                        {method === PAYMENT_METHOD_TYPES.PAYPAL ? (
+                        {paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.PAYPAL ? (
                             <StyledPayPalButton
-                                paypal={paypal}
+                                paypal={paymentFacade.paypal}
                                 flow="signup"
                                 amount={subscriptionData.checkResult.AmountDue}
+                                currency={subscriptionData.currency}
                                 loading={loading}
+                                type="submit"
                             />
                         ) : (
                             <>

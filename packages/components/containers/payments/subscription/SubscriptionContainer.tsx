@@ -7,18 +7,14 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import { FeatureCode, useFlag } from '@proton/components/containers';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
-import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
+import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
-import {
-    AmountAndCurrency,
-    ExistingPayment,
-    TokenPaymentMethod,
-    WrappedCardPayment,
-} from '@proton/components/payments/core/interface';
+import { Operations, OperationsSubscriptionData } from '@proton/components/payments/react-extensions';
+import { PaymentProcessorHook } from '@proton/components/payments/react-extensions/interface';
 import { useLoading } from '@proton/hooks';
 import metrics, { observeApiError } from '@proton/metrics';
 import { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
-import { checkSubscription, deleteSubscription, subscribe } from '@proton/shared/lib/api/payments';
+import { subscribe as apiSubscribe, checkSubscription, deleteSubscription } from '@proton/shared/lib/api/payments';
 import { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange, willHavePaidMail } from '@proton/shared/lib/calendar/plans';
 import {
@@ -82,9 +78,9 @@ import {
 import GenericError from '../../error/GenericError';
 import LossLoyaltyModal from '../LossLoyaltyModal';
 import MemberDowngradeModal from '../MemberDowngradeModal';
-import Payment from '../Payment';
 import PaymentGiftCode from '../PaymentGiftCode';
-import usePayment from '../usePayment';
+import PaymentWrapper from '../PaymentWrapper';
+import { ValidatedBitcoinToken, isValidatedBitcoinToken } from '../useBitcoin';
 import CalendarDowngradeModal from './CalendarDowngradeModal';
 import PlanCustomization from './PlanCustomization';
 import { DiscountWarningModal, NewVisionaryWarningModal } from './PlanLossWarningModal';
@@ -223,7 +219,6 @@ const SubscriptionContainer = ({
     const getCalendars = useGetCalendars();
     const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
     const sentinelPassplusEnabled = !!useFlag('SentinelPassPlus');
-    const createPaymentToken = usePaymentToken();
     const { APP_NAME } = useConfig();
 
     const [loading, withLoading] = useLoading();
@@ -342,6 +337,12 @@ const SubscriptionContainer = ({
 
     const abortControllerRef = useRef<AbortController>();
 
+    const amount =
+        model.step === SUBSCRIPTION_STEPS.CHECKOUT || model.step === SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION
+            ? amountDue
+            : 0;
+    const currency = checkResult?.Currency || DEFAULT_CURRENCY;
+
     const handleUnsubscribe = async () => {
         if (hasVPN(subscription) || hasVPNPassBundle(subscription)) {
             if (subscription.Renew === Renew.Disabled) {
@@ -410,22 +411,44 @@ const SubscriptionContainer = ({
         }
     };
 
+    const processSubscription = async (operationsOrValidToken: Operations | ValidatedBitcoinToken) => {
+        if (isValidatedBitcoinToken(operationsOrValidToken)) {
+            await api({
+                ...apiSubscribe(
+                    {
+                        Plans: model.planIDs,
+                        Codes: getCodes(model),
+                        Cycle: model.cycle,
+                        Currency: currency,
+                        Amount: amount,
+                        Payment: operationsOrValidToken.Payment,
+                    },
+                    app
+                ),
+                timeout: 60000 * 2,
+            });
+        } else {
+            await operationsOrValidToken.subscribe();
+        }
+    };
+
     const handleSubscribe = async (
-        params: (TokenPaymentMethod | WrappedCardPayment | ExistingPayment) & AmountAndCurrency
+        operationsOrValidToken: Operations | ValidatedBitcoinToken,
+        context: OperationsSubscriptionData
     ) => {
         try {
-            await handlePlanWarnings(model.planIDs);
+            await handlePlanWarnings(context.Plans);
         } catch (e) {
             return;
         }
 
-        if (!hasPlanIDs(model.planIDs)) {
+        if (!hasPlanIDs(context.Plans)) {
             return handleUnsubscribe();
         }
 
         const shouldCalendarPreventSubscriptionChangePromise = getShouldCalendarPreventSubscripitionChange({
             hasPaidMail: hasPaidMail(user),
-            willHavePaidMail: willHavePaidMail(model.planIDs, plans),
+            willHavePaidMail: willHavePaidMail(context.Plans, plans),
             api,
             getCalendars,
         });
@@ -444,19 +467,8 @@ const SubscriptionContainer = ({
         // Two possible cases: CHECKOUT and CHECKOUT_WITH_CUSTOMIZATION
         const checkoutStep = model.step;
         try {
-            setModel({ ...model, step: SUBSCRIPTION_STEPS.UPGRADE });
-            await api({
-                ...subscribe(
-                    {
-                        Plans: model.planIDs,
-                        Codes: getCodes(model),
-                        Cycle: model.cycle,
-                        ...params, // Contains Payment, Amount and Currency
-                    },
-                    app
-                ),
-                timeout: 60000 * 2, // 2 minutes
-            });
+            setModel((model) => ({ ...model, step: SUBSCRIPTION_STEPS.UPGRADE }));
+            await processSubscription(operationsOrValidToken);
             await call();
 
             void metrics.payments_subscription_total.increment({
@@ -467,7 +479,7 @@ const SubscriptionContainer = ({
             if (disableThanksStep) {
                 onSubscribed?.();
             } else {
-                setModel({ ...model, step: SUBSCRIPTION_STEPS.THANKS });
+                setModel((model) => ({ ...model, step: SUBSCRIPTION_STEPS.THANKS }));
             }
         } catch (error: any) {
             const { Code = 0 } = error.data || {};
@@ -485,26 +497,28 @@ const SubscriptionContainer = ({
                 })
             );
 
-            setModel({ ...model, step: checkoutStep });
+            setModel((model) => ({ ...model, step: checkoutStep }));
             throw error;
         }
     };
 
-    const { card, setCard, cardErrors, handleCardSubmit, method, setMethod, parameters, canPay, paypal, paypalCredit } =
-        usePayment({
-            api,
-            amount:
-                model.step === SUBSCRIPTION_STEPS.CHECKOUT ||
-                model.step === SUBSCRIPTION_STEPS.CHECKOUT_WITH_CUSTOMIZATION
-                    ? amountDue // Define amount only in the payment step to generate payment tokens
-                    : 0,
-            currency: checkResult?.Currency || DEFAULT_CURRENCY,
-            onPaypalPay(params) {
-                return withLoading(handleSubscribe(params));
-            },
-        });
-    const creditCardTopRef = useRef<HTMLDivElement>(null);
-    const bitcoinLoading = method === PAYMENT_METHOD_TYPES.BITCOIN && !bitcoinValidated && awaitingBitcoinPayment;
+    const paymentFacade = usePaymentFacade({
+        amount,
+        currency,
+        onChargeable: (operations, { context }) => {
+            if (!context.subscription) {
+                throw new Error('Missing subscription context');
+            }
+
+            return withLoading(handleSubscribe(operations, context.subscription));
+        },
+        flow: 'subscription',
+    });
+
+    const bitcoinLoading =
+        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.BITCOIN &&
+        !bitcoinValidated &&
+        awaitingBitcoinPayment;
 
     const check = async (newModel: Model = model, wantToApplyNewGiftCode: boolean = false): Promise<boolean> => {
         const copyNewModel = {
@@ -589,36 +603,43 @@ const SubscriptionContainer = ({
         }
     }, [model.step, customTopRef?.current, topRef?.current]);
 
-    const handleCheckout = async () => {
-        try {
-            if (!parameters) {
+    const process = async (processor?: PaymentProcessorHook) =>
+        withLoading(async () => {
+            if (!processor) {
                 return;
             }
 
-            const amountAndCurrency: AmountAndCurrency = { Amount: amountDue, Currency: model.currency };
-
-            let params: TokenPaymentMethod | WrappedCardPayment | ExistingPayment = parameters;
-            if (amountAndCurrency.Amount !== 0) {
-                params = await createPaymentToken(parameters, { amountAndCurrency });
+            try {
+                paymentFacade.paymentContext.setSubscriptionData({
+                    Plans: model.planIDs,
+                    Codes: getCodes(model),
+                    Cycle: model.cycle,
+                    product: app,
+                });
+                await processor.processPaymentToken();
+            } catch (e) {
+                const error = getSentryError(e);
+                if (error) {
+                    const context = {
+                        app,
+                        step: model.step,
+                        cycle: model.cycle,
+                        currency: model.currency,
+                        amount,
+                        coupon: model.coupon,
+                        planIDs,
+                        audience,
+                        processorType: paymentFacade.selectedProcessor?.meta.type,
+                        paymentMethod: paymentFacade.selectedMethodType,
+                        paymentMethodValue: paymentFacade.selectedMethodValue,
+                    };
+                    captureMessage('Payments: failed to handle subscription', {
+                        level: 'error',
+                        extra: { error, context },
+                    });
+                }
             }
-
-            return await handleSubscribe({ ...params, ...amountAndCurrency });
-        } catch (e) {
-            const error = getSentryError(e);
-            if (error) {
-                const context = {
-                    app,
-                    step: model.step,
-                    cycle: model.cycle,
-                    currency: model.currency,
-                    coupon: model.coupon,
-                    planIDs,
-                    audience,
-                };
-                captureMessage('Could not handle checkout', { level: 'error', extra: { error, context } });
-            }
-        }
-    };
+        });
 
     const handleChangeCycle = (cycle: Cycle) => {
         if (loadingCheck || cycle === model.cycle) {
@@ -708,11 +729,8 @@ const SubscriptionContainer = ({
         if (loadingCheck || loadingGift) {
             return;
         }
-        if (!handleCardSubmit()) {
-            creditCardTopRef.current?.scrollIntoView();
-            return;
-        }
-        void withLoading(handleCheckout());
+
+        void withLoading(process(paymentFacade.selectedProcessor));
     };
 
     const content = (
@@ -897,26 +915,16 @@ const SubscriptionContainer = ({
                                 })()}
                                 {/* avoid mounting/unmounting the component which re-triggers the hook */}
                                 <div className={amountDue ? undefined : 'hidden'}>
-                                    <Payment
-                                        api={api}
-                                        type="subscription"
-                                        paypal={paypal}
-                                        paypalCredit={paypalCredit}
-                                        method={method}
-                                        amount={amountDue}
-                                        currency={checkResult?.Currency}
-                                        coupon={couponCode}
-                                        card={card}
-                                        onMethod={setMethod}
-                                        onCard={setCard}
-                                        cardErrors={cardErrors}
-                                        creditCardTopRef={creditCardTopRef}
+                                    <PaymentWrapper
+                                        {...paymentFacade}
+                                        onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
+                                        noMaxWidth
                                         onBitcoinTokenValidated={async (data) => {
                                             setBitcoinValidated(true);
-                                            await handleSubscribe({
-                                                ...data,
-                                                Amount: amountDue,
-                                                Currency: checkResult?.Currency as Currency,
+                                            await handleSubscribe(data, {
+                                                Plans: model.planIDs,
+                                                Cycle: model.cycle,
+                                                product: app,
                                             });
                                         }}
                                         onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
@@ -943,13 +951,13 @@ const SubscriptionContainer = ({
                                         <SubscriptionSubmitButton
                                             currency={model.currency}
                                             onDone={onSubscribed}
-                                            paypal={paypal}
+                                            paypal={paymentFacade.paypal}
                                             step={model.step}
                                             loading={loading || bitcoinLoading}
-                                            method={method}
+                                            paymentMethodValue={paymentFacade.selectedMethodValue}
                                             checkResult={checkResult}
                                             className="w-full"
-                                            disabled={isFreeUserWithFreePlanSelected || !canPay}
+                                            disabled={isFreeUserWithFreePlanSelected}
                                         />
                                     }
                                     plansMap={plansMap}
@@ -1040,26 +1048,16 @@ const SubscriptionContainer = ({
                             <h2 className="text-2xl text-bold mb-4">{c('Label').t`Payment details`}</h2>
                             {/* avoid mounting/unmounting the component which re-triggers the hook */}
                             <div className={amountDue ? undefined : 'hidden'}>
-                                <Payment
-                                    api={api}
-                                    type="subscription"
-                                    paypal={paypal}
-                                    paypalCredit={paypalCredit}
-                                    method={method}
-                                    amount={amountDue}
-                                    currency={checkResult?.Currency}
-                                    coupon={couponCode}
-                                    card={card}
-                                    onMethod={setMethod}
-                                    onCard={setCard}
-                                    cardErrors={cardErrors}
-                                    creditCardTopRef={creditCardTopRef}
+                                <PaymentWrapper
+                                    {...paymentFacade}
+                                    onPaypalCreditClick={() => process(paymentFacade.paypalCredit)}
+                                    noMaxWidth
                                     onBitcoinTokenValidated={async (data) => {
                                         setBitcoinValidated(true);
-                                        await handleSubscribe({
-                                            ...data,
-                                            Amount: amountDue,
-                                            Currency: checkResult?.Currency as Currency,
+                                        await handleSubscribe(data, {
+                                            Plans: model.planIDs,
+                                            Cycle: model.cycle,
+                                            product: app,
                                         });
                                     }}
                                     onAwaitingBitcoinPayment={setAwaitingBitcoinPayment}
@@ -1083,13 +1081,13 @@ const SubscriptionContainer = ({
                                     <SubscriptionSubmitButton
                                         currency={model.currency}
                                         onDone={onSubscribed}
-                                        paypal={paypal}
+                                        paypal={paymentFacade.paypal}
                                         step={model.step}
                                         loading={loading || bitcoinLoading}
-                                        method={method}
+                                        paymentMethodValue={paymentFacade.selectedMethodValue}
                                         checkResult={checkResult}
                                         className="w-full"
-                                        disabled={isFreeUserWithFreePlanSelected || !canPay}
+                                        disabled={isFreeUserWithFreePlanSelected}
                                     />
                                 }
                                 subscription={subscription}
@@ -1136,12 +1134,16 @@ const SubscriptionContainer = ({
                 </div>
             )}
             {model.step === SUBSCRIPTION_STEPS.UPGRADE && (
-                <SubscriptionThanks showDownloads={!isVpnB2bPlan} loading={true} method={method} />
+                <SubscriptionThanks
+                    showDownloads={!isVpnB2bPlan}
+                    loading={true}
+                    paymentMethodType={paymentFacade.selectedMethodType}
+                />
             )}
             {model.step === SUBSCRIPTION_STEPS.THANKS && (
                 <SubscriptionThanks
                     showDownloads={!isVpnB2bPlan}
-                    method={method}
+                    paymentMethodType={paymentFacade.selectedMethodType}
                     onClose={() => {
                         onSubscribed?.();
                     }}

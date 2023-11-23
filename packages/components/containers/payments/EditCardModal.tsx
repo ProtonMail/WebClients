@@ -1,21 +1,22 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import usePaymentToken from '@proton/components/containers/payments/usePaymentToken';
-import { Autopay, PAYMENT_METHOD_TYPES } from '@proton/components/payments/core';
+import { getDefaultVerifyPayment } from '@proton/components/payments/client-extensions/validators/validators';
+import { Autopay, isTokenPayment } from '@proton/components/payments/core';
+import { useCard } from '@proton/components/payments/react-extensions';
 import { useLoading } from '@proton/hooks';
 import { setPaymentMethod, updatePaymentMethod } from '@proton/shared/lib/api/payments';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { ModalProps, ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '../../components';
-import { useApi, useEventManager, useNotifications } from '../../hooks';
+import { useApi, useEventManager, useModals, useNotifications } from '../../hooks';
 import { CardModel } from '../../payments/core';
 import CreditCard from './CreditCard';
 import RenewToggle, { useRenewToggle } from './RenewToggle';
-import toDetails from './toDetails';
-import useCard from './useCard';
 
 interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
     card?: CardModel;
@@ -25,37 +26,67 @@ interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
 
 const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...rest }: Props) => {
     const api = useApi();
+    const { createModal } = useModals();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
-    const createPaymentToken = usePaymentToken();
     const title = existingCard ? c('Title').t`Edit credit/debit card` : c('Title').t`Add credit/debit card`;
-    const { card, setCard, errors, isValid } = useCard({
-        initialCard: existingCard,
-    });
-    const [submitted, setSubmitted] = useState(false);
+
     const {
         onChange: renewOnChange,
         setRenewState,
         ...renewToggleProps
     } = useRenewToggle({ initialRenewState: renewState });
 
-    const handleSubmit = async () => {
-        const { Payment } = await createPaymentToken(
-            {
-                Payment: {
-                    Type: PAYMENT_METHOD_TYPES.CARD,
-                    Details: toDetails(card),
-                },
+    const cardHook = useCard(
+        {
+            verifyOnly: true,
+            amountAndCurrency: {
+                Amount: 0,
+                Currency: 'USD',
             },
-            {
-                addCardMode: true,
+            initialCard: existingCard,
+            onChargeable: async (chargeablePaymentParameters) => {
+                withLoading(async () => {
+                    const { Payment } = chargeablePaymentParameters;
+                    if (!isTokenPayment(Payment)) {
+                        return;
+                    }
+
+                    await api(
+                        setPaymentMethod({
+                            ...Payment,
+                            Autopay: renewToggleProps.renewState,
+                        })
+                    );
+                    await call();
+                    rest.onClose?.();
+                    createNotification({ text: c('Success').t`Payment method updated` });
+                }).catch(noop);
+            },
+        },
+        { api, verifyPayment: getDefaultVerifyPayment(createModal, api) }
+    );
+
+    const process = async () => {
+        try {
+            await cardHook.processPaymentToken();
+        } catch (e) {
+            const error = getSentryError(e);
+            if (error) {
+                const context = {
+                    hasExistingCard: !!existingCard,
+                    renewState,
+                    paymentMethodId,
+                    processorType: cardHook.meta.type,
+                };
+
+                captureMessage('Payments: failed to add card', {
+                    level: 'error',
+                    extra: { error, context },
+                });
             }
-        );
-        await api(setPaymentMethod({ ...Payment, Autopay: renewToggleProps.renewState }));
-        await call();
-        rest.onClose?.();
-        createNotification({ text: c('Success').t`Payment method updated` });
+        }
     };
 
     return (
@@ -64,17 +95,19 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
             as="form"
             onSubmit={(event: FormEvent) => {
                 event.preventDefault();
-                setSubmitted(true);
-                if (!isValid) {
-                    return;
-                }
-                withLoading(handleSubmit());
+                withLoading(process()).catch(noop);
             }}
             {...rest}
         >
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
-                <CreditCard card={card} errors={submitted ? errors : {}} onChange={setCard} loading={loading} />
+                <CreditCard
+                    card={cardHook.card}
+                    errors={cardHook.errors}
+                    onChange={cardHook.setCardProperty}
+                    loading={loading}
+                    fieldsStatus={cardHook.fieldsStatus}
+                />
                 <RenewToggle
                     loading={loading}
                     onChange={async () => {
@@ -90,7 +123,7 @@ const EditCardModal = ({ card: existingCard, renewState, paymentMethodId, ...res
                             return;
                         }
 
-                        withLoading(async () => {
+                        void withLoading(async () => {
                             try {
                                 await api(
                                     updatePaymentMethod(paymentMethodId, {
