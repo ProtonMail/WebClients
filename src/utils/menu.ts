@@ -1,4 +1,5 @@
 import { app, Menu, type MenuItemConstructorOptions } from "electron";
+import { uninstallProton } from "../macos/uninstall";
 import { clearStorage, isMac, openLogFolder } from "./helpers";
 
 interface MenuInsertProps {
@@ -83,6 +84,12 @@ export const setApplicationMenu = (isPackaged: boolean) => {
                 { role: "hide" },
                 { role: "hideOthers" },
                 { role: "unhide" },
+                { type: "separator" },
+                {
+                    label: "Uninstall Proton Mail",
+                    type: "normal",
+                    click: () => uninstallProton(),
+                },
                 { type: "separator" },
                 { role: "quit" },
             ],
