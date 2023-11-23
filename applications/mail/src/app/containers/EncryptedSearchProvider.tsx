@@ -28,6 +28,8 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { isFree } from '@proton/shared/lib/user/helpers';
 
+import ESDeletedConversationsCache from 'proton-mail/helpers/encryptedSearch/ESDeletedConversationsCache';
+
 import { defaultESContextMail, defaultESMailStatus } from '../constants';
 import { convertEventType, getESCallbacks, getESFreeBlobKey, parseSearchParams } from '../helpers/encryptedSearch';
 import { useGetMessageKeys } from '../hooks/message/useGetMessageKeys';
@@ -189,9 +191,10 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         return esLibraryFunctions.initializeES();
     };
 
-    useSubscribeEventManager(async (event: Event) =>
-        esLibraryFunctions.handleEvent(convertEventType(event, addresses.length))
-    );
+    useSubscribeEventManager(async (event: Event) => {
+        ESDeletedConversationsCache.listenEvents(event);
+        void esLibraryFunctions.handleEvent(convertEventType(event, addresses.length));
+    });
 
     /**
      * Keep the current page always up to date to avoid pagination glitches
