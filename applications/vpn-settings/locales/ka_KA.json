@@ -2132,17 +2132,26 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "აპი ამჟამად ხელმიუწვდომელია"
+      ],
       "Error: ${ errorMessage }": [
         "შეცდომა: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "უფს, რაღაც არასწორად წავიდა"
       ],
+      "Open in browser": [
+        "ბრაუზერში გახსნა"
+      ],
       "Please refresh the page or try again later.": [
         "განაახლეთ გვერდი ან მოგვიანებთ სცადეთ."
       ],
       "Something went wrong": [
         "რაღაც არასწორად წავიდა"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME } ან ${ CALENDAR_APP_NAME }-ს გამოსაყენებლად ვების ვერსიაზე გადაერთეთ."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "ეს გვერდი ვერ ჩავტვირთეთ. განაახლეთ ეს გვერდი ან შეამოწმეთ თქვენი ინტერნეტკავშირი."
@@ -3531,6 +3540,9 @@
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "ამას საკმაო დროს შეიძლება, დასჭირდეს. ნუ დახურავთ ამ გვერდს და ნუ გათიშავთ ინტერნეტს."
       ],
+      "This file is too large to preview": [
+        "მინიატურისთვის ეს ფაილი მეტისმეტად დიდია"
+      ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "ეს მომხმარებელი, ამჟამად, პასუხისმგებელია თქვენი ორგანიზაციის გადასახადების გადახდაზე. მისი ჩამოქვეითებით, ორგანიზაციის გადახდებზე პასუხისმგებელი თქვენ გახდებით."
       ],
@@ -4841,6 +4853,9 @@
       "Custom fields": [
         "მორგებადი ველები"
       ],
+      "Custom snooze time": [
+        "მომხმარებლის დროებით დადუმების დრო"
+      ],
       "Data breach monitoring": [
         "მონაცემების გაჟონვის თვალყურის დევნება"
       ],
@@ -5059,6 +5074,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "მიიღეთ განუსაზღვრელი მეტსახელები SimpleLogin-სგან (${ BRAND_NAME })"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "დაადუმეთ დროებით შეტყობინებები და ჩვენ შეგახსენებთ, როცა გნებავთ"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "საცავის სივრცე გაზიარებულია ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } და ${ DRIVE_APP_NAME } შორის"
