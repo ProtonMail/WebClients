@@ -1,35 +1,84 @@
 import { useEffect } from 'react';
 
-import {
-    getDefaultVerifyPayment,
-    getDefaultVerifyPaypal,
-} from '@proton/components/containers/payments/usePaymentToken';
-import { Currency } from '@proton/shared/lib/interfaces';
+import { Api, Currency } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { useApi, useAuthentication, useModals } from '../../hooks';
-import { ChargeablePaymentParameters, PAYMENT_METHOD_TYPES, PaymentMethodFlows, PaymentMethodType } from '../core';
-import { Operations, usePaymentFacade as useInnerPaymentFacade } from '../react-extensions';
+import {
+    ChargeablePaymentParameters,
+    PAYMENT_METHOD_TYPES,
+    PaymentMethodFlows,
+    PaymentMethodStatus,
+    PaymentMethodType,
+    SavedPaymentMethod,
+} from '../core';
+import {
+    OnMethodChangedHandler,
+    Operations,
+    OperationsData,
+    usePaymentFacade as useInnerPaymentFacade,
+} from '../react-extensions';
 import { wrapMethods } from './useMethods';
+import { getDefaultVerifyPayment, getDefaultVerifyPaypal } from './validators/validators';
 
+type PaymentFacadeProps = {
+    amount: number;
+    currency: Currency;
+    coupon?: string;
+    /**
+     * The flow parameter can modify the list of available payment methods and modify their behavior in certain cases.
+     */
+    flow: PaymentMethodFlows;
+    /**
+     * The main callback that will be called when the payment is ready to be charged
+     * after the payment token is fetched and verified with 3DS or other confirmation from the user.
+     * @param operations - provides a common set of actions that can be performed with the verified payment token.
+     * For example, the verified (that is, chargeable) payment token can be used to create a subscription or buy
+     * credits.
+     * @param data - provides the raw payment token, the payment source (or processor type) and operation context
+     * like Plan or Cycle for subscription.
+     */
+    onChargeable: (
+        operations: Operations,
+        data: {
+            chargeablePaymentParameters: ChargeablePaymentParameters;
+            source: PaymentMethodType;
+            context: OperationsData;
+        }
+    ) => Promise<unknown>;
+    /**
+     * The callback that will be called when the payment method is changed by the user.
+     */
+    onMethodChanged?: OnMethodChangedHandler;
+    paymentMethods?: SavedPaymentMethod[];
+    paymentMethodStatus?: PaymentMethodStatus;
+    /**
+     * Optional override for the API object. Can be helpful for auth/unauth flows.
+     */
+    api?: Api;
+};
+
+/**
+ * Entry point for the payment logic for the monorepo clients. It's a wrapper around the
+ * react-specific facade. The main purpose of this wrapper is to provide the default
+ * implementation for the client-specific logic. It includes the implementation of the
+ * token verification that depends on the view, as it requires user action. It also includes
+ * pre-fetching of the payment tokens for PayPal and PayPal Credit. In addition, the payment
+ * methods objects are enriched with the icons and texts.
+ */
 export const usePaymentFacade = ({
     amount,
     currency,
     onChargeable,
     coupon,
     flow,
-}: {
-    amount: number;
-    currency: Currency;
-    onChargeable: (
-        operations: Operations,
-        data: ChargeablePaymentParameters,
-        source: PaymentMethodType
-    ) => Promise<unknown>;
-    coupon?: string;
-    flow: PaymentMethodFlows;
-}) => {
-    const api = useApi();
+    onMethodChanged,
+    paymentMethods,
+    paymentMethodStatus,
+    api: apiOverride,
+}: PaymentFacadeProps) => {
+    const defaultApi = useApi();
+    const api = apiOverride ?? defaultApi;
     const { createModal } = useModals();
     const { UID } = useAuthentication();
     const isAuthenticated = !!UID;
@@ -41,6 +90,9 @@ export const usePaymentFacade = ({
             onChargeable,
             coupon,
             flow,
+            onMethodChanged,
+            paymentMethods,
+            paymentMethodStatus,
         },
         {
             api,
@@ -97,8 +149,14 @@ export const usePaymentFacade = ({
         run().catch(noop);
     }, [hook.methods.isNewPaypal, amount, currency]);
 
+    const helpers = {
+        selectedMethodValue: methods.selectedMethod?.value,
+        selectedMethodType: methods.selectedMethod?.type,
+    };
+
     return {
         ...hook,
+        ...helpers,
         methods,
         api,
         userCanTrigger,

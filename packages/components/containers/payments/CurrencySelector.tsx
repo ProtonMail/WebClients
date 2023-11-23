@@ -57,8 +57,7 @@ const CurrencySelector = (props: Props) => {
                 value={currency}
                 onChange={handleChange}
                 loading={loading}
-                // eslint-disable-next-line jsx-a11y/aria-props
-                aria-description={c('Title').t`Currency`}
+                aria-describedby={c('Title').t`Currency`}
                 {...rest}
             >
                 {options.map(({ text, value }) => {

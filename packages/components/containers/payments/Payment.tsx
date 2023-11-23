@@ -9,15 +9,14 @@ import {
     PaymentMethodType,
     SavedPaymentMethod,
 } from '@proton/components/payments/core';
+import { CardFieldStatus } from '@proton/components/payments/react-extensions/useCard';
 import { useLoading } from '@proton/hooks';
-import { DEFAULT_CURRENCY, MIN_CREDIT_AMOUNT, MIN_DONATION_AMOUNT } from '@proton/shared/lib/constants';
+import { MIN_CREDIT_AMOUNT, MIN_DONATION_AMOUNT } from '@proton/shared/lib/constants';
 import { Api, Currency } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import { Alert, Loader, Price } from '../../components';
-import { useAuthentication } from '../../hooks';
 import { CardModel } from '../../payments/core';
-import { useMethods } from '../paymentMethods';
 import PaymentMethodDetails from '../paymentMethods/PaymentMethodDetails';
 import PaymentMethodSelector from '../paymentMethods/PaymentMethodSelector';
 import { PaymentMethodData, PaymentMethodFlows } from '../paymentMethods/interface';
@@ -26,14 +25,11 @@ import Bitcoin from './Bitcoin';
 import BitcoinInfoMessage from './BitcoinInfoMessage';
 import Cash from './Cash';
 import CreditCard from './CreditCard';
-import CreditCardNewDesign from './CreditCardNewDesign';
 import PayPalInfoMessage from './PayPalInfoMessage';
 import PayPalView from './PayPalView';
 import useBitcoin, { OnBitcoinTokenValidated } from './useBitcoin';
-import { CardFieldStatus } from './useCard';
 
 export interface Props {
-    takeNullCreditCard?: boolean;
     api: Api;
     children?: ReactNode;
     type: PaymentMethodFlows;
@@ -52,7 +48,7 @@ export interface Props {
     paymentMethods?: SavedPaymentMethod[];
     creditCardTopRef?: Ref<HTMLDivElement>;
     disabled?: boolean;
-    cardFieldStatus?: CardFieldStatus;
+    cardFieldStatus: CardFieldStatus;
     paypalPrefetchToken?: boolean;
     onBitcoinTokenValidated?: OnBitcoinTokenValidated;
     onAwaitingBitcoinPayment?: (awaiting: boolean) => void;
@@ -60,6 +56,7 @@ export interface Props {
     hideFirstLabel?: boolean;
     triggersDisabled?: boolean;
     hideSavedMethodsDetails?: boolean;
+    defaultMethod?: PAYMENT_METHOD_TYPES;
 }
 
 export interface NoApiProps extends Props {
@@ -74,7 +71,6 @@ export interface NoApiProps extends Props {
 }
 
 export const PaymentsNoApi = ({
-    takeNullCreditCard,
     children,
     type,
     amount,
@@ -103,6 +99,7 @@ export const PaymentsNoApi = ({
     hideFirstLabel,
     triggersDisabled,
     hideSavedMethodsDetails,
+    defaultMethod,
 }: NoApiProps) => {
     const [handlingBitcoinPayment, withHandlingBitcoinPayment] = useLoading();
 
@@ -121,6 +118,11 @@ export const PaymentsNoApi = ({
         if (loading) {
             return onMethod(undefined);
         }
+        if (defaultMethod) {
+            onMethod(defaultMethod);
+            return;
+        }
+
         const selectedMethod = allMethods.find((otherMethod) => otherMethod.value === method);
         const result = allMethods.find(({ disabled }) => !disabled);
         if ((!selectedMethod || selectedMethod.disabled) && result) {
@@ -153,7 +155,7 @@ export const PaymentsNoApi = ({
         );
     }
 
-    if (amount <= 0 && !takeNullCreditCard) {
+    if (amount <= 0) {
         const price = (
             <Price key="price" currency={currency}>
                 {0}
@@ -167,7 +169,9 @@ export const PaymentsNoApi = ({
     }
 
     const isSignupPass = type === 'signup-pass';
-    const isSignup = type === 'signup' || type === 'signup-pass';
+    const isSignupVpn = type === 'signup-vpn';
+    const isSingleSignup = isSignupPass || isSignupVpn;
+    const isSignup = type === 'signup' || isSignupPass || isSignupVpn;
 
     return (
         <>
@@ -176,7 +180,7 @@ export const PaymentsNoApi = ({
                 style={noMaxWidth === false ? { '--md-max-w-custom': '37em' } : undefined}
             >
                 <div>
-                    {!isSignupPass && !hideFirstLabel && (
+                    {!isSingleSignup && !hideFirstLabel && (
                         <h2 className="text-rg text-bold mb-1" data-testid="payment-label">
                             {c('Label').t`Payment method`}
                         </h2>
@@ -186,25 +190,20 @@ export const PaymentsNoApi = ({
                         method={method}
                         onChange={(value) => onMethod(value)}
                         lastUsedMethod={lastUsedMethod}
-                        forceDropdown={isSignupPass}
-                        narrow={isSignupPass}
+                        forceDropdown={isSingleSignup}
+                        narrow={isSingleSignup}
                     />
                 </div>
                 <div className="mt-4">
                     {method === PAYMENT_METHOD_TYPES.CARD && (
                         <>
                             <div ref={creditCardTopRef} />
-                            {isSignupPass ? (
-                                <CreditCardNewDesign
-                                    card={card}
-                                    errors={cardErrors}
-                                    onChange={onCard}
-                                    fieldsStatus={cardFieldStatus}
-                                />
-                            ) : (
-                                <CreditCard card={card} errors={cardErrors} onChange={onCard} />
-                            )}
-
+                            <CreditCard
+                                card={card}
+                                errors={cardErrors}
+                                onChange={onCard}
+                                fieldsStatus={cardFieldStatus}
+                            />
                             {!isSignup && <Alert3DS />}
                         </>
                     )}
@@ -225,7 +224,7 @@ export const PaymentsNoApi = ({
                             )}
                         </>
                     )}
-                    {method === PAYMENT_METHOD_TYPES.PAYPAL && !isSignupPass && (
+                    {method === PAYMENT_METHOD_TYPES.PAYPAL && !isSingleSignup && (
                         <PayPalView
                             paypal={paypal}
                             paypalCredit={paypalCredit}
@@ -238,7 +237,7 @@ export const PaymentsNoApi = ({
                             triggersDisabled={triggersDisabled}
                         />
                     )}
-                    {method === PAYMENT_METHOD_TYPES.PAYPAL && isSignupPass && <PayPalInfoMessage />}
+                    {method === PAYMENT_METHOD_TYPES.PAYPAL && isSingleSignup && <PayPalInfoMessage />}
                     {customPaymentMethod && (
                         <>
                             {!hideSavedMethodsDetails && (
@@ -260,39 +259,3 @@ export const PaymentsNoApi = ({
         </>
     );
 };
-
-const Payment = (props: Props) => {
-    const { UID } = useAuthentication();
-    const isAuthenticated = !!UID || !!props.isAuthenticated;
-
-    const { paymentMethods, options, loading } = useMethods({
-        api: props.api,
-        amount: props.amount ?? 0,
-        paymentMethodStatus: props.paymentMethodStatus,
-        paymentMethods: props.paymentMethods,
-        coupon: props.coupon ?? '',
-        flow: props.type,
-        isAuthenticated,
-    });
-    const lastUsedMethod = options.usedMethods[options.usedMethods.length - 1];
-
-    const allMethods = [...options.usedMethods, ...options.methods];
-
-    const customPaymentMethod = paymentMethods.find(({ ID }) => props.method === ID);
-
-    return (
-        <PaymentsNoApi
-            {...props}
-            paymentMethods={paymentMethods}
-            lastUsedMethod={lastUsedMethod}
-            allMethods={allMethods}
-            loading={loading}
-            isAuthenticated={isAuthenticated}
-            currency={props.currency ?? DEFAULT_CURRENCY}
-            amount={props.amount ?? 0}
-            customPaymentMethod={customPaymentMethod}
-        />
-    );
-};
-
-export default Payment;

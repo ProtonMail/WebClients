@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import { Api } from '@proton/shared/lib/interfaces';
@@ -14,6 +14,27 @@ import {
     getErrors,
 } from '../core';
 import { PaymentProcessorHook } from './interface';
+import { usePaymentProcessor } from './usePaymentProcessor';
+
+export type CardFieldStatus = {
+    fullname: boolean;
+    number: boolean;
+    month: boolean;
+    year: boolean;
+    cvc: boolean;
+    zip: boolean;
+    country: boolean;
+};
+
+export const getInitialFieldStatus = (): CardFieldStatus => ({
+    fullname: true,
+    number: true,
+    month: true,
+    year: true,
+    cvc: true,
+    zip: true,
+    country: true,
+});
 
 export interface Dependencies {
     api: Api;
@@ -24,41 +45,58 @@ export interface Props {
     amountAndCurrency: AmountAndCurrency;
     initialCard?: CardModel;
     onChargeable?: (data: ChargeablePaymentParameters) => Promise<unknown>;
+    verifyOnly?: boolean;
 }
 
 export type CardProcessorHook = PaymentProcessorHook & {
     card: CardModel;
+    fieldsStatus: CardFieldStatus;
     setCardProperty: (key: keyof CardModel, value: any) => void;
     paymentProcessor: CardPaymentProcessor;
     errors: Record<string, string>;
     submitted: boolean;
 };
 
+/**
+ * React wrapper for {@link CardPaymentProcessor}. It provides a set of proxies and also some additional functionality
+ * like `processPaymentToken` method that supposed to be the main action. It also provides some data usefull for
+ * the credit card component.
+ */
 export const useCard = (
-    { amountAndCurrency, initialCard, onChargeable }: Props,
+    { amountAndCurrency, initialCard, verifyOnly, onChargeable }: Props,
     { api, verifyPayment }: Dependencies
 ): CardProcessorHook => {
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [submitted, setSubmitted] = useState(false);
 
-    const paymentProcessorRef = useRef(new CardPaymentProcessor(verifyPayment, api, amountAndCurrency, onChargeable));
-    const [card, setCard] = useState(paymentProcessorRef.current.card);
+    const paymentProcessor = usePaymentProcessor(
+        () => new CardPaymentProcessor(verifyPayment, api, amountAndCurrency, !!verifyOnly, onChargeable)
+    );
+
+    const [card, setCard] = useState(paymentProcessor.card);
 
     const [fetchingToken, withFetchingToken] = useLoading();
     const [verifyingToken, withVerifyingToken] = useLoading();
     const processingToken = fetchingToken || verifyingToken;
 
     useEffect(() => {
+        paymentProcessor.onTokenIsChargeable = onChargeable;
+    }, [onChargeable]);
+
+    useEffect(() => {
+        paymentProcessor.amountAndCurrency = amountAndCurrency;
+        paymentProcessor.reset();
+    }, [amountAndCurrency]);
+
+    useEffect(() => {
         if (initialCard) {
-            paymentProcessorRef.current.updateState({ card: initialCard });
+            paymentProcessor.updateState({ card: initialCard });
         }
 
         const setters: Record<keyof CardPaymentProcessorState, (...args: any[]) => any> = {
             card: setCard,
             cardSubmitted: setSubmitted,
         };
-
-        const paymentProcessor = paymentProcessorRef.current;
 
         paymentProcessor.onStateUpdated(
             (updatedProperties) => {
@@ -74,25 +112,20 @@ export const useCard = (
             }
         );
 
-        return () => paymentProcessorRef.current.destroy();
+        return () => paymentProcessor.destroy();
     }, []);
 
-    useEffect(() => {
-        paymentProcessorRef.current.amountAndCurrency = amountAndCurrency;
-        paymentProcessorRef.current.reset();
-    }, [amountAndCurrency]);
+    const reset = () => paymentProcessor.reset();
 
-    const reset = () => paymentProcessorRef.current.reset();
-
-    const fetchPaymentToken = async () => withFetchingToken(paymentProcessorRef.current.fetchPaymentToken());
+    const fetchPaymentToken = async () => withFetchingToken(paymentProcessor.fetchPaymentToken());
     const verifyPaymentToken = () => {
-        const tokenPromise = paymentProcessorRef.current.verifyPaymentToken();
+        const tokenPromise = paymentProcessor.verifyPaymentToken();
         withVerifyingToken(tokenPromise).catch(noop);
         return tokenPromise;
     };
 
     const processPaymentToken = async () => {
-        if (!paymentProcessorRef.current.fetchedPaymentToken) {
+        if (!paymentProcessor.fetchedPaymentToken) {
             await fetchPaymentToken();
         }
 
@@ -104,17 +137,23 @@ export const useCard = (
         }
     };
 
+    const fields = Object.keys(errors) as (keyof CardModel)[];
+    const fieldsStatus: CardFieldStatus = getInitialFieldStatus();
+    for (const field of fields) {
+        fieldsStatus[field] = !errors[field];
+    }
+
     return {
         fetchPaymentToken,
         fetchingToken,
         verifyPaymentToken,
         verifyingToken,
         card,
-        setCardProperty: (key: keyof CardModel, value: any) =>
-            paymentProcessorRef.current.updateCardProperty(key, value),
+        setCardProperty: (key: keyof CardModel, value: any) => paymentProcessor.updateCardProperty(key, value),
         errors: submitted ? errors : {},
+        fieldsStatus,
         submitted,
-        paymentProcessor: paymentProcessorRef.current,
+        paymentProcessor,
         processPaymentToken,
         processingToken,
         meta: {

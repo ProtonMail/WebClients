@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { CircleLoader, Href } from '@proton/atoms';
-import { PAYMENT_METHOD_TYPES, PaymentMethodType } from '@proton/components/payments/core';
+import { PAYMENT_METHOD_TYPES, PlainPaymentMethodType } from '@proton/components/payments/core';
 import { APPS } from '@proton/shared/lib/constants';
 import appStoreSvg from '@proton/styles/assets/img/illustrations/app-store.svg';
 import playStoreSvg from '@proton/styles/assets/img/illustrations/play-store.svg';
@@ -13,12 +13,12 @@ import { useConfig } from '../../../../hooks';
 
 interface Props {
     onClose?: () => void;
-    method?: PaymentMethodType;
+    paymentMethodType?: PlainPaymentMethodType;
     loading?: boolean;
     showDownloads?: boolean;
 }
 
-const SubscriptionThanks = ({ method, onClose, loading, showDownloads = true }: Props) => {
+const SubscriptionThanks = ({ paymentMethodType, onClose, loading, showDownloads = true }: Props) => {
     const { APP_NAME } = useConfig();
     const isVPN = APP_NAME === APPS.PROTONVPN_SETTINGS;
 
@@ -33,7 +33,8 @@ const SubscriptionThanks = ({ method, onClose, loading, showDownloads = true }: 
                 <h1 className="text-center mb-0">
                     <img src={isVPN ? vpnThanksSvg : mailThanksSvg} alt="Thanks" />
                 </h1>
-                {method && [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(method as any) ? (
+                {paymentMethodType &&
+                [PAYMENT_METHOD_TYPES.CASH, PAYMENT_METHOD_TYPES.BITCOIN].includes(paymentMethodType as any) ? (
                     <p className="text-center mb-4">{c('Info')
                         .t`Your account will be updated once the payment is cleared.`}</p>
                 ) : (

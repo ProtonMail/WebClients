@@ -50,10 +50,6 @@ export interface ExistingPayment {
     PaymentMethodID: string;
 }
 
-export function isExistingPayment(data: any): data is ExistingPayment {
-    return !!data && typeof data.PaymentMethodID === 'string';
-}
-
 export interface WrappedCardPayment {
     Payment: CardPayment;
 }
@@ -91,6 +87,10 @@ export type ChargeablePaymentToken = TokenPaymentMethod &
         type: PAYMENT_METHOD_TYPES.PAYPAL | PAYMENT_METHOD_TYPES.PAYPAL_CREDIT | PAYMENT_METHOD_TYPES.CARD;
         chargeable: true;
     };
+
+export type VerifiedPaymentToken = TokenPaymentMethod & {
+    type: PAYMENT_METHOD_TYPES.CARD;
+};
 
 export type NonChargeablePaymentToken = Omit<ChargeablePaymentToken, 'chargeable'> & {
     chargeable: false;
@@ -205,6 +205,7 @@ export type PaymentMethodFlows =
     | 'invoice'
     | 'signup'
     | 'signup-pass'
+    | 'signup-vpn'
     | 'human-verification'
     | 'credit'
     | 'donation'
