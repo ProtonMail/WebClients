@@ -286,11 +286,22 @@ const getSaveRecurringEventActions = async ({
         const singleEditRecurrences = getRecurrenceEvents(recurrences, originalEvent);
         // For an invitation, we do not want to delete single edits as we want to keep in sync with the organizer's event
         const deleteOperations = isAttendee ? [] : singleEditRecurrences.map(unary(getDeleteSyncOperation));
+        const newRecurrentVevent = updateAllRecurrence({
+            component: newVeventComponent,
+            originalComponent: originalVeventComponent,
+            mode: updateAllPossibilities,
+            isSingleEdit,
+            isAttendee,
+        });
+        const newRecurrentVeventWithSequence = withUpdatedDtstampAndSequence(
+            newRecurrentVevent,
+            originalVeventComponent
+        );
         if (selfAttendeeToken && invitePartstat) {
             // the attendee changes answer
             const { updatePartstatActions, updatePersonalPartActions, sendActions } = await getChangePartstatActions({
                 inviteActions,
-                eventComponent: newVeventComponent,
+                eventComponent: newRecurrentVeventWithSequence,
                 hasDefaultNotifications,
                 event: oldEvent,
                 addressID: newAddressID,
@@ -331,7 +342,7 @@ const getSaveRecurringEventActions = async ({
         if (canEditOnlyPersonalPart && !isSwitchCalendar) {
             // We change notifications through the updatePersonalPart route
             return getUpdatePersonalPartActions({
-                eventComponent: newVeventComponent,
+                eventComponent: newRecurrentVeventWithSequence,
                 hasDefaultNotifications,
                 event: oldEvent,
                 addressID: newAddressID,
@@ -340,17 +351,6 @@ const getSaveRecurringEventActions = async ({
                 reencryptSharedEvent,
             });
         }
-        const newRecurrentVevent = updateAllRecurrence({
-            component: newVeventComponent,
-            originalComponent: originalVeventComponent,
-            mode: updateAllPossibilities,
-            isSingleEdit,
-            isAttendee,
-        });
-        const newRecurrentVeventWithSequence = withUpdatedDtstampAndSequence(
-            newRecurrentVevent,
-            originalVeventComponent
-        );
         const isSendInviteType = [INVITE_ACTION_TYPES.SEND_INVITATION, INVITE_ACTION_TYPES.SEND_UPDATE].includes(
             inviteActions.type
         );
