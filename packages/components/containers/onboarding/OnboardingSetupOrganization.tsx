@@ -45,7 +45,14 @@ const OnboardingSetupOrganization = (props: Props) => {
             {...props}
         >
             <div className={clsx('text-center', isMobile() ? 'pt-4' : 'pt-12')}>
-                <img src={img} alt={imgAlt} className={clsx('w-full mb-2', isMobile() ? 'max-w15e' : 'max-w20e')} />
+                <img
+                    src={img}
+                    alt={imgAlt}
+                    className="w-full mb-2 max-w-custon"
+                    style={{
+                        '--max-w-custon': isMobile() ? '15em' : '20em',
+                    }}
+                />
                 <Button
                     size="large"
                     color="norm"
