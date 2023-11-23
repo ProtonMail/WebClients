@@ -68,7 +68,7 @@ export const Header: VFC = () => {
                         <div
                             className={clsx(
                                 'pass-spotlight-panel',
-                                !spotlight.visible && 'pass-spotlight-panel--hidden'
+                                !spotlight.state.open && 'pass-spotlight-panel--hidden'
                             )}
                         >
                             {spotlight.state.message && <SpotlightContent {...spotlight.state.message} />}
