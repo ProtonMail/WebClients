@@ -1,19 +1,19 @@
 import type { FC } from 'react';
 
 import protonPassIcon from '@proton/pass/assets/protonpass-icon.svg';
-import { FadeIn } from '@proton/pass/components/Layout/Animation/FadeIn';
 import clsx from '@proton/utils/clsx';
 
 import './LobbyLayout.scss';
 
 export const LobbyLayout: FC<{ overlay: boolean }> = ({ overlay, children }) => {
     return (
-        <FadeIn className="pass-lobby relative p-7" duration={450} delay={100}>
-            <FadeIn
-                className="absolute absolute-center-x top-custom"
-                style={{ '--top-custom': '-200px' }}
-                delay={150}
-                duration={550}
+        <div
+            className="pass-lobby relative p-7 anime-fade-in"
+            style={{ '--anime-duration': '450ms', '--anime-delay': '100ms' }}
+        >
+            <div
+                className="absolute absolute-center-x top-custom anime-fade-in"
+                style={{ '--top-custom': '-200px', '--anime-duration': '550ms', '--anime-delay': '150ms' }}
             >
                 <img
                     src={protonPassIcon}
@@ -21,7 +21,7 @@ export const LobbyLayout: FC<{ overlay: boolean }> = ({ overlay, children }) => 
                     style={{ '--w-custom': '18.25rem' }}
                     alt=""
                 />
-            </FadeIn>
+            </div>
 
             <div
                 className="pass-lobby--content flex flex-column h-full w-custom mx-auto text-center gap-2"
@@ -29,6 +29,6 @@ export const LobbyLayout: FC<{ overlay: boolean }> = ({ overlay, children }) => 
             >
                 {children}
             </div>
-        </FadeIn>
+        </div>
     );
 };

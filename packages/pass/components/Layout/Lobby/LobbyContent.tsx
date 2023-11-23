@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Button, CircleLoader } from '@proton/atoms';
 import passBrandText from '@proton/pass/assets/protonpass-brand.svg';
-import { FadeIn } from '@proton/pass/components/Layout/Animation/FadeIn';
 import { Unlock } from '@proton/pass/components/Lock/Unlock';
 import { clientBusy, clientErrored, clientLocked, clientStale } from '@proton/pass/lib/client';
 import { AppStatus, type Maybe } from '@proton/pass/types';
@@ -49,30 +48,32 @@ export const LobbyContent: VFC<Props> = ({ status, onLogin, onLogout, onRegister
         return timeoutError ? (
             <>{renderError()}</>
         ) : (
-            <FadeIn delay={250} className="mt-12 w-full" key="lobby-loading">
-                <div className="flex flex-column flex-align-items-center gap-3">
-                    <CircleLoader size="medium" />
-                    <span className="block text-sm text-weak">
-                        {(() => {
-                            switch (status) {
-                                case AppStatus.AUTHORIZED:
-                                case AppStatus.AUTHORIZING:
-                                    // translator: status message displayed when loading
-                                    return c('Info').t`Signing you in`;
-                                case AppStatus.BOOTING:
-                                    return c('Info').t`Decrypting your data`;
-                                default:
-                                    return c('Info').t`Loading ${PASS_APP_NAME}`;
-                            }
-                        })()}
-                    </span>
-                </div>
-            </FadeIn>
+            <div
+                key="lobby-loading"
+                className="flex flex-column flex-align-items-center gap-3 mt-12 w-full anime-fade-in"
+                style={{ '--anime-delay': '250ms' }}
+            >
+                <CircleLoader size="medium" />
+                <span className="block text-sm text-weak">
+                    {(() => {
+                        switch (status) {
+                            case AppStatus.AUTHORIZED:
+                            case AppStatus.AUTHORIZING:
+                                // translator: status message displayed when loading
+                                return c('Info').t`Signing you in`;
+                            case AppStatus.BOOTING:
+                                return c('Info').t`Decrypting your data`;
+                            default:
+                                return c('Info').t`Loading ${PASS_APP_NAME}`;
+                        }
+                    })()}
+                </span>
+            </div>
         );
     }
 
     return (
-        <FadeIn delay={250} key="lobby">
+        <div key="lobby" className="anime-fade-in" style={{ '--anime-delay': '250ms' }}>
             <div className="flex flex-column flex-align-items-center gap-3">
                 <span className="pass-lobby--heading text-bold text-norm flex flex-align-items-end flex-justify-center user-select-none">
                     {locked ? c('Title').jt`Unlock ${brandNameJSX}` : c('Title').jt`Welcome to ${brandNameJSX}`}
@@ -115,6 +116,6 @@ export const LobbyContent: VFC<Props> = ({ status, onLogin, onLogout, onRegister
                     </Button>
                 )}
             </div>
-        </FadeIn>
+        </div>
     );
 };

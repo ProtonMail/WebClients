@@ -3,7 +3,6 @@ import type { VFC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
-import { FadeIn } from '@proton/pass/components/Layout/Animation/FadeIn';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import browser from '@proton/pass/lib/globals/browser';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
@@ -12,13 +11,13 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
  * `ui-red` themes because we don't currently
  * support weak & danger|warning buttons */
 export const PromptForReload: VFC<{ message: string }> = ({ message }) => (
-    <FadeIn className="mt-12 w-full flex flex-column flex-align-items-center gap-2" key="prompt-for-reload">
+    <div key="prompt-for-reload" className="mt-12 w-full flex flex-column flex-align-items-center gap-2 anime-fade-in">
         <span className="block text-sm text-weak">{message}</span>
 
         <Button pill shape="solid" color="weak" className="ui-red w-full" onClick={() => browser.runtime.reload()}>
             {c('Action').t`Reload extension`}
         </Button>
-    </FadeIn>
+    </div>
 );
 
 export const ExtensionError: VFC = () => (
