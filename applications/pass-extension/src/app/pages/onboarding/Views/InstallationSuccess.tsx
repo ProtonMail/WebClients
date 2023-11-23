@@ -137,22 +137,19 @@ export const InstallationSuccess: VFC = () => {
                                             </ol>
                                         </div>
                                         <Button
-                                            icon
                                             pill
                                             size="large"
                                             shape="solid"
                                             color="norm"
-                                            className="mt-5 mb-2"
+                                            className="mt-5 mb-2 w-full"
                                             onClick={handleNextStepClick}
                                             aria-label={c('Action').t`Done`}
                                         >
-                                            <span className="flex flex-justify-center px-4">
-                                                {' '}
-                                                {c('Action').t`Done`}
-                                            </span>
+                                            <span className="flex flex-justify-center px-4">{c('Action').t`Done`}</span>
                                         </Button>
                                         {BUILD_TARGET === 'chrome' && (
                                             <Button
+                                                pill
                                                 onClick={() => setIsPinned(true)}
                                                 shape="ghost"
                                                 aria-label={c('Action').t`Continue without pinning`}
@@ -180,10 +177,9 @@ export const InstallationSuccess: VFC = () => {
                                         </h2>
                                         <Button
                                             pill
-                                            size="large"
                                             shape="solid"
                                             color="norm"
-                                            className="mb-4"
+                                            className="mb-2"
                                             onClick={() => login()}
                                             aria-label={c('Action').t`Sign in`}
                                         >
@@ -193,7 +189,6 @@ export const InstallationSuccess: VFC = () => {
                                         </Button>
                                         <Button
                                             pill
-                                            size="large"
                                             shape="outline"
                                             color="weak"
                                             onClick={() => login(FORK_TYPE.SIGNUP)}
