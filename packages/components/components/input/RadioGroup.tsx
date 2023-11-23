@@ -1,37 +1,36 @@
-import { Key, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import clsx from '@proton/utils/clsx';
 
 import Radio from './Radio';
 
-export interface Props<T> {
+export interface RadioGroupProps<T> {
     name: string;
     options: {
-        key?: Key;
         value: T;
         label: ReactNode;
         disabled?: boolean;
     }[];
     onChange: (value: T) => void;
-    value: T;
+    value: T | undefined;
     className?: string;
-    ['aria-describedby']?: string;
+    ariaDescribedBy?: string;
 }
 
-const RadioGroup = <T,>({
+const RadioGroup = <T extends string | number>({
     name,
     options,
     onChange,
     value,
     className,
-    'aria-describedby': ariaDescribedBy,
-}: Props<T>) => {
+    ariaDescribedBy,
+}: RadioGroupProps<T>) => {
     return (
         <>
-            {options.map((option, i) => (
+            {options.map((option) => (
                 <Radio
-                    key={option.key || `${i}`}
-                    id={`${name}-radio_${i}`}
+                    id={`${option.value}`}
+                    key={option.value}
                     onChange={() => onChange(option.value)}
                     checked={value === option.value}
                     name={name}
