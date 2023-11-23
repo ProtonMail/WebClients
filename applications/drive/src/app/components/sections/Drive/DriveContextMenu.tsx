@@ -87,7 +87,7 @@ export function DriveItemContextMenu({
                     showFilesDetailsModal={showFilesDetailsModal}
                     close={close}
                 />
-                {isOnlyOneFileItem || !isActiveLinkReadOnly ? <ContextSeparator /> : null}
+                <ContextSeparator />
                 {isOnlyOneFileItem && (
                     <>
                         <RevisionsButton
@@ -98,7 +98,7 @@ export function DriveItemContextMenu({
                         <ContextSeparator />
                     </>
                 )}
-                {!isActiveLinkReadOnly ? <MoveToTrashButton selectedLinks={selectedLinks} close={close} /> : null}
+                <MoveToTrashButton selectedLinks={selectedLinks} close={close} />
                 {children}
             </ItemContextMenu>
             {filesDetailsModal}
