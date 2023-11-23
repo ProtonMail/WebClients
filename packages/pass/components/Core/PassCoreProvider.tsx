@@ -4,10 +4,12 @@ import { createContext, useContext, useMemo } from 'react';
 import { ConfigProvider } from '@proton/components/containers/config';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpCode';
-import type { Maybe, MaybeNull, OnboardingMessage } from '@proton/pass/types';
+import type { ClientEndpoint, Maybe, MaybeNull, OnboardingMessage } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
 
 type PassCoreContextValue = {
+    endpoint: ClientEndpoint;
+    /** client configuration */
     config: PassConfig;
     /** In the extension: leverage worker communication to generate
      * a token. In the web-app: use the OTP utils in-place */

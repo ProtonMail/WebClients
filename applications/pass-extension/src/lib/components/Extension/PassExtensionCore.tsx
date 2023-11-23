@@ -64,6 +64,7 @@ const onForceUpdate = () => browser.runtime.reload();
 
 export const PassExtensionCore: FC<{ endpoint: ClientEndpoint }> = ({ children, endpoint }) => (
     <PassCoreProvider
+        endpoint={endpoint}
         config={config}
         generateOTP={useCallback(createOTPGenerator(endpoint), [])}
         getDomainImageURL={getDomainImageURL}
