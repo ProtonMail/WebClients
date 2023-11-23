@@ -44,6 +44,9 @@
       "Authenticate": [
         "認証"
       ],
+      "Authenticating": [
+        "認証中"
+      ],
       "Back": [
         "戻る"
       ],
@@ -179,6 +182,9 @@
       "Edit Gateway": [
         "ゲートウェイを編集する"
       ],
+      "Edit invoice details": [
+        "請求書の詳細を編集する"
+      ],
       "Edit name": [
         "名前の編集"
       ],
@@ -262,6 +268,9 @@
       ],
       "Invite user": [
         "ユーザーを招待"
+      ],
+      "Keep my Plus subscription": [
+        "Plus サブスクリプションを維持する"
       ],
       "Let's talk": [
         "話をしよう"
@@ -424,6 +433,12 @@
       ],
       "Sign in": [
         "サインイン"
+      ],
+      "Sign in with password": [
+        "パスワードを使用してサインインする"
+      ],
+      "Sign in with SSO": [
+        "SSO でサインインする"
       ],
       "Sign out": [
         "サインアウト"
@@ -2529,6 +2544,9 @@
       "${ number } servers": [
         "${ number } 台のサーバー"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "${ plan } が削除されました。 1 か月プランではバンドル取引は利用できません。"
+      ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } には少なくとも 1 つの専用サーバー ${ serverPricePerMonth } が必要です"
       ],
@@ -2675,6 +2693,9 @@
       ],
       "Before you can start sending and receiving emails from your new addresses you need to create encryption keys for them.": [
         "新しいアドレスからメールの送受信を開始する前に、暗号化キーを作成する必要があります。"
+      ],
+      "Billed at ${ price }": [
+        "${ price }で請求されます"
       ],
       "Billing cycle: ${ text }": [
         "支払いサイクル: ${ text }"
@@ -2864,6 +2885,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "エラーだと思われる場合は ${ contactLink } までご連絡ください。"
+      ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "キャンセルすると、${ planTitle } サブスクリプションは ${ expiryDate } に期限切れになっても更新されません。"
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "受信トレイに関連するメッセージを見つけなかった場合、迷惑メールフォルダーを確認してください。"
@@ -3135,6 +3159,9 @@
       "Revoke certificate ${ name }": [
         "証明書 ${ name } を失効させます"
       ],
+      "Save ${ percentage }": [
+        "${ percentage } を節約"
+      ],
       "Save your password somewhere safe. Click on icon to confirm that you have typed your password correctly.": [
         "パスワードは安全な場所に保管してください。 パスワードが正しく入力されたか確認するには、アイコンをクリックしてください。"
       ],
@@ -3201,6 +3228,15 @@
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
       ],
+      "Subscription auto-renews every 12 months.": [
+        "サブスクリプションは 12 か月ごとに自動更新されます。"
+      ],
+      "Subscription auto-renews every 24 months.": [
+        "サブスクリプションは 24 か月ごとに自動更新されます。"
+      ],
+      "Subscription auto-renews every month.": [
+        "サブスクリプションは毎月自動更新されます。"
+      ],
       "Subscription ending: Reactivate by ${ byDate } to keep your ${ planName } benefits. ${ reactivateLink }": [
         "サブスクリプションがもうすぐ終了します: ${ planName }の特典を維持するには${ byDate }までに更新してください。${ reactivateLink }"
       ],
@@ -3215,6 +3251,9 @@
       ],
       "Thank you": [
         "ありがとうございます"
+      ],
+      "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
+        "プライバシーと自由が最優先される、より良いインターネットを構築するという私たちの使命をサポートしていただきありがとうございます。"
       ],
       "The following addresses are invalid.": [
         "次のアドレスに間違いがあります。"
@@ -3248,6 +3287,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "これらの認証情報は、公式 ${ VPN_APP_NAME } アプリへのサインインには使用できません。 ${ learnMore }"
+      ],
+      "They will be removed from your organization": [
+        "彼らはあなたの組織から削除されます"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "このアカウントは、ポリシー違反の可能性があるため停止されています。"
@@ -3405,6 +3447,9 @@
       "Version ${ version }": [
         "バージョン ${ version }"
       ],
+      "View, download, and manage your invoices.": [
+        "請求書を表示、ダウンロード、管理します。"
+      ],
       "Visa Secure logo": [
         "Visa Secure ロゴ"
       ],
@@ -3482,6 +3527,9 @@
       ],
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "ビジネス プランまたはエンタープライズ プランでは、組織用に ${ boldDedicatedServers } を購入し、${ boldGateways } を設定してアクセスできるユーザーを制御できます。"
+      ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "暗号化された ${ BRAND_NAME } アドレスを使用すると、すべての ${ BRAND_NAME } サービスを使用できます"
       ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "有効化しない限り、新規ユーザーの作成、既存ユーザーへのメールアドレスの追加並びに、ユーザーのアカウントへのアクセスはできません。"
@@ -3564,6 +3612,12 @@
       "You will be redirected to ${ destination } after signing in.": [
         "サインイン後、${ destination } にリダイレクトされます。"
       ],
+      "You will lose access to Plus features on this date.": [
+        "この日付で Plus 機能にアクセスできなくなります。"
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "この日以降、Plus サーバーと機能にアクセスできなくなります。"
+      ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "${ MAIL_APP_NAME } と ${ CALENDAR_APP_NAME } を使うには ${ BRAND_NAME } アドレスが必要です"
       ],
@@ -3608,6 +3662,9 @@
       ],
       "Your information is safe with us. We'll only contact you when it's required to provide our services.": [
         "あなたの情報は安全です。 サービスの提供に必要な場合にのみ、お客様に連絡します。"
+      ],
+      "Your next billing date is ${ renewalTime }.": [
+        "次回の請求日は ${ renewalTime } です。"
       ],
       "Your organization password can be shared with other users you wish to give administrative privileges. It is also an emergency recovery code to gain access to your organization in case you lose access to your account. Please save this password and keep it safe.": [
         "組織パスワードは、管理者権限を与えたい他のユーザーと共有できます。アカウントにアクセスができなくなった際の緊急回復用コードとしても使用しますので、このパスワードは安全な場所に保管してください。"
@@ -3923,6 +3980,9 @@
       ],
       "Name": [
         "名前"
+      ],
+      "Name and address": [
+        "名前とアドレス"
       ],
       "Name on card": [
         "カード名義人"
@@ -6486,6 +6546,9 @@
       "Edit Gateway ${ currentName }": [
         "ゲートウェイ ${ currentName } を編集します"
       ],
+      "Edit invoice details": [
+        "請求書の詳細を編集する"
+      ],
       "Edit servers": [
         "サーバー編集"
       ],
@@ -6692,6 +6755,9 @@
       ],
       "Sign in to join the Beta program": [
         "サインインしてベータプログラムに参加する"
+      ],
+      "Sign in to your organization": [
+        "組織にサインインする"
       ],
       "Sign in with 2FA": [
         "2FA でサインイン"
