@@ -192,7 +192,7 @@
         "Importovať"
       ],
       "Import your passwords": [
-        "Importovať heslá"
+        "Importujte svoje heslá"
       ],
       "Importing": [
         "Prebieha import"
@@ -417,7 +417,7 @@
         "Začiarknuté políčko znamená, že funkcia je vypnutá."
       ],
       "List of domains where certain auto functions in ${ PASS_SHORT_APP_NAME } (Autofill, Autosuggest, Autosave) should not be run.${ infoText }": [
-        "Zoznam domén, kde by sa nemali spúšťať určité automatické funkcie v ${ PASS_SHORT_APP_NAME } (Automatické vypĺňanie, automatické návrhy, automatické ukladanie). ${ infoText }"
+        "Zoznam domén, na ktorých by sa nemali spúšťať určité automatické funkcie v ${ PASS_SHORT_APP_NAME } (automatické vypĺňanie, automatické návrhy, automatické ukladanie). ${ infoText }"
       ]
     },
     "Error": {
@@ -772,7 +772,7 @@
         "Prístup k ${ PASS_APP_NAME } bude vyžadovať PIN kód na odomknutie vašej relácie"
       ],
       "Access your passwords on the go with our mobile apps.": [
-        "Pomocou našich mobilných aplikácií máte prístup k svojim heslám aj na cestách."
+        "Majte prístup k svojim heslám za pochodu s našimi mobilnými aplikáciami."
       ],
       "Admin": [
         "Správca"
@@ -784,7 +784,7 @@
         "Všetky položky z \"${ payload.content.name }\" boli úspešne presunuté"
       ],
       "All trashed items permanently deleted": [
-        "Všetky položky v koši natrvalo odstránené"
+        "Všetky položky v koši natrvalo vymazané"
       ],
       "All trashed items successfully restored": [
         "Všetky položky z koša boli úspešne obnovené"
@@ -799,7 +799,7 @@
         "Automatické uzamknutie bolo úspešne deaktivované"
       ],
       "Autosaved on ${ submissionURL }": [
-        "Automaticky uložené z ${ submissionURL }"
+        "Automaticky uložené na ${ submissionURL }"
       ],
       "Can create, edit, delete, and export items in this vault.": [
         "Môžete vytvárať, upravovať, mazať a exportovať položky v tomto trezore."
@@ -823,7 +823,7 @@
         "Skopírované do schránky"
       ],
       "Creating alias...": [
-        "Vytváram alias..."
+        "Vytváranie aliasu..."
       ],
       "Credit cards, Custom fields": [
         "Platobné karty, Vlastné polia"
@@ -880,13 +880,13 @@
         "Vygenerované heslá budú uchované po dobu jedného dňa."
       ],
       "Generating alias...": [
-        "Generujem alias..."
+        "Generovanie aliasu..."
       ],
       "Get unlimited aliases, enjoy exclusive features, and support us by subscribing to Pass Plus.": [
         "Získajte neobmedzený počet aliasov, využívajte exkluzívne funkcie a podporte nás predplatením služby Pass Plus."
       ],
       "Here you will find all the necessary information to get you started.": [
-        "Tu nájdete všetky potrebné informácie, ktoré vám pomôžu začať."
+        "Tu nájdete všetky potrebné informácie, aby ste mohli začať."
       ],
       "Import in progress:": [
         "Prebieha import:"
@@ -979,7 +979,7 @@
         "Nikdy"
       ],
       "No login found": [
-        "Prihlasovacie údaje nenájdené"
+        "Žiadne nájdené prihlásenie"
       ],
       "None": [
         "Nezamykať"
@@ -1006,7 +1006,7 @@
         "Čaká sa na prístup k zdieľaným údajom"
       ],
       "Pin ${ PASS_APP_NAME } to your toolbar": [
-        "Pripnite ${ PASS_APP_NAME } do panela nástrojov"
+        "Pripnite ${ PASS_APP_NAME } do svojho panela nástrojov"
       ],
       "PIN code successfully registered. Use it to unlock ${ PASS_APP_NAME }": [
         "PIN kód bol úspešne zaregistrovaný. Použite ho na odomknutie ${ PASS_APP_NAME }"
@@ -1060,7 +1060,7 @@
         "Zdieľajte s 10 ďalšími osobami"
       ],
       "Sign in or create an account to continue.": [
-        "Pre pokračovanie sa prihláste, alebo si vytvorte účet."
+        "Pre pokračovanie sa prihláste alebo si vytvorte účet."
       ],
       "Sign in to your account": [
         "Prihláste sa do svojho účtu"
@@ -1281,7 +1281,7 @@
         "Automatické vypĺňanie 2FA"
       ],
       "Automatically open autofill when a login field is focused": [
-        "Automaticky otvorí automatické vypĺňanie pri zvolení prihlasovacieho poľa"
+        "Automaticky otvoriť automatické vypĺňanie, keď je zvolené prihlasovacie pole"
       ],
       "Autosave": [
         "Automatické ukladanie"
@@ -1781,7 +1781,7 @@
         "Opustiť trezor ?"
       ],
       "Log in as...": [
-        "Prihláste sa ako..."
+        "Prihlásiť sa ako..."
       ],
       "Low disk space": [
         "Málo miesta na disku"
@@ -2010,7 +2010,7 @@
         "K tomuto trezoru už nebudete mať prístup. Ak sa do neho chcete opäť pripojiť, budete potrebovať novú pozvánku."
       ],
       "Your plan does not allow you to create more aliases": [
-        "Váš plán vám neumožňuje vytvoriť ďalšie aliasy"
+        "Váš plán vám neumožňuje vytvoriť viac aliasov"
       ],
       "Your plan only allows you to autofill from your first two vaults": [
         "Váš plán umožňuje automatické vypĺňanie len z vašich prvých dvoch trezorov"
@@ -2022,7 +2022,7 @@
         "Vašu reláciu sa nepodarilo obnoviť."
       ],
       "Your session is inactive. Please log back in.": [
-        "Vaša relácia je neaktívna. Prihláste sa znova."
+        "Vaša relácia je neaktívna. Prihláste sa znova, prosím."
       ],
       "Your session was locked.": [
         "Vaša relácia bola uzamknutá."
