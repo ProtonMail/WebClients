@@ -2,6 +2,7 @@ import { StandardPrivateApp } from '@proton/components';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 import {
     AddressesModel,
+    DomainsModel,
     MailSettingsModel,
     MembersModel,
     OrganizationModel,
@@ -23,6 +24,7 @@ const EVENT_MODELS = [
     SubscriptionModel,
     PaymentMethodsModel,
     OrganizationModel,
+    DomainsModel,
     MembersModel,
 ];
 
