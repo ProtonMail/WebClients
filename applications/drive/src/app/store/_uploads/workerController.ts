@@ -207,7 +207,7 @@ export class UploadWorker {
                         const { Api: CryptoApi } = await import(
                             /* webpackChunkName: "crypto-worker-api" */ '@proton/crypto/lib/worker/api'
                         );
-                        CryptoApi.init();
+                        CryptoApi.init({});
                         CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
                         updateServerTime(data.serverTime); // align serverTime in worker with that of the main thread (received from API)
 
