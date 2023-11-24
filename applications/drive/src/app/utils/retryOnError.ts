@@ -1,9 +1,27 @@
+import { wait } from '@proton/shared/lib/helpers/promise';
+
 type Params<T> = {
     fn: (...args: any) => Promise<T>;
     beforeRetryCallback?: () => Promise<unknown[] | void>;
     shouldRetryBasedOnError: (e: unknown) => boolean;
     maxRetriesNumber: number;
+    backoff?: boolean;
 };
+
+function fibonacciExponentialBackoff(attempt: number) {
+    const initialDelay = 30 * 1000; // Initial delay in seconds
+
+    let delay = initialDelay;
+    let prevDelay = initialDelay;
+
+    for (let i = 2; i <= attempt; i++) {
+        const temp = delay;
+        delay = delay + prevDelay;
+        prevDelay = temp;
+    }
+
+    return delay;
+}
 
 /**
  * @param {Object} config
@@ -19,29 +37,38 @@ const retryOnError = <ReturnType>({
     beforeRetryCallback,
     shouldRetryBasedOnError,
     maxRetriesNumber,
+    backoff = false,
 }: Params<ReturnType>): ((...args: any) => Promise<ReturnType>) => {
     let retryCount = maxRetriesNumber;
-    const run = async (...args: any): Promise<ReturnType> => {
+
+    const retry = async (...args: any): Promise<ReturnType> => {
         try {
-            const res = await fn(...args);
-            return res;
-        } catch (e) {
-            if (retryCount > 0 && shouldRetryBasedOnError(e)) {
-                retryCount -= 1;
+            return await fn(...args);
+        } catch (error) {
+            if (retryCount > 0 && shouldRetryBasedOnError(error)) {
+                retryCount--;
+
                 if (beforeRetryCallback) {
                     const newParams = await beforeRetryCallback();
                     if (newParams) {
-                        return run(newParams);
+                        if (backoff) {
+                            await wait(fibonacciExponentialBackoff(maxRetriesNumber - retryCount));
+                        }
+                        return retry(newParams);
                     }
                 }
-                return run(...args);
+
+                if (backoff) {
+                    await wait(fibonacciExponentialBackoff(maxRetriesNumber - retryCount));
+                }
+                return retry(...args);
             }
 
-            throw e;
+            throw error;
         }
     };
 
-    return run;
+    return retry;
 };
 
 export default retryOnError;
