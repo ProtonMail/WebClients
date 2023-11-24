@@ -16,6 +16,7 @@ export type FormEntryBase = {
     subdomain: MaybeNull<string>;
     type: `${FormType}` /* avoid importing the enum */;
     action?: string /* form action attribute */;
+    scheme?: string;
 };
 
 export type FormEntryData = FormEntryBase &
