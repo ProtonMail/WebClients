@@ -38,7 +38,7 @@ const WorkerMessageBroker = createMessageBroker({
         const hasRegisteredLock = ctx.authStore.getLockStatus() === SessionLockStatus.REGISTERED;
 
         if (isPopup) {
-            store.dispatch(cacheRequest());
+            store.dispatch(cacheRequest({ throttle: true }));
             if (hasRegisteredLock) ctx.service.auth.checkLock().catch(noop);
         }
     }),
