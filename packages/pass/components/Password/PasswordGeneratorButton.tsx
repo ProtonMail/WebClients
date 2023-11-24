@@ -6,14 +6,15 @@ import { Button, type ButtonProps } from '@proton/atoms';
 import { Icon } from '@proton/components/components';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 
-import { usePasswordContext } from './PasswordContext';
+import { usePasswordContext } from './PasswordProvider';
 
 type Props = Omit<ButtonProps, 'onSubmit'> & { onSubmit: (password: string) => void };
 
 const PasswordGeneratorButtonRaw: VFC<Props> = ({ onSubmit, type, ...rest }) => {
-    const { generatePassword } = usePasswordContext();
+    const passwordContext = usePasswordContext();
+
     const handleOnClick = () =>
-        generatePassword({
+        passwordContext.generate({
             onSubmit,
             actionLabel: c('Action').t`Fill password`,
             className: SubTheme.VIOLET /* no-need for a type prop yet: only used for Login items */,
