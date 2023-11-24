@@ -29,7 +29,7 @@ export const expectedAll = [
         value: '7',
         text: 'Sent',
         url: '/sent',
-        icon: 'paper-plane-horizontal',
+        icon: 'paper-plane',
     },
     {
         value: '10',
@@ -112,7 +112,7 @@ export const expectedGrouped: ItemsGroup = [
                 value: '7',
                 text: 'Sent',
                 url: '/sent',
-                icon: 'paper-plane-horizontal',
+                icon: 'paper-plane',
             },
             {
                 value: '10',
