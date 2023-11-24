@@ -5,7 +5,9 @@ import { ModalTwo } from '@proton/components';
 
 import './SidebarModal.scss';
 
-type Props = Omit<ModalProps, 'children'> & { children: ReactNode | ((didEnter: boolean) => ReactNode) };
+export type Props = Omit<ModalProps, 'children'> & {
+    children: ReactNode | ((didEnter: boolean) => ReactNode);
+};
 
 export const SidebarModal: FC<Props> = ({ children, className, ...props }) => {
     const [didEnter, setDidEnter] = useState(false);

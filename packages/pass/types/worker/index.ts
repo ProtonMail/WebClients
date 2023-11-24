@@ -6,3 +6,4 @@ export * from './onboarding';
 export * from './otp';
 export * from './runtime';
 export * from './state';
+export * from './storage';
