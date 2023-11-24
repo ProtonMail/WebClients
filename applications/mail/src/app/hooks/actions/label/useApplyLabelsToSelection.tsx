@@ -10,15 +10,14 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { getFilteredUndoTokens, runParallelChunkedActions } from 'proton-mail/helpers/chunk';
+import { ApplyLabelsParams } from 'proton-mail/hooks/actions/label/useApplyLabels';
 
-import UndoActionNotification from '../../components/notifications/UndoActionNotification';
-import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
-import { isMessage as testIsMessage } from '../../helpers/elements';
-import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
-import { useAppDispatch } from '../../logic/store';
-import { Element } from '../../models/element';
-import { useOptimisticApplyLabels } from '../optimistic/useOptimisticApplyLabels';
-import { useCreateFilters } from './useCreateFilters';
+import UndoActionNotification from '../../../components/notifications/UndoActionNotification';
+import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../../constants';
+import { backendActionFinished, backendActionStarted } from '../../../logic/elements/elementsActions';
+import { useAppDispatch } from '../../../logic/store';
+import { useOptimisticApplyLabels } from '../../optimistic/useOptimisticApplyLabels';
+import { useCreateFilters } from '../useCreateFilters';
 
 const getNotificationTextStarred = (isMessage: boolean, elementsCount: number) => {
     if (isMessage) {
@@ -64,6 +63,10 @@ const getNotificationTextRemoved = (isMessage: boolean, elementsCount: number, l
     );
 };
 
+interface ApplyLabelsToSelectionParams extends ApplyLabelsParams {
+    isMessage: boolean;
+}
+
 const getNotificationTextAdded = (isMessage: boolean, elementsCount: number, labelName: string) => {
     if (isMessage) {
         if (elementsCount === 1) {
@@ -95,7 +98,11 @@ export class ApplyLabelsError extends Error {
         Object.setPrototypeOf(this, ApplyLabelsError.prototype);
     }
 }
-export const useApplyLabels = () => {
+
+/**
+ * If you need to use apply labels on an element selection, prefer to use the hook "useApplyLabels" with selectAll to false or undefined instead.
+ */
+export const useApplyLabelsToSelection = () => {
     const api = useApi();
     const { call, stop, start } = useEventManager();
     const { createNotification } = useNotifications();
@@ -106,20 +113,20 @@ export const useApplyLabels = () => {
     const mailActionsChunkSize = useFeature(FeatureCode.MailActionsChunkSize).feature?.Value;
 
     const applyLabels = useCallback(
-        async (
-            elements: Element[],
-            changes: { [labelID: string]: boolean },
-            createFilters: boolean,
+        async ({
+            elements,
+            changes,
+            createFilters,
             silent = false,
-            selectedLabelIDs: string[] = []
-        ) => {
+            selectedLabelIDs = [],
+            isMessage,
+        }: ApplyLabelsToSelectionParams) => {
             if (!elements.length) {
                 return;
             }
 
             let undoing = false;
 
-            const isMessage = testIsMessage(elements[0]);
             const labelAction = isMessage ? labelMessages : labelConversations;
             const unlabelAction = isMessage ? unlabelMessages : unlabelConversations;
             const changesKeys = Object.keys(changes);

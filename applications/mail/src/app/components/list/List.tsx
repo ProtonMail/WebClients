@@ -4,12 +4,16 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { Breakpoints, useConversationCounts, useFlag, useItemsDraggable, useMessageCounts } from '@proton/components';
+import { Cancellable } from '@proton/components/hooks/useHandler';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE, UserSettings } from '@proton/shared/lib/interfaces';
 import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
+import SelectAllBanner from 'proton-mail/components/list/select-all/SelectAllBanner';
+import { getCanDisplaySelectAllBanner } from 'proton-mail/helpers/selectAll';
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
@@ -68,6 +72,7 @@ interface Props {
     onBack: () => void;
     userSettings: UserSettings;
     toolbar?: ReactNode | undefined;
+    onCheckAll: ((check: boolean) => void) & Cancellable;
 }
 
 const List = (
@@ -102,16 +107,29 @@ const List = (
         onBack,
         userSettings,
         toolbar,
+        onCheckAll,
     }: Props,
     ref: Ref<HTMLDivElement>
 ) => {
     const mailSettings = useMailModel('MailSettings');
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
+    const { selectAll, locationCount, selectAllAvailable } = useSelectAll({ labelID });
 
-    // Override compactness of the list view to accomodate body preview when showing encrypted search results
+    // Override compactness of the list view to accommodate body preview when showing encrypted search results
     const { contentIndexingDone, esEnabled } = esStatus;
     const shouldOverrideCompactness = shouldHighlight() && contentIndexingDone && esEnabled;
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldOverrideCompactness;
+
+    const hasFilter = Object.keys(filter).length > 0;
+
+    const canShowSelectAllBanner = getCanDisplaySelectAllBanner({
+        selectAllFeatureAvailable: selectAllAvailable,
+        mailPageSize: mailSettings.PageSize,
+        checkedIDs,
+        labelID,
+        isSearch,
+        hasFilter,
+    });
 
     const { displayState, changeChecklistDisplay } = useGetStartedChecklist();
 
@@ -146,7 +164,7 @@ const List = (
         onCheck,
         (draggedIDs) => {
             const isMessage = elements.length && testIsMessage(elements[0]);
-            const selectionCount = draggedIDs.length;
+            const selectionCount = selectAll ? locationCount : draggedIDs.length;
             return isMessage
                 ? c('Success').ngettext(
                       msgid`Move ${selectionCount} message`,
@@ -210,6 +228,13 @@ const List = (
                     data-shortcut-target="items-column-list-inner"
                 >
                     <div className="shrink-0">{toolbar}</div>
+
+                    {canShowSelectAllBanner && (
+                        <div className="shrink-0">
+                            <SelectAllBanner labelID={labelID} onCheckAll={onCheckAll} />
+                        </div>
+                    )}
+
                     <div
                         className={clsx(
                             isDelightMailListEnabled && 'delight-items-column-list-container',

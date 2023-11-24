@@ -14,6 +14,7 @@ import {
     load,
     manualFulfilled,
     manualPending,
+    markAll,
     moveAll,
     optimisticApplyLabels,
     optimisticDelete,
@@ -45,7 +46,6 @@ import {
     loadPending,
     manualFulfilled as manualFulfilledReducer,
     manualPending as manualPendingReducer,
-    moveAllFulfilled,
     optimisticDelete as optimisticDeleteReducer,
     optimisticEmptyLabel as optimisticEmptyLabelReducer,
     optimisticUpdates,
@@ -53,6 +53,7 @@ import {
     removeExpired as removeExpiredReducer,
     reset as resetReducer,
     retry as retryReducer,
+    selectAllFulfilled,
     setPageSize as setPageSizeReducer,
     showSerializedElements as showSerializedElementsReducer,
     updatePage as updatePageReducer,
@@ -131,7 +132,8 @@ const elementsSlice = createSlice({
         builder.addCase(backendActionStarted, backendActionStartedReducer);
         builder.addCase(backendActionFinished, backendActionFinishedReducer);
 
-        builder.addCase(moveAll.fulfilled, moveAllFulfilled);
+        builder.addCase(moveAll.fulfilled, selectAllFulfilled);
+        builder.addCase(markAll.fulfilled, selectAllFulfilled);
         builder.addCase(pollTaskRunning.fulfilled, pollTaskRunningFulfilled);
 
         builder.addCase(deleteDraft, deleteDraftReducer);

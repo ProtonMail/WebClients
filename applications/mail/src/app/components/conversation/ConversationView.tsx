@@ -14,7 +14,7 @@ import clsx from '@proton/utils/clsx';
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { hasLabel } from '../../helpers/elements';
 import { findMessageToExpand } from '../../helpers/message/messageExpandable';
-import { useMarkAs } from '../../hooks/actions/useMarkAs';
+import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import { useConversation } from '../../hooks/conversation/useConversation';
 import { useConversationFocus } from '../../hooks/conversation/useConversationFocus';
 import { useConversationHotkeys } from '../../hooks/conversation/useConversationHotkeys';
@@ -111,7 +111,7 @@ const ConversationView = ({
     const loading = loadingConversation || loadingMessages;
     const showConversationError = !loading && conversationState?.Conversation?.Subject === undefined;
     const showMessagesError = !loading && !showConversationError && !conversationState?.Messages;
-    const markAs = useMarkAs();
+    const { markAs } = useMarkAs();
 
     const { focusIndex, handleFocus, handleScrollToMessage, handleBlur, getFocusedId } =
         useConversationFocus(messagesWithoutQuickReplies);
@@ -157,7 +157,11 @@ const ConversationView = ({
     useEffect(() => {
         const isReminded = isElementReminded(conversation);
         if (isReminded && conversation) {
-            markAs([conversation], labelID, MARK_AS_STATUS.READ);
+            void markAs({
+                elements: [conversation],
+                labelID,
+                status: MARK_AS_STATUS.READ,
+            });
         }
     }, [conversation]);
 

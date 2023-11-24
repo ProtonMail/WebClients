@@ -14,6 +14,8 @@ import { MailSettings } from '@proton/shared/lib/interfaces';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import conversationSvg from '@proton/styles/assets/img/illustrations/selected-emails.svg';
 
+import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
 import { isSearch as testIsSearch } from '../../helpers/elements';
 import { getLabelName, isCustomLabel as testIsCustomLabel } from '../../helpers/labels';
@@ -27,6 +29,8 @@ import { useAppSelector } from '../../logic/store';
 import { SearchParameters } from '../../models/tools';
 import EnableEncryptedSearchModal from '../header/search/AdvancedSearchFields/EnableEncryptedSearchModal';
 import SimpleLoginPlaceholder from './SimpleLoginPlaceholder';
+
+import './SelectionPane.scss';
 
 interface Props {
     labelID: string;
@@ -48,6 +52,7 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     const { handleSendTelemetryData } = useSimpleLoginTelemetry();
     const [placeholderSLSeenSent, setPlaceholderSLSeenSent] = useState(false);
     const conversationMode = isConversationMode(labelID, mailSettings, location);
+    const { selectAll, setSelectAll, getBannerTextWithLocation } = useSelectAll({ labelID });
 
     // We display 50 elements maximum in the list. To know how much results are matching a search, we store it in Redux, in elements.total
     const elementsFoundCount = useAppSelector(totalSelector) || 0;
@@ -74,6 +79,13 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
     // We want to hide the "enable ES" part from the point when the user enables it. We do not want to see the downloading part from here
     const encryptedSearchEnabled =
         isEnablingContentSearch || isContentIndexingPaused || contentIndexingDone || isEnablingEncryptedSearch;
+
+    const handleClearSelection = () => {
+        if (selectAll) {
+            setSelectAll(false);
+        }
+        onCheckAll(false);
+    };
 
     /*
      * With ttag we cannot have JSX in plural forms
@@ -154,13 +166,26 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
              * ${labelName} is the name of the label/folder the in which the user is performing a search
              * Full string for reference: 3 results found in Inbox
              */
-            return c('Info').ngettext(
+            const text = c('Info').ngettext(
                 msgid`**${elementsFoundCount}** result found in ${labelName}`,
                 `**${elementsFoundCount}** results found in ${labelName}`,
                 elementsFoundCount
             );
+
+            return getBoldFormattedText(text);
         } else {
-            return isCustomLabel ? getLabelText() : getFolderText();
+            if (selectAll) {
+                const bannerText = getBannerTextWithLocation();
+                // Warning, we are forced to add a custom class here (ttag does not support JSX + plural forms)
+                // And we need to style the last span of the string so that it does not overflow
+                // In case the string it updated, do not forget to update the style if necessary
+                return (
+                    <span className="selection-pane" title={bannerText}>
+                        {getBoldFormattedText(bannerText)}
+                    </span>
+                );
+            }
+            return getBoldFormattedText(isCustomLabel ? getLabelText() : getFolderText());
         }
     };
 
@@ -202,7 +227,6 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                         </h3>
                     )}
                     <div className="mb-8">
-                        <p className="mb-2 text-keep-space">{showText ? getBoldFormattedText(text) : null}</p>
                         {isSearch && !encryptedSearchEnabled && (
                             <>
                                 <p>
@@ -229,7 +253,8 @@ const SelectionPane = ({ labelID, mailSettings, location, labelCount, checkedIDs
                             className="h-auto"
                         />
                     </div>
-                    {checkeds > 0 && <Button onClick={() => onCheckAll(false)}>{c('Action').t`Deselect`}</Button>}
+                    <p className="mb-2 text-keep-space">{showText ? text : null}</p>
+                    {checkeds > 0 && <Button onClick={handleClearSelection}>{c('Action').t`Clear selection`}</Button>}
                 </>
             )}
             {renderEnableESModal && <EnableEncryptedSearchModal openSearchAfterEnabling {...enableESModalProps} />}

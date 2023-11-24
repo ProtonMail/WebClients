@@ -12,6 +12,10 @@ type BaseMessage = Pick<
     'ToList' | 'CCList' | 'BCCList' | 'Subject' | 'Sender' | 'Body' | 'MIMEType' | 'Attachments' | 'Flags'
 >;
 
+export interface MailSearchContext {
+    LabelID: string;
+}
+
 export const queryMessageMetadata = ({
     Location,
     Page,
@@ -197,6 +201,18 @@ export const markMessageAsUnread = (IDs: string[]) => ({
     data: { IDs },
 });
 
+export const markAllMessagesAsRead = ({ SearchContext }: { SearchContext: MailSearchContext }) => ({
+    method: 'post',
+    url: 'mail/v4/messages/batch/read',
+    data: { SearchContext },
+});
+
+export const markAllMessagesAsUnread = ({ SearchContext }: { SearchContext: MailSearchContext }) => ({
+    method: 'post',
+    url: 'mail/v4/messages/batch/unread',
+    data: { SearchContext },
+});
+
 export const deleteMessages = (IDs: string[], CurrentLabelID?: string) => ({
     method: 'put',
     url: 'mail/v4/messages/delete',
@@ -235,6 +251,20 @@ export const emptyLabel = ({ LabelID, AddressID }: { LabelID: string; AddressID:
     params: { LabelID, AddressID },
 });
 
+export const labelAll = ({
+    SearchContext,
+    AddLabelIDs,
+    RemoveLabelIDs,
+}: {
+    SearchContext: MailSearchContext;
+    AddLabelIDs: string[];
+    RemoveLabelIDs: string[];
+}) => ({
+    method: 'post',
+    url: 'mail/v4/messages/batch/label',
+    data: { SearchContext, AddLabelIDs, RemoveLabelIDs },
+});
+
 export const moveAll = ({
     SourceLabelID,
     DestinationLabelID,
@@ -247,6 +277,18 @@ export const moveAll = ({
     method: 'put',
     url: 'mail/v4/messages/move',
     data: { SourceLabelID, DestinationLabelID, KeepSourceLabel },
+});
+
+export const moveAllBatch = ({
+    SearchContext,
+    DestinationLabelID,
+}: {
+    SearchContext: MailSearchContext;
+    DestinationLabelID: string;
+}) => ({
+    method: 'post',
+    url: 'mail/v4/messages/batch/move',
+    data: { SearchContext, DestinationLabelID },
 });
 
 export const cancelSend = (messageID: string) => ({

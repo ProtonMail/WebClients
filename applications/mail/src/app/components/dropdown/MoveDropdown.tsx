@@ -68,9 +68,10 @@ interface Props {
     onLock: (lock: boolean) => void;
     breakpoints: Breakpoints;
     isMessage?: boolean;
+    selectAll?: boolean;
 }
 
-const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, isMessage: inputIsMessage }: Props) => {
+const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, isMessage: inputIsMessage, selectAll }: Props) => {
     const [uid] = useState(generateUID('move-dropdown'));
     const [folders = []] = useFolders();
     const [user] = useUser();
@@ -82,7 +83,8 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, isMe
     const normSearch = normalize(search, true);
     const getElementsFromIDs = useGetElementsFromIDs();
     const getMessagesOrElements = useGetMessagesOrElementsFromIDs();
-    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal } = useMoveToFolder(setContainFocus);
+    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal, selectAllMoveModal } =
+        useMoveToFolder(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
 
     const [editLabelProps, setEditLabelModalOpen, renderLabelModal] = useModalState();
@@ -113,8 +115,8 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, isMe
     const createFolderButtonText = c('Title').t`Create folder "${search}"`;
 
     const alwaysCheckboxDisabled = useMemo(() => {
-        return !getSendersToFilter(elements).length || !selectedFolder;
-    }, [getSendersToFilter, elements]);
+        return !getSendersToFilter(elements).length || !selectedFolder || !!selectAll;
+    }, [getSendersToFilter, elements, selectAll]);
 
     const list = treeview
         .reduce<FolderItem[]>((acc, folder) => folderReducer(acc, folder), [])
@@ -147,7 +149,14 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, isMe
         // We only need to ignore the value in that scenario
         const canApplyAlways = selectedFolderID !== SPAM;
 
-        await moveToFolder(elements, selectedFolderID, selectedFolderName, labelID, canApplyAlways ? always : false);
+        await moveToFolder({
+            elements,
+            folderID: selectedFolderID,
+            folderName: selectedFolderName,
+            fromLabelID: labelID,
+            createFilters: canApplyAlways ? always : false,
+            selectAll,
+        });
         onClose();
     };
 
@@ -300,6 +309,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, isMe
             {moveSnoozedModal}
             {moveAllModal}
             {moveToSpamModal}
+            {selectAllMoveModal}
             {renderLabelModal && (
                 <EditLabelModal
                     label={newFolder}

@@ -38,6 +38,7 @@ enum MailFeatureFlag {
     SnoozeFeature = 'SnoozeFeature',
     DelightMailList = 'DelightMailList',
     DelightMailListHideUnreadButton = 'DelightMailListHideUnreadButton',
+    SelectAll = 'SelectAll',
 }
 
 export type FeatureFlag =
