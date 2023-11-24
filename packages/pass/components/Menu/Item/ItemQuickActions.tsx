@@ -8,22 +8,24 @@ import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, usePopperAnchor } fro
 import { DropdownMenuButtonLabel } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { itemTypeToIconName } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
-import { usePasswordContext } from '@proton/pass/components/PasswordGenerator/PasswordContext';
+import { usePasswordContext } from '@proton/pass/components/Password/PasswordProvider';
 import { useCopyToClipboard } from '@proton/pass/hooks/useCopyToClipboard';
 import { selectAliasLimits, selectPassPlan } from '@proton/pass/store/selectors';
-import type { ItemType } from '@proton/pass/types';
+import type { ItemType, MaybeNull } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import noop from '@proton/utils/noop';
 
 type Props = {
     disabled?: boolean;
-    onNewItem: (type: ItemType) => void;
-    onPasswordGenerated?: (password: string) => void;
+    /** Current origin if in the extension to hydrate the generated
+     * password origin on save */
+    origin?: MaybeNull<string>;
+    onCreate: (type: ItemType) => void;
 };
 
-export const ItemQuickActions: FC<Props> = ({ disabled = false, onNewItem, onPasswordGenerated }) => {
-    const { generatePassword } = usePasswordContext();
+export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, onCreate }) => {
+    const passwordContext = usePasswordContext();
     const copyToClipboard = useCopyToClipboard();
 
     const { needsUpgrade, aliasLimit, aliasLimited, aliasTotalCount } = useSelector(selectAliasLimits);
@@ -33,12 +35,12 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, onNewItem, onPas
     const withClose = <T extends (...args: any[]) => void>(action: T) => pipe(action, close) as T;
 
     const handleNewPasswordClick = () => {
-        void generatePassword({
+        void passwordContext.generate({
             actionLabel: c('Action').t`Copy and close`,
             className: 'ui-red',
-            onSubmit: (password) => {
-                onPasswordGenerated?.(password);
-                copyToClipboard(password).catch(noop);
+            onSubmit: (value) => {
+                passwordContext.history.add({ value, origin });
+                copyToClipboard(value).catch(noop);
             },
         });
     };
@@ -80,7 +82,7 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, onNewItem, onPas
                         <DropdownMenuButton
                             key={`item-type-dropdown-button-${type}`}
                             className={itemTypeToSubThemeClassName[type]}
-                            onClick={withClose(() => onNewItem(type))}
+                            onClick={withClose(() => onCreate(type))}
                             disabled={isFreePlan && type === 'creditCard'}
                         >
                             <DropdownMenuButtonLabel

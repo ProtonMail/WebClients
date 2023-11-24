@@ -22,3 +22,4 @@ export const selectHasRegisteredLock = (state: State) => state.settings.sessionL
 export const selectSessionLockTTL = ({ settings }: State): Maybe<number> => settings.sessionLockTTL;
 export const selectDisallowedDomains = ({ settings }: State): DomainCriterias => settings.disallowedDomains;
 export const selectLocale = ({ settings }: State) => settings.locale;
+export const selectPasswordOptions = (state: State) => state.settings.passwordOptions;

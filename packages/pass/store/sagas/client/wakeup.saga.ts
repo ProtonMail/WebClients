@@ -9,8 +9,8 @@ import {
     wakeupIntent,
     wakeupSuccess,
 } from '@proton/pass/store/actions';
+import { passwordHistoryGarbageCollect } from '@proton/pass/store/actions/creators/password';
 import { popupTabStateGarbageCollect } from '@proton/pass/store/actions/creators/popup';
-import { passwordHistoryGarbageCollect } from '@proton/pass/store/actions/creators/pw-history';
 import { userAccessRequest, userFeaturesRequest } from '@proton/pass/store/actions/requests';
 import type { WithReceiverAction } from '@proton/pass/store/actions/with-receiver';
 import { withRevalidate } from '@proton/pass/store/actions/with-request';
