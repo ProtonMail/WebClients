@@ -28,6 +28,7 @@ const SidebarLabel = ({ currentLabelID, counterMap, label, updateFocusItem }: La
             text={label.Name}
             color={label.Color}
             isFolder={false}
+            isLabel={true}
             unreadCount={counterMap[label.ID]}
             id={label.ID}
             onFocus={updateFocusItem}
