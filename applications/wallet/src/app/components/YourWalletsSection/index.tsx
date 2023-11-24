@@ -23,17 +23,17 @@ export const YourWalletsSection = ({ wallets }: Props) => {
 
     return (
         <div className="mt-14">
-            <h2 className="h3 text-semibold">{c('Wallet Dashboard').t`Your wallets`}</h2>
+            <h2 className="h4 text-semibold">{c('Wallet Dashboard').t`Your wallets`}</h2>
 
-            <div className="flex flex-row mt-4">
+            <div className="flex flex-row flex-justify-space-evenly">
                 <Card
                     data-testid="lightning-balance-card"
                     rounded
-                    className="light-gradient-card flex flex-column flex-align-items-end flex-item-grow max-w-custom mr-6"
-                    style={{ '--max-w-custom': '18rem' }}
+                    className="light-gradient-card flex flex-column flex-align-items-end w-custom h-custom mr-6 mt-4"
+                    style={{ '--w-custom': '16rem', '--h-custom': '8.5rem' }}
                 >
                     <div className="flex flex-row flex-justify-space-between w-full mt-1">
-                        <h3 className="text-xl">{c('Wallet Dashboard').t`Your Checking`}</h3>
+                        <h3 className="text-lg">{c('Wallet Dashboard').t`Your checking`}</h3>
                         <Badge className="mr-0 mt-0.5" type="warning">
                             Lightning
                         </Badge>
@@ -42,7 +42,7 @@ export const YourWalletsSection = ({ wallets }: Props) => {
                     <BitcoinAmount
                         unit={bitcoinUnit}
                         fiat={fiatCurrency}
-                        className="mt-4 text-3xl"
+                        className="mt-4 text-2xl"
                         fiatClassName="mb-1"
                     >
                         {lightningBalance ?? 0}
@@ -52,11 +52,11 @@ export const YourWalletsSection = ({ wallets }: Props) => {
                 <Card
                     data-testid="onchain-balance-card"
                     rounded
-                    className="light-gradient-card flex flex-column flex-align-items-end flex-item-grow max-w-custom mr-6"
-                    style={{ '--max-w-custom': '18rem' }}
+                    className="light-gradient-card flex flex-column flex-align-items-end w-custom h-custom mr-6 mt-4"
+                    style={{ '--w-custom': '16rem', '--h-custom': '8.5rem' }}
                 >
                     <div className="flex flex-row flex-justify-space-between w-full mt-1">
-                        <h3 className="text-xl">{c('Wallet Dashboard').t`Your Saving`}</h3>
+                        <h3 className="text-lg">{c('Wallet Dashboard').t`Your saving`}</h3>
                         <Badge className="mr-0 mt-0.5" type="info">
                             OnChain
                         </Badge>
@@ -65,7 +65,7 @@ export const YourWalletsSection = ({ wallets }: Props) => {
                     <BitcoinAmount
                         unit={bitcoinUnit}
                         fiat={fiatCurrency}
-                        className="mt-4 text-3xl"
+                        className="mt-4 text-2xl"
                         fiatClassName="mb-1"
                     >
                         {onchainBalance ?? 0}
@@ -74,8 +74,8 @@ export const YourWalletsSection = ({ wallets }: Props) => {
 
                 <ButtonLike
                     rounded
-                    className="light-gradient-card flex flex-item-grow max-w-custom mr-6"
-                    style={{ '--max-w-custom': '18rem' }}
+                    className="light-gradient-card flex w-custom h-custom mr-6 mt-4"
+                    style={{ '--w-custom': '16rem', '--h-custom': '8.5rem' }}
                     as={Card}
                     onClick={() => {
                         // TODO: open wallet setup modal here

@@ -29,47 +29,46 @@ export const BalanceOverview = ({ wallets, transactions }: Props) => {
 
     return (
         <div>
-            <h2 className="h3 text-semibold">{c('Wallet Dashboard').t`Your current balance`}</h2>
+            <h2 className="h4 text-semibold">{c('Wallet Dashboard').t`Your current balance`}</h2>
 
-            <div className="flex flex-row">
-                <div className="flex flex-row mr-14 mt-8">
-                    <div data-testid="balance" className="mr-3 w-custom text-no-wrap" style={{ '--w-custom': '10rem' }}>
-                        <p className="color-hint m-0">{c('Wallet Dashboard').t`My assets`}</p>
-                        <BitcoinAmount unit={bitcoinUnit} fiat={fiatCurrency} className="my-0.5 text-2xl">
-                            {totalBalance}
-                        </BitcoinAmount>
-                    </div>
-
-                    <div className="h-custom flex flex-column flex-justify-center" style={{ '--h-custom': '7rem' }}>
-                        <DoughnutChart data={balanceDistributionDoughnutChartData} />
-                    </div>
+            <div className="flex flex-row flex-justify-space-evenly">
+                <div data-testid="balance" className="mt-8 mr-3 w-custom text-no-wrap" style={{ '--w-custom': '8rem' }}>
+                    <p className="color-hint text-sm m-0">{c('Wallet Dashboard').t`My assets`}</p>
+                    <BitcoinAmount unit={bitcoinUnit} fiat={fiatCurrency} className="my-0.5 text-xl">
+                        {totalBalance}
+                    </BitcoinAmount>
                 </div>
 
-                <div className="flex flex-row mt-8">
-                    <div
-                        data-testid="7DaysDifference"
-                        className="mr-3 w-custom text-no-wrap"
-                        style={{ '--w-custom': '10rem' }}
-                    >
-                        <p className="color-hint m-0">{c('Wallet Dashboard').t`Last 7 days`}</p>
-                        <BitcoinAmount
-                            unit={bitcoinUnit}
-                            fiat={fiatCurrency}
-                            className={clsx(
-                                'my-0.5 text-2xl',
-                                last7DaysBalanceDifference < 0 ? 'color-danger' : 'color-success'
-                            )}
-                        >
-                            {last7DaysBalanceDifference}
-                        </BitcoinAmount>
-                    </div>
+                <div
+                    className="mt-8 mr-10 h-custom flex flex-column flex-justify-center"
+                    style={{ '--h-custom': '6rem' }}
+                >
+                    <DoughnutChart data={balanceDistributionDoughnutChartData} />
+                </div>
 
-                    <div
-                        className="w-custom h-custom flex flex-column flex-justify-center"
-                        style={{ '--w-custom': '18rem', '--h-custom': '7rem' }}
+                <div
+                    data-testid="7DaysDifference"
+                    className="mt-8 mr-3 w-custom text-no-wrap"
+                    style={{ '--w-custom': '8rem' }}
+                >
+                    <p className="color-hint m-0 text-sm">{c('Wallet Dashboard').t`Last 7 days`}</p>
+                    <BitcoinAmount
+                        unit={bitcoinUnit}
+                        fiat={fiatCurrency}
+                        className={clsx(
+                            'my-0.5 text-xl',
+                            last7DaysBalanceDifference < 0 ? 'color-danger' : 'color-success'
+                        )}
                     >
-                        <LineChart dataset={balanceEvolutionLineChartData} />
-                    </div>
+                        {last7DaysBalanceDifference}
+                    </BitcoinAmount>
+                </div>
+
+                <div
+                    className="mt-8 w-custom h-custom flex flex-column flex-justify-center"
+                    style={{ '--w-custom': '14rem', '--h-custom': '6rem' }}
+                >
+                    <LineChart dataset={balanceEvolutionLineChartData} />
                 </div>
             </div>
         </div>
