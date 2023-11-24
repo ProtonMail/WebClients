@@ -421,7 +421,7 @@ const MailboxContainer = ({
                 shortcuts: ['G', 'D'],
             },
             {
-                icon: 'paper-plane-horizontal',
+                icon: 'paper-plane',
                 label: c('Commander action').t`Go to Sent`,
                 value: 'sent',
                 action: () =>

@@ -154,8 +154,7 @@ const InviteSendEmail = () => {
                         disabled={hasInvalidRecipients}
                     >
                         <span className="flex flex-nowrap flex-align-items-center">
-                            <Icon name="paper-plane-horizontal" className="mr-1 flex-item-noshrink" />{' '}
-                            {c('Button').t`Send`}
+                            <Icon name="paper-plane" className="mr-1 flex-item-noshrink" /> {c('Button').t`Send`}
                         </span>
                     </Button>
                 </div>
