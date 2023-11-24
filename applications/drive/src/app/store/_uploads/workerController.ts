@@ -1,7 +1,8 @@
 import { CryptoProxy, PrivateKeyReference, SessionKey, serverTime, updateServerTime } from '@proton/crypto';
 import { SafeErrorObject, getSafeErrorObject } from '@proton/utils/getSafeErrorObject';
 
-import { HEARTBEAT_INTERVAL, HEARTBEAT_WAIT_TIME } from './constants';
+import { getRefreshError } from '../../utils/errorHandling/RefreshError';
+import { HEARTBEAT_INTERVAL, HEARTBEAT_WAIT_TIME, WORKER_INIT_WAIT_TIME } from './constants';
 import type {
     EncryptedBlock,
     FileKeys,
@@ -14,6 +15,11 @@ import type {
 } from './interface';
 import type { Media, ThumbnailInfo } from './media';
 import { getErrorString } from './utils';
+
+/**
+ * An unique identifier for refresh-type errors used in postMessage communication.
+ */
+const PLEASE_REFRESH = 'please_refresh';
 
 type GenerateKeysMessage = {
     command: 'generate_keys';
@@ -143,6 +149,10 @@ type HeartbeatMessage = {
     command: 'heartbeat';
 };
 
+type WorkerAliveMessage = {
+    command: 'alive';
+};
+
 /**
  * WorkerEvent contains all possible events which can come from the upload
  * web worker to the main thread.
@@ -156,7 +166,8 @@ type WorkerEvent = {
         | NetworkErrorMessage
         | ErrorMessage
         | NotifySentryMessage
-        | HeartbeatMessage;
+        | HeartbeatMessage
+        | WorkerAliveMessage;
 };
 
 /**
@@ -195,6 +206,10 @@ export class UploadWorker {
 
         this.worker = worker;
 
+        // Notify the main thread we are alive.
+        // We use this message to check for failures to load the worker.
+        this.postWorkerAlive();
+
         // Set up the heartbeat. This notifies the main thread that the worker is still alive.
         this.heartbeatInterval = setInterval(() => this.postHeartbeat(), HEARTBEAT_INTERVAL);
 
@@ -202,14 +217,28 @@ export class UploadWorker {
             switch (data.command) {
                 case 'generate_keys':
                     (async (data) => {
-                        // Setup CryptoProxy
-                        // Dynamic import is needed since we want pmcrypto (incl. openpgpjs) to be loaded inside the worker, not in the main thread.
-                        const { Api: CryptoApi } = await import(
-                            /* webpackChunkName: "crypto-worker-api" */ '@proton/crypto/lib/worker/api'
-                        );
+                        let module;
+                        // Dynamic import is needed since we want pmcrypto (incl. openpgpjs) to be loaded
+                        // inside the worker, not in the main thread.
+                        try {
+                            module = await import(
+                                /* webpackChunkName: "crypto-worker-api" */ '@proton/crypto/lib/worker/api'
+                            );
+                        } catch (e: any) {
+                            console.warn(e);
+                            this.postNotifySentry(e);
+
+                            this.postError(PLEASE_REFRESH);
+                            return;
+                        }
+
+                        const { Api: CryptoApi } = module;
+
                         CryptoApi.init({});
                         CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
-                        updateServerTime(data.serverTime); // align serverTime in worker with that of the main thread (received from API)
+
+                        // align serverTime in worker with the main thread (received from API)
+                        updateServerTime(data.serverTime);
 
                         const addressPrivateKey = await CryptoProxy.importPrivateKey({
                             binaryKey: data.addressPrivateKey,
@@ -276,6 +305,7 @@ export class UploadWorker {
             if (closing) {
                 return;
             }
+
             this.postError(getErrorString(event.error, event.message));
         });
         // @ts-ignore
@@ -284,6 +314,7 @@ export class UploadWorker {
             if (closing) {
                 return;
             }
+
             this.postError(event.reason);
         });
     }
@@ -367,6 +398,12 @@ export class UploadWorker {
             command: 'heartbeat',
         } satisfies HeartbeatMessage);
     }
+
+    postWorkerAlive() {
+        this.worker.postMessage({
+            command: 'alive',
+        } satisfies WorkerAliveMessage);
+    }
 }
 
 /**
@@ -380,6 +417,16 @@ export class UploadWorkerController {
     onCancel: () => void;
 
     heartbeatTimeout?: NodeJS.Timeout;
+
+    /**
+     * On Chrome, there is no way to know if a worker fails to load.
+     * If the worker is not loaded, it simply won't respond to any messages at all.
+     *
+     * The heartbeat could handle this, but since it takes 30 seconds,
+     * it's not particularly great UX. So instead we run a localized timeout, with a
+     * quicker turn-around time in case of failure.
+     */
+    workerTimeout?: NodeJS.Timeout;
 
     constructor(
         worker: Worker,
@@ -398,8 +445,16 @@ export class UploadWorkerController {
         this.worker = worker;
         this.onCancel = onCancel;
 
+        this.workerTimeout = setTimeout(() => {
+            worker?.terminate();
+            onError(getRefreshError().message);
+        }, WORKER_INIT_WAIT_TIME);
+
         worker.addEventListener('message', ({ data }: WorkerEvent) => {
             switch (data.command) {
+                case 'alive':
+                    clearTimeout(this.workerTimeout);
+                    break;
                 case 'keys_generated':
                     (async (data) => {
                         const privateKey = await CryptoProxy.importPrivateKey({
@@ -416,6 +471,7 @@ export class UploadWorkerController {
                             sessionKey: data.sessionKey,
                         });
                     })(data).catch((err) => {
+                        this.clearHeartbeatTimeout();
                         onError(err);
                     });
                     break;
@@ -434,6 +490,12 @@ export class UploadWorkerController {
                     break;
                 case 'error':
                     this.clearHeartbeatTimeout();
+
+                    if (data.error === PLEASE_REFRESH) {
+                        onError(getRefreshError().message);
+                        break;
+                    }
+
                     onError(data.error);
                     break;
                 case 'notify_sentry':
@@ -458,6 +520,15 @@ export class UploadWorkerController {
             }
         });
         worker.addEventListener('error', (event: ErrorEvent) => {
+            // When a worker fails to load (i.e. 404), an error event is sent without ErrorEvent properties
+            // This isn't properly documented, but basically, some browsers (Firefox) seem to handle
+            // failure to load the worker URL in this way, so this is why we have this condition.
+            // https://developer.mozilla.org/en-US/docs/Web/API/ErrorEvent
+            if (!('filename' in event)) {
+                onError(getRefreshError().message);
+                return;
+            }
+
             onError(getErrorString(event.error, event.message));
         });
     }
