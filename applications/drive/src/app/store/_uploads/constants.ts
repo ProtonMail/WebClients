@@ -94,3 +94,11 @@ export const HEARTBEAT_INTERVAL = 30 * 1000; // ms
  * This should be greater than HEARTBEAT_INTERVAL;
  */
 export const HEARTBEAT_WAIT_TIME = HEARTBEAT_INTERVAL * 2; // ms
+
+/**
+ * Amout of time to wait for messages after initialization before considering
+ * the worker is dead and asking the user to refresh the page.
+ *
+ * On Chrome, we have no way to know if a worker fetch was successful.
+ */
+export const WORKER_INIT_WAIT_TIME = 5 * 1000; // ms

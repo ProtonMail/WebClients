@@ -1,4 +1,4 @@
-export function isValidationError(err: any): boolean {
+export function isValidationError(err: any): err is ValidationError {
     return err.name === 'ValidationError';
 }
 
