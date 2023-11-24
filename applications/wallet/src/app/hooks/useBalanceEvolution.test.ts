@@ -2,28 +2,34 @@ import { renderHook } from '@testing-library/react-hooks';
 import { format, set } from 'date-fns';
 
 import { BITCOIN } from '../constants';
+import { Transaction } from '../types';
 import { useBalanceEvolution } from './useBalanceEvolution';
 
 describe('useBalanceEvolution', () => {
     const baseDate = set(new Date(), { year: 2023, month: 10 });
-    const simpleTransactions = [
+    const simpleTransactions: Transaction[] = [
         {
+            id: '1',
             timestamp: set(baseDate, { date: 22, hours: 13 }).getTime(),
             value: -0.24 * BITCOIN,
         },
         {
+            id: '2',
             timestamp: set(baseDate, { date: 22, hours: 6 }).getTime(),
             value: 0.04 * BITCOIN,
         },
         {
+            id: '3',
             timestamp: set(baseDate, { date: 21, hours: 7 }).getTime(),
             value: 0.8 * BITCOIN,
         },
         {
+            id: '4',
             timestamp: set(baseDate, { date: 21, hours: 8 }).getTime(),
             value: -0.05 * BITCOIN,
         },
         {
+            id: '5',
             timestamp: set(baseDate, { date: 21, hours: 9 }).getTime(),
             value: -0.05 * BITCOIN,
         },

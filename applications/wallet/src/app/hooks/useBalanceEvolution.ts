@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import { groupBy } from 'lodash';
 
 import { Transaction } from '../types';
+import { sortTransactionsByTime } from '../utils';
 
 export const useBalanceEvolution = (currentBalance: any, lastTransactions: Transaction[]) => {
     /**
@@ -16,9 +17,7 @@ export const useBalanceEvolution = (currentBalance: any, lastTransactions: Trans
         }
 
         // Sort tx from most recent to oldest
-        const sorted = lastTransactions.sort(
-            ({ timestamp: timestampA }, { timestamp: timestampB }) => timestampB - timestampA
-        );
+        const sorted = sortTransactionsByTime(lastTransactions);
 
         const [mostRecentTx] = sorted;
 
