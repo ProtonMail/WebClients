@@ -1,10 +1,15 @@
+import { wait } from '@proton/shared/lib/helpers/promise';
+
 import retryOnError from './retryOnError';
+
+jest.mock('@proton/shared/lib/helpers/promise');
 
 const errorMessage = 'STRI-I-I-I-I-I-ING';
 
 describe('retryOnError', () => {
     let throwingFunction: () => Promise<void>;
     let throwingFunction2: () => Promise<void>;
+    const mockedWait = jest.mocked(wait);
 
     beforeEach(() => {
         throwingFunction = jest.fn().mockImplementation(() => {
@@ -13,6 +18,7 @@ describe('retryOnError', () => {
         throwingFunction2 = jest.fn().mockImplementation(() => {
             throw new Error(errorMessage);
         });
+        mockedWait.mockReset();
     });
 
     it("runs main function once if there's no error", () => {
@@ -93,5 +99,45 @@ describe('retryOnError', () => {
         })().catch(() => {});
 
         expect(result).toBe(returnValue);
+    });
+
+    it('retries run function n times with backoff', async () => {
+        const promise = retryOnError<unknown>({
+            fn: throwingFunction,
+            shouldRetryBasedOnError: () => true,
+            maxRetriesNumber: 4,
+            backoff: true,
+        })();
+
+        await expect(promise).rejects.toThrow();
+        expect(retryOnError).toThrow();
+        expect(mockedWait.mock.calls.flat()).toEqual([30000, 60000, 90000, 150000]);
+    });
+
+    it('retries run function n times with new params', async () => {
+        const params = { params: 1 };
+        const preparationFunction = jest.fn().mockReturnValueOnce(params);
+        const promise = retryOnError<unknown>({
+            fn: throwingFunction,
+            shouldRetryBasedOnError: () => true,
+            beforeRetryCallback: preparationFunction,
+            maxRetriesNumber: 1,
+        })();
+        await expect(promise).rejects.toThrow();
+        expect(throwingFunction).toHaveBeenCalledWith(params);
+    });
+    it('retries run function n times with new params and backoff', async () => {
+        const params = { params: 1 };
+        const preparationFunction = jest.fn().mockReturnValueOnce(params);
+        const promise = retryOnError<unknown>({
+            fn: throwingFunction,
+            shouldRetryBasedOnError: () => true,
+            beforeRetryCallback: preparationFunction,
+            maxRetriesNumber: 1,
+            backoff: true,
+        })();
+        await expect(promise).rejects.toThrow();
+        expect(throwingFunction).toHaveBeenCalledWith(params);
+        expect(mockedWait.mock.calls.flat()).toEqual([30000]);
     });
 });
