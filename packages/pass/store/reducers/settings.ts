@@ -1,5 +1,6 @@
 import type { Reducer } from 'redux';
 
+import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
 import { toggleCriteria } from '@proton/pass/lib/settings/criteria';
 import {
     itemCreationSuccess,
@@ -10,6 +11,8 @@ import {
     syncLocalSettings,
     updatePauseListItem,
 } from '@proton/pass/store/actions';
+import { passwordOptionsEdit } from '@proton/pass/store/actions/creators/password';
+import type { MaybeNull } from '@proton/pass/types';
 import { SessionLockStatus } from '@proton/pass/types';
 import type {
     AutoFillSettings,
@@ -20,15 +23,16 @@ import type {
 import { partialMerge } from '@proton/pass/utils/object/merge';
 
 export type SettingsState = {
-    locale?: string;
-    sessionLockRegistered: boolean;
-    sessionLockTTL?: number;
     autofill: AutoFillSettings;
     autosave: AutoSaveSettings;
     autosuggest: AutoSuggestSettings;
-    loadDomainImages: boolean;
-    disallowedDomains: DomainCriterias;
     createdItemsCount: number /* explicitly created, not including import */;
+    disallowedDomains: DomainCriterias;
+    loadDomainImages: boolean;
+    locale?: string;
+    passwordOptions: MaybeNull<GeneratePasswordOptions>;
+    sessionLockRegistered: boolean;
+    sessionLockTTL?: number;
 };
 
 /* proxied settings will also be copied on local
@@ -43,6 +47,7 @@ export const INITIAL_SETTINGS: ProxiedSettings = {
     createdItemsCount: 0,
     disallowedDomains: {},
     loadDomainImages: true,
+    passwordOptions: null,
 };
 
 const INITIAL_STATE: SettingsState = {
@@ -52,6 +57,10 @@ const INITIAL_STATE: SettingsState = {
 };
 
 const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
+    if (syncLocalSettings.match(action)) return partialMerge<SettingsState>(state, action.payload);
+    if (passwordOptionsEdit.match(action)) return { ...state, passwordOptions: action.payload };
+    if (itemCreationSuccess.match(action)) partialMerge(state, { createdItemsCount: state.createdItemsCount + 1 });
+
     if (sessionLockEnableSuccess.match(action)) {
         return partialMerge(state, {
             sessionLockRegistered: true,
@@ -60,7 +69,10 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
     }
 
     if (sessionLockDisableSuccess.match(action)) {
-        return partialMerge(state, { sessionLockRegistered: false, sessionLockTTL: undefined });
+        return partialMerge(state, {
+            sessionLockRegistered: false,
+            sessionLockTTL: undefined,
+        });
     }
 
     if (sessionLockSync.match(action)) {
@@ -87,14 +99,6 @@ const reducer: Reducer<SettingsState> = (state = INITIAL_STATE, action) => {
                 [hostname]: toggleCriteria(criteriasSetting, criteria),
             },
         });
-    }
-
-    if (itemCreationSuccess.match(action)) {
-        return partialMerge(state, { createdItemsCount: state.createdItemsCount + 1 });
-    }
-
-    if (syncLocalSettings.match(action)) {
-        return partialMerge<SettingsState>(state, action.payload);
     }
 
     return state;
