@@ -93,6 +93,10 @@ const loadCustomElements = async () =>
  * improving performance (ie: run the form detection assessment here) */
 void (async () => {
     try {
+        // Prevent injection on non-HTML documents, for example XML files
+        const documentElement = document.ownerDocument || document;
+        if (!documentElement?.body) return;
+
         await new Promise<void>((resolve) => {
             const { readyState } = document;
             if (readyState === 'complete' || readyState === 'interactive') return resolve();
