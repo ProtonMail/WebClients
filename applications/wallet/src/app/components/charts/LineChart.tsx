@@ -21,7 +21,7 @@ export const LineChart = ({ dataset }: Props) => {
     useEffect(() => {
         const canvas = document.getElementById('line-chart') as HTMLCanvasElement;
         const ctx = canvas?.getContext?.('2d');
-        setGradient(ctx?.createLinearGradient?.(0, 0, 0, 200));
+        setGradient(ctx?.createLinearGradient?.(0, 0, 0, 145));
     }, []);
 
     return (

@@ -10,7 +10,7 @@ describe('YourWalletsSection', () => {
         const lightningBalanceContainer = screen.getByTestId('lightning-balance-card');
         expect(lightningBalanceContainer).toBeInTheDocument();
 
-        expect(within(lightningBalanceContainer).getByRole('heading', { level: 3, name: 'Your Checking' }));
+        expect(within(lightningBalanceContainer).getByRole('heading', { level: 3, name: 'Your checking' }));
         expect(within(lightningBalanceContainer).getByText('Lightning'));
         expect(lightningBalanceContainer).toHaveTextContent('0.027124 BTC');
         expect(lightningBalanceContainer).toHaveTextContent('$99.21');
@@ -22,7 +22,7 @@ describe('YourWalletsSection', () => {
         const onchainBalanceContainer = screen.getByTestId('onchain-balance-card');
         expect(onchainBalanceContainer).toBeInTheDocument();
 
-        expect(within(onchainBalanceContainer).getByRole('heading', { level: 3, name: 'Your Saving' }));
+        expect(within(onchainBalanceContainer).getByRole('heading', { level: 3, name: 'Your saving' }));
         expect(within(onchainBalanceContainer).getByText('OnChain'));
         expect(onchainBalanceContainer).toHaveTextContent('0.201688 BTC');
         expect(onchainBalanceContainer).toHaveTextContent('$737.69');

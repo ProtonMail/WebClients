@@ -3,3 +3,4 @@ export * from './BitcoinReceiveInfoGenerator';
 export * from './BalanceOverview';
 export * from './YourWalletsSection';
 export * from './ExploreProtonWalletSection';
+export * from './DashboardSideContent';

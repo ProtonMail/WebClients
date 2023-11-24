@@ -22,7 +22,7 @@ const ExploreProtonWalletItem = ({ iconSize, color, icon, title, content }: Expl
             rounded
             className="light-gradient-card mt-4 flex flex-column flex-align-items-start flex-item-grow max-w-custom mr-6"
             style={{
-                '--max-w-custom': '13rem',
+                '--max-w-custom': '11rem',
                 background: `linear-gradient(90deg, ${color}15 0%, var(--background-norm) 100%)`,
             }}
         >
@@ -32,8 +32,8 @@ const ExploreProtonWalletItem = ({ iconSize, color, icon, title, content }: Expl
             >
                 <Icon className="m-auto" size={iconSize} name={icon} color="#FFF" />
             </div>
-            <h3 className="m-0 mb-1 text-rg color-norm">{title}</h3>
-            <p className="m-0 color-hint">{content}</p>
+            <h3 className="m-0 mb-1 text-sm color-norm">{title}</h3>
+            <p className="m-0 text-sm color-hint">{content}</p>
         </Card>
     );
 };
@@ -41,9 +41,9 @@ const ExploreProtonWalletItem = ({ iconSize, color, icon, title, content }: Expl
 export const ExploreProtonWalletSection = () => {
     return (
         <div className="mt-14">
-            <h2 className="h3 text-semibold">{c('Wallet Dashboard').t`Explore ${WALLET_APP_NAME}`}</h2>
+            <h2 className="h4 text-semibold">{c('Wallet Dashboard').t`Explore ${WALLET_APP_NAME}`}</h2>
 
-            <div className="flex flex-row">
+            <div className="flex flex-row flex-justify-space-evenly">
                 <Href
                     className="text-no-decoration"
                     // TODO: change this with real KB link
