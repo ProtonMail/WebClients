@@ -1,3 +1,5 @@
+@import '~@proton/styles/scss/proton-pass';
+
 .pass-modal-two--sidebar,
 .pass-modal-two--sidebar-content {
 	&.modal-two {
@@ -19,12 +21,37 @@
 	}
 }
 
+// generic sidebar modal
 .pass-modal-two--sidebar .modal-two-dialog {
 	--size: 55%;
 }
 
+// content sidebar modal - should reach up to the
+// items list component when opened
 .pass-modal-two--sidebar-content .modal-two-dialog {
 	--size: 59.67%;
+}
+
+#pass-web {
+	.pass-modal-two--sidebar-content .modal-two-dialog {
+		@include media('<xsmall') {
+			--size: 100%;
+		}
+
+		@include media('>small') {
+			--size: calc(((100% - var(--pass-sidebar-size)) * 0.596));
+		}
+	}
+
+	.pass-modal-two--sidebar .modal-two-dialog {
+		@include media('<xsmall') {
+			--size: 90%;
+		}
+
+		@include media('>small') {
+			--size: calc(((100% - var(--pass-sidebar-size)) * 0.55));
+		}
+	}
 }
 
 @keyframes anime-modal-two-sidebar-dialog-in {
