@@ -1,7 +1,7 @@
 import { parse } from 'tldts';
 import type { Runtime } from 'webextension-polyfill';
 
-import type { MaybeNull, TabId } from '@proton/pass/types';
+import type { MaybeNull, RequiredNonNull, TabId } from '@proton/pass/types';
 
 import { isValidURL } from './is-valid-url';
 
@@ -58,7 +58,12 @@ export const parseUrl = (url?: string): ParsedUrl => {
     };
 };
 
-export type ParsedSender = { tabId: TabId; url: ParsedUrl };
+type ParsedSenderUrl = RequiredNonNull<ParsedUrl, 'domain' | 'protocol'>;
+
+export type ParsedSender = { tabId: TabId; url: ParsedSenderUrl };
+
+const isSupportedSenderUrl = (parsedUrl: ParsedUrl): parsedUrl is ParsedSenderUrl =>
+    parsedUrl.domain !== null && parsedUrl.protocol !== null;
 
 /* Safely parses the sender information, providing compatibility
  * for non-Chromium browsers: if available, uses the MessageSender origin
@@ -69,7 +74,7 @@ export const parseSender = (sender: Runtime.MessageSender): ParsedSender => {
     const parsedUrl = parseUrl(origin ?? url ?? '');
     const tabId = tab?.id;
 
-    if (!parsedUrl.domain || !tabId) throw new Error('Unsupported sender');
+    if (!isSupportedSenderUrl(parsedUrl) || !tabId) throw new Error('Unsupported sender');
 
     return { tabId, url: parsedUrl };
 };
