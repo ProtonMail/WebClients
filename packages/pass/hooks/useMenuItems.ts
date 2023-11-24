@@ -3,9 +3,9 @@ import { useDispatch } from 'react-redux';
 import { c } from 'ttag';
 
 import type { IconName } from '@proton/components';
-import { usePasswordContext } from '@proton/pass//components/PasswordGenerator/PasswordContext';
 import { syncIntent } from '@proton/pass//store/actions';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
+import { usePasswordContext } from '@proton/pass/components/Password/PasswordProvider';
 import {
     PASS_ANDROID_URL,
     PASS_GITHUB_URL,
@@ -30,7 +30,7 @@ export const useMenuItems = ({
     onAction = noop,
 }: MenuItemsOptions): Record<'feedback' | 'download' | 'advanced', MenuItem[]> => {
     const { openSettings } = usePassCore();
-    const { openPasswordHistory } = usePasswordContext();
+    const passwordContext = usePasswordContext();
     const dispatch = useDispatch();
     const withAction = withTap(onAction);
 
@@ -78,7 +78,7 @@ export const useMenuItems = ({
             {
                 icon: 'key-history',
                 label: c('Action').t`Generated passwords`,
-                onClick: withAction(openPasswordHistory),
+                onClick: withAction(passwordContext.history.open),
             },
             {
                 icon: 'arrow-rotate-right',

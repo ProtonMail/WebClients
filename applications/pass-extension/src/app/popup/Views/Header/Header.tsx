@@ -1,5 +1,4 @@
 import { type VFC } from 'react';
-import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
 import { vaultDeletionEffect } from 'proton-pass-extension/lib/components/Context/Items/ItemEffects';
@@ -13,38 +12,28 @@ import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickAct
 import { SpotlightContent } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { passwordSave } from '@proton/pass/store/actions/creators/password';
 import type { ItemType } from '@proton/pass/types';
-import { uniqueId } from '@proton/pass/utils/string/unique-id';
-import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import clsx from '@proton/utils/clsx';
 
 import { MenuDropdown } from './MenuDropdown';
 
 export const Header: VFC = () => {
     const { ready, context } = usePopupContext();
+    const { domain, subdomain, hostname } = context?.url ?? {};
     const history = useHistory();
+
     const filtering = useItemsFilteringContext();
     const { search, shareId, sort, type, setSearch } = filtering;
-
-    const dispatch = useDispatch();
 
     const onVaultDeleted = (shareId: string) => vaultDeletionEffect(shareId, filtering);
     const onVaultCreated = filtering.setShareId;
 
-    const onNewItem = (type: ItemType) => {
+    const onCreate = (type: ItemType) => {
         /* Trick to be able to return to the initial route using
          * history.goBack() if user switches from item creation
          * routes for multiple subsequent item types. */
         const shouldReplace = history.location.pathname.includes('/item/new/');
         history[shouldReplace ? 'replace' : 'push'](`/item/new/${type}`);
-    };
-
-    const onPasswordGenerated = (password: string) => {
-        const { domain, subdomain, hostname } = context?.url ?? {};
-        const url = subdomain ?? domain ?? hostname ?? null;
-
-        dispatch(passwordSave({ createTime: getEpoch(), id: uniqueId(), origin: url, value: password }));
     };
 
     const spotlight = useSpotlight();
@@ -62,7 +51,7 @@ export const Header: VFC = () => {
                         onChange={setSearch}
                     />
 
-                    <ItemQuickActions onNewItem={onNewItem} onPasswordGenerated={onPasswordGenerated} />
+                    <ItemQuickActions onCreate={onCreate} origin={subdomain ?? domain ?? hostname ?? null} />
 
                     <div className="flex-item-fluid-auto w-full">
                         <div

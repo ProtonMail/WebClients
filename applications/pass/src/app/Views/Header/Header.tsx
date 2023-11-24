@@ -17,7 +17,7 @@ type Props = { hamburger?: ReactElement; searchable?: boolean; title?: string };
 
 export const Header: FC<Props> = ({ hamburger, searchable = true }) => {
     const { filters, setFilters, navigate } = useNavigation();
-    const onNewItem = (type: ItemType) => navigate(getLocalPath(`item/new/${type}`));
+    const onCreate = (type: ItemType) => navigate(getLocalPath(`item/new/${type}`));
 
     const spotlight = useSpotlight();
     const definitions = useOnboardingMessages();
@@ -35,7 +35,7 @@ export const Header: FC<Props> = ({ hamburger, searchable = true }) => {
                 {searchable && (
                     <>
                         <SearchBar filters={filters} onChange={(search) => setFilters({ search })} />
-                        <ItemQuickActions onNewItem={onNewItem} />
+                        <ItemQuickActions onCreate={onCreate} />
                     </>
                 )}
                 <div className="flex-item-fluid-auto w-full">

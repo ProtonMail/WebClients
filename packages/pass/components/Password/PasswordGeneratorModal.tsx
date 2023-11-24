@@ -10,15 +10,15 @@ import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
 import { usePasswordGenerator } from '@proton/pass/hooks/usePasswordGenerator';
 
-import { usePasswordContext } from './PasswordContext';
 import { PasswordGenerator } from './PasswordGenerator';
+import { usePasswordContext } from './PasswordProvider';
 
 export type BaseProps = { actionLabel?: string; className?: string; onSubmit?: (password: string) => void };
 export type Props = Omit<ModalProps, 'onSubmit'> & BaseProps;
 
 export const PasswordGeneratorModal: VFC<Props> = ({ onSubmit, actionLabel, ...props }) => {
-    const { openPasswordHistory, options } = usePasswordContext();
-    const passwordGenerator = usePasswordGenerator(options);
+    const passwordContext = usePasswordContext();
+    const passwordGenerator = usePasswordGenerator(passwordContext.options);
     const handleActionClick = useCallback(() => onSubmit?.(passwordGenerator.password), [passwordGenerator, onSubmit]);
 
     useEffect(() => {
@@ -68,7 +68,7 @@ export const PasswordGeneratorModal: VFC<Props> = ({ onSubmit, actionLabel, ...p
 
                 <button
                     className="w-full flex flex-align-items-center flex-justify-space-between"
-                    onClick={openPasswordHistory}
+                    onClick={passwordContext.history.open}
                 >
                     <span>{c('Label').t`Password history`}</span>
                     <Icon name="chevron-right" />

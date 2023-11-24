@@ -1,5 +1,5 @@
 import type { VFC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -9,16 +9,17 @@ import { Icon } from '@proton/components/components';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
-import { passwordHistoryClear } from '@proton/pass/store/actions/creators/password';
 import { selectPasswordHistory } from '@proton/pass/store/selectors';
 import clsx from '@proton/utils/clsx';
 
 import { PasswordHistoryItem } from './PasswordHistoryItem';
+import { usePasswordContext } from './PasswordProvider';
 
 export const PasswordHistoryModal: VFC<ModalProps> = (props) => {
-    const dispatch = useDispatch();
-    const pwHistory = useSelector(selectPasswordHistory);
-    const empty = pwHistory.length === 0;
+    const passwordContext = usePasswordContext();
+    const history = useSelector(selectPasswordHistory);
+
+    const empty = history.length === 0;
 
     return (
         <SidebarModal {...props}>
@@ -41,7 +42,7 @@ export const PasswordHistoryModal: VFC<ModalProps> = (props) => {
                                 pill
                                 color="norm"
                                 className="text-sm flex-item-noshrink"
-                                onClick={() => dispatch(passwordHistoryClear())}
+                                onClick={passwordContext.history.clear}
                             >
                                 {c('Action').t`Clear`}
                             </Button>,
@@ -50,7 +51,7 @@ export const PasswordHistoryModal: VFC<ModalProps> = (props) => {
                 }
             >
                 <div className={'flex flex-nowrap flex-column gap-1'}>
-                    {pwHistory.map((entry) => (
+                    {history.map((entry) => (
                         <PasswordHistoryItem key={entry.id} {...entry} />
                     ))}
 
