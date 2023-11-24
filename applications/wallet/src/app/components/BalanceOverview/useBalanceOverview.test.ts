@@ -1,12 +1,13 @@
 import { renderHook } from '@testing-library/react-hooks';
 
+import * as getRandomAccentColorModule from '@proton/shared/lib/colors';
+
 import { transactions, wallets } from '../../tests';
-import * as getRandomColorModule from '../../utils/color';
 import { useBalanceOverview } from './useBalanceOverview';
 
 describe('useBalanceOverview', () => {
     beforeEach(() => {
-        jest.spyOn(getRandomColorModule, 'getRandomColor')
+        jest.spyOn(getRandomAccentColorModule, 'getRandomAccentColor')
             .mockReturnValueOnce('#33FF33')
             .mockReturnValueOnce('#FF3333')
             .mockReturnValueOnce('#5733FF')
