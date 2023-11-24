@@ -49,6 +49,11 @@ $padding-inline-end-link: var(--space-2) !default;
 	color: var(--text-weak);
 	transition: color 0.15s easing(ease-out-quint);
 
+	// crazy fix for Brave poor display
+	&--fixAliasing {
+		transform: rotate(20deg);
+	}
+
 	&-empty {
 		inline-size: rem(16);
 	}
