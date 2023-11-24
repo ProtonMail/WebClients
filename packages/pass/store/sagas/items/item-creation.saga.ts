@@ -44,9 +44,9 @@ function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOpt
         yield put(itemCreationSuccessAction);
         yield isAlias && put(requestInvalidate(aliasOptionsRequest(shareId))); /* reset alias options */
 
-        void telemetry?.pushEvent(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: item.data.type }));
+        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: item.data.type }));
         if (item.data.type === 'login' && item.data.content.totpUri) {
-            void telemetry?.pushEvent(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
+            void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
         }
 
         onItemCreationIntentProcessed?.(itemCreationSuccessAction);
@@ -75,14 +75,10 @@ function* withAliasCreationWorker(
         yield put(itemCreationSuccess({ optimisticId, shareId, item: loginItem, alias: aliasItem }));
         yield put(requestInvalidate(aliasOptionsRequest(shareId))); /* reset alias options */
 
-        void telemetry?.pushEvent(
-            createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: loginItem.data.type })
-        );
-        void telemetry?.pushEvent(
-            createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: aliasItem.data.type })
-        );
+        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: loginItem.data.type }));
+        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemCreation, {}, { type: aliasItem.data.type }));
         if (loginItem.data.type === 'login' && loginItem.data.content.totpUri) {
-            void telemetry?.pushEvent(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
+            void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
         }
 
         onItemsUpdated?.();

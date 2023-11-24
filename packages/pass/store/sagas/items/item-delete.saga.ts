@@ -27,7 +27,7 @@ function* deleteItem(
             },
         });
 
-        void telemetry?.pushEvent(createTelemetryEvent(TelemetryEventName.ItemDeletion, {}, { type: item.data.type }));
+        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemDeletion, {}, { type: item.data.type }));
         yield put(itemDeleteSuccess({ itemId: item.itemId, shareId }));
         onItemsUpdated?.();
     } catch (e) {
