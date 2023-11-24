@@ -34,7 +34,7 @@ import {
     sanitizeLoginAliasSave,
 } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
-import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
+import { passwordSave } from '@proton/pass/store/actions/creators/password';
 import { selectTOTPLimits, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { LoginItemFormValues, NewLoginItemFormValues } from '@proton/pass/types';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';

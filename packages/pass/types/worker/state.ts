@@ -1,5 +1,4 @@
 import type { AuthSession } from '@proton/pass/lib/auth/session';
-import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
 import type { ItemDraft } from '@proton/pass/store/reducers';
 
 import type { ItemFilters, SelectedItem } from '../data';
@@ -43,5 +42,4 @@ export type PopupInitialState = {
     draft: MaybeNull<ItemDraft>;
     filters: MaybeNull<ItemFilters>;
     selectedItem: MaybeNull<SelectedItem>;
-    passwordOptions: MaybeNull<GeneratePasswordOptions>;
 };
