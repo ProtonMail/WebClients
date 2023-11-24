@@ -13,7 +13,7 @@ import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickAct
 import { SpotlightContent } from '@proton/pass/components/Spotlight/SpotlightContent';
 import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
-import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
+import { passwordSave } from '@proton/pass/store/actions/creators/password';
 import type { ItemType } from '@proton/pass/types';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
