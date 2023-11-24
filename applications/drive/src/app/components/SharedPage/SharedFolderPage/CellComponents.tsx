@@ -76,7 +76,7 @@ function SizeCell({ item }: { item: PublicLink }) {
     if (item.progress) {
         return (
             <TableCell
-                className="m-0 w-custom flex flex-nowrap flex-justify-end"
+                className="m-0 w-custom flex flex-nowrap flex-justify-end flex-align-items-center"
                 style={{ '--w-custom': '11em' }}
                 data-testid="column-size"
             >
