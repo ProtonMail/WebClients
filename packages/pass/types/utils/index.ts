@@ -6,7 +6,9 @@ export type MaybeArray<T> = T | T[];
 export type MaybePromise<T> = T | Promise<T>;
 export type Unpack<T> = T extends (infer U)[] ? U : never;
 
-export type RequiredNonNull<T> = Omit<T, keyof T> & { [P in keyof T]-?: NonNullable<T[P]> };
+export type RequiredNonNull<T, K extends keyof T = keyof T> = Omit<T, keyof T> & {
+    [P in keyof T]-?: P extends K ? NonNullable<T[P]> : T[P];
+};
 export type RequiredProps<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
 export type RecursivePartial<T> = { [P in keyof T]?: RecursivePartial<T[P]> };
 

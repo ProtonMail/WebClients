@@ -114,20 +114,20 @@ export const createFormTrackerService = () => {
 
             if (ctx.getState().loggedIn) {
                 const { tabId, url } = parseSender(sender);
-                if (url.domain) {
-                    return {
-                        staged: stage(
-                            tabId,
-                            {
-                                domain: url.domain,
-                                subdomain: url.subdomain,
-                                type,
-                                data,
-                            },
-                            payload.reason
-                        ),
-                    };
-                }
+
+                return {
+                    staged: stage(
+                        tabId,
+                        {
+                            domain: url.domain,
+                            subdomain: url.subdomain,
+                            scheme: url.protocol,
+                            type,
+                            data,
+                        },
+                        payload.reason
+                    ),
+                };
             }
 
             throw new Error('Cannot stage submission while logged out');
