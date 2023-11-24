@@ -51,3 +51,10 @@ a {
 		padding: 0.375rem;
 	}
 }
+
+// Pill outline buttons
+.button.button-outline-norm.button-pill {
+	--button-default-text-color: var(--interaction-norm-major-1);
+	--button-hover-text-color: var(--interaction-norm-major-2);
+	--button-active-text-color: var(--interaction-norm-major-3);
+}
