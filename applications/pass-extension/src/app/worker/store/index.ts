@@ -41,7 +41,7 @@ const options: WorkerRootSagaOptions = {
     getAuthService: withContext((ctx) => ctx.service.auth),
     getCache: withContext(async (ctx) => {
         /* cache is considered valid if versions match */
-        const cache = await ctx.service.storage.local.get(['state', 'snapshot', 'salt', 'version']);
+        const cache = await ctx.service.storage.local.getItems(['state', 'snapshot', 'salt', 'version']);
         return cache.version === getExtensionVersion() ? cache : {};
     }),
 
@@ -51,7 +51,7 @@ const options: WorkerRootSagaOptions = {
         WorkerMessageBroker.ports.query(isPopupPort()).length > 0 ? ACTIVE_POLLING_TIMEOUT : INACTIVE_POLLING_TIMEOUT,
 
     setCache: withContext((ctx, encryptedCache) =>
-        ctx.service.storage.local.set({
+        ctx.service.storage.local.setItems({
             ...encryptedCache,
             version: getExtensionVersion(),
         })
@@ -73,7 +73,7 @@ const options: WorkerRootSagaOptions = {
         } else {
             ctx.service.telemetry?.stop();
             ctx.setStatus(AppStatus.ERROR);
-            if (res.clearCache) await ctx.service.storage.local.unset(['salt', 'state', 'snapshot']);
+            if (res.clearCache) await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
         }
     }),
 

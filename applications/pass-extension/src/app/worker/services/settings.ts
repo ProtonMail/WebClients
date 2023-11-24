@@ -19,7 +19,7 @@ export const createSettingsService = () => {
      * but need to preserve the user settings in the content-script */
     const sync = withContext<(settings: ProxiedSettings) => Promise<void>>(async ({ service }, settings) => {
         await service.i18n.setLocale(settings.locale).catch(noop);
-        await service.storage.local.set({ settings: JSON.stringify(settings) });
+        await service.storage.local.setItem('settings', JSON.stringify(settings));
 
         logger.info('[Worker::Settings] synced settings');
 
@@ -33,7 +33,7 @@ export const createSettingsService = () => {
 
     const resolve = withContext<() => Promise<ProxiedSettings>>(async ({ service }) => {
         try {
-            const { settings } = await service.storage.local.get(['settings']);
+            const settings = await service.storage.local.getItem('settings');
             if (!settings) throw new Error();
 
             return JSON.parse(settings);
@@ -46,7 +46,7 @@ export const createSettingsService = () => {
      * locally stored settings with the results */
     const onInstall = withContext<() => Promise<void>>(async ({ service }) => {
         const initialSettings = selectProxiedSettings(store.getState());
-        return service.storage.local.set({ settings: JSON.stringify(initialSettings) });
+        return service.storage.local.setItem('settings', JSON.stringify(initialSettings));
     });
 
     WorkerMessageBroker.registerMessage(

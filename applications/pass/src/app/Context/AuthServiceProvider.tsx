@@ -19,6 +19,7 @@ import noop from '@proton/utils/noop';
 
 import { api, authStore } from '../../lib/core';
 import { deletePassDB } from '../../lib/database';
+import { onboarding } from '../../lib/onboarding';
 import type { ServiceWorkerMessageHandler } from '../ServiceWorker/ServiceWorkerProvider';
 import { useServiceWorker } from '../ServiceWorker/ServiceWorkerProvider';
 import { store } from '../Store/store';
@@ -90,6 +91,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
             onAuthorized: (_, localID) => {
                 const redirect = stripLocalBasenameFromPathname(redirectPath.current);
                 history.replace((getBasename(localID) ?? '/') + redirect);
+                onboarding.init().catch(noop);
                 client.current.setStatus(AppStatus.AUTHORIZED);
                 store.dispatch(bootIntent());
                 client.current.setStatus(AppStatus.BOOTING);
@@ -107,6 +109,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 history.replace('/');
 
                 store.dispatch(stateDestroy());
+                onboarding.reset();
             },
 
             onForkConsumed: (_, state) => {

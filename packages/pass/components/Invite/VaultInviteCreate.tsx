@@ -20,7 +20,7 @@ import { ShareRole } from '@proton/pass/types';
 import { VaultColor, VaultIcon } from '@proton/pass/types/protobuf/vault-v1';
 import clsx from '@proton/utils/clsx';
 
-import { useInviteContext } from './InviteContextProvider';
+import { useInviteContext } from './InviteProvider';
 import { FORM_ID, VaultInviteForm } from './VaultInviteForm';
 
 export type VaultInviteCreateProps =

@@ -21,6 +21,7 @@ import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 import noop from '@proton/utils/noop';
 
 import { PASS_CONFIG, authStore } from '../lib/core';
+import { onboarding } from '../lib/onboarding';
 import { AuthServiceProvider } from './Context/AuthServiceProvider';
 import { ClientContext, ClientProvider } from './Context/ClientProvider';
 import { ServiceWorkerProvider } from './ServiceWorker/ServiceWorkerProvider';
@@ -50,11 +51,13 @@ const getDomainImageURL = (domain?: string): Maybe<string> =>
 export const App = () => {
     return (
         <PassCoreProvider
+            endpoint="web"
             config={PASS_CONFIG}
             generateOTP={generateOTP}
             getDomainImageURL={getDomainImageURL}
             onLink={onLink}
             onTelemetry={onTelemetry}
+            onOnboardingAck={onboarding.acknowledge}
         >
             <CompatibilityCheck>
                 <Icons />
