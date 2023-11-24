@@ -61,13 +61,13 @@ function* itemEditWorker(
         const itemEditSuccessAction = itemEditSuccess({ item, itemId, shareId });
         yield put(itemEditSuccessAction);
 
-        void telemetry?.pushEvent(createTelemetryEvent(TelemetryEventName.ItemUpdate, {}, { type: item.data.type }));
+        void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemUpdate, {}, { type: item.data.type }));
 
         if (item.data.type === 'login' && editIntent.type === 'login') {
             const prevTotp = editIntent.content.totpUri;
             const nextTotp = item.data.content.totpUri;
             if (nextTotp && prevTotp !== nextTotp) {
-                void telemetry?.pushEvent(createTelemetryEvent(TelemetryEventName.TwoFAUpdate, {}, {}));
+                void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFAUpdate, {}, {}));
             }
         }
 
