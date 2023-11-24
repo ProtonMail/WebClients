@@ -6,21 +6,31 @@ import { Icon } from '@proton/components/components/icon';
 import useFeature from '@proton/components/hooks/useFeature';
 import useUser from '@proton/components/hooks/useUser';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { getIsB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
+import { useSubscription } from '../..';
 import { FeatureCode } from '../features/FeaturesContext';
 
 import './AliasPromotionSection.scss';
 
 const AliasPromotionSection = () => {
     const [user] = useUser();
+    const [subscription] = useSubscription();
     const { feature, loading, update } = useFeature(FeatureCode.AliasPromotion);
 
     const title = user.hasPaidMail
         ? c('Alias promotion').t`Get unlimited aliases!`
         : c('Alias promotion').t`Get 10 aliases for free!`;
 
-    if (loading || !feature || !feature.Value) {
+    if (
+        loading ||
+        !feature ||
+        !feature.Value ||
+        !subscription ||
+        !subscription.Plans ||
+        getIsB2BPlan(subscription.Plans[0].Name)
+    ) {
         return null;
     }
 
