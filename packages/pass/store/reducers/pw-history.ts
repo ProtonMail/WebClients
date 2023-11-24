@@ -17,6 +17,8 @@ export type PasswordHistoryEntry = {
     createTime: number;
 };
 
+export type PasswordItem = Omit<PasswordHistoryEntry, 'createTime' | 'id'>;
+
 export type PasswordHistoryState = PasswordHistoryEntry[];
 
 const reducer: Reducer<PasswordHistoryState> = (state = [], action) => {
