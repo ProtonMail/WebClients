@@ -6,7 +6,7 @@ import { c } from 'ttag';
 
 import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
 import { getItemRoute, getLocalPath, preserveSearch } from '@proton/pass/components/Core/routing';
-import { useInviteContext } from '@proton/pass/components/Invite/InviteContextProvider';
+import { useInviteContext } from '@proton/pass/components/Invite/InviteProvider';
 import { VaultInviteFromItemModal } from '@proton/pass/components/Invite/VaultInviteFromItemModal';
 import { AliasView } from '@proton/pass/components/Item/Alias/Alias.view';
 import { CreditCardView } from '@proton/pass/components/Item/CreditCard/CreditCard.view';
