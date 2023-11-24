@@ -25,7 +25,7 @@ export const isValidURL = (
     scheme?: string
 ): { valid: boolean; url: string; protocol: MaybeNull<string> } => {
     try {
-        const url = `${scheme ?? ''}${maybeUrl}`.trim();
+        const url = (scheme ? `${scheme}//${maybeUrl}` : maybeUrl).trim();
 
         /* invalidate if contains white-space after sanitization */
         if (/\s/.test(url)) return { valid: false, url, protocol: null };
@@ -40,7 +40,7 @@ export const isValidURL = (
     } catch (_) {
         const startsWithHttpProtocol = /^https?:\/\//.test(maybeUrl);
         return scheme === undefined && !startsWithHttpProtocol
-            ? isValidURL(maybeUrl, 'https://')
+            ? isValidURL(maybeUrl, 'https:')
             : { valid: false, url: maybeUrl, protocol: null };
     }
 };

@@ -78,7 +78,7 @@ export const Autosave: VFC<Props> = ({ settings, submission, visible, onClose })
         onSubmit: async ({ name, username, password }) => {
             setBusy(true);
 
-            const { valid, url } = isValidURL(submissionURL);
+            const { valid, url } = isValidURL(submissionURL, submission.scheme);
 
             const item: Item<'login'> =
                 submission.autosave.data.action === AutoSaveType.UPDATE
