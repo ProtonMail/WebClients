@@ -7,7 +7,7 @@ import type { ItemFilters, Maybe, MaybeNull, SelectedItem } from '@proton/pass/t
 
 import { getItemRoute, getLocalPath, getTrashRoute } from './routing';
 
-type NavigateOptions = { mode?: 'push' | 'replace'; search?: string };
+type NavigateOptions = { mode?: 'push' | 'replace'; search?: string; hash?: string };
 type ItemSelectOptions = NavigateOptions & { view?: 'edit' | 'view'; inTrash?: boolean };
 
 type NavigationContextValue = {
@@ -49,6 +49,7 @@ export const NavigationProvider: FC = ({ children }) => {
             history[options.mode ?? 'push']({
                 pathname,
                 search: options.search ?? history.location.search,
+                hash: options.hash,
             }),
         []
     );
