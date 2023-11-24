@@ -10,7 +10,6 @@ import {
     selectItemByShareIdAndId,
     selectItemDraft,
     selectPopupFilters,
-    selectPopupPasswordOptions,
     selectPopupTabState,
 } from '@proton/pass/store/selectors';
 import type { MaybeNull, WorkerMessageWithSender, WorkerWakeUpMessage } from '@proton/pass/types';
@@ -232,7 +231,6 @@ export const createActivationService = () => {
         const state = store.getState();
         const tabState = selectPopupTabState(tabId)(state);
         const filters = selectPopupFilters(state);
-        const passwordOptions = selectPopupPasswordOptions(state);
         const pushTabState = tabState !== undefined && [subdomain, domain].includes(tabState.domain);
         const searchForAutofill = hasAutofillCandidates && domain ? domain : '';
 
@@ -248,7 +246,6 @@ export const createActivationService = () => {
             draft: validDraft ? draft : null,
             selectedItem: pushTabState && validItem ? tabState!.selectedItem : null,
             filters,
-            passwordOptions,
         };
     });
 

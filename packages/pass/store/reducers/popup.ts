@@ -1,12 +1,10 @@
 import type { AnyAction, Reducer } from 'redux';
 
-import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
+import { itemDraftDiscard, itemDraftSave } from '@proton/pass/store/actions';
+import { popupTabStateGarbageCollect, popupTabStateSave } from '@proton/pass/store/actions/creators/popup';
 import type { ItemFilters, ItemType, MaybeNull, SelectedItem, TabId, UniqueItem } from '@proton/pass/types';
 import { objectDelete } from '@proton/pass/utils/object/delete';
 import { merge } from '@proton/pass/utils/object/merge';
-
-import { itemDraftDiscard, itemDraftSave } from '../actions';
-import { popupPasswordOptionsSave, popupTabStateGarbageCollect, popupTabStateSave } from '../actions/creators/popup';
 
 export type ItemDraft<T extends {} = {}> = UniqueItem & {
     mode: 'new' | 'edit';
@@ -25,12 +23,11 @@ export type PopupState = {
     draft: MaybeNull<ItemDraft>;
     tabs: { [tabId: TabId]: PopupTabState };
     filters: MaybeNull<ItemFilters>;
-    passwordOptions: MaybeNull<GeneratePasswordOptions>;
 };
 
-const initialState: PopupState = { draft: null, tabs: {}, filters: null, passwordOptions: null };
+const INITIAL_STATE: PopupState = { draft: null, tabs: {}, filters: null };
 
-const popupReducer: Reducer<PopupState> = (state = initialState, action: AnyAction) => {
+const popupReducer: Reducer<PopupState> = (state = INITIAL_STATE, action: AnyAction) => {
     if (itemDraftSave.match(action)) return { ...state, draft: action.payload };
     if (itemDraftDiscard.match(action)) return { ...state, draft: null };
 
@@ -51,10 +48,6 @@ const popupReducer: Reducer<PopupState> = (state = initialState, action: AnyActi
                 state.tabs
             ),
         };
-    }
-
-    if (popupPasswordOptionsSave.match(action)) {
-        return { ...state, passwordOptions: action.payload };
     }
 
     return state;

@@ -1,5 +1,5 @@
 import { type ReactElement, type VFC, useMemo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -22,6 +22,7 @@ import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButt
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
+import { usePasswordContext } from '@proton/pass/components/Password/PasswordProvider';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
@@ -34,7 +35,6 @@ import {
     sanitizeLoginAliasSave,
 } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
-import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { selectTOTPLimits, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { LoginItemFormValues, NewLoginItemFormValues } from '@proton/pass/types';
 import { type LoginWithAliasCreationDTO } from '@proton/pass/types';
@@ -49,13 +49,12 @@ import { parseUrl } from '@proton/pass/utils/url/parser';
 const FORM_ID = 'new-login';
 
 export const LoginNew: VFC<ItemNewViewProps<'login'>> = ({ shareId, url, onCancel, onSubmit }) => {
-    const { domain, subdomain } = url ?? {};
-
-    const dispatch = useDispatch();
-    const { search } = useLocation();
-
+    const passwordContext = usePasswordContext();
     const { vaultTotalCount } = useSelector(selectVaultLimits);
     const { needsUpgrade } = useSelector(selectTOTPLimits);
+
+    const { domain, subdomain } = url ?? {};
+    const { search } = useLocation();
 
     const initialValues: LoginItemFormValues = useMemo(() => {
         const params = new URLSearchParams(search);
@@ -273,15 +272,8 @@ export const LoginNew: VFC<ItemNewViewProps<'login'>> = ({ shareId, url, onCance
                                         const { urls, url } = form.values;
                                         const baseUrl = urls?.[0]?.url ?? url;
                                         const { subdomain, domain, hostname } = parseUrl(baseUrl);
-
-                                        dispatch(
-                                            passwordSave({
-                                                id: uniqueId(),
-                                                value,
-                                                origin: subdomain ?? domain ?? hostname,
-                                                createTime: getEpoch(),
-                                            })
-                                        );
+                                        const origin = subdomain ?? domain ?? hostname;
+                                        passwordContext.history.add({ value, origin });
                                     }}
                                 />
 

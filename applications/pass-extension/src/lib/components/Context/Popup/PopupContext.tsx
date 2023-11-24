@@ -36,7 +36,6 @@ export const INITIAL_POPUP_STATE: PopupInitialState = {
     draft: null,
     filters: null,
     selectedItem: null,
-    passwordOptions: null,
 };
 
 export const PopupContext = createContext<PopupContextValue>({
