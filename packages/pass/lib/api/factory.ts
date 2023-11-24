@@ -21,11 +21,13 @@ import {
     getIsUnreachableError,
 } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getClientID } from '@proton/shared/lib/apps/helper';
+import { DEFAULT_TIMEOUT } from '@proton/shared/lib/constants';
 import xhr from '@proton/shared/lib/fetch/fetch';
 import { withLocaleHeaders } from '@proton/shared/lib/fetch/headers';
 import { getDateHeader } from '@proton/shared/lib/fetch/helpers';
 import { localeCode } from '@proton/shared/lib/i18n';
 import type { ProtonConfig } from '@proton/shared/lib/interfaces/config';
+import noop from '@proton/utils/noop';
 
 import { withApiHandlers } from './handlers';
 import { createRefreshHandler } from './refresh';
@@ -116,7 +118,7 @@ export const createApi = ({ config, getAuth }: ApiFactoryOptions): Api => {
          * ie: on session inactive error propagating to every pending call */
         if (api.getState().pendingCount > 0) {
             logger.info(`[API] Reset deferred until API idle`);
-            await waitUntil(() => api.getState().pendingCount === 0, 50);
+            await waitUntil(() => api.getState().pendingCount === 0, 50, DEFAULT_TIMEOUT).catch(noop);
         }
 
         state.pendingCount = 0;
