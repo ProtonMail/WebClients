@@ -98,6 +98,20 @@ describe('otp parser', () => {
             'otpauth://totp/TestIssuer:TestLabel?issuer=TestIssuer&secret=QWERTZUIOPASDFGH&algorithm=SHA1&digits=6&period=30'
         );
     });
+
+    test('should handle spaces in OTP URL secret', () => {
+        expect(
+            parseOTPValue('otpauth://totp/label?secret=P4MB%20XHOF%20DVHZ%20QCQS%20Z4QV%204XRV%20IS4N%203VAT')
+        ).toEqual('otpauth://totp/label?secret=P4MBXHOFDVHZQCQSZ4QV4XRVIS4N3VAT&algorithm=SHA1&digits=6&period=30');
+
+        expect(parseOTPValue('otpauth://totp/label?secret=P4MB XHOF DVHZ QCQS Z4QV 4XRV IS4N 3VAT')).toEqual(
+            'otpauth://totp/label?secret=P4MBXHOFDVHZQCQSZ4QV4XRVIS4N3VAT&algorithm=SHA1&digits=6&period=30'
+        );
+    });
+
+    test('should handle URL-encoded spaces in base32 secrets', () => {
+        expect(parseOTPValue('NMC2%20NUFE%20YUEB%20IT4U')).toEqual(toOtpUri('NMC2 NUFE YUEB IT4U'));
+    });
 });
 
 describe('getOPTSecret', () => {
