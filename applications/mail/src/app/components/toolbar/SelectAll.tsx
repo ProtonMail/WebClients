@@ -2,6 +2,8 @@ import { c } from 'ttag';
 
 import { Checkbox, DropdownMenu, DropdownMenuButton, Icon, Tooltip } from '@proton/components';
 
+import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
+
 import { isStarred, isUnread } from '../../helpers/elements';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import ToolbarDropdown from './ToolbarDropdown';
@@ -17,12 +19,18 @@ interface Props {
 
 const SelectAll = ({ labelID, loading, disabled, elementIDs, checkedIDs, onCheck }: Props) => {
     const getElementsFromIDs = useGetElementsFromIDs();
+    const { selectAll, setSelectAll } = useSelectAll({ labelID });
 
     const checked = elementIDs.length ? elementIDs.length === checkedIDs.length : false;
 
     const indeterminate = elementIDs.length ? checkedIDs.length > 0 && elementIDs.length !== checkedIDs.length : false;
 
-    const handleAll = (checked: boolean) => () => onCheck(elementIDs, checked, true);
+    const handleAll = (checked: boolean) => () => {
+        if (selectAll && !checked) {
+            setSelectAll(false);
+        }
+        onCheck(elementIDs, checked, true);
+    };
 
     const handleRead = (read: boolean) => () =>
         onCheck(

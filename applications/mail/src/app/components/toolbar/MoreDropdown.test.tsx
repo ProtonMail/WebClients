@@ -1,8 +1,8 @@
 import { fireEvent, screen } from '@testing-library/react';
 
-import { render } from 'proton-mail/helpers/test/render';
-
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
+
+import { render } from 'proton-mail/helpers/test/render';
 
 import useSnooze from '../../hooks/actions/useSnooze';
 import { useLabelActions } from '../../hooks/useLabelActions';

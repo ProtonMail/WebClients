@@ -2,7 +2,8 @@ import { fireEvent } from '@testing-library/react';
 
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
-import { SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
+import { MailSettings } from '@proton/shared/lib/interfaces';
+import { MAIL_PAGE_SIZE, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
 import {
@@ -46,7 +47,7 @@ describe('PageContainer', () => {
         }));
 
         minimalCache();
-        addToCache('MailSettings', { Shortcuts: SHORTCUTS.ENABLED });
+        addToCache('MailSettings', { Shortcuts: SHORTCUTS.ENABLED, PageSize: MAIL_PAGE_SIZE.FIFTY } as MailSettings);
 
         const renderResult = await render(<Component {...props} />, false);
         const { container } = renderResult;

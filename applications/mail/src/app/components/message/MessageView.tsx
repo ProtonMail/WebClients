@@ -25,7 +25,7 @@ import { LOAD_RETRY_COUNT } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { isUnread } from '../../helpers/elements';
 import { MessageViewIcons, getReceivedStatusIcon, getSentStatusIconInfo } from '../../helpers/message/icon';
-import { useMarkAs } from '../../hooks/actions/useMarkAs';
+import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useQuickReplyFocus } from '../../hooks/composer/useQuickReplyFocus';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
@@ -121,7 +121,7 @@ const MessageView = (
     const loadRemoteImages = useLoadRemoteImages(message.localID);
     const loadEmbeddedImages = useLoadEmbeddedImages(message.localID);
     const resignContact = useResignContact(message.localID);
-    const markAs = useMarkAs();
+    const { markAs } = useMarkAs();
 
     const onCompose = useOnCompose();
 
@@ -291,13 +291,21 @@ const MessageView = (
     useEffect(() => {
         const element = message.data as Element;
         if (expanded && unread && bodyLoaded) {
-            markAs([element], labelID, MARK_AS_STATUS.READ);
+            void markAs({
+                elements: [element],
+                labelID,
+                status: MARK_AS_STATUS.READ,
+            });
         }
 
         // Mark the message as read again when DisplaySnoozedReminder is true (snooze feature)
         const isReminded = isElementReminded(element);
         if (!unread && isReminded && !conversationMode) {
-            markAs([element], labelID, MARK_AS_STATUS.READ);
+            void markAs({
+                elements: [element],
+                labelID,
+                status: MARK_AS_STATUS.READ,
+            });
         }
     }, [expanded, unread, bodyLoaded]);
 
