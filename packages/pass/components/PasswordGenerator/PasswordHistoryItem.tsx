@@ -8,7 +8,7 @@ import { Icon } from '@proton/components/components';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
-import { passwordDelete } from '@proton/pass/store/actions/creators/pw-history';
+import { passwordDelete } from '@proton/pass/store/actions/creators/password';
 import type { PasswordHistoryEntry } from '@proton/pass/store/reducers';
 import { getFormattedDateFromTimestamp } from '@proton/pass/utils/time/format';
 
