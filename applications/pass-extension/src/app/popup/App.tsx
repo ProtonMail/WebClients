@@ -28,7 +28,7 @@ export const App: VFC = () => {
                     {({ setShareId }) => (
                         <InviteProvider onVaultCreated={setShareId}>
                             <ItemEffects />
-                            <PasswordContextProvider initial={state.initial.passwordOptions}>
+                            <PasswordContextProvider>
                                 <SpotlightProvider>
                                     <Main />
                                 </SpotlightProvider>

@@ -5,7 +5,7 @@ import {
     passwordHistoryClear,
     passwordHistoryGarbageCollect,
     passwordSave,
-} from '@proton/pass/store/actions/creators/pw-history';
+} from '@proton/pass/store/actions/creators/password';
 import type { MaybeNull } from '@proton/pass/types';
 import { UNIX_DAY } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';

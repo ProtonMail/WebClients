@@ -12,7 +12,7 @@ import { itemAutofilled } from '@proton/pass/store/actions';
 import {
     selectAutofillCandidates,
     selectItemByShareIdAndId,
-    selectPopupPasswordOptions,
+    selectPasswordOptions,
     selectVaultLimits,
     selectWritableVaults,
 } from '@proton/pass/store/selectors';
@@ -124,7 +124,7 @@ export const createAutoFillService = () => {
     );
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.AUTOFILL_PASSWORD_OPTIONS, () => {
-        return { options: selectPopupPasswordOptions(store.getState()) ?? DEFAULT_RANDOM_PW_OPTIONS };
+        return { options: selectPasswordOptions(store.getState()) ?? DEFAULT_RANDOM_PW_OPTIONS };
     });
 
     WorkerMessageBroker.registerMessage(
