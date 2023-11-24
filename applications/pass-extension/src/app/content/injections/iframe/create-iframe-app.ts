@@ -32,7 +32,7 @@ type CreateIFrameAppOptions<A> = {
     classNames?: string[];
     backdropClose: boolean;
     backdropExclude?: () => HTMLElement[];
-    onReady?: () => void;
+    onError?: () => void;
     onOpen?: (state: IFrameState<A>) => void;
     onClose?: (state: IFrameState<A>, options: IFrameCloseOptions) => void;
     position: (iframeRoot: HTMLElement) => Partial<Rect>;
@@ -46,6 +46,7 @@ export const createIFrameApp = <A>({
     classNames = [],
     backdropClose,
     backdropExclude,
+    onError,
     onOpen,
     onClose,
     position,
@@ -85,10 +86,12 @@ export const createIFrameApp = <A>({
         await sendMessage.onSuccess(
             contentScriptMessage({ type: WorkerMessageType.RESOLVE_EXTENSION_KEY }),
             async ({ key }) =>
-                waitUntil(() => state.loaded, 100).then(() => {
-                    const secureMessage: IFrameSecureMessage = { ...message, key, sender: 'contentscript' };
-                    iframe.contentWindow?.postMessage(secureMessage, iframe.src);
-                })
+                waitUntil(() => state.loaded, 100)
+                    .then(() => {
+                        const secureMessage: IFrameSecureMessage = { ...message, key, sender: 'contentscript' };
+                        iframe.contentWindow?.postMessage(secureMessage, iframe.src);
+                    })
+                    .catch(onError)
         );
     };
 
@@ -99,9 +102,9 @@ export const createIFrameApp = <A>({
      * to directly open a port with the current tab */
     const sendPortMessage = (rawMessage: IFrameMessage) => {
         const message: IFrameMessageWithSender = { ...rawMessage, sender: 'contentscript' };
-        void waitUntil(() => state.ready, 100).then(
-            () => state.port?.postMessage(portForwardingMessage(state.framePort!, message))
-        );
+        void waitUntil(() => state.ready, 100)
+            .then(() => state.port?.postMessage(portForwardingMessage(state.framePort!, message)))
+            .catch(onError);
     };
 
     /* As we are now using a single port for the whole content-script,
