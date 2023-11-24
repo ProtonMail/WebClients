@@ -71,9 +71,34 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
         // Used to display the notification for the reminded messages
         Conversations.filter(({ Action, Conversation }) => Action === 3 && isElementReminded(Conversation)).forEach(
             ({ Conversation }) => {
-                Messages.filter(({ Message }) => Message?.ConversationID === Conversation?.ID).forEach(({ Message }) =>
-                    displayNotification(Message as Message, history, mailSettings, notifier, onOpenElement)
+                const notificationToDisplay = new Map<string, Message>();
+
+                // We only want to display one notification for the latest message of a conversation
+                Messages.filter(({ Message }) => Message?.ConversationID === Conversation?.ID).forEach(
+                    ({ Message }) => {
+                        if (!Message || !Message.ID || !Conversation || !Conversation.ID) {
+                            return;
+                        }
+
+                        if (!notificationToDisplay.has(Conversation.ID)) {
+                            notificationToDisplay.set(Conversation.ID, Message);
+                            return;
+                        }
+
+                        const currentMessage = notificationToDisplay.get(Conversation.ID);
+                        if (!currentMessage) {
+                            return;
+                        }
+
+                        if (Message.Time > currentMessage?.Time) {
+                            notificationToDisplay.set(Conversation.ID, Message);
+                        }
+                    }
                 );
+
+                notificationToDisplay.forEach((value) => {
+                    displayNotification(value, history, mailSettings, notifier, onOpenElement);
+                });
             }
         );
     });
