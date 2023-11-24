@@ -31,7 +31,7 @@ const RadioGroup = <T,>({
             {options.map((option, i) => (
                 <Radio
                     key={option.key || `${i}`}
-                    id={`radio_${i}`}
+                    id={`${name}-radio_${i}`}
                     onChange={() => onChange(option.value)}
                     checked={value === option.value}
                     name={name}
