@@ -80,6 +80,7 @@ const SearchBarRaw: VFC<Props> = ({ disabled, filters, trash, onChange }) => {
         <Input
             autoFocus
             className="pass-searchbar"
+            inputClassName="text-rg"
             disabled={disabled}
             onBlur={handleBlur}
             onFocus={handleFocus}

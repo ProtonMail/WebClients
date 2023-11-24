@@ -1,7 +1,5 @@
 @import '~@proton/styles/scss/proton-pass';
 
-@import 'overrides';
-
 @import 'animation';
 @import 'button';
 @import 'fields';
@@ -12,4 +10,5 @@
 
 :root {
 	--pass-sidebar-size: 20em;
+	--border-radius-xl: 0.88rem;
 }
