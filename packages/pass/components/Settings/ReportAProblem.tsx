@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux';
 
 import type { FormikContextType, FormikErrors } from 'formik';
 import { Form, FormikProvider, useFormik } from 'formik';
-import { APP_NAME, APP_VERSION, CLIENT_TYPE } from 'proton-pass-extension/app/config';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { TextAreaTwo } from '@proton/components/components';
 import { getClientName, getReportInfo } from '@proton/components/helpers/report';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useActionRequest } from '@proton/pass/hooks/useActionRequest';
 import { reportBugIntent } from '@proton/pass/store/actions';
 import { selectUser } from '@proton/pass/store/selectors';
@@ -33,6 +33,7 @@ const validate = ({ description }: FormValues): FormikErrors<FormValues> => {
 };
 
 export const ReportAProblem: VFC = () => {
+    const { config } = usePassCore();
     const user = useSelector(selectUser);
     const formRef = useRef<FormikContextType<FormValues>>();
     const reportBug = useActionRequest({ action: reportBugIntent, onSuccess: () => formRef.current?.resetForm() });
@@ -46,9 +47,9 @@ export const ReportAProblem: VFC = () => {
         onSubmit: async ({ description }) => {
             const payload: BugPayload = {
                 ...getReportInfo(),
-                Client: getClientName(APP_NAME),
-                ClientType: CLIENT_TYPE,
-                ClientVersion: APP_VERSION,
+                Client: getClientName(config.APP_NAME),
+                ClientType: config.CLIENT_TYPE,
+                ClientVersion: config.APP_VERSION,
                 Title: REPORT_TITLE,
                 Username: user?.DisplayName || '',
                 Email: user?.Email || '',
