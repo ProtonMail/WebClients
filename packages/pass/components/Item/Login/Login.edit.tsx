@@ -34,7 +34,7 @@ import {
 } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
 import { itemCreationIntent } from '@proton/pass/store/actions';
-import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
+import { passwordSave } from '@proton/pass/store/actions/creators/password';
 import { selectTOTPLimits } from '@proton/pass/store/selectors';
 import type { EditLoginItemFormValues } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';

@@ -1,8 +1,10 @@
 import { type FC, createContext, useContext, useMemo, useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import type { UseAsyncModalHandle } from '@proton/pass/hooks/useAsyncModalHandles';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
+import { selectPasswordOptions } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -25,13 +27,14 @@ const PasswordContext = createContext<PasswordContextValue>({
 
 const getInitialModalState = (): ModalState => ({ actionLabel: '' });
 
-export const PasswordContextProvider: FC<{ initial: MaybeNull<GeneratePasswordOptions> }> = ({ children, initial }) => {
+export const PasswordContextProvider: FC = ({ children }) => {
     const { resolver, state, handler, abort } = useAsyncModalHandles<string, ModalState>({ getInitialModalState });
     const [showHistory, setShowHistory] = useState(false);
+    const options = useSelector(selectPasswordOptions);
 
     const contextValue = useMemo<PasswordContextValue>(
-        () => ({ options: initial, generatePassword: handler, openPasswordHistory: () => setShowHistory(true) }),
-        [handler, initial]
+        () => ({ options, generatePassword: handler, openPasswordHistory: () => setShowHistory(true) }),
+        [handler, options]
     );
 
     return (
