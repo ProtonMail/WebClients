@@ -4,14 +4,14 @@ import { useHistory } from 'react-router-dom';
 
 import { vaultDeletionEffect } from 'proton-pass-extension/lib/components/Context/Items/ItemEffects';
 import { useItemsFilteringContext } from 'proton-pass-extension/lib/hooks/useItemsFilteringContext';
+import { useOnboardingListener } from 'proton-pass-extension/lib/hooks/useOnboardingListener';
 import { usePopupContext } from 'proton-pass-extension/lib/hooks/usePopupContext';
-import { useSpotlightEffect } from 'proton-pass-extension/lib/hooks/useSpotlightEffect';
 
 import { Header as HeaderComponent } from '@proton/components';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
 import { ItemQuickActions } from '@proton/pass/components/Menu/Item/ItemQuickActions';
 import { SpotlightContent } from '@proton/pass/components/Spotlight/SpotlightContent';
-import { useSpotlightContext } from '@proton/pass/components/Spotlight/SpotlightContext';
+import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import type { ItemType } from '@proton/pass/types';
@@ -47,9 +47,8 @@ export const Header: VFC = () => {
         dispatch(passwordSave({ createTime: getEpoch(), id: uniqueId(), origin: url, value: password }));
     };
 
-    const spotlight = useSpotlightContext();
-    const hideSpotlight = !spotlight.state.open || spotlight.state.pendingShareAccess || spotlight.state.upselling;
-    useSpotlightEffect();
+    const spotlight = useSpotlight();
+    useOnboardingListener();
 
     return (
         <VaultActionsProvider onVaultCreated={onVaultCreated} onVaultDeleted={onVaultDeleted}>
@@ -66,7 +65,12 @@ export const Header: VFC = () => {
                     <ItemQuickActions onNewItem={onNewItem} onPasswordGenerated={onPasswordGenerated} />
 
                     <div className="flex-item-fluid-auto w-full">
-                        <div className={clsx('pass-spotlight-panel', hideSpotlight && 'pass-spotlight-panel--hidden')}>
+                        <div
+                            className={clsx(
+                                'pass-spotlight-panel',
+                                !spotlight.state.open && 'pass-spotlight-panel--hidden'
+                            )}
+                        >
                             {spotlight.state.message && <SpotlightContent {...spotlight.state.message} />}
                         </div>
                     </div>

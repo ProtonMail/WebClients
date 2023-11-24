@@ -12,15 +12,24 @@
  * This gives us the benefit of not having to modify existing code
  * to handle Firefox specifics when dealing with the session API */
 import browser from '@proton/pass/lib/globals/browser';
+import type {
+    GetItem,
+    GetItems,
+    RemoveItem,
+    RemoveItems,
+    SetItem,
+    SetItems,
+    StorageInterface,
+} from '@proton/pass/types';
 import noop from '@proton/utils/noop';
-
-import type { GetItem, GetItems, RemoveItem, RemoveItems, SetItem, SetItems, Storage, StorageInterface } from './types';
 
 const MEMORY_STORAGE_EVENT = 'MEMORY_STORAGE_EVENT';
 
+type MemoryStore = Record<string, any>;
+
 type StorageAction =
     | { action: 'get' }
-    | { action: 'set'; items: Partial<Storage> }
+    | { action: 'set'; items: Partial<MemoryStore> }
     | { action: 'remove'; keys: string[] }
     | { action: 'clear' };
 
@@ -37,14 +46,14 @@ const isBackground = async (): Promise<boolean> => {
 };
 
 export const createMemoryStorage = (): StorageInterface => {
-    const context: { store: Storage } = { store: {} };
+    const context: { store: MemoryStore } = { store: {} };
 
     const applyStorageAction = <Action extends StorageAction['action']>(
         action: Extract<StorageAction, { action: Action }>
     ): Promise<Action extends 'get' ? Storage : void> =>
         browser.runtime.sendMessage(browser.runtime.id, { type: MEMORY_STORAGE_EVENT, ...action });
 
-    const resolveStorage = async (): Promise<Storage> =>
+    const resolveStorage = async (): Promise<MemoryStore> =>
         (await isBackground()) ? context.store : applyStorageAction<'get'>({ action: 'get' });
 
     const getItems: GetItems = async (keys) => {

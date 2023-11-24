@@ -1,6 +1,13 @@
 import browser from '@proton/pass/lib/globals/browser';
-
-import type { GetItem, GetItems, RemoveItem, RemoveItems, SetItem, SetItems, StorageInterface } from './types';
+import type {
+    GetItem,
+    GetItems,
+    RemoveItem,
+    RemoveItems,
+    SetItem,
+    SetItems,
+    StorageInterface,
+} from '@proton/pass/types';
 
 const getItems: GetItems = (keys) => browser.storage.local.get(keys);
 const getItem: GetItem = async (key) => (await getItems([key]))?.[key] ?? null;
