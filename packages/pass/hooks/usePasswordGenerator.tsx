@@ -5,7 +5,7 @@ import { DEFAULT_PASSWORD_LENGTH, alphabeticChars, digitChars } from '@proton/pa
 import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
 import { generatePassword } from '@proton/pass/lib/password/generator';
 import { SeperatorOptions } from '@proton/pass/lib/password/memorable';
-import { popupPasswordOptionsSave } from '@proton/pass/store/actions/creators/popup';
+import { passwordOptionsEdit } from '@proton/pass/store/actions/creators/password';
 import type { MaybeNull } from '@proton/pass/types';
 import { merge } from '@proton/pass/utils/object/merge';
 import debounce from '@proton/utils/debounce';
@@ -84,27 +84,32 @@ export const usePasswordGenerator = (initial: MaybeNull<GeneratePasswordOptions>
     const [password, setPassword] = useState(() => generatePassword(passwordOptions));
     const regeneratePassword = () => setPassword(generatePassword(passwordOptions));
 
-    const setPasswordOptions = <T extends GeneratePasswordOptions['type']>(
-        type: T,
-        update?: Partial<Extract<GeneratePasswordOptions, { type: T }>['options']>
-    ) =>
-        setOptions((options) => {
-            if (update) return merge(options, { options: update });
-            if (type === 'memorable') return DEFAULT_MEMORABLE_PW_OPTIONS;
-            if (type === 'random') return DEFAULT_RANDOM_PW_OPTIONS;
-            return options;
-        });
-
-    const options = Object.values(passwordOptions.options);
     const savePasswordOptions = useCallback(
-        debounce((opts: GeneratePasswordOptions) => dispatch(popupPasswordOptionsSave(opts)), 250),
+        /** debounce the pw options dispatch in order to avoid swarming the
+         * store with updates when using the length slider */
+        debounce((opts: GeneratePasswordOptions) => dispatch(passwordOptionsEdit(opts)), 250),
         []
     );
 
-    useEffect(() => {
-        regeneratePassword();
-        savePasswordOptions(passwordOptions);
-    }, [...options]);
+    const setPasswordOptions = <T extends GeneratePasswordOptions['type']>(
+        type: T,
+        update?: Partial<Extract<GeneratePasswordOptions, { type: T }>['options']>
+    ) => {
+        setOptions((options) => {
+            const newOptions = (() => {
+                if (update) return merge(options, { options: update });
+                if (type === 'memorable') return DEFAULT_MEMORABLE_PW_OPTIONS;
+                if (type === 'random') return DEFAULT_RANDOM_PW_OPTIONS;
+                return options;
+            })();
+
+            savePasswordOptions(newOptions);
+            return newOptions;
+        });
+    };
+
+    /* regenerate the password on each options change */
+    useEffect(() => regeneratePassword(), Object.values(passwordOptions.options));
 
     return {
         password,

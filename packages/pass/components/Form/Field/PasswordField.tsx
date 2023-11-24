@@ -1,6 +1,6 @@
 import { type VFC, useCallback } from 'react';
 
-import { PasswordGeneratorButton } from '@proton/pass/components/PasswordGenerator/PasswordGeneratorButton';
+import { PasswordGeneratorButton } from '@proton/pass/components/Password/PasswordGeneratorButton';
 import clsx from '@proton/utils/clsx';
 
 import { TextField, type TextFieldProps } from './TextField';

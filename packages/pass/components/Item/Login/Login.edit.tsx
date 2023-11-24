@@ -34,7 +34,6 @@ import {
 } from '@proton/pass/lib/validation/alias';
 import { validateLoginForm } from '@proton/pass/lib/validation/login';
 import { itemCreationIntent } from '@proton/pass/store/actions';
-import { passwordSave } from '@proton/pass/store/actions/creators/pw-history';
 import { selectTOTPLimits } from '@proton/pass/store/selectors';
 import type { EditLoginItemFormValues } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -45,9 +44,12 @@ import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 
+import { usePasswordContext } from '../../Password/PasswordProvider';
+
 const FORM_ID = 'edit-login';
 
 export const LoginEdit: VFC<ItemEditViewProps<'login'>> = ({ revision, url, vault, onSubmit, onCancel }) => {
+    const passwordContext = usePasswordContext();
     const dispatch = useDispatch();
     const { needsUpgrade } = useSelector(selectTOTPLimits);
     const { domain, subdomain } = url ?? {};
@@ -268,15 +270,8 @@ export const LoginEdit: VFC<ItemEditViewProps<'login'>> = ({ revision, url, vaul
                                         const { urls, url } = form.values;
                                         const baseUrl = urls?.[0]?.url ?? url;
                                         const { subdomain, domain, hostname } = parseUrl(baseUrl);
-
-                                        dispatch(
-                                            passwordSave({
-                                                id: uniqueId(),
-                                                value,
-                                                origin: subdomain ?? domain ?? hostname,
-                                                createTime: getEpoch(),
-                                            })
-                                        );
+                                        const origin = subdomain ?? domain ?? hostname;
+                                        passwordContext.history.add({ value, origin });
                                     }}
                                 />
 
