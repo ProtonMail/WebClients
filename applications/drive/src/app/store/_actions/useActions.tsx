@@ -290,7 +290,7 @@ export default function useActions() {
         const title = c('Title').t`Delete permanently`;
         const confirm = c('Action').t`Delete permanently`;
         const message =
-            linksToDelete.length === 1
+            linksToDelete.length === 1 && itemName
                 ? c('Info').t`Are you sure you want to permanently delete "${itemName}" from trash?`
                 : c('Info').t`Are you sure you want to permanently delete selected items from trash?`;
 

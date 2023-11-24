@@ -55,7 +55,6 @@ export const usePhotosView = () => {
         // We create "fake" links to avoid complicating the rest of the code
         photos.forEach((photo) => {
             result[photo.linkId] = {
-                name: 'Photo',
                 linkId: photo.linkId,
                 rootShareId: shareId,
                 parentLinkId: linkId,
@@ -78,8 +77,7 @@ export const usePhotosView = () => {
                 return;
             }
 
-            // We have issue with typing but we check activeRevision before
-            result[link.linkId] = link as PhotoLink;
+            result[link.linkId] = link;
         });
 
         const photosViewData = sortWithCategories(Object.values(result));
@@ -105,7 +103,7 @@ export const usePhotosView = () => {
             photoLinkIdToIndexMap,
             photoLinkIds,
         };
-    }, [photos, cachedLinks]);
+    }, [photos, cachedLinks, linkId, shareId]);
 
     useEffect(() => {
         if (!volumeId || !shareId) {

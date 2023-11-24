@@ -6,7 +6,7 @@ import { NavigationControl, TopBanner, useAppTitle, useFlag } from '@proton/comp
 import { Loader } from '@proton/components/components';
 
 import { useShiftKey } from '../../../hooks/util/useShiftKey';
-import { PhotoLink, usePhotosView, useThumbnailsDownload } from '../../../store';
+import { PhotoLink, isDecryptedLink, usePhotosView, useThumbnailsDownload } from '../../../store';
 import PortalPreview from '../../PortalPreview';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
@@ -97,24 +97,24 @@ export const PhotosView: FC<void> = () => {
                 <TopBanner className="bg-warning">{c('Info')
                     .t`We are experiencing technical issues. Uploading new photos is temporarily disabled.`}</TopBanner>
             )}
-            {previewItem && (
+            {isDecryptedLink(previewItem) && (
                 <PortalPreview
                     ref={previewRef}
                     shareId={shareId}
                     linkId={previewItem.linkId}
-                    revisionId={previewItem.activeRevision.id}
+                    revisionId={previewItem.activeRevision?.id}
                     key="portal-preview-photos"
                     open={!!previewItem}
-                    date={previewItem.activeRevision.photo.captureTime}
+                    date={previewItem.activeRevision?.photo?.captureTime || previewItem.createTime}
                     onShare={
-                        !!previewItem?.trashed
+                        previewItem?.trashed
                             ? undefined
                             : () => showLinkSharingModal({ shareId, linkId: previewItem.linkId })
                     }
                     onDetails={() =>
                         showDetailsModal({
                             shareId,
-                            linkId: previewItem.activeRevision.photo.linkId,
+                            linkId: previewItem.linkId,
                         })
                     }
                     navigationControls={
