@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms';
 import { Icon } from '@proton/components';
-import { useSpotlightContext } from '@proton/pass/components/Spotlight/SpotlightContext';
+import { useSpotlight } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { VAULT_COLOR_MAP } from '@proton/pass/components/Vault/constants';
 import { isVaultMemberLimitReached, isWritableVault } from '@proton/pass/lib/vaults/vault.predicates';
 import { type ShareItem } from '@proton/pass/store/reducers';
@@ -59,7 +59,7 @@ export const VaultItem: VFC<Props> = ({
     const allowSharing = vault !== undefined;
     const shared = vault?.shared ?? false;
     const notification = (vault?.newUserInvitesReady ?? 0) > 0;
-    const spotlight = useSpotlightContext();
+    const spotlight = useSpotlight();
     const plan = useSelector(selectPassPlan);
 
     return (

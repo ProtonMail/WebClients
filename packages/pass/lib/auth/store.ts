@@ -1,5 +1,4 @@
-import type { Maybe, SessionLockStatus } from '@proton/pass/types';
-import type { Store } from '@proton/pass/utils/store';
+import type { Maybe, SessionLockStatus, Store } from '@proton/pass/types';
 import { encodedGetter, encodedSetter } from '@proton/pass/utils/store';
 
 import type { AuthSession } from './session';

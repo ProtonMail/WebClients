@@ -6,7 +6,7 @@ import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generato
 import type { Notification } from '@proton/pass/store/actions/with-notification';
 import type { AliasOptions, FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { CriteriaMasks } from '@proton/pass/types/worker/settings';
+import type { PauseListEntry } from '@proton/pass/types/worker/settings';
 import type { ExtensionForkResultPayload } from '@proton/shared/lib/authentication/sessionForking';
 import type { User } from '@proton/shared/lib/interfaces';
 
@@ -120,10 +120,7 @@ export type NotificationMessage = WithPayload<WorkerMessageType.NOTIFICATION, { 
 export type OnboardingAckMessage = WithPayload<WorkerMessageType.ONBOARDING_ACK, { message: OnboardingMessage }>;
 export type OnboardingRequestMessage = { type: WorkerMessageType.ONBOARDING_REQUEST };
 export type OTPCodeGenerateMessage = WithPayload<WorkerMessageType.OTP_CODE_GENERATE, OtpRequest>;
-export type PauseWebsiteMessage = WithPayload<
-    WorkerMessageType.PAUSE_WEBSITE,
-    { hostname: string; criteria: CriteriaMasks }
->;
+export type PauseWebsiteMessage = WithPayload<WorkerMessageType.PAUSE_WEBSITE, PauseListEntry>;
 export type PermissionsUpdateMessage = WithPayload<WorkerMessageType.PERMISSIONS_UPDATE, { check: boolean }>;
 export type PopupInitMessage = WithPayload<WorkerMessageType.POPUP_INIT, { tabId: TabId }>;
 export type PortUnauthorizedMessage = { type: WorkerMessageType.PORT_UNAUTHORIZED };
@@ -214,7 +211,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.FORM_ENTRY_STAGE]: { staged: FormEntry };
     [WorkerMessageType.LOCALE_REQUEST]: { locale: string };
     [WorkerMessageType.LOG_REQUEST]: { logs: string[] };
-    [WorkerMessageType.ONBOARDING_REQUEST]: { message?: OnboardingMessage };
+    [WorkerMessageType.ONBOARDING_REQUEST]: { message: MaybeNull<OnboardingMessage> };
     [WorkerMessageType.OTP_CODE_GENERATE]: OtpCode;
     [WorkerMessageType.POPUP_INIT]: PopupInitialState;
     [WorkerMessageType.RESOLVE_EXTENSION_KEY]: { key: string };

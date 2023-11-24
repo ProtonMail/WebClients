@@ -30,12 +30,12 @@ export const createAuthService = (options: AuthServiceConfig): AuthService => {
     const authService = createCoreAuthService(options);
 
     const handleAccountFork = withContext<MessageHandlerCallback<WorkerMessageType.ACCOUNT_FORK>>(
-        async (ctx, { payload }) => {
-            if (ctx.getState().loggedIn) throw getAccountForkResponsePayload(AccountForkResponse.CONFLICT);
+        async ({ getState, service, status }, { payload }) => {
+            if (getState().loggedIn) throw getAccountForkResponsePayload(AccountForkResponse.CONFLICT);
 
             try {
                 await authService.consumeFork({ mode: 'secure', ...payload }, `${SSO_URL}/api`);
-                if (clientLocked(ctx.status)) await ctx.service.storage.session.set(options.authStore.getSession());
+                if (clientLocked(status)) await service.storage.session.setItems(options.authStore.getSession());
                 return getAccountForkResponsePayload(AccountForkResponse.SUCCESS);
             } catch (error: unknown) {
                 authService.logout({ soft: true }).catch(noop);

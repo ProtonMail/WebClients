@@ -38,15 +38,15 @@ const getRandomSendTime = (): number => getEpoch() + MIN_DT + Math.floor(Math.ra
 const shouldSendBundle = ({ sendTime }: TelemetryEventBundle): boolean => sendTime - getEpoch() <= 0;
 
 const createBundle = (): TelemetryEventBundle => ({ sendTime: getRandomSendTime(), events: [], retryCount: 0 });
-const deleteBundle = withContext<() => Promise<void>>((ctx) => ctx.service.storage.local.unset(['telemetry']));
-const saveBundle = withContext<(bundle: TelemetryEventBundle) => Promise<void>>((ctx, bundle) =>
-    ctx.service.storage.local.set({ telemetry: JSON.stringify(bundle) })
-);
+const deleteBundle = withContext<() => Promise<void>>((ctx) => ctx.service.storage.local.remove('telemetry'));
+const saveBundle = withContext<(bundle: TelemetryEventBundle) => Promise<void>>(async (ctx, bundle) => {
+    await ctx.service.storage.local.setItem('telemetry', JSON.stringify(bundle));
+});
 
 /* resolves any currently cached telemetry bundle or creates a new one if non exists */
 const resolveBundle = withContext<() => Promise<TelemetryEventBundle>>(async ({ service }) => {
     try {
-        const { telemetry } = await service.storage.local.get(['telemetry']);
+        const telemetry = await service.storage.local.getItem('telemetry');
         if (!telemetry) throw new Error();
         return JSON.parse(telemetry);
     } catch (_) {

@@ -104,7 +104,7 @@ export const createActivationService = () => {
                 /* in production clear the cache on each extension
                  * update in case the state/snapshot data-structure
                  * has changed. FIXME: use version migrations */
-                await ctx.service.storage.local.unset(['salt', 'state', 'snapshot']);
+                await ctx.service.storage.local.removeItems(['salt', 'state', 'snapshot']);
             }
 
             if (BUILD_TARGET === 'chrome') void ctx.service.injection.updateInjections();
