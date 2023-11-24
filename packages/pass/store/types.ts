@@ -11,7 +11,7 @@ import type { ProxiedSettings } from './reducers/settings';
 
 export type State = ReturnType<typeof rootReducer>;
 export type Action = ReturnType<(typeof actions)[keyof typeof actions]>;
-export type Telemetry = { start: () => void; stop: () => void; pushEvent: (event: TelemetryEvent) => Promise<boolean> };
+export type Telemetry = { start: () => void; stop: () => void; push: (event: TelemetryEvent) => Promise<boolean> };
 
 export interface RootSagaOptions {
     /** defines the current client type */
