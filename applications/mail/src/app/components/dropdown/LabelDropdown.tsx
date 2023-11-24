@@ -28,10 +28,10 @@ import { Label } from '@proton/shared/lib/interfaces/Label';
 import clsx from '@proton/utils/clsx';
 
 import { getLabelIDs } from '../../helpers/elements';
-import { getStandardFolders } from '../../helpers/labels';
-import { useApplyLabels } from '../../hooks/actions/useApplyLabels';
+import { getStandardFolders, isCustomLabel } from '../../helpers/labels';
+import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
+import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
-import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { Element } from '../../models/element';
 
@@ -48,32 +48,52 @@ const { On, Off, Indeterminate } = LabelState;
 
 type SelectionState = { [labelID: string]: LabelState };
 
-const getInitialState = (labels: Label[] = [], elements: Element[] = []) => {
+export const getInitialState = (labels: Label[] = [], elements: Element[] = [], labelID: string, selectAll = false) => {
     const result: SelectionState = {};
-    const elementsLabels = elements.map((element) =>
-        getLabelIDs(
-            element,
-            // Undefined and not labelID here. Because applying a label to a conversation apply to all messages
-            // Not only those from the current labelID.
-            undefined
-        )
-    );
-    labels.forEach(({ ID = '' }) => {
-        const counts = elementsLabels.reduce<{ [state: string]: number }>(
-            (acc, elementLabels) => {
-                if (elementLabels[ID] === undefined) {
-                    acc[Off] += 1;
-                } else if (elementLabels[ID]) {
-                    acc[On] += 1;
-                } else {
-                    acc[Indeterminate] += 1;
-                }
-                return acc;
-            },
-            { [On]: 0, [Off]: 0, [Indeterminate]: 0 }
+
+    // If the user is applying the labels using a select all, we have no way to determine the proper labels state in the dropdown.
+    // We only know the elements in the current page.
+    // Because of that, in the select all case, we want to leave all checkboxes "indeterminate" in the label dropdown
+    if (selectAll) {
+        // However, if the user is inside a custom label, then we know that all location's elements are inside this label
+        // So we let the user the possibility to unlabel all elements, meaning that we need to check the checkbox in that case only
+        const isInsideCustomLabel = isCustomLabel(labelID, labels);
+
+        labels.forEach(({ ID = '' }) => {
+            if (isInsideCustomLabel && ID === labelID) {
+                result[ID] = On;
+            } else {
+                result[ID] = Indeterminate;
+            }
+        });
+    } else {
+        const elementsLabels = elements.map((element) =>
+            getLabelIDs(
+                element,
+                // Undefined and not labelID here. Because applying a label to a conversation apply to all messages
+                // Not only those from the current labelID.
+                undefined
+            )
         );
-        result[ID] = counts[Off] === elements.length ? Off : counts[On] === elements.length ? On : Indeterminate;
-    });
+
+        labels.forEach(({ ID = '' }) => {
+            const counts = elementsLabels.reduce<{ [state: string]: number }>(
+                (acc, elementLabels) => {
+                    if (elementLabels[ID] === undefined) {
+                        acc[Off] += 1;
+                    } else if (elementLabels[ID]) {
+                        acc[On] += 1;
+                    } else {
+                        acc[Indeterminate] += 1;
+                    }
+                    return acc;
+                },
+                { [On]: 0, [Off]: 0, [Indeterminate]: 0 }
+            );
+            result[ID] = counts[Off] === elements.length ? Off : counts[On] === elements.length ? On : Indeterminate;
+        });
+    }
+
     return result;
 };
 
@@ -105,9 +125,10 @@ interface Props {
     onClose: () => void;
     onLock: (lock: boolean) => void;
     breakpoints: Breakpoints;
+    selectAll?: boolean;
 }
 
-const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Props) => {
+const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints, selectAll }: Props) => {
     const [uid] = useState(generateUID('label-dropdown'));
     const [labels = []] = useLabels();
     const [user] = useUser();
@@ -118,7 +139,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     const [alsoArchive, updateAlsoArchive] = useState(false);
     const [always, setAlways] = useState(false);
     const getElementsFromIDs = useGetElementsFromIDs();
-    const applyLabels = useApplyLabels();
+    const { applyLabels, applyLabelsToAllModal } = useApplyLabels(setContainFocus);
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal } =
         useMoveToFolder(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
@@ -135,8 +156,8 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
     const [upsellModalProps, handleUpsellModalDisplay, renderUpsellModal] = useModalState();
 
     const initialState = useMemo(
-        () => getInitialState(labels, getElementsFromIDs(selectedIDs)),
-        [selectedIDs, labels, labelID]
+        () => getInitialState(labels, getElementsFromIDs(selectedIDs), labelID, selectAll),
+        [selectedIDs, labels, labelID, selectAll]
     );
 
     const [selectedLabelIDs, setSelectedLabelIDs] = useState<SelectionState>(initialState);
@@ -154,7 +175,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
 
     const changes = useMemo(() => {
         const elements = getElementsFromIDs(selectedIDs);
-        const initialState = getInitialState(labels, elements);
+        const initialState = getInitialState(labels, elements, labelID, selectAll);
         return Object.keys(selectedLabelIDs).reduce(
             (acc, LabelID) => {
                 if (selectedLabelIDs[LabelID] === LabelState.On && initialState[LabelID] !== LabelState.On) {
@@ -167,12 +188,14 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
             },
             {} as { [labelID: string]: boolean }
         );
-    }, [selectedIDs, initialState, selectedLabelIDs]);
+    }, [selectedIDs, initialState, selectedLabelIDs, selectAll]);
 
     // Always checkbox should be disabled when we don't find senders OR there are no labels checked (so no filter based on labels to create)
     const alwaysCheckboxDisabled = useMemo(() => {
-        return !getSendersToFilter(getElementsFromIDs(selectedIDs)).length || checkedIDs.length < 1;
-    }, [getSendersToFilter, selectedIDs, changes]);
+        return !getSendersToFilter(getElementsFromIDs(selectedIDs)).length || checkedIDs.length < 1 || !!selectAll;
+    }, [getSendersToFilter, selectedIDs, changes, selectAll]);
+
+    const archiveCheckboxDisabled = !!selectAll;
 
     useEffect(() => {
         if (alwaysCheckboxDisabled && always) {
@@ -213,11 +236,27 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
 
         const promises = [];
 
-        promises.push(applyLabels(elements, changes, always, false, checkedIDs));
+        promises.push(
+            applyLabels({
+                elements,
+                changes,
+                createFilters: always,
+                selectedLabelIDs: checkedIDs,
+                labelID,
+                selectAll,
+            })
+        );
 
         if (alsoArchive) {
             const folderName = getStandardFolders()[MAILBOX_IDENTIFIERS.archive].name;
-            promises.push(moveToFolder(elements, MAILBOX_IDENTIFIERS.archive, folderName, labelID, false));
+            promises.push(
+                moveToFolder({
+                    elements,
+                    folderID: MAILBOX_IDENTIFIERS.archive,
+                    folderName,
+                    fromLabelID: labelID,
+                })
+            );
         }
 
         await Promise.all(promises);
@@ -230,7 +269,33 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
 
     const applyCheck = (labelIDs: string[], selected: boolean) => {
         const update = labelIDs.reduce((acc, ID) => {
-            acc[ID] = selected ? LabelState.On : LabelState.Off;
+            /*
+             * With select all, we don't know which labels are applied or not on all location elements since we only know the current page.
+             * => Users should be able to add labels only. (Case 1)
+             * It means that in the Dropdown, the user should not be able to have a checkbox "off" state (which would cause a unlabel).
+             * State should be "Indeterminate" by default, and when clicking on a label twice
+             * (passing the checkbox ON and clicking again) should also lead to an "Indeterminate" state. (Case 3)
+             *
+             * However, if we're inside a custom label, we do know that this label is applied on all elements,
+             * and it should be possible to unlabel it if the user wants to. In that case we can pass the checkbox to "off" (Case 2)
+             */
+            if (selectAll) {
+                const isInsideCustomLabel = isCustomLabel(labelID, labels);
+                const canUnlabel = isInsideCustomLabel && ID === labelID;
+
+                if (selected) {
+                    // Case 1
+                    acc[ID] = LabelState.On;
+                } else if (canUnlabel) {
+                    // Case 2
+                    acc[ID] = LabelState.Off;
+                } else {
+                    // Case 3
+                    acc[ID] = LabelState.Indeterminate;
+                }
+            } else {
+                acc[ID] = selected ? LabelState.On : LabelState.Off;
+            }
             return acc;
         }, {} as SelectionState);
 
@@ -378,10 +443,11 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
                     {c('Label').t`Always label sender's emails`}
                 </Checkbox>
             </div>
-            <div className="px-4 mt-4 shrink-0">
+            <div className={clsx(['px-4 mt-4 shrink-0', archiveCheckboxDisabled && 'color-disabled'])}>
                 <Checkbox
                     id={archiveCheckID}
                     checked={alsoArchive}
+                    disabled={archiveCheckboxDisabled}
                     onChange={({ target }) => updateAlsoArchive(target.checked)}
                     data-testid="label-dropdown:also-archive"
                     data-prevent-arrow-navigation
@@ -405,6 +471,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: P
             {moveSnoozedModal}
             {moveAllModal}
             {moveToSpamModal}
+            {applyLabelsToAllModal}
             {renderLabelModal && (
                 <EditLabelModal
                     label={newLabel}

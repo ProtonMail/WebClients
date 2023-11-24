@@ -40,8 +40,8 @@ import { getCurrentFolderID, getFolderName } from '../../../helpers/labels';
 import { isConversationMode } from '../../../helpers/mailSettings';
 import { MessageViewIcons } from '../../../helpers/message/icon';
 import { exportBlob } from '../../../helpers/message/messageExport';
-import { useMarkAs } from '../../../hooks/actions/useMarkAs';
-import { useMoveToFolder } from '../../../hooks/actions/useMoveToFolder';
+import { useMarkAs } from '../../../hooks/actions/markAs/useMarkAs';
+import { useMoveToFolder } from '../../../hooks/actions/move/useMoveToFolder';
 import { useStar } from '../../../hooks/actions/useStar';
 import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
 import { useGetMessageKeys } from '../../../hooks/message/useGetMessageKeys';
@@ -113,7 +113,7 @@ const HeaderMoreDropdown = ({
     const closeDropdown = useRef<() => void>();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal } = useMoveToFolder();
     const [folders = []] = useFolders();
-    const markAs = useMarkAs();
+    const { markAs } = useMarkAs();
     const getMessageKeys = useGetMessageKeys();
     const { Shortcuts } = useMailModel('MailSettings');
     const [CustomExpirationModalProps, openCustomExpirationModal, renderCustomExpirationModal] = useModalState();
@@ -132,7 +132,12 @@ const HeaderMoreDropdown = ({
     const handleMove = (folderID: string, fromFolderID: string) => async () => {
         closeDropdown.current?.();
         const folderName = getFolderName(folderID, folders);
-        await moveToFolder([message.data || ({} as Element)], folderID, folderName, fromFolderID, false);
+        await moveToFolder({
+            elements: [message.data || ({} as Element)],
+            folderID,
+            folderName,
+            fromLabelID: fromFolderID,
+        });
     };
 
     const handleUnread = async () => {
@@ -143,7 +148,11 @@ const HeaderMoreDropdown = ({
         } else {
             onBack();
         }
-        markAs([message.data as Element], labelID, MARK_AS_STATUS.UNREAD);
+        void markAs({
+            elements: [message.data as Element],
+            labelID,
+            status: MARK_AS_STATUS.UNREAD,
+        });
         await call();
     };
 
@@ -477,8 +486,7 @@ const HeaderMoreDropdown = ({
                                             onClick={() => onOpenAdditional(1)}
                                         >
                                             <Icon name="tag" className="mr-2" />
-                                            <span className="flex-1 my-auto">{c('Action')
-                                                .t`Label as...`}</span>
+                                            <span className="flex-1 my-auto">{c('Action').t`Label as...`}</span>
                                         </DropdownMenuButton>
                                     )}
                                     {viewportWidth['<=small'] && (
@@ -487,8 +495,7 @@ const HeaderMoreDropdown = ({
                                             onClick={() => onOpenAdditional(2)}
                                         >
                                             <Icon name="filter" className="mr-2" />
-                                            <span className="flex-1 my-auto">{c('Action')
-                                                .t`Filter on...`}</span>
+                                            <span className="flex-1 my-auto">{c('Action').t`Filter on...`}</span>
                                         </DropdownMenuButton>
                                     )}
                                     {isSpam ? (
@@ -498,8 +505,7 @@ const HeaderMoreDropdown = ({
                                             data-testid="message-view-more-dropdown:unread"
                                         >
                                             <Icon name="eye-slash" className="mr-2" />
-                                            <span className="flex-1 my-auto">{c('Action')
-                                                .t`Mark as unread`}</span>
+                                            <span className="flex-1 my-auto">{c('Action').t`Mark as unread`}</span>
                                         </DropdownMenuButton>
                                     ) : (
                                         <DropdownMenuButton
@@ -508,8 +514,7 @@ const HeaderMoreDropdown = ({
                                             data-testid="message-view-more-dropdown:move-to-spam"
                                         >
                                             <Icon name="fire" className="mr-2" />
-                                            <span className="flex-1 my-auto">{c('Action')
-                                                .t`Move to spam`}</span>
+                                            <span className="flex-1 my-auto">{c('Action').t`Move to spam`}</span>
                                         </DropdownMenuButton>
                                     )}
                                     {isInTrash ? (
@@ -587,8 +592,7 @@ const HeaderMoreDropdown = ({
                                         data-testid="message-view-more-dropdown:view-message-details"
                                     >
                                         <Icon name="list-bullets" className="mr-2" />
-                                        <span className="flex-1 my-auto">{c('Action')
-                                            .t`View message details`}</span>
+                                        <span className="flex-1 my-auto">{c('Action').t`View message details`}</span>
                                     </DropdownMenuButton>
                                     <DropdownMenuButton
                                         className="text-left flex flex-nowrap items-center"
@@ -615,8 +619,7 @@ const HeaderMoreDropdown = ({
                                             data-testid="message-view-more-dropdown:view-rendered-html"
                                         >
                                             <Icon name="window-image" className="mr-2" />
-                                            <span className="flex-1 my-auto">{c('Action')
-                                                .t`View rendered HTML`}</span>
+                                            <span className="flex-1 my-auto">{c('Action').t`View rendered HTML`}</span>
                                         </DropdownMenuButton>
                                     )}
 

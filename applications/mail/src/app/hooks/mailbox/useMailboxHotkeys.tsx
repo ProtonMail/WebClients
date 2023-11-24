@@ -12,6 +12,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { isStarred } from '../../helpers/elements';
 import { getFolderName, labelIncludes } from '../../helpers/labels';
@@ -19,9 +20,9 @@ import { isConversationMode } from '../../helpers/mailSettings';
 import { setParamsInLocation } from '../../helpers/mailboxUrl';
 import { Element } from '../../models/element';
 import { Filter } from '../../models/tools';
-import { useMarkAs } from '../actions/useMarkAs';
-import { useMoveToFolder } from '../actions/useMoveToFolder';
-import { usePermanentDelete } from '../actions/usePermanentDelete';
+import { usePermanentDelete } from '../actions/delete/usePermanentDelete';
+import { useMarkAs } from '../actions/markAs/useMarkAs';
+import { useMoveToFolder } from '../actions/move/useMoveToFolder';
 import { useStar } from '../actions/useStar';
 import { useGetElementsFromIDs } from './useElements';
 import { useFolderNavigationHotkeys } from './useFolderNavigationHotkeys';
@@ -84,6 +85,7 @@ export const useMailboxHotkeys = (
 ) => {
     const mailSettings = useMailModel('MailSettings');
     const { Shortcuts, ViewLayout } = mailSettings;
+    const { selectAll } = useSelectAll({ labelID });
     const getElementsFromIDs = useGetElementsFromIDs();
     const history = useHistory<any>();
     const [folders] = useFolders();
@@ -92,10 +94,11 @@ export const useMailboxHotkeys = (
     const elementRef = useRef<HTMLDivElement>(null);
     const labelDropdownToggleRef = useRef<() => void>(noop);
     const moveDropdownToggleRef = useRef<() => void>(noop);
-    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal } = useMoveToFolder();
+    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal, selectAllMoveModal } =
+        useMoveToFolder();
     const star = useStar();
-    const markAs = useMarkAs();
-    const { handleDelete: permanentDelete, modal: permanentDeleteModal } = usePermanentDelete(labelID);
+    const { markAs, selectAllMarkModal } = useMarkAs();
+    const { handleDelete: permanentDelete, deleteAllModal, deleteSelectionModal } = usePermanentDelete(labelID);
 
     // Disable selection shortcut in row mode when consulting an message
     // If no element is selected, it means that the user is on the message list, where we want the shortcut to be enabled
@@ -121,7 +124,13 @@ export const useMailboxHotkeys = (
 
         const folderName = getFolderName(LabelID, folders);
 
-        await moveToFolder(elements, LabelID, folderName, labelID, false);
+        await moveToFolder({
+            elements,
+            folderID: LabelID,
+            folderName,
+            fromLabelID: labelID,
+            selectAll,
+        });
         if (elementIDForList) {
             handleBack();
         }
@@ -302,7 +311,12 @@ export const useMailboxHotkeys = (
                     }
                     e.stopPropagation();
                     handleBack();
-                    markAs(elements, labelID, MARK_AS_STATUS.UNREAD);
+                    await markAs({
+                        elements,
+                        labelID,
+                        status: MARK_AS_STATUS.UNREAD,
+                        selectAll,
+                    });
                 }
             },
         ],
@@ -315,7 +329,12 @@ export const useMailboxHotkeys = (
                         return;
                     }
                     e.stopPropagation();
-                    markAs(elements, labelID, MARK_AS_STATUS.READ);
+                    await markAs({
+                        elements,
+                        labelID,
+                        status: MARK_AS_STATUS.READ,
+                        selectAll,
+                    });
                 }
             },
         ],
@@ -373,7 +392,7 @@ export const useMailboxHotkeys = (
                     if (!elements.length) {
                         return;
                     }
-                    await permanentDelete(elements.map((e) => e.ID).filter(isTruthy));
+                    await permanentDelete(elements.map((e) => e.ID).filter(isTruthy), selectAll);
                 }
             },
         ],
@@ -463,8 +482,11 @@ export const useMailboxHotkeys = (
         moveDropdownToggleRef,
         moveScheduledModal,
         moveSnoozedModal,
-        permanentDeleteModal,
+        deleteAllModal,
+        deleteSelectionModal,
         moveAllModal,
         moveToSpamModal,
+        selectAllMoveModal,
+        selectAllMarkModal,
     };
 };

@@ -45,19 +45,22 @@ export const useMoveAll = () => {
         SourceLabelID: '',
         DestinationLabelID: MAILBOX_LABEL_IDS.TRASH,
     });
+    const [telemetryEvent, setTelemetryEvent] = useState<TelemetryMailSelectAllEvents>();
 
     const handleSubmit = async () => {
-        // We want to see how much and how the Move all feature is used
-        // For that, we need to know from where the user performed the action
-        // However custom folders have a unique ID, so we return "custom_folder" instead
-        const { SourceLabelID } = actionProps;
-        const cleanedSourceLabelID = getCleanedFolderID(SourceLabelID, folders);
+        if (telemetryEvent) {
+            // We want to see how much and how the Move all feature is used
+            // For that, we need to know from where the user performed the action
+            // However custom folders have a unique ID, so we return "custom_folder" instead
+            const { SourceLabelID } = actionProps;
+            const cleanedSourceLabelID = getCleanedFolderID(SourceLabelID, folders);
 
-        void sendSelectAllTelemetryReport({
-            api,
-            sourceLabelID: cleanedSourceLabelID,
-            event: TelemetryMailSelectAllEvents.notification_move_to,
-        });
+            void sendSelectAllTelemetryReport({
+                api,
+                sourceLabelID: cleanedSourceLabelID,
+                event: telemetryEvent,
+            });
+        }
 
         void dispatch(moveAll({ ...actionProps }));
         modalProps.onClose?.();
@@ -78,10 +81,16 @@ export const useMoveAll = () => {
         </Prompt>
     );
 
-    const moveAllCallback = useCallback((SourceLabelID: string, DestinationLabelID: string) => {
-        setActionProps({ SourceLabelID, DestinationLabelID });
-        setModalOpen(true);
-    }, []);
+    const moveAllCallback = useCallback(
+        (SourceLabelID: string, DestinationLabelID: string, telemetryEvent?: TelemetryMailSelectAllEvents) => {
+            if (telemetryEvent) {
+                setTelemetryEvent(telemetryEvent);
+            }
+            setActionProps({ SourceLabelID, DestinationLabelID });
+            setModalOpen(true);
+        },
+        []
+    );
 
     return { moveAll: moveAllCallback, modal };
 };

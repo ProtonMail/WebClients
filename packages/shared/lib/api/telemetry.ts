@@ -73,11 +73,13 @@ export enum TelemetryMailEvents {
 
 export enum TelemetryMailSelectAllEvents {
     notification_move_to = 'notification_move_to',
-    // The rest will be used soon with the new Select all feature
+    button_move_to_archive = 'button_move_to_archive',
+    button_move_to_trash = 'button_move_to_trash',
     banner_move_to = 'banner_move_to',
     banner_label_as = 'banner_label_as',
     banner_mark_as_read = 'banner_mark_as_read',
     banner_mark_as_unread = 'banner_mark_as_unread',
+    banner_permanent_delete = 'banner_permanent_delete',
 }
 
 export type TelemetryEvents =

@@ -22,7 +22,7 @@ function FiltersSection() {
     const api = useApi();
     const handleApplyFilter = async (filterId: string) => {
         // Handle Filter API call
-        await api(applyFilters([filterId]));
+        await api(applyFilters({ FilterIDs: [filterId] }));
 
         createNotification({
             text: c('Action').t`Filters are being applied. This might take a few minutes.`,
