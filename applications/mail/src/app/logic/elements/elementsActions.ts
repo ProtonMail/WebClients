@@ -1,8 +1,16 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { moveAll as moveAllRequest, queryMessageMetadata } from '@proton/shared/lib/api/messages';
+import {
+    labelAll as labelAllRequest,
+    markAllMessagesAsRead,
+    markAllMessagesAsUnread,
+    moveAllBatch,
+    moveAll as moveAllRequest,
+    queryMessageMetadata,
+} from '@proton/shared/lib/api/messages';
 import { DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS, SECOND } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
 
@@ -199,17 +207,79 @@ export const pollTaskRunning = createAsyncThunk<TaskRunningInfo, undefined, AppT
 
 export const moveAll = createAsyncThunk<
     { LabelID: string; timeoutID: NodeJS.Timeout },
-    { SourceLabelID: string; DestinationLabelID: string },
+    { SourceLabelID: string; DestinationLabelID: string; selectAll?: boolean },
     AppThunkExtra
->('elements/moveAll', async ({ SourceLabelID, DestinationLabelID }, { dispatch, getState, extra }) => {
+>('elements/moveAll', async ({ SourceLabelID, DestinationLabelID, selectAll }, { dispatch, getState, extra }) => {
     // If we move all to trash, we don't want to keep labels attached to the elements
     const isMoveToTrash = SourceLabelID === MAILBOX_LABEL_IDS.TRASH;
 
+    if (selectAll) {
+        await extra.api(
+            moveAllBatch({
+                SearchContext: {
+                    LabelID: SourceLabelID,
+                },
+                DestinationLabelID,
+            })
+        );
+    } else {
+        await extra.api(
+            moveAllRequest({
+                SourceLabelID,
+                DestinationLabelID,
+                KeepSourceLabel: isMoveToTrash ? 0 : 1,
+            })
+        );
+    }
+
+    const timeoutID = refreshTaskRunningTimeout([SourceLabelID], {
+        getState,
+        dispatch,
+    });
+
+    return {
+        LabelID: SourceLabelID,
+        timeoutID: timeoutID as NodeJS.Timeout,
+    };
+});
+
+export const markAll = createAsyncThunk<
+    { LabelID: string; timeoutID: NodeJS.Timeout },
+    { SourceLabelID: string; status: MARK_AS_STATUS },
+    AppThunkExtra
+>('elements/markAll', async ({ SourceLabelID, status }, { dispatch, getState, extra }) => {
+    const action = status === MARK_AS_STATUS.READ ? markAllMessagesAsRead : markAllMessagesAsUnread;
     await extra.api(
-        moveAllRequest({
-            SourceLabelID,
-            DestinationLabelID,
-            KeepSourceLabel: isMoveToTrash ? 0 : 1,
+        action({
+            SearchContext: {
+                LabelID: SourceLabelID,
+            },
+        })
+    );
+
+    const timeoutID = refreshTaskRunningTimeout([SourceLabelID], {
+        getState,
+        dispatch,
+    });
+
+    return {
+        LabelID: SourceLabelID,
+        timeoutID: timeoutID as NodeJS.Timeout,
+    };
+});
+
+export const labelAll = createAsyncThunk<
+    { LabelID: string; timeoutID: NodeJS.Timeout },
+    { SourceLabelID: string; toLabel: string[]; toUnlabel: string[] },
+    AppThunkExtra
+>('elements/markAll', async ({ SourceLabelID, toLabel, toUnlabel }, { dispatch, getState, extra }) => {
+    await extra.api(
+        labelAllRequest({
+            SearchContext: {
+                LabelID: SourceLabelID,
+            },
+            AddLabelIDs: toLabel,
+            RemoveLabelIDs: toUnlabel,
         })
     );
 

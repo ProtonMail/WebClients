@@ -1,4 +1,6 @@
 import { Filter } from '@proton/components/containers/filters/interfaces';
+import { MailSearchContext } from '@proton/shared/lib/api/messages';
+import { Nullable } from '@proton/shared/lib/interfaces';
 
 type AddSieveFilterParams = Required<Pick<Filter, 'Name' | 'Sieve' | 'Version'>>;
 export const addSieveFilter = ({ Name, Sieve, Version }: AddSieveFilterParams) => ({
@@ -65,18 +67,36 @@ export const updateFilterOrder = (FilterIDs: string[]) => ({
 });
 
 interface ApplyFiltersParams {
+    SearchContext?: Nullable<MailSearchContext>;
+    Version?: Nullable<string>;
+    Sieve?: Nullable<string>;
+    AllFilters?: 0 | 1;
+    FilterIDs?: string[];
     AllowList?: 0 | 1;
     BlockList?: 0 | 1;
+    SpamList?: 0 | 1;
 }
 
-export const applyAllFilters = ({ AllowList = 0, BlockList = 0 }: ApplyFiltersParams = {}) => ({
+export const applyFilters = ({
+    SearchContext = null,
+    Version = null,
+    Sieve = null,
+    AllFilters = 0,
+    FilterIDs = [],
+    AllowList = 0,
+    BlockList = 0,
+    SpamList = 0,
+}: ApplyFiltersParams) => ({
     method: 'post',
     url: 'mail/v4/messages/apply-filters',
-    data: { AllFilters: 1, AllowList, BlockList },
-});
-
-export const applyFilters = (FilterIDs: string[], { AllowList = 0, BlockList = 0 }: ApplyFiltersParams = {}) => ({
-    method: 'post',
-    url: 'mail/v4/messages/apply-filters',
-    data: { AllFilters: 0, FilterIDs, AllowList, BlockList },
+    data: {
+        SearchContext,
+        Version,
+        Sieve,
+        AllFilters,
+        FilterIDs,
+        AllowList,
+        BlockList,
+        SpamList,
+    },
 });

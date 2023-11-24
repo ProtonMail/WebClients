@@ -16,8 +16,8 @@ import { getFolderName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import { Element } from '../../models/element';
-import { useMarkAs } from '../actions/useMarkAs';
-import { useMoveToFolder } from '../actions/useMoveToFolder';
+import { useMarkAs } from '../actions/markAs/useMarkAs';
+import { useMoveToFolder } from '../actions/move/useMoveToFolder';
 import { useStar } from '../actions/useStar';
 import { ComposeTypes } from '../composer/useCompose';
 
@@ -80,7 +80,7 @@ export const useMessageHotkeys = (
     const moveDropdownToggleRef = useRef<() => void>(noop);
     const filterDropdownToggleRef = useRef<() => void>(noop);
 
-    const markAs = useMarkAs();
+    const { markAs } = useMarkAs();
     const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal } = useMoveToFolder();
     const star = useStar();
 
@@ -99,7 +99,12 @@ export const useMessageHotkeys = (
 
         const folderName = getFolderName(LabelID, folders);
 
-        await moveToFolder([message.data], LabelID, folderName, labelID, false);
+        await moveToFolder({
+            elements: [message.data],
+            folderID: LabelID,
+            folderName,
+            fromLabelID: labelID,
+        });
     };
 
     const shouldStopPropagation = (e: KeyboardEvent, direction: ARROW_SCROLL_DIRECTIONS) => {
@@ -239,7 +244,11 @@ export const useMessageHotkeys = (
                     } else {
                         onBack();
                     }
-                    markAs([message.data as Element], labelID, MARK_AS_STATUS.UNREAD);
+                    void markAs({
+                        elements: [message.data as Element],
+                        labelID,
+                        status: MARK_AS_STATUS.UNREAD,
+                    });
                     await call();
                 }
             },

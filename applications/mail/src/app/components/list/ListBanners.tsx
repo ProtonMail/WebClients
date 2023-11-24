@@ -45,7 +45,7 @@ const ListBanners = ({
     esState: { isESLoading, showESSlowToolbar: canDisplayESSlowToolbar },
 }: Props) => {
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
-    // Override compactness of the list view to accomodate body preview when showing encrypted search results
+    // Override compactness of the list view to accommodate body preview when showing encrypted search results
     const { contentIndexingDone, esEnabled } = esStatus;
     const shouldOverrideCompactness = shouldHighlight() && contentIndexingDone && esEnabled;
     const isCompactView = userSettings.Density === DENSITY.COMPACT && !shouldOverrideCompactness;
@@ -105,7 +105,7 @@ const ListBanners = ({
                 />
             ),
             condition: () => canDisplayTaskRunningBanner,
-            canWith: ['es-slow'],
+            canWith: ['es-slow', 'almost-all-mail', 'mail-upsell', 'auto-delete'],
         },
         {
             id: 'auto-delete',

@@ -2,6 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 interface LayoutState {
     sidebarExpanded: boolean;
+    selectAll: boolean;
 }
 
 const initialState: LayoutState = {
@@ -9,6 +10,7 @@ const initialState: LayoutState = {
      * Used on narrow devices when burger menu allows to toggle sidebar
      */
     sidebarExpanded: false,
+    selectAll: false,
 };
 
 const layoutSlice = createSlice({
@@ -20,6 +22,9 @@ const layoutSlice = createSlice({
         },
         toggleSidebarExpand: (state) => {
             state.sidebarExpanded = !state.sidebarExpanded;
+        },
+        setSelectAll: (state, action: PayloadAction<boolean>) => {
+            state.selectAll = action.payload;
         },
     },
 });
