@@ -3,16 +3,7 @@ import { useCallback, useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    ErrorButton,
-    Prompt,
-    useApi,
-    useEventManager,
-    useFolders,
-    useLabels,
-    useModalState,
-    useNotifications,
-} from '@proton/components';
+import { ErrorButton, Prompt, useApi, useEventManager, useFolders, useLabels, useModalState } from '@proton/components';
 import { emptyLabel as emptyLabelRequest } from '@proton/shared/lib/api/messages';
 
 import { isCustomLabel } from '../../helpers/labels';
@@ -21,7 +12,6 @@ import { useAppDispatch } from '../../logic/store';
 import { useOptimisticEmptyLabel } from '../optimistic/useOptimisticEmptyLabel';
 
 export const useEmptyLabel = () => {
-    const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const api = useApi();
     const optimisticEmptyLabel = useOptimisticEmptyLabel();
@@ -51,13 +41,6 @@ export const useEmptyLabel = () => {
             dispatch(backendActionFinished());
         }
         await call();
-        createNotification({
-            text: isLabel
-                ? // translator: Notification displayed when the user clicked on the "Delete all" action inside a custom label
-                  c('empty messages: success').t`Label cleared`
-                : // translator: Notification displayed when the user clicked on the "Delete all" action inside a custom folder
-                  c('empty messages: success').t`Folder cleared`,
-        });
     };
 
     const modal = (

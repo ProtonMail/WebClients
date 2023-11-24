@@ -1,11 +1,13 @@
 import { c } from 'ttag';
 
 import { Breakpoints, DropdownMenu, DropdownMenuButton, Icon, useModalState } from '@proton/components';
+import { TelemetryMailSelectAllEvents } from '@proton/shared/lib/api/telemetry';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { canMoveAll, labelIncludes } from '../../helpers/labels';
 import { useEmptyLabel } from '../../hooks/actions/useEmptyLabel';
@@ -82,6 +84,7 @@ const MoreDropdown = ({
     breakpoints,
 }: Props) => {
     const mailSettings = useMailModel('MailSettings');
+    const { selectAll } = useSelectAll({ labelID });
     let [firstActions, actions] = useLabelActions(labelID);
     if (isExtraTiny) {
         actions = [...firstActions, ...actions];
@@ -110,8 +113,8 @@ const MoreDropdown = ({
 
     const handleEmptyLabel = () => emptyLabel(labelID);
 
-    const handleMoveAllToArchive = () => moveAll(labelID, ARCHIVE);
-    const handleMoveAllToTrash = () => moveAll(labelID, TRASH);
+    const handleMoveAllToArchive = () => moveAll(labelID, ARCHIVE, TelemetryMailSelectAllEvents.button_move_to_archive);
+    const handleMoveAllToTrash = () => moveAll(labelID, TRASH, TelemetryMailSelectAllEvents.button_move_to_trash);
 
     const inbox = (
         <DropdownMenuButton
@@ -200,6 +203,7 @@ const MoreDropdown = ({
                           onLock={onLock}
                           breakpoints={breakpoints}
                           isMessage={!isConversationMode(labelID, mailSettings)}
+                          selectAll={selectAll}
                       />
                   ),
               },
@@ -212,6 +216,7 @@ const MoreDropdown = ({
                           onClose={onClose}
                           onLock={onLock}
                           breakpoints={breakpoints}
+                          selectAll={selectAll}
                       />
                   ),
               },

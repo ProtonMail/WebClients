@@ -21,11 +21,12 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
+import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import { LABEL_IDS_TO_HUMAN } from '../../constants';
 import { shouldDisplayTotal } from '../../helpers/labels';
-import { useApplyLabels } from '../../hooks/actions/useApplyLabels';
-import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
+import { useApplyLabels } from '../../hooks/actions/label/useApplyLabels';
+import { useMoveToFolder } from '../../hooks/actions/move/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import LocationAside from './LocationAside';
 
@@ -80,11 +81,13 @@ const SidebarItem = ({
     const history = useHistory();
     const { Shortcuts } = useMailModel('MailSettings');
     const getElementsFromIDs = useGetElementsFromIDs();
+    const { selectAll } = useSelectAll({ labelID });
 
     const [refreshing, withRefreshing] = useLoading(false);
 
-    const applyLabels = useApplyLabels();
-    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal } = useMoveToFolder();
+    const { applyLabels, applyLabelsToAllModal } = useApplyLabels();
+    const { moveToFolder, moveScheduledModal, moveSnoozedModal, moveAllModal, moveToSpamModal, selectAllMoveModal } =
+        useMoveToFolder();
 
     const humanID = LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS]
         ? LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS]
@@ -123,9 +126,20 @@ const SidebarItem = ({
 
         if (canDrop()) {
             if (isFolder) {
-                void moveToFolder(elements, labelID, text, currentLabelID, false);
+                void moveToFolder({
+                    elements,
+                    folderID: labelID,
+                    folderName: text,
+                    fromLabelID: currentLabelID,
+                    selectAll,
+                });
             } else {
-                void applyLabels(elements, { [labelID]: true }, false);
+                void applyLabels({
+                    elements,
+                    changes: { [labelID]: true },
+                    labelID,
+                    selectAll,
+                });
             }
         }
     });
@@ -189,6 +203,8 @@ const SidebarItem = ({
             {moveSnoozedModal}
             {moveAllModal}
             {moveToSpamModal}
+            {selectAllMoveModal}
+            {applyLabelsToAllModal}
         </SidebarListItem>
     );
 };

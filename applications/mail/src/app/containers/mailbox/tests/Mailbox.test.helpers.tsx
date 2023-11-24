@@ -8,7 +8,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
-import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { DEFAULT_MAILSETTINGS, VIEW_LAYOUT } from '@proton/shared/lib/mail/mailSettings';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import range from '@proton/utils/range';
 
@@ -60,7 +60,7 @@ export const props = {
 const defaultSort = { sort: 'Time', desc: true } as Sort;
 const defaultFilter = {};
 const defaultSearch = {};
-const defaultMailSettings = { ViewMode: VIEW_MODE.GROUP, Shortcuts: 1 } as MailSettings;
+const defaultMailSettings = { ...DEFAULT_MAILSETTINGS, ViewLayout: VIEW_LAYOUT.COLUMN } as MailSettings;
 
 export const labels: Label[] = [
     { ID: 'labelID', Type: LABEL_TYPE.MESSAGE_LABEL, Name: 'label' },

@@ -33,6 +33,7 @@ import clsx from '@proton/utils/clsx';
 
 import SpotlightEmailForwarding from 'proton-mail/components/header/SpotlightEmailForwarding';
 import useMailDrawer from 'proton-mail/hooks/drawer/useMailDrawer';
+import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 
 import ConversationView from '../../components/conversation/ConversationView';
 import MailHeader from '../../components/header/MailHeader';
@@ -55,8 +56,8 @@ import {
     setSortInUrl,
     sortFromUrl,
 } from '../../helpers/mailboxUrl';
-import { useMarkAs } from '../../hooks/actions/useMarkAs';
-import { usePermanentDelete } from '../../hooks/actions/usePermanentDelete';
+import { usePermanentDelete } from '../../hooks/actions/delete/usePermanentDelete';
+import { useMarkAs } from '../../hooks/actions/markAs/useMarkAs';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useApplyEncryptedSearch } from '../../hooks/mailbox/useApplyEncryptedSearch';
 import { useElements, useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
@@ -100,7 +101,7 @@ const MailboxContainer = ({
     const [folders] = useFolders();
     const { createLabel } = useLabelActionsContext();
     const getElementsFromIDs = useGetElementsFromIDs();
-    const markAs = useMarkAs();
+    const { markAs, selectAllMarkModal } = useMarkAs();
     const listRef = useRef<HTMLDivElement>(null);
     const forceRowMode =
         breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium || breakpoints.viewportWidth.large;
@@ -115,6 +116,7 @@ const MailboxContainer = ({
     const isComposerOpened = composersCount > 0;
     const onMailTo = useOnMailTo();
     const { drawerSidebarButtons, showDrawerSidebar } = useMailDrawer();
+    const { selectAll, setSelectAll } = useSelectAll({ labelID: inputLabelID });
 
     const { enableResize, resetWidth, scrollBarWidth, isResizing } = useResizeMessageView(
         mainAreaRef,
@@ -151,6 +153,13 @@ const MailboxContainer = ({
         }
     }, [location.hash, isSearch]);
 
+    // Reset select all state when location is changing (e.g. if we change folder, we need to reset the select all state)
+    useEffect(() => {
+        if (selectAll) {
+            setSelectAll(false);
+        }
+    }, [location.pathname, location.hash]);
+
     const handlePage = useCallback(
         (pageNumber: number) => {
             history.push(setPageInUrl(history.location, pageNumber));
@@ -183,7 +192,7 @@ const MailboxContainer = ({
 
     const { labelID, elements, elementIDs, loading, placeholderCount, total } = useElements(elementsParams);
 
-    const { handleDelete: permanentDelete, modal: deleteModal } = usePermanentDelete(labelID);
+    const { handleDelete: permanentDelete, deleteSelectionModal, deleteAllModal } = usePermanentDelete(labelID);
     useApplyEncryptedSearch(elementsParams);
 
     const handleBack = useCallback(
@@ -274,14 +283,19 @@ const MailboxContainer = ({
             if (isUnread) {
                 handleBack();
             }
-            await markAs(elements, labelID, status);
+            await markAs({
+                elements,
+                labelID,
+                status,
+                selectAll,
+            });
         },
-        [selectedIDs, labelID, handleBack]
+        [selectedIDs, labelID, handleBack, selectAll]
     );
 
     const handleDelete = useCallback(async () => {
-        await permanentDelete(selectedIDs);
-    }, [selectedIDs, permanentDelete]);
+        await permanentDelete(selectedIDs, selectAll);
+    }, [selectedIDs, permanentDelete, selectAll]);
 
     const conversationMode = isConversationMode(labelID, mailSettings, location);
 
@@ -295,8 +309,11 @@ const MailboxContainer = ({
         moveSnoozedModal,
         moveAllModal,
         moveToSpamModal,
-        permanentDeleteModal,
+        deleteSelectionModal: deleteSelectionShortcutModal,
+        deleteAllModal: deleteAllShortcutModal,
         moveToFolder,
+        selectAllMoveModal,
+        selectAllMarkModal: markAllModal,
     } = useMailboxHotkeys(
         {
             labelID,
@@ -329,12 +346,18 @@ const MailboxContainer = ({
         async (LabelID: string) => {
             const folderName = getFolderName(LabelID, folders);
             const elements = getElementsFromIDs(selectedIDs);
-            await moveToFolder(elements, LabelID, folderName, labelID, false);
+            await moveToFolder({
+                elements,
+                folderID: LabelID,
+                folderName,
+                fromLabelID: labelID,
+                selectAll,
+            });
             if (selectedIDs.includes(elementID || '')) {
                 handleBack();
             }
         },
-        [selectedIDs, elementID, labelID, labelIDs, folders, handleBack]
+        [selectedIDs, elementID, labelID, labelIDs, folders, handleBack, selectAll]
     );
 
     const toolbar = (toolbarInHeader?: boolean) => {
@@ -541,6 +564,7 @@ const MailboxContainer = ({
                         onBack={handleBack}
                         userSettings={userSettings}
                         toolbar={toolbar()}
+                        onCheckAll={handleCheckAll}
                     />
                     <ErrorBoundary>
                         <section
@@ -597,12 +621,17 @@ const MailboxContainer = ({
                 </PrivateMainArea>
             </div>
             {commanderRender ? <Commander list={commanderList} {...commanderModalProps} /> : null}
-            {permanentDeleteModal}
+            {deleteSelectionModal}
+            {deleteAllModal}
+            {deleteSelectionShortcutModal}
+            {deleteAllShortcutModal}
             {moveScheduledModal}
             {moveSnoozedModal}
             {moveAllModal}
             {moveToSpamModal}
-            {deleteModal}
+            {selectAllMoveModal}
+            {selectAllMarkModal}
+            {markAllModal}
         </MailboxContainerContextProvider>
     );
 };
