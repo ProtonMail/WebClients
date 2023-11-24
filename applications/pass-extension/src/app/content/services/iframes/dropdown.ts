@@ -33,6 +33,7 @@ export const createDropdown = (): InjectedDropdown => {
         src: DROPDOWN_IFRAME_SRC,
         animation: 'fadein',
         backdropClose: true,
+        onError: withContext((ctx) => ctx.service.iframe.detachDropdown()),
         onClose: (_, options) => options?.refocus && fieldRef.current?.focus(),
         backdropExclude: () => [fieldRef.current?.icon?.element, fieldRef.current?.element].filter(truthy),
         position: (iframeRoot: HTMLElement) => {

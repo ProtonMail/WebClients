@@ -23,6 +23,7 @@ export const createNotification = (): InjectedNotification => {
         animation: 'slidein',
         backdropClose: false,
         classNames: ['fixed'],
+        onError: withContext((ctx) => ctx.service.iframe.detachNotification()),
         onClose: withContext(({ service }, { action }, options) => {
             switch (action) {
                 /* stash the form submission if the user discarded

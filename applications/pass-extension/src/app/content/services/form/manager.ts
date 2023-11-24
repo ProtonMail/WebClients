@@ -53,8 +53,18 @@ export const createFormManager = (options: FormManagerOptions) => {
      * in SPA apps. Once a form is detected, it will be tracked until
      * removed : form visibility changes have no effect on detachment
      * for performance reasons (costly `isVisible` check) */
-    const garbagecollect = () =>
-        ctx.trackedForms.forEach((form) => form.shouldRemove() && detachTrackedForm(form.element));
+    const garbagecollect = withContext(({ service }) => {
+        ctx.trackedForms.forEach((form) => {
+            if (!form.shouldRemove()) {
+                return;
+            }
+
+            detachTrackedForm(form.element);
+            form.tracker?.submit();
+        });
+
+        void service.autosave.reconciliate();
+    });
 
     /* Detection :
      * - runs in `requestAnimationFrame` to defer costly DOM operations
