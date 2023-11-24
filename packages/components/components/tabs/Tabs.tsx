@@ -7,8 +7,9 @@ import debounce from '@proton/utils/debounce';
 import useRightToLeft from '../../containers/rightToLeft/useRightToLeft';
 import { Tab } from './index.d';
 
-const toKey = (index: number, prefix = '') => `${prefix}${index}`;
+import './Tabs.scss';
 
+const toKey = (index: number, prefix = '') => `${prefix}${index}`;
 interface Props {
     tabs?: Tab[];
     gap?: ReactNode;
@@ -27,6 +28,7 @@ interface Props {
     containerClassName?: string;
     navContainerClassName?: string;
     contentClassName?: string;
+    variant?: 'underline' | 'modern';
 }
 
 export const Tabs = ({
@@ -41,6 +43,7 @@ export const Tabs = ({
     containerClassName,
     navContainerClassName,
     contentClassName,
+    variant = 'underline',
 }: Props) => {
     const key = toKey(value, 'key_');
     const label = toKey(value, 'label_');
@@ -57,6 +60,10 @@ export const Tabs = ({
     const translate = `${offset}px`;
 
     useEffect(() => {
+        if (variant !== 'underline') {
+            return;
+        }
+
         const containerTabEl = containerRef.current;
         if (!containerTabEl || !selectedTabEl) {
             return;
@@ -80,19 +87,25 @@ export const Tabs = ({
             resizeObserver.disconnect();
         };
         // tabs.title.join is meant to cover if the tabs would dynamically change
-    }, [containerRef.current, selectedTabEl, tabs?.map((tab) => tab.title).join('')]);
+    }, [variant, containerRef.current, selectedTabEl, tabs?.map((tab) => tab.title).join('')]);
 
     if (tabs?.length === 1) {
         return <>{content}</>;
     }
 
     return (
-        <div className={clsx(['tabs', className])}>
+        <div className={clsx(['tabs', 'tabs--' + variant, className])}>
             <div className={clsx([navContainerClassName, stickyTabs && 'sticky-top bg-norm'])}>
-                <nav className={clsx(['tabs-container border-bottom border-weak', containerClassName])}>
+                <nav
+                    className={clsx([
+                        'tabs-container',
+                        variant === 'underline' && 'border-bottom border-weak',
+                        containerClassName,
+                    ])}
+                >
                     <ul
                         className={clsx([
-                            'tabs-list unstyled flex relative m-0 p-0',
+                            'tabs-list unstyled flex flex-nowrap relative m-0 p-0',
                             fullWidth && 'tabs-list--fullWidth',
                             'flex-align-items-end',
                         ])}
@@ -107,7 +120,14 @@ export const Tabs = ({
                             return (
                                 <li
                                     key={key}
-                                    className="tabs-list-item"
+                                    className={clsx(
+                                        'tabs-list-item',
+                                        variant === 'underline' && 'text-semibold hover:color-norm',
+                                        variant === 'underline' && !selected && 'color-weak',
+                                        variant === 'underline' && selected && 'color-norm',
+                                        variant === 'modern' && 'text-lg color-primary',
+                                        variant === 'modern' && selected && 'text-semibold'
+                                    )}
                                     role="presentation"
                                     ref={selected ? setSelectedTabEl : undefined}
                                 >
@@ -118,7 +138,7 @@ export const Tabs = ({
                                             onChange(index);
                                         }}
                                         type="button"
-                                        className="tabs-list-link flex flex-justify-center relative text-semibold"
+                                        className="tabs-list-link flex flex-justify-center relative"
                                         id={label}
                                         role="tab"
                                         aria-controls={key}
@@ -126,12 +146,14 @@ export const Tabs = ({
                                         aria-selected={selected}
                                         data-testid={`tab-header-${title}-button`}
                                     >
-                                        {title}
+                                        <span className={clsx(variant === 'modern' && 'text-ellipsis block')}>
+                                            {title}
+                                        </span>
                                     </button>
                                 </li>
                             );
                         })}
-                        <li className="tabs-indicator" aria-hidden />
+                        {variant === 'underline' && <li className="tabs-indicator" aria-hidden />}
                     </ul>
                 </nav>
             </div>
