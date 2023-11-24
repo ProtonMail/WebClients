@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import type { UseAsyncModalHandle } from '@proton/pass/hooks/useAsyncModalHandles';
 import { useAsyncModalHandles } from '@proton/pass/hooks/useAsyncModalHandles';
 import type { GeneratePasswordOptions } from '@proton/pass/lib/password/generator';
-import { passwordDelete, passwordHistoryClear, passwordSave } from '@proton/pass/store/actions/creators/password';
+import { passwordDelete, passwordHistoryClear, passwordSave } from '@proton/pass/store/actions';
 import type { PasswordItem } from '@proton/pass/store/reducers';
 import { selectPasswordOptions } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';

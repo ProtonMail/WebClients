@@ -7,7 +7,12 @@ import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhan
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { clientReady } from '@proton/pass/lib/client';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
-import { startEventPolling, stateSync, stopEventPolling } from '@proton/pass/store/actions';
+import {
+    passwordHistoryGarbageCollect,
+    startEventPolling,
+    stateSync,
+    stopEventPolling,
+} from '@proton/pass/store/actions';
 import { INITIAL_SETTINGS } from '@proton/pass/store/reducers/settings';
 import { AppStatus } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
@@ -41,6 +46,7 @@ export const StoreProvider: FC = ({ children }) => {
                 getTelemetry: () => null,
                 onBoot: (res) => {
                     client.current.setStatus(res.ok ? AppStatus.READY : AppStatus.ERROR);
+                    if (res.ok) store.dispatch(passwordHistoryGarbageCollect());
                     if (res.ok && isDocumentVisible()) store.dispatch(startEventPolling());
                     if (!res.ok && res.clearCache) void deletePassDB(authStore.getUserID()!);
                 },
