@@ -138,7 +138,7 @@ const MailOnboardingModal = (props: Props) => {
                                     src={imgSrc}
                                     alt=""
                                 />
-                                <div className="flex-item-fluid flex flex-col gap-0">
+                                <div className="flex-item-fluid flex gap-0">
                                     <h2 className="text-rg text-bold">{title}</h2>
                                     <p className="m-0 text-weak">{description}</p>
                                 </div>
