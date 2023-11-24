@@ -11,7 +11,7 @@ import { getLocalPath, getTrashRoute } from '@proton/pass/components/Core/routin
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { Submenu } from '@proton/pass/components/Menu/Submenu';
 import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
-import { usePasswordContext } from '@proton/pass/components/PasswordGenerator/PasswordContext';
+import { usePasswordContext } from '@proton/pass/components/Password/PasswordProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { syncIntent } from '@proton/pass/store/actions';
@@ -26,7 +26,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
 
-    const { openPasswordHistory } = usePasswordContext();
+    const passwordContext = usePasswordContext();
     const dispatch = useDispatch();
 
     const { filters, matchEmpty, matchTrash, navigate, setFilters } = useNavigation();
@@ -76,7 +76,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
 
             <div className="flex flex-column flex-nowrap pb-4">
                 <DropdownMenuButton
-                    onClick={openPasswordHistory}
+                    onClick={passwordContext.history.open}
                     label={c('Label').t`Generated passwords`}
                     icon={'key-history'}
                     labelClassname="mx-3"

@@ -6,7 +6,7 @@ import { useToggle } from '@proton/components/hooks';
 import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
 import { InviteProvider } from '@proton/pass/components/Invite/InviteProvider';
 import { Sidebar } from '@proton/pass/components/Layout/Section/Sidebar';
-import { PasswordContextProvider } from '@proton/pass/components/PasswordGenerator/PasswordContext';
+import { PasswordProvider } from '@proton/pass/components/Password/PasswordProvider';
 import { SpotlightProvider } from '@proton/pass/components/Spotlight/SpotlightProvider';
 import { VaultActionsProvider } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { getLocalIDPath } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -25,7 +25,7 @@ export const Main: FC = () => {
 
     return (
         <InviteProvider onVaultCreated={useCallback((shareId) => setFilters({ selectedShareId: shareId }), [])}>
-            <PasswordContextProvider initial={null}>
+            <PasswordProvider>
                 <SpotlightProvider>
                     <div className="content-container flex flex-row flex-nowrap no-scroll flex-item-fluid relative w-full h-full anime-fade-in">
                         <Sidebar expanded={expanded} onToggle={toggle}>
@@ -58,7 +58,7 @@ export const Main: FC = () => {
                         </Route>
                     </div>
                 </SpotlightProvider>
-            </PasswordContextProvider>
+            </PasswordProvider>
         </InviteProvider>
     );
 };

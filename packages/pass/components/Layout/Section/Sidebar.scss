@@ -1,3 +1,4 @@
 #pass-sidebar {
-	min-inline-size: 20em;
+	max-inline-size: var(--pass-sidebar-size);
+	inline-size: var(--pass-sidebar-size);
 }
