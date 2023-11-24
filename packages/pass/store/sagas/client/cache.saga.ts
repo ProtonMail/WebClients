@@ -15,8 +15,16 @@ import { oneOf } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
 import { objectFilter } from '@proton/pass/utils/object/filter';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
-function* cacheWorker({ type }: WithCache<AnyAction>, { getAppState, getAuthStore, setCache }: WorkerRootSagaOptions) {
+const CACHE_THROTTLING_TIMEOUT = 1_000;
+
+function* cacheWorker(
+    { type, meta }: WithCache<AnyAction>,
+    { getAppState, getAuthStore, setCache }: WorkerRootSagaOptions
+) {
+    if (meta.throttle) yield wait(CACHE_THROTTLING_TIMEOUT);
+
     const loggedIn = getAuthStore().hasSession();
     const booted = oneOf(AppStatus.READY, AppStatus.BOOTING)(getAppState().status);
 
