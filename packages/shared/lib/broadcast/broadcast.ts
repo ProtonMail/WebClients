@@ -6,7 +6,7 @@ const getClient = () => {
     const safari = /safari/.test(lowercaseUserAgent);
     const ios = /iphone|ipod|ipad/.test(lowercaseUserAgent);
 
-    if (ios) {
+    if (ios && typeof (window as any)?.webkit?.messageHandlers?.iOS !== 'undefined') {
         if (!standalone && safari) {
             // browser
         } else if (standalone && !safari) {
@@ -17,7 +17,7 @@ const getClient = () => {
         }
     }
 
-    if (typeof (window as any).AndroidInterface !== 'undefined') {
+    if (typeof (window as any)?.AndroidInterface !== 'undefined') {
         return 'android';
     }
 
@@ -35,12 +35,12 @@ const broadcast = <T>(message: T) => {
 
     switch (client) {
         case 'ios': {
-            (window as any).webkit.messageHandlers.iOS.postMessage(serialized);
+            (window as any)?.webkit?.messageHandlers?.iOS?.postMessage?.(serialized);
             break;
         }
 
         case 'android': {
-            (window as any).AndroidInterface.dispatch(serialized);
+            (window as any)?.AndroidInterface?.dispatch?.(serialized);
             break;
         }
 
