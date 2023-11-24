@@ -14,6 +14,8 @@ export const OTP_DEFAULTS = {
     period: 30,
 };
 
+export const INVALID_SECRET_CHARS = /\s|-|_/g;
+
 export const parseOTPValue = (
     input: string,
     { label, issuer }: { label?: MaybeNull<string>; issuer?: MaybeNull<string> } = {}
@@ -25,16 +27,21 @@ export const parseOTPValue = (
     } catch (err) {
         try {
             if (isTotpUri(input)) {
-                const params = getSearchParams(input.split('?')?.[1]);
-                if (params.secret === undefined) return '';
+                const url = new URL(input);
+                const params = Object.fromEntries(url.searchParams);
+                const secret = params.secret?.replaceAll(INVALID_SECRET_CHARS, '');
+                if (!secret) return '';
+
+                const urlIssuerAndLabel = decodeURIComponent(url.pathname.slice(1)).split(':', 2);
 
                 return new TOTP(
                     merge(
                         OTP_DEFAULTS,
                         {
                             ...params,
-                            label,
-                            issuer,
+                            secret,
+                            issuer: issuer ?? (urlIssuerAndLabel.length === 2 ? urlIssuerAndLabel[0] : null),
+                            label: label ?? urlIssuerAndLabel[urlIssuerAndLabel.length - 1],
                         },
                         { excludeEmpty: true }
                     )
@@ -42,7 +49,7 @@ export const parseOTPValue = (
             }
 
             /* remove spaces, dashes and underscores */
-            let maybeBase32Secret = input.replace(/\s|-|_/g, '');
+            let maybeBase32Secret = decodeURIComponent(input).replace(INVALID_SECRET_CHARS, '');
             let secret = Secret.fromBase32(maybeBase32Secret);
 
             return new TOTP(
