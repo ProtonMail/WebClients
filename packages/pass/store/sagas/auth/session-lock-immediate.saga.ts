@@ -9,7 +9,7 @@ import noop from '@proton/utils/noop';
  * no effect */
 function* lockSessionImmediateWorker({ getAuthService, getAuthStore: getAuth }: WorkerRootSagaOptions) {
     if (getAuth().getLockToken() !== undefined) {
-        yield put(cacheRequest());
+        yield put(cacheRequest({ throttle: false }));
 
         yield fork(function* () {
             /* fork for non-blocking action -> immediate UI effect */

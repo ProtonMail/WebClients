@@ -2,7 +2,7 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { bootRequest, syncRequest, wakeupRequest } from '@proton/pass/store/actions/requests';
-import { withCache } from '@proton/pass/store/actions/with-cache';
+import { type CacheOptions, withCache, withCacheOptions } from '@proton/pass/store/actions/with-cache';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import type { EndpointOptions } from '@proton/pass/store/actions/with-receiver';
 import { withReceiver } from '@proton/pass/store/actions/with-receiver';
@@ -20,7 +20,9 @@ export const stateHydrate = createAction('state::hydrate', (state: any, options?
     options ? withReceiver(options)({ payload: { state } }) : { payload: { state } }
 );
 
-export const cacheRequest = createAction('cache::request', () => withCache({ payload: {} }));
+export const cacheRequest = createAction('cache::request', (options: Omit<CacheOptions, 'cache'>) =>
+    withCacheOptions(options)({ payload: {} })
+);
 export const cacheCancel = createAction('cache::cancel');
 
 export const wakeupIntent = createAction(
