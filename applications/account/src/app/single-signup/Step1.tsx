@@ -27,6 +27,10 @@ import {
     getBlackFridayRenewalNoticeText,
     getRenewalNoticeText,
 } from '@proton/components/containers';
+import {
+    isBlackFridayPeriod as getIsBlackFridayPeriod,
+    isCyberWeekPeriod as getIsCyberWeekPeriod,
+} from '@proton/components/containers/offers/helpers/offerPeriods';
 import Alert3ds from '@proton/components/containers/payments/Alert3ds';
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
@@ -932,7 +936,10 @@ const Step1 = ({
 
     const isBlackFriday =
         getSubscriptionMapping({ [PLANS.VPN]: 1 })?.mapping[CYCLE.FIFTEEN]?.checkResult.Coupon?.Code ===
-        COUPON_CODES.BLACK_FRIDAY_2023;
+            COUPON_CODES.BLACK_FRIDAY_2023 || options.checkResult.Coupon?.Code === COUPON_CODES.BLACK_FRIDAY_2023;
+
+    const isCyberWeekPeriod = getIsCyberWeekPeriod();
+    const isBlackFridayPeriod = getIsBlackFridayPeriod();
 
     const renewalNotice = !hasSelectedFree && (
         <div className="w-full text-sm color-norm opacity-70 text-center">
@@ -1043,7 +1050,14 @@ const Step1 = ({
                             }
 
                             if (isBlackFriday) {
-                                return c('bf2023: header').t`Save with Black Friday deals on a high-speed Swiss VPN`;
+                                if (isBlackFridayPeriod) {
+                                    return c('bf2023: header')
+                                        .t`Save with Black Friday deals on a high-speed Swiss VPN`;
+                                }
+                                if (isCyberWeekPeriod) {
+                                    return c('bf2023: header').t`Save with Cyber Week deals on a high-speed Swiss VPN`;
+                                }
+                                return c('bf2023: header').t`Save with End of Year deals on a high-speed Swiss VPN`;
                             }
 
                             if (mode === 'pricing') {
@@ -1077,11 +1091,18 @@ const Step1 = ({
                     <Box className={`mt-8 w-full ${padding}`}>
                         <BoxHeader
                             step={showStepLabel ? step++ : undefined}
-                            title={
-                                isBlackFriday
-                                    ? c('bf2023: header').t`Select your Black Friday offer`
-                                    : c('Header').t`Select your pricing plan`
-                            }
+                            title={(() => {
+                                if (isBlackFriday) {
+                                    if (isBlackFridayPeriod) {
+                                        return c('bf2023: header').t`Select your Black Friday offer`;
+                                    }
+                                    if (isCyberWeekPeriod) {
+                                        return c('bf2023: header').t`Select your Cyber Week offer`;
+                                    }
+                                    return c('bf2023: header').t`Select your End of Year offer`;
+                                }
+                                return c('Header').t`Select your pricing plan`;
+                            })()}
                             right={
                                 <CurrencySelector
                                     mode="select-two"
