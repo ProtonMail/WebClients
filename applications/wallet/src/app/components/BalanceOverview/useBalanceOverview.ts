@@ -2,9 +2,10 @@ import { useMemo } from 'react';
 
 import { ChartData, ChartDataset } from 'chart.js';
 
+import { getRandomAccentColor } from '@proton/shared/lib/colors';
+
 import { useBalanceEvolution } from '../../hooks/useBalanceEvolution';
 import { Transaction, Wallet } from '../../types';
-import { getRandomColor } from '../../utils';
 
 type WalletBalanceAcc = [string[], { label: string; data: number[]; backgroundColor: string[]; borderWidth: number }[]];
 
@@ -12,9 +13,11 @@ const formatWalletToDoughnutChart = (wallets: Wallet[]) => {
     const [labels, datasets] = wallets.reduce(
         ([accLabels, [accDataset]]: WalletBalanceAcc, wallet) => {
             const label = wallet.name;
-            let color = getRandomColor();
-            while (accDataset.backgroundColor.includes(color)) {
-                color = getRandomColor();
+            let color = getRandomAccentColor();
+            let tries = 0;
+            while (accDataset.backgroundColor.includes(color) && tries < 3) {
+                color = getRandomAccentColor();
+                tries++;
             }
 
             return [
