@@ -13,8 +13,16 @@ import {
 } from '@proton/shared/lib/models';
 
 import { UserSettingsProvider, useUserSettings } from './store';
+import { sendErrorReport } from './utils/errorHandling';
+import { getRefreshError } from './utils/errorHandling/RefreshError';
 
-const getAppContainer = () => import(/* webpackChunkName: "MainContainer" */ './containers/MainContainer');
+const getAppContainer = () =>
+    import(/* webpackChunkName: "MainContainer" */ './containers/MainContainer').catch((e) => {
+        console.warn(e);
+        sendErrorReport(e);
+
+        return Promise.reject(getRefreshError());
+    });
 
 interface Props {
     onLogout: () => void;
