@@ -4,7 +4,7 @@ import { getFeatureFlags } from '@proton/pass/lib/user/user.requests';
 import { getUserFeaturesFailure, getUserFeaturesIntent, getUserFeaturesSuccess } from '@proton/pass/store/actions';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import { selectFeatureFlags } from '@proton/pass/store/selectors';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import { SessionLockStatus } from '@proton/pass/types';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 
@@ -12,7 +12,7 @@ import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 /* `getUserFeatures` will only request pass feature flags from the api
  * if the `requestedAt` timestamp is more than a day old */
 function* syncFeatures(
-    { getAuthStore, onFeatureFlagsUpdate }: WorkerRootSagaOptions,
+    { getAuthStore, onFeatureFlagsUpdated }: RootSagaOptions,
     { meta }: ReturnType<typeof getUserFeaturesIntent>
 ) {
     try {
@@ -24,12 +24,12 @@ function* syncFeatures(
         const incoming: FeatureFlagState = yield getFeatureFlags();
         yield put(getUserFeaturesSuccess(meta.request.id, incoming));
 
-        if (!isDeepEqual(current, incoming)) onFeatureFlagsUpdate?.(incoming);
+        if (!isDeepEqual(current, incoming)) onFeatureFlagsUpdated?.(incoming);
     } catch (error: unknown) {
         yield put(getUserFeaturesFailure(meta.request.id, error));
     }
 }
 
-export default function* watcher(options: WorkerRootSagaOptions) {
+export default function* watcher(options: RootSagaOptions) {
     yield takeEvery(getUserFeaturesIntent.match, syncFeatures, options);
 }

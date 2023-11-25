@@ -12,7 +12,7 @@ import {
     stopEventPolling,
 } from '@proton/pass/store/actions';
 import type { SafeUserState } from '@proton/pass/store/reducers';
-import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { Maybe } from '@proton/pass/types';
 import type { EncryptedPassCache, PassCache } from '@proton/pass/types/worker/cache';
 import { pick } from '@proton/shared/lib/helpers/object';
@@ -34,7 +34,7 @@ function* resolveUserState(userId: string) {
 export function* hydrateFromCache(
     /** define how we should merge the incoming state */
     merge: (existing: State, incoming: State) => State,
-    { getCache, getAuthStore }: WorkerRootSagaOptions
+    { getCache, getAuthStore }: RootSagaOptions
 ) {
     const currentState: State = yield select();
 
@@ -59,7 +59,7 @@ export function* hydrateFromCache(
     return cache?.state !== undefined;
 }
 
-function* hydrateWorker(options: WorkerRootSagaOptions) {
+function* hydrateWorker(options: RootSagaOptions) {
     try {
         yield put(stopEventPolling());
         yield hydrateFromCache((_, incoming) => incoming, options);
@@ -67,6 +67,6 @@ function* hydrateWorker(options: WorkerRootSagaOptions) {
     } catch {}
 }
 
-export default function* watcher(options: WorkerRootSagaOptions) {
+export default function* watcher(options: RootSagaOptions) {
     yield takeLeading(stateSync.match, hydrateWorker, options);
 }

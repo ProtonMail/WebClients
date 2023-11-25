@@ -14,10 +14,10 @@ import { userAccessRequest, userFeaturesRequest } from '@proton/pass/store/actio
 import { withRevalidate } from '@proton/pass/store/actions/with-request';
 import { SyncType, synchronize } from '@proton/pass/store/sagas/client/sync';
 import { selectUser } from '@proton/pass/store/selectors';
-import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
-function* syncWorker(options: WorkerRootSagaOptions) {
+function* syncWorker(options: RootSagaOptions) {
     yield put(stopEventPolling());
 
     const state = (yield select()) as State;
@@ -41,7 +41,7 @@ function* syncWorker(options: WorkerRootSagaOptions) {
 
 /* The `syncWorker` function can take a long time to complete. In order to avoid conflicts
  * with any state resetting actions, we race the `sync` against such actions. */
-export default function* watcher(options: WorkerRootSagaOptions): Generator {
+export default function* watcher(options: RootSagaOptions): Generator {
     while (true) {
         yield call(function* () {
             yield take(syncIntent.match);

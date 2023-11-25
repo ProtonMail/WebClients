@@ -8,7 +8,7 @@ import { getUserAccessIntent, syncIntent, userEvent } from '@proton/pass/store/a
 import { userAccessRequest } from '@proton/pass/store/actions/requests';
 import { withRevalidate } from '@proton/pass/store/actions/with-request';
 import { selectAllAddresses, selectLatestEventId, selectUserSettings } from '@proton/pass/store/selectors';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { MaybeNull, UserEvent } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
@@ -24,7 +24,7 @@ import type { EventChannel } from './types';
 function* onUserEvent(
     event: EventManagerEvent<UserEvent>,
     _: EventChannel<UserEvent>,
-    { getAuthStore, getTelemetry }: WorkerRootSagaOptions
+    { getAuthStore, getTelemetry }: RootSagaOptions
 ) {
     const telemetry = getTelemetry();
     if ('error' in event) throw event.error;
@@ -84,7 +84,7 @@ export const createUserChannel = (api: Api, eventID: string) =>
         onClose: () => logger.info(`[Saga::UserChannel] closing channel`),
     });
 
-export function* userChannel(api: Api, options: WorkerRootSagaOptions) {
+export function* userChannel(api: Api, options: RootSagaOptions) {
     logger.info(`[Saga::UserChannel] start polling for user events`);
 
     const eventID: string = ((yield select(selectLatestEventId)) as ReturnType<typeof selectLatestEventId>) ?? '';
