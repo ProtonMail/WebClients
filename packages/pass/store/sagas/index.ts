@@ -1,6 +1,6 @@
 import { all } from 'redux-saga/effects';
 
-import type { WorkerRootSagaOptions } from '../types';
+import type { RootSagaOptions } from '../types';
 import aliasDetailsRequest from './alias/alias-details-request.saga';
 import aliasOptionsRequest from './alias/alias-options-request.saga';
 import sessionLockDisable from './auth/session-lock-disable.saga';
@@ -46,7 +46,7 @@ import vaultEdit from './vaults/vault-edit.saga';
 import vaultMoveAllItems from './vaults/vault-move-all-items.saga';
 import vaultTransferOwner from './vaults/vault-transfer-owner.saga';
 
-export function* workerRootSaga(options: WorkerRootSagaOptions) {
+export function* workerRootSaga(options: RootSagaOptions) {
     yield all(
         [
             aliasDetailsRequest,

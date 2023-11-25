@@ -3,10 +3,10 @@ import { put, takeEvery } from 'redux-saga/effects';
 import { PassCrypto } from '@proton/pass/lib/crypto/pass-crypto';
 import { deleteShare } from '@proton/pass/lib/shares/share.requests';
 import { shareLeaveFailure, shareLeaveIntent, shareLeaveSuccess } from '@proton/pass/store/actions';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 
 function* shareLeaveWorker(
-    { onShareEventDisabled, onItemsChange }: WorkerRootSagaOptions,
+    { onShareDeleted, onItemsUpdated }: RootSagaOptions,
     { payload, meta: { request } }: ReturnType<typeof shareLeaveIntent>
 ) {
     try {
@@ -14,8 +14,8 @@ function* shareLeaveWorker(
         yield deleteShare(shareId);
 
         PassCrypto.removeShare(shareId);
-        onShareEventDisabled?.(shareId);
-        onItemsChange?.();
+        onShareDeleted?.(shareId);
+        onItemsUpdated?.();
 
         yield put(shareLeaveSuccess(request.id, payload.shareId));
     } catch (err) {
@@ -23,6 +23,6 @@ function* shareLeaveWorker(
     }
 }
 
-export default function* watcher(options: WorkerRootSagaOptions) {
+export default function* watcher(options: RootSagaOptions) {
     yield takeEvery(shareLeaveIntent.match, shareLeaveWorker, options);
 }

@@ -1,8 +1,12 @@
 import { type FC, createContext, useCallback, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { usePopupContext } from 'proton-pass-extension/lib/hooks/usePopupContext';
 
+import type { LocationDraftState } from '@proton/pass/hooks/useItemDraft';
+import { isEditItemDraft, isNewItemDraft } from '@proton/pass/lib/items/item.predicates';
+import { selectLatestDraft } from '@proton/pass/store/selectors';
 import type { Maybe, SelectedItem } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
@@ -28,12 +32,18 @@ export const NavigationContext = createContext<NavigationContextValue>({
 
 export const NavigationContextProvider: FC = ({ children }) => {
     const popup = usePopupContext();
-    const history = useHistory();
+    const history = useHistory<LocationDraftState>();
     const [selectedItem, setSelectedItem] = useState<Maybe<SelectedItem>>(undefined);
 
     const inTrash = useRouteMatch('/trash') !== null;
     const isEditing = history.location.pathname.includes('/edit');
     const isCreating = history.location.pathname.includes('/new');
+
+    /** Get the latest draft on first load - the equality check
+     * function is set to never react to subsequent draft updates.
+     * FIXME: When we get to drafts v2, we can remove the draft
+     * effects from the `NavigationContextProvider` */
+    const draft = useSelector(selectLatestDraft, () => true);
 
     const selectItem = useCallback((shareId: string, itemId: string, options?: NavigationOptions) => {
         setSelectedItem({ shareId, itemId });
@@ -46,19 +56,13 @@ export const NavigationContextProvider: FC = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        const { selectedItem, draft } = popup.state.initial;
-
+        const { selectedItem } = popup.state.initial;
         if (selectedItem) selectItem(selectedItem.shareId, selectedItem.itemId, { action: 'replace' });
 
-        if (draft !== null) {
-            const { itemId, shareId, type, mode } = draft;
-            switch (mode) {
-                case 'new':
-                    return history.push(`/item/new/${type}`, { draft });
-                case 'edit':
-                    return history.push(`/share/${shareId}/item/${itemId}/edit`, { draft });
-            }
-        }
+        /** When supporting drafts v2: remove these as we will be able to leverage
+         * the full draft state and give the user more control over the drafts */
+        if (isNewItemDraft(draft)) history.push(`/item/new/${draft.type}`, { draft: draft });
+        if (isEditItemDraft(draft)) history.push(`/share/${draft.shareId}/item/${draft.itemId}/edit`, { draft: draft });
     }, []);
 
     return (

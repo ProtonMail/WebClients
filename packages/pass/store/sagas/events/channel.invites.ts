@@ -10,7 +10,7 @@ import { syncInvites } from '@proton/pass/store/actions';
 import type { InviteState } from '@proton/pass/store/reducers';
 import { selectFeatureFlag } from '@proton/pass/store/selectors';
 import { selectInvites } from '@proton/pass/store/selectors/invites';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { InvitesGetResponse, MaybeNull } from '@proton/pass/types';
 import { type Api } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -95,7 +95,7 @@ export const createInvitesChannel = (api: Api) =>
         onClose: () => logger.info(`[${NAMESPACE}] closing channel`),
     });
 
-export function* invitesChannel(api: Api, options: WorkerRootSagaOptions) {
+export function* invitesChannel(api: Api, options: RootSagaOptions) {
     const sharingEnabled: boolean = yield select(selectFeatureFlag(PassFeature.PassSharingV1));
     if (!sharingEnabled) return;
 

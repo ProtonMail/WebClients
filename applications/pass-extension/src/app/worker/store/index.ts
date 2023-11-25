@@ -8,11 +8,11 @@ import createSagaMiddleware from 'redux-saga';
 
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
-import { startEventPolling } from '@proton/pass/store/actions';
+import { draftsGarbageCollect, startEventPolling } from '@proton/pass/store/actions';
 import { requestMiddleware } from '@proton/pass/store/middlewares/request-middleware';
 import reducer from '@proton/pass/store/reducers';
 import { workerRootSaga } from '@proton/pass/store/sagas';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import { AppStatus, ShareEventType, WorkerMessageType } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
@@ -35,7 +35,7 @@ const store = configureStore({
             : [],
 });
 
-const options: WorkerRootSagaOptions = {
+const options: RootSagaOptions = {
     endpoint: 'background',
     getAuthStore: withContext((ctx) => ctx.authStore),
     getAuthService: withContext((ctx) => ctx.service.auth),
@@ -67,6 +67,7 @@ const options: WorkerRootSagaOptions = {
     onBoot: withContext(async (ctx, res) => {
         if (res.ok) {
             store.dispatch(startEventPolling());
+            store.dispatch(draftsGarbageCollect());
             void ctx.service.telemetry?.start();
             ctx.setStatus(AppStatus.READY);
             WorkerMessageBroker.buffer.flush();
@@ -77,7 +78,7 @@ const options: WorkerRootSagaOptions = {
         }
     }),
 
-    onFeatureFlagsUpdate: (features) =>
+    onFeatureFlagsUpdated: (features) =>
         WorkerMessageBroker.ports.broadcast(
             backgroundMessage({
                 type: WorkerMessageType.FEATURE_FLAGS_UPDATE,
@@ -86,7 +87,7 @@ const options: WorkerRootSagaOptions = {
         ),
 
     /* Update the extension's badge count on every item state change */
-    onItemsChange: withContext((ctx) => ctx.service.autofill.updateTabsBadgeCount()),
+    onItemsUpdated: withContext((ctx) => ctx.service.autofill.updateTabsBadgeCount()),
 
     /* Either broadcast notification or buffer it
      * if no target ports are opened. Assume that if no
@@ -109,9 +110,9 @@ const options: WorkerRootSagaOptions = {
             : WorkerMessageBroker.buffer.push(message);
     },
 
-    onSettingUpdate: withContext((ctx, update) => ctx.service.settings.sync(update)),
+    onSettingsUpdated: withContext((ctx, update) => ctx.service.settings.sync(update)),
 
-    onShareEventDisabled: (shareId) => {
+    onShareDeleted: (shareId) => {
         WorkerMessageBroker.ports.broadcast(
             backgroundMessage({
                 type: WorkerMessageType.SHARE_SERVER_EVENT,
@@ -124,7 +125,7 @@ const options: WorkerRootSagaOptions = {
         );
     },
 
-    onShareEventItemsDeleted: (shareId, itemIds) => {
+    onItemsDeleted: (shareId, itemIds) => {
         WorkerMessageBroker.ports.broadcast(
             backgroundMessage({
                 type: WorkerMessageType.SHARE_SERVER_EVENT,

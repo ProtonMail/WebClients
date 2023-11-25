@@ -4,9 +4,9 @@ import { takeEvery } from 'redux-saga/effects';
 import type { WithNotification } from '@proton/pass/store/actions/with-notification';
 import { isActionWithNotification } from '@proton/pass/store/actions/with-notification';
 import { isActionWithRequest } from '@proton/pass/store/actions/with-request';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 
-function* notificationWorker({ onNotification }: WorkerRootSagaOptions, action: WithNotification<AnyAction>) {
+function* notificationWorker({ onNotification }: RootSagaOptions, action: WithNotification<AnyAction>) {
     const { notification } = action.meta;
 
     /* if the action has request metadata - use the
@@ -20,6 +20,6 @@ function* notificationWorker({ onNotification }: WorkerRootSagaOptions, action: 
     onNotification?.(notification);
 }
 
-export default function* watcher(options: WorkerRootSagaOptions) {
+export default function* watcher(options: RootSagaOptions) {
     yield takeEvery(isActionWithNotification, notificationWorker, options);
 }
