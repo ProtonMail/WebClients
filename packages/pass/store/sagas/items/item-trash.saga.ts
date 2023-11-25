@@ -5,10 +5,10 @@ import { trashItems } from '@proton/pass/lib/items/item.requests';
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
 import { itemTrashFailure, itemTrashIntent, itemTrashSuccess, notification } from '@proton/pass/store/actions';
 import type { WithSenderAction } from '@proton/pass/store/actions/with-receiver';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 
 function* trashItemWorker(
-    { onItemsChange }: WorkerRootSagaOptions,
+    { onItemsUpdated }: RootSagaOptions,
     { payload, meta }: WithSenderAction<ReturnType<typeof itemTrashIntent>>
 ) {
     const { item, shareId } = payload;
@@ -35,7 +35,7 @@ function* trashItemWorker(
             );
 
         onItemTrashProcessed?.(itemTrashSuccessAction);
-        onItemsChange?.();
+        onItemsUpdated?.();
     } catch (e) {
         const itemTrashFailureAction = itemTrashFailure({ itemId: item.itemId, shareId }, e);
         yield put(itemTrashFailureAction);
@@ -44,6 +44,6 @@ function* trashItemWorker(
     }
 }
 
-export default function* watcher(options: WorkerRootSagaOptions) {
+export default function* watcher(options: RootSagaOptions) {
     yield takeEvery(itemTrashIntent.match, trashItemWorker, options);
 }
