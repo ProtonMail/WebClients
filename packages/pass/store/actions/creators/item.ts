@@ -2,18 +2,19 @@ import { createAction } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import { getItemActionId } from '@proton/pass/lib/items/item.utils';
-import { withCache } from '@proton/pass/store/actions/with-cache';
+import { withCache, withThrottledCache } from '@proton/pass/store/actions/with-cache';
 import type { ActionCallback } from '@proton/pass/store/actions/with-callback';
 import withCallback from '@proton/pass/store/actions/with-callback';
 import withNotification from '@proton/pass/store/actions/with-notification';
 import withSynchronousClientAction from '@proton/pass/store/actions/with-synchronous-client-action';
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
-import type { ItemDraft } from '@proton/pass/store/reducers';
+import type { Draft, DraftBase } from '@proton/pass/store/reducers';
 import type { ItemCreateIntent, ItemEditIntent, ItemRevision, SelectedItem } from '@proton/pass/types';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 
-export const itemDraftSave = createAction('item::draft::save', (payload: ItemDraft) => ({ payload }));
-export const itemDraftDiscard = createAction('item::draft::discard', () => ({ payload: {} }));
+export const draftSave = createAction('draft::save', (payload: Draft) => withThrottledCache({ payload }));
+export const draftDiscard = createAction('draft::discard', (payload: DraftBase) => withThrottledCache({ payload }));
+export const draftsGarbageCollect = createAction('drafts::gc', () => withThrottledCache({ payload: {} }));
 
 export const itemCreationIntent = createOptimisticAction(
     'item::creation::intent',
