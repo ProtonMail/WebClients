@@ -8,10 +8,10 @@ import {
 } from '@proton/pass/store/actions';
 import type { WithSenderAction } from '@proton/pass/store/actions/with-receiver';
 import { selectHasRegisteredLock } from '@proton/pass/store/selectors';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 
 function* enableSessionLockWorker(
-    { getAuthService }: WorkerRootSagaOptions,
+    { getAuthService }: RootSagaOptions,
     { meta, payload: { pin, ttl } }: WithSenderAction<ReturnType<typeof sessionLockEnableIntent>>
 ) {
     try {
@@ -26,6 +26,6 @@ function* enableSessionLockWorker(
     }
 }
 
-export default function* watcher(options: WorkerRootSagaOptions) {
+export default function* watcher(options: RootSagaOptions) {
     yield takeLeading(sessionLockEnableIntent.match, enableSessionLockWorker, options);
 }

@@ -42,9 +42,9 @@ import vaultDelete from '@proton/pass/store/sagas/vaults/vault-delete.saga';
 import vaultEdit from '@proton/pass/store/sagas/vaults/vault-edit.saga';
 import vaultMoveAllItems from '@proton/pass/store/sagas/vaults/vault-move-all-items.saga';
 import vaultTransferOwner from '@proton/pass/store/sagas/vaults/vault-transfer-owner.saga';
-import { type WorkerRootSagaOptions } from '@proton/pass/store/types';
+import { type RootSagaOptions } from '@proton/pass/store/types';
 
-export function* rootSaga(options: WorkerRootSagaOptions) {
+export function* rootSaga(options: RootSagaOptions) {
     yield all(
         [
             aliasDetailsRequest,
