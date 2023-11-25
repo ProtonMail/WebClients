@@ -1,9 +1,12 @@
 import { c } from 'ttag';
 
+import type { Draft } from '@proton/pass/store/reducers';
 import type { ItemRevision, ItemSortFilter, ItemType, MaybeNull } from '@proton/pass/types';
 import { arrayInterpolate } from '@proton/pass/utils/array/interpolate';
 import { UNIX_DAY, UNIX_MONTH, UNIX_WEEK } from '@proton/pass/utils/time/constants';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
+
+import { isEditItemDraft } from './item.predicates';
 
 export const getItemKey = ({ shareId, itemId, revision }: ItemRevision) => `${shareId}-${itemId}-${revision}`;
 
@@ -93,3 +96,14 @@ export const sortItems =
             }
         });
     };
+
+/** Filters the drafts for a given a shareId. If itemIds are provided it will
+ * also try to match for these specifics items */
+export const matchDraftsForShare = (drafts: Draft[], shareId: string, itemIds?: string[]) =>
+    drafts.filter((draft) => {
+        if (isEditItemDraft(draft) && draft.shareId === shareId) {
+            return itemIds === undefined || itemIds.includes(draft.shareId);
+        }
+
+        return false;
+    });
