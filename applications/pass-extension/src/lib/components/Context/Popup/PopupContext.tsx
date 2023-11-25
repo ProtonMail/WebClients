@@ -33,7 +33,6 @@ export interface PopupContextValue extends ExtensionConnectContextValue {
 
 export const INITIAL_POPUP_STATE: PopupInitialState = {
     search: '',
-    draft: null,
     filters: null,
     selectedItem: null,
 };

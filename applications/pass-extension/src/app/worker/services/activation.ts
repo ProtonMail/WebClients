@@ -8,7 +8,6 @@ import { bootIntent, wakeupIntent } from '@proton/pass/store/actions';
 import {
     selectFeatureFlags,
     selectItemByShareIdAndId,
-    selectItemDraft,
     selectPopupFilters,
     selectPopupTabState,
 } from '@proton/pass/store/selectors';
@@ -238,12 +237,8 @@ export const createActivationService = () => {
             ? selectItemByShareIdAndId(tabState.selectedItem.shareId, tabState.selectedItem.itemId) !== undefined
             : false;
 
-        const draft = selectItemDraft(state);
-        const validDraft = draft ? selectItemByShareIdAndId(draft.shareId, draft.itemId) !== undefined : false;
-
         return {
             search: pushTabState ? tabState!.search : searchForAutofill,
-            draft: validDraft ? draft : null,
             selectedItem: pushTabState && validItem ? tabState!.selectedItem : null,
             filters,
         };

@@ -1,5 +1,4 @@
 import type { AuthSession } from '@proton/pass/lib/auth/session';
-import type { ItemDraft } from '@proton/pass/store/reducers';
 
 import type { ItemFilters, SelectedItem } from '../data';
 import type { Maybe, MaybeNull } from '../utils';
@@ -39,7 +38,6 @@ export type LocalStoreKeys = keyof LocalStoreData;
 
 export type PopupInitialState = {
     search: MaybeNull<string>;
-    draft: MaybeNull<ItemDraft>;
     filters: MaybeNull<ItemFilters>;
     selectedItem: MaybeNull<SelectedItem>;
 };
