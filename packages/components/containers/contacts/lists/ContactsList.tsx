@@ -17,7 +17,7 @@ interface Props {
     contactGroupsMap: SimpleMap<ContactGroup>;
     onCheckOne: (event: ChangeEvent, contactID: string) => void;
     user: UserModel;
-    isDesktop: boolean;
+    isLargeViewport: boolean;
     onCheck: (contactIDs: string[], checked: boolean, replace: boolean) => void;
     checkedIDs: string[];
     onClick: (contactID: string) => void;
@@ -32,7 +32,7 @@ const ContactsList = ({
     contactGroupsMap,
     onCheckOne,
     user,
-    isDesktop = true,
+    isLargeViewport = true,
     onCheck,
     checkedIDs,
     onClick,
@@ -80,7 +80,7 @@ const ContactsList = ({
     const contactRowHeightComfort = 4 * rootFontSize() + 8; // 4 * 16 = we want 72px by default
 
     return (
-        <div ref={elementRef} className={clsx(isDesktop ? 'items-column-list' : 'items-column-list--mobile')}>
+        <div ref={elementRef} className={clsx(isLargeViewport ? 'items-column-list' : 'items-column-list--mobile')}>
             <div ref={listContainerRef} className="items-column-list-inner items-column-list-inner--border-none">
                 <AutoSizer>
                     {({ height, width }) => (

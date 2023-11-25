@@ -416,7 +416,7 @@ const Step1 = ({
     loading: boolean;
 }) => {
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
-    const { isDesktop, isTinyMobile } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const [loadingChallenge, setLoadingChallenge] = useState(false);
     const normalApi = useApi();
     const silentApi = getSilentApi(normalApi);
@@ -808,7 +808,7 @@ const Step1 = ({
         }
         return {
             upsellCycle: CYCLE.TWO_YEARS,
-            cycles: isDesktop
+            cycles: viewportWidth['>=large']
                 ? [CYCLE.MONTHLY, CYCLE.TWO_YEARS, CYCLE.YEARLY]
                 : [CYCLE.TWO_YEARS, CYCLE.YEARLY, CYCLE.MONTHLY],
         };
@@ -826,9 +826,9 @@ const Step1 = ({
         },
         {
             left: <img width="24" alt="" src={swissFlag} />,
-            text: isDesktop ? c('Info').t`Protected by Swiss privacy laws` : c('Info').t`Swiss based`,
+            text: viewportWidth['>=large'] ? c('Info').t`Protected by Swiss privacy laws` : c('Info').t`Swiss based`,
         },
-        isDesktop &&
+        viewportWidth['>=large'] &&
             [PLANS.VPN, PLANS.BUNDLE].includes(selectedPlan.Name as any) && {
                 left: <Icon size={24} className={iconColorClassName} name="servers" />,
                 text: getVpnServers(vpnServersCountData.paid.servers),
@@ -1036,7 +1036,9 @@ const Step1 = ({
             footer={renewalNotice}
             className={className}
             bottomRight={
-                <SignupSupportDropdown isDarkBg={['dark', 'bf2023'].includes(background as any) && !isTinyMobile} />
+                <SignupSupportDropdown
+                    isDarkBg={['dark', 'bf2023'].includes(background as any) && !viewportWidth.xsmall}
+                />
             }
             background={background}
             isB2bPlan={isB2bPlan}
@@ -1402,19 +1404,23 @@ const Step1 = ({
                             <div
                                 className={clsx(
                                     'mt-8 sm:mt-0',
-                                    isDesktop
+                                    viewportWidth['>=large']
                                         ? `${padding} w-custom border-left border-weak`
                                         : `${padding} sm:pt-0 pt-0`
                                 )}
                                 style={
-                                    isDesktop
+                                    viewportWidth['>=large']
                                         ? {
                                               '--w-custom': '22.125rem',
                                           }
                                         : undefined
                                 }
                             >
-                                <div className={isDesktop ? undefined : 'border rounded-xl border-weak p-6 '}>
+                                <div
+                                    className={
+                                        viewportWidth['>=large'] ? undefined : 'border rounded-xl border-weak p-6 '
+                                    }
+                                >
                                     <RightPlanSummary
                                         {...planInformation}
                                         title={getPlanTitle(planInformation.title)}
@@ -1564,8 +1570,8 @@ const Step1 = ({
                                     </form>
                                 </div>
                                 <div
-                                    className={clsx(isDesktop && 'w-custom')}
-                                    style={isDesktop ? { '--w-custom': '18.75rem' } : undefined}
+                                    className={clsx(viewportWidth['>=large'] && 'w-custom')}
+                                    style={viewportWidth['>=large'] ? { '--w-custom': '18.75rem' } : undefined}
                                 >
                                     <div className="border rounded-xl border-weak px-3 py-4">
                                         <div className="flex flex-column gap-3">

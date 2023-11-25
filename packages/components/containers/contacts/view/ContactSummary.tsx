@@ -21,7 +21,7 @@ interface Props {
 }
 
 const ContactSummary = ({ vCardContact, leftBlockWidth = 'w-1/3', style }: Props) => {
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const [showLoadImageBanner, setShowLoadImageBanner] = useState(false);
     const loadImageDirectRef = useRef<() => void>(null);
 
@@ -47,7 +47,7 @@ const ContactSummary = ({ vCardContact, leftBlockWidth = 'w-1/3', style }: Props
             <div
                 className={clsx(
                     'contactsummary-container my-4',
-                    !isNarrow && 'flex flex-nowrap items-center'
+                    !viewportWidth['<=small'] && 'flex flex-nowrap items-center'
                 )}
             >
                 <div

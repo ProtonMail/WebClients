@@ -2,16 +2,15 @@ import { ReactNode, memo, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useBeforeUnload, useDrawerWidth } from '@proton/components';
+import { Breakpoints, useBeforeUnload, useDrawerWidth } from '@proton/components';
 
 import ComposerFrame from '../components/composer/ComposerFrame';
-import { MAX_ACTIVE_COMPOSER_DESKTOP, MAX_ACTIVE_COMPOSER_MOBILE } from '../helpers/composerPositioning';
+import { MAX_ACTIVE_COMPOSER_LARGE_SCREEN, MAX_ACTIVE_COMPOSER_SMALL_SCREEN } from '../helpers/composerPositioning';
 import { useCompose } from '../hooks/composer/useCompose';
 import { useClickMailContent } from '../hooks/useClickMailContent';
 import { selectOpenedComposersIds } from '../logic/composers/composerSelectors';
 import { composerActions } from '../logic/composers/composersSlice';
 import { useAppDispatch, useAppSelector } from '../logic/store';
-import { Breakpoints } from '../models/utils';
 import { ComposeProvider } from './ComposeProvider';
 
 import '../components/composer/composer.scss';
@@ -31,7 +30,9 @@ const ComposerContainer = ({ breakpoints, children }: Props) => {
 
     useClickMailContent(() => setFocusedComposerID(undefined));
 
-    const maxActiveComposer = breakpoints.isNarrow ? MAX_ACTIVE_COMPOSER_MOBILE : MAX_ACTIVE_COMPOSER_DESKTOP;
+    const maxActiveComposer = breakpoints.viewportWidth['<=small']
+        ? MAX_ACTIVE_COMPOSER_SMALL_SCREEN
+        : MAX_ACTIVE_COMPOSER_LARGE_SCREEN;
 
     const handleClose = (composerId: string) => () => {
         dispatch(composerActions.removeComposer({ ID: composerId }));

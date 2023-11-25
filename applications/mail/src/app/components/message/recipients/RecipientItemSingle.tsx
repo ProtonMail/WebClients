@@ -15,7 +15,7 @@ interface Props {
     recipient: Recipient;
     mapStatusIcons?: MapStatusIcons;
     globalIcon?: StatusIcon;
-    isNarrow?: boolean;
+    isSmallViewport?: boolean;
     showDropdown?: boolean;
     actualLabel?: string;
     customDropdownActions?: ReactNode;
@@ -35,7 +35,7 @@ const RecipientItemSingle = ({
     recipient,
     mapStatusIcons,
     globalIcon,
-    isNarrow,
+    isSmallViewport,
     showDropdown,
     actualLabel,
     customDropdownActions,
@@ -81,7 +81,7 @@ const RecipientItemSingle = ({
                     </span>
                 )
             }
-            isNarrow={isNarrow}
+            isSmallViewport={isSmallViewport}
             showDropdown={showDropdown}
             dropdrownAnchorRef={anchorRef}
             dropdownToggle={toggle}

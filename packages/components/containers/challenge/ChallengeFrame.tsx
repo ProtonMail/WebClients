@@ -54,7 +54,7 @@ const ChallengeFrame = ({
     const iframeRef = useRef<HTMLIFrameElement>(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const renderDivRef = useRef<HTMLDivElement>(null);
-    const activeBreakpoint = useActiveBreakpoint();
+    const breakpoints = useActiveBreakpoint();
 
     const targetOrigin = useMemo(() => {
         return new URL(src).origin;
@@ -282,11 +282,11 @@ const ChallengeFrame = ({
         contentWindow.postMessage(
             {
                 type: 'html',
-                payload: `<div class='${activeBreakpoint.breakpoint}'>${renderDivEl.innerHTML}</div>`,
+                payload: `<div class='${breakpoints.activeBreakpoint}'>${renderDivEl.innerHTML}</div>`,
             },
             targetOrigin
         );
-    }, [isLoaded, activeBreakpoint.breakpoint, children, iframeRef.current, renderDivRef.current]);
+    }, [isLoaded, breakpoints.activeBreakpoint, children, iframeRef.current, renderDivRef.current]);
 
     return (
         <>

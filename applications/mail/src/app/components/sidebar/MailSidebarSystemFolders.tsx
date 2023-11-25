@@ -72,7 +72,7 @@ const MailSidebarSystemFolders = ({
     const [dragOveredElementId, setDragOveredElementId] = useState<string | undefined>();
     const [isOverMoreFolder, setIsOverMoreFolder] = useState<boolean>();
     const [{ isWelcomeFlow }] = useWelcomeFlags();
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const isAlmostAllMailEnabled = !!useFeature(FeatureCode.AlmostAllMail).feature?.Value;
 
     const {
@@ -81,7 +81,7 @@ const MailSidebarSystemFolders = ({
         onClose: onAlmostAllMailSpotlightClose,
     } = useSpotlightOnFeature(
         FeatureCode.AlmostAllMailSpotlight,
-        isAlmostAllMailEnabled && !isWelcomeFlow && !isNarrow
+        isAlmostAllMailEnabled && !isWelcomeFlow && !viewportWidth['<=small']
     );
 
     const getCommonProps = (labelID: string) => ({

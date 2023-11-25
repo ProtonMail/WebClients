@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default function PreviewError({ error }: Props) {
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     return (
         <div className="absolute-center text-center w-full px-4">
@@ -21,7 +21,8 @@ export default function PreviewError({ error }: Props) {
                 alt={c('Info').t`Preview failed to be loaded`}
             />
 
-            <h2 className={clsx(['p-1 text-bold', isNarrow && 'h3'])}>{c('Info').t`Preview failed to be loaded`}</h2>
+            <h2 className={clsx(['p-1 text-bold', viewportWidth['<=small'] && 'h3'])}>{c('Info')
+                .t`Preview failed to be loaded`}</h2>
             <p className="color-weak">{error}</p>
         </div>
     );

@@ -72,8 +72,8 @@ const SMTPSubmissionSection = () => {
     const [confirmModalProps, setConfirmModalOpen, renderConfirmModal] = useModalState();
     const [generateTokenModalProps, setGenerateTokenModalOpen, renderGenerateTokenModal] = useModalState();
     const [tokens, setTokens] = useState<SmtpTokens[]>([]);
-    const { isDesktop } = useActiveBreakpoint();
-    const showDetails = isDesktop;
+    const { viewportWidth } = useActiveBreakpoint();
+    const showDetails = viewportWidth['>=large'];
     const submissionTokenAvailable = hasSMTPSubmission(organization);
     const tokenNameToRemove = tokens.find(({ SmtpTokenID }) => SmtpTokenID === tokenIDToRemove)?.Name || '';
     const hasTokens = tokens.length > 0;

@@ -89,7 +89,7 @@ const MainContainer = () => {
     const [userSettings] = useUserSettings();
     const history = useHistory();
     const { state: expanded, toggle: onToggleExpand, set: setExpand } = useToggle();
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const location = useLocation();
     const zendeskRef = useRef<ZendeskRef>();
     const [showChat, setShowChat] = useState({ autoToggle: false, render: false });
@@ -163,7 +163,7 @@ const MainContainer = () => {
             title={c('Title').t`Settings`}
             expanded={expanded}
             onToggleExpand={onToggleExpand}
-            isNarrow={isNarrow}
+            isSmallViewport={viewportWidth['<=small']}
             app={app}
         />
     );

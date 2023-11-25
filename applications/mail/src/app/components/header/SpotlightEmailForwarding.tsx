@@ -22,7 +22,7 @@ const SpotlightEmailForwarding = ({ children }: Props) => {
     const isPayingForMail = hasPaidMail(user);
     const isEmailForwardingEnabled = useFlag('EmailForwarding');
     const [{ isWelcomeFlow }] = useWelcomeFlags();
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const releaseUTCDate = Date.UTC(2023, 10, 1, 12); // 1st November 2023 at 12:00 UTC
     const {
         show: showSpotlight,
@@ -30,7 +30,7 @@ const SpotlightEmailForwarding = ({ children }: Props) => {
         onClose,
     } = useSpotlightOnFeature(
         FeatureCode.EmailForwardingSpotlight,
-        !isWelcomeFlow && !isNarrow && isEmailForwardingEnabled && isPayingForMail,
+        !isWelcomeFlow && !viewportWidth['<=small'] && isEmailForwardingEnabled && isPayingForMail,
         {
             alpha: 0,
             beta: releaseUTCDate,

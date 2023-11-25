@@ -2,6 +2,7 @@ import { Ref, forwardRef, memo } from 'react';
 import { Redirect, useRouteMatch } from 'react-router-dom';
 
 import {
+    Breakpoints,
     FeatureCode,
     MailShortcutsModal,
     useFeatures,
@@ -28,7 +29,6 @@ import useIncomingDefaultsEvents from '../hooks/incomingDefaults/useIncomingDefa
 import useIncomingDefaultsLoad from '../hooks/incomingDefaults/useIncomingDefaultsLoad';
 import { usePageHotkeys } from '../hooks/mailbox/usePageHotkeys';
 import { useDeepMemo } from '../hooks/useDeepMemo';
-import { Breakpoints } from '../models/utils';
 import LegacyMessagesMigrationContainer from './LegacyMessagesMigrationContainer';
 import MailStartupModals from './MailStartupModals';
 import MailboxContainer from './mailbox/MailboxContainer';

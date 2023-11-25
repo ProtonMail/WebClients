@@ -12,19 +12,26 @@ const SignatureIssue = ({
     signatureConfirmation: ReactNode;
     onClick: () => void;
 }) => {
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     return (
         <div className="file-preview-container">
             <div className="absolute-center w-full">
-                <div className="mx-auto w-custom" style={{ '--w-custom': isNarrow ? '18.75rem' : '31.25rem' }}>
+                <div
+                    className="mx-auto w-custom"
+                    style={{ '--w-custom': viewportWidth['<=small'] ? '18.75rem' : '31.25rem' }}
+                >
                     <div className="text-center">
                         <Icon name="lock-exclamation-filled" size={60} className="color-danger" />
                     </div>
                     <div className="mt-4 mb-8">{signatureConfirmation}</div>
                 </div>
                 <div className="text-center">
-                    <PrimaryButton size={!isNarrow ? 'large' : undefined} className="text-bold" onClick={onClick}>
+                    <PrimaryButton
+                        size={!viewportWidth['<=small'] ? 'large' : undefined}
+                        className="text-bold"
+                        onClick={onClick}
+                    >
                         {c('Action').t`Show preview`}
                     </PrimaryButton>
                 </div>
