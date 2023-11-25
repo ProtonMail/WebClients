@@ -74,7 +74,7 @@ const Sidebar = ({
     const [subscription] = useSubscription();
     const { UsedSpace, MaxSpace, isMember, isSubUser } = user;
     const spacePercentage = percentage(MaxSpace, UsedSpace);
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const isElectron = isElectronOnMac();
 
     const upsellRef = getUpsellRefFromApp({
@@ -135,7 +135,7 @@ const Sidebar = ({
                     <div className="hidden md:block">{appsDropdown}</div>
                 </div>
 
-                {isNarrow && (
+                {viewportWidth['<=small'] && (
                     <div className="px-3 shrink-0 md:hidden">
                         <UserDropdown app={APP_NAME} hasAppLinks={hasAppLinks} />
                     </div>

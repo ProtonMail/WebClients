@@ -59,21 +59,21 @@ export const getCustomDriveFeatures = (plan: Plan | undefined) => {
 };
 
 export const getDriveConfiguration = ({
-    isDesktop,
+    isLargeViewport,
     plansMap,
     vpnServersCountData,
     hideFreePlan,
 }: {
     hideFreePlan: boolean;
     plansMap?: PlansMap;
-    isDesktop: boolean;
+    isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
 }): SignupConfiguration => {
     const logo = <DriveLogo />;
 
     const title = <>{c('drive_signup_2023: Info').t`Secure cloud storage and file sharing that protects your data`}</>;
 
-    const features = getGenericFeatures(isDesktop);
+    const features = getGenericFeatures(isLargeViewport);
 
     const planCards: PlanCard[] = [
         !hideFreePlan && {

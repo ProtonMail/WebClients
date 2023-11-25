@@ -3,7 +3,7 @@ import { MouseEvent } from 'react';
 import { c } from 'ttag';
 
 import { Button, Kbd } from '@proton/atoms';
-import { ButtonGroup, Icon, Tooltip, useAddresses, useContactModals, useToggle } from '@proton/components';
+import { Breakpoints, ButtonGroup, Icon, Tooltip, useAddresses, useContactModals, useToggle } from '@proton/components';
 import { shiftKey } from '@proton/shared/lib/helpers/browser';
 import { scrollIntoView } from '@proton/shared/lib/helpers/dom';
 import { MailSettings } from '@proton/shared/lib/interfaces';
@@ -21,7 +21,6 @@ import { MessageViewIcons } from '../../../helpers/message/icon';
 import { ComposeTypes } from '../../../hooks/composer/useCompose';
 import { useRecipientLabel } from '../../../hooks/contact/useRecipientLabel';
 import { MessageState } from '../../../logic/messages/messagesTypes';
-import { Breakpoints } from '../../../models/utils';
 import ItemAttachmentIcon from '../../list/ItemAttachmentIcon';
 import ItemDate from '../../list/ItemDate';
 import ItemLabels from '../../list/ItemLabels';
@@ -141,7 +140,7 @@ const HeaderExpanded = ({
 
     const showPinPublicKey = hasSigningPublicKey || hasAttachedPublicKey;
 
-    const { isNarrow } = breakpoints;
+    const { viewportWidth } = breakpoints;
 
     const from = (
         <RecipientItem
@@ -150,7 +149,7 @@ const HeaderExpanded = ({
             isLoading={!messageLoaded}
             signingPublicKey={showPinPublicKey ? message.verification?.signingPublicKey : undefined}
             attachedPublicKey={showPinPublicKey ? message.verification?.attachedPublicKeys?.[0] : undefined}
-            isNarrow={isNarrow}
+            isSmallViewport={viewportWidth['<=small']}
             globalIcon={messageViewIcons.globalIcon}
             onContactDetails={onContactDetails}
             onContactEdit={onContactEdit}
@@ -197,7 +196,7 @@ const HeaderExpanded = ({
             data-testid={`message-header-expanded:${conversationIndex}`}
         >
             {canShowTrackersIcon && <ItemSpyTrackerIcon message={message} />}
-            {isNarrow && messageLoaded && (
+            {viewportWidth['<=small'] && messageLoaded && (
                 <div className="flex items-center justify-space-between my-2" onClick={handleClick}>
                     <span className="inline-flex">
                         <ItemLocation element={message.data} labelID={labelID} />
@@ -220,7 +219,7 @@ const HeaderExpanded = ({
             >
                 <span className="flex flex-1 flex-nowrap mr-2">
                     <div className={clsx(['flex flex-nowrap', !messageLoaded && 'flex-1'])}>
-                        {isNarrow ? (
+                        {viewportWidth['<=small'] ? (
                             <span className="message-header-recipient-mobile">{from}</span>
                         ) : (
                             <RecipientType label={c('Label Recipient').t`From`}>{from}</RecipientType>
@@ -233,7 +232,7 @@ const HeaderExpanded = ({
                     </div>
                 </span>
 
-                {!isNarrow && (
+                {!viewportWidth['<=small'] && (
                     <div
                         className="message-header-metas-container flex items-center shrink-0"
                         data-testid="message:message-header-metas"

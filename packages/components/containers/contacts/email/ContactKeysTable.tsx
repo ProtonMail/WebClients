@@ -45,7 +45,7 @@ type LocalKeyModel = {
 
 const ContactKeysTable = ({ model, setModel }: Props) => {
     const [keys, setKeys] = useState<LocalKeyModel[]>([]);
-    const { isNarrow, isTinyMobile } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const { emailAddress } = model;
     const totalApiKeys = model.publicKeys.apiKeys.length;
@@ -145,17 +145,17 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                     <th scope="col" className="text-ellipsis" title={c('Table header').t`Fingerprint`}>{c(
                         'Table header'
                     ).t`Fingerprint`}</th>
-                    {!isNarrow && (
+                    {!viewportWidth['<=small'] && (
                         <th scope="col" className="text-ellipsis" title={c('Table header').t`Created`}>{c(
                             'Table header'
                         ).t`Created`}</th>
                     )}
-                    {!isTinyMobile && (
+                    {!viewportWidth.xsmall && (
                         <th scope="col" className="w-1/10 text-ellipsis" title={c('Table header').t`Expires`}>{c(
                             'Table header'
                         ).t`Expires`}</th>
                     )}
-                    {!isNarrow && (
+                    {!viewportWidth['<=small'] && (
                         <th scope="col" className="text-ellipsis" title={c('Table header').t`Type`}>{c('Table header')
                             .t`Type`}</th>
                     )}
@@ -164,7 +164,7 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                     ).t`Status`}</th>
                     <th
                         scope="col"
-                        className={clsx(['text-ellipsis', isNarrow && 'w-2/5'])}
+                        className={clsx(['text-ellipsis', viewportWidth['<=small'] && 'w-2/5'])}
                         title={c('Table header').t`Actions`}
                     >{c('Table header').t`Actions`}</th>
                 </tr>
@@ -344,10 +344,11 @@ const ContactKeysTable = ({ model, setModel }: Props) => {
                                 />
                                 <span className="flex-1 text-ellipsis">{fingerprint}</span>
                             </div>,
-                            !isNarrow && (isValid(creation) ? format(creation, 'PP', { locale: dateLocale }) : '-'),
-                            !isTinyMobile &&
+                            !viewportWidth['<=small'] &&
+                                (isValid(creation) ? format(creation, 'PP', { locale: dateLocale }) : '-'),
+                            !viewportWidth.xsmall &&
                                 (isValid(expiration) ? format(expiration, 'PP', { locale: dateLocale }) : '-'),
-                            !isNarrow && algo,
+                            !viewportWidth['<=small'] && algo,
                             <Fragment key={fingerprint}>
                                 {isPrimary ? <Badge type="primary">{primaryText}</Badge> : null}
                                 {isObsolete && !isCompromised ? (

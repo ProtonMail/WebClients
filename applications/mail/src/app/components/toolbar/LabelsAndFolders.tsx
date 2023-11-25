@@ -3,11 +3,10 @@ import { Ref } from 'react';
 import { c } from 'ttag';
 
 import { Kbd, Vr } from '@proton/atoms';
-import { DropdownSizeUnit, Icon } from '@proton/components';
+import { Breakpoints, DropdownSizeUnit, Icon } from '@proton/components';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { Breakpoints } from '../../models/utils';
 import LabelDropdown, { labelDropdownContentProps } from '../dropdown/LabelDropdown';
 import MoveDropdown, { moveDropdownContentProps } from '../dropdown/MoveDropdown';
 import ToolbarDropdown from './ToolbarDropdown';

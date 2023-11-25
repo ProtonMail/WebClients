@@ -75,7 +75,7 @@ interface Props {
     view: VIEWS;
     tzid: string;
     weekStartsOn: WeekStartsOn;
-    isNarrow: boolean;
+    isSmallViewport: boolean;
     displayNameEmailMap: SimpleMap<DisplayNameEmail>;
 }
 
@@ -95,7 +95,7 @@ const EventPopover = ({
     view,
     tzid,
     weekStartsOn,
-    isNarrow,
+    isSmallViewport,
     displayNameEmailMap,
 }: Props) => {
     const isDrawerApp = getIsCalendarAppInDrawer(view);
@@ -304,7 +304,7 @@ const EventPopover = ({
     };
 
     const containerClassName = 'eventpopover flex flex-column flex-nowrap';
-    const mergedStyle = isNarrow ? undefined : style;
+    const mergedStyle = isSmallViewport ? undefined : style;
     const frequencyString = useMemo(() => {
         if (!veventComponent) {
             return;

@@ -19,7 +19,7 @@ import validateEventModel from './eventForm/validateEventModel';
 import { ACTION, useForm } from './hooks/useForm';
 
 interface Props {
-    isNarrow: boolean;
+    isSmallViewport: boolean;
     isOpen: boolean;
     displayWeekNumbers: boolean;
     weekStartsOn: WeekStartsOn;
@@ -37,7 +37,7 @@ interface Props {
 }
 
 const CreateEventModal = ({
-    isNarrow,
+    isSmallViewport,
     isOpen,
     displayWeekNumbers,
     weekStartsOn,
@@ -195,7 +195,7 @@ const CreateEventModal = ({
                 isOwnedCalendar={isOwnedCalendar}
                 isCalendarWritable={isCalendarWritable}
                 isDrawerApp={isDrawerApp}
-                isNarrow={isNarrow}
+                isSmallViewport={isSmallViewport}
             />
         </BasicModal>
     );

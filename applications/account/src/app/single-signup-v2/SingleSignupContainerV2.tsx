@@ -215,7 +215,7 @@ const SingleSignupContainerV2 = ({
     const handleError = useErrorHandler();
     const [tmpLoginEmail, setTmpLoginEmail] = useState('');
     const [loginModalProps, setLoginModal, renderLoginModal] = useModalState();
-    const { isDesktop } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const [unlockModalProps, setUnlockModal, renderUnlockModal] = useModalState();
     const [visionaryModalProps, setVisionaryModal, renderVisionaryModal] = useModalState();
@@ -273,7 +273,7 @@ const SingleSignupContainerV2 = ({
         if (toApp === APPS.PROTONDRIVE) {
             return getDriveConfiguration({
                 plansMap: model.plansMap,
-                isDesktop,
+                isLargeViewport: viewportWidth['>=large'],
                 vpnServersCountData,
                 hideFreePlan: signupParameters.hideFreePlan,
             });
@@ -281,7 +281,7 @@ const SingleSignupContainerV2 = ({
         if (toApp === APPS.PROTONMAIL || toApp === APPS.PROTONCALENDAR) {
             return getMailConfiguration({
                 plansMap: model.plansMap,
-                isDesktop,
+                isLargeViewport: viewportWidth['>=large'],
                 vpnServersCountData,
                 hideFreePlan: signupParameters.hideFreePlan,
             });
@@ -289,7 +289,7 @@ const SingleSignupContainerV2 = ({
         if (toApp === APPS.PROTONPASS) {
             const planIDs = model.optimistic.planIDs || model.subscriptionData.planIDs;
             return getPassConfiguration({
-                isDesktop,
+                isLargeViewport: viewportWidth['>=large'],
                 vpnServersCountData,
                 hideFreePlan: signupParameters.hideFreePlan,
                 mode: signupParameters.mode,
@@ -924,7 +924,7 @@ const SingleSignupContainerV2 = ({
                         step1Ref={step1Ref}
                         className={loadingDependencies || loadingChallenge ? 'visibility-hidden' : undefined}
                         features={features}
-                        isDesktop={isDesktop}
+                        isLargeViewport={viewportWidth['>=large']}
                         logo={logo}
                         title={title}
                         api={normalApi}

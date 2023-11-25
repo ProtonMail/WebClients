@@ -47,7 +47,7 @@ type Props = {
 
 const { CheckboxCell, ContextMenuCell } = Cells;
 
-const desktopCells: React.FC<{ item: SharedLinkItem }>[] = [
+const largeScreenCells: React.FC<{ item: SharedLinkItem }>[] = [
     CheckboxCell,
     NameCell,
     LocationCell,
@@ -56,9 +56,9 @@ const desktopCells: React.FC<{ item: SharedLinkItem }>[] = [
     ExpirationCell,
     ContextMenuCell,
 ];
-const mobileCells = [CheckboxCell, NameCell, LocationCell, ExpirationCell, ContextMenuCell];
+const smallScreenCells = [CheckboxCell, NameCell, LocationCell, ExpirationCell, ContextMenuCell];
 
-const headerItemsDesktop: ListViewHeaderItem[] = [
+const headerItemsLargeScreen: ListViewHeaderItem[] = [
     headerItems.checkbox,
     headerItems.name,
     headerItems.location,
@@ -68,7 +68,7 @@ const headerItemsDesktop: ListViewHeaderItem[] = [
     headerItems.placeholder,
 ];
 
-const headeItemsMobile: ListViewHeaderItem[] = [
+const headerItemsSmallScreen: ListViewHeaderItem[] = [
     headerItems.checkbox,
     headerItems.name,
     headerItems.location,
@@ -93,7 +93,7 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
     const browserItemContextMenu = useItemContextMenu();
     const thumbnails = useThumbnailsDownload();
     const selectionControls = useSelection();
-    const { isDesktop } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const { layout, items, sortParams, setSorting, isLoading } = sharedLinksView;
 
@@ -148,8 +148,8 @@ const SharedLinks = ({ shareId, sharedLinksView }: Props) => {
         return <EmptyShared shareId={shareId} />;
     }
 
-    const Cells = isDesktop ? desktopCells : mobileCells;
-    const headerItems = isDesktop ? headerItemsDesktop : headeItemsMobile;
+    const Cells = viewportWidth['>=large'] ? largeScreenCells : smallScreenCells;
+    const headerItems = viewportWidth['>=large'] ? headerItemsLargeScreen : headerItemsSmallScreen;
 
     return (
         <>
