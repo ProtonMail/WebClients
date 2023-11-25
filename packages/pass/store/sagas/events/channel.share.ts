@@ -24,13 +24,14 @@ import { ShareType } from '@proton/pass/types';
 import { logId, logger } from '@proton/pass/utils/logger';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
+import { discardDrafts } from '../items/item-drafts';
 import { eventChannelFactory } from './channel.factory';
 import { channelEventsWorker, channelWakeupWorker } from './channel.worker';
 import type { EventChannel } from './types';
 
 export type ShareEventResponse = { Events: PassEventListResponse };
 
-/* It is important to call onShareEventItemsDeleted before
+/* It is important to call onItemsDeleted before
  * actually dispatching the resulting action : we may be dealing
  * with a share or an item being selected in the pop-up and need
  * to run the side-effect before clearing the data from the store
@@ -39,7 +40,7 @@ const onShareEvent = (shareId: string) =>
     function* (
         event: EventManagerEvent<ShareEventResponse>,
         _: EventChannel<ShareEventResponse>,
-        { onItemsChange, onShareEventItemsDeleted }: WorkerRootSagaOptions
+        { onItemsUpdated, onItemsDeleted }: WorkerRootSagaOptions
     ) {
         if ('error' in event) throw event.error;
 
@@ -58,7 +59,8 @@ const onShareEvent = (shareId: string) =>
         }
 
         if (DeletedItemIDs.length > 0) {
-            onShareEventItemsDeleted?.(shareId, DeletedItemIDs);
+            yield discardDrafts(shareId, DeletedItemIDs);
+            onItemsDeleted?.(shareId, DeletedItemIDs);
         }
 
         yield all([
@@ -77,14 +79,14 @@ const onShareEvent = (shareId: string) =>
         ]);
 
         const itemsMutated = DeletedItemIDs.length > 0 || UpdatedItems.length > 0;
-        if (itemsMutated) onItemsChange?.();
+        if (itemsMutated) onItemsUpdated?.();
     };
 
 const onShareEventError = (shareId: string) =>
     function* (
         error: unknown,
         { channel }: EventChannel<ShareEventResponse>,
-        { onShareEventDisabled, onItemsChange }: WorkerRootSagaOptions
+        { onShareDeleted, onItemsUpdated }: WorkerRootSagaOptions
     ) {
         const { code } = getApiError(error);
 
@@ -95,8 +97,9 @@ const onShareEventError = (shareId: string) =>
 
             const share: Maybe<Share> = yield select(selectShare(shareId));
             if (share) {
-                onShareEventDisabled?.(shareId);
-                onItemsChange?.();
+                onShareDeleted?.(shareId);
+                onItemsUpdated?.();
+                yield discardDrafts(shareId);
                 yield put(shareDeleteSync(share));
             }
         }
@@ -107,6 +110,7 @@ const onShareDeleted = (shareId: string) =>
         yield take((action: AnyAction) => vaultDeleteSuccess.match(action) && action.payload.shareId === shareId);
         logger.info(`[Saga::ShareChannel] share ${logId(shareId)} deleted`);
         channel.close();
+        yield discardDrafts(shareId);
     };
 
 /* We need to lift the response to the correct data
