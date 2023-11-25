@@ -24,6 +24,9 @@ type FieldsForFormResults = WeakMap<
     }
 >;
 
+/** We do not want to trigger form submission for these form types */
+const EXCLUDED_SUBMIT_FORM_TYPES = [FormType.NOOP, FormType.MFA, FormType.RECOVERY];
+
 const canProcessAction = withContext<(action: DropdownAction) => boolean>(({ getFeatures }, action) => {
     const features = getFeatures();
 
@@ -71,7 +74,7 @@ export const createFormTracker = (form: FormHandle): FormTracker => {
          * This check is done here instead of not binding the listener in the
          * first place because the `formType` can change for a particular form
          * (eg. rerendering in SPAs). */
-        if ([FormType.MFA, FormType.NOOP].includes(form.formType)) return;
+        if (EXCLUDED_SUBMIT_FORM_TYPES.includes(form.formType)) return;
 
         const { username, password } = getFormData();
 
