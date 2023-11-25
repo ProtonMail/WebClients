@@ -8,7 +8,7 @@ import createSagaMiddleware from 'redux-saga';
 
 import { ACTIVE_POLLING_TIMEOUT, INACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { backgroundMessage } from '@proton/pass/lib/extension/message';
-import { startEventPolling } from '@proton/pass/store/actions';
+import { draftsGarbageCollect, startEventPolling } from '@proton/pass/store/actions';
 import { requestMiddleware } from '@proton/pass/store/middlewares/request-middleware';
 import reducer from '@proton/pass/store/reducers';
 import { workerRootSaga } from '@proton/pass/store/sagas';
@@ -67,6 +67,7 @@ const options: WorkerRootSagaOptions = {
     onBoot: withContext(async (ctx, res) => {
         if (res.ok) {
             store.dispatch(startEventPolling());
+            store.dispatch(draftsGarbageCollect());
             void ctx.service.telemetry?.start();
             ctx.setStatus(AppStatus.READY);
             WorkerMessageBroker.buffer.flush();
