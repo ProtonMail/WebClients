@@ -14,7 +14,7 @@
  * [ ] event-loop item deletion -> unselect if deleted item is `selectedItem` -> autoselect
  * [ ] event-loop item creation -> noop
  */
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useItems } from 'proton-pass-extension/lib/hooks/useItems';
@@ -57,6 +57,7 @@ export const ItemEffects = () => {
 
     const itemFromSelectedOptimisticId = useSelector(selectItemIdByOptimisticId(selectedItem?.itemId));
     const autoselect = !(isEditing || isCreating) && popup.ready;
+    const shouldSave = useRef(false);
 
     const popupTabState = useMemo(
         () => ({
@@ -129,7 +130,8 @@ export const ItemEffects = () => {
     }, [shareBeingDeleted, items]);
 
     useEffect(() => {
-        dispatch(popupTabStateSave(popupTabState));
+        if (!shouldSave.current) shouldSave.current = true;
+        else dispatch(popupTabStateSave(popupTabState));
     }, [popupTabState]);
 
     return null;

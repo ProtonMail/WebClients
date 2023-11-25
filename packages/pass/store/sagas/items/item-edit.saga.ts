@@ -7,7 +7,7 @@ import { createTelemetryEvent } from '@proton/pass/lib/telemetry/event';
 import { aliasDetailsSync, itemEditFailure, itemEditIntent, itemEditSuccess } from '@proton/pass/store/actions';
 import type { AliasState } from '@proton/pass/store/reducers';
 import { selectAliasDetails, selectAliasOptions, selectItemByShareIdAndId } from '@proton/pass/store/selectors';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemEditIntent, ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { isEqual } from '@proton/pass/utils/set/is-equal';
@@ -46,7 +46,7 @@ function* editMailboxesWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
     }
 }
 function* itemEditWorker(
-    { onItemsChange, getTelemetry }: WorkerRootSagaOptions,
+    { onItemsUpdated, getTelemetry }: RootSagaOptions,
     { payload: editIntent, meta: { callback: onItemEditIntentProcessed } }: ReturnType<typeof itemEditIntent>
 ) {
     const { itemId, shareId, lastRevision } = editIntent;
@@ -72,7 +72,7 @@ function* itemEditWorker(
         }
 
         onItemEditIntentProcessed?.(itemEditSuccessAction);
-        onItemsChange?.();
+        onItemsUpdated?.();
     } catch (e) {
         const itemEditFailureAction = itemEditFailure({ itemId, shareId }, e);
         yield put(itemEditFailureAction);
@@ -81,6 +81,6 @@ function* itemEditWorker(
     }
 }
 
-export default function* watcher(options: WorkerRootSagaOptions) {
+export default function* watcher(options: RootSagaOptions) {
     yield takeEvery(itemEditIntent.match, itemEditWorker, options);
 }

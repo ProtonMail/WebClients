@@ -19,7 +19,7 @@ import {
     vaultCreationSuccess,
 } from '@proton/pass/store/actions';
 import type { WithSenderAction } from '@proton/pass/store/actions/with-receiver';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionContentsResponse, Maybe } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 import { groupByKey } from '@proton/pass/utils/array/group-by-key';
@@ -57,7 +57,7 @@ function* createVaultForImport(vaultName: string) {
 }
 
 function* importWorker(
-    { onItemsChange, getTelemetry }: WorkerRootSagaOptions,
+    { onItemsUpdated, getTelemetry }: RootSagaOptions,
     { payload: { data, provider }, meta }: WithSenderAction<ReturnType<typeof importItemsIntent>>
 ) {
     const telemetry = getTelemetry();
@@ -145,7 +145,7 @@ function* importWorker(
                 meta.sender?.endpoint
             )
         );
-        onItemsChange?.();
+        onItemsUpdated?.();
     } catch (error: any) {
         yield put(importItemsFailure(meta.request.id, error, meta.sender?.endpoint));
     } finally {
@@ -153,6 +153,6 @@ function* importWorker(
     }
 }
 
-export default function* watcher(options: WorkerRootSagaOptions) {
+export default function* watcher(options: RootSagaOptions) {
     yield takeLeading(importItemsIntent.match, importWorker, options);
 }

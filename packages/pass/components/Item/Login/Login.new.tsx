@@ -26,7 +26,7 @@ import { usePasswordContext } from '@proton/pass/components/Password/PasswordPro
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
-import { useDraftSync, useItemDraft } from '@proton/pass/hooks/useItemDraft';
+import { useItemDraft, useItemDraftLocationState } from '@proton/pass/hooks/useItemDraft';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import {
@@ -159,14 +159,12 @@ export const LoginNew: VFC<ItemNewViewProps<'login'>> = ({ shareId, url, onCance
         validateOnBlur: true,
     });
 
-    const itemDraft = useItemDraft<NewLoginItemFormValues>();
+    const itemDraft = useItemDraftLocationState<NewLoginItemFormValues>();
     const aliasModal = useAliasForLoginModal(form, { lazy: !itemDraft?.formData.withAlias });
 
-    const draft = useDraftSync<NewLoginItemFormValues>(form, {
+    const draft = useItemDraft<NewLoginItemFormValues>(form, {
         type: 'login',
         mode: 'new',
-        itemId: 'draft-login',
-        shareId: form.values.shareId,
         sanitizeSave: sanitizeLoginAliasSave,
         sanitizeHydration: sanitizeLoginAliasHydration(aliasModal.aliasOptions),
     });

@@ -12,7 +12,7 @@ declare let self: ServiceWorkerGlobalScope;
 
 self.addEventListener('install', () => {
     logger.info('[ServiceWorker] Skip waiting..');
-    self.skipWaiting();
+    return self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {

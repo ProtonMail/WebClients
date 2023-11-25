@@ -1,3 +1,5 @@
+@import '~@proton/styles/scss/lib';
+
 .pass-field-box {
 	&:not(.pass-input-group--no-focus) {
 		&::before {
@@ -36,5 +38,12 @@
 	.field-two-container button svg {
 		position: relative;
 		inset-block-end: var(--space-2);
+	}
+
+	// disable responsive font-sizing provided by core
+	// design system when going below <=small
+	.input-element:not(.pass-input--title),
+	.textarea {
+		font-size: em($base-font-size);
 	}
 }
