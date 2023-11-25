@@ -15,12 +15,12 @@ import { userAccessRequest, userFeaturesRequest } from '@proton/pass/store/actio
 import type { WithReceiverAction } from '@proton/pass/store/actions/with-receiver';
 import { withRevalidate } from '@proton/pass/store/actions/with-request';
 import { selectPopupStateTabIds } from '@proton/pass/store/selectors';
-import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import type { TabId } from '@proton/pass/types';
 import identity from '@proton/utils/identity';
 
 function* wakeupWorker(
-    { getAuthStore: getAuth }: WorkerRootSagaOptions,
+    { getAuthStore: getAuth }: RootSagaOptions,
     { payload: { status }, meta }: WithReceiverAction<ReturnType<typeof wakeupIntent>>
 ) {
     const { tabId, endpoint } = meta.receiver;
@@ -51,6 +51,6 @@ function* wakeupWorker(
     yield put(wakeupSuccess(meta.request.id, { endpoint, tabId }));
 }
 
-export default function* watcher(options: WorkerRootSagaOptions): Generator {
+export default function* watcher(options: RootSagaOptions): Generator {
     yield takeEvery(wakeupIntent.match, wakeupWorker, options);
 }

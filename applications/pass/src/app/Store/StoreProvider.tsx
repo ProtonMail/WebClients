@@ -8,6 +8,7 @@ import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisib
 import { clientReady } from '@proton/pass/lib/client';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import {
+    draftsGarbageCollect,
     passwordHistoryGarbageCollect,
     startEventPolling,
     stateSync,
@@ -45,10 +46,15 @@ export const StoreProvider: FC = ({ children }) => {
                 getLocalSettings: async () => INITIAL_SETTINGS,
                 getTelemetry: () => null,
                 onBoot: (res) => {
-                    client.current.setStatus(res.ok ? AppStatus.READY : AppStatus.ERROR);
-                    if (res.ok) store.dispatch(passwordHistoryGarbageCollect());
-                    if (res.ok && isDocumentVisible()) store.dispatch(startEventPolling());
-                    if (!res.ok && res.clearCache) void deletePassDB(authStore.getUserID()!);
+                    if (res.ok) {
+                        client.current.setStatus(AppStatus.READY);
+                        store.dispatch(draftsGarbageCollect());
+                        store.dispatch(passwordHistoryGarbageCollect());
+                        if (isDocumentVisible()) store.dispatch(startEventPolling());
+                    } else {
+                        client.current.setStatus(AppStatus.ERROR);
+                        if (res.clearCache) void deletePassDB(authStore.getUserID()!);
+                    }
                 },
                 onNotification: pipe(notificationEnhancer, createNotification),
                 setCache: async (encryptedCache) => {
@@ -73,6 +79,9 @@ export const StoreProvider: FC = ({ children }) => {
     }, []);
 
     useVisibleEffect((visible) => {
+        /** visible will be truthy only when the document goes from an inactive to an
+         * active state. This means the tab came into active focus after being hidden:
+         * In this case, silently synchronize the state in case me missed some actions */
         if (visible && clientReady(client.current.state.status)) store.dispatch(stateSync());
         else if (!visible) store.dispatch(stopEventPolling());
     });

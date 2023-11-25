@@ -3,11 +3,11 @@ import { put, takeEvery } from 'redux-saga/effects';
 import { api } from '@proton/pass/lib/api/api';
 import { reportBugFailure, reportBugIntent, reportBugSuccess } from '@proton/pass/store/actions';
 import type { WithSenderAction } from '@proton/pass/store/actions/with-receiver';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import { reportBug } from '@proton/shared/lib/api/reports';
 
 function* reportProblem(
-    _: WorkerRootSagaOptions,
+    _: RootSagaOptions,
     { payload, meta }: WithSenderAction<ReturnType<typeof reportBugIntent>>
 ): Generator {
     try {
@@ -18,6 +18,6 @@ function* reportProblem(
     }
 }
 
-export default function* watcher(options: WorkerRootSagaOptions) {
+export default function* watcher(options: RootSagaOptions) {
     yield takeEvery(reportBugIntent.match, reportProblem, options);
 }

@@ -7,11 +7,11 @@ import {
     vaultMoveAllItemsSuccess,
 } from '@proton/pass/store/actions';
 import { selectItemsByShareId } from '@proton/pass/store/selectors';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision } from '@proton/pass/types';
 
 function* moveAllItemsWorker(
-    { onItemsChange }: WorkerRootSagaOptions,
+    { onItemsUpdated }: RootSagaOptions,
     { payload: { shareId, content, destinationShareId }, meta }: ReturnType<typeof vaultMoveAllItemsIntent>
 ) {
     try {
@@ -19,12 +19,12 @@ function* moveAllItemsWorker(
         const movedItems = (yield moveItems(items, destinationShareId)) as ItemRevision[];
 
         yield put(vaultMoveAllItemsSuccess(meta.request.id, { shareId, destinationShareId, content, movedItems }));
-        onItemsChange?.();
+        onItemsUpdated?.();
     } catch (e) {
         yield put(vaultMoveAllItemsFailure(meta.request.id, { shareId, content }, e));
     }
 }
 
-export default function* watcher(options: WorkerRootSagaOptions) {
+export default function* watcher(options: RootSagaOptions) {
     yield takeEvery(vaultMoveAllItemsIntent.match, moveAllItemsWorker, options);
 }
