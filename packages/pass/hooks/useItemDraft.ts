@@ -1,58 +1,64 @@
-import { useCallback, useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import type { FormikTouched } from 'formik';
 import { type FormikContextType } from 'formik';
 
-import { itemDraftDiscard, itemDraftSave } from '@proton/pass/store/actions';
-import type { ItemDraft } from '@proton/pass/store/reducers';
+import { draftDiscard, draftSave } from '@proton/pass/store/actions';
+import type { Draft, DraftBase } from '@proton/pass/store/reducers';
+import { selectItemDrafts } from '@proton/pass/store/selectors';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
-import { omit } from '@proton/shared/lib/helpers/object';
 import debounce from '@proton/utils/debounce';
+
+import { itemEq } from '../lib/items/item.predicates';
 
 const SAVE_DRAFT_TIMEOUT = 500;
 
-export type ItemDraftState<V extends {} = {}> = Maybe<{ draft?: ItemDraft<V> }>;
+export type LocationDraftState<V extends {} = {}> = Maybe<{ draft?: Draft<V> }>;
 
-type UseItemDraftOptions<V extends {}> = Pick<ItemDraft, 'type' | 'mode' | 'itemId' | 'shareId'> & {
-    /* Apply sanitization over the draft values */
-    sanitizeHydration?: (formData: ItemDraft<V>['formData']) => ItemDraft<V>['formData'];
-    sanitizeSave?: (formData: ItemDraft<V>['formData']) => ItemDraft<V>['formData'];
-    /* Retrieve the sanitized draft values after form hydration.
-     * This may be useful when chaining multiple form `setValue`
-     * calls inside the same render cycle to avoid `form.values`
-     * containing stale values (ie: see `Alias.new`) */
-    onHydrated?: (hydration: MaybeNull<ItemDraft<V>['formData']>) => void;
-};
-
-export const useItemDraft = <V extends {}>() => {
-    const location = useLocation<ItemDraftState<V>>();
+/** Parses the draft from the history location state */
+export const useItemDraftLocationState = <V extends {}>() => {
+    const location = useLocation<LocationDraftState<V>>();
     return location.state?.draft;
 };
 
-/* Everytime the passed values change, this hook triggers
- * a debounced  dispatch with the form data. The `itemDraft`
- * action is cache blocking to avoid swarming the service
- * worker with encryption requests. The draft data should
- * only be encrypted & cached when the pop-up is closed.*/
-export const useDraftSync = <V extends {}>(form: FormikContextType<V>, options: UseItemDraftOptions<V>) => {
-    const [ready, setReady] = useState<boolean>(false);
+type UseItemDraftOptions<V extends {}> = DraftBase & {
+    /** Apply sanitization over the draft values */
+    sanitizeHydration?: (formData: Draft<V>['formData']) => Draft<V>['formData'];
+    /** Callback called right before saving the draft to state if you
+     * need to run some extra sanity checks */
+    sanitizeSave?: (formData: Draft<V>['formData']) => Draft<V>['formData'];
+    /** Retrieve the sanitized draft values after form hydration.
+     * This may be useful when chaining multiple form `setValue`
+     * calls inside the same render cycle to avoid `form.values`
+     * containing stale values (ie: see `Alias.new`) */
+    onHydrated?: (hydration: MaybeNull<Draft<V>['formData']>) => void;
+};
 
-    const draft = useItemDraft<V>();
+/** Everytime the passed values change, this hook triggers a debounced
+ * dispatch with the form data. The `itemDraft` action throttles caching
+ * to avoid swarming the service worker with encryption requests */
+export const useItemDraft = <V extends {}>(form: FormikContextType<V>, options: UseItemDraftOptions<V>) => {
+    const draft = useItemDraftLocationState<V>();
+    const drafts = useSelector(selectItemDrafts, () => true);
+
+    const shouldInvalidate = useRef(
+        (() => {
+            const isEdit = draft === undefined && options.mode === 'edit';
+            return isEdit && drafts.some((entry) => entry.mode === 'edit' && itemEq(options)(entry));
+        })()
+    );
+
+    const { onHydrated, sanitizeHydration, sanitizeSave, ...baseDraft } = options;
     const { values, dirty } = form;
+    const [ready, setReady] = useState<boolean>(false);
 
     const dispatch = useDispatch();
 
     const saveDraft = useCallback(
         debounce(
-            (formData: V) =>
-                dispatch(
-                    itemDraftSave({
-                        ...omit(options, ['onHydrated', 'sanitizeHydration', 'sanitizeSave']),
-                        formData: options.sanitizeSave?.(formData) ?? formData,
-                    })
-                ),
+            (formData: V) => dispatch(draftSave({ ...baseDraft, formData: sanitizeSave?.(formData) ?? formData })),
             SAVE_DRAFT_TIMEOUT
         ),
         []
@@ -63,7 +69,10 @@ export const useDraftSync = <V extends {}>(form: FormikContextType<V>, options: 
             if (dirty) saveDraft(values);
             else {
                 saveDraft.cancel();
-                dispatch(itemDraftDiscard());
+                if (shouldInvalidate.current) {
+                    dispatch(draftDiscard(baseDraft));
+                    shouldInvalidate.current = false;
+                }
             }
         }
         return () => saveDraft.cancel();
@@ -72,7 +81,7 @@ export const useDraftSync = <V extends {}>(form: FormikContextType<V>, options: 
     useEffect(() => {
         void (async () => {
             if (draft) {
-                const formValues = options.sanitizeHydration?.(draft.formData) ?? draft.formData;
+                const formValues = sanitizeHydration?.(draft.formData) ?? draft.formData;
 
                 await form.setTouched(
                     Object.keys(formValues).reduce<FormikTouched<any>>((touched, field) => {
@@ -85,8 +94,8 @@ export const useDraftSync = <V extends {}>(form: FormikContextType<V>, options: 
                 await form.setValues(formValues, true);
 
                 form.setErrors(await form.validateForm(draft.formData));
-                options.onHydrated?.(formValues);
-            } else options.onHydrated?.(null);
+                onHydrated?.(formValues);
+            } else onHydrated?.(null);
 
             setReady(true);
         })();
@@ -95,7 +104,7 @@ export const useDraftSync = <V extends {}>(form: FormikContextType<V>, options: 
             /* discard the draft if the component is unmounted :
              * this either means the item was successfully saved or
              * that the edit/creation discarded */
-            dispatch(itemDraftDiscard());
+            if (draft) dispatch(draftDiscard(baseDraft));
         };
     }, []);
 
