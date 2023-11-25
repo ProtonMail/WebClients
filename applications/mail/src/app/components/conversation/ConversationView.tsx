@@ -2,7 +2,7 @@ import { RefObject, memo, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Scroll } from '@proton/atoms';
-import { useLabels, useToggle } from '@proton/components';
+import { Breakpoints, useLabels, useToggle } from '@proton/components';
 import { isEditing } from '@proton/shared/lib/busy';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
@@ -23,7 +23,6 @@ import { usePlaceholders } from '../../hooks/usePlaceholders';
 import useShouldMoveOut from '../../hooks/useShouldMoveOut';
 import { removeAllQuickReplyFlags } from '../../logic/messages/draft/messagesDraftActions';
 import { isElementReminded } from '../../logic/snoozehelpers';
-import { Breakpoints } from '../../models/utils';
 import MessageView, { MessageViewRef } from '../message/MessageView';
 import ConversationErrorBanner from './ConversationErrorBanner';
 import ConversationHeader from './ConversationHeader';

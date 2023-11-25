@@ -10,10 +10,10 @@ interface Props {
     onCheck: (e: ChangeEvent<HTMLInputElement>, contactID: string) => void;
     contact: ContactEmail;
     checked: boolean;
-    isNarrow: boolean;
+    isSmallViewport: boolean;
 }
 
-const ContactSelectorRow = ({ style, onCheck, contact, checked, isNarrow }: Props) => {
+const ContactSelectorRow = ({ style, onCheck, contact, checked, isSmallViewport }: Props) => {
     return (
         <div style={style} className="flex">
             <div
@@ -33,12 +33,12 @@ const ContactSelectorRow = ({ style, onCheck, contact, checked, isNarrow }: Prop
                     <div
                         className={clsx([
                             'flex-1 items-center max-w-full h-full',
-                            !isNarrow && 'flex',
+                            !isSmallViewport && 'flex',
                         ])}
                     >
                         <div
-                            className={clsx(['pl-4 flex', !isNarrow && 'w-custom'])}
-                            style={!isNarrow ? { '--w-custom': '45%' } : undefined}
+                            className={clsx(['pl-4 flex', !isSmallViewport && 'w-custom'])}
+                            style={!isSmallViewport ? { '--w-custom': '45%' } : undefined}
                         >
                             <span className="inline-block text-ellipsis max-w-full pr-4">{contact.Name}</span>
                         </div>

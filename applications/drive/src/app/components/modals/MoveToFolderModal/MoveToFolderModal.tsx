@@ -28,7 +28,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...modalProps }: P
 
     const [loading, withLoading] = useLoading();
     const [selectedFolder, setSelectedFolder] = useState<string>();
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const [createFolderModal, showCreateFolderModal] = useModalTwo(CreateFolderModal);
 
     const moveLinksToFolder = async (parentFolderId: string) => {
@@ -129,7 +129,7 @@ const MoveToFolderModal = ({ shareId, selectedItems, onClose, ...modalProps }: P
                         rootItems={rootItems}
                         selectedLinkId={selectedFolder}
                         isMoveDisabled={isMoveDisabled}
-                        isMobile={isNarrow}
+                        isSmallViewport={viewportWidth['<=small']}
                         toggleExpand={toggleExpand}
                         onSelect={onSelect}
                         onCreate={handleCreateNewFolderClick}

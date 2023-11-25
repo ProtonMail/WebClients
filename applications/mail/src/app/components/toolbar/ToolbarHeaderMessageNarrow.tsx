@@ -77,7 +77,7 @@ const ToolbarHeaderMessageNarrow = ({
                         labelID={labelID}
                         isExtraTiny={localIsExtraTiny}
                         isNarrow={localIsNarrow}
-                        viewportIsNarrow={viewportBreakpoint.isNarrow}
+                        viewportIsNarrow={viewportBreakpoint.viewportWidth['<=small']}
                         selectedIDs={selectedIDs}
                         onMove={onMove}
                         onDelete={onDelete}

@@ -17,13 +17,13 @@ interface Props {
 }
 
 const CollapsingBreadcrumbs = ({ breadcrumbs, className }: Props) => {
-    const { isTinyMobile, isDesktop } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const groupedBreadcrumbs = useMemo(
         () =>
             breadcrumbs.reduce((grouped, breadcrumb, i, arr) => {
                 // In wider spaces, first breadcrumb is always visible
-                if (!isTinyMobile && i === 0) {
+                if (!viewportWidth.xsmall && i === 0) {
                     return [breadcrumb];
                 }
 
@@ -31,7 +31,7 @@ const CollapsingBreadcrumbs = ({ breadcrumbs, className }: Props) => {
                 const last = arr.length - 1;
 
                 // Last is always visible, on larger screens also second to last
-                if (i === last || (isDesktop && i === secondToLast)) {
+                if (i === last || (viewportWidth['>=large'] && i === secondToLast)) {
                     return [...grouped, breadcrumb];
                 }
 
@@ -43,7 +43,7 @@ const CollapsingBreadcrumbs = ({ breadcrumbs, className }: Props) => {
                     ? [...grouped.slice(0, lastGrouped), [...group, breadcrumb]]
                     : [...grouped, [breadcrumb]];
             }, [] as GroupedBreadcrumbs),
-        [breadcrumbs, isTinyMobile, isDesktop]
+        [breadcrumbs, viewportWidth.xsmall, viewportWidth['>=large']]
     );
 
     return (

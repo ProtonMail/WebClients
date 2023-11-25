@@ -11,7 +11,7 @@ import { Cells, HeaderCellsPresets } from '../../FileBrowser';
 import { getLinkIconText } from '../../sections/FileBrowser/utils';
 import { PublicLink } from '../interface';
 
-export const headerCellsDesktop = [
+export const headerCellsLargeScreen = [
     {
         type: HeaderCellsPresets.Checkbox,
     },
@@ -37,15 +37,15 @@ export const headerCellsDesktop = [
         },
     },
 ];
-export const headerCellsMobile = headerCellsDesktop.slice(0, -1);
+export const headerCellsSmallScreen = headerCellsLargeScreen.slice(0, -1);
 
-export const contentCellsDesktop: React.FC<{ item: PublicLink }>[] = [
+export const contentCellsLargeScreen: React.FC<{ item: PublicLink }>[] = [
     Cells.CheckboxCell,
     NameCell,
     SizeCell,
     DownloadCell,
 ];
-export const contentCellsMobile = contentCellsDesktop.slice(0, -1);
+export const contentCellsSmallScreen = contentCellsLargeScreen.slice(0, -1);
 
 function NameCell({ item }: { item: PublicLink }) {
     const iconText = getLinkIconText({
@@ -71,7 +71,7 @@ function NameCell({ item }: { item: PublicLink }) {
 }
 
 function SizeCell({ item }: { item: PublicLink }) {
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     if (item.progress) {
         return (
@@ -80,7 +80,7 @@ function SizeCell({ item }: { item: PublicLink }) {
                 style={{ '--w-custom': '11em' }}
                 data-testid="column-size"
             >
-                {!isNarrow && item.progress.progress > 0 && (
+                {!viewportWidth['<=small'] && item.progress.progress > 0 && (
                     <>
                         <Cells.SizeCell size={item.progress.progress} />/
                     </>
@@ -90,7 +90,7 @@ function SizeCell({ item }: { item: PublicLink }) {
         );
     }
 
-    const styleValue = isNarrow ? '6em' : '11em';
+    const styleValue = viewportWidth['<=small'] ? '6em' : '11em';
 
     return (
         <TableCell

@@ -14,7 +14,7 @@ interface Props {
 const OpenInCalendarButton = ({ linkString, calendarID, eventID, recurrenceID }: Props) => {
     const { APP_NAME: currentApp } = useConfig();
     const { setAppInView, iframeSrcMap, setIframeSrcMap, showDrawerSidebar } = useDrawer();
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const authentication = useAuthentication();
     const localID = authentication.getLocalID();
 
@@ -40,7 +40,7 @@ const OpenInCalendarButton = ({ linkString, calendarID, eventID, recurrenceID }:
     };
 
     // We use the default link to the Calendar app when mobile view OR the user is hiding the Drawer
-    if (isNarrow || !showDrawerSidebar) {
+    if (viewportWidth['<=small'] || !showDrawerSidebar) {
         return appLink;
     }
 

@@ -1,4 +1,5 @@
 export { default as useActiveBreakpoint } from './useActiveBreakpoint';
+export * from './useActiveBreakpoint';
 export { default as useElementBreakpoints } from './useElementBreakpoints';
 export { default as useActiveWindow } from './useActiveWindow';
 export { default as useAddresses, useGetAddresses } from './useAddresses';

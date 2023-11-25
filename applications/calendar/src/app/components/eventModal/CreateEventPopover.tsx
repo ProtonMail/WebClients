@@ -21,7 +21,7 @@ import validateEventModel from './eventForm/validateEventModel';
 import { ACTION, useForm } from './hooks/useForm';
 
 interface Props {
-    isNarrow: boolean;
+    isSmallViewport: boolean;
     displayWeekNumbers: boolean;
     weekStartsOn: WeekStartsOn;
     model: EventModel;
@@ -49,7 +49,7 @@ const CreateEventPopover = ({
     displayWeekNumbers,
     weekStartsOn,
     addresses,
-    isNarrow,
+    isSmallViewport,
     isCreateEvent,
     isInvitation,
     isDraggingDisabled = false,
@@ -90,7 +90,7 @@ const CreateEventPopover = ({
     const dragStyle: CSSProperties = {
         transform: `translate3d(${offset.x}px, ${offset.y}px, 0)`,
     };
-    const mergedStyle = isNarrow ? dragStyle : { ...style, ...dragStyle };
+    const mergedStyle = isSmallViewport ? dragStyle : { ...style, ...dragStyle };
 
     const handleMouseDown: MouseEventHandler<HTMLElement> = (event) => {
         event.preventDefault();
@@ -180,7 +180,7 @@ const CreateEventPopover = ({
                     isCreateEvent={isCreateEvent}
                     isInvitation={isInvitation}
                     setParticipantError={setParticipantError}
-                    isNarrow={isNarrow}
+                    isSmallViewport={isSmallViewport}
                     isDrawerApp={isDrawerApp}
                 />
                 <PopoverFooter className="justify-end flex-nowrap flex-column-reverse sm:flex-row gap-2">

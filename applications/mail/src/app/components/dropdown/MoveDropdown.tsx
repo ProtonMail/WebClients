@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
+    Breakpoints,
     Checkbox,
     FolderIcon,
     Icon,
@@ -37,7 +38,6 @@ import { getMessagesAuthorizedToMove } from '../../helpers/message/messages';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
 import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
-import { Breakpoints } from '../../models/utils';
 
 import './MoveDropdown.scss';
 
@@ -171,7 +171,7 @@ const MoveDropdown = ({ selectedIDs, labelID, onClose, onLock, breakpoints }: Pr
     const searchInputID = `${uid}-search`;
     const alwaysCheckID = `${uid}-always`;
     const folderButtonID = (ID: string) => `${uid}-${ID}`;
-    const autoFocusSearch = !breakpoints.isNarrow;
+    const autoFocusSearch = !breakpoints.viewportWidth['<=small'];
     const applyDisabled = selectedFolder?.ID === undefined;
 
     const newFolder: Pick<Label, 'Name' | 'Color' | 'Type'> = {

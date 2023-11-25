@@ -108,7 +108,7 @@ const customReducer = (oldState: { [key: string]: any }, newState: { [key: strin
 interface Props {
     tzid: string;
     setCustomTzid: (tzid: string) => void;
-    isNarrow: boolean;
+    isSmallViewport: boolean;
     drawerView?: VIEWS;
     user: UserModel;
     addresses: Address[];
@@ -130,7 +130,7 @@ interface Props {
 const CalendarContainer = ({
     tzid,
     setCustomTzid,
-    isNarrow,
+    isSmallViewport,
     drawerView,
     user,
     addresses,
@@ -288,7 +288,7 @@ const CalendarContainer = ({
         if (SUPPORTED_VIEWS_IN_DRAWER.includes(requestedView)) {
             return requestedView;
         }
-        if (isNarrow) {
+        if (isSmallViewport) {
             return requestedView === SEARCH ? SEARCH : WEEK;
         }
 
@@ -299,7 +299,7 @@ const CalendarContainer = ({
         return WEEK;
     })();
 
-    const range = isNarrow ? undefined : getRange(view, customRange);
+    const range = isSmallViewport ? undefined : getRange(view, customRange);
     const weekStartsOn = getWeekStartsOn(userSettings);
     const displayWeekNumbers = getDisplayWeekNumbers(calendarUserSettings);
     const displaySecondaryTimezone = getDisplaySecondaryTimezone(calendarUserSettings);
@@ -321,8 +321,8 @@ const CalendarContainer = ({
     const timezoneInformation = useMemo(() => {
         const { PrimaryTimezone, SecondaryTimezone } = calendarUserSettings;
         // in responsive mode we display just one day even though the view is WEEK
-        const startDate = isNarrow ? utcDate : utcDateRangeInTimezone[0];
-        const endDate = isNarrow ? new Date(+utcDate + 24 * HOUR) : utcDateRangeInTimezone[1];
+        const startDate = isSmallViewport ? utcDate : utcDateRangeInTimezone[0];
+        const endDate = isSmallViewport ? new Date(+utcDate + 24 * HOUR) : utcDateRangeInTimezone[1];
         const noonDateInPrimaryTimeZone = getNoonDateForTimeZoneOffset({
             date: startDate,
             dateTzid: tzid,
@@ -344,7 +344,7 @@ const CalendarContainer = ({
             secondaryTimezone: `${formatGMTOffsetAbbreviation(secondaryOffset)}`,
             secondaryTimezoneOffset: (secondaryOffset - offset) * MILLISECONDS_IN_MINUTE,
         };
-    }, [utcDate, utcDateRangeInTimezone, secondaryTzid, tzid, isNarrow]);
+    }, [utcDate, utcDateRangeInTimezone, secondaryTzid, tzid, isSmallViewport]);
 
     useEffect(() => {
         const newRoute = toUrlParams({
@@ -484,7 +484,7 @@ const CalendarContainer = ({
             setTzid={setCustomTzid}
             range={range}
             view={view}
-            isNarrow={isNarrow}
+            isSmallViewport={isSmallViewport}
             utcDateRangeInTimezone={utcDateRangeInTimezone}
             utcDefaultDate={utcDefaultDate}
             utcDate={utcDate}
@@ -524,7 +524,7 @@ const CalendarContainer = ({
 
             <InteractiveCalendarView
                 view={view}
-                isNarrow={isNarrow}
+                isSmallViewport={isSmallViewport}
                 isLoading={isLoading}
                 tzid={tzid}
                 {...timezoneInformation}
@@ -536,7 +536,7 @@ const CalendarContainer = ({
                 date={utcDate}
                 dateRange={utcDateRange}
                 events={calendarsEvents}
-                onClickDate={isNarrow ? handleChangeDate : handleClickDateWeekView}
+                onClickDate={isSmallViewport ? handleChangeDate : handleClickDateWeekView}
                 onChangeDate={handleChangeDate}
                 onChangeDateAndRevertView={handleChangeDateAndRevertView}
                 onClickToday={handleClickToday}
