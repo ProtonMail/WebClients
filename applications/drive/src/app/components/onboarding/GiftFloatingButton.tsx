@@ -31,9 +31,9 @@ import useChecklist from './useChecklist';
 
 export default function GiftFloatingButton() {
     const checklist = useChecklist();
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
-    if (isNarrow || checklist.isLoading || checklist.expiresInDays === 0 || !checklist.isVisible) {
+    if (viewportWidth['<=small'] || checklist.isLoading || checklist.expiresInDays === 0 || !checklist.isVisible) {
         return null;
     }
 

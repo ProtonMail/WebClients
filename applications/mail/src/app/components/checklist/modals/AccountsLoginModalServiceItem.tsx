@@ -39,27 +39,30 @@ const AccountsLoginModalServiceItem = ({
     isServiceDone,
     serviceMarkedAsDone,
 }: ServiceDetailsProps) => {
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     return (
         <div
             className={clsx(
                 'h-custom border-bottom flex gap-2 account-login--item',
-                isNarrow && 'pb-2',
+                viewportWidth['<=small'] && 'pb-2',
                 isServiceDone && 'invisible',
                 serviceMarkedAsDone && 'color-weak'
             )}
             data-testid="accounts-login-modal-service-item"
-            style={{ '--h-custom': isNarrow ? 'auto' : '3rem' }}
+            style={{ '--h-custom': viewportWidth['<=small'] ? 'auto' : '3rem' }}
         >
             <div className="flex items-center grow-2 gap-2">
                 <div
                     className={clsx(
                         'flex justify-center w-custom h-custom',
-                        isNarrow && 'self-start',
-                        !isNarrow && 'items-center'
+                        viewportWidth['<=small'] && 'self-start',
+                        !viewportWidth['<=small'] && 'items-center'
                     )}
-                    style={{ '--w-custom': isNarrow ? '2.25rem' : '3rem', '--h-custom': isNarrow ? '2.25rem' : '3rem' }}
+                    style={{
+                        '--w-custom': viewportWidth['<=small'] ? '2.25rem' : '3rem',
+                        '--h-custom': viewportWidth['<=small'] ? '2.25rem' : '3rem',
+                    }}
                 >
                     <div
                         className={clsx('p-0.5 rounded', serviceMarkedAsDone && 'opacity-50')}
@@ -70,18 +73,23 @@ const AccountsLoginModalServiceItem = ({
                             src={service.img}
                             className="w-custom h-custom"
                             style={{
-                                '--w-custom': isNarrow ? '1.5rem' : '2rem',
-                                '--h-custom': isNarrow ? '1.5rem' : '2rem',
+                                '--w-custom': viewportWidth['<=small'] ? '1.5rem' : '2rem',
+                                '--h-custom': viewportWidth['<=small'] ? '1.5rem' : '2rem',
                             }}
                         />
                     </div>
                 </div>
-                <div className={clsx(isNarrow && 'flex flex-column gap-2', serviceMarkedAsDone && 'opacity-50')}>
+                <div
+                    className={clsx(
+                        viewportWidth['<=small'] && 'flex flex-column gap-2',
+                        serviceMarkedAsDone && 'opacity-50'
+                    )}
+                >
                     {service.name}
-                    {isNarrow && <ServiceItemAction service={service} onServiceDone={onServiceDone} />}
+                    {viewportWidth['<=small'] && <ServiceItemAction service={service} onServiceDone={onServiceDone} />}
                 </div>
             </div>
-            {!isNarrow && (
+            {!viewportWidth['<=small'] && (
                 <ServiceItemAction
                     service={service}
                     onServiceDone={onServiceDone}

@@ -50,7 +50,7 @@ export interface TimeGridActionRef {
 }
 
 interface Props extends Omit<ComponentPropsWithoutRef<'div'>, 'onMouseDown'> {
-    isNarrow?: boolean;
+    isSmallViewport?: boolean;
     displaySecondaryTimezone?: boolean;
     primaryTimezone: string;
     secondaryTimezone?: string;
@@ -79,7 +79,7 @@ interface Props extends Omit<ComponentPropsWithoutRef<'div'>, 'onMouseDown'> {
 }
 
 const TimeGrid = ({
-    isNarrow = false,
+    isSmallViewport = false,
     now,
     date,
     dateRange: [start, end],
@@ -147,11 +147,11 @@ const TimeGrid = ({
     }, [events]);
 
     const daysRows = useMemo(() => {
-        if (isNarrow) {
+        if (isSmallViewport) {
             return [[date]];
         }
         return [days];
-    }, [days, isNarrow, date]);
+    }, [days, isSmallViewport, date]);
 
     const dayEventHeight = 28;
     const numberOfRows = 3;
@@ -224,7 +224,7 @@ const TimeGrid = ({
             });
         }
 
-        const normalizedDays = isNarrow ? [date] : days;
+        const normalizedDays = isSmallViewport ? [date] : days;
 
         if (!days[0]) {
             return;
@@ -413,7 +413,7 @@ const TimeGrid = ({
                             {days.map((day, dayIndex) => {
                                 const key = getKey(day);
                                 const isActiveDay = isSameDay(day, date);
-                                if (isNarrow && !isActiveDay) {
+                                if (isSmallViewport && !isActiveDay) {
                                     return null;
                                 }
                                 return (
@@ -426,7 +426,7 @@ const TimeGrid = ({
                                             tzid={tzid}
                                             events={timeEvents}
                                             eventsInDay={eventsPerDay[key]}
-                                            dayIndex={isNarrow ? 0 : dayIndex}
+                                            dayIndex={isSmallViewport ? 0 : dayIndex}
                                             totalMinutes={totalMinutes}
                                             targetEventData={targetEventData}
                                             targetEventRef={targetEventRef}

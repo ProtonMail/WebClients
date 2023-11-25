@@ -2,6 +2,7 @@ import { act } from 'react-dom/test-utils';
 
 import { RenderResult, fireEvent } from '@testing-library/react';
 
+import { Breakpoints } from '@proton/components/hooks';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -22,7 +23,6 @@ import { composerActions } from '../../../logic/composers/composersSlice';
 import { MessageStateWithData, PartialMessageState } from '../../../logic/messages/messagesTypes';
 import { initialize } from '../../../logic/messages/read/messagesReadActions';
 import { store } from '../../../logic/store';
-import { Breakpoints } from '../../../models/utils';
 import Composer from '../Composer';
 
 // Fake timers fails for the complexe send action

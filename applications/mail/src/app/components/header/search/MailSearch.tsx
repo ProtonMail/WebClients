@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { Location } from 'history';
 
 import {
+    Breakpoints,
     FeatureCode,
     TopNavbarListItemSearchButton,
     generateUID,
@@ -20,7 +21,6 @@ import { useEncryptedSearchContext } from '../../../containers/EncryptedSearchPr
 import { isEncryptedSearchAvailable } from '../../../helpers/encryptedSearch/esUtils';
 import { extractSearchParameters } from '../../../helpers/mailboxUrl';
 import { useClickMailContent } from '../../../hooks/useClickMailContent';
-import { Breakpoints } from '../../../models/utils';
 import AdvancedSearch from './AdvancedSearch';
 import MailSearchInput from './MailSearchInput';
 import MailSearchSpotlight from './MailSearchSpotlight';
@@ -100,7 +100,7 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
     return (
         <>
             <MailSearchSpotlight canShow={showEncryptedSearch && !isOpen}>
-                {breakpoints.isNarrow || breakpoints.isTablet ? (
+                {breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium ? (
                     <div className="topnav-listItem flex shrink-0 pl-1">
                         <TopNavbarListItemSearchButton onClick={handleOpen} />
                     </div>
@@ -117,7 +117,7 @@ const MailSearch = ({ breakpoints, labelID, location, columnMode }: Props) => {
             </MailSearchSpotlight>
             <SearchOverlay id={uid} isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <AdvancedSearch
-                    isNarrow={breakpoints.isNarrow || breakpoints.isTablet}
+                    isSmallViewport={breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium}
                     showEncryptedSearch={showEncryptedSearch}
                     onClose={close}
                     esIndexingProgressState={esIndexingProgressState}

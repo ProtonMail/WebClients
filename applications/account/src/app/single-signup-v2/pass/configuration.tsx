@@ -102,14 +102,14 @@ export const getCustomPassFeatures = () => {
 export const getPassConfiguration = ({
     mode,
     hideFreePlan,
-    isDesktop,
+    isLargeViewport,
     vpnServersCountData,
     isPaidPass,
     isPaidPassVPNBundle,
 }: {
     mode: SignupMode;
     hideFreePlan: boolean;
-    isDesktop: boolean;
+    isLargeViewport: boolean;
     vpnServersCountData: VPNServersCountData;
     isPaidPass: boolean;
     isPaidPassVPNBundle: boolean;
@@ -120,7 +120,7 @@ export const getPassConfiguration = ({
     const inviteTitle = c('pass_signup_2023: Info').t`You have been invited to join ${PASS_APP_NAME}`;
     const onboardingTitle = c('pass_signup_2023: Info').t`Unlock ${PASS_APP_NAME} premium features by upgrading`;
 
-    const features = getGenericFeatures(isDesktop);
+    const features = getGenericFeatures(isLargeViewport);
 
     const planCards: PlanCard[] = [
         !hideFreePlan && {
