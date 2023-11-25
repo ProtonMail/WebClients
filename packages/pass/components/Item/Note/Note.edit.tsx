@@ -10,7 +10,7 @@ import { ItemEditPanel } from '@proton/pass/components/Layout/Panel/ItemEditPane
 import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
-import { useDraftSync } from '@proton/pass/hooks/useItemDraft';
+import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { validateNoteForm } from '@proton/pass/lib/validation/note';
 import type { NoteFormValues } from '@proton/pass/types';
 import { obfuscate } from '@proton/pass/utils/obfuscate/xor';
@@ -40,11 +40,11 @@ export const NoteEdit: VFC<ItemEditViewProps<'note'>> = ({ vault: { shareId }, r
         validateOnChange: true,
     });
 
-    useDraftSync<NoteFormValues>(form, {
-        type: 'note',
+    useItemDraft<NoteFormValues>(form, {
         mode: 'edit',
         itemId: itemId,
         shareId: form.values.shareId,
+        revision: lastRevision,
     });
 
     return (
