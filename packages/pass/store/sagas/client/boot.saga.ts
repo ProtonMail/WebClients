@@ -3,13 +3,13 @@ import { put, takeLeading } from 'redux-saga/effects';
 import { isPassCryptoError } from '@proton/pass/lib/crypto/utils/errors';
 import { bootFailure, bootIntent, bootSuccess, stopEventPolling, syncLocalSettings } from '@proton/pass/store/actions';
 import { SyncType, synchronize } from '@proton/pass/store/sagas/client/sync';
-import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
 
 import { hydrateFromCache } from './hydrate.saga';
 
-function* bootWorker(options: WorkerRootSagaOptions) {
+function* bootWorker(options: RootSagaOptions) {
     try {
         yield put(stopEventPolling());
 
@@ -33,6 +33,6 @@ function* bootWorker(options: WorkerRootSagaOptions) {
     }
 }
 
-export default function* watcher(options: WorkerRootSagaOptions) {
+export default function* watcher(options: RootSagaOptions) {
     yield takeLeading(bootIntent.match, bootWorker, options);
 }
