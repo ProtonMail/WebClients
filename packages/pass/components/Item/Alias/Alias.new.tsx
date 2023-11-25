@@ -17,7 +17,7 @@ import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreate
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
-import { useDraftSync } from '@proton/pass/hooks/useItemDraft';
+import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { deriveAliasPrefix, reconciliateAliasFromDraft, validateNewAliasForm } from '@proton/pass/lib/validation/alias';
 import { selectAliasLimits, selectUserVerified, selectVaultLimits } from '@proton/pass/store/selectors';
 import type { MaybeNull, NewAliasFormValues } from '@proton/pass/types';
@@ -120,11 +120,9 @@ export const AliasNew: VFC<ItemNewViewProps<'alias'>> = ({ shareId, url, onSubmi
         lazy: !userVerified,
     });
 
-    const draft = useDraftSync<NewAliasFormValues>(form, {
+    const draft = useItemDraft<NewAliasFormValues>(form, {
         type: 'alias',
         mode: 'new',
-        itemId: 'draft-alias',
-        shareId: form.values.shareId,
         onHydrated: draftHydrated.resolve,
     });
 
