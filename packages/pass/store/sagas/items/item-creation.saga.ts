@@ -11,7 +11,7 @@ import {
     requestInvalidate,
 } from '@proton/pass/store/actions';
 import { aliasOptionsRequest } from '@proton/pass/store/actions/requests';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
@@ -24,7 +24,7 @@ const singleItemCreation = (action: AnyAction): action is ItemCreationAction =>
 const withAliasItemCreation = (action: AnyAction): action is ItemWithAliasCreationAction =>
     itemCreationIntent.match(action) && action.payload.type === 'login' && action.payload.extraData.withAlias;
 
-function* singleItemCreationWorker({ onItemsChange, getTelemetry }: WorkerRootSagaOptions, action: ItemCreationAction) {
+function* singleItemCreationWorker({ onItemsUpdated, getTelemetry }: RootSagaOptions, action: ItemCreationAction) {
     const {
         payload: createIntent,
         meta: { callback: onItemCreationIntentProcessed },
@@ -50,7 +50,7 @@ function* singleItemCreationWorker({ onItemsChange, getTelemetry }: WorkerRootSa
         }
 
         onItemCreationIntentProcessed?.(itemCreationSuccessAction);
-        onItemsChange?.();
+        onItemsUpdated?.();
     } catch (e) {
         const itemCreationfailureAction = itemCreationFailure({ optimisticId, shareId }, e);
         yield put(itemCreationfailureAction);
@@ -60,7 +60,7 @@ function* singleItemCreationWorker({ onItemsChange, getTelemetry }: WorkerRootSa
 }
 
 function* withAliasCreationWorker(
-    { onItemsChange, getTelemetry }: WorkerRootSagaOptions,
+    { onItemsUpdated, getTelemetry }: RootSagaOptions,
     { payload: createIntent }: ItemWithAliasCreationAction
 ) {
     const { shareId, optimisticId } = createIntent;
@@ -85,14 +85,14 @@ function* withAliasCreationWorker(
             void telemetry?.pushEvent(createTelemetryEvent(TelemetryEventName.TwoFACreation, {}, {}));
         }
 
-        onItemsChange?.();
+        onItemsUpdated?.();
     } catch (e) {
         const itemCreationfailureAction = itemCreationFailure({ optimisticId, shareId }, e);
         yield put(itemCreationfailureAction);
     }
 }
 
-export default function* watcher(options: WorkerRootSagaOptions) {
+export default function* watcher(options: RootSagaOptions) {
     yield all([
         takeEvery(singleItemCreation, singleItemCreationWorker, options),
         takeEvery(withAliasItemCreation, withAliasCreationWorker, options),

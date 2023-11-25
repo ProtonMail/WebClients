@@ -6,10 +6,10 @@ import {
     sessionLockDisableSuccess,
 } from '@proton/pass/store/actions';
 import type { WithSenderAction } from '@proton/pass/store/actions/with-receiver';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 
 function* disableSessionLockWorker(
-    { getAuthService }: WorkerRootSagaOptions,
+    { getAuthService }: RootSagaOptions,
     { meta, payload }: WithSenderAction<ReturnType<typeof sessionLockDisableIntent>>
 ) {
     try {
@@ -20,6 +20,6 @@ function* disableSessionLockWorker(
     }
 }
 
-export default function* watcher(options: WorkerRootSagaOptions) {
+export default function* watcher(options: RootSagaOptions) {
     yield takeLeading(sessionLockDisableIntent.match, disableSessionLockWorker, options);
 }
