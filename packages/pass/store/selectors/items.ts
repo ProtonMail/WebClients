@@ -24,6 +24,7 @@ import type {
     MaybeNull,
     UniqueItem,
 } from '@proton/pass/types';
+import { first } from '@proton/pass/utils/array/first';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { invert } from '@proton/pass/utils/fp/predicates';
@@ -37,7 +38,9 @@ import type { State } from '../types';
 const { asIfNotFailed, asIfNotOptimistic } = withOptimisticItemsByShareId.selectors;
 export const selectByShareId = (state: State) => state.items.byShareId;
 export const selectByOptimisticIds = (state: State) => state.items.byOptimistcId;
-export const selectItemDraft = (state: State) => state.popup.draft;
+
+export const selectItemDrafts = (state: State) => state.items.drafts;
+export const selectLatestDraft = createSelector(selectItemDrafts, (drafts) => first(drafts));
 
 /** Give an itemId, returns wether it is optimistic by checking for
  * presence in the `byOptimisticId` dictionary state */
