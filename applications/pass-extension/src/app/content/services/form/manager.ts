@@ -55,12 +55,10 @@ export const createFormManager = (options: FormManagerOptions) => {
      * for performance reasons (costly `isVisible` check) */
     const garbagecollect = withContext(({ service }) => {
         ctx.trackedForms.forEach((form) => {
-            if (!form.shouldRemove()) {
-                return;
+            if (form.shouldRemove()) {
+                form.tracker?.submit();
+                detachTrackedForm(form.element);
             }
-
-            detachTrackedForm(form.element);
-            form.tracker?.submit();
         });
 
         void service.autosave.reconciliate();
