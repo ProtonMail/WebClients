@@ -3,10 +3,10 @@ import { put, takeEvery } from 'redux-saga/effects';
 import { getUserAccess } from '@proton/pass/lib/user/user.requests';
 import { getUserAccessFailure, getUserAccessIntent, getUserAccessSuccess } from '@proton/pass/store/actions';
 import type { SafeUserAccessState } from '@proton/pass/store/reducers';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import { SessionLockStatus } from '@proton/pass/types';
 
-function* syncPlan({ getAuthStore }: WorkerRootSagaOptions, { meta }: ReturnType<typeof getUserAccessIntent>) {
+function* syncPlan({ getAuthStore }: RootSagaOptions, { meta }: ReturnType<typeof getUserAccessIntent>) {
     try {
         const loggedIn = getAuthStore().hasSession();
         const locked = getAuthStore().getLockStatus() === SessionLockStatus.LOCKED;
@@ -19,6 +19,6 @@ function* syncPlan({ getAuthStore }: WorkerRootSagaOptions, { meta }: ReturnType
     }
 }
 
-export default function* watcher(options: WorkerRootSagaOptions) {
+export default function* watcher(options: RootSagaOptions) {
     yield takeEvery(getUserAccessIntent.match, syncPlan, options);
 }

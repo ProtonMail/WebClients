@@ -39,7 +39,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                 <SelectTwo<GeneratePasswordOptions['type']>
                     id="password-type"
                     value={passwordOptions.type}
-                    className="pass-password-generator--select border-none flex flex-item-fluid"
+                    className="pass-password-generator--select border-none flex flex-item-fluid text-rg"
                     onValue={(type) => setPasswordOptions(type)}
                 >
                     <Option title={c('Option').t`Memorizable Password`} value="memorable" />
@@ -167,7 +167,7 @@ export const PasswordGenerator: VFC<UsePasswordGeneratorResult> = ({
                                 <SelectTwo<MemorablePasswordOptions['seperator']>
                                     id="password-seperator"
                                     value={passwordOptions.options.seperator}
-                                    className="pass-password-generator--select border-none flex flex-item-fluid"
+                                    className="pass-password-generator--select border-none flex flex-item-fluid text-rg"
                                     onValue={(seperator) => setPasswordOptions('memorable', { seperator })}
                                 >
                                     {Object.values(SeperatorOptions).map((seperator) => (

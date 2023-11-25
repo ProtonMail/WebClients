@@ -2,10 +2,10 @@ import { put, takeLeading } from 'redux-saga/effects';
 import { c } from 'ttag';
 
 import { sessionUnlockFailure, sessionUnlockIntent, sessionUnlockSuccess } from '@proton/pass/store/actions';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 
 function* unlockSessionWorker(
-    { getAuthService }: WorkerRootSagaOptions,
+    { getAuthService }: RootSagaOptions,
     { payload, meta: { callback: onUnlockResult, request } }: ReturnType<typeof sessionUnlockIntent>
 ) {
     try {
@@ -28,6 +28,6 @@ function* unlockSessionWorker(
     }
 }
 
-export default function* watcher(options: WorkerRootSagaOptions) {
+export default function* watcher(options: RootSagaOptions) {
     yield takeLeading(sessionUnlockIntent.match, unlockSessionWorker, options);
 }

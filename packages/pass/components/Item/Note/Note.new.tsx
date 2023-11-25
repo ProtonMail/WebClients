@@ -12,7 +12,7 @@ import { VaultSelectField } from '@proton/pass/components/Form/Field/VaultSelect
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
-import { useDraftSync } from '@proton/pass/hooks/useItemDraft';
+import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { validateNoteForm } from '@proton/pass/lib/validation/note';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
 import type { NoteFormValues } from '@proton/pass/types';
@@ -46,12 +46,7 @@ export const NoteNew: VFC<ItemNewViewProps<'note'>> = ({ shareId, onSubmit, onCa
         validateOnChange: true,
     });
 
-    const draft = useDraftSync<NoteFormValues>(form, {
-        type: 'note',
-        mode: 'new',
-        itemId: 'draft-note',
-        shareId: form.values.shareId,
-    });
+    const draft = useItemDraft<NoteFormValues>(form, { mode: 'new', type: 'note' });
 
     return (
         <ItemCreatePanel

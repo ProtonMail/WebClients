@@ -24,7 +24,7 @@ import type { ItemEditViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
 import { useAliasForLoginModal } from '@proton/pass/hooks/useAliasForLoginModal';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
-import { useDraftSync, useItemDraft } from '@proton/pass/hooks/useItemDraft';
+import { useItemDraft, useItemDraftLocationState } from '@proton/pass/hooks/useItemDraft';
 import { obfuscateExtraFields } from '@proton/pass/lib/items/item.obfuscation';
 import { getSecretOrUri, parseOTPValue } from '@proton/pass/lib/otp/otp';
 import {
@@ -161,14 +161,14 @@ export const LoginEdit: VFC<ItemEditViewProps<'login'>> = ({ revision, url, vaul
             .concat(form.values.url)
             .some((url) => url.includes(subdomain ?? domain!));
 
-    const itemDraft = useItemDraft<EditLoginItemFormValues>();
+    const itemDraft = useItemDraftLocationState<EditLoginItemFormValues>();
     const aliasModal = useAliasForLoginModal(form, { lazy: !itemDraft?.formData.withAlias });
 
-    useDraftSync<EditLoginItemFormValues>(form, {
-        type: 'login',
+    useItemDraft<EditLoginItemFormValues>(form, {
         mode: 'edit',
         itemId: itemId,
         shareId: form.values.shareId,
+        revision: lastRevision,
         sanitizeSave: sanitizeLoginAliasSave,
         sanitizeHydration: sanitizeLoginAliasHydration(aliasModal.aliasOptions),
     });

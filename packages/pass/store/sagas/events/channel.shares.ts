@@ -9,7 +9,7 @@ import { hasShareAccessChanged } from '@proton/pass/lib/shares/share.predicates'
 import { shareAccessChange, sharesSync, vaultCreationSuccess } from '@proton/pass/store/actions';
 import type { ItemsByShareId } from '@proton/pass/store/reducers';
 import { selectAllShares } from '@proton/pass/store/selectors';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, Maybe, Share, ShareRole, SharesGetResponse } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
 import { truthy } from '@proton/pass/utils/fp/predicates';
@@ -30,7 +30,7 @@ import type { EventChannel } from './types';
 function* onSharesEvent(
     event: EventManagerEvent<SharesGetResponse>,
     { api }: EventChannel<any>,
-    options: WorkerRootSagaOptions
+    options: RootSagaOptions
 ) {
     if ('error' in event) throw event.error;
 
@@ -105,13 +105,13 @@ export const createSharesChannel = (api: Api) =>
 
 /* when a vault is created : recreate all the necessary
  * channels to start polling for this new share's events */
-function* onNewShare(api: Api, options: WorkerRootSagaOptions) {
+function* onNewShare(api: Api, options: RootSagaOptions) {
     yield takeEvery(vaultCreationSuccess.match, function* ({ payload: { share } }) {
         yield all(getShareChannelForks(api, options)(share));
     });
 }
 
-export function* sharesChannel(api: Api, options: WorkerRootSagaOptions) {
+export function* sharesChannel(api: Api, options: RootSagaOptions) {
     logger.info(`[Saga::SharesChannel] start polling for new shares`);
     const eventsChannel = createSharesChannel(api);
     const events = fork(channelEventsWorker<SharesGetResponse>, eventsChannel, options);

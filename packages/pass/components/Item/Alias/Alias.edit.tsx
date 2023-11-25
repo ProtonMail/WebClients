@@ -16,7 +16,7 @@ import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constan
 import { useAliasDetails } from '@proton/pass/hooks/useAliasDetails';
 import { useAliasOptions } from '@proton/pass/hooks/useAliasOptions';
 import { useDeobfuscatedValue } from '@proton/pass/hooks/useDeobfuscatedValue';
-import { useDraftSync } from '@proton/pass/hooks/useItemDraft';
+import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import { createEditAliasFormValidator } from '@proton/pass/lib/validation/alias';
 import type { AliasMailbox, EditAliasFormValues } from '@proton/pass/types';
 import { type MaybeNull } from '@proton/pass/types';
@@ -107,11 +107,11 @@ export const AliasEdit: VFC<ItemEditViewProps<'alias'>> = ({ vault, revision, on
     const mailboxes = aliasOptions.value?.mailboxes ?? [];
     const disabledMailboxes = aliasOptions.loading || !aliasOptions;
 
-    useDraftSync<EditAliasFormValues>(form, {
-        type: 'alias',
+    useItemDraft<EditAliasFormValues>(form, {
         mode: 'edit',
         itemId: itemId,
         shareId: vault.shareId,
+        revision: lastRevision,
         onHydrated: draftHydrated.resolve,
     });
 
