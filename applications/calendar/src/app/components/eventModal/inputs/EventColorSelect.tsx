@@ -12,11 +12,11 @@ import { EventModel } from '@proton/shared/lib/interfaces/calendar';
 interface Props {
     model: EventModel;
     setModel: (value: EventModel) => void;
-    isNarrow: boolean;
+    isSmallViewport: boolean;
     isDrawerApp?: boolean;
 }
 
-const EventColorSelect = ({ model, setModel, isNarrow, isDrawerApp }: Props) => {
+const EventColorSelect = ({ model, setModel, isSmallViewport, isDrawerApp }: Props) => {
     const [{ hasPaidMail }] = useUser();
     const [{ isWelcomeFlow }] = useWelcomeFlags();
     const [upsellModalProps, setUpsellModal, renderUpsellModal] = useModalState();
@@ -29,7 +29,7 @@ const EventColorSelect = ({ model, setModel, isNarrow, isDrawerApp }: Props) => 
         show: showColorSpotlight,
         onDisplayed,
         onClose,
-    } = useSpotlightOnFeature(FeatureCode.CalendarEventColorSpotlight, !isNarrow && !isWelcomeFlow, {
+    } = useSpotlightOnFeature(FeatureCode.CalendarEventColorSpotlight, !isSmallViewport && !isWelcomeFlow, {
         alpha: Date.UTC(2023, 10, 15, 12),
         beta: Date.UTC(2023, 10, 15, 12),
         default: Date.UTC(2023, 10, 15, 12),

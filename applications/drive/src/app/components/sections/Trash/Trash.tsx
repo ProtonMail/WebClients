@@ -40,7 +40,7 @@ interface Props {
 
 const { CheckboxCell, ContextMenuCell } = Cells;
 
-const desktopCells: React.FC<{ item: TrashItem }>[] = [
+const largeScreenCells: React.FC<{ item: TrashItem }>[] = [
     CheckboxCell,
     NameCell,
     LocationCell,
@@ -48,9 +48,9 @@ const desktopCells: React.FC<{ item: TrashItem }>[] = [
     SizeCell,
     ContextMenuCell,
 ];
-const mobileCells = [CheckboxCell, NameCell, LocationCell, SizeCell, ContextMenuCell];
+const smallScreenCells = [CheckboxCell, NameCell, LocationCell, SizeCell, ContextMenuCell];
 
-const headerItemsDesktop: ListViewHeaderItem[] = [
+const headerItemsLargeScreen: ListViewHeaderItem[] = [
     headerItems.checkbox,
     headerItems.name,
     headerItems.location,
@@ -59,7 +59,7 @@ const headerItemsDesktop: ListViewHeaderItem[] = [
     headerItems.placeholder,
 ];
 
-const headeItemsMobile: ListViewHeaderItem[] = [
+const headerItemsSmallScreen: ListViewHeaderItem[] = [
     headerItems.checkbox,
     headerItems.name,
     headerItems.location,
@@ -77,7 +77,7 @@ function Trash({ trashView }: Props) {
     const browserItemContextMenu = useItemContextMenu();
     const thumbnails = useThumbnailsDownload();
     const selectionControls = useSelection();
-    const { isDesktop } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const { layout, items, sortParams, setSorting, isLoading } = trashView;
 
@@ -135,8 +135,8 @@ function Trash({ trashView }: Props) {
         return <EmptyTrash />;
     }
 
-    const Cells = isDesktop ? desktopCells : mobileCells;
-    const headerItems = isDesktop ? headerItemsDesktop : headeItemsMobile;
+    const Cells = viewportWidth['>=large'] ? largeScreenCells : smallScreenCells;
+    const headerItems = viewportWidth['>=large'] ? headerItemsLargeScreen : headerItemsSmallScreen;
 
     return (
         <>

@@ -12,7 +12,7 @@ import {
     useState,
 } from 'react';
 
-import { FeatureCode, useFeature, useKeyTransparencyContext } from '@proton/components';
+import { Breakpoints, FeatureCode, useFeature, useKeyTransparencyContext } from '@proton/components';
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
@@ -38,7 +38,6 @@ import { useVerifyMessage } from '../../hooks/message/useVerifyMessage';
 import { MessageWithOptionalBody } from '../../logic/messages/messagesTypes';
 import { isElementReminded } from '../../logic/snoozehelpers';
 import { Element } from '../../models/element';
-import { Breakpoints } from '../../models/utils';
 import QuickReplyContainer from '../composer/quickReply/QuickReplyContainer';
 import MessageBody from './MessageBody';
 import MessageFooter from './MessageFooter';

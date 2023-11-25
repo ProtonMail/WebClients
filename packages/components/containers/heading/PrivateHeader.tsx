@@ -22,12 +22,12 @@ interface Props extends HeaderProps {
     title: string;
     expanded: boolean;
     onToggleExpand?: () => void;
-    isNarrow?: boolean;
+    isSmallViewport?: boolean;
     app?: APP_NAMES;
 }
 
 const PrivateHeader = ({
-    isNarrow,
+    isSmallViewport,
     upsellButton,
     userDropdown,
     settingsButton,
@@ -61,12 +61,12 @@ const PrivateHeader = ({
                             {settingsButton}
                         </TopNavbarListItem>
                     ) : null}
-                    {userDropdown && !isNarrow ? (
+                    {userDropdown && !isSmallViewport ? (
                         <TopNavbarListItem className="relative hidden md:flex">{userDropdown}</TopNavbarListItem>
                     ) : null}
                 </TopNavbarList>
             </TopNavbar>
-            {isNarrow && floatingButton ? floatingButton : null}
+            {isSmallViewport && floatingButton ? floatingButton : null}
         </Header>
     );
 };

@@ -30,7 +30,7 @@ export const DriveHeader = ({
     searchBox,
     settingsButton,
 }: Props) => {
-    const { isNarrow, isTablet } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
     const hasRebrandingFeedback = useHasRebrandingFeedback();
     const [rebrandingFeedbackModal, setRebrandingFeedbackModal] = useModalState();
 
@@ -46,8 +46,8 @@ export const DriveHeader = ({
                 title={title}
                 expanded={isHeaderExpanded}
                 onToggleExpand={toggleHeaderExpanded}
-                isNarrow={isNarrow}
-                actionArea={!(isNarrow || isTablet) && searchBox}
+                isSmallViewport={viewportWidth['<=small']}
+                actionArea={!(viewportWidth['<=small'] || viewportWidth.medium) && searchBox}
                 settingsButton={settingsButton}
             />
 

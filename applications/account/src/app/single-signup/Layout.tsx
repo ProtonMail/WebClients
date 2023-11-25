@@ -49,7 +49,7 @@ const Layout = ({
     footer,
 }: Props) => {
     const { APP_NAME } = useConfig();
-    const { isTinyMobile } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const isDarkBg = ['bf2023', 'dark'].includes(background as any);
     const protonLogo = isB2bPlan ? (
@@ -103,7 +103,7 @@ const Layout = ({
                         <div className="shrink-0 flex">{protonLogo}</div>
                     )
                 }
-                isDarkBg={isDarkBg && !isTinyMobile}
+                isDarkBg={isDarkBg && !viewportWidth.xsmall}
             />
             <main className="flex-auto flex flex-nowrap flex-column justify-space-between md:mx-12 mx-6">
                 {children}
@@ -122,7 +122,9 @@ const Layout = ({
                                         <span
                                             className={clsx(
                                                 'text-sm text-center mb-4 lg:mb-0',
-                                                isDarkBg && !isTinyMobile ? 'color-norm opacity-70' : 'color-weak'
+                                                isDarkBg && !viewportWidth.xsmall
+                                                    ? 'color-norm opacity-70'
+                                                    : 'color-weak'
                                             )}
                                         >
                                             {

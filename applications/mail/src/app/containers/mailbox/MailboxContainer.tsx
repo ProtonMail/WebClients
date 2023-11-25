@@ -4,6 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import {
+    Breakpoints,
     Commander,
     CommanderItemInterface,
     DrawerSidebar,
@@ -71,7 +72,6 @@ import { useResizeMessageView } from '../../hooks/useResizeMessageView';
 import { selectComposersCount } from '../../logic/composers/composerSelectors';
 import { useAppSelector } from '../../logic/store';
 import { Filter, SearchParameters, Sort } from '../../models/tools';
-import { Breakpoints } from '../../models/utils';
 import { useOnCompose, useOnMailTo } from '../ComposeProvider';
 import MailboxContainerPlaceholder from './MailboxContainerPlaceholder';
 import { MailboxContainerContextProvider } from './MailboxContainerProvider';
@@ -102,7 +102,8 @@ const MailboxContainer = ({
     const getElementsFromIDs = useGetElementsFromIDs();
     const markAs = useMarkAs();
     const listRef = useRef<HTMLDivElement>(null);
-    const forceRowMode = breakpoints.isNarrow || breakpoints.isTablet || breakpoints.isSmallDesktop;
+    const forceRowMode =
+        breakpoints.viewportWidth['<=small'] || breakpoints.viewportWidth.medium || breakpoints.viewportWidth.large;
     const columnModeSetting = isColumnMode(mailSettings);
     const columnMode = columnModeSetting && !forceRowMode;
     const columnLayout = columnModeSetting || forceRowMode;
@@ -217,7 +218,7 @@ const MailboxContainer = ({
     const elementsLength = loading ? placeholderCount : elements.length;
     const showList = columnMode || !elementID;
     const showContentPanel = (columnMode && !!elementsLength) || !!elementID;
-    const showPlaceholder = !breakpoints.isNarrow && (!elementID || !!checkedIDs.length);
+    const showPlaceholder = !breakpoints.viewportWidth['<=small'] && (!elementID || !!checkedIDs.length);
     const showContentView = showContentPanel && !!elementID;
     const elementIDForList = checkedIDs.length ? undefined : elementID;
     const [commanderModalProps, showCommander, commanderRender] = useModalState();

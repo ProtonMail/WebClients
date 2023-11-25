@@ -44,7 +44,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
     ref: ForwardedRef<Element>
 ) => {
     let iconSize: IconSize | undefined;
-    const { isDesktop } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     switch (true) {
         case icon && upsell:
@@ -55,7 +55,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
             break;
     }
 
-    if (responsive && !isDesktop) {
+    if (responsive && !viewportWidth['>=large']) {
         shape = 'ghost';
         icon = true;
     }
@@ -83,7 +83,7 @@ const PromotionButtonBase = <E extends ElementType = typeof defaultElement>(
             <span
                 className={clsx(
                     'relative flex flex-nowrap items-center gap-2',
-                    responsive && isDesktop ? 'w-full' : undefined
+                    responsive && viewportWidth['>=large'] ? 'w-full' : undefined
                 )}
             >
                 {iconName && (

@@ -36,7 +36,7 @@ const getButtonColorAndShape: GetButtonColorAndShape = ({ color, shape, isRecomm
 const UpsellPanel = ({ title, features, children, ctas = [], isRecommended }: UpsellPanelProps) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const toggleExpand = () => setIsExpanded((prev) => !prev);
-    const { isNarrow } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     return (
         <Panel className={clsx(isRecommended ? 'border-primary border-recommended' : 'border-strong')} title={title}>
@@ -49,7 +49,7 @@ const UpsellPanel = ({ title, features, children, ctas = [], isRecommended }: Up
             )}
             {children}
 
-            {isNarrow && (
+            {viewportWidth['<=small'] && (
                 <div className="w-full text-center my-6 flex">
                     <InlineLinkButton className="mx-auto" onClick={() => toggleExpand()}>
                         {isExpanded ? (
@@ -67,7 +67,7 @@ const UpsellPanel = ({ title, features, children, ctas = [], isRecommended }: Up
                 </div>
             )}
 
-            {(!isNarrow || isExpanded) && (
+            {(!viewportWidth['<=small'] || isExpanded) && (
                 <StripedList alternate="odd">
                     {features.map(({ icon = 'checkmark', text, tooltip, included = true, status = 'available' }) => {
                         if (!included) {

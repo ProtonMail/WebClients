@@ -48,7 +48,7 @@ interface Props {
 
 const { CheckboxCell, ContextMenuCell } = Cells;
 
-const myFilesDesktopCells: React.FC<{ item: DriveItem }>[] = [
+const myFilesLargeScreenCells: React.FC<{ item: DriveItem }>[] = [
     CheckboxCell,
     NameCell,
     ModifiedCell,
@@ -56,9 +56,9 @@ const myFilesDesktopCells: React.FC<{ item: DriveItem }>[] = [
     ShareOptionsCell,
     ContextMenuCell,
 ];
-const myFilesMobileCells = [CheckboxCell, NameCell, ContextMenuCell];
+const myFilesSmallScreenCells = [CheckboxCell, NameCell, ContextMenuCell];
 
-const headerItemsDesktop: ListViewHeaderItem[] = [
+const headerItemsLargeScreen: ListViewHeaderItem[] = [
     headerItems.checkbox,
     headerItems.name,
     headerItems.modificationDate,
@@ -67,7 +67,7 @@ const headerItemsDesktop: ListViewHeaderItem[] = [
     headerItems.placeholder,
 ];
 
-const headerItemsMobile: ListViewHeaderItem[] = [headerItems.checkbox, headerItems.name, headerItems.placeholder];
+const headerItemsSmallScreen: ListViewHeaderItem[] = [headerItems.checkbox, headerItems.name, headerItems.placeholder];
 
 type DriveSortFields = Extract<SortField, SortField.name | SortField.fileModifyTime | SortField.size>;
 const SORT_FIELDS: DriveSortFields[] = [SortField.name, SortField.fileModifyTime, SortField.size];
@@ -81,7 +81,7 @@ function Drive({ activeFolder, folderView }: Props) {
     const thumbnails = useThumbnailsDownload();
     const { navigateToLink } = useNavigate();
     const selectionControls = useSelection();
-    const { isDesktop } = useActiveBreakpoint();
+    const { viewportWidth } = useActiveBreakpoint();
 
     const { layout, folderName, items, sortParams, setSorting, isLoading } = folderView;
 
@@ -156,8 +156,8 @@ function Drive({ activeFolder, folderView }: Props) {
         return <EmptyFolder shareId={shareId} />;
     }
 
-    const Cells = isDesktop ? myFilesDesktopCells : myFilesMobileCells;
-    const headerItems = isDesktop ? headerItemsDesktop : headerItemsMobile;
+    const Cells = viewportWidth['>=large'] ? myFilesLargeScreenCells : myFilesSmallScreenCells;
+    const headerItems = viewportWidth['>=large'] ? headerItemsLargeScreen : headerItemsSmallScreen;
 
     return (
         <>
