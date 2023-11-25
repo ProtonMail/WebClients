@@ -18,7 +18,7 @@ import {
 } from '@proton/pass/store/actions';
 import type { ShareItem } from '@proton/pass/store/reducers/shares';
 import { selectAllShares, selectShare } from '@proton/pass/store/selectors';
-import type { WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { Api, ItemRevision, Maybe, PassEventListResponse, Share } from '@proton/pass/types';
 import { ShareType } from '@proton/pass/types';
 import { logId, logger } from '@proton/pass/utils/logger';
@@ -40,7 +40,7 @@ const onShareEvent = (shareId: string) =>
     function* (
         event: EventManagerEvent<ShareEventResponse>,
         _: EventChannel<ShareEventResponse>,
-        { onItemsUpdated, onItemsDeleted }: WorkerRootSagaOptions
+        { onItemsUpdated, onItemsDeleted }: RootSagaOptions
     ) {
         if ('error' in event) throw event.error;
 
@@ -86,7 +86,7 @@ const onShareEventError = (shareId: string) =>
     function* (
         error: unknown,
         { channel }: EventChannel<ShareEventResponse>,
-        { onShareDeleted, onItemsUpdated }: WorkerRootSagaOptions
+        { onShareDeleted, onItemsUpdated }: RootSagaOptions
     ) {
         const { code } = getApiError(error);
 
@@ -129,7 +129,7 @@ export const createShareChannel = (api: Api, { shareId, eventId }: Share) =>
         onError: onShareEventError(shareId),
     });
 
-export const getShareChannelForks = (api: Api, options: WorkerRootSagaOptions) => (share: Share) => {
+export const getShareChannelForks = (api: Api, options: RootSagaOptions) => (share: Share) => {
     logger.info(`[Saga::ShareChannel] start polling for share ${logId(share.shareId)}`);
     const eventsChannel = createShareChannel(api, share);
     const events = fork(channelEventsWorker<ShareEventResponse>, eventsChannel, options);
@@ -139,7 +139,7 @@ export const getShareChannelForks = (api: Api, options: WorkerRootSagaOptions) =
     return [events, wakeup, onDelete];
 };
 
-export function* shareChannels(api: Api, options: WorkerRootSagaOptions) {
+export function* shareChannels(api: Api, options: RootSagaOptions) {
     const shares = (yield select(selectAllShares)) as Share[];
     yield all(shares.map(getShareChannelForks(api, options)).flat());
 }

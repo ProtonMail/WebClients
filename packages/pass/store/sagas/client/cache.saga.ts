@@ -9,7 +9,7 @@ import { cacheCancel } from '@proton/pass/store/actions';
 import { type WithCache, isCachingAction } from '@proton/pass/store/actions/with-cache';
 import { asIfNotOptimistic } from '@proton/pass/store/optimistic/selectors/select-is-optimistic';
 import { reducerMap } from '@proton/pass/store/reducers';
-import type { State, WorkerRootSagaOptions } from '@proton/pass/store/types';
+import type { RootSagaOptions, State } from '@proton/pass/store/types';
 import { AppStatus, PassEncryptionTag } from '@proton/pass/types';
 import { oneOf } from '@proton/pass/utils/fp/predicates';
 import { logger } from '@proton/pass/utils/logger';
@@ -19,10 +19,7 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 
 const CACHE_THROTTLING_TIMEOUT = 1_000;
 
-function* cacheWorker(
-    { type, meta }: WithCache<AnyAction>,
-    { getAppState, getAuthStore, setCache }: WorkerRootSagaOptions
-) {
+function* cacheWorker({ type, meta }: WithCache<AnyAction>, { getAppState, getAuthStore, setCache }: RootSagaOptions) {
     if (meta.throttle) yield wait(CACHE_THROTTLING_TIMEOUT);
 
     const loggedIn = getAuthStore().hasSession();
@@ -70,7 +67,7 @@ function* cacheWorker(
     }
 }
 
-export default function* watcher(options: WorkerRootSagaOptions) {
+export default function* watcher(options: RootSagaOptions) {
     yield takeLatest(isCachingAction, function* (action) {
         const cacheTask: Task = yield fork(cacheWorker, action, options);
 
