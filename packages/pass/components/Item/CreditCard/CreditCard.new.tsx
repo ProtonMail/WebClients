@@ -19,7 +19,7 @@ import {
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
 import { MAX_ITEM_NAME_LENGTH, MAX_ITEM_NOTE_LENGTH } from '@proton/pass/constants';
-import { useDraftSync } from '@proton/pass/hooks/useItemDraft';
+import { useItemDraft } from '@proton/pass/hooks/useItemDraft';
 import type { CreditCardItemFormValues } from '@proton/pass/lib/validation/credit-card';
 import { validateCreditCardForm } from '@proton/pass/lib/validation/credit-card';
 import { selectVaultLimits } from '@proton/pass/store/selectors';
@@ -72,12 +72,7 @@ export const CreditCardNew: VFC<ItemNewViewProps<'creditCard'>> = ({ shareId, on
         validateOnBlur: true,
     });
 
-    useDraftSync<CreditCardItemFormValues>(form, {
-        type: 'creditCard',
-        mode: 'new',
-        shareId: form.values.shareId,
-        itemId: 'draft-cc',
-    });
+    useItemDraft<CreditCardItemFormValues>(form, { mode: 'new', type: 'creditCard' });
 
     return (
         <ItemCreatePanel
