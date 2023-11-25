@@ -1,8 +1,11 @@
 import type { AnyAction, Reducer } from 'redux';
 
-import { isTrashed } from '@proton/pass/lib/items/item.predicates';
+import { isTrashed, itemEq } from '@proton/pass/lib/items/item.predicates';
 import {
     bootSuccess,
+    draftDiscard,
+    draftSave,
+    draftsGarbageCollect,
     emptyTrashSuccess,
     importItemsBatchSuccess,
     inviteAcceptSuccess,
@@ -44,6 +47,7 @@ import { sanitizeWithCallbackAction } from '@proton/pass/store/actions/with-call
 import type { WrappedOptimisticState } from '@proton/pass/store/optimistic/types';
 import { combineOptimisticReducers } from '@proton/pass/store/optimistic/utils/combine-optimistic-reducers';
 import withOptimistic from '@proton/pass/store/optimistic/with-optimistic';
+import type { ItemType } from '@proton/pass/types';
 import { CONTENT_FORMAT_VERSION, type ItemRevision, ItemState, type UniqueItem } from '@proton/pass/types';
 import { or } from '@proton/pass/utils/fp/predicates';
 import { objectDelete } from '@proton/pass/utils/object/delete';
@@ -51,22 +55,9 @@ import { fullMerge, partialMerge } from '@proton/pass/utils/object/merge';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import { toMap } from '@proton/shared/lib/helpers/object';
 
-/*
- * itemIds are only guaranteed to be unique per share
- * not globally, therefore it must be nested like this
- */
-export type ItemsByShareId = {
-    [shareId: string]: {
-        [itemId: string]: ItemRevision;
-    };
-};
-
-type ItemsByOptimisticId = { [optimisticId: string]: UniqueItem };
-
-export type ItemsState = {
-    byShareId: WrappedOptimisticState<ItemsByShareId>;
-    byOptimistcId: ItemsByOptimisticId;
-};
+/** itemIds are only guaranteed to be unique per share not globally,
+ * therefore we must index the item entries by `shareId`  */
+export type ItemsByShareId = { [shareId: string]: { [itemId: string]: ItemRevision } };
 
 export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
     [
@@ -309,6 +300,8 @@ export const withOptimisticItemsByShareId = withOptimistic<ItemsByShareId>(
     { sanitizeAction: sanitizeWithCallbackAction }
 );
 
+export type ItemsByOptimisticId = { [optimisticId: string]: UniqueItem };
+
 const itemsByOptimisticId: Reducer<ItemsByOptimisticId> = (state = {}, action) => {
     if (or(itemCreationSuccess.match, itemMoveSuccess.match, itemMoveFailure.match)(action)) {
         const { optimisticId, item } = action.payload;
@@ -320,7 +313,44 @@ const itemsByOptimisticId: Reducer<ItemsByOptimisticId> = (state = {}, action) =
     return state;
 };
 
+/** revision number is stored on the `EditDraft` type in order
+ * to future-proof drafts v2 : this will allow detecting stale
+ * draft entries if an item was updated while having a draft. */
+export type DraftBase =
+    | { mode: 'new'; type: ItemType }
+    | { mode: 'edit'; itemId: string; shareId: string; revision: number };
+
+export type Draft<V extends {} = any> = DraftBase & { formData: V };
+export type EditDraft = Extract<Draft, { mode: 'edit' }>;
+export type NewDraft = Extract<Draft, { mode: 'new' }>;
+
+/** Draft state now supports pushing multiple entries so as to future-proof
+ * drafts v2. In the extension, we are stil relying on a single active draft
+ * and all drafts will be garbage collected on extension boot. This behaviour
+ * does not make sense for the web-app and is unavailable for web. */
+const draftsReducer: Reducer<Draft[]> = (state = [], action) => {
+    /* Ensures only one new item draft exists and that we do not
+     * have duplicates for item edit drafts */
+    const sanitizeDrafts = (drafts: Draft[], draft: DraftBase) => {
+        if (draft.mode === 'new') return drafts.filter(({ mode }) => mode !== 'new');
+        else return drafts.filter((entry) => entry.mode === 'new' || !itemEq(draft)(entry));
+    };
+
+    if (draftSave.match(action)) return [action.payload, ...sanitizeDrafts(state, action.payload)];
+    if (draftDiscard.match(action)) return sanitizeDrafts(state, action.payload);
+    if (draftsGarbageCollect.match(action)) return [];
+
+    return state;
+};
+
+export type ItemsState = {
+    byShareId: WrappedOptimisticState<ItemsByShareId>;
+    byOptimistcId: ItemsByOptimisticId;
+    drafts: Draft[];
+};
+
 export default combineOptimisticReducers({
     byShareId: withOptimisticItemsByShareId.reducer,
     byOptimistcId: itemsByOptimisticId,
+    drafts: draftsReducer,
 });
