@@ -1,3 +1,5 @@
+import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
+
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { Element } from '../../models/element';
 import { LabelIDsChanges } from '../../models/event';
@@ -56,6 +58,11 @@ export interface ElementsState {
     page: number;
 
     /**
+     * Current page size
+     */
+    pageSize: MAIL_PAGE_SIZE;
+
+    /**
      * List of page number currently in the cache
      */
     pages: number[];
@@ -92,16 +99,18 @@ export interface ElementsState {
 
 export interface QueryParams {
     abortController: AbortController | undefined;
-    conversationMode: boolean;
     page: number;
+    pageSize: MAIL_PAGE_SIZE;
     params: ElementsStateParams;
     count?: number;
+    refetch?: boolean;
 }
 
 export interface QueryResults {
     abortController: AbortController;
     Total: number;
     Elements: Element[];
+    More?: boolean;
     Stale: number;
     /**
      * About TasksRunning:
@@ -114,6 +123,7 @@ export interface QueryResults {
 
 export interface NewStateParams {
     page?: number;
+    pageSize?: number;
     params?: Partial<ElementsStateParams>;
     retry?: RetryData;
     beforeFirstLoad?: boolean;

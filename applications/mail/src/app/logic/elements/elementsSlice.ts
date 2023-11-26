@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
 import { globalReset } from '../actions';
 import { deleteDraft } from '../messages/draft/messagesDraftActions';
@@ -25,6 +25,8 @@ import {
     removeExpired,
     reset,
     retry,
+    setPageSize,
+    showSerializedElements as showSerializedElementsAction,
     updatePage,
 } from './elementsActions';
 import {
@@ -51,12 +53,15 @@ import {
     removeExpired as removeExpiredReducer,
     reset as resetReducer,
     retry as retryReducer,
+    setPageSize as setPageSizeReducer,
+    showSerializedElements as showSerializedElementsReducer,
     updatePage as updatePageReducer,
 } from './elementsReducers';
 import { ElementsState, ElementsStateParams, NewStateParams, TaskRunningInfo } from './elementsTypes';
 
 export const newState = ({
     page = 0,
+    pageSize = DEFAULT_MAIL_PAGE_SIZE,
     params = {},
     retry = { payload: null, count: 0, error: undefined },
     beforeFirstLoad = true,
@@ -70,6 +75,7 @@ export const newState = ({
         search: {},
         esEnabled: false,
     };
+
     return {
         beforeFirstLoad,
         invalidated: false,
@@ -77,6 +83,7 @@ export const newState = ({
         pendingActions: 0,
         params: { ...defaultParams, ...params },
         page,
+        pageSize,
         total: undefined,
         elements: {},
         pages: [],
@@ -99,6 +106,7 @@ const elementsSlice = createSlice({
 
         builder.addCase(reset, resetReducer);
         builder.addCase(updatePage, updatePageReducer);
+        builder.addCase(setPageSize, setPageSizeReducer);
         builder.addCase(load.pending, loadPending);
         builder.addCase(load.fulfilled, loadFulfilled);
         builder.addCase(retry, retryReducer);
@@ -128,6 +136,8 @@ const elementsSlice = createSlice({
         builder.addCase(expireMessages.pending, expireElementsPending);
         builder.addCase(expireMessages.fulfilled, expireElementsFulfilled);
         builder.addCase(expireMessages.rejected, expireElementsRejected);
+
+        builder.addCase(showSerializedElementsAction, showSerializedElementsReducer);
     },
 });
 

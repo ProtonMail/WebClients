@@ -160,7 +160,6 @@ const Item = ({
                     !unread && 'read',
                     unread && 'unread',
                     dragged && 'item-dragging',
-                    loading && 'item-is-loading',
                     useContentSearch && columnLayout && 'es-three-rows',
                     useContentSearch && !columnLayout && 'es-row-results',
                 ])}
