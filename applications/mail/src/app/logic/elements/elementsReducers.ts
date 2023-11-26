@@ -3,11 +3,13 @@ import { Draft } from 'immer';
 
 import { toMap } from '@proton/shared/lib/helpers/object';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import diff from '@proton/utils/diff';
 import isTruthy from '@proton/utils/isTruthy';
 import range from '@proton/utils/range';
+import unique from '@proton/utils/unique';
 
-import { MAX_ELEMENT_LIST_LOAD_RETRIES, PAGE_SIZE } from '../../constants';
+import { MAX_ELEMENT_LIST_LOAD_RETRIES } from '../../constants';
 import { parseLabelIDsInEvent, isMessage as testIsMessage } from '../../helpers/elements';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
@@ -44,9 +46,13 @@ export const updatePage = (state: Draft<ElementsState>, action: PayloadAction<nu
     state.page = action.payload;
 };
 
+export const setPageSize = (state: Draft<ElementsState>, action: PayloadAction<MAIL_PAGE_SIZE>) => {
+    state.pageSize = action.payload;
+};
+
 export const retry = (
     state: Draft<ElementsState>,
-    action: PayloadAction<{ queryParameters: any; error: Error | undefined }>
+    action: PayloadAction<{ queryParameters: unknown; error: Error | undefined }>
 ) => {
     state.beforeFirstLoad = false;
     state.invalidated = false;
@@ -63,8 +69,12 @@ export const loadPending = (
     action: PayloadAction<undefined, string, { arg: QueryParams }>
 ) => {
     if (hasSameMode(state, action.meta.arg)) {
-        state.pendingRequest = true;
-        state.page = action.meta.arg.page;
+        const { refetch, page } = action.meta.arg;
+
+        if (!refetch) {
+            state.pendingRequest = true;
+            state.page = page;
+        }
     }
 };
 
@@ -72,9 +82,9 @@ export const loadFulfilled = (
     state: Draft<ElementsState>,
     action: PayloadAction<{ result: QueryResults; taskRunning: TaskRunningInfo }, string, { arg: QueryParams }>
 ) => {
-    const { page, params } = action.meta.arg;
+    const { page, params, refetch } = action.meta.arg;
     const {
-        result: { Total, Elements },
+        result: { Total },
         taskRunning,
     } = action.payload;
 
@@ -82,15 +92,33 @@ export const loadFulfilled = (
         Object.assign(state, {
             beforeFirstLoad: false,
             invalidated: false,
-            pendingRequest: false,
-            page,
+            pendingRequest: refetch ? state.pendingRequest : false,
+            page: refetch ? state.page : page,
             total: Total,
             retry: newRetry(state.retry, params, undefined),
         });
-        state.pages.push(page);
-        Object.assign(state.elements, toMap(Elements, 'ID'));
+
         state.taskRunning = taskRunning;
     }
+};
+
+/**
+ * This reducer is used to set first loaded elements while loading remaining ones in serie
+ */
+export const showSerializedElements = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<{ result: QueryResults; page: number }, string>
+) => {
+    const {
+        result: { Total, Elements },
+        page,
+    } = action.payload;
+
+    Object.assign(state, {
+        total: Total,
+        elements: { ...state.elements, ...toMap(Elements, 'ID') },
+        pages: unique([...state.pages, page]).sort(),
+    });
 };
 
 export const manualPending = (state: Draft<ElementsState>) => {
@@ -139,7 +167,7 @@ export const eventUpdatesFulfilled = (
 
 export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<ESResults>) => {
     const total = action.payload.elements.length;
-    const pages = range(0, Math.ceil(total / PAGE_SIZE));
+    const pages = range(0, Math.ceil(total / state.pageSize));
     // Retry is disabled for encrypted search results, to avoid re-triggering the search several times
     // when there are no results
     Object.assign(state, {

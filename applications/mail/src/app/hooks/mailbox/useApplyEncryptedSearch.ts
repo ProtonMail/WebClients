@@ -19,7 +19,7 @@ import {
 import {
     isES as isESSelector,
     messagesToLoadMoreES as messagesToLoadMoreESSelector,
-    shouldSendRequest as shouldSendRequestSelector,
+    shouldLoadElements as shouldSendRequestSelector,
 } from '../../logic/elements/elementsSelectors';
 import { RootState, useAppDispatch } from '../../logic/store';
 import { Element } from '../../models/element';
@@ -29,6 +29,7 @@ interface EncryptedSearchParams {
     conversationMode: boolean;
     labelID: string;
     page: number;
+    pageSize: number;
     sort: Sort;
     filter: Filter;
     search: SearchParameters;
@@ -40,6 +41,7 @@ export const useApplyEncryptedSearch = ({
     labelID,
     search,
     page,
+    pageSize,
     sort,
     filter,
     onPage,
@@ -54,7 +56,7 @@ export const useApplyEncryptedSearch = ({
     const params = { labelID, conversationMode, sort, filter, search, esEnabled };
 
     const isES = useSelector((state: RootState) => isESSelector(state, { search, esStatus }));
-    const shouldSendRequest = useSelector((state: RootState) => shouldSendRequestSelector(state, { page, params }));
+    const shouldLoadElements = useSelector((state: RootState) => shouldSendRequestSelector(state, { page, params }));
     const messagesToLoadMoreES = useSelector((state: RootState) =>
         messagesToLoadMoreESSelector(state, { page, search, esStatus })
     );
@@ -82,7 +84,7 @@ export const useApplyEncryptedSearch = ({
                     dispatch(manualFulfilled());
                     onPage(0);
                 } else {
-                    void dispatch(loadAction({ conversationMode, page, params, abortController: undefined }));
+                    void dispatch(loadAction({ page, pageSize, params, abortController: undefined }));
                 }
             }
         } catch (error: any) {
@@ -90,12 +92,12 @@ export const useApplyEncryptedSearch = ({
                 text: c('Error').t`There has been an issue with content search. Default search has been used instead.`,
                 type: 'error',
             });
-            void dispatch(loadAction({ conversationMode, page, params, abortController: undefined }));
+            void dispatch(loadAction({ page, pageSize, params, abortController: undefined }));
         }
     };
 
     useEffect(() => {
-        if (shouldSendRequest && isSearch(search)) {
+        if (shouldLoadElements && isSearch(search)) {
             void executeSearch();
         }
         if (isES && messagesToLoadMoreES !== 0) {
@@ -105,5 +107,5 @@ export const useApplyEncryptedSearch = ({
             dispatch(updatePage(parseSearchParams(history.location).page));
             void encryptedSearch(setEncryptedSearchResults, messagesToLoadMoreES);
         }
-    }, [shouldSendRequest, messagesToLoadMoreES, search]);
+    }, [shouldLoadElements, messagesToLoadMoreES, search]);
 };

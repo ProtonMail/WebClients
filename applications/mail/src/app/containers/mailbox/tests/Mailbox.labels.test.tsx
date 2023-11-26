@@ -229,6 +229,8 @@ describe('Mailbox labels actions', () => {
             let items = getItems();
             expect(items.length).toBe(3);
 
+            addApiMock('mail/v4/conversations', () => ({ Total: 0, Conversations: [] }));
+
             const moreDropdown = getByTestId('toolbar:more-dropdown');
             fireEvent.click(moreDropdown);
 
@@ -284,6 +286,8 @@ describe('Mailbox labels actions', () => {
                 labelID: MAILBOX_LABEL_IDS.TRASH,
             });
 
+            addApiMock('mail/v4/conversations', () => ({ Total: 1, Conversations: [trashedConversations[2]] }));
+
             await deleteFirstTwo({ getAllByTestId, getByTestId, deleteRequestSpy });
 
             const items = getItems();
@@ -303,6 +307,8 @@ describe('Mailbox labels actions', () => {
                 messages: trashedMessages,
                 labelID: MAILBOX_LABEL_IDS.TRASH,
             });
+
+            addApiMock('mail/v4/messages', () => ({ Total: 1, Messages: [trashedMessages[2]] }));
 
             await deleteFirstTwo({ getAllByTestId, getByTestId, deleteRequestSpy });
 

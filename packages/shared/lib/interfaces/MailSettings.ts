@@ -13,6 +13,7 @@ import {
     HIDE_SENDER_IMAGES,
     INHERIT_PARENT_FOLDER_COLOR,
     KEY_TRANSPARENCY_SETTING,
+    MAIL_PAGE_SIZE,
     MESSAGE_BUTTONS,
     PACKAGE_TYPE,
     PM_SIGNATURE,
@@ -52,6 +53,7 @@ export interface MailSettings {
     ViewLayout: VIEW_LAYOUT;
     SwipeLeft: number;
     SwipeRight: number;
+    PageSize: MAIL_PAGE_SIZE;
     HideEmbeddedImages: SHOW_IMAGES;
     HideRemoteImages: SHOW_IMAGES;
     Shortcuts: SHORTCUTS; // used by v4
