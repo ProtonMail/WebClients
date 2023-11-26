@@ -1,5 +1,4 @@
 import { waitFor } from '@testing-library/react';
-import { act } from '@testing-library/react';
 
 import { useEventManager } from '@proton/components';
 
@@ -42,11 +41,14 @@ export const mockConsole = (level: keyof Console = 'error') => {
 };
 
 export const waitForSpyCall = async (mock: jest.Mock) =>
-    act(async () =>
-        waitFor(() => expect(mock).toHaveBeenCalled(), {
+    waitFor(
+        () => {
+            expect(mock).toHaveBeenCalled();
+        },
+        {
             interval: 100,
             timeout: 5000,
-        })
+        }
     );
 
 export const waitForEventManagerCall = async () => {
@@ -90,8 +92,8 @@ export const waitForNotification = (content: string) =>
     waitFor(
         () => {
             const notifications = document.querySelectorAll('div[role="alert"].notification');
-            const matchingNotification = [...notifications].find((notification) =>
-                notification.textContent?.includes(content)
+            const matchingNotification = [...notifications].find(
+                (notification) => notification.textContent?.includes(content)
             );
             if (matchingNotification) {
                 return matchingNotification;

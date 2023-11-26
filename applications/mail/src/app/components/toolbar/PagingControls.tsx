@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Scroll } from '@proton/atoms';
 import { DropdownMenu, DropdownMenuButton, EllipsisLoader, Icon, ToolbarButton } from '@proton/components';
+import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import clsx from '@proton/utils/clsx';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -15,13 +16,20 @@ import ToolbarDropdown from './ToolbarDropdown';
 interface Props {
     loading: boolean;
     page: number;
+    pageSize: MAIL_PAGE_SIZE;
     total: number | undefined;
     onPage: (page: number) => void;
 }
 
-const PagingControls = ({ loading, page: inputPage, total: inputTotal, onPage: inputOnPage }: Props) => {
+const PagingControls = ({
+    loading,
+    page: inputPage,
+    pageSize: inputPageSize,
+    total: inputTotal,
+    onPage: inputOnPage,
+}: Props) => {
     const location = useLocation();
-    const { onPrevious, onNext, onPage, page, total } = usePaging(inputPage, inputTotal, inputOnPage);
+    const { onPrevious, onNext, onPage, page, total } = usePaging(inputPage, inputPageSize, inputTotal, inputOnPage);
     const { esStatus } = useEncryptedSearchContext();
     const { dbExists, esEnabled, isSearchPartial, getCacheStatus, isSearching } = esStatus;
     const searchParameters = extractSearchParameters(location);

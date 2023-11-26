@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, useCallback, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 
 import { useApi, useEventManager, useFolders, useLabels, useNotifications } from '@proton/components';
@@ -15,7 +16,7 @@ import MoveScheduledModal from '../../components/message/modals/MoveScheduledMod
 import MoveToSpamModal from '../../components/message/modals/MoveToSpamModal';
 import MoveAllNotificationButton from '../../components/notifications/MoveAllNotificationButton';
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
-import { PAGE_SIZE, SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
+import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
 import { isMessage as testIsMessage, isSearch as testIsSearch } from '../../helpers/elements';
 import { isCustomLabel, isLabel } from '../../helpers/labels';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
@@ -30,6 +31,7 @@ import {
 import { useDeepMemo } from '../../hooks/useDeepMemo';
 import useMailModel from '../../hooks/useMailModel';
 import { backendActionFinished, backendActionStarted } from '../../logic/elements/elementsActions';
+import { pageSize as pageSizeSelector } from '../../logic/elements/elementsSelectors';
 import { useAppDispatch } from '../../logic/store';
 import { Element } from '../../models/element';
 import { SearchParameters } from '../../models/tools';
@@ -65,6 +67,8 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
         { isMessage: boolean; elements: Element[] },
         { unsubscribe: boolean; remember: boolean }
     >(MoveToSpamModal);
+
+    const pageSize = useSelector(pageSizeSelector);
 
     const moveToFolder = useCallback(
         async (
@@ -207,7 +211,7 @@ export const useMoveToFolder = (setContainFocus?: Dispatch<SetStateAction<boolea
                 };
 
                 const suggestMoveAll =
-                    elements.length === PAGE_SIZE &&
+                    elements.length === pageSize &&
                     MOVE_ALL_FOLDERS.includes(folderID as MAILBOX_LABEL_IDS) &&
                     !isCustomLabel(fromLabelID, labels) &&
                     !isSearch;
