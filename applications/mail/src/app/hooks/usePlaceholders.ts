@@ -7,20 +7,29 @@ import { Element } from '../models/element';
 
 export const PLACEHOLDER_ID_PREFIX = 'placeholder';
 
+type ElementOrPlaceholder =
+    | Element
+    | {
+          ID: string;
+      };
+
 export const usePlaceholders = (
-    inputElements: Element[] | undefined,
+    inputElements: ElementOrPlaceholder[] | undefined,
     loading: boolean,
     expectedLength: number
 ): Element[] => {
-    const placeholders: Element[] = useMemo(
-        () => range(0, expectedLength).map(() => ({ ID: generateUID(PLACEHOLDER_ID_PREFIX) })),
-        [loading, expectedLength]
-    );
+    const elements: ElementOrPlaceholder[] = useMemo(() => {
+        if (loading) {
+            return [
+                ...(inputElements ?? []),
+                ...range(0, expectedLength - (inputElements?.length ?? 0)).map(() => ({
+                    ID: generateUID(PLACEHOLDER_ID_PREFIX),
+                })),
+            ];
+        }
 
-    const elements: Element[] = useMemo(
-        () => (loading ? placeholders : (inputElements as Element[])),
-        [loading, inputElements]
-    );
+        return inputElements ?? [];
+    }, [loading, inputElements]);
 
     return elements;
 };

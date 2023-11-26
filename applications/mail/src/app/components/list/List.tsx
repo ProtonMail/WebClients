@@ -1,8 +1,9 @@
 import { ChangeEvent, Fragment, ReactNode, Ref, RefObject, forwardRef, memo, useEffect, useMemo } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c, msgid } from 'ttag';
 
-import { PaginationRow, useConversationCounts, useItemsDraggable, useMessageCounts } from '@proton/components';
+import { useConversationCounts, useItemsDraggable, useMessageCounts } from '@proton/components';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE, UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -15,7 +16,8 @@ import { isMessage as testIsMessage } from '../../helpers/elements';
 import { isColumnMode } from '../../helpers/mailSettings';
 import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { usePaging } from '../../hooks/usePaging';
-import { usePlaceholders } from '../../hooks/usePlaceholders';
+import { PLACEHOLDER_ID_PREFIX, usePlaceholders } from '../../hooks/usePlaceholders';
+import { pageSize as pageSizeSelector } from '../../logic/elements/elementsSelectors';
 import { Element } from '../../models/element';
 import { Filter } from '../../models/tools';
 import { Breakpoints } from '../../models/utils';
@@ -23,7 +25,9 @@ import UsersOnboardingChecklist from '../checklist/UsersOnboardingChecklist';
 import EmptyListPlaceholder from '../view/EmptyListPlaceholder';
 import Item from './Item';
 import ListBanners from './ListBanners';
+import ListPagination from './ListPagination';
 import { ResizeHandle } from './ResizeHandle';
+import SkeletonItem from './SkeletonItem';
 import useEncryptedSearchList from './useEncryptedSearchList';
 import { useItemContextMenu } from './useItemContextMenu';
 
@@ -102,6 +106,7 @@ const List = (
 ) => {
     const mailSettings = useMailModel('MailSettings');
     const { shouldHighlight, esStatus } = useEncryptedSearchContext();
+
     // Override compactness of the list view to accomodate body preview when showing encrypted search results
     const { contentIndexingDone, esEnabled } = esStatus;
     const shouldOverrideCompactness = shouldHighlight() && contentIndexingDone && esEnabled;
@@ -109,11 +114,10 @@ const List = (
 
     const { displayState, changeChecklistDisplay } = useGetStartedChecklist();
 
-    // We want to display placeholders only when we are currently loading elements AND we don't have elements already
-    const displayPlaceholders = loading && inputElements?.length === 0;
+    const elements = usePlaceholders(inputElements, loading, placeholderCount);
 
-    const elements = usePlaceholders(inputElements, displayPlaceholders, placeholderCount);
-    const pagingHandlers = usePaging(inputPage, inputTotal, onPage);
+    const pageSize = useSelector(pageSizeSelector);
+    const pagingHandlers = usePaging(inputPage, pageSize, inputTotal, onPage);
     const { total, page } = pagingHandlers;
 
     const [messageCounts] = useMessageCounts();
@@ -128,8 +132,12 @@ const List = (
 
     // ES options: offer users the option to turn off ES if it's taking too long, and
     // enable/disable UI elements for incremental partial searches
-    const { isESLoading, showESSlowToolbar, loadingElement, disableGoToLast, useLoadingElement } =
-        useEncryptedSearchList(isSearch, loading, page, total);
+    const { isESLoading, showESSlowToolbar, loadingElement, useLoadingElement } = useEncryptedSearchList(
+        isSearch,
+        loading,
+        page,
+        total
+    );
 
     const { draggedIDs, handleDragStart, handleDragEnd } = useItemsDraggable(
         elements,
@@ -183,7 +191,7 @@ const List = (
                         !columnLayout && 'items-column-list-inner--border-none',
                         'flex flex-nowrap flex-column relative items-column-list-inner--mail overflow-hidden h-full'
                     )}
-                    data-testid={`message-list-${displayPlaceholders ? 'loading' : 'loaded'}`}
+                    data-testid={`message-list-${loading ? 'loading' : 'loaded'}`}
                 >
                     <div className="flex-item-noshrink">{toolbar}</div>
                     <div className="h-full scroll-if-needed flex flex-column flex-nowrap w-full">
@@ -212,30 +220,46 @@ const List = (
                                         'w-full flex-item-noshrink'
                                     )}
                                 >
-                                    {elements.map((element, index) => (
-                                        <Fragment key={element.ID}>
-                                            <Item
-                                                conversationMode={conversationMode}
-                                                isCompactView={isCompactView}
-                                                labelID={labelID}
-                                                loading={displayPlaceholders}
-                                                columnLayout={columnLayout}
-                                                elementID={elementID}
-                                                element={element}
-                                                checked={checkedIDs.includes(element.ID || '')}
-                                                onCheck={onCheckOne}
-                                                onClick={onClick}
-                                                onContextMenu={onContextMenu}
-                                                onDragStart={handleDragStart}
-                                                onDragEnd={handleDragEnd}
-                                                dragged={draggedIDs.includes(element.ID || '')}
-                                                index={index}
-                                                breakpoints={breakpoints}
-                                                onFocus={onFocus}
-                                                onBack={onBack}
-                                            />
-                                        </Fragment>
-                                    ))}
+                                    {elements.map((element, index) => {
+                                        return (
+                                            <Fragment key={element.ID}>
+                                                {element.ID.startsWith(PLACEHOLDER_ID_PREFIX) ? (
+                                                    <SkeletonItem
+                                                        conversationMode={conversationMode}
+                                                        isCompactView={isCompactView}
+                                                        labelID={labelID}
+                                                        loading={loading}
+                                                        columnLayout={columnLayout}
+                                                        elementID={elementID}
+                                                        element={element}
+                                                        index={index}
+                                                        breakpoints={breakpoints}
+                                                    />
+                                                ) : (
+                                                    <Item
+                                                        conversationMode={conversationMode}
+                                                        isCompactView={isCompactView}
+                                                        labelID={labelID}
+                                                        loading={loading}
+                                                        columnLayout={columnLayout}
+                                                        elementID={elementID}
+                                                        element={element}
+                                                        checked={checkedIDs.includes(element.ID || '')}
+                                                        onCheck={onCheckOne}
+                                                        onClick={onClick}
+                                                        onContextMenu={onContextMenu}
+                                                        onDragStart={handleDragStart}
+                                                        onDragEnd={handleDragEnd}
+                                                        dragged={draggedIDs.includes(element.ID || '')}
+                                                        index={index}
+                                                        breakpoints={breakpoints}
+                                                        onFocus={onFocus}
+                                                        onBack={onBack}
+                                                    />
+                                                )}
+                                            </Fragment>
+                                        );
+                                    })}
                                 </div>
 
                                 {!loading && !(total > 1) && (
@@ -248,13 +272,9 @@ const List = (
 
                                 {useLoadingElement && loadingElement}
 
-                                {!loading && total > 1 && (
+                                {total > 1 && (
                                     <div className="p-5 flex flex-column flex-align-items-center flex-item-noshrink">
-                                        <PaginationRow
-                                            {...pagingHandlers}
-                                            disabled={loading}
-                                            disableGoToLast={disableGoToLast}
-                                        />
+                                        <ListPagination {...pagingHandlers} loading={loading} />
                                     </div>
                                 )}
                             </>

@@ -175,7 +175,8 @@ export const isSearch = (searchParams: SearchParameters) =>
     !!searchParams.to ||
     !!searchParams.wildcard;
 
-export const isFilter = (filter: Filter) => Object.keys(filter).length > 0;
+export const isEmpty = (filter: Filter) => !Object.keys(filter).length;
+
 export const hasAttachmentsFilter = (filter?: Filter) => filter?.Attachments === 1;
 
 /**

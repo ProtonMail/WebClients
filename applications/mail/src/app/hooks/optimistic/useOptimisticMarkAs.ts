@@ -212,7 +212,7 @@ export const useOptimisticMarkAs = () => {
             // When changing the read / unread status of an element
             // We want them to stay on the current filter even if it doesn't match the filter anymore
             // So we manually update the elements cache to mark these ids to bypass the filter logic
-            // This will last as long as the cache is not reset (cf useElements shouldResetCache)
+            // This will last as long as the cache is not reset (cf useElements shouldResetElementsState)
             const conversationMode = isConversationMode(labelID, mailSettings, history.location);
             dispatch(
                 optimisticMarkAsElementAction({
