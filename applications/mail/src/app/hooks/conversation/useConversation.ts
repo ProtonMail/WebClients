@@ -78,7 +78,12 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
 
         dispatch(initialize(newConversationState));
 
-        return { Conversation: undefined, Messages: undefined, loadRetry: 0, errors: {} };
+        return {
+            Conversation: undefined,
+            Messages: undefined,
+            loadRetry: 0,
+            errors: {},
+        };
     };
 
     const [conversationID, setConversationID] = useState(inputConversationID);
@@ -99,7 +104,7 @@ export const useConversation: UseConversation = (inputConversationID, messageID)
         if (isMounted()) {
             setPendingRequest(true);
         }
-        (await dispatch(loadAction({ conversationID, messageID }))) as any as Promise<any>;
+        await dispatch(loadAction({ conversationID, messageID }));
 
         const updatedConversation = getConversation(conversationID);
 

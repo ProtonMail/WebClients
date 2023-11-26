@@ -1,10 +1,11 @@
 import { useCallback, useEffect, useRef } from 'react';
 import { useSelector, useStore } from 'react-redux';
 
-import { useCache, useConversationCounts, useMessageCounts } from '@proton/components';
+import { useCache, useConversationCounts, useFlag, useMessageCounts } from '@proton/components';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
+import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -12,7 +13,13 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 import { hasAttachmentsFilter, isSearch } from '../../helpers/elements';
 import { pageCount } from '../../helpers/paging';
 import { conversationByID } from '../../logic/conversations/conversationsSelectors';
-import { load as loadAction, removeExpired, reset, updatePage } from '../../logic/elements/elementsActions';
+import {
+    load as loadAction,
+    removeExpired,
+    reset,
+    setPageSize,
+    updatePage,
+} from '../../logic/elements/elementsActions';
 import {
     dynamicTotal as dynamicTotalSelector,
     elementIDs as elementIDsSelector,
@@ -26,8 +33,8 @@ import {
     partialESSearch as partialESSearchSelector,
     pendingActions as pendingActionsSelector,
     placeholderCount as placeholderCountSelector,
-    shouldResetCache as shouldResetCacheSelector,
-    shouldSendRequest as shouldSendRequestSelector,
+    shouldLoadElements as shouldLoadElementsSelector,
+    shouldResetElementsState as shouldResetElementsStateSelector,
     shouldUpdatePage as shouldUpdatePageSelector,
     stateInconsistency as stateInconsistencySelector,
     totalReturned as totalReturnedSelector,
@@ -43,6 +50,7 @@ interface Options {
     conversationMode: boolean;
     labelID: string;
     page: number;
+    pageSize: MAIL_PAGE_SIZE;
     sort: Sort;
     filter: Filter;
     search: SearchParameters;
@@ -62,9 +70,20 @@ interface UseElements {
     (options: Options): ReturnValue;
 }
 
-export const useElements: UseElements = ({ conversationMode, labelID, search, page, sort, filter, onPage }) => {
+export const useElements: UseElements = ({
+    conversationMode,
+    labelID,
+    search,
+    page,
+    pageSize,
+    sort,
+    filter,
+    onPage,
+}) => {
     const store = useStore<RootState>();
     const dispatch = useAppDispatch();
+
+    const isPageSizeSettingEnabled = useFlag('WebMailPageSizeSetting');
 
     const abortControllerRef = useRef<AbortController>();
 
@@ -82,7 +101,14 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
 
     const globalCache = useCache();
 
-    const params = { labelID, conversationMode, sort, filter, search, esEnabled };
+    const params = {
+        labelID,
+        conversationMode,
+        sort,
+        filter,
+        search,
+        esEnabled,
+    };
     const counts = { counts: countValues, loading: countsLoading };
 
     const stateParams = useSelector(paramsSelector);
@@ -93,8 +119,10 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
     const messagesToLoadMoreES = useSelector((state: RootState) =>
         messagesToLoadMoreESSelector(state, { page, search, esStatus })
     );
-    const shouldResetCache = useSelector((state: RootState) => shouldResetCacheSelector(state, { page, params }));
-    const shouldSendRequest = useSelector((state: RootState) => shouldSendRequestSelector(state, { page, params }));
+    const shouldResetElementsState = useSelector((state: RootState) =>
+        shouldResetElementsStateSelector(state, { page, params })
+    );
+    const shouldLoadElements = useSelector((state: RootState) => shouldLoadElementsSelector(state, { page, params }));
     const shouldUpdatePage = useSelector((state: RootState) => shouldUpdatePageSelector(state, { page }));
     const dynamicTotal = useSelector((state: RootState) => dynamicTotalSelector(state, { counts }));
     const placeholderCount = useSelector((state: RootState) => placeholderCountSelector(state, { counts }));
@@ -115,18 +143,50 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         globalCache.delete(MessageCountsModel.key);
     });
 
-    // Main effect watching all inputs and responsible to trigger actions on the cache
     useEffect(() => {
-        if (shouldResetCache) {
-            dispatch(reset({ page, params: { labelID, conversationMode, sort, filter, esEnabled, search } }));
+        if (shouldResetElementsState) {
+            dispatch(
+                reset({
+                    page,
+                    pageSize,
+                    params: {
+                        labelID,
+                        conversationMode,
+                        sort,
+                        filter,
+                        esEnabled,
+                        search,
+                    },
+                })
+            );
         }
-        if (shouldSendRequest && pendingActions === 0 && !isSearch(search)) {
-            void dispatch(loadAction({ abortController: abortControllerRef.current, conversationMode, page, params }));
+    }, [shouldResetElementsState]);
+
+    useEffect(() => {
+        dispatch(setPageSize(isPageSizeSettingEnabled ? pageSize : MAIL_PAGE_SIZE.FIFTY));
+    }, [pageSize]);
+
+    // Main effect watching all inputs and responsible to trigger actions on the state
+    useEffect(() => {
+        /**
+         * To more load new elements, the user should either have `shouldLoadElements` true, no pending action AND not be in search,
+         * OR change the page size for a bigger one (100 > 200)
+         */
+        if (shouldLoadElements && pendingActions === 0 && !isSearch(search)) {
+            void dispatch(
+                loadAction({
+                    abortController: abortControllerRef.current,
+                    page,
+                    pageSize,
+                    params,
+                })
+            );
         }
+
         if (shouldUpdatePage && messagesToLoadMoreES === 0) {
             dispatch(updatePage(page));
         }
-    }, [shouldResetCache, shouldSendRequest, shouldUpdatePage, messagesToLoadMoreES, pendingActions, search]);
+    }, [shouldLoadElements, shouldUpdatePage, messagesToLoadMoreES, pendingActions, search, pageSize]);
 
     // Move to the last page if the current one becomes empty
     useEffect(() => {
@@ -135,7 +195,7 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
         }
 
         if (!partialESSearch && (expectingEmpty || loadedEmpty)) {
-            const count = dynamicTotal ? pageCount(dynamicTotal) : 0;
+            const count = dynamicTotal ? pageCount(dynamicTotal, pageSize) : 0;
             if (count === 0) {
                 onPage(0);
             } else if (page !== count - 1) {
@@ -167,7 +227,14 @@ export const useElements: UseElements = ({ conversationMode, labelID, search, pa
             dispatch(
                 reset({
                     page,
-                    params: { labelID, sort, filter, esEnabled, search, conversationMode },
+                    params: {
+                        labelID,
+                        sort,
+                        filter,
+                        esEnabled,
+                        search,
+                        conversationMode,
+                    },
                     beforeFirstLoad: !esEnabled && (isSearch(search) || hasAttachmentsFilter(filter)),
                 })
             );

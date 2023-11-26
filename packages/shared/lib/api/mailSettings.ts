@@ -1,10 +1,22 @@
 import { AutoResponder as tsAutoResponder } from '../interfaces/AutoResponder';
 import { BLOCK_SENDER_CONFIRMATION } from '../mail/constants';
-import { AUTO_DELETE_SPAM_AND_TRASH_DAYS, DIRECTION, PM_SIGNATURE_REFERRAL, SPAM_ACTION } from '../mail/mailSettings';
+import {
+    AUTO_DELETE_SPAM_AND_TRASH_DAYS,
+    DIRECTION,
+    MAIL_PAGE_SIZE,
+    PM_SIGNATURE_REFERRAL,
+    SPAM_ACTION,
+} from '../mail/mailSettings';
 
 export const getMailSettings = () => ({
     url: 'mail/v4/settings',
     method: 'get',
+});
+
+export const updatePageSize = (PageSize: MAIL_PAGE_SIZE) => ({
+    url: 'mail/v4/settings/pagesize',
+    method: 'put',
+    data: { PageSize },
 });
 
 export const updateShowMoved = (ShowMoved: number) => ({

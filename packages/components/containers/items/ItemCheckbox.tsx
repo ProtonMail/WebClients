@@ -18,7 +18,7 @@ interface Props {
     bimiSelector?: string;
     displaySenderImage?: boolean;
     checked: boolean;
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    onChange?: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const ItemCheckbox = ({
@@ -32,7 +32,7 @@ const ItemCheckbox = ({
     checked,
     bimiSelector,
     displaySenderImage,
-    onChange,
+    onChange = () => {},
 }: Props) => {
     const [userSettings] = useUserSettings();
     const isCompactView = userSettings.Density === DENSITY.COMPACT;
