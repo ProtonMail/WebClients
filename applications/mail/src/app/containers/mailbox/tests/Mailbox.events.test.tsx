@@ -1,9 +1,9 @@
 import { act } from '@testing-library/react';
 
-import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
+import { DEFAULT_MAIL_PAGE_SIZE, EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { DEFAULT_PLACEHOLDERS_COUNT, PAGE_SIZE } from '../../../constants';
+import { DEFAULT_PLACEHOLDERS_COUNT } from '../../../constants';
 import { addApiResolver, addToCache, api, clearAll, render } from '../../../helpers/test/helper';
 import { Conversation } from '../../../models/conversation';
 import { MessageEvent } from '../../../models/event';
@@ -23,10 +23,21 @@ describe('Mailbox elements list reacting to events', () => {
         const total = 3;
         const { getItems } = await setup({ conversations: getElements(total) });
 
-        const element = { ID: 'id3', Labels: [{ ID: labelID }], LabelIDs: [labelID] };
+        const element = {
+            ID: 'id3',
+            Labels: [{ ID: labelID }],
+            LabelIDs: [labelID],
+        };
+
         await sendEvent({
             ConversationCounts: [{ LabelID: labelID, Total: total + 1, Unread: 0 }],
-            Conversations: [{ ID: element.ID, Action: EVENT_ACTIONS.CREATE, Conversation: element as Conversation }],
+            Conversations: [
+                {
+                    ID: element.ID,
+                    Action: EVENT_ACTIONS.CREATE,
+                    Conversation: element as Conversation,
+                },
+            ],
         });
 
         expectElements(getItems, total + 1, false);
@@ -38,11 +49,24 @@ describe('Mailbox elements list reacting to events', () => {
 
         const total = 3;
         const search = { keyword: 'test' };
-        const { getItems } = await setup({ messages: getElements(total), search });
+        const { getItems } = await setup({
+            messages: getElements(total),
+            search,
+        });
 
-        const message = { ID: 'id3', Labels: [{ ID: labelID }], LabelIDs: [labelID] } as any as Message;
+        const message = {
+            ID: 'id3',
+            Labels: [{ ID: labelID }],
+            LabelIDs: [labelID],
+        } as any as Message;
         await sendEvent({
-            Messages: [{ ID: message.ID, Action: EVENT_ACTIONS.CREATE, Message: message }],
+            Messages: [
+                {
+                    ID: message.ID,
+                    Action: EVENT_ACTIONS.CREATE,
+                    Message: message,
+                },
+            ],
         });
 
         expectElements(getItems, total, false);
@@ -58,7 +82,13 @@ describe('Mailbox elements list reacting to events', () => {
 
         const ID = 'id0';
         await sendEvent({
-            Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }],
+            Conversations: [
+                {
+                    ID,
+                    Action: EVENT_ACTIONS.UPDATE,
+                    Conversation: { ID } as Conversation,
+                },
+            ],
         });
 
         expectElements(getItems, total, false);
@@ -71,7 +101,13 @@ describe('Mailbox elements list reacting to events', () => {
 
         const ID = 'id0';
         await sendEvent({
-            Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }],
+            Conversations: [
+                {
+                    ID,
+                    Action: EVENT_ACTIONS.UPDATE,
+                    Conversation: { ID } as Conversation,
+                },
+            ],
         });
 
         expectElements(getItems, total, false);
@@ -80,30 +116,50 @@ describe('Mailbox elements list reacting to events', () => {
 
     it('should reload the list on an update event if has not list from start', async () => {
         const page = 2;
-        const total = PAGE_SIZE * 6 + 2;
+        const total = DEFAULT_MAIL_PAGE_SIZE * 6 + 2;
         const { getItems } = await setup({
-            conversations: getElements(PAGE_SIZE),
+            conversations: getElements(DEFAULT_MAIL_PAGE_SIZE),
             page,
             totalConversations: total,
         });
 
         const ID = 'id0';
+
         await sendEvent({
-            Conversations: [{ ID, Action: EVENT_ACTIONS.UPDATE, Conversation: { ID } as Conversation }],
+            Conversations: [
+                {
+                    ID,
+                    Action: EVENT_ACTIONS.UPDATE,
+                    Conversation: { ID } as Conversation,
+                },
+            ],
         });
 
-        expectElements(getItems, PAGE_SIZE, false);
-        expect(api.mock.calls.length).toBe(5);
+        expectElements(getItems, DEFAULT_MAIL_PAGE_SIZE, false);
+
+        /**
+         * `/get conversations` should be called twice at render and twice on reload
+         */
+        expect(api).toHaveBeenCalledTimes(9);
     });
 
     it('should reload the list on an delete event if a search is active', async () => {
         const total = 3;
         const search = { keyword: 'test' };
-        const { getItems } = await setup({ messages: getElements(total), search });
+        const { getItems } = await setup({
+            messages: getElements(total),
+            search,
+        });
 
         const ID = 'id10';
         await sendEvent({
-            Messages: [{ ID, Action: EVENT_ACTIONS.DELETE, Message: { ID } as Message }],
+            Messages: [
+                {
+                    ID,
+                    Action: EVENT_ACTIONS.DELETE,
+                    Message: { ID } as Message,
+                },
+            ],
         });
 
         expectElements(getItems, total, false);
@@ -126,7 +182,7 @@ describe('Mailbox elements list reacting to events', () => {
     });
 
     it('should not show the loader if not live cache but params has not changed', async () => {
-        const total = PAGE_SIZE;
+        const total = DEFAULT_MAIL_PAGE_SIZE;
         const search = { keyword: 'test' };
         const messages = getElements(total);
 
@@ -152,7 +208,12 @@ describe('Mailbox elements list reacting to events', () => {
 
         const message = messages[0] as Message;
         await sendEvent({
-            Messages: [{ ID: message.ID || '', Action: EVENT_ACTIONS.DELETE } as MessageEvent],
+            Messages: [
+                {
+                    ID: message.ID || '',
+                    Action: EVENT_ACTIONS.DELETE,
+                } as MessageEvent,
+            ],
         });
 
         // Event triggered a reload, load is pending but it's hidded to the user
@@ -167,7 +228,7 @@ describe('Mailbox elements list reacting to events', () => {
     });
 
     it('should show the loader if not live cache and params has changed', async () => {
-        const total = PAGE_SIZE;
+        const total = DEFAULT_MAIL_PAGE_SIZE;
         const search = { keyword: 'test' };
         const messages = getElements(total);
 

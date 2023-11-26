@@ -39,12 +39,12 @@ interface Props {
     element: Element;
     conversationMode: boolean;
     showIcon: boolean;
-    senders: ReactNode;
+    senders?: ReactNode;
     breakpoints: Breakpoints;
     unread: boolean;
-    onBack: () => void;
+    onBack?: () => void;
     isSelected: boolean;
-    attachmentsMetadata: AttachmentsMetadata[];
+    attachmentsMetadata?: AttachmentsMetadata[];
 }
 
 const ItemColumnLayout = ({
@@ -56,10 +56,10 @@ const ItemColumnLayout = ({
     showIcon,
     breakpoints,
     unread,
-    onBack,
+    onBack = () => {},
     isSelected,
     senders,
-    attachmentsMetadata,
+    attachmentsMetadata = [],
 }: Props) => {
     const [userSettings] = useUserSettings();
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
@@ -128,12 +128,14 @@ const ItemColumnLayout = ({
                                 isSelected={isSelected}
                             />
                             <ItemAction element={element} className="mr-1 my-auto flex-item-noshrink" />
-                            <span
-                                className="inline-flex max-w-full text-ellipsis"
-                                data-testid="message-column:sender-address"
-                            >
-                                {senders}
-                            </span>
+                            {senders && (
+                                <span
+                                    className="inline-flex max-w-full text-ellipsis"
+                                    data-testid="message-column:sender-address"
+                                >
+                                    {senders}
+                                </span>
+                            )}
                         </div>
 
                         <span
