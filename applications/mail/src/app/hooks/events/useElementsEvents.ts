@@ -7,7 +7,7 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 import { eventUpdates, invalidate } from '../../logic/elements/elementsActions';
 import {
     isES as isESSelector,
-    isLive as isLiveSelector,
+    shouldInvalidateElementsState as shouldInvalidateElementsStateSelector,
     taskRunning as taskRunningSelector,
 } from '../../logic/elements/elementsSelectors';
 import { EventUpdates } from '../../logic/elements/elementsTypes';
@@ -21,7 +21,7 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
 
     const store = useStore<RootState>();
     const dispatch = useAppDispatch();
-    const isLive = useSelector(isLiveSelector);
+    const shouldInvalidateElementsState = useSelector(shouldInvalidateElementsStateSelector);
     const isES = useSelector((state: RootState) => isESSelector(state, { search, esStatus }));
     const taskRunning = useSelector(taskRunningSelector);
 
@@ -38,10 +38,8 @@ export const useElementsEvents = (conversationMode: boolean, search: SearchParam
             return;
         }
 
-        if (!isLive) {
-            if (Elements.length) {
-                dispatch(invalidate());
-            }
+        if (shouldInvalidateElementsState) {
+            dispatch(invalidate());
             return;
         }
 

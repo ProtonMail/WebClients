@@ -5,17 +5,12 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { LabelCount } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
-import {
-    DEFAULT_PLACEHOLDERS_COUNT,
-    ELEMENTS_CACHE_REQUEST_SIZE,
-    MAX_ELEMENT_LIST_LOAD_RETRIES,
-    PAGE_SIZE,
-} from '../../constants';
+import { DEFAULT_PLACEHOLDERS_COUNT, MAX_ELEMENT_LIST_LOAD_RETRIES } from '../../constants';
 import {
     hasAttachments,
     hasAttachmentsFilter,
     hasLabel,
-    isFilter,
+    isEmpty,
     isSearch,
     isUnread,
     sort as sortElements,
@@ -31,6 +26,7 @@ const beforeFirstLoad = (state: RootState) => state.elements.beforeFirstLoad;
 export const elementsMap = (state: RootState) => state.elements.elements;
 export const params = (state: RootState) => state.elements.params;
 const page = (state: RootState) => state.elements.page;
+export const pageSize = (state: RootState) => state.elements.pageSize;
 const pages = (state: RootState) => state.elements.pages;
 const bypassFilter = (state: RootState) => state.elements.bypassFilter;
 const pendingRequest = (state: RootState) => state.elements.pendingRequest;
@@ -45,13 +41,17 @@ const currentSearch = (_: RootState, { search }: { search: SearchParameters }) =
 const currentParams = (_: RootState, { params }: { params: ElementsStateParams }) => params;
 const currentESDBStatus = (
     _: RootState,
-    { esStatus }: { esStatus: ESStatus<ESBaseMessage, ESMessageContent, NormalizedSearchParams> }
+    {
+        esStatus,
+    }: {
+        esStatus: ESStatus<ESBaseMessage, ESMessageContent, NormalizedSearchParams>;
+    }
 ) => esStatus;
 const currentCounts = (_: RootState, { counts }: { counts: { counts: LabelCount[]; loading: boolean } }) => counts;
 
 export const elements = createSelector(
-    [elementsMap, params, page, pages, bypassFilter],
-    (elements, params, page, pages, bypassFilter) => {
+    [elementsMap, params, page, pageSize, pages, bypassFilter],
+    (elements, params, page, pageSize, pages, bypassFilter) => {
         // Getting all params from the cache and not from scoped params
         // To prevent any desynchronization between cache and the output of the memo
         const { labelID, sort, filter } = params;
@@ -65,14 +65,22 @@ export const elements = createSelector(
             };
         }
 
-        const minPage = pages.reduce((acc, page) => (page < acc ? page : acc), pages[0]);
-        const startIndex = (page - minPage) * PAGE_SIZE;
-        const endIndex = startIndex + PAGE_SIZE;
+        const minPage = pages.length > 0 ? Math.min(...pages) : 0;
+        const startIndex = (page - minPage) * pageSize;
+        const endIndex = startIndex + pageSize;
+
         const elementsArray = Object.values(elements);
+
+        /**
+         * Here we do a client-side filtering because of fake-unread:
+         * when a user click on a message, it is set as read but we don't it to disappear until page refresh
+         *
+         * Since the cache is only a little subset of user's messages, it is not very costly.
+         */
         const filtered = elementsArray
             .filter((element) => hasLabel(element, labelID))
             .filter((element) => {
-                if (!isFilter(filter)) {
+                if (isEmpty(filter)) {
                     return true;
                 }
                 if (filter.Attachments) {
@@ -86,6 +94,7 @@ export const elements = createSelector(
             });
         const sorted = sortElements(filtered, finalSort, labelID);
 
+        // We only keep a slice of the cached elements: the ones we want to display in the current List view
         return sorted.slice(startIndex, endIndex);
     }
 );
@@ -117,13 +126,20 @@ export const expiringElements = createSelector([params, elements], (params, elem
  * It only checks when there is not a full page to show if the label has more than a cache size of elements
  * It doesn't rely at all on the optimistic counter logic
  */
-export const needsMoreElements = createSelector([total, page, elementsLength], (total, page, elementsLength) => {
-    if (total === undefined) {
-        return false;
+export const needsMoreElements = createSelector(
+    [total, page, pageSize, elementsLength],
+    (total, page, pageSize, elementsLength) => {
+        if (!total) {
+            return false;
+        }
+
+        const numberOfPages = Math.ceil(total / pageSize);
+
+        // currentPage starts from 1
+        const expectedElementsInPage = page + 1 === numberOfPages ? total % pageSize : pageSize;
+        return elementsLength < expectedElementsInPage;
     }
-    const howManyElementsAhead = total - page * PAGE_SIZE;
-    return elementsLength < PAGE_SIZE && howManyElementsAhead > ELEMENTS_CACHE_REQUEST_SIZE;
-});
+);
 
 export const paramsChanged = createSelector([params, currentParams], (params, currentParams) => {
     const paramsChanged =
@@ -136,28 +152,46 @@ export const paramsChanged = createSelector([params, currentParams], (params, cu
     return paramsChanged;
 });
 
+/**
+ * @returns a boolean specifying whether or not the current page is in the cache or not.
+ */
 export const pageCached = createSelector([pages, currentPage], (pages, currentPage) => pages.includes(currentPage));
 
+/**
+ * @returns a boolean specifying whether or not the current page is the one set in the store or not.
+ */
 export const pageChanged = createSelector([page, currentPage], (page, currentPage) => page !== currentPage);
 
+/**
+ * @returns a boolean specifying whether or not the cache contains a page that is +/-1 the current page.
+ * It is useful to check if there is page jump and refetch accordingly
+ */
 export const pageIsConsecutive = createSelector(
     [pages, currentPage],
     (pages, currentPage) =>
         pages.length === 0 || pages.some((p) => p === currentPage || p === currentPage - 1 || p === currentPage + 1)
 );
 
-export const shouldResetCache = createSelector(
+/**
+ * @returns a boolean specifying whether or not the elements state should be reset, including `elements` cache.
+ * It should be `true` whenever one of the search params changes or when a page jump occurs (e.g: users from page 2 to page 7)
+ */
+export const shouldResetElementsState = createSelector(
     [paramsChanged, pageIsConsecutive],
     (paramsChanged, pageIsConsecutive) => {
         return paramsChanged || !pageIsConsecutive;
     }
 );
 
-export const shouldSendRequest = createSelector(
-    [shouldResetCache, pendingRequest, retry, needsMoreElements, invalidated, pageCached],
-    (shouldResetCache, pendingRequest, retry, needsMoreElements, invalidated, pageCached) => {
+/**
+ * @returns a boolean specifying whether or elements should be loading (either fetched or loaded with ES).
+ * It should be true either when `shouldResetElementsState` or
+ */
+export const shouldLoadElements = createSelector(
+    [shouldResetElementsState, pendingRequest, retry, needsMoreElements, invalidated, pageCached],
+    (shouldResetElementsState, pendingRequest, retry, needsMoreElements, invalidated, pageCached) => {
         return (
-            shouldResetCache ||
+            shouldResetElementsState ||
             (!pendingRequest &&
                 retry.count < MAX_ELEMENT_LIST_LOAD_RETRIES &&
                 (needsMoreElements || invalidated || !pageCached))
@@ -165,9 +199,12 @@ export const shouldSendRequest = createSelector(
     }
 );
 
-export const isLive = createSelector(
+/**
+ * @returns true when user is in a unpredicable context because we don't have enough conversations/message metadata infos
+ */
+export const shouldInvalidateElementsState = createSelector(
     [params, pages],
-    (params, pages) => !isSearch(params.search) && !hasAttachmentsFilter(params.filter) && pages.includes(0)
+    (params, pages) => isSearch(params.search) || hasAttachmentsFilter(params.filter) || !pages.includes(0)
 );
 
 export const shouldUpdatePage = createSelector(
@@ -234,32 +271,32 @@ export const dynamicTotal = createSelector(
  * Has to be used only for non sensitive behaviors
  */
 export const dynamicPageLength = createSelector(
-    [page, dynamicTotal, params, bypassFilter],
-    (page, dynamicTotal, params, bypassFilter) => {
+    [page, pageSize, dynamicTotal, params, bypassFilter],
+    (page, pageSize, dynamicTotal, params, bypassFilter) => {
         if (dynamicTotal === undefined) {
             return undefined;
         }
-        return expectedPageLength(page, dynamicTotal, isFilter(params.filter) ? bypassFilter.length : 0);
+        return expectedPageLength(page, pageSize, dynamicTotal, isEmpty(params.filter) ? bypassFilter.length : 0);
     }
 );
 
 export const placeholderCount = createSelector(
-    [page, total, params, dynamicPageLength],
-    (page, total, params, dynamicPageLength) => {
+    [page, pageSize, total, params, dynamicPageLength],
+    (page, pageSize, total, params, dynamicPageLength) => {
         if (dynamicPageLength !== undefined) {
             return dynamicPageLength;
         }
         if (total !== undefined) {
-            return expectedPageLength(page, total, isFilter(params.filter) ? bypassFilter.length : 0);
+            return expectedPageLength(page, pageSize, total, isEmpty(params.filter) ? bypassFilter.length : 0);
         }
         return DEFAULT_PLACEHOLDERS_COUNT;
     }
 );
 
 export const loading = createSelector(
-    [beforeFirstLoad, pendingRequest, shouldSendRequest, invalidated],
-    (beforeFirstLoad, pendingRequest, shouldSendRequest, invalidated) =>
-        (beforeFirstLoad || pendingRequest || shouldSendRequest) && !invalidated
+    [beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated],
+    (beforeFirstLoad, pendingRequest, shouldLoadElements, invalidated) =>
+        (beforeFirstLoad || pendingRequest || shouldLoadElements) && !invalidated
 );
 
 export const totalReturned = createSelector([dynamicTotal, total], (dynamicTotal, total) => dynamicTotal || total);
