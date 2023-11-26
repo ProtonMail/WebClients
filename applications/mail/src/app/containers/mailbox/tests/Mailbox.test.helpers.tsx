@@ -134,11 +134,11 @@ export const setup = async ({
     minimalCache();
     baseApiMocks();
     const props = getProps(propsArgs);
-
     addToCache('Labels', [{ ID: props.labelID }]);
     if (mockMessages) {
         addApiMock('mail/v4/messages', () => ({ Total: totalMessages, Messages: messages }));
     }
+
     if (mockConversations) {
         addApiMock('mail/v4/conversations', () => ({ Total: totalConversations, Conversations: conversations }));
     }
@@ -150,11 +150,9 @@ export const setup = async ({
     ]);
     addToCache('MailSettings', props.mailSettings);
     addToCache('Calendars', []);
-
     const result = await render(<Component {...props} />, false);
     const rerender = (propsArgs: PropsArgs) => result.rerender(<Component {...getProps(propsArgs)} />);
     const getItems = () => result.getAllByTestId('message-item', { exact: false });
-
     return { ...result, rerender, getItems };
 };
 
