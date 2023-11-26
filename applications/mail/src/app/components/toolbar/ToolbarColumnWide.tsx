@@ -1,4 +1,5 @@
 import { useMemo, useRef } from 'react';
+import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
@@ -7,6 +8,7 @@ import clsx from '@proton/utils/clsx';
 
 import { getLabelName } from '../../helpers/labels';
 import { getToolbarResponsiveSizes } from '../../helpers/toolbar/getToolbarResponsiveSizes';
+import { pageSize as pageSizeSelector } from '../../logic/elements/elementsSelectors';
 import ListSettings from '../list/ListSettings';
 import SnoozeToolbarDropdown from '../list/snooze/containers/SnoozeToolbarDropdown';
 import LabelName from './LabelName';
@@ -61,6 +63,8 @@ const ToolbarColumnWide = ({
     const [labels] = useLabels();
     const [folders] = useFolders();
     const labelName = useMemo(() => getLabelName(labelID, labels, folders), [labelID, labels, folders]);
+
+    const pageSize = useSelector(pageSizeSelector);
 
     return (
         <div>
@@ -118,7 +122,13 @@ const ToolbarColumnWide = ({
 
                 {(!localIsTiny && selectedIDs.length > 0) || selectedIDs.length === 0 ? (
                     <div className="flex flex-align-items-center flex-item-noshrink toolbar-inner gap-2">
-                        <PagingControls loading={loading} page={page} total={total} onPage={onPage} />
+                        <PagingControls
+                            loading={loading}
+                            page={page}
+                            pageSize={pageSize}
+                            total={total}
+                            onPage={onPage}
+                        />
                     </div>
                 ) : undefined}
             </nav>

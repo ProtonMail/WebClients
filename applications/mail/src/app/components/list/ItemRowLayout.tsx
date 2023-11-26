@@ -37,10 +37,10 @@ interface Props {
     element: Element;
     conversationMode: boolean;
     showIcon: boolean;
-    senders: ReactNode;
+    senders?: ReactNode;
     unread: boolean;
-    onBack: () => void;
-    attachmentsMetadata: AttachmentsMetadata[];
+    onBack?: () => void;
+    attachmentsMetadata?: AttachmentsMetadata[];
 }
 
 const ItemRowLayout = ({
@@ -53,8 +53,8 @@ const ItemRowLayout = ({
     showIcon,
     senders,
     unread,
-    onBack,
-    attachmentsMetadata,
+    onBack = () => {},
+    attachmentsMetadata = [],
 }: Props) => {
     const { shouldHighlight, highlightMetadata, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
@@ -103,12 +103,14 @@ const ItemRowLayout = ({
                 <div className={clsx(['item-senders flex flex-nowrap m-auto pr-4', unread && 'text-bold'])}>
                     <ItemUnread element={element} labelID={labelID} className="mr-0.5 item-unread-dot" />
                     <ItemAction element={element} className="mr-2 flex-item-noshrink my-auto" />
-                    <span
-                        className="max-w-full text-ellipsis flex flex-align-items-center"
-                        data-testid="message-row:sender-address"
-                    >
-                        {senders}
-                    </span>
+                    {senders && (
+                        <span
+                            className="max-w-full text-ellipsis flex flex-align-items-center"
+                            data-testid="message-row:sender-address"
+                        >
+                            {senders}
+                        </span>
+                    )}
                 </div>
 
                 <div className="item-subject flex-item-fluid flex flex-align-items-center flex-nowrap m-auto">

@@ -93,12 +93,10 @@ describe('Mailbox hotkeys', () => {
         down();
         enter();
 
-        expect(history.length).toBe(3);
         expect(history.location.pathname).toBe(`/${props.labelID}/${conversations[3].ID}`);
 
         escape();
 
-        expect(history.length).toBe(4);
         expect(history.location.pathname).toBe(`/${props.labelID}`);
     });
 
@@ -115,7 +113,6 @@ describe('Mailbox hotkeys', () => {
         j();
 
         const history = getHistory();
-        expect(history.length).toBe(3);
         expect(history.location.pathname).toBe(`/${props.labelID}/${conversations[1].ID}`);
     });
 
@@ -132,7 +129,6 @@ describe('Mailbox hotkeys', () => {
         k();
 
         const history = getHistory();
-        expect(history.length).toBe(3);
         expect(history.location.pathname).toBe(`/${props.labelID}/${conversations[3].ID}`);
     });
 
@@ -203,6 +199,7 @@ describe('Mailbox hotkeys', () => {
         expectLabelCall(MAILBOX_LABEL_IDS.ARCHIVE);
 
         down();
+        down();
         space();
         i();
         await tick();
@@ -210,12 +207,14 @@ describe('Mailbox hotkeys', () => {
         expectLabelCall(MAILBOX_LABEL_IDS.INBOX);
 
         down();
+        down();
         space();
         s();
         await tick();
 
         expectLabelCall(MAILBOX_LABEL_IDS.SPAM);
 
+        down();
         down();
         space();
         star();

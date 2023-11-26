@@ -1,7 +1,7 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 
 import { moveAll as moveAllRequest, queryMessageMetadata } from '@proton/shared/lib/api/messages';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { DEFAULT_MAIL_PAGE_SIZE, MAILBOX_LABEL_IDS, SECOND } from '@proton/shared/lib/constants';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import diff from '@proton/utils/diff';
 import unique from '@proton/utils/unique';
@@ -18,12 +18,7 @@ import {
     QueryResults,
     TaskRunningInfo,
 } from './elementsTypes';
-import {
-    getQueryElementsParameters,
-    queryElement,
-    queryElements,
-    refreshTaskRunningTimeout,
-} from './helpers/elementQuery';
+import { queryElement, queryElementsInBatch, refreshTaskRunningTimeout } from './helpers/elementQuery';
 
 const REFRESHES = [5, 10, 20];
 
@@ -31,7 +26,18 @@ export const reset = createAction<NewStateParams>('elements/reset');
 
 export const updatePage = createAction<number>('elements/updatePage');
 
-export const retry = createAction<{ queryParameters: any; error: Error | undefined }>('elements/retry');
+export const setPageSize = createAction<number>('elements/setPageSize');
+
+export const retry = createAction<{
+    queryParameters: unknown;
+    error: Error | undefined;
+}>('elements/retry');
+
+export const showSerializedElements = createAction<{
+    queryIndex: number;
+    result: QueryResults;
+    page: number;
+}>('elements/showSerializedElements');
 
 export const load = createAsyncThunk<
     { result: QueryResults; taskRunning: TaskRunningInfo },
@@ -40,31 +46,79 @@ export const load = createAsyncThunk<
 >(
     'elements/load',
     async (
-        { page, params, abortController, conversationMode, count = 1 }: QueryParams,
+        { page, pageSize = DEFAULT_MAIL_PAGE_SIZE, params, abortController, count = 1 }: QueryParams,
         { dispatch, getState, extra }
     ) => {
-        const queryParameters = getQueryElementsParameters({ page, params });
-        let result;
-        try {
-            result = await queryElements(extra.api, abortController, conversationMode, queryParameters);
-        } catch (error: any | undefined) {
+        const onSerializedResponse = ({
+            index,
+            result,
+            page,
+        }: {
+            index: number;
+            result: QueryResults;
+            page: number;
+        }) => {
+            dispatch(
+                showSerializedElements({
+                    queryIndex: index,
+                    result,
+                    page,
+                })
+            );
+        };
+
+        const result = await queryElementsInBatch(
+            {
+                api: extra.api,
+                page,
+                pageSize,
+                params,
+                abortController,
+            },
+            onSerializedResponse
+        ).catch((error: any | undefined) => {
             // Wait a couple of seconds before retrying
             setTimeout(() => {
-                dispatch(retry({ queryParameters, error }));
-            }, 2000);
+                dispatch(
+                    retry({
+                        queryParameters: {
+                            page,
+                            pageSize,
+                            params,
+                        },
+                        error,
+                    })
+                );
+            }, 2 * SECOND);
+
             throw error;
-        }
+        });
+
         if (result.Stale === 1 && REFRESHES?.[count]) {
-            const ms = 1000 * REFRESHES[count];
+            const ms = 1 * SECOND * REFRESHES[count];
+
             // Wait few seconds before retrying
             setTimeout(() => {
                 if (isDeepEqual((getState() as RootState).elements.params, params)) {
-                    void dispatch(load({ page, params, abortController, conversationMode, count: count + 1 }));
+                    void dispatch(
+                        load({
+                            page,
+                            pageSize,
+                            params,
+                            abortController,
+                            count: count + 1,
+                            refetch: true, // Do not update current page if we refetch
+                        })
+                    );
                 }
             }, ms);
         }
+
         const taskLabels = Object.keys(result.TasksRunning || {});
-        const taskRunning = { ...(getState() as RootState).elements.taskRunning };
+        const taskRunning = {
+            ...(getState() as RootState).elements.taskRunning,
+        };
+
         if (taskLabels.length) {
             taskRunning.labelIDs = unique([...taskRunning.labelIDs, ...taskLabels]);
             taskRunning.timeoutID = refreshTaskRunningTimeout(taskRunning.labelIDs, {
@@ -72,6 +126,7 @@ export const load = createAsyncThunk<
                 dispatch,
             });
         }
+
         return { result, taskRunning };
     }
 );
@@ -150,12 +205,21 @@ export const moveAll = createAsyncThunk<
     // If we move all to trash, we don't want to keep labels attached to the elements
     const isMoveToTrash = SourceLabelID === MAILBOX_LABEL_IDS.TRASH;
 
-    await extra.api(moveAllRequest({ SourceLabelID, DestinationLabelID, KeepSourceLabel: isMoveToTrash ? 0 : 1 }));
+    await extra.api(
+        moveAllRequest({
+            SourceLabelID,
+            DestinationLabelID,
+            KeepSourceLabel: isMoveToTrash ? 0 : 1,
+        })
+    );
 
     const timeoutID = refreshTaskRunningTimeout([SourceLabelID], {
         getState,
         dispatch,
     });
 
-    return { LabelID: SourceLabelID, timeoutID: timeoutID as NodeJS.Timeout };
+    return {
+        LabelID: SourceLabelID,
+        timeoutID: timeoutID as NodeJS.Timeout,
+    };
 });
