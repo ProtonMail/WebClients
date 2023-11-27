@@ -3,17 +3,12 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms';
-import { Icon, useConfig } from '@proton/components';
+import { EllipsisLoader, Icon, Loader, useConfig } from '@proton/components';
 import useInterval from '@proton/hooks/useInterval';
 import metrics from '@proton/metrics';
-import { APPS, APP_NAMES } from '@proton/shared/lib/constants';
-import accountSetupImg from '@proton/styles/assets/img/illustrations/account-setup.svg';
 import clsx from '@proton/utils/clsx';
-import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import Content from '../public/Content';
-import Main from '../public/Main';
 import { getSignupApplication } from './helper';
 
 export const LoadingTextStepper = ({ steps }: { steps: string[] }) => {
@@ -62,20 +57,10 @@ export const LoadingTextStepper = ({ steps }: { steps: string[] }) => {
 
 interface Props {
     onSetup: () => Promise<void>;
-    hasPayment?: boolean;
-    toApp?: APP_NAMES;
 }
 
-const LoadingStep = ({ onSetup, hasPayment, toApp }: Props) => {
+const LoadingStep = ({ onSetup }: Props) => {
     const { APP_NAME } = useConfig();
-
-    const driveIntent = toApp === APPS.PROTONDRIVE;
-    const steps: string[] = [
-        c('Info').t`Creating your account`,
-        c('Info').t`Securing your account`,
-        hasPayment && c('Info').t`Verifying your payment`,
-        driveIntent && c('Info').t`Setting up your Drive`,
-    ].filter(isTruthy);
 
     useEffect(() => {
         onSetup().catch(noop);
@@ -89,18 +74,13 @@ const LoadingStep = ({ onSetup, hasPayment, toApp }: Props) => {
     }, []);
 
     return (
-        <Main>
-            <Content>
-                <div className="text-center pt-6 sm:pt-0" role="alert">
-                    <img className="m-4" width="140" height="140" src={accountSetupImg} alt="" />
-
-                    <hr className="my-8" />
-                    <div className="inline-block">
-                        <LoadingTextStepper steps={steps} />
-                    </div>
-                </div>
-            </Content>
-        </Main>
+        <div className="text-center inline-block" role="alert" style={{ color: 'var(--promotion-text-weak)' }}>
+            <Loader size="medium" className="mb-2" />
+            <div>
+                {c('Info').t`Creating your account`}
+                <EllipsisLoader />
+            </div>
+        </div>
     );
 };
 

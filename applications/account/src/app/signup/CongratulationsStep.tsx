@@ -36,7 +36,7 @@ const CongratulationsStep = ({ defaultName = '', planName: maybePlanName, onSubm
 
     return (
         <Main>
-            <Header title={c('Title').t`Congratulations on choosing privacy!`} />
+            <Header title={c('Title').t`Set a display name`} />
             <Content>
                 {planName ? (
                     <Text margin="small">{c('new_plans: signup')
