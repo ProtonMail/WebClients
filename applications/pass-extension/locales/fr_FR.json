@@ -285,10 +285,10 @@
         "Recharger l'extension"
       ],
       "Remove": [
-        "Supprimer"
+        "Retirer"
       ],
       "Remove access": [
-        "Supprimer l'accès"
+        "Retirer l’accès"
       ],
       "Request a feature": [
         "Demander une fonctionnalité"
@@ -504,7 +504,7 @@
         "Le déplacement de tous les éléments depuis « ${ payload.content.name } » n'a pas abouti."
       ],
       "Failed to remove user's access.": [
-        "L'accès de l'utilisateur n'a pas pu être supprimé."
+        "L'accès de l'utilisateur n'a pas pu être retiré."
       ],
       "Failed to transfer this vault's ownership.": [
         "Le transfert de la propriété de ce coffre-fort n'a pas abouti."
@@ -762,7 +762,7 @@
         "Tous les éléments mis à la corbeille ont été restaurés."
       ],
       "An item previously shared with you was removed": [
-        "Un élément partagé avec vous a été supprimé."
+        "Un élément partagé avec vous a été retiré."
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "Voulez-vous vraiment déplacer tous les éléments depuis « ${ fromVaultName } » vers « ${ toVaultName } » ?"
@@ -880,7 +880,7 @@
         "L'invitation a été envoyée."
       ],
       "Invite successfully removed": [
-        "L'invitation a été supprimée."
+        "L'invitation a été retirée."
       ],
       "Invite successfully resent": [
         "L'invitation a été renvoyée."
@@ -1098,7 +1098,7 @@
         "Utilisez les coffres-forts pour partager cet élément avec d'autres personnes."
       ],
       "User's access removed": [
-        "L'accès de l'utilisateur a été supprimé."
+        "L'accès de l'utilisateur a été retiré."
       ],
       "User's access sucessfuly updated": [
         "L'accès de l'utilisateur a été mis à jour."
@@ -1113,7 +1113,7 @@
         "Le coffre-fort « ${ payload.share.content.name } » a été mis à jour."
       ],
       "Vault \"${ share.content.name }\" was removed": [
-        "Le coffre-fort « ${ share.content.name } » a été supprimé."
+        "Le coffre-fort « ${ share.content.name } » a été retiré."
       ],
       "Verification code": [
         "Code de vérification"
@@ -1760,7 +1760,7 @@
         "En attente d'accès aux données partagées"
       ],
       "Permanently remove all items ?": [
-        "Voulez-vous définitivement supprimer tous les éléments ?"
+        "Voulez-vous définitivement retirer tous les éléments ?"
       ],
       "Pin the extension": [
         "Épinglez l'extension"
