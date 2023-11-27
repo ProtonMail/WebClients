@@ -454,13 +454,13 @@
         "actualiser la page"
       ],
       "Remove": [
-        "Supprimer"
+        "Retirer"
       ],
       "Remove this notification": [
-        "Supprimer cette notification"
+        "Retirer cette notification"
       ],
       "Remove this participant": [
-        "Supprimer ce participant"
+        "Retirer ce participant"
       ],
       "Report a problem": [
         "Signaler un bug"
@@ -823,7 +823,7 @@
         "Historique des versions plus détaillé"
       ],
       "High speed streaming": [
-        "Streaming ultra rapide"
+        "Streaming ultra-rapide"
       ],
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } version premium"
@@ -1012,7 +1012,7 @@
     },
     "Calendar permissions hint": {
       "You can change or remove permissions at any time.": [
-        "Vous pouvez modifier ou supprimer les autorisations à tout moment."
+        "Vous pouvez modifier ou retirer les autorisations à tout moment."
       ]
     },
     "Calendar permissions label": {
@@ -2305,7 +2305,7 @@
         "${ eventTitle } a été mis à jour.\n${ eventDetailsText }"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Vous êtes invité(e) à ${ eventTitle }\n${ eventDetailsText }"
+        "Vous êtes invité à ${ eventTitle }\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -2607,8 +2607,8 @@
         "La clé principale récupérée pour l'utilisateur ${ BRAND_NAME } n'est pas valide pour l'envoi."
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Le destinataire dupliqué est supprimé : ${ joinedRecipients }",
-        "Les destinataires dupliqués sont supprimés : ${ joinedRecipients }"
+        "Le destinataire dupliqué a été retiré : ${ joinedRecipients }",
+        "Les destinataires dupliqués ont été retirés : ${ joinedRecipients }"
       ],
       "Request timed out": [
         "La requête a expiré."
@@ -3678,7 +3678,7 @@
         "(${ memberCount } membres)"
       ],
       "A cancellation email will be sent to removed participants.": [
-        "Un message d’annulation sera envoyé aux participants supprimés."
+        "Un message d’annulation sera envoyé aux participants retirés."
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
         "Un message d’annulation sera envoyé aux participants. Voulez-vous supprimer tous les événements de cette série ?"
@@ -3693,10 +3693,10 @@
         "L'accès au compte est restreint en raison de factures en retard. Veuillez contacter votre administrateur."
       ],
       "Added and removed participants will be notified about all the events in this series.": [
-        "Les participants ajoutés et supprimés seront informés de tous les événements de cette série."
+        "Les participants ajoutés et retirés seront informés de tous les événements de cette série."
       ],
       "Added and removed participants will be notified.": [
-        "Les participants ajoutés et supprimés seront informés."
+        "Les participants ajoutés et retirés seront informés."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La vérification d’adresse avec les clés approuvées est activée pour cette adresse. Pour être en mesure d’envoyer à cette adresse, commencez par approuver des clés publiques pouvant être utilisées pour l’envoi."
@@ -3872,10 +3872,10 @@
         "Les participants existants et ajoutés seront informés."
       ],
       "Existent and removed participants will be notified.": [
-        "Les participants existants et supprimés seront informés."
+        "Les participants existants et retirés seront informés."
       ],
       "Existent, added and removed participants will be notified.": [
-        "Les participants existants, ajoutés et supprimés seront informés."
+        "Les participants existants, ajoutés et retirés seront informés."
       ],
       "Free up some space or add more storage space.": [
         "Libérez de l’espace ou ajoutez plus d’espace de stockage."
@@ -4035,7 +4035,7 @@
         "Indiquez un nom et une adresse e-mail pour créer un groupe."
       ],
       "Please remove the duplicates and try again.": [
-        "Supprimez les doublons et réessayez."
+        "Retirez les doublons et réessayez."
       ],
       "Please select the folders you would like to import:": [
         "Sélectionnez les dossiers que vous voulez importer :"
@@ -4069,7 +4069,7 @@
         "Actualisez la page ou ${ link }, cela résoudra automatiquement la plupart des problèmes."
       ],
       "Removed participants will be notified.": [
-        "Les participants supprimés seront informés."
+        "Les participants retirés seront informés."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous voulez utiliser par défaut pour l'envoi d'un message à cette adresse e-mail."
@@ -4291,7 +4291,7 @@
         "Vous perdrez toutes les modifications non enregistrées."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
-        "Vous allez mettre à jour tous les événements de cette série. Les participants ajoutés et supprimés seront informés."
+        "Vous allez mettre à jour tous les événements de cette série. Les participants ajoutés et retirés seront informés."
       ],
       "You will update all the events in this series. An invitation will be sent to the event participants.": [
         "Vous allez mettre à jour tous les événements de cette série. Une invitation sera envoyée aux participants."
@@ -4300,13 +4300,13 @@
         "Vous allez mettre à jour tous les événements de cette série. Les participants existants et ajoutés seront informés."
       ],
       "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "Vous allez mettre à jour tous les événements de cette série. Les participants existants et supprimés seront informés."
+        "Vous allez mettre à jour tous les événements de cette série. Les participants existants et retirés seront informés."
       ],
       "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "Vous allez mettre à jour tous les événements de cette série. Les participants existants, ajoutés et supprimés seront informés."
+        "Vous allez mettre à jour tous les événements de cette série. Les participants existants, ajoutés et retirés seront informés."
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
-        "Vous allez mettre à jour tous les événements de cette série. Les participants supprimés seront informés."
+        "Vous allez mettre à jour tous les événements de cette série. Les participants retirés seront informés."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Vous avez atteint le nombre maximum d'adresses dans le ou les groupes de contacts :"
@@ -4850,10 +4850,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Pour ajouter un nouveau calendrier, supprimez d'abord un calendrier existant."
+        "Pour ajouter un nouveau calendrier, retirez d'abord un calendrier existant."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Pour ajouter un nouveau calendrier, vous devez d'abord supprimer un calendrier existant ou faire évoluer votre abonnement ${ BRAND_NAME } vers un abonnement payant ${ MAIL_SHORT_APP_NAME }."
+        "Pour ajouter un nouveau calendrier, vous devez d'abord retirer un calendrier existant ou faire évoluer votre abonnement ${ BRAND_NAME } vers un abonnement payant ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Vous avez atteint le nombre maximum de calendriers prévus dans votre abonnement."
@@ -5191,7 +5191,7 @@
         "Domaines de messagerie personnalisés"
       ],
       "Custom snooze time": [
-        "Personnalisation des périodes de mise en attente"
+        "Périodes de mise en attente personnalisées"
       ],
       "Hide-my-email aliases": [
         "Alias « hide-my-email »"
@@ -6191,7 +6191,7 @@
         "${ countMergeableContacts } contacts semblent identiques."
       ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
-        "Un message d'annulation sera envoyé aux participants supprimés pour tous les événements de cette série."
+        "Un message d'annulation sera envoyé aux participants retirés pour tous les événements de cette série."
       ],
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
@@ -6236,10 +6236,10 @@
         "L'annulation a été envoyée et l'événement a été supprimé."
       ],
       "Cancellation sent and participants removed": [
-        "L'annulation a été envoyée et les participants ont été supprimés."
+        "L'annulation a été envoyée et les participants ont été retirés."
       ],
       "Cancellation sent and participants removed from all events": [
-        "L'annulation a été envoyée et les participants ont été supprimés de tous les événements."
+        "L'annulation a été envoyée et les participants ont été retirés de tous les événements."
       ],
       "Code sent to ${ methodTo }": [
         "Le code a été envoyé à ${ methodTo }."
@@ -6690,7 +6690,7 @@
         "Récupérer les données"
       ],
       "Remove participants": [
-        "Supprimer des participants"
+        "Retirer des participants"
       ],
       "Report a problem": [
         "Signaler un bug"
