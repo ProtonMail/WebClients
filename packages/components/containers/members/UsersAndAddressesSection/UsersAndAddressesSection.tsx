@@ -311,7 +311,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                         {...inviteOrCreateUserModalProps}
                     />
                 )}
-                <div className="flex flex-align-items-center mb-6 lg:mb-0 gap-4">
+                <div className="flex flex-align-items-center mb-2 gap-2 mr-4">
                     {hasSetupOrganization && (
                         <Button color="norm" disabled={disableInviteUserButton} onClick={handleInviteUser}>
                             {c('Action').t`Invite user`}
@@ -345,7 +345,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                         </Button>
                     )}
                 </div>
-                <div className="ml-0 lg:ml-auto w-full lg:w-custom" style={{ '--lg-w-custom': '24em' }}>
+                <div className="ml-0 lg:ml-auto mb-2 w-full lg:w-custom" style={{ '--lg-w-custom': '24em' }}>
                     <SearchInput
                         onChange={handleSearch}
                         placeholder={c('Placeholder').t`Search for a user or address`}
