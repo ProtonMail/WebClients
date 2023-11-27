@@ -1,6 +1,6 @@
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
-import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { Element } from '../../models/element';
 import { LabelIDsChanges } from '../../models/event';
 import { Filter, SearchParameters, Sort } from '../../models/tools';

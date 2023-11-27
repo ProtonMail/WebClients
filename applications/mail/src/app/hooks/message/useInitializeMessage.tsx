@@ -6,6 +6,7 @@ import { FeatureCode, useApi, useAuthentication, useFeature, useProgressiveRollo
 import { WorkerDecryptionResult } from '@proton/crypto';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { isDraft, isPlainText } from '@proton/shared/lib/mail/messages';
 import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 import uniqueBy from '@proton/utils/uniqueBy';
@@ -43,7 +44,7 @@ import {
     load,
 } from '../../logic/messages/read/messagesReadActions';
 import { useAppDispatch } from '../../logic/store';
-import { MARK_AS_STATUS, useMarkAs } from '../actions/useMarkAs';
+import { useMarkAs } from '../actions/useMarkAs';
 import { useGetAttachment } from '../attachments/useAttachment';
 import { useBase64Cache } from '../useBase64Cache';
 import { useGetMessageKeys } from './useGetMessageKeys';
