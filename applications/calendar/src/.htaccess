@@ -20,6 +20,9 @@ RewriteCond %{REQUEST_FILENAME} -l [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^.*$ - [NC,L]
 
+# Easy switch
+RewriteRule ^oauth/callback /oauth.html [L]
+
 RewriteRule ^(.*) /index.html [NC,L]
 
 ErrorDocument 404 /assets/404.html
