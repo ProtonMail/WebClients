@@ -1,10 +1,10 @@
 import { memo } from 'react';
 
 import { ItemCheckbox } from '@proton/components/containers';
+import { Breakpoints } from '@proton/components/hooks';
 import clsx from '@proton/utils/clsx';
 
 import { Element } from '../../models/element';
-import { Breakpoints } from '../../models/utils';
 import ItemColumnLayout from './ItemColumnLayout';
 import ItemRowLayout from './ItemRowLayout';
 

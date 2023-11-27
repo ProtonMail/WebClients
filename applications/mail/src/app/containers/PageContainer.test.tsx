@@ -3,6 +3,7 @@ import { fireEvent } from '@testing-library/react';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
+import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
 import {
     addApiMock,
@@ -14,14 +15,13 @@ import {
     render,
     tick,
 } from '../helpers/test/helper';
-import { Breakpoints } from '../models/utils';
 import PageContainer from './PageContainer';
 
 jest.setTimeout(20000);
 
 describe('PageContainer', () => {
     const props = {
-        breakpoints: {} as Breakpoints,
+        breakpoints: mockDefaultBreakpoints,
         isComposerOpened: false,
     };
 

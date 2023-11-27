@@ -3,7 +3,7 @@ import { ReactNode, useMemo } from 'react';
 import { c, msgid } from 'ttag';
 
 import { useFlag } from '@proton/components/containers/unleash';
-import { Breakpoints, useUserSettings } from '@proton/components/hooks/';
+import { Breakpoints, useUserSettings } from '@proton/components/hooks';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { AttachmentsMetadata } from '@proton/shared/lib/interfaces/mail/Message';

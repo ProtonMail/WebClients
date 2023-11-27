@@ -2,12 +2,17 @@ import { useEffect, useMemo, useState } from 'react';
 
 import debounce from '@proton/utils/debounce';
 
-const getActiveBreakpoint = () => {
+type ActiveBreakpoint = 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | '2xlarge';
+
+const getActiveBreakpoint = (): ActiveBreakpoint | '' => {
     const bodyEl = document.querySelector('body');
     if (!bodyEl) {
         return '';
     }
-    return window.getComputedStyle(bodyEl, ':before').getPropertyValue('content').replace(/['"]+/g, '');
+    return window
+        .getComputedStyle(bodyEl, ':before')
+        .getPropertyValue('content')
+        .replace(/['"]+/g, '') as ActiveBreakpoint;
 };
 
 /** Contains React state setter of each instantiated hooks */
@@ -21,7 +26,7 @@ const onResize = () => {
 const onResizeDebounced = debounce(onResize, 250);
 
 export interface Breakpoints {
-    activeBreakpoint: string;
+    activeBreakpoint: ActiveBreakpoint;
     viewportWidth: {
         // Defined in CSS
         xsmall: boolean;
@@ -38,7 +43,7 @@ export interface Breakpoints {
 }
 
 const useActiveBreakpoint = () => {
-    const [activeBreakpoint, setActiveBreakpoint] = useState(() => getActiveBreakpoint());
+    const [activeBreakpoint, setActiveBreakpoint] = useState(() => getActiveBreakpoint() as ActiveBreakpoint);
 
     useEffect(() => {
         if (callbackStack.size === 0) {
