@@ -43,7 +43,7 @@ describe('MailSidebarDriveSpotlight', () => {
             },
             noop,
         ]);
-        mockUseActiveBreakpoint({ isNarrow: false });
+        mockUseActiveBreakpoint();
         mockUseFeature({ feature: { Value: true } });
         mockUseSpotlightOnFeature({ show: true });
         mockUseUser([
@@ -86,7 +86,11 @@ describe('MailSidebarDriveSpotlight', () => {
     });
 
     it('Should not render spotlight when feature flag has been displayed', () => {
-        useSpotlightOnFeatureMock.mockReturnValue({ show: false, onDisplayed: () => {}, onClose: () => {} });
+        useSpotlightOnFeatureMock.mockReturnValue({
+            show: false,
+            onDisplayed: () => {},
+            onClose: () => {},
+        });
 
         setup();
 
@@ -118,7 +122,7 @@ describe('MailSidebarDriveSpotlight', () => {
     });
 
     it('Should not render spotlight when user is on mobile screen', () => {
-        mockUseActiveBreakpoint({ isNarrow: true });
+        mockUseActiveBreakpoint({ viewportWidth: { ['<=small']: true } });
 
         setup();
 

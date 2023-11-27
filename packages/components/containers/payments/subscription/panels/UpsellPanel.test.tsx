@@ -2,6 +2,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import { useActiveBreakpoint } from '@proton/components/hooks';
 import { omit } from '@proton/shared/lib/helpers/object';
+import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
 import UpsellPanel, { UpsellPanelProps } from './UpsellPanel';
 
@@ -10,7 +11,7 @@ const mockUseActiveBreakpoint = useActiveBreakpoint as jest.MockedFn<typeof useA
 
 describe('UpsellBox', () => {
     beforeEach(() => {
-        mockUseActiveBreakpoint.mockReturnValue({ isNarrow: false } as any);
+        mockUseActiveBreakpoint.mockReturnValue(mockDefaultBreakpoints);
     });
 
     const handleUpgrade = jest.fn();
@@ -166,7 +167,10 @@ describe('UpsellBox', () => {
 
     describe('when screenview is narrow', () => {
         it('should not display the feature but a button to toggle their display', async () => {
-            mockUseActiveBreakpoint.mockReturnValue({ isNarrow: true } as any);
+            mockUseActiveBreakpoint.mockReturnValue({
+                ...mockDefaultBreakpoints,
+                viewportWidth: { ...mockDefaultBreakpoints.viewportWidth, ['<=small']: true },
+            });
             render(<UpsellPanel {...upsellBoxBaseProps} />);
 
             // features should be hidden at first

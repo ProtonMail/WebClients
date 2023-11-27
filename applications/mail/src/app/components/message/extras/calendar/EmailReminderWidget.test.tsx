@@ -22,6 +22,7 @@ import {
     calendarEventBuilder,
     messageBuilder,
     mockApiWithServer,
+    mockDefaultBreakpoints,
     mockNotifications,
     rest,
     server,
@@ -54,9 +55,7 @@ jest.mock('@proton/components/hooks/useConfig', () => () => ({ APP_NAME: 'proton
 // Force narrow mode for "renders the widget and the necessary information" so that we can see the link
 // With the drawer we do not have a AppLink anymore, we will open Calendar in the drawer directly
 jest.mock('@proton/components/hooks/useActiveBreakpoint', () => () => {
-    return {
-        isNarrow: true,
-    };
+    return mockDefaultBreakpoints;
 });
 
 jest.mock('@proton/components/hooks/useUser', () => ({
