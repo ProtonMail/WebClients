@@ -42,6 +42,14 @@ export const usePhotosView = () => {
 
     // This will be flattened to contain categories and links
     const { photosViewData, photoLinkIdToIndexMap, photoLinkIds } = useMemo(() => {
+        if (!shareId || !linkId) {
+            return {
+                photosViewData: [],
+                photoLinkIdToIndexMap: {},
+                photoLinkIds: [],
+            };
+        }
+
         const result: Record<string, PhotoLink> = {};
 
         // We create "fake" links to avoid complicating the rest of the code
@@ -69,8 +77,7 @@ export const usePhotosView = () => {
                 return;
             }
 
-            // We have issue with typing but we check activeRevision before
-            result[link.linkId] = link as PhotoLink;
+            result[link.linkId] = link;
         });
 
         const photosViewData = sortWithCategories(Object.values(result));
@@ -96,7 +103,7 @@ export const usePhotosView = () => {
             photoLinkIdToIndexMap,
             photoLinkIds,
         };
-    }, [photos, cachedLinks]);
+    }, [photos, cachedLinks, linkId, shareId]);
 
     useEffect(() => {
         if (!volumeId || !shareId) {

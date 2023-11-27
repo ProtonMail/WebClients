@@ -2,3 +2,4 @@ export { convertSubjectAreaToSubjectCoordinates } from './convertSubjectAreaToSu
 export { formatExifDateTime } from './formatExifDateTime';
 export { sortWithCategories } from './sortWithCategories';
 export { isPhotoGroup } from './isPhotoGroup';
+export { isDecryptedLink } from './isDecryptedLink';
