@@ -124,12 +124,32 @@ export class ImportEventError extends Error {
 
     externalError?: Error;
 
-    constructor(errorType: IMPORT_EVENT_ERROR_TYPE, component: string, componentId: string, externalError?: Error) {
+    prodId?: string;
+
+    domain?: string;
+
+    constructor({
+        errorType,
+        component,
+        componentId,
+        externalError,
+        prodId,
+        domain,
+    }: {
+        errorType: IMPORT_EVENT_ERROR_TYPE;
+        component: string;
+        componentId: string;
+        externalError?: Error;
+        prodId?: string;
+        domain?: string;
+    }) {
         super(getErrorMessage(errorType, externalError));
         this.type = errorType;
         this.component = component;
         this.componentId = componentId;
         this.externalError = externalError;
+        this.prodId = prodId;
+        this.domain = domain;
         Object.setPrototypeOf(this, ImportEventError.prototype);
     }
 }
