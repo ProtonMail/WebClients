@@ -6,6 +6,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import { Scroll } from '@proton/atoms/Scroll';
 import { Icon } from '@proton/components/components';
+import { useNotifications } from '@proton/components/hooks';
 import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
 import { getLocalPath, getTrashRoute } from '@proton/pass/components/Core/routing';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
@@ -14,6 +15,7 @@ import { VaultMenu } from '@proton/pass/components/Menu/Vault/VaultMenu';
 import { usePasswordContext } from '@proton/pass/components/Password/PasswordProvider';
 import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvider';
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
+import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { syncIntent } from '@proton/pass/store/actions';
 import { selectPassPlan, selectPlanDisplayName, selectUser } from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -22,6 +24,9 @@ import clsx from '@proton/utils/clsx';
 import { useAuthService } from '../../Context/AuthServiceProvider';
 
 export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
+    const { createNotification, clearNotifications } = useNotifications();
+    const enhance = useNotificationEnhancer();
+
     const authService = useAuthService();
     const menu = useMenuItems({ onAction: onToggle });
     const vaultActions = useVaultActions();
@@ -35,6 +40,12 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
     const user = useSelector(selectUser);
+
+    const onLogout = useCallback(async () => {
+        createNotification(enhance({ text: c('Info').t`Logging you out...`, type: 'info', loading: true }));
+        await authService.logout({ soft: false });
+        clearNotifications();
+    }, []);
 
     const onVaultSelect = useCallback(
         (selected: string) => {
@@ -112,7 +123,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                     icon="arrow-out-from-rectangle"
                     label={c('Action').t`Sign out`}
                     labelClassname="mx-3"
-                    onClick={() => authService.logout({ soft: false })}
+                    onClick={onLogout}
                 />
 
                 <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
