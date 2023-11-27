@@ -285,10 +285,10 @@
         "Recargar extensión"
       ],
       "Remove": [
-        "Eliminar"
+        "Borrar"
       ],
       "Remove access": [
-        "Eliminar el acceso"
+        "Borrar el acceso"
       ],
       "Request a feature": [
         "Solicitar una característica"
@@ -504,7 +504,7 @@
         "Error al mover todos los elementos desde \"${ payload.content.name }\""
       ],
       "Failed to remove user's access.": [
-        "Error al eliminar el acceso del usuario."
+        "Error al borrar el acceso del usuario"
       ],
       "Failed to transfer this vault's ownership.": [
         "Error al transferir la propiedad de esta bóveda."
@@ -762,7 +762,7 @@
         "Todos los elementos de la papelera fueron restaurados."
       ],
       "An item previously shared with you was removed": [
-        "Se eliminó un elemento previamente compartido con usted"
+        "Se borró un elemento previamente compartido con usted."
       ],
       "Are you sure you want to move all items from \"${ fromVaultName }\" to \"${ toVaultName }\" ?": [
         "¿En verdad desea mover todos los elementos de \"${ fromVaultName }\" a \"${ toVaultName }\"?"
@@ -880,7 +880,7 @@
         "Invitación enviada"
       ],
       "Invite successfully removed": [
-        "Invitación eliminada con éxito"
+        "Invitación borrada"
       ],
       "Invite successfully resent": [
         "La invitación fue enviada."
@@ -1098,7 +1098,7 @@
         "Use las bóvedas para compartir este elemento con otras personas."
       ],
       "User's access removed": [
-        "Acceso del usuario eliminado"
+        "El acceso del usuario fue borrado."
       ],
       "User's access sucessfuly updated": [
         "Se actualizó el acceso del usuario."
@@ -1113,7 +1113,7 @@
         "Bóveda \"${ payload.share.content.name }\" actualizada con éxito"
       ],
       "Vault \"${ share.content.name }\" was removed": [
-        "La bóveda \"${ share.content.name }\" fue eliminada"
+        "La bóveda \"${ share.content.name }\" fue borrada."
       ],
       "Verification code": [
         "Código de verificación"
@@ -1760,7 +1760,7 @@
         "Acceso pendiente a los datos compartidos"
       ],
       "Permanently remove all items ?": [
-        "¿Eliminar todos los elementos permanentemente?"
+        "¿Borrar todos los elementos permanentemente?"
       ],
       "Pin the extension": [
         "Fije la extensión"

@@ -261,10 +261,10 @@
         "Tornar a carregar l'extensió"
       ],
       "Remove": [
-        "Suprimeix"
+        "Esborra"
       ],
       "Remove access": [
-        "Suprimeix l'accés"
+        "Esborra l'accés"
       ],
       "Request a feature": [
         "Demana una nova característica"
@@ -449,7 +449,7 @@
         "No s'ha pogut Editar l'accés de l'usuari."
       ],
       "Failed to remove user's access.": [
-        "No s'ha pogut suprimir l'accés de l'usuari."
+        "No s'ha pogut esborrar l'accés de l'usuari."
       ],
       "Failed to transfer this vault's ownership.": [
         "No s'ha pogut transferir la propietat de la caixa forta."
@@ -676,6 +676,9 @@
       "Alias \"${ item.aliasEmail }\" moved to trash - it will stop forwarding emails to your mailbox": [
         "S'ha mogut l'àlies \"${ item.aliasEmail }\" a la paperera - deixarà de reenviar correus electrònics a la vostra bústia"
       ],
+      "An item previously shared with you was removed": [
+        "S'ha esborrat un element compartit anteriorment amb vós."
+      ],
       "Auto-lock successfully disabled": [
         "El bloqueig automàtic s'ha desactivat correctament"
       ],
@@ -744,7 +747,7 @@
         "S'ha enviat la invitació."
       ],
       "Invite successfully removed": [
-        "S'ha suprimit la invitació."
+        "S'ha esborrat la invitació."
       ],
       "Invite successfully resent": [
         "S'ha reenviat la invitació."
@@ -908,7 +911,7 @@
         "Millora ${ PASS_APP_NAME }"
       ],
       "User's access removed": [
-        "S'ha suprimit l'accés de l'usuari."
+        "S'ha esborrat l'accés de l'usuari."
       ],
       "User's access sucessfuly updated": [
         "S'ha actualitzat l'accés del usuari."
@@ -921,6 +924,9 @@
       ],
       "Vault \"${ payload.share.content.name }\" successfully updated": [
         "S'ha actualitzat la caixa forta \"${ payload.share.content.name }\""
+      ],
+      "Vault \"${ share.content.name }\" was removed": [
+        "S'ha esborrat la caixa forta \"${ share.content.name }\"."
       ],
       "Verification code": [
         "Codi de verificació"
@@ -1530,7 +1536,7 @@
         "Contrasenya"
       ],
       "Permanently remove all items ?": [
-        "Voleu eliminar els elements de manera permanent?"
+        "Voleu esborrar els elements de manera permanent?"
       ],
       "Pin the extension": [
         "Fixa l'extensió"

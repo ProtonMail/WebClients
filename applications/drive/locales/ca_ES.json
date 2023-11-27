@@ -488,10 +488,10 @@
         "refresca la pàgina"
       ],
       "Remove": [
-        "Suprimeix"
+        "Esborra"
       ],
       "Remove device": [
-        "Suprimeix el dispositiu"
+        "Esborra el dispositiu"
       ],
       "Remove from this list": [
         "Esborra de la llista"
@@ -3783,9 +3783,6 @@
       "No email address": [
         "Sense adreça de correu electrònic"
       ],
-      "No files or folders in trash": [
-        "No hi ha cap fitxer ni carpeta a la paperera"
-      ],
       "No group found": [
         "No s'ha trobat cap grup"
       ],
@@ -4068,11 +4065,11 @@
         "Aquest mes"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Això eliminarà l'enllaç i suprimirà l'accés al vostre fitxer o carpeta per a qualsevol persona que el tingui.",
-        "Això eliminarà els enllaços i suprimirà l'accés als vostres fitxers o carpetes per a qualsevol persona que els tingui."
+        "Això esborrarà l'enllaç i suprimirà l'accés al vostre fitxer o carpeta per a qualsevol persona que el tingui.",
+        "Això esborrarà els enllaços i suprimirà l'accés als vostres fitxers o carpetes per a qualsevol persona que els tingui."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "Això eliminarà el dispositiu sincronitzat ${ deviceName } de ${ DRIVE_APP_NAME } i deixarà de sincronitzar les carpetes que heu afegit a Ordinadors."
+        "Això esborrarà el dispositiu sincronitzat ${ deviceName } de ${ DRIVE_APP_NAME } i deixarà de sincronitzar les carpetes que heu afegit a Ordinadors."
       ],
       "This will replace the existing file with the folder": [
         "Això substituirà el fitxer existent per la carpeta"
@@ -4873,10 +4870,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Per a afegir un nou calendari, suprimiu-ne un d'existent."
+        "Per a afegir un nou calendari, esborreu-ne un d'existent."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Per afegir un nou calendari, suprimiu-ne un altre o milloreu el vostre pla de ${ BRAND_NAME } a un pla de pagament de ${ MAIL_SHORT_APP_NAME }."
+        "Per afegir un nou calendari, esborreu-ne un altre o milloreu el vostre pla de ${ BRAND_NAME } a un pla de pagament de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Heu assolit el nombre màxim de calendaris disponibles amb el vostre pla."
@@ -5163,13 +5160,13 @@
         "Grup de contactes actualitzat"
       ],
       "Device failed to be removed": [
-        "No s'ha pogut suprimir el dispositiu"
+        "No s'ha pogut esborrar el dispositiu."
       ],
       "Device failed to be renamed": [
         "No s'ha pogut canviar el nom del dispositiu"
       ],
       "Device removed": [
-        "S'ha suprimit el dispositiu"
+        "S'ha esborrat el dispositiu"
       ],
       "Device renamed": [
         "S'ha canviat el nom del dispositiu"
@@ -6413,7 +6410,7 @@
         "Recuperar dades"
       ],
       "Remove device?": [
-        "Voleu suprimir el dispositiu?"
+        "Voleu esborrar el dispositiu?"
       ],
       "Rename a file": [
         "Canvia el nom"
@@ -6656,24 +6653,12 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "«${ str }» no és un nom vàlid"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "El nom no pot incloure caràcters invisibles, / o \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "El nom ha de tenir com a màxim ${ MAX_NAME_LENGTH } caràcter",
         "El nom ha de tenir com a màxim ${ MAX_NAME_LENGTH } caràcters"
       ],
       "Name must not be empty": [
         "El nom no pot estar buit"
-      ],
-      "Name must not begin with a space": [
-        "El nom no ha de començar amb un espai"
-      ],
-      "Name must not end with a space": [
-        "El nom no ha de finalitzar amb un espai"
       ]
     },
     "Video control": {

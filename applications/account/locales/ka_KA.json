@@ -1405,8 +1405,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "დაზოგეთ შავი პარასკევის ფასდაკლებებით ჩქაროსნულ VPN-ზე"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "დაზოგეთ კიბერკვირის ფასდაკლებებით ჩქაროსნულ VPN-ზე"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "დაზოგეთ წლის ბოლოს ფასდაკლებებით ჩქაროსნულ VPN-ზე"
+      ],
       "Select your Black Friday offer": [
         "აირჩიეთ თქვენი შავი პარასკევის შეთავაზება"
+      ],
+      "Select your Cyber Week offer": [
+        "აირჩით თქვენი კიბერკვირის შეთავაზება"
+      ],
+      "Select your End of Year offer": [
+        "აირჩიეთ თქვენი წლის ბოლოს შეთავაზება"
       ]
     },
     "bf2023: info": {
@@ -3717,6 +3729,9 @@
       "Contact signature not verified": [
         "კონტაქტის ხელმოწერა არ შემოწმებულა"
       ],
+      "Could not save preference": [
+        "პარამეტრის შენახვა შეუძლებელია"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "მოხსენით მონიშვნა, სულ ცოტა, ${ calendarsToFixCount } კალენდარზე",
         "მოხსენით მონიშვნა, სულ ცოტა, ${ calendarsToFixCount } კალენდარზე"
@@ -3845,9 +3860,6 @@
       ],
       "Name does not match": [
         "სახელი არ ემთხვევა"
-      ],
-      "Name on card required": [
-        "საჭიროა ბარათზე მითითებული სახელი"
       ],
       "Name required": [
         "სახელი აუცილებელია"
@@ -3997,9 +4009,6 @@
       ],
       "The address might be misspelled": [
         "ალბათ, მისამართი შეგეშალათ"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "თქვენს ბრაუზერი გადახდის პროცესის დასრულების უფლებას არ იძლევა. გამოიყენეთ სხვა ბრაუზერი ან კომპიუტერიდან სცადეთ."
       ],
       "The email addresses do not match": [
         "ელფოსტის მისამართები არ ემთხვევა"
@@ -6456,9 +6465,6 @@
       "for choosing ${ product }": [
         "${ product }-ის არჩევისთვის"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa, Discover-ისა და MasterCard-ისთვის, 3 ციფრი თქვენი ბარათის უკანა მხარეს. American Express-ისთვის, 4 ციფრი თქვენი ბარათის წინა მხარეს."
-      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "შემომავალი ფოსტის გადამისამართება სხვა ანგარიშიდან თქვენს უსაფრთხო ${ MAIL_APP_NAME } შემოსულებში."
       ],
@@ -7151,14 +7157,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "რადგან თქვენ ერთგული მომხმარებელი ბრძანდებით, ანგარიშისთვის დამატებითი თვისებებია ხელმისაწვდომი."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP-ით გაგზავნა მესამე პირების სერვისებს ან მოწყობილობებს, თქვენი დომენის მისამართებით, ${ MAIL_APP_NAME }-ის გავლით გაგზავნის საშუალებას აძლევს. ეს ფუნქცია ხელმისაწვდომია, მხოლოდ, ${ BRAND_NAME } for Business-ის მომხმარებლებისთვის, როლებიც არანაგულისხმევ დომენებს იყენებენ."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP მესამე პირების მიერ მოწოდებულ სერვისებისა და მოწყობილობებს ${ MAIL_APP_NAME }-ის გავლით თქვენი დომენის მისამართებზე ელფოსტის გაგზავნის საშუალებას იძლევა. წვდომის მოსათხოვნად, ${ createTicket } და აღწერეთ რისთვის გჭირდებათ ის, რომელი დომენების გამოყენებას აპირებთ და მიუთითეთ მოსალოდნელი საათობრივი და დღიური ელფოსტის რაოდენობები."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "SMTP მესამე პირების მიერ მოწოდებულ სერვისებს და მოწყობილობებს ${ MAIL_APP_NAME }-ის გავლით თქვენი დომენის მისამართებზე ელფოსტის გაგზავნის საშუალებას იძლევა. ამ ფუნქციის გამოსაყენებლად ახალი კოდის გენერირება დაგჭირდებათ."
+      ],
+      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "SMTP-ით გაგზავნა მესამე პირების სერვისებს ან მოწყობილობებს, თქვენი დომენის მისამართებით, ${ MAIL_APP_NAME }-ის გავლით გაგზავნის საშუალებას აძლევს. ეს ფუნქცია ხელმისაწვდომია, მხოლოდ, ${ BRAND_NAME } for Business-ის მომხმარებლებისთვის, როლებიც არანაგულისხმევ დომენებს იყენებენ."
       ],
       "Some keys successfully reactivated": [
         "ზოგიერთი გასაღები წარმატებით გააქტიურდა"
@@ -8097,7 +8103,7 @@
         "აქტიური"
       ],
       "Compromised": [
-        "კომპრომენტირებულია"
+        "კომპრომეტირებულია"
       ],
       "Disabled": [
         "გათიშული"
@@ -8598,6 +8604,9 @@
       "Conversation grouping": [
         "საუბრების დაჯგუფება"
       ],
+      "Conversations per page": [
+        "საუბარი გვერდზე"
+      ],
       "Copy": [
         "კოპირება"
       ],
@@ -8751,9 +8760,6 @@
       "Expiration (${ patternExpiration })": [
         "ვადა (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "ვადა"
-      ],
       "Expires": [
         "ვადა"
       ],
@@ -8883,6 +8889,9 @@
       "Message": [
         "შეტყობინება"
       ],
+      "Messages per page": [
+        "შეტყობინება გვერდზე"
+      ],
       "Moderate NAT": [
         "საშუალო NAT-ი"
       ],
@@ -8900,9 +8909,6 @@
       ],
       "Name and address": [
         "სახელი და მისამართი"
-      ],
-      "Name on card": [
-        "სახელი ბარათზე"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (პორტის გადამისამართება)"
@@ -9066,14 +9072,8 @@
       "Reveal password": [
         "პაროლის ჩვენება"
       ],
-      "Security code": [
-        "უსაფრთხოების კოდი"
-      ],
       "Security code (${ codeName })": [
         "უსაფრთხოების კოდი (${ codeName })"
-      ],
-      "Select your country": [
-        "აირჩიეთ თქვენი ქვეყანა"
       ],
       "Select your plan": [
         "აირჩიეთ ტარიფი"
@@ -11632,9 +11632,6 @@
       "Text": [
         "ტექსტი"
       ],
-      "Thomas Anderson": [
-        "ნაზიბროლა ღობეგლეჯიაშვილი"
-      ],
       "Type text or keyword": [
         "შეიყვანეთ ტექსტი ან საკვანძო სიტყვა"
       ],
@@ -13598,7 +13595,7 @@
       "Folders and labels": [
         "საქაღალდეები და ჭდეები"
       ],
-      "Forward and Auto-reply": [
+      "Forward and auto-reply": [
         "გადაგზავნა და ავტომოპასუხე"
       ],
       "Forward emails": [
@@ -13785,7 +13782,7 @@
       "PayPal verification failed": [
         "PayPal-ით გადახდის შეცდომა"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "მოირგეთ თქვენი ელფოსტის ქვედა კოლონტიტული"
       ],
       "Phone": [
@@ -14011,9 +14008,6 @@
       ],
       "Unlock your mailbox": [
         "განბლოკეთ თქვენი საფოსტო ყუთი"
-      ],
-      "Unsupported browser": [
-        "მხარდაუჭერელი ბრაუზერი"
       ],
       "Upgrade plan": [
         "ტარიფის გაუმჯობესება"

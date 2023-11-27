@@ -1402,8 +1402,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Hemat dengan penawaran Jumat Hitam di VPN Swiss berkecepatan tinggi"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Dapatkan penawaran hemat Minggu Cyber untuk produk VPN Swiss berkecepatan tinggi"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Dapatkan penawaran hemat Akhir Tahun untuk produk VPN Swiss berkecepatan tinggi"
+      ],
       "Select your Black Friday offer": [
         "Pilih penawaran Jumat Hitam Anda"
+      ],
+      "Select your Cyber Week offer": [
+        "Pilih penawaran Minggu Cyber Anda"
+      ],
+      "Select your End of Year offer": [
+        "Pilih penawaran Akhir Tahun Anda"
       ]
     },
     "bf2023: info": {
@@ -3830,9 +3842,6 @@
       "Name does not match": [
         "Nama tidak cocok"
       ],
-      "Name on card required": [
-        "Nama pada kartu dibutuhkan"
-      ],
       "Name required": [
         "Nama dibutuhkan"
       ],
@@ -3979,9 +3988,6 @@
       ],
       "The address might be misspelled": [
         "Alamat mungkin salah ketik"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Browser Anda tidak mengizinkan pembayaran yang ada untuk dapat diotorisir sepenuhnya. Silakan gunakan browser lain atau masuk via komputer."
       ],
       "The email addresses do not match": [
         "Alamat surel tidak cocok"
@@ -6389,9 +6395,6 @@
       "for choosing ${ product }": [
         "telah memilih ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Untuk Visa, MasterCard, dan Discover, 3 digit yang terdapat pada sisi belakang kartu. Untuk American Express, 4 digit yang terdapat pada sisi depan kartu."
-      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Teruskan pesan yang datang dari akun lainnya menuju kotak masuk akun ${ MAIL_APP_NAME } aman Anda."
       ],
@@ -7079,14 +7082,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Berhubung Anda telah menjadi pengguna yang setia, akun Anda akan memiliki berbagai fitur tambahan yang dapat Anda gunakan."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Submisi SMTP memungkinkan layanan atau perangkat milik pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME } bagi alamat domain khusus milik Anda. Fitur ini hanya tersedia bagi pengguna ${ BRAND_NAME } for Business yang memiliki domain khusus."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Pengiriman SMTP memungkinkan layanan atau perangkat pihak ketiga untuk mengirim email melalui ${ MAIL_APP_NAME } untuk alamat domain khusus Anda. Untuk meminta akses, silakan ${ createTicket } yang menyertakan rincian penggunaan Anda, domain khusus apa saja yang Anda ingin gunakan, dan kisaran volume email yang masuk per jamnya dan per harinya."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "Submisi SMTP memungkinkan layanan atau perangkat milik pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME } bagi alamat domain khusus milik Anda. Untuk menggunakan fitur ini, mulailah dengan menghasilkan token baru."
+      ],
+      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "Submisi SMTP memungkinkan layanan atau perangkat milik pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME } bagi alamat domain khusus milik Anda. Fitur ini hanya tersedia bagi pengguna ${ BRAND_NAME } for Business yang memiliki domain khusus."
       ],
       "Some keys successfully reactivated": [
         "Sebagian kunci berhasil diaktifkan ulang"
@@ -8662,9 +8665,6 @@
       "Expiration (${ patternExpiration })": [
         "Kedaluwarsa (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Tanggal kedaluwarsa"
-      ],
       "Expires": [
         "Kedaluwarsa"
       ],
@@ -8811,9 +8811,6 @@
       ],
       "Name and address": [
         "Nama dan alamat"
-      ],
-      "Name on card": [
-        "Nama di kartu"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Port Forwarding)"
@@ -8977,14 +8974,8 @@
       "Reveal password": [
         "Perlihatkan kata sandi"
       ],
-      "Security code": [
-        "Kode keamanan"
-      ],
       "Security code (${ codeName })": [
         "Kode keamanan (${ codeName })"
-      ],
-      "Select your country": [
-        "Pilih negara Anda"
       ],
       "Select your plan": [
         "Pilih paket Anda"
@@ -11502,9 +11493,6 @@
       "Text": [
         "Teks"
       ],
-      "Thomas Anderson": [
-        "Andi Setiawan"
-      ],
       "Type text or keyword": [
         "Ketik teks atau kata kunci"
       ],
@@ -13425,8 +13413,8 @@
       "Folders and labels": [
         "Folder dan label"
       ],
-      "Forward and Auto-reply": [
-        "Teruskan dan Balas Otomatis"
+      "Forward and auto-reply": [
+        "Penerusan dan pembalasan otomatis"
       ],
       "Forward emails": [
         "Teruskan surel"
@@ -13611,7 +13599,7 @@
       "PayPal verification failed": [
         "Verifikasi PayPal gagal"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "Sesuaikan footer surel Anda"
       ],
       "Phone": [
@@ -13835,9 +13823,6 @@
       ],
       "Unlock your mailbox": [
         "Buka kunci kotak surat Anda"
-      ],
-      "Unsupported browser": [
-        "Browser tidak didukung"
       ],
       "Upgrade plan": [
         "Tingkatkan akun"

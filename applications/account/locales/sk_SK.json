@@ -1411,8 +1411,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Ušetrite so zľavami Black Friday na vysokorýchlostnú švajčiarsku sieť VPN"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Ušetrite so Cyber Week zľavami na vysokorýchlostnú švajčiarsku sieť VPN"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Ušetrite s koncoročnou ponukou na vysokorýchlostnú švajčiarsku sieť VPN"
+      ],
       "Select your Black Friday offer": [
         "Vyberte si ponuku Black Friday"
+      ],
+      "Select your Cyber Week offer": [
+        "Vyberte si svoju Cyber Week ponuku"
+      ],
+      "Select your End of Year offer": [
+        "Vyberte si svoju koncoročnú ponuku"
       ]
     },
     "bf2023: info": {
@@ -3127,7 +3139,7 @@
         "Pre import kontaktov zo služby Google alebo Outlook ${ easySwitchLink }."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "Ak chcete odstrániť zápätie ${ MAIL_APP_NAME }, inovujte a odomknite ešte viac prémiových funkcií."
+        "Ak chcete odstrániť pätu ${ MAIL_APP_NAME }, upgradujte a odomknite ešte viac prémiových funkcií."
       ],
       "Track the status and activity of your referrals.": [
         "Sledujte stav a aktivitu svojich odporúčaní."
@@ -3743,6 +3755,9 @@
       "Contact signature not verified": [
         "Podpis kontaktu nebol overený"
       ],
+      "Could not save preference": [
+        "Nepodarilo sa uložiť predvoľby"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Zrušte výber aspoň ${ calendarsToFixCount } kalendára",
         "Zrušte výber aspoň ${ calendarsToFixCount } kalendárov",
@@ -3840,7 +3855,7 @@
         "Neplatná emailová adresa"
       ],
       "Invalid expiration date": [
-        "Neplatný dátum expirácie"
+        "Neplatný koniec platnosti"
       ],
       "Invalid invitation link": [
         "Neplatný odkaz pozvánky"
@@ -3877,9 +3892,6 @@
       ],
       "Name does not match": [
         "Meno sa nezhoduje"
-      ],
-      "Name on card required": [
-        "Meno držiteľa karty je povinné"
       ],
       "Name required": [
         "Názov je povinný"
@@ -4033,9 +4045,6 @@
       ],
       "The address might be misspelled": [
         "Adresa môže obsahovať preklep"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Prehliadač, ktorý používate, neumožňuje úplnú autorizáciu platby. Použite iný prehliadač, alebo sa prihláste pomocou počítača."
       ],
       "The email addresses do not match": [
         "Emailové adresy sa nezhodujú"
@@ -6590,9 +6599,6 @@
       "for choosing ${ product }": [
         "za výber ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "V prípade kariet Visa, MasterCard a Discover, 3 číslice na zadnej strane karty. V prípade American Express, 4 číslice na prednej strane vašej karty."
-      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Preposielajte prichádzajúcu poštu z iného účtu do vašej zabezpečenej schránky ${ MAIL_APP_NAME }."
       ],
@@ -7295,14 +7301,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhľadom k tomu, že ste verný používateľ, má váš účet povolené ďalšie funkcie."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP odosielanie umožňuje službám alebo zariadeniam tretích strán odosielať emaily prostredníctvom ${ MAIL_APP_NAME } pre vaše vlastné doménové adresy. Táto funkcia je dostupná len pre firemných používateľov ${ BRAND_NAME } s vlastnou doménou."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Odoslanie SMTP umožňuje službám alebo zariadeniam tretích strán odosielať emaily cez ${ MAIL_APP_NAME } pre adresy vašich vlastných domén. Ak chcete požiadať o prístup, ${ createTicket }, opíšte svoje prípady použitia, aké vlastné domény by ste chceli použiť a očakávané hodinové a denné objemy emailov."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "Odoslanie SMTP umožňuje službám alebo zariadeniam tretích strán odosielať emaily cez ${ MAIL_APP_NAME } pre adresy vašich vlastných domén. Ak chcete použiť túto funkciu, začnite vygenerovaním nového tokenu."
+      ],
+      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "SMTP odosielanie umožňuje službám alebo zariadeniam tretích strán odosielať emaily prostredníctvom ${ MAIL_APP_NAME } pre vaše vlastné doménové adresy. Táto funkcia je dostupná len pre firemných používateľov ${ BRAND_NAME } s vlastnou doménou."
       ],
       "Some keys successfully reactivated": [
         "Niektoré kľúče boli úspešne reaktivované"
@@ -7464,7 +7470,7 @@
         "Môže to trvať nejaký čas. Nezatvárajte prosím túto stránku, ani sa neodpájajte od internetu."
       ],
       "This file is too large to preview": [
-        "Tento súbor je príliš veľký na zobrazenie ukážky"
+        "Tento súbor je príliš veľký na zobrazenie náhľadu"
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Toto je 12-slovná fráza, ktorú musíte nastaviť."
@@ -8776,6 +8782,9 @@
       "Conversation grouping": [
         "Zoskupovanie konverzácií"
       ],
+      "Conversations per page": [
+        "Počet konverzácií na stránku"
+      ],
       "Copy": [
         "Kopírovať"
       ],
@@ -8929,9 +8938,6 @@
       "Expiration (${ patternExpiration })": [
         "Skončenie platnosti (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Koniec platnosti "
-      ],
       "Expires": [
         "Exspiruje"
       ],
@@ -9061,6 +9067,9 @@
       "Message": [
         "Správa"
       ],
+      "Messages per page": [
+        "Počet správ na stránku"
+      ],
       "Moderate NAT": [
         "Moderate NAT"
       ],
@@ -9078,9 +9087,6 @@
       ],
       "Name and address": [
         "Meno a adresa"
-      ],
-      "Name on card": [
-        "Meno na karte"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (presmerovanie portov)"
@@ -9244,14 +9250,8 @@
       "Reveal password": [
         "Odkryť heslo"
       ],
-      "Security code": [
-        "Bezpečnostný kód"
-      ],
       "Security code (${ codeName })": [
         "Bezpečnostný kód (${ codeName })"
-      ],
-      "Select your country": [
-        "Vyberte vašu krajinu"
       ],
       "Select your plan": [
         "Vyberte plán"
@@ -11892,9 +11892,6 @@
       "Text": [
         "Text"
       ],
-      "Thomas Anderson": [
-        "Ján Kováč"
-      ],
       "Type text or keyword": [
         "Zadajte text alebo kľúčové slovo"
       ],
@@ -13944,7 +13941,7 @@
       "Folders and labels": [
         "Priečinky a štítky"
       ],
-      "Forward and Auto-reply": [
+      "Forward and auto-reply": [
         "Preposlať a automaticky odpovedať"
       ],
       "Forward emails": [
@@ -14133,8 +14130,8 @@
       "PayPal verification failed": [
         "Overenie platby PayPal zlyhalo"
       ],
-      "Personalise your e-mail footer": [
-        "Prispôsobenie pätičky emailu"
+      "Personalize your e-mail footer": [
+        "Prispôsobenie päty emailu"
       ],
       "Phone": [
         "Telefón"
@@ -14363,9 +14360,6 @@
       ],
       "Unlock your mailbox": [
         "Odomknúť vašu poštovú schránku"
-      ],
-      "Unsupported browser": [
-        "Nepodporovaný prehliadač"
       ],
       "Upgrade plan": [
         "Navýšit tarif"

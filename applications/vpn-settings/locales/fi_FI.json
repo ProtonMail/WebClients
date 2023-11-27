@@ -1972,9 +1972,6 @@
       "Name does not match": [
         "Nimi ei täsmää"
       ],
-      "Name on card required": [
-        "Kortissa oleva nimi vaaditaan"
-      ],
       "Not a valid number": [
         "Virheellinen puhelinnumero"
       ],
@@ -2043,9 +2040,6 @@
       ],
       "Tab closed": [
         "Välilehti suljettiin"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Käyttämäsi selain ei mahdollista maksun täydellistä valtuutusta. Käytä eri selainta tai kirjaudu tietokoneella."
       ],
       "The email addresses do not match": [
         "Sähköpostiosoitteet eivät täsmää"
@@ -2129,11 +2123,17 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Sovellus ei ole tällä hetkellä käytettävissä"
+      ],
       "Error: ${ errorMessage }": [
         "Virhe: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Hups, jotain meni pieleen"
+      ],
+      "Open in browser": [
+        "Avaa selaimessa"
       ],
       "Please refresh the page or try again later.": [
         "Päivitä sivu tai yritä myöhemmin uudelleen."
@@ -3066,9 +3066,6 @@
       "for choosing ${ product }": [
         "kun valitsit ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa ja MasterCard: 3 numeroa kortin taustassa. American Express: 4 numeroa kortin edustassa."
-      ],
       "Free forever": [
         "Ikuisesti ilmainen"
       ],
@@ -3527,6 +3524,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Tämä saattaa kestää jonkin aikaa. Älä sulje tätä sivua tai katkaise Internet-yhteyttäsi."
+      ],
+      "This file is too large to preview": [
+        "Tämä tiedosto on liian suuri esikatseltavaksi"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tämä käyttäjä vastaa tällä hetkellä organisaatiosi maksuista. Jos alennat käyttäjän, jäävät organisaatiosi maksut sinun vastuullesi."
@@ -4182,9 +4182,6 @@
       "Expiration (${ patternExpiration })": [
         "Voimassaolon päättymisaika (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Voimassaolo päättyy"
-      ],
       "Expires": [
         "Erääntyy"
       ],
@@ -4226,9 +4223,6 @@
       ],
       "Name and address": [
         "Nimi ja osoite"
-      ],
-      "Name on card": [
-        "Kortissa oleva nimi"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (porttiohjaus)"
@@ -4335,14 +4329,8 @@
       "Reveal password": [
         "Näytä salasana"
       ],
-      "Security code": [
-        "Turvakoodi"
-      ],
       "Security code (${ codeName })": [
         "Turvakoodi (${ codeName })"
-      ],
-      "Select your country": [
-        "Valitse maasi"
       ],
       "Select your plan": [
         "Valitse tilauksesi"
@@ -4837,6 +4825,9 @@
       ],
       "Custom fields": [
         "Mukautetut kentät"
+      ],
+      "Custom snooze time": [
+        "Oma torkutusaika"
       ],
       "Data breach monitoring": [
         "Tietovuotojen seuranta"
@@ -5647,9 +5638,6 @@
       ],
       "Select a reason": [
         "Valitse syy"
-      ],
-      "Thomas Anderson": [
-        "Matti Meikäläinen"
       ]
     },
     "plan customizer, ips": {
@@ -7167,9 +7155,6 @@
       "Unlock your mailbox": [
         "Avaa postilaatikkosi"
       ],
-      "Unsupported browser": [
-        "Selainta ei tueta"
-      ],
       "Upgrade your network protection with dedicated servers": [
         "Paranna verkkosi suojausta kohdistetuilla palvelimilla"
       ],
@@ -7318,6 +7303,11 @@
       ],
       "Primary admin": [
         "Ensisijainen ylläpitäjä"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "Kertakirjautuminen"
       ]
     },
     "Validation": {

@@ -2585,6 +2585,9 @@
       "Something went wrong": [
         "Algo deu errado"
       ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Para usar o ${ MAIL_APP_NAME } ou ${ CALENDAR_APP_NAME } mude para a versão web."
+      ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Não foi possível carregar esta página. Atualize a página ou verifique sua conexão com a Internet."
       ],
@@ -3258,6 +3261,12 @@
         "${ doneUploadsCount } enviado",
         "${ doneUploadsCount } enviados"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } na App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } na Play Store"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } erro",
         "${ errorCount } erros"
@@ -3520,6 +3529,9 @@
       "double your storage": [
         "dobrar seu armazenamento"
       ],
+      "Download ${ name } app": [
+        "Baixe o aplicativo ${ name }"
+      ],
       "Download canceled": [
         "Download cancelado"
       ],
@@ -3546,6 +3558,9 @@
       ],
       "Drop file here to upload": [
         "Solte o arquivo aqui para enviar"
+      ],
+      "Drop files here": [
+        "Solte os arquivos aqui"
       ],
       "Drop to import": [
         "Solte para importar"
@@ -3658,6 +3673,12 @@
       ],
       "from the version history?": [
         "do histórico de versões?"
+      ],
+      "Get the app to backup photos from your phone.": [
+        "Obtenha o aplicativo para fazer backup de fotos do seu dispositivo."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Obtenha o aplicativo de desktop para sincronizar arquivos do seu computador."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Conheça o ${ DRIVE_APP_NAME } e ganhe seu bônus de armazenamento de 500 MB! Tome uma atitude hoje."
@@ -3813,9 +3834,6 @@
       "No email address": [
         "Nenhum endereço de e-mail"
       ],
-      "No files or folders in trash": [
-        "Não há arquivos ou pastas na lixeira"
-      ],
       "No group found": [
         "Nenhum grupo encontrado"
       ],
@@ -3943,6 +3961,9 @@
       ],
       "Queued": [
         "Na fila"
+      ],
+      "Ready to add some photos?": [
+        "Vamos adicionar algumas fotos?"
       ],
       "recommended browser": [
         "navegador recomendado"
@@ -4082,6 +4103,9 @@
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Este navegador não suporta pré-visualização de documentos PDF. Baixe o arquivo."
       ],
+      "This file is too large to preview": [
+        "Este arquivo é muito grande para visualizar"
+      ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Este arquivo pode ter sido excluído, movido ou indisponível. Tente entrar em contato com o proprietário do arquivo."
       ],
@@ -4175,6 +4199,9 @@
       ],
       "Trash": [
         "Lixeira"
+      ],
+      "Trash is empty": [
+        "A lixeira está vazia"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Experimente os novos recursos, atualizações e produtos da ${ BRAND_NAME } antes de serem lançados ao público. Isso recarregará o aplicativo"
@@ -5056,6 +5083,9 @@
       "Custom email domains": [
         "Domínios de e-mail personalizados"
       ],
+      "Custom snooze time": [
+        "Adiamento personalizado"
+      ],
       "Hide-my-email aliases": [
         "Aliases do Hide-my-email"
       ],
@@ -5081,6 +5111,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtenha aliases ilimitados com SimpleLogin da ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Adie mensagens e receba lembretes quando quiser"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }."
@@ -6695,24 +6728,12 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" não é um nome válido"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Nome não pode incluir caracteres invisíveis, / ou \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "O nome deve ter no máximo ${ MAX_NAME_LENGTH } caractere",
         "O nome deve ter no máximo ${ MAX_NAME_LENGTH } caracteres"
       ],
       "Name must not be empty": [
         "O nome não pode estar vazio"
-      ],
-      "Name must not begin with a space": [
-        "O nome não pode terminar com um espaço"
-      ],
-      "Name must not end with a space": [
-        "O nome não pode terminar com um espaço"
       ]
     },
     "Video control": {
