@@ -8,7 +8,7 @@ import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
 import { clientReady } from '@proton/pass/lib/client';
-import { bootIntent, cacheCancel, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
+import { bootIntent, cacheCancel, sessionLockSync, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/get-epoch';
@@ -150,6 +150,8 @@ export const AuthServiceProvider: FC = ({ children }) => {
                 client.current.setStatus(AppStatus.LOCKED);
                 if (broadcast) sw.send({ type: 'locked', localID, broadcast: true });
             },
+
+            onSessionLockCheck: (lock) => store.dispatch(sessionLockSync(lock)),
 
             onSessionRefresh: async (localID, data, broadcast) => {
                 logger.info('[AuthServiceProvider] Session tokens have been refreshed');
