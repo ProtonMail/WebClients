@@ -333,13 +333,13 @@
         "refresca la pàgina"
       ],
       "Remove": [
-        "Suprimeix"
+        "Esborra"
       ],
       "Remove bonuses": [
-        "Suprimeix bonus"
+        "Esborra el bonus"
       ],
       "Remove gift code": [
-        "Esborrar codi regal"
+        "Esborra el codi de regal"
       ],
       "Rename": [
         "Canvia el nom"
@@ -659,10 +659,10 @@
         "Obtingui l’oferta"
       ],
       "Remove": [
-        "Suprimeix"
+        "Esborra"
       ],
       "Remove ${ PASS_APP_NAME }": [
-        "Suprimeix ${ PASS_APP_NAME }"
+        "Esborra ${ PASS_APP_NAME }"
       ]
     },
     "bf2023: Deal details": {
@@ -1912,9 +1912,6 @@
       "Name does not match": [
         "El nom no coincideix"
       ],
-      "Name on card required": [
-        "Nom en targeta requerit"
-      ],
       "Not a valid number": [
         "Número no vàlid"
       ],
@@ -1983,9 +1980,6 @@
       ],
       "Tab closed": [
         "Pestanya tancada"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "El navegador que esteu utilitzant no permet que s'autoritzi completament el pagament. Utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
       ],
       "The email addresses do not match": [
         "Les adreces de correu electrònic no coincideixen."
@@ -2276,10 +2270,10 @@
     },
     "familyOffer_2023:Info for members section": {
       "Add, remove, and make changes to user accounts in your family group.": [
-        "Afegiu, elimineu i realitzeu canvis als comptes d'usuari del grup familiar."
+        "Afegiu, esborreu i realitzeu canvis als comptes d'usuari del grup familiar."
       ],
       "Add, remove, and make changes to user accounts in your organization.": [
-        "Afegiu, elimineu i realitzeu canvis als comptes d'usuari de la vostra organització."
+        "Afegiu, esborreu i realitzeu canvis als comptes d'usuari de la vostra organització."
       ]
     },
     "familyOffer_2023:Label": {
@@ -2298,12 +2292,12 @@
         "Això eliminarà permanentment tots els subusuaris, comptes i dades associades amb la vostra organització."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Això eliminarà totes les característiques prèmium de ${ BRAND_NAME } per a tots els membres de la família."
+        "Això esborrarà totes les característiques prèmium de ${ BRAND_NAME } per a tots els membres de la família."
       ]
     },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } s'ha suprimit de ${ organization.Name }"
+        "${ member.Name } s'ha esborrat de ${ organization.Name }"
       ],
       "An error occurred, please try again": [
         "S'ha produït un error. Intenteu-ho de nou."
@@ -2386,7 +2380,7 @@
         "Afegir clau de seguretat"
       ],
       "Delete key": [
-        "Eliminar clau"
+        "Elimina la clau"
       ]
     },
     "fido2: Error": {
@@ -2411,7 +2405,7 @@
         "Permet les claus de plataforma"
       ],
       "Are you sure you want to delete security key ${ name }?": [
-        "Esteu segur que voleu suprimir la clau de seguretat ${ name }?"
+        "Segur que voleu eliminar la clau de seguretat ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inseriu una clau de seguretat enllaçada al vostre compte ${ BRAND_NAME }."
@@ -2423,7 +2417,7 @@
         "Clau de seguretat"
       ],
       "Security key removed": [
-        "Clau de seguretat suprimida"
+        "La clau de seguretat s'ha esborrat."
       ],
       "Security key updated": [
         "Clau de seguretat actualitzada"
@@ -2451,10 +2445,10 @@
     },
     "fido2: Title": {
       "Delete security key?": [
-        "Eliminar clau de seguretat?"
+        "Voleu eliminar la clau de seguretat?"
       ],
       "Disable 2FA via security key?": [
-        "Desactivar l'A2F amb clau de seguretat?"
+        "Voleu desactivar l'A2F amb clau de seguretat?"
       ],
       "Name your security key": [
         "Anomeneu la vostra clau de seguretat"
@@ -2678,6 +2672,9 @@
         "${ number } servidor",
         "${ number } servidors"
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "S'ha esborrat el pla ${ plan }. L'oferta de paquet no està disponible per a un pla d'un mes."
+      ],
       "${ remainingAddresses.length } more": [
         "${ remainingAddresses.length } més",
         "${ remainingAddresses.length } més"
@@ -2788,7 +2785,7 @@
         "N'estás segur que desitges descartar els teus canvis?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
-        "Esteu segur que voleu suprimir els privilegis d'administració d'aquest usuari?"
+        "Esteu segur que voleu esborrar els privilegis d'administració d'aquest usuari?"
       ],
       "Attention required": [
         "Es requereix la vostra atenció"
@@ -2963,9 +2960,6 @@
       ],
       "for choosing ${ product }": [
         "per escollir ${ product }"
-      ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Per a Visa, MasterCard i Discover, els 3 dígits a la part posterior de la targeta. Per a American Express, els 4 dígits a la part frontal de la targeta."
       ],
       "Free forever": [
         "Gratuït per sempre"
@@ -3360,6 +3354,9 @@
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Aquestes configuracions es proporcionen per treballar amb routers WireGuard i clients oficials."
       ],
+      "They will be removed from your organization": [
+        "S'esborraran de la vostra organització."
+      ],
       "This account has been suspended due to a potential policy violation.": [
         "Aquest compte ha estat suspès a causa d'una possible infracció de les polítiques."
       ],
@@ -3517,7 +3514,7 @@
         "Atenció:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Advertència: l'eliminació és permanent. Això també suprimeix l'accés a tots els serveis connectats i esborra tots els vostres contactes."
+        "Advertència: l'eliminació és permanent. Això també esborra l'accés a tots els serveis connectats i elimina tots els vostres contactes."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Us recomanem utilitzar les aplicacions ${ VPN_APP_NAME } oficials quan sigui possible."
@@ -3598,20 +3595,20 @@
         "Heu iniciat la sessió al compte ${ memberAddress }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Suprimiu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Suprimiu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }."
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Suprimiu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció.",
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Suprimiu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció."
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció.",
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Suprimiu els enllaços de calendari compartits abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Suprimiu els enllaços de calendari compartits abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }."
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Suprimiu els enllaços de calendari compartits abans de cancel·lar la subscripció.",
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Suprimiu els enllaços de calendari compartits abans de cancel·lar la subscripció."
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits abans de cancel·lar la subscripció.",
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits abans de cancel·lar la subscripció."
       ],
       "You can now access and manage the account as an administrator.": [
         "Ara podeu accedir i gestionar el compte com a administrador."
@@ -3632,7 +3629,7 @@
         "Ha d'activar la clau privada de la seva organització amb la contrasenya de la clau de l'organització de suport que li va proporcionar l'administrador de la seva organització."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Heu de desactivar o suprimir qualsevol usuari, adreça o domini personalitzat addicional de ${ MAIL_APP_NAME } abans de passar a un pla inferior."
+        "Heu de desactivar o esborrar qualsevol usuari, adreça o domini personalitzat addicional de ${ MAIL_APP_NAME } abans de passar a un pla inferior."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Per afegir-lo com a mètode de pagament, heu de tenir una targeta de crèdit o un compte bancari enllaçat amb el vostre compte PayPal."
@@ -3973,9 +3970,6 @@
       "Expiration (${ patternExpiration })": [
         "Caducitat (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Data de caducitat"
-      ],
       "Expires": [
         "Expira"
       ],
@@ -4017,9 +4011,6 @@
       ],
       "Name and address": [
         "Nom i adreça"
-      ],
-      "Name on card": [
-        "Nom de la targeta"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (redirecció de ports)"
@@ -4123,14 +4114,8 @@
       "Reveal password": [
         "Mostra la contrasenya"
       ],
-      "Security code": [
-        "Codi de seguretat"
-      ],
       "Security code (${ codeName })": [
         "Codi de seguretat (${ codeName })"
-      ],
-      "Select your country": [
-        "Seleccioni el seu país"
       ],
       "Select your plan": [
         "Seleccioneu el vostre pla"
@@ -4371,7 +4356,7 @@
         "Edita"
       ],
       "Remove": [
-        "Suprimeix"
+        "Esborra"
       ],
       "Revoke sessions": [
         "Revoca les sessions"
@@ -5054,7 +5039,7 @@
         "Opció per a veure les safates d'entrada no privades com ho faria l'usuari, incloent-hi el missatge complet i els detalls de contacte"
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Eina de gestió d'organitzacions que permet als administradors afegir i suprimir usuaris, assignar emmagatzematge, configurar dominis i realitzar altres tasques"
+        "Eina de gestió d'organitzacions que permet als administradors afegir i esborrar usuaris, assignar emmagatzematge, configurar dominis i acomplir altres tasques."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La nostra robusta infraestructura garanteix que podreu accedir al vostre compte quan ho necessiteu"
@@ -5280,16 +5265,16 @@
     },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
-        "${ upgradeLink } el vostre pla per afegir més usuaris o suprimiu alguns comptes d'usuari per alliberar espai."
+        "${ upgradeLink } el vostre pla per afegir més usuaris o esborreu alguns comptes d'usuari per alliberar espai."
       ],
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
-        "${ upgradeLink } per obtenir més comptes o suprimíeu l'accés VPN per alguns usuaris."
+        "${ upgradeLink } per obtenir més comptes o esborreu l'accés VPN per a alguns usuaris."
       ],
       "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
-        "${ upgradeLink } el vostre pla per obtenir més adreces o suprimiu-ne algunes per alliberar espai."
+        "${ upgradeLink } el vostre pla per obtenir més adreces o esborreu-ne algunes per alliberar espai."
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
-        "${ upgradeLink } el vostre pla per obtenir més emmagatzematge o suprimiu una part de l'emmagatzematge per alliberar espai."
+        "${ upgradeLink } el vostre pla per obtenir més emmagatzematge o esborreu una part de l'emmagatzematge per alliberar espai."
       ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "El vostre pla inclou un màxim d'${ availableAddresses } adreça addicional.",
@@ -5393,9 +5378,6 @@
       ],
       "Select a reason": [
         "Seleccioneu un motiu"
-      ],
-      "Thomas Anderson": [
-        "Adrià Pujol"
       ]
     },
     "plan customizer, users": {
@@ -6744,7 +6726,7 @@
         "Recuperació"
       ],
       "Remove user?": [
-        "Voleu suprimir l'usuari?"
+        "Voleu esborrar l'usuari?"
       ],
       "Rename the gateway": [
         "Canvia el nom de la passarel·la"
@@ -6855,9 +6837,6 @@
       ],
       "Unlock your mailbox": [
         "Desbloquegeu la vostra bústia de correu"
-      ],
-      "Unsupported browser": [
-        "Navegador no soportat"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Milloreu la vostra protecció de xarxa amb servidors dedicats"

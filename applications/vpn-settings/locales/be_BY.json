@@ -402,7 +402,7 @@
         "Паглядзець функцыі тарыфнага плана"
       ],
       "Select ${ planTitle }": [
-        "Выберыце ${ planTitle }"
+        "Выбраць ${ planTitle }"
       ],
       "Send code": [
         "Адправіць код"
@@ -742,8 +742,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Эканомце з прапановамі \"Чорнай пятніцы\" на высакахуткасным швейцарскім VPN"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Эканомце з прапановамі \"Кібертыдня\" на высакахуткасным швейцарскім VPN"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Эканомце з прапановамі \"Канец года\" на высакахуткасным швейцарскім VPN"
+      ],
       "Select your Black Friday offer": [
         "Выберыце прапанову \"Чорнай пятніцы\""
+      ],
+      "Select your Cyber Week offer": [
+        "Выберыце прапанову \"Кібертыдзень\""
+      ],
+      "Select your End of Year offer": [
+        "Выберыце прапанову \"Канец года\""
       ]
     },
     "bf2023: info": {
@@ -1988,9 +2000,6 @@
       "Name does not match": [
         "Назва не супадае"
       ],
-      "Name on card required": [
-        "Неабходна ўвесці імя, якое пазначана на картцы"
-      ],
       "Not a valid number": [
         "Несапраўдны нумар"
       ],
@@ -2059,9 +2068,6 @@
       ],
       "Tab closed": [
         "Укладка закрыта"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Ваш браўзер не дазваляе цалкам аўтарызаваць плацеж. Скарыстайцеся іншым браўзерам або ўвайдзіце з камп'ютара."
       ],
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
@@ -3137,9 +3143,6 @@
       ],
       "for choosing ${ product }": [
         "для выбару ${ product }"
-      ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Для Visa, MasterCard і Discover — 3 лічбы на адваротным баку карткі. Для American Express — 4 лічбы на пярэднім баку карткі."
       ],
       "Free forever": [
         "Бясплатна назаўсёды"
@@ -4289,9 +4292,6 @@
       "Expiration (${ patternExpiration })": [
         "Тэрмін дзеяння (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Тэрмін дзеяння"
-      ],
       "Expires": [
         "Дзейнічае да"
       ],
@@ -4333,9 +4333,6 @@
       ],
       "Name and address": [
         "Імя і адрас"
-      ],
-      "Name on card": [
-        "Імя на картцы"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (перанакіраванне партоў)"
@@ -4422,7 +4419,7 @@
         "Паштовы індэкс"
       ],
       "Proration": [
-        "Размеркаванне"
+        "Прапарцыйнае размеркаванне"
       ],
       "Recovery email address": [
         "Адрас электроннай пошты для аднаўлення доступу"
@@ -4442,14 +4439,8 @@
       "Reveal password": [
         "Паказаць пароль"
       ],
-      "Security code": [
-        "Код бяспекі"
-      ],
       "Security code (${ codeName })": [
         "Код бяспекі (${ codeName })"
-      ],
-      "Select your country": [
-        "Выберыце сваю краіну"
       ],
       "Select your plan": [
         "Выберыце тарыфны план"
@@ -5812,9 +5803,6 @@
       ],
       "Select a reason": [
         "Выберыце прычыну"
-      ],
-      "Thomas Anderson": [
-        "Янка Купала"
       ]
     },
     "plan customizer, ips": {
@@ -6652,7 +6640,7 @@
     },
     "Subscription price": {
       "For": [
-        "Для"
+        "За"
       ]
     },
     "Subscription renewal state": {
@@ -6863,7 +6851,7 @@
         "Для сем'яў"
       ],
       "For individuals": [
-        "Для асабістага карыстання"
+        "Асабісты"
       ]
     },
     "TableHeader": {
@@ -7413,9 +7401,6 @@
       ],
       "Unlock your mailbox": [
         "Разблакіруйце вашу паштовую скрыню"
-      ],
-      "Unsupported browser": [
-        "Браўзер не падтрымліваецца"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Палепшыце сваю сеткавую абарону з вылучанымі серверамі"

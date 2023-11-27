@@ -1964,9 +1964,6 @@
       "Name does not match": [
         "이름이 일치하기 않습니다"
       ],
-      "Name on card required": [
-        "카드상의 이름이 필요합니다"
-      ],
       "Not a valid number": [
         "유효하지 않은 번호"
       ],
@@ -2035,9 +2032,6 @@
       ],
       "Tab closed": [
         "탭 닫힘"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "사용 중인 브라우저는 결제 승인을 완전히 허용하지 않습니다. 다른 브라우저를 사용하거나 컴퓨터를 통해 로그인해주세요."
       ],
       "The email addresses do not match": [
         "이메일 주소가 일치하지 않습니다."
@@ -2124,17 +2118,26 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "앱에서는 현재 사용 불가합니다."
+      ],
       "Error: ${ errorMessage }": [
         "오류: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "이런, 문제가 발생했습니다"
       ],
+      "Open in browser": [
+        "브라우저에서 열기"
+      ],
       "Please refresh the page or try again later.": [
         "페이지를 새로고침 하거나 다시 시도하세요."
       ],
       "Something went wrong": [
         "문제가 발생했습니다"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME } 및 ${ CALENDAR_APP_NAME }를 사용하려면, 웹 버전으로 전환하세요."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "이 페이지를 로드할 수 없습니다. 페이지를 새로고침 하거나 인터넷 연결을 확인하세요."
@@ -3039,9 +3042,6 @@
       "for choosing ${ product }": [
         "${ product }을(를) 선택해 주셔서"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa와 MasterCard, 그리고 Discover의 경우 카드 뒷면에 있는 3자리 숫자입니다. American Express의 경우 카드 앞면에 있는 4자리 숫자입니다."
-      ],
       "Free forever": [
         "영구적으로 무료"
       ],
@@ -3497,6 +3497,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "이 작업은 몇 분이 소요될 수 있습니다. 이 페이지를 닫거나 인터넷 연결을 끊지 마세요."
+      ],
+      "This file is too large to preview": [
+        "용량이 너무 커 미리보기를 사용할 수 없는 파일입니다."
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "이 사용자는 현재 조직의 지불에 대한 책임이 있습니다. 이 멤버를 강등하면 귀하가 조직에 대한 지불 책임을 지게 됩니다."
@@ -4142,9 +4145,6 @@
       "Expiration (${ patternExpiration })": [
         "만료일 (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "만료 시간"
-      ],
       "Expires": [
         "만료"
       ],
@@ -4186,9 +4186,6 @@
       ],
       "Name and address": [
         "이름 및 주소"
-      ],
-      "Name on card": [
-        "카드 소유자 이름"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (포트 포워딩)"
@@ -4295,14 +4292,8 @@
       "Reveal password": [
         "비밀번호 표시"
       ],
-      "Security code": [
-        "보안 코드"
-      ],
       "Security code (${ codeName })": [
         "보안 코드 (${ codeName })"
-      ],
-      "Select your country": [
-        "국가 선택"
       ],
       "Select your plan": [
         "플랜을 선택하세요."
@@ -4785,6 +4776,9 @@
       "Custom fields": [
         "사용자 지정 필드"
       ],
+      "Custom snooze time": [
+        "사용자 지정 방해 금지 시간"
+      ],
       "Data breach monitoring": [
         "데이터 유출 모니터링"
       ],
@@ -4999,6 +4993,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "${ BRAND_NAME } 의 SimpleLogin으로 무제한 별칭을 얻으세요"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "원하는 시간대에 메시지를 방해 금지 상태로 전환하고 알림 받을 수 있습니다."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
@@ -5605,9 +5602,6 @@
       ],
       "Select a reason": [
         "사유 선택"
-      ],
-      "Thomas Anderson": [
-        "홍길동"
       ]
     },
     "plan customizer, ips": {
@@ -7089,9 +7083,6 @@
       ],
       "Unlock your mailbox": [
         "메일 확인"
-      ],
-      "Unsupported browser": [
-        "지원되지 않는 브라우저"
       ],
       "Upgrade your network protection with dedicated servers": [
         "전용 서버로 네트워크 보호를 업그레이드하세요"
