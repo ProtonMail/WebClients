@@ -14,9 +14,16 @@ export type TelemetryStorageData = { telemetry: string };
 export type TelemetryEventBundle = { sendTime: number; events: TelemetryEvent[]; retryCount: number };
 export type TelemetryServiceState = { buffer: TelemetryEvent[]; job: MaybeNull<Promise<void>> };
 
+/** Alarm creation is abstracted away behind a simple interface
+ * allowing both extension alarms and standard timeouts to be
+ * used for implementing the telemetry alarm triggers */
 export type TelemetryAlarmHandles = {
+    /**  `when` is a UNIX timestamp in milliseconds.  */
     set: (when: number, onAlarm: () => MaybePromise<void>) => MaybePromise<void>;
+    /** Resets the alarm */
     reset: () => MaybePromise<any>;
+    /** Should return the next scheduled alarm time as a UNIX
+     * timestanp in milliseconds */
     when: () => MaybePromise<Maybe<number>>;
 };
 
