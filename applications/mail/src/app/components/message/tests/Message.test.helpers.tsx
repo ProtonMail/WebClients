@@ -4,9 +4,9 @@ import { findByTestId, fireEvent, waitFor } from '@testing-library/react';
 import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
-import { Breakpoints } from '@proton/components/hooks';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import noop from '@proton/utils/noop';
 
 import * as messageDecrypt from '../../../helpers/message/messageDecrypt';
@@ -37,7 +37,7 @@ export const defaultProps: MessageViewProps = {
     message: { ID: messageID, AddressID: addressID } as Message,
     mailSettings: {} as MailSettings,
     onBack: jest.fn(),
-    breakpoints: {} as Breakpoints,
+    breakpoints: mockDefaultBreakpoints,
     onFocus: noop,
     isComposerOpened: false,
 };
