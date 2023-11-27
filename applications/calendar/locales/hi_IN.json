@@ -33,6 +33,9 @@
       "Add address": [
         "पता जोड़ें"
       ],
+      "Add birthday": [
+        "जन्मदिन जोड़ें"
+      ],
       "Add contact": [
         "संपर्क जोड़ें"
       ],
@@ -47,6 +50,9 @@
       ],
       "Add new group": [
         "नया ग्रुप जोड़ें"
+      ],
+      "Add note": [
+        "नोट जोड़ें"
       ],
       "Add notification": [
         "अधिसूचना जोड़ें"
@@ -144,6 +150,9 @@
       "Copy address": [
         "पता कॉपी करें"
       ],
+      "Copy email address": [
+        "ईमेल पता कॉपी करें"
+      ],
       "Copy email to clipboard": [
         "ईमेल क्लिपबोर्ड पे कॉपी करें"
       ],
@@ -196,6 +205,9 @@
       ],
       "Discard": [
         "रद्द करें"
+      ],
+      "Don't know your password?": [
+        "क्या आप अपना पासवर्ड नहीं जानते?"
       ],
       "Done": [
         "पूरा हुआ"
@@ -287,6 +299,12 @@
       "Import from .csv or vCard": [
         ".csv या vCard से आयात करें"
       ],
+      "Import from Google": [
+        "Google से आयात करे"
+      ],
+      "Import from Outlook": [
+        "Outlook से आयात करे"
+      ],
       "Join calendar": [
         "कैलेंडर में जुड़े"
       ],
@@ -364,6 +382,9 @@
       ],
       "No, thanks": [
         "नहीं, शुक्रिया"
+      ],
+      "Ok": [
+        "ठीक है"
       ],
       "OK": [
         "ठीक है"
@@ -446,6 +467,9 @@
       "Search countries": [
         "देश खोजें"
       ],
+      "See how": [
+        "देखें कैसे"
+      ],
       "See plan features": [
         "प्लान की विशेषताएं देखें"
       ],
@@ -466,6 +490,9 @@
       ],
       "Set recovery phrase": [
         "पुनर्प्राप्ति वाक्यांश सेट करें"
+      ],
+      "Settings": [
+        "सेटिंग"
       ],
       "Share": [
         "शेयर करें"
@@ -624,6 +651,16 @@
         "आपके पास कोई समूह नहीं है।"
       ]
     },
+    "Addon": {
+      "${ ips } server": [
+        "${ ips } सर्वर",
+        "${ ips } सर्वर"
+      ],
+      "${ users } user": [
+        "${ users } यूज़र",
+        "${ users } यूज़र"
+      ]
+    },
     "Alarm notification": {
       "${ title } started at ${ formattedHour }": [
         "${ title } ${ formattedHour } से शुरू हुआ"
@@ -715,6 +752,41 @@
         "वैकल्पिक"
       ]
     },
+    "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } स्टोरेज"
+      ],
+      "1 user": [
+        "1 यूज़र"
+      ],
+      "3 TB": [
+        "3 टीबी"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "65+ देशों में 3,000+ सर्वर"
+      ],
+      "6 users": [
+        "6 यूज़र"
+      ],
+      "Ad-blocker and malware protection": [
+        "ऐड-ब्लॉकर और मालवेयर सुरक्षा"
+      ],
+      "High speed streaming": [
+        "तेज़ स्ट्रीमिंग"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "प्रीमियम ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "प्रीमियम ${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "प्रीमियम पासवर्ड मैनेजर"
+      ]
+    },
     "bf2023: Footer": {
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "आपकी सदस्यता आपके बिलिंग चक्र के अंत में मानक रियायती दर और अवधि पर स्वचालित रूप से नवीनीकृत हो जाएगी"
@@ -723,6 +795,10 @@
     "bf2023: Tooltip": {
       "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 65+ देशों में 3,000+ सर्वर, उच्चतम वीपीएन गति, दुनिया भर में स्ट्रीमिंग सेवाओं तक पहुंच, मैलवेयर और विज्ञापन-अवरोधक, तेज़ बिटटोरेंट डाउनलोड और बहुत कुछ शामिल है।"
+      ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "इसमें 3 कस्टम ईमेल डोमेन, ${ addresses } ईमेल पते, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण और बहुत कुछ के लिए समर्थन शामिल है।",
+        "इसमें 3 कस्टम ईमेल डोमेन, ${ addresses } ईमेल पते, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण और बहुत कुछ के लिए समर्थन शामिल है।"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "अपने ईमेल और शेड्यूल को एंड-टू-एंड एन्क्रिप्शन के साथ सुरक्षित करें। इसमें कस्टम ईमेल डोमेन, 15 ईमेल पते, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण और बहुत कुछ के लिए समर्थन शामिल है।"
@@ -1078,8 +1154,17 @@
       "Birthday": [
         "जन्मदिन"
       ],
+      "Display name": [
+        "डिस्प्ले नाम"
+      ],
       "Email": [
         "ईमेल"
+      ],
+      "Enter a display name or nickname": [
+        "एक डिस्प्ले नाम या उपनाम दर्ज करें"
+      ],
+      "First name": [
+        "पहला नाम"
       ],
       "Gender": [
         "लिंग"
@@ -1089,6 +1174,9 @@
       ],
       "Language": [
         "भाषा"
+      ],
+      "Last name": [
+        "अंतिम नाम"
       ],
       "Logo": [
         "लोगो"
@@ -2270,6 +2358,9 @@
       "Failed to get original occurrence in series": [
         "सीरीज़ से असली घटना लाने में असफल"
       ],
+      "First name is too long": [
+        "पहला नाम बहुत लंबा है"
+      ],
       "Folder name cannot be empty.": [
         "फ़ोल्डर का नाम रिक्त नहीं हो सकता |"
       ],
@@ -2284,6 +2375,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "गलत मेलबॉक्स पासवर्ड। कृपया पुन: प्रयास करें |"
+      ],
+      "Incorrect username": [
+        "गलत यूज़रनेम"
       ],
       "Interval cannot be empty": [
         "अंतराल खाली नहीं हो सकता"
@@ -2500,6 +2594,10 @@
       "You already added this holidays calendar": [
         "आपने ये घुट्टियों का कैलेंडर पहले से जोड़ दिया"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते",
+        "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते"
+      ],
       "You have reached the maximum number of calendars. Some calendars couldn't be imported.": [
         "आप कैलेंडर की ऊपरी सीमा पे पहुंच गए है। कुछ कैलेंडर आयात नहीं किए जा सके।"
       ],
@@ -2687,6 +2785,9 @@
       "Oops, something went wrong": [
         "ओह! कुछ गलत हो गया है"
       ],
+      "Open in browser": [
+        "ब्राउज़र में खोलें"
+      ],
       "Please refresh the page or try again later.": [
         "पन्ना रिफ्रेश करें या वापस कोशिश करें।"
       ],
@@ -2721,6 +2822,11 @@
       "${ numberOfAttendees } participant": [
         "${ numberOfAttendees } प्रतिभागी",
         "${ numberOfAttendees } प्रतिभागी"
+      ]
+    },
+    "Event info in search view; event duration": {
+      "All day": [
+        "पूरे दिन"
       ]
     },
     "Event info. Organizer name": {
@@ -2816,6 +2922,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "प्रीमियम ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "प्रीमियम ${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "6 यूज़र तक"
       ]
@@ -2839,6 +2954,9 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "आपको दिया गया स्टोरेज: ${ assignedStorage }"
       ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Visionary और पारिवारिक योजनाएँ वर्तमान में बाहरी खातों का समर्थन नहीं करती हैं। शामिल होने से पहले एक ${ BRAND_NAME } पता बनाएं। ${ addressSettingsLink }"
+      ],
       "You have successfully joined the Family plan": [
         "आप परिवार प्लान से जुड़ गए है"
       ],
@@ -2852,6 +2970,11 @@
       ],
       "Set up your family account": [
         "अपना परिवार खाता सेट करें"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "इसमें 65+ देशों में 2700 सर्वर, 10 डिवाइस तक कनेक्ट, दुनिया भर में स्ट्रीमिंग सेवाओं तक पहुंच, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
       ]
     },
     "Feedback Modal Title": {
@@ -2890,6 +3013,9 @@
       ],
       "MB": [
         "एमबी"
+      ],
+      "TB": [
+        "टीबी"
       ]
     },
     "file size format, long": {
@@ -2908,6 +3034,10 @@
       "Megabyte": [
         "प्रयुताष्टक",
         "प्रयुताष्टक"
+      ],
+      "Terabyte": [
+        "टेराबाइट",
+        "टेराबाइट"
       ]
     },
     "Filter notification": {
@@ -2918,6 +3048,20 @@
     "Font face option": {
       "System default": [
         "सिस्टम डिफॉल्ट"
+      ]
+    },
+    "Font size option": {
+      "Large": [
+        "बड़ा"
+      ],
+      "Small": [
+        "छोटा"
+      ],
+      "Very large": [
+        "बहुत बड़ा"
+      ],
+      "Very small": [
+        "बहुत छोटा"
       ]
     },
     "Group": {
@@ -3272,6 +3416,13 @@
         "${ contactsCount } संपर्क मिला",
         "${ contactsCount } संपर्क मिले"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } संपर्क",
+        "${ contactsLength } संपर्क"
+      ],
+      "${ firstItems } and ${ lastItem }": [
+        "${ firstItems } और ${ lastItem }"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } समूह मिला",
         "${ groupCounts } समूह मिले"
@@ -3389,6 +3540,9 @@
       "Clear encrypted search data": [
         "एन्क्रिप्ट किया खोज डाटा साफ करें"
       ],
+      "Clearing browser data will clear the search index on this device. All calendar events would need to be re-indexed again to use the search functionality.": [
+        "ब्राउज़र डेटा साफ़ करने से इस डिवाइस पर खोज अनुक्रमणिका साफ़ हो जाएगी। खोज कार्यक्षमता का उपयोग करने के लिए सभी कैलेंडर ईवेंट को फिर से अनुक्रमित करने की आवश्यकता होगी।"
+      ],
       "Clears browser data related to the encrypted search.": [
         "एन्क्रिप्टेड खोज से संबंधित ब्राउज़र डेटा साफ़ करता है।"
       ],
@@ -3446,6 +3600,9 @@
       ],
       "Each code can only be used once": [
         "हर कूटक का उपयोग केवल एक बार हो सकता है"
+      ],
+      "Edit email address": [
+        "ईमेल पता संपादित करें"
       ],
       "Emails are automatically signed": [
         "ईमेल पे अपनेआप साइन होता है"
@@ -3628,6 +3785,9 @@
       ],
       "Please note that this process may take some time depending on the size of your address book.": [
         "कृपया ध्यान दें कि इस प्रक्रिया में आपकी पता पुस्तिका के आकार के आधार पर कुछ समय लग सकता है।"
+      ],
+      "Please provide a name and an email address for creating a group.": [
+        "कृपया ग्रुप बनाने के लिए एक नाम और एक ईमेल पता दें।"
       ],
       "Please remove the duplicates and try again.": [
         "कृपया डुप्लीकेट हटाएं और फिर से कोशिश करें."
@@ -4069,6 +4229,9 @@
       "Bad": [
         "बुरा"
       ],
+      "Beta Access": [
+        "बीटा एक्सेस"
+      ],
       "Browser": [
         "ब्राउज़र"
       ],
@@ -4304,6 +4467,9 @@
       "Postal code": [
         "डाक कोड"
       ],
+      "Primary": [
+        "मुख्य"
+      ],
       "Public keys": [
         "सार्वजनिक चाबियां"
       ],
@@ -4319,6 +4485,9 @@
       "Reveal password": [
         "पासवर्ड प्रकट"
       ],
+      "Secondary time zone": [
+        "दूसरा समय क्षेत्र"
+      ],
       "Show week numbers": [
         "हफ्ता नंबर दिखाएं"
       ],
@@ -4330,6 +4499,9 @@
       ],
       "System information": [
         "प्रणाली की जानकारी"
+      ],
+      "Theme": [
+        "थीम"
       ],
       "Time zone": [
         "समय क्षेत्र"
@@ -4519,6 +4691,9 @@
       ]
     },
     "Modal action": {
+      "Cancel": [
+        "रद्द करें"
+      ],
       "Manage calendars": [
         "कैलेंडर संभाले"
       ],
@@ -4749,6 +4924,9 @@
       ],
       "Up to 15 email addresses": [
         "15 ईमेल पते तक"
+      ],
+      "Up to 3 TB of storage": [
+        "3 टीबी तक स्टोरेज"
       ]
     },
     "new_plans: feature info": {
@@ -5218,9 +5396,66 @@
         "कोई परिणाम नहीं मिला"
       ]
     },
+    "session_recovery:available:action": {
+      "Reset password": [
+        "पासवर्ड रीसेट करें"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } दिन",
+        "${ timeRemaining.inDays } दिन"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } घंटा",
+        "${ timeRemaining.inHours } घंटे"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "देखें कैसे"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "पासवर्ड सहेजा गया"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "अपना पासवर्ड अभी बदलें"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Got it": [
+        "समझ गया"
+      ],
+      "Learn more": [
+        "और जानें"
+      ]
+    },
     "session_recovery:in_progress:info": {
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "यह सुनिश्चित करने के लिए कि वास्तव में आप ही अपना पासवर्ड रीसेट करने का प्रयास कर रहे हैं, हम अनुरोधों को स्वीकृत करने से पहले 72 घंटे तक प्रतीक्षा करते हैं। आप अपना पासवर्ड ${ boldTimeLeft } में बदल सकते हैं। ${ viewRequest }"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "साइन आउट करें"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } घंटा",
+        "${ gracePeriodHoursRemaining } घंटे"
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "आप अपना पासवर्ड ${ boldTimeLeft } में रीसेट कर पाएंगे।"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "पासवर्ड रिसेट करें"
       ]
     },
     "Settings update growler warning": {
@@ -5316,6 +5551,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 यूज़र"
+      ],
       "3 TB": [
         "3 टीबी"
       ],
@@ -5333,6 +5571,9 @@
       ],
       "Highest VPN speed": [
         "सबसे तेज़ वीपीएन रफ्तार"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "प्रीमियम ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } और ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "प्रीमियम जल्दी एक्सेस"
@@ -5356,14 +5597,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } महीना",
+        "${ n } महीने"
+      ],
       "/ month": [
         "/ महीने"
       ],
       "1 year": [
         "1 साल"
       ],
+      "15 months": [
+        "15 महीने"
+      ],
       "2 years": [
         "2 साल"
+      ],
+      "30 months": [
+        "30 महीने"
       ],
       "Billed at ${ amount } for 1 month": [
         "1 महीने के लिए ${ amount } का बिल"
@@ -5613,6 +5864,14 @@
         "फीडबैक भेजा गया"
       ]
     },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "अपने सभी उपकरणों पर सुरक्षित लॉगिन विवरण बनाएं। इसमें असीमित उपनाम, 20 वॉल्ट, एकीकृत 2एफए, क्रेडिट कार्ड ऑटो-फिल और बहुत कुछ शामिल है।"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "इसमें 65+ देशों में 2950+ सर्वर, 10 डिवाइस तक कनेक्ट, दुनिया भर में स्ट्रीमिंग सेवाओं तक पहुंच, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
+      ]
+    },
     "Table header": {
       "Action": [
         "कार्य"
@@ -5654,6 +5913,9 @@
       ],
       "Display name": [
         "प्रदर्शित होने वाला नाम"
+      ],
+      "First name": [
+        "पहला नाम"
       ],
       "Import": [
         "आयात"
@@ -5733,6 +5995,12 @@
       ],
       "Addresses": [
         "पतों"
+      ],
+      "All settings": [
+        "सभी सेटिंग"
+      ],
+      "Birthday": [
+        "जन्मदिन"
       ],
       "Calendar": [
         "कैलेंडर"
@@ -5886,6 +6154,9 @@
       ],
       "Minicalendar": [
         "छोटा-कैलेंडर"
+      ],
+      "Notes": [
+        "नोट"
       ],
       "Open actions dropdown": [
         "खुली कार्रवाई ड्रॉपडाउन"

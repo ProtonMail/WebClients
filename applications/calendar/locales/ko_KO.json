@@ -2876,6 +2876,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "앱에서는 현재 사용 불가합니다."
+      ],
       "Error: ${ errorMessage }": [
         "오류: ${ errorMessage }"
       ],
@@ -2885,11 +2888,17 @@
       "Oops, something went wrong": [
         "이런, 문제가 발생했습니다"
       ],
+      "Open in browser": [
+        "브라우저에서 열기"
+      ],
       "Please refresh the page or try again later.": [
         "페이지를 새로고침 하거나 다시 시도하세요."
       ],
       "Something went wrong": [
         "문제가 발생했습니다"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME } 및 ${ CALENDAR_APP_NAME }를 사용하려면, 웹 버전으로 전환하세요."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "이 페이지를 로드할 수 없습니다. 페이지를 새로고침 하거나 인터넷 연결을 확인하세요."
@@ -5100,6 +5109,9 @@
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
       ],
+      "Custom snooze time": [
+        "사용자 지정 방해 금지 시간"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email 별칭"
       ],
@@ -5125,6 +5137,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "${ BRAND_NAME } 의 SimpleLogin으로 무제한 별칭을 얻으세요"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "원하는 시간대에 메시지를 방해 금지 상태로 전환하고 알림 받을 수 있습니다."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
