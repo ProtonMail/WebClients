@@ -76,6 +76,8 @@ export const getBilledText = (cycle: CYCLE): string | null => {
     }
 };
 
+const bundlePlans = [PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY, PLANS.FAMILY];
+
 const PlanCardView = ({
     above,
     cycle,
@@ -353,10 +355,26 @@ export const UpsellCardSelector = ({
             <div className="mb-6">
                 {relativePrice &&
                     getHasAnyPlusPlan(currentPlan.Name) &&
-                    getBoldFormattedText(
-                        c('pass_signup_2023: Info')
-                            .t`For just **${relativePrice} per month** more, you get access to all of the premium ${BRAND_NAME} services!`
-                    )}
+                    (() => {
+                        if (currentPlan?.Name === PLANS.PASS_PLUS && plan?.Name === PLANS.VPN_PASS_BUNDLE) {
+                            return getBoldFormattedText(
+                                c('pass_signup_2023: Info')
+                                    .t`For just **${relativePrice} per month** more, you get access to ${BRAND_NAME}'s premium VPN service!`
+                            );
+                        }
+                        if (currentPlan?.Name === PLANS.VPN && plan?.Name === PLANS.VPN_PASS_BUNDLE) {
+                            return getBoldFormattedText(
+                                c('pass_signup_2023: Info')
+                                    .t`For just **${relativePrice} per month** more, you get access to ${BRAND_NAME}'s premium password manager!`
+                            );
+                        }
+                        if (bundlePlans.includes(plan?.Name as any)) {
+                            return getBoldFormattedText(
+                                c('pass_signup_2023: Info')
+                                    .t`For just **${relativePrice} per month** more, you get access to all of the premium ${BRAND_NAME} services!`
+                            );
+                        }
+                    })()}
             </div>
             <div className="flex flex-justify-space-between gap-4 on-tablet-flex-column">
                 {(() => {
@@ -464,9 +482,7 @@ export const UpsellCardSelector = ({
                             }}
                             subsection={
                                 <>
-                                    {[PLANS.BUNDLE, PLANS.BUNDLE_PRO, PLANS.NEW_VISIONARY, PLANS.FAMILY].includes(
-                                        plan.Name as any
-                                    ) && (
+                                    {bundlePlans.includes(plan.Name as any) && (
                                         <BundlePlanSubSection
                                             className="mb-4"
                                             vpnServersCountData={vpnServersCountData}
