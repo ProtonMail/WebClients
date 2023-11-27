@@ -60,4 +60,27 @@ describe('useBalanceOverview', () => {
             ],
         });
     });
+
+    describe('when data is empty', () => {
+        const { result } = renderHook(() => useBalanceOverview([], []));
+
+        expect(result.current.totalBalance).toBe(0);
+        expect(result.current.balanceDistributionDoughnutChartData).toStrictEqual({
+            datasets: [
+                {
+                    backgroundColor: [],
+                    borderWidth: 0,
+                    data: [],
+                    label: 'Balance',
+                },
+            ],
+            labels: [],
+        });
+        expect(result.current.balanceEvolutionLineChartData).toStrictEqual({
+            data: [
+                { x: '11/27/2023', y: 0 },
+                { x: '11/27/2023', y: 0 },
+            ],
+        });
+    });
 });

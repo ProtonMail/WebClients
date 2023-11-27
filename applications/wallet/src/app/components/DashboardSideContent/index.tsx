@@ -10,9 +10,10 @@ import { TransactionHistoryOverview } from '../TransactionHistoryOverview';
 
 interface Props {
     transactions: Transaction[];
+    walletId?: string;
 }
 
-export const DashboardSideContent = ({ transactions }: Props) => {
+export const DashboardSideContent = ({ transactions, walletId }: Props) => {
     return (
         <div className="bg-weak py-4 px-6 h-full">
             <div className="flex flex-column flex-align-items-center">
@@ -22,7 +23,12 @@ export const DashboardSideContent = ({ transactions }: Props) => {
                 <Button size="large" className="w-full mt-3">
                     <Icon name="arrow-up" className="mr-2" /> {c('Wallet Dashboard').t`Send`}
                 </Button>
-                <ButtonLike as={Link} to="transfer" size="large" className="w-full mt-3">
+                <ButtonLike
+                    as={Link}
+                    to={walletId ? `/transfer#walletId=${walletId}` : '/transfer'}
+                    size="large"
+                    className="w-full mt-3"
+                >
                     <Icon name="arrow-down" className="mr-2" /> {c('Wallet Dashboard').t`Receive`}
                 </ButtonLike>
                 {/* TODO: connect with swap when ready */}
