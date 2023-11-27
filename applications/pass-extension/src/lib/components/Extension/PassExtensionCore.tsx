@@ -11,12 +11,13 @@ import browser from '@proton/pass/lib/globals/browser';
 import type { OnboardingMessage } from '@proton/pass/types';
 import { type ClientEndpoint, type Maybe, type OtpRequest, WorkerMessageType } from '@proton/pass/types';
 import type { TelemetryEvent } from '@proton/pass/types/data/telemetry';
+import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 import noop from '@proton/utils/noop';
 
-const getDomainImageURL = (domain?: string): Maybe<string> => {
-    if (!domain) return;
+const getDomainImageURL = (url: Maybe<ParsedUrl>): Maybe<string> => {
+    if (!url || url.isUnknownOrReserved) return;
     const basePath = BUILD_TARGET === 'firefox' ? config.API_URL : API_PROXY_KEY;
-    return `${basePath}/core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`;
+    return `${basePath}/core/v4/images/logo?Domain=${url.hostname}&Size=32&Mode=light&MaxScaleUpFactor=4`;
 };
 
 const createOTPGenerator = (endpoint: ClientEndpoint) => (payload: OtpRequest) =>
