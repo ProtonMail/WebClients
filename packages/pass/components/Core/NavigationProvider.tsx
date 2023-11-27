@@ -7,7 +7,7 @@ import type { ItemFilters, Maybe, MaybeNull, SelectedItem } from '@proton/pass/t
 
 import { getItemRoute, getLocalPath, getTrashRoute } from './routing';
 
-type NavigateOptions = { mode?: 'push' | 'replace'; search?: string };
+type NavigateOptions = { mode?: 'push' | 'replace'; search?: string; hash?: string };
 type ItemSelectOptions = NavigateOptions & { view?: 'edit' | 'view'; inTrash?: boolean };
 
 type NavigationContextValue = {
@@ -45,10 +45,11 @@ export const NavigationProvider: FC = ({ children }) => {
     const selectedItem = useRouteMatch<SelectedItem>(getItemRoute(':shareId', ':itemId', matchTrash))?.params;
 
     const navigate = useCallback(
-        (pathname: string, options: NavigateOptions = { mode: 'push' }) =>
-            history[options.mode ?? 'push']({
+        (pathname: string, options: NavigateOptions = { mode: 'replace' }) =>
+            history[options.mode ?? 'replace']({
                 pathname,
                 search: options.search ?? history.location.search,
+                hash: options.hash,
             }),
         []
     );

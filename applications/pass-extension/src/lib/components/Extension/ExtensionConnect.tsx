@@ -1,9 +1,9 @@
 import { createContext, useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
 import { useWorkerStateEvents } from 'proton-pass-extension/lib/hooks/useWorkerStateEvents';
 
-import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { clientReady } from '@proton/pass/lib/client';
 import type { MessageWithSenderFactory } from '@proton/pass/lib/extension/message';
 import { sessionLockIntent, signoutIntent, syncIntent } from '@proton/pass/store/actions';
@@ -55,7 +55,7 @@ export const ExtensionConnect = <T extends ClientEndpoint>({
 }: ExtensionConnectProps<T>) => {
     const dispatch = useDispatch();
     const { tabId } = ExtensionContext.get();
-    const activityProbe = useActivityProbe(messageFactory);
+    const activityProbe = useExtensionActivityProbe();
 
     const [state, setState] = useState<AppState>(INITIAL_WORKER_STATE);
     const wakeupLoading = useSelector(selectRequestInFlight(wakeupRequest({ endpoint, tabId })));
