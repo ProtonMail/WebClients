@@ -2558,6 +2558,9 @@
       "Access denied": [
         "Käyttöoikeutta ei ole"
       ],
+      "App currently unavailable": [
+        "Sovellus ei ole tällä hetkellä käytettävissä"
+      ],
       "Brace yourself till we get the error fixed.": [
         "Varaudu odottaamaan virheen korjausta."
       ],
@@ -2572,6 +2575,9 @@
       ],
       "Oops, something went wrong": [
         "Hups, jotain meni pieleen"
+      ],
+      "Open in browser": [
+        "Avaa selaimessa"
       ],
       "Please refresh the page or try again later.": [
         "Päivitä sivu tai yritä myöhemmin uudelleen."
@@ -3252,6 +3258,12 @@
         "${ doneUploadsCount } tallennettiin",
         "${ doneUploadsCount } tallennettiin"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } App Storessa"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } Play Kaupassa"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } epäonnistui",
         "${ errorCount } epäonnistui"
@@ -3514,6 +3526,9 @@
       "double your storage": [
         "tuplata tallennustilasi"
       ],
+      "Download ${ name } app": [
+        "Lataa ${ name }-sovellus"
+      ],
       "Download canceled": [
         "Lataus peruttiin"
       ],
@@ -3540,6 +3555,9 @@
       ],
       "Drop file here to upload": [
         "Pudota ladattava tiedosto tähän"
+      ],
+      "Drop files here": [
+        "Pudota tiedostoja tähän"
       ],
       "Drop to import": [
         "Tuo pudottamalla"
@@ -3652,6 +3670,12 @@
       ],
       "from the version history?": [
         "versiohistoriasta?"
+      ],
+      "Get the app to backup photos from your phone.": [
+        "Hanki sovellus varmuuskopioidaksesi kuvia puhelimeltasi."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Hanki työpöytäsovellus synkronoidaksesi tiedostoja tietokoneeltasi."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Tutustu ${ DRIVE_APP_NAME }en ja ansaitse 500 Mt tallennustilabonus! Toimi tänään."
@@ -3807,9 +3831,6 @@
       "No email address": [
         "Ei sähköpostiosoitetta"
       ],
-      "No files or folders in trash": [
-        "Roskakorissa ei ole tiedostoja eikä kansioita"
-      ],
       "No group found": [
         "Ryhmää ei löytynyt"
       ],
@@ -3937,6 +3958,9 @@
       ],
       "Queued": [
         "Jonossa"
+      ],
+      "Ready to add some photos?": [
+        "Oletko valmis lisäämään kuvia?"
       ],
       "recommended browser": [
         "suositeltujen selainten"
@@ -4075,6 +4099,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Selain ei tue PDF-tiedostojen esikatselua. Lataa tiedosto."
+      ],
+      "This file is too large to preview": [
+        "Tämä tiedosto on liian suuri esikatseltavaksi"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Tiedosto on saatettu poistaa, siirtää tai poistaa käytettävistä. Ota yhteyttä sen haltijaan."
@@ -5049,6 +5076,9 @@
       ],
       "Custom email domains": [
         "Omat sähköpostiverkkotunnukset"
+      ],
+      "Custom snooze time": [
+        "Oma torkutusaika"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliakset"
@@ -6689,24 +6719,12 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" ei ole kelvollinen nimi"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Nimi ei voi sisältää näkymättömiä, / tai \\ -merkkejä."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Nimi voi sisältää enintään ${ MAX_NAME_LENGTH } merkkiä",
         "Nimi voi sisältää enintään ${ MAX_NAME_LENGTH } merkkiä"
       ],
       "Name must not be empty": [
         "Nimi ei voi olla tyhjä"
-      ],
-      "Name must not begin with a space": [
-        "Nimi ei voi alkaa välilyönnillä"
-      ],
-      "Name must not end with a space": [
-        "Nimi ei voi päättyä välilyöntiin"
       ]
     },
     "Video control": {

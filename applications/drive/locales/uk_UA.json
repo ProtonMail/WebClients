@@ -3778,9 +3778,6 @@
       "No email address": [
         "Немає адреси е-пошти"
       ],
-      "No files or folders in trash": [
-        "Немає файлів чи тек у смітнику"
-      ],
       "No group found": [
         "Групу не знайдено"
       ],
@@ -6552,12 +6549,6 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" хибна назва"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Назва не може містити невидимі символи, / або \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Назва повинна бути до ${ MAX_NAME_LENGTH } символу",
         "Назва повинна бути до ${ MAX_NAME_LENGTH } символів",
@@ -6566,12 +6557,6 @@
       ],
       "Name must not be empty": [
         "Назва не може бути порожня"
-      ],
-      "Name must not begin with a space": [
-        "Назва не повинна починатися пробілом"
-      ],
-      "Name must not end with a space": [
-        "Назва не повинна закінчуватися пробілом"
       ]
     },
     "Video control": {

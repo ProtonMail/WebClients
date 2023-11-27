@@ -488,10 +488,10 @@
         "actualiser la page"
       ],
       "Remove": [
-        "Supprimer"
+        "Retirer"
       ],
       "Remove device": [
-        "Supprimer l'appareil"
+        "Retirer l'appareil"
       ],
       "Remove from this list": [
         "Retirer de cette liste"
@@ -855,7 +855,7 @@
         "Historique des versions plus détaillé"
       ],
       "High speed streaming": [
-        "Streaming ultra rapide"
+        "Streaming ultra-rapide"
       ],
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } version premium"
@@ -2024,7 +2024,7 @@
         "${ eventTitle } a été mis à jour.\n${ eventDetailsText }"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Vous êtes invité(e) à ${ eventTitle }\n${ eventDetailsText }"
+        "Vous êtes invité à ${ eventTitle }\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3447,7 +3447,7 @@
         "Effacer les données de recherche chiffrée"
       ],
       "Clearing browser data will clear the search index on this device. All files would need to be re-indexed again while using the search functionality.": [
-        "Vider les données du navigateur effacera l'index de recherche sur cet appareil. Tous les fichiers devront être à nouveau indexés pendant l'utilisation de la fonctionnalité de recherche."
+        "Effacer les données du navigateur effacera l'index de recherche sur cet appareil. Tous les fichiers devront être à nouveau indexés pendant l'utilisation de la fonctionnalité de recherche."
       ],
       "Clears browser data related to the encrypted search.": [
         "Efface les données du navigateur liées à la recherche chiffrée."
@@ -3750,6 +3750,9 @@
       "Items in the trash will stay here until you delete them permanently": [
         "Les éléments dans le dossier Corbeille y resteront jusqu'à ce que vous les supprimiez définitivement."
       ],
+      "Items moved to the trash will stay here until deleted": [
+        "Les éléments déplacés dans le dossier Corbeille y resteront jusqu'à ce qu'ils soient supprimés."
+      ],
       "It’s easy and secure": [
         "C'est simple et sécurisé"
       ],
@@ -3828,17 +3831,11 @@
       "No": [
         "Non"
       ],
-      "No computers syncing": [
-        "Aucun ordinateur synchronisé"
-      ],
       "No contacts added yet": [
         "Aucun contact n'a encore été ajouté."
       ],
       "No email address": [
         "Aucune adresse e-mail"
-      ],
-      "No files or folders in trash": [
-        "Il n'y a aucun fichier ou dossier dans le dossier Corbeille."
       ],
       "No group found": [
         "Aucun groupe n'a été trouvé."
@@ -4140,11 +4137,11 @@
         "Ce mois-ci"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Cela supprimera le lien et l'accès à votre fichier ou dossier pour toute personne ayant le lien.",
-        "Cela supprimera les liens et l'accès à vos fichiers ou dossiers pour toute personne ayant les liens."
+        "Cela supprimera le lien et retirera l'accès à votre fichier ou dossier pour toute personne ayant le lien.",
+        "Cela supprimera les liens et retirera l'accès à vos fichiers ou dossiers pour toute personne ayant les liens."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "L'appareil synchronisé ${ deviceName } sera supprimé de ${ DRIVE_APP_NAME } et les fichiers qui ont été ajoutés à Ordinateurs ne seront plus synchronisés."
+        "L'appareil synchronisé ${ deviceName } sera retiré de ${ DRIVE_APP_NAME } et les fichiers qui ont été ajoutés à Ordinateurs ne seront plus synchronisés."
       ],
       "This will replace the existing file with the folder": [
         "Cela remplacera le fichier existant par le dossier."
@@ -4209,6 +4206,9 @@
       "Trash": [
         "Corbeille"
       ],
+      "Trash is empty": [
+        "Le dossier Corbeille est vide."
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Testez les nouveaux produits, mises à jour et fonctionnalités de ${ BRAND_NAME } avant qu'ils ne soient accessibles au public. Cela rechargera l'application."
       ],
@@ -4256,6 +4256,9 @@
       ],
       "Version is restored": [
         "La version est restaurée."
+      ],
+      "Want to sync files faster?": [
+        "Vous voulez synchroniser vos fichiers plus rapidement ?"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Bien joué, vous venez de doubler votre espace de stockage gratuit !"
@@ -4945,10 +4948,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Pour ajouter un nouveau calendrier, supprimez d'abord un calendrier existant."
+        "Pour ajouter un nouveau calendrier, retirez d'abord un calendrier existant."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Pour ajouter un nouveau calendrier, vous devez d'abord supprimer un calendrier existant ou faire évoluer votre abonnement ${ BRAND_NAME } vers un abonnement payant ${ MAIL_SHORT_APP_NAME }."
+        "Pour ajouter un nouveau calendrier, vous devez d'abord retirer un calendrier existant ou faire évoluer votre abonnement ${ BRAND_NAME } vers un abonnement payant ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Vous avez atteint le nombre maximum de calendriers prévus dans votre abonnement."
@@ -5090,7 +5093,7 @@
         "Domaines de messagerie personnalisés"
       ],
       "Custom snooze time": [
-        "Personnalisation des périodes de mise en attente"
+        "Périodes de mise en attente personnalisées"
       ],
       "Hide-my-email aliases": [
         "Alias « hide-my-email »"
@@ -5241,13 +5244,13 @@
         "Le groupe de contacts a été mis à jour."
       ],
       "Device failed to be removed": [
-        "L'appareil n'a pas pu être supprimé."
+        "L'appareil n'a pas pu être retiré."
       ],
       "Device failed to be renamed": [
         "L'appareil n'a pas pu être renommé."
       ],
       "Device removed": [
-        "L'appareil a été supprimé."
+        "L'appareil a été retiré."
       ],
       "Device renamed": [
         "L'appareil a été renommé."
@@ -6491,7 +6494,7 @@
         "Récupérer les données"
       ],
       "Remove device?": [
-        "Supprimer l'appareil ?"
+        "Retirer l'appareil ?"
       ],
       "Rename a file": [
         "Renommer un fichier"
@@ -6734,24 +6737,12 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "« ${ str } » n'est pas un nom valide."
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Le nom ne peut pas inclure de caractères invisibles, / ou \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Le nom doit être composé d'${ MAX_NAME_LENGTH } caractère au maximum.",
         "Le nom doit être composé de ${ MAX_NAME_LENGTH } caractères au maximum."
       ],
       "Name must not be empty": [
         "Le nom ne doit pas être vide."
-      ],
-      "Name must not begin with a space": [
-        "Le nom ne doit pas commencer par un espace."
-      ],
-      "Name must not end with a space": [
-        "Le nom ne doit pas se terminer par un espace."
       ]
     },
     "Video control": {
