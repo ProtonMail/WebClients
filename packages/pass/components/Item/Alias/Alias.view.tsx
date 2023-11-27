@@ -54,7 +54,7 @@ export const AliasView: VFC<ItemViewProps<'alias'>> = ({ vault, revision, ...ite
     const createLoginFromAlias = (evt: MouseEvent) => {
         evt.stopPropagation();
         evt.preventDefault();
-        history.push(`/item/new/login?username=${aliasEmail}`);
+        history.replace(`/item/new/login?username=${aliasEmail}`);
     };
 
     useEffect(() => {
