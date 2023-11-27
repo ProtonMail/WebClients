@@ -20,10 +20,10 @@ const VerifySection = ({ domain }) => {
                  * ${domainName}: Domain "name" in bold
                  * ${boldTxt}: text "TXT" in bold
                  * ${kbLink}: Link redirecting the user to the related knowledge base article
-                 * full sentence for reference: "For security reasons, we need to verify that you are the owner of ${domainName}. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find and example and some helpful tips here."
+                 * full sentence for reference: "For security reasons, we need to verify that you are the owner of ${domainName}. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips here."
                  */}
                 {c('Info for domain modal')
-                    .jt`For security reasons, we need to verify that you are the owner of ${domainName}. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find and example and some helpful tips ${kbLink}.`}
+                    .jt`For security reasons, we need to verify that you are the owner of ${domainName}. Please add the following TXT record in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${kbLink}.`}
             </Alert>
             <Alert className="mb-4" type="warning">
                 {c('Warning for domain modal')

@@ -29,7 +29,7 @@ const SPFSection = () => {
                 <Href href={getBlogURL('/what-is-sender-policy-framework-spf')}>{c('Link').t`Learn more`}</Href>
             </Alert>
             <Label>{c('Label')
-                .t`Please add the following TXT record. Note, DNS records can take several hours to update.`}</Label>
+                .t`Please add the following TXT record. Note: DNS records can take several hours to update.`}</Label>
             <Table responsive="cards" className="mt-4">
                 <TableHeader
                     cells={[
@@ -49,12 +49,7 @@ const SPFSection = () => {
                             <code key="txt">TXT</code>,
                             <code key="at">@</code>,
                             <div className="flex flex-nowrap items-center" key="value">
-                                <Copy
-                                    size="small"
-                                    onCopy={handleCopy}
-                                    className="shrink-0 mr-2"
-                                    value={valueToCopy}
-                                />{' '}
+                                <Copy size="small" onCopy={handleCopy} className="shrink-0 mr-2" value={valueToCopy} />{' '}
                                 <code className="text-ellipsis lh-rg" title={valueToCopy}>
                                     {valueToCopy}
                                 </code>
