@@ -25,6 +25,7 @@ import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { MAIL_PAGE_SIZE, SHOW_MOVED, VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
@@ -53,7 +54,7 @@ import {
     setSortInUrl,
     sortFromUrl,
 } from '../../helpers/mailboxUrl';
-import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
+import { useMarkAs } from '../../hooks/actions/useMarkAs';
 import { usePermanentDelete } from '../../hooks/actions/usePermanentDelete';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useApplyEncryptedSearch } from '../../hooks/mailbox/useApplyEncryptedSearch';

@@ -1,89 +1,65 @@
-import * as reactRedux from 'react-redux';
+import { act } from '@testing-library/react-hooks';
 
-import { act, renderHook } from '@testing-library/react-hooks';
+import { useFlag } from '@proton/components/containers/unleash';
 
-import { useFlag } from '@proton/components/containers';
+import { addToCache, minimalCache } from 'proton-mail/helpers/test/cache';
+import { renderHook } from 'proton-mail/helpers/test/render';
+import { elementsSliceActions } from 'proton-mail/logic/elements/elementsSlice';
+import { store } from 'proton-mail/logic/store';
 
 import useSnooze from './useSnooze';
 
 jest.mock('@proton/components/containers/unleash');
 
-jest.mock('react-redux', () => ({
-    ...jest.requireActual('react-redux'),
-    useSelector: jest.fn(),
-}));
-
-jest.mock('@proton/components/hooks', () => ({
-    useUser: () => [{ hasPaidMail: false }, jest.fn],
-}));
-
-jest.mock('@proton/components/hooks', () => ({
-    useEventManager: () => ({ call: jest.fn(), stop: jest.fn(), start: jest.fn() }),
-    useNotifications: () => ({ createNotification: jest.fn() }),
-    useApi: () => jest.fn(),
-}));
-
-jest.mock('../optimistic/useOptimisticApplyLabels', () => ({
-    useOptimisticApplyLabels: () => jest.fn(),
-}));
-
-jest.mock('../../logic/store', () => ({
-    useAppDispatch: () => jest.fn(),
-}));
-
 describe('useSnooze', () => {
-    const useSelectorMock = reactRedux.useSelector as jest.Mock;
     const mockedUseFlag = useFlag as jest.Mock;
-    beforeEach(() => {
-        useSelectorMock.mockReturnValue({ labelID: '0', conversationMode: true });
+    beforeEach(async () => {
         mockedUseFlag.mockReturnValue(true);
+        minimalCache();
+        addToCache('User', { hasPaidMail: false });
     });
 
-    afterEach(() => {
-        useSelectorMock.mockClear();
-    });
+    it('canSnooze should be true when in inbox and conversation mode', async () => {
+        store.dispatch(elementsSliceActions.updateStateParams({ labelID: '0', conversationMode: true }));
 
-    it('canSnooze should be true when in inbox and conversation mode', () => {
-        useSelectorMock.mockReturnValue({ labelID: '0', conversationMode: true });
-
-        const { result } = renderHook(() => useSnooze());
+        const { result } = await renderHook(() => useSnooze());
         expect(result.current.canSnooze).toEqual(true);
         expect(result.current.isSnoozeEnabled).toEqual(true);
     });
 
-    it('canSnooze should be false when in inbox and not conversation mode', () => {
-        useSelectorMock.mockReturnValue({ labelID: '0', conversationMode: false });
+    it('canSnooze should be false when in inbox and not conversation mode', async () => {
+        store.dispatch(elementsSliceActions.updateStateParams({ labelID: '0', conversationMode: false }));
 
-        const { result } = renderHook(() => useSnooze());
+        const { result } = await renderHook(() => useSnooze());
         expect(result.current.canSnooze).toEqual(false);
         expect(result.current.isSnoozeEnabled).toEqual(true);
     });
 
-    it('canUnsnooze should be true when in snooze and conversation mode', () => {
-        useSelectorMock.mockReturnValue({ labelID: '16', conversationMode: true });
+    it('canUnsnooze should be true when in snooze and conversation mode', async () => {
+        store.dispatch(elementsSliceActions.updateStateParams({ labelID: '16', conversationMode: true }));
 
-        const { result } = renderHook(() => useSnooze());
+        const { result } = await renderHook(() => useSnooze());
         expect(result.current.canUnsnooze).toEqual(true);
         expect(result.current.isSnoozeEnabled).toEqual(true);
     });
 
-    it('canUnsnooze should be false when in snooze and not conversation mode', () => {
-        useSelectorMock.mockReturnValue({ labelID: '16', conversationMode: false });
+    it('canUnsnooze should be false when in snooze and not conversation mode', async () => {
+        store.dispatch(elementsSliceActions.updateStateParams({ labelID: '16', conversationMode: false }));
 
-        const { result } = renderHook(() => useSnooze());
+        const { result } = await renderHook(() => useSnooze());
         expect(result.current.canUnsnooze).toEqual(false);
         expect(result.current.isSnoozeEnabled).toEqual(true);
     });
 
-    it('isSnoozeEnabled should be false when flag is off', () => {
+    it('isSnoozeEnabled should be false when flag is off', async () => {
         mockedUseFlag.mockReturnValue(false);
 
-        const { result } = renderHook(() => useSnooze());
+        const { result } = await renderHook(() => useSnooze());
         expect(result.current.isSnoozeEnabled).toEqual(false);
     });
 
-    it('should update snooze state after custom click and close', () => {
-        const { result } = renderHook(() => useSnooze());
+    it('should update snooze state after custom click and close', async () => {
+        const { result } = await renderHook(() => useSnooze());
         expect(result.current.snoozeState).toEqual('snooze-selection');
 
         act(() => {

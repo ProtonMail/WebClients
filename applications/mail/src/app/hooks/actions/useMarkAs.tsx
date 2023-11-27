@@ -6,6 +6,7 @@ import { useApi, useEventManager, useNotifications } from '@proton/components';
 import { markConversationsAsRead, markConversationsAsUnread } from '@proton/shared/lib/api/conversations';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
 import { markMessageAsRead, markMessageAsUnread } from '@proton/shared/lib/api/messages';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import UndoActionNotification from '../../components/notifications/UndoActionNotification';
 import { SUCCESS_NOTIFICATION_EXPIRATION } from '../../constants';
@@ -15,11 +16,6 @@ import { isElementReminded } from '../../logic/snoozehelpers';
 import { useAppDispatch } from '../../logic/store';
 import { Element } from '../../models/element';
 import { useOptimisticMarkAs } from '../optimistic/useOptimisticMarkAs';
-
-export enum MARK_AS_STATUS {
-    READ = 'read',
-    UNREAD = 'unread',
-}
 
 const getNotificationTextMarked = (isMessage: boolean, elementsCount: number, status: MARK_AS_STATUS) => {
     if (isMessage) {
