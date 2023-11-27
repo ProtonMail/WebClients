@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
 import { serverTime } from '@proton/crypto';
+import { TelemetryIcsSurgery, TelemetryMeasurementGroups, TelemetryReport } from '@proton/shared/lib/api/telemetry';
+import { sendMultipleTelemetryReports } from '@proton/shared/lib/helpers/metrics';
 import isTruthy from '@proton/utils/isTruthy';
 import truncate from '@proton/utils/truncate';
 import unique from '@proton/utils/unique';
@@ -42,6 +44,37 @@ import {
     getPropertyTzid,
 } from '../vcalHelper';
 import { ImportFileError } from './ImportFileError';
+
+/**
+ * Send telemetry event if we got some fails during import process, so that we know how common errors are, and which error users are facing
+ */
+export const sendImportErrorTelemetryReport = async (api: Api, importErrors: ImportEventError[]) => {
+    if (importErrors.length === 0) {
+        return;
+    }
+
+    const reports: TelemetryReport[] = importErrors.map((error) => {
+        const dimensions: SimpleMap<string> = {
+            reason: IMPORT_EVENT_ERROR_TYPE[error.type],
+            prodId: error.prodId || '',
+            domain: error.domain || '',
+        };
+
+        const report: TelemetryReport = {
+            measurementGroup: TelemetryMeasurementGroups.calendarIcsSurgery,
+            event: TelemetryIcsSurgery.import,
+            dimensions,
+        };
+
+        return report;
+    });
+
+    void sendMultipleTelemetryReports({
+        api: api,
+        reports,
+        // todo check if we need to make it silent
+    });
+};
 
 export const parseIcs = async (ics: File) => {
     const filename = ics.name;
@@ -144,34 +177,62 @@ export const extractSupportedEvent = async ({
     const componentId = getComponentIdentifier(vcalComponentWithMaybeErrors, formatOptions);
     const isInvitation = method !== ICAL_METHOD.PUBLISH;
     if (getIsVcalErrorComponent(vcalComponentWithMaybeErrors)) {
-        throw new ImportEventError(
-            IMPORT_EVENT_ERROR_TYPE.EXTERNAL_ERROR,
-            '',
+        throw new ImportEventError({
+            errorType: IMPORT_EVENT_ERROR_TYPE.EXTERNAL_ERROR,
+            component: '',
             componentId,
-            vcalComponentWithMaybeErrors.error
-        );
+            externalError: vcalComponentWithMaybeErrors.error,
+        });
     }
     if (getIsTodoComponent(vcalComponentWithMaybeErrors)) {
-        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.TODO_FORMAT, 'vtodo', componentId);
+        throw new ImportEventError({
+            errorType: IMPORT_EVENT_ERROR_TYPE.TODO_FORMAT,
+            component: 'vtodo',
+            componentId,
+        });
     }
     if (getIsJournalComponent(vcalComponentWithMaybeErrors)) {
-        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.JOURNAL_FORMAT, 'vjournal', componentId);
+        throw new ImportEventError({
+            errorType: IMPORT_EVENT_ERROR_TYPE.JOURNAL_FORMAT,
+            component: 'vjournal',
+            componentId,
+        });
     }
     if (getIsFreebusyComponent(vcalComponentWithMaybeErrors)) {
-        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.FREEBUSY_FORMAT, 'vfreebusy', componentId);
+        throw new ImportEventError({
+            errorType: IMPORT_EVENT_ERROR_TYPE.FREEBUSY_FORMAT,
+            component: 'vfreebusy',
+            componentId,
+        });
     }
     if (getIsTimezoneComponent(vcalComponentWithMaybeErrors)) {
         if (!getSupportedTimezone(vcalComponentWithMaybeErrors.tzid.value)) {
-            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.TIMEZONE_FORMAT, 'vtimezone', componentId);
+            throw new ImportEventError({
+                errorType: IMPORT_EVENT_ERROR_TYPE.TIMEZONE_FORMAT,
+                component: 'vtimezone',
+                componentId,
+            });
         }
-        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE, 'vtimezone', componentId);
+        throw new ImportEventError({
+            errorType: IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE,
+            component: 'vtimezone',
+            componentId,
+        });
     }
     if (!getIsEventComponent(vcalComponentWithMaybeErrors)) {
-        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.WRONG_FORMAT, 'vunknown', componentId);
+        throw new ImportEventError({
+            errorType: IMPORT_EVENT_ERROR_TYPE.WRONG_FORMAT,
+            component: 'vunknown',
+            componentId,
+        });
     }
     const vcalComponent = getVeventWithoutErrors(vcalComponentWithMaybeErrors);
     if (!getHasDtStart(vcalComponent)) {
-        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTSTART_MISSING, 'vevent', componentId);
+        throw new ImportEventError({
+            errorType: IMPORT_EVENT_ERROR_TYPE.DTSTART_MISSING,
+            component: 'vevent',
+            componentId,
+        });
     }
     const validVevent = withSupportedDtstamp(vcalComponent, +serverTime());
     const generateHashUid = !validVevent.uid?.value || isInvitation;
@@ -213,7 +274,13 @@ export const getSupportedEvents = async ({
     canImportEventColor?: boolean;
 }) => {
     if (calscale?.toLowerCase() !== 'gregorian') {
-        return [new ImportEventError(IMPORT_EVENT_ERROR_TYPE.NON_GREGORIAN, 'vcalendar', '')];
+        return [
+            new ImportEventError({
+                errorType: IMPORT_EVENT_ERROR_TYPE.NON_GREGORIAN,
+                component: 'vcalendar',
+                componentId: '',
+            }),
+        ];
     }
     const hasXWrTimezone = !!xWrTimezone;
     const calendarTzid = xWrTimezone ? getSupportedTimezone(xWrTimezone) : undefined;
@@ -232,14 +299,11 @@ export const getSupportedEvents = async ({
                 });
                 return supportedEvent;
             } catch (e: any) {
-                if (e instanceof ImportEventError && e.type === IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE) {
-                    return;
-                }
-
                 return e;
             }
         })
     );
+
     return supportedEvents.filter(isTruthy);
 };
 
@@ -361,11 +425,19 @@ export const getSupportedEventsWithRecurrenceId = async ({
         const componentId = getComponentIdentifier(event);
         const parentEvent = mapParentEvents[uid];
         if (!parentEvent) {
-            return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.PARENT_EVENT_MISSING, 'vevent', componentId);
+            return new ImportEventError({
+                errorType: IMPORT_EVENT_ERROR_TYPE.PARENT_EVENT_MISSING,
+                component: 'vevent',
+                componentId,
+            });
         }
         const parentComponent = parentEvent.vcalComponent;
         if (!parentComponent.rrule) {
-            return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.SINGLE_EDIT_UNSUPPORTED, 'vevent', componentId);
+            return new ImportEventError({
+                errorType: IMPORT_EVENT_ERROR_TYPE.SINGLE_EDIT_UNSUPPORTED,
+                component: 'vevent',
+                componentId,
+            });
         }
         const recurrenceId = event['recurrence-id'];
         try {
@@ -382,7 +454,11 @@ export const getSupportedEventsWithRecurrenceId = async ({
             if (e instanceof ImportEventError) {
                 return e;
             }
-            return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.VALIDATION_ERROR, 'vevent', componentId);
+            return new ImportEventError({
+                errorType: IMPORT_EVENT_ERROR_TYPE.VALIDATION_ERROR,
+                component: 'vevent',
+                componentId,
+            });
         }
     });
 };
