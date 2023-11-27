@@ -12,7 +12,7 @@ const ThemeSvg = ({ size = 'medium-wide', colors, className }: Props) => {
         small: { width: 50, height: 32 },
         'medium-wide': { width: 106, height: 44 },
         medium: { width: 106, height: 66 },
-        large: { width: 122, height: 78 },
+        large: { width: 122, height: 57 },
     }[size];
 
     return (
