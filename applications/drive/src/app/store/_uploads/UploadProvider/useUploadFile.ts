@@ -18,7 +18,7 @@ import {
 } from '@proton/shared/lib/interfaces/drive/file';
 import { encryptName, generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 
-import { TransferCancel } from '../../../components/TransferManager/transfer';
+import { TransferCancel, TransferSkipped } from '../../../components/TransferManager/transfer';
 import useQueuedFunction from '../../../hooks/util/useQueuedFunction';
 import { logError } from '../../../utils/errorHandling';
 import { ValidationError } from '../../../utils/errorHandling/ValidationError';
@@ -64,7 +64,7 @@ export default function useUploadFile() {
     const { getLinkPrivateKey, getLinkSessionKey, getLinkHashKey } = useLink();
     const { trashLinks, deleteChildrenLinks } = useLinksActions();
     const { getShareCreatorKeys } = useShare();
-    const { findAvailableName, getLinkByName } = useUploadHelper();
+    const { findAvailableName, getLinkByName, findDuplicateContentHash } = useUploadHelper();
     const driveEventManager = useDriveEventManager();
     const volumeState = useVolumesState();
 
@@ -256,21 +256,30 @@ export default function useUploadFile() {
         const createFileRevision = queuedFunction(
             'create_file_revision',
             async (abortSignal: AbortSignal, mimeType: string, keys: FileKeys): Promise<FileRevision> => {
-                if (isForPhotos) {
-                    const parentHashKey = await getLinkHashKey(abortSignal, shareId, parentId);
-                    if (!parentHashKey) {
-                        throw Error('Missing hash key on folder link');
-                    }
-                    const hash = await generateLookupHash(file.name, parentHashKey);
-
-                    return createFile(abortSignal, file.name, mimeType, hash, keys);
+                const volumeId = volumeState.findVolumeId(shareId);
+                if (!volumeId) {
+                    throw new Error('Trying to find missing volume');
                 }
                 const {
                     filename: newName,
                     hash,
                     draftLinkId,
                     clientUid,
-                } = await findAvailableName(abortSignal, shareId, parentId, file.name);
+                    isDuplicatePhotos = false,
+                }: {
+                    filename: string;
+                    hash: string;
+                    clientUid?: string;
+                    draftLinkId?: string;
+                    isDuplicatePhotos?: boolean;
+                } = isForPhotos
+                    ? await findDuplicateContentHash(abortSignal, {
+                          file,
+                          volumeId,
+                          shareId,
+                          parentLinkId: parentId,
+                      })
+                    : await findAvailableName(abortSignal, { shareId, parentLinkId: parentId, filename: file.name });
 
                 checkSignal(abortSignal, file.name);
                 // Automatically replace file - previous draft was uploaded
@@ -284,8 +293,13 @@ export default function useUploadFile() {
                     return replaceDraft(abortSignal, newName, mimeType, hash, keys, draftLinkId, clientUid);
                 }
 
-                // TODO: Remove isForPhotos when we will implement Photos conflict check
-                if (file.name === newName || isForPhotos) {
+                if (isDuplicatePhotos) {
+                    throw new TransferSkipped({
+                        message: c('Info').t`This media already exist in your library`,
+                    });
+                }
+
+                if (file.name === newName) {
                     return createFile(abortSignal, file.name, mimeType, hash, keys);
                 }
                 const link = await getLinkByName(abortSignal, shareId, parentId, file.name);
