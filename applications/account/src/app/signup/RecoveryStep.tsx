@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import {
-    Checkbox,
     InputFieldTwo,
     PhoneInput,
     Prompt,
@@ -67,8 +66,6 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
     const [loadingDiscard, withLoadingDiscard] = useLoading();
     const [recoveryPhone, setRecoveryPhone] = useState(defaultPhone || '');
     const [recoveryEmail, setRecoveryEmail] = useState(defaultEmail || '');
-    const [savePhone, setSavePhone] = useState(!!defaultPhone);
-    const [saveEmail, setSaveEmail] = useState(!!defaultEmail);
     const [confirmModal, setConfirmModal, renderConfirmModal] = useModalState();
     const inputRecoveryPhoneRef = useRef<HTMLInputElement>(null);
     const inputRecoveryEmailRef = useRef<HTMLInputElement>(null);
@@ -82,8 +79,8 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
         });
     }, []);
 
-    const phoneValidations = savePhone ? [requiredValidator(recoveryPhone)] : [];
-    const emailValidations = saveEmail ? [requiredValidator(recoveryEmail), emailValidator(recoveryEmail)] : [];
+    const phoneValidations = recoveryPhone ? [requiredValidator(recoveryPhone)] : [];
+    const emailValidations = recoveryEmail ? [requiredValidator(recoveryEmail), emailValidator(recoveryEmail)] : [];
 
     const handleSubmit = async () => {
         if (loading) {
@@ -99,22 +96,22 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
             return;
         }
 
-        if (!saveEmail && !savePhone) {
+        if (!recoveryPhone && !recoveryEmail) {
             setConfirmModal(true);
             return;
         }
 
-        if (saveEmail) {
+        if (recoveryEmail) {
             await api(validateEmail(recoveryEmail));
         }
 
-        if (savePhone) {
+        if (recoveryPhone) {
             await api(validatePhone(recoveryPhone));
         }
 
         return onSubmit({
-            recoveryPhone: savePhone ? recoveryPhone : undefined,
-            recoveryEmail: saveEmail ? recoveryEmail : undefined,
+            recoveryPhone: recoveryPhone ?? undefined,
+            recoveryEmail: recoveryEmail ?? undefined,
         });
     };
     return (
@@ -144,31 +141,12 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                     noValidate
                 >
                     <div className="flex mb-2">
-                        <div className="flex-item-noshrink">
-                            <Checkbox
-                                id="save-phone"
-                                checked={savePhone}
-                                onChange={
-                                    loading
-                                        ? noop
-                                        : () => {
-                                              const newValue = !savePhone;
-                                              setSavePhone(newValue);
-                                              if (newValue) {
-                                                  inputRecoveryPhoneRef.current?.focus();
-                                              }
-                                          }
-                                }
-                            >
-                                <span className="sr-only">{c('Label').t`Use a recovery phone number`}</span>
-                            </Checkbox>
-                        </div>
                         <div className="flex-item-fluid pl-2 mt-0.5">
                             <InputFieldTwo
                                 as={PhoneInput}
                                 id="recovery-phone"
                                 bigger
-                                label={c('Label').t`Recovery phone number`}
+                                label={c('Label').t`Phone number`}
                                 error={validator(phoneValidations)}
                                 disableChange={loading}
                                 autoFocus
@@ -176,7 +154,6 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                                 value={recoveryPhone}
                                 onChange={(value: string) => {
                                     setRecoveryPhone(value);
-                                    setSavePhone(!!value);
                                 }}
                                 ref={inputRecoveryPhoneRef}
                             />
@@ -184,30 +161,11 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                     </div>
 
                     <div className="flex">
-                        <div className="flex-item-noshrink">
-                            <Checkbox
-                                id="save-email"
-                                checked={saveEmail}
-                                onChange={
-                                    loading
-                                        ? noop
-                                        : () => {
-                                              const newValue = !saveEmail;
-                                              setSaveEmail(newValue);
-                                              if (newValue) {
-                                                  inputRecoveryEmailRef.current?.focus();
-                                              }
-                                          }
-                                }
-                            >
-                                <span className="sr-only">{c('Label').t`Use a recovery email address`}</span>
-                            </Checkbox>
-                        </div>
                         <div className="flex-item-fluid pl-2 mt-0.5">
                             <InputFieldTwo
                                 id="recovery-email"
                                 bigger
-                                label={c('Label').t`Recovery email address`}
+                                label={c('Label').t`Email address`}
                                 error={validator(emailValidations)}
                                 autoFocus
                                 disableChange={loading}
@@ -215,7 +173,6 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                                 value={recoveryEmail}
                                 onValue={(value: string) => {
                                     setRecoveryEmail(value);
-                                    setSaveEmail(!!value);
                                 }}
                                 ref={inputRecoveryEmailRef}
                             />

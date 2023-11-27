@@ -1,4 +1,4 @@
-import { isValidElement, useState } from 'react';
+import { ReactNode, isValidElement, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,7 +10,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import range from '@proton/utils/range';
 
-import { ModalTwoContent as ModalContent, ModalTwo, StepDot, StepDots, useSettingsLink } from '../../components';
+import { ModalTwoContent as ModalContent, ModalSize, ModalTwo, StepDot, StepDots } from '../../components';
 import { useApi, useOrganization, useSubscription, useUser, useUserSettings, useWelcomeFlags } from '../../hooks';
 import { useTheme } from '../themes/ThemeProvider';
 import OnboardingDiscoverApps from './OnboardingDiscoverApps';
@@ -22,23 +22,40 @@ import { OnboardingStepProps, OnboardingStepRenderCallback } from './interface';
 import './OnboardingModal.scss';
 
 interface Props {
+    maxContentHeight?: string;
+    size?: ModalSize;
     onClose?: () => void;
     onExit?: () => void;
     onDone?: () => void;
-    children?: ((props: OnboardingStepRenderCallback) => JSX.Element)[];
+    children?: ((props: OnboardingStepRenderCallback) => ReactNode)[];
+    hideDiscoverApps?: boolean;
     showGenericSteps?: boolean;
+    extraProductStep?: ((props: OnboardingStepRenderCallback) => ReactNode)[];
 }
 
-const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props) => {
+const OnboardingModal = ({
+    children,
+    size = 'small',
+    hideDiscoverApps = false,
+    showGenericSteps,
+    onDone,
+    maxContentHeight,
+    extraProductStep,
+    ...rest
+}: Props) => {
     const [user] = useUser();
     const [userSettings] = useUserSettings();
-    const goToSettings = useSettingsLink();
     const [organization, loadingOrganization] = useOrganization();
     const [subscription, loadingSubscription] = useSubscription();
     const theme = useTheme();
-    const onboardingThemesSelection = [ThemeTypes.Duotone, ThemeTypes.Snow, ThemeTypes.Carbon, ThemeTypes.Monokai].map(
-        (id) => PROTON_THEMES_MAP[id]
-    );
+    const onboardingThemesSelection = [
+        ThemeTypes.Duotone,
+        ThemeTypes.Carbon,
+        ThemeTypes.Monokai,
+        ThemeTypes.Snow,
+        ThemeTypes.ContrastLight,
+        ThemeTypes.Classic,
+    ].map((id) => PROTON_THEMES_MAP[id]);
     const api = useApi();
     const [welcomeFlags] = useWelcomeFlags();
     let isLastStep = false;
@@ -81,26 +98,13 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
 
     const setupOrganizationStep = (
         <OnboardingStep>
-            <OnboardingSetupOrganization />
+            <OnboardingSetupOrganization maxContentHeight={maxContentHeight} handleNext={handleNext} />
             <footer>
-                <div className="flex flex-nowrap mb-4">
-                    <Button size="large" color="weak" className="mr-4" fullWidth onClick={handleBack}>{c('Action')
-                        .t`Back`}</Button>
-                    <Button
-                        size="large"
-                        color="norm"
-                        fullWidth
-                        onClick={() => {
-                            goToSettings('/multi-user-support', undefined, true);
-                            handleNext();
-                        }}
-                    >
-                        {c('Action').t`Start setup`}
+                <footer className="flex flex-nowrap">
+                    <Button size="large" fullWidth onClick={handleNext}>
+                        {c('Action').t`Skip`}
                     </Button>
-                </div>
-                <Button size="large" color="norm" shape="ghost" className="mb-4" fullWidth onClick={handleNext}>{c(
-                    'Action'
-                ).t`Skip`}</Button>
+                </footer>
             </footer>
         </OnboardingStep>
     );
@@ -108,14 +112,13 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
     const themesStep = (
         <OnboardingStep>
             <OnboardingThemes
+                maxContentHeight={maxContentHeight}
                 themeIdentifier={theme.information.theme}
                 themes={onboardingThemesSelection}
                 onChange={handleThemeChange}
             />
             <footer className="flex flex-nowrap">
-                <Button size="large" color="weak" className="mr-4" fullWidth onClick={handleBack}>{c('Action')
-                    .t`Back`}</Button>
-                <Button size="large" color="norm" fullWidth onClick={handleNext}>
+                <Button size="large" fullWidth onClick={handleNext}>
                     {c('Action').t`Next`}
                 </Button>
             </footer>
@@ -124,7 +127,7 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
 
     const discoverAppsStep = (
         <OnboardingStep>
-            <OnboardingDiscoverApps />
+            <OnboardingDiscoverApps maxContentHeight={maxContentHeight} />
             <footer className="flex flex-nowrap">
                 <Button size="large" className="mr-4" fullWidth onClick={handleBack}>{c('Action').t`Back`}</Button>
                 <Button size="large" color="norm" fullWidth onClick={handleNext}>
@@ -136,7 +139,9 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
 
     const displayGenericSteps = welcomeFlags?.hasGenericWelcomeStep || showGenericSteps;
     const genericSteps = displayGenericSteps
-        ? [canSetupOrganization && setupOrganizationStep, themesStep, discoverAppsStep].filter(isTruthy)
+        ? [themesStep, canSetupOrganization && setupOrganizationStep, !hideDiscoverApps && discoverAppsStep].filter(
+              isTruthy
+          )
         : [];
 
     const productSteps = children
@@ -152,7 +157,20 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
               .filter((x) => x !== null)
         : [];
 
-    const steps = [...productSteps, ...genericSteps];
+    const extraSteps = extraProductStep
+        ? (Array.isArray(extraProductStep) ? extraProductStep : [extraProductStep])
+              .map(
+                  (renderCallback) =>
+                      renderCallback?.({
+                          onNext: handleNext,
+                          onBack: handleBack,
+                          displayGenericSteps,
+                      }) ?? null
+              )
+              .filter((x) => x !== null)
+        : [];
+
+    const steps = [...productSteps, ...genericSteps, ...extraSteps];
     isLastStep = steps.length - 1 === step;
     const childStep = steps[step];
     const hasDots = steps.length > 1 && step < steps.length;
@@ -166,7 +184,7 @@ const OnboardingModal = ({ children, showGenericSteps, onDone, ...rest }: Props)
     }
 
     return (
-        <ModalTwo {...rest} size="small" className="onboarding-modal">
+        <ModalTwo {...rest} size={size} className="onboarding-modal">
             <ModalContent className="m-8">
                 {childStep}
                 {hasDots ? (

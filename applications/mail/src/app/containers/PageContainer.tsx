@@ -10,6 +10,7 @@ import {
     useModalState,
     useOpenDrawerOnLoad,
     useUserSettings,
+    useWelcomeFlags,
 } from '@proton/components';
 import { UserSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
@@ -17,7 +18,6 @@ import { Label } from '@proton/shared/lib/interfaces/Label';
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import PrivateLayout from '../components/layout/PrivateLayout';
-import MailOnboardingWrapper from '../components/onboarding/MailOnboardingWrapper';
 import { LabelActionsContextProvider } from '../components/sidebar/EditLabelContext';
 import { HUMAN_TO_LABEL_IDS } from '../constants';
 import { MailUrlParams } from '../helpers/mailboxUrl';
@@ -30,6 +30,7 @@ import { usePageHotkeys } from '../hooks/mailbox/usePageHotkeys';
 import { useDeepMemo } from '../hooks/useDeepMemo';
 import { Breakpoints } from '../models/utils';
 import LegacyMessagesMigrationContainer from './LegacyMessagesMigrationContainer';
+import MailStartupModals from './MailStartupModals';
 import MailboxContainer from './mailbox/MailboxContainer';
 
 interface Props {
@@ -41,6 +42,7 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
     const [userSettings] = useUserSettings();
     const mailSettings = useMailModel('MailSettings');
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
+    const [welcomeFlags] = useWelcomeFlags();
 
     useOpenDrawerOnLoad();
     const { getFeature } = useFeatures([FeatureCode.LegacyMessageMigrationEnabled]);
@@ -66,9 +68,11 @@ const PageContainer = ({ params: { elementID, labelID, messageID }, breakpoints 
         return <Redirect to="/inbox" />;
     }
 
+    const onboardingOpen = !welcomeFlags.isDone;
+
     return (
         <PrivateLayout ref={ref} labelID={labelID} elementID={elementID} breakpoints={breakpoints}>
-            <MailOnboardingWrapper />
+            <MailStartupModals onboardingOpen={onboardingOpen} />
             {runLegacyMessageMigration && <LegacyMessagesMigrationContainer />}
             <LabelActionsContextProvider>
                 <MailboxContainer

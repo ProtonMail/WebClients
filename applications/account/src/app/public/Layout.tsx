@@ -26,12 +26,14 @@ export interface Props {
     hasWelcome?: boolean;
     headerClassName?: string;
     stepper?: ReactNode;
+    centeredContent?: boolean;
 }
 
-const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerClassName }: Props) => {
+const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerClassName, centeredContent }: Props) => {
     const { APP_VERSION, APP_NAME } = useConfig();
     const appVersion = getAppVersion(APP_VERSION);
     const version = appVersion; // only to avoid duplicate strings for L10N
+
     const protonLogoBrand = <ProtonLogo variant="full" className={clsx(onBack && 'ml-4 md:ml-0')} />; // for the future: color="invert" will change color to white
 
     return (
@@ -71,8 +73,13 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
                     )}
                 </div>
             </header>
-            <div className="sign-layout-container p-0 sm:px-6 flex flex-nowrap flex-column flex-justify-space-between">
-                <main>
+            <div
+                className={clsx(
+                    'sign-layout-container p-0 sm:px-6 flex flex-nowrap flex-column flex-justify-space-between',
+                    centeredContent && 'absolute h-full w-full'
+                )}
+            >
+                <main className={clsx(centeredContent && 'flex flex-item-centered-vert')}>
                     {children}
                     {hasDecoration && (
                         <div className="flex-item-noshrink text-center px-4 pt-0 pb-0 sm:px-5 sm:pt-8 sm:pb-0">
@@ -93,7 +100,7 @@ const Layout = ({ children, stepper, hasDecoration, bottomRight, onBack, headerC
                     >{c('Info').jt`Version ${version}`}</p>
                 </>
             ) : (
-                <footer className="pt-0 md:pt-7" />
+                <footer className={clsx('pt-0', centeredContent ? 'md:pt-0' : 'md:pt-7')} />
             )}
         </div>
     );
