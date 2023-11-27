@@ -24,10 +24,7 @@ const REPORT_TITLE = 'Pass extension bug report';
 
 const validate = ({ description }: FormValues): FormikErrors<FormValues> => {
     const errors: FormikErrors<FormValues> = {};
-
-    if (isEmptyString(description)) {
-        errors.description = c('Warning').t`A description of the problem is required`;
-    }
+    if (isEmptyString(description)) errors.description = c('Warning').t`A description of the problem is required`;
 
     return errors;
 };
@@ -83,6 +80,7 @@ export const ReportAProblem: VFC = () => {
 
                     <Button
                         className="mt-4 w-full"
+                        pill
                         color="norm"
                         disabled={!form.isValid}
                         loading={reportBug.loading}
