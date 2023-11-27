@@ -34,7 +34,7 @@ import {
     useSubscription,
     useUser,
 } from '../../hooks';
-import { SettingsParagraph, SettingsSectionWide, UpgradeBanner } from '../account';
+import { SettingsParagraph, SettingsSection, SettingsSectionWide, UpgradeBanner } from '../account';
 import AuthModal from '../password/AuthModal';
 import OrganizationNameModal from './OrganizationNameModal';
 import SetupOrganizationModal from './SetupOrganizationModal';
@@ -209,16 +209,16 @@ const OrganizationSection = ({ app, organization, onSetupOrganization }: Props) 
     const inputLabel = isPartOfFamily ? c('familyOffer_2023:Label').t`Family name` : c('Label').t`Organization name`;
 
     return (
-        <>
+        <SettingsSection>
             <SettingsParagraph>
                 {c('Info').t`The name will be visible to your users while they are signed in.`}
             </SettingsParagraph>
             <Row>
                 <Label htmlFor="organization-name-edit-button">{inputLabel}</Label>
-                <Field className="pt-2">
+                <Field className="pt-2 mb-2 md:mb-0">
                     <div className="text-bold text-ellipsis">{organizationName}</div>
                 </Field>
-                <div className="ml-0 md:ml-4">
+                <div className="ml-0 md:ml-auto flex-item-noshrink">
                     <Button
                         id="organization-name-edit-button"
                         color="norm"
@@ -233,7 +233,7 @@ const OrganizationSection = ({ app, organization, onSetupOrganization }: Props) 
                     ).t`Invite member to your family`}</Button>
                 </Row>
             )}
-        </>
+        </SettingsSection>
     );
 };
 
