@@ -98,7 +98,7 @@ const useFutureTimeDate = ({ defaultDate, maxDaysAllowed, maxDateErrorMessage }:
         // In this case, we need to update the time to the next available time
         const newTime = set(selectedDate, { hours: getHours(time), minutes: getMinutes(time) });
         const nextAvailableTime = getMinScheduleTime(newTime);
-        if (isToday(selectedDate) && isBefore(newTime, new Date()) && nextAvailableTime) {
+        if (isToday(selectedDate) && isBefore(selectedDate, new Date()) && nextAvailableTime) {
             setTime(nextAvailableTime);
         }
 
