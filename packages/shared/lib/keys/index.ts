@@ -25,5 +25,6 @@ export * from './resetKeys';
 export * from './userKeys';
 export * from './missingKeysMemberProcess';
 export * from './missingKeysSelfProcess';
+export * from './updateActiveKeys';
 export { getInternalKeys } from './keySource';
 export { getExternalKeys } from './keySource';
