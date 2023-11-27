@@ -1,8 +1,15 @@
+import { Sha1 } from '@openpgp/asmcrypto.js/dist_es8/hash/sha1/sha1';
+import { ReadableStream } from 'web-streams-polyfill';
+
+import { arrayToHexString } from '@proton/crypto/lib/utils';
 import { queryCheckAvailableHashes } from '@proton/shared/lib/api/drive/link';
-import { HashCheckResult } from '@proton/shared/lib/interfaces/drive/link';
+import { queryPhotosDuplicates } from '@proton/shared/lib/api/drive/photos';
+import { HashCheckResult, LinkState } from '@proton/shared/lib/interfaces/drive/link';
+import { DuplicatePhotosHash } from '@proton/shared/lib/interfaces/drive/photos';
 import { generateLookupHash } from '@proton/shared/lib/keys/driveKeys';
 import range from '@proton/utils/range';
 
+import { untilStreamEnd } from '../../../utils/stream';
 import { useDebouncedRequest } from '../../_api';
 import { adjustName, splitLinkName, useLink, useLinksListing } from '../../_links';
 import { isClientUidAvailable } from './uploadClientUid';
@@ -16,12 +23,14 @@ export default function useUploadHelper() {
 
     const findAvailableName = async (
         abortSignal: AbortSignal,
-        shareId: string,
-        parentLinkID: string,
-        filename: string,
-        suppressErrors = false
+        {
+            shareId,
+            parentLinkId,
+            filename,
+            suppressErrors = false,
+        }: { shareId: string; parentLinkId: string; filename: string; suppressErrors?: boolean }
     ) => {
-        const parentHashKey = await getLinkHashKey(abortSignal, shareId, parentLinkID);
+        const parentHashKey = await getLinkHashKey(abortSignal, shareId, parentLinkId);
         if (!parentHashKey) {
             throw Error('Missing hash key on folder link');
         }
@@ -55,7 +64,7 @@ export default function useUploadHelper() {
 
             const Hashes = hashesToCheck.map(({ hash }) => hash);
             const { AvailableHashes, PendingHashes } = await debouncedRequest<HashCheckResult>(
-                queryCheckAvailableHashes(shareId, parentLinkID, { Hashes }, suppressErrors),
+                queryCheckAvailableHashes(shareId, parentLinkId, { Hashes }, suppressErrors),
                 abortSignal
             );
 
@@ -93,6 +102,83 @@ export default function useUploadHelper() {
         return findAdjustedName();
     };
 
+    /**
+     * Checks if there is a Photos file with the same Hash and ContentHash
+     */
+    const findDuplicateContentHash = async (
+        abortSignal: AbortSignal,
+        {
+            file,
+            volumeId,
+            shareId,
+            parentLinkId,
+        }: { file: File; volumeId: string; shareId: string; parentLinkId: string }
+    ): Promise<{
+        filename: string;
+        hash: string;
+        draftLinkId?: string;
+        clientUid?: string;
+        isDuplicatePhotos?: boolean;
+    }> => {
+        const parentHashKey = await getLinkHashKey(abortSignal, shareId, parentLinkId);
+        if (!parentHashKey) {
+            throw Error('Missing hash key on folder link');
+        }
+        const hash = await generateLookupHash(file.name, parentHashKey);
+
+        // Force polyfill type for ReadableStream
+        const fileStream = file.stream() as ReadableStream<Uint8Array>;
+        const sha1 = new Sha1();
+        await untilStreamEnd<Uint8Array>(fileStream, async (chunk) => {
+            if (chunk?.buffer) {
+                sha1.process(new Uint8Array(chunk.buffer));
+            }
+        });
+
+        const sha1Hash = sha1.finish().result;
+
+        if (sha1Hash) {
+            const contentHash = await generateLookupHash(arrayToHexString(sha1Hash), parentHashKey);
+            const checkHash = await debouncedRequest<{ DuplicateHashes: DuplicatePhotosHash[] }>(
+                queryPhotosDuplicates(volumeId, {
+                    nameHashes: [hash],
+                }),
+                abortSignal
+            );
+
+            const duplicatePhotoHashDraft = checkHash.DuplicateHashes.find(
+                (duplicatePhotosHash) => duplicatePhotosHash.LinkState === LinkState.DRAFT
+            );
+            if (duplicatePhotoHashDraft) {
+                return {
+                    filename: file.name,
+                    hash,
+                    draftLinkId: duplicatePhotoHashDraft.LinkID,
+                    clientUid: isClientUidAvailable(duplicatePhotoHashDraft.ClientUID)
+                        ? duplicatePhotoHashDraft.ClientUID
+                        : undefined,
+                };
+            }
+
+            const duplicatePhotoHashActive = checkHash.DuplicateHashes.find(
+                (duplicatePhotosHash) =>
+                    duplicatePhotosHash.ContentHash === contentHash &&
+                    duplicatePhotosHash.LinkState === LinkState.ACTIVE
+            );
+            if (duplicatePhotoHashActive) {
+                return {
+                    filename: file.name,
+                    hash,
+                    isDuplicatePhotos: true,
+                };
+            }
+        }
+        return {
+            filename: file.name,
+            hash,
+        };
+    };
+
     const getLinkByName = async (abortSignal: AbortSignal, shareId: string, parentLinkID: string, name: string) => {
         await loadChildren(abortSignal, shareId, parentLinkID);
         const { links } = getCachedChildren(abortSignal, shareId, parentLinkID);
@@ -101,6 +187,7 @@ export default function useUploadHelper() {
 
     return {
         findAvailableName,
+        findDuplicateContentHash,
         getLinkByName,
     };
 }
