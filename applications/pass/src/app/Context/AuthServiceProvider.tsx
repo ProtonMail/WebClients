@@ -3,11 +3,15 @@ import { useHistory, useRouteMatch } from 'react-router-dom';
 
 import { useNotifications } from '@proton/components/hooks';
 import { preserveSearch } from '@proton/pass/components/Core/routing';
+import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
+import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { type AuthService, createAuthService } from '@proton/pass/lib/auth/service';
 import { isValidPersistedSession } from '@proton/pass/lib/auth/session';
+import { clientReady } from '@proton/pass/lib/client';
 import { bootIntent, cacheCancel, stateDestroy, stopEventPolling } from '@proton/pass/store/actions';
 import { AppStatus, type Maybe, SessionLockStatus } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
+import { getEpoch } from '@proton/pass/utils/time/get-epoch';
 import {
     getBasename,
     getLocalIDFromPathname,
@@ -211,6 +215,24 @@ export const AuthServiceProvider: FC = ({ children }) => {
             sw.off('refresh', handleRefresh);
         };
     }, []);
+
+    const probe = useActivityProbe(async () => {
+        if (!authStore.hasSession()) return;
+
+        const registeredLock = authStore.getLockStatus() === SessionLockStatus.REGISTERED;
+        const ttl = authStore.getLockTTL();
+
+        if (clientReady(client.current.state.status) && registeredLock && ttl) {
+            const now = getEpoch();
+            const diff = now - (authStore.getLockLastExtendTime() ?? 0);
+            if (diff > ttl * 0.5) {
+                logger.info('[AuthServiceProvider] Activity probe extending lock time');
+                await authService.checkLock().catch(noop);
+            }
+        }
+    });
+
+    useVisibleEffect((visible) => probe[visible ? 'start' : 'cancel']());
 
     return <AuthServiceContext.Provider value={authService}>{children}</AuthServiceContext.Provider>;
 };
