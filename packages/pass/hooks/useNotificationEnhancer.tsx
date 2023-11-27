@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader';
 import { Icon, InlineLinkButton } from '@proton/components/components';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { Notification } from '@proton/pass/store/actions/with-notification';
 import { NotificationKey } from '@proton/pass/types/worker/notification';
 
@@ -25,9 +26,11 @@ const ReactivateLink: FC<NotificationEnhancerOptions> = ({ onLink }) => {
     );
 };
 
-export const useNotificationEnhancer = (options: NotificationEnhancerOptions) =>
-    useCallback((notification: Notification): Notification => {
-        const reactivateLink = <ReactivateLink {...options} />;
+export const useNotificationEnhancer = () => {
+    const { onLink } = usePassCore();
+
+    return useCallback((notification: Notification): Notification => {
+        const reactivateLink = <ReactivateLink onLink={onLink} />;
 
         switch (notification.key) {
             case NotificationKey.INACTIVE_SHARES: {
@@ -55,3 +58,4 @@ export const useNotificationEnhancer = (options: NotificationEnhancerOptions) =>
                 };
         }
     }, []);
+};
