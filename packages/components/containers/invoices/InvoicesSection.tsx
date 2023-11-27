@@ -104,7 +104,7 @@ const InvoicesSection = () => {
                 <Block className="flex flex-justify-space-between">
                     <div className="flex flex-align-items-center">
                         {user.isPaid ? (
-                            <ButtonGroup className="mr-4">
+                            <ButtonGroup className="mr-4 mb-2">
                                 <Button className={owner === USER ? 'is-selected' : ''} onClick={handleOwner(USER)}>
                                     {c('Action').t`User`}
                                 </Button>
@@ -119,7 +119,7 @@ const InvoicesSection = () => {
                             </ButtonGroup>
                         ) : null}
                         {invoices.length > 0 && (
-                            <Button onClick={() => setInvoiceModalOpen(true)}>{c('Action')
+                            <Button className="mb-2" onClick={() => setInvoiceModalOpen(true)}>{c('Action')
                                 .t`Edit invoice details`}</Button>
                         )}
                     </div>
