@@ -23,7 +23,7 @@ const DMARCSection = () => {
                     .t`Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.`}
                 <br />
                 {c('Info')
-                    .t`DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The "p=' (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the  "p=quarantine" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).`}
+                    .t`DMARC checks if the sender's SPF and DKIM records originate from your domain. This can prevent attackers from using another domain's SPF and DKIM to impersonate your domain. The "p=" (policy) in this record indicates how you want the recipient platforms to handle unauthorized emails. We recommend using the "p=quarantine" policy for most domains. Make sure you add the following TXT record in your DNS console (located on the platform where you purchased the custom domain).`}
                 <br />
                 <Href href={getBlogURL('/what-is-dmarc')}>{c('Link').t`Learn more`}</Href>
             </Alert>
@@ -48,12 +48,7 @@ const DMARCSection = () => {
                             <code key="txt">TXT</code>,
                             <code key="dmarc">_dmarc</code>,
                             <div className="flex flex-nowrap items-center" key="value">
-                                <Copy
-                                    onCopy={handleCopy}
-                                    className="shrink-0 mr-2"
-                                    size="small"
-                                    value={value}
-                                />{' '}
+                                <Copy onCopy={handleCopy} className="shrink-0 mr-2" size="small" value={value} />{' '}
                                 <Input
                                     value={value}
                                     onChange={({ target }) => setValue(target.value)}
@@ -71,14 +66,14 @@ const DMARCSection = () => {
                  * full sentence for reference: "p=quarantine: Asking the recipient platforms to mark the unauthorized emails as spam or quarantine them."
                  */}
                 {c('Info')
-                    .jt`${quarantine}: Asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.`}
+                    .jt`${quarantine}: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.`}
                 <br />
                 {/*
                  * translator:
                  * ${reject}: reject in bold
                  * full sentence for reference: "p=reject: Asking the recipient platforms to reject the unauthorized emails."
                  */}
-                {c('Info').jt`${reject}: Asking the recipient platforms to reject the unauthorized emails.`}
+                {c('Info').jt`${reject}: asking the recipient platforms to reject the unauthorized emails.`}
                 <br />
                 {/*
                  * translator:
@@ -86,7 +81,7 @@ const DMARCSection = () => {
                  * full sentence for reference: "p=none: Do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test."
                  */}
                 {c('Info')
-                    .jt`${none}: Do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.`}
+                    .jt`${none}: do not quarantine or reject unauthorized emails. Usually, people only use this policy to troubleshoot or test.`}
             </Alert>
         </>
     );
