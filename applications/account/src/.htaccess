@@ -14,6 +14,9 @@ RewriteRule ^assets/ - [L]
 
 RewriteRule ^(.*)/$ /$1 [L,R=301]
 
+# Easy switch
+RewriteRule ^oauth/callback /oauth.html [L]
+
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule (.*) $1/index.html [L]
 
