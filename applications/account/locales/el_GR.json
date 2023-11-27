@@ -1405,8 +1405,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Εξοικονομήστε με τις προσφορές της Black Friday σε ένα Ελβετικό VPN υψηλής ταχύτητας"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Εξοικονομήστε με τις προσφορές της Cyber Week σε ένα Ελβετικό VPN υψηλής ταχύτητας"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Εξοικονομήστε με τις προσφορές στο Τέλος του Χρόνου σε ένα Ελβετικό VPN υψηλής ταχύτητας"
+      ],
       "Select your Black Friday offer": [
         "Επιλέξτε την Black Friday προσφορά σας"
+      ],
+      "Select your Cyber Week offer": [
+        "Επιλέξτε την προσφορά σας για το Cyber Week"
+      ],
+      "Select your End of Year offer": [
+        "Επιλέξτε την προσφορά σας για το Τέλος του Χρόνου"
       ]
     },
     "bf2023: info": {
@@ -3717,6 +3729,9 @@
       "Contact signature not verified": [
         "Η υπογραφή επαφής δεν πιστοποιήθηκε"
       ],
+      "Could not save preference": [
+        "Δεν ήταν δυνατή η αποθήκευση της προτίμησης"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγιο",
         "Αποεπιλέξτε τουλάχιστον ${ calendarsToFixCount } ημερολόγια"
@@ -3845,9 +3860,6 @@
       ],
       "Name does not match": [
         "Το όνομα δεν ταιριάζει"
-      ],
-      "Name on card required": [
-        "Απαιτείται το όνομα κατόχου της κάρτας"
       ],
       "Name required": [
         "Απαιτείται όνομα"
@@ -3997,9 +4009,6 @@
       ],
       "The address might be misspelled": [
         "Η διεύθυνση μπορεί να είναι κακογραμμένη"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Το πρόγραμμα περιήγησης που χρησιμοποιείτε δεν επιτρέπει την πλήρη εξουσιοδότηση της πληρωμής. Χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης ή συνδεθείτε μέσω υπολογιστή."
       ],
       "The email addresses do not match": [
         "Οι διευθύνσεις email δεν ταιριάζουν."
@@ -6456,9 +6465,6 @@
       "for choosing ${ product }": [
         "για την επιλογή ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Για visa, MasterCard και Discover, τα 3 ψηφία στο πίσω μέρος της κάρτας σας. Για την American Express, τα 4 ψηφία στο μπροστινό μέρος της κάρτας σας."
-      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Προωθήστε την εισερχόμενη αλληλογραφία από άλλο λογαριασμό στα ασφαλή εισερχόμενά σας ${ MAIL_APP_NAME }."
       ],
@@ -7151,14 +7157,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Επειδή είστε πιστός χρήστης, ο λογαριασμός σας έχει ενεργοποιημένες πρόσθετες λειτουργίες."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Η υποβολή SMTP επιτρέπει σε υπηρεσίες τρίτων ή συσκευές για να στείλουν μηνύματα ηλεκτρονικού ταχυδρομείου ${ MAIL_APP_NAME } για τις προσαρμοσμένες διευθύνσεις τομέα σας. Αυτή η δυνατότητα είναι διαθέσιμη μόνο σε ${ BRAND_NAME } για επιχειρηματικούς χρήστες με προσαρμοσμένους τομείς."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Οι υποβολές SMTP επιτρέπουν σε υπηρεσίες τρίτων μερών ή σε συσκευές να στείλουν ηλεκτρονικό μήνυμα μέσω του ${ MAIL_APP_NAME } για τις διευθύνσεις του δικού σας προσαρμοσμένου τομέα. Για να ζητήσετε πρόσβαση, παρακαλούμε ${ createTicket } περιγράφοντας τις περιπτώσεις που χρησιμοποιείτε, ποιούς προσαρμοσμένους τομείς θέλετε να χρησιμοποιήσετε, και τον αναμενόμενο ωριαίο και ημερήσιο όγκο ηλεκτρονικών μηνυμάτων."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "Οι υποβολές SMTP επιτρέπουν σε υπηρεσίες τρίτων μερών ή σε συσκευές να στείλουν ηλεκτρονικό μήνυμα μέσω του ${ MAIL_APP_NAME } για τις διευθύνσεις του δικού σας προσαρμοσμένου τομέα. Για να χρησιμοποιήσετε αυτό το χαρακτηριστικό, ξεκινήστε δημιουργώντας ένα νέο αδειοδοτικό."
+      ],
+      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "Η υποβολή SMTP επιτρέπει σε υπηρεσίες τρίτων ή συσκευές για να στείλουν μηνύματα ηλεκτρονικού ταχυδρομείου ${ MAIL_APP_NAME } για τις προσαρμοσμένες διευθύνσεις τομέα σας. Αυτή η δυνατότητα είναι διαθέσιμη μόνο σε ${ BRAND_NAME } για επιχειρηματικούς χρήστες με προσαρμοσμένους τομείς."
       ],
       "Some keys successfully reactivated": [
         "Κάποια κλειδιά ενεργοποιήθηκαν εκ νέου επιτυχώς"
@@ -8598,6 +8604,9 @@
       "Conversation grouping": [
         "Ομαδοποίηση συνομιλιών"
       ],
+      "Conversations per page": [
+        "Συνομιλίες ανά σελίδα"
+      ],
       "Copy": [
         "Αντιγραφή"
       ],
@@ -8751,9 +8760,6 @@
       "Expiration (${ patternExpiration })": [
         "Λήξη (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Ημερομηνία λήξης"
-      ],
       "Expires": [
         "Λήγει"
       ],
@@ -8900,9 +8906,6 @@
       ],
       "Name and address": [
         "Όνομα και διεύθυνση"
-      ],
-      "Name on card": [
-        "Όνομα πάνω στην κάρτα"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Προώθηση θυρών)"
@@ -9066,14 +9069,8 @@
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
-      "Security code": [
-        "Κωδικός διασφάλισης"
-      ],
       "Security code (${ codeName })": [
         "Κωδικός ασφαλείας (${ codeName })"
-      ],
-      "Select your country": [
-        "Επιλέξτε τη χώρα σας"
       ],
       "Select your plan": [
         "Επιλέξτε το πλάνο σας"
@@ -11632,9 +11629,6 @@
       "Text": [
         "Κείμενο"
       ],
-      "Thomas Anderson": [
-        "Γιώργος Καραϊσκάκης"
-      ],
       "Type text or keyword": [
         "Πληκτρολόγηση κειμένου ή λέξης-κλειδιού"
       ],
@@ -13595,8 +13589,8 @@
       "Folders and labels": [
         "Φάκελοι και ετικέτες"
       ],
-      "Forward and Auto-reply": [
-        "Προώθηση και Αυτόματη απάντηση"
+      "Forward and auto-reply": [
+        "Προώθηση και αυτόματη απάντηση"
       ],
       "Forward emails": [
         "Προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
@@ -13782,7 +13776,7 @@
       "PayPal verification failed": [
         "Η επαλήθευση PayPal απέτυχε"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "Εξατομίκευση του υποσέλιδου ηλεκτρονικού ταχυδρομείου"
       ],
       "Phone": [
@@ -14008,9 +14002,6 @@
       ],
       "Unlock your mailbox": [
         "Ξεκλειδώστε τη θυρίδα σας"
-      ],
-      "Unsupported browser": [
-        "Μη υποστηριζόμενο πρόγραμμα περιήγησης"
       ],
       "Upgrade plan": [
         "Αναβάθμιση προγράμματος"

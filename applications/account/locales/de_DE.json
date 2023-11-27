@@ -251,6 +251,9 @@
       "Create": [
         "Erstellen"
       ],
+      "Create a link to share with anyone outside ${ BRAND_NAME }": [
+        "Erstelle einen Link, um ihn mit jemandem zu teilen ${ BRAND_NAME }"
+      ],
       "Create account": [
         "Konto erstellen"
       ],
@@ -3843,9 +3846,6 @@
       "Name does not match": [
         "Name stimmt nicht überein"
       ],
-      "Name on card required": [
-        "Karteninhaber erforderlich"
-      ],
       "Name required": [
         "Name erforderlich"
       ],
@@ -3994,9 +3994,6 @@
       ],
       "The address might be misspelled": [
         "Die E-Mail-Adresse könnte falsch geschrieben sein."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Der von dir verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwende einen anderen Browser oder melde dich über einen Computer an."
       ],
       "The email addresses do not match": [
         "Die E-Mail-Adressen stimmen nicht überein"
@@ -6453,9 +6450,6 @@
       "for choosing ${ product }": [
         "dass du dich für ${ product } entschieden hast."
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Bei Visa, MasterCard und Discover: die 3 Ziffern auf der Rückseite deiner Karte. Bei American Express die 4 Ziffern auf der Vorderseite deiner Karte."
-      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Leite ankommende E-Mails eines anderen Kontos in deinen sicheren ${ MAIL_APP_NAME } Posteingang weiter."
       ],
@@ -7148,14 +7142,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Da du ein treuer Benutzer bist, wurden deinem Konto zusätzliche Funktionen hinzugefügt."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Die SMTP-Übermittlung ermöglicht es Drittanbieterdiensten oder Geräten, E-Mails über ${ MAIL_APP_NAME } für deine benutzerdefinierten Domains zu senden. Diese Funktion steht nur ${ BRAND_NAME }-Geschäftskunden mit benutzerdefinierten Domains zur Verfügung."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Die SMTP-Übermittlung ermöglicht es Diensten oder Geräten von Drittanbietern, E-Mails über ${ MAIL_APP_NAME } für deine eigenen Domainadressen zu versenden. Um Zugang zu beantragen, ${ createTicket } und beschreibe bitte deine Anwendungsfälle, die eigenen Domains, die du verwenden möchtest und das erwartete stündliche und tägliche E-Mail-Volumen."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "Die SMTP-Übermittlung ermöglicht es Diensten oder Geräten von Drittanbietern, E-Mails über ${ MAIL_APP_NAME } für deine eigenen Domainadressen zu versenden. Um diese Funktion zu nutzen, erzeuge zunächst ein neues Token."
+      ],
+      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "Die SMTP-Übermittlung ermöglicht es Drittanbieterdiensten oder Geräten, E-Mails über ${ MAIL_APP_NAME } für deine benutzerdefinierten Domains zu senden. Diese Funktion steht nur ${ BRAND_NAME }-Geschäftskunden mit benutzerdefinierten Domains zur Verfügung."
       ],
       "Some keys successfully reactivated": [
         "Einige Schlüssel wurden erfolgreich wiederhergestellt"
@@ -8748,9 +8742,6 @@
       "Expiration (${ patternExpiration })": [
         "Ablaufdatum (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Ablaufdatum"
-      ],
       "Expires": [
         "Gültig bis"
       ],
@@ -8897,9 +8888,6 @@
       ],
       "Name and address": [
         "Name und Adresse"
-      ],
-      "Name on card": [
-        "Karteninhaber"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Port-Weiterleitung)"
@@ -9063,14 +9051,8 @@
       "Reveal password": [
         "Passwort anzeigen"
       ],
-      "Security code": [
-        "Sicherheitscode"
-      ],
       "Security code (${ codeName })": [
         "Sicherheitscode (${ codeName })"
-      ],
-      "Select your country": [
-        "Wähle dein Land"
       ],
       "Select your plan": [
         "Wähle dein Abonnement"
@@ -9625,13 +9607,13 @@
     },
     "Maximum calendar links reached warning": {
       "You can create up to ${ MAX_LINKS_PER_CALENDAR } link per calendar. To create a new link to this calendar, delete one from the list below.": [
-        "Du kannst bis zu ${ MAX_LINKS_PER_CALENDAR } Link pro Kalender erstellen. Um einen neuen Link für diesen Kalender zu erstellen, musst du einen Link aus der untenstehenden Liste löschen.",
+        "Du kannst bis zu ${ MAX_LINKS_PER_CALENDAR } Links pro Kalender erstellen. Um einen neuen Link für diesen Kalender zu erstellen, musst du einen Link aus der untenstehenden Liste löschen.",
         "Du kannst bis zu ${ MAX_LINKS_PER_CALENDAR } Links pro Kalender erstellen. Um einen neuen Link für diesen Kalender zu erstellen, musst du einen Link aus der untenstehenden Liste löschen."
       ]
     },
     "Maximum shared calendar members reached alert": {
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member.": [
-        "Du hast die maximale Anzahl von ${ MAX_CALENDAR_MEMBERS } Mitglied erreicht.",
+        "Du hast die maximale Anzahl von ${ MAX_CALENDAR_MEMBERS } Mitgliedern erreicht.",
         "Du hast die maximale Anzahl von ${ MAX_CALENDAR_MEMBERS } Mitgliedern erreicht."
       ]
     },
@@ -10147,6 +10129,9 @@
       "Custom fields": [
         "Benutzerdefinierte Felder"
       ],
+      "Custom snooze time": [
+        "Eigene stumm Zeit"
+      ],
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
       ],
@@ -10365,6 +10350,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Erhalte unbegrenzte Aliasse mit SimpleLogin von ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Stumme die Nachricht und werde daran erinnert wann du möchtest"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
@@ -11622,9 +11610,6 @@
       ],
       "Text": [
         "Text"
-      ],
-      "Thomas Anderson": [
-        "Max Mustermann"
       ],
       "Type text or keyword": [
         "Text oder Schlüsselwort eingeben"
@@ -13589,8 +13574,8 @@
       "Folders and labels": [
         "Ordner und Kategorien"
       ],
-      "Forward and Auto-reply": [
-        "Weiterleiten und automatische Antworten"
+      "Forward and auto-reply": [
+        "Weiterleiten und automatisch antworten"
       ],
       "Forward emails": [
         "E-Mails weiterleiten"
@@ -13776,7 +13761,7 @@
       "PayPal verification failed": [
         "PayPal-Verifizierung fehlgeschlagen"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "Personalisiere deine E-Mail-Fußzeile"
       ],
       "Phone": [
@@ -13890,6 +13875,9 @@
       "Set organization password": [
         "Passwort der Organisation festlegen"
       ],
+      "Set up a recovery method": [
+        "Wiederherstellungsmethode einrichten"
+      ],
       "Set up forwarding": [
         "Weiterleitung einrichten"
       ],
@@ -13999,9 +13987,6 @@
       ],
       "Unlock your mailbox": [
         "Entsperre dein Postfach"
-      ],
-      "Unsupported browser": [
-        "Nicht unterstützter Browser"
       ],
       "Upgrade plan": [
         "Abonnement upgraden"
