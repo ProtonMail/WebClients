@@ -3750,6 +3750,9 @@
       "Items in the trash will stay here until you delete them permanently": [
         "ჩანაწერები სანაგვე ყუთში მანამდე დარჩება, სანამ ხელით არ წაშლით"
       ],
+      "Items moved to the trash will stay here until deleted": [
+        "ელემენტები, რომლებიც ნაგვის ყუთში გადაიტანეთ, იქ წაშლამდე დარჩება"
+      ],
       "It’s easy and secure": [
         "ეს ადვილია და დაცულია"
       ],
@@ -3828,17 +3831,11 @@
       "No": [
         "არა"
       ],
-      "No computers syncing": [
-        "დასინქრონებული კომპიუტერების გარეშე"
-      ],
       "No contacts added yet": [
         "კონტაქტები ჯერ არ დამატებულა"
       ],
       "No email address": [
         "ელ-ფოსტის მისამართის გარეშე"
-      ],
-      "No files or folders in trash": [
-        "ნაგვის ყუთში ფაილები და საქაღალდეები ნაპოვნი არაა"
       ],
       "No group found": [
         "ჯგუფი ნაპოვნი არაა"
@@ -4209,6 +4206,9 @@
       "Trash": [
         "ნაგვის ყუთი"
       ],
+      "Trash is empty": [
+        "სანაგვე ყუთი ცარიელია"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "სცადეთ ახალი ${ BRAND_NAME }-ის თვისებები, განახლებები და პროდუქტები მანამდე, სანამ ისინი საჯარო გახდება. ეს ქმედება აპლიკაციას თავიდან ჩატვირთავს."
       ],
@@ -4256,6 +4256,9 @@
       ],
       "Version is restored": [
         "ვერსია აღდგენლია"
+      ],
+      "Want to sync files faster?": [
+        "გნებავთ უფრო სწრაფი სინქრონიზაცია?"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "ეს გზა სწორია. თქვენ ახლახანს გაიორმაგეთ უფასო საცავი!"
@@ -6734,24 +6737,12 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "„${ str }“ არასწორი სახელია"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "სახელი არ შეიძლება, შეიცავდეს უჩინარ სიმბოლოებს, / და \\-ს."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "სახელში სიმბოლოების მაქსიმალური რაოდენობაა ${ MAX_NAME_LENGTH }",
         "სახელში სიმბოლოების მაქსიმალური რაოდენობაა ${ MAX_NAME_LENGTH }"
       ],
       "Name must not be empty": [
         "სახელი არ შეიძლება, იყოს ცარიელი"
-      ],
-      "Name must not begin with a space": [
-        "სახელი არ უნდა იწყებოდეს ჰარეთი"
-      ],
-      "Name must not end with a space": [
-        "სახელი არ უნდა მთავრდებოდეს ჰარეთი"
       ]
     },
     "Video control": {

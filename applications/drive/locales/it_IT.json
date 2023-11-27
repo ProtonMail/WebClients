@@ -3750,6 +3750,9 @@
       "Items in the trash will stay here until you delete them permanently": [
         "Gli elementi eliminati rimarranno nel cestino finché non li elimini definitivamente"
       ],
+      "Items moved to the trash will stay here until deleted": [
+        "Gli elementi spostati nel cestino rimarranno qui finché non verranno eliminati"
+      ],
       "It’s easy and secure": [
         "È facile e sicuro"
       ],
@@ -3828,17 +3831,11 @@
       "No": [
         "No"
       ],
-      "No computers syncing": [
-        "Nessun computer sincronizzato"
-      ],
       "No contacts added yet": [
         "Non sono ancora stati aggiunti contatti"
       ],
       "No email address": [
         "Nessun indirizzo email"
-      ],
-      "No files or folders in trash": [
-        "Nessun file o cartella nel cestino"
       ],
       "No group found": [
         "Nessun gruppo trovato"
@@ -4209,6 +4206,9 @@
       "Trash": [
         "Cestino"
       ],
+      "Trash is empty": [
+        "Il cestino è vuoto"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nuove funzionalità, aggiornamenti e prodotti di ${ BRAND_NAME } prima che vengano rilasciati al pubblico. Questo ricaricherà l'applicazione"
       ],
@@ -4256,6 +4256,9 @@
       ],
       "Version is restored": [
         "La versione è stata ripristinata"
+      ],
+      "Want to sync files faster?": [
+        "Vuoi sincronizzare i file più velocemente?"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Ce n'è di strada da percorrere, hai appena raddoppiato il tuo spazio di archiviazione gratuito!"
@@ -6734,24 +6737,12 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" non è un nome valido"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Il nome non può includere caratteri invisibili, / o \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Il nome deve essere lungo al massimo ${ MAX_NAME_LENGTH } carattere",
         "Il nome deve essere lungo al massimo ${ MAX_NAME_LENGTH } caratteri"
       ],
       "Name must not be empty": [
         "Il nome non può essere vuoto"
-      ],
-      "Name must not begin with a space": [
-        "Il nome non deve iniziare con uno spazio"
-      ],
-      "Name must not end with a space": [
-        "Il nome non può finire con uno spazio"
       ]
     },
     "Video control": {

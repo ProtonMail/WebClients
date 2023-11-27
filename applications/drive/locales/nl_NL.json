@@ -3804,9 +3804,6 @@
       "No email address": [
         "Geen e-mailadres"
       ],
-      "No files or folders in trash": [
-        "Geen bestanden of mappen in de prullenbak"
-      ],
       "No group found": [
         "Geen groep gevonden"
       ],
@@ -6683,24 +6680,12 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" is geen geldige naam"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Naam mag niet onzichtbare tekens bevatten, / of \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Naam mag maximaal ${ MAX_NAME_LENGTH } teken lang zijn",
         "Naam mag maximaal ${ MAX_NAME_LENGTH } tekens lang zijn"
       ],
       "Name must not be empty": [
         "Naam mag niet leeg zijn"
-      ],
-      "Name must not begin with a space": [
-        "Naam mag niet beginnen met een spatie"
-      ],
-      "Name must not end with a space": [
-        "Naam mag niet eindigen met een spatie"
       ]
     },
     "Video control": {

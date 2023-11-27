@@ -3745,9 +3745,6 @@
       "No email address": [
         "Nincs e-mail cím"
       ],
-      "No files or folders in trash": [
-        "Nincsenek mappák vagy fájlok a lomtárban"
-      ],
       "No group found": [
         "Nem található csoport"
       ],
@@ -6595,24 +6592,12 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" nem egy érvényes név"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "A név nem tartalmazhat láthatatlan karaktereket, / vagy \\ karaktert."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "A név maximum ${ MAX_NAME_LENGTH } karakter hosszú lehet",
         "A név maximum ${ MAX_NAME_LENGTH } karakter hosszú lehet"
       ],
       "Name must not be empty": [
         "A név nem lehet üres"
-      ],
-      "Name must not begin with a space": [
-        "A név nem kezdődhet szóközzel"
-      ],
-      "Name must not end with a space": [
-        "A név nem végződhet szóközre"
       ]
     },
     "Video control": {
