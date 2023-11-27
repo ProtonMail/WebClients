@@ -85,7 +85,7 @@ const selectItemsWithOptimistic = createSelector(
         )
 );
 
-const selectSortedItemsByType = createSelector(
+const selectSortedItemsByShareId = createSelector(
     [
         selectItemsWithOptimistic,
         (_: State, { trashed }: SelectItemsOptions) => trashed ?? false,
@@ -104,7 +104,7 @@ const selectSortedItemsByType = createSelector(
  * to change more frequently than the shareId / sortOption */
 const itemsSearchResultSelector = createSelector(
     [
-        selectSortedItemsByType,
+        selectSortedItemsByShareId,
         (_state: State, { search }: SelectItemsOptions) => search,
         (_state: State, { type }: SelectItemsOptions) => type,
     ],
