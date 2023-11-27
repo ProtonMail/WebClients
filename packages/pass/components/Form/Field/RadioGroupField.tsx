@@ -30,7 +30,7 @@ const RadioGroup = <T extends RadioValue>({ name, options, value, className, onC
                     onChange={handleChange(option.value)}
                     checked={value === option.value}
                     name={name}
-                    className={clsx(['mr-8', 'mb-2', 'flex', 'inline-flex-vcenter', className])}
+                    className={clsx(['mr-8', 'mb-2', 'flex', className])}
                     disabled={option.disabled}
                 >
                     {option.label}

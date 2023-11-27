@@ -1,0 +1,10 @@
+.vault-icons-grid-container {
+	--layout-gap-x: 1.25rem;
+	--gap-count: calc(var(--column-count) - 1);
+	--total-gap-width: calc(var(--gap-count) * var(--layout-gap-x));
+	--item--max-width: calc((100% - var(--total-gap-width)) / var(--column-count));
+
+	display: grid !important;
+	grid-template-columns: repeat(auto-fill, minmax(max(2.5rem, var(--item--max-width)), 1fr));
+	grid-gap: var(--layout-gap-x) 1rem;
+}
