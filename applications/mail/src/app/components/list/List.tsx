@@ -6,6 +6,7 @@ import { c, msgid } from 'ttag';
 import { useConversationCounts, useItemsDraggable, useMessageCounts } from '@proton/components';
 import { DENSITY } from '@proton/shared/lib/constants';
 import { CHECKLIST_DISPLAY_TYPE, UserSettings } from '@proton/shared/lib/interfaces';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -14,7 +15,6 @@ import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvi
 import { useGetStartedChecklist } from '../../containers/onboardingChecklist/provider/GetStartedChecklistProvider';
 import { isMessage as testIsMessage } from '../../helpers/elements';
 import { isColumnMode } from '../../helpers/mailSettings';
-import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { usePaging } from '../../hooks/usePaging';
 import { PLACEHOLDER_ID_PREFIX, usePlaceholders } from '../../hooks/usePlaceholders';
 import { pageSize as pageSizeSelector } from '../../logic/elements/elementsSelectors';

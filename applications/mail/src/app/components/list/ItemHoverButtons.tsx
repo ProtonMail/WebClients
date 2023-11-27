@@ -6,10 +6,11 @@ import { Button } from '@proton/atoms';
 import { Icon, Tooltip } from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 
 import { isMessage, isStarred as testIsStarred, isUnread as testIsUnread } from '../../helpers/elements';
-import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
+import { useMarkAs } from '../../hooks/actions/useMarkAs';
 import { useMoveToFolder } from '../../hooks/actions/useMoveToFolder';
 import { useStar } from '../../hooks/actions/useStar';
 import { selectSnoozeDropdownState, selectSnoozeElement } from '../../logic/snooze/snoozeSliceSelectors';

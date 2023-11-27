@@ -1,8 +1,8 @@
 import { Ref, memo } from 'react';
 
 import { pick } from '@proton/shared/lib/helpers/object';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { Breakpoints } from '../../models/utils';
 import { Props as ListSettingsProps } from '../list/ListSettings';
 import SelectAll from './SelectAll';

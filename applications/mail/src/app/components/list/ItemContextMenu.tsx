@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { ContextMenu, ContextMenuButton, ContextSeparator, DropdownSizeUnit } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
-import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { useLabelActions } from '../../hooks/useLabelActions';
 import { elementsAreUnread as elementsAreUnreadSelector } from '../../logic/elements/elementsSelectors';
 
