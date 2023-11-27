@@ -1,6 +1,7 @@
 import { RefObject, useCallback, useState } from 'react';
 
-import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import useBlockSender from '../../hooks/useBlockSender';
 import { Element } from '../../models/element';

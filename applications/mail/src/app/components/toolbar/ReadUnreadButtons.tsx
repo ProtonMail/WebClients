@@ -5,10 +5,10 @@ import { c } from 'ttag';
 
 import { Kbd } from '@proton/atoms';
 import { Icon, ToolbarButton } from '@proton/components';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
-import { MARK_AS_STATUS } from '../../hooks/actions/useMarkAs';
 import { elementsAreUnread as elementsAreUnreadSelector } from '../../logic/elements/elementsSelectors';
 
 const { READ, UNREAD } = MARK_AS_STATUS;
