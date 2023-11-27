@@ -1,8 +1,7 @@
 import { type CSSProperties, type VFC, useEffect, useMemo } from 'react';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
-import { safeCall } from '@proton/pass/utils/fp/safe-call';
-import { isValidURL } from '@proton/pass/utils/url/is-valid-url';
+import { parseUrl } from '@proton/pass/utils/url/parser';
 
 export enum ImageStatus {
     LOADING,
@@ -20,7 +19,7 @@ type Props = {
 
 export const ProxiedDomainImage: VFC<Props> = ({ className, status, style = {}, url, onStatusChange }) => {
     const { getDomainImageURL } = usePassCore();
-    const domain = useMemo(() => safeCall(() => new URL(isValidURL(url).url).host)(), [url]);
+    const domain = useMemo(() => parseUrl(url), [url]);
     useEffect(() => onStatusChange(domain ? ImageStatus.LOADING : ImageStatus.ERROR), [domain, onStatusChange]);
     const styles = { visibility: status === ImageStatus.READY ? 'visible' : 'hidden', ...style };
 
