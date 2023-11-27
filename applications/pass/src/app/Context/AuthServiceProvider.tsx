@@ -24,6 +24,7 @@ import noop from '@proton/utils/noop';
 import { api, authStore } from '../../lib/core';
 import { deletePassDB } from '../../lib/database';
 import { onboarding } from '../../lib/onboarding';
+import { telemetry } from '../../lib/telemetry';
 import type { ServiceWorkerMessageHandler } from '../ServiceWorker/ServiceWorkerProvider';
 import { useServiceWorker } from '../ServiceWorker/ServiceWorkerProvider';
 import { store } from '../Store/store';
@@ -114,6 +115,7 @@ export const AuthServiceProvider: FC = ({ children }) => {
 
                 store.dispatch(stateDestroy());
                 onboarding.reset();
+                telemetry.stop();
             },
 
             onForkConsumed: (_, state) => {
