@@ -78,6 +78,23 @@ export const createAddressKeyRouteV2 = (data: CreateAddressKeyPayloadV2) => ({
     data,
 });
 
+interface ActiveAddressKeyPayload {
+    AddressKeyID: string;
+    Active: number;
+}
+
+interface UpdateAddressActiveKeysRoutePayload {
+    AddressID: string;
+    Keys: ActiveAddressKeyPayload[];
+    SignedKeyList: SignedKeyList;
+}
+
+export const updateAddressActiveKeysRoute = (data: UpdateAddressActiveKeysRoutePayload) => ({
+    url: 'core/v4/keys/address/active',
+    method: 'put',
+    data,
+});
+
 interface SetupKeysPayload {
     PrimaryKey: string;
     KeySalt: string;
