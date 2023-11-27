@@ -1916,9 +1916,6 @@
       "Name does not match": [
         "Navn matcher ikke"
       ],
-      "Name on card required": [
-        "Navn på kort kræves"
-      ],
       "Not a valid number": [
         "Ikke et gyldigt nummer"
       ],
@@ -1987,9 +1984,6 @@
       ],
       "Tab closed": [
         "Fane lukket"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Den browser, du bruger, tillader ikke, at betalingen godkendes fuldt ud. Brug venligst en anden browser, eller log ind via en computer."
       ],
       "The email addresses do not match": [
         "E-Mailadresserne stemmer ikke overens"
@@ -2949,9 +2943,6 @@
       "for choosing ${ product }": [
         "for at vælge ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "For Visa, MasterCard og Discover, de 3 cifre på bagsiden af dit kort. For American Express, de 4 cifre på forsiden af dit kort."
-      ],
       "Free forever": [
         "Gratis for evigt"
       ],
@@ -3395,6 +3386,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Disse legitimationsoplysninger kan ikke bruges til at logge ind på vores officielle ${ VPN_APP_NAME } apps. ${ learnMore }"
+      ],
+      "They will be removed from your organization": [
+        "De vil blive fjernet fra din organisation"
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Denne konto er blevet suspenderet på grund af en potentiel overtrædelse af politik."
@@ -4057,9 +4051,6 @@
       "Expiration (${ patternExpiration })": [
         "Udløb (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Udløbsdato"
-      ],
       "Expires": [
         "Udløber"
       ],
@@ -4101,9 +4092,6 @@
       ],
       "Name and address": [
         "Navn og adresse"
-      ],
-      "Name on card": [
-        "Navn på kort"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Videresendelse af port)"
@@ -4210,14 +4198,8 @@
       "Reveal password": [
         "Vis adgangskode"
       ],
-      "Security code": [
-        "Sikkerhedskode"
-      ],
       "Security code (${ codeName })": [
         "Sikkerhedskode (${ codeName })"
-      ],
-      "Select your country": [
-        "Vælg dit land"
       ],
       "Select your plan": [
         "Vælg dit abonnement"
@@ -5387,9 +5369,6 @@
       ],
       "Select a reason": [
         "Vælg en årsag"
-      ],
-      "Thomas Anderson": [
-        "Thomas Andersen"
       ]
     },
     "plan customizer, ips": {
@@ -6856,9 +6835,6 @@
       ],
       "Unlock your mailbox": [
         "Lås din postkasse op"
-      ],
-      "Unsupported browser": [
-        "Ikke understøttet browser"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Opgradér din netværksbeskyttelse med dedikerede servere"

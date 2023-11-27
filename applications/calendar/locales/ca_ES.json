@@ -454,13 +454,13 @@
         "refresca la pàgina"
       ],
       "Remove": [
-        "Suprimeix"
+        "Esborra"
       ],
       "Remove this notification": [
-        "Elimina aquesta notificació"
+        "Esborra aquesta notificació"
       ],
       "Remove this participant": [
-        "Eliminar aquest participant"
+        "Esborra aquest participant"
       ],
       "Report a problem": [
         "Notifica un problema"
@@ -994,7 +994,7 @@
     },
     "Calendar permissions hint": {
       "You can change or remove permissions at any time.": [
-        "Podeu canviar o eliminar permisos en qualsevol moment."
+        "Podeu canviar o esborrar permisos en qualsevol moment."
       ]
     },
     "Calendar permissions label": {
@@ -2586,8 +2586,8 @@
         "La clau principal obtinguda per a l'usuari de ${ BRAND_NAME } no és vàlida per a l'enviament"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Destinatari duplicat eliminat: ${ joinedRecipients }",
-        "Destinataris duplicats eliminats: ${ joinedRecipients }"
+        "Destinatari duplicat esborrat: ${ joinedRecipients }",
+        "Destinataris duplicats esborrats: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
@@ -3648,7 +3648,7 @@
         "(${ memberCount } membres)"
       ],
       "A cancellation email will be sent to removed participants.": [
-        "Tots els participants eliminats rebran un correu electrònic de cancel·lació."
+        "Tots els participants esborrats rebran un correu electrònic de cancel·lació."
       ],
       "A cancellation email will be sent to the event participants. Would you like to delete all events in this series?": [
         "Un correu electrònic serà enviat als participants de l'esdeveniment. Voleu esborrar tots els esdeveniments de la sèrie?"
@@ -3663,10 +3663,10 @@
         "L'accés al compte està restringit a causa de factures impagades. Contacteu amb el vostre administrador."
       ],
       "Added and removed participants will be notified about all the events in this series.": [
-        "Els participants afegits o eliminats seran notificats de tots els esdeveniments d'aquesta sèrie."
+        "Els participants afegits o esborrats seran notificats de tots els esdeveniments d'aquesta sèrie."
       ],
       "Added and removed participants will be notified.": [
-        "Els participants afegits i els suprimits seran notificats."
+        "Els participants afegits i els esborrats seran notificats."
       ],
       "Address Verification with Trusted Keys is enabled for this address. To be able to send to this address, first trust public keys that can be used for sending.": [
         "La verificació d'adreça amb claus de confiança està habilitada per a aquesta adreça. Per tal de poder enviar a aquesta adreça, verifiqueu la confiança en les claus públiques que es poden utilitzar per enviar."
@@ -3842,10 +3842,10 @@
         "Els participants existents i els afegits seran notificats."
       ],
       "Existent and removed participants will be notified.": [
-        "Els participants existents i eliminats seran notificats."
+        "Els participants existents i esborrats seran notificats."
       ],
       "Existent, added and removed participants will be notified.": [
-        "Els participants existents, els afegits i els suprimits seran notificats."
+        "Els participants existents, els afegits i els esborrats seran notificats."
       ],
       "Free up some space or add more storage space.": [
         "Allibereu una mica d’espai o afegiu més espai d’emmagatzematge."
@@ -4005,7 +4005,7 @@
         "Proporcioneu un nom i una adreça de correu electrònic per crear un grup."
       ],
       "Please remove the duplicates and try again.": [
-        "Suprimiu els duplicats i proveu de nou."
+        "Esborreu els duplicats i proveu de nou."
       ],
       "Please select the folders you would like to import:": [
         "Seleccioneu les carpetes que voleu importar:"
@@ -4039,7 +4039,7 @@
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
       "Removed participants will be notified.": [
-        "Els participants suprimits seran notificats."
+        "Els participants esborrats seran notificats."
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccioni el format de correu electronic que vols fer us per defecte quan enviis un correu electronic a aquesta direcció."
@@ -4258,7 +4258,7 @@
         "Perdreu tots els canvis sense desar."
       ],
       "You will update all the events in this series. Added and removed participants will be notified.": [
-        "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants afegits i eliminats seran notificats."
+        "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants afegits i esborrats seran notificats."
       ],
       "You will update all the events in this series. An invitation will be sent to the event participants.": [
         "Actualitzareu tots els esdeveniments d'aquesta sèrie. S'enviarà una invitació als participants de l'esdeveniment."
@@ -4267,13 +4267,13 @@
         "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants actuals i afegits seran notificats."
       ],
       "You will update all the events in this series. Existent and removed participants will be notified.": [
-        "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants actuals i afegits seran notificats."
+        "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants actuals i esborrats seran notificats."
       ],
       "You will update all the events in this series. Existent, added and removed participants will be notified.": [
-        "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants actuals, afegits i eliminats seran notificats."
+        "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants actuals, afegits i esborrats seran notificats."
       ],
       "You will update all the events in this series. Removed participants will be notified.": [
-        "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants suprimits seran notificats."
+        "Actualitzareu tots els esdeveniments d'aquesta sèrie. Els participants esborrats seran notificats."
       ],
       "You've reached the maximum number of addresses in the contact group(s):": [
         "Heu assolit el nombre màxim d'adreces en el grup o els grups de contactes:"
@@ -4817,10 +4817,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Per a afegir un nou calendari, suprimiu-ne un d'existent."
+        "Per a afegir un nou calendari, esborreu-ne un d'existent."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Per afegir un nou calendari, suprimiu-ne un altre o milloreu el vostre pla de ${ BRAND_NAME } a un pla de pagament de ${ MAIL_SHORT_APP_NAME }."
+        "Per afegir un nou calendari, esborreu-ne un altre o milloreu el vostre pla de ${ BRAND_NAME } a un pla de pagament de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Heu assolit el nombre màxim de calendaris disponibles amb el vostre pla."
@@ -6152,7 +6152,7 @@
         "${ countMergeableContacts } contactes semblen idèntics."
       ],
       "A cancellation email will be sent to removed participants for all the events in this series.": [
-        "Un correu de cancel·lació serà enviat als participants eliminats per a tots els esdeveniments d'aquesta sèrie."
+        "Un correu de cancel·lació serà enviat als participants esborrats per a tots els esdeveniments d'aquesta sèrie."
       ],
       "Address copied to clipboard": [
         "Adreça copiada al porta-retalls"
@@ -6197,10 +6197,10 @@
         "Cancel·lació enviada i esdeveniment eliminat"
       ],
       "Cancellation sent and participants removed": [
-        "Cancel·lació enviada i participants eliminats"
+        "S'ha enviat la cancel·lació i s'han esborrat els participants."
       ],
       "Cancellation sent and participants removed from all events": [
-        "Cancel·lació enviada i participants eliminats de tots els esdeveniments"
+        "S'ha enviat la cancel·lació i s'han esborrat els participants de tots els esdeveniments."
       ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
@@ -6651,7 +6651,7 @@
         "Recuperar dades"
       ],
       "Remove participants": [
-        "Suprimeix participants"
+        "Esborra participants"
       ],
       "Report a problem": [
         "Notifica un problema"

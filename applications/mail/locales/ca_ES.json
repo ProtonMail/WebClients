@@ -716,10 +716,10 @@
       "Not saved": [
         "No s'ha desat"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -801,22 +801,22 @@
         "refresca la pàgina"
       ],
       "Remove": [
-        "Suprimeix"
+        "Esborra"
       ],
       "Remove ${ attachmentName }": [
-        "Esborrar ${ attachmentName }"
+        "Esborra ${ attachmentName }"
       ],
       "Remove encryption": [
-        "Elimina el xifrat"
+        "Esborra el xifrat"
       ],
       "Remove expiration time": [
-        "Elimina el temps de caducitat"
+        "Esborra el temps de caducitat"
       ],
       "Remove self-destruction": [
-        "Suprimeix la destrucció automàtica"
+        "Esborra la destrucció automàtica"
       ],
       "Remove this label": [
-        "Elimina aquesta etiqueta"
+        "Esborra aquesta etiqueta"
       ],
       "Reply": [
         "Respon"
@@ -1285,7 +1285,7 @@
         "Enviat a ${ nameToDisplay }"
       ],
       "5 trackers removed": [
-        "S'han eliminat 5 rastrejadors"
+        "S'han esborrat 5 rastrejadors"
       ],
       "Auto forwarded": [
         "Reenviat automàticament"
@@ -3460,8 +3460,8 @@
         "tornar a activar la clau anterior"
       ],
       "Removed duplicate recipient: ${ recipents }": [
-        "Destinatari duplicat eliminat: ${ recipents }",
-        "Destinataris duplicats eliminats: ${ recipents }"
+        "Destinatari duplicat esborrat: ${ recipents }",
+        "Destinataris duplicats esborrats: ${ recipents }"
       ],
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
@@ -5302,7 +5302,7 @@
         "URL de la imatge"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Les imatges s'han eliminat perquè no estan permeses a les respostes automàtiques"
+        "Les imatges s'han esborrat perquè no estan permeses a les respostes automàtiques."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importa ${ calendarCount } calendari de ${ totalCalendarsCount }",
@@ -5982,7 +5982,7 @@
         "No hem pogut verificar les claus de confiança de l’emissor."
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "Hem suprimit la informació de seguiment dels enllaços següents per ajudar-vos a protegir-vos dels anunciants i d'altres persones que intenten fer un seguiment de la vostra activitat en línia."
+        "Hem esborrat la informació de seguiment dels enllaços següents per ajudar-vos a protegir-vos dels anunciants i d'altres persones que intenten fer un seguiment de la vostra activitat en línia."
       ],
       "We'll notify you when the import is done.": [
         "Us notificarem quan la importació s'hagi realitzat."
@@ -6957,10 +6957,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Per a afegir un nou calendari, suprimiu-ne un d'existent."
+        "Per a afegir un nou calendari, esborreu-ne un d'existent."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Per afegir un nou calendari, suprimiu-ne un altre o milloreu el vostre pla de ${ BRAND_NAME } a un pla de pagament de ${ MAIL_SHORT_APP_NAME }."
+        "Per afegir un nou calendari, esborreu-ne un altre o milloreu el vostre pla de ${ BRAND_NAME } a un pla de pagament de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Heu assolit el nombre màxim de calendaris disponibles amb el vostre pla."
@@ -7463,7 +7463,7 @@
         "S'ha creat ${ Filter.Name }"
       ],
       "Block removed": [
-        "S'ha suprimit els bloqueig"
+        "S'ha esborrat els bloqueig."
       ],
       "Contact group created": [
         "Grup de contactes creat"
@@ -8679,7 +8679,7 @@
         "S'ha enviat la confirmació de lectura."
       ],
       "Self-destruction removed": [
-        "S'ha suprimit la destrucció automàtica"
+        "S'ha esborrat la destrucció automàtica."
       ],
       "Self-destruction set": [
         "S'ha establert la destrucció automàtica"
@@ -8693,7 +8693,7 @@
     },
     "Success notification": {
       "${ label.Name } removed": [
-        "${ label.Name } suprimit"
+        "${ label.Name } esborrat"
       ]
     },
     "Success notification when user send feedback": {

@@ -1972,9 +1972,6 @@
       "Name does not match": [
         "Name stimmt nicht überein"
       ],
-      "Name on card required": [
-        "Karteninhaber erforderlich"
-      ],
       "Not a valid number": [
         "Keine gültige Zahl"
       ],
@@ -2043,9 +2040,6 @@
       ],
       "Tab closed": [
         "Tab geschlossen"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Der von dir verwendete Browser erlaubt es nicht, die Zahlung vollständig zu autorisieren. Bitte verwende einen anderen Browser oder melde dich über einen Computer an."
       ],
       "The email addresses do not match": [
         "Die E-Mail-Adressen stimmen nicht überein"
@@ -3077,9 +3071,6 @@
       ],
       "for choosing ${ product }": [
         "dass du dich für ${ product } entschieden hast."
-      ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Bei Visa, MasterCard und Discover: die 3 Ziffern auf der Rückseite deiner Karte. Bei American Express die 4 Ziffern auf der Vorderseite deiner Karte."
       ],
       "Free forever": [
         "Für immer kostenlos"
@@ -4197,9 +4188,6 @@
       "Expiration (${ patternExpiration })": [
         "Ablaufdatum (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Ablaufdatum"
-      ],
       "Expires": [
         "Gültig bis"
       ],
@@ -4241,9 +4229,6 @@
       ],
       "Name and address": [
         "Name und Adresse"
-      ],
-      "Name on card": [
-        "Karteninhaber"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Port-Weiterleitung)"
@@ -4350,14 +4335,8 @@
       "Reveal password": [
         "Passwort anzeigen"
       ],
-      "Security code": [
-        "Sicherheitscode"
-      ],
       "Security code (${ codeName })": [
         "Sicherheitscode (${ codeName })"
-      ],
-      "Select your country": [
-        "Wähle dein Land"
       ],
       "Select your plan": [
         "Wähle dein Abonnement"
@@ -4853,6 +4832,9 @@
       "Custom fields": [
         "Benutzerdefinierte Felder"
       ],
+      "Custom snooze time": [
+        "Eigene stumm Zeit"
+      ],
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
       ],
@@ -5071,6 +5053,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Erhalte unbegrenzte Aliasse mit SimpleLogin von ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Stumme die Nachricht und werde daran erinnert wann du möchtest"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
@@ -5662,9 +5647,6 @@
       ],
       "Select a reason": [
         "Grund auswählen"
-      ],
-      "Thomas Anderson": [
-        "Max Mustermann"
       ]
     },
     "plan customizer, ips": {
@@ -7187,9 +7169,6 @@
       ],
       "Unlock your mailbox": [
         "Entsperre dein Postfach"
-      ],
-      "Unsupported browser": [
-        "Nicht unterstützter Browser"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Verbessere den Schutz deines Netzwerks mit dedizierten Servern"

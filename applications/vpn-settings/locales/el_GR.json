@@ -736,8 +736,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Εξοικονομήστε με τις προσφορές της Black Friday σε ένα Ελβετικό VPN υψηλής ταχύτητας"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Εξοικονομήστε με τις προσφορές της Cyber Week σε ένα Ελβετικό VPN υψηλής ταχύτητας"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Εξοικονομήστε με τις προσφορές στο Τέλος του Χρόνου σε ένα Ελβετικό VPN υψηλής ταχύτητας"
+      ],
       "Select your Black Friday offer": [
         "Επιλέξτε την Black Friday προσφορά σας"
+      ],
+      "Select your Cyber Week offer": [
+        "Επιλέξτε την προσφορά σας για το Cyber Week"
+      ],
+      "Select your End of Year offer": [
+        "Επιλέξτε την προσφορά σας για το Τέλος του Χρόνου"
       ]
     },
     "bf2023: info": {
@@ -1972,9 +1984,6 @@
       "Name does not match": [
         "Το όνομα δεν ταιριάζει"
       ],
-      "Name on card required": [
-        "Απαιτείται το όνομα κατόχου της κάρτας"
-      ],
       "Not a valid number": [
         "Μη έγκυρος αριθμός"
       ],
@@ -2043,9 +2052,6 @@
       ],
       "Tab closed": [
         "Κλειστή καρτέλα"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Το πρόγραμμα περιήγησης που χρησιμοποιείτε δεν επιτρέπει την πλήρη εξουσιοδότηση της πληρωμής. Χρησιμοποιήστε ένα διαφορετικό πρόγραμμα περιήγησης ή συνδεθείτε μέσω υπολογιστή."
       ],
       "The email addresses do not match": [
         "Οι διευθύνσεις email δεν ταιριάζουν."
@@ -3077,9 +3083,6 @@
       ],
       "for choosing ${ product }": [
         "για την επιλογή ${ product }"
-      ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Για visa, MasterCard και Discover, τα 3 ψηφία στο πίσω μέρος της κάρτας σας. Για την American Express, τα 4 ψηφία στο μπροστινό μέρος της κάρτας σας."
       ],
       "Free forever": [
         "Δωρεάν για πάντα"
@@ -4197,9 +4200,6 @@
       "Expiration (${ patternExpiration })": [
         "Λήξη (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Ημερομηνία λήξης"
-      ],
       "Expires": [
         "Λήγει"
       ],
@@ -4241,9 +4241,6 @@
       ],
       "Name and address": [
         "Όνομα και διεύθυνση"
-      ],
-      "Name on card": [
-        "Όνομα πάνω στην κάρτα"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Προώθηση θυρών)"
@@ -4350,14 +4347,8 @@
       "Reveal password": [
         "Εμφάνιση κωδικού"
       ],
-      "Security code": [
-        "Κωδικός διασφάλισης"
-      ],
       "Security code (${ codeName })": [
         "Κωδικός ασφαλείας (${ codeName })"
-      ],
-      "Select your country": [
-        "Επιλέξτε τη χώρα σας"
       ],
       "Select your plan": [
         "Επιλέξτε το πλάνο σας"
@@ -5668,9 +5659,6 @@
       ],
       "Select a reason": [
         "Επιλογή αιτιολογίας"
-      ],
-      "Thomas Anderson": [
-        "Γιώργος Καραϊσκάκης"
       ]
     },
     "plan customizer, ips": {
@@ -7190,9 +7178,6 @@
       ],
       "Unlock your mailbox": [
         "Ξεκλειδώστε τη θυρίδα σας"
-      ],
-      "Unsupported browser": [
-        "Μη υποστηριζόμενο πρόγραμμα περιήγησης"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Αναβαθμίστε την προστασία του δικτύου σας με αποκλειστικούς διακομιστές"

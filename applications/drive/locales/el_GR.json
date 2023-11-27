@@ -3750,6 +3750,9 @@
       "Items in the trash will stay here until you delete them permanently": [
         "Τα στοιχεία στα Διαγραμμένα θα παραμείνουν εδώ μέχρι να τα διαγράψετε οριστικά"
       ],
+      "Items moved to the trash will stay here until deleted": [
+        "Τα στοιχεία που μετακινούνται στον κάδο απορριμμάτων θα παραμείνουν εδώ μέχρι να διαγραφούν"
+      ],
       "It’s easy and secure": [
         "Είναι εύκολο και ασφαλές"
       ],
@@ -3828,17 +3831,11 @@
       "No": [
         "Όχι"
       ],
-      "No computers syncing": [
-        "Δε συγχρονίζεται κανένας υπολογιστής"
-      ],
       "No contacts added yet": [
         "Δεν έχουν προστεθεί επαφές ακόμα"
       ],
       "No email address": [
         "Δεν υπάρχει διεύθυνση E-mail"
-      ],
-      "No files or folders in trash": [
-        "Κανένα διαγραμμένο αρχείο ή φάκελος"
       ],
       "No group found": [
         "Καμία ομάδα δεν βρέθηκε"
@@ -4209,6 +4206,9 @@
       "Trash": [
         "Διαγραμμένα"
       ],
+      "Trash is empty": [
+        "Ο κάδος απορριμμάτων είναι άδειος"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Δοκιμάστε νέες δυνατότητες, ενημερώσεις και προϊόντα ${ BRAND_NAME } πριν κυκλοφορήσουν στο κοινό. Αυτό θα φορτώσει ξανά την εφαρμογή"
       ],
@@ -4256,6 +4256,9 @@
       ],
       "Version is restored": [
         "Έγινε επαναφορά της έκδοσης"
+      ],
+      "Want to sync files faster?": [
+        "Θέλετε να συγχρονίσετε αρχεία πιο γρήγορα;"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Συγχαρητήρια, μόλις διπλασιάσατε τον δωρεάν αποθηκευτικό χώρο σας!"
@@ -6734,24 +6737,12 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" δεν είναι επιτρεπόμενο όνομα"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Το όνομα δεν μπορεί να περιλαμβάνει αόρατους χαρακτήρες, / ή \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Το όνομα δεν πρέπει να υπερβαίνει τον ${ MAX_NAME_LENGTH } χαρακτήρα",
         "Το όνομα δεν πρέπει να υπερβαίνει τους ${ MAX_NAME_LENGTH } χαρακτήρες"
       ],
       "Name must not be empty": [
         "Το όνομα δεν πρέπει να είναι άδειο"
-      ],
-      "Name must not begin with a space": [
-        "Το όνομα δε μπορεί να ξεκινάει με κενό διάστημα"
-      ],
-      "Name must not end with a space": [
-        "Το όνομα δεν μπορεί να τελειώνει με κενό διάστημα"
       ]
     },
     "Video control": {
