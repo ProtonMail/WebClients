@@ -19,10 +19,10 @@ import { generateTOTPCode } from '@proton/pass/lib/otp/generate';
 import type { Maybe, OtpRequest } from '@proton/pass/types';
 import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
-import noop from '@proton/utils/noop';
 
 import { PASS_CONFIG, authStore } from '../lib/core';
 import { onboarding } from '../lib/onboarding';
+import { telemetry } from '../lib/telemetry';
 import { AuthServiceProvider } from './Context/AuthServiceProvider';
 import { ClientContext, ClientProvider } from './Context/ClientProvider';
 import { ServiceWorkerProvider } from './ServiceWorker/ServiceWorkerProvider';
@@ -34,7 +34,6 @@ import './app.scss';
 
 const generateOTP = ({ totpUri }: OtpRequest) => generateTOTPCode(totpUri);
 const onLink = (url: string) => window.open(url, '_blank');
-const onTelemetry = noop;
 
 /** Ideally we should not have to use the hashed authentication data
  * in the URL. When we migrate the API factory to leverage cookie based
@@ -58,7 +57,7 @@ export const App = () => {
             generateOTP={generateOTP}
             getDomainImageURL={getDomainImageURL}
             onLink={onLink}
-            onTelemetry={onTelemetry}
+            onTelemetry={telemetry.push}
             onOnboardingAck={onboarding.acknowledge}
         >
             <CompatibilityCheck>
