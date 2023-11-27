@@ -55,6 +55,12 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
         clearNotifications();
     }, []);
 
+    const onLock = useCallback(async () => {
+        createNotification(enhance({ text: c('Info').t`Locking your session...`, type: 'info', loading: true }));
+        await authService.lock({ soft: false });
+        clearNotifications();
+    }, []);
+
     const onVaultSelect = useCallback(
         (selected: string) => {
             switch (selected) {
@@ -96,7 +102,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
             <div className="flex flex-column flex-nowrap pb-4">
                 {canLock && (
                     <DropdownMenuButton
-                        onClick={() => authService.lock({ soft: false })}
+                        onClick={onLock}
                         label={c('Action').t`Lock ${PASS_APP_NAME}`}
                         icon="lock"
                         labelClassname="mx-3"
