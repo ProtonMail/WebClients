@@ -43,7 +43,7 @@ export const StoreProvider: FC = ({ children }) => {
                 getCache: () => getDBCache(authStore.getUserID()!),
                 getEventInterval: () => ACTIVE_POLLING_TIMEOUT,
                 getLocalSettings: async () => INITIAL_SETTINGS,
-                getTelemetry: () => null,
+                getTelemetry: () => telemetry,
                 onBoot: (res) => {
                     if (res.ok) {
                         client.current.setStatus(AppStatus.READY);
