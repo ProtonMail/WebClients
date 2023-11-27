@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { NEW_EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
+import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { Label } from '@proton/components';
 
 import ImportCsvContactButton from './ImportCsvContactButton';
@@ -22,7 +22,7 @@ const ContactsWidgetSettingsContainerImport = ({ onImport, onClose }: Props) => 
         </p>
 
         <ImportCsvContactButton
-            source={NEW_EASY_SWITCH_SOURCES.CONTACTS_WEB_SETTINGS}
+            source={EASY_SWITCH_SOURCES.CONTACTS_WEB_SETTINGS}
             onImport={onImport}
             onClose={onClose}
         />

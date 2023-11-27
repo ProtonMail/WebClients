@@ -1,15 +1,9 @@
-import {
-    CreateImportPayload,
-    ImportType,
-    LaunchImportPayload,
-    NEW_EASY_SWITCH_SOURCES,
-    OAuthProps,
-} from '../interface';
+import { CreateImportPayload, EASY_SWITCH_SOURCES, ImportType, LaunchImportPayload, OAuthProps } from '../interface';
 
 export const createToken = (
     data: OAuthProps & {
         Products: ImportType[];
-        Source: NEW_EASY_SWITCH_SOURCES;
+        Source: EASY_SWITCH_SOURCES;
     }
 ) => ({
     url: 'importer/v1/tokens',

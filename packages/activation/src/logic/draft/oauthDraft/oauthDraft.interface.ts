@@ -1,5 +1,5 @@
 import { MailImportFields } from '@proton/activation/src/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
-import { ImportProvider, ImportType, NEW_EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
+import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
 import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 
 import { Separator } from './createImporter.action';
@@ -47,5 +47,5 @@ export type OauthDraftState = {
     provider?: ImportProvider;
     displayConfirmLeaveModal?: boolean;
     mailImport?: MailImportState;
-    source?: NEW_EASY_SWITCH_SOURCES;
+    source?: EASY_SWITCH_SOURCES;
 };
