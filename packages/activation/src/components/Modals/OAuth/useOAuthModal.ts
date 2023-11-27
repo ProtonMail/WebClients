@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import useAvailableAddresses from '@proton/activation/src/hooks/useAvailableAddresses';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import { NEW_EASY_SWITCH_SOURCES, OAuthProps } from '@proton/activation/src/interface';
+import { EASY_SWITCH_SOURCES, OAuthProps } from '@proton/activation/src/interface';
 import { createImporterThunk } from '@proton/activation/src/logic/draft/oauthDraft/createImporter.action';
 import { changeOAuthStep } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import {
@@ -53,7 +53,7 @@ const useOAuthModal = () => {
             provider,
             scope: finalScopes,
             callback: async (oAuthProps: OAuthProps) => {
-                const source = storeSource ?? NEW_EASY_SWITCH_SOURCES.UNKNOWN;
+                const source = storeSource ?? EASY_SWITCH_SOURCES.UNKNOWN;
                 dispatch(changeOAuthStep('loading-importer'));
                 await dispatch(createImporterThunk({ oAuthProps, source, user, defaultAddress }));
             },

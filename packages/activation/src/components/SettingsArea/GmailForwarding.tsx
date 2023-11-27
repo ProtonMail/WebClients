@@ -1,6 +1,6 @@
 import { CheckListGmailForward, GmailSyncModal, useFlag, useModalState, useUser } from '@proton/components';
 
-import { NEW_EASY_SWITCH_SOURCES } from '../../interface';
+import { EASY_SWITCH_SOURCES } from '../../interface';
 
 const GmailForwarding = () => {
     const isInMaintenance = useFlag('MaintenanceImporter');
@@ -30,7 +30,7 @@ const GmailForwarding = () => {
                 <GmailSyncModal
                     noSkip
                     onSyncCallback={handleModalClose}
-                    source={NEW_EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS}
+                    source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS}
                     {...syncModalProps}
                 />
             )}
