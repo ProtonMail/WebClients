@@ -16,3 +16,6 @@ export const getTrashRoute = () => getLocalPath('trash');
 /** Resolves the item route given a shareId and an itemId. */
 export const getItemRoute = (shareId: string, itemId: string, trashed?: boolean) =>
     getLocalPath(maybeTrash(`share/${shareId}/item/${itemId}`, trashed));
+
+/** Resolves the new item route given an item type. */
+export const getNewItemRoute = (type: ItemType) => getLocalPath(`item/new/${type}`);

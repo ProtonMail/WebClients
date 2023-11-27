@@ -113,9 +113,10 @@ export const createApi = ({ config, getAuth }: ApiFactoryOptions): Api => {
     api.getState = () => state;
 
     api.reset = async () => {
-        /* if API has pending requests - wait for API to be completely
-         * idle before resetting state - this avoids race conditions.
-         * ie: on session inactive error propagating to every pending call */
+        /* if API has pending requests - wait for API to be completely idle before
+         * resetting state - this allows propagating API error state correctly.
+         * For instance, on an inactive session, we want to avoid resetting the state
+         * before every ongoing request has terminated (possible retries or refreshes) */
         if (api.getState().pendingCount > 0) {
             logger.info(`[API] Reset deferred until API idle`);
             await waitUntil(() => api.getState().pendingCount === 0, 50, DEFAULT_TIMEOUT).catch(noop);
