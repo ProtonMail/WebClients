@@ -10,7 +10,7 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
 import clsx from '@proton/utils/clsx';
 
-import type { PhotoLink } from '../../../../store/';
+import { type DecryptedLink, type PhotoLink, isDecryptedLink } from '../../../../store';
 import { stopPropagation } from '../../../../utils/stopPropagation';
 import SignatureIcon from '../../../SignatureIcon';
 import { getMimeTypeDescription } from '../../helpers';
@@ -29,7 +29,7 @@ type Props = {
     hasSelection: boolean;
 };
 
-const getAltText = ({ mimeType, name }: PhotoLink) =>
+const getAltText = ({ mimeType, name }: DecryptedLink) =>
     `${c('Label').t`Photo`} - ${getMimeTypeDescription(mimeType || '')} - ${name}`;
 
 export const PhotosCard: FC<Props> = ({
@@ -45,26 +45,27 @@ export const PhotosCard: FC<Props> = ({
     const [imageReady, setImageReady] = useState(false);
     const ref = useRef(null);
 
+    const isDecrypted = isDecryptedLink(photo);
+    const hasName = 'name' in photo;
+
     // First call when photo is rendered to request caching link meta data.
-    useEffect(() => {
-        if (!photo.name) {
-            onRender(photo.linkId, ref);
-        }
-    }, [photo.name, photo.linkId]);
 
     // Once we have link meta data (link has name which is missing during
     // photo listing), we can initiate thumbnail loading.
     // The separation is needed to call thumbnail queue when link is already
     // present in cache to not fetch or decrypt meta data more than once.
     useEffect(() => {
-        if (photo.name) {
+        if (!hasName) {
+            onRender(photo.linkId, ref);
+        } else {
             onRenderLoadedLink(photo.linkId, ref);
         }
-    }, [photo.name]);
+    }, [hasName]);
 
-    const thumbUrl = photo.cachedThumbnailUrl;
-    const isThumbnailLoading = photo.hasThumbnail === undefined || (photo.hasThumbnail && !imageReady);
-    const isActive = !!photo.activeRevision.id && !!photo.activeRevision.photo.linkId;
+    const thumbUrl = isDecrypted ? photo.cachedThumbnailUrl : undefined;
+    const isThumbnailLoading = !isDecrypted || (photo.hasThumbnail && !imageReady);
+    const isActive = isDecrypted && photo.activeRevision?.id;
+    const isLoaded = !isThumbnailLoading && isActive;
 
     useEffect(() => {
         if (thumbUrl) {
@@ -90,7 +91,6 @@ export const PhotosCard: FC<Props> = ({
     );
 
     const showCheckbox = hasSelection;
-    const isLoaded = !isThumbnailLoading && isActive;
 
     return (
         <ButtonLike
@@ -132,17 +132,17 @@ export const PhotosCard: FC<Props> = ({
 
             {isLoaded ? (
                 <div className="w-full h-full relative">
-                    {!photo.hasThumbnail ? (
-                        <div className="flex flex-align-items-center flex-justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty">
-                            <FileIcon mimeType={photo.mimeType || ''} size={48} />
-                        </div>
-                    ) : (
+                    {thumbUrl ? (
                         <img
                             data-testid="photo-card"
                             src={thumbUrl}
                             alt={getAltText(photo)}
                             className="w-full h-full photos-card-thumbnail"
                         />
+                    ) : (
+                        <div className="flex flex-align-items-center flex-justify-center w-full h-full photos-card-thumbnail photos-card-thumbnail--empty">
+                            <FileIcon mimeType={photo.mimeType || ''} size={48} />
+                        </div>
                     )}
                     {(photo.signatureIssues || photo.isShared) && (
                         <div className="absolute top right mr-2 mt-2 flex flex-align-items-center gap-1">
