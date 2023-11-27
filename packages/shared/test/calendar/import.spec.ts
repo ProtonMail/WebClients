@@ -1,6 +1,7 @@
 import { enUS } from 'date-fns/locale';
 
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
+import { ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
 import truncate from '@proton/utils/truncate';
 
 import { ICAL_CALSCALE, ICAL_METHOD, MAX_CHARS_API } from '../../lib/calendar/constants';
@@ -1333,21 +1334,25 @@ END:VCALENDAR`;
         });
 
         it('when there is both x-wr-timezone and single vtimezone (use x-wr-timezone)', async () => {
-            const [supportedEvent] = await getSupportedEvents(
+            const [, supportedEvent] = await getSupportedEvents(
                 generateVcalSetup('Asia/Seoul', 'Europe/Brussels', ['America/New_York'])
             );
             expect(supportedEvent).toEqual(localizedVevent('Europe/Brussels'));
         });
 
         it('when there is a single vtimezone and no x-wr-timezone', async () => {
-            const [supportedEvent] = await getSupportedEvents(generateVcalSetup('Asia/Seoul', '', ['Europe/Vilnius']));
+            const [, supportedEvent] = await getSupportedEvents(
+                generateVcalSetup('Asia/Seoul', '', ['Europe/Vilnius'])
+            );
             expect(supportedEvent).toEqual(localizedVevent('Europe/Vilnius'));
         });
 
         it('when there is a single vtimezone and x-wr-timezone is not supported', async () => {
-            await expectAsync(
-                getSupportedEvents(generateVcalSetup('Asia/Seoul', 'Moon/Tranquility', ['Europe/Vilnius']))
-            ).toBeResolvedTo([new Error('Calendar time zone not supported')]);
+            const [, supportedEvent] = await getSupportedEvents(
+                generateVcalSetup('Asia/Seoul', 'Moon/Tranquility', ['Europe/Vilnius'])
+            );
+
+            expect(supportedEvent).toEqual(new Error('Calendar time zone not supported') as ImportEventError);
         });
 
         it('when there is no vtimezone nor x-wr-timezone (fall back to primary time zone)', async () => {
@@ -1396,7 +1401,7 @@ END:VCALENDAR`;
         });
 
         it('when there is no x-wr-timezone and more than one vtimezone (fall back to primary time zone)', async () => {
-            const [supportedEvent] = await getSupportedEvents(
+            const [, , supportedEvent] = await getSupportedEvents(
                 generateVcalSetup('Asia/Seoul', '', ['Europe/Vilnius', 'America/New_York'])
             );
             expect(supportedEvent).toEqual({
