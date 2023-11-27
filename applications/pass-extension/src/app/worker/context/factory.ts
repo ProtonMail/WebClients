@@ -127,8 +127,6 @@ export const createWorkerContext = (config: ProtonConfig) => {
                     void context.service.storage.session.clear();
                 },
 
-                onSessionUnlocked: () => {},
-
                 onSessionEmpty: () => context.setStatus(AppStatus.UNAUTHORIZED),
 
                 onSessionLocked: () => {
