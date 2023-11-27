@@ -33,6 +33,9 @@
       "activate": [
         "aktivér"
       ],
+      "Activate ${ Name }@pm.me": [
+        "Aktiver ${ Name }@pm.me"
+      ],
       "Activate organization key": [
         "Aktivér organisationsnøgle"
       ],
@@ -65,6 +68,9 @@
       ],
       "Add filter": [
         "Tilføj filter"
+      ],
+      "Add folder": [
+        "Tilføj mappe"
       ],
       "Add multiple users": [
         "Tilføj flere brugere"
@@ -276,6 +282,9 @@
       "Delete user": [
         "Slet bruger"
       ],
+      "Delete without exporting": [
+        "Slet uden at eksportere"
+      ],
       "Delete your account": [
         "Slet din konto"
       ],
@@ -378,11 +387,20 @@
       "Enable multi-user support": [
         "Aktivere understøttelse af flere brugere"
       ],
+      "Encrypt and export": [
+        "Krypter og eksporter"
+      ],
       "Explore other ${ BRAND_NAME } plans": [
         "Udforsk andre ${ BRAND_NAME }-abonnementer"
       ],
       "Export": [
         "Eksportér"
+      ],
+      "Export key": [
+        "Eksporter nøgle"
+      ],
+      "Export key before deleting": [
+        "Eksporter nøgle før sletning"
       ],
       "Extend": [
         "Forlæng"
@@ -392,6 +410,9 @@
       ],
       "Font": [
         "Skrifttype"
+      ],
+      "Generate key": [
+        "Generer nøgle"
       ],
       "Generate new recovery phrase": [
         "Opret ny gendannelsessætning"
@@ -416,6 +437,12 @@
       ],
       "Get more filters": [
         "Få flere filtre"
+      ],
+      "Get more folders": [
+        "Få flere mapper"
+      ],
+      "Get more labels": [
+        "Få flere etiketter"
       ],
       "Get more licenses": [
         "Få flere licenser"
@@ -467,6 +494,9 @@
       ],
       "Import from Outlook": [
         "Importér fra Outlook"
+      ],
+      "Import key": [
+        "Importer nøgle"
       ],
       "Increase": [
         "Forøg"
@@ -530,6 +560,9 @@
       ],
       "More info: ${ safeTitle }": [
         "Yderligere information: ${ safeTitle }"
+      ],
+      "More info: Keyboard shortcuts": [
+        "Mere info: Tastaturgenveje"
       ],
       "move emails to": [
         "flyt e-mails til"
@@ -645,6 +678,9 @@
       "Request new code": [
         "Anmod om ny kode"
       ],
+      "Requires a verified recovery email address": [
+        "Kræver en verificeret e-mailadresse til gendannelse"
+      ],
       "Resend code": [
         "Send kode igen"
       ],
@@ -723,6 +759,9 @@
       "Select calendar view": [
         "Vælg kalendervisning"
       ],
+      "Select files": [
+        "Vælg filer"
+      ],
       "Select time zone": [
         "Vælg tidszone"
       ],
@@ -734,6 +773,9 @@
       ],
       "Send email reminder": [
         "Send e-mail-påmindelse"
+      ],
+      "Send messages with @pm.me": [
+        "Send beskeder med @pm.me"
       ],
       "Send my username": [
         "Send mit brugernavn"
@@ -818,6 +860,9 @@
       ],
       "Skip verification": [
         "Spring e-mail-verifikation over"
+      ],
+      "Sort": [
+        "Sortér"
       ],
       "Spam": [
         "Spam"
@@ -3271,9 +3316,6 @@
       "Name does not match": [
         "Navn matcher ikke"
       ],
-      "Name on card required": [
-        "Navn på kort kræves"
-      ],
       "Name required": [
         "Navn påkrævet"
       ],
@@ -3419,9 +3461,6 @@
       ],
       "The address might be misspelled": [
         "Adressen kan være stavet forkert"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Den browser, du bruger, tillader ikke, at betalingen godkendes fuldt ud. Brug venligst en anden browser, eller log ind via en computer."
       ],
       "The email addresses do not match": [
         "E-Mailadresserne stemmer ikke overens"
@@ -5154,6 +5193,9 @@
       "A user is an account associated with a single username, mailbox, and person": [
         "En bruger er en konto, der er knyttet til et enkelt brugernavn, en enkelt postkasse og en enkelt person"
       ],
+      "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
+        "Tilgå dine adgangskoder og beskyt din online identitet problemfrit på tværs af dine enheder. Download og installer de relevante ${ PASS_APP_NAME } apps og udvidelser."
+      ],
       "Account access restricted due to unpaid invoices. Please contact your administrator.": [
         "Kontoadgang begrænset grundet manglende betaling. Kontakt din administrator."
       ],
@@ -5375,6 +5417,9 @@
       ],
       "Billing cycle: ${ text }": [
         "Faktureringsperiode: ${ text }"
+      ],
+      "Blocks senders from seeing if and when you opened a message.": [
+        "Blokerer afsendere fra at se, om og hvornår du har åbnet en besked."
       ],
       "By downgrading to a Free plan, you will permanently lose these benefits, even if you upgrade again in the future.": [
         "Ved at nedgradere til et gratis abonnement mister du disse fordele permanent, selvom du senere opgraderer igen."
@@ -5650,9 +5695,6 @@
       "for choosing ${ product }": [
         "for at vælge ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "For Visa, MasterCard og Discover, de 3 cifre på bagsiden af dit kort. For American Express, de 4 cifre på forsiden af dit kort."
-      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Videresend indgående e-mails fra en anden konto til din sikre ${ MAIL_APP_NAME }-indbakke."
       ],
@@ -5682,6 +5724,9 @@
       ],
       "here": [
         "hér"
+      ],
+      "Hides identifying information by loading remote content through a proxy. Option to store content as attachments.": [
+        "Skjuler identifikationsoplysninger ved at indlæse eksternt indhold via en proxy. Mulighed for at gemme indhold som vedhæftninger."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Hvis en anden administrator ændrede denne adgangskode, må du bede dem om den nye Organisationsadgangskode."
@@ -6318,7 +6363,7 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
         "SMTP-indsendelse gør det muligt for tredjepartstjenester eller -enheder at sende e-mail via ${ MAIL_APP_NAME } for dine brugerdefinerede domæneadresser. Denne funktion er kun tilgængelig for ${ BRAND_NAME } for erhvervsbrugere med brugerdefinerede domæner."
       ],
       "Some keys successfully reactivated": [
@@ -6444,6 +6489,9 @@
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "Disse legitimationsoplysninger kan ikke bruges til at logge ind på vores officielle ${ VPN_APP_NAME } apps. ${ learnMore }"
+      ],
+      "They will be removed from your organization": [
+        "De vil blive fjernet fra din organisation"
       ],
       "They'll receive a free month of ${ planName }.": [
         "De vil modtage en gratis måned af ${ planName }."
@@ -6657,6 +6705,9 @@
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Opgradér til ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } eller ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }-abonnement for at få adgang til ${ PROTON_SENTINEL_NAME }."
+      ],
+      "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
+        "Opgrader til ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, eller ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } abonnement for at få adgang til ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
         "Opgrader for at tilføje en kortere @pm.me adresse til din konto, som er lettere at dele. Det står for “${ MAIL_APP_NAME } me” eller “Private Message me”."
@@ -7718,9 +7769,6 @@
       "Expiration (${ patternExpiration })": [
         "Udløb (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Udløbsdato"
-      ],
       "Expires": [
         "Udløber"
       ],
@@ -7852,9 +7900,6 @@
       ],
       "Name and address": [
         "Navn og adresse"
-      ],
-      "Name on card": [
-        "Navn på kort"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Videresendelse af port)"
@@ -8009,14 +8054,8 @@
       "Reveal password": [
         "Vis adgangskode"
       ],
-      "Security code": [
-        "Sikkerhedskode"
-      ],
       "Security code (${ codeName })": [
         "Sikkerhedskode (${ codeName })"
-      ],
-      "Select your country": [
-        "Vælg dit land"
       ],
       "Select your plan": [
         "Vælg dit abonnement"
@@ -10126,9 +10165,6 @@
       "Text": [
         "Tekst"
       ],
-      "Thomas Anderson": [
-        "Thomas Andersen"
-      ],
       "Type text or keyword": [
         "Indtast tekst eller nøgleord"
       ],
@@ -12071,7 +12107,7 @@
       "PayPal verification failed": [
         "PayPal-bekræftelse fejlede"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "Personaliser din e-mail-sidefod"
       ],
       "Phone": [
@@ -12285,9 +12321,6 @@
       ],
       "Unlock your mailbox": [
         "Lås din postkasse op"
-      ],
-      "Unsupported browser": [
-        "Ikke understøttet browser"
       ],
       "Upgrade plan": [
         "Opgradér abonnement"
