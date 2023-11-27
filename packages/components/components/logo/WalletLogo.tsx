@@ -45,7 +45,7 @@ const WalletLogo = ({ variant = 'with-wordmark', size, className, hasTitle = tru
                         x="6"
                         y="2"
                         maskUnits="userSpaceOnUse"
-                        style={{ 'mask-type': 'alpha' }}
+                        style={{ maskType: 'alpha' }}
                     >
                         <path
                             fill="url(#c)"
@@ -76,8 +76,8 @@ const WalletLogo = ({ variant = 'with-wordmark', size, className, hasTitle = tru
                             y2="4.313"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".198" stop-color="#F5AC87" stop-opacity=".89" />
-                            <stop offset=".961" stop-color="#7B5FF3" />
+                            <stop offset=".198" stopColor="#F5AC87" stopOpacity=".89" />
+                            <stop offset=".961" stopColor="#7B5FF3" />
                         </linearGradient>
                         <linearGradient
                             id="b"
@@ -87,8 +87,8 @@ const WalletLogo = ({ variant = 'with-wordmark', size, className, hasTitle = tru
                             y2="3.693"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".198" stop-color="#E8621C" stop-opacity=".89" />
-                            <stop offset=".961" stop-color="#532CF6" />
+                            <stop offset=".198" stopColor="#E8621C" stopOpacity=".89" />
+                            <stop offset=".961" stopColor="#532CF6" />
                         </linearGradient>
                         <linearGradient
                             id="c"
@@ -98,8 +98,8 @@ const WalletLogo = ({ variant = 'with-wordmark', size, className, hasTitle = tru
                             y2="4.313"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".198" stop-color="#B27757" stop-opacity=".89" />
-                            <stop offset=".961" stop-color="#7B5FF3" />
+                            <stop offset=".198" stopColor="#B27757" stopOpacity=".89" />
+                            <stop offset=".961" stopColor="#7B5FF3" />
                         </linearGradient>
                         <linearGradient
                             id="d"
@@ -109,14 +109,14 @@ const WalletLogo = ({ variant = 'with-wordmark', size, className, hasTitle = tru
                             y2="3.693"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".198" stop-color="#FFC6A8" stop-opacity=".89" />
-                            <stop offset=".961" stop-color="#9178F6" />
+                            <stop offset=".198" stopColor="#FFC6A8" stopOpacity=".89" />
+                            <stop offset=".961" stopColor="#9178F6" />
                         </linearGradient>
                         <linearGradient id="f" x1="17.4" x2="27.6" y1="18" y2="0" gradientUnits="userSpaceOnUse">
-                            <stop stop-opacity=".53" />
-                            <stop offset="1" stop-color="#686868" stop-opacity="0" />
-                            <stop offset="1" stop-color="#686868" stop-opacity="0" />
-                            <stop offset="1" stop-color="#3E3E3E" stop-opacity="0" />
+                            <stop stopOpacity=".53" />
+                            <stop offset="1" stopColor="#686868" stopOpacity="0" />
+                            <stop offset="1" stopColor="#686868" stopOpacity="0" />
+                            <stop offset="1" stopColor="#3E3E3E" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="g"
@@ -126,8 +126,8 @@ const WalletLogo = ({ variant = 'with-wordmark', size, className, hasTitle = tru
                             y2="8.405"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".198" stop-color="#F5AC87" stop-opacity=".89" />
-                            <stop offset=".961" stop-color="#7B5FF3" />
+                            <stop offset=".198" stopColor="#F5AC87" stopOpacity=".89" />
+                            <stop offset=".961" stopColor="#7B5FF3" />
                         </linearGradient>
                         <linearGradient
                             id="h"
@@ -137,8 +137,8 @@ const WalletLogo = ({ variant = 'with-wordmark', size, className, hasTitle = tru
                             y2="9.461"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".198" stop-color="#E8621C" stop-opacity=".89" />
-                            <stop offset=".961" stop-color="#532CF6" />
+                            <stop offset=".198" stopColor="#E8621C" stopOpacity=".89" />
+                            <stop offset=".961" stopColor="#532CF6" />
                         </linearGradient>
                     </defs>
                 </>
@@ -165,7 +165,7 @@ const WalletLogo = ({ variant = 'with-wordmark', size, className, hasTitle = tru
                         x="7"
                         y="3"
                         maskUnits="userSpaceOnUse"
-                        style={{ 'mask-type': 'alpha' }}
+                        style={{ maskType: 'alpha' }}
                     >
                         <path
                             fill="url(#c)"
@@ -196,8 +196,8 @@ const WalletLogo = ({ variant = 'with-wordmark', size, className, hasTitle = tru
                             y2="5.193"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".198" stop-color="#F5AC87" stop-opacity=".89" />
-                            <stop offset=".961" stop-color="#7B5FF3" />
+                            <stop offset=".198" stopColor="#F5AC87" stopOpacity=".89" />
+                            <stop offset=".961" stopColor="#7B5FF3" />
                         </linearGradient>
                         <linearGradient
                             id="b"
@@ -207,8 +207,8 @@ const WalletLogo = ({ variant = 'with-wordmark', size, className, hasTitle = tru
                             y2="4.59"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".198" stop-color="#E8621C" stop-opacity=".89" />
-                            <stop offset=".961" stop-color="#532CF6" />
+                            <stop offset=".198" stopColor="#E8621C" stopOpacity=".89" />
+                            <stop offset=".961" stopColor="#532CF6" />
                         </linearGradient>
                         <linearGradient
                             id="c"
@@ -218,8 +218,8 @@ const WalletLogo = ({ variant = 'with-wordmark', size, className, hasTitle = tru
                             y2="5.193"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".198" stop-color="#B27757" stop-opacity=".89" />
-                            <stop offset=".961" stop-color="#7B5FF3" />
+                            <stop offset=".198" stopColor="#B27757" stopOpacity=".89" />
+                            <stop offset=".961" stopColor="#7B5FF3" />
                         </linearGradient>
                         <linearGradient
                             id="d"
@@ -229,14 +229,14 @@ const WalletLogo = ({ variant = 'with-wordmark', size, className, hasTitle = tru
                             y2="4.59"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".198" stop-color="#FFC6A8" stop-opacity=".89" />
-                            <stop offset=".961" stop-color="#9178F6" />
+                            <stop offset=".198" stopColor="#FFC6A8" stopOpacity=".89" />
+                            <stop offset=".961" stopColor="#9178F6" />
                         </linearGradient>
                         <linearGradient id="f" x1="18.917" x2="28.833" y1="18.5" y2="1" gradientUnits="userSpaceOnUse">
-                            <stop stop-opacity=".53" />
-                            <stop offset="1" stop-color="#686868" stop-opacity="0" />
-                            <stop offset="1" stop-color="#686868" stop-opacity="0" />
-                            <stop offset="1" stop-color="#3E3E3E" stop-opacity="0" />
+                            <stop stopOpacity=".53" />
+                            <stop offset="1" stopColor="#686868" stopOpacity="0" />
+                            <stop offset="1" stopColor="#686868" stopOpacity="0" />
+                            <stop offset="1" stopColor="#3E3E3E" stopOpacity="0" />
                         </linearGradient>
                         <linearGradient
                             id="g"
@@ -246,8 +246,8 @@ const WalletLogo = ({ variant = 'with-wordmark', size, className, hasTitle = tru
                             y2="9.171"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".198" stop-color="#F5AC87" stop-opacity=".89" />
-                            <stop offset=".961" stop-color="#7B5FF3" />
+                            <stop offset=".198" stopColor="#F5AC87" stopOpacity=".89" />
+                            <stop offset=".961" stopColor="#7B5FF3" />
                         </linearGradient>
                         <linearGradient
                             id="h"
@@ -257,8 +257,8 @@ const WalletLogo = ({ variant = 'with-wordmark', size, className, hasTitle = tru
                             y2="10.198"
                             gradientUnits="userSpaceOnUse"
                         >
-                            <stop offset=".198" stop-color="#E8621C" stop-opacity=".89" />
-                            <stop offset=".961" stop-color="#532CF6" />
+                            <stop offset=".198" stopColor="#E8621C" stopOpacity=".89" />
+                            <stop offset=".961" stopColor="#532CF6" />
                         </linearGradient>
                     </defs>
                 </>
