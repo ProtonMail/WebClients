@@ -4,7 +4,7 @@ import isAfter from 'date-fns/isAfter';
 import { c } from 'ttag';
 
 import { EasySwitchProvider } from '@proton/activation/index';
-import { NEW_EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
+import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { Button } from '@proton/atoms/Button';
 import {
     CheckListAccountLogin,
@@ -158,7 +158,7 @@ const UsersOnboardingChecklist = ({
                 {renderStorageReward && <StorageRewardModal {...storageRewardProps} />}
                 {renderGmailForward && (
                     <GmailSyncModal
-                        source={NEW_EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST}
+                        source={EASY_SWITCH_SOURCES.MAIL_WEB_CHECKLIST}
                         noSkip
                         onSyncCallback={handleGmailClose}
                         {...gmailForwardProps}

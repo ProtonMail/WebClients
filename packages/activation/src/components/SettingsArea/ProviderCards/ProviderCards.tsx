@@ -5,9 +5,9 @@ import { c } from 'ttag';
 
 import {
     EASY_SWITCH_SEARCH_SOURCES,
+    EASY_SWITCH_SOURCES,
     ImportProvider,
     ImportType,
-    NEW_EASY_SWITCH_SOURCES,
 } from '@proton/activation/src/interface';
 import { startImapDraft } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
 import { startOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
@@ -19,7 +19,7 @@ import { APPS } from '@proton/shared/lib/constants';
 
 import ProviderCard from './ProviderCard';
 
-const { ACCOUNT_WEB_SETTINGS, CALENDAR_WEB_SETTINGS, CONTACT_WEB_IMPORT_BUTTON } = NEW_EASY_SWITCH_SOURCES;
+const { ACCOUNT_WEB_SETTINGS, CALENDAR_WEB_SETTINGS, CONTACT_WEB_IMPORT_BUTTON } = EASY_SWITCH_SOURCES;
 
 const getEasySwitchSource = (location: Location) => {
     const source = new URLSearchParams(location.search).get('source');
