@@ -3690,7 +3690,7 @@
         "Перацягніце файл сюды, каб запампаваць"
       ],
       "Drop files here": [
-        "Перацягніце сюды файлы"
+        "Перацягніце файлы сюды"
       ],
       "Drop to import": [
         "Перацягніце для імпартавання"
@@ -3884,6 +3884,9 @@
       "Items in the trash will stay here until you delete them permanently": [
         "Элементы будуць заставацца ў сметніцы, пакуль вы не выдаліце іх незваротна"
       ],
+      "Items moved to the trash will stay here until deleted": [
+        "Элементы перамешчаныя ў сметніцу будуць заставацца там да выдалення"
+      ],
       "It’s easy and secure": [
         "Гэта лёгка і бяспечна"
       ],
@@ -3962,17 +3965,11 @@
       "No": [
         "Не"
       ],
-      "No computers syncing": [
-        "Няма сінхранізаваных камп'ютараў"
-      ],
       "No contacts added yet": [
         "Кантакты пакуль не дададзены"
       ],
       "No email address": [
         "Няма адраса электроннай пошты"
-      ],
-      "No files or folders in trash": [
-        "У сметніцы няма файлаў або папак"
       ],
       "No group found": [
         "Група не знойдзена"
@@ -4349,6 +4346,9 @@
       "Trash": [
         "Сметніца"
       ],
+      "Trash is empty": [
+        "Сметніца пустая"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Паспрабуйце новыя функцыі, абнаўленні і прадукты ${ BRAND_NAME } перад тым, як яны будуць выпушчаны для шырокага кола карыстальнікаў. Гэта прывядзе да перазапуску праграмы"
       ],
@@ -4396,6 +4396,9 @@
       ],
       "Version is restored": [
         "Версія адноўлена"
+      ],
+      "Want to sync files faster?": [
+        "Хочаце сінхранізаваць файлы хутчэй?"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Так трымаць! Мы толькі што падвоілі ваша бясплатнае сховішча."
@@ -7008,12 +7011,6 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "Назва \"${ str }\" з'яўляецца недапушчальнай"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Назва не можа змяшчаць нябачныя сімвалы, / або \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Назва павінна быць да ${ MAX_NAME_LENGTH } сімвала",
         "Назва павінна быць да ${ MAX_NAME_LENGTH } сімвалаў",
@@ -7022,12 +7019,6 @@
       ],
       "Name must not be empty": [
         "Назва не можа быць пустой"
-      ],
-      "Name must not begin with a space": [
-        "Назва не павінна пачынацца прабелам"
-      ],
-      "Name must not end with a space": [
-        "Назва не павінна заканчвацца прабелам"
       ]
     },
     "Video control": {

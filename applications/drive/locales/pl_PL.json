@@ -3962,17 +3962,11 @@
       "No": [
         "Nie"
       ],
-      "No computers syncing": [
-        "Brak zsynchronizowanych urządzeń"
-      ],
       "No contacts added yet": [
         "Nie dodano jeszcze żadnych kontaktów"
       ],
       "No email address": [
         "Brak adresu e-mail"
-      ],
-      "No files or folders in trash": [
-        "Brak plików lub folderów w Koszu"
       ],
       "No group found": [
         "Nie znaleziono grupy"
@@ -4349,6 +4343,9 @@
       "Trash": [
         "Kosz"
       ],
+      "Trash is empty": [
+        "Kosz jest pusty"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Wypróbuj nowe funkcje, aktualizacje i usługi ${ BRAND_NAME } przed ich premierą. Spowoduje to odświeżenie strony"
       ],
@@ -4396,6 +4393,9 @@
       ],
       "Version is restored": [
         "Wersja została przywrócona"
+      ],
+      "Want to sync files faster?": [
+        "Chcesz szybciej synchronizować pliki?"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Przestrzeń dyskowa została podwojona!"
@@ -7008,12 +7008,6 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" nie jest prawidłową nazwą"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Nazwa nie może zawierać niewidocznych znaków, / lub \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Nazwa może zawierać maksymalnie ${ MAX_NAME_LENGTH } znak",
         "Nazwa może zawierać maksymalnie ${ MAX_NAME_LENGTH } znaki",
@@ -7022,12 +7016,6 @@
       ],
       "Name must not be empty": [
         "Nazwa nie może być pusta"
-      ],
-      "Name must not begin with a space": [
-        "Nazwa nie może zaczynać się od znaku spacji"
-      ],
-      "Name must not end with a space": [
-        "Nazwa nie może kończyć się znakiem spacji"
       ]
     },
     "Video control": {

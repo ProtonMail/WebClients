@@ -3884,6 +3884,9 @@
       "Items in the trash will stay here until you delete them permanently": [
         "Položky v koši zostanú, až kým ich natrvalo nevymažete"
       ],
+      "Items moved to the trash will stay here until deleted": [
+        "Položky presunuté do koša tu zostanú, kým nebudú odstránené"
+      ],
       "It’s easy and secure": [
         "Je to jednoduché a bezpečné"
       ],
@@ -3962,17 +3965,11 @@
       "No": [
         "Nie"
       ],
-      "No computers syncing": [
-        "Bez synchronizácie s počítačmi"
-      ],
       "No contacts added yet": [
         "Zatiaľ neboli pridané žiadne kontakty"
       ],
       "No email address": [
         "Žiadna emailová adresa"
-      ],
-      "No files or folders in trash": [
-        "Žiadne súbory alebo priečinky v koši"
       ],
       "No group found": [
         "Nebola nájdená žiadna skupina"
@@ -4251,7 +4248,7 @@
         "Váš internetový prehliadač nepodporuje zobrazenie PDF dokumentov. Súbor si preto stiahnite."
       ],
       "This file is too large to preview": [
-        "Tento súbor je príliš veľký na zobrazenie ukážky"
+        "Tento súbor je príliš veľký na zobrazenie náhľadu"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Tento súbor mohol byť vymazaný, presunutý alebo zneprístupnený. Skúste kontaktovať vlastníka súboru."
@@ -4349,6 +4346,9 @@
       "Trash": [
         "Kôš"
       ],
+      "Trash is empty": [
+        "Kôš je prázdny"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Vyskúšajte nové ${ BRAND_NAME } funkcie, aktualizácie a produkty pred ich zverejnením. Týmto sa obnoví aplikácia"
       ],
@@ -4396,6 +4396,9 @@
       ],
       "Version is restored": [
         "Verzia je obnovená"
+      ],
+      "Want to sync files faster?": [
+        "Chcete synchronizovať súbory rýchlejšie?"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Výborne, práve ste zdvojnásobili svoje bezplatné úložisko!"
@@ -4964,7 +4967,7 @@
         "Vyberte typ zneužitia"
       ],
       "Set expiration date": [
-        "Nastaviť dátum vypršania platnosti"
+        "Nastaviť koniec platnosti"
       ],
       "Set recovery method": [
         "Nastaviť metódu obnovenia"
@@ -6794,7 +6797,7 @@
         "Vybrať skupinu kontaktov"
       ],
       "Select link expiration date": [
-        "Vyberte dátum vypršania platnosti odkazu"
+        "Vyberte koniec platnosti odkazu"
       ],
       "Select link expiration time": [
         "Vyberte čas vypršania platnosti odkazu"
@@ -7008,12 +7011,6 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "„${ str }“ nie je platný názov"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Názov nemôže obsahovať neviditeľné znaky, / alebo \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Meno môže obsahovať maximálne ${ MAX_NAME_LENGTH } znak",
         "Meno môže obsahovať maximálne ${ MAX_NAME_LENGTH } znaky",
@@ -7022,12 +7019,6 @@
       ],
       "Name must not be empty": [
         "Názov nemôže byť prázdny"
-      ],
-      "Name must not begin with a space": [
-        "Názov nesmie začínať medzerou"
-      ],
-      "Name must not end with a space": [
-        "Názov nesmie končiť medzerou"
       ]
     },
     "Video control": {

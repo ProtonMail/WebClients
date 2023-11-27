@@ -3874,9 +3874,6 @@
       "No email address": [
         "Нет адреса электронной почты"
       ],
-      "No files or folders in trash": [
-        "В корзине нет ни папок, ни файлов"
-      ],
       "No group found": [
         "Группа не найдена"
       ],
@@ -6735,12 +6732,6 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "Недопустимое имя \"${ str }\""
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Имя не может включать невидимые символы, / или \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Имя должно состоять не более чем из ${ MAX_NAME_LENGTH } символа",
         "Имя должно состоять не более чем из ${ MAX_NAME_LENGTH } символов",
@@ -6749,12 +6740,6 @@
       ],
       "Name must not be empty": [
         "Имя не может быть пустым"
-      ],
-      "Name must not begin with a space": [
-        "Имя не может начинаться с пробела"
-      ],
-      "Name must not end with a space": [
-        "Имя не может заканчиваться пробелом"
       ]
     },
     "Video control": {
