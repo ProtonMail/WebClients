@@ -285,6 +285,10 @@ export enum NEW_EASY_SWITCH_SOURCES {
     UNKNOWN = 'unknown',
 }
 
+export enum EASY_SWITCH_SEARCH_SOURCES {
+    CONTACT_IMPORT = 'contact-import',
+}
+
 export interface EasySwitchFeatureFlag {
     GoogleMail: boolean;
     GoogleMailSync: boolean;
