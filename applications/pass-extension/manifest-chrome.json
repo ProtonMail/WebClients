@@ -3,6 +3,7 @@
     "description": "Free and fully encrypted password manager to keep your logins and passwords safe.",
     "version": "1.8.4",
     "manifest_version": 3,
+    "minimum_chrome_version": "102",
     "background": {
         "service_worker": "background.js"
     },
