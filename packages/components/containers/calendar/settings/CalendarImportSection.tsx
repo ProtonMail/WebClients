@@ -60,7 +60,7 @@ const CalendarImportSection = ({ calendars, initialCalendar, user }: Props) => {
             {!isImporterInMaintenance && (
                 <EasySwitchProvider>
                     <EasySwitchOauthImportButton
-                        className="mr-4"
+                        className="mr-4 mb-2"
                         source={EASY_SWITCH_SOURCE.IMPORT_CALENDAR_SETTINGS}
                         defaultCheckedTypes={[ImportType.CALENDAR]}
                         displayOn={'GoogleCalendar'}
@@ -69,7 +69,11 @@ const CalendarImportSection = ({ calendars, initialCalendar, user }: Props) => {
                 </EasySwitchProvider>
             )}
 
-            <PrimaryButton onClick={handleManualImport} disabled={!hasNonDelinquentScope || !hasActiveCalendars}>
+            <PrimaryButton
+                className="mb-2"
+                onClick={handleManualImport}
+                disabled={!hasNonDelinquentScope || !hasActiveCalendars}
+            >
                 {c('Action').t`Import from ICS`}
             </PrimaryButton>
         </SettingsSection>
