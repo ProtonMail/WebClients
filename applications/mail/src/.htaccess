@@ -14,6 +14,9 @@ RewriteRule ^$ /index.html [NC,L]
 # Redirect all EO requests to the EO bundle
 RewriteRule ^eo/.* /eo.html [NC,L]
 
+# Easy switch
+RewriteRule ^oauth/callback /oauth.html [L]
+
 # Hide .git stuff
 RewriteRule ^.*?\.git.* /index.html [NC,L]
 

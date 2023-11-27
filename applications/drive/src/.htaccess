@@ -23,6 +23,9 @@ RewriteRule ^.*$ - [NC,L]
 # All shared URLs pages use version with noindex meta tag
 RewriteRule ^urls\/(.*)$ /urls.html [NC,L]
 
+# Easy switch
+RewriteRule ^oauth/callback /oauth.html [L]
+
 RewriteRule ^(.*) /index.html [NC,L]
 
 ErrorDocument 404 /assets/404.html
