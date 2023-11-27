@@ -37,7 +37,7 @@
         "Se reconnecter"
       ],
       "Remove forward": [
-        "Supprimer le transfert"
+        "Retirer le transfert"
       ],
       "You will stop the mail forwarding.": [
         "Vous arrêterez le transfert automatique des messages."
@@ -189,7 +189,7 @@
         "La revendiquer"
       ],
       "Clear all formatting": [
-        "Effacer toute mise en forme"
+        "Effacer toute la mise en forme"
       ],
       "Close": [
         "Fermer"
@@ -250,6 +250,9 @@
       ],
       "Create": [
         "Créer"
+      ],
+      "Create a link to share with anyone outside ${ BRAND_NAME }": [
+        "Créez un lien de partage que vous pouvez transmettre à des personnes qui n'utilisent pas ${ BRAND_NAME }."
       ],
       "Create account": [
         "Créer un compte"
@@ -708,25 +711,25 @@
         "Recharger"
       ],
       "Remove": [
-        "Supprimer"
+        "Retirer"
       ],
       "Remove bonuses": [
         "Retirer les bonus"
       ],
       "Remove calendar": [
-        "Supprimer le calendrier"
+        "Retirer le calendrier"
       ],
       "Remove gift code": [
-        "Supprimer le code cadeau"
+        "Retirer le code cadeau"
       ],
       "Remove this label": [
-        "Supprimer ce label"
+        "Retirer ce label"
       ],
       "Remove this member": [
-        "Supprimer ce membre"
+        "Retirer ce membre"
       ],
       "Remove this notification": [
-        "Supprimer cette notification"
+        "Retirer cette notification"
       ],
       "Rename": [
         "Renommer"
@@ -1240,7 +1243,7 @@
         "Boite de réception appartenant à ${ nameToDisplay }"
       ],
       "5 trackers removed": [
-        "5 traqueurs supprimés"
+        "5 traqueurs retirés"
       ],
       "Auto forwarded": [
         "Transféré automatiquement"
@@ -1334,10 +1337,10 @@
         "J'en profite"
       ],
       "Remove": [
-        "Supprimer"
+        "Retirer"
       ],
       "Remove ${ PASS_APP_NAME }": [
-        "Supprimer ${ PASS_APP_NAME }"
+        "Retirer ${ PASS_APP_NAME }"
       ],
       "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
         "Abonnez-vous pour 15 mois et profitez de notre **gestionnaire de mots de passe chiffré** pour seulement ${ priceNoSuffix } de plus par mois."
@@ -1375,7 +1378,7 @@
         "Historique des versions plus détaillé"
       ],
       "High speed streaming": [
-        "Streaming ultra rapide"
+        "Streaming ultra-rapide"
       ],
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } version premium"
@@ -1400,7 +1403,7 @@
     },
     "bf2023: header": {
       "Save with Black Friday deals on a high-speed Swiss VPN": [
-        "Faites des économies sur le VPN suisse ultra rapide grâce aux offres Black Friday"
+        "Faites des économies sur le VPN suisse ultra-rapide grâce aux offres Black Friday"
       ],
       "Select your Black Friday offer": [
         "Sélectionnez votre offre Black Friday"
@@ -1683,7 +1686,7 @@
     },
     "Calendar permissions hint": {
       "You can change or remove permissions at any time.": [
-        "Vous pouvez modifier ou supprimer les autorisations à tout moment."
+        "Vous pouvez modifier ou retirer les autorisations à tout moment."
       ]
     },
     "Calendar permissions label": {
@@ -1698,7 +1701,7 @@
     },
     "Calendar settings link share description": {
       "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Créez un lien vers votre calendrier et partagez-le avec des personnes qui n'utilisent pas ${ BRAND_NAME }. Personne d'autre que vous ne peut ajouter ou supprimer des événements."
+        "Créez un lien vers votre calendrier et partagez-le avec des personnes qui n'utilisent pas ${ BRAND_NAME }. Personne d'autre que vous ne peut ajouter ou retirer des événements."
       ]
     },
     "Calendar settings private share description": {
@@ -2069,7 +2072,7 @@
         "Quitter l'importation ?"
       ],
       "Remove from the list?": [
-        "Supprimer de la liste ?"
+        "Retirer de la liste ?"
       ],
       "Undo this import?": [
         "Annuler cette importation ?"
@@ -3098,7 +3101,7 @@
         "Pour importer vos contacts depuis Google ou Outlook, ${ easySwitchLink }."
       ],
       "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
-        "Pour supprimer le pied de page ${ MAIL_APP_NAME }, changez d'abonnement. Vous disposerez aussi de bien plus de fonctionnalités premium."
+        "Pour retirer le pied de page ${ MAIL_APP_NAME }, changez d'abonnement. Vous disposerez aussi de bien plus de fonctionnalités premium."
       ],
       "Track the status and activity of your referrals.": [
         "Suivez vos parrainages."
@@ -3280,7 +3283,7 @@
         "${ eventTitle } a été mis à jour.\n${ eventDetailsText }"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Vous êtes invité(e) à ${ eventTitle }\n${ eventDetailsText }"
+        "Vous êtes invité à ${ eventTitle }\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3424,7 +3427,7 @@
         "Renvoyer l'e-mail de confirmation"
       ],
       "Remove “${ value }”": [
-        "Supprimer « ${ value } »"
+        "Retirer « ${ value } »"
       ],
       "Request confirmation": [
         "Demander une confirmation"
@@ -3843,9 +3846,6 @@
       "Name does not match": [
         "Les noms ne correspondent pas."
       ],
-      "Name on card required": [
-        "Le nom du titulaire de la carte est nécessaire."
-      ],
       "Name required": [
         "Le nom est nécessaire."
       ],
@@ -3950,8 +3950,8 @@
         "Le processus a été abandonné."
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Le destinataire dupliqué est supprimé : ${ joinedRecipients }",
-        "Les destinataires dupliqués sont supprimés : ${ joinedRecipients }"
+        "Le destinataire dupliqué a été retiré : ${ joinedRecipients }",
+        "Les destinataires dupliqués ont été retirés : ${ joinedRecipients }"
       ],
       "Request timed out": [
         "La requête a expiré."
@@ -3994,9 +3994,6 @@
       ],
       "The address might be misspelled": [
         "L'adresse est peut-être mal orthographiée."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Le navigateur que vous utilisez ne permet pas d'autoriser complètement le paiement. Nous vous invitons à utiliser un autre navigateur ou à vous connecter à partir d'un ordinateur."
       ],
       "The email addresses do not match": [
         "Les adresses e-mail ne correspondent pas."
@@ -4727,10 +4724,10 @@
     },
     "familyOffer_2023:Info for members section": {
       "Add, remove, and make changes to user accounts in your family group.": [
-        "Ajoutez, supprimez et modifiez les comptes utilisateurs de votre groupe familial."
+        "Ajoutez, retirez et modifiez les comptes utilisateurs de votre groupe familial."
       ],
       "Add, remove, and make changes to user accounts in your organization.": [
-        "Ajoutez, supprimez et modifiez les comptes utilisateurs de votre organisation."
+        "Ajoutez, retirez et modifiez les comptes utilisateurs de votre organisation."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4749,7 +4746,7 @@
         "Ceci supprimera définitivement tous les sous-utilisateurs, comptes et données associés à votre organisation."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Cela supprimera toutes les fonctionnalités premium de ${ BRAND_NAME } pour chaque membre de la famille."
+        "Cela retirera toutes les fonctionnalités premium de ${ BRAND_NAME } pour chaque membre de la famille."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -4888,7 +4885,7 @@
         "Clé de sécurité"
       ],
       "Security key removed": [
-        "La clé de sécurité a été supprimée."
+        "La clé de sécurité a été retirée."
       ],
       "Security key updated": [
         "La clé de sécurité a été mise à jour."
@@ -5801,7 +5798,7 @@
         "${ numberOfNonPrivateKeys } fichiers chargés ne sont pas des clés privées valides. Nous vous invitons à vérifier et à réessayer."
       ],
       "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "L'abonnement ${ plan } a été supprimé. L'offre groupée n'est pas disponible pour un abonnement d'un mois."
+        "L'abonnement ${ plan } a été retiré. L'offre groupée n'est pas disponible pour un abonnement d'un mois."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
@@ -6099,7 +6096,7 @@
         "Voulez-vous vraiment supprimer définitivement tous vos journaux ?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
-        "Voulez-vous vraiment supprimer les droits administrateur de cet utilisateur ?"
+        "Voulez-vous vraiment retirer les droits administrateur de cet utilisateur ?"
       ],
       "Ask your organisation admin to setup Gateways.": [
         "Demandez à l'administrateur de votre organisation de configurer des Passerelles."
@@ -6453,9 +6450,6 @@
       "for choosing ${ product }": [
         "d'avoir choisi ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Pour Visa, MasterCard et Discover, les 3 chiffres au verso de votre carte. Pour American Express, les 4 chiffres au recto de votre carte."
-      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Transférez les messages entrants d'un autre compte vers votre boite de réception sécurisée ${ MAIL_APP_NAME }."
       ],
@@ -6568,7 +6562,7 @@
         "URL de l'image"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Les images ont été supprimées, elles ne sont pas autorisées dans la réponse automatique."
+        "Les images ont été retirées, elles ne sont pas autorisées dans la réponse automatique."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } calendrier sur ${ totalCalendarsCount }",
@@ -7053,7 +7047,7 @@
         "Pensez à partager les informations de connexion avec l'utilisateur concerné."
       ],
       "Remove one of your calendars to join this one": [
-        "Supprimez un de vos calendriers pour rejoindre celui-ci."
+        "Retirez un de vos calendriers pour rejoindre celui-ci."
       ],
       "Report link expired": [
         "Le lien a expiré"
@@ -7148,14 +7142,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées. Cette fonctionnalité n'est disponible que pour les utilisateurs de ${ BRAND_NAME } for Business avec des domaines personnalisés."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées. Pour demander l'accès, nous vous invitons à ${ createTicket } en décrivant vos cas d'utilisation, les domaines personnalisés que vous voudriez utiliser et le nombre de messages prévus par heure et par jour."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées. Pour utiliser cette fonctionnalité, commencez par générer un nouveau jeton."
+      ],
+      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées. Cette fonctionnalité n'est disponible que pour les utilisateurs de ${ BRAND_NAME } for Business avec des domaines personnalisés."
       ],
       "Some keys successfully reactivated": [
         "Certaines clés ont été réactivées."
@@ -7240,7 +7234,7 @@
         "Le message ${ boldDataLocked } n'apparaîtra plus, mais vous pouvez toujours déverrouiller vos données sous ${ encryptionAndKeysLink }."
       ],
       "The calendar will be removed from your account.": [
-        "Le calendrier sera supprimé de votre compte."
+        "Le calendrier sera retiré de votre compte."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "Le lien de vérification par e-mail a expiré. Nous vous invitons à vous connecter pour renvoyer un lien de vérification."
@@ -7740,20 +7734,20 @@
         "Vous pouvez importer un type de données à la fois."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à supprimer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à supprimer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }."
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Veuillez supprimer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement.",
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Veuillez supprimer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement."
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement.",
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à supprimer les liens vers les calendriers partagés avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à supprimer les liens vers les calendriers partagés avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }."
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens vers les calendriers partagés avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens vers les calendriers partagés avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à supprimer les liens vers les calendriers partagés avant de résilier votre abonnement.",
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à supprimer les liens vers les calendriers partagés avant de résilier votre abonnement."
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens vers les calendriers partagés avant de résilier votre abonnement.",
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens vers les calendriers partagés avant de résilier votre abonnement."
       ],
       "You can now access and manage the account as an administrator.": [
         "Vous pouvez maintenant accéder au compte et le gérer en tant qu'administrateur."
@@ -7803,7 +7797,7 @@
         "Vous devez activer votre clé privée d'organisation avec le mot de passe de clé d'organisation de sauvegarde fourni par l'administrateur de votre organisation."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Vous devez désactiver ou supprimer vos autres utilisateurs ${ MAIL_APP_NAME }, adresses et domaines personnalisés avant de pouvoir passer à un abonnement inférieur."
+        "Vous devez désactiver ou retirer vos autres utilisateurs ${ MAIL_APP_NAME }, adresses et domaines personnalisés avant de pouvoir passer à un abonnement inférieur."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Pour pouvoir ajouter PayPal comme méthode de paiement, vous devez associer une carte de paiement ou un compte bancaire à votre compte PayPal."
@@ -8748,9 +8742,6 @@
       "Expiration (${ patternExpiration })": [
         "Expiration (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Date d’expiration"
-      ],
       "Expires": [
         "Expire le"
       ],
@@ -8897,9 +8888,6 @@
       ],
       "Name and address": [
         "Nom et adresse"
-      ],
-      "Name on card": [
-        "Nom sur la carte"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (transfert de port)"
@@ -9063,14 +9051,8 @@
       "Reveal password": [
         "Afficher le mot de passe"
       ],
-      "Security code": [
-        "Code de sécurité"
-      ],
       "Security code (${ codeName })": [
         "Code de sécurité (${ codeName })"
-      ],
-      "Select your country": [
-        "Sélectionnez votre pays"
       ],
       "Select your plan": [
         "Choisissez votre abonnement"
@@ -9425,10 +9407,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Pour ajouter un nouveau calendrier, supprimez d'abord un calendrier existant."
+        "Pour ajouter un nouveau calendrier, retirez d'abord un calendrier existant."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Pour ajouter un nouveau calendrier, vous devez d'abord supprimer un calendrier existant ou faire évoluer votre abonnement ${ BRAND_NAME } vers un abonnement payant ${ MAIL_SHORT_APP_NAME }."
+        "Pour ajouter un nouveau calendrier, vous devez d'abord retirer un calendrier existant ou faire évoluer votre abonnement ${ BRAND_NAME } vers un abonnement payant ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Vous avez atteint le nombre maximum de calendriers prévus dans votre abonnement."
@@ -9646,7 +9628,7 @@
         "Modifier"
       ],
       "Remove": [
-        "Supprimer"
+        "Retirer"
       ],
       "Revoke sessions": [
         "Révoquer les sessions"
@@ -10148,7 +10130,7 @@
         "Champs personnalisés"
       ],
       "Custom snooze time": [
-        "Personnalisation des périodes de mise en attente"
+        "Périodes de mise en attente personnalisées"
       ],
       "Data breach monitoring": [
         "Surveillance des fuites de données"
@@ -10656,7 +10638,7 @@
         "Possibilité d'afficher les boites de réception des utilisateurs non privés telles qu'ils les voient, avec toutes les informations des messages et des contacts."
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Outil de gestion d'une organisation qui permet aux administrateurs d'ajouter ou de supprimer des utilisateurs, d'attribuer de l'espace de stockage, de configurer des domaines et de réaliser d'autres tâches."
+        "Outil de gestion d'une organisation qui permet aux administrateurs d'ajouter ou de retirer des utilisateurs, d'attribuer de l'espace de stockage, de configurer des domaines et de réaliser d'autres tâches."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La fiabilité de notre infrastructure vous garantit l'accès à votre compte chaque fois que vous en avez besoin."
@@ -11200,16 +11182,16 @@
     },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
-        "${ upgradeLink } pour ajouter d'autres utilisateurs ou supprimer certains comptes utilisateurs pour libérer de l'espace."
+        "${ upgradeLink } pour ajouter d'autres utilisateurs ou retirer certains comptes utilisateurs afin de libérer de l'espace."
       ],
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
-        "${ upgradeLink } pour avoir plus de comptes ou supprimez l'accès VPN de certains utilisateurs."
+        "${ upgradeLink } pour avoir plus de comptes ou retirez l'accès VPN de certains utilisateurs."
       ],
       "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
-        "${ upgradeLink } pour avoir plus d'adresses ou supprimez certaines adresses pour libérer de l'espace."
+        "${ upgradeLink } pour avoir plus d'adresses ou retirez certaines adresses afin de libérer de l'espace."
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
-        "${ upgradeLink } pour avoir plus d'espace de stockage ou supprimez du stockage pour libérer de l'espace."
+        "${ upgradeLink } pour avoir plus d'espace de stockage ou retirez du stockage pour libérer de l'espace."
       ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "Votre abonnement comprend ${ availableAddresses } adresse supplémentaire au maximum.",
@@ -11629,9 +11611,6 @@
       "Text": [
         "Texte"
       ],
-      "Thomas Anderson": [
-        "Andréa Durant"
-      ],
       "Type text or keyword": [
         "Tapez le texte ou le mot clé."
       ],
@@ -11727,7 +11706,7 @@
         "L'adresse e-mail n'est pas vérifiée."
       ],
       "Email removed": [
-        "Adresse e-mail supprimée"
+        "Adresse e-mail retirée"
       ],
       "sign in": [
         "se connecter"
@@ -11748,7 +11727,7 @@
         "La vérification de votre adresse e-mail renforce la sécurité de votre compte et vous offre des options supplémentaires de récupération."
       ],
       "Your recovery email has been successfully removed.": [
-        "Votre adresse e-mail de récupération a été supprimée."
+        "Votre adresse e-mail de récupération a été retirée."
       ]
     },
     "Recovery method": {
@@ -11809,7 +11788,7 @@
         "Si vous quittez ce calendrier, vous devrez à nouveau demander au propriétaire de le rejoindre."
       ],
       "This calendar will be removed from your account.": [
-        "Ce calendrier sera supprimé de votre compte."
+        "Ce calendrier sera retiré de votre compte."
       ]
     },
     "Remove calendar section title": {
@@ -11820,7 +11799,7 @@
         "Quitter le calendrier ?"
       ],
       "Remove calendar": [
-        "Supprimer le calendrier"
+        "Retirer le calendrier"
       ],
       "Unsubscribe?": [
         "Se désabonner ?"
@@ -12762,7 +12741,7 @@
         "Les informations du calendrier ont été mises à jour."
       ],
       "Calendar removed": [
-        "Le calendrier a été supprimé."
+        "Le calendrier a été retiré."
       ],
       "Calendar updated": [
         "Le calendrier a été mis à jour."
@@ -12926,7 +12905,7 @@
     },
     "Success notification": {
       "${ label.Name } removed": [
-        "${ label.Name } a été supprimé."
+        "${ label.Name } a été retiré."
       ],
       "Address deleted": [
         "L'adresse a été supprimée."
@@ -12950,7 +12929,7 @@
         "Création du fichier de configuration pour ${ serverName }"
       ],
       "Filter removed": [
-        "Le filtre a été supprimé."
+        "Le filtre a été retiré."
       ],
       "Preference updated": [
         "La préférence a été mise à jour."
@@ -13447,7 +13426,7 @@
         "Supprimer le label ${ label.Name }"
       ],
       "Delete ${ tokenNameToRemove }?": [
-        "Supprimer ${ tokenNameToRemove } ?"
+        "Retirer ${ tokenNameToRemove } ?"
       ],
       "Delete account": [
         "Supprimer le compte"
@@ -13594,9 +13573,6 @@
       ],
       "Folders and labels": [
         "Dossiers et labels"
-      ],
-      "Forward and Auto-reply": [
-        "Transfert et réponse automatique"
       ],
       "Forward emails": [
         "Transfert automatique des messages"
@@ -13782,8 +13758,8 @@
       "PayPal verification failed": [
         "La vérification PayPal n'a pas abouti."
       ],
-      "Personalise your e-mail footer": [
-        "Personnalisez le pied de page de vos messages."
+      "Personalize your e-mail footer": [
+        "Personnaliser le pied de page de vos messages."
       ],
       "Phone": [
         "Téléphone"
@@ -13819,10 +13795,10 @@
         "Parrainer un ami"
       ],
       "Remove calendar": [
-        "Supprimer le calendrier"
+        "Retirer le calendrier"
       ],
       "Remove user?": [
-        "Supprimer l'utilisateur ?"
+        "Retirer l'utilisateur ?"
       ],
       "Rename the gateway": [
         "Modifier le nom de la Passerelle"
@@ -13897,7 +13873,7 @@
         "Définir le mot de passe de l'organisation"
       ],
       "Set up a recovery method": [
-        "Définissez une méthode de récupération"
+        "Définir une méthode de récupération"
       ],
       "Set up forwarding": [
         "Configurer le transfert"
@@ -14008,9 +13984,6 @@
       ],
       "Unlock your mailbox": [
         "Déverrouillez votre messagerie"
-      ],
-      "Unsupported browser": [
-        "Le navigateur n'est pas pris en charge."
       ],
       "Upgrade plan": [
         "Changer d'abonnement"
@@ -14633,7 +14606,7 @@
         "Cette importation peut dépasser la capacité de stockage actuellement disponible sur votre compte ${ BRAND_NAME }. Nous vous invitons à personnaliser votre importation."
       ],
       "This will remove all messages, folders, and labels created during the import.": [
-        "Cela supprimera tous les messages, dossiers et labels créés pendant l'importation."
+        "Cela retirera tous les messages, dossiers et labels créés pendant l'importation."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Nous ne sommes malheureusement pas en ligne pour le moment. Nous vous invitons à remplir le formulaire ci-dessous pour décrire votre problème. Nous l'examinerons et vous contacterons dès que nous serons de nouveau en ligne."
@@ -14665,7 +14638,7 @@
     },
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Une fois la vérification réussie, ne supprimez pas cet enregistrement TXT : il est nécessaire pour confirmer que vous restez propriétaire du domaine."
+        "Une fois la vérification réussie, ne retirez pas cet enregistrement TXT : il est nécessaire pour confirmer que vous restez propriétaire du domaine."
       ],
       "It can take up to a day for DNS changes to update.": [
         "La mise à jour des modifications DNS peut prendre jusqu'à une journée."

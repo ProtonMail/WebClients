@@ -251,6 +251,9 @@
       "Create": [
         "Ekle"
       ],
+      "Create a link to share with anyone outside ${ BRAND_NAME }": [
+        "${ BRAND_NAME } kullanmayan kişilerle paylaşmak için bir bağlantı oluştur"
+      ],
       "Create account": [
         "Hesap ekle"
       ],
@@ -3694,7 +3697,7 @@
         "Kimlik doğrulama sorunu."
       ],
       "Automatic replies is a paid feature. Please upgrade to a paid account to use this feature.": [
-        "Otomatik yanıt ücretli bir özelliktir. Bu özelliği kullanmak için ücretli bir tarifeye yükseltin."
+        "Otomatik yanıt ücretli bir özelliktir. Bu özelliği kullanabilmek için ücretli bir tarifeye geçin."
       ],
       "Calendar cannot be found": [
         "Takvim bulunamadı"
@@ -3843,9 +3846,6 @@
       "Name does not match": [
         "Ad eşleşmiyor"
       ],
-      "Name on card required": [
-        "Kart üzerindeki isim yazılmalı"
-      ],
       "Name required": [
         "Ad zorunludur"
       ],
@@ -3926,10 +3926,10 @@
         "Lütfen önce bir kurtarma/bildirim e-postası adresi ayarlayın"
       ],
       "Please upgrade to a business plan with more than 1 user to get multi-user support": [
-        "Çok kullanıcı desteği almak için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye yükseltin"
+        "Çok kullanıcı desteği almak için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye geçin"
       ],
       "Please upgrade to a business plan with more than 1 user to manage multiple users.": [
-        "Birden çok kullanıcıyı yönetmek için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye yükseltin."
+        "Birden çok kullanıcıyı yönetmek için lütfen 1 taneden fazla kullanıcı içeren kurumsal bir tarifeye geçin."
       ],
       "Port is required": [
         "Bağlantı noktasının yazılması zorunludur"
@@ -3994,9 +3994,6 @@
       ],
       "The address might be misspelled": [
         "Adres yanlış yazılmış olabilir"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Kullanmakta olduğunuz tarayıcı ödemenin tam olarak onaylanmasına izin vermiyor. Lütfen farklı bir tarayıcı kullanın ya da bilgisayar ile oturum açın."
       ],
       "The email addresses do not match": [
         "E-posta adresleri eşleşmiyor"
@@ -4332,6 +4329,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Uygulama şu anda kullanılamıyor"
+      ],
       "Error: ${ errorMessage }": [
         "Hata: ${ errorMessage }"
       ],
@@ -4341,11 +4341,17 @@
       "Oops, something went wrong": [
         "Bir şeyler ters gitti"
       ],
+      "Open in browser": [
+        "Tarayıcıda aç"
+      ],
       "Please refresh the page or try again later.": [
         "Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ],
       "Something went wrong": [
         "Bir şeyler ters gitti"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME } ya da ${ CALENDAR_APP_NAME } kullanmak için İnternet sürümüne geçin."
       ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Çok fazla alt oturum var. Lütfen tanımlama bilgilerini temizleyip yeniden oturum açın."
@@ -6444,9 +6450,6 @@
       "for choosing ${ product }": [
         "${ product } seçtiğiniz için"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa, MasterCard ve Discover için kartınızın arkasındaki 3 rakam. American Express için kartınızın ön yüzündeki 4 rakam."
-      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Başka bir hesaptaki e-postalarınızı güvenli ${ MAIL_APP_NAME } gelen kutunuza iletin."
       ],
@@ -7295,6 +7298,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Bu işlemin tamamlanması biraz zaman alabilir. Bu sırada lütfen bu sayfayı kapatmayın veya İnternet bağlantınızı kesmeyin."
+      ],
+      "This file is too large to preview": [
+        "Bu dosya ön izleme için çok büyük"
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Ayarlanmanız istenen bu ifade 12 sözcükten oluşur."
@@ -8733,9 +8739,6 @@
       "Expiration (${ patternExpiration })": [
         "Geçerlilik süresi (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Son kullanma tarihi"
-      ],
       "Expires": [
         "Geçerlilik sonu"
       ],
@@ -8882,9 +8885,6 @@
       ],
       "Name and address": [
         "Ad ve adres"
-      ],
-      "Name on card": [
-        "Kart üzerindeki isim"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (bağlantı noktası yönlendirme)"
@@ -9048,14 +9048,8 @@
       "Reveal password": [
         "Parolayı göster"
       ],
-      "Security code": [
-        "Güvenlik kodu"
-      ],
       "Security code (${ codeName })": [
         "Güvenlik kodu (${ codeName })"
-      ],
-      "Select your country": [
-        "Ülkenizi seçin"
       ],
       "Select your plan": [
         "Tarifenizi seçin"
@@ -10132,6 +10126,9 @@
       "Custom fields": [
         "Özel alanlar"
       ],
+      "Custom snooze time": [
+        "Özel erteleme zamanı"
+      ],
       "Data breach monitoring": [
         "Verilerin ele geçirilmesini izleme"
       ],
@@ -10350,6 +10347,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "${ BRAND_NAME } SimpleLogin ile sınırsız sayıda takma ad edinin"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "İletileri erteleyin ve istediğiniz zaman yeniden görün"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
@@ -11607,9 +11607,6 @@
       ],
       "Text": [
         "Metin"
-      ],
-      "Thomas Anderson": [
-        "Thomas Anderson"
       ],
       "Type text or keyword": [
         "Metin ya da anahtar sözcük yazın"
@@ -13574,7 +13571,7 @@
       "Folders and labels": [
         "Klasörler ve etiketler"
       ],
-      "Forward and Auto-reply": [
+      "Forward and auto-reply": [
         "İletme ve otomatik yanıtlama"
       ],
       "Forward emails": [
@@ -13761,7 +13758,7 @@
       "PayPal verification failed": [
         "PayPal doğrulaması başarısız oldu"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "E-posta alt bilginizi kişiselleştirin"
       ],
       "Phone": [
@@ -13875,6 +13872,9 @@
       "Set organization password": [
         "Kuruluş parolasını ayarla"
       ],
+      "Set up a recovery method": [
+        "Bir kurtarma yöntemi ayarlayın"
+      ],
       "Set up forwarding": [
         "İletme ayarla"
       ],
@@ -13984,9 +13984,6 @@
       ],
       "Unlock your mailbox": [
         "Posta kutunuzun kilidini açın"
-      ],
-      "Unsupported browser": [
-        "Tarayıcı desteklenmiyor"
       ],
       "Upgrade plan": [
         "Tarifeyi yükselt"
