@@ -39,12 +39,14 @@ export const BalanceOverview = ({ wallets, transactions }: Props) => {
                     </BitcoinAmount>
                 </div>
 
-                <div
-                    className="mt-8 mr-10 h-custom flex flex-column flex-justify-center"
-                    style={{ '--h-custom': '6rem' }}
-                >
-                    <DoughnutChart data={balanceDistributionDoughnutChartData} />
-                </div>
+                {wallets.length > 1 && (
+                    <div
+                        className="mt-8 mr-10 h-custom flex flex-column flex-justify-center"
+                        style={{ '--h-custom': '6rem' }}
+                    >
+                        <DoughnutChart data={balanceDistributionDoughnutChartData} />
+                    </div>
+                )}
 
                 <div
                     data-testid="7DaysDifference"

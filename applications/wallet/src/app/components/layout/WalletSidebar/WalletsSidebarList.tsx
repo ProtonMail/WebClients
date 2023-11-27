@@ -9,19 +9,18 @@ import {
     useToggle,
 } from '@proton/components';
 
+import { wallets } from '../../../tests';
 import { SidebarItemContent } from './SidebarItemContent';
 import { WalletExpandButton } from './WalletExpandButton';
 
 export const WalletsList = () => {
     const { state: showWallets, toggle: toggleShowWallets } = useToggle(true);
 
-    const wallets: any[] = ['ah', 'b']; // TODO: replace
-
     return (
         <div>
-            <SidebarListItemLink to="/wallets">
-                <SidebarListItem>
-                    <SidebarListItemLabel htmlFor={`wallets-expand`} className="group-hover-opacity-container">
+            <SidebarListItem>
+                <SidebarListItemLabel htmlFor={`wallets-expand`} className="px-0">
+                    <SidebarListItemLink to="/wallets">
                         <SidebarListItemContent
                             data-testid="wallet-sidebar:wallets"
                             left={<SidebarListItemContentIcon name="wallet" />}
@@ -34,18 +33,19 @@ export const WalletsList = () => {
                                 </div>
                             </div>
                         </SidebarListItemContent>
-                    </SidebarListItemLabel>
-                </SidebarListItem>
-            </SidebarListItemLink>
+                    </SidebarListItemLink>
+                </SidebarListItemLabel>
+            </SidebarListItem>
 
             <div className="ml-6">
                 {showWallets &&
-                    wallets.map((_, index) => (
-                        <SidebarListItem key={index}>
-                            <SidebarListItemLabel htmlFor={`wallet-${index}`} className="group-hover-opacity-container">
+                    wallets.map((wallet) => (
+                        <SidebarListItem key={wallet.id} className="mt-1">
+                            <SidebarListItemLabel htmlFor={`wallet-${wallet.id}`} className="px-0">
                                 <SidebarItemContent
-                                    label="Wallet"
                                     icon="wallet"
+                                    label={wallet.name}
+                                    to={`/wallets/${wallet.id}`}
                                     data-testid="wallet-sidebar:wallet-item"
                                 />
                             </SidebarListItemLabel>
