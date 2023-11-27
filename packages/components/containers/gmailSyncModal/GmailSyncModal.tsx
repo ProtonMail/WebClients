@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { SYNC_G_OAUTH_SCOPES, SYNC_SUCCESS_NOTIFICATION } from '@proton/activation/src/constants';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import { ImportProvider, NEW_EASY_SWITCH_SOURCES, OAuthProps } from '@proton/activation/src/interface';
+import { EASY_SWITCH_SOURCES, ImportProvider, OAuthProps } from '@proton/activation/src/interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { changeCreateLoadingState, createSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
@@ -15,7 +15,7 @@ import GmailSyncModalAnimation from './GmailSyncModalAnimation';
 import SignInWithGoogle from './SignInWithGoogle';
 
 interface Props extends ModalProps {
-    source: NEW_EASY_SWITCH_SOURCES;
+    source: EASY_SWITCH_SOURCES;
     reduceHeight?: boolean;
     onSyncCallback?: (hasError: boolean) => void;
     onSyncSkipCallback?: () => void;

@@ -17,12 +17,12 @@ import { getDefaultTimePeriod } from '@proton/activation/src/helpers/getDefaultT
 import {
     AuthenticationMethod,
     CreateImportPayload,
+    EASY_SWITCH_SOURCES,
     IMPORT_ERROR,
     ImportProvider,
     ImportToken,
     ImportType,
     ImportedCalendar,
-    NEW_EASY_SWITCH_SOURCES,
     OAuthProps,
 } from '@proton/activation/src/interface';
 import { getApiError, getIsTimeoutError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -37,7 +37,7 @@ import { ImporterCalendar, ImporterData } from './oauthDraft.interface';
 
 type Props = {
     oAuthProps: OAuthProps;
-    source: NEW_EASY_SWITCH_SOURCES;
+    source: EASY_SWITCH_SOURCES;
     defaultAddress: Address;
     user: UserModel;
 };
