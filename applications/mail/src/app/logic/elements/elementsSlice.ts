@@ -100,6 +100,9 @@ const elementsSlice = createSlice({
         updateTasksRunning: (state, action: PayloadAction<{ taskRunning: TaskRunningInfo }>) => {
             state.taskRunning = action.payload.taskRunning;
         },
+        updateStateParams: (state, action: PayloadAction<Partial<ElementsStateParams>>) => {
+            state.params = { ...(state.params || {}), ...action.payload };
+        },
     },
     extraReducers: (builder) => {
         builder.addCase(globalReset, globalResetReducer);
