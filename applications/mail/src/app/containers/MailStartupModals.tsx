@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 
+import { EasySwitchProvider } from '@proton/activation';
 import {
     FeatureCode,
     RebrandingFeedbackModal,
@@ -55,14 +56,17 @@ const MailStartupModals = ({ onboardingOpen }: Props) => {
     return (
         <>
             {renderOnboardingModal && (
-                <MailOnboardingModal
-                    onDone={() => {
-                        setWelcomeFlagsDone();
-                        onboardingModal.onClose();
-                    }}
-                    onExit={onboardingModal.onExit}
-                    open={onboardingModal.open}
-                />
+                <EasySwitchProvider>
+                    <MailOnboardingModal
+                        hideDiscoverApps
+                        onDone={() => {
+                            setWelcomeFlagsDone();
+                            onboardingModal.onClose();
+                        }}
+                        onExit={onboardingModal.onExit}
+                        open={onboardingModal.open}
+                    />
+                </EasySwitchProvider>
             )}
             {renderRebrandingFeedbackModal && (
                 <RebrandingFeedbackModal onMount={handleRebrandingFeedbackModalDisplay} {...rebrandingFeedbackModal} />
