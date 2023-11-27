@@ -12,11 +12,13 @@ import {
     type VaultIcon as VaultIconEnum,
 } from '@proton/pass/types/protobuf/vault-v1';
 
+import './VaultForm.scss';
+
 export type VaultFormValues = { name: string; description: string; color: VaultColorEnum; icon: VaultIconEnum };
 type Props<V extends VaultFormValues> = { form: FormikContextType<V>; autoFocus?: boolean; disabled?: boolean };
 
 export const VaultForm = <V extends VaultFormValues>({ form, disabled, autoFocus }: Props<V>) => (
-    <div style={{ '--min-grid-template-column-size': '2.25rem' }}>
+    <div style={{ '--column-count': VAULT_COLORS.length - 2 }}>
         <div className="flex flex-align-items-center gap-x-3">
             <VaultIcon color={form.values.color} icon={form.values.icon} size={20} background />
             <div className="flex-item-fluid">
@@ -37,7 +39,7 @@ export const VaultForm = <V extends VaultFormValues>({ form, disabled, autoFocus
         <Field
             name="color"
             component={RadioButtonGroupField}
-            className="grid-auto-fill gap-x-6 gap-y-4 my-6"
+            className="vault-icons-grid-container my-6"
             disabled={disabled}
         >
             {VAULT_COLORS.slice(2).map(([vaultColor, rgb]) => (
@@ -45,12 +47,7 @@ export const VaultForm = <V extends VaultFormValues>({ form, disabled, autoFocus
             ))}
         </Field>
 
-        <Field
-            name="icon"
-            component={RadioButtonGroupField}
-            className="grid-auto-fill gap-x-6 gap-y-4"
-            disabled={disabled}
-        >
+        <Field name="icon" component={RadioButtonGroupField} className="vault-icons-grid-container" disabled={disabled}>
             {VAULT_ICONS.slice(2).map(([vaultIcon, icon]) => (
                 <RadioButton<VaultIconEnum> key={`vault-icon-${vaultIcon}`} value={vaultIcon} icon={icon} />
             ))}
