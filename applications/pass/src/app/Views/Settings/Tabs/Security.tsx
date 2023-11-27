@@ -1,7 +1,5 @@
-import { type VFC } from 'react';
+import { type FC } from 'react';
 
 import { PinLockSetting } from '@proton/pass/components/Settings/PinLockSetting';
 
-export const Security: VFC = () => {
-    return <PinLockSetting />;
-};
+export const Security: FC = () => <PinLockSetting />;
