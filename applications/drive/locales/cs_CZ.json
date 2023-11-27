@@ -515,7 +515,7 @@
         "Nahlásit problém"
       ],
       "Request a feature": [
-        "Požádat o funkci"
+        "Požádejte o funkci"
       ],
       "Request new code": [
         "Vyžádejte si nový kód"
@@ -3962,17 +3962,11 @@
       "No": [
         "Ne"
       ],
-      "No computers syncing": [
-        "Žádné počítače k synchronizaci"
-      ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
       ],
       "No email address": [
         "Žádná e-mailová adresa"
-      ],
-      "No files or folders in trash": [
-        "Žádné soubory nebo složky v koši"
       ],
       "No group found": [
         "Nebyla nalezena žádná skupina"
@@ -7008,12 +7002,6 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" není platný název"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Název nesmí obsahovat neviditelné znaky, / nebo \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Název musí mít délku maximálně ${ MAX_NAME_LENGTH } znak",
         "Název musí mít délku maximálně ${ MAX_NAME_LENGTH } znaky",
@@ -7022,12 +7010,6 @@
       ],
       "Name must not be empty": [
         "Název nesmí být prázdný"
-      ],
-      "Name must not begin with a space": [
-        "Název nesmí začínat mezerou"
-      ],
-      "Name must not end with a space": [
-        "Název nesmí končit mezerou"
       ]
     },
     "Video control": {

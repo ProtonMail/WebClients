@@ -3750,6 +3750,9 @@
       "Items in the trash will stay here until you delete them permanently": [
         "Indhold i papirkurven forbliver der, indtil du sletter det permanent"
       ],
+      "Items moved to the trash will stay here until deleted": [
+        "Elementer, der flyttes til papirkurven, bliver her, indtil de slettes."
+      ],
       "It’s easy and secure": [
         "Det er nemt og sikkert"
       ],
@@ -3828,17 +3831,11 @@
       "No": [
         "Nej"
       ],
-      "No computers syncing": [
-        "Ingen computere synkroniserer"
-      ],
       "No contacts added yet": [
         "Ingen kontakter tilføjet endnu"
       ],
       "No email address": [
         "Ingen e-mailadresse"
-      ],
-      "No files or folders in trash": [
-        "Ingen filer eller mapper i papirkurven"
       ],
       "No group found": [
         "Ingen gruppe fundet"
@@ -4209,6 +4206,9 @@
       "Trash": [
         "Papirkurv"
       ],
+      "Trash is empty": [
+        "Papirkurven er tom"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prøv nye ${ BRAND_NAME } funktioner, opdateringer og produkter, før de bliver frigivet til offentligheden. Dette vil genindlæse applikationen"
       ],
@@ -4256,6 +4256,9 @@
       ],
       "Version is restored": [
         "Versionen er gendannet"
+      ],
+      "Want to sync files faster?": [
+        "Vil du synkronisere filer hurtigere?"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Godt gået, du har lige fordoblet din gratis lagerplads!"
@@ -6734,24 +6737,12 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" er ikke et gyldigt navn"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Navn kan ikke indeholde usynlige tegn, / eller \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Navnet skal være på højst ${ MAX_NAME_LENGTH } tegn",
         "Navnet skal være på højst ${ MAX_NAME_LENGTH } tegn"
       ],
       "Name must not be empty": [
         "Navn må ikke være tomt"
-      ],
-      "Name must not begin with a space": [
-        "Navn må ikke begynde med et mellemrum"
-      ],
-      "Name must not end with a space": [
-        "Navn må ikke slutte med et mellemrum"
       ]
     },
     "Video control": {
