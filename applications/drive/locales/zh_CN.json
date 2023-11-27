@@ -3681,9 +3681,6 @@
       "No email address": [
         "无邮箱地址"
       ],
-      "No files or folders in trash": [
-        "回收站中没有文件或文件夹"
-      ],
       "No group found": [
         "未找到群组"
       ],
@@ -6475,23 +6472,11 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "“${ str }”不是有效名称"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "名称中不能包含不可见字符，/ 或 \\。"
-      ],
       "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
         "名称不能超过 ${ MAX_NAME_LENGTH } 个字符"
       ],
       "Name must not be empty": [
         "名称不能为空"
-      ],
-      "Name must not begin with a space": [
-        "名称不能以空格开始"
-      ],
-      "Name must not end with a space": [
-        "名称不能以空格结尾"
       ]
     },
     "Video control": {

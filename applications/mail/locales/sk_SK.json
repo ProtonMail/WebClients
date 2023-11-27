@@ -730,11 +730,11 @@
       "Not saved": [
         "Neuložené"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otvoriť ${ CALENDAR_APP_NAME }"
@@ -914,7 +914,7 @@
         "Označiť všetky správy"
       ],
       "Select date and time": [
-        "Vyberte dátum a čas"
+        "Vybrať dátum a čas"
       ],
       "Self-destruct in 7 days": [
         "Samodeštrukcia za 7 dní"
@@ -5869,7 +5869,7 @@
         "Kliknite pravým tlačidlom myši pre možnosti"
       ],
       "Sat, ${ formatTime }": [
-        "Sob, ${ formatTime }"
+        "So, ${ formatTime }"
       ],
       "Saved at ${ dateString }": [
         "Uložené ${ dateString }"
@@ -5950,7 +5950,7 @@
         "SimpleLogin poskytuje jednoduchý spôsob vytvárania prihlasovacích údajov na nedôveryhodných weboch tretích strán, kde nechcete zverejniť svoju skutočnú emailovú adresu."
       ],
       "Snoozed until  ${ dateString } at ${ formattedTime }": [
-        "Odložené do ${ dateString } do ${ formattedTime }"
+        "Odložené do ${ dateString }, ${ formattedTime }"
       ],
       "Snoozed until today, ${ formattedTime }": [
         "Odložené do dnešného dňa, ${ formattedTime }"
@@ -6067,7 +6067,7 @@
         "Tento email nesplnil požiadavky na overenie svojej domény. Môže byť sfalšovaný alebo nesprávne preposlaný."
       ],
       "This file is too large to preview": [
-        "Tento súbor je príliš veľký na zobrazenie ukážky"
+        "Tento súbor je príliš veľký na zobrazenie náhľadu"
       ],
       "This invitation is saved in a disabled calendar.": [
         "Táto pozvánka je uložená v zakázanom kalendári."
@@ -6214,7 +6214,7 @@
         "Navýšte teraz a získajte prémiové funkcie, produkty a úložisko za špeciálnu cenu"
       ],
       "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
-        "Upgradnite na ${ MAIL_APP_NAME } Plus pre odomknutie"
+        "Na odomknutie upgradujte na ${ MAIL_APP_NAME } Plus"
       ],
       "Upgrade to add more addresses to your account.": [
         "Ak chcete do svojho konta pridať viac adries, upgradujte váš plán."
@@ -8811,6 +8811,12 @@
       "Search just got smarter and faster": [
         "Vyhľadávanie je teraz inteligentnejšie a rýchlejšie"
       ],
+      "Set when an email should reappear in your inbox with the new snooze feature.": [
+        "Nastavte si, kedy sa má email znovu objaviť v doručenej pošte, pomocou novej funkcie odloženia."
+      ],
+      "Snooze it for later": [
+        "Odložiť na neskôr"
+      ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Spam a kôš sú teraz automaticky vylúčené zo všetkých správ. ${ settingsLink }"
       ],
@@ -8940,10 +8946,10 @@
         "${ elementsCount } konverzácií odložených"
       ],
       "${ elementsCount } conversation unsnoozed": [
-        "Pre ${ elementsCount } konverzáciu zrušené odloženie",
-        "Pre ${ elementsCount } konverzácie zrušené odloženie",
-        "Pre ${ elementsCount } konverzácií zrušené odloženie",
-        "Pre ${ elementsCount } konverzácií zrušené odloženie"
+        "Odloženie zrušené pre ${ elementsCount } konverzáciu",
+        "Odloženie zrušené pre ${ elementsCount } konverzácie",
+        "Odloženie zrušené pre ${ elementsCount } konverzácií",
+        "Odloženie zrušené pre ${ elementsCount } konverzácií"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } správa pridaná do ${ labelName }.",
@@ -10101,13 +10107,13 @@
     },
     "WeekDay": {
       "Mon, ${ formatTime }": [
-        "Pon, ${ formatTime }"
+        "Po, ${ formatTime }"
       ],
       "Sat, ${ formatTime }": [
-        "Sob, ${ formatTime }"
+        "So, ${ formatTime }"
       ],
       "Sun, ${ formatTime }": [
-        "Ned, ${ formatTime }"
+        "Ne, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

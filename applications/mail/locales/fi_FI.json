@@ -554,6 +554,9 @@
       "label emails as": [
         "merkitse viestit tunnisteilla"
       ],
+      "Later this week": [
+        "Myöhemmin tällä viikolla"
+      ],
       "Learn more": [
         "Lue lisää"
       ],
@@ -577,6 +580,9 @@
       ],
       "Manage labels": [
         "Hallitse tunnisteita"
+      ],
+      "Manage Snooze": [
+        "Hallinnoi torkutusta"
       ],
       "Mark as read": [
         "Merkitse luetuksi"
@@ -716,10 +722,10 @@
       "Not saved": [
         "Tallentamaton"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -899,6 +905,9 @@
       "Select all messages": [
         "Valitse kaikki viestit"
       ],
+      "Select date and time": [
+        "Valitse päivämäärä ja aika"
+      ],
       "Self-destruct in 7 days": [
         "Tuhoudu seitsemän päivän kuluttua"
       ],
@@ -1004,6 +1013,9 @@
       "Skip verification": [
         "Ohita vahvistus"
       ],
+      "Snooze": [
+        "Torkuta"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Joitakin kuvia ei voitu ladata seurantasuojauksen vuoksi."
       ],
@@ -1033,6 +1045,9 @@
       ],
       "This message contains remote content.": [
         "Viesti sisältää ulkoista sisältöä."
+      ],
+      "This weekend": [
+        "Tänä viikonloppuna"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Jotta viesteistäsi voidaan etsiä turvallisesti, on niistä ladattava paikalliset kopiot selaimesi välimuistiin. Ensimmäinen lataus voi kestää jonkin aikaa."
@@ -1085,6 +1100,9 @@
       ],
       "Unordered list": [
         "Järjestämätön lista"
+      ],
+      "Unsnooze": [
+        "Peru torkutus"
       ],
       "Unstar": [
         "Poista tähti"
@@ -3841,6 +3859,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Sovellus ei ole tällä hetkellä käytettävissä"
+      ],
       "Error: ${ errorMessage }": [
         "Virhe: ${ errorMessage }"
       ],
@@ -3852,6 +3873,9 @@
       ],
       "Oops, something went wrong": [
         "Hups, jotain meni pieleen"
+      ],
+      "Open in browser": [
+        "Avaa selaimessa"
       ],
       "Please refresh the page or try again later.": [
         "Päivitä sivu tai yritä myöhemmin uudelleen."
@@ -5352,6 +5376,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Tietojasi tuodaan tililtä ${ importedEmailAddress } tilille ${ toEmail }."
       ],
+      "Include Spam/Trash.": [
+        "Sisällytä roskaposti ja roskakorin sisältö."
+      ],
       "Inherited from parent folder": [
         "Peritty yläkansiosta"
       ],
@@ -5635,6 +5662,9 @@
       "Right-click for options": [
         "Näytä valinnat hiiren kakkospainikkeella"
       ],
+      "Sat, ${ formatTime }": [
+        "la, ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "Tallennettu ${ dateString }"
       ],
@@ -5712,6 +5742,15 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin tarjoaa yksinkertaisen tavan käyttäjätunnusten luontiin epäluotettaviin verkkopalveluihin, joille et halua paljastaa todellista sähköpostiosoitettasi."
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Torkutettu tähän päivään asti, ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Torkutettu huomiseen asti, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "Tämän keskustelun torkuttaminen perutaan."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Valitettavasti viestiä ei ole olemassa tai se on jo tuhoutunut."
@@ -5814,6 +5853,9 @@
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Tämä sähköposti ei ole täyttänyt verkkotunnuksensa todennusvaatimuksia. Se voi olla väärennetty tai edelleenlähetetty väärin."
       ],
+      "This file is too large to preview": [
+        "Tämä tiedosto on liian suuri esikatseltavaksi"
+      ],
       "This invitation is saved in a disabled calendar.": [
         "Kutsu on tallennettu käytöstä poistettuun kalenteriin."
       ],
@@ -5908,6 +5950,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Käyttääksesi osoitteen vahvistusta, sinun on luotettava yhteen tai useampaan käytettävissä olevaan julkiseen avaimeen, mukaan lukien se, jota haluat käyttää lähetykseen. Tämä estää salausavainten väärennyksen."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Huomenna, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Lähetysjonossa on liikaa viestejä. Odota, kunnes seuraava viesti on lähetetty ajoittaaksesi tämän lähetyksen."
       ],
@@ -5952,6 +5997,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Päivitä nyt hankkiaksesi premium-ominaisuudet, -tuotteet ja -tallennustila erikoishintaan"
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Avaa päivittämällä ${ MAIL_APP_NAME } Plus -tilaukseen"
       ],
       "Upgrade to add more addresses to your account.": [
         "Lisää tilillesi osoitteita päivittämällä tilauksesi."
@@ -7116,6 +7164,12 @@
       "Sign up for free": [
         "Rekisteröidy ilmaiseksi"
       ],
+      "Snooze": [
+        "Torkuta"
+      ],
+      "Snoozed": [
+        "Torkutettu"
+      ],
       "Spam": [
         "Roskaposti"
       ],
@@ -7452,6 +7506,9 @@
       ],
       "Custom email domains": [
         "Omat sähköpostiverkkotunnukset"
+      ],
+      "Custom snooze time": [
+        "Oma torkutusaika"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliakset"
@@ -7906,6 +7963,9 @@
       "No results found": [
         "Tuloksia ei löytynyt"
       ],
+      "No snoozed messages": [
+        "Ei torkutettuja viestejä"
+      ],
       "No unread messages found": [
         "Lukemattomia viestejä ei löytynyt"
       ]
@@ -8195,6 +8255,11 @@
       ],
       "Sign": [
         "Allekirjoita"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Torkuta viesti"
       ]
     },
     "Sort option": {
@@ -8527,6 +8592,14 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } keskustelulta poistettiin tunniste ${ labelName }.",
         "${ elementsCount } keskustelulta poistettiin tunniste ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } keskustelu torkutettu",
+        "${ elementsCount } keskustelua torkutettu"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } keskustelun torkutus poistettu",
+        "${ elementsCount } keskustelun torkutus poistettu"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } viesti merkittiin tunnisteella ${ labelName }.",
@@ -9199,6 +9272,9 @@
       "Moving a scheduled message": [
         "Ajoitettua viestiä siirretään"
       ],
+      "Moving a snoozed message": [
+        "Torkutettua viestiä siirretään"
+      ],
       "New message": [
         "Uusi viesti"
       ],
@@ -9339,6 +9415,12 @@
       ],
       "Sign out": [
         "Kirjaudu ulos"
+      ],
+      "Snooze": [
+        "Torkuta"
+      ],
+      "Snooze message": [
+        "Torkuta viesti"
       ],
       "Sort conversations": [
         "Järjestä keskustelut"
@@ -9602,6 +9684,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ilmainen kokeilusi päättyy ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "ma, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "la, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "su, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

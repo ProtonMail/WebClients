@@ -251,6 +251,9 @@
       "Create": [
         "Crea"
       ],
+      "Create a link to share with anyone outside ${ BRAND_NAME }": [
+        "Crea un link da condividere con chiunque all'esterno di ${ BRAND_NAME }"
+      ],
       "Create account": [
         "Crea account"
       ],
@@ -1402,8 +1405,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Risparmia con le offerte del Black Friday su una VPN svizzera ad alta velocità"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Risparmia con le offerte della Cyber Week su una VPN svizzera ad alta velocità"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Risparmia con le offerte della Fine dell'Anno su una VPN svizzera ad alta velocità"
+      ],
       "Select your Black Friday offer": [
         "Seleziona la tua offerta del Black Friday"
+      ],
+      "Select your Cyber Week offer": [
+        "Seleziona la tua offerta della Cyber Week"
+      ],
+      "Select your End of Year offer": [
+        "Seleziona la tua offerta della Fine dell'Anno"
       ]
     },
     "bf2023: info": {
@@ -3714,6 +3729,9 @@
       "Contact signature not verified": [
         "Firma del contatto non verificata"
       ],
+      "Could not save preference": [
+        "Impossibile salvare la preferenza"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deseleziona almeno ${ calendarsToFixCount } calendario",
         "Deseleziona almeno ${ calendarsToFixCount } calendari"
@@ -3842,9 +3860,6 @@
       ],
       "Name does not match": [
         "Il nome non corrisponde"
-      ],
-      "Name on card required": [
-        "Nome sulla carta richiesto"
       ],
       "Name required": [
         "Nome obbligatorio"
@@ -3994,9 +4009,6 @@
       ],
       "The address might be misspelled": [
         "L'indirizzo potrebbe esser errato"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Il browser che stai usando attualmente non permette l'autorizzazione completa del pagamento. Usa un browser differente oppure accedi da un computer."
       ],
       "The email addresses do not match": [
         "Gli indirizzi email non corrispondono."
@@ -6453,9 +6465,6 @@
       "for choosing ${ product }": [
         "per aver scelto ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Per Visa, MasterCard e Discover, le 3 cifre sul retro della carta. Per American Express, le 4 cifre sulla parte anteriore della carta."
-      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Inoltra la posta in arrivo da un altro account alla tua casella di posta sicura di ${ MAIL_APP_NAME }."
       ],
@@ -7151,14 +7160,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dato che sei un utente fedele, il tuo account ha funzionalità aggiuntive abilitate."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "L'inoltro tramite SMTP consente a servizi o dispositivi di terze parti di inviare email dai tuoi indirizzi di dominio personalizzati tramite ${ MAIL_APP_NAME }. Questa funzionalità è disponibile solamente agli utenti ${ BRAND_NAME } for Business con domini personalizzati."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "L'inoltro tramite SMTP consente a servizi o dispositivi di terze parti di inviare email dai tuoi indirizzi di dominio personalizzati tramite ${ MAIL_APP_NAME }. Per richiedere l'accesso, ${ createTicket } descrivendo i tuoi casi d'uso, quali domini personalizzati vorresti usare e il volume di email previste ogni ora e ogni giorno."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "L'inoltro tramite SMTP consente a servizi o dispositivi di terze parti di inviare email dai tuoi indirizzi di dominio personalizzati tramite ${ MAIL_APP_NAME }. Per usare questa funzione, inizia generando un nuovo token."
+      ],
+      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "L'inoltro tramite SMTP consente a servizi o dispositivi di terze parti di inviare email dai tuoi indirizzi di dominio personalizzati tramite ${ MAIL_APP_NAME }. Questa funzionalità è disponibile solamente agli utenti ${ BRAND_NAME } for Business con domini personalizzati."
       ],
       "Some keys successfully reactivated": [
         "Alcune chiavi sono state riattivate con successo"
@@ -8598,6 +8607,9 @@
       "Conversation grouping": [
         "Raggruppamento delle conversazioni"
       ],
+      "Conversations per page": [
+        "Conversazioni per pagina"
+      ],
       "Copy": [
         "Copia"
       ],
@@ -8751,9 +8763,6 @@
       "Expiration (${ patternExpiration })": [
         "Scadenza (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Data di scadenza"
-      ],
       "Expires": [
         "Scadenza"
       ],
@@ -8883,6 +8892,9 @@
       "Message": [
         "Messaggio"
       ],
+      "Messages per page": [
+        "Messaggi per pagina"
+      ],
       "Moderate NAT": [
         "NAT moderato"
       ],
@@ -8900,9 +8912,6 @@
       ],
       "Name and address": [
         "Nome e indirizzo"
-      ],
-      "Name on card": [
-        "Nome sulla carta"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Port forwarding)"
@@ -9066,14 +9075,8 @@
       "Reveal password": [
         "Mostra la password"
       ],
-      "Security code": [
-        "Codice di sicurezza"
-      ],
       "Security code (${ codeName })": [
         "Codice di sicurezza (${ codeName })"
-      ],
-      "Select your country": [
-        "Seleziona il tuo paese"
       ],
       "Select your plan": [
         "Seleziona il tuo piano"
@@ -11659,9 +11662,6 @@
       "Text": [
         "Testo"
       ],
-      "Thomas Anderson": [
-        "Luigi Bianchi"
-      ],
       "Type text or keyword": [
         "Inserisci testo o parola chiave"
       ],
@@ -13625,7 +13625,7 @@
       "Folders and labels": [
         "Cartelle ed etichette"
       ],
-      "Forward and Auto-reply": [
+      "Forward and auto-reply": [
         "Inoltro e risposta automatica"
       ],
       "Forward emails": [
@@ -13812,7 +13812,7 @@
       "PayPal verification failed": [
         "Verifica PayPal non riuscita"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "Personalizza il piè di pagina della tua email"
       ],
       "Phone": [
@@ -14038,9 +14038,6 @@
       ],
       "Unlock your mailbox": [
         "Sblocca la tua casella di posta"
-      ],
-      "Unsupported browser": [
-        "Browser non supportato"
       ],
       "Upgrade plan": [
         "Aggiorna piano"

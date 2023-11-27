@@ -37,7 +37,7 @@
         "Reconnecta"
       ],
       "Remove forward": [
-        "Suprimeix el reenviament"
+        "Esborra el reenviament"
       ],
       "You will stop the mail forwarding.": [
         "Aturareu el reenviament del correu."
@@ -675,25 +675,25 @@
         "Recarrega"
       ],
       "Remove": [
-        "Suprimeix"
+        "Esborra"
       ],
       "Remove bonuses": [
-        "Suprimeix bonus"
+        "Esborra el bonus"
       ],
       "Remove calendar": [
-        "Suprimeix el calendari"
+        "Esborra el calendari"
       ],
       "Remove gift code": [
-        "Esborrar codi regal"
+        "Esborra el codi de regal"
       ],
       "Remove this label": [
-        "Elimina aquesta etiqueta"
+        "Esborra aquesta etiqueta"
       ],
       "Remove this member": [
-        "Elimina aquest membre"
+        "Esborra aquest membre"
       ],
       "Remove this notification": [
-        "Elimina aquesta notificació"
+        "Esborra aquesta notificació"
       ],
       "Rename": [
         "Canvia el nom"
@@ -1192,7 +1192,7 @@
         "Bustia d'entrada ${ nameToDisplay }"
       ],
       "5 trackers removed": [
-        "S'han eliminat 5 rastrejadors"
+        "S'han esborrat 5 rastrejadors"
       ],
       "Auto forwarded": [
         "Reenviat automàticament"
@@ -1280,10 +1280,10 @@
         "Obtingui l’oferta"
       ],
       "Remove": [
-        "Suprimeix"
+        "Esborra"
       ],
       "Remove ${ PASS_APP_NAME }": [
-        "Suprimeix ${ PASS_APP_NAME }"
+        "Esborra ${ PASS_APP_NAME }"
       ]
     },
     "bf2023: Deal details": {
@@ -1572,7 +1572,7 @@
     },
     "Calendar permissions hint": {
       "You can change or remove permissions at any time.": [
-        "Podeu canviar o eliminar permisos en qualsevol moment."
+        "Podeu canviar o esborrar permisos en qualsevol moment."
       ]
     },
     "Calendar permissions label": {
@@ -1587,7 +1587,7 @@
     },
     "Calendar settings link share description": {
       "Create a link to your calendar and share it with anyone outside ${ BRAND_NAME }. Only you can add or remove events.": [
-        "Creeu un enllaç al vostre calendari i compartiu-lo amb qualsevol persona fora de ${ BRAND_NAME }. Sou l'única persona que pot afegir o suprimir esdeveniments."
+        "Creeu un enllaç al vostre calendari i compartiu-lo amb qualsevol de fora de ${ BRAND_NAME }. Sou l'única persona que pot afegir o esborrar esdeveniments."
       ]
     },
     "Calendar settings private share description": {
@@ -2983,6 +2983,9 @@
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "Per a importar els vostres contactes de Google o Outlook, ${ easySwitchLink }"
       ],
+      "To remove the ${ MAIL_APP_NAME } footer, upgrade and unlock even more premium features.": [
+        "Per a esborrar el peu de pàgina de ${ MAIL_APP_NAME }, milloreu i aconseguiu encara més característiques prèmium."
+      ],
       "Track the status and activity of your referrals.": [
         "Feu un seguiment de l'estat i l'activitat de les vostres referències."
       ],
@@ -3289,7 +3292,7 @@
         "Torna a enviar el correu de confirmació"
       ],
       "Remove “${ value }”": [
-        "Suprimeix \"${ value }”"
+        "Esborra \"${ value }”"
       ],
       "Resume": [
         "Reprèn"
@@ -3589,9 +3592,6 @@
       "Name does not match": [
         "El nom no coincideix"
       ],
-      "Name on card required": [
-        "Nom en targeta requerit"
-      ],
       "Name required": [
         "Nom requerit"
       ],
@@ -3693,8 +3693,8 @@
         "Procés anul·lat"
       ],
       "Removed duplicate recipient: ${ joinedRecipients }": [
-        "Destinatari duplicat eliminat: ${ joinedRecipients }",
-        "Destinataris duplicats eliminats: ${ joinedRecipients }"
+        "Destinatari duplicat esborrat: ${ joinedRecipients }",
+        "Destinataris duplicats esborrats: ${ joinedRecipients }"
       ],
       "Request timed out": [
         "S'ha esgotat el temps d'espera"
@@ -3737,9 +3737,6 @@
       ],
       "The address might be misspelled": [
         "És possible que l'adreça estigui mal escrita."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "El navegador que esteu utilitzant no permet que s'autoritzi completament el pagament. Utilitzeu un navegador diferent o inicieu la sessió mitjançant un ordinador."
       ],
       "The email addresses do not match": [
         "Les adreces de correu electrònic no coincideixen."
@@ -4110,7 +4107,7 @@
         "Autentiqueu-vos per a verificar"
       ],
       "There was a problem removing your email address.": [
-        "Hi ha hagut un problema en l'eliminació de la vostra adreça de correu electrònic."
+        "Hi ha hagut un problema en esborrar la vostra adreça de correu electrònic."
       ],
       "There was a problem verifying your email address.": [
         "Hi ha hagut un problema en la verificació de la vostra adreça de correu electrònic."
@@ -4449,10 +4446,10 @@
     },
     "familyOffer_2023:Info for members section": {
       "Add, remove, and make changes to user accounts in your family group.": [
-        "Afegiu, elimineu i realitzeu canvis als comptes d'usuari del grup familiar."
+        "Afegiu, esborreu i realitzeu canvis als comptes d'usuari del grup familiar."
       ],
       "Add, remove, and make changes to user accounts in your organization.": [
-        "Afegiu, elimineu i realitzeu canvis als comptes d'usuari de la vostra organització."
+        "Afegiu, esborreu i realitzeu canvis als comptes d'usuari de la vostra organització."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4471,7 +4468,7 @@
         "Això eliminarà permanentment tots els subusuaris, comptes i dades associades amb la vostra organització."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Això eliminarà totes les característiques prèmium de ${ BRAND_NAME } per a tots els membres de la família."
+        "Això esborrarà totes les característiques prèmium de ${ BRAND_NAME } per a tots els membres de la família."
       ]
     },
     "familyOffer_2023:Settings section title": {
@@ -4481,7 +4478,7 @@
     },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organization.Name }": [
-        "${ member.Name } s'ha suprimit de ${ organization.Name }"
+        "${ member.Name } s'ha esborrat de ${ organization.Name }"
       ],
       "An error occurred, please try again": [
         "S'ha produït un error. Intenteu-ho de nou."
@@ -4570,7 +4567,7 @@
         "Afegir clau de seguretat"
       ],
       "Delete key": [
-        "Eliminar clau"
+        "Elimina la clau"
       ]
     },
     "fido2: Error": {
@@ -4595,7 +4592,7 @@
         "Permet les claus de plataforma"
       ],
       "Are you sure you want to delete security key ${ name }?": [
-        "Esteu segur que voleu suprimir la clau de seguretat ${ name }?"
+        "Segur que voleu eliminar la clau de seguretat ${ name }?"
       ],
       "Insert a security key linked to your ${ BRAND_NAME } Account.": [
         "Inseriu una clau de seguretat enllaçada al vostre compte ${ BRAND_NAME }."
@@ -4607,7 +4604,7 @@
         "Clau de seguretat"
       ],
       "Security key removed": [
-        "Clau de seguretat suprimida"
+        "La clau de seguretat s'ha esborrat."
       ],
       "Security key updated": [
         "Clau de seguretat actualitzada"
@@ -4635,10 +4632,10 @@
     },
     "fido2: Title": {
       "Delete security key?": [
-        "Eliminar clau de seguretat?"
+        "Voleu eliminar la clau de seguretat?"
       ],
       "Disable 2FA via security key?": [
-        "Desactivar l'A2F amb clau de seguretat?"
+        "Voleu desactivar l'A2F amb clau de seguretat?"
       ],
       "Name your security key": [
         "Anomeneu la vostra clau de seguretat"
@@ -5499,6 +5496,9 @@
         "${ numberOfNonPrivateKeys } fitxer carregat no és una clau privada vàlida. Verifiqueu-ho i torneu-ho a provar.",
         "${ numberOfNonPrivateKeys } fitxers carregats no són claus privades vàlides. Verifiqueu-ho i torneu-ho a provar."
       ],
+      "${ plan } removed. Bundle deal not available on a 1-month plan.": [
+        "S'ha esborrat el pla ${ plan }. L'oferta de paquet no està disponible per a un pla d'un mes."
+      ],
       "${ PROTON_SENTINEL_NAME } is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.": [
         "${ PROTON_SENTINEL_NAME } és un programa avançat de protecció del compte alimentat per sistemes d'IA sofisticats i equips d'especialistes que treballen les 24 hores del dia per protegir-vos d'actors maliciosos i amenaces de seguretat."
       ],
@@ -5767,7 +5767,7 @@
         "Estàs segur que vols eliminar tots els teus registres de forma permanent?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
-        "Esteu segur que voleu suprimir els privilegis d'administració d'aquest usuari?"
+        "Esteu segur que voleu esborrar els privilegis d'administració d'aquest usuari?"
       ],
       "Attention required": [
         "Es requereix la vostra atenció"
@@ -6080,9 +6080,6 @@
       "for choosing ${ product }": [
         "per escollir ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Per a Visa, MasterCard i Discover, els 3 dígits a la part posterior de la targeta. Per a American Express, els 4 dígits a la part frontal de la targeta."
-      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Reenvieu els missatges entrants d'un altre compte a la vostra safata d'entrada segura de ${ MAIL_APP_NAME }."
       ],
@@ -6189,7 +6186,7 @@
         "URL de la imatge"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Les imatges s'han eliminat perquè no estan permeses a les respostes automàtiques"
+        "Les imatges s'han esborrat perquè no estan permeses a les respostes automàtiques."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importa ${ calendarCount } calendari de ${ totalCalendarsCount }",
@@ -6617,7 +6614,7 @@
         "Refrescar la pàgina o ${ link } resoldrà automàticament la majoria dels problemes."
       ],
       "Remove one of your calendars to join this one": [
-        "Suprimiu un dels vostres calendaris per a unir-vos a aquest."
+        "Esborreu un dels vostres calendaris per a unir-vos a aquest."
       ],
       "Report link expired": [
         "L'enllaç de notificació ha expirat"
@@ -6780,7 +6777,7 @@
         "El missatge ${ boldDataLocked } ja no es mostrarà, però encara podeu desbloquejar les vostres dades en ${ encryptionAndKeysLink }."
       ],
       "The calendar will be removed from your account.": [
-        "El calendari se suprimirà del vostre compte."
+        "El calendari se esborrarà del vostre compte."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "L'enllaç de verificació per correu electrònic ha caducat. Inicieu la sessió per a tornar a enviar un enllaç de verificació."
@@ -6826,6 +6823,9 @@
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
         "Aquestes configuracions es proporcionen per treballar amb routers WireGuard i clients oficials."
+      ],
+      "They will be removed from your organization": [
+        "S'esborraran de la vostra organització."
       ],
       "They'll receive a free month of ${ planName }.": [
         "Se'ls oferirà un mes gratuït de ${ planName }."
@@ -7092,7 +7092,7 @@
         "Atenció:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Advertència: l'eliminació és permanent. Això també suprimeix l'accés a tots els serveis connectats i esborra tots els vostres contactes."
+        "Advertència: l'eliminació és permanent. Això també esborra l'accés a tots els serveis connectats i elimina tots els vostres contactes."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Us recomanem utilitzar les aplicacions ${ VPN_APP_NAME } oficials quan sigui possible."
@@ -7218,20 +7218,20 @@
         "Podeu importar un tipus de dades alhora."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Suprimiu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Suprimiu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }."
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit els vostres calendaris abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Suprimiu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció.",
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Suprimiu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció."
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció.",
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits i qualsevol usuari de ${ BRAND_NAME } amb qui hàgiu compartit calendaris abans de cancel·lar la subscripció."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Suprimiu els enllaços de calendari compartits abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Suprimiu els enllaços de calendari compartits abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }."
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }.",
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits abans de cancel·lar la subscripció de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Suprimiu els enllaços de calendari compartits abans de cancel·lar la subscripció.",
-        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Suprimiu els enllaços de calendari compartits abans de cancel·lar la subscripció."
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendari. Esborreu els enllaços de calendari compartits abans de cancel·lar la subscripció.",
+        "Podeu mantenir fins a ${ MAX_CALENDARS_FREE } calendaris. Esborreu els enllaços de calendari compartits abans de cancel·lar la subscripció."
       ],
       "You can now access and manage the account as an administrator.": [
         "Ara podeu accedir i gestionar el compte com a administrador."
@@ -7277,7 +7277,7 @@
         "Ha d'activar la clau privada de la seva organització amb la contrasenya de la clau de l'organització de suport que li va proporcionar l'administrador de la seva organització."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Heu de desactivar o suprimir qualsevol usuari, adreça o domini personalitzat addicional de ${ MAIL_APP_NAME } abans de passar a un pla inferior."
+        "Heu de desactivar o esborrar qualsevol usuari, adreça o domini personalitzat addicional de ${ MAIL_APP_NAME } abans de passar a un pla inferior."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Per afegir-lo com a mètode de pagament, heu de tenir una targeta de crèdit o un compte bancari enllaçat amb el vostre compte PayPal."
@@ -8129,9 +8129,6 @@
       "Expiration (${ patternExpiration })": [
         "Caducitat (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Data de caducitat"
-      ],
       "Expires": [
         "Expira"
       ],
@@ -8278,9 +8275,6 @@
       ],
       "Name and address": [
         "Nom i adreça"
-      ],
-      "Name on card": [
-        "Nom de la targeta"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (redirecció de ports)"
@@ -8438,14 +8432,8 @@
       "Reveal password": [
         "Mostra la contrasenya"
       ],
-      "Security code": [
-        "Codi de seguretat"
-      ],
       "Security code (${ codeName })": [
         "Codi de seguretat (${ codeName })"
-      ],
-      "Select your country": [
-        "Seleccioni el seu país"
       ],
       "Select your plan": [
         "Seleccioneu el vostre pla"
@@ -8752,10 +8740,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Per a afegir un nou calendari, suprimiu-ne un d'existent."
+        "Per a afegir un nou calendari, esborreu-ne un d'existent."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Per afegir un nou calendari, suprimiu-ne un altre o milloreu el vostre pla de ${ BRAND_NAME } a un pla de pagament de ${ MAIL_SHORT_APP_NAME }."
+        "Per afegir un nou calendari, esborreu-ne un altre o milloreu el vostre pla de ${ BRAND_NAME } a un pla de pagament de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Heu assolit el nombre màxim de calendaris disponibles amb el vostre pla."
@@ -8973,7 +8961,7 @@
         "Edita"
       ],
       "Remove": [
-        "Suprimeix"
+        "Esborra"
       ],
       "Revoke sessions": [
         "Revoca les sessions"
@@ -9944,7 +9932,7 @@
         "Opció per a veure les safates d'entrada no privades com ho faria l'usuari, incloent-hi el missatge complet i els detalls de contacte"
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Eina de gestió d'organitzacions que permet als administradors afegir i suprimir usuaris, assignar emmagatzematge, configurar dominis i realitzar altres tasques"
+        "Eina de gestió d'organitzacions que permet als administradors afegir i esborrar usuaris, assignar emmagatzematge, configurar dominis i acomplir altres tasques."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La nostra robusta infraestructura garanteix que podreu accedir al vostre compte quan ho necessiteu"
@@ -10402,16 +10390,16 @@
     },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
-        "${ upgradeLink } el vostre pla per afegir més usuaris o suprimiu alguns comptes d'usuari per alliberar espai."
+        "${ upgradeLink } el vostre pla per afegir més usuaris o esborreu alguns comptes d'usuari per alliberar espai."
       ],
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
-        "${ upgradeLink } per obtenir més comptes o suprimíeu l'accés VPN per alguns usuaris."
+        "${ upgradeLink } per obtenir més comptes o esborreu l'accés VPN per a alguns usuaris."
       ],
       "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
-        "${ upgradeLink } el vostre pla per obtenir més adreces o suprimiu-ne algunes per alliberar espai."
+        "${ upgradeLink } el vostre pla per obtenir més adreces o esborreu-ne algunes per alliberar espai."
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
-        "${ upgradeLink } el vostre pla per obtenir més emmagatzematge o suprimiu una part de l'emmagatzematge per alliberar espai."
+        "${ upgradeLink } el vostre pla per obtenir més emmagatzematge o esborreu una part de l'emmagatzematge per alliberar espai."
       ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "El vostre pla inclou un màxim d'${ availableAddresses } adreça addicional.",
@@ -10813,9 +10801,6 @@
       "Text": [
         "Text"
       ],
-      "Thomas Anderson": [
-        "Adrià Pujol"
-      ],
       "Type text or keyword": [
         "Escrigui text o paraula clau"
       ],
@@ -10899,7 +10884,7 @@
         "L'adreça de correu electrònic encara no s'ha verificat."
       ],
       "Email removed": [
-        "Correu electrònic eliminat"
+        "S'ha esborrat el correu electrònic."
       ],
       "sign in": [
         "iniciar la sessió"
@@ -10920,7 +10905,7 @@
         "Verificar la vostra adreça de correu electrònic augmenta la seguretat del vostre compte i permet opcions addicionals per a la recuperació."
       ],
       "Your recovery email has been successfully removed.": [
-        "El vostre correu electrònic de recuperació s'ha suprimit correctament."
+        "El vostre correu electrònic de recuperació s'ha esborrat correctament."
       ]
     },
     "Recovery method": {
@@ -10970,7 +10955,7 @@
     },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "En anul·lar la subscripció, ja no tindràs accés a aquest calendari. Tots els esdeveniments d'aquest calendari s'eliminaran del vostre compte, però romandran a l'enllaç públic original."
+        "En anul·lar la subscripció, ja no tindreu accés a aquest calendari. Tots els esdeveniments d'aquest calendari s'eliminaran del vostre compte, però romandran a l'enllaç públic original."
       ],
       "You will no longer have access to this calendar.": [
         "Ja no tindreu accés a aquest calendari."
@@ -10981,7 +10966,7 @@
         "Si abandoneu aquest calendari, haureu de demanar permís al propietari per tornar a unir-vos-hi."
       ],
       "This calendar will be removed from your account.": [
-        "Aquest calendari s'eliminarà del vostre compte."
+        "Aquest calendari s'esborrarà del vostre compte."
       ]
     },
     "Remove calendar section title": {
@@ -10992,7 +10977,7 @@
         "Voleu sortir del calendari?"
       ],
       "Remove calendar": [
-        "Suprimeix el calendari"
+        "Esborra el calendari"
       ],
       "Unsubscribe?": [
         "Voleu anul·lar la subscripció?"
@@ -11888,7 +11873,7 @@
         "S'ha actualitzat la informació del calendari."
       ],
       "Calendar removed": [
-        "S'ha suprimit el calendari."
+        "S'ha esborrat el calendari."
       ],
       "Calendar updated": [
         "S'ha actualitzat el calendari."
@@ -12041,7 +12026,7 @@
     },
     "Success notification": {
       "${ label.Name } removed": [
-        "${ label.Name } suprimit"
+        "${ label.Name } esborrat"
       ],
       "Address deleted": [
         "Adreça eliminada"
@@ -12065,7 +12050,7 @@
         "S'està creant el fitxer de configuració per a ${ serverName }"
       ],
       "Filter removed": [
-        "Filtre suprimit"
+        "S'ha esborrat el filtre."
       ],
       "Preference updated": [
         "S'ha actualitzat la preferència"
@@ -12545,7 +12530,7 @@
         "Eliminar l'etiqueta ${ label.Name }"
       ],
       "Delete ${ tokenNameToRemove }?": [
-        "Voleu eliminar ${ tokenNameToRemove }?"
+        "Voleu esborrar ${ tokenNameToRemove }?"
       ],
       "Delete account": [
         "Elimina el compte"
@@ -12670,9 +12655,6 @@
       ],
       "Folders and labels": [
         "Carpetes i etiquetes"
-      ],
-      "Forward and Auto-reply": [
-        "Reenviament i resposta automàtica"
       ],
       "Forward emails": [
         "Reenviament de correus electrònics"
@@ -12852,7 +12834,7 @@
       "PayPal verification failed": [
         "Error amb la verificació de PayPal"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "Personalitzeu el peu de pàgina del vostre correu electrònic"
       ],
       "Phone": [
@@ -12889,10 +12871,10 @@
         "Recomana a un amic"
       ],
       "Remove calendar": [
-        "Suprimeix el calendari"
+        "Esborra el calendari"
       ],
       "Remove user?": [
-        "Voleu suprimir l'usuari?"
+        "Voleu esborrar l'usuari?"
       ],
       "Rename the gateway": [
         "Canvia el nom de la passarel·la"
@@ -13072,9 +13054,6 @@
       ],
       "Unlock your mailbox": [
         "Desbloquegeu la vostra bústia de correu"
-      ],
-      "Unsupported browser": [
-        "Navegador no soportat"
       ],
       "Upgrade plan": [
         "Millora el pla"
@@ -13587,7 +13566,7 @@
         "Aquesta importació pot superar la capacitat d'emmagatzematge disponible actualment al vostre compte de ${ BRAND_NAME }. Considereu personalitzar la importació."
       ],
       "This will remove all messages, folders, and labels created during the import.": [
-        "Això suprimirà tots els missatges, carpetes i etiquetes creades durant la importació."
+        "Això esborrarà tots els missatges, carpetes i etiquetes creades durant la importació."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Lamentablement no estem en línia en aquest moment. Completeu el formulari de sota per descriure el vostre problema, i ho mirarem i ens posarem en contacte quan tornem a estar en línia."
@@ -13619,7 +13598,7 @@
     },
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Després de la verificació satisfactòria, no suprimiu aquest registre TXT ja que cal confirmar que continueu posseint el domini."
+        "Després de la verificació, no esborreu aquest registre TXT, ja que cal confirmar que continueu posseint el domini."
       ],
       "It can take up to a day for DNS changes to update.": [
         "Els canvis DNS poden trigar fins a un dia a actualitzar-se."

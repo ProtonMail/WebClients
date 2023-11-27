@@ -201,7 +201,7 @@
         "更換授權約期"
       ],
       "Edit users": [
-        "編輯用戶"
+        "編輯使用者"
       ],
       "enable desktop notifications": [
         "啟用桌面通知"
@@ -1875,9 +1875,6 @@
       "Name does not match": [
         "名稱不相符"
       ],
-      "Name on card required": [
-        "持卡人姓名必須填寫"
-      ],
       "Not a valid number": [
         "號碼無效"
       ],
@@ -1946,9 +1943,6 @@
       ],
       "Tab closed": [
         "分頁已關閉"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "您正使用的瀏覽器不允許付款妥為授權。請使用另一個瀏覽器，或改以電腦登入。"
       ],
       "The email addresses do not match": [
         "電子郵件位址不相符"
@@ -2037,6 +2031,9 @@
       ],
       "Oops, something went wrong": [
         "糟糕，出了一點問題"
+      ],
+      "Open in browser": [
+        "在瀏覽器中開啟"
       ],
       "Please refresh the page or try again later.": [
         "請重新整理頁面或稍後再試。"
@@ -2196,7 +2193,7 @@
         "您已成功加入家庭方案"
       ],
       "You need to configure a custom domain before creating a new user.": [
-        "您需要先設置自訂網域，才可建立新使用者。"
+        "你必須先設定自訂網域，才可以建立新的使用者"
       ],
       "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
         "我們邀請您將您的 ${ BRAND_NAME } 帳號連結至此群組方案，並一起享受所有 ${ BRAND_NAME_TWO } 進階功能。"
@@ -2944,9 +2941,6 @@
       "for choosing ${ product }": [
         "選用 ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa、MasterCard 和 Discover 信用卡而言，所指的是卡背的 3 位數字。American Express 信用卡而言，所指的是卡面的 4 位數字。"
-      ],
       "Free forever": [
         "永遠免費"
       ],
@@ -3371,7 +3365,7 @@
         "這些設定檔讓你可以在第三方 VPN 應用程式或路由器上自由選擇要連線到哪一台 ${ VPN_APP_NAME } 伺服器。"
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        "這些設定檔提供 WireGuard routers 與官方用戶端使用。"
+        "這些設定檔提供 WireGuard routers 與官方客戶端使用。"
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "這些認證無法用於登入我們的官方 ${ VPN_APP_NAME } 應用程式。${ learnMore }"
@@ -4015,9 +4009,6 @@
       "Expiration (${ patternExpiration })": [
         "到期日(${ patternExpiration })"
       ],
-      "Expiration date": [
-        "有效期限"
-      ],
       "Expires": [
         "有效期限"
       ],
@@ -4059,9 +4050,6 @@
       ],
       "Name and address": [
         "名稱及地址"
-      ],
-      "Name on card": [
-        "持卡人姓名"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (通訊埠轉送)"
@@ -4168,14 +4156,8 @@
       "Reveal password": [
         "顯示密碼"
       ],
-      "Security code": [
-        "安全碼"
-      ],
       "Security code (${ codeName })": [
         "安全驗證代碼(${ codeName })"
-      ],
-      "Select your country": [
-        "請選擇您的國家"
       ],
       "Select your plan": [
         "選擇你的方案"
@@ -4639,6 +4621,9 @@
       ],
       "Custom fields": [
         "自訂欄位"
+      ],
+      "Custom snooze time": [
+        "自訂延遲時間"
       ],
       "Data breach monitoring": [
         "資料外洩監測"
@@ -5110,7 +5095,7 @@
         "防止郵件被 ${ BRAND_NAME } 或第三方存取。能夠讀取郵件的人，就只有寄件者和意指的收件者。"
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
-        "保護所有連接到 WiFi 的裝置，這對那些不能直接設置 VPN 的裝置尤為有效。"
+        "保護所有連接至 WiFi 的裝置，這對於不能直接設定 VPN 的裝置非常有效"
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "保護您的家人免受有害網站的侵害並存取我們的高速 VPN 伺服器以串流觀看您喜愛的內容"
@@ -6425,7 +6410,7 @@
         "${ appName } Free"
       ],
       "${ VPN_APP_NAME } clients": [
-        "${ VPN_APP_NAME } 用戶端"
+        "${ VPN_APP_NAME } 客戶端"
       ],
       "(active)": [
         "(啟用)"
@@ -6662,7 +6647,7 @@
         "編輯使用者"
       ],
       "Edit users": [
-        "編輯用戶"
+        "編輯使用者"
       ],
       "Edit who can access the gateway": [
         "編輯誰可存取閘道器"
@@ -6909,9 +6894,6 @@
       ],
       "Unlock your mailbox": [
         "解除鎖定您的信箱"
-      ],
-      "Unsupported browser": [
-        "不支援此瀏覽器"
       ],
       "Upgrade your network protection with dedicated servers": [
         "透過專用伺服器提升您的網路保護"

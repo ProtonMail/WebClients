@@ -625,6 +625,9 @@
       "Skip verification": [
         "検証をスキップする"
       ],
+      "Start": [
+        "開始"
+      ],
       "Start import": [
         "インポート開始"
       ],
@@ -808,6 +811,11 @@
       ],
       "Unsupported event": [
         "サポートされていない予定です"
+      ]
+    },
+    "bf2023: Deal details": {
+      "Extended version history": [
+        "拡張バージョン履歴"
       ]
     },
     "Bug category": {
@@ -2452,6 +2460,9 @@
       "Oops, something went wrong": [
         "エラーが発生しました。"
       ],
+      "Open in browser": [
+        "ブラウザで開く"
+      ],
       "Please refresh the page or try again later.": [
         "ページを再読み込みするか、後でもう一度お試しください。"
       ],
@@ -3627,9 +3638,6 @@
       ],
       "No email address": [
         "メールアドレスなし"
-      ],
-      "No files or folders in trash": [
-        "ごみ箱は空です"
       ],
       "No group found": [
         "グループが見つかりませんでした"
@@ -6407,23 +6415,11 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "「${ str }」という名前は使用できません"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "名前に \"/\" または \"\\\" の文字を使うことができません。 "
-      ],
       "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
         "名前は${ MAX_NAME_LENGTH }文字以内で入力してください"
       ],
       "Name must not be empty": [
         "名前を入力してください"
-      ],
-      "Name must not begin with a space": [
-        "名前の最初に空白は入力できません"
-      ],
-      "Name must not end with a space": [
-        "名前の最後に空白は入力できません"
       ]
     },
     "Video control": {

@@ -28,6 +28,9 @@
       "Add Bcc recipients": [
         "बीसीसी वाले लोग जोड़े"
       ],
+      "Add birthday": [
+        "जन्मदिन जोड़ें"
+      ],
       "Add Cc recipients": [
         "सीसी प्राप्तकर्ता जोड़े"
       ],
@@ -48,6 +51,9 @@
       ],
       "Add new group": [
         "नया ग्रुप जोड़ें"
+      ],
+      "Add note": [
+        "नोट जोड़ें"
       ],
       "Add participant": [
         "प्रतिभागी जोड़ें"
@@ -132,6 +138,9 @@
       ],
       "Carbon Copy": [
         "कार्बन कॉपी"
+      ],
+      "Change email": [
+        "ईमेल बदलें"
       ],
       "Change page": [
         "पेज बदलें"
@@ -303,6 +312,9 @@
       "Discard": [
         "रद्द करें"
       ],
+      "Don't know your password?": [
+        "क्या आप अपना पासवर्ड नहीं जानते?"
+      ],
       "Done": [
         "पूरा हुआ"
       ],
@@ -311,6 +323,9 @@
       ],
       "Download ${ attachmentName }": [
         "डाउनलोड ${ attachmentName }"
+      ],
+      "Downloading": [
+        "डाउनलोड हो रहा है"
       ],
       "Edit": [
         "बदलें"
@@ -467,6 +482,12 @@
       ],
       "Import from .csv or vCard": [
         ".csv या vCard से आयात करें"
+      ],
+      "Import from Google": [
+        "Google से आयात करे"
+      ],
+      "Import from Outlook": [
+        "Outlook से आयात करे"
       ],
       "In the morning": [
         "सुबह में"
@@ -667,6 +688,9 @@
       "OK": [
         "ठीक है"
       ],
+      "Ok": [
+        "ठीक है"
+      ],
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } खोलें"
       ],
@@ -829,6 +853,9 @@
       "See business plans": [
         "बिज़नेस प्लान देखे"
       ],
+      "See how": [
+        "देखें कैसे"
+      ],
       "See plan features": [
         "प्लान की विशेषताएं देखें"
       ],
@@ -879,6 +906,9 @@
       ],
       "Set recovery phrase": [
         "पुनर्प्राप्ति वाक्यांश सेट करें"
+      ],
+      "Settings": [
+        "सेटिंग"
       ],
       "Share via link": [
         "लिंक से शेयर करें"
@@ -952,6 +982,9 @@
       "Stay": [
         "रुकें"
       ],
+      "Strikethrough": [
+        "स्ट्राइकथ्रू"
+      ],
       "Submit": [
         "जमा करें"
       ],
@@ -960,6 +993,9 @@
       ],
       "This message contains remote content.": [
         "इस संदेश में दूरस्थ सामग्री है |"
+      ],
+      "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
+        "आपके ईमेल को सुरक्षित रूप से खोजने के लिए, हमें आपके ईमेल की एक कॉपी आपके ब्राउज़र पर डाउनलोड करनी होगी। आरंभिक डाउनलोड में कुछ समय लग सकता है।"
       ],
       "Toggle Calendar app": [
         "कैलेंडर ऐप बदलें"
@@ -1139,6 +1175,16 @@
         "संदेश खत्म हो रहा"
       ]
     },
+    "Addon": {
+      "${ ips } server": [
+        "${ ips } सर्वर",
+        "${ ips } सर्वर"
+      ],
+      "${ users } user": [
+        "${ users } यूज़र",
+        "${ users } यूज़र"
+      ]
+    },
     "Alert": {
       "By leaving now, some contacts may not be imported": [
         "अभी छोड़ने से, हो सकता है कि कुछ संपर्क आयात न हों"
@@ -1233,6 +1279,41 @@
         "भेजनेवाले का सत्यापन सफल"
       ]
     },
+    "bf2023: Deal details": {
+      "${ storageSize } storage": [
+        "${ storageSize } स्टोरेज"
+      ],
+      "1 user": [
+        "1 यूज़र"
+      ],
+      "3 TB": [
+        "3 टीबी"
+      ],
+      "3,000+ servers across 65+ countries": [
+        "65+ देशों में 3,000+ सर्वर"
+      ],
+      "6 users": [
+        "6 यूज़र"
+      ],
+      "Ad-blocker and malware protection": [
+        "ऐड-ब्लॉकर और मालवेयर सुरक्षा"
+      ],
+      "High speed streaming": [
+        "तेज़ स्ट्रीमिंग"
+      ],
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "प्रीमियम ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "प्रीमियम ${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ VPN_SHORT_APP_NAME }"
+      ],
+      "Premium Password Manager": [
+        "प्रीमियम पासवर्ड मैनेजर"
+      ]
+    },
     "bf2023: Footer": {
       "Your subscription will automatically renew at the standard discounted rate and duration at the end of your billing cycle.": [
         "आपकी सदस्यता आपके बिलिंग चक्र के अंत में मानक रियायती दर और अवधि पर स्वचालित रूप से नवीनीकृत हो जाएगी"
@@ -1241,6 +1322,10 @@
     "bf2023: Tooltip": {
       "Access blocked content and browse privately. Includes 3,000+ servers across 65+ countries, highest VPN speeds, access to worldwide streaming services, malware and ad-blocker, fast BitTorrent downloads, and more.": [
         "अवरुद्ध सामग्री तक पहुंचें और निजी तौर पर ब्राउज़ करें। इसमें 65+ देशों में 3,000+ सर्वर, उच्चतम वीपीएन गति, दुनिया भर में स्ट्रीमिंग सेवाओं तक पहुंच, मैलवेयर और विज्ञापन-अवरोधक, तेज़ बिटटोरेंट डाउनलोड और बहुत कुछ शामिल है।"
+      ],
+      "Includes support for 3 custom email domains, ${ addresses } email address, unlimited hide-my-email aliases, calendar sharing, and more.": [
+        "इसमें 3 कस्टम ईमेल डोमेन, ${ addresses } ईमेल पते, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण और बहुत कुछ के लिए समर्थन शामिल है।",
+        "इसमें 3 कस्टम ईमेल डोमेन, ${ addresses } ईमेल पते, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण और बहुत कुछ के लिए समर्थन शामिल है।"
       ],
       "Secure your emails and schedule with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, calendar sharing, and more.": [
         "अपने ईमेल और शेड्यूल को एंड-टू-एंड एन्क्रिप्शन के साथ सुरक्षित करें। इसमें कस्टम ईमेल डोमेन, 15 ईमेल पते, असीमित hide-my-email उपनाम, कैलेंडर साझाकरण और बहुत कुछ के लिए समर्थन शामिल है।"
@@ -1611,6 +1696,9 @@
       "azureish white": [
         "अज़ूर सफेद"
       ],
+      "black": [
+        "काला"
+      ],
       "blanched almond": [
         "विरंजित बिदाम"
       ],
@@ -1769,6 +1857,12 @@
       ]
     },
     "Commander action": {
+      "Create a new folder": [
+        "नया फोल्डर बनाएं"
+      ],
+      "Create a new label": [
+        "नया लेबल बनाएं"
+      ],
       "Go to Archive": [
         "संग्रह पर जाएं"
       ],
@@ -1777,6 +1871,12 @@
       ],
       "Go to Inbox": [
         "इनबॉक्स में जाएं"
+      ],
+      "Go to Sent": [
+        "भेजे गए में जाएं"
+      ],
+      "Go to Spam": [
+        "स्पैम में जाएं"
       ],
       "Go to Starred": [
         "तारांकित पर जाएं"
@@ -1881,8 +1981,17 @@
       "Birthday": [
         "जन्मदिन"
       ],
+      "Display name": [
+        "डिस्प्ले नाम"
+      ],
       "Email": [
         "ईमेल"
+      ],
+      "Enter a display name or nickname": [
+        "एक डिस्प्ले नाम या उपनाम दर्ज करें"
+      ],
+      "First name": [
+        "पहला नाम"
       ],
       "Gender": [
         "लिंग"
@@ -1892,6 +2001,9 @@
       ],
       "Language": [
         "भाषा"
+      ],
+      "Last name": [
+        "अंतिम नाम"
       ],
       "Logo": [
         "लोगो"
@@ -3108,6 +3220,9 @@
       "Filter with this name already exists": [
         "इस नाम से फ़िल्टर पहले से मौजूद है"
       ],
+      "First name is too long": [
+        "पहला नाम बहुत लंबा है"
+      ],
       "Folder name cannot be empty.": [
         "फ़ोल्डर का नाम रिक्त नहीं हो सकता |"
       ],
@@ -3122,6 +3237,9 @@
       ],
       "Incorrect mailbox password. Please try again.": [
         "गलत मेलबॉक्स पासवर्ड। कृपया पुन: प्रयास करें |"
+      ],
+      "Incorrect username": [
+        "गलत यूज़रनेम"
       ],
       "Invalid email address": [
         "अमान्य ईमेल पता"
@@ -3357,6 +3475,10 @@
       "Wrong mailbox password": [
         "गलत मेलबॉक्स पासवर्ड"
       ],
+      "You can't send a mail to more than ${ maxContacts } recipient": [
+        "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते",
+        "आप ${ maxContacts } से अधिक प्राप्तकर्ता को मेल नहीं भेज सकते"
+      ],
       "You cannot open more than ${ maxActiveComposer } composer window at a time": [
         "आप एक समय में ${ maxActiveComposer } संगीतकार विंडो से अधिक नहीं खोल सकते हैं",
         "आप एक समय में ${ maxActiveComposer } संगीतकार विंडो से अधिक नहीं खोल सकते हैं"
@@ -3575,6 +3697,9 @@
       "Oops, something went wrong": [
         "ओह! कुछ गलत हो गया है"
       ],
+      "Open in browser": [
+        "ब्राउज़र में खोलें"
+      ],
       "Please refresh the page or try again later.": [
         "पन्ना रिफ्रेश करें या वापस कोशिश करें।"
       ],
@@ -3674,6 +3799,15 @@
       ]
     },
     "familyOffer_2023:Deal details": {
+      "Premium ${ DRIVE_SHORT_APP_NAME }": [
+        "प्रीमियम ${ DRIVE_SHORT_APP_NAME }"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME } & ${ CALENDAR_SHORT_APP_NAME }": [
+        "प्रीमियम ${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME }"
+      ],
+      "Premium ${ VPN_SHORT_APP_NAME }": [
+        "प्रीमियम ${ VPN_SHORT_APP_NAME }"
+      ],
       "Up to 6 users": [
         "6 यूज़र तक"
       ]
@@ -3697,6 +3831,9 @@
       "Storage assigned to you: ${ assignedStorage }": [
         "आपको दिया गया स्टोरेज: ${ assignedStorage }"
       ],
+      "Visionary and family plans do not currently support external accounts. Create a ${ BRAND_NAME } address before joining. ${ addressSettingsLink }": [
+        "Visionary और पारिवारिक योजनाएँ वर्तमान में बाहरी खातों का समर्थन नहीं करती हैं। शामिल होने से पहले एक ${ BRAND_NAME } पता बनाएं। ${ addressSettingsLink }"
+      ],
       "You have successfully joined the Family plan": [
         "आप परिवार प्लान से जुड़ गए है"
       ],
@@ -3710,6 +3847,11 @@
       ],
       "Set up your family account": [
         "अपना परिवार खाता सेट करें"
+      ]
+    },
+    "familyOffer_2023:Tooltip": {
+      "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "इसमें 65+ देशों में 2700 सर्वर, 10 डिवाइस तक कनेक्ट, दुनिया भर में स्ट्रीमिंग सेवाओं तक पहुंच, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
       ]
     },
     "Feedback Modal Title": {
@@ -3748,6 +3890,9 @@
       ],
       "MB": [
         "एमबी"
+      ],
+      "TB": [
+        "टीबी"
       ]
     },
     "file size format, long": {
@@ -3766,6 +3911,10 @@
       "Megabyte": [
         "प्रयुताष्टक",
         "प्रयुताष्टक"
+      ],
+      "Terabyte": [
+        "टेराबाइट",
+        "टेराबाइट"
       ]
     },
     "Filter": {
@@ -3886,6 +4035,20 @@
         "डिफॉल्ट"
       ]
     },
+    "Font size option": {
+      "Large": [
+        "बड़ा"
+      ],
+      "Small": [
+        "छोटा"
+      ],
+      "Very large": [
+        "बहुत बड़ा"
+      ],
+      "Very small": [
+        "बहुत छोटा"
+      ]
+    },
     "forwardmessage": {
       "Date: On ${ date }": [
         "तारीख: ${ date } को"
@@ -3901,8 +4064,20 @@
       ]
     },
     "Get started checklist instructions": {
+      "Close": [
+        "बंद करें"
+      ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } का मोबाइल ऐप लें"
+      ],
+      "Learn more": [
+        "और जानें"
+      ],
+      "Maybe later": [
+        "शायद बाद में"
+      ],
+      "You've unlocked 1 GB": [
+        "आपने 1 जीबी अनलॉक कर लिया है"
       ]
     },
     "Gmail forwarding": {
@@ -4289,6 +4464,10 @@
         "${ contactsCount } संपर्क मिला",
         "${ contactsCount } संपर्क मिले"
       ],
+      "${ contactsLength } contact": [
+        "${ contactsLength } संपर्क",
+        "${ contactsLength } संपर्क"
+      ],
       "${ count } unread message": [
         "${ count } अपठित संदेश",
         "${ count } अपठित संदेश"
@@ -4314,9 +4493,17 @@
         "${ messagesNotAuthorizedToMove } संदेश को स्थानांतरित नहीं किया जा सका।",
         "${ messagesNotAuthorizedToMove } संदेशों को स्थानांतरित नहीं किया जा सका।"
       ],
+      "${ numberOfImageTrackers } email tracker blocked": [
+        "${ numberOfImageTrackers } ईमेल ट्रैकर ब्लॉक किया गया",
+        "${ numberOfImageTrackers } ईमेल ट्रैकर ब्लॉक किए गए"
+      ],
       "${ numberOfImageTrackers } tracker blocked": [
         "${ numberOfImageTrackers } ट्रैकर ब्लॉक किया गया",
         "${ numberOfImageTrackers } ट्रैकर ब्लॉक किए गए"
+      ],
+      "${ numberOfUTMTrackers } link cleaned": [
+        "${ numberOfUTMTrackers } लिंक साफ किया गया",
+        "${ numberOfUTMTrackers } लिंक साफ किए गए"
       ],
       "${ NumMessages } message in conversation": [
         "${ NumMessages } संदेश बातचीत में",
@@ -4627,6 +4814,9 @@
       "Each code can only be used once": [
         "हर कूटक का उपयोग केवल एक बार हो सकता है"
       ],
+      "Edit email address": [
+        "ईमेल पता संपादित करें"
+      ],
       "Edit encryption": [
         "एन्क्रिप्शन संपादित करें"
       ],
@@ -4775,6 +4965,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "अपने डेटा को ${ importedEmailAddress } से ${ toEmail } में आयात करना।"
       ],
+      "Include Spam/Trash.": [
+        "स्पैम/कचरा शामिल करें"
+      ],
       "Inherited from parent folder": [
         "मूल फ़ोल्डर से इनहेरिट की गई"
       ],
@@ -4913,6 +5106,9 @@
       "No results found": [
         "कोई परिणाम नहीं मिला"
       ],
+      "No trackers found": [
+        "कोई ट्रैकर नहीं मिला"
+      ],
       "non-${ MAIL_APP_NAME }": [
         "गैर-${ MAIL_APP_NAME }"
       ],
@@ -4958,6 +5154,9 @@
       "Please note that this process may take some time depending on the size of your address book.": [
         "कृपया ध्यान दें कि इस प्रक्रिया में आपकी पता पुस्तिका के आकार के आधार पर कुछ समय लग सकता है।"
       ],
+      "Please provide a name and an email address for creating a group.": [
+        "कृपया ग्रुप बनाने के लिए एक नाम और एक ईमेल पता दें।"
+      ],
       "Please select the folders you would like to import:": [
         "कृपया उन फ़ोल्डरों का चयन करें जिन्हें आप आयात करना चाहते हैं:"
       ],
@@ -4970,6 +5169,9 @@
       ],
       "Please select which email address or addresses to add to ${ groupName }.": [
         "कृपया चुनें कि ${ groupName } में कौनसे ईपत्र पते डालने हैं।"
+      ],
+      "Please use another browser or download the file.": [
+        "कृपया किसी अन्य ब्राउज़र का उपयोग करें या फाइल डाउनलोड करें।"
       ],
       "Please wait till your changes are synced with the server.": [
         "कृपया बदलावो का सर्वर से सिंक होने का इंतज़ार करें।"
@@ -5280,6 +5482,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "पता सत्यापन का उपयोग करने के लिए, आपको एक या अधिक उपलब्ध सार्वजनिक कुंजियों पर भरोसा करना चाहिए, जिसमें आप भेजने के लिए उपयोग करना चाहते हैं। यह एन्क्रिप्शन कुंजियों को नकली होने से रोकता है।"
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "कल, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "बहुत सारे संदेश भेजे जाने की प्रतीक्षा कर रहे हैं। कृपया इसे शेड्यूल करने के लिए कोई अन्य संदेश भेजे जाने तक प्रतीक्षा करें।"
       ],
@@ -5294,6 +5499,9 @@
       ],
       "Total VPN connections": [
         "कुल VPN कनेक्शन"
+      ],
+      "Turn off to only search by date, name, email address, or subject line. To disable search message content and delete downloaded messages, go to settings.": [
+        "केवल दिनांक, नाम, ईमेल पता या विषय के आधार पर खोजने के लिए इसे बंद करें। संदेश सामग्री में खोज को अक्षम करने और डाउनलोड किए गए संदेशों को हटाने के लिए सेटिंग्स पर जाएं।"
       ],
       "Turn on to search the content of your messages": [
         "अपने संदेशों की सामग्री खोजने के लिए चालू करें"
@@ -5373,8 +5581,14 @@
       "We apologize. This might have been a mistake from our side. Can you please confirm that you want to mark this email as a legitimate one?": [
         "हम माफी चाहते हैं। यह हमारी तरफ से हुई गलती हो सकती है। क्या आप इस बात की पुष्टि कर सकते हैं कि आप इस ईमेल को एक वैध के रूप में चिह्नित करना चाहते हैं?"
       ],
+      "We blocked the following advertisers and organizations from seeing when you open this email, what device you’re using, and where you’re located.": [
+        "हमने निम्नलिखित विज्ञापनदाताओं और संगठनों को यह देखने से रोक दिया है कि आप यह ईमेल कब खोलते हैं, आप किस उपकरण का उपयोग कर रहे हैं और आप कहाँ स्थित हैं।"
+      ],
       "We could not verify the sender's trusted keys.": [
         "हम प्रेषक की विश्वसनीय कुंजियों को सत्यापित नहीं कर सके।"
+      ],
+      "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
+        "हमने आपको विज्ञापनदाताओं और आपकी ऑनलाइन गतिविधि को ट्रैक करने का प्रयास करने वाले अन्य लोगों से बचाने में मदद करने के लिए निम्नलिखित लिंक से ट्रैकिंग जानकारी हटा दी है।"
       ],
       "We'll notify you when the import is done.": [
         "आयात हो जाने पर हम आपको सूचित करेंगे।"
@@ -5583,6 +5797,9 @@
       ]
     },
     "Key pinning": {
+      "Clicking \"Trust Key\" will associate this public key with this sender and emails from this address will be automatically cryptographically verified.": [
+        "\"ट्रस्ट कुंजी\" पर क्लिक करने से यह सार्वजनिक कुंजी इस प्रेषक के साथ संबद्ध हो जाएगी और इस पते से ईमेल स्वचालित रूप से क्रिप्टोग्राफ़िक रूप से सत्यापित हो जाएंगे।"
+      ],
       "Clicking \"Trust Key\" will create a new contact and associate this public key with this sender. Emails from this address will be automatically cryptographically verified.": [
         "\"ट्रस्ट कुंजी\" पर क्लिक करने से एक नया संपर्क बनेगा और इस सार्वजनिक कुंजी को इस प्रेषक के साथ संबद्ध किया जाएगा। इस पते से ईमेल स्वचालित रूप से क्रिप्टोग्राफ़िक रूप से सत्यापित हो जाएंगे।"
       ],
@@ -5856,6 +6073,9 @@
       ],
       "BCC": [
         "बीसीसी"
+      ],
+      "Beta Access": [
+        "बीटा एक्सेस"
       ],
       "Blind Carbon Copy": [
         "ब्लाइंड कार्बन कॉपी"
@@ -6189,6 +6409,9 @@
       ],
       "the email was sent ${ label }": [
         "ईमेल भेजा गया था ${ label }"
+      ],
+      "Theme": [
+        "थीम"
       ],
       "Then": [
         "तब"
@@ -6767,6 +6990,9 @@
       ],
       "Up to 15 email addresses": [
         "15 ईमेल पते तक"
+      ],
+      "Up to 3 TB of storage": [
+        "3 टीबी तक स्टोरेज"
       ]
     },
     "new_plans: feature info": {
@@ -6859,6 +7085,14 @@
       ],
       "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
         "अपने स्क्रीन के उपरी बाएं कोने में ऐप सलेक्टर से ${ BRAND_NAME } की सारे सेवाएं इस्तेमाल करें: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME },${ CALENDAR_SHORT_APP_NAME }, और ${ DRIVE_SHORT_APP_NAME }।"
+      ]
+    },
+    "Online Accounts Name": {
+      "Banking": [
+        "बैंकिंग"
+      ],
+      "Entertainment": [
+        "मनोरंजन"
       ]
     },
     "Option": {
@@ -7245,9 +7479,66 @@
         "शून्य-पहुंच एन्क्रिप्शन के साथ संग्रहीत"
       ]
     },
+    "session_recovery:available:action": {
+      "Reset password": [
+        "पासवर्ड रीसेट करें"
+      ]
+    },
+    "session_recovery:available:info": {
+      "${ timeRemaining.inDays } day": [
+        "${ timeRemaining.inDays } दिन",
+        "${ timeRemaining.inDays } दिन"
+      ],
+      "${ timeRemaining.inHours } hour": [
+        "${ timeRemaining.inHours } घंटा",
+        "${ timeRemaining.inHours } घंटे"
+      ]
+    },
+    "session_recovery:available:link": {
+      "See how": [
+        "देखें कैसे"
+      ]
+    },
+    "session_recovery:available:notification": {
+      "Password saved": [
+        "पासवर्ड सहेजा गया"
+      ]
+    },
+    "session_recovery:cancelled:link": {
+      "change your password now": [
+        "अपना पासवर्ड अभी बदलें"
+      ]
+    },
+    "session_recovery:in_progress:action": {
+      "Got it": [
+        "समझ गया"
+      ],
+      "Learn more": [
+        "और जानें"
+      ]
+    },
     "session_recovery:in_progress:info": {
       "To make sure it’s really you trying to reset your password, we wait 72 hours before approving requests. You can change your password in ${ boldTimeLeft }. ${ viewRequest }": [
         "यह सुनिश्चित करने के लिए कि वास्तव में आप ही अपना पासवर्ड रीसेट करने का प्रयास कर रहे हैं, हम अनुरोधों को स्वीकृत करने से पहले 72 घंटे तक प्रतीक्षा करते हैं। आप अपना पासवर्ड ${ boldTimeLeft } में बदल सकते हैं। ${ viewRequest }"
+      ]
+    },
+    "session_recovery:sign_out:action": {
+      "Sign out": [
+        "साइन आउट करें"
+      ]
+    },
+    "session_recovery:sign_out:info": {
+      "${ gracePeriodHoursRemaining } hour": [
+        "${ gracePeriodHoursRemaining } घंटा",
+        "${ gracePeriodHoursRemaining } घंटे"
+      ],
+      "You will be able to reset your password in ${ boldTimeLeft }.": [
+        "आप अपना पासवर्ड ${ boldTimeLeft } में रीसेट कर पाएंगे।"
+      ]
+    },
+    "session_recovery:sign_out:link": {
+      "Password reset": [
+        "पासवर्ड रिसेट करें"
       ]
     },
     "Signature verification warning": {
@@ -7333,6 +7624,9 @@
       ]
     },
     "specialoffer: Deal details": {
+      "1 user": [
+        "1 यूज़र"
+      ],
       "3 TB": [
         "3 टीबी"
       ],
@@ -7350,6 +7644,9 @@
       ],
       "Highest VPN speed": [
         "सबसे तेज़ वीपीएन रफ्तार"
+      ],
+      "Premium ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } & ${ DRIVE_SHORT_APP_NAME }": [
+        "प्रीमियम ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } और ${ DRIVE_SHORT_APP_NAME }"
       ],
       "Premium early access": [
         "प्रीमियम जल्दी एक्सेस"
@@ -7373,14 +7670,24 @@
       ]
     },
     "specialoffer: Offers": {
+      "${ n } month": [
+        "${ n } महीना",
+        "${ n } महीने"
+      ],
       "/ month": [
         "/ महीने"
       ],
       "1 year": [
         "1 साल"
       ],
+      "15 months": [
+        "15 महीने"
+      ],
       "2 years": [
         "2 साल"
+      ],
+      "30 months": [
+        "30 महीने"
       ],
       "Billed at ${ amount } for 1 month": [
         "1 महीने के लिए ${ amount } का बिल"
@@ -7445,6 +7752,9 @@
       ]
     },
     "Spotlight": {
+      "Change setting": [
+        "सेटिंग बदलें"
+      ],
       "Email tracking protection": [
         "ईमेल ट्रैकिंग सुरक्षा"
       ],
@@ -7456,6 +7766,9 @@
       ],
       "Schedule send": [
         "शेड्यूल भेजें"
+      ],
+      "Search just got smarter and faster": [
+        "खोजना अब और अधिक स्मार्ट और तेज़ हो गया है"
       ],
       "We now load images by default and block senders from tracking you. This can be changed in the ${ settingsLink }.": [
         "अब हम तस्वीरे डिफॉल्ट लोड करते है और भेजनेवालो को आपको ट्रैक करने से रोकते है। आप इसको ${ settingsLink } में बदल सकते है।"
@@ -7752,6 +8065,14 @@
         "फीडबैक भेजा गया"
       ]
     },
+    "summer2023: Tooltip": {
+      "Create secure login details on all your devices. Includes unlimited aliases, 20 vaults, integrated 2FA, credit card auto-fill and more.": [
+        "अपने सभी उपकरणों पर सुरक्षित लॉगिन विवरण बनाएं। इसमें असीमित उपनाम, 20 वॉल्ट, एकीकृत 2एफए, क्रेडिट कार्ड ऑटो-फिल और बहुत कुछ शामिल है।"
+      ],
+      "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
+        "इसमें 65+ देशों में 2950+ सर्वर, 10 डिवाइस तक कनेक्ट, दुनिया भर में स्ट्रीमिंग सेवाओं तक पहुंच, मैलवेयर और विज्ञापन-अवरोधक और बहुत कुछ शामिल है।"
+      ]
+    },
     "Table header": {
       "Action": [
         "कार्य"
@@ -7793,6 +8114,9 @@
       ],
       "Display name": [
         "प्रदर्शित होने वाला नाम"
+      ],
+      "First name": [
+        "पहला नाम"
       ],
       "Import": [
         "आयात"
@@ -7871,6 +8195,9 @@
       "Addresses": [
         "पतों"
       ],
+      "All settings": [
+        "सभी सेटिंग"
+      ],
       "Archive": [
         "संग्रह"
       ],
@@ -7885,6 +8212,9 @@
       ],
       "BCC": [
         "बीसीसी"
+      ],
+      "Birthday": [
+        "जन्मदिन"
       ],
       "Blind Carbon Copy": [
         "ब्लाइंड कार्बन कॉपी"
@@ -8183,6 +8513,12 @@
       "No attachment found": [
         "कोई अनुलग्नक नहीं मिला"
       ],
+      "No trackers found": [
+        "कोई ट्रैकर नहीं मिला"
+      ],
+      "Notes": [
+        "नोट"
+      ],
       "Open actions dropdown": [
         "खुली कार्रवाई ड्रॉपडाउन"
       ],
@@ -8345,6 +8681,10 @@
       ],
       "Warning: suspected fake website": [
         "चेतावनी: संदिग्ध फर्जी वेबसाइट"
+      ],
+      "We protected you from ${ trackersCount } tracker": [
+        "हमने आपको ${ trackersCount } ट्रैकर से सुरक्षित रखा है",
+        "हमने आपको ${ trackersCount } ट्रैकर से सुरक्षित रखा है"
       ],
       "Welcome": [
         "स्वागत"
@@ -8528,6 +8868,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "आपका निःशुल्क परीक्षण ${ textDate } को समाप्त होगा। ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "सोमवार, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "शनिवार, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "रविवार, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

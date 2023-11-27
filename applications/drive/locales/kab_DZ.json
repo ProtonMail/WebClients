@@ -3322,9 +3322,6 @@
       "No email address": [
         "Ulac tansa n yimayl"
       ],
-      "No files or folders in trash": [
-        "Ulac ifuyla neɣ ikaramen deg tqecwalt"
-      ],
       "No group found": [
         "Ulac agraw"
       ],
@@ -5582,24 +5579,12 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" mačči d isem ameɣtu"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Isem ur izir ara ad yegber isekkilen uffiren, / neɣ \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Isem ilaq ad yili ${ MAX_NAME_LENGTH } n usekkil deg teɣzi ma aṭas",
         "Isem ilaq ad yili ${ MAX_NAME_LENGTH } n yisekkilen deg teɣzi ma aṭas"
       ],
       "Name must not be empty": [
         "Isem ur ilaq ara ad yili d ilem"
-      ],
-      "Name must not begin with a space": [
-        "Isem ur ilaq ara ad ibdu s tallunt"
-      ],
-      "Name must not end with a space": [
-        "Isem ur ilaq ara ad yekfu s tallunt"
       ]
     },
     "Video control": {

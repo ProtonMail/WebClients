@@ -496,6 +496,9 @@
       "Report a problem": [
         "Relatar um problema"
       ],
+      "Report an issue": [
+        "Reportar um problema"
+      ],
       "Request a feature": [
         "Pedir uma funcionalidade"
       ],
@@ -619,6 +622,9 @@
       "Skip verification": [
         "Saltar verificação"
       ],
+      "Start": [
+        "Começar"
+      ],
       "Start import": [
         "Iniciar a importação"
       ],
@@ -699,6 +705,9 @@
       ],
       "Upload folder": [
         "Enviar pasta"
+      ],
+      "Upload photos": [
+        "Carregar fotos"
       ],
       "Upload picture": [
         "Enviar imagem"
@@ -2026,6 +2035,9 @@
       "Enter 6 digits": [
         "Introduza 6 algarismos"
       ],
+      "Error decrypting a computer": [
+        "Erro ao desencriptar um computador"
+      ],
       "File \"${ item.name }\" cannot be uploaded due to \"${ error }\" error": [
         "O ficheiro \"${ item.name }\" não pode ser carregado devido ao erro \"${ error }\"."
       ],
@@ -2158,6 +2170,9 @@
       ],
       "Some contacts could not be deleted": [
         "Não foi possível eliminar alguns contactos"
+      ],
+      "Some files were ignored because they are not supported in Photos": [
+        "Alguns ficheiros foram ignorados por não serem suportados em Fotografias"
       ],
       "Some groups could not be deleted": [
         "Alguns grupos não puderam ser eliminados"
@@ -2531,6 +2546,12 @@
     "Event title": {
       "(no title)": [
         "(sem título)"
+      ]
+    },
+    "Failed": {
+      "${ countOfFailedLinks } failed": [
+        "${ countOfFailedLinks } falhou",
+        "${ countOfFailedLinks } falharam"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -3129,6 +3150,12 @@
         "${ doneUploadsCount } enviado",
         "${ doneUploadsCount } enviados"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } na App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } na Play Store"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } erro",
         "${ errorCount } erros"
@@ -3162,6 +3189,10 @@
       "${ selectedContactsLength }/${ contactsLength } contact selected": [
         "${ selectedContactsLength }/${ contactsLength } contacto selecionado",
         "${ selectedContactsLength }/${ contactsLength } contactos selecionados"
+      ],
+      "${ selectedCount } selected": [
+        "${ selectedCount } selecionado",
+        "${ selectedCount } selecionados"
       ],
       "${ selectedFoldersCount } folder selected": [
         "${ selectedFoldersCount } pasta selecionada",
@@ -3231,6 +3262,9 @@
       ],
       "An active recovery file": [
         "Um ficheiro de recuperação ativo"
+      ],
+      "An issue occurred during the restore process.": [
+        "Ocorreu um problema durante o processo de recuperação."
       ],
       "and": [
         "e"
@@ -3384,6 +3418,9 @@
       "double your storage": [
         "dobrar o seu armazenamento"
       ],
+      "Download ${ name } app": [
+        "Faça o 'download' da aplicação ${ name }"
+      ],
       "Download canceled": [
         "A transferência foi cancelada."
       ],
@@ -3410,6 +3447,9 @@
       ],
       "Drop file here to upload": [
         "Solte os ficheiros aqui para os carregar"
+      ],
+      "Drop files here": [
+        "Largar ficheiros aqui"
       ],
       "Drop to import": [
         "Solte para importar"
@@ -3522,6 +3562,12 @@
       ],
       "from the version history?": [
         "do histórico de versões?"
+      ],
+      "Get the app to backup photos from your phone.": [
+        "Obtenha a aplicação para fazer a cópia de segurança a partir do seu telefone."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Obtenha a aplicação de ‘desktop’ para sincronizar ficheiros a partir do seu computador."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Conheça o ${ DRIVE_APP_NAME } e beneficie de um bónus de armazenamento de 500 MB!"
@@ -3677,9 +3723,6 @@
       "No email address": [
         "Sem endereço de e-mail"
       ],
-      "No files or folders in trash": [
-        "Não há ficheiros/pastas no lixo"
-      ],
       "No group found": [
         "Nenhum grupo encontrado"
       ],
@@ -3723,6 +3766,9 @@
       "Only the people with the link and the password can access this folder.": [
         "Só as pessoas com a ligação e a palavra-passe podem aceder a esta pasta."
       ],
+      "Or use the \"+ New\" button": [
+        "Ou use o botão \"+ Novo\""
+      ],
       "Paused": [
         "Em pausa"
       ],
@@ -3734,6 +3780,9 @@
       ],
       "PGP/MIME automatically sends the message using the current composer mode.": [
         "PGP/MIME envia automaticamente a mensagem usando o modo de composição actual."
+      ],
+      "Photos have been successfully recovered.": [
+        "As fotos foram recuperadas com sucesso."
       ],
       "Please enter the password to decrypt and view content.": [
         "Introduza a palavra-passe para desencriptar e ver o conteúdo."
@@ -3799,6 +3848,9 @@
       "Queued": [
         "Em espera"
       ],
+      "Ready to add some photos?": [
+        "Pronto para adicionar algumas fotos?"
+      ],
       "recommended browser": [
         "navegador recomendado"
       ],
@@ -3820,14 +3872,26 @@
       "Restore is in progress. This can take a few seconds.": [
         "A restauração está em progresso. Isto pode demorar alguns segundos."
       ],
+      "Restore Photos": [
+        "Recuperar fotos"
+      ],
       "Restored files ${ formattedDate }": [
         "Ficheiros restaurados ${ formattedDate }"
+      ],
+      "Restoring Photos... Please keep the tab open": [
+        "A recuperar fotos... Por favor, mantenha o separador do seu navegador aberto"
       ],
       "Search cannot be enabled in this browser": [
         "A pesquisa não pode ser ativada neste navegador."
       ],
       "Search Enabled": [
         "A pesquisa foi ativada."
+      ],
+      "Select a folder to move to.": [
+        "Selecione a pasta de destino para mover"
+      ],
+      "Select all items for": [
+        "Selecione todos os itens para"
       ],
       "Select an uploaded file or folder and create a link to it.": [
         "Selecione um ficheiro ou pasta carregado e crie uma ligação para o mesmo."
@@ -4067,6 +4131,9 @@
       "Way to go, you’ve just doubled your free storage!": [
         "Muito bem! Acabou de duplicar o seu armazenamento gratuito!"
       ],
+      "We are experiencing technical issues. Uploading new photos is temporarily disabled.": [
+        "Estamos a ter problemas técnicos. O carregamento de novas fotografias está temporariamente desativado."
+      ],
       "We couldn’t verify that ${ emailAddress } uploaded ${ fileName }.": [
         "Não é possível verificar se ${ emailAddress } carregou ${ fileName }."
       ],
@@ -4132,6 +4199,10 @@
       ],
       "You cannot undo this action.": [
         "Esta ação não pode ser desfeita."
+      ],
+      "You have ${ expiresInDays } day left to claim your 500 MB welcome bonus and ": [
+        "Restam-lhe ${ expiresInDays } dias para reclamar o seu bónus de boas-vindas de 500 MB e ",
+        "Restam-lhe ${ expiresInDays } dias para reclamar o seu bónus de boas-vindas de 500 MB e "
       ],
       "You reached ${ spaceDisplayed }% of your storage capacity. ${ freeUpMessage } ${ upgradeLink }": [
         "Atingiu ${ spaceDisplayed }% da sua capacidade de armazenamento. ${ freeUpMessage } ${ upgradeLink }"
@@ -5776,6 +5847,9 @@
       ]
     },
     "Storage": {
+      "Get more storage": [
+        "Obter mais espaço de armazenamento"
+      ],
       "Release notes": [
         "Notas de lançamento"
       ],
@@ -5790,6 +5864,10 @@
       "${ countMergeableContacts } contact look identical.": [
         "${ countMergeableContacts } contacto parece idêntico.",
         "${ countMergeableContacts } contactos parecem idênticos."
+      ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "${ countOfUnrecoveredLinksLeft } restante",
+        "${ countOfUnrecoveredLinksLeft } restantes"
       ],
       "Address copied to clipboard": [
         "Endereço copiado para a área de transferência"
@@ -6100,6 +6178,9 @@
       ],
       "Discard changes?": [
         "Descartar alterações?"
+      ],
+      "Download ${ date }.zip": [
+        "Transferir ${ date }.zip"
       ],
       "Download unverified file?": [
         "Descarregar um ficheiro não verificado?"
@@ -6518,24 +6599,12 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" não é um nome válido"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "O nome não pode incluir carateres invisíveis, / ou \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "O nome deve ter no máximo ${ MAX_NAME_LENGTH } carácter",
         "O nome deve ter no máximo ${ MAX_NAME_LENGTH } carateres"
       ],
       "Name must not be empty": [
         "O nome não pode estar vazio"
-      ],
-      "Name must not begin with a space": [
-        "Nome não pode começar com um espaço"
-      ],
-      "Name must not end with a space": [
-        "O nome não pode terminar com um espaço"
       ]
     },
     "Video control": {

@@ -639,6 +639,22 @@
         "この認証情報を使用しているすべてのルーターやクライアントが切断されます。"
       ]
     },
+    "bf2023: Action": {
+      "Cancel": [
+        "キャンセル"
+      ],
+      "Close": [
+        "閉じる"
+      ],
+      "Remove": [
+        "削除"
+      ]
+    },
+    "bf2023: Deal details": {
+      "Extended version history": [
+        "拡張バージョン履歴"
+      ]
+    },
     "Billing cycle": {
       "${ n } months": [
         "${ n } 月"
@@ -1790,9 +1806,6 @@
       "Name does not match": [
         "名前が一致しません"
       ],
-      "Name on card required": [
-        "カード名義が必要です"
-      ],
       "Not a valid number": [
         "無効な番号です"
       ],
@@ -1861,9 +1874,6 @@
       ],
       "Tab closed": [
         "タブが閉じられました"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "お使いのブラウザでは、支払いを確定できません。別のブラウザを使用するか、コンピューターからサインインしてください。"
       ],
       "The email addresses do not match": [
         "メールアドレスが一致しません"
@@ -1952,6 +1962,9 @@
       ],
       "Oops, something went wrong": [
         "エラーが発生しました。"
+      ],
+      "Open in browser": [
+        "ブラウザで開く"
       ],
       "Please refresh the page or try again later.": [
         "ページを再読み込みするか、後でもう一度お試しください。"
@@ -2852,9 +2865,6 @@
       ],
       "for choosing ${ product }": [
         "${ product } を選択した場合"
-      ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa、MasterCard、Discover の場合カードの裏に3桁の数字があります。American Express の場合はカードの表に4桁の数字があります。"
       ],
       "Free forever": [
         "永久に無料"
@@ -3939,9 +3949,6 @@
       "Expiration (${ patternExpiration })": [
         "有効期限 (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "有効期限"
-      ],
       "Expires": [
         "有効期限"
       ],
@@ -3983,9 +3990,6 @@
       ],
       "Name and address": [
         "名前とアドレス"
-      ],
-      "Name on card": [
-        "カード名義人"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (ポート転送)"
@@ -4092,14 +4096,8 @@
       "Reveal password": [
         "パスワードを表示する"
       ],
-      "Security code": [
-        "セキュリティコード"
-      ],
       "Security code (${ codeName })": [
         "セキュリティコード (${ codeName })"
-      ],
-      "Select your country": [
-        "国を選択してください"
       ],
       "Select your plan": [
         "プランの選択"
@@ -6806,9 +6804,6 @@
       ],
       "Unlock your mailbox": [
         "メールボックスのロック解除"
-      ],
-      "Unsupported browser": [
-        "未対応のブラウザー"
       ],
       "Upgrade your network protection with dedicated servers": [
         "専用サーバーでネットワークの保護を強化する"
