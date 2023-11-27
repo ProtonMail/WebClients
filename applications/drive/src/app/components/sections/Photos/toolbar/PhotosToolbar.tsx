@@ -3,11 +3,12 @@ import { FC } from 'react';
 import { Vr } from '@proton/atoms/Vr';
 import { Toolbar } from '@proton/components';
 
-import { DecryptedLink, PhotoLink } from '../../../../store';
-import { MoveToTrashButton } from '../../Drive/ToolbarButtons';
-import { DetailsButton, ShareLinkButton } from '../../ToolbarButtons';
+import { PhotoLink } from '../../../../store';
+import PhotosDetailsButton from './PhotosDetailsButton';
 import { PhotosDownloadButton } from './PhotosDownloadButton';
 import { PhotosPreviewButton } from './PhotosPreviewButton';
+import PhotosShareLinkButton from './PhotosShareLinkButton';
+import PhotosTrashButton from './PhotosTrashButton';
 import { PhotosUploadButton } from './PhotosUploadButton';
 
 interface Props {
@@ -30,8 +31,6 @@ export const PhotosToolbar: FC<Props> = ({
     const hasSelection = selectedItems.length > 0;
     const hasMultipleSelected = selectedItems.length > 1;
 
-    let links = selectedItems as DecryptedLink[];
-
     return (
         <Toolbar className="py-1 px-2 toolbar--heavy toolbar--in-container">
             <div className="gap-2 flex">
@@ -41,11 +40,11 @@ export const PhotosToolbar: FC<Props> = ({
                         {!uploadDisabled && <Vr />}
                         {!hasMultipleSelected && <PhotosPreviewButton onClick={onPreview} />}
                         <PhotosDownloadButton requestDownload={requestDownload} selectedLinks={selectedItems} />
-                        <ShareLinkButton selectedLinks={links} />
+                        {!hasMultipleSelected && <PhotosShareLinkButton selectedLinks={selectedItems} />}
                         <Vr />
-                        <DetailsButton selectedLinks={links} />
+                        <PhotosDetailsButton selectedLinks={selectedItems} />
                         <Vr />
-                        <MoveToTrashButton selectedLinks={links} />
+                        <PhotosTrashButton selectedLinks={selectedItems} />
                     </>
                 )}
             </div>
