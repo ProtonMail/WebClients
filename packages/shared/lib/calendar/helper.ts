@@ -109,6 +109,10 @@ export const getIsProtonUID = (uid = '') => {
     return uid.endsWith('@proton.me') || uid.startsWith('proton-calendar-');
 };
 
+export const getDomainFromUID = (uid = '') => {
+    return uid.split('@')?.[1] || '';
+};
+
 export const getDisplayTitle = (title = '') => {
     return title.trim() || c('Event title').t`(no title)`;
 };
