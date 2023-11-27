@@ -11,8 +11,10 @@ import {
     getDecryptedUserKeysHelper,
     getHasMigratedAddressKeys,
     getSentryError,
+    hasActiveKeysMismatch,
     migrateMemberAddressKeys,
     migrateUser,
+    updateActiveKeys,
 } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -149,7 +151,26 @@ const KeyBackgroundManager = ({
             }
         };
 
+        const runActiveKeysCheck = async () => {
+            const addresses = await getAddresses();
+            const updatesHappened = await Promise.all(
+                addresses.map(async (address) => {
+                    const addressKeys = await getAddressKeys(address.ID);
+                    if (!hasActiveKeysMismatch(address, addressKeys)) {
+                        return false;
+                    }
+                    await updateActiveKeys(silentApi, address, addressKeys, keyTransparencyVerify);
+                    return true;
+                })
+            );
+            if (updatesHappened.some((happened) => happened)) {
+                const userKeys = await getUserKeys();
+                await keyTransparencyCommit(userKeys);
+            }
+        };
+
         if (!(hasMemberKeyMigration || hasPrivateMemberKeyGeneration || hasReadableMemberKeyActivation)) {
+            runActiveKeysCheck().catch(noop);
             return;
         }
 
@@ -166,6 +187,8 @@ const KeyBackgroundManager = ({
                       })
                     : undefined
             )
+            .catch(noop)
+            .then(() => runActiveKeysCheck())
             .catch(noop);
     }, []);
 
