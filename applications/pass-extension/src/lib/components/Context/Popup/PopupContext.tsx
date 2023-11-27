@@ -10,7 +10,6 @@ import { useExtensionConnectContext } from 'proton-pass-extension/lib/hooks/useE
 
 import { NotificationsContext } from '@proton/components';
 import { useNotifications } from '@proton/components/hooks';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useActionRequestEffect } from '@proton/pass/hooks/useActionRequestEffect';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { clientReady } from '@proton/pass/lib/client';
@@ -94,12 +93,11 @@ const PopupContextContainer: FC = ({ children }) => {
 
 export const PopupContextProvider: FC = ({ children }) => {
     const { createNotification } = useNotifications();
-    const { onLink } = usePassCore();
-    const notificationEnhancer = useNotificationEnhancer({ onLink });
+    const enhance = useNotificationEnhancer();
 
     const onWorkerMessage = (message: WorkerMessageWithSender) => {
         if (message.type === WorkerMessageType.NOTIFICATION) {
-            createNotification(notificationEnhancer(message.payload.notification));
+            createNotification(enhance(message.payload.notification));
         }
     };
 
