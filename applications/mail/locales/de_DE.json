@@ -581,6 +581,9 @@
       "Manage labels": [
         "Kategorien verwalten"
       ],
+      "Manage Snooze": [
+        "Verwalte stumme Nachrichten"
+      ],
       "Mark as read": [
         "Als gelesen markieren"
       ],
@@ -719,11 +722,11 @@
       "Not saved": [
         "Nicht gespeichert"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } öffnen"
@@ -1010,6 +1013,9 @@
       "Skip verification": [
         "Überprüfung überspringen"
       ],
+      "Snooze": [
+        "Stumm schalten"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Einige Bilder konnten aufgrund des Tracking-Schutzes nicht geladen werden."
       ],
@@ -1094,6 +1100,9 @@
       ],
       "Unordered list": [
         "Unsortierte Liste"
+      ],
+      "Unsnooze": [
+        "Stumm aus"
       ],
       "Unstar": [
         "Markierung entfernen"
@@ -3080,6 +3089,9 @@
       ],
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Schalte benutzerdefiniertes Planen von Nachrichten und andere Vorteile frei, wenn du ein Upgrade deines Abonnements durchführst."
+      ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Entsperre eigene stumm Zeiten, wenn du dein Abo upgradest"
       ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Schalte durch ein Upgrade unbegrenzte Filter, die deinen Posteingang für dich sortieren und weitere Premiumfunktionen frei."
@@ -5656,6 +5668,9 @@
       "Right-click for options": [
         "Rechtsklick für Optionen"
       ],
+      "Sat, ${ formatTime }": [
+        "Sa, ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "Gespeichert um ${ dateString }"
       ],
@@ -5733,6 +5748,15 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin bietet eine einfache Möglichkeit, Anmeldungen auf nicht vertrauenswürdigen Websites von Drittanbietern zu erstellen, auf denen du deine tatsächliche E-Mail-Adresse nicht preisgeben möchtest."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Stumm geschaltet bis ${ dateString } um ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Bis heute Stumm geschaltet, ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Bis morgen Stumm geschaltet, ${ formattedTime }"
       ],
       "Snoozing this conversation will be cancelled.": [
         "Das Stummschalten dieser Unterhaltung wird abgebrochen."
@@ -5982,6 +6006,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Jetzt upgraden um Premium-Funktionen, Produkte und Speicherplatz zu einem Sonderpreis zu erhalten."
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Abonniere ${ MAIL_APP_NAME } Plus um folgendes freizuschalten"
       ],
       "Upgrade to add more addresses to your account.": [
         "Upgrade, um deinem Konto weitere E-Mail-Adressen hinzuzufügen."
@@ -7146,6 +7173,12 @@
       "Sign up for free": [
         "Kostenlos registrieren"
       ],
+      "Snooze": [
+        "Stumm"
+      ],
+      "Snoozed": [
+        "Stumm geschaltet"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -7483,6 +7516,9 @@
       "Custom email domains": [
         "Eigene E-Mail-Domains"
       ],
+      "Custom snooze time": [
+        "Eigene stumm Zeit"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-Aliasse"
       ],
@@ -7508,6 +7544,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Erhalte unbegrenzte Aliasse mit SimpleLogin von ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Stumme die Nachricht und werde daran erinnert wann du möchtest"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
@@ -7936,6 +7975,9 @@
       "No results found": [
         "Keine Ergebnisse"
       ],
+      "No snoozed messages": [
+        "Keine stumm geschalteten Nachrichten"
+      ],
       "No unread messages found": [
         "Keine ungelesenen Nachrichten gefunden"
       ]
@@ -8233,6 +8275,9 @@
       ]
     },
     "Snooze message": {
+      "Snooze Message": [
+        "Stumme die Nachricht"
+      ],
       "When should the message reappear in your inbox?": [
         "Wann soll diese Nachricht wieder in deinem Posteingang erscheinen?"
       ]
@@ -8570,6 +8615,10 @@
       ],
       "${ elementsCount } conversation snoozed": [
         "${ elementsCount } Unterhaltung stumm geschaltet",
+        "${ elementsCount } Unterhaltungen stumm geschaltet"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } Unterhaltung unverändert",
         "${ elementsCount } Unterhaltungen stumm geschaltet"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
@@ -9243,6 +9292,9 @@
       "Moving a scheduled message": [
         "Eine zum Versenden geplante Nachricht wird verschoben"
       ],
+      "Moving a snoozed message": [
+        "Bewege eine stumm geschaltete Nachricht"
+      ],
       "New message": [
         "Neue Nachricht"
       ],
@@ -9384,6 +9436,12 @@
       "Sign out": [
         "Abmelden"
       ],
+      "Snooze": [
+        "Stumm schalten"
+      ],
+      "Snooze message": [
+        "Nachricht stumm schalten"
+      ],
       "Sort conversations": [
         "Unterhaltungen sortieren"
       ],
@@ -9429,6 +9487,9 @@
       ],
       "Verification error": [
         "Verifizierungsfehler"
+      ],
+      "Want to snooze any time?": [
+        "Möchtest du irgendwann Stumm schalten?"
       ],
       "Warning": [
         "Warnhinweis"
@@ -9646,6 +9707,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Deine kostenlose Testversion endet am ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Mo, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Sa, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "So, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

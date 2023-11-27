@@ -165,7 +165,7 @@
         "Effacer"
       ],
       "Clear all formatting": [
-        "Effacer toute mise en forme"
+        "Effacer toute la mise en forme"
       ],
       "Clear browser data": [
         "Effacer les données du navigateur"
@@ -722,10 +722,10 @@
       "Not saved": [
         "Non enregistré"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -807,22 +807,22 @@
         "actualiser la page"
       ],
       "Remove": [
-        "Supprimer"
+        "Retirer"
       ],
       "Remove ${ attachmentName }": [
-        "Enlever ${ attachmentName }"
+        "Retirer ${ attachmentName }"
       ],
       "Remove encryption": [
-        "Supprimer le chiffrement"
+        "Retirer le chiffrement"
       ],
       "Remove expiration time": [
-        "Supprimer le délai d'expiration"
+        "Retirer le délai d'expiration"
       ],
       "Remove self-destruction": [
-        "Annuler l'autodestruction"
+        "Retirer l'autodestruction"
       ],
       "Remove this label": [
-        "Supprimer ce label"
+        "Retirer ce label"
       ],
       "Reply": [
         "Répondre"
@@ -1303,7 +1303,7 @@
         "Envoyé à ${ nameToDisplay }"
       ],
       "5 trackers removed": [
-        "5 traqueurs supprimés"
+        "5 traqueurs retirés"
       ],
       "Auto forwarded": [
         "Transféré automatiquement"
@@ -1383,7 +1383,7 @@
         "Historique des versions plus détaillé"
       ],
       "High speed streaming": [
-        "Streaming ultra rapide"
+        "Streaming ultra-rapide"
       ],
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } version premium"
@@ -3156,7 +3156,7 @@
         "${ eventTitle } a été mis à jour.\n${ eventDetailsText }"
       ],
       "You are invited to ${ eventTitle }\n${ eventDetailsText }": [
-        "Vous êtes invité(e) à ${ eventTitle }\n${ eventDetailsText }"
+        "Vous êtes invité à ${ eventTitle }\n${ eventDetailsText }"
       ]
     },
     "Email body for invitation (date part)": {
@@ -3249,10 +3249,10 @@
     },
     "empty messages: success": {
       "Folder cleared": [
-        "Le dossier a été vidé."
+        "Le dossier a été effacé."
       ],
       "Label cleared": [
-        "Le label a été retiré."
+        "Le label a été effacé."
       ]
     },
     "Encrypted Headers": {
@@ -3507,8 +3507,8 @@
         "réactiver la clé précédente"
       ],
       "Removed duplicate recipient: ${ recipents }": [
-        "Destinataire dupliqué supprimé : ${ recipents }",
-        "Destinataires dupliqués supprimés : ${ recipents }"
+        "Destinataire dupliqué retiré : ${ recipents }",
+        "Destinataires dupliqués retirés : ${ recipents }"
       ],
       "Request timed out": [
         "La requête a expiré."
@@ -5361,7 +5361,7 @@
         "URL de l'image"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Les images ont été supprimées, elles ne sont pas autorisées dans la réponse automatique."
+        "Les images ont été retirées, elles ne sont pas autorisées dans la réponse automatique."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } calendrier sur ${ totalCalendarsCount }",
@@ -6077,7 +6077,7 @@
         "Nous n'avons pas pu vérifier les clés approuvées de l'expéditeur."
       ],
       "We removed tracking information from the following links to help protect you from advertisers and others trying to track your online activity.": [
-        "Nous avons supprimé les informations de traçage des liens suivants pour vous protéger des entreprises qui tentent de suivre vos activités en ligne, qu'il s'agisse d'annonceurs ou d'autres entreprises."
+        "Nous avons retiré les informations de traçage des liens suivants pour vous protéger des entreprises qui tentent de suivre vos activités en ligne, qu'il s'agisse d'annonceurs ou d'autres entreprises."
       ],
       "We'll notify you when the import is done.": [
         "Nous vous informerons dès que l'importation sera terminée."
@@ -7052,10 +7052,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Pour ajouter un nouveau calendrier, supprimez d'abord un calendrier existant."
+        "Pour ajouter un nouveau calendrier, retirez d'abord un calendrier existant."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Pour ajouter un nouveau calendrier, vous devez d'abord supprimer un calendrier existant ou faire évoluer votre abonnement ${ BRAND_NAME } vers un abonnement payant ${ MAIL_SHORT_APP_NAME }."
+        "Pour ajouter un nouveau calendrier, vous devez d'abord retirer un calendrier existant ou faire évoluer votre abonnement ${ BRAND_NAME } vers un abonnement payant ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Vous avez atteint le nombre maximum de calendriers prévus dans votre abonnement."
@@ -7517,7 +7517,7 @@
         "Domaines de messagerie personnalisés"
       ],
       "Custom snooze time": [
-        "Personnalisation des périodes de mise en attente"
+        "Périodes de mise en attente personnalisées"
       ],
       "Hide-my-email aliases": [
         "Alias « hide-my-email »"
@@ -7570,7 +7570,7 @@
         "${ Filter.Name } a été créé."
       ],
       "Block removed": [
-        "Le blocage a été supprimé."
+        "Le blocage a été retiré."
       ],
       "Contact group created": [
         "Le groupe de contacts a été créé."
@@ -8515,6 +8515,12 @@
       "Search just got smarter and faster": [
         "La recherche est devenue plus intelligente et plus rapide."
       ],
+      "Set when an email should reappear in your inbox with the new snooze feature.": [
+        "Définissez à quel moment un message doit réapparaître dans votre boite de réception grâce à la nouvelle fonctionnalité de mise en attente."
+      ],
+      "Snooze it for later": [
+        "Reportez-le à plus tard"
+      ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Le dossier Tous les messages exclut automatiquement les messages des dossiers Indésirables/spam et Corbeille. ${ settingsLink }"
       ],
@@ -8808,7 +8814,7 @@
         "La confirmation de lecture a été envoyée."
       ],
       "Self-destruction removed": [
-        "L'autodestruction est annulée."
+        "L'autodestruction a été retirée."
       ],
       "Self-destruction set": [
         "L'autodestruction est programmée."
@@ -8822,7 +8828,7 @@
     },
     "Success notification": {
       "${ label.Name } removed": [
-        "${ label.Name } a été supprimé."
+        "${ label.Name } a été retiré."
       ]
     },
     "Success notification when user send feedback": {
