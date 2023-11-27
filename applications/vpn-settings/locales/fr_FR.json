@@ -333,13 +333,13 @@
         "actualiser la page"
       ],
       "Remove": [
-        "Supprimer"
+        "Retirer"
       ],
       "Remove bonuses": [
         "Retirer les bonus"
       ],
       "Remove gift code": [
-        "Supprimer le code cadeau"
+        "Retirer le code cadeau"
       ],
       "Rename": [
         "Renommer"
@@ -668,10 +668,10 @@
         "J'en profite"
       ],
       "Remove": [
-        "Supprimer"
+        "Retirer"
       ],
       "Remove ${ PASS_APP_NAME }": [
-        "Supprimer ${ PASS_APP_NAME }"
+        "Retirer ${ PASS_APP_NAME }"
       ],
       "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
         "Abonnez-vous pour 15 mois et profitez de notre **gestionnaire de mots de passe chiffré** pour seulement ${ priceNoSuffix } de plus par mois."
@@ -709,7 +709,7 @@
         "Historique des versions plus détaillé"
       ],
       "High speed streaming": [
-        "Streaming ultra rapide"
+        "Streaming ultra-rapide"
       ],
       "Premium ${ DRIVE_SHORT_APP_NAME }": [
         "${ DRIVE_SHORT_APP_NAME } version premium"
@@ -734,7 +734,7 @@
     },
     "bf2023: header": {
       "Save with Black Friday deals on a high-speed Swiss VPN": [
-        "Faites des économies sur le VPN suisse ultra rapide grâce aux offres Black Friday"
+        "Faites des économies sur le VPN suisse ultra-rapide grâce aux offres Black Friday"
       ],
       "Select your Black Friday offer": [
         "Sélectionnez votre offre Black Friday"
@@ -1972,9 +1972,6 @@
       "Name does not match": [
         "Les noms ne correspondent pas."
       ],
-      "Name on card required": [
-        "Le nom du titulaire de la carte est nécessaire."
-      ],
       "Not a valid number": [
         "Le numéro n'est pas valide."
       ],
@@ -2043,9 +2040,6 @@
       ],
       "Tab closed": [
         "L'onglet est fermé."
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Le navigateur que vous utilisez ne permet pas d'autoriser complètement le paiement. Nous vous invitons à utiliser un autre navigateur ou à vous connecter à partir d'un ordinateur."
       ],
       "The email addresses do not match": [
         "Les adresses e-mail ne correspondent pas."
@@ -2348,10 +2342,10 @@
     },
     "familyOffer_2023:Info for members section": {
       "Add, remove, and make changes to user accounts in your family group.": [
-        "Ajoutez, supprimez et modifiez les comptes utilisateurs de votre groupe familial."
+        "Ajoutez, retirez et modifiez les comptes utilisateurs de votre groupe familial."
       ],
       "Add, remove, and make changes to user accounts in your organization.": [
-        "Ajoutez, supprimez et modifiez les comptes utilisateurs de votre organisation."
+        "Ajoutez, retirez et modifiez les comptes utilisateurs de votre organisation."
       ]
     },
     "familyOffer_2023:Label": {
@@ -2370,7 +2364,7 @@
         "Ceci supprimera définitivement tous les sous-utilisateurs, comptes et données associés à votre organisation."
       ],
       "This will remove all ${ BRAND_NAME } premium features for every family member.": [
-        "Cela supprimera toutes les fonctionnalités premium de ${ BRAND_NAME } pour chaque membre de la famille."
+        "Cela retirera toutes les fonctionnalités premium de ${ BRAND_NAME } pour chaque membre de la famille."
       ]
     },
     "familyOffer_2023:Success": {
@@ -2498,7 +2492,7 @@
         "Clé de sécurité"
       ],
       "Security key removed": [
-        "La clé de sécurité a été supprimée."
+        "La clé de sécurité a été retirée."
       ],
       "Security key updated": [
         "La clé de sécurité a été mise à jour."
@@ -2754,7 +2748,7 @@
         "${ number } serveurs"
       ],
       "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "L'abonnement ${ plan } a été supprimé. L'offre groupée n'est pas disponible pour un abonnement d'un mois."
+        "L'abonnement ${ plan } a été retiré. L'offre groupée n'est pas disponible pour un abonnement d'un mois."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
@@ -2885,7 +2879,7 @@
         "Voulez-vous vraiment abandonner vos modifications ?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
-        "Voulez-vous vraiment supprimer les droits administrateur de cet utilisateur ?"
+        "Voulez-vous vraiment retirer les droits administrateur de cet utilisateur ?"
       ],
       "Ask your organisation admin to setup Gateways.": [
         "Demandez à l'administrateur de votre organisation de configurer des Passerelles."
@@ -3077,9 +3071,6 @@
       ],
       "for choosing ${ product }": [
         "d'avoir choisi ${ product }"
-      ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Pour Visa, MasterCard et Discover, les 3 chiffres au verso de votre carte. Pour American Express, les 4 chiffres au recto de votre carte."
       ],
       "Free forever": [
         "Gratuit pour toujours"
@@ -3804,20 +3795,20 @@
         "Vous pouvez débloquer immédiatement la configuration ci-dessus en ajoutant ${ specificCountryCount } au nombre d'adresses IP de votre abonnement ou nous contacter pour une solution personnalisée."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à supprimer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à supprimer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }."
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Veuillez supprimer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement.",
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Veuillez supprimer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement."
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens du calendrier partagé et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé votre calendrier avant de résilier votre abonnement.",
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens des calendriers partagés et tous les utilisateurs de ${ BRAND_NAME } avec lesquels vous avez partagé vos calendriers avant de résilier votre abonnement."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à supprimer les liens vers les calendriers partagés avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à supprimer les liens vers les calendriers partagés avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }."
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens vers les calendriers partagés avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }.",
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens vers les calendriers partagés avant de résilier votre abonnement à ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à supprimer les liens vers les calendriers partagés avant de résilier votre abonnement.",
-        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à supprimer les liens vers les calendriers partagés avant de résilier votre abonnement."
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendrier. Nous vous invitons à retirer les liens vers les calendriers partagés avant de résilier votre abonnement.",
+        "Vous pouvez conserver jusqu'à ${ MAX_CALENDARS_FREE } calendriers. Nous vous invitons à retirer les liens vers les calendriers partagés avant de résilier votre abonnement."
       ],
       "You can now access and manage the account as an administrator.": [
         "Vous pouvez maintenant accéder au compte et le gérer en tant qu'administrateur."
@@ -3842,7 +3833,7 @@
         "Vous devez activer votre clé privée d'organisation avec le mot de passe de clé d'organisation de sauvegarde fourni par l'administrateur de votre organisation."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Vous devez désactiver ou supprimer vos autres utilisateurs ${ MAIL_APP_NAME }, adresses et domaines personnalisés avant de pouvoir passer à un abonnement inférieur."
+        "Vous devez désactiver ou retirer vos autres utilisateurs ${ MAIL_APP_NAME }, adresses et domaines personnalisés avant de pouvoir passer à un abonnement inférieur."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Pour pouvoir ajouter PayPal comme méthode de paiement, vous devez associer une carte de paiement ou un compte bancaire à votre compte PayPal."
@@ -4197,9 +4188,6 @@
       "Expiration (${ patternExpiration })": [
         "Expiration (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Date d’expiration"
-      ],
       "Expires": [
         "Expire le"
       ],
@@ -4241,9 +4229,6 @@
       ],
       "Name and address": [
         "Nom et adresse"
-      ],
-      "Name on card": [
-        "Nom sur la carte"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (transfert de port)"
@@ -4350,14 +4335,8 @@
       "Reveal password": [
         "Afficher le mot de passe"
       ],
-      "Security code": [
-        "Code de sécurité"
-      ],
       "Security code (${ codeName })": [
         "Code de sécurité (${ codeName })"
-      ],
-      "Select your country": [
-        "Sélectionnez votre pays"
       ],
       "Select your plan": [
         "Choisissez votre abonnement"
@@ -4598,7 +4577,7 @@
         "Modifier"
       ],
       "Remove": [
-        "Supprimer"
+        "Retirer"
       ],
       "Revoke sessions": [
         "Révoquer les sessions"
@@ -4854,7 +4833,7 @@
         "Champs personnalisés"
       ],
       "Custom snooze time": [
-        "Personnalisation des périodes de mise en attente"
+        "Périodes de mise en attente personnalisées"
       ],
       "Data breach monitoring": [
         "Surveillance des fuites de données"
@@ -5314,7 +5293,7 @@
         "Possibilité d'afficher les boites de réception des utilisateurs non privés telles qu'ils les voient, avec toutes les informations des messages et des contacts."
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Outil de gestion d'une organisation qui permet aux administrateurs d'ajouter ou de supprimer des utilisateurs, d'attribuer de l'espace de stockage, de configurer des domaines et de réaliser d'autres tâches."
+        "Outil de gestion d'une organisation qui permet aux administrateurs d'ajouter ou de retirer des utilisateurs, d'attribuer de l'espace de stockage, de configurer des domaines et de réaliser d'autres tâches."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "La fiabilité de notre infrastructure vous garantit l'accès à votre compte chaque fois que vous en avez besoin."
@@ -5555,16 +5534,16 @@
     },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
-        "${ upgradeLink } pour ajouter d'autres utilisateurs ou supprimer certains comptes utilisateurs pour libérer de l'espace."
+        "${ upgradeLink } pour ajouter d'autres utilisateurs ou retirer certains comptes utilisateurs afin de libérer de l'espace."
       ],
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
-        "${ upgradeLink } pour avoir plus de comptes ou supprimez l'accès VPN de certains utilisateurs."
+        "${ upgradeLink } pour avoir plus de comptes ou retirez l'accès VPN de certains utilisateurs."
       ],
       "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
-        "${ upgradeLink } pour avoir plus d'adresses ou supprimez certaines adresses pour libérer de l'espace."
+        "${ upgradeLink } pour avoir plus d'adresses ou retirez certaines adresses afin de libérer de l'espace."
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
-        "${ upgradeLink } pour avoir plus d'espace de stockage ou supprimez du stockage pour libérer de l'espace."
+        "${ upgradeLink } pour avoir plus d'espace de stockage ou retirez du stockage pour libérer de l'espace."
       ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "Votre abonnement comprend ${ availableAddresses } adresse supplémentaire au maximum.",
@@ -5668,9 +5647,6 @@
       ],
       "Select a reason": [
         "Sélectionnez une raison."
-      ],
-      "Thomas Anderson": [
-        "Andréa Durant"
       ]
     },
     "plan customizer, ips": {
@@ -7079,7 +7055,7 @@
         "Récupération"
       ],
       "Remove user?": [
-        "Supprimer l'utilisateur ?"
+        "Retirer l'utilisateur ?"
       ],
       "Rename the gateway": [
         "Modifier le nom de la Passerelle"
@@ -7193,9 +7169,6 @@
       ],
       "Unlock your mailbox": [
         "Déverrouillez votre messagerie"
-      ],
-      "Unsupported browser": [
-        "Le navigateur n'est pas pris en charge."
       ],
       "Upgrade your network protection with dedicated servers": [
         "Améliorez la protection de votre réseau avec des serveurs dédiés"

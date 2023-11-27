@@ -1972,9 +1972,6 @@
       "Name does not match": [
         "Nome não corresponde"
       ],
-      "Name on card required": [
-        "Nome do cartão de credito obrigatório"
-      ],
       "Not a valid number": [
         "Não é um número válido"
       ],
@@ -2043,9 +2040,6 @@
       ],
       "Tab closed": [
         "Guia fechada"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "O navegador que você está usando não permite que o pagamento seja completamente autorizado. Use um navegador diferente ou inicie a sessão através de um computador."
       ],
       "The email addresses do not match": [
         "Os endereços de e-mail não correspondem."
@@ -2149,6 +2143,9 @@
       ],
       "Something went wrong": [
         "Algo deu errado"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Para usar o ${ MAIL_APP_NAME } ou ${ CALENDAR_APP_NAME } mude para a versão web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Não foi possível carregar esta página. Atualize a página ou verifique sua conexão com a Internet."
@@ -3075,9 +3072,6 @@
       "for choosing ${ product }": [
         "por escolher ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Para Visa, MasterCard e Discover, os 3 dígitos no verso do cartão. Para a American Express, os 4 dígitos na frente do cartão."
-      ],
       "Free forever": [
         "Grátis para sempre"
       ],
@@ -3539,6 +3533,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Isso pode levar algum tempo. Não feche esta página ou desconecte-se da internet."
+      ],
+      "This file is too large to preview": [
+        "Este arquivo é muito grande para visualizar"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Este usuário é atualmente responsável pelos pagamentos de sua organização. Ao rebaixar este membro, você se tornará responsável pelos pagamentos de sua organização."
@@ -4194,9 +4191,6 @@
       "Expiration (${ patternExpiration })": [
         "Expiração (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Data de expiração"
-      ],
       "Expires": [
         "Data de validade"
       ],
@@ -4238,9 +4232,6 @@
       ],
       "Name and address": [
         "Nome e endereço"
-      ],
-      "Name on card": [
-        "Nome no cartão"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (Redirecionamento de portas)"
@@ -4347,14 +4338,8 @@
       "Reveal password": [
         "Mostrar senha"
       ],
-      "Security code": [
-        "Código de segurança"
-      ],
       "Security code (${ codeName })": [
         "Código de segurança (${ codeName })"
-      ],
-      "Select your country": [
-        "Selecione seu país"
       ],
       "Select your plan": [
         "Selecione seu plano"
@@ -4850,6 +4835,9 @@
       "Custom fields": [
         "Campos personalizados"
       ],
+      "Custom snooze time": [
+        "Adiamento personalizado"
+      ],
       "Data breach monitoring": [
         "Monitoramento de violação de dados"
       ],
@@ -5068,6 +5056,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtenha aliases ilimitados com SimpleLogin da ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Adie mensagens e receba lembretes quando quiser"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }."
@@ -5668,9 +5659,6 @@
       ],
       "Select a reason": [
         "Selecione um motivo"
-      ],
-      "Thomas Anderson": [
-        "Andrea Braga"
       ]
     },
     "plan customizer, ips": {
@@ -7193,9 +7181,6 @@
       ],
       "Unlock your mailbox": [
         "Verifique sua caixa de correio"
-      ],
-      "Unsupported browser": [
-        "Navegador não suportado"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Atualize sua proteção de rede com servidores dedicados"
