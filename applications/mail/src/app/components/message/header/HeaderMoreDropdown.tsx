@@ -28,6 +28,7 @@ import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
@@ -38,7 +39,7 @@ import { getCurrentFolderID, getFolderName } from '../../../helpers/labels';
 import { isConversationMode } from '../../../helpers/mailSettings';
 import { MessageViewIcons } from '../../../helpers/message/icon';
 import { exportBlob } from '../../../helpers/message/messageExport';
-import { MARK_AS_STATUS, useMarkAs } from '../../../hooks/actions/useMarkAs';
+import { useMarkAs } from '../../../hooks/actions/useMarkAs';
 import { useMoveToFolder } from '../../../hooks/actions/useMoveToFolder';
 import { useStar } from '../../../hooks/actions/useStar';
 import { useGetAttachment } from '../../../hooks/attachments/useAttachment';
