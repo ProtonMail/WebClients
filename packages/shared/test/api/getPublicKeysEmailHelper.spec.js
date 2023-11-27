@@ -275,7 +275,7 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
             const mockApiResponse = getApiError({
                 status: 422,
                 data: {
-                    Code: 33102,
+                    Code: 33103,
                     Error: 'This address does not exist. Please try again',
                     Details: {
                         Address: 'external@example.com',
@@ -289,8 +289,8 @@ vqg5tCgoAiPlCv5xna6ypuLS4rnVUVdNbYVRAA==
                 email: 'external@example.com',
                 internalKeysOnly: true,
             });
-            expect(result.RecipientType).toBe(undefined);
-            expect(result.isInternalWithDisabledE2EEForMail).toBe(undefined);
+            expect(result.RecipientType).toBe(RECIPIENT_TYPES.TYPE_EXTERNAL);
+            expect(result.isInternalWithDisabledE2EEForMail).toBe(false);
             expect(result.publicKeys).toHaveSize(0);
         });
     });
