@@ -1,4 +1,5 @@
-import { MARK_AS_STATUS } from '../../../hooks/actions/useMarkAs';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
+
 import { Element } from '../../../models/element';
 import { getElementsToBypassFilter } from './elementBypassFilters';
 
