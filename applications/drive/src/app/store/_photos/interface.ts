@@ -1,5 +1,3 @@
-import { DeepPartial } from '@proton/shared/lib/interfaces';
-
 import type { DecryptedLink } from '../_links/interface';
 
 export interface Photo {
@@ -11,12 +9,17 @@ export interface Photo {
     contentHash?: string;
 }
 
-export type PhotoLink = DeepPartial<DecryptedLink> & {
-    linkId: string;
-    // If the link is in photos share it should always have activeRevision
-    activeRevision: DeepPartial<DecryptedLink['activeRevision']> & {
-        photo: Photo;
-    };
-};
+export type PhotoLink =
+    | DecryptedLink
+    | {
+          // These properties are always present, even on incomplete links
+          linkId: string;
+          rootShareId: string;
+          parentLinkId: string;
+          isFile: boolean;
+          activeRevision: {
+              photo: Photo;
+          };
+      };
 export type PhotoGroup = string;
 export type PhotoGridItem = PhotoLink | PhotoGroup;
