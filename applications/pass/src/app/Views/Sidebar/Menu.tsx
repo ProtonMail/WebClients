@@ -155,11 +155,11 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                 <div className="flex flex-align-items-center flex-justify-space-between flex-item-noshrink flex-nowrap gap-2 mt-2 pl-4 pr-2 mx-3">
                     <span
                         className={clsx(
-                            'flex flex-align-items-center flex-nowrap flex-item-noshrink',
+                            'flex flex-align-items-center flex-nowrap',
                             passPlan === UserPassPlan.PLUS && 'ui-orange'
                         )}
                     >
-                        <Icon name="star" className="mr-3" color="var(--interaction-norm)" />
+                        <Icon name="star" className="mr-3 flex-item-noshrink" color="var(--interaction-norm)" />
                         <span className="text-left">
                             <div className="text-sm text-ellipsis">{user?.Email}</div>
                             <div className="text-sm" style={{ color: 'var(--interaction-norm)' }}>
