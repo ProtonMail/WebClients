@@ -1,6 +1,10 @@
 import { type FC, type ReactElement, useEffect } from 'react';
 
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button';
 import { Header as CoreHeader } from '@proton/components';
+import { Icon } from '@proton/components/components';
 import { useNavigation } from '@proton/pass/components/Core/NavigationProvider';
 import { getLocalPath } from '@proton/pass/components/Core/routing';
 import { SearchBar } from '@proton/pass/components/Item/Search/SearchBar';
@@ -16,7 +20,7 @@ import { onboarding } from '../../../lib/onboarding';
 type Props = { hamburger?: ReactElement; searchable?: boolean; title?: string };
 
 export const Header: FC<Props> = ({ hamburger, searchable = true }) => {
-    const { filters, setFilters, navigate } = useNavigation();
+    const { filters, setFilters, navigate, matchSettings } = useNavigation();
     const onCreate = (type: ItemType) => navigate(getLocalPath(`item/new/${type}`));
 
     const spotlight = useSpotlight();
@@ -32,12 +36,40 @@ export const Header: FC<Props> = ({ hamburger, searchable = true }) => {
         <CoreHeader className="border-bottom h-auto p-2">
             <div className="flex flex-align-items-center gap-x-2 w-full">
                 {hamburger}
-                {searchable && (
-                    <>
-                        <SearchBar filters={filters} onChange={(search) => setFilters({ search })} />
-                        <ItemQuickActions onCreate={onCreate} />
-                    </>
-                )}
+                {(() => {
+                    if (matchSettings) {
+                        return (
+                            <div className="flex flex-align-items-center gap-2">
+                                <Button
+                                    className="flex-item-noshrink"
+                                    size="small"
+                                    icon
+                                    pill
+                                    shape="solid"
+                                    onClick={() => navigate(getLocalPath(), { mode: 'push' })}
+                                >
+                                    <Icon
+                                        className="modal-close-icon"
+                                        name="arrow-left"
+                                        size={14}
+                                        alt={c('Action').t`Close`}
+                                    />
+                                </Button>
+                                <h5 className="text-bold">{c('Title').t`Settings`}</h5>
+                            </div>
+                        );
+                    }
+
+                    return (
+                        searchable && (
+                            <>
+                                <SearchBar filters={filters} onChange={(search) => setFilters({ search })} />
+                                <ItemQuickActions onCreate={onCreate} />
+                            </>
+                        )
+                    );
+                })()}
+
                 <div className="flex-item-fluid-auto w-full">
                     <div
                         className={clsx(

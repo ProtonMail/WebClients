@@ -28,6 +28,7 @@ import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { useAuthService } from '../../Context/AuthServiceProvider';
+import { SettingsDropdown } from '../Settings/SettingsDropdown';
 
 export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const { createNotification, clearNotifications } = useNotifications();
@@ -40,7 +41,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const passwordContext = usePasswordContext();
     const dispatch = useDispatch();
 
-    const { filters, matchEmpty, matchTrash, navigate, setFilters } = useNavigation();
+    const { filters, matchEmpty, matchSettings, matchTrash, setFilters } = useNavigation();
     const { selectedShareId } = filters;
 
     const passPlan = useSelector(selectPassPlan);
@@ -59,7 +60,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
             switch (selected) {
                 case 'all':
                     /* if in trash or empty screen -> trigger autoselect via redirect */
-                    const redirect = matchEmpty || matchTrash ? getLocalPath() : undefined;
+                    const redirect = matchEmpty || matchTrash || matchSettings ? getLocalPath() : undefined;
                     return setFilters({ selectedShareId: null, search: '' }, redirect);
                 case 'trash':
                     return setFilters({ selectedShareId: null, search: '' }, getTrashRoute());
@@ -160,18 +161,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                             </div>
                         </span>
                     </span>
-                    <Button
-                        icon
-                        pill
-                        size="small"
-                        color="weak"
-                        onClick={() => navigate(getLocalPath('settings'), { mode: 'push' })}
-                        shape="ghost"
-                        title={c('Action').t`Settings`}
-                        className="flex-item-noshrink ml-1"
-                    >
-                        <Icon name="cog-wheel" alt={c('Action').t`Settings`} />
-                    </Button>
+                    <SettingsDropdown />
                 </div>
             </div>
         </div>

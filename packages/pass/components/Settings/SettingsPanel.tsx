@@ -8,7 +8,12 @@ type Props = {
     children: ReactNode;
 };
 export const SettingsPanel: FC<Props> = ({ title, subTitle, children }) => (
-    <Card rounded className="mb-4 p-3 relative" background={false}>
+    <Card
+        rounded
+        className="pass-settings--panel mb-4 p-3 relative max-w-custom"
+        style={{ '--max-w-custom': '50em' }}
+        background={false}
+    >
         <strong className="color-norm block mb-1">{title}</strong>
         {subTitle && <em className="block text-sm color-weak mb-2">{subTitle}</em>}
 
