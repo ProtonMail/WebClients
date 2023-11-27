@@ -2906,6 +2906,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Uygulama şu anda kullanılamıyor"
+      ],
       "Error: ${ errorMessage }": [
         "Hata: ${ errorMessage }"
       ],
@@ -2915,11 +2918,17 @@
       "Oops, something went wrong": [
         "Bir şeyler ters gitti"
       ],
+      "Open in browser": [
+        "Tarayıcıda aç"
+      ],
       "Please refresh the page or try again later.": [
         "Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ],
       "Something went wrong": [
         "Bir şeyler ters gitti"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME } ya da ${ CALENDAR_APP_NAME } kullanmak için İnternet sürümüne geçin."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Bu sayfayı yükleyemedik. Lütfen sayfayı yenileyin veya İnternet bağlantınızı denetleyin."
@@ -5181,6 +5190,9 @@
       "Custom email domains": [
         "Özel e-posta etki alanları"
       ],
+      "Custom snooze time": [
+        "Özel erteleme zamanı"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email takma adları"
       ],
@@ -5206,6 +5218,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "${ BRAND_NAME } SimpleLogin ile sınırsız sayıda takma ad edinin"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "İletileri erteleyin ve istediğiniz zaman yeniden görün"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"

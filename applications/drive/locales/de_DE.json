@@ -3261,6 +3261,12 @@
         "${ doneUploadsCount } hochgeladen",
         "${ doneUploadsCount } hochgeladen"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } im App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } im Play Store"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } fehlgeschlagen",
         "${ errorCount } fehlgeschlagen"
@@ -3523,6 +3529,9 @@
       "double your storage": [
         "deinen Speicherplatz zu verdoppeln."
       ],
+      "Download ${ name } app": [
+        "${ name } herunterladen"
+      ],
       "Download canceled": [
         "Download abgebrochen"
       ],
@@ -3549,6 +3558,9 @@
       ],
       "Drop file here to upload": [
         "Ziehe Dateien hierher, um sie hochzuladen"
+      ],
+      "Drop files here": [
+        "Lege Dateien hier ab"
       ],
       "Drop to import": [
         "Ablegen zum Importieren"
@@ -3661,6 +3673,12 @@
       ],
       "from the version history?": [
         "dauerhaft aus dem Versionsverlauf löschen möchtest?"
+      ],
+      "Get the app to backup photos from your phone.": [
+        "Lade die App um Fotos von deinem Handy zu sichern."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Hole dir die Desktop-App um Dateien von deinem Computer zu synchronisieren."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Lerne ${ DRIVE_APP_NAME } kennen und sichere dir deinen 500 MB Speicherplatzbonus! Fange noch heute an."
@@ -3816,9 +3834,6 @@
       "No email address": [
         "Keine E-Mail-Adresse"
       ],
-      "No files or folders in trash": [
-        "Keine Dateien oder Ordner im Papierkorb"
-      ],
       "No group found": [
         "Keine Gruppe gefunden"
       ],
@@ -3861,6 +3876,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Nur die Personen mit dem Link und dem Passwort können auf diesen Ordner zugreifen."
+      ],
+      "Or use the \"+ New\" button": [
+        "Oder benutze den \"+ Neu\" Button."
       ],
       "Paused": [
         "Angehalten"
@@ -3946,6 +3964,9 @@
       ],
       "Queued": [
         "Eingereiht"
+      ],
+      "Ready to add some photos?": [
+        "Bereit ein paar Fotos hinzuzufügen?"
       ],
       "recommended browser": [
         "empfohlenen Browsers"
@@ -5062,6 +5083,9 @@
       "Custom email domains": [
         "Eigene E-Mail-Domains"
       ],
+      "Custom snooze time": [
+        "Eigene stumm Zeit"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email-Aliasse"
       ],
@@ -5087,6 +5111,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Erhalte unbegrenzte Aliasse mit SimpleLogin von ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Stumme die Nachricht und werde daran erinnert wann du möchtest"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Der Speicherplatz wird von ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } und ${ DRIVE_APP_NAME } gemeinsam genutzt."
@@ -6701,24 +6728,12 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "„${ str }“ ist kein gültiger Name"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Der Name darf weder unsichtbare Zeichen noch / oder \\ enthalten."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Name darf höchstens ${ MAX_NAME_LENGTH } Zeichen lang sein",
         "Name darf höchstens ${ MAX_NAME_LENGTH } Zeichen lang sein"
       ],
       "Name must not be empty": [
         "Name darf nicht leer sein"
-      ],
-      "Name must not begin with a space": [
-        "Name darf nicht mit einem Leerzeichen beginnen"
-      ],
-      "Name must not end with a space": [
-        "Name darf nicht mit einem Leerzeichen enden"
       ]
     },
     "Video control": {

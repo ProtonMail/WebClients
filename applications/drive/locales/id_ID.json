@@ -3683,6 +3683,9 @@
       "Items in the trash will stay here until you delete them permanently": [
         "Item di sampah akan tetap ada di sini sampai Anda menghapusnya secara permanen"
       ],
+      "Items moved to the trash will stay here until deleted": [
+        "Item yang dipindahkan ke sampah akan tetap berada di sini hingga dihapus"
+      ],
       "It’s easy and secure": [
         "Mudah dan aman"
       ],
@@ -3761,17 +3764,11 @@
       "No": [
         "Tidak"
       ],
-      "No computers syncing": [
-        "Tidak ada komputer yang sedang menyinkron"
-      ],
       "No contacts added yet": [
         "Belum ada kontak yang ditambahkan"
       ],
       "No email address": [
         "Tidak ada alamat surel"
-      ],
-      "No files or folders in trash": [
-        "Kotak sampah kosong"
       ],
       "No group found": [
         "Tidak ada grup yang ditemukan"
@@ -4074,7 +4071,7 @@
         "Tindakan ini akan menonaktifkan tautan ini dan membuat berkas atau folder Anda tidak lagi dapat diakses melalui tautan yang bersangkutan."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "Ini akan menghapus perangkat ${ deviceName } yang disinkronkan dari ${ DRIVE_APP_NAME } dan berhenti menyinkronkan folder yang Anda tambahkan ke Komputer Saya."
+        "Tindakan ini akan menghapus perangkat tersinkron ${ deviceName } dari daftar perangkat ${ DRIVE_APP_NAME } dan menghentikan sinkronisasi folder yang Anda tambahkan ke folder Komputer."
       ],
       "This will replace the existing file with the folder": [
         "Dengan ini, berkas yang telah ada akan diganti dengan folder"
@@ -4139,6 +4136,9 @@
       "Trash": [
         "Sampah"
       ],
+      "Trash is empty": [
+        "Sampah kosong"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Coba fitur, pembaruan, dan produk ${ BRAND_NAME } baru sebelum mereka dirilis kepada publik. Ini akan memuat ulang aplikasi"
       ],
@@ -4186,6 +4186,9 @@
       ],
       "Version is restored": [
         "Versi dipulihkan"
+      ],
+      "Want to sync files faster?": [
+        "Ingin menyinkronkan berkas secara lebih cepat?"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Selamat, Anda telah menggandakan kuota penyimpanan gratis Anda!"
@@ -6594,23 +6597,11 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" bukan nama yang valid"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Nama tidak boleh mengandung karakter tidak terlihat, / atau \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
         "Nama tidak boleh melebihi ${ MAX_NAME_LENGTH } karakter"
       ],
       "Name must not be empty": [
         "Nama tidak boleh kosong"
-      ],
-      "Name must not begin with a space": [
-        "Nama tidak boleh diawali spasi"
-      ],
-      "Name must not end with a space": [
-        "Nama tidak boleh diakhiri spasi"
       ]
     },
     "Video control": {

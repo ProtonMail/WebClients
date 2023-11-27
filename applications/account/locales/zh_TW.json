@@ -408,7 +408,7 @@
         "更換授權約期"
       ],
       "Edit users": [
-        "編輯用戶"
+        "編輯使用者"
       ],
       "Emoji": [
         "表情符號"
@@ -478,6 +478,9 @@
       ],
       "Get more filters": [
         "取得更多篩選器"
+      ],
+      "Get more folders": [
+        "獲得更多資料夾"
       ],
       "Get more licenses": [
         "取得授權"
@@ -719,6 +722,9 @@
       "Request new code": [
         "重新傳送驗證碼"
       ],
+      "Requires a verified recovery email address": [
+        "需要一個驗證過的電子信箱位址"
+      ],
       "Resend code": [
         "重新傳送驗證碼"
       ],
@@ -820,6 +826,9 @@
       ],
       "Send email reminder": [
         "傳送電子郵件提醒"
+      ],
+      "Send messages with @pm.me": [
+        "使用 @pm.me 來發送郵件"
       ],
       "Send my username": [
         "發送我的使用者名稱"
@@ -1003,6 +1012,9 @@
       ],
       "Use your current email instead": [
         "沿用您目前的電郵位址"
+      ],
+      "Use “${ label }” setting": [
+        "使用 「${ label }」設定"
       ],
       "User": [
         "使用者"
@@ -3235,6 +3247,9 @@
       "Delete": [
         "刪除"
       ],
+      "Delete this condition": [
+        "刪除這個條件"
+      ],
       "Edit conditions": [
         "編輯條件"
       ],
@@ -3260,7 +3275,7 @@
         "發送確認郵件"
       ],
       "Set up email forwarding": [
-        "設置電子郵件轉發"
+        "設定電子郵件轉發"
       ]
     },
     "email_forwarding_2023: Header": {
@@ -3313,12 +3328,20 @@
         "不帶附件"
       ]
     },
+    "email_forwarding_2023: Link": {
+      "Learn more": [
+        "了解更多"
+      ]
+    },
     "email_forwarding_2023: Outgoing forwarding tab name": {
       "To me": [
         "寄給我的"
       ]
     },
     "email_forwarding_2023: Placeholder": {
+      "Condition:": [
+        "條件:"
+      ],
       "Enter email address": [
         "輸入電子郵件地址"
       ]
@@ -3558,9 +3581,6 @@
       "Name does not match": [
         "名稱不相符"
       ],
-      "Name on card required": [
-        "持卡人姓名必須填寫"
-      ],
       "Name required": [
         "名稱為必填"
       ],
@@ -3704,9 +3724,6 @@
       ],
       "The address might be misspelled": [
         "位址可能拼錯了"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "您正使用的瀏覽器不允許付款妥為授權。請使用另一個瀏覽器，或改以電腦登入。"
       ],
       "The email addresses do not match": [
         "電子郵件位址不相符"
@@ -4044,6 +4061,9 @@
       "Oops, something went wrong": [
         "糟糕，出了一點問題"
       ],
+      "Open in browser": [
+        "在瀏覽器中開啟"
+      ],
       "Please refresh the page or try again later.": [
         "請重新整理頁面或稍後再試。"
       ],
@@ -4371,7 +4391,7 @@
         "您需要先架構自訂網域，才能加入多位使用者。"
       ],
       "You need to configure a custom domain before creating a new user.": [
-        "您需要先設置自訂網域，才可建立新使用者。"
+        "你必須先設定自訂網域，才可以建立新的使用者"
       ],
       "You will lose access to all premium features and storage space included with ${ BRAND_NAME } Family.": [
         "您將失去存取 ${ BRAND_NAME } Family 包含的所有尊享功能和儲存空間。"
@@ -4919,6 +4939,9 @@
       "Event": [
         "行程"
       ],
+      "Folders": [
+        "資料夾"
+      ],
       "IP address": [
         "IP 地址"
       ],
@@ -5006,6 +5029,9 @@
       ]
     },
     "Header for table": {
+      "Created": [
+        "已創建"
+      ],
       "Email address": [
         "電子郵件地址"
       ],
@@ -5691,6 +5717,9 @@
       "Are you sure you want to delete this address?": [
         "您確定要刪除此電郵位址嗎？"
       ],
+      "Are you sure you want to delete this calendar?": [
+        "你確定要刪除這個行事曆嗎?"
+      ],
       "Are you sure you want to delete this calendar? All addresses you shared this calendar with will lose access to it.": [
         "您確定刪除此行事曆嗎？ 所有已授權的郵件位址將無法繼續存取此行事曆。"
       ],
@@ -5732,6 +5761,9 @@
       ],
       "Auto-reply is active from the start time to the end time.": [
         "由開始時間直到結束時間啟用自動回覆。"
+      ],
+      "Available on macOS, Windows, and Linux.": [
+        "可以在 macOS, Windows, 和 Linux上使用"
       ],
       "Awaiting transaction": [
         "等待交易"
@@ -6053,9 +6085,6 @@
       ],
       "for choosing ${ product }": [
         "選用 ${ product }"
-      ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa、MasterCard 和 Discover 信用卡而言，所指的是卡背的 3 位數字。American Express 信用卡而言，所指的是卡面的 4 位數字。"
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "將收到的郵件從另一個帳號轉發至您的安全 ${ MAIL_APP_NAME } 收件匣。"
@@ -6835,7 +6864,7 @@
         "這些設定檔讓你可以在第三方 VPN 應用程式或路由器上自由選擇要連線到哪一台 ${ VPN_APP_NAME } 伺服器。"
       ],
       "These configurations are provided to work with WireGuard routers and official clients.": [
-        "這些設定檔提供 WireGuard routers 與官方用戶端使用。"
+        "這些設定檔提供 WireGuard routers 與官方客戶端使用。"
       ],
       "These credentials cannot be used to sign in to our official ${ VPN_APP_NAME } apps. ${ learnMore }": [
         "這些認證無法用於登入我們的官方 ${ VPN_APP_NAME } 應用程式。${ learnMore }"
@@ -6943,7 +6972,7 @@
         "為了能在密碼重設後存取加密的資料，選擇帳號復原方法。"
       ],
       "To ensure continuous access to your account, set an account recovery method": [
-        "為確保能持續存取您的帳號，設置一個帳號復原方法"
+        "為確保能持續存取您的帳號，請設定一個帳號復原方式"
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "為確保您不會遺失重要資料，${ DRIVE_APP_NAME } 會在您與協作者作出變更時，為您的檔案儲存較舊的版本。請選擇 ${ BRAND_NAME } 該保留先前的版本多久。"
@@ -7285,7 +7314,7 @@
         "您可以啟用通知功能，以便在新的電郵訊息送達此資料夾時收到通知。"
       ],
       "You can use ${ MAIL_APP_NAME } with any desktop email client that supports IMAP/SMTP, including Outlook, Apple Mail, and Thunderbird.": [
-        "您可在任一電郵用戶端支援 IMAP/SMTP 的系統上，使用 ${ MAIL_APP_NAME }，包括 Outlook、 Apple Mail、Thunderbird 等。"
+        "您可以在任何電子信箱客戶端支援 IMAP/SMTP 的系統上，使用 ${ MAIL_APP_NAME }，包括 Outlook、 Apple Mail、Thunderbird 等。"
       ],
       "You can use the following credentials to connect to a ${ VPN_APP_NAME } server using a third-party, open source VPN app, like Tunnelblick for macOS or OpenVPN for GNU/Linux.": [
         "您可使用下列憑證，透過第三方或開放原始碼 VPN 程式（例如：macOS 版本適用的 Tunnelblick 或 GNU/Linux 適用的 OpenVPN），連線至 ${ VPN_APP_NAME } 伺服器。"
@@ -7384,7 +7413,7 @@
         "您的帳號已成功升級。"
       ],
       "Your account recovery method is set": [
-        "你已設置帳號復原方法"
+        "你已設定帳號復原方式"
       ],
       "Your account will be updated once the payment is cleared.": [
         "付款一結算完成，您的帳號將會升級。"
@@ -7393,7 +7422,7 @@
         "您的資料已經準備好從 ${ importedEmailAddressStrong } 匯入您的 ${ BRAND_NAME } 帳號。"
       ],
       "Your data recovery method is set": [
-        "你的資料復原方法已設置"
+        "你已設定帳號復原方式"
       ],
       "Your email will only be used for this one-time verification.": [
         "您的電郵只會用於此一次性驗證。"
@@ -7581,6 +7610,9 @@
       ]
     },
     "Key state badge": {
+      "Disabled": [
+        "已停用"
+      ],
       "Forwarding": [
         "轉寄"
       ],
@@ -8208,9 +8240,6 @@
       "Expiration (${ patternExpiration })": [
         "到期日(${ patternExpiration })"
       ],
-      "Expiration date": [
-        "有效期限"
-      ],
       "Expires": [
         "有效期限"
       ],
@@ -8357,9 +8386,6 @@
       ],
       "Name and address": [
         "名稱及地址"
-      ],
-      "Name on card": [
-        "持卡人姓名"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (通訊埠轉送)"
@@ -8523,14 +8549,8 @@
       "Reveal password": [
         "顯示密碼"
       ],
-      "Security code": [
-        "安全碼"
-      ],
       "Security code (${ codeName })": [
         "安全驗證代碼(${ codeName })"
-      ],
-      "Select your country": [
-        "請選擇您的國家"
       ],
       "Select your plan": [
         "選擇你的方案"
@@ -9551,6 +9571,9 @@
       "Custom fields": [
         "自訂欄位"
       ],
+      "Custom snooze time": [
+        "自訂延遲時間"
+      ],
       "Data breach monitoring": [
         "資料外洩監測"
       ],
@@ -10066,7 +10089,7 @@
         "防止郵件被 ${ BRAND_NAME } 或第三方存取。能夠讀取郵件的人，就只有寄件者和意指的收件者。"
       ],
       "Protect every device connected to your WiFi network. It’s also useful if you have devices that do not support VPN settings directly.": [
-        "保護所有連接到 WiFi 的裝置，這對那些不能直接設置 VPN 的裝置尤為有效。"
+        "保護所有連接至 WiFi 的裝置，這對於不能直接設定 VPN 的裝置非常有效"
       ],
       "Protect your family from harmful websites and access our high-speed VPN servers to stream your favorite content": [
         "保護您的家人免受有害網站的侵害並存取我們的高速 VPN 伺服器以串流觀看您喜愛的內容"
@@ -10463,6 +10486,12 @@
       ],
       "No parent folder": [
         "無上層資料夾"
+      ],
+      "Off": [
+        "關閉"
+      ],
+      "On": [
+        "開啟"
       ],
       "Plain text": [
         "純文字"
@@ -11476,6 +11505,9 @@
       ]
     },
     "Settings/filters - table": {
+      "Name": [
+        "名稱"
+      ],
       "Order": [
         "順序"
       ]
@@ -11550,7 +11582,7 @@
     },
     "Signup step": {
       "Account setup": [
-        "帳戶設置"
+        "帳號設定"
       ],
       "Payment": [
         "付款"
@@ -12706,7 +12738,7 @@
         "編輯使用者"
       ],
       "Edit users": [
-        "編輯用戶"
+        "編輯使用者"
       ],
       "Edit who can access the gateway": [
         "編輯誰可存取閘道器"
@@ -12770,9 +12802,6 @@
       ],
       "Folders and labels": [
         "資料夾和標籤"
-      ],
-      "Forward and Auto-reply": [
-        "轉寄及自動回覆"
       ],
       "Forward emails": [
         "轉寄電子郵件"
@@ -12841,7 +12870,7 @@
         "匯入郵件"
       ],
       "Import via ${ PRODUCT_NAMES.EASY_SWITCH }": [
-        "經由${ PRODUCT_NAMES.EASY_SWITCH }匯入"
+        "使用${ PRODUCT_NAMES.EASY_SWITCH }匯入"
       ],
       "Import-Export app": [
         "Import-Export 應用程式"
@@ -12957,7 +12986,7 @@
       "PayPal verification failed": [
         "PayPal 驗證失敗"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "自訂您電郵的下款"
       ],
       "Phone": [
@@ -13134,6 +13163,9 @@
       "Status": [
         "狀態"
       ],
+      "Success": [
+        "成功"
+      ],
       "Successfully created ${ localSuccessfullyCreatedUsers.length } user accounts": [
         "已成功建立 ${ localSuccessfullyCreatedUsers.length } 個使用者帳號"
       ],
@@ -13175,9 +13207,6 @@
       ],
       "Unlock your mailbox": [
         "解除鎖定您的信箱"
-      ],
-      "Unsupported browser": [
-        "不支援此瀏覽器"
       ],
       "Upgrade plan": [
         "升級方案"
@@ -13304,6 +13333,9 @@
     "Title header for keys table": {
       "Fingerprint": [
         "指紋"
+      ],
+      "Key type": [
+        "金鑰類型"
       ]
     },
     "Title header for members table": {
@@ -13755,7 +13787,7 @@
         "您必須${ activateLink }組織金鑰才可加入電郵位址到一個非私密成員。"
       ],
       "You will lose any customization you made so far.": [
-        "您到目前為止所自訂的所有設置將會遺失。"
+        "您到目前為止所自訂的所有設定將會遺失。"
       ],
       "You will not see this import record in the list any more.": [
         "您在清單中將不再看見此匯入記錄。"

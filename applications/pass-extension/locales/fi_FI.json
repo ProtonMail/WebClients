@@ -131,6 +131,9 @@
       "Delete vault": [
         "Poista holvi"
       ],
+      "Disable autosave on this website": [
+        "Poista automaattitallennus käytöstä tällä verkkosivustolla"
+      ],
       "Discard": [
         "Hylkää"
       ],
@@ -409,6 +412,11 @@
         "Laajenna"
       ]
     },
+    "Description": {
+      "A checked box means the feature is disabled.": [
+        "Rasti ruudussa tarkoittaa, että toiminto on poistettu käytöstä."
+      ]
+    },
     "Error": {
       "${ provider } file could not be parsed. ${ errorDetail }": [
         "${ provider } -tiedostoa ei voitu jäsentää. ${ errorDetail }"
@@ -424,6 +432,9 @@
       ],
       "Auto-lock could not be disabled": [
         "Automaattilukitusta ei voitu poistaa käytöstä"
+      ],
+      "Cannot create alias (${ error }).": [
+        "Aliasta ei voida luoda (${ error })."
       ],
       "Cannot send invitation to this address at the moment": [
         "Kutsua ei tällä hetkellä ole mahdollista lähettää tähän osoitteeseen"
@@ -1893,8 +1904,14 @@
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Sinulla ei ole enää pääsyä tähän holviin. Jos haluat liittyä siihen uudelleen, tarvitset uuden kutsun."
       ],
+      "Your session could not be authorized.": [
+        "Istuntoasi ei voitu valtuuttaa."
+      ],
       "Your session could not be resumed.": [
         "Istuntoa ei voitu jatkaa."
+      ],
+      "Your session is inactive. Please log back in.": [
+        "Istuntosi on inaktiivinen. Ole hyvä ja kirjaudu takaisin sisään."
       ],
       "Your session was locked.": [
         "Istuntosi on lukittu."

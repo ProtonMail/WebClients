@@ -550,6 +550,9 @@
       "label emails as": [
         "다음으로 라벨 지정"
       ],
+      "Later this week": [
+        "이번 주 이후"
+      ],
       "Learn more": [
         "더 알아보기"
       ],
@@ -573,6 +576,9 @@
       ],
       "Manage labels": [
         "라벨 관리"
+      ],
+      "Manage Snooze": [
+        "방해 금지 관리"
       ],
       "Mark as read": [
         "읽음으로 표시"
@@ -712,10 +718,10 @@
       "Not saved": [
         "저장되지 않음"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -895,6 +901,9 @@
       "Select all messages": [
         "모든 메세지 선택"
       ],
+      "Select date and time": [
+        "날짜 및 시간 선택"
+      ],
       "Self-destruct in 7 days": [
         "7일 내에 자동 폭파"
       ],
@@ -1000,6 +1009,9 @@
       "Skip verification": [
         "인증 건너뛰기"
       ],
+      "Snooze": [
+        "방해 금지"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "트래커 보호로 인하여 일부 이미지가 불러오지 않을 수 있습니다."
       ],
@@ -1029,6 +1041,9 @@
       ],
       "This message contains remote content.": [
         "이 메시지는 외부 컨텐츠를 포함하고 있습니다."
+      ],
+      "This weekend": [
+        "이번 주"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "이메일을 안전하게 검색하려면, 브라우저에서의 메시지 복사본 다운로드가 필요합니다. 다운로드 구성에 시간이 걸릴 수 있습니다."
@@ -1080,6 +1095,9 @@
       ],
       "Unordered list": [
         "번호가 없는 목록"
+      ],
+      "Unsnooze": [
+        "방해 금지 종료"
       ],
       "Unstar": [
         "별표 제거"
@@ -3056,6 +3074,9 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "플랜을 업그레이드 하여 사용자 지정 메시지 스케줄과 다른 혜택을 잠금 해제하세요."
       ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "플랜 업그레이드로 사용자 지정 방해 금지 모드를 잠금해제 하세요."
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "업그레이드하여 받은 편지함을 정렬하는 무제한 필터와 더 많은 프리미엄 기능을 잠금 해제하세요."
       ],
@@ -3810,6 +3831,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "앱에서는 현재 사용 불가합니다."
+      ],
       "Error: ${ errorMessage }": [
         "오류: ${ errorMessage }"
       ],
@@ -3822,11 +3846,17 @@
       "Oops, something went wrong": [
         "이런, 문제가 발생했습니다"
       ],
+      "Open in browser": [
+        "브라우저에서 열기"
+      ],
       "Please refresh the page or try again later.": [
         "페이지를 새로고침 하거나 다시 시도하세요."
       ],
       "Something went wrong": [
         "문제가 발생했습니다"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME } 및 ${ CALENDAR_APP_NAME }를 사용하려면, 웹 버전으로 전환하세요."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "이 페이지를 로드할 수 없습니다. 페이지를 새로고침 하거나 인터넷 연결을 확인하세요."
@@ -5253,6 +5283,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ toEmail } 에서 ${ importedEmailAddress } 로 데이터를 가져오세요."
       ],
+      "Include Spam/Trash.": [
+        "스팸 및 휴지통 포함."
+      ],
       "Inherited from parent folder": [
         "상위폴더에 상속되어 있습니다"
       ],
@@ -5535,6 +5568,9 @@
       "Right-click for options": [
         "옵션을 위해 마우스 오른쪽 클릭"
       ],
+      "Sat, ${ formatTime }": [
+        "9월, ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "${ dateString }에 저장됨"
       ],
@@ -5612,6 +5648,18 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin을 이용하면 신뢰할 수 없는 타사 사이트에서 자신이 주로 사용하는 이메일을 숨길때 사용할 수 있습니다."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "${ formattedTime } ${ dateString }까지 방해 금지"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "오늘, ${ formattedTime }까지 방해금지됨"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "내일, ${ formattedTime }까지 방해금지됨"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "이 대화의 방해 금지 상태가 취소됩니다."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "죄송합니다. 이 메시지가 존재하지 않거나 이미 만료되었습니다."
@@ -5715,6 +5763,9 @@
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "이 이메일은 도메인의 인증 요구에 실패했습니다. 스푸핑되거나 잘못 전달되었을 수 있습니다."
       ],
+      "This file is too large to preview": [
+        "용량이 너무 커 미리보기를 사용할 수 없는 파일입니다."
+      ],
       "This invitation is saved in a disabled calendar.": [
         "이 초대가 비활성화된 캘린더에 저장되어 있습니다."
       ],
@@ -5805,6 +5856,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "주소 검증을 사용하려면 신뢰할 수 있는 키를 활성화하고 이 주소의 기본 키를 포함하여 사용 가능한 하나 이상의 공개 키를 신뢰해야 합니다. 이렇게 하면 암호화 키가 위조되지 않습니다."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "내일, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "전송 대기중인 메시지가 너무 많습니다. 다른 메시지가 전송될때 까지 잠시 기다려주세요."
       ],
@@ -5849,6 +5903,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "지금 업그레이드하여 프리미엄 기능, 제품, 저장 공간을 특별한 가격에 이용하세요."
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "잠금 해제하려면 ${ MAIL_APP_NAME } Plus로 업그레이드"
       ],
       "Upgrade to add more addresses to your account.": [
         "계정에 더 많은 주소를 추가하려면 업그레이드하세요."
@@ -7001,6 +7058,12 @@
       "Sign up for free": [
         "무료 가입"
       ],
+      "Snooze": [
+        "방해 금지"
+      ],
+      "Snoozed": [
+        "방해 금지 상태"
+      ],
       "Spam": [
         "스팸함"
       ],
@@ -7330,6 +7393,9 @@
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
       ],
+      "Custom snooze time": [
+        "사용자 지정 방해 금지 시간"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email 별칭"
       ],
@@ -7355,6 +7421,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "${ BRAND_NAME } 의 SimpleLogin으로 무제한 별칭을 얻으세요"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "원하는 시간대에 메시지를 방해 금지 상태로 전환하고 알림 받을 수 있습니다."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
@@ -7779,6 +7848,9 @@
       "No results found": [
         "결과를 찾을 수 없음"
       ],
+      "No snoozed messages": [
+        "방해 금지 상태 메시지 없음"
+      ],
       "No unread messages found": [
         "읽지 않은 메시지 발견되지 않음"
       ]
@@ -8058,6 +8130,14 @@
       ],
       "Sign": [
         "서명"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "방해 금지 메시지"
+      ],
+      "When should the message reappear in your inbox?": [
+        "언제 받은 편지함에 메시지가 다시 나타날지 설정하세요."
       ]
     },
     "Sort option": {
@@ -8375,6 +8455,9 @@
       ],
       "${ elementsCount } conversations snoozed": [
         "${ elementsCount }개 항목을 음소거 했습니다."
+      ],
+      "${ elementsCount } conversations unsnoozed": [
+        "${ elementsCount }개 대화 방해 금지 해제됨."
       ],
       "${ elementsCount } messages added to ${ labelName }.": [
         "${ elementsCount } 메시지가 ${ labelName } 로 추가됨."
@@ -9017,6 +9100,9 @@
       "Moving a scheduled message": [
         "예약된 메시지 이동"
       ],
+      "Moving a snoozed message": [
+        "방해 금지 메시지 이동"
+      ],
       "New message": [
         "새 메시지"
       ],
@@ -9158,6 +9244,12 @@
       "Sign out": [
         "로그아웃"
       ],
+      "Snooze": [
+        "방해 금지"
+      ],
+      "Snooze message": [
+        "방해 금지 메시지"
+      ],
       "Sort conversations": [
         "대화 종류"
       ],
@@ -9202,6 +9294,9 @@
       ],
       "Verification error": [
         "인증 오류"
+      ],
+      "Want to snooze any time?": [
+        "언제 방해 금지 상태로 전환하시겠어요?"
       ],
       "Warning": [
         "경고"
@@ -9414,6 +9509,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate } 에 종료됩니다. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "월요일, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "9월, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "일요일, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

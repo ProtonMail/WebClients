@@ -488,13 +488,13 @@
         "refresque la página"
       ],
       "Remove": [
-        "Eliminar"
+        "Borrar"
       ],
       "Remove device": [
-        "Eliminar dispositivo"
+        "Borrar el dispositivo"
       ],
       "Remove from this list": [
-        "Eliminar de la lista"
+        "Borrar de la lista"
       ],
       "Rename": [
         "Renombrar"
@@ -3750,6 +3750,9 @@
       "Items in the trash will stay here until you delete them permanently": [
         "Los elementos de la papelera permanecerán aquí hasta que los borre permanentemente"
       ],
+      "Items moved to the trash will stay here until deleted": [
+        "Los elementos movidos a la papelera permanecerán aquí hasta ser eliminados"
+      ],
       "It’s easy and secure": [
         "Es fácil y seguro"
       ],
@@ -3828,17 +3831,11 @@
       "No": [
         "No"
       ],
-      "No computers syncing": [
-        "No hay computadoras sincronizadas."
-      ],
       "No contacts added yet": [
         "Ningún contacto añadido aún"
       ],
       "No email address": [
         "No hay dirección de correo"
-      ],
-      "No files or folders in trash": [
-        "No hay archivos o carpetas en la papelera"
       ],
       "No group found": [
         "Ningún grupo encontrado"
@@ -4140,11 +4137,11 @@
         "Este mes"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Esto eliminará el enlace y removerá el acceso a su archivo o carpeta para cualquier persona que tenga el enlace.",
-        "Esto eliminará los enlaces y removerá el acceso a sus archivos o carpetas para cualquier persona que tenga los enlaces."
+        "Esto eliminará el enlace y borrará el acceso a su archivo o carpeta para cualquier persona que tenga el enlace.",
+        "Esto eliminará los enlaces y borrará el acceso a sus archivos o carpetas para cualquier persona que tenga los enlaces."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
-        "Esto eliminará el dispositivo sincronizado ${ deviceName } de ${ DRIVE_APP_NAME } y detendrá la sincronización de carpetas añadidas a Dispositivos."
+        "Esto borrará el dispositivo sincronizado ${ deviceName } de ${ DRIVE_APP_NAME } y detendrá la sincronización de carpetas añadidas a Dispositivos."
       ],
       "This will replace the existing file with the folder": [
         "Esto reemplazará el archivo existente con la carpeta"
@@ -4209,6 +4206,9 @@
       "Trash": [
         "Papelera"
       ],
+      "Trash is empty": [
+        "La papelera está vacía"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Pruebe las nuevas funciones, actualizaciones y productos de ${ BRAND_NAME } antes de que se lancen al público. Esto recargará la aplicación."
       ],
@@ -4256,6 +4256,9 @@
       ],
       "Version is restored": [
         "La versión fue restaurada"
+      ],
+      "Want to sync files faster?": [
+        "¿Desea sincronizar archivos más rápido?"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "¡Felicidades, ha duplicado su almacenamiento gratuito!"
@@ -4945,10 +4948,10 @@
     },
     "Limit of calendars reached": {
       "To add a new calendar, remove an existing one.": [
-        "Para añadir un calendario nuevo, elimine uno existente."
+        "Para añadir un calendario nuevo, borre uno existente."
       ],
       "To add a new calendar, remove another calendar or upgrade your ${ BRAND_NAME } plan to a ${ MAIL_SHORT_APP_NAME } paid plan.": [
-        "Para añadir un calendario nuevo, elimine otro o mejore su plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
+        "Para añadir un calendario nuevo, borre otro o mejore su plan de ${ BRAND_NAME } a un plan de pago de ${ MAIL_SHORT_APP_NAME }."
       ],
       "You've reached the maximum number of calendars available in your plan.": [
         "Ha alcanzado el número máximo de calendarios disponibles en su plan."
@@ -5241,13 +5244,13 @@
         "Grupo de contactos actualizado"
       ],
       "Device failed to be removed": [
-        "Error al eliminar el dispositivo"
+        "Error al borrar el dispositivo"
       ],
       "Device failed to be renamed": [
         "Error al renombrar el dispositivo"
       ],
       "Device removed": [
-        "Dispositivo eliminado"
+        "Dispositivo borrado"
       ],
       "Device renamed": [
         "Dispositivo renombrado"
@@ -6491,7 +6494,7 @@
         "Recuperar datos"
       ],
       "Remove device?": [
-        "¿Eliminar dispositivo?"
+        "¿Borrar el dispositivo?"
       ],
       "Rename a file": [
         "Renombrar un archivo"
@@ -6734,24 +6737,12 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" es un nombre inválido"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "El nombre no puede incluir caracteres invisibles, / o \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "El nombre debe tener como máximo ${ MAX_NAME_LENGTH } caracter",
         "El nombre debe tener como máximo ${ MAX_NAME_LENGTH } caracteres"
       ],
       "Name must not be empty": [
         "El nombre no debe estar vacío"
-      ],
-      "Name must not begin with a space": [
-        "El nombre no debe comenzar con un espacio"
-      ],
-      "Name must not end with a space": [
-        "El nombre no debe terminar con un espacio"
       ]
     },
     "Video control": {

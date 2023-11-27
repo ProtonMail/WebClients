@@ -3409,6 +3409,12 @@
       "Next": [
         "Seuraava"
       ],
+      "Pause": [
+        "Keskeytä"
+      ],
+      "Re-enable": [
+        "Ota käyttöön uudelleen"
+      ],
       "Re-send confirmation email": [
         "Lähetä vahvistusviesti uudelleen"
       ],
@@ -3420,6 +3426,9 @@
       ],
       "Resume": [
         "Jatka"
+      ],
+      "Save": [
+        "Tallenna"
       ],
       "Send confirmation email": [
         "Lähetä vahvistusviesti"
@@ -3455,8 +3464,14 @@
       "Actions": [
         "Toiminnot"
       ],
+      "From": [
+        "Osoitteesta"
+      ],
       "Status": [
         "Tila"
+      ],
+      "To": [
+        "Osoitteeseen"
       ]
     },
     "email_forwarding_2023: Incoming forwarding tab name": {
@@ -3512,6 +3527,12 @@
       "And": [
         "Ja"
       ],
+      "Forward from": [
+        "Ohjaa osoitteesta"
+      ],
+      "Forward to": [
+        "Ohjaa osoitteeseen"
+      ],
       "or": [
         "tai"
       ],
@@ -3552,6 +3573,9 @@
     "email_forwarding_2023: Prompt": {
       "End-to-end encryption will be re-enabled for the sender address.": [
         "Päästä päähän -salaus otetaan uudelleen käyttöön lähettäjän osoitteessa."
+      ],
+      "Forwarding to the destination address will end.": [
+        "Ohjaus kohdeosoitteeseen päättyy."
       ]
     },
     "email_forwarding_2023: Status": {
@@ -3577,6 +3601,9 @@
       ],
       "Changes saved": [
         "Muutokset tallennettiin"
+      ],
+      "Email sent to ${ forward.ForwardeeEmail }": [
+        "Sähköposti lähetettiin osoitteeseen ${ forward.ForwardeeEmail }"
       ],
       "Email sent to ${ model.forwardeeEmail }.": [
         "Viesti lähetettiin osoitteeseen ${ model.forwardeeEmail }."
@@ -3811,9 +3838,6 @@
       "Name does not match": [
         "Nimi ei täsmää"
       ],
-      "Name on card required": [
-        "Kortissa oleva nimi vaaditaan"
-      ],
       "Name required": [
         "Nimi vaaditaan"
       ],
@@ -3962,9 +3986,6 @@
       ],
       "The address might be misspelled": [
         "Osoite on ehkä kirjoitettu väärin"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Käyttämäsi selain ei mahdollista maksun täydellistä valtuutusta. Käytä eri selainta tai kirjaudu tietokoneella."
       ],
       "The email addresses do not match": [
         "Sähköpostiosoitteet eivät täsmää"
@@ -4297,6 +4318,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Sovellus ei ole tällä hetkellä käytettävissä"
+      ],
       "Error: ${ errorMessage }": [
         "Virhe: ${ errorMessage }"
       ],
@@ -4305,6 +4329,9 @@
       ],
       "Oops, something went wrong": [
         "Hups, jotain meni pieleen"
+      ],
+      "Open in browser": [
+        "Avaa selaimessa"
       ],
       "Please refresh the page or try again later.": [
         "Päivitä sivu tai yritä myöhemmin uudelleen."
@@ -6400,9 +6427,6 @@
       "for choosing ${ product }": [
         "kun valitsit ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa ja MasterCard: 3 numeroa kortin taustassa. American Express: 4 numeroa kortin edustassa."
-      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Ohjaa muiden tilien saapuvat viestit suojattuun ${ MAIL_APP_NAME } -postilaatikkoosi."
       ],
@@ -7092,14 +7116,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Koska olet uskollinen käyttäjä, tililläsi on lisäominaisuuksia."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP:n avulla ulkoiset palvelut ja laitteet voivat lähettää sähköpostiviestejä ${ MAIL_APP_NAME }in välityksellä käyttäen omia verkkotunnuksiasi. Ominaisuus on vain omia verkkotunnuksiaan käyttävien ${ BRAND_NAME } for Business -asiakkaiden käytettävissä."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-lähetys mahdollistaa sähköpostin lähettämisen ulkoisten palvelujen tai laitteiden ${ MAIL_APP_NAME }n avulla omasta verkkotunnuksestasi. Saadaksesi toiminnon käyttöön, ${ createTicket } jossa kuvailet käyttötarpeen, mitä verkkotunnuksia haluat käyttää, sekä arviosi lähetettävistä sähköpostimääristä tunneittain ja päivittäin."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "SMTP-lähetyksen avulla ulkoiset palvelut tai laitteet voivat lähettää viestejä ${ MAIL_APP_NAME }in oman verkkotunnuksesi alaisista osoitteista. Aloita ominaisuuden käyttäminen luomalla uusi tunniste."
+      ],
+      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "SMTP:n avulla ulkoiset palvelut ja laitteet voivat lähettää sähköpostiviestejä ${ MAIL_APP_NAME }in välityksellä käyttäen omia verkkotunnuksiasi. Ominaisuus on vain omia verkkotunnuksiaan käyttävien ${ BRAND_NAME } for Business -asiakkaiden käytettävissä."
       ],
       "Some keys successfully reactivated": [
         "Joitakin avaimia aktivoitiin uudelleen"
@@ -7251,6 +7275,9 @@
       ],
       "This could take some time. Please do not close this page or disconnect from the internet.": [
         "Tämä saattaa kestää jonkin aikaa. Älä sulje tätä sivua tai katkaise Internet-yhteyttäsi."
+      ],
+      "This file is too large to preview": [
+        "Tämä tiedosto on liian suuri esikatseltavaksi"
       ],
       "This is a 12-word phrase that you were prompted to set.": [
         "Tämä on 12-sanainen lauseke, joka sinua pyydettiin määrittämään."
@@ -8014,6 +8041,9 @@
       "Generate key": [
         "Luo avain"
       ],
+      "Key with fingerprint ${ fp } successfully created.": [
+        "Avain sormenjäljellä ${ fp } luotiin onnistuneesti."
+      ],
       "The encryption keys are being generated. This may take several minutes and temporarily freeze your browser.": [
         "Salausavaimia luodaan. Tämä saattaa kestää useita minuutteja ja tilapäisesti lukita selaimesi."
       ],
@@ -8246,6 +8276,9 @@
       "Disables signature verification and encryption with this key": [
         "Poista allekirjoituksen vahvistus ja salaus tällä avaimella käytöstä"
       ],
+      "Enable encryption with this key": [
+        "Ota salaus tällä avaimella käyttöön"
+      ],
       "Enable signature verification and encryption with this key": [
         "Ota allekirjoituksen vahvistus ja salaus tällä avaimella käyttöön"
       ],
@@ -8260,6 +8293,12 @@
       ],
       "Mark compromised": [
         "Merkitse vaarantuneeksi"
+      ],
+      "Mark not compromised": [
+        "Merkitse ei-vaarantuneeksi"
+      ],
+      "Mark not obsolete": [
+        "Merkitse ei-vanhentuneeksi"
       ],
       "Mark obsolete": [
         "Merkitse vanhentuneeksi"
@@ -8668,9 +8707,6 @@
       "Expiration (${ patternExpiration })": [
         "Voimassaolon päättymisaika (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Voimassaolo päättyy"
-      ],
       "Expires": [
         "Erääntyy"
       ],
@@ -8817,9 +8853,6 @@
       ],
       "Name and address": [
         "Nimi ja osoite"
-      ],
-      "Name on card": [
-        "Kortissa oleva nimi"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (porttiohjaus)"
@@ -8983,14 +9016,8 @@
       "Reveal password": [
         "Näytä salasana"
       ],
-      "Security code": [
-        "Turvakoodi"
-      ],
       "Security code (${ codeName })": [
         "Turvakoodi (${ codeName })"
-      ],
-      "Select your country": [
-        "Valitse maasi"
       ],
       "Select your plan": [
         "Valitse tilauksesi"
@@ -10067,6 +10094,9 @@
       "Custom fields": [
         "Mukautetut kentät"
       ],
+      "Custom snooze time": [
+        "Oma torkutusaika"
+      ],
       "Data breach monitoring": [
         "Tietovuotojen seuranta"
       ],
@@ -10762,6 +10792,9 @@
       "IP Address copied to clipboard": [
         "IP-osoite kopioitiin leikepöydälle"
       ],
+      "Key with fingerprint ${ fp } has been deleted.": [
+        "Avain sormenjäljellä ${ fp } on poistettu."
+      ],
       "Link copied to clipboard": [
         "Linkki kopioitu leikepöydälle"
       ],
@@ -11104,6 +11137,9 @@
     "Option protection mode": {
       "Load content via proxy (recommended)": [
         "Lataa sisältö välityspalvelimen kautta (suositus)"
+      ],
+      "Load content via proxy and store as attachments": [
+        "Lataa sisältö välityspalvelimen kautta ja säilytä liitteinä"
       ]
     },
     "Organization capacity error": {
@@ -11536,9 +11572,6 @@
       ],
       "Text": [
         "Teksti"
-      ],
-      "Thomas Anderson": [
-        "Matti Meikäläinen"
       ],
       "Type text or keyword": [
         "Syötä teksti tai avainsana"
@@ -12115,6 +12148,9 @@
       ],
       "Name": [
         "Nimi"
+      ],
+      "Order": [
+        "Järjestä"
       ],
       "Status": [
         "Tila"
@@ -13494,9 +13530,6 @@
       "Folders and labels": [
         "Kansiot ja tunnisteet"
       ],
-      "Forward and Auto-reply": [
-        "Välitä ja automaattivastaa"
-      ],
       "Forward emails": [
         "Välitä sähköpostit"
       ],
@@ -13792,6 +13825,9 @@
       "Set organization password": [
         "Aseta organisaation salasana"
       ],
+      "Set up a recovery method": [
+        "Määritä palautustapa"
+      ],
       "Set up forwarding": [
         "Määritä ohjaus"
       ],
@@ -13901,9 +13937,6 @@
       ],
       "Unlock your mailbox": [
         "Avaa postilaatikkosi"
-      ],
-      "Unsupported browser": [
-        "Selainta ei tueta"
       ],
       "Upgrade plan": [
         "Päivitä tilaus"
@@ -14346,6 +14379,11 @@
       ],
       "Primary admin": [
         "Ensisijainen ylläpitäjä"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "Kertakirjautuminen"
       ]
     },
     "Validation": {

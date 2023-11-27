@@ -3878,9 +3878,6 @@
       "Name does not match": [
         "Nazwy nie pasują do siebie"
       ],
-      "Name on card required": [
-        "Właściciel karty jest wymagany"
-      ],
       "Name required": [
         "Nazwa jest wymagana"
       ],
@@ -4033,9 +4030,6 @@
       ],
       "The address might be misspelled": [
         "Adres mógł zostać błędnie wpisany"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Przeglądarka, której używasz, nie pozwala na pełną autoryzację płatności. Skorzystaj z innej przeglądarki lub zaloguj się za pomocą komputera."
       ],
       "The email addresses do not match": [
         "Adresy e-mail nie pasują do siebie"
@@ -6590,9 +6584,6 @@
       "for choosing ${ product }": [
         "za wybranie ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Dla kart Visa, MasterCard i Discover - 3 cyfry na odwrocie karty. Dla kart American Express - 4 cyfry na przedniej stronie karty."
-      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Przekieruj wiadomości przychodzące z innego konta do bezpiecznej skrzynki odbiorczej ${ MAIL_APP_NAME }."
       ],
@@ -7295,14 +7286,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Funkcja jest dostępna dla użytkowników ${ BRAND_NAME } for Business z niestandardową domeną."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Aby uzyskać dostęp do tej funkcji, ${ createTicket } i opisz swoje potrzeby. Napisz jakiej niestandardowej domeny chcesz użyć i oszacuj zapotrzebowanie wiadomości."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Wygeneruj nowy token, aby rozpocząć."
+      ],
+      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Funkcja jest dostępna dla użytkowników ${ BRAND_NAME } for Business z niestandardową domeną."
       ],
       "Some keys successfully reactivated": [
         "Niektóre klucze zostały reaktywowane"
@@ -8929,9 +8920,6 @@
       "Expiration (${ patternExpiration })": [
         "Data wygaśnięcia (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Data wygaśnięcia"
-      ],
       "Expires": [
         "Wygasa"
       ],
@@ -9078,9 +9066,6 @@
       ],
       "Name and address": [
         "Nazwa i adres"
-      ],
-      "Name on card": [
-        "Właściciel karty"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (przekierowanie portów)"
@@ -9244,14 +9229,8 @@
       "Reveal password": [
         "Pokaż hasło"
       ],
-      "Security code": [
-        "Kod zabezpieczający"
-      ],
       "Security code (${ codeName })": [
         "Kod zabezpieczający (${ codeName })"
-      ],
-      "Select your country": [
-        "Wybierz kraj"
       ],
       "Select your plan": [
         "Wybierz plan"
@@ -11892,9 +11871,6 @@
       "Text": [
         "Tekst"
       ],
-      "Thomas Anderson": [
-        "Jan Kowalski"
-      ],
       "Type text or keyword": [
         "Wpisz tekst lub słowo kluczowe"
       ],
@@ -13944,7 +13920,7 @@
       "Folders and labels": [
         "Foldery i etykiety"
       ],
-      "Forward and Auto-reply": [
+      "Forward and auto-reply": [
         "Przekierowanie i autoresponder"
       ],
       "Forward emails": [
@@ -14133,7 +14109,7 @@
       "PayPal verification failed": [
         "Weryfikacja płatności PayPal nie powiodła się"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "Spersonalizuj stopkę"
       ],
       "Phone": [
@@ -14363,9 +14339,6 @@
       ],
       "Unlock your mailbox": [
         "Odblokuj swoją skrzynkę pocztową"
-      ],
-      "Unsupported browser": [
-        "Przeglądarka jest nieobsługiwana"
       ],
       "Upgrade plan": [
         "Ulepsz plan"

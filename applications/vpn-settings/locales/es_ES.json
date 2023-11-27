@@ -333,13 +333,13 @@
         "actualizar la página"
       ],
       "Remove": [
-        "Eliminar"
+        "Borrar"
       ],
       "Remove bonuses": [
-        "Eliminar beneficios"
+        "Borrar los beneficios"
       ],
       "Remove gift code": [
-        "Eliminar código de regalo"
+        "Borrar el código de regalo"
       ],
       "Rename": [
         "Renombrar"
@@ -1972,9 +1972,6 @@
       "Name does not match": [
         "El nombre no coincide."
       ],
-      "Name on card required": [
-        "El titular de la tarjeta es obligatorio."
-      ],
       "Not a valid number": [
         "No es un número válido."
       ],
@@ -2043,9 +2040,6 @@
       ],
       "Tab closed": [
         "Pestaña cerrada"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "El navegador que estás utilizando no permite autorizar el pago. Utiliza un navegador diferente o inicia sesión desde un ordenador."
       ],
       "The email addresses do not match": [
         "Las direcciones de correo electrónico no coinciden"
@@ -2348,10 +2342,10 @@
     },
     "familyOffer_2023:Info for members section": {
       "Add, remove, and make changes to user accounts in your family group.": [
-        "Añade, elimina y efectúa cambios en las cuentas de usuario de tu grupo familiar."
+        "Añade, borra y efectúa cambios en las cuentas de usuario de tu grupo familiar."
       ],
       "Add, remove, and make changes to user accounts in your organization.": [
-        "Añade, elimina y efectúa cambios en las cuentas de usuario de tu organización."
+        "Añade, borra y efectúa cambios en las cuentas de usuario de tu organización."
       ]
     },
     "familyOffer_2023:Label": {
@@ -2375,7 +2369,7 @@
     },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organization.Name }": [
-        "Se ha eliminado a ${ member.Name } de ${ organization.Name }"
+        "Se ha borrado a ${ member.Name } de ${ organization.Name }"
       ],
       "An error occurred, please try again": [
         "Se ha producido un error. Inténtalo de nuevo."
@@ -2498,7 +2492,7 @@
         "Llave de seguridad"
       ],
       "Security key removed": [
-        "Llave de seguridad eliminada"
+        "La llave de seguridad ha sido borrada."
       ],
       "Security key updated": [
         "Llave de seguridad actualizada"
@@ -2754,7 +2748,7 @@
         "${ number } servidores"
       ],
       "${ plan } removed. Bundle deal not available on a 1-month plan.": [
-        "${ plan } ha sido eliminado. La oferta de paquete no está disponible en el plan de 1 mes."
+        "${ plan } ha sido borrado. La oferta de paquete no está disponible en el plan de 1 mes."
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -2885,7 +2879,7 @@
         "¿Estás seguro de que quieres descartar los cambios?"
       ],
       "Are you sure you want to remove administrative privileges from this user?": [
-        "¿Estás seguro que quieres eliminar los privilegios administrativos de este usuario?"
+        "¿Estás seguro de que quieres borrar los privilegios administrativos de este usuario?"
       ],
       "Ask your organisation admin to setup Gateways.": [
         "Pregunta al administrador de tu organización para configurar puertas de enlace."
@@ -3077,9 +3071,6 @@
       ],
       "for choosing ${ product }": [
         "por elegir ${ product }"
-      ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Para Visa, MasterCard y Discover, necesitas los 3 dígitos en la parte trasera de la tarjeta. Para American Express, necesitas los 4 dígitos en la parte frontal de la tarjeta."
       ],
       "Free forever": [
         "Gratis para siempre"
@@ -3526,7 +3517,7 @@
         "Estas credenciales no pueden utilizarse para iniciar sesión en nuestras aplicaciones oficiales de ${ VPN_APP_NAME }. ${ learnMore }"
       ],
       "They will be removed from your organization": [
-        "Se eliminarán de tu organización."
+        "Se borrarán de tu organización."
       ],
       "This account has been suspended due to a potential policy violation.": [
         "Esta cuenta ha sido suspendida debido a una posible violación de los términos y condiciones."
@@ -3700,7 +3691,7 @@
         "Advertencia:"
       ],
       "Warning: deletion is permanent. This also removes access to all connected services and deletes all of your contacts.": [
-        "Advertencia: la eliminación es permanente. Esto también elimina el acceso a todos los servicios conectados y elimina todos tus contactos."
+        "Advertencia: la eliminación es permanente. Esto también borra el acceso a todos los servicios conectados y elimina todos tus contactos."
       ],
       "We advise you to use official ${ VPN_APP_NAME } applications when possible.": [
         "Te aconsejamos utilizar las aplicaciones oficiales de ${ VPN_APP_NAME } cuando sea posible."
@@ -3804,20 +3795,20 @@
         "Puedes desbloquear inmediatamente la configuración anterior añadiendo ${ specificCountryCount } al número de direcciones IP en tu plan o comuníquete con nosotros para obtener soluciones personalizadas."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tu calendario antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }.",
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }."
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tu calendario antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }.",
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción.",
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimina enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción."
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción.",
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra enlaces de calendario compartido y cualquier usuario de ${ BRAND_NAME } con quien hayas compartido tus calendarios antes de cancelar tu suscripción."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimina los enlaces de calendarios compartidos antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }.",
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimina los enlaces de calendarios compartidos antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }."
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra los enlaces de calendarios compartidos antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }.",
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra los enlaces de calendarios compartidos antes de cancelar tu suscripción a ${ MAIL_SHORT_APP_NAME }."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links before you cancel your subscription.": [
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Elimina los enlaces de calendarios compartidos antes de cancelar tu suscripción.",
-        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Elimina los enlaces de calendarios compartidos antes de cancelar tu suscripción."
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendario. Borra los enlaces de calendarios compartidos antes de cancelar tu suscripción.",
+        "Puedes tener hasta ${ MAX_CALENDARS_FREE } calendarios. Borra los enlaces de calendarios compartidos antes de cancelar tu suscripción."
       ],
       "You can now access and manage the account as an administrator.": [
         "Ahora puedes acceder y gestionar la cuenta como administrador."
@@ -3842,7 +3833,7 @@
         "Debes activar la clave privada de tu organización con la copia de seguridad suministrada por el administrador de la organización."
       ],
       "You must disable or remove any additional ${ MAIL_APP_NAME } users, addresses, and custom domains before you can downgrade.": [
-        "Debes desactivar o eliminar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
+        "Debes desactivar o borrar los usuarios, direcciones y dominios personalizados adicionales de ${ MAIL_APP_NAME } antes de poder pasar a un plan con menos funciones."
       ],
       "You must have a credit card or bank account linked with your PayPal account in order to add it as a payment method.": [
         "Debes tener una tarjeta de crédito o una cuenta bancaria vinculada a tu cuenta PayPal para añadirla como método de pago."
@@ -4197,9 +4188,6 @@
       "Expiration (${ patternExpiration })": [
         "Expiración (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Fecha de expiración"
-      ],
       "Expires": [
         "Expira"
       ],
@@ -4241,9 +4229,6 @@
       ],
       "Name and address": [
         "Nombre y dirección"
-      ],
-      "Name on card": [
-        "Titular de la tarjeta"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (redirección de puertos)"
@@ -4350,14 +4335,8 @@
       "Reveal password": [
         "Mostrar contraseña"
       ],
-      "Security code": [
-        "Código de seguridad"
-      ],
       "Security code (${ codeName })": [
         "Código de seguridad (${ codeName })"
-      ],
-      "Select your country": [
-        "Selecciona tu país"
       ],
       "Select your plan": [
         "Elige tu suscripción"
@@ -4598,7 +4577,7 @@
         "Editar"
       ],
       "Remove": [
-        "Eliminar"
+        "Borrar"
       ],
       "Revoke sessions": [
         "Revocar sesiones"
@@ -5314,7 +5293,7 @@
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Con la herramienta de administración de organizaciones, los administradores pueden añadir y eliminar usuarios, asignar almacenamiento, configurar dominios y hacer otras tareas."
+        "Con la herramienta de administración de organizaciones, los administradores pueden añadir y borrar usuarios, asignar almacenamiento, configurar dominios y hacer otras tareas."
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nuestra sólida infraestructura garantiza que podrás acceder a tu cuenta cuando lo necesites."
@@ -5555,16 +5534,16 @@
     },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
-        "${ upgradeLink } para añadir más usuarios, o elimina algunas cuentas de usuario para liberar espacio."
+        "${ upgradeLink } para añadir más usuarios, o borra algunas cuentas de usuario para liberar espacio."
       ],
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
-        "${ upgradeLink } para conseguir más cuentas, o elimina el acceso VPN para algunos usuarios."
+        "${ upgradeLink } para conseguir más cuentas, o borra el acceso VPN para algunos usuarios."
       ],
       "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
-        "${ upgradeLink } para conseguir más direcciones, o elimina algunas direcciones para liberar espacio."
+        "${ upgradeLink } para conseguir más direcciones, o borra algunas direcciones para liberar espacio."
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
-        "${ upgradeLink } para conseguir más almacenamiento, o elimina contenido para liberar espacio."
+        "${ upgradeLink } para conseguir más almacenamiento, o borra contenido para liberar espacio."
       ],
       "Your plan includes a maximum of ${ availableAddresses } more address.": [
         "Tu plan incluye un máximo de ${ availableAddresses } dirección adicional.",
@@ -5668,9 +5647,6 @@
       ],
       "Select a reason": [
         "Selecciona un motivo"
-      ],
-      "Thomas Anderson": [
-        "Andrea García"
       ]
     },
     "plan customizer, ips": {
@@ -7079,7 +7055,7 @@
         "Recuperación"
       ],
       "Remove user?": [
-        "¿Eliminar usuario?"
+        "¿Borrar el usuario?"
       ],
       "Rename the gateway": [
         "Cambiar el nombre de la puerta de enlace"
@@ -7193,9 +7169,6 @@
       ],
       "Unlock your mailbox": [
         "Desbloquea tu buzón de correo"
-      ],
-      "Unsupported browser": [
-        "Navegador no soportado"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Mejora la protección de tu red con servidores dedicados"

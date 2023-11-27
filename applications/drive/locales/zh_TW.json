@@ -578,7 +578,7 @@
         "全選"
       ],
       "Send feedback": [
-        "傳送意見反饋"
+        "傳送意見回饋"
       ],
       "Set recovery phrase": [
         "設定還原短語"
@@ -638,7 +638,7 @@
         "開始恢復"
       ],
       "Start setup": [
-        "開始設置"
+        "開始設定"
       ],
       "Stay": [
         "停留"
@@ -2507,6 +2507,9 @@
       "Oops, something went wrong": [
         "糟糕，出了一點問題"
       ],
+      "Open in browser": [
+        "在瀏覽器中開啟"
+      ],
       "Please refresh the page or try again later.": [
         "請重新整理頁面或稍後再試。"
       ],
@@ -3397,6 +3400,9 @@
       "double your storage": [
         "加倍您的儲存空間"
       ],
+      "Download ${ name } app": [
+        "下載 ${ name } app"
+      ],
       "Download canceled": [
         "下載已取消"
       ],
@@ -3423,6 +3429,9 @@
       ],
       "Drop file here to upload": [
         "拖曳檔案到此處來上傳"
+      ],
+      "Drop files here": [
+        "將檔案拖放至此"
       ],
       "Drop to import": [
         "拖放以匯入"
@@ -3534,6 +3543,9 @@
       ],
       "from the version history?": [
         "來自版本歷史紀錄？"
+      ],
+      "Get the app to backup photos from your phone.": [
+        "下載應用程式來備份手機中的照片"
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "了解 ${ DRIVE_APP_NAME } 並獲得您的 500 MB 儲存空間獎勵！今天就行動。"
@@ -3688,9 +3700,6 @@
       "No email address": [
         "沒有電郵位址"
       ],
-      "No files or folders in trash": [
-        "垃圾桶中無任何檔案或資料夾"
-      ],
       "No group found": [
         "未找到群組"
       ],
@@ -3810,6 +3819,9 @@
       ],
       "Queued": [
         "待處理"
+      ],
+      "Ready to add some photos?": [
+        "準備好新增一些照片了嗎?"
       ],
       "recommended browser": [
         "推薦的瀏覽器"
@@ -4035,6 +4047,9 @@
       ],
       "Trash": [
         "垃圾桶"
+      ],
+      "Trash is empty": [
+        "垃圾桶是空的"
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "在它們公開前，嘗試新的 ${ BRAND_NAME } 功能，更新與產品。這將會重新載入應用程式"
@@ -4900,6 +4915,9 @@
       ],
       "Custom email domains": [
         "自訂電郵網域"
+      ],
+      "Custom snooze time": [
+        "自訂延遲時間"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email 別名"
@@ -5768,6 +5786,9 @@
       "${ countMergeableContacts } contacts look identical.": [
         "${ countMergeableContacts } 個聯絡人似乎相同。"
       ],
+      "${ countOfUnrecoveredLinksLeft } left": [
+        "剩餘${ countOfUnrecoveredLinksLeft }"
+      ],
       "Address copied to clipboard": [
         "位址已複製到剪貼簿"
       ],
@@ -5822,7 +5843,7 @@
     },
     "Success notification when user send feedback": {
       "Feedback sent": [
-        "意見反饋已送出"
+        "意見回饋已送出"
       ]
     },
     "summer2023: Deal details": {
@@ -6476,23 +6497,11 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" 並非有效名稱"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "名稱不能包含不可見的字元以及 / 或 \\。"
-      ],
       "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
         "名稱長度最多為 ${ MAX_NAME_LENGTH } 個字元"
       ],
       "Name must not be empty": [
         "名稱不得留空"
-      ],
-      "Name must not begin with a space": [
-        "名稱不得以空格開首"
-      ],
-      "Name must not end with a space": [
-        "名稱不得以空格結尾"
       ]
     },
     "Video control": {
@@ -6565,7 +6574,7 @@
         "我們無法驗證此郵件伺服器。如果您確定可信任此伺服器，則可略過驗證。"
       ],
       "You will lose any customization you made so far.": [
-        "您到目前為止所自訂的所有設置將會遺失。"
+        "您到目前為止所自訂的所有設定將會遺失。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免費試用將於 ${ textDate } 結束。${ action }"

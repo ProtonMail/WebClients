@@ -2558,6 +2558,9 @@
       "Access denied": [
         "Erişim reddedildi"
       ],
+      "App currently unavailable": [
+        "Uygulama şu anda kullanılamıyor"
+      ],
       "Brace yourself till we get the error fixed.": [
         "Lütfen biz sorunu giderene kadar bekleyin."
       ],
@@ -2573,11 +2576,17 @@
       "Oops, something went wrong": [
         "Bir şeyler ters gitti"
       ],
+      "Open in browser": [
+        "Tarayıcıda aç"
+      ],
       "Please refresh the page or try again later.": [
         "Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ],
       "Something went wrong": [
         "Bir şeyler ters gitti"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME } ya da ${ CALENDAR_APP_NAME } kullanmak için İnternet sürümüne geçin."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Bu sayfayı yükleyemedik. Lütfen sayfayı yenileyin veya İnternet bağlantınızı denetleyin."
@@ -3252,6 +3261,12 @@
         "${ doneUploadsCount } öge yüklendi",
         "${ doneUploadsCount } öge yüklendi"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "App Store üzerinde ${ DRIVE_APP_NAME }"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "Play Store üzerinde ${ DRIVE_APP_NAME }"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } başarısız oldu",
         "${ errorCount } başarısız oldu"
@@ -3514,6 +3529,9 @@
       "double your storage": [
         "depolama alanınızı ikiye katlayın"
       ],
+      "Download ${ name } app": [
+        "${ name } uygulamasını indir"
+      ],
       "Download canceled": [
         "İndirme iptal edildi"
       ],
@@ -3540,6 +3558,9 @@
       ],
       "Drop file here to upload": [
         "Yüklemek için dosyayı buraya bırakın"
+      ],
+      "Drop files here": [
+        "Dosyaları sürükleyip buraya bırakın"
       ],
       "Drop to import": [
         "İçe aktarmak için bırakın"
@@ -3652,6 +3673,12 @@
       ],
       "from the version history?": [
         "sürüm geçmişinden?"
+      ],
+      "Get the app to backup photos from your phone.": [
+        "Telefonunuzdaki fotoğrafları yedeklemek için uygulamayı alın."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "Bilgisayarınızdaki dosyaları eşitlemek için masaüstü uygulamasını alın."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "${ DRIVE_APP_NAME } uygulamasını tanıyın ve 500 MB depolama alanı hediyenizi kazanın! Bugün harekete geçin."
@@ -3807,9 +3834,6 @@
       "No email address": [
         "E-posta adresi yok"
       ],
-      "No files or folders in trash": [
-        "Çöp kutusunda herhangi bir dosya veya klasör yok"
-      ],
       "No group found": [
         "Grup bulunamadı"
       ],
@@ -3852,6 +3876,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "Bu klasöre yalnızca bağlantıya ve parolaya sahip olan kişiler erişebilir."
+      ],
+      "Or use the \"+ New\" button": [
+        "Ya da \"+ Yeni\" düğmesini kullanın"
       ],
       "Paused": [
         "Duraklatıldı"
@@ -3937,6 +3964,9 @@
       ],
       "Queued": [
         "Sıraya alındı"
+      ],
+      "Ready to add some photos?": [
+        "Fotoğraflarınızı eklemeye hazır mısınız?"
       ],
       "recommended browser": [
         "önerilen tarayıcı"
@@ -4075,6 +4105,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Bu tarayıcı, PDF belgelerinin ön izlemesini desteklemiyor. Lütfen dosyayı indirin."
+      ],
+      "This file is too large to preview": [
+        "Bu dosya ön izleme için çok büyük"
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "Bu dosya silinmiş, taşınmış ya da kullanılamıyor olabilir. Dosyanın sahibine ulaşmayı deneyin."
@@ -5050,6 +5083,9 @@
       "Custom email domains": [
         "Özel e-posta etki alanları"
       ],
+      "Custom snooze time": [
+        "Özel erteleme zamanı"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email takma adları"
       ],
@@ -5075,6 +5111,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "${ BRAND_NAME } SimpleLogin ile sınırsız sayıda takma ad edinin"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "İletileri erteleyin ve istediğiniz zaman yeniden görün"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
@@ -6689,24 +6728,12 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" geçerli bir ad değil"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Ad içinde görünmez karakterler ile / veya \\ karakterleri bulunamaz."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Ad en fazla ${ MAX_NAME_LENGTH } karakter uzunluğunda olabilir",
         "Ad en fazla ${ MAX_NAME_LENGTH } karakter uzunluğunda olabilir"
       ],
       "Name must not be empty": [
         "Ad boş olamaz"
-      ],
-      "Name must not begin with a space": [
-        "Adın başında boşluk olmamalı"
-      ],
-      "Name must not end with a space": [
-        "Adın sonunda boşluk olmamalı"
       ]
     },
     "Video control": {
