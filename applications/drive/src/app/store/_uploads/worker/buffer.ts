@@ -42,6 +42,9 @@ export default class UploadWorkerBuffer {
 
     thumbnailBlockHashes: BlockHash[] = [];
 
+    // This is used to verify if total processed block size is the same as file original size
+    processedFileSize: number = 0;
+
     requestingBlockLinks = false;
 
     encryptionFinished = false;
@@ -65,6 +68,7 @@ export default class UploadWorkerBuffer {
                     this.uploadingBlocks.length < MAX_UPLOADING_BLOCKS
             );
             this.encryptedBlocks.set(encryptedBlock.index, encryptedBlock);
+            this.processedFileSize = this.processedFileSize + encryptedBlock.originalSize;
         }
 
         this.encryptionFinished = true;
