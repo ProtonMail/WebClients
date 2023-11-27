@@ -2,10 +2,9 @@ import PropTypes from 'prop-types';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms';
-import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
-import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { BRAND_NAME, DKIM_STATE } from '@proton/shared/lib/interfaces';
+import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
+import { DKIM_STATE } from '@proton/shared/lib/interfaces';
 
 import { Alert, Copy, Table, TableBody, TableCell, TableHeader, TableRow } from '../../components';
 import { useNotifications } from '../../hooks';
@@ -24,7 +23,7 @@ const DKIMSection = ({ domain }) => {
                     .t`Major email services may reject or filter your emails to spam if SPF/DKIM/DMARC are missing or not set up properly.`}
                 <br />
                 {c('Info')
-                    .t`DKIM allows ${BRAND_NAME} to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you ad the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).`}
+                    .t`DKIM allows ${BRAND_NAME} to cryptographically sign your emails and prevent attackers from tampering your email. Make sure you add the following three CNAME records in your DNS console (located on the platform where you purchased the custom domain).`}
                 <br />
                 <Href href={getBlogURL('/what-is-dkim')}>{c('Link').t`Learn more`}</Href>
             </Alert>
@@ -42,7 +41,7 @@ const DKIMSection = ({ domain }) => {
             )}
             <p className="mb-4">
                 {c('Label')
-                    .t`Please add all 3 of the following CNAME records. Note, DNS records can take several hours to update.`}
+                    .t`Please add all 3 of the following CNAME records. Note: DNS records can take several hours to update.`}
             </p>
             <Table responsive="cards" className="mt-4">
                 <TableHeader>

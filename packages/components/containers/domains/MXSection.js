@@ -14,6 +14,11 @@ const MXSection = () => {
         c('Header for domain modal').t`Value / Data / Points to`,
         c('Header for domain modal').t`Priority`,
     ];
+
+    /*
+     * translator: This string is used in the following sentence
+     * "Before you can receive emails for your custom domain addresses at Proton Mail, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips here."
+     */
     const kbLink = <Href href={getKnowledgeBaseUrl('/custom-domain')}>{c('Link').t`here`}</Href>;
 
     return (
@@ -29,7 +34,7 @@ const MXSection = () => {
                     .jt`Before you can receive emails for your custom domain addresses at ${MAIL_APP_NAME}, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${kbLink}.`}
             </Alert>
             <Label>{c('Label')
-                .t`Please add the following two MX records. Note, DNS records can take several hours to update.`}</Label>
+                .t`Please add the following two MX records. Note: DNS records can take several hours to update.`}</Label>
             <Table responsive="cards" className="mt-4">
                 <TableHeader cells={tableTitles} />
                 <TableBody>
@@ -41,6 +46,12 @@ const MXSection = () => {
                 {c('Info')
                     .t`Delete any other MX records or make sure ${MAIL_APP_NAME}'s Priority is the lowest number.`}
                 <br />
+                {/*
+                 * translator: Variables are the following
+                 * ${MAIL_APP_NAME}: Proton Mail string
+                 * ${boldAddresses}: "Addresses" string in bold format
+                 * full sentence for reference: "For users who are switching to Proton Mail from another service, select the Addresses tab and add al active email addresses before changing the MX record to ensure a smooth transition."
+                 */}
                 {c('Info')
                     .jt`For users who are switching to ${MAIL_APP_NAME} from another email service, select the ${boldAddresses} tab and add all active email addresses before changing the MX record to ensure a smooth transition.`}
             </Alert>
