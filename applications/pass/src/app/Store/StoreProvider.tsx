@@ -2,7 +2,6 @@ import { type FC, useEffect } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 
 import { useNotifications } from '@proton/components/hooks';
-import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { clientReady } from '@proton/pass/lib/client';
@@ -31,8 +30,7 @@ export const StoreProvider: FC = ({ children }) => {
     const client = useClientRef();
     const sw = useServiceWorker();
     const { createNotification } = useNotifications();
-    const { onLink } = usePassCore();
-    const notificationEnhancer = useNotificationEnhancer({ onLink });
+    const enhance = useNotificationEnhancer();
 
     useEffect(() => {
         const runner = sagaMiddleware.run(
@@ -56,7 +54,7 @@ export const StoreProvider: FC = ({ children }) => {
                         if (res.clearCache) void deletePassDB(authStore.getUserID()!);
                     }
                 },
-                onNotification: pipe(notificationEnhancer, createNotification),
+                onNotification: pipe(enhance, createNotification),
                 setCache: async (encryptedCache) => {
                     /** Cache only if the tab is visible to avoid extraneous IDB writes */
                     if (isDocumentVisible()) return writeDBCache(authStore.getUserID()!, encryptedCache);
