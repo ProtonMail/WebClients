@@ -74,12 +74,16 @@ const ScheduleSendActions = ({
                 onSubmit: () =>
                     isNight ? onScheduleSend(getUnixTime(today8am)) : onScheduleSend(getUnixTime(tomorrow8am)),
             },
-            {
-                title: c('Action').t`Monday`,
-                testId: 'composer:schedule-send:next-monday',
-                value: formatDate(monday8am, dateLocale),
-                onSubmit: () => onScheduleSend(getUnixTime(monday8am)),
-            },
+            ...(tomorrow8am !== monday8am
+                ? [
+                      {
+                          title: c('Action').t`Monday`,
+                          testId: 'composer:schedule-send:next-monday',
+                          value: formatDate(monday8am, dateLocale),
+                          onSubmit: () => onScheduleSend(getUnixTime(monday8am)),
+                      },
+                  ]
+                : []),
             {
                 title: (
                     <div className="flex justify-start items-center">
