@@ -5,10 +5,9 @@ import { getLocalPath } from '@proton/pass/components/Core/routing';
 import { SortFilter } from '@proton/pass/components/Item/Filters/Sort';
 import { TypeFilter } from '@proton/pass/components/Item/Filters/Type';
 import { ItemsList } from '@proton/pass/components/Item/List/ItemsList';
+import { ItemsListPlaceholder } from '@proton/pass/components/Item/List/ItemsList.Placeholder';
 import { useFilteredItems } from '@proton/pass/hooks/useFilteredItems';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
-
-import { ItemsPlaceholder } from './Placeholder';
 
 export const Items: FC = () => {
     const { filters, matchEmpty, matchTrash, selectedItem, setFilters, selectItem, navigate } = useNavigation();
@@ -38,9 +37,7 @@ export const Items: FC = () => {
                 onFilter={setFilters}
                 onSelect={(shareId, itemId) => selectItem(shareId, itemId, { inTrash: matchTrash })}
                 selectedItem={selectedItem}
-                placeholder={() => (
-                    <ItemsPlaceholder inTrash={matchTrash} search={filters.search} totalCount={items.totalCount} />
-                )}
+                placeholder={() => <ItemsListPlaceholder noImport />}
             />
         </>
     );
