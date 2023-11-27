@@ -8,6 +8,7 @@ import {
     Dropdown,
     DropdownMenu,
     Icon,
+    type IconName,
     type IconSize,
     type PopperPlacement,
     usePopperAnchor,
@@ -17,6 +18,7 @@ export type QuickActionsDropdownProps = {
     className?: string;
     color?: 'weak' | 'norm';
     disabled?: boolean;
+    icon?: IconName;
     iconSize?: IconSize;
     menuClassName?: string;
     offset?: number;
@@ -31,6 +33,7 @@ export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
     className,
     color,
     disabled,
+    icon = 'three-dots-vertical',
     iconSize = 20,
     menuClassName,
     offset,
@@ -56,7 +59,7 @@ export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
                 title={c('Action').t`More options`}
                 style={style}
             >
-                <Icon name="three-dots-vertical" alt={c('Action').t`More options`} size={iconSize} />
+                <Icon name={icon} alt={c('Action').t`More options`} size={iconSize} />
             </Button>
 
             <Dropdown
