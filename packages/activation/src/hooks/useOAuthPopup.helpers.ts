@@ -1,7 +1,7 @@
 import { ApiEnvironmentConfig } from '@proton/shared/lib/interfaces';
 
-import { G_OAUTH_REDIRECT_PATH, O_OAUTH_REDIRECT_PATH } from '../constants';
 import { ImportProvider, OAUTH_PROVIDER } from '../interface';
+import { G_OAUTH_REDIRECT_PATH, O_OAUTH_REDIRECT_PATH } from '../path';
 
 const generateGoogleOAuthUrl = (params: URLSearchParams, config: ApiEnvironmentConfig, loginHint?: string) => {
     params.append('access_type', 'offline');
