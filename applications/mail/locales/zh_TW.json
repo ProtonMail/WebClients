@@ -550,6 +550,9 @@
       "label emails as": [
         "將電郵加上標籤"
       ],
+      "Later this week": [
+        "本週稍後"
+      ],
       "Learn more": [
         "瞭解詳情"
       ],
@@ -573,6 +576,9 @@
       ],
       "Manage labels": [
         "管理標籤"
+      ],
+      "Manage Snooze": [
+        "管理延遲"
       ],
       "Mark as read": [
         "標示為已讀取"
@@ -712,11 +718,11 @@
       "Not saved": [
         "尚未儲存"
       ],
-      "Ok": [
-        "確定"
-      ],
       "OK": [
         "好"
+      ],
+      "Ok": [
+        "確定"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "開啟 ${ CALENDAR_APP_NAME }"
@@ -895,6 +901,9 @@
       "Select all messages": [
         "選取所有郵件"
       ],
+      "Select date and time": [
+        "選擇日期和時間"
+      ],
       "Self-destruct in 7 days": [
         "7天內自毀"
       ],
@@ -914,7 +923,7 @@
         "傳送自動回覆電郵"
       ],
       "Send feedback": [
-        "傳送意見反饋"
+        "傳送意見回饋"
       ],
       "Send read receipt": [
         "傳送已讀回條"
@@ -1000,6 +1009,9 @@
       "Skip verification": [
         "略過驗證"
       ],
+      "Snooze": [
+        "延後"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "因有追蹤程式保護，因此某些影像無法載入。"
       ],
@@ -1010,7 +1022,7 @@
         "開始匯入"
       ],
       "Start setup": [
-        "開始設置"
+        "開始設定"
       ],
       "Stay": [
         "停留"
@@ -1029,6 +1041,9 @@
       ],
       "This message contains remote content.": [
         "此郵件包含遠端內容。"
+      ],
+      "This weekend": [
+        "本周末"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "要安全搜尋電子郵件，我們必須再瀏覽器下載訊息。下載需要一些時間。"
@@ -3771,6 +3786,9 @@
       "Oops, something went wrong": [
         "糟糕，出了一點問題"
       ],
+      "Open in browser": [
+        "在瀏覽器中開啟"
+      ],
       "Please refresh the page or try again later.": [
         "請重新整理頁面或稍後再試。"
       ],
@@ -5481,6 +5499,9 @@
       "Right-click for options": [
         "右鍵開啟選項"
       ],
+      "Sat, ${ formatTime }": [
+        "星期六, ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "已於 ${ dateString } 儲存"
       ],
@@ -6939,7 +6960,7 @@
         "寄件備份"
       ],
       "Set up email forwarding": [
-        "設置電子郵件轉發"
+        "設定電子郵件轉發"
       ],
       "Sign up for free": [
         "免費註冊"
@@ -7272,6 +7293,9 @@
       ],
       "Custom email domains": [
         "自訂電郵網域"
+      ],
+      "Custom snooze time": [
+        "自訂延遲時間"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email 別名"
@@ -8311,6 +8335,9 @@
       "${ elementsCount } conversations removed from ${ labelName }.": [
         "${ elementsCount } 個交談已移除 ${ labelName } 標籤。"
       ],
+      "${ elementsCount } conversations snoozed": [
+        "${ elementsCount }延後對話內容"
+      ],
       "${ elementsCount } messages added to ${ labelName }.": [
         "${ elementsCount } 封郵件已加上 ${ labelName } 標籤。"
       ],
@@ -8502,7 +8529,7 @@
     },
     "Success notification when user send feedback": {
       "Feedback sent": [
-        "意見反饋已送出"
+        "意見回饋已送出"
       ]
     },
     "summer2023: Deal details": {
@@ -9093,6 +9120,9 @@
       "Sign out": [
         "登出"
       ],
+      "Snooze": [
+        "延後"
+      ],
       "Sort conversations": [
         "交談排序"
       ],
@@ -9345,10 +9375,21 @@
         "我們無法驗證此郵件伺服器。如果您確定可信任此伺服器，則可略過驗證。"
       ],
       "You will lose any customization you made so far.": [
-        "您到目前為止所自訂的所有設置將會遺失。"
+        "您到目前為止所自訂的所有設定將會遺失。"
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "您的免費試用將於 ${ textDate } 結束。${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "星期一, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "星期六, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "星期日, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

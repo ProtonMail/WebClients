@@ -554,6 +554,9 @@
       "label emails as": [
         "marcar e-mail como"
       ],
+      "Later this week": [
+        "Mais tarde nesta semana"
+      ],
       "Learn more": [
         "Saiba mais"
       ],
@@ -577,6 +580,9 @@
       ],
       "Manage labels": [
         "Gerenciar marcadores"
+      ],
+      "Manage Snooze": [
+        "Gerenciar adiados"
       ],
       "Mark as read": [
         "Marcar como lido"
@@ -716,11 +722,11 @@
       "Not saved": [
         "Não salvo"
       ],
-      "Ok": [
-        "Ok"
-      ],
       "OK": [
         "OK"
+      ],
+      "Ok": [
+        "Ok"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -898,6 +904,9 @@
       ],
       "Select all messages": [
         "Selecionar todas as mensagens"
+      ],
+      "Select date and time": [
+        "Selecione data e hora"
       ],
       "Self-destruct in 7 days": [
         "Autodestruir em 7 dias"
@@ -1091,6 +1100,9 @@
       ],
       "Unordered list": [
         "Lista não ordenada"
+      ],
+      "Unsnooze": [
+        "Retomar"
       ],
       "Unstar": [
         "Remover estrela"
@@ -3078,6 +3090,9 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Desbloqueie o agendamento de mensagens personalizado e outros benefícios ao fazer upgrade do seu plano."
       ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Desbloqueie tempos de adiamento personalizados ao fazer upgrade do seu plano."
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Desbloqueie filtros ilimitados que classificam sua caixa de entrada para você e mais recursos premium ao atualizar."
       ],
@@ -3870,6 +3885,9 @@
       ],
       "Something went wrong": [
         "Algo deu errado"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Para usar o ${ MAIL_APP_NAME } ou ${ CALENDAR_APP_NAME } mude para a versão web."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Não foi possível carregar esta página. Atualize a página ou verifique sua conexão com a Internet."
@@ -5650,6 +5668,9 @@
       "Right-click for options": [
         "Clique com o botão direito do mouse para mais opções"
       ],
+      "Sat, ${ formatTime }": [
+        "Sábado, ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "Salvo em ${ dateString }"
       ],
@@ -5727,6 +5748,18 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "O SimpleLogin fornece uma maneira simples de cadastrar-se em sites de terceiros não de confiança nos quais você não quer expor o seu endereço de e-mail real."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Adiado até ${ dateString } às ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Adiado até hoje, ${ formattedTime }"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Adiado até amanhã, ${ formattedTime }"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "O adiamento desta conversa será cancelado"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Desculpe, esta mensagem não existe ou já expirou."
@@ -5828,6 +5861,9 @@
       ],
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Este e-mail não atendeu aos requisitos de autenticação de seu domínio. Pode ser falsificado ou encaminhado indevidamente."
+      ],
+      "This file is too large to preview": [
+        "Este arquivo é muito grande para visualizar"
       ],
       "This invitation is saved in a disabled calendar.": [
         "Este convite está salvo em um calendário desativado."
@@ -5970,6 +6006,9 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Faça upgrade agora para obter recursos premium, produtos e armazenamento por um preço especial"
+      ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Faça upgrade para ${ MAIL_APP_NAME } Plus para desbloquear"
       ],
       "Upgrade to add more addresses to your account.": [
         "Atualize para adicionar mais endereços à sua conta."
@@ -7477,6 +7516,9 @@
       "Custom email domains": [
         "Domínios de e-mail personalizados"
       ],
+      "Custom snooze time": [
+        "Adiamento personalizado"
+      ],
       "Hide-my-email aliases": [
         "Aliases do Hide-my-email"
       ],
@@ -7502,6 +7544,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Obtenha aliases ilimitados com SimpleLogin da ${ BRAND_NAME }"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Adie mensagens e receba lembretes quando quiser"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "O espaço de armazenamento é compartilhado entre o ${ MAIL_APP_NAME }, o ${ CALENDAR_APP_NAME } e o ${ DRIVE_APP_NAME }."
@@ -7930,6 +7975,9 @@
       "No results found": [
         "Nenhum resultado encontrado"
       ],
+      "No snoozed messages": [
+        "Nenhuma mensagem adiada"
+      ],
       "No unread messages found": [
         "Nenhuma mensagem não lida encontrada"
       ]
@@ -8224,6 +8272,14 @@
       ],
       "Sign": [
         "Assinar"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "Adiar mensagem"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Quando a mensagem deve reaparecer na sua caixa de entrada?"
       ]
     },
     "Sort option": {
@@ -8556,6 +8612,14 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } mensagem removida de ${ labelName }.",
         "${ elementsCount } mensagens removidas de ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } conversa adiada",
+        "${ elementsCount } conversas adiadas"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } conversa retomada",
+        "${ elementsCount } conversas retomadas"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } mensagem adicionada a ${ labelName }.",
@@ -9228,6 +9292,9 @@
       "Moving a scheduled message": [
         "Movendo uma mensagem agendada"
       ],
+      "Moving a snoozed message": [
+        "Movendo uma mensagem adiada"
+      ],
       "New message": [
         "Nova mensagem"
       ],
@@ -9372,6 +9439,9 @@
       "Snooze": [
         "Adiar"
       ],
+      "Snooze message": [
+        "Adiar mensagem"
+      ],
       "Sort conversations": [
         "Ordenar conversas"
       ],
@@ -9417,6 +9487,9 @@
       ],
       "Verification error": [
         "Erro de verificação"
+      ],
+      "Want to snooze any time?": [
+        "Quer adiar a qualquer hora?"
       ],
       "Warning": [
         "Aviso"
@@ -9634,6 +9707,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Sua avaliação gratuita termina em ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Segunda, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Sábado, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Domingo, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

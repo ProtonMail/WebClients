@@ -554,6 +554,9 @@
       "label emails as": [
         "e-postalar şöyle etiketlensin"
       ],
+      "Later this week": [
+        "Bu hafta daha sonra"
+      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
@@ -577,6 +580,9 @@
       ],
       "Manage labels": [
         "Etiket yönetimi"
+      ],
+      "Manage Snooze": [
+        "Ertelemeyi yönet"
       ],
       "Mark as read": [
         "Okunmuş olarak işaretle"
@@ -716,10 +722,10 @@
       "Not saved": [
         "Kaydedilmemiş"
       ],
-      "Ok": [
+      "OK": [
         "Tamam"
       ],
-      "OK": [
+      "Ok": [
         "Tamam"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -899,6 +905,9 @@
       "Select all messages": [
         "Tüm iletileri seç"
       ],
+      "Select date and time": [
+        "Tarih ve saat seçin"
+      ],
       "Self-destruct in 7 days": [
         "7 gün içinde kendini yok et"
       ],
@@ -1004,6 +1013,9 @@
       "Skip verification": [
         "Doğrulamayı atla"
       ],
+      "Snooze": [
+        "Ertele"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "İzleyici koruması nedeniyle bazı görseller yüklenemedi."
       ],
@@ -1033,6 +1045,9 @@
       ],
       "This message contains remote content.": [
         "Bu iletide uzak içerik var."
+      ],
+      "This weekend": [
+        "Bu hafta sonu"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "E-postalarınızı güvenli olarak aramak için, iletilerinizin bir kopyasının tarayıcınıza indirilmesi gerekir. İlk indirme biraz zaman alabilir."
@@ -1085,6 +1100,9 @@
       ],
       "Unordered list": [
         "İmli liste"
+      ],
+      "Unsnooze": [
+        "Ertelemeyi kaldır"
       ],
       "Unstar": [
         "Yıldızı kaldır"
@@ -3072,6 +3090,9 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Tarifenizi yükselttiğinizde özel ileti zamanlaması ve diğer ek faydalara erişebilirsiniz."
       ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Özel erteleme zamanları ayarlayabilmek için tarifenizi yükseltin."
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Tarifenizi yükselterek gelen kutunuzu düzenleyecek sınırsız sayıda süzgeç gibi pek çok ücretli özelliğe erişin."
       ],
@@ -3841,6 +3862,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Uygulama şu anda kullanılamıyor"
+      ],
       "Error: ${ errorMessage }": [
         "Hata: ${ errorMessage }"
       ],
@@ -3853,11 +3877,17 @@
       "Oops, something went wrong": [
         "Bir şeyler ters gitti"
       ],
+      "Open in browser": [
+        "Tarayıcıda aç"
+      ],
       "Please refresh the page or try again later.": [
         "Lütfen sayfayı yenileyin ya da bir süre sonra yeniden deneyin."
       ],
       "Something went wrong": [
         "Bir şeyler ters gitti"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME } ya da ${ CALENDAR_APP_NAME } kullanmak için İnternet sürümüne geçin."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Bu sayfayı yükleyemedik. Lütfen sayfayı yenileyin veya İnternet bağlantınızı denetleyin."
@@ -5352,6 +5382,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "${ importedEmailAddress } verileriniz ${ toEmail } içine aktarılıyor."
       ],
+      "Include Spam/Trash.": [
+        "İstenmeyen/Çöp katılsın"
+      ],
       "Inherited from parent folder": [
         "Üst klasörden devralındı"
       ],
@@ -5635,6 +5668,9 @@
       "Right-click for options": [
         "Seçenekler için sağ tıklayın"
       ],
+      "Sat, ${ formatTime }": [
+        "Cmt, ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "${ dateString } saatinde kaydedildi"
       ],
@@ -5712,6 +5748,18 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin, gerçek e-posta adresinizi açıklamak istemediğiniz, güvenilmez üçüncü taraf sitelerinde oturum açmak için basit bir yol sunar."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "${ dateString } tarihine ${ formattedTime } saatine ertelendi"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Bugün ${ formattedTime } saatine ertelendi"
+      ],
+      "Snoozed until tomorrow, ${ formattedTime }": [
+        "Yarın ${ formattedTime } saatine ertelendi"
+      ],
+      "Snoozing this conversation will be cancelled.": [
+        "Bu yazışmanın ertelemesi kaldırılacak."
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Ne yazık ki, bu ileti bulunamadı ya da geçerlilik süresi dolmuş."
@@ -5814,6 +5862,9 @@
       "This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.": [
         "Bu e-posta, etki alanının doğrulama gereksinimlerini karşılayamadı. E-posta, sahte ya da hatalı iletilmiş olabilir."
       ],
+      "This file is too large to preview": [
+        "Bu dosya ön izleme için çok büyük"
+      ],
       "This invitation is saved in a disabled calendar.": [
         "Bu davet, kullanım dışı bırakılmış bir takvime kaydedilmiş."
       ],
@@ -5908,6 +5959,9 @@
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Adres doğrulamasını kullanabilmek için, gönderirken kullanmak istediğinizle birlikte bir veya daha fazla kullanılabilecek herkese açık anahtara güvenmeniz gerekir. Güvenme işlemi, şifreleme anahtarlarının sahte olmasını önler."
       ],
+      "Tomorrow, ${ formattedTime }": [
+        "Yarın, ${ formattedTime }"
+      ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Gönderilecek çok fazla ileti var. Lütfen, bunun zamanlanması için başka bir ileti gönderilene kadar bekleyin."
       ],
@@ -5953,20 +6007,23 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ücretli özellikleri, ürünleri ve depolama alanını özel bir ücret ile almak için tarifenizi şimdi yükseltin"
       ],
+      "Upgrade to ${ MAIL_APP_NAME } Plus to unlock": [
+        "Kullanabilmek içn ${ MAIL_APP_NAME } Plus tarifesine geçin"
+      ],
       "Upgrade to add more addresses to your account.": [
-        "Hesabınıza daha fazla adres eklemek için yükseltin."
+        "Hesabınıza daha fazla adres eklemek için tarifenizi yükseltin."
       ],
       "Upgrade to automatically delete messages that have been in trash and spam for more than 30 days.": [
         "Çöp istenmeyen kutularında 30 günden uzun süredir duran iletilerin otomatik olarak silinmesi için tarifenizi yükseltin."
       ],
       "Upgrade to create more folders, filters, and addresses.": [
-        "Daha fazla klasör, süzgeç ve adres oluşturmak için yükseltin."
+        "Daha fazla klasör, süzgeç ve adres oluşturmak için tarifenizi yükseltin."
       ],
       "Upgrade to level up your privacy.": [
         "Gizliliğinizi artırmak için tarifenizi yükseltin."
       ],
       "Upgrade to send email from @pm.me addresses.": [
-        "@pm.me adreslerinden e-posta göndermek için yükseltin."
+        "@pm.me adreslerinden e-posta göndermek için tarifenizi yükseltin."
       ],
       "Upgrade to send emails from your custom email domain.": [
         "Kendi etki alanınızı kullanarak e-posta gönderebilmek için tarifenizi yükseltin."
@@ -7116,6 +7173,12 @@
       "Sign up for free": [
         "Ücretsiz hesap açın"
       ],
+      "Snooze": [
+        "Ertele"
+      ],
+      "Snoozed": [
+        "Ertelenmiş"
+      ],
       "Spam": [
         "İstenmeyen"
       ],
@@ -7453,6 +7516,9 @@
       "Custom email domains": [
         "Özel e-posta etki alanları"
       ],
+      "Custom snooze time": [
+        "Özel erteleme zamanı"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email takma adları"
       ],
@@ -7478,6 +7544,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "${ BRAND_NAME } SimpleLogin ile sınırsız sayıda takma ad edinin"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "İletileri erteleyin ve istediğiniz zaman yeniden görün"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Depolama alanı ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } ve ${ DRIVE_APP_NAME } arasında paylaşılır"
@@ -7906,6 +7975,9 @@
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
       ],
+      "No snoozed messages": [
+        "Ertelenmiş bir ileti yok"
+      ],
       "No unread messages found": [
         "Okunmamış bir ileti bulunamadı"
       ]
@@ -8200,6 +8272,14 @@
       ],
       "Sign": [
         "İmzala"
+      ]
+    },
+    "Snooze message": {
+      "Snooze Message": [
+        "İletiyi ertele"
+      ],
+      "When should the message reappear in your inbox?": [
+        "İleti gelen kutunuzda ne zaman yeniden görüntülensin?"
       ]
     },
     "Sort option": {
@@ -8532,6 +8612,14 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ labelName } etiketi ${ elementsCount } yazışmadan kaldırıldı.",
         "${ labelName } etiketi ${ elementsCount } yazışmadan kaldırıldı."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } yazışma ertelendi",
+        "${ elementsCount } yazışma ertelendi"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } yazışmanın ertelemesi kaldırıldı",
+        "${ elementsCount } yazışmanın ertelemesi kaldırıldı"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ labelName } etiketine ${ elementsCount } ileti eklendi.",
@@ -9204,6 +9292,9 @@
       "Moving a scheduled message": [
         "Zamanlanmış bir ileti taşınıyor"
       ],
+      "Moving a snoozed message": [
+        "Ertelenmiş bir ileti taşınıyor"
+      ],
       "New message": [
         "Yeni ileti"
       ],
@@ -9345,6 +9436,12 @@
       "Sign out": [
         "Oturumu kapat"
       ],
+      "Snooze": [
+        "Ertele"
+      ],
+      "Snooze message": [
+        "İletiyi ertele"
+      ],
       "Sort conversations": [
         "Yazışmaları sırala"
       ],
@@ -9390,6 +9487,9 @@
       ],
       "Verification error": [
         "Doğrulama sorunu"
+      ],
+      "Want to snooze any time?": [
+        "İstediğiniz zamana ertelemek ister misiniz?"
       ],
       "Warning": [
         "Uyarı"
@@ -9607,6 +9707,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Ücretsiz denemeniz ${ textDate } tarihinde sona erecek. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Pzt, ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Cmt, ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Paz, ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {
