@@ -2541,6 +2541,9 @@
       "Access denied": [
         "액세스 거부됨"
       ],
+      "App currently unavailable": [
+        "앱에서는 현재 사용 불가합니다."
+      ],
       "Brace yourself till we get the error fixed.": [
         "오류가 해결될때 까지 조심해 주세요."
       ],
@@ -2556,11 +2559,17 @@
       "Oops, something went wrong": [
         "이런, 문제가 발생했습니다"
       ],
+      "Open in browser": [
+        "브라우저에서 열기"
+      ],
       "Please refresh the page or try again later.": [
         "페이지를 새로고침 하거나 다시 시도하세요."
       ],
       "Something went wrong": [
         "문제가 발생했습니다"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "${ MAIL_APP_NAME } 및 ${ CALENDAR_APP_NAME }를 사용하려면, 웹 버전으로 전환하세요."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "이 페이지를 로드할 수 없습니다. 페이지를 새로고침 하거나 인터넷 연결을 확인하세요."
@@ -3206,6 +3215,12 @@
       "${ doneUploadsCount } uploaded": [
         "${ doneUploadsCount }개 업로드됨"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "App Store에서 ${ DRIVE_APP_NAME } 받기"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "Play Store에서 ${ DRIVE_APP_NAME } 받기"
+      ],
       "${ errorCount } failed": [
         "${ errorCount }개 실패"
       ],
@@ -3449,6 +3464,9 @@
       "double your storage": [
         "스토리지를 두 배 늘릴 수 있습니다."
       ],
+      "Download ${ name } app": [
+        "${ name }앱 설치"
+      ],
       "Download canceled": [
         "다운로드 취소됨"
       ],
@@ -3475,6 +3493,9 @@
       ],
       "Drop file here to upload": [
         "업로드할 파일을 여기에 놓습니다"
+      ],
+      "Drop files here": [
+        "파일을 드래그하여 업로드 하세요."
       ],
       "Drop to import": [
         "드래그해서 불러오기"
@@ -3586,6 +3607,12 @@
       ],
       "from the version history?": [
         "을(를) 버전 기록에서 영구적으로 삭제하시겠습니까?"
+      ],
+      "Get the app to backup photos from your phone.": [
+        "휴대폰에서 앱을 설치하여 백업하세요."
+      ],
+      "Get the desktop app to sync files from your computer.": [
+        "회원님의 컴퓨터에 있는 파일을 동기화 하려면 데스크탑 앱을 설치하세요."
       ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "${ DRIVE_APP_NAME }를 알아보고 500MB의 저장공간 보너스를 얻으세요! 오늘 바로 시작하세요."
@@ -3740,9 +3767,6 @@
       "No email address": [
         "이메일 주소 없음"
       ],
-      "No files or folders in trash": [
-        "휴지통에 파일 또는 폴더 없음"
-      ],
       "No group found": [
         "찾은 그룹 없음"
       ],
@@ -3784,6 +3808,9 @@
       ],
       "Only the people with the link and the password can access this folder.": [
         "링크와 비밀번호를 가지고 있는 사람만 이 폴더에 접근할 수 있습니다."
+      ],
+      "Or use the \"+ New\" button": [
+        "또는 \"+ 신규\" 버튼을 사용하세요."
       ],
       "Paused": [
         "일시 정지됨"
@@ -3868,6 +3895,9 @@
       ],
       "Queued": [
         "대기열에 추가됨"
+      ],
+      "Ready to add some photos?": [
+        "사진 올린 준비 되셨나요?"
       ],
       "recommended browser": [
         "추천 브라우저"
@@ -4006,6 +4036,9 @@
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "이 브라우저는 PDF 미리보기를 지원하지 않습니다. 파일을 다운로드하세요."
+      ],
+      "This file is too large to preview": [
+        "용량이 너무 커 미리보기를 사용할 수 없는 파일입니다."
       ],
       "This file may have been deleted, moved or made unavailable. Try reaching out to the file owner.": [
         "파일이 삭제되었거나, 이동되었거나 사용할 수 없게 되었을 수 있습니다. 파일 주인에게 연락을 시도해 보세요."
@@ -4971,6 +5004,9 @@
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
       ],
+      "Custom snooze time": [
+        "사용자 지정 방해 금지 시간"
+      ],
       "Hide-my-email aliases": [
         "Hide-my-email 별칭"
       ],
@@ -4996,6 +5032,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "${ BRAND_NAME } 의 SimpleLogin으로 무제한 별칭을 얻으세요"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "원하는 시간대에 메시지를 방해 금지 상태로 전환하고 알림 받을 수 있습니다."
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME }, 그리고 ${ DRIVE_APP_NAME } 에 스토리지 공간이 공유됩니다."
@@ -6549,23 +6588,11 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\"은(는) 유효하지 않은 이름입니다"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "/ 혹은 \\ 등의 보이지 않는 기호를 이름에 사용할 수 없습니다."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } characters long at most": [
         "이름은 최대 ${ MAX_NAME_LENGTH }글자까지입니다."
       ],
       "Name must not be empty": [
         "이름은 비워둘 수 없습니다"
-      ],
-      "Name must not begin with a space": [
-        "이름은 공백으로 시작할 수 없습니다"
-      ],
-      "Name must not end with a space": [
-        "이름은 공백으로 끝날 수 없습니다"
       ]
     },
     "Video control": {
