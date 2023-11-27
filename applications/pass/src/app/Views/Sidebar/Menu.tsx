@@ -17,11 +17,18 @@ import { useVaultActions } from '@proton/pass/components/Vault/VaultActionsProvi
 import { useMenuItems } from '@proton/pass/hooks/useMenuItems';
 import { useNotificationEnhancer } from '@proton/pass/hooks/useNotificationEnhancer';
 import { syncIntent } from '@proton/pass/store/actions';
-import { selectPassPlan, selectPlanDisplayName, selectUser } from '@proton/pass/store/selectors';
+import {
+    selectHasRegisteredLock,
+    selectPassPlan,
+    selectPlanDisplayName,
+    selectUser,
+} from '@proton/pass/store/selectors';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 
 import { useAuthService } from '../../Context/AuthServiceProvider';
+import { SettingsDropdown } from '../Settings/SettingsDropdown';
 
 export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const { createNotification, clearNotifications } = useNotifications();
@@ -34,16 +41,23 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
     const passwordContext = usePasswordContext();
     const dispatch = useDispatch();
 
-    const { filters, matchEmpty, matchTrash, navigate, setFilters } = useNavigation();
+    const { filters, matchEmpty, matchSettings, matchTrash, setFilters } = useNavigation();
     const { selectedShareId } = filters;
 
     const passPlan = useSelector(selectPassPlan);
     const planDisplayName = useSelector(selectPlanDisplayName);
     const user = useSelector(selectUser);
+    const canLock = useSelector(selectHasRegisteredLock);
 
     const onLogout = useCallback(async () => {
         createNotification(enhance({ text: c('Info').t`Logging you out...`, type: 'info', loading: true }));
         await authService.logout({ soft: false });
+        clearNotifications();
+    }, []);
+
+    const onLock = useCallback(async () => {
+        createNotification(enhance({ text: c('Info').t`Locking your session...`, type: 'info', loading: true }));
+        await authService.lock({ soft: false });
         clearNotifications();
     }, []);
 
@@ -52,7 +66,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
             switch (selected) {
                 case 'all':
                     /* if in trash or empty screen -> trigger autoselect via redirect */
-                    const redirect = matchEmpty || matchTrash ? getLocalPath() : undefined;
+                    const redirect = matchEmpty || matchTrash || matchSettings ? getLocalPath() : undefined;
                     return setFilters({ selectedShareId: null, search: '' }, redirect);
                 case 'trash':
                     return setFilters({ selectedShareId: null, search: '' }, getTrashRoute());
@@ -86,6 +100,16 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
             </Scroll>
 
             <div className="flex flex-column flex-nowrap pb-4">
+                {canLock && (
+                    <DropdownMenuButton
+                        onClick={onLock}
+                        label={c('Action').t`Lock ${PASS_APP_NAME}`}
+                        icon="lock"
+                        labelClassname="mx-3"
+                        className="flex-noshrink"
+                    />
+                )}
+
                 <DropdownMenuButton
                     onClick={passwordContext.history.open}
                     label={c('Label').t`Generated passwords`}
@@ -143,18 +167,7 @@ export const Menu: FC<{ onToggle: () => void }> = ({ onToggle }) => {
                             </div>
                         </span>
                     </span>
-                    <Button
-                        icon
-                        pill
-                        size="small"
-                        color="weak"
-                        onClick={() => navigate(getLocalPath('settings'))}
-                        shape="ghost"
-                        title={c('Action').t`Settings`}
-                        className="flex-item-noshrink ml-1"
-                    >
-                        <Icon name="cog-wheel" alt={c('Action').t`Settings`} />
-                    </Button>
+                    <SettingsDropdown />
                 </div>
             </div>
         </div>
