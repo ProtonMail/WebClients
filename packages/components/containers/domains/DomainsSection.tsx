@@ -99,10 +99,11 @@ const DomainsSectionInternal = () => {
                     <DomainsSectionText />
 
                     <div className="mb-4">
-                        <Button color="norm" onClick={() => setNewDomainModalOpen(true)} className="mr-4">
+                        <Button color="norm" onClick={() => setNewDomainModalOpen(true)} className="mr-4 mb-2">
                             {c('Action').t`Add domain`}
                         </Button>
                         <Button
+                            className="mb-2"
                             loading={loadingRefresh || loadingDomainsAddressesMap}
                             onClick={() => withLoadingRefresh(handleRefresh())}
                         >{c('Action').t`Refresh status`}</Button>
