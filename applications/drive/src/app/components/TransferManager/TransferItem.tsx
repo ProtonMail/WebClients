@@ -12,6 +12,7 @@ import {
     isTransferPaused,
     isTransferPending,
     isTransferProgress,
+    isTransferSkipped,
 } from '../../utils/transfer';
 import ProgressBar from './ProgressBar';
 import TransferControls from './TransferControls';
@@ -33,6 +34,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
     const isProgress = isTransferProgress(transfer);
     const isPaused = isTransferPaused(transfer);
     const isCanceled = isTransferCanceled(transfer);
+    const isSkipped = isTransferSkipped(transfer);
     const isDone = isTransferDone(transfer);
 
     const fileSize = transfer.meta.size;
@@ -48,7 +50,7 @@ const Transfer = <T extends TransferType>({ stats, transfer, type, className, ..
         <div
             className={clsx([
                 'transfers-manager-list-item p-4',
-                isCanceled && 'transfers-manager-list-item--canceled',
+                (isCanceled || isSkipped) && 'transfers-manager-list-item--canceled',
                 className,
             ])}
             data-testid="transfer-item-row"
