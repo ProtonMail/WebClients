@@ -20,7 +20,7 @@ import { Menu } from './Sidebar/Menu';
 
 export const Main: FC = () => {
     const client = useClient();
-    const { setFilters, matchSettings } = useNavigation();
+    const { setFilters } = useNavigation();
     const { state: expanded, toggle } = useToggle();
 
     return (
@@ -38,10 +38,7 @@ export const Main: FC = () => {
                             {(route) => (
                                 <main id="main" className="content flex-item-fluid overflow-hidden">
                                     <div className="flex flex-nowrap flex-column h-full">
-                                        <Header
-                                            hamburger={<Hamburger expanded={expanded} onToggle={toggle} />}
-                                            searchable={!matchSettings}
-                                        />
+                                        <Header hamburger={<Hamburger expanded={expanded} onToggle={toggle} />} />
                                         <div className="flex flex-align-items-center flex-justify-center flex-nowrap w-full h-full">
                                             <Switch>
                                                 <Route

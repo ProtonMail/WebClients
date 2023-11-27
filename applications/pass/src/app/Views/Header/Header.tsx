@@ -19,7 +19,7 @@ import { onboarding } from '../../../lib/onboarding';
 
 type Props = { hamburger?: ReactElement; searchable?: boolean; title?: string };
 
-export const Header: FC<Props> = ({ hamburger, searchable = true }) => {
+export const Header: FC<Props> = ({ hamburger }) => {
     const { filters, setFilters, navigate, matchSettings } = useNavigation();
     const onCreate = (type: ItemType) => navigate(getLocalPath(`item/new/${type}`));
 
@@ -61,12 +61,10 @@ export const Header: FC<Props> = ({ hamburger, searchable = true }) => {
                     }
 
                     return (
-                        searchable && (
-                            <>
-                                <SearchBar filters={filters} onChange={(search) => setFilters({ search })} />
-                                <ItemQuickActions onCreate={onCreate} />
-                            </>
-                        )
+                        <>
+                            <SearchBar filters={filters} onChange={(search) => setFilters({ search })} />
+                            <ItemQuickActions onCreate={onCreate} />
+                        </>
                     );
                 })()}
 
