@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import {
+    EASY_SWITCH_SOURCES,
     EasySwitchFeatureFlag,
     ImportProvider,
     ImportType,
-    NEW_EASY_SWITCH_SOURCES,
 } from '@proton/activation/src/interface';
 import { startOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
@@ -17,7 +17,7 @@ import OutlookButton from './OutlookButton';
 type AllowedImporter = ImportProvider.GOOGLE | ImportProvider.OUTLOOK;
 interface Props {
     className?: string;
-    source: NEW_EASY_SWITCH_SOURCES;
+    source: EASY_SWITCH_SOURCES;
     defaultCheckedTypes: ImportType[];
     displayOn: keyof EasySwitchFeatureFlag;
     onClick?: () => void;

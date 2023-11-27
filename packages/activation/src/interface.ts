@@ -270,7 +270,7 @@ export interface ImportReport {
     RollbackState?: ApiReportRollbackState;
 }
 
-export enum NEW_EASY_SWITCH_SOURCES {
+export enum EASY_SWITCH_SOURCES {
     ACCOUNT_WEB_SETTINGS = 'account-web-settings',
     CALENDAR_WEB_SETTINGS = 'calendar-web-settings',
     CONTACTS_WEB_SETTINGS = 'contacts-web-settings',

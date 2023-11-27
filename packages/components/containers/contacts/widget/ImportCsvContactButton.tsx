@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { EasySwitchOauthImportButton } from '@proton/activation';
 import {
+    EASY_SWITCH_SOURCES,
     EasySwitchFeatureFlag,
     ImportProvider,
     ImportType,
-    NEW_EASY_SWITCH_SOURCES,
 } from '@proton/activation/src/interface';
 
 import { Loader, PrimaryButton } from '../../../components';
@@ -15,7 +15,7 @@ import { useFlag } from '../../unleash';
 
 interface Props {
     onImport: () => void;
-    source: NEW_EASY_SWITCH_SOURCES;
+    source: EASY_SWITCH_SOURCES;
     onClose?: () => void;
 }
 
