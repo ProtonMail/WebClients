@@ -1,7 +1,3 @@
-import { useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
-
-import { G_OAUTH_REDIRECT_PATH } from '@proton/activation/src/constants';
 import { ErrorBoundary, ProtonApp, StandardErrorPage, getSessionTrackingEnabled } from '@proton/components';
 import { initMainHost } from '@proton/cross-storage';
 import metrics from '@proton/metrics';
@@ -14,7 +10,6 @@ import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 
 import Setup from './Setup';
 import * as config from './config';
-import AccountLoaderPage from './content/AccountLoaderPage';
 import locales from './locales';
 
 import './app.scss';
@@ -28,21 +23,10 @@ setVcalProdId(getProdId(config));
 metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
 
 const App = () => {
-    const [hasInitialAuth] = useState(() => {
-        return !window.location.pathname.startsWith(G_OAUTH_REDIRECT_PATH);
-    });
-
     return (
-        <ProtonApp authentication={authentication} config={config} hasInitialAuth={hasInitialAuth}>
+        <ProtonApp authentication={authentication} config={config}>
             <ErrorBoundary component={<StandardErrorPage big />}>
-                <Switch>
-                    <Route path={G_OAUTH_REDIRECT_PATH}>
-                        <AccountLoaderPage />
-                    </Route>
-                    <Route path="*">
-                        <Setup />
-                    </Route>
-                </Switch>
+                <Setup />
             </ErrorBoundary>
         </ProtonApp>
     );
