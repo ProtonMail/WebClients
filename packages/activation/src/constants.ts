@@ -11,7 +11,6 @@ import {
     TIME_PERIOD,
 } from './interface';
 
-export const G_OAUTH_REDIRECT_PATH = '/oauth/callback';
 export const G_OAUTH_SCOPE_DEFAULT = ['email', 'openid'];
 
 export const G_OAUTH_SCOPE_MAIL_READONLY = ['https://www.googleapis.com/auth/gmail.readonly'];
@@ -20,7 +19,6 @@ export const G_OAUTH_SCOPE_CONTACTS = ['https://www.googleapis.com/auth/contacts
 export const G_OAUTH_SCOPE_CALENDAR = ['https://www.googleapis.com/auth/calendar.readonly'];
 // export const G_OAUTH_SCOPE_DRIVE = [];
 
-export const O_OAUTH_REDIRECT_PATH = '/oauth/callback';
 export const O_OAUTH_SCOPE_DEFAULT = ['email', 'openid', 'User.Read', 'offline_access'];
 export const O_OAUTH_SCOPE_MAIL = ['Mail.read'];
 export const O_OAUTH_SCOPE_CONTACTS = ['Contacts.read'];
