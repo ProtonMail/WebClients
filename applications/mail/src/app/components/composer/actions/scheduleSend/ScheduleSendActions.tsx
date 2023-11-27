@@ -1,6 +1,6 @@
 import { forwardRef, useMemo } from 'react';
 
-import { Locale, addDays, addSeconds, format, fromUnixTime, getUnixTime, nextMonday, set } from 'date-fns';
+import { Locale, addDays, addSeconds, format, fromUnixTime, getUnixTime, isEqual, nextMonday, set } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
@@ -74,7 +74,7 @@ const ScheduleSendActions = ({
                 onSubmit: () =>
                     isNight ? onScheduleSend(getUnixTime(today8am)) : onScheduleSend(getUnixTime(tomorrow8am)),
             },
-            ...(tomorrow8am !== monday8am
+            ...(!isEqual(tomorrow8am, monday8am)
                 ? [
                       {
                           title: c('Action').t`Monday`,
