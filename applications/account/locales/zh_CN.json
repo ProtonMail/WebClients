@@ -1019,6 +1019,11 @@
         "不用了，谢谢"
       ]
     },
+    "Action; decline invitation to share calendar": {
+      "Decline": [
+        "拒绝"
+      ]
+    },
     "Addon": {
       "${ domains } custom domains": [
         "${ domains } 个自定义域"
@@ -1276,6 +1281,11 @@
         "两年付费"
       ]
     },
+    "breadcrumb": {
+      "Calendars": [
+        "日历"
+      ]
+    },
     "Bridge version load failed": {
       "Failed to find latest version": [
         "找不到最新版本"
@@ -1396,6 +1406,9 @@
       ]
     },
     "Calendar invite status label": {
+      "Declined": [
+        "已拒绝"
+      ],
       "Invite sent": [
         "邀请已发送"
       ]
@@ -2828,6 +2841,9 @@
       "Back to ${ signIn }.": [
         "返回${ signIn }。"
       ],
+      "sign in": [
+        "登录"
+      ],
       "You can safely close this tab.": [
         "您可以安全地关闭此页面了。"
       ]
@@ -3032,6 +3048,11 @@
         "您已取消订阅 ${ categoriesJsx } 电子邮件。"
       ]
     },
+    "Email verification": {
+      "Verification email sent to ${ address }": [
+        "验证邮件已发至 ${ address }"
+      ]
+    },
     "email_forwarding_2023: Action": {
       "Add condition": [
         "添加条件"
@@ -3049,6 +3070,11 @@
     "email_forwarding_2023: Header": {
       "Actions": [
         "操作"
+      ]
+    },
+    "email_forwarding_2023: Incoming forwarding tab name": {
+      "From me": [
+        "我发送的"
       ]
     },
     "email_forwarding_2023: Info": {
@@ -3069,6 +3095,11 @@
         "了解更多信息"
       ]
     },
+    "email_forwarding_2023: Outgoing forwarding tab name": {
+      "To me": [
+        "我收到的"
+      ]
+    },
     "email_forwarding_2023: Placeholder": {
       "Condition:": [
         "状况"
@@ -3081,6 +3112,9 @@
       ]
     },
     "email_forwarding_2023: Status": {
+      "Declined": [
+        "已拒绝"
+      ],
       "Pending": [
         "等待"
       ]
@@ -3093,6 +3127,11 @@
     "email_forwarding_2023: Warning": {
       "Warning": [
         "警告"
+      ]
+    },
+    "Enabled 2FA": {
+      "2FA": [
+        "两步验证"
       ]
     },
     "Error": {
@@ -3264,9 +3303,6 @@
       "Name does not match": [
         "名称不正确"
       ],
-      "Name on card required": [
-        "必须填写持卡人姓名"
-      ],
       "Name required": [
         "姓名 (必填)"
       ],
@@ -3413,9 +3449,6 @@
       ],
       "The address might be misspelled": [
         "地址可能拼写不正确"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "您使用的浏览器不允许付款获得完全授权。请使用其他浏览器或通过计算机登录。"
       ],
       "The email addresses do not match": [
         "邮箱地址不一致"
@@ -3927,6 +3960,9 @@
       ],
       "Switch plans": [
         "变更账户等级"
+      ],
+      "View invitation": [
+        "查看邀请详情"
       ],
       "View the invitation": [
         "查看邀请"
@@ -4936,6 +4972,9 @@
       "${ providerFoldersNumLocalized } labels found in Gmail": [
         "已在 Gmail 中找到 ${ providerFoldersNumLocalized } 个标签"
       ],
+      "${ provisioningCounter } servers are still being set up. This usually takes around ${ provisioningDuration }.": [
+        "${ provisioningCounter }服务器正在配置中，大概需要${ provisioningDuration }。"
+      ],
       "${ remainingAddresses.length } more": [
         "还有 ${ remainingAddresses.length } 个"
       ],
@@ -5047,6 +5086,9 @@
       "Activate at least one data recovery method to make sure you can continue to access the contents of your ${ BRAND_NAME } Account if you lose your password.": [
         "建议至少设置一种数据恢复方式，确保即使忘记密码也能找回 ${ BRAND_NAME } 账户中的信息。"
       ],
+      "active": [
+        "启用"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "您可以增设一个后缀为 @pm.me 的邮箱地址，这个简短的域名代表 ${ MAIL_APP_NAME } me 或者 Private Message me。"
       ],
@@ -5070,6 +5112,15 @@
       ],
       "Add multiple users to your organization at once.": [
         "一次性为您的组添加多个用户。"
+      ],
+      "Add server (${ availableAddedCount } available)": [
+        "添加服务器(${ availableAddedCount }台可用)"
+      ],
+      "Adding ${ addedServerCount } gateway servers": [
+        "添加${ addedServerCount }网关服务器"
+      ],
+      "Adding gateway servers: ${ serverNumber } / ${ total }": [
+        "添加网关服务器： ${ serverNumber }/${ total }"
       ],
       "Additional options": [
         "其他选项"
@@ -5308,6 +5359,9 @@
       "Create in": [
         "创建于"
       ],
+      "Creating gateway servers: ${ serverNumber } / ${ total }": [
+        "创建网关服务器：${ serverNumber }/${ total }"
+      ],
       "Creating your account": [
         "创建账户"
       ],
@@ -5344,6 +5398,9 @@
       "Data locked": [
         "数据已锁定"
       ],
+      "dedicated servers": [
+        "专用服务器"
+      ],
       "Dedicated servers": [
         "专用服务器"
       ],
@@ -5352,6 +5409,9 @@
       ],
       "Delete any other MX records or make sure ${ MAIL_APP_NAME }'s Priority is the lowest number.": [
         "删除其他 MX 记录，或者确保 ${ MAIL_APP_NAME } 的优先级数字最小。"
+      ],
+      "Deleting ${ deletedServerCount } gateway servers": [
+        "删除${ deletedServerCount }网关服务器"
       ],
       "Discover ProtectBuy logo": [
         "Discover ProtectBuy 图标"
@@ -5440,6 +5500,9 @@
       "Encryption setting updated": [
         "加密设置已更改"
       ],
+      "Enhance your network security": [
+        "增强您的网络安全"
+      ],
       "Enter key manually instead": [
         "手动输入密钥"
       ],
@@ -5502,9 +5565,6 @@
       ],
       "for choosing ${ product }": [
         "感谢您选择 ${ product }"
-      ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa、万事达卡和发现卡：卡片背面的三位数字。美国运通卡：卡片正面的四位数字。"
       ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "将其他邮箱收到的邮件自动转发至您安全的 ${ MAIL_APP_NAME } 邮箱。"
@@ -5646,6 +5706,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步中，您将能够使用比特币地址提交存款。"
+      ],
+      "inactive": [
+        "未启用"
       ],
       "Increase your account security by verifying your email address.": [
         "通过验证您的电子邮件地址来提高您的账户安全性。"
@@ -6730,6 +6793,9 @@
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您没有设置任何找回账户的方式，一旦忘记密码，账户将无法找回。是否继续？"
       ],
+      "You have ${ availableCount } dedicated servers available.": [
+        "您有${ availableCount }台独立服务器可用。"
+      ],
       "You have no calendars to export.": [
         "您没有要导出的日历。"
       ],
@@ -7012,6 +7078,9 @@
     "Key state badge": {
       "Compromised": [
         "已泄露"
+      ],
+      "Primary": [
+        "首选"
       ]
     },
     "Key type option": {
@@ -7619,9 +7688,6 @@
       "Expiration (${ patternExpiration })": [
         "到期 (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "有效期至"
-      ],
       "Expires": [
         "有效期至"
       ],
@@ -7759,9 +7825,6 @@
       ],
       "Name": [
         "姓名"
-      ],
-      "Name on card": [
-        "持卡人姓名"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP（端口转发）"
@@ -7925,14 +7988,8 @@
       "Reveal password": [
         "显示密码"
       ],
-      "Security code": [
-        "安全码"
-      ],
       "Security code (${ codeName })": [
         "安全码 (${ codeName })"
-      ],
-      "Select your country": [
-        "选择国家"
       ],
       "Select your plan": [
         "选择您的套餐"
@@ -8207,6 +8264,11 @@
     "Label to change density": {
       "Comfortable": [
         "适中"
+      ]
+    },
+    "Label, credit card": {
+      "ZIP code": [
+        "邮编"
       ]
     },
     "Label/folder modal": {
@@ -9839,6 +9901,9 @@
       "Verifying your payment": [
         "确认支付"
       ],
+      "Works on all devices": [
+        "可在所有设备上运行"
+      ],
       "You have been invited to join ${ PASS_APP_NAME }": [
         "有人邀请您加入 ${ PASS_APP_NAME }"
       ]
@@ -9957,9 +10022,6 @@
       "Text": [
         "文本"
       ],
-      "Thomas Anderson": [
-        "ZHANG SAN"
-      ],
       "Type text or keyword": [
         "输入文本或关键词"
       ],
@@ -10040,6 +10102,9 @@
       ],
       "Email address not yet verified.": [
         "邮箱地址未验证。"
+      ],
+      "Email removed": [
+        "已移除邮箱地址"
       ],
       "sign in": [
         "登录"
@@ -10416,6 +10481,19 @@
     "Settings update growler warning": {
       "Failed to update settings": [
         "未能更新设置"
+      ]
+    },
+    "Settings/filters": {
+      "Filters": [
+        "筛选规则"
+      ]
+    },
+    "Settings/filters - table": {
+      "Order": [
+        "排序"
+      ],
+      "Status": [
+        "当前状态"
       ]
     },
     "Settings/labels": {
@@ -10811,9 +10889,22 @@
         "${ maxVpn } 台设备可同时接入高速 VPN"
       ]
     },
+    "Subscription change warning": {
+      "Got it": [
+        "好"
+      ],
+      "Subscriptions": [
+        "订阅"
+      ]
+    },
     "Subscription price": {
       "For": [
         "支付"
+      ]
+    },
+    "Subscription renewal state": {
+      "Are you sure?": [
+        "确定要这样做吗?"
       ]
     },
     "Subscription saving": {
@@ -11811,7 +11902,7 @@
       "PayPal verification failed": [
         "PayPal 验证失败"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "个性化您的电子邮件页脚"
       ],
       "Phone": [
@@ -12023,9 +12114,6 @@
       ],
       "Unlock your mailbox": [
         "解锁您的邮箱"
-      ],
-      "Unsupported browser": [
-        "不支持此浏览器"
       ],
       "Upgrade plan": [
         "升级账户"
@@ -12422,6 +12510,11 @@
       ],
       "Primary admin": [
         "主管理员"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "SSO"
       ]
     },
     "Validation": {
