@@ -738,7 +738,7 @@
         "Nahlásit problém"
       ],
       "Request a feature": [
-        "Požádat o funkci"
+        "Požádejte o funkci"
       ],
       "Request new code": [
         "Vyžádejte si nový kód"
@@ -3878,9 +3878,6 @@
       "Name does not match": [
         "Název se neshoduje"
       ],
-      "Name on card required": [
-        "Jméno držitele karty je povinná položka"
-      ],
       "Name required": [
         "Název je povinný"
       ],
@@ -4033,9 +4030,6 @@
       ],
       "The address might be misspelled": [
         "Adresa může obsahovat překlep"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Prohlížeč, který používáte, neumožňuje úplnou autorizaci platby. Použijte jiný prohlížeč nebo se přihlaste pomocí počítače."
       ],
       "The email addresses do not match": [
         "E-mailové adresy se neshodují"
@@ -6590,9 +6584,6 @@
       "for choosing ${ product }": [
         "za výběr ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Pro Visa, MasterCard a Discover, 3 číslice na zadní straně vaší karty. Pro American Express 4 číslice na přední straně vaší karty."
-      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Přepošlete příchozí mail z jiného účtu do vaší bezpečné ${ MAIL_APP_NAME } schránky."
       ],
@@ -7298,14 +7289,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Vzhledem k tomu, že jste věrný uživatel, má Váš účet povolené další funkce."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP odesílání umožňuje službám nebo zařízením třetích stran odesílat e-maily prostřednictvím ${ MAIL_APP_NAME } pro vaše vlastní doménové adresy. Tato funkce je k dispozici pouze uživatele ${ BRAND_NAME } for Business s vlastními doménami."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP odesílání umožňuje službám nebo zařízením třetích stran odesílat e-maily prostřednictvím ${ MAIL_APP_NAME } pro vaše vlastní doménové adresy. Chcete-li požádat o přístup, ${ createTicket } a popište vaše způsoby použití, které vlastní domény byste chtěli používat a očekávané hodinové a denní objemy e-mailů."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "SMTP odesílání umožňuje službám nebo zařízením třetích stran odesílat e-maily prostřednictvím ${ MAIL_APP_NAME } pro vaše vlastní doménové adresy. Chcete-li tuto funkci použít, začněte vygenerováním nového tokenu."
+      ],
+      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "SMTP odesílání umožňuje službám nebo zařízením třetích stran odesílat e-maily prostřednictvím ${ MAIL_APP_NAME } pro vaše vlastní doménové adresy. Tato funkce je k dispozici pouze uživatele ${ BRAND_NAME } for Business s vlastními doménami."
       ],
       "Some keys successfully reactivated": [
         "Některé klíče byly úspěšně znovu aktivovány"
@@ -8932,9 +8923,6 @@
       "Expiration (${ patternExpiration })": [
         "Vypršení (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Konec platnosti"
-      ],
       "Expires": [
         "Vyprší"
       ],
@@ -9081,9 +9069,6 @@
       ],
       "Name and address": [
         "Jméno a adresa"
-      ],
-      "Name on card": [
-        "Jméno na kartě"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (přesměrování portů)"
@@ -9247,14 +9232,8 @@
       "Reveal password": [
         "Zobrazit heslo"
       ],
-      "Security code": [
-        "Bezpečnostní kód"
-      ],
       "Security code (${ codeName })": [
         "Kód zabezpečení (${ codeName })"
-      ],
-      "Select your country": [
-        "Vyberte svou zemi"
       ],
       "Select your plan": [
         "Vyberte tarif"
@@ -11919,9 +11898,6 @@
       "Text": [
         "Text"
       ],
-      "Thomas Anderson": [
-        "Thomas Anderson"
-      ],
       "Type text or keyword": [
         "Zadejte text nebo klíčové slovo"
       ],
@@ -13971,9 +13947,6 @@
       "Folders and labels": [
         "Složky a štítky"
       ],
-      "Forward and Auto-reply": [
-        "Přeposlat a automaticky odpovědět"
-      ],
       "Forward emails": [
         "Přeposlat e-maily"
       ],
@@ -14160,7 +14133,7 @@
       "PayPal verification failed": [
         "Ověření platby PayPal se nezdařilo"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "Přizpůsobte si zápatí e-mailu"
       ],
       "Phone": [
@@ -14390,9 +14363,6 @@
       ],
       "Unlock your mailbox": [
         "Odemknout Vaši poštovní schránku"
-      ],
-      "Unsupported browser": [
-        "Nepodporovaný prohlížeč"
       ],
       "Upgrade plan": [
         "Navýšit tarif"
