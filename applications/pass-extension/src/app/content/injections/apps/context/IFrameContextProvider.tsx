@@ -11,9 +11,9 @@ import type {
 import { IFrameMessageType } from 'proton-pass-extension/app/content/types';
 import locales from 'proton-pass-extension/app/locales';
 import { PassExtensionCore } from 'proton-pass-extension/lib/components/Extension/PassExtensionCore';
+import { useExtensionActivityProbe } from 'proton-pass-extension/lib/hooks/useExtensionActivityProbe';
 import type { Runtime } from 'webextension-polyfill';
 
-import { useActivityProbe } from '@proton/pass/hooks/useActivityProbe';
 import { clientReady } from '@proton/pass/lib/client';
 import { contentScriptMessage, portForwardingMessage, sendMessage } from '@proton/pass/lib/extension/message';
 import browser from '@proton/pass/lib/globals/browser';
@@ -72,7 +72,7 @@ export const IFrameContextProvider: FC<{ endpoint: IFrameEndpoint }> = ({ endpoi
     const [userEmail, setUserEmail] = useState<MaybeNull<string>>(null);
     const [visible, setVisible] = useState<boolean>(false);
     const [locale, setLocale] = useState(DEFAULT_LOCALE);
-    const activityProbe = useActivityProbe(contentScriptMessage);
+    const activityProbe = useExtensionActivityProbe();
 
     const destroyFrame = () => {
         logger.info(`[IFrame::${endpoint}] Unauthorized iframe injection`);
