@@ -1,8 +1,4 @@
-import { useState } from 'react';
-import { Route, Switch } from 'react-router-dom';
-
-import { G_OAUTH_REDIRECT_PATH } from '@proton/activation/src/constants';
-import { LoaderPage, ProtonApp, StandardSetup, getSessionTrackingEnabled } from '@proton/components';
+import { ProtonApp, StandardSetup, getSessionTrackingEnabled } from '@proton/components';
 import { setupGuestCrossStorage } from '@proton/cross-storage/account-impl/guestInstance';
 import metrics from '@proton/metrics/index';
 import { getClientID } from '@proton/shared/lib/apps/helper';
@@ -33,20 +29,9 @@ if ('chrome' in window) {
 metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
 
 const App = () => {
-    const [hasInitialAuth] = useState(() => {
-        return !window.location.pathname.startsWith(G_OAUTH_REDIRECT_PATH);
-    });
-
     return (
-        <ProtonApp authentication={authentication} config={config} hasInitialAuth={hasInitialAuth}>
-            <Switch>
-                <Route path={G_OAUTH_REDIRECT_PATH}>
-                    <LoaderPage />
-                </Route>
-                <Route path="*">
-                    <StandardSetup PrivateApp={PrivateApp} locales={locales} />
-                </Route>
-            </Switch>
+        <ProtonApp authentication={authentication} config={config}>
+            <StandardSetup PrivateApp={PrivateApp} locales={locales} />
         </ProtonApp>
     );
 };
