@@ -1407,6 +1407,9 @@
       ],
       "Select your Black Friday offer": [
         "Välj ditt Black Friday-erbjudande"
+      ],
+      "Select your Cyber Week offer": [
+        "Välj ditt Cyber Week-erbjudande"
       ]
     },
     "bf2023: info": {
@@ -3717,6 +3720,9 @@
       "Contact signature not verified": [
         "Kontaktsignatur inte verifierad"
       ],
+      "Could not save preference": [
+        "Kunde inte spara preferens"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Avmarkera minst ${ calendarsToFixCount } kalender",
         "Avmarkera minst ${ calendarsToFixCount } kalendrar"
@@ -3845,9 +3851,6 @@
       ],
       "Name does not match": [
         "Namn matchar inte"
-      ],
-      "Name on card required": [
-        "Namn på kort är obligatoriskt"
       ],
       "Name required": [
         "Namn krävs"
@@ -3997,9 +4000,6 @@
       ],
       "The address might be misspelled": [
         "Adressen kan vara felstavad"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Webbläsaren du använder tillåter inte att betalningen är fullständigt auktoriserad. Använd en annan webbläsare eller logga in via en dator."
       ],
       "The email addresses do not match": [
         "E-postadresserna matchar inte"
@@ -6456,9 +6456,6 @@
       "for choosing ${ product }": [
         "för att välja ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "För Visa, MasterCard och Discover, de 3 siffrorna på baksidan av ditt kort. För American Express, de 4 siffrorna på framsidan av ditt kort."
-      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Vidarebefordra inkommande e-post från annat konto till din säkra inkorg för ${ MAIL_APP_NAME }."
       ],
@@ -7154,14 +7151,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du är en lojal användare har ditt konto ytterligare funktioner aktiverade."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. Denna funktion är endast tillgänglig för ${ BRAND_NAME } för Business-användare med anpassade domäner."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. För att begära åtkomst, ${ createTicket } som beskriver dina användningsfall, vilka anpassade domäner du vill använda och förväntade e-postvolymer per timme och dagligen."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. För att använda denna funktion, börja med att generera en ny token."
+      ],
+      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "SMTP-inlämning tillåter tredjepartstjänster eller enheter att skicka e-post via ${ MAIL_APP_NAME } för dina anpassade domänadresser. Denna funktion är endast tillgänglig för ${ BRAND_NAME } för Business-användare med anpassade domäner."
       ],
       "Some keys successfully reactivated": [
         "Några nycklar har återaktiverats"
@@ -8601,6 +8598,9 @@
       "Conversation grouping": [
         "Gruppering av konversationer"
       ],
+      "Conversations per page": [
+        "Konversationer per sida"
+      ],
       "Copy": [
         "Kopiera"
       ],
@@ -8754,9 +8754,6 @@
       "Expiration (${ patternExpiration })": [
         "Löper ut (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Utgångsdatum"
-      ],
       "Expires": [
         "Löper ut"
       ],
@@ -8886,6 +8883,9 @@
       "Message": [
         "Meddelande"
       ],
+      "Messages per page": [
+        "Meddelanden per sida"
+      ],
       "Moderate NAT": [
         "Måttlig NAT"
       ],
@@ -8903,9 +8903,6 @@
       ],
       "Name and address": [
         "Namn och adress"
-      ],
-      "Name on card": [
-        "Namn på kort"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (vidarebefordring av port)"
@@ -9069,14 +9066,8 @@
       "Reveal password": [
         "Visa lösenord"
       ],
-      "Security code": [
-        "Säkerhetskod"
-      ],
       "Security code (${ codeName })": [
         "Säkerhetskod (${ codeName })"
-      ],
-      "Select your country": [
-        "Välj ditt land"
       ],
       "Select your plan": [
         "Välj ditt paket"
@@ -11659,9 +11650,6 @@
       "Text": [
         "Text"
       ],
-      "Thomas Anderson": [
-        "Thomas Anderson"
-      ],
       "Type text or keyword": [
         "Skriv text eller nyckelord"
       ],
@@ -13625,7 +13613,7 @@
       "Folders and labels": [
         "Mappar och etiketter"
       ],
-      "Forward and Auto-reply": [
+      "Forward and auto-reply": [
         "Vidarebefordran och autosvar"
       ],
       "Forward emails": [
@@ -13812,7 +13800,7 @@
       "PayPal verification failed": [
         "Verifiering av PayPal misslyckades"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "Personifiera sidfoten för din e-post"
       ],
       "Phone": [
@@ -14038,9 +14026,6 @@
       ],
       "Unlock your mailbox": [
         "Lås upp din brevlåda"
-      ],
-      "Unsupported browser": [
-        "Webbläsaren stöds inte"
       ],
       "Upgrade plan": [
         "Uppgradera paket"

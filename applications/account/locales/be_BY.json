@@ -825,7 +825,7 @@
         "Паглядзець функцыі тарыфнага плана"
       ],
       "Select ${ planTitle }": [
-        "Выберыце ${ planTitle }"
+        "Выбраць ${ planTitle }"
       ],
       "Select calendar view": [
         "Выбраць выгляд календара"
@@ -1411,8 +1411,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Эканомце з прапановамі \"Чорнай пятніцы\" на высакахуткасным швейцарскім VPN"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Эканомце з прапановамі \"Кібертыдня\" на высакахуткасным швейцарскім VPN"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Эканомце з прапановамі \"Канец года\" на высакахуткасным швейцарскім VPN"
+      ],
       "Select your Black Friday offer": [
         "Выберыце прапанову \"Чорнай пятніцы\""
+      ],
+      "Select your Cyber Week offer": [
+        "Выберыце прапанову \"Кібертыдзень\""
+      ],
+      "Select your End of Year offer": [
+        "Выберыце прапанову \"Канец года\""
       ]
     },
     "bf2023: info": {
@@ -3743,6 +3755,9 @@
       "Contact signature not verified": [
         "Подпіс кантакту неправераны"
       ],
+      "Could not save preference": [
+        "Немагчыма захаваць параметры"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календара",
         "Здыміце выбар прынамсі з ${ calendarsToFixCount } календароў",
@@ -3877,9 +3892,6 @@
       ],
       "Name does not match": [
         "Назва не супадае"
-      ],
-      "Name on card required": [
-        "Неабходна ўвесці імя, якое пазначана на картцы"
       ],
       "Name required": [
         "Патрабуецца назва"
@@ -4033,9 +4045,6 @@
       ],
       "The address might be misspelled": [
         "Магчыма, што адрас няправільны"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Ваш браўзер не дазваляе цалкам аўтарызаваць плацеж. Скарыстайцеся іншым браўзерам або ўвайдзіце з камп'ютара."
       ],
       "The email addresses do not match": [
         "Адрасы электроннай пошты не супадаюць"
@@ -6590,9 +6599,6 @@
       "for choosing ${ product }": [
         "для выбару ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Для Visa, MasterCard і Discover — 3 лічбы на адваротным баку карткі. Для American Express — 4 лічбы на пярэднім баку карткі."
-      ],
       "Forward incoming mail from another account to your secure ${ MAIL_APP_NAME } inbox.": [
         "Перасылка ўваходных лістоў з іншага ўліковага запісу ў вашу бяспечную паштовую скрыню ${ MAIL_APP_NAME }."
       ],
@@ -7295,14 +7301,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Паколькі вы з'яўляецеся пастаянным карыстальнікам, мы дадалі ў ваш уліковы запіс дадатковыя функцыі."
       ],
-      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
-        "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для карыстальніцкага дамена адраса. Функцыя даступна для карыстальнікаў ${ BRAND_NAME } для бізнесу з карыстальніцкім даменам."
-      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб запытаць доступ, ${ createTicket } з апісаннем вашых варыянтаў выкарыстання, якія карыстальніцкія дамены вы б хацелі выкарыстоўваць, а таксама чаканыя штогадзінныя і штодзённыя аб'ёмы лістоў"
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для адрасоў вашых карыстальніцкіх даменаў. Каб карыстацца гэтай функцый, згенерыруйце новы токен."
+      ],
+      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
+        "Адпраўка па SMTP дазваляе староннім сэрвісам або прыладам адпраўляць лісты праз ${ MAIL_APP_NAME } для карыстальніцкага дамена адраса. Функцыя даступна для карыстальнікаў ${ BRAND_NAME } для бізнесу з карыстальніцкім даменам."
       ],
       "Some keys successfully reactivated": [
         "Некаторыя ключы паспяхова паўторна актываваны"
@@ -8776,6 +8782,9 @@
       "Conversation grouping": [
         "Групаванне размоў"
       ],
+      "Conversations per page": [
+        "Размоў на старонку"
+      ],
       "Copy": [
         "Капіяваць"
       ],
@@ -8929,9 +8938,6 @@
       "Expiration (${ patternExpiration })": [
         "Тэрмін дзеяння (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Тэрмін дзеяння"
-      ],
       "Expires": [
         "Дзейнічае да"
       ],
@@ -9061,6 +9067,9 @@
       "Message": [
         "Паведамленне"
       ],
+      "Messages per page": [
+        "Паведамленняў на старонку"
+      ],
       "Moderate NAT": [
         "Умераны NAT"
       ],
@@ -9078,9 +9087,6 @@
       ],
       "Name and address": [
         "Імя і адрас"
-      ],
-      "Name on card": [
-        "Імя на картцы"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (перанакіраванне партоў)"
@@ -9212,7 +9218,7 @@
         "Запытваць давераныя ключы"
       ],
       "Proration": [
-        "Размеркаванне"
+        "Прапарцыйнае размеркаванне"
       ],
       "Protection mode": [
         "Рэжым абароны"
@@ -9244,14 +9250,8 @@
       "Reveal password": [
         "Паказаць пароль"
       ],
-      "Security code": [
-        "Код бяспекі"
-      ],
       "Security code (${ codeName })": [
         "Код бяспекі (${ codeName })"
-      ],
-      "Select your country": [
-        "Выберыце сваю краіну"
       ],
       "Select your plan": [
         "Выберыце тарыфны план"
@@ -11892,9 +11892,6 @@
       "Text": [
         "Тэкст"
       ],
-      "Thomas Anderson": [
-        "Янка Купала"
-      ],
       "Type text or keyword": [
         "Увядзіце тэкст або ключавое слова"
       ],
@@ -13019,7 +13016,7 @@
     },
     "Subscription price": {
       "For": [
-        "Для"
+        "За"
       ]
     },
     "Subscription renewal state": {
@@ -13343,7 +13340,7 @@
         "Для сем'яў"
       ],
       "For individuals": [
-        "Для асабістага карыстання"
+        "Асабісты"
       ]
     },
     "Table header; invitations to share calendar": {
@@ -13944,7 +13941,7 @@
       "Folders and labels": [
         "Папкі і меткі"
       ],
-      "Forward and Auto-reply": [
+      "Forward and auto-reply": [
         "Перасылка і аўтаматычны адказ"
       ],
       "Forward emails": [
@@ -14133,7 +14130,7 @@
       "PayPal verification failed": [
         "Не ўдалося ажыццявіць праверку PayPal"
       ],
-      "Personalise your e-mail footer": [
+      "Personalize your e-mail footer": [
         "Персаналізуйце ніжні калонтытул свайго ліста"
       ],
       "Phone": [
@@ -14363,9 +14360,6 @@
       ],
       "Unlock your mailbox": [
         "Разблакіруйце вашу паштовую скрыню"
-      ],
-      "Unsupported browser": [
-        "Браўзер не падтрымліваецца"
       ],
       "Upgrade plan": [
         "Палепшыць тарыфны план"

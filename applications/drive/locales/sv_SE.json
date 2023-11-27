@@ -3750,6 +3750,9 @@
       "Items in the trash will stay here until you delete them permanently": [
         "Objekt i papperskorgen blir kvar här tills du tar bort dem permanent"
       ],
+      "Items moved to the trash will stay here until deleted": [
+        "Objekt som flyttas till papperskorgen stannar här tills de tas bort"
+      ],
       "It’s easy and secure": [
         "Det är enkelt och säkert"
       ],
@@ -3828,17 +3831,11 @@
       "No": [
         "Nej"
       ],
-      "No computers syncing": [
-        "Inga datorer synkroniseras"
-      ],
       "No contacts added yet": [
         "Inga kontakter tillagda ännu"
       ],
       "No email address": [
         "Ingen e-postadress"
-      ],
-      "No files or folders in trash": [
-        "Inga filer eller mappar i papperskorgen"
       ],
       "No group found": [
         "Ingen grupp hittades"
@@ -4209,6 +4206,9 @@
       "Trash": [
         "Papperskorg"
       ],
+      "Trash is empty": [
+        "Papperskorg är tom"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Prova nya ${ BRAND_NAME }-funktioner, uppdateringar och produkter innan de släpps för allmänheten. Detta kommer ladda om applikationen"
       ],
@@ -4256,6 +4256,9 @@
       ],
       "Version is restored": [
         "Version är återställd"
+      ],
+      "Want to sync files faster?": [
+        "Vill du synkronisera filer snabbare?"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Stanna kvar, du har just dubblerat ditt gratis lagringsutrymme!"
@@ -6734,24 +6737,12 @@
       ]
     },
     "Validation Error": {
-      "\"${ str }\" is not a valid name": [
-        "\"${ str }\" är inte ett giltigt namn"
-      ],
-      "Name cannot include invisible characters, / or \\.": [
-        "Namn kan inte innehålla osynliga tecken, / eller \\."
-      ],
       "Name must be ${ MAX_NAME_LENGTH } character long at most": [
         "Namn måste vara ${ MAX_NAME_LENGTH } tecken lång som mest",
         "Namn måste vara ${ MAX_NAME_LENGTH } tecken långa som mest"
       ],
       "Name must not be empty": [
         "Namn kan inte vara tomt"
-      ],
-      "Name must not begin with a space": [
-        "Namnet får inte börja med ett mellanslag"
-      ],
-      "Name must not end with a space": [
-        "Namn får inte sluta med ett mellanslag"
       ]
     },
     "Video control": {

@@ -736,8 +736,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "დაზოგეთ შავი პარასკევის ფასდაკლებებით ჩქაროსნულ VPN-ზე"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "დაზოგეთ კიბერკვირის ფასდაკლებებით ჩქაროსნულ VPN-ზე"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "დაზოგეთ წლის ბოლოს ფასდაკლებებით ჩქაროსნულ VPN-ზე"
+      ],
       "Select your Black Friday offer": [
         "აირჩიეთ თქვენი შავი პარასკევის შეთავაზება"
+      ],
+      "Select your Cyber Week offer": [
+        "აირჩით თქვენი კიბერკვირის შეთავაზება"
+      ],
+      "Select your End of Year offer": [
+        "აირჩიეთ თქვენი წლის ბოლოს შეთავაზება"
       ]
     },
     "bf2023: info": {
@@ -1972,9 +1984,6 @@
       "Name does not match": [
         "სახელი არ ემთხვევა"
       ],
-      "Name on card required": [
-        "საჭიროა ბარათზე მითითებული სახელი"
-      ],
       "Not a valid number": [
         "არასწორი ნომერი"
       ],
@@ -2043,9 +2052,6 @@
       ],
       "Tab closed": [
         "ჩანართი დახურულია"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "თქვენს ბრაუზერი გადახდის პროცესის დასრულების უფლებას არ იძლევა. გამოიყენეთ სხვა ბრაუზერი ან კომპიუტერიდან სცადეთ."
       ],
       "The email addresses do not match": [
         "ელფოსტის მისამართები არ ემთხვევა"
@@ -3077,9 +3083,6 @@
       ],
       "for choosing ${ product }": [
         "${ product }-ის არჩევისთვის"
-      ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "Visa, Discover-ისა და MasterCard-ისთვის, 3 ციფრი თქვენი ბარათის უკანა მხარეს. American Express-ისთვის, 4 ციფრი თქვენი ბარათის წინა მხარეს."
       ],
       "Free forever": [
         "სამუდამოდ უფასო"
@@ -4197,9 +4200,6 @@
       "Expiration (${ patternExpiration })": [
         "ვადა (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "ვადა"
-      ],
       "Expires": [
         "ვადა"
       ],
@@ -4241,9 +4241,6 @@
       ],
       "Name and address": [
         "სახელი და მისამართი"
-      ],
-      "Name on card": [
-        "სახელი ბარათზე"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (პორტის გადამისამართება)"
@@ -4350,14 +4347,8 @@
       "Reveal password": [
         "პაროლის ჩვენება"
       ],
-      "Security code": [
-        "უსაფრთხოების კოდი"
-      ],
       "Security code (${ codeName })": [
         "უსაფრთხოების კოდი (${ codeName })"
-      ],
-      "Select your country": [
-        "აირჩიეთ თქვენი ქვეყანა"
       ],
       "Select your plan": [
         "აირჩიეთ ტარიფი"
@@ -5668,9 +5659,6 @@
       ],
       "Select a reason": [
         "აირჩიეთ მიზეზი"
-      ],
-      "Thomas Anderson": [
-        "ნაზიბროლა ღობეგლეჯიაშვილი"
       ]
     },
     "plan customizer, ips": {
@@ -7193,9 +7181,6 @@
       ],
       "Unlock your mailbox": [
         "განბლოკეთ თქვენი საფოსტო ყუთი"
-      ],
-      "Unsupported browser": [
-        "მხარდაუჭერელი ბრაუზერი"
       ],
       "Upgrade your network protection with dedicated servers": [
         "ასწიეთ თქვენი ქსელის დაცვის დონე გამოყოფილი სერვერებით"
