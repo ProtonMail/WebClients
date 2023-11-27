@@ -35,7 +35,7 @@ export const useFilters = () => {
                 const encodedFilter = btoa(JSON.stringify({ ...filters, ...update }));
                 const params = new URLSearchParams(history.location.search);
                 params.set('filters', encodedFilter);
-                history.replace({ pathname, search: `?${params.toString()}` });
+                history[pathname !== undefined ? 'push' : 'replace']({ pathname, search: `?${params.toString()}` });
             },
         }),
         [filters]
