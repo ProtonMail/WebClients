@@ -49,7 +49,11 @@ const encryptEvent = async ({
         }
         return { data, component: eventComponent };
     } catch (error: any) {
-        return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.ENCRYPTION_ERROR, 'vevent', componentId);
+        return new ImportEventError({
+            errorType: IMPORT_EVENT_ERROR_TYPE.ENCRYPTION_ERROR,
+            component: 'vevent',
+            componentId,
+        });
     }
 };
 
@@ -101,7 +105,12 @@ const processResponses = (responses: SyncMultipleApiResponses[], events: Encrypt
         const error = new Error(errorMessage);
         const component = events[Index]?.component;
         const componentId = component ? getComponentIdentifier(component) : '';
-        return new ImportEventError(IMPORT_EVENT_ERROR_TYPE.EXTERNAL_ERROR, 'vevent', componentId, error);
+        return new ImportEventError({
+            errorType: IMPORT_EVENT_ERROR_TYPE.EXTERNAL_ERROR,
+            component: 'vevent',
+            componentId,
+            externalError: error,
+        });
     });
 };
 

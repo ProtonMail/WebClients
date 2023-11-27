@@ -7,12 +7,14 @@ import useFlag from '@proton/components/containers/unleash/useFlag';
 import { updateMember } from '@proton/shared/lib/api/calendars';
 import { getProbablyActiveCalendars, getWritableCalendars } from '@proton/shared/lib/calendar/calendar';
 import { ICAL_METHOD, IMPORT_ERROR_TYPE, MAX_IMPORT_FILE_SIZE } from '@proton/shared/lib/calendar/constants';
+import { IMPORT_EVENT_ERROR_TYPE, ImportEventError } from '@proton/shared/lib/calendar/icsSurgery/ImportEventError';
 import { ImportFatalError } from '@proton/shared/lib/calendar/import/ImportFatalError';
 import { ImportFileError } from '@proton/shared/lib/calendar/import/ImportFileError';
 import {
     extractTotals,
     getSupportedEvents,
     parseIcs,
+    sendImportErrorTelemetryReport,
     splitErrors,
     splitHiddenErrors,
 } from '@proton/shared/lib/calendar/import/import';
@@ -146,7 +148,14 @@ const ImportModal = ({ calendars, initialCalendar, files, isOpen = false, onClos
                         })
                     );
 
-                    const { hidden: hiddenErrors, visible: visibleErrors } = splitHiddenErrors(errors);
+                    void sendImportErrorTelemetryReport(api, errors);
+
+                    const filteredErrors = errors.filter(
+                        (error) =>
+                            error instanceof ImportEventError && error.type !== IMPORT_EVENT_ERROR_TYPE.TIMEZONE_IGNORE
+                    );
+
+                    const { hidden: hiddenErrors, visible: visibleErrors } = splitHiddenErrors(filteredErrors);
 
                     const totalToImport = parsed.length + hiddenErrors.length;
                     const totalErrors = visibleErrors.length;

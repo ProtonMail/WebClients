@@ -1,14 +1,15 @@
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 
 export enum TelemetryMeasurementGroups {
-    mailSimpleLogin = 'mail.web.simplelogin_popups',
-    calendarTimeZoneSelector = 'calendar.web.timezone_selector',
-    calendarEncryptedSearch = 'calendar.web.encrypted_search',
-    accountSignupBasic = 'account.any.signup_basic',
     accountSignup = 'account.any.signup',
+    accountSignupBasic = 'account.any.signup_basic',
+    calendarEncryptedSearch = 'calendar.web.encrypted_search',
+    calendarIcsSurgery = 'calendar.web.ics_surgery',
+    calendarTimeZoneSelector = 'calendar.web.timezone_selector',
     keyTransparency = 'any.web.key_transparency',
     mailPrivacyDropdown = 'mail.web.privacy_dropdown',
     mailSelectAll = 'mail.web.select_all',
+    mailSimpleLogin = 'mail.web.simplelogin_popups',
 }
 
 export enum TelemetrySimpleLoginEvents {
@@ -73,6 +74,11 @@ export enum TelemetryMailSelectAllEvents {
     banner_mark_as_unread = 'banner_mark_as_unread',
 }
 
+export enum TelemetryIcsSurgery {
+    import = 'import',
+    invitation = 'invitation',
+}
+
 export type TelemetryEvents =
     | TelemetrySimpleLoginEvents
     | TelemetryCalendarEvents
@@ -80,7 +86,8 @@ export type TelemetryEvents =
     | TelemetryAccountSignupEvents
     | TelemetryKeyTransparencyErrorEvents
     | TelemetryMailEvents
-    | TelemetryMailSelectAllEvents;
+    | TelemetryMailSelectAllEvents
+    | TelemetryIcsSurgery;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;

@@ -1,5 +1,11 @@
 import { MAX_CHARS_API } from '../../lib/calendar/constants';
-import { generateVeventHashUID, getHasLegacyHashUID, getOriginalUID, getSupportedUID } from '../../lib/calendar/helper';
+import {
+    generateVeventHashUID,
+    getDomainFromUID,
+    getHasLegacyHashUID,
+    getOriginalUID,
+    getSupportedUID,
+} from '../../lib/calendar/helper';
 
 describe('getSupportedUID', () => {
     it('should retain short UIDs', () => {
@@ -111,5 +117,19 @@ describe('getHasLegacyHashUID', () => {
     it('should return true if a legacy uid is passed', async () => {
         expect(getHasLegacyHashUID(await generateVeventHashUID(binaryString, shortUid, true))).toEqual(true);
         expect(getHasLegacyHashUID(await generateVeventHashUID(binaryString, longUid, true))).toEqual(true);
+    });
+});
+
+describe('getDomainFromUID', () => {
+    it('should return the domain', () => {
+        const domain = 'proton.me';
+        const uid = `something@${domain}`;
+        expect(getDomainFromUID(uid)).toEqual(domain);
+    });
+
+    it('should return an empty string for the domain', () => {
+        expect(getDomainFromUID('')).toEqual('');
+        expect(getDomainFromUID('something')).toEqual('');
+        expect(getDomainFromUID('something@')).toEqual('');
     });
 });

@@ -18,7 +18,7 @@ import {
 import { dedupeAlarmsWithNormalizedTriggers } from '../alarms';
 import { getAttendeeEmail, getSupportedAttendee, getSupportedOrganizer } from '../attendees';
 import { ICAL_METHOD, MAX_CHARS_API, MAX_ICAL_SEQUENCE } from '../constants';
-import { getIsDateOutOfBounds, getIsWellFormedDateOrDateTime, getSupportedUID } from '../helper';
+import { getDomainFromUID, getIsDateOutOfBounds, getIsWellFormedDateOrDateTime, getSupportedUID } from '../helper';
 import { getHasConsistentRrule, getHasOccurrences, getSupportedRrule } from '../recurrence/rrule';
 import { durationToMilliseconds } from '../vcal';
 import {
@@ -123,6 +123,8 @@ export const getSupportedDateOrDateTimeProperty = ({
     isRecurring = false,
     isInvite,
     guessTzid,
+    prodId,
+    domain,
 }: {
     property: VcalDateOrDateTimeProperty | VcalFloatingDateTimeProperty;
     component: string;
@@ -133,6 +135,8 @@ export const getSupportedDateOrDateTimeProperty = ({
     method?: ICAL_METHOD;
     isInvite?: boolean;
     guessTzid?: string;
+    prodId?: string;
+    domain?: string;
 }) => {
     if (getIsPropertyAllDay(property)) {
         return dateToProperty(property.value);
@@ -158,13 +162,25 @@ export const getSupportedDateOrDateTimeProperty = ({
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
             }
             // we should never reach here as guessTzid should be always defined for import
-            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.UNEXPECTED_FLOATING_TIME, 'vevent', componentId);
+            throw new ImportEventError({
+                errorType: IMPORT_EVENT_ERROR_TYPE.UNEXPECTED_FLOATING_TIME,
+                component: 'vevent',
+                componentId,
+                prodId,
+                domain,
+            });
         }
         if (hasXWrTimezone && !calendarTzid) {
             if (isInvite) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
             }
-            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.X_WR_TIMEZONE_UNSUPPORTED, 'vevent', componentId);
+            throw new ImportEventError({
+                errorType: IMPORT_EVENT_ERROR_TYPE.X_WR_TIMEZONE_UNSUPPORTED,
+                component: 'vevent',
+                componentId,
+                prodId,
+                domain,
+            });
         }
         return getDateTimeProperty(partDayProperty.value, calendarTzid);
     }
@@ -175,7 +191,13 @@ export const getSupportedDateOrDateTimeProperty = ({
         if (isInvite) {
             throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
         }
-        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.TZID_UNSUPPORTED, component, componentId);
+        throw new ImportEventError({
+            errorType: IMPORT_EVENT_ERROR_TYPE.TZID_UNSUPPORTED,
+            component,
+            componentId,
+            prodId,
+            domain,
+        });
     }
 
     return getDateTimeProperty(partDayProperty.value, supportedTzid);
@@ -188,6 +210,8 @@ export const getLinkedDateTimeProperty = ({
     linkedTzid,
     componentId = '',
     isInvite,
+    prodId,
+    domain,
 }: {
     property: VcalDateOrDateTimeProperty;
     component: string;
@@ -195,6 +219,8 @@ export const getLinkedDateTimeProperty = ({
     linkedIsAllDay: boolean;
     linkedTzid?: string;
     isInvite?: boolean;
+    prodId?: string;
+    domain?: string;
 }): VcalDateOrDateTimeProperty => {
     if (linkedIsAllDay) {
         return dateToProperty(property.value);
@@ -203,7 +229,13 @@ export const getLinkedDateTimeProperty = ({
         if (isInvite) {
             throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID);
         }
-        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.ALLDAY_INCONSISTENCY, component, componentId);
+        throw new ImportEventError({
+            errorType: IMPORT_EVENT_ERROR_TYPE.ALLDAY_INCONSISTENCY,
+            component,
+            componentId,
+            prodId,
+            domain,
+        });
     }
     const supportedTzid = getPropertyTzid(property);
     if (!supportedTzid || !linkedTzid) {
@@ -211,7 +243,13 @@ export const getLinkedDateTimeProperty = ({
             throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
         }
         // should never be reached
-        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.UNEXPECTED_FLOATING_TIME, component, componentId);
+        throw new ImportEventError({
+            errorType: IMPORT_EVENT_ERROR_TYPE.UNEXPECTED_FLOATING_TIME,
+            component,
+            componentId,
+            prodId,
+            domain,
+        });
     }
     if (linkedTzid !== supportedTzid) {
         // the linked date-time property should have the same tzid as dtstart
@@ -299,6 +337,10 @@ export const getSupportedEvent = ({
             'x-yahoo-user-status': xYahooUserStatus,
             color,
         } = vcalVeventComponent;
+
+        const prodId = uid?.value; // TODO do I need to check if value exist?
+        const domain = getDomainFromUID(prodId);
+
         const [trimmedSummaryValue, trimmedDescriptionValue, trimmedLocationValue] = [
             summary,
             description,
@@ -343,6 +385,8 @@ export const getSupportedEvent = ({
             isRecurring,
             isInvite: isEventInvitation,
             guessTzid,
+            prodId,
+            domain,
         });
 
         const isAllDayStart = getIsPropertyAllDay(validated.dtstart);
@@ -351,13 +395,25 @@ export const getSupportedEvent = ({
             if (isEventInvitation) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID);
             }
-            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTSTART_MALFORMED, 'vevent', componentId);
+            throw new ImportEventError({
+                errorType: IMPORT_EVENT_ERROR_TYPE.DTSTART_MALFORMED,
+                component: 'vevent',
+                componentId,
+                prodId,
+                domain,
+            });
         }
         if (getIsDateOutOfBounds(validated.dtstart)) {
             if (isEventInvitation) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
             }
-            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTSTART_OUT_OF_BOUNDS, 'vevent', componentId);
+            throw new ImportEventError({
+                errorType: IMPORT_EVENT_ERROR_TYPE.DTSTART_OUT_OF_BOUNDS,
+                component: 'vevent',
+                componentId,
+                prodId,
+                domain,
+            });
         }
         if (dtend) {
             const supportedDtend = getSupportedDateOrDateTimeProperty({
@@ -369,12 +425,20 @@ export const getSupportedEvent = ({
                 isRecurring,
                 isInvite: isEventInvitation,
                 guessTzid,
+                prodId,
+                domain,
             });
             if (!getIsWellFormedDateOrDateTime(supportedDtend)) {
                 if (isEventInvitation) {
                     throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID);
                 }
-                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTEND_MALFORMED, 'vevent', componentId);
+                throw new ImportEventError({
+                    errorType: IMPORT_EVENT_ERROR_TYPE.DTEND_MALFORMED,
+                    component: 'vevent',
+                    componentId,
+                    prodId,
+                    domain,
+                });
             }
             const startDateUTC = propertyToUTCDate(validated.dtstart);
             const endDateUTC = propertyToUTCDate(supportedDtend);
@@ -398,7 +462,13 @@ export const getSupportedEvent = ({
             if (isEventInvitation) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
             }
-            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.DTEND_OUT_OF_BOUNDS, 'vevent', componentId);
+            throw new ImportEventError({
+                errorType: IMPORT_EVENT_ERROR_TYPE.DTEND_OUT_OF_BOUNDS,
+                component: 'vevent',
+                componentId,
+                prodId,
+                domain,
+            });
         }
 
         const isAllDayEnd = validated.dtend ? getIsPropertyAllDay(validated.dtend) : undefined;
@@ -407,7 +477,13 @@ export const getSupportedEvent = ({
             if (isEventInvitation) {
                 throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID);
             }
-            throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.ALLDAY_INCONSISTENCY, 'vevent', componentId);
+            throw new ImportEventError({
+                errorType: IMPORT_EVENT_ERROR_TYPE.ALLDAY_INCONSISTENCY,
+                component: 'vevent',
+                componentId,
+                prodId,
+                domain,
+            });
         }
 
         if (exdate) {
@@ -415,7 +491,13 @@ export const getSupportedEvent = ({
                 if (isEventInvitation) {
                     throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID);
                 }
-                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.RRULE_MALFORMED, 'vevent', componentId);
+                throw new ImportEventError({
+                    errorType: IMPORT_EVENT_ERROR_TYPE.RRULE_MALFORMED,
+                    component: 'vevent',
+                    componentId,
+                    prodId,
+                    domain,
+                });
             }
             const supportedExdate = exdate.map((property) =>
                 getSupportedDateOrDateTimeProperty({
@@ -427,6 +509,8 @@ export const getSupportedEvent = ({
                     isRecurring,
                     isInvite: isEventInvitation,
                     guessTzid,
+                    prodId,
+                    domain,
                 })
             );
             validated.exdate = supportedExdate.map((property) =>
@@ -450,7 +534,13 @@ export const getSupportedEvent = ({
                     if (isEventInvitation) {
                         throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
                     }
-                    throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.SINGLE_EDIT_UNSUPPORTED, 'vevent', componentId);
+                    throw new ImportEventError({
+                        errorType: IMPORT_EVENT_ERROR_TYPE.SINGLE_EDIT_UNSUPPORTED,
+                        component: 'vevent',
+                        componentId,
+                        prodId,
+                        domain,
+                    });
                 }
             }
             // RECURRENCE-ID cannot be linked with DTSTART of the parent event at this point since we do not have access to it
@@ -463,6 +553,8 @@ export const getSupportedEvent = ({
                 isRecurring,
                 isInvite: isEventInvitation,
                 guessTzid,
+                prodId,
+                domain,
             });
         }
 
@@ -472,20 +564,38 @@ export const getSupportedEvent = ({
                 if (isEventInvitation) {
                     throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED);
                 }
-                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.RRULE_UNSUPPORTED, 'vevent', componentId);
+                throw new ImportEventError({
+                    errorType: IMPORT_EVENT_ERROR_TYPE.RRULE_UNSUPPORTED,
+                    component: 'vevent',
+                    componentId,
+                    prodId,
+                    domain,
+                });
             }
             validated.rrule = supportedRrule;
             if (!getHasConsistentRrule(validated)) {
                 if (isEventInvitation) {
                     throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID);
                 }
-                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.RRULE_MALFORMED, 'vevent', componentId);
+                throw new ImportEventError({
+                    errorType: IMPORT_EVENT_ERROR_TYPE.RRULE_MALFORMED,
+                    component: 'vevent',
+                    componentId,
+                    prodId,
+                    domain,
+                });
             }
             if (!getHasOccurrences(validated)) {
                 if (isEventInvitation) {
                     throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID);
                 }
-                throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.NO_OCCURRENCES, 'vevent', componentId);
+                throw new ImportEventError({
+                    errorType: IMPORT_EVENT_ERROR_TYPE.NO_OCCURRENCES,
+                    component: 'vevent',
+                    componentId,
+                    prodId,
+                    domain,
+                });
             }
         }
 
@@ -556,6 +666,11 @@ export const getSupportedEvent = ({
         if (isEventInvitation) {
             throw new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, { externalError: e });
         }
-        throw new ImportEventError(IMPORT_EVENT_ERROR_TYPE.VALIDATION_ERROR, 'vevent', componentId || '');
+        throw new ImportEventError({
+            errorType: IMPORT_EVENT_ERROR_TYPE.VALIDATION_ERROR,
+            component: 'vevent',
+            componentId: componentId || '',
+            // TODO check if can add prodId and domain
+        });
     }
 };
