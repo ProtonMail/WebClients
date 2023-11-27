@@ -4,6 +4,7 @@ import { useCache, useHandler } from '@proton/components';
 import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { RequireSome } from '@proton/shared/lib/interfaces/utils';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
 import { STATUS } from '@proton/shared/lib/models/cache';
 
@@ -23,7 +24,6 @@ import { useAppDispatch } from '../../logic/store';
 import { Conversation } from '../../models/conversation';
 import { Element } from '../../models/element';
 import { CacheEntry } from '../../models/tools';
-import { MARK_AS_STATUS } from '../actions/useMarkAs';
 import { useGetConversation } from '../conversation/useConversation';
 import { useGetElementByID } from '../mailbox/useElements';
 

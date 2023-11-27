@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { HotkeyTuple, useEventManager, useFolders, useHotkeys } from '@proton/components';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { KeyboardKey, MailSettings } from '@proton/shared/lib/interfaces';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import noop from '@proton/utils/noop';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
@@ -15,7 +16,7 @@ import { getFolderName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { MessageState } from '../../logic/messages/messagesTypes';
 import { Element } from '../../models/element';
-import { MARK_AS_STATUS, useMarkAs } from '../actions/useMarkAs';
+import { useMarkAs } from '../actions/useMarkAs';
 import { useMoveToFolder } from '../actions/useMoveToFolder';
 import { useStar } from '../actions/useStar';
 import { ComposeTypes } from '../composer/useCompose';
