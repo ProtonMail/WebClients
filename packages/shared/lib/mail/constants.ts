@@ -52,3 +52,8 @@ export enum ATTACHMENT_DISPOSITION {
     ATTACHMENT = 'attachment',
     INLINE = 'inline',
 }
+
+export enum MARK_AS_STATUS {
+    READ = 'read',
+    UNREAD = 'unread',
+}
