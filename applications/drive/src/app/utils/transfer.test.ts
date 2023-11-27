@@ -15,11 +15,13 @@ import {
     isTransferPaused,
     isTransferProgress,
     isTransferRetry,
+    isTransferSkipped,
 } from './transfer';
 
 describe('trasfer utils', () => {
     const allStatesList = [
         TransferState.Canceled,
+        TransferState.Skipped,
         TransferState.Done,
         TransferState.Error,
         TransferState.Finalizing,
@@ -37,7 +39,12 @@ describe('trasfer utils', () => {
         });
 
         allStatesList
-            .filter((state) => ![TransferState.Error, TransferState.Canceled, TransferState.Done].includes(state))
+            .filter(
+                (state) =>
+                    ![TransferState.Error, TransferState.Canceled, TransferState.Skipped, TransferState.Done].includes(
+                        state
+                    )
+            )
             .forEach((state) => {
                 it(`should return flase for transfer state ${state}`, () => {
                     expect(isTransferFinished({ state })).toBeFalsy();
@@ -125,6 +132,20 @@ describe('trasfer utils', () => {
             .forEach((state) => {
                 it(`should return flase for transfer state ${state}`, () => {
                     expect(isTransferCanceled({ state })).toBeFalsy();
+                });
+            });
+    });
+
+    describe('isTransferSkipped', () => {
+        it(`should return true for transfer state ${TransferState.Skipped}`, () => {
+            expect(isTransferSkipped({ state: TransferState.Skipped })).toBe(true);
+        });
+
+        allStatesList
+            .filter((state) => state !== TransferState.Skipped)
+            .forEach((state) => {
+                it(`should return false for transfer state ${state}`, () => {
+                    expect(isTransferSkipped({ state })).toBe(false);
                 });
             });
     });
