@@ -9,6 +9,7 @@ import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import { Folder } from '@proton/shared/lib/interfaces/Folder';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
+import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import range from '@proton/utils/range';
 
 import { filterToString, keywordToString, sortToString } from '../../../helpers/mailboxUrl';
@@ -17,7 +18,6 @@ import { ConversationLabel } from '../../../models/conversation';
 import { Element } from '../../../models/element';
 import { Event } from '../../../models/event';
 import { Filter, SearchParameters, Sort } from '../../../models/tools';
-import { Breakpoints } from '../../../models/utils';
 import MailboxContainer from '../MailboxContainer';
 
 loudRejection();
@@ -48,7 +48,7 @@ export interface SetupArgs extends PropsArgs {
 export const props = {
     labelID: 'labelID',
     userSettings: {} as UserSettings,
-    breakpoints: { isDesktop: true } as Breakpoints,
+    breakpoints: mockDefaultBreakpoints,
     elementID: undefined,
     onCompose: jest.fn(),
     isComposerOpened: false,

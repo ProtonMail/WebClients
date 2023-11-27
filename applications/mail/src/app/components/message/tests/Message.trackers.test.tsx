@@ -4,6 +4,7 @@ import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
 import { addApiMock } from '@proton/testing/lib/api';
+import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import noop from '@proton/utils/noop';
 
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
@@ -19,7 +20,6 @@ import { render } from '../../../helpers/test/render';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { initialize } from '../../../logic/messages/read/messagesReadActions';
 import { store } from '../../../logic/store';
-import { Breakpoints } from '../../../models/utils';
 import MessageView from '../MessageView';
 import { addressID, labelID, messageID } from './Message.test.helpers';
 
@@ -91,7 +91,7 @@ describe('message trackers', () => {
             message: { ID: messageID, AddressID: addressID } as Message,
             mailSettings: mailSettings as MailSettings,
             onBack: jest.fn(),
-            breakpoints: {} as Breakpoints,
+            breakpoints: mockDefaultBreakpoints,
             onFocus: noop,
             isComposerOpened: false,
         };
