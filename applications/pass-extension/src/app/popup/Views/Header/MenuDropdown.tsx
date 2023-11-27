@@ -137,7 +137,7 @@ export const MenuDropdown: VFC = () => {
                             </div>
                         )}
 
-                        <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
+                        <hr className="dropdown-item-hr my-1 mx-4" aria-hidden="true" />
 
                         <VaultMenu
                             dense
@@ -210,7 +210,7 @@ export const MenuDropdown: VFC = () => {
                         )}
 
                         <Submenu icon="notepad-checklist" label={c('Action').t`Advanced`} items={menu.advanced} />
-                        <hr className="dropdown-item-hr my-3 mx-4" aria-hidden="true" />
+                        <hr className="dropdown-item-hr my-2 mx-4" aria-hidden="true" />
                         <Submenu icon="bug" label={c('Action').t`Feedback`} items={menu.feedback} />
                         <Submenu icon="mobile" label={c('Action').t`Get mobile apps`} items={menu.download} />
 
