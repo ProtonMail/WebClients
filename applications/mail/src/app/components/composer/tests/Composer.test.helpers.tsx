@@ -2,10 +2,10 @@ import { act } from 'react-dom/test-utils';
 
 import { RenderResult, fireEvent } from '@testing-library/react';
 
-import { Breakpoints } from '@proton/components/hooks';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
+import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
 import { mergeMessages } from '../../../helpers/message/messages';
 import {
@@ -44,7 +44,7 @@ export const props = {
     composerID: 'ComposerID',
     messageID: ID,
     composerFrameRef: { current: document.body as HTMLDivElement },
-    breakpoints: {} as Breakpoints,
+    breakpoints: mockDefaultBreakpoints,
     onFocus: jest.fn(),
     onClose: jest.fn(),
     onCompose: jest.fn(),

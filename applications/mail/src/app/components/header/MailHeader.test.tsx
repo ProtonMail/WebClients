@@ -3,6 +3,7 @@ import { screen } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
 import {
     addApiMock,
@@ -14,7 +15,6 @@ import {
     render,
     tick,
 } from '../../helpers/test/helper';
-import { Breakpoints } from '../../models/utils';
 import MailHeader from './MailHeader';
 
 loudRejection();
@@ -25,7 +25,7 @@ const getProps = () => ({
     selectedIDs: [],
     location: getHistory().location,
     history: getHistory(),
-    breakpoints: {} as Breakpoints,
+    breakpoints: mockDefaultBreakpoints,
     onSearch: jest.fn(),
     expanded: true,
     onToggleExpand: jest.fn(),
