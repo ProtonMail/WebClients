@@ -196,7 +196,7 @@ export const createAuthService = (config: AuthServiceConfig) => {
             const localID = authStore.getLocalID();
             const userID = authStore.getUserID();
 
-            if (!options?.soft) void api({ ...revoke(), silent: true });
+            if (!options?.soft) void api({ ...revoke(), silent: true }).catch(noop);
 
             authStore.clear();
             api.unsubscribe();
