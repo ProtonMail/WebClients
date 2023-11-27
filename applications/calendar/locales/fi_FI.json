@@ -2906,6 +2906,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "Sovellus ei ole tällä hetkellä käytettävissä"
+      ],
       "Error: ${ errorMessage }": [
         "Virhe: ${ errorMessage }"
       ],
@@ -2914,6 +2917,9 @@
       ],
       "Oops, something went wrong": [
         "Hups, jotain meni pieleen"
+      ],
+      "Open in browser": [
+        "Avaa selaimessa"
       ],
       "Please refresh the page or try again later.": [
         "Päivitä sivu tai yritä myöhemmin uudelleen."
@@ -5180,6 +5186,9 @@
       ],
       "Custom email domains": [
         "Omat sähköpostiverkkotunnukset"
+      ],
+      "Custom snooze time": [
+        "Oma torkutusaika"
       ],
       "Hide-my-email aliases": [
         "Hide-my-email-aliakset"
