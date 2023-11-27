@@ -14,7 +14,8 @@ import { getParsedSignedKeyList } from '@proton/shared/lib/keys';
 import { KT_SKL_VERIFICATION_CONTEXT } from '../constants';
 import { NO_KT_DOMAINS } from '../constants/domains';
 import { fetchProof } from '../helpers/apiHelpers';
-import { KeyTransparencyError, getEmailDomain, throwKTError } from '../helpers/utils';
+import { KeyTransparencyError, StaleEpochError, getEmailDomain, throwKTError } from '../helpers/utils';
+import { Proof } from '../interfaces';
 import {
     verifyProofOfAbsenceForAllRevision,
     verifyProofOfAbsenceForRevision,
@@ -207,26 +208,38 @@ const verifyPublicKeys = async (
             }
         }
 
-        let epoch = await getLatestEpoch(true);
+        let epoch = await getLatestEpoch();
+        // Fetch proofs with cached epoch.
+        // If the fetch fails with StaleEpochError retry with a freshly fetched epoch.
+        const fetchProofs = async (retries: number): Promise<{ proof: Proof; nextRevisionProof?: Proof }> => {
+            try {
+                if (signedKeyList) {
+                    const [proof, nextRevisionProof] = await Promise.all([
+                        fetchProof(epoch.EpochID, identifier, signedKeyList.Revision, api),
+                        fetchProof(epoch.EpochID, identifier, signedKeyList.Revision + 1, api),
+                    ]);
+                    return { proof, nextRevisionProof };
+                } else {
+                    const proof = await fetchProof(epoch.EpochID, identifier, 1, api);
+                    return { proof };
+                }
+            } catch (error) {
+                if (error instanceof StaleEpochError && retries > 0) {
+                    epoch = await getLatestEpoch(true);
+                    return fetchProofs(retries - 1);
+                }
+                throw error;
+            }
+        };
 
+        const proofs = await fetchProofs(1);
         if (!signedKeyList) {
-            const proof = await fetchProof(epoch.EpochID, identifier, 1, api);
-            await verifyProofOfAbsenceForAllRevision(proof, identifier, epoch.TreeHash);
+            await verifyProofOfAbsenceForAllRevision(proofs.proof, identifier, epoch.TreeHash);
             return { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS };
         }
 
-        if (epoch.EpochID < signedKeyList.MinEpochID!) {
-            // Cache is too old, refetch the last epoch
-            epoch = await getLatestEpoch(true);
-        }
-
-        const [proof, nextRevisionProof] = await Promise.all([
-            fetchProof(epoch.EpochID, identifier, signedKeyList.Revision, api),
-            fetchProof(epoch.EpochID, identifier, signedKeyList.Revision + 1, api),
-        ]);
-
         const nextProofVerification = verifyProofOfAbsenceForRevision(
-            nextRevisionProof,
+            proofs.nextRevisionProof!,
             identifier,
             epoch.TreeHash,
             signedKeyList.Revision + 1
@@ -236,14 +249,14 @@ const verifyPublicKeys = async (
             await Promise.all([
                 sklVerificationPromise,
                 nextProofVerification,
-                verifyProofOfExistence(proof, identifier, epoch.TreeHash, signedKeyList),
+                verifyProofOfExistence(proofs.proof, identifier, epoch.TreeHash, signedKeyList),
             ]);
             return { status: KT_VERIFICATION_STATUS.VERIFIED_KEYS };
         } else {
             await Promise.all([
                 sklVerificationPromise,
                 nextProofVerification,
-                verifyProofOfObsolescence(proof, identifier, epoch.TreeHash, signedKeyList),
+                verifyProofOfObsolescence(proofs.proof, identifier, epoch.TreeHash, signedKeyList),
             ]);
             return { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS };
         }
