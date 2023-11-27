@@ -58,6 +58,46 @@ export const Basic = () => {
     return <Tabs tabs={tabs} value={index} onChange={setIndex} />;
 };
 
+export const ModernVariant = () => {
+    const tabs = [
+        {
+            title: 'Bulbasaur',
+            content: (
+                <div className="p-4">
+                    <img src={bulbasaur} alt="Bulbasaur" />
+                    <p>
+                        There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows
+                        larger.
+                    </p>
+                </div>
+            ),
+        },
+        {
+            title: 'Charmander',
+            content: (
+                <div className="p-4">
+                    <img src={charmander} alt="Charmander" />
+                    <p>
+                        It has a preference for hot things. When it rains, steam is said to spout from the tip of its
+                        tail.
+                    </p>
+                </div>
+            ),
+        },
+        {
+            title: 'Squirtle',
+            content: (
+                <div className="p-4">
+                    <img src={squirtle} alt="Squirtle" />
+                    <p>When it retracts its long neck into its shell, it squirts out water with vigorous force.</p>
+                </div>
+            ),
+        },
+    ];
+    const [index, setIndex] = useState(0);
+    return <Tabs tabs={tabs} variant="modern" fullWidth value={index} onChange={setIndex} />;
+};
+
 const toggles = ['fullWidth', 'stickyTabs'] as const;
 
 export const Sandbox = () => {
