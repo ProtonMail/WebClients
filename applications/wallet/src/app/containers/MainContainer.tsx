@@ -5,7 +5,7 @@ import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/
 
 import { PrivateWalletLayout } from '../components';
 import { BitcoinTransferContainer } from './BitcoinTransferContainer';
-import { DashboardContainer } from './DashboardContainer';
+import { WalletDashboardContainer } from './WalletDashboardContainer';
 import { WalletsDashboardContainer } from './WalletsDashboardContainer';
 
 const MainContainer = () => {
@@ -19,11 +19,11 @@ const MainContainer = () => {
                         <Route path={'/transfer'}>
                             <BitcoinTransferContainer />
                         </Route>
-                        <Route path={'/wallets'}>
-                            <WalletsDashboardContainer />
+                        <Route path={'/wallets/:walletId'}>
+                            <WalletDashboardContainer />
                         </Route>
                         <Route path={'*'}>
-                            <DashboardContainer />
+                            <WalletsDashboardContainer />
                         </Route>
                     </Switch>
                 </PrivateWalletLayout>

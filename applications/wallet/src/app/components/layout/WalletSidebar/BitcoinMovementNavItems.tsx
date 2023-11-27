@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { SidebarListItem, SidebarListItemLink } from '@proton/components/components';
+import { SidebarListItem } from '@proton/components/components';
 
 import { SidebarItemContent } from './SidebarItemContent';
 
@@ -11,18 +11,20 @@ export const BitcoinMovementNavItems = () => {
     return (
         <>
             <SidebarListItem className="my-5">
-                <SidebarListItemLink to="/buy">
-                    <SidebarItemContent icon="money-bills" data-testid="wallet-sidebar:buy" label={labelBuyBitcoin} />
-                </SidebarListItemLink>
+                <SidebarItemContent
+                    icon="money-bills"
+                    to="/buy"
+                    data-testid="wallet-sidebar:buy"
+                    label={labelBuyBitcoin}
+                />
             </SidebarListItem>
             <SidebarListItem>
-                <SidebarListItemLink to="/transfer">
-                    <SidebarItemContent
-                        icon="credit-card"
-                        data-testid="wallet-sidebar:transfer"
-                        label={labelTransferBitcoin}
-                    />
-                </SidebarListItemLink>
+                <SidebarItemContent
+                    icon="credit-card"
+                    to="/transfer"
+                    data-testid="wallet-sidebar:transfer"
+                    label={labelTransferBitcoin}
+                />
             </SidebarListItem>
         </>
     );
