@@ -742,8 +742,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Ušetrite so zľavami Black Friday na vysokorýchlostnú švajčiarsku sieť VPN"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Ušetrite so Cyber Week zľavami na vysokorýchlostnú švajčiarsku sieť VPN"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Ušetrite s koncoročnou ponukou na vysokorýchlostnú švajčiarsku sieť VPN"
+      ],
       "Select your Black Friday offer": [
         "Vyberte si ponuku Black Friday"
+      ],
+      "Select your Cyber Week offer": [
+        "Vyberte si svoju Cyber Week ponuku"
+      ],
+      "Select your End of Year offer": [
+        "Vyberte si svoju koncoročnú ponuku"
       ]
     },
     "bf2023: info": {
@@ -1974,7 +1986,7 @@
         "Neplatný kód"
       ],
       "Invalid expiration date": [
-        "Neplatný dátum expirácie"
+        "Neplatný koniec platnosti"
       ],
       "Invalid invitation link": [
         "Neplatný odkaz pozvánky"
@@ -1987,9 +1999,6 @@
       ],
       "Name does not match": [
         "Meno sa nezhoduje"
-      ],
-      "Name on card required": [
-        "Meno držiteľa karty je povinné"
       ],
       "Not a valid number": [
         "Neplatné číslo"
@@ -2059,9 +2068,6 @@
       ],
       "Tab closed": [
         "Karta zatvorená"
-      ],
-      "The browser you are using does not allow the payment to be fully authorized. Please use a different browser or sign in via a computer.": [
-        "Prehliadač, ktorý používate, neumožňuje úplnú autorizáciu platby. Použite iný prehliadač, alebo sa prihláste pomocou počítača."
       ],
       "The email addresses do not match": [
         "Emailové adresy sa nezhodujú"
@@ -3138,9 +3144,6 @@
       "for choosing ${ product }": [
         "za výber ${ product }"
       ],
-      "For Visa, MasterCard and Discover, the 3 digits on the back of your card. For American Express, the 4 digits on the front of your card.": [
-        "V prípade kariet Visa, MasterCard a Discover, 3 číslice na zadnej strane karty. V prípade American Express, 4 číslice na prednej strane vašej karty."
-      ],
       "Free forever": [
         "Navždy zadarmo"
       ],
@@ -3613,7 +3616,7 @@
         "Môže to trvať nejaký čas. Nezatvárajte prosím túto stránku, ani sa neodpájajte od internetu."
       ],
       "This file is too large to preview": [
-        "Tento súbor je príliš veľký na zobrazenie ukážky"
+        "Tento súbor je príliš veľký na zobrazenie náhľadu"
       ],
       "This user is currently responsible for payments for your organization. By demoting this member, you will become responsible for payments for your organization.": [
         "Tento užívateľ je aktuálne zodpovedný za platby vo vašej organizácii. Znížením úrovne tohto užívateľa sa stanete zodpovedným za platby vo vašej organizácii práve vy."
@@ -4289,9 +4292,6 @@
       "Expiration (${ patternExpiration })": [
         "Skončenie platnosti (${ patternExpiration })"
       ],
-      "Expiration date": [
-        "Koniec platnosti "
-      ],
       "Expires": [
         "Exspiruje"
       ],
@@ -4333,9 +4333,6 @@
       ],
       "Name and address": [
         "Meno a adresa"
-      ],
-      "Name on card": [
-        "Meno na karte"
       ],
       "NAT-PMP (Port Forwarding)": [
         "NAT-PMP (presmerovanie portov)"
@@ -4442,14 +4439,8 @@
       "Reveal password": [
         "Odkryť heslo"
       ],
-      "Security code": [
-        "Bezpečnostný kód"
-      ],
       "Security code (${ codeName })": [
         "Bezpečnostný kód (${ codeName })"
-      ],
-      "Select your country": [
-        "Vyberte vašu krajinu"
       ],
       "Select your plan": [
         "Vyberte plán"
@@ -5812,9 +5803,6 @@
       ],
       "Select a reason": [
         "Vyberte dôvod"
-      ],
-      "Thomas Anderson": [
-        "Ján Kováč"
       ]
     },
     "plan customizer, ips": {
@@ -7413,9 +7401,6 @@
       ],
       "Unlock your mailbox": [
         "Odomknúť vašu poštovú schránku"
-      ],
-      "Unsupported browser": [
-        "Nepodporovaný prehliadač"
       ],
       "Upgrade your network protection with dedicated servers": [
         "Vylepšite ochranu vašej siete pomocou dedikovaných serverov"
