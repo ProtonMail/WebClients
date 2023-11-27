@@ -68,12 +68,12 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                 >
                     <span className="sr-only">{next}</span>
                 </ToolbarButton>
-                <span
+                <h2
                     className="hidden md:block current-range ml-2 my-auto text-bold text-xl text-ellipsis"
                     title={currentRange}
                 >
                     {currentRange}
-                </span>
+                </h2>
             </span>
         </>
     );
