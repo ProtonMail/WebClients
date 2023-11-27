@@ -10,6 +10,7 @@ import { selectAliasDetails, selectAliasOptions, selectItemByShareIdAndId } from
 import type { RootSagaOptions } from '@proton/pass/store/types';
 import type { ItemEditIntent, ItemRevision, ItemRevisionContentsResponse } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
+import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
 import { isEqual } from '@proton/pass/utils/set/is-equal';
 
 function* editMailboxesWorker(aliasEditIntent: ItemEditIntent<'alias'>) {
@@ -64,8 +65,9 @@ function* itemEditWorker(
         void telemetry?.push(createTelemetryEvent(TelemetryEventName.ItemUpdate, {}, { type: item.data.type }));
 
         if (item.data.type === 'login' && editIntent.type === 'login') {
-            const prevTotp = editIntent.content.totpUri;
-            const nextTotp = item.data.content.totpUri;
+            const prevTotp = deobfuscate(editIntent.content.totpUri);
+            const nextTotp = deobfuscate(item.data.content.totpUri);
+
             if (nextTotp && prevTotp !== nextTotp) {
                 void telemetry?.push(createTelemetryEvent(TelemetryEventName.TwoFAUpdate, {}, {}));
             }
