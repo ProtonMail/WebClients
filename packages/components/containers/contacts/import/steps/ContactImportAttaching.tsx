@@ -2,6 +2,7 @@ import { ChangeEvent, Dispatch, FormEvent, SetStateAction } from 'react';
 
 import { c } from 'ttag';
 
+import { EASY_SWITCH_SEARCH_SOURCES } from '@proton/activation/src/interface';
 import { Button, Href } from '@proton/atoms';
 import {
     Alert,
@@ -148,8 +149,11 @@ const ContactImportAttaching = ({ model, setModel, onClose }: Props) => {
     };
 
     const easySwitchLink = (
-        <SettingsLink app={APPS.PROTONMAIL} path="/easy-switch" target="_blank">{c('description')
-            .t`use the Easy Switch import assistant`}</SettingsLink>
+        <SettingsLink
+            app={APPS.PROTONMAIL}
+            path={`/easy-switch?source=${EASY_SWITCH_SEARCH_SOURCES.CONTACT_IMPORT}`}
+            target="_blank"
+        >{c('description').t`use the Easy Switch import assistant`}</SettingsLink>
     );
 
     const learnMoreLink = <Href href={getKnowledgeBaseUrl('/adding-contacts')}>{c('Link').t`Learn more`}</Href>;
