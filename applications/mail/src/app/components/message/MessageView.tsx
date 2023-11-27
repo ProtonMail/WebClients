@@ -16,6 +16,7 @@ import { FeatureCode, useFeature, useKeyTransparencyContext } from '@proton/comp
 import createScrollIntoView from '@proton/components/helpers/createScrollIntoView';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Label } from '@proton/shared/lib/interfaces/Label';
+import { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import { hasAttachments, isDraft, isOutbox, isScheduled, isSent } from '@proton/shared/lib/mail/messages';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -24,7 +25,7 @@ import { LOAD_RETRY_COUNT } from '../../constants';
 import { useOnCompose } from '../../containers/ComposeProvider';
 import { isUnread } from '../../helpers/elements';
 import { MessageViewIcons, getReceivedStatusIcon, getSentStatusIconInfo } from '../../helpers/message/icon';
-import { MARK_AS_STATUS, useMarkAs } from '../../hooks/actions/useMarkAs';
+import { useMarkAs } from '../../hooks/actions/useMarkAs';
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { useQuickReplyFocus } from '../../hooks/composer/useQuickReplyFocus';
 import { useInitializeMessage } from '../../hooks/message/useInitializeMessage';
