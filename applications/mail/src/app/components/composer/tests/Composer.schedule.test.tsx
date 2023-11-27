@@ -99,8 +99,8 @@ describe('Composer scheduled messages', () => {
 
     describe('Dropdown', () => {
         it('Should contain default fields', async () => {
-            // Sunday 1 2023
-            const fakeNow = new Date(2023, 0, 1, 10, 0, 0);
+            // Monday 2 2023
+            const fakeNow = new Date(2023, 0, 2, 10, 0, 0);
             jest.useFakeTimers().setSystemTime(fakeNow.getTime());
 
             const { composerID } = setupMessage('Subject', [user as Recipient]);
@@ -118,10 +118,33 @@ describe('Composer scheduled messages', () => {
             // Scheduled At should not be there
             expect(screen.queryByTestId('composer:schedule-send-as-scheduled')).toBeNull();
 
-            expect(screen.queryByTestId('composer:schedule-send:tomorrow')).toHaveTextContent('January 2nd at 8:00 AM');
+            expect(screen.queryByTestId('composer:schedule-send:tomorrow')).toHaveTextContent('January 3rd at 8:00 AM');
             expect(screen.queryByTestId('composer:schedule-send:next-monday')).toHaveTextContent(
-                'January 2nd at 8:00 AM'
+                'January 9th at 8:00 AM'
             );
+        });
+
+        it('Should not contain "next monday" entry on "sunday"', async () => {
+            // Sunday 1 2023
+            const fakeNow = new Date(2023, 0, 1, 10, 0, 0);
+            jest.useFakeTimers().setSystemTime(fakeNow.getTime());
+
+            const { composerID } = setupMessage('Subject', [user as Recipient]);
+            setupTest({ hasPaidMail: false, featureFlagActive: true });
+
+            await render(<Composer {...props} composerID={composerID} />, false);
+
+            const dropdownButton = screen.getByTestId('composer:scheduled-send:open-dropdown');
+            fireEvent.click(dropdownButton);
+
+            expect(screen.queryByTestId('composer:schedule-send:dropdown-title')).toBeTruthy();
+            expect(screen.queryByTestId('composer:schedule-send:tomorrow')).toBeTruthy();
+            expect(screen.queryByTestId('composer:schedule-send:next-monday')).toBeNull();
+            expect(screen.queryByTestId('composer:schedule-send:custom')).toBeTruthy();
+            // Scheduled At should not be there
+            expect(screen.queryByTestId('composer:schedule-send-as-scheduled')).toBeNull();
+
+            expect(screen.queryByTestId('composer:schedule-send:tomorrow')).toHaveTextContent('January 2nd at 8:00 AM');
         });
 
         it.each`
