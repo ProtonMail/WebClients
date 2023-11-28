@@ -66,7 +66,10 @@ const processCreditCardItem = (item: DashlanePaymentItem): ItemImportIntent<'cre
         cardholderName: item.account_name,
         number: item.cc_number,
         verificationNumber: item.code,
-        expirationDate: `${item.expiration_month}${item.expiration_year}`,
+        expirationDate:
+            item.expiration_month && item.expiration_year
+                ? `${item.expiration_month.padStart(2, '0')}${item.expiration_year}`
+                : '',
     });
 
 const parseDashlaneCSV = async <T extends DashlaneItem>(options: {
