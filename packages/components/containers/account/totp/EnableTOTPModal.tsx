@@ -15,6 +15,7 @@ import { getTOTPData } from '@proton/shared/lib/settings/twoFactor';
 import noop from '@proton/utils/noop';
 
 import {
+    Copy,
     Form,
     InlineLinkButton,
     InputFieldTwo,
@@ -138,8 +139,14 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
         };
 
         if (step === STEPS.SCAN_CODE && !manualCode) {
+            // made button explicitly focusable to fix an issue for a blind user
             const switchButton = (
-                <InlineLinkButton data-testid="totp:manual-button" key="0" onClick={() => setManualCode(true)}>
+                <InlineLinkButton
+                    tabIndex={0}
+                    data-testid="totp:manual-button"
+                    key="0"
+                    onClick={() => setManualCode(true)}
+                >
                     {c('Info').t`Enter key manually instead`}
                 </InlineLinkButton>
             );
@@ -167,6 +174,9 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                 </InlineLinkButton>
             );
 
+            // added spaces to get a better vocalization for blind users
+            const labelCode = sharedSecret.split('').join(' ');
+
             return {
                 section: (
                     <>
@@ -175,21 +185,41 @@ const EnableTOTPModal = ({ onClose, ...rest }: ModalProps) => {
                                 .jt`Manually enter this information into your two-factor authentication device to set up your account. ${switchButton}.`}
                         </div>
                         <div>
-                            <div className="flex flex-justify-space-between mb-2">
-                                <div className="w-1/5">{c('Label').t`Key`}</div>
-                                <div className="w-4/5 flex-align-self-center text-bold">
-                                    <code data-testid="totp:secret-key">{sharedSecret}</code>
+                            <div className="flex flex-column sm:flex-row sm:flex-align-items-center flex-nowrap max-w-full mb-2">
+                                <div className="sm:w-1/5 my-auto" id="label-key-desc">{c('Label').t`Key`}</div>
+                                <div className="sm:w-4/5 flex flex-align-items-center text-bold">
+                                    {/* eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex */}
+                                    <code
+                                        className="text-ellipsis flex-item-fluid py-2"
+                                        data-testid="totp:secret-key"
+                                        aria-label={labelCode}
+                                        aria-describedby="label-key-desc"
+                                        tabIndex={0}
+                                        title={sharedSecret}
+                                    >
+                                        {sharedSecret}
+                                    </code>
+                                    <Copy
+                                        className="ml-2 flex-item-noshrink"
+                                        tooltipText={c('Action').t`Copy key to the clipboard`}
+                                        value={sharedSecret}
+                                        onCopy={() =>
+                                            createNotification({
+                                                text: c('Notification').t`Key copied to the clipboard`,
+                                            })
+                                        }
+                                    />
                                 </div>
                             </div>
-                            <div className="flex flex-justify-space-between mb-2">
-                                <div className="w-1/5">{c('Label').t`Interval`}</div>
-                                <div className="w-4/5 flex-align-self-center text-bold">
+                            <div className="flex flex-column sm:flex-row sm:flex-align-items-center flex-nowrap max-w-full  mb-4">
+                                <div className="sm:w-1/5 my-auto">{c('Label').t`Interval`}</div>
+                                <div className="sm:w-4/5 text-bold">
                                     <code>{period}</code>
                                 </div>
                             </div>
-                            <div className="flex flex-justify-space-between mb-2">
-                                <div className="w-1/5">{c('Label').t`Digits`}</div>
-                                <div className="w-4/5 flex-align-self-center text-bold">
+                            <div className="flex flex-column sm:flex-row sm:flex-align-items-center flex-nowrap max-w-full  mb-4">
+                                <div className="sm:w-1/5 my-auto">{c('Label').t`Digits`}</div>
+                                <div className="sm:w-4/5 text-bold">
                                     <code>{digits}</code>
                                 </div>
                             </div>
