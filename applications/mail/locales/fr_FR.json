@@ -430,14 +430,8 @@
       "Get verification code": [
         "Obtenir un code de vérification"
       ],
-      "Go to first page": [
-        "Aller à la première page"
-      ],
       "Go to label": [
         "Afficher le label"
-      ],
-      "Go to last page": [
-        "Aller à la dernière page"
       ],
       "Go to next page": [
         "Aller à la page suivante"
@@ -7606,20 +7600,36 @@
         "Sélectionnez ce à quoi ${ BRAND_NAME } peut accéder : afficher vos messages électroniques et leurs paramètres, afficher et télécharger vos contacts, afficher et télécharger tous les agendas auxquels vous accédez à partir de Google Agenda."
       ]
     },
-    "Onboarding": {
-      "Welcome to ${ appName }": [
-        "Bienvenue dans ${ appName }"
+    "Onboarding modal": {
+      "Automatically forward emails": [
+        "Transférez automatiquement vos messages."
       ],
-      "Where privacy and security meet productivity and ease of use.": [
-        "La protection de la vie privée et la sécurité associées à la productivité et à la facilité d'utilisation."
-      ]
-    },
-    "Onboarding Action": {
+      "Block unsavory senders": [
+        "Bloquer les expéditeurs indésirables"
+      ],
+      "Congratulations on choosing privacy": [
+        "Bienvenue sur un internet libre et respectueux de votre vie privée "
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "Un chiffrement si puissant que personne d'autre que vous et vos destinataires ne peut consulter vos messages. ${ kbLinkEncryption }"
+      ],
+      "For your eyes only": [
+        "Strictement confidentiel"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "Transférez les messages Gmail vers votre boite de réception."
+      ],
       "Next": [
         "Suivant"
       ],
-      "Start using ${ appName }": [
-        "Commencer à utiliser ${ appName }"
+      "Protection from trackers": [
+        "Protection contre les traqueurs"
+      ],
+      "Skip": [
+        "Ignorer"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "Nous empêchons les professionnels de la publicité et les collecteurs de données d'établir votre profil. ${ kbLinkPrivacy }"
       ]
     },
     "Onboarding Proton": {
@@ -7629,17 +7639,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Découvrez tous les services ${ BRAND_NAME }"
       ],
-      "More theming options are available in your account Settings > Appearance.": [
-        "D'autres thèmes sont disponibles dans vos paramètres de compte, dans la section Apparence."
-      ],
-      "Select a theme": [
-        "Choisissez un thème"
+      "Pick a theme": [
+        "Sélectionner un thème"
       ],
       "Set up your organization": [
         "Configurez votre organisation"
       ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Utilisez le sélecteur d'applications en haut à gauche pour accéder à tous les services ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et ${ DRIVE_SHORT_APP_NAME }."
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Utilisez le sélecteur d'applications en haut à gauche pour accéder à tous les services ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Vous pouvez modifier votre thème à tout moment dans vos paramètres."
       ]
     },
     "Online accounts": {

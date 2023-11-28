@@ -736,8 +736,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Faites des économies sur le VPN suisse ultra-rapide grâce aux offres Black Friday"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Faites des économies sur le VPN suisse ultra rapide grâce aux offres Cyber Week"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Faites des économies sur le VPN suisse ultra rapide grâce aux offres de fin d'année"
+      ],
       "Select your Black Friday offer": [
         "Sélectionnez votre offre Black Friday"
+      ],
+      "Select your Cyber Week offer": [
+        "Choisissez votre offre Cyber Week"
+      ],
+      "Select your End of Year offer": [
+        "Choisissez votre offre de fin d'année"
       ]
     },
     "bf2023: info": {
@@ -2926,6 +2938,9 @@
       "By leaving now, changes may not be saved": [
         "En quittant maintenant, les modifications ne seront peut-être pas sauvegardées."
       ],
+      "Cancel anytime": [
+        "Annulez quand vous le voulez"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Cliquez sur Demander un nouveau code pour envoyer un nouveau code de vérification à ${ strong }. Si ce numéro de téléphone n'est pas correct, cliquez sur Modifier pour le corriger."
       ],
@@ -3418,9 +3433,6 @@
       ],
       "Session timed out": [
         "La session a expiré."
-      ],
-      "Setting up your Drive": [
-        "Configuration de votre Drive"
       ],
       "Setting up your organization": [
         "Configuration de votre organisation"
@@ -5562,13 +5574,51 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Conserver cet abonnement"
+      ],
       "Start using ${ appName }": [
         "Commencer à utiliser ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Changer d'abonnement"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Offre à durée limitée"
+      ],
+      "Recommended": [
+        "Recommandé"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } par mois"
+      ],
       "Creating your account": [
         "Création de votre compte"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Pour seulement **${ relativePrice } par mois** de plus, vous bénéficiez de tous les services premium de ${ BRAND_NAME } !"
+      ],
+      "Free forever": [
+        "Gratuit pour toujours"
+      ],
+      "Includes:": [
+        "Comprend :"
+      ],
+      "per month": [
+        "par mois"
+      ],
+      "per month, billed annually": [
+        "par mois (facturation annuelle)"
+      ],
+      "per month, billed every month": [
+        "par mois (facturation mensuelle)"
+      ],
+      "per month, billed every two years": [
+        "par mois (facturation tous les deux ans)"
       ],
       "Preparing your Recovery Kit": [
         "Préparation de votre kit de récupération"
@@ -5578,6 +5628,9 @@
       ],
       "Verifying your payment": [
         "Vérification de votre paiement"
+      ],
+      "You currently have": [
+        "Votre abonnement actuel"
       ]
     },
     "pass_signup_2023: Title": {

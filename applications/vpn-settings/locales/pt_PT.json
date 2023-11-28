@@ -3214,9 +3214,6 @@
       "Session timed out": [
         "A sessão expirou."
       ],
-      "Setting up your Drive": [
-        "A configurar o seu Drive"
-      ],
       "Setting up your organization": [
         "A configurar a sua organização"
       ],
@@ -5263,11 +5260,46 @@
     "pass_signup_2023: Action": {
       "Start using ${ appName }": [
         "Começar a utilizar o ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Actualizar o meu plano"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Oferta por tempo limitado"
+      ],
+      "Recommended": [
+        "Recomendado"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } por mês"
+      ],
       "Creating your account": [
         "Criação da sua conta"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Por apenas **${ relativePrice } adicionais por mês**, tem acesso a todos os serviços premium da ${ BRAND_NAME }"
+      ],
+      "Free forever": [
+        "Gratuito para sempre"
+      ],
+      "Includes:": [
+        "Incluí:"
+      ],
+      "per month": [
+        "por mês"
+      ],
+      "per month, billed annually": [
+        "por mês, faturado anualmente"
+      ],
+      "per month, billed every month": [
+        "por mês, faturado a cada mês"
+      ],
+      "per month, billed every two years": [
+        "por mês, faturado a cada dois anos"
       ],
       "Preparing your Recovery Kit": [
         "Preparação do kit de recuperação"
@@ -5277,6 +5309,9 @@
       ],
       "Verifying your payment": [
         "Verificação do seu pagamento"
+      ],
+      "You currently have": [
+        "Tem atualmente"
       ]
     },
     "pass_signup_2023: Title": {

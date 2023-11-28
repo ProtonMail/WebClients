@@ -2141,6 +2141,9 @@
       "Something went wrong": [
         "Jotain meni pieleen"
       ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Käyttääksesi ${ MAIL_APP_NAME } tai ${ CALENDAR_APP_NAME }, vaihda selainversioon."
+      ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Sivua ei voitu ladata. Päivitä sivu tai tarkista Internet-yhteytesi."
       ]
@@ -2920,6 +2923,9 @@
       "By leaving now, changes may not be saved": [
         "Jos poistut nyt, muutoksia ei tallenneta"
       ],
+      "Cancel anytime": [
+        "Peru milloin tahansa"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
       ],
@@ -3412,9 +3418,6 @@
       ],
       "Session timed out": [
         "Istunto aikakatkaistiin"
-      ],
-      "Setting up your Drive": [
-        "Määritetään Driveasi"
       ],
       "Setting up your organization": [
         "Määritetään organisaatiotasi"
@@ -5048,6 +5051,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Hanki rajattomasti aliaksia ${ BRAND_NAME }in SimpleLogin-palvelusta"
       ],
+      "Snooze messages and get reminded when you want": [
+        "Torkuta viestejä ja saa muistutuksia kun haluat"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä"
       ],
@@ -5553,13 +5559,51 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Pidä tämä tilaus"
+      ],
       "Start using ${ appName }": [
         "Aloita ${ appName } -sovelluksen käyttö"
+      ],
+      "Upgrade my plan": [
+        "Päivitä tilaukseni"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Vain rajoitetun ajan"
+      ],
+      "Recommended": [
+        "Suositus"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } kuukaudessa"
+      ],
       "Creating your account": [
         "Tiliäsi luodaan"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Saat kaikki ${ BRAND_NAME } premium-palvelut käyttöösi vain **${ relativePrice } kuukausikorotuksella**!"
+      ],
+      "Free forever": [
+        "Ikuisesti ilmainen"
+      ],
+      "Includes:": [
+        "Sisältää:"
+      ],
+      "per month": [
+        "kuukaudessa"
+      ],
+      "per month, billed annually": [
+        "kuukaudessa, laskutetaan vuosittain"
+      ],
+      "per month, billed every month": [
+        "kuukaudessa, laskutetaan kuukausittain"
+      ],
+      "per month, billed every two years": [
+        "kuukaudessa, laskutetaan kahden vuoden välein"
       ],
       "Preparing your Recovery Kit": [
         "Palautuspakettiasi valmistellaan"
@@ -5569,6 +5613,9 @@
       ],
       "Verifying your payment": [
         "Maksuasi vahvistetaan"
+      ],
+      "You currently have": [
+        "Sinulla on tällä hetkellä"
       ]
     },
     "pass_signup_2023: Title": {

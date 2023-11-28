@@ -433,14 +433,8 @@
       "Get verification code": [
         "Obținere cod de verificare"
       ],
-      "Go to first page": [
-        "Prima pagină"
-      ],
       "Go to label": [
         "Accesare etichetă"
-      ],
-      "Go to last page": [
-        "Ultima pagină"
       ],
       "Go to next page": [
         "Pagina următoare"
@@ -7729,20 +7723,39 @@
         "Selectați ce poate accesa ${ BRAND_NAME }: accesare mesaje e-mail și setări, afișare și descărcare contacte, afișare și descărcare toate agendele pe care le accesați din Google Agenda."
       ]
     },
-    "Onboarding": {
-      "Welcome to ${ appName }": [
-        "Bun venit la ${ appName }"
+    "Onboarding modal": {
+      "Automatically forward emails": [
+        "Redirecționare automată mesaje"
       ],
-      "Where privacy and security meet productivity and ease of use.": [
-        "Unde confidențialitatea și securitatea se întâlnesc cu productivitatea și ușurința utilizării."
-      ]
-    },
-    "Onboarding Action": {
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "Blocați permanent mesajele de la escroci. ${ kbLinkSender }"
+      ],
+      "Block unsavory senders": [
+        "Blocați expeditorii nesăbuiți"
+      ],
+      "Congratulations on choosing privacy": [
+        "Felicitări pentru că ați ales o viață privată"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "Criptare atât de puternică, încât doar dvs. și destinatarii doriți pot vedea conținutul acestora. ${ kbLinkEncryption }"
+      ],
+      "For your eyes only": [
+        "Doar pentru dumneavoastră"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "Redirecționați mesajele de pe Gmail către adresa personală."
+      ],
       "Next": [
         "Înainte"
       ],
-      "Start using ${ appName }": [
-        "Începeți să utilizați ${ appName }"
+      "Protection from trackers": [
+        "Protecție împotriva monitorizării"
+      ],
+      "Skip": [
+        "Omitere"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "Blocăm agenții de publicitate și colectorii de date pentru a-i împiedica să vă facă un profil. ${ kbLinkPrivacy }"
       ]
     },
     "Onboarding Proton": {
@@ -7752,17 +7765,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Descoperiți toate serviciile ${ BRAND_NAME }"
       ],
-      "More theming options are available in your account Settings > Appearance.": [
-        "Mai multe opțiuni pentru teme sunt disponibile în Setări > Aspect."
-      ],
-      "Select a theme": [
-        "Selectaţi o temă"
+      "Pick a theme": [
+        "Alegeți o temă"
       ],
       "Set up your organization": [
         "Setați organizația"
       ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Folosiți meniul de selectare al aplicațiilor din stânga sus pentru a accesa toate serviciile ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME }."
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Folosiți meniul de selectare al aplicațiilor din stânga sus pentru a accesa toate serviciile ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Veți putea să schimbați tema oricând din setări."
       ]
     },
     "Online accounts": {
@@ -8662,6 +8675,12 @@
       ],
       "Search just got smarter and faster": [
         "Căutarea a devenit mai rapidă și mai inteligentă"
+      ],
+      "Set when an email should reappear in your inbox with the new snooze feature.": [
+        "Setați când un e-mail ar trebui să reapară în folderul de mesaje primite cu noua funcție de amânare."
+      ],
+      "Snooze it for later": [
+        "Amânare"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Mesajele nedorite și din gunoi sunt excluse acum automat din opțiunea „Toate mesajele”. ${ settingsLink }"

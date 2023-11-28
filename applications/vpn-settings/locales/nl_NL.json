@@ -2917,6 +2917,9 @@
       "By leaving now, changes may not be saved": [
         "Door nu te verlaten, worden wijzigingen mogelijk niet opgeslagen"
       ],
+      "Cancel anytime": [
+        "Op elk moment opzeggen"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik op \"Vraag nieuwe code aan\" om een nieuwe verificatiecode te sturen naar ${ strong }. Als dit telefoonnummer onjuist is, klik op \"Bewerken\" om het te corrigeren."
       ],
@@ -3409,9 +3412,6 @@
       ],
       "Session timed out": [
         "Sessie verlopen"
-      ],
-      "Setting up your Drive": [
-        "Uw Drive aan het instellen"
       ],
       "Setting up your organization": [
         "Uw organisatie wordt aangemaakt"
@@ -5544,13 +5544,51 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Dit abonnement behouden"
+      ],
       "Start using ${ appName }": [
         "Begin met ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Mijn abonnement upgraden"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Tijdelijke aanbieding"
+      ],
+      "Recommended": [
+        "Aanbevolen"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } per maand"
+      ],
       "Creating your account": [
         "Account aan het aanmaken"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Voor slechts **${ relativePrice } per maand** extra, krijgt u toegang tot alle premium ${ BRAND_NAME }-diensten!"
+      ],
+      "Free forever": [
+        "Voor altijd gratis"
+      ],
+      "Includes:": [
+        "Omvat:"
+      ],
+      "per month": [
+        "maandelijks"
+      ],
+      "per month, billed annually": [
+        "per maand, jaarlijks gefactureerd"
+      ],
+      "per month, billed every month": [
+        "per maand, maandelijks gefactureerd"
+      ],
+      "per month, billed every two years": [
+        "per maand, tweejaarlijks gefactureerd"
       ],
       "Preparing your Recovery Kit": [
         "Uw herstelkit voorbereiden"
@@ -5560,6 +5598,9 @@
       ],
       "Verifying your payment": [
         "Verifiëren van uw betaling"
+      ],
+      "You currently have": [
+        "Momenteel heeft u"
       ]
     },
     "pass_signup_2023: Title": {

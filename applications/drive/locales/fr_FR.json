@@ -385,6 +385,9 @@
       "Load image": [
         "Charger l'image"
       ],
+      "Loading link": [
+        "Chargement du lien"
+      ],
       "Manage folders": [
         "Gérer les dossiers"
       ],
@@ -4218,6 +4221,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Il n'est malheureusement pas possible de déchiffrer le fichier ou certaines de ses données."
       ],
+      "Unknown date": [
+        "Date inconnue"
+      ],
       "Unknown error": [
         "Erreur inconnue"
       ],
@@ -5389,17 +5395,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Découvrez tous les services ${ BRAND_NAME }"
       ],
-      "More theming options are available in your account Settings > Appearance.": [
-        "D'autres thèmes sont disponibles dans vos paramètres de compte, dans la section Apparence."
-      ],
-      "Select a theme": [
-        "Choisissez un thème"
+      "Pick a theme": [
+        "Sélectionner un thème"
       ],
       "Set up your organization": [
         "Configurez votre organisation"
       ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Utilisez le sélecteur d'applications en haut à gauche pour accéder à tous les services ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } et ${ DRIVE_SHORT_APP_NAME }."
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Utilisez le sélecteur d'applications en haut à gauche pour accéder à tous les services ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Vous pouvez modifier votre thème à tout moment dans vos paramètres."
       ]
     },
     "Onboarding Title": {
