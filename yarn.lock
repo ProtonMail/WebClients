@@ -5470,7 +5470,7 @@ __metadata:
     karma-webpack: "npm:^5.0.0"
     mocha: "npm:^10.2.0"
     playwright: "npm:^1.40.1"
-    pmcrypto: "npm:@protontech/pmcrypto@^7.14.2"
+    pmcrypto: "npm:@protontech/pmcrypto@^7.15.0"
     prettier: "npm:^3.1.0"
     ts-loader: "npm:^9.5.1"
     typescript: "npm:^5.3.2"
@@ -26774,12 +26774,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"openpgp@npm:@protontech/openpgp@^5.10.2, openpgp@npm:@protontech/openpgp@~5.10.2":
-  version: 5.10.2
-  resolution: "@protontech/openpgp@npm:5.10.2"
+"openpgp@npm:@protontech/openpgp@^5.11.0, openpgp@npm:@protontech/openpgp@~5.11.0":
+  version: 5.11.0
+  resolution: "@protontech/openpgp@npm:5.11.0"
   dependencies:
     asn1.js: "npm:^5.0.0"
-  checksum: 18360b2e88f46b626bba8b9711a0046b1e92e59fb89a759ca3af462ff7c20b503e16b4e07e26f7e1afe1e616f3958939218389ab0d0a699c87a106387864f423
+  checksum: e9bf3d146ca386d0299e48549bdd96f068c8c9cc24bf50a09d81f6ef40ae45f67f166de38e947b75ffc06e61c213259f99653559bbd990895d070592ce055c13
   languageName: node
   linkType: hard
 
@@ -27841,17 +27841,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pmcrypto@npm:@protontech/pmcrypto@^7.14.2":
-  version: 7.14.2
-  resolution: "@protontech/pmcrypto@npm:7.14.2"
+"pmcrypto@npm:@protontech/pmcrypto@^7.15.0":
+  version: 7.15.0
+  resolution: "@protontech/pmcrypto@npm:7.15.0"
   dependencies:
     "@openpgp/asmcrypto.js": "npm:^2.3.3-0"
     "@openpgp/noble-hashes": "npm:^1.3.2-1"
     "@openpgp/tweetnacl": "npm:^1.0.3"
     "@openpgp/web-stream-tools": "npm:^0.0.13"
     jsmimeparser: "npm:@protontech/jsmimeparser@^3.0.1"
-    openpgp: "npm:@protontech/openpgp@~5.10.2"
-  checksum: 0feea533189e00280cbef30da787af7ca667381c9c97f30c4bed497f6b73f8cde044fa2fa2e7257397a1babc06f3285750032c836216e5a4e617b37d769bd75e
+    openpgp: "npm:@protontech/openpgp@~5.11.0"
+  checksum: ce9a9855c29dae3cb0a015ad0dc58d74024a9a08de4d506c32870760916a7836441aead91345000604f2467808fd194555195731f181fbfcdbc8f4172819e6ae
   languageName: node
   linkType: hard
 
@@ -29006,7 +29006,7 @@ __metadata:
     node-fetch: "npm:^3.3.2"
     nodemailer: "npm:^6.9.7"
     nodemailer-smtp-transport: "npm:^2.7.4"
-    openpgp: "npm:@protontech/openpgp@^5.10.2"
+    openpgp: "npm:@protontech/openpgp@^5.11.0"
     pdf-parse: "npm:^1.1.1"
     prettier: "npm:^3.1.0"
     proxy-agent: "npm:^6.3.1"
