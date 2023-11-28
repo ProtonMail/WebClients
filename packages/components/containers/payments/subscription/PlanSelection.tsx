@@ -97,7 +97,6 @@ interface Props {
     subscription?: Subscription;
     organization?: Organization;
     calendarSharingEnabled: boolean;
-    sentinelPassplusEnabled: boolean;
     filter?: Audience[];
 }
 
@@ -170,7 +169,6 @@ const PlanSelection = ({
     selectedProductPlans,
     onChangeSelectedProductPlans,
     calendarSharingEnabled,
-    sentinelPassplusEnabled,
     filter,
 }: Props) => {
     const isVpnSettingsApp = app == APPS.PROTONVPN_SETTINGS;
@@ -219,7 +217,6 @@ const PlanSelection = ({
         plansMap,
         serversCount: vpnServers,
         calendarSharingEnabled,
-        sentinelPassplusEnabled,
     });
 
     const plansListB2C = getPlansList(enabledProductB2CPlans, plansMap);
@@ -229,7 +226,7 @@ const PlanSelection = ({
         const isFree = plan.ID === PLANS.FREE;
         const isCurrentPlan = isFree ? !currentPlan : currentPlan?.ID === plan.ID;
         const isRecommended = recommendedPlans.includes(plan.Name as PLANS);
-        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, { vpnServers, sentinelPassplusEnabled });
+        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, { vpnServers });
 
         if (!shortPlan) {
             return null;
