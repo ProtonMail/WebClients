@@ -10,7 +10,7 @@ interface Props {
     children: ReactNode;
 }
 
-const PrivateWalletLayout = ({ children }: Props) => {
+export const PrivateWalletLayout = ({ children }: Props) => {
     const { state: expanded, toggle: toggleExpanded } = useToggle();
 
     return (
@@ -26,5 +26,3 @@ const PrivateWalletLayout = ({ children }: Props) => {
         </PrivateAppContainer>
     );
 };
-
-export default PrivateWalletLayout;
