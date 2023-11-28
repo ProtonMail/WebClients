@@ -2938,6 +2938,9 @@
       "By leaving now, changes may not be saved": [
         "Al salir ahora, los cambios podrían no ser guardados"
       ],
+      "Cancel anytime": [
+        "Cancele en cualquier momento"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Haga clic en \"Solicitar código nuevo\" para que se envíe un código de verificación nuevo a ${ strong }. Si este número telefónico es incorrecto, haga clic en \"Editar\" para corregirlo."
       ],
@@ -3430,9 +3433,6 @@
       ],
       "Session timed out": [
         "Sesión agotada"
-      ],
-      "Setting up your Drive": [
-        "Configurando su Drive"
       ],
       "Setting up your organization": [
         "Configurando su organización"
@@ -5574,13 +5574,57 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Mantener este plan"
+      ],
       "Start using ${ appName }": [
         "Comenzar a usar ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Mejorar mi plan"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Oferta por tiempo limitado"
+      ],
+      "Recommended": [
+        "Recomendado"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } por mes"
+      ],
       "Creating your account": [
         "Creando su cuenta"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "¡Por solo **${ relativePrice } más al mes**, podrá acceder al servicio premium de gestor de contraseñas de ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "¡Por solo **${ relativePrice } más al mes**, podrá acceder al servicio VPN premium de ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "¡Por solo **${ relativePrice } más al mes**, usted podrá acceder a todos los servicios ${ BRAND_NAME } premium!"
+      ],
+      "Free forever": [
+        "Gratis para siempre"
+      ],
+      "Includes:": [
+        "Incluye:"
+      ],
+      "per month": [
+        "al mes"
+      ],
+      "per month, billed annually": [
+        "al mes con facturación anual"
+      ],
+      "per month, billed every month": [
+        "al mes con facturación mensual"
+      ],
+      "per month, billed every two years": [
+        "al mes con facturación cada dos años"
       ],
       "Preparing your Recovery Kit": [
         "Preparando su kit de recuperación"
@@ -5590,6 +5634,9 @@
       ],
       "Verifying your payment": [
         "Verificando su pago"
+      ],
+      "You currently have": [
+        "Actualmente tiene"
       ]
     },
     "pass_signup_2023: Title": {
@@ -7334,7 +7381,7 @@
     },
     "Users table: single sign-on enabled": {
       "SSO": [
-        "SSO"
+        "Inicio de sesión único (SSO)"
       ]
     },
     "Users table: single sign-on tooltip": {

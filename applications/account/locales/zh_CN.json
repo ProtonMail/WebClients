@@ -1185,6 +1185,38 @@
         "当前登录"
       ]
     },
+    "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "仅需${ price }即可**拥有我们的加密密码管理器**"
+      ],
+      "Add ${ PASS_APP_NAME }": [
+        "添加 ${ PASS_APP_NAME }"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "添加${ plan }，每月${ price }"
+      ],
+      "Become a Visionary": [
+        "成为 Visionary"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Close": [
+        "关闭"
+      ],
+      "Get the deal": [
+        "获取优惠"
+      ],
+      "Remove": [
+        "移除"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "移除 ${ PASS_APP_NAME }"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "订阅 15 个月即可获得我们的**加密密码管理器**，每月只需额外支付${ priceNoSuffix }！"
+      ]
+    },
     "bf2023: Deal details": {
       "${ MAIL_SHORT_APP_NAME } Plus and ${ CALENDAR_SHORT_APP_NAME }": [
         "${ MAIL_SHORT_APP_NAME } Plus 与 ${ CALENDAR_SHORT_APP_NAME }"
@@ -1231,9 +1263,82 @@
         "您的订阅将在到期后以标准优惠价自动续订。"
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "使用瑞士高速VPN并享受黑色星期五优惠"
+      ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "使用瑞士高速VPN并享受 Cyber Week 优惠"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "使用瑞士高速VPN并享受年终优惠"
+      ],
+      "Select your Black Friday offer": [
+        "选择您的黑色星期五优惠"
+      ],
+      "Select your Cyber Week offer": [
+        "选择您的 Cyber Week 优惠"
+      ],
+      "Select your End of Year offer": [
+        "选择您的年终优惠"
+      ]
+    },
+    "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "全部优质 ${ BRAND_NAME } 服务，只需一次轻松订阅。"
+      ],
+      "Secure browsing and premium VPN features.": [
+        "加密上网和高级 VPN 功能。"
+      ],
+      "Sorry, this offer is not available with your current plan.": [
+        "抱歉，此优惠不适用于您当前的套餐。"
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，此优惠不适用于您当前的套餐。 但当您订阅 **${ months }**时，您可获得 **${ plan.Title } 的 ${ discountPercentage }** 折扣。"
+      ]
+    },
+    "bf2023: Info": {
+      "6 TB storage (2x more than any other plan)": [
+        "6 TB 存储空间 (是其他套餐的 2 倍)"
+      ],
+      "6 users": [
+        "6 位用户"
+      ],
+      "Become a super-supporter. Get access to all current and future ${ BRAND_NAME } services.": [
+        "成为超级支持者，获得现在和之后的所有 ${ BRAND_NAME } 服务。"
+      ],
+      "Exclusive features and early access": [
+        "独家功能和抢先体验"
+      ],
+      "Help us fight for online privacy": [
+        "帮助我们捍卫网络隐私"
+      ],
+      "Premium versions of all ${ BRAND_NAME } services": [
+        "所有 ${ BRAND_NAME } 服务的付费版本"
+      ],
+      "The ${ plan } plan is back for a limited time only": [
+        "套餐 ${ plan } 限时回归"
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 天退款保证"
+      ]
+    },
+    "bf2023: renew": {
+      "the first month": [
+        "首月"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "特别折扣价 ${ discountedPrice } 将持续 ${ discountedMonths } ，之后将以每月 ${ nextPrice } 的价格自动续订 ${ nextMonths }，您可随时取消。"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "特别折扣价 ${ discountedPrice } 仅首月有效，之后将以每月 ${ nextPrice } 的价格自动续订，您可随时取消。"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "优惠不可用"
       ]
     },
     "bf2023: Tooltip": {
@@ -6181,9 +6286,6 @@
       "Set recovery phrase": [
         "设置恢复密语"
       ],
-      "Setting up your Drive": [
-        "配置网盘"
-      ],
       "Setting up your organization": [
         "设置您的组织"
       ],
@@ -8098,12 +8200,6 @@
       ],
       "URL": [
         "网址"
-      ],
-      "Use a recovery email address": [
-        "使用密保邮箱"
-      ],
-      "Use a recovery phone number": [
-        "使用密保手机"
       ],
       "Use folder colors": [
         "文件夹附带颜色"
@@ -11497,9 +11593,6 @@
       "Confirm phone number": [
         "确认电话号码"
       ],
-      "Congratulations on choosing privacy!": [
-        "恭喜您走上了保护隐私的道路！"
-      ],
       "Connect ${ name }": [
         "连接至 ${ name }"
       ],
@@ -11901,9 +11994,6 @@
       ],
       "PayPal verification failed": [
         "PayPal 验证失败"
-      ],
-      "Personalize your e-mail footer": [
-        "个性化您的电子邮件页脚"
       ],
       "Phone": [
         "电话"

@@ -388,6 +388,9 @@
       "Load image": [
         "Încărcare imagine"
       ],
+      "Loading link": [
+        "Se încarcă legătura"
+      ],
       "Manage folders": [
         "Gestionare foldere"
       ],
@@ -3817,6 +3820,9 @@
       "Items in the trash will stay here until you delete them permanently": [
         "Elementele din gunoi vor sta aici până când le veți șterge permanent."
       ],
+      "Items moved to the trash will stay here until deleted": [
+        "Articolele mutate în gunoi vor rămâne aici până când sunt șterse."
+      ],
       "It’s easy and secure": [
         "Este ușor și sigur"
       ],
@@ -4273,6 +4279,9 @@
       "Trash": [
         "Gunoi"
       ],
+      "Trash is empty": [
+        "Coșul de gunoi este gol"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Încercați noile funcții, actualizări și produse ${ BRAND_NAME } înainte ca acestea să fie lansate publicului. Aceasta va reporni aplicația."
       ],
@@ -4281,6 +4290,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Din păcate, se pare că fișierul sau unele dintre datele sale nu pot fi decriptate."
+      ],
+      "Unknown date": [
+        "Dată necunoscută"
       ],
       "Unknown error": [
         "Eroare necunoscută."
@@ -4320,6 +4332,9 @@
       ],
       "Version is restored": [
         "Versiunea este restaurată."
+      ],
+      "Want to sync files faster?": [
+        "Doriți să sincronizați mai rapid fișierele?"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Bună treabă. Tocmai v-ați dublat spațiul de stocare!"
@@ -5478,17 +5493,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Descoperiți toate serviciile ${ BRAND_NAME }"
       ],
-      "More theming options are available in your account Settings > Appearance.": [
-        "Mai multe opțiuni pentru teme sunt disponibile în Setări > Aspect."
-      ],
-      "Select a theme": [
-        "Selectaţi o temă"
+      "Pick a theme": [
+        "Alegeți o temă"
       ],
       "Set up your organization": [
         "Setați organizația"
       ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Folosiți meniul de selectare al aplicațiilor din stânga sus pentru a accesa toate serviciile ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și ${ DRIVE_SHORT_APP_NAME }."
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Folosiți meniul de selectare al aplicațiilor din stânga sus pentru a accesa toate serviciile ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } și ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Veți putea să schimbați tema oricând din setări."
       ]
     },
     "Onboarding Title": {

@@ -225,7 +225,7 @@
         "यूज़र को न्योता भेजें"
       ],
       "Keep my Plus subscription": [
-        "मेरा प्लस सब्सक्रिप्शन रखें"
+        "मेरी प्लस सदस्यता रखें"
       ],
       "Let's talk": [
         "चलो बात करते हैं"
@@ -2370,7 +2370,7 @@
         "Secure Core सुविधा के लिए ${ vpnPlus } चाहिए।"
       ],
       "(${ serverPrice } /month)": [
-        "(${ serverPrice }/महीना)"
+        "(${ serverPrice } /महीना)"
       ],
       "**Get a ${ BRAND_NAME } address** to use all ${ BRAND_NAME_TWO } services including ${ MAIL_SHORT_APP_NAME } and ${ CALENDAR_SHORT_APP_NAME }.": [
         "${ MAIL_SHORT_APP_NAME } और ${ CALENDAR_SHORT_APP_NAME } सहित सभी ${ BRAND_NAME_TWO } सेवाओं का उपयोग करने के लिए **${ BRAND_NAME } पता प्राप्त करें**।"
@@ -2480,6 +2480,9 @@
       ],
       "By leaving now, changes may not be saved": [
         "अब छोड़ने से, परिवर्तनों को बचाया नहीं जा सकता है"
+      ],
+      "Cancel anytime": [
+        "कभी भी रद्द करें"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong } पर एक नया सत्यापन कोड भेजने के लिए \"नए कोड का अनुरोध करें\" पर क्लिक करें। यदि यह फ़ोन नंबर गलत है, तो इसे ठीक करने के लिए \"संपादित करें\" पर क्लिक करें।"
@@ -2869,9 +2872,6 @@
       ],
       "Session timed out": [
         "सत्र का समय समाप्त हो गया"
-      ],
-      "Setting up your Drive": [
-        "आपका ड्राइव सेट कर रहे"
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "अपना पता सक्रिय करने के लिए ${ MAIL_APP_NAME } पे साइनइन करें"
@@ -4549,6 +4549,11 @@
       ],
       "Your plan includes a maximum of ${ humanReadableAvailableSpace } more storage.": [
         "आपके प्लान में ${ humanReadableAvailableSpace } और स्टोरेज जगह है।"
+      ]
+    },
+    "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "यह योजना रखें"
       ]
     },
     "Payment method option": {

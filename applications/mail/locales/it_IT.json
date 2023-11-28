@@ -430,14 +430,8 @@
       "Get verification code": [
         "Ottieni il codice di verifica"
       ],
-      "Go to first page": [
-        "Vai alla prima pagina"
-      ],
       "Go to label": [
         "Vai all'etichetta"
-      ],
-      "Go to last page": [
-        "Vai all'ultima pagina"
       ],
       "Go to next page": [
         "Vai alla pagina successiva"
@@ -7606,20 +7600,21 @@
         "Seleziona ciò a cui ${ BRAND_NAME } può accedere: visualizzare i tuoi messaggi email e le impostazioni, vedere e scaricare i tuoi contatti, vedere e scaricare tutte le agende a cui accedi da Google Agenda."
       ]
     },
-    "Onboarding": {
-      "Welcome to ${ appName }": [
-        "Ti diamo il benvenuto in ${ appName }"
+    "Onboarding modal": {
+      "Block unsavory senders": [
+        "Blocca i mittenti non desiderati"
       ],
-      "Where privacy and security meet productivity and ease of use.": [
-        "Dove privacy e sicurezza incontrano produttività e facilità d'uso."
-      ]
-    },
-    "Onboarding Action": {
+      "Congratulations on choosing privacy": [
+        "Congratulazioni per aver scelto la privacy"
+      ],
+      "For your eyes only": [
+        "Solo per i tuoi occhi"
+      ],
       "Next": [
         "Avanti"
       ],
-      "Start using ${ appName }": [
-        "Inizia a usare ${ appName }"
+      "Protection from trackers": [
+        "Protezione dai tracker"
       ]
     },
     "Onboarding Proton": {
@@ -7629,17 +7624,14 @@
       "Discover all ${ BRAND_NAME } services": [
         "Scopri tutti i servizi ${ BRAND_NAME }"
       ],
-      "More theming options are available in your account Settings > Appearance.": [
-        "Sono disponibili più opzioni di personalizzazione del tema nelle Impostazioni del tuo account, nella sezione Aspetto."
-      ],
-      "Select a theme": [
-        "Seleziona un tema"
+      "Pick a theme": [
+        "Scegli un tema"
       ],
       "Set up your organization": [
         "Configura la tua organizzazione"
       ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Usa il raccoglitore delle app in alto a sinistra per accedere a tutti i servizi di ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
+      "You will be able to change your theme any time in your settings.": [
+        "Potrai cambiare il tema in qualsiasi momento dalle impostazioni."
       ]
     },
     "Online accounts": {
