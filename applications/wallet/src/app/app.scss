@@ -5,6 +5,10 @@
 	background: linear-gradient(180deg, var(--background-weak) 0%, var(--background-norm) 100%);
 }
 
+.colored-gradient-card {
+	background: radial-gradient(144.47% 427.41% at -10.4% 170.75%, #6d4aff 0%, #100635 37.43%, #d45a25 100%);
+}
+
 .full-height-content {
 	> div {
 		block-size: 100%;
