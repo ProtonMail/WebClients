@@ -50,7 +50,6 @@ describe('MailHeader', () => {
         addApiMock('payments/v4/plans', () => ({}));
         addApiMock('contacts/v4/contacts', () => ({ Contacts: [] }));
         addApiMock('payments/v4/subscription/latest', () => ({}));
-        addApiMock('core/v4/experiments', () => ({}));
 
         props = getProps();
 
