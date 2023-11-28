@@ -2994,6 +2994,9 @@
       "By leaving now, changes may not be saved": [
         "Pokiaľ teraz opustíte stránku, zmeny nemusia byť uložené"
       ],
+      "Cancel anytime": [
+        "Môžete zrušiť kedykoľvek"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
       ],
@@ -3494,9 +3497,6 @@
       ],
       "Session timed out": [
         "Relácia vypršala"
-      ],
-      "Setting up your Drive": [
-        "Nastavujeme váš Drive"
       ],
       "Setting up your organization": [
         "Nastavovanie organizácie"
@@ -4704,7 +4704,7 @@
     },
     "Metadata title": {
       "${ appName }: Sign-in": [
-        "${ appName }: Přihlásenie"
+        "${ appName }: Prihlásenie"
       ],
       "${ appName }: Sign-up": [
         "${ appName }: Registrácia"
@@ -4716,7 +4716,7 @@
         "Zistite vaše používateľské meno v ${ BRAND_NAME }"
       ],
       "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Zabudli ste heslo k vášmu ${ BRAND_NAME } účtu? Resetujte ho pomocou kódu na obnovenie, emailu alebo SMS a získajte opätovnjý prístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ďalším."
+        "Zabudli ste heslo k vášmu ${ BRAND_NAME } účtu? Resetujte ho pomocou kódu na obnovenie, emailu alebo SMS a získajte opätovný prístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ďalším."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Zabudli ste používateľské meno vášho ${ BRAND_NAME } účtu? Nájdite ho pomocou obnovovacieho emailu alebo telefónneho čísla a získajte opätovný prístup k ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ďalším."
@@ -5718,13 +5718,51 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Ponechať tento plán"
+      ],
       "Start using ${ appName }": [
         "Začnite používať ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Upgradovať môj plán"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Časovo obmedzená ponuka"
+      ],
+      "Recommended": [
+        "Odporúčané"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } mesačne"
+      ],
       "Creating your account": [
         "Vytvárame váš účet"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Len za ďalšie **${ relativePrice } mesačne**, získate prístup ku všetkým prémiovým službám ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Navždy zadarmo"
+      ],
+      "Includes:": [
+        "Obsahuje:"
+      ],
+      "per month": [
+        "mesačne"
+      ],
+      "per month, billed annually": [
+        "mesačne, účtované každý rok"
+      ],
+      "per month, billed every month": [
+        "mesačne, účtované každý mesiac"
+      ],
+      "per month, billed every two years": [
+        "mesačne, účtované každé dva roky"
       ],
       "Preparing your Recovery Kit": [
         "Príprava sady na obnovenie"
@@ -5734,6 +5772,9 @@
       ],
       "Verifying your payment": [
         "Overujeme vašu platbu"
+      ],
+      "You currently have": [
+        "Aktuálne máte"
       ]
     },
     "pass_signup_2023: Title": {

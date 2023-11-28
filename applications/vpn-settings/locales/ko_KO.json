@@ -2898,6 +2898,9 @@
       "By leaving now, changes may not be saved": [
         "지금 나갈 경우 변경사항이 저장되지 않을 수도 있습니다"
       ],
+      "Cancel anytime": [
+        "언제든지 취소하세요"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "${ strong } 로 새 인증 코드를 보내려면 \"새 코드 요청\"을 클릭하세요. 이 전화번호가 잘못된 경우 \"수정\"을 클릭하여 수정하세요."
       ],
@@ -3389,9 +3392,6 @@
       ],
       "Session timed out": [
         "세션 시간 초과됨"
-      ],
-      "Setting up your Drive": [
-        "드라이브 설정"
       ],
       "Setting up your organization": [
         "조직을 설정하세요"
@@ -5517,13 +5517,51 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "이 플랜 유지"
+      ],
       "Start using ${ appName }": [
         "${ appName } 사용 시작"
+      ],
+      "Upgrade my plan": [
+        "내 플랜 업그레이드"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "기간 한정 세일"
+      ],
+      "Recommended": [
+        "권장"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice }/월간"
+      ],
       "Creating your account": [
         "계정을 생성하는 중"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "**월간 ${ relativePrice }**에 모든 ${ BRAND_NAME } 프리미엄 서비스를 사용하실 수 있습니다!"
+      ],
+      "Free forever": [
+        "영원히 무료"
+      ],
+      "Includes:": [
+        "포함:"
+      ],
+      "per month": [
+        "매월"
+      ],
+      "per month, billed annually": [
+        "월 기준, 매년마다 납부됩"
+      ],
+      "per month, billed every month": [
+        "월 기준, 개월마다 납부됨"
+      ],
+      "per month, billed every two years": [
+        "월 기준, 2년마다 납부됨"
       ],
       "Preparing your Recovery Kit": [
         "복구 키트를 준비하는 중"
@@ -5533,6 +5571,9 @@
       ],
       "Verifying your payment": [
         "결제 수단을 인증 중입니다."
+      ],
+      "You currently have": [
+        "현재 플랜:"
       ]
     },
     "pass_signup_2023: Title": {

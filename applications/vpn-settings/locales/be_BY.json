@@ -2994,6 +2994,9 @@
       "By leaving now, changes may not be saved": [
         "Калі выйсці цяпер, змяненні могуць не захавацца"
       ],
+      "Cancel anytime": [
+        "Скасаваць можна ў любы час"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы праверачны код на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
       ],
@@ -3494,9 +3497,6 @@
       ],
       "Session timed out": [
         "Сеанс завяршыўся"
-      ],
-      "Setting up your Drive": [
-        "Наладжванне вашага Drive"
       ],
       "Setting up your organization": [
         "Наладжванне вашай арганізацыі"
@@ -5718,13 +5718,51 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Пакінуць гэты тарыфны план"
+      ],
       "Start using ${ appName }": [
         "Пачніце выкарыстоўваць ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Палепшыць мой тарыфны план"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Абмежаваная прапанова"
+      ],
+      "Recommended": [
+        "Рэкамендавана"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } у месяц"
+      ],
       "Creating your account": [
         "Стварэнне вашага ўліковага запісу"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Усяго за **${ relativePrice } у месяц** вы атрымаеце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Бясплатна назаўсёды"
+      ],
+      "Includes:": [
+        "Уключае:"
+      ],
+      "per month": [
+        "у месяц"
+      ],
+      "per month, billed annually": [
+        "у месяц (аплачваецца адзін раз у год)"
+      ],
+      "per month, billed every month": [
+        "у месяц (аплачваецца адзін раз у месяц)"
+      ],
+      "per month, billed every two years": [
+        "у месяц (аплачваецца кожныя два гады)"
       ],
       "Preparing your Recovery Kit": [
         "Падрыхтоўка вашага камплекту аднаўлення"
@@ -5734,6 +5772,9 @@
       ],
       "Verifying your payment": [
         "Праверка вашага плацяжу"
+      ],
+      "You currently have": [
+        "Зараз у вас ёсць"
       ]
     },
     "pass_signup_2023: Title": {

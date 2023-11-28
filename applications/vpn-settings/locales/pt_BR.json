@@ -738,6 +738,12 @@
       ],
       "Select your Black Friday offer": [
         "Selecione sua oferta de Black Friday"
+      ],
+      "Select your Cyber Week offer": [
+        "Selecione sua oferta da Cyber ​​Week"
+      ],
+      "Select your End of Year offer": [
+        "Selecione sua oferta de fim de ano"
       ]
     },
     "bf2023: info": {
@@ -2926,6 +2932,9 @@
       "By leaving now, changes may not be saved": [
         "Ao sair agora, as alterações não podem ser salvas"
       ],
+      "Cancel anytime": [
+        "Cancele a qualquer momento"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Solicitar novo código\" para que um novo código seja enviado para ${ strong }. Se esse número de telefone estiver incorreto, clique em \"Editar\" para corrigir isso."
       ],
@@ -3421,9 +3430,6 @@
       ],
       "Session timed out": [
         "Sessão expirada"
-      ],
-      "Setting up your Drive": [
-        "Configurando seu Drive"
       ],
       "Setting up your organization": [
         "Configurando a sua organização"
@@ -5574,13 +5580,51 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Manter esse plano"
+      ],
       "Start using ${ appName }": [
         "Começar a usar o ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Fazer upgrade do meu plano"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Oferta por tempo limitado"
+      ],
+      "Recommended": [
+        "Recomendado"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } por mês"
+      ],
       "Creating your account": [
         "Criando sua conta"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Por apenas **${ relativePrice } adicionais por mês**, você tem acesso a todos os serviços premium da ${ BRAND_NAME }"
+      ],
+      "Free forever": [
+        "Gratuito para sempre"
+      ],
+      "Includes:": [
+        "Incluí:"
+      ],
+      "per month": [
+        "por mês"
+      ],
+      "per month, billed annually": [
+        "por mês com cobrança anual"
+      ],
+      "per month, billed every month": [
+        "por mês com cobrança a cada mês"
+      ],
+      "per month, billed every two years": [
+        "por mês com cobrança a cada dois anos"
       ],
       "Preparing your Recovery Kit": [
         "Preparando o kit de recuperação"
@@ -5590,6 +5634,9 @@
       ],
       "Verifying your payment": [
         "Verificando seu pagamento"
+      ],
+      "You currently have": [
+        "Você tem atualmente"
       ]
     },
     "pass_signup_2023: Title": {
