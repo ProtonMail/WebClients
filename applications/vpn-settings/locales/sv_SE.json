@@ -736,6 +736,9 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Spara med Black Friday-erbjudanden på ett snabbt schweiziskt VPN"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Spara med Cyber ​​Week-erbjudanden på ett schweiziskt VPN med hög hastighet"
+      ],
       "Select your Black Friday offer": [
         "Välj ditt Black Friday-erbjudande"
       ],
@@ -2929,6 +2932,9 @@
       "By leaving now, changes may not be saved": [
         "Genom att lämna nu kan ändringar inte sparas"
       ],
+      "Cancel anytime": [
+        "Avbryt när som helst"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
       ],
@@ -3424,9 +3430,6 @@
       ],
       "Session timed out": [
         "Session timeout"
-      ],
-      "Setting up your Drive": [
-        "Installerar din Drive"
       ],
       "Setting up your organization": [
         "Ställer in din organisation"
@@ -5592,13 +5595,51 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Behåll detta paket"
+      ],
       "Start using ${ appName }": [
         "Börja använda ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Uppgradera mitt paket"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Tidsbegränsat erbjudande"
+      ],
+      "Recommended": [
+        "Rekommenderad"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } per månad"
+      ],
       "Creating your account": [
         "Skapar ditt konto"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "För endast **${ relativePrice } per månad** mer får du åtkomst till alla premiumtjänster för ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Gratis för alltid"
+      ],
+      "Includes:": [
+        "Inkluderar:"
+      ],
+      "per month": [
+        "per månad"
+      ],
+      "per month, billed annually": [
+        "per månad, faktureras årligen"
+      ],
+      "per month, billed every month": [
+        "per månad, faktureras varje månad"
+      ],
+      "per month, billed every two years": [
+        "per månad, faktureras vartannat år"
       ],
       "Preparing your Recovery Kit": [
         "Förbereder ditt återställningskit"
@@ -5608,6 +5649,9 @@
       ],
       "Verifying your payment": [
         "Verifierar din betalning"
+      ],
+      "You currently have": [
+        "Du har för närvarande"
       ]
     },
     "pass_signup_2023: Title": {

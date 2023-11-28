@@ -2910,6 +2910,9 @@
       "By leaving now, changes may not be saved": [
         "Dengan keluar sekarang, perubahan mungkin tidak tersimpan"
       ],
+      "Cancel anytime": [
+        "Batalkan kapan pun"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik \"Minta kode baru\" untuk mendapatkan kode verifikasi baru yang akan dikirim ke ${ strong }. Apabila nomor telepon ini tidak sesuai, klik \"Sunting\" untuk mengubahnya."
       ],
@@ -3398,9 +3401,6 @@
       ],
       "Session timed out": [
         "Masa berlaku sesi telah berakhir"
-      ],
-      "Setting up your Drive": [
-        "Menyiapkan Drive Anda"
       ],
       "Setting up your organization": [
         "Menyiapkan organisasi Anda"
@@ -5502,13 +5502,51 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Pertahankan paket ini"
+      ],
       "Start using ${ appName }": [
         "Mulai gunakan ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Tingkatkan paket saya"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Penawaran waktu terbatas"
+      ],
+      "Recommended": [
+        "Direkomendasikan"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } per bulan"
+      ],
       "Creating your account": [
         "Membuat akun Anda"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Dengan menambahkan hanya **${ relativePrice } per bulannya**, Anda akan dapat mengakses seluruh fitur premium ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Gratis untuk selamanya"
+      ],
+      "Includes:": [
+        "Meliputi:"
+      ],
+      "per month": [
+        "per bulan"
+      ],
+      "per month, billed annually": [
+        "per bulan, ditagihkan secara tahunan"
+      ],
+      "per month, billed every month": [
+        "per bulan, ditagihkan secara bulanan"
+      ],
+      "per month, billed every two years": [
+        "per bulan, ditagihkan setiap dua tahun"
       ],
       "Preparing your Recovery Kit": [
         "Menyiapkan Peralatan Pemulihan Anda"
@@ -5518,6 +5556,9 @@
       ],
       "Verifying your payment": [
         "Memverifikasi pembayaran Anda"
+      ],
+      "You currently have": [
+        "Anda saat ini memiliki"
       ]
     },
     "pass_signup_2023: Title": {

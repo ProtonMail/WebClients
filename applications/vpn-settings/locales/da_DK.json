@@ -266,6 +266,9 @@
       "Invite user": [
         "Invitér bruger"
       ],
+      "Keep my Plus subscription": [
+        "Behold mit Plus-abonnement"
+      ],
       "Let's talk": [
         "Lad os snakke"
       ],
@@ -643,14 +646,32 @@
       ]
     },
     "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**Tilføj vores krypterede adgangskodeadministrator** for kun ${ price }"
+      ],
+      "Add ${ PASS_APP_NAME }": [
+        "Tilføj ${ PASS_APP_NAME }"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "Tilføj ${ plan } for ${ price } pr. måned"
+      ],
       "Cancel": [
         "Annuller"
       ],
       "Close": [
         "Luk"
       ],
+      "Get the deal": [
+        "Gør brug af tilbuddet"
+      ],
       "Remove": [
         "Fjern"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "Fjern ${ PASS_APP_NAME }"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "Tegn et abonnement på 15 måneder og få vores **krypteret adgangskodeadministrator** for kun ${ priceNoSuffix } ekstra pr. måned!"
       ]
     },
     "bf2023: Deal details": {
@@ -708,9 +729,38 @@
         "Dit abonnement vil automatisk blive fornyet til den nedsatte standardpris og varighed ved slutningen af din faktureringscyklus."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Spar penge med Black Friday-tilbud på en schweizisk højhastigheds-VPN"
+      ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Spar penge på en schweizisk højhastigheds-VPN med Cyber Week-tilbud"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Spar penge på en schweizisk højhastigheds-VPN med årsafslutnings-tilbud"
+      ],
+      "Select your Black Friday offer": [
+        "Vælg dit Black Friday-tilbud"
+      ],
+      "Select your Cyber Week offer": [
+        "Vælg dit Cyber Week-tilbud"
+      ],
+      "Select your End of Year offer": [
+        "Vælg dit årsafslutnings-tilbud"
+      ]
+    },
     "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Alle premium ${ BRAND_NAME }-tjenester. Ét nemt abonnement."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Sikker browsing og førsteklasses VPN-funktioner."
+      ],
       "Sorry, this offer is not available with your current plan.": [
         "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
       ]
     },
     "bf2023: Offers": {
@@ -722,6 +772,15 @@
       "${ n } month": [
         "${ n } måned",
         "de første ${ n } måneder"
+      ],
+      "the first month": [
+        "den første måned"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "Den særligt nedsatte pris på ${ discountedPrice } gælder i ${ discountedMonths }. Derefter vil den automatisk blive fornyet til den nedsatte pris på ${ nextPrice } for ${ nextMonths }. Du kan til enhver tid opsige."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "Den særligt nedsatte pris på ${ discountedPrice } gælder den første måned. Derefter vil den automatisk blive fornyet for ${ nextPrice } hver måned. Du kan til enhver tid opsige."
       ]
     },
     "bf2023: Title": {
@@ -2797,6 +2856,9 @@
       "By leaving now, changes may not be saved": [
         "Ved at forlade nu gemmes ændringer ikke"
       ],
+      "Cancel anytime": [
+        "Opsig når som helst"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
       ],
@@ -3289,9 +3351,6 @@
       ],
       "Session timed out": [
         "Session er udløbet"
-      ],
-      "Setting up your Drive": [
-        "Opsætter dit drev"
       ],
       "Setting up your organization": [
         "Konfigurerer din organisation"
@@ -5286,11 +5345,46 @@
     "pass_signup_2023: Action": {
       "Start using ${ appName }": [
         "Begynd at bruge ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Opgradér mit abonnement"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Tidsbegrænset tilbud"
+      ],
+      "Recommended": [
+        "Anbefalet"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } pr. måned"
+      ],
       "Creating your account": [
         "Opretter din konto"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "For kun **${ relativePrice } pr. måned** mere, får du adgang til alle premium ${ BRAND_NAME }-tjenester!"
+      ],
+      "Free forever": [
+        "Gratis for evigt"
+      ],
+      "Includes:": [
+        "Inkluderer:"
+      ],
+      "per month": [
+        "pr. måned"
+      ],
+      "per month, billed annually": [
+        "pr. måned, faktureres årligt"
+      ],
+      "per month, billed every month": [
+        "pr. måned, faktureres hver måned"
+      ],
+      "per month, billed every two years": [
+        "pr. måned, faktureres hver andet år"
       ],
       "Preparing your Recovery Kit": [
         "Forbereder dit gendannelseskit"
@@ -5300,6 +5394,9 @@
       ],
       "Verifying your payment": [
         "Verificerer din betaling"
+      ],
+      "You currently have": [
+        "Du har i øjeblikket"
       ]
     },
     "pass_signup_2023: Title": {

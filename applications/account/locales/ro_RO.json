@@ -1408,8 +1408,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Economisiți cu ofertele de Vinerea Neagră pentru un VPN elvețian de mare viteză"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Economisiți cu oferta de Lunea cibernetică pentru un VPN elvețian rapid"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Economisiți cu oferta de sfârșit de an pentru un VPN elvețian rapid"
+      ],
       "Select your Black Friday offer": [
         "Selectați oferta de Vinerea Neagră"
+      ],
+      "Select your Cyber Week offer": [
+        "Selectați oferta de Lunea cibernetică"
+      ],
+      "Select your End of Year offer": [
+        "Selectați oferta de sfârșit de an"
       ]
     },
     "bf2023: info": {
@@ -3729,6 +3741,9 @@
       ],
       "Contact signature not verified": [
         "Semnătura contactului nu a fost verificată"
+      ],
+      "Could not save preference": [
+        "Preferințele nu s-au putut salva."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deselectați cel puțin ${ calendarsToFixCount } calendar.",
@@ -7193,9 +7208,6 @@
       "Set recovery phrase": [
         "Setare frază de recuperare"
       ],
-      "Setting up your Drive": [
-        "Se configurează Drive"
-      ],
       "Setting up your organization": [
         "Setare organizație"
       ],
@@ -7216,6 +7228,9 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Deoarece sunteți un utilizator loial, contul are funcții adiționale activate."
+      ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "Trimiterea SMTP permite serviciilor sau dispozitivelor terță parte să trimită mesaje prin ${ MAIL_APP_NAME } pentru adresele de domeniu personale. Această funcție este disponibilă numai pentru utilizatorii cu planul ${ BRAND_NAME } for Business cu domenii personale."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Trimiterea SMTP permite serviciilor sau dispozitivelor terțe să trimită mesaje prin ${ MAIL_APP_NAME } pentru adresele de domeniu personale. Pentru a solicita acces, trebuie să ${ createTicket } care vă descrie cazul de utilizare, ce domenii personale doriți să utilizați și volumul de mesaje orar și zilnic preconizat."
@@ -8678,6 +8693,9 @@
       "Conversation grouping": [
         "Grupare conversații"
       ],
+      "Conversations per page": [
+        "Conversații per pagină"
+      ],
       "Copy": [
         "Copiere"
       ],
@@ -8959,6 +8977,9 @@
       ],
       "Message": [
         "Mesaj"
+      ],
+      "Messages per page": [
+        "Mesaje per pagină"
       ],
       "Moderate NAT": [
         "NAT moderat"
@@ -9262,12 +9283,6 @@
       ],
       "URL": [
         "Adresa URL"
-      ],
-      "Use a recovery email address": [
-        "Folosire adresă de e-mail de recuperare"
-      ],
-      "Use a recovery phone number": [
-        "Folosire număr de telefon de recuperare"
       ],
       "Use folder colors": [
         "Folosire culori folder"
@@ -11530,6 +11545,12 @@
       "End-to-end encryption": [
         "Criptare în ambele părți"
       ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Pentru doar **${ relativePrice } pe lună** în plus, aveți acces la managerul de parole premium al lui ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Pentru doar **${ relativePrice } pe lună** în plus, aveți acces la serviciul VPN premium al ${ BRAND_NAME }!"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Pentru doar încă **${ relativePrice } pe lună**, veți avea acces la toate serviciile premium ${ BRAND_NAME }!"
       ],
@@ -13510,9 +13531,6 @@
       "Confirm phone number": [
         "Confirmați numărul de telefon"
       ],
-      "Congratulations on choosing privacy!": [
-        "Felicitări pentru alegerea vieții private!"
-      ],
       "Connect ${ name }": [
         "Conectare ${ name }"
       ],
@@ -13959,6 +13977,9 @@
       "PayPal verification failed": [
         "Verificarea PayPal a eșuat"
       ],
+      "Personalise your e-mail footer": [
+        "Personalizați-vă subsolul mesajelor"
+      ],
       "Phone": [
         "Telefon"
       ],
@@ -14060,6 +14081,9 @@
       ],
       "Session management": [
         "Gestionare sesiuni"
+      ],
+      "Set a display name": [
+        "Stabiliți un nume afișat"
       ],
       "Set new password": [
         "Setare parolă nouă"

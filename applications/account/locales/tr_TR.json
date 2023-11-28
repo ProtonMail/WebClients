@@ -1405,8 +1405,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Yüksek hızlı İsviçre VPN hizmetini Muhteşem Cuma fırsatlarıyla indirimli olarak alın"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Yüksek hızlı İsviçre VPN hizmetini Siber Hafta fırsatlarıyla indirimli olarak alın"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Yüksek hızlı İsviçre VPN hizmetini Yıl Sonu fırsatlarıyla indirimli olarak alın"
+      ],
       "Select your Black Friday offer": [
         "Muhteşem Cuma teklifinizi seçin"
+      ],
+      "Select your Cyber Week offer": [
+        "Siber Hafta teklifini seçin"
+      ],
+      "Select your End of Year offer": [
+        "Yıl Sonu teklifini seçin"
       ]
     },
     "bf2023: info": {
@@ -3716,6 +3728,9 @@
       ],
       "Contact signature not verified": [
         "Kişi imzası doğrulanamadı"
+      ],
+      "Could not save preference": [
+        "Ayar kaydedilemedi"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "En az ${ calendarsToFixCount } takvimi kaldırın",
@@ -7118,9 +7133,6 @@
       "Set recovery phrase": [
         "Kurtarma ifadesini ayarla"
       ],
-      "Setting up your Drive": [
-        "Drive kurulumunuz yapılıyor"
-      ],
       "Setting up your organization": [
         "Kuruluşunuz ayarlanıyor"
       ],
@@ -8586,6 +8598,9 @@
       "Conversation grouping": [
         "Yazışmalar gruplansın"
       ],
+      "Conversations per page": [
+        "Bir sayfadaki yazışma sayısı"
+      ],
       "Copy": [
         "Kopyala"
       ],
@@ -8867,6 +8882,9 @@
       ],
       "Message": [
         "İleti"
+      ],
+      "Messages per page": [
+        "Bir sayfadaki ileti sayısı"
       ],
       "Moderate NAT": [
         "Ilımlı NAT"
@@ -9170,12 +9188,6 @@
       ],
       "URL": [
         "İnternet adresi"
-      ],
-      "Use a recovery email address": [
-        "Kurtarma e-posta adresi kullanılsın"
-      ],
-      "Use a recovery phone number": [
-        "Kurtarma telefon numarası kullanılsın"
       ],
       "Use folder colors": [
         "Klasör renkleri kullanılsın"
@@ -13313,9 +13325,6 @@
       "Confirm phone number": [
         "Telefon numarasını onaylayın"
       ],
-      "Congratulations on choosing privacy!": [
-        "Gizliliği korumayı seçtiğiniz için teşekkürler!"
-      ],
       "Connect ${ name }": [
         "${ name } bağlantısı kur"
       ],
@@ -13757,9 +13766,6 @@
       ],
       "PayPal verification failed": [
         "PayPal doğrulaması başarısız oldu"
-      ],
-      "Personalize your e-mail footer": [
-        "E-posta alt bilginizi kişiselleştirin"
       ],
       "Phone": [
         "Telefon"
