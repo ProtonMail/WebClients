@@ -59,10 +59,7 @@ interface Props {
     externalSSOToken?: string;
     defaultUsername?: string;
     hasRemember?: boolean;
-    trustedDeviceRecoveryFeature?: {
-        loading?: boolean;
-        feature: { Value: boolean } | undefined;
-    };
+    hasTrustedDeviceRecovery: boolean;
     paths: Paths;
     authType: AuthType;
     onChangeAuthType: (authType: AuthType) => void;
@@ -77,7 +74,7 @@ const LoginForm = ({
     defaultUsername = '',
     signInText = c('Action').t`Sign in`,
     hasRemember,
-    trustedDeviceRecoveryFeature,
+    hasTrustedDeviceRecovery,
     externalSSO,
     externalSSOToken,
     paths,
@@ -104,7 +101,7 @@ const LoginForm = ({
     >(undefined);
     const onceRef = useRef(false);
 
-    const loading = Boolean(challengeLoading || trustedDeviceRecoveryFeature?.loading);
+    const loading = Boolean(challengeLoading);
 
     useEffect(() => {
         if (loading) {
@@ -358,7 +355,7 @@ const LoginForm = ({
                             onChange={submitting ? noop : () => setPersistent(!persistent)}
                         />
 
-                        {!loading && trustedDeviceRecoveryFeature?.feature?.Value ? (
+                        {hasTrustedDeviceRecovery ? (
                             <div className="flex-item-fluid">
                                 <Label htmlFor="staySignedIn" className="flex flex-align-items-center">
                                     {c('Label').t`Keep me signed in`}
