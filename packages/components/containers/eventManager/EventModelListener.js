@@ -49,19 +49,21 @@ const EventModelListener = ({ models }) => {
             /**
              * Update model values
              */
-            for (const key of Object.keys(data)) {
-                const model = modelsMap[key];
-                if (!model) {
-                    continue;
-                }
+            if (models?.length) {
+                for (const key of Object.keys(data)) {
+                    const model = modelsMap[key];
+                    if (!model) {
+                        continue;
+                    }
 
-                const { value: oldValue, status } = cache.get(key) || {};
+                    const { value: oldValue, status } = cache.get(key) || {};
 
-                if (status === STATUS.RESOLVED) {
-                    cache.set(key, {
-                        status: STATUS.RESOLVED,
-                        value: model.update(oldValue, data[key]),
-                    });
+                    if (status === STATUS.RESOLVED) {
+                        cache.set(key, {
+                            status: STATUS.RESOLVED,
+                            value: model.update(oldValue, data[key]),
+                        });
+                    }
                 }
             }
 
