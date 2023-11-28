@@ -15,15 +15,13 @@ export const getAllFeatures = ({
     plansMap,
     serversCount,
     calendarSharingEnabled,
-    sentinelPassplusEnabled,
 }: {
     plansMap: PlansMap;
     serversCount: VPNServersCountData;
     calendarSharingEnabled: boolean;
-    sentinelPassplusEnabled: boolean;
 }) => {
     return {
-        highlight: getHighlightFeatures(plansMap, sentinelPassplusEnabled),
+        highlight: getHighlightFeatures(plansMap),
         mail: getMailFeatures(plansMap),
         calendar: getCalendarFeatures(plansMap, calendarSharingEnabled),
         drive: getDriveFeatures(plansMap),
