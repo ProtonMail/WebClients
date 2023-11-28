@@ -9,6 +9,10 @@ import { getSignedKeyListWithDeferredPublish } from './signedKeyList';
  * and decrypted keys of the client.
  */
 export const hasActiveKeysMismatch = (address: Address, decryptedKeys: DecryptedKey[]): Boolean => {
+    if (decryptedKeys.length == 0 || !address.SignedKeyList) {
+        // If there are no decrypted keys or no skl, do not update.
+        return false;
+    }
     const activeKeysIDs = decryptedKeys.reduce<Set<string>>((acc, key) => {
         acc.add(key.ID);
         return acc;
