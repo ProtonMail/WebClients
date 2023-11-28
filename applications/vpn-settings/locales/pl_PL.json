@@ -2982,6 +2982,9 @@
       "By leaving now, changes may not be saved": [
         "Jeśli wyjdziesz teraz, zmiany nie zostaną zapisane"
       ],
+      "Cancel anytime": [
+        "Anuluj w dowolnym momencie"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknij przycisk \"Poproś o nowy kod\", aby otrzymać nowy kod weryfikacyjny na numer telefonu ${ strong }. Jeśli numer jest nieprawidłowy, kliknij przycisk \"Edytuj\", aby go poprawić."
       ],
@@ -3482,9 +3485,6 @@
       ],
       "Session timed out": [
         "Upłynął limit czasu sesji"
-      ],
-      "Setting up your Drive": [
-        "Konfiguracja dysku"
       ],
       "Setting up your organization": [
         "Konfiguracja organizacji"
@@ -5706,13 +5706,51 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Zachowaj plan"
+      ],
       "Start using ${ appName }": [
         "Zacznij korzystać z ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Ulepsz plan"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Oferta ograniczona czasowo"
+      ],
+      "Recommended": [
+        "Zalecany"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } miesięcznie"
+      ],
       "Creating your account": [
         "Tworzenie konta"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Za **${ relativePrice } miesięcznie** więcej uzyskasz dostęp do wszystkich funkcji premium usług ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Darmowy na zawsze"
+      ],
+      "Includes:": [
+        "Zawiera:"
+      ],
+      "per month": [
+        "miesięcznie"
+      ],
+      "per month, billed annually": [
+        "miesięcznie, płatne rocznie"
+      ],
+      "per month, billed every month": [
+        "miesięcznie, płatne co miesiąc"
+      ],
+      "per month, billed every two years": [
+        "miesięcznie, płatne co 2 lata"
       ],
       "Preparing your Recovery Kit": [
         "Przygotowywanie zestawu odzyskiwania"
@@ -5722,6 +5760,9 @@
       ],
       "Verifying your payment": [
         "Weryfikowanie płatności"
+      ],
+      "You currently have": [
+        "Obecnie masz"
       ]
     },
     "pass_signup_2023: Title": {
