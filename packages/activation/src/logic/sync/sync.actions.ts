@@ -14,7 +14,7 @@ import { APIImportSyncListResponse } from '@proton/activation/src/api/api.interf
 import {
     AuthenticationMethod,
     CreateImportPayload,
-    EASY_SWITCH_SOURCE,
+    EASY_SWITCH_SOURCES,
     ImportToken,
     ImportType,
     OAUTH_PROVIDER,
@@ -63,7 +63,7 @@ interface CreateSyncProps {
     Code: string;
     Provider: OAUTH_PROVIDER;
     RedirectUri: string;
-    Source: EASY_SWITCH_SOURCE;
+    Source: EASY_SWITCH_SOURCES;
     notification: CreateNotificationOptions;
 }
 

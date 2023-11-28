@@ -1,25 +1,54 @@
+import { useLocation } from 'react-router-dom';
+
+import { Location } from 'history';
 import { c } from 'ttag';
 
-import { ImportProvider, ImportType } from '@proton/activation/src/interface';
+import {
+    EASY_SWITCH_SEARCH_SOURCES,
+    EASY_SWITCH_SOURCES,
+    ImportProvider,
+    ImportType,
+} from '@proton/activation/src/interface';
 import { startImapDraft } from '@proton/activation/src/logic/draft/imapDraft/imapDraft.actions';
 import { startOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
 import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 import { FeatureCode } from '@proton/components';
 import { useFeature, useUser } from '@proton/components/hooks';
+import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
+import { APPS } from '@proton/shared/lib/constants';
 
 import ProviderCard from './ProviderCard';
 
+const { ACCOUNT_WEB_SETTINGS, CALENDAR_WEB_SETTINGS, CONTACT_WEB_IMPORT_BUTTON } = EASY_SWITCH_SOURCES;
+
+const getEasySwitchSource = (location: Location) => {
+    const source = new URLSearchParams(location.search).get('source');
+    if (source && source === EASY_SWITCH_SEARCH_SOURCES.CONTACT_IMPORT) {
+        return CONTACT_WEB_IMPORT_BUTTON;
+    }
+
+    const appFromPathname = getAppFromPathnameSafe(location.pathname);
+    if (appFromPathname === APPS.PROTONMAIL) {
+        return ACCOUNT_WEB_SETTINGS;
+    }
+
+    return CALENDAR_WEB_SETTINGS;
+};
+
 const ProviderCards = () => {
+    const location = useLocation();
     const dispatch = useEasySwitchDispatch();
     const [user, loadingUser] = useUser();
     const isLoading = loadingUser;
     const disabled = isLoading || !user.hasNonDelinquentScope;
 
     const easySwitchFeature = useFeature(FeatureCode.EasySwitch);
+    const source = getEasySwitchSource(location);
 
     const handleGoogleClick = () => {
         dispatch(
             startOauthDraft({
+                source,
                 provider: ImportProvider.GOOGLE,
                 products: [ImportType.CONTACTS, ImportType.CALENDAR, ImportType.MAIL],
             })
@@ -54,6 +83,7 @@ const ProviderCards = () => {
                             startOauthDraft({
                                 provider: ImportProvider.OUTLOOK,
                                 products: [ImportType.CONTACTS, ImportType.CALENDAR, ImportType.MAIL],
+                                source: source,
                             })
                         )
                     }
