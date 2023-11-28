@@ -108,6 +108,9 @@
       "Apply": [
         "Anvend"
       ],
+      "Apply to existing messages": [
+        "Anvend på eksisterende beskeder"
+      ],
       "Attach screenshot(s)": [
         "Vedhæft skærmfoto(s)"
       ],
@@ -369,6 +372,9 @@
       "Edit servers": [
         "Rediger servere"
       ],
+      "Edit sieve": [
+        "Redigér sieve"
+      ],
       "Edit sign-in details": [
         "Rediger login-detaljer"
       ],
@@ -521,6 +527,9 @@
       ],
       "Keep": [
         "Behold"
+      ],
+      "Keep my Plus subscription": [
+        "Behold mit Plus-abonnement"
       ],
       "label emails as": [
         "giv e-mails etiketten"
@@ -728,6 +737,9 @@
       ],
       "Revoke all other sessions": [
         "Tilbagekald alle andre sessioner"
+      ],
+      "Revoke this invitation": [
+        "Tilbagetræk denne invitation"
       ],
       "Save": [
         "Gem"
@@ -1213,14 +1225,35 @@
       ]
     },
     "bf2023: Action": {
+      "**Add our encrypted password manager** for only ${ price }": [
+        "**Tilføj vores krypterede adgangskodeadministrator** for kun ${ price }"
+      ],
+      "Add ${ PASS_APP_NAME }": [
+        "Tilføj ${ PASS_APP_NAME }"
+      ],
+      "Add ${ plan } for ${ price } per month": [
+        "Tilføj ${ plan } for ${ price } pr. måned"
+      ],
+      "Become a Visionary": [
+        "Bliv Visionary"
+      ],
       "Cancel": [
         "Annuller"
       ],
       "Close": [
         "Luk"
       ],
+      "Get the deal": [
+        "Gør brug af tilbuddet"
+      ],
       "Remove": [
         "Fjern"
+      ],
+      "Remove ${ PASS_APP_NAME }": [
+        "Fjern ${ PASS_APP_NAME }"
+      ],
+      "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
+        "Tegn et abonnement på 15 måneder og få vores **krypteret adgangskodeadministrator** for kun ${ priceNoSuffix } ekstra pr. måned!"
       ]
     },
     "bf2023: Deal details": {
@@ -1278,14 +1311,61 @@
         "Dit abonnement vil automatisk blive fornyet til den nedsatte standardpris og varighed ved slutningen af din faktureringscyklus."
       ]
     },
+    "bf2023: header": {
+      "Save with Black Friday deals on a high-speed Swiss VPN": [
+        "Spar penge med Black Friday-tilbud på en schweizisk højhastigheds-VPN"
+      ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Spar penge på en schweizisk højhastigheds-VPN med Cyber Week-tilbud"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Spar penge på en schweizisk højhastigheds-VPN med årsafslutnings-tilbud"
+      ],
+      "Select your Black Friday offer": [
+        "Vælg dit Black Friday-tilbud"
+      ],
+      "Select your Cyber Week offer": [
+        "Vælg dit Cyber Week-tilbud"
+      ],
+      "Select your End of Year offer": [
+        "Vælg dit årsafslutnings-tilbud"
+      ]
+    },
     "bf2023: info": {
+      "All premium ${ BRAND_NAME } services. One easy subscription.": [
+        "Alle premium ${ BRAND_NAME }-tjenester. Ét nemt abonnement."
+      ],
+      "Secure browsing and premium VPN features.": [
+        "Sikker browsing og førsteklasses VPN-funktioner."
+      ],
       "Sorry, this offer is not available with your current plan.": [
         "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement."
+      ],
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "Beklager, dette tilbud er ikke tilgængeligt med dit nuværende abonnement. Men du kan få **${ discountPercentage } rabat ${ plan.Title }** når du tegner abonnement for **${ months }**."
       ]
     },
     "bf2023: Info": {
+      "6 TB storage (2x more than any other plan)": [
+        "6 TB lagerplads (2x mere end noget andet abonnement)"
+      ],
       "6 users": [
         "6 brugere"
+      ],
+      "Become a super-supporter. Get access to all current and future ${ BRAND_NAME } services.": [
+        "Bliv super-supporter. Få adgang til alle nuværende og fremtidige ${ BRAND_NAME }-tjenester."
+      ],
+      "Exclusive features and early access": [
+        "Eksklusive funktioner og tidlig adgang"
+      ],
+      "Help us fight for online privacy": [
+        "Hjælp os i kampen for privatliv på nettet"
+      ],
+      "Premium versions of all ${ BRAND_NAME } services": [
+        "Premium-udgaver af alle ${ BRAND_NAME }-tjenester"
+      ],
+      "The ${ plan } plan is back for a limited time only": [
+        "${ plan }-abonnementet er tilbage for en begrænset periode"
       ]
     },
     "bf2023: Offers": {
@@ -1297,6 +1377,15 @@
       "${ n } month": [
         "${ n } måned",
         "de første ${ n } måneder"
+      ],
+      "the first month": [
+        "den første måned"
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for ${ discountedMonths }. Then it will automatically be renewed at the discounted price of ${ nextPrice } for ${ nextMonths }. You can cancel at any time.": [
+        "Den særligt nedsatte pris på ${ discountedPrice } gælder i ${ discountedMonths }. Derefter vil den automatisk blive fornyet til den nedsatte pris på ${ nextPrice } for ${ nextMonths }. Du kan til enhver tid opsige."
+      ],
+      "The specially discounted price of ${ discountedPrice } is valid for the first month. Then it will automatically be renewed at ${ nextPrice } every month. You can cancel at any time.": [
+        "Den særligt nedsatte pris på ${ discountedPrice } gælder den første måned. Derefter vil den automatisk blive fornyet for ${ nextPrice } hver måned. Du kan til enhver tid opsige."
       ]
     },
     "bf2023: Title": {
@@ -1504,6 +1593,15 @@
       ]
     },
     "Calendar status": {
+      "Active": [
+        "Aktiv"
+      ],
+      "Default": [
+        "Standard"
+      ],
+      "Disabled": [
+        "Deaktiveret"
+      ],
       "Not synced": [
         "Ikke synkroniseret"
       ],
@@ -3078,6 +3176,9 @@
       "Accept": [
         "Acceptér"
       ],
+      "Add forwarding rule": [
+        "Tilføj regel for videresendelse"
+      ],
       "Decline": [
         "Afslå"
       ],
@@ -3088,9 +3189,22 @@
         "Indstil videresendelse af e-mail"
       ]
     },
+    "email_forwarding_2023: Forwarding tooltip": {
+      "Emails forwarded to you are excluded and will not be forwarded.": [
+        "E-mails, der videresendes til dig, er ikke omfattet og vil ikke blive videresendt."
+      ]
+    },
     "email_forwarding_2023: Header": {
       "Actions": [
         "Handlinger"
+      ]
+    },
+    "email_forwarding_2023: Info": {
+      "Automatically forward emails to another email address.": [
+        "Videresend automatisk e-mails til en anden e-mailadresse."
+      ],
+      "You won't receive emails forwarded automatically from ${ boldForwarderEmail }.": [
+        "Du vil ikke modtage e-mails, der videresendes automatisk fra ${ boldForwarderEmail }."
       ]
     },
     "email_forwarding_2023: Label": {
@@ -3102,6 +3216,11 @@
       ],
       "Or": [
         "Eller"
+      ]
+    },
+    "email_forwarding_2023: Link": {
+      "Learn more": [
+        "Få mere at vide"
       ]
     },
     "email_forwarding_2023: Placeholder": {
@@ -3127,6 +3246,9 @@
       ]
     },
     "email_forwarding_2023: Title": {
+      "Automatically forward emails to other accounts": [
+        "Videresend automatisk e-mails til andre konti."
+      ],
       "Request confirmation": [
         "Anmod om bekræftelse"
       ],
@@ -3912,6 +4034,9 @@
       "${ totalProcessed }/${ totalToProcess } event exported": [
         "${ totalProcessed }/${ totalToProcess } begivenhed eksporteret",
         "${ totalProcessed }/${ totalToProcess } begivenheder eksporteret"
+      ],
+      "Loading events": [
+        "Indlæser begivenheder"
       ]
     },
     "familyOffer_2023: Deal details": {
@@ -5376,6 +5501,21 @@
       "Attention required": [
         "Opmærksomhed påkrævet"
       ],
+      "Auto-reply is active each month between the selected start and end time.": [
+        "Autosvar er aktiv hver måned mellem det valgte start- og sluttidspunkt."
+      ],
+      "Auto-reply is active each week between the selected start and end time.": [
+        "Autosvar er aktiv hver uge mellem det valgte start- og sluttidspunkt."
+      ],
+      "Auto-reply is active from the start time to the end time.": [
+        "Autosvar er aktiv fra start- til sluttidspunktet."
+      ],
+      "Auto-reply is active until you turn it off.": [
+        "Autosvar er aktiv, indtil du slår den fra."
+      ],
+      "Auto-reply is always active on the days of the week you select, between the selected hours.": [
+        "Autosvar er altid aktiv på de ugedage, du vælger, mellem de valgte tidspunkter."
+      ],
       "Awaiting transaction": [
         "Afventer transaktion"
       ],
@@ -5628,6 +5768,9 @@
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
         "Hvis du aktiverer gendannelse ved hjælp af en sætning igen, genereres der en ny gendannelsessætning."
+      ],
+      "Encryption setting updated": [
+        "Krypteringsindstilling opdateret"
       ],
       "Enhance your network security": [
         "Styrk din netværkssikkerhed"
@@ -5918,6 +6061,9 @@
       ],
       "Left to Right": [
         "Venstre mod højre"
+      ],
+      "Let your contacts know you care about their privacy.": [
+        "Lad dine kontakter vide, at du bekymrer dig om beskyttelsen af deres privatliv."
       ],
       "Link copied to clipboard": [
         "Link kopieret til udklipsholder"
@@ -6339,9 +6485,6 @@
       "Set recovery phrase": [
         "Opsæt gendannelsessætning"
       ],
-      "Setting up your Drive": [
-        "Opsætter dit drev"
-      ],
       "Setting up your organization": [
         "Konfigurerer din organisation"
       ],
@@ -6362,9 +6505,6 @@
       ],
       "Since you're a loyal user, your account has additional features enabled.": [
         "Eftersom du er en loyal bruger, har din konto ekstra features aktiveret."
-      ],
-      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
-        "SMTP-indsendelse gør det muligt for tredjepartstjenester eller -enheder at sende e-mail via ${ MAIL_APP_NAME } for dine brugerdefinerede domæneadresser. Denne funktion er kun tilgængelig for ${ BRAND_NAME } for erhvervsbrugere med brugerdefinerede domæner."
       ],
       "Some keys successfully reactivated": [
         "Nogle nøgler er genaktiveret med succes"
@@ -7429,6 +7569,9 @@
     "Knowledge base link label": {
       "Here's how": [
         "Sådan gør du"
+      ],
+      "Learn more": [
+        "Få mere at vide"
       ]
     },
     "Label": {
@@ -7540,6 +7683,12 @@
       ],
       "Auto-delete unwanted messages": [
         "Slet uønskede beskeder automatisk"
+      ],
+      "Auto-detect primary time zone": [
+        "Registrer automatisk primær tidszone"
+      ],
+      "Auto-reply": [
+        "Autosvar"
       ],
       "Awarded": [
         "Belønnet"
@@ -7679,8 +7828,14 @@
       "Date format": [
         "Datoformat"
       ],
+      "Days of the week": [
+        "Ugedage"
+      ],
       "Default language": [
         "Standardsporg"
+      ],
+      "Default language (${ defaultLanguage })": [
+        "Standardsprog (${ defaultLanguage })"
       ],
       "Default scrollbars": [
         "Standard rullebjælker"
@@ -7754,6 +7909,18 @@
       "Emails (last month)": [
         "E-mails (seneste måned)"
       ],
+      "End date": [
+        "Slutdato"
+      ],
+      "End day of month": [
+        "Sidste dag i måneden"
+      ],
+      "End time": [
+        "Sluttidspunkt"
+      ],
+      "End weekday": [
+        "Sidste ugedag"
+      ],
       "Enter password": [
         "Angiv adgangskode"
       ],
@@ -7826,6 +7993,9 @@
       "Import to:": [
         "Importer til:"
       ],
+      "Inbox": [
+        "Indbakke"
+      ],
       "Interval": [
         "Interval"
       ],
@@ -7882,6 +8052,9 @@
       ],
       "Mark as": [
         "Markér som"
+      ],
+      "Message": [
+        "Besked"
       ],
       "Moderate NAT": [
         "Moderat NAT"
@@ -8066,11 +8239,23 @@
       "Send crash reports": [
         "Send rapporter om nedbrud"
       ],
+      "Send in": [
+        "Send på"
+      ],
+      "Show secondary time zone": [
+        "Vis sekundær tidszone"
+      ],
+      "Show sender images": [
+        "Vis afsenderbilleder"
+      ],
       "Show unread count in Favicon": [
         "Vis antallet af ulæste i favicon"
       ],
       "Show week numbers": [
         "Vis ugenumre"
+      ],
+      "Signature": [
+        "Signatur"
       ],
       "Spam": [
         "Spam"
@@ -8080,6 +8265,15 @@
       ],
       "Start date": [
         "Startdato"
+      ],
+      "Start day of month": [
+        "Første dag i måneden"
+      ],
+      "Start time": [
+        "Starttidspunkt"
+      ],
+      "Start weekday": [
+        "Første ugedag"
       ],
       "Statement": [
         "Udsagn"
@@ -8123,6 +8317,9 @@
       "Two-password mode": [
         "To-adgangskodetilstand"
       ],
+      "Undo send": [
+        "Fortryd send"
+      ],
       "Upload 1 or more encryption keys": [
         "Upload 1 eller flere krypteringsnøgler"
       ],
@@ -8131,12 +8328,6 @@
       ],
       "URL": [
         "URL"
-      ],
-      "Use a recovery email address": [
-        "Brug en e-mailadresse til gendannelse"
-      ],
-      "Use a recovery phone number": [
-        "Brug et telefonnummer til gendannelse"
       ],
       "User": [
         "Bruger"
@@ -8534,6 +8725,9 @@
       ]
     },
     "Message": {
+      "All filter actions will be applied to all messages in your ${ MAIL_APP_NAME } account. No auto-reply emails will be sent.": [
+        "Alle filterhandlinger vil blive anvendt på alle beskeder i din ${ MAIL_APP_NAME }-konto. Ingen autosvar-e-mail vil blive sendt."
+      ],
       "Connect your custom domain to ${ BRAND_NAME } to set up custom email addresses (e.g., you@yourcompany.com). Our wizard will guide you through the process.": [
         "Forbind dit brugerdomæne til ${ BRAND_NAME } for at oprette brugerdefinerede e-mailadresser (f.eks. dig@ditfirma.com). Vores guide leder dig gennem processen."
       ],
@@ -10147,6 +10341,9 @@
       "Please select the main reason": [
         "Vælg venligst hovedårsagen"
       ],
+      "Printer": [
+        "Printer"
+      ],
       "Search": [
         "Søg"
       ],
@@ -11171,6 +11368,12 @@
       "Address added": [
         "Adresse tilføjet"
       ],
+      "Auto-reply disabled": [
+        "Autosvar deaktiveret"
+      ],
+      "Auto-reply updated": [
+        "Autosvar opdateret"
+      ],
       "Bug reported": [
         "Fejl anmeldt"
       ],
@@ -11698,9 +11901,6 @@
       "Confirm phone number": [
         "Bekræft telefonnummer"
       ],
-      "Congratulations on choosing privacy!": [
-        "Tillykke med valget af et beskyttet privatliv!"
-      ],
       "Connect ${ name }": [
         "Forbind ${ name }"
       ],
@@ -11932,6 +12132,9 @@
       "Folders and labels": [
         "Mapper og etiketter"
       ],
+      "Forward and auto-reply": [
+        "Videresendelse og autosvar"
+      ],
       "Forward emails": [
         "Videresend e-mails"
       ],
@@ -12106,9 +12309,6 @@
       ],
       "PayPal verification failed": [
         "PayPal-bekræftelse fejlede"
-      ],
-      "Personalize your e-mail footer": [
-        "Personaliser din e-mail-sidefod"
       ],
       "Phone": [
         "Telefon"

@@ -454,7 +454,7 @@
         "रखें"
       ],
       "Keep my Plus subscription": [
-        "मेरा प्लस सब्सक्रिप्शन रखें"
+        "मेरी प्लस सदस्यता रखें"
       ],
       "label emails as": [
         "ईमेल को लेबल करें"
@@ -4671,7 +4671,7 @@
         "(${ memberCount } सदस्य)"
       ],
       "(${ serverPrice } /month)": [
-        "(${ serverPrice }/महीना)"
+        "(${ serverPrice } /महीना)"
       ],
       "(Filter if ALL of the following conditions are met)": [
         "(फ़िल्टर करें यदि सभी निम्नलिखित शर्तों को पूरा करते हैं)"
@@ -5673,9 +5673,6 @@
       "Set recovery phrase": [
         "पुनर्प्राप्ति वाक्यांश सेट करें"
       ],
-      "Setting up your Drive": [
-        "आपका ड्राइव सेट कर रहे"
-      ],
       "Show original message": [
         "मूल संदेश दिखाएं"
       ],
@@ -5975,7 +5972,7 @@
         "${ PROTON_SENTINEL_NAME } तक पहुंच प्राप्त करने के लिए ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, या ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } प्लान में अपग्रेड करें।"
       ],
       "Upgrade to add a shorter @pm.me address to your account that is easier to share. It stands for “${ MAIL_APP_NAME } me” or “Private Message me”.": [
-        "अपने खाते में एक छोटा @pm.me पता जोड़ने के लिए अपग्रेड करें जिसे साझा करना आसान हो। इसका मतलब है “${ MAIL_APP_NAME } me” या “Private Message me”।"
+        "अपने खाते में एक छोटा @pm.me पता जोड़ने के लिए अपग्रेड करें जिसे साझा करना आसान हो। इसका मतलब है “${ MAIL_APP_NAME } me” या “मुझे निजी संदेश भेजें”।"
       ],
       "Upload picture": [
         "तसवीर डालें"
@@ -7271,12 +7268,6 @@
       ],
       "URL": [
         "यूआरएल"
-      ],
-      "Use a recovery email address": [
-        "एक रिक्वरी ईमेल पता इस्तेमाल करें"
-      ],
-      "Use a recovery phone number": [
-        "रिक्वरी फोन नंबर इस्तेमाल करें"
       ],
       "User": [
         "यूज़र"
@@ -8803,7 +8794,7 @@
     },
     "pass_signup_2023: Action": {
       "Keep this plan": [
-        "यह योजना बनाये रखें"
+        "यह योजना रखें"
       ]
     },
     "pass_signup_2023: Info": {
@@ -10079,9 +10070,6 @@
       ],
       "Confirm phone number": [
         "फ़ोन नंबर की पुष्टि करें"
-      ],
-      "Congratulations on choosing privacy!": [
-        "गोपनीयता चुनने पर बधाई!"
       ],
       "Connect ${ name }": [
         "जुड़े ${ name }"

@@ -3716,6 +3716,9 @@
       "Contact signature not verified": [
         "Tanda tangan kontak tidak terverifikasi"
       ],
+      "Could not save preference": [
+        "Tidak dapat menyimpan preferensi"
+      ],
       "Deselect at least ${ calendarsToFixCount } calendars": [
         "Hapus setidaknya ${ calendarsToFixCount } kalender dari pilihan"
       ],
@@ -7058,9 +7061,6 @@
       "Set recovery phrase": [
         "Tentukan frasa pemulihan"
       ],
-      "Setting up your Drive": [
-        "Menyiapkan Drive Anda"
-      ],
       "Setting up your organization": [
         "Menyiapkan organisasi Anda"
       ],
@@ -7087,9 +7087,6 @@
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "Submisi SMTP memungkinkan layanan atau perangkat milik pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME } bagi alamat domain khusus milik Anda. Untuk menggunakan fitur ini, mulailah dengan menghasilkan token baru."
-      ],
-      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
-        "Submisi SMTP memungkinkan layanan atau perangkat milik pihak ketiga untuk mengirimkan email melalui ${ MAIL_APP_NAME } bagi alamat domain khusus milik Anda. Fitur ini hanya tersedia bagi pengguna ${ BRAND_NAME } for Business yang memiliki domain khusus."
       ],
       "Some keys successfully reactivated": [
         "Sebagian kunci berhasil diaktifkan ulang"
@@ -8512,6 +8509,9 @@
       "Conversation grouping": [
         "Pengelompokan percakapan"
       ],
+      "Conversations per page": [
+        "Percakapan per halaman"
+      ],
       "Copy": [
         "Salin"
       ],
@@ -8793,6 +8793,9 @@
       ],
       "Message": [
         "Pesan"
+      ],
+      "Messages per page": [
+        "Pesan per halaman"
       ],
       "Moderate NAT": [
         "NAT Moderat"
@@ -9096,12 +9099,6 @@
       ],
       "URL": [
         "URL"
-      ],
-      "Use a recovery email address": [
-        "Gunakan alamat surel pemulihan"
-      ],
-      "Use a recovery phone number": [
-        "Gunakan nomor telepon pemulihan"
       ],
       "Use folder colors": [
         "Gunakan warna folder"
@@ -13158,9 +13155,6 @@
       "Confirm phone number": [
         "Konfirmasi nomor telepon"
       ],
-      "Congratulations on choosing privacy!": [
-        "Selamat karena telah memilih privasi!"
-      ],
       "Connect ${ name }": [
         "Hubungkan ${ name }"
       ],
@@ -13598,9 +13592,6 @@
       ],
       "PayPal verification failed": [
         "Verifikasi PayPal gagal"
-      ],
-      "Personalize your e-mail footer": [
-        "Sesuaikan footer surel Anda"
       ],
       "Phone": [
         "Telepon"

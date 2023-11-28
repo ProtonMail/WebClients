@@ -1288,6 +1288,12 @@
       ]
     },
     "bf2023: Action": {
+      "Add ${ PASS_APP_NAME }": [
+        "增加 ${ PASS_APP_NAME }"
+      ],
+      "Become a Visionary": [
+        "成為 Visionary"
+      ],
       "Cancel": [
         "取消"
       ],
@@ -1351,6 +1357,16 @@
         "進階版密碼管理器"
       ]
     },
+    "bf2023: header": {
+      "Select your End of Year offer": [
+        "選擇你的年終優惠"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
+      ]
+    },
     "bf2023: Info": {
       "6 users": [
         "6 位使用者"
@@ -1364,6 +1380,14 @@
     "bf2023: renew": {
       "the first ${ n } months": [
         "${ n }月"
+      ],
+      "the first month": [
+        "第一個月"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "優惠不再提供"
       ]
     },
     "bf2023: Tooltip": {
@@ -6719,9 +6743,6 @@
       "Set recovery phrase": [
         "設定還原短語"
       ],
-      "Setting up your Drive": [
-        "設定您的雲端硬碟"
-      ],
       "Setting up your organization": [
         "設定您的組織"
       ],
@@ -8668,12 +8689,6 @@
       ],
       "URL": [
         "網址"
-      ],
-      "Use a recovery email address": [
-        "使用備援電子郵件位址"
-      ],
-      "Use a recovery phone number": [
-        "使用備援電話號碼"
       ],
       "User": [
         "使用者"
@@ -12551,9 +12566,6 @@
       "Confirm phone number": [
         "確認手機號碼"
       ],
-      "Congratulations on choosing privacy!": [
-        "恭喜您選擇了隱私！"
-      ],
       "Connect ${ name }": [
         "連接 ${ name }"
       ],
@@ -12985,9 +12997,6 @@
       ],
       "PayPal verification failed": [
         "PayPal 驗證失敗"
-      ],
-      "Personalize your e-mail footer": [
-        "自訂您電郵的下款"
       ],
       "Phone": [
         "電話"
