@@ -430,14 +430,8 @@
       "Get verification code": [
         "Få bekræftelseskode"
       ],
-      "Go to first page": [
-        "Gå til første side"
-      ],
       "Go to label": [
         "Gå til etikette"
-      ],
-      "Go to last page": [
-        "Gå til sidste side"
       ],
       "Go to next page": [
         "Gå til næste side"
@@ -7603,20 +7597,39 @@
         "Vælg, hvad ${ BRAND_NAME } kan få adgang til: se dine e-mailbeskeder og indstillinger, se og downloade dine kontakter, se og downloade alle kalendere, du har adgang til fra Google Kalender."
       ]
     },
-    "Onboarding": {
-      "Welcome to ${ appName }": [
-        "Velkommen til ${ appName }"
+    "Onboarding modal": {
+      "Automatically forward emails": [
+        "Videresend e-mails automatisk"
       ],
-      "Where privacy and security meet productivity and ease of use.": [
-        "Hvor privatlivsbeskyttelse og sikkerhed kombineres med effektivitet og brugervenlighed."
-      ]
-    },
-    "Onboarding Action": {
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "Blokér e-mailkommunikation fra svindlere permanent. ${ kbLinkSender }"
+      ],
+      "Block unsavory senders": [
+        "Blokér ubehagelige afsendere"
+      ],
+      "Congratulations on choosing privacy": [
+        "Tillykke med valget af et beskyttet privatliv"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "Kryptering så stærk, at kun du og de tiltænkte modtagere kan se dine e-mails. ${ kbLinkEncryption }"
+      ],
+      "For your eyes only": [
+        "Strengt fortroligt"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "Videresend Gmail-beskeder til din indbakke."
+      ],
       "Next": [
         "Næste"
       ],
-      "Start using ${ appName }": [
-        "Begynd at bruge ${ appName }"
+      "Protection from trackers": [
+        "Beskyttelse mod trackere"
+      ],
+      "Skip": [
+        "Spring over"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "Vi forhindrer annoncører og dataopsamlere i at profilere dig. ${ kbLinkPrivacy }"
       ]
     },
     "Onboarding Proton": {
@@ -7626,17 +7639,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Udforsk alle ${ BRAND_NAME }-tjenester"
       ],
-      "More theming options are available in your account Settings > Appearance.": [
-        "Flere temamuligheder er tilgængelige i din kontos Indstillinger > Udseende."
-      ],
-      "Select a theme": [
+      "Pick a theme": [
         "Vælg et tema"
       ],
       "Set up your organization": [
         "Konfigurer din organisation"
       ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Brug appvælgeren øverst til venstre for at få adgang til alle ${ BRAND_NAME }-tjenester: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og ${ DRIVE_SHORT_APP_NAME }."
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Brug app-vælgeren øverst til venstre for at få adgang til alle ${ BRAND_NAME }-tjenester: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Du kan til enhver tid ændre dit tema i dine indstillinger."
       ]
     },
     "Online accounts": {

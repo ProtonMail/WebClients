@@ -430,14 +430,8 @@
       "Get verification code": [
         "Απόκτηση κωδικού επαλήθευσης"
       ],
-      "Go to first page": [
-        "Μετάβαση στην πρώτη σελίδα"
-      ],
       "Go to label": [
         "Μετάβαση στην ετικέτα"
-      ],
-      "Go to last page": [
-        "Μετάβαση στην τελευταία σελίδα"
       ],
       "Go to next page": [
         "Μετάβαση στην επόμενη σελίδα"
@@ -7606,20 +7600,39 @@
         "Επιλέξτε σε τι μπορεί να έχει πρόσβαση το ${ BRAND_NAME }: δείτε τα μηνύματα ηλεκτρονικού ταχυδρομείου και τις ρυθμίσεις σας, προβάλετε και κατεβάστε τις επαφές σας, προβάλετε και κατεβάστε όλες τις ατζέντες στις οποίες έχετε πρόσβαση από την Ατζέντα Google."
       ]
     },
-    "Onboarding": {
-      "Welcome to ${ appName }": [
-        "Καλώς ήρθατε στο ${ appName }"
+    "Onboarding modal": {
+      "Automatically forward emails": [
+        "Αυτόματη προώθηση μηνυμάτων ηλεκτρονικού ταχυδρομείου"
       ],
-      "Where privacy and security meet productivity and ease of use.": [
-        "Όπου το απόρρητο και η ασφάλεια συναντούν την παραγωγικότητα και την ευκολία χρήσης."
-      ]
-    },
-    "Onboarding Action": {
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "Αποκλείστε μόνιμα επικοινωνίες ηλεκτρονικού ταχυδρομείου από απατεώνες. ${ kbLinkSender }"
+      ],
+      "Block unsavory senders": [
+        "Αποκλεισμός δυσάρεστων αποστολέων"
+      ],
+      "Congratulations on choosing privacy": [
+        "Συγχαρητήρια για την προτίμησή σας στην ιδωτικότητα"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "Τόσο ισχυρή κρυπτογράφηση, που μόνο εσείς και οι παραλήπτες για τους οποίους προορίζεστε μπορείτε να δείτε τα μηνύματα ηλεκτρονικού ταχυδρομείου σας. ${ kbLinkEncryption }"
+      ],
+      "For your eyes only": [
+        "Μόνο για τα μάτια σας"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "Προωθήστε μηνύματα Gmail στα εισερχόμενά σας."
+      ],
       "Next": [
         "Επόμενο"
       ],
-      "Start using ${ appName }": [
-        "Έναρξη χρήσης του ${ appName }"
+      "Protection from trackers": [
+        "Προστασία από ιχνηλάτες"
+      ],
+      "Skip": [
+        "Παράλειψη"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "Σταματάμε τους διαφημιζόμενους και τους συλλέκτες δεδομένων από το να δημιουργούν το προφίλ σας. ${ kbLinkPrivacy }"
       ]
     },
     "Onboarding Proton": {
@@ -7629,17 +7642,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Ανακαλύψτε όλες τις υπηρεσίες του ${ BRAND_NAME }"
       ],
-      "More theming options are available in your account Settings > Appearance.": [
-        "Περισσότερες επιλογές θέματος είναι διαθέσιμες στις Ρυθμίσεις > Εμφάνιση του λογαριασμού σας."
-      ],
-      "Select a theme": [
+      "Pick a theme": [
         "Επιλέξτε ένα θέμα"
       ],
       "Set up your organization": [
         "Ρυθμίστε τον οργανισμό σας"
       ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Χρησιμοποιήστε τον επιλογέα εφαρμογών επάνω αριστερά για να αποκτήσετε πρόσβαση σε όλες τις υπηρεσίες του ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } και ${ DRIVE_SHORT_APP_NAME }."
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Χρησιμοποιήστε τον επιλογέα εφαρμογών επάνω αριστερά για να αποκτήσετε πρόσβαση σε όλες τις υπηρεσίες του ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } και ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Θα μπορείτε να αλλάξετε το θέμα σας ανά πάσα στιγμή στις ρυθμίσεις σας."
       ]
     },
     "Online accounts": {
