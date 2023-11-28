@@ -7,12 +7,19 @@ import { useBalanceOverview } from './useBalanceOverview';
 
 describe('useBalanceOverview', () => {
     beforeEach(() => {
+        jest.useFakeTimers();
+        jest.setSystemTime(new Date('11/27/2023'));
+
         jest.spyOn(getRandomAccentColorModule, 'getRandomAccentColor')
             .mockReturnValueOnce('#33FF33')
             .mockReturnValueOnce('#FF3333')
             .mockReturnValueOnce('#5733FF')
             .mockReturnValueOnce('#336EFF')
             .mockReturnValueOnce('#33FFAA');
+    });
+
+    afterEach(() => {
+        jest.useRealTimers();
     });
 
     it("should return the sum of all wallet's balance", () => {
@@ -62,25 +69,27 @@ describe('useBalanceOverview', () => {
     });
 
     describe('when data is empty', () => {
-        const { result } = renderHook(() => useBalanceOverview([], []));
+        it('should return empty chart data', () => {
+            const { result } = renderHook(() => useBalanceOverview([], []));
 
-        expect(result.current.totalBalance).toBe(0);
-        expect(result.current.balanceDistributionDoughnutChartData).toStrictEqual({
-            datasets: [
-                {
-                    backgroundColor: [],
-                    borderWidth: 0,
-                    data: [],
-                    label: 'Balance',
-                },
-            ],
-            labels: [],
-        });
-        expect(result.current.balanceEvolutionLineChartData).toStrictEqual({
-            data: [
-                { x: '11/27/2023', y: 0 },
-                { x: '11/27/2023', y: 0 },
-            ],
+            expect(result.current.totalBalance).toBe(0);
+            expect(result.current.balanceDistributionDoughnutChartData).toStrictEqual({
+                datasets: [
+                    {
+                        backgroundColor: [],
+                        borderWidth: 0,
+                        data: [],
+                        label: 'Balance',
+                    },
+                ],
+                labels: [],
+            });
+            expect(result.current.balanceEvolutionLineChartData).toStrictEqual({
+                data: [
+                    { x: '11/27/2023', y: 0 },
+                    { x: '11/27/2023', y: 0 },
+                ],
+            });
         });
     });
 });

@@ -22,7 +22,7 @@ const transactions: Transaction[] = [
     { id: '21', value: -10061112, timestamp: 1700222245000 },
 ];
 
-export const WalletDashboardContainer = () => {
+export const SingleWalletDashboardContainer = () => {
     const { walletId } = useParams<{ walletId: string }>();
 
     const wallet = wallets.find(({ id }) => id === walletId);

@@ -4,9 +4,10 @@ import { ErrorBoundary, StandardErrorPage } from '@proton/components';
 import { QuickSettingsRemindersProvider } from '@proton/components/hooks/drawer/useQuickSettingsReminders';
 
 import { PrivateWalletLayout } from '../components';
+import { BitcoinOnRampContainer } from './BitcoinOnRampContainer';
 import { BitcoinTransferContainer } from './BitcoinTransferContainer';
-import { WalletDashboardContainer } from './WalletDashboardContainer';
-import { WalletsDashboardContainer } from './WalletsDashboardContainer';
+import { MultiWalletDashboardContainer } from './MultiWalletDashboardContainer';
+import { SingleWalletDashboardContainer } from './SingleWalletDashboardContainer';
 
 const MainContainer = () => {
     // TODO: we may need to init redux here
@@ -20,10 +21,13 @@ const MainContainer = () => {
                             <BitcoinTransferContainer />
                         </Route>
                         <Route path={'/wallets/:walletId'}>
-                            <WalletDashboardContainer />
+                            <SingleWalletDashboardContainer />
+                        </Route>
+                        <Route path={'/buy'}>
+                            <BitcoinOnRampContainer />
                         </Route>
                         <Route path={'*'}>
-                            <WalletsDashboardContainer />
+                            <MultiWalletDashboardContainer />
                         </Route>
                     </Switch>
                 </PrivateWalletLayout>
