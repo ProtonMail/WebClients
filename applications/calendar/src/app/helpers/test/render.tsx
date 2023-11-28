@@ -6,7 +6,7 @@ import { render as originalRender } from '@testing-library/react';
 import { renderHook as originalRenderHook } from '@testing-library/react-hooks';
 import { createMemoryHistory } from 'history';
 
-import { CacheProvider, ExperimentsProvider, ModalsChildren, ModalsProvider } from '@proton/components';
+import { CacheProvider, ModalsChildren, ModalsProvider } from '@proton/components';
 import ConfigProvider from '@proton/components/containers/config/Provider';
 import { APPS } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
@@ -32,10 +32,8 @@ const TestProvider = ({ children }: { children: ReactNode }) => (
         <NotificationsTestProvider>
             <ModalsProvider>
                 <CacheProvider cache={createCache()}>
-                    <ExperimentsProvider>
-                        <ModalsChildren />
-                        <Router history={history}>{children}</Router>
-                    </ExperimentsProvider>
+                    <ModalsChildren />
+                    <Router history={history}>{children}</Router>
                 </CacheProvider>
             </ModalsProvider>
         </NotificationsTestProvider>
