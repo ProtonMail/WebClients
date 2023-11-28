@@ -501,6 +501,12 @@ export const passPlusUpsell = {
             icon: 'pen-square',
         },
         {
+            icon: 'shield',
+            included: true,
+            text: 'Proton Sentinel program',
+            tooltip: 'Provides the highest level of account security protection and specialist support',
+        },
+        {
             text: 'Priority support',
             included: true,
             icon: 'life-ring',
