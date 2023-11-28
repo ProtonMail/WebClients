@@ -4,15 +4,13 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Step, Stepper } from '@proton/atoms/Stepper';
-import { ExperimentCode, HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
+import { HumanVerificationSteps, OnLoginCallback } from '@proton/components/containers';
 import { startUnAuthFlow } from '@proton/components/containers/api/unAuthenticatedApi';
 import useKTActivation from '@proton/components/containers/keyTransparency/useKTActivation';
 import {
-    useActiveBreakpoint,
     useApi,
     useConfig,
     useErrorHandler,
-    useExperiment,
     useLocalState,
     useMyCountry,
     useVPNServersCount,
@@ -131,8 +129,6 @@ const SignupContainer = ({
     const isMailTrial = isMailTrialSignup(location);
     const isMailRefer = isMailReferAFriendSignup(location);
 
-    const { isTinyMobile } = useActiveBreakpoint();
-
     useMetaTags(isMailRefer ? mailReferPage() : isMailTrial ? mailTrialPage() : metaTags);
 
     const normalApi = useApi();
@@ -161,7 +157,6 @@ const SignupContainer = ({
         });
     const [vpnServers] = useVPNServersCount();
     const [loading, withLoading] = useLoading();
-    const multipleUpsellExperiment = useExperiment(ExperimentCode.MultipleUpsell);
     const [[previousSteps, step], setStep] = useState<[SignupSteps[], SignupSteps]>([
         [],
         SignupSteps.AccountCreationUsername,
@@ -485,11 +480,6 @@ const SignupContainer = ({
         }
 
         if (toApp === APPS.PROTONDRIVE) {
-            if (multipleUpsellExperiment.value === 'B' && !isTinyMobile) {
-                // Show most popular plan
-                return { upsellPlanName: PLANS.BUNDLE, mostPopularPlanName: PLANS.DRIVE };
-            }
-
             return { upsellPlanName: PLANS.DRIVE };
         }
 
@@ -757,7 +747,6 @@ const SignupContainer = ({
             )}
             {step === Upsell && (
                 <UpsellStep
-                    experiment={multipleUpsellExperiment}
                     onBack={handleBackStep}
                     currency={model.subscriptionData.currency}
                     cycle={model.subscriptionData.cycle}
