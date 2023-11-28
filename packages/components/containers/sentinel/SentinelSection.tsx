@@ -23,7 +23,6 @@ import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
-import { useFlag } from '../unleash';
 
 interface Props {
     app: APP_NAMES;
@@ -40,7 +39,6 @@ const SentinelSection = ({ app }: Props) => {
 
     const protonSentinel = userSettings.HighSecurity.Value;
     const sentinelEligible = isProtonSentinelEligible(userSettings);
-    const sentinelPassplusEnabled = !!useFlag('SentinelPassPlus');
 
     const handleHighSecurity = async (newHighSecurityState: Boolean) => {
         if (newHighSecurityState) {
@@ -64,23 +62,12 @@ const SentinelSection = ({ app }: Props) => {
     };
 
     const getUpgradeMessage = () => {
-        if (sentinelPassplusEnabled) {
-            return (
-                <>
-                    {/* translator: full sentence with pass plus: "Upgrade to Pass Plus, Proton Unlimited, Proton Family, or Business plan to get access to Proton Sentinel." */}
-                    {c('Info').t`Upgrade to ${PLAN_NAMES[PLANS.PASS_PLUS]}, ${PLAN_NAMES[PLANS.BUNDLE]}, ${
-                        PLAN_NAMES[PLANS.FAMILY]
-                    }, or ${PLAN_NAMES[PLANS.BUNDLE_PRO]} plan to get access to ${PROTON_SENTINEL_NAME}.`}
-                    ;
-                </>
-            );
-        }
         return (
             <>
-                {/* translator: full sentence: "Upgrade to Proton Unlimited, Proton Family, or Business plan to get access to Proton Sentinel." */}
-                {c('Info').t`Upgrade to ${PLAN_NAMES[PLANS.BUNDLE]}, ${PLAN_NAMES[PLANS.FAMILY]}, or ${
-                    PLAN_NAMES[PLANS.BUNDLE_PRO]
-                } plan to get access to ${PROTON_SENTINEL_NAME}.`}
+                {/* translator: full sentence with pass plus: "Upgrade to Pass Plus, Proton Unlimited, Proton Family, or Business plan to get access to Proton Sentinel." */}
+                {c('Info').t`Upgrade to ${PLAN_NAMES[PLANS.PASS_PLUS]}, ${PLAN_NAMES[PLANS.BUNDLE]}, ${
+                    PLAN_NAMES[PLANS.FAMILY]
+                }, or ${PLAN_NAMES[PLANS.BUNDLE_PRO]} plan to get access to ${PROTON_SENTINEL_NAME}.`}
                 ;
             </>
         );
