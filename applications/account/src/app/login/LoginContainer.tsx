@@ -5,12 +5,11 @@ import { c } from 'ttag';
 
 import {
     AbuseModal,
-    FeatureCode,
     OnLoginCallback,
     useApi,
     useConfig,
     useErrorHandler,
-    useFeature,
+    useFlag,
     useIsInboxElectronApp,
 } from '@proton/components';
 import ElectronBlockedContainer from '@proton/components/containers/app/ElectronBlockedContainer';
@@ -100,15 +99,7 @@ const LoginContainer = ({
 
     const errorHandler = useErrorHandler();
     const [abuseModal, setAbuseModal] = useState<{ apiErrorMessage?: string } | undefined>(undefined);
-    const originalTrustedDeviceRecoveryFeature = useFeature<boolean>(FeatureCode.TrustedDeviceRecovery);
-    const trustedDeviceRecoveryFeature =
-        APP_NAME === APPS.PROTONVPN_SETTINGS
-            ? {
-                  loading: false,
-                  feature: { Value: false },
-              }
-            : originalTrustedDeviceRecoveryFeature;
-    const hasTrustedDeviceRecovery = !!trustedDeviceRecoveryFeature.feature?.Value;
+    const hasTrustedDeviceRecovery = useFlag('TrustedDeviceRecovery');
     const ktActivation = useKTActivation();
 
     const normalApi = useApi();
@@ -221,7 +212,7 @@ const LoginContainer = ({
                                     paths={paths}
                                     defaultUsername={previousUsernameRef.current}
                                     hasRemember={hasRemember}
-                                    trustedDeviceRecoveryFeature={trustedDeviceRecoveryFeature}
+                                    hasTrustedDeviceRecovery={hasTrustedDeviceRecovery}
                                     authType={authType}
                                     onChangeAuthType={(authType) => {
                                         setAuthType(authType);

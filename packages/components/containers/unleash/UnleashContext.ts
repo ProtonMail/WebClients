@@ -14,6 +14,7 @@ enum CommonFeatureFlag {
 }
 
 enum AccountFlag {
+    TrustedDeviceRecovery = 'TrustedDeviceRecovery',
     MaintenanceImporter = 'MaintenanceImporter',
     BF2023IsExpired = 'BF2023IsExpired',
     BF2023OfferCheck = 'BF2023OfferCheck',
