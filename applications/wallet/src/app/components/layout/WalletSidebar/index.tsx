@@ -7,7 +7,7 @@ import changelog from '../../../../../CHANGELOG.md';
 import { BitcoinMovementNavItems } from './BitcoinMovementNavItems';
 import { SecurityChecklist } from './SecurityChecklist';
 import { TransactionsNavItem } from './TransactionsNavItem';
-import { WalletsList } from './WalletsSidebarList';
+import { WalletsSidebarList } from './WalletsSidebarList';
 
 interface Props {
     expanded?: boolean;
@@ -26,7 +26,7 @@ const WalletSidebar = ({ expanded = false }: Props) => {
                     <div className="outline-none flex flex-column flex-justify-space-between flex-item-grow">
                         <div className="flex-item-grow">
                             <SidebarList>
-                                <WalletsList />
+                                <WalletsSidebarList />
                                 <TransactionsNavItem />
                                 <BitcoinMovementNavItems />
                             </SidebarList>

@@ -13,7 +13,7 @@ import { wallets } from '../../../tests';
 import { SidebarItemContent } from './SidebarItemContent';
 import { WalletExpandButton } from './WalletExpandButton';
 
-export const WalletsList = () => {
+export const WalletsSidebarList = () => {
     const { state: showWallets, toggle: toggleShowWallets } = useToggle(true);
 
     return (
