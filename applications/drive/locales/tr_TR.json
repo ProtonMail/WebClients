@@ -3750,6 +3750,9 @@
       "Items in the trash will stay here until you delete them permanently": [
         "Çöp kutusundaki ögeler siz onları kalıcı olarak silene kadar tutulur"
       ],
+      "Items moved to the trash will stay here until deleted": [
+        "Çöpe atılan dosyalar silinene kadar burada tutulur"
+      ],
       "It’s easy and secure": [
         "Kolay ve güvenli"
       ],
@@ -4203,6 +4206,9 @@
       "Trash": [
         "Çöp kutusu"
       ],
+      "Trash is empty": [
+        "Çöp kutusu boş"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Herkese açık olarak sunulmadan önce yeni ${ BRAND_NAME } özelliklerini, güncellemelerini ve ürünlerini deneyin. Uygulama yeniden yüklenir"
       ],
@@ -4250,6 +4256,9 @@
       ],
       "Version is restored": [
         "Sürüm geri yüklendi"
+      ],
+      "Want to sync files faster?": [
+        "Dosyaları daha hızlı eşitlemek ister misiniz?"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Çok güzel, ücretsiz depolama alanınızı iki katına çıkardınız!"
@@ -5380,17 +5389,8 @@
       "Discover all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetlerini keşfedin"
       ],
-      "More theming options are available in your account Settings > Appearance.": [
-        "Diğer tema ayarlarını Ayarlar > Görünüm bölümünde bulabilirsiniz."
-      ],
-      "Select a theme": [
-        "Bir tema seçin"
-      ],
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Tüm ${ BRAND_NAME } hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
     "Onboarding Title": {
