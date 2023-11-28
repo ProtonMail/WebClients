@@ -115,21 +115,11 @@ const MailOnboardingModal = (props: Props) => {
         },
     ];
 
-    const maxContentHeight = isNarrow ? 'auto' : '30rem';
     const onboardingSteps = [
         ({ onNext }: OnboardingStepRenderCallback) => (
             <OnboardingStep>
-                <OnboardingContent
-                    title={c('Onboarding modal').t`Congratulations on choosing privacy`}
-                    className="h-custom"
-                    style={{ '--h-custom': maxContentHeight }}
-                >
-                    <div
-                        className={clsx('flex overflow-auto max-h-custom', isNarrow ? 'gap-y-4 pt-4' : 'gap-y-8 pt-6')}
-                        style={{
-                            '--max-h-custom': maxContentHeight ? '25rem' : 'auto',
-                        }}
-                    >
+                <OnboardingContent title={c('Onboarding modal').t`Congratulations on choosing privacy`}>
+                    <div className="flex gap-y-4 pt-4 sm:gap-y-8 sm:pt-6">
                         {privacyFeature.map(({ title, description, imgSrc }, index) => (
                             <div className="flex flex-row gap-4 flex-align-items-center" key={index}>
                                 <img
@@ -169,8 +159,6 @@ const MailOnboardingModal = (props: Props) => {
                 <OnboardingContent
                     title={c('Onboarding modal').t`Automatically forward emails`}
                     description={c('Onboarding modal').t`Forward Gmail messages to your inbox.`}
-                    className="h-custom"
-                    style={{ '--h-custom': maxContentHeight }}
                 >
                     <div className="flex gap-1 flex-justify-center">
                         <div className="text-sm w-full h-full">
@@ -195,13 +183,7 @@ const MailOnboardingModal = (props: Props) => {
     }
 
     return (
-        <OnboardingModal
-            {...props}
-            size="large"
-            showGenericSteps={false}
-            maxContentHeight={maxContentHeight}
-            extraProductStep={extraSteps}
-        >
+        <OnboardingModal {...props} size="large" showGenericSteps={false} extraProductStep={extraSteps}>
             {onboardingSteps}
         </OnboardingModal>
     );

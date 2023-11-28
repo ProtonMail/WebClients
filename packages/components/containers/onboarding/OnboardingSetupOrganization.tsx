@@ -12,7 +12,6 @@ import clsx from '@proton/utils/clsx';
 import OnboardingContent, { Props as OnboardingContentProps } from './OnboardingContent';
 
 interface Props extends Omit<OnboardingContentProps, 'decription' | 'img'> {
-    maxContentHeight?: string;
     handleNext: () => void;
 }
 
@@ -37,13 +36,7 @@ const OnboardingSetupOrganization = (props: Props) => {
     const img = hasFamilyPlan ? onboardingFamilyPlan : onboardingOrganization;
 
     return (
-        <OnboardingContent
-            title={title}
-            className="h-custom"
-            style={{ '--h-custom': props.maxContentHeight ?? 'auto' }}
-            description={description}
-            {...props}
-        >
+        <OnboardingContent title={title} description={description} {...props}>
             <div className={clsx('text-center', isMobile() ? 'pt-4' : 'pt-12')}>
                 <img
                     src={img}

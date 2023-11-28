@@ -22,7 +22,6 @@ import { OnboardingStepProps, OnboardingStepRenderCallback } from './interface';
 import './OnboardingModal.scss';
 
 interface Props {
-    maxContentHeight?: string;
     size?: ModalSize;
     onClose?: () => void;
     onExit?: () => void;
@@ -39,7 +38,6 @@ const OnboardingModal = ({
     hideDiscoverApps = false,
     showGenericSteps,
     onDone,
-    maxContentHeight,
     extraProductStep,
     ...rest
 }: Props) => {
@@ -98,7 +96,7 @@ const OnboardingModal = ({
 
     const setupOrganizationStep = (
         <OnboardingStep>
-            <OnboardingSetupOrganization maxContentHeight={maxContentHeight} handleNext={handleNext} />
+            <OnboardingSetupOrganization handleNext={handleNext} />
             <footer>
                 <footer className="flex flex-nowrap">
                     <Button size="large" fullWidth onClick={handleNext}>
@@ -112,7 +110,6 @@ const OnboardingModal = ({
     const themesStep = (
         <OnboardingStep>
             <OnboardingThemes
-                maxContentHeight={maxContentHeight}
                 themeIdentifier={theme.information.theme}
                 themes={onboardingThemesSelection}
                 onChange={handleThemeChange}
@@ -127,7 +124,7 @@ const OnboardingModal = ({
 
     const discoverAppsStep = (
         <OnboardingStep>
-            <OnboardingDiscoverApps maxContentHeight={maxContentHeight} />
+            <OnboardingDiscoverApps />
             <footer className="flex flex-nowrap">
                 <Button size="large" className="mr-4" fullWidth onClick={handleBack}>{c('Action').t`Back`}</Button>
                 <Button size="large" color="norm" fullWidth onClick={handleNext}>
