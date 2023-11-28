@@ -130,7 +130,7 @@ export default function useUploadFile() {
                     // See RFC Feature flag handling for more info
                     if (err.status === 424 && err.data?.Code === 2032 && isForPhotos) {
                         const error = new Error(
-                            c('Error').t`Photos Upload is temporarily disable. Please try again later`
+                            c('Error').t`Photos upload is temporarily disabled. Please try again later`
                         );
                         error.name = 'PhotosUploadDisabled';
                         throw error;
