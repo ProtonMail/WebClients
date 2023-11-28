@@ -6,7 +6,6 @@ import {
     CacheProvider,
     CompatibilityCheck,
     ConfigProvider,
-    ExperimentsProvider,
     FeaturesProvider,
     Icons,
     LoaderPage,
@@ -62,12 +61,10 @@ const App = () => {
                                         <ApiProvider config={config} onLogout={noop}>
                                             <CacheProvider cache={cacheRef.current}>
                                                 <FeaturesProvider>
-                                                    <ExperimentsProvider>
-                                                        <NotificationsChildren />
-                                                        <StandardPublicApp loader={<LoaderPage />} locales={locales}>
-                                                            <EOContainer />
-                                                        </StandardPublicApp>
-                                                    </ExperimentsProvider>
+                                                    <NotificationsChildren />
+                                                    <StandardPublicApp loader={<LoaderPage />} locales={locales}>
+                                                        <EOContainer />
+                                                    </StandardPublicApp>
                                                 </FeaturesProvider>
                                             </CacheProvider>
                                         </ApiProvider>

@@ -8,7 +8,6 @@ import {
     ConfigProvider,
     CreateNotificationOptions,
     ErrorBoundary,
-    ExperimentsProvider,
     FeaturesProvider,
     Icons,
     ModalsProvider,
@@ -134,23 +133,21 @@ const App = () => {
                                                         <CacheProvider cache={cache}>
                                                             <UnleashFlagProvider>
                                                                 <FeaturesProvider>
-                                                                    <ExperimentsProvider>
-                                                                        <NotificationsChildren />
-                                                                        <ErrorBoundary
-                                                                            component={<StandardErrorPage big />}
-                                                                        >
-                                                                            {isLogout ? null : (
-                                                                                <Setup UID={UID} onLogin={handleLogin}>
-                                                                                    <MainContainer
-                                                                                        action={action}
-                                                                                        redirect={redirect}
-                                                                                        app={app}
-                                                                                        searchParams={searchParams}
-                                                                                    />
-                                                                                </Setup>
-                                                                            )}
-                                                                        </ErrorBoundary>
-                                                                    </ExperimentsProvider>
+                                                                    <NotificationsChildren />
+                                                                    <ErrorBoundary
+                                                                        component={<StandardErrorPage big />}
+                                                                    >
+                                                                        {isLogout ? null : (
+                                                                            <Setup UID={UID} onLogin={handleLogin}>
+                                                                                <MainContainer
+                                                                                    action={action}
+                                                                                    redirect={redirect}
+                                                                                    app={app}
+                                                                                    searchParams={searchParams}
+                                                                                />
+                                                                            </Setup>
+                                                                        )}
+                                                                    </ErrorBoundary>
                                                                 </FeaturesProvider>
                                                             </UnleashFlagProvider>
                                                         </CacheProvider>
