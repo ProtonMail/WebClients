@@ -17,6 +17,7 @@ import { ThemeProvider } from '@proton/pass/components/Layout/Theme/ThemeProvide
 import { API_PROXY_KEY, withAuthHash } from '@proton/pass/lib/api/proxy';
 import { generateTOTPCode } from '@proton/pass/lib/otp/generate';
 import type { Maybe, OtpRequest } from '@proton/pass/types';
+import type { ParsedUrl } from '@proton/pass/utils/url/parser';
 import { getBasename } from '@proton/shared/lib/authentication/pathnameHelper';
 import noop from '@proton/utils/noop';
 
@@ -39,14 +40,15 @@ const onTelemetry = noop;
  * in the URL. When we migrate the API factory to leverage cookie based
  * authentication we will be able to include the cookie credentials service
  * worker side (see `@proton/pass/lib/api/proxy`) */
-const getDomainImageURL = (domain?: string): Maybe<string> =>
-    domain
-        ? withAuthHash(
-              `${API_PROXY_KEY}/core/v4/images/logo?Domain=${domain}&Size=32&Mode=light&MaxScaleUpFactor=4`,
-              authStore.getUID()!,
-              authStore.getAccessToken()!
-          )
-        : undefined;
+const getDomainImageURL = (url: Maybe<ParsedUrl>): Maybe<string> => {
+    if (!url || url.isUnknownOrReserved) return;
+
+    return withAuthHash(
+        `${API_PROXY_KEY}/core/v4/images/logo?Domain=${url.hostname}&Size=32&Mode=light&MaxScaleUpFactor=4`,
+        authStore.getUID()!,
+        authStore.getAccessToken()!
+    );
+};
 
 export const App = () => {
     return (
