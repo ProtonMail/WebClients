@@ -1405,8 +1405,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Faites des économies sur le VPN suisse ultra-rapide grâce aux offres Black Friday"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Faites des économies sur le VPN suisse ultra rapide grâce aux offres Cyber Week"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Faites des économies sur le VPN suisse ultra rapide grâce aux offres de fin d'année"
+      ],
       "Select your Black Friday offer": [
         "Sélectionnez votre offre Black Friday"
+      ],
+      "Select your Cyber Week offer": [
+        "Choisissez votre offre Cyber Week"
+      ],
+      "Select your End of Year offer": [
+        "Choisissez votre offre de fin d'année"
       ]
     },
     "bf2023: info": {
@@ -3716,6 +3728,9 @@
       ],
       "Contact signature not verified": [
         "La signature du contact n'a pas été vérifiée."
+      ],
+      "Could not save preference": [
+        "La préférence n'a pas pu être enregistrée."
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Désélectionnez au moins ${ calendarsToFixCount } calendrier.",
@@ -7118,9 +7133,6 @@
       "Set recovery phrase": [
         "Créer une phrase de récupération"
       ],
-      "Setting up your Drive": [
-        "Configuration de votre Drive"
-      ],
       "Setting up your organization": [
         "Configuration de votre organisation"
       ],
@@ -7142,14 +7154,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Votre compte bénéficie de fonctionnalités supplémentaires parce que vous êtes un utilisateur fidèle."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées. Cette fonctionnalité n'est disponible que pour les utilisateurs de ${ BRAND_NAME } for Business avec des domaines personnalisés."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées. Pour demander l'accès, nous vous invitons à ${ createTicket } en décrivant vos cas d'utilisation, les domaines personnalisés que vous voudriez utiliser et le nombre de messages prévus par heure et par jour."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées. Pour utiliser cette fonctionnalité, commencez par générer un nouveau jeton."
-      ],
-      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
-        "La soumission SMTP permet à des services ou des appareils tiers d'envoyer des messages par le biais de ${ MAIL_APP_NAME } pour vos adresses de domaine personnalisées. Cette fonctionnalité n'est disponible que pour les utilisateurs de ${ BRAND_NAME } for Business avec des domaines personnalisés."
       ],
       "Some keys successfully reactivated": [
         "Certaines clés ont été réactivées."
@@ -8589,6 +8601,9 @@
       "Conversation grouping": [
         "Activer le mode conversation"
       ],
+      "Conversations per page": [
+        "Conversations par page"
+      ],
       "Copy": [
         "Copier"
       ],
@@ -8870,6 +8885,9 @@
       ],
       "Message": [
         "Message"
+      ],
+      "Messages per page": [
+        "Messages par page"
       ],
       "Moderate NAT": [
         "NAT modéré"
@@ -9173,12 +9191,6 @@
       ],
       "URL": [
         "URL"
-      ],
-      "Use a recovery email address": [
-        "Utiliser une adresse e-mail de récupération"
-      ],
-      "Use a recovery phone number": [
-        "Utiliser un numéro de téléphone de récupération"
       ],
       "Use folder colors": [
         "Utiliser les couleurs de dossier"
@@ -13316,9 +13328,6 @@
       "Confirm phone number": [
         "Confirmer le numéro de téléphone"
       ],
-      "Congratulations on choosing privacy!": [
-        "Bienvenue sur un internet libre et respectueux de votre vie privée !"
-      ],
       "Connect ${ name }": [
         "Se connecter à ${ name }"
       ],
@@ -13574,6 +13583,9 @@
       "Folders and labels": [
         "Dossiers et labels"
       ],
+      "Forward and auto-reply": [
+        "Transfert et réponse automatique"
+      ],
       "Forward emails": [
         "Transfert automatique des messages"
       ],
@@ -13758,7 +13770,7 @@
       "PayPal verification failed": [
         "La vérification PayPal n'a pas abouti."
       ],
-      "Personalize your e-mail footer": [
+      "Personalise your e-mail footer": [
         "Personnaliser le pied de page de vos messages."
       ],
       "Phone": [
@@ -13862,6 +13874,9 @@
       ],
       "Session management": [
         "Gestionnaire de sessions"
+      ],
+      "Set a display name": [
+        "Définir un nom d'utilisateur"
       ],
       "Set new password": [
         "Définir un nouveau mot de passe"
