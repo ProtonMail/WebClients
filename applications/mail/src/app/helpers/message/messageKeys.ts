@@ -37,7 +37,10 @@ export const extractKeysFromAttachments = async (
                         onUpdateAttachment,
                         messageFlags
                     );
-                    const key = await CryptoProxy.importPublicKey({ armoredKey: arrayToBinaryString(data) });
+                    const key = await CryptoProxy.importPublicKey({
+                        armoredKey: arrayToBinaryString(data),
+                        checkCompatibility: true,
+                    });
                     return key;
                 } catch (e: any) {
                     // Nothing
@@ -71,7 +74,10 @@ export const extractKeysFromAutocrypt = async (
                     if (!result) {
                         return;
                     }
-                    const key = await CryptoProxy.importPublicKey({ binaryKey: result.keydata });
+                    const key = await CryptoProxy.importPublicKey({
+                        binaryKey: result.keydata,
+                        checkCompatibility: true,
+                    });
                     return key;
                 } catch (e: any) {
                     // not encoded correctly
