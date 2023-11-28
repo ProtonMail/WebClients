@@ -152,8 +152,7 @@ export const ImportVaultsPickerModal: VFC<ImportVaultsPickerProps> = ({ payload,
                 <Button type="reset" onClick={onClose} color="danger">
                     {c('Action').t`Cancel`}
                 </Button>
-                <Button type="submit" color="norm" disabled={vaultsRemaining < 0} form={FORM_ID}>{c('Action')
-                    .t`Confirm`}</Button>
+                <Button type="submit" color="norm" form={FORM_ID}>{c('Action').t`Confirm`}</Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
