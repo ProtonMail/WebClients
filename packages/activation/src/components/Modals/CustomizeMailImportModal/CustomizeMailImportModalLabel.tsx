@@ -34,14 +34,17 @@ const CustomizeMailImportModalLabel = ({ label, onEditLabel }: Props) => {
                             className="max-w-full"
                         />
                     )}
-                    <Button
-                        shape="outline"
-                        className="flex-item-noshrink ml-4"
-                        onClick={() => openEditLabelModal(true)}
-                        data-testid="CustomizeModal:editLabel"
-                    >
-                        {c('Action').t`Edit label`}
-                    </Button>
+                    <Tooltip title={c('Action').t`Edit label`}>
+                        <Button
+                            icon
+                            shape="ghost"
+                            className="flex-item-noshrink ml-4"
+                            onClick={() => openEditLabelModal(true)}
+                            data-testid="CustomizeModal:editLabel"
+                        >
+                            <Icon name="pen" alt={c('Action').t`Edit label`} />
+                        </Button>
+                    </Tooltip>
                 </Field>
                 {renderEditLabelModal && (
                     <EditLabelModal
