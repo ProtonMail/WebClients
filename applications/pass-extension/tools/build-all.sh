@@ -62,8 +62,7 @@ zip -rqX "$OUTDIR/$BUILD_ID-FF-sources.zip"         \
     "packages"                                     \
     "utilities"                                    \
     "yarn.lock"                                    \
-    ".yarn/patches"                                \
-    ".yarn/releases"                               \
+    ".yarn"                                        \
     ".yarnrc.yml"                                  \
     ./*.js                                         \
     ./*.json                                       \
@@ -72,7 +71,9 @@ zip -rqX "$OUTDIR/$BUILD_ID-FF-sources.zip"         \
     -x "*/node_modules/*"                          \
     -x "packages/config/*"                         \
     -x "applications/pass-extension/dist/*"        \
-    -x "applications/pass-extension/*.md"
+    -x "applications/pass-extension/*.md"          \
+    -x ".yarn/install-state.gz"                    \
+    -x ".yarn/cache"
 cd "$PASSDIR"
 zip -uqX "$OUTDIR/$BUILD_ID-FF-sources.zip" "FIREFOX_REVIEWERS.md"
 printf "\t✅ %s\n" "$OUTDIR/$BUILD_ID-FF-sources.zip"
