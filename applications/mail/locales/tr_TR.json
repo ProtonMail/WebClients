@@ -430,14 +430,8 @@
       "Get verification code": [
         "Doğrulama kodu alın"
       ],
-      "Go to first page": [
-        "İlk sayfaya git"
-      ],
       "Go to label": [
         "Etikete git"
-      ],
-      "Go to last page": [
-        "Son sayfaya git"
       ],
       "Go to next page": [
         "Sonraki sayfaya git"
@@ -7606,22 +7600,6 @@
         "${ BRAND_NAME } uygulamasının nelere erişebileceğini seçin: E-posta iletilerinizi ve ayarlarınızı görüntüleme, kişilerinizi görüntüleme ve indirme, Google Takvim üzerinde eriştiğiniz tüm takvimleri görüntüleme ve indirme."
       ]
     },
-    "Onboarding": {
-      "Welcome to ${ appName }": [
-        "${ appName } hoş geldiniz"
-      ],
-      "Where privacy and security meet productivity and ease of use.": [
-        "Gizlilik ve güvenliğin üretkenlik ile bir arada kolayca kullanıldığı yerdesiniz."
-      ]
-    },
-    "Onboarding Action": {
-      "Next": [
-        "Sonraki"
-      ],
-      "Start using ${ appName }": [
-        "${ appName } kullanmaya başlayın"
-      ]
-    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Kuruluşunuzun tüm üyelerinin korunduğundan emin olmak için kuruluşunuzu yapılandırın, etki alanı adınızı bağlayın ve hesaplar ekleyin."
@@ -7629,17 +7607,8 @@
       "Discover all ${ BRAND_NAME } services": [
         "Tüm ${ BRAND_NAME } hizmetlerini keşfedin"
       ],
-      "More theming options are available in your account Settings > Appearance.": [
-        "Diğer tema ayarlarını Ayarlar > Görünüm bölümünde bulabilirsiniz."
-      ],
-      "Select a theme": [
-        "Bir tema seçin"
-      ],
       "Set up your organization": [
         "Kuruluşunuzu ayarlayın"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Tüm ${ BRAND_NAME } hizmetlerine erişmek için sol üstteki uygulama seçiciyi kullanın: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ve ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
     "Online accounts": {
@@ -8514,6 +8483,12 @@
       ],
       "Search just got smarter and faster": [
         "Arama artık daha akıllı ve daha hızlı"
+      ],
+      "Set when an email should reappear in your inbox with the new snooze feature.": [
+        "Erteleme özelliğiyle bir e-postanın gelen kutunuzda daha sonra yeniden görüntülenmesini sağlayabilirsiniz."
+      ],
+      "Snooze it for later": [
+        "Daha sonraya ertele"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "İstenmeyen ve Çöp klasörlerindeki e-postalar Tüm e-postalar klasörüne katılmıyor. ${ settingsLink }"

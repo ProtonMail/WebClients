@@ -2938,6 +2938,9 @@
       "By leaving now, changes may not be saved": [
         "Φεύγοντας τώρα, οι αλλαγές ενδέχεται να μην αποθηκευτούν"
       ],
+      "Cancel anytime": [
+        "Ακύρωσε οποιαδήποτε στιγμή"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
       ],
@@ -3430,9 +3433,6 @@
       ],
       "Session timed out": [
         "Λήξη χρόνου συνεδρίας"
-      ],
-      "Setting up your Drive": [
-        "Ρύθμιση του Drive σας"
       ],
       "Setting up your organization": [
         "Ρύθμιση του οργανισμού σας"
@@ -5574,13 +5574,57 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Διατηρήστε αυτό το πλάνο"
+      ],
       "Start using ${ appName }": [
         "Έναρξη χρήσης του ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Αναβαθμίστε το πλάνο μου"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Προσφορά περιορισμένου χρόνου"
+      ],
+      "Recommended": [
+        "Προτεινόμενο"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } ανά μήνα"
+      ],
       "Creating your account": [
         "Γίνεται δημιουργία του λογαριασμού σας"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Μόνο για **${ relativePrice } ανά μήνα** περισσότερο, έχετε πρόσβαση στον premium διαχειριστή κωδικών πρόσβασης του ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Για μόλις **${ relativePrice } ανά μήνα** περισσότερο, έχετε πρόσβαση στην premium υπηρεσία VPN του ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Με μόνο **${ relativePrice } ανά μήνα** παραπάνω, θα έχετε πρόσβαση σε όλες τις premium υπηρεσίες του ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Δωρεάν για πάντα"
+      ],
+      "Includes:": [
+        "Περιλαμβάνει:"
+      ],
+      "per month": [
+        "ανά μήνα"
+      ],
+      "per month, billed annually": [
+        "ανά μήνα, χρεώνεται ετησίως"
+      ],
+      "per month, billed every month": [
+        "ανά μήνα, χρεώνεται κάθε μήνα"
+      ],
+      "per month, billed every two years": [
+        "ανά μήνα, χρεώνεται κάθε δύο χρόνια"
       ],
       "Preparing your Recovery Kit": [
         "Προετοιμασία του Κιτ Αποκατάστασης"
@@ -5590,6 +5634,9 @@
       ],
       "Verifying your payment": [
         "Γίνεται επαλήθευση της πληρωμής σας"
+      ],
+      "You currently have": [
+        "Προς το παρόν έχετε"
       ]
     },
     "pass_signup_2023: Title": {

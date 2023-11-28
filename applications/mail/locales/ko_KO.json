@@ -427,14 +427,8 @@
       "Get verification code": [
         "인증코드 전송"
       ],
-      "Go to first page": [
-        "첫 페이지로 이동"
-      ],
       "Go to label": [
         "라벨로 이동"
-      ],
-      "Go to last page": [
-        "마지막 페이지로 이동"
       ],
       "Go to next page": [
         "다음 페이지로 이동"
@@ -7483,22 +7477,6 @@
         "${ BRAND_NAME }이 접근할 수 있는 것을 선택하세요: 이메일 메시지와 설정을 확인하고, 연락처를 확인 및 다운로드하고, Google Agenda에서 액세스하는 모든 아젠다를 확인하고 다운로드하세요."
       ]
     },
-    "Onboarding": {
-      "Welcome to ${ appName }": [
-        "${ appName }에 오신 것을 환영합니다"
-      ],
-      "Where privacy and security meet productivity and ease of use.": [
-        "프라이버시와 보안이 생산성과 편리함을 더하는 곳."
-      ]
-    },
-    "Onboarding Action": {
-      "Next": [
-        "다음"
-      ],
-      "Start using ${ appName }": [
-        "${ appName } 사용 시작"
-      ]
-    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "조직을 구성하고, 도메인 이름을 연결하고, 계정을 만들어 조직의 모든 구성원이 보호되도록 하십시오."
@@ -7506,17 +7484,8 @@
       "Discover all ${ BRAND_NAME } services": [
         "모든 ${ BRAND_NAME } 서비스를 둘러보기"
       ],
-      "More theming options are available in your account Settings > Appearance.": [
-        "계정의 설정 > 외관에서 더 많은 테마 옵션을 사용할 수 있습니다."
-      ],
-      "Select a theme": [
-        "테마를 선택하세요"
-      ],
       "Set up your organization": [
         "조직 설정"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "모든 ${ BRAND_NAME } 서비스에 접근하기 위해 상단 왼쪽의 앱 선택기를 사용하세요: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } 그리고 ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
     "Online accounts": {

@@ -643,6 +643,9 @@
       ]
     },
     "bf2023: Action": {
+      "Add ${ PASS_APP_NAME }": [
+        "增加 ${ PASS_APP_NAME }"
+      ],
       "Cancel": [
         "取消"
       ],
@@ -706,6 +709,16 @@
         "進階版密碼管理器"
       ]
     },
+    "bf2023: header": {
+      "Select your End of Year offer": [
+        "選擇你的年終優惠"
+      ]
+    },
+    "bf2023: info": {
+      "Sorry, this offer is not available with your current plan. But you can get **${ discountPercentage } off ${ plan.Title }** when you subscribe for **${ months }**.": [
+        "抱歉，你目前的方案無法使用此優惠。但是，當你訂購 **${ months }** 時，你可以享受 **${ plan.Title } 的 ${ discountPercentage }** 優惠"
+      ]
+    },
     "bf2023: Offers": {
       "30-day money-back guarantee": [
         "30 天退款保障"
@@ -714,6 +727,14 @@
     "bf2023: renew": {
       "the first ${ n } months": [
         "${ n }月"
+      ],
+      "the first month": [
+        "第一個月"
+      ]
+    },
+    "bf2023: Title": {
+      "Offer unavailable": [
+        "優惠不再提供"
       ]
     },
     "bf2023: Tooltip": {
@@ -2797,6 +2818,9 @@
       "By leaving now, changes may not be saved": [
         "若現在離開，所作變更將不儲存"
       ],
+      "Cancel anytime": [
+        "隨時取消"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
       ],
@@ -3279,9 +3303,6 @@
       ],
       "Session timed out": [
         "工作階段已逾時"
-      ],
-      "Setting up your Drive": [
-        "設定您的雲端硬碟"
       ],
       "Setting up your organization": [
         "設定您的組織"
@@ -5339,13 +5360,48 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "保持此方案"
+      ],
       "Start using ${ appName }": [
         "開始使用 ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "升級我的方案"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "限時優惠"
+      ],
+      "Recommended": [
+        "建議"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice }每月"
+      ],
       "Creating your account": [
         "創建您的帳號"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "**每月${ relativePrice }及更多**，讓您存取付費版${ BRAND_NAME }功能!"
+      ],
+      "Free forever": [
+        "永久免費"
+      ],
+      "per month": [
+        "每月"
+      ],
+      "per month, billed annually": [
+        "每年，每年收費"
+      ],
+      "per month, billed every month": [
+        "每月，每月收費"
+      ],
+      "per month, billed every two years": [
+        "每月，每兩年收費"
       ],
       "Preparing your Recovery Kit": [
         "準備復原包"
@@ -5355,6 +5411,9 @@
       ],
       "Verifying your payment": [
         "驗證您的付帳款"
+      ],
+      "You currently have": [
+        "您目前有"
       ]
     },
     "pass_signup_2023: Title": {

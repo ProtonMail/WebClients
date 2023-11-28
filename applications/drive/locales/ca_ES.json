@@ -505,6 +505,9 @@
       "Report a problem": [
         "Notifica un problema"
       ],
+      "Report an issue": [
+        "Informeu d'un problema"
+      ],
       "Request a feature": [
         "Demana una nova característica"
       ],
@@ -2534,6 +2537,9 @@
       "Access denied": [
         "Accés denegat"
       ],
+      "App currently unavailable": [
+        "L'aplicació no està disponible actualment."
+      ],
       "Brace yourself till we get the error fixed.": [
         "Prepareu-vos fins que no es resolgui l’error."
       ],
@@ -2548,6 +2554,9 @@
       ],
       "Oops, something went wrong": [
         "Vaja, alguna cosa ha anat malament"
+      ],
+      "Open in browser": [
+        "Obre al navegador"
       ],
       "Please refresh the page or try again later.": [
         "Refresqueu la pàgina o proveu de nou més tard."
@@ -3228,6 +3237,12 @@
         "${ doneUploadsCount } pujat",
         "${ doneUploadsCount } pujats"
       ],
+      "${ DRIVE_APP_NAME } on App Store": [
+        "${ DRIVE_APP_NAME } a l'App Store"
+      ],
+      "${ DRIVE_APP_NAME } on Play Store": [
+        "${ DRIVE_APP_NAME } a Play Store"
+      ],
       "${ errorCount } failed": [
         "${ errorCount } error",
         "${ errorCount } errors"
@@ -3490,6 +3505,9 @@
       "double your storage": [
         "doblar el vostre emmagatzematge"
       ],
+      "Download ${ name } app": [
+        "Descarrega l'aplicació ${ name }"
+      ],
       "Download canceled": [
         "S'ha cancel·lat la baixada"
       ],
@@ -3516,6 +3534,9 @@
       ],
       "Drop file here to upload": [
         "Arrossegueu el fitxer aquí per carregar-lo."
+      ],
+      "Drop files here": [
+        "Deixa aquí els arxius"
       ],
       "Drop to import": [
         "Arrossegueu aquí per a importar"
@@ -4065,8 +4086,8 @@
         "Aquest mes"
       ],
       "This will delete the link and remove access to your file or folder for anyone with the link.": [
-        "Això esborrarà l'enllaç i suprimirà l'accés al vostre fitxer o carpeta per a qualsevol persona que el tingui.",
-        "Això esborrarà els enllaços i suprimirà l'accés als vostres fitxers o carpetes per a qualsevol persona que els tingui."
+        "Això esborrarà l'enllaç i esborrarà l'accés al vostre fitxer o carpeta per a qualsevol persona que el tingui.",
+        "Això esborrarà els enllaços i esborrarà l'accés als vostres fitxers o carpetes per a qualsevol persona que els tingui."
       ],
       "This will remove the synced device ${ deviceName } from ${ DRIVE_APP_NAME } and stop syncing folders you added to My Computers.": [
         "Això esborrarà el dispositiu sincronitzat ${ deviceName } de ${ DRIVE_APP_NAME } i deixarà de sincronitzar les carpetes que heu afegit a Ordinadors."
@@ -4133,6 +4154,9 @@
       ],
       "Trash": [
         "Paperera"
+      ],
+      "Trash is empty": [
+        "La paperera és buida."
       ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Proveu les noves característiques, actualitzacions i productes de ${ BRAND_NAME } abans que es llancin al públic. Això tornarà a carregar l'aplicació"
@@ -5014,6 +5038,9 @@
       "Custom email domains": [
         "Dominis de correu personalitzats"
       ],
+      "Custom snooze time": [
+        "Períodes de posposició personalitzats"
+      ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
       ],
@@ -5305,17 +5332,8 @@
       "Discover all ${ BRAND_NAME } services": [
         "Descobriu tots els serveis de ${ BRAND_NAME }"
       ],
-      "More theming options are available in your account Settings > Appearance.": [
-        "Hi ha disponibles més opcions de temes a Configuració del compte > Aparença."
-      ],
-      "Select a theme": [
-        "Seleccioneu un tema"
-      ],
       "Set up your organization": [
         "Configureu la vostra organització"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Feu servir el selector d'aplicacions de dalt a l'esquerra per accedir a tots els serveis de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
     "Onboarding Title": {
