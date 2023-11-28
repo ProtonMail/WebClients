@@ -3729,6 +3729,9 @@
       "Contact signature not verified": [
         "Firma del contacto no verificada"
       ],
+      "Could not save preference": [
+        "No se pudo guardar la preferencia."
+      ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Deseleccione al menos ${ calendarsToFixCount } calendario",
         "Deseleccione al menos ${ calendarsToFixCount } calendarios"
@@ -7130,9 +7133,6 @@
       "Set recovery phrase": [
         "Establecer frase de recuperación"
       ],
-      "Setting up your Drive": [
-        "Configurando su Drive"
-      ],
       "Setting up your organization": [
         "Configurando su organización"
       ],
@@ -7154,14 +7154,14 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Como es un usuario leal, su cuenta tiene activadas funciones adicionales."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "El envío SMTP permite que servicios de terceros o dispositivos envíen correo electrónico a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas. Esta función solo está disponible para ${ BRAND_NAME } for Business con dominios personalizados."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "El envío por SMTP permite que servicios o dispositivos de terceros envíen correos electrónicos a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas. Para solicitar acceso, ${ createTicket } describiendo sus casos de uso, cuáles dominios personalizados le gustaría usar y los volúmenes de correo electrónico esperados por hora y por día."
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "El envío por SMTP permite a servicios de terceros o dispositivos enviar correos electrónicos a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas. Para usar esta función, comience generando un token nuevo."
-      ],
-      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
-        "El envío SMTP permite que servicios de terceros o dispositivos envíen correo electrónico a través de ${ MAIL_APP_NAME } para sus direcciones de dominio personalizadas. Esta función solo está disponible para ${ BRAND_NAME } for Business con dominios personalizados."
       ],
       "Some keys successfully reactivated": [
         "Algunas claves fueron reactivadas."
@@ -8601,6 +8601,9 @@
       "Conversation grouping": [
         "Agrupar las conversaciones"
       ],
+      "Conversations per page": [
+        "Conversaciones por página"
+      ],
       "Copy": [
         "Copiar"
       ],
@@ -8882,6 +8885,9 @@
       ],
       "Message": [
         "Mensaje"
+      ],
+      "Messages per page": [
+        "Mensajes por página"
       ],
       "Moderate NAT": [
         "NAT moderada"
@@ -9185,12 +9191,6 @@
       ],
       "URL": [
         "URL"
-      ],
-      "Use a recovery email address": [
-        "Usar una dirección de correo de recuperación"
-      ],
-      "Use a recovery phone number": [
-        "Usar un número de teléfono de recuperación"
       ],
       "Use folder colors": [
         "Usar los colores de carpeta"
@@ -11388,6 +11388,12 @@
       "End-to-end encryption": [
         "Cifrado de extremo a extremo"
       ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "¡Por solo **${ relativePrice } más al mes**, podrá acceder al servicio premium de gestor de contraseñas de ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "¡Por solo **${ relativePrice } más al mes**, podrá acceder al servicio VPN premium de ${ BRAND_NAME }!"
+      ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "¡Por solo **${ relativePrice } más al mes**, usted podrá acceder a todos los servicios ${ BRAND_NAME } premium!"
       ],
@@ -13328,9 +13334,6 @@
       "Confirm phone number": [
         "Confirmar número de teléfono"
       ],
-      "Congratulations on choosing privacy!": [
-        "¡Felicitaciones en elegir la privacidad!"
-      ],
       "Connect ${ name }": [
         "Conectar ${ name }"
       ],
@@ -13773,7 +13776,7 @@
       "PayPal verification failed": [
         "Error con la verificación de PayPal"
       ],
-      "Personalize your e-mail footer": [
+      "Personalise your e-mail footer": [
         "Personalice su pie de correo."
       ],
       "Phone": [
@@ -13877,6 +13880,9 @@
       ],
       "Session management": [
         "Gestión de sesiones"
+      ],
+      "Set a display name": [
+        "Establezca un nombre para mostrar"
       ],
       "Set new password": [
         "Establecer contraseña nueva"
@@ -14448,7 +14454,7 @@
     },
     "Users table: single sign-on enabled": {
       "SSO": [
-        "SSO"
+        "Inicio de sesión único (SSO)"
       ]
     },
     "Users table: single sign-on tooltip": {
