@@ -123,7 +123,7 @@ export const getDrivePlan = (plan: Plan, boldStorageSize?: boolean): ShortPlan =
     };
 };
 
-export const getPassPlan = (plan: Plan, sentinelPassplusEnabled?: boolean): ShortPlan => {
+export const getPassPlan = (plan: Plan): ShortPlan => {
     return {
         plan: PLANS.PASS_PLUS,
         title: plan.Title,
@@ -137,7 +137,7 @@ export const getPassPlan = (plan: Plan, sentinelPassplusEnabled?: boolean): Shor
             getVaults(PASS_PLUS_VAULTS),
             get2FAAuthenticator(true),
             getCustomFields(true),
-            ...(sentinelPassplusEnabled ? [getSentinel()] : []),
+            getSentinel(),
             getSupport('priority'),
         ],
     };
@@ -431,7 +431,6 @@ export const getShortPlan = (
     options: {
         boldStorageSize?: boolean;
         vpnServers: VPNServersCountData;
-        sentinelPassplusEnabled?: boolean;
     }
 ) => {
     if (plan === PLANS.FREE) {
@@ -443,7 +442,7 @@ export const getShortPlan = (
         return null;
     }
 
-    const { vpnServers, boldStorageSize, sentinelPassplusEnabled } = options;
+    const { vpnServers, boldStorageSize } = options;
 
     switch (plan) {
         case PLANS.MAIL:
@@ -455,7 +454,7 @@ export const getShortPlan = (
         case PLANS.DRIVE:
             return getDrivePlan(planData, boldStorageSize);
         case PLANS.PASS_PLUS:
-            return getPassPlan(planData, sentinelPassplusEnabled);
+            return getPassPlan(planData);
         case PLANS.MAIL_PRO:
             return getMailProPlan(planData);
         case PLANS.BUNDLE:

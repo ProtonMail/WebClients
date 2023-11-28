@@ -18,7 +18,6 @@ enum AccountFlag {
     MaintenanceImporter = 'MaintenanceImporter',
     BF2023IsExpired = 'BF2023IsExpired',
     BF2023OfferCheck = 'BF2023OfferCheck',
-    SentinelPassPlus = 'SentinelPassPlus',
 }
 
 enum DriveFeatureFlag {
