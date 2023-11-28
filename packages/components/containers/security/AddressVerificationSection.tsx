@@ -4,19 +4,16 @@ import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import { BetaBadge, Info } from '../../components';
-import { useFeature } from '../../hooks';
+import useFlag from '../../containers/unleash/useFlag';
 import { SettingsSection } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
-import { FeatureCode } from '../features';
-import { KtFeatureEnum } from '../keyTransparency/ktStatus';
 import KTToggle from './KTToggle';
 import PromptPinToggle from './PromptPinToggle';
 
 const AddressVerificationSection = () => {
-    const { feature } = useFeature(FeatureCode.KeyTransparencyAccount);
-    const showKTSetting = feature?.Value === KtFeatureEnum.ENABLE_UI;
+    const showKTSetting = useFlag('KeyTransparencyShowUI');
     return (
         <SettingsSection>
             <SettingsLayout>
