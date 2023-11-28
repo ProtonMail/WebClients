@@ -736,8 +736,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Yüksek hızlı İsviçre VPN hizmetinde Muhteşem Cuma fırsatlarıyla indirim alın"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Yüksek hızlı İsviçre VPN hizmetini Siber Hafta fırsatlarıyla indirimli olarak alın"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Yüksek hızlı İsviçre VPN hizmetini Yıl Sonu fırsatlarıyla indirimli olarak alın"
+      ],
       "Select your Black Friday offer": [
         "Muhteşem Cuma teklifinizi seçin"
+      ],
+      "Select your Cyber Week offer": [
+        "Siber Hafta teklifini seçin"
+      ],
+      "Select your End of Year offer": [
+        "Yıl Sonu teklifini seçin"
       ]
     },
     "bf2023: info": {
@@ -2926,6 +2938,9 @@
       "By leaving now, changes may not be saved": [
         "Şimdi çıkarsanız, değişiklikler kaydedilemeyebilir"
       ],
+      "Cancel anytime": [
+        "İstediğiniz zaman iptal edin"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
@@ -3418,9 +3433,6 @@
       ],
       "Session timed out": [
         "Oturum zaman aşımına uğradı"
-      ],
-      "Setting up your Drive": [
-        "Drive kurulumunuz yapılıyor"
       ],
       "Setting up your organization": [
         "Kuruluşunuz ayarlanıyor"
@@ -5562,13 +5574,51 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Bu tarifede kal"
+      ],
       "Start using ${ appName }": [
         "${ appName } kullanmaya başlayın"
+      ],
+      "Upgrade my plan": [
+        "Tarifemi yükselt"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Sınırlı süreli teklif"
+      ],
+      "Recommended": [
+        "Önerilen"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } aylık"
+      ],
       "Creating your account": [
         "Hesabınız oluşturuluyor"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Ayda yalnızca **${ relativePrice }** daha ödeyerek tüm ücretli ${ BRAND_NAME } hizmetlerine erişebilirsiniz!"
+      ],
+      "Free forever": [
+        "Sonsuza kadar ücretsiz"
+      ],
+      "Includes:": [
+        "İçindekiler:"
+      ],
+      "per month": [
+        "aylık"
+      ],
+      "per month, billed annually": [
+        "aylık, yılda bir faturalanır"
+      ],
+      "per month, billed every month": [
+        "aylık, ayda bir faturalanır"
+      ],
+      "per month, billed every two years": [
+        "aylık, iki yılda bir faturalanır"
       ],
       "Preparing your Recovery Kit": [
         "Kurtarma paketiniz hazırlanıyor"
@@ -5578,6 +5628,9 @@
       ],
       "Verifying your payment": [
         "Ödemeniz doğrulanıyor"
+      ],
+      "You currently have": [
+        "Şu anda kullanabilecekleriniz"
       ]
     },
     "pass_signup_2023: Title": {

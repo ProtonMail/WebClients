@@ -430,14 +430,8 @@
       "Get verification code": [
         "Obtenir codi de verificació"
       ],
-      "Go to first page": [
-        "Aneu a la primera pàgina"
-      ],
       "Go to label": [
         "Ves a l'etiqueta"
-      ],
-      "Go to last page": [
-        "Aneu a l'última pàgina"
       ],
       "Go to next page": [
         "Ves a la pàgina següent"
@@ -554,6 +548,9 @@
       "label emails as": [
         "etiquetar correus electrònics com"
       ],
+      "Later this week": [
+        "Més tard aquesta setmana"
+      ],
       "Learn more": [
         "Més informació"
       ],
@@ -577,6 +574,9 @@
       ],
       "Manage labels": [
         "Gestiona les etiquetes"
+      ],
+      "Manage Snooze": [
+        "Gestiona la posposició"
       ],
       "Mark as read": [
         "Marca com a llegit"
@@ -899,6 +899,9 @@
       "Select all messages": [
         "Seleccionar tots els missatges"
       ],
+      "Select date and time": [
+        "Selecciona la data i l'hora"
+      ],
       "Self-destruct in 7 days": [
         "Destrueix automàticament en 7 dies"
       ],
@@ -1004,6 +1007,9 @@
       "Skip verification": [
         "Omet la verificació"
       ],
+      "Snooze": [
+        "Posposa"
+      ],
       "Some images could not be loaded with tracker protection.": [
         "Algunes imatges no s'han pogut carregar amb la protecció contra el rastreig."
       ],
@@ -1033,6 +1039,9 @@
       ],
       "This message contains remote content.": [
         "Aquest missatge conté contingut remot."
+      ],
+      "This weekend": [
+        "Aquest cap de setmana"
       ],
       "To search your emails securely, we need to download a copy of your messages to your browser. The initial download may take a moment.": [
         "Per cercar els vostres correus electrònics de forma segura, hem de descarregar una còpia dels vostres missatges al navegador. La descàrrega inicial pot trigar una estona."
@@ -1085,6 +1094,9 @@
       ],
       "Unordered list": [
         "Llista sense ordenar"
+      ],
+      "Unsnooze": [
+        "Deixa de posposar"
       ],
       "Unstar": [
         "No destaquis"
@@ -3815,6 +3827,9 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "L'aplicació no està disponible actualment."
+      ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
       ],
@@ -3826,6 +3841,9 @@
       ],
       "Oops, something went wrong": [
         "Vaja, alguna cosa ha anat malament"
+      ],
+      "Open in browser": [
+        "Obre al navegador"
       ],
       "Please refresh the page or try again later.": [
         "Refresqueu la pàgina o proveu de nou més tard."
@@ -5323,6 +5341,9 @@
       "Importing your data from ${ importedEmailAddress } to ${ toEmail }.": [
         "Important les vostres dades des de ${ importedEmailAddress } a ${ toEmail }."
       ],
+      "Include Spam/Trash.": [
+        "Incloeu Correu brossa/Paperera"
+      ],
       "Inherited from parent folder": [
         "Heretat d'una carpeta principal"
       ],
@@ -5600,6 +5621,9 @@
       "Right-click for options": [
         "Feu clic amb el botó dret per veure les opcions"
       ],
+      "Sat, ${ formatTime }": [
+        "Dissabte a les ${ formatTime }"
+      ],
       "Saved at ${ dateString }": [
         "Desat el ${ dateString }"
       ],
@@ -5677,6 +5701,12 @@
       ],
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin proporciona una forma fàcil de crear inicis de sessió a llocs de tercers no confiables on no voleu revelar la vostra adreça de correu electrònic real."
+      ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Posposició fins ${ dateString } a les ${ formattedTime }"
+      ],
+      "Snoozed until today, ${ formattedTime }": [
+        "Posposició fins avui a les ${ formattedTime }"
       ],
       "Sorry, this message does not exist or has already expired.": [
         "Ho sentim, aquest missatge no existeix o ja ha expirat."
@@ -5869,6 +5899,9 @@
       ],
       "To use Address Verification, you must trust one or more available public keys, including the one you want to use for sending. This prevents the encryption keys from being faked.": [
         "Per utilitzar la verificació d'adreça, heu d'habilitar les claus de confiança i confiar en una o més de les claus públiques disponibles, incloent la clau primària per a aquesta adreça. Això evita que les claus de xifratge es falsifiquin."
+      ],
+      "Tomorrow, ${ formattedTime }": [
+        "Demà a les ${ formattedTime }"
       ],
       "Too many messages waiting to be sent. Please wait until another message has been sent to schedule this one.": [
         "Hi ha massa missatges esperant per ser enviats. Espereu que s'enviï un altre missatge per programar aquest."
@@ -7078,6 +7111,12 @@
       "Sign up for free": [
         "Registreu-vos gratuïtament"
       ],
+      "Snooze": [
+        "Posposa"
+      ],
+      "Snoozed": [
+        "Posposada"
+      ],
       "Spam": [
         "Correu brossa"
       ],
@@ -7415,6 +7454,9 @@
       "Custom email domains": [
         "Dominis de correu personalitzats"
       ],
+      "Custom snooze time": [
+        "Períodes de posposició personalitzats"
+      ],
       "Hide-my-email aliases": [
         "Àlies hide-my-email"
       ],
@@ -7499,22 +7541,6 @@
         "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzeu els vostres missatges de correu electrònic i la vostra configuració, visualitzeu i baixeu els vostres contactes, visualitzeu i baixeu totes les agendes a les quals accediu des de Google Calendar."
       ]
     },
-    "Onboarding": {
-      "Welcome to ${ appName }": [
-        "Us donem la benvinguda a ${ appName }"
-      ],
-      "Where privacy and security meet productivity and ease of use.": [
-        "On la privadesa i la seguretat es troben amb la productivitat i la facilitat d'ús."
-      ]
-    },
-    "Onboarding Action": {
-      "Next": [
-        "Següent"
-      ],
-      "Start using ${ appName }": [
-        "Comenceu a utilitzar ${ appName }"
-      ]
-    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configureu la vostra organització, enllaç al vostre nom de domini, i creeu comptes per assegurar-vos que tots els membres de la vostra organització estan protegits."
@@ -7522,17 +7548,8 @@
       "Discover all ${ BRAND_NAME } services": [
         "Descobriu tots els serveis de ${ BRAND_NAME }"
       ],
-      "More theming options are available in your account Settings > Appearance.": [
-        "Hi ha disponibles més opcions de temes a Configuració del compte > Aparença."
-      ],
-      "Select a theme": [
-        "Seleccioneu un tema"
-      ],
       "Set up your organization": [
         "Configureu la vostra organització"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Feu servir el selector d'aplicacions de dalt a l'esquerra per accedir a tots els serveis de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } i ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
     "Online accounts": {
@@ -7868,6 +7885,9 @@
       "No results found": [
         "No s'ha trobat cap resultat."
       ],
+      "No snoozed messages": [
+        "No hi ha missatges posposats."
+      ],
       "No unread messages found": [
         "No s'han trobat missatges sense llegir"
       ]
@@ -8164,6 +8184,11 @@
         "Signa"
       ]
     },
+    "Snooze message": {
+      "Snooze Message": [
+        "Missatge de posposició"
+      ]
+    },
     "Sort option": {
       "Largest first": [
         "Més grans primer"
@@ -8397,6 +8422,9 @@
       "Search just got smarter and faster": [
         "La cerca s'ha fet més intel·ligent i ràpida"
       ],
+      "Snooze it for later": [
+        "Posposa per més tard"
+      ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Els correus brossa i a la paperera ara s'exclouen automàticament de Tot el correu. ${ settingsLink }"
       ],
@@ -8491,6 +8519,14 @@
       "${ elementsCount } conversation removed from ${ labelName }.": [
         "${ elementsCount } conversa esborrada de ${ labelName }.",
         "${ elementsCount } converses esborrades de ${ labelName }."
+      ],
+      "${ elementsCount } conversation snoozed": [
+        "${ elementsCount } conversa posposada",
+        "${ elementsCount } converses posposades"
+      ],
+      "${ elementsCount } conversation unsnoozed": [
+        "${ elementsCount } conversa sense posposar",
+        "${ elementsCount } converses sense posposar"
       ],
       "${ elementsCount } message added to ${ labelName }.": [
         "${ elementsCount } missatge afegit a ${ labelName }.",
@@ -9163,6 +9199,9 @@
       "Moving a scheduled message": [
         "Moure un missatge programat"
       ],
+      "Moving a snoozed message": [
+        "S'està movent un missatge posposat."
+      ],
       "New message": [
         "Nou missatge"
       ],
@@ -9304,6 +9343,12 @@
       "Sign out": [
         "Tanca la sessió"
       ],
+      "Snooze": [
+        "Posposa"
+      ],
+      "Snooze message": [
+        "Missatge de posposició"
+      ],
       "Sort conversations": [
         "Ordenar converses"
       ],
@@ -9349,6 +9394,9 @@
       ],
       "Verification error": [
         "Error de verificació"
+      ],
+      "Want to snooze any time?": [
+        "Voleu posposar els vostres missatges quan vulgueu?"
       ],
       "Warning": [
         "Advertència"
@@ -9566,6 +9614,17 @@
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "La prova gratuïta acaba el ${ textDate }. ${ action }"
+      ]
+    },
+    "WeekDay": {
+      "Mon, ${ formatTime }": [
+        "Dilluns a les ${ formatTime }"
+      ],
+      "Sat, ${ formatTime }": [
+        "Dissabte a les ${ formatTime }"
+      ],
+      "Sun, ${ formatTime }": [
+        "Diumenge a les ${ formatTime }"
       ]
     },
     "Weekly recurring event, frequency": {

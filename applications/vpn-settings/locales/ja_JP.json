@@ -2722,6 +2722,9 @@
       "By leaving now, changes may not be saved": [
         "変更が保存されていません"
       ],
+      "Cancel anytime": [
+        "いつでもキャンセル可能"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
       ],
@@ -3204,9 +3207,6 @@
       ],
       "Session timed out": [
         "セッションがタイムアウトしました"
-      ],
-      "Setting up your Drive": [
-        "Drive をセットアップしています"
       ],
       "Setting up your organization": [
         "組織の設定"
@@ -5257,11 +5257,40 @@
     "pass_signup_2023: Action": {
       "Start using ${ appName }": [
         "${ appName } の使用を開始する"
+      ],
+      "Upgrade my plan": [
+        "プランのアップグレード"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "期間限定オファー"
+      ],
+      "Recommended": [
+        "おすすめ"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice }/月あたり"
+      ],
       "Creating your account": [
         "アカウントの作成"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "**月額 ${ relativePrice }** を追加するだけで、すべてのプレミアム ${ BRAND_NAME } サービスにアクセスできるようになります。"
+      ],
+      "Free forever": [
+        "永久無料"
+      ],
+      "per month, billed annually": [
+        "月払い、年払い"
+      ],
+      "per month, billed every month": [
+        "月額、毎月請求"
+      ],
+      "per month, billed every two years": [
+        "月額、2年ごとに請求"
       ],
       "Preparing your Recovery Kit": [
         "リカバリーキットの準備"
@@ -5271,6 +5300,9 @@
       ],
       "Verifying your payment": [
         "お支払いの確認"
+      ],
+      "You currently have": [
+        "あなたは現在"
       ]
     },
     "pass_signup_2023: Title": {

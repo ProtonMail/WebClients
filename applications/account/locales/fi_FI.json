@@ -4339,6 +4339,9 @@
       "Something went wrong": [
         "Jotain meni pieleen"
       ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Käyttääksesi ${ MAIL_APP_NAME } tai ${ CALENDAR_APP_NAME }, vaihda selainversioon."
+      ],
       "Too many child sessions, please clear your cookies and sign back in.": [
         "Liian monta ali-istuntoa. Tyhjennä selaimen evästeet ja kirjaudu uudelleen."
       ],
@@ -7092,9 +7095,6 @@
       "Set recovery phrase": [
         "Aseta palautuslauseke"
       ],
-      "Setting up your Drive": [
-        "Määritetään Driveasi"
-      ],
       "Setting up your organization": [
         "Määritetään organisaatiotasi"
       ],
@@ -7121,9 +7121,6 @@
       ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To use this feature, start by generating a new token.": [
         "SMTP-lähetyksen avulla ulkoiset palvelut tai laitteet voivat lähettää viestejä ${ MAIL_APP_NAME }in oman verkkotunnuksesi alaisista osoitteista. Aloita ominaisuuden käyttäminen luomalla uusi tunniste."
-      ],
-      "SMTP submission allows third-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for Business users with custom domains.": [
-        "SMTP:n avulla ulkoiset palvelut ja laitteet voivat lähettää sähköpostiviestejä ${ MAIL_APP_NAME }in välityksellä käyttäen omia verkkotunnuksiasi. Ominaisuus on vain omia verkkotunnuksiaan käyttävien ${ BRAND_NAME } for Business -asiakkaiden käytettävissä."
       ],
       "Some keys successfully reactivated": [
         "Joitakin avaimia aktivoitiin uudelleen"
@@ -8557,6 +8554,9 @@
       "Conversation grouping": [
         "Keskustelujen ryhmittely"
       ],
+      "Conversations per page": [
+        "Keskusteluja per sivu"
+      ],
       "Copy": [
         "Kopioi"
       ],
@@ -8835,6 +8835,9 @@
       ],
       "Message": [
         "Viesti"
+      ],
+      "Messages per page": [
+        "Viestejä per sivu"
       ],
       "Moderate NAT": [
         "Keskitason NAT"
@@ -9138,12 +9141,6 @@
       ],
       "URL": [
         "URL"
-      ],
-      "Use a recovery email address": [
-        "Käytä palautussähköpostia"
-      ],
-      "Use a recovery phone number": [
-        "Käytä palautuspuhelinta"
       ],
       "Use folder colors": [
         "Käytä värillisiä kansioita"
@@ -10315,6 +10312,9 @@
       ],
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Hanki rajattomasti aliaksia ${ BRAND_NAME }in SimpleLogin-palvelusta"
+      ],
+      "Snooze messages and get reminded when you want": [
+        "Torkuta viestejä ja saa muistutuksia kun haluat"
       ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä"
@@ -13271,9 +13271,6 @@
       ],
       "Confirm phone number": [
         "Vahvista puhelinnumero"
-      ],
-      "Congratulations on choosing privacy!": [
-        "Onnittelut yksityisyyden valinnasta!"
       ],
       "Connect ${ name }": [
         "Yhdistä ${ name }"
