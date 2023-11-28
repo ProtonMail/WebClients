@@ -427,14 +427,8 @@
       "Get verification code": [
         "Dapatkan kode verifikasi"
       ],
-      "Go to first page": [
-        "Tuju halaman pertama"
-      ],
       "Go to label": [
         "Tuju label"
-      ],
-      "Go to last page": [
-        "Tuju halaman terakhir"
       ],
       "Go to next page": [
         "Ke halaman selanjutnya"
@@ -7483,20 +7477,39 @@
         "Tentukan apa-apa saja yang akan dapat diakses oleh ${ BRAND_NAME }: melihat isi pesan dan pengaturan surel Anda, melihat dan mengunduh kontak Anda, serta melihat dan mengunduh seluruh agenda yang Anda akses dari Google Agenda."
       ]
     },
-    "Onboarding": {
-      "Welcome to ${ appName }": [
-        "Selamat datang di ${ appName }"
+    "Onboarding modal": {
+      "Automatically forward emails": [
+        "Teruskan email secara otomatis"
       ],
-      "Where privacy and security meet productivity and ease of use.": [
-        "Di mana privasi dan keamanan saling berpadu dengan produktivitas dan kemudahan penggunaan."
-      ]
-    },
-    "Onboarding Action": {
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "Blokir komunikasi email dari para penipu secara permanen. ${ kbLinkSender }"
+      ],
+      "Block unsavory senders": [
+        "Blokir pengirim yang tidak dikehendaki"
+      ],
+      "Congratulations on choosing privacy": [
+        "Selamat karena telah memilih privasi"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "Enkripsi yang teramat kuat, sampai-sampai hanya Anda dan para penerima yang dapat membaca isi email Anda. ${ kbLinkEncryption }"
+      ],
+      "For your eyes only": [
+        "Khusus untuk Anda"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "Teruskan pesan Gmail ke kotak masuk Anda."
+      ],
       "Next": [
-        "Selanjutnya"
+        "Berikutnya"
       ],
-      "Start using ${ appName }": [
-        "Mulai gunakan ${ appName }"
+      "Protection from trackers": [
+        "Perlindungan pelacak"
+      ],
+      "Skip": [
+        "Lewati"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "Kami menghentikan para pengiklan dan pengumpul data untuk dapat memprofil Anda. ${ kbLinkPrivacy }"
       ]
     },
     "Onboarding Proton": {
@@ -7506,17 +7519,14 @@
       "Discover all ${ BRAND_NAME } services": [
         "Telusuri seluruh layanan ${ BRAND_NAME }"
       ],
-      "More theming options are available in your account Settings > Appearance.": [
-        "Opsi penataan tema tersedia pada menu Pengaturan > Tampilan."
-      ],
-      "Select a theme": [
+      "Pick a theme": [
         "Pilih tema"
       ],
       "Set up your organization": [
         "Siapkan organisasi Anda"
       ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Gunakan pemindah aplikasi yang terdapat pada pojok kiri atas layar untuk mengakses seluruh layanan ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, dan ${ DRIVE_SHORT_APP_NAME }."
+      "You will be able to change your theme any time in your settings.": [
+        "Anda akan dapat mengubah tema Anda kapan pun pada menu pengaturan."
       ]
     },
     "Online accounts": {

@@ -430,14 +430,8 @@
       "Get verification code": [
         "Obter código de verificação"
       ],
-      "Go to first page": [
-        "Ir para a primeira página"
-      ],
       "Go to label": [
         "Ir para marcador"
-      ],
-      "Go to last page": [
-        "Ir para a última página"
       ],
       "Go to next page": [
         "Ir para a próxima página"
@@ -7606,20 +7600,39 @@
         "Selecione o que a ${ BRAND_NAME } pode acessar: visualize suas mensagens de e-mail e configurações, visualize e baixe seus contatos, visualize e baixe todas as agendas que você acessa no Google Agenda."
       ]
     },
-    "Onboarding": {
-      "Welcome to ${ appName }": [
-        "Bem-vindo ao ${ appName }"
+    "Onboarding modal": {
+      "Automatically forward emails": [
+        "Encaminhar e-mails automaticamente"
       ],
-      "Where privacy and security meet productivity and ease of use.": [
-        "Onde a privacidade e a segurança encontram-se com a produtividade e a facilidade de uso."
-      ]
-    },
-    "Onboarding Action": {
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "Bloqueie permanentemente mensagens de golpistas. ${ kbLinkSender }"
+      ],
+      "Block unsavory senders": [
+        "Bloqueie remetentes indesejados"
+      ],
+      "Congratulations on choosing privacy": [
+        "Parabéns por escolher a privacidade"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "Criptografia tão robusta, que somente você e seus destinatários reais podem visualizar os e-mails. ${ kbLinkEncryption }"
+      ],
+      "For your eyes only": [
+        "Somente para seus olhos"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "Encaminhe mensagens do Gmail para sua caixa de entrada."
+      ],
       "Next": [
         "Próximo"
       ],
-      "Start using ${ appName }": [
-        "Começar a usar o ${ appName }"
+      "Protection from trackers": [
+        "Proteção contra rastreadores"
+      ],
+      "Skip": [
+        "Pular"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "Nós impedimos que anunciantes e coletores de informações analisem os seus dados. ${ kbLinkPrivacy }"
       ]
     },
     "Onboarding Proton": {
@@ -7629,17 +7642,14 @@
       "Discover all ${ BRAND_NAME } services": [
         "Descubra todos os serviços da ${ BRAND_NAME }"
       ],
-      "More theming options are available in your account Settings > Appearance.": [
-        "Mais opções de temas estão disponíveis em Configurações da conta > Aparência."
-      ],
-      "Select a theme": [
-        "Selecione um tema"
+      "Pick a theme": [
+        "Escolha um tema"
       ],
       "Set up your organization": [
         "Configure a sua organização"
       ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Use o seletor de aplicativos no canto superior esquerdo para acessar todos os serviços da ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e ${ DRIVE_SHORT_APP_NAME }."
+      "You will be able to change your theme any time in your settings.": [
+        "Você poderá alterar seu tema a qualquer momento nas configurações."
       ]
     },
     "Online accounts": {
@@ -8514,6 +8524,12 @@
       ],
       "Search just got smarter and faster": [
         "A pesquisa ficou mais inteligente e rápida"
+      ],
+      "Set when an email should reappear in your inbox with the new snooze feature.": [
+        "Defina quando um e-mail deve reaparecer na sua caixa de entrada com o novo recurso de adiamento."
+      ],
+      "Snooze it for later": [
+        "Adiar para mais tarde"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Os e-mails nas pastas Spam e Lixo agora são removidos automaticamente da pasta Todos os e-mails. ${ settingsLink }"
