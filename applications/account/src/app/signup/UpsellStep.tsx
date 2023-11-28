@@ -24,12 +24,10 @@ import Content from '../public/Content';
 import Header from '../public/Header';
 import Main from '../public/Main';
 import Text from '../public/Text';
-import Loader from './Loader';
 import UpsellPlanCard from './UpsellPlanCard';
 import { getSignupApplication } from './helper';
 
 interface Props {
-    experiment: { loading: boolean; value: string };
     onPlan: (planIDs: PlanIDs) => Promise<void>;
     currency: Currency;
     onChangeCurrency: (currency: Currency) => void;
@@ -68,14 +66,13 @@ const hasNoIcon = (features: PlanCardFeatureDefinition[]) => {
 };
 
 const UpsellStep = ({
-    experiment,
     plans,
     vpnServers,
     cycle,
     currency,
     onChangeCurrency,
     onPlan,
-    mostPopularPlanName: mostPopularPlanNameProp,
+    mostPopularPlanName,
     upsellPlanName,
     onBack,
 }: Props) => {
@@ -90,20 +87,6 @@ const UpsellStep = ({
             application: getSignupApplication(APP_NAME),
         });
     }, []);
-
-    if (experiment.loading) {
-        return (
-            <Main className={clsx('sign-layout-upsell')}>
-                <Content>
-                    <div className="text-center">
-                        <Loader />
-                    </div>
-                </Content>
-            </Main>
-        );
-    }
-
-    const mostPopularPlanName = experiment.value === 'B' ? mostPopularPlanNameProp : undefined;
 
     const plansMap = toMap(plans, 'Name');
 

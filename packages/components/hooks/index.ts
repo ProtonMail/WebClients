@@ -43,7 +43,6 @@ export { default as useLoadFeature } from './useLoadFeature';
 export { default as useFeature } from './useFeature';
 export { default as useFeatures } from './useFeatures';
 export { default as useProgressiveRollout } from './useProgressiveRollout';
-export { default as useExperiment } from './useExperiment';
 export { default as useFilters } from './useFilters';
 export { default as useFolderColor } from './useFolderColor';
 export { default as useForceRefresh } from './useForceRefresh';
