@@ -2938,6 +2938,9 @@
       "By leaving now, changes may not be saved": [
         "თუ გახვალთ, ცვლილებები არ შეინახება"
       ],
+      "Cancel anytime": [
+        "გააუქმეთ ნებისმიერ დროს"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "დააწკაპუნეთ \"ახალი კოდის გამოთხოვნაზე\" და თქვენ ${ strong }-ზე ახალი კოდი გამოგეგზავნებათ. თუ ტელეფონის ეს ნომერი არასწორია, ჩაასწორეთ ის."
       ],
@@ -3430,9 +3433,6 @@
       ],
       "Session timed out": [
         "სესიის დრო გავიდა"
-      ],
-      "Setting up your Drive": [
-        "თქვენი Drive-ის მორგება"
       ],
       "Setting up your organization": [
         "ორგანიზაციის მორგება"
@@ -5574,13 +5574,51 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "ამ გეგმის დატოვება"
+      ],
       "Start using ${ appName }": [
         "${ appName }-ის გამოყენების დაწყება"
+      ],
+      "Upgrade my plan": [
+        "ტარიფის გაუმჯობესება"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "დროში შეზღუდული შეთავაზება"
+      ],
+      "Recommended": [
+        "რეკომენდებულია"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } თვეში"
+      ],
       "Creating your account": [
         "თქვენი ანგარიშის შექმნა"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "დაამატეთ, მხოლოდ, **${ relativePrice } თვეში** და მიიღეთ ${ BRAND_NAME }-ის ყველა ფასიანი სერვისი!"
+      ],
+      "Free forever": [
+        "სამუდამოდ უფასო"
+      ],
+      "Includes:": [
+        "შეიცავს:"
+      ],
+      "per month": [
+        "თვეში"
+      ],
+      "per month, billed annually": [
+        "თვეში, გადახდა წლიურად"
+      ],
+      "per month, billed every month": [
+        "თვეში, გადაიხდით ყოველ-თვე"
+      ],
+      "per month, billed every two years": [
+        "ყოველთვე, გადაიხდით 2 წელიწადში ერთხელ"
       ],
       "Preparing your Recovery Kit": [
         "თქვენი აღგენის ნაკრების მომზადება"
@@ -5590,6 +5628,9 @@
       ],
       "Verifying your payment": [
         "თქვენი გადახდის შემოწმება"
+      ],
+      "You currently have": [
+        "ამჟამად გაქვთ"
       ]
     },
     "pass_signup_2023: Title": {

@@ -2063,11 +2063,17 @@
       ]
     },
     "Error message": {
+      "App currently unavailable": [
+        "L'aplicació no està disponible actualment."
+      ],
       "Error: ${ errorMessage }": [
         "Error: ${ errorMessage }"
       ],
       "Oops, something went wrong": [
         "Vaja, alguna cosa ha anat malament"
+      ],
+      "Open in browser": [
+        "Obre al navegador"
       ],
       "Please refresh the page or try again later.": [
         "Refresqueu la pàgina o proveu de nou més tard."
@@ -2829,6 +2835,9 @@
       "By leaving now, changes may not be saved": [
         "Si surt ara, és possible que els canvis no es desin"
       ],
+      "Cancel anytime": [
+        "Cancel·leu en qualsevol moment"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
       ],
@@ -3274,9 +3283,6 @@
       ],
       "Session timed out": [
         "S'ha esgotat el temps de sessió"
-      ],
-      "Setting up your Drive": [
-        "S'està configurant el Drive"
       ],
       "Setting up your organization": [
         "S'està configurant la vostra organització."
@@ -4611,6 +4617,9 @@
       "Custom fields": [
         "Camps personalitzats"
       ],
+      "Custom snooze time": [
+        "Períodes de posposició personalitzats"
+      ],
       "Data breach monitoring": [
         "Monitoratge de filtracions de dades"
       ],
@@ -5293,13 +5302,51 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Mantén aquest pla"
+      ],
       "Start using ${ appName }": [
         "Comenceu a utilitzar ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Millora el meu pla"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Oferta per temps limitat"
+      ],
+      "Recommended": [
+        "Recomanat"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } al mes"
+      ],
       "Creating your account": [
         "S'està creant el compte"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Per només **${ relativePrice } més al mes**, obteniu accés a tots els serveis prèmium de ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Gratuït per sempre"
+      ],
+      "Includes:": [
+        "Inclou:"
+      ],
+      "per month": [
+        "per mes"
+      ],
+      "per month, billed annually": [
+        "al mes amb facturació anual"
+      ],
+      "per month, billed every month": [
+        "al mes amb facturació mensual"
+      ],
+      "per month, billed every two years": [
+        "al mes amb facturació cada dos anys"
       ],
       "Preparing your Recovery Kit": [
         "Preparació del vostre kit de recuperació"
@@ -5309,6 +5356,9 @@
       ],
       "Verifying your payment": [
         "S'està verificant el pagament"
+      ],
+      "You currently have": [
+        "Actualment teniu"
       ]
     },
     "pass_signup_2023: Title": {
@@ -5378,6 +5428,11 @@
       ],
       "Select a reason": [
         "Seleccioneu un motiu"
+      ]
+    },
+    "plan customizer, ips": {
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Seleccioneu el nombre d'IP per incloure en el vostre pla. Cada IP addicional té un cost de ${ price }."
       ]
     },
     "plan customizer, users": {
@@ -6964,6 +7019,11 @@
       ],
       "Primary admin": [
         "Administrador principal"
+      ]
+    },
+    "Users table: single sign-on enabled": {
+      "SSO": [
+        "Inici de sessió únic (SSO)"
       ]
     },
     "Validation": {

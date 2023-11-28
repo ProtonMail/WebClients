@@ -3230,9 +3230,6 @@
       "Session timed out": [
         "Сеанс завершився"
       ],
-      "Setting up your Drive": [
-        "Налаштування Drive"
-      ],
       "Setting up your organization": [
         "Налаштування вашої організації"
       ],
@@ -5345,11 +5342,40 @@
     "pass_signup_2023: Action": {
       "Start using ${ appName }": [
         "Почати використовувати ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Покращити тарифний план"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Обмежена пропозиція"
+      ],
+      "Recommended": [
+        "Рекомендовано"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } на місяць"
+      ],
       "Creating your account": [
         "Створення облікового запису"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Лише за **${ relativePrice } на місяць** ви отримуєте доступ до всіх преміумсервісів ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Безплатно назавжди"
+      ],
+      "per month, billed annually": [
+        "на місяць, оплачується щороку"
+      ],
+      "per month, billed every month": [
+        "на місяць, рахунок виставляється щомісяця"
+      ],
+      "per month, billed every two years": [
+        "на місяць, рахунок виставляється кожні два роки"
       ],
       "Preparing your Recovery Kit": [
         "Підготовка комплекту відновлення"
@@ -5359,6 +5385,9 @@
       ],
       "Verifying your payment": [
         "Триває перевірка платежу"
+      ],
+      "You currently have": [
+        "Наразі у вас є"
       ]
     },
     "pass_signup_2023: Title": {

@@ -2982,6 +2982,9 @@
       "By leaving now, changes may not be saved": [
         "Pokud nyní opustíte stránku, změny nemusí být uloženy"
       ],
+      "Cancel anytime": [
+        "Možnost zrušit kdykoli"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
       ],
@@ -3485,9 +3488,6 @@
       ],
       "Session timed out": [
         "Relace vypršela"
-      ],
-      "Setting up your Drive": [
-        "Nastavení vašeho Drive"
       ],
       "Setting up your organization": [
         "Nastavení vaší organizace"
@@ -5733,13 +5733,51 @@
       ]
     },
     "pass_signup_2023: Action": {
+      "Keep this plan": [
+        "Ponechat tento tarif"
+      ],
       "Start using ${ appName }": [
         "Začněte používat ${ appName }"
+      ],
+      "Upgrade my plan": [
+        "Přejít na vyšší tarif"
+      ]
+    },
+    "pass_signup_2023: Header": {
+      "Limited time offer": [
+        "Časově omezená nabídka"
+      ],
+      "Recommended": [
+        "Doporučeno"
       ]
     },
     "pass_signup_2023: Info": {
+      "+ ${ relativePrice } per month": [
+        "+ ${ relativePrice } za měsíc"
+      ],
       "Creating your account": [
         "Vytváření vašeho účtu"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
+        "Za pouhých **${ relativePrice } měsíčně** navíc získáte přístup ke všem prémiovým službám ${ BRAND_NAME }!"
+      ],
+      "Free forever": [
+        "Navždy zdarma"
+      ],
+      "Includes:": [
+        "Zahrnuje:"
+      ],
+      "per month": [
+        "za měsíc"
+      ],
+      "per month, billed annually": [
+        "za měsíc, účtováno ročně"
+      ],
+      "per month, billed every month": [
+        "za měsíc, účtováno kažký měsíc"
+      ],
+      "per month, billed every two years": [
+        "za měsíc, účtováno kažké dva roky"
       ],
       "Preparing your Recovery Kit": [
         "Příprava sady pro obnovení"
@@ -5749,6 +5787,9 @@
       ],
       "Verifying your payment": [
         "Ověřování vaší platby"
+      ],
+      "You currently have": [
+        "Momentálně máte"
       ]
     },
     "pass_signup_2023: Title": {
