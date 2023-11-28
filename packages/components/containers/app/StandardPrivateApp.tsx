@@ -38,7 +38,6 @@ import { getCryptoWorkerOptions } from '../app/cryptoWorkerOptions';
 import { ContactProvider } from '../contacts';
 import { EventManagerProvider, EventModelListener, EventNotices } from '../eventManager';
 import { CalendarModelEventManagerProvider } from '../eventManager/calendar';
-import { ExperimentsProvider } from '../experiments';
 import { FeatureCode, FeaturesProvider } from '../features';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 import { KeyTransparencyManager } from '../keyTransparency';
@@ -264,9 +263,7 @@ const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>(pro
     return (
         <UnleashFlagProvider>
             <FeaturesProvider>
-                <ExperimentsProvider>
-                    <InnerStandardPrivateApp<T, M, E, EvtM> {...props} />
-                </ExperimentsProvider>
+                <InnerStandardPrivateApp<T, M, E, EvtM> {...props} />
             </FeaturesProvider>
         </UnleashFlagProvider>
     );
