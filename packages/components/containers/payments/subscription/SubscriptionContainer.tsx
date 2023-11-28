@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { FeatureCode, useFlag } from '@proton/components/containers';
+import { FeatureCode } from '@proton/components/containers';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
@@ -218,7 +218,6 @@ const SubscriptionContainer = ({
     const [vpnServers] = useVPNServersCount();
     const getCalendars = useGetCalendars();
     const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
-    const sentinelPassplusEnabled = !!useFlag('SentinelPassPlus');
     const { APP_NAME } = useConfig();
 
     const [loading, withLoading] = useLoading();
@@ -769,7 +768,6 @@ const SubscriptionContainer = ({
                     onChangeSelectedProductPlans={setSelectedProductPlans}
                     organization={organization}
                     calendarSharingEnabled={calendarSharingEnabled}
-                    sentinelPassplusEnabled={sentinelPassplusEnabled}
                 />
             )}
             {model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && (

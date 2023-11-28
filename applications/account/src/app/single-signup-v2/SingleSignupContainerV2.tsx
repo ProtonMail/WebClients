@@ -11,7 +11,6 @@ import {
     useApi,
     useConfig,
     useErrorHandler,
-    useFlag,
     useModalState,
     useVPNServersCount,
 } from '@proton/components';
@@ -226,8 +225,6 @@ const SingleSignupContainerV2 = ({
     const [loadingDependencies, withLoadingDependencies] = useLoading(true);
     const [loadingChallenge, setLoadingChallenge] = useState(true);
 
-    const isSentinelPassplusEnabled = !!useFlag('SentinelPassPlus');
-
     const [signupParameters, setSignupParameters] = useState((): SignupParameters2 => {
         const searchParams = new URLSearchParams(location.search);
         const result = getSignupSearchParams(location.pathname, searchParams);
@@ -305,7 +302,6 @@ const SingleSignupContainerV2 = ({
                     PLANS.VPN_PASS_BUNDLE,
                     PLANS.PASS_PLUS,
                 ].some((plan) => planIDs[plan]),
-                isSentinelPassplusEnabled,
             });
         }
         throw new Error('Unknown app');
