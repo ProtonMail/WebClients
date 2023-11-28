@@ -8,10 +8,9 @@ import {
 } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 import arraysContainSameElements from '@proton/utils/arraysContainSameElements';
 
-import { FeatureCode } from '../../components/containers/features';
+import { useFlag } from '../../components/containers/unleash';
 import useApi from './useApi';
 import useAuthentication from './useAuthentication';
-import useFeature from './useFeature';
 import useIsRecoveryFileAvailable from './useIsRecoveryFileAvailable';
 import useUser from './useUser';
 import { useUserKeys } from './useUserKeys';
@@ -25,12 +24,9 @@ export const useIsDeviceRecoveryEnabled = () => {
 };
 
 export const useIsDeviceRecoveryAvailable = () => {
-    const trustedDeviceRecoveryFeature = useFeature<boolean>(FeatureCode.TrustedDeviceRecovery);
+    const hasTrustedDeviceRecovery = useFlag('TrustedDeviceRecovery');
     const [recoveryFileAvailable, loading] = useIsRecoveryFileAvailable();
-    return [
-        recoveryFileAvailable && trustedDeviceRecoveryFeature.feature?.Value,
-        loading || trustedDeviceRecoveryFeature.loading,
-    ];
+    return [recoveryFileAvailable && hasTrustedDeviceRecovery, loading];
 };
 
 export const useDeviceRecovery = () => {

@@ -5,13 +5,12 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike, CircleLoader, Href } from '@proton/atoms';
 import {
-    FeatureCode,
     GenericError,
     OnLoginCallback,
     useApi,
     useConfig,
     useErrorHandler,
-    useFeature,
+    useFlag,
     useLocalState,
     useMyCountry,
     useNotifications,
@@ -34,7 +33,7 @@ import {
     handleValidateResetToken,
 } from '@proton/components/containers/resetPassword/resetActions';
 import { validateResetToken } from '@proton/shared/lib/api/reset';
-import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
+import { APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
 import { decodeAutomaticResetParams } from '@proton/shared/lib/helpers/encoding';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import noop from '@proton/utils/noop';
@@ -75,15 +74,7 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl }: Props
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const { createNotification } = useNotifications();
     const [persistent] = useLocalState(false, defaultPersistentKey);
-    const originalTrustedDeviceRecoveryFeature = useFeature<boolean>(FeatureCode.TrustedDeviceRecovery);
-    const trustedDeviceRecoveryFeature =
-        APP_NAME === APPS.PROTONVPN_SETTINGS
-            ? {
-                  loading: false,
-                  feature: { Value: false },
-              }
-            : originalTrustedDeviceRecoveryFeature;
-    const hasTrustedDeviceRecovery = !!trustedDeviceRecoveryFeature.feature?.Value;
+    const hasTrustedDeviceRecovery = useFlag('TrustedDeviceRecovery');
     const ktActivation = useKTActivation();
     const resetSelfAudit = useResetSelfAudit();
 
@@ -215,67 +206,60 @@ const ResetPasswordContainer = ({ metaTags, onLogin, setupVPN, loginUrl }: Props
         void run();
     }, []);
 
-    useSearchParamsEffect(
-        (params) => {
-            if (trustedDeviceRecoveryFeature.loading) {
-                return;
-            }
+    useSearchParamsEffect((params) => {
+        const username = params.get('username');
+        const token = params.get('token');
 
-            const username = params.get('username');
-            const token = params.get('token');
+        /**
+         * Automatic token validation reset
+         */
+        if (username && token) {
+            const run = async () => {
+                try {
+                    setAutomaticVerification({ username, loading: true });
 
-            /**
-             * Automatic token validation reset
-             */
-            if (username && token) {
-                const run = async () => {
-                    try {
-                        setAutomaticVerification({ username, loading: true });
-
-                        const validateFlow = createFlow();
-                        await startUnAuthFlow();
-                        const resetResponse = await silentApi<ValidateResetTokenResponse>(
-                            validateResetToken(username, token)
-                        );
-                        const result = await handleValidateResetToken({
-                            resetResponse,
-                            cache: {
-                                setupVPN,
-                                appName: APP_NAME,
-                                username,
-                                type: 'internal',
-                                Methods: [],
-                                persistent,
-                                hasTrustedDeviceRecovery,
-                                ktActivation,
-                                resetSelfAudit,
-                            },
-                            token,
-                        });
-                        if (validateFlow()) {
-                            await handleResult(result);
-                        }
-                    } catch (e) {
-                        handleError(e);
-                    } finally {
-                        setAutomaticVerification({ username, loading: false });
+                    const validateFlow = createFlow();
+                    await startUnAuthFlow();
+                    const resetResponse = await silentApi<ValidateResetTokenResponse>(
+                        validateResetToken(username, token)
+                    );
+                    const result = await handleValidateResetToken({
+                        resetResponse,
+                        cache: {
+                            setupVPN,
+                            appName: APP_NAME,
+                            username,
+                            type: 'internal',
+                            Methods: [],
+                            persistent,
+                            hasTrustedDeviceRecovery,
+                            ktActivation,
+                            resetSelfAudit,
+                        },
+                        token,
+                    });
+                    if (validateFlow()) {
+                        await handleResult(result);
                     }
-                };
-                void run();
+                } catch (e) {
+                    handleError(e);
+                } finally {
+                    setAutomaticVerification({ username, loading: false });
+                }
+            };
+            void run();
 
-                return new URLSearchParams();
-            }
+            return new URLSearchParams();
+        }
 
-            /**
-             * Automatic username filling
-             */
-            if (username) {
-                setAutomaticVerification({ username, loading: false });
-                return new URLSearchParams();
-            }
-        },
-        [trustedDeviceRecoveryFeature.loading]
-    );
+        /**
+         * Automatic username filling
+         */
+        if (username) {
+            setAutomaticVerification({ username, loading: false });
+            return new URLSearchParams();
+        }
+    }, []);
 
     const cache = cacheRef.current;
 
