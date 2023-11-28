@@ -6,7 +6,12 @@
 }
 
 .colored-gradient-card {
-	background: radial-gradient(144.47% 427.41% at -10.4% 170.75%, #6d4aff 0%, #100635 37.43%, #d45a25 100%);
+	background: radial-gradient(
+		144.47% 427.41% at -10.4% 170.75%,
+		var(--interaction-norm) 0%,
+		var(--interaction-norm-minor-1) 37.43%,
+		var(--signal-warning) 100%
+	);
 }
 
 .full-height-content {
