@@ -8,10 +8,10 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
 import { Icon, Info, Toggle, useModalState } from '../../components';
+import { useFlag } from '../../containers/unleash';
 import {
     useApi,
     useEventManager,
-    useFeature,
     useHasOutdatedRecoveryFile,
     useIsMnemonicAvailable,
     useIsRecoveryFileAvailable,
@@ -25,7 +25,6 @@ import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
 import SettingsLayoutRight from '../account/SettingsLayoutRight';
 import SettingsParagraph from '../account/SettingsParagraph';
 import SettingsSection from '../account/SettingsSection';
-import { FeatureCode } from '../features';
 import { DisableMnemonicModal, GenerateMnemonicModal } from '../mnemonic';
 import ExportRecoveryFileButton from './ExportRecoveryFileButton';
 import VoidRecoveryFilesModal from './VoidRecoveryFilesModal';
@@ -36,7 +35,7 @@ const DataRecoverySection = () => {
     const { call } = useEventManager();
     const api = useApi();
 
-    const trustedDeviceRecoveryFeature = useFeature<boolean>(FeatureCode.TrustedDeviceRecovery);
+    const hasTrustedDeviceRecovery = useFlag('TrustedDeviceRecovery');
 
     const [isRecoveryFileAvailable] = useIsRecoveryFileAvailable();
     const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
@@ -91,10 +90,7 @@ const DataRecoverySection = () => {
             )}
             {renderGenerateMnemonicModal && <GenerateMnemonicModal {...generateMnemonicModal} />}
             {renderVoidRecoveryFilesModal && (
-                <VoidRecoveryFilesModal
-                    trustedDeviceRecovery={trustedDeviceRecoveryFeature.feature?.Value}
-                    {...voidRecoveryFilesModal}
-                />
+                <VoidRecoveryFilesModal trustedDeviceRecovery={hasTrustedDeviceRecovery} {...voidRecoveryFilesModal} />
             )}
 
             <SettingsSection>
@@ -178,7 +174,7 @@ const DataRecoverySection = () => {
 
                 {isRecoveryFileAvailable && (
                     <>
-                        {trustedDeviceRecoveryFeature.feature?.Value && (
+                        {hasTrustedDeviceRecovery && (
                             <SettingsLayout>
                                 <SettingsLayoutLeft>
                                     <label className="pt-0 mb-2 md:mb-0 text-semibold" htmlFor="deviceRecoveryToggle">

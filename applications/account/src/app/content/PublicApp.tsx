@@ -74,6 +74,7 @@ import SingleSignupContainer from '../single-signup/SingleSignupContainer';
 import useLocationWithoutLocale from '../useLocationWithoutLocale';
 import AccountLoaderPage from './AccountLoaderPage';
 import AccountPublicApp from './AccountPublicApp';
+import AccountPublicAppSetup from './AccountPublicAppSetup';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
 import { getPaths } from './helper';
 
@@ -503,219 +504,227 @@ const PublicApp = ({ onLogin, locales }: Props) => {
                         <UnAuthenticatedApiProvider loader={loader}>
                             <UnleashFlagProvider>
                                 <FeaturesProvider>
-                                    <ForceRefreshContext.Provider value={refresh}>
-                                        <Switch location={location}>
-                                            {confirmForkData && toAppName && (
-                                                <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
+                                    <AccountPublicAppSetup loader={loader}>
+                                        <ForceRefreshContext.Provider value={refresh}>
+                                            <Switch location={location}>
+                                                {confirmForkData && toAppName && (
+                                                    <Route path={SSO_PATHS.OAUTH_CONFIRM_FORK}>
+                                                        <UnAuthenticated>
+                                                            <OAuthConfirmForkContainer
+                                                                name={toAppName}
+                                                                image={confirmForkData.payload.clientInfo.Logo}
+                                                                onConfirm={() => {
+                                                                    return produceOAuthFork({
+                                                                        api,
+                                                                        ...confirmForkData.payload,
+                                                                    });
+                                                                }}
+                                                                onCancel={() => {
+                                                                    // Force a hard refresh to get active sessions to refresh when signing up
+                                                                    window.location.pathname = SSO_PATHS.SWITCH;
+                                                                }}
+                                                            />
+                                                        </UnAuthenticated>
+                                                    </Route>
+                                                )}
+                                                <Route path={SSO_PATHS.EXTERNAL_SSO_LOGIN}>
                                                     <UnAuthenticated>
-                                                        <OAuthConfirmForkContainer
-                                                            name={toAppName}
-                                                            image={confirmForkData.payload.clientInfo.Logo}
-                                                            onConfirm={() => {
-                                                                return produceOAuthFork({
-                                                                    api,
-                                                                    ...confirmForkData.payload,
-                                                                });
-                                                            }}
-                                                            onCancel={() => {
-                                                                // Force a hard refresh to get active sessions to refresh when signing up
-                                                                window.location.pathname = SSO_PATHS.SWITCH;
-                                                            }}
+                                                        <ExternalSSOConsumer
+                                                            loader={loader}
+                                                            onLogin={(token) =>
+                                                                history.replace(SSO_PATHS.LOGIN, {
+                                                                    authType: AuthType.ExternalSSO,
+                                                                    externalSSOToken: token,
+                                                                })
+                                                            }
                                                         />
                                                     </UnAuthenticated>
                                                 </Route>
-                                            )}
-                                            <Route path={SSO_PATHS.EXTERNAL_SSO_LOGIN}>
-                                                <UnAuthenticated>
-                                                    <ExternalSSOConsumer
-                                                        loader={loader}
-                                                        onLogin={(token) =>
-                                                            history.replace(SSO_PATHS.LOGIN, {
-                                                                authType: AuthType.ExternalSSO,
-                                                                externalSSOToken: token,
-                                                            })
+                                                <Route path={SSO_PATHS.SWITCH}>
+                                                    <UnAuthenticated>
+                                                        <SwitchAccountContainer
+                                                            metaTags={getLoginMeta(maybePreAppIntent)}
+                                                            activeSessions={activeSessions}
+                                                            toApp={maybePreAppIntent}
+                                                            toAppName={toAppName}
+                                                            onLogin={handleLogin}
+                                                            onSignOut={handleSignOut}
+                                                            onAddAccount={handleAddAccount}
+                                                        />
+                                                    </UnAuthenticated>
+                                                </Route>
+                                                <Route
+                                                    path={[
+                                                        SSO_PATHS.SIGNUP,
+                                                        SSO_PATHS.REFER,
+                                                        SSO_PATHS.TRIAL,
+                                                        SSO_PATHS.BUSINESS_SIGNUP,
+                                                        SSO_PATHS.CALENDAR_SIGNUP,
+                                                        SSO_PATHS.MAIL_SIGNUP,
+                                                        SSO_PATHS.DRIVE_SIGNUP,
+                                                    ]}
+                                                >
+                                                    {(() => {
+                                                        if (
+                                                            (hasBFCoupon ||
+                                                                searchParams.get('plan') === PLANS.NEW_VISIONARY) &&
+                                                            [
+                                                                APPS.PROTONMAIL,
+                                                                APPS.PROTONCALENDAR,
+                                                                APPS.PROTONDRIVE,
+                                                            ].includes(maybePreAppIntent as any)
+                                                        ) {
+                                                            return (
+                                                                <SingleSignupContainerV2
+                                                                    paths={paths}
+                                                                    metaTags={getSignupMeta(maybePreAppIntent)}
+                                                                    activeSessions={activeSessions}
+                                                                    loader={loader}
+                                                                    productParam={maybePreAppIntent}
+                                                                    clientType={clientType}
+                                                                    toApp={maybePreAppIntent}
+                                                                    toAppName={toAppName}
+                                                                    onLogin={handleLogin}
+                                                                    fork={!!forkState}
+                                                                    onBack={
+                                                                        hasBackToSwitch
+                                                                            ? () => history.push(paths.login)
+                                                                            : undefined
+                                                                    }
+                                                                />
+                                                            );
                                                         }
-                                                    />
-                                                </UnAuthenticated>
-                                            </Route>
-                                            <Route path={SSO_PATHS.SWITCH}>
-                                                <UnAuthenticated>
-                                                    <SwitchAccountContainer
-                                                        metaTags={getLoginMeta(maybePreAppIntent)}
-                                                        activeSessions={activeSessions}
-                                                        toApp={maybePreAppIntent}
-                                                        toAppName={toAppName}
-                                                        onLogin={handleLogin}
-                                                        onSignOut={handleSignOut}
-                                                        onAddAccount={handleAddAccount}
-                                                    />
-                                                </UnAuthenticated>
-                                            </Route>
-                                            <Route
-                                                path={[
-                                                    SSO_PATHS.SIGNUP,
-                                                    SSO_PATHS.REFER,
-                                                    SSO_PATHS.TRIAL,
-                                                    SSO_PATHS.BUSINESS_SIGNUP,
-                                                    SSO_PATHS.CALENDAR_SIGNUP,
-                                                    SSO_PATHS.MAIL_SIGNUP,
-                                                    SSO_PATHS.DRIVE_SIGNUP,
-                                                ]}
-                                            >
-                                                {(() => {
-                                                    if (
-                                                        (hasBFCoupon ||
-                                                            searchParams.get('plan') === PLANS.NEW_VISIONARY) &&
-                                                        [
-                                                            APPS.PROTONMAIL,
-                                                            APPS.PROTONCALENDAR,
-                                                            APPS.PROTONDRIVE,
-                                                        ].includes(maybePreAppIntent as any)
-                                                    ) {
                                                         return (
-                                                            <SingleSignupContainerV2
-                                                                paths={paths}
-                                                                metaTags={getSignupMeta(maybePreAppIntent)}
-                                                                activeSessions={activeSessions}
-                                                                loader={loader}
-                                                                productParam={maybePreAppIntent}
-                                                                clientType={clientType}
-                                                                toApp={maybePreAppIntent}
-                                                                toAppName={toAppName}
-                                                                onLogin={handleLogin}
-                                                                fork={!!forkState}
-                                                                onBack={
-                                                                    hasBackToSwitch
-                                                                        ? () => history.push(paths.login)
-                                                                        : undefined
-                                                                }
-                                                            />
+                                                            <UnAuthenticated>
+                                                                <SignupContainer
+                                                                    metaTags={getSignupMeta(maybePreAppIntent)}
+                                                                    loginUrl={paths.login}
+                                                                    productParam={productParam}
+                                                                    clientType={clientType}
+                                                                    toApp={maybePreAppIntent}
+                                                                    toAppName={toAppName}
+                                                                    onLogin={handleLogin}
+                                                                    onBack={
+                                                                        hasBackToSwitch
+                                                                            ? () => history.push(paths.login)
+                                                                            : undefined
+                                                                    }
+                                                                />
+                                                            </UnAuthenticated>
                                                         );
-                                                    }
-                                                    return (
-                                                        <UnAuthenticated>
-                                                            <SignupContainer
-                                                                metaTags={getSignupMeta(maybePreAppIntent)}
-                                                                loginUrl={paths.login}
-                                                                productParam={productParam}
-                                                                clientType={clientType}
-                                                                toApp={maybePreAppIntent}
-                                                                toAppName={toAppName}
-                                                                onLogin={handleLogin}
-                                                                onBack={
-                                                                    hasBackToSwitch
-                                                                        ? () => history.push(paths.login)
-                                                                        : undefined
-                                                                }
-                                                            />
-                                                        </UnAuthenticated>
-                                                    );
-                                                })()}
-                                            </Route>
-                                            <Route path={SSO_PATHS.PASS_SIGNUP}>
-                                                <SingleSignupContainerV2
-                                                    paths={paths}
-                                                    metaTags={getSignupMeta(APPS.PROTONPASS)}
-                                                    activeSessions={activeSessions}
-                                                    loader={loader}
-                                                    productParam={APPS.PROTONPASS}
-                                                    clientType={CLIENT_TYPES.PASS}
-                                                    toApp={APPS.PROTONPASS}
-                                                    toAppName={getToAppName(APPS.PROTONPASS)}
-                                                    onLogin={handleLogin}
-                                                    fork={!!forkState}
-                                                    onBack={
-                                                        hasBackToSwitch ? () => history.push(paths.login) : undefined
-                                                    }
-                                                />
-                                            </Route>
-                                            <Route path={[SSO_PATHS.VPN_SIGNUP, SSO_PATHS.VPN_PRICING]}>
-                                                <SingleSignupContainer
-                                                    metaTags={getSignupMeta(APPS.PROTONVPN_SETTINGS)}
-                                                    loader={loader}
-                                                    productParam={APPS.PROTONVPN_SETTINGS}
-                                                    clientType={CLIENT_TYPES.VPN}
-                                                    toApp={APPS.PROTONVPN_SETTINGS}
-                                                    toAppName={getToAppName(APPS.PROTONVPN_SETTINGS)}
-                                                    onLogin={handleLogin}
-                                                    onBack={
-                                                        hasBackToSwitch ? () => history.push(paths.login) : undefined
-                                                    }
-                                                />
-                                            </Route>
-                                            <Route path={`${SSO_PATHS.INVITE}/:selector/:token`}>
-                                                <UnAuthenticated>
-                                                    <SignupInviteContainer
+                                                    })()}
+                                                </Route>
+                                                <Route path={SSO_PATHS.PASS_SIGNUP}>
+                                                    <SingleSignupContainerV2
+                                                        paths={paths}
+                                                        metaTags={getSignupMeta(APPS.PROTONPASS)}
+                                                        activeSessions={activeSessions}
                                                         loader={loader}
-                                                        clientType={clientType}
-                                                        onValid={(inviteData) =>
-                                                            history.replace({
-                                                                pathname: paths.signup,
-                                                                state: { invite: inviteData },
-                                                            })
-                                                        }
-                                                        onInvalid={() => history.push(paths.signup)}
-                                                    />
-                                                </UnAuthenticated>
-                                            </Route>
-                                            <Route path={SSO_PATHS.RESET_PASSWORD}>
-                                                <UnAuthenticated>
-                                                    <ResetPasswordContainer
-                                                        metaTags={resetPasswordPage()}
-                                                        toApp={maybePreAppIntent}
+                                                        productParam={APPS.PROTONPASS}
+                                                        clientType={CLIENT_TYPES.PASS}
+                                                        toApp={APPS.PROTONPASS}
+                                                        toAppName={getToAppName(APPS.PROTONPASS)}
                                                         onLogin={handleLogin}
-                                                        setupVPN={setupVPN}
-                                                        loginUrl={paths.login}
+                                                        fork={!!forkState}
+                                                        onBack={
+                                                            hasBackToSwitch
+                                                                ? () => history.push(paths.login)
+                                                                : undefined
+                                                        }
                                                     />
-                                                </UnAuthenticated>
-                                            </Route>
-                                            <Route path={SSO_PATHS.FORGOT_USERNAME}>
-                                                <UnAuthenticated>
-                                                    <ForgotUsernameContainer
-                                                        metaTags={forgotUsernamePage()}
-                                                        loginUrl={paths.login}
-                                                    />
-                                                </UnAuthenticated>
-                                            </Route>
-                                            <Route
-                                                path={[
-                                                    SSO_PATHS.LOGIN,
-                                                    SSO_PATHS.MAIL_SIGN_IN,
-                                                    SSO_PATHS.CALENDAR_SIGN_IN,
-                                                    SSO_PATHS.DRIVE_SIGN_IN,
-                                                    SSO_PATHS.VPN_SIGN_IN,
-                                                    SSO_PATHS.PASS_SIGN_IN,
-                                                ]}
-                                                exact
-                                            >
-                                                <UnAuthenticated>
-                                                    <LoginContainer
-                                                        metaTags={getLoginMeta(maybePreAppIntent)}
-                                                        toAppName={toAppName}
-                                                        toApp={maybePreAppIntent}
-                                                        showContinueTo={!!toOAuthName}
+                                                </Route>
+                                                <Route path={[SSO_PATHS.VPN_SIGNUP, SSO_PATHS.VPN_PRICING]}>
+                                                    <SingleSignupContainer
+                                                        metaTags={getSignupMeta(APPS.PROTONVPN_SETTINGS)}
+                                                        loader={loader}
+                                                        productParam={APPS.PROTONVPN_SETTINGS}
+                                                        clientType={CLIENT_TYPES.VPN}
+                                                        toApp={APPS.PROTONVPN_SETTINGS}
+                                                        toAppName={getToAppName(APPS.PROTONVPN_SETTINGS)}
                                                         onLogin={handleLogin}
                                                         onBack={
                                                             hasBackToSwitch
-                                                                ? () => history.push(SSO_PATHS.SWITCH)
+                                                                ? () => history.push(paths.login)
                                                                 : undefined
                                                         }
-                                                        setupVPN={setupVPN}
-                                                        paths={paths}
                                                     />
-                                                </UnAuthenticated>
-                                            </Route>
-                                            <Redirect
-                                                to={{
-                                                    pathname: paths.login,
-                                                    state: {
-                                                        ...(typeof location.state === 'object' ? location.state : {}),
-                                                        from: location,
-                                                    },
-                                                }}
-                                            />
-                                        </Switch>
-                                    </ForceRefreshContext.Provider>
+                                                </Route>
+                                                <Route path={`${SSO_PATHS.INVITE}/:selector/:token`}>
+                                                    <UnAuthenticated>
+                                                        <SignupInviteContainer
+                                                            loader={loader}
+                                                            clientType={clientType}
+                                                            onValid={(inviteData) =>
+                                                                history.replace({
+                                                                    pathname: paths.signup,
+                                                                    state: { invite: inviteData },
+                                                                })
+                                                            }
+                                                            onInvalid={() => history.push(paths.signup)}
+                                                        />
+                                                    </UnAuthenticated>
+                                                </Route>
+                                                <Route path={SSO_PATHS.RESET_PASSWORD}>
+                                                    <UnAuthenticated>
+                                                        <ResetPasswordContainer
+                                                            metaTags={resetPasswordPage()}
+                                                            toApp={maybePreAppIntent}
+                                                            onLogin={handleLogin}
+                                                            setupVPN={setupVPN}
+                                                            loginUrl={paths.login}
+                                                        />
+                                                    </UnAuthenticated>
+                                                </Route>
+                                                <Route path={SSO_PATHS.FORGOT_USERNAME}>
+                                                    <UnAuthenticated>
+                                                        <ForgotUsernameContainer
+                                                            metaTags={forgotUsernamePage()}
+                                                            loginUrl={paths.login}
+                                                        />
+                                                    </UnAuthenticated>
+                                                </Route>
+                                                <Route
+                                                    path={[
+                                                        SSO_PATHS.LOGIN,
+                                                        SSO_PATHS.MAIL_SIGN_IN,
+                                                        SSO_PATHS.CALENDAR_SIGN_IN,
+                                                        SSO_PATHS.DRIVE_SIGN_IN,
+                                                        SSO_PATHS.VPN_SIGN_IN,
+                                                        SSO_PATHS.PASS_SIGN_IN,
+                                                    ]}
+                                                    exact
+                                                >
+                                                    <UnAuthenticated>
+                                                        <LoginContainer
+                                                            metaTags={getLoginMeta(maybePreAppIntent)}
+                                                            toAppName={toAppName}
+                                                            toApp={maybePreAppIntent}
+                                                            showContinueTo={!!toOAuthName}
+                                                            onLogin={handleLogin}
+                                                            onBack={
+                                                                hasBackToSwitch
+                                                                    ? () => history.push(SSO_PATHS.SWITCH)
+                                                                    : undefined
+                                                            }
+                                                            setupVPN={setupVPN}
+                                                            paths={paths}
+                                                        />
+                                                    </UnAuthenticated>
+                                                </Route>
+                                                <Redirect
+                                                    to={{
+                                                        pathname: paths.login,
+                                                        state: {
+                                                            ...(typeof location.state === 'object'
+                                                                ? location.state
+                                                                : {}),
+                                                            from: location,
+                                                        },
+                                                    }}
+                                                />
+                                            </Switch>
+                                        </ForceRefreshContext.Provider>
+                                    </AccountPublicAppSetup>
                                 </FeaturesProvider>
                             </UnleashFlagProvider>
                         </UnAuthenticatedApiProvider>
