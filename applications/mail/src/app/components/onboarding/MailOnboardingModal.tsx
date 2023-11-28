@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
-import { SYNC_G_OAUTH_SCOPES, SYNC_SOURCE, SYNC_SUCCESS_NOTIFICATION } from '@proton/activation/src/constants';
+import { SYNC_G_OAUTH_SCOPES, SYNC_SUCCESS_NOTIFICATION } from '@proton/activation/src/constants';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
-import { ImportProvider, OAuthProps } from '@proton/activation/src/interface';
+import { EASY_SWITCH_SOURCES, ImportProvider, OAuthProps } from '@proton/activation/src/interface';
 import { useEasySwitchDispatch, useEasySwitchSelector } from '@proton/activation/src/logic/store';
 import { changeCreateLoadingState, createSyncItem } from '@proton/activation/src/logic/sync/sync.actions';
 import { selectCreateSyncState } from '@proton/activation/src/logic/sync/sync.selectors';
@@ -59,7 +59,7 @@ const MailOnboardingModal = (props: Props) => {
                         Code,
                         Provider,
                         RedirectUri,
-                        Source: SYNC_SOURCE,
+                        Source: EASY_SWITCH_SOURCES.MAIL_WEB_ONBOARDING,
                         notification: SYNC_SUCCESS_NOTIFICATION,
                     })
                 );
