@@ -17,6 +17,7 @@ import { getDefaultTimePeriod } from '@proton/activation/src/helpers/getDefaultT
 import {
     AuthenticationMethod,
     CreateImportPayload,
+    EASY_SWITCH_SOURCES,
     IMPORT_ERROR,
     ImportProvider,
     ImportToken,
@@ -36,7 +37,7 @@ import { ImporterCalendar, ImporterData } from './oauthDraft.interface';
 
 type Props = {
     oAuthProps: OAuthProps;
-    source: string;
+    source: EASY_SWITCH_SOURCES;
     defaultAddress: Address;
     user: UserModel;
 };

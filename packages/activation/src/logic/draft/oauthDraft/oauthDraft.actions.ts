@@ -1,7 +1,7 @@
 import { createAction } from '@reduxjs/toolkit';
 
 import { MailImportFields } from '@proton/activation/src/components/Modals/CustomizeMailImportModal/CustomizeMailImportModal.interface';
-import { ImportProvider, ImportType } from '@proton/activation/src/interface';
+import { EASY_SWITCH_SOURCES, ImportProvider, ImportType } from '@proton/activation/src/interface';
 
 import { ImporterCalendar, MailImportState } from './oauthDraft.interface';
 
@@ -12,6 +12,7 @@ export const resetOauthDraft = createAction(`${OAUTH_ACTION_PREFIX}/reset`);
 export const startOauthDraft = createAction<{
     provider: ImportProvider;
     products: ImportType[];
+    source: EASY_SWITCH_SOURCES;
 }>(`${OAUTH_ACTION_PREFIX}/start`);
 
 export const initOauthMailImport = createAction(`${OAUTH_ACTION_PREFIX}/initOauthImport`);
