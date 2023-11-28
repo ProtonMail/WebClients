@@ -83,19 +83,19 @@ const CustomizeMailImportModal = ({
                         selectedPeriod={customFields.importPeriod}
                         onChange={(nextPeriod) => handleChangeField('importPeriod', nextPeriod)}
                     />
-                    <ImportMappingToggle
-                        isLabelMapping={isLabelMapping}
-                        organizeFolderVisible={displayFolders}
-                        selectedFoldersCount={selectedFoldersCount}
-                        toggleFolderVisibility={toggleFolders}
-                        totalFoldersCount={totalFoldersCount}
-                    />
                     <GmailCategories
                         handleChange={(nextCategoryDestination) =>
                             handleChangeField('importCategoriesDestination', nextCategoryDestination)
                         }
                         hasCategories={displayCategories}
                         selectedCategoriesDest={customFields.importCategoriesDestination}
+                    />
+                    <ImportMappingToggle
+                        isLabelMapping={isLabelMapping}
+                        organizeFolderVisible={displayFolders}
+                        selectedFoldersCount={selectedFoldersCount}
+                        toggleFolderVisibility={toggleFolders}
+                        totalFoldersCount={totalFoldersCount}
                     />
                     {displayFolders && (
                         <ManageFolders
