@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 
-import { BalanceOverview, DashboardSideContent, ExploreProtonWalletSection, YourWalletsSection } from '../components';
-import { WalletSetupModal } from '../components/WalletSetupModal';
+import {
+    BalanceOverview,
+    DashboardSideContent,
+    ExploreProtonWalletSection,
+    WalletSetupModal,
+    YourWalletsSection,
+} from '../components';
 import { transactions, wallets } from '../tests';
 
-export const WalletsDashboardContainer = () => {
+export const MultiWalletDashboardContainer = () => {
     const [isSetupModalOpenned, setIsSetupModalOpenned] = useState(false);
 
     useEffect(() => {

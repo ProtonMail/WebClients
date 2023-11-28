@@ -8,6 +8,7 @@ import { BitcoinAmount } from '../../atoms';
 import { BitcoinUnit, Transaction, Wallet } from '../../types';
 import { DoughnutChart } from '../charts/DoughnutChart';
 import { LineChart } from '../charts/LineChart';
+import { WelcomeCard } from './WelcomeCard';
 import { useBalanceOverview } from './useBalanceOverview';
 
 // TODO: change this when wallet settings API is ready
@@ -26,6 +27,10 @@ export const BalanceOverview = ({ wallets, transactions }: Props) => {
         balanceEvolutionLineChartData,
         last7DaysBalanceDifference,
     } = useBalanceOverview(wallets, transactions);
+
+    if (!transactions) {
+        return <WelcomeCard wallet={wallets.length === 1 ? wallets[0] : undefined} />;
+    }
 
     return (
         <div>
