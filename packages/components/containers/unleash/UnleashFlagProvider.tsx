@@ -6,6 +6,7 @@ import { IConfig } from 'unleash-proxy-client';
 import { Api } from '@proton/shared/lib/interfaces';
 
 import useApi from '../../hooks/useApi';
+import ProtonUnleashStorageProvider from './ProtonUnleashStorageProvider';
 
 // Just something dummy to have a valid domain because the library does new URL
 const prefix = 'https://proton.me/';
@@ -29,6 +30,8 @@ interface Props {
     children: ReactNode;
 }
 
+const storageProvider = new ProtonUnleashStorageProvider();
+
 const UnleashFlagProvider = ({ children }: Props) => {
     const api = useApi();
     const unleashConfig: IConfig = {
@@ -38,6 +41,7 @@ const UnleashFlagProvider = ({ children }: Props) => {
         refreshInterval: 600, // refreshInterval in seconds, 10 mins
         disableMetrics: true,
         fetch: customFetch(api),
+        storageProvider,
     };
 
     return <FlagProvider config={unleashConfig}>{children}</FlagProvider>;
