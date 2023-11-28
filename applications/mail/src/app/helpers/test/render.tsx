@@ -38,7 +38,6 @@ import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import { store, useSetReduxThunkExtraArgs } from '../../logic/store';
 import { api, mockDomApi, registerFeatureFlagsApiMock, registerMinimalFlags } from './api';
 import { minimalCache, mockCache } from './cache';
-import ExperimentsTestProvider from './experiments';
 import NotificationsTestProvider from './notifications';
 
 interface RenderResult extends OriginalRenderResult {
@@ -92,35 +91,33 @@ const TestProvider = ({ children }: Props) => {
                                         <FeaturesProvider>
                                             <SpotlightProvider>
                                                 <DrawerProvider>
-                                                    <ExperimentsTestProvider>
-                                                        <ModalsChildren />
-                                                        <EventModelListener
-                                                            models={[ConversationCountsModel, MessageCountsModel]}
-                                                        />
-                                                        <ReduxProviderWrapper>
-                                                            <MailContentRefProvider mailContentRef={contentRef}>
-                                                                <ChecklistsProvider>
-                                                                    <MailboxContainerContextProvider
-                                                                        isResizing={false}
-                                                                        containerRef={contentRef}
-                                                                        elementID={undefined}
-                                                                    >
-                                                                        <ComposeProvider onCompose={onCompose}>
-                                                                            <Router history={history}>
-                                                                                <Route path={MAIN_ROUTE_PATH}>
-                                                                                    <EncryptedSearchProvider>
-                                                                                        <LabelActionsContextProvider>
-                                                                                            {children}
-                                                                                        </LabelActionsContextProvider>
-                                                                                    </EncryptedSearchProvider>
-                                                                                </Route>
-                                                                            </Router>
-                                                                        </ComposeProvider>
-                                                                    </MailboxContainerContextProvider>
-                                                                </ChecklistsProvider>
-                                                            </MailContentRefProvider>
-                                                        </ReduxProviderWrapper>
-                                                    </ExperimentsTestProvider>
+                                                    <ModalsChildren />
+                                                    <EventModelListener
+                                                        models={[ConversationCountsModel, MessageCountsModel]}
+                                                    />
+                                                    <ReduxProviderWrapper>
+                                                        <MailContentRefProvider mailContentRef={contentRef}>
+                                                            <ChecklistsProvider>
+                                                                <MailboxContainerContextProvider
+                                                                    isResizing={false}
+                                                                    containerRef={contentRef}
+                                                                    elementID={undefined}
+                                                                >
+                                                                    <ComposeProvider onCompose={onCompose}>
+                                                                        <Router history={history}>
+                                                                            <Route path={MAIN_ROUTE_PATH}>
+                                                                                <EncryptedSearchProvider>
+                                                                                    <LabelActionsContextProvider>
+                                                                                        {children}
+                                                                                    </LabelActionsContextProvider>
+                                                                                </EncryptedSearchProvider>
+                                                                            </Route>
+                                                                        </Router>
+                                                                    </ComposeProvider>
+                                                                </MailboxContainerContextProvider>
+                                                            </ChecklistsProvider>
+                                                        </MailContentRefProvider>
+                                                    </ReduxProviderWrapper>
                                                 </DrawerProvider>
                                             </SpotlightProvider>
                                         </FeaturesProvider>
