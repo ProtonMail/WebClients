@@ -45,8 +45,8 @@ export const NavigationProvider: FC = ({ children }) => {
     const selectedItem = useRouteMatch<SelectedItem>(getItemRoute(':shareId', ':itemId', matchTrash))?.params;
 
     const navigate = useCallback(
-        (pathname: string, options: NavigateOptions = { mode: 'replace' }) =>
-            history[options.mode ?? 'replace']({
+        (pathname: string, options: NavigateOptions = { mode: 'push' }) =>
+            history[options.mode ?? 'push']({
                 pathname,
                 search: options.search ?? history.location.search,
                 hash: options.hash,
