@@ -116,11 +116,21 @@ export interface WorkerImportPrivateKeyOptions<T extends Data> {
      * null if the key is expected to be already decrypted, e.g. when user uploads a new private key that is unencrypted
      */
     passphrase: string | null;
+    /**
+     * Check whether the key is compatible with all Proton clients.
+     * This should be used when importing a key that was generate outside of Proton.
+     */
+    checkCompatibility?: boolean;
 }
 
 export type WorkerImportPublicKeyOptions<T extends Data> = {
     armoredKey?: T extends string ? T : never;
     binaryKey?: T extends Uint8Array ? T : never;
+    /**
+     * Check whether the key is compatible with all Proton clients.
+     * This should be used when importing a key that was generate outside of Proton.
+     */
+    checkCompatibility?: boolean;
 };
 
 export interface WorkerGenerateKeyOptions extends Omit<GenerateKeyOptions, 'format' | 'passphrase'> {}
