@@ -430,14 +430,8 @@
       "Get verification code": [
         "Hanki vahvistuskoodi"
       ],
-      "Go to first page": [
-        "Siirry ensimmäiselle sivulle"
-      ],
       "Go to label": [
         "Siirry tunnisteeseen"
-      ],
-      "Go to last page": [
-        "Siirry viimeiselle sivulle"
       ],
       "Go to next page": [
         "Siirry seuraavalle sivulle"
@@ -3090,6 +3084,9 @@
       "Unlock custom message scheduling and other benefits when you upgrade your plan.": [
         "Avaa mukautettu viestien ajoitus sekä muita etuja päivittämällä tilauksesi."
       ],
+      "Unlock custom snooze times when you upgrade your plan.": [
+        "Päivitä tilauksesi saadaksesi vapaat torkuttamisajat käyttöösi."
+      ],
       "Unlock unlimited filters that sort your inbox for you and more premium features when you upgrade.": [
         "Hanki rajaton määrä postilaatikkosi puolestasi lajittelevia suodattimia päivittämällä tilauksesi ja avaa samalla myös muita premium-ominaisuuksia."
       ],
@@ -3882,6 +3879,9 @@
       ],
       "Something went wrong": [
         "Jotain meni pieleen"
+      ],
+      "To use ${ MAIL_APP_NAME } or ${ CALENDAR_APP_NAME }, switch to the web version.": [
+        "Käyttääksesi ${ MAIL_APP_NAME } tai ${ CALENDAR_APP_NAME }, vaihda selainversioon."
       ],
       "We couldn't load this page. Please refresh the page or check your internet connection.": [
         "Sivua ei voitu ladata. Päivitä sivu tai tarkista Internet-yhteytesi."
@@ -5743,6 +5743,9 @@
       "SimpleLogin provides a simple way to create logins at untrusted third-party sites where you don't want to expose your actual email address.": [
         "SimpleLogin tarjoaa yksinkertaisen tavan käyttäjätunnusten luontiin epäluotettaviin verkkopalveluihin, joille et halua paljastaa todellista sähköpostiosoitettasi."
       ],
+      "Snoozed until  ${ dateString } at ${ formattedTime }": [
+        "Torkutettu ${ dateString } kello ${ formattedTime } asti"
+      ],
       "Snoozed until today, ${ formattedTime }": [
         "Torkutettu tähän päivään asti, ${ formattedTime }"
       ],
@@ -7536,6 +7539,9 @@
       "Get unlimited aliases with SimpleLogin by ${ BRAND_NAME }": [
         "Hanki rajattomasti aliaksia ${ BRAND_NAME }in SimpleLogin-palvelusta"
       ],
+      "Snooze messages and get reminded when you want": [
+        "Torkuta viestejä ja saa muistutuksia kun haluat"
+      ],
       "Storage space is shared across ${ MAIL_APP_NAME }, ${ CALENDAR_APP_NAME } and ${ DRIVE_APP_NAME }": [
         "Tallennustila jaetaan ${ MAIL_APP_NAME }in, ${ CALENDAR_APP_NAME }in ja ${ DRIVE_APP_NAME }n välillä"
       ],
@@ -7594,22 +7600,6 @@
         "Valitse, mitä ${ BRAND_NAME } voi käyttää: tarkastele sähköpostiviestejäsi ja -asetuksiasi, tarkastele ja lataa yhteystietojasi, tarkastele ja lataa kaikkia esityslistoja, joita käytät Google Agendasta."
       ]
     },
-    "Onboarding": {
-      "Welcome to ${ appName }": [
-        "Tervetuloa ${ appName } -sovellukseen"
-      ],
-      "Where privacy and security meet productivity and ease of use.": [
-        "Missä yksityisyys ja suojaus kohtaavat tuottavuuden ja käytettävyyden."
-      ]
-    },
-    "Onboarding Action": {
-      "Next": [
-        "Seuraava"
-      ],
-      "Start using ${ appName }": [
-        "Aloita ${ appName } -sovelluksen käyttö"
-      ]
-    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Määritä organisaatiosi, liitä oma verkkotunnuksesi ja luo käyttäjätilit varmistaaksesi, että kaikki organisaatiosi jäsenet on suojattu."
@@ -7617,17 +7607,8 @@
       "Discover all ${ BRAND_NAME } services": [
         "Tutustu kaikkiin ${ BRAND_NAME }-palveluihin"
       ],
-      "More theming options are available in your account Settings > Appearance.": [
-        "Lisää teemavaihtoehtoja löytyy Asetusten Ulkoasu-osiosta."
-      ],
-      "Select a theme": [
-        "Valitse teema"
-      ],
       "Set up your organization": [
         "Määritä organisaatiosi"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "Vasemman yläkulman sovellusvalitsimesta pääset kaikkiin ${ BRAND_NAME }-palveluihin: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } ja ${ DRIVE_SHORT_APP_NAME }."
       ]
     },
     "Online accounts": {
@@ -7980,6 +7961,11 @@
         "Seuraavien osoitteiden yhteystiedot on poistettu, joten niitä koskevat salausasetukset on päivitetty seuraavasti:"
       ]
     },
+    "Send email with encryption disabled": {
+      "The contacts for the following addresses have disabled end-to-end encryption on their account, so the corresponding encryption preferences have been updated accordingly:": [
+        "Seuraavien osoitteiden käyttäjät ovat poistaneet käytöstä päästä päähän -salauksen tililtään, joten vastaavat salausasetukset on päivitetty sen mukaisesti:"
+      ]
+    },
     "Send email with errors": {
       "Do you want to send the email anyway?": [
         "Haluatko silti lähettää viestin?"
@@ -8260,6 +8246,9 @@
     "Snooze message": {
       "Snooze Message": [
         "Torkuta viesti"
+      ],
+      "When should the message reappear in your inbox?": [
+        "Milloin viestin pitäisi ilmestyä uudelleen saapuneisiin?"
       ]
     },
     "Sort option": {
@@ -8494,6 +8483,12 @@
       ],
       "Search just got smarter and faster": [
         "Haku on nyt älykkäämpi ja nopeampi"
+      ],
+      "Set when an email should reappear in your inbox with the new snooze feature.": [
+        "Määrää milloin sähköposti ilmestyy uudestaan saapuneisiin uudella torkuta -ominaisuudella."
+      ],
+      "Snooze it for later": [
+        "Torkuta myöhemmäksi"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "Roskapostin ja roskakorin viestejä ei enää näytetä Kaikki viestit -näkymässä oletusarvoisesti. ${ settingsLink }"
@@ -9467,6 +9462,9 @@
       ],
       "Verification error": [
         "Vahvistusvirhe"
+      ],
+      "Want to snooze any time?": [
+        "Haluatko torkuttaa vapaasti?"
       ],
       "Warning": [
         "Varoitus"

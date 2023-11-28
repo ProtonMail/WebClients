@@ -427,14 +427,8 @@
       "Get verification code": [
         "認証コードを取得"
       ],
-      "Go to first page": [
-        "最初のページに移動"
-      ],
       "Go to label": [
         "ラベルへ移動"
-      ],
-      "Go to last page": [
-        "最後のページに移動"
       ],
       "Go to next page": [
         "次のページに移動"
@@ -7315,22 +7309,6 @@
         "${ BRAND_NAME } のアクセス権を選択してください: メールメッセージと設定の閲覧 / 連絡先の閲覧とダウンロード / Google Agendaの全アジェンダの閲覧とダウンロード。"
       ]
     },
-    "Onboarding": {
-      "Welcome to ${ appName }": [
-        "${ appName } へようこそ"
-      ],
-      "Where privacy and security meet productivity and ease of use.": [
-        "プライバシーとセキュリティを保護しつつ、生産性と使いやすさも満たせる場所です。"
-      ]
-    },
-    "Onboarding Action": {
-      "Next": [
-        "次へ"
-      ],
-      "Start using ${ appName }": [
-        "${ appName } の使用を開始する"
-      ]
-    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "組織を構成、ドメイン名をリンク、アカウントを作成して、組織のすべてのメンバーを確実に保護します。"
@@ -7338,17 +7316,8 @@
       "Discover all ${ BRAND_NAME } services": [
         "すべての ${ BRAND_NAME } サービスを 1 つのアカウントで"
       ],
-      "More theming options are available in your account Settings > Appearance.": [
-        "その他のテーマ設定オプションは、アカウントの「設定」>「外観」で利用できます。"
-      ],
-      "Select a theme": [
-        "テーマを選択"
-      ],
       "Set up your organization": [
         "組織のための設定"
-      ],
-      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } and ${ DRIVE_SHORT_APP_NAME }.": [
-        "左上のアプリセレクターで、すべてのアプリにアクセスできます。 ${ BRAND_NAME } サービス: ${ MAIL_SHORT_APP_NAME }・ ${ VPN_SHORT_APP_NAME }・ ${ CALENDAR_SHORT_APP_NAME }・ ${ DRIVE_SHORT_APP_NAME }"
       ]
     },
     "Online accounts": {
