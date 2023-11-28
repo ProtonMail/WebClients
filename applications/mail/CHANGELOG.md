@@ -1,3 +1,7 @@
+## Release 5.0.32 — Nov 27th, 2023
+
+-   Minor improvements and bug fixes
+
 ## Release 5.0.31 — Nov 8th, 2023
 
 ### New features
