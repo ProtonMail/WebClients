@@ -2,10 +2,12 @@ import React, { MouseEvent } from 'react';
 
 import { isSameDay } from 'date-fns';
 
-import { useAddresses } from '@proton/components/hooks';
+import { useAddresses, useUser } from '@proton/components/hooks';
 import { getDisplayTitle } from '@proton/shared/lib/calendar/helper';
 import { format as formatUTC } from '@proton/shared/lib/date-fns-utc';
 import { dateLocale } from '@proton/shared/lib/i18n';
+import { Nullable } from '@proton/shared/lib/interfaces';
+import { VisualCalendar } from '@proton/shared/lib/interfaces/calendar';
 import clsx from '@proton/utils/clsx';
 
 import { useCalendarSearch } from './CalendarSearchProvider';
@@ -23,6 +25,8 @@ interface Props {
 
 const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, closestToDateRef }: Props) => {
     const [addresses] = useAddresses();
+    const [{ hasPaidMail }] = useUser();
+
     const now = new Date();
     const startDate = dailyEvents.length ? dailyEvents[0].fakeUTCStartDate : new Date();
 
@@ -32,6 +36,10 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
     const isToday = isSameDay(now, startDate);
     // const isPast = isBefore(startDate, now); // might be used again
     const { openedSearchItem } = useCalendarSearch();
+
+    const getColor = (visualCalendar: VisualCalendar, eventColor?: Nullable<string>) => {
+        return hasPaidMail && eventColor ? eventColor : visualCalendar.Color;
+    };
 
     return (
         <div
@@ -71,6 +79,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                             plusDaysToEnd,
                             Summary,
                             isClosestToDate,
+                            Color,
                         } = event;
                         const isOpen =
                             ID === openedSearchItem?.ID &&
@@ -103,7 +112,7 @@ const CalendarSearchViewDayEvents = ({ dailyEvents = [], onClickSearchItem, clos
                                         'search-calendar-border flex-item-noshrink my-1',
                                         isUnanswered && 'isUnanswered'
                                     )}
-                                    style={{ '--calendar-color': visualCalendar.Color }}
+                                    style={{ '--calendar-color': getColor(visualCalendar, Color) }}
                                 />
                                 <span
                                     className="flex-no-min-children flex-nowrap flex-item-fluid search-event-time-details on-tablet-flex-column"

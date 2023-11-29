@@ -1,3 +1,4 @@
+import { getVeventColorValue } from '@proton/shared/lib/calendar/veventHelper';
 import { CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 
 import { InviteActions, ReencryptInviteActionData } from '../../../interfaces/Invite';
@@ -20,6 +21,7 @@ export const getUpdatePersonalPartOperation = ({
             eventID: event.ID,
             eventComponent,
             hasDefaultNotifications,
+            color: getVeventColorValue(eventComponent),
         },
     };
 };

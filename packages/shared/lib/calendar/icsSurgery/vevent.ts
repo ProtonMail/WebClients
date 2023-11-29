@@ -1,5 +1,6 @@
 import { addDays, fromUnixTime } from 'date-fns';
 
+import { getClosestProtonColor } from '@proton/shared/lib/colors';
 import truncate from '@proton/utils/truncate';
 import unique from '@proton/utils/unique';
 
@@ -258,6 +259,7 @@ export const getSupportedEvent = ({
     componentId = '',
     isEventInvitation,
     generatedHashUid = false,
+    canImportEventColor,
 }: {
     method?: ICAL_METHOD;
     vcalVeventComponent: VcalVeventComponent;
@@ -267,6 +269,7 @@ export const getSupportedEvent = ({
     componentId?: string;
     isEventInvitation?: boolean;
     generatedHashUid?: boolean;
+    canImportEventColor?: boolean;
 }): VcalVeventComponent => {
     const isPublish = method === ICAL_METHOD.PUBLISH;
     const isInvitation = isEventInvitation && !isPublish;
@@ -294,6 +297,7 @@ export const getSupportedEvent = ({
             'x-pm-proton-reply': protonReply,
             'x-yahoo-yid': xYahooID,
             'x-yahoo-user-status': xYahooUserStatus,
+            color,
         } = vcalVeventComponent;
         const [trimmedSummaryValue, trimmedDescriptionValue, trimmedLocationValue] = [
             summary,
@@ -494,6 +498,15 @@ export const getSupportedEvent = ({
 
                 if (dedupedAlarms.length) {
                     validated.components = dedupedAlarms;
+                }
+            }
+
+            if (canImportEventColor && color) {
+                const closestColor = getClosestProtonColor(color.value);
+
+                // If closest color is undefined, it means that the color format was invalid. In that case, we ignore the color.
+                if (closestColor) {
+                    validated.color = { value: closestColor };
                 }
             }
         }

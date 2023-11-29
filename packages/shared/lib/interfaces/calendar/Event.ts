@@ -65,6 +65,7 @@ export interface CalendarEventSharedData {
     IsOrganizer: 1 | 0;
     IsProtonProtonInvite: 1 | 0;
     Author: string;
+    Color: Nullable<string> | undefined;
 }
 
 export interface CalendarEventMetadata {
@@ -163,6 +164,7 @@ export interface EventModelView {
     title: string;
     location: string;
     description: string;
+    color?: string;
     sequence?: number;
     start: DateTimeModel;
     end: DateTimeModel;

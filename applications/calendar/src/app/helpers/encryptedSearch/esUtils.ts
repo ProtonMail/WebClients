@@ -209,6 +209,7 @@ export const getESEvent = async (
         RecurrenceID: Event.RecurrenceID,
         Exdates: Event.Exdates,
         IsDecryptable: !hasError,
+        Color: Event.Color,
     };
 };
 

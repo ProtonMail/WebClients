@@ -28,6 +28,7 @@ import {
     useGetMailSettings,
     useNotifications,
     useRelocalizeText,
+    useUser,
 } from '@proton/components';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
@@ -206,7 +207,7 @@ type ModalsMap = {
         };
         inviteActions: InviteActions;
         isAttendee: boolean;
-        canEditOnlyNotifications: boolean;
+        canEditOnlyPersonalPart: boolean;
     }>;
     editSingleConfirmModal: ModalWithProps<{
         inviteActions: InviteActions;
@@ -301,6 +302,7 @@ const InteractiveCalendarView = ({
     const getMailSettings = useGetMailSettings();
     const relocalizeText = useRelocalizeText();
     const config = useConfig();
+    const [{ hasPaidMail }] = useUser();
     const isSavingEvent = useRef(false);
 
     const isDrawerApp = getIsCalendarAppInDrawer(view);
@@ -358,7 +360,10 @@ const InteractiveCalendarView = ({
     const getEncryptionPreferences = useGetEncryptionPreferences();
 
     const getEventDecrypted = (eventData: CalendarEvent): Promise<DecryptedEventTupleResult> => {
-        return Promise.all([getCalendarEventRaw(eventData), pick(eventData, ['Permissions', 'IsProtonProtonInvite'])]);
+        return Promise.all([
+            getCalendarEventRaw(eventData),
+            pick(eventData, ['Permissions', 'IsProtonProtonInvite', 'Color']),
+        ]);
     };
 
     const [interactiveData, setInteractiveData] = useState<InteractiveState | undefined>(() =>
@@ -516,10 +521,12 @@ const InteractiveCalendarView = ({
         viewEventData: { calendarData, eventData, eventReadResult, eventRecurrence },
         duplicateFromNonWritableCalendarData,
         partstat,
+        shouldDropColor,
     }: {
         viewEventData: CalendarViewEventData;
         duplicateFromNonWritableCalendarData?: { calendar: VisualCalendar };
         partstat?: ICAL_ATTENDEE_STATUS;
+        shouldDropColor?: boolean;
     }): EventModel | undefined => {
         if (
             !eventData ||
@@ -589,6 +596,7 @@ const InteractiveCalendarView = ({
             isProtonProtonInvite: !!eventData.IsProtonProtonInvite,
             selfAddressData,
             calendarSettings: CalendarSettings,
+            color: eventData.Color && !shouldDropColor ? eventData.Color : undefined,
         });
         if (partstat) {
             // The user attends the event and is changing the partstat
@@ -964,7 +972,7 @@ const InteractiveCalendarView = ({
         type,
         data,
         isAttendee,
-        canEditOnlyNotifications,
+        canEditOnlyPersonalPart,
         inviteActions,
     }: OnSaveConfirmationArgs): Promise<RecurringActionData> => {
         return new Promise<RecurringActionData>((resolve, reject) => {
@@ -976,7 +984,7 @@ const InteractiveCalendarView = ({
                         data,
                         inviteActions,
                         isAttendee,
-                        canEditOnlyNotifications,
+                        canEditOnlyPersonalPart,
                     },
                 });
             } else if (type === SAVE_CONFIRMATION_TYPES.SINGLE) {
@@ -1219,13 +1227,14 @@ const InteractiveCalendarView = ({
             return [];
         }
         const requests = operations.map(
-            ({ data: { addressID, eventID, calendarID, eventComponent, hasDefaultNotifications } }) =>
+            ({ data: { addressID, eventID, calendarID, eventComponent, hasDefaultNotifications, color } }) =>
                 async () => {
                     const payload = await getUpdatePersonalEventPayload({
                         eventComponent,
                         hasDefaultNotifications,
                         addressID,
                         getAddressKeys,
+                        color,
                     });
                     return api<UpdateEventPartApiResponse>({
                         ...updatePersonalEventPart(calendarID, eventID, payload),
@@ -1523,6 +1532,7 @@ const InteractiveCalendarView = ({
         const newTemporaryModel = getUpdateModel({
             viewEventData,
             duplicateFromNonWritableCalendarData,
+            shouldDropColor: isDuplication && !hasPaidMail,
         });
 
         if (!newTemporaryModel) {
@@ -1614,7 +1624,7 @@ const InteractiveCalendarView = ({
                     isOpen={editRecurringConfirmModal.isOpen}
                     {...editRecurringConfirmModal.props.data}
                     isAttendee={editRecurringConfirmModal.props.isAttendee}
-                    canEditOnlyNotifications={editRecurringConfirmModal.props.canEditOnlyNotifications}
+                    canEditOnlyPersonalPart={editRecurringConfirmModal.props.canEditOnlyPersonalPart}
                     inviteActions={editRecurringConfirmModal.props.inviteActions}
                     onClose={() => {
                         closeModal('editRecurringConfirmModal');
@@ -1902,7 +1912,6 @@ const InteractiveCalendarView = ({
                     model={tmpData}
                     setModel={handleSetTemporaryEventModel}
                     isInvitation={isInvitation}
-                    isDuplicating={isDuplicatingEvent}
                     isOpen={createEventModal.isOpen}
                     onSave={async (inviteActions: InviteActions) => {
                         if (!temporaryEvent) {
