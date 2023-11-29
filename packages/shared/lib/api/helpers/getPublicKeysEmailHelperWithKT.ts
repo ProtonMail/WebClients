@@ -11,9 +11,9 @@ import {
 import { getExternalKeys, getInternalKeys, getMailCapableKeys, supportsMail } from '../../keys';
 import { getAndVerifyApiKeys } from './getAndVerifyApiKeys';
 
-const { KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_MISSING_MX, KEY_GET_INPUT_INVALID, KEY_GET_INVALID_KT } =
+const { KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_EXTERNAL, KEY_GET_INPUT_INVALID, KEY_GET_INVALID_KT } =
     API_CUSTOM_ERROR_CODES;
-const EMAIL_ERRORS = [KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_MISSING_MX, KEY_GET_INPUT_INVALID, KEY_GET_INVALID_KT];
+const EMAIL_ERRORS = [KEY_GET_ADDRESS_MISSING, KEY_GET_DOMAIN_EXTERNAL, KEY_GET_INPUT_INVALID, KEY_GET_INVALID_KT];
 
 export const castKeys = (keys: ProcessedApiAddressKey[]): ProcessedApiKey[] => {
     return keys.map(({ armoredPublicKey, flags, publicKeyRef }) => {
@@ -180,6 +180,15 @@ const getPublicKeysEmailHelperWithKT = async ({
         };
     } catch (error: any) {
         const { data = {} } = error;
+        if (data.Code === KEY_GET_DOMAIN_EXTERNAL) {
+            // It's an external recipient
+            return {
+                publicKeys: [],
+                RecipientType: RECIPIENT_TYPES.TYPE_EXTERNAL,
+                isCatchAll: false,
+                isInternalWithDisabledE2EEForMail: false,
+            };
+        }
         if (EMAIL_ERRORS.includes(data.Code)) {
             return {
                 publicKeys: [],
