@@ -360,7 +360,7 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                             required
                         />
                         {contactEmails.length ? (
-                            <datalist id="contact-emails" className="hidden">
+                            <datalist id="contact-emails">
                                 {contactEmails?.map((contactEmail) => (
                                     <option key={contactEmail.ID} value={contactEmail.Email}>
                                         {contactEmail.Email}
