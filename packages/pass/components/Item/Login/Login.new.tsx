@@ -1,6 +1,6 @@
-import { type ReactElement, type VFC, useMemo } from 'react';
+import { type ReactElement, type VFC, useEffect, useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
@@ -55,16 +55,18 @@ export const LoginNew: VFC<ItemNewViewProps<'login'>> = ({ shareId, url, onCance
 
     const { domain, subdomain } = url ?? {};
     const { search } = useLocation();
+    const history = useHistory();
+
+    const searchParams = new URLSearchParams(search);
 
     const initialValues: LoginItemFormValues = useMemo(() => {
-        const params = new URLSearchParams(search);
         const maybeUrl = subdomain ?? domain ?? '';
         const { valid, url } = isValidURL(maybeUrl);
 
         return {
             shareId,
             name: maybeUrl,
-            username: params.get('username') ?? '',
+            username: searchParams.get('username') ?? '',
             password: '',
             note: '',
             totpUri: '',
@@ -168,6 +170,14 @@ export const LoginNew: VFC<ItemNewViewProps<'login'>> = ({ shareId, url, onCance
         sanitizeSave: sanitizeLoginAliasSave,
         sanitizeHydration: sanitizeLoginAliasHydration(aliasModal.aliasOptions),
     });
+
+    useEffect(
+        () => () => {
+            searchParams.delete('username');
+            history.replace({ search: searchParams.toString() });
+        },
+        []
+    );
 
     return (
         <>
