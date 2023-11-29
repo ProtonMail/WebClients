@@ -60,7 +60,7 @@ const updateCollection = <EventItemModel extends Model, EventItemKey extends str
     merge = defaultMerge,
     sortByKey: maybeSortByKey = true,
 }: {
-    model: readonly EventItemModel[];
+    model: readonly EventItemModel[] | undefined;
     events: readonly EventItemUpdate<EventItemModel, EventItemKey>[];
     item?: (
         event: CreateEventItemUpdate<EventItemModel, EventItemKey> | UpdateEventItemUpdate<EventItemModel, EventItemKey>

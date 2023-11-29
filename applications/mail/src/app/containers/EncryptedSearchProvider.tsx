@@ -73,7 +73,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         api,
         user,
         history,
-        numAddresses: addresses.length,
+        numAddresses: addresses?.length || 0,
     });
 
     const contentIndexingSuccessMessage = c('Success').t`Message content search enabled`;
@@ -189,7 +189,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
 
     useSubscribeEventManager(async (event: Event) => {
         ESDeletedConversationsCache.listenEvents(event);
-        void esLibraryFunctions.handleEvent(convertEventType(event, addresses.length));
+        void esLibraryFunctions.handleEvent(convertEventType(event, addresses?.length || 0));
     });
 
     /**

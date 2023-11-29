@@ -5,7 +5,7 @@ import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/share
 import { Table, TableBody, TableHeader, TableRow } from '../../components';
 import AddressActions from './AddressActions';
 import AddressStatus from './AddressStatus';
-import { formatAddresses, getPermissions, getStatus } from './helper';
+import { getPermissions, getStatus } from './helper';
 
 interface AddressesTableProps {
     loading: boolean;
@@ -36,7 +36,7 @@ const AddressesTable = ({
             />
             <TableBody colSpan={hasUsername ? 4 : 3} loading={loading}>
                 {members.flatMap((member) => {
-                    const formattedAddresses = formatAddresses(memberAddresses?.[member.ID] || []);
+                    const formattedAddresses = memberAddresses?.[member.ID] || [];
                     return formattedAddresses.map((address, i) => (
                         <TableRow
                             key={address.ID}
@@ -50,7 +50,6 @@ const AddressesTable = ({
                                     member={member}
                                     address={address}
                                     user={user}
-                                    organizationKey={organizationKey}
                                     permissions={getPermissions({
                                         addressIndex: i,
                                         member,

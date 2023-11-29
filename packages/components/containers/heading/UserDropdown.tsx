@@ -71,7 +71,7 @@ import SessionRecoverySignOutConfirmPrompt from '../account/sessionRecovery/Sess
 import { AuthenticatedBugModal } from '../support';
 import UserDropdownButton, { Props as UserDropdownButtonProps } from './UserDropdownButton';
 
-const getPlanTitle = (subscription: Subscription, app: APP_NAMES) => {
+const getPlanTitle = (subscription: Subscription | undefined, app: APP_NAMES) => {
     if (hasLifetime(subscription)) {
         return 'Lifetime';
     }

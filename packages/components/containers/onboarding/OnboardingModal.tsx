@@ -41,6 +41,15 @@ interface Props {
     extraProductStep?: ((props: OnboardingStepRenderCallback) => ReactNode)[];
 }
 
+const onboardingThemesSelection = [
+    ThemeTypes.Duotone,
+    ThemeTypes.Carbon,
+    ThemeTypes.Monokai,
+    ThemeTypes.Snow,
+    ThemeTypes.ContrastLight,
+    ThemeTypes.Classic,
+].map((id) => PROTON_THEMES_MAP[id]);
+
 const OnboardingModal = ({
     children,
     size = 'small',
@@ -56,14 +65,6 @@ const OnboardingModal = ({
     const [organization, loadingOrganization] = useOrganization();
     const [subscription, loadingSubscription] = useSubscription();
     const theme = useTheme();
-    const onboardingThemesSelection = [
-        ThemeTypes.Duotone,
-        ThemeTypes.Carbon,
-        ThemeTypes.Monokai,
-        ThemeTypes.Snow,
-        ThemeTypes.ContrastLight,
-        ThemeTypes.Classic,
-    ].map((id) => PROTON_THEMES_MAP[id]);
     const api = useApi();
     const [welcomeFlags] = useWelcomeFlags();
     let isLastStep = false;
@@ -71,9 +72,9 @@ const OnboardingModal = ({
         !loadingOrganization &&
         !loadingSubscription &&
         user.isAdmin &&
-        organization.MaxMembers > 1 &&
-        organization.UsedMembers === 1 &&
-        !organization.HasKeys &&
+        (organization?.MaxMembers || 0) > 1 &&
+        organization?.UsedMembers === 1 &&
+        !organization?.HasKeys &&
         !hasNewVisionary(subscription) &&
         !hasVisionary(subscription);
 

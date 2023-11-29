@@ -19,12 +19,12 @@ function getSubscritionManagerName(externalCode: External.Android | External.iOS
     return '';
 }
 
-export const InAppText = ({ subscription }: { subscription: Subscription }) => {
+export const InAppText = ({ subscription }: { subscription: Subscription | undefined }) => {
     const subscriptions = <span className="text-bold">{c('Subscription change warning').t`Subscriptions`}</span>;
 
     let firstLine: string;
     let secondLine: string | string[];
-    if (subscription.External === External.Android) {
+    if (subscription?.External === External.Android) {
         firstLine = c('Subscription change warning')
             .t`Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.`;
         secondLine = c('Subscription change warning')

@@ -1,9 +1,10 @@
 import { waitFor } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { setBit } from '@proton/shared/lib/helpers/bitset';
 import { MESSAGE_FLAGS } from '@proton/shared/lib/mail/constants';
 
-import { addAddressToCache, minimalCache } from '../../../helpers/test/cache';
+import { getCompleteAddress } from '../../../helpers/test/cache';
 import { clearAll } from '../../../helpers/test/helper';
 import { initMessage, setup } from './Message.test.helpers';
 
@@ -64,8 +65,6 @@ describe('Message banners', () => {
     it('should show the unsubscribe banner with one click method', async () => {
         const toAddress = 'to@domain.com';
 
-        minimalCache();
-        addAddressToCache({ Email: toAddress });
         initMessage({
             data: {
                 ParsedHeaders: { 'X-Original-To': toAddress },
@@ -73,7 +72,11 @@ describe('Message banners', () => {
             },
         });
 
-        const { getByTestId } = await setup({}, false);
+        const { getByTestId } = await setup({}, true, {
+            preloadedState: {
+                addresses: getModelState([getCompleteAddress({ Email: toAddress })]),
+            },
+        });
 
         const banner = getByTestId('unsubscribe-banner');
 

@@ -1,20 +1,13 @@
 import { getByText as getByTextDefault } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
+import { getModelState } from '@proton/account/test';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
-import { Address, Recipient } from '@proton/shared/lib/interfaces';
+import { Address, Recipient, UserModel } from '@proton/shared/lib/interfaces';
 
-import { addToCache, minimalCache } from '../../../helpers/test/cache';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
-import {
-    GeneratedKey,
-    addApiKeys,
-    addApiMock,
-    addKeysToAddressKeysCache,
-    clearAll,
-    generateKeys,
-    render,
-} from '../../../helpers/test/helper';
+import { minimalCache } from '../../../helpers/test/cache';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { GeneratedKey, addApiKeys, addApiMock, clearAll, generateKeys, render } from '../../../helpers/test/helper';
 import { messageID } from '../../message/tests/Message.test.helpers';
 import Composer from '../Composer';
 import { ID, prepareMessage, props, saveNow, toAddress } from './Composer.test.helpers';
@@ -58,7 +51,7 @@ const user = {
     hasPaidMail: true,
     UsedSpace: 10,
     MaxSpace: 100,
-};
+} as UserModel;
 
 describe('Composer verify sender', () => {
     let fromKeys: GeneratedKey;
@@ -76,13 +69,10 @@ describe('Composer verify sender', () => {
 
     beforeEach(() => {
         clearAll();
-        addKeysToAddressKeysCache(addressID1, fromKeys);
     });
 
     const setup = (sender: Recipient) => {
         minimalCache();
-        addToCache('Addresses', addresses);
-        addToCache('User', user);
 
         addApiKeys(false, toAddress, []);
         addApiKeys(false, sender.Address, []);
@@ -106,7 +96,13 @@ describe('Composer verify sender', () => {
         const sender = { Name: name1, Address: address1 } as Recipient;
         const composerID = setup(sender);
 
-        const { findByTestId } = await render(<Composer {...props} composerID={composerID} />, false);
+        const { findByTestId } = await render(<Composer {...props} composerID={composerID} />, false, {
+            preloadedState: {
+                user: getModelState(user),
+                addresses: getModelState(addresses),
+                addressKeys: getAddressKeyCache(addressID1, fromKeys),
+            },
+        });
 
         const fromField = await findByTestId('composer:from');
         getByTextDefault(fromField, address1);
@@ -120,7 +116,14 @@ describe('Composer verify sender', () => {
 
         const { findByTestId, getByText, container } = await render(
             <Composer {...props} composerID={composerID} />,
-            false
+            false,
+            {
+                preloadedState: {
+                    user: getModelState(user),
+                    addresses: getModelState(addresses),
+                    addressKeys: getAddressKeyCache(addressID1, fromKeys),
+                },
+            }
         );
 
         await saveNow(container);
@@ -141,7 +144,14 @@ describe('Composer verify sender', () => {
 
         const { findByTestId, container, getByText } = await render(
             <Composer {...props} composerID={composerID} />,
-            false
+            false,
+            {
+                preloadedState: {
+                    user: getModelState(user),
+                    addresses: getModelState(addresses),
+                    addressKeys: getAddressKeyCache(addressID1, fromKeys),
+                },
+            }
         );
 
         await saveNow(container);

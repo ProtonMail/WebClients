@@ -27,7 +27,7 @@ import Addresses from '../addresses/Addresses';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 
 interface Props extends ModalStateProps {
-    organization: Organization;
+    organization?: Organization;
     domains: Domain[];
     member: Member | null;
 }
@@ -44,7 +44,7 @@ const UserInviteOrEditModal = ({ organization, domains, member, ...modalState }:
     const storageSizeUnit = GIGA;
     const isEditing = !!member?.ID;
     const isInvitationPending = member?.State === FAMILY_PLAN_INVITE_STATE.STATUS_INVITED;
-    const hasVPN = Boolean(organization.MaxVPN);
+    const hasVPN = Boolean(organization?.MaxVPN);
     const canMakeAdmin = !member?.Self && !isInvitationPending && member?.Role === MEMBER_ROLE.ORGANIZATION_MEMBER;
     const canRevokeAdmin = !member?.Self && !isInvitationPending && member?.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;
     const canUpdateVPNConnection = isEditing && !isInvitationPending && hasVPN;

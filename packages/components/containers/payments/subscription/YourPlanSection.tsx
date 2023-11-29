@@ -1,4 +1,3 @@
-import usePendingUserInvitations from '@proton/components/hooks/usePendingUserInvitations';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { pick } from '@proton/shared/lib/helpers/object';
 import { getHasVpnB2BPlan } from '@proton/shared/lib/helpers/subscription';
@@ -10,6 +9,7 @@ import {
     useCalendars,
     useLoad,
     useOrganization,
+    usePendingUserInvitations,
     usePlans,
     useSubscription,
     useUser,
@@ -46,7 +46,7 @@ const YourPlanSection = ({ app }: Props) => {
 
     const loading = loadingSubscription || loadingOrganization || loadingPlans || serversCountLoading;
 
-    if (loading) {
+    if (!subscription || loading) {
         return <Loader />;
     }
 
@@ -73,7 +73,7 @@ const YourPlanSection = ({ app }: Props) => {
      */
     const shouldRenderUpsells = !isVpnB2b;
     // VPN B2B plans must not have a usage panel
-    const shouldRenderUsagePanel = organization.UsedMembers > 1 && !isVpnB2b;
+    const shouldRenderUsagePanel = (organization?.UsedMembers || 0) > 1 && !isVpnB2b;
 
     const shouldRenderPendingInvitation = Boolean(invites.length);
     const totalPanelsToDisplay = 1 + (+shouldRenderPendingInvitation || upsells.length) + +shouldRenderUsagePanel;

@@ -3,7 +3,7 @@ import { waitFor } from '@testing-library/react';
 import { FeatureCode } from '@proton/components';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
 
-import { addApiMock, clearAll, createDocument, minimalCache, setFeatureFlags } from '../../../helpers/test/helper';
+import { addApiMock, clearAll, createDocument, getFeatureFlags, minimalCache } from '../../../helpers/test/helper';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { getIframeRootDiv, initMessage, setup as messageSetup } from './Message.test.helpers';
 
@@ -19,8 +19,6 @@ describe('Message dark styles', () => {
     const setup = async (content: string) => {
         addApiMock('metrics', () => ({}));
 
-        setFeatureFlags(FeatureCode.DarkStylesInBody, true);
-
         const document = createDocument(content);
 
         const message: MessageState = {
@@ -35,7 +33,11 @@ describe('Message dark styles', () => {
 
         initMessage(message);
 
-        const { container } = await messageSetup({}, false);
+        const { container } = await messageSetup({}, false, {
+            preloadedState: {
+                features: getFeatureFlags([[FeatureCode.DarkStylesInBody, true]]),
+            },
+        });
         const iframe = await getIframeRootDiv(container);
 
         await waitFor(() => {

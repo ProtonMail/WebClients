@@ -142,6 +142,7 @@ const PublicApp = ({ onLogin, locales }: PublicAppProps) => {
     return (
         <VPNPublicApp location={location} pathLocale={location.fullLocale} loader={loader} locales={locales}>
             <InnerPublicApp onLogin={onLogin} loader={loader} location={location} />
+            FeaturesProvider,
         </VPNPublicApp>
     );
 };

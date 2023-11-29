@@ -14,6 +14,7 @@ import PrivateApp from './PrivateApp';
 import * as config from './config';
 import PublicSharedLinkContainer from './containers/PublicSharedLinkContainer';
 import locales from './locales';
+import DriveStoreProvider from './redux-store/DriveStoreProvider';
 
 import './app.scss';
 
@@ -30,20 +31,22 @@ const App = () => {
     });
 
     return (
-        <ProtonApp authentication={authentication} config={config} hasInitialAuth={hasInitialAuth}>
-            <Switch>
-                <Route path="/urls">
-                    <StandardPublicApp loader={<LoaderPage />} locales={locales}>
-                        <div className="h-full">
-                            <PublicSharedLinkContainer />
-                        </div>
-                    </StandardPublicApp>
-                </Route>
-                <Route path="*">
-                    <StandardSetup PrivateApp={PrivateApp} locales={locales} />
-                </Route>
-            </Switch>
-        </ProtonApp>
+        <DriveStoreProvider>
+            <ProtonApp authentication={authentication} config={config} hasInitialAuth={hasInitialAuth}>
+                <Switch>
+                    <Route path="/urls">
+                        <StandardPublicApp loader={<LoaderPage />} locales={locales}>
+                            <div className="h-full">
+                                <PublicSharedLinkContainer />
+                            </div>
+                        </StandardPublicApp>
+                    </Route>
+                    <Route path="*">
+                        <StandardSetup PrivateApp={PrivateApp} locales={locales} />
+                    </Route>
+                </Switch>
+            </ProtonApp>
+        </DriveStoreProvider>
     );
 };
 

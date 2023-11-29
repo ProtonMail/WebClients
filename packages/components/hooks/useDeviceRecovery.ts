@@ -11,7 +11,7 @@ import useEventManager from './useEventManager';
 import useIsRecoveryFileAvailable from './useIsRecoveryFileAvailable';
 import { useGetUser } from './useUser';
 import { useGetUserKeys, useUserKeys } from './useUserKeys';
-import useUserSettings from './useUserSettings';
+import useUserSettings, { useGetUserSettings } from './useUserSettings';
 
 export const useIsDeviceRecoveryEnabled = () => {
     const [userSettings] = useUserSettings();
@@ -29,8 +29,8 @@ export const useDeviceRecovery = () => {
     const getUserKeys = useGetUserKeys();
     const getUser = useGetUser();
     const getAddresses = useGetAddresses();
+    const getUserSettings = useGetUserSettings();
     const { call } = useEventManager();
-    const [userSettings] = useUserSettings();
     const api = useApi();
     const { APP_NAME } = useConfig();
 
@@ -40,7 +40,15 @@ export const useDeviceRecovery = () => {
         }
         const abortController = new AbortController();
         const run = async () => {
-            const [user, userKeys, addresses] = await Promise.all([getUser(), getUserKeys(), getAddresses()]);
+            const [user, userKeys, addresses, userSettings] = await Promise.all([
+                getUser(),
+                getUserKeys(),
+                getAddresses(),
+                getUserSettings(),
+            ]);
+            if (!userKeys) {
+                return;
+            }
             const result = await syncDeviceRecovery({
                 api,
                 user,

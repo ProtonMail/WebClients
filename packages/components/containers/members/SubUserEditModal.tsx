@@ -66,7 +66,7 @@ const SubUserEditModal = ({ member, mode, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const api = useApi();
 
-    const hasVPN = Boolean(organization.MaxVPN);
+    const hasVPN = Boolean(organization?.MaxVPN);
     const canMakePrivate = member.Private === MEMBER_PRIVATE.READABLE;
     const canMakeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_MEMBER;
     const canRevokeAdmin = !member.Self && member.Role === MEMBER_ROLE.ORGANIZATION_ADMIN;

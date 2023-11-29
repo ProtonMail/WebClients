@@ -2,10 +2,6 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 
 import {
     defaultSubscriptionCache,
-    mockOrganizationApi,
-    mockPlansCache,
-    mockSubscriptionCache,
-    mockUserCache,
     mockUserVPNServersCountApi,
     organizationDefaultResponse,
     plansDefaultResponse,
@@ -22,7 +18,6 @@ import {
     withConfig,
     withDeprecatedModals,
     withEventManager,
-    withFeatures,
     withNotifications,
 } from '@proton/testing/index';
 
@@ -30,6 +25,23 @@ import SubscriptionContainer, { SubscriptionContainerProps } from './Subscriptio
 import { SUBSCRIPTION_STEPS } from './constants';
 
 jest.mock('@proton/components/components/portal/Portal');
+jest.mock('@proton/components/hooks/useUser', () => ({
+    __esModule: true,
+    default: jest.fn(() => [{}, false]),
+    useUser: jest.fn(() => [{}]),
+    useGetUser: jest.fn(() => () => ({})),
+}));
+jest.mock('@proton/components/hooks/useSubscription', () => ({
+    __esModule: true,
+    default: jest.fn(() => [{}, false]),
+    useSubscription: jest.fn(() => [{}, false]),
+}));
+
+jest.mock('@proton/components/hooks/useFeature', () => ({
+    __esModule: true,
+    default: jest.fn(() => [{}, false]),
+    useFeature: jest.fn(() => [{}, false]),
+}));
 
 const ContextSubscriptionContainer = applyHOCs(
     withConfig(),
@@ -38,7 +50,6 @@ const ContextSubscriptionContainer = applyHOCs(
     withApi(),
     withCache(),
     withDeprecatedModals(),
-    withFeatures(),
     withAuthentication()
 )(SubscriptionContainer);
 
@@ -48,12 +59,7 @@ describe('SubscriptionContainer', () => {
     beforeEach(() => {
         jest.clearAllMocks();
 
-        mockUserCache();
-        mockPlansCache();
-        mockSubscriptionCache();
-
         mockUserVPNServersCountApi();
-        mockOrganizationApi();
     });
 
     beforeEach(() => {

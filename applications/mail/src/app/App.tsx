@@ -12,6 +12,7 @@ import PrivateApp from './PrivateApp';
 import * as config from './config';
 import { registerMailToProtocolHandler } from './helpers/url';
 import locales from './locales';
+import MailStoreProvider from './store/MailStoreProvider';
 
 import './app.scss';
 
@@ -30,9 +31,11 @@ metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
 
 const App = () => {
     return (
-        <ProtonApp authentication={authentication} config={config}>
-            <StandardSetup PrivateApp={PrivateApp} locales={locales} />
-        </ProtonApp>
+        <MailStoreProvider>
+            <ProtonApp authentication={authentication} config={config}>
+                <StandardSetup PrivateApp={PrivateApp} locales={locales} />
+            </ProtonApp>
+        </MailStoreProvider>
     );
 };
 

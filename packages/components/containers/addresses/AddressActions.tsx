@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { useLoading } from '@proton/hooks';
 import { deleteAddress, disableAddress, enableAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
-import { Address, CachedOrganizationKey, Member, UserModel } from '@proton/shared/lib/interfaces';
+import { Address, Member, UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { DropdownActions, useModalState } from '../../components';
@@ -19,7 +19,6 @@ interface Props {
     address: Address;
     member?: Member; // undefined if self
     user: UserModel;
-    organizationKey?: CachedOrganizationKey;
     onSetDefault?: () => Promise<unknown>;
     savingIndex?: number;
     addressIndex?: number;
@@ -68,16 +67,7 @@ const useAddressFlagsActionsList = (address: Address, user: UserModel, member: M
     return actions;
 };
 
-const AddressActions = ({
-    address,
-    member,
-    user,
-    organizationKey,
-    onSetDefault,
-    savingIndex,
-    addressIndex,
-    permissions,
-}: Props) => {
+const AddressActions = ({ address, member, user, onSetDefault, savingIndex, addressIndex, permissions }: Props) => {
     const api = useApi();
     const { call } = useEventManager();
     const [loading, withLoading] = useLoading();
@@ -152,12 +142,7 @@ const AddressActions = ({
     return (
         <>
             {renderMissingKeysModal && (
-                <CreateMissingKeysAddressModal
-                    {...missingKeysProps}
-                    member={member}
-                    addressesToGenerate={[address]}
-                    organizationKey={organizationKey}
-                />
+                <CreateMissingKeysAddressModal {...missingKeysProps} member={member} addressesToGenerate={[address]} />
             )}
             {renderEditInternalAddressModal && (
                 <EditInternalAddressModal address={address} {...editInternalAddressProps} />

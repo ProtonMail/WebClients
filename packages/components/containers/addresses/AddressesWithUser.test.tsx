@@ -15,6 +15,7 @@ import {
 import { orderAddress } from '@proton/shared/lib/api/addresses';
 import { ADDRESS_TYPE } from '@proton/shared/lib/constants';
 import { Address, UserModel } from '@proton/shared/lib/interfaces';
+import { mockUseFeature } from '@proton/testing/lib/mockUseFeature';
 
 import AddressesWithUser from './AddressesWithUser';
 
@@ -89,13 +90,14 @@ describe('addresses with user', () => {
         },
     ] as Address[];
 
-    mockedUseAddresses.mockReturnValue([addresses, false, null]);
+    mockedUseAddresses.mockReturnValue([addresses, false]);
     mockedOrderableTable.mockImplementation(ActualOrderableTable);
     mockedUseNotifications.mockReturnValue({} as any);
     mockedUseUser.mockReturnValue([{}] as any);
     mockedUseAddressesKeys.mockReturnValue([{}] as any);
     mockedUseKTVerifier.mockReturnValue({} as any);
     mockedUseFlag.mockReturnValue(true);
+    mockUseFeature({ feature: { Value: true } as any });
 
     const getFirstAddress = (container: HTMLElement) => {
         return container.querySelector('[title]');

@@ -45,6 +45,18 @@ export default {
                 glob: '**/*.{js,jsx,ts,tsx}',
             },
             {
+                name: 'account',
+                glob: '**/*.{js,jsx,ts,tsx}',
+            },
+            {
+                name: 'mail',
+                glob: '**/*.{js,jsx,ts,tsx}',
+            },
+            {
+                name: 'features',
+                glob: '**/*.{js,jsx,ts,tsx}',
+            },
+            {
                 name: 'utils',
                 glob: '**/*.{js,jsx,ts,tsx}',
             },

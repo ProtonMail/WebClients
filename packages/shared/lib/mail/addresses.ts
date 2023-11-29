@@ -1,5 +1,6 @@
+import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS, ADDRESS_TYPE } from '../constants';
 import { addPlusAlias, canonicalizeInternalEmail } from '../helpers/email';
-import { Address } from '../interfaces';
+import type { Address } from '../interfaces';
 
 /**
  * Get address from email
@@ -56,4 +57,30 @@ export const getSupportedPlusAlias = ({
     }
 
     return addPlusAlias(selfAddressEmail, plusPart);
+};
+
+export const getIsNonDefault = (address: Address) => {
+    return (
+        address.Status === ADDRESS_STATUS.STATUS_DISABLED ||
+        address.Type === ADDRESS_TYPE.TYPE_EXTERNAL ||
+        address.Receive === ADDRESS_RECEIVE.RECEIVE_NO ||
+        address.Send === ADDRESS_SEND.SEND_NO
+    );
+};
+
+const addressSort = (a: Address, b: Address) => {
+    if (getIsNonDefault(a)) {
+        return 1;
+    }
+    if (getIsNonDefault(b)) {
+        return -1;
+    }
+    return a.Order - b.Order;
+};
+
+export const sortAddresses = (addresses?: Address[]) => {
+    if (Array.isArray(addresses)) {
+        return [...addresses].sort(addressSort);
+    }
+    return [];
 };

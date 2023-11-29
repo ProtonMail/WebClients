@@ -30,11 +30,11 @@ import {
     useApi,
     useCustomDomains,
     useEventManager,
+    useGetOrganizationKey,
     useMemberAddresses,
     useMembers,
     useNotifications,
     useOrganization,
-    useOrganizationKey,
     useProtonDomains,
     useSubscription,
     useUser,
@@ -61,7 +61,7 @@ import UsersAndAddressesSectionHeader from './UsersAndAddressesSectionHeader';
 
 const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const [organization, loadingOrganization] = useOrganization();
-    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+    const getOrganizationKey = useGetOrganizationKey();
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const [{ protonDomains, premiumDomains }] = useProtonDomains();
     const [members, loadingMembers] = useMembers();
@@ -73,7 +73,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const [tmpMember, setTmpMember] = useState<Member | null>(null);
     const api = useApi();
     const { call } = useEventManager();
-    const hasReachedLimit = organization.InvitationsRemaining === 0;
+    const hasReachedLimit = organization?.InvitationsRemaining === 0;
     const hasSetupOrganization = hasOrganizationSetup(organization);
     const hasSetupOrganizationWithKeys = hasOrganizationSetupWithKeys(organization);
 
@@ -183,7 +183,8 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         }
     };
 
-    const handleLoginUser = (member: Member) => {
+    const handleLoginUser = async (member: Member) => {
+        const organizationKey = await getOrganizationKey();
         const error = validateMemberLogin(organization, organizationKey);
         if (error) {
             return createNotification({ type: 'error', text: error });
@@ -192,7 +193,8 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
         setLoginMemberModalOpen(true);
     };
 
-    const handleChangeMemberPassword = (member: Member) => {
+    const handleChangeMemberPassword = async (member: Member) => {
+        const organizationKey = await getOrganizationKey();
         const error = validateMemberLogin(organization, organizationKey);
         if (error) {
             return createNotification({ type: 'error', text: error });
@@ -215,8 +217,13 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const filteredMembers =
         mode === UserManagementMode.DEFAULT
             ? members?.filter((member) => {
-                  return getAvailableAddressDomains({ user, member, protonDomains, customDomains, premiumDomains })
-                      .length;
+                  return getAvailableAddressDomains({
+                      user,
+                      member,
+                      protonDomains,
+                      customDomains,
+                      premiumDomains,
+                  }).length;
               })
             : members;
 
@@ -238,9 +245,8 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
     const disableAddUserButton =
         loadingOrganization ||
         loadingCustomDomains ||
-        loadingOrganizationKey ||
-        organization.UsedMembers >= organization.MaxMembers;
-    const loadingAddAddresses = loadingOrganization || loadingCustomDomains || loadingOrganizationKey || loadingMembers;
+        (organization?.UsedMembers || 0) >= (organization?.MaxMembers || 0);
+    const loadingAddAddresses = loadingOrganization || loadingCustomDomains || loadingMembers;
 
     const settingsTitle = (() => {
         if (hasFamily(subscription)) {
@@ -248,11 +254,13 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                 .t`Add, remove, and make changes to user accounts in your family group.`;
         }
 
+        const maxMembers = organization?.MaxMembers || 0;
+        const usedMembers = organization?.UsedMembers || 0;
         if (hasVpnB2BPlan) {
             return c('Info').ngettext(
-                msgid`You are currently using ${organization.UsedMembers} of your ${organization.MaxMembers} available user license.`,
-                `You are currently using ${organization.UsedMembers} of your ${organization.MaxMembers} available user licenses.`,
-                organization.MaxMembers
+                msgid`You are currently using ${usedMembers} of your ${maxMembers} available user license.`,
+                `You are currently using ${usedMembers} of your ${maxMembers} available user licenses.`,
+                maxMembers
             );
         }
 
@@ -273,11 +281,7 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
             </SettingsParagraph>
             <Block className="flex items-start">
                 {renderAddAddressModal && filteredMembers && (
-                    <AddressModal
-                        members={filteredMembers}
-                        organizationKey={organizationKey}
-                        {...addAddressModalProps}
-                    />
+                    <AddressModal members={filteredMembers} {...addAddressModalProps} />
                 )}
                 {renderSubUserDeleteModal && tmpMember && (
                     <SubUserDeleteModal
@@ -290,10 +294,9 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                 {renderUserRemoveModal && tmpMember && (
                     <UserRemoveModal member={tmpMember} organization={organization} {...userRemoveModalProps} />
                 )}
-                {renderSubUserCreateModal && organizationKey && (
+                {renderSubUserCreateModal && (
                     <SubUserCreateModal
                         organization={organization}
-                        organizationKey={organizationKey}
                         verifiedDomains={verifiedDomains}
                         mode={mode}
                         app={app}
@@ -320,7 +323,6 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                 {renderInviteOrCreateUserModal && (
                     <InviteUserCreateSubUserModal
                         organization={organization}
-                        organizationKey={organizationKey}
                         verifiedDomains={verifiedDomains}
                         onInviteUser={handleInviteUser}
                         app={app}
@@ -483,7 +485,6 @@ const UsersAndAddressesSection = ({ app }: { app: APP_NAMES }) => {
                                         member={member}
                                         addresses={memberAddresses}
                                         organization={organization}
-                                        organizationKey={organizationKey}
                                     />
                                 </TableCell>
                             </TableRow>

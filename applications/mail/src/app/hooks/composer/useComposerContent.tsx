@@ -5,15 +5,15 @@ import { c } from 'ttag';
 import { EditorActions, EditorMetadata } from '@proton/components/components';
 import { useAddresses, useHandler, useNotifications, useUserSettings } from '@proton/components/hooks';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
-import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 import { ATTACHMENT_DISPOSITION } from '@proton/shared/lib/mail/constants';
+import { DIRECTION, SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 import { getRecipients, isPlainText as testIsPlainText } from '@proton/shared/lib/mail/messages';
 import noop from '@proton/utils/noop';
 
+import useMailModel from 'proton-mail/hooks/useMailModel';
 import { selectComposer } from 'proton-mail/logic/composers/composerSelectors';
 import { composerActions } from 'proton-mail/logic/composers/composersSlice';
 import { messageByID } from 'proton-mail/logic/messages/messagesSelectors';
-import useMailModel from 'proton-mail/hooks/useMailModel';
 
 import { MessageChange } from '../../components/composer/Composer';
 import { ExternalEditorActions } from '../../components/composer/editor/EditorWrapper';
@@ -84,7 +84,7 @@ export type EditorArgs = (EditorComposer | EditorQuickReply) & {
 };
 
 export const useComposerContent = (args: EditorArgs) => {
-    const [addresses] = useAddresses();
+    const [addresses = []] = useAddresses();
     const mailSettings = useMailModel('MailSettings');
     const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();

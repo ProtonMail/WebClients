@@ -80,21 +80,31 @@ export interface ReactivateKeysProcessLegacyArguments {
     api: Api;
     keyReactivationRecords: KeyReactivationRecord[];
     onReactivation: OnKeyReactivationCallback;
+    addressesKeys: { address: Address; keys: DecryptedKey[] }[];
+    userKeys: DecryptedKey[];
     keyPassword: string;
     keyTransparencyVerify: KeyTransparencyVerify;
 }
 
 const reactivateKeysProcessLegacy = async ({
     keyReactivationRecords,
+    addressesKeys,
+    userKeys,
     api,
     onReactivation,
     keyPassword,
     keyTransparencyVerify,
 }: ReactivateKeysProcessLegacyArguments) => {
     for (const keyReactivationRecord of keyReactivationRecords) {
-        const { user, address, keysToReactivate, keys } = keyReactivationRecord;
+        const { user, address, keysToReactivate } = keyReactivationRecord;
         try {
             const Keys = address ? address.Keys : user?.Keys || [];
+            const keys = address
+                ? addressesKeys.find((addressKeys) => addressKeys.address.ID === address.ID)?.keys
+                : userKeys;
+            if (!keys) {
+                throw new Error('Missing keys');
+            }
             await reactivateKeysProcess({
                 api,
                 keyPassword,

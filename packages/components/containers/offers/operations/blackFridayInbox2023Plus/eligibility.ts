@@ -4,7 +4,7 @@ import { getHasCoupon, getPlan, isManagedExternally, isTrial } from '@proton/sha
 import { ProtonConfig, Subscription, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
-    subscription: Subscription;
+    subscription?: Subscription;
     user: UserModel;
     protonConfig: ProtonConfig;
 }
