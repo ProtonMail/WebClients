@@ -1,33 +1,43 @@
 import { SendIcsParams } from '@proton/components/hooks/useSendIcs';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
+import { buildMailTo } from '@proton/shared/lib/helpers/email';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { VcalAttendeeProperty, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
 import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { GetVTimezonesMap } from '@proton/shared/lib/interfaces/hooks/GetVTimezonesMap';
 import { RelocalizeText } from '@proton/shared/lib/interfaces/hooks/RelocalizeText';
+import { PACKAGE_TYPE } from '@proton/shared/lib/mail/mailSettings';
 import { generateTestAddress } from '@proton/testing/lib/builders';
 
 import { INVITE_ACTION_TYPES } from '../../../interfaces/Invite';
 import { AugmentedSendPreferences } from '../interface';
-import { getSendIcsAction } from './inviteActions';
+import { getHasProtonAttendees, getSendIcsAction } from './inviteActions';
 
-const generateContact = (mail: string) =>
+const generateContact = (mail: string, isInternal = false) =>
     [
-        { [mail]: { pgpScheme: 4, mimeType: 'text/plain' } },
+        {
+            [mail]: {
+                pgpScheme: isInternal ? PACKAGE_TYPE.SEND_PM : PACKAGE_TYPE.SEND_CLEAR,
+                mimeType: 'text/plain',
+                isInternal,
+            },
+        },
         { [mail]: { Email: mail } },
         {
-            value: `mailto:${mail}`,
+            value: buildMailTo(mail),
             parameters: { cn: mail, role: 'REQ-PARTICIPANT', rsvp: 'TRUE', partstat: 'NEEDS-ACTION' },
         },
     ] as unknown as [SimpleMap<AugmentedSendPreferences>, SimpleMap<ContactEmail>, VcalAttendeeProperty];
 
-const contactA = generateContact('plus@proton.test');
-const contactB = generateContact('pmtest2@proton.test');
-const contactC = generateContact('chtest7@proton.test');
+const contactA = generateContact('plus@proton.test', true);
+const contactB = generateContact('pmtest2@proton.test', true);
+const contactC = generateContact('chtest7@proton.test', false);
+const contactD = generateContact('test@alien.mars', false);
 
-const baseVevent: Omit<VcalVeventComponent, 'uid'> = {
+const baseVevent: VcalVeventComponent = {
     component: 'vevent',
+    uid: { value: 'vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me' },
     sequence: { value: 0 },
     components: [],
     summary: { value: 'test 10' },
@@ -66,7 +76,6 @@ describe('getSendIcsAction', () => {
             vevent: {
                 ...{
                     status: { value: 'CONFIRMED' },
-                    uid: { value: 'vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me' },
                     attendee: [contactA[2]],
                     ...baseVevent,
                 },
@@ -74,7 +83,6 @@ describe('getSendIcsAction', () => {
             },
             cancelVevent: {
                 ...{
-                    uid: { value: 'vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me' },
                     status: { value: 'CONFIRMED' },
                     ...baseVevent,
                 },
@@ -186,12 +194,10 @@ describe('getSendIcsAction', () => {
         it('should send invite and cancel ics to added and removed attendees', async () => {
             const vevent = {
                 status: { value: 'CONFIRMED' },
-                uid: { value: 'vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me' },
                 attendee: [contactA[2], contactC[2]],
                 ...baseVevent,
             };
             const cancelVevent = {
-                uid: { value: 'vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me' },
                 status: { value: 'CONFIRMED' },
                 attendee: [contactA[2], contactB[2]],
                 ...baseVevent,
@@ -213,7 +219,7 @@ describe('getSendIcsAction', () => {
             expect(sendIcsSpy).toHaveBeenCalledTimes(2);
             expect(sendIcsSpy).toHaveBeenNthCalledWith(1, {
                 method: 'REQUEST',
-                ics: 'BEGIN:VCALENDAR\r\nPRODID:ProtonCal\r\nVERSION:2.0\r\nMETHOD:REQUEST\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Oslo\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nSTATUS:CONFIRMED\r\nUID:vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me\r\nATTENDEE;CN=plus@proton.test;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-\r\n ACTION:mailto:plus@proton.test\r\nATTENDEE;CN=chtest7@proton.test;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEE\r\n DS-ACTION:mailto:chtest7@proton.test\r\nSEQUENCE:0\r\nSUMMARY:test 10\r\nORGANIZER;CN=unlimited:mailto:unlimited@proton.test\r\nDTSTART;TZID=Europe/Oslo:20230531T090000\r\nDTEND;TZID=Europe/Oslo:20230531T093000\r\nDTSTAMP:20230525T114641Z\r\nX-PM-SHARED-EVENT-ID:nsgA6N6lbhgc1Fl49VHyNoBwtGpx-IHgBeyxaGUlw_3Pe3HMlo4qvm\r\n DHeV_RLSiT6plc-X9kS-ErcPJfHgYYiZwx6jwFrlk3ZnIdAyrupNM=\r\nX-PM-SESSION-KEY:VU373Q3lYxjkGTTiQvqLzvV0f7jtO4lldeC9InP04co=\r\nEND:VEVENT\r\nEND:VCALENDAR',
+                ics: 'BEGIN:VCALENDAR\r\nPRODID:ProtonCal\r\nVERSION:2.0\r\nMETHOD:REQUEST\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Oslo\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nSTATUS:CONFIRMED\r\nATTENDEE;CN=plus@proton.test;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-\r\n ACTION:mailto:plus@proton.test\r\nATTENDEE;CN=chtest7@proton.test;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEE\r\n DS-ACTION:mailto:chtest7@proton.test\r\nUID:vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me\r\nSEQUENCE:0\r\nSUMMARY:test 10\r\nORGANIZER;CN=unlimited:mailto:unlimited@proton.test\r\nDTSTART;TZID=Europe/Oslo:20230531T090000\r\nDTEND;TZID=Europe/Oslo:20230531T093000\r\nDTSTAMP:20230525T114641Z\r\nX-PM-SHARED-EVENT-ID:nsgA6N6lbhgc1Fl49VHyNoBwtGpx-IHgBeyxaGUlw_3Pe3HMlo4qvm\r\n DHeV_RLSiT6plc-X9kS-ErcPJfHgYYiZwx6jwFrlk3ZnIdAyrupNM=\r\nX-PM-SESSION-KEY:VU373Q3lYxjkGTTiQvqLzvV0f7jtO4lldeC9InP04co=\r\nEND:VEVENT\r\nEND:VCALENDAR',
                 addressID: 'fHR97Meg0sNme5k8IFa2umNtk5FjTUA7FbImbZj7RIO3U5hMmGk8_NF6a7qgSZ2QviSQmEg7Qib9xfLEdjCdXA==',
                 from: { Address: 'unlimited@proton.test', Name: 'unlimited' },
                 to: [{ Address: 'chtest7@proton.test', Name: 'chtest7@proton.test' }],
@@ -262,7 +268,7 @@ describe('getSendIcsAction', () => {
                 expect(sendIcsSpy).toHaveBeenCalledTimes(1);
                 expect(sendIcsSpy).toHaveBeenCalledWith({
                     method: 'REQUEST',
-                    ics: 'BEGIN:VCALENDAR\r\nPRODID:ProtonCal\r\nVERSION:2.0\r\nMETHOD:REQUEST\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Oslo\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nSTATUS:CONFIRMED\r\nUID:vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me\r\nATTENDEE;CN=plus@proton.test;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-\r\n ACTION:mailto:plus@proton.test\r\nSEQUENCE:0\r\nSUMMARY:test 10\r\nORGANIZER;CN=unlimited:mailto:unlimited@proton.test\r\nDTSTART;TZID=Europe/Oslo:20230531T090000\r\nDTEND;TZID=Europe/Oslo:20230531T093000\r\nDTSTAMP:20230525T114641Z\r\nX-PM-SHARED-EVENT-ID:nsgA6N6lbhgc1Fl49VHyNoBwtGpx-IHgBeyxaGUlw_3Pe3HMlo4qvm\r\n DHeV_RLSiT6plc-X9kS-ErcPJfHgYYiZwx6jwFrlk3ZnIdAyrupNM=\r\nX-PM-SESSION-KEY:VU373Q3lYxjkGTTiQvqLzvV0f7jtO4lldeC9InP04co=\r\nEND:VEVENT\r\nEND:VCALENDAR',
+                    ics: 'BEGIN:VCALENDAR\r\nPRODID:ProtonCal\r\nVERSION:2.0\r\nMETHOD:REQUEST\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Oslo\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nSTATUS:CONFIRMED\r\nATTENDEE;CN=plus@proton.test;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-\r\n ACTION:mailto:plus@proton.test\r\nUID:vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me\r\nSEQUENCE:0\r\nSUMMARY:test 10\r\nORGANIZER;CN=unlimited:mailto:unlimited@proton.test\r\nDTSTART;TZID=Europe/Oslo:20230531T090000\r\nDTEND;TZID=Europe/Oslo:20230531T093000\r\nDTSTAMP:20230525T114641Z\r\nX-PM-SHARED-EVENT-ID:nsgA6N6lbhgc1Fl49VHyNoBwtGpx-IHgBeyxaGUlw_3Pe3HMlo4qvm\r\n DHeV_RLSiT6plc-X9kS-ErcPJfHgYYiZwx6jwFrlk3ZnIdAyrupNM=\r\nX-PM-SESSION-KEY:VU373Q3lYxjkGTTiQvqLzvV0f7jtO4lldeC9InP04co=\r\nEND:VEVENT\r\nEND:VCALENDAR',
                     addressID:
                         'fHR97Meg0sNme5k8IFa2umNtk5FjTUA7FbImbZj7RIO3U5hMmGk8_NF6a7qgSZ2QviSQmEg7Qib9xfLEdjCdXA==',
                     from: {
@@ -334,12 +340,10 @@ describe('getSendIcsAction', () => {
         it('should send invite and cancel ICSs to remaining, added and removed attendees', async () => {
             const vevent = {
                 status: { value: 'CONFIRMED' },
-                uid: { value: 'vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me' },
                 attendee: [contactA[2], contactC[2]],
                 ...baseVevent,
             };
             const cancelVevent = {
-                uid: { value: 'vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me' },
                 status: { value: 'CONFIRMED' },
                 attendee: [contactA[2], contactB[2]],
                 ...baseVevent,
@@ -361,7 +365,7 @@ describe('getSendIcsAction', () => {
             expect(sendIcsSpy).toHaveBeenCalledTimes(3);
             expect(sendIcsSpy).toHaveBeenNthCalledWith(1, {
                 method: 'REQUEST',
-                ics: 'BEGIN:VCALENDAR\r\nPRODID:ProtonCal\r\nVERSION:2.0\r\nMETHOD:REQUEST\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Oslo\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nSTATUS:CONFIRMED\r\nUID:vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me\r\nATTENDEE;CN=plus@proton.test;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-\r\n ACTION:mailto:plus@proton.test\r\nATTENDEE;CN=chtest7@proton.test;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEE\r\n DS-ACTION:mailto:chtest7@proton.test\r\nSEQUENCE:0\r\nSUMMARY:test 10\r\nORGANIZER;CN=unlimited:mailto:unlimited@proton.test\r\nDTSTART;TZID=Europe/Oslo:20230531T090000\r\nDTEND;TZID=Europe/Oslo:20230531T093000\r\nDTSTAMP:20230525T114641Z\r\nX-PM-SHARED-EVENT-ID:nsgA6N6lbhgc1Fl49VHyNoBwtGpx-IHgBeyxaGUlw_3Pe3HMlo4qvm\r\n DHeV_RLSiT6plc-X9kS-ErcPJfHgYYiZwx6jwFrlk3ZnIdAyrupNM=\r\nX-PM-SESSION-KEY:VU373Q3lYxjkGTTiQvqLzvV0f7jtO4lldeC9InP04co=\r\nEND:VEVENT\r\nEND:VCALENDAR',
+                ics: 'BEGIN:VCALENDAR\r\nPRODID:ProtonCal\r\nVERSION:2.0\r\nMETHOD:REQUEST\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Oslo\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nSTATUS:CONFIRMED\r\nATTENDEE;CN=plus@proton.test;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-\r\n ACTION:mailto:plus@proton.test\r\nATTENDEE;CN=chtest7@proton.test;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEE\r\n DS-ACTION:mailto:chtest7@proton.test\r\nUID:vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me\r\nSEQUENCE:0\r\nSUMMARY:test 10\r\nORGANIZER;CN=unlimited:mailto:unlimited@proton.test\r\nDTSTART;TZID=Europe/Oslo:20230531T090000\r\nDTEND;TZID=Europe/Oslo:20230531T093000\r\nDTSTAMP:20230525T114641Z\r\nX-PM-SHARED-EVENT-ID:nsgA6N6lbhgc1Fl49VHyNoBwtGpx-IHgBeyxaGUlw_3Pe3HMlo4qvm\r\n DHeV_RLSiT6plc-X9kS-ErcPJfHgYYiZwx6jwFrlk3ZnIdAyrupNM=\r\nX-PM-SESSION-KEY:VU373Q3lYxjkGTTiQvqLzvV0f7jtO4lldeC9InP04co=\r\nEND:VEVENT\r\nEND:VCALENDAR',
                 addressID: 'fHR97Meg0sNme5k8IFa2umNtk5FjTUA7FbImbZj7RIO3U5hMmGk8_NF6a7qgSZ2QviSQmEg7Qib9xfLEdjCdXA==',
                 from: { Address: 'unlimited@proton.test', Name: 'unlimited' },
                 to: [{ Address: 'plus@proton.test', Name: 'plus@proton.test' }],
@@ -373,7 +377,7 @@ describe('getSendIcsAction', () => {
             });
             expect(sendIcsSpy).toHaveBeenNthCalledWith(2, {
                 method: 'REQUEST',
-                ics: 'BEGIN:VCALENDAR\r\nPRODID:ProtonCal\r\nVERSION:2.0\r\nMETHOD:REQUEST\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Oslo\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nSTATUS:CONFIRMED\r\nUID:vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me\r\nATTENDEE;CN=plus@proton.test;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-\r\n ACTION:mailto:plus@proton.test\r\nATTENDEE;CN=chtest7@proton.test;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEE\r\n DS-ACTION:mailto:chtest7@proton.test\r\nSEQUENCE:0\r\nSUMMARY:test 10\r\nORGANIZER;CN=unlimited:mailto:unlimited@proton.test\r\nDTSTART;TZID=Europe/Oslo:20230531T090000\r\nDTEND;TZID=Europe/Oslo:20230531T093000\r\nDTSTAMP:20230525T114641Z\r\nX-PM-SHARED-EVENT-ID:nsgA6N6lbhgc1Fl49VHyNoBwtGpx-IHgBeyxaGUlw_3Pe3HMlo4qvm\r\n DHeV_RLSiT6plc-X9kS-ErcPJfHgYYiZwx6jwFrlk3ZnIdAyrupNM=\r\nX-PM-SESSION-KEY:VU373Q3lYxjkGTTiQvqLzvV0f7jtO4lldeC9InP04co=\r\nEND:VEVENT\r\nEND:VCALENDAR',
+                ics: 'BEGIN:VCALENDAR\r\nPRODID:ProtonCal\r\nVERSION:2.0\r\nMETHOD:REQUEST\r\nCALSCALE:GREGORIAN\r\nBEGIN:VTIMEZONE\r\nTZID:Europe/Oslo\r\nEND:VTIMEZONE\r\nBEGIN:VEVENT\r\nSTATUS:CONFIRMED\r\nATTENDEE;CN=plus@proton.test;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-\r\n ACTION:mailto:plus@proton.test\r\nATTENDEE;CN=chtest7@proton.test;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEE\r\n DS-ACTION:mailto:chtest7@proton.test\r\nUID:vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me\r\nSEQUENCE:0\r\nSUMMARY:test 10\r\nORGANIZER;CN=unlimited:mailto:unlimited@proton.test\r\nDTSTART;TZID=Europe/Oslo:20230531T090000\r\nDTEND;TZID=Europe/Oslo:20230531T093000\r\nDTSTAMP:20230525T114641Z\r\nX-PM-SHARED-EVENT-ID:nsgA6N6lbhgc1Fl49VHyNoBwtGpx-IHgBeyxaGUlw_3Pe3HMlo4qvm\r\n DHeV_RLSiT6plc-X9kS-ErcPJfHgYYiZwx6jwFrlk3ZnIdAyrupNM=\r\nX-PM-SESSION-KEY:VU373Q3lYxjkGTTiQvqLzvV0f7jtO4lldeC9InP04co=\r\nEND:VEVENT\r\nEND:VCALENDAR',
                 addressID: 'fHR97Meg0sNme5k8IFa2umNtk5FjTUA7FbImbZj7RIO3U5hMmGk8_NF6a7qgSZ2QviSQmEg7Qib9xfLEdjCdXA==',
                 from: { Address: 'unlimited@proton.test', Name: 'unlimited' },
                 to: [{ Address: 'chtest7@proton.test', Name: 'chtest7@proton.test' }],
@@ -432,7 +436,6 @@ describe('getSendIcsAction', () => {
         describe('when no shared event id', () => {
             it('should call `onRequestError`', async () => {
                 const cancelVevent = {
-                    uid: { value: 'vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me' },
                     status: { value: 'CONFIRMED' },
                     attendee: [contactA[2], contactB[2]],
                     ...baseVevent,
@@ -484,7 +487,6 @@ describe('getSendIcsAction', () => {
 
         it('should send cancel ics to attendees', async () => {
             const cancelVevent = {
-                uid: { value: 'vLuqif_R99XqZlDXKmotcoBkJZ4j@proton.me' },
                 status: { value: 'CONFIRMED' },
                 attendee: [contactA[2], contactB[2]],
                 ...baseVevent,
@@ -624,5 +626,66 @@ describe('getSendIcsAction', () => {
                 contactEmailsMap: {},
             });
         });
+    });
+});
+
+describe('getHasProtonAttendees()', () => {
+    const sendPreferencesMap = {
+        ...contactA[0],
+        ...contactB[0],
+        ...contactC[0],
+        ...contactD[0],
+    };
+
+    it('returns false when there are no attendees', () => {
+        expect(getHasProtonAttendees(baseVevent, sendPreferencesMap)).toEqual(false);
+    });
+
+    it('returns false when there are no Proton attendees', () => {
+        expect(
+            getHasProtonAttendees(
+                {
+                    ...baseVevent,
+                    attendee: [contactC[2], contactD[2]],
+                },
+                sendPreferencesMap
+            )
+        ).toEqual(false);
+    });
+
+    it('returns false when there are Proton attendees but there are no send preferences for the attendee email', () => {
+        expect(
+            getHasProtonAttendees(
+                {
+                    ...baseVevent,
+                    attendee: [contactA[2], contactB[2]],
+                },
+                {}
+            )
+        ).toEqual(false);
+    });
+
+    it('returns true when there is only one Proton attendee', () => {
+        expect(
+            getHasProtonAttendees(
+                {
+                    ...baseVevent,
+                    attendee: [contactA[2]],
+                },
+                sendPreferencesMap
+            )
+        ).toEqual(true);
+    });
+
+    it('returns true when there is at least one Proton attendee', () => {
+        expect(
+            getHasProtonAttendees(
+                {
+                    ...baseVevent,
+                    attendee: [contactB[2], contactC[2], contactD[2]],
+                },
+                sendPreferencesMap
+            )
+        ).toEqual(true);
     });
 });
