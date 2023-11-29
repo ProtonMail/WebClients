@@ -45,7 +45,7 @@ const MainContainer = () => {
         return view;
     });
 
-    const { getFeature } = useFeatures([FeatureCode.CalendarSharingEnabled, FeatureCode.AutoAddHolidaysCalendars]);
+    const { getFeature } = useFeatures([FeatureCode.AutoAddHolidaysCalendars]);
     const autoAddHolidaysCalendarsEnabled = getFeature(FeatureCode.AutoAddHolidaysCalendars).feature?.Value === true;
 
     const memoedCalendars = useMemo(() => sortCalendars(getVisualCalendars(calendars || [])), [calendars]);
