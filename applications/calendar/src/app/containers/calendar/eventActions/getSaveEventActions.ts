@@ -24,7 +24,7 @@ import {
     CleanSendIcsActionData,
     INVITE_ACTION_TYPES,
     InviteActions,
-    ReencryptInviteActionData,
+    ReencryptInviteActionData, SendIcs,
     SendIcsActionData,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
@@ -65,15 +65,7 @@ const getSaveSingleEventActionsHelper = async ({
     oldEditEventData: EventOldData;
     getAddressKeys: GetAddressKeys;
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
-    sendIcs: (
-        data: SendIcsActionData,
-        calendarID?: string
-    ) => Promise<{
-        veventComponent?: VcalVeventComponent;
-        inviteActions: InviteActions;
-        timestamp: number;
-        sendPreferencesMap: SimpleMap<AugmentedSendPreferences>;
-    }>;
+    sendIcs: SendIcs;
     reencryptSharedEvent: (data: ReencryptInviteActionData) => Promise<void>;
     onSendPrefsErrors: (data: SendIcsActionData) => Promise<CleanSendIcsActionData>;
     onSaveConfirmation: OnSaveConfirmationCb;
