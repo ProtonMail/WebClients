@@ -20,18 +20,8 @@ import {
 } from '@proton/shared/lib/interfaces';
 
 import { Icon, Loader } from '../../components';
-import {
-    useApi,
-    useFeature,
-    useLoad,
-    useOrganization,
-    usePlans,
-    useSubscription,
-    useUser,
-    useVPNServersCount,
-} from '../../hooks';
+import { useApi, useLoad, useOrganization, usePlans, useSubscription, useUser, useVPNServersCount } from '../../hooks';
 import MozillaInfoPanel from '../account/MozillaInfoPanel';
-import { FeatureCode } from '../index';
 import PlanSelection from './subscription/PlanSelection';
 import { useSubscriptionModal } from './subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from './subscription/constants';
@@ -62,7 +52,6 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
     const [selectedProductPlans, setSelectedProductPlans] = useState(() => {
         return getDefaultSelectedProductPlans(app, getPlanIDs(subscription));
     });
-    const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
     const [open] = useSubscriptionModal();
     const isLoading = Boolean(loadingPlans || loadingSubscription || loadingOrganization);
     const [selectedCurrency, setCurrency] = useState<Currency>();
@@ -152,7 +141,6 @@ const PlansSection = ({ app }: { app: APP_NAMES }) => {
                 selectedProductPlans={selectedProductPlans}
                 onChangeSelectedProductPlans={setSelectedProductPlans}
                 organization={organization}
-                calendarSharingEnabled={calendarSharingEnabled}
             />
             <Button
                 color="norm"
