@@ -86,9 +86,6 @@ const getSetup1 = async () => {
             return {
                 ...r,
                 keysToReactivate: r.keysToReactivate.map(getKeyToReactivate),
-                keys: r.address
-                    ? await getDecryptedAddressKeysHelper(r.address.Keys, User, userKeys, keyPassword)
-                    : userKeys,
             };
         })
     );
@@ -98,6 +95,12 @@ const getSetup1 = async () => {
         oldKeyPassword,
         User,
         Addresses,
+        addressesKeys: await Promise.all(
+            Addresses.map(async (address) => ({
+                address,
+                keys: await getDecryptedAddressKeysHelper(address.Keys, User, userKeys, keyPassword),
+            }))
+        ),
         userKeys,
         expectedAddressKeysReactivated: [
             addressKeys1Full[1].key.privateKey,
@@ -110,7 +113,7 @@ const getSetup1 = async () => {
 
 describe('reactivate keys', () => {
     it('reactivate user and address keys in legacy mode', async () => {
-        const { keyPassword, keyReactivationRecords, User, Addresses, userKeys } = await getSetup1();
+        const { keyPassword, keyReactivationRecords, User, Addresses, addressesKeys, userKeys } = await getSetup1();
         const onReactivation = jasmine.createSpy('on reactivation');
         const api = jasmine.createSpy('api').and.returnValues(Promise.resolve(), Promise.resolve());
         await reactivateKeysProcess({
@@ -118,6 +121,7 @@ describe('reactivate keys', () => {
             user: User,
             userKeys,
             addresses: Addresses,
+            addressesKeys,
             keyReactivationRecords,
             keyPassword,
             onReactivation,

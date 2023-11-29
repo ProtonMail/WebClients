@@ -132,7 +132,7 @@ const QuickReply = ({
         if (editorRef.current && syncedMessage.messageDocument?.initialized && mailSettings && !isEditorInitialized) {
             setIsEditorInitialized(true);
 
-            const defaultAddress = getFromAddress(addresses, '', undefined);
+            const defaultAddress = getFromAddress(addresses || [], '', undefined);
             const fontStyle = defaultFontStyle(mailSettings);
 
             const signature = insertSignature(

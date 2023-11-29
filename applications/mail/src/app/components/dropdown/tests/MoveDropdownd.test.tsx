@@ -1,5 +1,6 @@
 import { act, fireEvent, getByTestId as getByTestIdDefault, screen } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -7,7 +8,7 @@ import { Label } from '@proton/shared/lib/interfaces';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
 import { addApiMock } from '../../../helpers/test/api';
-import { addToCache, minimalCache } from '../../../helpers/test/cache';
+import { minimalCache } from '../../../helpers/test/cache';
 import { render } from '../../../helpers/test/render';
 import { MessageState } from '../../../logic/messages/messagesTypes';
 import { initialize } from '../../../logic/messages/read/messagesReadActions';
@@ -44,28 +45,31 @@ const getMessage = (labelIDs: string[] = []) => {
 describe('MoveDropdown', () => {
     const setup = async (labelIDs: string[] = []) => {
         minimalCache();
-        addToCache('Labels', [
-            {
-                ID: folder1ID,
-                Name: folder1Name,
-                Color: ACCENT_COLORS[0],
-                Type: LABEL_TYPE.MESSAGE_FOLDER,
-                Path: folder1Name,
-            } as Label,
-            {
-                ID: folder2ID,
-                Name: folder2Name,
-                Color: ACCENT_COLORS[1],
-                Type: LABEL_TYPE.MESSAGE_FOLDER,
-                Path: folder2Name,
-            } as Label,
-        ]);
 
         const message = getMessage(labelIDs);
 
         store.dispatch(initialize(message));
 
-        const result = await render(<MoveDropdown {...props} />, false);
+        const result = await render(<MoveDropdown {...props} />, false, {
+            preloadedState: {
+                categories: getModelState([
+                    {
+                        ID: folder1ID,
+                        Name: folder1Name,
+                        Color: ACCENT_COLORS[0],
+                        Type: LABEL_TYPE.MESSAGE_FOLDER,
+                        Path: folder1Name,
+                    } as Label,
+                    {
+                        ID: folder2ID,
+                        Name: folder2Name,
+                        Color: ACCENT_COLORS[1],
+                        Type: LABEL_TYPE.MESSAGE_FOLDER,
+                        Path: folder2Name,
+                    } as Label,
+                ]),
+            },
+        });
         return result;
     };
 

@@ -18,7 +18,7 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { Address, CachedOrganizationKey, FAMILY_PLAN_INVITE_STATE, Member } from '@proton/shared/lib/interfaces';
+import { Address, FAMILY_PLAN_INVITE_STATE, Member } from '@proton/shared/lib/interfaces';
 import {
     getShouldSetupMemberKeys,
     missingKeysMemberProcess,
@@ -46,6 +46,7 @@ import {
     useAuthentication,
     useCustomDomains,
     useEventManager,
+    useGetOrganizationKey,
     useGetUserKeys,
     useNotifications,
     useProtonDomains,
@@ -57,10 +58,9 @@ import SelectEncryption from '../keys/addKey/SelectEncryption';
 interface Props extends ModalProps<'form'> {
     member?: Member;
     members: Member[];
-    organizationKey?: CachedOrganizationKey;
 }
 
-const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
+const AddressModal = ({ member, members, ...rest }: Props) => {
     const { call } = useEventManager();
     const [user] = useUser();
     const [addresses] = useAddresses();
@@ -85,7 +85,8 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
     const { createNotification } = useNotifications();
     const { validator, onFormSubmit } = useFormErrors();
     const [submitting, withLoading] = useLoading();
-    const hasPremium = addresses.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
+    const hasPremium = addresses?.some(({ Type }) => Type === ADDRESS_TYPE.TYPE_PREMIUM);
+    const getOrganizationKey = useGetOrganizationKey();
 
     const selectedMember = members.find((otherMember) => otherMember.ID === model.id);
     const addressDomains = getAvailableAddressDomains({
@@ -106,9 +107,10 @@ const AddressModal = ({ member, members, organizationKey, ...rest }: Props) => {
     const shouldSetupMemberKeys = shouldGenerateKeys && getShouldSetupMemberKeys(selectedMember);
 
     const handleSubmit = async () => {
-        if (!selectedMember) {
+        if (!selectedMember || !addresses) {
             throw new Error('Missing member');
         }
+        const organizationKey = await getOrganizationKey();
         const { name: DisplayName, address: Local } = model;
 
         const Domain = selectedDomain;

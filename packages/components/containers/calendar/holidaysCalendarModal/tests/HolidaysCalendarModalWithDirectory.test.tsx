@@ -25,7 +25,11 @@ jest.mock('@proton/components/hooks/useEventManager', () => () => ({}));
 jest.mock('@proton/components/containers/eventManager/calendar/ModelEventManagerProvider', () => ({
     useCalendarModelEventManager: jest.fn(() => ({})),
 }));
-jest.mock('@proton/components/hooks/useGetAddressKeys', () => () => ({}));
+jest.mock('@proton/components/hooks/useAddressesKeys', () => ({
+    __esModule: true,
+    useAddressesKeys: jest.fn(() => []),
+    useGetAddressKeys: jest.fn(() => []),
+}));
 jest.mock('@proton/components/hooks/useNotifications');
 
 jest.mock('@proton/components/hooks/useCalendarUserSettings', () => ({

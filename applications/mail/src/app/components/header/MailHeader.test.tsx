@@ -2,19 +2,12 @@ import { fireEvent } from '@testing-library/react';
 import { screen } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
+import { getModelState } from '@proton/account/test';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { UserModel } from '@proton/shared/lib/interfaces';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 
-import {
-    addApiMock,
-    addToCache,
-    clearAll,
-    getDropdown,
-    getHistory,
-    minimalCache,
-    render,
-    tick,
-} from '../../helpers/test/helper';
+import { addApiMock, clearAll, getDropdown, getHistory, minimalCache, render, tick } from '../../helpers/test/helper';
 import MailHeader from './MailHeader';
 
 loudRejection();
@@ -39,21 +32,24 @@ const user = {
     isFree: true,
     UsedSpace: 10,
     MaxSpace: 100,
-};
+} as UserModel;
 
 describe('MailHeader', () => {
     let props: ReturnType<typeof getProps>;
 
     const setup = async () => {
         minimalCache();
-        addToCache('User', user);
         addApiMock('payments/v4/plans', () => ({}));
         addApiMock('contacts/v4/contacts', () => ({ Contacts: [] }));
         addApiMock('payments/v4/subscription/latest', () => ({}));
 
         props = getProps();
 
-        const result = await render(<MailHeader {...props} />, false);
+        const result = await render(<MailHeader {...props} />, false, {
+            preloadedState: {
+                user: getModelState(user),
+            },
+        });
         const search = result.getByTitle('Search');
 
         const openSearch = async () => {

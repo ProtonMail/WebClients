@@ -17,7 +17,7 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '../../../components';
-import { useApi, useContacts, useUserKeys } from '../../../hooks';
+import { useApi, useContacts, useGetUserKeys } from '../../../hooks';
 
 const DOWNLOAD_FILENAME = 'protonContacts';
 
@@ -31,7 +31,7 @@ type Props = ContactExportingProps & ModalProps;
 const ContactExportingModal = ({ contactGroupID: LabelID, onSave = noop, ...rest }: Props) => {
     const api = useApi();
     const [contacts = [], loadingContacts] = useContacts();
-    const [userKeysList, loadingUserKeys] = useUserKeys();
+    const getUserKeys = useGetUserKeys();
 
     const [contactsExported, addSuccess] = useState<string[]>([]);
     const [contactsNotExported, addError] = useState<string[]>([]);
@@ -49,31 +49,34 @@ const ContactExportingModal = ({ contactGroupID: LabelID, onSave = noop, ...rest
     };
 
     useEffect(() => {
-        if (loadingContacts || loadingUserKeys) {
+        if (loadingContacts) {
             return;
         }
 
         const abortController = new AbortController();
-
-        exportContactsFromLabel(
-            LabelID,
-            countContacts,
-            userKeysList,
-            abortController.signal,
-            api,
-            (contactExported) => addSuccess((contactsExported) => [...contactsExported, contactExported]),
-            (ID) => addError((contactsNotExported) => [...contactsNotExported, ID])
-        ).catch((error) => {
-            if (error.name !== 'AbortError') {
-                rest.onClose?.(); // close the modal; otherwise it is left hanging in there
-                throw error;
-            }
-        });
+        const run = async () => {
+            const userKeys = await getUserKeys();
+            exportContactsFromLabel(
+                LabelID,
+                countContacts,
+                userKeys,
+                abortController.signal,
+                api,
+                (contactExported) => addSuccess((contactsExported) => [...contactsExported, contactExported]),
+                (ID) => addError((contactsNotExported) => [...contactsNotExported, ID])
+            ).catch((error) => {
+                if (error.name !== 'AbortError') {
+                    rest.onClose?.(); // close the modal; otherwise it is left hanging in there
+                    throw error;
+                }
+            });
+        };
+        run();
 
         return () => {
             abortController.abort();
         };
-    }, [loadingContacts, loadingUserKeys]);
+    }, [loadingContacts]);
 
     const success = contactsNotExported.length !== countContacts;
     const loading = loadingContacts || contactsExported.length + contactsNotExported.length !== countContacts;

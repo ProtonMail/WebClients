@@ -9,6 +9,8 @@
         "pretty": "prettier --write $(find . -path ./node_modules -prune -o -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx')"
     },
     "dependencies": {
+        "@proton/account": "workspace:^",
+        "@proton/mail": "workspace:^",
         "@proton/shared": "workspace:packages/shared"
     },
     "devDependencies": {

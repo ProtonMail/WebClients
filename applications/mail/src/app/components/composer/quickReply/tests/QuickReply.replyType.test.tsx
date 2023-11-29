@@ -4,7 +4,6 @@ import {
     clearAll,
     generateKeys,
     releaseCryptoProxy,
-    setFeatureFlags,
     setupCryptoProxyForTesting,
 } from '../../../../helpers/test/helper';
 import { messageID } from '../../../message/tests/Message.test.helpers';
@@ -14,10 +13,6 @@ import { getStateMessageFromParentID, setupQuickReplyTests } from './QuickReply.
 jest.setTimeout(20000);
 
 describe('Quick reply - Reply type', function () {
-    beforeEach(() => {
-        setFeatureFlags('QuickReply', true);
-    });
-
     afterEach(() => {
         clearAll();
     });

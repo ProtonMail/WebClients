@@ -29,6 +29,7 @@ import {
     PlansMap,
     Subscription,
     SubscriptionCheckResponse,
+    SubscriptionPlan,
     User,
 } from '@proton/shared/lib/interfaces';
 import { getFreeCheckResult } from '@proton/shared/lib/subscription/freePlans';
@@ -143,7 +144,7 @@ const getUpsell = ({
     planParameters,
     toApp,
 }: {
-    currentPlan?: Plan | undefined;
+    currentPlan?: SubscriptionPlan | undefined;
     upsellPlanCard?: PlanCard;
     subscription?: Subscription;
     plansMap: PlansMap;

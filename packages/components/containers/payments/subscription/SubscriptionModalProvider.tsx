@@ -64,7 +64,7 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
     const [modalState, setModalState, render] = useModalState();
 
     let subscriptionModal: Nullable<JSX.Element> = null;
-    if (render && subscriptionProps.current) {
+    if (organization && subscription && render && subscriptionProps.current) {
         if (isManagedExternally(subscription)) {
             subscriptionModal = <InAppPurchaseModal subscription={subscription} {...modalState} />;
         } else if (getHasLegacyPlans(subscription)) {

@@ -6,10 +6,10 @@ import { Button } from '@proton/atoms';
 import { useModalState } from '@proton/components/components/modalTwo';
 import { Tooltip } from '@proton/components/components/tooltip';
 import { UserManagementMode } from '@proton/components/containers/members/types';
-import useCustomDomains from '@proton/components/hooks/useCustomDomains';
 import { APP_NAMES } from '@proton/shared/lib/constants';
 import { getIsDomainActive } from '@proton/shared/lib/organization/helper';
 
+import { useCustomDomains } from '../../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../../account';
 import CreateUserAccountsModal from './CreateUserAccountsModal/CreateUserAccountsModal';
 import UploadCSVFileButton from './UploadCSVFileButton';

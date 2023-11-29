@@ -4,8 +4,9 @@ import { CryptoProxy } from '@proton/crypto';
 import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';
 import { parseToVCard } from '@proton/shared/lib/contacts/vcard';
 import { wait } from '@proton/shared/lib/helpers/promise';
+import { addApiMock } from '@proton/testing';
 
-import { api, clearAll, mockedCryptoApi, notificationManager, render } from '../tests/render';
+import { clearAll, minimalCache, mockedCryptoApi, notificationManager, renderWithProviders } from '../tests/render';
 import ContactEditModal, { ContactEditModalProps, ContactEditProps } from './ContactEditModal';
 
 jest.mock('../../../hooks/useAuthentication', () => {
@@ -39,7 +40,25 @@ describe('ContactEditModal', () => {
         CryptoProxy.setEndpoint(mockedCryptoApi);
     });
 
-    beforeEach(clearAll);
+    beforeEach(() => {
+        clearAll();
+    });
+
+    const setupApiMocks = () => {
+        const saveRequestSpy = jest.fn();
+        addApiMock('contacts/v4/contacts', (args) => {
+            saveRequestSpy(args.data);
+            return { Contacts: [], Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
+        });
+        addApiMock('contacts/v4/contacts/emails', () => {
+            return { ContactEmails: [] };
+        });
+        addApiMock('contacts/v4/contacts/ContactID', (args) => {
+            saveRequestSpy(args.data);
+            return { Code: API_CODES.SINGLE_SUCCESS };
+        });
+        return saveRequestSpy;
+    };
 
     afterAll(async () => {
         await CryptoProxy.releaseEndpoint();
@@ -61,7 +80,12 @@ END:VCARD`;
 
         const vCardContact = parseToVCard(vcard);
 
-        const { getByDisplayValue } = render(<ContactEditModal open={true} {...props} vCardContact={vCardContact} />);
+        minimalCache();
+        setupApiMocks();
+
+        const { getByDisplayValue } = renderWithProviders(
+            <ContactEditModal open={true} {...props} vCardContact={vCardContact} />
+        );
 
         // To see the image loaded
         await wait(0);
@@ -92,20 +116,10 @@ END:VCARD`;
 
         const vCardContact = parseToVCard(vcard);
 
-        const saveRequestSpy = jest.fn();
+        minimalCache();
+        const saveRequestSpy = setupApiMocks();
 
-        api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'contacts/v4/contacts') {
-                saveRequestSpy(args.data);
-                return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
-            }
-            if (args.url === 'contacts/v4/contacts/ContactID') {
-                saveRequestSpy(args.data);
-                return { Code: API_CODES.SINGLE_SUCCESS };
-            }
-        });
-
-        const { getByDisplayValue, getByTestId, getByText } = render(
+        const { getByDisplayValue, getByTestId, getByText } = renderWithProviders(
             <ContactEditModal open={true} {...props} vCardContact={vCardContact} />
         );
 
@@ -174,20 +188,9 @@ END:VCARD`.replaceAll('\n', '\r\n');
     });
 
     it('should create a contact', async () => {
-        const saveRequestSpy = jest.fn();
-
-        api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'contacts/v4/contacts') {
-                saveRequestSpy(args.data);
-                return { Responses: [{ Response: { Code: API_CODES.SINGLE_SUCCESS } }] };
-            }
-            if (args.url === 'contacts/v4/contacts/ContactID') {
-                saveRequestSpy(args.data);
-                return { Code: API_CODES.SINGLE_SUCCESS };
-            }
-        });
-
-        const { getByTestId, getByText } = render(<ContactEditModal open={true} {...props} />);
+        minimalCache();
+        const saveRequestSpy = setupApiMocks();
+        const { getByTestId, getByText } = renderWithProviders(<ContactEditModal open={true} {...props} />);
 
         const firstName = getByTestId('First name');
         fireEvent.change(firstName, { target: { value: 'Bruno' } });
@@ -223,7 +226,8 @@ END:VCARD`.replaceAll('\n', '\r\n');
     });
 
     it('should trigger an error if display name is empty when creating a contact', async () => {
-        const { getByText } = render(<ContactEditModal open={true} {...props} />);
+        setupApiMocks();
+        const { getByText } = renderWithProviders(<ContactEditModal open={true} {...props} />);
 
         const saveButton = getByText('Save');
         fireEvent.click(saveButton);
@@ -239,9 +243,12 @@ UID:urn:uuid:4fbe8971-0bc3-424c-9c26-36c3e1eff6b1
 EMAIL:jdoe@example.com
 END:VCARD`;
 
+        setupApiMocks();
         const vCardContact = parseToVCard(vcard);
 
-        const { getByText } = render(<ContactEditModal open={true} {...props} vCardContact={vCardContact} />);
+        const { getByText } = renderWithProviders(
+            <ContactEditModal open={true} {...props} vCardContact={vCardContact} />
+        );
 
         const saveButton = getByText('Save');
         fireEvent.click(saveButton);

@@ -82,6 +82,21 @@ jest.mock('@proton/components/hooks/useConfig', () => ({
     default: jest.fn(() => ({ APP_NAME: 'proton-calendar' })),
 }));
 
+jest.mock('@proton/components/hooks/useGetEncryptionPreferences', () => ({
+    __esModule: true,
+    default: jest.fn(),
+}));
+
+jest.mock('@proton/components/hooks/useAddressesKeys', () => ({
+    __esModule: true,
+    useGetAddressKeys: jest.fn(),
+}));
+
+jest.mock('@proton/components/hooks/useAddresses', () => ({
+    __esModule: true,
+    useGetAddresses: jest.fn(),
+}));
+
 jest.mock('@proton/shared/lib/helpers/setupCryptoWorker', () => ({
     __esModule: true,
     loadCryptoWorker: jest.fn(),
@@ -354,7 +369,7 @@ describe('CalendarSidebarListItems', () => {
     });
 
     it(`does not open the import modal when user has a delinquent scope`, async () => {
-        mockedUseUser.mockImplementation(() => [{ hasNonDelinquentScope: false } as UserModel, false, null]);
+        mockedUseUser.mockImplementation(() => [{ hasNonDelinquentScope: false } as UserModel, false]);
 
         render(renderComponent());
 

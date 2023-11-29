@@ -20,7 +20,7 @@ import {
     ModalProps,
     useFormErrors,
 } from '../../components';
-import { useApi, useEventManager, useGetUserKeys, useNotifications, useOrganizationKey } from '../../hooks';
+import { useApi, useEventManager, useGetOrganizationKey, useGetUserKeys, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps<'form'> {
     address: Address;
@@ -35,7 +35,7 @@ const EditInternalAddressModal = ({ address, ...rest }: Props) => {
     const [localEmail, setEmail] = useState(initialLocalEmail);
     const newEmail = `${localEmail}@${domain}`;
     const getUserKeys = useGetUserKeys();
-    const [organizationKey, loadingOrganizationKey] = useOrganizationKey();
+    const getOrganizationKey = useGetOrganizationKey();
     const { createNotification } = useNotifications();
     const { onFormSubmit, validator } = useFormErrors();
     const [submitting, withLoading] = useLoading();
@@ -45,6 +45,7 @@ const EditInternalAddressModal = ({ address, ...rest }: Props) => {
     const handleSubmit = async () => {
         if (localEmail !== initialLocalEmail) {
             const userKeys = await getUserKeys();
+            const organizationKey = await getOrganizationKey();
             await api(
                 renameInternalAddress(address.ID, {
                     Local: localEmail,
@@ -80,9 +81,6 @@ const EditInternalAddressModal = ({ address, ...rest }: Props) => {
             onSubmit={(event: FormEvent) => {
                 event.preventDefault();
                 event.stopPropagation();
-                if (loadingOrganizationKey) {
-                    return;
-                }
                 if (!onFormSubmit()) {
                     return;
                 }

@@ -8,7 +8,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import { getCheckout } from '@proton/shared/lib/helpers/checkout';
-import { Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import { Plan, PlansMap, SubscriptionPlan } from '@proton/shared/lib/interfaces';
 
 import { SubscriptionData } from '../../signup/interfaces';
 import PlanComparison from './PlanComparison';
@@ -16,7 +16,7 @@ import PlanComparison from './PlanComparison';
 interface Props extends Omit<ModalProps, 'title'> {
     title: ReactNode;
     dark: boolean;
-    currentPlan: Plan | undefined;
+    currentPlan: SubscriptionPlan | undefined;
     upsellPlan: Plan | undefined;
     unlockPlan: Plan | undefined;
     relativePrice: string | undefined;

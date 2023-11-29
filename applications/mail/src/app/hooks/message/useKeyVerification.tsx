@@ -1,6 +1,4 @@
-import * as React from 'react';
-
-import { useAddresses, useNotifications } from '@proton/components';
+import { useGetAddresses, useNotifications } from '@proton/components';
 import type { KeyID } from '@proton/crypto';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { Message } from '@proton/shared/lib/interfaces/mail/Message';
@@ -10,7 +8,7 @@ import { getMessageDecryptionKeyIDFromAddress } from '../../helpers/message/mess
 
 export const useKeyVerification = () => {
     const { createNotification } = useNotifications();
-    const [addresses] = useAddresses();
+    const getAddresses = useGetAddresses();
 
     /**
      * Try to find the key responsible for message encryption and display a notification to the user
@@ -18,6 +16,7 @@ export const useKeyVerification = () => {
      * The notification is displayed once per key and per browser, so that for every password change we display a notification, without spamming the user
      */
     const verifyKeys = async (message: Message) => {
+        const addresses = await getAddresses();
         const address = addresses.find((address) => address.ID === message.AddressID);
 
         if (!address) {

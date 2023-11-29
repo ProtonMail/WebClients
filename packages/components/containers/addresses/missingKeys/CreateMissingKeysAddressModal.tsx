@@ -16,7 +16,7 @@ import {
     passwordLengthValidator,
     requiredValidator,
 } from '@proton/shared/lib/helpers/formValidators';
-import { Address, CachedOrganizationKey, Member } from '@proton/shared/lib/interfaces';
+import { Address, Member } from '@proton/shared/lib/interfaces';
 import {
     getShouldSetupMemberKeys,
     missingKeysMemberProcess,
@@ -44,6 +44,7 @@ import {
     useAuthentication,
     useEventManager,
     useGetAddresses,
+    useGetOrganizationKey,
     useGetUser,
     useGetUserKeys,
     useNotifications,
@@ -63,7 +64,6 @@ enum STEPS {
 interface Props extends ModalProps<'form'> {
     member?: Member;
     addressesToGenerate: Address[];
-    organizationKey?: CachedOrganizationKey;
 }
 
 const getStatus = (text: 'ok' | 'loading' | 'error') => {
@@ -78,7 +78,7 @@ const getStatus = (text: 'ok' | 'loading' | 'error') => {
     }
 };
 
-const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizationKey, ...rest }: Props) => {
+const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, ...rest }: Props) => {
     const api = useApi();
     const authentication = useAuthentication();
     const [password, setPassword] = useState('');
@@ -88,6 +88,7 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizati
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
     const [step, setStep] = useState(STEPS.INIT);
+    const getOrganizationKey = useGetOrganizationKey();
     const getUserKeys = useGetUserKeys();
     const getAddresses = useGetAddresses();
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, useGetUser());
@@ -105,6 +106,7 @@ const CreateMissingKeysAddressModal = ({ member, addressesToGenerate, organizati
     const [encryptionType, setEncryptionType] = useState<ENCRYPTION_TYPES>(DEFAULT_ENCRYPTION_CONFIG);
 
     const processMember = async (member: Member) => {
+        const organizationKey = await getOrganizationKey();
         if (!organizationKey?.privateKey) {
             createNotification({ text: c('Error').t`Organization key is not decrypted`, type: 'error' });
             return;

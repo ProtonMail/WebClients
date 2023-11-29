@@ -4,7 +4,7 @@ import { ADDRESS_STATUS, ADDRESS_TYPE } from '@proton/shared/lib/constants';
 const useAvailableAddresses = () => {
     const [addresses, loading] = useAddresses();
 
-    const availableAddresses = addresses.filter(
+    const availableAddresses = addresses?.filter(
         (addr) =>
             addr.Receive &&
             addr.Send &&
@@ -15,7 +15,7 @@ const useAvailableAddresses = () => {
 
     return {
         availableAddresses,
-        defaultAddress: availableAddresses[0],
+        defaultAddress: availableAddresses?.[0],
         loading,
     };
 };

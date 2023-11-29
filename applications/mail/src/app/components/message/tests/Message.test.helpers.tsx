@@ -42,7 +42,11 @@ export const defaultProps: MessageViewProps = {
     isComposerOpened: false,
 };
 
-export const setup = async (specificProps: Partial<MessageViewProps> = {}, useMinimalCache = true) => {
+export const setup = async (
+    specificProps: Partial<MessageViewProps> = {},
+    useMinimalCache = true,
+    renderOptions?: Parameters<typeof render>[2]
+) => {
     const props = { ...defaultProps, ...specificProps };
 
     const ref = { current: null } as MutableRefObject<MessageViewRef | null>;
@@ -50,7 +54,7 @@ export const setup = async (specificProps: Partial<MessageViewProps> = {}, useMi
         ref.current = refValue;
     };
 
-    const renderResult = await render(<MessageView ref={refCallback} {...props} />, useMinimalCache);
+    const renderResult = await render(<MessageView ref={refCallback} {...props} />, useMinimalCache, renderOptions);
 
     const open = async () => {
         jest.spyOn(messageDecrypt, 'decryptMessage');

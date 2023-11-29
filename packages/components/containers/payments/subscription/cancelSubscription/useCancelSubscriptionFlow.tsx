@@ -18,7 +18,7 @@ const SUBSCRIPTION_KEPT: CancelSubscriptionResult = {
 };
 
 export interface UseCancelSubscriptionFlowProps {
-    subscription: SubscriptionModel;
+    subscription?: SubscriptionModel;
     user: UserModel;
 }
 

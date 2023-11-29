@@ -1,4 +1,4 @@
-import * as useMailSettingsModule from '@proton/components/hooks/useMailSettings';
+import * as useMailSettingsModule from '@proton/mail/mailSettings/hooks';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { DEFAULT_MAILSETTINGS } from '@proton/shared/lib/mail/mailSettings';
@@ -17,7 +17,7 @@ const defaultMailSettings: MailSettings = {
 };
 
 export const mockUseMailSettings = (params?: [Partial<MailSettings>?, boolean?, (() => void)?]) => {
-    const [value, isMissed = false, miss = jest.fn()] = params ?? [];
+    const [value, isMissed = false] = params ?? [];
 
     const mockedUseMailSettings = jest.spyOn(useMailSettingsModule, 'useMailSettings');
     mockedUseMailSettings.mockReturnValue([
@@ -26,7 +26,6 @@ export const mockUseMailSettings = (params?: [Partial<MailSettings>?, boolean?, 
             ...value,
         },
         isMissed,
-        miss,
     ]);
 
     return mockedUseMailSettings;

@@ -14,6 +14,7 @@ import {
     useApi,
     useContactEmails,
     useGetAddressKeys,
+    useGetAddresses,
     useGetCalendarEventRaw,
     useGetCalendars,
     useNotifications,
@@ -79,6 +80,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
     const [vevent, setVevent] = useState<VcalVeventComponent>();
     const [calendar, setCalendar] = useState<VisualCalendar>();
     const [addresses] = useAddresses();
+    const getAddresses = useGetAddresses();
     const [calendarEvent, setCalendarEvent] = useState<CalendarEvent>();
 
     const [isLoading, setIsLoading] = useState(false);
@@ -193,6 +195,7 @@ const EmailReminderWidget = ({ message, errors }: EmailReminderWidgetProps) => {
 
                 const calendar = calendars.find(({ ID }) => ID === Event.CalendarID);
 
+                const addresses = await getAddresses();
                 // We cannot be sure that setCalendar has finished when reaching the catch
                 calendarData = calendar
                     ? await getCalendarWithReactivatedKeys({ calendar, api, addresses, getAddressKeys })

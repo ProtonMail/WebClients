@@ -22,7 +22,7 @@ interface Props {
 }
 
 const QuickReplyType = ({ referenceMessage, modelMessage, onChange, editorRef }: Props) => {
-    const [addresses] = useAddresses();
+    const [addresses = []] = useAddresses();
     const contactEmailsMap = useContactsMap();
     const [replyType, setReplyType] = useState<MESSAGE_ACTIONS>(modelMessage.draftFlags?.action || REPLY);
 

@@ -2,16 +2,15 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { APP_NAMES, BRAND_NAME, PLAN_NAMES } from '@proton/shared/lib/constants';
-import { CachedOrganizationKey, Domain, Organization } from '@proton/shared/lib/interfaces';
+import { Domain, Organization } from '@proton/shared/lib/interfaces';
 
 import { ModalStateProps, Prompt, Tooltip, useModalState } from '../../components';
 import { useCustomDomains } from '../../hooks';
 import SubUserCreateModal from './SubUserCreateModal';
 
 interface Props extends ModalStateProps {
-    organization: Organization;
+    organization?: Organization;
     verifiedDomains: Domain[];
-    organizationKey?: CachedOrganizationKey;
     onInviteUser: () => void;
     app: APP_NAMES;
 }
@@ -40,7 +39,7 @@ const AddUserButton = ({ onClick }: ButtonProps) => {
 };
 
 interface InviteButtonProps {
-    organization: Organization;
+    organization?: Organization;
 }
 
 const InviteProtonUserButton = ({ onClick, organization }: ButtonProps & InviteButtonProps) => {
@@ -64,14 +63,7 @@ const InviteProtonUserButton = ({ onClick, organization }: ButtonProps & InviteB
     );
 };
 
-const InviteUserCreateSubUserModal = ({
-    organization,
-    verifiedDomains,
-    organizationKey,
-    onInviteUser,
-    app,
-    ...modalState
-}: Props) => {
+const InviteUserCreateSubUserModal = ({ organization, verifiedDomains, onInviteUser, app, ...modalState }: Props) => {
     const [subUserCreateModalProps, setSubUserCreateModalOpen, renderSubUserCreateModal] = useModalState();
 
     const handleAddUser = () => {
@@ -96,10 +88,9 @@ const InviteUserCreateSubUserModal = ({
             >
                 <p>{c('familyOffer_2023:Info').t`To create a new user, a configured custom domain is required.`}</p>
             </Prompt>
-            {renderSubUserCreateModal && organizationKey && verifiedDomains?.length > 0 && (
+            {renderSubUserCreateModal && organization && verifiedDomains?.length > 0 && (
                 <SubUserCreateModal
                     organization={organization}
-                    organizationKey={organizationKey}
                     verifiedDomains={verifiedDomains}
                     {...subUserCreateModalProps}
                     onClose={() => modalState.onClose()}

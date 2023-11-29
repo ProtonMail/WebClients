@@ -87,6 +87,7 @@ jest.mock('@proton/components/hooks/useWelcomeFlags', () => ({
 }));
 
 jest.mock('@proton/components/hooks/useUserSettings', () => () => [{}, jest.fn()]);
+jest.mock('@proton/components/hooks/useSubscription', () => () => [{}, jest.fn()]);
 
 jest.mock('@proton/components/hooks/useApi', () => ({
     __esModule: true,
@@ -208,7 +209,7 @@ describe('CalendarSidebar', () => {
         expect(getByText(/calendar3/)).toBeInTheDocument();
         expect(getByText(/Add calendar/)).toBeInTheDocument();
 
-        const manageCalendarsLink = getByRole(/link/) as HTMLAnchorElement;
+        const manageCalendarsLink = getByRole(/link/, { name: 'Calendars' }) as HTMLAnchorElement;
 
         expect(manageCalendarsLink.href).toBe('http://localhost/calendar/calendars');
 

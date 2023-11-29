@@ -44,7 +44,6 @@ import {
 } from '../../../components';
 import CountrySelect from '../../../components/country/CountrySelect';
 import {
-    useAddresses,
     useApi,
     useCalendarUserSettings,
     useEventManager,
@@ -123,7 +122,6 @@ const HolidaysCalendarModalWithDirectory = ({
     onEditCalendar,
     ...rest
 }: Props) => {
-    const [addresses] = useAddresses();
     const getAddresses = useGetAddresses();
     const [{ PrimaryTimezone }] = useCalendarUserSettings();
     const { call } = useEventManager();
@@ -261,6 +259,7 @@ const HolidaysCalendarModalWithDirectory = ({
                  * 3 - The user is joining a holidays calendar
                  *      => We just want to join a holidays calendar
                  */
+                const addresses = await getAddresses();
                 if (inputHolidaysCalendar) {
                     // 1 - Classic update: staying in the same holidays calendar
                     if (computedCalendar.CalendarID === directoryCalendarFromInput?.CalendarID) {

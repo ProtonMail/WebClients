@@ -3,8 +3,7 @@ import React from 'react';
 import { fireEvent, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { clearAll, render } from '@proton/components/containers/contacts/tests/render';
-
+import { clearAll, renderWithProviders } from '../../../contacts/tests/render';
 import Spams from '../Spams';
 import SpamModal from '../modals/SpamModal';
 
@@ -14,14 +13,14 @@ describe('Spams - Incoming defaults', () => {
     });
 
     it('Should display an empty list', () => {
-        render(<Spams />);
+        renderWithProviders(<Spams />);
 
         expect(screen.getByRole('button', { name: 'Add address or domain' })).toBeInTheDocument();
         expect(screen.queryByRole('table')).not.toBeInTheDocument();
     });
 
     it('Should display blocked email modal', async () => {
-        render(<Spams />);
+        renderWithProviders(<Spams />);
 
         fireEvent.click(screen.getByRole('button', { name: 'Add address or domain' }));
         fireEvent.click(screen.getByRole('button', { name: 'Block' }));
@@ -32,7 +31,7 @@ describe('Spams - Incoming defaults', () => {
     });
 
     it('Should display blocked email modal with organization', async () => {
-        render(<Spams isOrganization />);
+        renderWithProviders(<Spams isOrganization />);
 
         fireEvent.click(screen.getByRole('button', { name: 'Add address or domain' }));
         fireEvent.click(screen.getByRole('button', { name: 'Block' }));
@@ -46,7 +45,7 @@ describe('Spams - Incoming defaults', () => {
         const mockedSubmit = jest.fn();
         const EMAIL = 'homer@simpsons.fr';
 
-        render(
+        renderWithProviders(
             <SpamModal
                 modalProps={{
                     open: true,

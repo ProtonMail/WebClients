@@ -1,20 +1,19 @@
-import { render, waitFor } from '@testing-library/react';
+import { waitFor } from '@testing-library/react';
 import cloneDeep from 'lodash/cloneDeep';
+
+import { getModelState } from '@proton/account/test';
+import { PLANS } from '@proton/shared/lib/constants';
+import { Audience, External } from '@proton/shared/lib/interfaces';
+import format from '@proton/shared/lib/subscription/format';
 
 import {
     mockOrganizationApi,
     mockPlansApi,
     mockSubscriptionApi,
-    mockUserCache,
     subscriptionDefaultResponse,
-} from '@proton/components/hooks/helpers/test';
-import { PLANS } from '@proton/shared/lib/constants';
-import { Audience, External } from '@proton/shared/lib/interfaces';
-import { apiMock, mockCache } from '@proton/testing';
-
-import ApiContext from '../../api/apiContext';
-import { CacheProvider } from '../../cache';
-import EventManagerContext from '../../eventManager/context';
+    userDefault,
+} from '../../../hooks/helpers/test';
+import { renderWithProviders } from '../../contacts/tests/render';
 import SubscriptionContainer from './SubscriptionContainer';
 import SubscriptionModalProvider, {
     OpenSubscriptionModalCallback,
@@ -27,29 +26,19 @@ jest.mock('@proton/components/containers/payments/subscription/SubscriptionConta
 jest.mock('@proton/components/hooks/useFeature', () => () => ({}));
 
 beforeEach(() => {
-    mockUserCache();
     mockSubscriptionApi();
     mockOrganizationApi();
     mockPlansApi();
 });
 
-const defaultEventManager = { call: jest.fn() };
-
-const Providers = ({ children, eventManager = defaultEventManager, api = apiMock, cache = mockCache }: any) => {
-    return (
-        <EventManagerContext.Provider value={eventManager}>
-            <ApiContext.Provider value={api}>
-                <CacheProvider cache={cache}>{children}</CacheProvider>
-            </ApiContext.Provider>
-        </EventManagerContext.Provider>
-    );
-};
-
 it('should render', async () => {
-    const { container } = render(
-        <Providers>
-            <SubscriptionModalProvider app="proton-account">My content</SubscriptionModalProvider>
-        </Providers>
+    const { container } = renderWithProviders(
+        <SubscriptionModalProvider app="proton-account">My content</SubscriptionModalProvider>,
+        {
+            preloadedState: {
+                user: getModelState(userDefault),
+            },
+        }
     );
 
     await waitFor(() => {
@@ -64,7 +53,6 @@ it('should render <SubscriptionModalDisabled> if there are legacy plans', async 
             Name: PLANS.VPNBASIC, // that's a legacy plan
         } as any,
     ];
-    mockSubscriptionApi(subscription);
 
     let openSubscriptionModal!: OpenSubscriptionModalCallback;
     const ContextReaderComponent = () => {
@@ -74,12 +62,15 @@ it('should render <SubscriptionModalDisabled> if there are legacy plans', async 
         return null;
     };
 
-    const { container } = render(
-        <Providers>
-            <SubscriptionModalProvider app="proton-account">
-                <ContextReaderComponent />
-            </SubscriptionModalProvider>
-        </Providers>
+    const { container } = renderWithProviders(
+        <SubscriptionModalProvider app="proton-account">
+            <ContextReaderComponent />
+        </SubscriptionModalProvider>,
+        {
+            preloadedState: {
+                subscription: getModelState(format(subscription.Subscription, subscription.UpcomingSubscription)),
+            },
+        }
     );
 
     await waitFor(() => {
@@ -100,12 +91,10 @@ it('should render <SubscriptionContainer> if there is no legacy plans', async ()
         return null;
     };
 
-    const { container } = render(
-        <Providers>
-            <SubscriptionModalProvider app="proton-account">
-                <ContextReaderComponent />
-            </SubscriptionModalProvider>
-        </Providers>
+    const { container } = renderWithProviders(
+        <SubscriptionModalProvider app="proton-account">
+            <ContextReaderComponent />
+        </SubscriptionModalProvider>
     );
 
     await waitFor(() => {
@@ -125,12 +114,10 @@ it('should render <SubscriptionContainer> with B2B default audience if it was se
         return null;
     };
 
-    const { container } = render(
-        <Providers>
-            <SubscriptionModalProvider app="proton-account">
-                <ContextReaderComponent />
-            </SubscriptionModalProvider>
-        </Providers>
+    const { container } = renderWithProviders(
+        <SubscriptionModalProvider app="proton-account">
+            <ContextReaderComponent />
+        </SubscriptionModalProvider>
     );
 
     await waitFor(() => {
@@ -158,12 +145,10 @@ it('should render <SubscriptionContainer> with B2B default audience if plan is a
         return null;
     };
 
-    const { container } = render(
-        <Providers>
-            <SubscriptionModalProvider app="proton-account">
-                <ContextReaderComponent />
-            </SubscriptionModalProvider>
-        </Providers>
+    const { container } = renderWithProviders(
+        <SubscriptionModalProvider app="proton-account">
+            <ContextReaderComponent />
+        </SubscriptionModalProvider>
     );
 
     await waitFor(() => {
@@ -199,12 +184,10 @@ it('should render <SubscriptionContainer> with B2B default audience if subscript
         return null;
     };
 
-    const { container } = render(
-        <Providers>
-            <SubscriptionModalProvider app="proton-account">
-                <ContextReaderComponent />
-            </SubscriptionModalProvider>
-        </Providers>
+    const { container } = renderWithProviders(
+        <SubscriptionModalProvider app="proton-account">
+            <ContextReaderComponent />
+        </SubscriptionModalProvider>
     );
 
     await waitFor(() => {
@@ -232,12 +215,10 @@ it('should render <SubscriptionContainer> with FAMILY default audience if it is 
         return null;
     };
 
-    const { container } = render(
-        <Providers>
-            <SubscriptionModalProvider app="proton-account">
-                <ContextReaderComponent />
-            </SubscriptionModalProvider>
-        </Providers>
+    const { container } = renderWithProviders(
+        <SubscriptionModalProvider app="proton-account">
+            <ContextReaderComponent />
+        </SubscriptionModalProvider>
     );
 
     await waitFor(() => {
@@ -259,7 +240,6 @@ it('should render <SubscriptionContainer> with FAMILY default audience if it is 
 it('should render <InAppPurchaseModal> if subscription is managed externally', async () => {
     const subscription = cloneDeep(subscriptionDefaultResponse);
     subscription.Subscription.External = External.Android;
-    mockSubscriptionApi(subscription);
 
     let openSubscriptionModal!: OpenSubscriptionModalCallback;
     const ContextReaderComponent = () => {
@@ -269,12 +249,15 @@ it('should render <InAppPurchaseModal> if subscription is managed externally', a
         return null;
     };
 
-    const { getByTestId } = render(
-        <Providers>
-            <SubscriptionModalProvider app="proton-account">
-                <ContextReaderComponent />
-            </SubscriptionModalProvider>
-        </Providers>
+    const { getByTestId } = renderWithProviders(
+        <SubscriptionModalProvider app="proton-account">
+            <ContextReaderComponent />
+        </SubscriptionModalProvider>,
+        {
+            preloadedState: {
+                subscription: getModelState(format(subscription.Subscription, subscription.UpcomingSubscription)),
+            },
+        }
     );
 
     await waitFor(() => {

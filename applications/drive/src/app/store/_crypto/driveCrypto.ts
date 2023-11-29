@@ -1,8 +1,8 @@
 import { PrivateKeyReference, PublicKeyReference, toPublicKeyReference } from '@proton/crypto';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
 import { Address } from '@proton/shared/lib/interfaces/Address';
+import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
 import { decryptPassphrase } from '@proton/shared/lib/keys/drivePassphrase';
 import { splitKeys } from '@proton/shared/lib/keys/keys';
@@ -33,7 +33,7 @@ export const getPrimaryAddressAsync = async (getAddresses: () => Promise<Address
 
 export const getPrimaryAddressKeyAsync = async (
     getPrimaryAddress: () => Promise<Address>,
-    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
+    getAddressKeys: GetAddressKeys
 ) => {
     const activeAddress = await getPrimaryAddress();
     const addressKeys = await getAddressKeys(activeAddress.ID);
@@ -59,7 +59,7 @@ const getOwnAddress = async (email: string, getAddresses: () => Promise<Address[
 const getOwnAddressAndKeys = async (
     email: string,
     getAddresses: () => Promise<Address[]>,
-    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
+    getAddressKeys: GetAddressKeys
 ) => {
     const address = await getOwnAddress(email, getAddresses);
     if (!address) {
@@ -73,7 +73,7 @@ const getOwnAddressAndKeys = async (
 export const getOwnAddressAndPrimaryKeysAsync = async (
     email: string,
     getAddresses: () => Promise<Address[]>,
-    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
+    getAddressKeys: GetAddressKeys
 ) => {
     const { address, addressKeys } = await getOwnAddressAndKeys(email, getAddresses, getAddressKeys);
     const { privateKey, publicKey } = getPrimaryKey(addressKeys) || {};
@@ -93,7 +93,7 @@ export const getOwnAddressAndPrimaryKeysAsync = async (
 export const getOwnAddressKeysAsync = async (
     email: string,
     getAddresses: () => Promise<Address[]>,
-    getAddressKeys: (id: string) => Promise<DecryptedKey[]>
+    getAddressKeys: GetAddressKeys
 ) => {
     const { addressKeys } = await getOwnAddressAndKeys(email, getAddresses, getAddressKeys);
     return addressKeys ? splitKeys(addressKeys) : undefined;

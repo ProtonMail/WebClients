@@ -1,4 +1,4 @@
-import * as useLabelsModule from '@proton/components/hooks/useCategories';
+import * as useLabelsModule from '@proton/mail/labels/hooks';
 import { Label } from '@proton/shared/lib/interfaces/Label';
 
 export const mockUseLabels = (params?: [Label[]?, boolean?]) => {
