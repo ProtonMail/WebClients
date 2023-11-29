@@ -6,7 +6,7 @@ import { getHasSharedEventContent, getHasSharedKeyPacket } from '@proton/shared/
 import { DEFAULT_ATTENDEE_PERMISSIONS } from '@proton/shared/lib/calendar/constants';
 import { getCreationKeys } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
-import { withoutRedundantDtEnd } from '@proton/shared/lib/calendar/veventHelper';
+import { getVeventColorValue, withoutRedundantDtEnd } from '@proton/shared/lib/calendar/veventHelper';
 import { booleanToNumber } from '@proton/shared/lib/helpers/boolean';
 import { SimpleMap } from '@proton/shared/lib/interfaces';
 import { CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
@@ -38,6 +38,7 @@ export interface CreateEventActionOperation {
         veventComponent: VcalVeventComponent;
         hasDefaultNotifications: boolean;
         addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
+        color?: string;
     };
 }
 export interface UpdateEventActionOperation {
@@ -49,6 +50,7 @@ export interface UpdateEventActionOperation {
         isAttendee: boolean;
         removedAttendeesEmails?: string[];
         addedAttendeesPublicKeysMap?: SimpleMap<PublicKeyReference>;
+        color?: string;
     };
 }
 
@@ -89,6 +91,7 @@ export const getCreateSyncOperation = (data: {
     data: {
         ...data,
         veventComponent: withoutRedundantDtEnd(data.veventComponent),
+        color: getVeventColorValue(data.veventComponent),
     },
 });
 export const getUpdateSyncOperation = (data: {
@@ -103,6 +106,7 @@ export const getUpdateSyncOperation = (data: {
     data: {
         ...data,
         veventComponent: withoutRedundantDtEnd(data.veventComponent),
+        color: getVeventColorValue(data.veventComponent),
     },
 });
 
@@ -122,21 +126,24 @@ const getRequiredKeys = ({
     getCalendarKeys,
     getAddressKeys,
 }: SyncMultipleEventsArguments) => {
-    const allCalendarIDs = operations.reduce<Set<string>>((acc, operation) => {
-        // No key needed for delete.
-        if (getIsDeleteSyncOperation(operation)) {
-            return acc;
-        }
-        if (getIsUpdateSyncOperation(operation)) {
-            const oldCalendarID = operation.data.calendarEvent.CalendarID;
-            const isSwitchCalendar = oldCalendarID !== calendarID;
-            if (isSwitchCalendar && oldCalendarID) {
-                acc.add(oldCalendarID);
+    const allCalendarIDs = operations.reduce<Set<string>>(
+        (acc, operation) => {
+            // No key needed for delete.
+            if (getIsDeleteSyncOperation(operation)) {
+                return acc;
             }
-        }
-        acc.add(calendarID);
-        return acc;
-    }, new Set([calendarID]));
+            if (getIsUpdateSyncOperation(operation)) {
+                const oldCalendarID = operation.data.calendarEvent.CalendarID;
+                const isSwitchCalendar = oldCalendarID !== calendarID;
+                if (isSwitchCalendar && oldCalendarID) {
+                    acc.add(oldCalendarID);
+                }
+            }
+            acc.add(calendarID);
+            return acc;
+        },
+        new Set([calendarID])
+    );
 
     const getKeysMap = async <T>(set: Set<string>, cb: (id: string) => Promise<T[]>) => {
         const ids = [...set];

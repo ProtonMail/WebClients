@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import tinycolor from 'tinycolor2';
+import { c } from 'ttag';
 
 import { ACCENT_COLORS_MAP, getColorName } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';
@@ -16,6 +17,8 @@ import { usePopperAnchor } from '../popper';
 interface OwnProps {
     color?: string;
     onChange: (color: string) => void;
+    displayColorName?: boolean;
+    onClickColorPicker?: (toggle: () => void) => void;
 }
 
 type ButtonProps = DropdownButtonProps<'button'>;
@@ -28,7 +31,7 @@ const getOptions = () => {
     return Object.values(ACCENT_COLORS_MAP).map(({ color, getName }) => ({ value: color, label: getName() }));
 };
 
-const ColorPicker = ({ color = '#5252CC', onChange, ...rest }: Props) => {
+const ColorPicker = ({ color = '#5252CC', onChange, displayColorName = true, onClickColorPicker, ...rest }: Props) => {
     const options = getOptions();
     const [uid] = useState(generateUID('dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
@@ -42,22 +45,43 @@ const ColorPicker = ({ color = '#5252CC', onChange, ...rest }: Props) => {
     const colorName = getColorName(color);
 
     const { className, ...restDropdownProps } = omit(rest, ['layout']);
+
+    const handleToggle = () => {
+        if (onClickColorPicker) {
+            onClickColorPicker?.(toggle);
+        } else {
+            toggle();
+        }
+    };
     return (
         <>
             <DropdownButton
                 {...restDropdownProps}
                 as="button"
                 type="button"
-                className={clsx([className, 'field select w-1/2 flex flex-align-items-center py-0 pl-2'])}
+                className={clsx([
+                    className,
+                    displayColorName && 'w-1/2',
+                    'field select flex flex-align-items-center py-0 pl-2',
+                ])}
                 hasCaret
                 ref={anchorRef}
                 isOpen={isOpen}
-                onClick={toggle}
+                onClick={handleToggle}
                 aria-label={colorName}
             >
                 <span className="flex-item-fluid text-left flex flex-nowrap flex-align-items-center gap-2">
-                    <Icon className="flex-item-noshrink" name="circle-filled" size={28} color={iconColor} />
-                    {colorName && <span className="text-capitalize text-ellipsis">{colorName}</span>}
+                    <span className="sr-only">{c('info').t`Selected color:`}</span>
+                    <Icon
+                        className="flex-item-noshrink"
+                        name="circle-filled"
+                        size={28}
+                        color={iconColor}
+                        alt={displayColorName ? undefined : colorName}
+                    />
+                    {displayColorName && colorName && (
+                        <span className="text-capitalize text-ellipsis">{colorName}</span>
+                    )}
                 </span>
             </DropdownButton>
             <Dropdown

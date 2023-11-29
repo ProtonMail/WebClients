@@ -16,6 +16,7 @@ const FIELDS_TO_KEEP = [
     'Permissions',
     'IsOrganizer',
     'IsProtonProtonInvite',
+    'Color',
 ] as const;
 
 const upsertCalendarApiEventWithoutBlob = (
