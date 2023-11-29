@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { RefObject, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { HotkeyTuple, useEventManager, useFolders, useHotkeys } from '@proton/components';
@@ -130,6 +130,25 @@ export const useMessageHotkeys = (
 
         if (direction === ARROW_SCROLL_DIRECTIONS.DOWN && distanceFromBottom < THRESHOLD) {
             e.stopPropagation();
+        }
+    };
+
+    const openMessageToolbarDropdown = (
+        toolbarDropdownButtonRef: RefObject<() => void>,
+        keyboardEvent: KeyboardEvent
+    ) => {
+        if (hotkeysEnabledAndMessageReady) {
+            keyboardEvent.stopPropagation();
+            keyboardEvent.preventDefault();
+
+            messageRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+            // FF has an issue when we propagate custom events
+            // adding a timeout there ensure event is done when
+            // other components are rendered
+            setTimeout(() => {
+                toolbarDropdownButtonRef.current?.();
+            }, 0);
         }
     };
 
@@ -301,42 +320,19 @@ export const useMessageHotkeys = (
         [
             'L',
             (e) => {
-                if (hotkeysEnabledAndMessageReady) {
-                    e.stopPropagation();
-                    e.preventDefault();
-
-                    // FF has an issue when we propagate custom events
-                    // adding a timeout there ensure event is done when
-                    // other components are rendered
-                    setTimeout(() => {
-                        labelDropdownToggleRef.current?.();
-                    }, 0);
-                }
+                openMessageToolbarDropdown(labelDropdownToggleRef, e);
             },
         ],
         [
             'M',
             (e) => {
-                if (hotkeysEnabledAndMessageReady) {
-                    e.stopPropagation();
-                    e.preventDefault();
-
-                    // FF has an issue when we propagate custom events
-                    // adding a timeout there ensure event is done when
-                    // other components are rendered
-                    setTimeout(() => {
-                        moveDropdownToggleRef.current?.();
-                    });
-                }
+                openMessageToolbarDropdown(moveDropdownToggleRef, e);
             },
         ],
         [
             'F',
             (e) => {
-                if (hotkeysEnabledAndMessageReady) {
-                    e.stopPropagation();
-                    filterDropdownToggleRef.current?.();
-                }
+                openMessageToolbarDropdown(filterDropdownToggleRef, e);
             },
         ],
     ];
