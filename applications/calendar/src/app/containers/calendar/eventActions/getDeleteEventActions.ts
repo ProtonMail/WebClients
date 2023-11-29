@@ -4,7 +4,7 @@ import { getBase64SharedSessionKey } from '@proton/shared/lib/calendar/crypto/ke
 import { getSelfAttendeeToken } from '@proton/shared/lib/calendar/mailIntegration/invite';
 import { getMemberAndAddress } from '@proton/shared/lib/calendar/members';
 import { Address, Api } from '@proton/shared/lib/interfaces';
-import { CalendarBootstrap, CalendarEvent, VcalVeventComponent } from '@proton/shared/lib/interfaces/calendar';
+import { CalendarBootstrap, CalendarEvent } from '@proton/shared/lib/interfaces/calendar';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { GetCalendarKeys } from '@proton/shared/lib/interfaces/hooks/GetCalendarKeys';
 
@@ -13,7 +13,7 @@ import { EventOldData } from '../../../interfaces/EventData';
 import {
     INVITE_ACTION_TYPES,
     InviteActions,
-    SendIcsActionData,
+    SendIcs,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../../interfaces/Invite';
@@ -45,9 +45,7 @@ const getDeleteSingleEventActionsHelper = async ({
     onDeleteConfirmation: OnDeleteConfirmationCb;
     inviteActions: InviteActions;
     isAttendee: boolean;
-    sendIcs: (
-        data: SendIcsActionData
-    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
+    sendIcs: SendIcs;
 }) => {
     const { veventComponent: oldVevent, memberID, calendarID, addressID } = oldEditEventData;
     let updatedInviteActions = getUpdatedDeleteInviteActions({
@@ -113,9 +111,7 @@ interface Arguments {
     getCalendarKeys: GetCalendarKeys;
     getEventDecrypted: GetDecryptedEventCb;
     inviteActions: InviteActions;
-    sendIcs: (
-        data: SendIcsActionData
-    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
+    sendIcs: SendIcs;
 }
 
 const getDeleteEventActions = async ({
