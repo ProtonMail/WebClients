@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
-import { FeatureCode } from '@proton/components/containers';
 import { getShortBillingText } from '@proton/components/containers/payments/helper';
 import VPNPassPromotionButton from '@proton/components/containers/payments/subscription/VPNPassPromotionButton';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
@@ -68,7 +67,6 @@ import {
     useApi,
     useConfig,
     useEventManager,
-    useFeature,
     useGetCalendars,
     useModals,
     useNotifications,
@@ -217,7 +215,6 @@ const SubscriptionContainer = ({
     const plansMap = toMap(plans, 'Name');
     const [vpnServers] = useVPNServersCount();
     const getCalendars = useGetCalendars();
-    const calendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
     const { APP_NAME } = useConfig();
 
     const [loading, withLoading] = useLoading();
@@ -767,7 +764,6 @@ const SubscriptionContainer = ({
                     selectedProductPlans={selectedProductPlans}
                     onChangeSelectedProductPlans={setSelectedProductPlans}
                     organization={organization}
-                    calendarSharingEnabled={calendarSharingEnabled}
                 />
             )}
             {model.step === SUBSCRIPTION_STEPS.CUSTOMIZATION && (
