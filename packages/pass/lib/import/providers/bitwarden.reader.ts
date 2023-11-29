@@ -1,3 +1,4 @@
+import { groupBy, keyBy } from 'lodash';
 import { c } from 'ttag';
 
 import type { ItemImportIntent, Maybe, UnsafeItemExtraField } from '@proton/pass/types';
@@ -69,54 +70,55 @@ const formatCCExpirationDate = (item: BitwardenCCItem) => {
 
 export const readBitwardenData = (data: string): ImportPayload => {
     try {
-        const { items, encrypted } = JSON.parse(data) as BitwardenData;
+        const { items, encrypted, folders } = JSON.parse(data) as BitwardenData;
         if (encrypted) throw new ImportReaderError(c('Error').t`Encrypted JSON not supported`);
+        if (!Array.isArray(items) || !Array.isArray(folders)) {
+            throw new ImportReaderError(c('Error').t`Importing items failed`);
+        }
 
         const ignored: string[] = [];
+        const groupedItems = groupBy(items, 'folderId');
+        const folderMap = keyBy(folders, 'id');
 
-        const vaults: ImportVault[] = [
-            {
-                name: getImportedVaultName(),
-                shareId: null,
-                items: items
-                    .map((item): Maybe<ItemImportIntent> => {
-                        switch (item.type) {
-                            case BitwardenType.LOGIN:
-                                const urls = extractUrls(item);
-                                return importLoginItem({
-                                    name: item.name,
-                                    note: item.notes,
-                                    username: item.login.username,
-                                    password: item.login.password,
-                                    urls: urls.web,
-                                    totp: item.login.totp,
-                                    appIds: urls.android,
-                                    extraFields: extractExtraFields(item),
-                                });
-                            case BitwardenType.NOTE:
-                                return importNoteItem({
-                                    name: item.name,
-                                    note: item.notes,
-                                });
-                            case BitwardenType.CREDIT_CARD:
-                                return importCreditCardItem({
-                                    name: item.name,
-                                    note: item.notes,
-                                    cardholderName: item.card.cardholderName,
-                                    number: item.card.number,
-                                    verificationNumber: item.card.code,
-                                    expirationDate: formatCCExpirationDate(item),
-                                });
-                            default:
-                                ignored.push(
-                                    `[${BitwardenTypeMap[item.type] ?? c('Placeholder').t`Other`}] ${item.name}`
-                                );
-                                return;
-                        }
-                    })
-                    .filter(truthy),
-            },
-        ];
+        const vaults: ImportVault[] = Object.entries(groupedItems).map(([folderId, items]) => ({
+            name: getImportedVaultName(folderMap[folderId ?? '']?.name),
+            shareId: null,
+            items: items
+                .map((item): Maybe<ItemImportIntent> => {
+                    switch (item.type) {
+                        case BitwardenType.LOGIN:
+                            const urls = extractUrls(item);
+                            return importLoginItem({
+                                name: item.name,
+                                note: item.notes,
+                                username: item.login.username,
+                                password: item.login.password,
+                                urls: urls.web,
+                                totp: item.login.totp,
+                                appIds: urls.android,
+                                extraFields: extractExtraFields(item),
+                            });
+                        case BitwardenType.NOTE:
+                            return importNoteItem({
+                                name: item.name,
+                                note: item.notes,
+                            });
+                        case BitwardenType.CREDIT_CARD:
+                            return importCreditCardItem({
+                                name: item.name,
+                                note: item.notes,
+                                cardholderName: item.card.cardholderName,
+                                number: item.card.number,
+                                verificationNumber: item.card.code,
+                                expirationDate: formatCCExpirationDate(item),
+                            });
+                        default:
+                            ignored.push(`[${BitwardenTypeMap[item.type] ?? c('Placeholder').t`Other`}] ${item.name}`);
+                            return;
+                    }
+                })
+                .filter(truthy),
+        }));
 
         return { vaults, ignored, warnings: [] };
     } catch (e) {
