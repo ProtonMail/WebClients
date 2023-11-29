@@ -1,5 +1,7 @@
 import { CryptoProxy, PublicKeyReference, SessionKey, toPublicKeyReference } from '@proton/crypto';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
+import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
+import { omit } from '@proton/shared/lib/helpers/object';
 import { disableRandomMock, initRandomMock } from '@proton/testing/lib/mockRandomValues';
 
 import { ATTENDEE_STATUS_API, EVENT_VERIFICATION_STATUS } from '../../lib/calendar/constants';
@@ -17,64 +19,67 @@ import {
 } from '../../lib/interfaces/calendar';
 import { DecryptableKey, DecryptableKey2 } from '../keys/keys.data';
 
-const veventComponent: VcalVeventComponent = {
-    component: 'vevent',
-    components: [
-        {
-            component: 'valarm',
-            action: { value: 'DISPLAY' },
-            trigger: {
-                value: { weeks: 0, days: 0, hours: 15, minutes: 0, seconds: 0, isNegative: true },
+const getVevent = (hasColor = false): VcalVeventComponent => {
+    return {
+        component: 'vevent',
+        components: [
+            {
+                component: 'valarm',
+                action: { value: 'DISPLAY' },
+                trigger: {
+                    value: { weeks: 0, days: 0, hours: 15, minutes: 0, seconds: 0, isNegative: true },
+                },
             },
+        ],
+        uid: { value: '123' },
+        dtstamp: {
+            value: { year: 2019, month: 12, day: 11, hours: 12, minutes: 12, seconds: 12, isUTC: true },
         },
-    ],
-    uid: { value: '123' },
-    dtstamp: {
-        value: { year: 2019, month: 12, day: 11, hours: 12, minutes: 12, seconds: 12, isUTC: true },
-    },
-    dtstart: {
-        value: { year: 2019, month: 12, day: 11, hours: 12, minutes: 12, seconds: 12, isUTC: true },
-    },
-    dtend: {
-        value: { year: 2019, month: 12, day: 12, hours: 12, minutes: 12, seconds: 12, isUTC: true },
-    },
-    summary: { value: 'my title' },
-    comment: [{ value: 'asdasd' }],
-    attendee: [
-        {
-            value: 'mailto:james@bond.co.uk',
-            parameters: {
-                cutype: 'INDIVIDUAL',
-                role: 'REQ-PARTICIPANT',
-                rsvp: 'TRUE',
-                partstat: 'NEEDS-ACTION',
-                'x-pm-token': 'abc',
-                cn: 'james@bond.co.uk',
+        dtstart: {
+            value: { year: 2019, month: 12, day: 11, hours: 12, minutes: 12, seconds: 12, isUTC: true },
+        },
+        dtend: {
+            value: { year: 2019, month: 12, day: 12, hours: 12, minutes: 12, seconds: 12, isUTC: true },
+        },
+        summary: { value: 'my title' },
+        comment: [{ value: 'asdasd' }],
+        color: hasColor ? { value: ACCENT_COLORS_MAP.enzian.color } : undefined,
+        attendee: [
+            {
+                value: 'mailto:james@bond.co.uk',
+                parameters: {
+                    cutype: 'INDIVIDUAL',
+                    role: 'REQ-PARTICIPANT',
+                    rsvp: 'TRUE',
+                    partstat: 'NEEDS-ACTION',
+                    'x-pm-token': 'abc',
+                    cn: 'james@bond.co.uk',
+                },
             },
-        },
-        {
-            value: 'mailto:dr.no@mi6.co.uk',
-            parameters: {
-                cutype: 'INDIVIDUAL',
-                role: 'REQ-PARTICIPANT',
-                rsvp: 'TRUE',
-                partstat: 'TENTATIVE',
-                'x-pm-token': 'bcd',
-                cn: 'Dr No.',
+            {
+                value: 'mailto:dr.no@mi6.co.uk',
+                parameters: {
+                    cutype: 'INDIVIDUAL',
+                    role: 'REQ-PARTICIPANT',
+                    rsvp: 'TRUE',
+                    partstat: 'TENTATIVE',
+                    'x-pm-token': 'bcd',
+                    cn: 'Dr No.',
+                },
             },
-        },
-        {
-            value: 'mailto:moneypenny@mi6.co.uk',
-            parameters: {
-                cutype: 'INDIVIDUAL',
-                role: 'NON-PARTICIPANT',
-                partstat: 'ACCEPTED',
-                rsvp: 'FALSE',
-                cn: 'Miss Moneypenny',
-                'x-pm-token': 'cde',
+            {
+                value: 'mailto:moneypenny@mi6.co.uk',
+                parameters: {
+                    cutype: 'INDIVIDUAL',
+                    role: 'NON-PARTICIPANT',
+                    partstat: 'ACCEPTED',
+                    rsvp: 'FALSE',
+                    cn: 'Miss Moneypenny',
+                    'x-pm-token': 'cde',
+                },
             },
-        },
-    ],
+        ],
+    };
 };
 
 interface CreateCalendarEventData
@@ -150,7 +155,7 @@ describe('calendar encryption', () => {
         // without default notifications
         expect(
             await createCalendarEvent({
-                eventComponent: veventComponent,
+                eventComponent: getVevent(true),
                 privateKey: addressKey,
                 publicKey: calendarKey,
                 isCreateEvent: true,
@@ -203,12 +208,13 @@ describe('calendar encryption', () => {
                 { Token: 'bcd', Status: ATTENDEE_STATUS_API.TENTATIVE },
                 { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED },
             ],
+            Color: ACCENT_COLORS_MAP.enzian.color,
         });
 
         // with default notifications
         expect(
             await createCalendarEvent({
-                eventComponent: veventComponent,
+                eventComponent: getVevent(false),
                 privateKey: addressKey,
                 publicKey: calendarKey,
                 isCreateEvent: true,
@@ -261,12 +267,14 @@ describe('calendar encryption', () => {
                 { Token: 'bcd', Status: ATTENDEE_STATUS_API.TENTATIVE },
                 { Token: 'cde', Status: ATTENDEE_STATUS_API.ACCEPTED },
             ],
+            Color: null,
         });
 
         setVcalProdId('');
     });
 
     it('should roundtrip', async () => {
+        const veventComponent = getVevent(true);
         const addressKey = await CryptoProxy.importPrivateKey({ armoredKey: DecryptableKey2, passphrase: '123' });
         const calendarKey = await CryptoProxy.importPrivateKey({
             armoredKey: DecryptableKey.PrivateKey,
@@ -298,7 +306,7 @@ describe('calendar encryption', () => {
             )
         );
 
-        expect(decryptedVeventComponent).toEqual(veventComponent);
+        expect(decryptedVeventComponent).toEqual(omit(veventComponent, ['color']));
         expect(verificationStatus).toEqual(EVENT_VERIFICATION_STATUS.SUCCESSFUL);
     });
 });

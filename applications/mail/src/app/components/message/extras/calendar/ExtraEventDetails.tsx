@@ -3,7 +3,6 @@ import { useMemo, useRef } from 'react';
 import { c } from 'ttag';
 
 import { IconRow } from '@proton/components';
-import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { ICAL_METHOD } from '@proton/shared/lib/calendar/constants';
 import { getFrequencyString } from '@proton/shared/lib/calendar/recurrence/getFrequencyString';
@@ -70,7 +69,7 @@ const ExtraEventDetails = ({ model, weekStartsOn }: Props) => {
             {!!calendar && (
                 <IconRow
                     title={c('Label').t`Calendar`}
-                    icon={<CalendarSelectIcon color={calendar.Color} />}
+                    icon="calendar-grid"
                     labelClassName="inline-flex pt-0.5"
                 >
                     <span className="text-break">{calendar.Name}</span>

@@ -181,6 +181,8 @@ const CreateEventPopover = ({
                     isCreateEvent={isCreateEvent}
                     isInvitation={isInvitation}
                     setParticipantError={setParticipantError}
+                    isNarrow={isNarrow}
+                    isDrawerApp={isDrawerApp}
                 />
                 <PopoverFooter
                     className={clsx([
