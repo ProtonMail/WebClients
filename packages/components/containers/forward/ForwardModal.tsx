@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -10,6 +10,7 @@ import { ADDRESS_RECEIVE, ENCRYPTION_CONFIGS, ENCRYPTION_TYPES, RECIPIENT_TYPES 
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { Address, DecryptedKey, ForwardingType, OutgoingAddressForwarding } from '@proton/shared/lib/interfaces';
+import { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import { addAddressKeysProcess, getEmailFromKey, splitKeys } from '@proton/shared/lib/keys';
 import illustration from '@proton/styles/assets/img/illustrations/forward-email-verification.svg';
 
@@ -100,12 +101,17 @@ const getDefaultModel = ({ forward, addresses }: { addresses: Address[]; forward
     };
 };
 
+const compareContactEmailByEmail = (a: ContactEmail, b: ContactEmail) => {
+    return a.Email.localeCompare(b.Email);
+};
+
 const encryptionConfig = ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519];
 
 const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
     const isEditing = !!forward;
     const [addresses = []] = useAddresses();
     const [contactEmails = []] = useContactEmails();
+    const contactEmailsSorted = useMemo(() => [...contactEmails].sort(compareContactEmailByEmail), [contactEmails]);
     const api = useApi();
     const getUser = useGetUser();
     const silentApi = <T,>(config: any) => api<T>({ ...config, silence: true });
@@ -359,9 +365,9 @@ const ForwardModal = ({ forward, onClose, ...rest }: Props) => {
                             onValue={(value: string) => setModel({ ...model, forwardeeEmail: value })}
                             required
                         />
-                        {contactEmails.length ? (
+                        {contactEmailsSorted.length ? (
                             <datalist id="contact-emails">
-                                {contactEmails?.map((contactEmail) => (
+                                {contactEmailsSorted?.map((contactEmail) => (
                                     <option key={contactEmail.ID} value={contactEmail.Email}>
                                         {contactEmail.Email}
                                     </option>
