@@ -85,7 +85,7 @@ const SnoozeDropdown = ({ elements, size, labelID }: Props) => {
                 <DropdownButton
                     ref={anchorRef}
                     isOpen={isOpen}
-                    className="color-inherit"
+                    className="color-inherit snooze-dropdown"
                     onClick={handleDropdownClick}
                     shape="ghost"
                     size={size}
