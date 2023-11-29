@@ -130,7 +130,7 @@ const DataRecoverySection = () => {
                                     </Button>
                                 ) : (
                                     <>
-                                        <div className="flex flex-align-items-center">
+                                        <div className="flex flex-align-items-start">
                                             <Toggle
                                                 className="mr-2"
                                                 loading={disableMnemonicModal.open || generateMnemonicModal.open}
@@ -186,7 +186,7 @@ const DataRecoverySection = () => {
                                     </label>
                                 </SettingsLayoutLeft>
                                 <SettingsLayoutRight className="flex-item-fluid pt-2">
-                                    <div className="flex flex-align-items-center">
+                                    <div className="flex flex-align-items-start">
                                         <Toggle
                                             className="mr-2"
                                             loading={loadingDeviceRecovery}
