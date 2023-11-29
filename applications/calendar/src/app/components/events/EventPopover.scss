@@ -1,0 +1,47 @@
+@use 'sass:map';
+@import '~@proton/styles/scss/lib';
+
+.event-popover {
+	&-calendar-border {
+		inline-size: rem(8);
+		border-radius: rem(4);
+		background-color: var(--calendar-color, transparent);
+		margin-inline-end: rem(25);
+		@include media('<=xsmall') {
+			margin-inline-end: rem(18);
+		}
+
+		min-block-size: rem(28);
+		margin-block-end: rem(4);
+
+		&.isUnanswered {
+			// 1 pseudo element for white background
+			// 1 for gradient, because transparency and some other glitches
+			&::after,
+			&::before {
+				content: '';
+				position: absolute;
+				inset: 0;
+				border-radius: rem(4);
+			}
+
+			&::before {
+				z-index: 0;
+				background-color: var(--background-norm);
+				border: 1px solid var(--calendar-color, transparent);
+			}
+
+			&::after {
+				background-image: repeating-linear-gradient(
+					-60deg,
+					transparent,
+					transparent rem(2),
+					var(--calendar-color, transparent) rem(2),
+					var(--calendar-color, transparent) rem(3)
+				);
+				opacity: 0.25;
+				z-index: 2;
+			}
+		}
+	}
+}

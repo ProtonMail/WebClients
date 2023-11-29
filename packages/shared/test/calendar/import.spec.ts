@@ -1,5 +1,6 @@
 import { enUS } from 'date-fns/locale';
 
+import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import truncate from '@proton/utils/truncate';
 
 import { ICAL_CALSCALE, ICAL_METHOD, MAX_CHARS_API } from '../../lib/calendar/constants';
@@ -929,6 +930,82 @@ END:VEVENT`;
             summary: { value: truncate(loremIpsum, MAX_CHARS_API.TITLE) },
             location: { value: truncate(loremIpsum, MAX_CHARS_API.LOCATION) },
             description: { value: truncate(loremIpsum, MAX_CHARS_API.EVENT_DESCRIPTION) },
+            sequence: { value: 0 },
+        });
+    });
+
+    it('should accept events with colors', () => {
+        const vevent = `BEGIN:VEVENT
+COLOR:turquoise
+DTSTAMP:19980309T231000Z
+UID:uid@proton.me
+DTSTART;VALUE=DATE:20080101
+DTEND;VALUE=DATE:20080102
+END:VEVENT`;
+
+        const event = parse(vevent) as VcalVeventComponent;
+
+        expect(
+            getSupportedEvent({
+                vcalVeventComponent: event,
+                hasXWrTimezone: false,
+                guessTzid: 'Asia/Seoul',
+                canImportEventColor: true,
+            })
+        ).toEqual({
+            ...omit(event, ['dtend']),
+            uid: { value: 'uid@proton.me' },
+            sequence: { value: 0 },
+            color: { value: ACCENT_COLORS_MAP.enzian.color },
+        });
+    });
+
+    it('should ignore colors when user is free', () => {
+        const vevent = `BEGIN:VEVENT
+COLOR:turquoise
+DTSTAMP:19980309T231000Z
+UID:uid@proton.me
+DTSTART;VALUE=DATE:20080101
+DTEND;VALUE=DATE:20080102
+END:VEVENT`;
+
+        const event = parse(vevent) as VcalVeventComponent;
+
+        expect(
+            getSupportedEvent({
+                vcalVeventComponent: event,
+                hasXWrTimezone: false,
+                guessTzid: 'Asia/Seoul',
+                canImportEventColor: false,
+            })
+        ).toEqual({
+            ...omit(event, ['dtend', 'color']),
+            uid: { value: 'uid@proton.me' },
+            sequence: { value: 0 },
+        });
+    });
+
+    it('should ignore colors when the format is invalid', () => {
+        const vevent = `BEGIN:VEVENT
+COLOR:invalidColor
+DTSTAMP:19980309T231000Z
+UID:uid@proton.me
+DTSTART;VALUE=DATE:20080101
+DTEND;VALUE=DATE:20080102
+END:VEVENT`;
+
+        const event = parse(vevent) as VcalVeventComponent;
+
+        expect(
+            getSupportedEvent({
+                vcalVeventComponent: event,
+                hasXWrTimezone: false,
+                guessTzid: 'Asia/Seoul',
+                canImportEventColor: true,
+            })
+        ).toEqual({
+            ...omit(event, ['dtend', 'color']),
+            uid: { value: 'uid@proton.me' },
             sequence: { value: 0 },
         });
     });

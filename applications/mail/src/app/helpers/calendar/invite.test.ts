@@ -142,6 +142,7 @@ END:VCALENDAR`;
                     icsBinaryString: invitation,
                     icsFileName: 'test.ics',
                     primaryTimezone: 'America/Sao_Paulo',
+                    canImportEventColor: false,
                 })
             ).toMatchObject({
                 method: 'REQUEST',
@@ -222,6 +223,7 @@ END:VCALENDAR`;
                     icsBinaryString: invitation,
                     icsFileName: 'test.ics',
                     primaryTimezone: 'America/Sao_Paulo',
+                    canImportEventColor: false,
                 })
             ).rejects.toMatchObject(
                 new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
@@ -261,6 +263,7 @@ END:VCALENDAR`;
                     icsBinaryString: invitation,
                     icsFileName: 'test.ics',
                     primaryTimezone: 'America/Sao_Paulo',
+                    canImportEventColor: false,
                 })
             ).rejects.toMatchObject(
                 new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_INVALID, {
@@ -306,6 +309,7 @@ END:VCALENDAR`;
                     icsBinaryString: invitation,
                     icsFileName: 'test.ics',
                     primaryTimezone: 'America/Sao_Paulo',
+                    canImportEventColor: false,
                 })
             ).toMatchObject({
                 method: 'PUBLISH',
@@ -366,6 +370,7 @@ END:VCALENDAR`;
                     icsBinaryString: invitation,
                     icsFileName: 'test.ics',
                     primaryTimezone: 'America/Sao_Paulo',
+                    canImportEventColor: false,
                 })
             ).toEqual({
                 method: 'PUBLISH',
@@ -415,6 +420,7 @@ END:VCALENDAR`;
                     icsBinaryString: invitation,
                     icsFileName: 'test.ics',
                     primaryTimezone: 'America/Sao_Paulo',
+                    canImportEventColor: false,
                 })
             ).resolves.not.toThrow();
         });
@@ -450,6 +456,7 @@ END:VCALENDAR`;
                     icsBinaryString: invitation,
                     icsFileName: 'test.ics',
                     primaryTimezone: 'America/Sao_Paulo',
+                    canImportEventColor: false,
                 })
             ).rejects.toMatchObject(
                 new EventInvitationError(EVENT_INVITATION_ERROR_TYPE.INVITATION_UNSUPPORTED, {
@@ -527,6 +534,7 @@ END:VCALENDAR`;
                     icsBinaryString: invitation,
                     icsFileName: 'test.ics',
                     primaryTimezone: 'America/Sao_Paulo',
+                    canImportEventColor: false,
                 })
             ).resolves.not.toThrow();
         });
@@ -567,6 +575,7 @@ END:VCALENDAR`;
                     icsBinaryString: invitation,
                     icsFileName: 'test.ics',
                     primaryTimezone: 'America/Sao_Paulo',
+                    canImportEventColor: false,
                 })
             ).toMatchObject({
                 method: 'REQUEST',
@@ -648,6 +657,7 @@ END:VCALENDAR`;
                         icsBinaryString: invitation,
                         icsFileName: 'test.ics',
                         primaryTimezone: 'America/Sao_Paulo',
+                        canImportEventColor: false,
                     })
                 ).toEqual(
                     expect.objectContaining({
@@ -694,6 +704,7 @@ END:VCALENDAR`;
                         icsBinaryString: invitation,
                         icsFileName: 'test.ics',
                         primaryTimezone: 'America/Sao_Paulo',
+                        canImportEventColor: false,
                     })
                 ).toEqual(
                     expect.objectContaining({
@@ -753,6 +764,7 @@ END:VCALENDAR`;
                 icsBinaryString: vcal,
                 icsFileName: 'test.ics',
                 primaryTimezone,
+                canImportEventColor: false,
             };
         };
         const localizedVevent = (tzid: string) => ({
@@ -902,6 +914,7 @@ END:VCALENDAR`;
                 icsFileName: 'test.ics',
                 primaryTimezone,
                 hashUid: await generateVeventHashUID(vcal, uid),
+                canImportEventColor: false,
             };
         };
         const localizedVevent = (tzid: string, hashUid: string) => ({
@@ -1012,6 +1025,7 @@ END:VCALENDAR`;
                 icsFileName: 'test.ics',
                 primaryTimezone,
                 hashUid: await generateVeventHashUID(vcal, uid),
+                canImportEventColor: false,
             };
         };
 

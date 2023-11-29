@@ -44,6 +44,7 @@ export enum FeatureCode {
     CalendarFetchMetadataOnly = 'CalendarFetchMetadataOnly',
     CalendarEncryptedSearch = 'CalendarEncryptedSearch',
     CalendarEncryptedSearchSpotlight = 'CalendarEncryptedSearchSpotlight',
+    CalendarEventColorSpotlight = 'CalendarEventColorSpotlight',
     CalendarSharingEnabled = 'CalendarSharingEnabled',
     CalendarSharingSpotlight = 'CalendarSharingSpotlight',
     CleanUTMTrackers = 'CleanUTMTrackers',

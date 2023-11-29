@@ -1,3 +1,4 @@
+import tinycolor, { ColorFormats } from 'tinycolor2';
 import { c } from 'ttag';
 
 import { SimpleMap } from '@proton/shared/lib/interfaces';
@@ -39,3 +40,179 @@ export const getColorName = (color: string) => {
 };
 
 export const getRandomAccentColor = () => ACCENT_COLORS[randomIntFromInterval(0, ACCENT_COLORS.length - 1)];
+
+// Euclidean distance between colors
+const getColorDistance = (color1: ColorFormats.RGBA, color2: ColorFormats.RGBA): number => {
+    return Math.sqrt((color1.r - color2.r) ** 2 + (color2.g - color2.g) ** 2 + (color1.b - color2.b) ** 2);
+};
+
+export const getClosestProtonColor = (inputColor: string): string | undefined => {
+    const color = tinycolor(inputColor);
+
+    if (color.isValid()) {
+        const inputColorRGB = color.toRgb();
+        let closestColor;
+        let closestDistance: number;
+
+        ACCENT_COLORS.forEach((protonColor) => {
+            const protonColorRGB = tinycolor(protonColor).toRgb();
+            const colorDistance = getColorDistance(protonColorRGB, inputColorRGB);
+
+            if (closestDistance === undefined || colorDistance < closestDistance) {
+                closestDistance = colorDistance;
+                closestColor = protonColor;
+            }
+        });
+
+        return closestColor;
+    }
+    return undefined;
+};
+
+// List of CSS3 colors https://www.w3.org/TR/css-color-3/#svg-color
+export const CSS3_COLORS = [
+    'aliceblue',
+    'antiquewhite',
+    'aqua',
+    'aquamarine',
+    'azure',
+    'beige',
+    'bisque',
+    'black',
+    'blanchedalmond',
+    'blue',
+    'blueviolet',
+    'brown',
+    'burlywood',
+    'cadetblue',
+    'chartreuse',
+    'chocolate',
+    'coral',
+    'cornflowerblue',
+    'cornsilk',
+    'crimson',
+    'cyan',
+    'darkblue',
+    'darkcyan',
+    'darkgoldenrod',
+    'darkgray',
+    'darkgreen',
+    'darkgrey',
+    'darkkhaki',
+    'darkmagenta',
+    'darkolivegreen',
+    'darkorange',
+    'darkorchid',
+    'darkred',
+    'darksalmon',
+    'darkseagreen',
+    'darkslateblue',
+    'darkslategray',
+    'darkslategrey',
+    'darkturquoise',
+    'darkviolet',
+    'deeppink',
+    'deepskyblue',
+    'dimgray',
+    'dimgrey',
+    'dodgerblue',
+    'firebrick',
+    'floralwhite',
+    'forestgreen',
+    'fuchsia',
+    'gainsboro',
+    'ghostwhite',
+    'gold',
+    'goldenrod',
+    'gray',
+    'green',
+    'greenyellow',
+    'grey',
+    'honeydew',
+    'hotpink',
+    'indianred',
+    'indigo',
+    'ivory',
+    'khaki',
+    'lavender',
+    'lavenderblush',
+    'lawngreen',
+    'lemonchiffon',
+    'lightblue',
+    'lightcoral',
+    'lightcyan',
+    'lightgoldenrodyellow',
+    'lightgray',
+    'lightgreen',
+    'lightgrey',
+    'lightpink',
+    'lightsalmon',
+    'lightseagreen',
+    'lightskyblue',
+    'lightslategray',
+    'lightslategrey',
+    'lightsteelblue',
+    'lightyellow',
+    'lime',
+    'limegreen',
+    'linen',
+    'magenta',
+    'maroon',
+    'mediumaquamarine',
+    'mediumblue',
+    'mediumorchid',
+    'mediumpurple',
+    'mediumseagreen',
+    'mediumslateblue',
+    'mediumspringgreen',
+    'mediumturquoise',
+    'mediumvioletred',
+    'midnightblue',
+    'mintcream',
+    'mistyrose',
+    'moccasin',
+    'navajowhite',
+    'navy',
+    'oldlace',
+    'olive',
+    'olivedrab',
+    'orange',
+    'orangered',
+    'orchid',
+    'palegoldenrod',
+    'palegreen',
+    'paleturquoise',
+    'palevioletred',
+    'papayawhip',
+    'peachpuff',
+    'peru',
+    'pink',
+    'plum',
+    'powderblue',
+    'purple',
+    'red',
+    'rosybrown',
+    'royalblue',
+    'saddlebrown',
+    'salmon',
+    'sandybrown',
+    'seagreen',
+    'seashell',
+    'sienna',
+    'silver',
+    'skyblue',
+    'slateblue',
+    'slategray',
+    'slategrey',
+    'snow',
+    'springgreen',
+    'steelblue',
+    'tan',
+    'teal',
+    'thistle',
+    'tomato',
+    'turquoise',
+    'violet',
+    'wheat',
+    'yellowgreen',
+];

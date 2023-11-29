@@ -200,8 +200,8 @@ export const getDeleteRecurringEventActions = async ({
             );
             if (!deleteSingleEdits) {
                 dropPersonalPartOperations.push(
-                    ...updatePersonalPartActions.map(({ calendarID, eventID }) => {
-                        return { data: { memberID: originalMemberID, calendarID, eventID } };
+                    ...updatePersonalPartActions.map(({ calendarID, eventID, color }) => {
+                        return { data: { memberID: originalMemberID, calendarID, eventID, color } };
                     })
                 );
             }

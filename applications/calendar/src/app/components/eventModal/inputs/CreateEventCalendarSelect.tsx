@@ -13,7 +13,7 @@ export interface Props extends Omit<SelectProps<string>, 'children'> {
     setModel: (value: EventModel) => void;
     isCreateEvent: boolean;
     frozen?: boolean;
-    isDuplicating: boolean;
+    isColorPerEventEnabled: boolean;
 }
 
 const CreateEventCalendarSelect = ({
@@ -21,7 +21,7 @@ const CreateEventCalendarSelect = ({
     setModel,
     isCreateEvent,
     frozen = false,
-    isDuplicating,
+    isColorPerEventEnabled,
     ...rest
 }: Props) => {
     const [loading, withLoading] = useLoading();
@@ -58,7 +58,7 @@ const CreateEventCalendarSelect = ({
 
     if (frozen) {
         return (
-            <div className="py-2 flex">
+            <div className="py-2 flex w-full">
                 <span className="text-ellipsis" title={name}>
                     {name}
                 </span>
@@ -112,7 +112,7 @@ const CreateEventCalendarSelect = ({
     return (
         <CalendarSelect
             calendarID={calendarID}
-            displayColor={options.length > 1}
+            displayColor={isColorPerEventEnabled ? false : options.length > 1}
             options={options}
             onChange={({ value }) => withLoading(handleChangeCalendar(value))}
             loading={loading}

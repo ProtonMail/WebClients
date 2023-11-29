@@ -13,7 +13,6 @@ import {
     useContactModals,
     useMailSettings,
 } from '@proton/components';
-import CalendarSelectIcon from '@proton/components/components/calendarSelect/CalendarSelectIcon';
 import { useContactEmailsCache } from '@proton/components/containers/contacts/ContactEmailsProvider';
 import { useLinkHandler } from '@proton/components/hooks/useLinkHandler';
 import { getIsCalendarDisabled, getIsSubscribedCalendar } from '@proton/shared/lib/calendar/calendar';
@@ -75,7 +74,7 @@ const PopoverEventContent = ({
     isDrawerApp,
 }: Props) => {
     const [mailSettings] = useMailSettings();
-    const { Name: calendarName, Color } = calendar;
+    const { Name: calendarName } = calendar;
     const { contactEmailsMap } = useContactEmailsCache();
     const { modals: contactModals, onDetails, onEdit } = useContactModals();
 
@@ -333,9 +332,9 @@ const PopoverEventContent = ({
             )}
             <IconRow
                 className="flex-item-fluid"
-                labelClassName="inline-flex pt-0"
+                labelClassName="inline-flex pt-1"
                 title={c('Label').t`Calendar`}
-                icon={<CalendarSelectIcon color={Color} />}
+                icon="calendar-grid"
             >
                 {calendarString}
             </IconRow>

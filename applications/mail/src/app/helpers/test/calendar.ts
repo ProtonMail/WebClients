@@ -1,10 +1,10 @@
-import {getIsAllDay} from '@proton/shared/lib/calendar/veventHelper';
 import { getUnixTime } from 'date-fns';
 
 import { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { createCalendarEvent } from '@proton/shared/lib/calendar/serialize';
 import { getDtendProperty, propertyToUTCDate } from '@proton/shared/lib/calendar/vcalConverter';
 import { getPropertyTzid } from '@proton/shared/lib/calendar/vcalHelper';
+import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { booleanToNumber } from '@proton/shared/lib/helpers/boolean';
 import {
     Attendee,
@@ -97,5 +97,6 @@ export const generateApiCalendarEvent = async ({
         Notifications,
         AttendeesEvents: AttendeesEventContent.map((card) => withAuthorCard(card, author)),
         Attendees: toApiAttendees(Attendees),
+        Color: null,
     };
 };

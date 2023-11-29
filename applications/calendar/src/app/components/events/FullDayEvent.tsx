@@ -1,6 +1,6 @@
 import { CSSProperties, Ref, useMemo } from 'react';
 
-import { Icon } from '@proton/components';
+import { Icon, useUser } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { CalendarViewEvent, CalendarViewEventTemporaryEvent } from '../../containers/calendar/interface';
@@ -36,16 +36,21 @@ const FullDayEvent = ({
     onClick,
     tzid,
 }: Props) => {
+    const [{ hasPaidMail }] = useUser();
     const { start, data: targetEventData, isAllDay, isAllPartDay } = event;
 
     const model = useReadEvent(targetEventData.eventReadResult?.result, tzid);
-    const { isEventReadLoading, calendarColor, eventReadError, eventTitleSafe } = getEventInformation(event, model);
+    const { isEventReadLoading, color, eventReadError, eventTitleSafe } = getEventInformation(
+        event,
+        model,
+        hasPaidMail
+    );
 
     const { isUnanswered, isCancelled } = getEventStatusTraits(model);
 
     const eventStyle = useMemo(() => {
-        return getEventStyle(calendarColor);
-    }, [calendarColor]);
+        return getEventStyle(color);
+    }, [color]);
 
     const startTimeString = useMemo(() => {
         if (start && (!isAllDay || isAllPartDay)) {

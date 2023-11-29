@@ -1,5 +1,6 @@
-import { c } from 'ttag';
+import { c, msgid } from 'ttag';
 
+import { MAX_CALENDARS_PAID } from '@proton/shared/lib/calendar/constants';
 import { BRAND_NAME, CALENDAR_APP_NAME, DRIVE_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { UpsellFeature } from './interface';
@@ -13,7 +14,9 @@ export type UpsellFeatureName =
     | 'more-email-addresses'
     | 'custom-email-domains'
     | 'email-aliases'
-    | 'snooze-messages';
+    | 'snooze-messages'
+    | 'more-calendars'
+    | 'calendar-sharing';
 
 const domain = 'proton.me';
 // Dirty fix because we cannot add twice the same variable in a string with ttag
@@ -68,5 +71,20 @@ export const upsellFeatures: Record<UpsellFeatureName, UpsellFeature> = {
         icon: 'clock',
         getText: () => c('new_plans: feature').t`Custom snooze time`,
         getTooltip: () => c('new_plans: feature info').t`Snooze messages and get reminded when you want`,
+    },
+    'more-calendars': {
+        icon: 'calendar-grid',
+        getText: () => {
+            const maximumNumberOfCalendars = MAX_CALENDARS_PAID;
+            return c('new_plans: feature').ngettext(
+                msgid`${maximumNumberOfCalendars} calendar`,
+                `${maximumNumberOfCalendars} calendars`,
+                maximumNumberOfCalendars
+            );
+        },
+    },
+    'calendar-sharing': {
+        icon: 'users',
+        getText: () => c('new_plans: feature').t`Calendar sharing`,
     },
 };

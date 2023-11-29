@@ -57,6 +57,7 @@ export const modelToGeneralProperties = ({
     location,
     description,
     status,
+    color,
     rest,
 }: Partial<EventModel>): Omit<VcalVeventComponent, 'dtstart' | 'dtend'> => {
     const properties = omit(rest, ['dtstart', 'dtend']);
@@ -76,6 +77,11 @@ export const modelToGeneralProperties = ({
     if (description) {
         properties.description = { value: description.slice(0, MAX_CHARS_API.EVENT_DESCRIPTION) };
     }
+
+    if (color) {
+        properties.color = { value: color };
+    }
+
     properties.status = { value: status || ICAL_EVENT_STATUS.CONFIRMED };
 
     return properties;

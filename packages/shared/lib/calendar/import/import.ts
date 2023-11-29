@@ -130,6 +130,7 @@ interface ExtractSupportedEventArgs {
     formatOptions?: FormatOptions;
     calendarTzid?: string;
     guessTzid: string;
+    canImportEventColor?: boolean;
 }
 export const extractSupportedEvent = async ({
     method,
@@ -138,6 +139,7 @@ export const extractSupportedEvent = async ({
     formatOptions,
     calendarTzid,
     guessTzid,
+    canImportEventColor,
 }: ExtractSupportedEventArgs) => {
     const componentId = getComponentIdentifier(vcalComponentWithMaybeErrors, formatOptions);
     const isInvitation = method !== ICAL_METHOD.PUBLISH;
@@ -189,6 +191,7 @@ export const extractSupportedEvent = async ({
         isEventInvitation: false,
         generatedHashUid: generateHashUid,
         componentId,
+        canImportEventColor,
     });
 };
 
@@ -199,6 +202,7 @@ export const getSupportedEvents = async ({
     calscale,
     xWrTimezone,
     primaryTimezone,
+    canImportEventColor,
 }: {
     components: (VcalCalendarComponentWithMaybeErrors | VcalErrorComponent)[];
     method: ICAL_METHOD;
@@ -206,6 +210,7 @@ export const getSupportedEvents = async ({
     calscale?: string;
     xWrTimezone?: string;
     primaryTimezone: string;
+    canImportEventColor?: boolean;
 }) => {
     if (calscale?.toLowerCase() !== 'gregorian') {
         return [new ImportEventError(IMPORT_EVENT_ERROR_TYPE.NON_GREGORIAN, 'vcalendar', '')];
@@ -223,6 +228,7 @@ export const getSupportedEvents = async ({
                     hasXWrTimezone,
                     formatOptions,
                     guessTzid,
+                    canImportEventColor,
                 });
                 return supportedEvent;
             } catch (e: any) {
