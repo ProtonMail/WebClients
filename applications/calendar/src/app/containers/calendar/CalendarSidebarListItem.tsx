@@ -22,7 +22,7 @@ import {
     getIsPersonalCalendar,
     getIsSubscribedCalendar,
 } from '@proton/shared/lib/calendar/calendar';
-import { CALENDAR_SETTINGS_SECTION_ID, COLORS } from '@proton/shared/lib/calendar/constants';
+import { COLORS } from '@proton/shared/lib/calendar/constants';
 import { getCalendarSubpagePath } from '@proton/shared/lib/calendar/settingsRoutes';
 import {
     getCalendarHasSubscriptionParameters,
@@ -37,7 +37,6 @@ interface Props {
     calendar: VisualCalendar | SubscribedCalendar;
     loadingVisibility?: boolean;
     loadingSubscriptionParameters?: boolean;
-    isCalendarSharingEnabled: boolean;
     onChangeVisibility: (id: string, checked: boolean) => void;
     onOpenImportCalendarModal: (calendar: VisualCalendar | SubscribedCalendar) => void;
     onOpenShareCalendarModal: (calendar: VisualCalendar | SubscribedCalendar) => void;
@@ -48,7 +47,6 @@ const CalendarSidebarListItem = ({
     calendar,
     loadingVisibility = false,
     loadingSubscriptionParameters = false,
-    isCalendarSharingEnabled,
     onChangeVisibility = noop,
     onOpenImportCalendarModal,
     onOpenShareCalendarModal,
@@ -144,28 +142,16 @@ const CalendarSidebarListItem = ({
                                     >
                                         {c('Action').t`Edit`}
                                     </DropdownMenuButton>
-                                    {isPersonalCalendar &&
-                                        isOwnedCalendar &&
-                                        user.hasPaidMail &&
-                                        (isCalendarSharingEnabled ? (
-                                            <DropdownMenuButton
-                                                className="text-left"
-                                                onClick={() => {
-                                                    onOpenShareCalendarModal(calendar);
-                                                }}
-                                            >
-                                                {c('Action').t`Share`}
-                                            </DropdownMenuButton>
-                                        ) : (
-                                            <DropdownMenuLink
-                                                as={SettingsLink}
-                                                path={getCalendarSubpagePath(calendar.ID, {
-                                                    sectionId: CALENDAR_SETTINGS_SECTION_ID.SHARE,
-                                                })}
-                                            >
-                                                {c('Action').t`Share`}
-                                            </DropdownMenuLink>
-                                        ))}
+                                    {isPersonalCalendar && isOwnedCalendar && user.hasPaidMail && (
+                                        <DropdownMenuButton
+                                            className="text-left"
+                                            onClick={() => {
+                                                onOpenShareCalendarModal(calendar);
+                                            }}
+                                        >
+                                            {c('Action').t`Share`}
+                                        </DropdownMenuButton>
+                                    )}
                                     {isCalendarWritable && !isCalendarDisabled && (
                                         <DropdownMenuButton
                                             className="text-left"
