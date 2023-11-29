@@ -37,10 +37,10 @@ import {
     useSettingsLink,
 } from '../../components';
 import {
-    useAddresses,
     useApi,
     useAuthentication,
     useEventManager,
+    useGetAddresses,
     useMembers,
     useNotifications,
     useOrganization,
@@ -62,7 +62,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const { createNotification } = useNotifications();
     const goToSettings = useSettingsLink();
 
-    const [addresses] = useAddresses();
+    const getAddresses = useGetAddresses();
     const [members = [], loadingMembers] = useMembers();
     const [loading, withLoading] = useLoading();
     const [organization] = useOrganization();
@@ -86,7 +86,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     };
 
     const selfMemberID = selfMember?.ID;
-    const minStorage = organization.RequiresKey ? 5 : 500;
+    const minStorage = organization?.RequiresKey ? 5 : 500;
     // Storage can be undefined in the beginning because org is undefined. So we keep it floating until it's set.
     const storageValue =
         model.storage === -1 ? clamp(minStorage * GIGA, storageRange.min, storageRange.max) : model.storage;
@@ -109,10 +109,10 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
 
     const { title, onSubmit, section } = (() => {
         if (step === STEPS.NAME) {
-            const title = organization.RequiresKey
+            const title = organization?.RequiresKey
                 ? c('Title').t`Set organization name`
                 : c('familyOffer_2023:Title').t`Set family name`;
-            const label = organization.RequiresKey
+            const label = organization?.RequiresKey
                 ? c('Label').t`Organization name`
                 : c('familyOffer_2023:Label').t`Family name`;
 
@@ -139,7 +139,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                     await (hasPaidVpn && api(updateVPN(selfMemberID, VPN_CONNECTIONS)));
                     await api(updateOrganizationName(model.name));
 
-                    if (organization.RequiresKey) {
+                    if (organization?.RequiresKey) {
                         setStep(STEPS.PASSWORD);
                     } else {
                         await setStepStorage();
@@ -201,6 +201,7 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
                             encryptionConfig: ENCRYPTION_CONFIGS[ENCRYPTION_TYPES.CURVE25519],
                         });
 
+                    const addresses = await getAddresses();
                     if (getHasMigratedAddressKeys(addresses)) {
                         await api(
                             updateOrganizationKeysV2({
@@ -263,13 +264,13 @@ const SetupOrganizationModal = ({ onClose, ...rest }: ModalProps) => {
     const handleClose = loading ? noop : onClose;
 
     const handleBack = () => {
-        if (organization.RequiresKey && step) {
+        if (organization?.RequiresKey && step) {
             setStep(step - 1);
             return;
         }
 
         // Going back when the organization don't requires a key should take user back to the name step
-        if (!organization.RequiresKey && step === STEPS.STORAGE) {
+        if (!organization?.RequiresKey && step === STEPS.STORAGE) {
             setStep(STEPS.NAME);
             return;
         }

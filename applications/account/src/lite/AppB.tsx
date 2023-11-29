@@ -8,7 +8,6 @@ import {
     ConfigProvider,
     CreateNotificationOptions,
     ErrorBoundary,
-    FeaturesProvider,
     Icons,
     ModalsProvider,
     NotificationsChildren,
@@ -34,6 +33,7 @@ import noop from '@proton/utils/noop';
 
 import * as config from '../app/config';
 import locales from '../app/locales';
+import AccountStoreProvider from '../app/store/AccountStoreProvider';
 import MainContainer from './MainContainer';
 import Setup from './Setup';
 import broadcast, { MessageType } from './broadcast';
@@ -111,28 +111,32 @@ const App = () => {
     };
 
     return (
-        <ConfigProvider config={enhancedConfig}>
-            <CompatibilityCheck>
-                <Icons />
-                <RightToLeftProvider>
-                    <Fragment key={UID}>
-                        <ThemeProvider>
-                            <Router>
-                                <PreventLeaveProvider>
-                                    <NotificationsProvider>
-                                        <NotificationsHijack
-                                            onCreate={
-                                                redirect || action === SupportedActions.SubscribeAccountLink
-                                                    ? undefined
-                                                    : handleNotificationCreate
-                                            }
-                                        >
-                                            <ModalsProvider>
-                                                <ApiProvider UID={UID} config={enhancedConfig} onLogout={handleLogout}>
-                                                    <AuthenticationProvider store={authenticationValue}>
-                                                        <CacheProvider cache={cache}>
-                                                            <UnleashFlagProvider>
-                                                                <FeaturesProvider>
+        <AccountStoreProvider>
+            <ConfigProvider config={enhancedConfig}>
+                <CompatibilityCheck>
+                    <Icons />
+                    <RightToLeftProvider>
+                        <Fragment key={UID}>
+                            <ThemeProvider>
+                                <Router>
+                                    <PreventLeaveProvider>
+                                        <NotificationsProvider>
+                                            <NotificationsHijack
+                                                onCreate={
+                                                    redirect || action === SupportedActions.SubscribeAccountLink
+                                                        ? undefined
+                                                        : handleNotificationCreate
+                                                }
+                                            >
+                                                <ModalsProvider>
+                                                    <ApiProvider
+                                                        UID={UID}
+                                                        config={enhancedConfig}
+                                                        onLogout={handleLogout}
+                                                    >
+                                                        <AuthenticationProvider store={authenticationValue}>
+                                                            <CacheProvider cache={cache}>
+                                                                <UnleashFlagProvider>
                                                                     <NotificationsChildren />
                                                                     <ErrorBoundary
                                                                         big
@@ -149,21 +153,21 @@ const App = () => {
                                                                             </Setup>
                                                                         )}
                                                                     </ErrorBoundary>
-                                                                </FeaturesProvider>
-                                                            </UnleashFlagProvider>
-                                                        </CacheProvider>
-                                                    </AuthenticationProvider>
-                                                </ApiProvider>
-                                            </ModalsProvider>
-                                        </NotificationsHijack>
-                                    </NotificationsProvider>
-                                </PreventLeaveProvider>
-                            </Router>
-                        </ThemeProvider>
-                    </Fragment>
-                </RightToLeftProvider>
-            </CompatibilityCheck>
-        </ConfigProvider>
+                                                                </UnleashFlagProvider>
+                                                            </CacheProvider>
+                                                        </AuthenticationProvider>
+                                                    </ApiProvider>
+                                                </ModalsProvider>
+                                            </NotificationsHijack>
+                                        </NotificationsProvider>
+                                    </PreventLeaveProvider>
+                                </Router>
+                            </ThemeProvider>
+                        </Fragment>
+                    </RightToLeftProvider>
+                </CompatibilityCheck>
+            </ConfigProvider>
+        </AccountStoreProvider>
     );
 };
 

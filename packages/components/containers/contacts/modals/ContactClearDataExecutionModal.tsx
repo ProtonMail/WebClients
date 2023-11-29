@@ -15,7 +15,7 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '../../../components';
-import { useApi, useContacts, useEventManager, useUserKeys } from '../../../hooks';
+import { useApi, useContacts, useEventManager, useGetUserKeys } from '../../../hooks';
 
 export interface ContactClearDataExecutionProps {
     errorKey: Key;
@@ -27,7 +27,7 @@ const ContactClearDataExecutionModal = ({ errorKey, ...rest }: Props) => {
     const [contacts = [], loadingContacts] = useContacts();
     const api = useApi();
     const { call } = useEventManager();
-    const [userKeys] = useUserKeys();
+    const getUserKeys = useGetUserKeys();
 
     const [progress, setProgress] = useState(0);
     const [updated, setUpdated] = useState(0);
@@ -43,6 +43,7 @@ const ContactClearDataExecutionModal = ({ errorKey, ...rest }: Props) => {
         }
 
         const execute = async () => {
+            const userKeys = await getUserKeys();
             await dropDataEncryptedWithAKey(
                 contacts,
                 errorKey,

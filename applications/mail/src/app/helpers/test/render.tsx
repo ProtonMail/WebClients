@@ -1,16 +1,22 @@
-import * as React from 'react';
-import { ReactElement, ReactNode, useRef } from 'react';
+import { PropsWithChildren, ReactElement, ReactNode, useRef } from 'react';
 import { Provider as ReduxProvider } from 'react-redux';
 import { Route, Router } from 'react-router';
 
-import { RenderResult as OriginalRenderResult, act, render as originalRender } from '@testing-library/react';
+import {
+    RenderResult as OriginalRenderResult,
+    RenderOptions,
+    act,
+    render as originalRender,
+} from '@testing-library/react';
 import { act as actHook, renderHook as originalRenderHook } from '@testing-library/react-hooks';
 import { MemoryHistory, createMemoryHistory } from 'history';
 
+import { getModelState } from '@proton/account/test';
 import {
     CacheProvider,
     CalendarModelEventManagerProvider,
     EventModelListener,
+    FeatureCode,
     ModalsChildren,
     ModalsProvider,
     PrivateAuthenticationStore,
@@ -19,12 +25,23 @@ import SpotlightProvider from '@proton/components/components/spotlight/Provider'
 import ApiContext from '@proton/components/containers/api/apiContext';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import ConfigProvider from '@proton/components/containers/config/Provider';
-import FeaturesProvider from '@proton/components/containers/features/FeaturesProvider';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
+import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { ProtonConfig } from '@proton/shared/lib/interfaces';
+import {
+    ApiEnvironmentConfig,
+    CachedOrganizationKey,
+    DecryptedKey,
+    Organization,
+    ProtonConfig,
+    SubscriptionModel,
+    UserModel,
+    UserSettings,
+} from '@proton/shared/lib/interfaces';
+import { DEFAULT_MAILSETTINGS, DELAY_IN_SECONDS, PM_SIGNATURE } from '@proton/shared/lib/mail/mailSettings';
 import { ConversationCountsModel, MessageCountsModel } from '@proton/shared/lib/models';
+import { registerFeatureFlagsApiMock } from '@proton/testing/lib/features';
 
 import { CheckAllRefProvider } from 'proton-mail/containers/CheckAllRefProvider';
 import QuickSettingsTestProvider from 'proton-mail/helpers/test/quick-settings';
@@ -37,7 +54,8 @@ import { MailboxContainerContextProvider } from '../../containers/mailbox/Mailbo
 import ChecklistsProvider from '../../containers/onboardingChecklist/provider/ChecklistsProvider';
 import { MailContentRefProvider } from '../../hooks/useClickMailContent';
 import { store, useSetReduxThunkExtraArgs } from '../../logic/store';
-import { api, mockDomApi, registerFeatureFlagsApiMock, registerMinimalFlags } from './api';
+import { MailState, extendStore, setupStore } from '../../store/store';
+import { api, getFeatureFlags, mockDomApi } from './api';
 import { minimalCache, mockCache } from './cache';
 import NotificationsTestProvider from './notifications';
 
@@ -89,41 +107,39 @@ const TestProvider = ({ children }: Props) => {
                             <CalendarModelEventManagerProvider>
                                 <CacheProvider cache={mockCache}>
                                     <QuickSettingsTestProvider>
-                                        <FeaturesProvider>
-                                            <SpotlightProvider>
-                                                <DrawerProvider>
-                                                    <ModalsChildren />
-                                                    <EventModelListener
-                                                        models={[ConversationCountsModel, MessageCountsModel]}
-                                                    />
-                                                    <ReduxProviderWrapper>
-                                                        <MailContentRefProvider mailContentRef={contentRef}>
-                                                            <ChecklistsProvider>
-                                                                <MailboxContainerContextProvider
-                                                                    isResizing={false}
-                                                                    containerRef={contentRef}
-                                                                    elementID={undefined}
-                                                                >
-                                                                    <ComposeProvider onCompose={onCompose}>
-                                                                        <CheckAllRefProvider>
-                                                                            <Router history={history}>
-                                                                                <Route path={MAIN_ROUTE_PATH}>
-                                                                                    <EncryptedSearchProvider>
-                                                                                        <LabelActionsContextProvider>
-                                                                                            {children}
-                                                                                        </LabelActionsContextProvider>
-                                                                                    </EncryptedSearchProvider>
-                                                                                </Route>
-                                                                            </Router>
-                                                                        </CheckAllRefProvider>
-                                                                    </ComposeProvider>
-                                                                </MailboxContainerContextProvider>
-                                                            </ChecklistsProvider>
-                                                        </MailContentRefProvider>
-                                                    </ReduxProviderWrapper>
-                                                </DrawerProvider>
-                                            </SpotlightProvider>
-                                        </FeaturesProvider>
+                                        <SpotlightProvider>
+                                            <DrawerProvider>
+                                                <ModalsChildren />
+                                                <EventModelListener
+                                                    models={[ConversationCountsModel, MessageCountsModel]}
+                                                />
+                                                <ReduxProviderWrapper>
+                                                    <MailContentRefProvider mailContentRef={contentRef}>
+                                                        <ChecklistsProvider>
+                                                            <MailboxContainerContextProvider
+                                                                isResizing={false}
+                                                                containerRef={contentRef}
+                                                                elementID={undefined}
+                                                            >
+                                                                <ComposeProvider onCompose={onCompose}>
+                                                                    <CheckAllRefProvider>
+                                                                        <Router history={history}>
+                                                                            <Route path={MAIN_ROUTE_PATH}>
+                                                                                <EncryptedSearchProvider>
+                                                                                    <LabelActionsContextProvider>
+                                                                                        {children}
+                                                                                    </LabelActionsContextProvider>
+                                                                                </EncryptedSearchProvider>
+                                                                            </Route>
+                                                                        </Router>
+                                                                    </CheckAllRefProvider>
+                                                                </ComposeProvider>
+                                                            </MailboxContainerContextProvider>
+                                                        </ChecklistsProvider>
+                                                    </MailContentRefProvider>
+                                                </ReduxProviderWrapper>
+                                            </DrawerProvider>
+                                        </SpotlightProvider>
                                     </QuickSettingsTestProvider>
                                 </CacheProvider>
                             </CalendarModelEventManagerProvider>
@@ -143,41 +159,111 @@ export const tick = () => {
     return act(() => Promise.resolve());
 };
 
-export const render = async (ui: ReactElement, useMinimalCache = true): Promise<RenderResult> => {
+interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
+    preloadedState?: Partial<MailState>;
+}
+
+export const getStoreWrapper = (preloadedState?: ExtendedRenderOptions['preloadedState']) => {
+    const store = setupStore({
+        preloadedState: {
+            user: getModelState({ UsedSpace: 10, MaxSpace: 100, Flags: {} } as UserModel),
+            addresses: getModelState([]),
+            addressKeys: {},
+            userKeys: getModelState([{ publicKey: {}, privateKey: {} } as DecryptedKey]),
+            userSettings: getModelState({ Flags: {} } as UserSettings),
+            mailSettings: getModelState({
+                ...DEFAULT_MAILSETTINGS,
+                PMSignature: PM_SIGNATURE.ENABLED,
+                DelaySendSeconds: DELAY_IN_SECONDS.NONE,
+            }),
+            subscription: getModelState({} as SubscriptionModel),
+            organization: getModelState({} as Organization),
+            organizationKey: getModelState({} as CachedOrganizationKey),
+            userInvitations: getModelState([]),
+            contacts: getModelState([]),
+            categories: getModelState([]),
+            contactEmails: getModelState([]),
+            filters: getModelState([]),
+            importerConfig: getModelState({} as ApiEnvironmentConfig),
+            features: getFeatureFlags([[FeatureCode.SLIntegration, true]]),
+            ...preloadedState,
+        },
+    });
+    extendStore({ api: api, eventManager: jest.fn() as any });
+
+    function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
+        return <ProtonStoreProvider store={store}>{children}</ProtonStoreProvider>;
+    }
+
+    return { Wrapper, store };
+};
+
+export const render = async (
+    ui: ReactElement,
+    useMinimalCache = true,
+    { preloadedState, ...renderOptions }: ExtendedRenderOptions = {}
+): Promise<RenderResult> => {
     mockDomApi();
     registerFeatureFlagsApiMock();
 
     if (useMinimalCache) {
         minimalCache();
-        registerMinimalFlags();
     }
 
-    const result = originalRender(<TestProvider>{ui}</TestProvider>);
+    const { Wrapper } = getStoreWrapper(preloadedState);
+
+    const result = originalRender(
+        <Wrapper>
+            <TestProvider>{ui}</TestProvider>
+        </Wrapper>,
+        renderOptions
+    );
     await tick(); // Should not be necessary, would be better not to use it, but fails without
 
     const rerender = async (ui: ReactElement) => {
-        result.rerender(<TestProvider>{ui}</TestProvider>);
+        result.rerender(
+            <Wrapper>
+                <TestProvider>{ui}</TestProvider>
+            </Wrapper>
+        );
         await tick(); // Should not be necessary, would be better not to use it, but fails without
     };
 
     const unmount = () => {
         // Unmounting the component not the whole context
-        result.rerender(<TestProvider>{null}</TestProvider>);
+        result.rerender(
+            <Wrapper>
+                <TestProvider>{null}</TestProvider>
+            </Wrapper>
+        );
         return true;
     };
 
     return { ...result, rerender, unmount };
 };
 
-export const renderHook = async <TProps, TResult>(callback: (props: TProps) => TResult, useMinimalCache = true) => {
+export const renderHook = async <TProps, TResult>(
+    callback: (props: TProps) => TResult,
+    useMinimalCache = true,
+    preloadedState: ExtendedRenderOptions['preloadedState'] = {}
+) => {
     registerFeatureFlagsApiMock();
 
     if (useMinimalCache) {
         minimalCache();
-        registerMinimalFlags();
     }
 
-    const result = originalRenderHook<TProps, TResult>(callback, { wrapper: TestProvider as any });
+    const { Wrapper } = getStoreWrapper(preloadedState);
+
+    function HookWrapper({ children }: PropsWithChildren<{}>): JSX.Element {
+        return (
+            <Wrapper>
+                <TestProvider>{children}</TestProvider>
+            </Wrapper>
+        );
+    }
+
+    const result = originalRenderHook<TProps, TResult>(callback, { wrapper: HookWrapper });
     await actHook(() => wait(0));
     return result;
 };

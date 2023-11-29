@@ -34,7 +34,7 @@ const useBlockSender = ({ elements, onCloseDropdown }: Props) => {
     const [blockSenderModal, handleShowBlockSenderModal] = useModalTwo(BlockSenderModal);
 
     const senders = useMemo(() => {
-        return getSendersToBlock(elements, incomingDefaultsAddresses, addresses);
+        return getSendersToBlock(elements, incomingDefaultsAddresses, addresses || []);
     }, [elements, incomingDefaultsAddresses, addresses]);
 
     // We can display the block sender option if:

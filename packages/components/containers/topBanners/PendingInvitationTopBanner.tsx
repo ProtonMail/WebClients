@@ -1,34 +1,21 @@
-import { useEffect } from 'react';
-
 import { c } from 'ttag';
 
 import { useModalState, useSettingsLink } from '@proton/components/components';
-import usePendingUserInvitations from '@proton/components/hooks/usePendingUserInvitations';
 import useUid from '@proton/components/hooks/useUid';
 import { APPS, APP_NAMES, BRAND_NAME } from '@proton/shared/lib/constants';
-import { UserInvitationModel } from '@proton/shared/lib/models';
 
-import { useCache, useConfig, useOrganization } from '../../hooks';
+import { useConfig, usePendingUserInvitations } from '../../hooks';
 import PendingInvitationModal from '../payments/subscription/PendingInvitationModal';
 import TopBanner from './TopBanner';
 
 const PendingInvitationTopBanner = () => {
-    const cache = useCache();
     const protonConfig = useConfig();
     const [invites = []] = usePendingUserInvitations();
-    const [organization] = useOrganization();
     const goToSettings = useSettingsLink();
     const [modalProps, setModal, render] = useModalState();
     const uid = useUid('pending-invitation-top-banner');
 
     const inviteLengths = invites.length;
-
-    useEffect(() => {
-        // Force refresh the invitations when the organization changes since this could cause errors in the invitations
-        if (cache.get(UserInvitationModel.key) && organization) {
-            cache.delete(UserInvitationModel.key);
-        }
-    }, [organization]);
 
     const allowedApps: APP_NAMES[] = [APPS.PROTONACCOUNT, APPS.PROTONCALENDAR, APPS.PROTONMAIL, APPS.PROTONDRIVE];
     if (!allowedApps.includes(protonConfig.APP_NAME)) {

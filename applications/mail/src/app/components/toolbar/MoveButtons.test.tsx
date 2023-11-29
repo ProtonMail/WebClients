@@ -1,9 +1,10 @@
 import { screen } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { LABEL_TYPE, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { Label } from '@proton/shared/lib/interfaces';
 
-import { addToCache, clearAll, minimalCache, render } from '../../helpers/test/helper';
+import { clearAll, minimalCache, render } from '../../helpers/test/helper';
 import MoveButtons from './MoveButtons';
 
 const labelID = 'labelID';
@@ -38,9 +39,12 @@ describe('MoveButtons', () => {
     `('should display trash, archive and spam actions in $label', async ({ labelID }) => {
         const props = getProps(labelID);
         minimalCache();
-        addToCache('Labels', labels);
 
-        await render(<MoveButtons {...props} />, false);
+        await render(<MoveButtons {...props} />, false, {
+            preloadedState: {
+                categories: getModelState(labels),
+            },
+        });
 
         // Actions displayed
         screen.getByText('Move to trash');

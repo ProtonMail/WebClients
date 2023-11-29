@@ -11,10 +11,10 @@ import { missingKeysSelfProcess } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import {
-    useAddresses,
     useApi,
     useAuthentication,
     useEventManager,
+    useGetAddresses,
     useGetUserKeys,
     useModals,
     useNotifications,
@@ -36,14 +36,15 @@ const PmMeButton = ({ children }: { children: ReactNode }) => {
     const api = useApi();
     const { call } = useEventManager();
     const authentication = useAuthentication();
-    const [addresses, loadingAddresses] = useAddresses();
+    const getAddresses = useGetAddresses();
     const [{ premiumDomains }, loadingProtonDomains] = useProtonDomains();
     const getUserKeys = useGetUserKeys();
-    const isLoadingDependencies = loadingAddresses || loadingProtonDomains;
+    const isLoadingDependencies = loadingProtonDomains;
     const [Domain = ''] = premiumDomains;
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => user);
 
     const createPremiumAddress = async () => {
+        const addresses = await getAddresses();
         const [{ DisplayName = '', Signature = '' } = {}] = addresses || [];
         await new Promise<string>((resolve, reject) => {
             createModal(<UnlockModal onClose={() => reject()} onSuccess={resolve} />);

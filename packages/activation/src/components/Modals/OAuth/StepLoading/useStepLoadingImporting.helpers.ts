@@ -15,7 +15,7 @@ import { getRandomAccentColor } from '@proton/shared/lib/colors';
 import { getTimezone } from '@proton/shared/lib/date/timezone';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { Address, Api, DecryptedAddressKey } from '@proton/shared/lib/interfaces';
+import { Address, Api } from '@proton/shared/lib/interfaces';
 import { Calendar } from '@proton/shared/lib/interfaces/calendar';
 import { GetAddressKeys } from '@proton/shared/lib/interfaces/hooks/GetAddressKeys';
 import { getPrimaryKey } from '@proton/shared/lib/keys';
@@ -43,11 +43,12 @@ interface StartImporterProps {
 interface CreatedCalendarType extends ImporterCalendar {
     destination: string;
 }
+
 interface CreateCalendarProps {
     api: Api;
     calendars: ImporterCalendar[];
     hasNoCalendar: boolean;
-    getAddressKeys: (key: string) => Promise<DecryptedAddressKey[]>;
+    getAddressKeys: GetAddressKeys;
     increaseCreatedCalendarCount: () => void;
     activeAddresses?: Address[];
 }

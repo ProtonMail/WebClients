@@ -38,7 +38,7 @@ import {
     useEventManager,
     useGetAddressKeys,
     useGetAddresses,
-    useGetOrganizationKeyRaw,
+    useGetOrganizationKey,
     useGetUserKeys,
     useNotifications,
     useUser,
@@ -96,7 +96,7 @@ const ChangePasswordModal = ({ mode, onSessionRecovery, onSuccess, onClose, ...r
     const { call, stop, start } = useEventManager();
     const authentication = useAuthentication();
     const { createNotification } = useNotifications();
-    const getOrganizationKeyRaw = useGetOrganizationKeyRaw();
+    const getOrganizationKey = useGetOrganizationKey();
     const getUserKeys = useGetUserKeys();
     const getAddressKeys = useGetAddressKeys();
     const getAddresses = useGetAddresses();
@@ -109,7 +109,7 @@ const ChangePasswordModal = ({ mode, onSessionRecovery, onSuccess, onClose, ...r
 
     const [User] = useUser();
 
-    const { isSubUser, isAdmin, Name, Email } = User;
+    const { isSubUser, Name, Email } = User;
 
     const [inputs, setInputs] = useState<Inputs>({
         oldPassword: '',
@@ -319,7 +319,7 @@ const ChangePasswordModal = ({ mode, onSessionRecovery, onSuccess, onClose, ...r
                         const [addresses, userKeysList, organizationKey] = await Promise.all([
                             getAddresses(),
                             getUserKeys(),
-                            isAdmin ? getOrganizationKeyRaw() : undefined,
+                            getOrganizationKey(),
                         ]);
 
                         validateNewPasswords();
@@ -366,7 +366,7 @@ const ChangePasswordModal = ({ mode, onSessionRecovery, onSuccess, onClose, ...r
                 const [addresses, userKeysList, organizationKey] = await Promise.all([
                     getAddresses(),
                     getUserKeys(),
-                    isAdmin ? getOrganizationKeyRaw() : undefined,
+                    getOrganizationKey(),
                 ]);
 
                 /**

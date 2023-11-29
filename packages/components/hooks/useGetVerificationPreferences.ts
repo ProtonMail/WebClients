@@ -12,10 +12,10 @@ import { getActiveKeys } from '@proton/shared/lib/keys/getActiveKeys';
 import { getVerifyingKeys } from '@proton/shared/lib/keys/publicKeys';
 
 import { useGetAddresses } from './useAddresses';
+import { useGetAddressKeys } from './useAddressesKeys';
 import useApi from './useApi';
 import useCache from './useCache';
 import { getPromiseValue } from './useCachedModelResult';
-import { useGetAddressKeys } from './useGetAddressKeys';
 import useGetPublicKeysForInbox from './useGetPublicKeysForInbox';
 import { useGetMailSettings } from './useMailSettings';
 import { useGetUserKeys } from './useUserKeys';

@@ -328,21 +328,17 @@ describe.skip('MainContainer', () => {
                 ],
             },
         ];
-        mockedUseCalendars.mockImplementation(() => [mockedNoCreateCalendars, false, undefined]);
+        mockedUseCalendars.mockImplementation(() => [mockedNoCreateCalendars, false]);
         const { rerender } = render(renderComponent());
 
         expect(await screen.findByText(/New event/)).toBeDisabled();
 
-        mockedUseCalendars.mockImplementation(() => [[], false, undefined]);
+        mockedUseCalendars.mockImplementation(() => [[], false]);
         rerender(renderComponent());
 
         expect(await screen.findByText(/New event/)).toBeDisabled();
 
-        mockedUseCalendars.mockImplementation(() => [
-            [...mockedNoCreateCalendars, mockedCreatableCalendar],
-            false,
-            undefined,
-        ]);
+        mockedUseCalendars.mockImplementation(() => [[...mockedNoCreateCalendars, mockedCreatableCalendar], false]);
         rerender(renderComponent());
 
         expect(await screen.findByText(/New event/)).not.toBeDisabled();
@@ -350,7 +346,7 @@ describe.skip('MainContainer', () => {
 
     describe('Create event modal', () => {
         beforeEach(() => {
-            mockedUseCalendars.mockImplementation(() => [[mockedCreatableCalendar], false, undefined]);
+            mockedUseCalendars.mockImplementation(() => [[mockedCreatableCalendar], false]);
         });
 
         it('displays the correct fields when setting up recurring events', async () => {

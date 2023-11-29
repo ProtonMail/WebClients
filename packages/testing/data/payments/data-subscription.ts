@@ -13,6 +13,7 @@ export const subscriptionMock: SubscriptionModel = {
     Amount: 11988,
     Discount: 0,
     RenewAmount: 11988,
+    RenewDiscount: 0,
     Renew: Renew.Enabled,
     External: External.Default,
     Plans: [
@@ -35,12 +36,7 @@ export const subscriptionMock: SubscriptionModel = {
             Currency: 'EUR',
             Amount: 11988,
             Quantity: 1,
-            Pricing: {
-                '1': 1299,
-                '12': 11988,
-                '24': 19176,
-            },
-            Offers: [],
+            Offer: 'default',
         },
     ],
     isManagedByMozilla: false,
@@ -58,6 +54,7 @@ export const upcomingSubscriptionMock: Subscription = {
     Amount: 19176,
     Discount: 0,
     RenewAmount: 19176,
+    RenewDiscount: 0,
     Renew: Renew.Enabled,
     External: External.Default,
     Plans: [
@@ -80,12 +77,7 @@ export const upcomingSubscriptionMock: Subscription = {
             Currency: 'EUR',
             Amount: 11988,
             Quantity: 1,
-            Pricing: {
-                '1': 1299,
-                '12': 11988,
-                '24': 19176,
-            },
-            Offers: [],
+            Offer: 'default',
         },
     ],
 };

@@ -13,7 +13,7 @@ import {
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
-import { Plan, PlansMap } from '@proton/shared/lib/interfaces';
+import { Plan, PlansMap, SubscriptionPlan } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -102,7 +102,7 @@ interface Props {
     children: ReactNode;
     plansMap: PlansMap;
     upsellPlan: Plan | undefined;
-    currentPlan: Plan | undefined;
+    currentPlan: SubscriptionPlan | undefined;
     unlockPlan: Plan | undefined;
     dark: boolean;
 }

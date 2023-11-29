@@ -14,11 +14,11 @@ import {
     ModalTwoFooter,
     ModalTwoHeader,
 } from '../../../components';
-import { useApi, useContacts, useEventManager, useUserKeys } from '../../../hooks';
+import { useApi, useContacts, useEventManager, useGetUserKeys } from '../../../hooks';
 
 const ContactResignExecutionModal = ({ ...rest }: ModalProps) => {
     const [contacts = [], loadingContacts] = useContacts();
-    const [userKeys] = useUserKeys();
+    const getUserKeys = useGetUserKeys();
     const api = useApi();
     const { call } = useEventManager();
 
@@ -36,6 +36,7 @@ const ContactResignExecutionModal = ({ ...rest }: ModalProps) => {
         }
 
         const execute = async () => {
+            const userKeys = await getUserKeys();
             await resignAllContacts(
                 contacts,
                 userKeys,

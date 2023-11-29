@@ -1,8 +1,8 @@
+import { getModelState } from '@proton/account/test';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
-import { STATUS } from '@proton/shared/lib/models/cache';
 
-import { cache, clearAll, minimalCache, render } from '../tests/render';
+import { clearAll, minimalCache, renderWithProviders } from '../tests/render';
 import ContactGroupDetailsModal, { ContactGroupDetailsProps } from './ContactGroupDetailsModal';
 
 describe('ContactGroupDetailsModal', () => {
@@ -57,10 +57,12 @@ describe('ContactGroupDetailsModal', () => {
     it('should display a contact group', async () => {
         minimalCache();
 
-        cache.set('Labels', { status: STATUS.RESOLVED, value: [group] });
-        cache.set('ContactEmails', { status: STATUS.RESOLVED, value: [contactEmail1, contactEmail2, contactEmail3] });
-
-        const { getByText } = render(<ContactGroupDetailsModal open={true} {...props} />, false);
+        const { getByText } = renderWithProviders(<ContactGroupDetailsModal open={true} {...props} />, {
+            preloadedState: {
+                contactEmails: getModelState([contactEmail1, contactEmail2, contactEmail3]),
+                categories: getModelState([group]),
+            },
+        });
 
         getByText(group.Name);
         getByText('3 email addresses');

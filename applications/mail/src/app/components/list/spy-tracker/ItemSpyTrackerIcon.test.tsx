@@ -1,9 +1,11 @@
 import { fireEvent, getByText, screen } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { IMAGE_PROXY_FLAGS } from '@proton/shared/lib/mail/mailSettings';
 import { MessageUTMTracker } from '@proton/shared/lib/models/mailUtmTrackers';
 
-import { addToCache, minimalCache } from '../../../helpers/test/cache';
+import { minimalCache } from '../../../helpers/test/cache';
 import { clearAll } from '../../../helpers/test/helper';
 import { render } from '../../../helpers/test/render';
 import { MessageState } from '../../../logic/messages/messagesTypes';
@@ -91,9 +93,14 @@ describe('ItemSpyTrackerIcon', () => {
         'should display the icon [$isIconDisplayed] with number [$isNumberDisplayed] when proxy is [$imageProxy]',
         async ({ imageProxy, message, isIconDisplayed, isNumberDisplayed }) => {
             minimalCache();
-            addToCache('MailSettings', { ImageProxy: imageProxy });
 
-            const { queryByTestId } = await render(<ItemSpyTrackerIcon message={message} />, false);
+            const { queryByTestId } = await render(<ItemSpyTrackerIcon message={message} />, false, {
+                preloadedState: {
+                    mailSettings: getModelState({
+                        ImageProxy: imageProxy,
+                    } as MailSettings),
+                },
+            });
 
             const icon = queryByTestId('privacy:tracker-icon');
 
@@ -118,9 +125,14 @@ describe('ItemSpyTrackerIcon', () => {
 
     it('should open the privacy dropdown with trackers info', async () => {
         minimalCache();
-        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.ALL });
 
-        await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, false);
+        await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, false, {
+            preloadedState: {
+                mailSettings: getModelState({
+                    ImageProxy: IMAGE_PROXY_FLAGS.ALL,
+                } as MailSettings),
+            },
+        });
 
         const icon = await screen.findByTestId('privacy:tracker-icon');
         fireEvent.click(icon);
@@ -138,9 +150,14 @@ describe('ItemSpyTrackerIcon', () => {
 
     it('should open the privacy dropdown with no trackers found', async () => {
         minimalCache();
-        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.ALL });
 
-        await render(<ItemSpyTrackerIcon message={messageWithoutTrackers} />, false);
+        await render(<ItemSpyTrackerIcon message={messageWithoutTrackers} />, false, {
+            preloadedState: {
+                mailSettings: getModelState({
+                    ImageProxy: IMAGE_PROXY_FLAGS.ALL,
+                } as MailSettings),
+            },
+        });
 
         const icon = await screen.findByTestId('privacy:tracker-icon');
         fireEvent.click(icon);
@@ -155,9 +172,14 @@ describe('ItemSpyTrackerIcon', () => {
 
     it('should open the privacy dropdown with no protection', async () => {
         minimalCache();
-        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.NONE });
 
-        await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, false);
+        await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, false, {
+            preloadedState: {
+                mailSettings: getModelState({
+                    ImageProxy: IMAGE_PROXY_FLAGS.NONE,
+                } as MailSettings),
+            },
+        });
 
         const icon = await screen.findByTestId('privacy:tracker-icon');
         fireEvent.click(icon);
@@ -175,9 +197,14 @@ describe('ItemSpyTrackerIcon', () => {
 
     it('should open the image tracker modal and list expected info', async () => {
         minimalCache();
-        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.ALL });
 
-        await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, false);
+        await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, false, {
+            preloadedState: {
+                mailSettings: getModelState({
+                    ImageProxy: IMAGE_PROXY_FLAGS.ALL,
+                } as MailSettings),
+            },
+        });
 
         const icon = await screen.findByTestId('privacy:tracker-icon');
         fireEvent.click(icon);
@@ -201,9 +228,14 @@ describe('ItemSpyTrackerIcon', () => {
 
     it('should open the utm tracker modal and list expected info', async () => {
         minimalCache();
-        addToCache('MailSettings', { ImageProxy: IMAGE_PROXY_FLAGS.ALL });
 
-        await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, false);
+        await render(<ItemSpyTrackerIcon message={messageWithTrackers} />, false, {
+            preloadedState: {
+                mailSettings: getModelState({
+                    ImageProxy: IMAGE_PROXY_FLAGS.ALL,
+                } as MailSettings),
+            },
+        });
 
         const icon = await screen.findByTestId('privacy:tracker-icon');
         fireEvent.click(icon);

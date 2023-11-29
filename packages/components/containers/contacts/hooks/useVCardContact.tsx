@@ -15,7 +15,7 @@ export type VCardContactModel = {
 
 interface Props {
     contact: Contact;
-    userKeysList: DecryptedKey[];
+    userKeysList?: DecryptedKey[];
 }
 
 const useVCardContact = ({
@@ -27,7 +27,7 @@ const useVCardContact = ({
     const [forceRefresh, setForceRefresh] = useState({});
 
     useEffect(() => {
-        if (contact && userKeysList.length) {
+        if (contact && userKeysList?.length) {
             const prepare = async () => {
                 ref.current = contact.ID;
                 const { publicKeys, privateKeys } = splitKeys(userKeysList);

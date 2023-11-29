@@ -3,6 +3,7 @@ import { MutableRefObject, ReactElement, ReactNode } from 'react';
 import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
+import { getModelState } from '@proton/account/test';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
@@ -134,7 +135,6 @@ export const setup = async ({
     minimalCache();
     baseApiMocks();
     const props = getProps(propsArgs);
-    addToCache('Labels', [{ ID: props.labelID }]);
     if (mockMessages) {
         addApiMock('mail/v4/messages', () => ({ Total: totalMessages, Messages: messages }));
     }
@@ -143,14 +143,17 @@ export const setup = async ({
         addApiMock('mail/v4/conversations', () => ({ Total: totalConversations, Conversations: conversations }));
     }
 
-    addToCache('Labels', [...labels, ...folders]);
     addToCache('MessageCounts', [{ LabelID: props.labelID, Total: totalMessages, Unread: totalMessages }]);
     addToCache('ConversationCounts', [
         { LabelID: props.labelID, Total: totalConversations, Unread: totalConversations },
     ]);
-    addToCache('MailSettings', props.mailSettings);
     addToCache('Calendars', []);
-    const result = await render(<Component {...props} />, false);
+    const result = await render(<Component {...props} />, false, {
+        preloadedState: {
+            mailSettings: getModelState(props.mailSettings),
+            categories: getModelState([...labels, ...folders]),
+        },
+    });
     const rerender = (propsArgs: PropsArgs) => result.rerender(<Component {...getProps(propsArgs)} />);
     const getItems = () => result.getAllByTestId('message-item', { exact: false });
     return { ...result, rerender, getItems };

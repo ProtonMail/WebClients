@@ -88,10 +88,16 @@ const importKeysProcessLegacy = async ({
     await reactivateKeysProcessLegacy({
         api,
         keyPassword,
-        keyReactivationRecords: [
+        userKeys: [],
+        addressesKeys: [
             {
                 address,
                 keys: mutableActiveKeys,
+            },
+        ],
+        keyReactivationRecords: [
+            {
+                address,
                 keysToReactivate,
             },
         ],

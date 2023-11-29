@@ -3,12 +3,12 @@ import { renderHook } from '@testing-library/react-hooks';
 import { FREE_SUBSCRIPTION } from '@proton/shared/lib/constants';
 
 import useMozillaCheck from './useMozillaCheck';
-import { useTypedSubscription } from './useSubscription';
+import { useSubscription } from './useSubscription';
 
 jest.mock('./useSubscription');
 
 it('should return false if subscription is still loading', () => {
-    jest.mocked(useTypedSubscription).mockReturnValue([undefined, true]);
+    jest.mocked(useSubscription).mockReturnValue([undefined as any, true]);
 
     const { result } = renderHook(() => useMozillaCheck());
 
@@ -16,7 +16,7 @@ it('should return false if subscription is still loading', () => {
 });
 
 it('should return false if not managed by Mozilla', () => {
-    jest.mocked(useTypedSubscription).mockReturnValue([{ isManagedByMozilla: false } as any, false]);
+    jest.mocked(useSubscription).mockReturnValue([{ isManagedByMozilla: false } as any, false]);
 
     const { result } = renderHook(() => useMozillaCheck());
 
@@ -24,7 +24,7 @@ it('should return false if not managed by Mozilla', () => {
 });
 
 it('should return true if managed by Mozilla', () => {
-    jest.mocked(useTypedSubscription).mockReturnValue([{ isManagedByMozilla: true } as any, false]);
+    jest.mocked(useSubscription).mockReturnValue([{ isManagedByMozilla: true } as any, false]);
 
     const { result } = renderHook(() => useMozillaCheck());
 
@@ -32,7 +32,7 @@ it('should return true if managed by Mozilla', () => {
 });
 
 it('should return false if subscription is free', () => {
-    jest.mocked(useTypedSubscription).mockReturnValue([FREE_SUBSCRIPTION, false]);
+    jest.mocked(useSubscription).mockReturnValue([FREE_SUBSCRIPTION as any, false]);
 
     const { result } = renderHook(() => useMozillaCheck());
 

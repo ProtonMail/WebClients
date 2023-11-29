@@ -14,9 +14,9 @@ import { splitKeys } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { useGetAddresses } from './useAddresses';
+import { useGetAddressKeys } from './useAddressesKeys';
 import useCache from './useCache';
 import { getPromiseValue } from './useCachedModelResult';
-import { useGetAddressKeys } from './useGetAddressKeys';
 import { useGetCalendarBootstrap } from './useGetCalendarBootstrap';
 
 export const CACHE_KEY = 'CALENDAR_KEYS';

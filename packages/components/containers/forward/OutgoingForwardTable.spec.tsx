@@ -1,5 +1,4 @@
-import { render } from '@testing-library/react';
-
+import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import { useAddresses, useAddressesKeys } from '@proton/components/hooks';
 import { Address, ForwardingState, ForwardingType, UserModel } from '@proton/shared/lib/interfaces';
 import {
@@ -59,7 +58,7 @@ describe('OutgoingForwardTable', () => {
                 Filter: null,
             },
         ];
-        const utils = render(
+        const utils = renderWithProviders(
             <OutgoingForwardTableContext
                 user={user}
                 forwardings={forwardings}

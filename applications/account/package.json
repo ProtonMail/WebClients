@@ -20,8 +20,10 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@proton/account": "workspace:^",
         "@proton/components": "workspace:packages/components",
         "@proton/cross-storage": "workspace:packages/cross-storage",
+        "@proton/mail": "workspace:^",
         "@proton/metrics": "workspace:packages/metrics",
         "@proton/pack": "workspace:packages/pack",
         "@proton/polyfill": "workspace:packages/polyfill",

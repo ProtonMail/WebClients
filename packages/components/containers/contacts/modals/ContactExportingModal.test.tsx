@@ -1,10 +1,12 @@
 import { fireEvent } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { CryptoProxy } from '@proton/crypto';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
-import { STATUS } from '@proton/shared/lib/models/cache';
+import { Contact } from '@proton/shared/lib/interfaces/contacts';
+import { addApiMock } from '@proton/testing/lib/api';
 
-import { api, cache, clearAll, minimalCache, mockedCryptoApi, prepareContact, render } from '../tests/render';
+import { clearAll, minimalCache, mockedCryptoApi, prepareContact, renderWithProviders } from '../tests/render';
 import ContactExportingModal, { ContactExportingProps } from './ContactExportingModal';
 
 jest.mock('@proton/shared/lib/helpers/downloadFile', () => {
@@ -20,7 +22,7 @@ describe('ContactExportingModal', () => {
     const contact1 = {
         ID: 'ContactID1',
         LabelIDs: [props.contactGroupID],
-    };
+    } as Contact;
 
     const vcard1 = `BEGIN:VCARD
 VERSION:4.0
@@ -33,7 +35,7 @@ END:VCARD`;
     const contact2 = {
         ID: 'ContactID2',
         LabelIDs: [props.contactGroupID],
-    };
+    } as Contact;
 
     const vcard2 = `BEGIN:VCARD
 VERSION:4.0
@@ -57,22 +59,22 @@ END:VCARD`;
         const { Cards: Cards1 } = await prepareContact(vcard1);
         const { Cards: Cards2 } = await prepareContact(vcard2);
 
-        api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'contacts/v4/contacts/export') {
-                return {
-                    Contacts: [
-                        { ID: contact1.ID, Cards: Cards1 },
-                        { ID: contact2.ID, Cards: Cards2 },
-                    ],
-                };
-            }
+        addApiMock('contacts/v4/contacts/export', () => {
+            return {
+                Contacts: [
+                    { ID: contact1.ID, Cards: Cards1 },
+                    { ID: contact2.ID, Cards: Cards2 },
+                ],
+            };
         });
 
         minimalCache();
 
-        cache.set('Contacts', { status: STATUS.RESOLVED, value: [contact1, contact2] });
-
-        const { findByText, getByText } = render(<ContactExportingModal open={true} {...props} />, false);
+        const { findByText, getByText } = renderWithProviders(<ContactExportingModal open={true} {...props} />, {
+            preloadedState: {
+                contacts: getModelState([contact1, contact2]),
+            },
+        });
 
         await findByText('2 out of 2', { exact: false });
 

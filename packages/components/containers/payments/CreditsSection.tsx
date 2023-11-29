@@ -8,13 +8,13 @@ import noop from '@proton/utils/noop';
 
 import { Loader } from '../../components';
 import { useModalState, useModalTwo } from '../../components/modalTwo';
-import { useTypedSubscription, useUser } from '../../hooks';
+import { useSubscription, useUser } from '../../hooks';
 import { SettingsParagraph, SettingsSection } from '../account';
 import CreditsModal from './CreditsModal';
 import InAppPurchaseModal from './subscription/InAppPurchaseModal';
 
 const CreditsSection = () => {
-    const [subscription] = useTypedSubscription();
+    const [subscription] = useSubscription();
     const [creditModalProps, setCreditModalOpen, renderCreditModal] = useModalState();
     const [externalSubscriptionModal, showExternalSubscriptionModal] = useModalTwo(InAppPurchaseModal);
 

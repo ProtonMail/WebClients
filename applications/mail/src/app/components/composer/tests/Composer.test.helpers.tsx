@@ -90,8 +90,12 @@ export const prepareMessage = (messageProp: PartialMessageState) => {
     return { message, composerID };
 };
 
-export const renderComposer = async (composerID: string, useMinimalCache = true) => {
-    const renderResult = await render(<Composer {...props} composerID={composerID} />, useMinimalCache);
+export const renderComposer = async (
+    composerID: string,
+    useMinimalCache = true,
+    renderOptions?: Parameters<typeof render>[2]
+) => {
+    const renderResult = await render(<Composer {...props} composerID={composerID} />, useMinimalCache, renderOptions);
 
     // onClose will most likely unmount the component, it has to continue working
     props.onClose.mockImplementation(renderResult.unmount);
@@ -121,13 +125,17 @@ export const clickSend = async (renderResult: RenderResult) => {
     return sendRequest;
 };
 
-export const send = async (composerID: string, useMinimalCache = true) => {
+export const send = async (
+    composerID: string,
+    useMinimalCache = true,
+    renderOptions?: Parameters<typeof renderComposer>[2]
+) => {
     try {
         if (!apiKeys.has(toAddress)) {
             addApiKeys(false, toAddress, []);
         }
 
-        const renderResult = await renderComposer(composerID, useMinimalCache);
+        const renderResult = await renderComposer(composerID, useMinimalCache, renderOptions);
 
         return await clickSend(renderResult);
     } catch (error: any) {

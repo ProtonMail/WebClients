@@ -11,6 +11,7 @@ import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import Setup from './Setup';
 import * as config from './config';
 import locales from './locales';
+import AccountStoreProvider from './store/AccountStoreProvider';
 
 import './app.scss';
 
@@ -24,11 +25,13 @@ metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
 
 const App = () => {
     return (
-        <ProtonApp authentication={authentication} config={config}>
-            <ErrorBoundary big component={<StandardErrorPage big />}>
-                <Setup />
-            </ErrorBoundary>
-        </ProtonApp>
+        <AccountStoreProvider>
+            <ProtonApp authentication={authentication} config={config}>
+                <ErrorBoundary big component={<StandardErrorPage big />}>
+                    <Setup />
+                </ErrorBoundary>
+            </ProtonApp>
+        </AccountStoreProvider>
     );
 };
 

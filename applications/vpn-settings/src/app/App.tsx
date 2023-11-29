@@ -19,6 +19,7 @@ import PrivateApp from './PrivateApp';
 import PublicApp from './PublicApp';
 import * as config from './config';
 import locales from './locales';
+import AccountStoreProvider from './store/AccountStoreProvider';
 
 import './app.scss';
 
@@ -39,11 +40,13 @@ const Setup = () => {
 
 const App = () => {
     return (
-        <ProtonApp authentication={authentication} config={config}>
-            <ErrorBoundary component={<StandardErrorPage />}>
-                <Setup />
-            </ErrorBoundary>
-        </ProtonApp>
+        <AccountStoreProvider>
+            <ProtonApp authentication={authentication} config={config}>
+                <ErrorBoundary component={<StandardErrorPage />}>
+                    <Setup />
+                </ErrorBoundary>
+            </ProtonApp>
+        </AccountStoreProvider>
     );
 };
 

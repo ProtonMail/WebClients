@@ -13,10 +13,10 @@ import { getContactPublicKeyModel, getKeyEncryptionCapableStatus } from '@proton
 import extractEncryptionPreferences from '@proton/shared/lib/mail/encryptionPreferences';
 
 import { useGetAddresses } from './useAddresses';
+import { useGetAddressKeys } from './useAddressesKeys';
 import useApi from './useApi';
 import useCache from './useCache';
 import { getPromiseValue } from './useCachedModelResult';
-import { useGetAddressKeys } from './useGetAddressKeys';
 import useGetPublicKeysForInbox from './useGetPublicKeysForInbox';
 import { useGetMailSettings } from './useMailSettings';
 import { useGetUserKeys } from './useUserKeys';

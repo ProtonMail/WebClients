@@ -34,7 +34,7 @@ enum PROMPT_KEY_PINNING_TYPE {
 interface Params {
     messageVerification: MessageVerification;
     mailSettings: MailSettings;
-    addresses: Address[];
+    addresses: Address[] | undefined;
     senderAddress: string;
 }
 
@@ -44,7 +44,7 @@ const getPromptKeyPinningType = ({
     addresses,
     senderAddress,
 }: Params): PROMPT_KEY_PINNING_TYPE | undefined => {
-    if (addresses.find(({ Email }) => canonicalizeInternalEmail(Email) === canonicalizeInternalEmail(senderAddress))) {
+    if (addresses?.find(({ Email }) => canonicalizeInternalEmail(Email) === canonicalizeInternalEmail(senderAddress))) {
         // Do not pin keys for own addresses
         return undefined;
     }

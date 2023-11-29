@@ -1,13 +1,15 @@
 import { fireEvent, getByDisplayValue, waitFor } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { CryptoProxy } from '@proton/crypto';
 import { ACCENT_COLORS } from '@proton/shared/lib/colors';
 import { LABEL_TYPE } from '@proton/shared/lib/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import { MAX_RECIPIENTS } from '@proton/shared/lib/mail/mailSettings';
-import { STATUS } from '@proton/shared/lib/models/cache';
+import { addApiMock } from '@proton/testing/lib/api';
 
-import { api, cache, clearAll, getCard, minimalCache, mockedCryptoApi, render } from '../tests/render';
+import { clearAll, getCard, minimalCache, mockedCryptoApi, renderWithProviders } from '../tests/render';
 import ContactGroupEditModal, { ContactGroupEditProps } from './ContactGroupEditModal';
 
 describe('ContactGroupEditModal', () => {
@@ -68,37 +70,37 @@ describe('ContactGroupEditModal', () => {
     it('should display a contact group', async () => {
         minimalCache();
 
-        cache.set('Labels', { status: STATUS.RESOLVED, value: [group] });
-        cache.set('ContactEmails', { status: STATUS.RESOLVED, value: [contactEmail1, contactEmail2, contactEmail3] });
-        cache.set('MailSettings', { RecipientLimit: MAX_RECIPIENTS });
-
         const updateSpy = jest.fn();
         const createContactSpy = jest.fn();
         const labelSpy = jest.fn();
         const unlabelSpy = jest.fn();
 
-        api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === `core/v4/labels/${group.ID}`) {
-                updateSpy(args.data);
-                return { Label: { ID: group.ID } };
-            }
-            if (args.url === 'contacts/v4/contacts') {
-                createContactSpy(args.data);
-                return {};
-            }
-            if (args.url === 'contacts/v4/contacts/emails/label') {
-                labelSpy(args.data);
-                return {};
-            }
-            if (args.url === 'contacts/v4/contacts/emails/unlabel') {
-                unlabelSpy(args.data);
-                return {};
-            }
+        addApiMock(`core/v4/labels/${group.ID}`, (args) => {
+            updateSpy(args.data);
+            return { Label: { ID: group.ID } };
+        });
+        addApiMock('contacts/v4/contacts', (args) => {
+            createContactSpy(args.data);
+            return {};
+        });
+        addApiMock('contacts/v4/contacts/emails/label', (args) => {
+            labelSpy(args.data);
+            return {};
+        });
+        addApiMock('contacts/v4/contacts/emails/unlabel', (args) => {
+            unlabelSpy(args.data);
+            return {};
         });
 
-        const { getByTestId, getByText, getAllByText } = render(
+        const { getByTestId, getByText, getAllByText } = renderWithProviders(
             <ContactGroupEditModal open={true} {...props} />,
-            false
+            {
+                preloadedState: {
+                    mailSettings: getModelState({ RecipientLimit: MAX_RECIPIENTS } as MailSettings),
+                    contactEmails: getModelState([contactEmail1, contactEmail2, contactEmail3]),
+                    categories: getModelState([group]),
+                },
+            }
         );
 
         const name = document.getElementById('contactGroupName') as HTMLElement;
