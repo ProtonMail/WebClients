@@ -1,10 +1,19 @@
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent } from '@testing-library/react';
 
+import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import { rejectForwarding } from '@proton/shared/lib/api/forwardings';
 import { Address, ForwardingState, IncomingAddressForwarding } from '@proton/shared/lib/interfaces';
-import { applyHOCs, withApi, withAuthentication, withCache, withConfig, withEventManager } from '@proton/testing';
+import {
+    applyHOCs,
+    mockUseAddresses,
+    withApi,
+    withAuthentication,
+    withCache,
+    withConfig,
+    withEventManager,
+} from '@proton/testing';
 
-import { useApi, useGetAddressKeys, useGetMailSettings, useGetUserKeys, useNotifications, useUser } from '../../hooks';
+import { useApi, useGetMailSettings, useGetUserKeys, useNotifications, useUser } from '../../hooks';
 import IncomingForwardActions from './IncomingForwardActions';
 
 jest.mock('@proton/components/hooks/useApi');
@@ -18,9 +27,7 @@ jest.mock('@proton/components/hooks/useUser');
 const mockedUseUser = useUser as jest.MockedFunction<typeof useUser>;
 mockedUseUser.mockReturnValue([{}] as any);
 
-jest.mock('@proton/components/hooks/useGetAddressKeys');
-const mockUseGetAddressKeys = useGetAddressKeys as jest.MockedFunction<any>;
-mockUseGetAddressKeys.mockReturnValue(jest.fn());
+mockUseAddresses();
 
 jest.mock('@proton/components/hooks/useNotifications');
 const mockUseNotifications = useNotifications as jest.MockedFunction<any>;
@@ -42,7 +49,7 @@ const IncomingAddressForwardingContext = applyHOCs(
 
 describe('IncomingForwardActions', () => {
     const setup = ({ State = ForwardingState.Pending } = {}) => {
-        const mockApi = jest.fn();
+        const mockApi = jest.fn().mockImplementation(() => Promise.resolve({}));
         mockedUseApi.mockReturnValue(mockApi);
         const forward = {
             ID: 'id',
@@ -62,7 +69,7 @@ describe('IncomingForwardActions', () => {
                 Email: 'email',
             },
         ] as Address[];
-        const utils = render(<IncomingAddressForwardingContext forward={forward} addresses={addresses} />);
+        const utils = renderWithProviders(<IncomingAddressForwardingContext forward={forward} addresses={addresses} />);
         fireEvent.click(utils.getByTitle('Open actions dropdown'));
         return { ...utils, forward, mockApi };
     };

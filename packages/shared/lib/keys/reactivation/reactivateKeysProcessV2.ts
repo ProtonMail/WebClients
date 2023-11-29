@@ -259,7 +259,7 @@ const reactivateKeysProcessV2 = async ({
             userRecord?: KeyReactivationRecord;
         }>(
             (acc, record) => {
-                const { user, address, keysToReactivate, keys } = record;
+                const { user, address, keysToReactivate } = record;
                 if (user) {
                     acc.userRecord = record;
                 }
@@ -274,7 +274,6 @@ const reactivateKeysProcessV2 = async ({
                     if (keysInV2Format.length) {
                         acc.addressRecordsInV2Format.push({
                             address,
-                            keys,
                             keysToReactivate: keysInV2Format,
                         });
                     }
@@ -282,7 +281,6 @@ const reactivateKeysProcessV2 = async ({
                     if (keysInLegacyFormatOrWithBackup.length) {
                         acc.addressRecordsInLegacyFormatOrWithBackup.push({
                             address,
-                            keys,
                             keysToReactivate: keysInLegacyFormatOrWithBackup,
                         });
                     }

@@ -17,9 +17,9 @@ interface Props {
 const OrganizationTwoFARemindersSection = ({ organization }: Props) => {
     const { APP_NAME } = useConfig();
     const { createModal } = useModals();
-    const [members, loadingMembers] = useMembers();
+    const [members] = useMembers();
 
-    if (!organization || loadingMembers) {
+    if (!organization || !members) {
         return <Loader />;
     }
 

@@ -5,7 +5,7 @@ import { useEventManager } from '@proton/components';
 import { globalReset } from '../../logic/actions';
 import { store } from '../../logic/store';
 import { api, clearApiMocks } from './api';
-import { addressKeysCache, base64Cache, clearCache } from './cache';
+import { base64Cache, clearCache } from './cache';
 import { clearApiContacts } from './contact';
 import { clearApiKeys } from './crypto';
 import { eventManagerListeners } from './event-manager';
@@ -29,7 +29,6 @@ export const clearAll = () => {
     clearCache();
     clearApiKeys();
     clearApiContacts();
-    addressKeysCache.clear();
     base64Cache.clear();
     eventManagerListeners.splice(0, eventManagerListeners.length);
     resetHistory();

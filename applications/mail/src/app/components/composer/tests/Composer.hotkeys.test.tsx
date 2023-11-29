@@ -1,15 +1,15 @@
 import { fireEvent } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { SHORTCUTS } from '@proton/shared/lib/mail/mailSettings';
 
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
     GeneratedKey,
     addApiKeys,
     addApiMock,
-    addKeysToAddressKeysCache,
-    addToCache,
     clearAll,
     clearCache,
     createDocument,
@@ -51,13 +51,6 @@ describe('Composer hotkeys', () => {
 
     const setup = async (hasShortcutsEnabled = true) => {
         minimalCache();
-        if (hasShortcutsEnabled) {
-            addToCache('MailSettings', { Shortcuts: SHORTCUTS.ENABLED });
-        } else {
-            addToCache('MailSettings', { Shortcuts: SHORTCUTS.DISABLED });
-        }
-
-        addKeysToAddressKeysCache(AddressID, fromKeys);
 
         prepareMessage({
             messageDocument: { document: createDocument('test') },
@@ -68,7 +61,14 @@ describe('Composer hotkeys', () => {
 
         const composerID = Object.keys(store.getState().composers.composers)[0];
 
-        const result = await renderComposer(composerID, false);
+        const result = await renderComposer(composerID, false, {
+            preloadedState: {
+                mailSettings: getModelState({
+                    Shortcuts: hasShortcutsEnabled ? SHORTCUTS.ENABLED : SHORTCUTS.DISABLED,
+                } as MailSettings),
+                addressKeys: getAddressKeyCache(AddressID, fromKeys),
+            },
+        });
 
         const iframe = result.container.querySelector('iframe') as HTMLIFrameElement;
 

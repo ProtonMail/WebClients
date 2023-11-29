@@ -3,8 +3,10 @@ import { Router } from 'react-router';
 
 import { History, createBrowserHistory as createHistory } from 'history';
 
+import { initEvent } from '@proton/account';
 import useInstance from '@proton/hooks/useInstance';
 import metrics from '@proton/metrics';
+import { useDispatch } from '@proton/redux-shared-store';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { PersistedSession } from '@proton/shared/lib/authentication/SessionInterface';
 import { AuthenticationStore } from '@proton/shared/lib/authentication/createAuthenticationStore';
@@ -23,9 +25,6 @@ import createListeners from '@proton/shared/lib/helpers/listeners';
 import * as sentry from '@proton/shared/lib/helpers/sentry';
 import { stripLeadingAndTrailingSlash } from '@proton/shared/lib/helpers/string';
 import { ProtonConfig } from '@proton/shared/lib/interfaces';
-import { AddressesModel } from '@proton/shared/lib/models';
-import { STATUS } from '@proton/shared/lib/models/cache';
-import { UserModel, formatUser } from '@proton/shared/lib/models/userModel';
 import noop from '@proton/utils/noop';
 
 import { Icons } from '../../components';
@@ -123,6 +122,7 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
     if (!cacheRef.current) {
         cacheRef.current = createCache<string, any>();
     }
+    const dispatch = useDispatch();
     const [authData, setAuthData] = useState<AuthState>(() => {
         const state =
             hasInitialAuth === false
@@ -167,18 +167,7 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
             }
             const cache = createCache<string, any>();
 
-            cache.set(UserModel.key, {
-                value: formatUser(User),
-                status: STATUS.RESOLVED,
-            });
-
-            // If addresses was received from the login call, pre-set it directly.
-            if (Addresses) {
-                cache.set(AddressesModel.key, {
-                    value: Addresses,
-                    status: STATUS.RESOLVED,
-                });
-            }
+            dispatch(initEvent({ User, Addresses }));
 
             if (EventID !== undefined) {
                 setTmpEventID(cache, EventID);
@@ -221,7 +210,7 @@ const ProtonApp = ({ authentication, config, children, hasInitialAuth }: Props) 
 
             const oldCache = cacheRef.current;
             if (oldCache) {
-                clearKeysCache(oldCache);
+                clearKeysCache();
                 oldCache.clear();
                 oldCache.clearListeners();
             }

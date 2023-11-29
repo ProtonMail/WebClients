@@ -2,7 +2,6 @@ import { useMemo } from 'react';
 import { useLocation } from 'react-router';
 
 import { useConversationCounts, useMessageCounts } from '@proton/components';
-import { LabelCount } from '@proton/shared/lib/interfaces/Label';
 
 import useMailModel from 'proton-mail/hooks/useMailModel';
 
@@ -21,8 +20,8 @@ interface Props {
 const PlaceholderView = ({ welcomeFlag, labelID = '', checkedIDs = [], onCheckAll }: Props) => {
     const location = useLocation();
     const mailSettings = useMailModel('MailSettings');
-    const [conversationCounts = []] = useConversationCounts() as [LabelCount[] | undefined, boolean, Error];
-    const [messageCounts = []] = useMessageCounts() as [LabelCount[] | undefined, boolean, Error];
+    const [conversationCounts = []] = useConversationCounts();
+    const [messageCounts = []] = useMessageCounts();
     const type = getCurrentType({ mailSettings, labelID, location });
 
     const labelCount = useMemo(() => {

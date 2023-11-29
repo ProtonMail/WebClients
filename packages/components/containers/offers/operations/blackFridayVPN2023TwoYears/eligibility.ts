@@ -10,7 +10,7 @@ import {
 import { ProtonConfig, SubscriptionModel, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
-    subscription: SubscriptionModel;
+    subscription?: SubscriptionModel;
     protonConfig: ProtonConfig;
     user: UserModel;
 }

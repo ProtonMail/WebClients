@@ -22,6 +22,7 @@ export * from './lib/mockUseFolders';
 export * from './lib/mockUseHistory';
 export * from './lib/mockUseLabels';
 export * from './lib/mockUseLocation';
+export * from './lib/features';
 export * from './lib/mockUseMailSettings';
 export * from './lib/mockUseNotifications';
 export * from './lib/mockUseSelector';

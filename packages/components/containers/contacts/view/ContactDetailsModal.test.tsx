@@ -1,7 +1,10 @@
+import { getModelState } from '@proton/account/test';
 import { CryptoProxy } from '@proton/crypto';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
+import { addApiMock } from '@proton/testing/lib/api';
 
-import { addToCache, api, clearAll, minimalCache, mockedCryptoApi, prepareContact, render } from '../tests/render';
+import { clearAll, minimalCache, mockedCryptoApi, prepareContact, renderWithProviders } from '../tests/render';
 import ContactDetailsModal, { ContactDetailsProps } from './ContactDetailsModal';
 
 jest.mock('../../../hooks/useConfig', () => () => ({ API_URL: 'api' }));
@@ -46,15 +49,16 @@ END:VCARD`;
 
         const { Cards } = await prepareContact(vcard);
 
-        api.mockImplementation(async (args: any): Promise<any> => {
-            if (args.url === 'contacts/v4/contacts/ContactID') {
-                return { Contact: { ID: 'ID', ContactID: 'ContactID', Cards } };
-            }
+        addApiMock('contacts/v4/contacts/ContactID', () => {
+            return { Contact: { ID: 'ID', ContactID: 'ContactID', Cards } };
         });
         minimalCache();
-        addToCache('MailSettings', { HideRemoteImages: SHOW_IMAGES.HIDE });
 
-        const { findByText } = render(<ContactDetailsModal open={true} {...props} />, false);
+        const { findByText } = renderWithProviders(<ContactDetailsModal open={true} {...props} />, {
+            preloadedState: {
+                mailSettings: getModelState({ HideRemoteImages: SHOW_IMAGES.HIDE } as MailSettings),
+            },
+        });
 
         await findByText('J. Doe');
         await findByText('Load image');

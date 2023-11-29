@@ -13,6 +13,7 @@ import type {
     Plan,
     PlanIDs,
     PlansMap,
+    SubscriptionPlan,
 } from '@proton/shared/lib/interfaces';
 import { ThemeTypes } from '@proton/shared/lib/themes/themes';
 
@@ -109,7 +110,7 @@ export interface Upsell {
     mode: UpsellTypes;
     plan: Plan | undefined;
     unlockPlan: Plan | undefined;
-    currentPlan: Plan | undefined;
+    currentPlan: SubscriptionPlan | undefined;
     subscriptionOptions: Partial<Options>;
 }
 

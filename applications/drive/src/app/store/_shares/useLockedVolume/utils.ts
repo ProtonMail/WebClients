@@ -9,7 +9,7 @@ import {
     getMatchingSigningKey,
 } from '@proton/crypto';
 import { base64StringToUint8Array } from '@proton/shared/lib/helpers/encoding';
-import { DecryptedKey } from '@proton/shared/lib/interfaces';
+import { DecryptedAddressKey } from '@proton/shared/lib/interfaces';
 import { getDecryptedSessionKey } from '@proton/shared/lib/keys/drivePassphrase';
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
@@ -26,7 +26,7 @@ export const getPossibleAddressPrivateKeys = (addressesKeys: ReturnType<typeof u
         address keys.
     */
     return addressesKeys
-        .reduce((result: DecryptedKey[], { address, keys }) => {
+        .reduce((result: DecryptedAddressKey[], { address, keys }) => {
             return [
                 ...result,
                 ...address.Keys.map((addressKey) => keys.find((key) => key.ID === addressKey.ID)).filter(isTruthy),

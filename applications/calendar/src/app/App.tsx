@@ -11,6 +11,7 @@ import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import * as config from './config';
 import PrivateApp from './content/PrivateApp';
 import locales from './locales';
+import CalendarStoreProvider from './store/CalendarStoreProvider';
 
 import './app.scss';
 
@@ -24,9 +25,11 @@ metrics.setVersionHeaders(getClientID(config.APP_NAME), config.APP_VERSION);
 
 const App = () => {
     return (
-        <ProtonApp authentication={authentication} config={config}>
-            <StandardSetup PrivateApp={PrivateApp} locales={locales} />
-        </ProtonApp>
+        <CalendarStoreProvider>
+            <ProtonApp authentication={authentication} config={config}>
+                <StandardSetup PrivateApp={PrivateApp} locales={locales} />
+            </ProtonApp>
+        </CalendarStoreProvider>
     );
 };
 

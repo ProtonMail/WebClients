@@ -6,7 +6,6 @@ import {
     CacheProvider,
     CompatibilityCheck,
     ConfigProvider,
-    FeaturesProvider,
     Icons,
     LoaderPage,
     ModalsProvider,
@@ -24,6 +23,8 @@ import createCache, { Cache } from '@proton/shared/lib/helpers/cache';
 import sentry from '@proton/shared/lib/helpers/sentry';
 import { setTtagLocales } from '@proton/shared/lib/i18n/locales';
 import noop from '@proton/utils/noop';
+
+import MailStoreProvider from 'proton-mail/store/MailStoreProvider';
 
 import * as config from './config';
 import EOContainer from './containers/eo/EOContainer';
@@ -49,33 +50,33 @@ const App = () => {
     }
 
     return (
-        <ConfigProvider config={config}>
-            <CompatibilityCheck>
-                <Icons />
-                <RightToLeftProvider>
-                    <ThemeProvider>
-                        <Router>
-                            <PreventLeaveProvider>
-                                <NotificationsProvider>
-                                    <ModalsProvider>
-                                        <ApiProvider config={config} onLogout={noop}>
-                                            <CacheProvider cache={cacheRef.current}>
-                                                <FeaturesProvider>
+        <MailStoreProvider>
+            <ConfigProvider config={config}>
+                <CompatibilityCheck>
+                    <Icons />
+                    <RightToLeftProvider>
+                        <ThemeProvider>
+                            <Router>
+                                <PreventLeaveProvider>
+                                    <NotificationsProvider>
+                                        <ModalsProvider>
+                                            <ApiProvider config={config} onLogout={noop}>
+                                                <CacheProvider cache={cacheRef.current}>
                                                     <NotificationsChildren />
                                                     <StandardPublicApp loader={<LoaderPage />} locales={locales}>
                                                         <EOContainer />
                                                     </StandardPublicApp>
-                                                </FeaturesProvider>
-                                            </CacheProvider>
-                                        </ApiProvider>
-                                    </ModalsProvider>
-                                </NotificationsProvider>
-                            </PreventLeaveProvider>
-                        </Router>
-                    </ThemeProvider>
-                </RightToLeftProvider>
-            </CompatibilityCheck>
-        </ConfigProvider>
+                                                </CacheProvider>
+                                            </ApiProvider>
+                                        </ModalsProvider>
+                                    </NotificationsProvider>
+                                </PreventLeaveProvider>
+                            </Router>
+                        </ThemeProvider>
+                    </RightToLeftProvider>
+                </CompatibilityCheck>
+            </ConfigProvider>
+        </MailStoreProvider>
     );
 };
 

@@ -1,0 +1,64 @@
+import { createSlice } from '@reduxjs/toolkit';
+
+import type { ProtonThunkArguments } from '@proton/redux-shared-store';
+import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
+import { getAllMembers } from '@proton/shared/lib/api/members';
+import updateCollection from '@proton/shared/lib/helpers/updateCollection';
+import type { Member } from '@proton/shared/lib/interfaces';
+
+import { serverEvent } from '../eventLoop';
+import type { ModelState } from '../interface';
+import { UserState, userThunk } from '../user';
+
+const name = 'members' as const;
+
+interface State extends UserState {
+    [name]: ModelState<Member[]>;
+}
+
+type SliceState = State[typeof name];
+type Model = NonNullable<SliceState['value']>;
+
+export const selectMembers = (state: State) => state.members;
+
+const modelThunk = createAsyncModelThunk<Model, State, ProtonThunkArguments>(`${name}/fetch`, {
+    miss: async ({ dispatch, extraArgument }) => {
+        const user = await dispatch(userThunk());
+        if (user.isAdmin) {
+            return getAllMembers(extraArgument.api);
+        }
+        return [];
+    },
+    previous: previousSelector(selectMembers),
+});
+
+const initialState: SliceState = {
+    value: undefined,
+    error: undefined,
+};
+const slice = createSlice({
+    name,
+    initialState,
+    reducers: {},
+    extraReducers: (builder) => {
+        handleAsyncModel(builder, modelThunk);
+        builder.addCase(serverEvent, (state, action) => {
+            if (state.value && state.value.length > 0 && action.payload.User && !action.payload.User.Subscribed) {
+                // Do not get any members update when user becomes unsubscribed.
+                state.value = [];
+                return;
+            }
+
+            if (state.value && action.payload.Members) {
+                state.value = updateCollection({
+                    model: state.value,
+                    events: action.payload.Members,
+                    itemKey: 'Member',
+                });
+            }
+        });
+    },
+});
+
+export const membersReducer = { [name]: slice.reducer };
+export const membersThunk = modelThunk.thunk;

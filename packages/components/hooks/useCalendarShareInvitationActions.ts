@@ -3,9 +3,9 @@ import { useCallback } from 'react';
 import { c } from 'ttag';
 
 import {
-    useAddresses,
     useEventManager,
     useGetAddressKeys,
+    useGetAddresses,
     useGetEncryptionPreferences,
     useNotifications,
 } from '@proton/components/hooks';
@@ -19,7 +19,7 @@ import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import { CalendarMemberInvitation } from '@proton/shared/lib/interfaces/calendar';
 
 const useCalendarShareInvitationActions = () => {
-    const [addresses] = useAddresses();
+    const getAddresses = useGetAddresses();
     const api = useApi();
     const { call } = useEventManager();
     const getAddressKeys = useGetAddressKeys();
@@ -45,6 +45,7 @@ const useCalendarShareInvitationActions = () => {
                 Calendar: { SenderEmail: senderEmail, Name: calendarName },
                 Signature: armoredSignature,
             } = invitation;
+            const addresses = await getAddresses();
             const canonicalizedInvitedEmail = canonicalizeInternalEmail(invitedEmail);
             const addressID = addresses.find(
                 ({ Email }) => canonicalizeInternalEmail(Email) === canonicalizedInvitedEmail
@@ -96,6 +97,7 @@ const useCalendarShareInvitationActions = () => {
         }) => {
             const { CalendarID: calendarID, Email: invitedEmail } = invitation;
             const canonicalizedInvitedEmail = canonicalizeInternalEmail(invitedEmail);
+            const addresses = await getAddresses();
             const addressID = addresses.find(
                 ({ Email }) => canonicalizeInternalEmail(Email) === canonicalizedInvitedEmail
             )?.ID;

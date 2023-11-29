@@ -1,5 +1,6 @@
 import { fireEvent, screen, waitFor } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 import { IMAGE_PROXY_FLAGS, SHOW_IMAGES } from '@proton/shared/lib/mail/mailSettings';
@@ -7,11 +8,11 @@ import { addApiMock } from '@proton/testing/lib/api';
 import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpoint';
 import noop from '@proton/utils/noop';
 
-import { addToCache, minimalCache } from '../../../helpers/test/cache';
+import { minimalCache } from '../../../helpers/test/cache';
 import {
     GeneratedKey,
-    addKeysToAddressKeysCache,
     generateKeys,
+    getAddressKeyCache,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '../../../helpers/test/crypto';
@@ -45,7 +46,6 @@ describe('message trackers', () => {
 
         toKeys = await generateKeys('me', toAddress);
         fromKeys = await generateKeys('someone', fromAddress);
-        addKeysToAddressKeysCache(addressID, toKeys);
 
         addApiMock('core/v4/keys/all', () => ({ Address: { Keys: [] } }));
     });
@@ -63,8 +63,6 @@ describe('message trackers', () => {
         });
 
         minimalCache();
-        const mailSettings = { HideRemoteImages: SHOW_IMAGES.HIDE, ImageProxy: IMAGE_PROXY_FLAGS.PROXY };
-        addToCache('MailSettings', mailSettings);
 
         const encryptedBody = await encryptMessage(content, fromKeys, toKeys);
 
@@ -83,20 +81,30 @@ describe('message trackers', () => {
 
         store.dispatch(initialize({ data: { ID: messageID, AddressID: addressID } as Message } as MessageState));
 
+        const mailSettings = {
+            HideRemoteImages: SHOW_IMAGES.HIDE,
+            ImageProxy: IMAGE_PROXY_FLAGS.PROXY,
+        } as MailSettings;
+
         const props = {
             labelID,
             conversationMode: false,
             loading: false,
             labels: [],
             message: { ID: messageID, AddressID: addressID } as Message,
-            mailSettings: mailSettings as MailSettings,
+            mailSettings,
             onBack: jest.fn(),
             breakpoints: mockDefaultBreakpoints,
             onFocus: noop,
             isComposerOpened: false,
         };
 
-        await render(<MessageView {...props} />, false);
+        await render(<MessageView {...props} />, false, {
+            preloadedState: {
+                mailSettings: getModelState(mailSettings),
+                addressKeys: getAddressKeyCache(addressID, toKeys),
+            },
+        });
 
         // Check number of trackers before load
         await waitFor(() => {

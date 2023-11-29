@@ -56,7 +56,7 @@ const RestoreAdministratorPrivileges = () => {
     const { createNotification } = useNotifications();
 
     const [organization, loadingOrganization] = useOrganization();
-    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+    const [organizationKey, loadingOrganizationKey] = useOrganizationKey();
 
     const [
         reactivateOrganizationKeysModalProps,

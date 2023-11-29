@@ -393,7 +393,7 @@ const DomainModal = ({ domain, domainAddresses = [], ...rest }: Props) => {
 
     useEffect(() => {
         if (!loadingCustomDomains) {
-            const maybeDomain = customDomains.find(({ ID }) => ID === domainModel.ID);
+            const maybeDomain = customDomains?.find(({ ID }) => ID === domainModel.ID);
             if (maybeDomain) {
                 setDomain({ ...maybeDomain });
             }

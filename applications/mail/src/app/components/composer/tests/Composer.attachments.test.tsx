@@ -1,23 +1,23 @@
 import { fireEvent, getByTitle, act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
+import { getModelState } from '@proton/account/test';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { Address, Key } from '@proton/shared/lib/interfaces';
 
 import { arrayToBase64 } from '../../../helpers/base64';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
     GeneratedKey,
-    addAddressToCache,
     addApiKeys,
     addApiMock,
     addApiResolver,
-    addKeysToAddressKeysCache,
     clearAll,
     createAttachment,
     createDocument,
     decryptSessionKey,
     generateKeys,
+    getCompleteAddress,
     getDropdown,
     minimalCache,
     parseFormData,
@@ -80,12 +80,18 @@ describe('Composer attachments', () => {
         });
 
         addApiKeys(false, toAddress, []);
-        addAddressToCache(address1);
-        addAddressToCache(address2);
 
         const composerID = Object.keys(store.getState().composers.composers)[0];
 
-        const result = await render(<Composer {...props} composerID={composerID} />, false);
+        const result = await render(<Composer {...props} composerID={composerID} />, false, {
+            preloadedState: {
+                addresses: getModelState([getCompleteAddress(address1), getCompleteAddress(address2)]),
+                addressKeys: {
+                    ...getAddressKeyCache(address1.ID, address1Keys),
+                    ...getAddressKeyCache(address2.ID, address2Keys),
+                },
+            },
+        });
 
         props.onClose.mockImplementation(result.unmount);
 
@@ -129,8 +135,6 @@ describe('Composer attachments', () => {
 
     beforeEach(() => {
         clearAll();
-        addKeysToAddressKeysCache(address1.ID, address1Keys);
-        addKeysToAddressKeysCache(address2.ID, address2Keys);
     });
 
     it('should not show embedded modal when plaintext mode', async () => {

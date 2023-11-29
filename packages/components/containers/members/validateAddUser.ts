@@ -21,13 +21,21 @@ const validateAddUser = ({
     mode,
 }: {
     privateUser: boolean;
-    organization: Organization;
+    organization: Organization | undefined;
     organizationKey: CachedOrganizationKey | undefined;
     verifiedDomains: Domain[];
     mode: UserManagementMode;
 }) => {
     const organizationKeyInfo = getOrganizationKeyInfo(organization, organizationKey);
-    const { MaxMembers, HasKeys, UsedMembers, MaxAddresses, UsedAddresses, MaxSpace, AssignedSpace } = organization;
+    const {
+        MaxMembers = 0,
+        HasKeys,
+        UsedMembers = 0,
+        MaxAddresses = 0,
+        UsedAddresses = 0,
+        MaxSpace = 0,
+        AssignedSpace = 0,
+    } = organization || {};
     const shouldValidateSpace = mode === UserManagementMode.DEFAULT;
     const shouldValidateDomain = mode === UserManagementMode.DEFAULT;
     if (MaxMembers === 1) {

@@ -40,8 +40,8 @@ import {
     useAuthentication,
     useConfig,
     useEventManager,
+    useGetOrganization,
     useNotifications,
-    useOrganization,
     useUser,
 } from '../../hooks';
 
@@ -75,7 +75,7 @@ const DeleteAccountModal = (props: Props) => {
     const api = useApi();
     const authentication = useAuthentication();
     const [{ isAdmin, Name, Email }] = useUser();
-    const [organization] = useOrganization();
+    const getOrganization = useGetOrganization();
     const [loading, withLoading] = useLoading();
     const [model, setModel] = useState({
         check: false,
@@ -128,6 +128,7 @@ const DeleteAccountModal = (props: Props) => {
                 );
             }
 
+            const organization = await getOrganization();
             // If a user is part of a family plan we first need to leave the organization before deleting the account.
             // Refreshing the event manager is necessary to update the organization state
             if (isOrganizationFamily(organization) && !isAdmin) {

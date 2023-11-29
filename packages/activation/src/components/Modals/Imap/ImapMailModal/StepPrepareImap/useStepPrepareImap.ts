@@ -58,6 +58,7 @@ interface Props {
     user: UserModel;
     handleCloseCustomizeModal: () => void;
 }
+
 const useStepPrepare = ({ user, handleCloseCustomizeModal }: Props) => {
     const dispatch = useEasySwitchDispatch();
     const { defaultAddress } = useAvailableAddresses();
@@ -108,8 +109,8 @@ const useStepPrepare = ({ user, handleCloseCustomizeModal }: Props) => {
                 isUpdated: false,
             },
             importAddress: {
-                value: defaultAddress,
-                initialValue: defaultAddress,
+                value: defaultAddress!,
+                initialValue: defaultAddress!,
                 isUpdated: false,
             },
             importCategoriesDestination: {

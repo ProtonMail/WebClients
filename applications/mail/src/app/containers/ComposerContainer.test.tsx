@@ -1,5 +1,6 @@
 import { act } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { APPS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { Recipient } from '@proton/shared/lib/interfaces';
@@ -8,7 +9,7 @@ import { mockDefaultBreakpoints } from '@proton/testing/lib/mockUseActiveBreakpo
 
 import { MESSAGE_ACTIONS } from '../constants';
 import { formatFullDate } from '../helpers/date';
-import { addAddressToCache, clearAll, minimalCache, render, tick } from '../helpers/test/helper';
+import { clearAll, getCompleteAddress, minimalCache, render, tick } from '../helpers/test/helper';
 import { preparePlainText } from '../helpers/transforms/transforms';
 import { ComposeTypes, OnCompose } from '../hooks/composer/useCompose';
 import { MessageState } from '../logic/messages/messagesTypes';
@@ -35,7 +36,6 @@ describe('ComposerContainer', () => {
 with a link -> https://protonmail.com/`;
 
         minimalCache();
-        addAddressToCache({ Email, Signature });
 
         const message = {
             localID: ID,
@@ -64,7 +64,12 @@ with a link -> https://protonmail.com/`;
             <ComposerContainer breakpoints={mockDefaultBreakpoints}>
                 <Inside />
             </ComposerContainer>,
-            false
+            false,
+            {
+                preloadedState: {
+                    addresses: getModelState([getCompleteAddress({ Email, Signature })]),
+                },
+            }
         );
 
         await act(async () => {
@@ -104,7 +109,6 @@ On ${formatFullDate(new Date(0))}, ${Sender.Name} <${Sender.Address}> wrote:
 with a link -> https://protonmail.com/`;
 
         minimalCache();
-        addAddressToCache({ Email, Signature });
 
         const me = { Name: 'me', Address: 'me@protonmail.com' };
         const toRecipient = { Name: 'toRecipient', Address: 'toRecipient@protonmail.com' };
@@ -140,7 +144,12 @@ with a link -> https://protonmail.com/`;
             <ComposerContainer breakpoints={mockDefaultBreakpoints}>
                 <Inside />
             </ComposerContainer>,
-            false
+            false,
+            {
+                preloadedState: {
+                    addresses: getModelState([getCompleteAddress({ Email, Signature })]),
+                },
+            }
         );
 
         await act(async () => {

@@ -9,7 +9,6 @@ import { activateOrganizationKey, getOrganizationBackupKeys } from '@proton/shar
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { decryptPrivateKeyWithSalt } from '@proton/shared/lib/keys';
-import { OrganizationModel } from '@proton/shared/lib/models';
 import noop from '@proton/utils/noop';
 
 import {
@@ -24,7 +23,7 @@ import {
     PasswordInputTwo,
     useFormErrors,
 } from '../../components';
-import { useApi, useAuthentication, useCache, useEventManager, useNotifications } from '../../hooks';
+import { useApi, useAuthentication, useEventManager, useGetOrganizationKey, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {
     mode: 'reactivate' | 'activate';
@@ -32,7 +31,7 @@ interface Props extends ModalProps {
 }
 
 const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }: Props) => {
-    const cache = useCache();
+    const getOrganizationKey = useGetOrganizationKey();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
     const authentication = useAuthentication();
@@ -97,10 +96,8 @@ const ReactivateOrganizationKeysModal = ({ onResetKeys, mode, onClose, ...rest }
             });
             await api(activateOrganizationKey(armoredPrivateKey));
             await call();
-            // Warning: The organization model is deleted because there is no event manager notification for when the
-            // organization key gets reactivated. Thus the organization is deleted from the cache which would trigger
-            // the organizationKeys hook to re-run.
-            cache.delete(OrganizationModel.key);
+            // Warning: Force a refetch of the org key because it's not present in the event manager.
+            await getOrganizationKey({ forceFetch: true });
 
             createNotification({ text: success });
             onClose?.();

@@ -50,7 +50,6 @@ export interface DecryptedAddressKey extends KeyPair {
 
 export interface InactiveKey {
     Key: Key;
-    publicKey?: PublicKeyReference;
     fingerprint?: string;
 }
 

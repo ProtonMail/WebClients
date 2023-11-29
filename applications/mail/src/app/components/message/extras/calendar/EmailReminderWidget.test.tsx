@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { mocked } from 'jest-mock';
 
-import { FeaturesProvider, useAddresses, useUserSettings } from '@proton/components';
+import { useAddresses, useGetAddresses, useUserSettings } from '@proton/components';
 import AuthenticationProvider from '@proton/components/containers/authentication/Provider';
 import { CacheProvider } from '@proton/components/containers/cache';
 import { DrawerProvider } from '@proton/components/hooks/drawer/useDrawer';
@@ -32,7 +32,7 @@ import {
 import { refresh } from 'proton-mail/logic/contacts/contactsActions';
 import { store } from 'proton-mail/logic/store';
 
-import { ReduxProviderWrapper, authentication, tick } from '../../../../helpers/test/render';
+import { ReduxProviderWrapper, authentication, getStoreWrapper, tick } from '../../../../helpers/test/render';
 import EmailReminderWidget from './EmailReminderWidget';
 
 jest.mock('@proton/components/hooks/useNotifications');
@@ -87,23 +87,26 @@ const mockedUseApi = mocked(useApi);
 const mockedUseNotifications = mocked(useNotifications);
 const mockedUseGetCalendarEventRaw = mocked(useGetCalendarEventRaw);
 const mockedUseAddresses = mocked(useAddresses);
+const mockedUseGetAddresses = mocked(useGetAddresses);
 const mockedUserSettings = mocked(useUserSettings);
 
 function renderComponent(overrides?: any) {
     window.history.pushState({}, 'Calendar', '/');
 
+    const { Wrapper: ReduxWrapper } = getStoreWrapper();
+
     const Wrapper = ({ children }: any) => (
-        <AuthenticationProvider store={authentication}>
-            <CacheProvider cache={createCache()}>
-                <FeaturesProvider>
+        <ReduxWrapper>
+            <AuthenticationProvider store={authentication}>
+                <CacheProvider cache={createCache()}>
                     <DrawerProvider>
                         <ReduxProviderWrapper>
                             <BrowserRouter>{children}</BrowserRouter>
                         </ReduxProviderWrapper>
                     </DrawerProvider>
-                </FeaturesProvider>
-            </CacheProvider>
-        </AuthenticationProvider>
+                </CacheProvider>
+            </AuthenticationProvider>
+        </ReduxWrapper>
     );
 
     return {
@@ -146,7 +149,9 @@ describe('EmailReminderWidget', () => {
                     },
                 })
         );
-        mockedUseAddresses.mockImplementation(() => [[addressBuilder({})], false, null]);
+        const address = addressBuilder({});
+        mockedUseAddresses.mockImplementation(() => [[address], false]);
+        mockedUseGetAddresses.mockImplementation(() => async () => [address]);
         mockedUserSettings.mockImplementation(() => [
             { HideSidePanel: DRAWER_VISIBILITY.HIDE } as UserSettings,
             false,

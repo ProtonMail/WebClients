@@ -13,9 +13,9 @@ import { getVpnAppRoutes } from '../containers/vpn/routes';
 interface Arguments {
     app: APP_NAMES;
     user: UserModel;
-    addresses: Address[];
-    subscription: Subscription;
-    organization: Organization;
+    addresses: Address[] | undefined;
+    subscription: Subscription | undefined;
+    organization: Organization | undefined;
     isReferralProgramEnabled: boolean;
     isSmtpTokenEnabled: boolean;
     isDataRecoveryAvailable: boolean;

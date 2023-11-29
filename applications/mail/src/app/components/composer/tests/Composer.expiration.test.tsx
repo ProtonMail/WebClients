@@ -7,15 +7,8 @@ import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
-import {
-    addApiKeys,
-    addKeysToAddressKeysCache,
-    clearAll,
-    generateKeys,
-    getDropdown,
-    render,
-} from '../../../helpers/test/helper';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { addApiKeys, clearAll, generateKeys, getDropdown, render } from '../../../helpers/test/helper';
 import { store } from '../../../logic/store';
 import Composer from '../Composer';
 import { AddressID, ID, fromAddress, prepareMessage, props, toAddress } from './Composer.test.helpers';
@@ -41,10 +34,13 @@ describe('Composer expiration', () => {
         const composerID = Object.keys(state.composers.composers)[0];
 
         const fromKeys = await generateKeys('me', fromAddress);
-        addKeysToAddressKeysCache(AddressID, fromKeys);
         addApiKeys(false, toAddress, []);
 
-        const result = await render(<Composer {...props} composerID={composerID} />);
+        const result = await render(<Composer {...props} composerID={composerID} />, true, {
+            preloadedState: {
+                addressKeys: getAddressKeyCache(AddressID, fromKeys),
+            },
+        });
 
         return result;
     };

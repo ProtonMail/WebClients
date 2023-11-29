@@ -11,7 +11,7 @@ import { useApi, useEventManager, useNotifications } from '../../hooks';
 
 interface Props extends ModalProps {
     member: Member;
-    organization: Organization;
+    organization?: Organization;
 }
 
 const UserRemoveModal = ({ member, organization, ...rest }: Props) => {
@@ -29,6 +29,7 @@ const UserRemoveModal = ({ member, organization, ...rest }: Props) => {
         rest?.onClose?.();
     };
 
+    const organizationName = organization?.Name || '';
     const handleDelete = async () => {
         if (!member?.ID) {
             createNotification({
@@ -43,14 +44,14 @@ const UserRemoveModal = ({ member, organization, ...rest }: Props) => {
         rest?.onClose?.();
         createNotification({
             // translator: Success message when a user has been removed from an organization. Looks like: 'John Doe has been removed from Bernie's Family'
-            text: c('familyOffer_2023:Success').t`${member.Name} has been removed from ${organization.Name}`,
+            text: c('familyOffer_2023:Success').t`${member.Name} has been removed from ${organizationName}`,
         });
     };
 
     const description = isInvitationPending
         ? // translator: Info message when a user has been invited to an organization. Looks like: 'The invitation will be cancelled and the user won't be able to join Bernie's Family.'
           c('familyOffer_2023:Info')
-              .t`The invitation will be cancelled and the user won't be able to join ${organization.Name}.`
+              .t`The invitation will be cancelled and the user won't be able to join ${organizationName}.`
         : c('familyOffer_2023:Info')
               .t`The user's account will be moved to a ${BRAND_NAME} Unlimited plan for a 30-day free trial*.`;
 
