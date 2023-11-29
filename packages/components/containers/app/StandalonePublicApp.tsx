@@ -1,4 +1,4 @@
-import { LoaderPage } from '@proton/components/containers';
+import { LoaderPage, UnleashFlagProvider } from '@proton/components/containers';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
 
 import UnAuthenticatedApiProvider from '../api/UnAuthenticatedApiProvider';
@@ -16,11 +16,13 @@ const StandalonePublicApp = ({ onLogin, locales }: Props) => {
     return (
         <StandardPublicApp loader={loaderPage} locales={locales}>
             <UnAuthenticatedApiProvider loader={loaderPage}>
-                <div className="h-full flex flex-justify-center flex-align-items-center">
-                    <div className="w-custom" style={{ '--w-custom': '20em' }}>
-                        <MinimalLoginContainer onLogin={onLogin} />
+                <UnleashFlagProvider>
+                    <div className="h-full flex flex-justify-center flex-align-items-center">
+                        <div className="w-custom" style={{ '--w-custom': '20em' }}>
+                            <MinimalLoginContainer onLogin={onLogin} />
+                        </div>
                     </div>
-                </div>
+                </UnleashFlagProvider>
             </UnAuthenticatedApiProvider>
         </StandardPublicApp>
     );
