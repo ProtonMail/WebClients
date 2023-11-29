@@ -12,7 +12,7 @@ import { EventOldData } from '../../../interfaces/EventData';
 import {
     INVITE_ACTION_TYPES,
     InviteActions,
-    SendIcsActionData,
+    SendIcs,
     UpdatePartstatOperation,
     UpdatePersonalPartOperation,
 } from '../../../interfaces/Invite';
@@ -25,6 +25,7 @@ import createSingleCancelledRecurrence from '../recurrence/createSingleCancelled
 import deleteFutureRecurrence from '../recurrence/deleteFutureRecurrence';
 import deleteSingleRecurrence from '../recurrence/deleteSingleRecurrence';
 import { getUpdatePartstatOperation } from './getChangePartstatActions';
+import { getHasProtonAttendees } from './inviteActions';
 import { getCurrentVevent, getRecurrenceEvents, getRecurrenceEventsAfter } from './recurringHelper';
 
 interface DeleteRecurringArguments {
@@ -36,9 +37,7 @@ interface DeleteRecurringArguments {
     isAttendee: boolean;
     inviteActions: InviteActions;
     selfAttendeeToken?: string;
-    sendIcs: (
-        data: SendIcsActionData
-    ) => Promise<{ veventComponent?: VcalVeventComponent; inviteActions: InviteActions; timestamp: number }>;
+    sendIcs: SendIcs;
 }
 
 export const getDeleteRecurringEventActions = async ({
@@ -76,6 +75,7 @@ export const getDeleteRecurringEventActions = async ({
         const isSingleEdit = oldEvent.ID !== originalEvent.ID;
         const isCancelInvitation = inviteType === INVITE_ACTION_TYPES.CANCEL_INVITATION;
         let cancelledOccurrenceVevent: VcalVeventComponent | undefined;
+        let hasCancelledWithProtonAttendees = false;
 
         if (isSingleEdit && isDeclineInvitation) {
             const { inviteActions: cleanInviteActions } = await sendIcs({
@@ -90,10 +90,11 @@ export const getDeleteRecurringEventActions = async ({
             cancelledOccurrenceVevent = createSingleCancelledRecurrence(
                 getCurrentVevent(oldVeventComponent, recurrence)
             );
-            const { inviteActions: cleanInviteActions } = await sendIcs({
+            const { inviteActions: cleanInviteActions, sendPreferencesMap } = await sendIcs({
                 inviteActions,
                 cancelVevent: cancelledOccurrenceVevent,
             });
+            hasCancelledWithProtonAttendees = getHasProtonAttendees(cancelledOccurrenceVevent, sendPreferencesMap);
             updatedInviteActions = cleanInviteActions;
         }
 
@@ -110,7 +111,9 @@ export const getDeleteRecurringEventActions = async ({
                       calendarEvent: originalEvent,
                       hasDefaultNotifications: getHasDefaultNotifications(originalEvent),
                       isAttendee,
-                      cancelledOccurrenceVevent,
+                      cancelledOccurrenceVevent: hasCancelledWithProtonAttendees
+                          ? cancelledOccurrenceVevent
+                          : undefined,
                   });
 
         return {
