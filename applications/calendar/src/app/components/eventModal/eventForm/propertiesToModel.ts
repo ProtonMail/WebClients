@@ -21,6 +21,7 @@ export const propertiesToModel = ({
     selfAddressData,
     isAllDay,
     isProtonProtonInvite,
+    color,
     tzid,
 }: {
     veventComponent: VcalVeventComponent;
@@ -29,6 +30,7 @@ export const propertiesToModel = ({
     selfAddressData?: SelfAddressData;
     isAllDay: boolean;
     isProtonProtonInvite: boolean;
+    color?: string;
     tzid: string;
 }): EventModelView => {
     const {
@@ -55,6 +57,7 @@ export const propertiesToModel = ({
         title: truncate(titleString.trim(), MAX_CHARS_API.TITLE),
         location: truncate(locationString.trim(), MAX_CHARS_API.LOCATION),
         description: truncate(descriptionString.trim(), MAX_CHARS_API.EVENT_DESCRIPTION),
+        color,
         attendees: propertiesToAttendeeModel(attendee),
         organizer: propertiesToOrganizerModel(organizer),
         isProtonProtonInvite,

@@ -54,7 +54,7 @@ interface SaveRecurringArguments {
     getAddressKeys: GetAddressKeys;
     getCalendarKeys: ReturnType<typeof useGetCalendarKeys>;
     hasDefaultNotifications: boolean;
-    canEditOnlyNotifications: boolean;
+    canEditOnlyPersonalPart: boolean;
     isAttendee: boolean;
     inviteActions: InviteActions;
     sendIcs: (data: SendIcsActionData) => Promise<{
@@ -90,7 +90,7 @@ const getSaveRecurringEventActions = async ({
     getCalendarKeys,
     inviteActions,
     hasDefaultNotifications,
-    canEditOnlyNotifications,
+    canEditOnlyPersonalPart,
     isAttendee,
     sendIcs,
     reencryptSharedEvent,
@@ -145,7 +145,7 @@ const getSaveRecurringEventActions = async ({
                     reencryptSharedEvent,
                 });
             }
-            if (canEditOnlyNotifications) {
+            if (canEditOnlyPersonalPart) {
                 // We change notifications through the updatePersonalPart route
                 return getUpdatePersonalPartActions({
                     eventComponent: newVeventComponent,
@@ -313,8 +313,8 @@ const getSaveRecurringEventActions = async ({
                 })
             );
             updatePersonalPartActions.push(
-                ...dropAlarmsActions.map(({ calendarID, eventID }) => {
-                    return { data: { memberID: newMemberID, calendarID, eventID } };
+                ...dropAlarmsActions.map(({ calendarID, eventID, color }) => {
+                    return { data: { memberID: newMemberID, calendarID, eventID, color } };
                 })
             );
             return {
@@ -325,7 +325,7 @@ const getSaveRecurringEventActions = async ({
                 sendActions,
             };
         }
-        if (canEditOnlyNotifications && !isSwitchCalendar) {
+        if (canEditOnlyPersonalPart && !isSwitchCalendar) {
             // We change notifications through the updatePersonalPart route
             return getUpdatePersonalPartActions({
                 eventComponent: newVeventComponent,

@@ -104,6 +104,7 @@ export const createCalendarEvent = async ({
         calendarEncryptedPart,
         calendarSessionKey: encryptedCalendarSessionKey,
         notificationsPart: hasDefaultNotifications ? undefined : notificationsPart,
+        colorPart: eventComponent.color?.value,
         attendeesEncryptedPart,
         attendeesClearPart: isAttendeeSwitchingCalendar ? undefined : attendeesPart[CLEAR_TEXT],
         removedAttendeesEmails,

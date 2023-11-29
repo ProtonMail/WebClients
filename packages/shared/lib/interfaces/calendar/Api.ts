@@ -110,6 +110,7 @@ export interface CalendarCreateOrUpdateEventBlobData {
     SharedKeyPacket?: string;
     SharedEventContent?: Omit<CalendarEventData, 'Author'>[];
     Notifications: Nullable<CalendarNotificationSettings[]>;
+    Color: Nullable<string>;
     AttendeesEventContent?: Omit<CalendarEventData, 'Author'>[];
     Attendees?: Omit<Attendee, 'UpdateTime' | 'ID'>[];
 }
@@ -134,6 +135,7 @@ export interface CreateOrUpdateCalendarEventData
 
 export interface CreateSinglePersonalEventData {
     Notifications: Nullable<CalendarNotificationSettings[]>;
+    Color: Nullable<string>;
 }
 
 export interface CreateLinkedCalendarEventData
