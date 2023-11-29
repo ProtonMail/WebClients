@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { Button, ButtonLike, Card } from '@proton/atoms';
 import { SettingsLink, useModalState } from '@proton/components/components';
-import { FeatureCode, SettingsParagraph, SettingsSectionWide } from '@proton/components/containers';
-import { useApi, useFeature, useNotifications } from '@proton/components/hooks';
+import { SettingsParagraph, SettingsSectionWide } from '@proton/components/containers';
+import { useApi, useNotifications } from '@proton/components/hooks';
 import { removeInvitation, removeMember } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
@@ -73,8 +73,6 @@ const CalendarShareSection = ({
     const api = useApi();
     const { createNotification } = useNotifications();
 
-    const isCalendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
-
     const [shareCalendarModal, setIsShareModalOpen, renderShareCalendarModal] = useModalState();
     const { hasPaidMail } = user;
 
@@ -100,9 +98,7 @@ const CalendarShareSection = ({
         createNotification({ type: 'success', text });
     };
 
-    const title = isCalendarSharingEnabled
-        ? c('Calendar settings section title').t`Share calendar`
-        : c('Calendar settings section title').t`Share outside ${BRAND_NAME}`;
+    const title = c('Calendar settings section title').t`Share calendar`;
     const pendingInvitations = filterOutAcceptedInvitations(invitations);
     const isMaximumMembersReached = members.length + pendingInvitations.length >= MAX_CALENDAR_MEMBERS;
 
@@ -128,51 +124,43 @@ const CalendarShareSection = ({
                 />
             )}
             <SubSettingsSection title={title} id={CALENDAR_SETTINGS_SECTION_ID.SHARE}>
-                {hasPaidMail &&
-                    (isCalendarSharingEnabled ? (
-                        <>
-                            <div className="mb-11 mt-6">
-                                <div className="mb-6">
-                                    <h3 className="text-bold mb-2" id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PRIVATELY}>
-                                        {sectionTitle}
-                                    </h3>
-                                    <SettingsParagraph
-                                        learnMoreUrl={getKnowledgeBaseUrl('/share-calendar-with-proton-users')}
+                {hasPaidMail && (
+                    <>
+                        <div className="mb-11 mt-6">
+                            <div className="mb-6">
+                                <h3 className="text-bold mb-2" id={CALENDAR_SETTINGS_SECTION_ID.SHARE_PRIVATELY}>
+                                    {sectionTitle}
+                                </h3>
+                                <SettingsParagraph
+                                    learnMoreUrl={getKnowledgeBaseUrl('/share-calendar-with-proton-users')}
+                                >
+                                    {c('Calendar settings private share description')
+                                        .t`Share your calendar with other ${BRAND_NAME} users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.`}
+                                </SettingsParagraph>
+                                {!isMaximumMembersReached && (
+                                    <Button
+                                        onClick={handleShare}
+                                        disabled={isLoading || !canShare || isMaximumMembersReached}
+                                        color="norm"
+                                        aria-label={sectionTitle}
                                     >
-                                        {c('Calendar settings private share description')
-                                            .t`Share your calendar with other ${BRAND_NAME} users. Enable collaboration by allowing them to add and edit events in your calendar. You can modify the user permissions anytime.`}
-                                    </SettingsParagraph>
-                                    {!isMaximumMembersReached && (
-                                        <Button
-                                            onClick={handleShare}
-                                            disabled={isLoading || !canShare || isMaximumMembersReached}
-                                            color="norm"
-                                            aria-label={sectionTitle}
-                                        >
-                                            {c('Action').t`Share`}
-                                        </Button>
-                                    )}
-                                </div>
-                                {isLoading && <MembersAndInvitationsLoadingSkeleton />}
-                                <CalendarMemberAndInvitationList
-                                    members={members}
-                                    invitations={invitations}
-                                    calendarID={calendar.ID}
-                                    canEdit={canShare}
-                                    onDeleteInvitation={handleDeleteInvitation}
-                                    onDeleteMember={handleDeleteMember}
-                                />
+                                        {c('Action').t`Share`}
+                                    </Button>
+                                )}
                             </div>
-                            <CalendarShareUrlSection calendar={calendar} user={user} canShare={canShare} />
-                        </>
-                    ) : (
-                        <CalendarShareUrlSection
-                            calendar={calendar}
-                            noTitle={!isCalendarSharingEnabled}
-                            user={user}
-                            canShare={canShare}
-                        />
-                    ))}
+                            {isLoading && <MembersAndInvitationsLoadingSkeleton />}
+                            <CalendarMemberAndInvitationList
+                                members={members}
+                                invitations={invitations}
+                                calendarID={calendar.ID}
+                                canEdit={canShare}
+                                onDeleteInvitation={handleDeleteInvitation}
+                                onDeleteMember={handleDeleteMember}
+                            />
+                        </div>
+                        <CalendarShareUrlSection calendar={calendar} user={user} canShare={canShare} />
+                    </>
+                )}
                 {!hasPaidMail && (
                     <Card rounded className="mt-4" data-testid="card:upgrade">
                         <div className="flex flex-nowrap items-center">

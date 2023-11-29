@@ -3,15 +3,7 @@ import { MouseEvent, useState } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import {
-    FeatureCode,
-    Prompt,
-    useApi,
-    useFeature,
-    useModalState,
-    useNotifications,
-    useSettingsLink,
-} from '@proton/components';
+import { Prompt, useApi, useModalState, useNotifications, useSettingsLink } from '@proton/components';
 import { CALENDAR_MODAL_TYPE, CalendarModal } from '@proton/components/containers/calendar/calendarModal/CalendarModal';
 import HolidaysCalendarModal from '@proton/components/containers/calendar/holidaysCalendarModal/HolidaysCalendarModal';
 import { ImportModal } from '@proton/components/containers/calendar/importModal';
@@ -89,8 +81,6 @@ const CalendarSidebarListItems = ({
     const api = useApi();
     const { createNotification } = useNotifications();
     const goToSettings = useSettingsLink();
-
-    const isCalendarSharingEnabled = !!useFeature(FeatureCode.CalendarSharingEnabled).feature?.Value;
 
     const [loadingFetchMemberAndInvitations, withLoadingFetchMemberAndInvitations] = useLoading();
     const [loadingLinks, withLoadingLinks] = useLoading();
@@ -246,7 +236,6 @@ To share this calendar with more ${BRAND_NAME} accounts, remove some members.`,
                         onChangeVisibility={onChangeVisibility}
                         loadingVisibility={loadingVisibility[calendar.ID]}
                         loadingSubscriptionParameters={loadingSubscriptionParameters}
-                        isCalendarSharingEnabled={isCalendarSharingEnabled}
                         onOpenEditCalendarModal={(calendar) => {
                             handleOpenEditModal(calendar);
                         }}
