@@ -7,10 +7,6 @@ class GetLabelsTranslation implements TranslationInterface {
         c('Info')
             .t`Create a label for the imported messages, a time range for this import, and the labels you would like to import.`;
 
-    public hide = () => c('Action').t`Hide labels`;
-
-    public show = () => c('Action').t`Show labels`;
-
     public manage = () => c('Action').t`Manage labels`;
 
     public editName = () => c('Tooltip').t`Edit label names`;
@@ -66,10 +62,6 @@ class GetFoldersTranslation implements TranslationInterface {
     public infoHeader = () =>
         c('Info')
             .t`Create a label for the imported messages, a time range for this import, and the folders you would like to import.`;
-
-    public hide = () => c('Action').t`Hide folders`;
-
-    public show = () => c('Action').t`Show folders`;
 
     public manage = () => c('Action').t`Manage folders`;
 
@@ -134,8 +126,6 @@ export class EasyTrans {
 
 interface TranslationInterface {
     infoHeader: () => string;
-    hide: () => string;
-    show: () => string;
     manage: () => string;
     editName: () => string;
     errorNameTooLong: () => string;
