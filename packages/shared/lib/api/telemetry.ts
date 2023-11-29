@@ -6,6 +6,7 @@ export enum TelemetryMeasurementGroups {
     calendarEncryptedSearch = 'calendar.web.encrypted_search',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
     calendarTimeZoneSelector = 'calendar.web.timezone_selector',
+    changelogOpened = 'any.web.changelog_opened',
     keyTransparency = 'any.web.key_transparency',
     mailPrivacyDropdown = 'mail.web.privacy_dropdown',
     mailSelectAll = 'mail.web.select_all',
@@ -82,6 +83,10 @@ export enum TelemetryMailSelectAllEvents {
     banner_permanent_delete = 'banner_permanent_delete',
 }
 
+export enum TelemetryChangelog {
+    opened = 'opened',
+}
+
 export type TelemetryEvents =
     | TelemetrySimpleLoginEvents
     | TelemetryCalendarEvents
@@ -90,7 +95,8 @@ export type TelemetryEvents =
     | TelemetryAccountSignupEvents
     | TelemetryKeyTransparencyErrorEvents
     | TelemetryMailEvents
-    | TelemetryMailSelectAllEvents;
+    | TelemetryMailSelectAllEvents
+    | TelemetryChangelog;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
