@@ -1,36 +1,81 @@
-import { useCallback } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
+import debounce from '@proton/utils/debounce';
 
 import { pageCount } from '../helpers/paging';
 
-export const usePaging = (
-    inputPage: number,
-    inputPageSize: MAIL_PAGE_SIZE,
-    inputTotal: number | undefined,
-    onPage: (page: number) => void
-) => {
-    const total = inputTotal === undefined ? 0 : pageCount(inputTotal, inputPageSize);
-    const page = inputPage + 1;
+const getTotalPagesCount = (currentTotalPages: number | undefined, inputPageSize: MAIL_PAGE_SIZE) =>
+    currentTotalPages === undefined ? 0 : pageCount(currentTotalPages, inputPageSize);
 
-    const handleNext = useCallback(
-        () => onPage(inputPage === total - 1 ? total - 1 : inputPage + 1),
-        [onPage, inputPage, total]
+const PAGE_CLICK_DEBOUNCE_TIMEOUT = 300;
+const PROP_CHANGE_TIMEOUT = 60;
+
+export const usePaging = (
+    currentPage: number,
+    pageSize: MAIL_PAGE_SIZE,
+    currentTotalPages: number | undefined,
+    onChange: (page: number) => void
+) => {
+    const currentPageDisplay = currentPage + 1;
+    const [page, setPage] = useState(currentPageDisplay);
+    const [total, setTotal] = useState(() => getTotalPagesCount(currentTotalPages, pageSize));
+    const debouncedOnchangeCallbackRef = useRef(
+        debounce((callback: () => void) => {
+            callback();
+        }, PAGE_CLICK_DEBOUNCE_TIMEOUT)
+    );
+    const debouncedUseEffectCallbackRef = useRef(
+        debounce((callback: () => void) => {
+            callback();
+        }, PROP_CHANGE_TIMEOUT)
     );
 
-    const handlePrevious = useCallback(() => onPage(inputPage === 0 ? 0 : inputPage - 1), [onPage, inputPage]);
-    const handlePage = useCallback((newPage: number) => onPage(newPage - 1), [onPage]);
-    const handleStart = useCallback(() => onPage(0), [onPage]);
-    const handleEnd = useCallback(() => onPage(total - 1), [onPage, total]);
+    const optimisticChange = (nextPage: number, currentPage: number) => {
+        if (nextPage === currentPage) {
+            return;
+        }
+        setPage(nextPage);
+        const nextPageApiValue = nextPage - 1;
+        debouncedOnchangeCallbackRef.current(() => onChange(nextPageApiValue));
+    };
+
+    useEffect(() => {
+        debouncedUseEffectCallbackRef.current(() => {
+            if (currentPageDisplay !== page) {
+                setPage(currentPageDisplay);
+            }
+
+            const newTotal = getTotalPagesCount(currentTotalPages, pageSize);
+            if (currentTotalPages !== newTotal) {
+                setTotal(getTotalPagesCount(currentTotalPages, pageSize));
+            }
+        });
+    }, [currentPage, currentTotalPages, pageSize]);
 
     return {
-        onNext: handleNext,
-        onPrevious: handlePrevious,
-        onPage: handlePage,
-        onStart: handleStart,
-        onEnd: handleEnd,
+        onNext: () => {
+            const nextPage = page === total ? total : page + 1;
+            optimisticChange(nextPage, page);
+        },
+        onPrevious: () => {
+            const nextPage = page === 1 ? 1 : page - 1;
+            optimisticChange(nextPage, page);
+        },
+        onPage: (newPage: number) => {
+            const nextPage = newPage;
+            optimisticChange(nextPage, page);
+        },
+        onStart: () => {
+            const nextPage = 1;
+            optimisticChange(nextPage, page);
+        },
+        onEnd: () => {
+            const nextPage = total;
+            optimisticChange(nextPage, page);
+        },
         page,
-        pageSize: inputPageSize,
+        pageSize: pageSize,
         total,
     };
 };
