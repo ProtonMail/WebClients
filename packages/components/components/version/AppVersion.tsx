@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-
-
+import { TelemetryChangelog, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { APPS_CONFIGURATION } from '@proton/shared/lib/constants';
+import { sendTelemetryReport } from '@proton/shared/lib/helpers/metrics';
 
 import { getAppVersion } from '../../helpers';
-import { useConfig, useEarlyAccess } from '../../hooks';
+import { useApi, useConfig, useEarlyAccess } from '../../hooks';
 import { useModalState } from '../modalTwo';
 import { Tooltip } from '../tooltip';
 import ChangelogModal from './ChangelogModal';
@@ -23,6 +23,7 @@ const envMap = {
 };
 
 const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, changelog }: Props) => {
+    const api = useApi();
     const { APP_NAME, APP_VERSION, DATE_VERSION } = useConfig();
     const { currentEnvironment } = useEarlyAccess();
     const [changelogModal, setChangelogModalOpen, render] = useModalState();
@@ -49,6 +50,19 @@ const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, change
         );
     }
 
+    const handleOpenChangelog = () => {
+        setChangelogModalOpen(true);
+
+        void sendTelemetryReport({
+            api,
+            measurementGroup: TelemetryMeasurementGroups.changelogOpened,
+            event: TelemetryChangelog.opened,
+            dimensions: {
+                app: APP_NAME,
+            },
+        });
+    };
+
     return (
         <>
             {render && <ChangelogModal {...changelogModal} changelog={changelog} />}
@@ -56,7 +70,7 @@ const AppVersion = ({ appVersion: maybeAppVersion, appName: maybeAppName, change
                 <button
                     type="button"
                     data-testid="app-infos:release-notes-button"
-                    onClick={() => setChangelogModalOpen(true)}
+                    onClick={handleOpenChangelog}
                     title={title}
                     className={className}
                 >
