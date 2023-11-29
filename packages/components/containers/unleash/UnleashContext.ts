@@ -8,9 +8,12 @@ enum MailFeatureFlag {
     EmailForwarding = 'EmailForwarding',
     SnoozeFeature = 'SnoozeFeature',
 }
+
 enum CommonFeatureFlag {
     DisableElectronMail = 'DisableElectronMail',
     SignedInAccountRecovery = 'SignedInAccountRecovery',
+    KeyTransparencyShowUI = 'KeyTransparencyShowUI',
+    KeyTransparencyLogOnly = 'KeyTransparencyLogOnly',
 }
 
 enum AccountFlag {
