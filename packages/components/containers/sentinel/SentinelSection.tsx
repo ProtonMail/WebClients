@@ -1,5 +1,8 @@
+import { useRef } from 'react';
+
 import { c } from 'ttag';
 
+import { Href } from '@proton/atoms/Href';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import { useLoading } from '@proton/hooks';
 import { disableHighSecurity, enableHighSecurity } from '@proton/shared/lib/api/settings';
@@ -18,7 +21,14 @@ import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { Toggle, useSettingsLink } from '../../components';
-import { useApi, useConfig, useEventManager, useNotifications, useUserSettings } from '../../hooks';
+import {
+    useApi,
+    useConfig,
+    useEventManager,
+    useNotifications,
+    useSearchParamsEffect,
+    useUserSettings,
+} from '../../hooks';
 import { SettingsParagraph, SettingsSectionWide } from '../account';
 import SettingsLayout from '../account/SettingsLayout';
 import SettingsLayoutLeft from '../account/SettingsLayoutLeft';
@@ -37,8 +47,33 @@ const SentinelSection = ({ app }: Props) => {
     const { call } = useEventManager();
     const { createNotification } = useNotifications();
 
+    const sentinelToggleRef = useRef<HTMLInputElement | null>(null);
+
     const protonSentinel = userSettings.HighSecurity.Value;
     const sentinelEligible = isProtonSentinelEligible(userSettings);
+
+    useSearchParamsEffect(
+        (params) => {
+            if (!sentinelToggleRef.current) {
+                return;
+            }
+
+            const enableSentinelParam = params.get('enable-sentinel');
+            params.delete('enable-sentinel');
+            if (!enableSentinelParam) {
+                return params;
+            }
+
+            if (protonSentinel === SETTINGS_PROTON_SENTINEL_STATE.ENABLED) {
+                return params;
+            }
+
+            sentinelToggleRef.current.click();
+
+            return params;
+        },
+        [sentinelToggleRef.current]
+    );
 
     const handleHighSecurity = async (newHighSecurityState: Boolean) => {
         if (newHighSecurityState) {
@@ -68,19 +103,23 @@ const SentinelSection = ({ app }: Props) => {
                 {c('Info').t`Upgrade to ${PLAN_NAMES[PLANS.PASS_PLUS]}, ${PLAN_NAMES[PLANS.BUNDLE]}, ${
                     PLAN_NAMES[PLANS.FAMILY]
                 }, or ${PLAN_NAMES[PLANS.BUNDLE_PRO]} plan to get access to ${PROTON_SENTINEL_NAME}.`}
-                ;
             </>
         );
     };
 
     return (
         <SettingsSectionWide>
-            <SettingsParagraph large={true} learnMoreUrl={getKnowledgeBaseUrl('/proton-sentinel')}>
-                <p className="mt-0">{c('Info')
-                    .t`${PROTON_SENTINEL_NAME} is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.`}</p>
-                <p className="mb-0">{c('Info')
-                    .t`Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${PROTON_SENTINEL_NAME}.`}</p>
-                {!sentinelEligible && <p className="mb-0">{getUpgradeMessage()}</p>}
+            <SettingsParagraph large>
+                {c('Info')
+                    .t`${PROTON_SENTINEL_NAME} is an advanced account protection program powered by sophisticated AI systems and specialists working around the clock to protect you from bad actors and security threats.`}
+            </SettingsParagraph>
+            <SettingsParagraph large>
+                {c('Info')
+                    .t`Public figures, journalists, executives, and others who may be the target of cyber attacks are highly encouraged to enable ${PROTON_SENTINEL_NAME}.`}{' '}
+            </SettingsParagraph>
+            {!sentinelEligible && <SettingsParagraph large>{getUpgradeMessage()}</SettingsParagraph>}
+            <SettingsParagraph large>
+                <Href href={getKnowledgeBaseUrl('/proton-sentinel')}>{c('Link').t`Learn more`}</Href>
             </SettingsParagraph>
 
             {sentinelEligible ? (
@@ -93,6 +132,7 @@ const SentinelSection = ({ app }: Props) => {
                         </SettingsLayoutLeft>
                         <SettingsLayoutRight className="pt-2">
                             <Toggle
+                                ref={sentinelToggleRef}
                                 id="high-security-toggle"
                                 disabled={false}
                                 loading={loadingSentinel}
