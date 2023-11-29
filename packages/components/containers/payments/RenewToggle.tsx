@@ -57,7 +57,7 @@ export interface UseRenewToggleResult {
 export const useRenewToggle = ({ initialRenewState = Autopay.ENABLE }: UseRenewToggleOptions): UseRenewToggleResult => {
     const [subscription] = useSubscription();
     const vpnPlans: (PLANS | ADDON_NAMES)[] = [PLANS.VPN, PLANS.VPNBASIC, PLANS.VPNPLUS];
-    const isVPNPlan = subscription?.Plans?.some(({ Name }) => vpnPlans.includes(Name));
+    const isVPNPlan = !!subscription?.Plans?.some(({ Name }) => vpnPlans.includes(Name));
 
     const [disableRenewModal, showDisableRenewModal] = useModalTwo<DisableRenewModalOwnProps, boolean>(
         DisableRenewModal

@@ -1,18 +1,22 @@
 import { findByText } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { parseStringToDOM } from '@proton/shared/lib/helpers/dom';
 import { Attachment, Message } from '@proton/shared/lib/interfaces/mail/Message';
 
 import { constructMime } from '../../../helpers/send/sendMimeBuilder';
 import { addApiContact } from '../../../helpers/test/contact';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import {
+    getAddressKeyCache,
+    getStoredKey,
+    releaseCryptoProxy,
+    setupCryptoProxyForTesting,
+} from '../../../helpers/test/crypto';
 import {
     GeneratedKey,
     addApiKeys,
     addApiMock,
-    addKeysToAddressKeysCache,
-    addKeysToUserKeysCache,
     api,
     assertIcon,
     clearAll,
@@ -58,7 +62,6 @@ describe('MessageView encryption', () => {
 
     describe('Decrypt and render', () => {
         it('html', async () => {
-            addKeysToAddressKeysCache(addressID, toKeys);
             addApiKeys(false, fromAddress, []);
 
             const encryptedBody = await encryptMessage(body, fromKeys, toKeys);
@@ -75,7 +78,11 @@ describe('MessageView encryption', () => {
                 } as Message,
             }));
 
-            const { open, container } = await setup({ conversationMode: true });
+            const { open, container } = await setup({ conversationMode: true }, true, {
+                preloadedState: {
+                    addressKeys: getAddressKeyCache(addressID, toKeys),
+                },
+            });
             await open();
 
             const iframeContent = await getIframeRootDiv(container);
@@ -84,7 +91,6 @@ describe('MessageView encryption', () => {
         });
 
         it('plaintext', async () => {
-            addKeysToAddressKeysCache(addressID, toKeys);
             addApiKeys(false, fromAddress, []);
 
             const encryptedBody = await encryptMessage(body, fromKeys, toKeys);
@@ -101,7 +107,11 @@ describe('MessageView encryption', () => {
                 } as Message,
             }));
 
-            const { open, container } = await setup();
+            const { open, container } = await setup({}, true, {
+                preloadedState: {
+                    addressKeys: getAddressKeyCache(addressID, toKeys),
+                },
+            });
             await open();
 
             const iframeContent = await getIframeRootDiv(container);
@@ -119,7 +129,6 @@ describe('MessageView encryption', () => {
                 Attachments: [] as Attachment[],
             } as Message;
 
-            addKeysToAddressKeysCache(addressID, toKeys);
             addApiKeys(false, fromAddress, []);
 
             const mimeBody = await constructMime(
@@ -137,7 +146,11 @@ describe('MessageView encryption', () => {
                 Message: { ...message, Body: encryptedBody },
             }));
 
-            const { open, container } = await setup();
+            const { open, container } = await setup({}, true, {
+                preloadedState: {
+                    addressKeys: getAddressKeyCache(addressID, toKeys),
+                },
+            });
             await open();
 
             const iframeContent = await getIframeRootDiv(container);
@@ -154,7 +167,6 @@ describe('MessageView encryption', () => {
                 Attachments: [] as Attachment[],
             } as Message;
 
-            addKeysToAddressKeysCache(addressID, toKeys);
             addApiKeys(false, fromAddress, []);
 
             const mimeBody = await constructMime(
@@ -172,7 +184,11 @@ describe('MessageView encryption', () => {
                 Message: { ...message, Body: encryptedBody },
             }));
 
-            const { open, container } = await setup();
+            const { open, container } = await setup({}, true, {
+                preloadedState: {
+                    addressKeys: getAddressKeyCache(addressID, toKeys),
+                },
+            });
             await open();
 
             const iframeContent = await getIframeRootDiv(container);
@@ -182,8 +198,6 @@ describe('MessageView encryption', () => {
 
     describe('Signature verification', () => {
         it('verified sender internal', async () => {
-            addKeysToAddressKeysCache(addressID, toKeys);
-            addKeysToUserKeysCache(toKeys);
             addApiKeys(true, fromAddress, [fromKeys]);
             addApiContact({ contactID: 'contactID', email: fromAddress, pinKey: fromKeys }, toKeys);
 
@@ -209,7 +223,12 @@ describe('MessageView encryption', () => {
                 } as Message,
             }));
 
-            const { open, findByTestId } = await setup();
+            const { open, findByTestId } = await setup({}, true, {
+                preloadedState: {
+                    userKeys: getModelState(getStoredKey(toKeys)),
+                    addressKeys: getAddressKeyCache(addressID, toKeys),
+                },
+            });
 
             await open();
 
@@ -219,8 +238,6 @@ describe('MessageView encryption', () => {
         });
 
         it('verified sender external', async () => {
-            addKeysToAddressKeysCache(addressID, toKeys);
-            addKeysToUserKeysCache(toKeys);
             addApiKeys(false, fromAddress, [fromKeys]);
             addApiContact({ contactID: 'contactID', email: fromAddress, pinKey: fromKeys }, toKeys);
 
@@ -255,7 +272,12 @@ describe('MessageView encryption', () => {
                 Message: { ...message, Body: encryptedBody },
             }));
 
-            const { open, findByTestId } = await setup();
+            const { open, findByTestId } = await setup({}, true, {
+                preloadedState: {
+                    userKeys: getModelState(getStoredKey(toKeys)),
+                    addressKeys: getAddressKeyCache(addressID, toKeys),
+                },
+            });
 
             await open();
 
@@ -265,8 +287,6 @@ describe('MessageView encryption', () => {
         });
 
         it('signature verification error', async () => {
-            addKeysToAddressKeysCache(addressID, toKeys);
-            addKeysToUserKeysCache(toKeys);
             addApiKeys(true, fromAddress, []);
             addApiContact({ contactID: 'contactID', email: fromAddress, pinKey: otherKeys }, toKeys);
 
@@ -292,7 +312,12 @@ describe('MessageView encryption', () => {
                 } as Message,
             }));
 
-            const { open, findByTestId } = await setup();
+            const { open, findByTestId } = await setup({}, true, {
+                preloadedState: {
+                    userKeys: getModelState(getStoredKey(toKeys)),
+                    addressKeys: getAddressKeyCache(addressID, toKeys),
+                },
+            });
 
             await open();
 

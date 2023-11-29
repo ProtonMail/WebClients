@@ -62,7 +62,7 @@ const MoreActionsExtension = ({ message, onChangeFlag, editorActionsRef, editorM
                     message?.messageDocument?.plainText,
                     mailSettings,
                     userSettings,
-                    addresses
+                    addresses || []
                 );
 
                 const fontStyles = defaultFontStyle(mailSettings);

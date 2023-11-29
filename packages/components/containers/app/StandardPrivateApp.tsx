@@ -3,6 +3,7 @@ import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react
 import { useUnleashClient } from '@protontech/proxy-client-react';
 import { c } from 'ttag';
 
+import { Feature, FeatureCode } from '@proton/features';
 import metrics from '@proton/metrics';
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { requiresNonDelinquent } from '@proton/shared/lib/authentication/apps';
@@ -15,31 +16,18 @@ import { getBrowserLocale, getClosestLocaleCode } from '@proton/shared/lib/i18n/
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { User, UserSettings } from '@proton/shared/lib/interfaces';
 import { TtagLocaleMap } from '@proton/shared/lib/interfaces/Locale';
-import { Model } from '@proton/shared/lib/interfaces/Model';
 import { getIsSSOVPNOnlyAccount, getRequiresAddressSetup } from '@proton/shared/lib/keys';
-import { UserModel, UserSettingsModel } from '@proton/shared/lib/models';
-import { loadModels } from '@proton/shared/lib/models/helper';
 import { getHasNonDelinquentScope } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
-import unique from '@proton/utils/unique';
 
-import { useAppLink } from '../../components';
+import { useAppLink } from '../../components/link';
 import { handleEarlyAccessDesynchronization } from '../../helpers/earlyAccessDesynchronization';
-import {
-    WELCOME_FLAGS_CACHE_KEY,
-    getWelcomeFlagsValue,
-    useApi,
-    useCache,
-    useConfig,
-    useIsInboxElectronApp,
-    useLoadFeature,
-} from '../../hooks';
+import { WELCOME_FLAGS_CACHE_KEY, getWelcomeFlagsValue, useCache, useConfig, useIsInboxElectronApp } from '../../hooks';
 import SessionRecoveryLocalStorageManager from '../account/sessionRecovery/SessionRecoveryLocalStorageManager';
 import { getCryptoWorkerOptions } from '../app/cryptoWorkerOptions';
 import { ContactProvider } from '../contacts';
 import { EventManagerProvider, EventModelListener, EventNotices } from '../eventManager';
 import { CalendarModelEventManagerProvider } from '../eventManager/calendar';
-import { FeatureCode, FeaturesProvider } from '../features';
 import ForceRefreshProvider from '../forceRefresh/Provider';
 import { KeyTransparencyManager } from '../keyTransparency';
 import { DensityInjector } from '../layouts';
@@ -52,17 +40,19 @@ import KeyBackgroundManager from './KeyBackgroundManager';
 import StandardLoadErrorPage from './StandardLoadErrorPage';
 import StorageListener from './StorageListener';
 import { wrapUnloadError } from './errorRefresh';
-import loadEventID from './loadEventID';
 
-interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
+interface Props {
     locales?: TtagLocaleMap;
-    onInit?: () => void;
-    onUserSettings?: (userSettings: UserSettings) => void;
+    onPreload?: () => void;
+    onInit: () => Promise<{
+        user: User;
+        userSettings: UserSettings;
+        eventManager: ReturnType<typeof createEventManager>;
+        features: { [key in FeatureCode]?: Feature };
+    }>;
     onLogout: () => void;
     loader: ReactNode;
-    preloadModels?: M[];
-    preloadFeatures?: FeatureCode[];
-    eventModels?: EvtM[];
+    eventModels?: any[];
     noModals?: boolean;
     hasPrivateMemberKeyGeneration?: boolean;
     hasReadableMemberKeyActivation?: boolean;
@@ -71,55 +61,43 @@ interface Props<T, M extends Model<T>, E, EvtM extends Model<E>> {
     eventQuery?: (eventID: string) => object;
 }
 
-const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>({
+const InnerStandardPrivateApp = ({
     locales = {},
     onLogout,
+    onPreload,
     onInit,
-    onUserSettings,
     loader,
-    preloadModels = [],
-    preloadFeatures = [],
     eventModels = [],
     noModals = false,
     hasPrivateMemberKeyGeneration = false,
     hasReadableMemberKeyActivation = false,
     hasMemberKeyMigration = false,
     app: appFactory,
-    eventQuery,
-}: Props<T, M, E, EvtM>) => {
+}: Props) => {
     const { APP_NAME } = useConfig();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<{ message?: string } | null>(null);
     const eventManagerRef = useRef<ReturnType<typeof createEventManager>>();
-    const normalApi = useApi();
-    const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const cache = useCache();
     const appRef = useRef<FunctionComponent | null>(null);
     const hasDelinquentBlockRef = useRef(false);
     const appLink = useAppLink();
-    const getFeature = useLoadFeature();
     const flagsReadyPromise = useFlagsReady();
     const { isElectronDisabled } = useIsInboxElectronApp();
     const client = useUnleashClient();
 
     useEffect(() => {
-        const eventManagerPromise = loadEventID(silentApi, cache).then((eventID) => {
-            eventManagerRef.current = createEventManager({ api: silentApi, eventID, query: eventQuery });
-        });
-
-        const loadModelsArgs = {
-            api: silentApi,
-            cache,
-        };
-
-        const featuresPromise = getFeature([FeatureCode.EarlyAccessScope, ...preloadFeatures]);
+        const initPromise = onInit();
 
         let earlyAccessRefresher: undefined | (() => void);
         let redirect: false | 'setup-address' | 'account/vpn' = false;
 
-        const userModelPromise = loadModels([UserModel], loadModelsArgs).then((result: any) => {
-            const [user] = result as [User];
+        const eventManagerPromise = initPromise.then(({ eventManager }) => {
+            eventManagerRef.current = eventManager;
+            return eventManagerRef.current;
+        });
 
+        const setupInitPromise = initPromise.then(({ user }) => {
             const hasNonDelinquentRequirement = requiresNonDelinquent.includes(APP_NAME);
             const hasNonDelinquentScope = getHasNonDelinquentScope(user);
             hasDelinquentBlockRef.current = hasNonDelinquentRequirement && !hasNonDelinquentScope;
@@ -138,12 +116,8 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
             })();
         });
 
-        const models = unique([UserSettingsModel, ...preloadModels]).filter((model) => model !== UserModel);
-        const setupPromise = loadModels(models, loadModelsArgs).then((result: any) => {
-            const [userSettings] = result as [UserSettings];
-
+        const setupPromise = initPromise.then(({ userSettings, features }) => {
             cache.set(WELCOME_FLAGS_CACHE_KEY, getWelcomeFlagsValue(userSettings));
-            onUserSettings?.(userSettings);
 
             setSentryEnabled(!!userSettings.CrashReports);
             setMetricsEnabled(!!userSettings.Telemetry);
@@ -151,14 +125,14 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
 
             const browserLocale = getBrowserLocale();
             const localeCode = getClosestLocaleCode(userSettings.Locale, locales);
+
+            earlyAccessRefresher = handleEarlyAccessDesynchronization({
+                userSettings,
+                earlyAccessScope: features[FeatureCode.EarlyAccessScope],
+                appName: APP_NAME,
+            });
+
             return Promise.all([
-                featuresPromise.then(async ([earlyAccessScope]) => {
-                    earlyAccessRefresher = handleEarlyAccessDesynchronization({
-                        userSettings,
-                        earlyAccessScope,
-                        appName: APP_NAME,
-                    });
-                }),
                 loadLocale(localeCode, locales),
                 loadDateLocale(localeCode, browserLocale, userSettings),
             ]);
@@ -167,13 +141,20 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
         const appPromise = appFactory().then((result) => {
             appRef.current = result.default;
         });
-        const initPromise = onInit?.();
+        const preloadPromise = onPreload?.();
 
         const run = async () => {
-            const promises = [eventManagerPromise, setupPromise, initPromise, appPromise, flagsReadyPromise];
+            const promises = [
+                initPromise,
+                eventManagerPromise,
+                setupPromise,
+                preloadPromise,
+                appPromise,
+                flagsReadyPromise,
+            ];
 
             try {
-                await userModelPromise;
+                await setupInitPromise;
                 await Promise.all(promises);
                 await loadCryptoWorker(
                     getCryptoWorkerOptions(APP_NAME, {
@@ -275,12 +256,10 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
     );
 };
 
-const StandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>>(props: Props<T, M, E, EvtM>) => {
+const StandardPrivateApp = (props: Props) => {
     return (
         <UnleashFlagProvider>
-            <FeaturesProvider>
-                <InnerStandardPrivateApp<T, M, E, EvtM> {...props} />
-            </FeaturesProvider>
+            <InnerStandardPrivateApp {...props} />
         </UnleashFlagProvider>
     );
 };

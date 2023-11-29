@@ -50,7 +50,7 @@ function FiltersSection() {
             await orderRequest.request(filterIds);
             await call();
         } catch (e: any) {
-            setFilters(filters);
+            setFilters(filters || []);
         }
     };
 

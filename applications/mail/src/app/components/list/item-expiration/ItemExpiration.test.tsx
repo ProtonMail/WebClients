@@ -1,10 +1,11 @@
 import { screen } from '@testing-library/react';
 import { addDays, addHours, addMinutes, getUnixTime } from 'date-fns';
 
+import { getModelState } from '@proton/account/test';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { AUTO_DELETE_SPAM_AND_TRASH_DAYS } from '@proton/shared/lib/mail/mailSettings';
-import { addToCache } from '@proton/testing/index';
 
 import { minimalCache } from '../../../helpers/test/cache';
 import { render } from '../../../helpers/test/render';
@@ -68,11 +69,12 @@ describe('ItemExpiration', () => {
         expect(screen.getByText('30 d')).toBeInTheDocument();
     });
 
+    const mailSettings = { AutoDeleteSpamAndTrashDays: AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE } as MailSettings;
+
     describe('Element is conversation', () => {
         it('Should display Trash icon when label ID is valid and setting is not null', async () => {
             const expirationTime = getUnixTime(addDays(new Date(), 30));
             minimalCache();
-            addToCache('MailSettings', { AutoDeleteSpamAndTrashDays: AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE });
 
             await render(
                 <ItemExpiration
@@ -80,7 +82,12 @@ describe('ItemExpiration', () => {
                     expirationTime={expirationTime}
                     labelID={MAILBOX_LABEL_IDS.TRASH}
                 />,
-                false
+                false,
+                {
+                    preloadedState: {
+                        mailSettings: getModelState(mailSettings),
+                    },
+                }
             );
 
             expect(screen.getByTestId('item-expiration').querySelector('use')?.getAttribute('xlink:href')).toBe(
@@ -91,7 +98,6 @@ describe('ItemExpiration', () => {
         it('Should display Hourglass if label ID is not valid', async () => {
             const expirationTime = getUnixTime(addDays(new Date(), 30));
             minimalCache();
-            addToCache('MailSettings', { AutoDeleteSpamAndTrashDays: AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE });
 
             await render(
                 <ItemExpiration
@@ -99,7 +105,12 @@ describe('ItemExpiration', () => {
                     element={getElement()}
                     expirationTime={expirationTime}
                 />,
-                false
+                false,
+                {
+                    preloadedState: {
+                        mailSettings: getModelState(mailSettings),
+                    },
+                }
             );
 
             expect(screen.getByTestId('item-expiration').querySelector('use')?.getAttribute('xlink:href')).toBe(
@@ -110,7 +121,6 @@ describe('ItemExpiration', () => {
         it('Should display Hourglass icon if label ID is valid and setting is null', async () => {
             const expirationTime = getUnixTime(addDays(new Date(), 30));
             minimalCache();
-            addToCache('MailSettings', { AutoDeleteSpamAndTrashDays: null });
 
             await render(
                 <ItemExpiration
@@ -118,7 +128,15 @@ describe('ItemExpiration', () => {
                     element={getElement()}
                     expirationTime={expirationTime}
                 />,
-                false
+                false,
+                {
+                    preloadedState: {
+                        mailSettings: getModelState({
+                            ...mailSettings,
+                            AutoDeleteSpamAndTrashDays: null,
+                        } as any as MailSettings),
+                    },
+                }
             );
 
             expect(screen.getByTestId('item-expiration').querySelector('use')?.getAttribute('xlink:href')).toBe(
@@ -131,7 +149,6 @@ describe('ItemExpiration', () => {
         it('Should display Trash icon if expire flag is not frozen', async () => {
             const expirationTime = getUnixTime(addDays(new Date(), 30));
             minimalCache();
-            addToCache('MailSettings', { AutoDeleteSpamAndTrashDays: AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE });
 
             await render(
                 <ItemExpiration
@@ -139,7 +156,14 @@ describe('ItemExpiration', () => {
                     element={getElement('message')}
                     expirationTime={expirationTime}
                 />,
-                false
+                false,
+                {
+                    preloadedState: {
+                        mailSettings: getModelState({
+                            AutoDeleteSpamAndTrashDays: AUTO_DELETE_SPAM_AND_TRASH_DAYS.ACTIVE,
+                        } as any as MailSettings),
+                    },
+                }
             );
 
             expect(screen.getByTestId('item-expiration').querySelector('use')?.getAttribute('xlink:href')).toBe(

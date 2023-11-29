@@ -1,5 +1,6 @@
 import { getAllMemberAddresses } from '@proton/shared/lib/api/members';
 import { Address, Member, PartialMemberAddress } from '@proton/shared/lib/interfaces';
+import { sortAddresses } from '@proton/shared/lib/mail/addresses';
 
 import { cachedPromise } from './helpers/cachedPromise';
 import { useAddresses } from './useAddresses';
@@ -8,15 +9,15 @@ import useCache from './useCache';
 import usePromiseResult from './usePromiseResult';
 
 export function useMemberAddresses(
-    members: Member[],
+    members: Member[] | undefined,
     partial: true
 ): [{ [id: string]: PartialMemberAddress[] } | undefined, boolean, any];
 export function useMemberAddresses(
-    members: Member[],
+    members: Member[] | undefined,
     partial?: false
 ): [{ [id: string]: Address[] } | undefined, boolean, any];
 
-export function useMemberAddresses(members: Member[], partial?: boolean) {
+export function useMemberAddresses(members: Member[] | undefined, partial?: boolean) {
     const cache = useCache();
     const api = useApi();
     const [addresses] = useAddresses();
@@ -30,7 +31,7 @@ export function useMemberAddresses(members: Member[], partial?: boolean) {
             members.map((member) => {
                 const key = `member-addresses-${member.ID}`;
                 if (member.Self) {
-                    return Promise.resolve(addresses);
+                    return Promise.resolve(addresses || []);
                 }
                 // Prefer only addresses (partial) from member if the addresses haven't been fetched
                 if (member.Addresses && partial && !cache.has(key)) {
@@ -40,7 +41,7 @@ export function useMemberAddresses(members: Member[], partial?: boolean) {
                     cache,
                     key,
                     () => {
-                        return getAllMemberAddresses(api, member.ID);
+                        return getAllMemberAddresses(api, member.ID).then(sortAddresses);
                     },
                     member
                 );

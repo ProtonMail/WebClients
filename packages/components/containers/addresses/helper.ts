@@ -5,7 +5,6 @@ import {
     ADDRESS_PERMISSIONS,
     ADDRESS_PERMISSION_TYPE,
     ADDRESS_RECEIVE,
-    ADDRESS_SEND,
     ADDRESS_STATUS,
     ADDRESS_TYPE,
     MEMBER_PRIVATE,
@@ -20,6 +19,7 @@ import {
     PartialMemberAddress,
     UserModel,
 } from '@proton/shared/lib/interfaces';
+import { getIsNonDefault } from '@proton/shared/lib/mail/addresses';
 
 const { TYPE_ORIGINAL, TYPE_CUSTOM_DOMAIN, TYPE_PREMIUM } = ADDRESS_TYPE;
 
@@ -44,15 +44,6 @@ export const getStatus = (address: Address, i: number) => {
         isNotEncrypted,
         isSignatureNotExpected,
     };
-};
-
-export const getIsNonDefault = (address: Address) => {
-    return (
-        address.Status === ADDRESS_STATUS.STATUS_DISABLED ||
-        address.Type === ADDRESS_TYPE.TYPE_EXTERNAL ||
-        address.Receive === ADDRESS_RECEIVE.RECEIVE_NO ||
-        address.Send === ADDRESS_SEND.SEND_NO
-    );
 };
 
 export const getPermissions = ({
@@ -132,23 +123,6 @@ export const getPermissions = ({
         canDelete: ((isEnabled && canDisable) || !isEnabled) && Type === TYPE_CUSTOM_DOMAIN && canPay,
         canEdit: isSelf,
     };
-};
-
-const addressSort = (a: Address, b: Address) => {
-    if (getIsNonDefault(a)) {
-        return 1;
-    }
-    if (getIsNonDefault(b)) {
-        return -1;
-    }
-    return a.Order - b.Order;
-};
-
-export const formatAddresses = (addresses?: Address[]) => {
-    if (Array.isArray(addresses)) {
-        return addresses.sort(addressSort);
-    }
-    return [];
 };
 
 export type AddressPermissions = ReturnType<typeof getPermissions>;

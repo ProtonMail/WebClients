@@ -1,12 +1,12 @@
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
+import { userThunk } from '@proton/account';
 import {
     EventManagerProvider,
     ModalsChildren,
     StandardLoadErrorPage,
     useApi,
-    useCache,
     useErrorHandler,
     useThemeQueryParameter,
 } from '@proton/components';
@@ -24,10 +24,10 @@ import { loadCryptoWorker } from '@proton/shared/lib/helpers/setupCryptoWorker';
 import { getBrowserLocale, getClosestLocaleMatch } from '@proton/shared/lib/i18n/helper';
 import { loadDateLocale, loadLocale } from '@proton/shared/lib/i18n/loadLocale';
 import { locales } from '@proton/shared/lib/i18n/locales';
-import { UserModel } from '@proton/shared/lib/models';
-import { loadModels } from '@proton/shared/lib/models/helper';
 import getRandomString from '@proton/utils/getRandomString';
 
+import { useAccountDispatch } from '../app/store/hooks';
+import { extendStore } from '../app/store/store';
 import broadcast, { MessageType } from './broadcast';
 import ExpiredLink from './components/ExpiredLink';
 import LiteLayout from './components/LiteLayout';
@@ -56,13 +56,13 @@ const Setup = ({ onLogin, UID, children }: Props) => {
     const normalApi = useApi();
     const silentApi = <T,>(config: any) => normalApi<T>({ ...config, silence: true });
     const errorHandler = useErrorHandler();
+    const dispatch = useAccountDispatch();
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<{ message?: string } | null>(null);
     const [expiredLinkError, setExpiredLinkError] = useState<boolean>(false);
 
     const eventManagerRef = useRef<ReturnType<typeof createEventManager>>();
-    const cache = useCache();
 
     useThemeQueryParameter();
 
@@ -114,16 +114,19 @@ const Setup = ({ onLogin, UID, children }: Props) => {
         const setupApp = async (UID: string) => {
             const uidApi = <T,>(config: any) => silentApi<T>(withUIDHeaders(UID, config));
 
+            extendStore({ api: uidApi, eventManager: null as any });
+
             const eventManagerPromise = uidApi<{ EventID: string }>(getLatestID())
                 .then(({ EventID }) => EventID)
                 .then((eventID) => {
                     eventManagerRef.current = createEventManager({ api: uidApi, eventID });
+                    return eventManagerRef.current;
                 });
 
-            const modelsPromise = loadModels([UserModel], {
-                api: uidApi,
-                cache,
-            });
+            const setupModels = async () => {
+                const [user] = await Promise.all([dispatch(userThunk())]);
+                return { user };
+            };
 
             const loadLocales = () => {
                 const languageParams = searchParams.get('language');
@@ -133,7 +136,14 @@ const Setup = ({ onLogin, UID, children }: Props) => {
                 return Promise.all([loadLocale(localeCode, locales), loadDateLocale(localeCode, browserLocale)]);
             };
 
-            await Promise.all([eventManagerPromise, modelsPromise, loadLocales(), loadCryptoWorker({ poolSize: 1 })]);
+            const [ev] = await Promise.all([
+                eventManagerPromise,
+                setupModels(),
+                loadLocales(),
+                loadCryptoWorker({ poolSize: 1 }),
+            ]);
+
+            extendStore({ api: uidApi, eventManager: ev });
 
             flushSync(() => {
                 onLogin(UID);

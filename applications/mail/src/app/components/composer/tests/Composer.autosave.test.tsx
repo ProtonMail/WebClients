@@ -1,20 +1,21 @@
 import { fireEvent, getByTestId } from '@testing-library/react';
 import { act } from '@testing-library/react';
 
+import { getModelState } from '@proton/account/test';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
     GeneratedKey,
     addApiKeys,
     addApiMock,
-    addKeysToAddressKeysCache,
     clearAll,
     createDocument,
     generateKeys,
-    waitForSpyCall
+    getCompleteAddress,
+    waitForSpyCall,
 } from '../../../helpers/test/helper';
 import { store } from '../../../logic/store';
 import { AddressID, ID, fromAddress, prepareMessage, renderComposer, toAddress } from './Composer.test.helpers';
@@ -38,7 +39,6 @@ describe('Composer autosave', () => {
     beforeEach(() => {
         clearAll();
         jest.useFakeTimers();
-        addKeysToAddressKeysCache(AddressID, fromKeys);
         addApiKeys(false, toAddress, []);
     });
 
@@ -76,8 +76,13 @@ describe('Composer autosave', () => {
             messageDocument: { document: createDocument('test') },
         });
         const composerID = Object.keys(store.getState().composers.composers)[0];
+        const renderResult = await renderComposer(composerID, true, {
+            preloadedState: {
+                addresses: getModelState([getCompleteAddress({ ID: AddressID, Email: fromAddress })]),
+                addressKeys: getAddressKeyCache(AddressID, fromKeys),
+            },
+        });
 
-        const renderResult = await renderComposer(composerID);
         triggerRoosterInput(renderResult.container); // Initial dummy Squire input
         const { spy: createSpy, resolve: createResolve } = asyncSpy(resolved);
         const { spy: updateSpy, resolve: updateResolve } = asyncSpy(resolved);

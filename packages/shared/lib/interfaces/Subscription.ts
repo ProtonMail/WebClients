@@ -27,6 +27,7 @@ export interface Offer {
 
 export interface Plan {
     ID: string;
+    ParentMetaPlanID: string;
     Type: PLAN_TYPES;
     Cycle: Cycle;
     Name: PLANS | ADDON_NAMES;
@@ -45,6 +46,7 @@ export interface Plan {
     Quantity: Quantity;
     Pricing: Pricing;
     DefaultPricing?: Pricing;
+    PeriodEnd: CycleMapping<number>;
     State: number;
     Offers: Offer[];
 }
@@ -69,6 +71,12 @@ export enum External {
     Chargebee = 3,
 }
 
+export interface SubscriptionPlan
+    extends Omit<Plan, 'ParentMetaPlanID' | 'PeriodEnd' | 'Pricing' | 'DefaultPricing' | 'Offers'> {
+    // TODO: improve
+    Offer?: 'default' | null;
+}
+
 export interface Subscription {
     ID: string;
     InvoiceID: string;
@@ -80,9 +88,10 @@ export interface Subscription {
     Currency: Currency;
     Amount: number;
     RenewAmount: number;
+    RenewDiscount: number;
     Renew: Renew;
     Discount: number;
-    Plans: Plan[];
+    Plans: SubscriptionPlan[];
     External: External;
     UpcomingSubscription?: Subscription | null;
 }

@@ -70,7 +70,7 @@ const ExtraUnsubscribe = ({ message }: Props) => {
     const [loading, withLoading] = useLoading();
     const onCompose = useOnCompose();
     const toAddress = getOriginalTo(message);
-    const address = addresses.find(
+    const address = addresses?.find(
         ({ Email }) => canonicalizeInternalEmail(Email) === canonicalizeInternalEmail(toAddress)
     );
     const unsubscribeMethods = message.UnsubscribeMethods || {};

@@ -10,16 +10,17 @@ import { format, getUnixTime, set } from 'date-fns';
 import { enUS } from 'date-fns/locale';
 import loudRejection from 'loud-rejection';
 
+import { getModelState } from '@proton/account/test';
+import { FeatureCode } from '@proton/features';
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { addDays, addMinutes } from '@proton/shared/lib/date-fns-utc';
-import { Recipient } from '@proton/shared/lib/interfaces';
+import { MailSettings, Recipient, UserModel } from '@proton/shared/lib/interfaces';
 import { VIEW_MODE } from '@proton/shared/lib/mail/mailSettings';
 
 import { getMinScheduleTime } from '../../../helpers/schedule';
-import { addApiMock, setFeatureFlags } from '../../../helpers/test/api';
+import { addApiMock, getFeatureFlags } from '../../../helpers/test/api';
 import { addToCache, minimalCache } from '../../../helpers/test/cache';
-import { addApiKeys, clearAll, getDropdown } from '../../../helpers/test/helper';
-import { render } from '../../../helpers/test/render';
+import { addApiKeys, clearAll, getDropdown, render } from '../../../helpers/test/helper';
 import Composer from '../Composer';
 import { ID, prepareMessage, props } from './Composer.test.helpers';
 
@@ -27,31 +28,41 @@ loudRejection();
 
 const user = { Name: 'User', Address: 'user@protonmail.com' };
 
-const setupTest = ({
-    hasPaidMail,
-    scheduledTotalCount = 4,
-    featureFlagActive = true,
-    showSpotlight = false,
-}: {
-    hasPaidMail: boolean;
-    scheduledTotalCount?: number;
-    featureFlagActive?: boolean;
-    showSpotlight?: boolean;
-}) => {
-    minimalCache();
-    addToCache('User', {
+export const getUser = (hasPaidMail: boolean) => {
+    return {
         Email: 'Email',
         DisplayName: 'DisplayName',
         Name: 'Name',
         hasPaidMail,
         UsedSpace: 10,
         MaxSpace: 100,
-    });
-    addToCache('MailSettings', { ViewMode: VIEW_MODE.SINGLE });
-    addToCache('MessageCounts', [{ LabelID: MAILBOX_LABEL_IDS.SCHEDULED, Unread: 1, Total: scheduledTotalCount }]);
+    } as UserModel;
+};
 
-    setFeatureFlags('ScheduledSendFreemium', featureFlagActive);
-    setFeatureFlags('SpotlightScheduledSend', showSpotlight);
+const getPreloadState = ({
+    hasPaidMail,
+    featureFlagActive = true,
+    showSpotlight = false,
+}: {
+    hasPaidMail: boolean;
+    featureFlagActive?: boolean;
+    showSpotlight?: boolean;
+}) => {
+    return {
+        preloadedState: {
+            user: getModelState(getUser(hasPaidMail)),
+            mailSettings: getModelState({ ViewMode: VIEW_MODE.SINGLE } as MailSettings),
+            features: getFeatureFlags([
+                [FeatureCode.ScheduledSendFreemium, featureFlagActive],
+                [FeatureCode.SpotlightScheduledSend, showSpotlight],
+            ]),
+        },
+    };
+};
+
+const setupTest = ({ scheduledTotalCount = 4 }: { scheduledTotalCount?: number } = {}) => {
+    minimalCache();
+    addToCache('MessageCounts', [{ LabelID: MAILBOX_LABEL_IDS.SCHEDULED, Unread: 1, Total: scheduledTotalCount }]);
 
     addApiKeys(false, user.Address, []);
 };
@@ -79,9 +90,12 @@ describe('Composer scheduled messages', () => {
 
     it('Should see the schedule send when FF is active', async () => {
         const { composerID } = setupMessage('Subject', [user as Recipient]);
-        setupTest({ hasPaidMail: false, featureFlagActive: true });
 
-        const { queryByTestId } = await render(<Composer {...props} composerID={composerID} />, false);
+        const { queryByTestId } = await render(
+            <Composer {...props} composerID={composerID} />,
+            false,
+            getPreloadState({ hasPaidMail: false, featureFlagActive: true })
+        );
 
         expect(queryByTestId('composer:send-button')).toBeTruthy();
         expect(queryByTestId('composer:scheduled-send:open-dropdown')).toBeTruthy();
@@ -89,9 +103,13 @@ describe('Composer scheduled messages', () => {
 
     it('Should not see the schedule send when FF is not active', async () => {
         const { composerID } = setupMessage('Subject', [user as Recipient]);
-        setupTest({ hasPaidMail: false, featureFlagActive: false });
+        setupTest();
 
-        const { queryByTestId } = await render(<Composer {...props} composerID={composerID} />, false);
+        const { queryByTestId } = await render(
+            <Composer {...props} composerID={composerID} />,
+            false,
+            getPreloadState({ hasPaidMail: false, featureFlagActive: false })
+        );
 
         expect(queryByTestId('composer:send-button')).toBeTruthy();
         expect(queryByTestId('composer:scheduled-send:open-dropdown')).toBeNull();
@@ -104,9 +122,16 @@ describe('Composer scheduled messages', () => {
             jest.useFakeTimers().setSystemTime(fakeNow.getTime());
 
             const { composerID } = setupMessage('Subject', [user as Recipient]);
-            setupTest({ hasPaidMail: false, featureFlagActive: true });
+            setupTest();
 
-            await render(<Composer {...props} composerID={composerID} />, false);
+            await render(
+                <Composer {...props} composerID={composerID} />,
+                false,
+                getPreloadState({
+                    hasPaidMail: false,
+                    featureFlagActive: true,
+                })
+            );
 
             const dropdownButton = screen.getByTestId('composer:scheduled-send:open-dropdown');
             fireEvent.click(dropdownButton);
@@ -130,9 +155,16 @@ describe('Composer scheduled messages', () => {
             jest.useFakeTimers().setSystemTime(fakeNow.getTime());
 
             const { composerID } = setupMessage('Subject', [user as Recipient]);
-            setupTest({ hasPaidMail: false, featureFlagActive: true });
+            setupTest();
 
-            await render(<Composer {...props} composerID={composerID} />, false);
+            await render(
+                <Composer {...props} composerID={composerID} />,
+                false,
+                getPreloadState({
+                    hasPaidMail: false,
+                    featureFlagActive: true,
+                })
+            );
 
             const dropdownButton = screen.getByTestId('composer:scheduled-send:open-dropdown');
             fireEvent.click(dropdownButton);
@@ -159,9 +191,16 @@ describe('Composer scheduled messages', () => {
             jest.useFakeTimers().setSystemTime(date.getTime());
 
             const { composerID } = setupMessage('Subject', [user as Recipient]);
-            setupTest({ hasPaidMail: false, featureFlagActive: true });
+            setupTest();
 
-            await render(<Composer {...props} composerID={composerID} />, false);
+            await render(
+                <Composer {...props} composerID={composerID} />,
+                false,
+                getPreloadState({
+                    hasPaidMail: false,
+                    featureFlagActive: true,
+                })
+            );
 
             const dropdownButton = screen.getByTestId('composer:scheduled-send:open-dropdown');
             fireEvent.click(dropdownButton);
@@ -179,9 +218,16 @@ describe('Composer scheduled messages', () => {
                 [user as Recipient],
                 getUnixTime(new Date(2023, 0, 5, 10, 0, 0))
             );
-            setupTest({ hasPaidMail: false, featureFlagActive: true });
+            setupTest();
 
-            await render(<Composer {...props} composerID={composerID} />, false);
+            await render(
+                <Composer {...props} composerID={composerID} />,
+                false,
+                getPreloadState({
+                    hasPaidMail: false,
+                    featureFlagActive: true,
+                })
+            );
 
             const dropdownButton = screen.getByTestId('composer:scheduled-send:open-dropdown');
             fireEvent.click(dropdownButton);
@@ -194,18 +240,34 @@ describe('Composer scheduled messages', () => {
     describe('Spotlight', () => {
         it('Should be displayed on composer opening', async () => {
             const { composerID } = setupMessage('Subject', [user as Recipient]);
-            setupTest({ hasPaidMail: false, featureFlagActive: true, showSpotlight: true });
+            setupTest();
 
-            await render(<Composer {...props} composerID={composerID} />, false);
+            await render(
+                <Composer {...props} composerID={composerID} />,
+                false,
+                getPreloadState({
+                    hasPaidMail: false,
+                    featureFlagActive: true,
+                    showSpotlight: true,
+                })
+            );
 
             let spotlightTitle = screen.queryByTestId('composer:schedule-send:spotlight-title');
             expect(spotlightTitle).toBeTruthy();
         });
         it('Should be closed when dropdown is clicked', async () => {
             const { composerID } = setupMessage('Subject', [user as Recipient]);
-            setupTest({ hasPaidMail: false, featureFlagActive: true, showSpotlight: true });
+            setupTest();
 
-            await render(<Composer {...props} composerID={composerID} />, false);
+            await render(
+                <Composer {...props} composerID={composerID} />,
+                false,
+                getPreloadState({
+                    hasPaidMail: false,
+                    featureFlagActive: true,
+                    showSpotlight: true,
+                })
+            );
 
             let spotlightTitle = screen.queryByTestId('composer:schedule-send:spotlight-title');
             expect(spotlightTitle).toBeTruthy();
@@ -222,9 +284,17 @@ describe('Composer scheduled messages', () => {
     describe('Upsell modal', () => {
         it('Should be displayed to free users', async () => {
             const { composerID } = setupMessage('Subject', [user as Recipient]);
-            setupTest({ hasPaidMail: false, featureFlagActive: true, showSpotlight: false });
+            setupTest();
 
-            await render(<Composer {...props} composerID={composerID} />, false);
+            await render(
+                <Composer {...props} composerID={composerID} />,
+                false,
+                getPreloadState({
+                    hasPaidMail: false,
+                    featureFlagActive: true,
+                    showSpotlight: false,
+                })
+            );
 
             const dropdownButton = screen.getByTestId('composer:scheduled-send:open-dropdown');
             fireEvent.click(dropdownButton);
@@ -237,9 +307,17 @@ describe('Composer scheduled messages', () => {
 
         it('Should be hidden for paid users', async () => {
             const { composerID } = setupMessage('Subject', [user as Recipient]);
-            setupTest({ hasPaidMail: true, featureFlagActive: true, showSpotlight: false });
+            setupTest();
 
-            await render(<Composer {...props} composerID={composerID} />, false);
+            await render(
+                <Composer {...props} composerID={composerID} />,
+                false,
+                getPreloadState({
+                    hasPaidMail: true,
+                    featureFlagActive: true,
+                    showSpotlight: false,
+                })
+            );
 
             const dropdownButton = screen.getByTestId('composer:scheduled-send:open-dropdown');
             fireEvent.click(dropdownButton);
@@ -255,9 +333,13 @@ describe('Composer scheduled messages', () => {
 
     it('should show a modal when the user reached scheduled messages limit', async () => {
         const { composerID } = setupMessage('Subject', [user as Recipient]);
-        setupTest({ hasPaidMail: true, scheduledTotalCount: 100 });
+        setupTest({ scheduledTotalCount: 100 });
 
-        const { getByTestId, getByText } = await render(<Composer {...props} composerID={composerID} />, false);
+        const { getByTestId, getByText } = await render(
+            <Composer {...props} composerID={composerID} />,
+            false,
+            getPreloadState({ hasPaidMail: true })
+        );
 
         const sendActions = getByTestId('composer:send-actions');
         const dropdownButton = getByTestIdDefault(sendActions, 'composer:scheduled-send:open-dropdown');
@@ -274,9 +356,13 @@ describe('Composer scheduled messages', () => {
 
     it('should show a modal when trying to schedule a message without a recipient', async () => {
         const { composerID } = setupMessage();
-        setupTest({ hasPaidMail: true });
+        setupTest({});
 
-        const { getByTestId } = await render(<Composer {...props} composerID={composerID} />, false);
+        const { getByTestId } = await render(
+            <Composer {...props} composerID={composerID} />,
+            false,
+            getPreloadState({ hasPaidMail: true })
+        );
 
         const sendActions = getByTestId('composer:send-actions');
         const dropdownButton = getByTestIdDefault(sendActions, 'composer:scheduled-send:open-dropdown');
@@ -292,9 +378,9 @@ describe('Composer scheduled messages', () => {
 
     it('Should show a modal when trying to schedule a message with a recipient and without subject', async () => {
         const { composerID } = setupMessage('', [user as Recipient]);
-        setupTest({ hasPaidMail: true });
+        setupTest({});
 
-        await render(<Composer {...props} composerID={composerID} />, false);
+        await render(<Composer {...props} composerID={composerID} />, false, getPreloadState({ hasPaidMail: true }));
 
         const sendActions = screen.getByTestId('composer:send-actions');
         const dropdownButton = getByTestIdDefault(sendActions, 'composer:scheduled-send:open-dropdown');
@@ -329,9 +415,13 @@ describe('Composer scheduled messages', () => {
 
         it('should open schedule time and see tomorrow as default value', async () => {
             const { composerID } = setupMessage('Subject', [user as Recipient]);
-            setupTest({ hasPaidMail: true });
+            setupTest({});
 
-            const { getByTestId } = await render(<Composer {...props} composerID={composerID} />, false);
+            const { getByTestId } = await render(
+                <Composer {...props} composerID={composerID} />,
+                false,
+                getPreloadState({ hasPaidMail: true })
+            );
 
             const sendActions = getByTestId('composer:send-actions');
             const dropdownButton = getByTestIdDefault(sendActions, 'composer:scheduled-send:open-dropdown');
@@ -354,9 +444,13 @@ describe('Composer scheduled messages', () => {
 
         it('should open schedule send modal and change date to today', async () => {
             const { composerID } = setupMessage('Subject', [user as Recipient]);
-            setupTest({ hasPaidMail: true });
+            setupTest({});
 
-            const { getByTestId } = await render(<Composer {...props} composerID={composerID} />, false);
+            const { getByTestId } = await render(
+                <Composer {...props} composerID={composerID} />,
+                false,
+                getPreloadState({ hasPaidMail: true })
+            );
 
             const sendActions = getByTestId('composer:send-actions');
             const dropdownButton = getByTestIdDefault(sendActions, 'composer:scheduled-send:open-dropdown');
@@ -399,9 +493,13 @@ describe('Composer scheduled messages', () => {
 
         it('should open schedule send modal and change date to future', async () => {
             const { composerID } = setupMessage('Subject', [user as Recipient]);
-            setupTest({ hasPaidMail: true });
+            setupTest({});
 
-            const { getByTestId } = await render(<Composer {...props} composerID={composerID} />, false);
+            const { getByTestId } = await render(
+                <Composer {...props} composerID={composerID} />,
+                false,
+                getPreloadState({ hasPaidMail: true })
+            );
 
             const sendActions = getByTestId('composer:send-actions');
             const dropdownButton = getByTestIdDefault(sendActions, 'composer:scheduled-send:open-dropdown');
@@ -431,9 +529,13 @@ describe('Composer scheduled messages', () => {
 
         it('should disable schedule send button display if date is not valid', async () => {
             const { composerID } = setupMessage('Subject', [user as Recipient]);
-            setupTest({ hasPaidMail: true });
+            setupTest({});
 
-            const { getByTestId } = await render(<Composer {...props} composerID={composerID} />, false);
+            const { getByTestId } = await render(
+                <Composer {...props} composerID={composerID} />,
+                false,
+                getPreloadState({ hasPaidMail: true })
+            );
 
             const sendActions = getByTestId('composer:send-actions');
             const dropdownButton = getByTestIdDefault(sendActions, 'composer:scheduled-send:open-dropdown');

@@ -3,14 +3,14 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button';
 import ButtonLike from '@proton/atoms/Button/ButtonLike';
 import { Icon } from '@proton/components/components/icon';
-import useFeature from '@proton/components/hooks/useFeature';
-import useUser from '@proton/components/hooks/useUser';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsB2BPlan } from '@proton/shared/lib/helpers/subscription';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
-import { useSubscription } from '../..';
-import { FeatureCode } from '../features/FeaturesContext';
+import { FeatureCode } from '../../containers';
+import useFeature from '../../hooks/useFeature';
+import { useSubscription } from '../../hooks/useSubscription';
+import useUser from '../../hooks/useUser';
 
 import './AliasPromotionSection.scss';
 

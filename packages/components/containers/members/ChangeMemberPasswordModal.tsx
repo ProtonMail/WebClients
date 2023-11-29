@@ -31,8 +31,8 @@ import {
     getDecryptedUserKeysHelper,
 } from '@proton/shared/lib/keys';
 import { getUpdateKeysPayload } from '@proton/shared/lib/keys/changePassword';
-import { formatUser } from '@proton/shared/lib/models/userModel';
 import { Credentials, srpVerify } from '@proton/shared/lib/srp';
+import { formatUser } from '@proton/shared/lib/user/helpers';
 import noop from '@proton/utils/noop';
 
 import {

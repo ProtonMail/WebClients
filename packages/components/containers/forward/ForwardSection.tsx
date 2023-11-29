@@ -5,8 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Href } from '@proton/atoms/Href';
-import useIncomingAddressForwarding from '@proton/components/hooks/useIncomingAddressForwarding';
-import useOutgoingAddressForwardings from '@proton/components/hooks/useOutgoingAddressForwardings';
+import { useIncomingAddressForwardings, useOutgoingAddressForwardings } from '@proton/components/hooks';
 import { APP_UPSELL_REF_PATH, MAIL_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { getUpsellRef } from '@proton/shared/lib/helpers/upsell';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -27,7 +26,7 @@ const ForwardSection = () => {
     const [user] = useUser();
     const [addresses = [], loadingAddresses] = useAddresses();
     const isEmailForwardingEnabled = useFlag('EmailForwarding');
-    const [incomingAddressForwardings = [], loadingIncomingAddressForwardings] = useIncomingAddressForwarding();
+    const [incomingAddressForwardings = [], loadingIncomingAddressForwardings] = useIncomingAddressForwardings();
     const [outgoingAddressForwardings = [], loadingOutgoingAddressForwardings] = useOutgoingAddressForwardings();
     const isIncomingTableAvailable = incomingAddressForwardings.length > 0;
     const isOutgoingTableAvailable = isEmailForwardingEnabled && outgoingAddressForwardings.length > 0;

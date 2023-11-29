@@ -2,6 +2,7 @@ import { ChangeEvent, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useInactiveKeys } from '@proton/account';
 import { Button } from '@proton/atoms';
 import { AlgorithmInfo } from '@proton/crypto';
 import { EncryptionConfig } from '@proton/shared/lib/interfaces';
@@ -39,7 +40,6 @@ import ExportPublicKeyModal from './exportKey/ExportPublicKeyModal';
 import ImportKeyModal from './importKeys/ImportKeyModal';
 import { ImportKey } from './importKeys/interface';
 import ReactivateKeysModal from './reactivateKeys/ReactivateKeysModal';
-import { getAllKeysReactivationRequests } from './reactivateKeys/getAllKeysToReactive';
 import { getNewKeyFlags } from './shared/flags';
 import { getKeyByID } from './shared/helper';
 import { FlagAction } from './shared/interface';
@@ -58,6 +58,7 @@ const AddressKeysSection = () => {
     const [addressIndex, setAddressIndex] = useState(() => (Array.isArray(Addresses) ? 0 : -1));
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, async () => User);
     const resignSKLWithPrimaryKey = useResignSKLWithPrimaryKey();
+    const keyReactivationRequests = useInactiveKeys();
 
     const Address = Addresses ? Addresses[addressIndex] : undefined;
     const { ID: addressID = '', Email: addressEmail = '' } = Address || {};
@@ -88,7 +89,7 @@ const AddressKeysSection = () => {
     const isLoadingKey = loadingKeyID !== '';
 
     const handleSetPrimaryKey = async (ID: string) => {
-        if (isLoadingKey || !addressKeys) {
+        if (isLoadingKey || !addressKeys || !userKeys) {
             return;
         }
         const addressKey = getKeyByID(addressKeys, ID);
@@ -115,7 +116,7 @@ const AddressKeysSection = () => {
     };
 
     const handleSetFlag = async (ID: string, flagAction: FlagAction) => {
-        if (isLoadingKey || !addressKeys) {
+        if (isLoadingKey || !addressKeys || !userKeys) {
             return;
         }
         const addressDisplayKey = getKeyByID(addressKeysDisplay, ID);
@@ -147,7 +148,7 @@ const AddressKeysSection = () => {
     const handleSetNotCompromised = (ID: string) => handleSetFlag(ID, FlagAction.MARK_NOT_COMPROMISED);
 
     const handleDeleteKey = (ID: string) => {
-        if (isLoadingKey || !addressKeys) {
+        if (isLoadingKey || !addressKeys || !userKeys) {
             return;
         }
         const addressKey = getKeyByID(addressKeys, ID);
@@ -200,7 +201,7 @@ const AddressKeysSection = () => {
     };
 
     const onAdd = async (encryptionConfig: EncryptionConfig) => {
-        if (!Address || !addressKeys) {
+        if (!Address || !addressKeys || !userKeys || !Addresses) {
             throw new Error('Missing address or address keys');
         }
         const [newKey] = await addAddressKeysProcess({
@@ -238,7 +239,7 @@ const AddressKeysSection = () => {
     };
 
     const onProcessImport = async (keyImportRecords: ImportKey[], cb: OnKeyImportCallback) => {
-        if (!Address || !addressKeys) {
+        if (!Address || !addressKeys || !userKeys || !Addresses) {
             throw new Error('Missing address or address keys');
         }
         await importKeysProcess({
@@ -286,12 +287,10 @@ const AddressKeysSection = () => {
     };
 
     const { isSubUser, isPrivate } = User;
-    const hasDecryptedUserKeys = userKeys?.length > 0;
+    const hasDecryptedUserKeys = (userKeys?.length || 0) > 0;
 
     const canAdd = !isSubUser && isPrivate && hasDecryptedUserKeys;
     const canImport = canAdd;
-
-    const allKeysToReactivate = getAllKeysReactivationRequests(addressesKeys, User, userKeys);
 
     const children = (() => {
         if (addressIndex === -1 || loadingAddresses) {
@@ -323,7 +322,7 @@ const AddressKeysSection = () => {
                 <SettingsParagraph>
                     {c('Info').t`Download your PGP keys for use with other PGP-compatible services.`}
                 </SettingsParagraph>
-                {!!allKeysToReactivate.length && (
+                {!!keyReactivationRequests.length && (
                     <div className="mb-4">
                         <Button disabled={isLoadingKey} color="norm" onClick={() => setReactivateKeyModalOpen(true)}>
                             {c('Action').t`Reactivate keys`}
@@ -366,14 +365,18 @@ const AddressKeysSection = () => {
             {renderImportKey && <ImportKeyModal onProcess={onProcessImport} {...importKeyProps} />}
             {renderReactivateKey && (
                 <ReactivateKeysModal
-                    userKeys={userKeys}
-                    keyReactivationRequests={allKeysToReactivate}
+                    userKeys={userKeys || []}
+                    keyReactivationRequests={keyReactivationRequests}
                     onProcess={async (keyReactivationRecords, onReactivation) => {
+                        if (!userKeys || !Addresses || !addressesKeys) {
+                            throw new Error('Missing dependencies');
+                        }
                         await reactivateKeysProcess({
                             api,
                             user: User,
                             userKeys,
                             addresses: Addresses,
+                            addressesKeys,
                             keyReactivationRecords,
                             keyPassword: authentication.getPassword(),
                             onReactivation,

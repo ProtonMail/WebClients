@@ -48,7 +48,15 @@ import {
     useFormErrors,
     useModalState,
 } from '../../components';
-import { useApi, useEventManager, useGetAddresses, useGetUser, useGetUserKeys, useNotifications } from '../../hooks';
+import {
+    useApi,
+    useEventManager,
+    useGetAddresses,
+    useGetOrganizationKey,
+    useGetUser,
+    useGetUserKeys,
+    useNotifications,
+} from '../../hooks';
 import { useKTVerifier } from '../keyTransparency';
 import MemberStorageSelector, { getStorageRange, getTotalStorage } from './MemberStorageSelector';
 import SubUserBulkCreateModal from './SubUserBulkCreateModal';
@@ -62,8 +70,7 @@ enum Step {
 }
 
 interface Props extends ModalProps {
-    organization: Organization;
-    organizationKey: CachedOrganizationKey;
+    organization?: Organization;
     verifiedDomains: Domain[];
     mode?: UserManagementMode;
     app: APP_NAMES;
@@ -71,7 +78,6 @@ interface Props extends ModalProps {
 
 const SubUserCreateModal = ({
     organization,
-    organizationKey,
     verifiedDomains,
     mode = UserManagementMode.DEFAULT,
     onClose,
@@ -83,12 +89,13 @@ const SubUserCreateModal = ({
     const api = useApi();
     const getAddresses = useGetAddresses();
     const getUserKeys = useGetUserKeys();
+    const getOrganizationKey = useGetOrganizationKey();
     const storageSizeUnit = GIGA;
     const storageRange = getStorageRange({}, organization);
 
     const [step, setStep] = useState<Step>(Step.SINGLE);
 
-    const hasVPN = !!organization.MaxVPN;
+    const hasVPN = Boolean(organization?.MaxVPN);
 
     const [model, setModel] = useState({
         name: '',
@@ -98,7 +105,7 @@ const SubUserCreateModal = ({
         confirm: '',
         address: '',
         domain: verifiedDomains[0]?.DomainName ?? null,
-        vpn: hasVPN && organization.MaxVPN - organization.UsedVPN >= VPN_CONNECTIONS,
+        vpn: organization && hasVPN && organization.MaxVPN - organization.UsedVPN >= VPN_CONNECTIONS,
         storage: clamp(5 * GIGA, storageRange.min, storageRange.max),
     });
     const { keyTransparencyVerify, keyTransparencyCommit } = useKTVerifier(api, useGetUser());
@@ -124,7 +131,7 @@ const SubUserCreateModal = ({
         return { Local, Domain };
     };
 
-    const save = async () => {
+    const save = async (organizationKey: CachedOrganizationKey | undefined) => {
         const normalizedAddress = getNormalizedAddress();
         await api(checkMemberAddressAvailability(normalizedAddress));
 
@@ -144,7 +151,7 @@ const SubUserCreateModal = ({
         const { Address } = await api<{ Address: Address }>(createMemberAddress(Member.ID, normalizedAddress));
 
         if (!model.private) {
-            if (!organizationKey.privateKey) {
+            if (!organizationKey?.privateKey) {
                 throw new Error('Organization key is not decrypted');
             }
             const ownerAddresses = await getAddresses();
@@ -166,7 +173,7 @@ const SubUserCreateModal = ({
         }
     };
 
-    const validate = () => {
+    const validate = (organizationKey: CachedOrganizationKey | undefined) => {
         const error = validateAddUser({
             privateUser: model.private,
             organization,
@@ -185,7 +192,12 @@ const SubUserCreateModal = ({
     };
 
     const handleSubmit = async () => {
-        await save();
+        const organizationKey = await getOrganizationKey();
+        const error = validate(organizationKey);
+        if (error) {
+            return createNotification({ type: 'error', text: error });
+        }
+        await save(organizationKey);
         await call();
         onClose?.();
         createNotification({ text: c('Success').t`User created` });
@@ -263,10 +275,6 @@ const SubUserCreateModal = ({
                 event.stopPropagation();
                 if (!onFormSubmit()) {
                     return;
-                }
-                const error = validate();
-                if (error) {
-                    return createNotification({ type: 'error', text: error });
                 }
                 void withLoading(handleSubmit());
             }}

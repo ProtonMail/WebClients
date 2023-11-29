@@ -1,6 +1,7 @@
 import { fireEvent, getByTestId } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
+import { getModelState } from '@proton/account/test';
 import { ROOSTER_EDITOR_ID } from '@proton/components/components/editor/constants';
 import { WorkerDecryptionResult } from '@proton/crypto/lib';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
@@ -12,15 +13,14 @@ import { addApiContact } from '../../../helpers/test/contact';
 import {
     GeneratedKey,
     addApiKeys,
-    addKeysToAddressKeysCache,
-    addKeysToUserKeysCache,
     generateKeys,
+    getAddressKeyCache,
+    getStoredKey,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '../../../helpers/test/crypto';
 import {
     addApiMock,
-    addToCache,
     clearAll,
     createAttachment,
     createDocument,
@@ -64,8 +64,15 @@ describe('Composer sending', () => {
 
     beforeEach(() => {
         clearAll();
-        addKeysToAddressKeysCache(AddressID, fromKeys);
     });
+
+    const getPreloadedState = () => {
+        return {
+            mailSettings: getModelState({ DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings),
+            userKeys: getModelState(getStoredKey(fromKeys)),
+            addressKeys: getAddressKeyCache(AddressID, fromKeys),
+        };
+    };
 
     describe('send plaintext', () => {
         it('text/plain clear', async () => {
@@ -75,9 +82,16 @@ describe('Composer sending', () => {
                 data: { MIMEType: MIME_TYPES.PLAINTEXT },
             });
 
-            addKeysToAddressKeysCache(message.data.AddressID, fromKeys);
-
-            const sendRequest = await send(composerID);
+            const preloadedState = getPreloadedState();
+            const sendRequest = await send(composerID, true, {
+                preloadedState: {
+                    ...preloadedState,
+                    addressKeys: {
+                        ...preloadedState.addressKeys,
+                        ...getAddressKeyCache(message.data.AddressID, fromKeys),
+                    },
+                },
+            });
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -101,23 +115,30 @@ describe('Composer sending', () => {
             });
 
             minimalCache();
-            addToCache('Addresses', [
-                {
-                    ID: message.data.AddressID,
-                    Email: fromAddress,
-                    Receive: 1,
-                    HasKeys: true,
-                    Keys: [
-                        {
-                            Primary: 1,
-                            PrivateKey: fromKeys.privateKeyArmored,
-                            PublicKey: fromKeys.publicKeyArmored,
-                        },
-                    ],
-                },
-            ]);
 
-            const sendRequest = await send(composerID, false);
+            const sendRequest = await send(composerID, false, {
+                preloadedState: {
+                    addresses: getModelState([
+                        {
+                            ID: message.data.AddressID,
+                            Email: fromAddress,
+                            Receive: 1,
+                            HasKeys: true,
+                            Keys: [
+                                {
+                                    Primary: 1,
+                                    PrivateKey: fromKeys.privateKeyArmored,
+                                    PublicKey: fromKeys.publicKeyArmored,
+                                },
+                            ],
+                        },
+                    ] as any),
+                    addressKeys: {
+                        ...getAddressKeyCache(AddressID, fromKeys),
+                        ...getAddressKeyCache(message.data.AddressID, fromKeys),
+                    },
+                },
+            });
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -197,11 +218,15 @@ describe('Composer sending', () => {
             });
 
             minimalCache();
-            addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
-            addKeysToUserKeysCache(fromKeys);
             addApiContact({ contactID: 'ContactID', email: toAddress, mimeType: MIME_TYPES.PLAINTEXT }, fromKeys);
 
-            const sendRequest = await send(composerID, false);
+            const preloadedState = getPreloadedState();
+            const sendRequest = await send(composerID, false, {
+                preloadedState: {
+                    ...preloadedState,
+                    mailSettings: getModelState({ DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings),
+                },
+            });
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -227,10 +252,18 @@ describe('Composer sending', () => {
             });
 
             minimalCache();
-            addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT, Sign: SIGN.ENABLED } as MailSettings);
             addApiContact({ contactID: 'ContactID', email: toAddress, mimeType: MIME_TYPES.PLAINTEXT }, fromKeys);
 
-            const sendRequest = await send(composerID, false);
+            const preloadedState = getPreloadedState();
+            const sendRequest = await send(composerID, false, {
+                preloadedState: {
+                    ...preloadedState,
+                    mailSettings: getModelState({
+                        DraftMIMEType: MIME_TYPES.DEFAULT,
+                        Sign: SIGN.ENABLED,
+                    } as MailSettings),
+                },
+            });
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -258,9 +291,9 @@ describe('Composer sending', () => {
             });
 
             minimalCache();
-            addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
 
-            const sendRequest = await send(composerID, false);
+            const preloadedState = getPreloadedState();
+            const sendRequest = await send(composerID, false, { preloadedState });
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -286,10 +319,10 @@ describe('Composer sending', () => {
             });
 
             minimalCache();
-            addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
             addApiKeys(true, toAddress, [toKeys]);
 
-            const sendRequest = await send(composerID, false);
+            const preloadedState = getPreloadedState();
+            const sendRequest = await send(composerID, false, { preloadedState });
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -316,10 +349,15 @@ describe('Composer sending', () => {
             });
 
             minimalCache();
-            addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.PLAINTEXT } as MailSettings);
             addApiKeys(true, toAddress, [toKeys]);
 
-            const sendRequest = await send(composerID, false);
+            const preloadedState = getPreloadedState();
+            const sendRequest = await send(composerID, false, {
+                preloadedState: {
+                    ...preloadedState,
+                    mailSettings: getModelState({ DraftMIMEType: MIME_TYPES.PLAINTEXT } as MailSettings),
+                },
+            });
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -348,10 +386,10 @@ describe('Composer sending', () => {
             });
 
             minimalCache();
-            addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
             addApiKeys(false, toAddress, [toKeys]);
 
-            const sendRequest = await send(composerID, false);
+            const preloadedState = getPreloadedState();
+            const sendRequest = await send(composerID, false, { preloadedState });
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -388,10 +426,10 @@ describe('Composer sending', () => {
             });
 
             minimalCache();
-            addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
             addApiKeys(true, toAddress, [toKeys]);
 
-            const sendRequest = await send(composerID, false);
+            const preloadedState = getPreloadedState();
+            const sendRequest = await send(composerID, false, { preloadedState });
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -433,7 +471,8 @@ describe('Composer sending', () => {
                 })
             );
 
-            const sendRequest = await send(composerID);
+            const preloadedState = getPreloadedState();
+            const sendRequest = await send(composerID, true, { preloadedState });
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -471,7 +510,7 @@ describe('Composer sending', () => {
             const image = createEmbeddedImage(attachment);
             const messageImages = createMessageImages([image]);
 
-            const content = `<img src="${imageUrl}" data-embedded-img="cid:${cid}">`;
+            const content = `<img src='${imageUrl}' data-embedded-img='cid:${cid}'>`;
             const document = window.document.createElement('div');
             document.innerHTML = content;
 
@@ -482,10 +521,10 @@ describe('Composer sending', () => {
             });
 
             minimalCache();
-            addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
             addApiKeys(true, toAddress, [toKeys]);
 
-            const sendRequest = await send(composerID, false);
+            const preloadedState = getPreloadedState();
+            const sendRequest = await send(composerID, false, { preloadedState });
 
             expect(sendRequest.data.ExpirationTime).toBeUndefined();
             expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -510,10 +549,18 @@ describe('Composer sending', () => {
             data: { MIMEType: MIME_TYPES.PLAINTEXT },
         });
 
-        addKeysToAddressKeysCache(message.data.AddressID, secondFromKeys);
         addApiKeys(true, toAddress, [toKeys]);
 
-        const sendRequest = await send(composerID);
+        const preloadedState = getPreloadedState();
+        const sendRequest = await send(composerID, true, {
+            preloadedState: {
+                ...preloadedState,
+                addressKeys: {
+                    ...preloadedState.addressKeys,
+                    ...getAddressKeyCache(message.data.AddressID, secondFromKeys),
+                },
+            },
+        });
 
         expect(sendRequest.data.ExpirationTime).toBeUndefined();
         expect(sendRequest.data.ExpiresIn).toBeUndefined();
@@ -551,10 +598,10 @@ describe('Composer sending', () => {
         });
 
         minimalCache();
-        addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
         addApiKeys(false, toAddress, []);
 
-        const renderResult = await renderComposer(composerID, false);
+        const preloadedState = getPreloadedState();
+        const renderResult = await renderComposer(composerID, false, { preloadedState });
 
         triggerEditorInput(renderResult.container, editorContent);
         addApiMock(`mail/v4/messages/${ID}`, ({ data: { Message } }) => ({ Message }), 'put');

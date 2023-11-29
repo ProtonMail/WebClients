@@ -1,5 +1,4 @@
-import { render } from '@testing-library/react';
-
+import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import { useUser } from '@proton/components/hooks';
 import { Address, ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import {
@@ -48,7 +47,7 @@ describe('IncomingForwardTable', () => {
             },
         ];
 
-        const utils = render(
+        const utils = renderWithProviders(
             <IncomingForwardTableContext
                 forwardings={forwardings}
                 addresses={addresses}

@@ -1,4 +1,4 @@
-import { DecryptedKey, User } from '@proton/shared/lib/interfaces';
+import { DecryptedAddressKey, DecryptedKey, User } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import { getUserKey } from '@proton/shared/test/keys/keyDataHelper';
 
@@ -24,7 +24,7 @@ describe('useLockedVolume -- utils', () => {
             const userKeysFull = await Promise.all([getUserKey('a', keyPassword, 2), getUserKey('b', keyPassword, 2)]);
 
             const UserKeys = userKeysFull.map(({ Key }) => Key);
-            const decryptedUserKeys: DecryptedKey[] = [];
+            const decryptedUserKeys: DecryptedAddressKey[] = [];
 
             const addressesKeys = [
                 {
@@ -49,8 +49,9 @@ describe('useLockedVolume -- utils', () => {
                 Keys: User2Keys.slice(0, 1),
             } as unknown as User;
 
-            const decryptedUserKeysUser1 = await getDecryptedUserKeysHelper(User1, keyPassword);
-            const decryptedUserKeysUser2 = await getDecryptedUserKeysHelper(User2, keyPassword);
+            const getAddressKey = (key: DecryptedKey): DecryptedAddressKey => ({ ...key, Flags: 0, Primary: 0 });
+            const decryptedUserKeysUser1 = (await getDecryptedUserKeysHelper(User1, keyPassword)).map(getAddressKey);
+            const decryptedUserKeysUser2 = (await getDecryptedUserKeysHelper(User2, keyPassword)).map(getAddressKey);
 
             const addressesKeysUser1 = [
                 {

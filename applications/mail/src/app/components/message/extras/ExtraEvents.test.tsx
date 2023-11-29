@@ -1,6 +1,7 @@
 import { act, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { getModelState } from '@proton/account/test';
 import { useGetVtimezonesMap } from '@proton/components/hooks/useGetVtimezonesMap';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { generateAttendeeToken } from '@proton/shared/lib/calendar/attendees';
@@ -31,15 +32,14 @@ import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import * as inviteApi from '../../../helpers/calendar/inviteApi';
 import { generateApiCalendarEvent } from '../../../helpers/test/calendar';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
     GeneratedKey,
-    addAddressToCache,
     addApiMock,
-    addKeysToAddressKeysCache,
     clearAll,
     generateKeys as generateAddressKeys,
     generateCalendarKeysAndPassphrase,
+    getCompleteAddress,
     minimalCache,
     render,
 } from '../../../helpers/test/helper';
@@ -293,32 +293,38 @@ const getSetup = async ({
 
     // mock address keys to encrypt ICS attachment
     minimalCache();
-    addAddressToCache({
-        ID: userPrimaryAddressID,
-        Email: userEmailAddress,
-        Status: userAddressEnabled ? ADDRESS_STATUS.STATUS_ENABLED : ADDRESS_STATUS.STATUS_DISABLED,
-    });
-    addKeysToAddressKeysCache(userPrimaryAddressID, addressKey);
 
     return {
-        localID: '1',
-        data: {
-            ID: '1',
-            Sender: { Name: senderEmailAddress, Address: senderEmailAddress, IsSimpleLogin: isSimpleLogin ? 1 : 0 },
-            AddressID: userPrimaryAddressID,
-            Subject: emailSubject,
-            Time: new Date().getTime() / 1000,
-            Attachments: encryptedAttachments.map(({ attachmentID, filename, attachmentPackets }) => ({
-                ID: attachmentID,
-                Name: filename,
-                KeyPackets: uint8ArrayToBase64String(attachmentPackets.keys),
-                MIMEType: 'text/calendar',
-            })),
-            ParsedHeaders: {
-                'X-Original-To': userEmailAddress,
-            },
+        preloadedState: {
+            addresses: getModelState([
+                getCompleteAddress({
+                    ID: userPrimaryAddressID,
+                    Email: userEmailAddress,
+                    Status: userAddressEnabled ? ADDRESS_STATUS.STATUS_ENABLED : ADDRESS_STATUS.STATUS_DISABLED,
+                }),
+            ]),
+            addressKeys: getAddressKeyCache(userPrimaryAddressID, addressKey),
         },
-    } as unknown as MessageStateWithData;
+        message: {
+            localID: '1',
+            data: {
+                ID: '1',
+                Sender: { Name: senderEmailAddress, Address: senderEmailAddress, IsSimpleLogin: isSimpleLogin ? 1 : 0 },
+                AddressID: userPrimaryAddressID,
+                Subject: emailSubject,
+                Time: new Date().getTime() / 1000,
+                Attachments: encryptedAttachments.map(({ attachmentID, filename, attachmentPackets }) => ({
+                    ID: attachmentID,
+                    Name: filename,
+                    KeyPackets: uint8ArrayToBase64String(attachmentPackets.keys),
+                    MIMEType: 'text/calendar',
+                })),
+                ParsedHeaders: {
+                    'X-Original-To': userEmailAddress,
+                },
+            },
+        } as unknown as MessageStateWithData,
+    };
 };
 
 describe('ICS widget', () => {
@@ -362,7 +368,7 @@ DTSTAMP:20210917T133417Z
 END:VEVENT
 END:VCALENDAR`;
 
-        const message = await getSetup({
+        const { message, preloadedState } = await getSetup({
             attachments: [
                 { attachmentID: 'attachment-id-1', filename: 'invite.ics', ics },
                 { attachmentID: 'attachment-id-2', filename: 'calendar.ics', ics },
@@ -370,7 +376,7 @@ END:VCALENDAR`;
             veventsApi: [],
             eventCalendarID: dummyCalendarID,
         });
-        await render(<ExtraEvents message={message} />, false);
+        await render(<ExtraEvents message={message} />, false, { preloadedState });
 
         // test single banner
         expect(await screen.findAllByText('Unsupported invitation')).toHaveLength(1);
@@ -397,7 +403,7 @@ ATTENDEE;ROLE=REQ-PARTICIPANT;RSVP=TRUE;PARTSTAT=NEEDS-ACTION;X-PM-TOKEN=${dummy
 DTSTAMP:20100917T133417Z
 END:VEVENT
 END:VCALENDAR`;
-            const message = await getSetup({
+            const { message, preloadedState } = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
                 userCalendars: [],
                 veventsApi: [],
@@ -406,7 +412,7 @@ END:VCALENDAR`;
                 senderEmailAddress: dummyUserEmailAddress,
             });
 
-            await render(<ExtraEvents message={message} />, false);
+            await render(<ExtraEvents message={message} />, false, { preloadedState });
 
             expect(await screen.findByText(/This response is out of date. You have no calendars./)).toBeInTheDocument();
         });
@@ -468,7 +474,7 @@ END:VCALENDAR`;
                 ],
             };
 
-            const message = await getSetup({
+            const { message, preloadedState } = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
                 methodInMimeType: ICAL_METHOD.REQUEST,
                 veventsApi: [eventComponent],
@@ -476,7 +482,7 @@ END:VCALENDAR`;
                 alternativeCalendarKeysAndPassphrasePromise,
             });
 
-            await render(<ExtraEvents message={message} />, false);
+            await render(<ExtraEvents message={message} />, false, { preloadedState });
 
             expect(
                 await screen.findByText(
@@ -507,7 +513,7 @@ DTSTAMP:20210917T133417Z
 END:VEVENT
 END:VCALENDAR`;
 
-            const message = await getSetup({
+            const { message, preloadedState } = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
                 veventsApi: [],
                 eventCalendarID: dummyCalendarID,
@@ -515,7 +521,7 @@ END:VCALENDAR`;
                 senderEmailAddress: dummyUserEmailAddress,
             });
 
-            await render(<ExtraEvents message={message} />, false);
+            await render(<ExtraEvents message={message} />, false, { preloadedState });
 
             expect(
                 await screen.findByText(
@@ -577,13 +583,13 @@ END:VCALENDAR`;
                 ],
             };
 
-            const message = await getSetup({
+            const { message, preloadedState } = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
                 veventsApi: [eventComponent],
                 eventCalendarID: dummyCalendarID,
             });
 
-            await render(<ExtraEvents message={message} />, false);
+            await render(<ExtraEvents message={message} />, false, { preloadedState });
 
             expect(
                 await screen.findByText(
@@ -645,13 +651,13 @@ END:VCALENDAR`;
                 ],
             };
 
-            const message = await getSetup({
+            const { message, preloadedState } = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
                 veventsApi: [eventComponent],
                 eventCalendarID: dummyCalendarID,
             });
 
-            await render(<ExtraEvents message={message} />, false);
+            await render(<ExtraEvents message={message} />, false, { preloadedState });
 
             expect(
                 await screen.findByText(`${dummySenderEmailAddress} had previously accepted your invitation.`)
@@ -708,12 +714,12 @@ X-PM-SESSION-KEY:IAhhZBd+KXKPm95M2QRJK7WgGHovpnVdJZb2mMoiwMM=
 END:VEVENT
 END:VCALENDAR`;
 
-            const message = await getSetup({
+            const { message, preloadedState } = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
                 methodInMimeType: ICAL_METHOD.REQUEST,
                 userCalendarSettings: dummyCalendarUserSettings,
             });
-            await render(<ExtraEvents message={message} />, false);
+            await render(<ExtraEvents message={message} />, false, { preloadedState });
 
             // test event title
             await screen.findByText('Walk on the moon');
@@ -815,13 +821,13 @@ END:VCALENDAR`;
                 ],
             };
 
-            const message = await getSetup({
+            const { message, preloadedState } = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
                 methodInMimeType: ICAL_METHOD.REQUEST,
                 veventsApi: [eventComponent],
                 eventCalendarID: dummyCalendarID,
             });
-            await render(<ExtraEvents message={message} />, false);
+            await render(<ExtraEvents message={message} />, false, { preloadedState });
 
             // test event title
             await screen.findByText('Walk on Mars');
@@ -912,7 +918,7 @@ END:VCALENDAR`;
                 ],
             };
 
-            const message = await getSetup({
+            const { message, preloadedState } = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
                 userCalendars: [defaultCalendar],
                 userCalendarSettings: dummyCalendarUserSettings,
@@ -920,7 +926,7 @@ END:VCALENDAR`;
                 eventCalendarID: dummyCalendarID,
             });
 
-            await render(<ExtraEvents message={message} />, false);
+            await render(<ExtraEvents message={message} />, false, { preloadedState });
 
             expect(
                 await screen.findByText(/This invitation is out of date. The event has been updated./)
@@ -1044,11 +1050,11 @@ END:VCALENDAR`;
                 })
             );
 
-            const message = await getSetup({
+            const { message, preloadedState } = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
             });
 
-            await render(<ExtraEvents message={message} />, false);
+            await render(<ExtraEvents message={message} />, false, { preloadedState });
 
             // eslint-disable-next-line testing-library/no-unnecessary-act
             await act(async () => {
@@ -1081,12 +1087,12 @@ DTSTAMP:20210917T133417Z
 END:VEVENT
 END:VCALENDAR`;
 
-            const message = await getSetup({
+            const { message, preloadedState } = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
                 veventsApi: [],
                 eventCalendarID: dummyCalendarID,
             });
-            await render(<ExtraEvents message={message} />, false);
+            await render(<ExtraEvents message={message} />, false, { preloadedState });
 
             await screen.findByText('Unsupported event');
             expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
@@ -1114,13 +1120,13 @@ DTSTAMP:20210917T133417Z
 END:VEVENT
 END:VCALENDAR`;
 
-            const message = await getSetup({
+            const { message, preloadedState } = await getSetup({
                 attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
                 veventsApi: [],
                 eventCalendarID: dummyCalendarID,
             });
 
-            await render(<ExtraEvents message={message} />, false);
+            await render(<ExtraEvents message={message} />, false, { preloadedState });
 
             expect(await screen.findByText(/Add to Proton Calendar/)).toBeInTheDocument();
             expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument();
@@ -1169,13 +1175,13 @@ END:VCALENDAR`;
                     // dummySenderEmailAddress sends an invitation to dummyRecipientExternalEmailAddress
                     // Then dummyRecipientExternalEmailAddress forwards the invite to dummyUserEmailAddress.
                     // => dummyUserEmailAddress is now a party crasher
-                    const message = await getSetup({
+                    const { message, preloadedState } = await getSetup({
                         attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
                         methodInMimeType: ICAL_METHOD.REQUEST,
                         userCalendarSettings: dummyCalendarUserSettings,
                         senderEmailAddress: dummyRecipientExternalEmailAddress,
                     });
-                    await render(<ExtraEvents message={message} />, false);
+                    await render(<ExtraEvents message={message} />, false, { preloadedState });
                     // Alert is displayed
                     expect(
                         await screen.findByText(
@@ -1232,7 +1238,7 @@ END:VCALENDAR`;
                     // dummySenderExternalEmailAddress sends an invitation to dummyRecipientExternalEmailAddress
                     // Then dummyRecipientExternalEmailAddress forwards the invite to dummyUserEmailAddress.
                     // => dummyUserEmailAddress is now a party crasher
-                    const message = await getSetup({
+                    const { message, preloadedState } = await getSetup({
                         attachments: [
                             { attachmentID: dummyAttachmentID, filename: dummyFileName, ics: partyCrasherExternalICS },
                         ],
@@ -1240,7 +1246,7 @@ END:VCALENDAR`;
                         userCalendarSettings: dummyCalendarUserSettings,
                         senderEmailAddress: dummyRecipientExternalEmailAddress,
                     });
-                    await render(<ExtraEvents message={message} />, false);
+                    await render(<ExtraEvents message={message} />, false, { preloadedState });
                     // Alert is displayed
                     expect(
                         await screen.findByText('Your email address is not in the original participants list.')
@@ -1317,14 +1323,14 @@ END:VCALENDAR`;
                     // dummySenderExternalEmailAddress sends an invitation to dummyRecipientExternalEmailAddress
                     // Then dummyRecipientExternalEmailAddress forwards the invite to dummyUserEmailAddress.
                     // => dummyUserEmailAddress is now a party crasher, and he accepted the invite.
-                    const message = await getSetup({
+                    const { message, preloadedState } = await getSetup({
                         attachments: [{ attachmentID: dummyAttachmentID, filename: dummyFileName, ics }],
                         methodInMimeType: ICAL_METHOD.REQUEST,
                         userCalendarSettings: dummyCalendarUserSettings,
                         senderEmailAddress: dummyRecipientExternalEmailAddress,
                         veventsApi: [eventComponent],
                     });
-                    await render(<ExtraEvents message={message} />, false);
+                    await render(<ExtraEvents message={message} />, false, { preloadedState });
 
                     await screen.findByText('Walk on the moon');
 
@@ -1342,7 +1348,7 @@ END:VCALENDAR`;
                     // dummySenderExternalEmailAddress sends an invitation to dummyRecipientExternalEmailAddress
                     // Then dummyRecipientExternalEmailAddress forwards the invite to dummyUserEmailAddress.
                     // => dummyUserEmailAddress is now a party crasher
-                    const message = await getSetup({
+                    const { message, preloadedState } = await getSetup({
                         attachments: [
                             { attachmentID: dummyAttachmentID, filename: dummyFileName, ics: partyCrasherExternalICS },
                         ],
@@ -1351,7 +1357,7 @@ END:VCALENDAR`;
                         senderEmailAddress: dummyRecipientExternalEmailAddress,
                         userAddressEnabled: false,
                     });
-                    await render(<ExtraEvents message={message} />, false);
+                    await render(<ExtraEvents message={message} />, false, { preloadedState });
                     // Alert is displayed
                     expect(await screen.findByText('You cannot reply from the invited address.')).toBeInTheDocument();
 
@@ -1366,7 +1372,7 @@ END:VCALENDAR`;
                     // dummySenderExternalEmailAddress sends an invitation to dummyRecipientExternalEmailAddress
                     // Then dummyRecipientExternalEmailAddress forwards the invite to dummyUserEmailAddress.
                     // => dummyUserEmailAddress is now a party crasher
-                    const message = await getSetup({
+                    const { message, preloadedState } = await getSetup({
                         attachments: [
                             { attachmentID: dummyAttachmentID, filename: dummyFileName, ics: partyCrasherExternalICS },
                         ],
@@ -1376,7 +1382,7 @@ END:VCALENDAR`;
                         defaultCalendarID: 'calendar-key-id-0',
                         userCalendars: generateCalendars(2, true),
                     });
-                    await render(<ExtraEvents message={message} />, false);
+                    await render(<ExtraEvents message={message} />, false, { preloadedState });
                     // Alert is displayed
                     expect(await screen.findByText('All your calendars are disabled.')).toBeInTheDocument();
                     expect(
@@ -1394,7 +1400,7 @@ END:VCALENDAR`;
                     // dummySenderExternalEmailAddress sends an invitation to dummyRecipientExternalEmailAddress
                     // Then dummyRecipientExternalEmailAddress forwards the invite to dummyUserEmailAddress.
                     // => dummyUserEmailAddress is now a party crasher
-                    const message = await getSetup({
+                    const { message, preloadedState } = await getSetup({
                         attachments: [
                             { attachmentID: dummyAttachmentID, filename: dummyFileName, ics: partyCrasherExternalICS },
                         ],
@@ -1404,7 +1410,7 @@ END:VCALENDAR`;
                         defaultCalendarID: 'calendar-key-id-0',
                         userCalendars: generateCalendars(25, true),
                     });
-                    await render(<ExtraEvents message={message} />, false);
+                    await render(<ExtraEvents message={message} />, false, { preloadedState });
                     // Alert is displayed
                     expect(await screen.findByText('All your calendars are disabled.')).toBeInTheDocument();
                     expect(
@@ -1424,7 +1430,7 @@ END:VCALENDAR`;
                 });
 
                 it('should not be possible to accept party crasher events when the mail is coming from SimpleLogin', async () => {
-                    const message = await getSetup({
+                    const { message, preloadedState } = await getSetup({
                         attachments: [
                             { attachmentID: dummyAttachmentID, filename: dummyFileName, ics: partyCrasherExternalICS },
                         ],
@@ -1433,7 +1439,7 @@ END:VCALENDAR`;
                         senderEmailAddress: dummyRecipientExternalEmailAddress,
                         isSimpleLogin: true,
                     });
-                    await render(<ExtraEvents message={message} />, false);
+                    await render(<ExtraEvents message={message} />, false, { preloadedState });
                     // Alert is displayed
                     expect(
                         await screen.findByText('Your email address is not in the original participants list.')

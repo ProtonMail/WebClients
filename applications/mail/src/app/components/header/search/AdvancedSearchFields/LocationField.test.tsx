@@ -1,22 +1,24 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import { getModelState } from '@proton/account/test';
+import { renderWithProviders } from '@proton/components/containers/contacts/tests/render';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { MailSettings } from '@proton/shared/lib/interfaces';
 import { ALMOST_ALL_MAIL } from '@proton/shared/lib/mail/mailSettings';
-import { mockUseFolders, mockUseMailSettings } from '@proton/testing/index';
+import { mockUseFolders } from '@proton/testing/index';
 
 import LocationField from './LocationField';
 import { mockUseLocationFieldOptions } from './LocationField.test.utils';
 
 describe('LocationField', () => {
     beforeEach(() => {
-        mockUseMailSettings();
         mockUseLocationFieldOptions();
         mockUseFolders();
     });
 
     it('should correctly render main locations buttons', () => {
-        render(<LocationField value={MAILBOX_LABEL_IDS.ALL_MAIL} onChange={jest.fn()} />);
+        renderWithProviders(<LocationField value={MAILBOX_LABEL_IDS.ALL_MAIL} onChange={jest.fn()} />);
 
         expect(screen.getByText('Search in'));
 
@@ -33,7 +35,7 @@ describe('LocationField', () => {
     describe('when user click on another location', () => {
         it('should correctly change location', async () => {
             const onChange = jest.fn();
-            render(<LocationField value={MAILBOX_LABEL_IDS.INBOX} onChange={onChange} />);
+            renderWithProviders(<LocationField value={MAILBOX_LABEL_IDS.INBOX} onChange={onChange} />);
 
             const draftsButton = screen.getByRole('button', { name: 'Search in Drafts' });
             await userEvent.click(draftsButton);
@@ -49,7 +51,7 @@ describe('LocationField', () => {
     describe('when user click on Other button', () => {
         it('should correctly change location', async () => {
             const onChange = jest.fn();
-            render(<LocationField value={MAILBOX_LABEL_IDS.INBOX} onChange={onChange} />);
+            renderWithProviders(<LocationField value={MAILBOX_LABEL_IDS.INBOX} onChange={onChange} />);
 
             const otherButton = screen.getByRole('button', { name: 'Other' });
             await userEvent.click(otherButton);
@@ -72,7 +74,7 @@ describe('LocationField', () => {
     describe('when custom option is set', () => {
         it('should correctly change location', async () => {
             const onChange = jest.fn();
-            render(<LocationField value={'36'} onChange={onChange} />);
+            renderWithProviders(<LocationField value={'36'} onChange={onChange} />);
 
             expect(screen.getByText('Highlighted')).toBeInTheDocument();
             const customLabelButton = screen.getByRole('button', { name: 'Remove' });
@@ -90,9 +92,12 @@ describe('LocationField', () => {
 
         describe('when Almost All Mail is set', () => {
             it('should correctly change location', async () => {
-                mockUseMailSettings([{ AlmostAllMail: ALMOST_ALL_MAIL.ENABLED }]);
                 const onChange = jest.fn();
-                render(<LocationField value={'36'} onChange={onChange} />);
+                renderWithProviders(<LocationField value={'36'} onChange={onChange} />, {
+                    preloadedState: {
+                        mailSettings: getModelState({ AlmostAllMail: ALMOST_ALL_MAIL.ENABLED } as MailSettings),
+                    },
+                });
 
                 expect(screen.getByText('Highlighted')).toBeInTheDocument();
                 const customLabelButton = screen.getByRole('button', { name: 'Remove' });

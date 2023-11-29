@@ -37,7 +37,7 @@ const getMemberIndex = (members: Member[] = [], memberID?: string, isOnlySelf?: 
 
 interface Props {
     user: UserModel;
-    organization: Organization;
+    organization?: Organization;
     isOnlySelf?: boolean;
     memberID?: string;
 }
@@ -47,7 +47,7 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
     const [addresses, loadingAddresses] = useAddresses();
     const [customDomains] = useCustomDomains();
     const [{ premiumDomains, protonDomains }] = useProtonDomains();
-    const [organizationKey, loadingOrganizationKey] = useOrganizationKey(organization);
+    const [organizationKey] = useOrganizationKey();
     const [addressModalProps, setAddressModalOpen, renderAddressModal] = useModalState();
     const { createNotification } = useNotifications();
     const [tmpMember, setTmpMember] = useState<Member | null>(null);
@@ -67,7 +67,7 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
     }, [members, memberID]);
 
     const selectedMembers = useMemo(() => {
-        if (memberIndex === ALL_MEMBERS_ID) {
+        if (members && memberIndex === ALL_MEMBERS_ID) {
             return members;
         }
         if (members && memberIndex in members) {
@@ -167,7 +167,6 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
                     user={user}
                     members={selectedMembers}
                     memberAddresses={memberAddressesMap}
-                    organizationKey={loadingOrganizationKey ? undefined : organizationKey}
                 />
             )}
         </>
@@ -178,13 +177,8 @@ const AddressesWithMembers = ({ user, organization, memberID, isOnlySelf }: Prop
 
     return (
         <>
-            {renderAddressModal && tmpMember && (
-                <AddressModal
-                    member={tmpMember}
-                    members={members}
-                    organizationKey={organizationKey}
-                    {...addressModalProps}
-                />
+            {renderAddressModal && tmpMember && members && (
+                <AddressModal member={tmpMember} members={members} {...addressModalProps} />
             )}
             {loading ? <Loader /> : children}
         </>

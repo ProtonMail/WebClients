@@ -1,9 +1,14 @@
 import { getSubscription } from '@proton/shared/lib/api/payments';
-import { SubscriptionModel } from '@proton/shared/lib/models';
+import { PLANS } from '@proton/shared/lib/constants';
+import type { Subscription } from '@proton/shared/lib/interfaces';
 import formatSubscription from '@proton/shared/lib/subscription/format';
-import { addApiMock, addToCache } from '@proton/testing';
+import { addApiMock } from '@proton/testing';
 
-export const subscriptionDefaultResponse = {
+export const subscriptionDefaultResponse: {
+    Code: Number;
+    Subscription: Subscription;
+    UpcomingSubscription: Subscription | null;
+} = {
     Code: 1000,
     Subscription: {
         ID: 'tKBxSXXdM4nTaNiGVfC_jnCpLsyR42iHAYK2WUoOuUX3hwedVDnseP4C_etGetdTjWhXVvwi4jgrhA5YVhn8_A==',
@@ -21,10 +26,8 @@ export const subscriptionDefaultResponse = {
         Plans: [
             {
                 ID: 'vl-JevUsz3GJc18CC1VOs-qDKqoIWlLiUePdrzFc72-BtxBPHBDZM7ayn8CNQ59Sk4XjDbwwBVpdYrPIFtOvIw==',
-                ParentMetaPlanID:
-                    'hUcV0_EeNwUmXA6EoyNrtO-ZTD8H8F6LvNaSjMaPxB5ecFkA7y-5kc3q38cGumJENGHjtSoUndkYFUx0_xlJeg==',
                 Type: 1,
-                Name: 'bundle2022',
+                Name: PLANS.BUNDLE,
                 Title: 'Proton Unlimited',
                 MaxDomains: 3,
                 MaxAddresses: 15,
@@ -40,7 +43,7 @@ export const subscriptionDefaultResponse = {
                 Currency: 'CHF',
                 Amount: 11988,
                 Quantity: 1,
-            },
+            } as any,
         ],
         Renew: 1,
         External: 0,
@@ -56,7 +59,3 @@ export const defaultSubscriptionCache = formatSubscription(
     subscriptionDefaultResponse.Subscription,
     subscriptionDefaultResponse.UpcomingSubscription
 );
-
-export function mockSubscriptionCache(subscription: typeof defaultSubscriptionCache = defaultSubscriptionCache) {
-    addToCache(SubscriptionModel.key, subscription);
-}

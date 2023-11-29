@@ -31,14 +31,13 @@ import { SendPreferences } from '@proton/shared/lib/interfaces/mail/crypto';
 import getSendPreferences from '@proton/shared/lib/mail/send/getSendPreferences';
 
 import {
-    useAddresses,
     useApi,
     useGetAddressKeys,
+    useGetAddresses,
     useGetCalendarInfo,
     useGetCalendarUserSettings,
     useGetEncryptionPreferences,
     useGetMailSettings,
-    useMailSettings,
     useRelocalizeText,
 } from '../../../hooks';
 import { useGetCanonicalEmailsMap } from '../../../hooks/useGetCanonicalEmailsMap';
@@ -46,9 +45,8 @@ import { useGetVtimezonesMap } from '../../../hooks/useGetVtimezonesMap';
 import useSendIcs from '../../../hooks/useSendIcs';
 
 const useAddAttendees = () => {
-    const [mailSettings] = useMailSettings();
     const api = useApi();
-    const [addresses] = useAddresses();
+    const getAddresses = useGetAddresses();
     const getAddressKeys = useGetAddressKeys();
     const getMailSettings = useGetMailSettings();
     const getCalendarUserSettings = useGetCalendarUserSettings();
@@ -73,11 +71,13 @@ const useAddAttendees = () => {
             sendInvitation: boolean;
             contactEmailsMap?: SimpleMap<ContactEmail>;
         }) => {
+            const mailSettings = await getMailSettings();
             const maxAttendees = mailSettings?.RecipientLimit || MAX_ATTENDEES;
             if ((eventComponent.attendee?.length || 0) > maxAttendees) {
                 throw new AddAttendeeError(ADD_EVENT_ERROR_TYPE.TOO_MANY_PARTICIPANTS, undefined, maxAttendees);
             }
             const { addressID, memberID, calendarKeys, addressKeys } = await getCalendarInfo(calendarEvent.CalendarID);
+            const addresses = await getAddresses();
             const selfAddress = addresses.find(({ ID }) => ID === addressID);
             if (!selfAddress) {
                 throw new Error("Cannot add attendees to events you don't organize");

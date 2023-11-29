@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms';
-import { Prompt, useAddresses, useModalState } from '@proton/components';
+import { Prompt, useGetAddresses, useModalState } from '@proton/components';
 import { getIsAddressActive } from '@proton/shared/lib/helpers/address';
 import { Address } from '@proton/shared/lib/interfaces';
 
@@ -19,7 +19,7 @@ interface Props {
 }
 
 export const useDraftSenderVerification = ({ composerID }: Props) => {
-    const [addresses] = useAddresses();
+    const getAddresses = useGetAddresses();
     const [defaultEmail, setDefaultEmail] = useState<string>('');
     const dispatch = useAppDispatch();
 
@@ -38,6 +38,7 @@ export const useDraftSenderVerification = ({ composerID }: Props) => {
 
     const verifyDraftSender = async (message: MessageState) => {
         const currentSender = message.data?.Sender;
+        const addresses = await getAddresses();
 
         const actualAddress: Address | undefined = getAddressFromEmail(addresses, currentSender?.Address);
 

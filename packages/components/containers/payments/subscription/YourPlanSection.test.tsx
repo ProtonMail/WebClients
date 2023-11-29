@@ -6,13 +6,14 @@ import {
     useCalendars,
     useConfig,
     useFeature,
+    useGetUserInvitations,
     useOrganization,
+    usePendingUserInvitations,
     usePlans,
     useSubscription,
     useUser,
     useVPNServersCount,
 } from '@proton/components/hooks';
-import usePendingUserInvitations from '@proton/components/hooks/usePendingUserInvitations';
 import { APPS, PLANS } from '@proton/shared/lib/constants';
 
 import YourPlanSection from './YourPlanSection';
@@ -64,6 +65,8 @@ mockUseVPNServersCount.mockReturnValue([vpnServersCount, false]);
 jest.mock('@proton/components/hooks/usePendingUserInvitations');
 const mockUsePendingUserInvitations = usePendingUserInvitations as jest.MockedFunction<any>;
 mockUsePendingUserInvitations.mockReturnValue([[], false]);
+const mockUseGetPendingUserInvitations = useGetUserInvitations as jest.MockedFunction<any>;
+mockUseGetPendingUserInvitations.mockReturnValue(async () => []);
 
 jest.mock('@proton/components/hooks/useLoad');
 

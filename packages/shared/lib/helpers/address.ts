@@ -81,7 +81,7 @@ export const getAvailableAddressDomains = ({
     member: Member;
     premiumDomains: string[];
     protonDomains: string[];
-    customDomains: Domain[];
+    customDomains: Domain[] | undefined;
 }) => {
     const hasProtonDomains = member.Type === MEMBER_TYPE.PROTON;
 

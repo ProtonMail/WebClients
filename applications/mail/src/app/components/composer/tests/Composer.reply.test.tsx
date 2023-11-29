@@ -2,20 +2,20 @@ import { fireEvent } from '@testing-library/react';
 import { act } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
+import { getModelState } from '@proton/account/test';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import { MailSettings } from '@proton/shared/lib/interfaces';
 
 import {
     GeneratedKey,
     addApiKeys,
-    addKeysToAddressKeysCache,
     generateKeys,
+    getAddressKeyCache,
     releaseCryptoProxy,
     setupCryptoProxyForTesting,
 } from '../../../helpers/test/crypto';
 import {
     addApiMock,
-    addToCache,
     clearAll,
     createDocument,
     decryptMessage,
@@ -57,10 +57,6 @@ describe('Composer reply and forward', () => {
         await releaseCryptoProxy();
     });
 
-    beforeEach(() => {
-        addKeysToAddressKeysCache(AddressID, fromKeys);
-    });
-
     afterEach(() => {
         clearAll();
         jest.useRealTimers();
@@ -73,14 +69,18 @@ describe('Composer reply and forward', () => {
         });
 
         minimalCache();
-        addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
         addApiKeys(true, toAddress, [toKeys]);
 
         // Will use update only on the wrong path, but it allows to have a "nice failure"
         const updateSpy = jest.fn(() => Promise.reject(new Error('Should not update here')));
         addApiMock(`mail/v4/messages/${ID}`, updateSpy, 'put');
 
-        const sendRequest = await send(composerID, false);
+        const sendRequest = await send(composerID, false, {
+            preloadedState: {
+                addressKeys: getAddressKeyCache(AddressID, fromKeys),
+                mailSettings: getModelState({ DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings),
+            },
+        });
 
         const packages = sendRequest.data.Packages;
         const pack = packages['text/html'];
@@ -99,12 +99,16 @@ describe('Composer reply and forward', () => {
         });
 
         minimalCache();
-        addToCache('MailSettings', { DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings);
         addApiKeys(true, toAddress, [toKeys]);
 
         const composerID = Object.keys(store.getState().composers.composers)[0];
 
-        const renderResult = await renderComposer(composerID, false);
+        const renderResult = await renderComposer(composerID, false, {
+            preloadedState: {
+                addressKeys: getAddressKeyCache(AddressID, fromKeys),
+                mailSettings: getModelState({ DraftMIMEType: MIME_TYPES.DEFAULT } as MailSettings),
+            },
+        });
 
         const iframe = (await renderResult.findByTestId('rooster-iframe')) as HTMLIFrameElement;
         const button = iframe.contentWindow?.document.getElementById('ellipsis') as HTMLButtonElement;

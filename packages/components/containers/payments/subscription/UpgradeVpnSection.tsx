@@ -25,7 +25,7 @@ const UpgradeVpnSection = ({ app }: Props) => {
 
     const loading = loadingSubscription || loadingPlans || serversCountLoading;
 
-    if (loading) {
+    if (!subscription || loading) {
         return <Loader />;
     }
 

@@ -4,7 +4,6 @@ import {
     generateKeys,
     releaseCryptoProxy,
     removeLineBreaks,
-    setFeatureFlags,
     setupCryptoProxyForTesting,
 } from '../../../../helpers/test/helper';
 import { messageID } from '../../../message/tests/Message.test.helpers';
@@ -23,10 +22,6 @@ describe('Quick reply - Compose', () => {
 
     afterAll(async () => {
         await releaseCryptoProxy();
-    });
-
-    beforeEach(() => {
-        setFeatureFlags('QuickReply', true);
     });
 
     afterEach(() => {

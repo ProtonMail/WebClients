@@ -4,16 +4,14 @@ import loudRejection from 'loud-rejection';
 
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
+import { getAddressKeyCache, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../helpers/test/crypto';
 import {
     addApiKeys,
     addApiMock,
-    addKeysToAddressKeysCache,
     clearAll,
     generateKeys,
     getDropdown,
     render,
-    setFeatureFlags,
     tick,
     waitForNotification
 } from '../../../helpers/test/helper';
@@ -38,17 +36,18 @@ describe('Composer outside encryption', () => {
     });
 
     const setup = async () => {
-        setFeatureFlags('EORedesign', true);
-
         addApiMock(`mail/v4/messages/${ID}`, () => ({ Message: {} }), 'put');
 
         const fromKeys = await generateKeys('me', fromAddress);
-        addKeysToAddressKeysCache(AddressID, fromKeys);
         addApiKeys(false, toAddress, []);
 
         const composerID = Object.keys(store.getState().composers.composers)[0];
 
-        const result = await render(<Composer {...props} composerID={composerID} />);
+        const result = await render(<Composer {...props} composerID={composerID} />, true, {
+            preloadedState: {
+                addressKeys: getAddressKeyCache(AddressID, fromKeys),
+            },
+        });
 
         return result;
     };
