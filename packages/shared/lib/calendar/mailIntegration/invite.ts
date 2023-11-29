@@ -46,7 +46,13 @@ import { getSupportedStringValue } from '../icsSurgery/vcal';
 import { getIsRruleEqual } from '../recurrence/rruleEqual';
 import { fromTriggerString, serialize } from '../vcal';
 import { getAllDayInfo, getHasModifiedDateTimes, propertyToUTCDate } from '../vcalConverter';
-import { getAttendeePartstat, getAttendeeRole, getIsAlarmComponent, getPropertyTzid } from '../vcalHelper';
+import {
+    getAttendeePartstat,
+    getAttendeeRole,
+    getHasRecurrenceId,
+    getIsAlarmComponent,
+    getPropertyTzid,
+} from '../vcalHelper';
 import {
     getIsAllDay,
     getIsEventCancelled,
@@ -531,6 +537,9 @@ ${eventDetailsText}`;
 ${eventDetailsText}`;
     }
     if (method === ICAL_METHOD.CANCEL) {
+        if (getHasRecurrenceId(vevent)) {
+            return c('Email body for invitation').t`This occurrence of ${eventTitle} has been canceled.`;
+        }
         return c('Email body for invitation').t`${eventTitle} has been canceled.`;
     }
     if (method === ICAL_METHOD.REPLY) {
