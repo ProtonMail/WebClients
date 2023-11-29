@@ -35,10 +35,8 @@ export const isKTActive = (feature: KT_FF) => {
     try {
         // Test if the -- operand is supported by BigInt
         // because it is used by VRF verification.
-        /* eslint-disable */
-        let check = BigInt('0x1');
-        check--;
-        /* eslint-enable */
+        let check = BigInt('0x1'); // eslint-disable-line @typescript-eslint/no-unused-vars
+        check--; // eslint-disable-line @typescript-eslint/no-unused-vars
     } catch {
         return false;
     }
