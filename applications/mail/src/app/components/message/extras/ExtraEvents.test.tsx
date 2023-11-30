@@ -1,4 +1,4 @@
-import { screen, waitFor } from '@testing-library/react';
+import { act, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { useCalendarUserSettings } from '@proton/components/hooks/useCalendarUserSettings';
@@ -760,6 +760,7 @@ END:VCALENDAR`;
             // test collapsed attendees
             const showAttendeesButton = screen.getByText('Show');
             expect(screen.queryByText(new RegExp(dummyUserEmailAddress))).not.toBeInTheDocument();
+
             await userEvent.click(showAttendeesButton);
             expect(screen.getByText('Show less')).toBeInTheDocument();
             expect(screen.getByText(new RegExp(anotherEmailAddress))).toBeInTheDocument();
@@ -1056,7 +1057,10 @@ END:VCALENDAR`;
 
             await render(<ExtraEvents message={message} />, false);
 
-            await userEvent.click(await screen.findByTitle(`Yes, I'll attend`));
+            // eslint-disable-next-line testing-library/no-unnecessary-act
+            await act(async () => {
+                await userEvent.click(await screen.findByTitle(`Yes, I'll attend`));
+            });
 
             await waitFor(() => expect(screen.queryByTestId('ics-widget-summary')).not.toBeInTheDocument());
         });
