@@ -266,6 +266,9 @@
       "Invite user": [
         "Convidar um utilizador"
       ],
+      "Keep my Plus subscription": [
+        "Manter a minha subscrição Plus"
+      ],
       "Let's talk": [
         "Vamos conversar"
       ],
@@ -642,6 +645,9 @@
       ],
       "Close": [
         "Fechar"
+      ],
+      "Get the deal": [
+        "Obtenha a promoção"
       ],
       "Remove": [
         "Remover"
@@ -2285,7 +2291,7 @@
     },
     "fido2: Error": {
       "Please disable 2FA via security key before disabling TOTP": [
-        "Desative a autenticação 2FA através da chave de segurança antes de desativar o TOTP"
+        "Desative a autenticação A2F através da chave de segurança antes de desativar o TOTP"
       ],
       "Something went wrong authenticating with your security key. Please try again.": [
         "Algo correu mal ao autenticar com a sua chave de segurança. Por favor, tente novamente."
@@ -2351,13 +2357,13 @@
         "Dê um nome à sua chave de segurança"
       ],
       "Register your security key": [
-        "Registre a sua chave de segurança"
+        "Registe a sua chave de segurança"
       ],
       "Registered security keys": [
         "As chaves de segurança foram registradas."
       ],
       "Security key registered": [
-        "A chave de segurança foi registrada."
+        "A chave de segurança foi registada."
       ]
     },
     "file size format": {
@@ -2730,6 +2736,9 @@
       "By leaving now, changes may not be saved": [
         "Se sair agora, as alterações podem não ficar guardadas"
       ],
+      "Cancel anytime": [
+        "Cancele a qualquer momento"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Clique em \"Pedir novo código\" para receber um novo código de verificação em ${ strong }. Se o telefone estiver incorreto, clique em \"Editar\" para o corrigir."
       ],
@@ -2905,6 +2914,9 @@
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Se acredita que houve um erro, contacte-nos em ${ contactLink }."
+      ],
+      "If you cancel, your ${ planTitle } subscription will not be renewed when it expires on ${ expiryDate }.": [
+        "Se cancelar, a sua subscrição ${ planTitle } não será renovada quando expirar em ${ expiryDate }."
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se não encontrar o e-mail na sua caixa de entrada, verifique a pasta de spam."
@@ -3527,6 +3539,9 @@
       "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
         "Com um plano Business ou Enterprise, pode obter ${ boldDedicatedServers } para a sua organização, e configurar ${ boldGateways } para controlar que utilizadores lhes podem aceder."
       ],
+      "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
+        "Com um endereço da ${ BRAND_NAME } encriptado, pode utilizar todos os serviços da ${ BRAND_NAME }."
+      ],
       "Without activation you will not be able to create new users, add addresses to existing users, or access non-private user accounts.": [
         "Sem a ativação, não poderá criar novos utilizadores, adicionar endereços a utilizadores existentes ou aceder a contas de utilizador não privadas."
       ],
@@ -3555,6 +3570,9 @@
       ],
       "You can edit this once to ensure the correct email address for verification.": [
         "Pode editar isto uma vez para garantir o endereço de e-mail correto para verificação."
+      ],
+      "You can immediately unlock the setup above by adding ${ specificCountryCount } to the number of IP addresses in your plan or reach us for tailor-made solutions.": [
+        "Pode desbloquear imediatamente a configuração acima ao adicionar ${ specificCountryCount } ao número de endereços IP no seu plano ou contactar-nos para soluções personalizadas."
       ],
       "You can keep up to ${ MAX_CALENDARS_FREE } calendar. Please remove shared calendar links and any ${ BRAND_NAME } user with whom you shared your calendars before you cancel your ${ MAIL_SHORT_APP_NAME } subscription.": [
         "Pode manter até ${ MAX_CALENDARS_FREE } calendário. Remova ligações de calendários partilhados e qualquer utilizador do ${ BRAND_NAME } com quem partilhou os seus calendários antes de cancelar a sua assinatura do${ MAIL_SHORT_APP_NAME }.",
@@ -3611,6 +3629,9 @@
       ],
       "You will be redirected to ${ destination } after signing in.": [
         "Irá ser redirecionado para ${ destination } após iniciar sessão."
+      ],
+      "You will lose access to Plus servers and features on this date.": [
+        "Nesta data, perderá o acesso a servidores e funcionalidades Plus."
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Precisará de um endereço da ${ BRAND_NAME } para usar o ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
@@ -4906,6 +4927,9 @@
       ]
     },
     "new_plans: tooltip": {
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: proteja os seus ficheiros com armazenamento encriptado na nuvem. Inclui histórico de versões, partilha de ficheiros encriptados e muito mais."
+      ],
       "Access content on streaming services, including Netflix, Disney+, and Prime Video, from anywhere": [
         "Aceda a conteúdos em serviços de streaming, incluindo Netflix, Disney+ e Prime Video, a partir de qualquer lugar"
       ],
@@ -5383,6 +5407,11 @@
         "Selecione um motivo"
       ]
     },
+    "plan customizer, ips": {
+      "Select the number of IPs to include in your plan. Each additional IP costs ${ price }.": [
+        "Selecione o número de IP a incluir no seu plano. Cada IP adicional custa ${ price }."
+      ]
+    },
     "plan customizer, users": {
       "contact": [
         "contacto"
@@ -5542,6 +5571,9 @@
         "${ timeRemaining.inHours } hora",
         "${ timeRemaining.inHours } horas"
       ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Se não pediu para repor a sua palavra-passe, cancele o pedido agora."
+      ],
       "Password reset request approved (${ user.Email }). You have ${ timeRemaining.inDays } day to reset your password.": [
         "Pedido de reposição de palavra-passe aprovado (${ user.Email }). Tem ${ timeRemaining.inDays } dia para repor a sua palavra-passe.",
         "Pedido de reposição de palavra-passe aprovado (${ user.Email }). Tem ${ timeRemaining.inDays } dias para repor a sua palavra-passe."
@@ -5626,6 +5658,9 @@
         "${ gracePeriodHoursRemaining } hora restante",
         "${ gracePeriodHoursRemaining } horas restantes"
       ],
+      "If you didn’t ask to reset your password, cancel the request now.": [
+        "Se não pediu para repor a sua palavra-passe, cancele o pedido agora."
+      ],
       "If you didn’t ask to reset your password, cancel this request now.": [
         "Se não pediu para repor a sua palavra-passe, cancele este pedido agora."
       ],
@@ -5707,6 +5742,11 @@
       ],
       "Pending": [
         "Pendente"
+      ]
+    },
+    "session_recovery:status:title": {
+      "Password reset request": [
+        "Pedido de reposição da palavra-passe"
       ]
     },
     "Shared calendar; Info about calendar owner": {
@@ -7037,6 +7077,11 @@
       ],
       "Your ${ selected } plan": [
         "O seu plano ${ selected }"
+      ]
+    },
+    "vpn_2step: tooltip": {
+      "Access to Secure core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
+        "Acesso a servidores Secure Core, transferências P2P/BitTorrent rápidas, Tor sobre VPN e mais."
       ]
     },
     "VPNClient": {

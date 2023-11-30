@@ -340,12 +340,6 @@
       "Hide advanced PGP settings": [
         "Erweiterte PGP-Einstellungen ausblenden"
       ],
-      "Hide folders": [
-        "Ordner ausblenden"
-      ],
-      "Hide labels": [
-        "Kategorien ausblenden"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Das Bild konnte aufgrund des Tracking-Schutzes nicht geladen werden."
       ],
@@ -603,12 +597,6 @@
       ],
       "Show advanced PGP settings": [
         "Erweiterte PGP-Einstellungen anzeigen"
-      ],
-      "Show folders": [
-        "Ordner anzeigen"
-      ],
-      "Show labels": [
-        "Kategorien anzeigen"
       ],
       "Show preview": [
         "Vorschau anzeigen"
@@ -3750,6 +3738,9 @@
       "Items in the trash will stay here until you delete them permanently": [
         "Elemente im Papierkorb verbleiben hier, bis sie dauerhaft gelöscht werden."
       ],
+      "Items moved to the trash will stay here until deleted": [
+        "Objekte, die in den Papierkorb verschoben werden, verbleiben dort, bis sie gelöscht werden."
+      ],
       "It’s easy and secure": [
         "Es ist einfach und sicher"
       ],
@@ -4007,6 +3998,9 @@
       "Select a folder to move to.": [
         "Wähle ein Zielverzeichnis für das Verschieben aus."
       ],
+      "Select a service provider to start": [
+        "Wähle einen Dienstanbieter, um anzufangen"
+      ],
       "Select all items for": [
         "Wähle alle Elemente aus für"
       ],
@@ -4203,6 +4197,9 @@
       "Trash": [
         "Papierkorb"
       ],
+      "Trash is empty": [
+        "Papierkorb ist leer"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "Teste neue Funktionen, Updates und Produkte von ${ BRAND_NAME }, bevor sie für die Öffentlichkeit freigegeben werden. Dadurch wird die Seite neu geladen."
       ],
@@ -4250,6 +4247,9 @@
       ],
       "Version is restored": [
         "Version wiederhergestellt."
+      ],
+      "Want to sync files faster?": [
+        "Möchtest du Dateien schneller synchronisieren?"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "Gut gemacht, du hast soeben deinen kostenlosen Speicherplatz verdoppelt!"
@@ -5079,6 +5079,9 @@
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Automatisches Bereinigen von Spam und gelöschten Nachrichten"
+      ],
+      "Calendar sharing": [
+        "Kalenderfreigabe"
       ],
       "Custom email domains": [
         "Eigene E-Mail-Domains"

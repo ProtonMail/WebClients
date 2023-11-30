@@ -245,6 +245,9 @@
       "Copy address": [
         "Copiere adresă"
       ],
+      "Copy key to the clipboard": [
+        "Copiere cheie în memorie"
+      ],
       "Copy link": [
         "Copiere legătură"
       ],
@@ -523,12 +526,6 @@
       ],
       "Hide": [
         "Ascundere"
-      ],
-      "Hide folders": [
-        "Ascundere foldere"
-      ],
-      "Hide labels": [
-        "Ascundere etichete"
       ],
       "Hide plan features": [
         "Ascundere caracteristici plan"
@@ -883,12 +880,6 @@
       ],
       "Show": [
         "Afișare"
-      ],
-      "Show folders": [
-        "Afișare foldere"
-      ],
-      "Show labels": [
-        "Afişare etichete"
       ],
       "Show less": [
         "Afișare mai puțin"
@@ -7597,9 +7588,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Modernizați acum contul pentru a accesa funcții premium, produse și stocare la un preț special."
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Treceți la planul ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } sau ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } pentru a avea acces la ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Treceți la ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } sau ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } pentru a obține acces la ${ PROTON_SENTINEL_NAME }."
       ],
@@ -10506,17 +10494,6 @@
         "Gestionare echipă"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Perioada de probare se termină ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } care se termină cu ${ last4 }"
@@ -10604,6 +10581,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vă bucurați de un preț promoțional la planul dvs. actual. Dacă vă retrogradați contul, veți pierde prețul promoțional și nu va fi disponibil dacă încercați să vă abonați din nou."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Altfel accesul la cont va fi limitat și eventual va fi dezactivat."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pentru a continua să utilizați ${ MAIL_APP_NAME } cu funcțiile premium, alegeți tipul de abonament și opțiunea de plată."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Perioada de probare se termină ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10969,6 +10957,9 @@
       ],
       "IP Address copied to clipboard": [
         "Adresa IP a fost copiată în memorie"
+      ],
+      "Key copied to the clipboard": [
+        "Cheia a fost copiată în memorie."
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Cheia cu amprenta ${ fp } a fost ștearsă."

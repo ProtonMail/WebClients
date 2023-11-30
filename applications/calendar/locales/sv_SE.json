@@ -279,12 +279,6 @@
       "Hide affected calendars": [
         "Dölj påverkade kalendrar"
       ],
-      "Hide folders": [
-        "Dölj mappar"
-      ],
-      "Hide labels": [
-        "Dölj etiketter"
-      ],
       "Hide time zones": [
         "Dölj tidszoner"
       ],
@@ -524,12 +518,6 @@
       ],
       "Show affected calendars": [
         "Visa påverkade kalendrar"
-      ],
-      "Show folders": [
-        "Visa mappar"
-      ],
-      "Show labels": [
-        "Visa etiketter"
       ],
       "Show less": [
         "Visa mindre"
@@ -2190,6 +2178,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "Öka effektiviteten och spåra din tid genom att färgkoda händelser efter kategori eller dina energinivåer. Få detta och mycket mer med ett betalt paket."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Dekrypterar kontakter… Detta kan ta några minuter. När processen är klar kommer du att kunna ladda ner filen med alla dina kontakter exporterade."
       ],
@@ -4071,6 +4062,9 @@
       "Removed participants will be notified.": [
         "Borttagna deltagare kommer att meddelas."
       ],
+      "Select a service provider to start": [
+        "Välj en tjänsteleverantör för att starta"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Välj det e-postformat du vill använda som standard när du skickar ett e-postmeddelande till den här e-postadressen."
       ],
@@ -4355,6 +4349,11 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Din systemtidszon verkar ha ändrats till ${ timezone }. Vill du uppdatera din tidszons preferens?"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Vald färg:"
       ]
     },
     "Info calendar search": {
@@ -5184,8 +5183,15 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalender",
+        "${ maximumNumberOfCalendars } kalendrar"
+      ],
       "Auto-delete spam and trashed messages": [
         "Ta bort skräppost och kastade meddelanden automatiskt"
+      ],
+      "Calendar sharing": [
+        "Kalenderdelning"
       ],
       "Custom email domains": [
         "Anpassade e-postdomäner"
@@ -6145,6 +6151,9 @@
       "Add your country's public holidays to your calendar.": [
         "Lägg till ditt lands allmänna helgdagar till din kalender."
       ],
+      "Color-coding is here!": [
+        "Färgkodning är här!"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Hitta enkelt händelsen du letar efter med vår nya sökfunktion."
       ],
@@ -6159,6 +6168,9 @@
       ],
       "Search for events": [
         "Sök efter händelser"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "Med anpassningsbara händelsefärger kan du färgkoda kaoset och erövra din dag."
       ]
     },
     "Storage": {
@@ -6474,6 +6486,9 @@
       ],
       "Add participants": [
         "Lägg till deltagare"
+      ],
+      "Add some color to your day": [
+        "Lägg till lite färg på din dag"
       ],
       "Add to ${ groupCount } group": [
         "Lägg till i ${ groupCount } grupp",

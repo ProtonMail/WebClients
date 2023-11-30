@@ -101,6 +101,9 @@
       "Copy address": [
         "Капіяваць адрас"
       ],
+      "Copy key to the clipboard": [
+        "Скапіяваць ключ у буфер абмену"
+      ],
       "Create": [
         "Стварыць"
       ],
@@ -4800,6 +4803,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } каляндар",
+        "${ maximumNumberOfCalendars } календары",
+        "${ maximumNumberOfCalendars } календароў",
+        "${ maximumNumberOfCalendars } календароў"
+      ],
       "${ n } calendar": [
         "${ n } каляндар",
         "${ n } календары",
@@ -5620,6 +5629,9 @@
       "IP Address copied to clipboard": [
         "IP-адрас скапіяваны ў буфер абмену"
       ],
+      "Key copied to the clipboard": [
+        "Ключ скапіяваны ў буфер абмену"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Уліковыя даныя OpenVPN / IKEv2 паўторна згенерыраваныя"
       ],
@@ -5742,6 +5754,12 @@
       ],
       "Creating your account": [
         "Стварэнне вашага ўліковага запісу"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Усяго за **${ relativePrice } у месяц** вы атрымаеце доступ да прэміяльнага менеджара пароляў ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Усяго за **${ relativePrice } у месяц** вы атрымаеце доступ да прэміяльнага сэрвісу VPN ${ BRAND_NAME }!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Усяго за **${ relativePrice } у месяц** вы атрымаеце доступ да ўсіх прэміяльных сэрвісаў ${ BRAND_NAME }!"

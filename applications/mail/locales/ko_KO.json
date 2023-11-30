@@ -463,12 +463,6 @@
       "Hide details": [
         "세부 정보 숨기기"
       ],
-      "Hide folders": [
-        "폴더 숨기기"
-      ],
-      "Hide labels": [
-        "라벨 숨기기"
-      ],
       "Hide messages": [
         "메시지 숨기기"
       ],
@@ -712,10 +706,10 @@
       "Not saved": [
         "저장되지 않음"
       ],
-      "OK": [
+      "Ok": [
         "확인"
       ],
-      "Ok": [
+      "OK": [
         "확인"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -963,12 +957,6 @@
       ],
       "Show fewer search options": [
         "검색 옵션 줄이기"
-      ],
-      "Show folders": [
-        "폴더 표시"
-      ],
-      "Show labels": [
-        "라벨 표시"
       ],
       "Show less": [
         "가리기"
@@ -5595,6 +5583,9 @@
       "Seems like you are all caught up for now": [
         "표시할 메일이 없는 거 같습니다"
       ],
+      "Select a service provider to start": [
+        "시작하려면 서비스 제공자를 선택하십시오"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "이 이메일 주소로 이메일을 보낼 때 기본적으로 사용할 이메일 형식을 선택하세요."
       ],
@@ -7384,6 +7375,9 @@
       "Auto-delete spam and trashed messages": [
         "스팸 및 휴지통의 메시지를 자동 삭제"
       ],
+      "Calendar sharing": [
+        "일정 공유"
+      ],
       "Custom email domains": [
         "사용자 지정 이메일 도메인"
       ],
@@ -8335,6 +8329,12 @@
       ],
       "Search just got smarter and faster": [
         "더 빨라지고 똑똑해진 검색"
+      ],
+      "Set when an email should reappear in your inbox with the new snooze feature.": [
+        "새로운 방해 금지 기능을 사용하고 있는 상태에서 받은 편지함에 다시 나타나는 시기를 설정하세요."
+      ],
+      "Snooze it for later": [
+        "나중에 방해 금지 상태로 전환"
       ],
       "Spam and Trash emails are now automatically excluded from All Mail. ${ settingsLink }": [
         "이제 스팸과 휴지통 이메일은 자동으로 모든 메일에서 제외됩니다. ${ settingsLink }"

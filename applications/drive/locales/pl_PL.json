@@ -346,12 +346,6 @@
       "Hide advanced PGP settings": [
         "Ukryj zaawansowane ustawienia PGP"
       ],
-      "Hide folders": [
-        "Ukryj foldery"
-      ],
-      "Hide labels": [
-        "Ukryj etykiety"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Obraz nie mógł zostać załadowany z ochroną przed śledzeniem."
       ],
@@ -390,6 +384,9 @@
       ],
       "Load image": [
         "Załaduj obraz"
+      ],
+      "Loading link": [
+        "Ładowanie linku"
       ],
       "Manage folders": [
         "Zarządzaj folderami"
@@ -609,12 +606,6 @@
       ],
       "Show advanced PGP settings": [
         "Pokaż zaawansowane ustawienia PGP"
-      ],
-      "Show folders": [
-        "Pokaż foldery"
-      ],
-      "Show labels": [
-        "Pokaż etykiety"
       ],
       "Show preview": [
         "Pokaż podgląd"
@@ -3884,6 +3875,9 @@
       "Items in the trash will stay here until you delete them permanently": [
         "Elementy w Koszu pozostaną tutaj, dopóki nie zostaną trwale usunięte"
       ],
+      "Items moved to the trash will stay here until deleted": [
+        "Przedmioty przeniesione do kosza pozostaną tam do momentu ich usunięcia"
+      ],
       "It’s easy and secure": [
         "To łatwe i bezpieczne"
       ],
@@ -4145,6 +4139,9 @@
       "Select a folder to move to.": [
         "Wybierz folder do przeniesienia."
       ],
+      "Select a service provider to start": [
+        "Aby rozpocząć, wybierz dostawcę usługi"
+      ],
       "Select all items for": [
         "Zaznacz wszystko z"
       ],
@@ -4355,6 +4352,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Nie można odszyfrować pliku lub niektórych danych."
       ],
+      "Unknown date": [
+        "Nieznana data"
+      ],
       "Unknown error": [
         "Wystąpił nieznany błąd"
       ],
@@ -4537,6 +4537,11 @@
       ],
       "Your previous recovery phrase": [
         "Poprzednie hasło odzyskiwania"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Wybrany kolor:"
       ]
     },
     "Info on errors": {
@@ -5241,8 +5246,17 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalendarz",
+        "${ maximumNumberOfCalendars } kalendarze",
+        "${ maximumNumberOfCalendars } kalendarzy",
+        "${ maximumNumberOfCalendars } kalendarzy"
+      ],
       "Auto-delete spam and trashed messages": [
         "Automatyczne usuwanie Spamu i Kosza"
+      ],
+      "Calendar sharing": [
+        "Udostępnianie kalendarza"
       ],
       "Custom email domains": [
         "Niestandardowe domeny"
@@ -5582,8 +5596,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Poznaj wszystkie usługi ${ BRAND_NAME }"
       ],
+      "Pick a theme": [
+        "Wybierz motyw"
+      ],
       "Set up your organization": [
         "Skonfiguruj organizację"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Otwórz menu aplikacji w lewym górnym rogu, aby uzyskać dostęp do wszystkich usług ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Będziesz mógł zmienić motyw w dowolnym momencie w ustawieniach."
       ]
     },
     "Onboarding Title": {

@@ -466,12 +466,6 @@
       "Hide details": [
         "Amagar els detalls"
       ],
-      "Hide folders": [
-        "Amaga les carpetes"
-      ],
-      "Hide labels": [
-        "Amaga les etiquetes"
-      ],
       "Hide messages": [
         "Amagar missatges"
       ],
@@ -716,10 +710,10 @@
       "Not saved": [
         "No s'ha desat"
       ],
-      "OK": [
+      "Ok": [
         "D'acord"
       ],
-      "Ok": [
+      "OK": [
         "D'acord"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -967,12 +961,6 @@
       ],
       "Show fewer search options": [
         "Mostra menys opcions de cerca"
-      ],
-      "Show folders": [
-        "Mostra les carpetes"
-      ],
-      "Show labels": [
-        "Mostra les etiquetes"
       ],
       "Show less": [
         "Mostra'n menys"
@@ -5654,6 +5642,9 @@
       "Seems like you are all caught up for now": [
         "Sembla que ara mateix esteu al dia"
       ],
+      "Select a service provider to start": [
+        "Seleccioneu un proveïdor de serveis per començar"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccioni el format de correu electronic que vols fer us per defecte quan enviis un correu electronic a aquesta direcció."
       ],
@@ -7451,6 +7442,9 @@
       "Auto-delete spam and trashed messages": [
         "Suprimeix automàticament el correu brossa i els missatges enviats a la paperera"
       ],
+      "Calendar sharing": [
+        "Compartició de calendari"
+      ],
       "Custom email domains": [
         "Dominis de correu personalitzats"
       ],
@@ -7541,6 +7535,26 @@
         "Seleccioneu a què pot accedir ${ BRAND_NAME }: visualitzeu els vostres missatges de correu electrònic i la vostra configuració, visualitzeu i baixeu els vostres contactes, visualitzeu i baixeu totes les agendes a les quals accediu des de Google Calendar."
       ]
     },
+    "Onboarding modal": {
+      "Block unsavory senders": [
+        "Bloqueja els remitents no desitjats"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "Xifratge tan fort que només vós i els destinataris escollits poden veure els vostres correus electrònics. ${ kbLinkEncryption }"
+      ],
+      "For your eyes only": [
+        "Només per als vostres ulls"
+      ],
+      "Next": [
+        "Següent"
+      ],
+      "Skip": [
+        "Omet"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "Impedim que els anunciants i els recopiladors de dades us perfilin. ${ kbLinkPrivacy }"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Configureu la vostra organització, enllaç al vostre nom de domini, i creeu comptes per assegurar-vos que tots els membres de la vostra organització estan protegits."
@@ -7550,6 +7564,9 @@
       ],
       "Set up your organization": [
         "Configureu la vostra organització"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Feu servir el selector d'aplicacions de dalt a l'esquerra per accedir a tots els serveis de ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "Online accounts": {
