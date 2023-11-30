@@ -901,6 +901,9 @@
       "Loading": [
         "Ladataan"
       ],
+      "Loading ${ PASS_APP_NAME }": [
+        "Ladataan ${ PASS_APP_NAME }"
+      ],
       "Loading...": [
         "Ladataan..."
       ],
@@ -1117,6 +1120,9 @@
       ],
       "You will use this PIN to unlock ${ PASS_APP_NAME } once it auto-locks after a period of inactivity.": [
         "Tällä PIN-koodilla voit avata ${ PASS_APP_NAME }in sen lukkiuduttua toimettomuuden seuraksena automaattisesti."
+      ],
+      "You're about to create": [
+        "Olet luomassa"
       ],
       "You're invited to a vault.": [
         "Sinut on kutsuttu holviin."
@@ -1722,6 +1728,9 @@
       "Share with": [
         "Jaa käyttäjille"
       ],
+      "Thank you for installing ${ PASS_APP_NAME }": [
+        "Kiitos, kun asensit sovelluksen ${ PASS_APP_NAME }"
+      ],
       "The extension is now ready to use.": [
         "Laajennus on nyt käyttövalmis."
       ],
@@ -1733,6 +1742,9 @@
       ],
       "Unlock ${ brandNameJSX }": [
         "Avaa ${ brandNameJSX }"
+      ],
+      "Unlock ${ PASS_APP_NAME }": [
+        "Avaa ${ PASS_APP_NAME }"
       ],
       "Update available": [
         "Päivitys saatavilla"
@@ -1903,6 +1915,12 @@
       ],
       "You will no longer have access to this vault. To join it again, you will need a new invitation.": [
         "Sinulla ei ole enää pääsyä tähän holviin. Jos haluat liittyä siihen uudelleen, tarvitset uuden kutsun."
+      ],
+      "Your plan does not allow you to create more aliases": [
+        "Tilauksesi ei salli sinun luoda enempää aliaksia"
+      ],
+      "Your plan only allows you to autofill from your first two vaults": [
+        "Tilauksesi sallii automaattitäytön vain kahdesta ensimmäisestä holvistasi"
       ],
       "Your session could not be authorized.": [
         "Istuntoasi ei voitu valtuuttaa."

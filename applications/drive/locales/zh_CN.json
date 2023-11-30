@@ -331,12 +331,6 @@
       "Hide advanced PGP settings": [
         "隐藏高级 PGP 设置"
       ],
-      "Hide folders": [
-        "隐藏文件夹"
-      ],
-      "Hide labels": [
-        "隐藏标签"
-      ],
       "Image could not be loaded with tracker protection.": [
         "跟踪防护模式下无法加载此图像。"
       ],
@@ -594,12 +588,6 @@
       ],
       "Show advanced PGP settings": [
         "显示高级 PGP 设置"
-      ],
-      "Show folders": [
-        "显示文件夹"
-      ],
-      "Show labels": [
-        "显示标签"
       ],
       "Show preview": [
         "显示预览"
@@ -3837,6 +3825,9 @@
       "Select a folder to move to.": [
         "选择要移动到的文件夹。"
       ],
+      "Select a service provider to start": [
+        "请选择一个服务提供商并开始导入"
+      ],
       "Select all items for": [
         "选择所有项目"
       ],
@@ -4893,6 +4884,9 @@
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "自动删除垃圾邮件和废件箱中邮件"
+      ],
+      "Calendar sharing": [
+        "共享日历"
       ],
       "Custom email domains": [
         "自有域名"

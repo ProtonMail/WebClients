@@ -245,6 +245,9 @@
       "Copy address": [
         "Kopiera adress"
       ],
+      "Copy key to the clipboard": [
+        "Kopiera nyckel till urklipp"
+      ],
       "Copy link": [
         "Kopiera länk"
       ],
@@ -523,12 +526,6 @@
       ],
       "Hide": [
         "Dölj"
-      ],
-      "Hide folders": [
-        "Dölj mappar"
-      ],
-      "Hide labels": [
-        "Dölj etiketter"
       ],
       "Hide plan features": [
         "Dölj paketfunktioner"
@@ -883,12 +880,6 @@
       ],
       "Show": [
         "Visa"
-      ],
-      "Show folders": [
-        "Visa mappar"
-      ],
-      "Show labels": [
-        "Visa etiketter"
       ],
       "Show less": [
         "Visa mindre"
@@ -1408,11 +1399,17 @@
       "Save with Cyber Week deals on a high-speed Swiss VPN": [
         "Spara med Cyber ​​Week-erbjudanden på ett schweiziskt VPN med hög hastighet"
       ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Spara med årsslutserbjudanden på ett schweiziskt VPN med hög hastighet"
+      ],
       "Select your Black Friday offer": [
         "Välj ditt Black Friday-erbjudande"
       ],
       "Select your Cyber Week offer": [
         "Välj ditt Cyber Week-erbjudande"
+      ],
+      "Select your End of Year offer": [
+        "Välj ditt årsslutserbjudande"
       ]
     },
     "bf2023: info": {
@@ -7515,9 +7512,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Uppgradera nu för att få premiumfunktioner, produkter och lagringsutrymme till ett specialpris"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Uppgradera till ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } eller ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }-paket för att få åtkomst till ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Uppgradera till ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } eller ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }-paket för att få åtkomst till ${ PROTON_SENTINEL_NAME }."
       ],
@@ -7954,6 +7948,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Nyckel ${ fingerprint } har redan laddats upp"
+      ],
+      "Selected color:": [
+        "Vald färg:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10003,6 +10000,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalender",
+        "${ maximumNumberOfCalendars } kalendrar"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendrar"
@@ -10381,17 +10382,6 @@
         "Teamhantering"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Din provperiod slutar den ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } slutar med ${ last4 }"
@@ -10479,6 +10469,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Du har ett kampanjpris på ditt nuvarande paket. Om du nedgraderar ditt konto kommer du förlora ditt kampanjpris och det blir inte tillgängligt om du försöker prenumerera igen."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Annars kommer åtkomsten till ditt konto att begränsas och ditt konto kommer så småningom att inaktiveras."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "För att fortsätta använda ${ MAIL_APP_NAME } med premiumfunktioner, välj din prenumeration och betalningsalternativ."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Din provperiod slutar den ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -10841,6 +10842,9 @@
       ],
       "IP Address copied to clipboard": [
         "IP-adress kopierad till urklipp"
+      ],
+      "Key copied to the clipboard": [
+        "Nyckel kopierad till urklipp"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Nyckel med fingeravtryck ${ fp } har tagits bort."
@@ -11408,6 +11412,12 @@
       ],
       "End-to-end encryption": [
         "End-to-end-kryptering"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "För bara **${ relativePrice } mer per månad** får du åtkomst till premium lösenordshanterare för ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "För bara **${ relativePrice } mer per månad** får du åtkomst till premium VPN-tjänster för ${ BRAND_NAME }!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "För endast **${ relativePrice } per månad** mer får du åtkomst till alla premiumtjänster för ${ BRAND_NAME }!"
@@ -14269,6 +14279,9 @@
       ],
       "Set how your list of messages looks like by default.": [
         "Ställ in hur din lista med meddelanden ser ut som standard."
+      ],
+      "Set the default Composer popup size as small or full screen.": [
+        "Ställ in standardstorleken för redigeringsfönstret som liten eller helskärm."
       ],
       "Set the default layout for your Inbox.": [
         "Ange standardlayout för din inkorg."

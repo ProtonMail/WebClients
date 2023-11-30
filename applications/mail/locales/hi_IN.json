@@ -450,12 +450,6 @@
       "Hide details": [
         "जानकारी छिपाएँ"
       ],
-      "Hide folders": [
-        "फ़ोल्डर छुपाएं"
-      ],
-      "Hide labels": [
-        "लेबल छिपाएं"
-      ],
       "Hide messages": [
         "संदेश छुपाएं"
       ],
@@ -685,10 +679,10 @@
       "Not saved": [
         "सहेजा नहीं गया"
       ],
-      "OK": [
+      "Ok": [
         "ठीक है"
       ],
-      "Ok": [
+      "OK": [
         "ठीक है"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -930,12 +924,6 @@
       ],
       "Show fewer search options": [
         "कम खोज विकल्प दिखाएं"
-      ],
-      "Show folders": [
-        "फ़ोल्डर दिखाएं"
-      ],
-      "Show labels": [
-        "लेबल दिखाएं"
       ],
       "Show less": [
         "कम दिखाएं"
@@ -3837,6 +3825,9 @@
       "You have successfully joined the Family plan": [
         "आप परिवार प्लान से जुड़ गए है"
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "आपको अपने ${ BRAND_NAME } खाते को इस समूह योजना से लिंक करने और साथ में सभी ${ BRAND_NAME_TWO } प्रीमियम सुविधाओं का आनंद लेने के लिए आमंत्रित किया जाता है।"
+      ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "आपका खाता ${ usedSpace } स्टोरेज का उपयोग कर रहा है, जो आपको दिए गए ${ inviteSpace } से अधिक है। कुछ डेटा हटाएं या प्लान एडमिन से अपना स्टोरेज बढ़ाने के लिए कहें।"
       ]
@@ -5130,6 +5121,9 @@
       "Our system flagged this message as a phishing attempt. Please check that it is legitimate.": [
         "हमारे सिस्टम ने इस संदेश को फ़िशिंग प्रयास के रूप में चिह्नित किया। कृपया जाँच लें कि यह वैध है।"
       ],
+      "Our system flagged this message as a suspicious email. Please check that it is legitimate before clicking any links or attachments.": [
+        "हमारे सिस्टम ने इस संदेश को एक संदिग्ध ईमेल के रूप में चिह्नित किया है। कृपया किसी भी लिंक या अनुलग्नक पर क्लिक करने से पहले जांच लें कि यह वैध है या नहीं।"
+      ],
       "PGP/Inline is only compatible with Plain Text format.": [
         "PGP/Inline सिर्फ प्लेन टेक्स्ट फॉर्मेट के साथ काम करता है।"
       ],
@@ -5247,6 +5241,9 @@
       ],
       "Seems like you are all caught up for now": [
         "लगता है जैसे आप सभी अभी के लिए पकड़े गए हैं"
+      ],
+      "Select a service provider to start": [
+        "शुरू करने के लिए एक सेवा प्रदाता का चयन करें"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "इस ईमेल पते पर ईमेल भेजते समय आप जिस ईमेल प्रारूप का उपयोग करना चाहते हैं उसे डिफ़ॉल्ट रूप से चुनें।"
@@ -6972,6 +6969,9 @@
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "स्पैम और कचरे के संदेशो को अपनेआप मिटाएं"
+      ],
+      "Calendar sharing": [
+        "कैलेंडर शेयर"
       ],
       "Custom email domains": [
         "कस्टम ईमेल डोमेन"

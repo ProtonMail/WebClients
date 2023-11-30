@@ -466,12 +466,6 @@
       "Hide details": [
         "Ocultar detalles"
       ],
-      "Hide folders": [
-        "Ocultar carpetas"
-      ],
-      "Hide labels": [
-        "Ocultar etiquetas"
-      ],
       "Hide messages": [
         "Ocultar mensajes"
       ],
@@ -716,11 +710,11 @@
       "Not saved": [
         "No guardado"
       ],
-      "OK": [
-        "Aceptar"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "Aceptar"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Abrir ${ CALENDAR_APP_NAME }"
@@ -801,7 +795,7 @@
         "actualizar la página"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Remove ${ attachmentName }": [
         "Borrar ${ attachmentName }"
@@ -816,7 +810,7 @@
         "Borrar la destrucción automática"
       ],
       "Remove this label": [
-        "Borrar esta etiqueta"
+        "Eliminar esta etiqueta"
       ],
       "Reply": [
         "Responder"
@@ -967,12 +961,6 @@
       ],
       "Show fewer search options": [
         "Mostrar menos opciones de búsqueda"
-      ],
-      "Show folders": [
-        "Mostrar carpetas"
-      ],
-      "Show labels": [
-        "Mostrar etiquetas"
       ],
       "Show less": [
         "Mostrar menos"
@@ -5355,7 +5343,7 @@
         "URL de la imagen"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Las imágenes se han borrado porque no están permitidas en la respuesta automática."
+        "Las imágenes se han quitado porque no están permitidas en la respuesta automática."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
@@ -5694,6 +5682,9 @@
       ],
       "Seems like you are all caught up for now": [
         "Parece que ya estás al día por ahora."
+      ],
+      "Select a service provider to start": [
+        "Selecciona un proveedor de servicios para empezar"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecciona el formato de correo electrónico que quieres utilizar por defecto al enviar un correo electrónico a esta dirección."
@@ -7507,6 +7498,9 @@
       "Auto-delete spam and trashed messages": [
         "Eliminar automáticamente spam y mensajes de la papelera"
       ],
+      "Calendar sharing": [
+        "Compartir calendario"
+      ],
       "Custom email domains": [
         "Dominios de correo personalizados"
       ],
@@ -8841,7 +8835,7 @@
     },
     "Success notification": {
       "${ label.Name } removed": [
-        "${ label.Name } borrado"
+        "${ label.Name } eliminado"
       ]
     },
     "Success notification when user send feedback": {

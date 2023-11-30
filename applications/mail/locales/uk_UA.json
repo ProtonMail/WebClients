@@ -466,12 +466,6 @@
       "Hide details": [
         "Приховати подробиці"
       ],
-      "Hide folders": [
-        "Сховати теки"
-      ],
-      "Hide labels": [
-        "Сховати мітки"
-      ],
       "Hide messages": [
         "Приховати повідомлення"
       ],
@@ -706,11 +700,11 @@
       "Not saved": [
         "Не збережено"
       ],
-      "OK": [
-        "Застосувати"
-      ],
       "Ok": [
         "Гаразд"
+      ],
+      "OK": [
+        "Застосувати"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Відкрити ${ CALENDAR_APP_NAME }"
@@ -954,12 +948,6 @@
       ],
       "Show fewer search options": [
         "Менше варіантів пошуку"
-      ],
-      "Show folders": [
-        "Показати теки"
-      ],
-      "Show labels": [
-        "Показати мітки"
       ],
       "Show less": [
         "Згорнути"
@@ -5705,6 +5693,9 @@
       "Seems like you are all caught up for now": [
         "У вас немає листів"
       ],
+      "Select a service provider to start": [
+        "Виберіть постачальника послуг, щоб розпочати"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Оберіть формат повідомлення, який ви хочете використовувати при надсиланні на цю адресу е-пошти."
       ],
@@ -7529,6 +7520,9 @@
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Автоматичне видалення спаму та повідомлень зі смітника"
+      ],
+      "Calendar sharing": [
+        "Спільний доступ до календаря"
       ],
       "Custom email domains": [
         "Власні домени електронної пошти"

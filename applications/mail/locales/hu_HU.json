@@ -466,12 +466,6 @@
       "Hide details": [
         "Részletek elrejtése"
       ],
-      "Hide folders": [
-        "Mappák elrejtése"
-      ],
-      "Hide labels": [
-        "Címkék elrejtése"
-      ],
       "Hide messages": [
         "Üzenetek elrejtése"
       ],
@@ -710,10 +704,10 @@
       "Not saved": [
         "Nincs mentve"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -958,12 +952,6 @@
       ],
       "Show fewer search options": [
         "Kevesebb keresési beállítás megjelenítése"
-      ],
-      "Show folders": [
-        "Mappák megjelenítése"
-      ],
-      "Show labels": [
-        "Címkék megjelenítése"
       ],
       "Show less": [
         "Kevesebb megjelenítése"
@@ -5602,6 +5590,9 @@
       "Seems like you are all caught up for now": [
         "Úgy tűnik minden el van intézve"
       ],
+      "Select a service provider to start": [
+        "Válaszon ki egy szolgáltatót a kezdéshez"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Válassza ki az e-mail alapértelmezett formátumát, erre a címre való küldéshez."
       ],
@@ -7386,6 +7377,9 @@
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "A Levélszemét és a Lomtár mappában lévő üzenetek automatikus törlése"
+      ],
+      "Calendar sharing": [
+        "Naptár megosztás"
       ],
       "Custom email domains": [
         "Saját domain nevek"
