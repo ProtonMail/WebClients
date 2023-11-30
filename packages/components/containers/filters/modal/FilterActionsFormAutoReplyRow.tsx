@@ -3,9 +3,10 @@ import { useEffect, useState } from 'react';
 import { c } from 'ttag';
 
 import { useToolbar } from '@proton/components/components/editor/hooks/useToolbar';
+import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';
 import noop from '@proton/utils/noop';
 
-import { Editor, EditorActions, Toggle, Tooltip } from '../../../components';
+import { Alert, Editor, EditorActions, Toggle, Tooltip } from '../../../components';
 import { useUser } from '../../../hooks';
 import { Actions } from '../interfaces';
 
@@ -72,23 +73,30 @@ const FilterActionsFormAutoReplyRow = ({ isEdit, actions, handleUpdateActions }:
                 )}
             </div>
             {editorVisible && user.hasPaidMail && (
-                <div className="w-full mt-4">
-                    <Editor
-                        onReady={handleReady}
-                        metadata={{ supportImages: false }}
-                        onChange={(value: string) => {
-                            setEditorValue(value);
-                            handleUpdateActions({ autoReply: value });
-                        }}
-                        simple
-                        openEmojiPickerRef={openEmojiPickerRef}
-                        toolbarConfig={toolbarConfig}
-                        setToolbarConfig={setToolbarConfig}
-                        modalLink={modalLink}
-                        modalImage={modalImage}
-                        modalDefaultFont={modalDefaultFont}
-                    />
-                </div>
+                <>
+                    {actions && actions.autoReply && actions.autoReply.length > AUTO_REPLY_CHARACTER_COUNT_LIMIT && (
+                        <Alert className="my-4" type="error">
+                            {c('Error').t`You've reached the maximum character number. Please shorten your message.`}
+                        </Alert>
+                    )}
+                    <div className="w-full mt-4">
+                        <Editor
+                            onReady={handleReady}
+                            metadata={{ supportImages: false }}
+                            onChange={(value: string) => {
+                                setEditorValue(value);
+                                handleUpdateActions({ autoReply: value });
+                            }}
+                            simple
+                            openEmojiPickerRef={openEmojiPickerRef}
+                            toolbarConfig={toolbarConfig}
+                            setToolbarConfig={setToolbarConfig}
+                            modalLink={modalLink}
+                            modalImage={modalImage}
+                            modalDefaultFont={modalDefaultFont}
+                        />
+                    </div>
+                </>
             )}
         </>
     );
