@@ -44,7 +44,7 @@
         "Aggiungi email"
       ],
       "Add group": [
-        "Aggiungi gruppo"
+        "Aggiungi un gruppo"
       ],
       "Add new contact": [
         "Aggiungi nuovo contatto"
@@ -86,7 +86,7 @@
         "Tutta la posta importante"
       ],
       "All Unread": [
-        "Tutti la posta non letta"
+        "Tutta la posta non letta"
       ],
       "All Unstarred": [
         "Tutta la posta non importante"
@@ -401,7 +401,7 @@
         "Esporta gruppo di contatti"
       ],
       "Export contacts": [
-        "Esporta contatti"
+        "Esporta i contatti"
       ],
       "External encryption": [
         "Crittografia esterna"
@@ -465,12 +465,6 @@
       ],
       "Hide details": [
         "Nascondi i dettagli"
-      ],
-      "Hide folders": [
-        "Nascondi cartelle"
-      ],
-      "Hide labels": [
-        "Nascondi etichette"
       ],
       "Hide messages": [
         "Nascondi i messaggi"
@@ -716,11 +710,11 @@
       "Not saved": [
         "Non salvato"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Apri ${ CALENDAR_APP_NAME }"
@@ -968,12 +962,6 @@
       "Show fewer search options": [
         "Mostra meno opzioni di ricerca"
       ],
-      "Show folders": [
-        "Mostra cartelle"
-      ],
-      "Show labels": [
-        "Mostra etichette"
-      ],
       "Show less": [
         "Mostra meno"
       ],
@@ -1212,10 +1200,10 @@
         "Ritenta con un altro termine."
       ],
       "You don't have any contacts.": [
-        "Non hai nessun contatto."
+        "Non hai contatti."
       ],
       "You don't have any groups.": [
-        "Non hai nessun gruppo."
+        "Non hai gruppi."
       ]
     },
     "Add participant to calendar event": {
@@ -1855,7 +1843,7 @@
         "grigio tenue"
       ],
       "enzian": [
-        "enzian"
+        "genziana"
       ],
       "fern": [
         "felce"
@@ -3039,7 +3027,7 @@
         "Cancella automaticamente i messaggi indesiderati e cestinati più vecchi di 30 giorni. Usufruisci di questo e altri benefici quando effettui l'upgrade."
       ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Decrittografia dei contatti... Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, sarai in grado di scaricare il file con tutti i tuoi contatti esportati."
+        "Decrittografia dei contatti in corso. Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, potrai scaricare il file con tutti i tuoi contatti esportati."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminando i contatti... Questo potrebbe richiedere qualche minuto. Quando il processo è completato, puoi chiudere questo modale."
@@ -4234,7 +4222,7 @@
         "Mostra messaggio spostato"
       ],
       "Unread": [
-        "Non letti"
+        "Non letta"
       ]
     },
     "Filter option to only show message with attachments": {
@@ -5695,6 +5683,9 @@
       "Seems like you are all caught up for now": [
         "Sembra che sia tutto a posto al momento"
       ],
+      "Select a service provider to start": [
+        "Seleziona un fornitore di servizi per iniziare"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri usare per impostazione predefinita quando invii un'email a questo indirizzo email."
       ],
@@ -5789,7 +5780,7 @@
         "Testo da visualizzare"
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "L'applicazione deve decrittografare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo, verrà generato un file VCF e sarai in grado di scaricarlo."
+        "L'applicazione deve decrittografare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo verrà generato un file VCF che potrai scaricare."
       ],
       "The data you have entered in the draft may not be saved if you leave the page.": [
         "I dati inseriti nella bozza non possono essere salvati se si lascia la pagina."
@@ -5832,7 +5823,7 @@
         "Questo account è stato sospeso a causa di una potenziale violazione delle politiche."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Questo indirizzo è disabilitato. Per essere in grado di inviare a questo indirizzo il proprietario deve prima attivarlo."
+        "Questo indirizzo è disabilitato. Per poter inviare a questo indirizzo il proprietario deve prima abilitarlo."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Questo browser non supporta l'anteprima dei documenti PDF. Scarica il file."
@@ -6146,7 +6137,7 @@
         "Non puoi rispondere dall'indirizzo invitato."
       ],
       "You do not have any messages here": [
-        "Non hai nessun messaggio qui"
+        "Non hai messaggi qui"
       ],
       "You have ${ totalLabel } in your inbox.": [
         "Hai ${ totalLabel } nella tua casella di posta."
@@ -6261,6 +6252,9 @@
       ],
       "Optional": [
         "Facoltativo"
+      ],
+      "Selected color:": [
+        "Colore selezionato:"
       ]
     },
     "Info on errors": {
@@ -6513,7 +6507,7 @@
         "Aggiungi URL immagine"
       ],
       "Add to group": [
-        "Aggiungi ad un gruppo"
+        "Aggiungi a un gruppo"
       ],
       "Address": [
         "Indirizzo"
@@ -6678,7 +6672,7 @@
         "Email crittografate"
       ],
       "Export contacts": [
-        "Esporta contatti"
+        "Esporta i contatti"
       ],
       "Extended address": [
         "Indirizzo completo"
@@ -7504,8 +7498,15 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendario",
+        "${ maximumNumberOfCalendars } calendari"
+      ],
       "Auto-delete spam and trashed messages": [
         "Cancella automaticamente i messaggi indesiderati e cestinati"
+      ],
+      "Calendar sharing": [
+        "Condivisione del calendario"
       ],
       "Custom email domains": [
         "Domini email personalizzati"
@@ -7601,20 +7602,38 @@
       ]
     },
     "Onboarding modal": {
+      "Automatically forward emails": [
+        "Inoltra automaticamente le email"
+      ],
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "Blocca definitivamente le comunicazioni email dai truffatori. ${ kbLinkSender }"
+      ],
       "Block unsavory senders": [
         "Blocca i mittenti non desiderati"
       ],
       "Congratulations on choosing privacy": [
         "Congratulazioni per aver scelto la privacy"
       ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "Una crittografia così resistente che non consente a nessuno oltre a te e i destinatari previsti di visualizzare le tue email. ${ kbLinkEncryption }"
+      ],
       "For your eyes only": [
         "Solo per i tuoi occhi"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "Inoltra i messaggi di Gmail alla tua posta in arrivo."
       ],
       "Next": [
         "Avanti"
       ],
       "Protection from trackers": [
         "Protezione dai tracker"
+      ],
+      "Skip": [
+        "Salta"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "Impediamo agli inserzionisti e ai raccoglitori di dati di ottenere informazioni su di te. ${ kbLinkPrivacy }"
       ]
     },
     "Onboarding Proton": {
@@ -7629,6 +7648,9 @@
       ],
       "Set up your organization": [
         "Configura la tua organizzazione"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Usa il raccoglitore delle app in alto a sinistra per accedere a tutti i servizi di ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }."
       ],
       "You will be able to change your theme any time in your settings.": [
         "Potrai cambiare il tema in qualsiasi momento dalle impostazioni."
