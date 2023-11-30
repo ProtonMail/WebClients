@@ -340,12 +340,6 @@
       "Hide advanced PGP settings": [
         "Απόκρυψη προηγμένων ρυθμίσεων PGP"
       ],
-      "Hide folders": [
-        "Απόκρυψη φακέλων"
-      ],
-      "Hide labels": [
-        "Απόκρυψη ετικετών"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Η εικόνα απέτυχε να φορτωθεί με προστασία παρακολούθησης."
       ],
@@ -606,12 +600,6 @@
       ],
       "Show advanced PGP settings": [
         "Εμφάνιση προηγμένων ρυθμίσεων PGP"
-      ],
-      "Show folders": [
-        "Εμφάνιση φακέλων"
-      ],
-      "Show labels": [
-        "Εμφάνιση ετικετών"
       ],
       "Show preview": [
         "Εμφάνιση προεπισκόπησης"
@@ -4013,6 +4001,9 @@
       "Select a folder to move to.": [
         "Επιλέξτε ένα φάκελο στον οποίο θέλετε να μετακινήσετε τα δεδομένα."
       ],
+      "Select a service provider to start": [
+        "Επιλογή παρόχου υπηρεσίας για ξεκίνημα"
+      ],
       "Select all items for": [
         "Επιλέξτε όλα τα στοιχεία για"
       ],
@@ -4404,6 +4395,11 @@
       ],
       "Your previous recovery phrase": [
         "Η προηγούμενη φράση ανάκτησής σας"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info on errors": {
@@ -5092,8 +5088,15 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } ημερολόγιο",
+        "${ maximumNumberOfCalendars } ημερολόγια"
+      ],
       "Auto-delete spam and trashed messages": [
         "Αυτόματη διαγραφή ανεπιθύμητων και απορριφθέντων μηνυμάτων"
+      ],
+      "Calendar sharing": [
+        "Κοινή χρήση ημερολογίου"
       ],
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
