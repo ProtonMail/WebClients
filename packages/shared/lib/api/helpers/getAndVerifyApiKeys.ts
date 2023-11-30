@@ -1,4 +1,5 @@
 import { CryptoProxy } from '@proton/crypto';
+import isTruthy from '@proton/utils/isTruthy';
 
 import {
     Api,
@@ -33,17 +34,25 @@ const getApiKeySource = (source: number): ApiAddressKeySource => {
     }
 };
 
-const importKeys = (keys: ApiAddressKey[]): Promise<ProcessedApiAddressKey[]> => {
-    return Promise.all(
+const importKeys = async (keys: ApiAddressKey[], checkCompatibility?: boolean): Promise<ProcessedApiAddressKey[]> => {
+    const promises = await Promise.all(
         keys.map(async ({ PublicKey, Flags, Source }) => {
+            const publicKeyRef = await CryptoProxy.importPublicKey({ armoredKey: PublicKey, checkCompatibility }).catch(
+                () => null
+            );
+
+            if (!publicKeyRef) {return null;}
+
             return {
                 armoredPublicKey: PublicKey,
                 flags: Flags,
-                publicKeyRef: await CryptoProxy.importPublicKey({ armoredKey: PublicKey }),
+                publicKeyRef,
                 source: getApiKeySource(Source),
             };
         })
     );
+
+    return promises.filter(isTruthy);
 };
 
 export const getAndVerifyApiKeys = async ({
@@ -87,7 +96,7 @@ export const getAndVerifyApiKeys = async ({
         Warnings: string[];
     }>(config);
     const addressKeys = await importKeys(Address.Keys);
-    const unverifiedKeys = Unverified ? await importKeys(Unverified.Keys) : undefined;
+    const unverifiedKeys = Unverified ? await importKeys(Unverified.Keys, true) : undefined;
     const catchAllKeys = CatchAll ? await importKeys(CatchAll.Keys) : undefined;
     const ktResult = verifyOutboundPublicKeys
         ? await verifyOutboundPublicKeys(
