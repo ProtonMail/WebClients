@@ -245,6 +245,9 @@
       "Copy address": [
         "Copia indirizzo"
       ],
+      "Copy key to the clipboard": [
+        "Copia la chiave negli appunti"
+      ],
       "Copy link": [
         "Copia link"
       ],
@@ -336,10 +339,10 @@
         "Disabilita"
       ],
       "Disable recovery phrase": [
-        "Disabilita frase di recupero"
+        "Disabilita la frase di recupero"
       ],
       "Disable recovery phrase?": [
-        "Disabilitare frase di recupero?"
+        "Disabilitare la frase di recupero?"
       ],
       "Discard": [
         "Scarta"
@@ -471,7 +474,7 @@
         "Genera una nuova frase di recupero"
       ],
       "Generate recovery phrase": [
-        "Genera frase di recupero"
+        "Genera una frase di recupero"
       ],
       "Generate token": [
         "Genera un token"
@@ -523,12 +526,6 @@
       ],
       "Hide": [
         "Nascondi"
-      ],
-      "Hide folders": [
-        "Nascondi cartelle"
-      ],
-      "Hide labels": [
-        "Nascondi etichette"
       ],
       "Hide plan features": [
         "Nascondi le caratteristiche del piano"
@@ -884,12 +881,6 @@
       "Show": [
         "Mostra"
       ],
-      "Show folders": [
-        "Mostra cartelle"
-      ],
-      "Show labels": [
-        "Mostra etichette"
-      ],
       "Show less": [
         "Mostra meno"
       ],
@@ -1171,7 +1162,7 @@
         "Abilita la posta E2EE"
       ],
       "Generate missing keys": [
-        "Genera chiavi mancanti"
+        "Genera le chiavi mancanti"
       ],
       "Saving": [
         "Salvataggio"
@@ -1919,7 +1910,7 @@
         "grigio tenue"
       ],
       "enzian": [
-        "enzian"
+        "genziana"
       ],
       "fern": [
         "felce"
@@ -3691,7 +3682,7 @@
         "Chiave privata primaria indirizzo non trovata"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Tutto lo spazio di archiviazione è stato allocato. Per favore, riduci la memoria assegnata agli altri utenti."
+        "Tutto lo spazio di archiviazione è stato allocato. Riduci lo spazio assegnato agli altri utenti."
       ],
       "Already a member of this calendar": [
         "L'utente è già membro del calendario"
@@ -3922,7 +3913,7 @@
         "Per favore configura un dominio personalizzato prima di aggiungere utenti all'organizzazione."
       ],
       "Please enable multi-user support before adding users to your organization.": [
-        "Per favore, abilita il supporto multi-utente prima di aggiungere utenti all'organizzazione."
+        "Abilita il supporto multi-utente prima di aggiungere utenti all'organizzazione."
       ],
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
@@ -4110,7 +4101,7 @@
         "Abbiamo interrotto la firma DKIM a causa di problemi con la tua configurazione DNS. Segui le istruzioni di seguito per riprendere la firma."
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "Frase di recupero sbagliata. Riprova o usa un altro metodo di ripristino."
+        "Frase di recupero errata. Riprova o usa un altro metodo di recupero."
       ],
       "Wrong verification code. Please make sure you copied the verification code correctly and try again. It can take up to 24 hours for changes to take effect.": [
         "Codice di verifica errato. Assicurati di aver copiato il codice correttamente e riprova. Ci possono volere fino a 24 ore affinché le modifiche vengano applicate."
@@ -6394,7 +6385,7 @@
         "Abilita TLS o SSL sul servizio esterno se è supportato."
       ],
       "Enabling recovery by phrase again will generate a new recovery phrase.": [
-        "Abilitare nuovamente il ripristino per frase genererà una nuova frase di ripristino."
+        "Abilitare nuovamente il recupero tramite frase di recupero genererà una nuova frase."
       ],
       "Encryption setting updated": [
         "Impostazione di crittografia aggiornata"
@@ -6484,7 +6475,7 @@
         "Gateway"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
-        "La generazione di una nuova frase di ripristino disattiverà quella vecchia."
+        "La generazione di una nuova frase di recupero disattiverà quella vecchia."
       ],
       "Get ${ upsellPlanName }": [
         "Scegli ${ upsellPlanName }"
@@ -6596,7 +6587,7 @@
         "Importa le tue email, calendari e contatti da un altro servizio su ${ BRAND_NAME }."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Importante: Assicurati di salvare i codici di recupero. Altrimenti non potrai mai più accedere al tuo account qualora perdessi il tuo dispositivo per l'autenticazione a due fattori."
+        "Importante: Assicurati di salvare i codici di recupero. Altrimenti non potrai mai più accedere al tuo account in caso perdessi il tuo dispositivo per l'autenticazione a due fattori."
       ],
       "IMPORTANT: Some registrars do not accept CNAME values with a period at the end (while others require it). If your registrar does not accept your CNAME records, please delete the period at the end of each CNAME value and try again.": [
         "IMPORTANTE: Alcuni registrar non accettano i valori CNAME con un punto alla fine (mentre altri lo richiedono). Se il tuo registrar non accetta i tuoi record CNAM, cancella il punto alla fine di ogni valore CNAME e riprova."
@@ -6780,7 +6771,7 @@
         "Non esistono chiavi per l'account"
       ],
       "No account recovery method set; you are at risk of losing access to your account": [
-        "Nessun metodo di recupero dell'account impostato; rischi di perdere l'accesso al tuo account"
+        "Non è stato impostato alcun metodo di recupero dell'account. Rischi di perdere l'accesso al tuo account."
       ],
       "No action selected": [
         "Nessuna azione selezionata"
@@ -6792,7 +6783,7 @@
         "Nessuna carta di credito richiesta"
       ],
       "No data recovery method set; you are at risk of losing access to your data": [
-        "Nessun metodo di recupero dei dati impostato; rischi di perdere l'accesso ai tuoi dati"
+        "Non è stato impostato alcun metodo di recupero dei dati. Rischi di perdere l'accesso ai tuoi dati."
       ],
       "No folder selected": [
         "Nessuna cartella selezionata"
@@ -6876,13 +6867,13 @@
         "Esistono altri amministratori nella tua organizzazione, sei responsabile di comunicare loro la nuova password."
       ],
       "Outdated recovery file; update to ensure access to your data": [
-        "File di recupero obsoleto; aggiornare per garantire l'accesso ai tuoi dati"
+        "Il file di recupero è obsoleto. Aggiornalo per garantire l'accesso ai tuoi dati."
       ],
       "Outdated recovery methods; update to ensure access to your data": [
-        "Metodi di recupero obsoleti; aggiornare per garantire l'accesso ai tuoi dati"
+        "I metodi di recupero sono obsoleti. Aggiornali per garantire l'accesso ai tuoi dati."
       ],
       "Outdated recovery phrase; update to ensure access to your data": [
-        "Frase di recupero obsoleta; aggiornare per garantire l'accesso ai tuoi dati"
+        "La frase di recupero è obsoleta. Aggiornala per garantire l'accesso ai tuoi dati."
       ],
       "Over 100 million people and businesses have signed up for ${ BRAND_NAME }.": [
         "Oltre 100 milioni di persone e aziende si sono registrate su ${ BRAND_NAME }."
@@ -6948,7 +6939,7 @@
         "Prego, compilare questo campo."
       ],
       "Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.": [
-        "Per favore, tienilo al sicuro. Ti servirà per accedere al tuo account e decrittografare i tuoi dati in caso di reimpostazione della password."
+        "Tienila al sicuro. Ti servirà per accedere al tuo account e decrittografare i tuoi dati in caso di reimpostazione della password."
       ],
       "Please note that if you delete this address, you will no longer be able to send or receive emails using this address.": [
         "Nota che se elimini questo indirizzo, non sarai più in grado di inviare o ricevere email utilizzando questo indirizzo."
@@ -7050,10 +7041,10 @@
         "La frase di recupero è stata disabilitata"
       ],
       "Recovery phrase is not associated with any keys.": [
-        "La frase di ripristino non è associata ad alcuna chiave."
+        "La frase di recupero non è associata ad alcuna chiave."
       ],
       "Recovery phrase is not associated with any outdated keys.": [
-        "La frase di ripristino non è associata a chiavi obsolete."
+        "La frase di recupero non è associata ad alcuna chiave obsoleta."
       ],
       "Referral link copied to your clipboard": [
         "Link di riferimento copiato negli appunti"
@@ -7134,7 +7125,7 @@
         "Sessione scaduta"
       ],
       "Set recovery phrase": [
-        "Imposta frase di recupero"
+        "Imposta una frase di recupero"
       ],
       "Setting up your organization": [
         "Configurazione della tua organizzazione in corso..."
@@ -7417,7 +7408,7 @@
         "Per decrittografare e visualizzare i dati bloccati dopo la reimpostazione della password, seleziona un metodo di ripristino."
       ],
       "To ensure continuous access to your account, set an account recovery method": [
-        "Per assicurare l'accesso continuo al tuo account, imposta un metodo di recupero dell'account"
+        "Imposta un metodo di recupero dell'account per garantire l'accesso al tuo account."
       ],
       "To ensure you don’t lose important data, ${ DRIVE_APP_NAME } saves older versions of your files as you and your collaborators make changes. Select how long ${ BRAND_NAME } should keep previous versions.": [
         "Per essere sicuri che tu non perda dati importanti, ${ DRIVE_APP_NAME } salva le vecchie versioni dei tuoi file mentre tu e i tuoi collaboratori effettuate delle modifiche. Seleziona per quanto tempo ${ BRAND_NAME } deve mantenere le versioni precedenti."
@@ -7520,9 +7511,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Effettua l'upgrade adesso per ottenere funzionalità premium, prodotti e spazio di archiviazione a un prezzo speciale"
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Effettua l'upgrade al piano ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } o ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } per ottenere l'accesso a ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Effettua l'upgrade al piano ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } o ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } per ottenere l'accesso a ${ PROTON_SENTINEL_NAME }."
@@ -7800,7 +7788,7 @@
         "Non hai calendari da esportare."
       ],
       "You have no saved payment methods.": [
-        "Non hai salvato alcun metodo di pagamento."
+        "Non hai metodi di pagamento salvati."
       ],
       "You may be redirected to your bank’s website.": [
         "Potresti essere reindirizzato al sito web della tua banca."
@@ -7854,7 +7842,7 @@
         "Sarai presto reindirizzato a PayPal per verificare il pagamento."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files.": [
-        "Non potrai recuperare i dati crittografati usando i tuoi file di recupero scaricati."
+        "Non potrai usare i file di recupero scaricati per recuperare i dati bloccati."
       ],
       "You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.": [
         "Non potrai recuperare i dati bloccati usando i file di recupero scaricati. Questo invaliderà anche le informazioni di recupero sul tuo dispositivo affidabile."
@@ -7960,6 +7948,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "La chiave ${ fingerprint } è già stata caricata"
+      ],
+      "Selected color:": [
+        "Colore selezionato:"
       ]
     },
     "Info - folder colouring feature": {
@@ -10009,6 +10000,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendario",
+        "${ maximumNumberOfCalendars } calendari"
+      ],
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendari"
@@ -10387,17 +10382,6 @@
         "Gestione del team"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "La tua prova termina ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } che termina con ${ last4 }"
@@ -10487,6 +10471,17 @@
         "Stai godendo di un prezzo promozionale sul tuo piano attuale. Se esegui il downgrade del tuo account, perderai la possibilità di usufruire di questa promozione e non sarà più disponibile se provi ad abbonarti di nuovo."
       ]
     },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "In caso contrario, l'accesso al tuo account sarà limitato e il tuo account verrà di seguito disabilitato."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Per continuare a utilizzare ${ MAIL_APP_NAME } con le funzionalità premium, scegli l'abbonamento e le opzioni di pagamento."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "La tua prova termina ${ formattedPeriodEndDate }"
+      ]
+    },
     "new_plans: Label": {
       "${ humanUsedSpace } of ${ humanMaxSpace }": [
         "${ humanUsedSpace } di ${ humanMaxSpace }"
@@ -10552,7 +10547,7 @@
         "Cambiare piani?"
       ],
       "Unlock premium features by upgrading": [
-        "Sblocca le funzioni premium effettuando l'upgrade"
+        "Sblocca le funzionalità premium effettuando l'upgrade"
       ]
     },
     "new_plans: Title": {
@@ -10850,6 +10845,9 @@
       ],
       "IP Address copied to clipboard": [
         "Indirizzo IP copiato negli appunti"
+      ],
+      "Key copied to the clipboard": [
+        "Chiave copiata negli appunti"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "La chiave con l'impronta digitale ${ fp } è stata eliminata."
@@ -11417,6 +11415,12 @@
       ],
       "End-to-end encryption": [
         "Crittografia end-to-end"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Per soli **${ relativePrice } al mese** in più, ottieni l'accesso al gestore di password premium di ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Per soli **${ relativePrice } al mese** in più, ottieni l'accesso al servizio VPN premium di ${ BRAND_NAME }!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Per soli **${ relativePrice } al mese** in più, puoi accedere a tutti i servizi premium di ${ BRAND_NAME }!"
@@ -13224,7 +13228,7 @@
         "Aggiungi nuovo utente"
       ],
       "Add PayPal payment method": [
-        "Aggiungi il metodo di pagamento PayPal"
+        "Aggiungi metodo di pagamento PayPal"
       ],
       "Add servers": [
         "Aggiungi server"
@@ -13904,6 +13908,9 @@
       ],
       "Session management": [
         "Gestione delle sessioni"
+      ],
+      "Set a display name": [
+        "Imposta un nome visualizzato"
       ],
       "Set new password": [
         "Imposta nuova password"
