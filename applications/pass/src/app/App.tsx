@@ -3,6 +3,7 @@ import { Router } from 'react-router-dom';
 import { PASS_CONFIG } from 'proton-pass-web/lib/core';
 import { i18n } from 'proton-pass-web/lib/i18n';
 import { logStore } from 'proton-pass-web/lib/logger';
+import { monitor } from 'proton-pass-web/lib/monitor';
 import { onboarding } from 'proton-pass-web/lib/onboarding';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 
@@ -103,6 +104,7 @@ export const getPassCoreProps = (sw: MaybeNull<ServiceWorkerContextValue>): Pass
 
         prepareImport: prepareImport,
         writeToClipboard: (value) => navigator.clipboard.writeText(value),
+        analyzePassword: (password) => monitor.analyzePassword(password),
     };
 };
 

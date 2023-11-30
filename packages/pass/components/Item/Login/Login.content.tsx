@@ -11,10 +11,12 @@ import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueCo
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextAreaReadonly } from '@proton/pass/components/Form/legacy/TextAreaReadonly';
 import { UpgradeButton } from '@proton/pass/components/Layout/Button/UpgradeButton';
+import { PasswordStrength } from '@proton/pass/components/Password/PasswordStrength';
 import type { ItemContentProps } from '@proton/pass/components/Views/types';
 import { UpsellRef } from '@proton/pass/constants';
 import { useDeobfuscatedItem } from '@proton/pass/hooks/useDeobfuscatedItem';
 import { getCharsGroupedByColor } from '@proton/pass/hooks/usePasswordGenerator';
+import { usePasswordStrength } from '@proton/pass/hooks/usePasswordStrength';
 import type { SanitizedPasskey } from '@proton/pass/lib/passkeys/types';
 import { selectAliasByAliasEmail, selectTOTPLimits } from '@proton/pass/store/selectors';
 import type { MaybeNull } from '@proton/pass/types';
@@ -33,6 +35,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
 
     const relatedAlias = useSelector(selectAliasByAliasEmail(username));
     const totpAllowed = useSelector(selectTOTPLimits).totpAllowed(itemId);
+    const passwordStrength = usePasswordStrength(password);
 
     return (
         <>
@@ -66,6 +69,12 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision }) => {
                     value={password}
                     ellipsis={false}
                     valueClassName="text-monospace text-break-all"
+                    actions={
+                        passwordStrength
+                            ? [<PasswordStrength className="mr-4" strength={passwordStrength} inline />]
+                            : undefined
+                    }
+                    actionsContainerClassName="flex flex-row-reverse"
                 >
                     {password.length ? getCharsGroupedByColor(password) : undefined}
                 </ValueControl>

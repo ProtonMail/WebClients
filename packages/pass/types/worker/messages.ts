@@ -1,3 +1,4 @@
+import type { WasmPasswordScoreResult } from '@protontech/pass-rust-core';
 import type { Action } from 'redux';
 import type { Tabs } from 'webextension-polyfill';
 
@@ -63,6 +64,7 @@ export enum WorkerMessageType {
     ACCOUNT_PROBE = 'pass-installed',
     ALIAS_CREATE = 'ALIAS_CREATE',
     ALIAS_OPTIONS = 'ALIAS_OPTIONS',
+    ANALYZE_PASSWORD = 'ANALYZE_PASSWORD',
     AUTH_CHECK = 'AUTH_CHECK',
     AUTH_CONFIRM_PASSWORD = 'AUTH_CONFIRM_PASSWORD',
     AUTH_INIT = 'AUTH_INIT',
@@ -126,6 +128,7 @@ export type AccountPassOnboardingMessage = { type: WorkerMessageType.ACCOUNT_ONB
 export type AccountProbeMessage = { type: WorkerMessageType.ACCOUNT_PROBE };
 export type AliasCreateMessage = WithPayload<WorkerMessageType.ALIAS_CREATE, { url: string; alias: AliasCreationDTO }>;
 export type AliasOptionsMessage = { type: WorkerMessageType.ALIAS_OPTIONS };
+export type AnalyzePasswordMessage = WithPayload<WorkerMessageType.ANALYZE_PASSWORD, { password: string }>;
 export type AuthCheckMessage = WithPayload<WorkerMessageType.AUTH_CHECK, { immediate?: boolean }>;
 export type AuthConfirmPasswordMessage = WithPayload<WorkerMessageType.AUTH_CONFIRM_PASSWORD, { password: string }>;
 export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: AuthResumeOptions };
@@ -187,6 +190,7 @@ export type WorkerMessage =
     | AccountProbeMessage
     | AliasCreateMessage
     | AliasOptionsMessage
+    | AnalyzePasswordMessage
     | AuthCheckMessage
     | AuthConfirmPasswordMessage
     | AuthInitMessage
@@ -251,6 +255,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.ACCOUNT_FORK]: { payload: ExtensionForkResultPayload };
     [WorkerMessageType.ALIAS_CREATE]: Result;
     [WorkerMessageType.ALIAS_OPTIONS]: Result<{ options: AliasOptions; needsUpgrade: boolean }>;
+    [WorkerMessageType.ANALYZE_PASSWORD]: WasmPasswordScoreResult;
     [WorkerMessageType.AUTH_CHECK]: Result<{ status: SessionLockStatus }, {}>;
     [WorkerMessageType.AUTH_CONFIRM_PASSWORD]: Result;
     [WorkerMessageType.AUTH_INIT]: AppState;

@@ -11,6 +11,7 @@ import { createI18nService } from 'proton-pass-extension/app/worker/services/i18
 import { createImportService } from 'proton-pass-extension/app/worker/services/import';
 import { createInjectionService } from 'proton-pass-extension/app/worker/services/injection';
 import { createLoggerService } from 'proton-pass-extension/app/worker/services/logger';
+import { createMonitorService } from 'proton-pass-extension/app/worker/services/monitor';
 import { createOnboardingService } from 'proton-pass-extension/app/worker/services/onboarding';
 import { createOTPService } from 'proton-pass-extension/app/worker/services/otp';
 import { createPasskeyService } from 'proton-pass-extension/app/worker/services/passkey';
@@ -71,6 +72,7 @@ export const createWorkerContext = (config: ProtonConfig) => {
             import: createImportService(),
             injection: createInjectionService(),
             logger: createLoggerService(storage.local),
+            monitor: createMonitorService(),
             onboarding: createOnboardingService(storage.local),
             otp: createOTPService(),
             passkey: createPasskeyService(),
