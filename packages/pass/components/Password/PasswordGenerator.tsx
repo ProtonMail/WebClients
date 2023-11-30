@@ -5,12 +5,14 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
+import { PasswordStrength } from '@proton/pass/components/Password/PasswordStrength';
 import type { UsePasswordGeneratorResult } from '@proton/pass/hooks/usePasswordGenerator';
 import {
     getCharsGroupedByColor,
     isUsingMemorablePassword,
     isUsingRandomPassword,
 } from '@proton/pass/hooks/usePasswordGenerator';
+import { usePasswordStrength } from '@proton/pass/hooks/usePasswordStrength';
 
 import { PasswordMemorableOptions } from './PasswordMemorableOptions';
 import { PasswordRandomOptions } from './PasswordRandomOptions';
@@ -18,16 +20,19 @@ import { PasswordTypeSelect } from './PasswordTypeSelect';
 
 export const PasswordGenerator: FC<UsePasswordGeneratorResult> = (props) => {
     const [showAdvanced, setShowAdvanced] = useState(false);
+    const passwordStrength = usePasswordStrength(props.password);
 
     return (
         <div className="flex-column flex gap-y-2">
-            <div className="my-4 px-4 py-2 flex items-center">
+            <div className="my-4 px-4 py-2 pb-4 flex flex-column items-center">
                 <span
-                    className="text-2xl text-center text-break-all text-monospace m-auto min-h-custom"
+                    className="text-2xl text-center text-break-all text-monospace m-auto"
                     style={{ '--min-h-custom': '4.5rem' }}
                 >
                     {getCharsGroupedByColor(props.password)}
                 </span>
+
+                {passwordStrength && <PasswordStrength className="mt-4" strength={passwordStrength} />}
             </div>
 
             <PasswordTypeSelect {...props} />

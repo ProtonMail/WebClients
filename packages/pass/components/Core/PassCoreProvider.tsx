@@ -1,6 +1,8 @@
 import type { FC, PropsWithChildren } from 'react';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 
+import type { WasmPasswordScoreResult } from '@protontech/pass-rust-core';
+
 import { ConfigProvider } from '@proton/components/containers/config';
 import type { PassConfig } from '@proton/pass/hooks/usePassConfig';
 import type { UsePeriodOtpCodeOptions } from '@proton/pass/hooks/usePeriodicOtpCode';
@@ -61,6 +63,8 @@ export type PassCoreContextValue = {
     setCurrentTabUrl?: (url: ParsedUrl) => void;
     /** Writes text to the clipboard */
     writeToClipboard: (text: string) => Promise<void>;
+    /** Analyzes the given password */
+    analyzePassword: (password: string) => MaybePromise<MaybeNull<WasmPasswordScoreResult>>;
 };
 
 export type PassCoreProviderProps = Omit<PassCoreContextValue, 'locale'>;

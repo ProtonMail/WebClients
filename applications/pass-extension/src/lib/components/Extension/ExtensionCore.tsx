@@ -123,6 +123,12 @@ const getExtensionCoreProps = (
             sendMessage(messageFactory({ type: WorkerMessageType.TELEMETRY_EVENT, payload: { event } })).catch(noop),
 
         writeToClipboard: (value) => navigator.clipboard.writeText(value),
+
+        analyzePassword: (password) =>
+            sendMessage.on(
+                messageFactory({ type: WorkerMessageType.ANALYZE_PASSWORD, payload: { password } }),
+                (res) => (res.type === 'success' ? res : null)
+            ),
     };
 };
 
