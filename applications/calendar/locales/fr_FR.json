@@ -279,12 +279,6 @@
       "Hide affected calendars": [
         "Masquer les calendriers concernés"
       ],
-      "Hide folders": [
-        "Masquer les dossiers"
-      ],
-      "Hide labels": [
-        "Masquer les labels"
-      ],
       "Hide time zones": [
         "Masquer les fuseaux horaires"
       ],
@@ -524,12 +518,6 @@
       ],
       "Show affected calendars": [
         "Afficher les calendriers concernés"
-      ],
-      "Show folders": [
-        "Afficher les dossiers"
-      ],
-      "Show labels": [
-        "Afficher les labels"
       ],
       "Show less": [
         "Afficher moins"
@@ -3924,7 +3912,7 @@
         "Indexation en pause"
       ],
       "Inherited from parent folder": [
-        "Hérité du dossier dans lequel il est placé."
+        "Similaire au dossier principal"
       ],
       "Internet connection lost": [
         "La connexion internet est perdue."
@@ -4070,6 +4058,9 @@
       ],
       "Removed participants will be notified.": [
         "Les participants retirés seront informés."
+      ],
+      "Select a service provider to start": [
+        "Commencez par sélectionner un service"
       ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Sélectionnez le format de message que vous voulez utiliser par défaut pour l'envoi d'un message à cette adresse e-mail."
@@ -5187,6 +5178,9 @@
       "Auto-delete spam and trashed messages": [
         "Suppression automatique des messages dans les dossiers Indésirables/spam et Corbeille"
       ],
+      "Calendar sharing": [
+        "Partage de calendrier"
+      ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
       ],
@@ -5431,7 +5425,7 @@
         "Découvrez tous les services ${ BRAND_NAME }"
       ],
       "Pick a theme": [
-        "Sélectionner un thème"
+        "Choisissez un thème"
       ],
       "Set up your organization": [
         "Configurez votre organisation"
@@ -5440,7 +5434,7 @@
         "Utilisez le sélecteur d'applications en haut à gauche pour accéder à tous les services ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ PASS_SHORT_APP_NAME }."
       ],
       "You will be able to change your theme any time in your settings.": [
-        "Vous pouvez modifier votre thème à tout moment dans vos paramètres."
+        "Vous pouvez changer de thème dans vos paramètres quand vous le voulez."
       ]
     },
     "Option": {
