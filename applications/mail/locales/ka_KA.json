@@ -466,12 +466,6 @@
       "Hide details": [
         "დეტალების დამალვა"
       ],
-      "Hide folders": [
-        "საქაღალდეების დამალვა"
-      ],
-      "Hide labels": [
-        "ჭდეების დამალვა"
-      ],
       "Hide messages": [
         "შეტყობინებების დამალვა"
       ],
@@ -716,10 +710,10 @@
       "Not saved": [
         "არაა შენახული"
       ],
-      "OK": [
+      "Ok": [
         "დიახ"
       ],
-      "Ok": [
+      "OK": [
         "დიახ"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -967,12 +961,6 @@
       ],
       "Show fewer search options": [
         "ნაკლები ძებნის პარამეტრის ჩვენება"
-      ],
-      "Show folders": [
-        "საქაღალდეების ჩვენება"
-      ],
-      "Show labels": [
-        "ჭდეების ჩვენება"
       ],
       "Show less": [
         "ნაკლების ჩვენება"
@@ -5695,6 +5683,9 @@
       "Seems like you are all caught up for now": [
         "მგონი აქ ჯერ საქმე აღარ გაქვთ"
       ],
+      "Select a service provider to start": [
+        "დასაწყებად აირჩიეთ მომსახურების მომწოდებელი"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "აირჩიეთ მითითებულ მისამართზე ელფოსტის გაგზავნისას გამოყენებული ფორმატი."
       ],
@@ -7506,6 +7497,9 @@
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "სპამისა და სანაგვე ყუთში მდებარე შეტყობინებების ავტომატური წაშლა"
+      ],
+      "Calendar sharing": [
+        "კალენდრის გაზიარება"
       ],
       "Custom email domains": [
         "თქვენი ელფოსტის დომენები"
