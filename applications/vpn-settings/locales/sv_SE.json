@@ -101,6 +101,9 @@
       "Copy address": [
         "Kopiera adress"
       ],
+      "Copy key to the clipboard": [
+        "Kopiera nyckel till urklipp"
+      ],
       "Create": [
         "Skapa"
       ],
@@ -739,11 +742,17 @@
       "Save with Cyber Week deals on a high-speed Swiss VPN": [
         "Spara med Cyber ​​Week-erbjudanden på ett schweiziskt VPN med hög hastighet"
       ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Spara med årsslutserbjudanden på ett schweiziskt VPN med hög hastighet"
+      ],
       "Select your Black Friday offer": [
         "Välj ditt Black Friday-erbjudande"
       ],
       "Select your Cyber Week offer": [
         "Välj ditt Cyber Week-erbjudande"
+      ],
+      "Select your End of Year offer": [
+        "Välj ditt årsslutserbjudande"
       ]
     },
     "bf2023: info": {
@@ -4706,6 +4715,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalender",
+        "${ maximumNumberOfCalendars } kalendrar"
+      ],
       "${ n } calendar": [
         "${ n } kalender",
         "${ n } kalendrar"
@@ -5482,6 +5495,9 @@
       "IP Address copied to clipboard": [
         "IP-adress kopierad till urklipp"
       ],
+      "Key copied to the clipboard": [
+        "Nyckel kopierad till urklipp"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "OpenVPN/IKEv2-inloggningsuppgifter återskapat"
       ],
@@ -5619,6 +5635,12 @@
       ],
       "Creating your account": [
         "Skapar ditt konto"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "För bara **${ relativePrice } mer per månad** får du åtkomst till premium lösenordshanterare för ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "För bara **${ relativePrice } mer per månad** får du åtkomst till premium VPN-tjänster för ${ BRAND_NAME }!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "För endast **${ relativePrice } per månad** mer får du åtkomst till alla premiumtjänster för ${ BRAND_NAME }!"

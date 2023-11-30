@@ -279,12 +279,6 @@
       "Hide affected calendars": [
         "Ocultar los calendarios afectados"
       ],
-      "Hide folders": [
-        "Ocultar carpetas"
-      ],
-      "Hide labels": [
-        "Ocultar etiquetas"
-      ],
       "Hide time zones": [
         "Ocultar zonas horarias"
       ],
@@ -454,7 +448,7 @@
         "actualizar la página"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Remove this notification": [
         "Borrar esta notificación"
@@ -524,12 +518,6 @@
       ],
       "Show affected calendars": [
         "Mostrar los calendarios afectados"
-      ],
-      "Show folders": [
-        "Mostrar carpetas"
-      ],
-      "Show labels": [
-        "Mostrar etiquetas"
       ],
       "Show less": [
         "Mostrar menos"
@@ -1039,8 +1027,8 @@
         "No se puede compartir este calendario con más usuarios de ${ BRAND_NAME }."
       ],
       "You have reached the maximum of ${ MAX_CALENDAR_MEMBERS } member for this calendar.\nTo share this calendar with more ${ BRAND_NAME } accounts, remove some members.": [
-        "Has llegado al máximo de ${ MAX_CALENDAR_MEMBERS } miembro para este calendario. \nPara compartir este calendario con más cuentas de ${ BRAND_NAME }, borra algunos miembros.",
-        "Has llegado al máximo de ${ MAX_CALENDAR_MEMBERS } miembros para este calendario.\nPara compartir este calendario con más cuentas de ${ BRAND_NAME }, borra algunos miembros."
+        "Has llegado al máximo de ${ MAX_CALENDAR_MEMBERS } miembro para este calendario. \nPara compartir este calendario con más cuentas de ${ BRAND_NAME }, elimina algunos miembros.",
+        "Has llegado al máximo de ${ MAX_CALENDAR_MEMBERS } miembros para este calendario.\nPara compartir este calendario con más cuentas de ${ BRAND_NAME }, elimina algunos miembros."
       ],
       "You have reached the maximum of ${ MAX_LINKS_PER_CALENDAR } link for this calendar.\nTo create a new link to this calendar, delete an existing one.": [
         "Has llegado al máximo de ${ MAX_LINKS_PER_CALENDAR } enlace para este calendario.\nPara crear un enlace a este calendario, elimina uno existente.",
@@ -4071,6 +4059,9 @@
       "Removed participants will be notified.": [
         "Se notificarán a los participantes borrados."
       ],
+      "Select a service provider to start": [
+        "Selecciona un proveedor de servicios para empezar"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Selecciona el formato de correo electrónico que quieres utilizar por defecto al enviar un correo electrónico a esta dirección."
       ],
@@ -5186,6 +5177,9 @@
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Eliminar automáticamente spam y mensajes de la papelera"
+      ],
+      "Calendar sharing": [
+        "Compartir calendario"
       ],
       "Custom email domains": [
         "Dominios de correo personalizados"

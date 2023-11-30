@@ -276,12 +276,6 @@
       "Hide affected calendars": [
         "影響のあるカレンダーを非表示"
       ],
-      "Hide folders": [
-        "フォルダーを隠す"
-      ],
-      "Hide labels": [
-        "ラベルを隠す"
-      ],
       "Hide time zones": [
         "タイムゾーンを非表示"
       ],
@@ -521,12 +515,6 @@
       ],
       "Show affected calendars": [
         "影響のあるカレンダーを表示"
-      ],
-      "Show folders": [
-        "フォルダーを表示"
-      ],
-      "Show labels": [
-        "ラベルを表示"
       ],
       "Show less": [
         "詳細を非表示"
@@ -3901,6 +3889,9 @@
       "Removed participants will be notified.": [
         "削除した参加者にはメールが送られます。"
       ],
+      "Select a service provider to start": [
+        "サービスプロバイダーを選択して開始"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "このメールアドレスにメールを送信する際に既定で使用するメールの形式を選択できます。"
       ],
@@ -5003,6 +4994,9 @@
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "迷惑メールとごみ箱のメッセージを自動削除"
+      ],
+      "Calendar sharing": [
+        "カレンダー共有"
       ],
       "Custom email domains": [
         "独自メールドメイン"

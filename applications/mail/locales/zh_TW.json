@@ -463,12 +463,6 @@
       "Hide details": [
         "隱藏詳細資訊"
       ],
-      "Hide folders": [
-        "隱藏資料夾"
-      ],
-      "Hide labels": [
-        "隱藏標籤"
-      ],
       "Hide messages": [
         "隱藏郵件"
       ],
@@ -712,11 +706,11 @@
       "Not saved": [
         "尚未儲存"
       ],
-      "OK": [
-        "好"
-      ],
       "Ok": [
         "確定"
+      ],
+      "OK": [
+        "好"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "開啟 ${ CALENDAR_APP_NAME }"
@@ -963,12 +957,6 @@
       ],
       "Show fewer search options": [
         "顯示較少搜尋選項"
-      ],
-      "Show folders": [
-        "顯示資料夾"
-      ],
-      "Show labels": [
-        "顯示標籤"
       ],
       "Show less": [
         "顯示更少"
@@ -5526,6 +5514,9 @@
       "Seems like you are all caught up for now": [
         "目前您已完成最新進度"
       ],
+      "Select a service provider to start": [
+        "選取您的服務提供者以開始"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "請選擇用於傳送至該電郵位址時使用的預設電郵格式。"
       ],
@@ -7284,6 +7275,9 @@
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "自動刪除垃圾郵件與垃圾桶中的訊息"
+      ],
+      "Calendar sharing": [
+        "行事曆分享"
       ],
       "Custom email domains": [
         "自訂電郵網域"

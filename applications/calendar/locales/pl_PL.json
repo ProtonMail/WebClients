@@ -285,12 +285,6 @@
       "Hide affected calendars": [
         "Ukryj zaszyfrowane kalendarze"
       ],
-      "Hide folders": [
-        "Ukryj foldery"
-      ],
-      "Hide labels": [
-        "Ukryj etykiety"
-      ],
       "Hide time zones": [
         "Ukryj strefy czasowe"
       ],
@@ -530,12 +524,6 @@
       ],
       "Show affected calendars": [
         "Pokaż zaszyfrowane kalendarze"
-      ],
-      "Show folders": [
-        "Pokaż foldery"
-      ],
-      "Show labels": [
-        "Pokaż etykiety"
       ],
       "Show less": [
         "Pokaż mniej"
@@ -4213,6 +4201,9 @@
       "Removed participants will be notified.": [
         "Usunięci uczestnicy zostaną powiadomieni."
       ],
+      "Select a service provider to start": [
+        "Aby rozpocząć, wybierz dostawcę usługi"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wybierz domyślny format wiadomości, który ma zostać użyty podczas wysyłania wiadomości na ten adres e-mail."
       ],
@@ -4497,6 +4488,11 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Twoja strefa czasowa w systemie zmieniła się na ${ timezone }. Czy chcesz zaktualizować ustawienia strefy czasowej?"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Wybrany kolor:"
       ]
     },
     "Info calendar search": {
@@ -5346,8 +5342,17 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalendarz",
+        "${ maximumNumberOfCalendars } kalendarze",
+        "${ maximumNumberOfCalendars } kalendarzy",
+        "${ maximumNumberOfCalendars } kalendarzy"
+      ],
       "Auto-delete spam and trashed messages": [
         "Automatyczne usuwanie Spamu i Kosza"
+      ],
+      "Calendar sharing": [
+        "Udostępnianie kalendarza"
       ],
       "Custom email domains": [
         "Niestandardowe domeny"
@@ -5634,8 +5639,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Poznaj wszystkie usługi ${ BRAND_NAME }"
       ],
+      "Pick a theme": [
+        "Wybierz motyw"
+      ],
       "Set up your organization": [
         "Skonfiguruj organizację"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Otwórz menu aplikacji w lewym górnym rogu, aby uzyskać dostęp do wszystkich usług ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Będziesz mógł zmienić motyw w dowolnym momencie w ustawieniach."
       ]
     },
     "Option": {

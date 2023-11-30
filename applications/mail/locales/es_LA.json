@@ -466,12 +466,6 @@
       "Hide details": [
         "Ocultar detalles"
       ],
-      "Hide folders": [
-        "Ocultar carpetas"
-      ],
-      "Hide labels": [
-        "Ocultar etiquetas"
-      ],
       "Hide messages": [
         "Ocultar mensajes"
       ],
@@ -716,10 +710,10 @@
       "Not saved": [
         "No guardado"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -967,12 +961,6 @@
       ],
       "Show fewer search options": [
         "Mostrar menos opciones de búsqueda"
-      ],
-      "Show folders": [
-        "Mostrar carpetas"
-      ],
-      "Show labels": [
-        "Mostrar etiquetas"
       ],
       "Show less": [
         "Mostrar menos"
@@ -5695,6 +5683,9 @@
       "Seems like you are all caught up for now": [
         "Parece que está al corriente por ahora"
       ],
+      "Select a service provider to start": [
+        "Seleccione un proveedor de servicios para comenzar"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccione el formato de correo que quiere usar por defecto al enviar un correo a esta dirección."
       ],
@@ -6261,6 +6252,9 @@
       ],
       "Optional": [
         "Opcional"
+      ],
+      "Selected color:": [
+        "Color seleccionado:"
       ]
     },
     "Info on errors": {
@@ -7504,8 +7498,15 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendario",
+        "${ maximumNumberOfCalendars } calendarios"
+      ],
       "Auto-delete spam and trashed messages": [
         "Eliminar automáticamente spam y mensajes de la papelera"
+      ],
+      "Calendar sharing": [
+        "Calendarios compartidos"
       ],
       "Custom email domains": [
         "Dominios de correo electrónico personalizados"
