@@ -472,12 +472,6 @@
       "Hide details": [
         "Skryť detaily"
       ],
-      "Hide folders": [
-        "Skryť priečinky"
-      ],
-      "Hide labels": [
-        "Skryť štítky"
-      ],
       "Hide messages": [
         "Skryť správy"
       ],
@@ -724,11 +718,11 @@
       "Not saved": [
         "Neuložené"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otvoriť ${ CALENDAR_APP_NAME }"
@@ -975,12 +969,6 @@
       ],
       "Show fewer search options": [
         "Zobraziť menej možností vyhľadávania"
-      ],
-      "Show folders": [
-        "Zobraziť priečinky"
-      ],
-      "Show labels": [
-        "Zobraziť štítky"
       ],
       "Show less": [
         "Zobraziť menej"
@@ -5895,6 +5883,9 @@
       "Seems like you are all caught up for now": [
         "Zdá sa, že všetko je nateraz aktuálne"
       ],
+      "Select a service provider to start": [
+        "Vyberte poskytovateľa služieb a začnite"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Vyberte formát emailu, ktorý chcete aby bol použitý ako predvolený pre zasielanie emailu na túto emailovú adresu."
       ],
@@ -7752,6 +7743,9 @@
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Automaticky mazať správy v spame a koši"
+      ],
+      "Calendar sharing": [
+        "Zdieľanie kalendára"
       ],
       "Custom email domains": [
         "Vlastné emailové domény"
