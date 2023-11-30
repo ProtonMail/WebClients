@@ -2,26 +2,33 @@ import { AlgorithmInfo } from '@proton/crypto';
 import capitalize from '@proton/utils/capitalize';
 import unique from '@proton/utils/unique';
 
-import { EncryptionConfig, SimpleMap } from '../interfaces';
+import { EncryptionConfig } from '../interfaces';
 
-const CUSTOM_FORMATTED_ALGS: SimpleMap<string> = { elgamal: 'ElGamal' };
-const ECC_ALGS = new Set(['ecdh', 'ecdsa', 'eddsa']);
+const ECC_ALGS: Set<AlgorithmInfo['algorithm']> = new Set(['ecdh', 'ecdsa', 'eddsa']);
 
-export const isRSA = (algorithmName = '') => algorithmName.toLowerCase().startsWith('rsa');
-export const isECC = (algorithmName = '') => ECC_ALGS.has(algorithmName.toLowerCase());
+export const isRSA = (algorithmName: AlgorithmInfo['algorithm']) => algorithmName.toLowerCase().startsWith('rsa');
+export const isECC = (algorithmName: AlgorithmInfo['algorithm']) => ECC_ALGS.has(algorithmName);
 
-export const getFormattedAlgorithmName = ({ algorithm = '', bits, curve }: AlgorithmInfo = { algorithm: '' }) => {
-    // For RSA keys, the algorithm is one of 'rsaEncrypt', 'rsaSign' or 'rsaEncryptSign', for historical reason. We simply display 'RSA'.
-    const name = isRSA(algorithm) ? 'rsa' : algorithm;
-
-    if (isECC(name)) {
-        // Keys using curve 25519 have different curve names (ed25519 or curve25519), which we unify under 'Curve25519'
-        return `ECC (${capitalize(curve === 'ed25519' ? 'curve25519' : curve)})`;
+export const getFormattedAlgorithmName = ({ algorithm, bits, curve }: AlgorithmInfo) => {
+    switch (algorithm) {
+        case 'elgamal':
+            return `ElGamal (${bits})`;
+        case 'dsa':
+            return `DSA (${bits})`;
+        case 'rsaEncrypt':
+        case 'rsaEncryptSign':
+        case 'rsaSign':
+            return `RSA (${bits})`;
+        case 'eddsa': // soon 'eddsaLegacy'
+        case 'ecdsa':
+        case 'ecdh':
+            return `ECC (${capitalize(curve === 'ed25519' ? 'curve25519' : curve)})`;
+        case 'ed25519':
+        case 'x25519':
+            return `ECC (Curve25519, new format)`;
+        default:
+            return algorithm.toUpperCase(); // should never get here
     }
-
-    const formattedName = CUSTOM_FORMATTED_ALGS[name] || name.toUpperCase();
-
-    return `${formattedName} (${bits})`;
 };
 
 /**
@@ -35,6 +42,9 @@ export const getFormattedAlgorithmNames = (algorithmInfos: AlgorithmInfo[] = [])
     return unique(formattedAlgos).join(', ');
 };
 
+/**
+ * Determine whether any of the given algorithmInfo matches the encryptionConfig
+ */
 export const getAlgorithmExists = (algorithmInfos: AlgorithmInfo[] = [], encryptionConfig: EncryptionConfig) => {
     return algorithmInfos.some(({ algorithm, curve, bits }) => {
         if (isECC(algorithm)) {
