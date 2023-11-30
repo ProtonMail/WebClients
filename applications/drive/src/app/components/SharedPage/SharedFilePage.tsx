@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { FileNameDisplay } from '@proton/components/components';
 import { FilePreviewContent } from '@proton/components/containers/filePreview/FilePreview';
 import { useActiveBreakpoint } from '@proton/components/hooks';
 
@@ -7,7 +8,6 @@ import { DecryptedLink } from '../../store';
 import { usePublicFileView } from '../../store/_views/useFileView';
 import { FileBrowserStateProvider } from '../FileBrowser';
 import { useUpsellFloatingModal } from '../modals/UpsellFloatingModal';
-import Breadcrumbs from './Layout/Breadcrumbs';
 import HeaderSecureLabel from './Layout/HeaderSecureLabel';
 import HeaderSize from './Layout/HeaderSize';
 import SharedPageFooter from './Layout/SharedPageFooter';
@@ -31,12 +31,7 @@ export default function SharedFilePage({ token, link }: Props) {
             >
                 <SharedPageHeader rootItem={link} items={[{ id: link.linkId, ...link }]} className="mt-3 mb-4">
                     <div className="w-full flex items-center">
-                        <Breadcrumbs
-                            token={token}
-                            name={link.name}
-                            linkId={link.linkId}
-                            className="w-full lg:w-auto shared-folder-header-breadcrumbs pb-1"
-                        />
+                        <FileNameDisplay className="text-4xl text-bold p-1" text={link.name} />
                         <div className="flex flex-auto lg:flex-row-reverse lg:flex-1">
                             <HeaderSecureLabel className="lg:ml-auto" />
                             {link.size ? <HeaderSize size={link.size} /> : null}
