@@ -2,6 +2,7 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { BitcoinReceiveInfoGenerator } from '.';
+import { accounts, wallets } from '../../tests';
 import { LightningUriFormat } from '../../types';
 import * as useBitcoinReceiveInfoGeneratorModule from './useBitcoinReceiveInfoGenerator';
 
@@ -16,8 +17,8 @@ describe('BitcoinReceiveInfoGenerator', () => {
     beforeEach(() => {
         helper = {
             serializedPaymentInformation: '',
-            selectedWallet: { kind: 'lightning', name: 'lightning 01', id: 0, balance: 167 },
-            selectedAccount: { name: 'account #1', id: 0 },
+            selectedWallet: wallets[0],
+            selectedAccount: accounts[0],
             selectedFormat: { name: 'Unified', value: LightningUriFormat.UNIFIED },
             shouldShowAmountInput: false,
             amount: 0,
@@ -39,11 +40,11 @@ describe('BitcoinReceiveInfoGenerator', () => {
             await act(() => userEvent.click(walletSelector));
 
             const options = screen.getAllByTestId('wallet-selector-option');
-            expect(options).toHaveLength(2);
+            expect(options).toHaveLength(5);
             await fireEvent.click(options[1]);
 
             expect(helper.handleSelectWallet).toHaveBeenCalledTimes(1);
-            expect(helper.handleSelectWallet).toHaveBeenCalledWith({ selectedIndex: 1, value: 1 });
+            expect(helper.handleSelectWallet).toHaveBeenCalledWith({ selectedIndex: 1, value: '1' });
         });
     });
 
@@ -78,7 +79,7 @@ describe('BitcoinReceiveInfoGenerator', () => {
         beforeEach(() => {
             mockUseBitcoinReceiveInfoGenerator.mockReturnValue({
                 ...helper,
-                selectedWallet: { kind: 'bitcoin', name: 'Bitcoin 01', id: 1, balance: 1783999 },
+                selectedWallet: wallets[1],
             });
 
             render(<BitcoinReceiveInfoGenerator />);
@@ -98,7 +99,7 @@ describe('BitcoinReceiveInfoGenerator', () => {
                 await fireEvent.click(options[1]);
 
                 expect(helper.handleSelectAccount).toHaveBeenCalledTimes(1);
-                expect(helper.handleSelectAccount).toHaveBeenCalledWith({ selectedIndex: 1, value: 1 });
+                expect(helper.handleSelectAccount).toHaveBeenCalledWith({ selectedIndex: 1, value: '1' });
             });
         });
     });

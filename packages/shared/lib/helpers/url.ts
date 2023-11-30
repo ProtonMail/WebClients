@@ -24,6 +24,8 @@ const TYPE_TO_PREFIX = {
     [LINK_TYPES.WEB]: { regex: /^http(|s):\/\//, defaultPrefix: 'https://' },
 };
 
+export type ParsedSearchParams = Partial<Record<string, string>>;
+
 // Create one big regexp of all the regexes in TYPE_TO_PREFIX.
 // It can be used for finding a particular type from a link.
 const ALL_REGEXP_SOURCES = (Object.keys(TYPE_TO_PREFIX) as LINK_TYPES[])
@@ -90,10 +92,10 @@ export const stringifySearchParams = (
 /**
  * Return a param (native) map based on the search string
  */
-export const getSearchParams = (search: string): { [key: string]: string } => {
+export const getSearchParams = (search: string): ParsedSearchParams => {
     const params = new URLSearchParams(getSearchFromHash(search));
 
-    const result: { [key: string]: string } = {};
+    const result: ParsedSearchParams = {};
 
     params.forEach((value, key) => {
         result[key] = value;
@@ -106,11 +108,7 @@ export const getSearchParams = (search: string): { [key: string]: string } => {
  * Return a new pathname with the query string updated from
  * the search input and updated with the newParams
  */
-export const changeSearchParams = (
-    pathname: string,
-    search: string,
-    newParams: { [key: string]: string | undefined } = {}
-) => {
+export const changeSearchParams = (pathname: string, search: string, newParams: ParsedSearchParams = {}) => {
     const params = new URLSearchParams(getSearchFromHash(search));
 
     Object.keys(newParams).forEach((key) => {
