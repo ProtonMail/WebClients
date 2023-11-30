@@ -1,4 +1,4 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { act, fireEvent, screen } from '@testing-library/react';
 import loudRejection from 'loud-rejection';
 
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
@@ -75,12 +75,16 @@ describe('Unsubscribe banner', () => {
         expect(button.textContent).toMatch(/Unsubscribe/);
 
         if (button) {
-            fireEvent.click(button);
+            await act(async () => {
+                fireEvent.click(button);
+            });
         }
 
         const submitButton = screen.getByTestId('unsubscribe-banner:submit');
         if (submitButton) {
-            fireEvent.click(submitButton);
+            await act(async () => {
+                fireEvent.click(submitButton);
+            });
         }
 
         await waitForEventManagerCall();
@@ -154,12 +158,16 @@ describe('Unsubscribe banner', () => {
         expect(button.textContent).toMatch(/Unsubscribe/);
 
         if (button) {
-            fireEvent.click(button);
+            await act(async () => {
+                fireEvent.click(button);
+            });
         }
 
         const submitButton = screen.getByTestId('unsubscribe-banner:submit');
         if (submitButton) {
-            fireEvent.click(submitButton);
+            await act(async () => {
+                fireEvent.click(submitButton);
+            });
         }
 
         await waitForEventManagerCall();
@@ -199,13 +207,17 @@ describe('Unsubscribe banner', () => {
         expect(button.textContent).toMatch(/Unsubscribe/);
 
         if (button) {
-            fireEvent.click(button);
+            await act(async () => {
+                fireEvent.click(button);
+            });
         }
 
         // Submit first modal
         const submitButton = screen.getByTestId('unsubscribe-banner:submit');
         if (submitButton) {
-            fireEvent.click(submitButton);
+            await act(async () => {
+                fireEvent.click(submitButton);
+            });
         }
 
         // Second modal should be opened
@@ -243,13 +255,17 @@ describe('Unsubscribe banner', () => {
         expect(button.textContent).toMatch(/Unsubscribe/);
 
         if (button) {
-            fireEvent.click(button);
+            await act(async () => {
+                fireEvent.click(button);
+            });
         }
 
         // Submit first modal
         const submitButton = screen.getByTestId('unsubscribe-banner:submit');
         if (submitButton) {
-            fireEvent.click(submitButton);
+            await act(async () => {
+                fireEvent.click(submitButton);
+            });
         }
 
         // Second modal should not be opened
@@ -288,13 +304,17 @@ describe('Unsubscribe banner', () => {
         expect(button.textContent).toMatch(/Unsubscribe/);
 
         if (button) {
-            fireEvent.click(button);
+            await act(async () => {
+                fireEvent.click(button);
+            });
         }
 
         // Submit first modal
         const submitButton = screen.getByTestId('unsubscribe-banner:submit');
         if (submitButton) {
-            fireEvent.click(submitButton);
+            await act(async () => {
+                fireEvent.click(submitButton);
+            });
         }
 
         // Second modal should not be opened
@@ -324,13 +344,17 @@ describe('Unsubscribe banner', () => {
         expect(button.textContent).toMatch(/Unsubscribe/);
 
         if (button) {
-            fireEvent.click(button);
+            await act(async () => {
+                fireEvent.click(button);
+            });
         }
 
         // Submit first modal
         const submitButton = screen.getByTestId('unsubscribe-banner:submit');
         if (submitButton) {
-            fireEvent.click(submitButton);
+            await act(async () => {
+                fireEvent.click(submitButton);
+            });
         }
 
         // Second modal should not be opened
