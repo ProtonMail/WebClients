@@ -42,10 +42,10 @@ const fetchHelper = ({ url: urlString, params, signal, timeout = DEFAULT_TIMEOUT
             throw createOfflineError(config);
         })
         .then((response) => {
-            clearTimeout(timeoutHandle);
             return checkStatus(response, config);
         })
         .finally(() => {
+            clearTimeout(timeoutHandle);
             signal?.removeEventListener('abort', otherAbortCallback);
         });
 };
