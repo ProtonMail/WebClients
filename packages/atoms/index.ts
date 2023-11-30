@@ -7,6 +7,7 @@ export * from './Href';
 export * from './Input';
 export * from './Kbd';
 export * from './NotificationDot';
+export * from './Pill';
 export * from './Scroll';
 export * from './Slider';
 export * from './Stepper';
