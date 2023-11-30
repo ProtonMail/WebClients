@@ -337,12 +337,6 @@
       "Hide advanced PGP settings": [
         "고급 PGP 설정 숨기기"
       ],
-      "Hide folders": [
-        "폴더 숨기기"
-      ],
-      "Hide labels": [
-        "라벨 숨기기"
-      ],
       "Image could not be loaded with tracker protection.": [
         "트래커 보호로 인하여 이미지가 불러오지 않을 수 있습니다."
       ],
@@ -600,12 +594,6 @@
       ],
       "Show advanced PGP settings": [
         "고급 PGP 설정 보기"
-      ],
-      "Show folders": [
-        "폴더 표시"
-      ],
-      "Show labels": [
-        "라벨 표시"
       ],
       "Show preview": [
         "미리보기 표시"
@@ -3683,6 +3671,9 @@
       "Items in the trash will stay here until you delete them permanently": [
         "휴지통의 항목은 영구적으로 삭제하기 전까지 여기에 남습니다"
       ],
+      "Items moved to the trash will stay here until deleted": [
+        "휴지통으로 이동된 항목들이 삭제될 때 까지 계속 여기에 유지됩니다."
+      ],
       "It’s easy and secure": [
         "쉽고 안전합니다"
       ],
@@ -3938,6 +3929,9 @@
       "Select a folder to move to.": [
         "이동할 폴더 선택"
       ],
+      "Select a service provider to start": [
+        "시작하려면 서비스 제공자를 선택하십시오"
+      ],
       "Select all items for": [
         "해당 달에 찍은 항목 선택:"
       ],
@@ -4133,6 +4127,9 @@
       "Trash": [
         "휴지통"
       ],
+      "Trash is empty": [
+        "휴지통이 비어있음"
+      ],
       "Try new ${ BRAND_NAME } features, updates and products before they are released to the public. This will reload the application": [
         "출시되지 않은 새로운 ${ BRAND_NAME } 기능, 업데이트, 제품들을 사용해보세요. 이렇게 하면 애플리케이션이 새로고침됩니다"
       ],
@@ -4180,6 +4177,9 @@
       ],
       "Version is restored": [
         "버전이 복구되었습니다"
+      ],
+      "Want to sync files faster?": [
+        "더 빠른 동기화를 원하세요?"
       ],
       "Way to go, you’ve just doubled your free storage!": [
         "잘했어요! 방금 당신의 무료 저장공간을 두 배로 늘려 드렸습니다!"
@@ -5000,6 +5000,9 @@
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "스팸 및 휴지통의 메시지를 자동 삭제"
+      ],
+      "Calendar sharing": [
+        "일정 공유"
       ],
       "Custom email domains": [
         "사용자 지정 이메일 도메인"

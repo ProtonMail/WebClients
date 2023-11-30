@@ -279,12 +279,6 @@
       "Hide affected calendars": [
         "Ocultar calendarios afectados"
       ],
-      "Hide folders": [
-        "Ocultar carpetas"
-      ],
-      "Hide labels": [
-        "Ocultar etiquetas"
-      ],
       "Hide time zones": [
         "Ocultar zonas horarias"
       ],
@@ -524,12 +518,6 @@
       ],
       "Show affected calendars": [
         "Mostrar calendarios afectados"
-      ],
-      "Show folders": [
-        "Mostrar carpetas"
-      ],
-      "Show labels": [
-        "Mostrar etiquetas"
       ],
       "Show less": [
         "Mostrar menos"
@@ -2190,6 +2178,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "Aumente la eficiencia y realice un seguimiento de su tiempo codificando por colores los eventos por categoría o sus niveles de energía. Obtenga esto y mucho más con un plan de pago."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Descifrando contactos… esto puede tardar unos minutos. Cuando el proceso se complete, podrá descargar el archivo con todos sus contactos exportados."
       ],
@@ -4071,6 +4062,9 @@
       "Removed participants will be notified.": [
         "Se notificarán a los participantes borrados."
       ],
+      "Select a service provider to start": [
+        "Seleccione un proveedor de servicios para comenzar"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleccione el formato de correo que quiere usar por defecto al enviar un correo a esta dirección."
       ],
@@ -4355,6 +4349,11 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "La zona horaria del sistema parece haber cambiado a ${ timezone }. ¿Quiere actualizar su preferencia de zona horaria?"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Color seleccionado:"
       ]
     },
     "Info calendar search": {
@@ -5184,8 +5183,15 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendario",
+        "${ maximumNumberOfCalendars } calendarios"
+      ],
       "Auto-delete spam and trashed messages": [
         "Eliminar automáticamente spam y mensajes de la papelera"
+      ],
+      "Calendar sharing": [
+        "Calendarios compartidos"
       ],
       "Custom email domains": [
         "Dominios de correo electrónico personalizados"
@@ -6145,6 +6151,9 @@
       "Add your country's public holidays to your calendar.": [
         "Añada los días festivos de su país a su calendario."
       ],
+      "Color-coding is here!": [
+        "¡La codificación por colores ya está aquí!"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Encuentre fácilmente el evento que está buscando con nuestra función de búsqueda nueva."
       ],
@@ -6159,6 +6168,9 @@
       ],
       "Search for events": [
         "Buscar eventos"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "Con los colores personalizables de eventos, puede codificar por colores el caos y conquistar su día."
       ]
     },
     "Storage": {
@@ -6474,6 +6486,9 @@
       ],
       "Add participants": [
         "Añadir participantes"
+      ],
+      "Add some color to your day": [
+        "Añada un poco de color a su día"
       ],
       "Add to ${ groupCount } group": [
         "Añadir a ${ groupCount } grupo",

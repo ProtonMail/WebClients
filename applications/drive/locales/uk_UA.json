@@ -340,12 +340,6 @@
       "Hide advanced PGP settings": [
         "Приховати розширені налаштування PGP"
       ],
-      "Hide folders": [
-        "Сховати теки"
-      ],
-      "Hide labels": [
-        "Сховати мітки"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Зображення неможливо завантажити, якщо увімкнено захист від стеження."
       ],
@@ -594,12 +588,6 @@
       ],
       "Show advanced PGP settings": [
         "Показати розширені налаштування PGP"
-      ],
-      "Show folders": [
-        "Показати теки"
-      ],
-      "Show labels": [
-        "Показати мітки"
       ],
       "Show preview": [
         "Показати попередній перегляд"
@@ -3931,6 +3919,9 @@
       "Search Enabled": [
         "Пошук увімкнено"
       ],
+      "Select a service provider to start": [
+        "Виберіть постачальника послуг, щоб розпочати"
+      ],
       "Select an uploaded file or folder and create a link to it.": [
         "Виберіть вивантажений файл або теку та створіть посилання на них."
       ],
@@ -4993,6 +4984,9 @@
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Автоматичне видалення спаму та повідомлень зі смітника"
+      ],
+      "Calendar sharing": [
+        "Спільний доступ до календаря"
       ],
       "Custom email domains": [
         "Власні домени електронної пошти"

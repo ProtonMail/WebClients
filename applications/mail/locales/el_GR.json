@@ -466,12 +466,6 @@
       "Hide details": [
         "Απόκρυψη λεπτομερειών"
       ],
-      "Hide folders": [
-        "Απόκρυψη φακέλων"
-      ],
-      "Hide labels": [
-        "Απόκρυψη ετικετών"
-      ],
       "Hide messages": [
         "Απόκρυψη μηνυμάτων"
       ],
@@ -716,11 +710,11 @@
       "Not saved": [
         "Μη αποθηκευμένο"
       ],
-      "OK": [
-        "ΟΚ"
-      ],
       "Ok": [
         "OK"
+      ],
+      "OK": [
+        "ΟΚ"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Άνοιγμα ${ CALENDAR_APP_NAME }"
@@ -967,12 +961,6 @@
       ],
       "Show fewer search options": [
         "Εμφάνιση λιγότερων επιλογών αναζήτησης"
-      ],
-      "Show folders": [
-        "Εμφάνιση φακέλων"
-      ],
-      "Show labels": [
-        "Εμφάνιση ετικετών"
       ],
       "Show less": [
         "Εμφάνιση λιγότερων"
@@ -5695,6 +5683,9 @@
       "Seems like you are all caught up for now": [
         "Φαίνεται να είστε πλήρως ενημερωμένοι για τώρα"
       ],
+      "Select a service provider to start": [
+        "Επιλογή παρόχου υπηρεσίας για ξεκίνημα"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
       ],
@@ -6261,6 +6252,9 @@
       ],
       "Optional": [
         "Προαιρετικό"
+      ],
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info on errors": {
@@ -7504,8 +7498,15 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } ημερολόγιο",
+        "${ maximumNumberOfCalendars } ημερολόγια"
+      ],
       "Auto-delete spam and trashed messages": [
         "Αυτόματη διαγραφή ανεπιθύμητων και απορριφθέντων μηνυμάτων"
+      ],
+      "Calendar sharing": [
+        "Κοινή χρήση ημερολογίου"
       ],
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"

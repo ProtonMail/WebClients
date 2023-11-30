@@ -466,12 +466,6 @@
       "Hide details": [
         "Piilota tiedot"
       ],
-      "Hide folders": [
-        "Piilota kansiot"
-      ],
-      "Hide labels": [
-        "Piilota tunnisteet"
-      ],
       "Hide messages": [
         "Piilota viestit"
       ],
@@ -716,10 +710,10 @@
       "Not saved": [
         "Tallentamaton"
       ],
-      "OK": [
+      "Ok": [
         "OK"
       ],
-      "Ok": [
+      "OK": [
         "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
@@ -967,12 +961,6 @@
       ],
       "Show fewer search options": [
         "Näytä vähemmän hakuvalintoja"
-      ],
-      "Show folders": [
-        "Näytä kansiot"
-      ],
-      "Show labels": [
-        "Näytä tunnisteet"
       ],
       "Show less": [
         "Näytä vähemmän"
@@ -5695,6 +5683,9 @@
       "Seems like you are all caught up for now": [
         "Kaikki näyttää olevan tällä erää ajan tasalla"
       ],
+      "Select a service provider to start": [
+        "Aloita valitsemalla palveluntarjoaja"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Valitse tähän osoitteeseen lähetettäville viesteille oletusarvoisesti käytettävä muoto."
       ],
@@ -7506,6 +7497,9 @@
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Poista roskakorin ja roskapostin viestit automaattisesti"
+      ],
+      "Calendar sharing": [
+        "Kalenterien jako"
       ],
       "Custom email domains": [
         "Omat sähköpostiverkkotunnukset"

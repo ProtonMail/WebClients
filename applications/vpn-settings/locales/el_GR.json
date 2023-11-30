@@ -101,6 +101,9 @@
       "Copy address": [
         "Αντιγραφή διεύθυνσης"
       ],
+      "Copy key to the clipboard": [
+        "Αντιγραφή του κλειδιού στο πρόχειρο"
+      ],
       "Create": [
         "Δημιουργία"
       ],
@@ -4706,6 +4709,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } ημερολόγιο",
+        "${ maximumNumberOfCalendars } ημερολόγια"
+      ],
       "${ n } calendar": [
         "${ n } ημερολόγιο",
         "${ n } ημερολόγια"
@@ -5481,6 +5488,9 @@
       ],
       "IP Address copied to clipboard": [
         "Η διεύθυνση IP αντιγράφηκε στο πρόχειρο"
+      ],
+      "Key copied to the clipboard": [
+        "Το κλειδί αντιγράφτηκε στο πρόχειρο"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Τα διαπιστευτήρια του OpenVPN / IKEv2 επαναδημιουργήθηκαν"
