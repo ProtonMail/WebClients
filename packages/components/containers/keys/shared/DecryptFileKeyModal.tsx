@@ -40,7 +40,11 @@ const DecryptFileKeyModal = ({ privateKeyInfo, onSuccess, onClose, ...rest }: Pr
 
     const handleSubmit = async () => {
         try {
-            const decryptedPrivateKey = await CryptoProxy.importPrivateKey({ armoredKey, passphrase: password });
+            const decryptedPrivateKey = await CryptoProxy.importPrivateKey({
+                armoredKey,
+                passphrase: password,
+                checkCompatibility: true, // the BE will enforce this as well, but the returned error messages might be less user friendly
+            });
             onSuccess(decryptedPrivateKey);
             onClose?.();
         } catch (e: any) {

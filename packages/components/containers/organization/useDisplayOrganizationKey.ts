@@ -30,11 +30,11 @@ const useDisplayOrganizationKey = (organizationKey?: CachedOrganizationKey) => {
     }, [organizationKey]);
 
     return useMemo(() => {
-        const algorithmInfo = parsedKey?.getAlgorithmInfo() ?? { algorithm: '' };
+        const algorithmInfo = parsedKey?.getAlgorithmInfo();
         const fingerprint = parsedKey?.getFingerprint() ?? '';
         const isDecrypted = parsedKey?.isPrivate() ?? false;
         return {
-            algorithm: getFormattedAlgorithmName(algorithmInfo),
+            algorithm: algorithmInfo ? getFormattedAlgorithmName(algorithmInfo) : '',
             fingerprint,
             isDecrypted,
         };

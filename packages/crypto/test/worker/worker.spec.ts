@@ -33,6 +33,8 @@ import {
     keyWithP256AndCurve25519Subkeys,
     keyWithThirdPartyCertifications,
     rsa512BitsKey,
+    v4KeyNewCurve25519Format,
+    v6KeyCurve25519,
 } from './keys.data';
 import {
     messageWithEmptySignature,
@@ -1371,6 +1373,27 @@ pD1DtUiJfTUyCKgA/jQvs7QVxXk4ixfK1f3EvD02I1whktPixZy1B0iGmrAG
             await expect(CryptoWorker.importPrivateKey({ armoredKey: argon2Key, passphrase })).to.be.rejectedWith(
                 /Keys encrypted using Argon2 are not supported yet/
             );
+        });
+
+        it('compatibility - rejects importing a public key using the new curve25519 format', async () => {
+            // import should work without compatibility checks
+            const importedKeyRef = await CryptoWorker.importPublicKey({
+                armoredKey: v4KeyNewCurve25519Format,
+                checkCompatibility: false,
+            });
+            expect(importedKeyRef.isPrivate()).to.be.false;
+
+            await expect(
+                CryptoWorker.importPublicKey({ armoredKey: v4KeyNewCurve25519Format, checkCompatibility: true })
+            ).to.be.rejectedWith(/key algorithm is currently not supported./);
+        });
+
+        it('compatibility - rejects importing a v6 public key', async () => {
+            // Until we integrate OpenPGP.js, parsing the key will fail, regardless of `checkCompatibility`.
+            // This test is mostly a placeholder to be updated once OpenPGP.js is updated.
+            await expect(CryptoWorker.importPublicKey({
+                armoredKey: v6KeyCurve25519,
+            })).to.be.rejected;
         });
 
         it('allows importing a private key as long as it can be decrypted', async () => {
