@@ -742,8 +742,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Oszczędź na szybkich, szwajcarskich usługach VPN z okazji Czarnego Piątku"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Oszczędź na szybkich, szwajcarskich usługach VPN z okazji Cyber Tygodnia"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Oszczędzaj dzięki ofertom na koniec roku na szybką szwajcarską sieć VPN"
+      ],
       "Select your Black Friday offer": [
         "Wybierz ofertę na Czarny Piątek"
+      ],
+      "Select your Cyber Week offer": [
+        "Wybierz ofertę Cyber Tygodnia"
+      ],
+      "Select your End of Year offer": [
+        "Wybierz ofertę na koniec roku"
       ]
     },
     "bf2023: info": {
@@ -4788,6 +4800,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalendarz",
+        "${ maximumNumberOfCalendars } kalendarze",
+        "${ maximumNumberOfCalendars } kalendarzy",
+        "${ maximumNumberOfCalendars } kalendarzy"
+      ],
       "${ n } calendar": [
         "${ n } kalendarz",
         "${ n } kalendarze",
@@ -5608,6 +5626,9 @@
       "IP Address copied to clipboard": [
         "Adres IP został skopiowany do schowka"
       ],
+      "Key copied to the clipboard": [
+        "Klucz został skopiowany do schowka"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Dane logowania OpenVPN / IKEv2 zostały ponownie wygenerowane"
       ],
@@ -5730,6 +5751,12 @@
       ],
       "Creating your account": [
         "Tworzenie konta"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do menedżera haseł premium ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do najwyższej jakości usługi VPN ${ BRAND_NAME }!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Za **${ relativePrice } miesięcznie** więcej uzyskasz dostęp do wszystkich funkcji premium usług ${ BRAND_NAME }!"
