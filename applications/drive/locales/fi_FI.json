@@ -340,12 +340,6 @@
       "Hide advanced PGP settings": [
         "Piilota PGP-lisäasetukset"
       ],
-      "Hide folders": [
-        "Piilota kansiot"
-      ],
-      "Hide labels": [
-        "Piilota tunnisteet"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Kuvaa ei voitu ladata seurantasuojauksen vuoksi."
       ],
@@ -603,12 +597,6 @@
       ],
       "Show advanced PGP settings": [
         "Näytä PGP-lisäasetukset"
-      ],
-      "Show folders": [
-        "Näytä kansiot"
-      ],
-      "Show labels": [
-        "Näytä tunnisteet"
       ],
       "Show preview": [
         "Näytä esikatselu"
@@ -4010,6 +3998,9 @@
       "Select a folder to move to.": [
         "Valitse kohdekansio."
       ],
+      "Select a service provider to start": [
+        "Aloita valitsemalla palveluntarjoaja"
+      ],
       "Select all items for": [
         "Valitse kaikki kohteet ryhmästä"
       ],
@@ -5088,6 +5079,9 @@
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Poista roskakorin ja roskapostin viestit automaattisesti"
+      ],
+      "Calendar sharing": [
+        "Kalenterien jako"
       ],
       "Custom email domains": [
         "Omat sähköpostiverkkotunnukset"
