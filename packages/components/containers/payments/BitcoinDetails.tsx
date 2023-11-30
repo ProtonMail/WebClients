@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import clsx from '@proton/utils/clsx';
 
+import { useNotifications } from '../..';
 import { Copy } from '../../components';
 
 export interface Props {
@@ -21,6 +22,7 @@ const BitcoinDetailsLine = ({
     value: string;
     fieldClassName?: string;
 } & HTMLAttributes<HTMLElement>) => {
+    const { createNotification } = useNotifications();
     return (
         <>
             <div className="text-rg text-semibold mb-1">{label}</div>
@@ -31,7 +33,16 @@ const BitcoinDetailsLine = ({
                 )}
             >
                 <span {...rest}>{value}</span>
-                <Copy value={`${value}`} shape="ghost" size="small" />
+                <Copy
+                    value={`${value}`}
+                    shape="ghost"
+                    size="small"
+                    onCopy={() => {
+                        createNotification({
+                            text: c('Success').t`Copied to clipboard`,
+                        });
+                    }}
+                />
             </div>
         </>
     );
