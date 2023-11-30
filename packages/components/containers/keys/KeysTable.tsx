@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useNotifications } from '../..';
 import Copy from '../../components/button/Copy';
 import PersonalKeyWarningIcon from '../../components/icon/PersonalKeyWarningIcon';
 import { Table, TableBody, TableCell, TableRow } from '../../components/table';
@@ -22,6 +23,7 @@ const KeysTable = ({
     onSetObsolete,
     onSetNotObsolete,
 }: Props) => {
+    const { createNotification } = useNotifications();
     const headerCells = [
         { node: c('Title header for keys table').t`Fingerprint`, className: 'text-ellipsis' },
         { node: c('Title header for keys table').t`Key type`, className: 'w-1/6' },
@@ -57,6 +59,11 @@ const KeysTable = ({
                                         size="small"
                                         value={fingerprint}
                                         className="flex-item-noshrink mr-2 md:mr-4"
+                                        onCopy={() => {
+                                            createNotification({
+                                                text: c('Success').t`Fingerprint copied to clipboard`,
+                                            });
+                                        }}
                                     />
                                     <code
                                         className="max-w-full inline-block text-ellipsis"

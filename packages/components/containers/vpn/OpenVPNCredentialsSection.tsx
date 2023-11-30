@@ -78,7 +78,14 @@ const OpenVPNCredentialsSection = (props: Props) => {
                         <code title={Name}>{Name}</code>
                     </div>
                     <div className="flex flex-item-noshrink mt-2 md:mt-0">
-                        <Copy value={Name} />
+                        <Copy
+                            value={Name}
+                            onCopy={() => {
+                                createNotification({
+                                    text: c('Success').t`Username copied to clipboard`,
+                                });
+                            }}
+                        />
                     </div>
                 </SettingsLayoutRight>
             </SettingsLayout>
@@ -91,13 +98,24 @@ const OpenVPNCredentialsSection = (props: Props) => {
                         <code>{show ? Password : '••••••••••••••••'}</code>
                     </div>
                     <div className="flex flex-item-noshrink mt-2 md:mt-0">
-                        <Copy className="mr-4" value={Password} />
+                        <Copy
+                            className="mr-4"
+                            value={Password}
+                            onCopy={() => {
+                                createNotification({
+                                    text: c('Success').t`Password copied to clipboard`,
+                                });
+                            }}
+                        />
                         <Button
                             icon
                             onClick={() => setShow(!show)}
                             title={show ? c('Action').t`Hide` : c('Action').t`Show`}
                         >
-                            <Icon name={show ? 'eye-slash' : 'eye'} />
+                            <Icon
+                                name={show ? 'eye-slash' : 'eye'}
+                                alt={show ? c('Action').t`Hide` : c('Action').t`Show`}
+                            />
                         </Button>
                     </div>
                 </SettingsLayoutRight>
