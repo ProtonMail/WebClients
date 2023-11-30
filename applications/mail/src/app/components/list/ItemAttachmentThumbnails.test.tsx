@@ -222,6 +222,7 @@ describe('ItemAttachmentThumbnails - Preview', () => {
     let fromKeys: GeneratedKey;
 
     beforeAll(async () => {
+        await setupCryptoProxyForTesting();
         // Mock feature flag
         // TODO update when we'll have a better solution
         mockUseFlag.mockReturnValue(true);
@@ -229,17 +230,18 @@ describe('ItemAttachmentThumbnails - Preview', () => {
         addApiKeys(false, fromAddress, []);
     });
 
+    afterAll(async () => {
+        await releaseCryptoProxy();
+    });
+
     beforeEach(async () => {
-        await setupCryptoProxyForTesting();
         clearAll();
         fromKeys = await generateKeys('me', fromAddress);
-
         addKeysToAddressKeysCache(AddressID, fromKeys);
     });
 
     afterEach(async () => {
         clearAll();
-        await releaseCryptoProxy();
     });
 
     const mockAttachmentThumbnailsAPICalls = async (
