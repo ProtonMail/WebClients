@@ -9,20 +9,16 @@ import {
     validateRecoverySecret,
 } from '@proton/shared/lib/recoveryFile/recoveryFile';
 
-import { useApi, useEventManager, useNotifications, usePrimaryRecoverySecret, useUserKeys } from '../../hooks';
+import { useApi, useEventManager, useGetUserKeys, useNotifications, usePrimaryRecoverySecret } from '../../hooks';
 
 interface Props extends Omit<ButtonProps, 'onClick'> {}
 
-const ExportRecoveryFileButton = ({
-    loading: loadingProp,
-    children = c('Action').t`Download recovery file`,
-    ...rest
-}: Props) => {
+const ExportRecoveryFileButton = ({ children = c('Action').t`Download recovery file`, ...rest }: Props) => {
     const api = useApi();
     const { createNotification } = useNotifications();
     const { call } = useEventManager();
 
-    const [userKeys, loadingUserKeys] = useUserKeys();
+    const getUserKeys = useGetUserKeys();
 
     const primaryRecoverySecret = usePrimaryRecoverySecret();
 
@@ -34,6 +30,7 @@ const ExportRecoveryFileButton = ({
     };
 
     const handleClick = async () => {
+        const userKeys = await getUserKeys();
         const primaryUserKey = userKeys[0];
         if (!primaryUserKey) {
             return;
@@ -68,11 +65,7 @@ const ExportRecoveryFileButton = ({
     };
 
     return (
-        <Button
-            onClick={() => withLoading(handleClick())}
-            loading={loadingUserKeys || loading || loadingProp}
-            {...rest}
-        >
+        <Button onClick={() => withLoading(handleClick())} loading={loading} {...rest}>
             {children}
         </Button>
     );
