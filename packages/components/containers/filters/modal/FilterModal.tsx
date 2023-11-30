@@ -5,6 +5,7 @@ import { c } from 'ttag';
 import { useLoading } from '@proton/hooks';
 import { addTreeFilter, applyFilters, updateFilter } from '@proton/shared/lib/api/filters';
 import isDeepEqual from '@proton/shared/lib/helpers/isDeepEqual';
+import { AUTO_REPLY_CHARACTER_COUNT_LIMIT } from '@proton/shared/lib/mail/constants';
 import { removeImagesFromContent } from '@proton/shared/lib/sanitize/purify';
 
 import {
@@ -80,9 +81,14 @@ const checkConditionsErrors = (conditions: Condition[]): string => {
 const checkActionsErrors = (actions: Actions) => {
     const { labelAs, markAs, moveTo, autoReply } = actions;
 
+    if (autoReply && autoReply.length > AUTO_REPLY_CHARACTER_COUNT_LIMIT) {
+        return c('Error').t`You've reached the maximum character number. Please shorten your message.`;
+    }
+
     if (!labelAs.labels.length && !moveTo.folder && !markAs.read && !markAs.starred && !autoReply) {
         return c('Error').t`Require at least one action`;
     }
+
     return '';
 };
 
