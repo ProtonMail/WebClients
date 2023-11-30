@@ -42,7 +42,7 @@ function assertHydrated(ctx: PassCryptoManagerContext): asserts ctx is Required<
 
 const createPassCrypto = (): PassCryptoWorker => {
     if (process.env.NODE_ENV !== 'test') {
-        CryptoApi.init();
+        CryptoApi.init({});
         CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());
     }
 
