@@ -1,26 +1,21 @@
 import { useEffect } from 'react';
 
-import {
-    getHasRecoveryMessage,
-    getKeysFromDeviceRecovery,
-    removeDeviceRecovery,
-    storeDeviceRecovery,
-} from '@proton/shared/lib/recoveryFile/deviceRecovery';
-import arraysContainSameElements from '@proton/utils/arraysContainSameElements';
+import { getIsDeviceRecoveryEnabled, syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
+import noop from '@proton/utils/noop';
 
 import { useFlag } from '../../components/containers/unleash';
+import { useGetAddresses } from './useAddresses';
 import useApi from './useApi';
-import useAuthentication from './useAuthentication';
+import useConfig from './useConfig';
+import useEventManager from './useEventManager';
 import useIsRecoveryFileAvailable from './useIsRecoveryFileAvailable';
-import useUser from './useUser';
-import { useUserKeys } from './useUserKeys';
+import { useGetUser } from './useUser';
+import { useGetUserKeys, useUserKeys } from './useUserKeys';
 import useUserSettings from './useUserSettings';
 
 export const useIsDeviceRecoveryEnabled = () => {
     const [userSettings] = useUserSettings();
-    const authentication = useAuthentication();
-
-    return userSettings.DeviceRecovery && authentication.getTrusted();
+    return getIsDeviceRecoveryEnabled(userSettings);
 };
 
 export const useIsDeviceRecoveryAvailable = () => {
@@ -31,53 +26,38 @@ export const useIsDeviceRecoveryAvailable = () => {
 
 export const useDeviceRecovery = () => {
     const [userKeys] = useUserKeys();
-    const [user] = useUser();
+    const getUserKeys = useGetUserKeys();
+    const getUser = useGetUser();
+    const getAddresses = useGetAddresses();
+    const { call } = useEventManager();
+    const [userSettings] = useUserSettings();
     const api = useApi();
-
-    const [isDeviceRecoveryAvailable] = useIsDeviceRecoveryAvailable();
-    const isDeviceRecoveryEnabled = useIsDeviceRecoveryEnabled();
-    const hasRecoveryMessage = getHasRecoveryMessage(user.ID);
-
-    const privateKeyFingerPrints = userKeys?.map((key) => key.privateKey.getFingerprint()) || [];
+    const { APP_NAME } = useConfig();
 
     useEffect(() => {
-        let aborted = false;
+        if (!userKeys?.length) {
+            return;
+        }
+        const abortController = new AbortController();
         const run = async () => {
-            const shouldRemoveDeviceRecovery = hasRecoveryMessage && !isDeviceRecoveryEnabled;
-            if (shouldRemoveDeviceRecovery) {
-                removeDeviceRecovery(user.ID);
-                return;
+            const [user, userKeys, addresses] = await Promise.all([getUser(), getUserKeys(), getAddresses()]);
+            const result = await syncDeviceRecovery({
+                api,
+                user,
+                userKeys,
+                addresses,
+                userSettings,
+                appName: APP_NAME,
+                signal: abortController.signal,
+            });
+            if (result) {
+                await call();
             }
-
-            const shouldStoreDeviceRecovery =
-                isDeviceRecoveryAvailable && (isDeviceRecoveryEnabled || hasRecoveryMessage);
-            if (!privateKeyFingerPrints.length || !shouldStoreDeviceRecovery) {
-                return;
-            }
-
-            const storedKeys = (await getKeysFromDeviceRecovery(user)) || [];
-            if (aborted) {
-                return;
-            }
-            const storedKeyFingerprints = storedKeys.map((key) => key.getFingerprint());
-            const userKeysHaveUpdated = !arraysContainSameElements(storedKeyFingerprints, privateKeyFingerPrints);
-
-            if (!userKeysHaveUpdated || aborted) {
-                return;
-            }
-
-            await storeDeviceRecovery({ api, user, userKeys });
         };
-
-        void run();
+        run().catch(noop);
         return () => {
-            aborted = true;
+            abortController.abort();
         };
-    }, [
-        isDeviceRecoveryAvailable,
-        isDeviceRecoveryEnabled,
-        hasRecoveryMessage,
-        privateKeyFingerPrints.join(''),
-        user.ID,
-    ]);
+        // In lieu of better logic, this is trying to catch user keys that get reactivated.
+    }, [userKeys?.length]);
 };
