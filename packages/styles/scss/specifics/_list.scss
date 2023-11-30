@@ -147,6 +147,10 @@ $item-container-row-padding-block: em(5) !default; // design wants 48px
 		background-color: var(--email-item-selected-background-color);
 		color: var(--email-item-selected-text-color);
 
+		.button[aria-expanded='true'] {
+			color: var(--email-item-selected-text-color);
+		}
+
 		.item-icon,
 		.item-icon-compact:hover {
 			background-color: var(--email-item-selected-icon-background-color);
