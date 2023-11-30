@@ -285,6 +285,7 @@ export const LoginEdit: FC<ItemEditViewProps<'login'>> = ({ revision, url, vault
                                     placeholder={c('Placeholder').t`Enter password`}
                                     component={PasswordField}
                                     icon="key"
+                                    showStrength
                                     onPasswordGenerated={(value: string) => {
                                         const { urls, url } = form.values;
                                         const baseUrl = urls?.[0]?.url ?? url;
