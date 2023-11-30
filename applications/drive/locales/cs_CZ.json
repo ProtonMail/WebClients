@@ -346,12 +346,6 @@
       "Hide advanced PGP settings": [
         "Skrýt pokročilé nastavení PGP"
       ],
-      "Hide folders": [
-        "Skrýt složky"
-      ],
-      "Hide labels": [
-        "Skrýt štítky"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Obrázek nemohl být načten kvůli ochraně před sledovacími prvky."
       ],
@@ -609,12 +603,6 @@
       ],
       "Show advanced PGP settings": [
         "Zobrazit pokročilé nastavení PGP"
-      ],
-      "Show folders": [
-        "Zobrazit složky"
-      ],
-      "Show labels": [
-        "Zobrazit štítky"
       ],
       "Show preview": [
         "Zobrazit náhled"
@@ -3809,9 +3797,6 @@
       "Get the app to backup photos from your phone.": [
         "Získejte aplikaci pro zálohování fotografií z telefonu."
       ],
-      "Get the desktop app to sync files from your computer.": [
-        "Získejte desktopovou aplikaci pro synchronizaci souborů z počítače."
-      ],
       "Get to know ${ DRIVE_APP_NAME } and earn your 500 MB storage bonus! Take action today.": [
         "Seznamte se s ${ DRIVE_APP_NAME } a získejte bonus 500 MB úložného prostoru! Učiňte tak ještě dnes."
       ],
@@ -4144,6 +4129,9 @@
       ],
       "Select a folder to move to.": [
         "Vyberte složku, do níž chcete přesunout."
+      ],
+      "Select a service provider to start": [
+        "Vyberte poskytovatele služeb a začněte"
       ],
       "Select all items for": [
         "Vybrat všechny položky za"
@@ -5240,6 +5228,9 @@
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "Automaticky mazat zprávy ve spamu a koši"
+      ],
+      "Calendar sharing": [
+        "Sdílení kalendáře"
       ],
       "Custom email domains": [
         "Vlastní e-mailové domény"

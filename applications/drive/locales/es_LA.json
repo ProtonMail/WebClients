@@ -340,12 +340,6 @@
       "Hide advanced PGP settings": [
         "Ocultar ajustes PGP avanzados"
       ],
-      "Hide folders": [
-        "Ocultar carpetas"
-      ],
-      "Hide labels": [
-        "Ocultar etiquetas"
-      ],
       "Image could not be loaded with tracker protection.": [
         "No se pudo cargar la imagen con la protección de rastreo."
       ],
@@ -606,12 +600,6 @@
       ],
       "Show advanced PGP settings": [
         "Mostrar ajustes PGP avanzados"
-      ],
-      "Show folders": [
-        "Mostrar carpetas"
-      ],
-      "Show labels": [
-        "Mostrar etiquetas"
       ],
       "Show preview": [
         "Vista previa"
@@ -4013,6 +4001,9 @@
       "Select a folder to move to.": [
         "Seleccione una carpeta para mover."
       ],
+      "Select a service provider to start": [
+        "Seleccione un proveedor de servicios para comenzar"
+      ],
       "Select all items for": [
         "Seleccionar todos los elementos para"
       ],
@@ -4404,6 +4395,11 @@
       ],
       "Your previous recovery phrase": [
         "Su frase de recuperación anterior"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Color seleccionado:"
       ]
     },
     "Info on errors": {
@@ -5092,8 +5088,15 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendario",
+        "${ maximumNumberOfCalendars } calendarios"
+      ],
       "Auto-delete spam and trashed messages": [
         "Eliminar automáticamente spam y mensajes de la papelera"
+      ],
+      "Calendar sharing": [
+        "Calendarios compartidos"
       ],
       "Custom email domains": [
         "Dominios de correo electrónico personalizados"
