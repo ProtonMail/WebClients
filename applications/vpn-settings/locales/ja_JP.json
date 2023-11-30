@@ -1932,6 +1932,9 @@
       "You have used all users in your plan. Please upgrade your plan to add a new user.": [
         "現在のプランでのユーザー数の上限に達しました。新規ユーザーを追加するにはアップグレードしてください。"
       ],
+      "You must activate your organization keys. Without activation you will not be able to create or access non-private users.": [
+        "組織キーをアクティブ化する必要があります。 アクティベーションを行わないと、非プライベート ユーザーを作成したりアクセスしたりすることはできません。"
+      ],
       "You must privatize all users before generating new organization keys": [
         "新しい組織キーを生成する前に、すべてのユーザーをプライベート化する必要があります"
       ],
@@ -3657,6 +3660,9 @@
       ],
       "Your account has at least one overdue invoice. Your account is restricted. Continued non-payment will block your emails and sharing links. ${ payInvoiceLink }": [
         "あなたのアカウントには未払いの請求があり、アカウントが制限されています。このまま支払いが行われなければ、メールやリンクの共有がブロックされます。${ payInvoiceLink }"
+      ],
+      "Your account was successfully updated with this promotion": [
+        "Android モバイル アプリではまだ利用できません。"
       ],
       "Your account will be updated once the payment is cleared.": [
         "支払いが完了すると、アカウントは更新されます。"
