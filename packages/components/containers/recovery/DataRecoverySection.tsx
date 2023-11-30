@@ -5,13 +5,18 @@ import { useLoading } from '@proton/hooks';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
+import { MNEMONIC_STATUS, UserSettings } from '@proton/shared/lib/interfaces';
+import { syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
 import { Icon, Info, Toggle, useModalState } from '../../components';
 import { useFlag } from '../../containers/unleash';
 import {
     useApi,
+    useConfig,
     useEventManager,
+    useGetAddresses,
+    useGetUser,
+    useGetUserKeys,
     useHasOutdatedRecoveryFile,
     useIsMnemonicAvailable,
     useIsRecoveryFileAvailable,
@@ -34,9 +39,13 @@ const DataRecoverySection = () => {
     const [userSettings] = useUserSettings();
     const { call } = useEventManager();
     const api = useApi();
+    const { APP_NAME } = useConfig();
 
     const hasTrustedDeviceRecovery = useFlag('TrustedDeviceRecovery');
 
+    const getUser = useGetUser();
+    const getUserKeys = useGetUserKeys();
+    const getAddresses = useGetAddresses();
     const [isRecoveryFileAvailable] = useIsRecoveryFileAvailable();
     const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
 
@@ -77,8 +86,25 @@ const DataRecoverySection = () => {
         [loadingIsMnemonicAvailable]
     );
 
+    const syncDeviceRecoveryHelper = async (partialUserSettings: Partial<UserSettings>) => {
+        const [user, userKeys, addresses] = await Promise.all([getUser(), getUserKeys(), getAddresses()]);
+        return syncDeviceRecovery({
+            api,
+            user,
+            addresses,
+            appName: APP_NAME,
+            userSettings: { ...userSettings, ...partialUserSettings },
+            userKeys,
+        });
+    };
+
     const handleChangeDeviceRecoveryToggle = async (checked: boolean) => {
-        await api(updateDeviceRecovery({ DeviceRecovery: Number(checked) }));
+        const DeviceRecovery = Number(checked) as 0 | 1;
+        if (userSettings.DeviceRecovery === DeviceRecovery) {
+            return;
+        }
+        await api(updateDeviceRecovery({ DeviceRecovery }));
+        await syncDeviceRecoveryHelper({ DeviceRecovery });
         await call();
     };
 
@@ -90,7 +116,11 @@ const DataRecoverySection = () => {
             )}
             {renderGenerateMnemonicModal && <GenerateMnemonicModal {...generateMnemonicModal} />}
             {renderVoidRecoveryFilesModal && (
-                <VoidRecoveryFilesModal trustedDeviceRecovery={hasTrustedDeviceRecovery} {...voidRecoveryFilesModal} />
+                <VoidRecoveryFilesModal
+                    onVoid={() => handleChangeDeviceRecoveryToggle(false)}
+                    trustedDeviceRecovery={Boolean(hasTrustedDeviceRecovery && userSettings.DeviceRecovery)}
+                    {...voidRecoveryFilesModal}
+                />
             )}
 
             <SettingsSection>

@@ -12,9 +12,10 @@ interface Props extends Omit<ModalProps, 'children' | 'size'> {
      * Remove when TrustedDeviceRecovery feature is removed
      */
     trustedDeviceRecovery: boolean | undefined;
+    onVoid: () => Promise<void>;
 }
 
-const VoidRecoveryFilesModal = ({ trustedDeviceRecovery, onClose, ...rest }: Props) => {
+const VoidRecoveryFilesModal = ({ trustedDeviceRecovery, onVoid, onClose, ...rest }: Props) => {
     const { call } = useEventManager();
     const api = useApi();
     const { createNotification } = useNotifications();
@@ -24,6 +25,7 @@ const VoidRecoveryFilesModal = ({ trustedDeviceRecovery, onClose, ...rest }: Pro
     const handleVoidClick = async () => {
         await api(deleteRecoverySecrets());
         await call();
+        await onVoid();
         createNotification({ type: 'info', text: c('Info').t`Recovery files have been voided` });
         onClose?.();
     };
@@ -42,7 +44,7 @@ const VoidRecoveryFilesModal = ({ trustedDeviceRecovery, onClose, ...rest }: Pro
             <p className="m-0">
                 {trustedDeviceRecovery
                     ? c('Info')
-                          .t`You won’t be able to recover locked data using your downloaded recovery files. This will also void trusted device-recovery information.`
+                          .t`You won’t be able to recover locked data using your downloaded recovery files. This will also disable trusted device recovery.`
                     : c('Info').t`You won’t be able to recover locked data using your downloaded recovery files.`}
             </p>
         </Prompt>
