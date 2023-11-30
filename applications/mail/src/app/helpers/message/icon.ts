@@ -55,13 +55,8 @@ const getMapEmailHeaders = (headers?: string): { [key: string]: X_PM_HEADERS } =
     }, {});
 };
 
-export const getSendStatusIcon = (
-    sendPreferences: SendPreferences,
-    ktActivation: KeyTransparencyActivation
-): StatusIcon | undefined => {
-    const { encrypt, pgpScheme, hasApiKeys, isPublicKeyPinned, warnings, error, ktVerificationResult } =
-        sendPreferences;
-    const ktActivated = ktActivation === KeyTransparencyActivation.SHOW_UI;
+export const getSendStatusIcon = (sendPreferences: SendPreferences): StatusIcon | undefined => {
+    const { encrypt, pgpScheme, hasApiKeys, isPublicKeyPinned, warnings, error } = sendPreferences;
     const validationErrorsMessage = warnings?.join('; ');
     const warningsText = validationErrorsMessage
         ? c('Key validation warning').t`Recipient's key validation failed: ${validationErrorsMessage}`
@@ -83,16 +78,8 @@ export const getSendStatusIcon = (
                 .t`Zero-access encrypted. Recipient has disabled end-to-end encryption on their account.`,
         };
     }
-    const ktVerificationStatus = ktVerificationResult?.status;
     if (pgpScheme === SEND_PM) {
         const result = { colorClassName: 'color-info', isEncrypted: true };
-        if (ktActivated && ktVerificationStatus === KT_VERIFICATION_STATUS.UNVERIFIED_KEYS) {
-            return {
-                ...result,
-                fill: WARNING,
-                text: c('loc_nightly: Composer email icon').t`End-to-end encrypted without Key Transparency`,
-            };
-        }
         if (isPublicKeyPinned) {
             return {
                 ...result,
