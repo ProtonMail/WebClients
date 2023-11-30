@@ -38,7 +38,7 @@ const StandardPublicApp = ({ loader, locales = {}, children }: Props) => {
                 getClosestLocaleMatch(languageParams || languageCookie || '', locales) ||
                 getClosestLocaleCode(browserLocale, locales);
             return Promise.all([
-                loadCryptoWorker(getCryptoWorkerOptions(APP_NAME)),
+                loadCryptoWorker(getCryptoWorkerOptions(APP_NAME, {})),
                 loadLocale(localeCode, locales),
                 loadDateLocale(localeCode, browserLocale),
             ]);

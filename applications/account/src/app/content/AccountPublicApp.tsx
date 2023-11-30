@@ -51,7 +51,7 @@ const AccountPublicApp = ({
             const browserLocale = getBrowserLocale();
             const localeCode = getClosestLocaleMatch(pathLocale || languageParams || '', locales) || DEFAULT_LOCALE;
             await Promise.all([
-                loadCryptoWorker(getCryptoWorkerOptions(APPS.PROTONACCOUNT)),
+                loadCryptoWorker(getCryptoWorkerOptions(APPS.PROTONACCOUNT, {})),
                 loadLocale(localeCode, locales),
                 loadDateLocale(localeCode, browserLocale),
             ]);
