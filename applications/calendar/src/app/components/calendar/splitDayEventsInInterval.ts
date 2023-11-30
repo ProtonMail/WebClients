@@ -1,7 +1,17 @@
-import { differenceInCalendarDays, endOfDay, max, min, startOfDay } from '@proton/shared/lib/date-fns-utc';
+import { addDays, differenceInCalendarDays, endOfDay, max, min, startOfDay } from '@proton/shared/lib/date-fns-utc';
 
 import { CalendarViewEvent } from '../../containers/calendar/interface';
 import { LayoutEvent } from './layout';
+
+const getEndDate = (end: Date, maxDate: Date, isAllPartDay: boolean) => {
+    const minEnd = min(end, maxDate);
+    const endsOnMidnight = +minEnd === +startOfDay(minEnd);
+    if (isAllPartDay && endsOnMidnight) {
+        // for part-day events displayed as all-day and ending on midnight, we want to avoid "adding an extra day"
+        return endOfDay(addDays(minEnd, -1));
+    }
+    return endOfDay(minEnd);
+};
 
 interface SplitDayEventsInIntervalArguments {
     events: CalendarViewEvent[];
@@ -15,7 +25,7 @@ export const splitDayEventsInInterval = ({
 }: SplitDayEventsInIntervalArguments) => {
     return events.reduce<LayoutEvent[]>((acc, { start, end, isAllDay, isAllPartDay }, i) => {
         const startDate = startOfDay(max(start, minDate));
-        const endDate = endOfDay(min(end, maxDate));
+        const endDate = getEndDate(end, maxDate, isAllPartDay);
 
         const isDisplayedMultipleDays = isAllDay || isAllPartDay;
 
