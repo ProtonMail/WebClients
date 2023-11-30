@@ -340,12 +340,6 @@
       "Hide advanced PGP settings": [
         "Masquer les paramètres PGP avancés"
       ],
-      "Hide folders": [
-        "Masquer les dossiers"
-      ],
-      "Hide labels": [
-        "Masquer les labels"
-      ],
       "Image could not be loaded with tracker protection.": [
         "L'image n'a pas pu être chargée en raison de la protection contre les traqueurs."
       ],
@@ -386,7 +380,7 @@
         "Charger l'image"
       ],
       "Loading link": [
-        "Chargement du lien"
+        "Charger le lien"
       ],
       "Manage folders": [
         "Gérer les dossiers"
@@ -606,12 +600,6 @@
       ],
       "Show advanced PGP settings": [
         "Afficher les paramètres PGP avancés"
-      ],
-      "Show folders": [
-        "Afficher les dossiers"
-      ],
-      "Show labels": [
-        "Afficher les labels"
       ],
       "Show preview": [
         "Afficher un aperçu"
@@ -3733,7 +3721,7 @@
         "Indexation des résultats de recherche…"
       ],
       "Inherited from parent folder": [
-        "Hérité du dossier dans lequel il est placé."
+        "Similaire au dossier principal"
       ],
       "Initializing": [
         "Initialisation en cours"
@@ -4012,6 +4000,9 @@
       ],
       "Select a folder to move to.": [
         "Sélectionnez un dossier de destination."
+      ],
+      "Select a service provider to start": [
+        "Commencez par sélectionner un service"
       ],
       "Select all items for": [
         "Sélectionner tous les éléments pour"
@@ -5095,6 +5086,9 @@
       "Auto-delete spam and trashed messages": [
         "Suppression automatique des messages dans les dossiers Indésirables/spam et Corbeille"
       ],
+      "Calendar sharing": [
+        "Partage de calendrier"
+      ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
       ],
@@ -5396,7 +5390,7 @@
         "Découvrez tous les services ${ BRAND_NAME }"
       ],
       "Pick a theme": [
-        "Sélectionner un thème"
+        "Choisissez un thème"
       ],
       "Set up your organization": [
         "Configurez votre organisation"
@@ -5405,7 +5399,7 @@
         "Utilisez le sélecteur d'applications en haut à gauche pour accéder à tous les services ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ PASS_SHORT_APP_NAME }."
       ],
       "You will be able to change your theme any time in your settings.": [
-        "Vous pouvez modifier votre thème à tout moment dans vos paramètres."
+        "Vous pouvez changer de thème dans vos paramètres quand vous le voulez."
       ]
     },
     "Onboarding Title": {

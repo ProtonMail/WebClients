@@ -346,12 +346,6 @@
       "Hide advanced PGP settings": [
         "Схаваць дадатковыя налады PGP"
       ],
-      "Hide folders": [
-        "Схаваць папкі"
-      ],
-      "Hide labels": [
-        "Схаваць меткі"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Не атрымалася загрузіць відарыс з уключанай абаронай ад праграм сачэння."
       ],
@@ -390,6 +384,9 @@
       ],
       "Load image": [
         "Загрузіць відарыс"
+      ],
+      "Loading link": [
+        "Загрузка спасылкі"
       ],
       "Manage folders": [
         "Кіраванне папкамі"
@@ -609,12 +606,6 @@
       ],
       "Show advanced PGP settings": [
         "Паказаць дадатковыя налады PGP"
-      ],
-      "Show folders": [
-        "Паказаць папкі"
-      ],
-      "Show labels": [
-        "Паказаць меткі"
       ],
       "Show preview": [
         "Папярэдні прагляд"
@@ -4148,6 +4139,9 @@
       "Select a folder to move to.": [
         "Выберыце папку для перамяшчэння."
       ],
+      "Select a service provider to start": [
+        "Выберыце пастаўшчыка паслуг, каб пачаць"
+      ],
       "Select all items for": [
         "Выбраць усе элементы для"
       ],
@@ -4358,6 +4352,9 @@
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Збой расшыфроўкі файла або некаторых яго даных."
       ],
+      "Unknown date": [
+        "Невядомая дата"
+      ],
       "Unknown error": [
         "Невядомая памылка"
       ],
@@ -4540,6 +4537,11 @@
       ],
       "Your previous recovery phrase": [
         "Ваша папярэдняя фраза аднаўлення"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Выбраны колер:"
       ]
     },
     "Info on errors": {
@@ -5244,8 +5246,17 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } каляндар",
+        "${ maximumNumberOfCalendars } календары",
+        "${ maximumNumberOfCalendars } календароў",
+        "${ maximumNumberOfCalendars } календароў"
+      ],
       "Auto-delete spam and trashed messages": [
         "Аўтаматычна выдаляць паведамленні ў спаме і сметніцы"
+      ],
+      "Calendar sharing": [
+        "Абагулены каляндар"
       ],
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
@@ -5585,8 +5596,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Пазнаёмцеся з усімі сэрвісамі ${ BRAND_NAME }"
       ],
+      "Pick a theme": [
+        "Выберыце тэму"
+      ],
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Скарыстайцеся выбарам праграм злева ўверсе для атрымання доступу да ўсіх сэрвісаў ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Вы зможаце змяніць тэму ў любы час праз налады."
       ]
     },
     "Onboarding Title": {
