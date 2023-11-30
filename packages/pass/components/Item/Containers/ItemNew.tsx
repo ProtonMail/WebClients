@@ -45,7 +45,7 @@ export const ItemNew: VFC = () => {
             setFilters({ selectedShareId: createIntent.shareId });
         }
 
-        selectItem(createIntent.shareId, createIntent.optimisticId);
+        selectItem(createIntent.shareId, createIntent.optimisticId, { mode: 'replace' });
     };
 
     const handleCancel = () => history.goBack();
