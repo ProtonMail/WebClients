@@ -68,21 +68,31 @@ const ContactPGPSettings = ({ model, setModel, mailSettings }: Props) => {
                     });
                     return false;
                 }
-                const publicKey = await CryptoProxy.importPublicKey({ armoredKey });
-                const fingerprint = publicKey.getFingerprint();
-                const canEncrypt = await getKeyEncryptionCapableStatus(publicKey);
-                if (canEncrypt) {
-                    encryptionCapableFingerprints.add(fingerprint);
-                }
-                if (!trustedFingerprints.has(fingerprint)) {
-                    trustedFingerprints.add(fingerprint);
-                    pinnedKeys.push(publicKey);
+
+                try {
+                    const publicKey = await CryptoProxy.importPublicKey({ armoredKey, checkCompatibility: true });
+
+                    const fingerprint = publicKey.getFingerprint();
+                    const canEncrypt = await getKeyEncryptionCapableStatus(publicKey);
+                    if (canEncrypt) {
+                        encryptionCapableFingerprints.add(fingerprint);
+                    }
+                    if (!trustedFingerprints.has(fingerprint)) {
+                        trustedFingerprints.add(fingerprint);
+                        pinnedKeys.push(publicKey);
+                        return true;
+                    }
+                    const indexFound = pinnedKeys.findIndex((publicKey) => publicKey.getFingerprint() === fingerprint);
+                    createNotification({ text: c('Info').t`Duplicate key updated`, type: 'warning' });
+                    pinnedKeys.splice(indexFound, 1, publicKey);
                     return true;
+                } catch (e: any) {
+                    createNotification({
+                        type: 'error',
+                        text: e.message,
+                    });
+                    return false;
                 }
-                const indexFound = pinnedKeys.findIndex((publicKey) => publicKey.getFingerprint() === fingerprint);
-                createNotification({ text: c('Info').t`Duplicate key updated`, type: 'warning' });
-                pinnedKeys.splice(indexFound, 1, publicKey);
-                return true;
             })
         );
 
