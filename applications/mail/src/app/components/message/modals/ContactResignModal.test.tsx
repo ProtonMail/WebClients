@@ -46,14 +46,14 @@ describe('Contact resign modal', () => {
 
         const onResignSpy = jest.fn();
 
-        const container = await render(
+        const view = await render(
             <ContactResignModal title={title} contacts={contacts} onResign={onResignSpy} open>
                 {children}
             </ContactResignModal>,
             false
         );
 
-        return { container, senderKeys, updateSpy, onResignSpy };
+        return { container: view, senderKeys, updateSpy, onResignSpy };
     };
 
     it('should resign the contact and render email rows', async () => {
