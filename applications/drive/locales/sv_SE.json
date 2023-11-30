@@ -340,12 +340,6 @@
       "Hide advanced PGP settings": [
         "Dölj avancerade PGP-inställningar"
       ],
-      "Hide folders": [
-        "Dölj mappar"
-      ],
-      "Hide labels": [
-        "Dölj etiketter"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Bild kunde inte laddas med spårningsskydd."
       ],
@@ -606,12 +600,6 @@
       ],
       "Show advanced PGP settings": [
         "Visa avancerade PGP-inställningar"
-      ],
-      "Show folders": [
-        "Visa mappar"
-      ],
-      "Show labels": [
-        "Visa etiketter"
       ],
       "Show preview": [
         "Visa förhandsgranskning"
@@ -4013,6 +4001,9 @@
       "Select a folder to move to.": [
         "Välj en mapp att flytta till."
       ],
+      "Select a service provider to start": [
+        "Välj en tjänsteleverantör för att starta"
+      ],
       "Select all items for": [
         "Välj alla objekt för"
       ],
@@ -4404,6 +4395,11 @@
       ],
       "Your previous recovery phrase": [
         "Din föregående återställningsfras"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Vald färg:"
       ]
     },
     "Info on errors": {
@@ -5092,8 +5088,15 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalender",
+        "${ maximumNumberOfCalendars } kalendrar"
+      ],
       "Auto-delete spam and trashed messages": [
         "Ta bort skräppost och kastade meddelanden automatiskt"
+      ],
+      "Calendar sharing": [
+        "Kalenderdelning"
       ],
       "Custom email domains": [
         "Anpassade e-postdomäner"

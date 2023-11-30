@@ -340,12 +340,6 @@
       "Hide advanced PGP settings": [
         "PGP-ის დამატებითი პარამეტრების დამალვა"
       ],
-      "Hide folders": [
-        "საქაღალდეების დამალვა"
-      ],
-      "Hide labels": [
-        "ჭდეების დამალვა"
-      ],
       "Image could not be loaded with tracker protection.": [
         "ტრეკინგისგან დაცვით გამოსახულების ჩატვირთვა შეუძლებელია."
       ],
@@ -603,12 +597,6 @@
       ],
       "Show advanced PGP settings": [
         "PGP-ის დამატებითი პარამეტრების ჩვენება"
-      ],
-      "Show folders": [
-        "საქაღალდეების ჩვენება"
-      ],
-      "Show labels": [
-        "ჭდეების ჩვენება"
       ],
       "Show preview": [
         "გადახედვის ჩვენება"
@@ -4010,6 +3998,9 @@
       "Select a folder to move to.": [
         "აირჩიეთ საქაღალდე, სადაც გადაიტანთ."
       ],
+      "Select a service provider to start": [
+        "დასაწყებად აირჩიეთ მომსახურების მომწოდებელი"
+      ],
       "Select all items for": [
         "ყველა ელემენტის მონიშვნა ვისთვის"
       ],
@@ -5088,6 +5079,9 @@
     "new_plans: feature": {
       "Auto-delete spam and trashed messages": [
         "სპამისა და სანაგვე ყუთში მდებარე შეტყობინებების ავტომატური წაშლა"
+      ],
+      "Calendar sharing": [
+        "კალენდრის გაზიარება"
       ],
       "Custom email domains": [
         "თქვენი ელფოსტის დომენები"

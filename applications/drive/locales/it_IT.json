@@ -35,7 +35,7 @@
         "Aggiungi email"
       ],
       "Add group": [
-        "Aggiungi gruppo"
+        "Aggiungi un gruppo"
       ],
       "Add new contact": [
         "Aggiungi nuovo contatto"
@@ -296,7 +296,7 @@
         "Esporta gruppo di contatti"
       ],
       "Export contacts": [
-        "Esporta contatti"
+        "Esporta i contatti"
       ],
       "Fit to window": [
         "Adatta alla finestra"
@@ -340,12 +340,6 @@
       "Hide advanced PGP settings": [
         "Nascondi impostazioni PGP avanzate"
       ],
-      "Hide folders": [
-        "Nascondi cartelle"
-      ],
-      "Hide labels": [
-        "Nascondi etichette"
-      ],
       "Image could not be loaded with tracker protection.": [
         "Impossibile caricare l'immagine con la protezione dai tracker attiva."
       ],
@@ -384,6 +378,9 @@
       ],
       "Load image": [
         "Carica Immagine"
+      ],
+      "Loading link": [
+        "Caricamento del link in corso"
       ],
       "Manage folders": [
         "Gestisci cartelle"
@@ -604,12 +601,6 @@
       "Show advanced PGP settings": [
         "Mostra impostazioni PGP avanzate"
       ],
-      "Show folders": [
-        "Mostra cartelle"
-      ],
-      "Show labels": [
-        "Mostra etichette"
-      ],
       "Show preview": [
         "Mostra anteprima"
       ],
@@ -770,10 +761,10 @@
         "Ritenta con un altro termine."
       ],
       "You don't have any contacts.": [
-        "Non hai nessun contatto."
+        "Non hai contatti."
       ],
       "You don't have any groups.": [
-        "Non hai nessun gruppo."
+        "Non hai gruppi."
       ]
     },
     "Addon": {
@@ -1026,7 +1017,7 @@
         "rame"
       ],
       "enzian": [
-        "enzian"
+        "genziana"
       ],
       "fern": [
         "felce"
@@ -1962,7 +1953,7 @@
     },
     "Description": {
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Decrittografia dei contatti... Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, sarai in grado di scaricare il file con tutti i tuoi contatti esportati."
+        "Decrittografia dei contatti in corso. Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, potrai scaricare il file con tutti i tuoi contatti esportati."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminando i contatti... Questo potrebbe richiedere qualche minuto. Quando il processo è completato, puoi chiudere questo modale."
@@ -4010,6 +4001,9 @@
       "Select a folder to move to.": [
         "Seleziona la cartella di destinazione."
       ],
+      "Select a service provider to start": [
+        "Seleziona un fornitore di servizi per iniziare"
+      ],
       "Select all items for": [
         "Seleziona tutti gli elementi di"
       ],
@@ -4083,7 +4077,7 @@
         "L'account potrebbe avere una nuova chiave o quanto segue potrebbe essere stato manomesso: ${ items }. Aprilo solo se ti fidi."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "L'applicazione deve decrittografare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo, verrà generato un file VCF e sarai in grado di scaricarlo."
+        "L'applicazione deve decrittografare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo verrà generato un file VCF che potrai scaricare."
       ],
       "The download count includes both actual downloads and instances when files are previewed.": [
         "Il conteggio dei download include sia i download effettivi sia le volte in cui i file vengono mostrati in anteprima."
@@ -4104,7 +4098,7 @@
         "Questo account è stato sospeso a causa di una potenziale violazione delle politiche."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Questo indirizzo è disabilitato. Per essere in grado di inviare a questo indirizzo il proprietario deve prima attivarlo."
+        "Questo indirizzo è disabilitato. Per poter inviare a questo indirizzo il proprietario deve prima abilitarlo."
       ],
       "This browser does not support previewing PDF documents. Please download the file.": [
         "Questo browser non supporta l'anteprima dei documenti PDF. Scarica il file."
@@ -4217,6 +4211,9 @@
       ],
       "Unfortunately, it appears that the file or some of its data cannot be decrypted.": [
         "Sfortunatamente, sembra che il file o alcuni dei suoi dati non possano essere decriptati."
+      ],
+      "Unknown date": [
+        "Data sconosciuta"
       ],
       "Unknown error": [
         "Errore sconosciuto"
@@ -4400,6 +4397,11 @@
         "La tua frase di recupero precedente"
       ]
     },
+    "info": {
+      "Selected color:": [
+        "Colore selezionato:"
+      ]
+    },
     "Info on errors": {
       "Click for details": [
         "Clicca per maggiori dettagli"
@@ -4479,7 +4481,7 @@
         "Aggiungi URL immagine"
       ],
       "Add to group": [
-        "Aggiungi ad un gruppo"
+        "Aggiungi a un gruppo"
       ],
       "App password": [
         "Password app"
@@ -4642,7 +4644,7 @@
         "Scadenza"
       ],
       "Export contacts": [
-        "Esporta contatti"
+        "Esporta i contatti"
       ],
       "Extended address": [
         "Indirizzo completo"
@@ -5086,8 +5088,15 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendario",
+        "${ maximumNumberOfCalendars } calendari"
+      ],
       "Auto-delete spam and trashed messages": [
         "Cancella automaticamente i messaggi indesiderati e cestinati"
+      ],
+      "Calendar sharing": [
+        "Condivisione del calendario"
       ],
       "Custom email domains": [
         "Domini email personalizzati"
@@ -5394,6 +5403,9 @@
       ],
       "Set up your organization": [
         "Configura la tua organizzazione"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Usa il raccoglitore delle app in alto a sinistra per accedere a tutti i servizi di ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }."
       ],
       "You will be able to change your theme any time in your settings.": [
         "Potrai cambiare il tema in qualsiasi momento dalle impostazioni."
