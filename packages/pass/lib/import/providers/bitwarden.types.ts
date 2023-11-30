@@ -18,7 +18,14 @@ type BitwardenCustomField = {
     value: MaybeNull<string>;
 };
 
-type BitwardenBaseItem = { name: string; notes: MaybeNull<string>; fields?: BitwardenCustomField[] };
+type BitwardenBaseItem = {
+    name: string;
+    notes: MaybeNull<string>;
+    fields?: BitwardenCustomField[];
+    folderId: MaybeNull<string>;
+};
+
+type BitwardenFolder = { id: string; name: string };
 
 export type BitwardenLoginItem = BitwardenBaseItem & {
     type: BitwardenType.LOGIN;
@@ -53,4 +60,5 @@ type BitwardenItem = BitwardenLoginItem | BitwardenNoteItem | BitwardenCCItem | 
 export type BitwardenData = {
     encrypted: boolean;
     items: BitwardenItem[];
+    folders: BitwardenFolder[];
 };

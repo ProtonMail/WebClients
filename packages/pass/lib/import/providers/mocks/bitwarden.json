@@ -1,6 +1,11 @@
 {
     "encrypted": false,
-    "folders": [],
+    "folders": [
+        {
+            "id": "e3b5ab63-de3f-4cf2-b982-b0c900f950c5",
+            "name": "custom folder"
+        }
+    ],
     "items": [
         {
             "id": "aa6874e0-c259-41fa-8a18-afa200cf3f3a",
@@ -43,6 +48,25 @@
                 "username": "username",
                 "password": "password",
                 "totp": "otpauth://totp/test?secret=proton333&issuer=proton"
+            },
+            "collectionIds": null
+        },
+        {
+            "id": "55ddda5d-84da-4fc2-8f5d-47c6122dfa4b",
+            "organizationId": null,
+            "folderId": "e3b5ab63-de3f-4cf2-b982-b0c900f950c5",
+            "type": 3,
+            "reprompt": 0,
+            "name": "Credit Card Y",
+            "notes": "Credit Card Y AMEX note",
+            "favorite": false,
+            "card": {
+                "cardholderName": "A B",
+                "brand": "Amex",
+                "number": "374242424242424",
+                "expMonth": "1",
+                "expYear": "2025",
+                "code": "123"
             },
             "collectionIds": null
         },
@@ -146,6 +170,50 @@
                 "expMonth": "1",
                 "expYear": "2025",
                 "code": "123"
+            },
+            "collectionIds": null
+        },
+        {
+            "id": "9f4c6b99-831e-4a51-abf5-b0300098555b",
+            "organizationId": null,
+            "folderId": "e3b5ab63-de3f-4cf2-b982-b0c900f950c5",
+            "type": 1,
+            "reprompt": 0,
+            "name": "LoginItemMultipleWebsites",
+            "notes": "login note",
+            "favorite": false,
+            "fields": [
+                {
+                    "name": "Text 1",
+                    "value": "Text 1 content",
+                    "type": 0,
+                    "linkedId": null
+                },
+                {
+                    "name": "Hidden 1",
+                    "value": "Hidden 1 content",
+                    "type": 1,
+                    "linkedId": null
+                }
+            ],
+            "login": {
+                "uris": [
+                    {
+                        "match": null,
+                        "uri": "https://test.url1/"
+                    },
+                    {
+                        "match": null,
+                        "uri": "https://test.url2"
+                    },
+                    {
+                        "match": null,
+                        "uri": "androidapp://ch.protonmail.android"
+                    }
+                ],
+                "username": "username",
+                "password": "password",
+                "totp": "otpauth://totp/test?secret=proton333&issuer=proton"
             },
             "collectionIds": null
         }
