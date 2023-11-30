@@ -19,10 +19,14 @@ export const DashboardSideContent = ({ transactions, walletId }: Props) => {
             <div className="flex flex-column flex-align-items-center">
                 <h2 className="h4 text-left w-full text-semibold">{c('Wallet Dashboard').t`Quick actions`}</h2>
 
-                {/* TODO: connect with send when ready */}
-                <Button size="large" className="w-full mt-3">
+                <ButtonLike
+                    as={Link}
+                    to={walletId ? `/transfer#mode=send&walletId=${walletId}` : '/transfer#mode=send'}
+                    size="large"
+                    className="w-full mt-3"
+                >
                     <Icon name="arrow-up" className="mr-2" /> {c('Wallet Dashboard').t`Send`}
-                </Button>
+                </ButtonLike>
                 <ButtonLike
                     as={Link}
                     to={walletId ? `/transfer#walletId=${walletId}` : '/transfer'}

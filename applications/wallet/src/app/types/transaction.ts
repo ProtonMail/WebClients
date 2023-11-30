@@ -4,3 +4,8 @@ export interface Transaction {
     value: number;
     timestamp: number;
 }
+
+export interface Recipient {
+    address: string;
+    amount: number;
+}

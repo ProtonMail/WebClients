@@ -3,11 +3,14 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { Tabs } from '@proton/components/components';
+import useSearchParams from '@proton/hooks/useSearchParams';
 
-import { BitcoinReceiveInfoGenerator } from '../components';
+import { BitcoinReceiveInfoGenerator, OnchainTransactionBuilder } from '../components';
 
 export const BitcoinTransferContainer = () => {
-    const [tabIndex, setTabIndex] = useState(0);
+    const [params] = useSearchParams();
+
+    const [tabIndex, setTabIndex] = useState(params.mode === 'send' ? 1 : 0);
 
     return (
         <div className="flex flex-column flex-item-grow p-8">
@@ -22,11 +25,16 @@ export const BitcoinTransferContainer = () => {
                     tabs={[
                         {
                             title: c('Wallet Transfer').t`Receive bitcoins`,
-                            content: <BitcoinReceiveInfoGenerator />,
+                            content: <BitcoinReceiveInfoGenerator defaultWalletId={params.walletId} />,
                         },
                         {
                             title: c('Wallet Transfer').t`Send bitcoins`,
-                            content: <div>{/* This will be done with Bitcoin Send ticket */}</div>,
+                            content: (
+                                <div>
+                                    {/* TODO: Put send method selection before. Will be done once design finished */}
+                                    <OnchainTransactionBuilder defaultWalletId={params.walletId} />
+                                </div>
+                            ),
                         },
                     ]}
                 />
