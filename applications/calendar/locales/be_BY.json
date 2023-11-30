@@ -285,12 +285,6 @@
       "Hide affected calendars": [
         "Схаваць датычныя календары"
       ],
-      "Hide folders": [
-        "Схаваць папкі"
-      ],
-      "Hide labels": [
-        "Схаваць меткі"
-      ],
       "Hide time zones": [
         "Схаваць часавыя паясы"
       ],
@@ -530,12 +524,6 @@
       ],
       "Show affected calendars": [
         "Паказаць датычныя календары"
-      ],
-      "Show folders": [
-        "Паказаць папкі"
-      ],
-      "Show labels": [
-        "Паказаць меткі"
       ],
       "Show less": [
         "Паказаць менш"
@@ -2224,6 +2212,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "Павялічце эфектыўнасць і сачыце за сваім часам кадзіруючы колерам падзеі пры дапамозе катэгорый або сваім энергетычным узроўнем. Атрымайце гэту і многія іншыя функцыі з платным тарыфным планам."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Расшыфроўка кантактаў... Гэта можа заняць некалькі хвілін. Пасля завяршэння працэсу ў вас будзе магчымасць спампаваць файл з усімі экспартаванымі кантактамі."
       ],
@@ -4213,6 +4204,9 @@
       "Removed participants will be notified.": [
         "Выдаленыя ўдзельнікі атрымаюць апавяшчэнні."
       ],
+      "Select a service provider to start": [
+        "Выберыце пастаўшчыка паслуг, каб пачаць"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Выберыце фармат лістоў, які вы хочаце выкарыстоўваць як прадвызначаны, пры адпраўцы паведамленняў гэтым адрасатам."
       ],
@@ -4497,6 +4491,11 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Падобна, што ваш часавы пояс змяніўся на ${ timezone }. Вы сапраўды хочаце абнавіць налады вашага часавога пояса?"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Выбраны колер:"
       ]
     },
     "Info calendar search": {
@@ -5346,8 +5345,17 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } каляндар",
+        "${ maximumNumberOfCalendars } календары",
+        "${ maximumNumberOfCalendars } календароў",
+        "${ maximumNumberOfCalendars } календароў"
+      ],
       "Auto-delete spam and trashed messages": [
         "Аўтаматычна выдаляць паведамленні ў спаме і сметніцы"
+      ],
+      "Calendar sharing": [
+        "Абагулены каляндар"
       ],
       "Custom email domains": [
         "Карыстальніцкія дамены электроннай пошты"
@@ -5634,8 +5642,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Пазнаёмцеся з усімі сэрвісамі ${ BRAND_NAME }"
       ],
+      "Pick a theme": [
+        "Выберыце тэму"
+      ],
       "Set up your organization": [
         "Наладзьце сваю арганізацыю"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Скарыстайцеся выбарам праграм злева ўверсе для атрымання доступу да ўсіх сэрвісаў ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } і ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Вы зможаце змяніць тэму ў любы час праз налады."
       ]
     },
     "Option": {
@@ -6386,6 +6403,9 @@
       "Add your country's public holidays to your calendar.": [
         "Дадайце дзяржаўныя святы вашай краіны ў свой каляндар."
       ],
+      "Color-coding is here!": [
+        "Прадстаўляем вам кадзіраванне колерам!"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Лёгка знаходзьце падзею, якую шукаеце з нашай новай функцыяй пошуку."
       ],
@@ -6735,6 +6755,9 @@
       ],
       "Add participants": [
         "Дадаць удзельнікаў"
+      ],
+      "Add some color to your day": [
+        "Дадайце крыху колераў у свой дзень"
       ],
       "Add to ${ groupCount } group": [
         "Дадаць у ${ groupCount } групу",

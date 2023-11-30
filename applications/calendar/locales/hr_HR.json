@@ -219,12 +219,6 @@
       "Hide advanced PGP settings": [
         "Sakrij napredne PGP postavke"
       ],
-      "Hide folders": [
-        "Sakrij mape"
-      ],
-      "Hide labels": [
-        "Sakrij oznake"
-      ],
       "Hide time zones": [
         "Sakrij vremenske zone"
       ],
@@ -302,6 +296,9 @@
       ],
       "No, I won't attend": [
         "Neću prisustvovati"
+      ],
+      "No, thanks": [
+        "Ne, hvala"
       ],
       "Ok": [
         "U redu"
@@ -401,12 +398,6 @@
       ],
       "Show advanced PGP settings": [
         "Pokaži napredne PGP postavke"
-      ],
-      "Show folders": [
-        "Prikaži mape"
-      ],
-      "Show labels": [
-        "Prikaži oznake"
       ],
       "Show less": [
         "Prikaži manje"
@@ -573,12 +564,20 @@
         "Događaj nije podržan"
       ]
     },
+    "Attendee role": {
+      "Optional": [
+        "Neobavezno"
+      ]
+    },
     "bf2023: Deal details": {
       "1 user": [
         "1 korisnik"
       ],
       "3 TB": [
         "3 TB"
+      ],
+      "6 users": [
+        "6 korisnika"
       ]
     },
     "Bug category": {
@@ -697,6 +696,9 @@
       ]
     },
     "Calendar view": {
+      "Custom": [
+        "Prilagođeno"
+      ],
       "Day": [
         "Dan"
       ],
@@ -710,6 +712,22 @@
     "Collapsible tooltip": {
       "Expand": [
         "Proširi"
+      ]
+    },
+    "colon": {
+      ": ": [
+        ": "
+      ]
+    },
+    "color": {
+      "pacific": [
+        "pacifik"
+      ],
+      "pink": [
+        "ružičasta"
+      ],
+      "plum": [
+        "šljiva"
       ]
     },
     "Confirm modal title": {
@@ -824,6 +842,9 @@
       "Andorra": [
         "Andora"
       ],
+      "Angola": [
+        "Angola"
+      ],
       "Anguilla": [
         "Angvila"
       ],
@@ -835,6 +856,9 @@
       ],
       "Armenia": [
         "Armenija"
+      ],
+      "Aruba": [
+        "Aruba"
       ],
       "Ascension Island": [
         "Otok Ascension"
@@ -854,11 +878,23 @@
       "Bahrain": [
         "Bahrein"
       ],
+      "Bangladesh": [
+        "Bangladeš"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
       "Belarus": [
         "Bjelorusija"
       ],
       "Belgium": [
         "Belgija"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
       ],
       "Bermuda": [
         "Bermudi"
@@ -881,6 +917,9 @@
       "Bouvet Island": [
         "Otok Bouvet"
       ],
+      "Brazil": [
+        "Brazil"
+      ],
       "British Indian Ocean Territory": [
         "Britanski Indijskooceanski teritorij"
       ],
@@ -889,6 +928,9 @@
       ],
       "Bulgaria": [
         "Bugarska"
+      ],
+      "Burundi": [
+        "Burundi"
       ],
       "Cambodia": [
         "Kambodža"
@@ -946,6 +988,9 @@
       ],
       "Cuba": [
         "Kuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
       ],
       "Cyprus": [
         "Cipar"
@@ -1019,6 +1064,9 @@
       "French Southern Territories": [
         "Francuske južne zemlje"
       ],
+      "Gabon": [
+        "Gabon"
+      ],
       "Gambia": [
         "Gambija"
       ],
@@ -1031,17 +1079,29 @@
       "Ghana": [
         "Gana"
       ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
       "Greece": [
         "Grčka"
       ],
       "Greenland": [
         "Grenland"
       ],
+      "Grenada": [
+        "Grenada"
+      ],
       "Guadeloupe": [
         "Gvadalupa"
       ],
+      "Guam": [
+        "Guam"
+      ],
       "Guatemala": [
         "Gvatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
       ],
       "Guinea": [
         "Gvineja"
@@ -1052,11 +1112,20 @@
       "Guyana": [
         "Gvajana"
       ],
+      "Haiti": [
+        "Haiti"
+      ],
       "Heard Island and McDonald Islands": [
         "Otok Heard i otočje McDonald"
       ],
       "Holy See (Vatican City State)": [
         "Sveta Stolica (Država Vatikanskoga Grada)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
       ],
       "Hungary": [
         "Mađarska"
@@ -1069,6 +1138,9 @@
       ],
       "Indonesia": [
         "Indonezija"
+      ],
+      "Iran": [
+        "Iran"
       ],
       "Iraq": [
         "Irak"
@@ -1088,17 +1160,32 @@
       "Jamaica": [
         "Jamajka"
       ],
+      "Japan": [
+        "Japan"
+      ],
+      "Jordan": [
+        "Jordan"
+      ],
       "Kazakhstan": [
         "Kazahstan"
       ],
       "Kenya": [
         "Kenija"
       ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
       "Kuwait": [
         "Kuvajt"
       ],
       "Kyrgyzstan": [
         "Kirgistan"
+      ],
+      "Laos": [
+        "Laos"
       ],
       "Latvia": [
         "Latvija"
@@ -1138,6 +1225,12 @@
       ],
       "Maldives": [
         "Maldivi"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
       ],
       "Marshall Islands": [
         "Maršalovi otoci"
@@ -1181,6 +1274,12 @@
       "Namibia": [
         "Namibija"
       ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
       "Netherlands": [
         "Nizozemska"
       ],
@@ -1193,8 +1292,14 @@
       "Nicaragua": [
         "Nikaragva"
       ],
+      "Niger": [
+        "Niger"
+      ],
       "Nigeria": [
         "Nigerija"
+      ],
+      "Niue": [
+        "Niue"
       ],
       "Norfolk Island": [
         "Otok Norfolk"
@@ -1211,14 +1316,29 @@
       "Norway": [
         "Norveška"
       ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
       "Palestine": [
         "Palestina"
+      ],
+      "Panama": [
+        "Panama"
       ],
       "Papua New Guinea": [
         "Papua Nova Gvineja"
       ],
       "Paraguay": [
         "Paragvaj"
+      ],
+      "Peru": [
+        "Peru"
       ],
       "Philippines": [
         "Filipini"
@@ -1229,11 +1349,17 @@
       "Poland": [
         "Poljska"
       ],
+      "Portugal": [
+        "Portugal"
+      ],
       "Puerto Rico": [
         "Portoriko"
       ],
       "Qatar": [
         "Katar"
+      ],
+      "Reunion": [
+        "Reunion"
       ],
       "Romania": [
         "Rumunjska"
@@ -1265,11 +1391,20 @@
       "Saint Vincent and the Grenadines": [
         "Sveti Vincent i Grenadini"
       ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
       "Sao Tome and Principe": [
         "Sveti Toma i Prinsipe"
       ],
       "Saudi Arabia": [
         "Saudijska Arabija"
+      ],
+      "Senegal": [
+        "Senegal"
       ],
       "Serbia": [
         "Srbija"
@@ -1313,6 +1448,9 @@
       "Sri Lanka": [
         "Šri Lanka"
       ],
+      "Sudan": [
+        "Sudan"
+      ],
       "Suriname": [
         "Surinam"
       ],
@@ -1334,11 +1472,23 @@
       "Tajikistan": [
         "Tadžikistan"
       ],
+      "Tanzania": [
+        "Tanzania"
+      ],
       "Thailand": [
         "Tajland"
       ],
       "Timor-Leste": [
         "Istočni Timor"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
       ],
       "Trinidad and Tobago": [
         "Trinidad i Tobago"
@@ -1351,6 +1501,12 @@
       ],
       "Turks and Caicos Islands": [
         "Otoci Turks i Caicos"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
       ],
       "Ukraine": [
         "Ukrajina"
@@ -1369,6 +1525,12 @@
       ],
       "Uruguay": [
         "Urugvaj"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
       ],
       "Venezuela": [
         "Venecuela"
@@ -1522,6 +1684,11 @@
         "Onemogućeno"
       ]
     },
+    "Disabled calendar name suffix": {
+      "Disabled": [
+        "Onemogućeno"
+      ]
+    },
     "Duration": {
       "120 minutes": [
         "120 minuta"
@@ -1534,6 +1701,11 @@
       ],
       "90 minutes": [
         "90 minuta"
+      ]
+    },
+    "Edit event button tooltip": {
+      "Edit event": [
+        "Uredi događaj"
       ]
     },
     "Email body for description (description part)": {
@@ -1853,6 +2025,9 @@
       "Edited event not supported": [
         "Uređeni događaj nije podržan"
       ],
+      "Element": [
+        "Element"
+      ],
       "Encryption failed": [
         "Neuspješno šifriranje"
       ],
@@ -1981,6 +2156,14 @@
       ],
       "Your answer was sent, but the event could not be updated in your calendar": [
         "Vaš je odgovor poslan, ali događaj nije moguće ažurirati u vašem kalendaru"
+      ]
+    },
+    "Event reply": {
+      "maybe": [
+        "možda"
+      ],
+      "yes": [
+        "da"
       ]
     },
     "Event title": {
@@ -2136,6 +2319,9 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } se ne može povezati s vašim vanjskim računom. Molimo provjerite jesu li adresa poslužitelja pošte i broj porta ispravni."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } se ne može povezati s vašim Yahoo računom. Molimo provjerite jesu li adresa poslužitelja pošte i broj porta ispravni."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } se ne može povezati s vašim Yahoo računom. Molimo osigurajte sljedeće:"
@@ -2812,6 +2998,9 @@
       "From: ${ from }": [
         "Od: ${ from }"
       ],
+      "Good": [
+        "Dobra"
+      ],
       "Hide password": [
         "Sakrij lozinku"
       ],
@@ -2829,6 +3018,9 @@
       ],
       "Label messages as": [
         "Označi poruku kao"
+      ],
+      "Language": [
+        "Jezik"
       ],
       "Last 12 months only": [
         "Samo zadnjih 12 mjeseci"
@@ -2929,6 +3121,9 @@
       "Theme": [
         "Tema"
       ],
+      "Time zone": [
+        "Vremenska zona"
+      ],
       "To: ${ to }": [
         "Za: ${ to }"
       ],
@@ -2940,6 +3135,9 @@
       ],
       "Upload picture": [
         "Učitaj sliku"
+      ],
+      "URL": [
+        "URL"
       ],
       "Verification code": [
         "Kôd za provjeru"
@@ -3025,6 +3223,11 @@
       ],
       "Plain text": [
         "Običan tekst"
+      ]
+    },
+    "Modal action": {
+      "Cancel": [
+        "Poništi"
       ]
     },
     "Modal title": {
@@ -3205,6 +3408,11 @@
     "Notification time input": {
       "at": [
         "u"
+      ]
+    },
+    "Notification type": {
+      "email": [
+        "e-pošta"
       ]
     },
     "Notification when": {
@@ -3582,9 +3790,17 @@
         "Poništavanje lozinke"
       ]
     },
+    "Signing preference for emails": {
+      "Sign": [
+        "Potpiši"
+      ]
+    },
     "specialoffer: Action": {
       "Close": [
         "Zatvori"
+      ],
+      "Special offer": [
+        "Posebna ponuda"
       ]
     },
     "specialoffer: Deal details": {
@@ -3593,6 +3809,9 @@
       ],
       "3 TB": [
         "3 TB"
+      ],
+      "6 users": [
+        "6 korisnika"
       ],
       "Secure streaming": [
         "Siguran streaming"
