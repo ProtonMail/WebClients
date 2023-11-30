@@ -101,6 +101,9 @@
       "Copy address": [
         "Copiar dirección"
       ],
+      "Copy key to the clipboard": [
+        "Copiar clave al portapapeles"
+      ],
       "Create": [
         "Crear"
       ],
@@ -4706,6 +4709,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendario",
+        "${ maximumNumberOfCalendars } calendarios"
+      ],
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendarios"
@@ -5481,6 +5488,9 @@
       ],
       "IP Address copied to clipboard": [
         "La dirección IP fue copiada al portapapeles."
+      ],
+      "Key copied to the clipboard": [
+        "Clave copiada al portapapeles"
       ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenciales OpenVPN/IKEv2 regeneradas"

@@ -506,12 +506,6 @@
       "Hide": [
         "隱藏"
       ],
-      "Hide folders": [
-        "隱藏資料夾"
-      ],
-      "Hide labels": [
-        "隱藏標籤"
-      ],
       "Hide plan features": [
         "隱藏方案功能"
       ],
@@ -862,12 +856,6 @@
       ],
       "Show": [
         "顯示"
-      ],
-      "Show folders": [
-        "顯示資料夾"
-      ],
-      "Show labels": [
-        "顯示標籤"
       ],
       "Show less": [
         "顯示更少"
@@ -7094,9 +7082,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "立即以優惠價升級就可以擁有進階功能、產品與儲存空間。"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "升級至${ PLAN_NAMES[PLANS.BUNDLE] }，${ PLAN_NAMES[PLANS.FAMILY] }，或${ PLAN_NAMES[PLANS.BUNDLE_PRO] }以存取${ PROTON_SENTINEL_NAME }。"
-      ],
       "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "升級至${ PLAN_NAMES[PLANS.PASS_PLUS] }，${ PLAN_NAMES[PLANS.BUNDLE] }，${ PLAN_NAMES[PLANS.FAMILY] }或${ PLAN_NAMES[PLANS.BUNDLE_PRO] }以存取${ PROTON_SENTINEL_NAME }。"
       ],
@@ -9819,17 +9804,6 @@
         "團隊管理"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "您的試用期結束於 ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 後四碼 ${ last4 }"
@@ -9914,6 +9888,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "你正在當前的計畫中享受促銷價格。若你將帳號降級，你將會永遠失去此促銷價，即使你決定重新訂閱也是。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否則您對帳號的存取將會受限，且您的帳號最終將會停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "要繼續使用有進階功能的 ${ MAIL_APP_NAME }，請選擇您的訂購授權與繳款選項。"
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "您的試用期結束於 ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {

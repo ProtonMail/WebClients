@@ -524,12 +524,6 @@
       "Hide": [
         "Ukryj"
       ],
-      "Hide folders": [
-        "Ukryj foldery"
-      ],
-      "Hide labels": [
-        "Ukryj etykiety"
-      ],
       "Hide plan features": [
         "Ukryj funkcje planu"
       ],
@@ -883,12 +877,6 @@
       ],
       "Show": [
         "Pokaż"
-      ],
-      "Show folders": [
-        "Pokaż foldery"
-      ],
-      "Show labels": [
-        "Pokaż etykiety"
       ],
       "Show less": [
         "Pokaż mniej"
@@ -1411,8 +1399,20 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Oszczędź na szybkich, szwajcarskich usługach VPN z okazji Czarnego Piątku"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Oszczędź na szybkich, szwajcarskich usługach VPN z okazji Cyber Tygodnia"
+      ],
+      "Save with End of Year deals on a high-speed Swiss VPN": [
+        "Oszczędzaj dzięki ofertom na koniec roku na szybką szwajcarską sieć VPN"
+      ],
       "Select your Black Friday offer": [
         "Wybierz ofertę na Czarny Piątek"
+      ],
+      "Select your Cyber Week offer": [
+        "Wybierz ofertę Cyber Tygodnia"
+      ],
+      "Select your End of Year offer": [
+        "Wybierz ofertę na koniec roku"
       ]
     },
     "bf2023: info": {
@@ -3742,6 +3742,9 @@
       ],
       "Contact signature not verified": [
         "Podpis kontaktu nie został zweryfikowany"
+      ],
+      "Could not save preference": [
+        "Nie można zapisać ustawień"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Odznacz co najmniej ${ calendarsToFixCount } kalendarz",
@@ -7283,6 +7286,9 @@
       "Since you're a loyal user, your account has additional features enabled.": [
         "Dzięki temu, że od dawna jesteś użytkownikiem, Twoje konto posiada dodatkowe funkcje."
       ],
+      "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. This feature is only available to ${ BRAND_NAME } for business users with custom domains.": [
+        "Przesyłanie SMTP umożliwia usługom lub urządzeniom innych firm wysyłanie wiadomości e-mail za pośrednictwem ${ MAIL_APP_NAME } dla niestandardowych adresów domen. Ta funkcja jest dostępna tylko dla ${ BRAND_NAME } użytkowników biznesowych z domenami niestandardowymi."
+      ],
       "SMTP submission allows 3rd-party services or devices to send email through ${ MAIL_APP_NAME } for your custom domain addresses. To request access, please ${ createTicket } describing your use cases, what custom domains you would like to use, and expected hourly and daily email volumes.": [
         "Poświadczenia SMTP pozwalają innym usługom lub urządzeniom na wysyłanie wiadomości z Twojej niestandardowej domeny w ${ MAIL_APP_NAME }. Aby uzyskać dostęp do tej funkcji, ${ createTicket } i opisz swoje potrzeby. Napisz jakiej niestandardowej domeny chcesz użyć i oszacuj zapotrzebowanie wiadomości."
       ],
@@ -7651,9 +7657,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Ulepsz konto w specjalnej cenie, aby uzyskać dostęp do funkcji premium oraz większej przestrzeni dyskowej"
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Ulepsz plan do wersji ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } lub ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }, aby włączyć ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Ulepsz plan do wersji ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } lub ${ PLAN_NAMES[PLANS.BUNDLE_PRO] }, aby uzyskać dostęp do ${ PROTON_SENTINEL_NAME }."
@@ -8109,6 +8112,9 @@
       ],
       "Key ${ fingerprint } has already been uploaded": [
         "Klucz ${ fingerprint } został już przesłany"
+      ],
+      "Selected color:": [
+        "Wybrany kolor:"
       ]
     },
     "Info - folder colouring feature": {
@@ -8761,6 +8767,9 @@
       "Conversation grouping": [
         "Grupowanie wątku"
       ],
+      "Conversations per page": [
+        "Liczba wątków na stronę"
+      ],
       "Copy": [
         "Kopiuj"
       ],
@@ -9042,6 +9051,9 @@
       ],
       "Message": [
         "Wiadomość"
+      ],
+      "Messages per page": [
+        "Liczba wiadomości na stronę"
       ],
       "Moderate NAT": [
         "Umiarkowany NAT"
@@ -10179,6 +10191,12 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalendarz",
+        "${ maximumNumberOfCalendars } kalendarze",
+        "${ maximumNumberOfCalendars } kalendarzy",
+        "${ maximumNumberOfCalendars } kalendarzy"
+      ],
       "${ n } calendar": [
         "${ n } kalendarz",
         "${ n } kalendarze",
@@ -10595,17 +10613,6 @@
         "Zarządzanie zespołem"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } kończąca się na ${ last4 }"
@@ -10693,6 +10700,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Korzystasz z promocyjnej ceny na swój obecny plan. Jeśli obniżysz plan, stracisz promocyjną cenę i nie będzie ona dostępna przy ponownej subskrypcji."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "W przeciwnym razie dostęp do konta zostanie ograniczony, a następnie wyłączony."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Wybierz plan i metodę płatności, aby kontynuować używanie aplikacji ${ MAIL_APP_NAME } z funkcjami premium."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Wersja próbna zakończy się ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
@@ -11061,6 +11079,9 @@
       ],
       "IP Address copied to clipboard": [
         "Adres IP został skopiowany do schowka"
+      ],
+      "Key copied to the clipboard": [
+        "Klucz został skopiowany do schowka"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Klucz z odciskiem ${ fp } został usunięty."
@@ -11623,6 +11644,12 @@
       ],
       "End-to-end encryption": [
         "Szyfrowanie end-to-end"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do menedżera haseł premium ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Za jedyne **${ relativePrice } miesięcznie** więcej, otrzymasz dostęp do najwyższej jakości usługi VPN ${ BRAND_NAME }!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Za **${ relativePrice } miesięcznie** więcej uzyskasz dostęp do wszystkich funkcji premium usług ${ BRAND_NAME }!"
@@ -14094,6 +14121,9 @@
       "PayPal verification failed": [
         "Weryfikacja płatności PayPal nie powiodła się"
       ],
+      "Personalise your e-mail footer": [
+        "Spersonalizuj stopkę"
+      ],
       "Phone": [
         "Telefon"
       ],
@@ -14195,6 +14225,9 @@
       ],
       "Session management": [
         "Zarządzanie sesją"
+      ],
+      "Set a display name": [
+        "Ustaw nazwę wyświetlaną"
       ],
       "Set new password": [
         "Ustaw nowe hasło"

@@ -43,7 +43,7 @@
         "Aggiungi email"
       ],
       "Add group": [
-        "Aggiungi gruppo"
+        "Aggiungi un gruppo"
       ],
       "Add new contact": [
         "Aggiungi nuovo contatto"
@@ -250,7 +250,7 @@
         "Esporta gruppo di contatti"
       ],
       "Export contacts": [
-        "Esporta contatti"
+        "Esporta i contatti"
       ],
       "Forward as attachment": [
         "Inoltra come allegato"
@@ -278,12 +278,6 @@
       ],
       "Hide affected calendars": [
         "Nascondi i calendari interessati"
-      ],
-      "Hide folders": [
-        "Nascondi cartelle"
-      ],
-      "Hide labels": [
-        "Nascondi etichette"
       ],
       "Hide time zones": [
         "Nascondi fusi orari"
@@ -525,12 +519,6 @@
       "Show affected calendars": [
         "Mostra i calendari interessati"
       ],
-      "Show folders": [
-        "Mostra cartelle"
-      ],
-      "Show labels": [
-        "Mostra etichette"
-      ],
       "Show less": [
         "Mostra meno"
       ],
@@ -680,10 +668,10 @@
         "Ritenta con un altro termine."
       ],
       "You don't have any contacts.": [
-        "Non hai nessun contatto."
+        "Non hai contatti."
       ],
       "You don't have any groups.": [
-        "Non hai nessun gruppo."
+        "Non hai gruppi."
       ]
     },
     "Addon": {
@@ -1177,7 +1165,7 @@
         "rame"
       ],
       "enzian": [
-        "enzian"
+        "genziana"
       ],
       "fern": [
         "felce"
@@ -2190,8 +2178,11 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "Migliora l'efficienza e tieni traccia del tuo tempo classificando gli eventi per colore, in base alla categoria o alle tue energie. Ottieni questo e molto altro con un piano a pagamento."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
-        "Decrittografia dei contatti... Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, sarai in grado di scaricare il file con tutti i tuoi contatti esportati."
+        "Decrittografia dei contatti in corso. Questa operazione potrebbe richiedere alcuni minuti. Al termine del processo, potrai scaricare il file con tutti i tuoi contatti esportati."
       ],
       "Deleting contacts... This may take a few minutes. When the process is completed, you can close this modal.": [
         "Eliminando i contatti... Questo potrebbe richiedere qualche minuto. Quando il processo è completato, puoi chiudere questo modale."
@@ -4071,6 +4062,9 @@
       "Removed participants will be notified.": [
         "I partecipanti rimossi saranno notificati."
       ],
+      "Select a service provider to start": [
+        "Seleziona un fornitore di servizi per iniziare"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Seleziona il formato email che desideri usare per impostazione predefinita quando invii un'email a questo indirizzo email."
       ],
@@ -4102,7 +4096,7 @@
         "Temporaneamente non disponibile. Sei pregato di ricontrollare in seguito."
       ],
       "The application needs to locally decrypt your contacts before they can be exported. At the end of the process, a VCF file will be generated and you will be able to download it.": [
-        "L'applicazione deve decrittografare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo, verrà generato un file VCF e sarai in grado di scaricarlo."
+        "L'applicazione deve decrittografare localmente i tuoi contatti prima di poterli esportare. Alla fine del processo verrà generato un file VCF che potrai scaricare."
       ],
       "The following participants cannot be notified about your changes:": [
         "I seguenti partecipanti non possono essere avvisati delle tue modifiche:"
@@ -4138,7 +4132,7 @@
         "Questo account è stato sospeso a causa di una potenziale violazione delle politiche."
       ],
       "This address is disabled. To be able to send to this address, the owner must first enable the address.": [
-        "Questo indirizzo è disabilitato. Per essere in grado di inviare a questo indirizzo il proprietario deve prima attivarlo."
+        "Questo indirizzo è disabilitato. Per poter inviare a questo indirizzo il proprietario deve prima abilitarlo."
       ],
       "This event has been updated by the organizer. Would you like to change your answer only for this occurrence in this series?": [
         "Questo evento è stato aggiornato dall'organizzatore. Vuoi modificare la tua risposta solo per questa occorrenza in questa serie?"
@@ -4357,6 +4351,11 @@
         "Il fuso orario di sistema sembra essere cambiato a ${ timezone }. Vuoi aggiornare la tua preferenza di fuso orario?"
       ]
     },
+    "info": {
+      "Selected color:": [
+        "Colore selezionato:"
+      ]
+    },
     "Info calendar search": {
       "You can either update your search query or close search to go back to calendar views": [
         "Puoi aggiornare la query di ricerca o chiudere la ricerca per tornare alle visualizzazioni del calendario"
@@ -4471,7 +4470,7 @@
         "Aggiungi URL immagine"
       ],
       "Add to group": [
-        "Aggiungi ad un gruppo"
+        "Aggiungi a un gruppo"
       ],
       "All day": [
         "Tutto il giorno"
@@ -4600,7 +4599,7 @@
         "Titolo dell'evento"
       ],
       "Export contacts": [
-        "Esporta contatti"
+        "Esporta i contatti"
       ],
       "Extended address": [
         "Indirizzo completo"
@@ -5184,8 +5183,15 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendario",
+        "${ maximumNumberOfCalendars } calendari"
+      ],
       "Auto-delete spam and trashed messages": [
         "Cancella automaticamente i messaggi indesiderati e cestinati"
+      ],
+      "Calendar sharing": [
+        "Condivisione del calendario"
       ],
       "Custom email domains": [
         "Domini email personalizzati"
@@ -5435,6 +5441,9 @@
       ],
       "Set up your organization": [
         "Configura la tua organizzazione"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Usa il raccoglitore delle app in alto a sinistra per accedere a tutti i servizi di ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }."
       ],
       "You will be able to change your theme any time in your settings.": [
         "Potrai cambiare il tema in qualsiasi momento dalle impostazioni."
@@ -6142,6 +6151,9 @@
       "Add your country's public holidays to your calendar.": [
         "Aggiungi i giorni festivi del tuo paese al tuo calendario."
       ],
+      "Color-coding is here!": [
+        "La classificazione per colore è qui!"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Trova facilmente l'evento che stai cercando con la nostra nuova funzione di ricerca."
       ],
@@ -6156,6 +6168,9 @@
       ],
       "Search for events": [
         "Trova eventi"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "Con la classificazione degli eventi per colore, puoi risolvere il caos e conquistare la tua giornata."
       ]
     },
     "Storage": {
@@ -6471,6 +6486,9 @@
       ],
       "Add participants": [
         "Aggiungi Partecipanti"
+      ],
+      "Add some color to your day": [
+        "Aggiungi un po' di colore alla tua giornata"
       ],
       "Add to ${ groupCount } group": [
         "Aggiungi a ${ groupCount } gruppo",

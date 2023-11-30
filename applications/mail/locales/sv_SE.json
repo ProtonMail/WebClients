@@ -466,12 +466,6 @@
       "Hide details": [
         "Dölj detaljer"
       ],
-      "Hide folders": [
-        "Dölj mappar"
-      ],
-      "Hide labels": [
-        "Dölj etiketter"
-      ],
       "Hide messages": [
         "Dölj meddelanden"
       ],
@@ -716,11 +710,11 @@
       "Not saved": [
         "Inte sparad"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Öppna i ${ CALENDAR_APP_NAME }"
@@ -967,12 +961,6 @@
       ],
       "Show fewer search options": [
         "Visa färre sökalternativ"
-      ],
-      "Show folders": [
-        "Visa mappar"
-      ],
-      "Show labels": [
-        "Visa etiketter"
       ],
       "Show less": [
         "Visa mindre"
@@ -5695,6 +5683,9 @@
       "Seems like you are all caught up for now": [
         "Ser ut som att du är ikapp just nu"
       ],
+      "Select a service provider to start": [
+        "Välj en tjänsteleverantör för att starta"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Välj det e-postformat du vill använda som standard när du skickar ett e-postmeddelande till den här e-postadressen."
       ],
@@ -6095,7 +6086,7 @@
         "När vill du att ditt meddelande ska självförstöras?"
       ],
       "When giving out your email, use a unique, disposable hide-my-email alias instead of your real email address.": [
-        "När du delar ut din e-post, använd en unik engångs Hide-my-email-alias istället för din verkliga e-postadress."
+        "När du delar ut din e-post, använd ett unikt, engångs hide-my-email-alias istället för din riktiga e-postadress."
       ],
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "När du aktiverade betrodda nycklar för ${ senderName } lades de offentliga nycklarna till i kontaktuppgifterna."
@@ -6261,6 +6252,9 @@
       ],
       "Optional": [
         "Valfritt"
+      ],
+      "Selected color:": [
+        "Vald färg:"
       ]
     },
     "Info on errors": {
@@ -7504,8 +7498,15 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalender",
+        "${ maximumNumberOfCalendars } kalendrar"
+      ],
       "Auto-delete spam and trashed messages": [
         "Ta bort skräppost och kastade meddelanden automatiskt"
+      ],
+      "Calendar sharing": [
+        "Kalenderdelning"
       ],
       "Custom email domains": [
         "Anpassade e-postdomäner"

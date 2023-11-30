@@ -472,12 +472,6 @@
       "Hide details": [
         "Ukryj szczegóły"
       ],
-      "Hide folders": [
-        "Ukryj foldery"
-      ],
-      "Hide labels": [
-        "Ukryj etykiety"
-      ],
       "Hide messages": [
         "Ukryj wiadomości"
       ],
@@ -724,11 +718,11 @@
       "Not saved": [
         "Nie zapisano"
       ],
-      "OK": [
-        "OK"
-      ],
       "Ok": [
         "Ok"
+      ],
+      "OK": [
+        "OK"
       ],
       "Open ${ CALENDAR_APP_NAME }": [
         "Otwórz ${ CALENDAR_APP_NAME }"
@@ -975,12 +969,6 @@
       ],
       "Show fewer search options": [
         "Pokaż mniej opcji wyszukiwania"
-      ],
-      "Show folders": [
-        "Pokaż foldery"
-      ],
-      "Show labels": [
-        "Pokaż etykiety"
       ],
       "Show less": [
         "Pokaż mniej"
@@ -5895,6 +5883,9 @@
       "Seems like you are all caught up for now": [
         "Wygląda na to, że jesteś już na bieżąco z wiadomościami"
       ],
+      "Select a service provider to start": [
+        "Aby rozpocząć, wybierz dostawcę usługi"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Wybierz domyślny format wiadomości, który ma zostać użyty podczas wysyłania wiadomości na ten adres e-mail."
       ],
@@ -6487,6 +6478,9 @@
       ],
       "Optional": [
         "Opcjonalnie"
+      ],
+      "Selected color:": [
+        "Wybrany kolor:"
       ]
     },
     "Info on errors": {
@@ -7750,8 +7744,17 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } kalendarz",
+        "${ maximumNumberOfCalendars } kalendarze",
+        "${ maximumNumberOfCalendars } kalendarzy",
+        "${ maximumNumberOfCalendars } kalendarzy"
+      ],
       "Auto-delete spam and trashed messages": [
         "Automatyczne usuwanie Spamu i Kosza"
+      ],
+      "Calendar sharing": [
+        "Udostępnianie kalendarza"
       ],
       "Custom email domains": [
         "Niestandardowe domeny"
@@ -7846,6 +7849,41 @@
         "Wybierz, do czego ${ BRAND_NAME } może uzyskać dostęp: odczytywać wiadomości i ustawienia, odczytywać i pobierać kontakty, odczytywać i pobierać wszystkie harmonogramy, do których masz dostęp w Kalendarzu Google."
       ]
     },
+    "Onboarding modal": {
+      "Automatically forward emails": [
+        "Automatyczne przekierowanie wiadomości"
+      ],
+      "Block email communications from scammers permanently. ${ kbLinkSender }": [
+        "Zablokuj wiadomości od oszustów. ${ kbLinkSender }"
+      ],
+      "Block unsavory senders": [
+        "Zablokuj niechcianych nadawców"
+      ],
+      "Congratulations on choosing privacy": [
+        "Gratulujemy wyboru prywatności"
+      ],
+      "Encryption so strong, only you and intended recipients can view your emails. ${ kbLinkEncryption }": [
+        "Szyfrowanie tak silne, że tylko Ty i odbiorcy mogę odczytać treść wiadomości. ${ kbLinkEncryption }"
+      ],
+      "For your eyes only": [
+        "Tylko dla Twoich oczu"
+      ],
+      "Forward Gmail messages to your inbox.": [
+        "Przekazywanie wiadomości Gmail do skrzynki odbiorczej."
+      ],
+      "Next": [
+        "Dalej"
+      ],
+      "Protection from trackers": [
+        "Ochrona przed elementami śledzącymi"
+      ],
+      "Skip": [
+        "Pomiń"
+      ],
+      "We stop advertisers and data collectors from profiling you. ${ kbLinkPrivacy }": [
+        "Blokujemy reklamodawców i firmy zbierające dane, które profilują Cię. ${ kbLinkPrivacy }"
+      ]
+    },
     "Onboarding Proton": {
       "Configure your organization, link your domain name, and create accounts to ensure all members of your organization are protected.": [
         "Ustaw swoją organizację, połącz nazwę domeny i utwórz konta, aby zapewnić ochronę wszystkim użytkownikom organizacji."
@@ -7853,8 +7891,17 @@
       "Discover all ${ BRAND_NAME } services": [
         "Poznaj wszystkie usługi ${ BRAND_NAME }"
       ],
+      "Pick a theme": [
+        "Wybierz motyw"
+      ],
       "Set up your organization": [
         "Skonfiguruj organizację"
+      ],
+      "Use the app selector in the top left to access all ${ BRAND_NAME } services: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } and ${ PASS_SHORT_APP_NAME }.": [
+        "Otwórz menu aplikacji w lewym górnym rogu, aby uzyskać dostęp do wszystkich usług ${ BRAND_NAME }: ${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }."
+      ],
+      "You will be able to change your theme any time in your settings.": [
+        "Będziesz mógł zmienić motyw w dowolnym momencie w ustawieniach."
       ]
     },
     "Online accounts": {
@@ -8779,6 +8826,9 @@
       ],
       "Search just got smarter and faster": [
         "Wyszukiwanie stało się inteligentniejsze i szybsze"
+      ],
+      "Set when an email should reappear in your inbox with the new snooze feature.": [
+        "Nowa funkcja drzemki pozwala ustawić, kiedy wiadomość e-mail ma pojawić się ponownie w skrzynce odbiorczej."
       ],
       "Snooze it for later": [
         "Odłóż na później"
