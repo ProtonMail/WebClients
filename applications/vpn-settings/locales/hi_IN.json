@@ -2007,6 +2007,9 @@
       "You have successfully joined the Family plan": [
         "आप परिवार प्लान से जुड़ गए है"
       ],
+      "You're invited to link your ${ BRAND_NAME } Account to this group plan and together enjoy all ${ BRAND_NAME_TWO } premium features.": [
+        "आपको अपने ${ BRAND_NAME } खाते को इस समूह योजना से लिंक करने और साथ में सभी ${ BRAND_NAME_TWO } प्रीमियम सुविधाओं का आनंद लेने के लिए आमंत्रित किया जाता है।"
+      ],
       "Your account is using ${ usedSpace } of storage, which exceeds the ${ inviteSpace } you were allocated. Delete some data or ask the plan admin to increase your storage.": [
         "आपका खाता ${ usedSpace } स्टोरेज का उपयोग कर रहा है, जो आपको दिए गए ${ inviteSpace } से अधिक है। कुछ डेटा हटाएं या प्लान एडमिन से अपना स्टोरेज बढ़ाने के लिए कहें।"
       ]
@@ -3080,6 +3083,9 @@
       ],
       "We need to authenticate your payment with your bank.": [
         "हमें आपका भुगतान आपके बैंक से सत्यापित करना होगा।"
+      ],
+      "We recommend notifying the organization members and asking them to set up 2FA for their accounts before enforcing the use of 2FA.": [
+        "हम अनुशंसा करते हैं कि 2FA का उपयोग लागू करने से पहले संगठन के सदस्यों को सूचित करें और उनसे अपने खातों के लिए 2FA स्थापित करने के लिए कहें।"
       ],
       "We recommend using your recovery phrase instead.": [
         "हम इसके बजाय आपके पुनर्प्राप्ति वाक्यांश का उपयोग करने की अनुशंसा करते हैं।"
@@ -4301,6 +4307,9 @@
       "${ CALENDAR_APP_NAME }: Secure your schedule with end-to-end encryption. Includes support for custom calendars, calendar sharing, and more.": [
         "${ CALENDAR_APP_NAME }: एंड-टू-एंड एन्क्रिप्शन के साथ अपना शेड्यूल सुरक्षित करें। इसमें कस्टम कैलेंडर, कैलेंडर शेयरिंग और बहुत कुछ के लिए समर्थन शामिल है।"
       ],
+      "${ DRIVE_APP_NAME }: Secure your files with encrypted cloud storage. Includes version history, encrypted file sharing, and more.": [
+        "${ DRIVE_APP_NAME }: अपनी फ़ाइलों को एन्क्रिप्टेड क्लाउड स्टोरेज से सुरक्षित करें। संस्करण इतिहास, एन्क्रिप्टेड फ़ाइल साझाकरण, और बहुत कुछ शामिल है।"
+      ],
       "${ MAIL_APP_NAME }: Secure your emails with end-to-end encryption. Includes support for custom email domains, 15 email addresses, unlimited hide-my-email aliases, and more.": [
         "${ MAIL_APP_NAME }: अपने ईमेल को एंड-टू-एंड एन्क्रिप्शन से सुरक्षित करें। इसमें कस्टम ईमेल डोमेन, 15 ईमेल पते, असीमित hide-my-email उपनाम और बहुत कुछ के लिए समर्थन शामिल है।"
       ],
@@ -4772,6 +4781,11 @@
     "session_recovery:initiation:action": {
       "Got it": [
         "समझ गया"
+      ]
+    },
+    "session_recovery:initiation:info": {
+      "If you have a **recovery method** set up, try account recovery instead. This will allow you to change your password straight away.": [
+        "यदि आपके पास **पुनर्प्राप्ति विधि** सेट अप है, तो इसके बजाय खाता पुनर्प्राप्ति का प्रयास करें। इससे आप तुरंत अपना पासवर्ड बदल सकेंगे।"
       ]
     },
     "session_recovery:sign_out:action": {

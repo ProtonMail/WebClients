@@ -101,6 +101,9 @@
       "Copy address": [
         "Copia indirizzo"
       ],
+      "Copy key to the clipboard": [
+        "Copia la chiave negli appunti"
+      ],
       "Create": [
         "Crea"
       ],
@@ -603,7 +606,7 @@
         "Abilita la posta E2EE"
       ],
       "Generate missing keys": [
-        "Genera chiavi mancanti"
+        "Genera le chiavi mancanti"
       ],
       "Saving": [
         "Salvataggio"
@@ -978,7 +981,7 @@
         "rame"
       ],
       "enzian": [
-        "enzian"
+        "genziana"
       ],
       "fern": [
         "felce"
@@ -1904,7 +1907,7 @@
         "${ Local } è il tuo nome utente. Per creare ${ Local }@${ Domain }, vai in Impostazioni > Messaggi e composizione > Dominio breve (pm.me)"
       ],
       "All storage space has been allocated. Please reduce storage allocated to other users.": [
-        "Tutto lo spazio di archiviazione è stato allocato. Per favore, riduci la memoria assegnata agli altri utenti."
+        "Tutto lo spazio di archiviazione è stato allocato. Riduci lo spazio assegnato agli altri utenti."
       ],
       "Amount above the maximum.": [
         "Importo al di sopra del massimo."
@@ -2018,7 +2021,7 @@
         "Per favore configura un dominio personalizzato prima di aggiungere utenti all'organizzazione."
       ],
       "Please enable multi-user support before adding users to your organization.": [
-        "Per favore, abilita il supporto multi-utente prima di aggiungere utenti all'organizzazione."
+        "Abilita il supporto multi-utente prima di aggiungere utenti all'organizzazione."
       ],
       "Please generate keys before you try to change your password": [
         "Per favore genera le chiavi prima di provare a cambiare la tua password"
@@ -2099,7 +2102,7 @@
         "Il nome utente deve terminare con una lettera o un numero/"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
-        "Frase di recupero sbagliata. Riprova o usa un altro metodo di ripristino."
+        "Frase di recupero errata. Riprova o usa un altro metodo di recupero."
       ],
       "You have no invoices.": [
         "Non hai fatture."
@@ -3145,7 +3148,7 @@
         "Se desideri combinare questo account con un altro, NON eliminarlo."
       ],
       "Important: Please make sure you save the recovery codes. Otherwise you can permanently lose access to your account if you lose your two-factor authentication device.": [
-        "Importante: Assicurati di salvare i codici di recupero. Altrimenti non potrai mai più accedere al tuo account qualora perdessi il tuo dispositivo per l'autenticazione a due fattori."
+        "Importante: Assicurati di salvare i codici di recupero. Altrimenti non potrai mai più accedere al tuo account in caso perdessi il tuo dispositivo per l'autenticazione a due fattori."
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Nel passaggio successivo, sarai in grado di inviare un deposito utilizzando un indirizzo Bitcoin."
@@ -3839,7 +3842,7 @@
         "Hai ${ availableCount } server dedicati disponibili."
       ],
       "You have no saved payment methods.": [
-        "Non hai salvato alcun metodo di pagamento."
+        "Non hai metodi di pagamento salvati."
       ],
       "You may be redirected to your bank’s website.": [
         "Potresti essere reindirizzato al sito web della tua banca."
@@ -4712,6 +4715,10 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } calendario",
+        "${ maximumNumberOfCalendars } calendari"
+      ],
       "${ n } calendar": [
         "${ n } calendario",
         "${ n } calendari"
@@ -5491,6 +5498,9 @@
       "IP Address copied to clipboard": [
         "Indirizzo IP copiato negli appunti"
       ],
+      "Key copied to the clipboard": [
+        "Chiave copiata negli appunti"
+      ],
       "OpenVPN / IKEv2 credentials regenerated": [
         "Credenziali OpenVPN / IKEv2 rigenerate"
       ],
@@ -5628,6 +5638,12 @@
       ],
       "Creating your account": [
         "Creazione del tuo account"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Per soli **${ relativePrice } al mese** in più, ottieni l'accesso al gestore di password premium di ${ BRAND_NAME }!"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Per soli **${ relativePrice } al mese** in più, ottieni l'accesso al servizio VPN premium di ${ BRAND_NAME }!"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Per soli **${ relativePrice } al mese** in più, puoi accedere a tutti i servizi premium di ${ BRAND_NAME }!"
@@ -6817,7 +6833,7 @@
         "Aggiungi nuovo utente"
       ],
       "Add PayPal payment method": [
-        "Aggiungi il metodo di pagamento PayPal"
+        "Aggiungi metodo di pagamento PayPal"
       ],
       "Add servers": [
         "Aggiungi server"
