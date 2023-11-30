@@ -32,7 +32,7 @@ const VPNPublicApp = ({ pathLocale, loader, location, locales = {}, children }: 
             const browserLocale = getBrowserLocale();
             const localeCode = getClosestLocaleMatch(pathLocale || languageParams || '', locales) || DEFAULT_LOCALE;
             await Promise.all([
-                loadCryptoWorker(getCryptoWorkerOptions(APPS.PROTONVPN_SETTINGS)),
+                loadCryptoWorker(getCryptoWorkerOptions(APPS.PROTONVPN_SETTINGS, {})),
                 loadLocale(localeCode, locales),
                 loadDateLocale(localeCode, browserLocale),
             ]);

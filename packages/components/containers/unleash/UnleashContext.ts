@@ -15,6 +15,7 @@ enum CommonFeatureFlag {
     SignedInAccountRecovery = 'SignedInAccountRecovery',
     KeyTransparencyShowUI = 'KeyTransparencyShowUI',
     KeyTransparencyLogOnly = 'KeyTransparencyLogOnly',
+    EdDSAFaultySignatureCheck = 'EdDSAFaultySignatureCheck'
 }
 
 enum AccountFlag {

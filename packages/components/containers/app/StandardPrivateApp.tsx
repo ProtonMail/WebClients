@@ -3,6 +3,7 @@ import { FunctionComponent, ReactNode, useEffect, useRef, useState } from 'react
 import { c } from 'ttag';
 
 import metrics from '@proton/metrics';
+import { useUnleashClient } from '@protontech/proxy-client-react'; 
 import { getApiErrorMessage, getIs401Error } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { requiresNonDelinquent } from '@proton/shared/lib/authentication/apps';
 import { APPS, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
@@ -99,6 +100,7 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
     const getFeature = useLoadFeature();
     const flagsReadyPromise = useFlagsReady();
     const { isElectronDisabled } = useIsInboxElectronApp();
+    const client = useUnleashClient();
 
     useEffect(() => {
         const eventManagerPromise = loadEventID(silentApi, cache).then((eventID) => {
@@ -155,20 +157,20 @@ const InnerStandardPrivateApp = <T, M extends Model<T>, E, EvtM extends Model<E>
             appRef.current = result.default;
         });
         const initPromise = onInit?.();
-        const cryptoWorkerPromise = loadCryptoWorker(getCryptoWorkerOptions(APP_NAME));
 
         const run = async () => {
             const promises = [
                 eventManagerPromise,
                 setupPromise,
                 initPromise,
-                cryptoWorkerPromise,
                 appPromise,
                 flagsReadyPromise,
             ];
+            
             try {
                 await userModelPromise;
                 await Promise.all(promises);
+                await loadCryptoWorker(getCryptoWorkerOptions(APP_NAME, { checkEdDSAFaultySignatures: client.isEnabled('EdDSAFaultySignatureCheck') } ));
             } catch (error) {
                 if (getIs401Error(error)) {
                     // Trigger onLogout early, ignoring the unload wrapper
