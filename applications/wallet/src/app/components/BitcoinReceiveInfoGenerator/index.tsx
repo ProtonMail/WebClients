@@ -7,22 +7,11 @@ import { Card } from '@proton/atoms/Card';
 import { Alert, Copy, Icon, InputFieldTwo, QRCode, Tooltip } from '@proton/components/components';
 import { SECOND } from '@proton/shared/lib/constants';
 
-import { Selector } from './Selector';
+import { Selector } from '../../atoms/Selector';
+import { accounts, wallets } from '../../tests';
+import { WalletKind } from '../../types';
 import { getLightningFormatOptions } from './constants';
 import { useBitcoinReceiveInfoGenerator } from './useBitcoinReceiveInfoGenerator';
-
-// TODO: remove when wallets api is ready
-const wallets: any[] = [
-    { kind: 'lightning', name: 'lightning 01', id: 0, balance: 167 },
-    { kind: 'bitcoin', name: 'Bitcoin 01', id: 1, balance: 1783999 },
-];
-
-// TODO: remove when accounts api is ready
-const accounts: any[] = [
-    { name: 'account #1', id: 0 },
-    { name: 'account #2', id: 1 },
-    { name: 'account #3', id: 2 },
-];
 
 const CopyPasteButton = ({ value }: { value: string }) => {
     const defaultTitle = c('Wallet Receive').t`Copy address`;
@@ -48,7 +37,11 @@ const CopyPasteButton = ({ value }: { value: string }) => {
     );
 };
 
-export const BitcoinReceiveInfoGenerator = () => {
+interface Props {
+    defaultWalletId?: string;
+}
+
+export const BitcoinReceiveInfoGenerator = ({ defaultWalletId }: Props) => {
     const {
         serializedPaymentInformation,
         selectedWallet,
@@ -61,17 +54,17 @@ export const BitcoinReceiveInfoGenerator = () => {
         handleSelectFormat,
         handleChangeAmount,
         showAmountInput,
-    } = useBitcoinReceiveInfoGenerator();
+    } = useBitcoinReceiveInfoGenerator(wallets, accounts, defaultWalletId);
 
     const [walletSelectorLabel, accountSelectorLabel, formatSelectorLabel, amountInputLabel] = [
         c('Wallet Receive').t`Receive to wallet`,
-        c('Wallet Receive').t`On account`,
-        c('Wallet Receive').t`Using format`,
+        c('Wallet Receive').t`on account`,
+        c('Wallet Receive').t`using format`,
         c('Wallet Receive').t`Amount`,
     ];
 
     return (
-        <div className="bg-weak flex flex-column flex-align-items-center">
+        <div className="flex flex-column flex-align-items-center">
             {/* Wallets and Account/format selector */}
             <div className="flex w-full flex-row px-8">
                 <Selector
@@ -82,7 +75,7 @@ export const BitcoinReceiveInfoGenerator = () => {
                     options={wallets.map((wallet) => ({ value: wallet.id, label: wallet.name }))}
                 />
 
-                {selectedWallet.kind === 'bitcoin' && (
+                {selectedWallet.kind === WalletKind.ONCHAIN && (
                     <Selector
                         id="account-selector"
                         label={accountSelectorLabel}
@@ -92,7 +85,7 @@ export const BitcoinReceiveInfoGenerator = () => {
                     />
                 )}
 
-                {selectedWallet.kind === 'lightning' && (
+                {selectedWallet.kind === WalletKind.LIGHTNING && (
                     <Selector
                         id="format-selector"
                         label={formatSelectorLabel}

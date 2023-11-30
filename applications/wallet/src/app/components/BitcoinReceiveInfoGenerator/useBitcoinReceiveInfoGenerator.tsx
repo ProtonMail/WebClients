@@ -2,39 +2,36 @@ import { useMemo, useState } from 'react';
 
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 
-import { LightningUriFormat } from '../../types';
+import { Account, LightningUriFormat, Wallet } from '../../types';
 import { getLightningFormatOptions } from './constants';
-
-const wallets: any[] = [
-    { kind: 'lightning', name: 'lightning 01', id: 0, balance: 167 },
-    { kind: 'bitcoin', name: 'Bitcoin 01', id: 1, balance: 1783999 },
-];
-
-const accounts: any[] = [
-    { name: 'account #1', id: 0 },
-    { name: 'account #2', id: 1 },
-    { name: 'account #3', id: 2 },
-];
 
 export interface UseBitcoinReceiveInfoGeneratorHelper {
     /**
      * Memoized. Can be either a bitcoin Address, a bitcoin URI, a lightning URI or unified URI (URI containing both bitcoin and lightning needed payment informations)
      */
     serializedPaymentInformation: string;
-    selectedWallet: any;
-    selectedAccount: any;
-    selectedFormat: any;
+    selectedWallet: Wallet;
+    selectedAccount: Account;
+    selectedFormat: {
+        name: string;
+        value: LightningUriFormat;
+    };
     shouldShowAmountInput: boolean;
     amount: number;
-    handleSelectWallet: (event: SelectChangeEvent<number>) => void;
-    handleSelectAccount: (event: SelectChangeEvent<number>) => void;
+    handleSelectWallet: (event: SelectChangeEvent<string>) => void;
+    handleSelectAccount: (event: SelectChangeEvent<string>) => void;
     handleSelectFormat: (event: SelectChangeEvent<LightningUriFormat>) => void;
     handleChangeAmount: (amount?: number) => void;
     showAmountInput: () => void;
 }
 
-export const useBitcoinReceiveInfoGenerator = (): UseBitcoinReceiveInfoGeneratorHelper => {
-    const [selectedWallet, setSelectedWallet] = useState(wallets[0]);
+export const useBitcoinReceiveInfoGenerator = (
+    wallets: Wallet[],
+    accounts: Account[],
+    defaultWalletId?: string
+): UseBitcoinReceiveInfoGeneratorHelper => {
+    const defaultWallet = wallets.find(({ id }) => defaultWalletId === id) ?? wallets[0];
+    const [selectedWallet, setSelectedWallet] = useState(defaultWallet);
     const [selectedAccount, setSelectedAccount] = useState(accounts[0]);
 
     const lightningFormats = getLightningFormatOptions();
@@ -57,10 +54,16 @@ export const useBitcoinReceiveInfoGenerator = (): UseBitcoinReceiveInfoGenerator
         shouldShowAmountInput,
         amount,
         handleSelectWallet: ({ value }) => {
-            setSelectedWallet(wallets.find(({ id }) => id === value));
+            const wallet = wallets.find(({ id }) => id === value);
+            if (wallet) {
+                setSelectedWallet(wallet);
+            }
         },
         handleSelectAccount: ({ value }) => {
-            setSelectedAccount(accounts.find(({ id }) => id === value));
+            const account = accounts.find(({ id }) => id === value);
+            if (account) {
+                setSelectedAccount(account);
+            }
         },
         handleSelectFormat: ({ value }) => {
             setSelectedFormat(lightningFormats.find((format) => format.value === value) ?? defaultFormat);
@@ -72,9 +75,6 @@ export const useBitcoinReceiveInfoGenerator = (): UseBitcoinReceiveInfoGenerator
 
             if (nonConstrainedAmount < 0) {
                 setAmount(0);
-                // TODO: maybe do this for account level on onchain wallets
-            } else if (nonConstrainedAmount > selectedWallet.balance) {
-                setAmount(selectedWallet.balance);
             } else {
                 setAmount(nonConstrainedAmount);
             }
