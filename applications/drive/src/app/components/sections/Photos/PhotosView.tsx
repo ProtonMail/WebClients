@@ -88,6 +88,7 @@ export const PhotosView: FC<void> = () => {
     }
 
     const isEmpty = photos.length === 0;
+    const hasPreview = !!previewItem;
 
     return (
         <>
@@ -97,17 +98,20 @@ export const PhotosView: FC<void> = () => {
                 <TopBanner className="bg-warning">{c('Info')
                     .t`We are experiencing technical issues. Uploading new photos is temporarily disabled.`}</TopBanner>
             )}
-            {isDecryptedLink(previewItem) && (
+            {hasPreview && (
                 <PortalPreview
                     ref={previewRef}
                     shareId={shareId}
                     linkId={previewItem.linkId}
-                    revisionId={previewItem.activeRevision?.id}
+                    revisionId={isDecryptedLink(previewItem) ? previewItem.activeRevision?.id : undefined}
                     key="portal-preview-photos"
-                    open={!!previewItem}
-                    date={previewItem.activeRevision?.photo?.captureTime || previewItem.createTime}
+                    open={hasPreview}
+                    date={
+                        previewItem.activeRevision?.photo?.captureTime ||
+                        (isDecryptedLink(previewItem) ? previewItem.createTime : undefined)
+                    }
                     onShare={
-                        previewItem?.trashed
+                        isDecryptedLink(previewItem) && previewItem?.trashed
                             ? undefined
                             : () => showLinkSharingModal({ shareId, linkId: previewItem.linkId })
                     }
