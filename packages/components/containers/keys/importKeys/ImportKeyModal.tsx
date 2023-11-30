@@ -82,7 +82,11 @@ const ImportKeyModal = ({ onProcess, ...rest }: Props) => {
         };
 
         if (first.keyIsDecrypted) {
-            CryptoProxy.importPrivateKey({ armoredKey: first.armoredKey, passphrase: null })
+            CryptoProxy.importPrivateKey({
+                armoredKey: first.armoredKey,
+                passphrase: null,
+                checkCompatibility: true, // the BE will enforce this as well, but the returned error messages might be less user friendly
+            })
                 .then(handleAddKey)
                 .catch((e: Error) => {
                     createNotification({

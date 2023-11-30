@@ -8,6 +8,7 @@ import {
     SHA512,
     armorBytes,
     canKeyEncrypt,
+    checkKeyCompatibility,
     checkKeyStrength,
     decryptKey,
     decryptMessage,
@@ -236,8 +237,8 @@ type SerialisedOutputFormat = 'armored' | 'binary' | undefined;
 type SerialisedOutputTypeFromFormat<F extends SerialisedOutputFormat> = F extends 'armored'
     ? string
     : F extends 'binary'
-    ? Uint8Array
-    : never;
+      ? Uint8Array
+      : never;
 
 class KeyManagementApi {
     protected keyStore = new KeyStore();
@@ -311,7 +312,7 @@ class KeyManagementApi {
      * @throws {Error} if the key cannot be decrypted or importing fails
      */
     async importPrivateKey<T extends Data>(
-        { armoredKey, binaryKey, passphrase }: WorkerImportPrivateKeyOptions<T>,
+        { armoredKey, binaryKey, passphrase, checkCompatibility }: WorkerImportPrivateKeyOptions<T>,
         _customIdx?: number
     ) {
         if (!armoredKey && !binaryKey) {
@@ -321,6 +322,9 @@ class KeyManagementApi {
         const maybeEncryptedKey = binaryKey
             ? await readPrivateKey({ binaryKey })
             : await readPrivateKey({ armoredKey: armoredKey! });
+        if (checkCompatibility) {
+            checkKeyCompatibility(maybeEncryptedKey);
+        }
         let decryptedKey;
         if (expectDecrypted) {
             if (!maybeEncryptedKey.isDecrypted()) {
@@ -353,10 +357,13 @@ class KeyManagementApi {
      * @returns reference to imported public key
      */
     async importPublicKey<T extends Data>(
-        { armoredKey, binaryKey }: WorkerImportPublicKeyOptions<T>,
+        { armoredKey, binaryKey, checkCompatibility }: WorkerImportPublicKeyOptions<T>,
         _customIdx?: number
     ) {
         const publicKey = await getKey({ binaryKey, armoredKey });
+        if (checkCompatibility) {
+            checkKeyCompatibility(publicKey);
+        }
         const keyStoreID = this.keyStore.add(publicKey, _customIdx);
         return getPublicKeyReference(publicKey, keyStoreID);
     }
@@ -434,7 +441,7 @@ export class Api extends KeyManagementApi {
     async encryptMessage<
         DataType extends Data,
         FormatType extends WorkerEncryptOptions<DataType>['format'] = 'armored',
-        DetachedType extends boolean = false
+        DetachedType extends boolean = false,
     >({
         encryptionKeys: encryptionKeyRefs = [],
         signingKeys: signingKeyRefs = [],
@@ -487,7 +494,7 @@ export class Api extends KeyManagementApi {
      */
     async signMessage<
         DataType extends Data,
-        FormatType extends WorkerSignOptions<DataType>['format'] = 'armored'
+        FormatType extends WorkerSignOptions<DataType>['format'] = 'armored',
         // inferring D (detached signature type) is unnecessary since the result type does not depend on it for format !== 'object'
     >({ signingKeys: signingKeyRefs = [], ...options }: WorkerSignOptions<DataType> & { format?: FormatType }) {
         const signingKeys = toArray(signingKeyRefs).map(
