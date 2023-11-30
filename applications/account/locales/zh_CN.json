@@ -462,12 +462,6 @@
       "Hide": [
         "隐藏"
       ],
-      "Hide folders": [
-        "隐藏文件夹"
-      ],
-      "Hide labels": [
-        "隐藏标签"
-      ],
       "Hide plan features": [
         "隐藏计划功能"
       ],
@@ -812,12 +806,6 @@
       ],
       "Show": [
         "显示"
-      ],
-      "Show folders": [
-        "显示文件夹"
-      ],
-      "Show labels": [
-        "显示标签"
       ],
       "Show less": [
         "显示更少"
@@ -6649,9 +6637,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "现在升级账户可获得更大存储空间、更多功能，还能享受优惠"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "开通 ${ PLAN_NAMES[PLANS.BUNDLE] }、${ PLAN_NAMES[PLANS.FAMILY] } 或 ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } 账户即可启用 ${ PROTON_SENTINEL_NAME }。"
-      ],
       "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "开通 ${ PLAN_NAMES[PLANS.PASS_PLUS] }、 ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }、或 ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } 账户即可启用 ${ PROTON_SENTINEL_NAME }。"
       ],
@@ -7913,6 +7898,9 @@
       "Mark as": [
         "标为"
       ],
+      "Messages per page": [
+        "每页邮件数量"
+      ],
       "Moderate NAT": [
         "保守 NAT"
       ],
@@ -8387,6 +8375,9 @@
       ],
       "${ label.Name } updated": [
         "${ label.Name } 标签已更改"
+      ],
+      "Preference saved": [
+        "设置已保存"
       ]
     },
     "Limit of calendars reached": {
@@ -9214,14 +9205,6 @@
         "团队管理"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "否则，您的账户功能将受到限制，直至最后被停用。"
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } 在${ last4 } 结束"
@@ -9294,6 +9277,14 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "您正在享受当前套餐的促销价格。 降级账号后，您将失去优惠价格，如果再次尝试订阅，优惠价格将不可用。"
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "否则，您的账户功能将受到限制，直至最后被停用。"
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "如需继续使用 ${ MAIL_APP_NAME } 的高级功能，请选择您要开通的账户等级和支付方式。"
       ]
     },
     "new_plans: Label": {
@@ -9752,6 +9743,15 @@
       ],
       "6th of the month": [
         "每月 6 日"
+      ],
+      "7th of the month": [
+        "每月 7 日"
+      ],
+      "8th of the month": [
+        "每月 8 日"
+      ],
+      "9th of the month": [
+        "每月 9 日"
       ],
       "Add to existing group": [
         "添加到已有队列"

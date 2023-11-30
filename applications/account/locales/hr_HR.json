@@ -85,6 +85,9 @@
       "Back": [
         "Natrag"
       ],
+      "Block": [
+        "Blokiraj"
+      ],
       "Bold": [
         "Podebljano"
       ],
@@ -135,6 +138,9 @@
       ],
       "Contact support": [
         "Kontaktiraj podršku"
+      ],
+      "Contact us": [
+        "Kontaktirajte nas"
       ],
       "Continue": [
         "Nastavi"
@@ -270,12 +276,6 @@
       ],
       "Hide": [
         "Sakrij"
-      ],
-      "Hide folders": [
-        "Sakrij mape"
-      ],
-      "Hide labels": [
-        "Sakrij oznake"
       ],
       "Import": [
         "Uvoz"
@@ -466,6 +466,9 @@
       "Review": [
         "Pregled"
       ],
+      "Revoke": [
+        "Opozovi"
+      ],
       "Revoke all other sessions": [
         "Opozovi sve ostale sesije"
       ],
@@ -516,12 +519,6 @@
       ],
       "Show": [
         "Prikaži"
-      ],
-      "Show folders": [
-        "Prikaži mape"
-      ],
-      "Show labels": [
-        "Prikaži oznake"
       ],
       "Show less": [
         "Prikaži manje"
@@ -745,6 +742,9 @@
       ]
     },
     "bf2023: Action": {
+      "Cancel": [
+        "Poništi"
+      ],
       "Close": [
         "Zatvori"
       ]
@@ -755,6 +755,14 @@
       ],
       "3 TB": [
         "3 TB"
+      ],
+      "6 users": [
+        "6 korisnika"
+      ]
+    },
+    "bf2023: Info": {
+      "6 users": [
+        "6 korisnika"
       ]
     },
     "Billing cycle option": {
@@ -883,6 +891,17 @@
         "Tjedan"
       ]
     },
+    "Checkout summary": {
+      "month": [
+        "mjesec"
+      ],
+      "Servers": [
+        "Poslužitelji"
+      ],
+      "Users": [
+        "Korisnici"
+      ]
+    },
     "Collapsible tooltip": {
       "Expand": [
         "Proširi"
@@ -895,11 +914,23 @@
       "gainsboro": [
         "svijetla plavkastosiva"
       ],
+      "kiwi": [
+        "kivi"
+      ],
       "light red": [
         "svijetlocrvena"
       ],
       "outer space": [
         "vanjski prostor"
+      ],
+      "pacific": [
+        "pacifik"
+      ],
+      "pink": [
+        "ružičasta"
+      ],
+      "plum": [
+        "šljiva"
       ],
       "white": [
         "bijela"
@@ -1065,6 +1096,9 @@
       "Andorra": [
         "Andora"
       ],
+      "Angola": [
+        "Angola"
+      ],
       "Anguilla": [
         "Angvila"
       ],
@@ -1076,6 +1110,9 @@
       ],
       "Armenia": [
         "Armenija"
+      ],
+      "Aruba": [
+        "Aruba"
       ],
       "Ascension Island": [
         "Otok Ascension"
@@ -1095,11 +1132,23 @@
       "Bahrain": [
         "Bahrein"
       ],
+      "Bangladesh": [
+        "Bangladeš"
+      ],
+      "Barbados": [
+        "Barbados"
+      ],
       "Belarus": [
         "Bjelorusija"
       ],
       "Belgium": [
         "Belgija"
+      ],
+      "Belize": [
+        "Belize"
+      ],
+      "Benin": [
+        "Benin"
       ],
       "Bermuda": [
         "Bermudi"
@@ -1122,6 +1171,9 @@
       "Bouvet Island": [
         "Otok Bouvet"
       ],
+      "Brazil": [
+        "Brazil"
+      ],
       "British Indian Ocean Territory": [
         "Britanski Indijskooceanski teritorij"
       ],
@@ -1130,6 +1182,9 @@
       ],
       "Bulgaria": [
         "Bugarska"
+      ],
+      "Burundi": [
+        "Burundi"
       ],
       "Cambodia": [
         "Kambodža"
@@ -1187,6 +1242,9 @@
       ],
       "Cuba": [
         "Kuba"
+      ],
+      "Curaçao": [
+        "Curaçao"
       ],
       "Cyprus": [
         "Cipar"
@@ -1260,6 +1318,9 @@
       "French Southern Territories": [
         "Francuske južne zemlje"
       ],
+      "Gabon": [
+        "Gabon"
+      ],
       "Gambia": [
         "Gambija"
       ],
@@ -1272,17 +1333,29 @@
       "Ghana": [
         "Gana"
       ],
+      "Gibraltar": [
+        "Gibraltar"
+      ],
       "Greece": [
         "Grčka"
       ],
       "Greenland": [
         "Grenland"
       ],
+      "Grenada": [
+        "Grenada"
+      ],
       "Guadeloupe": [
         "Gvadalupa"
       ],
+      "Guam": [
+        "Guam"
+      ],
       "Guatemala": [
         "Gvatemala"
+      ],
+      "Guernsey": [
+        "Guernsey"
       ],
       "Guinea": [
         "Gvineja"
@@ -1293,11 +1366,20 @@
       "Guyana": [
         "Gvajana"
       ],
+      "Haiti": [
+        "Haiti"
+      ],
       "Heard Island and McDonald Islands": [
         "Otok Heard i otočje McDonald"
       ],
       "Holy See (Vatican City State)": [
         "Sveta Stolica (Država Vatikanskoga Grada)"
+      ],
+      "Honduras": [
+        "Honduras"
+      ],
+      "Hong Kong": [
+        "Hong Kong"
       ],
       "Hungary": [
         "Mađarska"
@@ -1310,6 +1392,9 @@
       ],
       "Indonesia": [
         "Indonezija"
+      ],
+      "Iran": [
+        "Iran"
       ],
       "Iraq": [
         "Irak"
@@ -1329,17 +1414,32 @@
       "Jamaica": [
         "Jamajka"
       ],
+      "Japan": [
+        "Japan"
+      ],
+      "Jordan": [
+        "Jordan"
+      ],
       "Kazakhstan": [
         "Kazahstan"
       ],
       "Kenya": [
         "Kenija"
       ],
+      "Kiribati": [
+        "Kiribati"
+      ],
+      "Kosovo": [
+        "Kosovo"
+      ],
       "Kuwait": [
         "Kuvajt"
       ],
       "Kyrgyzstan": [
         "Kirgistan"
+      ],
+      "Laos": [
+        "Laos"
       ],
       "Latvia": [
         "Latvija"
@@ -1379,6 +1479,12 @@
       ],
       "Maldives": [
         "Maldivi"
+      ],
+      "Mali": [
+        "Mali"
+      ],
+      "Malta": [
+        "Malta"
       ],
       "Marshall Islands": [
         "Maršalovi otoci"
@@ -1422,6 +1528,12 @@
       "Namibia": [
         "Namibija"
       ],
+      "Nauru": [
+        "Nauru"
+      ],
+      "Nepal": [
+        "Nepal"
+      ],
       "Netherlands": [
         "Nizozemska"
       ],
@@ -1434,8 +1546,14 @@
       "Nicaragua": [
         "Nikaragva"
       ],
+      "Niger": [
+        "Niger"
+      ],
       "Nigeria": [
         "Nigerija"
+      ],
+      "Niue": [
+        "Niue"
       ],
       "Norfolk Island": [
         "Otok Norfolk"
@@ -1452,14 +1570,29 @@
       "Norway": [
         "Norveška"
       ],
+      "Oman": [
+        "Oman"
+      ],
+      "Pakistan": [
+        "Pakistan"
+      ],
+      "Palau": [
+        "Palau"
+      ],
       "Palestine": [
         "Palestina"
+      ],
+      "Panama": [
+        "Panama"
       ],
       "Papua New Guinea": [
         "Papua Nova Gvineja"
       ],
       "Paraguay": [
         "Paragvaj"
+      ],
+      "Peru": [
+        "Peru"
       ],
       "Philippines": [
         "Filipini"
@@ -1470,11 +1603,17 @@
       "Poland": [
         "Poljska"
       ],
+      "Portugal": [
+        "Portugal"
+      ],
       "Puerto Rico": [
         "Portoriko"
       ],
       "Qatar": [
         "Katar"
+      ],
+      "Reunion": [
+        "Reunion"
       ],
       "Romania": [
         "Rumunjska"
@@ -1506,11 +1645,20 @@
       "Saint Vincent and the Grenadines": [
         "Sveti Vincent i Grenadini"
       ],
+      "Samoa": [
+        "Samoa"
+      ],
+      "San Marino": [
+        "San Marino"
+      ],
       "Sao Tome and Principe": [
         "Sveti Toma i Prinsipe"
       ],
       "Saudi Arabia": [
         "Saudijska Arabija"
+      ],
+      "Senegal": [
+        "Senegal"
       ],
       "Serbia": [
         "Srbija"
@@ -1554,6 +1702,9 @@
       "Sri Lanka": [
         "Šri Lanka"
       ],
+      "Sudan": [
+        "Sudan"
+      ],
       "Suriname": [
         "Surinam"
       ],
@@ -1575,11 +1726,23 @@
       "Tajikistan": [
         "Tadžikistan"
       ],
+      "Tanzania": [
+        "Tanzania"
+      ],
       "Thailand": [
         "Tajland"
       ],
       "Timor-Leste": [
         "Istočni Timor"
+      ],
+      "Togo": [
+        "Togo"
+      ],
+      "Tokelau": [
+        "Tokelau"
+      ],
+      "Tonga": [
+        "Tonga"
       ],
       "Trinidad and Tobago": [
         "Trinidad i Tobago"
@@ -1592,6 +1755,12 @@
       ],
       "Turks and Caicos Islands": [
         "Otoci Turks i Caicos"
+      ],
+      "Tuvalu": [
+        "Tuvalu"
+      ],
+      "Uganda": [
+        "Uganda"
       ],
       "Ukraine": [
         "Ukrajina"
@@ -1610,6 +1779,12 @@
       ],
       "Uruguay": [
         "Urugvaj"
+      ],
+      "Uzbekistan": [
+        "Uzbekistan"
+      ],
+      "Vanuatu": [
+        "Vanuatu"
       ],
       "Venezuela": [
         "Venecuela"
@@ -1834,14 +2009,23 @@
       "Back": [
         "Natrag"
       ],
+      "Cancel": [
+        "Poništi"
+      ],
       "Decline": [
         "Odbij"
+      ],
+      "Delete": [
+        "Izbriši"
       ],
       "Next": [
         "Sljedeće"
       ],
       "Pause": [
         "Pauziraj"
+      ],
+      "Resume": [
+        "Nastavi"
       ],
       "Save": [
         "Spremi"
@@ -1860,9 +2044,19 @@
         "I"
       ]
     },
+    "email_forwarding_2023: Link": {
+      "Learn more": [
+        "Više informacija"
+      ]
+    },
     "email_forwarding_2023: Warning": {
       "Warning": [
         "Upozorenje"
+      ]
+    },
+    "Enabled 2FA": {
+      "2FA": [
+        "2FA"
       ]
     },
     "Error": {
@@ -2156,6 +2350,9 @@
       "Edited event not supported": [
         "Uređeni događaj nije podržan"
       ],
+      "Element": [
+        "Element"
+      ],
       "Encryption failed": [
         "Neuspješno šifriranje"
       ],
@@ -2321,6 +2518,11 @@
         "Torrent podrška (P2P)"
       ]
     },
+    "fido2: Action": {
+      "Delete key": [
+        "Izbriši ključ"
+      ]
+    },
     "fido2: Label": {
       "Key name": [
         "Naziv ključa"
@@ -2399,6 +2601,12 @@
       ]
     },
     "FilterSettings": {
+      "Allow:": [
+        "Dopusti"
+      ],
+      "Block:": [
+        "Blokiraj"
+      ],
       "Spam:": [
         "Neželjena pošta:"
       ]
@@ -2450,6 +2658,9 @@
       ]
     },
     "Header": {
+      "Action": [
+        "Radnja"
+      ],
       "Actions": [
         "Radnje"
       ],
@@ -2459,17 +2670,29 @@
       "Best deal": [
         "Najbolja ponuda"
       ],
+      "Device": [
+        "Uređaj"
+      ],
       "Event": [
         "Događaj"
       ],
       "Folders": [
         "Mape"
       ],
+      "IP address": [
+        "IP adresa"
+      ],
       "Key type": [
         "Vrsta ključa"
       ],
       "Label": [
         "Oznaka"
+      ],
+      "Location": [
+        "Lokacija"
+      ],
+      "Members": [
+        "Članovi"
       ],
       "Name": [
         "Naziv"
@@ -2479,6 +2702,15 @@
       ],
       "Permissions": [
         "Dozvole"
+      ],
+      "Server": [
+        "Poslužitelj"
+      ],
+      "Servers": [
+        "Poslužitelji"
+      ],
+      "Status": [
+        "Status"
       ],
       "Time": [
         "Vrijeme"
@@ -2619,6 +2851,9 @@
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
         "${ BRAND_NAME } se ne može povezati s vašim vanjskim računom. Molimo provjerite jesu li adresa poslužitelja pošte i broj porta ispravni."
+      ],
+      "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
+        "${ BRAND_NAME } se ne može povezati s vašim Yahoo računom. Molimo provjerite jesu li adresa poslužitelja pošte i broj porta ispravni."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } se ne može povezati s vašim Yahoo računom. Molimo osigurajte sljedeće:"
@@ -2828,6 +3063,9 @@
       "Amount below minimum (${ amount }).": [
         "Iznos ispod minimuma (${ amount })."
       ],
+      "Amount due": [
+        "Dospjeli iznos"
+      ],
       "and": [
         "i"
       ],
@@ -2919,6 +3157,9 @@
       ],
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Preuzmite svoju omiljenu aplikaciju danas i ponesite privatnost sa sobom gdje god idete."
+      ],
+      "Edit label": [
+        "Uredi oznaku"
       ],
       "Edit link": [
         "Uredi poveznicu"
@@ -3085,6 +3326,9 @@
       "Manually enter this information into your two-factor authentication device to set up your account. ${ switchButton }.": [
         "Za postavljanje računa, ručno unesite ove podatke u vaš uređaj za dvofaktorsku autentikaciju. ${ switchButton }."
       ],
+      "Member": [
+        "Član"
+      ],
       "MM/YY": [
         "MM/GG"
       ],
@@ -3129,6 +3373,9 @@
       ],
       "Open source": [
         "Otvoreni kôd"
+      ],
+      "Optional": [
+        "Neobavezno"
       ],
       "Organization keys activated": [
         "Aktivirani su ključevi organizacije"
@@ -3282,6 +3529,9 @@
       ],
       "Top up your account with credits that you can use to subscribe to a new plan or renew your current plan. You get one credit for every ${ i18nCurrency } spent.": [
         "Dopunite svoj račun sa kreditima koje možete upotrijebiti za pretplatu na novi plan ili za obnovu trenutnog plana. Dobivate jedan kredit za svaku potrošenu ${ i18nCurrency }."
+      ],
+      "Tor": [
+        "Tor"
       ],
       "Two-factor authentication disabled": [
         "Onemogućena je provjera autentičnosti u dva koraka"
@@ -3690,6 +3940,11 @@
         "Prečaci poruke"
       ]
     },
+    "Keys actions": {
+      "Delete": [
+        "Izbriši"
+      ]
+    },
     "Label": {
       " and ": [
         " i "
@@ -3847,6 +4102,9 @@
       "Don't ask again": [
         "Ne pitaj ponovno"
       ],
+      "Duration": [
+        "Trajanje"
+      ],
       "Email": [
         "E-pošta"
       ],
@@ -3858,6 +4116,9 @@
       ],
       "Emails": [
         "E-pošta"
+      ],
+      "End date": [
+        "Krajnji datum"
       ],
       "End weekday": [
         "Kraj vikenda"
@@ -3927,6 +4188,9 @@
       ],
       "Label messages as": [
         "Označi poruku kao"
+      ],
+      "Language": [
+        "Jezik"
       ],
       "Last 12 months only": [
         "Samo zadnjih 12 mjeseci"
@@ -4096,6 +4360,9 @@
       "Time format": [
         "Format vremena"
       ],
+      "Time zone": [
+        "Vremenska zona"
+      ],
       "To: ${ to }": [
         "Za: ${ to }"
       ],
@@ -4107,6 +4374,9 @@
       ],
       "Undo send": [
         "Poništi slanje"
+      ],
+      "URL": [
+        "URL"
       ],
       "User": [
         "Korisnik"
@@ -4152,6 +4422,11 @@
       ],
       "Your password (admin)": [
         "Vaša lozinka (administrator)"
+      ]
+    },
+    "Label for default event settings": {
+      "Duration": [
+        "Trajanje"
       ]
     },
     "Label for domain modal": {
@@ -4246,6 +4521,9 @@
       ],
       "Common sign up issues": [
         "Najčešći problemi s registracijom"
+      ],
+      "Contact us": [
+        "Kontaktirajte nas"
       ],
       "Forgot username?": [
         "Zaboravili ste korisničko ime?"
@@ -4482,6 +4760,9 @@
       "Block": [
         "Blokiraj"
       ],
+      "Calendar": [
+        "Kalendar"
+      ],
       "Inbox": [
         "Pristigla pošta"
       ],
@@ -4563,6 +4844,11 @@
         "u"
       ]
     },
+    "Notification type": {
+      "email": [
+        "e-pošta"
+      ]
+    },
     "Notification when": {
       "at time of event": [
         "u vrijeme događaja"
@@ -4627,6 +4913,9 @@
       ],
       "No parent folder": [
         "Nema roditeljske mape"
+      ],
+      "Normal": [
+        "Normalno"
       ],
       "Permanent": [
         "Trajno"
@@ -4722,6 +5011,9 @@
       ],
       "Confirm": [
         "Potvrdi"
+      ],
+      "domain.com": [
+        "domena.hr"
       ],
       "E.g., ": [
         "Npr. "
@@ -4854,6 +5146,11 @@
         "Zbog promjene lozinke, ograničene su ovlasti administratora vaše organizacije. Sljedeće radnje više nisu dopuštene:"
       ]
     },
+    "Role": {
+      "Admin": [
+        "Administrator"
+      ]
+    },
     "Select files": {
       "Browse": [
         "Pregled"
@@ -4865,6 +5162,11 @@
     "Select search results": {
       "No results found": [
         "Nema rezultata"
+      ]
+    },
+    "Server-Info": {
+      "active": [
+        "aktivno"
       ]
     },
     "session_recovery:available:action": {
@@ -4917,11 +5219,17 @@
       ]
     },
     "Settings/filters - table": {
+      "Action": [
+        "Radnja"
+      ],
       "Name": [
         "Naziv"
       ],
       "Order": [
         "Redoslijed"
+      ],
+      "Status": [
+        "Status"
       ]
     },
     "Settings/labels - table": {
@@ -4951,6 +5259,9 @@
     "specialoffer: Action": {
       "Close": [
         "Zatvori"
+      ],
+      "Special offer": [
+        "Posebna ponuda"
       ]
     },
     "specialoffer: Deal details": {
@@ -4959,6 +5270,9 @@
       ],
       "3 TB": [
         "3 TB"
+      ],
+      "6 users": [
+        "6 korisnika"
       ],
       "Secure streaming": [
         "Siguran streaming"
@@ -5008,6 +5322,11 @@
     "Subscription change warning": {
       "Got it": [
         "Razumijem"
+      ]
+    },
+    "Subscription renewal state": {
+      "Disable": [
+        "Onemogući"
       ]
     },
     "Subscription saving": {
@@ -5172,6 +5491,9 @@
       "Edit": [
         "Uredi"
       ],
+      "Email": [
+        "E-pošta"
+      ],
       "Email addresses": [
         "Adrese e-pošte"
       ],
@@ -5184,8 +5506,14 @@
       "Name": [
         "Naziv"
       ],
+      "Password": [
+        "Lozinka"
+      ],
       "Role": [
         "Uloga"
+      ],
+      "Status": [
+        "Status"
       ],
       "Values": [
         "Vrijednosti"
@@ -5312,6 +5640,9 @@
       "Confirm phone number": [
         "Potvrdite broj telefona"
       ],
+      "Contact us": [
+        "Kontaktirajte nas"
+      ],
       "Credentials": [
         "Vjerodajnice"
       ],
@@ -5416,6 +5747,9 @@
       ],
       "Import contacts": [
         "Uvezi kontakte"
+      ],
+      "Import key": [
+        "Uvezi ključ"
       ],
       "Import-Export app": [
         "Import-Export aplikacija"
@@ -5579,6 +5913,9 @@
       "Start import process": [
         "Započni uvoz"
       ],
+      "Status": [
+        "Status"
+      ],
       "Success": [
         "Uspješno"
       ],
@@ -5605,6 +5942,9 @@
       ],
       "Unlock your mailbox": [
         "Otključajte vaš poštanski sandučić"
+      ],
+      "Users": [
+        "Korisnici"
       ],
       "Users and addresses": [
         "Korisnici i adrese"
@@ -5683,6 +6023,9 @@
     "Title header for members table": {
       "Addresses": [
         "Adrese"
+      ],
+      "Email": [
+        "E-pošta"
       ],
       "Features": [
         "Značajke"
@@ -5787,6 +6130,9 @@
       ],
       "2-year": [
         "2 godina"
+      ],
+      "monthly": [
+        "mjesečno"
       ]
     },
     "vpn_2step: feature": {
