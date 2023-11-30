@@ -279,12 +279,6 @@
       "Hide affected calendars": [
         "Απόκρυψη επηρεαζόμενων ημερολογίων"
       ],
-      "Hide folders": [
-        "Απόκρυψη φακέλων"
-      ],
-      "Hide labels": [
-        "Απόκρυψη ετικετών"
-      ],
       "Hide time zones": [
         "Απόκρυψη ζωνών ώρας"
       ],
@@ -524,12 +518,6 @@
       ],
       "Show affected calendars": [
         "Εμφάνιση επηρεαζόμενων ημερολογίων"
-      ],
-      "Show folders": [
-        "Εμφάνιση φακέλων"
-      ],
-      "Show labels": [
-        "Εμφάνιση ετικετών"
       ],
       "Show less": [
         "Εμφάνιση λιγότερων"
@@ -2190,6 +2178,9 @@
       ]
     },
     "Description": {
+      "Boost efficiency and track your time by color-coding events by category or your energy levels. Get this and much more with a paid plan.": [
+        "Ενισχύστε την αποδοτικότητα και παρακολουθήστε το χρόνο σας με χρωματική κωδικοποίηση εκδηλώσεων ανά κατηγορία ή ανά τα επίπεδα ενέργειάς σας. Αποκτήστε αυτό και πολλά άλλα με ένα πλάνο επί πληρωμή."
+      ],
       "Decrypting contacts… This may take a few minutes. When the process is completed, you will be able to download the file with all your contacts exported.": [
         "Αποκρυπτογράφηση επαφών… Αυτό μπορεί να διαρκέσει μερικά λεπτά. Όταν ολοκληρωθεί η διαδικασία, θα μπορείτε να κάνετε λήψη του αρχείου με όλες τις επαφές που έχουν εξαχθεί."
       ],
@@ -4071,6 +4062,9 @@
       "Removed participants will be notified.": [
         "Οι συμμετέχοντες που αφαιρέθηκαν θα ειδοποιηθούν."
       ],
+      "Select a service provider to start": [
+        "Επιλογή παρόχου υπηρεσίας για ξεκίνημα"
+      ],
       "Select the email format you want to be used by default when sending an email to this email address.": [
         "Επιλέξτε τη μορφή ηλεκτρονικού ταχυδρομείου που θέλετε να χρησιμοποιηθεί από προεπιλογή κατά την αποστολή ενός E-mail σε αυτό το E-mail."
       ],
@@ -4355,6 +4349,11 @@
       ],
       "Your system time zone seems to have changed to ${ timezone }. Do you want to update your time zone preference?": [
         "Η ζώνη ώρας του συστήματός σας φαίνεται να έχει αλλάξει σε ${ timezone }. Θέλετε να ενημερώσετε τις προτιμήσεις ζώνης ώρας;"
+      ]
+    },
+    "info": {
+      "Selected color:": [
+        "Επιλεγμένο χρώμα:"
       ]
     },
     "Info calendar search": {
@@ -5184,8 +5183,15 @@
       ]
     },
     "new_plans: feature": {
+      "${ maximumNumberOfCalendars } calendar": [
+        "${ maximumNumberOfCalendars } ημερολόγιο",
+        "${ maximumNumberOfCalendars } ημερολόγια"
+      ],
       "Auto-delete spam and trashed messages": [
         "Αυτόματη διαγραφή ανεπιθύμητων και απορριφθέντων μηνυμάτων"
+      ],
+      "Calendar sharing": [
+        "Κοινή χρήση ημερολογίου"
       ],
       "Custom email domains": [
         "Προσαρμοσμένοι τομείς"
@@ -6145,6 +6151,9 @@
       "Add your country's public holidays to your calendar.": [
         "Προσθέστε τις επίσημες αργίες της χώρας σας στο ημερολόγιό σας."
       ],
+      "Color-coding is here!": [
+        "Η χρωματική κωδικοποίηση είναι εδώ!"
+      ],
       "Easily find the event you're looking for with our new search feature.": [
         "Βρείτε εύκολα την εκδήλωση που αναζητάτε με τη νέα μας λειτουργία αναζήτησης."
       ],
@@ -6159,6 +6168,9 @@
       ],
       "Search for events": [
         "Αναζήτηση για εκδηλώσεις"
+      ],
+      "With customizable event colors, you can color-code the chaos and conquer your day.": [
+        "Με προσαρμόσιμα χρώματα εκδηλώσεων, μπορείτε να κωδικοποιήσετε χρωματικά το χάος και να κατακτήσετε την ημέρα σας."
       ]
     },
     "Storage": {
@@ -6474,6 +6486,9 @@
       ],
       "Add participants": [
         "Προσθήκη συμμετεχόντων"
+      ],
+      "Add some color to your day": [
+        "Προσθέστε λίγο χρώμα στην ημέρα σας"
       ],
       "Add to ${ groupCount } group": [
         "Προσθέστε στη ${ groupCount } ομάδα επαφών",
