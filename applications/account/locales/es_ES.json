@@ -37,7 +37,7 @@
         "Reconectar"
       ],
       "Remove forward": [
-        "Borrar el reenvío"
+        "Eliminar el reenvío"
       ],
       "You will stop the mail forwarding.": [
         "Detendrás el reenvío de correos."
@@ -244,6 +244,9 @@
       ],
       "Copy address": [
         "Copiar dirección"
+      ],
+      "Copy key to the clipboard": [
+        "Copiar clave al portapapeles"
       ],
       "Copy link": [
         "Copiar enlace"
@@ -524,12 +527,6 @@
       "Hide": [
         "Ocultar"
       ],
-      "Hide folders": [
-        "Ocultar carpetas"
-      ],
-      "Hide labels": [
-        "Ocultar etiquetas"
-      ],
       "Hide plan features": [
         "Ocultar las funciones del plan"
       ],
@@ -711,22 +708,22 @@
         "Recargar"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Remove bonuses": [
         "Borrar los beneficios"
       ],
       "Remove calendar": [
-        "Borra el calendario"
+        "Elimina calendario"
       ],
       "Remove gift code": [
-        "Borrar el código de regalo"
+        "Eliminar código de regalo"
       ],
       "Remove this label": [
-        "Borrar esta etiqueta"
+        "Eliminar esta etiqueta"
       ],
       "Remove this member": [
-        "Borrar este miembro"
+        "Eliminar este miembro"
       ],
       "Remove this notification": [
         "Borrar esta notificación"
@@ -883,12 +880,6 @@
       ],
       "Show": [
         "Mostrar"
-      ],
-      "Show folders": [
-        "Mostrar carpetas"
-      ],
-      "Show labels": [
-        "Mostrar etiquetas"
       ],
       "Show less": [
         "Mostrar menos"
@@ -1337,10 +1328,10 @@
         "Aprovechar la oferta"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Remove ${ PASS_APP_NAME }": [
-        "Borrar ${ PASS_APP_NAME }"
+        "Eliminar ${ PASS_APP_NAME }"
       ],
       "Subscribe for 15 months and get our **encrypted password manager** for only ${ priceNoSuffix } extra per month!": [
         "¡Suscríbete durante 15 meses y consigue nuestro **gestor cifrado de contraseñas** por solo ${ priceNoSuffix } más al mes!"
@@ -3439,7 +3430,7 @@
         "Reenviar el correo electrónico de confirmación"
       ],
       "Remove “${ value }”": [
-        "Borrar \"${ value }”"
+        "Eliminar \"${ value }”"
       ],
       "Request confirmation": [
         "Solicitar una confirmación"
@@ -4739,10 +4730,10 @@
     },
     "familyOffer_2023:Info for members section": {
       "Add, remove, and make changes to user accounts in your family group.": [
-        "Añade, borra y efectúa cambios en las cuentas de usuario de tu grupo familiar."
+        "Añade, elimina y efectúa cambios en las cuentas de usuario de tu grupo familiar."
       ],
       "Add, remove, and make changes to user accounts in your organization.": [
-        "Añade, borra y efectúa cambios en las cuentas de usuario de tu organización."
+        "Añade, elimina y efectúa cambios en las cuentas de usuario de tu organización."
       ]
     },
     "familyOffer_2023:Label": {
@@ -4771,7 +4762,7 @@
     },
     "familyOffer_2023:Success": {
       "${ member.Name } has been removed from ${ organization.Name }": [
-        "Se ha borrado a ${ member.Name } de ${ organization.Name }"
+        "Se ha eliminado a ${ member.Name } de ${ organization.Name }"
       ],
       "An error occurred, please try again": [
         "Se ha producido un error. Inténtalo de nuevo."
@@ -4900,7 +4891,7 @@
         "Llave de seguridad"
       ],
       "Security key removed": [
-        "La llave de seguridad ha sido borrada."
+        "La llave de seguridad ha sido eliminada"
       ],
       "Security key updated": [
         "Llave de seguridad actualizada"
@@ -6577,7 +6568,7 @@
         "URL de la imagen"
       ],
       "Images have been removed because they are not allowed in auto-reply": [
-        "Las imágenes se han borrado porque no están permitidas en la respuesta automática."
+        "Las imágenes se han quitado porque no están permitidas en la respuesta automática."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importar ${ calendarCount } de ${ totalCalendarsCount } calendario",
@@ -7246,7 +7237,7 @@
         "El mensaje ${ boldDataLocked } ya no se mostrará, pero podrás seguir desbloqueando tus datos en ${ encryptionAndKeysLink }."
       ],
       "The calendar will be removed from your account.": [
-        "El calendario se borrará de tu cuenta."
+        "El calendario se eliminará de tu cuenta."
       ],
       "The email verification link has expired. Please sign in to resend a verification link.": [
         "El correo de verificación ha caducado. Inicia sesión para reenviar un enlace de verificación."
@@ -7517,9 +7508,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Pasa a un plan superior ahora para obtener funciones premium, productos y almacenamiento a un precio especial."
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Mejora al plan ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, o ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } para obtener ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Mejora al plan ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } o ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } para obtener ${ PROTON_SENTINEL_NAME }."
@@ -9640,7 +9628,7 @@
         "Editar"
       ],
       "Remove": [
-        "Borrar"
+        "Eliminar"
       ],
       "Revoke sessions": [
         "Revocar sesiones"
@@ -10381,17 +10369,6 @@
         "Gestión de equipos"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones premium, suscríbete y elige el método de pago."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } que termina con ${ last4 }"
@@ -10479,6 +10456,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Ahora mismo pagas un precio especial por tu plan. Si te pasas a un plan inferior, perderás esta ventaja y no la recuperarás suscribiéndote de nuevo."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Si no lo haces, tendrás un acceso limitado a tu cuenta y eventualmente se desactivará."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Para seguir utilizando ${ MAIL_APP_NAME } con las funciones premium, suscríbete y elige el método de pago."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Tu periodo de pruebas acaba el ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -10650,7 +10638,7 @@
         "Opción para ver las bandejas de entrada de los usuarios no privados como ellos lo hacen, incluidos el mensaje completo y los datos de contacto"
       ],
       "Organization management tool that lets admins add and remove users, allocate storage, configure domains, and perform other tasks": [
-        "Con la herramienta de administración de organizaciones, los administradores pueden añadir y borrar usuarios, asignar almacenamiento, configurar dominios y hacer otras tareas."
+        "Con la herramienta de administración de organizaciones, los administradores pueden añadir y eliminar usuarios, asignar almacenamiento, configurar dominios y realizar otras acciones"
       ],
       "Our robust infrastructure ensures you will be able to access your account when you need it": [
         "Nuestra sólida infraestructura garantiza que podrás acceder a tu cuenta cuando lo necesites."
@@ -10841,6 +10829,9 @@
       ],
       "IP Address copied to clipboard": [
         "La dirección IP ha sido copiada al portapapeles."
+      ],
+      "Key copied to the clipboard": [
+        "Clave copiada en el portapapeles"
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "Se ha eliminado la clave con la huella digital ${ fp }."
@@ -11194,13 +11185,13 @@
     },
     "Organization capacity error": {
       "${ upgradeLink } to add more users, or remove some user accounts to free up space.": [
-        "${ upgradeLink } para añadir más usuarios, o borra algunas cuentas de usuario para liberar espacio."
+        "${ upgradeLink } para añadir más usuarios, o elimina algunas cuentas de usuario para liberar espacio."
       ],
       "${ upgradeLink } to get more accounts, or remove VPN access from some users.": [
-        "${ upgradeLink } para conseguir más cuentas, o borra el acceso VPN para algunos usuarios."
+        "${ upgradeLink } para añadir más usuarios, o desactiva el acceso VPN de otros usuarios."
       ],
       "${ upgradeLink } to get more addresses, or remove some addresses to free up space.": [
-        "${ upgradeLink } para conseguir más direcciones, o borra algunas direcciones para liberar espacio."
+        "${ upgradeLink } para conseguir más direcciones, o elimina algunas direcciones para liberar espacio."
       ],
       "${ upgradeLink } to get more storage, or remove some storage to free up space.": [
         "${ upgradeLink } para conseguir más almacenamiento, o borra contenido para liberar espacio."
@@ -11724,7 +11715,7 @@
         "No has aún verificado la dirección de correo electrónico."
       ],
       "Email removed": [
-        "Correo electrónico borrado"
+        "Correo electrónico eliminado"
       ],
       "sign in": [
         "iniciar sesión"
@@ -11745,7 +11736,7 @@
         "Verificar tu dirección de correo electrónico aumenta la seguridad de tu cuenta y permite opciones adicionales para la recuperación."
       ],
       "Your recovery email has been successfully removed.": [
-        "Has borrado tu correo electrónico de recuperación."
+        "Tu correo electrónico de recuperación se ha eliminado con éxito."
       ]
     },
     "Recovery method": {
@@ -11795,7 +11786,7 @@
     },
     "Remove calendar section description": {
       "By unsubscribing, you will no longer have access to this calendar. All events in this calendar will be deleted from your account, but they'll remain in the original public link.": [
-        "Al cancelar la suscripción dejarás de tener acceso a este calendario.Se borrarán de tu cuenta todos los eventos en este calendario, pero permanecerán en el enlace público original."
+        "Al cancelar la suscripción dejarás de tener acceso a este calendario. Se eliminarán de tu cuenta todos los eventos en este calendario, pero permanecerán en el enlace público original."
       ],
       "You will no longer have access to this calendar.": [
         "Ya no tendrás acceso a este calendario."
@@ -11806,7 +11797,7 @@
         "Si abandonas este calendario, deberás preguntarle al propietario para unirte de nuevo."
       ],
       "This calendar will be removed from your account.": [
-        "Este calendario se borrará de tu cuenta."
+        "Este calendario se eliminará de tu cuenta."
       ]
     },
     "Remove calendar section title": {
@@ -11817,7 +11808,7 @@
         "¿Abandonar el calendario?"
       ],
       "Remove calendar": [
-        "Borrar el calendario"
+        "Eliminar calendario"
       ],
       "Unsubscribe?": [
         "¿Cancelar la suscripción?"
@@ -12759,7 +12750,7 @@
         "Información del calendario actualizada"
       ],
       "Calendar removed": [
-        "El calendario ha sido borrado."
+        "El calendario ha sido eliminado"
       ],
       "Calendar updated": [
         "Calendario actualizado"
@@ -12923,7 +12914,7 @@
     },
     "Success notification": {
       "${ label.Name } removed": [
-        "${ label.Name } borrado"
+        "${ label.Name } eliminado"
       ],
       "Address deleted": [
         "Dirección eliminada"
@@ -12947,7 +12938,7 @@
         "Creando archivo de configuración para ${ serverName }"
       ],
       "Filter removed": [
-        "El filtro ha sido borrado."
+        "El filtro ha sido eliminado"
       ],
       "Preference updated": [
         "Preferencia actualizada"
@@ -13441,7 +13432,7 @@
         "Eliminar la etiqueta ${ label.Name }"
       ],
       "Delete ${ tokenNameToRemove }?": [
-        "¿Borrar ${ tokenNameToRemove }?"
+        "¿Eliminar ${ tokenNameToRemove }?"
       ],
       "Delete account": [
         "Eliminar cuenta"
@@ -13813,10 +13804,10 @@
         "Recomendar a un amigo"
       ],
       "Remove calendar": [
-        "Borrar el calendario"
+        "Eliminar calendario"
       ],
       "Remove user?": [
-        "¿Borrar el usuario?"
+        "¿Eliminar usuario?"
       ],
       "Rename the gateway": [
         "Cambiar el nombre de la puerta de enlace"
@@ -14627,7 +14618,7 @@
         "Esta importación podría exceder la capacidad de almacenamiento disponible en tu cuenta de ${ BRAND_NAME }. Considera la posibilidad de personalizar tu importación."
       ],
       "This will remove all messages, folders, and labels created during the import.": [
-        "Esto borrará todos los mensajes, carpetas y etiquetas creados durante la importación."
+        "Esto eliminará todos los mensajes, carpetas y etiquetas creados durante la importación."
       ],
       "Unfortunately, we’re not online at the moment. Please complete the form below to describe your issue, and we will look into it and be in touch when we’re back online.": [
         "Desafortunadamente, no estamos en línea en este momento. Completa el siguiente formulario para describir tu problema, y lo analizaremos y nos pondremos en contacto cuando volvamos a estar en línea."
@@ -14659,7 +14650,7 @@
     },
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
-        "Después de la verificación, no borres este registro TXT porque se necesita para confirmar que continúas siendo el propietario del dominio."
+        "Después de la verificación, no borres este registro TXT porqué se necesita para confirmar que continúas siendo el propietario del dominio."
       ],
       "It can take up to a day for DNS changes to update.": [
         "Puede tomar hasta un día para que los cambios de DNS se actualicen."
