@@ -245,6 +245,9 @@
       "Copy address": [
         "Copier l'adresse"
       ],
+      "Copy key to the clipboard": [
+        "Copier la clé dans le presse-papiers"
+      ],
       "Copy link": [
         "Copier le lien"
       ],
@@ -523,12 +526,6 @@
       ],
       "Hide": [
         "Masquer"
-      ],
-      "Hide folders": [
-        "Masquer les dossiers"
-      ],
-      "Hide labels": [
-        "Masquer les labels"
       ],
       "Hide plan features": [
         "Masquer les fonctionnalités de l'offre"
@@ -883,12 +880,6 @@
       ],
       "Show": [
         "Afficher"
-      ],
-      "Show folders": [
-        "Afficher les dossiers"
-      ],
-      "Show labels": [
-        "Afficher les labels"
       ],
       "Show less": [
         "Afficher moins"
@@ -1406,10 +1397,10 @@
         "Faites des économies sur le VPN suisse ultra-rapide grâce aux offres Black Friday"
       ],
       "Save with Cyber Week deals on a high-speed Swiss VPN": [
-        "Faites des économies sur le VPN suisse ultra rapide grâce aux offres Cyber Week"
+        "Faites des économies sur le VPN suisse ultra-rapide grâce aux offres Cyber Week"
       ],
       "Save with End of Year deals on a high-speed Swiss VPN": [
-        "Faites des économies sur le VPN suisse ultra rapide grâce aux offres de fin d'année"
+        "Faites des économies sur le VPN suisse ultra-rapide grâce aux offres de fin d'année"
       ],
       "Select your Black Friday offer": [
         "Sélectionnez votre offre Black Friday"
@@ -6620,7 +6611,7 @@
         "Renforcez la sécurité de votre compte en vérifiant votre adresse e-mail."
       ],
       "Inherited from parent folder": [
-        "Hérité du dossier dans lequel il est placé."
+        "Similaire au dossier principal"
       ],
       "Insert image": [
         "Insérer une image"
@@ -7517,9 +7508,6 @@
       ],
       "Upgrade now to get premium features, products and storage at a special price": [
         "Passez à la version supérieure pour profiter de fonctionnalités, de produits et d'espace de stockage premium à un tarif avantageux."
-      ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Passez à ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ou ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } pour bénéficier de ${ PROTON_SENTINEL_NAME }."
       ],
       "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Passez à ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] } ou ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } pour bénéficier de ${ PROTON_SENTINEL_NAME }."
@@ -8818,7 +8806,7 @@
         "Boite de réception"
       ],
       "Inherit color from parent folder": [
-        "Couleur héritée du dossier dans lequel il se trouve"
+        "Appliquer la couleur du dossier principal"
       ],
       "Interval": [
         "Intervalle"
@@ -10381,17 +10369,6 @@
         "Gestion de l'équipe"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Autrement, l'accès à votre compte sera limité, puis votre compte sera désactivé."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre moyen de paiement."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Votre essai se termine le ${ formattedPeriodEndDate }."
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } se terminant par ${ last4 }"
@@ -10479,6 +10456,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "Vous bénéficiez d'un tarif promotionnel sur votre abonnement actuel. En choisissant un compte avec moins de fonctionnalités, vous perdrez ce tarif et il ne sera plus disponible si vous voulez vous réabonner."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Autrement, l'accès à votre compte sera limité, puis votre compte sera désactivé."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Pour continuer à utiliser ${ MAIL_APP_NAME } avec les fonctionnalités premium, choisissez votre abonnement et votre moyen de paiement."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Votre essai se termine le ${ formattedPeriodEndDate }."
       ]
     },
     "new_plans: Label": {
@@ -10841,6 +10829,9 @@
       ],
       "IP Address copied to clipboard": [
         "L'adresse IP a été copiée dans le presse-papiers."
+      ],
+      "Key copied to the clipboard": [
+        "La clé a été copiée dans le presse-papiers."
       ],
       "Key with fingerprint ${ fp } has been deleted.": [
         "La clé avec l'empreinte ${ fp } a été supprimée."
@@ -11387,6 +11378,12 @@
       ],
       "End-to-end encryption": [
         "Chiffrement de bout en bout"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium password manager!": [
+        "Accédez au gestionnaire de mot de passe premium de ${ BRAND_NAME } pour seulement **${ relativePrice } de plus par mois** !"
+      ],
+      "For just **${ relativePrice } per month** more, you get access to ${ BRAND_NAME }'s premium VPN service!": [
+        "Accédez au VPN premium de ${ BRAND_NAME } pour seulement **${ relativePrice } de plus par mois** !"
       ],
       "For just **${ relativePrice } per month** more, you get access to all of the premium ${ BRAND_NAME } services!": [
         "Pour seulement **${ relativePrice } par mois** de plus, vous bénéficiez de tous les services premium de ${ BRAND_NAME } !"
@@ -13876,7 +13873,7 @@
         "Gestionnaire de sessions"
       ],
       "Set a display name": [
-        "Définir un nom d'utilisateur"
+        "Définir un nom d'affichage"
       ],
       "Set new password": [
         "Définir un nouveau mot de passe"

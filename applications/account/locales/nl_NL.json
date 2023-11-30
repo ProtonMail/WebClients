@@ -521,12 +521,6 @@
       "Hide": [
         "Verbergen"
       ],
-      "Hide folders": [
-        "Mappen verbergen"
-      ],
-      "Hide labels": [
-        "Labels verbergen"
-      ],
       "Hide plan features": [
         "Verberg abonnementsfuncties"
       ],
@@ -880,12 +874,6 @@
       ],
       "Show": [
         "Tonen"
-      ],
-      "Show folders": [
-        "Mappen weergeven"
-      ],
-      "Show labels": [
-        "Toon labels"
       ],
       "Show less": [
         "Minder weergeven"
@@ -1402,8 +1390,14 @@
       "Save with Black Friday deals on a high-speed Swiss VPN": [
         "Bespaar met Black Friday-deals op supersnel Swiss VPN"
       ],
+      "Save with Cyber Week deals on a high-speed Swiss VPN": [
+        "Bespaar met Cyber Week-deals op supersnel Swiss VPN"
+      ],
       "Select your Black Friday offer": [
         "Selecteer uw Black Friday-aanbieding"
+      ],
+      "Select your Cyber Week offer": [
+        "Selecteer uw Cyber Week-aanbieding"
       ]
     },
     "bf2023: info": {
@@ -5622,7 +5616,7 @@
     },
     "Import key": {
       "Are you sure you want to import a private key? Importing an insecurely generated or leaked private key can harm the security of your emails.\n\nPlease also note that the public key corresponding to this private key will be publicly available from our key server. If the key contains personal details (such as your full name) which you do not want to publish, please edit the key before importing it.": [
-        "Weet u zeker dat u een privésleutel wilt importeren? Het importeren van een onveilig gegenereerde of uitgelekte private seleutel kan de veiligheid van uw e-mails schaden.\n\nHoud er ook rekening mee dat de openbare sleutel die overeenkomt met deze private sleutel publiekelijk beschikbaar zal zijn vanaf onze sleutelserver. Als de sleutel persoonlijke gegevens bevat (zoals uw volledige naam) die u niet wilt publiceren, bewerk de sleutel dan voordat u deze importeert."
+        "Weet u zeker dat u een privésleutel wilt importeren? Het importeren van een onveilig gegenereerde of uitgelekte private sleutel kan de veiligheid van uw e-mails schaden.\n\nHoud er ook rekening mee dat de openbare sleutel die overeenkomt met deze private sleutel publiekelijk beschikbaar zal zijn vanaf onze sleutelserver. Als de sleutel persoonlijke gegevens bevat (zoals uw volledige naam) die u niet wilt publiceren, bewerk de sleutel dan voordat u deze importeert."
       ]
     },
     "Import provider": {
@@ -5711,7 +5705,7 @@
         "${ boldWarning } U verliest de toegang tot alle huidige versleutelde gegevens in uw account als u doorgaat."
       ],
       "${ BRAND_NAME } is privacy you can trust, ensured by strong encryption, open-source code, and Swiss privacy laws. We believe nobody should be able to exploit your data, period. Our technology and business are based upon this fundamentally stronger definition of privacy.": [
-        "${ BRAND_NAME } is privacy waarop u kunt vertrouwen, gegarandeerd door sterke versleuteling, open-sourcecode en Zwitserse privacywetten. Wij zijn van mening dat niemand uw gegevens mag misbruiken, punt uit. Onze technologie en ons bedrijf zijn gebaseerd op deze fundamenteel sterkere definitie van privacy."
+        "${ BRAND_NAME } is privacy waarop u kunt vertrouwen, gegarandeerd door sterke versleuteling, open sourcecode en Zwitserse privacywetten. Wij zijn van mening dat niemand uw gegevens mag misbruiken, punt uit. Onze technologie en ons bedrijf zijn gebaseerd op deze fundamenteel sterkere definitie van privacy."
       ],
       "${ BRAND_NAME } paused an import because it lost the connection with your other email provider. Please reconnect.": [
         "${ BRAND_NAME } heeft een import onderbroken omdat de verbinding met uw andere e-mailprovider verbroken is. Gelieve opnieuw verbinding te maken."
@@ -7485,9 +7479,6 @@
       "Upgrade now to get premium features, products and storage at a special price": [
         "Upgrade nu om alle premium functionaliteiten, producten en opslag te krijgen voor een speciale prijs"
       ],
-      "Upgrade to ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
-        "Upgrade naar ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, of ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan om toegang te krijgen tot ${ PROTON_SENTINEL_NAME }."
-      ],
       "Upgrade to ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, ${ PLAN_NAMES[PLANS.FAMILY] }, or ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan to get access to ${ PROTON_SENTINEL_NAME }.": [
         "Upgrade naar ${ PLAN_NAMES[PLANS.PASS_PLUS] }, ${ PLAN_NAMES[PLANS.BUNDLE] }, of ${ PLAN_NAMES[PLANS.FAMILY] } of ${ PLAN_NAMES[PLANS.BUNDLE_PRO] } plan om toegang te krijgen tot ${ PROTON_SENTINEL_NAME }."
       ],
@@ -8041,7 +8032,7 @@
     },
     "Key generation": {
       "A key with the same encryption algorithm already exists. Generating another key will cause slower account loading. Are you sure you want to continue?": [
-        "Een sleutel met hetzelfde encryptie algoritme bestaat al. Het genereren van een andere sleutel zal het laden van de account vertragen. Weet u zeker dat u door wilt gaan?"
+        "Een sleutel met hetzelfde encryptiealgoritme bestaat al. Het genereren van een andere sleutel zal het laden van de account vertragen. Weet u zeker dat u door wilt gaan?"
       ],
       "A key with the same encryption algorithm is already active for this address. Generating another key will cause slower account loading and deletion of this key can cause issues. If you are generating a new key because your old key is compromised, please mark that key as compromised. Are you sure you want to continue?": [
         "Een sleutel met hetzelfde algoritme is al in gebruik voor dit adres. Een andere sleutel genereren kan ervoor zorgen dat het laden van het account langzamer gaat en het verwijderen van oude sleutels kan problemen opleveren. Als u dit doet omdat de oude sleutel uitgelekt is, markeer de oude sleutel dan zodanig. Weet u zeker dat u door wilt gaan?"
@@ -10324,17 +10315,6 @@
         "Teambeheer"
       ]
     },
-    "new_plans: Info": {
-      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
-        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
-      ],
-      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
-        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
-      ],
-      "Your trial ends ${ formattedPeriodEndDate }": [
-        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
-      ]
-    },
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand } eindigend met ${ last4 }"
@@ -10422,6 +10402,17 @@
       ],
       "You’re enjoying a promotional price on your current plan. If you downgrade your account, you will lose your promotional price and it won’t be available if you try to subscribe again.": [
         "U profiteert van een kortingsprijs op uw huidige abonnement. Als u uw account downgradet, raakt u de korting kwijt en is dit abonnement niet meer beschikbaar wanneer u een nieuw abonnement wilt afsluiten."
+      ]
+    },
+    "new_plans: Info": {
+      "Otherwise access to your account will be limited, and your account will eventually be disabled.": [
+        "Anders zal de toegang tot uw account worden beperkt en wordt uw account uiteindelijk uitgeschakeld."
+      ],
+      "To continue to use ${ MAIL_APP_NAME } with premium features, choose your subscription and payment options.": [
+        "Om ${ MAIL_APP_NAME } te blijven gebruiken met premium functies, kiest u uw abonnement en betaalwijze."
+      ],
+      "Your trial ends ${ formattedPeriodEndDate }": [
+        "Uw proefperiode eindigt op ${ formattedPeriodEndDate }"
       ]
     },
     "new_plans: Label": {
