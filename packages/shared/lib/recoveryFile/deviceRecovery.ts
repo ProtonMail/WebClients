@@ -3,13 +3,16 @@ import getLikelyHasKeysToReactivate from '@proton/components/containers/keys/rea
 import { KeyReactivationRequestStateData } from '@proton/components/containers/keys/reactivateKeys/interface';
 import { getInitialStates } from '@proton/components/containers/keys/reactivateKeys/state';
 import { CryptoProxy, PrivateKeyReference } from '@proton/crypto';
+import { APP_NAMES } from '@proton/shared/lib/constants';
+import arraysContainSameElements from '@proton/utils/arraysContainSameElements';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { setNewRecoverySecret } from '../api/settingsRecovery';
+import authentication from '../authentication/authentication';
 import { getItem, removeItem, setItem } from '../helpers/storage';
-import { Address, Api, DecryptedKey, KeyPair, PreAuthKTVerify, User } from '../interfaces';
+import { Address, Api, DecryptedKey, KeyPair, PreAuthKTVerify, User, UserSettings } from '../interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper, reactivateKeysProcess } from '../keys';
 import {
     generateRecoveryFileMessage,
@@ -213,3 +216,63 @@ export const storeDeviceRecovery = async ({
 };
 
 export const getIsDeviceRecoveryAvailable = getIsRecoveryFileAvailable;
+
+export const getIsDeviceRecoveryEnabled = (userSettings: UserSettings) => {
+    return userSettings.DeviceRecovery && authentication.getTrusted();
+};
+
+export const syncDeviceRecovery = async ({
+    api,
+    user,
+    userKeys,
+    userSettings,
+    appName,
+    addresses,
+    signal,
+}: {
+    api: Api;
+    user: User;
+    userKeys: DecryptedKey[];
+    userSettings: UserSettings;
+    appName: APP_NAMES;
+    addresses: Address[];
+    signal?: AbortSignal;
+}) => {
+    const hasRecoveryMessage = getHasRecoveryMessage(user.ID);
+    const isDeviceRecoveryEnabled = getIsDeviceRecoveryEnabled(userSettings);
+
+    const shouldRemoveDeviceRecovery = hasRecoveryMessage && !isDeviceRecoveryEnabled;
+    if (shouldRemoveDeviceRecovery) {
+        removeDeviceRecovery(user.ID);
+        return;
+    }
+
+    const isRecoveryFileAvailable = getIsRecoveryFileAvailable({
+        user,
+        addresses,
+        userKeys,
+        appName,
+    });
+    const isDeviceRecoveryAvailable = authentication.getTrusted() && isRecoveryFileAvailable;
+
+    const privateKeyFingerPrints = userKeys?.map((key) => key.privateKey.getFingerprint()) || [];
+
+    const shouldStoreDeviceRecovery = isDeviceRecoveryAvailable && (isDeviceRecoveryEnabled || hasRecoveryMessage);
+    if (!privateKeyFingerPrints.length || !shouldStoreDeviceRecovery) {
+        return;
+    }
+
+    const storedKeys = (await getKeysFromDeviceRecovery(user)) || [];
+    if (signal?.aborted) {
+        return;
+    }
+    const storedKeyFingerprints = storedKeys.map((key) => key.getFingerprint());
+    const userKeysHaveUpdated = !arraysContainSameElements(storedKeyFingerprints, privateKeyFingerPrints);
+
+    if (!userKeysHaveUpdated) {
+        return;
+    }
+
+    await storeDeviceRecovery({ api, user, userKeys });
+    return true;
+};
