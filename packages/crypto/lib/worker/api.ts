@@ -54,6 +54,7 @@ import {
     MessageInfo,
     PrivateKeyReference,
     PublicKeyReference,
+    SessionKeyWithoutPlaintextAlgo,
     SignatureInfo,
     WorkerDecryptLegacyOptions,
     WorkerDecryptionOptions,
@@ -756,7 +757,7 @@ export class Api extends KeyManagementApi {
     async generateSessionKey({ recipientKeys: recipientKeyRefs = [], ...options }: WorkerGenerateSessionKeyOptions) {
         const recipientKeys = toArray(recipientKeyRefs).map((keyReference) => this.keyStore.get(keyReference._idx));
         const sessionKey = await generateSessionKey({ recipientKeys, ...options });
-        return sessionKey;
+        return sessionKey as SessionKeyWithoutPlaintextAlgo;
     }
 
     /**
@@ -810,7 +811,7 @@ export class Api extends KeyManagementApi {
             decryptionKeys,
         });
 
-        return sessionKey;
+        return sessionKey as SessionKeyWithoutPlaintextAlgo;
     }
 
     async processMIME({ verificationKeys: verificationKeyRefs = [], ...options }: WorkerProcessMIMEOptions) {
