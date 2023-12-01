@@ -63,7 +63,7 @@ export const CheckListGmailForward = ({
     isInMaintenance,
 }: CheckListItemProps & { isInMaintenance: boolean }) => {
     // translator: This text is in bold inside the sentence "Set up auto-forwarding from Gmail"
-    const strongText = <strong>{c('Get started checklist instructions').t`auto-forwarding`}</strong>;
+    const strongText = <strong key="get-started">{c('Get started checklist instructions').t`auto-forwarding`}</strong>;
     // translator: The whole sentence is "Set up auto-forwarding from Gmail" with "auto-forwarding" in bold
     const text = c('Get started checklist instructions').jt`Set up ${strongText} from Gmail`;
     const smallText = c('Get started checklist instructions').t`Auto-forward Gmail`;
