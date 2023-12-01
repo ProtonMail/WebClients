@@ -4,11 +4,14 @@ import { CalendarViewEvent } from '../../containers/calendar/interface';
 import { LayoutEvent } from './layout';
 
 const getEndDate = (end: Date, maxDate: Date, isAllPartDay: boolean) => {
+    const endsOnMidnight = +end === +startOfDay(end);
     const minEnd = min(end, maxDate);
-    const endsOnMidnight = +minEnd === +startOfDay(minEnd);
     if (isAllPartDay && endsOnMidnight) {
-        // for part-day events displayed as all-day and ending on midnight, we want to avoid "adding an extra day"
-        return endOfDay(addDays(minEnd, -1));
+        // for part-day events displayed within range as all-day and ending on midnight, we want to avoid "adding an extra day"
+        const endsWithinRange = +minEnd === +end;
+        if (endsWithinRange) {
+            return endOfDay(addDays(minEnd, -1));
+        }
     }
     return endOfDay(minEnd);
 };
