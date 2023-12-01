@@ -187,7 +187,6 @@ const KeyBackgroundManager = ({
                       })
                     : undefined
             )
-            .catch(noop)
             .then(() => runActiveKeysCheck())
             .catch(noop);
     }, []);

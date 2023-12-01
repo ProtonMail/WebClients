@@ -13,10 +13,7 @@ export const hasActiveKeysMismatch = (address: Address, decryptedKeys: Decrypted
         // If there are no decrypted keys or no skl, do not update.
         return false;
     }
-    const activeKeysIDs = decryptedKeys.reduce<Set<string>>((acc, key) => {
-        acc.add(key.ID);
-        return acc;
-    }, new Set());
+    const activeKeysIDs = new Set(decryptedKeys.map((key) => key.ID));
     return address.Keys.reduce<Boolean>((mismatch, key) => {
         return mismatch ? mismatch : key.Active ? !activeKeysIDs.has(key.ID) : false;
     }, false);
