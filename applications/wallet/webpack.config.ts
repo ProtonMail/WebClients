@@ -32,13 +32,14 @@ const result = (env: any): webpack.Configuration => {
         ...config,
         resolve: {
             ...config.resolve,
-            extensions: ['.js', '.tsx', '.ts', '...'], // ... is there to include default extensions for proper building of type script web workers.
+            extensions: ['.js', '.tsx', '.ts', '.wasm'], // ... is there to include default extensions for proper building of type script web workers.
             fallback: {
                 ...config.resolve?.fallback,
                 buffer: require.resolve('buffer'),
                 path: require.resolve('path-browserify'),
             },
         },
+        experiments: { syncWebAssembly: true, asyncWebAssembly: true },
         plugins: [
             ...config.plugins,
             new webpack.ProvidePlugin({

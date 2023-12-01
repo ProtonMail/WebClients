@@ -35,5 +35,5 @@ module.exports = {
             },
         },
     ],
-    ignorePatterns: ['.eslintrc.js', 'assets/sandbox.js'],
+    ignorePatterns: ['.eslintrc.js', 'assets/sandbox.js', 'pkg/'],
 };
