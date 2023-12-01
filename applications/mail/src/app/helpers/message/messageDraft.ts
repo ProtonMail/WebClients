@@ -213,7 +213,7 @@ export const generatePreviousMessageInfos = (referenceMessage: PartialMessageSta
          */
         const previously = c('Message').t`On ${date}, ${senderString} wrote:`;
 
-        return `${previously}<br><br>`;
+        return `${previously}<br>`;
     }
 };
 
@@ -230,14 +230,16 @@ export const generateBlockquote = (
     const previousContent = referenceMessage.errors?.decryption
         ? referenceMessage.data?.Body
         : isPlainText(referenceMessage.data)
-        ? plainTextToHTML(
-              referenceMessage.data as Message,
-              referenceMessage.decryption?.decryptedBody,
-              mailSettings,
-              userSettings,
-              addresses
-          )
-        : getDocumentContent(restoreImages(referenceMessage.messageDocument?.document, referenceMessage.messageImages));
+          ? plainTextToHTML(
+                referenceMessage.data as Message,
+                referenceMessage.decryption?.decryptedBody,
+                mailSettings,
+                userSettings,
+                addresses
+            )
+          : getDocumentContent(
+                restoreImages(referenceMessage.messageDocument?.document, referenceMessage.messageImages)
+            );
 
     const previousMessageInfos = generatePreviousMessageInfos(referenceMessage, action);
 
@@ -292,8 +294,8 @@ export const createNewDraft = (
     const Sender = isOutside
         ? { Name: referenceMessage?.data?.Sender?.Name || '', Address: referenceMessage?.data?.Sender?.Address || '' }
         : senderAddress
-        ? { Name: senderAddress.DisplayName, Address: senderAddress.Email }
-        : { Name: '', Address: '' };
+          ? { Name: senderAddress.DisplayName, Address: senderAddress.Email }
+          : { Name: '', Address: '' };
 
     const ParentID = action === MESSAGE_ACTIONS.NEW ? undefined : referenceMessage?.data?.ID;
 
