@@ -87,7 +87,6 @@ Sent with ${protonmailAppName} secure email.
 
 On ${formatFullDate(new Date(0))}, ${Sender.Name} <${Sender.Address}> wrote:
 
-
 > mail content
 > with a link -> https://protonmail.com/`);
 
