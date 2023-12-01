@@ -146,13 +146,14 @@ const TrustPublicKeyModal = ({ contact, ...rest }: Props) => {
             <ModalTwoHeader title={c('Title').t`Trust public key?`} />
             <ModalTwoContent>
                 <div className="mb-4">
-                    {alertMessage}
-                    <Href href={getKnowledgeBaseUrl('/address-verification')} className="ml-2">{c('Link')
+                    <span className="mr-2">{alertMessage}</span>
+                    <Href href={getKnowledgeBaseUrl('/address-verification')} className="inline-block">{c('Link')
                         .t`Learn more`}</Href>
                 </div>
                 <div className="mb-4">
-                    {c('Info').t`This public key will be automatically used for encrypting email sent to this address.`}
-                    <Href href={getKnowledgeBaseUrl('/how-to-use-pgp')} className="ml-2">{c('Link')
+                    <span className="mr-2">{c('Info')
+                        .t`This public key will be automatically used for encrypting email sent to this address.`}</span>
+                    <Href href={getKnowledgeBaseUrl('/how-to-use-pgp')} className="inline-block">{c('Link')
                         .t`Learn more`}</Href>
                 </div>
                 <div>
