@@ -32,7 +32,9 @@ export const getMailAppRoutes = ({
     isEmailForwardingEnabled: boolean;
 }): SidebarConfig => {
     const hasOrganization = !!organization?.HasKeys;
-    const learnMoreLink = <Href href={getKnowledgeBaseUrl('/using-folders-labels')}>{c('Link').t`Learn more`}</Href>;
+    const learnMoreLink = (
+        <Href key="learn" href={getKnowledgeBaseUrl('/using-folders-labels')}>{c('Link').t`Learn more`}</Href>
+    );
     return {
         header: MAIL_APP_NAME,
         routes: {
