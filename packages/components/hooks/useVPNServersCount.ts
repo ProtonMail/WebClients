@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { useLoading } from '@proton/hooks';
+import useIsMounted from '@proton/hooks/useIsMounted';
 import {
     queryVPNCountriesCount,
     queryVPNLogicalServerInfoCount,
@@ -25,6 +26,7 @@ const useVPNServersCount = (): [VPNServersCountData, boolean] => {
     const api = useApi();
     const [loading, withLoading] = useLoading();
     const [result, setResult] = useState<VPNServersCountData>(DEFAULT_RESULT);
+    const isMounted = useIsMounted();
 
     useEffect(() => {
         const query = async () => {
@@ -57,7 +59,9 @@ const useVPNServersCount = (): [VPNServersCountData, boolean] => {
                 },
             };
 
-            setResult(updatedResult);
+            if (isMounted()) {
+                setResult(updatedResult);
+            }
         };
 
         void withLoading(query());
