@@ -65,8 +65,8 @@ const ForwardCondition = ({
             )}
             <div className="flex flex-nowrap gap-2">
                 <div className="flex-item-fluid flex gap-4">
-                    <div className="flex-item-fluid flex flex-wrap on-mobile-flex-column gap-4">
-                        <div className="flex-item-fluid">
+                    <div className="flex-item-fluid flex flex-wrap flex-column md:flex-row gap-4">
+                        <div className="md:flex-item-fluid">
                             <SelectTwo
                                 value={condition.type}
                                 onChange={({ value }) => onUpdate({ ...condition, type: value as ConditionType })}
@@ -78,7 +78,7 @@ const ForwardCondition = ({
                                 ))}
                             </SelectTwo>
                         </div>
-                        <div className="flex-item-fluid">
+                        <div className="md:flex-item-fluid">
                             {[ConditionType.SUBJECT, ConditionType.SENDER, ConditionType.RECIPIENT].includes(
                                 condition.type
                             ) && (

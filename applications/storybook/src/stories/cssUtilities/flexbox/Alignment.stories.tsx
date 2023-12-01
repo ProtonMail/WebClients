@@ -10,6 +10,36 @@ export default {
     },
 };
 
+export const JustifyStart = () => {
+    return (
+        <div className="flex flex-justify-start rounded overflow-hidden border">
+            <div className="bg-primary p-4">div</div>
+            <span className="bg-primary p-4">span</span>
+            <em className="bg-primary p-4">em</em>
+        </div>
+    );
+};
+
+export const JustifyCenter = () => {
+    return (
+        <div className="flex flex-justify-center rounded overflow-hidden border">
+            <div className="bg-primary p-4">div</div>
+            <span className="bg-primary p-4">span</span>
+            <em className="bg-primary p-4">em</em>
+        </div>
+    );
+};
+
+export const JustifyEnd = () => {
+    return (
+        <div className="flex flex-justify-end rounded overflow-hidden border">
+            <div className="bg-primary p-4">div</div>
+            <span className="bg-primary p-4">span</span>
+            <em className="bg-primary p-4">em</em>
+        </div>
+    );
+};
+
 export const JustifyBetween = () => {
     return (
         <div className="flex flex-justify-space-between rounded overflow-hidden border">
@@ -30,9 +60,9 @@ export const JustifyAround = () => {
     );
 };
 
-export const JustifyEnd = () => {
+export const JustifyEvenly = () => {
     return (
-        <div className="flex flex-justify-end rounded overflow-hidden border">
+        <div className="flex flex-justify-space-evenly rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
             <span className="bg-primary p-4">span</span>
             <em className="bg-primary p-4">em</em>
@@ -40,9 +70,9 @@ export const JustifyEnd = () => {
     );
 };
 
-export const JustifyCenter = () => {
+export const AlignItemsStartColumn = () => {
     return (
-        <div className="flex flex-justify-center rounded overflow-hidden border">
+        <div className="flex flex-column flex-align-items-start rounded overflow-hidden border">
             <div className="bg-primary p-4">div</div>
             <span className="bg-primary p-4">span</span>
             <em className="bg-primary p-4">em</em>

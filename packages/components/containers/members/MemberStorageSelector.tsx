@@ -169,7 +169,7 @@ const MemberStorageSelector = ({
 
     return (
         <div className={className}>
-            <div className="flex on-tiny-mobile-flex-column">
+            <div className="flex flex-column sm:flex-row">
                 <div className="w-3/10">
                     <InputField
                         label={c('Label').t`Account storage`}
@@ -187,7 +187,7 @@ const MemberStorageSelector = ({
                         suffix={sizeLabelSuffix}
                     />
                 </div>
-                <div className="flex flex-item-fluid flex-justify-end flex-align-self-start">
+                <div className="flex sm:flex-item-fluid flex-justify-end flex-align-self-start">
                     {orgInitialization ? (
                         <>
                             <div>

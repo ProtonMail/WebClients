@@ -16,7 +16,9 @@ const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Pro
     return (
         <div className="contact-view-row flex flex-nowrap flex-align-items-start mb-4">
             <div
-                className={clsx(['contact-view-row-left flex flex-nowrap flex-item-fluid on-mobile-flex-column w-full'])}
+                className={clsx([
+                    'contact-view-row-left flex flex-nowrap flex-item-fluid flex-column md:flex-row w-full',
+                ])}
             >
                 <div
                     className={clsx([
@@ -34,7 +36,7 @@ const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Pro
                 </div>
                 <span
                     className={clsx([
-                        'contact-view-row-content mr-2 flex-item-fluid pt-2 pl-0 md:pl-7',
+                        'contact-view-row-content mr-2 md:flex-item-fluid pt-2 pl-0 md:pl-7',
                         ['note'].includes(field) && 'text-pre-wrap',
                     ])}
                 >

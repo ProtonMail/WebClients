@@ -25,19 +25,19 @@ const InviteHowItWorks = ({ handleClose }: Props) => {
             </Button>
             <h2 className="text-bold">{c('Title').t`How to refer a friend and get credits`}</h2>
 
-            <ol className="flex flex-nowrap gap-4 unstyled on-tablet-flex-column mb-8">
-                <li className="flex-item-fluid">
+            <ol className="flex flex-nowrap gap-4 unstyled flex-column lg:flex-row mb-8">
+                <li className="lg:flex-item-fluid">
                     <h3 className="mb-2 text-bold">{c('Info').t`1. Invite friends to ${BRAND_NAME}`}</h3>
                     {c('Info').t`Just send them your personal referral link.`}
                 </li>
-                <li className="flex-item-fluid">
+                <li className="lg:flex-item-fluid">
                     <h3 className="mb-2 text-bold">{
                         // translator: full sentense would be "They try Mail Plus"
                         c('Info').t`2. They try ${planName}`
                     }</h3>
                     {c('Info').t`They'll receive a free month of ${planName}.`}
                 </li>
-                <li className="flex-item-fluid">
+                <li className="lg:flex-item-fluid">
                     <h3 className="mb-2 text-bold">{c('Info').t`3. You earn credits`}</h3>
                     {c('Info').t`When they subscribe to a plan, you'll get credits to use on your subscription.`}
                 </li>

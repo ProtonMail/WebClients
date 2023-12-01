@@ -46,10 +46,10 @@ const ExtraAskResign = ({ message, messageVerification, onResignContact }: Props
 
     return (
         <div
-            className="bg-norm rounded border pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap on-mobile-flex-column"
+            className="bg-norm rounded border pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap flex-column md:flex-row"
             data-testid="extra-ask-resign:banner"
         >
-            <div className="flex-item-fluid flex flex-nowrap mb-2 md:mb-0">
+            <div className="md:flex-item-fluid flex flex-nowrap mb-2 md:mb-0">
                 <Icon name="exclamation-circle-filled" className="flex-item-noshrink ml-0.5 mt-1 color-danger" />
                 <span className="px-2 mt-0 flex-item-fluid flex-align-self-center">
                     <span className="mr-1">{c('Info').t`We could not verify the sender's trusted keys.`}</span>

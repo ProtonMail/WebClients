@@ -12,7 +12,7 @@ Many (but not all) flex helper classes can be prefixed with `on-mobile` or `on-t
 
 This will display items in a column on mobile, but not on tablet or desktop (resize preview to see effect)
 
-`className='flex on-mobile-flex-column'`
+`className='flex flex-column md:flex-row'`
 
 <div className="border p-2 rounded bg-weak" style={{ width: '320px', resize: 'both', overflow: 'auto' }}>
     <Story id="css-utilities-flexbox-responsive--column-mobile" />
@@ -20,7 +20,7 @@ This will display items in a column on mobile, but not on tablet or desktop (res
 
 ## Column on tablet
 
-This will display items in a column on mobile and tablet, but not on desktop (resize preview to see effect) `className='flex on-tablet-flex-column'`
+This will display items in a column on mobile and tablet, but not on desktop (resize preview to see effect) `className='flex flex-column lg:flex-row'`
 
 <div className="border p-2 rounded bg-weak" style={{ width: '900px', resize: 'both', overflow: 'auto' }}>
     <Story id="css-utilities-flexbox-responsive--column-tablet" />

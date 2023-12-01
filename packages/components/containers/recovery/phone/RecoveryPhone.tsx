@@ -55,7 +55,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
             )}
             {renderVerifyRecoveryPhoneModal && <VerifyRecoveryPhoneModal phone={phone} {...verifyRecoveryPhoneModal} />}
             <form
-                className={clsx(['flex flex-wrap on-mobile-flex-column', className])}
+                className={clsx(['flex flex-wrap flex-column md:flex-row', className])}
                 onSubmit={(e) => {
                     e.preventDefault();
                     if (!onFormSubmit()) {
@@ -68,7 +68,7 @@ const RecoveryPhone = ({ phone, hasReset, defaultCountry, className }: Props) =>
                     }
                 }}
             >
-                <div className="mr-0 mb-4 md:mr-4 flex-item-fluid min-w-custom" style={{ '--min-w-custom': '14em' }}>
+                <div className="mr-0 mb-4 md:mr-4 md:flex-item-fluid min-w-custom" style={{ '--min-w-custom': '14em' }}>
                     <InputFieldTwo
                         as={PhoneInput}
                         id="phoneInput"
