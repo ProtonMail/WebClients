@@ -3,7 +3,16 @@ import { useEffect, useState } from 'react';
 import { format, isValid } from 'date-fns';
 import { c } from 'ttag';
 
-import { ContactKeyWarningIcon, Loader, Table, TableBody, TableRow, useActiveBreakpoint } from '@proton/components';
+import {
+    ContactKeyWarningIcon,
+    Loader,
+    Table,
+    TableBody,
+    TableCell,
+    TableHeader,
+    TableHeaderCell,
+    TableRow,
+} from '@proton/components';
 import { useLoading } from '@proton/hooks';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import { ContactWithBePinnedPublicKey } from '@proton/shared/lib/interfaces/contacts';
@@ -16,7 +25,6 @@ interface Props {
 const SimplePublicKeyTable = ({ contact }: Props) => {
     const [expirationDate, setExpirationDate] = useState<Date | typeof Infinity | null>();
     const [loading, withLoading] = useLoading();
-    const { isNarrow, isTinyMobile } = useActiveBreakpoint();
 
     const publicKey = contact.bePinnedPublicKey;
     const fingerprint = publicKey.getFingerprint();
@@ -42,35 +50,30 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
             <span className="flex-item-fluid text-ellipsis">{fingerprint}</span>
         </div>
     );
-    const creationCell = isNarrow
-        ? null
-        : isValid(creationDate)
-        ? format(creationDate, 'PP', { locale: dateLocale })
-        : '-';
-    const expirationCell = isTinyMobile ? null : loading ? (
+    const creationCell = isValid(creationDate) ? format(creationDate, 'PP', { locale: dateLocale }) : '-';
+    const expirationCell = loading ? (
         <Loader className="icon-18p m-auto flex" />
     ) : isValid(expirationDate) ? (
         format(expirationDate as Date, 'PP', { locale: dateLocale })
     ) : (
         '-'
     );
-    const algorithmCell = !isNarrow && algorithmType;
-    const cells = [fingerprintCell, creationCell, expirationCell, algorithmCell];
 
     return (
-        <Table className="simple-table">
-            <thead>
-                <tr>
-                    <th scope="col" className="text-ellipsis">{c('Table header').t`Fingerprint`}</th>
-                    {!isNarrow && <th scope="col" className="text-ellipsis w-1/5">{c('Table header').t`Created`}</th>}
-                    {!isTinyMobile && (
-                        <th scope="col" className="text-ellipsis w-1/6">{c('Table header').t`Expires`}</th>
-                    )}
-                    {!isNarrow && <th scope="col" className="text-ellipsis w-1/6">{c('Table header').t`Type`}</th>}
-                </tr>
-            </thead>
+        <Table responsive="cards">
+            <TableHeader>
+                <TableHeaderCell>{c('Table header').t`Fingerprint`}</TableHeaderCell>
+                <TableHeaderCell className="w-1/5">{c('Table header').t`Created`}</TableHeaderCell>
+                <TableHeaderCell className="w-1/6">{c('Table header').t`Expires`}</TableHeaderCell>
+                <TableHeaderCell className="w-1/6">{c('Table header').t`Type`}</TableHeaderCell>
+            </TableHeader>
             <TableBody>
-                <TableRow key={fingerprint} cells={cells} />
+                <TableRow key={fingerprint}>
+                    <TableCell label={c('Table header').t`Fingerprint`}>{fingerprintCell}</TableCell>
+                    <TableCell label={c('Table header').t`Created`}>{creationCell}</TableCell>
+                    <TableCell label={c('Table header').t`Expires`}>{expirationCell}</TableCell>
+                    <TableCell label={c('Table header').t`Type`}>{algorithmType}</TableCell>
+                </TableRow>
             </TableBody>
         </Table>
     );
