@@ -20,7 +20,7 @@ const MainContainer = () => {
                 <PrivateWalletLayout contentLoading={loading} wallets={walletsWithBalanceAndTxs}>
                     <Switch>
                         <Route path={'/transfer'}>
-                            <BitcoinTransferContainer />
+                            <BitcoinTransferContainer wallets={walletsWithBalanceAndTxs} />
                         </Route>
                         <Route path={'/buy'}>
                             <BitcoinOnRampContainer />

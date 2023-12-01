@@ -4,8 +4,8 @@ import { Button } from '@proton/atoms/Button';
 import { Card } from '@proton/atoms/Card';
 
 import { Selector } from '../../atoms/Selector';
-import { accounts, wallets } from '../../tests';
-import { WalletKind } from '../../types';
+import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
+import { WalletType } from '../../types/api';
 import { OnChainFeesSelector } from '../OnchainFeesSelector';
 import { OnchainTransactionAdvancedOptions } from '../OnchainTransactionAdvancedOptions';
 import { RecipientList } from './RecipientList';
@@ -14,10 +14,11 @@ import { useOnchainTransactionBuilder } from './useOnchainTransactionBuilder';
 import './index.scss';
 
 interface Props {
-    defaultWalletId?: string;
+    defaultWalletId?: number;
+    wallets: WalletWithAccountsWithBalanceAndTxs[];
 }
 
-export const OnchainTransactionBuilder = ({ defaultWalletId }: Props) => {
+export const OnchainTransactionBuilder = ({ defaultWalletId, wallets }: Props) => {
     const {
         selectedWallet,
         selectedAccount,
@@ -28,7 +29,7 @@ export const OnchainTransactionBuilder = ({ defaultWalletId }: Props) => {
         removeRecipient,
         updateRecipient,
         updateRecipientAmount,
-    } = useOnchainTransactionBuilder(wallets, accounts, defaultWalletId);
+    } = useOnchainTransactionBuilder(wallets, defaultWalletId);
 
     const [walletSelectorLabel, accountSelectorLabel] = [
         c('Wallet Send').t`Send from wallet`,
@@ -42,18 +43,21 @@ export const OnchainTransactionBuilder = ({ defaultWalletId }: Props) => {
                 <Selector
                     id="wallet-selector"
                     label={walletSelectorLabel}
-                    selected={selectedWallet.id}
+                    selected={selectedWallet.WalletID}
                     onSelect={handleSelectWallet}
-                    options={wallets.map((wallet) => ({ value: wallet.id, label: wallet.name }))}
+                    options={wallets.map((wallet) => ({ value: wallet.WalletID, label: wallet.Name }))}
                 />
 
-                {selectedWallet.kind === WalletKind.ONCHAIN && (
+                {selectedWallet.Type === WalletType.OnChain && (
                     <Selector
                         id="account-selector"
                         label={accountSelectorLabel}
-                        selected={selectedAccount.id}
+                        selected={selectedAccount.WalletAccountID}
                         onSelect={handleSelectAccount}
-                        options={accounts.map((account) => ({ value: account.id, label: account.name }))}
+                        options={selectedWallet.accounts.map((account) => ({
+                            value: account.WalletAccountID,
+                            label: account.Label,
+                        }))}
                     />
                 )}
             </div>
@@ -63,7 +67,7 @@ export const OnchainTransactionBuilder = ({ defaultWalletId }: Props) => {
                 <h3 className="text-rg text-semibold">{c('Wallet Send').t`Send to Recipient(s)`}</h3>
 
                 <RecipientList
-                    selectedWallet={selectedWallet}
+                    selectedAccount={selectedAccount}
                     recipients={recipients}
                     onRecipientAddition={addRecipient}
                     onRecipientRemove={removeRecipient}

@@ -1,8 +1,9 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 
-import { Account, BitcoinUnit, Recipient, Wallet } from '../../types';
+import { BitcoinUnit, Recipient, WalletWithAccountsWithBalanceAndTxs } from '../../types';
+import { getAccountBalance } from '../../utils';
 
 export type TempRecipient = Recipient & { uuid: number; unit: BitcoinUnit };
 
@@ -35,36 +36,42 @@ const allocateNewBalance = (recipients: TempRecipient[], balance: number) => {
     return updatedRecipients;
 };
 
-export const useOnchainTransactionBuilder = (wallets: Wallet[], accounts: Account[], defaultWalletId?: string) => {
-    const defaultWallet = wallets.find(({ id }) => defaultWalletId === id) ?? wallets[0];
+export const useOnchainTransactionBuilder = (
+    wallets: WalletWithAccountsWithBalanceAndTxs[],
+    defaultWalletId?: number
+) => {
+    const defaultWallet = wallets.find(({ WalletID }) => defaultWalletId === WalletID) ?? wallets[0];
 
     const [selectedWallet, setSelectedWallet] = useState(defaultWallet);
-    const [selectedAccount, setSelectedAccount] = useState(accounts[0]);
+    const [selectedAccount, setSelectedAccount] = useState(selectedWallet.accounts[0]);
 
     const [recipients, setRecipients] = useState<TempRecipient[]>([{ ...EMPTY_RECIPIENT, uuid: uuid++ }]);
 
-    const handleSelectWallet = ({ value }: SelectChangeEvent<string>) => {
-        const wallet = wallets.find(({ id }) => id === value);
-
-        if (!wallet) {
-            return;
+    const handleSelectWallet = ({ value }: SelectChangeEvent<number>) => {
+        const wallet = wallets.find(({ WalletID }) => WalletID === value);
+        if (wallet) {
+            setSelectedWallet(wallet);
         }
-
-        setSelectedWallet(wallet);
-
-        // Reallocate balance to avoid over balanced transactions that would fail
-        const updatedRecipients = allocateNewBalance(recipients, wallet.balance);
-        setRecipients(updatedRecipients);
     };
 
-    const handleSelectAccount = ({ value }: SelectChangeEvent<string>) => {
-        const account = accounts.find(({ id }) => id === value);
+    const handleSelectAccount = ({ value }: SelectChangeEvent<number>) => {
+        const account = selectedWallet.accounts.find(({ WalletAccountID }) => WalletAccountID === value);
         if (account) {
             setSelectedAccount(account);
         }
-
-        // TODO: reallocate amount for account balance when connected to account API
     };
+
+    useEffect(() => {
+        setSelectedAccount(selectedWallet.accounts[0]);
+    }, [selectedWallet]);
+
+    // TOCHECK
+    useEffect(() => {
+        const updatedRecipients = allocateNewBalance(recipients, getAccountBalance(selectedAccount));
+        setRecipients(updatedRecipients);
+        // We manually update recipient on the `addRecipient` fn below, here we only want to constrain allocatedBalance based on selectedAccount
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [selectedAccount]);
 
     const addRecipient = useCallback(() => {
         setRecipients((prev) => [...prev, { ...EMPTY_RECIPIENT, uuid: uuid++ }]);
@@ -101,7 +108,7 @@ export const useOnchainTransactionBuilder = (wallets: Wallet[], accounts: Accoun
 
         const otherRecipients = [...before, ...after];
         const totalAllocated = otherRecipients.reduce((acc, recipient) => acc + recipient.amount, 0);
-        const remainingAmount = selectedWallet.balance - totalAllocated;
+        const remainingAmount = getAccountBalance(selectedAccount) - totalAllocated;
 
         // If remainingAmount = 123 and update's amount is 100, we'll allocate 100
         // If remainingAmount = 73 and update's amount is 100, we'll allocate only 73

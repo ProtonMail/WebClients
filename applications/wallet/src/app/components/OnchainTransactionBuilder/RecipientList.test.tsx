@@ -1,6 +1,6 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { wallets } from '../../tests';
+import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 import { BitcoinUnit } from '../../types';
 import { RecipientList } from './RecipientList';
 import { TempRecipient } from './useOnchainTransactionBuilder';
@@ -13,10 +13,11 @@ const recipients: TempRecipient[] = [
 
 describe('RecipientList', () => {
     let baseProps: Parameters<typeof RecipientList>[0];
+    const testAccount = walletsWithAccountsWithBalanceAndTxs[0].accounts[0];
 
     beforeEach(() => {
         baseProps = {
-            selectedWallet: wallets[0],
+            selectedAccount: testAccount,
             recipients,
             onRecipientUpdate: jest.fn(),
             onRecipientAmountUpdate: jest.fn(),
@@ -131,7 +132,7 @@ describe('RecipientList', () => {
                     fireEvent.click(maxAmountButton);
 
                     expect(baseProps.onRecipientAmountUpdate).toHaveBeenCalledTimes(1);
-                    expect(baseProps.onRecipientAmountUpdate).toHaveBeenCalledWith(0, wallets[0].balance);
+                    expect(baseProps.onRecipientAmountUpdate).toHaveBeenCalledWith(0, 100067);
                 });
             });
         });
