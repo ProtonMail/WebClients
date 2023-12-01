@@ -218,6 +218,7 @@ blockquote.protonmail_quote
 	outline: none;
 	background-color: transparent;
 	text-align: center;
+	transform: translateZ(0); // fix for Brave display
 	transition:
 		0.15s cubic-bezier(0.22, 1, 0.36, 1),
 		background-position 0s;
