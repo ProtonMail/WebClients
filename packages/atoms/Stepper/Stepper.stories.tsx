@@ -32,7 +32,7 @@ export const Basic = () => {
                 ))}
             </Stepper>
 
-            <div className="mt-11 flex flex-justify-end">
+            <div className="mt-11 flex justify-end">
                 <Button
                     className="mr-2"
                     color="norm"
@@ -79,7 +79,7 @@ export const Centered = () => {
                 ))}
             </Stepper>
 
-            <div className="mt-11 flex flex-justify-end">
+            <div className="mt-11 flex justify-end">
                 <Button
                     className="mr-2"
                     color="norm"

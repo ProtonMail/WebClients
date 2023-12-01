@@ -108,7 +108,7 @@ const FilterActionsFormFolderRow = ({ folders, actions, handleUpdateActions }: P
 
         if (['archive', 'inbox', 'spam', 'trash'].includes(moveTo?.folder)) {
             selectedFolder = (
-                <span className="inline-flex flex-align-items-center mr-8">
+                <span className="inline-flex items-center mr-8">
                     <Icon name={moveTo.folder as IconName} className="mr-2" />
                     {options.find((o) => o.value === moveTo?.folder)?.text}
                 </span>
@@ -127,7 +127,7 @@ const FilterActionsFormFolderRow = ({ folders, actions, handleUpdateActions }: P
                     )}
                     <span
                         className={clsx([
-                            'max-w-full flex-nowrap inline-flex flex-align-items-center',
+                            'max-w-full flex-nowrap inline-flex items-center',
                             i !== 0 && 'ml-2',
                         ])}
                     >
@@ -140,7 +140,7 @@ const FilterActionsFormFolderRow = ({ folders, actions, handleUpdateActions }: P
             ));
         }
 
-        return <div className="flex flex-align-items-center max-w-full">{selectedFolder}</div>;
+        return <div className="flex items-center max-w-full">{selectedFolder}</div>;
     };
 
     return (

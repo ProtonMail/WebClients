@@ -65,14 +65,14 @@ const ProtonVPNClientsSection = () => {
         },
     ].map(({ href, children }) => {
         return (
-            <div className="flex flex-align-items-center no-scroll" key={children}>
-                <DropdownMenuLink className="flex-item-fluid" href={href}>
+            <div className="flex items-center overflow-hidden" key={children}>
+                <DropdownMenuLink className="flex-1" href={href}>
                     {children}
                 </DropdownMenuLink>
                 <Copy
                     shape="ghost"
                     value={href}
-                    className="flex-item-noshrink mr-2"
+                    className="shrink-0 mr-2"
                     onCopy={() => {
                         createNotification({
                             text: c('Success').t`Link copied to clipboard`,

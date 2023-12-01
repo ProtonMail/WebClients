@@ -32,10 +32,10 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                     <Icon
                         name="app-switch"
                         size={24}
-                        className="apps-dropdown-button-icon flex-item-noshrink no-print"
+                        className="apps-dropdown-button-icon shrink-0 no-print"
                     />
                 }
-                className="apps-dropdown-button flex-item-noshrink"
+                className="apps-dropdown-button shrink-0"
                 dropdownClassName="apps-dropdown rounded-lg"
                 originalPlacement="bottom-start"
                 title={c('Apps dropdown').t`${BRAND_NAME} applications`}
@@ -62,13 +62,13 @@ const AppsDropdown = forwardRef<HTMLButtonElement, AppsDropdownProps>(
                                         current={current}
                                     >
                                         <div
-                                            className="apps-dropdown-logo-wrapper flex flex-align-items-center flex-justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
+                                            className="apps-dropdown-logo-wrapper flex items-center justify-center rounded-lg border border-weak w-custom h-custom mx-auto"
                                             style={{ '--w-custom': '3.25rem', '--h-custom': '3.25rem' }}
                                         >
                                             <Logo
                                                 appName={appToLinkTo}
                                                 variant="glyph-only"
-                                                className="flex-item-noshrink"
+                                                className="shrink-0"
                                                 size={36}
                                             />
                                         </div>

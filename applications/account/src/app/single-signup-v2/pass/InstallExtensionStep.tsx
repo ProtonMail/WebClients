@@ -219,7 +219,7 @@ export const getInfo = (
                 href={client.link}
                 size="large"
                 shape="outline"
-                className="flex-item-fluid py-4"
+                className="flex-1 py-4"
                 disabled={clientType === 'safari'}
                 onClick={() => {
                     onClickDownload(type);

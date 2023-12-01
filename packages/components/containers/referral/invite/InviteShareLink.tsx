@@ -35,17 +35,17 @@ const InviteShareLink = () => {
     return (
         <div>
             <h2 className="h3 text-bold">{c('Label').t`Your referral link`}</h2>
-            <div className="invite-section-share-link flex flex-align-items-stretch gap-2">
+            <div className="invite-section-share-link flex items-stretch gap-2">
                 <div
-                    className="flex-item-fluid flex flex-align-items-center p-2 user-select border rounded"
+                    className="flex-1 flex items-center p-2 user-select border rounded"
                     title={referrerLink}
                 >
                     <span className="text-ellipsis">{referrerLink}</span>
                 </div>
-                <div className="flex gap-2 flex-nowrap flex-justify-end">
+                <div className="flex gap-2 flex-nowrap justify-end">
                     <Button color="norm" onClick={onCopyButtonClick} title={c('Info').t`Copy your referral link`}>
-                        <span className="flex flex-nowrap flex-align-items-center">
-                            <Icon name="link" className="mr-1 flex-item-noshrink" /> {c('Button').t`Copy`}
+                        <span className="flex flex-nowrap items-center">
+                            <Icon name="link" className="mr-1 shrink-0" /> {c('Button').t`Copy`}
                         </span>
                     </Button>
                     <TwitterButton
@@ -56,8 +56,8 @@ const InviteShareLink = () => {
                         )}
                         target="_blank"
                     >
-                        <span className="flex flex-nowrap flex-align-items-center">
-                            <Icon name="brand-twitter" className="mr-1 flex-item-noshrink" /> {c('Button').t`Tweet`}
+                        <span className="flex flex-nowrap items-center">
+                            <Icon name="brand-twitter" className="mr-1 shrink-0" /> {c('Button').t`Tweet`}
                         </span>
                     </TwitterButton>
                 </div>

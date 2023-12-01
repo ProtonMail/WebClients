@@ -54,7 +54,7 @@ export const RadioGroupField = <T extends RadioValue>({
     return (
         <InputFieldTwo<typeof RadioGroup<T>>
             as={RadioGroup}
-            assistContainerClassName="hidden-empty"
+            assistContainerClassName="empty:hidden"
             error={error}
             {...field}
             {...props}

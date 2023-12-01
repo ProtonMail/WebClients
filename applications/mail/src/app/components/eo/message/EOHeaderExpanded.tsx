@@ -59,14 +59,14 @@ const EOHeaderExpanded = ({
             ])}
             data-testid={`message-header-expanded:${message.data?.Subject}`}
         >
-            <div className="flex flex-nowrap flex-align-items-center mx-0 mb-3 sm:mx-8">
-                <span className="flex flex-item-fluid flex-nowrap mr-2">
-                    <div className={clsx(['flex flex-nowrap', !messageLoaded && 'flex-item-fluid'])}>
+            <div className="flex flex-nowrap items-center mx-0 mb-3 sm:mx-8">
+                <span className="flex flex-1 flex-nowrap mr-2">
+                    <div className={clsx(['flex flex-nowrap', !messageLoaded && 'flex-1'])}>
                         <RecipientType
                             label={c('Label Recipient').t`From`}
                             className={clsx([
-                                'flex flex-align-items-start flex-nowrap',
-                                !messageLoaded && 'flex-item-fluid',
+                                'flex items-start flex-nowrap',
+                                !messageLoaded && 'flex-1',
                             ])}
                         >
                             <RecipientItem
@@ -80,7 +80,7 @@ const EOHeaderExpanded = ({
                     </div>
                 </span>
                 <div
-                    className="message-header-metas-container flex flex-align-items-center flex-item-noshrink"
+                    className="message-header-metas-container flex items-center shrink-0"
                     data-testid="message:message-header-metas"
                 >
                     {messageLoaded && (
@@ -100,7 +100,7 @@ const EOHeaderExpanded = ({
                     {!messageLoaded && <span className="message-header-metas ml-2 inline-flex" />}
                 </div>
             </div>
-            <div className="flex md:flex-nowrap flex-align-items-center mx-0 sm:mx-8 mt-0 mb-4">
+            <div className="flex md:flex-nowrap items-center mx-0 sm:mx-8 mt-0 mb-4">
                 <MailRecipients
                     message={message}
                     recipientsOrGroup={recipientsOrGroup}
@@ -114,17 +114,17 @@ const EOHeaderExpanded = ({
             </div>
             {showDetails && (
                 <div className="my-2 mx-8 flex flex-nowrap color-weak">
-                    <span className="flex-align-self-center mr-2 text-ellipsis">
+                    <span className="self-center mr-2 text-ellipsis">
                         <ItemDate element={message.data} labelID={labelID} mode="full" useTooltip />
                     </span>
                 </div>
             )}
 
             {!showDetails && isNarrow && (
-                <div className="flex flex-justify-space-between flex-align-items-center border-top mx-0 sm:mx-8 pt-2 mb-2">
+                <div className="flex justify-space-between items-center border-top mx-0 sm:mx-8 pt-2 mb-2">
                     {messageLoaded ? (
                         <>
-                            <div className="flex flex-nowrap flex-align-items-center">
+                            <div className="flex flex-nowrap items-center">
                                 <Icon name="calendar-grid" className="mx-2" />
                                 <ItemDate element={message.data} labelID={labelID} useTooltip />
                             </div>

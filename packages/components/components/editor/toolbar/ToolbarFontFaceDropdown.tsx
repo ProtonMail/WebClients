@@ -85,7 +85,7 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
     return (
         <ToolbarDropdown
             originalPlacement="bottom-start"
-            className="composer-toolbar-fontDropDown flex-item-fluid text-right flex no-scroll"
+            className="composer-toolbar-fontDropDown flex-1 text-right flex overflow-hidden"
             title={c('Action').t`Font`}
             data-testid="editor-font-face"
             content={
@@ -112,11 +112,11 @@ const ToolbarFontFaceDropdown = ({ value, setValue, defaultValue, onClickDefault
                         buttonContent={<span className="pr-2">{fontLabel}</span>}
                         extraContent={
                             displayDefaultFontButton(defaultValue, fontId, !!showDefaultFontSelector) ? (
-                                <div className="flex px-2 flex-item-noshrink">
+                                <div className="flex px-2 shrink-0">
                                     <Button
                                         color="weak"
                                         shape="ghost"
-                                        className="inline-flex flex-align-self-center text-no-decoration relative"
+                                        className="inline-flex self-center text-no-decoration relative"
                                         onClick={onClickDefault}
                                         data-testid={`editor-toolbar:font-face:dropdown-item:${fontId}:default`}
                                     >

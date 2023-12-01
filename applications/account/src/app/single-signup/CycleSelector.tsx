@@ -71,7 +71,7 @@ const CycleItemView = ({
     bg?: boolean;
 }) => {
     return (
-        <div className="lg:flex-item-fluid w-full pricing-box-content-cycle max-w-custom mx-auto lg:mx-0" style={{ '--max-w-custom': '30em' }}>
+        <div className="lg:flex-1 w-full pricing-box-content-cycle max-w-custom mx-auto lg:mx-0" style={{ '--max-w-custom': '30em' }}>
             {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
             <div
                 className={clsx(
@@ -95,7 +95,7 @@ const CycleItemView = ({
                 )}
                 <div className="p-4 pt-6" data-testid={`plan-${cycle}`}>
                     <div>
-                        <div className="flex flex-align-items-center flex-nowrap gap-3">
+                        <div className="flex items-center flex-nowrap gap-3">
                             <Radio
                                 id={`${cycle}`}
                                 aria-labelledby={`${cycle}-text ${cycle}-save ${cycle}-price ${cycle}-billed ${cycle}-guarantee `}

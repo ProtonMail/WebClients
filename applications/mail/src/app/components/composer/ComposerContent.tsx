@@ -51,14 +51,14 @@ const ComposerContent = ({
     return (
         <section
             className={clsx([
-                'flex-item-fluid-auto mb-2 flex flex-column flex-nowrap relative composer-content pt-2',
+                'flex-auto mb-2 flex flex-column flex-nowrap relative composer-content pt-2',
                 attachments?.length > 0 && 'composer-content--has-attachments',
             ])}
         >
             {disabled && (
                 <>
                     <div className="absolute absolute-cover placeholder opacity-50" />
-                    <div className="absolute absolute-cover color-weak flex flex-justify-center flex-align-items-center">
+                    <div className="absolute absolute-cover color-weak flex justify-center items-center">
                         {c('Info').t`Loading message`}
                         <EllipsisLoader />
                     </div>
@@ -66,7 +66,7 @@ const ComposerContent = ({
             )}
             <div
                 className={clsx([
-                    'flex-item-fluid flex flex-column flex-nowrap relative',
+                    'flex-1 flex flex-column flex-nowrap relative',
                     isOutside && 'mx-0 sm:mx-2',
                     !isOutside && 'w-full mb-2',
                 ])}

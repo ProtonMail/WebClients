@@ -45,7 +45,7 @@ const SelectEncryption = ({ encryptionType, setEncryptionType }: Props) => {
                             checked={value === encryptionType}
                             onChange={() => setEncryptionType(value)}
                         >
-                            <span className="flex-item-fluid">
+                            <span className="flex-1">
                                 <span className="sr-only">{c('Label').t`Key strength`}</span>
                                 {label}
                             </span>

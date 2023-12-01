@@ -73,13 +73,13 @@ export const Accessibility = () => {
     ] as const;
 
     return (
-        <div className="flex flex-align-items-center">
+        <div className="flex items-center">
             <div className="mr-8" style={{ width: 160, height: 160 }}>
                 <Donut segments={labelledSegments.map(({ value }) => value as [number, string])} />
             </div>
             <div>
                 {labelledSegments.map(({ label, value: [share, color] }) => (
-                    <div className="mb-4 flex flex-align-items-center">
+                    <div className="mb-4 flex items-center">
                         <span
                             className="inline-block mr-4"
                             style={{

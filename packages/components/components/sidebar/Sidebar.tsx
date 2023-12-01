@@ -126,26 +126,26 @@ const Sidebar = ({
                 <Hamburger
                     expanded={expanded}
                     onToggle={onToggleExpand}
-                    className="md:hidden flex-item-noshrink absolute right mr-5 mt-2 opacity-0 focus:opacity-100 bg-norm"
+                    className="md:hidden shrink-0 absolute right mr-5 mt-2 opacity-0 focus:opacity-100 bg-norm"
                 />
 
                 <h1 className="sr-only">{getAppName(APP_NAME)}</h1>
-                <div className="logo-container hidden md:flex flex-item-noshrink flex-justify-space-between flex-align-items-center flex-nowrap">
+                <div className="logo-container hidden md:flex shrink-0 justify-space-between items-center flex-nowrap">
                     {logo}
                     <div className="hidden md:block">{appsDropdown}</div>
                 </div>
 
                 {isNarrow && (
-                    <div className="px-3 flex-item-noshrink md:hidden">
+                    <div className="px-3 shrink-0 md:hidden">
                         <UserDropdown app={APP_NAME} hasAppLinks={hasAppLinks} />
                     </div>
                 )}
 
-                {primary ? <div className="px-3 pb-2 flex-item-noshrink hidden md:block">{primary}</div> : null}
+                {primary ? <div className="px-3 pb-2 shrink-0 hidden md:block">{primary}</div> : null}
                 <div className="mt-1 md:mt-0" aria-hidden="true" />
                 <div
                     className={clsx(
-                        growContent ? 'flex-item-fluid' : 'flex-item-nogrow',
+                        growContent ? 'flex-1' : 'grow-0',
                         'flex-nowrap flex flex-column overflow-overlay pb-2 md:mt-2'
                     )}
                 >
@@ -153,14 +153,14 @@ const Sidebar = ({
                     {children}
                 </div>
                 {APP_NAME !== APPS.PROTONVPN_SETTINGS ? (
-                    <div className="flex-item-noshrink app-infos px-3 mt-2">
+                    <div className="shrink-0 app-infos px-3 mt-2">
                         <SidebarStorageMeter
                             label={`${c('Storage').t`Your current storage:`} ${humanSize(UsedSpace)} / ${humanSize(
                                 MaxSpace
                             )}`}
                             value={Math.ceil(spacePercentage)}
                         />
-                        <div className="flex flex-nowrap flex-justify-space-between py-2">
+                        <div className="flex flex-nowrap justify-space-between py-2">
                             <span>
                                 {canAddStorage ? (
                                     <Tooltip title={c('Storage').t`Upgrade storage`}>

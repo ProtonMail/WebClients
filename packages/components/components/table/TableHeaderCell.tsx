@@ -23,16 +23,16 @@ interface Props extends ThHTMLAttributes<HTMLTableCellElement> {
 
 const TableHeaderCell = ({ children, direction, isLoading, onSort, ...rest }: Props) => {
     const content = onSort ? (
-        <div className="flex-nowrap inline-flex-vcenter cursor-pointer table-header-cell-hover" onClick={onSort}>
+        <div className="flex-nowrap inline-flex children-self-center cursor-pointer table-header-cell-hover" onClick={onSort}>
             <span className="mr-1">{children}</span>
             {direction && (
                 <Icon
                     name="arrow-up"
                     size={16}
-                    className={`mr-1 flex-item-noshrink ${direction === SORT_DIRECTION.ASC ? '' : 'rotateX-180'}`}
+                    className={`mr-1 shrink-0 ${direction === SORT_DIRECTION.ASC ? '' : 'rotateX-180'}`}
                 />
             )}
-            {isLoading && <Loader className="flex flex-item-noshrink" />}
+            {isLoading && <Loader className="flex shrink-0" />}
         </div>
     ) : (
         children

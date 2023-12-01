@@ -329,7 +329,7 @@ const Step1 = ({
             bottomRight={<SignupSupportDropdown isDarkBg={isDarkBg} />}
             className={className}
         >
-            <div className="flex flex-align-items-center flex-column">
+            <div className="flex items-center flex-column">
                 <div
                     className={clsx(
                         'single-signup-header-v2 text-center mt-8 mb-4',
@@ -356,8 +356,8 @@ const Step1 = ({
                     const wrap = (iconName: IconName, textLaunchOffer: ReactNode) => {
                         return (
                             <div className="signup-v2-offer-banner py-2 px-4 rounded-lg color-primary md:text-lg inline-flex flex-nowrap mt-4">
-                                <Icon name={iconName} size={14} className="flex-item-noshrink mt-1" />
-                                <span className="ml-2 flex-item-fluid">{textLaunchOffer}</span>
+                                <Icon name={iconName} size={14} className="shrink-0 mt-1" />
+                                <span className="ml-2 flex-1">{textLaunchOffer}</span>
                             </div>
                         );
                     };
@@ -477,7 +477,7 @@ const Step1 = ({
                                 />
                             )}
                             {model.upsell.mode === UpsellTypes.PLANS && (
-                                <div className="flex flex-justify-start lg:flex-justify-end mt-1 flex-justify-center gap-4">
+                                <div className="flex justify-start lg:justify-end mt-1 justify-center gap-4">
                                     <div className="color-primary">
                                         <CurrencySelector
                                             mode="select-two"
@@ -544,8 +544,8 @@ const Step1 = ({
                                             .t`Continue with your ${BRAND_NAME} account`}
                                     />
                                     <BoxContent>
-                                        <div className="flex flex-justify-space-between gap-14">
-                                            <div className="flex-item-fluid w-0">
+                                        <div className="flex justify-space-between gap-14">
+                                            <div className="flex-1 w-0">
                                                 <AccountSwitcherItem user={user} />
                                                 {hasSelectedFree && (
                                                     <Button
@@ -596,8 +596,8 @@ const Step1 = ({
                                           })}
                                 />
                                 <BoxContent>
-                                    <div className="flex flex-align-items-start flex-justify-space-between gap-14">
-                                        <div className="flex-item-fluid w-0 relative">
+                                    <div className="flex items-start justify-space-between gap-14">
+                                        <div className="flex-1 w-0 relative">
                                             <AccountStepDetails
                                                 {...(signupParameters.invite?.type === 'pass'
                                                     ? {

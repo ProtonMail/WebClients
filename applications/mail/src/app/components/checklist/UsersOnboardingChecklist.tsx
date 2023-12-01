@@ -97,13 +97,13 @@ const UsersOnboardingChecklist = ({
                 <div
                     data-testid="onboarding-checklist"
                     className={clsx(
-                        'w-full flex flex-column flex-item-noshrink',
+                        'w-full flex flex-column shrink-0',
                         // The checklist is displayed on both the list and details (right side when column mode), we need to hide it on the list when the side details view is visible
                         displayOnMobile && 'free-checklist--container',
-                        isColumnMode(mailSettings) && !smallVariant && !isNarrow && 'flex-justify-center h-full',
+                        isColumnMode(mailSettings) && !smallVariant && !isNarrow && 'justify-center h-full',
                         !isNarrow && !smallVariant && 'm-auto',
                         smallVariant
-                            ? 'px-2 flex-align-self-end'
+                            ? 'px-2 self-end'
                             : 'max-w-full md:max-w-custom p-3 md:p-6 px-4 md:px-0 my-3 md:my-auto gap-6'
                     )}
                     style={smallVariant ? undefined : { '--md-max-w-custom': '30em' }}

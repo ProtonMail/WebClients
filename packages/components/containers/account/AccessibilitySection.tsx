@@ -102,7 +102,7 @@ const AccessibilitySection = () => {
                             return (
                                 <Option
                                     key={id}
-                                    className={clsx('flex flex-nowrap flex-align-items-center gap-2 py-0 h-custom')}
+                                    className={clsx('flex flex-nowrap items-center gap-2 py-0 h-custom')}
                                     style={{
                                         '--h-custom': '2.5rem',
                                     }}
@@ -110,7 +110,7 @@ const AccessibilitySection = () => {
                                     value={id}
                                 >
                                     <span
-                                        className="flex-item-noshrink w-custom text-center text-nowrap text-bold"
+                                        className="shrink-0 w-custom text-center text-nowrap text-bold"
                                         style={{
                                             fontSize: `${value / 14}em`,
                                             '--w-custom': '1.5rem',
@@ -118,7 +118,7 @@ const AccessibilitySection = () => {
                                     >
                                         Aa
                                     </span>
-                                    <span className="flex-item-fluid">{label}</span>
+                                    <span className="flex-1">{label}</span>
                                 </Option>
                             );
                         })}

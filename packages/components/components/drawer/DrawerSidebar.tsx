@@ -40,8 +40,8 @@ const DrawerSidebar = ({ buttons }: Props) => {
             aria-label={c('Landmarks').t`Side panel`}
             className={clsx('drawer-sidebar hidden md:inline no-print', isProminent && 'ui-prominent')}
         >
-            <span className="flex flex-column flex-align-items-center py-3 h-full">
-                <div className="flex flex-column flex-align-items-center gap-5">{clonedButtons}</div>
+            <span className="flex flex-column items-center py-3 h-full">
+                <div className="flex flex-column items-center gap-5">{clonedButtons}</div>
             </span>
         </nav>
     );

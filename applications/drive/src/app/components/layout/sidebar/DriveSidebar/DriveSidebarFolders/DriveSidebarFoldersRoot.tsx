@@ -35,7 +35,7 @@ export default function DriveSidebarFoldersRoot({ path, shareId, linkId, rootFol
             ) : (
                 rootFolder.children.length > 0 && (
                     <ExpandButton
-                        className="flex-item-noshrink"
+                        className="shrink-0"
                         expanded={rootFolder.isExpanded}
                         onClick={() => toggleExpand(rootFolder.link.linkId)}
                     />

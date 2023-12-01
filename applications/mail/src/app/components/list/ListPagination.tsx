@@ -45,8 +45,8 @@ const ListPagination = ({ onPrevious, onNext, onPage, page, loading, total }: Pr
     }, [page, total]);
 
     return (
-        <div className="flex flex-column flex-align-items-center">
-            <div className="flex flex-row gap-2 flex-align-items-inherit">
+        <div className="flex flex-column items-center">
+            <div className="flex flex-row gap-2 items-inherit">
                 <Tooltip title={c('Action').t`Go to previous page`}>
                     <Button
                         size="small"

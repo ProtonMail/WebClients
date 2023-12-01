@@ -100,19 +100,19 @@ const PlanCard = ({
             >
                 {recommended ? (
                     <div className="plan-selection-plan-recommended-pill-container text-aligncenter flex">
-                        <div className="plan-selection-plan-recommended-pill inline-flex mx-auto flex-items-align-center bg-primary py-1 px-3">
+                        <div className="plan-selection-plan-recommended-pill inline-flex mx-auto bg-primary py-1 px-3">
                             <Icon name="star-filled" className="my-auto" />
                             <span className="ml-1">{c('Title').t`Recommended`}</span>
                         </div>
                     </div>
                 ) : null}
-                <div className="flex flex-row flex-align-items-center">
+                <div className="flex flex-row items-center">
                     <h2 className="h3 plan-selection-title flex text-bold text-capitalize mb-2" id={`desc_${planName}`}>
                         {planTitle}
                     </h2>
                 </div>
                 <p className="text-lg plan-selection-info text-left color-weak mb-4">{info}</p>
-                <div className="mb-4 flex flex-wrap flex-align-items-baseline plan-selection-price">
+                <div className="mb-4 flex flex-wrap items-baseline plan-selection-price">
                     {typeof price === 'number' ? (
                         <>
                             <span className="mr-2">
@@ -136,7 +136,7 @@ const PlanCard = ({
                     <div className="mb-1 plan-selection-spacing">{actionLabel}</div>
                 ) : null}
 
-                <div className="flex flex-column flex-nowrap flex-item-fluid-auto mt-2">{features}</div>
+                <div className="flex flex-column flex-nowrap flex-auto mt-2">{features}</div>
             </div>
         </>
     );

@@ -18,14 +18,14 @@ const VerticalStep = ({ title, description, icon, status = 'next', className, ..
         <li
             {...rest}
             className={clsx(
-                'flex flex-nowrap flex-align-items-start vertical-steps-item',
+                'flex flex-nowrap items-start vertical-steps-item',
                 status === 'passed' && 'vertical-steps-item--next-done',
                 className
             )}
         >
             <div
                 className={clsx(
-                    'flex-item-noshrink rounded-50 vertical-steps-icon-container flex',
+                    'shrink-0 rounded-50 vertical-steps-icon-container flex',
                     ['done', 'passed'].includes(status) ? 'bg-success' : 'bg-strong'
                 )}
             >
@@ -33,7 +33,7 @@ const VerticalStep = ({ title, description, icon, status = 'next', className, ..
             </div>
             <div
                 className={clsx(
-                    'flex-item-fluid pl-2 flex flex-column flex-nowrap relative vertical-steps-item-text',
+                    'flex-1 pl-2 flex flex-column flex-nowrap relative vertical-steps-item-text',
                     status === 'passed' && 'color-disabled'
                 )}
             >

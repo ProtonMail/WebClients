@@ -73,7 +73,7 @@ const SortDropdown = ({
             originalPlacement="top-end"
             className={clsx(className, 'toolbar-button toolbar-button--small toolbar-button--small-icon')}
             content={
-                <span className="flex flex-align-items-center flex-nowrap" data-testid="toolbar:sort-dropdown">
+                <span className="flex items-center flex-nowrap" data-testid="toolbar:sort-dropdown">
                     {getIcon()}
                 </span>
             }

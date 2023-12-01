@@ -78,9 +78,9 @@ export const GatewayCountrySelection = ({
             {countries.map((country) => (
                 <div
                     key={'country-' + country}
-                    className="flex-no-min-children md:flex-nowrap flex-align-items-center mb-4"
+                    className="flex children-min-size-auto md:flex-nowrap items-center mb-4"
                 >
-                    <Label htmlFor={'country-number-' + country} className="flex-item-fluid">
+                    <Label htmlFor={'country-number-' + country} className="flex-1">
                         {getCountryFlagAndName(language, country, undefined, {
                             key: country + '-country-label-image',
                         })}
@@ -119,7 +119,7 @@ export const GatewayCountrySelection = ({
             {needUpsell && (
                 <>
                     <Row className="rounded p-2 bg-info">
-                        <div className="flex-item-noshrink">
+                        <div className="shrink-0">
                             <Icon name="info-circle" />
                         </div>
                         <div className="ml-2">
@@ -153,7 +153,7 @@ export const GatewayCountrySelection = ({
                 </>
             )}
             <Row className="rounded p-2 bg-weak">
-                <div className="flex-item-noshrink">
+                <div className="shrink-0">
                     <Icon name="info-circle" />
                 </div>
                 <div className="ml-2">

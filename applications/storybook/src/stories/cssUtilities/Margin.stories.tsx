@@ -124,8 +124,7 @@ export const MarginsTable = () => {
     );
 };
 
-const demoItemClasses =
-    'user-select flex flex-align-items-center flex-justify-center bg-primary rounded-sm text-center';
+const demoItemClasses = 'user-select flex items-center justify-center bg-primary rounded-sm text-center';
 
 // Storybooks <code> styling is not available inside stories, so we have to use a custom component
 type CodeProps = {
@@ -133,7 +132,7 @@ type CodeProps = {
 };
 
 const Code = ({ children }: CodeProps) => (
-    <code className="inline-block user-select rounded-sm p-1 px-2 border bg-weak text-norm text-sm hidden-empty">
+    <code className="inline-block user-select rounded-sm p-1 px-2 border bg-weak text-norm text-sm empty:hidden">
         {children}
     </code>
 );
@@ -141,13 +140,13 @@ const Code = ({ children }: CodeProps) => (
 export const Margin = () => {
     return (
         <div
-            className="border rounded w-full relative flex flex-nowrap gap-2 scroll-if-needed flex-align-items-center flex-justify-space-between"
+            className="border rounded w-full relative flex flex-nowrap gap-2 overflow-auto items-center justify-space-between"
             style={{ height: '10rem' }}
         >
             {marginSizes.map((size) => (
                 <div
                     key={size.class}
-                    className="bg-strong flex-item-noshrink rounded"
+                    className="bg-strong shrink-0 rounded"
                     style={{ display: 'flow-root', '--border-radius-md': '10%' }}
                 >
                     <div className={`${demoItemClasses} m-${size.class}`} style={{ width: '3rem', height: '3rem' }}>
@@ -162,11 +161,11 @@ export const Margin = () => {
 export const MarginTop = () => {
     return (
         <div
-            className="border rounded w-full relative flex flex-nowrap scroll-if-needed flex-align-items-start flex-justify-space-between text-2xs"
+            className="border rounded w-full relative flex flex-nowrap overflow-auto items-start justify-space-between text-2xs"
             style={{ height: '8rem' }}
         >
             {marginSizes.map((size) => (
-                <div key={size.class} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
+                <div key={size.class} className="bg-strong shrink-0" style={{ display: 'flow-root' }}>
                     <div className={`${demoItemClasses} mt-${size.class}`} style={{ width: '3rem', height: '3rem' }}>
                         mt-{size.class}
                     </div>
@@ -179,11 +178,11 @@ export const MarginTop = () => {
 export const MarginBottom = () => {
     return (
         <div
-            className="border rounded overflow-hidden w-full relative flex flex-nowrap scroll-if-needed flex-align-items-end flex-justify-space-between text-2xs"
+            className="border rounded overflow-hidden w-full relative flex flex-nowrap overflow-auto items-end justify-space-between text-2xs"
             style={{ height: '8rem' }}
         >
             {marginSizes.map((size) => (
-                <div key={size.class} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
+                <div key={size.class} className="bg-strong shrink-0" style={{ display: 'flow-root' }}>
                     <div className={`${demoItemClasses} mb-${size.class}`} style={{ width: '3rem', height: '3rem' }}>
                         mb-{size.class}
                     </div>
@@ -195,13 +194,9 @@ export const MarginBottom = () => {
 
 export const MarginY = () => {
     return (
-        <div className="border rounded overflow-hidden w-full relative flex flex-nowrap scroll-if-needed flex-align-items-center flex-justify-space-between text-2xs">
+        <div className="border rounded overflow-hidden w-full relative flex flex-nowrap overflow-auto items-center justify-space-between text-2xs">
             {marginSizes.map((size) => (
-                <div
-                    key={size.class}
-                    className="bg-strong rounded-sm flex-item-noshrink"
-                    style={{ display: 'flow-root' }}
-                >
+                <div key={size.class} className="bg-strong rounded-sm shrink-0" style={{ display: 'flow-root' }}>
                     <div className={`${demoItemClasses} my-${size.class}`} style={{ width: '3rem', height: '3rem' }}>
                         my-{size.class}
                     </div>
@@ -213,9 +208,9 @@ export const MarginY = () => {
 
 export const MarginLeft = () => {
     return (
-        <div className="border rounded overflow-hidden w-full relative flex flex-column flex-nowrap flex-align-items-start gap-2 text-2xs">
+        <div className="border rounded overflow-hidden w-full relative flex flex-column flex-nowrap items-start gap-2 text-2xs">
             {marginSizes.map((size) => (
-                <div key={size.class} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
+                <div key={size.class} className="bg-strong shrink-0" style={{ display: 'flow-root' }}>
                     <div className={`${demoItemClasses} ml-${size.class}`} style={{ width: '5rem', height: '1.5rem' }}>
                         ml-{size.class}
                     </div>
@@ -227,9 +222,9 @@ export const MarginLeft = () => {
 
 export const MarginRight = () => {
     return (
-        <div className="border rounded overflow-hidden w-full relative flex flex-column flex-nowrap flex-align-items-end gap-2 text-2xs">
+        <div className="border rounded overflow-hidden w-full relative flex flex-column flex-nowrap items-end gap-2 text-2xs">
             {marginSizes.map((size) => (
-                <div key={size.class} className="bg-strong flex-item-noshrink" style={{ display: 'flow-root' }}>
+                <div key={size.class} className="bg-strong shrink-0" style={{ display: 'flow-root' }}>
                     <div className={`${demoItemClasses} mr-${size.class}`} style={{ width: '5rem', height: '1.5rem' }}>
                         mr-{size.class}
                     </div>
@@ -241,13 +236,9 @@ export const MarginRight = () => {
 
 export const MarginX = () => {
     return (
-        <div className="border rounded overflow-hidden w-full relative flex flex-column flex-nowrap flex-align-items-center gap-2 text-2xs">
+        <div className="border rounded overflow-hidden w-full relative flex flex-column flex-nowrap items-center gap-2 text-2xs">
             {marginSizes.map((size) => (
-                <div
-                    key={size.class}
-                    className="bg-strong rounded-sm flex-item-noshrink"
-                    style={{ display: 'flow-root' }}
-                >
+                <div key={size.class} className="bg-strong rounded-sm shrink-0" style={{ display: 'flow-root' }}>
                     <div className={`${demoItemClasses} mx-${size.class}`} style={{ width: '5rem', height: '1.5rem' }}>
                         mx-{size.class}
                     </div>
@@ -502,10 +493,10 @@ export const Sandbox = () => {
 
     return (
         <>
-            <div className="flex flex-justify-space-between mb-7">
+            <div className="flex justify-space-between mb-7">
                 <div className="w-1/4">
                     {selectedMargin.map(({ id, checked, value }) => (
-                        <Label htmlFor={id} key={id} className="flex flex-nowrap flex-align-items-center gap-4 mb-4">
+                        <Label htmlFor={id} key={id} className="flex flex-nowrap items-center gap-4 mb-4">
                             <Checkbox
                                 id={id}
                                 checked={checked}
@@ -516,11 +507,11 @@ export const Sandbox = () => {
 
                             <span className="text-semibold w-1/10">{id}</span>
 
-                            <span className="w-1/10 flex flex-item-noshrink flex-justify-center">
-                                <span className="bg-primary rounded-sm flex-item-noshrink flex-item-nogrow">
+                            <span className="w-1/10 flex shrink-0 justify-center">
+                                <span className="bg-primary rounded-sm shrink-0 grow-0">
                                     <span className={`${id}0-25 block rounded-sm bg-primary`}>
                                         <span
-                                            className="flex flex-align-items-center flex-justify-center bg-norm opacity-65"
+                                            className="flex items-center justify-center bg-norm opacity-65"
                                             style={{ width: '1em', height: '1em' }}
                                         ></span>
                                     </span>

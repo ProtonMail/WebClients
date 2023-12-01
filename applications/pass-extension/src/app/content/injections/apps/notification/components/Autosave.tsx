@@ -140,7 +140,7 @@ export const Autosave: VFC<Props> = ({ settings, submission, visible, onClose })
 
     return (
         <FormikProvider value={form}>
-            <Form className="ui-violet flex flex-column flex-nowrap flex-justify-space-between h-full">
+            <Form className="ui-violet flex flex-column flex-nowrap justify-space-between h-full">
                 <NotificationHeader
                     title={(() => {
                         switch (submission.autosave.data.action) {
@@ -162,16 +162,16 @@ export const Autosave: VFC<Props> = ({ settings, submission, visible, onClose })
                     onClose={onClose}
                 />
                 <div>
-                    <div className="flex flex-nowrap flex-align-items-center mb-2">
+                    <div className="flex flex-nowrap items-center mb-2">
                         <BaseItemIcon
                             url={submission.domain}
                             icon={'user'}
                             size={20}
                             alt=""
-                            className="flex-item-noshrink"
+                            className="shrink-0"
                             loadImage={settings.loadDomainImages}
                         />
-                        <div className="flex-item-fluid-auto">
+                        <div className="flex-auto">
                             <Field
                                 lengthLimiters
                                 name="name"
@@ -191,7 +191,7 @@ export const Autosave: VFC<Props> = ({ settings, submission, visible, onClose })
                         <Field hidden name="password" component={TextField} label={c('Label').t`Password`} />
                     </FieldsetCluster>
                 </div>
-                <div className="flex flex-justify-space-between gap-3">
+                <div className="flex justify-space-between gap-3">
                     <Button pill color="norm" shape="outline" onClick={() => onClose?.({ discard: true })}>{c('Action')
                         .t`Not now`}</Button>
                     <Button
@@ -200,7 +200,7 @@ export const Autosave: VFC<Props> = ({ settings, submission, visible, onClose })
                         type="submit"
                         loading={busy}
                         disabled={busy}
-                        className="flex-item-fluid-auto"
+                        className="flex-auto"
                     >
                         {(() => {
                             switch (submission.autosave.data.action) {

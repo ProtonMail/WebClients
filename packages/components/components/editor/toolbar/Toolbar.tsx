@@ -73,7 +73,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                 <ToolbarButton
                     onClick={config.bold.toggle}
                     aria-pressed={config.bold.isActive}
-                    className={clsx(['flex-item-noshrink', config.bold.isActive && 'is-active'])}
+                    className={clsx(['shrink-0', config.bold.isActive && 'is-active'])}
                     title={c('Action').t`Bold`}
                     data-testid="editor-bold"
                 >
@@ -87,7 +87,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                 <ToolbarButton
                     onClick={config.italic.toggle}
                     aria-pressed={config.italic.isActive}
-                    className={clsx(['flex-item-noshrink', config.italic.isActive && 'is-active'])}
+                    className={clsx(['shrink-0', config.italic.isActive && 'is-active'])}
                     title={c('Action').t`Italic`}
                     data-testid="editor-italic"
                 >
@@ -101,7 +101,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                 <ToolbarButton
                     onClick={config.underline.toggle}
                     aria-pressed={config.underline.isActive}
-                    className={clsx(['flex-item-noshrink', config.underline.isActive && 'is-active'])}
+                    className={clsx(['shrink-0', config.underline.isActive && 'is-active'])}
                     title={c('Action').t`Underline`}
                     data-testid="editor-underline"
                 >
@@ -115,7 +115,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                 <ToolbarButton
                     onClick={config.strikethrough.toggle}
                     aria-pressed={config.strikethrough.isActive}
-                    className={clsx(['flex-item-noshrink', config.strikethrough.isActive && 'is-active'])}
+                    className={clsx(['shrink-0', config.strikethrough.isActive && 'is-active'])}
                     title={c('Action').t`Strikethrough`}
                     data-testid="editor-strikethrough"
                 >
@@ -132,7 +132,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     <ToolbarButton
                         onClick={config.unorderedList.toggle}
                         aria-pressed={config.unorderedList.isActive}
-                        className={clsx(['flex-item-noshrink', config.unorderedList.isActive && 'is-active'])}
+                        className={clsx(['shrink-0', config.unorderedList.isActive && 'is-active'])}
                         title={c('Action').t`Unordered list`}
                         data-testid="editor-unordered-list"
                     >
@@ -146,7 +146,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     <ToolbarButton
                         onClick={config.orderedList.toggle}
                         aria-pressed={config.orderedList.isActive}
-                        className={clsx(['flex-item-noshrink', config.orderedList.isActive && 'is-active'])}
+                        className={clsx(['shrink-0', config.orderedList.isActive && 'is-active'])}
                         title={c('Action').t`Ordered list`}
                         data-testid="editor-ordered-list"
                     >
@@ -172,7 +172,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     <ToolbarButton
                         onClick={config.blockquote.toggle}
                         aria-pressed={config.blockquote.isActive}
-                        className={clsx(['flex-item-noshrink', config.blockquote.isActive && 'is-active'])}
+                        className={clsx(['shrink-0', config.blockquote.isActive && 'is-active'])}
                         title={c('Action').t`Quote`}
                         data-testid="editor-quote"
                     >
@@ -185,7 +185,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     </ToolbarButton>
                     <ToolbarButton
                         onClick={config.link.showModal}
-                        className="flex-item-noshrink"
+                        className="shrink-0"
                         title={c('Action').t`Insert link`}
                         data-testid="editor-insert-link"
                     >
@@ -198,7 +198,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                     </ToolbarButton>
                     <ToolbarButton
                         onClick={config.formatting.clear}
-                        className="flex-item-noshrink"
+                        className="shrink-0"
                         title={c('Action').t`Clear all formatting`}
                         data-testid="editor-clear-formatting"
                     >
@@ -214,7 +214,7 @@ const Toolbar = ({ config, metadata, mailSettings, openEmojiPickerRef, className
                             <Vr aria-hidden="true" />
                             <ToolbarButton
                                 onClick={config.image.showModal}
-                                className="flex-item-noshrink"
+                                className="shrink-0"
                                 title={c('Action').t`Insert image`}
                             >
                                 <Icon

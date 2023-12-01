@@ -38,7 +38,7 @@ $size-current-pin: rem(16) !default;
 		position: relative;
 
 		&:not(:last-child) {
-			@extend .flex-item-fluid;
+			@extend .flex-1;
 		}
 
 		// positionned first element always with a aria-current/is-complete

@@ -33,7 +33,7 @@ const TotpInputs = ({ code, type, setCode, error, loading, bigger }: Props) => {
             )}
             {type === 'recovery-code' && (
                 <>
-                    <div className="mb-6 flex flex-align-items-center">
+                    <div className="mb-6 flex items-center">
                         {c('Info').t`Each code can only be used once`}{' '}
                         <Info
                             className="ml-2"

@@ -102,9 +102,9 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                     <TableRow>
                         {headerCells.map(({ className, header, info }) => (
                             <TableCell key={header} className={className} type="header">
-                                <div className="flex flex-align-items-center flex-nowrap">
+                                <div className="flex items-center flex-nowrap">
                                     {header}
-                                    {info && <Info className="ml-2 flex-item-noshrink" title={info} />}
+                                    {info && <Info className="ml-2 shrink-0" title={info} />}
                                 </div>
                             </TableCell>
                         ))}
@@ -184,7 +184,7 @@ const LogsTable = ({ logs, logAuth, protonSentinel, loading, error }: Props) => 
                                 isAuthLogAdvanced &&
                                     isProtonSentinelEnabled && {
                                         label: 'ISP',
-                                        content: <span className="flex-item-fluid">{InternetProvider || '-'}</span>,
+                                        content: <span className="flex-1">{InternetProvider || '-'}</span>,
                                     },
                                 isProtonSentinelEnabled && {
                                     label: c('Header').t`Device`,

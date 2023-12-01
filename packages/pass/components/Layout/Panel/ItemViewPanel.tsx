@@ -114,7 +114,7 @@ export const ItemViewPanel: FC<Props> = ({
 
                         return [
                             <Button
-                                className="flex flex-align-center text-sm"
+                                className="flex text-sm"
                                 key="edit-item-button"
                                 pill
                                 shape="solid"

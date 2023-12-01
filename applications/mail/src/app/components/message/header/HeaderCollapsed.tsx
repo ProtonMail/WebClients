@@ -66,7 +66,7 @@ const HeaderCollapsed = ({
     return (
         <div
             className={clsx([
-                'message-header message-header-collapsed px-5 flex flex-nowrap flex-align-items-center',
+                'message-header message-header-collapsed px-5 flex flex-nowrap items-center',
                 isSentMessage ? 'is-outbound' : 'is-inbound',
                 isUnreadMessage && 'is-unread',
                 !messageLoaded && 'is-loading',
@@ -75,7 +75,7 @@ const HeaderCollapsed = ({
             onClick={handleClick}
             data-testid={`message-header-collapsed:${conversationIndex}`}
         >
-            <div className="flex flex-item-fluid flex-nowrap flex-align-items-center mr-2">
+            <div className="flex flex-1 flex-nowrap items-center mr-2">
                 <RecipientItem
                     message={message}
                     recipientOrGroup={{ recipient: message.data?.Sender }}
@@ -87,14 +87,14 @@ const HeaderCollapsed = ({
                 />
 
                 {messageLoaded && isDraftMessage && (
-                    <span className="badge-label-success ml-2 flex-item-noshrink">{c('Info').t`Draft`}</span>
+                    <span className="badge-label-success ml-2 shrink-0">{c('Info').t`Draft`}</span>
                 )}
                 {messageLoaded && isOutboxMessage && !isScheduledMessage && (
-                    <span className="badge-label-primary ml-2 flex-item-noshrink">{c('Info').t`Sending`}</span>
+                    <span className="badge-label-primary ml-2 shrink-0">{c('Info').t`Sending`}</span>
                 )}
                 {messageLoaded && isExpiringMessage && (
                     <ItemExpiration
-                        className="badge-label-weak ml-2 py-0-5 TOCHECK flex-item-no-shrink"
+                        className="badge-label-weak ml-2 py-0-5 TOCHECK"
                         expirationTime={message.data?.ExpirationTime}
                         element={message.data as Message}
                         labelID={labelID}
@@ -102,7 +102,7 @@ const HeaderCollapsed = ({
                 )}
 
                 {messageLoaded && (
-                    <div className="ml-2 flex-item-fluid flex flex-nowrap">
+                    <div className="ml-2 flex-1 flex flex-nowrap">
                         <ItemLabels
                             className="hidden md:inline-flex"
                             element={message.data}
@@ -115,7 +115,7 @@ const HeaderCollapsed = ({
                     </div>
                 )}
             </div>
-            <div className="flex flex-align-items-center flex-nowrap flex-item-noshrink">
+            <div className="flex items-center flex-nowrap shrink-0">
                 {messageLoaded ? (
                     <>
                         <span className="message-header-star mr-2 flex">

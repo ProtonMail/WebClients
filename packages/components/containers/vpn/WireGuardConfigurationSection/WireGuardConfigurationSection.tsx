@@ -691,9 +691,9 @@ const WireGuardConfigurationSection = () => {
                                 onToggle={getToggleCallback(certificate)}
                             >
                                 <Summary>
-                                    <Row className="flex-justify-space-between" collapseOnMobile={false}>
+                                    <Row className="justify-space-between" collapseOnMobile={false}>
                                         <div className="text-ellipsis">{name}</div>
-                                        <div className="flex-item-noshrink">
+                                        <div className="shrink-0">
                                             &nbsp;&nbsp;
                                             {expirationString}
                                             &nbsp;&nbsp;
@@ -709,7 +709,7 @@ const WireGuardConfigurationSection = () => {
                                                 ) : (
                                                     <button
                                                         type="button"
-                                                        className="label-stack-item-delete flex-item-noshrink"
+                                                        className="label-stack-item-delete shrink-0"
                                                         onClick={askForRevocation(certificate)}
                                                         title={
                                                             // translator: name is arbitrary name given by the user or a random key if not set
@@ -815,7 +815,7 @@ const WireGuardConfigurationSection = () => {
                                             onChange={() => setPlatform(value)}
                                             checked={platform === value}
                                             name="platform"
-                                            className="flex inline-flex-vcenter mb-2"
+                                            className="flex inline-flex children-self-center mb-2"
                                         >
                                             {label}
                                         </Radio>
@@ -829,7 +829,7 @@ const WireGuardConfigurationSection = () => {
                                 <label className="field-two-container w-full" htmlFor={'wg-feature-' + key}>
                                     {isFeatureSelection(featuresConfig[key]) ? (
                                         <>
-                                            <div className="flex field-two-label-container flex-justify-space-between flex-nowrap flex-align-items-end">
+                                            <div className="flex field-two-label-container justify-space-between flex-nowrap items-end">
                                                 <span className="field-two-label">
                                                     {featuresConfig[key].name}
                                                     {getFeatureLink(featuresConfig[key])}

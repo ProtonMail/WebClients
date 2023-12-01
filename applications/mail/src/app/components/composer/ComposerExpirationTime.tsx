@@ -25,14 +25,14 @@ const ComposerExpirationTime = ({ message, onEditExpiration }: Props) => {
     return (
         <div
             className={clsx([
-                'rounded border pr-1 pb-1 md:pl-2 md:pr-1 md:py-1 flex flex-align-items-center gap-2 mb-2',
+                'rounded border pr-1 pb-1 md:pl-2 md:pr-1 md:py-1 flex items-center gap-2 mb-2',
                 isExpiringDraft ? 'bg-info border-info' : 'bg-warning border-warning',
             ])}
             data-testid="expiration-banner"
         >
-            <Icon name="hourglass" className="flex-item-noshrink my-auto" />
-            <span className="flex-item-fluid">{expireOnMessage}</span>
-            <span className="w-full md:w-auto flex-item-noshrink flex-align-items-start flex">
+            <Icon name="hourglass" className="shrink-0 my-auto" />
+            <span className="flex-1">{expireOnMessage}</span>
+            <span className="w-full md:w-auto shrink-0 items-start flex">
                 <Button
                     size="small"
                     shape="outline"

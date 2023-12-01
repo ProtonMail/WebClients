@@ -119,7 +119,7 @@ export function DownloadButton({ items, className, rootItem }: DownloadButtonPro
 
     return (
         <Button
-            className={clsx(['flex-item-centered-vert', className])}
+            className={clsx(['self-center my-auto', className])}
             color="norm"
             onClick={handleDownload}
             loading={isDownloading}

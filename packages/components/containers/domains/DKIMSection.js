@@ -63,11 +63,11 @@ const DKIMSection = ({ domain }) => {
                                 <code>{row.Hostname}</code>
                             </TableCell>
                             <TableCell label={c('Header for domain modal').t`Value / Data`}>
-                                <div className="flex flex-nowrap flex-align-items-center">
+                                <div className="flex flex-nowrap items-center">
                                     <Copy
                                         onCopy={handleCopy}
                                         size="small"
-                                        className="flex-item-noshrink mr-2"
+                                        className="shrink-0 mr-2"
                                         value={row.CNAME}
                                     />{' '}
                                     <div className="text-ellipsis">

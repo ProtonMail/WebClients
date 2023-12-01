@@ -64,9 +64,9 @@ const ForwardCondition = ({
                 </div>
             )}
             <div className="flex flex-nowrap gap-2">
-                <div className="flex-item-fluid flex gap-4">
-                    <div className="flex-item-fluid flex flex-wrap flex-column md:flex-row gap-4">
-                        <div className="md:flex-item-fluid">
+                <div className="flex-1 flex gap-4">
+                    <div className="flex-1 flex flex-wrap flex-column md:flex-row gap-4">
+                        <div className="md:flex-1">
                             <SelectTwo
                                 value={condition.type}
                                 onChange={({ value }) => onUpdate({ ...condition, type: value as ConditionType })}
@@ -78,7 +78,7 @@ const ForwardCondition = ({
                                 ))}
                             </SelectTwo>
                         </div>
-                        <div className="md:flex-item-fluid">
+                        <div className="md:flex-1">
                             {[ConditionType.SUBJECT, ConditionType.SENDER, ConditionType.RECIPIENT].includes(
                                 condition.type
                             ) && (
@@ -109,7 +109,7 @@ const ForwardCondition = ({
                 </div>
 
                 {displayDelete && (
-                    <div className="flex-item-noshrink w-custom" style={{ '--w-custom': '3em' }}>
+                    <div className="shrink-0 w-custom" style={{ '--w-custom': '3em' }}>
                         <Tooltip title={c('email_forwarding_2023: Action').t`Delete this condition`}>
                             <Button
                                 data-testid={`forward:condition:delete-button_${index}`}

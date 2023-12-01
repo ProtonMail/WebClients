@@ -442,82 +442,82 @@ const HeaderMoreDropdown = ({
                             return (
                                 <DropdownMenu>
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                        className="text-left flex flex-nowrap items-center"
                                         onClick={handleStar}
                                         data-testid="message-view-more-dropdown:star"
                                     >
                                         <Icon name={isStarred ? 'star-slash' : 'star'} className="mr-2" />
-                                        <span className="flex-item-fluid my-auto">{staringText}</span>
+                                        <span className="flex-1 my-auto">{staringText}</span>
                                     </DropdownMenuButton>
 
                                     <hr className="my-2" />
 
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                        className="text-left flex flex-nowrap items-center"
                                         onClick={handleMove(ARCHIVE, fromFolderID)}
                                         data-testid="message-view-more-dropdown:archive"
                                     >
                                         <Icon name="archive-box" className="mr-2" />
-                                        <span className="flex-item-fluid my-auto">{c('Action').t`Archive`}</span>
+                                        <span className="flex-1 my-auto">{c('Action').t`Archive`}</span>
                                     </DropdownMenuButton>
                                     {isNarrow && (
                                         <DropdownMenuButton
-                                            className="text-left flex flex-nowrap flex-align-items-center"
+                                            className="text-left flex flex-nowrap items-center"
                                             onClick={() => onOpenAdditional(0)}
                                         >
                                             <Icon name="folder-arrow-in" className="mr-2" />
-                                            <span className="flex-item-fluid my-auto">{c('Action').t`Move to...`}</span>
+                                            <span className="flex-1 my-auto">{c('Action').t`Move to...`}</span>
                                         </DropdownMenuButton>
                                     )}
                                     {isNarrow && (
                                         <DropdownMenuButton
-                                            className="text-left flex flex-nowrap flex-align-items-center"
+                                            className="text-left flex flex-nowrap items-center"
                                             onClick={() => onOpenAdditional(1)}
                                         >
                                             <Icon name="tag" className="mr-2" />
-                                            <span className="flex-item-fluid my-auto">{c('Action')
+                                            <span className="flex-1 my-auto">{c('Action')
                                                 .t`Label as...`}</span>
                                         </DropdownMenuButton>
                                     )}
                                     {isNarrow && (
                                         <DropdownMenuButton
-                                            className="text-left flex flex-nowrap flex-align-items-center"
+                                            className="text-left flex flex-nowrap items-center"
                                             onClick={() => onOpenAdditional(2)}
                                         >
                                             <Icon name="filter" className="mr-2" />
-                                            <span className="flex-item-fluid my-auto">{c('Action')
+                                            <span className="flex-1 my-auto">{c('Action')
                                                 .t`Filter on...`}</span>
                                         </DropdownMenuButton>
                                     )}
                                     {isSpam ? (
                                         <DropdownMenuButton
-                                            className="text-left flex flex-nowrap flex-align-items-center"
+                                            className="text-left flex flex-nowrap items-center"
                                             onClick={handleUnread}
                                             data-testid="message-view-more-dropdown:unread"
                                         >
                                             <Icon name="eye-slash" className="mr-2" />
-                                            <span className="flex-item-fluid my-auto">{c('Action')
+                                            <span className="flex-1 my-auto">{c('Action')
                                                 .t`Mark as unread`}</span>
                                         </DropdownMenuButton>
                                     ) : (
                                         <DropdownMenuButton
-                                            className="text-left flex flex-nowrap flex-align-items-center"
+                                            className="text-left flex flex-nowrap items-center"
                                             onClick={handleMove(SPAM, fromFolderID)}
                                             data-testid="message-view-more-dropdown:move-to-spam"
                                         >
                                             <Icon name="fire" className="mr-2" />
-                                            <span className="flex-item-fluid my-auto">{c('Action')
+                                            <span className="flex-1 my-auto">{c('Action')
                                                 .t`Move to spam`}</span>
                                         </DropdownMenuButton>
                                     )}
                                     {isInTrash ? (
                                         <DropdownMenuButton
-                                            className="text-left flex flex-nowrap flex-align-items-center"
+                                            className="text-left flex flex-nowrap items-center"
                                             onClick={() => setMessagePermanentDeleteModalOpen(true)}
                                             data-testid="message-view-more-dropdown:delete"
                                         >
                                             <Icon name="cross-circle" className="mr-2" />
-                                            <span className="flex-item-fluid my-auto">{c('Action').t`Delete`}</span>
+                                            <span className="flex-1 my-auto">{c('Action').t`Delete`}</span>
                                         </DropdownMenuButton>
                                     ) : null}
                                     {canExpire ? (
@@ -525,32 +525,32 @@ const HeaderMoreDropdown = ({
                                             <hr className="my-2" />
                                             {willExpire ? (
                                                 <DropdownMenuButton
-                                                    className="text-left flex flex-nowrap flex-align-items-center"
+                                                    className="text-left flex flex-nowrap items-center"
                                                     onClick={() => handleExpire(0)}
                                                     data-testid="message-view-more-dropdown:remove-expiration"
                                                 >
                                                     <Icon name="hourglass" className="mr-2" />
-                                                    <span className="flex-item-fluid my-auto">{c('Action')
+                                                    <span className="flex-1 my-auto">{c('Action')
                                                         .t`Remove self-destruction`}</span>
                                                 </DropdownMenuButton>
                                             ) : (
                                                 <>
                                                     <DropdownMenuButton
-                                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                                        className="text-left flex flex-nowrap items-center"
                                                         onClick={() => handleExpire(7)}
                                                         data-testid="message-view-more-dropdown:expire-7-days"
                                                     >
                                                         <Icon name="hourglass" className="mr-2" />
-                                                        <span className="flex-item-fluid my-auto">{c('Action')
+                                                        <span className="flex-1 my-auto">{c('Action')
                                                             .t`Self-destruct in 7 days`}</span>
                                                     </DropdownMenuButton>
                                                     <DropdownMenuButton
-                                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                                        className="text-left flex flex-nowrap items-center"
                                                         onClick={() => openCustomExpirationModal(true)}
                                                         data-testid="message-view-more-dropdown:expire-30-days"
                                                     >
                                                         <Icon name="hourglass" className="mr-2" />
-                                                        <span className="flex-item-fluid my-auto">{c('Action')
+                                                        <span className="flex-1 my-auto">{c('Action')
                                                             .t`Self-destruct on ...`}</span>
                                                     </DropdownMenuButton>
                                                 </>
@@ -561,59 +561,59 @@ const HeaderMoreDropdown = ({
                                     <hr className="my-2" />
 
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                        className="text-left flex flex-nowrap items-center"
                                         onClick={handleExport}
                                         data-testid="message-view-more-dropdown:export"
                                     >
                                         <Icon name="arrow-up-from-square" className="mr-2" />
-                                        <span className="flex-item-fluid my-auto">{c('Action').t`Export`}</span>
+                                        <span className="flex-1 my-auto">{c('Action').t`Export`}</span>
                                     </DropdownMenuButton>
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                        className="text-left flex flex-nowrap items-center"
                                         onClick={() => setMessagePrintModalOpen(true)}
                                         data-testid="message-view-more-dropdown:print"
                                     >
                                         <Icon name="printer" className="mr-2" />
-                                        <span className="flex-item-fluid my-auto">{c('Action').t`Print`}</span>
+                                        <span className="flex-1 my-auto">{c('Action').t`Print`}</span>
                                     </DropdownMenuButton>
 
                                     <hr className="my-2" />
 
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                        className="text-left flex flex-nowrap items-center"
                                         onClick={() => setMessageDetailsModalOpen(true)}
                                         data-testid="message-view-more-dropdown:view-message-details"
                                     >
                                         <Icon name="list-bullets" className="mr-2" />
-                                        <span className="flex-item-fluid my-auto">{c('Action')
+                                        <span className="flex-1 my-auto">{c('Action')
                                             .t`View message details`}</span>
                                     </DropdownMenuButton>
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap flex-align-items-center"
+                                        className="text-left flex flex-nowrap items-center"
                                         onClick={() => setMessageHeaderModalOpen(true)}
                                         data-testid="message-view-more-dropdown:view-message-headers"
                                     >
                                         <Icon name="window-terminal" className="mr-2" />
-                                        <span className="flex-item-fluid my-auto">{c('Action').t`View headers`}</span>
+                                        <span className="flex-1 my-auto">{c('Action').t`View headers`}</span>
                                     </DropdownMenuButton>
                                     {!sourceMode && (
                                         <DropdownMenuButton
-                                            className="text-left flex flex-nowrap flex-align-items-center"
+                                            className="text-left flex flex-nowrap items-center"
                                             onClick={() => onSourceMode(true)}
                                             data-testid="message-view-more-dropdown:view-html"
                                         >
                                             <Icon name="code" className="mr-2" />
-                                            <span className="flex-item-fluid my-auto">{c('Action').t`View HTML`}</span>
+                                            <span className="flex-1 my-auto">{c('Action').t`View HTML`}</span>
                                         </DropdownMenuButton>
                                     )}
                                     {sourceMode && (
                                         <DropdownMenuButton
-                                            className="text-left flex flex-nowrap flex-align-items-center"
+                                            className="text-left flex flex-nowrap items-center"
                                             onClick={() => onSourceMode(false)}
                                             data-testid="message-view-more-dropdown:view-rendered-html"
                                         >
                                             <Icon name="window-image" className="mr-2" />
-                                            <span className="flex-item-fluid my-auto">{c('Action')
+                                            <span className="flex-1 my-auto">{c('Action')
                                                 .t`View rendered HTML`}</span>
                                         </DropdownMenuButton>
                                     )}
@@ -621,12 +621,12 @@ const HeaderMoreDropdown = ({
                                     <hr className="my-2" />
 
                                     <DropdownMenuButton
-                                        className="text-left flex flex-nowrap flex-align-items-center color-danger"
+                                        className="text-left flex flex-nowrap items-center color-danger"
                                         onClick={() => setMessagePhishingModalOpen(true)}
                                         data-testid="message-view-more-dropdown:report-phishing"
                                     >
                                         <Icon name="hook" className="mr-2 color-danger" />
-                                        <span className="flex-item-fluid my-auto color-danger">{c('Action')
+                                        <span className="flex-1 my-auto color-danger">{c('Action')
                                             .t`Report phishing`}</span>
                                     </DropdownMenuButton>
                                 </DropdownMenu>

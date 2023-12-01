@@ -64,13 +64,10 @@ interface AddonFieldProps extends ComponentPropsWithoutRef<'div'> {
 
 const AddonField = ({ id, label, tooltip, className, children, ...rest }: AddonFieldProps) => {
     return (
-        <div
-            className={clsx('flex-no-min-children flex-wrap md:flex-nowrap flex-align-items-center', className)}
-            {...rest}
-        >
+        <div className={clsx('flex md:flex-nowrap items-center', className)} {...rest}>
             <label
                 htmlFor={id}
-                className="min-w-custom flex-item-fluid plan-customiser-addon-label text-bold pr-2 w-full md:w-auto mb-1"
+                className="min-w-custom flex-1 plan-customiser-addon-label text-bold pr-2 w-full md:w-auto mb-1"
                 style={{ '--min-w-custom': '14em' }}
             >
                 {label}
@@ -153,7 +150,7 @@ const PlanCustomizer = ({
                                 {buttonNumberInput}
                             </AddonField>
                             <div className="mt-2 p-3 color-weak bg-weak rounded flex flex-nowrap">
-                                <Icon name="info-circle" className="mr-2 mt-0.5 flex-item-noshrink" />
+                                <Icon name="info-circle" className="mr-2 mt-0.5 shrink-0" />
                                 <span>
                                     {c('Info')
                                         .t`We recommend having at least 2 servers in order to provide redundancy.`}

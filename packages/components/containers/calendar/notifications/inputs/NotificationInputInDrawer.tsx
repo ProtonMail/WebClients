@@ -80,7 +80,7 @@ const NotificationInputInDrawer = ({
     return (
         <div
             key={notification.id}
-            className={clsx('flex flex-column flex-align-items-stretch flex-item-fluid gap-2 mb-4', className)}
+            className={clsx('flex flex-column items-stretch flex-1 gap-2 mb-4', className)}
         >
             {hasType && (
                 <span className="flex flex-nowrap gap-2">
@@ -90,7 +90,7 @@ const NotificationInputInDrawer = ({
                         disabled={disabled}
                         onChange={({ value }) => onEdit({ ...notification, type: +value })}
                         title={howToSendText}
-                        className="flex-item-fluid"
+                        className="flex-1"
                         {...errorProps}
                     >
                         {[
@@ -101,11 +101,11 @@ const NotificationInputInDrawer = ({
                             <Option key={value} value={value} title={text} />
                         ))}
                     </SelectTwo>
-                    <span className="flex-item-noshrink">
+                    <span className="shrink-0">
                         <Tooltip title={removeNotificationText}>
                             <ButtonLike
                                 data-testid="delete-notification"
-                                className="flex flex-item-noshrink"
+                                className="flex shrink-0"
                                 disabled={disabled}
                                 onClick={onDelete}
                                 icon
@@ -113,7 +113,7 @@ const NotificationInputInDrawer = ({
                                 shape="ghost"
                                 color="norm"
                             >
-                                <Icon name="trash" className="flex-item-noshrink" />
+                                <Icon name="trash" className="shrink-0" />
                                 <span className="sr-only">{removeNotificationText}</span>
                             </ButtonLike>
                         </Tooltip>
@@ -123,13 +123,13 @@ const NotificationInputInDrawer = ({
             <span className={clsx('flex flex-column gap-2', fullWidth ? 'md:flex-row' : 'lg:flex-row')}>
                 <span
                     className={clsx(
-                        'flex flex-nowrap gap-2 flex-item-grow-custom',
-                        fullWidth ? 'md:flex-item-fluid' : 'lg:flex-item-fluid'
+                        'flex flex-nowrap gap-2 grow-custom',
+                        fullWidth ? 'md:flex-1' : 'lg:flex-1'
                     )}
                     style={{ '--grow-custom': '1.5' }}
                 >
                     {hasValueInput && (
-                        <span className="flex-item-noshrink w-custom" style={{ '--w-custom': '4.5em' }}>
+                        <span className="shrink-0 w-custom" style={{ '--w-custom': '4.5em' }}>
                             <IntegerInput
                                 id={NOTIFICATION_INPUT_ID}
                                 data-testid="notification-time-input"
@@ -154,7 +154,7 @@ const NotificationInputInDrawer = ({
                             />
                         </span>
                     )}
-                    <span className={clsx(fullWidth ? 'md:flex-item-fluid' : 'lg:flex-item-fluid')}>
+                    <span className={clsx(fullWidth ? 'md:flex-1' : 'lg:flex-1')}>
                         <SelectTwo
                             data-testid="notification-time-dropdown"
                             value={optionsValue}
@@ -180,7 +180,7 @@ const NotificationInputInDrawer = ({
                     </span>
                 </span>
                 {isAllDay && at && (
-                    <span className={clsx(fullWidth ? 'md:flex-item-fluid' : 'lg:flex-item-fluid')}>
+                    <span className={clsx(fullWidth ? 'md:flex-1' : 'lg:flex-1')}>
                         <TimeInput
                             data-testid="notification-time-at"
                             value={at}

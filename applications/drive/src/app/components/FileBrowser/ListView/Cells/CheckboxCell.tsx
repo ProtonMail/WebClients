@@ -34,7 +34,7 @@ const CheckboxCellBase = ({
         <TableCell className="m-0 flex file-browser-list-checkbox-cell" data-testid="column-checkbox">
             <div
                 role="presentation"
-                className={clsx(['flex flex-align-items-center pl-2', className])}
+                className={clsx(['flex items-center pl-2', className])}
                 onTouchStart={stopPropagation}
                 onKeyDown={stopPropagation}
                 onClick={onCheckboxWrapperClick}

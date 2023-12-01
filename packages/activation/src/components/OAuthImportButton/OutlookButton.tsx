@@ -14,7 +14,7 @@ interface Props {
 const OutlookButton = ({ className, disabled, onClick, label }: Props) => {
     return (
         <Button
-            className={clsx(['inline-flex flex-justify-center', className])}
+            className={clsx(['inline-flex justify-center', className])}
             disabled={disabled}
             onClick={onClick}
             data-testid="OAuthImportButton:button:outlook"
@@ -22,7 +22,7 @@ const OutlookButton = ({ className, disabled, onClick, label }: Props) => {
             <img
                 alt=""
                 src={outlookLogo}
-                className="mr-2 w-custom flex-align-self-center"
+                className="mr-2 w-custom self-center"
                 style={{ '--w-custom': '18px' }}
             />
             {label ?? c('Action').t`Continue with Outlook`}

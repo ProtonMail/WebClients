@@ -73,11 +73,11 @@ const OpenVPNCredentialsSection = (props: Props) => {
                 <SettingsLayoutLeft>
                     <span className="label pt-0">{c('Label').t`OpenVPN / IKEv2 username`}</span>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="flex flex-align-items-center">
+                <SettingsLayoutRight className="flex items-center">
                     <div className="text-ellipsis max-w-full mr-0 md:mr-4">
                         <code title={Name}>{Name}</code>
                     </div>
-                    <div className="flex flex-item-noshrink mt-2 md:mt-0">
+                    <div className="flex shrink-0 mt-2 md:mt-0">
                         <Copy
                             value={Name}
                             onCopy={() => {
@@ -93,11 +93,11 @@ const OpenVPNCredentialsSection = (props: Props) => {
                 <SettingsLayoutLeft>
                     <span className="label pt-0">{c('Label').t`OpenVPN / IKEv2 password`}</span>
                 </SettingsLayoutLeft>
-                <SettingsLayoutRight className="flex flex-align-items-center">
+                <SettingsLayoutRight className="flex items-center">
                     <div className="text-ellipsis max-w-full mr-0 md:mr-4">
                         <code>{show ? Password : '••••••••••••••••'}</code>
                     </div>
-                    <div className="flex flex-item-noshrink mt-2 md:mt-0">
+                    <div className="flex shrink-0 mt-2 md:mt-0">
                         <Copy
                             className="mr-4"
                             value={Password}

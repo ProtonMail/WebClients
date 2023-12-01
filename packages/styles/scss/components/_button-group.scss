@@ -3,7 +3,7 @@
 .button-group {
 	@extend .inline-flex;
 	@extend .flex-nowrap;
-	@extend .flex-align-items-stretch;
+	@extend .items-stretch;
 
 	border-radius: var(--border-radius-md);
 	background-color: var(--background-norm);

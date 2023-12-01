@@ -7,16 +7,16 @@ import promotionApplied from './promotionApplied.svg';
 
 const PromotionAlreadyApplied = () => {
     return (
-        <div className="h-full overflow-auto flex flex-justify-center">
+        <div className="h-full overflow-auto flex justify-center">
             <div
                 className="max-w-custom min-h-custom flex flex-column flex-nowrap"
                 style={{ '--min-h-custom': '100vh', '--max-w-custom': '33.3rem' }}
             >
-                <div className="flex-item-fluid-auto m-6">
-                    <div className="flex flex-justify-center">
+                <div className="flex-auto m-6">
+                    <div className="flex justify-center">
                         <ProtonLogo />
                     </div>
-                    <div className="my-16 text-center flex flex-column gap-6 flex-align-center p-11 border rounded-lg">
+                    <div className="my-16 text-center flex flex-column gap-6 p-11 border rounded-lg">
                         <img src={promotionApplied} alt="" />
                         <h1 className="text-bold text-2xl">
                             {c('Info').t`Your account was successfully updated with this promotion`}

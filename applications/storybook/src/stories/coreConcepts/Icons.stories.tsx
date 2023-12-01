@@ -40,7 +40,7 @@ export const Icons = () => {
                     placeholder={`Search ${primaryIconNames.length} icons by name…`}
                     value={search}
                     onChange={({ target: { value } }) => setSearch(value)}
-                    className="flex-item-fluid"
+                    className="flex-1"
                 />
                 <ButtonGroup>
                     {sizes.map((size) => (

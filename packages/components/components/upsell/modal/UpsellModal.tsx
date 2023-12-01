@@ -56,11 +56,11 @@ const UpsellBox = ({ description, handleUpgrade, title, features, hideInfo, head
                     const feature = upsellFeatures[featureName];
                     return (
                         <li className="py-2 rounded" key={feature.getText()}>
-                            <div className="flex flex-nowrap flex-align-items-center">
-                                <div className="mr-3 flex-item-noshrink flex">
+                            <div className="flex flex-nowrap items-center">
+                                <div className="mr-3 shrink-0 flex">
                                     <Icon className="color-primary m-auto" size={20} name={feature.icon} />
                                 </div>
-                                <div className="flex-item-fluid">
+                                <div className="flex-1">
                                     {feature.getText()}
                                     {feature.getTooltip && !hideInfo ? (
                                         <Info buttonClass="ml-2" title={feature.getTooltip()} />

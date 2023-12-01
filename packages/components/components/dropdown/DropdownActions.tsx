@@ -84,7 +84,7 @@ const DropdownActions = ({
                 originalPlacement="bottom-end"
                 disabled={disabled}
                 loading={loading}
-                className={clsx(['flex-item-noshrink', className])}
+                className={clsx(['shrink-0', className])}
                 title={c('Title').t`Open actions dropdown`}
                 data-testid="dropdownActions:dropdown"
                 content={<Icon name={iconName} alt={c('Title').t`Open actions dropdown`} />}
@@ -116,7 +116,7 @@ const DropdownActions = ({
                 originalPlacement="bottom-end"
                 disabled={disabled}
                 loading={loading}
-                className={clsx(['flex-item-noshrink', className])}
+                className={clsx(['shrink-0', className])}
                 title={c('Title').t`Open actions dropdown`}
                 data-testid="dropdownActions:dropdown"
             >

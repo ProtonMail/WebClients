@@ -14,18 +14,18 @@ interface Props {
 
 const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Props) => {
     return (
-        <div className="contact-view-row flex flex-nowrap flex-align-items-start mb-4">
+        <div className="contact-view-row flex flex-nowrap items-start mb-4">
             <div
                 className={clsx([
-                    'contact-view-row-left flex flex-nowrap flex-item-fluid flex-column md:flex-row w-full',
+                    'contact-view-row-left flex flex-nowrap flex-1 flex-column md:flex-row w-full',
                 ])}
             >
                 <div
                     className={clsx([
-                        'contact-view-row-label flex-no-min-children w-full md:w-1/5 flex-item-noshrink flex-align-items-start label',
+                        'contact-view-row-label flex children-min-size-auto w-full md:w-1/5 shrink-0 items-start label',
                     ])}
                 >
-                    <div className="flex flex-item-noshrink flex-item-fluid flex-align-items-center max-w-full">
+                    <div className="flex shrink-0 flex-1 items-center max-w-full">
                         <div role="heading" aria-level={3} className="mr-2">
                             <ContactLabelProperty field={field} type={type} />
                         </div>
@@ -36,7 +36,7 @@ const ContactViewProperty = ({ field, type, isSignatureVerified, children }: Pro
                 </div>
                 <span
                     className={clsx([
-                        'contact-view-row-content mr-2 md:flex-item-fluid pt-2 pl-0 md:pl-7',
+                        'contact-view-row-content mr-2 md:flex-1 pt-2 pl-0 md:pl-7',
                         ['note'].includes(field) && 'text-pre-wrap',
                     ])}
                 >

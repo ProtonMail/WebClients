@@ -29,7 +29,7 @@ const StepPrepareEmailsSummary = ({ isSelected }: Props) => {
         <>
             <StepPrepareEmailsSummaryText label={fields.importLabel} errors={errors} summary={summary} />
             <UnderlineButton
-                className="flex-align-self-start pb-0"
+                className="self-start pb-0"
                 onClick={() => handleDisplayCustomizeModal(true)}
             >{c('Action').t`Customize`}</UnderlineButton>
             {renderCustomizeModal && (

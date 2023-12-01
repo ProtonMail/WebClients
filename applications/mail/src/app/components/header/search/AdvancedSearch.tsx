@@ -244,11 +244,11 @@ const AdvancedSearch = ({
                         </div>
                         <div
                             className={clsx(
-                                'mb-2 flex flex-justify-space-between flex-column md:flex-row',
+                                'mb-2 flex justify-space-between flex-column md:flex-row',
                                 isNarrow ? 'gap-2' : 'gap-4'
                             )}
                         >
-                            <div className="md:flex-item-fluid">
+                            <div className="md:flex-1">
                                 <Label className="advanced-search-label text-semibold" htmlFor="begin-date">{c('Label')
                                     .t`From`}</Label>
                                 <DateInput
@@ -259,7 +259,7 @@ const AdvancedSearch = ({
                                     onChange={handleStartDateChange}
                                 />
                             </div>
-                            <div className="md:flex-item-fluid">
+                            <div className="md:flex-1">
                                 <Label className="advanced-search-label text-semibold" htmlFor="end-date">{c('Label')
                                     .t`To`}</Label>
                                 <DateInput
@@ -284,7 +284,7 @@ const AdvancedSearch = ({
                                 onChange={(from) => updateModel({ ...model, from })}
                                 placeholder={c('Placeholder').t`Name or email address`}
                                 anchorRef={senderListAnchorRef}
-                                classname="flex-item-fluid"
+                                classname="flex-1"
                             />
                         </div>
                         <div className="mb-2" ref={toListAnchorRef}>
@@ -300,7 +300,7 @@ const AdvancedSearch = ({
                                 onChange={(to) => updateModel({ ...model, to })}
                                 placeholder={c('Placeholder').t`Name or email address`}
                                 anchorRef={toListAnchorRef}
-                                classname="flex-item-fluid"
+                                classname="flex-1"
                             />
                         </div>
                         <div className="mb-2">
@@ -325,7 +325,7 @@ const AdvancedSearch = ({
                     </>
                 )}
             </div>
-            <div className="my-4 mx-5 flex flex-align-items-center flex-justify-space-between">
+            <div className="my-4 mx-5 flex items-center justify-space-between">
                 {showMore ? null : (
                     <Button
                         data-testid="advanced-search:show-more"

@@ -10,7 +10,7 @@ import Banner, { BannerBackgroundColor } from '../../../components/banner/Banner
 const AuthSecurityKeyContent = ({ error }: { error?: boolean }) => {
     return (
         <>
-            <div className="flex flex-justify-center mt-4 mb-6">
+            <div className="flex justify-center mt-4 mb-6">
                 <img src={physicalKey} alt={c('fido2: Info').t`Security key`} />
             </div>
             <div>

@@ -45,8 +45,8 @@ const SessionRecoveryInProgressCard = ({ className }: Props) => {
                 <div className="p-6 border-bottom border-weak">
                     <SessionRecoveryStatusTitle status="pending" />
                 </div>
-                <div className="p-6 border-bottom border-weak sm:flex flex-align-items-start flex-nowrap">
-                    <img className="mb-2 sm:mb-0 sm:mr-4 flex-item-noshrink" src={lockIcon} alt="" />
+                <div className="p-6 border-bottom border-weak sm:flex items-start flex-nowrap">
+                    <img className="mb-2 sm:mb-0 sm:mr-4 shrink-0" src={lockIcon} alt="" />
                     <div>
                         <h3 className="text-bold text-lg">
                             {c('session_recovery:in_progress:info').ngettext(
@@ -61,8 +61,8 @@ const SessionRecoveryInProgressCard = ({ className }: Props) => {
                         </div>
                     </div>
                 </div>
-                <div className="p-6 sm:flex flex-align-items-start flex-nowrap">
-                    <img className="mb-2 sm:mb-0 sm:mr-4 flex-item-noshrink" src={handWarningIcon} alt="" />
+                <div className="p-6 sm:flex items-start flex-nowrap">
+                    <img className="mb-2 sm:mb-0 sm:mr-4 shrink-0" src={handWarningIcon} alt="" />
                     <div>
                         <h3 className="text-bold text-lg">{c('session_recovery:in_progress:info')
                             .t`Didn’t make this request?`}</h3>

@@ -92,9 +92,9 @@ function NewLabelForm({
                         )}
                     </div>
                 ) : null}
-                <div className="flex flex-justify-start flex-align-items-center">
+                <div className="flex justify-start items-center">
                     <Label htmlFor="notification" className="w-auto">
-                        <span className="inline-flex flex-align-items-center">
+                        <span className="inline-flex items-center">
                             <span className="mr-2 text-semibold">{c('Label').t`Notification`}</span>
                             <Info
                                 title={c('Info')
@@ -115,7 +115,7 @@ function NewLabelForm({
     };
 
     return (
-        <div className="mx-auto flex-item-fluid">
+        <div className="mx-auto flex-1">
             {!labelOrFolder.ID && labelOrFolder.Type === LABEL_TYPE.MESSAGE_FOLDER ? (
                 <div className="mb-4">
                     {c('Info')

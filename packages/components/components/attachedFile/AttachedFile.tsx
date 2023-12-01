@@ -17,18 +17,18 @@ const AttachedFile = ({ file, iconName, className, clear, onClear, ...rest }: Pr
 
     return (
         <div className={`flex border w-full rounded ${className}`} {...rest}>
-            <div className="p-1 flex flex-item-noshrink w-1/10">
+            <div className="p-1 flex shrink-0 w-1/10">
                 <Icon name={iconName} className="m-auto" />
             </div>
             <div className="message-attachmentInfo p-2 flex flex-nowrap w-9/10">
-                <div className="flex-item-fluid pr-4">
+                <div className="flex-1 pr-4">
                     <div className="text-ellipsis" title={fileName}>
                         {fileName}
                     </div>
                     <div>{`${extension.toUpperCase()} - ${humanSize(file.size)}`}</div>
                 </div>
                 {clear && onClear && (
-                    <Button className="flex-item-noshrink" onClick={onClear}>
+                    <Button className="shrink-0" onClick={onClear}>
                         {clear}
                     </Button>
                 )}

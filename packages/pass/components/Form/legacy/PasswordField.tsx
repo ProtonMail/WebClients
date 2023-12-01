@@ -20,7 +20,7 @@ export const PasswordField: FC<PasswordFieldProps> = ({ field, form, ...rest }) 
     const error = touched[name] && errors[name];
 
     return (
-        <div className="flex flex-nowrap flex-align-items-end mb-3">
+        <div className="flex flex-nowrap items-end mb-3">
             <InputFieldTwo dense as={PasswordInputTwo} error={error} {...field} {...rest} />
         </div>
     );

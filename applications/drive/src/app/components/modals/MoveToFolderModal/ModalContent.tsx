@@ -60,7 +60,7 @@ export const ModalContent = ({
                 />
             </ModalTwoContent>
             <ModalTwoFooter>
-                <div className="flex flex-justify-space-between w-full flex-nowrap">
+                <div className="flex justify-space-between w-full flex-nowrap">
                     {isMobile ? (
                         <Button
                             icon
