@@ -39,6 +39,7 @@ interface Props {
     currentLabelID: string;
     labelID: string;
     isFolder: boolean;
+    isLabel?: boolean;
     hideCountOnHover?: boolean;
     icon?: IconName;
     iconSize?: IconSize;
@@ -66,6 +67,7 @@ const SidebarItem = ({
     itemOptions,
     color,
     isFolder,
+    isLabel,
     hideCountOnHover = true,
     unreadCount,
     totalMessagesCount = 0,
@@ -151,7 +153,16 @@ const SidebarItem = ({
                 onFocus={() => onFocus(id || '')}
             >
                 <SidebarListItemContent
-                    left={icon ? <SidebarListItemContentIcon name={icon} color={color} size={iconSize} /> : undefined}
+                    left={
+                        icon ? (
+                            <SidebarListItemContentIcon
+                                className={clsx([isLabel && 'navigation-icon--fixAliasing'])}
+                                name={icon}
+                                color={color}
+                                size={iconSize}
+                            />
+                        ) : undefined
+                    }
                     right={
                         <LocationAside
                             unreadCount={needsTotalDisplay ? totalMessagesCount : unreadCount}
