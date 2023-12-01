@@ -95,7 +95,7 @@ module.exports = {
             {
                 patterns: [
                     {
-                        group: ['pmcrypto/*'],
+                        group: ['pmcrypto'],
                         message:
                             'You should probably import from `@proton/crypto` instead: using `pmcrypto` directly is only needed for crypto-specific use cases.',
                     },
