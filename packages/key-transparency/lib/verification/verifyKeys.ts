@@ -211,7 +211,7 @@ const verifyPublicKeys = async (
         let epoch = await getLatestEpoch();
         // Fetch proofs with cached epoch.
         // If the fetch fails with StaleEpochError retry with a freshly fetched epoch.
-        const fetchProofs = async (retries: number): Promise<{ proof: Proof; nextRevisionProof?: Proof }> => {
+        const fetchProofs = async (retry: boolean = true): Promise<{ proof: Proof; nextRevisionProof?: Proof }> => {
             try {
                 if (signedKeyList) {
                     const [proof, nextRevisionProof] = await Promise.all([
@@ -224,15 +224,15 @@ const verifyPublicKeys = async (
                     return { proof };
                 }
             } catch (error) {
-                if (error instanceof StaleEpochError && retries > 0) {
+                if (error instanceof StaleEpochError && retry) {
                     epoch = await getLatestEpoch(true);
-                    return fetchProofs(retries - 1);
+                    return fetchProofs(false);
                 }
                 throw error;
             }
         };
 
-        const proofs = await fetchProofs(1);
+        const proofs = await fetchProofs();
         if (!signedKeyList) {
             await verifyProofOfAbsenceForAllRevision(proofs.proof, identifier, epoch.TreeHash);
             return { status: KT_VERIFICATION_STATUS.UNVERIFIED_KEYS };
