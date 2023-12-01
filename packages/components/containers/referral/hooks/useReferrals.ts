@@ -1,5 +1,6 @@
 import { Reducer, useEffect, useReducer } from 'react';
 
+import useIsMounted from '@proton/hooks/useIsMounted';
 import { Referral } from '@proton/shared/lib/interfaces';
 
 import { useApi } from '../../../hooks';
@@ -26,6 +27,7 @@ const getDefaultState = () => ({
 
 const useReferrals = () => {
     const api = useApi();
+    const isMounted = useIsMounted();
     const [referralState, dispatch] = useReducer<Reducer<UseReferralsReducerState, Action>>((prevState, action) => {
         if (action.type === 'error') {
             return { ...prevState, loading: false };
@@ -48,9 +50,13 @@ const useReferrals = () => {
         const fetchReferrals = async () => {
             try {
                 const apiResults = await fetchAllReferralsByOffset(api);
-                dispatch({ type: 'success', payload: apiResults });
+                if (isMounted()) {
+                    dispatch({ type: 'success', payload: apiResults });
+                }
             } catch (error: any) {
-                dispatch({ type: 'error' });
+                if (isMounted()) {
+                    dispatch({ type: 'error' });
+                }
             }
         };
 
