@@ -20,7 +20,9 @@ const scriptTypeToBip: Record<ScriptType, WasmSupportedBIPs> = {
 // TODO: replace by redux when ready to bootstrap it
 export const useBlockchainData = (wallets: WalletWithAccounts[]) => {
     const [loading, withLoading] = useLoading();
-    const [walletsWithBalanceAndTxs, setWalletsWithBalanceAndTxs] = useState<WalletWithAccountsWithBalanceAndTxs[]>([]);
+    const [walletsWithBalanceAndTxs, setWalletsWithBalanceAndTxs] = useState<WalletWithAccountsWithBalanceAndTxs[]>(
+        wallets.map((wallet) => ({ ...wallet, accounts: [] }))
+    );
 
     const { createNotification } = useNotifications();
 
@@ -59,8 +61,6 @@ export const useBlockchainData = (wallets: WalletWithAccounts[]) => {
     }, [createNotification, wallets]);
 
     useEffect(() => {
-        setWalletsWithBalanceAndTxs(wallets.map((wallet) => ({ ...wallet, accounts: [] })));
-
         void withLoading(() => getAccountsBlockchainData());
         // We don't want to add wallet dependency here FOR NOW
         // eslint-disable-next-line react-hooks/exhaustive-deps

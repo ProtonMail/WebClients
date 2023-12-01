@@ -8,8 +8,8 @@ import { Alert, Copy, Icon, InputFieldTwo, QRCode, Tooltip } from '@proton/compo
 import { SECOND } from '@proton/shared/lib/constants';
 
 import { Selector } from '../../atoms/Selector';
-import { accounts, wallets } from '../../tests';
-import { WalletKind } from '../../types';
+import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
+import { WalletType } from '../../types/api';
 import { getLightningFormatOptions } from './constants';
 import { useBitcoinReceiveInfoGenerator } from './useBitcoinReceiveInfoGenerator';
 
@@ -38,14 +38,17 @@ const CopyPasteButton = ({ value }: { value: string }) => {
 };
 
 interface Props {
-    defaultWalletId?: string;
+    defaultWalletId?: number;
+    wallets: WalletWithAccountsWithBalanceAndTxs[];
 }
 
-export const BitcoinReceiveInfoGenerator = ({ defaultWalletId }: Props) => {
+export const BitcoinReceiveInfoGenerator = ({ defaultWalletId, wallets }: Props) => {
     const {
         serializedPaymentInformation,
         selectedWallet,
+        walletsOptions,
         selectedAccount,
+        accountsOptions,
         selectedFormat,
         shouldShowAmountInput,
         amount,
@@ -54,7 +57,7 @@ export const BitcoinReceiveInfoGenerator = ({ defaultWalletId }: Props) => {
         handleSelectFormat,
         handleChangeAmount,
         showAmountInput,
-    } = useBitcoinReceiveInfoGenerator(wallets, accounts, defaultWalletId);
+    } = useBitcoinReceiveInfoGenerator(wallets, defaultWalletId);
 
     const [walletSelectorLabel, accountSelectorLabel, formatSelectorLabel, amountInputLabel] = [
         c('Wallet Receive').t`Receive to wallet`,
@@ -70,22 +73,22 @@ export const BitcoinReceiveInfoGenerator = ({ defaultWalletId }: Props) => {
                 <Selector
                     id="wallet-selector"
                     label={walletSelectorLabel}
-                    selected={selectedWallet.id}
+                    selected={selectedWallet?.WalletID}
                     onSelect={handleSelectWallet}
-                    options={wallets.map((wallet) => ({ value: wallet.id, label: wallet.name }))}
+                    options={walletsOptions}
                 />
 
-                {selectedWallet.kind === WalletKind.ONCHAIN && (
+                {selectedWallet?.Type === WalletType.OnChain && accountsOptions && (
                     <Selector
                         id="account-selector"
                         label={accountSelectorLabel}
-                        selected={selectedAccount.id}
+                        selected={selectedAccount?.WalletAccountID}
                         onSelect={handleSelectAccount}
-                        options={accounts.map((account) => ({ value: account.id, label: account.name }))}
+                        options={accountsOptions}
                     />
                 )}
 
-                {selectedWallet.kind === WalletKind.LIGHTNING && (
+                {selectedWallet?.Type === WalletType.Lightning && (
                     <Selector
                         id="format-selector"
                         label={formatSelectorLabel}
@@ -106,7 +109,6 @@ export const BitcoinReceiveInfoGenerator = ({ defaultWalletId }: Props) => {
                             label={amountInputLabel}
                             type="number"
                             min={0}
-                            max={selectedWallet?.balance ?? 0}
                             className="mt-2"
                             id="amount-input"
                             data-testid="amount-input"
@@ -150,7 +152,7 @@ export const BitcoinReceiveInfoGenerator = ({ defaultWalletId }: Props) => {
                         className="flex flex-column w-custom flex-justify-space-between"
                         style={{ '--w-custom': '15rem' }}
                     >
-                        <h3 className="text-lg text-semibold mt-4">{selectedWallet.name}</h3>
+                        <h3 className="text-lg text-semibold mt-4">{selectedWallet?.Name}</h3>
                         <Tooltip title={serializedPaymentInformation}>
                             <p
                                 className="text-monospace h-custom bg-norm m-0 text-break overflow-hidden"

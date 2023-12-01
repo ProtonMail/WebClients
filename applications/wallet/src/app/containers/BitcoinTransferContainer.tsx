@@ -6,8 +6,13 @@ import { Tabs } from '@proton/components/components';
 import useSearchParams from '@proton/hooks/useSearchParams';
 
 import { BitcoinReceiveInfoGenerator, OnchainTransactionBuilder } from '../components';
+import { WalletWithAccountsWithBalanceAndTxs } from '../types';
 
-export const BitcoinTransferContainer = () => {
+interface Props {
+    wallets: WalletWithAccountsWithBalanceAndTxs[];
+}
+
+export const BitcoinTransferContainer = ({ wallets }: Props) => {
     const [params] = useSearchParams();
 
     const [tabIndex, setTabIndex] = useState(params.mode === 'send' ? 1 : 0);
@@ -25,14 +30,22 @@ export const BitcoinTransferContainer = () => {
                     tabs={[
                         {
                             title: c('Wallet Transfer').t`Receive bitcoins`,
-                            content: <BitcoinReceiveInfoGenerator defaultWalletId={params.walletId} />,
+                            content: (
+                                <BitcoinReceiveInfoGenerator
+                                    wallets={wallets}
+                                    defaultWalletId={Number(params.walletId)}
+                                />
+                            ),
                         },
                         {
                             title: c('Wallet Transfer').t`Send bitcoins`,
                             content: (
                                 <div>
                                     {/* TODO: Put send method selection before. Will be done once design finished */}
-                                    <OnchainTransactionBuilder defaultWalletId={params.walletId} />
+                                    <OnchainTransactionBuilder
+                                        wallets={wallets}
+                                        defaultWalletId={Number(params.walletId)}
+                                    />
                                 </div>
                             ),
                         },
