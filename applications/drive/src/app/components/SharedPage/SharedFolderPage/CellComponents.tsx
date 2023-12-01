@@ -55,12 +55,12 @@ function NameCell({ item }: { item: PublicLink }) {
     });
 
     return (
-        <TableCell className="m-0 flex flex-align-items-center flex-nowrap flex-item-fluid" data-testid="column-name">
+        <TableCell className="m-0 flex items-center flex-nowrap flex-1" data-testid="column-name">
             {item.cachedThumbnailUrl ? (
                 <img
                     src={item.cachedThumbnailUrl}
                     alt={iconText}
-                    className="file-browser-list-item--thumbnail flex-item-noshrink mr-2"
+                    className="file-browser-list-item--thumbnail shrink-0 mr-2"
                 />
             ) : (
                 <FileIcon mimeType={item.isFile ? item.mimeType : 'Folder'} alt={iconText} className="mr-2" />
@@ -76,7 +76,7 @@ function SizeCell({ item }: { item: PublicLink }) {
     if (item.progress) {
         return (
             <TableCell
-                className="m-0 w-custom flex flex-nowrap flex-justify-end flex-align-items-center"
+                className="m-0 w-custom flex flex-nowrap justify-end items-center"
                 style={{ '--w-custom': '11em' }}
                 data-testid="column-size"
             >
@@ -94,7 +94,7 @@ function SizeCell({ item }: { item: PublicLink }) {
 
     return (
         <TableCell
-            className="m-0 flex flex-nowrap flex-justify-end w-custom"
+            className="m-0 flex flex-nowrap justify-end w-custom"
             style={{ '--w-custom': styleValue }}
             data-testid="column-size"
         >
@@ -118,14 +118,14 @@ function DownloadCell({ item }: { item: PublicLink }) {
     const isAnyInProgress = downloads.some((transfer) => isTransferActive(transfer) || isTransferPaused(transfer));
 
     const className = clsx([
-        'flex-item-centered-vert ',
+        'self-center my-auto ',
         'file-browser-list--download-button',
         'mouse:group-hover:opacity-100',
     ]);
 
     return (
         <TableCell
-            className="m-0 flex flex-nowrap flex-justify-end file-browser-list--icon-column w-custom"
+            className="m-0 flex flex-nowrap justify-end file-browser-list--icon-column w-custom"
             style={{ '--w-custom': '11em' }}
             data-testid="column-size"
         >

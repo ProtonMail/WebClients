@@ -167,10 +167,10 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
                     {FILTER_TYPES.map((filterType: FilterType) => (
                         <li
                             key={filterType.value}
-                            className="dropdown-item w-full flex flex-nowrap flex-align-items-center py-2 px-4"
+                            className="dropdown-item w-full flex flex-nowrap items-center py-2 px-4"
                         >
                             <Checkbox
-                                className="flex-item-noshrink mr-2"
+                                className="shrink-0 mr-2"
                                 id={filterType.value}
                                 data-testid={`custom-filter-checkbox:${filterType.value}`}
                                 checked={filtersState[filterType.value]}
@@ -179,7 +179,7 @@ const CustomFilterDropdown = ({ message, onClose, onLock }: Props) => {
                             <label
                                 htmlFor={filterType.value}
                                 title={filterType.label}
-                                className="flex-item-fluid text-ellipsis"
+                                className="flex-1 text-ellipsis"
                             >
                                 {filterType.label}
                             </label>

@@ -70,12 +70,12 @@ const ToolbarRowWide = ({
     return (
         <div>
             <nav
-                className={clsx(classname, 'flex-justify-space-between py-1 pl-4 pr-2')}
+                className={clsx(classname, 'justify-space-between py-1 pl-4 pr-2')}
                 data-shortcut-target="mailbox-toolbar"
                 aria-label={c('Label').t`Toolbar`}
                 ref={toolbarRef}
             >
-                <div className="flex flex-align-items-center flex-nowrap toolbar-inner gap-2">
+                <div className="flex items-center flex-nowrap toolbar-inner gap-2">
                     {selectAll}
                     <LabelName selectedIDs={selectedIDs} labelName={labelName} />
 
@@ -118,7 +118,7 @@ const ToolbarRowWide = ({
                     <MoreActions selectedIDs={selectedIDs} />
                 </div>
 
-                <div className="flex flex-align-items-center flex-item-noshrink flex-nowrap toolbar-inner gap-2">
+                <div className="flex items-center shrink-0 flex-nowrap toolbar-inner gap-2">
                     <ListSettings
                         sort={sort}
                         onSort={onSort}

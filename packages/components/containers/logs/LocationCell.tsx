@@ -12,11 +12,11 @@ const LocationCell = ({ location, isProtonSentinelEnabled, firstRow }: Props) =>
     const protonSentinelUpsell = c('Description').t`Enable ${PROTON_SENTINEL_NAME} to access these features`;
 
     if (isProtonSentinelEnabled) {
-        return <span className="flex-item-fluid">{location || '-'}</span>;
+        return <span className="flex-1">{location || '-'}</span>;
     }
 
     if (firstRow) {
-        return <span className="flex-item-fluid text-bold color-weak">{protonSentinelUpsell}</span>;
+        return <span className="flex-1 text-bold color-weak">{protonSentinelUpsell}</span>;
     }
 
     return null;

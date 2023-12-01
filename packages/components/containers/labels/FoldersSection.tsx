@@ -74,7 +74,7 @@ export default function FoldersSection() {
                             <SettingsLayoutLeft>
                                 <label
                                     htmlFor="parent-folder-color"
-                                    className="text-semibold flex flex-align-items-center gap-2"
+                                    className="text-semibold flex items-center gap-2"
                                 >
                                     <span>{c('Label').t`Inherit color from parent folder`}</span>
                                     <Info

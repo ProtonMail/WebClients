@@ -197,7 +197,7 @@ export default function SharedFolder({ token, rootLink }: Props) {
         <FileBrowserStateProvider itemIds={fileBrowserItems.map(({ linkId }) => linkId)}>
             <SharedPageLayout FooterComponent={<SharedPageFooter rootItem={rootLink} items={fileBrowserItems} />}>
                 <SharedPageHeader rootItem={rootLink} items={fileBrowserItems} className="mt-7 mb-8">
-                    <div className="max-w-full flex flex-align-items-center">
+                    <div className="max-w-full flex items-center">
                         <Breadcrumbs
                             token={token}
                             name={folderView.folderName}
@@ -205,7 +205,7 @@ export default function SharedFolder({ token, rootLink }: Props) {
                             onNavigate={setLinkId}
                             className="w-full shared-folder-header-breadcrumbs pb-1"
                         />
-                        <div className="flex flex-align-items-center">
+                        <div className="flex items-center">
                             <HeaderSecureLabel />
                             {totalSize ? <HeaderSize size={totalSize} /> : null}
                         </div>

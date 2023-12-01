@@ -57,7 +57,7 @@ const RecipientItemGroup = ({
     const labelText = getGroupLabel(group, true);
 
     const label = (
-        <div className="text-left flex flex-nowrap flex-align-items-center">
+        <div className="text-left flex flex-nowrap items-center">
             <Icon name="users" className="mr-1" />
             <span>{labelText}</span>
         </div>
@@ -126,28 +126,28 @@ const RecipientItemGroup = ({
                         })}
                         <hr className="my-2" />
                         <DropdownMenuButton
-                            className="text-left flex flex-nowrap flex-align-items-center"
+                            className="text-left flex flex-nowrap items-center"
                             onClick={handleCompose}
                             data-testid="recipient:new-message-to-group"
                         >
                             <Icon name="pen-square" className="mr-2" />
-                            <span className="flex-item-fluid my-auto">{c('Action').t`New message`}</span>
+                            <span className="flex-1 my-auto">{c('Action').t`New message`}</span>
                         </DropdownMenuButton>
                         <DropdownMenuButton
-                            className="text-left flex flex-nowrap flex-align-items-center"
+                            className="text-left flex flex-nowrap items-center"
                             onClick={handleCopy}
                             data-testid="recipient:copy-group-emails"
                         >
                             <Icon name="squares" className="mr-2" />
-                            <span className="flex-item-fluid my-auto">{c('Action').t`Copy addresses`}</span>
+                            <span className="flex-1 my-auto">{c('Action').t`Copy addresses`}</span>
                         </DropdownMenuButton>
                         <DropdownMenuButton
-                            className="text-left flex flex-nowrap flex-align-items-center"
+                            className="text-left flex flex-nowrap items-center"
                             onClick={handleRecipients}
                             data-testid="recipient:view-group-recipients"
                         >
                             <Icon name="user" className="mr-2" />
-                            <span className="flex-item-fluid my-auto">{c('Action').t`View recipients`}</span>
+                            <span className="flex-1 my-auto">{c('Action').t`View recipients`}</span>
                         </DropdownMenuButton>
                     </DropdownMenu>
                 </Dropdown>

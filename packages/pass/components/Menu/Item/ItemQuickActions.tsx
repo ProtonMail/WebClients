@@ -96,7 +96,7 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
                                 }
                                 icon={
                                     <span
-                                        className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon flex-item-noshrink"
+                                        className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon shrink-0"
                                         style={{ '--w-custom': `2em`, '--h-custom': `2em` }}
                                     >
                                         <Icon
@@ -115,7 +115,7 @@ export const ItemQuickActions: FC<Props> = ({ disabled = false, origin = null, o
                             label={c('Label').t`Password`}
                             icon={
                                 <span
-                                    className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon flex-item-noshrink"
+                                    className="mr-2 w-custom h-custom rounded-lg overflow-hidden relative pass-item-icon shrink-0"
                                     style={{ '--w-custom': `2em`, '--h-custom': `2em` }}
                                 >
                                     <Icon name="key" className="absolute-center" color="var(--interaction-norm)" />

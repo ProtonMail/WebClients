@@ -43,12 +43,12 @@ const ItemSpyTrackerIcon = ({ message }: Props) => {
         <span>{c('Info').t`Email tracker protection is disabled`}</span>
     ) : (
         <>
-            <div className="flex flex-justify-space-between">
+            <div className="flex justify-space-between">
                 <span>{c('Info').t`Trackers blocked:`}</span>
                 <span className="pl-4 text-tabular-nums">{numberOfImageTrackers}</span>
             </div>
             {canCleanUTMTrackers && (
-                <div className="flex flex-justify-space-between">
+                <div className="flex justify-space-between">
                     <span>{c('Info').t`Links cleaned:`}</span>
                     <span className="pl-4 text-tabular-nums">{numberOfUTMTrackers}</span>
                 </div>

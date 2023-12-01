@@ -1,67 +1,35 @@
 @use 'sass:map';
 
-.children-items-center > * {
-	align-items: center;
+.inline-flex-vcenter {
+	display: inline-flex;
+	flex-wrap: wrap;
 }
 
-.children-self-center > * {
-	margin-block: auto;
-	align-self: center;
+.flex-flex-children,
+.flex-no-min-children {
+	display: flex;
+	flex-wrap: wrap;
 }
+
+.flex-flex-children > * {
+	display: flex;
+}
+
+// ----------------------------------------------------------------------------
 
 // Create an empty map to make it reachable outside of loops
 $dummy-map: ();
 
-// Add `flex-direction` utilities to the map
-@each $direction in (row, row-reverse, column, column-reverse) {
-	$dummy-map: map.merge(
-		$dummy-map,
-		(
-			flex-#{$direction}:
-				(
-					flex-direction: $direction,
-				)
-		)
-	);
-}
-
-// Add `justify` utilities to the map
+// Add `flex-justify` utilities to the map
 @each $justify in (start, center, end, space-between, space-around, space-evenly) {
 	// Remove prefix when 'start' and 'end' will be recognized by browsers
 	$prefix: if($justify == start or $justify == end, 'flex', '');
 	$dummy-map: map.merge(
 		$dummy-map,
 		(
-			justify-#{$justify}:
+			flex-justify-#{$justify}:
 				(
 					justify-content: #{dash-join($prefix, $justify)},
-				)
-		)
-	);
-}
-
-// Add `flex-wrap` utilities to the map
-@each $wrap in (wrap, wrap-reverse, nowrap) {
-	$dummy-map: map.merge(
-		$dummy-map,
-		(
-			flex-#{$wrap}:
-				(
-					flex-wrap: #{$wrap},
-				)
-		)
-	);
-}
-
-// Add `order` utilities to the map
-// Use a for in case we need more
-@for $i from 0 through 1 {
-	$dummy-map: map.merge(
-		$dummy-map,
-		(
-			order-#{$i}:
-				(
-					order: #{$i},
 				)
 		)
 	);
@@ -74,11 +42,11 @@ $dummy-map: ();
 	$dummy-map: map.merge(
 		$dummy-map,
 		(
-			items-#{$align}:
+			flex-align-items-#{$align}:
 				(
 					align-items: #{dash-join($prefix, $align)},
 				),
-			self-#{$align}:
+			flex-align-self-#{$align}:
 				(
 					align-self: #{dash-join($prefix, $align)},
 				)
@@ -91,46 +59,52 @@ $dummy-map: ();
 
 // ----------------------------------------------------------------------------
 
+.flex-flex-align-items-center > * {
+	align-items: center;
+}
+
+.inline-flex-vcenter > *,
+.flex-item-centered-vert {
+	margin-block: auto;
+	align-self: center;
+}
+
 @include responsive-classes(
 	(
-		flex-1: (
-			flex: 1 1 0%,
+		flex-item-fluid: (
+			flex: 1 1 0,
 		),
 
-		flex-auto: (
+		flex-item-fluid-auto: (
 			flex: 1 1 auto,
 		),
 
-		flex-initial: (
-			flex: 0 1 auto,
-		),
-
-		flex-none: (
-			flex: none,
-		),
-
-		grow: (
+		flex-item-grow: (
 			flex-grow: 1,
 		),
 
-		grow-2: (
-			flex-grow: 2,
-		),
-
-		grow-0: (
+		flex-item-nogrow: (
 			flex-grow: 0,
 		),
 
-		grow-custom: (
-			flex-grow: var(--#{'[BPN]' + 'grow-custom'}),
-		),
-
-		shrink: (
+		flex-item-shrink: (
 			flex-shrink: 1,
 		),
 
-		shrink-0: (
+		flex-item-noshrink: (
 			flex-shrink: 0,
 		),
 	)
 );
+
+.flex-item-grow-2 {
+	flex-grow: 2;
+}
+
+.flex-item-grow-custom {
+	flex-grow: var(--grow-custom);
+}
+
+.flex-item-noflex {
+	flex: 0;
+}

@@ -44,11 +44,11 @@ const DesktopDownloadDropdown = ({ className }: Props) => {
             >
                 <DropdownMenu>
                     {isLoading ? (
-                        <CircleLoader className="w-full flex flex-align-items-center my-2" />
+                        <CircleLoader className="w-full flex items-center my-2" />
                     ) : (
                         downloads.map(({ platform, icon, name, url, startDownload }) => (
                             <DropdownMenuButton
-                                className="text-left flex flex-align-items-center"
+                                className="text-left flex items-center"
                                 key={platform}
                                 disabled={!url}
                                 onClick={startDownload}

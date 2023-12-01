@@ -70,14 +70,14 @@ const ItemCheckbox = ({
                 data-testid="item-checkbox"
             />
             <span
-                className="item-icon flex-item-noshrink relative rounded inline-flex"
+                className="item-icon shrink-0 relative rounded inline-flex"
                 style={{
                     backgroundColor: color ?? '',
                 }}
                 data-testid="element-list:message-checkbox"
                 aria-hidden="true"
             >
-                <span className="m-auto item-abbr rounded no-scroll" aria-hidden="true">
+                <span className="m-auto item-abbr rounded overflow-hidden" aria-hidden="true">
                     {iconName ? (
                         <Icon name={iconName} color="white" />
                     ) : (

@@ -89,22 +89,22 @@ const ContactEditProperty = (
 
     // The data-contact-property-id is used to focus on the element in ContactEditProperties
     return (
-        <div className="flex flex-nowrap flex-item-noshrink" data-contact-property-id={vCardProperty.uid}>
+        <div className="flex flex-nowrap shrink-0" data-contact-property-id={vCardProperty.uid}>
             {sortable ? (
                 <OrderableHandle key="icon">
-                    <div className="cursor-row-resize mr-2 flex flex-item-noshrink mb-4">
+                    <div className="cursor-row-resize mr-2 flex shrink-0 mb-4">
                         <Icon name="text-align-justify" className="mt-3 " />
                     </div>
                 </OrderableHandle>
             ) : (
-                <div className="mr-2 flex flex-align-items-center flex-item-noshrink">
+                <div className="mr-2 flex items-center shrink-0">
                     <Icon name="text-align-justify" className="visibility-hidden" />
                 </div>
             )}
-            <div className="contact-modal-field relative flex flex-nowrap flex-column md:flex-row w-full flex-align-items-stretch md:flex-align-items-start">
+            <div className="contact-modal-field relative flex flex-nowrap flex-column md:flex-row w-full items-stretch md:items-start">
                 <span
                     className={clsx([
-                        'contact-modal-select flex flex-nowrap mb-2 md:mb-4 flex-align-items-start',
+                        'contact-modal-select flex flex-nowrap mb-2 md:mb-4 items-start',
                         labelWidthClassName || 'md:w-3/10',
                     ])}
                 >
@@ -116,8 +116,8 @@ const ContactEditProperty = (
                     />
                 </span>
 
-                <div className="flex flex-nowrap flex-align-items-startoupas md:flex-item-fluid flex-item-noshrink">
-                    <span className="flex-item-fluid mb-4">
+                <div className="flex flex-nowrap items-startoupas md:flex-1 shrink-0">
+                    <span className="flex-1 mb-4">
                         <ContactFieldProperty
                             ref={ref}
                             vCardProperty={vCardProperty}
@@ -132,13 +132,13 @@ const ContactEditProperty = (
                             {list.length > 0 && (
                                 <div
                                     className={clsx([
-                                        'flex flex-item-noshrink h-4',
+                                        'flex shrink-0 h-4',
                                         field,
                                         (field === 'photo' ||
                                             field === 'note' ||
                                             field === 'logo' ||
                                             field === 'adr') &&
-                                            'flex-align-items-start',
+                                            'items-start',
                                     ])}
                                 >
                                     {field === 'email' && (

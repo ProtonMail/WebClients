@@ -141,7 +141,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                     noValidate
                 >
                     <div className="flex mb-2">
-                        <div className="flex-item-fluid pl-2 mt-0.5">
+                        <div className="flex-1 pl-2 mt-0.5">
                             <InputFieldTwo
                                 as={PhoneInput}
                                 id="recovery-phone"
@@ -161,7 +161,7 @@ const RecoveryStep = ({ defaultPhone, defaultEmail, defaultCountry, onSubmit, on
                     </div>
 
                     <div className="flex">
-                        <div className="flex-item-fluid pl-2 mt-0.5">
+                        <div className="flex-1 pl-2 mt-0.5">
                             <InputFieldTwo
                                 id="recovery-email"
                                 bigger

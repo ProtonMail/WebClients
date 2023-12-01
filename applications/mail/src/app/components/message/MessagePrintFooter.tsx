@@ -24,9 +24,9 @@ const MessagePrintFooterItem = ({ attachment }: ItemProps) => {
 
     return (
         <div className="proton-print-footer-item flex flex-nowrap rounded">
-            <div className="flex flex-align-items-baseline flex-nowrap">
+            <div className="flex items-baseline flex-nowrap">
                 <FileNameDisplay text={name} />
-                <div className="proton-print-footer-item-size flex-item-noshrink">{humanAttachmentSize}</div>
+                <div className="proton-print-footer-item-size shrink-0">{humanAttachmentSize}</div>
             </div>
         </div>
     );
@@ -45,7 +45,7 @@ const MessagePrintFooter = ({ message }: Props) => {
     return (
         <div className="proton-print">
             <div className="proton-print-footer">
-                <div className="proton-print-footer-sizes flex flex-align-items-center outline-none">
+                <div className="proton-print-footer-sizes flex items-center outline-none">
                     {size !== 0 && <strong className="proton-print-footer-sizes-label">{sizeLabel}</strong>}
                     {pureAttachmentsCount > 0 && (
                         <span className="proton-print-footer-sizes-count">

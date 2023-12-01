@@ -34,8 +34,8 @@ const ExtraSpamScore = ({ message }: Props) => {
                 className="bg-norm rounded px-2 py-1 mb-3 flex flex-nowrap"
                 data-testid="spam-banner:failed-dmarc-validation"
             >
-                <Icon name="exclamation-circle-filled" className="flex-item-noshrink mt-1 ml-0.5 color-danger" />
-                <span className="px-2 pb-1 mt-0.5 flex-item-fluid">
+                <Icon name="exclamation-circle-filled" className="shrink-0 mt-1 ml-0.5 color-danger" />
+                <span className="px-2 pb-1 mt-0.5 flex-1">
                     {c('Info')
                         .t`This email has failed its domain's authentication requirements. It may be spoofed or improperly forwarded.`}{' '}
                     <Href
@@ -63,8 +63,8 @@ const ExtraSpamScore = ({ message }: Props) => {
                 className="bg-danger border border-danger rounded pr-2 md:pr-1 pb-2 md:pb-1 pt-1 pl-2 mb-3 flex flex-nowrap"
                 data-testid="spam-banner:phishing-banner"
             >
-                <Icon name="exclamation-circle-filled" className="flex-item-noshrink ml-0.5 mt-1" />
-                <span className="px-2 mt-0.5 flex-item-fluid">
+                <Icon name="exclamation-circle-filled" className="shrink-0 ml-0.5 mt-1" />
+                <span className="px-2 mt-0.5 flex-1">
                     {isSuspiciousFlagged ? (
                         <>
                             {c('Info')
@@ -80,7 +80,7 @@ const ExtraSpamScore = ({ message }: Props) => {
                         </>
                     )}
                 </span>
-                <span className="flex-item-noshrink flex-align-items-start flex">
+                <span className="shrink-0 items-start flex">
                     <Button
                         size="small"
                         color="danger"

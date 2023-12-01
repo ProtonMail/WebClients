@@ -57,7 +57,7 @@ const WarningIcon = ({ className }: { className?: string }) => {
     return (
         <Icon
             name="exclamation-circle-filled"
-            className={clsx('flex-item-noshrink color-danger', className)}
+            className={clsx('shrink-0 color-danger', className)}
             size={18}
         />
     );
@@ -373,9 +373,9 @@ const CreditCard = ({
                 .t`Billing address`}</Label>
             <Input
                 placeholder={title}
-                className="country-select flex-justify-space-between divide-x"
+                className="country-select justify-space-between divide-x"
                 inputClassName="ml-1"
-                prefixClassName="flex-item-fluid"
+                prefixClassName="flex-1"
                 ref={zipRef}
                 prefix={
                     <SelectTwo

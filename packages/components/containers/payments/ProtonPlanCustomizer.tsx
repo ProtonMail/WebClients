@@ -95,7 +95,7 @@ const ButtonNumberInput = ({
     const isValidTmpValue = getIsValidValue(tmpValue);
 
     return (
-        <div className="border rounded flex-item-noshrink flex flex-nowrap">
+        <div className="border rounded shrink-0 flex flex-nowrap">
             <button
                 type="button"
                 title={c('Action').t`Decrease`}
@@ -230,10 +230,10 @@ const AccountSizeCustomiser = ({
                     <div className="mb-4">{getAccountSizeString(maxUsers, price)}</div>
                 </>
             )}
-            <div className="flex-no-min-children md:flex-nowrap flex-align-items-center mb-4">
+            <div className="flex children-min-size-auto md:flex-nowrap items-center mb-4">
                 <label
                     htmlFor={addon.Name}
-                    className="w-full md:w-auto min-w-custom md:min-w-custom flex-item-fluid plan-customiser-addon-label text-bold pr-2"
+                    className="w-full md:w-auto min-w-custom md:min-w-custom flex-1 plan-customiser-addon-label text-bold pr-2"
                     style={{ '--min-w-custom': '8em', '--md-min-w-custom': '14em' }}
                 >
                     {c('Info').t`Users`}
@@ -272,10 +272,10 @@ const AdditionalOptionsCustomiser = ({
                     </div>
                 </>
             )}
-            <div className="flex-no-min-children md:flex-nowrap flex-align-items-center mb-4">
+            <div className="flex children-min-size-auto md:flex-nowrap items-center mb-4">
                 <label
                     htmlFor={addon.Name}
-                    className="w-full md:w-auto min-w-custom md:min-w-custom flex-item-fluid plan-customiser-addon-label text-bold pr-2"
+                    className="w-full md:w-auto min-w-custom md:min-w-custom flex-1 plan-customiser-addon-label text-bold pr-2"
                     style={{ '--min-w-custom': '8em', '--md-min-w-custom': '14em' }}
                 >
                     {c('Info').t`Custom email domains`}
@@ -331,10 +331,10 @@ const IPsNumberCustomiser = ({
                     </div>
                 </>
             )}
-            <div className="flex-no-min-children md:flex-nowrap flex-align-items-center mb-4">
+            <div className="flex children-min-size-auto md:flex-nowrap items-center mb-4">
                 <label
                     htmlFor={addon.Name}
-                    className="w-full md:w-auto min-w-custom md:min-w-custom flex-item-fluid plan-customiser-addon-label text-bold pr-2"
+                    className="w-full md:w-auto min-w-custom md:min-w-custom flex-1 plan-customiser-addon-label text-bold pr-2"
                     style={{ '--min-w-custom': '8em', '--md-min-w-custom': '14em' }}
                 >
                     {title}

@@ -46,13 +46,13 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
     const size = 48;
 
     return (
-        <div className="flex-no-min-children flex-nowrap flex-column h-full eo-layout-bg scroll-if-needed">
+        <div className="flex children-min-size-auto flex-nowrap flex-column h-full eo-layout-bg overflow-auto">
             <PublicTopBanners />
-            <header className="flex flex-nowrap flex-justify-space-between flex-align-items-center flex-item-noshrink p-7 flex-column sm:flex-row">
+            <header className="flex flex-nowrap justify-space-between items-center shrink-0 p-7 flex-column sm:flex-row">
                 <AppLink to="/" toApp={toApp} target="_self">
                     <Logo appName={toApp} />
                 </AppLink>
-                <div className="flex flex-nowrap flex-align-items-center flex-column md:flex-row">
+                <div className="flex flex-nowrap items-center flex-column md:flex-row">
                     <div className="ml-0 md:ml-4">
                         <Href href="/signup" target="_self">
                             <ButtonLike className="text-semibold" shape="outline" color="norm" pill>{c('Link')
@@ -61,7 +61,7 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                     </div>
                 </div>
             </header>
-            <div className="eo-layout-container sm:mx-7 flex-item-fluid flex flex-nowrap flex-column">
+            <div className="eo-layout-container sm:mx-7 flex-1 flex flex-nowrap flex-column">
                 <div>{children}</div>
                 <div className="mx-auto mt-8">
                     <Href
@@ -94,14 +94,14 @@ const EOLayout = ({ children, toApp, hasLanguageSelect = true }: Props) => {
                     </Href>
                 </div>
             </div>
-            <footer className="flex-item-noshrink text-center p-4">
+            <footer className="shrink-0 text-center p-4">
                 <div>
                     {
                         // translator: full sentence 'Proton. Privacy by default.'
                         c('Footer').t`${BRAND_NAME}. Privacy by default.`
                     }
                 </div>
-                <div className="text-center text-sm m-0 pt-4 pb-2 flex-item-noshrink">
+                <div className="text-center text-sm m-0 pt-4 pb-2 shrink-0">
                     <span className="block md:inline">{termsLink}</span>
                     <span className="color-weak px-3 hidden md:inline" aria-hidden="true">
                         |

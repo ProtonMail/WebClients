@@ -43,7 +43,7 @@ const CalendarToolbar = ({
                 {dateCursorButtons}
                 {searchField}
 
-                <span className="md:ml-auto md:flex-item-fluid flex flex-nowrap flex-justify-end">
+                <span className="md:ml-auto md:flex-1 flex flex-nowrap justify-end">
                     {searchButton && (
                         <>
                             <Vr className="mx-1 md:hidden" />
@@ -66,7 +66,7 @@ const CalendarToolbar = ({
                         </div>
                     ) : undefined}
                 </span>
-                <span className="hidden md:flex flex-item-noshrink ml-auto lg:ml-1">{viewSelector}</span>
+                <span className="hidden md:flex shrink-0 ml-auto lg:ml-1">{viewSelector}</span>
             </Toolbar>
         </div>
     );

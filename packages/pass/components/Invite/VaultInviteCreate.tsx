@@ -97,7 +97,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                         <PanelHeader
                             actions={[
                                 <Button
-                                    className="flex-item-noshrink"
+                                    className="shrink-0"
                                     icon
                                     key="modal-close-button"
                                     onClick={close}
@@ -124,7 +124,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                     {form.values.step !== 'vault' && (
                         <div
                             className={clsx(
-                                'flex flex-justify-space-between flex-align-items-center flex-nowrap mt-3 mb-6 gap-3 anime-fade-in',
+                                'flex justify-space-between items-center flex-nowrap mt-3 mb-6 gap-3 anime-fade-in',
                                 props.withVaultCreation && 'border rounded-xl p-3'
                             )}
                         >
@@ -136,7 +136,7 @@ export const VaultInviteCreate: FC<VaultInviteCreateProps> = (props) => {
                                         name={form.values.name}
                                     />
                                     <Button
-                                        className="flex-item-noshrink"
+                                        className="shrink-0"
                                         color="weak"
                                         onClick={() => form.setFieldValue('step', 'vault')}
                                         pill

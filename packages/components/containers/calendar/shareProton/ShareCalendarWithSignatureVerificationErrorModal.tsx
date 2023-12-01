@@ -42,7 +42,7 @@ const ShareCalendarWithSignatureVerificationErrors = ({ senderEmail, onCancel, .
                 </p>
                 <LearnMore url={getKnowledgeBaseUrl('/key-pinning')} />
             </ModalContent>
-            <ModalFooter className="flex-justify-end">
+            <ModalFooter className="justify-end">
                 <Button onClick={handleCancel}>{c('Action').t`Cancel`}</Button>
             </ModalFooter>
         </Modal>

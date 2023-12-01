@@ -155,15 +155,15 @@ function GeneratedLinkState({
                 <div ref={contentRef}>
                     <p data-testid="shareable-info-text">{c('Info').jt`Shareable link for ${boldNameText}`} </p>
                     <Row className="mb-2 md:mb-0">
-                        <div className="flex md:flex-item-fluid mb-2 md:mb-0">
+                        <div className="flex md:flex-1 mb-2 md:mb-0">
                             <Input
                                 readOnly
                                 value={url}
-                                className="no-scroll text-ellipsis"
+                                className="overflow-hidden text-ellipsis"
                                 data-testid="sharing-modal-url"
                             />
                         </div>
-                        <div className="flex-no-min-children flex-justify-end ml-0 md:ml-2">
+                        <div className="flex children-min-size-auto justify-end ml-0 md:ml-2">
                             <PrimaryButton
                                 id="copy-url-button"
                                 onClick={handleCopyURLClick}
@@ -192,12 +192,12 @@ function GeneratedLinkState({
                             </Alert>
                         ) : (
                             <>
-                                <div className="flex-no-min-children flex-nowrap mb-4 flex-column md:flex-row mb-2 md:mb-0">
+                                <div className="flex children-min-size-auto flex-nowrap mb-4 flex-column md:flex-row mb-2 md:mb-0">
                                     <Label htmlFor="passwordModeToggle">
                                         <span className="mr-2">{c('Label').t`Protect with password`}</span>
                                     </Label>
                                     <div
-                                        className="flex flex-justify-start pt-2 mr-0 md:mr-2"
+                                        className="flex justify-start pt-2 mr-0 md:mr-2"
                                         data-testid="sharing-modal-passwordModeToggle"
                                     >
                                         <Toggle
@@ -213,7 +213,7 @@ function GeneratedLinkState({
                                             }}
                                         />
                                     </div>
-                                    <div className="flex-no-min-children md:flex-item-fluid mb-2 md:mb-0 field-two-icon-container-empty min-h-0 md:min-h-none">
+                                    <div className="flex children-min-size-auto md:flex-1 mb-2 md:mb-0 field-two-icon-container-empty min-h-0 md:min-h-none">
                                         {passwordToggledOn && (
                                             <>
                                                 <InputFieldTwo
@@ -239,12 +239,12 @@ function GeneratedLinkState({
                                         )}
                                     </div>
                                 </div>
-                                <div className="flex-no-min-children flex-nowrap flex-column md:flex-row mb-2 md:mb-4">
+                                <div className="flex children-min-size-auto flex-nowrap flex-column md:flex-row mb-2 md:mb-4">
                                     <Label htmlFor="expirationTimeModeToggle">
                                         <span className="mr-2">{c('Label').t`Set expiration date`}</span>
                                     </Label>
                                     <div
-                                        className="flex flex-justify-start pt-2 mr-0 md:mr-2"
+                                        className="flex justify-start pt-2 mr-0 md:mr-2"
                                         data-testid="sharing-modal-expirationTimeModeToggle"
                                     >
                                         <Toggle
@@ -255,7 +255,7 @@ function GeneratedLinkState({
                                             onChange={onIncludeExpirationTimeToogle}
                                         />
                                     </div>
-                                    <div className="flex-no-min-children md:flex-item-fluid flex-align-items-center mb-2 md:mb-0 field-two-icon-container-empty min-h-0 md:min-h-none">
+                                    <div className="flex children-min-size-auto md:flex-1 items-center mb-2 md:mb-0 field-two-icon-container-empty min-h-0 md:min-h-none">
                                         {expirationToggledOn && (
                                             <ExpirationTimeDatePicker
                                                 disabled={saving}
@@ -272,12 +272,12 @@ function GeneratedLinkState({
                 </div>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <div className="flex flex-justify-space-between w-full">
+                <div className="flex justify-space-between w-full">
                     <Button
                         loading={deleting}
                         disabled={saving}
                         onClick={onDeleteLinkClick}
-                        className="mb-2 md:mb-0 inline-flex flex-align-items-center"
+                        className="mb-2 md:mb-0 inline-flex items-center"
                     >
                         <Icon name="link-slash" className="mr-2" />
                         {c('Action').t`Stop sharing`}

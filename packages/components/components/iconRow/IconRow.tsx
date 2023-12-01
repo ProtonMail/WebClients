@@ -47,13 +47,13 @@ const IconRow = ({
     const iconResult = getIcon();
 
     return (
-        <div className="flex flex-nowrap flex-align-items-start mb-4 form--icon-labels">
+        <div className="flex flex-nowrap items-start mb-4 form--icon-labels">
             {!!iconResult && (
                 <Label className={labelClassName} htmlFor={id}>
                     <Tooltip title={title}>{iconResult}</Tooltip>
                 </Label>
             )}
-            <div className={className || 'flex-item-fluid'}>{children}</div>
+            <div className={className || 'flex-1'}>{children}</div>
         </div>
     );
 };

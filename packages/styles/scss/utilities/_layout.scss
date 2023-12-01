@@ -1,7 +1,13 @@
-.mod,
-.scroll-if-needed,
 .overflow-auto {
 	overflow: auto;
+}
+
+.overflow-x-auto {
+	overflow-x: auto;
+}
+
+.overflow-y-auto {
+	overflow-y: auto;
 }
 
 .overflow-overlay {
@@ -9,13 +15,6 @@
 	overflow: overlay;
 }
 
-.scroll-horizontal-if-needed,
-.overflow-x-auto {
-	overflow-x: auto;
-}
-
-.mod--hidden,
-.no-scroll,
 .overflow-hidden {
 	overflow: hidden;
 }
@@ -32,7 +31,6 @@
 	float: inline-end;
 }
 
-/* clear floats */
 .clear {
 	clear: both;
 }

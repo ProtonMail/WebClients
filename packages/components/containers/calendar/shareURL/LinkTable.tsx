@@ -28,7 +28,7 @@ const LinkTable = ({ links, onCopyLink, onDelete, onEdit, isLoadingMap, user }: 
 
     const accessHeader = c('Header').t`Access`;
     const labelHeader = (
-        <span className="flex flex-align-items-center">
+        <span className="flex items-center">
             <span className="mr-2">{c('Header').t`Label`}</span>
             <Info title={c('Info').t`Only you can see the labels.`} />
         </span>
@@ -72,7 +72,7 @@ const LinkTable = ({ links, onCopyLink, onDelete, onEdit, isLoadingMap, user }: 
                                 labels={[accessHeader, labelHeader, '']}
                                 cells={[
                                     <div key="calendar">
-                                        <div className="flex flex-align-items-center">
+                                        <div className="flex items-center">
                                             <Icon name="link" className="mr-2" />
                                             {accessLevel === ACCESS_LEVEL.FULL
                                                 ? c('Access level').t`Full view`

@@ -30,7 +30,7 @@ const DriveOnboardingModal = (props: Props) => {
         return (
             <ModalTwo open={true} size="small">
                 <ModalTwoContent className="my-8">
-                    <div className="flex flex-column flex-align-items-center">
+                    <div className="flex flex-column items-center">
                         <Loader size="medium" className="my-4" />
                     </div>
                 </ModalTwoContent>
@@ -75,16 +75,16 @@ const DriveOnboardingModal = (props: Props) => {
                     )}
                     <ul className="unstyled mt-4">
                         <li className="my-2 flex flex-nowrap">
-                            <Icon name="checkmark-circle" className="flex-item-noshrink mr-1 mt-0.5" />
-                            <span className="flex-item-fluid">{c('Onboarding Info').t`Upload a file`}</span>
+                            <Icon name="checkmark-circle" className="shrink-0 mr-1 mt-0.5" />
+                            <span className="flex-1">{c('Onboarding Info').t`Upload a file`}</span>
                         </li>
                         <li className="my-2 flex flex-nowrap">
-                            <Icon name="checkmark-circle" className="flex-item-noshrink mr-1 mt-0.5" />{' '}
-                            <span className="flex-item-fluid">{c('Onboarding Info').t`Create a share link`}</span>
+                            <Icon name="checkmark-circle" className="shrink-0 mr-1 mt-0.5" />{' '}
+                            <span className="flex-1">{c('Onboarding Info').t`Create a share link`}</span>
                         </li>
                         <li className="my-2 flex flex-nowrap">
-                            <Icon name="checkmark-circle" className="flex-item-noshrink mr-1 mt-0.5" />{' '}
-                            <span className="flex-item-fluid">{c('Onboarding Info').t`Set a recovery method`}</span>
+                            <Icon name="checkmark-circle" className="shrink-0 mr-1 mt-0.5" />{' '}
+                            <span className="flex-1">{c('Onboarding Info').t`Set a recovery method`}</span>
                         </li>
                     </ul>
                 </div>

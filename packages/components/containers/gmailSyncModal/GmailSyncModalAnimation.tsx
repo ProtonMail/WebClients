@@ -35,7 +35,7 @@ const GmailSyncModalAnimation = ({ reduceHeight = false }: Props) => {
             <div className="gsma-auto-forward">
                 <div className="gsma-forwarded">
                     {c('Animation').t`Auto forwarded`}
-                    <Icon className="ml-4 flex-item-noshrink" name="arrow-up-and-right-big" />
+                    <Icon className="ml-4 shrink-0" name="arrow-up-and-right-big" />
                 </div>
                 <div className="gsma-envelope">
                     <img src={envelope} alt="" width={mobile ? 55 : 45} height={mobile ? 29 : 35} />

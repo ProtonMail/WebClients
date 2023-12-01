@@ -81,7 +81,7 @@ const RoosterEditor = ({
         <>
             <div
                 className={clsx([
-                    'editor-wrapper fill w-full h-full scroll-if-needed flex-item-fluid flex flex-column relative',
+                    'editor-wrapper fill w-full h-full overflow-auto flex-1 flex flex-column relative',
                     className,
                 ])}
             >
@@ -89,7 +89,7 @@ const RoosterEditor = ({
                     ref={iframeRef}
                     title={c('Title').t`Email composer`}
                     frameBorder="0"
-                    className="w-full h-full flex-item-fluid"
+                    className="w-full h-full flex-1"
                     data-testid="rooster-iframe"
                 />
             </div>

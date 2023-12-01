@@ -128,7 +128,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                     <br />
                     <Href href={getKnowledgeBaseUrl('/smtp-submission')}>{c('Link').t`Learn more`}</Href>
                 </p>
-                <div className="flex flex-align-items-center flex-nowrap mb-4">
+                <div className="flex items-center flex-nowrap mb-4">
                     <InputFieldTwo
                         id="smtp-username"
                         label={c('Label').t`SMTP username`}
@@ -140,11 +140,11 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         color="norm"
                         shape="solid"
                         value={emailAddress}
-                        className="smtp-token-copy relative flex-item-noshrink ml-2"
+                        className="smtp-token-copy relative shrink-0 ml-2"
                         onCopy={handleCopyEmail}
                     />
                 </div>
-                <div className="flex flex-align-items-center flex-nowrap mb-4">
+                <div className="flex items-center flex-nowrap mb-4">
                     <InputFieldTwo
                         id="smtp-token"
                         label={c('Label').t`SMTP token`}
@@ -156,13 +156,13 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         color="norm"
                         shape="solid"
                         value={token}
-                        className="smtp-token-copy relative flex-item-noshrink ml-2"
+                        className="smtp-token-copy relative shrink-0 ml-2"
                         onCopy={handleCopyToken}
                     />
                 </div>
                 <p className="color-danger">{c('Info')
                     .t`This token won’t be available after you close this window, and you should not share it with anyone.`}</p>
-                <div className="flex flex-align-items-center flex-nowrap mb-4">
+                <div className="flex items-center flex-nowrap mb-4">
                     <InputFieldTwo
                         id="server"
                         label={c('Label').t`SMTP server`}
@@ -174,11 +174,11 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         color="norm"
                         shape="solid"
                         value={SMTP_SERVER}
-                        className="smtp-token-copy relative flex-item-noshrink ml-2"
+                        className="smtp-token-copy relative shrink-0 ml-2"
                         onCopy={handleCopyServer}
                     />
                 </div>
-                <div className="flex flex-align-items-center flex-nowrap mb-4">
+                <div className="flex items-center flex-nowrap mb-4">
                     <InputFieldTwo
                         id="port"
                         label={c('Label').t`SMTP port`}
@@ -190,7 +190,7 @@ const SMTPTokenModal = ({ addresses, onCreate, ...rest }: Props) => {
                         color="norm"
                         shape="solid"
                         value={SMTP_PORT}
-                        className="smtp-token-copy relative flex-item-noshrink ml-2"
+                        className="smtp-token-copy relative shrink-0 ml-2"
                         onCopy={handleCopyPort}
                     />
                 </div>

@@ -16,7 +16,7 @@ interface Props {
 
 const RecipientSimple = ({ isLoading, recipientsOrGroup, isOutside, onContactDetails, onContactEdit }: Props) => {
     return (
-        <div className="flex flex-nowrap flex-align-items-center" data-testid="message-header:to">
+        <div className="flex flex-nowrap items-center" data-testid="message-header:to">
             <RecipientType label={c('Label Recipient').t`To`}>
                 <span className="flex" data-testid="recipients:partial-recipients-list">
                     {recipientsOrGroup.length

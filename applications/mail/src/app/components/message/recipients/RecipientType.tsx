@@ -8,13 +8,13 @@ interface Props {
 
 const RecipientType = ({
     label,
-    className = 'flex flex-align-items-start flex-nowrap message-recipient-item-expanded max-w-full',
+    className = 'flex items-start flex-nowrap message-recipient-item-expanded max-w-full',
     children,
 }: Props) => {
     return (
         <span className={className} data-testid={`message-header-expanded:${label}`}>
             <span className="container-to pt-2 text-semibold">{label}</span>
-            <span className="flex-align-self-center message-recipient-item-expanded-content">{children}</span>
+            <span className="self-center message-recipient-item-expanded-content">{children}</span>
         </span>
     );
 };

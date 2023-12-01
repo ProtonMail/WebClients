@@ -98,7 +98,7 @@ export const MenuDropdown: VFC = () => {
                     title={isOpen ? c('Action').t`Close navigation` : c('Action').t`Open navigation`}
                 >
                     <VaultIcon
-                        className="flex-item-noshrink"
+                        className="shrink-0"
                         size={16}
                         color={inTrash ? VaultColor.COLOR_UNSPECIFIED : vault?.content.display.color}
                         icon={inTrash ? 'pass-trash' : vault?.content.display.icon}
@@ -114,10 +114,10 @@ export const MenuDropdown: VFC = () => {
                     size={DROPDOWN_SIZE}
                 >
                     <DropdownMenu>
-                        <div className="flex flex-align-items-center flex-justify-space-between flex-nowrap gap-2 py-2 px-4">
+                        <div className="flex items-center justify-space-between flex-nowrap gap-2 py-2 px-4">
                             <span
                                 className={clsx(
-                                    'flex flex-align-items-center flex-nowrap',
+                                    'flex items-center flex-nowrap',
                                     passPlan === UserPassPlan.PLUS && 'ui-orange'
                                 )}
                             >
@@ -155,9 +155,9 @@ export const MenuDropdown: VFC = () => {
                                             </CollapsibleHeaderIconButton>
                                         }
                                     >
-                                        <span className="flex flex-align-items-center flex-nowrap gap-2">
+                                        <span className="flex items-center flex-nowrap gap-2">
                                             <VaultIcon
-                                                className="flex-item-noshrink"
+                                                className="shrink-0"
                                                 size={16}
                                                 color={selected.color}
                                                 icon={selected?.icon}

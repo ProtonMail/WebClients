@@ -18,7 +18,7 @@ const ToolbarButton = (
     const content = (
         <button
             type="button"
-            className={clsx([className, 'flex flex-item-noshrink toolbar-button'])}
+            className={clsx([className, 'flex shrink-0 toolbar-button'])}
             onClick={disabled ? noop : onClick}
             tabIndex={disabled ? -1 : tabIndex}
             disabled={disabled}

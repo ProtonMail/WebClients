@@ -12,7 +12,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 const SidebarNav = ({ children, className, ...rest }: Props) => {
     return (
         <nav
-            className={clsx(['navigation max-w-full flex-item-fluid-auto', className])}
+            className={clsx(['navigation max-w-full flex-auto', className])}
             {...rest}
             // translator: Label for the primary navigation for screen readers. Omit the word "navigation" as it's announced in the landmarks menu as "Main navigation" automatically.
             aria-label={c('Label').t`Main`}

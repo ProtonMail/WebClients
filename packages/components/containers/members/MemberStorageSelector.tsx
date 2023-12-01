@@ -187,7 +187,7 @@ const MemberStorageSelector = ({
                         suffix={sizeLabelSuffix}
                     />
                 </div>
-                <div className="flex sm:flex-item-fluid flex-justify-end flex-align-self-start">
+                <div className="flex sm:flex-1 justify-end self-start">
                     {orgInitialization ? (
                         <>
                             <div>
@@ -207,7 +207,7 @@ const MemberStorageSelector = ({
                                 <div ref={labelRef}>
                                     <div ref={sizeRef} style={{ width: `${sizeElementWidth}px` }} />
                                     {segments.map(({ label, size, tooltip, value: [share, color] }) => (
-                                        <div className="mb-4 flex flex-align-items-center" key={tooltip}>
+                                        <div className="mb-4 flex items-center" key={tooltip}>
                                             <Tooltip
                                                 title={
                                                     <>

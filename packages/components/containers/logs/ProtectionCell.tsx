@@ -23,8 +23,8 @@ const ProtectionCell = ({ protection, protectionDesc }: Props) => {
     }
     return (
         <>
-            <span className="flex-item-noshrink mr-2">{protectionTooltip}</span>
-            <span className="flex-item-fluid">{protectionDesc || '-'}</span>
+            <span className="shrink-0 mr-2">{protectionTooltip}</span>
+            <span className="flex-1">{protectionDesc || '-'}</span>
         </>
     );
 };

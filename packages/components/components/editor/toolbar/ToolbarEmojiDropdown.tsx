@@ -67,7 +67,7 @@ const ToolbarEmojiDropdown = ({ onInsert, openRef, className }: Props) => {
             ref={dropdownRef}
             dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
             content={<Icon name="emoji" size={COMPOSER_TOOLBAR_ICON_SIZE} alt={c('Action').t`Emoji`} />}
-            className={clsx(['flex-item-noshrink', className])}
+            className={clsx(['shrink-0', className])}
             title={c('Action').t`Emoji`}
             autoClose={false}
             autoCloseOutside={true}

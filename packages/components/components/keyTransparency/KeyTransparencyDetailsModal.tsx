@@ -46,8 +46,8 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
         if (selfAuditResult.error.tooManyRetries) {
             return (
                 <div className="flex flex-nowrap">
-                    <Icon name="exclamation-circle" className="flex-item-noshrink mr-2 mt-0.5 color-warning" />
-                    <span className="flex-item-fluid text-break">{c('loc_nightly: Key transparency details')
+                    <Icon name="exclamation-circle" className="shrink-0 mr-2 mt-0.5 color-warning" />
+                    <span className="flex-1 text-break">{c('loc_nightly: Key transparency details')
                         .t`Key verification was interrupted too many times, there might be a technical issue preventing ${appName} from verifying your keys.`}</span>
                 </div>
             );
@@ -116,8 +116,8 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
                     <p>{failedAddressAuditMessage}</p>
                     <ul className="unstyled">
                         <li className="flex flex-nowrap" key={email}>
-                            <Icon name="exclamation-circle" className="flex-item-noshrink mr-2 mt-0.5 color-danger" />
-                            <strong className="flex-item-fluid text-break">{email}</strong>
+                            <Icon name="exclamation-circle" className="shrink-0 mr-2 mt-0.5 color-danger" />
+                            <strong className="flex-1 text-break">{email}</strong>
                         </li>
                     </ul>
                 </div>
@@ -141,8 +141,8 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
                     <p>{addressAuditWarningMessage(warningDetails!)}</p>
                     <ul className="unstyled">
                         <li className="flex flex-nowrap" key={email}>
-                            <Icon name="exclamation-circle" className="flex-item-noshrink mr-2 mt-0.5 color-warning" />
-                            <strong className="flex-item-fluid text-break">{email}</strong>
+                            <Icon name="exclamation-circle" className="shrink-0 mr-2 mt-0.5 color-warning" />
+                            <strong className="flex-1 text-break">{email}</strong>
                         </li>
                     </ul>
                 </div>
@@ -166,8 +166,8 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
                     <p>{failedLSAuditMessage}</p>
                     <ul className="unstyled">
                         <li className="flex flex-nowrap" key={email}>
-                            <Icon name="exclamation-circle" className="flex-item-noshrink mr-2 mt-0.5 color-danger" />
-                            <strong className="flex-item-fluid text-break">{email}</strong>
+                            <Icon name="exclamation-circle" className="shrink-0 mr-2 mt-0.5 color-danger" />
+                            <strong className="flex-1 text-break">{email}</strong>
                         </li>
                     </ul>
                 </div>
@@ -188,8 +188,8 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
                     <p>{message}</p>
                     <ul className="unstyled">
                         <li className="flex flex-nowrap" key={email}>
-                            <Icon name="exclamation-circle" className="flex-item-noshrink mr-2 mt-0.5 color-danger" />
-                            <strong className="flex-item-fluid text-break">{email}</strong>
+                            <Icon name="exclamation-circle" className="shrink-0 mr-2 mt-0.5 color-danger" />
+                            <strong className="flex-1 text-break">{email}</strong>
                         </li>
                     </ul>
                     <p>{getMessageWithFingerprint(primaryKeyFingerprint)}</p>
@@ -217,8 +217,8 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
                 <ul className="unstyled">
                     {successEmails.map((email) => (
                         <li className="flex flex-nowrap" key={email}>
-                            <Icon name="checkmark" className="flex-item-noshrink mr-2 mt-0.5 color-success" />
-                            <strong className="flex-item-fluid text-break">{email}</strong>
+                            <Icon name="checkmark" className="shrink-0 mr-2 mt-0.5 color-success" />
+                            <strong className="flex-1 text-break">{email}</strong>
                         </li>
                     ))}
                 </ul>

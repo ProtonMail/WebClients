@@ -30,7 +30,7 @@ const ItemAction = ({ element, className }: Props) => {
                     <Icon
                         name="arrow-up-and-left-big"
                         alt={c('Alt').t`Replied to`}
-                        className="flex-item-noshrink mr-1"
+                        className="shrink-0 mr-1"
                     />
                 </Tooltip>
             )}
@@ -39,7 +39,7 @@ const ItemAction = ({ element, className }: Props) => {
                     <Icon
                         name="arrows-up-and-left-big"
                         alt={c('Alt').t`Replied to all`}
-                        className="flex-item-noshrink mr-1"
+                        className="shrink-0 mr-1"
                     />
                 </Tooltip>
             )}
@@ -48,7 +48,7 @@ const ItemAction = ({ element, className }: Props) => {
                     <Icon
                         name="arrow-up-and-left-big"
                         alt={c('Alt').t`Forwarded`}
-                        className="mirror flex-item-noshrink mr-1"
+                        className="mirror shrink-0 mr-1"
                     />
                 </Tooltip>
             )}

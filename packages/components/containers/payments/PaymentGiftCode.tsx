@@ -37,15 +37,15 @@ const PaymentGiftCode = ({ giftCodeRef, giftCode = '', onApply, loading }: Props
 
     if (giftCode) {
         return (
-            <div className="flex flex-align-items-center">
-                <span className="flex-item-fluid flex-nowrap flex-align-items-center">
-                    <Icon name="gift" className="mr-2 mb-1 flex-item-noshrink" />
+            <div className="flex items-center">
+                <span className="flex-1 flex-nowrap items-center">
+                    <Icon name="gift" className="mr-2 mb-1 shrink-0" />
                     <code>{getFormattedGiftCode(giftCode)}</code>
                 </span>
                 <Button
                     icon
                     shape="ghost"
-                    className="flex flex-align-items-center ml-1"
+                    className="flex items-center ml-1"
                     onClick={() => onApply('')}
                     title={c('Action').t`Remove gift code`}
                 >
@@ -64,8 +64,8 @@ const PaymentGiftCode = ({ giftCodeRef, giftCode = '', onApply, loading }: Props
         };
 
         return (
-            <div className="flex flex-nowrap flex-align-items-center flex-align-items-start mb-2">
-                <div className="pr-2 flex-item-fluid">
+            <div className="flex flex-nowrap items-center items-start mb-2">
+                <div className="pr-2 flex-1">
                     <Input
                         value={code}
                         ref={giftCodeRef}

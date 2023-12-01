@@ -241,7 +241,7 @@ const QuickReply = ({
 
     return (
         <div ref={quickReplyFrameRef}>
-            <div className="flex flex-nowrap flex-align-items-center mx-4 mt-4 mb-2">
+            <div className="flex flex-nowrap items-center mx-4 mt-4 mb-2">
                 <QuickReplyType
                     referenceMessage={referenceMessage}
                     modelMessage={modelMessage}
@@ -256,7 +256,7 @@ const QuickReply = ({
                         icon
                         onClick={handleExpandComposer}
                         disabled={isSending}
-                        className="mr-2 flex-item-noshrink"
+                        className="mr-2 shrink-0"
                     >
                         <Icon name="arrows-from-center" alt={c('Action').t`Open composer`} />
                     </Button>
@@ -269,7 +269,7 @@ const QuickReply = ({
                         icon
                         onClick={handleDeleteDraft}
                         disabled={isSending}
-                        className="flex-item-noshrink"
+                        className="shrink-0"
                     >
                         <Icon name="cross-big" alt={c('Action').t`Close & discard`} />
                     </Button>

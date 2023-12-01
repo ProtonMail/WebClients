@@ -240,7 +240,7 @@ const Composer = (
 
     return (
         <div
-            className="composer-container flex flex-column flex-item-fluid relative w-full"
+            className="composer-container flex flex-column flex-1 relative w-full"
             onDragEnter={handleDragEnter}
             data-messagetime={timestamp}
         >
@@ -258,10 +258,10 @@ const Composer = (
                 handleSendAnyway={handleSendAnyway}
                 handleCancelSend={handleCancelSend}
             />
-            <div className="composer-blur-container flex flex-column flex-item-fluid max-w-full">
+            <div className="composer-blur-container flex flex-column flex-1 max-w-full">
                 <div
                     ref={bodyRef}
-                    className="composer-body-container flex flex-column flex-nowrap flex-item-fluid max-w-full mt-2"
+                    className="composer-body-container flex flex-column flex-nowrap flex-1 max-w-full mt-2"
                 >
                     <ComposerMeta
                         composerID={composerID}

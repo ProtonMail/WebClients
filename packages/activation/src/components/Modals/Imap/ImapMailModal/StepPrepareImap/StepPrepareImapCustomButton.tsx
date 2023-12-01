@@ -16,7 +16,7 @@ interface Props {
 
 const StepPrepareCustomButton = ({ isLabelMapping, handleClickCustomize, handleReset, hasError, isCustom }: Props) => {
     return (
-        <div className="mt-2 flex flex-align-items-center">
+        <div className="mt-2 flex items-center">
             <Button shape="outline" onClick={handleClickCustomize} data-testid="StepPrepare:customizeButton">
                 {c('Action').t`Customize import`}
             </Button>

@@ -82,7 +82,7 @@ const PasswordResetAvailableProductModal = ({ ...rest }: ModalProps) => {
             <ModalHeader title={c('session_recovery:available:title').t`Reset your password`} subline={infoSubline} />
             <ModalContent>
                 <>
-                    <div className="flex flex-justify-center">
+                    <div className="flex justify-center">
                         <img src={passwordResetIllustration} alt="" />
                     </div>
                     <div>

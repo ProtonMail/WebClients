@@ -118,7 +118,7 @@ const PlanCardView = ({
     return (
         <div
             className={clsx(
-                'flex-item-noshrink lg:flex-item-fluid w-full lg:w-auto pricing-box-content-cycle mx-auto lg:mx-0',
+                'shrink-0 lg:flex-1 w-full lg:w-auto pricing-box-content-cycle mx-auto lg:mx-0',
                 highlightPrice && 'pricing-box-content-cycle--highlighted',
                 hasMaxWidth && 'max-w-custom'
             )}
@@ -154,9 +154,9 @@ const PlanCardView = ({
                     </div>
                 )}
                 <div className="py-6 px-4">
-                    <div className="flex flex-align-items-center flex-column">
-                        <div className="w-full flex-no-min-children flex-row flex-nowrap gap-1">
-                            <strong className="text-2xl text-ellipsis flex-item-fluid text-center" id={`${cycle}-text`}>
+                    <div className="flex items-center flex-column">
+                        <div className="w-full flex children-min-size-auto flex-row flex-nowrap gap-1">
+                            <strong className="text-2xl text-ellipsis flex-1 text-center" id={`${cycle}-text`}>
                                 {text}
                             </strong>
                         </div>
@@ -165,8 +165,8 @@ const PlanCardView = ({
                             <div
                                 id={`${cycle}-price`}
                                 className={clsx(
-                                    totals.discount > 0 ? '' : 'flex-align-items-baseline',
-                                    'flex gap-1 flex-align-items-center flex-justify-center'
+                                    totals.discount > 0 ? '' : 'items-baseline',
+                                    'flex gap-1 items-center justify-center'
                                 )}
                             >
                                 <span className={clsx(highlightPrice && 'color-primary', 'text-bold h1')}>
@@ -174,7 +174,7 @@ const PlanCardView = ({
                                 </span>
                                 <div
                                     className={clsx(
-                                        totals.discount > 0 && 'flex flex-column flex-justify-center',
+                                        totals.discount > 0 && 'flex flex-column justify-center',
                                         'text-left'
                                     )}
                                 >
@@ -253,7 +253,7 @@ export const PlanCardSelector = ({
     onSelectedClick?: () => void;
 }) => {
     return (
-        <div className="flex flex-justify-space-between gap-4 flex-column lg:flex-row">
+        <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
             {planCards.map((planCard) => {
                 const isFreePlan = planCard.plan === PLANS.FREE;
                 const planIDs = isFreePlan ? {} : { [planCard.plan]: 1 };
@@ -376,7 +376,7 @@ export const UpsellCardSelector = ({
                         }
                     })()}
             </div>
-            <div className="flex flex-justify-space-between gap-4 flex-column lg:flex-row">
+            <div className="flex justify-space-between gap-4 flex-column lg:flex-row">
                 {(() => {
                     if (!hasCurrentPlan) {
                         return null;

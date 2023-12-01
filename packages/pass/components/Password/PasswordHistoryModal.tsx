@@ -29,7 +29,7 @@ export const PasswordHistoryModal: VFC<ModalProps> = (props) => {
                         actions={[
                             <Button
                                 key="close-modal-button"
-                                className="flex-item-noshrink"
+                                className="shrink-0"
                                 icon
                                 pill
                                 shape="solid"
@@ -41,7 +41,7 @@ export const PasswordHistoryModal: VFC<ModalProps> = (props) => {
                                 key="clear-modal-button"
                                 pill
                                 color="norm"
-                                className="text-sm flex-item-noshrink"
+                                className="text-sm shrink-0"
                                 onClick={passwordContext.history.clear}
                             >
                                 {c('Action').t`Clear`}

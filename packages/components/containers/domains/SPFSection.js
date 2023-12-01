@@ -42,11 +42,11 @@ const SPFSection = () => {
                         cells={[
                             <code key="txt">TXT</code>,
                             <code key="at">@</code>,
-                            <div className="flex flex-nowrap flex-align-items-center" key="value">
+                            <div className="flex flex-nowrap items-center" key="value">
                                 <Copy
                                     size="small"
                                     onCopy={handleCopy}
-                                    className="flex-item-noshrink mr-2"
+                                    className="shrink-0 mr-2"
                                     value={valueToCopy}
                                 />{' '}
                                 <code className="text-ellipsis lh-rg" title={valueToCopy}>

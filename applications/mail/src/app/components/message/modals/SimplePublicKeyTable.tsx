@@ -42,12 +42,12 @@ const SimplePublicKeyTable = ({ contact }: Props) => {
     const fingerprintCell = (
         <div key={fingerprint} title={fingerprint} className="flex flex-nowrap">
             <ContactKeyWarningIcon
-                className="mr-2 flex-item-noshrink"
+                className="mr-2 shrink-0"
                 publicKey={publicKey}
                 emailAddress={contact.emailAddress}
                 isInternal={contact.isInternal}
             />
-            <span className="flex-item-fluid text-ellipsis">{fingerprint}</span>
+            <span className="flex-1 text-ellipsis">{fingerprint}</span>
         </div>
     );
     const creationCell = isValid(creationDate) ? format(creationDate, 'PP', { locale: dateLocale }) : '-';

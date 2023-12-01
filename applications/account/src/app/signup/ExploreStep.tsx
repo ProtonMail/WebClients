@@ -48,7 +48,7 @@ const ExploreStep = ({ onExplore }: Props) => {
                                         data-testid={app.replace('proton-', 'explore-')}
                                         size="large"
                                         shape="ghost"
-                                        className="flex flex-align-items-center text-left my-2"
+                                        className="flex items-center text-left my-2"
                                         fullWidth
                                         onClick={() => {
                                             if (loading) {
@@ -62,12 +62,12 @@ const ExploreStep = ({ onExplore }: Props) => {
                                             appName={app}
                                             size={60}
                                             variant="glyph-only"
-                                            className="flex-item-noshrink mr-2"
+                                            className="shrink-0 mr-2"
                                             aria-hidden="true"
                                         />{' '}
-                                        <span className="flex-item-fluid">{name}</span>
+                                        <span className="flex-1">{name}</span>
                                         {!showLoader && (
-                                            <span className="flex-item-noshrink" aria-hidden="true">
+                                            <span className="shrink-0" aria-hidden="true">
                                                 <Icon name="arrow-right" />
                                             </span>
                                         )}

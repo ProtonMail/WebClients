@@ -61,7 +61,7 @@ export const SpotlightContent: VFC<Props> = ({
     return (
         <div
             className={clsx(
-                `pass-spotlight-content flex flex-align-items-center gap-4 p-4 pr-6 rounded relative mt-2`,
+                `pass-spotlight-content flex items-center gap-4 p-4 pr-6 rounded relative mt-2`,
                 className,
                 weak && 'weak'
             )}
@@ -72,7 +72,7 @@ export const SpotlightContent: VFC<Props> = ({
                 </Button>
             )}
 
-            <div className="flex-item-fluid">
+            <div className="flex-1">
                 <strong className={clsx('block', !weak && 'color-invert')}>{title}</strong>
                 <span className={clsx('block text-sm', !weak && 'color-invert')}>{message}</span>
                 {!dense && <div className="mt-2">{actionNode}</div>}

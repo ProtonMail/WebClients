@@ -63,7 +63,7 @@ const ServerConfigs = ({ servers, category, select, selecting, ...rest }) => {
                 return (
                     <Details key={server.Country || 'XX'} open={server.open}>
                         <Summary>
-                            <div className="ml-2 flex flex-nowrap flex-align-items-center">
+                            <div className="ml-2 flex flex-nowrap items-center">
                                 <div className={clsx([category === CATEGORY.SERVER ? 'w-1/3' : ''])}>
                                     <Country server={server} />
                                 </div>
@@ -72,7 +72,7 @@ const ServerConfigs = ({ servers, category, select, selecting, ...rest }) => {
                                         <div className="w-1/3">
                                             <ServerNumber group={group} />
                                         </div>
-                                        <div className="w-1/3 flex flex-justify-space-between">
+                                        <div className="w-1/3 flex justify-space-between">
                                             <CityNumber group={group} />
                                             <div className={clsx(['flex'])}>
                                                 {group.some(({ Features }) => isP2PEnabled(Features)) ? (

@@ -81,7 +81,7 @@ const MorePopoverEvent = ({
             className="eventpopover flex flex-nowrap flex-column py-7 px-5"
             ref={popoverRef}
         >
-            <PopoverHeader onClose={onClose} className="flex-item-noshrink">
+            <PopoverHeader onClose={onClose} className="shrink-0">
                 <h1
                     className="eventpopover-title lh-rg text-ellipsis-four-lines text-cut"
                     title={`${date.getUTCDate()}`}
@@ -89,7 +89,7 @@ const MorePopoverEvent = ({
                     {dateString}
                 </h1>
             </PopoverHeader>
-            <div className="scroll-if-needed">{eventsContent}</div>
+            <div className="overflow-auto">{eventsContent}</div>
         </PopoverContainer>
     );
 };

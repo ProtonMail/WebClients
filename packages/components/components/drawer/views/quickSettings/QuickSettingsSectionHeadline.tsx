@@ -5,7 +5,7 @@ interface Props {
 }
 
 const QuickSettingsSectionHeadline = ({ children }: Props) => {
-    return <h3 className="flex-item-fluid text-rg text-bold mt-1">{children}</h3>;
+    return <h3 className="flex-1 text-rg text-bold mt-1">{children}</h3>;
 };
 
 export default QuickSettingsSectionHeadline;

@@ -102,10 +102,10 @@ const ContactGroupDetailsModal = ({
         <ModalTwo size="large" className="contacts-modal" {...rest}>
             <ModalHeader
                 title={
-                    <div className="flex flex-nowrap flex-align-items-center gap-2">
+                    <div className="flex flex-nowrap items-center gap-2">
                         <span
                             style={{ backgroundColor: group?.Color ?? '', '--w-custom': '2.125rem' }}
-                            className="rounded w-custom text-center flex-item-noshrink"
+                            className="rounded w-custom text-center shrink-0"
                         >
                             <Icon color="white" name="users" />
                         </span>
@@ -186,11 +186,11 @@ const ContactGroupDetailsModal = ({
                         color="norm"
                         onClick={handleCompose}
                         disabled={loading}
-                        className="inline-flex flex-justify-center"
+                        className="inline-flex justify-center"
                     >
                         <Icon
                             name="pen-square"
-                            className="flex-align-self-center mr-2"
+                            className="self-center mr-2"
                             alt={c('Action').t`New message`}
                         />
                         {c('Action').t`New message`}

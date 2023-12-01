@@ -32,10 +32,10 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                 {currentRange}
             </span>
             <span className="flex flex-nowrap ml-auto md:ml-0">
-                <span className="md:hidden flex-item-noshrink flex flex-nowrap">
+                <span className="md:hidden shrink-0 flex flex-nowrap">
                     <ToolbarButton
                         data-testid="calendar-toolbar:today"
-                        className="flex-item-noshrink flex-align-items-centers"
+                        className="shrink-0 items-centers"
                         title={todayTitle}
                         onClick={onToday}
                     >
@@ -46,7 +46,7 @@ const DateCursorButtons = ({ view, now, onToday, onPrev, onNext, currentRange }:
                 <Button
                     shape="outline"
                     data-testid="calendar-toolbar:today"
-                    className="flex-item-noshrink hidden md:inline-flex mr-2"
+                    className="shrink-0 hidden md:inline-flex mr-2"
                     title={todayTitle}
                     onClick={onToday}
                 >

@@ -55,11 +55,11 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
     ];
 
     return (
-        <div className="flex-item-fluid">
+        <div className="flex-1">
             <label htmlFor="event-ends-radio">{c('Label').t`Ends`}</label>
 
-            <div className="flex flex-nowrap flex-item-fluid flex-column sm:flex-row">
-                <div className="sm:flex-item-fluid mt-2">
+            <div className="flex flex-nowrap flex-1 flex-column sm:flex-row">
+                <div className="sm:flex-1 mt-2">
                     <SelectTwo
                         value={frequencyModel.ends.type}
                         onChange={({ value }) => {
@@ -75,7 +75,7 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
                 </div>
 
                 {frequencyModel.ends.type === UNTIL && (
-                    <div className="sm:flex-item-fluid mt-2 ml-0 sm:ml-2">
+                    <div className="sm:flex-1 mt-2 ml-0 sm:ml-2">
                         <DateInput
                             id={UNTIL_ID}
                             value={frequencyModel.ends.until}
@@ -94,7 +94,7 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
                 )}
 
                 {frequencyModel.ends.type === AFTER_N_TIMES && (
-                    <div className="flex flex-nowrap flex-align-items-center sm:flex-item-fluid mt-2 ml-0 sm:ml-2">
+                    <div className="flex flex-nowrap items-center sm:flex-1 mt-2 ml-0 sm:ml-2">
                         <div className="max-w-custom" style={{ '--max-w-custom': '6em' }}>
                             <IntegerInput
                                 id={COUNT_ID}
@@ -112,7 +112,7 @@ const EndsRow = ({ frequencyModel, start, displayWeekNumbers, weekStartsOn, erro
                                 title={c('Title').t`Choose how many times this event will repeat`}
                             />
                         </div>
-                        <div className="flex-item-flex-item-noshrink ml-2">
+                        <div className="shrink-0 ml-2">
                             {c('Custom frequency option').ngettext(msgid`time`, `times`, safeCountPlural)}
                         </div>
                     </div>

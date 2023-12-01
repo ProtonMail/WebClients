@@ -28,13 +28,13 @@ const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref:
             aria-expanded={isOpen}
             ref={ref}
             {...rest}
-            className="max-w-full flex flex-align-items-center flex-nowrap gap-3 user-dropdown-button relative interactive-pseudo-protrude rounded interactive--no-background"
+            className="max-w-full flex items-center flex-nowrap gap-3 user-dropdown-button relative interactive-pseudo-protrude rounded interactive--no-background"
             title={`${nameToDisplay} <${Email}>`}
         >
             <DropdownCaret className="md:hidden ml-1 color-weak" isOpen={isOpen} />
 
             {nameToDisplay ? (
-                <span className="flex-item-fluid lh130 user-dropdown-text">
+                <span className="flex-1 lh130 user-dropdown-text">
                     <span className="block text-ellipsis text-sm user-dropdown-displayName">{nameToDisplay}</span>
                     {Email ? (
                         <span className="block text-ellipsis color-weak text-sm m-0 lh-rg user-dropdown-email">
@@ -48,7 +48,7 @@ const UserDropdownButton = ({ user, isOpen, notification, ...rest }: Props, ref:
                 </span>
             )}
             <span
-                className="my-auto text-sm rounded border p-1 inline-block relative flex flex-item-noshrink user-initials"
+                className="my-auto text-sm rounded border p-1 inline-block relative flex shrink-0 user-initials"
                 aria-hidden="true"
             >
                 <span className="m-auto">{initials}</span>

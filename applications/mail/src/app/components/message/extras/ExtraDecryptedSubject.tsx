@@ -35,11 +35,11 @@ const ExtraDecryptedSubject = ({ message }: Props) => {
                 <Tooltip title={c('Info').t`Subject is end-to-end encrypted`}>
                     <Icon
                         name="lock"
-                        className="mt-1 mr-2 ml-1 flex-item-noshrink"
+                        className="mt-1 mr-2 ml-1 shrink-0"
                         alt={c('Info').t`Subject is end-to-end encrypted`}
                     />
                 </Tooltip>
-                <div className="mr-2 mt-1 flex-item-fluid pb-1">
+                <div className="mr-2 mt-1 flex-1 pb-1">
                     {c('Info').t`Subject:`} {subjectElement}
                 </div>
             </div>

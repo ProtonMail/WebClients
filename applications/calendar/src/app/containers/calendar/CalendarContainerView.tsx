@@ -691,7 +691,7 @@ const CalendarContainerView = ({
                 {calendars
                     .filter((calendar) => calendar.Display)
                     .map(({ Color, Name, ID }) => (
-                        <span className="flex flex-align-items-center" key={ID}>
+                        <span className="flex items-center" key={ID}>
                             <CalendarSelectIcon color={Color} className="keep-color mr-3" /> {Name}
                         </span>
                     ))}

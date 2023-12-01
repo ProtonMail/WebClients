@@ -66,9 +66,9 @@ const Header = ({
     };
 
     return (
-        <div className="flex flex-justify-space-between flex-align-items-center p-7 relative">
+        <div className="flex justify-space-between items-center p-7 relative">
             <div
-                className="file-preview-filename flex flex-align-items-center flex-nowrap"
+                className="file-preview-filename flex items-center flex-nowrap"
                 data-testid="preview:file-name"
             >
                 {mimeType && <FileIcon mimeType={mimeType} className="mr-2" />}
@@ -77,7 +77,7 @@ const Header = ({
             </div>
             {date && (
                 <TimeIntl
-                    className="flex-item-fluid text-ellipsis ml-5"
+                    className="flex-1 text-ellipsis ml-5"
                     data-testid="file-preview:date"
                     options={{
                         year: 'numeric',
@@ -91,7 +91,7 @@ const Header = ({
                 </TimeIntl>
             )}
             {children}
-            <div className="flex flex-align-items-center mt-2 ml-auto sm:m-0">
+            <div className="flex items-center mt-2 ml-auto sm:m-0">
                 {onRestore && (
                     <Button
                         title={c('Action').t`Restore`}

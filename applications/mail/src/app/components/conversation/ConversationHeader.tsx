@@ -31,7 +31,7 @@ const ConversationHeader = ({ className, loading, element }: Props) => {
     return (
         <header
             className={clsx([
-                'max-w-full message-conversation-summary upper-layer pt-5 pb-2 px-2 mx-4 flex-item-noshrink',
+                'max-w-full message-conversation-summary upper-layer pt-5 pb-2 px-2 mx-4 shrink-0',
                 loading && 'message-conversation-summary-is-loading',
                 className,
             ])}
@@ -41,7 +41,7 @@ const ConversationHeader = ({ className, loading, element }: Props) => {
             <div className="flex flex-nowrap">
                 <h1
                     className={clsx([
-                        'message-conversation-summary-header my-0 h3 text-bold text-ellipsis-two-lines lh-rg flex-item-fluid',
+                        'message-conversation-summary-header my-0 h3 text-bold text-ellipsis-two-lines lh-rg flex-1',
                     ])}
                     title={element?.Subject}
                     data-testid="conversation-header:subject"
