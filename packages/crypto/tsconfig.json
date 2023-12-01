@@ -1,6 +1,7 @@
 {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
-        "types": ["webpack-env", "mocha"]
+        "types": ["webpack-env", "mocha"],
+        "moduleResolution": "Bundler"
     }
 }
