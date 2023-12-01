@@ -5,12 +5,12 @@ import { c } from 'ttag';
 import { Button, ButtonLike } from '@proton/atoms/Button';
 import { Icon } from '@proton/components/components';
 
-import { Transaction } from '../../types';
+import { WasmSimpleTransaction } from '../../../pkg';
 import { TransactionHistoryOverview } from '../TransactionHistoryOverview';
 
 interface Props {
-    transactions: Transaction[];
-    walletId?: string;
+    transactions: WasmSimpleTransaction[];
+    walletId?: number;
 }
 
 export const DashboardSideContent = ({ transactions, walletId }: Props) => {

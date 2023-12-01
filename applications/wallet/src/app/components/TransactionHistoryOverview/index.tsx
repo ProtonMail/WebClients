@@ -1,15 +1,15 @@
-import { format } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button';
+import { Tooltip } from '@proton/components/components';
 import clsx from '@proton/utils/clsx';
 
+import { WasmSimpleTransaction } from '../../../pkg';
 import { BitcoinAmount } from '../../atoms';
-import { Transaction } from '../../types';
-import { sortTransactionsByTime } from '../../utils';
+import { confirmationTimeToHumanReadable, sortTransactionsByTime } from '../../utils';
 
 interface Props {
-    transactions: Transaction[];
+    transactions: WasmSimpleTransaction[];
     max?: number;
 }
 
@@ -22,14 +22,19 @@ export const TransactionHistoryOverview = ({ transactions, max = 7 }: Props) => 
                     .map((transaction) => {
                         return (
                             <li
-                                key={transaction.id}
+                                // same transaction can appear several time with different values or sign when user did a self-transfer or used several wallets/accounts to do the transaction
+                                key={`${transaction.txid}_${transaction.value}`}
                                 className="flex flex-row flex-justify-space-between flex-align-items-end border-weak border-bottom py-2 px-0"
                             >
                                 <div className="flex flex-column">
                                     <span className="block color-weak text-sm">
-                                        {format(new Date(transaction.timestamp), 'dd MMM yyyy, hh:mm')}
+                                        {confirmationTimeToHumanReadable(transaction)}
                                     </span>
-                                    <span className="block text-sm">{transaction.id}</span>
+                                    <Tooltip title={transaction.txid}>
+                                        <span className="block text-sm">
+                                            {transaction.txid.slice(0, 7)}...{transaction.txid.slice(-6)}
+                                        </span>
+                                    </Tooltip>
                                 </div>
                                 <div>
                                     <BitcoinAmount
@@ -38,7 +43,7 @@ export const TransactionHistoryOverview = ({ transactions, max = 7 }: Props) => 
                                             transaction.value < 0 ? 'color-danger' : 'color-success'
                                         )}
                                     >
-                                        {transaction.value}
+                                        {Number(transaction.value)}
                                     </BitcoinAmount>
                                 </div>
                             </li>

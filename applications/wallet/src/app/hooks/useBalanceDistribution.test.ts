@@ -1,16 +1,17 @@
-import { wallets } from '../tests';
+import { walletsWithAccountsWithBalanceAndTxs } from '../tests';
+import { WalletType } from '../types/api';
 import { useBalanceDistribution } from './useBalanceDistribution';
 
 describe('useBalanceDistribution', () => {
     it('should return correct lightning balance', () => {
-        const balances = useBalanceDistribution(wallets);
+        const balances = useBalanceDistribution(walletsWithAccountsWithBalanceAndTxs);
 
-        expect(balances.LIGHTNING).toBe(2712441);
+        expect(balances[WalletType.Lightning]).toBe(8875342);
     });
 
     it('should return correct onchain balance', () => {
-        const balances = useBalanceDistribution(wallets);
+        const balances = useBalanceDistribution(walletsWithAccountsWithBalanceAndTxs);
 
-        expect(balances.ONCHAIN).toBe(20168798);
+        expect(balances[WalletType.OnChain]).toBe(22881239);
     });
 });

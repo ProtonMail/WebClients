@@ -7,22 +7,26 @@ import {
     WalletSetupModal,
     YourWalletsSection,
 } from '../components';
-import { transactions, wallets } from '../tests';
+import { WalletWithAccountsWithBalanceAndTxs } from '../types';
 
-export const MultiWalletDashboardContainer = () => {
+interface Props {
+    wallets: WalletWithAccountsWithBalanceAndTxs[];
+}
+
+export const MultiWalletDashboardContainer = ({ wallets }: Props) => {
     const [isSetupModalOpenned, setIsSetupModalOpenned] = useState(false);
+    const accounts = wallets.flatMap(({ accounts }) => accounts);
+    const transactions = accounts.flatMap(({ transactions }) => transactions);
 
     useEffect(() => {
-        if (!wallets.length) {
-            setIsSetupModalOpenned(true);
-        }
-    }, [setIsSetupModalOpenned]);
+        setIsSetupModalOpenned(!wallets.length);
+    }, [setIsSetupModalOpenned, wallets.length]);
 
     return (
         <>
             <div className="flex flex-row w-full h-full flex-nowrap flex-item-grow">
                 <div className="flex-item-fluid p-8">
-                    <BalanceOverview wallets={wallets} transactions={transactions} />
+                    <BalanceOverview wallets={wallets} />
                     <YourWalletsSection wallets={wallets} />
                     <ExploreProtonWalletSection />
                 </div>
