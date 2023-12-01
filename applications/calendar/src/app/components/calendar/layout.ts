@@ -1,8 +1,8 @@
-export const getCollisionGroups = (events: LayoutEvent[]) => {
+export const getCollisionGroups = (events: Pick<LayoutEvent, 'start' | 'end'>[]) => {
     let maxEnd = -1;
-    let tmp: LayoutEvent[] = [];
+    let tmp: Pick<LayoutEvent, 'start' | 'end'>[] = [];
 
-    return events.reduce<LayoutEvent[][]>((acc, event, i, arr) => {
+    return events.reduce<Pick<LayoutEvent, 'start' | 'end'>[][]>((acc, event, i, arr) => {
         const { start, end } = event;
         const isIntersect = +start < maxEnd;
 
@@ -34,7 +34,7 @@ interface ColumnsResult {
     indices: number[];
     end: number;
 }
-export const getColumns = (group: LayoutEvent[]) => {
+export const getColumns = (group: Pick<LayoutEvent, 'start' | 'end'>[]) => {
     return group.reduce<ColumnsResult[]>((columns, event, i) => {
         for (let j = 0; j < columns.length; ++j) {
             const column = columns[j];
@@ -66,7 +66,7 @@ export interface LayoutResult {
     columns: number;
 }
 
-export const layout = (events: LayoutEvent[] = []) => {
+export const layout = (events: Pick<LayoutEvent, 'start' | 'end'>[] = []) => {
     const groups = getCollisionGroups(events);
     return groups.reduce<LayoutResult[]>((acc, group) => {
         const columns = getColumns(group);
