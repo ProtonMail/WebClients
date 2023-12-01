@@ -1,38 +1,74 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 
-import { Account, LightningUriFormat, Wallet } from '../../types';
+import { AccountWithBalanceAndTxs, LightningUriFormat, WalletWithAccountsWithBalanceAndTxs } from '../../types';
 import { getLightningFormatOptions } from './constants';
 
 export interface UseBitcoinReceiveInfoGeneratorHelper {
     /**
      * Memoized. Can be either a bitcoin Address, a bitcoin URI, a lightning URI or unified URI (URI containing both bitcoin and lightning needed payment informations)
      */
-    serializedPaymentInformation: string;
-    selectedWallet: Wallet;
-    selectedAccount: Account;
+    serializedPaymentInformation: string | null;
+    selectedWallet?: WalletWithAccountsWithBalanceAndTxs;
+    walletsOptions: { value: number; label: string; disabled: boolean }[];
+    accountsOptions?: { value: number; label: string }[];
+    selectedAccount?: AccountWithBalanceAndTxs;
     selectedFormat: {
         name: string;
         value: LightningUriFormat;
     };
     shouldShowAmountInput: boolean;
     amount: number;
-    handleSelectWallet: (event: SelectChangeEvent<string>) => void;
-    handleSelectAccount: (event: SelectChangeEvent<string>) => void;
+    handleSelectWallet: (event: SelectChangeEvent<number>) => void;
+    handleSelectAccount: (event: SelectChangeEvent<number>) => void;
     handleSelectFormat: (event: SelectChangeEvent<LightningUriFormat>) => void;
     handleChangeAmount: (amount?: number) => void;
     showAmountInput: () => void;
 }
 
+const getSelectedWallet = (
+    wallets: WalletWithAccountsWithBalanceAndTxs[],
+    walletId?: number
+): WalletWithAccountsWithBalanceAndTxs | undefined =>
+    wallets.find(({ WalletID }) => walletId === WalletID) ?? wallets[0];
+
+const getDefaultAccount = (wallet?: WalletWithAccountsWithBalanceAndTxs): AccountWithBalanceAndTxs | undefined =>
+    wallet?.accounts?.[0];
+
+const getSelectedAccount = (
+    wallet?: WalletWithAccountsWithBalanceAndTxs,
+    accountId?: number
+): AccountWithBalanceAndTxs | undefined =>
+    wallet?.accounts?.find?.(({ WalletAccountID }) => WalletAccountID === accountId);
+
 export const useBitcoinReceiveInfoGenerator = (
-    wallets: Wallet[],
-    accounts: Account[],
-    defaultWalletId?: string
+    wallets: WalletWithAccountsWithBalanceAndTxs[],
+    defaultWalletId?: number
 ): UseBitcoinReceiveInfoGeneratorHelper => {
-    const defaultWallet = wallets.find(({ id }) => defaultWalletId === id) ?? wallets[0];
+    const walletsOptions = useMemo(
+        () =>
+            wallets.map((wallet) => ({
+                value: wallet.WalletID,
+                label: wallet.Name,
+                disabled: !wallet?.accounts?.length,
+            })),
+        [wallets]
+    );
+
+    const defaultWallet = getSelectedWallet(wallets, defaultWalletId);
+
     const [selectedWallet, setSelectedWallet] = useState(defaultWallet);
-    const [selectedAccount, setSelectedAccount] = useState(accounts[0]);
+    const accountsOptions = useMemo(
+        () =>
+            selectedWallet?.accounts?.map((account) => ({
+                value: account.WalletAccountID,
+                label: account.Label,
+            })),
+        [selectedWallet]
+    );
+
+    const [selectedAccount, setSelectedAccount] = useState(getDefaultAccount(selectedWallet));
 
     const lightningFormats = getLightningFormatOptions();
     const [defaultFormat] = lightningFormats;
@@ -42,29 +78,43 @@ export const useBitcoinReceiveInfoGenerator = (
     const [shouldShowAmountInput, setShouldShowAmountInput] = useState(false);
 
     const serializedPaymentInformation = useMemo(() => {
+        if (!selectedAccount || !selectedWallet) {
+            return null;
+        }
+
         // TODO: do proper serialized payment info generation for Bitcoin Address/Bitcoin URI/Lightning URI/Unified URI
-        return `${selectedWallet.id}${selectedAccount.id}${selectedFormat.value}${amount}zbezbefrzltnzxgzxlhrwaourafhnrizbezbefrzltnzxgzxlhrwaourafhnrizbezbefrzltnzxgzxlhrwaourafhnrizbezbefrzltnzxgzxlhrwaourafhnri`;
-    }, [selectedAccount.id, selectedFormat.value, selectedWallet.id, amount]);
+        return `${selectedWallet.WalletID}${selectedAccount.WalletAccountID}${selectedFormat.value}${amount}zbezbefrzltnzxgzxlhrwaourafhnrizbezbefrzltnzxgzxlhrwaourafhnrizbezbefrzltnzxgzxlhrwaourafhnrizbezbefrzltnzxgzxlhrwaourafhnri`;
+    }, [selectedAccount, selectedFormat, selectedWallet, amount]);
+
+    const handleSelectWallet = ({ value }: SelectChangeEvent<number>) => {
+        const wallet = getSelectedWallet(wallets, value);
+        if (wallet) {
+            setSelectedWallet(wallet);
+        }
+    };
+
+    useEffect(() => {
+        setSelectedAccount(getDefaultAccount(selectedWallet));
+    }, [selectedWallet]);
+
+    const handleSelectAccount = ({ value }: SelectChangeEvent<number>) => {
+        const account = getSelectedAccount(selectedWallet, value);
+        if (account) {
+            setSelectedAccount(account);
+        }
+    };
 
     return {
         serializedPaymentInformation,
         selectedWallet,
+        walletsOptions,
         selectedAccount,
+        accountsOptions,
         selectedFormat,
         shouldShowAmountInput,
         amount,
-        handleSelectWallet: ({ value }) => {
-            const wallet = wallets.find(({ id }) => id === value);
-            if (wallet) {
-                setSelectedWallet(wallet);
-            }
-        },
-        handleSelectAccount: ({ value }) => {
-            const account = accounts.find(({ id }) => id === value);
-            if (account) {
-                setSelectedAccount(account);
-            }
-        },
+        handleSelectWallet,
+        handleSelectAccount,
         handleSelectFormat: ({ value }) => {
             setSelectedFormat(lightningFormats.find((format) => format.value === value) ?? defaultFormat);
         },

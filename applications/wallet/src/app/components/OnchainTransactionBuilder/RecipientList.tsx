@@ -4,11 +4,12 @@ import { Button } from '@proton/atoms/Button';
 import { Input } from '@proton/atoms/Input';
 import { ButtonGroup } from '@proton/components/components';
 
-import { BitcoinUnit, Wallet } from '../../types';
+import { AccountWithBalanceAndTxs, BitcoinUnit } from '../../types';
+import { getAccountBalance } from '../../utils';
 import { TempRecipient, useOnchainTransactionBuilder } from './useOnchainTransactionBuilder';
 
 interface Props {
-    selectedWallet: Wallet;
+    selectedAccount: AccountWithBalanceAndTxs;
     recipients: TempRecipient[];
     onRecipientAddition: ReturnType<typeof useOnchainTransactionBuilder>['addRecipient'];
     onRecipientUpdate: ReturnType<typeof useOnchainTransactionBuilder>['updateRecipient'];
@@ -17,7 +18,7 @@ interface Props {
 }
 
 export const RecipientList = ({
-    selectedWallet,
+    selectedAccount,
     recipients,
     onRecipientUpdate,
     onRecipientAmountUpdate,
@@ -94,7 +95,7 @@ export const RecipientList = ({
                                     shape="underline"
                                     color="norm"
                                     onClick={() => {
-                                        onRecipientAmountUpdate(index, selectedWallet.balance);
+                                        onRecipientAmountUpdate(index, getAccountBalance(selectedAccount));
                                     }}
                                 >{c('Wallet Send').t`Maximum amount`}</Button>
                             )}

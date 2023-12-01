@@ -2,7 +2,7 @@ import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { BitcoinReceiveInfoGenerator } from '.';
-import { accounts, wallets } from '../../tests';
+import { walletsWithAccountsWithBalanceAndTxs } from '../../tests';
 import { LightningUriFormat } from '../../types';
 import * as useBitcoinReceiveInfoGeneratorModule from './useBitcoinReceiveInfoGenerator';
 
@@ -14,11 +14,24 @@ describe('BitcoinReceiveInfoGenerator', () => {
         'useBitcoinReceiveInfoGenerator'
     );
 
+    const [testWallet] = walletsWithAccountsWithBalanceAndTxs;
+    const [testAccount] = testWallet.accounts;
+
     beforeEach(() => {
         helper = {
             serializedPaymentInformation: '',
-            selectedWallet: wallets[0],
-            selectedAccount: accounts[0],
+            selectedWallet: testWallet,
+            walletsOptions: [
+                { disabled: false, label: 'Bitcoin 01', value: 0 },
+                { disabled: false, label: 'Savings on Jade', value: 1 },
+                { disabled: true, label: 'Savings on Electrum', value: 2 },
+                { disabled: false, label: 'Lightning 01', value: 3 },
+            ],
+            selectedAccount: testAccount,
+            accountsOptions: [
+                { label: 'Account 1', value: 8 },
+                { label: 'Account 2', value: 9 },
+            ],
             selectedFormat: { name: 'Unified', value: LightningUriFormat.UNIFIED },
             shouldShowAmountInput: false,
             amount: 0,
@@ -34,23 +47,32 @@ describe('BitcoinReceiveInfoGenerator', () => {
 
     describe('when a wallet is selected', () => {
         it('should correctly call handler', async () => {
-            render(<BitcoinReceiveInfoGenerator />);
+            render(<BitcoinReceiveInfoGenerator wallets={walletsWithAccountsWithBalanceAndTxs} />);
 
             const walletSelector = screen.getByTestId('wallet-selector');
             await act(() => userEvent.click(walletSelector));
 
             const options = screen.getAllByTestId('wallet-selector-option');
-            expect(options).toHaveLength(5);
+            expect(options).toHaveLength(4);
             await fireEvent.click(options[1]);
 
             expect(helper.handleSelectWallet).toHaveBeenCalledTimes(1);
-            expect(helper.handleSelectWallet).toHaveBeenCalledWith({ selectedIndex: 1, value: '1' });
+            expect(helper.handleSelectWallet).toHaveBeenCalledWith({ selectedIndex: 1, value: 1 });
         });
     });
 
     describe('when selected wallet is of type `lightning`', () => {
         beforeEach(() => {
-            render(<BitcoinReceiveInfoGenerator />);
+            const [, , , testWallet] = walletsWithAccountsWithBalanceAndTxs;
+            const [testAccount] = testWallet.accounts;
+
+            mockUseBitcoinReceiveInfoGenerator.mockReturnValue({
+                ...helper,
+                selectedWallet: testWallet,
+                selectedAccount: testAccount,
+            });
+
+            render(<BitcoinReceiveInfoGenerator wallets={walletsWithAccountsWithBalanceAndTxs} />);
         });
 
         it('should display format selector', () => {
@@ -77,12 +99,7 @@ describe('BitcoinReceiveInfoGenerator', () => {
 
     describe('when selected wallet is of type `onchain`', () => {
         beforeEach(() => {
-            mockUseBitcoinReceiveInfoGenerator.mockReturnValue({
-                ...helper,
-                selectedWallet: wallets[1],
-            });
-
-            render(<BitcoinReceiveInfoGenerator />);
+            render(<BitcoinReceiveInfoGenerator wallets={walletsWithAccountsWithBalanceAndTxs} />);
         });
 
         it('should display account selector', () => {
@@ -95,18 +112,18 @@ describe('BitcoinReceiveInfoGenerator', () => {
                 await act(() => userEvent.click(accountSelector));
 
                 const options = screen.getAllByTestId('account-selector-option');
-                expect(options).toHaveLength(3);
+                expect(options).toHaveLength(2);
                 await fireEvent.click(options[1]);
 
                 expect(helper.handleSelectAccount).toHaveBeenCalledTimes(1);
-                expect(helper.handleSelectAccount).toHaveBeenCalledWith({ selectedIndex: 1, value: '1' });
+                expect(helper.handleSelectAccount).toHaveBeenCalledWith({ selectedIndex: 1, value: 9 });
             });
         });
     });
 
     describe('when user clicks on `Add amount`', () => {
         it('should call `showAmountInput`', async () => {
-            render(<BitcoinReceiveInfoGenerator />);
+            render(<BitcoinReceiveInfoGenerator wallets={walletsWithAccountsWithBalanceAndTxs} />);
 
             const button = screen.getByTestId('show-amount-input-button');
             await fireEvent.click(button);
@@ -123,7 +140,7 @@ describe('BitcoinReceiveInfoGenerator', () => {
                 shouldShowAmountInput: true,
             });
 
-            render(<BitcoinReceiveInfoGenerator />);
+            render(<BitcoinReceiveInfoGenerator wallets={walletsWithAccountsWithBalanceAndTxs} />);
         });
 
         it('should call `showAmountInput`', async () => {
@@ -151,7 +168,7 @@ describe('BitcoinReceiveInfoGenerator', () => {
                 serializedPaymentInformation: bitcoinURI,
             });
 
-            render(<BitcoinReceiveInfoGenerator />);
+            render(<BitcoinReceiveInfoGenerator wallets={walletsWithAccountsWithBalanceAndTxs} />);
         });
         it('should display QRCode containing serialized payment info', () => {
             const qrcode = screen.getByTestId('serialized-payment-info-qrcode');

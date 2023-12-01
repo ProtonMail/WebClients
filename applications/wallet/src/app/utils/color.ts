@@ -1,6 +1,12 @@
-import { colors } from '../constants';
+import { getRandomAccentColor } from '@proton/shared/lib/colors';
 
-export const getRandomColor = () => {
-    const randomIndex = Math.floor(Math.random() * colors.length);
-    return colors[randomIndex];
+export const getNewRandomColor = (colors: string[]) => {
+    let color = getRandomAccentColor();
+    let tries = 0;
+    while (colors.includes(color) && tries < 3) {
+        color = getRandomAccentColor();
+        tries++;
+    }
+
+    return color;
 };

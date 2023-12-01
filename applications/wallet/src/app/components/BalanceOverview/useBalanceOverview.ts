@@ -2,10 +2,9 @@ import { useMemo } from 'react';
 
 import { ChartData, ChartDataset } from 'chart.js';
 
-import { getRandomAccentColor } from '@proton/shared/lib/colors';
-
 import { useBalanceEvolution } from '../../hooks/useBalanceEvolution';
 import { WalletWithAccountsWithBalanceAndTxs } from '../../types';
+import { getNewRandomColor, getWalletBalance, getWalletTransactions } from '../../utils';
 
 type WalletBalanceAcc = [string[], { label: string; data: number[]; backgroundColor: string[]; borderWidth: number }[]];
 
@@ -17,25 +16,6 @@ type WalletBalanceEvolutionChartDataset = ChartDataset<
         y: number | string;
     }[]
 >;
-
-const getWalletBalance = (wallet: WalletWithAccountsWithBalanceAndTxs) => {
-    return wallet.accounts.reduce((acc, cur) => acc + Number(cur.balance.confirmed), 0);
-};
-
-const getWalletTransactions = (wallet: WalletWithAccountsWithBalanceAndTxs) => {
-    return wallet.accounts.flatMap(({ transactions }) => transactions);
-};
-
-const getNewRandomColor = (backgroundColors: string[]) => {
-    let color = getRandomAccentColor();
-    let tries = 0;
-    while (backgroundColors.includes(color) && tries < 3) {
-        color = getRandomAccentColor();
-        tries++;
-    }
-
-    return color;
-};
 
 /**
  * When a single wallet is provided, then it returns doughnut data to show distribution accross wallet's accounts
